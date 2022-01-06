@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Cloud9
@@ -119,6 +119,7 @@ where
     ///
     /// See [`DescribeEnvironmentMemberships`](crate::client::fluent_builders::DescribeEnvironmentMemberships) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEnvironmentMemberships::into_paginator).
     pub fn describe_environment_memberships(
         &self,
     ) -> fluent_builders::DescribeEnvironmentMemberships<C, M, R> {
@@ -144,6 +145,7 @@ where
     ///
     /// See [`ListEnvironments`](crate::client::fluent_builders::ListEnvironments) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEnvironments::into_paginator).
     pub fn list_environments(&self) -> fluent_builders::ListEnvironments<C, M, R> {
         fluent_builders::ListEnvironments::new(self.handle.clone())
     }
@@ -195,9 +197,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateEnvironmentEC2`.
     ///
-    /// <p>Creates an Cloud9 development environment, launches an Amazon Elastic Compute Cloud (Amazon EC2) instance, and
-    /// then connects from the instance to the environment.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an Cloud9 development environment, launches an Amazon Elastic Compute Cloud (Amazon EC2) instance, and then connects from the instance to the environment.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEnvironmentEC2<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -242,10 +243,10 @@ pub mod fluent_builders {
                 crate::input::CreateEnvironmentEc2InputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -255,8 +256,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the environment to create.</p>
         /// <p>This name is visible to other IAM users in the same Amazon Web Services account.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the environment to create.</p>
@@ -266,8 +267,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the environment to create.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the environment to create.</p>
@@ -275,18 +276,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no
-        /// more than one time.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client Tokens</a> in the
-        /// <i>Amazon EC2 API Reference</i>.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one time.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client Tokens</a> in the <i>Amazon EC2 API Reference</i>.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no
-        /// more than one time.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client Tokens</a> in the
-        /// <i>Amazon EC2 API Reference</i>.</p>
+        /// <p>A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one time.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client Tokens</a> in the <i>Amazon EC2 API Reference</i>.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -294,14 +291,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>The type of instance to connect to the environment (for example,
-        /// <code>t2.micro</code>).</p>
-        pub fn instance_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_type(inp);
+        /// <p>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</p>
+        pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_type(input.into());
             self
         }
-        /// <p>The type of instance to connect to the environment (for example,
-        /// <code>t2.micro</code>).</p>
+        /// <p>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -309,144 +304,68 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_type(input);
             self
         }
-        /// <p>The ID of the subnet in Amazon VPC that Cloud9 will use to communicate with the Amazon EC2
-        /// instance.</p>
-        pub fn subnet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_id(inp);
+        /// <p>The ID of the subnet in Amazon VPC that Cloud9 will use to communicate with the Amazon EC2 instance.</p>
+        pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_id(input.into());
             self
         }
-        /// <p>The ID of the subnet in Amazon VPC that Cloud9 will use to communicate with the Amazon EC2
-        /// instance.</p>
+        /// <p>The ID of the subnet in Amazon VPC that Cloud9 will use to communicate with the Amazon EC2 instance.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_subnet_id(input);
             self
         }
-        /// <p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance.
-        /// To choose an AMI for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM)
-        /// path.</p>
-        /// <p>The default AMI is used if the parameter isn't explicitly assigned a value in the request.
-        /// Because Amazon Linux AMI has ended standard support as of December 31, 2020, we recommend you
-        /// choose Amazon Linux 2, which includes long term support through 2023.</p>
-        /// <p>
-        /// <b>AMI aliases </b>
-        /// </p>
+        /// <p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.</p>
+        /// <p>The default AMI is used if the parameter isn't explicitly assigned a value in the request. Because Amazon Linux AMI has ended standard support as of December 31, 2020, we recommend you choose Amazon Linux 2, which includes long term support through 2023.</p>
+        /// <p> <b>AMI aliases </b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Amazon Linux (default):
-        /// <code>amazonlinux-1-x86_64</code>
-        /// </b>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li>
+        /// <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li>
+        /// <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li>
         /// </ul>
-        /// <p>
-        /// <b>SSM paths</b>
-        /// </p>
+        /// <p> <b>SSM paths</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Amazon Linux (default):
-        /// <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code>
-        /// </b>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Linux 2:
-        /// <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Ubuntu 18.04:
-        /// <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p> </li>
+        /// <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li>
+        /// <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
         /// </ul>
-        pub fn image_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_id(inp);
+        pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_id(input.into());
             self
         }
-        /// <p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance.
-        /// To choose an AMI for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM)
-        /// path.</p>
-        /// <p>The default AMI is used if the parameter isn't explicitly assigned a value in the request.
-        /// Because Amazon Linux AMI has ended standard support as of December 31, 2020, we recommend you
-        /// choose Amazon Linux 2, which includes long term support through 2023.</p>
-        /// <p>
-        /// <b>AMI aliases </b>
-        /// </p>
+        /// <p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.</p>
+        /// <p>The default AMI is used if the parameter isn't explicitly assigned a value in the request. Because Amazon Linux AMI has ended standard support as of December 31, 2020, we recommend you choose Amazon Linux 2, which includes long term support through 2023.</p>
+        /// <p> <b>AMI aliases </b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Amazon Linux (default):
-        /// <code>amazonlinux-1-x86_64</code>
-        /// </b>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li>
+        /// <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li>
+        /// <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li>
         /// </ul>
-        /// <p>
-        /// <b>SSM paths</b>
-        /// </p>
+        /// <p> <b>SSM paths</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Amazon Linux (default):
-        /// <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code>
-        /// </b>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Linux 2:
-        /// <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Ubuntu 18.04:
-        /// <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p> </li>
+        /// <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li>
+        /// <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
         /// </ul>
         pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_image_id(input);
             self
         }
-        /// <p>The number of minutes until the running instance is shut down after the environment has
-        /// last been used.</p>
-        pub fn automatic_stop_time_minutes(mut self, inp: i32) -> Self {
-            self.inner = self.inner.automatic_stop_time_minutes(inp);
+        /// <p>The number of minutes until the running instance is shut down after the environment has last been used.</p>
+        pub fn automatic_stop_time_minutes(mut self, input: i32) -> Self {
+            self.inner = self.inner.automatic_stop_time_minutes(input);
             self
         }
-        /// <p>The number of minutes until the running instance is shut down after the environment has
-        /// last been used.</p>
+        /// <p>The number of minutes until the running instance is shut down after the environment has last been used.</p>
         pub fn set_automatic_stop_time_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_automatic_stop_time_minutes(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any
-        /// IAM principal. If this value is not specified, the ARN defaults to this environment's
-        /// creator.</p>
-        pub fn owner_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.owner_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any IAM principal. If this value is not specified, the ARN defaults to this environment's creator.</p>
+        pub fn owner_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owner_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any
-        /// IAM principal. If this value is not specified, the ARN defaults to this environment's
-        /// creator.</p>
+        /// <p>The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any IAM principal. If this value is not specified, the ARN defaults to this environment's creator.</p>
         pub fn set_owner_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_owner_arn(input);
             self
@@ -455,14 +374,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of key-value pairs that will be associated with the new Cloud9 development
-        /// environment.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>An array of key-value pairs that will be associated with the new Cloud9 development environment.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>An array of key-value pairs that will be associated with the new Cloud9 development
-        /// environment.</p>
+        /// <p>An array of key-value pairs that will be associated with the new Cloud9 development environment.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -470,20 +387,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The connection type used for connecting to an Amazon EC2 environment. Valid values are
-        /// <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through
-        /// Amazon EC2 Systems Manager).</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing no-ingress EC2 instances with
-        /// Amazon EC2 Systems Manager</a> in the <i>Cloud9 User Guide</i>.</p>
-        pub fn connection_type(mut self, inp: crate::model::ConnectionType) -> Self {
-            self.inner = self.inner.connection_type(inp);
+        /// <p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems Manager).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing no-ingress EC2 instances with Amazon EC2 Systems Manager</a> in the <i>Cloud9 User Guide</i>.</p>
+        pub fn connection_type(mut self, input: crate::model::ConnectionType) -> Self {
+            self.inner = self.inner.connection_type(input);
             self
         }
-        /// <p>The connection type used for connecting to an Amazon EC2 environment. Valid values are
-        /// <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through
-        /// Amazon EC2 Systems Manager).</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing no-ingress EC2 instances with
-        /// Amazon EC2 Systems Manager</a> in the <i>Cloud9 User Guide</i>.</p>
+        /// <p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems Manager).</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing no-ingress EC2 instances with Amazon EC2 Systems Manager</a> in the <i>Cloud9 User Guide</i>.</p>
         pub fn set_connection_type(
             mut self,
             input: std::option::Option<crate::model::ConnectionType>,
@@ -492,8 +403,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
             self
         }
         /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -505,7 +416,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateEnvironmentMembership`.
     ///
     /// <p>Adds an environment member to an Cloud9 development environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEnvironmentMembership<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -550,10 +461,10 @@ pub mod fluent_builders {
                 crate::input::CreateEnvironmentMembershipInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -562,8 +473,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the environment that contains the environment member you want to add.</p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(input.into());
             self
         }
         /// <p>The ID of the environment that contains the environment member you want to add.</p>
@@ -575,8 +486,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the environment member you want to add.</p>
-        pub fn user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_arn(inp);
+        pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the environment member you want to add.</p>
@@ -584,33 +495,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_arn(input);
             self
         }
-        /// <p>The type of environment member permissions you want to associate with this environment
-        /// member. Available values include:</p>
+        /// <p>The type of environment member permissions you want to associate with this environment member. Available values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>read-only</code>: Has read-only access to the environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>read-write</code>: Has read-write access to the environment.</p>
-        /// </li>
+        /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
+        /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
         /// </ul>
-        pub fn permissions(mut self, inp: crate::model::MemberPermissions) -> Self {
-            self.inner = self.inner.permissions(inp);
+        pub fn permissions(mut self, input: crate::model::MemberPermissions) -> Self {
+            self.inner = self.inner.permissions(input);
             self
         }
-        /// <p>The type of environment member permissions you want to associate with this environment
-        /// member. Available values include:</p>
+        /// <p>The type of environment member permissions you want to associate with this environment member. Available values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>read-only</code>: Has read-only access to the environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>read-write</code>: Has read-write access to the environment.</p>
-        /// </li>
+        /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
+        /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
         /// </ul>
         pub fn set_permissions(
             mut self,
@@ -622,9 +519,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteEnvironment`.
     ///
-    /// <p>Deletes an Cloud9 development environment. If an Amazon EC2 instance is connected to the
-    /// environment, also terminates the instance.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes an Cloud9 development environment. If an Amazon EC2 instance is connected to the environment, also terminates the instance.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -669,10 +565,10 @@ pub mod fluent_builders {
                 crate::input::DeleteEnvironmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -681,8 +577,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the environment to delete.</p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(input.into());
             self
         }
         /// <p>The ID of the environment to delete.</p>
@@ -697,7 +593,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEnvironmentMembership`.
     ///
     /// <p>Deletes an environment member from an Cloud9 development environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEnvironmentMembership<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -742,10 +638,10 @@ pub mod fluent_builders {
                 crate::input::DeleteEnvironmentMembershipInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -754,8 +650,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the environment to delete the environment member from.</p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(input.into());
             self
         }
         /// <p>The ID of the environment to delete the environment member from.</p>
@@ -766,14 +662,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_environment_id(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the environment member to delete from the
-        /// environment.</p>
-        pub fn user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the environment member to delete from the environment.</p>
+        pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the environment member to delete from the
-        /// environment.</p>
+        /// <p>The Amazon Resource Name (ARN) of the environment member to delete from the environment.</p>
         pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_arn(input);
             self
@@ -782,7 +676,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEnvironmentMemberships`.
     ///
     /// <p>Gets information about environment members for an Cloud9 development environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEnvironmentMemberships<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -827,10 +721,10 @@ pub mod fluent_builders {
                 crate::input::DescribeEnvironmentMembershipsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -838,23 +732,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of an individual environment member to get information
-        /// about. If no value is specified, information about all environment members are
-        /// returned.</p>
-        pub fn user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeEnvironmentMembershipsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeEnvironmentMembershipsPaginator<C, M, R> {
+            crate::paginator::DescribeEnvironmentMembershipsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Resource Name (ARN) of an individual environment member to get information about. If no value is specified, information about all environment members are returned.</p>
+        pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an individual environment member to get information
-        /// about. If no value is specified, information about all environment members are
-        /// returned.</p>
+        /// <p>The Amazon Resource Name (ARN) of an individual environment member to get information about. If no value is specified, information about all environment members are returned.</p>
         pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_arn(input);
             self
         }
         /// <p>The ID of the environment to get environment member information about.</p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(input.into());
             self
         }
         /// <p>The ID of the environment to get environment member information about.</p>
@@ -869,42 +767,22 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
-        /// <p>The type of environment member permissions to get information about. Available values
-        /// include:</p>
+        /// <p>The type of environment member permissions to get information about. Available values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>owner</code>: Owns the environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>read-only</code>: Has read-only access to the environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>read-write</code>: Has read-write access to the environment.</p>
-        /// </li>
+        /// <li> <p> <code>owner</code>: Owns the environment.</p> </li>
+        /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
+        /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
         /// </ul>
         /// <p>If no value is specified, information about all environment members are returned.</p>
-        pub fn permissions(mut self, inp: impl Into<crate::model::Permissions>) -> Self {
-            self.inner = self.inner.permissions(inp);
+        pub fn permissions(mut self, input: crate::model::Permissions) -> Self {
+            self.inner = self.inner.permissions(input);
             self
         }
-        /// <p>The type of environment member permissions to get information about. Available values
-        /// include:</p>
+        /// <p>The type of environment member permissions to get information about. Available values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>owner</code>: Owns the environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>read-only</code>: Has read-only access to the environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>read-write</code>: Has read-write access to the environment.</p>
-        /// </li>
+        /// <li> <p> <code>owner</code>: Owns the environment.</p> </li>
+        /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
+        /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
         /// </ul>
         /// <p>If no value is specified, information about all environment members are returned.</p>
         pub fn set_permissions(
@@ -914,27 +792,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_permissions(input);
             self
         }
-        /// <p>During a previous call, if there are more than 25 items in the list, only the first 25
-        /// items are returned, along with a unique string called a <i>next token</i>. To
-        /// get the next batch of items in the list, call this operation again, adding the next token to
-        /// the call. To get all of the items in the list, keep calling this operation with each
-        /// subsequent next token that is returned, until no more next tokens are returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>During a previous call, if there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>During a previous call, if there are more than 25 items in the list, only the first 25
-        /// items are returned, along with a unique string called a <i>next token</i>. To
-        /// get the next batch of items in the list, call this operation again, adding the next token to
-        /// the call. To get all of the items in the list, keep calling this operation with each
-        /// subsequent next token that is returned, until no more next tokens are returned.</p>
+        /// <p>During a previous call, if there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of environment members to get information about.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of environment members to get information about.</p>
@@ -946,7 +816,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEnvironments`.
     ///
     /// <p>Gets information about Cloud9 development environments.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEnvironments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -991,10 +861,10 @@ pub mod fluent_builders {
                 crate::input::DescribeEnvironmentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1007,8 +877,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_environment_ids`](Self::set_environment_ids).
         ///
         /// <p>The IDs of individual environments to get information about.</p>
-        pub fn environment_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_ids(inp);
+        pub fn environment_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_ids(input.into());
             self
         }
         /// <p>The IDs of individual environments to get information about.</p>
@@ -1023,7 +893,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEnvironmentStatus`.
     ///
     /// <p>Gets status information for an Cloud9 development environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEnvironmentStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1068,10 +938,10 @@ pub mod fluent_builders {
                 crate::input::DescribeEnvironmentStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1080,8 +950,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the environment to get status information about.</p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(input.into());
             self
         }
         /// <p>The ID of the environment to get status information about.</p>
@@ -1096,7 +966,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEnvironments`.
     ///
     /// <p>Gets a list of Cloud9 development environment identifiers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEnvironments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1141,10 +1011,10 @@ pub mod fluent_builders {
                 crate::input::ListEnvironmentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1152,27 +1022,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>During a previous call, if there are more than 25 items in the list, only the first 25
-        /// items are returned, along with a unique string called a <i>next token</i>. To
-        /// get the next batch of items in the list, call this operation again, adding the next token to
-        /// the call. To get all of the items in the list, keep calling this operation with each
-        /// subsequent next token that is returned, until no more next tokens are returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEnvironmentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListEnvironmentsPaginator<C, M, R> {
+            crate::paginator::ListEnvironmentsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>During a previous call, if there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>During a previous call, if there are more than 25 items in the list, only the first 25
-        /// items are returned, along with a unique string called a <i>next token</i>. To
-        /// get the next batch of items in the list, call this operation again, adding the next token to
-        /// the call. To get all of the items in the list, keep calling this operation with each
-        /// subsequent next token that is returned, until no more next tokens are returned.</p>
+        /// <p>During a previous call, if there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of environments to get identifiers for.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of environments to get identifiers for.</p>
@@ -1184,7 +1052,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Gets a list of the tags associated with an Cloud9 development environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1229,10 +1097,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1240,14 +1108,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the Cloud9 development environment to get the tags
-        /// for.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the Cloud9 development environment to get the tags for.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Cloud9 development environment to get the tags
-        /// for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Cloud9 development environment to get the tags for.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1255,12 +1121,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds tags to an Cloud9 development environment.</p>
-    /// <important>
-    /// <p>Tags that you add to an Cloud9 environment by using this method will NOT be
-    /// automatically propagated to underlying resources.</p>
+    /// <p>Adds tags to an Cloud9 development environment.</p> <important>
+    /// <p>Tags that you add to an Cloud9 environment by using this method will NOT be automatically propagated to underlying resources.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1305,10 +1169,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1316,14 +1180,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the Cloud9 development environment to add tags
-        /// to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the Cloud9 development environment to add tags to.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Cloud9 development environment to add tags
-        /// to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Cloud9 development environment to add tags to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1333,8 +1195,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags to add to the given Cloud9 development environment.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The list of tags to add to the given Cloud9 development environment.</p>
@@ -1349,7 +1211,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from an Cloud9 development environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1394,10 +1256,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1405,14 +1267,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the Cloud9 development environment to remove tags
-        /// from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the Cloud9 development environment to remove tags from.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Cloud9 development environment to remove tags
-        /// from.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Cloud9 development environment to remove tags from.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1421,14 +1281,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>The tag names of the tags to remove from the given Cloud9 development
-        /// environment.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        /// <p>The tag names of the tags to remove from the given Cloud9 development environment.</p>
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>The tag names of the tags to remove from the given Cloud9 development
-        /// environment.</p>
+        /// <p>The tag names of the tags to remove from the given Cloud9 development environment.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1440,7 +1298,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateEnvironment`.
     ///
     /// <p>Changes the settings of an existing Cloud9 development environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1485,10 +1343,10 @@ pub mod fluent_builders {
                 crate::input::UpdateEnvironmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1497,8 +1355,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the environment to change settings.</p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(input.into());
             self
         }
         /// <p>The ID of the environment to change settings.</p>
@@ -1510,8 +1368,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A replacement name for the environment.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A replacement name for the environment.</p>
@@ -1520,8 +1378,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Any new or replacement description for the environment.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>Any new or replacement description for the environment.</p>
@@ -1529,48 +1387,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary
-        /// credentials for an Cloud9 environment by using one of the following values:</p>
+        /// <p>Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary credentials for an Cloud9 environment by using one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ENABLE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLE</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment
-        /// owner.</p>  
+        /// <li> <p> <code>ENABLE</code> </p> </li>
+        /// <li> <p> <code>DISABLE</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.</p>
         /// </note>
         pub fn managed_credentials_action(
             mut self,
-            inp: crate::model::ManagedCredentialsAction,
+            input: crate::model::ManagedCredentialsAction,
         ) -> Self {
-            self.inner = self.inner.managed_credentials_action(inp);
+            self.inner = self.inner.managed_credentials_action(input);
             self
         }
-        /// <p>Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary
-        /// credentials for an Cloud9 environment by using one of the following values:</p>
+        /// <p>Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary credentials for an Cloud9 environment by using one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ENABLE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLE</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment
-        /// owner.</p>  
+        /// <li> <p> <code>ENABLE</code> </p> </li>
+        /// <li> <p> <code>DISABLE</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.</p>
         /// </note>
         pub fn set_managed_credentials_action(
             mut self,
@@ -1582,9 +1418,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateEnvironmentMembership`.
     ///
-    /// <p>Changes the settings of an existing environment member for an Cloud9 development
-    /// environment.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Changes the settings of an existing environment member for an Cloud9 development environment.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEnvironmentMembership<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1629,10 +1464,10 @@ pub mod fluent_builders {
                 crate::input::UpdateEnvironmentMembershipInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1640,14 +1475,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the environment for the environment member whose settings you want to
-        /// change.</p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        /// <p>The ID of the environment for the environment member whose settings you want to change.</p>
+        pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(input.into());
             self
         }
-        /// <p>The ID of the environment for the environment member whose settings you want to
-        /// change.</p>
+        /// <p>The ID of the environment for the environment member whose settings you want to change.</p>
         pub fn set_environment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1655,45 +1488,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_environment_id(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the environment member whose settings you want to
-        /// change.</p>
-        pub fn user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the environment member whose settings you want to change.</p>
+        pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the environment member whose settings you want to
-        /// change.</p>
+        /// <p>The Amazon Resource Name (ARN) of the environment member whose settings you want to change.</p>
         pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_arn(input);
             self
         }
-        /// <p>The replacement type of environment member permissions you want to associate with this
-        /// environment member. Available values include:</p>
+        /// <p>The replacement type of environment member permissions you want to associate with this environment member. Available values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>read-only</code>: Has read-only access to the environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>read-write</code>: Has read-write access to the environment.</p>
-        /// </li>
+        /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
+        /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
         /// </ul>
-        pub fn permissions(mut self, inp: crate::model::MemberPermissions) -> Self {
-            self.inner = self.inner.permissions(inp);
+        pub fn permissions(mut self, input: crate::model::MemberPermissions) -> Self {
+            self.inner = self.inner.permissions(input);
             self
         }
-        /// <p>The replacement type of environment member permissions you want to associate with this
-        /// environment member. Available values include:</p>
+        /// <p>The replacement type of environment member permissions you want to associate with this environment member. Available values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>read-only</code>: Has read-only access to the environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>read-write</code>: Has read-write access to the environment.</p>
-        /// </li>
+        /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
+        /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
         /// </ul>
         pub fn set_permissions(
             mut self,
@@ -1704,6 +1521,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

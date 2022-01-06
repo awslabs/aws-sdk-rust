@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon EMR Containers
@@ -143,6 +143,7 @@ where
     ///
     /// See [`ListJobRuns`](crate::client::fluent_builders::ListJobRuns) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListJobRuns::into_paginator).
     pub fn list_job_runs(&self) -> fluent_builders::ListJobRuns<C, M, R> {
         fluent_builders::ListJobRuns::new(self.handle.clone())
     }
@@ -150,6 +151,7 @@ where
     ///
     /// See [`ListManagedEndpoints`](crate::client::fluent_builders::ListManagedEndpoints) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListManagedEndpoints::into_paginator).
     pub fn list_managed_endpoints(&self) -> fluent_builders::ListManagedEndpoints<C, M, R> {
         fluent_builders::ListManagedEndpoints::new(self.handle.clone())
     }
@@ -164,6 +166,7 @@ where
     ///
     /// See [`ListVirtualClusters`](crate::client::fluent_builders::ListVirtualClusters) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListVirtualClusters::into_paginator).
     pub fn list_virtual_clusters(&self) -> fluent_builders::ListVirtualClusters<C, M, R> {
         fluent_builders::ListVirtualClusters::new(self.handle.clone())
     }
@@ -200,7 +203,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelJobRun`.
     ///
     /// <p>Cancels a job run. A job run is a unit of work, such as a Spark jar, PySpark script, or SparkSQL query, that you submit to Amazon EMR on EKS.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelJobRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -245,10 +248,10 @@ pub mod fluent_builders {
                 crate::input::CancelJobRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -257,8 +260,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the job run to cancel.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the job run to cancel.</p>
@@ -267,8 +270,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the virtual cluster for which the job run will be canceled.</p>
-        pub fn virtual_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_cluster_id(inp);
+        pub fn virtual_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_cluster_id(input.into());
             self
         }
         /// <p>The ID of the virtual cluster for which the job run will be canceled.</p>
@@ -283,7 +286,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateManagedEndpoint`.
     ///
     /// <p>Creates a managed endpoint. A managed endpoint is a gateway that connects EMR Studio to Amazon EMR on EKS so that EMR Studio can communicate with your virtual cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateManagedEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -328,10 +331,10 @@ pub mod fluent_builders {
                 crate::input::CreateManagedEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -340,8 +343,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the managed endpoint.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the managed endpoint.</p>
@@ -350,8 +353,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the virtual cluster for which a managed endpoint is created.</p>
-        pub fn virtual_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_cluster_id(inp);
+        pub fn virtual_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_cluster_id(input.into());
             self
         }
         /// <p>The ID of the virtual cluster for which a managed endpoint is created.</p>
@@ -363,8 +366,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the managed endpoint.</p>
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.r#type(input.into());
             self
         }
         /// <p>The type of the managed endpoint.</p>
@@ -373,8 +376,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon EMR release version.</p>
-        pub fn release_label(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.release_label(inp);
+        pub fn release_label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.release_label(input.into());
             self
         }
         /// <p>The Amazon EMR release version.</p>
@@ -386,8 +389,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the execution role.</p>
-        pub fn execution_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_role_arn(inp);
+        pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_role_arn(input.into());
             self
         }
         /// <p>The ARN of the execution role.</p>
@@ -399,8 +402,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The certificate ARN provided by users for the managed endpoint. This fiedd is under deprecation and will be removed in future releases.</p>
-        pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_arn(inp);
+        pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_arn(input.into());
             self
         }
         /// <p>The certificate ARN provided by users for the managed endpoint. This fiedd is under deprecation and will be removed in future releases.</p>
@@ -414,9 +417,9 @@ pub mod fluent_builders {
         /// <p>The configuration settings that will be used to override existing configurations.</p>
         pub fn configuration_overrides(
             mut self,
-            inp: crate::model::ConfigurationOverrides,
+            input: crate::model::ConfigurationOverrides,
         ) -> Self {
-            self.inner = self.inner.configuration_overrides(inp);
+            self.inner = self.inner.configuration_overrides(input);
             self
         }
         /// <p>The configuration settings that will be used to override existing configurations.</p>
@@ -428,8 +431,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The client idempotency token for this create call.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The client idempotency token for this create call.</p>
@@ -441,18 +444,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags of the managed endpoint.
-        /// </p>
+        /// <p>The tags of the managed endpoint. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags of the managed endpoint.
-        /// </p>
+        /// <p>The tags of the managed endpoint. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -466,7 +467,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateVirtualCluster`.
     ///
     /// <p>Creates a virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS. You can create, describe, list and delete virtual clusters. They do not consume any additional resource in your system. A single virtual cluster maps to a single Kubernetes namespace. Given this relationship, you can model virtual clusters the same way you model Kubernetes namespaces to meet your requirements.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVirtualCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -511,10 +512,10 @@ pub mod fluent_builders {
                 crate::input::CreateVirtualClusterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -523,8 +524,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The specified name of the virtual cluster.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The specified name of the virtual cluster.</p>
@@ -533,8 +534,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The container provider of the virtual cluster.</p>
-        pub fn container_provider(mut self, inp: crate::model::ContainerProvider) -> Self {
-            self.inner = self.inner.container_provider(inp);
+        pub fn container_provider(mut self, input: crate::model::ContainerProvider) -> Self {
+            self.inner = self.inner.container_provider(input);
             self
         }
         /// <p>The container provider of the virtual cluster.</p>
@@ -546,8 +547,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The client token of the virtual cluster.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The client token of the virtual cluster.</p>
@@ -565,7 +566,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags assigned to the virtual cluster.</p>
@@ -582,7 +583,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteManagedEndpoint`.
     ///
     /// <p>Deletes a managed endpoint. A managed endpoint is a gateway that connects EMR Studio to Amazon EMR on EKS so that EMR Studio can communicate with your virtual cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteManagedEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -627,10 +628,10 @@ pub mod fluent_builders {
                 crate::input::DeleteManagedEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -639,8 +640,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the managed endpoint.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the managed endpoint.</p>
@@ -649,8 +650,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the endpoint's virtual cluster.</p>
-        pub fn virtual_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_cluster_id(inp);
+        pub fn virtual_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_cluster_id(input.into());
             self
         }
         /// <p>The ID of the endpoint's virtual cluster.</p>
@@ -665,7 +666,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteVirtualCluster`.
     ///
     /// <p>Deletes a virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS. You can create, describe, list and delete virtual clusters. They do not consume any additional resource in your system. A single virtual cluster maps to a single Kubernetes namespace. Given this relationship, you can model virtual clusters the same way you model Kubernetes namespaces to meet your requirements.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVirtualCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -710,10 +711,10 @@ pub mod fluent_builders {
                 crate::input::DeleteVirtualClusterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -722,8 +723,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual cluster that will be deleted.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the virtual cluster that will be deleted.</p>
@@ -735,7 +736,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeJobRun`.
     ///
     /// <p>Displays detailed information about a job run. A job run is a unit of work, such as a Spark jar, PySpark script, or SparkSQL query, that you submit to Amazon EMR on EKS.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeJobRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -780,10 +781,10 @@ pub mod fluent_builders {
                 crate::input::DescribeJobRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -792,8 +793,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the job run request. </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the job run request. </p>
@@ -802,8 +803,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the virtual cluster for which the job run is submitted.</p>
-        pub fn virtual_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_cluster_id(inp);
+        pub fn virtual_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_cluster_id(input.into());
             self
         }
         /// <p>The ID of the virtual cluster for which the job run is submitted.</p>
@@ -818,7 +819,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeManagedEndpoint`.
     ///
     /// <p>Displays detailed information about a managed endpoint. A managed endpoint is a gateway that connects EMR Studio to Amazon EMR on EKS so that EMR Studio can communicate with your virtual cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeManagedEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -863,10 +864,10 @@ pub mod fluent_builders {
                 crate::input::DescribeManagedEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -875,8 +876,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>This output displays ID of the managed endpoint.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>This output displays ID of the managed endpoint.</p>
@@ -885,8 +886,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the endpoint's virtual cluster.</p>
-        pub fn virtual_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_cluster_id(inp);
+        pub fn virtual_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_cluster_id(input.into());
             self
         }
         /// <p>The ID of the endpoint's virtual cluster.</p>
@@ -901,7 +902,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeVirtualCluster`.
     ///
     /// <p>Displays detailed information about a specified virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS. You can create, describe, list and delete virtual clusters. They do not consume any additional resource in your system. A single virtual cluster maps to a single Kubernetes namespace. Given this relationship, you can model virtual clusters the same way you model Kubernetes namespaces to meet your requirements.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVirtualCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -946,10 +947,10 @@ pub mod fluent_builders {
                 crate::input::DescribeVirtualClusterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -958,8 +959,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual cluster that will be described.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the virtual cluster that will be described.</p>
@@ -971,7 +972,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListJobRuns`.
     ///
     /// <p>Lists job runs based on a set of parameters. A job run is a unit of work, such as a Spark jar, PySpark script, or SparkSQL query, that you submit to Amazon EMR on EKS.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListJobRuns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1016,10 +1017,10 @@ pub mod fluent_builders {
                 crate::input::ListJobRunsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1027,9 +1028,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListJobRunsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListJobRunsPaginator<C, M, R> {
+            crate::paginator::ListJobRunsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the virtual cluster for which to list the job run. </p>
-        pub fn virtual_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_cluster_id(inp);
+        pub fn virtual_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_cluster_id(input.into());
             self
         }
         /// <p>The ID of the virtual cluster for which to list the job run. </p>
@@ -1041,8 +1048,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time before which the job runs were submitted.</p>
-        pub fn created_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_before(inp);
+        pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_before(input);
             self
         }
         /// <p>The date and time before which the job runs were submitted.</p>
@@ -1054,8 +1061,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time after which the job runs were submitted.</p>
-        pub fn created_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_after(inp);
+        pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_after(input);
             self
         }
         /// <p>The date and time after which the job runs were submitted.</p>
@@ -1067,8 +1074,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the job run.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the job run.</p>
@@ -1081,8 +1088,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
         /// <p>The states of the job run.</p>
-        pub fn states(mut self, inp: impl Into<crate::model::JobRunState>) -> Self {
-            self.inner = self.inner.states(inp);
+        pub fn states(mut self, input: crate::model::JobRunState) -> Self {
+            self.inner = self.inner.states(input);
             self
         }
         /// <p>The states of the job run.</p>
@@ -1094,8 +1101,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of job runs that can be listed.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of job runs that can be listed.</p>
@@ -1104,8 +1111,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of job runs to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of job runs to return.</p>
@@ -1117,7 +1124,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListManagedEndpoints`.
     ///
     /// <p>Lists managed endpoints based on a set of parameters. A managed endpoint is a gateway that connects EMR Studio to Amazon EMR on EKS so that EMR Studio can communicate with your virtual cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListManagedEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1162,10 +1169,10 @@ pub mod fluent_builders {
                 crate::input::ListManagedEndpointsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1173,9 +1180,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListManagedEndpointsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListManagedEndpointsPaginator<C, M, R> {
+            crate::paginator::ListManagedEndpointsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the virtual cluster.</p>
-        pub fn virtual_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_cluster_id(inp);
+        pub fn virtual_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_cluster_id(input.into());
             self
         }
         /// <p>The ID of the virtual cluster.</p>
@@ -1187,8 +1200,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time before which the endpoints are created.</p>
-        pub fn created_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_before(inp);
+        pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_before(input);
             self
         }
         /// <p>The date and time before which the endpoints are created.</p>
@@ -1200,8 +1213,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The date and time after which the endpoints are created.</p>
-        pub fn created_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_after(inp);
+        pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_after(input);
             self
         }
         /// <p> The date and time after which the endpoints are created.</p>
@@ -1217,8 +1230,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_types`](Self::set_types).
         ///
         /// <p>The types of the managed endpoints.</p>
-        pub fn types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.types(inp);
+        pub fn types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.types(input.into());
             self
         }
         /// <p>The types of the managed endpoints.</p>
@@ -1234,8 +1247,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
         /// <p>The states of the managed endpoints.</p>
-        pub fn states(mut self, inp: impl Into<crate::model::EndpointState>) -> Self {
-            self.inner = self.inner.states(inp);
+        pub fn states(mut self, input: crate::model::EndpointState) -> Self {
+            self.inner = self.inner.states(input);
             self
         }
         /// <p>The states of the managed endpoints.</p>
@@ -1247,8 +1260,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of managed endpoints that can be listed.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of managed endpoints that can be listed.</p>
@@ -1257,8 +1270,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The token for the next set of managed endpoints to return. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> The token for the next set of managed endpoints to return. </p>
@@ -1270,7 +1283,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags assigned to the resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1315,10 +1328,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1327,8 +1340,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of tagged resources.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of tagged resources.</p>
@@ -1340,7 +1353,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListVirtualClusters`.
     ///
     /// <p>Lists information about the specified virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS. You can create, describe, list and delete virtual clusters. They do not consume any additional resource in your system. A single virtual cluster maps to a single Kubernetes namespace. Given this relationship, you can model virtual clusters the same way you model Kubernetes namespaces to meet your requirements.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListVirtualClusters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1385,10 +1398,10 @@ pub mod fluent_builders {
                 crate::input::ListVirtualClustersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1396,9 +1409,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListVirtualClustersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListVirtualClustersPaginator<C, M, R> {
+            crate::paginator::ListVirtualClustersPaginator::new(self.handle, self.inner)
+        }
         /// <p>The container provider ID of the virtual cluster.</p>
-        pub fn container_provider_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_provider_id(inp);
+        pub fn container_provider_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_provider_id(input.into());
             self
         }
         /// <p>The container provider ID of the virtual cluster.</p>
@@ -1410,8 +1429,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The container provider type of the virtual cluster. EKS is the only supported type as of now.</p>
-        pub fn container_provider_type(mut self, inp: crate::model::ContainerProviderType) -> Self {
-            self.inner = self.inner.container_provider_type(inp);
+        pub fn container_provider_type(
+            mut self,
+            input: crate::model::ContainerProviderType,
+        ) -> Self {
+            self.inner = self.inner.container_provider_type(input);
             self
         }
         /// <p>The container provider type of the virtual cluster. EKS is the only supported type as of now.</p>
@@ -1423,8 +1445,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time after which the virtual clusters are created.</p>
-        pub fn created_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_after(inp);
+        pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_after(input);
             self
         }
         /// <p>The date and time after which the virtual clusters are created.</p>
@@ -1436,8 +1458,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time before which the virtual clusters are created.</p>
-        pub fn created_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_before(inp);
+        pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_before(input);
             self
         }
         /// <p>The date and time before which the virtual clusters are created.</p>
@@ -1453,8 +1475,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
         /// <p>The states of the requested virtual clusters.</p>
-        pub fn states(mut self, inp: impl Into<crate::model::VirtualClusterState>) -> Self {
-            self.inner = self.inner.states(inp);
+        pub fn states(mut self, input: crate::model::VirtualClusterState) -> Self {
+            self.inner = self.inner.states(input);
             self
         }
         /// <p>The states of the requested virtual clusters.</p>
@@ -1466,8 +1488,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of virtual clusters that can be listed.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of virtual clusters that can be listed.</p>
@@ -1476,8 +1498,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of virtual clusters to return. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of virtual clusters to return. </p>
@@ -1489,7 +1511,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartJobRun`.
     ///
     /// <p>Starts a job run. A job run is a unit of work, such as a Spark jar, PySpark script, or SparkSQL query, that you submit to Amazon EMR on EKS.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartJobRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1534,10 +1556,10 @@ pub mod fluent_builders {
                 crate::input::StartJobRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1546,8 +1568,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the job run.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the job run.</p>
@@ -1556,8 +1578,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The virtual cluster ID for which the job run request is submitted.</p>
-        pub fn virtual_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_cluster_id(inp);
+        pub fn virtual_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_cluster_id(input.into());
             self
         }
         /// <p>The virtual cluster ID for which the job run request is submitted.</p>
@@ -1569,8 +1591,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The client idempotency token of the job run request. </p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The client idempotency token of the job run request. </p>
@@ -1579,8 +1601,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The execution role ARN for the job run.</p>
-        pub fn execution_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_role_arn(inp);
+        pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_role_arn(input.into());
             self
         }
         /// <p>The execution role ARN for the job run.</p>
@@ -1592,8 +1614,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon EMR release version to use for the job run.</p>
-        pub fn release_label(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.release_label(inp);
+        pub fn release_label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.release_label(input.into());
             self
         }
         /// <p>The Amazon EMR release version to use for the job run.</p>
@@ -1605,8 +1627,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The job driver for the job run.</p>
-        pub fn job_driver(mut self, inp: crate::model::JobDriver) -> Self {
-            self.inner = self.inner.job_driver(inp);
+        pub fn job_driver(mut self, input: crate::model::JobDriver) -> Self {
+            self.inner = self.inner.job_driver(input);
             self
         }
         /// <p>The job driver for the job run.</p>
@@ -1620,9 +1642,9 @@ pub mod fluent_builders {
         /// <p>The configuration overrides for the job run.</p>
         pub fn configuration_overrides(
             mut self,
-            inp: crate::model::ConfigurationOverrides,
+            input: crate::model::ConfigurationOverrides,
         ) -> Self {
-            self.inner = self.inner.configuration_overrides(inp);
+            self.inner = self.inner.configuration_overrides(input);
             self
         }
         /// <p>The configuration overrides for the job run.</p>
@@ -1643,7 +1665,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags assigned to job runs.</p>
@@ -1660,7 +1682,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Assigns tags to resources. A tag is a label that you assign to an AWS resource. Each tag consists of a key and an optional value, both of which you define. Tags enable you to categorize your AWS resources by attributes such as purpose, owner, or environment. When you have many resources of the same type, you can quickly identify a specific resource based on the tags you've assigned to it. For example, you can define a set of tags for your Amazon EMR on EKS clusters to help you track each cluster's owner and stack level. We recommend that you devise a consistent set of tag keys for each resource type. You can then search and filter the resources based on the tags that you add.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1705,10 +1727,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1717,8 +1739,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of resources.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of resources.</p>
@@ -1736,7 +1758,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags assigned to resources.</p>
@@ -1753,7 +1775,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1798,10 +1820,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1810,8 +1832,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of resources.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of resources.</p>
@@ -1824,8 +1846,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys of the resources.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys of the resources.</p>
@@ -1838,6 +1860,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

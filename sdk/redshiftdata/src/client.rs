@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Redshift Data API Service
@@ -108,6 +108,7 @@ where
     ///
     /// See [`DescribeTable`](crate::client::fluent_builders::DescribeTable) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeTable::into_paginator).
     pub fn describe_table(&self) -> fluent_builders::DescribeTable<C, M, R> {
         fluent_builders::DescribeTable::new(self.handle.clone())
     }
@@ -122,6 +123,7 @@ where
     ///
     /// See [`GetStatementResult`](crate::client::fluent_builders::GetStatementResult) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetStatementResult::into_paginator).
     pub fn get_statement_result(&self) -> fluent_builders::GetStatementResult<C, M, R> {
         fluent_builders::GetStatementResult::new(self.handle.clone())
     }
@@ -129,6 +131,7 @@ where
     ///
     /// See [`ListDatabases`](crate::client::fluent_builders::ListDatabases) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatabases::into_paginator).
     pub fn list_databases(&self) -> fluent_builders::ListDatabases<C, M, R> {
         fluent_builders::ListDatabases::new(self.handle.clone())
     }
@@ -136,6 +139,7 @@ where
     ///
     /// See [`ListSchemas`](crate::client::fluent_builders::ListSchemas) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSchemas::into_paginator).
     pub fn list_schemas(&self) -> fluent_builders::ListSchemas<C, M, R> {
         fluent_builders::ListSchemas::new(self.handle.clone())
     }
@@ -143,6 +147,7 @@ where
     ///
     /// See [`ListStatements`](crate::client::fluent_builders::ListStatements) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListStatements::into_paginator).
     pub fn list_statements(&self) -> fluent_builders::ListStatements<C, M, R> {
         fluent_builders::ListStatements::new(self.handle.clone())
     }
@@ -150,6 +155,7 @@ where
     ///
     /// See [`ListTables`](crate::client::fluent_builders::ListTables) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTables::into_paginator).
     pub fn list_tables(&self) -> fluent_builders::ListTables<C, M, R> {
         fluent_builders::ListTables::new(self.handle.clone())
     }
@@ -164,22 +170,12 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `BatchExecuteStatement`.
     ///
-    /// <p>Runs one or more SQL statements, which can be data manipulation language (DML) or data definition
-    /// language (DDL).
-    /// Depending on the authorization
-    /// method, use one of the following combinations of request parameters: </p>
+    /// <p>Runs one or more SQL statements, which can be data manipulation language (DML) or data definition language (DDL). Depending on the authorization method, use one of the following combinations of request parameters: </p>
     /// <ul>
-    /// <li>
-    /// <p>Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster identifier that matches the cluster in the secret.
-    /// When connecting to a serverless endpoint, specify the Amazon Resource Name (ARN) of the secret and the database name. </p>
-    /// </li>
-    /// <li>
-    /// <p>Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the database user name.
-    /// Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is required.
-    /// When connecting to a serverless endpoint, specify the database name. </p>
-    /// </li>
+    /// <li> <p>Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster identifier that matches the cluster in the secret. When connecting to a serverless endpoint, specify the Amazon Resource Name (ARN) of the secret and the database name. </p> </li>
+    /// <li> <p>Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is required. When connecting to a serverless endpoint, specify the database name. </p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchExecuteStatement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -224,10 +220,10 @@ pub mod fluent_builders {
                 crate::input::BatchExecuteStatementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -240,8 +236,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_sqls`](Self::set_sqls).
         ///
         /// <p>One or more SQL statements to run. </p>
-        pub fn sqls(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sqls(inp);
+        pub fn sqls(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sqls(input.into());
             self
         }
         /// <p>One or more SQL statements to run. </p>
@@ -253,8 +249,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-        pub fn cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(inp);
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
@@ -266,8 +262,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
-        pub fn secret_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_arn(inp);
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_arn(input.into());
             self
         }
         /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
@@ -276,8 +272,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
-        pub fn db_user(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_user(inp);
+        pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_user(input.into());
             self
         }
         /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
@@ -286,8 +282,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
-        pub fn database(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database(inp);
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database(input.into());
             self
         }
         /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
@@ -296,8 +292,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statements run. </p>
-        pub fn with_event(mut self, inp: bool) -> Self {
-            self.inner = self.inner.with_event(inp);
+        pub fn with_event(mut self, input: bool) -> Self {
+            self.inner = self.inner.with_event(input);
             self
         }
         /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statements run. </p>
@@ -306,8 +302,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query. </p>
-        pub fn statement_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statement_name(inp);
+        pub fn statement_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement_name(input.into());
             self
         }
         /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query. </p>
@@ -322,7 +318,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelStatement`.
     ///
     /// <p>Cancels a running query. To be canceled, a query must be running. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelStatement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -367,10 +363,10 @@ pub mod fluent_builders {
                 crate::input::CancelStatementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -378,14 +374,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the SQL statement to cancel. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API.
-        /// This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatment</code>, and <code>ListStatements</code>. </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        /// <p>The identifier of the SQL statement to cancel. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatment</code>, and <code>ListStatements</code>. </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The identifier of the SQL statement to cancel. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API.
-        /// This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatment</code>, and <code>ListStatements</code>. </p>
+        /// <p>The identifier of the SQL statement to cancel. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatment</code>, and <code>ListStatements</code>. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -393,10 +387,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeStatement`.
     ///
-    /// <p>Describes the details about a specific instance when a query was run by the Amazon Redshift Data API. The information
-    /// includes when the query started, when it finished, the query status, the number of rows returned, and the SQL
-    /// statement. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes the details about a specific instance when a query was run by the Amazon Redshift Data API. The information includes when the query started, when it finished, the query status, the number of rows returned, and the SQL statement. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStatement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -441,10 +433,10 @@ pub mod fluent_builders {
                 crate::input::DescribeStatementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -452,18 +444,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the SQL statement to describe. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API.
-        /// A suffix indicates the number of the SQL statement.
-        /// For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query.
-        /// This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatement</code>, and <code>ListStatements</code>. </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        /// <p>The identifier of the SQL statement to describe. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. A suffix indicates the number of the SQL statement. For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query. This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatement</code>, and <code>ListStatements</code>. </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The identifier of the SQL statement to describe. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API.
-        /// A suffix indicates the number of the SQL statement.
-        /// For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query.
-        /// This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatement</code>, and <code>ListStatements</code>. </p>
+        /// <p>The identifier of the SQL statement to describe. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. A suffix indicates the number of the SQL statement. For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query. This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatement</code>, and <code>ListStatements</code>. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -471,23 +457,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeTable`.
     ///
-    /// <p>Describes the detailed information about a table from metadata in the cluster. The
-    /// information includes its columns.
-    /// A token is returned to page through the column list.
-    /// Depending on the authorization method, use one of the
-    /// following combinations of request parameters: </p>
+    /// <p>Describes the detailed information about a table from metadata in the cluster. The information includes its columns. A token is returned to page through the column list. Depending on the authorization method, use one of the following combinations of request parameters: </p>
     /// <ul>
-    /// <li>
-    /// <p>Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster identifier that matches the cluster in the secret.
-    /// When connecting to a serverless endpoint, specify the Amazon Resource Name (ARN) of the secret and the database name. </p>
-    /// </li>
-    /// <li>
-    /// <p>Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the database user name.
-    /// Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is required.
-    /// When connecting to a serverless endpoint, specify the database name. </p>
-    /// </li>
+    /// <li> <p>Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster identifier that matches the cluster in the secret. When connecting to a serverless endpoint, specify the Amazon Resource Name (ARN) of the secret and the database name. </p> </li>
+    /// <li> <p>Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is required. When connecting to a serverless endpoint, specify the database name. </p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -532,10 +507,10 @@ pub mod fluent_builders {
                 crate::input::DescribeTableInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -543,9 +518,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeTablePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeTablePaginator<C, M, R> {
+            crate::paginator::DescribeTablePaginator::new(self.handle, self.inner)
+        }
         /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-        pub fn cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(inp);
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
@@ -557,8 +538,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
-        pub fn secret_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_arn(inp);
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_arn(input.into());
             self
         }
         /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
@@ -567,8 +548,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
-        pub fn db_user(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_user(inp);
+        pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_user(input.into());
             self
         }
         /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
@@ -576,21 +557,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_db_user(input);
             self
         }
-        /// <p>The name of the database that contains the tables to be described.  
-        /// If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
-        pub fn database(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database(inp);
+        /// <p>The name of the database that contains the tables to be described. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database(input.into());
             self
         }
-        /// <p>The name of the database that contains the tables to be described.  
-        /// If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
+        /// <p>The name of the database that contains the tables to be described. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
         pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_database(input);
             self
         }
         /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
-        pub fn connected_database(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connected_database(inp);
+        pub fn connected_database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connected_database(input.into());
             self
         }
         /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
@@ -602,8 +581,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The schema that contains the table. If no schema is specified, then matching tables for all schemas are returned. </p>
-        pub fn schema(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema(inp);
+        pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema(input.into());
             self
         }
         /// <p>The schema that contains the table. If no schema is specified, then matching tables for all schemas are returned. </p>
@@ -611,21 +590,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_schema(input);
             self
         }
-        /// <p>The table name. If no table is specified, then all tables for all matching schemas are returned.
-        /// If no table and no schema is specified, then all tables for all schemas in the database are returned</p>
-        pub fn table(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table(inp);
+        /// <p>The table name. If no table is specified, then all tables for all matching schemas are returned. If no table and no schema is specified, then all tables for all schemas in the database are returned</p>
+        pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table(input.into());
             self
         }
-        /// <p>The table name. If no table is specified, then all tables for all matching schemas are returned.
-        /// If no table and no schema is specified, then all tables for all schemas in the database are returned</p>
+        /// <p>The table name. If no table is specified, then all tables for all matching schemas are returned. If no table and no schema is specified, then all tables for all schemas in the database are returned</p>
         pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_table(input);
             self
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
@@ -633,14 +610,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of tables to return in the response.
-        /// If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of tables to return in the response.
-        /// If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
+        /// <p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -648,22 +623,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ExecuteStatement`.
     ///
-    /// <p>Runs an SQL statement, which can be data manipulation language (DML) or data definition
-    /// language (DDL). This statement must be a single SQL statement.
-    /// Depending on the authorization
-    /// method, use one of the following combinations of request parameters: </p>
+    /// <p>Runs an SQL statement, which can be data manipulation language (DML) or data definition language (DDL). This statement must be a single SQL statement. Depending on the authorization method, use one of the following combinations of request parameters: </p>
     /// <ul>
-    /// <li>
-    /// <p>Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster identifier that matches the cluster in the secret.
-    /// When connecting to a serverless endpoint, specify the Amazon Resource Name (ARN) of the secret and the database name. </p>
-    /// </li>
-    /// <li>
-    /// <p>Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the database user name.
-    /// Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is required.
-    /// When connecting to a serverless endpoint, specify the database name. </p>
-    /// </li>
+    /// <li> <p>Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster identifier that matches the cluster in the secret. When connecting to a serverless endpoint, specify the Amazon Resource Name (ARN) of the secret and the database name. </p> </li>
+    /// <li> <p>Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is required. When connecting to a serverless endpoint, specify the database name. </p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExecuteStatement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -708,10 +673,10 @@ pub mod fluent_builders {
                 crate::input::ExecuteStatementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -720,8 +685,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The SQL statement text to run. </p>
-        pub fn sql(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sql(inp);
+        pub fn sql(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sql(input.into());
             self
         }
         /// <p>The SQL statement text to run. </p>
@@ -730,8 +695,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-        pub fn cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(inp);
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
@@ -743,8 +708,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
-        pub fn secret_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_arn(inp);
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_arn(input.into());
             self
         }
         /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
@@ -753,8 +718,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
-        pub fn db_user(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_user(inp);
+        pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_user(input.into());
             self
         }
         /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
@@ -763,8 +728,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
-        pub fn database(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database(inp);
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database(input.into());
             self
         }
         /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
@@ -773,8 +738,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statement runs. </p>
-        pub fn with_event(mut self, inp: bool) -> Self {
-            self.inner = self.inner.with_event(inp);
+        pub fn with_event(mut self, input: bool) -> Self {
+            self.inner = self.inner.with_event(input);
             self
         }
         /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statement runs. </p>
@@ -783,8 +748,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query. </p>
-        pub fn statement_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statement_name(inp);
+        pub fn statement_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement_name(input.into());
             self
         }
         /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query. </p>
@@ -800,8 +765,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The parameters for the SQL statement.</p>
-        pub fn parameters(mut self, inp: impl Into<crate::model::SqlParameter>) -> Self {
-            self.inner = self.inner.parameters(inp);
+        pub fn parameters(mut self, input: crate::model::SqlParameter) -> Self {
+            self.inner = self.inner.parameters(input);
             self
         }
         /// <p>The parameters for the SQL statement.</p>
@@ -815,9 +780,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetStatementResult`.
     ///
-    /// <p>Fetches the temporarily cached result of an SQL statement.
-    /// A token is returned to page through the statement results. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Fetches the temporarily cached result of an SQL statement. A token is returned to page through the statement results. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStatementResult<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -862,10 +826,10 @@ pub mod fluent_builders {
                 crate::input::GetStatementResultInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -873,25 +837,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API.
-        /// A suffix indicates then number of the SQL statement.
-        /// For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query.
-        /// This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatment</code>, and <code>ListStatements</code>. </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetStatementResultPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetStatementResultPaginator<C, M, R> {
+            crate::paginator::GetStatementResultPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. A suffix indicates then number of the SQL statement. For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query. This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatment</code>, and <code>ListStatements</code>. </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API.
-        /// A suffix indicates then number of the SQL statement.
-        /// For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query.
-        /// This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatment</code>, and <code>ListStatements</code>. </p>
+        /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. A suffix indicates then number of the SQL statement. For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query. This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatment</code>, and <code>ListStatements</code>. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
@@ -902,22 +866,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDatabases`.
     ///
-    /// <p>List the databases in a cluster.
-    /// A token is returned to page through the database list.
-    /// Depending on the authorization method, use one of the
-    /// following combinations of request parameters: </p>
+    /// <p>List the databases in a cluster. A token is returned to page through the database list. Depending on the authorization method, use one of the following combinations of request parameters: </p>
     /// <ul>
-    /// <li>
-    /// <p>Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster identifier that matches the cluster in the secret.
-    /// When connecting to a serverless endpoint, specify the Amazon Resource Name (ARN) of the secret and the database name. </p>
-    /// </li>
-    /// <li>
-    /// <p>Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the database user name.
-    /// Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is required.
-    /// When connecting to a serverless endpoint, specify the database name. </p>
-    /// </li>
+    /// <li> <p>Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster identifier that matches the cluster in the secret. When connecting to a serverless endpoint, specify the Amazon Resource Name (ARN) of the secret and the database name. </p> </li>
+    /// <li> <p>Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is required. When connecting to a serverless endpoint, specify the database name. </p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatabases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -962,10 +916,10 @@ pub mod fluent_builders {
                 crate::input::ListDatabasesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -973,9 +927,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDatabasesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDatabasesPaginator<C, M, R> {
+            crate::paginator::ListDatabasesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-        pub fn cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(inp);
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
@@ -987,8 +947,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
-        pub fn database(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database(inp);
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database(input.into());
             self
         }
         /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
@@ -997,8 +957,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
-        pub fn secret_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_arn(inp);
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_arn(input.into());
             self
         }
         /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
@@ -1007,8 +967,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
-        pub fn db_user(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_user(inp);
+        pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_user(input.into());
             self
         }
         /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
@@ -1017,8 +977,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
@@ -1026,14 +986,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of databases to return in the response.
-        /// If more databases exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of databases to return in the response. If more databases exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of databases to return in the response.
-        /// If more databases exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
+        /// <p>The maximum number of databases to return in the response. If more databases exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1041,22 +999,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSchemas`.
     ///
-    /// <p>Lists the schemas in a database.
-    /// A token is returned to page through the schema list.
-    /// Depending on the authorization method, use one of the
-    /// following combinations of request parameters: </p>
+    /// <p>Lists the schemas in a database. A token is returned to page through the schema list. Depending on the authorization method, use one of the following combinations of request parameters: </p>
     /// <ul>
-    /// <li>
-    /// <p>Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster identifier that matches the cluster in the secret.
-    /// When connecting to a serverless endpoint, specify the Amazon Resource Name (ARN) of the secret and the database name. </p>
-    /// </li>
-    /// <li>
-    /// <p>Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the database user name.
-    /// Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is required.
-    /// When connecting to a serverless endpoint, specify the database name. </p>
-    /// </li>
+    /// <li> <p>Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster identifier that matches the cluster in the secret. When connecting to a serverless endpoint, specify the Amazon Resource Name (ARN) of the secret and the database name. </p> </li>
+    /// <li> <p>Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is required. When connecting to a serverless endpoint, specify the database name. </p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSchemas<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1101,10 +1049,10 @@ pub mod fluent_builders {
                 crate::input::ListSchemasInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1112,9 +1060,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSchemasPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSchemasPaginator<C, M, R> {
+            crate::paginator::ListSchemasPaginator::new(self.handle, self.inner)
+        }
         /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-        pub fn cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(inp);
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
@@ -1126,8 +1080,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
-        pub fn secret_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_arn(inp);
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_arn(input.into());
             self
         }
         /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
@@ -1136,8 +1090,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
-        pub fn db_user(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_user(inp);
+        pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_user(input.into());
             self
         }
         /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
@@ -1145,21 +1099,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_db_user(input);
             self
         }
-        /// <p>The name of the database that contains the schemas to list.
-        /// If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
-        pub fn database(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database(inp);
+        /// <p>The name of the database that contains the schemas to list. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database(input.into());
             self
         }
-        /// <p>The name of the database that contains the schemas to list.
-        /// If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
+        /// <p>The name of the database that contains the schemas to list. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
         pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_database(input);
             self
         }
         /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
-        pub fn connected_database(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connected_database(inp);
+        pub fn connected_database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connected_database(input.into());
             self
         }
         /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
@@ -1170,16 +1122,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_connected_database(input);
             self
         }
-        /// <p>A pattern to filter results by schema name. Within a schema pattern, "%" means match any
-        /// substring of 0 or more characters and "_" means match any one character. Only schema name
-        /// entries matching the search pattern are returned. </p>
-        pub fn schema_pattern(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_pattern(inp);
+        /// <p>A pattern to filter results by schema name. Within a schema pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only schema name entries matching the search pattern are returned. </p>
+        pub fn schema_pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_pattern(input.into());
             self
         }
-        /// <p>A pattern to filter results by schema name. Within a schema pattern, "%" means match any
-        /// substring of 0 or more characters and "_" means match any one character. Only schema name
-        /// entries matching the search pattern are returned. </p>
+        /// <p>A pattern to filter results by schema name. Within a schema pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only schema name entries matching the search pattern are returned. </p>
         pub fn set_schema_pattern(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1188,8 +1136,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
@@ -1197,14 +1145,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of schemas to return in the response.
-        /// If more schemas exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of schemas to return in the response. If more schemas exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of schemas to return in the response.
-        /// If more schemas exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
+        /// <p>The maximum number of schemas to return in the response. If more schemas exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1212,9 +1158,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListStatements`.
     ///
-    /// <p>List of SQL statements. By default, only finished statements are shown.
-    /// A token is returned to page through the statement list. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>List of SQL statements. By default, only finished statements are shown. A token is returned to page through the statement list. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStatements<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1259,10 +1204,10 @@ pub mod fluent_builders {
                 crate::input::ListStatementsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1270,9 +1215,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListStatementsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListStatementsPaginator<C, M, R> {
+            crate::paginator::ListStatementsPaginator::new(self.handle, self.inner)
+        }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
@@ -1280,30 +1231,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of SQL statements to return in the response.
-        /// If more SQL statements exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of SQL statements to return in the response. If more SQL statements exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of SQL statements to return in the response.
-        /// If more SQL statements exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
+        /// <p>The maximum number of SQL statements to return in the response. If more SQL statements exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The name of the SQL statement specified as input to <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> to identify the query.
-        /// You can list multiple statements by providing a prefix that matches the beginning of the statement name.
-        /// For example, to list myStatement1, myStatement2, myStatement3, and so on, then provide the a value of <code>myStatement</code>.  
-        /// Data API does a case-sensitive match of SQL statement names to the prefix value you provide. </p>
-        pub fn statement_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statement_name(inp);
+        /// <p>The name of the SQL statement specified as input to <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> to identify the query. You can list multiple statements by providing a prefix that matches the beginning of the statement name. For example, to list myStatement1, myStatement2, myStatement3, and so on, then provide the a value of <code>myStatement</code>. Data API does a case-sensitive match of SQL statement names to the prefix value you provide. </p>
+        pub fn statement_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement_name(input.into());
             self
         }
-        /// <p>The name of the SQL statement specified as input to <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> to identify the query.
-        /// You can list multiple statements by providing a prefix that matches the beginning of the statement name.
-        /// For example, to list myStatement1, myStatement2, myStatement3, and so on, then provide the a value of <code>myStatement</code>.  
-        /// Data API does a case-sensitive match of SQL statement names to the prefix value you provide. </p>
+        /// <p>The name of the SQL statement specified as input to <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> to identify the query. You can list multiple statements by providing a prefix that matches the beginning of the statement name. For example, to list myStatement1, myStatement2, myStatement3, and so on, then provide the a value of <code>myStatement</code>. Data API does a case-sensitive match of SQL statement names to the prefix value you provide. </p>
         pub fn set_statement_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1313,55 +1256,27 @@ pub mod fluent_builders {
         }
         /// <p>The status of the SQL statement to list. Status values are defined as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>ABORTED - The query run was stopped by the user. </p>
-        /// </li>
-        /// <li>
-        /// <p>ALL -  A status value that includes all query statuses. This value can be used to filter results. </p>
-        /// </li>
-        /// <li>
-        /// <p>FAILED - The query run failed. </p>
-        /// </li>
-        /// <li>
-        /// <p>FINISHED - The query has finished running. </p>
-        /// </li>
-        /// <li>
-        /// <p>PICKED - The query has been chosen to be run. </p>
-        /// </li>
-        /// <li>
-        /// <p>STARTED - The query run has started. </p>
-        /// </li>
-        /// <li>
-        /// <p>SUBMITTED - The query was submitted, but not yet processed. </p>
-        /// </li>
+        /// <li> <p>ABORTED - The query run was stopped by the user. </p> </li>
+        /// <li> <p>ALL - A status value that includes all query statuses. This value can be used to filter results. </p> </li>
+        /// <li> <p>FAILED - The query run failed. </p> </li>
+        /// <li> <p>FINISHED - The query has finished running. </p> </li>
+        /// <li> <p>PICKED - The query has been chosen to be run. </p> </li>
+        /// <li> <p>STARTED - The query run has started. </p> </li>
+        /// <li> <p>SUBMITTED - The query was submitted, but not yet processed. </p> </li>
         /// </ul>
-        pub fn status(mut self, inp: crate::model::StatusString) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::StatusString) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The status of the SQL statement to list. Status values are defined as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>ABORTED - The query run was stopped by the user. </p>
-        /// </li>
-        /// <li>
-        /// <p>ALL -  A status value that includes all query statuses. This value can be used to filter results. </p>
-        /// </li>
-        /// <li>
-        /// <p>FAILED - The query run failed. </p>
-        /// </li>
-        /// <li>
-        /// <p>FINISHED - The query has finished running. </p>
-        /// </li>
-        /// <li>
-        /// <p>PICKED - The query has been chosen to be run. </p>
-        /// </li>
-        /// <li>
-        /// <p>STARTED - The query run has started. </p>
-        /// </li>
-        /// <li>
-        /// <p>SUBMITTED - The query was submitted, but not yet processed. </p>
-        /// </li>
+        /// <li> <p>ABORTED - The query run was stopped by the user. </p> </li>
+        /// <li> <p>ALL - A status value that includes all query statuses. This value can be used to filter results. </p> </li>
+        /// <li> <p>FAILED - The query run failed. </p> </li>
+        /// <li> <p>FINISHED - The query has finished running. </p> </li>
+        /// <li> <p>PICKED - The query has been chosen to be run. </p> </li>
+        /// <li> <p>STARTED - The query run has started. </p> </li>
+        /// <li> <p>SUBMITTED - The query was submitted, but not yet processed. </p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -1370,14 +1285,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_status(input);
             self
         }
-        /// <p>A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned.
-        /// If false, only statements run by the caller's IAM role in the current IAM session are returned.  The default is true. </p>
-        pub fn role_level(mut self, inp: bool) -> Self {
-            self.inner = self.inner.role_level(inp);
+        /// <p>A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true. </p>
+        pub fn role_level(mut self, input: bool) -> Self {
+            self.inner = self.inner.role_level(input);
             self
         }
-        /// <p>A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned.
-        /// If false, only statements run by the caller's IAM role in the current IAM session are returned.  The default is true. </p>
+        /// <p>A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true. </p>
         pub fn set_role_level(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_role_level(input);
             self
@@ -1385,23 +1298,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTables`.
     ///
-    /// <p>List the tables in a database. If neither <code>SchemaPattern</code> nor <code>TablePattern</code> are specified, then
-    /// all tables in the database are returned.
-    /// A token is returned to page through the table list.
-    /// Depending on the authorization method, use one of the
-    /// following combinations of request parameters: </p>
+    /// <p>List the tables in a database. If neither <code>SchemaPattern</code> nor <code>TablePattern</code> are specified, then all tables in the database are returned. A token is returned to page through the table list. Depending on the authorization method, use one of the following combinations of request parameters: </p>
     /// <ul>
-    /// <li>
-    /// <p>Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster identifier that matches the cluster in the secret.
-    /// When connecting to a serverless endpoint, specify the Amazon Resource Name (ARN) of the secret and the database name. </p>
-    /// </li>
-    /// <li>
-    /// <p>Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the database user name.
-    /// Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is required.
-    /// When connecting to a serverless endpoint, specify the database name. </p>
-    /// </li>
+    /// <li> <p>Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the database name, and the cluster identifier that matches the cluster in the secret. When connecting to a serverless endpoint, specify the Amazon Resource Name (ARN) of the secret and the database name. </p> </li>
+    /// <li> <p>Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is required. When connecting to a serverless endpoint, specify the database name. </p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTables<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1446,10 +1348,10 @@ pub mod fluent_builders {
                 crate::input::ListTablesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1457,9 +1359,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTablesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTablesPaginator<C, M, R> {
+            crate::paginator::ListTablesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-        pub fn cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(inp);
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
@@ -1471,8 +1379,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
-        pub fn secret_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_arn(inp);
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_arn(input.into());
             self
         }
         /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
@@ -1481,8 +1389,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
-        pub fn db_user(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_user(inp);
+        pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_user(input.into());
             self
         }
         /// <p>The database user name. This parameter is required when connecting to a cluster and authenticating using temporary credentials. </p>
@@ -1490,21 +1398,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_db_user(input);
             self
         }
-        /// <p>The name of the database that contains the tables to list.
-        /// If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
-        pub fn database(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database(inp);
+        /// <p>The name of the database that contains the tables to list. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database(input.into());
             self
         }
-        /// <p>The name of the database that contains the tables to list.
-        /// If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
+        /// <p>The name of the database that contains the tables to list. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
         pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_database(input);
             self
         }
         /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
-        pub fn connected_database(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connected_database(inp);
+        pub fn connected_database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connected_database(input.into());
             self
         }
         /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
@@ -1515,20 +1421,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_connected_database(input);
             self
         }
-        /// <p>A pattern to filter results by schema name. Within a schema pattern, "%" means match any
-        /// substring of 0 or more characters and "_" means match any one character. Only schema name
-        /// entries matching the search pattern are returned. If <code>SchemaPattern</code> is not specified, then all tables that match
-        /// <code>TablePattern</code> are returned.
-        /// If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned. </p>
-        pub fn schema_pattern(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_pattern(inp);
+        /// <p>A pattern to filter results by schema name. Within a schema pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only schema name entries matching the search pattern are returned. If <code>SchemaPattern</code> is not specified, then all tables that match <code>TablePattern</code> are returned. If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned. </p>
+        pub fn schema_pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_pattern(input.into());
             self
         }
-        /// <p>A pattern to filter results by schema name. Within a schema pattern, "%" means match any
-        /// substring of 0 or more characters and "_" means match any one character. Only schema name
-        /// entries matching the search pattern are returned. If <code>SchemaPattern</code> is not specified, then all tables that match
-        /// <code>TablePattern</code> are returned.
-        /// If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned. </p>
+        /// <p>A pattern to filter results by schema name. Within a schema pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only schema name entries matching the search pattern are returned. If <code>SchemaPattern</code> is not specified, then all tables that match <code>TablePattern</code> are returned. If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned. </p>
         pub fn set_schema_pattern(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1536,20 +1434,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_schema_pattern(input);
             self
         }
-        /// <p>A pattern to filter results by table name. Within a table pattern, "%" means match any
-        /// substring of 0 or more characters and "_" means match any one character. Only table name
-        /// entries matching the search pattern are returned. If <code>TablePattern</code> is not specified, then all tables that match
-        /// <code>SchemaPattern</code>are returned.  
-        /// If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned. </p>
-        pub fn table_pattern(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_pattern(inp);
+        /// <p>A pattern to filter results by table name. Within a table pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only table name entries matching the search pattern are returned. If <code>TablePattern</code> is not specified, then all tables that match <code>SchemaPattern</code>are returned. If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned. </p>
+        pub fn table_pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_pattern(input.into());
             self
         }
-        /// <p>A pattern to filter results by table name. Within a table pattern, "%" means match any
-        /// substring of 0 or more characters and "_" means match any one character. Only table name
-        /// entries matching the search pattern are returned. If <code>TablePattern</code> is not specified, then all tables that match
-        /// <code>SchemaPattern</code>are returned.  
-        /// If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned. </p>
+        /// <p>A pattern to filter results by table name. Within a table pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only table name entries matching the search pattern are returned. If <code>TablePattern</code> is not specified, then all tables that match <code>SchemaPattern</code>are returned. If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned. </p>
         pub fn set_table_pattern(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1558,8 +1448,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
@@ -1567,20 +1457,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of tables to return in the response.
-        /// If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of tables to return in the response.
-        /// If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
+        /// <p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

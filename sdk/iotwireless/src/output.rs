@@ -769,10 +769,10 @@ pub mod list_wireless_gateway_task_definitions_output {
         /// <p>The list of task definitions.</p>
         pub fn task_definitions(
             mut self,
-            input: impl Into<crate::model::UpdateWirelessGatewayTaskEntry>,
+            input: crate::model::UpdateWirelessGatewayTaskEntry,
         ) -> Self {
             let mut v = self.task_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.task_definitions = Some(v);
             self
         }
@@ -858,10 +858,10 @@ pub mod list_wireless_gateways_output {
         /// <p>The ID of the wireless gateway.</p>
         pub fn wireless_gateway_list(
             mut self,
-            input: impl Into<crate::model::WirelessGatewayStatistics>,
+            input: crate::model::WirelessGatewayStatistics,
         ) -> Self {
             let mut v = self.wireless_gateway_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.wireless_gateway_list = Some(v);
             self
         }
@@ -947,10 +947,10 @@ pub mod list_wireless_devices_output {
         /// <p>The ID of the wireless device.</p>
         pub fn wireless_device_list(
             mut self,
-            input: impl Into<crate::model::WirelessDeviceStatistics>,
+            input: crate::model::WirelessDeviceStatistics,
         ) -> Self {
             let mut v = self.wireless_device_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.wireless_device_list = Some(v);
             self
         }
@@ -1012,9 +1012,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1092,12 +1092,9 @@ pub mod list_service_profiles_output {
         /// To override the contents of this collection use [`set_service_profile_list`](Self::set_service_profile_list).
         ///
         /// <p>The list of service profiles.</p>
-        pub fn service_profile_list(
-            mut self,
-            input: impl Into<crate::model::ServiceProfile>,
-        ) -> Self {
+        pub fn service_profile_list(mut self, input: crate::model::ServiceProfile) -> Self {
             let mut v = self.service_profile_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_profile_list = Some(v);
             self
         }
@@ -1181,12 +1178,9 @@ pub mod list_partner_accounts_output {
         /// To override the contents of this collection use [`set_sidewalk`](Self::set_sidewalk).
         ///
         /// <p>The Sidewalk account credentials.</p>
-        pub fn sidewalk(
-            mut self,
-            input: impl Into<crate::model::SidewalkAccountInfoWithFingerprint>,
-        ) -> Self {
+        pub fn sidewalk(mut self, input: crate::model::SidewalkAccountInfoWithFingerprint) -> Self {
             let mut v = self.sidewalk.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sidewalk = Some(v);
             self
         }
@@ -1274,10 +1268,10 @@ pub mod list_multicast_groups_by_fuota_task_output {
         /// <p>List of multicast groups associated with a FUOTA task.</p>
         pub fn multicast_group_list(
             mut self,
-            input: impl Into<crate::model::MulticastGroupByFuotaTask>,
+            input: crate::model::MulticastGroupByFuotaTask,
         ) -> Self {
             let mut v = self.multicast_group_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.multicast_group_list = Some(v);
             self
         }
@@ -1358,12 +1352,9 @@ pub mod list_multicast_groups_output {
         /// To override the contents of this collection use [`set_multicast_group_list`](Self::set_multicast_group_list).
         ///
         /// <p>List of multicast groups.</p>
-        pub fn multicast_group_list(
-            mut self,
-            input: impl Into<crate::model::MulticastGroup>,
-        ) -> Self {
+        pub fn multicast_group_list(mut self, input: crate::model::MulticastGroup) -> Self {
             let mut v = self.multicast_group_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.multicast_group_list = Some(v);
             self
         }
@@ -1443,9 +1434,9 @@ pub mod list_fuota_tasks_output {
         /// To override the contents of this collection use [`set_fuota_task_list`](Self::set_fuota_task_list).
         ///
         /// <p>Lists the FUOTA tasks registered to your AWS account.</p>
-        pub fn fuota_task_list(mut self, input: impl Into<crate::model::FuotaTask>) -> Self {
+        pub fn fuota_task_list(mut self, input: crate::model::FuotaTask) -> Self {
             let mut v = self.fuota_task_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fuota_task_list = Some(v);
             self
         }
@@ -1526,12 +1517,9 @@ pub mod list_device_profiles_output {
         /// To override the contents of this collection use [`set_device_profile_list`](Self::set_device_profile_list).
         ///
         /// <p>The list of device profiles.</p>
-        pub fn device_profile_list(
-            mut self,
-            input: impl Into<crate::model::DeviceProfile>,
-        ) -> Self {
+        pub fn device_profile_list(mut self, input: crate::model::DeviceProfile) -> Self {
             let mut v = self.device_profile_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.device_profile_list = Some(v);
             self
         }
@@ -1611,9 +1599,9 @@ pub mod list_destinations_output {
         /// To override the contents of this collection use [`set_destination_list`](Self::set_destination_list).
         ///
         /// <p>The list of destinations.</p>
-        pub fn destination_list(mut self, input: impl Into<crate::model::Destinations>) -> Self {
+        pub fn destination_list(mut self, input: crate::model::Destinations) -> Self {
             let mut v = self.destination_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destination_list = Some(v);
             self
         }
@@ -3535,10 +3523,10 @@ pub mod get_log_levels_by_resource_types_output {
         /// <p>The list of wireless gateway log options.</p>
         pub fn wireless_gateway_log_options(
             mut self,
-            input: impl Into<crate::model::WirelessGatewayLogOption>,
+            input: crate::model::WirelessGatewayLogOption,
         ) -> Self {
             let mut v = self.wireless_gateway_log_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.wireless_gateway_log_options = Some(v);
             self
         }
@@ -3557,10 +3545,10 @@ pub mod get_log_levels_by_resource_types_output {
         /// <p>The list of wireless device log options.</p>
         pub fn wireless_device_log_options(
             mut self,
-            input: impl Into<crate::model::WirelessDeviceLogOption>,
+            input: crate::model::WirelessDeviceLogOption,
         ) -> Self {
             let mut v = self.wireless_device_log_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.wireless_device_log_options = Some(v);
             self
         }

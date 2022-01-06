@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon MemoryDB
@@ -342,7 +342,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchUpdateCluster`.
     ///
     /// <p>Apply the service update to a list of clusters supplied. For more information on service updates and applying them, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/managing-updates.html#applying-updates">Applying the service updates</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchUpdateCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -387,10 +387,10 @@ pub mod fluent_builders {
                 crate::input::BatchUpdateClusterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -403,8 +403,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_cluster_names`](Self::set_cluster_names).
         ///
         /// <p>The cluster names to apply the updates.</p>
-        pub fn cluster_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_names(inp);
+        pub fn cluster_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_names(input.into());
             self
         }
         /// <p>The cluster names to apply the updates.</p>
@@ -416,8 +416,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID of the service update</p>
-        pub fn service_update(mut self, inp: crate::model::ServiceUpdateRequest) -> Self {
-            self.inner = self.inner.service_update(inp);
+        pub fn service_update(mut self, input: crate::model::ServiceUpdateRequest) -> Self {
+            self.inner = self.inner.service_update(input);
             self
         }
         /// <p>The unique ID of the service update</p>
@@ -432,7 +432,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CopySnapshot`.
     ///
     /// <p>Makes a copy of an existing snapshot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CopySnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -477,10 +477,10 @@ pub mod fluent_builders {
                 crate::input::CopySnapshotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -489,8 +489,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of an existing snapshot from which to make a copy.</p>
-        pub fn source_snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_snapshot_name(inp);
+        pub fn source_snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_snapshot_name(input.into());
             self
         }
         /// <p>The name of an existing snapshot from which to make a copy.</p>
@@ -502,8 +502,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A name for the snapshot copy. MemoryDB does not permit overwriting a snapshot, therefore this name must be unique within its context - MemoryDB or an Amazon S3 bucket if exporting.</p>
-        pub fn target_snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_snapshot_name(inp);
+        pub fn target_snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_snapshot_name(input.into());
             self
         }
         /// <p>A name for the snapshot copy. MemoryDB does not permit overwriting a snapshot, therefore this name must be unique within its context - MemoryDB or an Amazon S3 bucket if exporting.</p>
@@ -514,24 +514,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target_snapshot_name(input);
             self
         }
-        /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access.
-        ///
-        /// When using this parameter to export a snapshot, be sure MemoryDB has the needed permissions to this S3 bucket. For more information, see
-        ///
-        /// <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>.
-        ///
-        /// </p>
-        pub fn target_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_bucket(inp);
+        /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access. When using this parameter to export a snapshot, be sure MemoryDB has the needed permissions to this S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>. </p>
+        pub fn target_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_bucket(input.into());
             self
         }
-        /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access.
-        ///
-        /// When using this parameter to export a snapshot, be sure MemoryDB has the needed permissions to this S3 bucket. For more information, see
-        ///
-        /// <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>.
-        ///
-        /// </p>
+        /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access. When using this parameter to export a snapshot, be sure MemoryDB has the needed permissions to this S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>. </p>
         pub fn set_target_bucket(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -540,8 +528,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the KMS key used to encrypt the target snapshot.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The ID of the KMS key used to encrypt the target snapshot.</p>
@@ -554,8 +542,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
@@ -570,7 +558,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateACL`.
     ///
     /// <p>Creates an Access Control List. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/clusters.acls.html">Authenticating users with Access Contol Lists (ACLs)</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateACL<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -615,10 +603,10 @@ pub mod fluent_builders {
                 crate::input::CreateAclInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -627,8 +615,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Access Control List.</p>
-        pub fn acl_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.acl_name(inp);
+        pub fn acl_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.acl_name(input.into());
             self
         }
         /// <p>The name of the Access Control List.</p>
@@ -641,8 +629,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_user_names`](Self::set_user_names).
         ///
         /// <p>The list of users that belong to the Access Control List.</p>
-        pub fn user_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_names(inp);
+        pub fn user_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_names(input.into());
             self
         }
         /// <p>The list of users that belong to the Access Control List.</p>
@@ -658,8 +646,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
@@ -674,7 +662,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateCluster`.
     ///
     /// <p>Creates a cluster. All nodes in the cluster run the same protocol-compliant engine software.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -719,10 +707,10 @@ pub mod fluent_builders {
                 crate::input::CreateClusterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -731,8 +719,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster. This value must be unique as it also serves as the cluster identifier.</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(input.into());
             self
         }
         /// <p>The name of the cluster. This value must be unique as it also serves as the cluster identifier.</p>
@@ -741,8 +729,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The compute and memory capacity of the nodes in the cluster.</p>
-        pub fn node_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_type(inp);
+        pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_type(input.into());
             self
         }
         /// <p>The compute and memory capacity of the nodes in the cluster.</p>
@@ -751,8 +739,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the parameter group associated with the cluster.</p>
-        pub fn parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_name(inp);
+        pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_name(input.into());
             self
         }
         /// <p>The name of the parameter group associated with the cluster.</p>
@@ -764,8 +752,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of the cluster.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description of the cluster.</p>
@@ -774,8 +762,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of shards the cluster will contain. The default value is 1. </p>
-        pub fn num_shards(mut self, inp: i32) -> Self {
-            self.inner = self.inner.num_shards(inp);
+        pub fn num_shards(mut self, input: i32) -> Self {
+            self.inner = self.inner.num_shards(input);
             self
         }
         /// <p>The number of shards the cluster will contain. The default value is 1. </p>
@@ -784,8 +772,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of replicas to apply to each shard. The default value is 1. The maximum is 5. </p>
-        pub fn num_replicas_per_shard(mut self, inp: i32) -> Self {
-            self.inner = self.inner.num_replicas_per_shard(inp);
+        pub fn num_replicas_per_shard(mut self, input: i32) -> Self {
+            self.inner = self.inner.num_replicas_per_shard(input);
             self
         }
         /// <p>The number of replicas to apply to each shard. The default value is 1. The maximum is 5. </p>
@@ -794,8 +782,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the subnet group to be used for the cluster.</p>
-        pub fn subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_group_name(inp);
+        pub fn subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_group_name(input.into());
             self
         }
         /// <p>The name of the subnet group to be used for the cluster.</p>
@@ -811,8 +799,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
         /// <p>A list of security group names to associate with this cluster.</p>
-        pub fn security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_group_ids(inp);
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_group_ids(input.into());
             self
         }
         /// <p>A list of security group names to associate with this cluster.</p>
@@ -824,8 +812,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format <code>ddd:hh24:mi-ddd:hh24:mi</code> (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
-        pub fn maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.maintenance_window(inp);
+        pub fn maintenance_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.maintenance_window(input.into());
             self
         }
         /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format <code>ddd:hh24:mi-ddd:hh24:mi</code> (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
@@ -837,8 +825,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The port number on which each of the nodes accepts connections.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.port(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
         /// <p>The port number on which each of the nodes accepts connections.</p>
@@ -847,8 +835,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications are sent.</p>
-        pub fn sns_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_arn(inp);
+        pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications are sent.</p>
@@ -860,8 +848,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A flag to enable in-transit encryption on the cluster.</p>
-        pub fn tls_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.tls_enabled(inp);
+        pub fn tls_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.tls_enabled(input);
             self
         }
         /// <p>A flag to enable in-transit encryption on the cluster.</p>
@@ -870,8 +858,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the KMS key used to encrypt the cluster.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The ID of the KMS key used to encrypt the cluster.</p>
@@ -884,8 +872,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_snapshot_arns`](Self::set_snapshot_arns).
         ///
         /// <p>A list of Amazon Resource Names (ARN) that uniquely identify the RDB snapshot files stored in Amazon S3. The snapshot files are used to populate the new cluster. The Amazon S3 object name in the ARN cannot contain any commas.</p>
-        pub fn snapshot_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_arns(inp);
+        pub fn snapshot_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_arns(input.into());
             self
         }
         /// <p>A list of Amazon Resource Names (ARN) that uniquely identify the RDB snapshot files stored in Amazon S3. The snapshot files are used to populate the new cluster. The Amazon S3 object name in the ARN cannot contain any commas.</p>
@@ -897,8 +885,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of a snapshot from which to restore data into the new cluster. The snapshot status changes to restoring while the new cluster is being created.</p>
-        pub fn snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_name(inp);
+        pub fn snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_name(input.into());
             self
         }
         /// <p>The name of a snapshot from which to restore data into the new cluster. The snapshot status changes to restoring while the new cluster is being created.</p>
@@ -910,8 +898,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of days for which MemoryDB retains automatic snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
-        pub fn snapshot_retention_limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.snapshot_retention_limit(inp);
+        pub fn snapshot_retention_limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.snapshot_retention_limit(input);
             self
         }
         /// <p>The number of days for which MemoryDB retains automatic snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
@@ -924,8 +912,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=myKey, Value=myKeyValue. You can include multiple tags as shown following: Key=myKey, Value=myKeyValue Key=mySecondKey, Value=mySecondKeyValue.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=myKey, Value=myKeyValue. You can include multiple tags as shown following: Key=myKey, Value=myKeyValue Key=mySecondKey, Value=mySecondKeyValue.</p>
@@ -937,19 +925,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p>
-        ///
-        /// <p>    Example: 05:00-09:00</p>
-        ///
-        /// <p>    If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
-        pub fn snapshot_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_window(inp);
+        /// <p> Example: 05:00-09:00</p>
+        /// <p> If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
+        pub fn snapshot_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_window(input.into());
             self
         }
         /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p>
-        ///
-        /// <p>    Example: 05:00-09:00</p>
-        ///
-        /// <p>    If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
+        /// <p> Example: 05:00-09:00</p>
+        /// <p> If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
         pub fn set_snapshot_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -958,8 +942,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Access Control List to associate with the cluster.</p>
-        pub fn acl_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.acl_name(inp);
+        pub fn acl_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.acl_name(input.into());
             self
         }
         /// <p>The name of the Access Control List to associate with the cluster.</p>
@@ -968,8 +952,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version number of the Redis engine to be used for the cluster.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>The version number of the Redis engine to be used for the cluster.</p>
@@ -981,8 +965,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>When set to true, the cluster will automatically receive minor engine version upgrades after launch.</p>
-        pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(inp);
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(input);
             self
         }
         /// <p>When set to true, the cluster will automatically receive minor engine version upgrades after launch.</p>
@@ -993,11 +977,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateParameterGroup`.
     ///
-    /// <p>Creates a new MemoryDB parameter group. A parameter group is a collection of parameters and their values that are applied to all of the nodes in any cluster. For
-    /// more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/parametergroups.html">Configuring engine parameters using parameter groups</a>.
-    ///
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new MemoryDB parameter group. A parameter group is a collection of parameters and their values that are applied to all of the nodes in any cluster. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/parametergroups.html">Configuring engine parameters using parameter groups</a>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1042,10 +1023,10 @@ pub mod fluent_builders {
                 crate::input::CreateParameterGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1054,8 +1035,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the parameter group.</p>
-        pub fn parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_name(inp);
+        pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_name(input.into());
             self
         }
         /// <p>The name of the parameter group.</p>
@@ -1067,8 +1048,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the parameter group family that the parameter group can be used with.</p>
-        pub fn family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.family(inp);
+        pub fn family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.family(input.into());
             self
         }
         /// <p>The name of the parameter group family that the parameter group can be used with.</p>
@@ -1077,8 +1058,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of the parameter group.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description of the parameter group.</p>
@@ -1091,8 +1072,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
@@ -1107,7 +1088,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSnapshot`.
     ///
     /// <p>Creates a copy of an entire cluster at a specific moment in time.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1152,10 +1133,10 @@ pub mod fluent_builders {
                 crate::input::CreateSnapshotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1164,8 +1145,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The snapshot is created from this cluster.</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(input.into());
             self
         }
         /// <p>The snapshot is created from this cluster.</p>
@@ -1174,8 +1155,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A name for the snapshot being created.</p>
-        pub fn snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_name(inp);
+        pub fn snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_name(input.into());
             self
         }
         /// <p>A name for the snapshot being created.</p>
@@ -1187,8 +1168,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
@@ -1201,8 +1182,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
@@ -1216,11 +1197,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSubnetGroup`.
     ///
-    /// <p>Creates a subnet group. A subnet group is a collection of subnets (typically private) that you can designate for your clusters running in an Amazon Virtual Private Cloud (VPC) environment.
-    ///
-    /// When you create a cluster in an Amazon VPC, you must specify a subnet group. MemoryDB uses that subnet group to choose a subnet and IP addresses within that subnet to associate with your nodes.
-    /// For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/subnetgroups.html">Subnets and subnet groups</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a subnet group. A subnet group is a collection of subnets (typically private) that you can designate for your clusters running in an Amazon Virtual Private Cloud (VPC) environment. When you create a cluster in an Amazon VPC, you must specify a subnet group. MemoryDB uses that subnet group to choose a subnet and IP addresses within that subnet to associate with your nodes. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/subnetgroups.html">Subnets and subnet groups</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSubnetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1265,10 +1243,10 @@ pub mod fluent_builders {
                 crate::input::CreateSubnetGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1277,8 +1255,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the subnet group.</p>
-        pub fn subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_group_name(inp);
+        pub fn subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_group_name(input.into());
             self
         }
         /// <p>The name of the subnet group.</p>
@@ -1290,8 +1268,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the subnet group.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the subnet group.</p>
@@ -1304,8 +1282,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
         /// <p>A list of VPC subnet IDs for the subnet group.</p>
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_ids(inp);
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_ids(input.into());
             self
         }
         /// <p>A list of VPC subnet IDs for the subnet group.</p>
@@ -1321,8 +1299,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
@@ -1337,7 +1315,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateUser`.
     ///
     /// <p>Creates a MemoryDB user. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/clusters.acls.html">Authenticating users with Access Contol Lists (ACLs)</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1382,10 +1360,10 @@ pub mod fluent_builders {
                 crate::input::CreateUserInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1394,8 +1372,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the user. This value must be unique as it also serves as the user identifier.</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user. This value must be unique as it also serves as the user identifier.</p>
@@ -1404,8 +1382,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
-        pub fn authentication_mode(mut self, inp: crate::model::AuthenticationMode) -> Self {
-            self.inner = self.inner.authentication_mode(inp);
+        pub fn authentication_mode(mut self, input: crate::model::AuthenticationMode) -> Self {
+            self.inner = self.inner.authentication_mode(input);
             self
         }
         /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
@@ -1417,8 +1395,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Access permissions string used for this user.</p>
-        pub fn access_string(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_string(inp);
+        pub fn access_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_string(input.into());
             self
         }
         /// <p>Access permissions string used for this user.</p>
@@ -1434,8 +1412,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
@@ -1450,7 +1428,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteACL`.
     ///
     /// <p>Deletes an Access Control List. The ACL must first be disassociated from the cluster before it can be deleted. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/clusters.acls.html">Authenticating users with Access Contol Lists (ACLs)</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteACL<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1495,10 +1473,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAclInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1507,8 +1485,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Access Control List to delete</p>
-        pub fn acl_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.acl_name(inp);
+        pub fn acl_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.acl_name(input.into());
             self
         }
         /// <p>The name of the Access Control List to delete</p>
@@ -1520,7 +1498,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCluster`.
     ///
     /// <p>Deletes a cluster. It also deletes all associated nodes and node endpoints</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1565,10 +1543,10 @@ pub mod fluent_builders {
                 crate::input::DeleteClusterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1577,8 +1555,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster to be deleted</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(input.into());
             self
         }
         /// <p>The name of the cluster to be deleted</p>
@@ -1587,8 +1565,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. MemoryDB creates the snapshot, and then deletes the cluster immediately afterward.</p>
-        pub fn final_snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.final_snapshot_name(inp);
+        pub fn final_snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.final_snapshot_name(input.into());
             self
         }
         /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. MemoryDB creates the snapshot, and then deletes the cluster immediately afterward.</p>
@@ -1602,9 +1580,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteParameterGroup`.
     ///
-    /// <p>Deletes the specified parameter group. You cannot delete a parameter group if it is associated with any clusters.
-    /// You cannot delete the default parameter groups in your account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the specified parameter group. You cannot delete a parameter group if it is associated with any clusters. You cannot delete the default parameter groups in your account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1649,10 +1626,10 @@ pub mod fluent_builders {
                 crate::input::DeleteParameterGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1661,8 +1638,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the parameter group to delete.</p>
-        pub fn parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_name(inp);
+        pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_name(input.into());
             self
         }
         /// <p>The name of the parameter group to delete.</p>
@@ -1677,7 +1654,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSnapshot`.
     ///
     /// <p>Deletes an existing snapshot. When you receive a successful response from this operation, MemoryDB immediately begins deleting the snapshot; you cannot cancel or revert this operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1722,10 +1699,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSnapshotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1734,8 +1711,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the snapshot to delete</p>
-        pub fn snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_name(inp);
+        pub fn snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_name(input.into());
             self
         }
         /// <p>The name of the snapshot to delete</p>
@@ -1750,7 +1727,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSubnetGroup`.
     ///
     /// <p>Deletes a subnet group. You cannot delete a default subnet group or one that is associated with any clusters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSubnetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1795,10 +1772,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSubnetGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1807,8 +1784,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the subnet group to delete</p>
-        pub fn subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_group_name(inp);
+        pub fn subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_group_name(input.into());
             self
         }
         /// <p>The name of the subnet group to delete</p>
@@ -1823,7 +1800,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUser`.
     ///
     /// <p>Deletes a user. The user will be removed from all ACLs and in turn removed from all clusters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1868,10 +1845,10 @@ pub mod fluent_builders {
                 crate::input::DeleteUserInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1880,8 +1857,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the user to delete</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user to delete</p>
@@ -1893,7 +1870,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeACLs`.
     ///
     /// <p>Returns a list of ACLs</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeACLs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1938,10 +1915,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAcLsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1950,8 +1927,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ACL</p>
-        pub fn acl_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.acl_name(inp);
+        pub fn acl_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.acl_name(input.into());
             self
         }
         /// <p>The name of the ACL</p>
@@ -1960,8 +1937,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -1970,8 +1947,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
@@ -1983,7 +1960,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeClusters`.
     ///
     /// <p>Returns information about all provisioned clusters if no cluster identifier is specified, or about a specific cluster if a cluster name is supplied.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeClusters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2028,10 +2005,10 @@ pub mod fluent_builders {
                 crate::input::DescribeClustersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2040,8 +2017,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(input.into());
             self
         }
         /// <p>The name of the cluster</p>
@@ -2050,8 +2027,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -2060,8 +2037,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
@@ -2070,8 +2047,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional flag that can be included in the request to retrieve information about the individual shard(s).</p>
-        pub fn show_shard_details(mut self, inp: bool) -> Self {
-            self.inner = self.inner.show_shard_details(inp);
+        pub fn show_shard_details(mut self, input: bool) -> Self {
+            self.inner = self.inner.show_shard_details(input);
             self
         }
         /// <p>An optional flag that can be included in the request to retrieve information about the individual shard(s).</p>
@@ -2083,7 +2060,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEngineVersions`.
     ///
     /// <p>Returns a list of the available Redis engine versions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEngineVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2128,10 +2105,10 @@ pub mod fluent_builders {
                 crate::input::DescribeEngineVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2140,8 +2117,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Redis engine version</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>The Redis engine version</p>
@@ -2153,8 +2130,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of a specific parameter group family to return details for.</p>
-        pub fn parameter_group_family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_family(inp);
+        pub fn parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_family(input.into());
             self
         }
         /// <p>The name of a specific parameter group family to return details for.</p>
@@ -2166,8 +2143,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -2176,8 +2153,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
@@ -2186,8 +2163,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If true, specifies that only the default version of the specified engine or engine and major version combination is to be returned.</p>
-        pub fn default_only(mut self, inp: bool) -> Self {
-            self.inner = self.inner.default_only(inp);
+        pub fn default_only(mut self, input: bool) -> Self {
+            self.inner = self.inner.default_only(input);
             self
         }
         /// <p>If true, specifies that only the default version of the specified engine or engine and major version combination is to be returned.</p>
@@ -2198,10 +2175,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEvents`.
     ///
-    /// <p>Returns events related to clusters, security groups, and parameter groups. You can obtain events specific to a particular cluster, security group, or parameter group by providing the name as a parameter.
-    ///
-    /// By default, only the events occurring within the last hour are returned; however, you can retrieve up to 14 days' worth of events if necessary.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns events related to clusters, security groups, and parameter groups. You can obtain events specific to a particular cluster, security group, or parameter group by providing the name as a parameter. By default, only the events occurring within the last hour are returned; however, you can retrieve up to 14 days' worth of events if necessary.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2246,10 +2221,10 @@ pub mod fluent_builders {
                 crate::input::DescribeEventsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2258,8 +2233,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the event source for which events are returned. If not specified, all sources are included in the response.</p>
-        pub fn source_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_name(inp);
+        pub fn source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_name(input.into());
             self
         }
         /// <p>The identifier of the event source for which events are returned. If not specified, all sources are included in the response.</p>
@@ -2268,8 +2243,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
-        pub fn source_type(mut self, inp: crate::model::SourceType) -> Self {
-            self.inner = self.inner.source_type(inp);
+        pub fn source_type(mut self, input: crate::model::SourceType) -> Self {
+            self.inner = self.inner.source_type(input);
             self
         }
         /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
@@ -2280,16 +2255,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_type(input);
             self
         }
-        /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.
-        ///
-        /// Example: 2017-03-30T07:03:49.555Z</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format. Example: 2017-03-30T07:03:49.555Z</p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
-        /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.
-        ///
-        /// Example: 2017-03-30T07:03:49.555Z</p>
+        /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format. Example: 2017-03-30T07:03:49.555Z</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2297,16 +2268,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.
-        ///
-        /// Example: 2017-03-30T07:03:49.555Z</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format. Example: 2017-03-30T07:03:49.555Z</p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
-        /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.
-        ///
-        /// Example: 2017-03-30T07:03:49.555Z</p>
+        /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format. Example: 2017-03-30T07:03:49.555Z</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2315,8 +2282,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of minutes worth of events to retrieve.</p>
-        pub fn duration(mut self, inp: i32) -> Self {
-            self.inner = self.inner.duration(inp);
+        pub fn duration(mut self, input: i32) -> Self {
+            self.inner = self.inner.duration(input);
             self
         }
         /// <p>The number of minutes worth of events to retrieve.</p>
@@ -2325,8 +2292,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -2335,8 +2302,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
@@ -2348,7 +2315,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeParameterGroups`.
     ///
     /// <p>Returns a list of parameter group descriptions. If a parameter group name is specified, the list contains only the descriptions for that group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeParameterGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2393,10 +2360,10 @@ pub mod fluent_builders {
                 crate::input::DescribeParameterGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2404,12 +2371,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of a specific  parameter group to return details for.</p>
-        pub fn parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_name(inp);
+        /// <p>The name of a specific parameter group to return details for.</p>
+        pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_name(input.into());
             self
         }
-        /// <p>The name of a specific  parameter group to return details for.</p>
+        /// <p>The name of a specific parameter group to return details for.</p>
         pub fn set_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2418,8 +2385,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -2428,8 +2395,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
@@ -2441,7 +2408,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeParameters`.
     ///
     /// <p>Returns the detailed parameter list for a particular parameter group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeParameters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2486,10 +2453,10 @@ pub mod fluent_builders {
                 crate::input::DescribeParametersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2497,12 +2464,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>he name of a specific  parameter group to return details for.</p>
-        pub fn parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_name(inp);
+        /// <p>he name of a specific parameter group to return details for.</p>
+        pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_name(input.into());
             self
         }
-        /// <p>he name of a specific  parameter group to return details for.</p>
+        /// <p>he name of a specific parameter group to return details for.</p>
         pub fn set_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2511,8 +2478,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -2521,8 +2488,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
@@ -2534,7 +2501,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeServiceUpdates`.
     ///
     /// <p>Returns details of the service updates</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeServiceUpdates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2579,10 +2546,10 @@ pub mod fluent_builders {
                 crate::input::DescribeServiceUpdatesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2591,8 +2558,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the service update to describe.</p>
-        pub fn service_update_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_update_name(inp);
+        pub fn service_update_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_update_name(input.into());
             self
         }
         /// <p>The unique ID of the service update to describe.</p>
@@ -2608,8 +2575,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_cluster_names`](Self::set_cluster_names).
         ///
         /// <p>The list of cluster names to identify service updates to apply</p>
-        pub fn cluster_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_names(inp);
+        pub fn cluster_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_names(input.into());
             self
         }
         /// <p>The list of cluster names to identify service updates to apply</p>
@@ -2625,8 +2592,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_status`](Self::set_status).
         ///
         /// <p>The status(es) of the service updates to filter on</p>
-        pub fn status(mut self, inp: impl Into<crate::model::ServiceUpdateStatus>) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::ServiceUpdateStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The status(es) of the service updates to filter on</p>
@@ -2638,8 +2605,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -2648,8 +2615,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
@@ -2660,9 +2627,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeSnapshots`.
     ///
-    /// <p>Returns information about cluster snapshots. By default, DescribeSnapshots lists all of your snapshots; it can optionally describe a single snapshot,
-    /// or just the snapshots associated with a particular cluster.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns information about cluster snapshots. By default, DescribeSnapshots lists all of your snapshots; it can optionally describe a single snapshot, or just the snapshots associated with a particular cluster.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSnapshots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2707,10 +2673,10 @@ pub mod fluent_builders {
                 crate::input::DescribeSnapshotsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2719,8 +2685,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cluster are described.</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(input.into());
             self
         }
         /// <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cluster are described.</p>
@@ -2729,8 +2695,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A user-supplied name of the snapshot. If this parameter is specified, only this named snapshot is described.</p>
-        pub fn snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_name(inp);
+        pub fn snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_name(input.into());
             self
         }
         /// <p>A user-supplied name of the snapshot. If this parameter is specified, only this named snapshot is described.</p>
@@ -2742,8 +2708,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If set to system, the output shows snapshots that were automatically created by MemoryDB. If set to user the output shows snapshots that were manually created. If omitted, the output shows both automatically and manually created snapshots.</p>
-        pub fn source(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source(inp);
+        pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source(input.into());
             self
         }
         /// <p>If set to system, the output shows snapshots that were automatically created by MemoryDB. If set to user the output shows snapshots that were manually created. If omitted, the output shows both automatically and manually created snapshots.</p>
@@ -2752,8 +2718,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
@@ -2762,8 +2728,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -2772,8 +2738,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A Boolean value which if true, the shard configuration is included in the snapshot description.</p>
-        pub fn show_detail(mut self, inp: bool) -> Self {
-            self.inner = self.inner.show_detail(inp);
+        pub fn show_detail(mut self, input: bool) -> Self {
+            self.inner = self.inner.show_detail(input);
             self
         }
         /// <p>A Boolean value which if true, the shard configuration is included in the snapshot description.</p>
@@ -2785,7 +2751,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSubnetGroups`.
     ///
     /// <p>Returns a list of subnet group descriptions. If a subnet group name is specified, the list contains only the description of that group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSubnetGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2830,10 +2796,10 @@ pub mod fluent_builders {
                 crate::input::DescribeSubnetGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2842,8 +2808,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the subnet group to return details for.</p>
-        pub fn subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_group_name(inp);
+        pub fn subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_group_name(input.into());
             self
         }
         /// <p>The name of the subnet group to return details for.</p>
@@ -2855,8 +2821,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -2865,8 +2831,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
@@ -2878,7 +2844,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeUsers`.
     ///
     /// <p>Returns a list of users.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUsers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2923,10 +2889,10 @@ pub mod fluent_builders {
                 crate::input::DescribeUsersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2935,8 +2901,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the user</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user</p>
@@ -2949,8 +2915,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Filter to determine the list of users to return.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filter to determine the list of users to return.</p>
@@ -2962,8 +2928,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -2972,8 +2938,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
@@ -2985,7 +2951,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `FailoverShard`.
     ///
     /// <p>Used to failover a shard</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct FailoverShard<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3030,10 +2996,10 @@ pub mod fluent_builders {
                 crate::input::FailoverShardInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3042,8 +3008,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The cluster being failed over</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(input.into());
             self
         }
         /// <p>The cluster being failed over</p>
@@ -3052,8 +3018,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the shard</p>
-        pub fn shard_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shard_name(inp);
+        pub fn shard_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shard_name(input.into());
             self
         }
         /// <p>The name of the shard</p>
@@ -3064,10 +3030,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAllowedNodeTypeUpdates`.
     ///
-    /// <p>Lists all available node types that you can scale to from your cluster's current node type.
-    ///
-    /// When you use the UpdateCluster operation to scale your cluster, the value of the NodeType parameter must be one of the node types returned by this operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists all available node types that you can scale to from your cluster's current node type. When you use the UpdateCluster operation to scale your cluster, the value of the NodeType parameter must be one of the node types returned by this operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAllowedNodeTypeUpdates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3112,10 +3076,10 @@ pub mod fluent_builders {
                 crate::input::ListAllowedNodeTypeUpdatesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3123,14 +3087,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types
-        /// you can scale up to.</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        /// <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types you can scale up to.</p>
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(input.into());
             self
         }
-        /// <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types
-        /// you can scale up to.</p>
+        /// <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types you can scale up to.</p>
         pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster_name(input);
             self
@@ -3138,12 +3100,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTags`.
     ///
-    /// <p>Lists all tags currently on a named resource.
-    ///
-    /// A tag is a key-value pair where the key and value are case-sensitive. You can use tags to categorize and track your MemoryDB resources.
-    /// For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/Tagging-Resources.html">Tagging your MemoryDB resources</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists all tags currently on a named resource. A tag is a key-value pair where the key and value are case-sensitive. You can use tags to categorize and track your MemoryDB resources. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/Tagging-Resources.html">Tagging your MemoryDB resources</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3188,10 +3146,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3200,8 +3158,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource for which you want the list of tags</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource for which you want the list of tags</p>
@@ -3213,7 +3171,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ResetParameterGroup`.
     ///
     /// <p>Modifies the parameters of a parameter group to the engine or system default value. You can reset specific parameters by submitting a list of parameter names. To reset the entire parameter group, specify the AllParameters and ParameterGroupName parameters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3258,10 +3216,10 @@ pub mod fluent_builders {
                 crate::input::ResetParameterGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3270,8 +3228,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the parameter group to reset.</p>
-        pub fn parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_name(inp);
+        pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_name(input.into());
             self
         }
         /// <p>The name of the parameter group to reset.</p>
@@ -3283,8 +3241,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If true, all parameters in the parameter group are reset to their default values. If false, only the parameters listed by ParameterNames are reset to their default values.</p>
-        pub fn all_parameters(mut self, inp: bool) -> Self {
-            self.inner = self.inner.all_parameters(inp);
+        pub fn all_parameters(mut self, input: bool) -> Self {
+            self.inner = self.inner.all_parameters(input);
             self
         }
         /// <p>If true, all parameters in the parameter group are reset to their default values. If false, only the parameters listed by ParameterNames are reset to their default values.</p>
@@ -3297,8 +3255,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_parameter_names`](Self::set_parameter_names).
         ///
         /// <p>An array of parameter names to reset to their default values. If AllParameters is true, do not use ParameterNames. If AllParameters is false, you must specify the name of at least one parameter to reset.</p>
-        pub fn parameter_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_names(inp);
+        pub fn parameter_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_names(input.into());
             self
         }
         /// <p>An array of parameter names to reset to their default values. If AllParameters is true, do not use ParameterNames. If AllParameters is false, you must specify the name of at least one parameter to reset.</p>
@@ -3312,18 +3270,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>A tag is a key-value pair where the key and value are case-sensitive. You can use tags to categorize and track all your MemoryDB resources.
-    ///
-    /// When you add or remove tags on clusters, those actions will be replicated to all nodes in the cluster. For more information, see
-    ///
-    /// <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/iam.resourcelevelpermissions.html">Resource-level permissions</a>.</p>
-    ///
-    /// <p>For example, you can use cost-allocation tags to your MemoryDB resources, Amazon generates a cost allocation report as a comma-separated value
-    /// (CSV) file with your usage and costs aggregated by your tags. You can apply tags that represent business categories
-    /// (such as cost centers, application names, or owners) to organize your costs across multiple services.
-    ///
-    /// For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/tagging.html">Using Cost Allocation Tags</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>A tag is a key-value pair where the key and value are case-sensitive. You can use tags to categorize and track all your MemoryDB resources. When you add or remove tags on clusters, those actions will be replicated to all nodes in the cluster. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/iam.resourcelevelpermissions.html">Resource-level permissions</a>.</p>
+    /// <p>For example, you can use cost-allocation tags to your MemoryDB resources, Amazon generates a cost allocation report as a comma-separated value (CSV) file with your usage and costs aggregated by your tags. You can apply tags that represent business categories (such as cost centers, application names, or owners) to organize your costs across multiple services. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/tagging.html">Using Cost Allocation Tags</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3368,10 +3317,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3380,8 +3329,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which the tags are to be added</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which the tags are to be added</p>
@@ -3394,8 +3343,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
@@ -3410,7 +3359,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Use this operation to remove tags on a resource</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3455,10 +3404,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3467,8 +3416,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which the tags are to be removed</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which the tags are to be removed</p>
@@ -3481,8 +3430,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The list of keys of the tags that are to be removed</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The list of keys of the tags that are to be removed</p>
@@ -3497,7 +3446,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateACL`.
     ///
     /// <p>Changes the list of users that belong to the Access Control List.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateACL<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3542,10 +3491,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAclInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3554,8 +3503,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Access Control List</p>
-        pub fn acl_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.acl_name(inp);
+        pub fn acl_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.acl_name(input.into());
             self
         }
         /// <p>The name of the Access Control List</p>
@@ -3568,8 +3517,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_user_names_to_add`](Self::set_user_names_to_add).
         ///
         /// <p>The list of users to add to the Access Control List</p>
-        pub fn user_names_to_add(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_names_to_add(inp);
+        pub fn user_names_to_add(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_names_to_add(input.into());
             self
         }
         /// <p>The list of users to add to the Access Control List</p>
@@ -3585,8 +3534,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_user_names_to_remove`](Self::set_user_names_to_remove).
         ///
         /// <p>The list of users to remove from the Access Control List</p>
-        pub fn user_names_to_remove(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_names_to_remove(inp);
+        pub fn user_names_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_names_to_remove(input.into());
             self
         }
         /// <p>The list of users to remove from the Access Control List</p>
@@ -3601,7 +3550,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCluster`.
     ///
     /// <p>Modifies the settings for a cluster. You can use this operation to change one or more cluster configuration settings by specifying the settings and the new values.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3646,10 +3595,10 @@ pub mod fluent_builders {
                 crate::input::UpdateClusterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3658,8 +3607,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster to update</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(input.into());
             self
         }
         /// <p>The name of the cluster to update</p>
@@ -3668,8 +3617,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the cluster to update</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the cluster to update</p>
@@ -3682,8 +3631,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
         /// <p>The SecurityGroupIds to update</p>
-        pub fn security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_group_ids(inp);
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_group_ids(input.into());
             self
         }
         /// <p>The SecurityGroupIds to update</p>
@@ -3695,8 +3644,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maintenance window to update</p>
-        pub fn maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.maintenance_window(inp);
+        pub fn maintenance_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.maintenance_window(input.into());
             self
         }
         /// <p>The maintenance window to update</p>
@@ -3708,8 +3657,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The SNS topic ARN to update</p>
-        pub fn sns_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_arn(inp);
+        pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_arn(input.into());
             self
         }
         /// <p>The SNS topic ARN to update</p>
@@ -3721,8 +3670,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of the Amazon SNS notification topic. Notifications are sent only if the status is active.</p>
-        pub fn sns_topic_status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_status(inp);
+        pub fn sns_topic_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_status(input.into());
             self
         }
         /// <p>The status of the Amazon SNS notification topic. Notifications are sent only if the status is active.</p>
@@ -3734,8 +3683,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the parameter group to update</p>
-        pub fn parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_name(inp);
+        pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_name(input.into());
             self
         }
         /// <p>The name of the parameter group to update</p>
@@ -3747,8 +3696,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your cluster.</p>
-        pub fn snapshot_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_window(inp);
+        pub fn snapshot_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_window(input.into());
             self
         }
         /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your cluster.</p>
@@ -3760,8 +3709,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of days for which MemoryDB retains automatic cluster snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
-        pub fn snapshot_retention_limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.snapshot_retention_limit(inp);
+        pub fn snapshot_retention_limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.snapshot_retention_limit(input);
             self
         }
         /// <p>The number of days for which MemoryDB retains automatic cluster snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
@@ -3770,8 +3719,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A valid node type that you want to scale this cluster up or down to.</p>
-        pub fn node_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_type(inp);
+        pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_type(input.into());
             self
         }
         /// <p>A valid node type that you want to scale this cluster up or down to.</p>
@@ -3780,8 +3729,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The upgraded version of the engine to be run on the nodes. You can upgrade to a newer engine version, but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>The upgraded version of the engine to be run on the nodes. You can upgrade to a newer engine version, but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version.</p>
@@ -3795,9 +3744,9 @@ pub mod fluent_builders {
         /// <p>The number of replicas that will reside in each shard</p>
         pub fn replica_configuration(
             mut self,
-            inp: crate::model::ReplicaConfigurationRequest,
+            input: crate::model::ReplicaConfigurationRequest,
         ) -> Self {
-            self.inner = self.inner.replica_configuration(inp);
+            self.inner = self.inner.replica_configuration(input);
             self
         }
         /// <p>The number of replicas that will reside in each shard</p>
@@ -3809,8 +3758,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of shards in the cluster</p>
-        pub fn shard_configuration(mut self, inp: crate::model::ShardConfigurationRequest) -> Self {
-            self.inner = self.inner.shard_configuration(inp);
+        pub fn shard_configuration(
+            mut self,
+            input: crate::model::ShardConfigurationRequest,
+        ) -> Self {
+            self.inner = self.inner.shard_configuration(input);
             self
         }
         /// <p>The number of shards in the cluster</p>
@@ -3822,8 +3774,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Access Control List that is associated with the cluster</p>
-        pub fn acl_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.acl_name(inp);
+        pub fn acl_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.acl_name(input.into());
             self
         }
         /// <p>The Access Control List that is associated with the cluster</p>
@@ -3835,7 +3787,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateParameterGroup`.
     ///
     /// <p>Updates the parameters of a parameter group. You can modify up to 20 parameters in a single request by submitting a list parameter name and value pairs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3880,10 +3832,10 @@ pub mod fluent_builders {
                 crate::input::UpdateParameterGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3892,8 +3844,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the parameter group to update.</p>
-        pub fn parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_name(inp);
+        pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_name(input.into());
             self
         }
         /// <p>The name of the parameter group to update.</p>
@@ -3909,11 +3861,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_parameter_name_values`](Self::set_parameter_name_values).
         ///
         /// <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be updated per request.</p>
-        pub fn parameter_name_values(
-            mut self,
-            inp: impl Into<crate::model::ParameterNameValue>,
-        ) -> Self {
-            self.inner = self.inner.parameter_name_values(inp);
+        pub fn parameter_name_values(mut self, input: crate::model::ParameterNameValue) -> Self {
+            self.inner = self.inner.parameter_name_values(input);
             self
         }
         /// <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be updated per request.</p>
@@ -3927,9 +3876,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateSubnetGroup`.
     ///
-    /// <p>Updates a subnet group. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/ubnetGroups.Modifying.html">Updating a subnet group</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates a subnet group. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/ubnetGroups.Modifying.html">Updating a subnet group</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSubnetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3974,10 +3922,10 @@ pub mod fluent_builders {
                 crate::input::UpdateSubnetGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3986,8 +3934,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the subnet group</p>
-        pub fn subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_group_name(inp);
+        pub fn subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_group_name(input.into());
             self
         }
         /// <p>The name of the subnet group</p>
@@ -3999,8 +3947,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the subnet group</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the subnet group</p>
@@ -4013,8 +3961,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
         /// <p>The EC2 subnet IDs for the subnet group.</p>
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_ids(inp);
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_ids(input.into());
             self
         }
         /// <p>The EC2 subnet IDs for the subnet group.</p>
@@ -4029,7 +3977,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateUser`.
     ///
     /// <p>Changes user password(s) and/or access string.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4074,10 +4022,10 @@ pub mod fluent_builders {
                 crate::input::UpdateUserInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4086,8 +4034,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the user</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user</p>
@@ -4096,8 +4044,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
-        pub fn authentication_mode(mut self, inp: crate::model::AuthenticationMode) -> Self {
-            self.inner = self.inner.authentication_mode(inp);
+        pub fn authentication_mode(mut self, input: crate::model::AuthenticationMode) -> Self {
+            self.inner = self.inner.authentication_mode(input);
             self
         }
         /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
@@ -4109,8 +4057,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Access permissions string used for this user.</p>
-        pub fn access_string(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_string(inp);
+        pub fn access_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_string(input.into());
             self
         }
         /// <p>Access permissions string used for this user.</p>
@@ -4123,6 +4071,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

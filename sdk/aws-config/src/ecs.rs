@@ -49,11 +49,9 @@
 use std::error::Error;
 use std::fmt::{Display, Formatter};
 use std::io;
-use std::io::ErrorKind;
-use std::net::{IpAddr, ToSocketAddrs};
-use std::task::{Context, Poll};
+use std::net::IpAddr;
 
-use aws_smithy_client::erase::boxclone::{BoxCloneService, BoxFuture};
+use aws_smithy_client::erase::boxclone::BoxCloneService;
 use aws_smithy_http::endpoint::Endpoint;
 use aws_types::credentials;
 use aws_types::credentials::{future, CredentialsError, ProvideCredentials};
@@ -146,10 +144,8 @@ impl Provider {
         if let Some(relative_uri) = relative_uri {
             Self::build_full_uri(relative_uri)
         } else if let Some(full_uri) = full_uri {
-            let mut dns = dns
-                .or_else(tokio_dns)
-                .expect("a dns service must be provided");
-            validate_full_uri(&full_uri, &mut dns)
+            let mut dns = dns.or_else(tokio_dns);
+            validate_full_uri(&full_uri, dns.as_mut())
                 .await
                 .map_err(|err| EcsConfigurationErr::InvalidFullUri { err, uri: full_uri })
         } else {
@@ -307,6 +303,10 @@ pub enum InvalidFullUriError {
     #[non_exhaustive]
     InvalidUri(InvalidUri),
 
+    /// No Dns service was provided
+    #[non_exhaustive]
+    NoDnsService,
+
     /// The URI did not specify a host
     #[non_exhaustive]
     MissingHost,
@@ -334,6 +334,7 @@ impl Display for InvalidFullUriError {
                     err
                 )
             }
+            InvalidFullUriError::NoDnsService => write!(f, "No DNS service was provided. Enable `rt-tokio` or provide a `dns` service to the builder.")
         }
     }
 }
@@ -357,7 +358,10 @@ pub type DnsService = BoxCloneService<String, Vec<IpAddr>, io::Error>;
 /// 2. The URL refers to a loopback device. If a URL contains a domain name instead of an IP address,
 /// a DNS lookup will be performed. ALL resolved IP addresses MUST refer to a loopback interface, or
 /// the credentials provider will return `CredentialsError::InvalidConfiguration`
-async fn validate_full_uri(uri: &str, dns: &mut DnsService) -> Result<Uri, InvalidFullUriError> {
+async fn validate_full_uri(
+    uri: &str,
+    dns: Option<&mut DnsService>,
+) -> Result<Uri, InvalidFullUriError> {
     let uri = uri
         .parse::<Uri>()
         .map_err(InvalidFullUriError::InvalidUri)?;
@@ -367,9 +371,10 @@ async fn validate_full_uri(uri: &str, dns: &mut DnsService) -> Result<Uri, Inval
     // For HTTP URIs, we need to validate that it points to a loopback address
     let host = uri.host().ok_or(InvalidFullUriError::MissingHost)?;
     let is_loopback = match host.parse::<IpAddr>() {
-            Ok(addr) => addr.is_loopback(),
-            Err(_domain_name) => {
-                dns.ready().await.map_err(InvalidFullUriError::DnsLookupFailed)?
+        Ok(addr) => addr.is_loopback(),
+        Err(_domain_name) => {
+            let dns = dns.ok_or(InvalidFullUriError::NoDnsService)?;
+            dns.ready().await.map_err(InvalidFullUriError::DnsLookupFailed)?
                     .call(host.to_owned())
                     .await
                     .map_err(InvalidFullUriError::DnsLookupFailed)?
@@ -383,15 +388,15 @@ async fn validate_full_uri(uri: &str, dns: &mut DnsService) -> Result<Uri, Inval
                         };
                         addr.is_loopback()
                     })
-            },
-        };
+        }
+    };
     match is_loopback {
         true => Ok(uri),
         false => Err(InvalidFullUriError::NotLoopback),
     }
 }
 
-#[cfg(not(feature = "dns"))]
+#[cfg(not(feature = "rt-tokio"))]
 fn tokio_dns() -> Option<DnsService> {
     None
 }
@@ -399,8 +404,13 @@ fn tokio_dns() -> Option<DnsService> {
 /// DNS resolver that uses tokio::spawn_blocking
 ///
 /// DNS resolution is required to validate that provided URIs point to the loopback interface
-#[cfg(feature = "dns")]
+#[cfg(feature = "rt-tokio")]
 fn tokio_dns() -> Option<DnsService> {
+    use aws_smithy_client::erase::boxclone::BoxFuture;
+    use std::io::ErrorKind;
+    use std::net::ToSocketAddrs;
+    use std::task::{Context, Poll};
+
     #[derive(Clone)]
     struct TokioDns;
     impl Service<String> for TokioDns {
@@ -448,6 +458,7 @@ mod test {
     use aws_types::os_shim_internal::Env;
     use aws_types::Credentials;
 
+    use aws_smithy_async::rt::sleep::TokioSleep;
     use aws_smithy_client::erase::DynConnector;
     use aws_smithy_client::test_connection::TestConnection;
     use aws_smithy_http::body::SdkBody;
@@ -464,7 +475,8 @@ mod test {
     fn provider(env: Env, connector: DynConnector) -> EcsCredentialsProvider {
         let provider_config = ProviderConfig::empty()
             .with_env(env)
-            .with_http_connector(connector);
+            .with_http_connector(connector)
+            .with_sleep(TokioSleep::new());
         Builder::default().configure(&provider_config).build()
     }
 
@@ -504,9 +516,9 @@ mod test {
     fn validate_uri_https() {
         // over HTTPs, any URI is fine
         let never = NeverService::new();
-        let mut dns = BoxCloneService::new(never);
+        let mut dns = Some(BoxCloneService::new(never));
         assert_eq!(
-            validate_full_uri("https://amazon.com", &mut dns)
+            validate_full_uri("https://amazon.com", None)
                 .now_or_never()
                 .unwrap()
                 .expect("valid"),
@@ -514,26 +526,34 @@ mod test {
         );
         // over HTTP, it will try to lookup
         assert!(
-            validate_full_uri("http://amazon.com", &mut dns)
+            validate_full_uri("http://amazon.com", dns.as_mut())
                 .now_or_never()
                 .is_none(),
             "DNS lookup should occur, but it will never return"
+        );
+
+        let no_dns_error = validate_full_uri("http://amazon.com", None)
+            .now_or_never()
+            .unwrap()
+            .expect_err("DNS service is required");
+        assert!(
+            matches!(no_dns_error, InvalidFullUriError::NoDnsService),
+            "expected no dns service, got: {}",
+            no_dns_error
         );
     }
 
     #[test]
     fn valid_uri_loopback() {
-        let never = NeverService::new();
-        let mut dns = BoxCloneService::new(never);
         assert_eq!(
-            validate_full_uri("http://127.0.0.1:8080/get-credentials", &mut dns)
+            validate_full_uri("http://127.0.0.1:8080/get-credentials", None)
                 .now_or_never()
                 .unwrap()
                 .expect("valid uri"),
             Uri::from_static("http://127.0.0.1:8080/get-credentials")
         );
 
-        let err = validate_full_uri("http://192.168.10.120/creds", &mut dns)
+        let err = validate_full_uri("http://192.168.10.120/creds", None)
             .now_or_never()
             .unwrap()
             .expect_err("not a loopback");
@@ -546,8 +566,8 @@ mod test {
             "127.0.0.1".parse().unwrap(),
             "127.0.0.2".parse().unwrap(),
         ]);
-        let mut svc = BoxCloneService::new(svc);
-        let resp = validate_full_uri("http://localhost:8888", &mut svc)
+        let mut svc = Some(BoxCloneService::new(svc));
+        let resp = validate_full_uri("http://localhost:8888", svc.as_mut())
             .now_or_never()
             .unwrap();
         assert!(resp.is_ok(), "Should be valid: {:?}", resp);
@@ -559,8 +579,8 @@ mod test {
             "127.0.0.1".parse().unwrap(),
             "192.168.0.1".parse().unwrap(),
         ]);
-        let mut svc = BoxCloneService::new(svc);
-        let resp = validate_full_uri("http://localhost:8888", &mut svc)
+        let mut svc = Some(BoxCloneService::new(svc));
+        let resp = validate_full_uri("http://localhost:8888", svc.as_mut())
             .now_or_never()
             .unwrap();
         assert!(
@@ -623,6 +643,31 @@ mod test {
     }
 
     #[tokio::test]
+    async fn retry_5xx() {
+        let env = Env::from_slice(&[("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI", "/credentials")]);
+        let connector = TestConnection::new(vec![
+            (
+                creds_request("http://169.254.170.2/credentials", None),
+                http::Response::builder()
+                    .status(500)
+                    .body(SdkBody::empty())
+                    .unwrap(),
+            ),
+            (
+                creds_request("http://169.254.170.2/credentials", None),
+                ok_creds_response(),
+            ),
+        ]);
+        tokio::time::pause();
+        let provider = provider(env, DynConnector::new(connector.clone()));
+        let creds = provider
+            .provide_credentials()
+            .await
+            .expect("valid credentials");
+        assert_correct(creds);
+    }
+
+    #[tokio::test]
     async fn load_valid_creds_no_auth() {
         let env = Env::from_slice(&[("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI", "/credentials")]);
         let connector = TestConnection::new(vec![(
@@ -644,15 +689,15 @@ mod test {
     #[traced_test]
     #[ignore]
     async fn real_dns_lookup() {
-        let mut dns = tokio_dns().expect("feature must be enabled");
-        let err = validate_full_uri("http://www.amazon.com/creds", &mut dns)
+        let mut dns = Some(tokio_dns().expect("feature must be enabled"));
+        let err = validate_full_uri("http://www.amazon.com/creds", dns.as_mut())
             .await
             .expect_err("not a loopback");
         assert!(matches!(err, InvalidFullUriError::NotLoopback), "{:?}", err);
         assert!(logs_contain(
             "Address does not resolve to the loopback interface"
         ));
-        validate_full_uri("http://localhost:8888/creds", &mut dns)
+        validate_full_uri("http://localhost:8888/creds", dns.as_mut())
             .await
             .expect("localhost is the loopback interface");
     }

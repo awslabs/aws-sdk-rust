@@ -14,19 +14,15 @@ pub struct CancelImageCreationError {
 pub enum CancelImageCreationErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>You have specified a client token for an operation using parameter values that differ from
-    /// a previous request that used the same client token.</p>
+    /// <p>You have specified a client token for an operation using parameter values that differ from a previous request that used the same client token.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>You have made a request for an action that is not supported by the service.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource that you are trying to operate on is currently in use. Review the message
-    /// details and retry later.</p>
+    /// <p>The resource that you are trying to operate on is currently in use. Review the message details and retry later.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
     ServiceException(crate::error::ServiceException),
@@ -82,8 +78,6 @@ impl CancelImageCreationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -191,24 +185,19 @@ pub struct CreateComponentError {
 pub enum CreateComponentErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>You have specified a client token for an operation using parameter values that differ from
-    /// a previous request that used the same client token.</p>
+    /// <p>You have specified a client token for an operation using parameter values that differ from a previous request that used the same client token.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
-    /// <p>You have specified two or more mutually exclusive parameters. Review the error message for
-    /// details.</p>
+    /// <p>You have specified two or more mutually exclusive parameters. Review the error message for details.</p>
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>You have made a request for an action that is not supported by the service.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Your version number is out of bounds or does not follow the required syntax.</p>
     InvalidVersionNumberException(crate::error::InvalidVersionNumberException),
-    /// <p>The resource that you are trying to operate on is currently in use. Review the message
-    /// details and retry later.</p>
+    /// <p>The resource that you are trying to operate on is currently in use. Review the message details and retry later.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
     ServiceException(crate::error::ServiceException),
@@ -267,8 +256,6 @@ impl CreateComponentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -392,14 +379,11 @@ pub struct CreateContainerRecipeError {
 pub enum CreateContainerRecipeErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>You have specified a client token for an operation using parameter values that differ from
-    /// a previous request that used the same client token.</p>
+    /// <p>You have specified a client token for an operation using parameter values that differ from a previous request that used the same client token.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>You have made a request for an action that is not supported by the service.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -407,8 +391,7 @@ pub enum CreateContainerRecipeErrorKind {
     InvalidVersionNumberException(crate::error::InvalidVersionNumberException),
     /// <p>The resource that you are trying to create already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
-    /// <p>The resource that you are trying to operate on is currently in use. Review the message
-    /// details and retry later.</p>
+    /// <p>The resource that you are trying to operate on is currently in use. Review the message details and retry later.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
     ServiceException(crate::error::ServiceException),
@@ -469,8 +452,6 @@ impl CreateContainerRecipeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -605,24 +586,19 @@ pub struct CreateDistributionConfigurationError {
 pub enum CreateDistributionConfigurationErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>You have specified a client token for an operation using parameter values that differ from
-    /// a previous request that used the same client token.</p>
+    /// <p>You have specified a client token for an operation using parameter values that differ from a previous request that used the same client token.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
-    /// <p>You have specified two or more mutually exclusive parameters. Review the error message for
-    /// details.</p>
+    /// <p>You have specified two or more mutually exclusive parameters. Review the error message for details.</p>
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>You have made a request for an action that is not supported by the service.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The resource that you are trying to create already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
-    /// <p>The resource that you are trying to operate on is currently in use. Review the message
-    /// details and retry later.</p>
+    /// <p>The resource that you are trying to operate on is currently in use. Review the message details and retry later.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
     ServiceException(crate::error::ServiceException),
@@ -700,8 +676,6 @@ impl CreateDistributionConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -850,19 +824,15 @@ pub struct CreateImageError {
 pub enum CreateImageErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>You have specified a client token for an operation using parameter values that differ from
-    /// a previous request that used the same client token.</p>
+    /// <p>You have specified a client token for an operation using parameter values that differ from a previous request that used the same client token.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>You have made a request for an action that is not supported by the service.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource that you are trying to operate on is currently in use. Review the message
-    /// details and retry later.</p>
+    /// <p>The resource that you are trying to operate on is currently in use. Review the message details and retry later.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
     ServiceException(crate::error::ServiceException),
@@ -919,8 +889,6 @@ impl CreateImageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1022,21 +990,17 @@ pub struct CreateImagePipelineError {
 pub enum CreateImagePipelineErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>You have specified a client token for an operation using parameter values that differ from
-    /// a previous request that used the same client token.</p>
+    /// <p>You have specified a client token for an operation using parameter values that differ from a previous request that used the same client token.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>You have made a request for an action that is not supported by the service.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The resource that you are trying to create already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
-    /// <p>The resource that you are trying to operate on is currently in use. Review the message
-    /// details and retry later.</p>
+    /// <p>The resource that you are trying to operate on is currently in use. Review the message details and retry later.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
     ServiceException(crate::error::ServiceException),
@@ -1096,8 +1060,6 @@ impl CreateImagePipelineError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1221,14 +1183,11 @@ pub struct CreateImageRecipeError {
 pub enum CreateImageRecipeErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>You have specified a client token for an operation using parameter values that differ from
-    /// a previous request that used the same client token.</p>
+    /// <p>You have specified a client token for an operation using parameter values that differ from a previous request that used the same client token.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>You have made a request for an action that is not supported by the service.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -1236,8 +1195,7 @@ pub enum CreateImageRecipeErrorKind {
     InvalidVersionNumberException(crate::error::InvalidVersionNumberException),
     /// <p>The resource that you are trying to create already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
-    /// <p>The resource that you are trying to operate on is currently in use. Review the message
-    /// details and retry later.</p>
+    /// <p>The resource that you are trying to operate on is currently in use. Review the message details and retry later.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
     ServiceException(crate::error::ServiceException),
@@ -1298,8 +1256,6 @@ impl CreateImageRecipeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1428,21 +1384,17 @@ pub struct CreateInfrastructureConfigurationError {
 pub enum CreateInfrastructureConfigurationErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>You have specified a client token for an operation using parameter values that differ from
-    /// a previous request that used the same client token.</p>
+    /// <p>You have specified a client token for an operation using parameter values that differ from a previous request that used the same client token.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>You have made a request for an action that is not supported by the service.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The resource that you are trying to create already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
-    /// <p>The resource that you are trying to operate on is currently in use. Review the message
-    /// details and retry later.</p>
+    /// <p>The resource that you are trying to operate on is currently in use. Review the message details and retry later.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
     ServiceException(crate::error::ServiceException),
@@ -1517,8 +1469,6 @@ impl CreateInfrastructureConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1657,16 +1607,13 @@ pub struct DeleteComponentError {
 pub enum DeleteComponentErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>You have made a request for an action that is not supported by the service.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>You have attempted to mutate or delete a resource with a dependency that prohibits this
-    /// action. See the error message for more details.</p>
+    /// <p>You have attempted to mutate or delete a resource with a dependency that prohibits this action. See the error message for more details.</p>
     ResourceDependencyException(crate::error::ResourceDependencyException),
     /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
     ServiceException(crate::error::ServiceException),
@@ -1719,8 +1666,6 @@ impl DeleteComponentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1812,16 +1757,13 @@ pub struct DeleteContainerRecipeError {
 pub enum DeleteContainerRecipeErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>You have made a request for an action that is not supported by the service.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>You have attempted to mutate or delete a resource with a dependency that prohibits this
-    /// action. See the error message for more details.</p>
+    /// <p>You have attempted to mutate or delete a resource with a dependency that prohibits this action. See the error message for more details.</p>
     ResourceDependencyException(crate::error::ResourceDependencyException),
     /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
     ServiceException(crate::error::ServiceException),
@@ -1874,8 +1816,6 @@ impl DeleteContainerRecipeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1976,16 +1916,13 @@ pub struct DeleteDistributionConfigurationError {
 pub enum DeleteDistributionConfigurationErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>You have made a request for an action that is not supported by the service.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>You have attempted to mutate or delete a resource with a dependency that prohibits this
-    /// action. See the error message for more details.</p>
+    /// <p>You have attempted to mutate or delete a resource with a dependency that prohibits this action. See the error message for more details.</p>
     ResourceDependencyException(crate::error::ResourceDependencyException),
     /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
     ServiceException(crate::error::ServiceException),
@@ -2049,8 +1986,6 @@ impl DeleteDistributionConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2159,16 +2094,13 @@ pub struct DeleteImageError {
 pub enum DeleteImageErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>You have made a request for an action that is not supported by the service.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>You have attempted to mutate or delete a resource with a dependency that prohibits this
-    /// action. See the error message for more details.</p>
+    /// <p>You have attempted to mutate or delete a resource with a dependency that prohibits this action. See the error message for more details.</p>
     ResourceDependencyException(crate::error::ResourceDependencyException),
     /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
     ServiceException(crate::error::ServiceException),
@@ -2221,8 +2153,6 @@ impl DeleteImageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2311,16 +2241,13 @@ pub struct DeleteImagePipelineError {
 pub enum DeleteImagePipelineErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>You have made a request for an action that is not supported by the service.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>You have attempted to mutate or delete a resource with a dependency that prohibits this
-    /// action. See the error message for more details.</p>
+    /// <p>You have attempted to mutate or delete a resource with a dependency that prohibits this action. See the error message for more details.</p>
     ResourceDependencyException(crate::error::ResourceDependencyException),
     /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
     ServiceException(crate::error::ServiceException),
@@ -2373,8 +2300,6 @@ impl DeleteImagePipelineError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2472,16 +2397,13 @@ pub struct DeleteImageRecipeError {
 pub enum DeleteImageRecipeErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>You have made a request for an action that is not supported by the service.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>You have attempted to mutate or delete a resource with a dependency that prohibits this
-    /// action. See the error message for more details.</p>
+    /// <p>You have attempted to mutate or delete a resource with a dependency that prohibits this action. See the error message for more details.</p>
     ResourceDependencyException(crate::error::ResourceDependencyException),
     /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
     ServiceException(crate::error::ServiceException),
@@ -2534,8 +2456,6 @@ impl DeleteImageRecipeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2630,16 +2550,13 @@ pub struct DeleteInfrastructureConfigurationError {
 pub enum DeleteInfrastructureConfigurationErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
     /// <p>You have made a request for an action that is not supported by the service.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>You have attempted to mutate or delete a resource with a dependency that prohibits this
-    /// action. See the error message for more details.</p>
+    /// <p>You have attempted to mutate or delete a resource with a dependency that prohibits this action. See the error message for more details.</p>
     ResourceDependencyException(crate::error::ResourceDependencyException),
     /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
     ServiceException(crate::error::ServiceException),
@@ -2703,8 +2620,6 @@ impl DeleteInfrastructureConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2813,9 +2728,7 @@ pub struct GetComponentError {
 pub enum GetComponentErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -2871,8 +2784,6 @@ impl GetComponentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3012,8 +2923,6 @@ impl GetComponentPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3103,9 +3012,7 @@ pub struct GetContainerRecipeError {
 pub enum GetContainerRecipeErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -3161,8 +3068,6 @@ impl GetContainerRecipeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3307,8 +3212,6 @@ impl GetContainerRecipePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3403,9 +3306,7 @@ pub struct GetDistributionConfigurationError {
 pub enum GetDistributionConfigurationErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -3465,8 +3366,6 @@ impl GetDistributionConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3563,9 +3462,7 @@ pub struct GetImageError {
 pub enum GetImageErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -3621,8 +3518,6 @@ impl GetImageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3703,9 +3598,7 @@ pub struct GetImagePipelineError {
 pub enum GetImagePipelineErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -3761,8 +3654,6 @@ impl GetImagePipelineError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3902,8 +3793,6 @@ impl GetImagePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3990,9 +3879,7 @@ pub struct GetImageRecipeError {
 pub enum GetImageRecipeErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -4048,8 +3935,6 @@ impl GetImageRecipeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4189,8 +4074,6 @@ impl GetImageRecipePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4283,9 +4166,7 @@ pub struct GetInfrastructureConfigurationError {
 pub enum GetInfrastructureConfigurationErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -4350,8 +4231,6 @@ impl GetInfrastructureConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4450,24 +4329,19 @@ pub struct ImportComponentError {
 pub enum ImportComponentErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>You have specified a client token for an operation using parameter values that differ from
-    /// a previous request that used the same client token.</p>
+    /// <p>You have specified a client token for an operation using parameter values that differ from a previous request that used the same client token.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
-    /// <p>You have specified two or more mutually exclusive parameters. Review the error message for
-    /// details.</p>
+    /// <p>You have specified two or more mutually exclusive parameters. Review the error message for details.</p>
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>You have made a request for an action that is not supported by the service.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Your version number is out of bounds or does not follow the required syntax.</p>
     InvalidVersionNumberException(crate::error::InvalidVersionNumberException),
-    /// <p>The resource that you are trying to operate on is currently in use. Review the message
-    /// details and retry later.</p>
+    /// <p>The resource that you are trying to operate on is currently in use. Review the message details and retry later.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
     ServiceException(crate::error::ServiceException),
@@ -4523,8 +4397,6 @@ impl ImportComponentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4625,6 +4497,115 @@ impl std::error::Error for ImportComponentError {
     }
 }
 
+/// Error type for the `ImportVmImage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ImportVmImageError {
+    /// Kind of error that occurred.
+    pub kind: ImportVmImageErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ImportVmImage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ImportVmImageErrorKind {
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
+    ClientException(crate::error::ClientException),
+    /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
+    ServiceException(crate::error::ServiceException),
+    /// <p>The service is unable to process your request at this time.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ImportVmImageError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ImportVmImageErrorKind::ClientException(_inner) => _inner.fmt(f),
+            ImportVmImageErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            ImportVmImageErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            ImportVmImageErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ImportVmImageError {
+    fn code(&self) -> Option<&str> {
+        ImportVmImageError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ImportVmImageError {
+    /// Creates a new `ImportVmImageError`.
+    pub fn new(kind: ImportVmImageErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ImportVmImageError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ImportVmImageErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ImportVmImageError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ImportVmImageErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ImportVmImageErrorKind::ClientException`.
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, ImportVmImageErrorKind::ClientException(_))
+    }
+    /// Returns `true` if the error kind is `ImportVmImageErrorKind::ServiceException`.
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, ImportVmImageErrorKind::ServiceException(_))
+    }
+    /// Returns `true` if the error kind is `ImportVmImageErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportVmImageErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for ImportVmImageError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ImportVmImageErrorKind::ClientException(_inner) => Some(_inner),
+            ImportVmImageErrorKind::ServiceException(_inner) => Some(_inner),
+            ImportVmImageErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            ImportVmImageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListComponentBuildVersions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4640,9 +4621,7 @@ pub struct ListComponentBuildVersionsError {
 pub enum ListComponentBuildVersionsErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -4707,8 +4686,6 @@ impl ListComponentBuildVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4815,9 +4792,7 @@ pub struct ListComponentsError {
 pub enum ListComponentsErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -4876,8 +4851,6 @@ impl ListComponentsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4969,9 +4942,7 @@ pub struct ListContainerRecipesError {
 pub enum ListContainerRecipesErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -5030,8 +5001,6 @@ impl ListContainerRecipesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5132,9 +5101,7 @@ pub struct ListDistributionConfigurationsError {
 pub enum ListDistributionConfigurationsErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -5204,8 +5171,6 @@ impl ListDistributionConfigurationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5314,9 +5279,7 @@ pub struct ListImageBuildVersionsError {
 pub enum ListImageBuildVersionsErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -5379,8 +5342,6 @@ impl ListImageBuildVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5483,9 +5444,7 @@ pub struct ListImagePackagesError {
 pub enum ListImagePackagesErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -5547,8 +5506,6 @@ impl ListImagePackagesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5651,9 +5608,7 @@ pub struct ListImagePipelineImagesError {
 pub enum ListImagePipelineImagesErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -5719,8 +5674,6 @@ impl ListImagePipelineImagesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5833,9 +5786,7 @@ pub struct ListImagePipelinesError {
 pub enum ListImagePipelinesErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -5894,8 +5845,6 @@ impl ListImagePipelinesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5990,9 +5939,7 @@ pub struct ListImageRecipesError {
 pub enum ListImageRecipesErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -6051,8 +5998,6 @@ impl ListImageRecipesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6144,9 +6089,7 @@ pub struct ListImagesError {
 pub enum ListImagesErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -6205,8 +6148,6 @@ impl ListImagesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6295,9 +6236,7 @@ pub struct ListInfrastructureConfigurationsError {
 pub enum ListInfrastructureConfigurationsErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -6367,8 +6306,6 @@ impl ListInfrastructureConfigurationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6475,8 +6412,7 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>At least one of the resources referenced by your request does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6525,8 +6461,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6595,9 +6529,7 @@ pub struct PutComponentPolicyError {
 pub enum PutComponentPolicyErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -6659,8 +6591,6 @@ impl PutComponentPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6763,9 +6693,7 @@ pub struct PutContainerRecipePolicyError {
 pub enum PutContainerRecipePolicyErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -6831,8 +6759,6 @@ impl PutContainerRecipePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6945,9 +6871,7 @@ pub struct PutImagePolicyError {
 pub enum PutImagePolicyErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -7009,8 +6933,6 @@ impl PutImagePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7110,9 +7032,7 @@ pub struct PutImageRecipePolicyError {
 pub enum PutImageRecipePolicyErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -7174,8 +7094,6 @@ impl PutImageRecipePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7284,19 +7202,15 @@ pub struct StartImagePipelineExecutionError {
 pub enum StartImagePipelineExecutionErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>You have specified a client token for an operation using parameter values that differ from
-    /// a previous request that used the same client token.</p>
+    /// <p>You have specified a client token for an operation using parameter values that differ from a previous request that used the same client token.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>You have made a request for an action that is not supported by the service.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource that you are trying to operate on is currently in use. Review the message
-    /// details and retry later.</p>
+    /// <p>The resource that you are trying to operate on is currently in use. Review the message details and retry later.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>At least one of the resources referenced by your request does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7361,8 +7275,6 @@ impl StartImagePipelineExecutionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7483,8 +7395,7 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>At least one of the resources referenced by your request does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7533,8 +7444,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7598,8 +7507,7 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>At least one of the resources referenced by your request does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7648,8 +7556,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7715,22 +7621,17 @@ pub struct UpdateDistributionConfigurationError {
 pub enum UpdateDistributionConfigurationErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>You have specified a client token for an operation using parameter values that differ from
-    /// a previous request that used the same client token.</p>
+    /// <p>You have specified a client token for an operation using parameter values that differ from a previous request that used the same client token.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
-    /// <p>You have specified two or more mutually exclusive parameters. Review the error message for
-    /// details.</p>
+    /// <p>You have specified two or more mutually exclusive parameters. Review the error message for details.</p>
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
     /// <p>You have made a request for an action that is not supported by the service.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource that you are trying to operate on is currently in use. Review the message
-    /// details and retry later.</p>
+    /// <p>The resource that you are trying to operate on is currently in use. Review the message details and retry later.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
     ServiceException(crate::error::ServiceException),
@@ -7800,8 +7701,6 @@ impl UpdateDistributionConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7930,19 +7829,15 @@ pub struct UpdateImagePipelineError {
 pub enum UpdateImagePipelineErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>You have specified a client token for an operation using parameter values that differ from
-    /// a previous request that used the same client token.</p>
+    /// <p>You have specified a client token for an operation using parameter values that differ from a previous request that used the same client token.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>You have made a request for an action that is not supported by the service.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource that you are trying to operate on is currently in use. Review the message
-    /// details and retry later.</p>
+    /// <p>The resource that you are trying to operate on is currently in use. Review the message details and retry later.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
     ServiceException(crate::error::ServiceException),
@@ -7998,8 +7893,6 @@ impl UpdateImagePipelineError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8107,19 +8000,15 @@ pub struct UpdateInfrastructureConfigurationError {
 pub enum UpdateInfrastructureConfigurationErrorKind {
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on
-    /// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-    /// invalid resource identifier.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::error::ClientException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>You have specified a client token for an operation using parameter values that differ from
-    /// a previous request that used the same client token.</p>
+    /// <p>You have specified a client token for an operation using parameter values that differ from a previous request that used the same client token.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>You have made a request for an action that is not supported by the service.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource that you are trying to operate on is currently in use. Review the message
-    /// details and retry later.</p>
+    /// <p>The resource that you are trying to operate on is currently in use. Review the message details and retry later.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
     ServiceException(crate::error::ServiceException),
@@ -8186,8 +8075,6 @@ impl UpdateInfrastructureConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8419,8 +8306,7 @@ impl ServiceException {
     }
 }
 
-/// <p>The resource that you are trying to operate on is currently in use. Review the message
-/// details and retry later.</p>
+/// <p>The resource that you are trying to operate on is currently in use. Review the message details and retry later.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseException {
@@ -8548,8 +8434,7 @@ impl InvalidRequestException {
     }
 }
 
-/// <p>You have specified a client token for an operation using parameter values that differ from
-/// a previous request that used the same client token.</p>
+/// <p>You have specified a client token for an operation using parameter values that differ from a previous request that used the same client token.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdempotentParameterMismatchException {
@@ -8677,9 +8562,7 @@ impl ForbiddenException {
     }
 }
 
-/// <p>These errors are usually caused by a client action, such as using an action or resource on
-/// behalf of a user that doesn't have permissions to use the action or resource, or specifying an
-/// invalid resource identifier.</p>
+/// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClientException {
@@ -8807,8 +8690,7 @@ impl CallRateLimitExceededException {
     }
 }
 
-/// <p>You have specified two or more mutually exclusive parameters. Review the error message for
-/// details.</p>
+/// <p>You have specified two or more mutually exclusive parameters. Review the error message for details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterCombinationException {
@@ -8936,8 +8818,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>The specified parameter is invalid. Review the available parameters for the API
-/// request.</p>
+/// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterException {
@@ -9193,8 +9074,7 @@ impl InvalidVersionNumberException {
     }
 }
 
-/// <p>You have attempted to mutate or delete a resource with a dependency that prohibits this
-/// action. See the error message for more details.</p>
+/// <p>You have attempted to mutate or delete a resource with a dependency that prohibits this action. See the error message for more details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDependencyException {

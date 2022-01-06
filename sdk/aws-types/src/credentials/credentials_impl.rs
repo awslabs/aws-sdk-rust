@@ -3,10 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+use aws_smithy_types::date_time::Format;
 use std::fmt;
 use std::fmt::{Debug, Formatter};
 use std::sync::Arc;
-use std::time::SystemTime;
+use std::time::{SystemTime, UNIX_EPOCH};
 use zeroize::Zeroizing;
 
 /// AWS SDK Credentials
@@ -45,8 +46,15 @@ impl Debug for Credentials {
             .field("access_key_id", &self.0.access_key_id.as_str())
             .field("secret_access_key", &"** redacted **");
         if let Some(expiry) = self.expiry() {
-            // TODO: format the expiry nicely
-            creds.field("expires_after", &expiry);
+            if let Some(formatted) = expiry.duration_since(UNIX_EPOCH).ok().and_then(|dur| {
+                aws_smithy_types::DateTime::from_secs(dur.as_secs() as _)
+                    .fmt(Format::DateTime)
+                    .ok()
+            }) {
+                creds.field("expires_after", &formatted);
+            } else {
+                creds.field("expires_after", &expiry);
+            }
         }
         creds.finish()
     }
@@ -144,5 +152,26 @@ impl Credentials {
     /// Returns the session token.
     pub fn session_token(&self) -> Option<&str> {
         self.0.session_token.as_deref()
+    }
+}
+
+#[cfg(test)]
+mod test {
+    use crate::Credentials;
+    use std::time::{Duration, UNIX_EPOCH};
+
+    #[test]
+    fn debug_impl() {
+        let creds = Credentials::new(
+            "akid",
+            "secret",
+            Some("token".into()),
+            Some(UNIX_EPOCH + Duration::from_secs(1234567890)),
+            "debug tester",
+        );
+        assert_eq!(
+            format!("{:?}", creds),
+            r#"Credentials { provider_name: "debug tester", access_key_id: "akid", secret_access_key: "** redacted **", expires_after: "2009-02-13T23:31:30Z" }"#
+        );
     }
 }

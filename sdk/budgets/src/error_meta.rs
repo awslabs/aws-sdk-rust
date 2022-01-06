@@ -19,8 +19,7 @@ pub enum Error {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p> The request was received and recognized by the server, but the server rejected that
-    /// particular method for the requested resource. </p>
+    /// <p> The request was received and recognized by the server, but the server rejected that particular method for the requested resource. </p>
     ResourceLockedException(crate::error::ResourceLockedException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

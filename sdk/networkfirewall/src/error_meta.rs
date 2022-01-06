@@ -3,28 +3,17 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>AWS doesn't currently have enough available capacity to fulfill your request. Try your
-    /// request later. </p>
+    /// <p>AWS doesn't currently have enough available capacity to fulfill your request. Try your request later. </p>
     InsufficientCapacityException(crate::error::InsufficientCapacityException),
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The operation failed because it's not valid. For example, you might have tried to delete
-    /// a rule group or firewall policy that's in use.</p>
+    /// <p>The operation failed because it's not valid. For example, you might have tried to delete a rule group or firewall policy that's in use.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The policy statement failed validation.</p>
@@ -510,6 +499,36 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeRuleGroupMetadataError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeRuleGroupMetadataError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeRuleGroupMetadataErrorKind::InternalServerError(inner) => {
+                    Error::InternalServerError(inner)
+                }
+                crate::error::DescribeRuleGroupMetadataErrorKind::InvalidRequestException(
+                    inner,
+                ) => Error::InvalidRequestException(inner),
+                crate::error::DescribeRuleGroupMetadataErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::DescribeRuleGroupMetadataErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::DescribeRuleGroupMetadataErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisassociateSubnetsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -625,11 +644,17 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListTagsForResourceErrorKind::InternalServerError(inner) => {
+                    Error::InternalServerError(inner)
+                }
                 crate::error::ListTagsForResourceErrorKind::InvalidRequestException(inner) => {
                     Error::InvalidRequestException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
+                }
+                crate::error::ListTagsForResourceErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -678,11 +703,17 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::TagResourceErrorKind::InternalServerError(inner) => {
+                    Error::InternalServerError(inner)
+                }
                 crate::error::TagResourceErrorKind::InvalidRequestException(inner) => {
                     Error::InvalidRequestException(inner)
                 }
                 crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
+                }
+                crate::error::TagResourceErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
                 }
                 crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -697,11 +728,17 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UntagResourceErrorKind::InternalServerError(inner) => {
+                    Error::InternalServerError(inner)
+                }
                 crate::error::UntagResourceErrorKind::InvalidRequestException(inner) => {
                     Error::InvalidRequestException(inner)
                 }
                 crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
+                }
+                crate::error::UntagResourceErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
                 }
                 crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },

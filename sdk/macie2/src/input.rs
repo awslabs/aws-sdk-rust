@@ -68,7 +68,7 @@ pub mod accept_invitation_input {
 #[doc(hidden)]
 pub type AcceptInvitationInputOperationOutputAlias = crate::operation::AcceptInvitation;
 #[doc(hidden)]
-pub type AcceptInvitationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AcceptInvitationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptInvitationInput {
     /// Consumes the builder and constructs an Operation<[`AcceptInvitation`](crate::operation::AcceptInvitation)>
     #[allow(clippy::let_and_return)]
@@ -79,7 +79,7 @@ impl AcceptInvitationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AcceptInvitation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -159,7 +159,7 @@ impl AcceptInvitationInput {
             "AcceptInvitation",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -225,7 +225,8 @@ pub mod batch_get_custom_data_identifiers_input {
 pub type BatchGetCustomDataIdentifiersInputOperationOutputAlias =
     crate::operation::BatchGetCustomDataIdentifiers;
 #[doc(hidden)]
-pub type BatchGetCustomDataIdentifiersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchGetCustomDataIdentifiersInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetCustomDataIdentifiersInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetCustomDataIdentifiers`](crate::operation::BatchGetCustomDataIdentifiers)>
     #[allow(clippy::let_and_return)]
@@ -236,7 +237,7 @@ impl BatchGetCustomDataIdentifiersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGetCustomDataIdentifiers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -317,7 +318,7 @@ impl BatchGetCustomDataIdentifiersInput {
             "BatchGetCustomDataIdentifiers",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -404,22 +405,32 @@ pub mod create_classification_job_input {
             self.description = input;
             self
         }
-        /// <p>For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is created (true). To analyze only those objects that are created or changed after you create the job and before the job's first scheduled run, set this value to false.</p><p>If you configure the job to run only once, don't specify a value for this property.</p>
+        /// <p>For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is created (true). To analyze only those objects that are created or changed after you create the job and before the job's first scheduled run, set this value to false.</p>
+        /// <p>If you configure the job to run only once, don't specify a value for this property.</p>
         pub fn initial_run(mut self, input: bool) -> Self {
             self.initial_run = Some(input);
             self
         }
-        /// <p>For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is created (true). To analyze only those objects that are created or changed after you create the job and before the job's first scheduled run, set this value to false.</p><p>If you configure the job to run only once, don't specify a value for this property.</p>
+        /// <p>For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is created (true). To analyze only those objects that are created or changed after you create the job and before the job's first scheduled run, set this value to false.</p>
+        /// <p>If you configure the job to run only once, don't specify a value for this property.</p>
         pub fn set_initial_run(mut self, input: std::option::Option<bool>) -> Self {
             self.initial_run = input;
             self
         }
-        /// <p>The schedule for running the job. Valid values are:</p> <ul><li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li> <li><p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li></ul>
+        /// <p>The schedule for running the job. Valid values are:</p>
+        /// <ul>
+        /// <li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li>
+        /// <li><p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li>
+        /// </ul>
         pub fn job_type(mut self, input: crate::model::JobType) -> Self {
             self.job_type = Some(input);
             self
         }
-        /// <p>The schedule for running the job. Valid values are:</p> <ul><li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li> <li><p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li></ul>
+        /// <p>The schedule for running the job. Valid values are:</p>
+        /// <ul>
+        /// <li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li>
+        /// <li><p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li>
+        /// </ul>
         pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
             self.job_type = input;
             self
@@ -428,7 +439,8 @@ pub mod create_classification_job_input {
         ///
         /// To override the contents of this collection use [`set_managed_data_identifier_ids`](Self::set_managed_data_identifier_ids).
         ///
-        /// <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p><p>To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.</p>
+        /// <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p>
+        /// <p>To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.</p>
         pub fn managed_data_identifier_ids(
             mut self,
             input: impl Into<std::string::String>,
@@ -438,7 +450,8 @@ pub mod create_classification_job_input {
             self.managed_data_identifier_ids = Some(v);
             self
         }
-        /// <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p><p>To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.</p>
+        /// <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p>
+        /// <p>To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.</p>
         pub fn set_managed_data_identifier_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -446,7 +459,14 @@ pub mod create_classification_job_input {
             self.managed_data_identifier_ids = input;
             self
         }
-        /// <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p> <ul><li><p>ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li> <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds property.</p></li></ul> <p>If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
+        /// <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p>
+        /// <ul>
+        /// <li><p>ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>
+        /// <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+        /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+        /// <li><p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds property.</p></li>
+        /// </ul>
+        /// <p>If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
         pub fn managed_data_identifier_selector(
             mut self,
             input: crate::model::ManagedDataIdentifierSelector,
@@ -454,7 +474,14 @@ pub mod create_classification_job_input {
             self.managed_data_identifier_selector = Some(input);
             self
         }
-        /// <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p> <ul><li><p>ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li> <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds property.</p></li></ul> <p>If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
+        /// <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p>
+        /// <ul>
+        /// <li><p>ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>
+        /// <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+        /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+        /// <li><p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds property.</p></li>
+        /// </ul>
+        /// <p>If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
         pub fn set_managed_data_identifier_selector(
             mut self,
             input: std::option::Option<crate::model::ManagedDataIdentifierSelector>,
@@ -512,7 +539,8 @@ pub mod create_classification_job_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map of key-value pairs that specifies the tags to associate with the job.</p> <p>A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+        /// <p>A map of key-value pairs that specifies the tags to associate with the job.</p>
+        /// <p>A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -523,7 +551,8 @@ pub mod create_classification_job_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A map of key-value pairs that specifies the tags to associate with the job.</p> <p>A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+        /// <p>A map of key-value pairs that specifies the tags to associate with the job.</p>
+        /// <p>A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -561,7 +590,7 @@ pub mod create_classification_job_input {
 pub type CreateClassificationJobInputOperationOutputAlias =
     crate::operation::CreateClassificationJob;
 #[doc(hidden)]
-pub type CreateClassificationJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateClassificationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateClassificationJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateClassificationJob`](crate::operation::CreateClassificationJob)>
     #[allow(clippy::let_and_return)]
@@ -572,7 +601,7 @@ impl CreateClassificationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateClassificationJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -657,7 +686,7 @@ impl CreateClassificationJobInput {
             "CreateClassificationJob",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -709,12 +738,14 @@ pub mod create_custom_data_identifier_input {
             self.client_token = input;
             self
         }
-        /// <p>A custom description of the custom data identifier. The description can contain as many as 512 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+        /// <p>A custom description of the custom data identifier. The description can contain as many as 512 characters.</p>
+        /// <p>We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>A custom description of the custom data identifier. The description can contain as many as 512 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+        /// <p>A custom description of the custom data identifier. The description can contain as many as 512 characters.</p>
+        /// <p>We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -767,12 +798,14 @@ pub mod create_custom_data_identifier_input {
             self.maximum_match_distance = input;
             self
         }
-        /// <p>A custom name for the custom data identifier. The name can contain as many as 128 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+        /// <p>A custom name for the custom data identifier. The name can contain as many as 128 characters.</p>
+        /// <p>We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A custom name for the custom data identifier. The name can contain as many as 128 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+        /// <p>A custom name for the custom data identifier. The name can contain as many as 128 characters.</p>
+        /// <p>We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -791,14 +824,16 @@ pub mod create_custom_data_identifier_input {
         ///
         /// To override the contents of this collection use [`set_severity_levels`](Self::set_severity_levels).
         ///
-        /// <p>The severity to assign to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. You can specify as many as three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one, the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified threshold, Amazon Macie doesn't create a finding.</p> <p>If you don't specify any values for this array, Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
-        pub fn severity_levels(mut self, input: impl Into<crate::model::SeverityLevel>) -> Self {
+        /// <p>The severity to assign to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. You can specify as many as three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one, the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified threshold, Amazon Macie doesn't create a finding.</p>
+        /// <p>If you don't specify any values for this array, Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
+        pub fn severity_levels(mut self, input: crate::model::SeverityLevel) -> Self {
             let mut v = self.severity_levels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.severity_levels = Some(v);
             self
         }
-        /// <p>The severity to assign to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. You can specify as many as three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one, the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified threshold, Amazon Macie doesn't create a finding.</p> <p>If you don't specify any values for this array, Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
+        /// <p>The severity to assign to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. You can specify as many as three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one, the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified threshold, Amazon Macie doesn't create a finding.</p>
+        /// <p>If you don't specify any values for this array, Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
         pub fn set_severity_levels(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SeverityLevel>>,
@@ -810,7 +845,8 @@ pub mod create_custom_data_identifier_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p> <p>A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+        /// <p>A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p>
+        /// <p>A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -821,7 +857,8 @@ pub mod create_custom_data_identifier_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p> <p>A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+        /// <p>A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p>
+        /// <p>A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -856,7 +893,7 @@ pub mod create_custom_data_identifier_input {
 pub type CreateCustomDataIdentifierInputOperationOutputAlias =
     crate::operation::CreateCustomDataIdentifier;
 #[doc(hidden)]
-pub type CreateCustomDataIdentifierInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateCustomDataIdentifierInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCustomDataIdentifierInput {
     /// Consumes the builder and constructs an Operation<[`CreateCustomDataIdentifier`](crate::operation::CreateCustomDataIdentifier)>
     #[allow(clippy::let_and_return)]
@@ -867,7 +904,7 @@ impl CreateCustomDataIdentifierInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCustomDataIdentifier,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -951,7 +988,7 @@ impl CreateCustomDataIdentifierInput {
             "CreateCustomDataIdentifier",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1014,12 +1051,14 @@ pub mod create_findings_filter_input {
             self.client_token = input;
             self
         }
-        /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+        /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p>
+        /// <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+        /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p>
+        /// <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1037,12 +1076,14 @@ pub mod create_findings_filter_input {
             self.finding_criteria = input;
             self
         }
-        /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+        /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>
+        /// <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+        /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>
+        /// <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1061,7 +1102,8 @@ pub mod create_findings_filter_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map of key-value pairs that specifies the tags to associate with the filter.</p> <p>A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+        /// <p>A map of key-value pairs that specifies the tags to associate with the filter.</p>
+        /// <p>A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1072,7 +1114,8 @@ pub mod create_findings_filter_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A map of key-value pairs that specifies the tags to associate with the filter.</p> <p>A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+        /// <p>A map of key-value pairs that specifies the tags to associate with the filter.</p>
+        /// <p>A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1104,7 +1147,7 @@ pub mod create_findings_filter_input {
 #[doc(hidden)]
 pub type CreateFindingsFilterInputOperationOutputAlias = crate::operation::CreateFindingsFilter;
 #[doc(hidden)]
-pub type CreateFindingsFilterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFindingsFilterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFindingsFilterInput {
     /// Consumes the builder and constructs an Operation<[`CreateFindingsFilter`](crate::operation::CreateFindingsFilter)>
     #[allow(clippy::let_and_return)]
@@ -1115,7 +1158,7 @@ impl CreateFindingsFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFindingsFilter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1200,7 +1243,7 @@ impl CreateFindingsFilterInput {
             "CreateFindingsFilter",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1291,7 +1334,7 @@ pub mod create_invitations_input {
 #[doc(hidden)]
 pub type CreateInvitationsInputOperationOutputAlias = crate::operation::CreateInvitations;
 #[doc(hidden)]
-pub type CreateInvitationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateInvitationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateInvitationsInput {
     /// Consumes the builder and constructs an Operation<[`CreateInvitations`](crate::operation::CreateInvitations)>
     #[allow(clippy::let_and_return)]
@@ -1302,7 +1345,7 @@ impl CreateInvitationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateInvitations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1382,7 +1425,7 @@ impl CreateInvitationsInput {
             "CreateInvitations",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1434,7 +1477,8 @@ pub mod create_member_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.</p> <p>An account can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+        /// <p>A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.</p>
+        /// <p>An account can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1445,7 +1489,8 @@ pub mod create_member_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.</p> <p>An account can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+        /// <p>A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.</p>
+        /// <p>An account can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1472,7 +1517,7 @@ pub mod create_member_input {
 #[doc(hidden)]
 pub type CreateMemberInputOperationOutputAlias = crate::operation::CreateMember;
 #[doc(hidden)]
-pub type CreateMemberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateMemberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMemberInput {
     /// Consumes the builder and constructs an Operation<[`CreateMember`](crate::operation::CreateMember)>
     #[allow(clippy::let_and_return)]
@@ -1483,7 +1528,7 @@ impl CreateMemberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMember,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1562,7 +1607,7 @@ impl CreateMemberInput {
             "CreateMember",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1599,9 +1644,9 @@ pub mod create_sample_findings_input {
         /// To override the contents of this collection use [`set_finding_types`](Self::set_finding_types).
         ///
         /// <p>An array of finding types, one for each type of sample finding to create. To create a sample of every type of finding that Amazon Macie supports, don't include this array in your request.</p>
-        pub fn finding_types(mut self, input: impl Into<crate::model::FindingType>) -> Self {
+        pub fn finding_types(mut self, input: crate::model::FindingType) -> Self {
             let mut v = self.finding_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.finding_types = Some(v);
             self
         }
@@ -1629,7 +1674,7 @@ pub mod create_sample_findings_input {
 #[doc(hidden)]
 pub type CreateSampleFindingsInputOperationOutputAlias = crate::operation::CreateSampleFindings;
 #[doc(hidden)]
-pub type CreateSampleFindingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSampleFindingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSampleFindingsInput {
     /// Consumes the builder and constructs an Operation<[`CreateSampleFindings`](crate::operation::CreateSampleFindings)>
     #[allow(clippy::let_and_return)]
@@ -1640,7 +1685,7 @@ impl CreateSampleFindingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSampleFindings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1722,7 +1767,7 @@ impl CreateSampleFindingsInput {
             "CreateSampleFindings",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1789,7 +1834,7 @@ pub mod decline_invitations_input {
 #[doc(hidden)]
 pub type DeclineInvitationsInputOperationOutputAlias = crate::operation::DeclineInvitations;
 #[doc(hidden)]
-pub type DeclineInvitationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeclineInvitationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeclineInvitationsInput {
     /// Consumes the builder and constructs an Operation<[`DeclineInvitations`](crate::operation::DeclineInvitations)>
     #[allow(clippy::let_and_return)]
@@ -1800,7 +1845,7 @@ impl DeclineInvitationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeclineInvitations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1880,7 +1925,7 @@ impl DeclineInvitationsInput {
             "DeclineInvitations",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1937,7 +1982,7 @@ pub mod delete_custom_data_identifier_input {
 pub type DeleteCustomDataIdentifierInputOperationOutputAlias =
     crate::operation::DeleteCustomDataIdentifier;
 #[doc(hidden)]
-pub type DeleteCustomDataIdentifierInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteCustomDataIdentifierInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCustomDataIdentifierInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCustomDataIdentifier`](crate::operation::DeleteCustomDataIdentifier)>
     #[allow(clippy::let_and_return)]
@@ -1948,7 +1993,7 @@ impl DeleteCustomDataIdentifierInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCustomDataIdentifier,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2038,7 +2083,7 @@ impl DeleteCustomDataIdentifierInput {
             "DeleteCustomDataIdentifier",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2086,7 +2131,7 @@ pub mod delete_findings_filter_input {
 #[doc(hidden)]
 pub type DeleteFindingsFilterInputOperationOutputAlias = crate::operation::DeleteFindingsFilter;
 #[doc(hidden)]
-pub type DeleteFindingsFilterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFindingsFilterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFindingsFilterInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFindingsFilter`](crate::operation::DeleteFindingsFilter)>
     #[allow(clippy::let_and_return)]
@@ -2097,7 +2142,7 @@ impl DeleteFindingsFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFindingsFilter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2186,7 +2231,7 @@ impl DeleteFindingsFilterInput {
             "DeleteFindingsFilter",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2245,7 +2290,7 @@ pub mod delete_invitations_input {
 #[doc(hidden)]
 pub type DeleteInvitationsInputOperationOutputAlias = crate::operation::DeleteInvitations;
 #[doc(hidden)]
-pub type DeleteInvitationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteInvitationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteInvitationsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInvitations`](crate::operation::DeleteInvitations)>
     #[allow(clippy::let_and_return)]
@@ -2256,7 +2301,7 @@ impl DeleteInvitationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteInvitations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2336,7 +2381,7 @@ impl DeleteInvitationsInput {
             "DeleteInvitations",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2392,7 +2437,7 @@ pub mod delete_member_input {
 #[doc(hidden)]
 pub type DeleteMemberInputOperationOutputAlias = crate::operation::DeleteMember;
 #[doc(hidden)]
-pub type DeleteMemberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteMemberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMemberInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMember`](crate::operation::DeleteMember)>
     #[allow(clippy::let_and_return)]
@@ -2403,7 +2448,7 @@ impl DeleteMemberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMember,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2492,7 +2537,7 @@ impl DeleteMemberInput {
             "DeleteMember",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2532,10 +2577,10 @@ pub mod describe_buckets_input {
         pub fn criteria(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::BucketCriteriaAdditionalProperties>,
+            v: crate::model::BucketCriteriaAdditionalProperties,
         ) -> Self {
             let mut hash_map = self.criteria.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.criteria = Some(hash_map);
             self
         }
@@ -2604,7 +2649,7 @@ pub mod describe_buckets_input {
 #[doc(hidden)]
 pub type DescribeBucketsInputOperationOutputAlias = crate::operation::DescribeBuckets;
 #[doc(hidden)]
-pub type DescribeBucketsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeBucketsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBucketsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBuckets`](crate::operation::DescribeBuckets)>
     #[allow(clippy::let_and_return)]
@@ -2615,7 +2660,7 @@ impl DescribeBucketsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBuckets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2695,7 +2740,7 @@ impl DescribeBucketsInput {
             "DescribeBuckets",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2754,7 +2799,7 @@ pub mod describe_classification_job_input {
 pub type DescribeClassificationJobInputOperationOutputAlias =
     crate::operation::DescribeClassificationJob;
 #[doc(hidden)]
-pub type DescribeClassificationJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeClassificationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeClassificationJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeClassificationJob`](crate::operation::DescribeClassificationJob)>
     #[allow(clippy::let_and_return)]
@@ -2765,7 +2810,7 @@ impl DescribeClassificationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeClassificationJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2854,7 +2899,7 @@ impl DescribeClassificationJobInput {
             "DescribeClassificationJob",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2891,7 +2936,8 @@ pub mod describe_organization_configuration_input {
 pub type DescribeOrganizationConfigurationInputOperationOutputAlias =
     crate::operation::DescribeOrganizationConfiguration;
 #[doc(hidden)]
-pub type DescribeOrganizationConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeOrganizationConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeOrganizationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOrganizationConfiguration`](crate::operation::DescribeOrganizationConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -2902,7 +2948,7 @@ impl DescribeOrganizationConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeOrganizationConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2976,7 +3022,7 @@ impl DescribeOrganizationConfigurationInput {
             "DescribeOrganizationConfiguration",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3012,7 +3058,7 @@ pub mod disable_macie_input {
 #[doc(hidden)]
 pub type DisableMacieInputOperationOutputAlias = crate::operation::DisableMacie;
 #[doc(hidden)]
-pub type DisableMacieInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisableMacieInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisableMacieInput {
     /// Consumes the builder and constructs an Operation<[`DisableMacie`](crate::operation::DisableMacie)>
     #[allow(clippy::let_and_return)]
@@ -3023,7 +3069,7 @@ impl DisableMacieInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisableMacie,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3097,7 +3143,7 @@ impl DisableMacieInput {
             "DisableMacie",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3151,7 +3197,8 @@ pub mod disable_organization_admin_account_input {
 pub type DisableOrganizationAdminAccountInputOperationOutputAlias =
     crate::operation::DisableOrganizationAdminAccount;
 #[doc(hidden)]
-pub type DisableOrganizationAdminAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisableOrganizationAdminAccountInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisableOrganizationAdminAccountInput {
     /// Consumes the builder and constructs an Operation<[`DisableOrganizationAdminAccount`](crate::operation::DisableOrganizationAdminAccount)>
     #[allow(clippy::let_and_return)]
@@ -3162,7 +3209,7 @@ impl DisableOrganizationAdminAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisableOrganizationAdminAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3250,7 +3297,7 @@ impl DisableOrganizationAdminAccountInput {
             "DisableOrganizationAdminAccount",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3288,7 +3335,7 @@ pub type DisassociateFromAdministratorAccountInputOperationOutputAlias =
     crate::operation::DisassociateFromAdministratorAccount;
 #[doc(hidden)]
 pub type DisassociateFromAdministratorAccountInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateFromAdministratorAccountInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateFromAdministratorAccount`](crate::operation::DisassociateFromAdministratorAccount)>
     #[allow(clippy::let_and_return)]
@@ -3299,7 +3346,7 @@ impl DisassociateFromAdministratorAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateFromAdministratorAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3373,7 +3420,7 @@ impl DisassociateFromAdministratorAccountInput {
             "DisassociateFromAdministratorAccount",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3410,7 +3457,8 @@ pub mod disassociate_from_master_account_input {
 pub type DisassociateFromMasterAccountInputOperationOutputAlias =
     crate::operation::DisassociateFromMasterAccount;
 #[doc(hidden)]
-pub type DisassociateFromMasterAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateFromMasterAccountInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateFromMasterAccountInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateFromMasterAccount`](crate::operation::DisassociateFromMasterAccount)>
     #[allow(clippy::let_and_return)]
@@ -3421,7 +3469,7 @@ impl DisassociateFromMasterAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateFromMasterAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3495,7 +3543,7 @@ impl DisassociateFromMasterAccountInput {
             "DisassociateFromMasterAccount",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3543,7 +3591,7 @@ pub mod disassociate_member_input {
 #[doc(hidden)]
 pub type DisassociateMemberInputOperationOutputAlias = crate::operation::DisassociateMember;
 #[doc(hidden)]
-pub type DisassociateMemberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateMemberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateMemberInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateMember`](crate::operation::DisassociateMember)>
     #[allow(clippy::let_and_return)]
@@ -3554,7 +3602,7 @@ impl DisassociateMemberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateMember,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3644,7 +3692,7 @@ impl DisassociateMemberInput {
             "DisassociateMember",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3725,7 +3773,7 @@ pub mod enable_macie_input {
 #[doc(hidden)]
 pub type EnableMacieInputOperationOutputAlias = crate::operation::EnableMacie;
 #[doc(hidden)]
-pub type EnableMacieInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type EnableMacieInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EnableMacieInput {
     /// Consumes the builder and constructs an Operation<[`EnableMacie`](crate::operation::EnableMacie)>
     #[allow(clippy::let_and_return)]
@@ -3736,7 +3784,7 @@ impl EnableMacieInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::EnableMacie,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3818,7 +3866,7 @@ impl EnableMacieInput {
             "EnableMacie",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3892,7 +3940,8 @@ pub mod enable_organization_admin_account_input {
 pub type EnableOrganizationAdminAccountInputOperationOutputAlias =
     crate::operation::EnableOrganizationAdminAccount;
 #[doc(hidden)]
-pub type EnableOrganizationAdminAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type EnableOrganizationAdminAccountInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl EnableOrganizationAdminAccountInput {
     /// Consumes the builder and constructs an Operation<[`EnableOrganizationAdminAccount`](crate::operation::EnableOrganizationAdminAccount)>
     #[allow(clippy::let_and_return)]
@@ -3903,7 +3952,7 @@ impl EnableOrganizationAdminAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::EnableOrganizationAdminAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3987,7 +4036,7 @@ impl EnableOrganizationAdminAccountInput {
             "EnableOrganizationAdminAccount",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4032,7 +4081,7 @@ pub mod get_administrator_account_input {
 pub type GetAdministratorAccountInputOperationOutputAlias =
     crate::operation::GetAdministratorAccount;
 #[doc(hidden)]
-pub type GetAdministratorAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAdministratorAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAdministratorAccountInput {
     /// Consumes the builder and constructs an Operation<[`GetAdministratorAccount`](crate::operation::GetAdministratorAccount)>
     #[allow(clippy::let_and_return)]
@@ -4043,7 +4092,7 @@ impl GetAdministratorAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAdministratorAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4117,7 +4166,7 @@ impl GetAdministratorAccountInput {
             "GetAdministratorAccount",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4167,7 +4216,7 @@ pub mod get_bucket_statistics_input {
 #[doc(hidden)]
 pub type GetBucketStatisticsInputOperationOutputAlias = crate::operation::GetBucketStatistics;
 #[doc(hidden)]
-pub type GetBucketStatisticsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetBucketStatisticsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBucketStatisticsInput {
     /// Consumes the builder and constructs an Operation<[`GetBucketStatistics`](crate::operation::GetBucketStatistics)>
     #[allow(clippy::let_and_return)]
@@ -4178,7 +4227,7 @@ impl GetBucketStatisticsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetBucketStatistics,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4258,7 +4307,7 @@ impl GetBucketStatisticsInput {
             "GetBucketStatistics",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4304,7 +4353,7 @@ pub type GetClassificationExportConfigurationInputOperationOutputAlias =
     crate::operation::GetClassificationExportConfiguration;
 #[doc(hidden)]
 pub type GetClassificationExportConfigurationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetClassificationExportConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetClassificationExportConfiguration`](crate::operation::GetClassificationExportConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -4315,7 +4364,7 @@ impl GetClassificationExportConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetClassificationExportConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4390,7 +4439,7 @@ impl GetClassificationExportConfigurationInput {
             "GetClassificationExportConfiguration",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4439,7 +4488,7 @@ pub mod get_custom_data_identifier_input {
 pub type GetCustomDataIdentifierInputOperationOutputAlias =
     crate::operation::GetCustomDataIdentifier;
 #[doc(hidden)]
-pub type GetCustomDataIdentifierInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCustomDataIdentifierInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCustomDataIdentifierInput {
     /// Consumes the builder and constructs an Operation<[`GetCustomDataIdentifier`](crate::operation::GetCustomDataIdentifier)>
     #[allow(clippy::let_and_return)]
@@ -4450,7 +4499,7 @@ impl GetCustomDataIdentifierInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCustomDataIdentifier,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4540,7 +4589,7 @@ impl GetCustomDataIdentifierInput {
             "GetCustomDataIdentifier",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4614,7 +4663,7 @@ pub mod get_findings_input {
 #[doc(hidden)]
 pub type GetFindingsInputOperationOutputAlias = crate::operation::GetFindings;
 #[doc(hidden)]
-pub type GetFindingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFindingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFindingsInput {
     /// Consumes the builder and constructs an Operation<[`GetFindings`](crate::operation::GetFindings)>
     #[allow(clippy::let_and_return)]
@@ -4625,7 +4674,7 @@ impl GetFindingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFindings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4704,7 +4753,7 @@ impl GetFindingsInput {
             "GetFindings",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4760,7 +4809,7 @@ pub mod get_findings_filter_input {
 #[doc(hidden)]
 pub type GetFindingsFilterInputOperationOutputAlias = crate::operation::GetFindingsFilter;
 #[doc(hidden)]
-pub type GetFindingsFilterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFindingsFilterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFindingsFilterInput {
     /// Consumes the builder and constructs an Operation<[`GetFindingsFilter`](crate::operation::GetFindingsFilter)>
     #[allow(clippy::let_and_return)]
@@ -4771,7 +4820,7 @@ impl GetFindingsFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFindingsFilter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4860,7 +4909,7 @@ impl GetFindingsFilterInput {
             "GetFindingsFilter",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4898,7 +4947,7 @@ pub type GetFindingsPublicationConfigurationInputOperationOutputAlias =
     crate::operation::GetFindingsPublicationConfiguration;
 #[doc(hidden)]
 pub type GetFindingsPublicationConfigurationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetFindingsPublicationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetFindingsPublicationConfiguration`](crate::operation::GetFindingsPublicationConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -4909,7 +4958,7 @@ impl GetFindingsPublicationConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFindingsPublicationConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4984,7 +5033,7 @@ impl GetFindingsPublicationConfigurationInput {
             "GetFindingsPublicationConfiguration",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5024,12 +5073,24 @@ pub mod get_finding_statistics_input {
             self.finding_criteria = input;
             self
         }
-        /// <p>The finding property to use to group the query results. Valid values are:</p> <ul><li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li> <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li> <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li> <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li></ul>
+        /// <p>The finding property to use to group the query results. Valid values are:</p>
+        /// <ul>
+        /// <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li>
+        /// <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li>
+        /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li>
+        /// <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
+        /// </ul>
         pub fn group_by(mut self, input: crate::model::GroupBy) -> Self {
             self.group_by = Some(input);
             self
         }
-        /// <p>The finding property to use to group the query results. Valid values are:</p> <ul><li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li> <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li> <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li> <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li></ul>
+        /// <p>The finding property to use to group the query results. Valid values are:</p>
+        /// <ul>
+        /// <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li>
+        /// <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li>
+        /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li>
+        /// <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
+        /// </ul>
         pub fn set_group_by(mut self, input: std::option::Option<crate::model::GroupBy>) -> Self {
             self.group_by = input;
             self
@@ -5076,7 +5137,7 @@ pub mod get_finding_statistics_input {
 #[doc(hidden)]
 pub type GetFindingStatisticsInputOperationOutputAlias = crate::operation::GetFindingStatistics;
 #[doc(hidden)]
-pub type GetFindingStatisticsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFindingStatisticsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFindingStatisticsInput {
     /// Consumes the builder and constructs an Operation<[`GetFindingStatistics`](crate::operation::GetFindingStatistics)>
     #[allow(clippy::let_and_return)]
@@ -5087,7 +5148,7 @@ impl GetFindingStatisticsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFindingStatistics,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5169,7 +5230,7 @@ impl GetFindingStatisticsInput {
             "GetFindingStatistics",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5213,7 +5274,7 @@ pub mod get_invitations_count_input {
 #[doc(hidden)]
 pub type GetInvitationsCountInputOperationOutputAlias = crate::operation::GetInvitationsCount;
 #[doc(hidden)]
-pub type GetInvitationsCountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetInvitationsCountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetInvitationsCountInput {
     /// Consumes the builder and constructs an Operation<[`GetInvitationsCount`](crate::operation::GetInvitationsCount)>
     #[allow(clippy::let_and_return)]
@@ -5224,7 +5285,7 @@ impl GetInvitationsCountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetInvitationsCount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5298,7 +5359,7 @@ impl GetInvitationsCountInput {
             "GetInvitationsCount",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5334,7 +5395,7 @@ pub mod get_macie_session_input {
 #[doc(hidden)]
 pub type GetMacieSessionInputOperationOutputAlias = crate::operation::GetMacieSession;
 #[doc(hidden)]
-pub type GetMacieSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMacieSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMacieSessionInput {
     /// Consumes the builder and constructs an Operation<[`GetMacieSession`](crate::operation::GetMacieSession)>
     #[allow(clippy::let_and_return)]
@@ -5345,7 +5406,7 @@ impl GetMacieSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMacieSession,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5419,7 +5480,7 @@ impl GetMacieSessionInput {
             "GetMacieSession",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5455,7 +5516,7 @@ pub mod get_master_account_input {
 #[doc(hidden)]
 pub type GetMasterAccountInputOperationOutputAlias = crate::operation::GetMasterAccount;
 #[doc(hidden)]
-pub type GetMasterAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMasterAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMasterAccountInput {
     /// Consumes the builder and constructs an Operation<[`GetMasterAccount`](crate::operation::GetMasterAccount)>
     #[allow(clippy::let_and_return)]
@@ -5466,7 +5527,7 @@ impl GetMasterAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMasterAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5540,7 +5601,7 @@ impl GetMasterAccountInput {
             "GetMasterAccount",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5586,7 +5647,7 @@ pub mod get_member_input {
 #[doc(hidden)]
 pub type GetMemberInputOperationOutputAlias = crate::operation::GetMember;
 #[doc(hidden)]
-pub type GetMemberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMemberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMemberInput {
     /// Consumes the builder and constructs an Operation<[`GetMember`](crate::operation::GetMember)>
     #[allow(clippy::let_and_return)]
@@ -5597,7 +5658,7 @@ impl GetMemberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMember,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5684,7 +5745,7 @@ impl GetMemberInput {
                     "GetMember",
                     "macie2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5718,9 +5779,9 @@ pub mod get_usage_statistics_input {
         /// To override the contents of this collection use [`set_filter_by`](Self::set_filter_by).
         ///
         /// <p>An array of objects, one for each condition to use to filter the query results. If you specify more than one condition, Amazon Macie uses an AND operator to join the conditions.</p>
-        pub fn filter_by(mut self, input: impl Into<crate::model::UsageStatisticsFilter>) -> Self {
+        pub fn filter_by(mut self, input: crate::model::UsageStatisticsFilter) -> Self {
             let mut v = self.filter_by.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filter_by = Some(v);
             self
         }
@@ -5798,7 +5859,7 @@ pub mod get_usage_statistics_input {
 #[doc(hidden)]
 pub type GetUsageStatisticsInputOperationOutputAlias = crate::operation::GetUsageStatistics;
 #[doc(hidden)]
-pub type GetUsageStatisticsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetUsageStatisticsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetUsageStatisticsInput {
     /// Consumes the builder and constructs an Operation<[`GetUsageStatistics`](crate::operation::GetUsageStatistics)>
     #[allow(clippy::let_and_return)]
@@ -5809,7 +5870,7 @@ impl GetUsageStatisticsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetUsageStatistics,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5889,7 +5950,7 @@ impl GetUsageStatisticsInput {
             "GetUsageStatistics",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5947,7 +6008,7 @@ pub mod get_usage_totals_input {
 #[doc(hidden)]
 pub type GetUsageTotalsInputOperationOutputAlias = crate::operation::GetUsageTotals;
 #[doc(hidden)]
-pub type GetUsageTotalsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetUsageTotalsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetUsageTotalsInput {
     /// Consumes the builder and constructs an Operation<[`GetUsageTotals`](crate::operation::GetUsageTotals)>
     #[allow(clippy::let_and_return)]
@@ -5958,7 +6019,7 @@ impl GetUsageTotalsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetUsageTotals,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6043,7 +6104,7 @@ impl GetUsageTotalsInput {
             "GetUsageTotals",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6135,7 +6196,7 @@ pub mod list_classification_jobs_input {
 #[doc(hidden)]
 pub type ListClassificationJobsInputOperationOutputAlias = crate::operation::ListClassificationJobs;
 #[doc(hidden)]
-pub type ListClassificationJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListClassificationJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListClassificationJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListClassificationJobs`](crate::operation::ListClassificationJobs)>
     #[allow(clippy::let_and_return)]
@@ -6146,7 +6207,7 @@ impl ListClassificationJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListClassificationJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6228,7 +6289,7 @@ impl ListClassificationJobsInput {
             "ListClassificationJobs",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6299,7 +6360,7 @@ pub mod list_custom_data_identifiers_input {
 pub type ListCustomDataIdentifiersInputOperationOutputAlias =
     crate::operation::ListCustomDataIdentifiers;
 #[doc(hidden)]
-pub type ListCustomDataIdentifiersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListCustomDataIdentifiersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCustomDataIdentifiersInput {
     /// Consumes the builder and constructs an Operation<[`ListCustomDataIdentifiers`](crate::operation::ListCustomDataIdentifiers)>
     #[allow(clippy::let_and_return)]
@@ -6310,7 +6371,7 @@ impl ListCustomDataIdentifiersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCustomDataIdentifiers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6392,7 +6453,7 @@ impl ListCustomDataIdentifiersInput {
             "ListCustomDataIdentifiers",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6492,7 +6553,7 @@ pub mod list_findings_input {
 #[doc(hidden)]
 pub type ListFindingsInputOperationOutputAlias = crate::operation::ListFindings;
 #[doc(hidden)]
-pub type ListFindingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFindingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFindingsInput {
     /// Consumes the builder and constructs an Operation<[`ListFindings`](crate::operation::ListFindings)>
     #[allow(clippy::let_and_return)]
@@ -6503,7 +6564,7 @@ impl ListFindingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFindings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6582,7 +6643,7 @@ impl ListFindingsInput {
             "ListFindings",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6652,7 +6713,7 @@ pub mod list_findings_filters_input {
 #[doc(hidden)]
 pub type ListFindingsFiltersInputOperationOutputAlias = crate::operation::ListFindingsFilters;
 #[doc(hidden)]
-pub type ListFindingsFiltersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFindingsFiltersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFindingsFiltersInput {
     /// Consumes the builder and constructs an Operation<[`ListFindingsFilters`](crate::operation::ListFindingsFilters)>
     #[allow(clippy::let_and_return)]
@@ -6663,7 +6724,7 @@ impl ListFindingsFiltersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFindingsFilters,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6754,7 +6815,7 @@ impl ListFindingsFiltersInput {
             "ListFindingsFilters",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6816,7 +6877,7 @@ pub mod list_invitations_input {
 #[doc(hidden)]
 pub type ListInvitationsInputOperationOutputAlias = crate::operation::ListInvitations;
 #[doc(hidden)]
-pub type ListInvitationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListInvitationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInvitationsInput {
     /// Consumes the builder and constructs an Operation<[`ListInvitations`](crate::operation::ListInvitations)>
     #[allow(clippy::let_and_return)]
@@ -6827,7 +6888,7 @@ impl ListInvitationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListInvitations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6918,7 +6979,7 @@ impl ListInvitationsInput {
             "ListInvitations",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6969,7 +7030,7 @@ pub mod list_managed_data_identifiers_input {
 pub type ListManagedDataIdentifiersInputOperationOutputAlias =
     crate::operation::ListManagedDataIdentifiers;
 #[doc(hidden)]
-pub type ListManagedDataIdentifiersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListManagedDataIdentifiersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListManagedDataIdentifiersInput {
     /// Consumes the builder and constructs an Operation<[`ListManagedDataIdentifiers`](crate::operation::ListManagedDataIdentifiers)>
     #[allow(clippy::let_and_return)]
@@ -6980,7 +7041,7 @@ impl ListManagedDataIdentifiersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListManagedDataIdentifiers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7061,7 +7122,7 @@ impl ListManagedDataIdentifiersInput {
             "ListManagedDataIdentifiers",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7146,7 +7207,7 @@ pub mod list_members_input {
 #[doc(hidden)]
 pub type ListMembersInputOperationOutputAlias = crate::operation::ListMembers;
 #[doc(hidden)]
-pub type ListMembersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMembersInput {
     /// Consumes the builder and constructs an Operation<[`ListMembers`](crate::operation::ListMembers)>
     #[allow(clippy::let_and_return)]
@@ -7157,7 +7218,7 @@ impl ListMembersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMembers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7254,7 +7315,7 @@ impl ListMembersInput {
             "ListMembers",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7317,7 +7378,8 @@ pub mod list_organization_admin_accounts_input {
 pub type ListOrganizationAdminAccountsInputOperationOutputAlias =
     crate::operation::ListOrganizationAdminAccounts;
 #[doc(hidden)]
-pub type ListOrganizationAdminAccountsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListOrganizationAdminAccountsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListOrganizationAdminAccountsInput {
     /// Consumes the builder and constructs an Operation<[`ListOrganizationAdminAccounts`](crate::operation::ListOrganizationAdminAccounts)>
     #[allow(clippy::let_and_return)]
@@ -7328,7 +7390,7 @@ impl ListOrganizationAdminAccountsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListOrganizationAdminAccounts,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7419,7 +7481,7 @@ impl ListOrganizationAdminAccountsInput {
             "ListOrganizationAdminAccounts",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7469,7 +7531,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -7480,7 +7542,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7570,7 +7632,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7629,7 +7691,7 @@ pub type PutClassificationExportConfigurationInputOperationOutputAlias =
     crate::operation::PutClassificationExportConfiguration;
 #[doc(hidden)]
 pub type PutClassificationExportConfigurationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl PutClassificationExportConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutClassificationExportConfiguration`](crate::operation::PutClassificationExportConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -7640,7 +7702,7 @@ impl PutClassificationExportConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutClassificationExportConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7722,7 +7784,7 @@ impl PutClassificationExportConfigurationInput {
             "PutClassificationExportConfiguration",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7801,7 +7863,7 @@ pub type PutFindingsPublicationConfigurationInputOperationOutputAlias =
     crate::operation::PutFindingsPublicationConfiguration;
 #[doc(hidden)]
 pub type PutFindingsPublicationConfigurationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl PutFindingsPublicationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutFindingsPublicationConfiguration`](crate::operation::PutFindingsPublicationConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -7812,7 +7874,7 @@ impl PutFindingsPublicationConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutFindingsPublicationConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7897,7 +7959,7 @@ impl PutFindingsPublicationConfigurationInput {
             "PutFindingsPublicationConfiguration",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8001,7 +8063,7 @@ pub mod search_resources_input {
 #[doc(hidden)]
 pub type SearchResourcesInputOperationOutputAlias = crate::operation::SearchResources;
 #[doc(hidden)]
-pub type SearchResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchResourcesInput {
     /// Consumes the builder and constructs an Operation<[`SearchResources`](crate::operation::SearchResources)>
     #[allow(clippy::let_and_return)]
@@ -8012,7 +8074,7 @@ impl SearchResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchResources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8092,7 +8154,7 @@ impl SearchResourcesInput {
             "SearchResources",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8141,7 +8203,8 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map of key-value pairs that specifies the tags to associate with the resource.</p> <p>A resource can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+        /// <p>A map of key-value pairs that specifies the tags to associate with the resource.</p>
+        /// <p>A resource can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -8152,7 +8215,8 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A map of key-value pairs that specifies the tags to associate with the resource.</p> <p>A resource can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+        /// <p>A map of key-value pairs that specifies the tags to associate with the resource.</p>
+        /// <p>A resource can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -8179,7 +8243,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -8190,7 +8254,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8285,7 +8349,7 @@ impl TagResourceInput {
             "TagResource",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8410,7 +8474,7 @@ pub mod test_custom_data_identifier_input {
 pub type TestCustomDataIdentifierInputOperationOutputAlias =
     crate::operation::TestCustomDataIdentifier;
 #[doc(hidden)]
-pub type TestCustomDataIdentifierInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TestCustomDataIdentifierInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TestCustomDataIdentifierInput {
     /// Consumes the builder and constructs an Operation<[`TestCustomDataIdentifier`](crate::operation::TestCustomDataIdentifier)>
     #[allow(clippy::let_and_return)]
@@ -8421,7 +8485,7 @@ impl TestCustomDataIdentifierInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TestCustomDataIdentifier,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8503,7 +8567,7 @@ impl TestCustomDataIdentifierInput {
             "TestCustomDataIdentifier",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8582,7 +8646,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -8593,7 +8657,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8696,7 +8760,7 @@ impl UntagResourceInput {
             "UntagResource",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8731,12 +8795,22 @@ pub mod update_classification_job_input {
             self.job_id = input;
             self
         }
-        /// <p>The new status for the job. Valid values are:</p> <ul><li><p>CANCELLED - Stops the job permanently and cancels it. This value is valid only if the job's current status is IDLE, PAUSED, RUNNING, or USER_PAUSED.</p> <p>If you specify this value and the job's current status is RUNNING, Amazon Macie immediately begins to stop all processing tasks for the job. You can't resume or restart a job after you cancel it.</p></li> <li><p>RUNNING - Resumes the job. This value is valid only if the job's current status is USER_PAUSED.</p> <p>If you paused the job while it was actively running and you specify this value less than 30 days after you paused the job, Macie immediately resumes processing from the point where you paused the job. Otherwise, Macie resumes the job according to the schedule and other settings for the job.</p></li> <li><p>USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE, PAUSED, or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause all processing tasks for the job.</p> <p>If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the job. If you pause a recurring job when its status is RUNNING and you don't resume it within 30 days, the job run expires and Macie cancels the run. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li></ul>
+        /// <p>The new status for the job. Valid values are:</p>
+        /// <ul>
+        /// <li><p>CANCELLED - Stops the job permanently and cancels it. This value is valid only if the job's current status is IDLE, PAUSED, RUNNING, or USER_PAUSED.</p> <p>If you specify this value and the job's current status is RUNNING, Amazon Macie immediately begins to stop all processing tasks for the job. You can't resume or restart a job after you cancel it.</p></li>
+        /// <li><p>RUNNING - Resumes the job. This value is valid only if the job's current status is USER_PAUSED.</p> <p>If you paused the job while it was actively running and you specify this value less than 30 days after you paused the job, Macie immediately resumes processing from the point where you paused the job. Otherwise, Macie resumes the job according to the schedule and other settings for the job.</p></li>
+        /// <li><p>USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE, PAUSED, or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause all processing tasks for the job.</p> <p>If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the job. If you pause a recurring job when its status is RUNNING and you don't resume it within 30 days, the job run expires and Macie cancels the run. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li>
+        /// </ul>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
             self.job_status = Some(input);
             self
         }
-        /// <p>The new status for the job. Valid values are:</p> <ul><li><p>CANCELLED - Stops the job permanently and cancels it. This value is valid only if the job's current status is IDLE, PAUSED, RUNNING, or USER_PAUSED.</p> <p>If you specify this value and the job's current status is RUNNING, Amazon Macie immediately begins to stop all processing tasks for the job. You can't resume or restart a job after you cancel it.</p></li> <li><p>RUNNING - Resumes the job. This value is valid only if the job's current status is USER_PAUSED.</p> <p>If you paused the job while it was actively running and you specify this value less than 30 days after you paused the job, Macie immediately resumes processing from the point where you paused the job. Otherwise, Macie resumes the job according to the schedule and other settings for the job.</p></li> <li><p>USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE, PAUSED, or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause all processing tasks for the job.</p> <p>If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the job. If you pause a recurring job when its status is RUNNING and you don't resume it within 30 days, the job run expires and Macie cancels the run. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li></ul>
+        /// <p>The new status for the job. Valid values are:</p>
+        /// <ul>
+        /// <li><p>CANCELLED - Stops the job permanently and cancels it. This value is valid only if the job's current status is IDLE, PAUSED, RUNNING, or USER_PAUSED.</p> <p>If you specify this value and the job's current status is RUNNING, Amazon Macie immediately begins to stop all processing tasks for the job. You can't resume or restart a job after you cancel it.</p></li>
+        /// <li><p>RUNNING - Resumes the job. This value is valid only if the job's current status is USER_PAUSED.</p> <p>If you paused the job while it was actively running and you specify this value less than 30 days after you paused the job, Macie immediately resumes processing from the point where you paused the job. Otherwise, Macie resumes the job according to the schedule and other settings for the job.</p></li>
+        /// <li><p>USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE, PAUSED, or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause all processing tasks for the job.</p> <p>If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the job. If you pause a recurring job when its status is RUNNING and you don't resume it within 30 days, the job run expires and Macie cancels the run. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li>
+        /// </ul>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -8762,7 +8836,7 @@ pub mod update_classification_job_input {
 pub type UpdateClassificationJobInputOperationOutputAlias =
     crate::operation::UpdateClassificationJob;
 #[doc(hidden)]
-pub type UpdateClassificationJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateClassificationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateClassificationJobInput {
     /// Consumes the builder and constructs an Operation<[`UpdateClassificationJob`](crate::operation::UpdateClassificationJob)>
     #[allow(clippy::let_and_return)]
@@ -8773,7 +8847,7 @@ impl UpdateClassificationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateClassificationJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8870,7 +8944,7 @@ impl UpdateClassificationJobInput {
             "UpdateClassificationJob",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8921,12 +8995,14 @@ pub mod update_findings_filter_input {
             self.action = input;
             self
         }
-        /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+        /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p>
+        /// <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+        /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p>
+        /// <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -8954,12 +9030,14 @@ pub mod update_findings_filter_input {
             self.id = input;
             self
         }
-        /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+        /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>
+        /// <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+        /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>
+        /// <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -9006,7 +9084,7 @@ pub mod update_findings_filter_input {
 #[doc(hidden)]
 pub type UpdateFindingsFilterInputOperationOutputAlias = crate::operation::UpdateFindingsFilter;
 #[doc(hidden)]
-pub type UpdateFindingsFilterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFindingsFilterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFindingsFilterInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFindingsFilter`](crate::operation::UpdateFindingsFilter)>
     #[allow(clippy::let_and_return)]
@@ -9017,7 +9095,7 @@ impl UpdateFindingsFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFindingsFilter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9117,7 +9195,7 @@ impl UpdateFindingsFilterInput {
             "UpdateFindingsFilter",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9194,7 +9272,7 @@ pub mod update_macie_session_input {
 #[doc(hidden)]
 pub type UpdateMacieSessionInputOperationOutputAlias = crate::operation::UpdateMacieSession;
 #[doc(hidden)]
-pub type UpdateMacieSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateMacieSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateMacieSessionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMacieSession`](crate::operation::UpdateMacieSession)>
     #[allow(clippy::let_and_return)]
@@ -9205,7 +9283,7 @@ impl UpdateMacieSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateMacieSession,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9285,7 +9363,7 @@ impl UpdateMacieSessionInput {
             "UpdateMacieSession",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9355,7 +9433,7 @@ pub mod update_member_session_input {
 #[doc(hidden)]
 pub type UpdateMemberSessionInputOperationOutputAlias = crate::operation::UpdateMemberSession;
 #[doc(hidden)]
-pub type UpdateMemberSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateMemberSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateMemberSessionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMemberSession`](crate::operation::UpdateMemberSession)>
     #[allow(clippy::let_and_return)]
@@ -9366,7 +9444,7 @@ impl UpdateMemberSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateMemberSession,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9461,7 +9539,7 @@ impl UpdateMemberSessionInput {
             "UpdateMemberSession",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9520,7 +9598,8 @@ pub mod update_organization_configuration_input {
 pub type UpdateOrganizationConfigurationInputOperationOutputAlias =
     crate::operation::UpdateOrganizationConfiguration;
 #[doc(hidden)]
-pub type UpdateOrganizationConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateOrganizationConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateOrganizationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateOrganizationConfiguration`](crate::operation::UpdateOrganizationConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -9531,7 +9610,7 @@ impl UpdateOrganizationConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateOrganizationConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9612,7 +9691,7 @@ impl UpdateOrganizationConfigurationInput {
             "UpdateOrganizationConfiguration",
             "macie2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9723,13 +9802,15 @@ impl std::fmt::Debug for UpdateMacieSessionInput {
 pub struct UpdateFindingsFilterInput {
     /// <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
     pub action: std::option::Option<crate::model::FindingsFilterAction>,
-    /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p>
+    /// <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The criteria to use to filter findings.</p>
     pub finding_criteria: std::option::Option<crate::model::FindingCriteria>,
     /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>
+    /// <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
     pub position: i32,
@@ -9741,7 +9822,8 @@ impl UpdateFindingsFilterInput {
     pub fn action(&self) -> std::option::Option<&crate::model::FindingsFilterAction> {
         self.action.as_ref()
     }
-    /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p>
+    /// <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -9753,7 +9835,8 @@ impl UpdateFindingsFilterInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>
+    /// <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -9786,7 +9869,12 @@ impl std::fmt::Debug for UpdateFindingsFilterInput {
 pub struct UpdateClassificationJobInput {
     /// <p>The unique identifier for the classification job.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The new status for the job. Valid values are:</p> <ul><li><p>CANCELLED - Stops the job permanently and cancels it. This value is valid only if the job's current status is IDLE, PAUSED, RUNNING, or USER_PAUSED.</p> <p>If you specify this value and the job's current status is RUNNING, Amazon Macie immediately begins to stop all processing tasks for the job. You can't resume or restart a job after you cancel it.</p></li> <li><p>RUNNING - Resumes the job. This value is valid only if the job's current status is USER_PAUSED.</p> <p>If you paused the job while it was actively running and you specify this value less than 30 days after you paused the job, Macie immediately resumes processing from the point where you paused the job. Otherwise, Macie resumes the job according to the schedule and other settings for the job.</p></li> <li><p>USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE, PAUSED, or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause all processing tasks for the job.</p> <p>If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the job. If you pause a recurring job when its status is RUNNING and you don't resume it within 30 days, the job run expires and Macie cancels the run. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li></ul>
+    /// <p>The new status for the job. Valid values are:</p>
+    /// <ul>
+    /// <li><p>CANCELLED - Stops the job permanently and cancels it. This value is valid only if the job's current status is IDLE, PAUSED, RUNNING, or USER_PAUSED.</p> <p>If you specify this value and the job's current status is RUNNING, Amazon Macie immediately begins to stop all processing tasks for the job. You can't resume or restart a job after you cancel it.</p></li>
+    /// <li><p>RUNNING - Resumes the job. This value is valid only if the job's current status is USER_PAUSED.</p> <p>If you paused the job while it was actively running and you specify this value less than 30 days after you paused the job, Macie immediately resumes processing from the point where you paused the job. Otherwise, Macie resumes the job according to the schedule and other settings for the job.</p></li>
+    /// <li><p>USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE, PAUSED, or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause all processing tasks for the job.</p> <p>If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the job. If you pause a recurring job when its status is RUNNING and you don't resume it within 30 days, the job run expires and Macie cancels the run. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li>
+    /// </ul>
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl UpdateClassificationJobInput {
@@ -9794,7 +9882,12 @@ impl UpdateClassificationJobInput {
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>The new status for the job. Valid values are:</p> <ul><li><p>CANCELLED - Stops the job permanently and cancels it. This value is valid only if the job's current status is IDLE, PAUSED, RUNNING, or USER_PAUSED.</p> <p>If you specify this value and the job's current status is RUNNING, Amazon Macie immediately begins to stop all processing tasks for the job. You can't resume or restart a job after you cancel it.</p></li> <li><p>RUNNING - Resumes the job. This value is valid only if the job's current status is USER_PAUSED.</p> <p>If you paused the job while it was actively running and you specify this value less than 30 days after you paused the job, Macie immediately resumes processing from the point where you paused the job. Otherwise, Macie resumes the job according to the schedule and other settings for the job.</p></li> <li><p>USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE, PAUSED, or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause all processing tasks for the job.</p> <p>If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the job. If you pause a recurring job when its status is RUNNING and you don't resume it within 30 days, the job run expires and Macie cancels the run. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li></ul>
+    /// <p>The new status for the job. Valid values are:</p>
+    /// <ul>
+    /// <li><p>CANCELLED - Stops the job permanently and cancels it. This value is valid only if the job's current status is IDLE, PAUSED, RUNNING, or USER_PAUSED.</p> <p>If you specify this value and the job's current status is RUNNING, Amazon Macie immediately begins to stop all processing tasks for the job. You can't resume or restart a job after you cancel it.</p></li>
+    /// <li><p>RUNNING - Resumes the job. This value is valid only if the job's current status is USER_PAUSED.</p> <p>If you paused the job while it was actively running and you specify this value less than 30 days after you paused the job, Macie immediately resumes processing from the point where you paused the job. Otherwise, Macie resumes the job according to the schedule and other settings for the job.</p></li>
+    /// <li><p>USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE, PAUSED, or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause all processing tasks for the job.</p> <p>If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the job. If you pause a recurring job when its status is RUNNING and you don't resume it within 30 days, the job run expires and Macie cancels the run. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li>
+    /// </ul>
     pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
         self.job_status.as_ref()
     }
@@ -9891,7 +9984,8 @@ impl std::fmt::Debug for TestCustomDataIdentifierInput {
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A map of key-value pairs that specifies the tags to associate with the resource.</p> <p>A resource can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    /// <p>A map of key-value pairs that specifies the tags to associate with the resource.</p>
+    /// <p>A resource can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -9900,7 +9994,8 @@ impl TagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A map of key-value pairs that specifies the tags to associate with the resource.</p> <p>A resource can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    /// <p>A map of key-value pairs that specifies the tags to associate with the resource.</p>
+    /// <p>A resource can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -10420,7 +10515,13 @@ impl std::fmt::Debug for GetInvitationsCountInput {
 pub struct GetFindingStatisticsInput {
     /// <p>The criteria to use to filter the query results.</p>
     pub finding_criteria: std::option::Option<crate::model::FindingCriteria>,
-    /// <p>The finding property to use to group the query results. Valid values are:</p> <ul><li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li> <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li> <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li> <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li></ul>
+    /// <p>The finding property to use to group the query results. Valid values are:</p>
+    /// <ul>
+    /// <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li>
+    /// <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li>
+    /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li>
+    /// <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
+    /// </ul>
     pub group_by: std::option::Option<crate::model::GroupBy>,
     /// <p>The maximum number of items to include in each page of the response.</p>
     pub size: i32,
@@ -10432,7 +10533,13 @@ impl GetFindingStatisticsInput {
     pub fn finding_criteria(&self) -> std::option::Option<&crate::model::FindingCriteria> {
         self.finding_criteria.as_ref()
     }
-    /// <p>The finding property to use to group the query results. Valid values are:</p> <ul><li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li> <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li> <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li> <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li></ul>
+    /// <p>The finding property to use to group the query results. Valid values are:</p>
+    /// <ul>
+    /// <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li>
+    /// <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li>
+    /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li>
+    /// <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
+    /// </ul>
     pub fn group_by(&self) -> std::option::Option<&crate::model::GroupBy> {
         self.group_by.as_ref()
     }
@@ -10943,7 +11050,8 @@ impl std::fmt::Debug for CreateSampleFindingsInput {
 pub struct CreateMemberInput {
     /// <p>The details of the account to associate with the administrator account.</p>
     pub account: std::option::Option<crate::model::AccountDetail>,
-    /// <p>A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.</p> <p>An account can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    /// <p>A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.</p>
+    /// <p>An account can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -10952,7 +11060,8 @@ impl CreateMemberInput {
     pub fn account(&self) -> std::option::Option<&crate::model::AccountDetail> {
         self.account.as_ref()
     }
-    /// <p>A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.</p> <p>An account can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    /// <p>A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.</p>
+    /// <p>An account can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -11015,15 +11124,18 @@ pub struct CreateFindingsFilterInput {
     pub action: std::option::Option<crate::model::FindingsFilterAction>,
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p>
+    /// <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The criteria to use to filter findings.</p>
     pub finding_criteria: std::option::Option<crate::model::FindingCriteria>,
-    /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>
+    /// <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
     pub position: i32,
-    /// <p>A map of key-value pairs that specifies the tags to associate with the filter.</p> <p>A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    /// <p>A map of key-value pairs that specifies the tags to associate with the filter.</p>
+    /// <p>A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -11036,7 +11148,8 @@ impl CreateFindingsFilterInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p>
+    /// <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -11044,7 +11157,8 @@ impl CreateFindingsFilterInput {
     pub fn finding_criteria(&self) -> std::option::Option<&crate::model::FindingCriteria> {
         self.finding_criteria.as_ref()
     }
-    /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>
+    /// <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -11052,7 +11166,8 @@ impl CreateFindingsFilterInput {
     pub fn position(&self) -> i32 {
         self.position
     }
-    /// <p>A map of key-value pairs that specifies the tags to associate with the filter.</p> <p>A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    /// <p>A map of key-value pairs that specifies the tags to associate with the filter.</p>
+    /// <p>A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -11080,7 +11195,8 @@ impl std::fmt::Debug for CreateFindingsFilterInput {
 pub struct CreateCustomDataIdentifierInput {
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>A custom description of the custom data identifier. The description can contain as many as 512 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    /// <p>A custom description of the custom data identifier. The description can contain as many as 512 characters.</p>
+    /// <p>We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
     pub ignore_words: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11088,13 +11204,16 @@ pub struct CreateCustomDataIdentifierInput {
     pub keywords: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression. The distance can be 1-300 characters. The default value is 50.</p>
     pub maximum_match_distance: i32,
-    /// <p>A custom name for the custom data identifier. The name can contain as many as 128 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    /// <p>A custom name for the custom data identifier. The name can contain as many as 128 characters.</p>
+    /// <p>We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as 512 characters.</p>
     pub regex: std::option::Option<std::string::String>,
-    /// <p>The severity to assign to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. You can specify as many as three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one, the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified threshold, Amazon Macie doesn't create a finding.</p> <p>If you don't specify any values for this array, Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
+    /// <p>The severity to assign to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. You can specify as many as three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one, the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified threshold, Amazon Macie doesn't create a finding.</p>
+    /// <p>If you don't specify any values for this array, Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
     pub severity_levels: std::option::Option<std::vec::Vec<crate::model::SeverityLevel>>,
-    /// <p>A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p> <p>A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    /// <p>A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p>
+    /// <p>A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -11103,7 +11222,8 @@ impl CreateCustomDataIdentifierInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>A custom description of the custom data identifier. The description can contain as many as 512 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    /// <p>A custom description of the custom data identifier. The description can contain as many as 512 characters.</p>
+    /// <p>We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -11119,7 +11239,8 @@ impl CreateCustomDataIdentifierInput {
     pub fn maximum_match_distance(&self) -> i32 {
         self.maximum_match_distance
     }
-    /// <p>A custom name for the custom data identifier. The name can contain as many as 128 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    /// <p>A custom name for the custom data identifier. The name can contain as many as 128 characters.</p>
+    /// <p>We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -11127,11 +11248,13 @@ impl CreateCustomDataIdentifierInput {
     pub fn regex(&self) -> std::option::Option<&str> {
         self.regex.as_deref()
     }
-    /// <p>The severity to assign to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. You can specify as many as three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one, the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified threshold, Amazon Macie doesn't create a finding.</p> <p>If you don't specify any values for this array, Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
+    /// <p>The severity to assign to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. You can specify as many as three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one, the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified threshold, Amazon Macie doesn't create a finding.</p>
+    /// <p>If you don't specify any values for this array, Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
     pub fn severity_levels(&self) -> std::option::Option<&[crate::model::SeverityLevel]> {
         self.severity_levels.as_deref()
     }
-    /// <p>A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p> <p>A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    /// <p>A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p>
+    /// <p>A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -11165,13 +11288,26 @@ pub struct CreateClassificationJobInput {
     pub custom_data_identifier_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A custom description of the job. The description can contain as many as 200 characters.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is created (true). To analyze only those objects that are created or changed after you create the job and before the job's first scheduled run, set this value to false.</p><p>If you configure the job to run only once, don't specify a value for this property.</p>
+    /// <p>For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is created (true). To analyze only those objects that are created or changed after you create the job and before the job's first scheduled run, set this value to false.</p>
+    /// <p>If you configure the job to run only once, don't specify a value for this property.</p>
     pub initial_run: bool,
-    /// <p>The schedule for running the job. Valid values are:</p> <ul><li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li> <li><p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li></ul>
+    /// <p>The schedule for running the job. Valid values are:</p>
+    /// <ul>
+    /// <li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li>
+    /// <li><p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li>
+    /// </ul>
     pub job_type: std::option::Option<crate::model::JobType>,
-    /// <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p><p>To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.</p>
+    /// <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p>
+    /// <p>To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.</p>
     pub managed_data_identifier_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p> <ul><li><p>ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li> <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds property.</p></li></ul> <p>If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
+    /// <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p>
+    /// <ul>
+    /// <li><p>ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>
+    /// <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+    /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+    /// <li><p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds property.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
     pub managed_data_identifier_selector:
         std::option::Option<crate::model::ManagedDataIdentifierSelector>,
     /// <p>A custom name for the job. The name can contain as many as 500 characters.</p>
@@ -11182,7 +11318,8 @@ pub struct CreateClassificationJobInput {
     pub sampling_percentage: i32,
     /// <p>The recurrence pattern for running the job. To run the job only once, don't specify a value for this property and set the value for the jobType property to ONE_TIME.</p>
     pub schedule_frequency: std::option::Option<crate::model::JobScheduleFrequency>,
-    /// <p>A map of key-value pairs that specifies the tags to associate with the job.</p> <p>A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    /// <p>A map of key-value pairs that specifies the tags to associate with the job.</p>
+    /// <p>A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -11199,19 +11336,32 @@ impl CreateClassificationJobInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is created (true). To analyze only those objects that are created or changed after you create the job and before the job's first scheduled run, set this value to false.</p><p>If you configure the job to run only once, don't specify a value for this property.</p>
+    /// <p>For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is created (true). To analyze only those objects that are created or changed after you create the job and before the job's first scheduled run, set this value to false.</p>
+    /// <p>If you configure the job to run only once, don't specify a value for this property.</p>
     pub fn initial_run(&self) -> bool {
         self.initial_run
     }
-    /// <p>The schedule for running the job. Valid values are:</p> <ul><li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li> <li><p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li></ul>
+    /// <p>The schedule for running the job. Valid values are:</p>
+    /// <ul>
+    /// <li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li>
+    /// <li><p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li>
+    /// </ul>
     pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
         self.job_type.as_ref()
     }
-    /// <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p><p>To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.</p>
+    /// <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p>
+    /// <p>To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.</p>
     pub fn managed_data_identifier_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.managed_data_identifier_ids.as_deref()
     }
-    /// <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p> <ul><li><p>ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li> <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds property.</p></li></ul> <p>If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
+    /// <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p>
+    /// <ul>
+    /// <li><p>ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>
+    /// <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+    /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+    /// <li><p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds property.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
     pub fn managed_data_identifier_selector(
         &self,
     ) -> std::option::Option<&crate::model::ManagedDataIdentifierSelector> {
@@ -11233,7 +11383,8 @@ impl CreateClassificationJobInput {
     pub fn schedule_frequency(&self) -> std::option::Option<&crate::model::JobScheduleFrequency> {
         self.schedule_frequency.as_ref()
     }
-    /// <p>A map of key-value pairs that specifies the tags to associate with the job.</p> <p>A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    /// <p>A map of key-value pairs that specifies the tags to associate with the job.</p>
+    /// <p>A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>

@@ -197,15 +197,11 @@ impl StartImportFileTaskOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartAssessmentOutput {
-    /// <p>
-    /// The ID of the assessment.
-    /// </p>
+    /// <p> The ID of the assessment. </p>
     pub assessment_id: std::option::Option<std::string::String>,
 }
 impl StartAssessmentOutput {
-    /// <p>
-    /// The ID of the assessment.
-    /// </p>
+    /// <p> The ID of the assessment. </p>
     pub fn assessment_id(&self) -> std::option::Option<&str> {
         self.assessment_id.as_deref()
     }
@@ -226,16 +222,12 @@ pub mod start_assessment_output {
         pub(crate) assessment_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The ID of the assessment.
-        /// </p>
+        /// <p> The ID of the assessment. </p>
         pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.assessment_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the assessment.
-        /// </p>
+        /// <p> The ID of the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -330,9 +322,9 @@ pub mod list_servers_output {
         /// To override the contents of this collection use [`set_server_infos`](Self::set_server_infos).
         ///
         /// <p> The list of servers with detailed information about each server. </p>
-        pub fn server_infos(mut self, input: impl Into<crate::model::ServerDetail>) -> Self {
+        pub fn server_infos(mut self, input: crate::model::ServerDetail) -> Self {
             let mut v = self.server_infos.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_infos = Some(v);
             self
         }
@@ -413,12 +405,9 @@ pub mod list_import_file_task_output {
         /// To override the contents of this collection use [`set_task_infos`](Self::set_task_infos).
         ///
         /// <p> Lists information about the files you import.</p>
-        pub fn task_infos(
-            mut self,
-            input: impl Into<crate::model::ImportFileTaskInformation>,
-        ) -> Self {
+        pub fn task_infos(mut self, input: crate::model::ImportFileTaskInformation) -> Self {
             let mut v = self.task_infos.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.task_infos = Some(v);
             self
         }
@@ -498,9 +487,9 @@ pub mod list_collectors_output {
         /// To override the contents of this collection use [`set_collectors`](Self::set_collectors).
         ///
         /// <p> The list of all the installed collectors. </p>
-        pub fn collectors(mut self, input: impl Into<crate::model::Collector>) -> Self {
+        pub fn collectors(mut self, input: crate::model::Collector) -> Self {
             let mut v = self.collectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.collectors = Some(v);
             self
         }
@@ -542,16 +531,14 @@ impl ListCollectorsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationComponentsOutput {
-    /// <p> The list of application components with detailed information about each component.
-    /// </p>
+    /// <p> The list of application components with detailed information about each component. </p>
     pub application_component_infos:
         std::option::Option<std::vec::Vec<crate::model::ApplicationComponentDetail>>,
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationComponentsOutput {
-    /// <p> The list of application components with detailed information about each component.
-    /// </p>
+    /// <p> The list of application components with detailed information about each component. </p>
     pub fn application_component_infos(
         &self,
     ) -> std::option::Option<&[crate::model::ApplicationComponentDetail]> {
@@ -588,19 +575,17 @@ pub mod list_application_components_output {
         ///
         /// To override the contents of this collection use [`set_application_component_infos`](Self::set_application_component_infos).
         ///
-        /// <p> The list of application components with detailed information about each component.
-        /// </p>
+        /// <p> The list of application components with detailed information about each component. </p>
         pub fn application_component_infos(
             mut self,
-            input: impl Into<crate::model::ApplicationComponentDetail>,
+            input: crate::model::ApplicationComponentDetail,
         ) -> Self {
             let mut v = self.application_component_infos.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.application_component_infos = Some(v);
             self
         }
-        /// <p> The list of application components with detailed information about each component.
-        /// </p>
+        /// <p> The list of application components with detailed information about each component. </p>
         pub fn set_application_component_infos(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ApplicationComponentDetail>>,
@@ -669,9 +654,9 @@ pub mod get_server_strategies_output {
         /// To override the contents of this collection use [`set_server_strategies`](Self::set_server_strategies).
         ///
         /// <p> A list of strategy recommendations for the server. </p>
-        pub fn server_strategies(mut self, input: impl Into<crate::model::ServerStrategy>) -> Self {
+        pub fn server_strategies(mut self, input: crate::model::ServerStrategy) -> Self {
             let mut v = self.server_strategies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_strategies = Some(v);
             self
         }
@@ -706,8 +691,7 @@ pub struct GetServerDetailsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p> Detailed information about the server. </p>
     pub server_detail: std::option::Option<crate::model::ServerDetail>,
-    /// <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service.
-    /// </p>
+    /// <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service. </p>
     pub associated_applications:
         std::option::Option<std::vec::Vec<crate::model::AssociatedApplication>>,
 }
@@ -720,8 +704,7 @@ impl GetServerDetailsOutput {
     pub fn server_detail(&self) -> std::option::Option<&crate::model::ServerDetail> {
         self.server_detail.as_ref()
     }
-    /// <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service.
-    /// </p>
+    /// <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service. </p>
     pub fn associated_applications(
         &self,
     ) -> std::option::Option<&[crate::model::AssociatedApplication]> {
@@ -776,19 +759,17 @@ pub mod get_server_details_output {
         ///
         /// To override the contents of this collection use [`set_associated_applications`](Self::set_associated_applications).
         ///
-        /// <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service.
-        /// </p>
+        /// <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service. </p>
         pub fn associated_applications(
             mut self,
-            input: impl Into<crate::model::AssociatedApplication>,
+            input: crate::model::AssociatedApplication,
         ) -> Self {
             let mut v = self.associated_applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.associated_applications = Some(v);
             self
         }
-        /// <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service.
-        /// </p>
+        /// <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service. </p>
         pub fn set_associated_applications(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AssociatedApplication>>,
@@ -817,14 +798,14 @@ impl GetServerDetailsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecommendationReportDetailsOutput {
-    /// <p> The ID of the recommendation report generation task. See the response of <a>StartRecommendationReportGeneration</a>. </p>
+    /// <p> The ID of the recommendation report generation task. See the response of <code>StartRecommendationReportGeneration</code>. </p>
     pub id: std::option::Option<std::string::String>,
     /// <p> Detailed information about the recommendation report. </p>
     pub recommendation_report_details:
         std::option::Option<crate::model::RecommendationReportDetails>,
 }
 impl GetRecommendationReportDetailsOutput {
-    /// <p> The ID of the recommendation report generation task. See the response of <a>StartRecommendationReportGeneration</a>. </p>
+    /// <p> The ID of the recommendation report generation task. See the response of <code>StartRecommendationReportGeneration</code>. </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -857,12 +838,12 @@ pub mod get_recommendation_report_details_output {
             std::option::Option<crate::model::RecommendationReportDetails>,
     }
     impl Builder {
-        /// <p> The ID of the recommendation report generation task. See the response of <a>StartRecommendationReportGeneration</a>. </p>
+        /// <p> The ID of the recommendation report generation task. See the response of <code>StartRecommendationReportGeneration</code>. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p> The ID of the recommendation report generation task. See the response of <a>StartRecommendationReportGeneration</a>. </p>
+        /// <p> The ID of the recommendation report generation task. See the response of <code>StartRecommendationReportGeneration</code>. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -903,13 +884,11 @@ impl GetRecommendationReportDetailsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPortfolioSummaryOutput {
-    /// <p> An assessment summary for the portfolio including the number of servers to rehost and the
-    /// overall number of anti-patterns. </p>
+    /// <p> An assessment summary for the portfolio including the number of servers to rehost and the overall number of anti-patterns. </p>
     pub assessment_summary: std::option::Option<crate::model::AssessmentSummary>,
 }
 impl GetPortfolioSummaryOutput {
-    /// <p> An assessment summary for the portfolio including the number of servers to rehost and the
-    /// overall number of anti-patterns. </p>
+    /// <p> An assessment summary for the portfolio including the number of servers to rehost and the overall number of anti-patterns. </p>
     pub fn assessment_summary(&self) -> std::option::Option<&crate::model::AssessmentSummary> {
         self.assessment_summary.as_ref()
     }
@@ -930,14 +909,12 @@ pub mod get_portfolio_summary_output {
         pub(crate) assessment_summary: std::option::Option<crate::model::AssessmentSummary>,
     }
     impl Builder {
-        /// <p> An assessment summary for the portfolio including the number of servers to rehost and the
-        /// overall number of anti-patterns. </p>
+        /// <p> An assessment summary for the portfolio including the number of servers to rehost and the overall number of anti-patterns. </p>
         pub fn assessment_summary(mut self, input: crate::model::AssessmentSummary) -> Self {
             self.assessment_summary = Some(input);
             self
         }
-        /// <p> An assessment summary for the portfolio including the number of servers to rehost and the
-        /// overall number of anti-patterns. </p>
+        /// <p> An assessment summary for the portfolio including the number of servers to rehost and the overall number of anti-patterns. </p>
         pub fn set_assessment_summary(
             mut self,
             input: std::option::Option<crate::model::AssessmentSummary>,
@@ -1077,7 +1054,7 @@ impl GetPortfolioPreferencesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetImportFileTaskOutput {
-    /// <p> The import file task <code>id</code> returned in the response of <a>StartImportFileTask</a>. </p>
+    /// <p> The import file task <code>id</code> returned in the response of <code>StartImportFileTask</code>. </p>
     pub id: std::option::Option<std::string::String>,
     /// <p> Status of import file task. </p>
     pub status: std::option::Option<crate::model::ImportFileTaskStatus>,
@@ -1089,8 +1066,7 @@ pub struct GetImportFileTaskOutput {
     pub input_s3_key: std::option::Option<std::string::String>,
     /// <p> The S3 bucket name for status report of import task. </p>
     pub status_report_s3_bucket: std::option::Option<std::string::String>,
-    /// <p> The Amazon S3 key name for status report of import task. The report contains details about
-    /// whether each record imported successfully or why it did not.</p>
+    /// <p> The Amazon S3 key name for status report of import task. The report contains details about whether each record imported successfully or why it did not.</p>
     pub status_report_s3_key: std::option::Option<std::string::String>,
     /// <p> The time that the import task completed. </p>
     pub completion_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1098,11 +1074,11 @@ pub struct GetImportFileTaskOutput {
     pub number_of_records_success: std::option::Option<i32>,
     /// <p> The number of records that failed to be imported. </p>
     pub number_of_records_failed: std::option::Option<i32>,
-    /// <p> The name of the import task given in <a>StartImportFileTask</a>. </p>
+    /// <p> The name of the import task given in <code>StartImportFileTask</code>. </p>
     pub import_name: std::option::Option<std::string::String>,
 }
 impl GetImportFileTaskOutput {
-    /// <p> The import file task <code>id</code> returned in the response of <a>StartImportFileTask</a>. </p>
+    /// <p> The import file task <code>id</code> returned in the response of <code>StartImportFileTask</code>. </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -1126,8 +1102,7 @@ impl GetImportFileTaskOutput {
     pub fn status_report_s3_bucket(&self) -> std::option::Option<&str> {
         self.status_report_s3_bucket.as_deref()
     }
-    /// <p> The Amazon S3 key name for status report of import task. The report contains details about
-    /// whether each record imported successfully or why it did not.</p>
+    /// <p> The Amazon S3 key name for status report of import task. The report contains details about whether each record imported successfully or why it did not.</p>
     pub fn status_report_s3_key(&self) -> std::option::Option<&str> {
         self.status_report_s3_key.as_deref()
     }
@@ -1143,7 +1118,7 @@ impl GetImportFileTaskOutput {
     pub fn number_of_records_failed(&self) -> std::option::Option<i32> {
         self.number_of_records_failed
     }
-    /// <p> The name of the import task given in <a>StartImportFileTask</a>. </p>
+    /// <p> The name of the import task given in <code>StartImportFileTask</code>. </p>
     pub fn import_name(&self) -> std::option::Option<&str> {
         self.import_name.as_deref()
     }
@@ -1184,12 +1159,12 @@ pub mod get_import_file_task_output {
         pub(crate) import_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The import file task <code>id</code> returned in the response of <a>StartImportFileTask</a>. </p>
+        /// <p> The import file task <code>id</code> returned in the response of <code>StartImportFileTask</code>. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p> The import file task <code>id</code> returned in the response of <a>StartImportFileTask</a>. </p>
+        /// <p> The import file task <code>id</code> returned in the response of <code>StartImportFileTask</code>. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1256,14 +1231,12 @@ pub mod get_import_file_task_output {
             self.status_report_s3_bucket = input;
             self
         }
-        /// <p> The Amazon S3 key name for status report of import task. The report contains details about
-        /// whether each record imported successfully or why it did not.</p>
+        /// <p> The Amazon S3 key name for status report of import task. The report contains details about whether each record imported successfully or why it did not.</p>
         pub fn status_report_s3_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_report_s3_key = Some(input.into());
             self
         }
-        /// <p> The Amazon S3 key name for status report of import task. The report contains details about
-        /// whether each record imported successfully or why it did not.</p>
+        /// <p> The Amazon S3 key name for status report of import task. The report contains details about whether each record imported successfully or why it did not.</p>
         pub fn set_status_report_s3_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1304,12 +1277,12 @@ pub mod get_import_file_task_output {
             self.number_of_records_failed = input;
             self
         }
-        /// <p> The name of the import task given in <a>StartImportFileTask</a>. </p>
+        /// <p> The name of the import task given in <code>StartImportFileTask</code>. </p>
         pub fn import_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.import_name = Some(input.into());
             self
         }
-        /// <p> The name of the import task given in <a>StartImportFileTask</a>. </p>
+        /// <p> The name of the import task given in <code>StartImportFileTask</code>. </p>
         pub fn set_import_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.import_name = input;
             self
@@ -1464,10 +1437,10 @@ pub mod get_application_component_strategies_output {
         /// <p> A list of application component strategy recommendations. </p>
         pub fn application_component_strategies(
             mut self,
-            input: impl Into<crate::model::ApplicationComponentStrategy>,
+            input: crate::model::ApplicationComponentStrategy,
         ) -> Self {
             let mut v = self.application_component_strategies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.application_component_strategies = Some(v);
             self
         }
@@ -1503,8 +1476,7 @@ pub struct GetApplicationComponentDetailsOutput {
     /// <p> The associated application group as defined in AWS Application Discovery Service. </p>
     pub associated_applications:
         std::option::Option<std::vec::Vec<crate::model::AssociatedApplication>>,
-    /// <p> Set to true if the application component belongs to more than one application group.
-    /// </p>
+    /// <p> Set to true if the application component belongs to more than one application group. </p>
     pub more_application_resource: std::option::Option<bool>,
     /// <p> A list of the IDs of the servers on which the application component is running. </p>
     pub associated_server_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1522,8 +1494,7 @@ impl GetApplicationComponentDetailsOutput {
     ) -> std::option::Option<&[crate::model::AssociatedApplication]> {
         self.associated_applications.as_deref()
     }
-    /// <p> Set to true if the application component belongs to more than one application group.
-    /// </p>
+    /// <p> Set to true if the application component belongs to more than one application group. </p>
     pub fn more_application_resource(&self) -> std::option::Option<bool> {
         self.more_application_resource
     }
@@ -1582,10 +1553,10 @@ pub mod get_application_component_details_output {
         /// <p> The associated application group as defined in AWS Application Discovery Service. </p>
         pub fn associated_applications(
             mut self,
-            input: impl Into<crate::model::AssociatedApplication>,
+            input: crate::model::AssociatedApplication,
         ) -> Self {
             let mut v = self.associated_applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.associated_applications = Some(v);
             self
         }
@@ -1597,14 +1568,12 @@ pub mod get_application_component_details_output {
             self.associated_applications = input;
             self
         }
-        /// <p> Set to true if the application component belongs to more than one application group.
-        /// </p>
+        /// <p> Set to true if the application component belongs to more than one application group. </p>
         pub fn more_application_resource(mut self, input: bool) -> Self {
             self.more_application_resource = Some(input);
             self
         }
-        /// <p> Set to true if the application component belongs to more than one application group.
-        /// </p>
+        /// <p> Set to true if the application component belongs to more than one application group. </p>
         pub fn set_more_application_resource(mut self, input: std::option::Option<bool>) -> Self {
             self.more_application_resource = input;
             self

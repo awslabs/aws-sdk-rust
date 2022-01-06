@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS IoT Things Graph
@@ -194,6 +194,7 @@ where
     ///
     /// See [`GetFlowTemplateRevisions`](crate::client::fluent_builders::GetFlowTemplateRevisions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetFlowTemplateRevisions::into_paginator).
     pub fn get_flow_template_revisions(
         &self,
     ) -> fluent_builders::GetFlowTemplateRevisions<C, M, R> {
@@ -226,6 +227,7 @@ where
     ///
     /// See [`GetSystemTemplateRevisions`](crate::client::fluent_builders::GetSystemTemplateRevisions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetSystemTemplateRevisions::into_paginator).
     pub fn get_system_template_revisions(
         &self,
     ) -> fluent_builders::GetSystemTemplateRevisions<C, M, R> {
@@ -242,6 +244,7 @@ where
     ///
     /// See [`ListFlowExecutionMessages`](crate::client::fluent_builders::ListFlowExecutionMessages) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFlowExecutionMessages::into_paginator).
     pub fn list_flow_execution_messages(
         &self,
     ) -> fluent_builders::ListFlowExecutionMessages<C, M, R> {
@@ -251,6 +254,7 @@ where
     ///
     /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
@@ -258,6 +262,7 @@ where
     ///
     /// See [`SearchEntities`](crate::client::fluent_builders::SearchEntities) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchEntities::into_paginator).
     pub fn search_entities(&self) -> fluent_builders::SearchEntities<C, M, R> {
         fluent_builders::SearchEntities::new(self.handle.clone())
     }
@@ -265,6 +270,7 @@ where
     ///
     /// See [`SearchFlowExecutions`](crate::client::fluent_builders::SearchFlowExecutions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchFlowExecutions::into_paginator).
     pub fn search_flow_executions(&self) -> fluent_builders::SearchFlowExecutions<C, M, R> {
         fluent_builders::SearchFlowExecutions::new(self.handle.clone())
     }
@@ -272,6 +278,7 @@ where
     ///
     /// See [`SearchFlowTemplates`](crate::client::fluent_builders::SearchFlowTemplates) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchFlowTemplates::into_paginator).
     pub fn search_flow_templates(&self) -> fluent_builders::SearchFlowTemplates<C, M, R> {
         fluent_builders::SearchFlowTemplates::new(self.handle.clone())
     }
@@ -279,6 +286,7 @@ where
     ///
     /// See [`SearchSystemInstances`](crate::client::fluent_builders::SearchSystemInstances) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchSystemInstances::into_paginator).
     pub fn search_system_instances(&self) -> fluent_builders::SearchSystemInstances<C, M, R> {
         fluent_builders::SearchSystemInstances::new(self.handle.clone())
     }
@@ -286,6 +294,7 @@ where
     ///
     /// See [`SearchSystemTemplates`](crate::client::fluent_builders::SearchSystemTemplates) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchSystemTemplates::into_paginator).
     pub fn search_system_templates(&self) -> fluent_builders::SearchSystemTemplates<C, M, R> {
         fluent_builders::SearchSystemTemplates::new(self.handle.clone())
     }
@@ -293,6 +302,7 @@ where
     ///
     /// See [`SearchThings`](crate::client::fluent_builders::SearchThings) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchThings::into_paginator).
     pub fn search_things(&self) -> fluent_builders::SearchThings<C, M, R> {
         fluent_builders::SearchThings::new(self.handle.clone())
     }
@@ -351,7 +361,7 @@ pub mod fluent_builders {
     ///
     /// <p>Associates a device with a concrete thing that is in the user's registry.</p>
     /// <p>A thing can be associated with only one device at a time. If you associate a thing with a new device id, its previous association will be removed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateEntityToThing<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -396,10 +406,10 @@ pub mod fluent_builders {
                 crate::input::AssociateEntityToThingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -408,8 +418,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the thing to which the entity is to be associated.</p>
-        pub fn thing_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(inp);
+        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_name(input.into());
             self
         }
         /// <p>The name of the thing to which the entity is to be associated.</p>
@@ -419,25 +429,21 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the device to be associated with the thing.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-        /// </p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(input.into());
             self
         }
         /// <p>The ID of the device to be associated with the thing.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_entity_id(input);
             self
         }
         /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
-        pub fn namespace_version(mut self, inp: i64) -> Self {
-            self.inner = self.inner.namespace_version(inp);
+        pub fn namespace_version(mut self, input: i64) -> Self {
+            self.inner = self.inner.namespace_version(input);
             self
         }
         /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
@@ -448,10 +454,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateFlowTemplate`.
     ///
-    /// <p>Creates a workflow template. Workflows can be created only in the user's namespace. (The public namespace contains only
-    /// entities.) The workflow can contain only entities in the specified namespace. The workflow is validated against the entities in the
-    /// latest version of the user's namespace unless another namespace version is specified in the request.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a workflow template. Workflows can be created only in the user's namespace. (The public namespace contains only entities.) The workflow can contain only entities in the specified namespace. The workflow is validated against the entities in the latest version of the user's namespace unless another namespace version is specified in the request.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFlowTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -496,10 +500,10 @@ pub mod fluent_builders {
                 crate::input::CreateFlowTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -508,8 +512,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The workflow <code>DefinitionDocument</code>.</p>
-        pub fn definition(mut self, inp: crate::model::DefinitionDocument) -> Self {
-            self.inner = self.inner.definition(inp);
+        pub fn definition(mut self, input: crate::model::DefinitionDocument) -> Self {
+            self.inner = self.inner.definition(input);
             self
         }
         /// <p>The workflow <code>DefinitionDocument</code>.</p>
@@ -522,8 +526,8 @@ pub mod fluent_builders {
         }
         /// <p>The namespace version in which the workflow is to be created.</p>
         /// <p>If no value is specified, the latest version is used by default.</p>
-        pub fn compatible_namespace_version(mut self, inp: i64) -> Self {
-            self.inner = self.inner.compatible_namespace_version(inp);
+        pub fn compatible_namespace_version(mut self, input: i64) -> Self {
+            self.inner = self.inner.compatible_namespace_version(input);
             self
         }
         /// <p>The namespace version in which the workflow is to be created.</p>
@@ -536,15 +540,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSystemInstance`.
     ///
     /// <p>Creates a system instance. </p>
-    /// <p>This action validates the system instance, prepares the deployment-related resources. For Greengrass deployments, it updates the Greengrass group that is
-    /// specified by the <code>greengrassGroupName</code> parameter. It also adds a file to the S3 bucket specified by the <code>s3BucketName</code> parameter. You need to
-    /// call <code>DeploySystemInstance</code> after running this action.</p>
-    /// <p>For Greengrass deployments, since this action modifies and adds resources to a Greengrass group and an S3 bucket on the caller's behalf, the calling identity must have write permissions
-    /// to both the specified Greengrass group and S3 bucket. Otherwise, the call will fail with an authorization error.</p>
-    /// <p>For cloud deployments, this action requires a <code>flowActionsRoleArn</code> value. This is an IAM role
-    /// that has permissions to access AWS services, such as AWS Lambda and AWS IoT, that the flow uses when it executes.</p>
+    /// <p>This action validates the system instance, prepares the deployment-related resources. For Greengrass deployments, it updates the Greengrass group that is specified by the <code>greengrassGroupName</code> parameter. It also adds a file to the S3 bucket specified by the <code>s3BucketName</code> parameter. You need to call <code>DeploySystemInstance</code> after running this action.</p>
+    /// <p>For Greengrass deployments, since this action modifies and adds resources to a Greengrass group and an S3 bucket on the caller's behalf, the calling identity must have write permissions to both the specified Greengrass group and S3 bucket. Otherwise, the call will fail with an authorization error.</p>
+    /// <p>For cloud deployments, this action requires a <code>flowActionsRoleArn</code> value. This is an IAM role that has permissions to access AWS services, such as AWS Lambda and AWS IoT, that the flow uses when it executes.</p>
     /// <p>If the definition document doesn't specify a version of the user's namespace, the latest version will be used by default.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSystemInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -589,10 +589,10 @@ pub mod fluent_builders {
                 crate::input::CreateSystemInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -605,8 +605,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata, consisting of key-value pairs, that can be used to categorize your system instances.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Metadata, consisting of key-value pairs, that can be used to categorize your system instances.</p>
@@ -618,8 +618,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A document that defines an entity. </p>
-        pub fn definition(mut self, inp: crate::model::DefinitionDocument) -> Self {
-            self.inner = self.inner.definition(inp);
+        pub fn definition(mut self, input: crate::model::DefinitionDocument) -> Self {
+            self.inner = self.inner.definition(input);
             self
         }
         /// <p>A document that defines an entity. </p>
@@ -631,8 +631,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The target type of the deployment. Valid values are <code>GREENGRASS</code> and <code>CLOUD</code>.</p>
-        pub fn target(mut self, inp: crate::model::DeploymentTarget) -> Self {
-            self.inner = self.inner.target(inp);
+        pub fn target(mut self, input: crate::model::DeploymentTarget) -> Self {
+            self.inner = self.inner.target(input);
             self
         }
         /// <p>The target type of the deployment. Valid values are <code>GREENGRASS</code> and <code>CLOUD</code>.</p>
@@ -643,14 +643,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target(input);
             self
         }
-        /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if
-        /// the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
-        pub fn greengrass_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.greengrass_group_name(inp);
+        /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+        pub fn greengrass_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.greengrass_group_name(input.into());
             self
         }
-        /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if
-        /// the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+        /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
         pub fn set_greengrass_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -658,14 +656,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_greengrass_group_name(input);
             self
         }
-        /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if
-        /// the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
-        pub fn s3_bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket_name(inp);
+        /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+        pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket_name(input.into());
             self
         }
-        /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if
-        /// the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+        /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
         pub fn set_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -674,8 +670,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
-        pub fn metrics_configuration(mut self, inp: crate::model::MetricsConfiguration) -> Self {
-            self.inner = self.inner.metrics_configuration(inp);
+        pub fn metrics_configuration(mut self, input: crate::model::MetricsConfiguration) -> Self {
+            self.inner = self.inner.metrics_configuration(input);
             self
         }
         /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
@@ -686,16 +682,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_metrics_configuration(input);
             self
         }
-        /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have
-        /// read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes.  This
-        /// value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
-        pub fn flow_actions_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_actions_role_arn(inp);
+        /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes. This value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
+        pub fn flow_actions_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_actions_role_arn(input.into());
             self
         }
-        /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have
-        /// read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes.  This
-        /// value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
+        /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes. This value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
         pub fn set_flow_actions_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -706,9 +698,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSystemTemplate`.
     ///
-    /// <p>Creates a system. The system is validated against the entities in the
-    /// latest version of the user's namespace unless another namespace version is specified in the request.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a system. The system is validated against the entities in the latest version of the user's namespace unless another namespace version is specified in the request.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSystemTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -753,10 +744,10 @@ pub mod fluent_builders {
                 crate::input::CreateSystemTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -765,8 +756,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>DefinitionDocument</code> used to create the system.</p>
-        pub fn definition(mut self, inp: crate::model::DefinitionDocument) -> Self {
-            self.inner = self.inner.definition(inp);
+        pub fn definition(mut self, input: crate::model::DefinitionDocument) -> Self {
+            self.inner = self.inner.definition(input);
             self
         }
         /// <p>The <code>DefinitionDocument</code> used to create the system.</p>
@@ -779,8 +770,8 @@ pub mod fluent_builders {
         }
         /// <p>The namespace version in which the system is to be created.</p>
         /// <p>If no value is specified, the latest version is used by default.</p>
-        pub fn compatible_namespace_version(mut self, inp: i64) -> Self {
-            self.inner = self.inner.compatible_namespace_version(inp);
+        pub fn compatible_namespace_version(mut self, input: i64) -> Self {
+            self.inner = self.inner.compatible_namespace_version(input);
             self
         }
         /// <p>The namespace version in which the system is to be created.</p>
@@ -792,9 +783,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteFlowTemplate`.
     ///
-    /// <p>Deletes a workflow. Any new system or deployment that contains this workflow will fail to update or deploy.
-    /// Existing deployments that contain the workflow will continue to run (since they use a snapshot of the workflow taken at the time of deployment).</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a workflow. Any new system or deployment that contains this workflow will fail to update or deploy. Existing deployments that contain the workflow will continue to run (since they use a snapshot of the workflow taken at the time of deployment).</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFlowTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -839,10 +829,10 @@ pub mod fluent_builders {
                 crate::input::DeleteFlowTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -852,18 +842,14 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the workflow to be deleted.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the workflow to be deleted.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -872,7 +858,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteNamespace`.
     ///
     /// <p>Deletes the specified namespace. This action deletes all of the entities in the namespace. Delete the systems and flows that use entities in the namespace before performing this action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -917,10 +903,10 @@ pub mod fluent_builders {
                 crate::input::DeleteNamespaceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -931,10 +917,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteSystemInstance`.
     ///
-    /// <p>Deletes a system instance.
-    /// Only system instances that have never been deployed, or that have been undeployed can be deleted.</p>
+    /// <p>Deletes a system instance. Only system instances that have never been deployed, or that have been undeployed can be deleted.</p>
     /// <p>Users can create a new system instance that has the same ID as a deleted system instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSystemInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -979,10 +964,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSystemInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -991,8 +976,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the system instance to be deleted.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the system instance to be deleted.</p>
@@ -1003,9 +988,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteSystemTemplate`.
     ///
-    /// <p>Deletes a system. New deployments can't contain the system after its deletion.
-    /// Existing deployments that contain the system will continue to work because they use a snapshot of the system that is taken when it is deployed.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a system. New deployments can't contain the system after its deletion. Existing deployments that contain the system will continue to work because they use a snapshot of the system that is taken when it is deployed.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSystemTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1050,10 +1034,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSystemTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1063,18 +1047,14 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the system to be deleted.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the system to be deleted.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -1082,19 +1062,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeploySystemInstance`.
     ///
-    /// <p>
-    /// <b>Greengrass and Cloud Deployments</b>
-    /// </p>
+    /// <p> <b>Greengrass and Cloud Deployments</b> </p>
     /// <p>Deploys the system instance to the target specified in <code>CreateSystemInstance</code>. </p>
-    /// <p>
-    /// <b>Greengrass Deployments</b>
-    /// </p>
-    /// <p>If the system or any workflows and entities have been updated before this action is called, then the deployment will create a new Amazon Simple Storage Service
-    /// resource file and then deploy it.</p>
-    /// <p>Since this action creates a Greengrass deployment on the caller's behalf, the calling identity must have write permissions
-    /// to the specified Greengrass group. Otherwise, the call will fail with an authorization error.</p>
+    /// <p> <b>Greengrass Deployments</b> </p>
+    /// <p>If the system or any workflows and entities have been updated before this action is called, then the deployment will create a new Amazon Simple Storage Service resource file and then deploy it.</p>
+    /// <p>Since this action creates a Greengrass deployment on the caller's behalf, the calling identity must have write permissions to the specified Greengrass group. Otherwise, the call will fail with an authorization error.</p>
     /// <p>For information about the artifacts that get added to your Greengrass core device when you use this API, see <a href="https://docs.aws.amazon.com/thingsgraph/latest/ug/iot-tg-greengrass.html">AWS IoT Things Graph and AWS IoT Greengrass</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeploySystemInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1139,10 +1113,10 @@ pub mod fluent_builders {
                 crate::input::DeploySystemInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1152,18 +1126,14 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the system instance. This value is returned by the <code>CreateSystemInstance</code> action.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code>
-        /// </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the system instance. This value is returned by the <code>CreateSystemInstance</code> action.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -1172,7 +1142,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeprecateFlowTemplate`.
     ///
     /// <p>Deprecates the specified workflow. This action marks the workflow for deletion. Deprecated flows can't be deployed, but existing deployments will continue to run.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeprecateFlowTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1217,10 +1187,10 @@ pub mod fluent_builders {
                 crate::input::DeprecateFlowTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1230,18 +1200,14 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the workflow to be deleted.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the workflow to be deleted.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -1250,7 +1216,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeprecateSystemTemplate`.
     ///
     /// <p>Deprecates the specified system.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeprecateSystemTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1295,10 +1261,10 @@ pub mod fluent_builders {
                 crate::input::DeprecateSystemTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1308,18 +1274,14 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the system to delete.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the system to delete.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -1328,7 +1290,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeNamespace`.
     ///
     /// <p>Gets the latest version of the user's namespace and the public version that it is tracking.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1373,10 +1335,10 @@ pub mod fluent_builders {
                 crate::input::DescribeNamespaceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1385,8 +1347,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the user's namespace. Set this to <code>aws</code> to get the public namespace.</p>
-        pub fn namespace_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace_name(inp);
+        pub fn namespace_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace_name(input.into());
             self
         }
         /// <p>The name of the user's namespace. Set this to <code>aws</code> to get the public namespace.</p>
@@ -1400,9 +1362,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DissociateEntityFromThing`.
     ///
-    /// <p>Dissociates a device entity from a concrete thing. The action takes only the type of the entity that you need to dissociate because only
-    /// one entity of a particular type can be associated with a thing.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Dissociates a device entity from a concrete thing. The action takes only the type of the entity that you need to dissociate because only one entity of a particular type can be associated with a thing.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DissociateEntityFromThing<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1447,10 +1408,10 @@ pub mod fluent_builders {
                 crate::input::DissociateEntityFromThingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1459,8 +1420,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the thing to disassociate.</p>
-        pub fn thing_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(inp);
+        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_name(input.into());
             self
         }
         /// <p>The name of the thing to disassociate.</p>
@@ -1469,8 +1430,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The entity type from which to disassociate the thing.</p>
-        pub fn entity_type(mut self, inp: crate::model::EntityType) -> Self {
-            self.inner = self.inner.entity_type(inp);
+        pub fn entity_type(mut self, input: crate::model::EntityType) -> Self {
+            self.inner = self.inner.entity_type(input);
             self
         }
         /// <p>The entity type from which to disassociate the thing.</p>
@@ -1484,39 +1445,20 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEntities`.
     ///
-    /// <p>Gets definitions of the specified entities. Uses the latest version of the user's namespace by default. This API returns the
-    /// following TDM entities.</p>
+    /// <p>Gets definitions of the specified entities. Uses the latest version of the user's namespace by default. This API returns the following TDM entities.</p>
     /// <ul>
-    /// <li>
-    /// <p>Properties</p>
-    /// </li>
-    /// <li>
-    /// <p>States</p>
-    /// </li>
-    /// <li>
-    /// <p>Events</p>
-    /// </li>
-    /// <li>
-    /// <p>Actions</p>
-    /// </li>
-    /// <li>
-    /// <p>Capabilities</p>
-    /// </li>
-    /// <li>
-    /// <p>Mappings</p>
-    /// </li>
-    /// <li>
-    /// <p>Devices</p>
-    /// </li>
-    /// <li>
-    /// <p>Device Models</p>
-    /// </li>
-    /// <li>
-    /// <p>Services</p>
-    /// </li>
+    /// <li> <p>Properties</p> </li>
+    /// <li> <p>States</p> </li>
+    /// <li> <p>Events</p> </li>
+    /// <li> <p>Actions</p> </li>
+    /// <li> <p>Capabilities</p> </li>
+    /// <li> <p>Mappings</p> </li>
+    /// <li> <p>Devices</p> </li>
+    /// <li> <p>Device Models</p> </li>
+    /// <li> <p>Services</p> </li>
     /// </ul>
     /// <p>This action doesn't return definitions for systems, flows, and deployments.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEntities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1561,10 +1503,10 @@ pub mod fluent_builders {
                 crate::input::GetEntitiesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1578,18 +1520,14 @@ pub mod fluent_builders {
         ///
         /// <p>An array of entity IDs.</p>
         /// <p>The IDs should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-        /// </p>
-        pub fn ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ids(inp);
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
+        pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ids(input.into());
             self
         }
         /// <p>An array of entity IDs.</p>
         /// <p>The IDs should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
         pub fn set_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1598,8 +1536,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
-        pub fn namespace_version(mut self, inp: i64) -> Self {
-            self.inner = self.inner.namespace_version(inp);
+        pub fn namespace_version(mut self, input: i64) -> Self {
+            self.inner = self.inner.namespace_version(input);
             self
         }
         /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
@@ -1611,7 +1549,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFlowTemplate`.
     ///
     /// <p>Gets the latest version of the <code>DefinitionDocument</code> and <code>FlowTemplateSummary</code> for the specified workflow.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFlowTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1656,10 +1594,10 @@ pub mod fluent_builders {
                 crate::input::GetFlowTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1669,25 +1607,21 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the workflow.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the workflow.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
         /// <p>The number of the workflow revision to retrieve.</p>
-        pub fn revision_number(mut self, inp: i64) -> Self {
-            self.inner = self.inner.revision_number(inp);
+        pub fn revision_number(mut self, input: i64) -> Self {
+            self.inner = self.inner.revision_number(input);
             self
         }
         /// <p>The number of the workflow revision to retrieve.</p>
@@ -1698,9 +1632,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetFlowTemplateRevisions`.
     ///
-    /// <p>Gets revisions of the specified workflow. Only the last 100 revisions are stored. If the workflow has been deprecated,
-    /// this action will return revisions that occurred before the deprecation. This action won't work for workflows that have been deleted.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets revisions of the specified workflow. Only the last 100 revisions are stored. If the workflow has been deprecated, this action will return revisions that occurred before the deprecation. This action won't work for workflows that have been deleted.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFlowTemplateRevisions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1745,10 +1678,10 @@ pub mod fluent_builders {
                 crate::input::GetFlowTemplateRevisionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1756,27 +1689,31 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetFlowTemplateRevisionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetFlowTemplateRevisionsPaginator<C, M, R> {
+            crate::paginator::GetFlowTemplateRevisionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the workflow.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the workflow.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
@@ -1785,8 +1722,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -1798,7 +1735,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetNamespaceDeletionStatus`.
     ///
     /// <p>Gets the status of a namespace deletion task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNamespaceDeletionStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1843,10 +1780,10 @@ pub mod fluent_builders {
                 crate::input::GetNamespaceDeletionStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1858,7 +1795,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSystemInstance`.
     ///
     /// <p>Gets a system instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSystemInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1903,10 +1840,10 @@ pub mod fluent_builders {
                 crate::input::GetSystemInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1916,18 +1853,14 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the system deployment instance. This value is returned by <code>CreateSystemInstance</code>.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code>
-        /// </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the system deployment instance. This value is returned by <code>CreateSystemInstance</code>.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -1936,7 +1869,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSystemTemplate`.
     ///
     /// <p>Gets a system.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSystemTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1981,10 +1914,10 @@ pub mod fluent_builders {
                 crate::input::GetSystemTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1994,25 +1927,21 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the system to get. This ID must be in the user's namespace.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the system to get. This ID must be in the user's namespace.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
         /// <p>The number that specifies the revision of the system to get.</p>
-        pub fn revision_number(mut self, inp: i64) -> Self {
-            self.inner = self.inner.revision_number(inp);
+        pub fn revision_number(mut self, input: i64) -> Self {
+            self.inner = self.inner.revision_number(input);
             self
         }
         /// <p>The number that specifies the revision of the system to get.</p>
@@ -2023,9 +1952,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetSystemTemplateRevisions`.
     ///
-    /// <p>Gets revisions made to the specified system template. Only the previous 100 revisions are stored. If the system has been deprecated, this action will return
-    /// the revisions that occurred before its deprecation. This action won't work with systems that have been deleted.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets revisions made to the specified system template. Only the previous 100 revisions are stored. If the system has been deprecated, this action will return the revisions that occurred before its deprecation. This action won't work with systems that have been deleted.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSystemTemplateRevisions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2070,10 +1998,10 @@ pub mod fluent_builders {
                 crate::input::GetSystemTemplateRevisionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2081,27 +2009,31 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetSystemTemplateRevisionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetSystemTemplateRevisionsPaginator<C, M, R> {
+            crate::paginator::GetSystemTemplateRevisionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the system template.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the system template.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
@@ -2110,8 +2042,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -2123,7 +2055,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetUploadStatus`.
     ///
     /// <p>Gets the status of the specified upload.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUploadStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2168,10 +2100,10 @@ pub mod fluent_builders {
                 crate::input::GetUploadStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2180,8 +2112,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the upload. This value is returned by the <code>UploadEntityDefinitions</code> action.</p>
-        pub fn upload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.upload_id(inp);
+        pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.upload_id(input.into());
             self
         }
         /// <p>The ID of the upload. This value is returned by the <code>UploadEntityDefinitions</code> action.</p>
@@ -2193,7 +2125,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFlowExecutionMessages`.
     ///
     /// <p>Returns a list of objects that contain information about events in a flow execution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFlowExecutionMessages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2238,10 +2170,10 @@ pub mod fluent_builders {
                 crate::input::ListFlowExecutionMessagesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2249,9 +2181,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListFlowExecutionMessagesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListFlowExecutionMessagesPaginator<C, M, R> {
+            crate::paginator::ListFlowExecutionMessagesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the flow execution.</p>
-        pub fn flow_execution_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_execution_id(inp);
+        pub fn flow_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_execution_id(input.into());
             self
         }
         /// <p>The ID of the flow execution.</p>
@@ -2263,8 +2203,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
@@ -2273,8 +2213,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -2286,7 +2226,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists all tags on an AWS IoT Things Graph resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2331,10 +2271,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2342,9 +2282,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTagsForResourcePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTagsForResourcePaginator<C, M, R> {
+            crate::paginator::ListTagsForResourcePaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of tags to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of tags to return.</p>
@@ -2353,8 +2299,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags are to be returned.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags are to be returned.</p>
@@ -2363,8 +2309,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that specifies the next page of results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that specifies the next page of results to return.</p>
@@ -2376,7 +2322,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchEntities`.
     ///
     /// <p>Searches for entities of the specified type. You can search for entities in your namespace and the public namespace that you're tracking.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchEntities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2421,10 +2367,10 @@ pub mod fluent_builders {
                 crate::input::SearchEntitiesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2432,13 +2378,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchEntitiesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::SearchEntitiesPaginator<C, M, R> {
+            crate::paginator::SearchEntitiesPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `entityTypes`.
         ///
         /// To override the contents of this collection use [`set_entity_types`](Self::set_entity_types).
         ///
         /// <p>The entity types for which to search.</p>
-        pub fn entity_types(mut self, inp: impl Into<crate::model::EntityType>) -> Self {
-            self.inner = self.inner.entity_types(inp);
+        pub fn entity_types(mut self, input: crate::model::EntityType) -> Self {
+            self.inner = self.inner.entity_types(input);
             self
         }
         /// <p>The entity types for which to search.</p>
@@ -2453,19 +2405,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code>
-        /// <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>.
-        /// <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example,
-        /// you can filter on the ID of a property that is used in a state.</p>
+        /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code> <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
         /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::EntityFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::EntityFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code>
-        /// <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>.
-        /// <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example,
-        /// you can filter on the ID of a property that is used in a state.</p>
+        /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code> <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
         /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
         pub fn set_filters(
             mut self,
@@ -2475,8 +2421,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
@@ -2485,8 +2431,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -2495,8 +2441,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
-        pub fn namespace_version(mut self, inp: i64) -> Self {
-            self.inner = self.inner.namespace_version(inp);
+        pub fn namespace_version(mut self, input: i64) -> Self {
+            self.inner = self.inner.namespace_version(input);
             self
         }
         /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
@@ -2508,7 +2454,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchFlowExecutions`.
     ///
     /// <p>Searches for AWS IoT Things Graph workflow execution instances.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchFlowExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2553,10 +2499,10 @@ pub mod fluent_builders {
                 crate::input::SearchFlowExecutionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2564,9 +2510,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchFlowExecutionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::SearchFlowExecutionsPaginator<C, M, R> {
+            crate::paginator::SearchFlowExecutionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the system instance that contains the flow.</p>
-        pub fn system_instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.system_instance_id(inp);
+        pub fn system_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.system_instance_id(input.into());
             self
         }
         /// <p>The ID of the system instance that contains the flow.</p>
@@ -2578,8 +2530,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of a flow execution.</p>
-        pub fn flow_execution_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_execution_id(inp);
+        pub fn flow_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_execution_id(input.into());
             self
         }
         /// <p>The ID of a flow execution.</p>
@@ -2591,8 +2543,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time of the earliest flow execution to return.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The date and time of the earliest flow execution to return.</p>
@@ -2604,8 +2556,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time of the latest flow execution to return.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The date and time of the latest flow execution to return.</p>
@@ -2617,8 +2569,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
@@ -2627,8 +2579,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -2640,7 +2592,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchFlowTemplates`.
     ///
     /// <p>Searches for summary information about workflows.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchFlowTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2685,10 +2637,10 @@ pub mod fluent_builders {
                 crate::input::SearchFlowTemplatesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2696,13 +2648,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchFlowTemplatesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::SearchFlowTemplatesPaginator<C, M, R> {
+            crate::paginator::SearchFlowTemplatesPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>An array of objects that limit the result set. The only valid filter is <code>DEVICE_MODEL_ID</code>.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::FlowTemplateFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::FlowTemplateFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>An array of objects that limit the result set. The only valid filter is <code>DEVICE_MODEL_ID</code>.</p>
@@ -2714,8 +2672,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
@@ -2724,8 +2682,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -2737,7 +2695,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchSystemInstances`.
     ///
     /// <p>Searches for system instances in the user's account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchSystemInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2782,10 +2740,10 @@ pub mod fluent_builders {
                 crate::input::SearchSystemInstancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2793,19 +2751,23 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchSystemInstancesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::SearchSystemInstancesPaginator<C, M, R> {
+            crate::paginator::SearchSystemInstancesPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and
-        /// <code>GREENGRASS_GROUP_NAME</code>.</p>
+        /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and <code>GREENGRASS_GROUP_NAME</code>.</p>
         /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::SystemInstanceFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::SystemInstanceFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and
-        /// <code>GREENGRASS_GROUP_NAME</code>.</p>
+        /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and <code>GREENGRASS_GROUP_NAME</code>.</p>
         /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
         pub fn set_filters(
             mut self,
@@ -2815,8 +2777,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
@@ -2825,8 +2787,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -2838,7 +2800,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchSystemTemplates`.
     ///
     /// <p>Searches for summary information about systems in the user's account. You can filter by the ID of a workflow to return only systems that use the specified workflow.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchSystemTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2883,10 +2845,10 @@ pub mod fluent_builders {
                 crate::input::SearchSystemTemplatesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2894,13 +2856,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchSystemTemplatesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::SearchSystemTemplatesPaginator<C, M, R> {
+            crate::paginator::SearchSystemTemplatesPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>An array of filters that limit the result set. The only valid filter is <code>FLOW_TEMPLATE_ID</code>.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::SystemTemplateFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::SystemTemplateFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>An array of filters that limit the result set. The only valid filter is <code>FLOW_TEMPLATE_ID</code>.</p>
@@ -2912,8 +2880,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
@@ -2922,8 +2890,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -2935,10 +2903,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchThings`.
     ///
     /// <p>Searches for things associated with the specified entity. You can search by both device and device model.</p>
-    /// <p>For example, if two different devices, camera1 and camera2, implement the camera device model, the user can associate thing1 to camera1 and thing2 to camera2.
-    /// <code>SearchThings(camera2)</code> will return only thing2, but <code>SearchThings(camera)</code> will return both thing1 and thing2.</p>
+    /// <p>For example, if two different devices, camera1 and camera2, implement the camera device model, the user can associate thing1 to camera1 and thing2 to camera2. <code>SearchThings(camera2)</code> will return only thing2, but <code>SearchThings(camera)</code> will return both thing1 and thing2.</p>
     /// <p>This action searches for exact matches and doesn't perform partial text matching.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchThings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2983,10 +2950,10 @@ pub mod fluent_builders {
                 crate::input::SearchThingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2994,27 +2961,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchThingsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::SearchThingsPaginator<C, M, R> {
+            crate::paginator::SearchThingsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the entity to which the things are associated.</p>
         /// <p>The IDs should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-        /// </p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(input.into());
             self
         }
         /// <p>The ID of the entity to which the things are associated.</p>
         /// <p>The IDs should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_entity_id(input);
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
@@ -3023,8 +2992,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -3033,8 +3002,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
-        pub fn namespace_version(mut self, inp: i64) -> Self {
-            self.inner = self.inner.namespace_version(inp);
+        pub fn namespace_version(mut self, input: i64) -> Self {
+            self.inner = self.inner.namespace_version(input);
             self
         }
         /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
@@ -3046,7 +3015,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Creates a tag for the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3091,10 +3060,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3103,8 +3072,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags are returned.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags are returned.</p>
@@ -3116,12 +3085,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags to add to the resource.></p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>A list of tags to add to the resource.&gt;</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of tags to add to the resource.></p>
+        /// <p>A list of tags to add to the resource.&gt;</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3133,7 +3102,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UndeploySystemInstance`.
     ///
     /// <p>Removes a system instance from its target (Cloud or Greengrass).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UndeploySystemInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3178,10 +3147,10 @@ pub mod fluent_builders {
                 crate::input::UndeploySystemInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3190,8 +3159,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the system instance to remove from its target.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the system instance to remove from its target.</p>
@@ -3203,7 +3172,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes a tag from the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3248,10 +3217,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3260,8 +3229,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags are to be removed.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags are to be removed.</p>
@@ -3275,8 +3244,8 @@ pub mod fluent_builders {
         ///
         /// <p>A list of tag key names to remove from the resource. You don't specify the value. Both the key and its associated value are removed. </p>
         /// <p>This parameter to the API requires a JSON text string argument. For information on how to format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. </p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A list of tag key names to remove from the resource. You don't specify the value. Both the key and its associated value are removed. </p>
@@ -3291,9 +3260,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateFlowTemplate`.
     ///
-    /// <p>Updates the specified workflow. All deployed systems and system instances that use the workflow will see the changes in the flow when it is redeployed. If you don't want this
-    /// behavior, copy the workflow (creating a new workflow with a different ID), and update the copy. The workflow can contain only entities in the specified namespace. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the specified workflow. All deployed systems and system instances that use the workflow will see the changes in the flow when it is redeployed. If you don't want this behavior, copy the workflow (creating a new workflow with a different ID), and update the copy. The workflow can contain only entities in the specified namespace. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFlowTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3338,10 +3306,10 @@ pub mod fluent_builders {
                 crate::input::UpdateFlowTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3351,25 +3319,21 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the workflow to be updated.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the workflow to be updated.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
         /// <p>The <code>DefinitionDocument</code> that contains the updated workflow definition.</p>
-        pub fn definition(mut self, inp: crate::model::DefinitionDocument) -> Self {
-            self.inner = self.inner.definition(inp);
+        pub fn definition(mut self, input: crate::model::DefinitionDocument) -> Self {
+            self.inner = self.inner.definition(input);
             self
         }
         /// <p>The <code>DefinitionDocument</code> that contains the updated workflow definition.</p>
@@ -3381,15 +3345,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the user's namespace.</p>
-        /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow
-        /// to update.</p>
-        pub fn compatible_namespace_version(mut self, inp: i64) -> Self {
-            self.inner = self.inner.compatible_namespace_version(inp);
+        /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow to update.</p>
+        pub fn compatible_namespace_version(mut self, input: i64) -> Self {
+            self.inner = self.inner.compatible_namespace_version(input);
             self
         }
         /// <p>The version of the user's namespace.</p>
-        /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow
-        /// to update.</p>
+        /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow to update.</p>
         pub fn set_compatible_namespace_version(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_compatible_namespace_version(input);
             self
@@ -3398,7 +3360,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSystemTemplate`.
     ///
     /// <p>Updates the specified system. You don't need to run this action after updating a workflow. Any deployment that uses the system will see the changes in the system when it is redeployed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSystemTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3443,10 +3405,10 @@ pub mod fluent_builders {
                 crate::input::UpdateSystemTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3456,25 +3418,21 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the system to be updated.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the system to be updated.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
         /// <p>The <code>DefinitionDocument</code> that contains the updated system definition.</p>
-        pub fn definition(mut self, inp: crate::model::DefinitionDocument) -> Self {
-            self.inner = self.inner.definition(inp);
+        pub fn definition(mut self, input: crate::model::DefinitionDocument) -> Self {
+            self.inner = self.inner.definition(input);
             self
         }
         /// <p>The <code>DefinitionDocument</code> that contains the updated system definition.</p>
@@ -3487,8 +3445,8 @@ pub mod fluent_builders {
         }
         /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
         /// <p>If no value is specified, the latest version is used by default.</p>
-        pub fn compatible_namespace_version(mut self, inp: i64) -> Self {
-            self.inner = self.inner.compatible_namespace_version(inp);
+        pub fn compatible_namespace_version(mut self, input: i64) -> Self {
+            self.inner = self.inner.compatible_namespace_version(input);
             self
         }
         /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
@@ -3500,18 +3458,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UploadEntityDefinitions`.
     ///
-    /// <p>Asynchronously uploads one or more entity definitions to the user's namespace. The <code>document</code> parameter is required if
-    /// <code>syncWithPublicNamespace</code> and <code>deleteExistingEntites</code> are false. If the <code>syncWithPublicNamespace</code> parameter  is set to
-    /// <code>true</code>, the user's namespace will synchronize with the latest version of the public namespace. If <code>deprecateExistingEntities</code> is set to true,
-    /// all entities in the latest version will be deleted before the new <code>DefinitionDocument</code> is uploaded.</p>
-    /// <p>When a user uploads entity definitions for the first time, the service creates a new namespace for the user. The new namespace tracks the public namespace. Currently users
-    /// can have only one namespace. The namespace version increments whenever a user uploads entity definitions that are backwards-incompatible and whenever a user sets the
-    /// <code>syncWithPublicNamespace</code> parameter or the <code>deprecateExistingEntities</code> parameter to <code>true</code>.</p>
+    /// <p>Asynchronously uploads one or more entity definitions to the user's namespace. The <code>document</code> parameter is required if <code>syncWithPublicNamespace</code> and <code>deleteExistingEntites</code> are false. If the <code>syncWithPublicNamespace</code> parameter is set to <code>true</code>, the user's namespace will synchronize with the latest version of the public namespace. If <code>deprecateExistingEntities</code> is set to true, all entities in the latest version will be deleted before the new <code>DefinitionDocument</code> is uploaded.</p>
+    /// <p>When a user uploads entity definitions for the first time, the service creates a new namespace for the user. The new namespace tracks the public namespace. Currently users can have only one namespace. The namespace version increments whenever a user uploads entity definitions that are backwards-incompatible and whenever a user sets the <code>syncWithPublicNamespace</code> parameter or the <code>deprecateExistingEntities</code> parameter to <code>true</code>.</p>
     /// <p>The IDs for all of the entities should be in URN format. Each entity must be in the user's namespace. Users can't create entities in the public namespace, but entity definitions can refer to entities in the public namespace.</p>
-    /// <p>Valid entities are <code>Device</code>, <code>DeviceModel</code>, <code>Service</code>, <code>Capability</code>, <code>State</code>, <code>Action</code>, <code>Event</code>, <code>Property</code>,
-    /// <code>Mapping</code>, <code>Enum</code>.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Valid entities are <code>Device</code>, <code>DeviceModel</code>, <code>Service</code>, <code>Capability</code>, <code>State</code>, <code>Action</code>, <code>Event</code>, <code>Property</code>, <code>Mapping</code>, <code>Enum</code>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UploadEntityDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3556,10 +3507,10 @@ pub mod fluent_builders {
                 crate::input::UploadEntityDefinitionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3568,8 +3519,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>DefinitionDocument</code> that defines the updated entities.</p>
-        pub fn document(mut self, inp: crate::model::DefinitionDocument) -> Self {
-            self.inner = self.inner.document(inp);
+        pub fn document(mut self, input: crate::model::DefinitionDocument) -> Self {
+            self.inner = self.inner.document(input);
             self
         }
         /// <p>The <code>DefinitionDocument</code> that defines the updated entities.</p>
@@ -3581,8 +3532,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A Boolean that specifies whether to synchronize with the latest version of the public namespace. If set to <code>true</code>, the upload will create a new namespace version.</p>
-        pub fn sync_with_public_namespace(mut self, inp: bool) -> Self {
-            self.inner = self.inner.sync_with_public_namespace(inp);
+        pub fn sync_with_public_namespace(mut self, input: bool) -> Self {
+            self.inner = self.inner.sync_with_public_namespace(input);
             self
         }
         /// <p>A Boolean that specifies whether to synchronize with the latest version of the public namespace. If set to <code>true</code>, the upload will create a new namespace version.</p>
@@ -3590,20 +3541,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sync_with_public_namespace(input);
             self
         }
-        /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>.
-        /// If set to <code>true</code>, the upload will create a new namespace version.</p>
-        pub fn deprecate_existing_entities(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deprecate_existing_entities(inp);
+        /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>. If set to <code>true</code>, the upload will create a new namespace version.</p>
+        pub fn deprecate_existing_entities(mut self, input: bool) -> Self {
+            self.inner = self.inner.deprecate_existing_entities(input);
             self
         }
-        /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>.
-        /// If set to <code>true</code>, the upload will create a new namespace version.</p>
+        /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>. If set to <code>true</code>, the upload will create a new namespace version.</p>
         pub fn set_deprecate_existing_entities(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_deprecate_existing_entities(input);
             self
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

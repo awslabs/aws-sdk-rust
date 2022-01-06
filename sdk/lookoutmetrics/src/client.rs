@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Lookout for Metrics
@@ -143,6 +143,7 @@ where
     ///
     /// See [`DescribeAnomalyDetectionExecutions`](crate::client::fluent_builders::DescribeAnomalyDetectionExecutions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeAnomalyDetectionExecutions::into_paginator).
     pub fn describe_anomaly_detection_executions(
         &self,
     ) -> fluent_builders::DescribeAnomalyDetectionExecutions<C, M, R> {
@@ -173,6 +174,7 @@ where
     ///
     /// See [`GetFeedback`](crate::client::fluent_builders::GetFeedback) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetFeedback::into_paginator).
     pub fn get_feedback(&self) -> fluent_builders::GetFeedback<C, M, R> {
         fluent_builders::GetFeedback::new(self.handle.clone())
     }
@@ -187,6 +189,7 @@ where
     ///
     /// See [`ListAlerts`](crate::client::fluent_builders::ListAlerts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAlerts::into_paginator).
     pub fn list_alerts(&self) -> fluent_builders::ListAlerts<C, M, R> {
         fluent_builders::ListAlerts::new(self.handle.clone())
     }
@@ -194,13 +197,25 @@ where
     ///
     /// See [`ListAnomalyDetectors`](crate::client::fluent_builders::ListAnomalyDetectors) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAnomalyDetectors::into_paginator).
     pub fn list_anomaly_detectors(&self) -> fluent_builders::ListAnomalyDetectors<C, M, R> {
         fluent_builders::ListAnomalyDetectors::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListAnomalyGroupRelatedMetrics` operation.
+    ///
+    /// See [`ListAnomalyGroupRelatedMetrics`](crate::client::fluent_builders::ListAnomalyGroupRelatedMetrics) for more information about the
+    /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAnomalyGroupRelatedMetrics::into_paginator).
+    pub fn list_anomaly_group_related_metrics(
+        &self,
+    ) -> fluent_builders::ListAnomalyGroupRelatedMetrics<C, M, R> {
+        fluent_builders::ListAnomalyGroupRelatedMetrics::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `ListAnomalyGroupSummaries` operation.
     ///
     /// See [`ListAnomalyGroupSummaries`](crate::client::fluent_builders::ListAnomalyGroupSummaries) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAnomalyGroupSummaries::into_paginator).
     pub fn list_anomaly_group_summaries(
         &self,
     ) -> fluent_builders::ListAnomalyGroupSummaries<C, M, R> {
@@ -210,6 +225,7 @@ where
     ///
     /// See [`ListAnomalyGroupTimeSeries`](crate::client::fluent_builders::ListAnomalyGroupTimeSeries) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAnomalyGroupTimeSeries::into_paginator).
     pub fn list_anomaly_group_time_series(
         &self,
     ) -> fluent_builders::ListAnomalyGroupTimeSeries<C, M, R> {
@@ -219,6 +235,7 @@ where
     ///
     /// See [`ListMetricSets`](crate::client::fluent_builders::ListMetricSets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMetricSets::into_paginator).
     pub fn list_metric_sets(&self) -> fluent_builders::ListMetricSets<C, M, R> {
         fluent_builders::ListMetricSets::new(self.handle.clone())
     }
@@ -276,7 +293,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ActivateAnomalyDetector`.
     ///
     /// <p>Activates an anomaly detector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ActivateAnomalyDetector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -321,10 +338,10 @@ pub mod fluent_builders {
                 crate::input::ActivateAnomalyDetectorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -333,8 +350,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the anomaly detector.</p>
-        pub fn anomaly_detector_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(inp);
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The ARN of the anomaly detector.</p>
@@ -349,7 +366,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BackTestAnomalyDetector`.
     ///
     /// <p>Runs a backtest for anomaly detection for the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BackTestAnomalyDetector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -394,10 +411,10 @@ pub mod fluent_builders {
                 crate::input::BackTestAnomalyDetectorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -406,8 +423,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn anomaly_detector_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(inp);
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
@@ -422,7 +439,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAlert`.
     ///
     /// <p>Creates an alert for an anomaly detector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAlert<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -467,10 +484,10 @@ pub mod fluent_builders {
                 crate::input::CreateAlertInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -479,8 +496,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the alert.</p>
-        pub fn alert_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alert_name(inp);
+        pub fn alert_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alert_name(input.into());
             self
         }
         /// <p>The name of the alert.</p>
@@ -489,8 +506,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
-        pub fn alert_sensitivity_threshold(mut self, inp: i32) -> Self {
-            self.inner = self.inner.alert_sensitivity_threshold(inp);
+        pub fn alert_sensitivity_threshold(mut self, input: i32) -> Self {
+            self.inner = self.inner.alert_sensitivity_threshold(input);
             self
         }
         /// <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
@@ -499,8 +516,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the alert.</p>
-        pub fn alert_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alert_description(inp);
+        pub fn alert_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alert_description(input.into());
             self
         }
         /// <p>A description of the alert.</p>
@@ -512,8 +529,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the detector to which the alert is attached.</p>
-        pub fn anomaly_detector_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(inp);
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The ARN of the detector to which the alert is attached.</p>
@@ -525,8 +542,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Action that will be triggered when there is an alert.</p>
-        pub fn action(mut self, inp: crate::model::Action) -> Self {
-            self.inner = self.inner.action(inp);
+        pub fn action(mut self, input: crate::model::Action) -> Self {
+            self.inner = self.inner.action(input);
             self
         }
         /// <p>Action that will be triggered when there is an alert.</p>
@@ -544,7 +561,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the alert.</p>
@@ -561,7 +578,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAnomalyDetector`.
     ///
     /// <p>Creates an anomaly detector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAnomalyDetector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -606,10 +623,10 @@ pub mod fluent_builders {
                 crate::input::CreateAnomalyDetectorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -618,8 +635,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the detector.</p>
-        pub fn anomaly_detector_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_name(inp);
+        pub fn anomaly_detector_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_name(input.into());
             self
         }
         /// <p>The name of the detector.</p>
@@ -631,8 +648,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the detector.</p>
-        pub fn anomaly_detector_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_description(inp);
+        pub fn anomaly_detector_description(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.anomaly_detector_description(input.into());
             self
         }
         /// <p>A description of the detector.</p>
@@ -644,8 +664,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Contains information about the configuration of the anomaly detector.</p>
-        pub fn anomaly_detector_config(mut self, inp: crate::model::AnomalyDetectorConfig) -> Self {
-            self.inner = self.inner.anomaly_detector_config(inp);
+        pub fn anomaly_detector_config(
+            mut self,
+            input: crate::model::AnomalyDetectorConfig,
+        ) -> Self {
+            self.inner = self.inner.anomaly_detector_config(input);
             self
         }
         /// <p>Contains information about the configuration of the anomaly detector.</p>
@@ -657,8 +680,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the KMS key to use to encrypt your data.</p>
-        pub fn kms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_arn(inp);
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_arn(input.into());
             self
         }
         /// <p>The ARN of the KMS key to use to encrypt your data.</p>
@@ -676,7 +699,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the anomaly detector.</p>
@@ -693,7 +716,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateMetricSet`.
     ///
     /// <p>Creates a dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMetricSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -738,10 +761,10 @@ pub mod fluent_builders {
                 crate::input::CreateMetricSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -750,8 +773,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the anomaly detector that will use the dataset.</p>
-        pub fn anomaly_detector_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(inp);
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The ARN of the anomaly detector that will use the dataset.</p>
@@ -763,8 +786,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the dataset.</p>
-        pub fn metric_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_set_name(inp);
+        pub fn metric_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_set_name(input.into());
             self
         }
         /// <p>The name of the dataset.</p>
@@ -776,8 +799,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the dataset you are creating.</p>
-        pub fn metric_set_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_set_description(inp);
+        pub fn metric_set_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_set_description(input.into());
             self
         }
         /// <p>A description of the dataset you are creating.</p>
@@ -793,8 +816,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_metric_list`](Self::set_metric_list).
         ///
         /// <p>A list of metrics that the dataset will contain.</p>
-        pub fn metric_list(mut self, inp: impl Into<crate::model::Metric>) -> Self {
-            self.inner = self.inner.metric_list(inp);
+        pub fn metric_list(mut self, input: crate::model::Metric) -> Self {
+            self.inner = self.inner.metric_list(input);
             self
         }
         /// <p>A list of metrics that the dataset will contain.</p>
@@ -806,8 +829,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3 and Redshift datasources.</p>
-        pub fn offset(mut self, inp: i32) -> Self {
-            self.inner = self.inner.offset(inp);
+        pub fn offset(mut self, input: i32) -> Self {
+            self.inner = self.inner.offset(input);
             self
         }
         /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3 and Redshift datasources.</p>
@@ -816,8 +839,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Contains information about the column used for tracking time in your source data.</p>
-        pub fn timestamp_column(mut self, inp: crate::model::TimestampColumn) -> Self {
-            self.inner = self.inner.timestamp_column(inp);
+        pub fn timestamp_column(mut self, input: crate::model::TimestampColumn) -> Self {
+            self.inner = self.inner.timestamp_column(input);
             self
         }
         /// <p>Contains information about the column used for tracking time in your source data.</p>
@@ -833,8 +856,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_dimension_list`](Self::set_dimension_list).
         ///
         /// <p>A list of the fields you want to treat as dimensions.</p>
-        pub fn dimension_list(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dimension_list(inp);
+        pub fn dimension_list(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dimension_list(input.into());
             self
         }
         /// <p>A list of the fields you want to treat as dimensions.</p>
@@ -846,8 +869,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The frequency with which the source data will be analyzed for anomalies.</p>
-        pub fn metric_set_frequency(mut self, inp: crate::model::Frequency) -> Self {
-            self.inner = self.inner.metric_set_frequency(inp);
+        pub fn metric_set_frequency(mut self, input: crate::model::Frequency) -> Self {
+            self.inner = self.inner.metric_set_frequency(input);
             self
         }
         /// <p>The frequency with which the source data will be analyzed for anomalies.</p>
@@ -859,8 +882,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Contains information about how the source data should be interpreted.</p>
-        pub fn metric_source(mut self, inp: crate::model::MetricSource) -> Self {
-            self.inner = self.inner.metric_source(inp);
+        pub fn metric_source(mut self, input: crate::model::MetricSource) -> Self {
+            self.inner = self.inner.metric_source(input);
             self
         }
         /// <p>Contains information about how the source data should be interpreted.</p>
@@ -872,8 +895,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time zone in which your source data was recorded.</p>
-        pub fn timezone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.timezone(inp);
+        pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.timezone(input.into());
             self
         }
         /// <p>The time zone in which your source data was recorded.</p>
@@ -891,7 +914,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the dataset.</p>
@@ -908,7 +931,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAlert`.
     ///
     /// <p>Deletes an alert.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAlert<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -953,10 +976,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAlertInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -965,8 +988,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the alert to delete.</p>
-        pub fn alert_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alert_arn(inp);
+        pub fn alert_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alert_arn(input.into());
             self
         }
         /// <p>The ARN of the alert to delete.</p>
@@ -977,9 +1000,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAnomalyDetector`.
     ///
-    /// <p>Deletes a detector. Deleting an anomaly detector will delete all of its corresponding resources including any
-    /// configured datasets and alerts.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a detector. Deleting an anomaly detector will delete all of its corresponding resources including any configured datasets and alerts.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAnomalyDetector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1024,10 +1046,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAnomalyDetectorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1036,8 +1058,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the detector to delete.</p>
-        pub fn anomaly_detector_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(inp);
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The ARN of the detector to delete.</p>
@@ -1052,9 +1074,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAlert`.
     ///
     /// <p>Describes an alert.</p>
-    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
-    /// immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAlert<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1099,10 +1120,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAlertInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1111,8 +1132,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the alert to describe.</p>
-        pub fn alert_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alert_arn(inp);
+        pub fn alert_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alert_arn(input.into());
             self
         }
         /// <p>The ARN of the alert to describe.</p>
@@ -1124,7 +1145,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAnomalyDetectionExecutions`.
     ///
     /// <p>Returns information about the status of the specified anomaly detection jobs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAnomalyDetectionExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1171,10 +1192,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAnomalyDetectionExecutionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1182,9 +1203,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeAnomalyDetectionExecutionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeAnomalyDetectionExecutionsPaginator<C, M, R> {
+            crate::paginator::DescribeAnomalyDetectionExecutionsPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn anomaly_detector_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(inp);
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
@@ -1196,8 +1228,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The timestamp of the anomaly detection job.</p>
-        pub fn timestamp(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.timestamp(inp);
+        pub fn timestamp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.timestamp(input.into());
             self
         }
         /// <p>The timestamp of the anomaly detection job.</p>
@@ -1206,8 +1238,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of items to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of items to return in the response.</p>
@@ -1216,8 +1248,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
@@ -1229,9 +1261,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAnomalyDetector`.
     ///
     /// <p>Describes a detector.</p>
-    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
-    /// immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAnomalyDetector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1276,10 +1307,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAnomalyDetectorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1288,8 +1319,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the detector to describe.</p>
-        pub fn anomaly_detector_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(inp);
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The ARN of the detector to describe.</p>
@@ -1304,9 +1335,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeMetricSet`.
     ///
     /// <p>Describes a dataset.</p>
-    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
-    /// immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMetricSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1351,10 +1381,10 @@ pub mod fluent_builders {
                 crate::input::DescribeMetricSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1363,8 +1393,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the dataset.</p>
-        pub fn metric_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_set_arn(inp);
+        pub fn metric_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_set_arn(input.into());
             self
         }
         /// <p>The ARN of the dataset.</p>
@@ -1379,7 +1409,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAnomalyGroup`.
     ///
     /// <p>Returns details about a group of anomalous metrics.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAnomalyGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1424,10 +1454,10 @@ pub mod fluent_builders {
                 crate::input::GetAnomalyGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1436,8 +1466,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the anomaly group.</p>
-        pub fn anomaly_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_group_id(inp);
+        pub fn anomaly_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_group_id(input.into());
             self
         }
         /// <p>The ID of the anomaly group.</p>
@@ -1449,8 +1479,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn anomaly_detector_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(inp);
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
@@ -1465,7 +1495,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFeedback`.
     ///
     /// <p>Get feedback for an anomaly group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFeedback<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1510,10 +1540,10 @@ pub mod fluent_builders {
                 crate::input::GetFeedbackInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1521,9 +1551,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetFeedbackPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetFeedbackPaginator<C, M, R> {
+            crate::paginator::GetFeedbackPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn anomaly_detector_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(inp);
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
@@ -1537,9 +1573,9 @@ pub mod fluent_builders {
         /// <p>The anomalous metric and group ID.</p>
         pub fn anomaly_group_time_series_feedback(
             mut self,
-            inp: crate::model::AnomalyGroupTimeSeries,
+            input: crate::model::AnomalyGroupTimeSeries,
         ) -> Self {
-            self.inner = self.inner.anomaly_group_time_series_feedback(inp);
+            self.inner = self.inner.anomaly_group_time_series_feedback(input);
             self
         }
         /// <p>The anomalous metric and group ID.</p>
@@ -1551,8 +1587,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -1561,8 +1597,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
@@ -1574,7 +1610,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSampleData`.
     ///
     /// <p>Returns a selection of sample records from an Amazon S3 datasource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSampleData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1619,10 +1655,10 @@ pub mod fluent_builders {
                 crate::input::GetSampleDataInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1631,8 +1667,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A datasource bucket in Amazon S3.</p>
-        pub fn s3_source_config(mut self, inp: crate::model::SampleDataS3SourceConfig) -> Self {
-            self.inner = self.inner.s3_source_config(inp);
+        pub fn s3_source_config(mut self, input: crate::model::SampleDataS3SourceConfig) -> Self {
+            self.inner = self.inner.s3_source_config(input);
             self
         }
         /// <p>A datasource bucket in Amazon S3.</p>
@@ -1647,9 +1683,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAlerts`.
     ///
     /// <p>Lists the alerts attached to a detector.</p>
-    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
-    /// immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAlerts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1694,10 +1729,10 @@ pub mod fluent_builders {
                 crate::input::ListAlertsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1705,9 +1740,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAlertsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAlertsPaginator<C, M, R> {
+            crate::paginator::ListAlertsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ARN of the alert's detector.</p>
-        pub fn anomaly_detector_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(inp);
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The ARN of the alert's detector.</p>
@@ -1718,21 +1759,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_anomaly_detector_arn(input);
             self
         }
-        /// <p>If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To
-        /// retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To
-        /// retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results that will be displayed by the request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results that will be displayed by the request.</p>
@@ -1744,9 +1783,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAnomalyDetectors`.
     ///
     /// <p>Lists the detectors in the current AWS Region.</p>
-    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
-    /// immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAnomalyDetectors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1791,10 +1829,10 @@ pub mod fluent_builders {
                 crate::input::ListAnomalyDetectorsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1802,9 +1840,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAnomalyDetectorsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAnomalyDetectorsPaginator<C, M, R> {
+            crate::paginator::ListAnomalyDetectorsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -1812,14 +1856,139 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To
-        /// retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To
-        /// retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListAnomalyGroupRelatedMetrics`.
+    ///
+    /// <p>Returns a list of measures that are potential causes or effects of an anomaly group.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListAnomalyGroupRelatedMetrics<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_anomaly_group_related_metrics_input::Builder,
+    }
+    impl<C, M, R> ListAnomalyGroupRelatedMetrics<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListAnomalyGroupRelatedMetrics`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListAnomalyGroupRelatedMetricsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListAnomalyGroupRelatedMetricsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListAnomalyGroupRelatedMetricsInputOperationOutputAlias,
+                crate::output::ListAnomalyGroupRelatedMetricsOutput,
+                crate::error::ListAnomalyGroupRelatedMetricsError,
+                crate::input::ListAnomalyGroupRelatedMetricsInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAnomalyGroupRelatedMetricsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListAnomalyGroupRelatedMetricsPaginator<C, M, R> {
+            crate::paginator::ListAnomalyGroupRelatedMetricsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+        pub fn set_anomaly_detector_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_anomaly_detector_arn(input);
+            self
+        }
+        /// <p>The ID of the anomaly group.</p>
+        pub fn anomaly_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_group_id(input.into());
+            self
+        }
+        /// <p>The ID of the anomaly group.</p>
+        pub fn set_anomaly_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_anomaly_group_id(input);
+            self
+        }
+        /// <p>Filter for potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>) or downstream effects (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>) of the anomaly group.</p>
+        pub fn relationship_type_filter(mut self, input: crate::model::RelationshipType) -> Self {
+            self.inner = self.inner.relationship_type_filter(input);
+            self
+        }
+        /// <p>Filter for potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>) or downstream effects (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>) of the anomaly group.</p>
+        pub fn set_relationship_type_filter(
+            mut self,
+            input: std::option::Option<crate::model::RelationshipType>,
+        ) -> Self {
+            self.inner = self.inner.set_relationship_type_filter(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1828,7 +1997,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAnomalyGroupSummaries`.
     ///
     /// <p>Returns a list of anomaly groups.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAnomalyGroupSummaries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1873,10 +2042,10 @@ pub mod fluent_builders {
                 crate::input::ListAnomalyGroupSummariesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1884,9 +2053,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAnomalyGroupSummariesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListAnomalyGroupSummariesPaginator<C, M, R> {
+            crate::paginator::ListAnomalyGroupSummariesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn anomaly_detector_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(inp);
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
@@ -1898,8 +2075,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The minimum severity score for inclusion in the output.</p>
-        pub fn sensitivity_threshold(mut self, inp: i32) -> Self {
-            self.inner = self.inner.sensitivity_threshold(inp);
+        pub fn sensitivity_threshold(mut self, input: i32) -> Self {
+            self.inner = self.inner.sensitivity_threshold(input);
             self
         }
         /// <p>The minimum severity score for inclusion in the output.</p>
@@ -1908,8 +2085,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -1918,8 +2095,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
@@ -1931,7 +2108,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAnomalyGroupTimeSeries`.
     ///
     /// <p>Gets a list of anomalous metrics for a measure in an anomaly group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAnomalyGroupTimeSeries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1976,10 +2153,10 @@ pub mod fluent_builders {
                 crate::input::ListAnomalyGroupTimeSeriesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1987,9 +2164,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAnomalyGroupTimeSeriesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListAnomalyGroupTimeSeriesPaginator<C, M, R> {
+            crate::paginator::ListAnomalyGroupTimeSeriesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn anomaly_detector_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(inp);
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
@@ -2001,8 +2186,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the anomaly group.</p>
-        pub fn anomaly_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_group_id(inp);
+        pub fn anomaly_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_group_id(input.into());
             self
         }
         /// <p>The ID of the anomaly group.</p>
@@ -2014,8 +2199,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the measure field.</p>
-        pub fn metric_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_name(inp);
+        pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_name(input.into());
             self
         }
         /// <p>The name of the measure field.</p>
@@ -2024,8 +2209,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -2034,8 +2219,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
@@ -2047,9 +2232,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMetricSets`.
     ///
     /// <p>Lists the datasets in the current AWS Region.</p>
-    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
-    /// immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMetricSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2094,10 +2278,10 @@ pub mod fluent_builders {
                 crate::input::ListMetricSetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2105,9 +2289,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMetricSetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListMetricSetsPaginator<C, M, R> {
+            crate::paginator::ListMetricSetsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ARN of the anomaly detector containing the metrics sets to list.</p>
-        pub fn anomaly_detector_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(inp);
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The ARN of the anomaly detector containing the metrics sets to list.</p>
@@ -2119,8 +2309,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -2128,16 +2318,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2146,7 +2332,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Gets a list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> for a detector, dataset, or alert.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2191,10 +2377,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2203,8 +2389,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource's Amazon Resource Name (ARN).</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource's Amazon Resource Name (ARN).</p>
@@ -2216,7 +2402,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutFeedback`.
     ///
     /// <p>Add feedback for an anomalous metric.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutFeedback<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2261,10 +2447,10 @@ pub mod fluent_builders {
                 crate::input::PutFeedbackInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2273,8 +2459,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn anomaly_detector_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(inp);
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
@@ -2288,9 +2474,9 @@ pub mod fluent_builders {
         /// <p>Feedback for an anomalous metric.</p>
         pub fn anomaly_group_time_series_feedback(
             mut self,
-            inp: crate::model::AnomalyGroupTimeSeriesFeedback,
+            input: crate::model::AnomalyGroupTimeSeriesFeedback,
         ) -> Self {
-            self.inner = self.inner.anomaly_group_time_series_feedback(inp);
+            self.inner = self.inner.anomaly_group_time_series_feedback(input);
             self
         }
         /// <p>Feedback for an anomalous metric.</p>
@@ -2305,7 +2491,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to a detector, dataset, or alert.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2350,10 +2536,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2362,8 +2548,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource's Amazon Resource Name (ARN).</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource's Amazon Resource Name (ARN).</p>
@@ -2375,20 +2561,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags to apply to the resource. Tag keys and values can contain letters, numbers, spaces, and the following
-        /// symbols: <code>_.:/=+@-</code>
-        /// </p>
+        /// <p>Tags to apply to the resource. Tag keys and values can contain letters, numbers, spaces, and the following symbols: <code>_.:/=+@-</code> </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>Tags to apply to the resource. Tag keys and values can contain letters, numbers, spaces, and the following
-        /// symbols: <code>_.:/=+@-</code>
-        /// </p>
+        /// <p>Tags to apply to the resource. Tag keys and values can contain letters, numbers, spaces, and the following symbols: <code>_.:/=+@-</code> </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2402,7 +2584,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> from a detector, dataset, or alert.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2447,10 +2629,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2459,8 +2641,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource's Amazon Resource Name (ARN).</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource's Amazon Resource Name (ARN).</p>
@@ -2473,8 +2655,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>Keys to remove from the resource's tags.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>Keys to remove from the resource's tags.</p>
@@ -2489,7 +2671,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAnomalyDetector`.
     ///
     /// <p>Updates a detector. After activation, you can only change a detector's ingestion delay and description.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAnomalyDetector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2534,10 +2716,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAnomalyDetectorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2546,8 +2728,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the detector to update.</p>
-        pub fn anomaly_detector_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(inp);
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The ARN of the detector to update.</p>
@@ -2559,8 +2741,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an AWS KMS encryption key.</p>
-        pub fn kms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_arn(inp);
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an AWS KMS encryption key.</p>
@@ -2569,8 +2751,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated detector description.</p>
-        pub fn anomaly_detector_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_description(inp);
+        pub fn anomaly_detector_description(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.anomaly_detector_description(input.into());
             self
         }
         /// <p>The updated detector description.</p>
@@ -2582,8 +2767,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Contains information about the configuration to which the detector will be updated.</p>
-        pub fn anomaly_detector_config(mut self, inp: crate::model::AnomalyDetectorConfig) -> Self {
-            self.inner = self.inner.anomaly_detector_config(inp);
+        pub fn anomaly_detector_config(
+            mut self,
+            input: crate::model::AnomalyDetectorConfig,
+        ) -> Self {
+            self.inner = self.inner.anomaly_detector_config(input);
             self
         }
         /// <p>Contains information about the configuration to which the detector will be updated.</p>
@@ -2598,7 +2786,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateMetricSet`.
     ///
     /// <p>Updates a dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMetricSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2643,10 +2831,10 @@ pub mod fluent_builders {
                 crate::input::UpdateMetricSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2655,8 +2843,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the dataset to update.</p>
-        pub fn metric_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_set_arn(inp);
+        pub fn metric_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_set_arn(input.into());
             self
         }
         /// <p>The ARN of the dataset to update.</p>
@@ -2668,8 +2856,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The dataset's description.</p>
-        pub fn metric_set_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_set_description(inp);
+        pub fn metric_set_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_set_description(input.into());
             self
         }
         /// <p>The dataset's description.</p>
@@ -2685,8 +2873,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_metric_list`](Self::set_metric_list).
         ///
         /// <p>The metric list.</p>
-        pub fn metric_list(mut self, inp: impl Into<crate::model::Metric>) -> Self {
-            self.inner = self.inner.metric_list(inp);
+        pub fn metric_list(mut self, input: crate::model::Metric) -> Self {
+            self.inner = self.inner.metric_list(input);
             self
         }
         /// <p>The metric list.</p>
@@ -2698,8 +2886,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3 and Redshift datasources.</p>
-        pub fn offset(mut self, inp: i32) -> Self {
-            self.inner = self.inner.offset(inp);
+        pub fn offset(mut self, input: i32) -> Self {
+            self.inner = self.inner.offset(input);
             self
         }
         /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3 and Redshift datasources.</p>
@@ -2708,8 +2896,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The timestamp column.</p>
-        pub fn timestamp_column(mut self, inp: crate::model::TimestampColumn) -> Self {
-            self.inner = self.inner.timestamp_column(inp);
+        pub fn timestamp_column(mut self, input: crate::model::TimestampColumn) -> Self {
+            self.inner = self.inner.timestamp_column(input);
             self
         }
         /// <p>The timestamp column.</p>
@@ -2725,8 +2913,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_dimension_list`](Self::set_dimension_list).
         ///
         /// <p>The dimension list.</p>
-        pub fn dimension_list(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dimension_list(inp);
+        pub fn dimension_list(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dimension_list(input.into());
             self
         }
         /// <p>The dimension list.</p>
@@ -2738,8 +2926,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The dataset's interval.</p>
-        pub fn metric_set_frequency(mut self, inp: crate::model::Frequency) -> Self {
-            self.inner = self.inner.metric_set_frequency(inp);
+        pub fn metric_set_frequency(mut self, input: crate::model::Frequency) -> Self {
+            self.inner = self.inner.metric_set_frequency(input);
             self
         }
         /// <p>The dataset's interval.</p>
@@ -2751,8 +2939,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Contains information about source data used to generate a metric.</p>
-        pub fn metric_source(mut self, inp: crate::model::MetricSource) -> Self {
-            self.inner = self.inner.metric_source(inp);
+        pub fn metric_source(mut self, input: crate::model::MetricSource) -> Self {
+            self.inner = self.inner.metric_source(input);
             self
         }
         /// <p>Contains information about source data used to generate a metric.</p>
@@ -2765,6 +2953,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

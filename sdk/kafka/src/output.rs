@@ -978,15 +978,13 @@ impl ListScramSecretsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNodesOutput {
-    /// <p>The paginated results marker. When the result of a ListNodes operation is truncated, the call returns NextToken in the response.
-    /// To get another batch of nodes, provide this token in your next request.</p>
+    /// <p>The paginated results marker. When the result of a ListNodes operation is truncated, the call returns NextToken in the response. To get another batch of nodes, provide this token in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>List containing a NodeInfo object.</p>
     pub node_info_list: std::option::Option<std::vec::Vec<crate::model::NodeInfo>>,
 }
 impl ListNodesOutput {
-    /// <p>The paginated results marker. When the result of a ListNodes operation is truncated, the call returns NextToken in the response.
-    /// To get another batch of nodes, provide this token in your next request.</p>
+    /// <p>The paginated results marker. When the result of a ListNodes operation is truncated, the call returns NextToken in the response. To get another batch of nodes, provide this token in your next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1013,14 +1011,12 @@ pub mod list_nodes_output {
         pub(crate) node_info_list: std::option::Option<std::vec::Vec<crate::model::NodeInfo>>,
     }
     impl Builder {
-        /// <p>The paginated results marker. When the result of a ListNodes operation is truncated, the call returns NextToken in the response.
-        /// To get another batch of nodes, provide this token in your next request.</p>
+        /// <p>The paginated results marker. When the result of a ListNodes operation is truncated, the call returns NextToken in the response. To get another batch of nodes, provide this token in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The paginated results marker. When the result of a ListNodes operation is truncated, the call returns NextToken in the response.
-        /// To get another batch of nodes, provide this token in your next request.</p>
+        /// <p>The paginated results marker. When the result of a ListNodes operation is truncated, the call returns NextToken in the response. To get another batch of nodes, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1030,9 +1026,9 @@ pub mod list_nodes_output {
         /// To override the contents of this collection use [`set_node_info_list`](Self::set_node_info_list).
         ///
         /// <p>List containing a NodeInfo object.</p>
-        pub fn node_info_list(mut self, input: impl Into<crate::model::NodeInfo>) -> Self {
+        pub fn node_info_list(mut self, input: crate::model::NodeInfo) -> Self {
             let mut v = self.node_info_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.node_info_list = Some(v);
             self
         }
@@ -1101,9 +1097,9 @@ pub mod list_kafka_versions_output {
         ///
         /// To override the contents of this collection use [`set_kafka_versions`](Self::set_kafka_versions).
         ///
-        pub fn kafka_versions(mut self, input: impl Into<crate::model::KafkaVersion>) -> Self {
+        pub fn kafka_versions(mut self, input: crate::model::KafkaVersion) -> Self {
             let mut v = self.kafka_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.kafka_versions = Some(v);
             self
         }
@@ -1147,8 +1143,7 @@ impl ListKafkaVersionsOutput {
 pub struct ListConfigurationsOutput {
     /// <p>An array of MSK configurations.</p>
     pub configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
-    /// <p>The paginated results marker. When the result of a ListConfigurations operation is truncated, the call returns NextToken in the response.
-    /// To get another batch of configurations, provide this token in your next request.</p>
+    /// <p>The paginated results marker. When the result of a ListConfigurations operation is truncated, the call returns NextToken in the response. To get another batch of configurations, provide this token in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConfigurationsOutput {
@@ -1156,8 +1151,7 @@ impl ListConfigurationsOutput {
     pub fn configurations(&self) -> std::option::Option<&[crate::model::Configuration]> {
         self.configurations.as_deref()
     }
-    /// <p>The paginated results marker. When the result of a ListConfigurations operation is truncated, the call returns NextToken in the response.
-    /// To get another batch of configurations, provide this token in your next request.</p>
+    /// <p>The paginated results marker. When the result of a ListConfigurations operation is truncated, the call returns NextToken in the response. To get another batch of configurations, provide this token in your next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1185,9 +1179,9 @@ pub mod list_configurations_output {
         /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
         ///
         /// <p>An array of MSK configurations.</p>
-        pub fn configurations(mut self, input: impl Into<crate::model::Configuration>) -> Self {
+        pub fn configurations(mut self, input: crate::model::Configuration) -> Self {
             let mut v = self.configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configurations = Some(v);
             self
         }
@@ -1199,14 +1193,12 @@ pub mod list_configurations_output {
             self.configurations = input;
             self
         }
-        /// <p>The paginated results marker. When the result of a ListConfigurations operation is truncated, the call returns NextToken in the response.
-        /// To get another batch of configurations, provide this token in your next request.</p>
+        /// <p>The paginated results marker. When the result of a ListConfigurations operation is truncated, the call returns NextToken in the response. To get another batch of configurations, provide this token in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The paginated results marker. When the result of a ListConfigurations operation is truncated, the call returns NextToken in the response.
-        /// To get another batch of configurations, provide this token in your next request.</p>
+        /// <p>The paginated results marker. When the result of a ListConfigurations operation is truncated, the call returns NextToken in the response. To get another batch of configurations, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1280,9 +1272,9 @@ pub mod list_configuration_revisions_output {
         /// To override the contents of this collection use [`set_revisions`](Self::set_revisions).
         ///
         /// <p>List of ConfigurationRevision objects.</p>
-        pub fn revisions(mut self, input: impl Into<crate::model::ConfigurationRevision>) -> Self {
+        pub fn revisions(mut self, input: crate::model::ConfigurationRevision) -> Self {
             let mut v = self.revisions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.revisions = Some(v);
             self
         }
@@ -1316,8 +1308,7 @@ impl ListConfigurationRevisionsOutput {
 pub struct ListClustersV2Output {
     /// <p>Information on each of the MSK clusters in the response.</p>
     pub cluster_info_list: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
-    /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response.
-    /// To get another batch of clusters, provide this token in your next request.</p>
+    /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. To get another batch of clusters, provide this token in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClustersV2Output {
@@ -1325,8 +1316,7 @@ impl ListClustersV2Output {
     pub fn cluster_info_list(&self) -> std::option::Option<&[crate::model::Cluster]> {
         self.cluster_info_list.as_deref()
     }
-    /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response.
-    /// To get another batch of clusters, provide this token in your next request.</p>
+    /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. To get another batch of clusters, provide this token in your next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1354,9 +1344,9 @@ pub mod list_clusters_v2_output {
         /// To override the contents of this collection use [`set_cluster_info_list`](Self::set_cluster_info_list).
         ///
         /// <p>Information on each of the MSK clusters in the response.</p>
-        pub fn cluster_info_list(mut self, input: impl Into<crate::model::Cluster>) -> Self {
+        pub fn cluster_info_list(mut self, input: crate::model::Cluster) -> Self {
             let mut v = self.cluster_info_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cluster_info_list = Some(v);
             self
         }
@@ -1368,14 +1358,12 @@ pub mod list_clusters_v2_output {
             self.cluster_info_list = input;
             self
         }
-        /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response.
-        /// To get another batch of clusters, provide this token in your next request.</p>
+        /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. To get another batch of clusters, provide this token in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response.
-        /// To get another batch of clusters, provide this token in your next request.</p>
+        /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. To get another batch of clusters, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1402,8 +1390,7 @@ impl ListClustersV2Output {
 pub struct ListClustersOutput {
     /// <p>Information on each of the MSK clusters in the response.</p>
     pub cluster_info_list: std::option::Option<std::vec::Vec<crate::model::ClusterInfo>>,
-    /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response.
-    /// To get another batch of clusters, provide this token in your next request.</p>
+    /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. To get another batch of clusters, provide this token in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClustersOutput {
@@ -1411,8 +1398,7 @@ impl ListClustersOutput {
     pub fn cluster_info_list(&self) -> std::option::Option<&[crate::model::ClusterInfo]> {
         self.cluster_info_list.as_deref()
     }
-    /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response.
-    /// To get another batch of clusters, provide this token in your next request.</p>
+    /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. To get another batch of clusters, provide this token in your next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1440,9 +1426,9 @@ pub mod list_clusters_output {
         /// To override the contents of this collection use [`set_cluster_info_list`](Self::set_cluster_info_list).
         ///
         /// <p>Information on each of the MSK clusters in the response.</p>
-        pub fn cluster_info_list(mut self, input: impl Into<crate::model::ClusterInfo>) -> Self {
+        pub fn cluster_info_list(mut self, input: crate::model::ClusterInfo) -> Self {
             let mut v = self.cluster_info_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cluster_info_list = Some(v);
             self
         }
@@ -1454,14 +1440,12 @@ pub mod list_clusters_output {
             self.cluster_info_list = input;
             self
         }
-        /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response.
-        /// To get another batch of clusters, provide this token in your next request.</p>
+        /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. To get another batch of clusters, provide this token in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response.
-        /// To get another batch of clusters, provide this token in your next request.</p>
+        /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. To get another batch of clusters, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1533,10 +1517,10 @@ pub mod list_cluster_operations_output {
         /// <p>An array of cluster operation information objects.</p>
         pub fn cluster_operation_info_list(
             mut self,
-            input: impl Into<crate::model::ClusterOperationInfo>,
+            input: crate::model::ClusterOperationInfo,
         ) -> Self {
             let mut v = self.cluster_operation_info_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cluster_operation_info_list = Some(v);
             self
         }
@@ -1614,10 +1598,10 @@ pub mod get_compatible_kafka_versions_output {
         /// <p>A list of CompatibleKafkaVersion objects.</p>
         pub fn compatible_kafka_versions(
             mut self,
-            input: impl Into<crate::model::CompatibleKafkaVersion>,
+            input: crate::model::CompatibleKafkaVersion,
         ) -> Self {
             let mut v = self.compatible_kafka_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compatible_kafka_versions = Some(v);
             self
         }
@@ -1885,8 +1869,11 @@ pub struct DescribeConfigurationRevisionOutput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The revision number.</p>
     pub revision: i64,
-    /// <p>Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the contents of the file are base64 encoded.
-    /// When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>server.properties</filename> can be in plaintext.</p>
+    /// <p>Contents of the <filename>
+    /// server.properties
+    /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
+    /// server.properties
+    /// </filename> can be in plaintext.</p>
     pub server_properties: std::option::Option<aws_smithy_types::Blob>,
 }
 impl DescribeConfigurationRevisionOutput {
@@ -1906,8 +1893,11 @@ impl DescribeConfigurationRevisionOutput {
     pub fn revision(&self) -> i64 {
         self.revision
     }
-    /// <p>Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the contents of the file are base64 encoded.
-    /// When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>server.properties</filename> can be in plaintext.</p>
+    /// <p>Contents of the <filename>
+    /// server.properties
+    /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
+    /// server.properties
+    /// </filename> can be in plaintext.</p>
     pub fn server_properties(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.server_properties.as_ref()
     }
@@ -1979,14 +1969,20 @@ pub mod describe_configuration_revision_output {
             self.revision = input;
             self
         }
-        /// <p>Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the contents of the file are base64 encoded.
-        /// When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>server.properties</filename> can be in plaintext.</p>
+        /// <p>Contents of the <filename>
+        /// server.properties
+        /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
+        /// server.properties
+        /// </filename> can be in plaintext.</p>
         pub fn server_properties(mut self, input: aws_smithy_types::Blob) -> Self {
             self.server_properties = Some(input);
             self
         }
-        /// <p>Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the contents of the file are base64 encoded.
-        /// When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>server.properties</filename> can be in plaintext.</p>
+        /// <p>Contents of the <filename>
+        /// server.properties
+        /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
+        /// server.properties
+        /// </filename> can be in plaintext.</p>
         pub fn set_server_properties(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,
@@ -2924,10 +2920,10 @@ pub mod batch_disassociate_scram_secret_output {
         /// <p>List of errors when disassociating secrets to cluster.</p>
         pub fn unprocessed_scram_secrets(
             mut self,
-            input: impl Into<crate::model::UnprocessedScramSecret>,
+            input: crate::model::UnprocessedScramSecret,
         ) -> Self {
             let mut v = self.unprocessed_scram_secrets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_scram_secrets = Some(v);
             self
         }
@@ -3013,10 +3009,10 @@ pub mod batch_associate_scram_secret_output {
         /// <p>List of errors when associating secrets to cluster.</p>
         pub fn unprocessed_scram_secrets(
             mut self,
-            input: impl Into<crate::model::UnprocessedScramSecret>,
+            input: crate::model::UnprocessedScramSecret,
         ) -> Self {
             let mut v = self.unprocessed_scram_secrets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_scram_secrets = Some(v);
             self
         }

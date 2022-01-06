@@ -2,6 +2,63 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateVpcAttachmentOutput {
+    /// <p>Describes the updated VPC attachment.</p>
+    pub vpc_attachment: std::option::Option<crate::model::VpcAttachment>,
+}
+impl UpdateVpcAttachmentOutput {
+    /// <p>Describes the updated VPC attachment.</p>
+    pub fn vpc_attachment(&self) -> std::option::Option<&crate::model::VpcAttachment> {
+        self.vpc_attachment.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateVpcAttachmentOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateVpcAttachmentOutput");
+        formatter.field("vpc_attachment", &self.vpc_attachment);
+        formatter.finish()
+    }
+}
+/// See [`UpdateVpcAttachmentOutput`](crate::output::UpdateVpcAttachmentOutput)
+pub mod update_vpc_attachment_output {
+    /// A builder for [`UpdateVpcAttachmentOutput`](crate::output::UpdateVpcAttachmentOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_attachment: std::option::Option<crate::model::VpcAttachment>,
+    }
+    impl Builder {
+        /// <p>Describes the updated VPC attachment.</p>
+        pub fn vpc_attachment(mut self, input: crate::model::VpcAttachment) -> Self {
+            self.vpc_attachment = Some(input);
+            self
+        }
+        /// <p>Describes the updated VPC attachment.</p>
+        pub fn set_vpc_attachment(
+            mut self,
+            input: std::option::Option<crate::model::VpcAttachment>,
+        ) -> Self {
+            self.vpc_attachment = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateVpcAttachmentOutput`](crate::output::UpdateVpcAttachmentOutput)
+        pub fn build(self) -> crate::output::UpdateVpcAttachmentOutput {
+            crate::output::UpdateVpcAttachmentOutput {
+                vpc_attachment: self.vpc_attachment,
+            }
+        }
+    }
+}
+impl UpdateVpcAttachmentOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateVpcAttachmentOutput`](crate::output::UpdateVpcAttachmentOutput)
+    pub fn builder() -> crate::output::update_vpc_attachment_output::Builder {
+        crate::output::update_vpc_attachment_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSiteOutput {
     /// <p>Information about the site.</p>
     pub site: std::option::Option<crate::model::Site>,
@@ -311,6 +368,63 @@ impl UpdateDeviceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateCoreNetworkOutput {
+    /// <p>Returns information about a core network update.</p>
+    pub core_network: std::option::Option<crate::model::CoreNetwork>,
+}
+impl UpdateCoreNetworkOutput {
+    /// <p>Returns information about a core network update.</p>
+    pub fn core_network(&self) -> std::option::Option<&crate::model::CoreNetwork> {
+        self.core_network.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateCoreNetworkOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateCoreNetworkOutput");
+        formatter.field("core_network", &self.core_network);
+        formatter.finish()
+    }
+}
+/// See [`UpdateCoreNetworkOutput`](crate::output::UpdateCoreNetworkOutput)
+pub mod update_core_network_output {
+    /// A builder for [`UpdateCoreNetworkOutput`](crate::output::UpdateCoreNetworkOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) core_network: std::option::Option<crate::model::CoreNetwork>,
+    }
+    impl Builder {
+        /// <p>Returns information about a core network update.</p>
+        pub fn core_network(mut self, input: crate::model::CoreNetwork) -> Self {
+            self.core_network = Some(input);
+            self
+        }
+        /// <p>Returns information about a core network update.</p>
+        pub fn set_core_network(
+            mut self,
+            input: std::option::Option<crate::model::CoreNetwork>,
+        ) -> Self {
+            self.core_network = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateCoreNetworkOutput`](crate::output::UpdateCoreNetworkOutput)
+        pub fn build(self) -> crate::output::UpdateCoreNetworkOutput {
+            crate::output::UpdateCoreNetworkOutput {
+                core_network: self.core_network,
+            }
+        }
+    }
+}
+impl UpdateCoreNetworkOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateCoreNetworkOutput`](crate::output::UpdateCoreNetworkOutput)
+    pub fn builder() -> crate::output::update_core_network_output::Builder {
+        crate::output::update_core_network_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectionOutput {
     /// <p>Information about the connection.</p>
     pub connection: std::option::Option<crate::model::Connection>,
@@ -485,6 +599,120 @@ impl StartRouteAnalysisOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RestoreCoreNetworkPolicyVersionOutput {
+    /// <p>Describes the restored core network policy.</p>
+    pub core_network_policy: std::option::Option<crate::model::CoreNetworkPolicy>,
+}
+impl RestoreCoreNetworkPolicyVersionOutput {
+    /// <p>Describes the restored core network policy.</p>
+    pub fn core_network_policy(&self) -> std::option::Option<&crate::model::CoreNetworkPolicy> {
+        self.core_network_policy.as_ref()
+    }
+}
+impl std::fmt::Debug for RestoreCoreNetworkPolicyVersionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RestoreCoreNetworkPolicyVersionOutput");
+        formatter.field("core_network_policy", &self.core_network_policy);
+        formatter.finish()
+    }
+}
+/// See [`RestoreCoreNetworkPolicyVersionOutput`](crate::output::RestoreCoreNetworkPolicyVersionOutput)
+pub mod restore_core_network_policy_version_output {
+    /// A builder for [`RestoreCoreNetworkPolicyVersionOutput`](crate::output::RestoreCoreNetworkPolicyVersionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) core_network_policy: std::option::Option<crate::model::CoreNetworkPolicy>,
+    }
+    impl Builder {
+        /// <p>Describes the restored core network policy.</p>
+        pub fn core_network_policy(mut self, input: crate::model::CoreNetworkPolicy) -> Self {
+            self.core_network_policy = Some(input);
+            self
+        }
+        /// <p>Describes the restored core network policy.</p>
+        pub fn set_core_network_policy(
+            mut self,
+            input: std::option::Option<crate::model::CoreNetworkPolicy>,
+        ) -> Self {
+            self.core_network_policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RestoreCoreNetworkPolicyVersionOutput`](crate::output::RestoreCoreNetworkPolicyVersionOutput)
+        pub fn build(self) -> crate::output::RestoreCoreNetworkPolicyVersionOutput {
+            crate::output::RestoreCoreNetworkPolicyVersionOutput {
+                core_network_policy: self.core_network_policy,
+            }
+        }
+    }
+}
+impl RestoreCoreNetworkPolicyVersionOutput {
+    /// Creates a new builder-style object to manufacture [`RestoreCoreNetworkPolicyVersionOutput`](crate::output::RestoreCoreNetworkPolicyVersionOutput)
+    pub fn builder() -> crate::output::restore_core_network_policy_version_output::Builder {
+        crate::output::restore_core_network_policy_version_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RejectAttachmentOutput {
+    /// <p>Describes the rejected attachment request.</p>
+    pub attachment: std::option::Option<crate::model::Attachment>,
+}
+impl RejectAttachmentOutput {
+    /// <p>Describes the rejected attachment request.</p>
+    pub fn attachment(&self) -> std::option::Option<&crate::model::Attachment> {
+        self.attachment.as_ref()
+    }
+}
+impl std::fmt::Debug for RejectAttachmentOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RejectAttachmentOutput");
+        formatter.field("attachment", &self.attachment);
+        formatter.finish()
+    }
+}
+/// See [`RejectAttachmentOutput`](crate::output::RejectAttachmentOutput)
+pub mod reject_attachment_output {
+    /// A builder for [`RejectAttachmentOutput`](crate::output::RejectAttachmentOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) attachment: std::option::Option<crate::model::Attachment>,
+    }
+    impl Builder {
+        /// <p>Describes the rejected attachment request.</p>
+        pub fn attachment(mut self, input: crate::model::Attachment) -> Self {
+            self.attachment = Some(input);
+            self
+        }
+        /// <p>Describes the rejected attachment request.</p>
+        pub fn set_attachment(
+            mut self,
+            input: std::option::Option<crate::model::Attachment>,
+        ) -> Self {
+            self.attachment = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RejectAttachmentOutput`](crate::output::RejectAttachmentOutput)
+        pub fn build(self) -> crate::output::RejectAttachmentOutput {
+            crate::output::RejectAttachmentOutput {
+                attachment: self.attachment,
+            }
+        }
+    }
+}
+impl RejectAttachmentOutput {
+    /// Creates a new builder-style object to manufacture [`RejectAttachmentOutput`](crate::output::RejectAttachmentOutput)
+    pub fn builder() -> crate::output::reject_attachment_output::Builder {
+        crate::output::reject_attachment_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterTransitGatewayOutput {
     /// <p>Information about the transit gateway registration.</p>
     pub transit_gateway_registration: std::option::Option<crate::model::TransitGatewayRegistration>,
@@ -551,6 +779,93 @@ impl RegisterTransitGatewayOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutResourcePolicyOutput {}
+impl std::fmt::Debug for PutResourcePolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutResourcePolicyOutput");
+        formatter.finish()
+    }
+}
+/// See [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput)
+pub mod put_resource_policy_output {
+    /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput)
+        pub fn build(self) -> crate::output::PutResourcePolicyOutput {
+            crate::output::PutResourcePolicyOutput {}
+        }
+    }
+}
+impl PutResourcePolicyOutput {
+    /// Creates a new builder-style object to manufacture [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput)
+    pub fn builder() -> crate::output::put_resource_policy_output::Builder {
+        crate::output::put_resource_policy_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutCoreNetworkPolicyOutput {
+    /// <p>Describes the changed core network policy.</p>
+    pub core_network_policy: std::option::Option<crate::model::CoreNetworkPolicy>,
+}
+impl PutCoreNetworkPolicyOutput {
+    /// <p>Describes the changed core network policy.</p>
+    pub fn core_network_policy(&self) -> std::option::Option<&crate::model::CoreNetworkPolicy> {
+        self.core_network_policy.as_ref()
+    }
+}
+impl std::fmt::Debug for PutCoreNetworkPolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutCoreNetworkPolicyOutput");
+        formatter.field("core_network_policy", &self.core_network_policy);
+        formatter.finish()
+    }
+}
+/// See [`PutCoreNetworkPolicyOutput`](crate::output::PutCoreNetworkPolicyOutput)
+pub mod put_core_network_policy_output {
+    /// A builder for [`PutCoreNetworkPolicyOutput`](crate::output::PutCoreNetworkPolicyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) core_network_policy: std::option::Option<crate::model::CoreNetworkPolicy>,
+    }
+    impl Builder {
+        /// <p>Describes the changed core network policy.</p>
+        pub fn core_network_policy(mut self, input: crate::model::CoreNetworkPolicy) -> Self {
+            self.core_network_policy = Some(input);
+            self
+        }
+        /// <p>Describes the changed core network policy.</p>
+        pub fn set_core_network_policy(
+            mut self,
+            input: std::option::Option<crate::model::CoreNetworkPolicy>,
+        ) -> Self {
+            self.core_network_policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutCoreNetworkPolicyOutput`](crate::output::PutCoreNetworkPolicyOutput)
+        pub fn build(self) -> crate::output::PutCoreNetworkPolicyOutput {
+            crate::output::PutCoreNetworkPolicyOutput {
+                core_network_policy: self.core_network_policy,
+            }
+        }
+    }
+}
+impl PutCoreNetworkPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`PutCoreNetworkPolicyOutput`](crate::output::PutCoreNetworkPolicyOutput)
+    pub fn builder() -> crate::output::put_core_network_policy_output::Builder {
+        crate::output::put_core_network_policy_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
     /// <p>The list of tags.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -582,9 +897,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>The list of tags.</p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -608,6 +923,403 @@ impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListCoreNetworksOutput {
+    /// <p>Describes the list of core networks.</p>
+    pub core_networks: std::option::Option<std::vec::Vec<crate::model::CoreNetworkSummary>>,
+    /// <p>The token for the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCoreNetworksOutput {
+    /// <p>Describes the list of core networks.</p>
+    pub fn core_networks(&self) -> std::option::Option<&[crate::model::CoreNetworkSummary]> {
+        self.core_networks.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListCoreNetworksOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListCoreNetworksOutput");
+        formatter.field("core_networks", &self.core_networks);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListCoreNetworksOutput`](crate::output::ListCoreNetworksOutput)
+pub mod list_core_networks_output {
+    /// A builder for [`ListCoreNetworksOutput`](crate::output::ListCoreNetworksOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) core_networks:
+            std::option::Option<std::vec::Vec<crate::model::CoreNetworkSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `core_networks`.
+        ///
+        /// To override the contents of this collection use [`set_core_networks`](Self::set_core_networks).
+        ///
+        /// <p>Describes the list of core networks.</p>
+        pub fn core_networks(mut self, input: crate::model::CoreNetworkSummary) -> Self {
+            let mut v = self.core_networks.unwrap_or_default();
+            v.push(input);
+            self.core_networks = Some(v);
+            self
+        }
+        /// <p>Describes the list of core networks.</p>
+        pub fn set_core_networks(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CoreNetworkSummary>>,
+        ) -> Self {
+            self.core_networks = input;
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListCoreNetworksOutput`](crate::output::ListCoreNetworksOutput)
+        pub fn build(self) -> crate::output::ListCoreNetworksOutput {
+            crate::output::ListCoreNetworksOutput {
+                core_networks: self.core_networks,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListCoreNetworksOutput {
+    /// Creates a new builder-style object to manufacture [`ListCoreNetworksOutput`](crate::output::ListCoreNetworksOutput)
+    pub fn builder() -> crate::output::list_core_networks_output::Builder {
+        crate::output::list_core_networks_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListCoreNetworkPolicyVersionsOutput {
+    /// <p>Describes core network policy versions.</p>
+    pub core_network_policy_versions:
+        std::option::Option<std::vec::Vec<crate::model::CoreNetworkPolicyVersion>>,
+    /// <p>The token for the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCoreNetworkPolicyVersionsOutput {
+    /// <p>Describes core network policy versions.</p>
+    pub fn core_network_policy_versions(
+        &self,
+    ) -> std::option::Option<&[crate::model::CoreNetworkPolicyVersion]> {
+        self.core_network_policy_versions.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListCoreNetworkPolicyVersionsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListCoreNetworkPolicyVersionsOutput");
+        formatter.field(
+            "core_network_policy_versions",
+            &self.core_network_policy_versions,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListCoreNetworkPolicyVersionsOutput`](crate::output::ListCoreNetworkPolicyVersionsOutput)
+pub mod list_core_network_policy_versions_output {
+    /// A builder for [`ListCoreNetworkPolicyVersionsOutput`](crate::output::ListCoreNetworkPolicyVersionsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) core_network_policy_versions:
+            std::option::Option<std::vec::Vec<crate::model::CoreNetworkPolicyVersion>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `core_network_policy_versions`.
+        ///
+        /// To override the contents of this collection use [`set_core_network_policy_versions`](Self::set_core_network_policy_versions).
+        ///
+        /// <p>Describes core network policy versions.</p>
+        pub fn core_network_policy_versions(
+            mut self,
+            input: crate::model::CoreNetworkPolicyVersion,
+        ) -> Self {
+            let mut v = self.core_network_policy_versions.unwrap_or_default();
+            v.push(input);
+            self.core_network_policy_versions = Some(v);
+            self
+        }
+        /// <p>Describes core network policy versions.</p>
+        pub fn set_core_network_policy_versions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CoreNetworkPolicyVersion>>,
+        ) -> Self {
+            self.core_network_policy_versions = input;
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListCoreNetworkPolicyVersionsOutput`](crate::output::ListCoreNetworkPolicyVersionsOutput)
+        pub fn build(self) -> crate::output::ListCoreNetworkPolicyVersionsOutput {
+            crate::output::ListCoreNetworkPolicyVersionsOutput {
+                core_network_policy_versions: self.core_network_policy_versions,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListCoreNetworkPolicyVersionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListCoreNetworkPolicyVersionsOutput`](crate::output::ListCoreNetworkPolicyVersionsOutput)
+    pub fn builder() -> crate::output::list_core_network_policy_versions_output::Builder {
+        crate::output::list_core_network_policy_versions_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListConnectPeersOutput {
+    /// <p>Describes the Connect peers.</p>
+    pub connect_peers: std::option::Option<std::vec::Vec<crate::model::ConnectPeerSummary>>,
+    /// <p>The token for the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListConnectPeersOutput {
+    /// <p>Describes the Connect peers.</p>
+    pub fn connect_peers(&self) -> std::option::Option<&[crate::model::ConnectPeerSummary]> {
+        self.connect_peers.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListConnectPeersOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListConnectPeersOutput");
+        formatter.field("connect_peers", &self.connect_peers);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListConnectPeersOutput`](crate::output::ListConnectPeersOutput)
+pub mod list_connect_peers_output {
+    /// A builder for [`ListConnectPeersOutput`](crate::output::ListConnectPeersOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) connect_peers:
+            std::option::Option<std::vec::Vec<crate::model::ConnectPeerSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `connect_peers`.
+        ///
+        /// To override the contents of this collection use [`set_connect_peers`](Self::set_connect_peers).
+        ///
+        /// <p>Describes the Connect peers.</p>
+        pub fn connect_peers(mut self, input: crate::model::ConnectPeerSummary) -> Self {
+            let mut v = self.connect_peers.unwrap_or_default();
+            v.push(input);
+            self.connect_peers = Some(v);
+            self
+        }
+        /// <p>Describes the Connect peers.</p>
+        pub fn set_connect_peers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ConnectPeerSummary>>,
+        ) -> Self {
+            self.connect_peers = input;
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListConnectPeersOutput`](crate::output::ListConnectPeersOutput)
+        pub fn build(self) -> crate::output::ListConnectPeersOutput {
+            crate::output::ListConnectPeersOutput {
+                connect_peers: self.connect_peers,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListConnectPeersOutput {
+    /// Creates a new builder-style object to manufacture [`ListConnectPeersOutput`](crate::output::ListConnectPeersOutput)
+    pub fn builder() -> crate::output::list_connect_peers_output::Builder {
+        crate::output::list_connect_peers_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAttachmentsOutput {
+    /// <p>Describes the list of attachments.</p>
+    pub attachments: std::option::Option<std::vec::Vec<crate::model::Attachment>>,
+    /// <p>The token for the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAttachmentsOutput {
+    /// <p>Describes the list of attachments.</p>
+    pub fn attachments(&self) -> std::option::Option<&[crate::model::Attachment]> {
+        self.attachments.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListAttachmentsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListAttachmentsOutput");
+        formatter.field("attachments", &self.attachments);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListAttachmentsOutput`](crate::output::ListAttachmentsOutput)
+pub mod list_attachments_output {
+    /// A builder for [`ListAttachmentsOutput`](crate::output::ListAttachmentsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) attachments: std::option::Option<std::vec::Vec<crate::model::Attachment>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `attachments`.
+        ///
+        /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
+        ///
+        /// <p>Describes the list of attachments.</p>
+        pub fn attachments(mut self, input: crate::model::Attachment) -> Self {
+            let mut v = self.attachments.unwrap_or_default();
+            v.push(input);
+            self.attachments = Some(v);
+            self
+        }
+        /// <p>Describes the list of attachments.</p>
+        pub fn set_attachments(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Attachment>>,
+        ) -> Self {
+            self.attachments = input;
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAttachmentsOutput`](crate::output::ListAttachmentsOutput)
+        pub fn build(self) -> crate::output::ListAttachmentsOutput {
+            crate::output::ListAttachmentsOutput {
+                attachments: self.attachments,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListAttachmentsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAttachmentsOutput`](crate::output::ListAttachmentsOutput)
+    pub fn builder() -> crate::output::list_attachments_output::Builder {
+        crate::output::list_attachments_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetVpcAttachmentOutput {
+    /// <p>Returns details about a VPC attachment.</p>
+    pub vpc_attachment: std::option::Option<crate::model::VpcAttachment>,
+}
+impl GetVpcAttachmentOutput {
+    /// <p>Returns details about a VPC attachment.</p>
+    pub fn vpc_attachment(&self) -> std::option::Option<&crate::model::VpcAttachment> {
+        self.vpc_attachment.as_ref()
+    }
+}
+impl std::fmt::Debug for GetVpcAttachmentOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetVpcAttachmentOutput");
+        formatter.field("vpc_attachment", &self.vpc_attachment);
+        formatter.finish()
+    }
+}
+/// See [`GetVpcAttachmentOutput`](crate::output::GetVpcAttachmentOutput)
+pub mod get_vpc_attachment_output {
+    /// A builder for [`GetVpcAttachmentOutput`](crate::output::GetVpcAttachmentOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_attachment: std::option::Option<crate::model::VpcAttachment>,
+    }
+    impl Builder {
+        /// <p>Returns details about a VPC attachment.</p>
+        pub fn vpc_attachment(mut self, input: crate::model::VpcAttachment) -> Self {
+            self.vpc_attachment = Some(input);
+            self
+        }
+        /// <p>Returns details about a VPC attachment.</p>
+        pub fn set_vpc_attachment(
+            mut self,
+            input: std::option::Option<crate::model::VpcAttachment>,
+        ) -> Self {
+            self.vpc_attachment = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetVpcAttachmentOutput`](crate::output::GetVpcAttachmentOutput)
+        pub fn build(self) -> crate::output::GetVpcAttachmentOutput {
+            crate::output::GetVpcAttachmentOutput {
+                vpc_attachment: self.vpc_attachment,
+            }
+        }
+    }
+}
+impl GetVpcAttachmentOutput {
+    /// Creates a new builder-style object to manufacture [`GetVpcAttachmentOutput`](crate::output::GetVpcAttachmentOutput)
+    pub fn builder() -> crate::output::get_vpc_attachment_output::Builder {
+        crate::output::get_vpc_attachment_output::Builder::default()
     }
 }
 
@@ -662,10 +1374,10 @@ pub mod get_transit_gateway_registrations_output {
         /// <p>The transit gateway registrations.</p>
         pub fn transit_gateway_registrations(
             mut self,
-            input: impl Into<crate::model::TransitGatewayRegistration>,
+            input: crate::model::TransitGatewayRegistration,
         ) -> Self {
             let mut v = self.transit_gateway_registrations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transit_gateway_registrations = Some(v);
             self
         }
@@ -754,12 +1466,12 @@ pub mod get_transit_gateway_connect_peer_associations_output {
         /// <p>Information about the transit gateway Connect peer associations.</p>
         pub fn transit_gateway_connect_peer_associations(
             mut self,
-            input: impl Into<crate::model::TransitGatewayConnectPeerAssociation>,
+            input: crate::model::TransitGatewayConnectPeerAssociation,
         ) -> Self {
             let mut v = self
                 .transit_gateway_connect_peer_associations
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transit_gateway_connect_peer_associations = Some(v);
             self
         }
@@ -798,6 +1510,72 @@ impl GetTransitGatewayConnectPeerAssociationsOutput {
     pub fn builder() -> crate::output::get_transit_gateway_connect_peer_associations_output::Builder
     {
         crate::output::get_transit_gateway_connect_peer_associations_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetSiteToSiteVpnAttachmentOutput {
+    /// <p>Describes the site-to-site attachment.</p>
+    pub site_to_site_vpn_attachment: std::option::Option<crate::model::SiteToSiteVpnAttachment>,
+}
+impl GetSiteToSiteVpnAttachmentOutput {
+    /// <p>Describes the site-to-site attachment.</p>
+    pub fn site_to_site_vpn_attachment(
+        &self,
+    ) -> std::option::Option<&crate::model::SiteToSiteVpnAttachment> {
+        self.site_to_site_vpn_attachment.as_ref()
+    }
+}
+impl std::fmt::Debug for GetSiteToSiteVpnAttachmentOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetSiteToSiteVpnAttachmentOutput");
+        formatter.field(
+            "site_to_site_vpn_attachment",
+            &self.site_to_site_vpn_attachment,
+        );
+        formatter.finish()
+    }
+}
+/// See [`GetSiteToSiteVpnAttachmentOutput`](crate::output::GetSiteToSiteVpnAttachmentOutput)
+pub mod get_site_to_site_vpn_attachment_output {
+    /// A builder for [`GetSiteToSiteVpnAttachmentOutput`](crate::output::GetSiteToSiteVpnAttachmentOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) site_to_site_vpn_attachment:
+            std::option::Option<crate::model::SiteToSiteVpnAttachment>,
+    }
+    impl Builder {
+        /// <p>Describes the site-to-site attachment.</p>
+        pub fn site_to_site_vpn_attachment(
+            mut self,
+            input: crate::model::SiteToSiteVpnAttachment,
+        ) -> Self {
+            self.site_to_site_vpn_attachment = Some(input);
+            self
+        }
+        /// <p>Describes the site-to-site attachment.</p>
+        pub fn set_site_to_site_vpn_attachment(
+            mut self,
+            input: std::option::Option<crate::model::SiteToSiteVpnAttachment>,
+        ) -> Self {
+            self.site_to_site_vpn_attachment = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetSiteToSiteVpnAttachmentOutput`](crate::output::GetSiteToSiteVpnAttachmentOutput)
+        pub fn build(self) -> crate::output::GetSiteToSiteVpnAttachmentOutput {
+            crate::output::GetSiteToSiteVpnAttachmentOutput {
+                site_to_site_vpn_attachment: self.site_to_site_vpn_attachment,
+            }
+        }
+    }
+}
+impl GetSiteToSiteVpnAttachmentOutput {
+    /// Creates a new builder-style object to manufacture [`GetSiteToSiteVpnAttachmentOutput`](crate::output::GetSiteToSiteVpnAttachmentOutput)
+    pub fn builder() -> crate::output::get_site_to_site_vpn_attachment_output::Builder {
+        crate::output::get_site_to_site_vpn_attachment_output::Builder::default()
     }
 }
 
@@ -843,9 +1621,9 @@ pub mod get_sites_output {
         /// To override the contents of this collection use [`set_sites`](Self::set_sites).
         ///
         /// <p>The sites.</p>
-        pub fn sites(mut self, input: impl Into<crate::model::Site>) -> Self {
+        pub fn sites(mut self, input: crate::model::Site) -> Self {
             let mut v = self.sites.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sites = Some(v);
             self
         }
@@ -943,6 +1721,63 @@ impl GetRouteAnalysisOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetResourcePolicyOutput {
+    /// <p>The resource policy document.</p>
+    pub policy_document: std::option::Option<std::string::String>,
+}
+impl GetResourcePolicyOutput {
+    /// <p>The resource policy document.</p>
+    pub fn policy_document(&self) -> std::option::Option<&str> {
+        self.policy_document.as_deref()
+    }
+}
+impl std::fmt::Debug for GetResourcePolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetResourcePolicyOutput");
+        formatter.field("policy_document", &self.policy_document);
+        formatter.finish()
+    }
+}
+/// See [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput)
+pub mod get_resource_policy_output {
+    /// A builder for [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) policy_document: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The resource policy document.</p>
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_document = Some(input.into());
+            self
+        }
+        /// <p>The resource policy document.</p>
+        pub fn set_policy_document(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.policy_document = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput)
+        pub fn build(self) -> crate::output::GetResourcePolicyOutput {
+            crate::output::GetResourcePolicyOutput {
+                policy_document: self.policy_document,
+            }
+        }
+    }
+}
+impl GetResourcePolicyOutput {
+    /// Creates a new builder-style object to manufacture [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput)
+    pub fn builder() -> crate::output::get_resource_policy_output::Builder {
+        crate::output::get_resource_policy_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNetworkTelemetryOutput {
     /// <p>The network telemetry.</p>
     pub network_telemetry: std::option::Option<std::vec::Vec<crate::model::NetworkTelemetry>>,
@@ -983,12 +1818,9 @@ pub mod get_network_telemetry_output {
         /// To override the contents of this collection use [`set_network_telemetry`](Self::set_network_telemetry).
         ///
         /// <p>The network telemetry.</p>
-        pub fn network_telemetry(
-            mut self,
-            input: impl Into<crate::model::NetworkTelemetry>,
-        ) -> Self {
+        pub fn network_telemetry(mut self, input: crate::model::NetworkTelemetry) -> Self {
             let mut v = self.network_telemetry.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_telemetry = Some(v);
             self
         }
@@ -1032,6 +1864,9 @@ impl GetNetworkTelemetryOutput {
 pub struct GetNetworkRoutesOutput {
     /// <p>The ARN of the route table.</p>
     pub route_table_arn: std::option::Option<std::string::String>,
+    /// <p>Describes a core network segment edge.</p>
+    pub core_network_segment_edge:
+        std::option::Option<crate::model::CoreNetworkSegmentEdgeIdentifier>,
     /// <p>The route table type.</p>
     pub route_table_type: std::option::Option<crate::model::RouteTableType>,
     /// <p>The route table creation time.</p>
@@ -1043,6 +1878,12 @@ impl GetNetworkRoutesOutput {
     /// <p>The ARN of the route table.</p>
     pub fn route_table_arn(&self) -> std::option::Option<&str> {
         self.route_table_arn.as_deref()
+    }
+    /// <p>Describes a core network segment edge.</p>
+    pub fn core_network_segment_edge(
+        &self,
+    ) -> std::option::Option<&crate::model::CoreNetworkSegmentEdgeIdentifier> {
+        self.core_network_segment_edge.as_ref()
     }
     /// <p>The route table type.</p>
     pub fn route_table_type(&self) -> std::option::Option<&crate::model::RouteTableType> {
@@ -1061,6 +1902,7 @@ impl std::fmt::Debug for GetNetworkRoutesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetNetworkRoutesOutput");
         formatter.field("route_table_arn", &self.route_table_arn);
+        formatter.field("core_network_segment_edge", &self.core_network_segment_edge);
         formatter.field("route_table_type", &self.route_table_type);
         formatter.field("route_table_timestamp", &self.route_table_timestamp);
         formatter.field("network_routes", &self.network_routes);
@@ -1074,6 +1916,8 @@ pub mod get_network_routes_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) route_table_arn: std::option::Option<std::string::String>,
+        pub(crate) core_network_segment_edge:
+            std::option::Option<crate::model::CoreNetworkSegmentEdgeIdentifier>,
         pub(crate) route_table_type: std::option::Option<crate::model::RouteTableType>,
         pub(crate) route_table_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) network_routes: std::option::Option<std::vec::Vec<crate::model::NetworkRoute>>,
@@ -1090,6 +1934,22 @@ pub mod get_network_routes_output {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.route_table_arn = input;
+            self
+        }
+        /// <p>Describes a core network segment edge.</p>
+        pub fn core_network_segment_edge(
+            mut self,
+            input: crate::model::CoreNetworkSegmentEdgeIdentifier,
+        ) -> Self {
+            self.core_network_segment_edge = Some(input);
+            self
+        }
+        /// <p>Describes a core network segment edge.</p>
+        pub fn set_core_network_segment_edge(
+            mut self,
+            input: std::option::Option<crate::model::CoreNetworkSegmentEdgeIdentifier>,
+        ) -> Self {
+            self.core_network_segment_edge = input;
             self
         }
         /// <p>The route table type.</p>
@@ -1123,9 +1983,9 @@ pub mod get_network_routes_output {
         /// To override the contents of this collection use [`set_network_routes`](Self::set_network_routes).
         ///
         /// <p>The network routes.</p>
-        pub fn network_routes(mut self, input: impl Into<crate::model::NetworkRoute>) -> Self {
+        pub fn network_routes(mut self, input: crate::model::NetworkRoute) -> Self {
             let mut v = self.network_routes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_routes = Some(v);
             self
         }
@@ -1141,6 +2001,7 @@ pub mod get_network_routes_output {
         pub fn build(self) -> crate::output::GetNetworkRoutesOutput {
             crate::output::GetNetworkRoutesOutput {
                 route_table_arn: self.route_table_arn,
+                core_network_segment_edge: self.core_network_segment_edge,
                 route_table_type: self.route_table_type,
                 route_table_timestamp: self.route_table_timestamp,
                 network_routes: self.network_routes,
@@ -1198,12 +2059,9 @@ pub mod get_network_resources_output {
         /// To override the contents of this collection use [`set_network_resources`](Self::set_network_resources).
         ///
         /// <p>The network resources.</p>
-        pub fn network_resources(
-            mut self,
-            input: impl Into<crate::model::NetworkResource>,
-        ) -> Self {
+        pub fn network_resources(mut self, input: crate::model::NetworkResource) -> Self {
             let mut v = self.network_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_resources = Some(v);
             self
         }
@@ -1283,9 +2141,9 @@ pub mod get_network_resource_relationships_output {
         /// To override the contents of this collection use [`set_relationships`](Self::set_relationships).
         ///
         /// <p>The resource relationships.</p>
-        pub fn relationships(mut self, input: impl Into<crate::model::Relationship>) -> Self {
+        pub fn relationships(mut self, input: crate::model::Relationship) -> Self {
             let mut v = self.relationships.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.relationships = Some(v);
             self
         }
@@ -1371,10 +2229,10 @@ pub mod get_network_resource_counts_output {
         /// <p>The count of resources.</p>
         pub fn network_resource_counts(
             mut self,
-            input: impl Into<crate::model::NetworkResourceCount>,
+            input: crate::model::NetworkResourceCount,
         ) -> Self {
             let mut v = self.network_resource_counts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_resource_counts = Some(v);
             self
         }
@@ -1454,9 +2312,9 @@ pub mod get_links_output {
         /// To override the contents of this collection use [`set_links`](Self::set_links).
         ///
         /// <p>The links.</p>
-        pub fn links(mut self, input: impl Into<crate::model::Link>) -> Self {
+        pub fn links(mut self, input: crate::model::Link) -> Self {
             let mut v = self.links.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.links = Some(v);
             self
         }
@@ -1537,12 +2395,9 @@ pub mod get_link_associations_output {
         /// To override the contents of this collection use [`set_link_associations`](Self::set_link_associations).
         ///
         /// <p>The link associations.</p>
-        pub fn link_associations(
-            mut self,
-            input: impl Into<crate::model::LinkAssociation>,
-        ) -> Self {
+        pub fn link_associations(mut self, input: crate::model::LinkAssociation) -> Self {
             let mut v = self.link_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.link_associations = Some(v);
             self
         }
@@ -1622,9 +2477,9 @@ pub mod get_devices_output {
         /// To override the contents of this collection use [`set_devices`](Self::set_devices).
         ///
         /// <p>The devices.</p>
-        pub fn devices(mut self, input: impl Into<crate::model::Device>) -> Self {
+        pub fn devices(mut self, input: crate::model::Device) -> Self {
             let mut v = self.devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.devices = Some(v);
             self
         }
@@ -1713,10 +2568,10 @@ pub mod get_customer_gateway_associations_output {
         /// <p>The customer gateway associations.</p>
         pub fn customer_gateway_associations(
             mut self,
-            input: impl Into<crate::model::CustomerGatewayAssociation>,
+            input: crate::model::CustomerGatewayAssociation,
         ) -> Self {
             let mut v = self.customer_gateway_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.customer_gateway_associations = Some(v);
             self
         }
@@ -1751,6 +2606,349 @@ impl GetCustomerGatewayAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`GetCustomerGatewayAssociationsOutput`](crate::output::GetCustomerGatewayAssociationsOutput)
     pub fn builder() -> crate::output::get_customer_gateway_associations_output::Builder {
         crate::output::get_customer_gateway_associations_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetCoreNetworkPolicyOutput {
+    /// <p>The details about a core network policy.</p>
+    pub core_network_policy: std::option::Option<crate::model::CoreNetworkPolicy>,
+}
+impl GetCoreNetworkPolicyOutput {
+    /// <p>The details about a core network policy.</p>
+    pub fn core_network_policy(&self) -> std::option::Option<&crate::model::CoreNetworkPolicy> {
+        self.core_network_policy.as_ref()
+    }
+}
+impl std::fmt::Debug for GetCoreNetworkPolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetCoreNetworkPolicyOutput");
+        formatter.field("core_network_policy", &self.core_network_policy);
+        formatter.finish()
+    }
+}
+/// See [`GetCoreNetworkPolicyOutput`](crate::output::GetCoreNetworkPolicyOutput)
+pub mod get_core_network_policy_output {
+    /// A builder for [`GetCoreNetworkPolicyOutput`](crate::output::GetCoreNetworkPolicyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) core_network_policy: std::option::Option<crate::model::CoreNetworkPolicy>,
+    }
+    impl Builder {
+        /// <p>The details about a core network policy.</p>
+        pub fn core_network_policy(mut self, input: crate::model::CoreNetworkPolicy) -> Self {
+            self.core_network_policy = Some(input);
+            self
+        }
+        /// <p>The details about a core network policy.</p>
+        pub fn set_core_network_policy(
+            mut self,
+            input: std::option::Option<crate::model::CoreNetworkPolicy>,
+        ) -> Self {
+            self.core_network_policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetCoreNetworkPolicyOutput`](crate::output::GetCoreNetworkPolicyOutput)
+        pub fn build(self) -> crate::output::GetCoreNetworkPolicyOutput {
+            crate::output::GetCoreNetworkPolicyOutput {
+                core_network_policy: self.core_network_policy,
+            }
+        }
+    }
+}
+impl GetCoreNetworkPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`GetCoreNetworkPolicyOutput`](crate::output::GetCoreNetworkPolicyOutput)
+    pub fn builder() -> crate::output::get_core_network_policy_output::Builder {
+        crate::output::get_core_network_policy_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetCoreNetworkChangeSetOutput {
+    /// <p>Describes a core network changes.</p>
+    pub core_network_changes: std::option::Option<std::vec::Vec<crate::model::CoreNetworkChange>>,
+    /// <p>The token for the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl GetCoreNetworkChangeSetOutput {
+    /// <p>Describes a core network changes.</p>
+    pub fn core_network_changes(&self) -> std::option::Option<&[crate::model::CoreNetworkChange]> {
+        self.core_network_changes.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for GetCoreNetworkChangeSetOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetCoreNetworkChangeSetOutput");
+        formatter.field("core_network_changes", &self.core_network_changes);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`GetCoreNetworkChangeSetOutput`](crate::output::GetCoreNetworkChangeSetOutput)
+pub mod get_core_network_change_set_output {
+    /// A builder for [`GetCoreNetworkChangeSetOutput`](crate::output::GetCoreNetworkChangeSetOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) core_network_changes:
+            std::option::Option<std::vec::Vec<crate::model::CoreNetworkChange>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `core_network_changes`.
+        ///
+        /// To override the contents of this collection use [`set_core_network_changes`](Self::set_core_network_changes).
+        ///
+        /// <p>Describes a core network changes.</p>
+        pub fn core_network_changes(mut self, input: crate::model::CoreNetworkChange) -> Self {
+            let mut v = self.core_network_changes.unwrap_or_default();
+            v.push(input);
+            self.core_network_changes = Some(v);
+            self
+        }
+        /// <p>Describes a core network changes.</p>
+        pub fn set_core_network_changes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CoreNetworkChange>>,
+        ) -> Self {
+            self.core_network_changes = input;
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetCoreNetworkChangeSetOutput`](crate::output::GetCoreNetworkChangeSetOutput)
+        pub fn build(self) -> crate::output::GetCoreNetworkChangeSetOutput {
+            crate::output::GetCoreNetworkChangeSetOutput {
+                core_network_changes: self.core_network_changes,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl GetCoreNetworkChangeSetOutput {
+    /// Creates a new builder-style object to manufacture [`GetCoreNetworkChangeSetOutput`](crate::output::GetCoreNetworkChangeSetOutput)
+    pub fn builder() -> crate::output::get_core_network_change_set_output::Builder {
+        crate::output::get_core_network_change_set_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetCoreNetworkOutput {
+    /// <p>Details about a core network.</p>
+    pub core_network: std::option::Option<crate::model::CoreNetwork>,
+}
+impl GetCoreNetworkOutput {
+    /// <p>Details about a core network.</p>
+    pub fn core_network(&self) -> std::option::Option<&crate::model::CoreNetwork> {
+        self.core_network.as_ref()
+    }
+}
+impl std::fmt::Debug for GetCoreNetworkOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetCoreNetworkOutput");
+        formatter.field("core_network", &self.core_network);
+        formatter.finish()
+    }
+}
+/// See [`GetCoreNetworkOutput`](crate::output::GetCoreNetworkOutput)
+pub mod get_core_network_output {
+    /// A builder for [`GetCoreNetworkOutput`](crate::output::GetCoreNetworkOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) core_network: std::option::Option<crate::model::CoreNetwork>,
+    }
+    impl Builder {
+        /// <p>Details about a core network.</p>
+        pub fn core_network(mut self, input: crate::model::CoreNetwork) -> Self {
+            self.core_network = Some(input);
+            self
+        }
+        /// <p>Details about a core network.</p>
+        pub fn set_core_network(
+            mut self,
+            input: std::option::Option<crate::model::CoreNetwork>,
+        ) -> Self {
+            self.core_network = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetCoreNetworkOutput`](crate::output::GetCoreNetworkOutput)
+        pub fn build(self) -> crate::output::GetCoreNetworkOutput {
+            crate::output::GetCoreNetworkOutput {
+                core_network: self.core_network,
+            }
+        }
+    }
+}
+impl GetCoreNetworkOutput {
+    /// Creates a new builder-style object to manufacture [`GetCoreNetworkOutput`](crate::output::GetCoreNetworkOutput)
+    pub fn builder() -> crate::output::get_core_network_output::Builder {
+        crate::output::get_core_network_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetConnectPeerAssociationsOutput {
+    /// <p>Displays a list of Connect peer associations.</p>
+    pub connect_peer_associations:
+        std::option::Option<std::vec::Vec<crate::model::ConnectPeerAssociation>>,
+    /// <p>The token for the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl GetConnectPeerAssociationsOutput {
+    /// <p>Displays a list of Connect peer associations.</p>
+    pub fn connect_peer_associations(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConnectPeerAssociation]> {
+        self.connect_peer_associations.as_deref()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for GetConnectPeerAssociationsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetConnectPeerAssociationsOutput");
+        formatter.field("connect_peer_associations", &self.connect_peer_associations);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`GetConnectPeerAssociationsOutput`](crate::output::GetConnectPeerAssociationsOutput)
+pub mod get_connect_peer_associations_output {
+    /// A builder for [`GetConnectPeerAssociationsOutput`](crate::output::GetConnectPeerAssociationsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) connect_peer_associations:
+            std::option::Option<std::vec::Vec<crate::model::ConnectPeerAssociation>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `connect_peer_associations`.
+        ///
+        /// To override the contents of this collection use [`set_connect_peer_associations`](Self::set_connect_peer_associations).
+        ///
+        /// <p>Displays a list of Connect peer associations.</p>
+        pub fn connect_peer_associations(
+            mut self,
+            input: crate::model::ConnectPeerAssociation,
+        ) -> Self {
+            let mut v = self.connect_peer_associations.unwrap_or_default();
+            v.push(input);
+            self.connect_peer_associations = Some(v);
+            self
+        }
+        /// <p>Displays a list of Connect peer associations.</p>
+        pub fn set_connect_peer_associations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ConnectPeerAssociation>>,
+        ) -> Self {
+            self.connect_peer_associations = input;
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetConnectPeerAssociationsOutput`](crate::output::GetConnectPeerAssociationsOutput)
+        pub fn build(self) -> crate::output::GetConnectPeerAssociationsOutput {
+            crate::output::GetConnectPeerAssociationsOutput {
+                connect_peer_associations: self.connect_peer_associations,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl GetConnectPeerAssociationsOutput {
+    /// Creates a new builder-style object to manufacture [`GetConnectPeerAssociationsOutput`](crate::output::GetConnectPeerAssociationsOutput)
+    pub fn builder() -> crate::output::get_connect_peer_associations_output::Builder {
+        crate::output::get_connect_peer_associations_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetConnectPeerOutput {
+    /// <p>Returns information about a core network Connect peer.</p>
+    pub connect_peer: std::option::Option<crate::model::ConnectPeer>,
+}
+impl GetConnectPeerOutput {
+    /// <p>Returns information about a core network Connect peer.</p>
+    pub fn connect_peer(&self) -> std::option::Option<&crate::model::ConnectPeer> {
+        self.connect_peer.as_ref()
+    }
+}
+impl std::fmt::Debug for GetConnectPeerOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetConnectPeerOutput");
+        formatter.field("connect_peer", &self.connect_peer);
+        formatter.finish()
+    }
+}
+/// See [`GetConnectPeerOutput`](crate::output::GetConnectPeerOutput)
+pub mod get_connect_peer_output {
+    /// A builder for [`GetConnectPeerOutput`](crate::output::GetConnectPeerOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) connect_peer: std::option::Option<crate::model::ConnectPeer>,
+    }
+    impl Builder {
+        /// <p>Returns information about a core network Connect peer.</p>
+        pub fn connect_peer(mut self, input: crate::model::ConnectPeer) -> Self {
+            self.connect_peer = Some(input);
+            self
+        }
+        /// <p>Returns information about a core network Connect peer.</p>
+        pub fn set_connect_peer(
+            mut self,
+            input: std::option::Option<crate::model::ConnectPeer>,
+        ) -> Self {
+            self.connect_peer = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetConnectPeerOutput`](crate::output::GetConnectPeerOutput)
+        pub fn build(self) -> crate::output::GetConnectPeerOutput {
+            crate::output::GetConnectPeerOutput {
+                connect_peer: self.connect_peer,
+            }
+        }
+    }
+}
+impl GetConnectPeerOutput {
+    /// Creates a new builder-style object to manufacture [`GetConnectPeerOutput`](crate::output::GetConnectPeerOutput)
+    pub fn builder() -> crate::output::get_connect_peer_output::Builder {
+        crate::output::get_connect_peer_output::Builder::default()
     }
 }
 
@@ -1796,9 +2994,9 @@ pub mod get_connections_output {
         /// To override the contents of this collection use [`set_connections`](Self::set_connections).
         ///
         /// <p>Information about the connections.</p>
-        pub fn connections(mut self, input: impl Into<crate::model::Connection>) -> Self {
+        pub fn connections(mut self, input: crate::model::Connection) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connections = Some(v);
             self
         }
@@ -1833,6 +3031,93 @@ impl GetConnectionsOutput {
     /// Creates a new builder-style object to manufacture [`GetConnectionsOutput`](crate::output::GetConnectionsOutput)
     pub fn builder() -> crate::output::get_connections_output::Builder {
         crate::output::get_connections_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetConnectAttachmentOutput {
+    /// <p>Details about the Connect attachment.</p>
+    pub connect_attachment: std::option::Option<crate::model::ConnectAttachment>,
+}
+impl GetConnectAttachmentOutput {
+    /// <p>Details about the Connect attachment.</p>
+    pub fn connect_attachment(&self) -> std::option::Option<&crate::model::ConnectAttachment> {
+        self.connect_attachment.as_ref()
+    }
+}
+impl std::fmt::Debug for GetConnectAttachmentOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetConnectAttachmentOutput");
+        formatter.field("connect_attachment", &self.connect_attachment);
+        formatter.finish()
+    }
+}
+/// See [`GetConnectAttachmentOutput`](crate::output::GetConnectAttachmentOutput)
+pub mod get_connect_attachment_output {
+    /// A builder for [`GetConnectAttachmentOutput`](crate::output::GetConnectAttachmentOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) connect_attachment: std::option::Option<crate::model::ConnectAttachment>,
+    }
+    impl Builder {
+        /// <p>Details about the Connect attachment.</p>
+        pub fn connect_attachment(mut self, input: crate::model::ConnectAttachment) -> Self {
+            self.connect_attachment = Some(input);
+            self
+        }
+        /// <p>Details about the Connect attachment.</p>
+        pub fn set_connect_attachment(
+            mut self,
+            input: std::option::Option<crate::model::ConnectAttachment>,
+        ) -> Self {
+            self.connect_attachment = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetConnectAttachmentOutput`](crate::output::GetConnectAttachmentOutput)
+        pub fn build(self) -> crate::output::GetConnectAttachmentOutput {
+            crate::output::GetConnectAttachmentOutput {
+                connect_attachment: self.connect_attachment,
+            }
+        }
+    }
+}
+impl GetConnectAttachmentOutput {
+    /// Creates a new builder-style object to manufacture [`GetConnectAttachmentOutput`](crate::output::GetConnectAttachmentOutput)
+    pub fn builder() -> crate::output::get_connect_attachment_output::Builder {
+        crate::output::get_connect_attachment_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExecuteCoreNetworkChangeSetOutput {}
+impl std::fmt::Debug for ExecuteCoreNetworkChangeSetOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExecuteCoreNetworkChangeSetOutput");
+        formatter.finish()
+    }
+}
+/// See [`ExecuteCoreNetworkChangeSetOutput`](crate::output::ExecuteCoreNetworkChangeSetOutput)
+pub mod execute_core_network_change_set_output {
+    /// A builder for [`ExecuteCoreNetworkChangeSetOutput`](crate::output::ExecuteCoreNetworkChangeSetOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`ExecuteCoreNetworkChangeSetOutput`](crate::output::ExecuteCoreNetworkChangeSetOutput)
+        pub fn build(self) -> crate::output::ExecuteCoreNetworkChangeSetOutput {
+            crate::output::ExecuteCoreNetworkChangeSetOutput {}
+        }
+    }
+}
+impl ExecuteCoreNetworkChangeSetOutput {
+    /// Creates a new builder-style object to manufacture [`ExecuteCoreNetworkChangeSetOutput`](crate::output::ExecuteCoreNetworkChangeSetOutput)
+    pub fn builder() -> crate::output::execute_core_network_change_set_output::Builder {
+        crate::output::execute_core_network_change_set_output::Builder::default()
     }
 }
 
@@ -2030,6 +3315,69 @@ impl DisassociateCustomerGatewayOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisassociateConnectPeerOutput {
+    /// <p>Describes the Connect peer association.</p>
+    pub connect_peer_association: std::option::Option<crate::model::ConnectPeerAssociation>,
+}
+impl DisassociateConnectPeerOutput {
+    /// <p>Describes the Connect peer association.</p>
+    pub fn connect_peer_association(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectPeerAssociation> {
+        self.connect_peer_association.as_ref()
+    }
+}
+impl std::fmt::Debug for DisassociateConnectPeerOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisassociateConnectPeerOutput");
+        formatter.field("connect_peer_association", &self.connect_peer_association);
+        formatter.finish()
+    }
+}
+/// See [`DisassociateConnectPeerOutput`](crate::output::DisassociateConnectPeerOutput)
+pub mod disassociate_connect_peer_output {
+    /// A builder for [`DisassociateConnectPeerOutput`](crate::output::DisassociateConnectPeerOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) connect_peer_association:
+            std::option::Option<crate::model::ConnectPeerAssociation>,
+    }
+    impl Builder {
+        /// <p>Describes the Connect peer association.</p>
+        pub fn connect_peer_association(
+            mut self,
+            input: crate::model::ConnectPeerAssociation,
+        ) -> Self {
+            self.connect_peer_association = Some(input);
+            self
+        }
+        /// <p>Describes the Connect peer association.</p>
+        pub fn set_connect_peer_association(
+            mut self,
+            input: std::option::Option<crate::model::ConnectPeerAssociation>,
+        ) -> Self {
+            self.connect_peer_association = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DisassociateConnectPeerOutput`](crate::output::DisassociateConnectPeerOutput)
+        pub fn build(self) -> crate::output::DisassociateConnectPeerOutput {
+            crate::output::DisassociateConnectPeerOutput {
+                connect_peer_association: self.connect_peer_association,
+            }
+        }
+    }
+}
+impl DisassociateConnectPeerOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateConnectPeerOutput`](crate::output::DisassociateConnectPeerOutput)
+    pub fn builder() -> crate::output::disassociate_connect_peer_output::Builder {
+        crate::output::disassociate_connect_peer_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGlobalNetworksOutput {
     /// <p>Information about the global networks.</p>
     pub global_networks: std::option::Option<std::vec::Vec<crate::model::GlobalNetwork>>,
@@ -2069,9 +3417,9 @@ pub mod describe_global_networks_output {
         /// To override the contents of this collection use [`set_global_networks`](Self::set_global_networks).
         ///
         /// <p>Information about the global networks.</p>
-        pub fn global_networks(mut self, input: impl Into<crate::model::GlobalNetwork>) -> Self {
+        pub fn global_networks(mut self, input: crate::model::GlobalNetwork) -> Self {
             let mut v = self.global_networks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.global_networks = Some(v);
             self
         }
@@ -2224,6 +3572,36 @@ impl DeleteSiteOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSiteOutput`](crate::output::DeleteSiteOutput)
     pub fn builder() -> crate::output::delete_site_output::Builder {
         crate::output::delete_site_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteResourcePolicyOutput {}
+impl std::fmt::Debug for DeleteResourcePolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteResourcePolicyOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
+pub mod delete_resource_policy_output {
+    /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
+        pub fn build(self) -> crate::output::DeleteResourcePolicyOutput {
+            crate::output::DeleteResourcePolicyOutput {}
+        }
+    }
+}
+impl DeleteResourcePolicyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
+    pub fn builder() -> crate::output::delete_resource_policy_output::Builder {
+        crate::output::delete_resource_policy_output::Builder::default()
     }
 }
 
@@ -2393,6 +3771,177 @@ impl DeleteDeviceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteCoreNetworkPolicyVersionOutput {
+    /// <p>Returns information about the deleted policy version. </p>
+    pub core_network_policy: std::option::Option<crate::model::CoreNetworkPolicy>,
+}
+impl DeleteCoreNetworkPolicyVersionOutput {
+    /// <p>Returns information about the deleted policy version. </p>
+    pub fn core_network_policy(&self) -> std::option::Option<&crate::model::CoreNetworkPolicy> {
+        self.core_network_policy.as_ref()
+    }
+}
+impl std::fmt::Debug for DeleteCoreNetworkPolicyVersionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteCoreNetworkPolicyVersionOutput");
+        formatter.field("core_network_policy", &self.core_network_policy);
+        formatter.finish()
+    }
+}
+/// See [`DeleteCoreNetworkPolicyVersionOutput`](crate::output::DeleteCoreNetworkPolicyVersionOutput)
+pub mod delete_core_network_policy_version_output {
+    /// A builder for [`DeleteCoreNetworkPolicyVersionOutput`](crate::output::DeleteCoreNetworkPolicyVersionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) core_network_policy: std::option::Option<crate::model::CoreNetworkPolicy>,
+    }
+    impl Builder {
+        /// <p>Returns information about the deleted policy version. </p>
+        pub fn core_network_policy(mut self, input: crate::model::CoreNetworkPolicy) -> Self {
+            self.core_network_policy = Some(input);
+            self
+        }
+        /// <p>Returns information about the deleted policy version. </p>
+        pub fn set_core_network_policy(
+            mut self,
+            input: std::option::Option<crate::model::CoreNetworkPolicy>,
+        ) -> Self {
+            self.core_network_policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteCoreNetworkPolicyVersionOutput`](crate::output::DeleteCoreNetworkPolicyVersionOutput)
+        pub fn build(self) -> crate::output::DeleteCoreNetworkPolicyVersionOutput {
+            crate::output::DeleteCoreNetworkPolicyVersionOutput {
+                core_network_policy: self.core_network_policy,
+            }
+        }
+    }
+}
+impl DeleteCoreNetworkPolicyVersionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCoreNetworkPolicyVersionOutput`](crate::output::DeleteCoreNetworkPolicyVersionOutput)
+    pub fn builder() -> crate::output::delete_core_network_policy_version_output::Builder {
+        crate::output::delete_core_network_policy_version_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteCoreNetworkOutput {
+    /// <p>Information about the deleted core network.</p>
+    pub core_network: std::option::Option<crate::model::CoreNetwork>,
+}
+impl DeleteCoreNetworkOutput {
+    /// <p>Information about the deleted core network.</p>
+    pub fn core_network(&self) -> std::option::Option<&crate::model::CoreNetwork> {
+        self.core_network.as_ref()
+    }
+}
+impl std::fmt::Debug for DeleteCoreNetworkOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteCoreNetworkOutput");
+        formatter.field("core_network", &self.core_network);
+        formatter.finish()
+    }
+}
+/// See [`DeleteCoreNetworkOutput`](crate::output::DeleteCoreNetworkOutput)
+pub mod delete_core_network_output {
+    /// A builder for [`DeleteCoreNetworkOutput`](crate::output::DeleteCoreNetworkOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) core_network: std::option::Option<crate::model::CoreNetwork>,
+    }
+    impl Builder {
+        /// <p>Information about the deleted core network.</p>
+        pub fn core_network(mut self, input: crate::model::CoreNetwork) -> Self {
+            self.core_network = Some(input);
+            self
+        }
+        /// <p>Information about the deleted core network.</p>
+        pub fn set_core_network(
+            mut self,
+            input: std::option::Option<crate::model::CoreNetwork>,
+        ) -> Self {
+            self.core_network = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteCoreNetworkOutput`](crate::output::DeleteCoreNetworkOutput)
+        pub fn build(self) -> crate::output::DeleteCoreNetworkOutput {
+            crate::output::DeleteCoreNetworkOutput {
+                core_network: self.core_network,
+            }
+        }
+    }
+}
+impl DeleteCoreNetworkOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCoreNetworkOutput`](crate::output::DeleteCoreNetworkOutput)
+    pub fn builder() -> crate::output::delete_core_network_output::Builder {
+        crate::output::delete_core_network_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteConnectPeerOutput {
+    /// <p>Information about the deleted Connect peer.</p>
+    pub connect_peer: std::option::Option<crate::model::ConnectPeer>,
+}
+impl DeleteConnectPeerOutput {
+    /// <p>Information about the deleted Connect peer.</p>
+    pub fn connect_peer(&self) -> std::option::Option<&crate::model::ConnectPeer> {
+        self.connect_peer.as_ref()
+    }
+}
+impl std::fmt::Debug for DeleteConnectPeerOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteConnectPeerOutput");
+        formatter.field("connect_peer", &self.connect_peer);
+        formatter.finish()
+    }
+}
+/// See [`DeleteConnectPeerOutput`](crate::output::DeleteConnectPeerOutput)
+pub mod delete_connect_peer_output {
+    /// A builder for [`DeleteConnectPeerOutput`](crate::output::DeleteConnectPeerOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) connect_peer: std::option::Option<crate::model::ConnectPeer>,
+    }
+    impl Builder {
+        /// <p>Information about the deleted Connect peer.</p>
+        pub fn connect_peer(mut self, input: crate::model::ConnectPeer) -> Self {
+            self.connect_peer = Some(input);
+            self
+        }
+        /// <p>Information about the deleted Connect peer.</p>
+        pub fn set_connect_peer(
+            mut self,
+            input: std::option::Option<crate::model::ConnectPeer>,
+        ) -> Self {
+            self.connect_peer = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteConnectPeerOutput`](crate::output::DeleteConnectPeerOutput)
+        pub fn build(self) -> crate::output::DeleteConnectPeerOutput {
+            crate::output::DeleteConnectPeerOutput {
+                connect_peer: self.connect_peer,
+            }
+        }
+    }
+}
+impl DeleteConnectPeerOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteConnectPeerOutput`](crate::output::DeleteConnectPeerOutput)
+    pub fn builder() -> crate::output::delete_connect_peer_output::Builder {
+        crate::output::delete_connect_peer_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectionOutput {
     /// <p>Information about the connection.</p>
     pub connection: std::option::Option<crate::model::Connection>,
@@ -2444,6 +3993,186 @@ impl DeleteConnectionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput)
     pub fn builder() -> crate::output::delete_connection_output::Builder {
         crate::output::delete_connection_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteAttachmentOutput {
+    /// <p>Information about the deleted attachment.</p>
+    pub attachment: std::option::Option<crate::model::Attachment>,
+}
+impl DeleteAttachmentOutput {
+    /// <p>Information about the deleted attachment.</p>
+    pub fn attachment(&self) -> std::option::Option<&crate::model::Attachment> {
+        self.attachment.as_ref()
+    }
+}
+impl std::fmt::Debug for DeleteAttachmentOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteAttachmentOutput");
+        formatter.field("attachment", &self.attachment);
+        formatter.finish()
+    }
+}
+/// See [`DeleteAttachmentOutput`](crate::output::DeleteAttachmentOutput)
+pub mod delete_attachment_output {
+    /// A builder for [`DeleteAttachmentOutput`](crate::output::DeleteAttachmentOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) attachment: std::option::Option<crate::model::Attachment>,
+    }
+    impl Builder {
+        /// <p>Information about the deleted attachment.</p>
+        pub fn attachment(mut self, input: crate::model::Attachment) -> Self {
+            self.attachment = Some(input);
+            self
+        }
+        /// <p>Information about the deleted attachment.</p>
+        pub fn set_attachment(
+            mut self,
+            input: std::option::Option<crate::model::Attachment>,
+        ) -> Self {
+            self.attachment = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteAttachmentOutput`](crate::output::DeleteAttachmentOutput)
+        pub fn build(self) -> crate::output::DeleteAttachmentOutput {
+            crate::output::DeleteAttachmentOutput {
+                attachment: self.attachment,
+            }
+        }
+    }
+}
+impl DeleteAttachmentOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAttachmentOutput`](crate::output::DeleteAttachmentOutput)
+    pub fn builder() -> crate::output::delete_attachment_output::Builder {
+        crate::output::delete_attachment_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateVpcAttachmentOutput {
+    /// <p>Provides details about the VPC attachment.</p>
+    pub vpc_attachment: std::option::Option<crate::model::VpcAttachment>,
+}
+impl CreateVpcAttachmentOutput {
+    /// <p>Provides details about the VPC attachment.</p>
+    pub fn vpc_attachment(&self) -> std::option::Option<&crate::model::VpcAttachment> {
+        self.vpc_attachment.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateVpcAttachmentOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateVpcAttachmentOutput");
+        formatter.field("vpc_attachment", &self.vpc_attachment);
+        formatter.finish()
+    }
+}
+/// See [`CreateVpcAttachmentOutput`](crate::output::CreateVpcAttachmentOutput)
+pub mod create_vpc_attachment_output {
+    /// A builder for [`CreateVpcAttachmentOutput`](crate::output::CreateVpcAttachmentOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vpc_attachment: std::option::Option<crate::model::VpcAttachment>,
+    }
+    impl Builder {
+        /// <p>Provides details about the VPC attachment.</p>
+        pub fn vpc_attachment(mut self, input: crate::model::VpcAttachment) -> Self {
+            self.vpc_attachment = Some(input);
+            self
+        }
+        /// <p>Provides details about the VPC attachment.</p>
+        pub fn set_vpc_attachment(
+            mut self,
+            input: std::option::Option<crate::model::VpcAttachment>,
+        ) -> Self {
+            self.vpc_attachment = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateVpcAttachmentOutput`](crate::output::CreateVpcAttachmentOutput)
+        pub fn build(self) -> crate::output::CreateVpcAttachmentOutput {
+            crate::output::CreateVpcAttachmentOutput {
+                vpc_attachment: self.vpc_attachment,
+            }
+        }
+    }
+}
+impl CreateVpcAttachmentOutput {
+    /// Creates a new builder-style object to manufacture [`CreateVpcAttachmentOutput`](crate::output::CreateVpcAttachmentOutput)
+    pub fn builder() -> crate::output::create_vpc_attachment_output::Builder {
+        crate::output::create_vpc_attachment_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateSiteToSiteVpnAttachmentOutput {
+    /// <p>Details about a site-to-site VPN attachment.</p>
+    pub site_to_site_vpn_attachment: std::option::Option<crate::model::SiteToSiteVpnAttachment>,
+}
+impl CreateSiteToSiteVpnAttachmentOutput {
+    /// <p>Details about a site-to-site VPN attachment.</p>
+    pub fn site_to_site_vpn_attachment(
+        &self,
+    ) -> std::option::Option<&crate::model::SiteToSiteVpnAttachment> {
+        self.site_to_site_vpn_attachment.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateSiteToSiteVpnAttachmentOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateSiteToSiteVpnAttachmentOutput");
+        formatter.field(
+            "site_to_site_vpn_attachment",
+            &self.site_to_site_vpn_attachment,
+        );
+        formatter.finish()
+    }
+}
+/// See [`CreateSiteToSiteVpnAttachmentOutput`](crate::output::CreateSiteToSiteVpnAttachmentOutput)
+pub mod create_site_to_site_vpn_attachment_output {
+    /// A builder for [`CreateSiteToSiteVpnAttachmentOutput`](crate::output::CreateSiteToSiteVpnAttachmentOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) site_to_site_vpn_attachment:
+            std::option::Option<crate::model::SiteToSiteVpnAttachment>,
+    }
+    impl Builder {
+        /// <p>Details about a site-to-site VPN attachment.</p>
+        pub fn site_to_site_vpn_attachment(
+            mut self,
+            input: crate::model::SiteToSiteVpnAttachment,
+        ) -> Self {
+            self.site_to_site_vpn_attachment = Some(input);
+            self
+        }
+        /// <p>Details about a site-to-site VPN attachment.</p>
+        pub fn set_site_to_site_vpn_attachment(
+            mut self,
+            input: std::option::Option<crate::model::SiteToSiteVpnAttachment>,
+        ) -> Self {
+            self.site_to_site_vpn_attachment = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateSiteToSiteVpnAttachmentOutput`](crate::output::CreateSiteToSiteVpnAttachmentOutput)
+        pub fn build(self) -> crate::output::CreateSiteToSiteVpnAttachmentOutput {
+            crate::output::CreateSiteToSiteVpnAttachmentOutput {
+                site_to_site_vpn_attachment: self.site_to_site_vpn_attachment,
+            }
+        }
+    }
+}
+impl CreateSiteToSiteVpnAttachmentOutput {
+    /// Creates a new builder-style object to manufacture [`CreateSiteToSiteVpnAttachmentOutput`](crate::output::CreateSiteToSiteVpnAttachmentOutput)
+    pub fn builder() -> crate::output::create_site_to_site_vpn_attachment_output::Builder {
+        crate::output::create_site_to_site_vpn_attachment_output::Builder::default()
     }
 }
 
@@ -2665,6 +4394,120 @@ impl CreateDeviceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateCoreNetworkOutput {
+    /// <p>Returns details about a core network.</p>
+    pub core_network: std::option::Option<crate::model::CoreNetwork>,
+}
+impl CreateCoreNetworkOutput {
+    /// <p>Returns details about a core network.</p>
+    pub fn core_network(&self) -> std::option::Option<&crate::model::CoreNetwork> {
+        self.core_network.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateCoreNetworkOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateCoreNetworkOutput");
+        formatter.field("core_network", &self.core_network);
+        formatter.finish()
+    }
+}
+/// See [`CreateCoreNetworkOutput`](crate::output::CreateCoreNetworkOutput)
+pub mod create_core_network_output {
+    /// A builder for [`CreateCoreNetworkOutput`](crate::output::CreateCoreNetworkOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) core_network: std::option::Option<crate::model::CoreNetwork>,
+    }
+    impl Builder {
+        /// <p>Returns details about a core network.</p>
+        pub fn core_network(mut self, input: crate::model::CoreNetwork) -> Self {
+            self.core_network = Some(input);
+            self
+        }
+        /// <p>Returns details about a core network.</p>
+        pub fn set_core_network(
+            mut self,
+            input: std::option::Option<crate::model::CoreNetwork>,
+        ) -> Self {
+            self.core_network = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateCoreNetworkOutput`](crate::output::CreateCoreNetworkOutput)
+        pub fn build(self) -> crate::output::CreateCoreNetworkOutput {
+            crate::output::CreateCoreNetworkOutput {
+                core_network: self.core_network,
+            }
+        }
+    }
+}
+impl CreateCoreNetworkOutput {
+    /// Creates a new builder-style object to manufacture [`CreateCoreNetworkOutput`](crate::output::CreateCoreNetworkOutput)
+    pub fn builder() -> crate::output::create_core_network_output::Builder {
+        crate::output::create_core_network_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateConnectPeerOutput {
+    /// <p>The response to the request.</p>
+    pub connect_peer: std::option::Option<crate::model::ConnectPeer>,
+}
+impl CreateConnectPeerOutput {
+    /// <p>The response to the request.</p>
+    pub fn connect_peer(&self) -> std::option::Option<&crate::model::ConnectPeer> {
+        self.connect_peer.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateConnectPeerOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateConnectPeerOutput");
+        formatter.field("connect_peer", &self.connect_peer);
+        formatter.finish()
+    }
+}
+/// See [`CreateConnectPeerOutput`](crate::output::CreateConnectPeerOutput)
+pub mod create_connect_peer_output {
+    /// A builder for [`CreateConnectPeerOutput`](crate::output::CreateConnectPeerOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) connect_peer: std::option::Option<crate::model::ConnectPeer>,
+    }
+    impl Builder {
+        /// <p>The response to the request.</p>
+        pub fn connect_peer(mut self, input: crate::model::ConnectPeer) -> Self {
+            self.connect_peer = Some(input);
+            self
+        }
+        /// <p>The response to the request.</p>
+        pub fn set_connect_peer(
+            mut self,
+            input: std::option::Option<crate::model::ConnectPeer>,
+        ) -> Self {
+            self.connect_peer = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateConnectPeerOutput`](crate::output::CreateConnectPeerOutput)
+        pub fn build(self) -> crate::output::CreateConnectPeerOutput {
+            crate::output::CreateConnectPeerOutput {
+                connect_peer: self.connect_peer,
+            }
+        }
+    }
+}
+impl CreateConnectPeerOutput {
+    /// Creates a new builder-style object to manufacture [`CreateConnectPeerOutput`](crate::output::CreateConnectPeerOutput)
+    pub fn builder() -> crate::output::create_connect_peer_output::Builder {
+        crate::output::create_connect_peer_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectionOutput {
     /// <p>Information about the connection.</p>
     pub connection: std::option::Option<crate::model::Connection>,
@@ -2716,6 +4559,63 @@ impl CreateConnectionOutput {
     /// Creates a new builder-style object to manufacture [`CreateConnectionOutput`](crate::output::CreateConnectionOutput)
     pub fn builder() -> crate::output::create_connection_output::Builder {
         crate::output::create_connection_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateConnectAttachmentOutput {
+    /// <p>The response to a Connect attachment request.</p>
+    pub connect_attachment: std::option::Option<crate::model::ConnectAttachment>,
+}
+impl CreateConnectAttachmentOutput {
+    /// <p>The response to a Connect attachment request.</p>
+    pub fn connect_attachment(&self) -> std::option::Option<&crate::model::ConnectAttachment> {
+        self.connect_attachment.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateConnectAttachmentOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateConnectAttachmentOutput");
+        formatter.field("connect_attachment", &self.connect_attachment);
+        formatter.finish()
+    }
+}
+/// See [`CreateConnectAttachmentOutput`](crate::output::CreateConnectAttachmentOutput)
+pub mod create_connect_attachment_output {
+    /// A builder for [`CreateConnectAttachmentOutput`](crate::output::CreateConnectAttachmentOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) connect_attachment: std::option::Option<crate::model::ConnectAttachment>,
+    }
+    impl Builder {
+        /// <p>The response to a Connect attachment request.</p>
+        pub fn connect_attachment(mut self, input: crate::model::ConnectAttachment) -> Self {
+            self.connect_attachment = Some(input);
+            self
+        }
+        /// <p>The response to a Connect attachment request.</p>
+        pub fn set_connect_attachment(
+            mut self,
+            input: std::option::Option<crate::model::ConnectAttachment>,
+        ) -> Self {
+            self.connect_attachment = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateConnectAttachmentOutput`](crate::output::CreateConnectAttachmentOutput)
+        pub fn build(self) -> crate::output::CreateConnectAttachmentOutput {
+            crate::output::CreateConnectAttachmentOutput {
+                connect_attachment: self.connect_attachment,
+            }
+        }
+    }
+}
+impl CreateConnectAttachmentOutput {
+    /// Creates a new builder-style object to manufacture [`CreateConnectAttachmentOutput`](crate::output::CreateConnectAttachmentOutput)
+    pub fn builder() -> crate::output::create_connect_attachment_output::Builder {
+        crate::output::create_connect_attachment_output::Builder::default()
     }
 }
 
@@ -2907,5 +4807,125 @@ impl AssociateCustomerGatewayOutput {
     /// Creates a new builder-style object to manufacture [`AssociateCustomerGatewayOutput`](crate::output::AssociateCustomerGatewayOutput)
     pub fn builder() -> crate::output::associate_customer_gateway_output::Builder {
         crate::output::associate_customer_gateway_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociateConnectPeerOutput {
+    /// <p>The response to the Connect peer request.</p>
+    pub connect_peer_association: std::option::Option<crate::model::ConnectPeerAssociation>,
+}
+impl AssociateConnectPeerOutput {
+    /// <p>The response to the Connect peer request.</p>
+    pub fn connect_peer_association(
+        &self,
+    ) -> std::option::Option<&crate::model::ConnectPeerAssociation> {
+        self.connect_peer_association.as_ref()
+    }
+}
+impl std::fmt::Debug for AssociateConnectPeerOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociateConnectPeerOutput");
+        formatter.field("connect_peer_association", &self.connect_peer_association);
+        formatter.finish()
+    }
+}
+/// See [`AssociateConnectPeerOutput`](crate::output::AssociateConnectPeerOutput)
+pub mod associate_connect_peer_output {
+    /// A builder for [`AssociateConnectPeerOutput`](crate::output::AssociateConnectPeerOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) connect_peer_association:
+            std::option::Option<crate::model::ConnectPeerAssociation>,
+    }
+    impl Builder {
+        /// <p>The response to the Connect peer request.</p>
+        pub fn connect_peer_association(
+            mut self,
+            input: crate::model::ConnectPeerAssociation,
+        ) -> Self {
+            self.connect_peer_association = Some(input);
+            self
+        }
+        /// <p>The response to the Connect peer request.</p>
+        pub fn set_connect_peer_association(
+            mut self,
+            input: std::option::Option<crate::model::ConnectPeerAssociation>,
+        ) -> Self {
+            self.connect_peer_association = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssociateConnectPeerOutput`](crate::output::AssociateConnectPeerOutput)
+        pub fn build(self) -> crate::output::AssociateConnectPeerOutput {
+            crate::output::AssociateConnectPeerOutput {
+                connect_peer_association: self.connect_peer_association,
+            }
+        }
+    }
+}
+impl AssociateConnectPeerOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateConnectPeerOutput`](crate::output::AssociateConnectPeerOutput)
+    pub fn builder() -> crate::output::associate_connect_peer_output::Builder {
+        crate::output::associate_connect_peer_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AcceptAttachmentOutput {
+    /// <p>The response to the attachment request. </p>
+    pub attachment: std::option::Option<crate::model::Attachment>,
+}
+impl AcceptAttachmentOutput {
+    /// <p>The response to the attachment request. </p>
+    pub fn attachment(&self) -> std::option::Option<&crate::model::Attachment> {
+        self.attachment.as_ref()
+    }
+}
+impl std::fmt::Debug for AcceptAttachmentOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AcceptAttachmentOutput");
+        formatter.field("attachment", &self.attachment);
+        formatter.finish()
+    }
+}
+/// See [`AcceptAttachmentOutput`](crate::output::AcceptAttachmentOutput)
+pub mod accept_attachment_output {
+    /// A builder for [`AcceptAttachmentOutput`](crate::output::AcceptAttachmentOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) attachment: std::option::Option<crate::model::Attachment>,
+    }
+    impl Builder {
+        /// <p>The response to the attachment request. </p>
+        pub fn attachment(mut self, input: crate::model::Attachment) -> Self {
+            self.attachment = Some(input);
+            self
+        }
+        /// <p>The response to the attachment request. </p>
+        pub fn set_attachment(
+            mut self,
+            input: std::option::Option<crate::model::Attachment>,
+        ) -> Self {
+            self.attachment = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AcceptAttachmentOutput`](crate::output::AcceptAttachmentOutput)
+        pub fn build(self) -> crate::output::AcceptAttachmentOutput {
+            crate::output::AcceptAttachmentOutput {
+                attachment: self.attachment,
+            }
+        }
+    }
+}
+impl AcceptAttachmentOutput {
+    /// Creates a new builder-style object to manufacture [`AcceptAttachmentOutput`](crate::output::AcceptAttachmentOutput)
+    pub fn builder() -> crate::output::accept_attachment_output::Builder {
+        crate::output::accept_attachment_output::Builder::default()
     }
 }

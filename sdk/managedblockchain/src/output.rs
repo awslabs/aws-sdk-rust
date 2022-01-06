@@ -256,25 +256,17 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProposalVotesOutput {
-    /// <p>
-    /// The list of votes.
-    /// </p>
+    /// <p> The list of votes. </p>
     pub proposal_votes: std::option::Option<std::vec::Vec<crate::model::VoteSummary>>,
-    /// <p>
-    /// The pagination token that indicates the next set of results to retrieve.
-    /// </p>
+    /// <p> The pagination token that indicates the next set of results to retrieve. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProposalVotesOutput {
-    /// <p>
-    /// The list of votes.
-    /// </p>
+    /// <p> The list of votes. </p>
     pub fn proposal_votes(&self) -> std::option::Option<&[crate::model::VoteSummary]> {
         self.proposal_votes.as_deref()
     }
-    /// <p>
-    /// The pagination token that indicates the next set of results to retrieve.
-    /// </p>
+    /// <p> The pagination token that indicates the next set of results to retrieve. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -301,18 +293,14 @@ pub mod list_proposal_votes_output {
         ///
         /// To override the contents of this collection use [`set_proposal_votes`](Self::set_proposal_votes).
         ///
-        /// <p>
-        /// The list of votes.
-        /// </p>
-        pub fn proposal_votes(mut self, input: impl Into<crate::model::VoteSummary>) -> Self {
+        /// <p> The list of votes. </p>
+        pub fn proposal_votes(mut self, input: crate::model::VoteSummary) -> Self {
             let mut v = self.proposal_votes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.proposal_votes = Some(v);
             self
         }
-        /// <p>
-        /// The list of votes.
-        /// </p>
+        /// <p> The list of votes. </p>
         pub fn set_proposal_votes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VoteSummary>>,
@@ -320,16 +308,12 @@ pub mod list_proposal_votes_output {
             self.proposal_votes = input;
             self
         }
-        /// <p>
-        /// The pagination token that indicates the next set of results to retrieve.
-        /// </p>
+        /// <p> The pagination token that indicates the next set of results to retrieve. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// The pagination token that indicates the next set of results to retrieve.
-        /// </p>
+        /// <p> The pagination token that indicates the next set of results to retrieve. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -392,9 +376,9 @@ pub mod list_proposals_output {
         /// To override the contents of this collection use [`set_proposals`](Self::set_proposals).
         ///
         /// <p>The summary of each proposal made on the network.</p>
-        pub fn proposals(mut self, input: impl Into<crate::model::ProposalSummary>) -> Self {
+        pub fn proposals(mut self, input: crate::model::ProposalSummary) -> Self {
             let mut v = self.proposals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.proposals = Some(v);
             self
         }
@@ -474,9 +458,9 @@ pub mod list_nodes_output {
         /// To override the contents of this collection use [`set_nodes`](Self::set_nodes).
         ///
         /// <p>An array of <code>NodeSummary</code> objects that contain configuration properties for each node.</p>
-        pub fn nodes(mut self, input: impl Into<crate::model::NodeSummary>) -> Self {
+        pub fn nodes(mut self, input: crate::model::NodeSummary) -> Self {
             let mut v = self.nodes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.nodes = Some(v);
             self
         }
@@ -556,9 +540,9 @@ pub mod list_networks_output {
         /// To override the contents of this collection use [`set_networks`](Self::set_networks).
         ///
         /// <p>An array of <code>NetworkSummary</code> objects that contain configuration properties for each network.</p>
-        pub fn networks(mut self, input: impl Into<crate::model::NetworkSummary>) -> Self {
+        pub fn networks(mut self, input: crate::model::NetworkSummary) -> Self {
             let mut v = self.networks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.networks = Some(v);
             self
         }
@@ -638,9 +622,9 @@ pub mod list_members_output {
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
         /// <p>An array of <code>MemberSummary</code> objects. Each object contains details about a network member.</p>
-        pub fn members(mut self, input: impl Into<crate::model::MemberSummary>) -> Self {
+        pub fn members(mut self, input: crate::model::MemberSummary) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.members = Some(v);
             self
         }
@@ -720,9 +704,9 @@ pub mod list_invitations_output {
         /// To override the contents of this collection use [`set_invitations`](Self::set_invitations).
         ///
         /// <p>The invitations for the network.</p>
-        pub fn invitations(mut self, input: impl Into<crate::model::Invitation>) -> Self {
+        pub fn invitations(mut self, input: crate::model::Invitation) -> Self {
             let mut v = self.invitations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.invitations = Some(v);
             self
         }

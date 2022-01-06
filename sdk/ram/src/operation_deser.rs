@@ -365,6 +365,23 @@ pub fn parse_associate_resource_share_error(
                 tmp
             }),
         },
+        "ThrottlingException" => crate::error::AssociateResourceShareError {
+            meta: generic,
+            kind: crate::error::AssociateResourceShareErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateResourceShareError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnknownResourceException" => crate::error::AssociateResourceShareError {
             meta: generic,
             kind: crate::error::AssociateResourceShareErrorKind::UnknownResourceException({

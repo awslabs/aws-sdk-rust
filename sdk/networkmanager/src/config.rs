@@ -16,6 +16,7 @@
 /// The service config can also be constructed manually using its builder.
 ///
 pub struct Config {
+    pub(crate) make_token: crate::idempotency_token::IdempotencyTokenProvider,
     app_name: Option<aws_types::app_name::AppName>,
     pub(crate) timeout_config: Option<aws_smithy_types::timeout::TimeoutConfig>,
     pub(crate) sleep_impl: Option<std::sync::Arc<dyn aws_smithy_async::rt::sleep::AsyncSleep>>,
@@ -57,6 +58,7 @@ impl Config {
 /// Builder for creating a `Config`.
 #[derive(Default)]
 pub struct Builder {
+    make_token: Option<crate::idempotency_token::IdempotencyTokenProvider>,
     app_name: Option<aws_types::app_name::AppName>,
     timeout_config: Option<aws_smithy_types::timeout::TimeoutConfig>,
     sleep_impl: Option<std::sync::Arc<dyn aws_smithy_async::rt::sleep::AsyncSleep>>,
@@ -69,6 +71,14 @@ impl Builder {
     /// Constructs a config builder.
     pub fn new() -> Self {
         Self::default()
+    }
+    /// Sets the idempotency token provider to use for service calls that require tokens.
+    pub fn make_token(
+        mut self,
+        make_token: impl Into<crate::idempotency_token::IdempotencyTokenProvider>,
+    ) -> Self {
+        self.make_token = Some(make_token.into());
+        self
     }
     /// Sets the name of the app that is using the client.
     ///
@@ -245,6 +255,16 @@ impl Builder {
         self
     }
     /// Sets the AWS region to use when making requests.
+    ///
+    /// # Examples
+    /// ```no_run
+    /// use aws_types::region::Region;
+    /// use aws_sdk_networkmanager::config::{Builder, Config};
+    ///
+    /// let config = aws_sdk_networkmanager::Config::builder()
+    ///     .region(Region::new("us-east-1"))
+    ///     .build();
+    /// ```
     pub fn region(mut self, region: impl Into<Option<aws_types::region::Region>>) -> Self {
         self.region = region.into();
         self
@@ -271,6 +291,9 @@ impl Builder {
     /// Builds a [`Config`].
     pub fn build(self) -> Config {
         Config {
+            make_token: self
+                .make_token
+                .unwrap_or_else(crate::idempotency_token::default_provider),
             app_name: self.app_name,
             timeout_config: self.timeout_config,
             sleep_impl: self.sleep_impl,

@@ -12,38 +12,25 @@ pub struct AnalyzeDocumentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AnalyzeDocumentErrorKind {
-    /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN)
-    /// of an authorized user or IAM role to perform the operation.</p>
+    /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or IAM role to perform the operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Amazon Textract isn't able to read the document. For more information on the document
-    /// limits in Amazon Textract, see <a>limits</a>.</p>
+    /// <p>Amazon Textract isn't able to read the document. For more information on the document limits in Amazon Textract, see <code>limits</code>.</p>
     BadDocumentException(crate::error::BadDocumentException),
-    /// <p>The document can't be processed because it's too large. The maximum document size for
-    /// synchronous operations 10 MB. The maximum document size for asynchronous operations is 500
-    /// MB for PDF files.</p>
+    /// <p>The document can't be processed because it's too large. The maximum document size for synchronous operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.</p>
     DocumentTooLargeException(crate::error::DocumentTooLargeException),
     /// <p>Indicates you have exceeded the maximum number of active human in the loop workflows available</p>
     HumanLoopQuotaExceededException(crate::error::HumanLoopQuotaExceededException),
     /// <p>Amazon Textract experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An input parameter violated a constraint. For example, in synchronous operations,
-    /// an <code>InvalidParameterException</code> exception occurs
-    /// when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code>
-    /// request parameter.
-    /// Validate your parameter before calling the API operation again.</p>
+    /// <p>An input parameter violated a constraint. For example, in synchronous operations, an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request.
-    /// for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a>
-    /// For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
-    /// </p>
+    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request. for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a> </p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit,
-    /// contact Amazon Textract.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Textract.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in
-    /// PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
+    /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -97,8 +84,6 @@ impl AnalyzeDocumentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -217,36 +202,23 @@ pub struct AnalyzeExpenseError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AnalyzeExpenseErrorKind {
-    /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN)
-    /// of an authorized user or IAM role to perform the operation.</p>
+    /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or IAM role to perform the operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Amazon Textract isn't able to read the document. For more information on the document
-    /// limits in Amazon Textract, see <a>limits</a>.</p>
+    /// <p>Amazon Textract isn't able to read the document. For more information on the document limits in Amazon Textract, see <code>limits</code>.</p>
     BadDocumentException(crate::error::BadDocumentException),
-    /// <p>The document can't be processed because it's too large. The maximum document size for
-    /// synchronous operations 10 MB. The maximum document size for asynchronous operations is 500
-    /// MB for PDF files.</p>
+    /// <p>The document can't be processed because it's too large. The maximum document size for synchronous operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.</p>
     DocumentTooLargeException(crate::error::DocumentTooLargeException),
     /// <p>Amazon Textract experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An input parameter violated a constraint. For example, in synchronous operations,
-    /// an <code>InvalidParameterException</code> exception occurs
-    /// when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code>
-    /// request parameter.
-    /// Validate your parameter before calling the API operation again.</p>
+    /// <p>An input parameter violated a constraint. For example, in synchronous operations, an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request.
-    /// for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a>
-    /// For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
-    /// </p>
+    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request. for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a> </p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit,
-    /// contact Amazon Textract.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Textract.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in
-    /// PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
+    /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -299,8 +271,6 @@ impl AnalyzeExpenseError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -406,36 +376,23 @@ pub struct AnalyzeIDError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AnalyzeIDErrorKind {
-    /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN)
-    /// of an authorized user or IAM role to perform the operation.</p>
+    /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or IAM role to perform the operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Amazon Textract isn't able to read the document. For more information on the document
-    /// limits in Amazon Textract, see <a>limits</a>.</p>
+    /// <p>Amazon Textract isn't able to read the document. For more information on the document limits in Amazon Textract, see <code>limits</code>.</p>
     BadDocumentException(crate::error::BadDocumentException),
-    /// <p>The document can't be processed because it's too large. The maximum document size for
-    /// synchronous operations 10 MB. The maximum document size for asynchronous operations is 500
-    /// MB for PDF files.</p>
+    /// <p>The document can't be processed because it's too large. The maximum document size for synchronous operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.</p>
     DocumentTooLargeException(crate::error::DocumentTooLargeException),
     /// <p>Amazon Textract experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An input parameter violated a constraint. For example, in synchronous operations,
-    /// an <code>InvalidParameterException</code> exception occurs
-    /// when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code>
-    /// request parameter.
-    /// Validate your parameter before calling the API operation again.</p>
+    /// <p>An input parameter violated a constraint. For example, in synchronous operations, an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request.
-    /// for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a>
-    /// For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
-    /// </p>
+    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request. for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a> </p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit,
-    /// contact Amazon Textract.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Textract.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in
-    /// PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
+    /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -486,8 +443,6 @@ impl AnalyzeIDError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -581,36 +536,23 @@ pub struct DetectDocumentTextError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetectDocumentTextErrorKind {
-    /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN)
-    /// of an authorized user or IAM role to perform the operation.</p>
+    /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or IAM role to perform the operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Amazon Textract isn't able to read the document. For more information on the document
-    /// limits in Amazon Textract, see <a>limits</a>.</p>
+    /// <p>Amazon Textract isn't able to read the document. For more information on the document limits in Amazon Textract, see <code>limits</code>.</p>
     BadDocumentException(crate::error::BadDocumentException),
-    /// <p>The document can't be processed because it's too large. The maximum document size for
-    /// synchronous operations 10 MB. The maximum document size for asynchronous operations is 500
-    /// MB for PDF files.</p>
+    /// <p>The document can't be processed because it's too large. The maximum document size for synchronous operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.</p>
     DocumentTooLargeException(crate::error::DocumentTooLargeException),
     /// <p>Amazon Textract experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An input parameter violated a constraint. For example, in synchronous operations,
-    /// an <code>InvalidParameterException</code> exception occurs
-    /// when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code>
-    /// request parameter.
-    /// Validate your parameter before calling the API operation again.</p>
+    /// <p>An input parameter violated a constraint. For example, in synchronous operations, an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request.
-    /// for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a>
-    /// For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
-    /// </p>
+    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request. for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a> </p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit,
-    /// contact Amazon Textract.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Textract.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in
-    /// PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
+    /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -663,8 +605,6 @@ impl DetectDocumentTextError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -781,30 +721,19 @@ pub struct GetDocumentAnalysisError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDocumentAnalysisErrorKind {
-    /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN)
-    /// of an authorized user or IAM role to perform the operation.</p>
+    /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or IAM role to perform the operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Textract experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An invalid job identifier was passed to <a>GetDocumentAnalysis</a> or to
-    /// <a>GetDocumentAnalysis</a>.</p>
+    /// <p>An invalid job identifier was passed to <code>GetDocumentAnalysis</code> or to <code>GetDocumentAnalysis</code>.</p>
     InvalidJobIdException(crate::error::InvalidJobIdException),
-    /// <p> Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key
-    /// was entered incorrectly. </p>
+    /// <p> Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered incorrectly. </p>
     InvalidKmsKeyException(crate::error::InvalidKmsKeyException),
-    /// <p>An input parameter violated a constraint. For example, in synchronous operations,
-    /// an <code>InvalidParameterException</code> exception occurs
-    /// when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code>
-    /// request parameter.
-    /// Validate your parameter before calling the API operation again.</p>
+    /// <p>An input parameter violated a constraint. For example, in synchronous operations, an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request.
-    /// for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a>
-    /// For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
-    /// </p>
+    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request. for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a> </p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit,
-    /// contact Amazon Textract.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Textract.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -858,8 +787,6 @@ impl GetDocumentAnalysisError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -968,30 +895,19 @@ pub struct GetDocumentTextDetectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDocumentTextDetectionErrorKind {
-    /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN)
-    /// of an authorized user or IAM role to perform the operation.</p>
+    /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or IAM role to perform the operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Textract experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An invalid job identifier was passed to <a>GetDocumentAnalysis</a> or to
-    /// <a>GetDocumentAnalysis</a>.</p>
+    /// <p>An invalid job identifier was passed to <code>GetDocumentAnalysis</code> or to <code>GetDocumentAnalysis</code>.</p>
     InvalidJobIdException(crate::error::InvalidJobIdException),
-    /// <p> Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key
-    /// was entered incorrectly. </p>
+    /// <p> Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered incorrectly. </p>
     InvalidKmsKeyException(crate::error::InvalidKmsKeyException),
-    /// <p>An input parameter violated a constraint. For example, in synchronous operations,
-    /// an <code>InvalidParameterException</code> exception occurs
-    /// when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code>
-    /// request parameter.
-    /// Validate your parameter before calling the API operation again.</p>
+    /// <p>An input parameter violated a constraint. For example, in synchronous operations, an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request.
-    /// for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a>
-    /// For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
-    /// </p>
+    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request. for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a> </p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit,
-    /// contact Amazon Textract.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Textract.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1045,8 +961,6 @@ impl GetDocumentTextDetectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1155,30 +1069,19 @@ pub struct GetExpenseAnalysisError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetExpenseAnalysisErrorKind {
-    /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN)
-    /// of an authorized user or IAM role to perform the operation.</p>
+    /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or IAM role to perform the operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Textract experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An invalid job identifier was passed to <a>GetDocumentAnalysis</a> or to
-    /// <a>GetDocumentAnalysis</a>.</p>
+    /// <p>An invalid job identifier was passed to <code>GetDocumentAnalysis</code> or to <code>GetDocumentAnalysis</code>.</p>
     InvalidJobIdException(crate::error::InvalidJobIdException),
-    /// <p> Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key
-    /// was entered incorrectly. </p>
+    /// <p> Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered incorrectly. </p>
     InvalidKmsKeyException(crate::error::InvalidKmsKeyException),
-    /// <p>An input parameter violated a constraint. For example, in synchronous operations,
-    /// an <code>InvalidParameterException</code> exception occurs
-    /// when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code>
-    /// request parameter.
-    /// Validate your parameter before calling the API operation again.</p>
+    /// <p>An input parameter violated a constraint. For example, in synchronous operations, an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request.
-    /// for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a>
-    /// For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
-    /// </p>
+    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request. for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a> </p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit,
-    /// contact Amazon Textract.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Textract.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1232,8 +1135,6 @@ impl GetExpenseAnalysisError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1342,49 +1243,29 @@ pub struct StartDocumentAnalysisError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartDocumentAnalysisErrorKind {
-    /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN)
-    /// of an authorized user or IAM role to perform the operation.</p>
+    /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or IAM role to perform the operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Amazon Textract isn't able to read the document. For more information on the document
-    /// limits in Amazon Textract, see <a>limits</a>.</p>
+    /// <p>Amazon Textract isn't able to read the document. For more information on the document limits in Amazon Textract, see <code>limits</code>.</p>
     BadDocumentException(crate::error::BadDocumentException),
-    /// <p>The document can't be processed because it's too large. The maximum document size for
-    /// synchronous operations 10 MB. The maximum document size for asynchronous operations is 500
-    /// MB for PDF files.</p>
+    /// <p>The document can't be processed because it's too large. The maximum document size for synchronous operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.</p>
     DocumentTooLargeException(crate::error::DocumentTooLargeException),
-    /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at
-    /// least one of the other input parameters is different from the previous call to the
-    /// operation. </p>
+    /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation. </p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>Amazon Textract experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p> Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key
-    /// was entered incorrectly. </p>
+    /// <p> Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered incorrectly. </p>
     InvalidKmsKeyException(crate::error::InvalidKmsKeyException),
-    /// <p>An input parameter violated a constraint. For example, in synchronous operations,
-    /// an <code>InvalidParameterException</code> exception occurs
-    /// when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code>
-    /// request parameter.
-    /// Validate your parameter before calling the API operation again.</p>
+    /// <p>An input parameter violated a constraint. For example, in synchronous operations, an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request.
-    /// for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a>
-    /// For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
-    /// </p>
+    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request. for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a> </p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>An Amazon Textract service limit was exceeded. For example, if you start too many
-    /// asynchronous jobs concurrently, calls to start operations
-    /// (<code>StartDocumentTextDetection</code>, for example) raise a LimitExceededException
-    /// exception (HTTP status code: 400) until the number of concurrently running jobs is below
-    /// the Amazon Textract service limit. </p>
+    /// <p>An Amazon Textract service limit was exceeded. For example, if you start too many asynchronous jobs concurrently, calls to start operations (<code>StartDocumentTextDetection</code>, for example) raise a LimitExceededException exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Textract service limit. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit,
-    /// contact Amazon Textract.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Textract.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in
-    /// PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
+    /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1442,8 +1323,6 @@ impl StartDocumentAnalysisError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1586,49 +1465,29 @@ pub struct StartDocumentTextDetectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartDocumentTextDetectionErrorKind {
-    /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN)
-    /// of an authorized user or IAM role to perform the operation.</p>
+    /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or IAM role to perform the operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Amazon Textract isn't able to read the document. For more information on the document
-    /// limits in Amazon Textract, see <a>limits</a>.</p>
+    /// <p>Amazon Textract isn't able to read the document. For more information on the document limits in Amazon Textract, see <code>limits</code>.</p>
     BadDocumentException(crate::error::BadDocumentException),
-    /// <p>The document can't be processed because it's too large. The maximum document size for
-    /// synchronous operations 10 MB. The maximum document size for asynchronous operations is 500
-    /// MB for PDF files.</p>
+    /// <p>The document can't be processed because it's too large. The maximum document size for synchronous operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.</p>
     DocumentTooLargeException(crate::error::DocumentTooLargeException),
-    /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at
-    /// least one of the other input parameters is different from the previous call to the
-    /// operation. </p>
+    /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation. </p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>Amazon Textract experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p> Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key
-    /// was entered incorrectly. </p>
+    /// <p> Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered incorrectly. </p>
     InvalidKmsKeyException(crate::error::InvalidKmsKeyException),
-    /// <p>An input parameter violated a constraint. For example, in synchronous operations,
-    /// an <code>InvalidParameterException</code> exception occurs
-    /// when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code>
-    /// request parameter.
-    /// Validate your parameter before calling the API operation again.</p>
+    /// <p>An input parameter violated a constraint. For example, in synchronous operations, an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request.
-    /// for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a>
-    /// For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
-    /// </p>
+    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request. for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a> </p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>An Amazon Textract service limit was exceeded. For example, if you start too many
-    /// asynchronous jobs concurrently, calls to start operations
-    /// (<code>StartDocumentTextDetection</code>, for example) raise a LimitExceededException
-    /// exception (HTTP status code: 400) until the number of concurrently running jobs is below
-    /// the Amazon Textract service limit. </p>
+    /// <p>An Amazon Textract service limit was exceeded. For example, if you start too many asynchronous jobs concurrently, calls to start operations (<code>StartDocumentTextDetection</code>, for example) raise a LimitExceededException exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Textract service limit. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit,
-    /// contact Amazon Textract.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Textract.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in
-    /// PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
+    /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1688,8 +1547,6 @@ impl StartDocumentTextDetectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1834,49 +1691,29 @@ pub struct StartExpenseAnalysisError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartExpenseAnalysisErrorKind {
-    /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN)
-    /// of an authorized user or IAM role to perform the operation.</p>
+    /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or IAM role to perform the operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Amazon Textract isn't able to read the document. For more information on the document
-    /// limits in Amazon Textract, see <a>limits</a>.</p>
+    /// <p>Amazon Textract isn't able to read the document. For more information on the document limits in Amazon Textract, see <code>limits</code>.</p>
     BadDocumentException(crate::error::BadDocumentException),
-    /// <p>The document can't be processed because it's too large. The maximum document size for
-    /// synchronous operations 10 MB. The maximum document size for asynchronous operations is 500
-    /// MB for PDF files.</p>
+    /// <p>The document can't be processed because it's too large. The maximum document size for synchronous operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.</p>
     DocumentTooLargeException(crate::error::DocumentTooLargeException),
-    /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at
-    /// least one of the other input parameters is different from the previous call to the
-    /// operation. </p>
+    /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation. </p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>Amazon Textract experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p> Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key
-    /// was entered incorrectly. </p>
+    /// <p> Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered incorrectly. </p>
     InvalidKmsKeyException(crate::error::InvalidKmsKeyException),
-    /// <p>An input parameter violated a constraint. For example, in synchronous operations,
-    /// an <code>InvalidParameterException</code> exception occurs
-    /// when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code>
-    /// request parameter.
-    /// Validate your parameter before calling the API operation again.</p>
+    /// <p>An input parameter violated a constraint. For example, in synchronous operations, an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request.
-    /// for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a>
-    /// For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
-    /// </p>
+    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request. for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a> </p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>An Amazon Textract service limit was exceeded. For example, if you start too many
-    /// asynchronous jobs concurrently, calls to start operations
-    /// (<code>StartDocumentTextDetection</code>, for example) raise a LimitExceededException
-    /// exception (HTTP status code: 400) until the number of concurrently running jobs is below
-    /// the Amazon Textract service limit. </p>
+    /// <p>An Amazon Textract service limit was exceeded. For example, if you start too many asynchronous jobs concurrently, calls to start operations (<code>StartDocumentTextDetection</code>, for example) raise a LimitExceededException exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Textract service limit. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit,
-    /// contact Amazon Textract.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Textract.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in
-    /// PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
+    /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1934,8 +1771,6 @@ impl StartExpenseAnalysisError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2065,8 +1900,7 @@ impl std::error::Error for StartExpenseAnalysisError {
     }
 }
 
-/// <p>The format of the input document isn't supported. Documents for synchronous operations can be in
-/// PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
+/// <p>The format of the input document isn't supported. Documents for synchronous operations can be in PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedDocumentException {
@@ -2236,8 +2070,7 @@ impl ThrottlingException {
     }
 }
 
-/// <p>The number of requests exceeded your throughput limit. If you want to increase this limit,
-/// contact Amazon Textract.</p>
+/// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Textract.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionedThroughputExceededException {
@@ -2322,11 +2155,7 @@ impl ProvisionedThroughputExceededException {
     }
 }
 
-/// <p>An Amazon Textract service limit was exceeded. For example, if you start too many
-/// asynchronous jobs concurrently, calls to start operations
-/// (<code>StartDocumentTextDetection</code>, for example) raise a LimitExceededException
-/// exception (HTTP status code: 400) until the number of concurrently running jobs is below
-/// the Amazon Textract service limit. </p>
+/// <p>An Amazon Textract service limit was exceeded. For example, if you start too many asynchronous jobs concurrently, calls to start operations (<code>StartDocumentTextDetection</code>, for example) raise a LimitExceededException exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Textract service limit. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
@@ -2411,10 +2240,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>Amazon Textract is unable to access the S3 object that's specified in the request.
-/// for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a>
-/// For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
-/// </p>
+/// <p>Amazon Textract is unable to access the S3 object that's specified in the request. for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidS3ObjectException {
@@ -2499,11 +2325,7 @@ impl InvalidS3ObjectException {
     }
 }
 
-/// <p>An input parameter violated a constraint. For example, in synchronous operations,
-/// an <code>InvalidParameterException</code> exception occurs
-/// when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code>
-/// request parameter.
-/// Validate your parameter before calling the API operation again.</p>
+/// <p>An input parameter violated a constraint. For example, in synchronous operations, an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your parameter before calling the API operation again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterException {
@@ -2588,8 +2410,7 @@ impl InvalidParameterException {
     }
 }
 
-/// <p> Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key
-/// was entered incorrectly. </p>
+/// <p> Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered incorrectly. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidKmsKeyException {
@@ -2759,9 +2580,7 @@ impl InternalServerError {
     }
 }
 
-/// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at
-/// least one of the other input parameters is different from the previous call to the
-/// operation. </p>
+/// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdempotentParameterMismatchException {
@@ -2846,9 +2665,7 @@ impl IdempotentParameterMismatchException {
     }
 }
 
-/// <p>The document can't be processed because it's too large. The maximum document size for
-/// synchronous operations 10 MB. The maximum document size for asynchronous operations is 500
-/// MB for PDF files.</p>
+/// <p>The document can't be processed because it's too large. The maximum document size for synchronous operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentTooLargeException {
@@ -2933,8 +2750,7 @@ impl DocumentTooLargeException {
     }
 }
 
-/// <p>Amazon Textract isn't able to read the document. For more information on the document
-/// limits in Amazon Textract, see <a>limits</a>.</p>
+/// <p>Amazon Textract isn't able to read the document. For more information on the document limits in Amazon Textract, see <code>limits</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BadDocumentException {
@@ -3019,8 +2835,7 @@ impl BadDocumentException {
     }
 }
 
-/// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN)
-/// of an authorized user or IAM role to perform the operation.</p>
+/// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or IAM role to perform the operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
@@ -3105,8 +2920,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>An invalid job identifier was passed to <a>GetDocumentAnalysis</a> or to
-/// <a>GetDocumentAnalysis</a>.</p>
+/// <p>An invalid job identifier was passed to <code>GetDocumentAnalysis</code> or to <code>GetDocumentAnalysis</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidJobIdException {

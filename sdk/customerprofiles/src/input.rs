@@ -80,7 +80,7 @@ pub mod add_profile_key_input {
 #[doc(hidden)]
 pub type AddProfileKeyInputOperationOutputAlias = crate::operation::AddProfileKey;
 #[doc(hidden)]
-pub type AddProfileKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddProfileKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddProfileKeyInput {
     /// Consumes the builder and constructs an Operation<[`AddProfileKey`](crate::operation::AddProfileKey)>
     #[allow(clippy::let_and_return)]
@@ -91,7 +91,7 @@ impl AddProfileKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddProfileKey,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -191,7 +191,7 @@ impl AddProfileKeyInput {
             "AddProfileKey",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -250,16 +250,12 @@ pub mod create_domain_input {
             self.default_expiration_days = input;
             self
         }
-        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-        /// of encryption key is specified. It is used to encrypt all data before it is placed in
-        /// permanent or semi-permanent storage.</p>
+        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
         pub fn default_encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_encryption_key = Some(input.into());
             self
         }
-        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-        /// of encryption key is specified. It is used to encrypt all data before it is placed in
-        /// permanent or semi-permanent storage.</p>
+        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
         pub fn set_default_encryption_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -267,18 +263,12 @@ pub mod create_domain_input {
             self.default_encryption_key = input;
             self
         }
-        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-        /// ingesting data from third party applications. You must set up a policy on the
-        /// DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send
-        /// messages to the DeadLetterQueue.</p>
+        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
         pub fn dead_letter_queue_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.dead_letter_queue_url = Some(input.into());
             self
         }
-        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-        /// ingesting data from third party applications. You must set up a policy on the
-        /// DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send
-        /// messages to the DeadLetterQueue.</p>
+        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
         pub fn set_dead_letter_queue_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -286,24 +276,14 @@ pub mod create_domain_input {
             self.dead_letter_queue_url = input;
             self
         }
-        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-        /// <p>After the Identity Resolution Job completes, use the
-        /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-        /// S3.</p>
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
         pub fn matching(mut self, input: crate::model::MatchingRequest) -> Self {
             self.matching = Some(input);
             self
         }
-        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-        /// <p>After the Identity Resolution Job completes, use the
-        /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-        /// S3.</p>
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
         pub fn set_matching(
             mut self,
             input: std::option::Option<crate::model::MatchingRequest>,
@@ -357,7 +337,7 @@ pub mod create_domain_input {
 #[doc(hidden)]
 pub type CreateDomainInputOperationOutputAlias = crate::operation::CreateDomain;
 #[doc(hidden)]
-pub type CreateDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDomainInput {
     /// Consumes the builder and constructs an Operation<[`CreateDomain`](crate::operation::CreateDomain)>
     #[allow(clippy::let_and_return)]
@@ -368,7 +348,7 @@ impl CreateDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -463,7 +443,7 @@ impl CreateDomainInput {
             "CreateDomain",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -630,14 +610,12 @@ pub mod create_profile_input {
             self.gender = input;
             self
         }
-        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
-        /// number. </p>
+        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
         pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.phone_number = Some(input.into());
             self
         }
-        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
-        /// number. </p>
+        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
@@ -681,14 +659,12 @@ pub mod create_profile_input {
             self.business_phone_number = input;
             self
         }
-        /// <p>The customer’s email address, which has not been specified as a personal or business
-        /// address. </p>
+        /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
         pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.email_address = Some(input.into());
             self
         }
-        /// <p>The customer’s email address, which has not been specified as a personal or business
-        /// address. </p>
+        /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -722,14 +698,12 @@ pub mod create_profile_input {
             self.business_email_address = input;
             self
         }
-        /// <p>A generic address associated with the customer that is not mailing, shipping, or
-        /// billing.</p>
+        /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
         pub fn address(mut self, input: crate::model::Address) -> Self {
             self.address = Some(input);
             self
         }
-        /// <p>A generic address associated with the customer that is not mailing, shipping, or
-        /// billing.</p>
+        /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
         pub fn set_address(mut self, input: std::option::Option<crate::model::Address>) -> Self {
             self.address = input;
             self
@@ -835,7 +809,7 @@ pub mod create_profile_input {
 #[doc(hidden)]
 pub type CreateProfileInputOperationOutputAlias = crate::operation::CreateProfile;
 #[doc(hidden)]
-pub type CreateProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProfileInput {
     /// Consumes the builder and constructs an Operation<[`CreateProfile`](crate::operation::CreateProfile)>
     #[allow(clippy::let_and_return)]
@@ -846,7 +820,7 @@ impl CreateProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -945,7 +919,7 @@ impl CreateProfileInput {
             "CreateProfile",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1003,7 +977,7 @@ pub mod delete_domain_input {
 #[doc(hidden)]
 pub type DeleteDomainInputOperationOutputAlias = crate::operation::DeleteDomain;
 #[doc(hidden)]
-pub type DeleteDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDomainInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDomain`](crate::operation::DeleteDomain)>
     #[allow(clippy::let_and_return)]
@@ -1014,7 +988,7 @@ impl DeleteDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1104,7 +1078,7 @@ impl DeleteDomainInput {
             "DeleteDomain",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1166,7 +1140,7 @@ pub mod delete_integration_input {
 #[doc(hidden)]
 pub type DeleteIntegrationInputOperationOutputAlias = crate::operation::DeleteIntegration;
 #[doc(hidden)]
-pub type DeleteIntegrationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteIntegrationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteIntegrationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteIntegration`](crate::operation::DeleteIntegration)>
     #[allow(clippy::let_and_return)]
@@ -1177,7 +1151,7 @@ impl DeleteIntegrationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteIntegration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1277,7 +1251,7 @@ impl DeleteIntegrationInput {
             "DeleteIntegration",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1347,7 +1321,7 @@ pub mod delete_profile_input {
 #[doc(hidden)]
 pub type DeleteProfileInputOperationOutputAlias = crate::operation::DeleteProfile;
 #[doc(hidden)]
-pub type DeleteProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProfileInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProfile`](crate::operation::DeleteProfile)>
     #[allow(clippy::let_and_return)]
@@ -1358,7 +1332,7 @@ impl DeleteProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1457,7 +1431,7 @@ impl DeleteProfileInput {
             "DeleteProfile",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1560,7 +1534,7 @@ pub mod delete_profile_key_input {
 #[doc(hidden)]
 pub type DeleteProfileKeyInputOperationOutputAlias = crate::operation::DeleteProfileKey;
 #[doc(hidden)]
-pub type DeleteProfileKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteProfileKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProfileKeyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProfileKey`](crate::operation::DeleteProfileKey)>
     #[allow(clippy::let_and_return)]
@@ -1571,7 +1545,7 @@ impl DeleteProfileKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteProfileKey,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1671,7 +1645,7 @@ impl DeleteProfileKeyInput {
             "DeleteProfileKey",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1771,7 +1745,7 @@ pub mod delete_profile_object_input {
 #[doc(hidden)]
 pub type DeleteProfileObjectInputOperationOutputAlias = crate::operation::DeleteProfileObject;
 #[doc(hidden)]
-pub type DeleteProfileObjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteProfileObjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProfileObjectInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProfileObject`](crate::operation::DeleteProfileObject)>
     #[allow(clippy::let_and_return)]
@@ -1782,7 +1756,7 @@ impl DeleteProfileObjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteProfileObject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1882,7 +1856,7 @@ impl DeleteProfileObjectInput {
             "DeleteProfileObject",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1956,7 +1930,7 @@ pub mod delete_profile_object_type_input {
 pub type DeleteProfileObjectTypeInputOperationOutputAlias =
     crate::operation::DeleteProfileObjectType;
 #[doc(hidden)]
-pub type DeleteProfileObjectTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteProfileObjectTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProfileObjectTypeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProfileObjectType`](crate::operation::DeleteProfileObjectType)>
     #[allow(clippy::let_and_return)]
@@ -1967,7 +1941,7 @@ impl DeleteProfileObjectTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteProfileObjectType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2077,7 +2051,7 @@ impl DeleteProfileObjectTypeInput {
             "DeleteProfileObjectType",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2157,7 +2131,7 @@ pub mod get_auto_merging_preview_input {
 #[doc(hidden)]
 pub type GetAutoMergingPreviewInputOperationOutputAlias = crate::operation::GetAutoMergingPreview;
 #[doc(hidden)]
-pub type GetAutoMergingPreviewInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAutoMergingPreviewInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAutoMergingPreviewInput {
     /// Consumes the builder and constructs an Operation<[`GetAutoMergingPreview`](crate::operation::GetAutoMergingPreview)>
     #[allow(clippy::let_and_return)]
@@ -2168,7 +2142,7 @@ impl GetAutoMergingPreviewInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAutoMergingPreview,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2270,7 +2244,7 @@ impl GetAutoMergingPreviewInput {
             "GetAutoMergingPreview",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2326,7 +2300,7 @@ pub mod get_domain_input {
 #[doc(hidden)]
 pub type GetDomainInputOperationOutputAlias = crate::operation::GetDomain;
 #[doc(hidden)]
-pub type GetDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDomainInput {
     /// Consumes the builder and constructs an Operation<[`GetDomain`](crate::operation::GetDomain)>
     #[allow(clippy::let_and_return)]
@@ -2337,7 +2311,7 @@ impl GetDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2425,7 +2399,7 @@ impl GetDomainInput {
                     "GetDomain",
                     "customerprofiles",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2488,7 +2462,7 @@ pub mod get_identity_resolution_job_input {
 pub type GetIdentityResolutionJobInputOperationOutputAlias =
     crate::operation::GetIdentityResolutionJob;
 #[doc(hidden)]
-pub type GetIdentityResolutionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetIdentityResolutionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetIdentityResolutionJobInput {
     /// Consumes the builder and constructs an Operation<[`GetIdentityResolutionJob`](crate::operation::GetIdentityResolutionJob)>
     #[allow(clippy::let_and_return)]
@@ -2499,7 +2473,7 @@ impl GetIdentityResolutionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetIdentityResolutionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2609,7 +2583,7 @@ impl GetIdentityResolutionJobInput {
             "GetIdentityResolutionJob",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2671,7 +2645,7 @@ pub mod get_integration_input {
 #[doc(hidden)]
 pub type GetIntegrationInputOperationOutputAlias = crate::operation::GetIntegration;
 #[doc(hidden)]
-pub type GetIntegrationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetIntegrationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetIntegrationInput {
     /// Consumes the builder and constructs an Operation<[`GetIntegration`](crate::operation::GetIntegration)>
     #[allow(clippy::let_and_return)]
@@ -2682,7 +2656,7 @@ impl GetIntegrationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetIntegration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2782,7 +2756,7 @@ impl GetIntegrationInput {
             "GetIntegration",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2816,14 +2790,12 @@ pub mod get_matches_input {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2866,7 +2838,7 @@ pub mod get_matches_input {
 #[doc(hidden)]
 pub type GetMatchesInputOperationOutputAlias = crate::operation::GetMatches;
 #[doc(hidden)]
-pub type GetMatchesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMatchesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMatchesInput {
     /// Consumes the builder and constructs an Operation<[`GetMatches`](crate::operation::GetMatches)>
     #[allow(clippy::let_and_return)]
@@ -2877,7 +2849,7 @@ impl GetMatchesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMatches,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2988,7 +2960,7 @@ impl GetMatchesInput {
             "GetMatches",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3053,7 +3025,7 @@ pub mod get_profile_object_type_input {
 #[doc(hidden)]
 pub type GetProfileObjectTypeInputOperationOutputAlias = crate::operation::GetProfileObjectType;
 #[doc(hidden)]
-pub type GetProfileObjectTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetProfileObjectTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetProfileObjectTypeInput {
     /// Consumes the builder and constructs an Operation<[`GetProfileObjectType`](crate::operation::GetProfileObjectType)>
     #[allow(clippy::let_and_return)]
@@ -3064,7 +3036,7 @@ impl GetProfileObjectTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetProfileObjectType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3174,7 +3146,7 @@ impl GetProfileObjectTypeInput {
             "GetProfileObjectType",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3225,7 +3197,8 @@ pub mod get_profile_object_type_template_input {
 pub type GetProfileObjectTypeTemplateInputOperationOutputAlias =
     crate::operation::GetProfileObjectTypeTemplate;
 #[doc(hidden)]
-pub type GetProfileObjectTypeTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetProfileObjectTypeTemplateInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetProfileObjectTypeTemplateInput {
     /// Consumes the builder and constructs an Operation<[`GetProfileObjectTypeTemplate`](crate::operation::GetProfileObjectTypeTemplate)>
     #[allow(clippy::let_and_return)]
@@ -3236,7 +3209,7 @@ impl GetProfileObjectTypeTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetProfileObjectTypeTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3326,7 +3299,7 @@ impl GetProfileObjectTypeTemplateInput {
             "GetProfileObjectTypeTemplate",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3401,7 +3374,7 @@ pub mod list_account_integrations_input {
 pub type ListAccountIntegrationsInputOperationOutputAlias =
     crate::operation::ListAccountIntegrations;
 #[doc(hidden)]
-pub type ListAccountIntegrationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAccountIntegrationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAccountIntegrationsInput {
     /// Consumes the builder and constructs an Operation<[`ListAccountIntegrations`](crate::operation::ListAccountIntegrations)>
     #[allow(clippy::let_and_return)]
@@ -3412,7 +3385,7 @@ impl ListAccountIntegrationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAccountIntegrations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3511,7 +3484,7 @@ impl ListAccountIntegrationsInput {
             "ListAccountIntegrations",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3581,7 +3554,7 @@ pub mod list_domains_input {
 #[doc(hidden)]
 pub type ListDomainsInputOperationOutputAlias = crate::operation::ListDomains;
 #[doc(hidden)]
-pub type ListDomainsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDomainsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDomainsInput {
     /// Consumes the builder and constructs an Operation<[`ListDomains`](crate::operation::ListDomains)>
     #[allow(clippy::let_and_return)]
@@ -3592,7 +3565,7 @@ impl ListDomainsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDomains,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3683,7 +3656,7 @@ impl ListDomainsInput {
             "ListDomains",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3719,14 +3692,12 @@ pub mod list_identity_resolution_jobs_input {
             self.domain_name = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3760,7 +3731,7 @@ pub mod list_identity_resolution_jobs_input {
 pub type ListIdentityResolutionJobsInputOperationOutputAlias =
     crate::operation::ListIdentityResolutionJobs;
 #[doc(hidden)]
-pub type ListIdentityResolutionJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListIdentityResolutionJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListIdentityResolutionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListIdentityResolutionJobs`](crate::operation::ListIdentityResolutionJobs)>
     #[allow(clippy::let_and_return)]
@@ -3771,7 +3742,7 @@ impl ListIdentityResolutionJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListIdentityResolutionJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3882,7 +3853,7 @@ impl ListIdentityResolutionJobsInput {
             "ListIdentityResolutionJobs",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3956,7 +3927,7 @@ pub mod list_integrations_input {
 #[doc(hidden)]
 pub type ListIntegrationsInputOperationOutputAlias = crate::operation::ListIntegrations;
 #[doc(hidden)]
-pub type ListIntegrationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListIntegrationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListIntegrationsInput {
     /// Consumes the builder and constructs an Operation<[`ListIntegrations`](crate::operation::ListIntegrations)>
     #[allow(clippy::let_and_return)]
@@ -3967,7 +3938,7 @@ impl ListIntegrationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListIntegrations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4078,7 +4049,7 @@ impl ListIntegrationsInput {
             "ListIntegrations",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4160,14 +4131,12 @@ pub mod list_profile_objects_input {
             self.profile_id = input;
             self
         }
-        /// <p>Applies a filter to the response to include profile objects with the specified index
-        /// values. This filter is only supported for ObjectTypeName _asset and _case.</p>
+        /// <p>Applies a filter to the response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset, _case and _order.</p>
         pub fn object_filter(mut self, input: crate::model::ObjectFilter) -> Self {
             self.object_filter = Some(input);
             self
         }
-        /// <p>Applies a filter to the response to include profile objects with the specified index
-        /// values. This filter is only supported for ObjectTypeName _asset and _case.</p>
+        /// <p>Applies a filter to the response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset, _case and _order.</p>
         pub fn set_object_filter(
             mut self,
             input: std::option::Option<crate::model::ObjectFilter>,
@@ -4196,7 +4165,7 @@ pub mod list_profile_objects_input {
 #[doc(hidden)]
 pub type ListProfileObjectsInputOperationOutputAlias = crate::operation::ListProfileObjects;
 #[doc(hidden)]
-pub type ListProfileObjectsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListProfileObjectsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProfileObjectsInput {
     /// Consumes the builder and constructs an Operation<[`ListProfileObjects`](crate::operation::ListProfileObjects)>
     #[allow(clippy::let_and_return)]
@@ -4207,7 +4176,7 @@ impl ListProfileObjectsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListProfileObjects,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4324,7 +4293,7 @@ impl ListProfileObjectsInput {
             "ListProfileObjects",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4406,7 +4375,7 @@ pub mod list_profile_object_types_input {
 #[doc(hidden)]
 pub type ListProfileObjectTypesInputOperationOutputAlias = crate::operation::ListProfileObjectTypes;
 #[doc(hidden)]
-pub type ListProfileObjectTypesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListProfileObjectTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProfileObjectTypesInput {
     /// Consumes the builder and constructs an Operation<[`ListProfileObjectTypes`](crate::operation::ListProfileObjectTypes)>
     #[allow(clippy::let_and_return)]
@@ -4417,7 +4386,7 @@ impl ListProfileObjectTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListProfileObjectTypes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4528,7 +4497,7 @@ impl ListProfileObjectTypesInput {
             "ListProfileObjectTypes",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4591,7 +4560,8 @@ pub mod list_profile_object_type_templates_input {
 pub type ListProfileObjectTypeTemplatesInputOperationOutputAlias =
     crate::operation::ListProfileObjectTypeTemplates;
 #[doc(hidden)]
-pub type ListProfileObjectTypeTemplatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListProfileObjectTypeTemplatesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListProfileObjectTypeTemplatesInput {
     /// Consumes the builder and constructs an Operation<[`ListProfileObjectTypeTemplates`](crate::operation::ListProfileObjectTypeTemplates)>
     #[allow(clippy::let_and_return)]
@@ -4602,7 +4572,7 @@ impl ListProfileObjectTypeTemplatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListProfileObjectTypeTemplates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4693,7 +4663,7 @@ impl ListProfileObjectTypeTemplatesInput {
             "ListProfileObjectTypeTemplates",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4743,7 +4713,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -4754,7 +4724,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4844,7 +4814,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4915,9 +4885,7 @@ pub mod merge_profiles_input {
             self.profile_ids_to_be_merged = input;
             self
         }
-        /// <p>The identifiers of the fields in the profile that has the information you want to apply
-        /// to the merge. For example, say you want to merge EmailAddress from Profile1 into
-        /// MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
+        /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
         pub fn field_source_profile_ids(
             mut self,
             input: crate::model::FieldSourceProfileIds,
@@ -4925,9 +4893,7 @@ pub mod merge_profiles_input {
             self.field_source_profile_ids = Some(input);
             self
         }
-        /// <p>The identifiers of the fields in the profile that has the information you want to apply
-        /// to the merge. For example, say you want to merge EmailAddress from Profile1 into
-        /// MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
+        /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
         pub fn set_field_source_profile_ids(
             mut self,
             input: std::option::Option<crate::model::FieldSourceProfileIds>,
@@ -4954,7 +4920,7 @@ pub mod merge_profiles_input {
 #[doc(hidden)]
 pub type MergeProfilesInputOperationOutputAlias = crate::operation::MergeProfiles;
 #[doc(hidden)]
-pub type MergeProfilesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type MergeProfilesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl MergeProfilesInput {
     /// Consumes the builder and constructs an Operation<[`MergeProfiles`](crate::operation::MergeProfiles)>
     #[allow(clippy::let_and_return)]
@@ -4965,7 +4931,7 @@ impl MergeProfilesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::MergeProfiles,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5064,7 +5030,7 @@ impl MergeProfilesInput {
             "MergeProfiles",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5100,6 +5066,9 @@ pub mod put_integration_input {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) flow_definition: std::option::Option<crate::model::FlowDefinition>,
+        pub(crate) object_type_names: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>The unique name of the domain.</p>
@@ -5160,19 +5129,42 @@ pub mod put_integration_input {
             self.tags = input;
             self
         }
-        /// <p>The configuration that controls how Customer Profiles retrieves data from the
-        /// source.</p>
+        /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
         pub fn flow_definition(mut self, input: crate::model::FlowDefinition) -> Self {
             self.flow_definition = Some(input);
             self
         }
-        /// <p>The configuration that controls how Customer Profiles retrieves data from the
-        /// source.</p>
+        /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
         pub fn set_flow_definition(
             mut self,
             input: std::option::Option<crate::model::FlowDefinition>,
         ) -> Self {
             self.flow_definition = input;
+            self
+        }
+        /// Adds a key-value pair to `object_type_names`.
+        ///
+        /// To override the contents of this collection use [`set_object_type_names`](Self::set_object_type_names).
+        ///
+        /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
+        pub fn object_type_names(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.object_type_names.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.object_type_names = Some(hash_map);
+            self
+        }
+        /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
+        pub fn set_object_type_names(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.object_type_names = input;
             self
         }
         /// Consumes the builder and constructs a [`PutIntegrationInput`](crate::input::PutIntegrationInput)
@@ -5188,6 +5180,7 @@ pub mod put_integration_input {
                 object_type_name: self.object_type_name,
                 tags: self.tags,
                 flow_definition: self.flow_definition,
+                object_type_names: self.object_type_names,
             })
         }
     }
@@ -5195,7 +5188,7 @@ pub mod put_integration_input {
 #[doc(hidden)]
 pub type PutIntegrationInputOperationOutputAlias = crate::operation::PutIntegration;
 #[doc(hidden)]
-pub type PutIntegrationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutIntegrationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutIntegrationInput {
     /// Consumes the builder and constructs an Operation<[`PutIntegration`](crate::operation::PutIntegration)>
     #[allow(clippy::let_and_return)]
@@ -5206,7 +5199,7 @@ impl PutIntegrationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutIntegration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5306,7 +5299,7 @@ impl PutIntegrationInput {
             "PutIntegration",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5391,7 +5384,7 @@ pub mod put_profile_object_input {
 #[doc(hidden)]
 pub type PutProfileObjectInputOperationOutputAlias = crate::operation::PutProfileObject;
 #[doc(hidden)]
-pub type PutProfileObjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutProfileObjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutProfileObjectInput {
     /// Consumes the builder and constructs an Operation<[`PutProfileObject`](crate::operation::PutProfileObject)>
     #[allow(clippy::let_and_return)]
@@ -5402,7 +5395,7 @@ impl PutProfileObjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutProfileObject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5502,7 +5495,7 @@ impl PutProfileObjectInput {
             "PutProfileObject",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5606,14 +5599,12 @@ pub mod put_profile_object_type_input {
             self.expiration_days = input;
             self
         }
-        /// <p>The customer-provided key to encrypt the profile object that will be created in this
-        /// profile object type.</p>
+        /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
         pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.encryption_key = Some(input.into());
             self
         }
-        /// <p>The customer-provided key to encrypt the profile object that will be created in this
-        /// profile object type.</p>
+        /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
         pub fn set_encryption_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5621,26 +5612,17 @@ pub mod put_profile_object_type_input {
             self.encryption_key = input;
             self
         }
-        /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist
-        /// for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation
-        /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and
-        /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
-        /// is found, then the service creates a new standard profile.</p>
+        /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
         pub fn allow_profile_creation(mut self, input: bool) -> Self {
             self.allow_profile_creation = Some(input);
             self
         }
-        /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist
-        /// for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation
-        /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and
-        /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
-        /// is found, then the service creates a new standard profile.</p>
+        /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
         pub fn set_allow_profile_creation(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_profile_creation = input;
             self
         }
-        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.
-        /// </p>
+        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
         pub fn source_last_updated_timestamp_format(
             mut self,
             input: impl Into<std::string::String>,
@@ -5648,8 +5630,7 @@ pub mod put_profile_object_type_input {
             self.source_last_updated_timestamp_format = Some(input.into());
             self
         }
-        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.
-        /// </p>
+        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
         pub fn set_source_last_updated_timestamp_format(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5665,10 +5646,10 @@ pub mod put_profile_object_type_input {
         pub fn fields(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ObjectTypeField>,
+            v: crate::model::ObjectTypeField,
         ) -> Self {
             let mut hash_map = self.fields.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.fields = Some(hash_map);
             self
         }
@@ -5690,10 +5671,10 @@ pub mod put_profile_object_type_input {
         pub fn keys(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<crate::model::ObjectTypeKey>>,
+            v: std::vec::Vec<crate::model::ObjectTypeKey>,
         ) -> Self {
             let mut hash_map = self.keys.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.keys = Some(hash_map);
             self
         }
@@ -5761,7 +5742,7 @@ pub mod put_profile_object_type_input {
 #[doc(hidden)]
 pub type PutProfileObjectTypeInputOperationOutputAlias = crate::operation::PutProfileObjectType;
 #[doc(hidden)]
-pub type PutProfileObjectTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutProfileObjectTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutProfileObjectTypeInput {
     /// Consumes the builder and constructs an Operation<[`PutProfileObjectType`](crate::operation::PutProfileObjectType)>
     #[allow(clippy::let_and_return)]
@@ -5772,7 +5753,7 @@ impl PutProfileObjectTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutProfileObjectType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5890,7 +5871,7 @@ impl PutProfileObjectTypeInput {
             "PutProfileObjectType",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5956,16 +5937,12 @@ pub mod search_profiles_input {
             self.domain_name = input;
             self
         }
-        /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId,
-        /// _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
-        /// _salesforceContactId, _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>
+        /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>
         pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_name = Some(input.into());
             self
         }
-        /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId,
-        /// _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
-        /// _salesforceContactId, _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>
+        /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>
         pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_name = input;
             self
@@ -6009,7 +5986,7 @@ pub mod search_profiles_input {
 #[doc(hidden)]
 pub type SearchProfilesInputOperationOutputAlias = crate::operation::SearchProfiles;
 #[doc(hidden)]
-pub type SearchProfilesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchProfilesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchProfilesInput {
     /// Consumes the builder and constructs an Operation<[`SearchProfiles`](crate::operation::SearchProfiles)>
     #[allow(clippy::let_and_return)]
@@ -6020,7 +5997,7 @@ impl SearchProfilesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchProfiles,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6137,7 +6114,7 @@ impl SearchProfilesInput {
             "SearchProfiles",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6224,7 +6201,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -6235,7 +6212,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6330,7 +6307,7 @@ impl TagResourceInput {
             "TagResource",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6409,7 +6386,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -6420,7 +6397,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6523,7 +6500,7 @@ impl UntagResourceInput {
             "UntagResource",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6574,18 +6551,12 @@ pub mod update_domain_input {
             self.default_expiration_days = input;
             self
         }
-        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-        /// of encryption key is specified. It is used to encrypt all data before it is placed in
-        /// permanent or semi-permanent storage. If specified as an empty string, it will clear any
-        /// existing value.</p>
+        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage. If specified as an empty string, it will clear any existing value.</p>
         pub fn default_encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_encryption_key = Some(input.into());
             self
         }
-        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-        /// of encryption key is specified. It is used to encrypt all data before it is placed in
-        /// permanent or semi-permanent storage. If specified as an empty string, it will clear any
-        /// existing value.</p>
+        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage. If specified as an empty string, it will clear any existing value.</p>
         pub fn set_default_encryption_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6593,20 +6564,12 @@ pub mod update_domain_input {
             self.default_encryption_key = input;
             self
         }
-        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-        /// ingesting data from third party applications. If specified as an empty string, it will
-        /// clear any existing value. You must set up a policy on the DeadLetterQueue for the
-        /// SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the
-        /// DeadLetterQueue.</p>
+        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. If specified as an empty string, it will clear any existing value. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
         pub fn dead_letter_queue_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.dead_letter_queue_url = Some(input.into());
             self
         }
-        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-        /// ingesting data from third party applications. If specified as an empty string, it will
-        /// clear any existing value. You must set up a policy on the DeadLetterQueue for the
-        /// SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the
-        /// DeadLetterQueue.</p>
+        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. If specified as an empty string, it will clear any existing value. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
         pub fn set_dead_letter_queue_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6614,24 +6577,14 @@ pub mod update_domain_input {
             self.dead_letter_queue_url = input;
             self
         }
-        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-        /// <p>After the Identity Resolution Job completes, use the
-        /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-        /// S3.</p>
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
         pub fn matching(mut self, input: crate::model::MatchingRequest) -> Self {
             self.matching = Some(input);
             self
         }
-        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-        /// <p>After the Identity Resolution Job completes, use the
-        /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-        /// S3.</p>
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
         pub fn set_matching(
             mut self,
             input: std::option::Option<crate::model::MatchingRequest>,
@@ -6685,7 +6638,7 @@ pub mod update_domain_input {
 #[doc(hidden)]
 pub type UpdateDomainInputOperationOutputAlias = crate::operation::UpdateDomain;
 #[doc(hidden)]
-pub type UpdateDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDomainInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDomain`](crate::operation::UpdateDomain)>
     #[allow(clippy::let_and_return)]
@@ -6696,7 +6649,7 @@ impl UpdateDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6791,7 +6744,7 @@ impl UpdateDomainInput {
             "UpdateDomain",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6969,14 +6922,12 @@ pub mod update_profile_input {
             self.gender = input;
             self
         }
-        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
-        /// number. </p>
+        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
         pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.phone_number = Some(input.into());
             self
         }
-        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
-        /// number. </p>
+        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
@@ -7020,14 +6971,12 @@ pub mod update_profile_input {
             self.business_phone_number = input;
             self
         }
-        /// <p>The customer’s email address, which has not been specified as a personal or business
-        /// address. </p>
+        /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
         pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.email_address = Some(input.into());
             self
         }
-        /// <p>The customer’s email address, which has not been specified as a personal or business
-        /// address. </p>
+        /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7061,14 +7010,12 @@ pub mod update_profile_input {
             self.business_email_address = input;
             self
         }
-        /// <p>A generic address associated with the customer that is not mailing, shipping, or
-        /// billing.</p>
+        /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
         pub fn address(mut self, input: crate::model::UpdateAddress) -> Self {
             self.address = Some(input);
             self
         }
-        /// <p>A generic address associated with the customer that is not mailing, shipping, or
-        /// billing.</p>
+        /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
         pub fn set_address(
             mut self,
             input: std::option::Option<crate::model::UpdateAddress>,
@@ -7178,7 +7125,7 @@ pub mod update_profile_input {
 #[doc(hidden)]
 pub type UpdateProfileInputOperationOutputAlias = crate::operation::UpdateProfile;
 #[doc(hidden)]
-pub type UpdateProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateProfileInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProfile`](crate::operation::UpdateProfile)>
     #[allow(clippy::let_and_return)]
@@ -7189,7 +7136,7 @@ impl UpdateProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7288,7 +7235,7 @@ impl UpdateProfileInput {
             "UpdateProfile",
             "customerprofiles",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7337,8 +7284,7 @@ pub struct UpdateProfileInput {
     pub birth_date: std::option::Option<std::string::String>,
     /// <p>The gender with which the customer identifies. </p>
     pub gender: std::option::Option<crate::model::Gender>,
-    /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
-    /// number. </p>
+    /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The customer’s mobile phone number.</p>
     pub mobile_phone_number: std::option::Option<std::string::String>,
@@ -7346,15 +7292,13 @@ pub struct UpdateProfileInput {
     pub home_phone_number: std::option::Option<std::string::String>,
     /// <p>The customer’s business phone number.</p>
     pub business_phone_number: std::option::Option<std::string::String>,
-    /// <p>The customer’s email address, which has not been specified as a personal or business
-    /// address. </p>
+    /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The customer’s personal email address.</p>
     pub personal_email_address: std::option::Option<std::string::String>,
     /// <p>The customer’s business email address.</p>
     pub business_email_address: std::option::Option<std::string::String>,
-    /// <p>A generic address associated with the customer that is not mailing, shipping, or
-    /// billing.</p>
+    /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
     pub address: std::option::Option<crate::model::UpdateAddress>,
     /// <p>The customer’s shipping address.</p>
     pub shipping_address: std::option::Option<crate::model::UpdateAddress>,
@@ -7411,8 +7355,7 @@ impl UpdateProfileInput {
     pub fn gender(&self) -> std::option::Option<&crate::model::Gender> {
         self.gender.as_ref()
     }
-    /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
-    /// number. </p>
+    /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
     pub fn phone_number(&self) -> std::option::Option<&str> {
         self.phone_number.as_deref()
     }
@@ -7428,8 +7371,7 @@ impl UpdateProfileInput {
     pub fn business_phone_number(&self) -> std::option::Option<&str> {
         self.business_phone_number.as_deref()
     }
-    /// <p>The customer’s email address, which has not been specified as a personal or business
-    /// address. </p>
+    /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
     pub fn email_address(&self) -> std::option::Option<&str> {
         self.email_address.as_deref()
     }
@@ -7441,8 +7383,7 @@ impl UpdateProfileInput {
     pub fn business_email_address(&self) -> std::option::Option<&str> {
         self.business_email_address.as_deref()
     }
-    /// <p>A generic address associated with the customer that is not mailing, shipping, or
-    /// billing.</p>
+    /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
     pub fn address(&self) -> std::option::Option<&crate::model::UpdateAddress> {
         self.address.as_ref()
     }
@@ -7504,24 +7445,12 @@ pub struct UpdateDomainInput {
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The default number of days until the data within the domain expires.</p>
     pub default_expiration_days: std::option::Option<i32>,
-    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-    /// of encryption key is specified. It is used to encrypt all data before it is placed in
-    /// permanent or semi-permanent storage. If specified as an empty string, it will clear any
-    /// existing value.</p>
+    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage. If specified as an empty string, it will clear any existing value.</p>
     pub default_encryption_key: std::option::Option<std::string::String>,
-    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-    /// ingesting data from third party applications. If specified as an empty string, it will
-    /// clear any existing value. You must set up a policy on the DeadLetterQueue for the
-    /// SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the
-    /// DeadLetterQueue.</p>
+    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. If specified as an empty string, it will clear any existing value. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
     pub dead_letter_queue_url: std::option::Option<std::string::String>,
-    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-    /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-    /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-    /// <p>After the Identity Resolution Job completes, use the
-    /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-    /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-    /// S3.</p>
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
     pub matching: std::option::Option<crate::model::MatchingRequest>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
@@ -7536,28 +7465,16 @@ impl UpdateDomainInput {
     pub fn default_expiration_days(&self) -> std::option::Option<i32> {
         self.default_expiration_days
     }
-    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-    /// of encryption key is specified. It is used to encrypt all data before it is placed in
-    /// permanent or semi-permanent storage. If specified as an empty string, it will clear any
-    /// existing value.</p>
+    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage. If specified as an empty string, it will clear any existing value.</p>
     pub fn default_encryption_key(&self) -> std::option::Option<&str> {
         self.default_encryption_key.as_deref()
     }
-    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-    /// ingesting data from third party applications. If specified as an empty string, it will
-    /// clear any existing value. You must set up a policy on the DeadLetterQueue for the
-    /// SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the
-    /// DeadLetterQueue.</p>
+    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. If specified as an empty string, it will clear any existing value. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
     pub fn dead_letter_queue_url(&self) -> std::option::Option<&str> {
         self.dead_letter_queue_url.as_deref()
     }
-    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-    /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-    /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-    /// <p>After the Identity Resolution Job completes, use the
-    /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-    /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-    /// S3.</p>
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
     pub fn matching(&self) -> std::option::Option<&crate::model::MatchingRequest> {
         self.matching.as_ref()
     }
@@ -7652,9 +7569,7 @@ pub struct SearchProfilesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The unique name of the domain.</p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId,
-    /// _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
-    /// _salesforceContactId, _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>
+    /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>
     pub key_name: std::option::Option<std::string::String>,
     /// <p>A list of key values.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7672,9 +7587,7 @@ impl SearchProfilesInput {
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId,
-    /// _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
-    /// _salesforceContactId, _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>
+    /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>
     pub fn key_name(&self) -> std::option::Option<&str> {
         self.key_name.as_deref()
     }
@@ -7709,17 +7622,11 @@ pub struct PutProfileObjectTypeInput {
     pub template_id: std::option::Option<std::string::String>,
     /// <p>The number of days until the data in the object expires.</p>
     pub expiration_days: std::option::Option<i32>,
-    /// <p>The customer-provided key to encrypt the profile object that will be created in this
-    /// profile object type.</p>
+    /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
     pub encryption_key: std::option::Option<std::string::String>,
-    /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist
-    /// for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation
-    /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and
-    /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
-    /// is found, then the service creates a new standard profile.</p>
+    /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
     pub allow_profile_creation: bool,
-    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.
-    /// </p>
+    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
     pub source_last_updated_timestamp_format: std::option::Option<std::string::String>,
     /// <p>A map of the name and ObjectType field.</p>
     pub fields: std::option::Option<
@@ -7754,21 +7661,15 @@ impl PutProfileObjectTypeInput {
     pub fn expiration_days(&self) -> std::option::Option<i32> {
         self.expiration_days
     }
-    /// <p>The customer-provided key to encrypt the profile object that will be created in this
-    /// profile object type.</p>
+    /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
     pub fn encryption_key(&self) -> std::option::Option<&str> {
         self.encryption_key.as_deref()
     }
-    /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist
-    /// for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation
-    /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and
-    /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
-    /// is found, then the service creates a new standard profile.</p>
+    /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
     pub fn allow_profile_creation(&self) -> bool {
         self.allow_profile_creation
     }
-    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.
-    /// </p>
+    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
     pub fn source_last_updated_timestamp_format(&self) -> std::option::Option<&str> {
         self.source_last_updated_timestamp_format.as_deref()
     }
@@ -7865,9 +7766,11 @@ pub struct PutIntegrationInput {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The configuration that controls how Customer Profiles retrieves data from the
-    /// source.</p>
+    /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
     pub flow_definition: std::option::Option<crate::model::FlowDefinition>,
+    /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
+    pub object_type_names:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl PutIntegrationInput {
     /// <p>The unique name of the domain.</p>
@@ -7889,10 +7792,16 @@ impl PutIntegrationInput {
     {
         self.tags.as_ref()
     }
-    /// <p>The configuration that controls how Customer Profiles retrieves data from the
-    /// source.</p>
+    /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
     pub fn flow_definition(&self) -> std::option::Option<&crate::model::FlowDefinition> {
         self.flow_definition.as_ref()
+    }
+    /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
+    pub fn object_type_names(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.object_type_names.as_ref()
     }
 }
 impl std::fmt::Debug for PutIntegrationInput {
@@ -7903,6 +7812,7 @@ impl std::fmt::Debug for PutIntegrationInput {
         formatter.field("object_type_name", &self.object_type_name);
         formatter.field("tags", &self.tags);
         formatter.field("flow_definition", &self.flow_definition);
+        formatter.field("object_type_names", &self.object_type_names);
         formatter.finish()
     }
 }
@@ -7917,9 +7827,7 @@ pub struct MergeProfilesInput {
     pub main_profile_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the profile to be merged into MainProfileId.</p>
     pub profile_ids_to_be_merged: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The identifiers of the fields in the profile that has the information you want to apply
-    /// to the merge. For example, say you want to merge EmailAddress from Profile1 into
-    /// MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
+    /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
     pub field_source_profile_ids: std::option::Option<crate::model::FieldSourceProfileIds>,
 }
 impl MergeProfilesInput {
@@ -7935,9 +7843,7 @@ impl MergeProfilesInput {
     pub fn profile_ids_to_be_merged(&self) -> std::option::Option<&[std::string::String]> {
         self.profile_ids_to_be_merged.as_deref()
     }
-    /// <p>The identifiers of the fields in the profile that has the information you want to apply
-    /// to the merge. For example, say you want to merge EmailAddress from Profile1 into
-    /// MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
+    /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
     pub fn field_source_profile_ids(
         &self,
     ) -> std::option::Option<&crate::model::FieldSourceProfileIds> {
@@ -8053,8 +7959,7 @@ pub struct ListProfileObjectsInput {
     pub object_type_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of a customer profile.</p>
     pub profile_id: std::option::Option<std::string::String>,
-    /// <p>Applies a filter to the response to include profile objects with the specified index
-    /// values. This filter is only supported for ObjectTypeName _asset and _case.</p>
+    /// <p>Applies a filter to the response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset, _case and _order.</p>
     pub object_filter: std::option::Option<crate::model::ObjectFilter>,
 }
 impl ListProfileObjectsInput {
@@ -8078,8 +7983,7 @@ impl ListProfileObjectsInput {
     pub fn profile_id(&self) -> std::option::Option<&str> {
         self.profile_id.as_deref()
     }
-    /// <p>Applies a filter to the response to include profile objects with the specified index
-    /// values. This filter is only supported for ObjectTypeName _asset and _case.</p>
+    /// <p>Applies a filter to the response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset, _case and _order.</p>
     pub fn object_filter(&self) -> std::option::Option<&crate::model::ObjectFilter> {
         self.object_filter.as_ref()
     }
@@ -8138,8 +8042,7 @@ impl std::fmt::Debug for ListIntegrationsInput {
 pub struct ListIdentityResolutionJobsInput {
     /// <p>The unique name of the domain.</p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -8149,8 +8052,7 @@ impl ListIdentityResolutionJobsInput {
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8285,8 +8187,7 @@ impl std::fmt::Debug for GetProfileObjectTypeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMatchesInput {
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -8294,8 +8195,7 @@ pub struct GetMatchesInput {
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl GetMatchesInput {
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8643,8 +8543,7 @@ pub struct CreateProfileInput {
     pub birth_date: std::option::Option<std::string::String>,
     /// <p>The gender with which the customer identifies. </p>
     pub gender: std::option::Option<crate::model::Gender>,
-    /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
-    /// number. </p>
+    /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The customer’s mobile phone number.</p>
     pub mobile_phone_number: std::option::Option<std::string::String>,
@@ -8652,15 +8551,13 @@ pub struct CreateProfileInput {
     pub home_phone_number: std::option::Option<std::string::String>,
     /// <p>The customer’s business phone number.</p>
     pub business_phone_number: std::option::Option<std::string::String>,
-    /// <p>The customer’s email address, which has not been specified as a personal or business
-    /// address. </p>
+    /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The customer’s personal email address.</p>
     pub personal_email_address: std::option::Option<std::string::String>,
     /// <p>The customer’s business email address.</p>
     pub business_email_address: std::option::Option<std::string::String>,
-    /// <p>A generic address associated with the customer that is not mailing, shipping, or
-    /// billing.</p>
+    /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
     pub address: std::option::Option<crate::model::Address>,
     /// <p>The customer’s shipping address.</p>
     pub shipping_address: std::option::Option<crate::model::Address>,
@@ -8713,8 +8610,7 @@ impl CreateProfileInput {
     pub fn gender(&self) -> std::option::Option<&crate::model::Gender> {
         self.gender.as_ref()
     }
-    /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
-    /// number. </p>
+    /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
     pub fn phone_number(&self) -> std::option::Option<&str> {
         self.phone_number.as_deref()
     }
@@ -8730,8 +8626,7 @@ impl CreateProfileInput {
     pub fn business_phone_number(&self) -> std::option::Option<&str> {
         self.business_phone_number.as_deref()
     }
-    /// <p>The customer’s email address, which has not been specified as a personal or business
-    /// address. </p>
+    /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
     pub fn email_address(&self) -> std::option::Option<&str> {
         self.email_address.as_deref()
     }
@@ -8743,8 +8638,7 @@ impl CreateProfileInput {
     pub fn business_email_address(&self) -> std::option::Option<&str> {
         self.business_email_address.as_deref()
     }
-    /// <p>A generic address associated with the customer that is not mailing, shipping, or
-    /// billing.</p>
+    /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
     pub fn address(&self) -> std::option::Option<&crate::model::Address> {
         self.address.as_ref()
     }
@@ -8805,22 +8699,12 @@ pub struct CreateDomainInput {
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The default number of days until the data within the domain expires.</p>
     pub default_expiration_days: std::option::Option<i32>,
-    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-    /// of encryption key is specified. It is used to encrypt all data before it is placed in
-    /// permanent or semi-permanent storage.</p>
+    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
     pub default_encryption_key: std::option::Option<std::string::String>,
-    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-    /// ingesting data from third party applications. You must set up a policy on the
-    /// DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send
-    /// messages to the DeadLetterQueue.</p>
+    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
     pub dead_letter_queue_url: std::option::Option<std::string::String>,
-    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-    /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-    /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-    /// <p>After the Identity Resolution Job completes, use the
-    /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-    /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-    /// S3.</p>
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
     pub matching: std::option::Option<crate::model::MatchingRequest>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
@@ -8835,26 +8719,16 @@ impl CreateDomainInput {
     pub fn default_expiration_days(&self) -> std::option::Option<i32> {
         self.default_expiration_days
     }
-    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-    /// of encryption key is specified. It is used to encrypt all data before it is placed in
-    /// permanent or semi-permanent storage.</p>
+    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
     pub fn default_encryption_key(&self) -> std::option::Option<&str> {
         self.default_encryption_key.as_deref()
     }
-    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-    /// ingesting data from third party applications. You must set up a policy on the
-    /// DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send
-    /// messages to the DeadLetterQueue.</p>
+    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
     pub fn dead_letter_queue_url(&self) -> std::option::Option<&str> {
         self.dead_letter_queue_url.as_deref()
     }
-    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-    /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-    /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-    /// <p>After the Identity Resolution Job completes, use the
-    /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-    /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-    /// S3.</p>
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
     pub fn matching(&self) -> std::option::Option<&crate::model::MatchingRequest> {
         self.matching.as_ref()
     }

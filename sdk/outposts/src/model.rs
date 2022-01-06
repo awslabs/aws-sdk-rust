@@ -58,7 +58,7 @@ impl AsRef<str> for ResourceType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Site {
-    /// <p>The ID of the site.</p>
+    /// <p> The ID of the site. </p>
     pub site_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account.</p>
     pub account_id: std::option::Option<std::string::String>,
@@ -71,27 +71,19 @@ pub struct Site {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the site.</p>
     pub site_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// Notes about a site.
-    /// </p>
+    /// <p> Notes about a site. </p>
     pub notes: std::option::Option<std::string::String>,
-    /// <p>
-    /// The ISO-3166 two-letter country code where the hardware is installed and powered on.
-    /// </p>
+    /// <p> The ISO-3166 two-letter country code where the hardware is installed and powered on. </p>
     pub operating_address_country_code: std::option::Option<std::string::String>,
     /// <p> State or region where the hardware is installed and powered on. </p>
     pub operating_address_state_or_region: std::option::Option<std::string::String>,
-    /// <p>
-    /// City where the hardware is installed and powered on.
-    /// </p>
+    /// <p> City where the hardware is installed and powered on. </p>
     pub operating_address_city: std::option::Option<std::string::String>,
-    /// <p>
-    /// Information about the physical and logistical details for a rack at the site.
-    /// </p>
+    /// <p> Information about the physical and logistical details for a rack at the site. </p>
     pub rack_physical_properties: std::option::Option<crate::model::RackPhysicalProperties>,
 }
 impl Site {
-    /// <p>The ID of the site.</p>
+    /// <p> The ID of the site. </p>
     pub fn site_id(&self) -> std::option::Option<&str> {
         self.site_id.as_deref()
     }
@@ -118,15 +110,11 @@ impl Site {
     pub fn site_arn(&self) -> std::option::Option<&str> {
         self.site_arn.as_deref()
     }
-    /// <p>
-    /// Notes about a site.
-    /// </p>
+    /// <p> Notes about a site. </p>
     pub fn notes(&self) -> std::option::Option<&str> {
         self.notes.as_deref()
     }
-    /// <p>
-    /// The ISO-3166 two-letter country code where the hardware is installed and powered on.
-    /// </p>
+    /// <p> The ISO-3166 two-letter country code where the hardware is installed and powered on. </p>
     pub fn operating_address_country_code(&self) -> std::option::Option<&str> {
         self.operating_address_country_code.as_deref()
     }
@@ -134,15 +122,11 @@ impl Site {
     pub fn operating_address_state_or_region(&self) -> std::option::Option<&str> {
         self.operating_address_state_or_region.as_deref()
     }
-    /// <p>
-    /// City where the hardware is installed and powered on.
-    /// </p>
+    /// <p> City where the hardware is installed and powered on. </p>
     pub fn operating_address_city(&self) -> std::option::Option<&str> {
         self.operating_address_city.as_deref()
     }
-    /// <p>
-    /// Information about the physical and logistical details for a rack at the site.
-    /// </p>
+    /// <p> Information about the physical and logistical details for a rack at the site. </p>
     pub fn rack_physical_properties(
         &self,
     ) -> std::option::Option<&crate::model::RackPhysicalProperties> {
@@ -194,12 +178,12 @@ pub mod site {
             std::option::Option<crate::model::RackPhysicalProperties>,
     }
     impl Builder {
-        /// <p>The ID of the site.</p>
+        /// <p> The ID of the site. </p>
         pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.site_id = Some(input.into());
             self
         }
-        /// <p>The ID of the site.</p>
+        /// <p> The ID of the site. </p>
         pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.site_id = input;
             self
@@ -269,23 +253,17 @@ pub mod site {
             self.site_arn = input;
             self
         }
-        /// <p>
-        /// Notes about a site.
-        /// </p>
+        /// <p> Notes about a site. </p>
         pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
             self.notes = Some(input.into());
             self
         }
-        /// <p>
-        /// Notes about a site.
-        /// </p>
+        /// <p> Notes about a site. </p>
         pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.notes = input;
             self
         }
-        /// <p>
-        /// The ISO-3166 two-letter country code where the hardware is installed and powered on.
-        /// </p>
+        /// <p> The ISO-3166 two-letter country code where the hardware is installed and powered on. </p>
         pub fn operating_address_country_code(
             mut self,
             input: impl Into<std::string::String>,
@@ -293,9 +271,7 @@ pub mod site {
             self.operating_address_country_code = Some(input.into());
             self
         }
-        /// <p>
-        /// The ISO-3166 two-letter country code where the hardware is installed and powered on.
-        /// </p>
+        /// <p> The ISO-3166 two-letter country code where the hardware is installed and powered on. </p>
         pub fn set_operating_address_country_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -319,16 +295,12 @@ pub mod site {
             self.operating_address_state_or_region = input;
             self
         }
-        /// <p>
-        /// City where the hardware is installed and powered on.
-        /// </p>
+        /// <p> City where the hardware is installed and powered on. </p>
         pub fn operating_address_city(mut self, input: impl Into<std::string::String>) -> Self {
             self.operating_address_city = Some(input.into());
             self
         }
-        /// <p>
-        /// City where the hardware is installed and powered on.
-        /// </p>
+        /// <p> City where the hardware is installed and powered on. </p>
         pub fn set_operating_address_city(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -336,9 +308,7 @@ pub mod site {
             self.operating_address_city = input;
             self
         }
-        /// <p>
-        /// Information about the physical and logistical details for a rack at the site.
-        /// </p>
+        /// <p> Information about the physical and logistical details for a rack at the site. </p>
         pub fn rack_physical_properties(
             mut self,
             input: crate::model::RackPhysicalProperties,
@@ -346,9 +316,7 @@ pub mod site {
             self.rack_physical_properties = Some(input);
             self
         }
-        /// <p>
-        /// Information about the physical and logistical details for a rack at the site.
-        /// </p>
+        /// <p> Information about the physical and logistical details for a rack at the site. </p>
         pub fn set_rack_physical_properties(
             mut self,
             input: std::option::Option<crate::model::RackPhysicalProperties>,
@@ -381,11 +349,7 @@ impl Site {
     }
 }
 
-/// <p> Information about the physical and logistical details for racks at sites.
-/// For more information
-/// about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network
-/// readiness checklist</a> in the Amazon Web Services Outposts User Guide.
-/// </p>
+/// <p> Information about the physical and logistical details for racks at sites. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RackPhysicalProperties {
@@ -403,14 +367,9 @@ pub struct RackPhysicalProperties {
     pub uplink_count: std::option::Option<crate::model::UplinkCount>,
     /// <p>The type of fiber used to attach the Outpost to the network. </p>
     pub fiber_optic_cable_type: std::option::Option<crate::model::FiberOpticCableType>,
-    /// <p>The type of optical standard used to attach the Outpost to the network. This field is
-    /// dependent on uplink speed, fiber type, and distance to the upstream device. For more information
-    /// about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a>
-    /// in the Amazon Web Services Outposts User Guide.
-    /// </p>
+    /// <p>The type of optical standard used to attach the Outpost to the network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
     pub optical_standard: std::option::Option<crate::model::OpticalStandard>,
-    /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000 lbs
-    /// (907 kg). </p>
+    /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000 lbs (907 kg). </p>
     pub maximum_supported_weight_lbs: std::option::Option<crate::model::MaximumSupportedWeightLbs>,
 }
 impl RackPhysicalProperties {
@@ -444,16 +403,11 @@ impl RackPhysicalProperties {
     ) -> std::option::Option<&crate::model::FiberOpticCableType> {
         self.fiber_optic_cable_type.as_ref()
     }
-    /// <p>The type of optical standard used to attach the Outpost to the network. This field is
-    /// dependent on uplink speed, fiber type, and distance to the upstream device. For more information
-    /// about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a>
-    /// in the Amazon Web Services Outposts User Guide.
-    /// </p>
+    /// <p>The type of optical standard used to attach the Outpost to the network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
     pub fn optical_standard(&self) -> std::option::Option<&crate::model::OpticalStandard> {
         self.optical_standard.as_ref()
     }
-    /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000 lbs
-    /// (907 kg). </p>
+    /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000 lbs (907 kg). </p>
     pub fn maximum_supported_weight_lbs(
         &self,
     ) -> std::option::Option<&crate::model::MaximumSupportedWeightLbs> {
@@ -587,20 +541,12 @@ pub mod rack_physical_properties {
             self.fiber_optic_cable_type = input;
             self
         }
-        /// <p>The type of optical standard used to attach the Outpost to the network. This field is
-        /// dependent on uplink speed, fiber type, and distance to the upstream device. For more information
-        /// about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a>
-        /// in the Amazon Web Services Outposts User Guide.
-        /// </p>
+        /// <p>The type of optical standard used to attach the Outpost to the network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
         pub fn optical_standard(mut self, input: crate::model::OpticalStandard) -> Self {
             self.optical_standard = Some(input);
             self
         }
-        /// <p>The type of optical standard used to attach the Outpost to the network. This field is
-        /// dependent on uplink speed, fiber type, and distance to the upstream device. For more information
-        /// about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a>
-        /// in the Amazon Web Services Outposts User Guide.
-        /// </p>
+        /// <p>The type of optical standard used to attach the Outpost to the network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
         pub fn set_optical_standard(
             mut self,
             input: std::option::Option<crate::model::OpticalStandard>,
@@ -608,8 +554,7 @@ pub mod rack_physical_properties {
             self.optical_standard = input;
             self
         }
-        /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000 lbs
-        /// (907 kg). </p>
+        /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000 lbs (907 kg). </p>
         pub fn maximum_supported_weight_lbs(
             mut self,
             input: crate::model::MaximumSupportedWeightLbs,
@@ -617,8 +562,7 @@ pub mod rack_physical_properties {
             self.maximum_supported_weight_lbs = Some(input);
             self
         }
-        /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000 lbs
-        /// (907 kg). </p>
+        /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000 lbs (907 kg). </p>
         pub fn set_maximum_supported_weight_lbs(
             mut self,
             input: std::option::Option<crate::model::MaximumSupportedWeightLbs>,
@@ -1283,9 +1227,7 @@ impl AsRef<str> for PowerDrawKva {
     }
 }
 
-/// <p>
-/// Information about an address.
-/// </p>
+/// <p> Information about an address. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Address {
@@ -1612,7 +1554,7 @@ pub struct Outpost {
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub outpost_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the site.</p>
+    /// <p> The ID of the site. </p>
     pub site_id: std::option::Option<std::string::String>,
     /// <p>The name of the Outpost.</p>
     pub name: std::option::Option<std::string::String>,
@@ -1629,9 +1571,7 @@ pub struct Outpost {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the site.</p>
     pub site_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The hardware type.
-    /// </p>
+    /// <p> The hardware type. </p>
     pub supported_hardware_type: std::option::Option<crate::model::SupportedHardwareType>,
 }
 impl Outpost {
@@ -1647,7 +1587,7 @@ impl Outpost {
     pub fn outpost_arn(&self) -> std::option::Option<&str> {
         self.outpost_arn.as_deref()
     }
-    /// <p>The ID of the site.</p>
+    /// <p> The ID of the site. </p>
     pub fn site_id(&self) -> std::option::Option<&str> {
         self.site_id.as_deref()
     }
@@ -1682,9 +1622,7 @@ impl Outpost {
     pub fn site_arn(&self) -> std::option::Option<&str> {
         self.site_arn.as_deref()
     }
-    /// <p>
-    /// The hardware type.
-    /// </p>
+    /// <p> The hardware type. </p>
     pub fn supported_hardware_type(
         &self,
     ) -> std::option::Option<&crate::model::SupportedHardwareType> {
@@ -1762,12 +1700,12 @@ pub mod outpost {
             self.outpost_arn = input;
             self
         }
-        /// <p>The ID of the site.</p>
+        /// <p> The ID of the site. </p>
         pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.site_id = Some(input.into());
             self
         }
-        /// <p>The ID of the site.</p>
+        /// <p> The ID of the site. </p>
         pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.site_id = input;
             self
@@ -1866,9 +1804,7 @@ pub mod outpost {
             self.site_arn = input;
             self
         }
-        /// <p>
-        /// The hardware type.
-        /// </p>
+        /// <p> The hardware type. </p>
         pub fn supported_hardware_type(
             mut self,
             input: crate::model::SupportedHardwareType,
@@ -1876,9 +1812,7 @@ pub mod outpost {
             self.supported_hardware_type = Some(input);
             self
         }
-        /// <p>
-        /// The hardware type.
-        /// </p>
+        /// <p> The hardware type. </p>
         pub fn set_supported_hardware_type(
             mut self,
             input: std::option::Option<crate::model::SupportedHardwareType>,
@@ -1967,136 +1901,72 @@ impl AsRef<str> for SupportedHardwareType {
     }
 }
 
-/// <p>
-/// A summary of line items in your order.
-/// </p>
+/// <p> A summary of line items in your order. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrderSummary {
-    /// <p>
-    /// The ID of the Outpost.
-    /// </p>
+    /// <p> The ID of the Outpost. </p>
     pub outpost_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The ID of the order.
-    /// </p>
+    /// <p> The ID of the order. </p>
     pub order_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The type of order.
-    /// </p>
+    /// <p> The type of order. </p>
     pub order_type: std::option::Option<crate::model::OrderType>,
     /// <p>The status of the order.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PREPARING</code> - Order is received and is being prepared.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. For more
-    /// information, see the <code>LineItem</code> status.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COMPLETED</code> - Order is complete.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CANCELLED</code> - Order is cancelled.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ERROR</code> - Customer should contact support.</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <note>
-    /// <p>The following statuses are deprecated: <code>RECEIVED</code>, <code>PENDING</code>,
-    /// <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
+    /// <li> <p> <code>PREPARING</code> - Order is received and is being prepared.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. For more information, see the <code>LineItem</code> status.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
+    /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
+    /// </ul> <note>
+    /// <p>The following statuses are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
     /// </note>
     pub status: std::option::Option<crate::model::OrderStatus>,
-    /// <p>
-    /// The status of all line items in the order.
-    /// </p>
+    /// <p> The status of all line items in the order. </p>
     pub line_item_counts_by_status:
         std::option::Option<std::collections::HashMap<crate::model::LineItemStatus, i32>>,
-    /// <p>
-    /// Submission date for the order.
-    /// </p>
+    /// <p> Submission date for the order. </p>
     pub order_submission_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// Fulfilment date for the order.
-    /// </p>
+    /// <p> Fulfilment date for the order. </p>
     pub order_fulfilled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl OrderSummary {
-    /// <p>
-    /// The ID of the Outpost.
-    /// </p>
+    /// <p> The ID of the Outpost. </p>
     pub fn outpost_id(&self) -> std::option::Option<&str> {
         self.outpost_id.as_deref()
     }
-    /// <p>
-    /// The ID of the order.
-    /// </p>
+    /// <p> The ID of the order. </p>
     pub fn order_id(&self) -> std::option::Option<&str> {
         self.order_id.as_deref()
     }
-    /// <p>
-    /// The type of order.
-    /// </p>
+    /// <p> The type of order. </p>
     pub fn order_type(&self) -> std::option::Option<&crate::model::OrderType> {
         self.order_type.as_ref()
     }
     /// <p>The status of the order.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PREPARING</code> - Order is received and is being prepared.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. For more
-    /// information, see the <code>LineItem</code> status.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COMPLETED</code> - Order is complete.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CANCELLED</code> - Order is cancelled.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ERROR</code> - Customer should contact support.</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <note>
-    /// <p>The following statuses are deprecated: <code>RECEIVED</code>, <code>PENDING</code>,
-    /// <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
+    /// <li> <p> <code>PREPARING</code> - Order is received and is being prepared.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. For more information, see the <code>LineItem</code> status.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
+    /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
+    /// </ul> <note>
+    /// <p>The following statuses are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
     /// </note>
     pub fn status(&self) -> std::option::Option<&crate::model::OrderStatus> {
         self.status.as_ref()
     }
-    /// <p>
-    /// The status of all line items in the order.
-    /// </p>
+    /// <p> The status of all line items in the order. </p>
     pub fn line_item_counts_by_status(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<crate::model::LineItemStatus, i32>> {
         self.line_item_counts_by_status.as_ref()
     }
-    /// <p>
-    /// Submission date for the order.
-    /// </p>
+    /// <p> Submission date for the order. </p>
     pub fn order_submission_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.order_submission_date.as_ref()
     }
-    /// <p>
-    /// Fulfilment date for the order.
-    /// </p>
+    /// <p> Fulfilment date for the order. </p>
     pub fn order_fulfilled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.order_fulfilled_date.as_ref()
     }
@@ -2133,44 +2003,32 @@ pub mod order_summary {
         pub(crate) order_fulfilled_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>
-        /// The ID of the Outpost.
-        /// </p>
+        /// <p> The ID of the Outpost. </p>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the Outpost.
-        /// </p>
+        /// <p> The ID of the Outpost. </p>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.outpost_id = input;
             self
         }
-        /// <p>
-        /// The ID of the order.
-        /// </p>
+        /// <p> The ID of the order. </p>
         pub fn order_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.order_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the order.
-        /// </p>
+        /// <p> The ID of the order. </p>
         pub fn set_order_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.order_id = input;
             self
         }
-        /// <p>
-        /// The type of order.
-        /// </p>
+        /// <p> The type of order. </p>
         pub fn order_type(mut self, input: crate::model::OrderType) -> Self {
             self.order_type = Some(input);
             self
         }
-        /// <p>
-        /// The type of order.
-        /// </p>
+        /// <p> The type of order. </p>
         pub fn set_order_type(
             mut self,
             input: std::option::Option<crate::model::OrderType>,
@@ -2180,32 +2038,13 @@ pub mod order_summary {
         }
         /// <p>The status of the order.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PREPARING</code> - Order is received and is being prepared.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. For more
-        /// information, see the <code>LineItem</code> status.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COMPLETED</code> - Order is complete.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CANCELLED</code> - Order is cancelled.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ERROR</code> - Customer should contact support.</p>
-        /// </li>
-        /// </ul>
-        ///
-        /// <note>
-        /// <p>The following statuses are deprecated: <code>RECEIVED</code>, <code>PENDING</code>,
-        /// <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
+        /// <li> <p> <code>PREPARING</code> - Order is received and is being prepared.</p> </li>
+        /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. For more information, see the <code>LineItem</code> status.</p> </li>
+        /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
+        /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
+        /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
+        /// </ul> <note>
+        /// <p>The following statuses are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
         /// </note>
         pub fn status(mut self, input: crate::model::OrderStatus) -> Self {
             self.status = Some(input);
@@ -2213,32 +2052,13 @@ pub mod order_summary {
         }
         /// <p>The status of the order.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PREPARING</code> - Order is received and is being prepared.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. For more
-        /// information, see the <code>LineItem</code> status.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COMPLETED</code> - Order is complete.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CANCELLED</code> - Order is cancelled.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ERROR</code> - Customer should contact support.</p>
-        /// </li>
-        /// </ul>
-        ///
-        /// <note>
-        /// <p>The following statuses are deprecated: <code>RECEIVED</code>, <code>PENDING</code>,
-        /// <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
+        /// <li> <p> <code>PREPARING</code> - Order is received and is being prepared.</p> </li>
+        /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. For more information, see the <code>LineItem</code> status.</p> </li>
+        /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
+        /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
+        /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
+        /// </ul> <note>
+        /// <p>The following statuses are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
         /// </note>
         pub fn set_status(mut self, input: std::option::Option<crate::model::OrderStatus>) -> Self {
             self.status = input;
@@ -2248,22 +2068,18 @@ pub mod order_summary {
         ///
         /// To override the contents of this collection use [`set_line_item_counts_by_status`](Self::set_line_item_counts_by_status).
         ///
-        /// <p>
-        /// The status of all line items in the order.
-        /// </p>
+        /// <p> The status of all line items in the order. </p>
         pub fn line_item_counts_by_status(
             mut self,
-            k: impl Into<crate::model::LineItemStatus>,
-            v: impl Into<i32>,
+            k: crate::model::LineItemStatus,
+            v: i32,
         ) -> Self {
             let mut hash_map = self.line_item_counts_by_status.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.line_item_counts_by_status = Some(hash_map);
             self
         }
-        /// <p>
-        /// The status of all line items in the order.
-        /// </p>
+        /// <p> The status of all line items in the order. </p>
         pub fn set_line_item_counts_by_status(
             mut self,
             input: std::option::Option<
@@ -2273,16 +2089,12 @@ pub mod order_summary {
             self.line_item_counts_by_status = input;
             self
         }
-        /// <p>
-        /// Submission date for the order.
-        /// </p>
+        /// <p> Submission date for the order. </p>
         pub fn order_submission_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.order_submission_date = Some(input);
             self
         }
-        /// <p>
-        /// Submission date for the order.
-        /// </p>
+        /// <p> Submission date for the order. </p>
         pub fn set_order_submission_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2290,16 +2102,12 @@ pub mod order_summary {
             self.order_submission_date = input;
             self
         }
-        /// <p>
-        /// Fulfilment date for the order.
-        /// </p>
+        /// <p> Fulfilment date for the order. </p>
         pub fn order_fulfilled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.order_fulfilled_date = Some(input);
             self
         }
-        /// <p>
-        /// Fulfilment date for the order.
-        /// </p>
+        /// <p> Fulfilment date for the order. </p>
         pub fn set_order_fulfilled_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2573,56 +2381,35 @@ impl AsRef<str> for OrderType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CatalogItem {
-    /// <p>
-    /// The ID of the catalog item.
-    /// </p>
+    /// <p> The ID of the catalog item. </p>
     pub catalog_item_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The status of a catalog item.
-    /// </p>
+    /// <p> The status of a catalog item. </p>
     pub item_status: std::option::Option<crate::model::CatalogItemStatus>,
-    /// <p>
-    /// Information about the EC2 capacity of an item.
-    /// </p>
+    /// <p> Information about the EC2 capacity of an item. </p>
     pub ec2_capacities: std::option::Option<std::vec::Vec<crate::model::Ec2Capacity>>,
-    /// <p>
-    /// Information about the power draw of an item.
-    /// </p>
+    /// <p> Information about the power draw of an item. </p>
     pub power_kva: std::option::Option<f32>,
     /// <p> The weight of the item in pounds. </p>
     pub weight_lbs: std::option::Option<i32>,
-    /// <p>
-    /// The uplink speed this catalog item requires for the
-    /// connection to the Region.
-    /// </p>
+    /// <p> The uplink speed this catalog item requires for the connection to the Region. </p>
     pub supported_uplink_gbps: std::option::Option<std::vec::Vec<i32>>,
-    /// <p>
-    /// The supported storage options for the catalog item.
-    /// </p>
+    /// <p> The supported storage options for the catalog item. </p>
     pub supported_storage: std::option::Option<std::vec::Vec<crate::model::SupportedStorageEnum>>,
 }
 impl CatalogItem {
-    /// <p>
-    /// The ID of the catalog item.
-    /// </p>
+    /// <p> The ID of the catalog item. </p>
     pub fn catalog_item_id(&self) -> std::option::Option<&str> {
         self.catalog_item_id.as_deref()
     }
-    /// <p>
-    /// The status of a catalog item.
-    /// </p>
+    /// <p> The status of a catalog item. </p>
     pub fn item_status(&self) -> std::option::Option<&crate::model::CatalogItemStatus> {
         self.item_status.as_ref()
     }
-    /// <p>
-    /// Information about the EC2 capacity of an item.
-    /// </p>
+    /// <p> Information about the EC2 capacity of an item. </p>
     pub fn ec2_capacities(&self) -> std::option::Option<&[crate::model::Ec2Capacity]> {
         self.ec2_capacities.as_deref()
     }
-    /// <p>
-    /// Information about the power draw of an item.
-    /// </p>
+    /// <p> Information about the power draw of an item. </p>
     pub fn power_kva(&self) -> std::option::Option<f32> {
         self.power_kva
     }
@@ -2630,16 +2417,11 @@ impl CatalogItem {
     pub fn weight_lbs(&self) -> std::option::Option<i32> {
         self.weight_lbs
     }
-    /// <p>
-    /// The uplink speed this catalog item requires for the
-    /// connection to the Region.
-    /// </p>
+    /// <p> The uplink speed this catalog item requires for the connection to the Region. </p>
     pub fn supported_uplink_gbps(&self) -> std::option::Option<&[i32]> {
         self.supported_uplink_gbps.as_deref()
     }
-    /// <p>
-    /// The supported storage options for the catalog item.
-    /// </p>
+    /// <p> The supported storage options for the catalog item. </p>
     pub fn supported_storage(&self) -> std::option::Option<&[crate::model::SupportedStorageEnum]> {
         self.supported_storage.as_deref()
     }
@@ -2673,16 +2455,12 @@ pub mod catalog_item {
             std::option::Option<std::vec::Vec<crate::model::SupportedStorageEnum>>,
     }
     impl Builder {
-        /// <p>
-        /// The ID of the catalog item.
-        /// </p>
+        /// <p> The ID of the catalog item. </p>
         pub fn catalog_item_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_item_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the catalog item.
-        /// </p>
+        /// <p> The ID of the catalog item. </p>
         pub fn set_catalog_item_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2690,16 +2468,12 @@ pub mod catalog_item {
             self.catalog_item_id = input;
             self
         }
-        /// <p>
-        /// The status of a catalog item.
-        /// </p>
+        /// <p> The status of a catalog item. </p>
         pub fn item_status(mut self, input: crate::model::CatalogItemStatus) -> Self {
             self.item_status = Some(input);
             self
         }
-        /// <p>
-        /// The status of a catalog item.
-        /// </p>
+        /// <p> The status of a catalog item. </p>
         pub fn set_item_status(
             mut self,
             input: std::option::Option<crate::model::CatalogItemStatus>,
@@ -2711,18 +2485,14 @@ pub mod catalog_item {
         ///
         /// To override the contents of this collection use [`set_ec2_capacities`](Self::set_ec2_capacities).
         ///
-        /// <p>
-        /// Information about the EC2 capacity of an item.
-        /// </p>
-        pub fn ec2_capacities(mut self, input: impl Into<crate::model::Ec2Capacity>) -> Self {
+        /// <p> Information about the EC2 capacity of an item. </p>
+        pub fn ec2_capacities(mut self, input: crate::model::Ec2Capacity) -> Self {
             let mut v = self.ec2_capacities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ec2_capacities = Some(v);
             self
         }
-        /// <p>
-        /// Information about the EC2 capacity of an item.
-        /// </p>
+        /// <p> Information about the EC2 capacity of an item. </p>
         pub fn set_ec2_capacities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Ec2Capacity>>,
@@ -2730,16 +2500,12 @@ pub mod catalog_item {
             self.ec2_capacities = input;
             self
         }
-        /// <p>
-        /// Information about the power draw of an item.
-        /// </p>
+        /// <p> Information about the power draw of an item. </p>
         pub fn power_kva(mut self, input: f32) -> Self {
             self.power_kva = Some(input);
             self
         }
-        /// <p>
-        /// Information about the power draw of an item.
-        /// </p>
+        /// <p> Information about the power draw of an item. </p>
         pub fn set_power_kva(mut self, input: std::option::Option<f32>) -> Self {
             self.power_kva = input;
             self
@@ -2758,20 +2524,14 @@ pub mod catalog_item {
         ///
         /// To override the contents of this collection use [`set_supported_uplink_gbps`](Self::set_supported_uplink_gbps).
         ///
-        /// <p>
-        /// The uplink speed this catalog item requires for the
-        /// connection to the Region.
-        /// </p>
-        pub fn supported_uplink_gbps(mut self, input: impl Into<i32>) -> Self {
+        /// <p> The uplink speed this catalog item requires for the connection to the Region. </p>
+        pub fn supported_uplink_gbps(mut self, input: i32) -> Self {
             let mut v = self.supported_uplink_gbps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_uplink_gbps = Some(v);
             self
         }
-        /// <p>
-        /// The uplink speed this catalog item requires for the
-        /// connection to the Region.
-        /// </p>
+        /// <p> The uplink speed this catalog item requires for the connection to the Region. </p>
         pub fn set_supported_uplink_gbps(
             mut self,
             input: std::option::Option<std::vec::Vec<i32>>,
@@ -2783,21 +2543,14 @@ pub mod catalog_item {
         ///
         /// To override the contents of this collection use [`set_supported_storage`](Self::set_supported_storage).
         ///
-        /// <p>
-        /// The supported storage options for the catalog item.
-        /// </p>
-        pub fn supported_storage(
-            mut self,
-            input: impl Into<crate::model::SupportedStorageEnum>,
-        ) -> Self {
+        /// <p> The supported storage options for the catalog item. </p>
+        pub fn supported_storage(mut self, input: crate::model::SupportedStorageEnum) -> Self {
             let mut v = self.supported_storage.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_storage = Some(v);
             self
         }
-        /// <p>
-        /// The supported storage options for the catalog item.
-        /// </p>
+        /// <p> The supported storage options for the catalog item. </p>
         pub fn set_supported_storage(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SupportedStorageEnum>>,
@@ -2885,35 +2638,23 @@ impl AsRef<str> for SupportedStorageEnum {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2Capacity {
-    /// <p>
-    /// The family of the EC2 capacity.
-    /// </p>
+    /// <p> The family of the EC2 capacity. </p>
     pub family: std::option::Option<std::string::String>,
-    /// <p>
-    /// The maximum size of the EC2 capacity.
-    /// </p>
+    /// <p> The maximum size of the EC2 capacity. </p>
     pub max_size: std::option::Option<std::string::String>,
-    /// <p>
-    /// The quantity of the EC2 capacity.
-    /// </p>
+    /// <p> The quantity of the EC2 capacity. </p>
     pub quantity: std::option::Option<std::string::String>,
 }
 impl Ec2Capacity {
-    /// <p>
-    /// The family of the EC2 capacity.
-    /// </p>
+    /// <p> The family of the EC2 capacity. </p>
     pub fn family(&self) -> std::option::Option<&str> {
         self.family.as_deref()
     }
-    /// <p>
-    /// The maximum size of the EC2 capacity.
-    /// </p>
+    /// <p> The maximum size of the EC2 capacity. </p>
     pub fn max_size(&self) -> std::option::Option<&str> {
         self.max_size.as_deref()
     }
-    /// <p>
-    /// The quantity of the EC2 capacity.
-    /// </p>
+    /// <p> The quantity of the EC2 capacity. </p>
     pub fn quantity(&self) -> std::option::Option<&str> {
         self.quantity.as_deref()
     }
@@ -2938,44 +2679,32 @@ pub mod ec2_capacity {
         pub(crate) quantity: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The family of the EC2 capacity.
-        /// </p>
+        /// <p> The family of the EC2 capacity. </p>
         pub fn family(mut self, input: impl Into<std::string::String>) -> Self {
             self.family = Some(input.into());
             self
         }
-        /// <p>
-        /// The family of the EC2 capacity.
-        /// </p>
+        /// <p> The family of the EC2 capacity. </p>
         pub fn set_family(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.family = input;
             self
         }
-        /// <p>
-        /// The maximum size of the EC2 capacity.
-        /// </p>
+        /// <p> The maximum size of the EC2 capacity. </p>
         pub fn max_size(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_size = Some(input.into());
             self
         }
-        /// <p>
-        /// The maximum size of the EC2 capacity.
-        /// </p>
+        /// <p> The maximum size of the EC2 capacity. </p>
         pub fn set_max_size(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.max_size = input;
             self
         }
-        /// <p>
-        /// The quantity of the EC2 capacity.
-        /// </p>
+        /// <p> The quantity of the EC2 capacity. </p>
         pub fn quantity(mut self, input: impl Into<std::string::String>) -> Self {
             self.quantity = Some(input.into());
             self
         }
-        /// <p>
-        /// The quantity of the EC2 capacity.
-        /// </p>
+        /// <p> The quantity of the EC2 capacity. </p>
         pub fn set_quantity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.quantity = input;
             self
@@ -3174,32 +2903,13 @@ pub struct Order {
     pub order_id: std::option::Option<std::string::String>,
     /// <p>The status of the order.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PREPARING</code> - Order is received and being prepared.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more
-    /// details, see the <code>LineItem</code> status.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COMPLETED</code> - Order is complete.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CANCELLED</code> - Order is cancelled.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ERROR</code> - Customer should contact support.</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <note>
-    /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>,
-    /// <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
+    /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the <code>LineItem</code> status.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
+    /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
+    /// </ul> <note>
+    /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
     /// </note>
     pub status: std::option::Option<crate::model::OrderStatus>,
     /// <p>The line items for the order</p>
@@ -3222,32 +2932,13 @@ impl Order {
     }
     /// <p>The status of the order.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PREPARING</code> - Order is received and being prepared.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more
-    /// details, see the <code>LineItem</code> status.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COMPLETED</code> - Order is complete.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CANCELLED</code> - Order is cancelled.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ERROR</code> - Customer should contact support.</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <note>
-    /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>,
-    /// <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
+    /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the <code>LineItem</code> status.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
+    /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
+    /// </ul> <note>
+    /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
     /// </note>
     pub fn status(&self) -> std::option::Option<&crate::model::OrderStatus> {
         self.status.as_ref()
@@ -3319,32 +3010,13 @@ pub mod order {
         }
         /// <p>The status of the order.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PREPARING</code> - Order is received and being prepared.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more
-        /// details, see the <code>LineItem</code> status.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COMPLETED</code> - Order is complete.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CANCELLED</code> - Order is cancelled.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ERROR</code> - Customer should contact support.</p>
-        /// </li>
-        /// </ul>
-        ///
-        /// <note>
-        /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>,
-        /// <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
+        /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li>
+        /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the <code>LineItem</code> status.</p> </li>
+        /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
+        /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
+        /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
+        /// </ul> <note>
+        /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
         /// </note>
         pub fn status(mut self, input: crate::model::OrderStatus) -> Self {
             self.status = Some(input);
@@ -3352,32 +3024,13 @@ pub mod order {
         }
         /// <p>The status of the order.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PREPARING</code> - Order is received and being prepared.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more
-        /// details, see the <code>LineItem</code> status.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COMPLETED</code> - Order is complete.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CANCELLED</code> - Order is cancelled.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ERROR</code> - Customer should contact support.</p>
-        /// </li>
-        /// </ul>
-        ///
-        /// <note>
-        /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>,
-        /// <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
+        /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li>
+        /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the <code>LineItem</code> status.</p> </li>
+        /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
+        /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
+        /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
+        /// </ul> <note>
+        /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
         /// </note>
         pub fn set_status(mut self, input: std::option::Option<crate::model::OrderStatus>) -> Self {
             self.status = input;
@@ -3388,9 +3041,9 @@ pub mod order {
         /// To override the contents of this collection use [`set_line_items`](Self::set_line_items).
         ///
         /// <p>The line items for the order</p>
-        pub fn line_items(mut self, input: impl Into<crate::model::LineItem>) -> Self {
+        pub fn line_items(mut self, input: crate::model::LineItem) -> Self {
             let mut v = self.line_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.line_items = Some(v);
             self
         }
@@ -3525,9 +3178,7 @@ impl AsRef<str> for PaymentOption {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LineItem {
-    /// <p>
-    /// The ID of the catalog item.
-    /// </p>
+    /// <p> The ID of the catalog item. </p>
     pub catalog_item_id: std::option::Option<std::string::String>,
     /// <p>The ID of the line item.</p>
     pub line_item_id: std::option::Option<std::string::String>,
@@ -3537,9 +3188,7 @@ pub struct LineItem {
     pub status: std::option::Option<crate::model::LineItemStatus>,
 }
 impl LineItem {
-    /// <p>
-    /// The ID of the catalog item.
-    /// </p>
+    /// <p> The ID of the catalog item. </p>
     pub fn catalog_item_id(&self) -> std::option::Option<&str> {
         self.catalog_item_id.as_deref()
     }
@@ -3578,16 +3227,12 @@ pub mod line_item {
         pub(crate) status: std::option::Option<crate::model::LineItemStatus>,
     }
     impl Builder {
-        /// <p>
-        /// The ID of the catalog item.
-        /// </p>
+        /// <p> The ID of the catalog item. </p>
         pub fn catalog_item_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_item_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the catalog item.
-        /// </p>
+        /// <p> The ID of the catalog item. </p>
         pub fn set_catalog_item_id(
             mut self,
             input: std::option::Option<std::string::String>,

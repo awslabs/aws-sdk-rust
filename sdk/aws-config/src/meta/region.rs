@@ -13,15 +13,19 @@ use tracing::Instrument;
 /// Load a region by selecting the first from a series of region providers.
 ///
 /// # Examples
+///
 /// ```no_run
+/// # fn example() {
 /// use aws_types::region::Region;
 /// use std::env;
 /// use aws_config::meta::region::RegionProviderChain;
+///
 /// // region provider that first checks the `CUSTOM_REGION` environment variable,
 /// // then checks the default provider chain, then falls back to us-east-2
 /// let provider = RegionProviderChain::first_try(env::var("CUSTOM_REGION").ok().map(Region::new))
 ///     .or_default_provider()
 ///     .or_else(Region::new("us-east-2"));
+/// # }
 /// ```
 #[derive(Debug)]
 pub struct RegionProviderChain {
@@ -59,13 +63,11 @@ impl RegionProviderChain {
     }
 
     /// Create a region provider chain that starts by checking the default provider.
-    #[cfg(feature = "default-provider")]
     pub fn default_provider() -> Self {
         Self::first_try(crate::default_provider::region::default_provider())
     }
 
     /// Fallback to the default provider
-    #[cfg(feature = "default-provider")]
     pub fn or_default_provider(mut self) -> Self {
         self.providers
             .push(Box::new(crate::default_provider::region::default_provider()));

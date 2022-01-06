@@ -62,7 +62,7 @@ pub mod accept_invitation_input {
 #[doc(hidden)]
 pub type AcceptInvitationInputOperationOutputAlias = crate::operation::AcceptInvitation;
 #[doc(hidden)]
-pub type AcceptInvitationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AcceptInvitationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptInvitationInput {
     /// Consumes the builder and constructs an Operation<[`AcceptInvitation`](crate::operation::AcceptInvitation)>
     #[allow(clippy::let_and_return)]
@@ -73,7 +73,7 @@ impl AcceptInvitationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AcceptInvitation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -173,7 +173,7 @@ impl AcceptInvitationInput {
             "AcceptInvitation",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -206,14 +206,12 @@ pub mod archive_findings_input {
         pub(crate) finding_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
-        /// archive.</p>
+        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to archive.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.detector_id = Some(input.into());
             self
         }
-        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
-        /// archive.</p>
+        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to archive.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -254,7 +252,7 @@ pub mod archive_findings_input {
 #[doc(hidden)]
 pub type ArchiveFindingsInputOperationOutputAlias = crate::operation::ArchiveFindings;
 #[doc(hidden)]
-pub type ArchiveFindingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ArchiveFindingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ArchiveFindingsInput {
     /// Consumes the builder and constructs an Operation<[`ArchiveFindings`](crate::operation::ArchiveFindings)>
     #[allow(clippy::let_and_return)]
@@ -265,7 +263,7 @@ impl ArchiveFindingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ArchiveFindings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -365,7 +363,7 @@ impl ArchiveFindingsInput {
             "ArchiveFindings",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -498,7 +496,7 @@ pub mod create_detector_input {
 #[doc(hidden)]
 pub type CreateDetectorInputOperationOutputAlias = crate::operation::CreateDetector;
 #[doc(hidden)]
-pub type CreateDetectorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDetectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDetectorInput {
     /// Consumes the builder and constructs an Operation<[`CreateDetector`](crate::operation::CreateDetector)>
     #[allow(clippy::let_and_return)]
@@ -509,7 +507,7 @@ impl CreateDetectorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDetector,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -592,7 +590,7 @@ impl CreateDetectorInput {
             "CreateDetector",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -633,14 +631,12 @@ pub mod create_filter_input {
         >,
     }
     impl Builder {
-        /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter
-        /// for.</p>
+        /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter for.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.detector_id = Some(input.into());
             self
         }
-        /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter
-        /// for.</p>
+        /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter for.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -678,14 +674,12 @@ pub mod create_filter_input {
             self.action = input;
             self
         }
-        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the
-        /// order in which this filter is applied to the findings.</p>
+        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
         pub fn rank(mut self, input: i32) -> Self {
             self.rank = Some(input);
             self
         }
-        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the
-        /// order in which this filter is applied to the findings.</p>
+        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
         pub fn set_rank(mut self, input: std::option::Option<i32>) -> Self {
             self.rank = input;
             self
@@ -693,164 +687,57 @@ pub mod create_filter_input {
         /// <p>Represents the criteria to be used in the filter for querying findings.</p>
         /// <p>You can only use the following attributes to query findings:</p>
         /// <ul>
-        /// <li>
-        /// <p>accountId</p>
-        /// </li>
-        /// <li>
-        /// <p>region</p>
-        /// </li>
-        /// <li>
-        /// <p>confidence</p>
-        /// </li>
-        /// <li>
-        /// <p>id</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.accessKeyId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.principalId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.userName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.userType</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.iamInstanceProfile.id</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.imageId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.instanceId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.outpostArn</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.publicDnsName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.publicIp</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.subnetId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.vpcId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.tags.key</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.tags.value</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.resourceType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.actionType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.api</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.callerType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.errorCode</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.serviceName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.dnsRequestAction.domain</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.blocked</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.connectionDirection</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.localPortDetails.port</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.protocol</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remotePortDetails.port</p>
-        /// </li>
-        /// <li>
-        /// <p>service.additionalInfo.threatListName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.archived</p>
-        /// <p>When this attribute is set to TRUE, only archived findings are listed. When it's set
-        /// to FALSE, only unarchived findings are listed. When this attribute is not set, all
-        /// existing findings are listed.</p>
-        /// </li>
-        /// <li>
-        /// <p>service.resourceRole</p>
-        /// </li>
-        /// <li>
-        /// <p>severity</p>
-        /// </li>
-        /// <li>
-        /// <p>type</p>
-        /// </li>
-        /// <li>
-        /// <p>updatedAt</p>
-        /// <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ
-        /// depending on whether the value contains milliseconds.</p>
-        /// </li>
+        /// <li> <p>accountId</p> </li>
+        /// <li> <p>region</p> </li>
+        /// <li> <p>confidence</p> </li>
+        /// <li> <p>id</p> </li>
+        /// <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
+        /// <li> <p>resource.accessKeyDetails.principalId</p> </li>
+        /// <li> <p>resource.accessKeyDetails.userName</p> </li>
+        /// <li> <p>resource.accessKeyDetails.userType</p> </li>
+        /// <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>
+        /// <li> <p>resource.instanceDetails.imageId</p> </li>
+        /// <li> <p>resource.instanceDetails.instanceId</p> </li>
+        /// <li> <p>resource.instanceDetails.outpostArn</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>
+        /// <li> <p>resource.instanceDetails.tags.key</p> </li>
+        /// <li> <p>resource.instanceDetails.tags.value</p> </li>
+        /// <li> <p>resource.resourceType</p> </li>
+        /// <li> <p>service.action.actionType</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.api</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.callerType</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.errorCode</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
+        /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
+        /// <li> <p>service.additionalInfo.threatListName</p> </li>
+        /// <li> <p>service.archived</p> <p>When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
+        /// <li> <p>service.resourceRole</p> </li>
+        /// <li> <p>severity</p> </li>
+        /// <li> <p>type</p> </li>
+        /// <li> <p>updatedAt</p> <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p> </li>
         /// </ul>
         pub fn finding_criteria(mut self, input: crate::model::FindingCriteria) -> Self {
             self.finding_criteria = Some(input);
@@ -859,164 +746,57 @@ pub mod create_filter_input {
         /// <p>Represents the criteria to be used in the filter for querying findings.</p>
         /// <p>You can only use the following attributes to query findings:</p>
         /// <ul>
-        /// <li>
-        /// <p>accountId</p>
-        /// </li>
-        /// <li>
-        /// <p>region</p>
-        /// </li>
-        /// <li>
-        /// <p>confidence</p>
-        /// </li>
-        /// <li>
-        /// <p>id</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.accessKeyId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.principalId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.userName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.userType</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.iamInstanceProfile.id</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.imageId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.instanceId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.outpostArn</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.publicDnsName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.publicIp</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.subnetId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.vpcId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.tags.key</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.tags.value</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.resourceType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.actionType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.api</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.callerType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.errorCode</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.serviceName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.dnsRequestAction.domain</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.blocked</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.connectionDirection</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.localPortDetails.port</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.protocol</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remotePortDetails.port</p>
-        /// </li>
-        /// <li>
-        /// <p>service.additionalInfo.threatListName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.archived</p>
-        /// <p>When this attribute is set to TRUE, only archived findings are listed. When it's set
-        /// to FALSE, only unarchived findings are listed. When this attribute is not set, all
-        /// existing findings are listed.</p>
-        /// </li>
-        /// <li>
-        /// <p>service.resourceRole</p>
-        /// </li>
-        /// <li>
-        /// <p>severity</p>
-        /// </li>
-        /// <li>
-        /// <p>type</p>
-        /// </li>
-        /// <li>
-        /// <p>updatedAt</p>
-        /// <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ
-        /// depending on whether the value contains milliseconds.</p>
-        /// </li>
+        /// <li> <p>accountId</p> </li>
+        /// <li> <p>region</p> </li>
+        /// <li> <p>confidence</p> </li>
+        /// <li> <p>id</p> </li>
+        /// <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
+        /// <li> <p>resource.accessKeyDetails.principalId</p> </li>
+        /// <li> <p>resource.accessKeyDetails.userName</p> </li>
+        /// <li> <p>resource.accessKeyDetails.userType</p> </li>
+        /// <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>
+        /// <li> <p>resource.instanceDetails.imageId</p> </li>
+        /// <li> <p>resource.instanceDetails.instanceId</p> </li>
+        /// <li> <p>resource.instanceDetails.outpostArn</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>
+        /// <li> <p>resource.instanceDetails.tags.key</p> </li>
+        /// <li> <p>resource.instanceDetails.tags.value</p> </li>
+        /// <li> <p>resource.resourceType</p> </li>
+        /// <li> <p>service.action.actionType</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.api</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.callerType</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.errorCode</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
+        /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
+        /// <li> <p>service.additionalInfo.threatListName</p> </li>
+        /// <li> <p>service.archived</p> <p>When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
+        /// <li> <p>service.resourceRole</p> </li>
+        /// <li> <p>severity</p> </li>
+        /// <li> <p>type</p> </li>
+        /// <li> <p>updatedAt</p> <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p> </li>
         /// </ul>
         pub fn set_finding_criteria(
             mut self,
@@ -1083,7 +863,7 @@ pub mod create_filter_input {
 #[doc(hidden)]
 pub type CreateFilterInputOperationOutputAlias = crate::operation::CreateFilter;
 #[doc(hidden)]
-pub type CreateFilterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFilterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFilterInput {
     /// Consumes the builder and constructs an Operation<[`CreateFilter`](crate::operation::CreateFilter)>
     #[allow(clippy::let_and_return)]
@@ -1094,7 +874,7 @@ impl CreateFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFilter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1196,7 +976,7 @@ impl CreateFilterInput {
             "CreateFilter",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1236,14 +1016,12 @@ pub mod create_ip_set_input {
         >,
     }
     impl Builder {
-        /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet
-        /// for.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.detector_id = Some(input.into());
             self
         }
-        /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet
-        /// for.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -1270,26 +1048,22 @@ pub mod create_ip_set_input {
             self.format = input;
             self
         }
-        /// <p>The URI of the file that contains the IPSet. For example:
-        /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The URI of the file that contains the IPSet. For example:
-        /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
         }
-        /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded
-        /// IPSet.</p>
+        /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.</p>
         pub fn activate(mut self, input: bool) -> Self {
             self.activate = Some(input);
             self
         }
-        /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded
-        /// IPSet.</p>
+        /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.</p>
         pub fn set_activate(mut self, input: std::option::Option<bool>) -> Self {
             self.activate = input;
             self
@@ -1351,7 +1125,7 @@ pub mod create_ip_set_input {
 #[doc(hidden)]
 pub type CreateIpSetInputOperationOutputAlias = crate::operation::CreateIPSet;
 #[doc(hidden)]
-pub type CreateIpSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateIpSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateIpSetInput {
     /// Consumes the builder and constructs an Operation<[`CreateIPSet`](crate::operation::CreateIPSet)>
     #[allow(clippy::let_and_return)]
@@ -1362,7 +1136,7 @@ impl CreateIpSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateIPSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1464,7 +1238,7 @@ impl CreateIpSetInput {
             "CreateIPSet",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1497,14 +1271,12 @@ pub mod create_members_input {
         pub(crate) account_details: std::option::Option<std::vec::Vec<crate::model::AccountDetail>>,
     }
     impl Builder {
-        /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member
-        /// accounts with.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.detector_id = Some(input.into());
             self
         }
-        /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member
-        /// accounts with.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -1513,16 +1285,14 @@ pub mod create_members_input {
         ///
         /// To override the contents of this collection use [`set_account_details`](Self::set_account_details).
         ///
-        /// <p>A list of account ID and email address pairs of the accounts that you want to associate
-        /// with the GuardDuty administrator account.</p>
-        pub fn account_details(mut self, input: impl Into<crate::model::AccountDetail>) -> Self {
+        /// <p>A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty administrator account.</p>
+        pub fn account_details(mut self, input: crate::model::AccountDetail) -> Self {
             let mut v = self.account_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.account_details = Some(v);
             self
         }
-        /// <p>A list of account ID and email address pairs of the accounts that you want to associate
-        /// with the GuardDuty administrator account.</p>
+        /// <p>A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty administrator account.</p>
         pub fn set_account_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AccountDetail>>,
@@ -1547,7 +1317,7 @@ pub mod create_members_input {
 #[doc(hidden)]
 pub type CreateMembersInputOperationOutputAlias = crate::operation::CreateMembers;
 #[doc(hidden)]
-pub type CreateMembersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMembersInput {
     /// Consumes the builder and constructs an Operation<[`CreateMembers`](crate::operation::CreateMembers)>
     #[allow(clippy::let_and_return)]
@@ -1558,7 +1328,7 @@ impl CreateMembersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMembers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1657,7 +1427,7 @@ impl CreateMembersInput {
             "CreateMembers",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1702,14 +1472,12 @@ pub mod create_publishing_destination_input {
             self.detector_id = input;
             self
         }
-        /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are
-        /// supported.</p>
+        /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.</p>
         pub fn destination_type(mut self, input: crate::model::DestinationType) -> Self {
             self.destination_type = Some(input);
             self
         }
-        /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are
-        /// supported.</p>
+        /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.</p>
         pub fn set_destination_type(
             mut self,
             input: std::option::Option<crate::model::DestinationType>,
@@ -1717,8 +1485,7 @@ pub mod create_publishing_destination_input {
             self.destination_type = input;
             self
         }
-        /// <p>The properties of the publishing destination, including the ARNs for the destination and
-        /// the KMS key used for encryption.</p>
+        /// <p>The properties of the publishing destination, including the ARNs for the destination and the KMS key used for encryption.</p>
         pub fn destination_properties(
             mut self,
             input: crate::model::DestinationProperties,
@@ -1726,8 +1493,7 @@ pub mod create_publishing_destination_input {
             self.destination_properties = Some(input);
             self
         }
-        /// <p>The properties of the publishing destination, including the ARNs for the destination and
-        /// the KMS key used for encryption.</p>
+        /// <p>The properties of the publishing destination, including the ARNs for the destination and the KMS key used for encryption.</p>
         pub fn set_destination_properties(
             mut self,
             input: std::option::Option<crate::model::DestinationProperties>,
@@ -1765,7 +1531,7 @@ pub mod create_publishing_destination_input {
 pub type CreatePublishingDestinationInputOperationOutputAlias =
     crate::operation::CreatePublishingDestination;
 #[doc(hidden)]
-pub type CreatePublishingDestinationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePublishingDestinationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePublishingDestinationInput {
     /// Consumes the builder and constructs an Operation<[`CreatePublishingDestination`](crate::operation::CreatePublishingDestination)>
     #[allow(clippy::let_and_return)]
@@ -1776,7 +1542,7 @@ impl CreatePublishingDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePublishingDestination,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1880,7 +1646,7 @@ impl CreatePublishingDestinationInput {
             "CreatePublishingDestination",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1959,7 +1725,7 @@ pub mod create_sample_findings_input {
 #[doc(hidden)]
 pub type CreateSampleFindingsInputOperationOutputAlias = crate::operation::CreateSampleFindings;
 #[doc(hidden)]
-pub type CreateSampleFindingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSampleFindingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSampleFindingsInput {
     /// Consumes the builder and constructs an Operation<[`CreateSampleFindings`](crate::operation::CreateSampleFindings)>
     #[allow(clippy::let_and_return)]
@@ -1970,7 +1736,7 @@ impl CreateSampleFindingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSampleFindings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2072,7 +1838,7 @@ impl CreateSampleFindingsInput {
             "CreateSampleFindings",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2112,26 +1878,22 @@ pub mod create_threat_intel_set_input {
         >,
     }
     impl Builder {
-        /// <p>The unique ID of the detector of the GuardDuty account that you want to create a
-        /// threatIntelSet for.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account that you want to create a threatIntelSet for.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.detector_id = Some(input.into());
             self
         }
-        /// <p>The unique ID of the detector of the GuardDuty account that you want to create a
-        /// threatIntelSet for.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account that you want to create a threatIntelSet for.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
         }
-        /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by
-        /// activity that involves IP addresses included in this ThreatIntelSet.</p>
+        /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by activity that involves IP addresses included in this ThreatIntelSet.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by
-        /// activity that involves IP addresses included in this ThreatIntelSet.</p>
+        /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by activity that involves IP addresses included in this ThreatIntelSet.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2149,26 +1911,22 @@ pub mod create_threat_intel_set_input {
             self.format = input;
             self
         }
-        /// <p>The URI of the file that contains the ThreatIntelSet. For example:
-        /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The URI of the file that contains the ThreatIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The URI of the file that contains the ThreatIntelSet. For example:
-        /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The URI of the file that contains the ThreatIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
         }
-        /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded
-        /// ThreatIntelSet.</p>
+        /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded ThreatIntelSet.</p>
         pub fn activate(mut self, input: bool) -> Self {
             self.activate = Some(input);
             self
         }
-        /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded
-        /// ThreatIntelSet.</p>
+        /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded ThreatIntelSet.</p>
         pub fn set_activate(mut self, input: std::option::Option<bool>) -> Self {
             self.activate = input;
             self
@@ -2230,7 +1988,7 @@ pub mod create_threat_intel_set_input {
 #[doc(hidden)]
 pub type CreateThreatIntelSetInputOperationOutputAlias = crate::operation::CreateThreatIntelSet;
 #[doc(hidden)]
-pub type CreateThreatIntelSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateThreatIntelSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateThreatIntelSetInput {
     /// Consumes the builder and constructs an Operation<[`CreateThreatIntelSet`](crate::operation::CreateThreatIntelSet)>
     #[allow(clippy::let_and_return)]
@@ -2241,7 +1999,7 @@ impl CreateThreatIntelSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateThreatIntelSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2346,7 +2104,7 @@ impl CreateThreatIntelSetInput {
             "CreateThreatIntelSet",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2382,16 +2140,14 @@ pub mod decline_invitations_input {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member
-        /// account that you want to decline invitations from.</p>
+        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to decline invitations from.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
-        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member
-        /// account that you want to decline invitations from.</p>
+        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to decline invitations from.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2415,7 +2171,7 @@ pub mod decline_invitations_input {
 #[doc(hidden)]
 pub type DeclineInvitationsInputOperationOutputAlias = crate::operation::DeclineInvitations;
 #[doc(hidden)]
-pub type DeclineInvitationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeclineInvitationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeclineInvitationsInput {
     /// Consumes the builder and constructs an Operation<[`DeclineInvitations`](crate::operation::DeclineInvitations)>
     #[allow(clippy::let_and_return)]
@@ -2426,7 +2182,7 @@ impl DeclineInvitationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeclineInvitations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2506,7 +2262,7 @@ impl DeclineInvitationsInput {
             "DeclineInvitations",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2564,7 +2320,7 @@ pub mod delete_detector_input {
 #[doc(hidden)]
 pub type DeleteDetectorInputOperationOutputAlias = crate::operation::DeleteDetector;
 #[doc(hidden)]
-pub type DeleteDetectorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDetectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDetectorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDetector`](crate::operation::DeleteDetector)>
     #[allow(clippy::let_and_return)]
@@ -2575,7 +2331,7 @@ impl DeleteDetectorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDetector,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2665,7 +2421,7 @@ impl DeleteDetectorInput {
             "DeleteDetector",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2727,7 +2483,7 @@ pub mod delete_filter_input {
 #[doc(hidden)]
 pub type DeleteFilterInputOperationOutputAlias = crate::operation::DeleteFilter;
 #[doc(hidden)]
-pub type DeleteFilterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFilterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFilterInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFilter`](crate::operation::DeleteFilter)>
     #[allow(clippy::let_and_return)]
@@ -2738,7 +2494,7 @@ impl DeleteFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFilter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2848,7 +2604,7 @@ impl DeleteFilterInput {
             "DeleteFilter",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2876,16 +2632,14 @@ pub mod delete_invitations_input {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member
-        /// account that you want to delete invitations from.</p>
+        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to delete invitations from.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
-        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member
-        /// account that you want to delete invitations from.</p>
+        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to delete invitations from.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2909,7 +2663,7 @@ pub mod delete_invitations_input {
 #[doc(hidden)]
 pub type DeleteInvitationsInputOperationOutputAlias = crate::operation::DeleteInvitations;
 #[doc(hidden)]
-pub type DeleteInvitationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteInvitationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteInvitationsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInvitations`](crate::operation::DeleteInvitations)>
     #[allow(clippy::let_and_return)]
@@ -2920,7 +2674,7 @@ impl DeleteInvitationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteInvitations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3000,7 +2754,7 @@ impl DeleteInvitationsInput {
             "DeleteInvitations",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3070,7 +2824,7 @@ pub mod delete_ip_set_input {
 #[doc(hidden)]
 pub type DeleteIpSetInputOperationOutputAlias = crate::operation::DeleteIPSet;
 #[doc(hidden)]
-pub type DeleteIpSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteIpSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteIpSetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteIPSet`](crate::operation::DeleteIPSet)>
     #[allow(clippy::let_and_return)]
@@ -3081,7 +2835,7 @@ impl DeleteIpSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteIPSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3191,7 +2945,7 @@ impl DeleteIpSetInput {
             "DeleteIPSet",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3216,14 +2970,12 @@ pub mod delete_members_input {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
-        /// delete.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to delete.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.detector_id = Some(input.into());
             self
         }
-        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
-        /// delete.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to delete.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -3264,7 +3016,7 @@ pub mod delete_members_input {
 #[doc(hidden)]
 pub type DeleteMembersInputOperationOutputAlias = crate::operation::DeleteMembers;
 #[doc(hidden)]
-pub type DeleteMembersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMembersInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMembers`](crate::operation::DeleteMembers)>
     #[allow(clippy::let_and_return)]
@@ -3275,7 +3027,7 @@ impl DeleteMembersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMembers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3374,7 +3126,7 @@ impl DeleteMembersInput {
             "DeleteMembers",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3448,7 +3200,7 @@ pub mod delete_publishing_destination_input {
 pub type DeletePublishingDestinationInputOperationOutputAlias =
     crate::operation::DeletePublishingDestination;
 #[doc(hidden)]
-pub type DeletePublishingDestinationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePublishingDestinationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePublishingDestinationInput {
     /// Consumes the builder and constructs an Operation<[`DeletePublishingDestination`](crate::operation::DeletePublishingDestination)>
     #[allow(clippy::let_and_return)]
@@ -3459,7 +3211,7 @@ impl DeletePublishingDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePublishingDestination,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3569,7 +3321,7 @@ impl DeletePublishingDestinationInput {
             "DeletePublishingDestination",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3634,7 +3386,7 @@ pub mod delete_threat_intel_set_input {
 #[doc(hidden)]
 pub type DeleteThreatIntelSetInputOperationOutputAlias = crate::operation::DeleteThreatIntelSet;
 #[doc(hidden)]
-pub type DeleteThreatIntelSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteThreatIntelSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteThreatIntelSetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteThreatIntelSet`](crate::operation::DeleteThreatIntelSet)>
     #[allow(clippy::let_and_return)]
@@ -3645,7 +3397,7 @@ impl DeleteThreatIntelSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteThreatIntelSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3755,7 +3507,7 @@ impl DeleteThreatIntelSetInput {
             "DeleteThreatIntelSet",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3779,14 +3531,12 @@ pub mod describe_organization_configuration_input {
         pub(crate) detector_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the detector to retrieve information about the delegated administrator
-        /// from.</p>
+        /// <p>The ID of the detector to retrieve information about the delegated administrator from.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.detector_id = Some(input.into());
             self
         }
-        /// <p>The ID of the detector to retrieve information about the delegated administrator
-        /// from.</p>
+        /// <p>The ID of the detector to retrieve information about the delegated administrator from.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -3808,7 +3558,8 @@ pub mod describe_organization_configuration_input {
 pub type DescribeOrganizationConfigurationInputOperationOutputAlias =
     crate::operation::DescribeOrganizationConfiguration;
 #[doc(hidden)]
-pub type DescribeOrganizationConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeOrganizationConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeOrganizationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOrganizationConfiguration`](crate::operation::DescribeOrganizationConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -3819,7 +3570,7 @@ impl DescribeOrganizationConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeOrganizationConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3913,7 +3664,7 @@ impl DescribeOrganizationConfigurationInput {
             "DescribeOrganizationConfiguration",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3938,14 +3689,12 @@ pub mod describe_publishing_destination_input {
         pub(crate) destination_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique ID of the detector associated with the publishing destination to
-        /// retrieve.</p>
+        /// <p>The unique ID of the detector associated with the publishing destination to retrieve.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.detector_id = Some(input.into());
             self
         }
-        /// <p>The unique ID of the detector associated with the publishing destination to
-        /// retrieve.</p>
+        /// <p>The unique ID of the detector associated with the publishing destination to retrieve.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -3981,7 +3730,8 @@ pub mod describe_publishing_destination_input {
 pub type DescribePublishingDestinationInputOperationOutputAlias =
     crate::operation::DescribePublishingDestination;
 #[doc(hidden)]
-pub type DescribePublishingDestinationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribePublishingDestinationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePublishingDestinationInput {
     /// Consumes the builder and constructs an Operation<[`DescribePublishingDestination`](crate::operation::DescribePublishingDestination)>
     #[allow(clippy::let_and_return)]
@@ -3992,7 +3742,7 @@ impl DescribePublishingDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePublishingDestination,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4102,7 +3852,7 @@ impl DescribePublishingDestinationInput {
             "DescribePublishingDestination",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4126,14 +3876,12 @@ pub mod disable_organization_admin_account_input {
         pub(crate) admin_account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated
-        /// administrator.</p>
+        /// <p>The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
         pub fn admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.admin_account_id = Some(input.into());
             self
         }
-        /// <p>The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated
-        /// administrator.</p>
+        /// <p>The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
         pub fn set_admin_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4158,7 +3906,8 @@ pub mod disable_organization_admin_account_input {
 pub type DisableOrganizationAdminAccountInputOperationOutputAlias =
     crate::operation::DisableOrganizationAdminAccount;
 #[doc(hidden)]
-pub type DisableOrganizationAdminAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisableOrganizationAdminAccountInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisableOrganizationAdminAccountInput {
     /// Consumes the builder and constructs an Operation<[`DisableOrganizationAdminAccount`](crate::operation::DisableOrganizationAdminAccount)>
     #[allow(clippy::let_and_return)]
@@ -4169,7 +3918,7 @@ impl DisableOrganizationAdminAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisableOrganizationAdminAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4250,7 +3999,7 @@ impl DisableOrganizationAdminAccountInput {
             "DisableOrganizationAdminAccount",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4309,7 +4058,8 @@ pub mod disassociate_from_master_account_input {
 pub type DisassociateFromMasterAccountInputOperationOutputAlias =
     crate::operation::DisassociateFromMasterAccount;
 #[doc(hidden)]
-pub type DisassociateFromMasterAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateFromMasterAccountInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateFromMasterAccountInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateFromMasterAccount`](crate::operation::DisassociateFromMasterAccount)>
     #[allow(clippy::let_and_return)]
@@ -4320,7 +4070,7 @@ impl DisassociateFromMasterAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateFromMasterAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4414,7 +4164,7 @@ impl DisassociateFromMasterAccountInput {
             "DisassociateFromMasterAccount",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4439,14 +4189,12 @@ pub mod disassociate_members_input {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
-        /// disassociate from the administrator account.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the administrator account.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.detector_id = Some(input.into());
             self
         }
-        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
-        /// disassociate from the administrator account.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the administrator account.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -4455,16 +4203,14 @@ pub mod disassociate_members_input {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from
-        /// the administrator account.</p>
+        /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from the administrator account.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
-        /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from
-        /// the administrator account.</p>
+        /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from the administrator account.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4489,7 +4235,7 @@ pub mod disassociate_members_input {
 #[doc(hidden)]
 pub type DisassociateMembersInputOperationOutputAlias = crate::operation::DisassociateMembers;
 #[doc(hidden)]
-pub type DisassociateMembersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateMembersInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateMembers`](crate::operation::DisassociateMembers)>
     #[allow(clippy::let_and_return)]
@@ -4500,7 +4246,7 @@ impl DisassociateMembersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateMembers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4600,7 +4346,7 @@ impl DisassociateMembersInput {
             "DisassociateMembers",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4632,14 +4378,12 @@ pub mod enable_organization_admin_account_input {
         pub(crate) admin_account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS Account ID for the organization account to be enabled as a GuardDuty delegated
-        /// administrator.</p>
+        /// <p>The AWS Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
         pub fn admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.admin_account_id = Some(input.into());
             self
         }
-        /// <p>The AWS Account ID for the organization account to be enabled as a GuardDuty delegated
-        /// administrator.</p>
+        /// <p>The AWS Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
         pub fn set_admin_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4664,7 +4408,8 @@ pub mod enable_organization_admin_account_input {
 pub type EnableOrganizationAdminAccountInputOperationOutputAlias =
     crate::operation::EnableOrganizationAdminAccount;
 #[doc(hidden)]
-pub type EnableOrganizationAdminAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type EnableOrganizationAdminAccountInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl EnableOrganizationAdminAccountInput {
     /// Consumes the builder and constructs an Operation<[`EnableOrganizationAdminAccount`](crate::operation::EnableOrganizationAdminAccount)>
     #[allow(clippy::let_and_return)]
@@ -4675,7 +4420,7 @@ impl EnableOrganizationAdminAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::EnableOrganizationAdminAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4756,7 +4501,7 @@ impl EnableOrganizationAdminAccountInput {
             "EnableOrganizationAdminAccount",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4814,7 +4559,7 @@ pub mod get_detector_input {
 #[doc(hidden)]
 pub type GetDetectorInputOperationOutputAlias = crate::operation::GetDetector;
 #[doc(hidden)]
-pub type GetDetectorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDetectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDetectorInput {
     /// Consumes the builder and constructs an Operation<[`GetDetector`](crate::operation::GetDetector)>
     #[allow(clippy::let_and_return)]
@@ -4825,7 +4570,7 @@ impl GetDetectorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDetector,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4915,7 +4660,7 @@ impl GetDetectorInput {
             "GetDetector",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4975,7 +4720,7 @@ pub mod get_filter_input {
 #[doc(hidden)]
 pub type GetFilterInputOperationOutputAlias = crate::operation::GetFilter;
 #[doc(hidden)]
-pub type GetFilterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFilterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFilterInput {
     /// Consumes the builder and constructs an Operation<[`GetFilter`](crate::operation::GetFilter)>
     #[allow(clippy::let_and_return)]
@@ -4986,7 +4731,7 @@ impl GetFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFilter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5094,7 +4839,7 @@ impl GetFilterInput {
                     "GetFilter",
                     "guardduty",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5120,14 +4865,12 @@ pub mod get_findings_input {
         pub(crate) sort_criteria: std::option::Option<crate::model::SortCriteria>,
     }
     impl Builder {
-        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
-        /// retrieve.</p>
+        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.detector_id = Some(input.into());
             self
         }
-        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
-        /// retrieve.</p>
+        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -5182,7 +4925,7 @@ pub mod get_findings_input {
 #[doc(hidden)]
 pub type GetFindingsInputOperationOutputAlias = crate::operation::GetFindings;
 #[doc(hidden)]
-pub type GetFindingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFindingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFindingsInput {
     /// Consumes the builder and constructs an Operation<[`GetFindings`](crate::operation::GetFindings)>
     #[allow(clippy::let_and_return)]
@@ -5193,7 +4936,7 @@ impl GetFindingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFindings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5292,7 +5035,7 @@ impl GetFindingsInput {
             "GetFindings",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5327,14 +5070,12 @@ pub mod get_findings_statistics_input {
         pub(crate) finding_criteria: std::option::Option<crate::model::FindingCriteria>,
     }
     impl Builder {
-        /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you
-        /// want to retrieve.</p>
+        /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.detector_id = Some(input.into());
             self
         }
-        /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you
-        /// want to retrieve.</p>
+        /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -5346,10 +5087,10 @@ pub mod get_findings_statistics_input {
         /// <p>The types of finding statistics to retrieve.</p>
         pub fn finding_statistic_types(
             mut self,
-            input: impl Into<crate::model::FindingStatisticType>,
+            input: crate::model::FindingStatisticType,
         ) -> Self {
             let mut v = self.finding_statistic_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.finding_statistic_types = Some(v);
             self
         }
@@ -5392,7 +5133,7 @@ pub mod get_findings_statistics_input {
 #[doc(hidden)]
 pub type GetFindingsStatisticsInputOperationOutputAlias = crate::operation::GetFindingsStatistics;
 #[doc(hidden)]
-pub type GetFindingsStatisticsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFindingsStatisticsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFindingsStatisticsInput {
     /// Consumes the builder and constructs an Operation<[`GetFindingsStatistics`](crate::operation::GetFindingsStatistics)>
     #[allow(clippy::let_and_return)]
@@ -5403,7 +5144,7 @@ impl GetFindingsStatisticsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFindingsStatistics,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5505,7 +5246,7 @@ impl GetFindingsStatisticsInput {
             "GetFindingsStatistics",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5549,7 +5290,7 @@ pub mod get_invitations_count_input {
 #[doc(hidden)]
 pub type GetInvitationsCountInputOperationOutputAlias = crate::operation::GetInvitationsCount;
 #[doc(hidden)]
-pub type GetInvitationsCountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetInvitationsCountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetInvitationsCountInput {
     /// Consumes the builder and constructs an Operation<[`GetInvitationsCount`](crate::operation::GetInvitationsCount)>
     #[allow(clippy::let_and_return)]
@@ -5560,7 +5301,7 @@ impl GetInvitationsCountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetInvitationsCount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5634,7 +5375,7 @@ impl GetInvitationsCountInput {
             "GetInvitationsCount",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5694,7 +5435,7 @@ pub mod get_ip_set_input {
 #[doc(hidden)]
 pub type GetIpSetInputOperationOutputAlias = crate::operation::GetIPSet;
 #[doc(hidden)]
-pub type GetIpSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetIpSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetIpSetInput {
     /// Consumes the builder and constructs an Operation<[`GetIPSet`](crate::operation::GetIPSet)>
     #[allow(clippy::let_and_return)]
@@ -5705,7 +5446,7 @@ impl GetIpSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetIPSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5813,7 +5554,7 @@ impl GetIpSetInput {
                     "GetIPSet",
                     "guardduty",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5863,7 +5604,7 @@ pub mod get_master_account_input {
 #[doc(hidden)]
 pub type GetMasterAccountInputOperationOutputAlias = crate::operation::GetMasterAccount;
 #[doc(hidden)]
-pub type GetMasterAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMasterAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMasterAccountInput {
     /// Consumes the builder and constructs an Operation<[`GetMasterAccount`](crate::operation::GetMasterAccount)>
     #[allow(clippy::let_and_return)]
@@ -5874,7 +5615,7 @@ impl GetMasterAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMasterAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5968,7 +5709,7 @@ impl GetMasterAccountInput {
             "GetMasterAccount",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6039,7 +5780,7 @@ pub mod get_member_detectors_input {
 #[doc(hidden)]
 pub type GetMemberDetectorsInputOperationOutputAlias = crate::operation::GetMemberDetectors;
 #[doc(hidden)]
-pub type GetMemberDetectorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMemberDetectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMemberDetectorsInput {
     /// Consumes the builder and constructs an Operation<[`GetMemberDetectors`](crate::operation::GetMemberDetectors)>
     #[allow(clippy::let_and_return)]
@@ -6050,7 +5791,7 @@ impl GetMemberDetectorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMemberDetectors,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6150,7 +5891,7 @@ impl GetMemberDetectorsInput {
             "GetMemberDetectors",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6183,14 +5924,12 @@ pub mod get_members_input {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
-        /// retrieve.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to retrieve.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.detector_id = Some(input.into());
             self
         }
-        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
-        /// retrieve.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to retrieve.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -6231,7 +5970,7 @@ pub mod get_members_input {
 #[doc(hidden)]
 pub type GetMembersInputOperationOutputAlias = crate::operation::GetMembers;
 #[doc(hidden)]
-pub type GetMembersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMembersInput {
     /// Consumes the builder and constructs an Operation<[`GetMembers`](crate::operation::GetMembers)>
     #[allow(clippy::let_and_return)]
@@ -6242,7 +5981,7 @@ impl GetMembersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMembers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6341,7 +6080,7 @@ impl GetMembersInput {
             "GetMembers",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6414,7 +6153,7 @@ pub mod get_threat_intel_set_input {
 #[doc(hidden)]
 pub type GetThreatIntelSetInputOperationOutputAlias = crate::operation::GetThreatIntelSet;
 #[doc(hidden)]
-pub type GetThreatIntelSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetThreatIntelSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetThreatIntelSetInput {
     /// Consumes the builder and constructs an Operation<[`GetThreatIntelSet`](crate::operation::GetThreatIntelSet)>
     #[allow(clippy::let_and_return)]
@@ -6425,7 +6164,7 @@ impl GetThreatIntelSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetThreatIntelSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6535,7 +6274,7 @@ impl GetThreatIntelSetInput {
             "GetThreatIntelSet",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6564,14 +6303,12 @@ pub mod get_usage_statistics_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you
-        /// want to retrieve.</p>
+        /// <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you want to retrieve.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.detector_id = Some(input.into());
             self
         }
-        /// <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you
-        /// want to retrieve.</p>
+        /// <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you want to retrieve.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -6602,14 +6339,12 @@ pub mod get_usage_statistics_input {
             self.usage_criteria = input;
             self
         }
-        /// <p>The currency unit you would like to view your usage statistics in. Current valid values
-        /// are USD.</p>
+        /// <p>The currency unit you would like to view your usage statistics in. Current valid values are USD.</p>
         pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
             self.unit = Some(input.into());
             self
         }
-        /// <p>The currency unit you would like to view your usage statistics in. Current valid values
-        /// are USD.</p>
+        /// <p>The currency unit you would like to view your usage statistics in. Current valid values are USD.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.unit = input;
             self
@@ -6624,18 +6359,12 @@ pub mod get_usage_statistics_input {
             self.max_results = input;
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value of
-        /// this parameter to null for the first request to a list action. For subsequent calls, use the
-        /// NextToken value returned from the previous request to continue listing results after the first
-        /// page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value of
-        /// this parameter to null for the first request to a list action. For subsequent calls, use the
-        /// NextToken value returned from the previous request to continue listing results after the first
-        /// page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6661,7 +6390,7 @@ pub mod get_usage_statistics_input {
 #[doc(hidden)]
 pub type GetUsageStatisticsInputOperationOutputAlias = crate::operation::GetUsageStatistics;
 #[doc(hidden)]
-pub type GetUsageStatisticsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetUsageStatisticsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetUsageStatisticsInput {
     /// Consumes the builder and constructs an Operation<[`GetUsageStatistics`](crate::operation::GetUsageStatistics)>
     #[allow(clippy::let_and_return)]
@@ -6672,7 +6401,7 @@ impl GetUsageStatisticsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetUsageStatistics,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6772,7 +6501,7 @@ impl GetUsageStatisticsInput {
             "GetUsageStatistics",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6807,14 +6536,12 @@ pub mod invite_members_input {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique ID of the detector of the GuardDuty account that you want to invite members
-        /// with.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account that you want to invite members with.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.detector_id = Some(input.into());
             self
         }
-        /// <p>The unique ID of the detector of the GuardDuty account that you want to invite members
-        /// with.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account that you want to invite members with.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -6823,16 +6550,14 @@ pub mod invite_members_input {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as
-        /// members.</p>
+        /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as members.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
-        /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as
-        /// members.</p>
+        /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as members.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6850,14 +6575,12 @@ pub mod invite_members_input {
             self.disable_email_notification = input;
             self
         }
-        /// <p>The invitation message that you want to send to the accounts that you're inviting to
-        /// GuardDuty as members.</p>
+        /// <p>The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The invitation message that you want to send to the accounts that you're inviting to
-        /// GuardDuty as members.</p>
+        /// <p>The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -6881,7 +6604,7 @@ pub mod invite_members_input {
 #[doc(hidden)]
 pub type InviteMembersInputOperationOutputAlias = crate::operation::InviteMembers;
 #[doc(hidden)]
-pub type InviteMembersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type InviteMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InviteMembersInput {
     /// Consumes the builder and constructs an Operation<[`InviteMembers`](crate::operation::InviteMembers)>
     #[allow(clippy::let_and_return)]
@@ -6892,7 +6615,7 @@ impl InviteMembersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::InviteMembers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6991,7 +6714,7 @@ impl InviteMembersInput {
             "InviteMembers",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7024,30 +6747,22 @@ pub mod list_detectors_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7069,7 +6784,7 @@ pub mod list_detectors_input {
 #[doc(hidden)]
 pub type ListDetectorsInputOperationOutputAlias = crate::operation::ListDetectors;
 #[doc(hidden)]
-pub type ListDetectorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDetectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDetectorsInput {
     /// Consumes the builder and constructs an Operation<[`ListDetectors`](crate::operation::ListDetectors)>
     #[allow(clippy::let_and_return)]
@@ -7080,7 +6795,7 @@ impl ListDetectorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDetectors,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7171,7 +6886,7 @@ impl ListDetectorsInput {
             "ListDetectors",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7207,30 +6922,22 @@ pub mod list_filters_input {
             self.detector_id = input;
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7253,7 +6960,7 @@ pub mod list_filters_input {
 #[doc(hidden)]
 pub type ListFiltersInputOperationOutputAlias = crate::operation::ListFilters;
 #[doc(hidden)]
-pub type ListFiltersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFiltersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFiltersInput {
     /// Consumes the builder and constructs an Operation<[`ListFilters`](crate::operation::ListFilters)>
     #[allow(clippy::let_and_return)]
@@ -7264,7 +6971,7 @@ impl ListFiltersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFilters,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7375,7 +7082,7 @@ impl ListFiltersInput {
             "ListFilters",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7403,171 +7110,67 @@ pub mod list_findings_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
-        /// list.</p>
+        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to list.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.detector_id = Some(input.into());
             self
         }
-        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
-        /// list.</p>
+        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to list.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
         }
         /// <p>Represents the criteria used for querying findings. Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>JSON field name</p>
-        /// </li>
-        /// <li>
-        /// <p>accountId</p>
-        /// </li>
-        /// <li>
-        /// <p>region</p>
-        /// </li>
-        /// <li>
-        /// <p>confidence</p>
-        /// </li>
-        /// <li>
-        /// <p>id</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.accessKeyId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.principalId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.userName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.userType</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.iamInstanceProfile.id</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.imageId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.instanceId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.publicDnsName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.publicIp</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.subnetId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.vpcId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.tags.key</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.tags.value</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.resourceType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.actionType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.api</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.callerType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.serviceName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.dnsRequestAction.domain</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.blocked</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.connectionDirection</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.localPortDetails.port</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.protocol</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remotePortDetails.port</p>
-        /// </li>
-        /// <li>
-        /// <p>service.additionalInfo.threatListName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.archived</p>
-        /// <p>When this attribute is set to 'true', only archived findings are listed. When it's set
-        /// to 'false', only unarchived findings are listed. When this attribute is not set, all
-        /// existing findings are listed.</p>
-        /// </li>
-        /// <li>
-        /// <p>service.resourceRole</p>
-        /// </li>
-        /// <li>
-        /// <p>severity</p>
-        /// </li>
-        /// <li>
-        /// <p>type</p>
-        /// </li>
-        /// <li>
-        /// <p>updatedAt</p>
-        /// <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p>
-        /// </li>
+        /// <li> <p>JSON field name</p> </li>
+        /// <li> <p>accountId</p> </li>
+        /// <li> <p>region</p> </li>
+        /// <li> <p>confidence</p> </li>
+        /// <li> <p>id</p> </li>
+        /// <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
+        /// <li> <p>resource.accessKeyDetails.principalId</p> </li>
+        /// <li> <p>resource.accessKeyDetails.userName</p> </li>
+        /// <li> <p>resource.accessKeyDetails.userType</p> </li>
+        /// <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>
+        /// <li> <p>resource.instanceDetails.imageId</p> </li>
+        /// <li> <p>resource.instanceDetails.instanceId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>
+        /// <li> <p>resource.instanceDetails.tags.key</p> </li>
+        /// <li> <p>resource.instanceDetails.tags.value</p> </li>
+        /// <li> <p>resource.resourceType</p> </li>
+        /// <li> <p>service.action.actionType</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.api</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.callerType</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
+        /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
+        /// <li> <p>service.additionalInfo.threatListName</p> </li>
+        /// <li> <p>service.archived</p> <p>When this attribute is set to 'true', only archived findings are listed. When it's set to 'false', only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
+        /// <li> <p>service.resourceRole</p> </li>
+        /// <li> <p>severity</p> </li>
+        /// <li> <p>type</p> </li>
+        /// <li> <p>updatedAt</p> <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p> </li>
         /// </ul>
         pub fn finding_criteria(mut self, input: crate::model::FindingCriteria) -> Self {
             self.finding_criteria = Some(input);
@@ -7575,157 +7178,55 @@ pub mod list_findings_input {
         }
         /// <p>Represents the criteria used for querying findings. Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>JSON field name</p>
-        /// </li>
-        /// <li>
-        /// <p>accountId</p>
-        /// </li>
-        /// <li>
-        /// <p>region</p>
-        /// </li>
-        /// <li>
-        /// <p>confidence</p>
-        /// </li>
-        /// <li>
-        /// <p>id</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.accessKeyId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.principalId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.userName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.userType</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.iamInstanceProfile.id</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.imageId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.instanceId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.publicDnsName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.publicIp</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.subnetId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.vpcId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.tags.key</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.tags.value</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.resourceType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.actionType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.api</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.callerType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.serviceName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.dnsRequestAction.domain</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.blocked</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.connectionDirection</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.localPortDetails.port</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.protocol</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remotePortDetails.port</p>
-        /// </li>
-        /// <li>
-        /// <p>service.additionalInfo.threatListName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.archived</p>
-        /// <p>When this attribute is set to 'true', only archived findings are listed. When it's set
-        /// to 'false', only unarchived findings are listed. When this attribute is not set, all
-        /// existing findings are listed.</p>
-        /// </li>
-        /// <li>
-        /// <p>service.resourceRole</p>
-        /// </li>
-        /// <li>
-        /// <p>severity</p>
-        /// </li>
-        /// <li>
-        /// <p>type</p>
-        /// </li>
-        /// <li>
-        /// <p>updatedAt</p>
-        /// <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p>
-        /// </li>
+        /// <li> <p>JSON field name</p> </li>
+        /// <li> <p>accountId</p> </li>
+        /// <li> <p>region</p> </li>
+        /// <li> <p>confidence</p> </li>
+        /// <li> <p>id</p> </li>
+        /// <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
+        /// <li> <p>resource.accessKeyDetails.principalId</p> </li>
+        /// <li> <p>resource.accessKeyDetails.userName</p> </li>
+        /// <li> <p>resource.accessKeyDetails.userType</p> </li>
+        /// <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>
+        /// <li> <p>resource.instanceDetails.imageId</p> </li>
+        /// <li> <p>resource.instanceDetails.instanceId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>
+        /// <li> <p>resource.instanceDetails.tags.key</p> </li>
+        /// <li> <p>resource.instanceDetails.tags.value</p> </li>
+        /// <li> <p>resource.resourceType</p> </li>
+        /// <li> <p>service.action.actionType</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.api</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.callerType</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
+        /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
+        /// <li> <p>service.additionalInfo.threatListName</p> </li>
+        /// <li> <p>service.archived</p> <p>When this attribute is set to 'true', only archived findings are listed. When it's set to 'false', only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
+        /// <li> <p>service.resourceRole</p> </li>
+        /// <li> <p>severity</p> </li>
+        /// <li> <p>type</p> </li>
+        /// <li> <p>updatedAt</p> <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p> </li>
         /// </ul>
         pub fn set_finding_criteria(
             mut self,
@@ -7747,30 +7248,22 @@ pub mod list_findings_input {
             self.sort_criteria = input;
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7795,7 +7288,7 @@ pub mod list_findings_input {
 #[doc(hidden)]
 pub type ListFindingsInputOperationOutputAlias = crate::operation::ListFindings;
 #[doc(hidden)]
-pub type ListFindingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFindingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFindingsInput {
     /// Consumes the builder and constructs an Operation<[`ListFindings`](crate::operation::ListFindings)>
     #[allow(clippy::let_and_return)]
@@ -7806,7 +7299,7 @@ impl ListFindingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFindings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7905,7 +7398,7 @@ impl ListFindingsInput {
             "ListFindings",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7938,30 +7431,22 @@ pub mod list_invitations_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7983,7 +7468,7 @@ pub mod list_invitations_input {
 #[doc(hidden)]
 pub type ListInvitationsInputOperationOutputAlias = crate::operation::ListInvitations;
 #[doc(hidden)]
-pub type ListInvitationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListInvitationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInvitationsInput {
     /// Consumes the builder and constructs an Operation<[`ListInvitations`](crate::operation::ListInvitations)>
     #[allow(clippy::let_and_return)]
@@ -7994,7 +7479,7 @@ impl ListInvitationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListInvitations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8085,7 +7570,7 @@ impl ListInvitationsInput {
             "ListInvitations",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8121,30 +7606,22 @@ pub mod list_ip_sets_input {
             self.detector_id = input;
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8167,7 +7644,7 @@ pub mod list_ip_sets_input {
 #[doc(hidden)]
 pub type ListIpSetsInputOperationOutputAlias = crate::operation::ListIPSets;
 #[doc(hidden)]
-pub type ListIpSetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListIpSetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListIpSetsInput {
     /// Consumes the builder and constructs an Operation<[`ListIPSets`](crate::operation::ListIPSets)>
     #[allow(clippy::let_and_return)]
@@ -8178,7 +7655,7 @@ impl ListIpSetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListIPSets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8289,7 +7766,7 @@ impl ListIpSetsInput {
             "ListIPSets",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8326,42 +7803,32 @@ pub mod list_members_input {
             self.detector_id = input;
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>Specifies whether to only return associated members or to return all members (including
-        /// members who haven't been invited yet or have been disassociated).</p>
+        /// <p>Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated).</p>
         pub fn only_associated(mut self, input: impl Into<std::string::String>) -> Self {
             self.only_associated = Some(input.into());
             self
         }
-        /// <p>Specifies whether to only return associated members or to return all members (including
-        /// members who haven't been invited yet or have been disassociated).</p>
+        /// <p>Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated).</p>
         pub fn set_only_associated(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8388,7 +7855,7 @@ pub mod list_members_input {
 #[doc(hidden)]
 pub type ListMembersInputOperationOutputAlias = crate::operation::ListMembers;
 #[doc(hidden)]
-pub type ListMembersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMembersInput {
     /// Consumes the builder and constructs an Operation<[`ListMembers`](crate::operation::ListMembers)>
     #[allow(clippy::let_and_return)]
@@ -8399,7 +7866,7 @@ impl ListMembersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMembers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8516,7 +7983,7 @@ impl ListMembersInput {
             "ListMembers",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8551,18 +8018,12 @@ pub mod list_organization_admin_accounts_input {
             self.max_results = input;
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value of
-        /// this parameter to null for the first request to a list action. For subsequent calls, use the
-        /// <code>NextToken</code> value returned from the previous request to continue listing results
-        /// after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value of
-        /// this parameter to null for the first request to a list action. For subsequent calls, use the
-        /// <code>NextToken</code> value returned from the previous request to continue listing results
-        /// after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8585,7 +8046,8 @@ pub mod list_organization_admin_accounts_input {
 pub type ListOrganizationAdminAccountsInputOperationOutputAlias =
     crate::operation::ListOrganizationAdminAccounts;
 #[doc(hidden)]
-pub type ListOrganizationAdminAccountsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListOrganizationAdminAccountsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListOrganizationAdminAccountsInput {
     /// Consumes the builder and constructs an Operation<[`ListOrganizationAdminAccounts`](crate::operation::ListOrganizationAdminAccounts)>
     #[allow(clippy::let_and_return)]
@@ -8596,7 +8058,7 @@ impl ListOrganizationAdminAccountsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListOrganizationAdminAccounts,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8687,7 +8149,7 @@ impl ListOrganizationAdminAccountsInput {
             "ListOrganizationAdminAccounts",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8733,18 +8195,12 @@ pub mod list_publishing_destinations_input {
             self.max_results = input;
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value of
-        /// this parameter to null for the first request to a list action. For subsequent calls, use the
-        /// <code>NextToken</code> value returned from the previous request to continue listing results
-        /// after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value of
-        /// this parameter to null for the first request to a list action. For subsequent calls, use the
-        /// <code>NextToken</code> value returned from the previous request to continue listing results
-        /// after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8768,7 +8224,7 @@ pub mod list_publishing_destinations_input {
 pub type ListPublishingDestinationsInputOperationOutputAlias =
     crate::operation::ListPublishingDestinations;
 #[doc(hidden)]
-pub type ListPublishingDestinationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPublishingDestinationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPublishingDestinationsInput {
     /// Consumes the builder and constructs an Operation<[`ListPublishingDestinations`](crate::operation::ListPublishingDestinations)>
     #[allow(clippy::let_and_return)]
@@ -8779,7 +8235,7 @@ impl ListPublishingDestinationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPublishingDestinations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8890,7 +8346,7 @@ impl ListPublishingDestinationsInput {
             "ListPublishingDestinations",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8940,7 +8396,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -8951,7 +8407,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9041,7 +8497,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9077,30 +8533,22 @@ pub mod list_threat_intel_sets_input {
             self.detector_id = input;
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>You can use this parameter to paginate results in the response. Set the value of this
-        /// parameter to null on your first call to the list action. For subsequent calls to the action,
-        /// fill nextToken in the request with the value of NextToken from the previous response to
-        /// continue listing data.</p>
+        /// <p>You can use this parameter to paginate results in the response. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>You can use this parameter to paginate results in the response. Set the value of this
-        /// parameter to null on your first call to the list action. For subsequent calls to the action,
-        /// fill nextToken in the request with the value of NextToken from the previous response to
-        /// continue listing data.</p>
+        /// <p>You can use this parameter to paginate results in the response. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9123,7 +8571,7 @@ pub mod list_threat_intel_sets_input {
 #[doc(hidden)]
 pub type ListThreatIntelSetsInputOperationOutputAlias = crate::operation::ListThreatIntelSets;
 #[doc(hidden)]
-pub type ListThreatIntelSetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListThreatIntelSetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListThreatIntelSetsInput {
     /// Consumes the builder and constructs an Operation<[`ListThreatIntelSets`](crate::operation::ListThreatIntelSets)>
     #[allow(clippy::let_and_return)]
@@ -9134,7 +8582,7 @@ impl ListThreatIntelSetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListThreatIntelSets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9245,7 +8693,7 @@ impl ListThreatIntelSetsInput {
             "ListThreatIntelSets",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9270,14 +8718,12 @@ pub mod start_monitoring_members_input {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The unique ID of the detector of the GuardDuty administrator account associated with the member
-        /// accounts to monitor.</p>
+        /// <p>The unique ID of the detector of the GuardDuty administrator account associated with the member accounts to monitor.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.detector_id = Some(input.into());
             self
         }
-        /// <p>The unique ID of the detector of the GuardDuty administrator account associated with the member
-        /// accounts to monitor.</p>
+        /// <p>The unique ID of the detector of the GuardDuty administrator account associated with the member accounts to monitor.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -9318,7 +8764,7 @@ pub mod start_monitoring_members_input {
 #[doc(hidden)]
 pub type StartMonitoringMembersInputOperationOutputAlias = crate::operation::StartMonitoringMembers;
 #[doc(hidden)]
-pub type StartMonitoringMembersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartMonitoringMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartMonitoringMembersInput {
     /// Consumes the builder and constructs an Operation<[`StartMonitoringMembers`](crate::operation::StartMonitoringMembers)>
     #[allow(clippy::let_and_return)]
@@ -9329,7 +8775,7 @@ impl StartMonitoringMembersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartMonitoringMembers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9431,7 +8877,7 @@ impl StartMonitoringMembersInput {
             "StartMonitoringMembers",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9464,14 +8910,12 @@ pub mod stop_monitoring_members_input {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The unique ID of the detector associated with the GuardDuty administrator account that is
-        /// monitoring member accounts.</p>
+        /// <p>The unique ID of the detector associated with the GuardDuty administrator account that is monitoring member accounts.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.detector_id = Some(input.into());
             self
         }
-        /// <p>The unique ID of the detector associated with the GuardDuty administrator account that is
-        /// monitoring member accounts.</p>
+        /// <p>The unique ID of the detector associated with the GuardDuty administrator account that is monitoring member accounts.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -9512,7 +8956,7 @@ pub mod stop_monitoring_members_input {
 #[doc(hidden)]
 pub type StopMonitoringMembersInputOperationOutputAlias = crate::operation::StopMonitoringMembers;
 #[doc(hidden)]
-pub type StopMonitoringMembersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopMonitoringMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopMonitoringMembersInput {
     /// Consumes the builder and constructs an Operation<[`StopMonitoringMembers`](crate::operation::StopMonitoringMembers)>
     #[allow(clippy::let_and_return)]
@@ -9523,7 +8967,7 @@ impl StopMonitoringMembersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopMonitoringMembers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9625,7 +9069,7 @@ impl StopMonitoringMembersInput {
             "StopMonitoringMembers",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9712,7 +9156,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -9723,7 +9167,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9818,7 +9262,7 @@ impl TagResourceInput {
             "TagResource",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9897,7 +9341,7 @@ pub mod unarchive_findings_input {
 #[doc(hidden)]
 pub type UnarchiveFindingsInputOperationOutputAlias = crate::operation::UnarchiveFindings;
 #[doc(hidden)]
-pub type UnarchiveFindingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UnarchiveFindingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UnarchiveFindingsInput {
     /// Consumes the builder and constructs an Operation<[`UnarchiveFindings`](crate::operation::UnarchiveFindings)>
     #[allow(clippy::let_and_return)]
@@ -9908,7 +9352,7 @@ impl UnarchiveFindingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UnarchiveFindings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10008,7 +9452,7 @@ impl UnarchiveFindingsInput {
             "UnarchiveFindings",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10087,7 +9531,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -10098,7 +9542,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10201,7 +9645,7 @@ impl UntagResourceInput {
             "UntagResource",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10249,8 +9693,7 @@ pub mod update_detector_input {
             self.enable = input;
             self
         }
-        /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch
-        /// Events.</p>
+        /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.</p>
         pub fn finding_publishing_frequency(
             mut self,
             input: crate::model::FindingPublishingFrequency,
@@ -10258,8 +9701,7 @@ pub mod update_detector_input {
             self.finding_publishing_frequency = Some(input);
             self
         }
-        /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch
-        /// Events.</p>
+        /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.</p>
         pub fn set_finding_publishing_frequency(
             mut self,
             input: std::option::Option<crate::model::FindingPublishingFrequency>,
@@ -10299,7 +9741,7 @@ pub mod update_detector_input {
 #[doc(hidden)]
 pub type UpdateDetectorInputOperationOutputAlias = crate::operation::UpdateDetector;
 #[doc(hidden)]
-pub type UpdateDetectorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDetectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDetectorInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDetector`](crate::operation::UpdateDetector)>
     #[allow(clippy::let_and_return)]
@@ -10310,7 +9752,7 @@ impl UpdateDetectorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDetector,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10406,7 +9848,7 @@ impl UpdateDetectorInput {
             "UpdateDetector",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10443,14 +9885,12 @@ pub mod update_filter_input {
         pub(crate) finding_criteria: std::option::Option<crate::model::FindingCriteria>,
     }
     impl Builder {
-        /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to
-        /// update a filter.</p>
+        /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to update a filter.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.detector_id = Some(input.into());
             self
         }
-        /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to
-        /// update a filter.</p>
+        /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to update a filter.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -10488,14 +9928,12 @@ pub mod update_filter_input {
             self.action = input;
             self
         }
-        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the
-        /// order in which this filter is applied to the findings.</p>
+        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
         pub fn rank(mut self, input: i32) -> Self {
             self.rank = Some(input);
             self
         }
-        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the
-        /// order in which this filter is applied to the findings.</p>
+        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
         pub fn set_rank(mut self, input: std::option::Option<i32>) -> Self {
             self.rank = input;
             self
@@ -10534,7 +9972,7 @@ pub mod update_filter_input {
 #[doc(hidden)]
 pub type UpdateFilterInputOperationOutputAlias = crate::operation::UpdateFilter;
 #[doc(hidden)]
-pub type UpdateFilterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFilterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFilterInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFilter`](crate::operation::UpdateFilter)>
     #[allow(clippy::let_and_return)]
@@ -10545,7 +9983,7 @@ impl UpdateFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFilter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10660,7 +10098,7 @@ impl UpdateFilterInput {
             "UpdateFilter",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10763,7 +10201,7 @@ pub mod update_findings_feedback_input {
 #[doc(hidden)]
 pub type UpdateFindingsFeedbackInputOperationOutputAlias = crate::operation::UpdateFindingsFeedback;
 #[doc(hidden)]
-pub type UpdateFindingsFeedbackInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFindingsFeedbackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFindingsFeedbackInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFindingsFeedback`](crate::operation::UpdateFindingsFeedback)>
     #[allow(clippy::let_and_return)]
@@ -10774,7 +10212,7 @@ impl UpdateFindingsFeedbackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFindingsFeedback,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10876,7 +10314,7 @@ impl UpdateFindingsFeedbackInput {
             "UpdateFindingsFeedback",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10942,14 +10380,12 @@ pub mod update_ip_set_input {
             self.name = input;
             self
         }
-        /// <p>The updated URI of the file that contains the IPSet. For example:
-        /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The updated URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The updated URI of the file that contains the IPSet. For example:
-        /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The updated URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -10984,7 +10420,7 @@ pub mod update_ip_set_input {
 #[doc(hidden)]
 pub type UpdateIpSetInputOperationOutputAlias = crate::operation::UpdateIPSet;
 #[doc(hidden)]
-pub type UpdateIpSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateIpSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateIpSetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateIPSet`](crate::operation::UpdateIPSet)>
     #[allow(clippy::let_and_return)]
@@ -10995,7 +10431,7 @@ impl UpdateIpSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateIPSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11110,7 +10546,7 @@ impl UpdateIpSetInput {
             "UpdateIPSet",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11204,7 +10640,7 @@ pub mod update_member_detectors_input {
 #[doc(hidden)]
 pub type UpdateMemberDetectorsInputOperationOutputAlias = crate::operation::UpdateMemberDetectors;
 #[doc(hidden)]
-pub type UpdateMemberDetectorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateMemberDetectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateMemberDetectorsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMemberDetectors`](crate::operation::UpdateMemberDetectors)>
     #[allow(clippy::let_and_return)]
@@ -11215,7 +10651,7 @@ impl UpdateMemberDetectorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateMemberDetectors,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11317,7 +10753,7 @@ impl UpdateMemberDetectorsInput {
             "UpdateMemberDetectors",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11407,7 +10843,8 @@ pub mod update_organization_configuration_input {
 pub type UpdateOrganizationConfigurationInputOperationOutputAlias =
     crate::operation::UpdateOrganizationConfiguration;
 #[doc(hidden)]
-pub type UpdateOrganizationConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateOrganizationConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateOrganizationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateOrganizationConfiguration`](crate::operation::UpdateOrganizationConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -11418,7 +10855,7 @@ impl UpdateOrganizationConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateOrganizationConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11519,7 +10956,7 @@ impl UpdateOrganizationConfigurationInput {
             "UpdateOrganizationConfiguration",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11576,8 +11013,7 @@ pub mod update_publishing_destination_input {
             self.destination_id = input;
             self
         }
-        /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code>
-        /// and <code>KmsKeyArn</code> of the publishing destination.</p>
+        /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
         pub fn destination_properties(
             mut self,
             input: crate::model::DestinationProperties,
@@ -11585,8 +11021,7 @@ pub mod update_publishing_destination_input {
             self.destination_properties = Some(input);
             self
         }
-        /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code>
-        /// and <code>KmsKeyArn</code> of the publishing destination.</p>
+        /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
         pub fn set_destination_properties(
             mut self,
             input: std::option::Option<crate::model::DestinationProperties>,
@@ -11613,7 +11048,7 @@ pub mod update_publishing_destination_input {
 pub type UpdatePublishingDestinationInputOperationOutputAlias =
     crate::operation::UpdatePublishingDestination;
 #[doc(hidden)]
-pub type UpdatePublishingDestinationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdatePublishingDestinationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePublishingDestinationInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePublishingDestination`](crate::operation::UpdatePublishingDestination)>
     #[allow(clippy::let_and_return)]
@@ -11624,7 +11059,7 @@ impl UpdatePublishingDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePublishingDestination,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11741,7 +11176,7 @@ impl UpdatePublishingDestinationInput {
             "UpdatePublishingDestination",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11777,14 +11212,12 @@ pub mod update_threat_intel_set_input {
         pub(crate) activate: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to
-        /// update.</p>
+        /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.</p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.detector_id = Some(input.into());
             self
         }
-        /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to
-        /// update.</p>
+        /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -11822,14 +11255,12 @@ pub mod update_threat_intel_set_input {
             self.location = input;
             self
         }
-        /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or
-        /// not.</p>
+        /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or not.</p>
         pub fn activate(mut self, input: bool) -> Self {
             self.activate = Some(input);
             self
         }
-        /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or
-        /// not.</p>
+        /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or not.</p>
         pub fn set_activate(mut self, input: std::option::Option<bool>) -> Self {
             self.activate = input;
             self
@@ -11854,7 +11285,7 @@ pub mod update_threat_intel_set_input {
 #[doc(hidden)]
 pub type UpdateThreatIntelSetInputOperationOutputAlias = crate::operation::UpdateThreatIntelSet;
 #[doc(hidden)]
-pub type UpdateThreatIntelSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateThreatIntelSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateThreatIntelSetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateThreatIntelSet`](crate::operation::UpdateThreatIntelSet)>
     #[allow(clippy::let_and_return)]
@@ -11865,7 +11296,7 @@ impl UpdateThreatIntelSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateThreatIntelSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11983,7 +11414,7 @@ impl UpdateThreatIntelSetInput {
             "UpdateThreatIntelSet",
             "guardduty",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12010,8 +11441,7 @@ impl UpdateThreatIntelSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateThreatIntelSetInput {
-    /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to
-    /// update.</p>
+    /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.</p>
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
     pub threat_intel_set_id: std::option::Option<std::string::String>,
@@ -12019,13 +11449,11 @@ pub struct UpdateThreatIntelSetInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The updated URI of the file that contains the ThreateIntelSet.</p>
     pub location: std::option::Option<std::string::String>,
-    /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or
-    /// not.</p>
+    /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or not.</p>
     pub activate: bool,
 }
 impl UpdateThreatIntelSetInput {
-    /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to
-    /// update.</p>
+    /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.</p>
     pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
@@ -12041,8 +11469,7 @@ impl UpdateThreatIntelSetInput {
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
-    /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or
-    /// not.</p>
+    /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or not.</p>
     pub fn activate(&self) -> bool {
         self.activate
     }
@@ -12067,8 +11494,7 @@ pub struct UpdatePublishingDestinationInput {
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The ID of the publishing destination to update.</p>
     pub destination_id: std::option::Option<std::string::String>,
-    /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code>
-    /// and <code>KmsKeyArn</code> of the publishing destination.</p>
+    /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
     pub destination_properties: std::option::Option<crate::model::DestinationProperties>,
 }
 impl UpdatePublishingDestinationInput {
@@ -12080,8 +11506,7 @@ impl UpdatePublishingDestinationInput {
     pub fn destination_id(&self) -> std::option::Option<&str> {
         self.destination_id.as_deref()
     }
-    /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code>
-    /// and <code>KmsKeyArn</code> of the publishing destination.</p>
+    /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
     pub fn destination_properties(
         &self,
     ) -> std::option::Option<&crate::model::DestinationProperties> {
@@ -12180,8 +11605,7 @@ pub struct UpdateIpSetInput {
     pub ip_set_id: std::option::Option<std::string::String>,
     /// <p>The unique ID that specifies the IPSet that you want to update.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The updated URI of the file that contains the IPSet. For example:
-    /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    /// <p>The updated URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
     pub location: std::option::Option<std::string::String>,
     /// <p>The updated Boolean value that specifies whether the IPSet is active or not.</p>
     pub activate: bool,
@@ -12199,8 +11623,7 @@ impl UpdateIpSetInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The updated URI of the file that contains the IPSet. For example:
-    /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    /// <p>The updated URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -12267,8 +11690,7 @@ impl std::fmt::Debug for UpdateFindingsFeedbackInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFilterInput {
-    /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to
-    /// update a filter.</p>
+    /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to update a filter.</p>
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The name of the filter.</p>
     pub filter_name: std::option::Option<std::string::String>,
@@ -12276,15 +11698,13 @@ pub struct UpdateFilterInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
     pub action: std::option::Option<crate::model::FilterAction>,
-    /// <p>Specifies the position of the filter in the list of current filters. Also specifies the
-    /// order in which this filter is applied to the findings.</p>
+    /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
     pub rank: i32,
     /// <p>Represents the criteria to be used in the filter for querying findings.</p>
     pub finding_criteria: std::option::Option<crate::model::FindingCriteria>,
 }
 impl UpdateFilterInput {
-    /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to
-    /// update a filter.</p>
+    /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to update a filter.</p>
     pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
@@ -12300,8 +11720,7 @@ impl UpdateFilterInput {
     pub fn action(&self) -> std::option::Option<&crate::model::FilterAction> {
         self.action.as_ref()
     }
-    /// <p>Specifies the position of the filter in the list of current filters. Also specifies the
-    /// order in which this filter is applied to the findings.</p>
+    /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
     pub fn rank(&self) -> i32 {
         self.rank
     }
@@ -12331,8 +11750,7 @@ pub struct UpdateDetectorInput {
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the detector is enabled or not enabled.</p>
     pub enable: bool,
-    /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch
-    /// Events.</p>
+    /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.</p>
     pub finding_publishing_frequency: std::option::Option<crate::model::FindingPublishingFrequency>,
     /// <p>Describes which data sources will be updated.</p>
     pub data_sources: std::option::Option<crate::model::DataSourceConfigurations>,
@@ -12346,8 +11764,7 @@ impl UpdateDetectorInput {
     pub fn enable(&self) -> bool {
         self.enable
     }
-    /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch
-    /// Events.</p>
+    /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.</p>
     pub fn finding_publishing_frequency(
         &self,
     ) -> std::option::Option<&crate::model::FindingPublishingFrequency> {
@@ -12464,15 +11881,13 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopMonitoringMembersInput {
-    /// <p>The unique ID of the detector associated with the GuardDuty administrator account that is
-    /// monitoring member accounts.</p>
+    /// <p>The unique ID of the detector associated with the GuardDuty administrator account that is monitoring member accounts.</p>
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>A list of account IDs for the member accounts to stop monitoring.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StopMonitoringMembersInput {
-    /// <p>The unique ID of the detector associated with the GuardDuty administrator account that is
-    /// monitoring member accounts.</p>
+    /// <p>The unique ID of the detector associated with the GuardDuty administrator account that is monitoring member accounts.</p>
     pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
@@ -12494,15 +11909,13 @@ impl std::fmt::Debug for StopMonitoringMembersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMonitoringMembersInput {
-    /// <p>The unique ID of the detector of the GuardDuty administrator account associated with the member
-    /// accounts to monitor.</p>
+    /// <p>The unique ID of the detector of the GuardDuty administrator account associated with the member accounts to monitor.</p>
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>A list of account IDs of the GuardDuty member accounts to start monitoring.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StartMonitoringMembersInput {
-    /// <p>The unique ID of the detector of the GuardDuty administrator account associated with the member
-    /// accounts to monitor.</p>
+    /// <p>The unique ID of the detector of the GuardDuty administrator account associated with the member accounts to monitor.</p>
     pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
@@ -12526,13 +11939,9 @@ impl std::fmt::Debug for StartMonitoringMembersInput {
 pub struct ListThreatIntelSetsInput {
     /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
     pub detector_id: std::option::Option<std::string::String>,
-    /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-    /// response. The default value is 50. The maximum value is 50.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
     pub max_results: i32,
-    /// <p>You can use this parameter to paginate results in the response. Set the value of this
-    /// parameter to null on your first call to the list action. For subsequent calls to the action,
-    /// fill nextToken in the request with the value of NextToken from the previous response to
-    /// continue listing data.</p>
+    /// <p>You can use this parameter to paginate results in the response. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListThreatIntelSetsInput {
@@ -12540,15 +11949,11 @@ impl ListThreatIntelSetsInput {
     pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
-    /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-    /// response. The default value is 50. The maximum value is 50.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>You can use this parameter to paginate results in the response. Set the value of this
-    /// parameter to null on your first call to the list action. For subsequent calls to the action,
-    /// fill nextToken in the request with the value of NextToken from the previous response to
-    /// continue listing data.</p>
+    /// <p>You can use this parameter to paginate results in the response. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12592,10 +11997,7 @@ pub struct ListPublishingDestinationsInput {
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: i32,
-    /// <p>A token to use for paginating results that are returned in the response. Set the value of
-    /// this parameter to null for the first request to a list action. For subsequent calls, use the
-    /// <code>NextToken</code> value returned from the previous request to continue listing results
-    /// after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPublishingDestinationsInput {
@@ -12607,10 +12009,7 @@ impl ListPublishingDestinationsInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>A token to use for paginating results that are returned in the response. Set the value of
-    /// this parameter to null for the first request to a list action. For subsequent calls, use the
-    /// <code>NextToken</code> value returned from the previous request to continue listing results
-    /// after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12631,10 +12030,7 @@ impl std::fmt::Debug for ListPublishingDestinationsInput {
 pub struct ListOrganizationAdminAccountsInput {
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: i32,
-    /// <p>A token to use for paginating results that are returned in the response. Set the value of
-    /// this parameter to null for the first request to a list action. For subsequent calls, use the
-    /// <code>NextToken</code> value returned from the previous request to continue listing results
-    /// after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOrganizationAdminAccountsInput {
@@ -12642,10 +12038,7 @@ impl ListOrganizationAdminAccountsInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>A token to use for paginating results that are returned in the response. Set the value of
-    /// this parameter to null for the first request to a list action. For subsequent calls, use the
-    /// <code>NextToken</code> value returned from the previous request to continue listing results
-    /// after the first page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12665,16 +12058,11 @@ impl std::fmt::Debug for ListOrganizationAdminAccountsInput {
 pub struct ListMembersInput {
     /// <p>The unique ID of the detector the member is associated with.</p>
     pub detector_id: std::option::Option<std::string::String>,
-    /// <p>You can use this parameter to indicate the maximum number of items you want in the
-    /// response. The default value is 50. The maximum value is 50.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
     pub max_results: i32,
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-    /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-    /// in the request with the value of NextToken from the previous response to continue listing
-    /// data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Specifies whether to only return associated members or to return all members (including
-    /// members who haven't been invited yet or have been disassociated).</p>
+    /// <p>Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated).</p>
     pub only_associated: std::option::Option<std::string::String>,
 }
 impl ListMembersInput {
@@ -12682,20 +12070,15 @@ impl ListMembersInput {
     pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
-    /// <p>You can use this parameter to indicate the maximum number of items you want in the
-    /// response. The default value is 50. The maximum value is 50.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-    /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-    /// in the request with the value of NextToken from the previous response to continue listing
-    /// data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Specifies whether to only return associated members or to return all members (including
-    /// members who haven't been invited yet or have been disassociated).</p>
+    /// <p>Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated).</p>
     pub fn only_associated(&self) -> std::option::Option<&str> {
         self.only_associated.as_deref()
     }
@@ -12717,13 +12100,9 @@ impl std::fmt::Debug for ListMembersInput {
 pub struct ListIpSetsInput {
     /// <p>The unique ID of the detector that the IPSet is associated with.</p>
     pub detector_id: std::option::Option<std::string::String>,
-    /// <p>You can use this parameter to indicate the maximum number of items you want in the
-    /// response. The default value is 50. The maximum value is 50.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
     pub max_results: i32,
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-    /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-    /// in the request with the value of NextToken from the previous response to continue listing
-    /// data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIpSetsInput {
@@ -12731,15 +12110,11 @@ impl ListIpSetsInput {
     pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
-    /// <p>You can use this parameter to indicate the maximum number of items you want in the
-    /// response. The default value is 50. The maximum value is 50.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-    /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-    /// in the request with the value of NextToken from the previous response to continue listing
-    /// data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12758,25 +12133,17 @@ impl std::fmt::Debug for ListIpSetsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInvitationsInput {
-    /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-    /// response. The default value is 50. The maximum value is 50.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
     pub max_results: i32,
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-    /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-    /// in the request with the value of NextToken from the previous response to continue listing
-    /// data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInvitationsInput {
-    /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-    /// response. The default value is 50. The maximum value is 50.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-    /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-    /// in the request with the value of NextToken from the previous response to continue listing
-    /// data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12794,334 +12161,124 @@ impl std::fmt::Debug for ListInvitationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFindingsInput {
-    /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
-    /// list.</p>
+    /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to list.</p>
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>Represents the criteria used for querying findings. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>JSON field name</p>
-    /// </li>
-    /// <li>
-    /// <p>accountId</p>
-    /// </li>
-    /// <li>
-    /// <p>region</p>
-    /// </li>
-    /// <li>
-    /// <p>confidence</p>
-    /// </li>
-    /// <li>
-    /// <p>id</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.accessKeyId</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.principalId</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.userName</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.userType</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.iamInstanceProfile.id</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.imageId</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.instanceId</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.publicDnsName</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.publicIp</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.subnetId</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.vpcId</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.tags.key</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.tags.value</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.resourceType</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.actionType</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.api</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.callerType</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.serviceName</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.dnsRequestAction.domain</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.blocked</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.connectionDirection</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.localPortDetails.port</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.protocol</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remotePortDetails.port</p>
-    /// </li>
-    /// <li>
-    /// <p>service.additionalInfo.threatListName</p>
-    /// </li>
-    /// <li>
-    /// <p>service.archived</p>
-    /// <p>When this attribute is set to 'true', only archived findings are listed. When it's set
-    /// to 'false', only unarchived findings are listed. When this attribute is not set, all
-    /// existing findings are listed.</p>
-    /// </li>
-    /// <li>
-    /// <p>service.resourceRole</p>
-    /// </li>
-    /// <li>
-    /// <p>severity</p>
-    /// </li>
-    /// <li>
-    /// <p>type</p>
-    /// </li>
-    /// <li>
-    /// <p>updatedAt</p>
-    /// <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p>
-    /// </li>
+    /// <li> <p>JSON field name</p> </li>
+    /// <li> <p>accountId</p> </li>
+    /// <li> <p>region</p> </li>
+    /// <li> <p>confidence</p> </li>
+    /// <li> <p>id</p> </li>
+    /// <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
+    /// <li> <p>resource.accessKeyDetails.principalId</p> </li>
+    /// <li> <p>resource.accessKeyDetails.userName</p> </li>
+    /// <li> <p>resource.accessKeyDetails.userType</p> </li>
+    /// <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>
+    /// <li> <p>resource.instanceDetails.imageId</p> </li>
+    /// <li> <p>resource.instanceDetails.instanceId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>
+    /// <li> <p>resource.instanceDetails.tags.key</p> </li>
+    /// <li> <p>resource.instanceDetails.tags.value</p> </li>
+    /// <li> <p>resource.resourceType</p> </li>
+    /// <li> <p>service.action.actionType</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.api</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.callerType</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
+    /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
+    /// <li> <p>service.additionalInfo.threatListName</p> </li>
+    /// <li> <p>service.archived</p> <p>When this attribute is set to 'true', only archived findings are listed. When it's set to 'false', only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
+    /// <li> <p>service.resourceRole</p> </li>
+    /// <li> <p>severity</p> </li>
+    /// <li> <p>type</p> </li>
+    /// <li> <p>updatedAt</p> <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p> </li>
     /// </ul>
     pub finding_criteria: std::option::Option<crate::model::FindingCriteria>,
     /// <p>Represents the criteria used for sorting findings.</p>
     pub sort_criteria: std::option::Option<crate::model::SortCriteria>,
-    /// <p>You can use this parameter to indicate the maximum number of items you want in the
-    /// response. The default value is 50. The maximum value is 50.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
     pub max_results: i32,
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-    /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-    /// in the request with the value of NextToken from the previous response to continue listing
-    /// data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFindingsInput {
-    /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
-    /// list.</p>
+    /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to list.</p>
     pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
     /// <p>Represents the criteria used for querying findings. Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>JSON field name</p>
-    /// </li>
-    /// <li>
-    /// <p>accountId</p>
-    /// </li>
-    /// <li>
-    /// <p>region</p>
-    /// </li>
-    /// <li>
-    /// <p>confidence</p>
-    /// </li>
-    /// <li>
-    /// <p>id</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.accessKeyId</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.principalId</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.userName</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.userType</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.iamInstanceProfile.id</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.imageId</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.instanceId</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.publicDnsName</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.publicIp</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.subnetId</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.vpcId</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.tags.key</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.tags.value</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.resourceType</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.actionType</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.api</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.callerType</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.serviceName</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.dnsRequestAction.domain</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.blocked</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.connectionDirection</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.localPortDetails.port</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.protocol</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remotePortDetails.port</p>
-    /// </li>
-    /// <li>
-    /// <p>service.additionalInfo.threatListName</p>
-    /// </li>
-    /// <li>
-    /// <p>service.archived</p>
-    /// <p>When this attribute is set to 'true', only archived findings are listed. When it's set
-    /// to 'false', only unarchived findings are listed. When this attribute is not set, all
-    /// existing findings are listed.</p>
-    /// </li>
-    /// <li>
-    /// <p>service.resourceRole</p>
-    /// </li>
-    /// <li>
-    /// <p>severity</p>
-    /// </li>
-    /// <li>
-    /// <p>type</p>
-    /// </li>
-    /// <li>
-    /// <p>updatedAt</p>
-    /// <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p>
-    /// </li>
+    /// <li> <p>JSON field name</p> </li>
+    /// <li> <p>accountId</p> </li>
+    /// <li> <p>region</p> </li>
+    /// <li> <p>confidence</p> </li>
+    /// <li> <p>id</p> </li>
+    /// <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
+    /// <li> <p>resource.accessKeyDetails.principalId</p> </li>
+    /// <li> <p>resource.accessKeyDetails.userName</p> </li>
+    /// <li> <p>resource.accessKeyDetails.userType</p> </li>
+    /// <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>
+    /// <li> <p>resource.instanceDetails.imageId</p> </li>
+    /// <li> <p>resource.instanceDetails.instanceId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>
+    /// <li> <p>resource.instanceDetails.tags.key</p> </li>
+    /// <li> <p>resource.instanceDetails.tags.value</p> </li>
+    /// <li> <p>resource.resourceType</p> </li>
+    /// <li> <p>service.action.actionType</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.api</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.callerType</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
+    /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
+    /// <li> <p>service.additionalInfo.threatListName</p> </li>
+    /// <li> <p>service.archived</p> <p>When this attribute is set to 'true', only archived findings are listed. When it's set to 'false', only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
+    /// <li> <p>service.resourceRole</p> </li>
+    /// <li> <p>severity</p> </li>
+    /// <li> <p>type</p> </li>
+    /// <li> <p>updatedAt</p> <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p> </li>
     /// </ul>
     pub fn finding_criteria(&self) -> std::option::Option<&crate::model::FindingCriteria> {
         self.finding_criteria.as_ref()
@@ -13130,15 +12287,11 @@ impl ListFindingsInput {
     pub fn sort_criteria(&self) -> std::option::Option<&crate::model::SortCriteria> {
         self.sort_criteria.as_ref()
     }
-    /// <p>You can use this parameter to indicate the maximum number of items you want in the
-    /// response. The default value is 50. The maximum value is 50.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-    /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-    /// in the request with the value of NextToken from the previous response to continue listing
-    /// data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13161,13 +12314,9 @@ impl std::fmt::Debug for ListFindingsInput {
 pub struct ListFiltersInput {
     /// <p>The unique ID of the detector that the filter is associated with.</p>
     pub detector_id: std::option::Option<std::string::String>,
-    /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-    /// response. The default value is 50. The maximum value is 50.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
     pub max_results: i32,
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-    /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-    /// in the request with the value of NextToken from the previous response to continue listing
-    /// data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFiltersInput {
@@ -13175,15 +12324,11 @@ impl ListFiltersInput {
     pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
-    /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-    /// response. The default value is 50. The maximum value is 50.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-    /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-    /// in the request with the value of NextToken from the previous response to continue listing
-    /// data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13202,25 +12347,17 @@ impl std::fmt::Debug for ListFiltersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDetectorsInput {
-    /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-    /// response. The default value is 50. The maximum value is 50.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
     pub max_results: i32,
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-    /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-    /// in the request with the value of NextToken from the previous response to continue listing
-    /// data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDetectorsInput {
-    /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-    /// response. The default value is 50. The maximum value is 50.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-    /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-    /// in the request with the value of NextToken from the previous response to continue listing
-    /// data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13238,26 +12375,21 @@ impl std::fmt::Debug for ListDetectorsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InviteMembersInput {
-    /// <p>The unique ID of the detector of the GuardDuty account that you want to invite members
-    /// with.</p>
+    /// <p>The unique ID of the detector of the GuardDuty account that you want to invite members with.</p>
     pub detector_id: std::option::Option<std::string::String>,
-    /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as
-    /// members.</p>
+    /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as members.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A Boolean value that specifies whether you want to disable email notification to the accounts that you are inviting to GuardDuty as members.</p>
     pub disable_email_notification: bool,
-    /// <p>The invitation message that you want to send to the accounts that you're inviting to
-    /// GuardDuty as members.</p>
+    /// <p>The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl InviteMembersInput {
-    /// <p>The unique ID of the detector of the GuardDuty account that you want to invite members
-    /// with.</p>
+    /// <p>The unique ID of the detector of the GuardDuty account that you want to invite members with.</p>
     pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
-    /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as
-    /// members.</p>
+    /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as members.</p>
     pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
@@ -13265,8 +12397,7 @@ impl InviteMembersInput {
     pub fn disable_email_notification(&self) -> bool {
         self.disable_email_notification
     }
-    /// <p>The invitation message that you want to send to the accounts that you're inviting to
-    /// GuardDuty as members.</p>
+    /// <p>The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
@@ -13289,27 +12420,21 @@ impl std::fmt::Debug for InviteMembersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsageStatisticsInput {
-    /// <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you
-    /// want to retrieve.</p>
+    /// <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you want to retrieve.</p>
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The type of usage statistics to retrieve.</p>
     pub usage_statistic_type: std::option::Option<crate::model::UsageStatisticType>,
     /// <p>Represents the criteria used for querying usage.</p>
     pub usage_criteria: std::option::Option<crate::model::UsageCriteria>,
-    /// <p>The currency unit you would like to view your usage statistics in. Current valid values
-    /// are USD.</p>
+    /// <p>The currency unit you would like to view your usage statistics in. Current valid values are USD.</p>
     pub unit: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: i32,
-    /// <p>A token to use for paginating results that are returned in the response. Set the value of
-    /// this parameter to null for the first request to a list action. For subsequent calls, use the
-    /// NextToken value returned from the previous request to continue listing results after the first
-    /// page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetUsageStatisticsInput {
-    /// <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you
-    /// want to retrieve.</p>
+    /// <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you want to retrieve.</p>
     pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
@@ -13321,8 +12446,7 @@ impl GetUsageStatisticsInput {
     pub fn usage_criteria(&self) -> std::option::Option<&crate::model::UsageCriteria> {
         self.usage_criteria.as_ref()
     }
-    /// <p>The currency unit you would like to view your usage statistics in. Current valid values
-    /// are USD.</p>
+    /// <p>The currency unit you would like to view your usage statistics in. Current valid values are USD.</p>
     pub fn unit(&self) -> std::option::Option<&str> {
         self.unit.as_deref()
     }
@@ -13330,10 +12454,7 @@ impl GetUsageStatisticsInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>A token to use for paginating results that are returned in the response. Set the value of
-    /// this parameter to null for the first request to a list action. For subsequent calls, use the
-    /// NextToken value returned from the previous request to continue listing results after the first
-    /// page.</p>
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13383,15 +12504,13 @@ impl std::fmt::Debug for GetThreatIntelSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMembersInput {
-    /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
-    /// retrieve.</p>
+    /// <p>The unique ID of the detector of the GuardDuty account whose members you want to retrieve.</p>
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>A list of account IDs of the GuardDuty member accounts that you want to describe.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetMembersInput {
-    /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
-    /// retrieve.</p>
+    /// <p>The unique ID of the detector of the GuardDuty account whose members you want to retrieve.</p>
     pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
@@ -13501,8 +12620,7 @@ impl std::fmt::Debug for GetInvitationsCountInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFindingsStatisticsInput {
-    /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you
-    /// want to retrieve.</p>
+    /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.</p>
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The types of finding statistics to retrieve.</p>
     pub finding_statistic_types:
@@ -13511,8 +12629,7 @@ pub struct GetFindingsStatisticsInput {
     pub finding_criteria: std::option::Option<crate::model::FindingCriteria>,
 }
 impl GetFindingsStatisticsInput {
-    /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you
-    /// want to retrieve.</p>
+    /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.</p>
     pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
@@ -13541,8 +12658,7 @@ impl std::fmt::Debug for GetFindingsStatisticsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFindingsInput {
-    /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
-    /// retrieve.</p>
+    /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.</p>
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The IDs of the findings that you want to retrieve.</p>
     pub finding_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13550,8 +12666,7 @@ pub struct GetFindingsInput {
     pub sort_criteria: std::option::Option<crate::model::SortCriteria>,
 }
 impl GetFindingsInput {
-    /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
-    /// retrieve.</p>
+    /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.</p>
     pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
@@ -13627,13 +12742,11 @@ impl std::fmt::Debug for GetDetectorInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableOrganizationAdminAccountInput {
-    /// <p>The AWS Account ID for the organization account to be enabled as a GuardDuty delegated
-    /// administrator.</p>
+    /// <p>The AWS Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
     pub admin_account_id: std::option::Option<std::string::String>,
 }
 impl EnableOrganizationAdminAccountInput {
-    /// <p>The AWS Account ID for the organization account to be enabled as a GuardDuty delegated
-    /// administrator.</p>
+    /// <p>The AWS Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
     pub fn admin_account_id(&self) -> std::option::Option<&str> {
         self.admin_account_id.as_deref()
     }
@@ -13650,21 +12763,17 @@ impl std::fmt::Debug for EnableOrganizationAdminAccountInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateMembersInput {
-    /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
-    /// disassociate from the administrator account.</p>
+    /// <p>The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the administrator account.</p>
     pub detector_id: std::option::Option<std::string::String>,
-    /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from
-    /// the administrator account.</p>
+    /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from the administrator account.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DisassociateMembersInput {
-    /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
-    /// disassociate from the administrator account.</p>
+    /// <p>The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the administrator account.</p>
     pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
-    /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from
-    /// the administrator account.</p>
+    /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from the administrator account.</p>
     pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
@@ -13703,13 +12812,11 @@ impl std::fmt::Debug for DisassociateFromMasterAccountInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableOrganizationAdminAccountInput {
-    /// <p>The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated
-    /// administrator.</p>
+    /// <p>The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
     pub admin_account_id: std::option::Option<std::string::String>,
 }
 impl DisableOrganizationAdminAccountInput {
-    /// <p>The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated
-    /// administrator.</p>
+    /// <p>The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
     pub fn admin_account_id(&self) -> std::option::Option<&str> {
         self.admin_account_id.as_deref()
     }
@@ -13726,15 +12833,13 @@ impl std::fmt::Debug for DisableOrganizationAdminAccountInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePublishingDestinationInput {
-    /// <p>The unique ID of the detector associated with the publishing destination to
-    /// retrieve.</p>
+    /// <p>The unique ID of the detector associated with the publishing destination to retrieve.</p>
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The ID of the publishing destination to retrieve.</p>
     pub destination_id: std::option::Option<std::string::String>,
 }
 impl DescribePublishingDestinationInput {
-    /// <p>The unique ID of the detector associated with the publishing destination to
-    /// retrieve.</p>
+    /// <p>The unique ID of the detector associated with the publishing destination to retrieve.</p>
     pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
@@ -13756,13 +12861,11 @@ impl std::fmt::Debug for DescribePublishingDestinationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationConfigurationInput {
-    /// <p>The ID of the detector to retrieve information about the delegated administrator
-    /// from.</p>
+    /// <p>The ID of the detector to retrieve information about the delegated administrator from.</p>
     pub detector_id: std::option::Option<std::string::String>,
 }
 impl DescribeOrganizationConfigurationInput {
-    /// <p>The ID of the detector to retrieve information about the delegated administrator
-    /// from.</p>
+    /// <p>The ID of the detector to retrieve information about the delegated administrator from.</p>
     pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
@@ -13835,15 +12938,13 @@ impl std::fmt::Debug for DeletePublishingDestinationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMembersInput {
-    /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
-    /// delete.</p>
+    /// <p>The unique ID of the detector of the GuardDuty account whose members you want to delete.</p>
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>A list of account IDs of the GuardDuty member accounts that you want to delete.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteMembersInput {
-    /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
-    /// delete.</p>
+    /// <p>The unique ID of the detector of the GuardDuty account whose members you want to delete.</p>
     pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
@@ -13893,13 +12994,11 @@ impl std::fmt::Debug for DeleteIpSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInvitationsInput {
-    /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member
-    /// account that you want to delete invitations from.</p>
+    /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to delete invitations from.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteInvitationsInput {
-    /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member
-    /// account that you want to delete invitations from.</p>
+    /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to delete invitations from.</p>
     pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
@@ -13965,13 +13064,11 @@ impl std::fmt::Debug for DeleteDetectorInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeclineInvitationsInput {
-    /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member
-    /// account that you want to decline invitations from.</p>
+    /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to decline invitations from.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeclineInvitationsInput {
-    /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member
-    /// account that you want to decline invitations from.</p>
+    /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to decline invitations from.</p>
     pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
@@ -13988,19 +13085,15 @@ impl std::fmt::Debug for DeclineInvitationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateThreatIntelSetInput {
-    /// <p>The unique ID of the detector of the GuardDuty account that you want to create a
-    /// threatIntelSet for.</p>
+    /// <p>The unique ID of the detector of the GuardDuty account that you want to create a threatIntelSet for.</p>
     pub detector_id: std::option::Option<std::string::String>,
-    /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by
-    /// activity that involves IP addresses included in this ThreatIntelSet.</p>
+    /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by activity that involves IP addresses included in this ThreatIntelSet.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The format of the file that contains the ThreatIntelSet.</p>
     pub format: std::option::Option<crate::model::ThreatIntelSetFormat>,
-    /// <p>The URI of the file that contains the ThreatIntelSet. For example:
-    /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    /// <p>The URI of the file that contains the ThreatIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
     pub location: std::option::Option<std::string::String>,
-    /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded
-    /// ThreatIntelSet.</p>
+    /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded ThreatIntelSet.</p>
     pub activate: bool,
     /// <p>The idempotency token for the create request.</p>
     pub client_token: std::option::Option<std::string::String>,
@@ -14009,13 +13102,11 @@ pub struct CreateThreatIntelSetInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateThreatIntelSetInput {
-    /// <p>The unique ID of the detector of the GuardDuty account that you want to create a
-    /// threatIntelSet for.</p>
+    /// <p>The unique ID of the detector of the GuardDuty account that you want to create a threatIntelSet for.</p>
     pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
-    /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by
-    /// activity that involves IP addresses included in this ThreatIntelSet.</p>
+    /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by activity that involves IP addresses included in this ThreatIntelSet.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -14023,13 +13114,11 @@ impl CreateThreatIntelSetInput {
     pub fn format(&self) -> std::option::Option<&crate::model::ThreatIntelSetFormat> {
         self.format.as_ref()
     }
-    /// <p>The URI of the file that contains the ThreatIntelSet. For example:
-    /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    /// <p>The URI of the file that contains the ThreatIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
-    /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded
-    /// ThreatIntelSet.</p>
+    /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded ThreatIntelSet.</p>
     pub fn activate(&self) -> bool {
         self.activate
     }
@@ -14093,11 +13182,9 @@ impl std::fmt::Debug for CreateSampleFindingsInput {
 pub struct CreatePublishingDestinationInput {
     /// <p>The ID of the GuardDuty detector associated with the publishing destination.</p>
     pub detector_id: std::option::Option<std::string::String>,
-    /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are
-    /// supported.</p>
+    /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.</p>
     pub destination_type: std::option::Option<crate::model::DestinationType>,
-    /// <p>The properties of the publishing destination, including the ARNs for the destination and
-    /// the KMS key used for encryption.</p>
+    /// <p>The properties of the publishing destination, including the ARNs for the destination and the KMS key used for encryption.</p>
     pub destination_properties: std::option::Option<crate::model::DestinationProperties>,
     /// <p>The idempotency token for the request.</p>
     pub client_token: std::option::Option<std::string::String>,
@@ -14107,13 +13194,11 @@ impl CreatePublishingDestinationInput {
     pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
-    /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are
-    /// supported.</p>
+    /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.</p>
     pub fn destination_type(&self) -> std::option::Option<&crate::model::DestinationType> {
         self.destination_type.as_ref()
     }
-    /// <p>The properties of the publishing destination, including the ARNs for the destination and
-    /// the KMS key used for encryption.</p>
+    /// <p>The properties of the publishing destination, including the ARNs for the destination and the KMS key used for encryption.</p>
     pub fn destination_properties(
         &self,
     ) -> std::option::Option<&crate::model::DestinationProperties> {
@@ -14139,21 +13224,17 @@ impl std::fmt::Debug for CreatePublishingDestinationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMembersInput {
-    /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member
-    /// accounts with.</p>
+    /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.</p>
     pub detector_id: std::option::Option<std::string::String>,
-    /// <p>A list of account ID and email address pairs of the accounts that you want to associate
-    /// with the GuardDuty administrator account.</p>
+    /// <p>A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty administrator account.</p>
     pub account_details: std::option::Option<std::vec::Vec<crate::model::AccountDetail>>,
 }
 impl CreateMembersInput {
-    /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member
-    /// accounts with.</p>
+    /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.</p>
     pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
-    /// <p>A list of account ID and email address pairs of the accounts that you want to associate
-    /// with the GuardDuty administrator account.</p>
+    /// <p>A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty administrator account.</p>
     pub fn account_details(&self) -> std::option::Option<&[crate::model::AccountDetail]> {
         self.account_details.as_deref()
     }
@@ -14171,19 +13252,16 @@ impl std::fmt::Debug for CreateMembersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIpSetInput {
-    /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet
-    /// for.</p>
+    /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.</p>
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The user-friendly name to identify the IPSet.</p>
     /// <p> Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The format of the file that contains the IPSet.</p>
     pub format: std::option::Option<crate::model::IpSetFormat>,
-    /// <p>The URI of the file that contains the IPSet. For example:
-    /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    /// <p>The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
     pub location: std::option::Option<std::string::String>,
-    /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded
-    /// IPSet.</p>
+    /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.</p>
     pub activate: bool,
     /// <p>The idempotency token for the create request.</p>
     pub client_token: std::option::Option<std::string::String>,
@@ -14192,8 +13270,7 @@ pub struct CreateIpSetInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateIpSetInput {
-    /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet
-    /// for.</p>
+    /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.</p>
     pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
@@ -14206,13 +13283,11 @@ impl CreateIpSetInput {
     pub fn format(&self) -> std::option::Option<&crate::model::IpSetFormat> {
         self.format.as_ref()
     }
-    /// <p>The URI of the file that contains the IPSet. For example:
-    /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    /// <p>The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
-    /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded
-    /// IPSet.</p>
+    /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.</p>
     pub fn activate(&self) -> bool {
         self.activate
     }
@@ -14246,8 +13321,7 @@ impl std::fmt::Debug for CreateIpSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFilterInput {
-    /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter
-    /// for.</p>
+    /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter for.</p>
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
     pub name: std::option::Option<std::string::String>,
@@ -14255,170 +13329,62 @@ pub struct CreateFilterInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
     pub action: std::option::Option<crate::model::FilterAction>,
-    /// <p>Specifies the position of the filter in the list of current filters. Also specifies the
-    /// order in which this filter is applied to the findings.</p>
+    /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
     pub rank: i32,
     /// <p>Represents the criteria to be used in the filter for querying findings.</p>
     /// <p>You can only use the following attributes to query findings:</p>
     /// <ul>
-    /// <li>
-    /// <p>accountId</p>
-    /// </li>
-    /// <li>
-    /// <p>region</p>
-    /// </li>
-    /// <li>
-    /// <p>confidence</p>
-    /// </li>
-    /// <li>
-    /// <p>id</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.accessKeyId</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.principalId</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.userName</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.userType</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.iamInstanceProfile.id</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.imageId</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.instanceId</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.outpostArn</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.publicDnsName</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.publicIp</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.subnetId</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.vpcId</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.tags.key</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.tags.value</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.resourceType</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.actionType</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.api</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.callerType</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.errorCode</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.serviceName</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.dnsRequestAction.domain</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.blocked</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.connectionDirection</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.localPortDetails.port</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.protocol</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remotePortDetails.port</p>
-    /// </li>
-    /// <li>
-    /// <p>service.additionalInfo.threatListName</p>
-    /// </li>
-    /// <li>
-    /// <p>service.archived</p>
-    /// <p>When this attribute is set to TRUE, only archived findings are listed. When it's set
-    /// to FALSE, only unarchived findings are listed. When this attribute is not set, all
-    /// existing findings are listed.</p>
-    /// </li>
-    /// <li>
-    /// <p>service.resourceRole</p>
-    /// </li>
-    /// <li>
-    /// <p>severity</p>
-    /// </li>
-    /// <li>
-    /// <p>type</p>
-    /// </li>
-    /// <li>
-    /// <p>updatedAt</p>
-    /// <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ
-    /// depending on whether the value contains milliseconds.</p>
-    /// </li>
+    /// <li> <p>accountId</p> </li>
+    /// <li> <p>region</p> </li>
+    /// <li> <p>confidence</p> </li>
+    /// <li> <p>id</p> </li>
+    /// <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
+    /// <li> <p>resource.accessKeyDetails.principalId</p> </li>
+    /// <li> <p>resource.accessKeyDetails.userName</p> </li>
+    /// <li> <p>resource.accessKeyDetails.userType</p> </li>
+    /// <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>
+    /// <li> <p>resource.instanceDetails.imageId</p> </li>
+    /// <li> <p>resource.instanceDetails.instanceId</p> </li>
+    /// <li> <p>resource.instanceDetails.outpostArn</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>
+    /// <li> <p>resource.instanceDetails.tags.key</p> </li>
+    /// <li> <p>resource.instanceDetails.tags.value</p> </li>
+    /// <li> <p>resource.resourceType</p> </li>
+    /// <li> <p>service.action.actionType</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.api</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.callerType</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.errorCode</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
+    /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
+    /// <li> <p>service.additionalInfo.threatListName</p> </li>
+    /// <li> <p>service.archived</p> <p>When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
+    /// <li> <p>service.resourceRole</p> </li>
+    /// <li> <p>severity</p> </li>
+    /// <li> <p>type</p> </li>
+    /// <li> <p>updatedAt</p> <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p> </li>
     /// </ul>
     pub finding_criteria: std::option::Option<crate::model::FindingCriteria>,
     /// <p>The idempotency token for the create request.</p>
@@ -14428,8 +13394,7 @@ pub struct CreateFilterInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateFilterInput {
-    /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter
-    /// for.</p>
+    /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter for.</p>
     pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
@@ -14445,172 +13410,64 @@ impl CreateFilterInput {
     pub fn action(&self) -> std::option::Option<&crate::model::FilterAction> {
         self.action.as_ref()
     }
-    /// <p>Specifies the position of the filter in the list of current filters. Also specifies the
-    /// order in which this filter is applied to the findings.</p>
+    /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
     pub fn rank(&self) -> i32 {
         self.rank
     }
     /// <p>Represents the criteria to be used in the filter for querying findings.</p>
     /// <p>You can only use the following attributes to query findings:</p>
     /// <ul>
-    /// <li>
-    /// <p>accountId</p>
-    /// </li>
-    /// <li>
-    /// <p>region</p>
-    /// </li>
-    /// <li>
-    /// <p>confidence</p>
-    /// </li>
-    /// <li>
-    /// <p>id</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.accessKeyId</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.principalId</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.userName</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.accessKeyDetails.userType</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.iamInstanceProfile.id</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.imageId</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.instanceId</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.outpostArn</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.publicDnsName</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.publicIp</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.subnetId</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.networkInterfaces.vpcId</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.tags.key</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.instanceDetails.tags.value</p>
-    /// </li>
-    /// <li>
-    /// <p>resource.resourceType</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.actionType</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.api</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.callerType</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.errorCode</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.awsApiCallAction.serviceName</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.dnsRequestAction.domain</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.blocked</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.connectionDirection</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.localPortDetails.port</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.protocol</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
-    /// </li>
-    /// <li>
-    /// <p>service.action.networkConnectionAction.remotePortDetails.port</p>
-    /// </li>
-    /// <li>
-    /// <p>service.additionalInfo.threatListName</p>
-    /// </li>
-    /// <li>
-    /// <p>service.archived</p>
-    /// <p>When this attribute is set to TRUE, only archived findings are listed. When it's set
-    /// to FALSE, only unarchived findings are listed. When this attribute is not set, all
-    /// existing findings are listed.</p>
-    /// </li>
-    /// <li>
-    /// <p>service.resourceRole</p>
-    /// </li>
-    /// <li>
-    /// <p>severity</p>
-    /// </li>
-    /// <li>
-    /// <p>type</p>
-    /// </li>
-    /// <li>
-    /// <p>updatedAt</p>
-    /// <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ
-    /// depending on whether the value contains milliseconds.</p>
-    /// </li>
+    /// <li> <p>accountId</p> </li>
+    /// <li> <p>region</p> </li>
+    /// <li> <p>confidence</p> </li>
+    /// <li> <p>id</p> </li>
+    /// <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
+    /// <li> <p>resource.accessKeyDetails.principalId</p> </li>
+    /// <li> <p>resource.accessKeyDetails.userName</p> </li>
+    /// <li> <p>resource.accessKeyDetails.userType</p> </li>
+    /// <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>
+    /// <li> <p>resource.instanceDetails.imageId</p> </li>
+    /// <li> <p>resource.instanceDetails.instanceId</p> </li>
+    /// <li> <p>resource.instanceDetails.outpostArn</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>
+    /// <li> <p>resource.instanceDetails.tags.key</p> </li>
+    /// <li> <p>resource.instanceDetails.tags.value</p> </li>
+    /// <li> <p>resource.resourceType</p> </li>
+    /// <li> <p>service.action.actionType</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.api</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.callerType</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.errorCode</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
+    /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
+    /// <li> <p>service.additionalInfo.threatListName</p> </li>
+    /// <li> <p>service.archived</p> <p>When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
+    /// <li> <p>service.resourceRole</p> </li>
+    /// <li> <p>severity</p> </li>
+    /// <li> <p>type</p> </li>
+    /// <li> <p>updatedAt</p> <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p> </li>
     /// </ul>
     pub fn finding_criteria(&self) -> std::option::Option<&crate::model::FindingCriteria> {
         self.finding_criteria.as_ref()
@@ -14704,15 +13561,13 @@ impl std::fmt::Debug for CreateDetectorInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ArchiveFindingsInput {
-    /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
-    /// archive.</p>
+    /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to archive.</p>
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The IDs of the findings that you want to archive.</p>
     pub finding_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ArchiveFindingsInput {
-    /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
-    /// archive.</p>
+    /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to archive.</p>
     pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }

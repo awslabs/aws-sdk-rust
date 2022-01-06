@@ -135,21 +135,17 @@ impl AsRef<str> for ValidationExceptionReason {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoEnable {
-    /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector
-    /// organization.</p>
+    /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     pub ec2: std::option::Option<bool>,
-    /// <p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector
-    /// organization.</p>
+    /// <p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     pub ecr: std::option::Option<bool>,
 }
 impl AutoEnable {
-    /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector
-    /// organization.</p>
+    /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     pub fn ec2(&self) -> std::option::Option<bool> {
         self.ec2
     }
-    /// <p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector
-    /// organization.</p>
+    /// <p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     pub fn ecr(&self) -> std::option::Option<bool> {
         self.ecr
     }
@@ -172,26 +168,22 @@ pub mod auto_enable {
         pub(crate) ecr: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector
-        /// organization.</p>
+        /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector organization.</p>
         pub fn ec2(mut self, input: bool) -> Self {
             self.ec2 = Some(input);
             self
         }
-        /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector
-        /// organization.</p>
+        /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector organization.</p>
         pub fn set_ec2(mut self, input: std::option::Option<bool>) -> Self {
             self.ec2 = input;
             self
         }
-        /// <p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector
-        /// organization.</p>
+        /// <p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector organization.</p>
         pub fn ecr(mut self, input: bool) -> Self {
             self.ecr = Some(input);
             self
         }
-        /// <p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector
-        /// organization.</p>
+        /// <p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector organization.</p>
         pub fn set_ecr(mut self, input: std::option::Option<bool>) -> Self {
             self.ecr = input;
             self
@@ -496,9 +488,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_finding_arn`](Self::set_finding_arn).
         ///
         /// <p>Details on the finding ARNs used to filter findings.</p>
-        pub fn finding_arn(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn finding_arn(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.finding_arn.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.finding_arn = Some(v);
             self
         }
@@ -515,9 +507,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_aws_account_id`](Self::set_aws_account_id).
         ///
         /// <p>Details of the Amazon Web Services account IDs used to filter findings.</p>
-        pub fn aws_account_id(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn aws_account_id(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.aws_account_id.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aws_account_id = Some(v);
             self
         }
@@ -534,9 +526,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_finding_type`](Self::set_finding_type).
         ///
         /// <p>Details on the finding types used to filter findings.</p>
-        pub fn finding_type(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn finding_type(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.finding_type.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.finding_type = Some(v);
             self
         }
@@ -553,9 +545,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_severity`](Self::set_severity).
         ///
         /// <p>Details on the severity used to filter findings.</p>
-        pub fn severity(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn severity(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.severity.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.severity = Some(v);
             self
         }
@@ -572,9 +564,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_first_observed_at`](Self::set_first_observed_at).
         ///
         /// <p>Details on the date and time a finding was first seen used to filter findings.</p>
-        pub fn first_observed_at(mut self, input: impl Into<crate::model::DateFilter>) -> Self {
+        pub fn first_observed_at(mut self, input: crate::model::DateFilter) -> Self {
             let mut v = self.first_observed_at.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.first_observed_at = Some(v);
             self
         }
@@ -591,9 +583,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_last_observed_at`](Self::set_last_observed_at).
         ///
         /// <p>Details on the date and time a finding was last seen used to filter findings.</p>
-        pub fn last_observed_at(mut self, input: impl Into<crate::model::DateFilter>) -> Self {
+        pub fn last_observed_at(mut self, input: crate::model::DateFilter) -> Self {
             let mut v = self.last_observed_at.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.last_observed_at = Some(v);
             self
         }
@@ -610,9 +602,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_updated_at`](Self::set_updated_at).
         ///
         /// <p>Details on the date and time a finding was last updated at used to filter findings.</p>
-        pub fn updated_at(mut self, input: impl Into<crate::model::DateFilter>) -> Self {
+        pub fn updated_at(mut self, input: crate::model::DateFilter) -> Self {
             let mut v = self.updated_at.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.updated_at = Some(v);
             self
         }
@@ -629,9 +621,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_finding_status`](Self::set_finding_status).
         ///
         /// <p>Details on the finding status types used to filter findings.</p>
-        pub fn finding_status(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn finding_status(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.finding_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.finding_status = Some(v);
             self
         }
@@ -648,9 +640,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_title`](Self::set_title).
         ///
         /// <p>Details on the finding title used to filter findings.</p>
-        pub fn title(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn title(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.title.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.title = Some(v);
             self
         }
@@ -667,9 +659,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_inspector_score`](Self::set_inspector_score).
         ///
         /// <p>The Amazon Inspector score to filter on.</p>
-        pub fn inspector_score(mut self, input: impl Into<crate::model::NumberFilter>) -> Self {
+        pub fn inspector_score(mut self, input: crate::model::NumberFilter) -> Self {
             let mut v = self.inspector_score.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.inspector_score = Some(v);
             self
         }
@@ -686,9 +678,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_resource_type`](Self::set_resource_type).
         ///
         /// <p>Details on the resource types used to filter findings.</p>
-        pub fn resource_type(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn resource_type(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.resource_type.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_type = Some(v);
             self
         }
@@ -705,9 +697,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_resource_id`](Self::set_resource_id).
         ///
         /// <p>Details on the resource IDs used to filter findings.</p>
-        pub fn resource_id(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn resource_id(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.resource_id.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_id = Some(v);
             self
         }
@@ -724,9 +716,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
         /// <p>Details on the resource tags used to filter findings.</p>
-        pub fn resource_tags(mut self, input: impl Into<crate::model::MapFilter>) -> Self {
+        pub fn resource_tags(mut self, input: crate::model::MapFilter) -> Self {
             let mut v = self.resource_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_tags = Some(v);
             self
         }
@@ -743,12 +735,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_ec2_instance_image_id`](Self::set_ec2_instance_image_id).
         ///
         /// <p>Details of the Amazon EC2 instance image IDs used to filter findings.</p>
-        pub fn ec2_instance_image_id(
-            mut self,
-            input: impl Into<crate::model::StringFilter>,
-        ) -> Self {
+        pub fn ec2_instance_image_id(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.ec2_instance_image_id.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ec2_instance_image_id = Some(v);
             self
         }
@@ -765,9 +754,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_ec2_instance_vpc_id`](Self::set_ec2_instance_vpc_id).
         ///
         /// <p>Details of the Amazon EC2 instance VPC IDs used to filter findings.</p>
-        pub fn ec2_instance_vpc_id(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn ec2_instance_vpc_id(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.ec2_instance_vpc_id.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ec2_instance_vpc_id = Some(v);
             self
         }
@@ -784,12 +773,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_ec2_instance_subnet_id`](Self::set_ec2_instance_subnet_id).
         ///
         /// <p>Details of the Amazon EC2 instance subnet IDs used to filter findings.</p>
-        pub fn ec2_instance_subnet_id(
-            mut self,
-            input: impl Into<crate::model::StringFilter>,
-        ) -> Self {
+        pub fn ec2_instance_subnet_id(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.ec2_instance_subnet_id.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ec2_instance_subnet_id = Some(v);
             self
         }
@@ -806,9 +792,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_ecr_image_pushed_at`](Self::set_ecr_image_pushed_at).
         ///
         /// <p>Details on the Amazon ECR image push date and time used to filter findings.</p>
-        pub fn ecr_image_pushed_at(mut self, input: impl Into<crate::model::DateFilter>) -> Self {
+        pub fn ecr_image_pushed_at(mut self, input: crate::model::DateFilter) -> Self {
             let mut v = self.ecr_image_pushed_at.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ecr_image_pushed_at = Some(v);
             self
         }
@@ -825,12 +811,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_ecr_image_architecture`](Self::set_ecr_image_architecture).
         ///
         /// <p>Details of the Amazon ECR image architecture types used to filter findings.</p>
-        pub fn ecr_image_architecture(
-            mut self,
-            input: impl Into<crate::model::StringFilter>,
-        ) -> Self {
+        pub fn ecr_image_architecture(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.ecr_image_architecture.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ecr_image_architecture = Some(v);
             self
         }
@@ -847,9 +830,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_ecr_image_registry`](Self::set_ecr_image_registry).
         ///
         /// <p>Details on the Amazon ECR registry used to filter findings.</p>
-        pub fn ecr_image_registry(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn ecr_image_registry(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.ecr_image_registry.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ecr_image_registry = Some(v);
             self
         }
@@ -866,12 +849,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_ecr_image_repository_name`](Self::set_ecr_image_repository_name).
         ///
         /// <p>Details on the name of the Amazon ECR repository used to filter findings.</p>
-        pub fn ecr_image_repository_name(
-            mut self,
-            input: impl Into<crate::model::StringFilter>,
-        ) -> Self {
+        pub fn ecr_image_repository_name(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.ecr_image_repository_name.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ecr_image_repository_name = Some(v);
             self
         }
@@ -888,9 +868,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_ecr_image_tags`](Self::set_ecr_image_tags).
         ///
         /// <p>The tags attached to the Amazon ECR container image.</p>
-        pub fn ecr_image_tags(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn ecr_image_tags(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.ecr_image_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ecr_image_tags = Some(v);
             self
         }
@@ -907,9 +887,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_ecr_image_hash`](Self::set_ecr_image_hash).
         ///
         /// <p>Details of the Amazon ECR image hashes used to filter findings.</p>
-        pub fn ecr_image_hash(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn ecr_image_hash(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.ecr_image_hash.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ecr_image_hash = Some(v);
             self
         }
@@ -926,9 +906,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_port_range`](Self::set_port_range).
         ///
         /// <p>Details on the port ranges used to filter findings.</p>
-        pub fn port_range(mut self, input: impl Into<crate::model::PortRangeFilter>) -> Self {
+        pub fn port_range(mut self, input: crate::model::PortRangeFilter) -> Self {
             let mut v = self.port_range.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.port_range = Some(v);
             self
         }
@@ -945,9 +925,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_network_protocol`](Self::set_network_protocol).
         ///
         /// <p>Details on the ingress source addresses used to filter findings.</p>
-        pub fn network_protocol(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn network_protocol(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.network_protocol.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_protocol = Some(v);
             self
         }
@@ -964,9 +944,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_component_id`](Self::set_component_id).
         ///
         /// <p>Details of the component IDs used to filter findings.</p>
-        pub fn component_id(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn component_id(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.component_id.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.component_id = Some(v);
             self
         }
@@ -983,9 +963,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_component_type`](Self::set_component_type).
         ///
         /// <p>Details of the component types used to filter findings.</p>
-        pub fn component_type(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn component_type(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.component_type.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.component_type = Some(v);
             self
         }
@@ -1002,9 +982,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_vulnerability_id`](Self::set_vulnerability_id).
         ///
         /// <p>Details on the vulnerability ID used to filter findings.</p>
-        pub fn vulnerability_id(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn vulnerability_id(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.vulnerability_id.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vulnerability_id = Some(v);
             self
         }
@@ -1021,12 +1001,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_vulnerability_source`](Self::set_vulnerability_source).
         ///
         /// <p>Details on the vulnerability type used to filter findings.</p>
-        pub fn vulnerability_source(
-            mut self,
-            input: impl Into<crate::model::StringFilter>,
-        ) -> Self {
+        pub fn vulnerability_source(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.vulnerability_source.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vulnerability_source = Some(v);
             self
         }
@@ -1043,9 +1020,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_vendor_severity`](Self::set_vendor_severity).
         ///
         /// <p>Details on the vendor severity used to filter findings.</p>
-        pub fn vendor_severity(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn vendor_severity(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.vendor_severity.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vendor_severity = Some(v);
             self
         }
@@ -1062,12 +1039,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_vulnerable_packages`](Self::set_vulnerable_packages).
         ///
         /// <p>Details on the vulnerable packages used to filter findings.</p>
-        pub fn vulnerable_packages(
-            mut self,
-            input: impl Into<crate::model::PackageFilter>,
-        ) -> Self {
+        pub fn vulnerable_packages(mut self, input: crate::model::PackageFilter) -> Self {
             let mut v = self.vulnerable_packages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vulnerable_packages = Some(v);
             self
         }
@@ -1084,12 +1058,9 @@ pub mod filter_criteria {
         /// To override the contents of this collection use [`set_related_vulnerabilities`](Self::set_related_vulnerabilities).
         ///
         /// <p>Details on the related vulnerabilities used to filter findings.</p>
-        pub fn related_vulnerabilities(
-            mut self,
-            input: impl Into<crate::model::StringFilter>,
-        ) -> Self {
+        pub fn related_vulnerabilities(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.related_vulnerabilities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.related_vulnerabilities = Some(v);
             self
         }
@@ -1920,9 +1891,9 @@ pub mod usage_total {
         /// To override the contents of this collection use [`set_usage`](Self::set_usage).
         ///
         /// <p>An object representing the total usage for an account.</p>
-        pub fn usage(mut self, input: impl Into<crate::model::Usage>) -> Self {
+        pub fn usage(mut self, input: crate::model::Usage) -> Self {
             let mut v = self.usage.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.usage = Some(v);
             self
         }
@@ -2704,9 +2675,9 @@ pub mod finding {
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
         /// <p>Contains information on the resources involved in a finding.</p>
-        pub fn resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
+        pub fn resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }
@@ -2926,12 +2897,9 @@ pub mod package_vulnerability_details {
         /// To override the contents of this collection use [`set_vulnerable_packages`](Self::set_vulnerable_packages).
         ///
         /// <p>The packages impacted by this vulnerability.</p>
-        pub fn vulnerable_packages(
-            mut self,
-            input: impl Into<crate::model::VulnerablePackage>,
-        ) -> Self {
+        pub fn vulnerable_packages(mut self, input: crate::model::VulnerablePackage) -> Self {
             let mut v = self.vulnerable_packages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vulnerable_packages = Some(v);
             self
         }
@@ -2958,9 +2926,9 @@ pub mod package_vulnerability_details {
         /// To override the contents of this collection use [`set_cvss`](Self::set_cvss).
         ///
         /// <p>An object that contains details about the CVSS score of a finding.</p>
-        pub fn cvss(mut self, input: impl Into<crate::model::CvssScore>) -> Self {
+        pub fn cvss(mut self, input: crate::model::CvssScore) -> Self {
             let mut v = self.cvss.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cvss = Some(v);
             self
         }
@@ -3645,9 +3613,9 @@ pub mod network_path {
         /// To override the contents of this collection use [`set_steps`](Self::set_steps).
         ///
         /// <p>The details on the steps in the network path.</p>
-        pub fn steps(mut self, input: impl Into<crate::model::Step>) -> Self {
+        pub fn steps(mut self, input: crate::model::Step) -> Self {
             let mut v = self.steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.steps = Some(v);
             self
         }
@@ -4061,9 +4029,9 @@ pub mod cvss_score_details {
         /// To override the contents of this collection use [`set_adjustments`](Self::set_adjustments).
         ///
         /// <p>An object that contains details about adjustment Amazon Inspector made to the CVSS score.</p>
-        pub fn adjustments(mut self, input: impl Into<crate::model::CvssScoreAdjustment>) -> Self {
+        pub fn adjustments(mut self, input: crate::model::CvssScoreAdjustment) -> Self {
             let mut v = self.adjustments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.adjustments = Some(v);
             self
         }
@@ -5525,28 +5493,21 @@ impl AsRef<str> for SortField {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum AggregationResponse {
-    /// <p>An object that contains details about an aggregation response based on Amazon Web Services account
-    /// IDs.</p>
+    /// <p>An object that contains details about an aggregation response based on Amazon Web Services account IDs.</p>
     AccountAggregation(crate::model::AccountAggregationResponse),
-    /// <p>An object that contains details about an aggregation response based on Amazon Machine
-    /// Images (AMIs).</p>
+    /// <p>An object that contains details about an aggregation response based on Amazon Machine Images (AMIs).</p>
     AmiAggregation(crate::model::AmiAggregationResponse),
-    /// <p>An object that contains details about an aggregation response based on Amazon ECR container
-    /// images.</p>
+    /// <p>An object that contains details about an aggregation response based on Amazon ECR container images.</p>
     AwsEcrContainerAggregation(crate::model::AwsEcrContainerAggregationResponse),
-    /// <p>An object that contains details about an aggregation response based on Amazon EC2
-    /// instances.</p>
+    /// <p>An object that contains details about an aggregation response based on Amazon EC2 instances.</p>
     Ec2InstanceAggregation(crate::model::Ec2InstanceAggregationResponse),
     /// <p>An object that contains details about an aggregation response based on finding types.</p>
     FindingTypeAggregation(crate::model::FindingTypeAggregationResponse),
-    /// <p>An object that contains details about an aggregation response based on container image
-    /// layers.</p>
+    /// <p>An object that contains details about an aggregation response based on container image layers.</p>
     ImageLayerAggregation(crate::model::ImageLayerAggregationResponse),
-    /// <p>An object that contains details about an aggregation response based on operating system
-    /// package type.</p>
+    /// <p>An object that contains details about an aggregation response based on operating system package type.</p>
     PackageAggregation(crate::model::PackageAggregationResponse),
-    /// <p>An object that contains details about an aggregation response based on Amazon ECR
-    /// repositories.</p>
+    /// <p>An object that contains details about an aggregation response based on Amazon ECR repositories.</p>
     RepositoryAggregation(crate::model::RepositoryAggregationResponse),
     /// <p>An object that contains details about an aggregation response based on finding title.</p>
     TitleAggregation(crate::model::TitleAggregationResponse),
@@ -7010,25 +6971,19 @@ impl AsRef<str> for AggregationType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum AggregationRequest {
-    /// <p>An object that contains details about an aggregation request based on Amazon Web Services account
-    /// IDs.</p>
+    /// <p>An object that contains details about an aggregation request based on Amazon Web Services account IDs.</p>
     AccountAggregation(crate::model::AccountAggregation),
-    /// <p>An object that contains details about an aggregation request based on Amazon Machine
-    /// Images (AMIs).</p>
+    /// <p>An object that contains details about an aggregation request based on Amazon Machine Images (AMIs).</p>
     AmiAggregation(crate::model::AmiAggregation),
-    /// <p>An object that contains details about an aggregation request based on Amazon ECR container
-    /// images.</p>
+    /// <p>An object that contains details about an aggregation request based on Amazon ECR container images.</p>
     AwsEcrContainerAggregation(crate::model::AwsEcrContainerAggregation),
-    /// <p>An object that contains details about an aggregation request based on Amazon EC2
-    /// instances.</p>
+    /// <p>An object that contains details about an aggregation request based on Amazon EC2 instances.</p>
     Ec2InstanceAggregation(crate::model::Ec2InstanceAggregation),
     /// <p>An object that contains details about an aggregation request based on finding types.</p>
     FindingTypeAggregation(crate::model::FindingTypeAggregation),
-    /// <p>An object that contains details about an aggregation request based on container image
-    /// layers.</p>
+    /// <p>An object that contains details about an aggregation request based on container image layers.</p>
     ImageLayerAggregation(crate::model::ImageLayerAggregation),
-    /// <p>An object that contains details about an aggregation request based on operating system
-    /// package type.</p>
+    /// <p>An object that contains details about an aggregation request based on operating system package type.</p>
     PackageAggregation(crate::model::PackageAggregation),
     /// <p>An object that contains details about an aggregation request based on Amazon ECR repositories.</p>
     RepositoryAggregation(crate::model::RepositoryAggregation),
@@ -7251,9 +7206,9 @@ pub mod title_aggregation {
         /// To override the contents of this collection use [`set_titles`](Self::set_titles).
         ///
         /// <p>The finding titles to aggregate on.</p>
-        pub fn titles(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn titles(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.titles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.titles = Some(v);
             self
         }
@@ -7270,9 +7225,9 @@ pub mod title_aggregation {
         /// To override the contents of this collection use [`set_vulnerability_ids`](Self::set_vulnerability_ids).
         ///
         /// <p>The vulnerability IDs of the findings.</p>
-        pub fn vulnerability_ids(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn vulnerability_ids(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.vulnerability_ids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vulnerability_ids = Some(v);
             self
         }
@@ -7506,9 +7461,9 @@ pub mod repository_aggregation {
         /// To override the contents of this collection use [`set_repositories`](Self::set_repositories).
         ///
         /// <p>The names of repositories to aggregate findings on.</p>
-        pub fn repositories(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn repositories(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.repositories.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.repositories = Some(v);
             self
         }
@@ -7676,9 +7631,9 @@ pub mod package_aggregation {
         /// To override the contents of this collection use [`set_package_names`](Self::set_package_names).
         ///
         /// <p>The names of packages to aggregate findings on.</p>
-        pub fn package_names(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn package_names(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.package_names.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.package_names = Some(v);
             self
         }
@@ -7858,9 +7813,9 @@ pub mod image_layer_aggregation {
         /// To override the contents of this collection use [`set_repositories`](Self::set_repositories).
         ///
         /// <p>The repository associated with the container image hosting the layers.</p>
-        pub fn repositories(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn repositories(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.repositories.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.repositories = Some(v);
             self
         }
@@ -7877,9 +7832,9 @@ pub mod image_layer_aggregation {
         /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
         ///
         /// <p>The ID of the container image layer.</p>
-        pub fn resource_ids(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn resource_ids(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.resource_ids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_ids = Some(v);
             self
         }
@@ -7896,9 +7851,9 @@ pub mod image_layer_aggregation {
         /// To override the contents of this collection use [`set_layer_hashes`](Self::set_layer_hashes).
         ///
         /// <p>The hashes associated with the layers.</p>
-        pub fn layer_hashes(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn layer_hashes(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.layer_hashes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.layer_hashes = Some(v);
             self
         }
@@ -8257,9 +8212,7 @@ impl AsRef<str> for AggregationFindingType {
 pub struct Ec2InstanceAggregation {
     /// <p>The AMI IDs associated with the Amazon EC2 instances to aggregate findings for.</p>
     pub amis: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
-    /// <p>The operating system types to aggregate findings for. Valid values must be uppercase and
-    /// underscore separated, examples are <code>ORACLE_LINUX_7</code> and
-    /// <code>ALPINE_LINUX_3_8</code>.</p>
+    /// <p>The operating system types to aggregate findings for. Valid values must be uppercase and underscore separated, examples are <code>ORACLE_LINUX_7</code> and <code>ALPINE_LINUX_3_8</code>.</p>
     pub operating_systems: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The Amazon EC2 instance IDs to aggregate findings for.</p>
     pub instance_ids: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
@@ -8275,9 +8228,7 @@ impl Ec2InstanceAggregation {
     pub fn amis(&self) -> std::option::Option<&[crate::model::StringFilter]> {
         self.amis.as_deref()
     }
-    /// <p>The operating system types to aggregate findings for. Valid values must be uppercase and
-    /// underscore separated, examples are <code>ORACLE_LINUX_7</code> and
-    /// <code>ALPINE_LINUX_3_8</code>.</p>
+    /// <p>The operating system types to aggregate findings for. Valid values must be uppercase and underscore separated, examples are <code>ORACLE_LINUX_7</code> and <code>ALPINE_LINUX_3_8</code>.</p>
     pub fn operating_systems(&self) -> std::option::Option<&[crate::model::StringFilter]> {
         self.operating_systems.as_deref()
     }
@@ -8330,9 +8281,9 @@ pub mod ec2_instance_aggregation {
         /// To override the contents of this collection use [`set_amis`](Self::set_amis).
         ///
         /// <p>The AMI IDs associated with the Amazon EC2 instances to aggregate findings for.</p>
-        pub fn amis(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn amis(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.amis.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.amis = Some(v);
             self
         }
@@ -8348,18 +8299,14 @@ pub mod ec2_instance_aggregation {
         ///
         /// To override the contents of this collection use [`set_operating_systems`](Self::set_operating_systems).
         ///
-        /// <p>The operating system types to aggregate findings for. Valid values must be uppercase and
-        /// underscore separated, examples are <code>ORACLE_LINUX_7</code> and
-        /// <code>ALPINE_LINUX_3_8</code>.</p>
-        pub fn operating_systems(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        /// <p>The operating system types to aggregate findings for. Valid values must be uppercase and underscore separated, examples are <code>ORACLE_LINUX_7</code> and <code>ALPINE_LINUX_3_8</code>.</p>
+        pub fn operating_systems(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.operating_systems.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operating_systems = Some(v);
             self
         }
-        /// <p>The operating system types to aggregate findings for. Valid values must be uppercase and
-        /// underscore separated, examples are <code>ORACLE_LINUX_7</code> and
-        /// <code>ALPINE_LINUX_3_8</code>.</p>
+        /// <p>The operating system types to aggregate findings for. Valid values must be uppercase and underscore separated, examples are <code>ORACLE_LINUX_7</code> and <code>ALPINE_LINUX_3_8</code>.</p>
         pub fn set_operating_systems(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
@@ -8372,9 +8319,9 @@ pub mod ec2_instance_aggregation {
         /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
         ///
         /// <p>The Amazon EC2 instance IDs to aggregate findings for.</p>
-        pub fn instance_ids(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn instance_ids(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.instance_ids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_ids = Some(v);
             self
         }
@@ -8391,9 +8338,9 @@ pub mod ec2_instance_aggregation {
         /// To override the contents of this collection use [`set_instance_tags`](Self::set_instance_tags).
         ///
         /// <p>The Amazon EC2 instance tags to aggregate findings for.</p>
-        pub fn instance_tags(mut self, input: impl Into<crate::model::MapFilter>) -> Self {
+        pub fn instance_tags(mut self, input: crate::model::MapFilter) -> Self {
             let mut v = self.instance_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_tags = Some(v);
             self
         }
@@ -8596,9 +8543,9 @@ pub mod aws_ecr_container_aggregation {
         /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
         ///
         /// <p>The container resource IDs.</p>
-        pub fn resource_ids(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn resource_ids(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.resource_ids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_ids = Some(v);
             self
         }
@@ -8615,9 +8562,9 @@ pub mod aws_ecr_container_aggregation {
         /// To override the contents of this collection use [`set_image_shas`](Self::set_image_shas).
         ///
         /// <p>The image SHA values.</p>
-        pub fn image_shas(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn image_shas(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.image_shas.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.image_shas = Some(v);
             self
         }
@@ -8634,9 +8581,9 @@ pub mod aws_ecr_container_aggregation {
         /// To override the contents of this collection use [`set_repositories`](Self::set_repositories).
         ///
         /// <p>The container repositories.</p>
-        pub fn repositories(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn repositories(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.repositories.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.repositories = Some(v);
             self
         }
@@ -8653,9 +8600,9 @@ pub mod aws_ecr_container_aggregation {
         /// To override the contents of this collection use [`set_architectures`](Self::set_architectures).
         ///
         /// <p>The architecture of the containers.</p>
-        pub fn architectures(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn architectures(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.architectures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.architectures = Some(v);
             self
         }
@@ -8672,9 +8619,9 @@ pub mod aws_ecr_container_aggregation {
         /// To override the contents of this collection use [`set_image_tags`](Self::set_image_tags).
         ///
         /// <p>The image tags.</p>
-        pub fn image_tags(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn image_tags(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.image_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.image_tags = Some(v);
             self
         }
@@ -8842,9 +8789,9 @@ pub mod ami_aggregation {
         /// To override the contents of this collection use [`set_amis`](Self::set_amis).
         ///
         /// <p>The IDs of AMIs to aggregate findings for.</p>
-        pub fn amis(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+        pub fn amis(mut self, input: crate::model::StringFilter) -> Self {
             let mut v = self.amis.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.amis = Some(v);
             self
         }
@@ -8959,8 +8906,7 @@ impl AsRef<str> for AmiSortBy {
     }
 }
 
-/// <p>An object that contains details about an aggregation response based on
-/// Amazon Web Services accounts.</p>
+/// <p>An object that contains details about an aggregation response based on Amazon Web Services accounts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountAggregation {
@@ -9786,12 +9732,9 @@ pub mod coverage_filter_criteria {
         /// To override the contents of this collection use [`set_scan_status_code`](Self::set_scan_status_code).
         ///
         /// <p>The scan status code to filter on.</p>
-        pub fn scan_status_code(
-            mut self,
-            input: impl Into<crate::model::CoverageStringFilter>,
-        ) -> Self {
+        pub fn scan_status_code(mut self, input: crate::model::CoverageStringFilter) -> Self {
             let mut v = self.scan_status_code.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scan_status_code = Some(v);
             self
         }
@@ -9808,12 +9751,9 @@ pub mod coverage_filter_criteria {
         /// To override the contents of this collection use [`set_scan_status_reason`](Self::set_scan_status_reason).
         ///
         /// <p>The scan status reason to filter on.</p>
-        pub fn scan_status_reason(
-            mut self,
-            input: impl Into<crate::model::CoverageStringFilter>,
-        ) -> Self {
+        pub fn scan_status_reason(mut self, input: crate::model::CoverageStringFilter) -> Self {
             let mut v = self.scan_status_reason.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scan_status_reason = Some(v);
             self
         }
@@ -9830,9 +9770,9 @@ pub mod coverage_filter_criteria {
         /// To override the contents of this collection use [`set_account_id`](Self::set_account_id).
         ///
         /// <p>An array of Amazon Web Services account IDs to return coverage statistics for.</p>
-        pub fn account_id(mut self, input: impl Into<crate::model::CoverageStringFilter>) -> Self {
+        pub fn account_id(mut self, input: crate::model::CoverageStringFilter) -> Self {
             let mut v = self.account_id.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.account_id = Some(v);
             self
         }
@@ -9849,9 +9789,9 @@ pub mod coverage_filter_criteria {
         /// To override the contents of this collection use [`set_resource_id`](Self::set_resource_id).
         ///
         /// <p>An array of Amazon Web Services resource IDs to return coverage statistics for.</p>
-        pub fn resource_id(mut self, input: impl Into<crate::model::CoverageStringFilter>) -> Self {
+        pub fn resource_id(mut self, input: crate::model::CoverageStringFilter) -> Self {
             let mut v = self.resource_id.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_id = Some(v);
             self
         }
@@ -9868,12 +9808,9 @@ pub mod coverage_filter_criteria {
         /// To override the contents of this collection use [`set_resource_type`](Self::set_resource_type).
         ///
         /// <p>An array of Amazon Web Services resource types to return coverage statistics for.</p>
-        pub fn resource_type(
-            mut self,
-            input: impl Into<crate::model::CoverageStringFilter>,
-        ) -> Self {
+        pub fn resource_type(mut self, input: crate::model::CoverageStringFilter) -> Self {
             let mut v = self.resource_type.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_type = Some(v);
             self
         }
@@ -9890,9 +9827,9 @@ pub mod coverage_filter_criteria {
         /// To override the contents of this collection use [`set_scan_type`](Self::set_scan_type).
         ///
         /// <p>An array of Amazon Inspector scan types to return coverage statistics for.</p>
-        pub fn scan_type(mut self, input: impl Into<crate::model::CoverageStringFilter>) -> Self {
+        pub fn scan_type(mut self, input: crate::model::CoverageStringFilter) -> Self {
             let mut v = self.scan_type.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scan_type = Some(v);
             self
         }
@@ -9909,12 +9846,9 @@ pub mod coverage_filter_criteria {
         /// To override the contents of this collection use [`set_ecr_repository_name`](Self::set_ecr_repository_name).
         ///
         /// <p>The Amazon ECR repository name to filter on.</p>
-        pub fn ecr_repository_name(
-            mut self,
-            input: impl Into<crate::model::CoverageStringFilter>,
-        ) -> Self {
+        pub fn ecr_repository_name(mut self, input: crate::model::CoverageStringFilter) -> Self {
             let mut v = self.ecr_repository_name.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ecr_repository_name = Some(v);
             self
         }
@@ -9931,12 +9865,9 @@ pub mod coverage_filter_criteria {
         /// To override the contents of this collection use [`set_ecr_image_tags`](Self::set_ecr_image_tags).
         ///
         /// <p>The Amazon ECR image tags to filter on.</p>
-        pub fn ecr_image_tags(
-            mut self,
-            input: impl Into<crate::model::CoverageStringFilter>,
-        ) -> Self {
+        pub fn ecr_image_tags(mut self, input: crate::model::CoverageStringFilter) -> Self {
             let mut v = self.ecr_image_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ecr_image_tags = Some(v);
             self
         }
@@ -9953,12 +9884,9 @@ pub mod coverage_filter_criteria {
         /// To override the contents of this collection use [`set_ec2_instance_tags`](Self::set_ec2_instance_tags).
         ///
         /// <p>The Amazon EC2 instance tags to filter on.</p>
-        pub fn ec2_instance_tags(
-            mut self,
-            input: impl Into<crate::model::CoverageMapFilter>,
-        ) -> Self {
+        pub fn ec2_instance_tags(mut self, input: crate::model::CoverageMapFilter) -> Self {
             let mut v = self.ec2_instance_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ec2_instance_tags = Some(v);
             self
         }
@@ -12557,9 +12485,9 @@ pub mod free_trial_account_info {
         /// To override the contents of this collection use [`set_free_trial_info`](Self::set_free_trial_info).
         ///
         /// <p>Contains information about the Amazon Inspector free trial for an account.</p>
-        pub fn free_trial_info(mut self, input: impl Into<crate::model::FreeTrialInfo>) -> Self {
+        pub fn free_trial_info(mut self, input: crate::model::FreeTrialInfo) -> Self {
             let mut v = self.free_trial_info.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.free_trial_info = Some(v);
             self
         }

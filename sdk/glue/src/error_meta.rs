@@ -13,7 +13,7 @@ pub enum Error {
     ConcurrentRunsExceededException(crate::error::ConcurrentRunsExceededException),
     /// <p>A specified condition was not satisfied.</p>
     ConditionCheckFailureException(crate::error::ConditionCheckFailureException),
-    /// <p>The <code>CreatePartitions</code> API was called on a table that has indexes enabled.  </p>
+    /// <p>The <code>CreatePartitions</code> API was called on a table that has indexes enabled. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>The specified crawler is not running.</p>
     CrawlerNotRunningException(crate::error::CrawlerNotRunningException),
@@ -43,6 +43,8 @@ pub enum Error {
     NoScheduleException(crate::error::NoScheduleException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::error::OperationTimeoutException),
+    #[allow(missing_docs)] // documentation missing in model
+    PermissionTypeMismatchException(crate::error::PermissionTypeMismatchException),
     /// <p>A resource was not ready for a transaction.</p>
     ResourceNotReadyException(crate::error::ResourceNotReadyException),
     /// <p>A resource numerical limit was exceeded.</p>
@@ -83,6 +85,7 @@ impl std::fmt::Display for Error {
             Error::MlTransformNotReadyException(inner) => inner.fmt(f),
             Error::NoScheduleException(inner) => inner.fmt(f),
             Error::OperationTimeoutException(inner) => inner.fmt(f),
+            Error::PermissionTypeMismatchException(inner) => inner.fmt(f),
             Error::ResourceNotReadyException(inner) => inner.fmt(f),
             Error::ResourceNumberLimitExceededException(inner) => inner.fmt(f),
             Error::SchedulerNotRunningException(inner) => inner.fmt(f),
@@ -2941,6 +2944,80 @@ where
                 }
                 crate::error::GetTriggersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::GetUnfilteredPartitionMetadataError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::GetUnfilteredPartitionMetadataError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetUnfilteredPartitionMetadataErrorKind::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+                crate::error::GetUnfilteredPartitionMetadataErrorKind::GlueEncryptionException(inner) => Error::GlueEncryptionException(inner),
+                crate::error::GetUnfilteredPartitionMetadataErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+                crate::error::GetUnfilteredPartitionMetadataErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+                crate::error::GetUnfilteredPartitionMetadataErrorKind::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
+                crate::error::GetUnfilteredPartitionMetadataErrorKind::PermissionTypeMismatchException(inner) => Error::PermissionTypeMismatchException(inner),
+                crate::error::GetUnfilteredPartitionMetadataErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::GetUnfilteredPartitionsMetadataError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::GetUnfilteredPartitionsMetadataError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetUnfilteredPartitionsMetadataErrorKind::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+                crate::error::GetUnfilteredPartitionsMetadataErrorKind::GlueEncryptionException(inner) => Error::GlueEncryptionException(inner),
+                crate::error::GetUnfilteredPartitionsMetadataErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+                crate::error::GetUnfilteredPartitionsMetadataErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+                crate::error::GetUnfilteredPartitionsMetadataErrorKind::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
+                crate::error::GetUnfilteredPartitionsMetadataErrorKind::PermissionTypeMismatchException(inner) => Error::PermissionTypeMismatchException(inner),
+                crate::error::GetUnfilteredPartitionsMetadataErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetUnfilteredTableMetadataError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetUnfilteredTableMetadataError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetUnfilteredTableMetadataErrorKind::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+                crate::error::GetUnfilteredTableMetadataErrorKind::GlueEncryptionException(inner) => Error::GlueEncryptionException(inner),
+                crate::error::GetUnfilteredTableMetadataErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+                crate::error::GetUnfilteredTableMetadataErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
+                crate::error::GetUnfilteredTableMetadataErrorKind::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
+                crate::error::GetUnfilteredTableMetadataErrorKind::PermissionTypeMismatchException(inner) => Error::PermissionTypeMismatchException(inner),
+                crate::error::GetUnfilteredTableMetadataErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }

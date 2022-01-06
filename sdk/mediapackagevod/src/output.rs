@@ -361,9 +361,9 @@ pub mod list_packaging_groups_output {
         /// To override the contents of this collection use [`set_packaging_groups`](Self::set_packaging_groups).
         ///
         /// A list of MediaPackage VOD PackagingGroup resources.
-        pub fn packaging_groups(mut self, input: impl Into<crate::model::PackagingGroup>) -> Self {
+        pub fn packaging_groups(mut self, input: crate::model::PackagingGroup) -> Self {
             let mut v = self.packaging_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.packaging_groups = Some(v);
             self
         }
@@ -449,10 +449,10 @@ pub mod list_packaging_configurations_output {
         /// A list of MediaPackage VOD PackagingConfiguration resources.
         pub fn packaging_configurations(
             mut self,
-            input: impl Into<crate::model::PackagingConfiguration>,
+            input: crate::model::PackagingConfiguration,
         ) -> Self {
             let mut v = self.packaging_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.packaging_configurations = Some(v);
             self
         }
@@ -522,9 +522,9 @@ pub mod list_assets_output {
         /// To override the contents of this collection use [`set_assets`](Self::set_assets).
         ///
         /// A list of MediaPackage VOD Asset resources.
-        pub fn assets(mut self, input: impl Into<crate::model::AssetShallow>) -> Self {
+        pub fn assets(mut self, input: crate::model::AssetShallow) -> Self {
             let mut v = self.assets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.assets = Some(v);
             self
         }
@@ -1086,9 +1086,9 @@ pub mod describe_asset_output {
         /// To override the contents of this collection use [`set_egress_endpoints`](Self::set_egress_endpoints).
         ///
         /// The list of egress endpoints available for the Asset.
-        pub fn egress_endpoints(mut self, input: impl Into<crate::model::EgressEndpoint>) -> Self {
+        pub fn egress_endpoints(mut self, input: crate::model::EgressEndpoint) -> Self {
             let mut v = self.egress_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.egress_endpoints = Some(v);
             self
         }
@@ -1818,9 +1818,9 @@ pub mod create_asset_output {
         /// To override the contents of this collection use [`set_egress_endpoints`](Self::set_egress_endpoints).
         ///
         /// The list of egress endpoints available for the Asset.
-        pub fn egress_endpoints(mut self, input: impl Into<crate::model::EgressEndpoint>) -> Self {
+        pub fn egress_endpoints(mut self, input: crate::model::EgressEndpoint) -> Self {
             let mut v = self.egress_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.egress_endpoints = Some(v);
             self
         }

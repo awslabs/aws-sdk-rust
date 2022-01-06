@@ -750,9 +750,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of key and value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -832,9 +832,9 @@ pub mod get_variables_output {
         /// To override the contents of this collection use [`set_variables`](Self::set_variables).
         ///
         /// <p>The names of the variables returned. </p>
-        pub fn variables(mut self, input: impl Into<crate::model::Variable>) -> Self {
+        pub fn variables(mut self, input: crate::model::Variable) -> Self {
             let mut v = self.variables.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.variables = Some(v);
             self
         }
@@ -914,9 +914,9 @@ pub mod get_rules_output {
         /// To override the contents of this collection use [`set_rule_details`](Self::set_rule_details).
         ///
         /// <p>The details of the requested rule.</p>
-        pub fn rule_details(mut self, input: impl Into<crate::model::RuleDetail>) -> Self {
+        pub fn rule_details(mut self, input: crate::model::RuleDetail) -> Self {
             let mut v = self.rule_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rule_details = Some(v);
             self
         }
@@ -996,9 +996,9 @@ pub mod get_outcomes_output {
         /// To override the contents of this collection use [`set_outcomes`](Self::set_outcomes).
         ///
         /// <p>The outcomes. </p>
-        pub fn outcomes(mut self, input: impl Into<crate::model::Outcome>) -> Self {
+        pub fn outcomes(mut self, input: crate::model::Outcome) -> Self {
             let mut v = self.outcomes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outcomes = Some(v);
             self
         }
@@ -1050,61 +1050,22 @@ pub struct GetModelVersionOutput {
     pub training_data_source: std::option::Option<crate::model::TrainingDataSourceEnum>,
     /// <p>The training data schema.</p>
     pub training_data_schema: std::option::Option<crate::model::TrainingDataSchema>,
-    /// <p>The details of the external events data used for training the model version.
-    /// This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>
-    /// </p>
+    /// <p>The details of the external events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code> </p>
     pub external_events_detail: std::option::Option<crate::model::ExternalEventsDetail>,
-    /// <p>The details of the ingested events data used for training the model version.
-    /// This will be populated if the <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+    /// <p>The details of the ingested events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
     pub ingested_events_detail: std::option::Option<crate::model::IngestedEventsDetail>,
     /// <p>The model version status.</p>
     /// <p>Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TRAINING_IN_PROGRESS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TRAINING_COMPLETE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVATE_REQUESTED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVATE_IN_PROGRESS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INACTIVATE_REQUESTED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INACTIVATE_IN_PROGRESS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ERROR</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>TRAINING_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>TRAINING_COMPLETE</code> </p> </li>
+    /// <li> <p> <code>ACTIVATE_REQUESTED</code> </p> </li>
+    /// <li> <p> <code>ACTIVATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li>
+    /// <li> <p> <code>INACTIVATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>INACTIVE</code> </p> </li>
+    /// <li> <p> <code>ERROR</code> </p> </li>
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>The model version ARN.</p>
@@ -1133,16 +1094,13 @@ impl GetModelVersionOutput {
     pub fn training_data_schema(&self) -> std::option::Option<&crate::model::TrainingDataSchema> {
         self.training_data_schema.as_ref()
     }
-    /// <p>The details of the external events data used for training the model version.
-    /// This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>
-    /// </p>
+    /// <p>The details of the external events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code> </p>
     pub fn external_events_detail(
         &self,
     ) -> std::option::Option<&crate::model::ExternalEventsDetail> {
         self.external_events_detail.as_ref()
     }
-    /// <p>The details of the ingested events data used for training the model version.
-    /// This will be populated if the <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+    /// <p>The details of the ingested events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
     pub fn ingested_events_detail(
         &self,
     ) -> std::option::Option<&crate::model::IngestedEventsDetail> {
@@ -1151,51 +1109,15 @@ impl GetModelVersionOutput {
     /// <p>The model version status.</p>
     /// <p>Possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TRAINING_IN_PROGRESS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TRAINING_COMPLETE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVATE_REQUESTED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVATE_IN_PROGRESS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INACTIVATE_REQUESTED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INACTIVATE_IN_PROGRESS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ERROR</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>TRAINING_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>TRAINING_COMPLETE</code> </p> </li>
+    /// <li> <p> <code>ACTIVATE_REQUESTED</code> </p> </li>
+    /// <li> <p> <code>ACTIVATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li>
+    /// <li> <p> <code>INACTIVATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>INACTIVE</code> </p> </li>
+    /// <li> <p> <code>ERROR</code> </p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
@@ -1299,16 +1221,12 @@ pub mod get_model_version_output {
             self.training_data_schema = input;
             self
         }
-        /// <p>The details of the external events data used for training the model version.
-        /// This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>
-        /// </p>
+        /// <p>The details of the external events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code> </p>
         pub fn external_events_detail(mut self, input: crate::model::ExternalEventsDetail) -> Self {
             self.external_events_detail = Some(input);
             self
         }
-        /// <p>The details of the external events data used for training the model version.
-        /// This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>
-        /// </p>
+        /// <p>The details of the external events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code> </p>
         pub fn set_external_events_detail(
             mut self,
             input: std::option::Option<crate::model::ExternalEventsDetail>,
@@ -1316,14 +1234,12 @@ pub mod get_model_version_output {
             self.external_events_detail = input;
             self
         }
-        /// <p>The details of the ingested events data used for training the model version.
-        /// This will be populated if the <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+        /// <p>The details of the ingested events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
         pub fn ingested_events_detail(mut self, input: crate::model::IngestedEventsDetail) -> Self {
             self.ingested_events_detail = Some(input);
             self
         }
-        /// <p>The details of the ingested events data used for training the model version.
-        /// This will be populated if the <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+        /// <p>The details of the ingested events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
         pub fn set_ingested_events_detail(
             mut self,
             input: std::option::Option<crate::model::IngestedEventsDetail>,
@@ -1334,51 +1250,15 @@ pub mod get_model_version_output {
         /// <p>The model version status.</p>
         /// <p>Possible values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TRAINING_IN_PROGRESS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TRAINING_COMPLETE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVATE_REQUESTED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVATE_IN_PROGRESS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INACTIVATE_REQUESTED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INACTIVATE_IN_PROGRESS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ERROR</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>TRAINING_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>TRAINING_COMPLETE</code> </p> </li>
+        /// <li> <p> <code>ACTIVATE_REQUESTED</code> </p> </li>
+        /// <li> <p> <code>ACTIVATE_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li>
+        /// <li> <p> <code>INACTIVATE_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>INACTIVE</code> </p> </li>
+        /// <li> <p> <code>ERROR</code> </p> </li>
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
@@ -1387,51 +1267,15 @@ pub mod get_model_version_output {
         /// <p>The model version status.</p>
         /// <p>Possible values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TRAINING_IN_PROGRESS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TRAINING_COMPLETE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVATE_REQUESTED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVATE_IN_PROGRESS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INACTIVATE_REQUESTED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INACTIVATE_IN_PROGRESS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ERROR</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>TRAINING_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>TRAINING_COMPLETE</code> </p> </li>
+        /// <li> <p> <code>ACTIVATE_REQUESTED</code> </p> </li>
+        /// <li> <p> <code>ACTIVATE_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li>
+        /// <li> <p> <code>INACTIVATE_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>INACTIVE</code> </p> </li>
+        /// <li> <p> <code>ERROR</code> </p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
@@ -1522,9 +1366,9 @@ pub mod get_models_output {
         /// To override the contents of this collection use [`set_models`](Self::set_models).
         ///
         /// <p>The array of models.</p>
-        pub fn models(mut self, input: impl Into<crate::model::Model>) -> Self {
+        pub fn models(mut self, input: crate::model::Model) -> Self {
             let mut v = self.models.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.models = Some(v);
             self
         }
@@ -1594,9 +1438,9 @@ pub mod get_labels_output {
         /// To override the contents of this collection use [`set_labels`](Self::set_labels).
         ///
         /// <p>An array of labels.</p>
-        pub fn labels(mut self, input: impl Into<crate::model::Label>) -> Self {
+        pub fn labels(mut self, input: crate::model::Label) -> Self {
             let mut v = self.labels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.labels = Some(v);
             self
         }
@@ -1730,9 +1574,9 @@ pub mod get_external_models_output {
         /// To override the contents of this collection use [`set_external_models`](Self::set_external_models).
         ///
         /// <p>Gets the Amazon SageMaker models.</p>
-        pub fn external_models(mut self, input: impl Into<crate::model::ExternalModel>) -> Self {
+        pub fn external_models(mut self, input: crate::model::ExternalModel) -> Self {
             let mut v = self.external_models.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.external_models = Some(v);
             self
         }
@@ -1812,9 +1656,9 @@ pub mod get_event_types_output {
         /// To override the contents of this collection use [`set_event_types`](Self::set_event_types).
         ///
         /// <p>An array of event types.</p>
-        pub fn event_types(mut self, input: impl Into<crate::model::EventType>) -> Self {
+        pub fn event_types(mut self, input: crate::model::EventType) -> Self {
             let mut v = self.event_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_types = Some(v);
             self
         }
@@ -1906,9 +1750,9 @@ pub mod get_event_prediction_output {
         /// To override the contents of this collection use [`set_model_scores`](Self::set_model_scores).
         ///
         /// <p>The model scores. Amazon Fraud Detector generates model scores between 0 and 1000, where 0 is low fraud risk and 1000 is high fraud risk. Model scores are directly related to the false positive rate (FPR). For example, a score of 600 corresponds to an estimated 10% false positive rate whereas a score of 900 corresponds to an estimated 2% false positive rate.</p>
-        pub fn model_scores(mut self, input: impl Into<crate::model::ModelScores>) -> Self {
+        pub fn model_scores(mut self, input: crate::model::ModelScores) -> Self {
             let mut v = self.model_scores.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.model_scores = Some(v);
             self
         }
@@ -1925,9 +1769,9 @@ pub mod get_event_prediction_output {
         /// To override the contents of this collection use [`set_rule_results`](Self::set_rule_results).
         ///
         /// <p>The results from the rules.</p>
-        pub fn rule_results(mut self, input: impl Into<crate::model::RuleResult>) -> Self {
+        pub fn rule_results(mut self, input: crate::model::RuleResult) -> Self {
             let mut v = self.rule_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rule_results = Some(v);
             self
         }
@@ -1944,12 +1788,9 @@ pub mod get_event_prediction_output {
         /// To override the contents of this collection use [`set_external_model_outputs`](Self::set_external_model_outputs).
         ///
         /// <p>The model scores for Amazon SageMaker models.</p>
-        pub fn external_model_outputs(
-            mut self,
-            input: impl Into<crate::model::ExternalModelOutputs>,
-        ) -> Self {
+        pub fn external_model_outputs(mut self, input: crate::model::ExternalModelOutputs) -> Self {
             let mut v = self.external_model_outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.external_model_outputs = Some(v);
             self
         }
@@ -2072,9 +1913,9 @@ pub mod get_entity_types_output {
         /// To override the contents of this collection use [`set_entity_types`](Self::set_entity_types).
         ///
         /// <p>An array of entity types.</p>
-        pub fn entity_types(mut self, input: impl Into<crate::model::EntityType>) -> Self {
+        pub fn entity_types(mut self, input: crate::model::EntityType) -> Self {
             let mut v = self.entity_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entity_types = Some(v);
             self
         }
@@ -2130,16 +1971,13 @@ pub struct GetDetectorVersionOutput {
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
     /// <p>The status of the detector version.</p>
     pub status: std::option::Option<crate::model::DetectorVersionStatus>,
-    /// <p>The timestamp when the detector version was last updated.
-    /// </p>
+    /// <p>The timestamp when the detector version was last updated. </p>
     pub last_updated_time: std::option::Option<std::string::String>,
     /// <p>The timestamp when the detector version was created. </p>
     pub created_time: std::option::Option<std::string::String>,
     /// <p>The execution mode of the rule in the dectector</p>
-    /// <p>
-    /// <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
-    /// <p>
-    /// <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
+    /// <p> <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
+    /// <p> <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
     pub rule_execution_mode: std::option::Option<crate::model::RuleExecutionMode>,
     /// <p>The detector version ARN.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -2173,8 +2011,7 @@ impl GetDetectorVersionOutput {
     pub fn status(&self) -> std::option::Option<&crate::model::DetectorVersionStatus> {
         self.status.as_ref()
     }
-    /// <p>The timestamp when the detector version was last updated.
-    /// </p>
+    /// <p>The timestamp when the detector version was last updated. </p>
     pub fn last_updated_time(&self) -> std::option::Option<&str> {
         self.last_updated_time.as_deref()
     }
@@ -2183,10 +2020,8 @@ impl GetDetectorVersionOutput {
         self.created_time.as_deref()
     }
     /// <p>The execution mode of the rule in the dectector</p>
-    /// <p>
-    /// <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
-    /// <p>
-    /// <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
+    /// <p> <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
+    /// <p> <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
     pub fn rule_execution_mode(&self) -> std::option::Option<&crate::model::RuleExecutionMode> {
         self.rule_execution_mode.as_ref()
     }
@@ -2289,9 +2124,9 @@ pub mod get_detector_version_output {
         /// To override the contents of this collection use [`set_model_versions`](Self::set_model_versions).
         ///
         /// <p>The model versions included in the detector version. </p>
-        pub fn model_versions(mut self, input: impl Into<crate::model::ModelVersion>) -> Self {
+        pub fn model_versions(mut self, input: crate::model::ModelVersion) -> Self {
             let mut v = self.model_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.model_versions = Some(v);
             self
         }
@@ -2308,9 +2143,9 @@ pub mod get_detector_version_output {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>The rules included in the detector version.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -2335,14 +2170,12 @@ pub mod get_detector_version_output {
             self.status = input;
             self
         }
-        /// <p>The timestamp when the detector version was last updated.
-        /// </p>
+        /// <p>The timestamp when the detector version was last updated. </p>
         pub fn last_updated_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_updated_time = Some(input.into());
             self
         }
-        /// <p>The timestamp when the detector version was last updated.
-        /// </p>
+        /// <p>The timestamp when the detector version was last updated. </p>
         pub fn set_last_updated_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2361,19 +2194,15 @@ pub mod get_detector_version_output {
             self
         }
         /// <p>The execution mode of the rule in the dectector</p>
-        /// <p>
-        /// <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
-        /// <p>
-        /// <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
+        /// <p> <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
+        /// <p> <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
         pub fn rule_execution_mode(mut self, input: crate::model::RuleExecutionMode) -> Self {
             self.rule_execution_mode = Some(input);
             self
         }
         /// <p>The execution mode of the rule in the dectector</p>
-        /// <p>
-        /// <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
-        /// <p>
-        /// <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
+        /// <p> <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
+        /// <p> <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
         pub fn set_rule_execution_mode(
             mut self,
             input: std::option::Option<crate::model::RuleExecutionMode>,
@@ -2458,9 +2287,9 @@ pub mod get_detectors_output {
         /// To override the contents of this collection use [`set_detectors`](Self::set_detectors).
         ///
         /// <p>The detectors.</p>
-        pub fn detectors(mut self, input: impl Into<crate::model::Detector>) -> Self {
+        pub fn detectors(mut self, input: crate::model::Detector) -> Self {
             let mut v = self.detectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.detectors = Some(v);
             self
         }
@@ -2620,12 +2449,9 @@ pub mod get_batch_prediction_jobs_output {
         /// To override the contents of this collection use [`set_batch_predictions`](Self::set_batch_predictions).
         ///
         /// <p>An array containing the details of each batch prediction job.</p>
-        pub fn batch_predictions(
-            mut self,
-            input: impl Into<crate::model::BatchPrediction>,
-        ) -> Self {
+        pub fn batch_predictions(mut self, input: crate::model::BatchPrediction) -> Self {
             let mut v = self.batch_predictions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.batch_predictions = Some(v);
             self
         }
@@ -2705,9 +2531,9 @@ pub mod get_batch_import_jobs_output {
         /// To override the contents of this collection use [`set_batch_imports`](Self::set_batch_imports).
         ///
         /// <p>An array containing the details of each batch import job.</p>
-        pub fn batch_imports(mut self, input: impl Into<crate::model::BatchImport>) -> Self {
+        pub fn batch_imports(mut self, input: crate::model::BatchImport) -> Self {
             let mut v = self.batch_imports.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.batch_imports = Some(v);
             self
         }
@@ -2790,12 +2616,9 @@ pub mod describe_model_versions_output {
         /// To override the contents of this collection use [`set_model_version_details`](Self::set_model_version_details).
         ///
         /// <p>The model version details.</p>
-        pub fn model_version_details(
-            mut self,
-            input: impl Into<crate::model::ModelVersionDetail>,
-        ) -> Self {
+        pub fn model_version_details(mut self, input: crate::model::ModelVersionDetail) -> Self {
             let mut v = self.model_version_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.model_version_details = Some(v);
             self
         }
@@ -2910,10 +2733,10 @@ pub mod describe_detector_output {
         /// <p>The status and description for each detector version.</p>
         pub fn detector_version_summaries(
             mut self,
-            input: impl Into<crate::model::DetectorVersionSummary>,
+            input: crate::model::DetectorVersionSummary,
         ) -> Self {
             let mut v = self.detector_version_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.detector_version_summaries = Some(v);
             self
         }
@@ -3951,9 +3774,9 @@ pub mod batch_get_variable_output {
         /// To override the contents of this collection use [`set_variables`](Self::set_variables).
         ///
         /// <p>The returned variables.</p>
-        pub fn variables(mut self, input: impl Into<crate::model::Variable>) -> Self {
+        pub fn variables(mut self, input: crate::model::Variable) -> Self {
             let mut v = self.variables.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.variables = Some(v);
             self
         }
@@ -3970,9 +3793,9 @@ pub mod batch_get_variable_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>The errors from the request.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::BatchGetVariableError>) -> Self {
+        pub fn errors(mut self, input: crate::model::BatchGetVariableError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -4035,9 +3858,9 @@ pub mod batch_create_variable_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>Provides the errors for the <code>BatchCreateVariable</code> request.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::BatchCreateVariableError>) -> Self {
+        pub fn errors(mut self, input: crate::model::BatchCreateVariableError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }

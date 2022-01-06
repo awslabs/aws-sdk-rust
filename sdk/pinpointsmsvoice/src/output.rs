@@ -200,12 +200,9 @@ pub mod get_configuration_set_event_destinations_output {
         /// To override the contents of this collection use [`set_event_destinations`](Self::set_event_destinations).
         ///
         /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
-        pub fn event_destinations(
-            mut self,
-            input: impl Into<crate::model::EventDestination>,
-        ) -> Self {
+        pub fn event_destinations(mut self, input: crate::model::EventDestination) -> Self {
             let mut v = self.event_destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_destinations = Some(v);
             self
         }

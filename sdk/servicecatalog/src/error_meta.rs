@@ -7,11 +7,9 @@ pub enum Error {
     DuplicateResourceException(crate::error::DuplicateResourceException),
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>An attempt was made to modify a resource that is in a state that is not valid.
-    /// Check your resources to ensure that they are in valid states before retrying the operation.</p>
+    /// <p>An attempt was made to modify a resource that is in a state that is not valid. Check your resources to ensure that they are in valid states before retrying the operation.</p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-    /// resource use or increase your service limits and retry the operation.</p>
+    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The operation is not supported.</p>
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
@@ -19,9 +17,7 @@ pub enum Error {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-    /// not been performed for this account. Please use the AWS console to perform the migration
-    /// process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

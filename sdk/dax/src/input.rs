@@ -23,45 +23,23 @@ pub mod create_cluster_input {
             std::option::Option<crate::model::ClusterEndpointEncryptionType>,
     }
     impl Builder {
-        /// <p>The cluster identifier. This parameter is stored as a lowercase
-        /// string.</p>
-        /// <p>
-        /// <b>Constraints:</b>
-        /// </p>
+        /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
+        /// <p> <b>Constraints:</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>A name must contain from 1 to 20 alphanumeric characters or
-        /// hyphens.</p>
-        /// </li>
-        /// <li>
-        /// <p>The first character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>A name cannot end with a hyphen or contain two consecutive
-        /// hyphens.</p>
-        /// </li>
+        /// <li> <p>A name must contain from 1 to 20 alphanumeric characters or hyphens.</p> </li>
+        /// <li> <p>The first character must be a letter.</p> </li>
+        /// <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
         /// </ul>
         pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_name = Some(input.into());
             self
         }
-        /// <p>The cluster identifier. This parameter is stored as a lowercase
-        /// string.</p>
-        /// <p>
-        /// <b>Constraints:</b>
-        /// </p>
+        /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
+        /// <p> <b>Constraints:</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>A name must contain from 1 to 20 alphanumeric characters or
-        /// hyphens.</p>
-        /// </li>
-        /// <li>
-        /// <p>The first character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>A name cannot end with a hyphen or contain two consecutive
-        /// hyphens.</p>
-        /// </li>
+        /// <li> <p>A name must contain from 1 to 20 alphanumeric characters or hyphens.</p> </li>
+        /// <li> <p>The first character must be a letter.</p> </li>
+        /// <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
         /// </ul>
         pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_name = input;
@@ -87,24 +65,14 @@ pub mod create_cluster_input {
             self.description = input;
             self
         }
-        /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will
-        /// create a single-node cluster, without any read replicas. For additional fault tolerance,
-        /// you can create a multiple node cluster with one or more read replicas. To do this, set
-        /// <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas).
-        /// <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p>
-        /// <note>
+        /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note>
         /// <p>AWS recommends that you have at least two read replicas per cluster.</p>
         /// </note>
         pub fn replication_factor(mut self, input: i32) -> Self {
             self.replication_factor = Some(input);
             self
         }
-        /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will
-        /// create a single-node cluster, without any read replicas. For additional fault tolerance,
-        /// you can create a multiple node cluster with one or more read replicas. To do this, set
-        /// <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas).
-        /// <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p>
-        /// <note>
+        /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note>
         /// <p>AWS recommends that you have at least two read replicas per cluster.</p>
         /// </note>
         pub fn set_replication_factor(mut self, input: std::option::Option<i32>) -> Self {
@@ -115,18 +83,14 @@ pub mod create_cluster_input {
         ///
         /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
         ///
-        /// <p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster
-        /// has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter.
-        /// If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>
+        /// <p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
             v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
-        /// <p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster
-        /// has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter.
-        /// If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>
+        /// <p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>
         pub fn set_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -134,19 +98,15 @@ pub mod create_cluster_input {
             self.availability_zones = input;
             self
         }
-        /// <p>The name of the subnet group to be used for the replication group.</p>
-        /// <important>
-        /// <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets
-        /// that you specify in a subnet group must exist in the same VPC.</p>
+        /// <p>The name of the subnet group to be used for the replication group.</p> <important>
+        /// <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.</p>
         /// </important>
         pub fn subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.subnet_group_name = Some(input.into());
             self
         }
-        /// <p>The name of the subnet group to be used for the replication group.</p>
-        /// <important>
-        /// <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets
-        /// that you specify in a subnet group must exist in the same VPC.</p>
+        /// <p>The name of the subnet group to be used for the replication group.</p> <important>
+        /// <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.</p>
         /// </important>
         pub fn set_subnet_group_name(
             mut self,
@@ -159,20 +119,16 @@ pub mod create_cluster_input {
         ///
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
-        /// <p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the
-        /// security group ID is system-generated.)</p>
-        /// <p>If this parameter is not specified, DAX assigns the default VPC security group to
-        /// each node.</p>
+        /// <p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the security group ID is system-generated.)</p>
+        /// <p>If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
-        /// <p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the
-        /// security group ID is system-generated.)</p>
-        /// <p>If this parameter is not specified, DAX assigns the default VPC security group to
-        /// each node.</p>
+        /// <p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the security group ID is system-generated.)</p>
+        /// <p>If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -180,53 +136,18 @@ pub mod create_cluster_input {
             self.security_group_ids = input;
             self
         }
-        /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is
-        /// performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock
-        /// UTC). The minimum maintenance window is a 60 minute period. Valid values for
-        /// <code>ddd</code> are:</p>
+        /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>sun</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>mon</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>tue</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>wed</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>thu</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>fri</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sat</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>sun</code> </p> </li>
+        /// <li> <p> <code>mon</code> </p> </li>
+        /// <li> <p> <code>tue</code> </p> </li>
+        /// <li> <p> <code>wed</code> </p> </li>
+        /// <li> <p> <code>thu</code> </p> </li>
+        /// <li> <p> <code>fri</code> </p> </li>
+        /// <li> <p> <code>sat</code> </p> </li>
         /// </ul>
-        /// <p>Example: <code>sun:05:00-sun:09:00</code>
-        /// </p>
-        /// <note>
-        /// <p>If you don't specify a preferred maintenance window when you create or modify a
-        /// cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day
-        /// of the week.</p>
+        /// <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note>
+        /// <p>If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.</p>
         /// </note>
         pub fn preferred_maintenance_window(
             mut self,
@@ -235,53 +156,18 @@ pub mod create_cluster_input {
             self.preferred_maintenance_window = Some(input.into());
             self
         }
-        /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is
-        /// performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock
-        /// UTC). The minimum maintenance window is a 60 minute period. Valid values for
-        /// <code>ddd</code> are:</p>
+        /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>sun</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>mon</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>tue</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>wed</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>thu</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>fri</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sat</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>sun</code> </p> </li>
+        /// <li> <p> <code>mon</code> </p> </li>
+        /// <li> <p> <code>tue</code> </p> </li>
+        /// <li> <p> <code>wed</code> </p> </li>
+        /// <li> <p> <code>thu</code> </p> </li>
+        /// <li> <p> <code>fri</code> </p> </li>
+        /// <li> <p> <code>sat</code> </p> </li>
         /// </ul>
-        /// <p>Example: <code>sun:05:00-sun:09:00</code>
-        /// </p>
-        /// <note>
-        /// <p>If you don't specify a preferred maintenance window when you create or modify a
-        /// cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day
-        /// of the week.</p>
+        /// <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note>
+        /// <p>If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.</p>
         /// </note>
         pub fn set_preferred_maintenance_window(
             mut self,
@@ -290,18 +176,14 @@ pub mod create_cluster_input {
             self.preferred_maintenance_window = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will
-        /// be sent.</p>
-        /// <note>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p> <note>
         /// <p>The Amazon SNS topic owner must be same as the DAX cluster owner.</p>
         /// </note>
         pub fn notification_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.notification_topic_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will
-        /// be sent.</p>
-        /// <note>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p> <note>
         /// <p>The Amazon SNS topic owner must be same as the DAX cluster owner.</p>
         /// </note>
         pub fn set_notification_topic_arn(
@@ -311,16 +193,12 @@ pub mod create_cluster_input {
             self.notification_topic_arn = input;
             self
         }
-        /// <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX
-        /// will assume this role and use the role's permissions to access DynamoDB on your
-        /// behalf.</p>
+        /// <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role_arn = Some(input.into());
             self
         }
-        /// <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX
-        /// will assume this role and use the role's permissions to access DynamoDB on your
-        /// behalf.</p>
+        /// <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
@@ -342,14 +220,14 @@ pub mod create_cluster_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A set of tags to associate with the DAX cluster.  </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>A set of tags to associate with the DAX cluster. </p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A set of tags to associate with the DAX cluster.  </p>
+        /// <p>A set of tags to associate with the DAX cluster. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -372,14 +250,8 @@ pub mod create_cluster_input {
         }
         /// <p>The type of encryption the cluster's endpoint should support. Values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> for no encryption</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TLS</code> for Transport Layer Security</p>
-        /// </li>
+        /// <li> <p> <code>NONE</code> for no encryption</p> </li>
+        /// <li> <p> <code>TLS</code> for Transport Layer Security</p> </li>
         /// </ul>
         pub fn cluster_endpoint_encryption_type(
             mut self,
@@ -390,14 +262,8 @@ pub mod create_cluster_input {
         }
         /// <p>The type of encryption the cluster's endpoint should support. Values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> for no encryption</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TLS</code> for Transport Layer Security</p>
-        /// </li>
+        /// <li> <p> <code>NONE</code> for no encryption</p> </li>
+        /// <li> <p> <code>TLS</code> for Transport Layer Security</p> </li>
         /// </ul>
         pub fn set_cluster_endpoint_encryption_type(
             mut self,
@@ -435,7 +301,7 @@ pub mod create_cluster_input {
 #[doc(hidden)]
 pub type CreateClusterInputOperationOutputAlias = crate::operation::CreateCluster;
 #[doc(hidden)]
-pub type CreateClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateClusterInput {
     /// Consumes the builder and constructs an Operation<[`CreateCluster`](crate::operation::CreateCluster)>
     #[allow(clippy::let_and_return)]
@@ -446,7 +312,7 @@ impl CreateClusterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCluster,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -530,7 +396,7 @@ impl CreateClusterInput {
             "CreateCluster",
             "dax",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -563,14 +429,12 @@ pub mod create_parameter_group_input {
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the parameter group to apply to all of the clusters in this replication
-        /// group.</p>
+        /// <p>The name of the parameter group to apply to all of the clusters in this replication group.</p>
         pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.parameter_group_name = Some(input.into());
             self
         }
-        /// <p>The name of the parameter group to apply to all of the clusters in this replication
-        /// group.</p>
+        /// <p>The name of the parameter group to apply to all of the clusters in this replication group.</p>
         pub fn set_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -605,7 +469,7 @@ pub mod create_parameter_group_input {
 #[doc(hidden)]
 pub type CreateParameterGroupInputOperationOutputAlias = crate::operation::CreateParameterGroup;
 #[doc(hidden)]
-pub type CreateParameterGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateParameterGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateParameterGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateParameterGroup`](crate::operation::CreateParameterGroup)>
     #[allow(clippy::let_and_return)]
@@ -616,7 +480,7 @@ impl CreateParameterGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateParameterGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -703,7 +567,7 @@ impl CreateParameterGroupInput {
             "CreateParameterGroup",
             "dax",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -797,7 +661,7 @@ pub mod create_subnet_group_input {
 #[doc(hidden)]
 pub type CreateSubnetGroupInputOperationOutputAlias = crate::operation::CreateSubnetGroup;
 #[doc(hidden)]
-pub type CreateSubnetGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSubnetGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSubnetGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateSubnetGroup`](crate::operation::CreateSubnetGroup)>
     #[allow(clippy::let_and_return)]
@@ -808,7 +672,7 @@ impl CreateSubnetGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSubnetGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -893,7 +757,7 @@ impl CreateSubnetGroupInput {
             "CreateSubnetGroup",
             "dax",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1006,7 +870,7 @@ pub mod decrease_replication_factor_input {
 pub type DecreaseReplicationFactorInputOperationOutputAlias =
     crate::operation::DecreaseReplicationFactor;
 #[doc(hidden)]
-pub type DecreaseReplicationFactorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DecreaseReplicationFactorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DecreaseReplicationFactorInput {
     /// Consumes the builder and constructs an Operation<[`DecreaseReplicationFactor`](crate::operation::DecreaseReplicationFactor)>
     #[allow(clippy::let_and_return)]
@@ -1017,7 +881,7 @@ impl DecreaseReplicationFactorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DecreaseReplicationFactor,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1104,7 +968,7 @@ impl DecreaseReplicationFactorInput {
             "DecreaseReplicationFactor",
             "dax",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1162,7 +1026,7 @@ pub mod delete_cluster_input {
 #[doc(hidden)]
 pub type DeleteClusterInputOperationOutputAlias = crate::operation::DeleteCluster;
 #[doc(hidden)]
-pub type DeleteClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteClusterInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCluster`](crate::operation::DeleteCluster)>
     #[allow(clippy::let_and_return)]
@@ -1173,7 +1037,7 @@ impl DeleteClusterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCluster,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1257,7 +1121,7 @@ impl DeleteClusterInput {
             "DeleteCluster",
             "dax",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1318,7 +1182,7 @@ pub mod delete_parameter_group_input {
 #[doc(hidden)]
 pub type DeleteParameterGroupInputOperationOutputAlias = crate::operation::DeleteParameterGroup;
 #[doc(hidden)]
-pub type DeleteParameterGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteParameterGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteParameterGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteParameterGroup`](crate::operation::DeleteParameterGroup)>
     #[allow(clippy::let_and_return)]
@@ -1329,7 +1193,7 @@ impl DeleteParameterGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteParameterGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1416,7 +1280,7 @@ impl DeleteParameterGroupInput {
             "DeleteParameterGroup",
             "dax",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1477,7 +1341,7 @@ pub mod delete_subnet_group_input {
 #[doc(hidden)]
 pub type DeleteSubnetGroupInputOperationOutputAlias = crate::operation::DeleteSubnetGroup;
 #[doc(hidden)]
-pub type DeleteSubnetGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSubnetGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSubnetGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSubnetGroup`](crate::operation::DeleteSubnetGroup)>
     #[allow(clippy::let_and_return)]
@@ -1488,7 +1352,7 @@ impl DeleteSubnetGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSubnetGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1573,7 +1437,7 @@ impl DeleteSubnetGroupInput {
             "DeleteSubnetGroup",
             "dax",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1626,34 +1490,24 @@ pub mod describe_clusters_input {
             self.cluster_names = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist
-        /// than the specified <code>MaxResults</code> value, a token is included in the response so
-        /// that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist
-        /// than the specified <code>MaxResults</code> value, a token is included in the response so
-        /// that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by
-        /// <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by
-        /// <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1676,7 +1530,7 @@ pub mod describe_clusters_input {
 #[doc(hidden)]
 pub type DescribeClustersInputOperationOutputAlias = crate::operation::DescribeClusters;
 #[doc(hidden)]
-pub type DescribeClustersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeClustersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeClustersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeClusters`](crate::operation::DescribeClusters)>
     #[allow(clippy::let_and_return)]
@@ -1687,7 +1541,7 @@ impl DescribeClustersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeClusters,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1772,7 +1626,7 @@ impl DescribeClustersInput {
             "DescribeClusters",
             "dax",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1805,34 +1659,24 @@ pub mod describe_default_parameters_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The maximum number of results to include in the response. If more results exist
-        /// than the specified <code>MaxResults</code> value, a token is included in the response so
-        /// that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist
-        /// than the specified <code>MaxResults</code> value, a token is included in the response so
-        /// that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by
-        /// <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by
-        /// <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1855,7 +1699,7 @@ pub mod describe_default_parameters_input {
 pub type DescribeDefaultParametersInputOperationOutputAlias =
     crate::operation::DescribeDefaultParameters;
 #[doc(hidden)]
-pub type DescribeDefaultParametersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDefaultParametersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDefaultParametersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDefaultParameters`](crate::operation::DescribeDefaultParameters)>
     #[allow(clippy::let_and_return)]
@@ -1866,7 +1710,7 @@ impl DescribeDefaultParametersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDefaultParameters,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1953,7 +1797,7 @@ impl DescribeDefaultParametersInput {
             "DescribeDefaultParameters",
             "dax",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1991,26 +1835,22 @@ pub mod describe_events_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the event source for which events will be returned. If not
-        /// specified, then all sources are included in the response.</p>
+        /// <p>The identifier of the event source for which events will be returned. If not specified, then all sources are included in the response.</p>
         pub fn source_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_name = Some(input.into());
             self
         }
-        /// <p>The identifier of the event source for which events will be returned. If not
-        /// specified, then all sources are included in the response.</p>
+        /// <p>The identifier of the event source for which events will be returned. If not specified, then all sources are included in the response.</p>
         pub fn set_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_name = input;
             self
         }
-        /// <p>The event source to retrieve events for. If no value is specified, all events are
-        /// returned.</p>
+        /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
         pub fn source_type(mut self, input: crate::model::SourceType) -> Self {
             self.source_type = Some(input);
             self
         }
-        /// <p>The event source to retrieve events for. If no value is specified, all events are
-        /// returned.</p>
+        /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
         pub fn set_source_type(
             mut self,
             input: std::option::Option<crate::model::SourceType>,
@@ -2018,14 +1858,12 @@ pub mod describe_events_input {
             self.source_type = input;
             self
         }
-        /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601
-        /// format.</p>
+        /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601
-        /// format.</p>
+        /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2033,14 +1871,12 @@ pub mod describe_events_input {
             self.start_time = input;
             self
         }
-        /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601
-        /// format.</p>
+        /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601
-        /// format.</p>
+        /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2058,34 +1894,24 @@ pub mod describe_events_input {
             self.duration = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist
-        /// than the specified <code>MaxResults</code> value, a token is included in the response so
-        /// that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist
-        /// than the specified <code>MaxResults</code> value, a token is included in the response so
-        /// that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by
-        /// <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by
-        /// <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2112,7 +1938,7 @@ pub mod describe_events_input {
 #[doc(hidden)]
 pub type DescribeEventsInputOperationOutputAlias = crate::operation::DescribeEvents;
 #[doc(hidden)]
-pub type DescribeEventsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEventsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEvents`](crate::operation::DescribeEvents)>
     #[allow(clippy::let_and_return)]
@@ -2123,7 +1949,7 @@ impl DescribeEventsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEvents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2208,7 +2034,7 @@ impl DescribeEventsInput {
             "DescribeEvents",
             "dax",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2261,34 +2087,24 @@ pub mod describe_parameter_groups_input {
             self.parameter_group_names = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist
-        /// than the specified <code>MaxResults</code> value, a token is included in the response so
-        /// that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist
-        /// than the specified <code>MaxResults</code> value, a token is included in the response so
-        /// that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by
-        /// <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by
-        /// <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2312,7 +2128,7 @@ pub mod describe_parameter_groups_input {
 pub type DescribeParameterGroupsInputOperationOutputAlias =
     crate::operation::DescribeParameterGroups;
 #[doc(hidden)]
-pub type DescribeParameterGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeParameterGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeParameterGroupsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeParameterGroups`](crate::operation::DescribeParameterGroups)>
     #[allow(clippy::let_and_return)]
@@ -2323,7 +2139,7 @@ impl DescribeParameterGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeParameterGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2410,7 +2226,7 @@ impl DescribeParameterGroupsInput {
             "DescribeParameterGroups",
             "dax",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2458,46 +2274,34 @@ pub mod describe_parameters_input {
             self.parameter_group_name = input;
             self
         }
-        /// <p>How the parameter is defined. For example, <code>system</code> denotes a
-        /// system-defined parameter.</p>
+        /// <p>How the parameter is defined. For example, <code>system</code> denotes a system-defined parameter.</p>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
             self.source = Some(input.into());
             self
         }
-        /// <p>How the parameter is defined. For example, <code>system</code> denotes a
-        /// system-defined parameter.</p>
+        /// <p>How the parameter is defined. For example, <code>system</code> denotes a system-defined parameter.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist
-        /// than the specified <code>MaxResults</code> value, a token is included in the response so
-        /// that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist
-        /// than the specified <code>MaxResults</code> value, a token is included in the response so
-        /// that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by
-        /// <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by
-        /// <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2521,7 +2325,7 @@ pub mod describe_parameters_input {
 #[doc(hidden)]
 pub type DescribeParametersInputOperationOutputAlias = crate::operation::DescribeParameters;
 #[doc(hidden)]
-pub type DescribeParametersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeParametersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeParametersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeParameters`](crate::operation::DescribeParameters)>
     #[allow(clippy::let_and_return)]
@@ -2532,7 +2336,7 @@ impl DescribeParametersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeParameters,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2617,7 +2421,7 @@ impl DescribeParametersInput {
             "DescribeParameters",
             "dax",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2670,34 +2474,24 @@ pub mod describe_subnet_groups_input {
             self.subnet_group_names = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist
-        /// than the specified <code>MaxResults</code> value, a token is included in the response so
-        /// that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist
-        /// than the specified <code>MaxResults</code> value, a token is included in the response so
-        /// that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by
-        /// <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by
-        /// <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2720,7 +2514,7 @@ pub mod describe_subnet_groups_input {
 #[doc(hidden)]
 pub type DescribeSubnetGroupsInputOperationOutputAlias = crate::operation::DescribeSubnetGroups;
 #[doc(hidden)]
-pub type DescribeSubnetGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSubnetGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSubnetGroupsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSubnetGroups`](crate::operation::DescribeSubnetGroups)>
     #[allow(clippy::let_and_return)]
@@ -2731,7 +2525,7 @@ impl DescribeSubnetGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSubnetGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2818,7 +2612,7 @@ impl DescribeSubnetGroupsInput {
             "DescribeSubnetGroups",
             "dax",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2876,18 +2670,14 @@ pub mod increase_replication_factor_input {
         ///
         /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
         ///
-        /// <p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes
-        /// belonging to the cluster are placed in these Availability Zones. Use this parameter if you want
-        /// to distribute the nodes across multiple AZs.</p>
+        /// <p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
             v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
-        /// <p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes
-        /// belonging to the cluster are placed in these Availability Zones. Use this parameter if you want
-        /// to distribute the nodes across multiple AZs.</p>
+        /// <p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>
         pub fn set_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2914,7 +2704,7 @@ pub mod increase_replication_factor_input {
 pub type IncreaseReplicationFactorInputOperationOutputAlias =
     crate::operation::IncreaseReplicationFactor;
 #[doc(hidden)]
-pub type IncreaseReplicationFactorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type IncreaseReplicationFactorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl IncreaseReplicationFactorInput {
     /// Consumes the builder and constructs an Operation<[`IncreaseReplicationFactor`](crate::operation::IncreaseReplicationFactor)>
     #[allow(clippy::let_and_return)]
@@ -2925,7 +2715,7 @@ impl IncreaseReplicationFactorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::IncreaseReplicationFactor,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3012,7 +2802,7 @@ impl IncreaseReplicationFactorInput {
             "IncreaseReplicationFactor",
             "dax",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3058,16 +2848,12 @@ pub mod list_tags_input {
             self.resource_name = input;
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3087,7 +2873,7 @@ pub mod list_tags_input {
 #[doc(hidden)]
 pub type ListTagsInputOperationOutputAlias = crate::operation::ListTags;
 #[doc(hidden)]
-pub type ListTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsInput {
     /// Consumes the builder and constructs an Operation<[`ListTags`](crate::operation::ListTags)>
     #[allow(clippy::let_and_return)]
@@ -3098,7 +2884,7 @@ impl ListTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3177,7 +2963,7 @@ impl ListTagsInput {
         let op =
             aws_smithy_http::operation::Operation::new(request, crate::operation::ListTags::new())
                 .with_metadata(aws_smithy_http::operation::Metadata::new("ListTags", "dax"));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3247,7 +3033,7 @@ pub mod reboot_node_input {
 #[doc(hidden)]
 pub type RebootNodeInputOperationOutputAlias = crate::operation::RebootNode;
 #[doc(hidden)]
-pub type RebootNodeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RebootNodeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RebootNodeInput {
     /// Consumes the builder and constructs an Operation<[`RebootNode`](crate::operation::RebootNode)>
     #[allow(clippy::let_and_return)]
@@ -3258,7 +3044,7 @@ impl RebootNodeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RebootNode,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3342,7 +3128,7 @@ impl RebootNodeInput {
             "RebootNode",
             "dax",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3393,9 +3179,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be assigned to the DAX resource. </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3424,7 +3210,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -3435,7 +3221,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3519,7 +3305,7 @@ impl TagResourceInput {
             "TagResource",
             "dax",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3601,7 +3387,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -3612,7 +3398,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3696,7 +3482,7 @@ impl UntagResourceInput {
             "UntagResource",
             "dax",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3754,9 +3540,7 @@ pub mod update_cluster_input {
             self.description = input;
             self
         }
-        /// <p>A range of time when maintenance of DAX cluster software will be performed. For
-        /// example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than
-        /// 30 minutes, and is performed automatically within the maintenance window.</p>
+        /// <p>A range of time when maintenance of DAX cluster software will be performed. For example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.</p>
         pub fn preferred_maintenance_window(
             mut self,
             input: impl Into<std::string::String>,
@@ -3764,9 +3548,7 @@ pub mod update_cluster_input {
             self.preferred_maintenance_window = Some(input.into());
             self
         }
-        /// <p>A range of time when maintenance of DAX cluster software will be performed. For
-        /// example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than
-        /// 30 minutes, and is performed automatically within the maintenance window.</p>
+        /// <p>A range of time when maintenance of DAX cluster software will be performed. For example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.</p>
         pub fn set_preferred_maintenance_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3787,16 +3569,12 @@ pub mod update_cluster_input {
             self.notification_topic_arn = input;
             self
         }
-        /// <p>The current state of the topic. A value of “active” means that notifications will
-        /// be sent to the topic. A value of “inactive” means that notifications will not be sent to the
-        /// topic.</p>
+        /// <p>The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value of “inactive” means that notifications will not be sent to the topic.</p>
         pub fn notification_topic_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.notification_topic_status = Some(input.into());
             self
         }
-        /// <p>The current state of the topic. A value of “active” means that notifications will
-        /// be sent to the topic. A value of “inactive” means that notifications will not be sent to the
-        /// topic.</p>
+        /// <p>The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value of “inactive” means that notifications will not be sent to the topic.</p>
         pub fn set_notification_topic_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3821,16 +3599,14 @@ pub mod update_cluster_input {
         ///
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
-        /// <p>A list of user-specified security group IDs to be assigned to each node in the DAX cluster.  If this parameter is not
-        /// specified, DAX assigns the default VPC security group to each node.</p>
+        /// <p>A list of user-specified security group IDs to be assigned to each node in the DAX cluster. If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
-        /// <p>A list of user-specified security group IDs to be assigned to each node in the DAX cluster.  If this parameter is not
-        /// specified, DAX assigns the default VPC security group to each node.</p>
+        /// <p>A list of user-specified security group IDs to be assigned to each node in the DAX cluster. If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3860,7 +3636,7 @@ pub mod update_cluster_input {
 #[doc(hidden)]
 pub type UpdateClusterInputOperationOutputAlias = crate::operation::UpdateCluster;
 #[doc(hidden)]
-pub type UpdateClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateClusterInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCluster`](crate::operation::UpdateCluster)>
     #[allow(clippy::let_and_return)]
@@ -3871,7 +3647,7 @@ impl UpdateClusterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCluster,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3955,7 +3731,7 @@ impl UpdateClusterInput {
             "UpdateCluster",
             "dax",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4006,26 +3782,17 @@ pub mod update_parameter_group_input {
         ///
         /// To override the contents of this collection use [`set_parameter_name_values`](Self::set_parameter_name_values).
         ///
-        /// <p>An array of name-value pairs for the parameters in the group. Each element in the
-        /// array represents a single parameter.</p>
-        /// <note>
-        /// <p>
-        /// <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>
+        /// <p>An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.</p> <note>
+        /// <p> <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>
         /// </note>
-        pub fn parameter_name_values(
-            mut self,
-            input: impl Into<crate::model::ParameterNameValue>,
-        ) -> Self {
+        pub fn parameter_name_values(mut self, input: crate::model::ParameterNameValue) -> Self {
             let mut v = self.parameter_name_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameter_name_values = Some(v);
             self
         }
-        /// <p>An array of name-value pairs for the parameters in the group. Each element in the
-        /// array represents a single parameter.</p>
-        /// <note>
-        /// <p>
-        /// <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>
+        /// <p>An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.</p> <note>
+        /// <p> <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>
         /// </note>
         pub fn set_parameter_name_values(
             mut self,
@@ -4051,7 +3818,7 @@ pub mod update_parameter_group_input {
 #[doc(hidden)]
 pub type UpdateParameterGroupInputOperationOutputAlias = crate::operation::UpdateParameterGroup;
 #[doc(hidden)]
-pub type UpdateParameterGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateParameterGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateParameterGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateParameterGroup`](crate::operation::UpdateParameterGroup)>
     #[allow(clippy::let_and_return)]
@@ -4062,7 +3829,7 @@ impl UpdateParameterGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateParameterGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4149,7 +3916,7 @@ impl UpdateParameterGroupInput {
             "UpdateParameterGroup",
             "dax",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4243,7 +4010,7 @@ pub mod update_subnet_group_input {
 #[doc(hidden)]
 pub type UpdateSubnetGroupInputOperationOutputAlias = crate::operation::UpdateSubnetGroup;
 #[doc(hidden)]
-pub type UpdateSubnetGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateSubnetGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSubnetGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSubnetGroup`](crate::operation::UpdateSubnetGroup)>
     #[allow(clippy::let_and_return)]
@@ -4254,7 +4021,7 @@ impl UpdateSubnetGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSubnetGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4339,7 +4106,7 @@ impl UpdateSubnetGroupInput {
             "UpdateSubnetGroup",
             "dax",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4403,11 +4170,8 @@ impl std::fmt::Debug for UpdateSubnetGroupInput {
 pub struct UpdateParameterGroupInput {
     /// <p>The name of the parameter group.</p>
     pub parameter_group_name: std::option::Option<std::string::String>,
-    /// <p>An array of name-value pairs for the parameters in the group. Each element in the
-    /// array represents a single parameter.</p>
-    /// <note>
-    /// <p>
-    /// <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>
+    /// <p>An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.</p> <note>
+    /// <p> <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>
     /// </note>
     pub parameter_name_values: std::option::Option<std::vec::Vec<crate::model::ParameterNameValue>>,
 }
@@ -4416,11 +4180,8 @@ impl UpdateParameterGroupInput {
     pub fn parameter_group_name(&self) -> std::option::Option<&str> {
         self.parameter_group_name.as_deref()
     }
-    /// <p>An array of name-value pairs for the parameters in the group. Each element in the
-    /// array represents a single parameter.</p>
-    /// <note>
-    /// <p>
-    /// <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>
+    /// <p>An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.</p> <note>
+    /// <p> <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>
     /// </note>
     pub fn parameter_name_values(
         &self,
@@ -4445,20 +4206,15 @@ pub struct UpdateClusterInput {
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>A description of the changes being made to the cluster.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A range of time when maintenance of DAX cluster software will be performed. For
-    /// example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than
-    /// 30 minutes, and is performed automatically within the maintenance window.</p>
+    /// <p>A range of time when maintenance of DAX cluster software will be performed. For example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.</p>
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
     pub notification_topic_arn: std::option::Option<std::string::String>,
-    /// <p>The current state of the topic. A value of “active” means that notifications will
-    /// be sent to the topic. A value of “inactive” means that notifications will not be sent to the
-    /// topic.</p>
+    /// <p>The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value of “inactive” means that notifications will not be sent to the topic.</p>
     pub notification_topic_status: std::option::Option<std::string::String>,
     /// <p>The name of a parameter group for this cluster.</p>
     pub parameter_group_name: std::option::Option<std::string::String>,
-    /// <p>A list of user-specified security group IDs to be assigned to each node in the DAX cluster.  If this parameter is not
-    /// specified, DAX assigns the default VPC security group to each node.</p>
+    /// <p>A list of user-specified security group IDs to be assigned to each node in the DAX cluster. If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateClusterInput {
@@ -4470,9 +4226,7 @@ impl UpdateClusterInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A range of time when maintenance of DAX cluster software will be performed. For
-    /// example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than
-    /// 30 minutes, and is performed automatically within the maintenance window.</p>
+    /// <p>A range of time when maintenance of DAX cluster software will be performed. For example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.</p>
     pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
     }
@@ -4480,9 +4234,7 @@ impl UpdateClusterInput {
     pub fn notification_topic_arn(&self) -> std::option::Option<&str> {
         self.notification_topic_arn.as_deref()
     }
-    /// <p>The current state of the topic. A value of “active” means that notifications will
-    /// be sent to the topic. A value of “inactive” means that notifications will not be sent to the
-    /// topic.</p>
+    /// <p>The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value of “inactive” means that notifications will not be sent to the topic.</p>
     pub fn notification_topic_status(&self) -> std::option::Option<&str> {
         self.notification_topic_status.as_deref()
     }
@@ -4490,8 +4242,7 @@ impl UpdateClusterInput {
     pub fn parameter_group_name(&self) -> std::option::Option<&str> {
         self.parameter_group_name.as_deref()
     }
-    /// <p>A list of user-specified security group IDs to be assigned to each node in the DAX cluster.  If this parameter is not
-    /// specified, DAX assigns the default VPC security group to each node.</p>
+    /// <p>A list of user-specified security group IDs to be assigned to each node in the DAX cluster. If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
@@ -4603,9 +4354,7 @@ impl std::fmt::Debug for RebootNodeInput {
 pub struct ListTagsInput {
     /// <p>The name of the DAX resource to which the tags belong.</p>
     pub resource_name: std::option::Option<std::string::String>,
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsInput {
@@ -4613,9 +4362,7 @@ impl ListTagsInput {
     pub fn resource_name(&self) -> std::option::Option<&str> {
         self.resource_name.as_deref()
     }
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4637,9 +4384,7 @@ pub struct IncreaseReplicationFactorInput {
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The new number of nodes for the DAX cluster.</p>
     pub new_replication_factor: i32,
-    /// <p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes
-    /// belonging to the cluster are placed in these Availability Zones. Use this parameter if you want
-    /// to distribute the nodes across multiple AZs.</p>
+    /// <p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl IncreaseReplicationFactorInput {
@@ -4651,9 +4396,7 @@ impl IncreaseReplicationFactorInput {
     pub fn new_replication_factor(&self) -> i32 {
         self.new_replication_factor
     }
-    /// <p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes
-    /// belonging to the cluster are placed in these Availability Zones. Use this parameter if you want
-    /// to distribute the nodes across multiple AZs.</p>
+    /// <p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>
     pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
         self.availability_zones.as_deref()
     }
@@ -4674,15 +4417,10 @@ impl std::fmt::Debug for IncreaseReplicationFactorInput {
 pub struct DescribeSubnetGroupsInput {
     /// <p>The name of the subnet group.</p>
     pub subnet_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of results to include in the response. If more results exist
-    /// than the specified <code>MaxResults</code> value, a token is included in the response so
-    /// that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by
-    /// <code>MaxResults</code>.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSubnetGroupsInput {
@@ -4690,17 +4428,12 @@ impl DescribeSubnetGroupsInput {
     pub fn subnet_group_names(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_group_names.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist
-    /// than the specified <code>MaxResults</code> value, a token is included in the response so
-    /// that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by
-    /// <code>MaxResults</code>.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4721,18 +4454,12 @@ impl std::fmt::Debug for DescribeSubnetGroupsInput {
 pub struct DescribeParametersInput {
     /// <p>The name of the parameter group.</p>
     pub parameter_group_name: std::option::Option<std::string::String>,
-    /// <p>How the parameter is defined. For example, <code>system</code> denotes a
-    /// system-defined parameter.</p>
+    /// <p>How the parameter is defined. For example, <code>system</code> denotes a system-defined parameter.</p>
     pub source: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist
-    /// than the specified <code>MaxResults</code> value, a token is included in the response so
-    /// that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by
-    /// <code>MaxResults</code>.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeParametersInput {
@@ -4740,22 +4467,16 @@ impl DescribeParametersInput {
     pub fn parameter_group_name(&self) -> std::option::Option<&str> {
         self.parameter_group_name.as_deref()
     }
-    /// <p>How the parameter is defined. For example, <code>system</code> denotes a
-    /// system-defined parameter.</p>
+    /// <p>How the parameter is defined. For example, <code>system</code> denotes a system-defined parameter.</p>
     pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist
-    /// than the specified <code>MaxResults</code> value, a token is included in the response so
-    /// that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by
-    /// <code>MaxResults</code>.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4777,15 +4498,10 @@ impl std::fmt::Debug for DescribeParametersInput {
 pub struct DescribeParameterGroupsInput {
     /// <p>The names of the parameter groups.</p>
     pub parameter_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of results to include in the response. If more results exist
-    /// than the specified <code>MaxResults</code> value, a token is included in the response so
-    /// that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by
-    /// <code>MaxResults</code>.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeParameterGroupsInput {
@@ -4793,17 +4509,12 @@ impl DescribeParameterGroupsInput {
     pub fn parameter_group_names(&self) -> std::option::Option<&[std::string::String]> {
         self.parameter_group_names.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist
-    /// than the specified <code>MaxResults</code> value, a token is included in the response so
-    /// that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by
-    /// <code>MaxResults</code>.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4822,49 +4533,36 @@ impl std::fmt::Debug for DescribeParameterGroupsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventsInput {
-    /// <p>The identifier of the event source for which events will be returned. If not
-    /// specified, then all sources are included in the response.</p>
+    /// <p>The identifier of the event source for which events will be returned. If not specified, then all sources are included in the response.</p>
     pub source_name: std::option::Option<std::string::String>,
-    /// <p>The event source to retrieve events for. If no value is specified, all events are
-    /// returned.</p>
+    /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
     pub source_type: std::option::Option<crate::model::SourceType>,
-    /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601
-    /// format.</p>
+    /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601
-    /// format.</p>
+    /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of minutes' worth of events to retrieve.</p>
     pub duration: std::option::Option<i32>,
-    /// <p>The maximum number of results to include in the response. If more results exist
-    /// than the specified <code>MaxResults</code> value, a token is included in the response so
-    /// that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by
-    /// <code>MaxResults</code>.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEventsInput {
-    /// <p>The identifier of the event source for which events will be returned. If not
-    /// specified, then all sources are included in the response.</p>
+    /// <p>The identifier of the event source for which events will be returned. If not specified, then all sources are included in the response.</p>
     pub fn source_name(&self) -> std::option::Option<&str> {
         self.source_name.as_deref()
     }
-    /// <p>The event source to retrieve events for. If no value is specified, all events are
-    /// returned.</p>
+    /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
     pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
         self.source_type.as_ref()
     }
-    /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601
-    /// format.</p>
+    /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601
-    /// format.</p>
+    /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -4872,17 +4570,12 @@ impl DescribeEventsInput {
     pub fn duration(&self) -> std::option::Option<i32> {
         self.duration
     }
-    /// <p>The maximum number of results to include in the response. If more results exist
-    /// than the specified <code>MaxResults</code> value, a token is included in the response so
-    /// that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by
-    /// <code>MaxResults</code>.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4905,29 +4598,19 @@ impl std::fmt::Debug for DescribeEventsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDefaultParametersInput {
-    /// <p>The maximum number of results to include in the response. If more results exist
-    /// than the specified <code>MaxResults</code> value, a token is included in the response so
-    /// that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by
-    /// <code>MaxResults</code>.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDefaultParametersInput {
-    /// <p>The maximum number of results to include in the response. If more results exist
-    /// than the specified <code>MaxResults</code> value, a token is included in the response so
-    /// that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by
-    /// <code>MaxResults</code>.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4947,15 +4630,10 @@ impl std::fmt::Debug for DescribeDefaultParametersInput {
 pub struct DescribeClustersInput {
     /// <p>The names of the DAX clusters being described.</p>
     pub cluster_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of results to include in the response. If more results exist
-    /// than the specified <code>MaxResults</code> value, a token is included in the response so
-    /// that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by
-    /// <code>MaxResults</code>.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeClustersInput {
@@ -4963,17 +4641,12 @@ impl DescribeClustersInput {
     pub fn cluster_names(&self) -> std::option::Option<&[std::string::String]> {
         self.cluster_names.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist
-    /// than the specified <code>MaxResults</code> value, a token is included in the response so
-    /// that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by
-    /// <code>MaxResults</code>.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5132,15 +4805,13 @@ impl std::fmt::Debug for CreateSubnetGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateParameterGroupInput {
-    /// <p>The name of the parameter group to apply to all of the clusters in this replication
-    /// group.</p>
+    /// <p>The name of the parameter group to apply to all of the clusters in this replication group.</p>
     pub parameter_group_name: std::option::Option<std::string::String>,
     /// <p>A description of the parameter group.</p>
     pub description: std::option::Option<std::string::String>,
 }
 impl CreateParameterGroupInput {
-    /// <p>The name of the parameter group to apply to all of the clusters in this replication
-    /// group.</p>
+    /// <p>The name of the parameter group to apply to all of the clusters in this replication group.</p>
     pub fn parameter_group_name(&self) -> std::option::Option<&str> {
         self.parameter_group_name.as_deref()
     }
@@ -5162,150 +4833,72 @@ impl std::fmt::Debug for CreateParameterGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClusterInput {
-    /// <p>The cluster identifier. This parameter is stored as a lowercase
-    /// string.</p>
-    /// <p>
-    /// <b>Constraints:</b>
-    /// </p>
+    /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
+    /// <p> <b>Constraints:</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>A name must contain from 1 to 20 alphanumeric characters or
-    /// hyphens.</p>
-    /// </li>
-    /// <li>
-    /// <p>The first character must be a letter.</p>
-    /// </li>
-    /// <li>
-    /// <p>A name cannot end with a hyphen or contain two consecutive
-    /// hyphens.</p>
-    /// </li>
+    /// <li> <p>A name must contain from 1 to 20 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The compute and memory capacity of the nodes in the cluster.</p>
     pub node_type: std::option::Option<std::string::String>,
     /// <p>A description of the cluster.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will
-    /// create a single-node cluster, without any read replicas. For additional fault tolerance,
-    /// you can create a multiple node cluster with one or more read replicas. To do this, set
-    /// <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas).
-    /// <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p>
-    /// <note>
+    /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note>
     /// <p>AWS recommends that you have at least two read replicas per cluster.</p>
     /// </note>
     pub replication_factor: i32,
-    /// <p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster
-    /// has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter.
-    /// If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>
+    /// <p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The name of the subnet group to be used for the replication group.</p>
-    /// <important>
-    /// <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets
-    /// that you specify in a subnet group must exist in the same VPC.</p>
+    /// <p>The name of the subnet group to be used for the replication group.</p> <important>
+    /// <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.</p>
     /// </important>
     pub subnet_group_name: std::option::Option<std::string::String>,
-    /// <p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the
-    /// security group ID is system-generated.)</p>
-    /// <p>If this parameter is not specified, DAX assigns the default VPC security group to
-    /// each node.</p>
+    /// <p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the security group ID is system-generated.)</p>
+    /// <p>If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is
-    /// performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock
-    /// UTC). The minimum maintenance window is a 60 minute period. Valid values for
-    /// <code>ddd</code> are:</p>
+    /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>sun</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>mon</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>tue</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>wed</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>thu</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>fri</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sat</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>sun</code> </p> </li>
+    /// <li> <p> <code>mon</code> </p> </li>
+    /// <li> <p> <code>tue</code> </p> </li>
+    /// <li> <p> <code>wed</code> </p> </li>
+    /// <li> <p> <code>thu</code> </p> </li>
+    /// <li> <p> <code>fri</code> </p> </li>
+    /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
-    /// <p>Example: <code>sun:05:00-sun:09:00</code>
-    /// </p>
-    /// <note>
-    /// <p>If you don't specify a preferred maintenance window when you create or modify a
-    /// cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day
-    /// of the week.</p>
+    /// <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note>
+    /// <p>If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.</p>
     /// </note>
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will
-    /// be sent.</p>
-    /// <note>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p> <note>
     /// <p>The Amazon SNS topic owner must be same as the DAX cluster owner.</p>
     /// </note>
     pub notification_topic_arn: std::option::Option<std::string::String>,
-    /// <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX
-    /// will assume this role and use the role's permissions to access DynamoDB on your
-    /// behalf.</p>
+    /// <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.</p>
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The parameter group to be associated with the DAX cluster.</p>
     pub parameter_group_name: std::option::Option<std::string::String>,
-    /// <p>A set of tags to associate with the DAX cluster.  </p>
+    /// <p>A set of tags to associate with the DAX cluster. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Represents the settings used to enable server-side encryption on the cluster.</p>
     pub sse_specification: std::option::Option<crate::model::SseSpecification>,
     /// <p>The type of encryption the cluster's endpoint should support. Values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> for no encryption</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TLS</code> for Transport Layer Security</p>
-    /// </li>
+    /// <li> <p> <code>NONE</code> for no encryption</p> </li>
+    /// <li> <p> <code>TLS</code> for Transport Layer Security</p> </li>
     /// </ul>
     pub cluster_endpoint_encryption_type:
         std::option::Option<crate::model::ClusterEndpointEncryptionType>,
 }
 impl CreateClusterInput {
-    /// <p>The cluster identifier. This parameter is stored as a lowercase
-    /// string.</p>
-    /// <p>
-    /// <b>Constraints:</b>
-    /// </p>
+    /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
+    /// <p> <b>Constraints:</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>A name must contain from 1 to 20 alphanumeric characters or
-    /// hyphens.</p>
-    /// </li>
-    /// <li>
-    /// <p>The first character must be a letter.</p>
-    /// </li>
-    /// <li>
-    /// <p>A name cannot end with a hyphen or contain two consecutive
-    /// hyphens.</p>
-    /// </li>
+    /// <li> <p>A name must contain from 1 to 20 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn cluster_name(&self) -> std::option::Option<&str> {
         self.cluster_name.as_deref()
@@ -5318,100 +4911,50 @@ impl CreateClusterInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will
-    /// create a single-node cluster, without any read replicas. For additional fault tolerance,
-    /// you can create a multiple node cluster with one or more read replicas. To do this, set
-    /// <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas).
-    /// <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p>
-    /// <note>
+    /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note>
     /// <p>AWS recommends that you have at least two read replicas per cluster.</p>
     /// </note>
     pub fn replication_factor(&self) -> i32 {
         self.replication_factor
     }
-    /// <p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster
-    /// has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter.
-    /// If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>
+    /// <p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>
     pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
         self.availability_zones.as_deref()
     }
-    /// <p>The name of the subnet group to be used for the replication group.</p>
-    /// <important>
-    /// <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets
-    /// that you specify in a subnet group must exist in the same VPC.</p>
+    /// <p>The name of the subnet group to be used for the replication group.</p> <important>
+    /// <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.</p>
     /// </important>
     pub fn subnet_group_name(&self) -> std::option::Option<&str> {
         self.subnet_group_name.as_deref()
     }
-    /// <p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the
-    /// security group ID is system-generated.)</p>
-    /// <p>If this parameter is not specified, DAX assigns the default VPC security group to
-    /// each node.</p>
+    /// <p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the security group ID is system-generated.)</p>
+    /// <p>If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
-    /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is
-    /// performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock
-    /// UTC). The minimum maintenance window is a 60 minute period. Valid values for
-    /// <code>ddd</code> are:</p>
+    /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>sun</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>mon</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>tue</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>wed</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>thu</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>fri</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sat</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>sun</code> </p> </li>
+    /// <li> <p> <code>mon</code> </p> </li>
+    /// <li> <p> <code>tue</code> </p> </li>
+    /// <li> <p> <code>wed</code> </p> </li>
+    /// <li> <p> <code>thu</code> </p> </li>
+    /// <li> <p> <code>fri</code> </p> </li>
+    /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
-    /// <p>Example: <code>sun:05:00-sun:09:00</code>
-    /// </p>
-    /// <note>
-    /// <p>If you don't specify a preferred maintenance window when you create or modify a
-    /// cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day
-    /// of the week.</p>
+    /// <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note>
+    /// <p>If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.</p>
     /// </note>
     pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will
-    /// be sent.</p>
-    /// <note>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p> <note>
     /// <p>The Amazon SNS topic owner must be same as the DAX cluster owner.</p>
     /// </note>
     pub fn notification_topic_arn(&self) -> std::option::Option<&str> {
         self.notification_topic_arn.as_deref()
     }
-    /// <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX
-    /// will assume this role and use the role's permissions to access DynamoDB on your
-    /// behalf.</p>
+    /// <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.</p>
     pub fn iam_role_arn(&self) -> std::option::Option<&str> {
         self.iam_role_arn.as_deref()
     }
@@ -5419,7 +4962,7 @@ impl CreateClusterInput {
     pub fn parameter_group_name(&self) -> std::option::Option<&str> {
         self.parameter_group_name.as_deref()
     }
-    /// <p>A set of tags to associate with the DAX cluster.  </p>
+    /// <p>A set of tags to associate with the DAX cluster. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -5429,14 +4972,8 @@ impl CreateClusterInput {
     }
     /// <p>The type of encryption the cluster's endpoint should support. Values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> for no encryption</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TLS</code> for Transport Layer Security</p>
-    /// </li>
+    /// <li> <p> <code>NONE</code> for no encryption</p> </li>
+    /// <li> <p> <code>TLS</code> for Transport Layer Security</p> </li>
     /// </ul>
     pub fn cluster_endpoint_encryption_type(
         &self,

@@ -3,13 +3,11 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartExpenseAnalysisOutput {
-    /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from
-    /// <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
+    /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartExpenseAnalysisOutput {
-    /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from
-    /// <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
+    /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -30,14 +28,12 @@ pub mod start_expense_analysis_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from
-        /// <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
+        /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from
-        /// <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
+        /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -61,15 +57,11 @@ impl StartExpenseAnalysisOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDocumentTextDetectionOutput {
-    /// <p>The identifier of the text detection job for the document. Use <code>JobId</code> to
-    /// identify the job in a subsequent call to <code>GetDocumentTextDetection</code>.
-    /// A <code>JobId</code> value is only valid for 7 days.</p>
+    /// <p>The identifier of the text detection job for the document. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentTextDetection</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartDocumentTextDetectionOutput {
-    /// <p>The identifier of the text detection job for the document. Use <code>JobId</code> to
-    /// identify the job in a subsequent call to <code>GetDocumentTextDetection</code>.
-    /// A <code>JobId</code> value is only valid for 7 days.</p>
+    /// <p>The identifier of the text detection job for the document. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentTextDetection</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -90,16 +82,12 @@ pub mod start_document_text_detection_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the text detection job for the document. Use <code>JobId</code> to
-        /// identify the job in a subsequent call to <code>GetDocumentTextDetection</code>.
-        /// A <code>JobId</code> value is only valid for 7 days.</p>
+        /// <p>The identifier of the text detection job for the document. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentTextDetection</code>. A <code>JobId</code> value is only valid for 7 days.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the text detection job for the document. Use <code>JobId</code> to
-        /// identify the job in a subsequent call to <code>GetDocumentTextDetection</code>.
-        /// A <code>JobId</code> value is only valid for 7 days.</p>
+        /// <p>The identifier of the text detection job for the document. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentTextDetection</code>. A <code>JobId</code> value is only valid for 7 days.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -123,15 +111,11 @@ impl StartDocumentTextDetectionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDocumentAnalysisOutput {
-    /// <p>The identifier for the document text detection job. Use <code>JobId</code> to identify
-    /// the job in a subsequent call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value
-    /// is only valid for 7 days.</p>
+    /// <p>The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartDocumentAnalysisOutput {
-    /// <p>The identifier for the document text detection job. Use <code>JobId</code> to identify
-    /// the job in a subsequent call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value
-    /// is only valid for 7 days.</p>
+    /// <p>The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -152,16 +136,12 @@ pub mod start_document_analysis_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the document text detection job. Use <code>JobId</code> to identify
-        /// the job in a subsequent call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value
-        /// is only valid for 7 days.</p>
+        /// <p>The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the document text detection job. Use <code>JobId</code> to identify
-        /// the job in a subsequent call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value
-        /// is only valid for 7 days.</p>
+        /// <p>The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -185,18 +165,15 @@ impl StartDocumentAnalysisOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExpenseAnalysisOutput {
-    /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is
-    /// returned in every page of paginated responses from an Amazon Textract operation.</p>
+    /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract operation.</p>
     pub document_metadata: std::option::Option<crate::model::DocumentMetadata>,
     /// <p>The current status of the text detection job.</p>
     pub job_status: std::option::Option<crate::model::JobStatus>,
-    /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in
-    /// the subsequent request to retrieve the next set of text-detection results.</p>
+    /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text-detection results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The expenses detected by Amazon Textract.</p>
     pub expense_documents: std::option::Option<std::vec::Vec<crate::model::ExpenseDocument>>,
-    /// <p>A list of warnings that occurred during the text-detection operation for the
-    /// document.</p>
+    /// <p>A list of warnings that occurred during the text-detection operation for the document.</p>
     pub warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
     /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
     pub status_message: std::option::Option<std::string::String>,
@@ -204,8 +181,7 @@ pub struct GetExpenseAnalysisOutput {
     pub analyze_expense_model_version: std::option::Option<std::string::String>,
 }
 impl GetExpenseAnalysisOutput {
-    /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is
-    /// returned in every page of paginated responses from an Amazon Textract operation.</p>
+    /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract operation.</p>
     pub fn document_metadata(&self) -> std::option::Option<&crate::model::DocumentMetadata> {
         self.document_metadata.as_ref()
     }
@@ -213,8 +189,7 @@ impl GetExpenseAnalysisOutput {
     pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
         self.job_status.as_ref()
     }
-    /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in
-    /// the subsequent request to retrieve the next set of text-detection results.</p>
+    /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text-detection results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -222,8 +197,7 @@ impl GetExpenseAnalysisOutput {
     pub fn expense_documents(&self) -> std::option::Option<&[crate::model::ExpenseDocument]> {
         self.expense_documents.as_deref()
     }
-    /// <p>A list of warnings that occurred during the text-detection operation for the
-    /// document.</p>
+    /// <p>A list of warnings that occurred during the text-detection operation for the document.</p>
     pub fn warnings(&self) -> std::option::Option<&[crate::model::Warning]> {
         self.warnings.as_deref()
     }
@@ -268,14 +242,12 @@ pub mod get_expense_analysis_output {
         pub(crate) analyze_expense_model_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is
-        /// returned in every page of paginated responses from an Amazon Textract operation.</p>
+        /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract operation.</p>
         pub fn document_metadata(mut self, input: crate::model::DocumentMetadata) -> Self {
             self.document_metadata = Some(input);
             self
         }
-        /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is
-        /// returned in every page of paginated responses from an Amazon Textract operation.</p>
+        /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract operation.</p>
         pub fn set_document_metadata(
             mut self,
             input: std::option::Option<crate::model::DocumentMetadata>,
@@ -296,14 +268,12 @@ pub mod get_expense_analysis_output {
             self.job_status = input;
             self
         }
-        /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in
-        /// the subsequent request to retrieve the next set of text-detection results.</p>
+        /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text-detection results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in
-        /// the subsequent request to retrieve the next set of text-detection results.</p>
+        /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text-detection results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -313,12 +283,9 @@ pub mod get_expense_analysis_output {
         /// To override the contents of this collection use [`set_expense_documents`](Self::set_expense_documents).
         ///
         /// <p>The expenses detected by Amazon Textract.</p>
-        pub fn expense_documents(
-            mut self,
-            input: impl Into<crate::model::ExpenseDocument>,
-        ) -> Self {
+        pub fn expense_documents(mut self, input: crate::model::ExpenseDocument) -> Self {
             let mut v = self.expense_documents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.expense_documents = Some(v);
             self
         }
@@ -334,16 +301,14 @@ pub mod get_expense_analysis_output {
         ///
         /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
         ///
-        /// <p>A list of warnings that occurred during the text-detection operation for the
-        /// document.</p>
-        pub fn warnings(mut self, input: impl Into<crate::model::Warning>) -> Self {
+        /// <p>A list of warnings that occurred during the text-detection operation for the document.</p>
+        pub fn warnings(mut self, input: crate::model::Warning) -> Self {
             let mut v = self.warnings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.warnings = Some(v);
             self
         }
-        /// <p>A list of warnings that occurred during the text-detection operation for the
-        /// document.</p>
+        /// <p>A list of warnings that occurred during the text-detection operation for the document.</p>
         pub fn set_warnings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Warning>>,
@@ -405,18 +370,15 @@ impl GetExpenseAnalysisOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDocumentTextDetectionOutput {
-    /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is
-    /// returned in every page of paginated responses from an Amazon Textract video operation.</p>
+    /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract video operation.</p>
     pub document_metadata: std::option::Option<crate::model::DocumentMetadata>,
     /// <p>The current status of the text detection job.</p>
     pub job_status: std::option::Option<crate::model::JobStatus>,
-    /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in
-    /// the subsequent request to retrieve the next set of text-detection results.</p>
+    /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text-detection results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The results of the text-detection operation.</p>
     pub blocks: std::option::Option<std::vec::Vec<crate::model::Block>>,
-    /// <p>A list of warnings that occurred during the text-detection operation for the
-    /// document.</p>
+    /// <p>A list of warnings that occurred during the text-detection operation for the document.</p>
     pub warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
     /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
     pub status_message: std::option::Option<std::string::String>,
@@ -424,8 +386,7 @@ pub struct GetDocumentTextDetectionOutput {
     pub detect_document_text_model_version: std::option::Option<std::string::String>,
 }
 impl GetDocumentTextDetectionOutput {
-    /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is
-    /// returned in every page of paginated responses from an Amazon Textract video operation.</p>
+    /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract video operation.</p>
     pub fn document_metadata(&self) -> std::option::Option<&crate::model::DocumentMetadata> {
         self.document_metadata.as_ref()
     }
@@ -433,8 +394,7 @@ impl GetDocumentTextDetectionOutput {
     pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
         self.job_status.as_ref()
     }
-    /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in
-    /// the subsequent request to retrieve the next set of text-detection results.</p>
+    /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text-detection results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -442,8 +402,7 @@ impl GetDocumentTextDetectionOutput {
     pub fn blocks(&self) -> std::option::Option<&[crate::model::Block]> {
         self.blocks.as_deref()
     }
-    /// <p>A list of warnings that occurred during the text-detection operation for the
-    /// document.</p>
+    /// <p>A list of warnings that occurred during the text-detection operation for the document.</p>
     pub fn warnings(&self) -> std::option::Option<&[crate::model::Warning]> {
         self.warnings.as_deref()
     }
@@ -487,14 +446,12 @@ pub mod get_document_text_detection_output {
         pub(crate) detect_document_text_model_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is
-        /// returned in every page of paginated responses from an Amazon Textract video operation.</p>
+        /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract video operation.</p>
         pub fn document_metadata(mut self, input: crate::model::DocumentMetadata) -> Self {
             self.document_metadata = Some(input);
             self
         }
-        /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is
-        /// returned in every page of paginated responses from an Amazon Textract video operation.</p>
+        /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract video operation.</p>
         pub fn set_document_metadata(
             mut self,
             input: std::option::Option<crate::model::DocumentMetadata>,
@@ -515,14 +472,12 @@ pub mod get_document_text_detection_output {
             self.job_status = input;
             self
         }
-        /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in
-        /// the subsequent request to retrieve the next set of text-detection results.</p>
+        /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text-detection results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in
-        /// the subsequent request to retrieve the next set of text-detection results.</p>
+        /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text-detection results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -532,9 +487,9 @@ pub mod get_document_text_detection_output {
         /// To override the contents of this collection use [`set_blocks`](Self::set_blocks).
         ///
         /// <p>The results of the text-detection operation.</p>
-        pub fn blocks(mut self, input: impl Into<crate::model::Block>) -> Self {
+        pub fn blocks(mut self, input: crate::model::Block) -> Self {
             let mut v = self.blocks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.blocks = Some(v);
             self
         }
@@ -550,16 +505,14 @@ pub mod get_document_text_detection_output {
         ///
         /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
         ///
-        /// <p>A list of warnings that occurred during the text-detection operation for the
-        /// document.</p>
-        pub fn warnings(mut self, input: impl Into<crate::model::Warning>) -> Self {
+        /// <p>A list of warnings that occurred during the text-detection operation for the document.</p>
+        pub fn warnings(mut self, input: crate::model::Warning) -> Self {
             let mut v = self.warnings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.warnings = Some(v);
             self
         }
-        /// <p>A list of warnings that occurred during the text-detection operation for the
-        /// document.</p>
+        /// <p>A list of warnings that occurred during the text-detection operation for the document.</p>
         pub fn set_warnings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Warning>>,
@@ -621,13 +574,11 @@ impl GetDocumentTextDetectionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDocumentAnalysisOutput {
-    /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is
-    /// returned in every page of paginated responses from an Amazon Textract video operation.</p>
+    /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract video operation.</p>
     pub document_metadata: std::option::Option<crate::model::DocumentMetadata>,
     /// <p>The current status of the text detection job.</p>
     pub job_status: std::option::Option<crate::model::JobStatus>,
-    /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in
-    /// the subsequent request to retrieve the next set of text detection results.</p>
+    /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text detection results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The results of the text-analysis operation.</p>
     pub blocks: std::option::Option<std::vec::Vec<crate::model::Block>>,
@@ -639,8 +590,7 @@ pub struct GetDocumentAnalysisOutput {
     pub analyze_document_model_version: std::option::Option<std::string::String>,
 }
 impl GetDocumentAnalysisOutput {
-    /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is
-    /// returned in every page of paginated responses from an Amazon Textract video operation.</p>
+    /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract video operation.</p>
     pub fn document_metadata(&self) -> std::option::Option<&crate::model::DocumentMetadata> {
         self.document_metadata.as_ref()
     }
@@ -648,8 +598,7 @@ impl GetDocumentAnalysisOutput {
     pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
         self.job_status.as_ref()
     }
-    /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in
-    /// the subsequent request to retrieve the next set of text detection results.</p>
+    /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text detection results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -701,14 +650,12 @@ pub mod get_document_analysis_output {
         pub(crate) analyze_document_model_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is
-        /// returned in every page of paginated responses from an Amazon Textract video operation.</p>
+        /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract video operation.</p>
         pub fn document_metadata(mut self, input: crate::model::DocumentMetadata) -> Self {
             self.document_metadata = Some(input);
             self
         }
-        /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is
-        /// returned in every page of paginated responses from an Amazon Textract video operation.</p>
+        /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract video operation.</p>
         pub fn set_document_metadata(
             mut self,
             input: std::option::Option<crate::model::DocumentMetadata>,
@@ -729,14 +676,12 @@ pub mod get_document_analysis_output {
             self.job_status = input;
             self
         }
-        /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in
-        /// the subsequent request to retrieve the next set of text detection results.</p>
+        /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text detection results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in
-        /// the subsequent request to retrieve the next set of text detection results.</p>
+        /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text detection results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -746,9 +691,9 @@ pub mod get_document_analysis_output {
         /// To override the contents of this collection use [`set_blocks`](Self::set_blocks).
         ///
         /// <p>The results of the text-analysis operation.</p>
-        pub fn blocks(mut self, input: impl Into<crate::model::Block>) -> Self {
+        pub fn blocks(mut self, input: crate::model::Block) -> Self {
             let mut v = self.blocks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.blocks = Some(v);
             self
         }
@@ -765,9 +710,9 @@ pub mod get_document_analysis_output {
         /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
         ///
         /// <p>A list of warnings that occurred during the document-analysis operation.</p>
-        pub fn warnings(mut self, input: impl Into<crate::model::Warning>) -> Self {
+        pub fn warnings(mut self, input: crate::model::Warning) -> Self {
             let mut v = self.warnings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.warnings = Some(v);
             self
         }
@@ -833,23 +778,19 @@ impl GetDocumentAnalysisOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectDocumentTextOutput {
-    /// <p>Metadata about the document. It contains the number of pages that are detected in the
-    /// document.</p>
+    /// <p>Metadata about the document. It contains the number of pages that are detected in the document.</p>
     pub document_metadata: std::option::Option<crate::model::DocumentMetadata>,
-    /// <p>An array of <code>Block</code> objects that contain the text that's detected in the
-    /// document.</p>
+    /// <p>An array of <code>Block</code> objects that contain the text that's detected in the document.</p>
     pub blocks: std::option::Option<std::vec::Vec<crate::model::Block>>,
     /// <p></p>
     pub detect_document_text_model_version: std::option::Option<std::string::String>,
 }
 impl DetectDocumentTextOutput {
-    /// <p>Metadata about the document. It contains the number of pages that are detected in the
-    /// document.</p>
+    /// <p>Metadata about the document. It contains the number of pages that are detected in the document.</p>
     pub fn document_metadata(&self) -> std::option::Option<&crate::model::DocumentMetadata> {
         self.document_metadata.as_ref()
     }
-    /// <p>An array of <code>Block</code> objects that contain the text that's detected in the
-    /// document.</p>
+    /// <p>An array of <code>Block</code> objects that contain the text that's detected in the document.</p>
     pub fn blocks(&self) -> std::option::Option<&[crate::model::Block]> {
         self.blocks.as_deref()
     }
@@ -881,14 +822,12 @@ pub mod detect_document_text_output {
         pub(crate) detect_document_text_model_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Metadata about the document. It contains the number of pages that are detected in the
-        /// document.</p>
+        /// <p>Metadata about the document. It contains the number of pages that are detected in the document.</p>
         pub fn document_metadata(mut self, input: crate::model::DocumentMetadata) -> Self {
             self.document_metadata = Some(input);
             self
         }
-        /// <p>Metadata about the document. It contains the number of pages that are detected in the
-        /// document.</p>
+        /// <p>Metadata about the document. It contains the number of pages that are detected in the document.</p>
         pub fn set_document_metadata(
             mut self,
             input: std::option::Option<crate::model::DocumentMetadata>,
@@ -900,16 +839,14 @@ pub mod detect_document_text_output {
         ///
         /// To override the contents of this collection use [`set_blocks`](Self::set_blocks).
         ///
-        /// <p>An array of <code>Block</code> objects that contain the text that's detected in the
-        /// document.</p>
-        pub fn blocks(mut self, input: impl Into<crate::model::Block>) -> Self {
+        /// <p>An array of <code>Block</code> objects that contain the text that's detected in the document.</p>
+        pub fn blocks(mut self, input: crate::model::Block) -> Self {
             let mut v = self.blocks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.blocks = Some(v);
             self
         }
-        /// <p>An array of <code>Block</code> objects that contain the text that's detected in the
-        /// document.</p>
+        /// <p>An array of <code>Block</code> objects that contain the text that's detected in the document.</p>
         pub fn set_blocks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Block>>,
@@ -954,8 +891,7 @@ impl DetectDocumentTextOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalyzeIdOutput {
-    /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their
-    /// place in the list and the response structure for the document.</p>
+    /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their place in the list and the response structure for the document.</p>
     pub identity_documents: std::option::Option<std::vec::Vec<crate::model::IdentityDocument>>,
     /// <p>Information about the input document.</p>
     pub document_metadata: std::option::Option<crate::model::DocumentMetadata>,
@@ -963,8 +899,7 @@ pub struct AnalyzeIdOutput {
     pub analyze_id_model_version: std::option::Option<std::string::String>,
 }
 impl AnalyzeIdOutput {
-    /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their
-    /// place in the list and the response structure for the document.</p>
+    /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their place in the list and the response structure for the document.</p>
     pub fn identity_documents(&self) -> std::option::Option<&[crate::model::IdentityDocument]> {
         self.identity_documents.as_deref()
     }
@@ -1002,19 +937,14 @@ pub mod analyze_id_output {
         ///
         /// To override the contents of this collection use [`set_identity_documents`](Self::set_identity_documents).
         ///
-        /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their
-        /// place in the list and the response structure for the document.</p>
-        pub fn identity_documents(
-            mut self,
-            input: impl Into<crate::model::IdentityDocument>,
-        ) -> Self {
+        /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their place in the list and the response structure for the document.</p>
+        pub fn identity_documents(mut self, input: crate::model::IdentityDocument) -> Self {
             let mut v = self.identity_documents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.identity_documents = Some(v);
             self
         }
-        /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their
-        /// place in the list and the response structure for the document.</p>
+        /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their place in the list and the response structure for the document.</p>
         pub fn set_identity_documents(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IdentityDocument>>,
@@ -1121,12 +1051,9 @@ pub mod analyze_expense_output {
         /// To override the contents of this collection use [`set_expense_documents`](Self::set_expense_documents).
         ///
         /// <p>The expenses detected by Amazon Textract.</p>
-        pub fn expense_documents(
-            mut self,
-            input: impl Into<crate::model::ExpenseDocument>,
-        ) -> Self {
+        pub fn expense_documents(mut self, input: crate::model::ExpenseDocument) -> Self {
             let mut v = self.expense_documents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.expense_documents = Some(v);
             self
         }
@@ -1234,9 +1161,9 @@ pub mod analyze_document_output {
         /// To override the contents of this collection use [`set_blocks`](Self::set_blocks).
         ///
         /// <p>The items that are detected and analyzed by <code>AnalyzeDocument</code>.</p>
-        pub fn blocks(mut self, input: impl Into<crate::model::Block>) -> Self {
+        pub fn blocks(mut self, input: crate::model::Block) -> Self {
             let mut v = self.blocks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.blocks = Some(v);
             self
         }

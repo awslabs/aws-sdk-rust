@@ -61,8 +61,6 @@ impl CancelContactError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -178,8 +176,6 @@ impl CreateConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -304,8 +300,6 @@ impl CreateDataflowEndpointGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -421,8 +415,6 @@ impl CreateMissionProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -538,8 +530,6 @@ impl DeleteConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -656,8 +646,6 @@ impl DeleteDataflowEndpointGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -773,8 +761,6 @@ impl DeleteMissionProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -890,8 +876,6 @@ impl DescribeContactError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1004,8 +988,6 @@ impl GetConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1112,8 +1094,6 @@ impl GetDataflowEndpointGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1229,8 +1209,6 @@ impl GetMinuteUsageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1343,8 +1321,6 @@ impl GetMissionProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1460,8 +1436,6 @@ impl GetSatelliteError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1574,8 +1548,6 @@ impl ListConfigsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1688,8 +1660,6 @@ impl ListContactsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1802,8 +1772,6 @@ impl ListDataflowEndpointGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1919,8 +1887,6 @@ impl ListGroundStationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2036,8 +2002,6 @@ impl ListMissionProfilesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2153,8 +2117,6 @@ impl ListSatellitesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2267,8 +2229,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2384,8 +2344,6 @@ impl ReserveContactError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2498,8 +2456,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2612,8 +2568,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2726,8 +2680,6 @@ impl UpdateConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2840,8 +2792,6 @@ impl UpdateMissionProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2965,11 +2915,11 @@ impl ResourceNotFoundException {
 pub struct InvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
-    /// <p/>
+    /// <p></p>
     pub parameter_name: std::option::Option<std::string::String>,
 }
 impl InvalidParameterException {
-    /// <p/>
+    /// <p></p>
     pub fn parameter_name(&self) -> std::option::Option<&str> {
         self.parameter_name.as_deref()
     }
@@ -3018,12 +2968,12 @@ pub mod invalid_parameter_exception {
             self.message = input;
             self
         }
-        /// <p/>
+        /// <p></p>
         pub fn parameter_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.parameter_name = Some(input.into());
             self
         }
-        /// <p/>
+        /// <p></p>
         pub fn set_parameter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3053,11 +3003,11 @@ impl InvalidParameterException {
 pub struct DependencyException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
-    /// <p/>
+    /// <p></p>
     pub parameter_name: std::option::Option<std::string::String>,
 }
 impl DependencyException {
-    /// <p/>
+    /// <p></p>
     pub fn parameter_name(&self) -> std::option::Option<&str> {
         self.parameter_name.as_deref()
     }
@@ -3106,12 +3056,12 @@ pub mod dependency_exception {
             self.message = input;
             self
         }
-        /// <p/>
+        /// <p></p>
         pub fn parameter_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.parameter_name = Some(input.into());
             self
         }
-        /// <p/>
+        /// <p></p>
         pub fn set_parameter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3141,11 +3091,11 @@ impl DependencyException {
 pub struct ResourceLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
-    /// <p/>
+    /// <p></p>
     pub parameter_name: std::option::Option<std::string::String>,
 }
 impl ResourceLimitExceededException {
-    /// <p/>
+    /// <p></p>
     pub fn parameter_name(&self) -> std::option::Option<&str> {
         self.parameter_name.as_deref()
     }
@@ -3194,12 +3144,12 @@ pub mod resource_limit_exceeded_exception {
             self.message = input;
             self
         }
-        /// <p/>
+        /// <p></p>
         pub fn parameter_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.parameter_name = Some(input.into());
             self
         }
-        /// <p/>
+        /// <p></p>
         pub fn set_parameter_name(
             mut self,
             input: std::option::Option<std::string::String>,

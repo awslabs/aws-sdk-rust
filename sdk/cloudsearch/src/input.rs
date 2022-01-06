@@ -35,7 +35,7 @@ pub mod build_suggesters_input {
 #[doc(hidden)]
 pub type BuildSuggestersInputOperationOutputAlias = crate::operation::BuildSuggesters;
 #[doc(hidden)]
-pub type BuildSuggestersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BuildSuggestersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BuildSuggestersInput {
     /// Consumes the builder and constructs an Operation<[`BuildSuggesters`](crate::operation::BuildSuggesters)>
     #[allow(clippy::let_and_return)]
@@ -46,7 +46,7 @@ impl BuildSuggestersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BuildSuggesters,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -126,7 +126,7 @@ impl BuildSuggestersInput {
             "BuildSuggesters",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -184,7 +184,7 @@ pub mod create_domain_input {
 #[doc(hidden)]
 pub type CreateDomainInputOperationOutputAlias = crate::operation::CreateDomain;
 #[doc(hidden)]
-pub type CreateDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDomainInput {
     /// Consumes the builder and constructs an Operation<[`CreateDomain`](crate::operation::CreateDomain)>
     #[allow(clippy::let_and_return)]
@@ -195,7 +195,7 @@ impl CreateDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -274,7 +274,7 @@ impl CreateDomainInput {
             "CreateDomain",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -347,7 +347,7 @@ pub mod define_analysis_scheme_input {
 #[doc(hidden)]
 pub type DefineAnalysisSchemeInputOperationOutputAlias = crate::operation::DefineAnalysisScheme;
 #[doc(hidden)]
-pub type DefineAnalysisSchemeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DefineAnalysisSchemeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DefineAnalysisSchemeInput {
     /// Consumes the builder and constructs an Operation<[`DefineAnalysisScheme`](crate::operation::DefineAnalysisScheme)>
     #[allow(clippy::let_and_return)]
@@ -358,7 +358,7 @@ impl DefineAnalysisSchemeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DefineAnalysisScheme,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -440,7 +440,7 @@ impl DefineAnalysisSchemeInput {
             "DefineAnalysisScheme",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -483,12 +483,12 @@ pub mod define_expression_input {
             self.domain_name = input;
             self
         }
-        /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results.  </p>
+        /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
         pub fn expression(mut self, input: crate::model::Expression) -> Self {
             self.expression = Some(input);
             self
         }
-        /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results.  </p>
+        /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
         pub fn set_expression(
             mut self,
             input: std::option::Option<crate::model::Expression>,
@@ -513,7 +513,7 @@ pub mod define_expression_input {
 #[doc(hidden)]
 pub type DefineExpressionInputOperationOutputAlias = crate::operation::DefineExpression;
 #[doc(hidden)]
-pub type DefineExpressionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DefineExpressionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DefineExpressionInput {
     /// Consumes the builder and constructs an Operation<[`DefineExpression`](crate::operation::DefineExpression)>
     #[allow(clippy::let_and_return)]
@@ -524,7 +524,7 @@ impl DefineExpressionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DefineExpression,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -604,7 +604,7 @@ impl DefineExpressionInput {
             "DefineExpression",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -677,7 +677,7 @@ pub mod define_index_field_input {
 #[doc(hidden)]
 pub type DefineIndexFieldInputOperationOutputAlias = crate::operation::DefineIndexField;
 #[doc(hidden)]
-pub type DefineIndexFieldInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DefineIndexFieldInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DefineIndexFieldInput {
     /// Consumes the builder and constructs an Operation<[`DefineIndexField`](crate::operation::DefineIndexField)>
     #[allow(clippy::let_and_return)]
@@ -688,7 +688,7 @@ impl DefineIndexFieldInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DefineIndexField,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -768,7 +768,7 @@ impl DefineIndexFieldInput {
             "DefineIndexField",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -841,7 +841,7 @@ pub mod define_suggester_input {
 #[doc(hidden)]
 pub type DefineSuggesterInputOperationOutputAlias = crate::operation::DefineSuggester;
 #[doc(hidden)]
-pub type DefineSuggesterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DefineSuggesterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DefineSuggesterInput {
     /// Consumes the builder and constructs an Operation<[`DefineSuggester`](crate::operation::DefineSuggester)>
     #[allow(clippy::let_and_return)]
@@ -852,7 +852,7 @@ impl DefineSuggesterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DefineSuggester,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -932,7 +932,7 @@ impl DefineSuggesterInput {
             "DefineSuggester",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1005,7 +1005,7 @@ pub mod delete_analysis_scheme_input {
 #[doc(hidden)]
 pub type DeleteAnalysisSchemeInputOperationOutputAlias = crate::operation::DeleteAnalysisScheme;
 #[doc(hidden)]
-pub type DeleteAnalysisSchemeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAnalysisSchemeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAnalysisSchemeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAnalysisScheme`](crate::operation::DeleteAnalysisScheme)>
     #[allow(clippy::let_and_return)]
@@ -1016,7 +1016,7 @@ impl DeleteAnalysisSchemeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAnalysisScheme,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1098,7 +1098,7 @@ impl DeleteAnalysisSchemeInput {
             "DeleteAnalysisScheme",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1156,7 +1156,7 @@ pub mod delete_domain_input {
 #[doc(hidden)]
 pub type DeleteDomainInputOperationOutputAlias = crate::operation::DeleteDomain;
 #[doc(hidden)]
-pub type DeleteDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDomainInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDomain`](crate::operation::DeleteDomain)>
     #[allow(clippy::let_and_return)]
@@ -1167,7 +1167,7 @@ impl DeleteDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1246,7 +1246,7 @@ impl DeleteDomainInput {
             "DeleteDomain",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1289,12 +1289,12 @@ pub mod delete_expression_input {
             self.domain_name = input;
             self
         }
-        /// <p>The name of the <code><a>Expression</a></code> to delete.</p>
+        /// <p>The name of the <code><code>Expression</code></code> to delete.</p>
         pub fn expression_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.expression_name = Some(input.into());
             self
         }
-        /// <p>The name of the <code><a>Expression</a></code> to delete.</p>
+        /// <p>The name of the <code><code>Expression</code></code> to delete.</p>
         pub fn set_expression_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1319,7 +1319,7 @@ pub mod delete_expression_input {
 #[doc(hidden)]
 pub type DeleteExpressionInputOperationOutputAlias = crate::operation::DeleteExpression;
 #[doc(hidden)]
-pub type DeleteExpressionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteExpressionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteExpressionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteExpression`](crate::operation::DeleteExpression)>
     #[allow(clippy::let_and_return)]
@@ -1330,7 +1330,7 @@ impl DeleteExpressionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteExpression,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1410,7 +1410,7 @@ impl DeleteExpressionInput {
             "DeleteExpression",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1483,7 +1483,7 @@ pub mod delete_index_field_input {
 #[doc(hidden)]
 pub type DeleteIndexFieldInputOperationOutputAlias = crate::operation::DeleteIndexField;
 #[doc(hidden)]
-pub type DeleteIndexFieldInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteIndexFieldInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteIndexFieldInput {
     /// Consumes the builder and constructs an Operation<[`DeleteIndexField`](crate::operation::DeleteIndexField)>
     #[allow(clippy::let_and_return)]
@@ -1494,7 +1494,7 @@ impl DeleteIndexFieldInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteIndexField,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1574,7 +1574,7 @@ impl DeleteIndexFieldInput {
             "DeleteIndexField",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1647,7 +1647,7 @@ pub mod delete_suggester_input {
 #[doc(hidden)]
 pub type DeleteSuggesterInputOperationOutputAlias = crate::operation::DeleteSuggester;
 #[doc(hidden)]
-pub type DeleteSuggesterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSuggesterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSuggesterInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSuggester`](crate::operation::DeleteSuggester)>
     #[allow(clippy::let_and_return)]
@@ -1658,7 +1658,7 @@ impl DeleteSuggesterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSuggester,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1738,7 +1738,7 @@ impl DeleteSuggesterInput {
             "DeleteSuggester",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1830,7 +1830,7 @@ pub mod describe_analysis_schemes_input {
 pub type DescribeAnalysisSchemesInputOperationOutputAlias =
     crate::operation::DescribeAnalysisSchemes;
 #[doc(hidden)]
-pub type DescribeAnalysisSchemesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAnalysisSchemesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAnalysisSchemesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAnalysisSchemes`](crate::operation::DescribeAnalysisSchemes)>
     #[allow(clippy::let_and_return)]
@@ -1841,7 +1841,7 @@ impl DescribeAnalysisSchemesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAnalysisSchemes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1923,7 +1923,7 @@ impl DescribeAnalysisSchemesInput {
             "DescribeAnalysisSchemes",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1994,7 +1994,7 @@ pub mod describe_availability_options_input {
 pub type DescribeAvailabilityOptionsInputOperationOutputAlias =
     crate::operation::DescribeAvailabilityOptions;
 #[doc(hidden)]
-pub type DescribeAvailabilityOptionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAvailabilityOptionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAvailabilityOptionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAvailabilityOptions`](crate::operation::DescribeAvailabilityOptions)>
     #[allow(clippy::let_and_return)]
@@ -2005,7 +2005,7 @@ impl DescribeAvailabilityOptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAvailabilityOptions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2086,7 +2086,7 @@ impl DescribeAvailabilityOptionsInput {
             "DescribeAvailabilityOptions",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2157,7 +2157,8 @@ pub mod describe_domain_endpoint_options_input {
 pub type DescribeDomainEndpointOptionsInputOperationOutputAlias =
     crate::operation::DescribeDomainEndpointOptions;
 #[doc(hidden)]
-pub type DescribeDomainEndpointOptionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDomainEndpointOptionsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDomainEndpointOptionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDomainEndpointOptions`](crate::operation::DescribeDomainEndpointOptions)>
     #[allow(clippy::let_and_return)]
@@ -2168,7 +2169,7 @@ impl DescribeDomainEndpointOptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDomainEndpointOptions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2249,7 +2250,7 @@ impl DescribeDomainEndpointOptionsInput {
             "DescribeDomainEndpointOptions",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2316,7 +2317,7 @@ pub mod describe_domains_input {
 #[doc(hidden)]
 pub type DescribeDomainsInputOperationOutputAlias = crate::operation::DescribeDomains;
 #[doc(hidden)]
-pub type DescribeDomainsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDomainsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDomainsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDomains`](crate::operation::DescribeDomains)>
     #[allow(clippy::let_and_return)]
@@ -2327,7 +2328,7 @@ impl DescribeDomainsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDomains,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2407,7 +2408,7 @@ impl DescribeDomainsInput {
             "DescribeDomains",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2455,14 +2456,14 @@ pub mod describe_expressions_input {
         ///
         /// To override the contents of this collection use [`set_expression_names`](Self::set_expression_names).
         ///
-        /// <p>Limits the <code><a>DescribeExpressions</a></code> response to the specified expressions. If not specified, all expressions are shown.</p>
+        /// <p>Limits the <code><code>DescribeExpressions</code></code> response to the specified expressions. If not specified, all expressions are shown.</p>
         pub fn expression_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.expression_names.unwrap_or_default();
             v.push(input.into());
             self.expression_names = Some(v);
             self
         }
-        /// <p>Limits the <code><a>DescribeExpressions</a></code> response to the specified expressions. If not specified, all expressions are shown.</p>
+        /// <p>Limits the <code><code>DescribeExpressions</code></code> response to the specified expressions. If not specified, all expressions are shown.</p>
         pub fn set_expression_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2498,7 +2499,7 @@ pub mod describe_expressions_input {
 #[doc(hidden)]
 pub type DescribeExpressionsInputOperationOutputAlias = crate::operation::DescribeExpressions;
 #[doc(hidden)]
-pub type DescribeExpressionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeExpressionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeExpressionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeExpressions`](crate::operation::DescribeExpressions)>
     #[allow(clippy::let_and_return)]
@@ -2509,7 +2510,7 @@ impl DescribeExpressionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeExpressions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2589,7 +2590,7 @@ impl DescribeExpressionsInput {
             "DescribeExpressions",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2680,7 +2681,7 @@ pub mod describe_index_fields_input {
 #[doc(hidden)]
 pub type DescribeIndexFieldsInputOperationOutputAlias = crate::operation::DescribeIndexFields;
 #[doc(hidden)]
-pub type DescribeIndexFieldsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeIndexFieldsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeIndexFieldsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeIndexFields`](crate::operation::DescribeIndexFields)>
     #[allow(clippy::let_and_return)]
@@ -2691,7 +2692,7 @@ impl DescribeIndexFieldsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeIndexFields,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2771,7 +2772,7 @@ impl DescribeIndexFieldsInput {
             "DescribeIndexFields",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2830,7 +2831,7 @@ pub mod describe_scaling_parameters_input {
 pub type DescribeScalingParametersInputOperationOutputAlias =
     crate::operation::DescribeScalingParameters;
 #[doc(hidden)]
-pub type DescribeScalingParametersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeScalingParametersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeScalingParametersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeScalingParameters`](crate::operation::DescribeScalingParameters)>
     #[allow(clippy::let_and_return)]
@@ -2841,7 +2842,7 @@ impl DescribeScalingParametersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeScalingParameters,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2923,7 +2924,7 @@ impl DescribeScalingParametersInput {
             "DescribeScalingParameters",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2994,7 +2995,8 @@ pub mod describe_service_access_policies_input {
 pub type DescribeServiceAccessPoliciesInputOperationOutputAlias =
     crate::operation::DescribeServiceAccessPolicies;
 #[doc(hidden)]
-pub type DescribeServiceAccessPoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeServiceAccessPoliciesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeServiceAccessPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeServiceAccessPolicies`](crate::operation::DescribeServiceAccessPolicies)>
     #[allow(clippy::let_and_return)]
@@ -3005,7 +3007,7 @@ impl DescribeServiceAccessPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeServiceAccessPolicies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3086,7 +3088,7 @@ impl DescribeServiceAccessPoliciesInput {
             "DescribeServiceAccessPolicies",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3177,7 +3179,7 @@ pub mod describe_suggesters_input {
 #[doc(hidden)]
 pub type DescribeSuggestersInputOperationOutputAlias = crate::operation::DescribeSuggesters;
 #[doc(hidden)]
-pub type DescribeSuggestersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSuggestersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSuggestersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSuggesters`](crate::operation::DescribeSuggesters)>
     #[allow(clippy::let_and_return)]
@@ -3188,7 +3190,7 @@ impl DescribeSuggestersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSuggesters,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3268,7 +3270,7 @@ impl DescribeSuggestersInput {
             "DescribeSuggesters",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3326,7 +3328,7 @@ pub mod index_documents_input {
 #[doc(hidden)]
 pub type IndexDocumentsInputOperationOutputAlias = crate::operation::IndexDocuments;
 #[doc(hidden)]
-pub type IndexDocumentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type IndexDocumentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl IndexDocumentsInput {
     /// Consumes the builder and constructs an Operation<[`IndexDocuments`](crate::operation::IndexDocuments)>
     #[allow(clippy::let_and_return)]
@@ -3337,7 +3339,7 @@ impl IndexDocumentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::IndexDocuments,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3417,7 +3419,7 @@ impl IndexDocumentsInput {
             "IndexDocuments",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3461,7 +3463,7 @@ pub mod list_domain_names_input {
 #[doc(hidden)]
 pub type ListDomainNamesInputOperationOutputAlias = crate::operation::ListDomainNames;
 #[doc(hidden)]
-pub type ListDomainNamesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDomainNamesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDomainNamesInput {
     /// Consumes the builder and constructs an Operation<[`ListDomainNames`](crate::operation::ListDomainNames)>
     #[allow(clippy::let_and_return)]
@@ -3472,7 +3474,7 @@ impl ListDomainNamesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDomainNames,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3552,7 +3554,7 @@ impl ListDomainNamesInput {
             "ListDomainNames",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3615,7 +3617,7 @@ pub mod update_availability_options_input {
 pub type UpdateAvailabilityOptionsInputOperationOutputAlias =
     crate::operation::UpdateAvailabilityOptions;
 #[doc(hidden)]
-pub type UpdateAvailabilityOptionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAvailabilityOptionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAvailabilityOptionsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAvailabilityOptions`](crate::operation::UpdateAvailabilityOptions)>
     #[allow(clippy::let_and_return)]
@@ -3626,7 +3628,7 @@ impl UpdateAvailabilityOptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAvailabilityOptions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3708,7 +3710,7 @@ impl UpdateAvailabilityOptionsInput {
             "UpdateAvailabilityOptions",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3786,7 +3788,7 @@ pub mod update_domain_endpoint_options_input {
 pub type UpdateDomainEndpointOptionsInputOperationOutputAlias =
     crate::operation::UpdateDomainEndpointOptions;
 #[doc(hidden)]
-pub type UpdateDomainEndpointOptionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDomainEndpointOptionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDomainEndpointOptionsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDomainEndpointOptions`](crate::operation::UpdateDomainEndpointOptions)>
     #[allow(clippy::let_and_return)]
@@ -3797,7 +3799,7 @@ impl UpdateDomainEndpointOptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDomainEndpointOptions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3878,7 +3880,7 @@ impl UpdateDomainEndpointOptionsInput {
             "UpdateDomainEndpointOptions",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3952,7 +3954,7 @@ pub mod update_scaling_parameters_input {
 pub type UpdateScalingParametersInputOperationOutputAlias =
     crate::operation::UpdateScalingParameters;
 #[doc(hidden)]
-pub type UpdateScalingParametersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateScalingParametersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateScalingParametersInput {
     /// Consumes the builder and constructs an Operation<[`UpdateScalingParameters`](crate::operation::UpdateScalingParameters)>
     #[allow(clippy::let_and_return)]
@@ -3963,7 +3965,7 @@ impl UpdateScalingParametersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateScalingParameters,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4045,7 +4047,7 @@ impl UpdateScalingParametersInput {
             "UpdateScalingParameters",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4119,7 +4121,7 @@ pub mod update_service_access_policies_input {
 pub type UpdateServiceAccessPoliciesInputOperationOutputAlias =
     crate::operation::UpdateServiceAccessPolicies;
 #[doc(hidden)]
-pub type UpdateServiceAccessPoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateServiceAccessPoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateServiceAccessPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateServiceAccessPolicies`](crate::operation::UpdateServiceAccessPolicies)>
     #[allow(clippy::let_and_return)]
@@ -4130,7 +4132,7 @@ impl UpdateServiceAccessPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateServiceAccessPolicies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4211,7 +4213,7 @@ impl UpdateServiceAccessPoliciesInput {
             "UpdateServiceAccessPolicies",
             "cloudsearch",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4234,7 +4236,7 @@ impl UpdateServiceAccessPoliciesInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>UpdateServiceAccessPolicies</a></code> operation. Specifies the name of the domain you want to update and the access rules you want to configure.</p>
+/// <p>Container for the parameters to the <code><code>UpdateServiceAccessPolicies</code></code> operation. Specifies the name of the domain you want to update and the access rules you want to configure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceAccessPoliciesInput {
@@ -4262,7 +4264,7 @@ impl std::fmt::Debug for UpdateServiceAccessPoliciesInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>UpdateScalingParameters</a></code> operation. Specifies the name of the domain you want to update and the scaling parameters you want to configure.</p>
+/// <p>Container for the parameters to the <code><code>UpdateScalingParameters</code></code> operation. Specifies the name of the domain you want to update and the scaling parameters you want to configure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateScalingParametersInput {
@@ -4290,7 +4292,7 @@ impl std::fmt::Debug for UpdateScalingParametersInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>UpdateDomainEndpointOptions</a></code> operation. Specifies the name of the domain you want to update and the domain endpoint options.</p>
+/// <p>Container for the parameters to the <code><code>UpdateDomainEndpointOptions</code></code> operation. Specifies the name of the domain you want to update and the domain endpoint options.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainEndpointOptionsInput {
@@ -4320,7 +4322,7 @@ impl std::fmt::Debug for UpdateDomainEndpointOptionsInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>UpdateAvailabilityOptions</a></code> operation. Specifies the name of the domain you want to update and the Multi-AZ availability option.</p>
+/// <p>Container for the parameters to the <code><code>UpdateAvailabilityOptions</code></code> operation. Specifies the name of the domain you want to update and the Multi-AZ availability option.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAvailabilityOptionsInput {
@@ -4359,7 +4361,7 @@ impl std::fmt::Debug for ListDomainNamesInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>IndexDocuments</a></code> operation. Specifies the name of the domain you want to re-index.</p>
+/// <p>Container for the parameters to the <code><code>IndexDocuments</code></code> operation. Specifies the name of the domain you want to re-index.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IndexDocumentsInput {
@@ -4380,7 +4382,7 @@ impl std::fmt::Debug for IndexDocumentsInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DescribeSuggester</a></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular suggesters, specify the names of the suggesters you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
+/// <p>Container for the parameters to the <code><code>DescribeSuggester</code></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular suggesters, specify the names of the suggesters you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSuggestersInput {
@@ -4415,7 +4417,7 @@ impl std::fmt::Debug for DescribeSuggestersInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DescribeServiceAccessPolicies</a></code> operation. Specifies the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
+/// <p>Container for the parameters to the <code><code>DescribeServiceAccessPolicies</code></code> operation. Specifies the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServiceAccessPoliciesInput {
@@ -4443,7 +4445,7 @@ impl std::fmt::Debug for DescribeServiceAccessPoliciesInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DescribeScalingParameters</a></code> operation. Specifies the name of the domain you want to describe. </p>
+/// <p>Container for the parameters to the <code><code>DescribeScalingParameters</code></code> operation. Specifies the name of the domain you want to describe. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScalingParametersInput {
@@ -4464,7 +4466,7 @@ impl std::fmt::Debug for DescribeScalingParametersInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DescribeIndexFields</a></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular index fields, specify the names of the index fields you want to describe. To show  the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
+/// <p>Container for the parameters to the <code><code>DescribeIndexFields</code></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular index fields, specify the names of the index fields you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIndexFieldsInput {
@@ -4499,14 +4501,13 @@ impl std::fmt::Debug for DescribeIndexFieldsInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DescribeDomains</a></code> operation.
-/// Specifies the name of the domain you want to describe. To restrict the response to particular expressions, specify the names of the expressions you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
+/// <p>Container for the parameters to the <code><code>DescribeDomains</code></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular expressions, specify the names of the expressions you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExpressionsInput {
     /// <p>The name of the domain you want to describe.</p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>Limits the <code><a>DescribeExpressions</a></code> response to the specified expressions. If not specified, all expressions are shown.</p>
+    /// <p>Limits the <code><code>DescribeExpressions</code></code> response to the specified expressions. If not specified, all expressions are shown.</p>
     pub expression_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     pub deployed: std::option::Option<bool>,
@@ -4516,7 +4517,7 @@ impl DescribeExpressionsInput {
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>Limits the <code><a>DescribeExpressions</a></code> response to the specified expressions. If not specified, all expressions are shown.</p>
+    /// <p>Limits the <code><code>DescribeExpressions</code></code> response to the specified expressions. If not specified, all expressions are shown.</p>
     pub fn expression_names(&self) -> std::option::Option<&[std::string::String]> {
         self.expression_names.as_deref()
     }
@@ -4535,7 +4536,7 @@ impl std::fmt::Debug for DescribeExpressionsInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DescribeDomains</a></code> operation. By default shows the status of all domains. To restrict the response to particular domains, specify the names of the domains you want to describe.</p>
+/// <p>Container for the parameters to the <code><code>DescribeDomains</code></code> operation. By default shows the status of all domains. To restrict the response to particular domains, specify the names of the domains you want to describe.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainsInput {
@@ -4556,7 +4557,7 @@ impl std::fmt::Debug for DescribeDomainsInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DescribeDomainEndpointOptions</a></code> operation. Specify the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the Deployed option to <code>true</code>.</p>
+/// <p>Container for the parameters to the <code><code>DescribeDomainEndpointOptions</code></code> operation. Specify the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the Deployed option to <code>true</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainEndpointOptionsInput {
@@ -4584,7 +4585,7 @@ impl std::fmt::Debug for DescribeDomainEndpointOptionsInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DescribeAvailabilityOptions</a></code> operation. Specifies the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the Deployed option to <code>true</code>.</p>
+/// <p>Container for the parameters to the <code><code>DescribeAvailabilityOptions</code></code> operation. Specifies the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the Deployed option to <code>true</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAvailabilityOptionsInput {
@@ -4612,7 +4613,7 @@ impl std::fmt::Debug for DescribeAvailabilityOptionsInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DescribeAnalysisSchemes</a></code> operation. Specifies the name of the domain you want to describe. To limit the response to particular analysis schemes, specify the names of the analysis schemes you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>. </p>
+/// <p>Container for the parameters to the <code><code>DescribeAnalysisSchemes</code></code> operation. Specifies the name of the domain you want to describe. To limit the response to particular analysis schemes, specify the names of the analysis schemes you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAnalysisSchemesInput {
@@ -4647,7 +4648,7 @@ impl std::fmt::Debug for DescribeAnalysisSchemesInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DeleteSuggester</a></code> operation. Specifies the name of the domain you want to update and name of the suggester you want to delete.</p>
+/// <p>Container for the parameters to the <code><code>DeleteSuggester</code></code> operation. Specifies the name of the domain you want to update and name of the suggester you want to delete.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSuggesterInput {
@@ -4675,7 +4676,7 @@ impl std::fmt::Debug for DeleteSuggesterInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DeleteIndexField</a></code> operation. Specifies the name of the domain you want to update and the name of the index field you want to delete.</p>
+/// <p>Container for the parameters to the <code><code>DeleteIndexField</code></code> operation. Specifies the name of the domain you want to update and the name of the index field you want to delete.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIndexFieldInput {
@@ -4703,13 +4704,13 @@ impl std::fmt::Debug for DeleteIndexFieldInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DeleteExpression</a></code> operation. Specifies the name of the domain you want to update and the name of the expression you want to delete.</p>
+/// <p>Container for the parameters to the <code><code>DeleteExpression</code></code> operation. Specifies the name of the domain you want to update and the name of the expression you want to delete.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteExpressionInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>The name of the <code><a>Expression</a></code> to delete.</p>
+    /// <p>The name of the <code><code>Expression</code></code> to delete.</p>
     pub expression_name: std::option::Option<std::string::String>,
 }
 impl DeleteExpressionInput {
@@ -4717,7 +4718,7 @@ impl DeleteExpressionInput {
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>The name of the <code><a>Expression</a></code> to delete.</p>
+    /// <p>The name of the <code><code>Expression</code></code> to delete.</p>
     pub fn expression_name(&self) -> std::option::Option<&str> {
         self.expression_name.as_deref()
     }
@@ -4731,7 +4732,7 @@ impl std::fmt::Debug for DeleteExpressionInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DeleteDomain</a></code> operation. Specifies the name of the domain you want to delete.</p>
+/// <p>Container for the parameters to the <code><code>DeleteDomain</code></code> operation. Specifies the name of the domain you want to delete.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainInput {
@@ -4752,7 +4753,7 @@ impl std::fmt::Debug for DeleteDomainInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DeleteAnalysisScheme</a></code> operation. Specifies the name of the domain you want to update and the analysis scheme you want to delete. </p>
+/// <p>Container for the parameters to the <code><code>DeleteAnalysisScheme</code></code> operation. Specifies the name of the domain you want to update and the analysis scheme you want to delete. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAnalysisSchemeInput {
@@ -4780,7 +4781,7 @@ impl std::fmt::Debug for DeleteAnalysisSchemeInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DefineSuggester</a></code> operation. Specifies the name of the domain you want to update and the suggester configuration.</p>
+/// <p>Container for the parameters to the <code><code>DefineSuggester</code></code> operation. Specifies the name of the domain you want to update and the suggester configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefineSuggesterInput {
@@ -4808,7 +4809,7 @@ impl std::fmt::Debug for DefineSuggesterInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DefineIndexField</a></code> operation. Specifies the name of the domain you want to update and the index field configuration.</p>
+/// <p>Container for the parameters to the <code><code>DefineIndexField</code></code> operation. Specifies the name of the domain you want to update and the index field configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefineIndexFieldInput {
@@ -4836,13 +4837,13 @@ impl std::fmt::Debug for DefineIndexFieldInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DefineExpression</a></code> operation. Specifies the name of the domain you want to update and the expression you want to configure.</p>
+/// <p>Container for the parameters to the <code><code>DefineExpression</code></code> operation. Specifies the name of the domain you want to update and the expression you want to configure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefineExpressionInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results.  </p>
+    /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
     pub expression: std::option::Option<crate::model::Expression>,
 }
 impl DefineExpressionInput {
@@ -4850,7 +4851,7 @@ impl DefineExpressionInput {
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results.  </p>
+    /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
     pub fn expression(&self) -> std::option::Option<&crate::model::Expression> {
         self.expression.as_ref()
     }
@@ -4864,7 +4865,7 @@ impl std::fmt::Debug for DefineExpressionInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DefineAnalysisScheme</a></code> operation. Specifies the name of the domain you want to update and the analysis scheme configuration.</p>
+/// <p>Container for the parameters to the <code><code>DefineAnalysisScheme</code></code> operation. Specifies the name of the domain you want to update and the analysis scheme configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefineAnalysisSchemeInput {
@@ -4892,7 +4893,7 @@ impl std::fmt::Debug for DefineAnalysisSchemeInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>CreateDomain</a></code> operation. Specifies a name for the new search domain.</p>
+/// <p>Container for the parameters to the <code><code>CreateDomain</code></code> operation. Specifies a name for the new search domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDomainInput {
@@ -4913,7 +4914,7 @@ impl std::fmt::Debug for CreateDomainInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>BuildSuggester</a></code> operation. Specifies the name of the domain you want to update.</p>
+/// <p>Container for the parameters to the <code><code>BuildSuggester</code></code> operation. Specifies the name of the domain you want to update.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BuildSuggestersInput {

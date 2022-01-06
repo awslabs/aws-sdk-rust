@@ -348,8 +348,11 @@ pub fn serialize_structure_crate_input_list_pending_invitation_resources_input(
     if let Some(var_82) = &input.next_token {
         object.key("nextToken").string(var_82);
     }
-    if let Some(var_83) = &input.resource_share_invitation_arn {
-        object.key("resourceShareInvitationArn").string(var_83);
+    if let Some(var_83) = &input.resource_region_scope {
+        object.key("resourceRegionScope").string(var_83.as_str());
+    }
+    if let Some(var_84) = &input.resource_share_invitation_arn {
+        object.key("resourceShareInvitationArn").string(var_84);
     }
     Ok(())
 }
@@ -358,17 +361,17 @@ pub fn serialize_structure_crate_input_list_permissions_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListPermissionsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_84) = &input.max_results {
+    if let Some(var_85) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_84).into()),
+            aws_smithy_types::Number::NegInt((*var_85).into()),
         );
     }
-    if let Some(var_85) = &input.next_token {
-        object.key("nextToken").string(var_85);
+    if let Some(var_86) = &input.next_token {
+        object.key("nextToken").string(var_86);
     }
-    if let Some(var_86) = &input.resource_type {
-        object.key("resourceType").string(var_86);
+    if let Some(var_87) = &input.resource_type {
+        object.key("resourceType").string(var_87);
     }
     Ok(())
 }
@@ -377,41 +380,41 @@ pub fn serialize_structure_crate_input_list_principals_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListPrincipalsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_87) = &input.max_results {
+    if let Some(var_88) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_87).into()),
+            aws_smithy_types::Number::NegInt((*var_88).into()),
         );
     }
-    if let Some(var_88) = &input.next_token {
-        object.key("nextToken").string(var_88);
+    if let Some(var_89) = &input.next_token {
+        object.key("nextToken").string(var_89);
     }
-    if let Some(var_89) = &input.principals {
-        let mut array_90 = object.key("principals").start_array();
-        for item_91 in var_89 {
+    if let Some(var_90) = &input.principals {
+        let mut array_91 = object.key("principals").start_array();
+        for item_92 in var_90 {
             {
-                array_90.value().string(item_91);
+                array_91.value().string(item_92);
             }
         }
-        array_90.finish();
+        array_91.finish();
     }
-    if let Some(var_92) = &input.resource_arn {
-        object.key("resourceArn").string(var_92);
+    if let Some(var_93) = &input.resource_arn {
+        object.key("resourceArn").string(var_93);
     }
-    if let Some(var_93) = &input.resource_owner {
-        object.key("resourceOwner").string(var_93.as_str());
+    if let Some(var_94) = &input.resource_owner {
+        object.key("resourceOwner").string(var_94.as_str());
     }
-    if let Some(var_94) = &input.resource_share_arns {
-        let mut array_95 = object.key("resourceShareArns").start_array();
-        for item_96 in var_94 {
+    if let Some(var_95) = &input.resource_share_arns {
+        let mut array_96 = object.key("resourceShareArns").start_array();
+        for item_97 in var_95 {
             {
-                array_95.value().string(item_96);
+                array_96.value().string(item_97);
             }
         }
-        array_95.finish();
+        array_96.finish();
     }
-    if let Some(var_97) = &input.resource_type {
-        object.key("resourceType").string(var_97);
+    if let Some(var_98) = &input.resource_type {
+        object.key("resourceType").string(var_98);
     }
     Ok(())
 }
@@ -420,41 +423,44 @@ pub fn serialize_structure_crate_input_list_resources_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListResourcesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_98) = &input.max_results {
+    if let Some(var_99) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_98).into()),
+            aws_smithy_types::Number::NegInt((*var_99).into()),
         );
     }
-    if let Some(var_99) = &input.next_token {
-        object.key("nextToken").string(var_99);
+    if let Some(var_100) = &input.next_token {
+        object.key("nextToken").string(var_100);
     }
-    if let Some(var_100) = &input.principal {
-        object.key("principal").string(var_100);
+    if let Some(var_101) = &input.principal {
+        object.key("principal").string(var_101);
     }
-    if let Some(var_101) = &input.resource_arns {
-        let mut array_102 = object.key("resourceArns").start_array();
-        for item_103 in var_101 {
+    if let Some(var_102) = &input.resource_arns {
+        let mut array_103 = object.key("resourceArns").start_array();
+        for item_104 in var_102 {
             {
-                array_102.value().string(item_103);
+                array_103.value().string(item_104);
             }
         }
-        array_102.finish();
+        array_103.finish();
     }
-    if let Some(var_104) = &input.resource_owner {
-        object.key("resourceOwner").string(var_104.as_str());
+    if let Some(var_105) = &input.resource_owner {
+        object.key("resourceOwner").string(var_105.as_str());
     }
-    if let Some(var_105) = &input.resource_share_arns {
-        let mut array_106 = object.key("resourceShareArns").start_array();
-        for item_107 in var_105 {
+    if let Some(var_106) = &input.resource_region_scope {
+        object.key("resourceRegionScope").string(var_106.as_str());
+    }
+    if let Some(var_107) = &input.resource_share_arns {
+        let mut array_108 = object.key("resourceShareArns").start_array();
+        for item_109 in var_107 {
             {
-                array_106.value().string(item_107);
+                array_108.value().string(item_109);
             }
         }
-        array_106.finish();
+        array_108.finish();
     }
-    if let Some(var_108) = &input.resource_type {
-        object.key("resourceType").string(var_108);
+    if let Some(var_110) = &input.resource_type {
+        object.key("resourceType").string(var_110);
     }
     Ok(())
 }
@@ -463,17 +469,17 @@ pub fn serialize_structure_crate_input_list_resource_share_permissions_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListResourceSharePermissionsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_109) = &input.max_results {
+    if let Some(var_111) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_109).into()),
+            aws_smithy_types::Number::NegInt((*var_111).into()),
         );
     }
-    if let Some(var_110) = &input.next_token {
-        object.key("nextToken").string(var_110);
+    if let Some(var_112) = &input.next_token {
+        object.key("nextToken").string(var_112);
     }
-    if let Some(var_111) = &input.resource_share_arn {
-        object.key("resourceShareArn").string(var_111);
+    if let Some(var_113) = &input.resource_share_arn {
+        object.key("resourceShareArn").string(var_113);
     }
     Ok(())
 }
@@ -482,14 +488,17 @@ pub fn serialize_structure_crate_input_list_resource_types_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListResourceTypesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_112) = &input.max_results {
+    if let Some(var_114) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_112).into()),
+            aws_smithy_types::Number::NegInt((*var_114).into()),
         );
     }
-    if let Some(var_113) = &input.next_token {
-        object.key("nextToken").string(var_113);
+    if let Some(var_115) = &input.next_token {
+        object.key("nextToken").string(var_115);
+    }
+    if let Some(var_116) = &input.resource_region_scope {
+        object.key("resourceRegionScope").string(var_116.as_str());
     }
     Ok(())
 }
@@ -498,11 +507,11 @@ pub fn serialize_structure_crate_input_reject_resource_share_invitation_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RejectResourceShareInvitationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_114) = &input.client_token {
-        object.key("clientToken").string(var_114);
+    if let Some(var_117) = &input.client_token {
+        object.key("clientToken").string(var_117);
     }
-    if let Some(var_115) = &input.resource_share_invitation_arn {
-        object.key("resourceShareInvitationArn").string(var_115);
+    if let Some(var_118) = &input.resource_share_invitation_arn {
+        object.key("resourceShareInvitationArn").string(var_118);
     }
     Ok(())
 }
@@ -511,19 +520,19 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_116) = &input.resource_share_arn {
-        object.key("resourceShareArn").string(var_116);
+    if let Some(var_119) = &input.resource_share_arn {
+        object.key("resourceShareArn").string(var_119);
     }
-    if let Some(var_117) = &input.tags {
-        let mut array_118 = object.key("tags").start_array();
-        for item_119 in var_117 {
+    if let Some(var_120) = &input.tags {
+        let mut array_121 = object.key("tags").start_array();
+        for item_122 in var_120 {
             {
-                let mut object_120 = array_118.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_120, item_119)?;
-                object_120.finish();
+                let mut object_123 = array_121.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_123, item_122)?;
+                object_123.finish();
             }
         }
-        array_118.finish();
+        array_121.finish();
     }
     Ok(())
 }
@@ -532,17 +541,17 @@ pub fn serialize_structure_crate_input_untag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_121) = &input.resource_share_arn {
-        object.key("resourceShareArn").string(var_121);
+    if let Some(var_124) = &input.resource_share_arn {
+        object.key("resourceShareArn").string(var_124);
     }
-    if let Some(var_122) = &input.tag_keys {
-        let mut array_123 = object.key("tagKeys").start_array();
-        for item_124 in var_122 {
+    if let Some(var_125) = &input.tag_keys {
+        let mut array_126 = object.key("tagKeys").start_array();
+        for item_127 in var_125 {
             {
-                array_123.value().string(item_124);
+                array_126.value().string(item_127);
             }
         }
-        array_123.finish();
+        array_126.finish();
     }
     Ok(())
 }
@@ -551,17 +560,17 @@ pub fn serialize_structure_crate_input_update_resource_share_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateResourceShareInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_125) = &input.allow_external_principals {
-        object.key("allowExternalPrincipals").boolean(*var_125);
+    if let Some(var_128) = &input.allow_external_principals {
+        object.key("allowExternalPrincipals").boolean(*var_128);
     }
-    if let Some(var_126) = &input.client_token {
-        object.key("clientToken").string(var_126);
+    if let Some(var_129) = &input.client_token {
+        object.key("clientToken").string(var_129);
     }
-    if let Some(var_127) = &input.name {
-        object.key("name").string(var_127);
+    if let Some(var_130) = &input.name {
+        object.key("name").string(var_130);
     }
-    if let Some(var_128) = &input.resource_share_arn {
-        object.key("resourceShareArn").string(var_128);
+    if let Some(var_131) = &input.resource_share_arn {
+        object.key("resourceShareArn").string(var_131);
     }
     Ok(())
 }
@@ -570,11 +579,11 @@ pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_129) = &input.key {
-        object.key("key").string(var_129);
+    if let Some(var_132) = &input.key {
+        object.key("key").string(var_132);
     }
-    if let Some(var_130) = &input.value {
-        object.key("value").string(var_130);
+    if let Some(var_133) = &input.value {
+        object.key("value").string(var_133);
     }
     Ok(())
 }
@@ -583,17 +592,17 @@ pub fn serialize_structure_crate_model_tag_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TagFilter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_131) = &input.tag_key {
-        object.key("tagKey").string(var_131);
+    if let Some(var_134) = &input.tag_key {
+        object.key("tagKey").string(var_134);
     }
-    if let Some(var_132) = &input.tag_values {
-        let mut array_133 = object.key("tagValues").start_array();
-        for item_134 in var_132 {
+    if let Some(var_135) = &input.tag_values {
+        let mut array_136 = object.key("tagValues").start_array();
+        for item_137 in var_135 {
             {
-                array_133.value().string(item_134);
+                array_136.value().string(item_137);
             }
         }
-        array_133.finish();
+        array_136.finish();
     }
     Ok(())
 }

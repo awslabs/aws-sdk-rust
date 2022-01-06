@@ -27,34 +27,21 @@ pub mod create_changeset_input {
             self.client_token = input;
             self
         }
-        /// <p>The unique identifier for the FinSpace Dataset where the Changeset will be created.
-        /// </p>
+        /// <p>The unique identifier for the FinSpace Dataset where the Changeset will be created. </p>
         pub fn dataset_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the FinSpace Dataset where the Changeset will be created.
-        /// </p>
+        /// <p>The unique identifier for the FinSpace Dataset where the Changeset will be created. </p>
         pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_id = input;
             self
         }
         /// <p>Option to indicate how a Changeset will be applied to a Dataset.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>REPLACE</code> - Changeset will be considered as a replacement to all prior
-        /// loaded Changesets.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>APPEND</code> - Changeset will be considered as an addition to the end of all
-        /// prior loaded Changesets.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p>
-        /// </li>
+        /// <li> <p> <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded Changesets.</p> </li>
+        /// <li> <p> <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded Changesets.</p> </li>
+        /// <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
         /// </ul>
         pub fn change_type(mut self, input: crate::model::ChangeType) -> Self {
             self.change_type = Some(input);
@@ -62,20 +49,9 @@ pub mod create_changeset_input {
         }
         /// <p>Option to indicate how a Changeset will be applied to a Dataset.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>REPLACE</code> - Changeset will be considered as a replacement to all prior
-        /// loaded Changesets.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>APPEND</code> - Changeset will be considered as an addition to the end of all
-        /// prior loaded Changesets.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p>
-        /// </li>
+        /// <li> <p> <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded Changesets.</p> </li>
+        /// <li> <p> <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded Changesets.</p> </li>
+        /// <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
         /// </ul>
         pub fn set_change_type(
             mut self,
@@ -113,44 +89,15 @@ pub mod create_changeset_input {
         ///
         /// To override the contents of this collection use [`set_format_params`](Self::set_format_params).
         ///
-        /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>).
-        /// </p>
-        /// <p>
-        /// <code>formatType</code> is a required attribute and can have the following values:
-        /// </p>
+        /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
+        /// <p> <code>formatType</code> is a required attribute and can have the following values: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PARQUET</code> - Parquet source file format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CSV</code> - CSV source file format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>JSON</code> - JSON source file format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>XML</code> - XML source file format.</p>
-        /// </li>
+        /// <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>
+        /// <li> <p> <code>CSV</code> - CSV source file format.</p> </li>
+        /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
+        /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
         /// </ul>
-        ///
-        /// <p>
-        ///
-        /// For example, you could specify the following for <code>formatParams</code>:
-        ///
-        /// <code>
-        /// "formatParams":
-        /// {
-        /// "formatType": "CSV",
-        /// "withHeader": "true",
-        /// "separator": ",",
-        /// "compression":"None"
-        /// }
-        /// </code>
-        /// </p>
+        /// <p> For example, you could specify the following for <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
         pub fn format_params(
             mut self,
             k: impl Into<std::string::String>,
@@ -161,44 +108,15 @@ pub mod create_changeset_input {
             self.format_params = Some(hash_map);
             self
         }
-        /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>).
-        /// </p>
-        /// <p>
-        /// <code>formatType</code> is a required attribute and can have the following values:
-        /// </p>
+        /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
+        /// <p> <code>formatType</code> is a required attribute and can have the following values: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PARQUET</code> - Parquet source file format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CSV</code> - CSV source file format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>JSON</code> - JSON source file format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>XML</code> - XML source file format.</p>
-        /// </li>
+        /// <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>
+        /// <li> <p> <code>CSV</code> - CSV source file format.</p> </li>
+        /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
+        /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
         /// </ul>
-        ///
-        /// <p>
-        ///
-        /// For example, you could specify the following for <code>formatParams</code>:
-        ///
-        /// <code>
-        /// "formatParams":
-        /// {
-        /// "formatType": "CSV",
-        /// "withHeader": "true",
-        /// "separator": ",",
-        /// "compression":"None"
-        /// }
-        /// </code>
-        /// </p>
+        /// <p> For example, you could specify the following for <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
         pub fn set_format_params(
             mut self,
             input: std::option::Option<
@@ -228,7 +146,7 @@ pub mod create_changeset_input {
 #[doc(hidden)]
 pub type CreateChangesetInputOperationOutputAlias = crate::operation::CreateChangeset;
 #[doc(hidden)]
-pub type CreateChangesetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateChangesetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateChangesetInput {
     /// Consumes the builder and constructs an Operation<[`CreateChangeset`](crate::operation::CreateChangeset)>
     #[allow(clippy::let_and_return)]
@@ -239,7 +157,7 @@ impl CreateChangesetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateChangeset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -342,7 +260,7 @@ impl CreateChangesetInput {
             "CreateChangeset",
             "finspacedata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -407,14 +325,8 @@ pub mod create_dataset_input {
         }
         /// <p>The format in which Dataset data is structured.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
-        /// </li>
+        /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
+        /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
         /// </ul>
         pub fn kind(mut self, input: crate::model::DatasetKind) -> Self {
             self.kind = Some(input);
@@ -422,14 +334,8 @@ pub mod create_dataset_input {
         }
         /// <p>The format in which Dataset data is structured.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
-        /// </li>
+        /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
+        /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
         /// </ul>
         pub fn set_kind(mut self, input: std::option::Option<crate::model::DatasetKind>) -> Self {
             self.kind = input;
@@ -523,7 +429,7 @@ pub mod create_dataset_input {
 #[doc(hidden)]
 pub type CreateDatasetInputOperationOutputAlias = crate::operation::CreateDataset;
 #[doc(hidden)]
-pub type CreateDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDatasetInput {
     /// Consumes the builder and constructs an Operation<[`CreateDataset`](crate::operation::CreateDataset)>
     #[allow(clippy::let_and_return)]
@@ -534,7 +440,7 @@ impl CreateDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -616,7 +522,7 @@ impl CreateDatasetInput {
             "CreateDataset",
             "finspacedata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -771,7 +677,7 @@ pub mod create_data_view_input {
 #[doc(hidden)]
 pub type CreateDataViewInputOperationOutputAlias = crate::operation::CreateDataView;
 #[doc(hidden)]
-pub type CreateDataViewInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDataViewInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDataViewInput {
     /// Consumes the builder and constructs an Operation<[`CreateDataView`](crate::operation::CreateDataView)>
     #[allow(clippy::let_and_return)]
@@ -782,7 +688,7 @@ impl CreateDataViewInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDataView,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -885,7 +791,7 @@ impl CreateDataViewInput {
             "CreateDataView",
             "finspacedata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -955,7 +861,7 @@ pub mod delete_dataset_input {
 #[doc(hidden)]
 pub type DeleteDatasetInputOperationOutputAlias = crate::operation::DeleteDataset;
 #[doc(hidden)]
-pub type DeleteDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDataset`](crate::operation::DeleteDataset)>
     #[allow(clippy::let_and_return)]
@@ -966,7 +872,7 @@ impl DeleteDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1070,7 +976,7 @@ impl DeleteDatasetInput {
             "DeleteDataset",
             "finspacedata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1132,7 +1038,7 @@ pub mod get_changeset_input {
 #[doc(hidden)]
 pub type GetChangesetInputOperationOutputAlias = crate::operation::GetChangeset;
 #[doc(hidden)]
-pub type GetChangesetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetChangesetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetChangesetInput {
     /// Consumes the builder and constructs an Operation<[`GetChangeset`](crate::operation::GetChangeset)>
     #[allow(clippy::let_and_return)]
@@ -1143,7 +1049,7 @@ impl GetChangesetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetChangeset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1253,7 +1159,7 @@ impl GetChangesetInput {
             "GetChangeset",
             "finspacedata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1303,7 +1209,7 @@ pub mod get_dataset_input {
 #[doc(hidden)]
 pub type GetDatasetInputOperationOutputAlias = crate::operation::GetDataset;
 #[doc(hidden)]
-pub type GetDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDatasetInput {
     /// Consumes the builder and constructs an Operation<[`GetDataset`](crate::operation::GetDataset)>
     #[allow(clippy::let_and_return)]
@@ -1314,7 +1220,7 @@ impl GetDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1404,7 +1310,7 @@ impl GetDatasetInput {
             "GetDataset",
             "finspacedata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1466,7 +1372,7 @@ pub mod get_data_view_input {
 #[doc(hidden)]
 pub type GetDataViewInputOperationOutputAlias = crate::operation::GetDataView;
 #[doc(hidden)]
-pub type GetDataViewInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDataViewInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDataViewInput {
     /// Consumes the builder and constructs an Operation<[`GetDataView`](crate::operation::GetDataView)>
     #[allow(clippy::let_and_return)]
@@ -1477,7 +1383,7 @@ impl GetDataViewInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDataView,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1587,7 +1493,7 @@ impl GetDataViewInput {
             "GetDataView",
             "finspacedata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1653,7 +1559,8 @@ pub mod get_programmatic_access_credentials_input {
 pub type GetProgrammaticAccessCredentialsInputOperationOutputAlias =
     crate::operation::GetProgrammaticAccessCredentials;
 #[doc(hidden)]
-pub type GetProgrammaticAccessCredentialsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetProgrammaticAccessCredentialsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetProgrammaticAccessCredentialsInput {
     /// Consumes the builder and constructs an Operation<[`GetProgrammaticAccessCredentials`](crate::operation::GetProgrammaticAccessCredentials)>
     #[allow(clippy::let_and_return)]
@@ -1664,7 +1571,7 @@ impl GetProgrammaticAccessCredentialsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetProgrammaticAccessCredentials,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1758,7 +1665,7 @@ impl GetProgrammaticAccessCredentialsInput {
             "GetProgrammaticAccessCredentials",
             "finspacedata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1784,16 +1691,8 @@ pub mod get_working_location_input {
     impl Builder {
         /// <p>Specify the type of the working location.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store data content when
-        /// working with FinSpace Notebooks that run on SageMaker studio.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your
-        /// data content and then use the location with the Changeset creation operation.</p>
-        /// </li>
+        /// <li> <p> <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li>
+        /// <li> <p> <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li>
         /// </ul>
         pub fn location_type(mut self, input: crate::model::LocationType) -> Self {
             self.location_type = Some(input);
@@ -1801,16 +1700,8 @@ pub mod get_working_location_input {
         }
         /// <p>Specify the type of the working location.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store data content when
-        /// working with FinSpace Notebooks that run on SageMaker studio.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your
-        /// data content and then use the location with the Changeset creation operation.</p>
-        /// </li>
+        /// <li> <p> <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li>
+        /// <li> <p> <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li>
         /// </ul>
         pub fn set_location_type(
             mut self,
@@ -1835,7 +1726,7 @@ pub mod get_working_location_input {
 #[doc(hidden)]
 pub type GetWorkingLocationInputOperationOutputAlias = crate::operation::GetWorkingLocation;
 #[doc(hidden)]
-pub type GetWorkingLocationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetWorkingLocationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWorkingLocationInput {
     /// Consumes the builder and constructs an Operation<[`GetWorkingLocation`](crate::operation::GetWorkingLocation)>
     #[allow(clippy::let_and_return)]
@@ -1846,7 +1737,7 @@ impl GetWorkingLocationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWorkingLocation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1926,7 +1817,7 @@ impl GetWorkingLocationInput {
             "GetWorkingLocation",
             "finspacedata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2008,7 +1899,7 @@ pub mod list_changesets_input {
 #[doc(hidden)]
 pub type ListChangesetsInputOperationOutputAlias = crate::operation::ListChangesets;
 #[doc(hidden)]
-pub type ListChangesetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListChangesetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChangesetsInput {
     /// Consumes the builder and constructs an Operation<[`ListChangesets`](crate::operation::ListChangesets)>
     #[allow(clippy::let_and_return)]
@@ -2019,7 +1910,7 @@ impl ListChangesetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChangesets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2130,7 +2021,7 @@ impl ListChangesetsInput {
             "ListChangesets",
             "finspacedata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2192,7 +2083,7 @@ pub mod list_datasets_input {
 #[doc(hidden)]
 pub type ListDatasetsInputOperationOutputAlias = crate::operation::ListDatasets;
 #[doc(hidden)]
-pub type ListDatasetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDatasetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDatasetsInput {
     /// Consumes the builder and constructs an Operation<[`ListDatasets`](crate::operation::ListDatasets)>
     #[allow(clippy::let_and_return)]
@@ -2203,7 +2094,7 @@ impl ListDatasetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDatasets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2294,7 +2185,7 @@ impl ListDatasetsInput {
             "ListDatasets",
             "finspacedata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2368,7 +2259,7 @@ pub mod list_data_views_input {
 #[doc(hidden)]
 pub type ListDataViewsInputOperationOutputAlias = crate::operation::ListDataViews;
 #[doc(hidden)]
-pub type ListDataViewsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDataViewsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDataViewsInput {
     /// Consumes the builder and constructs an Operation<[`ListDataViews`](crate::operation::ListDataViews)>
     #[allow(clippy::let_and_return)]
@@ -2379,7 +2270,7 @@ impl ListDataViewsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDataViews,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2490,7 +2381,7 @@ impl ListDataViewsInput {
             "ListDataViews",
             "finspacedata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2622,7 +2513,7 @@ pub mod update_changeset_input {
 #[doc(hidden)]
 pub type UpdateChangesetInputOperationOutputAlias = crate::operation::UpdateChangeset;
 #[doc(hidden)]
-pub type UpdateChangesetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateChangesetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateChangesetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateChangeset`](crate::operation::UpdateChangeset)>
     #[allow(clippy::let_and_return)]
@@ -2633,7 +2524,7 @@ impl UpdateChangesetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateChangeset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2752,7 +2643,7 @@ impl UpdateChangesetInput {
             "UpdateChangeset",
             "finspacedata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2825,14 +2716,8 @@ pub mod update_dataset_input {
         }
         /// <p>The format in which the Dataset data is structured.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
-        /// </li>
+        /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
+        /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
         /// </ul>
         pub fn kind(mut self, input: crate::model::DatasetKind) -> Self {
             self.kind = Some(input);
@@ -2840,14 +2725,8 @@ pub mod update_dataset_input {
         }
         /// <p>The format in which the Dataset data is structured.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
-        /// </li>
+        /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
+        /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
         /// </ul>
         pub fn set_kind(mut self, input: std::option::Option<crate::model::DatasetKind>) -> Self {
             self.kind = input;
@@ -2911,7 +2790,7 @@ pub mod update_dataset_input {
 #[doc(hidden)]
 pub type UpdateDatasetInputOperationOutputAlias = crate::operation::UpdateDataset;
 #[doc(hidden)]
-pub type UpdateDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDatasetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDataset`](crate::operation::UpdateDataset)>
     #[allow(clippy::let_and_return)]
@@ -2922,7 +2801,7 @@ impl UpdateDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3020,7 +2899,7 @@ impl UpdateDatasetInput {
             "UpdateDataset",
             "finspacedata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3055,14 +2934,8 @@ pub struct UpdateDatasetInput {
     pub dataset_title: std::option::Option<std::string::String>,
     /// <p>The format in which the Dataset data is structured.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
-    /// </li>
+    /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
+    /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
     /// </ul>
     pub kind: std::option::Option<crate::model::DatasetKind>,
     /// <p>A description for the Dataset.</p>
@@ -3087,14 +2960,8 @@ impl UpdateDatasetInput {
     }
     /// <p>The format in which the Dataset data is structured.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
-    /// </li>
+    /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
+    /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
     /// </ul>
     pub fn kind(&self) -> std::option::Option<&crate::model::DatasetKind> {
         self.kind.as_ref()
@@ -3287,32 +3154,16 @@ impl std::fmt::Debug for ListChangesetsInput {
 pub struct GetWorkingLocationInput {
     /// <p>Specify the type of the working location.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store data content when
-    /// working with FinSpace Notebooks that run on SageMaker studio.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your
-    /// data content and then use the location with the Changeset creation operation.</p>
-    /// </li>
+    /// <li> <p> <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li>
+    /// <li> <p> <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li>
     /// </ul>
     pub location_type: std::option::Option<crate::model::LocationType>,
 }
 impl GetWorkingLocationInput {
     /// <p>Specify the type of the working location.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store data content when
-    /// working with FinSpace Notebooks that run on SageMaker studio.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your
-    /// data content and then use the location with the Changeset creation operation.</p>
-    /// </li>
+    /// <li> <p> <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li>
+    /// <li> <p> <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li>
     /// </ul>
     pub fn location_type(&self) -> std::option::Option<&crate::model::LocationType> {
         self.location_type.as_ref()
@@ -3534,14 +3385,8 @@ pub struct CreateDatasetInput {
     pub dataset_title: std::option::Option<std::string::String>,
     /// <p>The format in which Dataset data is structured.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
-    /// </li>
+    /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
+    /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
     /// </ul>
     pub kind: std::option::Option<crate::model::DatasetKind>,
     /// <p>Description of a Dataset.</p>
@@ -3566,14 +3411,8 @@ impl CreateDatasetInput {
     }
     /// <p>The format in which Dataset data is structured.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
-    /// </li>
+    /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
+    /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
     /// </ul>
     pub fn kind(&self) -> std::option::Option<&crate::model::DatasetKind> {
         self.kind.as_ref()
@@ -3622,68 +3461,27 @@ impl std::fmt::Debug for CreateDatasetInput {
 pub struct CreateChangesetInput {
     /// <p>A token used to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The unique identifier for the FinSpace Dataset where the Changeset will be created.
-    /// </p>
+    /// <p>The unique identifier for the FinSpace Dataset where the Changeset will be created. </p>
     pub dataset_id: std::option::Option<std::string::String>,
     /// <p>Option to indicate how a Changeset will be applied to a Dataset.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>REPLACE</code> - Changeset will be considered as a replacement to all prior
-    /// loaded Changesets.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>APPEND</code> - Changeset will be considered as an addition to the end of all
-    /// prior loaded Changesets.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p>
-    /// </li>
+    /// <li> <p> <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
     /// </ul>
     pub change_type: std::option::Option<crate::model::ChangeType>,
     /// <p>Options that define the location of the data being ingested.</p>
     pub source_params:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>).
-    /// </p>
-    /// <p>
-    /// <code>formatType</code> is a required attribute and can have the following values:
-    /// </p>
+    /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
+    /// <p> <code>formatType</code> is a required attribute and can have the following values: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PARQUET</code> - Parquet source file format.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CSV</code> - CSV source file format.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>JSON</code> - JSON source file format.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>XML</code> - XML source file format.</p>
-    /// </li>
+    /// <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>
+    /// <li> <p> <code>CSV</code> - CSV source file format.</p> </li>
+    /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
+    /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
     /// </ul>
-    ///
-    /// <p>
-    ///
-    /// For example, you could specify the following for <code>formatParams</code>:
-    ///
-    /// <code>
-    /// "formatParams":
-    /// {
-    /// "formatType": "CSV",
-    /// "withHeader": "true",
-    /// "separator": ",",
-    /// "compression":"None"
-    /// }
-    /// </code>
-    /// </p>
+    /// <p> For example, you could specify the following for <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
     pub format_params:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3692,27 +3490,15 @@ impl CreateChangesetInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The unique identifier for the FinSpace Dataset where the Changeset will be created.
-    /// </p>
+    /// <p>The unique identifier for the FinSpace Dataset where the Changeset will be created. </p>
     pub fn dataset_id(&self) -> std::option::Option<&str> {
         self.dataset_id.as_deref()
     }
     /// <p>Option to indicate how a Changeset will be applied to a Dataset.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>REPLACE</code> - Changeset will be considered as a replacement to all prior
-    /// loaded Changesets.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>APPEND</code> - Changeset will be considered as an addition to the end of all
-    /// prior loaded Changesets.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p>
-    /// </li>
+    /// <li> <p> <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
     /// </ul>
     pub fn change_type(&self) -> std::option::Option<&crate::model::ChangeType> {
         self.change_type.as_ref()
@@ -3724,44 +3510,15 @@ impl CreateChangesetInput {
     {
         self.source_params.as_ref()
     }
-    /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>).
-    /// </p>
-    /// <p>
-    /// <code>formatType</code> is a required attribute and can have the following values:
-    /// </p>
+    /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
+    /// <p> <code>formatType</code> is a required attribute and can have the following values: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PARQUET</code> - Parquet source file format.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CSV</code> - CSV source file format.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>JSON</code> - JSON source file format.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>XML</code> - XML source file format.</p>
-    /// </li>
+    /// <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>
+    /// <li> <p> <code>CSV</code> - CSV source file format.</p> </li>
+    /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
+    /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
     /// </ul>
-    ///
-    /// <p>
-    ///
-    /// For example, you could specify the following for <code>formatParams</code>:
-    ///
-    /// <code>
-    /// "formatParams":
-    /// {
-    /// "formatType": "CSV",
-    /// "withHeader": "true",
-    /// "separator": ",",
-    /// "compression":"None"
-    /// }
-    /// </code>
-    /// </p>
+    /// <p> For example, you could specify the following for <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
     pub fn format_params(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>

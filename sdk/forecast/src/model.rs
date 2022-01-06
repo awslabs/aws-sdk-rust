@@ -2,27 +2,13 @@
 /// <p>The optional metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
 /// <p>The following basic restrictions apply to tags:</p>
 /// <ul>
-/// <li>
-/// <p>Maximum number of tags per resource - 50.</p>
-/// </li>
-/// <li>
-/// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-/// </li>
-/// <li>
-/// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-/// </li>
-/// <li>
-/// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-/// </li>
-/// <li>
-/// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-/// </li>
-/// <li>
-/// <p>Tag keys and values are case sensitive.</p>
-/// </li>
-/// <li>
-/// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-/// </li>
+/// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+/// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+/// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+/// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+/// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+/// <li> <p>Tag keys and values are case sensitive.</p> </li>
+/// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -96,8 +82,7 @@ impl Tag {
     }
 }
 
-/// <p>Provides a summary of the predictor properties that are used in the <a>ListPredictors</a> operation. To get the complete set of properties, call the <a>DescribePredictor</a> operation, and provide the listed
-/// <code>PredictorArn</code>.</p>
+/// <p>Provides a summary of the predictor properties that are used in the <code>ListPredictors</code> operation. To get the complete set of properties, call the <code>DescribePredictor</code> operation, and provide the listed <code>PredictorArn</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PredictorSummary {
@@ -105,72 +90,33 @@ pub struct PredictorSummary {
     pub predictor_arn: std::option::Option<std::string::String>,
     /// <p>The name of the predictor.</p>
     pub predictor_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the data used to train
-    /// the predictor.</p>
+    /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the data used to train the predictor.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>Whether AutoPredictor was used to create the predictor.</p>
     pub is_auto_predictor: std::option::Option<bool>,
-    /// <p>A summary of the reference predictor used if the predictor was retrained or
-    /// upgraded.</p>
+    /// <p>A summary of the reference predictor used if the predictor was retrained or upgraded.</p>
     pub reference_predictor_summary: std::option::Option<crate::model::ReferencePredictorSummary>,
     /// <p>The status of the predictor. States include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use
-    /// the predictor to create a forecast.</p>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to create a forecast.</p>
     /// </note>
     pub status: std::option::Option<std::string::String>,
     /// <p>If an error occurred, an informational message about the error.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>When the model training task was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The last time the resource was modified. The timestamp depends on the status of the
-    /// job:</p>
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -183,8 +129,7 @@ impl PredictorSummary {
     pub fn predictor_name(&self) -> std::option::Option<&str> {
         self.predictor_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the data used to train
-    /// the predictor.</p>
+    /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the data used to train the predictor.</p>
     pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
@@ -192,8 +137,7 @@ impl PredictorSummary {
     pub fn is_auto_predictor(&self) -> std::option::Option<bool> {
         self.is_auto_predictor
     }
-    /// <p>A summary of the reference predictor used if the predictor was retrained or
-    /// upgraded.</p>
+    /// <p>A summary of the reference predictor used if the predictor was retrained or upgraded.</p>
     pub fn reference_predictor_summary(
         &self,
     ) -> std::option::Option<&crate::model::ReferencePredictorSummary> {
@@ -201,32 +145,12 @@ impl PredictorSummary {
     }
     /// <p>The status of the predictor. States include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use
-    /// the predictor to create a forecast.</p>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to create a forecast.</p>
     /// </note>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
@@ -239,30 +163,13 @@ impl PredictorSummary {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The last time the resource was modified. The timestamp depends on the status of the
-    /// job:</p>
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
@@ -330,14 +237,12 @@ pub mod predictor_summary {
             self.predictor_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the data used to train
-        /// the predictor.</p>
+        /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the data used to train the predictor.</p>
         pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_group_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the data used to train
-        /// the predictor.</p>
+        /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the data used to train the predictor.</p>
         pub fn set_dataset_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -355,8 +260,7 @@ pub mod predictor_summary {
             self.is_auto_predictor = input;
             self
         }
-        /// <p>A summary of the reference predictor used if the predictor was retrained or
-        /// upgraded.</p>
+        /// <p>A summary of the reference predictor used if the predictor was retrained or upgraded.</p>
         pub fn reference_predictor_summary(
             mut self,
             input: crate::model::ReferencePredictorSummary,
@@ -364,8 +268,7 @@ pub mod predictor_summary {
             self.reference_predictor_summary = Some(input);
             self
         }
-        /// <p>A summary of the reference predictor used if the predictor was retrained or
-        /// upgraded.</p>
+        /// <p>A summary of the reference predictor used if the predictor was retrained or upgraded.</p>
         pub fn set_reference_predictor_summary(
             mut self,
             input: std::option::Option<crate::model::ReferencePredictorSummary>,
@@ -375,32 +278,12 @@ pub mod predictor_summary {
         }
         /// <p>The status of the predictor. States include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use
-        /// the predictor to create a forecast.</p>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// </ul> <note>
+        /// <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to create a forecast.</p>
         /// </note>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
@@ -408,32 +291,12 @@ pub mod predictor_summary {
         }
         /// <p>The status of the predictor. States include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use
-        /// the predictor to create a forecast.</p>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// </ul> <note>
+        /// <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to create a forecast.</p>
         /// </note>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
@@ -462,59 +325,25 @@ pub mod predictor_summary {
             self.creation_time = input;
             self
         }
-        /// <p>The last time the resource was modified. The timestamp depends on the status of the
-        /// job:</p>
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
-        /// <p>The last time the resource was modified. The timestamp depends on the status of the
-        /// job:</p>
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn set_last_modification_time(
             mut self,
@@ -546,8 +375,7 @@ impl PredictorSummary {
     }
 }
 
-/// <p>Provides a summary of the reference predictor used when retraining or upgrading a
-/// predictor.</p>
+/// <p>Provides a summary of the reference predictor used when retraining or upgrading a predictor.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReferencePredictorSummary {
@@ -675,11 +503,7 @@ impl AsRef<str> for State {
     }
 }
 
-/// <p>Describes a filter for choosing a subset of objects. Each filter consists of a
-/// condition and a match statement. The condition is either <code>IS</code> or
-/// <code>IS_NOT</code>, which specifies whether to include or exclude
-/// the objects that match the statement, respectively. The match statement consists of a key and a
-/// value.</p>
+/// <p>Describes a filter for choosing a subset of objects. Each filter consists of a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the objects that match the statement, respectively. The match statement consists of a key and a value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
@@ -687,8 +511,7 @@ pub struct Filter {
     pub key: std::option::Option<std::string::String>,
     /// <p>The value to match.</p>
     pub value: std::option::Option<std::string::String>,
-    /// <p>The condition to apply. To include the objects that match the statement, specify
-    /// <code>IS</code>. To exclude matching objects, specify <code>IS_NOT</code>.</p>
+    /// <p>The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To exclude matching objects, specify <code>IS_NOT</code>.</p>
     pub condition: std::option::Option<crate::model::FilterConditionString>,
 }
 impl Filter {
@@ -700,8 +523,7 @@ impl Filter {
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
-    /// <p>The condition to apply. To include the objects that match the statement, specify
-    /// <code>IS</code>. To exclude matching objects, specify <code>IS_NOT</code>.</p>
+    /// <p>The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To exclude matching objects, specify <code>IS_NOT</code>.</p>
     pub fn condition(&self) -> std::option::Option<&crate::model::FilterConditionString> {
         self.condition.as_ref()
     }
@@ -746,14 +568,12 @@ pub mod filter {
             self.value = input;
             self
         }
-        /// <p>The condition to apply. To include the objects that match the statement, specify
-        /// <code>IS</code>. To exclude matching objects, specify <code>IS_NOT</code>.</p>
+        /// <p>The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To exclude matching objects, specify <code>IS_NOT</code>.</p>
         pub fn condition(mut self, input: crate::model::FilterConditionString) -> Self {
             self.condition = Some(input);
             self
         }
-        /// <p>The condition to apply. To include the objects that match the statement, specify
-        /// <code>IS</code>. To exclude matching objects, specify <code>IS_NOT</code>.</p>
+        /// <p>The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To exclude matching objects, specify <code>IS_NOT</code>.</p>
         pub fn set_condition(
             mut self,
             input: std::option::Option<crate::model::FilterConditionString>,
@@ -833,9 +653,7 @@ impl AsRef<str> for FilterConditionString {
     }
 }
 
-/// <p>Provides a summary of the predictor backtest export job properties used in the <a>ListPredictorBacktestExportJobs</a> operation. To get a complete set of properties, call
-/// the <a>DescribePredictorBacktestExportJob</a> operation, and provide the listed
-/// <code>PredictorBacktestExportJobArn</code>.</p>
+/// <p>Provides a summary of the predictor backtest export job properties used in the <code>ListPredictorBacktestExportJobs</code> operation. To get a complete set of properties, call the <code>DescribePredictorBacktestExportJob</code> operation, and provide the listed <code>PredictorBacktestExportJobArn</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PredictorBacktestExportJobSummary {
@@ -843,33 +661,14 @@ pub struct PredictorBacktestExportJobSummary {
     pub predictor_backtest_export_job_arn: std::option::Option<std::string::String>,
     /// <p>The name of the predictor backtest export job.</p>
     pub predictor_backtest_export_job_name: std::option::Option<std::string::String>,
-    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
-    /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
     pub destination: std::option::Option<crate::model::DataDestination>,
     /// <p>The status of the predictor backtest export job. States include: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>Information about any errors that may have occurred during the backtest export.</p>
@@ -878,27 +677,11 @@ pub struct PredictorBacktestExportJobSummary {
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -911,35 +694,16 @@ impl PredictorBacktestExportJobSummary {
     pub fn predictor_backtest_export_job_name(&self) -> std::option::Option<&str> {
         self.predictor_backtest_export_job_name.as_deref()
     }
-    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
-    /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
     pub fn destination(&self) -> std::option::Option<&crate::model::DataDestination> {
         self.destination.as_ref()
     }
     /// <p>The status of the predictor backtest export job. States include: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
@@ -954,27 +718,11 @@ impl PredictorBacktestExportJobSummary {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
@@ -1046,14 +794,12 @@ pub mod predictor_backtest_export_job_summary {
             self.predictor_backtest_export_job_name = input;
             self
         }
-        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
-        /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
         pub fn destination(mut self, input: crate::model::DataDestination) -> Self {
             self.destination = Some(input);
             self
         }
-        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
-        /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::DataDestination>,
@@ -1063,28 +809,10 @@ pub mod predictor_backtest_export_job_summary {
         }
         /// <p>The status of the predictor backtest export job. States include: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
@@ -1092,28 +820,10 @@ pub mod predictor_backtest_export_job_summary {
         }
         /// <p>The status of the predictor backtest export job. States include: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
@@ -1144,27 +854,11 @@ pub mod predictor_backtest_export_job_summary {
         }
         /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
@@ -1172,27 +866,11 @@ pub mod predictor_backtest_export_job_summary {
         }
         /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn set_last_modification_time(
             mut self,
@@ -1222,18 +900,15 @@ impl PredictorBacktestExportJobSummary {
     }
 }
 
-/// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
-/// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+/// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataDestination {
-    /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the
-    /// bucket.</p>
+    /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the bucket.</p>
     pub s3_config: std::option::Option<crate::model::S3Config>,
 }
 impl DataDestination {
-    /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the
-    /// bucket.</p>
+    /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the bucket.</p>
     pub fn s3_config(&self) -> std::option::Option<&crate::model::S3Config> {
         self.s3_config.as_ref()
     }
@@ -1254,14 +929,12 @@ pub mod data_destination {
         pub(crate) s3_config: std::option::Option<crate::model::S3Config>,
     }
     impl Builder {
-        /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the
-        /// bucket.</p>
+        /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the bucket.</p>
         pub fn s3_config(mut self, input: crate::model::S3Config) -> Self {
             self.s3_config = Some(input);
             self
         }
-        /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the
-        /// bucket.</p>
+        /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the bucket.</p>
         pub fn set_s3_config(mut self, input: std::option::Option<crate::model::S3Config>) -> Self {
             self.s3_config = input;
             self
@@ -1281,19 +954,14 @@ impl DataDestination {
     }
 }
 
-/// <p>The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an AWS Identity and Access Management (IAM) role that
-/// Amazon Forecast can assume to access the file(s). Optionally, includes an AWS Key Management Service (KMS) key. This
-/// object is part of the <a>DataSource</a> object that is submitted in the <a>CreateDatasetImportJob</a> request, and part of the <a>DataDestination</a> object.</p>
+/// <p>The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an AWS Key Management Service (KMS) key. This object is part of the <code>DataSource</code> object that is submitted in the <code>CreateDatasetImportJob</code> request, and part of the <code>DataDestination</code> object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Config {
     /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket or file(s) in an Amazon S3 bucket.</p>
     pub path: std::option::Option<std::string::String>,
-    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3
-    /// bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must
-    /// allow access to the key.</p>
-    /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your
-    /// account, you get an <code>InvalidInputException</code> error.</p>
+    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow access to the key.</p>
+    /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an <code>InvalidInputException</code> error.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
@@ -1303,11 +971,8 @@ impl S3Config {
     pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
     }
-    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3
-    /// bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must
-    /// allow access to the key.</p>
-    /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your
-    /// account, you get an <code>InvalidInputException</code> error.</p>
+    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow access to the key.</p>
+    /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an <code>InvalidInputException</code> error.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -1346,20 +1011,14 @@ pub mod s3_config {
             self.path = input;
             self
         }
-        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3
-        /// bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must
-        /// allow access to the key.</p>
-        /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your
-        /// account, you get an <code>InvalidInputException</code> error.</p>
+        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow access to the key.</p>
+        /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an <code>InvalidInputException</code> error.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3
-        /// bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must
-        /// allow access to the key.</p>
-        /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your
-        /// account, you get an <code>InvalidInputException</code> error.</p>
+        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow access to the key.</p>
+        /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an <code>InvalidInputException</code> error.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1391,9 +1050,7 @@ impl S3Config {
     }
 }
 
-/// <p>Provides a summary of the forecast properties used in the <a>ListForecasts</a>
-/// operation. To get the complete set of properties, call the <a>DescribeForecast</a>
-/// operation, and provide the <code>ForecastArn</code> that is listed in the summary.</p>
+/// <p>Provides a summary of the forecast properties used in the <code>ListForecasts</code> operation. To get the complete set of properties, call the <code>DescribeForecast</code> operation, and provide the <code>ForecastArn</code> that is listed in the summary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ForecastSummary {
@@ -1403,39 +1060,18 @@ pub struct ForecastSummary {
     pub forecast_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the predictor used to generate the forecast.</p>
     pub predictor_arn: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Whether the Forecast was created from an AutoPredictor.</p>
     pub created_using_auto_predictor: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of the dataset group that provided the data used to train
-    /// the predictor.</p>
+    /// <p>The Amazon Resource Name (ARN) of the dataset group that provided the data used to train the predictor.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>The status of the forecast. States include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>The <code>Status</code> of the forecast must be <code>ACTIVE</code> before you can query
-    /// or export the forecast.</p>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>Status</code> of the forecast must be <code>ACTIVE</code> before you can query or export the forecast.</p>
     /// </note>
     pub status: std::option::Option<std::string::String>,
     /// <p>If an error occurred, an informational message about the error.</p>
@@ -1444,27 +1080,11 @@ pub struct ForecastSummary {
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -1481,43 +1101,22 @@ impl ForecastSummary {
     pub fn predictor_arn(&self) -> std::option::Option<&str> {
         self.predictor_arn.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Whether the Forecast was created from an AutoPredictor.</p>
     pub fn created_using_auto_predictor(&self) -> std::option::Option<bool> {
         self.created_using_auto_predictor
     }
-    /// <p>The Amazon Resource Name (ARN) of the dataset group that provided the data used to train
-    /// the predictor.</p>
+    /// <p>The Amazon Resource Name (ARN) of the dataset group that provided the data used to train the predictor.</p>
     pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
     /// <p>The status of the forecast. States include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>The <code>Status</code> of the forecast must be <code>ACTIVE</code> before you can query
-    /// or export the forecast.</p>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>Status</code> of the forecast must be <code>ACTIVE</code> before you can query or export the forecast.</p>
     /// </note>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
@@ -1532,27 +1131,11 @@ impl ForecastSummary {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
@@ -1629,12 +1212,12 @@ pub mod forecast_summary {
             self.predictor_arn = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Whether the Forecast was created from an AutoPredictor.</p>
         pub fn created_using_auto_predictor(mut self, input: bool) -> Self {
             self.created_using_auto_predictor = Some(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Whether the Forecast was created from an AutoPredictor.</p>
         pub fn set_created_using_auto_predictor(
             mut self,
             input: std::option::Option<bool>,
@@ -1642,14 +1225,12 @@ pub mod forecast_summary {
             self.created_using_auto_predictor = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the dataset group that provided the data used to train
-        /// the predictor.</p>
+        /// <p>The Amazon Resource Name (ARN) of the dataset group that provided the data used to train the predictor.</p>
         pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_group_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the dataset group that provided the data used to train
-        /// the predictor.</p>
+        /// <p>The Amazon Resource Name (ARN) of the dataset group that provided the data used to train the predictor.</p>
         pub fn set_dataset_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1659,32 +1240,12 @@ pub mod forecast_summary {
         }
         /// <p>The status of the forecast. States include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>The <code>Status</code> of the forecast must be <code>ACTIVE</code> before you can query
-        /// or export the forecast.</p>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// </ul> <note>
+        /// <p>The <code>Status</code> of the forecast must be <code>ACTIVE</code> before you can query or export the forecast.</p>
         /// </note>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
@@ -1692,32 +1253,12 @@ pub mod forecast_summary {
         }
         /// <p>The status of the forecast. States include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>The <code>Status</code> of the forecast must be <code>ACTIVE</code> before you can query
-        /// or export the forecast.</p>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// </ul> <note>
+        /// <p>The <code>Status</code> of the forecast must be <code>ACTIVE</code> before you can query or export the forecast.</p>
         /// </note>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
@@ -1748,27 +1289,11 @@ pub mod forecast_summary {
         }
         /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
@@ -1776,27 +1301,11 @@ pub mod forecast_summary {
         }
         /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn set_last_modification_time(
             mut self,
@@ -1828,9 +1337,7 @@ impl ForecastSummary {
     }
 }
 
-/// <p>Provides a summary of the forecast export job properties used in the <a>ListForecastExportJobs</a> operation. To get the complete set of properties, call
-/// the <a>DescribeForecastExportJob</a> operation, and provide the listed
-/// <code>ForecastExportJobArn</code>.</p>
+/// <p>Provides a summary of the forecast export job properties used in the <code>ListForecastExportJobs</code> operation. To get the complete set of properties, call the <code>DescribeForecastExportJob</code> operation, and provide the listed <code>ForecastExportJobArn</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ForecastExportJobSummary {
@@ -1842,32 +1349,12 @@ pub struct ForecastExportJobSummary {
     pub destination: std::option::Option<crate::model::DataDestination>,
     /// <p>The status of the forecast export job. States include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before
-    /// you can access the forecast in your S3 bucket.</p>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast in your S3 bucket.</p>
     /// </note>
     pub status: std::option::Option<std::string::String>,
     /// <p>If an error occurred, an informational message about the error.</p>
@@ -1876,27 +1363,11 @@ pub struct ForecastExportJobSummary {
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -1915,32 +1386,12 @@ impl ForecastExportJobSummary {
     }
     /// <p>The status of the forecast export job. States include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before
-    /// you can access the forecast in your S3 bucket.</p>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast in your S3 bucket.</p>
     /// </note>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
@@ -1955,27 +1406,11 @@ impl ForecastExportJobSummary {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
@@ -2050,32 +1485,12 @@ pub mod forecast_export_job_summary {
         }
         /// <p>The status of the forecast export job. States include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before
-        /// you can access the forecast in your S3 bucket.</p>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// </ul> <note>
+        /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast in your S3 bucket.</p>
         /// </note>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
@@ -2083,32 +1498,12 @@ pub mod forecast_export_job_summary {
         }
         /// <p>The status of the forecast export job. States include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before
-        /// you can access the forecast in your S3 bucket.</p>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// </ul> <note>
+        /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast in your S3 bucket.</p>
         /// </note>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
@@ -2139,27 +1534,11 @@ pub mod forecast_export_job_summary {
         }
         /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
@@ -2167,27 +1546,11 @@ pub mod forecast_export_job_summary {
         }
         /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn set_last_modification_time(
             mut self,
@@ -2217,9 +1580,7 @@ impl ForecastExportJobSummary {
     }
 }
 
-/// <p>Provides a summary of the Explainability export properties used in the <a>ListExplainabilityExports</a> operation. To get a complete set of
-/// properties, call the <a>DescribeExplainabilityExport</a> operation, and
-/// provide the <code>ExplainabilityExportArn</code>.</p>
+/// <p>Provides a summary of the Explainability export properties used in the <code>ListExplainabilityExports</code> operation. To get a complete set of properties, call the <code>DescribeExplainabilityExport</code> operation, and provide the <code>ExplainabilityExportArn</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExplainabilityExportSummary {
@@ -2227,64 +1588,27 @@ pub struct ExplainabilityExportSummary {
     pub explainability_export_arn: std::option::Option<std::string::String>,
     /// <p>The name of the Explainability export</p>
     pub explainability_export_name: std::option::Option<std::string::String>,
-    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
-    /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
     pub destination: std::option::Option<crate::model::DataDestination>,
     /// <p>The status of the Explainability export. States include: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
     pub status: std::option::Option<std::string::String>,
-    /// <p>Information about any errors that may have occurred during the Explainability
-    /// export.</p>
+    /// <p>Information about any errors that may have occurred during the Explainability export.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>When the Explainability was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The last time the resource was modified. The timestamp depends on the status of the
-    /// job:</p>
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -2297,41 +1621,21 @@ impl ExplainabilityExportSummary {
     pub fn explainability_export_name(&self) -> std::option::Option<&str> {
         self.explainability_export_name.as_deref()
     }
-    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
-    /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
     pub fn destination(&self) -> std::option::Option<&crate::model::DataDestination> {
         self.destination.as_ref()
     }
     /// <p>The status of the Explainability export. States include: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>Information about any errors that may have occurred during the Explainability
-    /// export.</p>
+    /// <p>Information about any errors that may have occurred during the Explainability export.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
@@ -2339,30 +1643,13 @@ impl ExplainabilityExportSummary {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The last time the resource was modified. The timestamp depends on the status of the
-    /// job:</p>
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
@@ -2425,14 +1712,12 @@ pub mod explainability_export_summary {
             self.explainability_export_name = input;
             self
         }
-        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
-        /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
         pub fn destination(mut self, input: crate::model::DataDestination) -> Self {
             self.destination = Some(input);
             self
         }
-        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
-        /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::DataDestination>,
@@ -2442,28 +1727,10 @@ pub mod explainability_export_summary {
         }
         /// <p>The status of the Explainability export. States include: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
@@ -2471,41 +1738,21 @@ pub mod explainability_export_summary {
         }
         /// <p>The status of the Explainability export. States include: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
         }
-        /// <p>Information about any errors that may have occurred during the Explainability
-        /// export.</p>
+        /// <p>Information about any errors that may have occurred during the Explainability export.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>Information about any errors that may have occurred during the Explainability
-        /// export.</p>
+        /// <p>Information about any errors that may have occurred during the Explainability export.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2523,59 +1770,25 @@ pub mod explainability_export_summary {
             self.creation_time = input;
             self
         }
-        /// <p>The last time the resource was modified. The timestamp depends on the status of the
-        /// job:</p>
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
-        /// <p>The last time the resource was modified. The timestamp depends on the status of the
-        /// job:</p>
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn set_last_modification_time(
             mut self,
@@ -2605,9 +1818,7 @@ impl ExplainabilityExportSummary {
     }
 }
 
-/// <p>Provides a summary of the Explainability properties used in the <a>ListExplainabilities</a> operation. To get a complete set of properties,
-/// call the <a>DescribeExplainability</a> operation, and provide the listed
-/// <code>ExplainabilityArn</code>.</p>
+/// <p>Provides a summary of the Explainability properties used in the <code>ListExplainabilities</code> operation. To get a complete set of properties, call the <code>DescribeExplainability</code> operation, and provide the listed <code>ExplainabilityArn</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExplainabilitySummary {
@@ -2615,67 +1826,29 @@ pub struct ExplainabilitySummary {
     pub explainability_arn: std::option::Option<std::string::String>,
     /// <p>The name of the Explainability.</p>
     pub explainability_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the
-    /// Explainability.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The configuration settings that define the granularity of time series and time points
-    /// for the Explainability.</p>
+    /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
     pub explainability_config: std::option::Option<crate::model::ExplainabilityConfig>,
     /// <p>The status of the Explainability. States include: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
     pub status: std::option::Option<std::string::String>,
-    /// <p>Information about any errors that may have occurred during the Explainability creation
-    /// process.</p>
+    /// <p>Information about any errors that may have occurred during the Explainability creation process.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>When the Explainability was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The last time the resource was modified. The timestamp depends on the status of the
-    /// job:</p>
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -2688,13 +1861,11 @@ impl ExplainabilitySummary {
     pub fn explainability_name(&self) -> std::option::Option<&str> {
         self.explainability_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the
-    /// Explainability.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The configuration settings that define the granularity of time series and time points
-    /// for the Explainability.</p>
+    /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
     pub fn explainability_config(
         &self,
     ) -> std::option::Option<&crate::model::ExplainabilityConfig> {
@@ -2702,34 +1873,15 @@ impl ExplainabilitySummary {
     }
     /// <p>The status of the Explainability. States include: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>Information about any errors that may have occurred during the Explainability creation
-    /// process.</p>
+    /// <p>Information about any errors that may have occurred during the Explainability creation process.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
@@ -2737,30 +1889,13 @@ impl ExplainabilitySummary {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The last time the resource was modified. The timestamp depends on the status of the
-    /// job:</p>
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
@@ -2822,26 +1957,22 @@ pub mod explainability_summary {
             self.explainability_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the
-        /// Explainability.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the
-        /// Explainability.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
-        /// <p>The configuration settings that define the granularity of time series and time points
-        /// for the Explainability.</p>
+        /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
         pub fn explainability_config(mut self, input: crate::model::ExplainabilityConfig) -> Self {
             self.explainability_config = Some(input);
             self
         }
-        /// <p>The configuration settings that define the granularity of time series and time points
-        /// for the Explainability.</p>
+        /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
         pub fn set_explainability_config(
             mut self,
             input: std::option::Option<crate::model::ExplainabilityConfig>,
@@ -2851,28 +1982,10 @@ pub mod explainability_summary {
         }
         /// <p>The status of the Explainability. States include: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
@@ -2880,41 +1993,21 @@ pub mod explainability_summary {
         }
         /// <p>The status of the Explainability. States include: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
         }
-        /// <p>Information about any errors that may have occurred during the Explainability creation
-        /// process.</p>
+        /// <p>Information about any errors that may have occurred during the Explainability creation process.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>Information about any errors that may have occurred during the Explainability creation
-        /// process.</p>
+        /// <p>Information about any errors that may have occurred during the Explainability creation process.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2932,59 +2025,25 @@ pub mod explainability_summary {
             self.creation_time = input;
             self
         }
-        /// <p>The last time the resource was modified. The timestamp depends on the status of the
-        /// job:</p>
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
-        /// <p>The last time the resource was modified. The timestamp depends on the status of the
-        /// job:</p>
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn set_last_modification_time(
             mut self,
@@ -3015,46 +2074,29 @@ impl ExplainabilitySummary {
     }
 }
 
-/// <p>The ExplainabilityConfig data type defines the number of time series and time points
-/// included in <a>CreateExplainability</a>.</p>
-/// <p>If you provide a predictor ARN for <code>ResourceArn</code>, you must set both
-/// <code>TimePointGranularity</code> and <code>TimeSeriesGranularity</code> to “ALL”.
-/// When creating Predictor Explainability, Amazon Forecast considers all time series and
-/// time points.</p>
-/// <p>If you provide a forecast ARN for <code>ResourceArn</code>, you can set <code>TimePointGranularity</code> and
-/// <code>TimeSeriesGranularity</code> to either “ALL” or “Specific”.</p>
+/// <p>The ExplainabilityConfig data type defines the number of time series and time points included in <code>CreateExplainability</code>.</p>
+/// <p>If you provide a predictor ARN for <code>ResourceArn</code>, you must set both <code>TimePointGranularity</code> and <code>TimeSeriesGranularity</code> to “ALL”. When creating Predictor Explainability, Amazon Forecast considers all time series and time points.</p>
+/// <p>If you provide a forecast ARN for <code>ResourceArn</code>, you can set <code>TimePointGranularity</code> and <code>TimeSeriesGranularity</code> to either “ALL” or “Specific”.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExplainabilityConfig {
-    /// <p>To create an Explainability for all time series in your datasets, use
-    /// <code>ALL</code>. To create an Explainability for specific time series in your datasets,
-    /// use <code>SPECIFIC</code>.</p>
-    /// <p>Specify time series by uploading a CSV file to an Amazon S3 bucket and set the location
-    /// within the <a>DataDestination</a> data type.</p>
+    /// <p>To create an Explainability for all time series in your datasets, use <code>ALL</code>. To create an Explainability for specific time series in your datasets, use <code>SPECIFIC</code>.</p>
+    /// <p>Specify time series by uploading a CSV file to an Amazon S3 bucket and set the location within the <code>DataDestination</code> data type.</p>
     pub time_series_granularity: std::option::Option<crate::model::TimeSeriesGranularity>,
-    /// <p>To create an Explainability for all time points in your forecast horizon, use
-    /// <code>ALL</code>. To create an Explainability for specific time points in your
-    /// forecast horizon, use <code>SPECIFIC</code>.</p>
-    /// <p>Specify time points with the <code>StartDateTime</code> and <code>EndDateTime</code>
-    /// parameters within the <a>CreateExplainability</a> operation.</p>
+    /// <p>To create an Explainability for all time points in your forecast horizon, use <code>ALL</code>. To create an Explainability for specific time points in your forecast horizon, use <code>SPECIFIC</code>.</p>
+    /// <p>Specify time points with the <code>StartDateTime</code> and <code>EndDateTime</code> parameters within the <code>CreateExplainability</code> operation.</p>
     pub time_point_granularity: std::option::Option<crate::model::TimePointGranularity>,
 }
 impl ExplainabilityConfig {
-    /// <p>To create an Explainability for all time series in your datasets, use
-    /// <code>ALL</code>. To create an Explainability for specific time series in your datasets,
-    /// use <code>SPECIFIC</code>.</p>
-    /// <p>Specify time series by uploading a CSV file to an Amazon S3 bucket and set the location
-    /// within the <a>DataDestination</a> data type.</p>
+    /// <p>To create an Explainability for all time series in your datasets, use <code>ALL</code>. To create an Explainability for specific time series in your datasets, use <code>SPECIFIC</code>.</p>
+    /// <p>Specify time series by uploading a CSV file to an Amazon S3 bucket and set the location within the <code>DataDestination</code> data type.</p>
     pub fn time_series_granularity(
         &self,
     ) -> std::option::Option<&crate::model::TimeSeriesGranularity> {
         self.time_series_granularity.as_ref()
     }
-    /// <p>To create an Explainability for all time points in your forecast horizon, use
-    /// <code>ALL</code>. To create an Explainability for specific time points in your
-    /// forecast horizon, use <code>SPECIFIC</code>.</p>
-    /// <p>Specify time points with the <code>StartDateTime</code> and <code>EndDateTime</code>
-    /// parameters within the <a>CreateExplainability</a> operation.</p>
+    /// <p>To create an Explainability for all time points in your forecast horizon, use <code>ALL</code>. To create an Explainability for specific time points in your forecast horizon, use <code>SPECIFIC</code>.</p>
+    /// <p>Specify time points with the <code>StartDateTime</code> and <code>EndDateTime</code> parameters within the <code>CreateExplainability</code> operation.</p>
     pub fn time_point_granularity(
         &self,
     ) -> std::option::Option<&crate::model::TimePointGranularity> {
@@ -3080,11 +2122,8 @@ pub mod explainability_config {
         pub(crate) time_point_granularity: std::option::Option<crate::model::TimePointGranularity>,
     }
     impl Builder {
-        /// <p>To create an Explainability for all time series in your datasets, use
-        /// <code>ALL</code>. To create an Explainability for specific time series in your datasets,
-        /// use <code>SPECIFIC</code>.</p>
-        /// <p>Specify time series by uploading a CSV file to an Amazon S3 bucket and set the location
-        /// within the <a>DataDestination</a> data type.</p>
+        /// <p>To create an Explainability for all time series in your datasets, use <code>ALL</code>. To create an Explainability for specific time series in your datasets, use <code>SPECIFIC</code>.</p>
+        /// <p>Specify time series by uploading a CSV file to an Amazon S3 bucket and set the location within the <code>DataDestination</code> data type.</p>
         pub fn time_series_granularity(
             mut self,
             input: crate::model::TimeSeriesGranularity,
@@ -3092,11 +2131,8 @@ pub mod explainability_config {
             self.time_series_granularity = Some(input);
             self
         }
-        /// <p>To create an Explainability for all time series in your datasets, use
-        /// <code>ALL</code>. To create an Explainability for specific time series in your datasets,
-        /// use <code>SPECIFIC</code>.</p>
-        /// <p>Specify time series by uploading a CSV file to an Amazon S3 bucket and set the location
-        /// within the <a>DataDestination</a> data type.</p>
+        /// <p>To create an Explainability for all time series in your datasets, use <code>ALL</code>. To create an Explainability for specific time series in your datasets, use <code>SPECIFIC</code>.</p>
+        /// <p>Specify time series by uploading a CSV file to an Amazon S3 bucket and set the location within the <code>DataDestination</code> data type.</p>
         pub fn set_time_series_granularity(
             mut self,
             input: std::option::Option<crate::model::TimeSeriesGranularity>,
@@ -3104,20 +2140,14 @@ pub mod explainability_config {
             self.time_series_granularity = input;
             self
         }
-        /// <p>To create an Explainability for all time points in your forecast horizon, use
-        /// <code>ALL</code>. To create an Explainability for specific time points in your
-        /// forecast horizon, use <code>SPECIFIC</code>.</p>
-        /// <p>Specify time points with the <code>StartDateTime</code> and <code>EndDateTime</code>
-        /// parameters within the <a>CreateExplainability</a> operation.</p>
+        /// <p>To create an Explainability for all time points in your forecast horizon, use <code>ALL</code>. To create an Explainability for specific time points in your forecast horizon, use <code>SPECIFIC</code>.</p>
+        /// <p>Specify time points with the <code>StartDateTime</code> and <code>EndDateTime</code> parameters within the <code>CreateExplainability</code> operation.</p>
         pub fn time_point_granularity(mut self, input: crate::model::TimePointGranularity) -> Self {
             self.time_point_granularity = Some(input);
             self
         }
-        /// <p>To create an Explainability for all time points in your forecast horizon, use
-        /// <code>ALL</code>. To create an Explainability for specific time points in your
-        /// forecast horizon, use <code>SPECIFIC</code>.</p>
-        /// <p>Specify time points with the <code>StartDateTime</code> and <code>EndDateTime</code>
-        /// parameters within the <a>CreateExplainability</a> operation.</p>
+        /// <p>To create an Explainability for all time points in your forecast horizon, use <code>ALL</code>. To create an Explainability for specific time points in your forecast horizon, use <code>SPECIFIC</code>.</p>
+        /// <p>Specify time points with the <code>StartDateTime</code> and <code>EndDateTime</code> parameters within the <code>CreateExplainability</code> operation.</p>
         pub fn set_time_point_granularity(
             mut self,
             input: std::option::Option<crate::model::TimePointGranularity>,
@@ -3251,9 +2281,7 @@ impl AsRef<str> for TimeSeriesGranularity {
     }
 }
 
-/// <p>Provides a summary of the dataset properties used in the <a>ListDatasets</a>
-/// operation. To get the complete set of properties, call the <a>DescribeDataset</a>
-/// operation, and provide the <code>DatasetArn</code>.</p>
+/// <p>Provides a summary of the dataset properties used in the <code>ListDatasets</code> operation. To get the complete set of properties, call the <code>DescribeDataset</code> operation, and provide the <code>DatasetArn</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetSummary {
@@ -3267,11 +2295,7 @@ pub struct DatasetSummary {
     pub domain: std::option::Option<crate::model::Domain>,
     /// <p>When the dataset was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as
-    /// <code>CreationTime</code>. While data is being imported to the dataset,
-    /// <code>LastModificationTime</code> is the current time of the <code>ListDatasets</code> call.
-    /// After a <a>CreateDatasetImportJob</a> operation has finished,
-    /// <code>LastModificationTime</code> is when the import job completed or failed.</p>
+    /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>ListDatasets</code> call. After a <code>CreateDatasetImportJob</code> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DatasetSummary {
@@ -3295,11 +2319,7 @@ impl DatasetSummary {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as
-    /// <code>CreationTime</code>. While data is being imported to the dataset,
-    /// <code>LastModificationTime</code> is the current time of the <code>ListDatasets</code> call.
-    /// After a <a>CreateDatasetImportJob</a> operation has finished,
-    /// <code>LastModificationTime</code> is when the import job completed or failed.</p>
+    /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>ListDatasets</code> call. After a <code>CreateDatasetImportJob</code> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
@@ -3386,20 +2406,12 @@ pub mod dataset_summary {
             self.creation_time = input;
             self
         }
-        /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as
-        /// <code>CreationTime</code>. While data is being imported to the dataset,
-        /// <code>LastModificationTime</code> is the current time of the <code>ListDatasets</code> call.
-        /// After a <a>CreateDatasetImportJob</a> operation has finished,
-        /// <code>LastModificationTime</code> is when the import job completed or failed.</p>
+        /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>ListDatasets</code> call. After a <code>CreateDatasetImportJob</code> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
-        /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as
-        /// <code>CreationTime</code>. While data is being imported to the dataset,
-        /// <code>LastModificationTime</code> is the current time of the <code>ListDatasets</code> call.
-        /// After a <a>CreateDatasetImportJob</a> operation has finished,
-        /// <code>LastModificationTime</code> is when the import job completed or failed.</p>
+        /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>ListDatasets</code> call. After a <code>CreateDatasetImportJob</code> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
         pub fn set_last_modification_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3569,9 +2581,7 @@ impl AsRef<str> for DatasetType {
     }
 }
 
-/// <p>Provides a summary of the dataset import job properties used in the <a>ListDatasetImportJobs</a> operation. To get the complete set of properties, call the
-/// <a>DescribeDatasetImportJob</a> operation, and provide the
-/// <code>DatasetImportJobArn</code>.</p>
+/// <p>Provides a summary of the dataset import job properties used in the <code>ListDatasetImportJobs</code> operation. To get the complete set of properties, call the <code>DescribeDatasetImportJob</code> operation, and provide the <code>DatasetImportJobArn</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetImportJobSummary {
@@ -3579,64 +2589,28 @@ pub struct DatasetImportJobSummary {
     pub dataset_import_job_arn: std::option::Option<std::string::String>,
     /// <p>The name of the dataset import job.</p>
     pub dataset_import_job_name: std::option::Option<std::string::String>,
-    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast
-    /// can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
+    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
     /// <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.</p>
     pub data_source: std::option::Option<crate::model::DataSource>,
     /// <p>The status of the dataset import job. States include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>If an error occurred, an informational message about the error.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>When the dataset import job was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The last time the resource was modified. The timestamp depends on the status of the
-    /// job:</p>
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -3649,36 +2623,17 @@ impl DatasetImportJobSummary {
     pub fn dataset_import_job_name(&self) -> std::option::Option<&str> {
         self.dataset_import_job_name.as_deref()
     }
-    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast
-    /// can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
+    /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
     /// <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.</p>
     pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
         self.data_source.as_ref()
     }
     /// <p>The status of the dataset import job. States include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-    /// <code>DELETE_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
@@ -3691,30 +2646,13 @@ impl DatasetImportJobSummary {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The last time the resource was modified. The timestamp depends on the status of the
-    /// job:</p>
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-    /// failed.</p>
-    /// </li>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
@@ -3774,15 +2712,13 @@ pub mod dataset_import_job_summary {
             self.dataset_import_job_name = input;
             self
         }
-        /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast
-        /// can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
+        /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
         /// <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.</p>
         pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
             self.data_source = Some(input);
             self
         }
-        /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast
-        /// can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
+        /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
         /// <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.</p>
         pub fn set_data_source(
             mut self,
@@ -3793,28 +2729,10 @@ pub mod dataset_import_job_summary {
         }
         /// <p>The status of the dataset import job. States include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
@@ -3822,28 +2740,10 @@ pub mod dataset_import_job_summary {
         }
         /// <p>The status of the dataset import job. States include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
@@ -3872,59 +2772,25 @@ pub mod dataset_import_job_summary {
             self.creation_time = input;
             self
         }
-        /// <p>The last time the resource was modified. The timestamp depends on the status of the
-        /// job:</p>
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
-        /// <p>The last time the resource was modified. The timestamp depends on the status of the
-        /// job:</p>
+        /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPING</code> - The current timestamp.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_STOPPED</code> - When the job stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-        /// failed.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+        /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
         /// </ul>
         pub fn set_last_modification_time(
             mut self,
@@ -3954,19 +2820,15 @@ impl DatasetImportJobSummary {
     }
 }
 
-/// <p>The source of your training data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to
-/// access the data and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the
-/// <a>CreateDatasetImportJob</a> request.</p>
+/// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSource {
-    /// <p>The path to the training data stored in an Amazon Simple Storage Service (Amazon S3) bucket along with the
-    /// credentials to access the data.</p>
+    /// <p>The path to the data stored in an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the data.</p>
     pub s3_config: std::option::Option<crate::model::S3Config>,
 }
 impl DataSource {
-    /// <p>The path to the training data stored in an Amazon Simple Storage Service (Amazon S3) bucket along with the
-    /// credentials to access the data.</p>
+    /// <p>The path to the data stored in an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the data.</p>
     pub fn s3_config(&self) -> std::option::Option<&crate::model::S3Config> {
         self.s3_config.as_ref()
     }
@@ -3987,14 +2849,12 @@ pub mod data_source {
         pub(crate) s3_config: std::option::Option<crate::model::S3Config>,
     }
     impl Builder {
-        /// <p>The path to the training data stored in an Amazon Simple Storage Service (Amazon S3) bucket along with the
-        /// credentials to access the data.</p>
+        /// <p>The path to the data stored in an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the data.</p>
         pub fn s3_config(mut self, input: crate::model::S3Config) -> Self {
             self.s3_config = Some(input);
             self
         }
-        /// <p>The path to the training data stored in an Amazon Simple Storage Service (Amazon S3) bucket along with the
-        /// credentials to access the data.</p>
+        /// <p>The path to the data stored in an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the data.</p>
         pub fn set_s3_config(mut self, input: std::option::Option<crate::model::S3Config>) -> Self {
             self.s3_config = input;
             self
@@ -4014,9 +2874,7 @@ impl DataSource {
     }
 }
 
-/// <p>Provides a summary of the dataset group properties used in the <a>ListDatasetGroups</a> operation. To get the complete set of properties, call the
-/// <a>DescribeDatasetGroup</a> operation, and provide the
-/// <code>DatasetGroupArn</code>.</p>
+/// <p>Provides a summary of the dataset group properties used in the <code>ListDatasetGroups</code> operation. To get the complete set of properties, call the <code>DescribeDatasetGroup</code> operation, and provide the <code>DatasetGroupArn</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetGroupSummary {
@@ -4026,9 +2884,7 @@ pub struct DatasetGroupSummary {
     pub dataset_group_name: std::option::Option<std::string::String>,
     /// <p>When the dataset group was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation. While the dataset group is being updated,
-    /// <code>LastModificationTime</code> is the current time of the <code>ListDatasetGroups</code>
-    /// call.</p>
+    /// <p>When the dataset group was created or last updated from a call to the <code>UpdateDatasetGroup</code> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>ListDatasetGroups</code> call.</p>
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DatasetGroupSummary {
@@ -4044,9 +2900,7 @@ impl DatasetGroupSummary {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation. While the dataset group is being updated,
-    /// <code>LastModificationTime</code> is the current time of the <code>ListDatasetGroups</code>
-    /// call.</p>
+    /// <p>When the dataset group was created or last updated from a call to the <code>UpdateDatasetGroup</code> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>ListDatasetGroups</code> call.</p>
     pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
@@ -4112,16 +2966,12 @@ pub mod dataset_group_summary {
             self.creation_time = input;
             self
         }
-        /// <p>When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation. While the dataset group is being updated,
-        /// <code>LastModificationTime</code> is the current time of the <code>ListDatasetGroups</code>
-        /// call.</p>
+        /// <p>When the dataset group was created or last updated from a call to the <code>UpdateDatasetGroup</code> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>ListDatasetGroups</code> call.</p>
         pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modification_time = Some(input);
             self
         }
-        /// <p>When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation. While the dataset group is being updated,
-        /// <code>LastModificationTime</code> is the current time of the <code>ListDatasetGroups</code>
-        /// call.</p>
+        /// <p>When the dataset group was created or last updated from a call to the <code>UpdateDatasetGroup</code> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>ListDatasetGroups</code> call.</p>
         pub fn set_last_modification_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4275,15 +3125,13 @@ impl AsRef<str> for AutoMlOverrideStrategy {
     }
 }
 
-/// <p>The results of evaluating an algorithm. Returned as part of the <a>GetAccuracyMetrics</a> response.</p>
+/// <p>The results of evaluating an algorithm. Returned as part of the <code>GetAccuracyMetrics</code> response.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluationResult {
     /// <p>The Amazon Resource Name (ARN) of the algorithm that was evaluated.</p>
     pub algorithm_arn: std::option::Option<std::string::String>,
-    /// <p>The array of test windows used for evaluating the algorithm. The
-    /// <code>NumberOfBacktestWindows</code> from the <a>EvaluationParameters</a> object
-    /// determines the number of windows in the array.</p>
+    /// <p>The array of test windows used for evaluating the algorithm. The <code>NumberOfBacktestWindows</code> from the <code>EvaluationParameters</code> object determines the number of windows in the array.</p>
     pub test_windows: std::option::Option<std::vec::Vec<crate::model::WindowSummary>>,
 }
 impl EvaluationResult {
@@ -4291,9 +3139,7 @@ impl EvaluationResult {
     pub fn algorithm_arn(&self) -> std::option::Option<&str> {
         self.algorithm_arn.as_deref()
     }
-    /// <p>The array of test windows used for evaluating the algorithm. The
-    /// <code>NumberOfBacktestWindows</code> from the <a>EvaluationParameters</a> object
-    /// determines the number of windows in the array.</p>
+    /// <p>The array of test windows used for evaluating the algorithm. The <code>NumberOfBacktestWindows</code> from the <code>EvaluationParameters</code> object determines the number of windows in the array.</p>
     pub fn test_windows(&self) -> std::option::Option<&[crate::model::WindowSummary]> {
         self.test_windows.as_deref()
     }
@@ -4333,18 +3179,14 @@ pub mod evaluation_result {
         ///
         /// To override the contents of this collection use [`set_test_windows`](Self::set_test_windows).
         ///
-        /// <p>The array of test windows used for evaluating the algorithm. The
-        /// <code>NumberOfBacktestWindows</code> from the <a>EvaluationParameters</a> object
-        /// determines the number of windows in the array.</p>
-        pub fn test_windows(mut self, input: impl Into<crate::model::WindowSummary>) -> Self {
+        /// <p>The array of test windows used for evaluating the algorithm. The <code>NumberOfBacktestWindows</code> from the <code>EvaluationParameters</code> object determines the number of windows in the array.</p>
+        pub fn test_windows(mut self, input: crate::model::WindowSummary) -> Self {
             let mut v = self.test_windows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.test_windows = Some(v);
             self
         }
-        /// <p>The array of test windows used for evaluating the algorithm. The
-        /// <code>NumberOfBacktestWindows</code> from the <a>EvaluationParameters</a> object
-        /// determines the number of windows in the array.</p>
+        /// <p>The array of test windows used for evaluating the algorithm. The <code>NumberOfBacktestWindows</code> from the <code>EvaluationParameters</code> object determines the number of windows in the array.</p>
         pub fn set_test_windows(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::WindowSummary>>,
@@ -4368,10 +3210,8 @@ impl EvaluationResult {
     }
 }
 
-/// <p>The metrics for a time range within the evaluation portion of a dataset. This object is
-/// part of the <a>EvaluationResult</a> object.</p>
-/// <p>The <code>TestWindowStart</code> and <code>TestWindowEnd</code> parameters are determined
-/// by the <code>BackTestWindowOffset</code> parameter of the <a>EvaluationParameters</a> object.</p>
+/// <p>The metrics for a time range within the evaluation portion of a dataset. This object is part of the <code>EvaluationResult</code> object.</p>
+/// <p>The <code>TestWindowStart</code> and <code>TestWindowEnd</code> parameters are determined by the <code>BackTestWindowOffset</code> parameter of the <code>EvaluationParameters</code> object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WindowSummary {
@@ -4383,14 +3223,8 @@ pub struct WindowSummary {
     pub item_count: std::option::Option<i32>,
     /// <p>The type of evaluation.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SUMMARY</code> - The average metrics across all windows.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COMPUTED</code> - The metrics for the specified window.</p>
-    /// </li>
+    /// <li> <p> <code>SUMMARY</code> - The average metrics across all windows.</p> </li>
+    /// <li> <p> <code>COMPUTED</code> - The metrics for the specified window.</p> </li>
     /// </ul>
     pub evaluation_type: std::option::Option<crate::model::EvaluationType>,
     /// <p>Provides metrics used to evaluate the performance of a predictor.</p>
@@ -4411,14 +3245,8 @@ impl WindowSummary {
     }
     /// <p>The type of evaluation.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SUMMARY</code> - The average metrics across all windows.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COMPUTED</code> - The metrics for the specified window.</p>
-    /// </li>
+    /// <li> <p> <code>SUMMARY</code> - The average metrics across all windows.</p> </li>
+    /// <li> <p> <code>COMPUTED</code> - The metrics for the specified window.</p> </li>
     /// </ul>
     pub fn evaluation_type(&self) -> std::option::Option<&crate::model::EvaluationType> {
         self.evaluation_type.as_ref()
@@ -4490,14 +3318,8 @@ pub mod window_summary {
         }
         /// <p>The type of evaluation.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SUMMARY</code> - The average metrics across all windows.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COMPUTED</code> - The metrics for the specified window.</p>
-        /// </li>
+        /// <li> <p> <code>SUMMARY</code> - The average metrics across all windows.</p> </li>
+        /// <li> <p> <code>COMPUTED</code> - The metrics for the specified window.</p> </li>
         /// </ul>
         pub fn evaluation_type(mut self, input: crate::model::EvaluationType) -> Self {
             self.evaluation_type = Some(input);
@@ -4505,14 +3327,8 @@ pub mod window_summary {
         }
         /// <p>The type of evaluation.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SUMMARY</code> - The average metrics across all windows.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COMPUTED</code> - The metrics for the specified window.</p>
-        /// </li>
+        /// <li> <p> <code>SUMMARY</code> - The average metrics across all windows.</p> </li>
+        /// <li> <p> <code>COMPUTED</code> - The metrics for the specified window.</p> </li>
         /// </ul>
         pub fn set_evaluation_type(
             mut self,
@@ -4550,20 +3366,16 @@ impl WindowSummary {
     }
 }
 
-/// <p>Provides metrics that are used to evaluate the performance of a predictor. This object is
-/// part of the <a>WindowSummary</a> object.</p>
+/// <p>Provides metrics that are used to evaluate the performance of a predictor. This object is part of the <code>WindowSummary</code> object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Metrics {
     /// <p>The root-mean-square error (RMSE).</p>
     pub rmse: std::option::Option<f64>,
-    /// <p>An array of weighted quantile losses. Quantiles divide a probability distribution into
-    /// regions of equal probability. The distribution in this case is the loss function.</p>
+    /// <p>An array of weighted quantile losses. Quantiles divide a probability distribution into regions of equal probability. The distribution in this case is the loss function.</p>
     pub weighted_quantile_losses:
         std::option::Option<std::vec::Vec<crate::model::WeightedQuantileLoss>>,
-    /// <p> Provides detailed error metrics for each forecast type. Metrics include root-mean
-    /// square-error (RMSE), mean absolute percentage error (MAPE), mean absolute scaled error (MASE),
-    /// and weighted average percentage error (WAPE). </p>
+    /// <p> Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage error (WAPE). </p>
     pub error_metrics: std::option::Option<std::vec::Vec<crate::model::ErrorMetric>>,
     /// <p>The average value of all weighted quantile losses.</p>
     pub average_weighted_quantile_loss: std::option::Option<f64>,
@@ -4573,16 +3385,13 @@ impl Metrics {
     pub fn rmse(&self) -> std::option::Option<f64> {
         self.rmse
     }
-    /// <p>An array of weighted quantile losses. Quantiles divide a probability distribution into
-    /// regions of equal probability. The distribution in this case is the loss function.</p>
+    /// <p>An array of weighted quantile losses. Quantiles divide a probability distribution into regions of equal probability. The distribution in this case is the loss function.</p>
     pub fn weighted_quantile_losses(
         &self,
     ) -> std::option::Option<&[crate::model::WeightedQuantileLoss]> {
         self.weighted_quantile_losses.as_deref()
     }
-    /// <p> Provides detailed error metrics for each forecast type. Metrics include root-mean
-    /// square-error (RMSE), mean absolute percentage error (MAPE), mean absolute scaled error (MASE),
-    /// and weighted average percentage error (WAPE). </p>
+    /// <p> Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage error (WAPE). </p>
     pub fn error_metrics(&self) -> std::option::Option<&[crate::model::ErrorMetric]> {
         self.error_metrics.as_deref()
     }
@@ -4631,19 +3440,17 @@ pub mod metrics {
         ///
         /// To override the contents of this collection use [`set_weighted_quantile_losses`](Self::set_weighted_quantile_losses).
         ///
-        /// <p>An array of weighted quantile losses. Quantiles divide a probability distribution into
-        /// regions of equal probability. The distribution in this case is the loss function.</p>
+        /// <p>An array of weighted quantile losses. Quantiles divide a probability distribution into regions of equal probability. The distribution in this case is the loss function.</p>
         pub fn weighted_quantile_losses(
             mut self,
-            input: impl Into<crate::model::WeightedQuantileLoss>,
+            input: crate::model::WeightedQuantileLoss,
         ) -> Self {
             let mut v = self.weighted_quantile_losses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.weighted_quantile_losses = Some(v);
             self
         }
-        /// <p>An array of weighted quantile losses. Quantiles divide a probability distribution into
-        /// regions of equal probability. The distribution in this case is the loss function.</p>
+        /// <p>An array of weighted quantile losses. Quantiles divide a probability distribution into regions of equal probability. The distribution in this case is the loss function.</p>
         pub fn set_weighted_quantile_losses(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::WeightedQuantileLoss>>,
@@ -4655,18 +3462,14 @@ pub mod metrics {
         ///
         /// To override the contents of this collection use [`set_error_metrics`](Self::set_error_metrics).
         ///
-        /// <p> Provides detailed error metrics for each forecast type. Metrics include root-mean
-        /// square-error (RMSE), mean absolute percentage error (MAPE), mean absolute scaled error (MASE),
-        /// and weighted average percentage error (WAPE). </p>
-        pub fn error_metrics(mut self, input: impl Into<crate::model::ErrorMetric>) -> Self {
+        /// <p> Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage error (WAPE). </p>
+        pub fn error_metrics(mut self, input: crate::model::ErrorMetric) -> Self {
             let mut v = self.error_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.error_metrics = Some(v);
             self
         }
-        /// <p> Provides detailed error metrics for each forecast type. Metrics include root-mean
-        /// square-error (RMSE), mean absolute percentage error (MAPE), mean absolute scaled error (MASE),
-        /// and weighted average percentage error (WAPE). </p>
+        /// <p> Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage error (WAPE). </p>
         pub fn set_error_metrics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ErrorMetric>>,
@@ -4705,8 +3508,7 @@ impl Metrics {
     }
 }
 
-/// <p> Provides detailed error metrics to evaluate the performance of a predictor. This object
-/// is part of the <a>Metrics</a> object. </p>
+/// <p> Provides detailed error metrics to evaluate the performance of a predictor. This object is part of the <code>Metrics</code> object. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorMetric {
@@ -4839,27 +3641,21 @@ impl ErrorMetric {
     }
 }
 
-/// <p>The weighted loss value for a quantile. This object is part of the <a>Metrics</a> object.</p>
+/// <p>The weighted loss value for a quantile. This object is part of the <code>Metrics</code> object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WeightedQuantileLoss {
-    /// <p>The quantile. Quantiles divide a probability distribution into regions of equal
-    /// probability. For example, if the distribution was divided into 5 regions of equal probability,
-    /// the quantiles would be 0.2, 0.4, 0.6, and 0.8.</p>
+    /// <p>The quantile. Quantiles divide a probability distribution into regions of equal probability. For example, if the distribution was divided into 5 regions of equal probability, the quantiles would be 0.2, 0.4, 0.6, and 0.8.</p>
     pub quantile: std::option::Option<f64>,
-    /// <p>The difference between the predicted value and the actual value over the quantile,
-    /// weighted (normalized) by dividing by the sum over all quantiles.</p>
+    /// <p>The difference between the predicted value and the actual value over the quantile, weighted (normalized) by dividing by the sum over all quantiles.</p>
     pub loss_value: std::option::Option<f64>,
 }
 impl WeightedQuantileLoss {
-    /// <p>The quantile. Quantiles divide a probability distribution into regions of equal
-    /// probability. For example, if the distribution was divided into 5 regions of equal probability,
-    /// the quantiles would be 0.2, 0.4, 0.6, and 0.8.</p>
+    /// <p>The quantile. Quantiles divide a probability distribution into regions of equal probability. For example, if the distribution was divided into 5 regions of equal probability, the quantiles would be 0.2, 0.4, 0.6, and 0.8.</p>
     pub fn quantile(&self) -> std::option::Option<f64> {
         self.quantile
     }
-    /// <p>The difference between the predicted value and the actual value over the quantile,
-    /// weighted (normalized) by dividing by the sum over all quantiles.</p>
+    /// <p>The difference between the predicted value and the actual value over the quantile, weighted (normalized) by dividing by the sum over all quantiles.</p>
     pub fn loss_value(&self) -> std::option::Option<f64> {
         self.loss_value
     }
@@ -4882,28 +3678,22 @@ pub mod weighted_quantile_loss {
         pub(crate) loss_value: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>The quantile. Quantiles divide a probability distribution into regions of equal
-        /// probability. For example, if the distribution was divided into 5 regions of equal probability,
-        /// the quantiles would be 0.2, 0.4, 0.6, and 0.8.</p>
+        /// <p>The quantile. Quantiles divide a probability distribution into regions of equal probability. For example, if the distribution was divided into 5 regions of equal probability, the quantiles would be 0.2, 0.4, 0.6, and 0.8.</p>
         pub fn quantile(mut self, input: f64) -> Self {
             self.quantile = Some(input);
             self
         }
-        /// <p>The quantile. Quantiles divide a probability distribution into regions of equal
-        /// probability. For example, if the distribution was divided into 5 regions of equal probability,
-        /// the quantiles would be 0.2, 0.4, 0.6, and 0.8.</p>
+        /// <p>The quantile. Quantiles divide a probability distribution into regions of equal probability. For example, if the distribution was divided into 5 regions of equal probability, the quantiles would be 0.2, 0.4, 0.6, and 0.8.</p>
         pub fn set_quantile(mut self, input: std::option::Option<f64>) -> Self {
             self.quantile = input;
             self
         }
-        /// <p>The difference between the predicted value and the actual value over the quantile,
-        /// weighted (normalized) by dividing by the sum over all quantiles.</p>
+        /// <p>The difference between the predicted value and the actual value over the quantile, weighted (normalized) by dividing by the sum over all quantiles.</p>
         pub fn loss_value(mut self, input: f64) -> Self {
             self.loss_value = Some(input);
             self
         }
-        /// <p>The difference between the predicted value and the actual value over the quantile,
-        /// weighted (normalized) by dividing by the sum over all quantiles.</p>
+        /// <p>The difference between the predicted value and the actual value over the quantile, weighted (normalized) by dividing by the sum over all quantiles.</p>
         pub fn set_loss_value(mut self, input: std::option::Option<f64>) -> Self {
             self.loss_value = input;
             self
@@ -4979,21 +3769,15 @@ impl AsRef<str> for EvaluationType {
     }
 }
 
-/// <p>Contains details on the backtests performed to evaluate the accuracy of the predictor. The
-/// tests are returned in descending order of accuracy, with the most accurate backtest appearing
-/// first. You specify the number of backtests to perform when you call the  operation.</p>
+/// <p>Contains details on the backtests performed to evaluate the accuracy of the predictor. The tests are returned in descending order of accuracy, with the most accurate backtest appearing first. You specify the number of backtests to perform when you call the operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PredictorExecutionDetails {
-    /// <p>An array of the backtests performed to evaluate the accuracy of the predictor against a
-    /// particular algorithm. The <code>NumberOfBacktestWindows</code> from the  object determines the number of windows in the
-    /// array.</p>
+    /// <p>An array of the backtests performed to evaluate the accuracy of the predictor against a particular algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
     pub predictor_executions: std::option::Option<std::vec::Vec<crate::model::PredictorExecution>>,
 }
 impl PredictorExecutionDetails {
-    /// <p>An array of the backtests performed to evaluate the accuracy of the predictor against a
-    /// particular algorithm. The <code>NumberOfBacktestWindows</code> from the  object determines the number of windows in the
-    /// array.</p>
+    /// <p>An array of the backtests performed to evaluate the accuracy of the predictor against a particular algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
     pub fn predictor_executions(&self) -> std::option::Option<&[crate::model::PredictorExecution]> {
         self.predictor_executions.as_deref()
     }
@@ -5019,21 +3803,14 @@ pub mod predictor_execution_details {
         ///
         /// To override the contents of this collection use [`set_predictor_executions`](Self::set_predictor_executions).
         ///
-        /// <p>An array of the backtests performed to evaluate the accuracy of the predictor against a
-        /// particular algorithm. The <code>NumberOfBacktestWindows</code> from the  object determines the number of windows in the
-        /// array.</p>
-        pub fn predictor_executions(
-            mut self,
-            input: impl Into<crate::model::PredictorExecution>,
-        ) -> Self {
+        /// <p>An array of the backtests performed to evaluate the accuracy of the predictor against a particular algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
+        pub fn predictor_executions(mut self, input: crate::model::PredictorExecution) -> Self {
             let mut v = self.predictor_executions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.predictor_executions = Some(v);
             self
         }
-        /// <p>An array of the backtests performed to evaluate the accuracy of the predictor against a
-        /// particular algorithm. The <code>NumberOfBacktestWindows</code> from the  object determines the number of windows in the
-        /// array.</p>
+        /// <p>An array of the backtests performed to evaluate the accuracy of the predictor against a particular algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
         pub fn set_predictor_executions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PredictorExecution>>,
@@ -5062,9 +3839,7 @@ impl PredictorExecutionDetails {
 pub struct PredictorExecution {
     /// <p>The ARN of the algorithm used to test the predictor.</p>
     pub algorithm_arn: std::option::Option<std::string::String>,
-    /// <p>An array of test windows used to evaluate the algorithm. The
-    /// <code>NumberOfBacktestWindows</code> from the
-    /// object determines the number of windows in the array.</p>
+    /// <p>An array of test windows used to evaluate the algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
     pub test_windows: std::option::Option<std::vec::Vec<crate::model::TestWindowSummary>>,
 }
 impl PredictorExecution {
@@ -5072,9 +3847,7 @@ impl PredictorExecution {
     pub fn algorithm_arn(&self) -> std::option::Option<&str> {
         self.algorithm_arn.as_deref()
     }
-    /// <p>An array of test windows used to evaluate the algorithm. The
-    /// <code>NumberOfBacktestWindows</code> from the
-    /// object determines the number of windows in the array.</p>
+    /// <p>An array of test windows used to evaluate the algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
     pub fn test_windows(&self) -> std::option::Option<&[crate::model::TestWindowSummary]> {
         self.test_windows.as_deref()
     }
@@ -5115,18 +3888,14 @@ pub mod predictor_execution {
         ///
         /// To override the contents of this collection use [`set_test_windows`](Self::set_test_windows).
         ///
-        /// <p>An array of test windows used to evaluate the algorithm. The
-        /// <code>NumberOfBacktestWindows</code> from the
-        /// object determines the number of windows in the array.</p>
-        pub fn test_windows(mut self, input: impl Into<crate::model::TestWindowSummary>) -> Self {
+        /// <p>An array of test windows used to evaluate the algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
+        pub fn test_windows(mut self, input: crate::model::TestWindowSummary) -> Self {
             let mut v = self.test_windows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.test_windows = Some(v);
             self
         }
-        /// <p>An array of test windows used to evaluate the algorithm. The
-        /// <code>NumberOfBacktestWindows</code> from the
-        /// object determines the number of windows in the array.</p>
+        /// <p>An array of test windows used to evaluate the algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
         pub fn set_test_windows(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TestWindowSummary>>,
@@ -5150,8 +3919,7 @@ impl PredictorExecution {
     }
 }
 
-/// <p>The status, start time, and end time of a backtest, as well as a failure reason if
-/// applicable.</p>
+/// <p>The status, start time, and end time of a backtest, as well as a failure reason if applicable.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestWindowSummary {
@@ -5161,21 +3929,9 @@ pub struct TestWindowSummary {
     pub test_window_end: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the test. Possible status values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> </p> </li>
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>If the test failed, the reason why it failed.</p>
@@ -5192,21 +3948,9 @@ impl TestWindowSummary {
     }
     /// <p>The status of the test. Possible status values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_IN_PROGRESS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_FAILED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> </p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
@@ -5266,21 +4010,9 @@ pub mod test_window_summary {
         }
         /// <p>The status of the test. Possible status values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>CREATE_FAILED</code> </p> </li>
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
@@ -5288,21 +4020,9 @@ pub mod test_window_summary {
         }
         /// <p>The status of the test. Possible status values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_IN_PROGRESS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_FAILED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_IN_PROGRESS</code> </p> </li>
+        /// <li> <p> <code>CREATE_FAILED</code> </p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
@@ -5336,23 +4056,19 @@ impl TestWindowSummary {
     }
 }
 
-/// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to
-/// access the key. You can specify this optional object in the
-/// <a>CreateDataset</a> and <a>CreatePredictor</a> requests.</p>
+/// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <code>CreateDataset</code> and <code>CreatePredictor</code> requests.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionConfig {
     /// <p>The ARN of the IAM role that Amazon Forecast can assume to access the AWS KMS key.</p>
-    /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your
-    /// account, you get an <code>InvalidInputException</code> error.</p>
+    /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an <code>InvalidInputException</code> error.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the KMS key.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl EncryptionConfig {
     /// <p>The ARN of the IAM role that Amazon Forecast can assume to access the AWS KMS key.</p>
-    /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your
-    /// account, you get an <code>InvalidInputException</code> error.</p>
+    /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an <code>InvalidInputException</code> error.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -5380,15 +4096,13 @@ pub mod encryption_config {
     }
     impl Builder {
         /// <p>The ARN of the IAM role that Amazon Forecast can assume to access the AWS KMS key.</p>
-        /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your
-        /// account, you get an <code>InvalidInputException</code> error.</p>
+        /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an <code>InvalidInputException</code> error.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
         /// <p>The ARN of the IAM role that Amazon Forecast can assume to access the AWS KMS key.</p>
-        /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your
-        /// account, you get an <code>InvalidInputException</code> error.</p>
+        /// <p>Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an <code>InvalidInputException</code> error.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -5419,62 +4133,38 @@ impl EncryptionConfig {
     }
 }
 
-/// <p>In a <a>CreatePredictor</a> operation, the specified algorithm
-/// trains a model using the specified dataset group. You can optionally tell the operation
-/// to modify data fields prior to training a model. These modifications are referred to as
-/// <i>featurization</i>.</p>
-/// <p>You define featurization using the <code>FeaturizationConfig</code> object.
-/// You specify an array of transformations, one for each field that you want to
-/// featurize. You then include the <code>FeaturizationConfig</code> object in your
-/// <code>CreatePredictor</code> request. Amazon Forecast applies the featurization to the
-/// <code>TARGET_TIME_SERIES</code> and <code>RELATED_TIME_SERIES</code> datasets before model training.</p>
-/// <p>You can create multiple featurization configurations. For example, you
-/// might call the <code>CreatePredictor</code> operation twice by specifying different
-/// featurization configurations.</p>
+/// <note>
+/// <p>This object belongs to the <code>CreatePredictor</code> operation. If you created your predictor with <code>CreateAutoPredictor</code>, see <code>AttributeConfig</code>.</p>
+/// </note>
+/// <p>In a <code>CreatePredictor</code> operation, the specified algorithm trains a model using the specified dataset group. You can optionally tell the operation to modify data fields prior to training a model. These modifications are referred to as <i>featurization</i>.</p>
+/// <p>You define featurization using the <code>FeaturizationConfig</code> object. You specify an array of transformations, one for each field that you want to featurize. You then include the <code>FeaturizationConfig</code> object in your <code>CreatePredictor</code> request. Amazon Forecast applies the featurization to the <code>TARGET_TIME_SERIES</code> and <code>RELATED_TIME_SERIES</code> datasets before model training.</p>
+/// <p>You can create multiple featurization configurations. For example, you might call the <code>CreatePredictor</code> operation twice by specifying different featurization configurations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FeaturizationConfig {
     /// <p>The frequency of predictions in a forecast.</p>
-    /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes),
-    /// 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute).
-    /// For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
-    /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset
-    /// frequency.</p>
-    /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the
-    /// RELATED_TIME_SERIES dataset frequency.</p>
+    /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
+    /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>
+    /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the RELATED_TIME_SERIES dataset frequency.</p>
     pub forecast_frequency: std::option::Option<std::string::String>,
     /// <p>An array of dimension (field) names that specify how to group the generated forecast.</p>
-    /// <p>For example, suppose that you are generating a forecast for item sales across all of
-    /// your stores, and your dataset contains a <code>store_id</code> field. If you want the sales
-    /// forecast for each item by store, you would specify <code>store_id</code> as the dimension.</p>
-    /// <p>All forecast dimensions specified in the <code>TARGET_TIME_SERIES</code> dataset don't
-    /// need to be specified in the <code>CreatePredictor</code> request.
-    /// All forecast dimensions specified in the <code>RELATED_TIME_SERIES</code> dataset must
-    /// be specified in the <code>CreatePredictor</code> request.</p>
+    /// <p>For example, suppose that you are generating a forecast for item sales across all of your stores, and your dataset contains a <code>store_id</code> field. If you want the sales forecast for each item by store, you would specify <code>store_id</code> as the dimension.</p>
+    /// <p>All forecast dimensions specified in the <code>TARGET_TIME_SERIES</code> dataset don't need to be specified in the <code>CreatePredictor</code> request. All forecast dimensions specified in the <code>RELATED_TIME_SERIES</code> dataset must be specified in the <code>CreatePredictor</code> request.</p>
     pub forecast_dimensions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of featurization (transformation) information for the fields of a dataset.</p>
     pub featurizations: std::option::Option<std::vec::Vec<crate::model::Featurization>>,
 }
 impl FeaturizationConfig {
     /// <p>The frequency of predictions in a forecast.</p>
-    /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes),
-    /// 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute).
-    /// For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
-    /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset
-    /// frequency.</p>
-    /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the
-    /// RELATED_TIME_SERIES dataset frequency.</p>
+    /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
+    /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>
+    /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the RELATED_TIME_SERIES dataset frequency.</p>
     pub fn forecast_frequency(&self) -> std::option::Option<&str> {
         self.forecast_frequency.as_deref()
     }
     /// <p>An array of dimension (field) names that specify how to group the generated forecast.</p>
-    /// <p>For example, suppose that you are generating a forecast for item sales across all of
-    /// your stores, and your dataset contains a <code>store_id</code> field. If you want the sales
-    /// forecast for each item by store, you would specify <code>store_id</code> as the dimension.</p>
-    /// <p>All forecast dimensions specified in the <code>TARGET_TIME_SERIES</code> dataset don't
-    /// need to be specified in the <code>CreatePredictor</code> request.
-    /// All forecast dimensions specified in the <code>RELATED_TIME_SERIES</code> dataset must
-    /// be specified in the <code>CreatePredictor</code> request.</p>
+    /// <p>For example, suppose that you are generating a forecast for item sales across all of your stores, and your dataset contains a <code>store_id</code> field. If you want the sales forecast for each item by store, you would specify <code>store_id</code> as the dimension.</p>
+    /// <p>All forecast dimensions specified in the <code>TARGET_TIME_SERIES</code> dataset don't need to be specified in the <code>CreatePredictor</code> request. All forecast dimensions specified in the <code>RELATED_TIME_SERIES</code> dataset must be specified in the <code>CreatePredictor</code> request.</p>
     pub fn forecast_dimensions(&self) -> std::option::Option<&[std::string::String]> {
         self.forecast_dimensions.as_deref()
     }
@@ -5504,25 +4194,17 @@ pub mod featurization_config {
     }
     impl Builder {
         /// <p>The frequency of predictions in a forecast.</p>
-        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes),
-        /// 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute).
-        /// For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
-        /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset
-        /// frequency.</p>
-        /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the
-        /// RELATED_TIME_SERIES dataset frequency.</p>
+        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
+        /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>
+        /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the RELATED_TIME_SERIES dataset frequency.</p>
         pub fn forecast_frequency(mut self, input: impl Into<std::string::String>) -> Self {
             self.forecast_frequency = Some(input.into());
             self
         }
         /// <p>The frequency of predictions in a forecast.</p>
-        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes),
-        /// 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute).
-        /// For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
-        /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset
-        /// frequency.</p>
-        /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the
-        /// RELATED_TIME_SERIES dataset frequency.</p>
+        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
+        /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>
+        /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the RELATED_TIME_SERIES dataset frequency.</p>
         pub fn set_forecast_frequency(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5535,13 +4217,8 @@ pub mod featurization_config {
         /// To override the contents of this collection use [`set_forecast_dimensions`](Self::set_forecast_dimensions).
         ///
         /// <p>An array of dimension (field) names that specify how to group the generated forecast.</p>
-        /// <p>For example, suppose that you are generating a forecast for item sales across all of
-        /// your stores, and your dataset contains a <code>store_id</code> field. If you want the sales
-        /// forecast for each item by store, you would specify <code>store_id</code> as the dimension.</p>
-        /// <p>All forecast dimensions specified in the <code>TARGET_TIME_SERIES</code> dataset don't
-        /// need to be specified in the <code>CreatePredictor</code> request.
-        /// All forecast dimensions specified in the <code>RELATED_TIME_SERIES</code> dataset must
-        /// be specified in the <code>CreatePredictor</code> request.</p>
+        /// <p>For example, suppose that you are generating a forecast for item sales across all of your stores, and your dataset contains a <code>store_id</code> field. If you want the sales forecast for each item by store, you would specify <code>store_id</code> as the dimension.</p>
+        /// <p>All forecast dimensions specified in the <code>TARGET_TIME_SERIES</code> dataset don't need to be specified in the <code>CreatePredictor</code> request. All forecast dimensions specified in the <code>RELATED_TIME_SERIES</code> dataset must be specified in the <code>CreatePredictor</code> request.</p>
         pub fn forecast_dimensions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.forecast_dimensions.unwrap_or_default();
             v.push(input.into());
@@ -5549,13 +4226,8 @@ pub mod featurization_config {
             self
         }
         /// <p>An array of dimension (field) names that specify how to group the generated forecast.</p>
-        /// <p>For example, suppose that you are generating a forecast for item sales across all of
-        /// your stores, and your dataset contains a <code>store_id</code> field. If you want the sales
-        /// forecast for each item by store, you would specify <code>store_id</code> as the dimension.</p>
-        /// <p>All forecast dimensions specified in the <code>TARGET_TIME_SERIES</code> dataset don't
-        /// need to be specified in the <code>CreatePredictor</code> request.
-        /// All forecast dimensions specified in the <code>RELATED_TIME_SERIES</code> dataset must
-        /// be specified in the <code>CreatePredictor</code> request.</p>
+        /// <p>For example, suppose that you are generating a forecast for item sales across all of your stores, and your dataset contains a <code>store_id</code> field. If you want the sales forecast for each item by store, you would specify <code>store_id</code> as the dimension.</p>
+        /// <p>All forecast dimensions specified in the <code>TARGET_TIME_SERIES</code> dataset don't need to be specified in the <code>CreatePredictor</code> request. All forecast dimensions specified in the <code>RELATED_TIME_SERIES</code> dataset must be specified in the <code>CreatePredictor</code> request.</p>
         pub fn set_forecast_dimensions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5568,9 +4240,9 @@ pub mod featurization_config {
         /// To override the contents of this collection use [`set_featurizations`](Self::set_featurizations).
         ///
         /// <p>An array of featurization (transformation) information for the fields of a dataset.</p>
-        pub fn featurizations(mut self, input: impl Into<crate::model::Featurization>) -> Self {
+        pub fn featurizations(mut self, input: crate::model::Featurization) -> Self {
             let mut v = self.featurizations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.featurizations = Some(v);
             self
         }
@@ -5599,56 +4271,33 @@ impl FeaturizationConfig {
     }
 }
 
-/// <p>Provides featurization (transformation) information for a dataset field. This object
-/// is part of the <a>FeaturizationConfig</a> object.</p>
+/// <note>
+/// <p>This object belongs to the <code>CreatePredictor</code> operation. If you created your predictor with <code>CreateAutoPredictor</code>, see <code>AttributeConfig</code>.</p>
+/// </note>
+/// <p>Provides featurization (transformation) information for a dataset field. This object is part of the <code>FeaturizationConfig</code> object.</p>
 /// <p>For example:</p>
-/// <p>
-/// <code>{</code>
-/// </p>
-/// <p>
-/// <code>"AttributeName": "demand",</code>
-/// </p>
-/// <p>
-/// <code>FeaturizationPipeline [ {</code>
-/// </p>
-///
-/// <p>
-/// <code>"FeaturizationMethodName": "filling",</code>
-/// </p>
-/// <p>
-/// <code>"FeaturizationMethodParameters": {"aggregation": "avg", "backfill": "nan"}</code>
-/// </p>
-/// <p>
-/// <code>} ]</code>
-/// </p>
-/// <p>
-/// <code>}</code>
-/// </p>
+/// <p> <code>{</code> </p>
+/// <p> <code>"AttributeName": "demand",</code> </p>
+/// <p> <code>FeaturizationPipeline [ {</code> </p>
+/// <p> <code>"FeaturizationMethodName": "filling",</code> </p>
+/// <p> <code>"FeaturizationMethodParameters": {"aggregation": "avg", "backfill": "nan"}</code> </p>
+/// <p> <code>} ]</code> </p>
+/// <p> <code>}</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Featurization {
-    /// <p>The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the target field of
-    /// the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For example, for the <code>RETAIL</code> domain, the target is
-    /// <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is
-    /// <code>target_value</code>.
-    /// For more information, see <a>howitworks-missing-values</a>.</p>
+    /// <p>The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is <code>target_value</code>. For more information, see <code>howitworks-missing-values</code>.</p>
     pub attribute_name: std::option::Option<std::string::String>,
-    /// <p>An array of one <code>FeaturizationMethod</code> object that specifies the feature
-    /// transformation method.</p>
+    /// <p>An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.</p>
     pub featurization_pipeline:
         std::option::Option<std::vec::Vec<crate::model::FeaturizationMethod>>,
 }
 impl Featurization {
-    /// <p>The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the target field of
-    /// the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For example, for the <code>RETAIL</code> domain, the target is
-    /// <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is
-    /// <code>target_value</code>.
-    /// For more information, see <a>howitworks-missing-values</a>.</p>
+    /// <p>The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is <code>target_value</code>. For more information, see <code>howitworks-missing-values</code>.</p>
     pub fn attribute_name(&self) -> std::option::Option<&str> {
         self.attribute_name.as_deref()
     }
-    /// <p>An array of one <code>FeaturizationMethod</code> object that specifies the feature
-    /// transformation method.</p>
+    /// <p>An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.</p>
     pub fn featurization_pipeline(
         &self,
     ) -> std::option::Option<&[crate::model::FeaturizationMethod]> {
@@ -5674,20 +4323,12 @@ pub mod featurization {
             std::option::Option<std::vec::Vec<crate::model::FeaturizationMethod>>,
     }
     impl Builder {
-        /// <p>The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the target field of
-        /// the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For example, for the <code>RETAIL</code> domain, the target is
-        /// <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is
-        /// <code>target_value</code>.
-        /// For more information, see <a>howitworks-missing-values</a>.</p>
+        /// <p>The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is <code>target_value</code>. For more information, see <code>howitworks-missing-values</code>.</p>
         pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.attribute_name = Some(input.into());
             self
         }
-        /// <p>The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the target field of
-        /// the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For example, for the <code>RETAIL</code> domain, the target is
-        /// <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is
-        /// <code>target_value</code>.
-        /// For more information, see <a>howitworks-missing-values</a>.</p>
+        /// <p>The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is <code>target_value</code>. For more information, see <code>howitworks-missing-values</code>.</p>
         pub fn set_attribute_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5699,19 +4340,14 @@ pub mod featurization {
         ///
         /// To override the contents of this collection use [`set_featurization_pipeline`](Self::set_featurization_pipeline).
         ///
-        /// <p>An array of one <code>FeaturizationMethod</code> object that specifies the feature
-        /// transformation method.</p>
-        pub fn featurization_pipeline(
-            mut self,
-            input: impl Into<crate::model::FeaturizationMethod>,
-        ) -> Self {
+        /// <p>An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.</p>
+        pub fn featurization_pipeline(mut self, input: crate::model::FeaturizationMethod) -> Self {
             let mut v = self.featurization_pipeline.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.featurization_pipeline = Some(v);
             self
         }
-        /// <p>An array of one <code>FeaturizationMethod</code> object that specifies the feature
-        /// transformation method.</p>
+        /// <p>An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.</p>
         pub fn set_featurization_pipeline(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FeaturizationMethod>>,
@@ -5735,76 +4371,32 @@ impl Featurization {
     }
 }
 
-/// <p>Provides information about the method that featurizes (transforms) a dataset field.
-/// The method is part of the <code>FeaturizationPipeline</code> of the
-/// <a>Featurization</a> object. </p>
+/// <p>Provides information about the method that featurizes (transforms) a dataset field. The method is part of the <code>FeaturizationPipeline</code> of the <code>Featurization</code> object. </p>
 /// <p>The following is an example of how you specify a <code>FeaturizationMethod</code> object.</p>
-/// <p>
-/// <code>{</code>
-/// </p>
-/// <p>
-/// <code>"FeaturizationMethodName": "filling",</code>
-/// </p>
-/// <p>
-/// <code>"FeaturizationMethodParameters": {"aggregation": "sum", "middlefill": "zero", "backfill": "zero"}</code>
-/// </p>
-/// <p>
-/// <code>}</code>
-/// </p>
+/// <p> <code>{</code> </p>
+/// <p> <code>"FeaturizationMethodName": "filling",</code> </p>
+/// <p> <code>"FeaturizationMethodParameters": {"aggregation": "sum", "middlefill": "zero", "backfill": "zero"}</code> </p>
+/// <p> <code>}</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FeaturizationMethod {
     /// <p>The name of the method. The "filling" method is the only supported method.</p>
     pub featurization_method_name: std::option::Option<crate::model::FeaturizationMethodName>,
-    /// <p>The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters to override the default values.
-    /// Related Time Series attributes do not accept aggregation parameters.</p>
-    /// <p>The following list shows the parameters and their valid values for the "filling" featurization method for a <b>Target Time Series</b> dataset. Bold signifies the default
-    /// value.</p>
+    /// <p>The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters to override the default values. Related Time Series attributes do not accept aggregation parameters.</p>
+    /// <p>The following list shows the parameters and their valid values for the "filling" featurization method for a <b>Target Time Series</b> dataset. Bold signifies the default value.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>aggregation</code>: <b>sum</b>, <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>frontfill</code>: <b>none</b>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number), <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>backfill</code>: <b>zero</b>, <code>nan</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>aggregation</code>: <b>sum</b>, <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>frontfill</code>: <b>none</b> </p> </li>
+    /// <li> <p> <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number), <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>backfill</code>: <b>zero</b>, <code>nan</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
     /// </ul>
-    ///
     /// <p>The following list shows the parameters and their valid values for a <b>Related Time Series</b> featurization method (there are no defaults):</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
     /// </ul>
-    /// <p>To set a filling method to a specific value, set the fill parameter to <code>value</code>
-    /// and define the value in a corresponding <code>_value</code> parameter. For example, to set
-    /// backfilling to a value of 2, include the following: <code>"backfill": "value"</code> and
-    /// <code>"backfill_value":"2"</code>. </p>
+    /// <p>To set a filling method to a specific value, set the fill parameter to <code>value</code> and define the value in a corresponding <code>_value</code> parameter. For example, to set backfilling to a value of 2, include the following: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>. </p>
     pub featurization_method_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -5815,55 +4407,21 @@ impl FeaturizationMethod {
     ) -> std::option::Option<&crate::model::FeaturizationMethodName> {
         self.featurization_method_name.as_ref()
     }
-    /// <p>The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters to override the default values.
-    /// Related Time Series attributes do not accept aggregation parameters.</p>
-    /// <p>The following list shows the parameters and their valid values for the "filling" featurization method for a <b>Target Time Series</b> dataset. Bold signifies the default
-    /// value.</p>
+    /// <p>The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters to override the default values. Related Time Series attributes do not accept aggregation parameters.</p>
+    /// <p>The following list shows the parameters and their valid values for the "filling" featurization method for a <b>Target Time Series</b> dataset. Bold signifies the default value.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>aggregation</code>: <b>sum</b>, <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>frontfill</code>: <b>none</b>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number), <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>backfill</code>: <b>zero</b>, <code>nan</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>aggregation</code>: <b>sum</b>, <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>frontfill</code>: <b>none</b> </p> </li>
+    /// <li> <p> <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number), <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>backfill</code>: <b>zero</b>, <code>nan</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
     /// </ul>
-    ///
     /// <p>The following list shows the parameters and their valid values for a <b>Related Time Series</b> featurization method (there are no defaults):</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
     /// </ul>
-    /// <p>To set a filling method to a specific value, set the fill parameter to <code>value</code>
-    /// and define the value in a corresponding <code>_value</code> parameter. For example, to set
-    /// backfilling to a value of 2, include the following: <code>"backfill": "value"</code> and
-    /// <code>"backfill_value":"2"</code>. </p>
+    /// <p>To set a filling method to a specific value, set the fill parameter to <code>value</code> and define the value in a corresponding <code>_value</code> parameter. For example, to set backfilling to a value of 2, include the following: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>. </p>
     pub fn featurization_method_parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -5915,55 +4473,21 @@ pub mod featurization_method {
         ///
         /// To override the contents of this collection use [`set_featurization_method_parameters`](Self::set_featurization_method_parameters).
         ///
-        /// <p>The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters to override the default values.
-        /// Related Time Series attributes do not accept aggregation parameters.</p>
-        /// <p>The following list shows the parameters and their valid values for the "filling" featurization method for a <b>Target Time Series</b> dataset. Bold signifies the default
-        /// value.</p>
+        /// <p>The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters to override the default values. Related Time Series attributes do not accept aggregation parameters.</p>
+        /// <p>The following list shows the parameters and their valid values for the "filling" featurization method for a <b>Target Time Series</b> dataset. Bold signifies the default value.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>aggregation</code>: <b>sum</b>, <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>frontfill</code>: <b>none</b>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number), <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>backfill</code>: <b>zero</b>, <code>nan</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>aggregation</code>: <b>sum</b>, <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code> </p> </li>
+        /// <li> <p> <code>frontfill</code>: <b>none</b> </p> </li>
+        /// <li> <p> <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number), <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+        /// <li> <p> <code>backfill</code>: <b>zero</b>, <code>nan</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following list shows the parameters and their valid values for a <b>Related Time Series</b> featurization method (there are no defaults):</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+        /// <li> <p> <code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+        /// <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
         /// </ul>
-        /// <p>To set a filling method to a specific value, set the fill parameter to <code>value</code>
-        /// and define the value in a corresponding <code>_value</code> parameter. For example, to set
-        /// backfilling to a value of 2, include the following: <code>"backfill": "value"</code> and
-        /// <code>"backfill_value":"2"</code>. </p>
+        /// <p>To set a filling method to a specific value, set the fill parameter to <code>value</code> and define the value in a corresponding <code>_value</code> parameter. For example, to set backfilling to a value of 2, include the following: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>. </p>
         pub fn featurization_method_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -5974,55 +4498,21 @@ pub mod featurization_method {
             self.featurization_method_parameters = Some(hash_map);
             self
         }
-        /// <p>The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters to override the default values.
-        /// Related Time Series attributes do not accept aggregation parameters.</p>
-        /// <p>The following list shows the parameters and their valid values for the "filling" featurization method for a <b>Target Time Series</b> dataset. Bold signifies the default
-        /// value.</p>
+        /// <p>The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters to override the default values. Related Time Series attributes do not accept aggregation parameters.</p>
+        /// <p>The following list shows the parameters and their valid values for the "filling" featurization method for a <b>Target Time Series</b> dataset. Bold signifies the default value.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>aggregation</code>: <b>sum</b>, <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>frontfill</code>: <b>none</b>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number), <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>backfill</code>: <b>zero</b>, <code>nan</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>aggregation</code>: <b>sum</b>, <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code> </p> </li>
+        /// <li> <p> <code>frontfill</code>: <b>none</b> </p> </li>
+        /// <li> <p> <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number), <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+        /// <li> <p> <code>backfill</code>: <b>zero</b>, <code>nan</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following list shows the parameters and their valid values for a <b>Related Time Series</b> featurization method (there are no defaults):</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+        /// <li> <p> <code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+        /// <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
         /// </ul>
-        /// <p>To set a filling method to a specific value, set the fill parameter to <code>value</code>
-        /// and define the value in a corresponding <code>_value</code> parameter. For example, to set
-        /// backfilling to a value of 2, include the following: <code>"backfill": "value"</code> and
-        /// <code>"backfill_value":"2"</code>. </p>
+        /// <p>To set a filling method to a specific value, set the fill parameter to <code>value</code> and define the value in a corresponding <code>_value</code> parameter. For example, to set backfilling to a value of 2, include the following: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>. </p>
         pub fn set_featurization_method_parameters(
             mut self,
             input: std::option::Option<
@@ -6099,16 +4589,16 @@ impl AsRef<str> for FeaturizationMethodName {
     }
 }
 
-/// <p>The data used to train a predictor. The data includes a dataset group and any
-/// supplementary features. You specify this object in the <a>CreatePredictor</a>
-/// request.</p>
+/// <note>
+/// <p>This object belongs to the <code>CreatePredictor</code> operation. If you created your predictor with <code>CreateAutoPredictor</code>, see <code>DataConfig</code>.</p>
+/// </note>
+/// <p>The data used to train a predictor. The data includes a dataset group and any supplementary features. You specify this object in the <code>CreatePredictor</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputDataConfig {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
-    /// <p>An array of supplementary features. The only supported feature is a holiday
-    /// calendar.</p>
+    /// <p>An array of supplementary features. The only supported feature is a holiday calendar.</p>
     pub supplementary_features:
         std::option::Option<std::vec::Vec<crate::model::SupplementaryFeature>>,
 }
@@ -6117,8 +4607,7 @@ impl InputDataConfig {
     pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
-    /// <p>An array of supplementary features. The only supported feature is a holiday
-    /// calendar.</p>
+    /// <p>An array of supplementary features. The only supported feature is a holiday calendar.</p>
     pub fn supplementary_features(
         &self,
     ) -> std::option::Option<&[crate::model::SupplementaryFeature]> {
@@ -6161,19 +4650,14 @@ pub mod input_data_config {
         ///
         /// To override the contents of this collection use [`set_supplementary_features`](Self::set_supplementary_features).
         ///
-        /// <p>An array of supplementary features. The only supported feature is a holiday
-        /// calendar.</p>
-        pub fn supplementary_features(
-            mut self,
-            input: impl Into<crate::model::SupplementaryFeature>,
-        ) -> Self {
+        /// <p>An array of supplementary features. The only supported feature is a holiday calendar.</p>
+        pub fn supplementary_features(mut self, input: crate::model::SupplementaryFeature) -> Self {
             let mut v = self.supplementary_features.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supplementary_features = Some(v);
             self
         }
-        /// <p>An array of supplementary features. The only supported feature is a holiday
-        /// calendar.</p>
+        /// <p>An array of supplementary features. The only supported feature is a holiday calendar.</p>
         pub fn set_supplementary_features(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SupplementaryFeature>>,
@@ -6197,456 +4681,169 @@ impl InputDataConfig {
     }
 }
 
-/// <p>Describes a supplementary feature of a dataset group. This object is part of the <a>InputDataConfig</a> object. Forecast supports the Weather Index and Holidays built-in
-/// featurizations.</p>
-/// <p>
-/// <b>Weather Index</b>
-/// </p>
-/// <p>The Amazon Forecast Weather Index is a built-in featurization that incorporates historical and
-/// projected weather information into your model. The Weather Index supplements your datasets
-/// with over two years of historical weather data and up to 14 days of projected weather data.
-/// For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/weather.html">Amazon Forecast Weather
-/// Index</a>.</p>
-/// <p>
-/// <b>Holidays</b>
-/// </p>
-/// <p>Holidays is a built-in featurization that incorporates a feature-engineered dataset of
-/// national holiday information into your model. It provides native support for the holiday
-/// calendars of 66 countries. To view the holiday calendars, refer to the <a href="http://jollyday.sourceforge.net/data.html">Jollyday</a> library. For more
-/// information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html">Holidays Featurization</a>.</p>
+/// <note>
+/// <p>This object belongs to the <code>CreatePredictor</code> operation. If you created your predictor with <code>CreateAutoPredictor</code>, see <code>AdditionalDataset</code>.</p>
+/// </note>
+/// <p>Describes a supplementary feature of a dataset group. This object is part of the <code>InputDataConfig</code> object. Forecast supports the Weather Index and Holidays built-in featurizations.</p>
+/// <p> <b>Weather Index</b> </p>
+/// <p>The Amazon Forecast Weather Index is a built-in featurization that incorporates historical and projected weather information into your model. The Weather Index supplements your datasets with over two years of historical weather data and up to 14 days of projected weather data. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/weather.html">Amazon Forecast Weather Index</a>.</p>
+/// <p> <b>Holidays</b> </p>
+/// <p>Holidays is a built-in featurization that incorporates a feature-engineered dataset of national holiday information into your model. It provides native support for the holiday calendars of 66 countries. To view the holiday calendars, refer to the <a href="http://jollyday.sourceforge.net/data.html">Jollyday</a> library. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html">Holidays Featurization</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SupplementaryFeature {
-    /// <p>The name of the feature. Valid values: <code>"holiday"</code> and
-    /// <code>"weather"</code>.</p>
+    /// <p>The name of the feature. Valid values: <code>"holiday"</code> and <code>"weather"</code>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>
-    /// <b>Weather Index</b>
-    /// </p>
-    /// <p>To enable the Weather Index, set the value to <code>"true"</code>
-    /// </p>
-    /// <p>
-    /// <b>Holidays</b>
-    /// </p>
-    /// <p>To enable Holidays, specify a country with one of the following two-letter country
-    /// codes:</p>
+    /// <p> <b>Weather Index</b> </p>
+    /// <p>To enable the Weather Index, set the value to <code>"true"</code> </p>
+    /// <p> <b>Holidays</b> </p>
+    /// <p>To enable Holidays, specify a country with one of the following two-letter country codes:</p>
     /// <ul>
-    /// <li>
-    /// <p>"AL" - ALBANIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"AR" - ARGENTINA</p>
-    /// </li>
-    /// <li>
-    /// <p>"AT" - AUSTRIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"AU" - AUSTRALIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"BA" - BOSNIA HERZEGOVINA</p>
-    /// </li>
-    /// <li>
-    /// <p>"BE" - BELGIUM</p>
-    /// </li>
-    /// <li>
-    /// <p>"BG" - BULGARIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"BO" - BOLIVIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"BR" - BRAZIL</p>
-    /// </li>
-    /// <li>
-    /// <p>"BY" - BELARUS</p>
-    /// </li>
-    /// <li>
-    /// <p>"CA" - CANADA</p>
-    /// </li>
-    /// <li>
-    /// <p>"CL" - CHILE</p>
-    /// </li>
-    /// <li>
-    /// <p>"CO" - COLOMBIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"CR" - COSTA RICA</p>
-    /// </li>
-    /// <li>
-    /// <p>"HR" - CROATIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"CZ" - CZECH REPUBLIC</p>
-    /// </li>
-    /// <li>
-    /// <p>"DK" - DENMARK</p>
-    /// </li>
-    /// <li>
-    /// <p>"EC" - ECUADOR</p>
-    /// </li>
-    /// <li>
-    /// <p>"EE" - ESTONIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"ET" - ETHIOPIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"FI" - FINLAND</p>
-    /// </li>
-    /// <li>
-    /// <p>"FR" - FRANCE</p>
-    /// </li>
-    /// <li>
-    /// <p>"DE" - GERMANY</p>
-    /// </li>
-    /// <li>
-    /// <p>"GR" - GREECE</p>
-    /// </li>
-    /// <li>
-    /// <p>"HU" - HUNGARY</p>
-    /// </li>
-    /// <li>
-    /// <p>"IS" - ICELAND</p>
-    /// </li>
-    /// <li>
-    /// <p>"IN" - INDIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"IE" - IRELAND</p>
-    /// </li>
-    /// <li>
-    /// <p>"IT" - ITALY</p>
-    /// </li>
-    /// <li>
-    /// <p>"JP" - JAPAN</p>
-    /// </li>
-    /// <li>
-    /// <p>"KZ" - KAZAKHSTAN</p>
-    /// </li>
-    /// <li>
-    /// <p>"KR" - KOREA</p>
-    /// </li>
-    /// <li>
-    /// <p>"LV" - LATVIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"LI" - LIECHTENSTEIN</p>
-    /// </li>
-    /// <li>
-    /// <p>"LT" - LITHUANIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"LU" - LUXEMBOURG</p>
-    /// </li>
-    /// <li>
-    /// <p>"MK" - MACEDONIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"MT" - MALTA</p>
-    /// </li>
-    /// <li>
-    /// <p>"MX" - MEXICO</p>
-    /// </li>
-    /// <li>
-    /// <p>"MD" - MOLDOVA</p>
-    /// </li>
-    /// <li>
-    /// <p>"ME" - MONTENEGRO</p>
-    /// </li>
-    /// <li>
-    /// <p>"NL" - NETHERLANDS</p>
-    /// </li>
-    /// <li>
-    /// <p>"NZ" - NEW ZEALAND</p>
-    /// </li>
-    /// <li>
-    /// <p>"NI" - NICARAGUA</p>
-    /// </li>
-    /// <li>
-    /// <p>"NG" - NIGERIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"NO" - NORWAY</p>
-    /// </li>
-    /// <li>
-    /// <p>"PA" - PANAMA</p>
-    /// </li>
-    /// <li>
-    /// <p>"PY" - PARAGUAY</p>
-    /// </li>
-    /// <li>
-    /// <p>"PE" - PERU</p>
-    /// </li>
-    /// <li>
-    /// <p>"PL" - POLAND</p>
-    /// </li>
-    /// <li>
-    /// <p>"PT" - PORTUGAL</p>
-    /// </li>
-    /// <li>
-    /// <p>"RO" - ROMANIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"RU" - RUSSIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"RS" - SERBIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"SK" - SLOVAKIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"SI" - SLOVENIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"ZA" - SOUTH AFRICA</p>
-    /// </li>
-    /// <li>
-    /// <p>"ES" - SPAIN</p>
-    /// </li>
-    /// <li>
-    /// <p>"SE" - SWEDEN</p>
-    /// </li>
-    /// <li>
-    /// <p>"CH" - SWITZERLAND</p>
-    /// </li>
-    /// <li>
-    /// <p>"UA" - UKRAINE</p>
-    /// </li>
-    /// <li>
-    /// <p>"AE" - UNITED ARAB EMIRATES</p>
-    /// </li>
-    /// <li>
-    /// <p>"US" - UNITED STATES</p>
-    /// </li>
-    /// <li>
-    /// <p>"UK" - UNITED KINGDOM</p>
-    /// </li>
-    /// <li>
-    /// <p>"UY" - URUGUAY</p>
-    /// </li>
-    /// <li>
-    /// <p>"VE" - VENEZUELA</p>
-    /// </li>
+    /// <li> <p>"AL" - ALBANIA</p> </li>
+    /// <li> <p>"AR" - ARGENTINA</p> </li>
+    /// <li> <p>"AT" - AUSTRIA</p> </li>
+    /// <li> <p>"AU" - AUSTRALIA</p> </li>
+    /// <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li>
+    /// <li> <p>"BE" - BELGIUM</p> </li>
+    /// <li> <p>"BG" - BULGARIA</p> </li>
+    /// <li> <p>"BO" - BOLIVIA</p> </li>
+    /// <li> <p>"BR" - BRAZIL</p> </li>
+    /// <li> <p>"BY" - BELARUS</p> </li>
+    /// <li> <p>"CA" - CANADA</p> </li>
+    /// <li> <p>"CL" - CHILE</p> </li>
+    /// <li> <p>"CO" - COLOMBIA</p> </li>
+    /// <li> <p>"CR" - COSTA RICA</p> </li>
+    /// <li> <p>"HR" - CROATIA</p> </li>
+    /// <li> <p>"CZ" - CZECH REPUBLIC</p> </li>
+    /// <li> <p>"DK" - DENMARK</p> </li>
+    /// <li> <p>"EC" - ECUADOR</p> </li>
+    /// <li> <p>"EE" - ESTONIA</p> </li>
+    /// <li> <p>"ET" - ETHIOPIA</p> </li>
+    /// <li> <p>"FI" - FINLAND</p> </li>
+    /// <li> <p>"FR" - FRANCE</p> </li>
+    /// <li> <p>"DE" - GERMANY</p> </li>
+    /// <li> <p>"GR" - GREECE</p> </li>
+    /// <li> <p>"HU" - HUNGARY</p> </li>
+    /// <li> <p>"IS" - ICELAND</p> </li>
+    /// <li> <p>"IN" - INDIA</p> </li>
+    /// <li> <p>"IE" - IRELAND</p> </li>
+    /// <li> <p>"IT" - ITALY</p> </li>
+    /// <li> <p>"JP" - JAPAN</p> </li>
+    /// <li> <p>"KZ" - KAZAKHSTAN</p> </li>
+    /// <li> <p>"KR" - KOREA</p> </li>
+    /// <li> <p>"LV" - LATVIA</p> </li>
+    /// <li> <p>"LI" - LIECHTENSTEIN</p> </li>
+    /// <li> <p>"LT" - LITHUANIA</p> </li>
+    /// <li> <p>"LU" - LUXEMBOURG</p> </li>
+    /// <li> <p>"MK" - MACEDONIA</p> </li>
+    /// <li> <p>"MT" - MALTA</p> </li>
+    /// <li> <p>"MX" - MEXICO</p> </li>
+    /// <li> <p>"MD" - MOLDOVA</p> </li>
+    /// <li> <p>"ME" - MONTENEGRO</p> </li>
+    /// <li> <p>"NL" - NETHERLANDS</p> </li>
+    /// <li> <p>"NZ" - NEW ZEALAND</p> </li>
+    /// <li> <p>"NI" - NICARAGUA</p> </li>
+    /// <li> <p>"NG" - NIGERIA</p> </li>
+    /// <li> <p>"NO" - NORWAY</p> </li>
+    /// <li> <p>"PA" - PANAMA</p> </li>
+    /// <li> <p>"PY" - PARAGUAY</p> </li>
+    /// <li> <p>"PE" - PERU</p> </li>
+    /// <li> <p>"PL" - POLAND</p> </li>
+    /// <li> <p>"PT" - PORTUGAL</p> </li>
+    /// <li> <p>"RO" - ROMANIA</p> </li>
+    /// <li> <p>"RU" - RUSSIA</p> </li>
+    /// <li> <p>"RS" - SERBIA</p> </li>
+    /// <li> <p>"SK" - SLOVAKIA</p> </li>
+    /// <li> <p>"SI" - SLOVENIA</p> </li>
+    /// <li> <p>"ZA" - SOUTH AFRICA</p> </li>
+    /// <li> <p>"ES" - SPAIN</p> </li>
+    /// <li> <p>"SE" - SWEDEN</p> </li>
+    /// <li> <p>"CH" - SWITZERLAND</p> </li>
+    /// <li> <p>"UA" - UKRAINE</p> </li>
+    /// <li> <p>"AE" - UNITED ARAB EMIRATES</p> </li>
+    /// <li> <p>"US" - UNITED STATES</p> </li>
+    /// <li> <p>"UK" - UNITED KINGDOM</p> </li>
+    /// <li> <p>"UY" - URUGUAY</p> </li>
+    /// <li> <p>"VE" - VENEZUELA</p> </li>
     /// </ul>
     pub value: std::option::Option<std::string::String>,
 }
 impl SupplementaryFeature {
-    /// <p>The name of the feature. Valid values: <code>"holiday"</code> and
-    /// <code>"weather"</code>.</p>
+    /// <p>The name of the feature. Valid values: <code>"holiday"</code> and <code>"weather"</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>
-    /// <b>Weather Index</b>
-    /// </p>
-    /// <p>To enable the Weather Index, set the value to <code>"true"</code>
-    /// </p>
-    /// <p>
-    /// <b>Holidays</b>
-    /// </p>
-    /// <p>To enable Holidays, specify a country with one of the following two-letter country
-    /// codes:</p>
+    /// <p> <b>Weather Index</b> </p>
+    /// <p>To enable the Weather Index, set the value to <code>"true"</code> </p>
+    /// <p> <b>Holidays</b> </p>
+    /// <p>To enable Holidays, specify a country with one of the following two-letter country codes:</p>
     /// <ul>
-    /// <li>
-    /// <p>"AL" - ALBANIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"AR" - ARGENTINA</p>
-    /// </li>
-    /// <li>
-    /// <p>"AT" - AUSTRIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"AU" - AUSTRALIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"BA" - BOSNIA HERZEGOVINA</p>
-    /// </li>
-    /// <li>
-    /// <p>"BE" - BELGIUM</p>
-    /// </li>
-    /// <li>
-    /// <p>"BG" - BULGARIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"BO" - BOLIVIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"BR" - BRAZIL</p>
-    /// </li>
-    /// <li>
-    /// <p>"BY" - BELARUS</p>
-    /// </li>
-    /// <li>
-    /// <p>"CA" - CANADA</p>
-    /// </li>
-    /// <li>
-    /// <p>"CL" - CHILE</p>
-    /// </li>
-    /// <li>
-    /// <p>"CO" - COLOMBIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"CR" - COSTA RICA</p>
-    /// </li>
-    /// <li>
-    /// <p>"HR" - CROATIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"CZ" - CZECH REPUBLIC</p>
-    /// </li>
-    /// <li>
-    /// <p>"DK" - DENMARK</p>
-    /// </li>
-    /// <li>
-    /// <p>"EC" - ECUADOR</p>
-    /// </li>
-    /// <li>
-    /// <p>"EE" - ESTONIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"ET" - ETHIOPIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"FI" - FINLAND</p>
-    /// </li>
-    /// <li>
-    /// <p>"FR" - FRANCE</p>
-    /// </li>
-    /// <li>
-    /// <p>"DE" - GERMANY</p>
-    /// </li>
-    /// <li>
-    /// <p>"GR" - GREECE</p>
-    /// </li>
-    /// <li>
-    /// <p>"HU" - HUNGARY</p>
-    /// </li>
-    /// <li>
-    /// <p>"IS" - ICELAND</p>
-    /// </li>
-    /// <li>
-    /// <p>"IN" - INDIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"IE" - IRELAND</p>
-    /// </li>
-    /// <li>
-    /// <p>"IT" - ITALY</p>
-    /// </li>
-    /// <li>
-    /// <p>"JP" - JAPAN</p>
-    /// </li>
-    /// <li>
-    /// <p>"KZ" - KAZAKHSTAN</p>
-    /// </li>
-    /// <li>
-    /// <p>"KR" - KOREA</p>
-    /// </li>
-    /// <li>
-    /// <p>"LV" - LATVIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"LI" - LIECHTENSTEIN</p>
-    /// </li>
-    /// <li>
-    /// <p>"LT" - LITHUANIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"LU" - LUXEMBOURG</p>
-    /// </li>
-    /// <li>
-    /// <p>"MK" - MACEDONIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"MT" - MALTA</p>
-    /// </li>
-    /// <li>
-    /// <p>"MX" - MEXICO</p>
-    /// </li>
-    /// <li>
-    /// <p>"MD" - MOLDOVA</p>
-    /// </li>
-    /// <li>
-    /// <p>"ME" - MONTENEGRO</p>
-    /// </li>
-    /// <li>
-    /// <p>"NL" - NETHERLANDS</p>
-    /// </li>
-    /// <li>
-    /// <p>"NZ" - NEW ZEALAND</p>
-    /// </li>
-    /// <li>
-    /// <p>"NI" - NICARAGUA</p>
-    /// </li>
-    /// <li>
-    /// <p>"NG" - NIGERIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"NO" - NORWAY</p>
-    /// </li>
-    /// <li>
-    /// <p>"PA" - PANAMA</p>
-    /// </li>
-    /// <li>
-    /// <p>"PY" - PARAGUAY</p>
-    /// </li>
-    /// <li>
-    /// <p>"PE" - PERU</p>
-    /// </li>
-    /// <li>
-    /// <p>"PL" - POLAND</p>
-    /// </li>
-    /// <li>
-    /// <p>"PT" - PORTUGAL</p>
-    /// </li>
-    /// <li>
-    /// <p>"RO" - ROMANIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"RU" - RUSSIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"RS" - SERBIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"SK" - SLOVAKIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"SI" - SLOVENIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"ZA" - SOUTH AFRICA</p>
-    /// </li>
-    /// <li>
-    /// <p>"ES" - SPAIN</p>
-    /// </li>
-    /// <li>
-    /// <p>"SE" - SWEDEN</p>
-    /// </li>
-    /// <li>
-    /// <p>"CH" - SWITZERLAND</p>
-    /// </li>
-    /// <li>
-    /// <p>"UA" - UKRAINE</p>
-    /// </li>
-    /// <li>
-    /// <p>"AE" - UNITED ARAB EMIRATES</p>
-    /// </li>
-    /// <li>
-    /// <p>"US" - UNITED STATES</p>
-    /// </li>
-    /// <li>
-    /// <p>"UK" - UNITED KINGDOM</p>
-    /// </li>
-    /// <li>
-    /// <p>"UY" - URUGUAY</p>
-    /// </li>
-    /// <li>
-    /// <p>"VE" - VENEZUELA</p>
-    /// </li>
+    /// <li> <p>"AL" - ALBANIA</p> </li>
+    /// <li> <p>"AR" - ARGENTINA</p> </li>
+    /// <li> <p>"AT" - AUSTRIA</p> </li>
+    /// <li> <p>"AU" - AUSTRALIA</p> </li>
+    /// <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li>
+    /// <li> <p>"BE" - BELGIUM</p> </li>
+    /// <li> <p>"BG" - BULGARIA</p> </li>
+    /// <li> <p>"BO" - BOLIVIA</p> </li>
+    /// <li> <p>"BR" - BRAZIL</p> </li>
+    /// <li> <p>"BY" - BELARUS</p> </li>
+    /// <li> <p>"CA" - CANADA</p> </li>
+    /// <li> <p>"CL" - CHILE</p> </li>
+    /// <li> <p>"CO" - COLOMBIA</p> </li>
+    /// <li> <p>"CR" - COSTA RICA</p> </li>
+    /// <li> <p>"HR" - CROATIA</p> </li>
+    /// <li> <p>"CZ" - CZECH REPUBLIC</p> </li>
+    /// <li> <p>"DK" - DENMARK</p> </li>
+    /// <li> <p>"EC" - ECUADOR</p> </li>
+    /// <li> <p>"EE" - ESTONIA</p> </li>
+    /// <li> <p>"ET" - ETHIOPIA</p> </li>
+    /// <li> <p>"FI" - FINLAND</p> </li>
+    /// <li> <p>"FR" - FRANCE</p> </li>
+    /// <li> <p>"DE" - GERMANY</p> </li>
+    /// <li> <p>"GR" - GREECE</p> </li>
+    /// <li> <p>"HU" - HUNGARY</p> </li>
+    /// <li> <p>"IS" - ICELAND</p> </li>
+    /// <li> <p>"IN" - INDIA</p> </li>
+    /// <li> <p>"IE" - IRELAND</p> </li>
+    /// <li> <p>"IT" - ITALY</p> </li>
+    /// <li> <p>"JP" - JAPAN</p> </li>
+    /// <li> <p>"KZ" - KAZAKHSTAN</p> </li>
+    /// <li> <p>"KR" - KOREA</p> </li>
+    /// <li> <p>"LV" - LATVIA</p> </li>
+    /// <li> <p>"LI" - LIECHTENSTEIN</p> </li>
+    /// <li> <p>"LT" - LITHUANIA</p> </li>
+    /// <li> <p>"LU" - LUXEMBOURG</p> </li>
+    /// <li> <p>"MK" - MACEDONIA</p> </li>
+    /// <li> <p>"MT" - MALTA</p> </li>
+    /// <li> <p>"MX" - MEXICO</p> </li>
+    /// <li> <p>"MD" - MOLDOVA</p> </li>
+    /// <li> <p>"ME" - MONTENEGRO</p> </li>
+    /// <li> <p>"NL" - NETHERLANDS</p> </li>
+    /// <li> <p>"NZ" - NEW ZEALAND</p> </li>
+    /// <li> <p>"NI" - NICARAGUA</p> </li>
+    /// <li> <p>"NG" - NIGERIA</p> </li>
+    /// <li> <p>"NO" - NORWAY</p> </li>
+    /// <li> <p>"PA" - PANAMA</p> </li>
+    /// <li> <p>"PY" - PARAGUAY</p> </li>
+    /// <li> <p>"PE" - PERU</p> </li>
+    /// <li> <p>"PL" - POLAND</p> </li>
+    /// <li> <p>"PT" - PORTUGAL</p> </li>
+    /// <li> <p>"RO" - ROMANIA</p> </li>
+    /// <li> <p>"RU" - RUSSIA</p> </li>
+    /// <li> <p>"RS" - SERBIA</p> </li>
+    /// <li> <p>"SK" - SLOVAKIA</p> </li>
+    /// <li> <p>"SI" - SLOVENIA</p> </li>
+    /// <li> <p>"ZA" - SOUTH AFRICA</p> </li>
+    /// <li> <p>"ES" - SPAIN</p> </li>
+    /// <li> <p>"SE" - SWEDEN</p> </li>
+    /// <li> <p>"CH" - SWITZERLAND</p> </li>
+    /// <li> <p>"UA" - UKRAINE</p> </li>
+    /// <li> <p>"AE" - UNITED ARAB EMIRATES</p> </li>
+    /// <li> <p>"US" - UNITED STATES</p> </li>
+    /// <li> <p>"UK" - UNITED KINGDOM</p> </li>
+    /// <li> <p>"UY" - URUGUAY</p> </li>
+    /// <li> <p>"VE" - VENEZUELA</p> </li>
     /// </ul>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
@@ -6670,441 +4867,163 @@ pub mod supplementary_feature {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the feature. Valid values: <code>"holiday"</code> and
-        /// <code>"weather"</code>.</p>
+        /// <p>The name of the feature. Valid values: <code>"holiday"</code> and <code>"weather"</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the feature. Valid values: <code>"holiday"</code> and
-        /// <code>"weather"</code>.</p>
+        /// <p>The name of the feature. Valid values: <code>"holiday"</code> and <code>"weather"</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>
-        /// <b>Weather Index</b>
-        /// </p>
-        /// <p>To enable the Weather Index, set the value to <code>"true"</code>
-        /// </p>
-        /// <p>
-        /// <b>Holidays</b>
-        /// </p>
-        /// <p>To enable Holidays, specify a country with one of the following two-letter country
-        /// codes:</p>
+        /// <p> <b>Weather Index</b> </p>
+        /// <p>To enable the Weather Index, set the value to <code>"true"</code> </p>
+        /// <p> <b>Holidays</b> </p>
+        /// <p>To enable Holidays, specify a country with one of the following two-letter country codes:</p>
         /// <ul>
-        /// <li>
-        /// <p>"AL" - ALBANIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"AR" - ARGENTINA</p>
-        /// </li>
-        /// <li>
-        /// <p>"AT" - AUSTRIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"AU" - AUSTRALIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"BA" - BOSNIA HERZEGOVINA</p>
-        /// </li>
-        /// <li>
-        /// <p>"BE" - BELGIUM</p>
-        /// </li>
-        /// <li>
-        /// <p>"BG" - BULGARIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"BO" - BOLIVIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"BR" - BRAZIL</p>
-        /// </li>
-        /// <li>
-        /// <p>"BY" - BELARUS</p>
-        /// </li>
-        /// <li>
-        /// <p>"CA" - CANADA</p>
-        /// </li>
-        /// <li>
-        /// <p>"CL" - CHILE</p>
-        /// </li>
-        /// <li>
-        /// <p>"CO" - COLOMBIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"CR" - COSTA RICA</p>
-        /// </li>
-        /// <li>
-        /// <p>"HR" - CROATIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"CZ" - CZECH REPUBLIC</p>
-        /// </li>
-        /// <li>
-        /// <p>"DK" - DENMARK</p>
-        /// </li>
-        /// <li>
-        /// <p>"EC" - ECUADOR</p>
-        /// </li>
-        /// <li>
-        /// <p>"EE" - ESTONIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"ET" - ETHIOPIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"FI" - FINLAND</p>
-        /// </li>
-        /// <li>
-        /// <p>"FR" - FRANCE</p>
-        /// </li>
-        /// <li>
-        /// <p>"DE" - GERMANY</p>
-        /// </li>
-        /// <li>
-        /// <p>"GR" - GREECE</p>
-        /// </li>
-        /// <li>
-        /// <p>"HU" - HUNGARY</p>
-        /// </li>
-        /// <li>
-        /// <p>"IS" - ICELAND</p>
-        /// </li>
-        /// <li>
-        /// <p>"IN" - INDIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"IE" - IRELAND</p>
-        /// </li>
-        /// <li>
-        /// <p>"IT" - ITALY</p>
-        /// </li>
-        /// <li>
-        /// <p>"JP" - JAPAN</p>
-        /// </li>
-        /// <li>
-        /// <p>"KZ" - KAZAKHSTAN</p>
-        /// </li>
-        /// <li>
-        /// <p>"KR" - KOREA</p>
-        /// </li>
-        /// <li>
-        /// <p>"LV" - LATVIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"LI" - LIECHTENSTEIN</p>
-        /// </li>
-        /// <li>
-        /// <p>"LT" - LITHUANIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"LU" - LUXEMBOURG</p>
-        /// </li>
-        /// <li>
-        /// <p>"MK" - MACEDONIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"MT" - MALTA</p>
-        /// </li>
-        /// <li>
-        /// <p>"MX" - MEXICO</p>
-        /// </li>
-        /// <li>
-        /// <p>"MD" - MOLDOVA</p>
-        /// </li>
-        /// <li>
-        /// <p>"ME" - MONTENEGRO</p>
-        /// </li>
-        /// <li>
-        /// <p>"NL" - NETHERLANDS</p>
-        /// </li>
-        /// <li>
-        /// <p>"NZ" - NEW ZEALAND</p>
-        /// </li>
-        /// <li>
-        /// <p>"NI" - NICARAGUA</p>
-        /// </li>
-        /// <li>
-        /// <p>"NG" - NIGERIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"NO" - NORWAY</p>
-        /// </li>
-        /// <li>
-        /// <p>"PA" - PANAMA</p>
-        /// </li>
-        /// <li>
-        /// <p>"PY" - PARAGUAY</p>
-        /// </li>
-        /// <li>
-        /// <p>"PE" - PERU</p>
-        /// </li>
-        /// <li>
-        /// <p>"PL" - POLAND</p>
-        /// </li>
-        /// <li>
-        /// <p>"PT" - PORTUGAL</p>
-        /// </li>
-        /// <li>
-        /// <p>"RO" - ROMANIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"RU" - RUSSIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"RS" - SERBIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"SK" - SLOVAKIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"SI" - SLOVENIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"ZA" - SOUTH AFRICA</p>
-        /// </li>
-        /// <li>
-        /// <p>"ES" - SPAIN</p>
-        /// </li>
-        /// <li>
-        /// <p>"SE" - SWEDEN</p>
-        /// </li>
-        /// <li>
-        /// <p>"CH" - SWITZERLAND</p>
-        /// </li>
-        /// <li>
-        /// <p>"UA" - UKRAINE</p>
-        /// </li>
-        /// <li>
-        /// <p>"AE" - UNITED ARAB EMIRATES</p>
-        /// </li>
-        /// <li>
-        /// <p>"US" - UNITED STATES</p>
-        /// </li>
-        /// <li>
-        /// <p>"UK" - UNITED KINGDOM</p>
-        /// </li>
-        /// <li>
-        /// <p>"UY" - URUGUAY</p>
-        /// </li>
-        /// <li>
-        /// <p>"VE" - VENEZUELA</p>
-        /// </li>
+        /// <li> <p>"AL" - ALBANIA</p> </li>
+        /// <li> <p>"AR" - ARGENTINA</p> </li>
+        /// <li> <p>"AT" - AUSTRIA</p> </li>
+        /// <li> <p>"AU" - AUSTRALIA</p> </li>
+        /// <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li>
+        /// <li> <p>"BE" - BELGIUM</p> </li>
+        /// <li> <p>"BG" - BULGARIA</p> </li>
+        /// <li> <p>"BO" - BOLIVIA</p> </li>
+        /// <li> <p>"BR" - BRAZIL</p> </li>
+        /// <li> <p>"BY" - BELARUS</p> </li>
+        /// <li> <p>"CA" - CANADA</p> </li>
+        /// <li> <p>"CL" - CHILE</p> </li>
+        /// <li> <p>"CO" - COLOMBIA</p> </li>
+        /// <li> <p>"CR" - COSTA RICA</p> </li>
+        /// <li> <p>"HR" - CROATIA</p> </li>
+        /// <li> <p>"CZ" - CZECH REPUBLIC</p> </li>
+        /// <li> <p>"DK" - DENMARK</p> </li>
+        /// <li> <p>"EC" - ECUADOR</p> </li>
+        /// <li> <p>"EE" - ESTONIA</p> </li>
+        /// <li> <p>"ET" - ETHIOPIA</p> </li>
+        /// <li> <p>"FI" - FINLAND</p> </li>
+        /// <li> <p>"FR" - FRANCE</p> </li>
+        /// <li> <p>"DE" - GERMANY</p> </li>
+        /// <li> <p>"GR" - GREECE</p> </li>
+        /// <li> <p>"HU" - HUNGARY</p> </li>
+        /// <li> <p>"IS" - ICELAND</p> </li>
+        /// <li> <p>"IN" - INDIA</p> </li>
+        /// <li> <p>"IE" - IRELAND</p> </li>
+        /// <li> <p>"IT" - ITALY</p> </li>
+        /// <li> <p>"JP" - JAPAN</p> </li>
+        /// <li> <p>"KZ" - KAZAKHSTAN</p> </li>
+        /// <li> <p>"KR" - KOREA</p> </li>
+        /// <li> <p>"LV" - LATVIA</p> </li>
+        /// <li> <p>"LI" - LIECHTENSTEIN</p> </li>
+        /// <li> <p>"LT" - LITHUANIA</p> </li>
+        /// <li> <p>"LU" - LUXEMBOURG</p> </li>
+        /// <li> <p>"MK" - MACEDONIA</p> </li>
+        /// <li> <p>"MT" - MALTA</p> </li>
+        /// <li> <p>"MX" - MEXICO</p> </li>
+        /// <li> <p>"MD" - MOLDOVA</p> </li>
+        /// <li> <p>"ME" - MONTENEGRO</p> </li>
+        /// <li> <p>"NL" - NETHERLANDS</p> </li>
+        /// <li> <p>"NZ" - NEW ZEALAND</p> </li>
+        /// <li> <p>"NI" - NICARAGUA</p> </li>
+        /// <li> <p>"NG" - NIGERIA</p> </li>
+        /// <li> <p>"NO" - NORWAY</p> </li>
+        /// <li> <p>"PA" - PANAMA</p> </li>
+        /// <li> <p>"PY" - PARAGUAY</p> </li>
+        /// <li> <p>"PE" - PERU</p> </li>
+        /// <li> <p>"PL" - POLAND</p> </li>
+        /// <li> <p>"PT" - PORTUGAL</p> </li>
+        /// <li> <p>"RO" - ROMANIA</p> </li>
+        /// <li> <p>"RU" - RUSSIA</p> </li>
+        /// <li> <p>"RS" - SERBIA</p> </li>
+        /// <li> <p>"SK" - SLOVAKIA</p> </li>
+        /// <li> <p>"SI" - SLOVENIA</p> </li>
+        /// <li> <p>"ZA" - SOUTH AFRICA</p> </li>
+        /// <li> <p>"ES" - SPAIN</p> </li>
+        /// <li> <p>"SE" - SWEDEN</p> </li>
+        /// <li> <p>"CH" - SWITZERLAND</p> </li>
+        /// <li> <p>"UA" - UKRAINE</p> </li>
+        /// <li> <p>"AE" - UNITED ARAB EMIRATES</p> </li>
+        /// <li> <p>"US" - UNITED STATES</p> </li>
+        /// <li> <p>"UK" - UNITED KINGDOM</p> </li>
+        /// <li> <p>"UY" - URUGUAY</p> </li>
+        /// <li> <p>"VE" - VENEZUELA</p> </li>
         /// </ul>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>
-        /// <b>Weather Index</b>
-        /// </p>
-        /// <p>To enable the Weather Index, set the value to <code>"true"</code>
-        /// </p>
-        /// <p>
-        /// <b>Holidays</b>
-        /// </p>
-        /// <p>To enable Holidays, specify a country with one of the following two-letter country
-        /// codes:</p>
+        /// <p> <b>Weather Index</b> </p>
+        /// <p>To enable the Weather Index, set the value to <code>"true"</code> </p>
+        /// <p> <b>Holidays</b> </p>
+        /// <p>To enable Holidays, specify a country with one of the following two-letter country codes:</p>
         /// <ul>
-        /// <li>
-        /// <p>"AL" - ALBANIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"AR" - ARGENTINA</p>
-        /// </li>
-        /// <li>
-        /// <p>"AT" - AUSTRIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"AU" - AUSTRALIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"BA" - BOSNIA HERZEGOVINA</p>
-        /// </li>
-        /// <li>
-        /// <p>"BE" - BELGIUM</p>
-        /// </li>
-        /// <li>
-        /// <p>"BG" - BULGARIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"BO" - BOLIVIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"BR" - BRAZIL</p>
-        /// </li>
-        /// <li>
-        /// <p>"BY" - BELARUS</p>
-        /// </li>
-        /// <li>
-        /// <p>"CA" - CANADA</p>
-        /// </li>
-        /// <li>
-        /// <p>"CL" - CHILE</p>
-        /// </li>
-        /// <li>
-        /// <p>"CO" - COLOMBIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"CR" - COSTA RICA</p>
-        /// </li>
-        /// <li>
-        /// <p>"HR" - CROATIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"CZ" - CZECH REPUBLIC</p>
-        /// </li>
-        /// <li>
-        /// <p>"DK" - DENMARK</p>
-        /// </li>
-        /// <li>
-        /// <p>"EC" - ECUADOR</p>
-        /// </li>
-        /// <li>
-        /// <p>"EE" - ESTONIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"ET" - ETHIOPIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"FI" - FINLAND</p>
-        /// </li>
-        /// <li>
-        /// <p>"FR" - FRANCE</p>
-        /// </li>
-        /// <li>
-        /// <p>"DE" - GERMANY</p>
-        /// </li>
-        /// <li>
-        /// <p>"GR" - GREECE</p>
-        /// </li>
-        /// <li>
-        /// <p>"HU" - HUNGARY</p>
-        /// </li>
-        /// <li>
-        /// <p>"IS" - ICELAND</p>
-        /// </li>
-        /// <li>
-        /// <p>"IN" - INDIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"IE" - IRELAND</p>
-        /// </li>
-        /// <li>
-        /// <p>"IT" - ITALY</p>
-        /// </li>
-        /// <li>
-        /// <p>"JP" - JAPAN</p>
-        /// </li>
-        /// <li>
-        /// <p>"KZ" - KAZAKHSTAN</p>
-        /// </li>
-        /// <li>
-        /// <p>"KR" - KOREA</p>
-        /// </li>
-        /// <li>
-        /// <p>"LV" - LATVIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"LI" - LIECHTENSTEIN</p>
-        /// </li>
-        /// <li>
-        /// <p>"LT" - LITHUANIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"LU" - LUXEMBOURG</p>
-        /// </li>
-        /// <li>
-        /// <p>"MK" - MACEDONIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"MT" - MALTA</p>
-        /// </li>
-        /// <li>
-        /// <p>"MX" - MEXICO</p>
-        /// </li>
-        /// <li>
-        /// <p>"MD" - MOLDOVA</p>
-        /// </li>
-        /// <li>
-        /// <p>"ME" - MONTENEGRO</p>
-        /// </li>
-        /// <li>
-        /// <p>"NL" - NETHERLANDS</p>
-        /// </li>
-        /// <li>
-        /// <p>"NZ" - NEW ZEALAND</p>
-        /// </li>
-        /// <li>
-        /// <p>"NI" - NICARAGUA</p>
-        /// </li>
-        /// <li>
-        /// <p>"NG" - NIGERIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"NO" - NORWAY</p>
-        /// </li>
-        /// <li>
-        /// <p>"PA" - PANAMA</p>
-        /// </li>
-        /// <li>
-        /// <p>"PY" - PARAGUAY</p>
-        /// </li>
-        /// <li>
-        /// <p>"PE" - PERU</p>
-        /// </li>
-        /// <li>
-        /// <p>"PL" - POLAND</p>
-        /// </li>
-        /// <li>
-        /// <p>"PT" - PORTUGAL</p>
-        /// </li>
-        /// <li>
-        /// <p>"RO" - ROMANIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"RU" - RUSSIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"RS" - SERBIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"SK" - SLOVAKIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"SI" - SLOVENIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"ZA" - SOUTH AFRICA</p>
-        /// </li>
-        /// <li>
-        /// <p>"ES" - SPAIN</p>
-        /// </li>
-        /// <li>
-        /// <p>"SE" - SWEDEN</p>
-        /// </li>
-        /// <li>
-        /// <p>"CH" - SWITZERLAND</p>
-        /// </li>
-        /// <li>
-        /// <p>"UA" - UKRAINE</p>
-        /// </li>
-        /// <li>
-        /// <p>"AE" - UNITED ARAB EMIRATES</p>
-        /// </li>
-        /// <li>
-        /// <p>"US" - UNITED STATES</p>
-        /// </li>
-        /// <li>
-        /// <p>"UK" - UNITED KINGDOM</p>
-        /// </li>
-        /// <li>
-        /// <p>"UY" - URUGUAY</p>
-        /// </li>
-        /// <li>
-        /// <p>"VE" - VENEZUELA</p>
-        /// </li>
+        /// <li> <p>"AL" - ALBANIA</p> </li>
+        /// <li> <p>"AR" - ARGENTINA</p> </li>
+        /// <li> <p>"AT" - AUSTRIA</p> </li>
+        /// <li> <p>"AU" - AUSTRALIA</p> </li>
+        /// <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li>
+        /// <li> <p>"BE" - BELGIUM</p> </li>
+        /// <li> <p>"BG" - BULGARIA</p> </li>
+        /// <li> <p>"BO" - BOLIVIA</p> </li>
+        /// <li> <p>"BR" - BRAZIL</p> </li>
+        /// <li> <p>"BY" - BELARUS</p> </li>
+        /// <li> <p>"CA" - CANADA</p> </li>
+        /// <li> <p>"CL" - CHILE</p> </li>
+        /// <li> <p>"CO" - COLOMBIA</p> </li>
+        /// <li> <p>"CR" - COSTA RICA</p> </li>
+        /// <li> <p>"HR" - CROATIA</p> </li>
+        /// <li> <p>"CZ" - CZECH REPUBLIC</p> </li>
+        /// <li> <p>"DK" - DENMARK</p> </li>
+        /// <li> <p>"EC" - ECUADOR</p> </li>
+        /// <li> <p>"EE" - ESTONIA</p> </li>
+        /// <li> <p>"ET" - ETHIOPIA</p> </li>
+        /// <li> <p>"FI" - FINLAND</p> </li>
+        /// <li> <p>"FR" - FRANCE</p> </li>
+        /// <li> <p>"DE" - GERMANY</p> </li>
+        /// <li> <p>"GR" - GREECE</p> </li>
+        /// <li> <p>"HU" - HUNGARY</p> </li>
+        /// <li> <p>"IS" - ICELAND</p> </li>
+        /// <li> <p>"IN" - INDIA</p> </li>
+        /// <li> <p>"IE" - IRELAND</p> </li>
+        /// <li> <p>"IT" - ITALY</p> </li>
+        /// <li> <p>"JP" - JAPAN</p> </li>
+        /// <li> <p>"KZ" - KAZAKHSTAN</p> </li>
+        /// <li> <p>"KR" - KOREA</p> </li>
+        /// <li> <p>"LV" - LATVIA</p> </li>
+        /// <li> <p>"LI" - LIECHTENSTEIN</p> </li>
+        /// <li> <p>"LT" - LITHUANIA</p> </li>
+        /// <li> <p>"LU" - LUXEMBOURG</p> </li>
+        /// <li> <p>"MK" - MACEDONIA</p> </li>
+        /// <li> <p>"MT" - MALTA</p> </li>
+        /// <li> <p>"MX" - MEXICO</p> </li>
+        /// <li> <p>"MD" - MOLDOVA</p> </li>
+        /// <li> <p>"ME" - MONTENEGRO</p> </li>
+        /// <li> <p>"NL" - NETHERLANDS</p> </li>
+        /// <li> <p>"NZ" - NEW ZEALAND</p> </li>
+        /// <li> <p>"NI" - NICARAGUA</p> </li>
+        /// <li> <p>"NG" - NIGERIA</p> </li>
+        /// <li> <p>"NO" - NORWAY</p> </li>
+        /// <li> <p>"PA" - PANAMA</p> </li>
+        /// <li> <p>"PY" - PARAGUAY</p> </li>
+        /// <li> <p>"PE" - PERU</p> </li>
+        /// <li> <p>"PL" - POLAND</p> </li>
+        /// <li> <p>"PT" - PORTUGAL</p> </li>
+        /// <li> <p>"RO" - ROMANIA</p> </li>
+        /// <li> <p>"RU" - RUSSIA</p> </li>
+        /// <li> <p>"RS" - SERBIA</p> </li>
+        /// <li> <p>"SK" - SLOVAKIA</p> </li>
+        /// <li> <p>"SI" - SLOVENIA</p> </li>
+        /// <li> <p>"ZA" - SOUTH AFRICA</p> </li>
+        /// <li> <p>"ES" - SPAIN</p> </li>
+        /// <li> <p>"SE" - SWEDEN</p> </li>
+        /// <li> <p>"CH" - SWITZERLAND</p> </li>
+        /// <li> <p>"UA" - UKRAINE</p> </li>
+        /// <li> <p>"AE" - UNITED ARAB EMIRATES</p> </li>
+        /// <li> <p>"US" - UNITED STATES</p> </li>
+        /// <li> <p>"UK" - UNITED KINGDOM</p> </li>
+        /// <li> <p>"UY" - URUGUAY</p> </li>
+        /// <li> <p>"VE" - VENEZUELA</p> </li>
         /// </ul>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
@@ -7126,15 +5045,9 @@ impl SupplementaryFeature {
     }
 }
 
-/// <p>Configuration information for a hyperparameter tuning job. You specify this object in
-/// the <a>CreatePredictor</a> request.</p>
-/// <p>A <i>hyperparameter</i> is a parameter that governs the model training process. You set
-/// hyperparameters before training starts, unlike model parameters, which are determined during
-/// training. The values of the hyperparameters effect which values are chosen for the model parameters.</p>
-/// <p>In a <i>hyperparameter tuning job</i>, Amazon Forecast chooses the set of hyperparameter
-/// values that optimize a specified metric.  Forecast accomplishes this by running many training jobs
-/// over a range of hyperparameter values. The optimum set of values depends on the
-/// algorithm, the training data, and the specified metric objective.</p>
+/// <p>Configuration information for a hyperparameter tuning job. You specify this object in the <code>CreatePredictor</code> request.</p>
+/// <p>A <i>hyperparameter</i> is a parameter that governs the model training process. You set hyperparameters before training starts, unlike model parameters, which are determined during training. The values of the hyperparameters effect which values are chosen for the model parameters.</p>
+/// <p>In a <i>hyperparameter tuning job</i>, Amazon Forecast chooses the set of hyperparameter values that optimize a specified metric. Forecast accomplishes this by running many training jobs over a range of hyperparameter values. The optimum set of values depends on the algorithm, the training data, and the specified metric objective.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HyperParameterTuningJobConfig {
@@ -7191,10 +5104,7 @@ impl HyperParameterTuningJobConfig {
     }
 }
 
-/// <p>Specifies the categorical, continuous, and integer hyperparameters, and their ranges of
-/// tunable values. The range of tunable values determines which values that a hyperparameter
-/// tuning job can choose for the specified hyperparameter. This object is part of the
-/// <a>HyperParameterTuningJobConfig</a> object.</p>
+/// <p>Specifies the categorical, continuous, and integer hyperparameters, and their ranges of tunable values. The range of tunable values determines which values that a hyperparameter tuning job can choose for the specified hyperparameter. This object is part of the <code>HyperParameterTuningJobConfig</code> object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterRanges {
@@ -7264,10 +5174,10 @@ pub mod parameter_ranges {
         /// <p>Specifies the tunable range for each categorical hyperparameter.</p>
         pub fn categorical_parameter_ranges(
             mut self,
-            input: impl Into<crate::model::CategoricalParameterRange>,
+            input: crate::model::CategoricalParameterRange,
         ) -> Self {
             let mut v = self.categorical_parameter_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.categorical_parameter_ranges = Some(v);
             self
         }
@@ -7286,10 +5196,10 @@ pub mod parameter_ranges {
         /// <p>Specifies the tunable range for each continuous hyperparameter.</p>
         pub fn continuous_parameter_ranges(
             mut self,
-            input: impl Into<crate::model::ContinuousParameterRange>,
+            input: crate::model::ContinuousParameterRange,
         ) -> Self {
             let mut v = self.continuous_parameter_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.continuous_parameter_ranges = Some(v);
             self
         }
@@ -7308,10 +5218,10 @@ pub mod parameter_ranges {
         /// <p>Specifies the tunable range for each integer hyperparameter.</p>
         pub fn integer_parameter_ranges(
             mut self,
-            input: impl Into<crate::model::IntegerParameterRange>,
+            input: crate::model::IntegerParameterRange,
         ) -> Self {
             let mut v = self.integer_parameter_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.integer_parameter_ranges = Some(v);
             self
         }
@@ -7340,8 +5250,7 @@ impl ParameterRanges {
     }
 }
 
-/// <p>Specifies an integer hyperparameter and it's range of tunable values.
-/// This object is part of the <a>ParameterRanges</a> object.</p>
+/// <p>Specifies an integer hyperparameter and it's range of tunable values. This object is part of the <code>ParameterRanges</code> object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IntegerParameterRange {
@@ -7351,34 +5260,36 @@ pub struct IntegerParameterRange {
     pub max_value: std::option::Option<i32>,
     /// <p>The minimum tunable value of the hyperparameter.</p>
     pub min_value: std::option::Option<i32>,
-    /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range.
-    /// Valid values:</p>
+    /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. Valid values:</p>
     /// <dl>
-    /// <dt>Auto</dt>
+    /// <dt>
+    /// Auto
+    /// </dt>
     /// <dd>
     /// <p>Amazon Forecast hyperparameter tuning chooses the best scale for the hyperparameter.</p>
     /// </dd>
-    /// <dt>Linear</dt>
+    /// <dt>
+    /// Linear
+    /// </dt>
     /// <dd>
-    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a
-    /// linear scale.</p>
+    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.</p>
     /// </dd>
-    /// <dt>Logarithmic</dt>
+    /// <dt>
+    /// Logarithmic
+    /// </dt>
     /// <dd>
-    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a
-    /// logarithmic scale.</p>
+    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.</p>
     /// <p>Logarithmic scaling works only for ranges that have values greater than 0.</p>
     /// </dd>
-    /// <dt>ReverseLogarithmic</dt>
+    /// <dt>
+    /// ReverseLogarithmic
+    /// </dt>
     /// <dd>
     /// <p>Not supported for <code>IntegerParameterRange</code>.</p>
-    /// <p>Reverse logarithmic scaling works only for ranges that are entirely within the
-    /// range 0 <= x < 1.0.</p>
+    /// <p>Reverse logarithmic scaling works only for ranges that are entirely within the range 0 &lt;= x &lt; 1.0.</p>
     /// </dd>
     /// </dl>
-    /// <p>For information about choosing a hyperparameter scale, see
-    /// <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>.
-    /// One of the following values:</p>
+    /// <p>For information about choosing a hyperparameter scale, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
     pub scaling_type: std::option::Option<crate::model::ScalingType>,
 }
 impl IntegerParameterRange {
@@ -7394,34 +5305,36 @@ impl IntegerParameterRange {
     pub fn min_value(&self) -> std::option::Option<i32> {
         self.min_value
     }
-    /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range.
-    /// Valid values:</p>
+    /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. Valid values:</p>
     /// <dl>
-    /// <dt>Auto</dt>
+    /// <dt>
+    /// Auto
+    /// </dt>
     /// <dd>
     /// <p>Amazon Forecast hyperparameter tuning chooses the best scale for the hyperparameter.</p>
     /// </dd>
-    /// <dt>Linear</dt>
+    /// <dt>
+    /// Linear
+    /// </dt>
     /// <dd>
-    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a
-    /// linear scale.</p>
+    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.</p>
     /// </dd>
-    /// <dt>Logarithmic</dt>
+    /// <dt>
+    /// Logarithmic
+    /// </dt>
     /// <dd>
-    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a
-    /// logarithmic scale.</p>
+    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.</p>
     /// <p>Logarithmic scaling works only for ranges that have values greater than 0.</p>
     /// </dd>
-    /// <dt>ReverseLogarithmic</dt>
+    /// <dt>
+    /// ReverseLogarithmic
+    /// </dt>
     /// <dd>
     /// <p>Not supported for <code>IntegerParameterRange</code>.</p>
-    /// <p>Reverse logarithmic scaling works only for ranges that are entirely within the
-    /// range 0 <= x < 1.0.</p>
+    /// <p>Reverse logarithmic scaling works only for ranges that are entirely within the range 0 &lt;= x &lt; 1.0.</p>
     /// </dd>
     /// </dl>
-    /// <p>For information about choosing a hyperparameter scale, see
-    /// <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>.
-    /// One of the following values:</p>
+    /// <p>For information about choosing a hyperparameter scale, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
     pub fn scaling_type(&self) -> std::option::Option<&crate::model::ScalingType> {
         self.scaling_type.as_ref()
     }
@@ -7478,66 +5391,70 @@ pub mod integer_parameter_range {
             self.min_value = input;
             self
         }
-        /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range.
-        /// Valid values:</p>
+        /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. Valid values:</p>
         /// <dl>
-        /// <dt>Auto</dt>
+        /// <dt>
+        /// Auto
+        /// </dt>
         /// <dd>
         /// <p>Amazon Forecast hyperparameter tuning chooses the best scale for the hyperparameter.</p>
         /// </dd>
-        /// <dt>Linear</dt>
+        /// <dt>
+        /// Linear
+        /// </dt>
         /// <dd>
-        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a
-        /// linear scale.</p>
+        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.</p>
         /// </dd>
-        /// <dt>Logarithmic</dt>
+        /// <dt>
+        /// Logarithmic
+        /// </dt>
         /// <dd>
-        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a
-        /// logarithmic scale.</p>
+        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.</p>
         /// <p>Logarithmic scaling works only for ranges that have values greater than 0.</p>
         /// </dd>
-        /// <dt>ReverseLogarithmic</dt>
+        /// <dt>
+        /// ReverseLogarithmic
+        /// </dt>
         /// <dd>
         /// <p>Not supported for <code>IntegerParameterRange</code>.</p>
-        /// <p>Reverse logarithmic scaling works only for ranges that are entirely within the
-        /// range 0 <= x < 1.0.</p>
+        /// <p>Reverse logarithmic scaling works only for ranges that are entirely within the range 0 &lt;= x &lt; 1.0.</p>
         /// </dd>
         /// </dl>
-        /// <p>For information about choosing a hyperparameter scale, see
-        /// <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>.
-        /// One of the following values:</p>
+        /// <p>For information about choosing a hyperparameter scale, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
         pub fn scaling_type(mut self, input: crate::model::ScalingType) -> Self {
             self.scaling_type = Some(input);
             self
         }
-        /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range.
-        /// Valid values:</p>
+        /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. Valid values:</p>
         /// <dl>
-        /// <dt>Auto</dt>
+        /// <dt>
+        /// Auto
+        /// </dt>
         /// <dd>
         /// <p>Amazon Forecast hyperparameter tuning chooses the best scale for the hyperparameter.</p>
         /// </dd>
-        /// <dt>Linear</dt>
+        /// <dt>
+        /// Linear
+        /// </dt>
         /// <dd>
-        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a
-        /// linear scale.</p>
+        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.</p>
         /// </dd>
-        /// <dt>Logarithmic</dt>
+        /// <dt>
+        /// Logarithmic
+        /// </dt>
         /// <dd>
-        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a
-        /// logarithmic scale.</p>
+        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.</p>
         /// <p>Logarithmic scaling works only for ranges that have values greater than 0.</p>
         /// </dd>
-        /// <dt>ReverseLogarithmic</dt>
+        /// <dt>
+        /// ReverseLogarithmic
+        /// </dt>
         /// <dd>
         /// <p>Not supported for <code>IntegerParameterRange</code>.</p>
-        /// <p>Reverse logarithmic scaling works only for ranges that are entirely within the
-        /// range 0 <= x < 1.0.</p>
+        /// <p>Reverse logarithmic scaling works only for ranges that are entirely within the range 0 &lt;= x &lt; 1.0.</p>
         /// </dd>
         /// </dl>
-        /// <p>For information about choosing a hyperparameter scale, see
-        /// <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>.
-        /// One of the following values:</p>
+        /// <p>For information about choosing a hyperparameter scale, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
         pub fn set_scaling_type(
             mut self,
             input: std::option::Option<crate::model::ScalingType>,
@@ -7626,8 +5543,7 @@ impl AsRef<str> for ScalingType {
     }
 }
 
-/// <p>Specifies a continuous hyperparameter and it's range of tunable values.
-/// This object is part of the <a>ParameterRanges</a> object.</p>
+/// <p>Specifies a continuous hyperparameter and it's range of tunable values. This object is part of the <code>ParameterRanges</code> object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContinuousParameterRange {
@@ -7637,35 +5553,36 @@ pub struct ContinuousParameterRange {
     pub max_value: std::option::Option<f64>,
     /// <p>The minimum tunable value of the hyperparameter.</p>
     pub min_value: std::option::Option<f64>,
-    /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range.
-    /// Valid values:</p>
+    /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. Valid values:</p>
     /// <dl>
-    /// <dt>Auto</dt>
+    /// <dt>
+    /// Auto
+    /// </dt>
     /// <dd>
     /// <p>Amazon Forecast hyperparameter tuning chooses the best scale for the hyperparameter.</p>
     /// </dd>
-    /// <dt>Linear</dt>
+    /// <dt>
+    /// Linear
+    /// </dt>
     /// <dd>
-    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a
-    /// linear scale.</p>
+    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.</p>
     /// </dd>
-    /// <dt>Logarithmic</dt>
+    /// <dt>
+    /// Logarithmic
+    /// </dt>
     /// <dd>
-    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a
-    /// logarithmic scale.</p>
+    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.</p>
     /// <p>Logarithmic scaling works only for ranges that have values greater than 0.</p>
     /// </dd>
-    /// <dt>ReverseLogarithmic</dt>
+    /// <dt>
+    /// ReverseLogarithmic
+    /// </dt>
     /// <dd>
-    /// <p>hyperparameter tuning searches the values in the hyperparameter range by using a
-    /// reverse logarithmic scale.</p>
-    /// <p>Reverse logarithmic scaling works only for ranges that are entirely within the
-    /// range 0 <= x < 1.0.</p>
+    /// <p>hyperparameter tuning searches the values in the hyperparameter range by using a reverse logarithmic scale.</p>
+    /// <p>Reverse logarithmic scaling works only for ranges that are entirely within the range 0 &lt;= x &lt; 1.0.</p>
     /// </dd>
     /// </dl>
-    /// <p>For information about choosing a hyperparameter scale, see
-    /// <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>.
-    /// One of the following values:</p>
+    /// <p>For information about choosing a hyperparameter scale, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
     pub scaling_type: std::option::Option<crate::model::ScalingType>,
 }
 impl ContinuousParameterRange {
@@ -7681,35 +5598,36 @@ impl ContinuousParameterRange {
     pub fn min_value(&self) -> std::option::Option<f64> {
         self.min_value
     }
-    /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range.
-    /// Valid values:</p>
+    /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. Valid values:</p>
     /// <dl>
-    /// <dt>Auto</dt>
+    /// <dt>
+    /// Auto
+    /// </dt>
     /// <dd>
     /// <p>Amazon Forecast hyperparameter tuning chooses the best scale for the hyperparameter.</p>
     /// </dd>
-    /// <dt>Linear</dt>
+    /// <dt>
+    /// Linear
+    /// </dt>
     /// <dd>
-    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a
-    /// linear scale.</p>
+    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.</p>
     /// </dd>
-    /// <dt>Logarithmic</dt>
+    /// <dt>
+    /// Logarithmic
+    /// </dt>
     /// <dd>
-    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a
-    /// logarithmic scale.</p>
+    /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.</p>
     /// <p>Logarithmic scaling works only for ranges that have values greater than 0.</p>
     /// </dd>
-    /// <dt>ReverseLogarithmic</dt>
+    /// <dt>
+    /// ReverseLogarithmic
+    /// </dt>
     /// <dd>
-    /// <p>hyperparameter tuning searches the values in the hyperparameter range by using a
-    /// reverse logarithmic scale.</p>
-    /// <p>Reverse logarithmic scaling works only for ranges that are entirely within the
-    /// range 0 <= x < 1.0.</p>
+    /// <p>hyperparameter tuning searches the values in the hyperparameter range by using a reverse logarithmic scale.</p>
+    /// <p>Reverse logarithmic scaling works only for ranges that are entirely within the range 0 &lt;= x &lt; 1.0.</p>
     /// </dd>
     /// </dl>
-    /// <p>For information about choosing a hyperparameter scale, see
-    /// <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>.
-    /// One of the following values:</p>
+    /// <p>For information about choosing a hyperparameter scale, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
     pub fn scaling_type(&self) -> std::option::Option<&crate::model::ScalingType> {
         self.scaling_type.as_ref()
     }
@@ -7766,68 +5684,70 @@ pub mod continuous_parameter_range {
             self.min_value = input;
             self
         }
-        /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range.
-        /// Valid values:</p>
+        /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. Valid values:</p>
         /// <dl>
-        /// <dt>Auto</dt>
+        /// <dt>
+        /// Auto
+        /// </dt>
         /// <dd>
         /// <p>Amazon Forecast hyperparameter tuning chooses the best scale for the hyperparameter.</p>
         /// </dd>
-        /// <dt>Linear</dt>
+        /// <dt>
+        /// Linear
+        /// </dt>
         /// <dd>
-        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a
-        /// linear scale.</p>
+        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.</p>
         /// </dd>
-        /// <dt>Logarithmic</dt>
+        /// <dt>
+        /// Logarithmic
+        /// </dt>
         /// <dd>
-        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a
-        /// logarithmic scale.</p>
+        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.</p>
         /// <p>Logarithmic scaling works only for ranges that have values greater than 0.</p>
         /// </dd>
-        /// <dt>ReverseLogarithmic</dt>
+        /// <dt>
+        /// ReverseLogarithmic
+        /// </dt>
         /// <dd>
-        /// <p>hyperparameter tuning searches the values in the hyperparameter range by using a
-        /// reverse logarithmic scale.</p>
-        /// <p>Reverse logarithmic scaling works only for ranges that are entirely within the
-        /// range 0 <= x < 1.0.</p>
+        /// <p>hyperparameter tuning searches the values in the hyperparameter range by using a reverse logarithmic scale.</p>
+        /// <p>Reverse logarithmic scaling works only for ranges that are entirely within the range 0 &lt;= x &lt; 1.0.</p>
         /// </dd>
         /// </dl>
-        /// <p>For information about choosing a hyperparameter scale, see
-        /// <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>.
-        /// One of the following values:</p>
+        /// <p>For information about choosing a hyperparameter scale, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
         pub fn scaling_type(mut self, input: crate::model::ScalingType) -> Self {
             self.scaling_type = Some(input);
             self
         }
-        /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range.
-        /// Valid values:</p>
+        /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. Valid values:</p>
         /// <dl>
-        /// <dt>Auto</dt>
+        /// <dt>
+        /// Auto
+        /// </dt>
         /// <dd>
         /// <p>Amazon Forecast hyperparameter tuning chooses the best scale for the hyperparameter.</p>
         /// </dd>
-        /// <dt>Linear</dt>
+        /// <dt>
+        /// Linear
+        /// </dt>
         /// <dd>
-        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a
-        /// linear scale.</p>
+        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a linear scale.</p>
         /// </dd>
-        /// <dt>Logarithmic</dt>
+        /// <dt>
+        /// Logarithmic
+        /// </dt>
         /// <dd>
-        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a
-        /// logarithmic scale.</p>
+        /// <p>Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.</p>
         /// <p>Logarithmic scaling works only for ranges that have values greater than 0.</p>
         /// </dd>
-        /// <dt>ReverseLogarithmic</dt>
+        /// <dt>
+        /// ReverseLogarithmic
+        /// </dt>
         /// <dd>
-        /// <p>hyperparameter tuning searches the values in the hyperparameter range by using a
-        /// reverse logarithmic scale.</p>
-        /// <p>Reverse logarithmic scaling works only for ranges that are entirely within the
-        /// range 0 <= x < 1.0.</p>
+        /// <p>hyperparameter tuning searches the values in the hyperparameter range by using a reverse logarithmic scale.</p>
+        /// <p>Reverse logarithmic scaling works only for ranges that are entirely within the range 0 &lt;= x &lt; 1.0.</p>
         /// </dd>
         /// </dl>
-        /// <p>For information about choosing a hyperparameter scale, see
-        /// <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>.
-        /// One of the following values:</p>
+        /// <p>For information about choosing a hyperparameter scale, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
         pub fn set_scaling_type(
             mut self,
             input: std::option::Option<crate::model::ScalingType>,
@@ -7853,8 +5773,7 @@ impl ContinuousParameterRange {
     }
 }
 
-/// <p>Specifies a categorical hyperparameter and it's range of tunable values.
-/// This object is part of the <a>ParameterRanges</a> object.</p>
+/// <p>Specifies a categorical hyperparameter and it's range of tunable values. This object is part of the <code>ParameterRanges</code> object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CategoricalParameterRange {
@@ -7936,39 +5855,23 @@ impl CategoricalParameterRange {
     }
 }
 
-/// <p>Parameters that define how to split a dataset into training data and testing data, and the
-/// number of iterations to perform. These parameters are specified in the predefined algorithms
-/// but you can override them in the <a>CreatePredictor</a> request.</p>
+/// <p>Parameters that define how to split a dataset into training data and testing data, and the number of iterations to perform. These parameters are specified in the predefined algorithms but you can override them in the <code>CreatePredictor</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluationParameters {
-    /// <p>The number of times to split the input data. The default is 1. Valid values are 1 through
-    /// 5.</p>
+    /// <p>The number of times to split the input data. The default is 1. Valid values are 1 through 5.</p>
     pub number_of_backtest_windows: std::option::Option<i32>,
-    /// <p>The point from the end of the dataset where you want to split the data for model training
-    /// and testing (evaluation). Specify the value as the number of data points. The default is the
-    /// value of the forecast horizon. <code>BackTestWindowOffset</code> can be used to mimic a past
-    /// virtual forecast start date. This value must be greater than or equal to the forecast horizon
-    /// and less than half of the TARGET_TIME_SERIES dataset length.</p>
-    /// <p>
-    /// <code>ForecastHorizon</code> <= <code>BackTestWindowOffset</code> < 1/2 *
-    /// TARGET_TIME_SERIES dataset length</p>
+    /// <p>The point from the end of the dataset where you want to split the data for model training and testing (evaluation). Specify the value as the number of data points. The default is the value of the forecast horizon. <code>BackTestWindowOffset</code> can be used to mimic a past virtual forecast start date. This value must be greater than or equal to the forecast horizon and less than half of the TARGET_TIME_SERIES dataset length.</p>
+    /// <p> <code>ForecastHorizon</code> &lt;= <code>BackTestWindowOffset</code> &lt; 1/2 * TARGET_TIME_SERIES dataset length</p>
     pub back_test_window_offset: std::option::Option<i32>,
 }
 impl EvaluationParameters {
-    /// <p>The number of times to split the input data. The default is 1. Valid values are 1 through
-    /// 5.</p>
+    /// <p>The number of times to split the input data. The default is 1. Valid values are 1 through 5.</p>
     pub fn number_of_backtest_windows(&self) -> std::option::Option<i32> {
         self.number_of_backtest_windows
     }
-    /// <p>The point from the end of the dataset where you want to split the data for model training
-    /// and testing (evaluation). Specify the value as the number of data points. The default is the
-    /// value of the forecast horizon. <code>BackTestWindowOffset</code> can be used to mimic a past
-    /// virtual forecast start date. This value must be greater than or equal to the forecast horizon
-    /// and less than half of the TARGET_TIME_SERIES dataset length.</p>
-    /// <p>
-    /// <code>ForecastHorizon</code> <= <code>BackTestWindowOffset</code> < 1/2 *
-    /// TARGET_TIME_SERIES dataset length</p>
+    /// <p>The point from the end of the dataset where you want to split the data for model training and testing (evaluation). Specify the value as the number of data points. The default is the value of the forecast horizon. <code>BackTestWindowOffset</code> can be used to mimic a past virtual forecast start date. This value must be greater than or equal to the forecast horizon and less than half of the TARGET_TIME_SERIES dataset length.</p>
+    /// <p> <code>ForecastHorizon</code> &lt;= <code>BackTestWindowOffset</code> &lt; 1/2 * TARGET_TIME_SERIES dataset length</p>
     pub fn back_test_window_offset(&self) -> std::option::Option<i32> {
         self.back_test_window_offset
     }
@@ -7994,38 +5897,24 @@ pub mod evaluation_parameters {
         pub(crate) back_test_window_offset: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The number of times to split the input data. The default is 1. Valid values are 1 through
-        /// 5.</p>
+        /// <p>The number of times to split the input data. The default is 1. Valid values are 1 through 5.</p>
         pub fn number_of_backtest_windows(mut self, input: i32) -> Self {
             self.number_of_backtest_windows = Some(input);
             self
         }
-        /// <p>The number of times to split the input data. The default is 1. Valid values are 1 through
-        /// 5.</p>
+        /// <p>The number of times to split the input data. The default is 1. Valid values are 1 through 5.</p>
         pub fn set_number_of_backtest_windows(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_backtest_windows = input;
             self
         }
-        /// <p>The point from the end of the dataset where you want to split the data for model training
-        /// and testing (evaluation). Specify the value as the number of data points. The default is the
-        /// value of the forecast horizon. <code>BackTestWindowOffset</code> can be used to mimic a past
-        /// virtual forecast start date. This value must be greater than or equal to the forecast horizon
-        /// and less than half of the TARGET_TIME_SERIES dataset length.</p>
-        /// <p>
-        /// <code>ForecastHorizon</code> <= <code>BackTestWindowOffset</code> < 1/2 *
-        /// TARGET_TIME_SERIES dataset length</p>
+        /// <p>The point from the end of the dataset where you want to split the data for model training and testing (evaluation). Specify the value as the number of data points. The default is the value of the forecast horizon. <code>BackTestWindowOffset</code> can be used to mimic a past virtual forecast start date. This value must be greater than or equal to the forecast horizon and less than half of the TARGET_TIME_SERIES dataset length.</p>
+        /// <p> <code>ForecastHorizon</code> &lt;= <code>BackTestWindowOffset</code> &lt; 1/2 * TARGET_TIME_SERIES dataset length</p>
         pub fn back_test_window_offset(mut self, input: i32) -> Self {
             self.back_test_window_offset = Some(input);
             self
         }
-        /// <p>The point from the end of the dataset where you want to split the data for model training
-        /// and testing (evaluation). Specify the value as the number of data points. The default is the
-        /// value of the forecast horizon. <code>BackTestWindowOffset</code> can be used to mimic a past
-        /// virtual forecast start date. This value must be greater than or equal to the forecast horizon
-        /// and less than half of the TARGET_TIME_SERIES dataset length.</p>
-        /// <p>
-        /// <code>ForecastHorizon</code> <= <code>BackTestWindowOffset</code> < 1/2 *
-        /// TARGET_TIME_SERIES dataset length</p>
+        /// <p>The point from the end of the dataset where you want to split the data for model training and testing (evaluation). Specify the value as the number of data points. The default is the value of the forecast horizon. <code>BackTestWindowOffset</code> can be used to mimic a past virtual forecast start date. This value must be greater than or equal to the forecast horizon and less than half of the TARGET_TIME_SERIES dataset length.</p>
+        /// <p> <code>ForecastHorizon</code> &lt;= <code>BackTestWindowOffset</code> &lt; 1/2 * TARGET_TIME_SERIES dataset length</p>
         pub fn set_back_test_window_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.back_test_window_offset = input;
             self
@@ -8046,7 +5935,7 @@ impl EvaluationParameters {
     }
 }
 
-/// <p>Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a> request.</p>
+/// <p>Defines the fields of a dataset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Schema {
@@ -8080,9 +5969,9 @@ pub mod schema {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>An array of attributes specifying the name and type of each field in a dataset.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::SchemaAttribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::SchemaAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -8109,9 +5998,7 @@ impl Schema {
     }
 }
 
-/// <p>An attribute of a schema, which defines a dataset field. A schema attribute is required
-/// for every field in a dataset. The <a>Schema</a> object contains an array of
-/// <code>SchemaAttribute</code> objects.</p>
+/// <p>An attribute of a schema, which defines a dataset field. A schema attribute is required for every field in a dataset. The <code>Schema</code> object contains an array of <code>SchemaAttribute</code> objects.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SchemaAttribute {
@@ -8257,22 +6144,17 @@ impl AsRef<str> for AttributeType {
     }
 }
 
-/// <p>Provides statistics for each data field imported into to an Amazon Forecast dataset with
-/// the <a>CreateDatasetImportJob</a> operation.</p>
+/// <p>Provides statistics for each data field imported into to an Amazon Forecast dataset with the <code>CreateDatasetImportJob</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Statistics {
-    /// <p>The number of values in the field. If the response value is -1, refer to
-    /// <code>CountLong</code>.</p>
+    /// <p>The number of values in the field. If the response value is -1, refer to <code>CountLong</code>.</p>
     pub count: std::option::Option<i32>,
-    /// <p>The number of distinct values in the field. If the response value is -1, refer to
-    /// <code>CountDistinctLong</code>.</p>
+    /// <p>The number of distinct values in the field. If the response value is -1, refer to <code>CountDistinctLong</code>.</p>
     pub count_distinct: std::option::Option<i32>,
-    /// <p>The number of null values in the field. If the response value is -1, refer to
-    /// <code>CountNullLong</code>.</p>
+    /// <p>The number of null values in the field. If the response value is -1, refer to <code>CountNullLong</code>.</p>
     pub count_null: std::option::Option<i32>,
-    /// <p>The number of NAN (not a number) values in the field. If the response value is -1, refer to
-    /// <code>CountNanLong</code>.</p>
+    /// <p>The number of NAN (not a number) values in the field. If the response value is -1, refer to <code>CountNanLong</code>.</p>
     pub count_nan: std::option::Option<i32>,
     /// <p>For a numeric field, the minimum value in the field.</p>
     pub min: std::option::Option<std::string::String>,
@@ -8282,37 +6164,29 @@ pub struct Statistics {
     pub avg: std::option::Option<f64>,
     /// <p>For a numeric field, the standard deviation.</p>
     pub stddev: std::option::Option<f64>,
-    /// <p>The number of values in the field. <code>CountLong</code> is used instead of
-    /// <code>Count</code> if the value is greater than 2,147,483,647.</p>
+    /// <p>The number of values in the field. <code>CountLong</code> is used instead of <code>Count</code> if the value is greater than 2,147,483,647.</p>
     pub count_long: std::option::Option<i64>,
-    /// <p>The number of distinct values in the field. <code>CountDistinctLong</code> is used instead
-    /// of <code>CountDistinct</code> if the value is greater than 2,147,483,647.</p>
+    /// <p>The number of distinct values in the field. <code>CountDistinctLong</code> is used instead of <code>CountDistinct</code> if the value is greater than 2,147,483,647.</p>
     pub count_distinct_long: std::option::Option<i64>,
-    /// <p>The number of null values in the field. <code>CountNullLong</code> is used instead of
-    /// <code>CountNull</code> if the value is greater than 2,147,483,647.</p>
+    /// <p>The number of null values in the field. <code>CountNullLong</code> is used instead of <code>CountNull</code> if the value is greater than 2,147,483,647.</p>
     pub count_null_long: std::option::Option<i64>,
-    /// <p>The number of NAN (not a number) values in the field. <code>CountNanLong</code> is used
-    /// instead of <code>CountNan</code> if the value is greater than 2,147,483,647.</p>
+    /// <p>The number of NAN (not a number) values in the field. <code>CountNanLong</code> is used instead of <code>CountNan</code> if the value is greater than 2,147,483,647.</p>
     pub count_nan_long: std::option::Option<i64>,
 }
 impl Statistics {
-    /// <p>The number of values in the field. If the response value is -1, refer to
-    /// <code>CountLong</code>.</p>
+    /// <p>The number of values in the field. If the response value is -1, refer to <code>CountLong</code>.</p>
     pub fn count(&self) -> std::option::Option<i32> {
         self.count
     }
-    /// <p>The number of distinct values in the field. If the response value is -1, refer to
-    /// <code>CountDistinctLong</code>.</p>
+    /// <p>The number of distinct values in the field. If the response value is -1, refer to <code>CountDistinctLong</code>.</p>
     pub fn count_distinct(&self) -> std::option::Option<i32> {
         self.count_distinct
     }
-    /// <p>The number of null values in the field. If the response value is -1, refer to
-    /// <code>CountNullLong</code>.</p>
+    /// <p>The number of null values in the field. If the response value is -1, refer to <code>CountNullLong</code>.</p>
     pub fn count_null(&self) -> std::option::Option<i32> {
         self.count_null
     }
-    /// <p>The number of NAN (not a number) values in the field. If the response value is -1, refer to
-    /// <code>CountNanLong</code>.</p>
+    /// <p>The number of NAN (not a number) values in the field. If the response value is -1, refer to <code>CountNanLong</code>.</p>
     pub fn count_nan(&self) -> std::option::Option<i32> {
         self.count_nan
     }
@@ -8332,23 +6206,19 @@ impl Statistics {
     pub fn stddev(&self) -> std::option::Option<f64> {
         self.stddev
     }
-    /// <p>The number of values in the field. <code>CountLong</code> is used instead of
-    /// <code>Count</code> if the value is greater than 2,147,483,647.</p>
+    /// <p>The number of values in the field. <code>CountLong</code> is used instead of <code>Count</code> if the value is greater than 2,147,483,647.</p>
     pub fn count_long(&self) -> std::option::Option<i64> {
         self.count_long
     }
-    /// <p>The number of distinct values in the field. <code>CountDistinctLong</code> is used instead
-    /// of <code>CountDistinct</code> if the value is greater than 2,147,483,647.</p>
+    /// <p>The number of distinct values in the field. <code>CountDistinctLong</code> is used instead of <code>CountDistinct</code> if the value is greater than 2,147,483,647.</p>
     pub fn count_distinct_long(&self) -> std::option::Option<i64> {
         self.count_distinct_long
     }
-    /// <p>The number of null values in the field. <code>CountNullLong</code> is used instead of
-    /// <code>CountNull</code> if the value is greater than 2,147,483,647.</p>
+    /// <p>The number of null values in the field. <code>CountNullLong</code> is used instead of <code>CountNull</code> if the value is greater than 2,147,483,647.</p>
     pub fn count_null_long(&self) -> std::option::Option<i64> {
         self.count_null_long
     }
-    /// <p>The number of NAN (not a number) values in the field. <code>CountNanLong</code> is used
-    /// instead of <code>CountNan</code> if the value is greater than 2,147,483,647.</p>
+    /// <p>The number of NAN (not a number) values in the field. <code>CountNanLong</code> is used instead of <code>CountNan</code> if the value is greater than 2,147,483,647.</p>
     pub fn count_nan_long(&self) -> std::option::Option<i64> {
         self.count_nan_long
     }
@@ -8391,50 +6261,42 @@ pub mod statistics {
         pub(crate) count_nan_long: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The number of values in the field. If the response value is -1, refer to
-        /// <code>CountLong</code>.</p>
+        /// <p>The number of values in the field. If the response value is -1, refer to <code>CountLong</code>.</p>
         pub fn count(mut self, input: i32) -> Self {
             self.count = Some(input);
             self
         }
-        /// <p>The number of values in the field. If the response value is -1, refer to
-        /// <code>CountLong</code>.</p>
+        /// <p>The number of values in the field. If the response value is -1, refer to <code>CountLong</code>.</p>
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
             self.count = input;
             self
         }
-        /// <p>The number of distinct values in the field. If the response value is -1, refer to
-        /// <code>CountDistinctLong</code>.</p>
+        /// <p>The number of distinct values in the field. If the response value is -1, refer to <code>CountDistinctLong</code>.</p>
         pub fn count_distinct(mut self, input: i32) -> Self {
             self.count_distinct = Some(input);
             self
         }
-        /// <p>The number of distinct values in the field. If the response value is -1, refer to
-        /// <code>CountDistinctLong</code>.</p>
+        /// <p>The number of distinct values in the field. If the response value is -1, refer to <code>CountDistinctLong</code>.</p>
         pub fn set_count_distinct(mut self, input: std::option::Option<i32>) -> Self {
             self.count_distinct = input;
             self
         }
-        /// <p>The number of null values in the field. If the response value is -1, refer to
-        /// <code>CountNullLong</code>.</p>
+        /// <p>The number of null values in the field. If the response value is -1, refer to <code>CountNullLong</code>.</p>
         pub fn count_null(mut self, input: i32) -> Self {
             self.count_null = Some(input);
             self
         }
-        /// <p>The number of null values in the field. If the response value is -1, refer to
-        /// <code>CountNullLong</code>.</p>
+        /// <p>The number of null values in the field. If the response value is -1, refer to <code>CountNullLong</code>.</p>
         pub fn set_count_null(mut self, input: std::option::Option<i32>) -> Self {
             self.count_null = input;
             self
         }
-        /// <p>The number of NAN (not a number) values in the field. If the response value is -1, refer to
-        /// <code>CountNanLong</code>.</p>
+        /// <p>The number of NAN (not a number) values in the field. If the response value is -1, refer to <code>CountNanLong</code>.</p>
         pub fn count_nan(mut self, input: i32) -> Self {
             self.count_nan = Some(input);
             self
         }
-        /// <p>The number of NAN (not a number) values in the field. If the response value is -1, refer to
-        /// <code>CountNanLong</code>.</p>
+        /// <p>The number of NAN (not a number) values in the field. If the response value is -1, refer to <code>CountNanLong</code>.</p>
         pub fn set_count_nan(mut self, input: std::option::Option<i32>) -> Self {
             self.count_nan = input;
             self
@@ -8479,50 +6341,42 @@ pub mod statistics {
             self.stddev = input;
             self
         }
-        /// <p>The number of values in the field. <code>CountLong</code> is used instead of
-        /// <code>Count</code> if the value is greater than 2,147,483,647.</p>
+        /// <p>The number of values in the field. <code>CountLong</code> is used instead of <code>Count</code> if the value is greater than 2,147,483,647.</p>
         pub fn count_long(mut self, input: i64) -> Self {
             self.count_long = Some(input);
             self
         }
-        /// <p>The number of values in the field. <code>CountLong</code> is used instead of
-        /// <code>Count</code> if the value is greater than 2,147,483,647.</p>
+        /// <p>The number of values in the field. <code>CountLong</code> is used instead of <code>Count</code> if the value is greater than 2,147,483,647.</p>
         pub fn set_count_long(mut self, input: std::option::Option<i64>) -> Self {
             self.count_long = input;
             self
         }
-        /// <p>The number of distinct values in the field. <code>CountDistinctLong</code> is used instead
-        /// of <code>CountDistinct</code> if the value is greater than 2,147,483,647.</p>
+        /// <p>The number of distinct values in the field. <code>CountDistinctLong</code> is used instead of <code>CountDistinct</code> if the value is greater than 2,147,483,647.</p>
         pub fn count_distinct_long(mut self, input: i64) -> Self {
             self.count_distinct_long = Some(input);
             self
         }
-        /// <p>The number of distinct values in the field. <code>CountDistinctLong</code> is used instead
-        /// of <code>CountDistinct</code> if the value is greater than 2,147,483,647.</p>
+        /// <p>The number of distinct values in the field. <code>CountDistinctLong</code> is used instead of <code>CountDistinct</code> if the value is greater than 2,147,483,647.</p>
         pub fn set_count_distinct_long(mut self, input: std::option::Option<i64>) -> Self {
             self.count_distinct_long = input;
             self
         }
-        /// <p>The number of null values in the field. <code>CountNullLong</code> is used instead of
-        /// <code>CountNull</code> if the value is greater than 2,147,483,647.</p>
+        /// <p>The number of null values in the field. <code>CountNullLong</code> is used instead of <code>CountNull</code> if the value is greater than 2,147,483,647.</p>
         pub fn count_null_long(mut self, input: i64) -> Self {
             self.count_null_long = Some(input);
             self
         }
-        /// <p>The number of null values in the field. <code>CountNullLong</code> is used instead of
-        /// <code>CountNull</code> if the value is greater than 2,147,483,647.</p>
+        /// <p>The number of null values in the field. <code>CountNullLong</code> is used instead of <code>CountNull</code> if the value is greater than 2,147,483,647.</p>
         pub fn set_count_null_long(mut self, input: std::option::Option<i64>) -> Self {
             self.count_null_long = input;
             self
         }
-        /// <p>The number of NAN (not a number) values in the field. <code>CountNanLong</code> is used
-        /// instead of <code>CountNan</code> if the value is greater than 2,147,483,647.</p>
+        /// <p>The number of NAN (not a number) values in the field. <code>CountNanLong</code> is used instead of <code>CountNan</code> if the value is greater than 2,147,483,647.</p>
         pub fn count_nan_long(mut self, input: i64) -> Self {
             self.count_nan_long = Some(input);
             self
         }
-        /// <p>The number of NAN (not a number) values in the field. <code>CountNanLong</code> is used
-        /// instead of <code>CountNan</code> if the value is greater than 2,147,483,647.</p>
+        /// <p>The number of NAN (not a number) values in the field. <code>CountNanLong</code> is used instead of <code>CountNan</code> if the value is greater than 2,147,483,647.</p>
         pub fn set_count_nan_long(mut self, input: std::option::Option<i64>) -> Self {
             self.count_nan_long = input;
             self
@@ -8553,21 +6407,33 @@ impl Statistics {
     }
 }
 
-#[allow(missing_docs)] // documentation missing in model
+/// <p>Provides information about the Explainability resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExplainabilityInfo {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
     pub explainability_arn: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The status of the Explainability. States include: </p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul>
     pub status: std::option::Option<std::string::String>,
 }
 impl ExplainabilityInfo {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
     pub fn explainability_arn(&self) -> std::option::Option<&str> {
         self.explainability_arn.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The status of the Explainability. States include: </p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -8590,12 +6456,12 @@ pub mod explainability_info {
         pub(crate) status: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
         pub fn explainability_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.explainability_arn = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
         pub fn set_explainability_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8603,12 +6469,24 @@ pub mod explainability_info {
             self.explainability_arn = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The status of the Explainability. States include: </p>
+        /// <ul>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The status of the Explainability. States include: </p>
+        /// <ul>
+        /// <li> <p> <code>ACTIVE</code> </p> </li>
+        /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+        /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+        /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+        /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -8694,12 +6572,9 @@ pub mod data_config {
         /// To override the contents of this collection use [`set_attribute_configs`](Self::set_attribute_configs).
         ///
         /// <p>Aggregation and filling options for attributes in your dataset group.</p>
-        pub fn attribute_configs(
-            mut self,
-            input: impl Into<crate::model::AttributeConfig>,
-        ) -> Self {
+        pub fn attribute_configs(mut self, input: crate::model::AttributeConfig) -> Self {
             let mut v = self.attribute_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attribute_configs = Some(v);
             self
         }
@@ -8716,12 +6591,9 @@ pub mod data_config {
         /// To override the contents of this collection use [`set_additional_datasets`](Self::set_additional_datasets).
         ///
         /// <p>Additional built-in datasets like Holidays and the Weather Index.</p>
-        pub fn additional_datasets(
-            mut self,
-            input: impl Into<crate::model::AdditionalDataset>,
-        ) -> Self {
+        pub fn additional_datasets(mut self, input: crate::model::AdditionalDataset) -> Self {
             let mut v = self.additional_datasets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_datasets = Some(v);
             self
         }
@@ -8750,458 +6622,168 @@ impl DataConfig {
     }
 }
 
-/// <p>Describes an additional dataset. This object is part of the <a>DataConfig</a> object. Forecast supports the Weather Index and Holidays additional datasets.</p>
-/// <p>
-/// <b>Weather Index</b>
-/// </p>
-/// <p>The Amazon Forecast Weather Index is a built-in dataset that incorporates historical and
-/// projected weather information into your model. The Weather Index supplements your
-/// datasets with over two years of historical weather data and up to 14 days of projected
-/// weather data. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/weather.html">Amazon Forecast
-/// Weather Index</a>.</p>
-/// <p>
-/// <b>Holidays</b>
-/// </p>
-/// <p>Holidays is a built-in dataset that incorporates national holiday information into
-/// your model. It provides native support for the holiday calendars of 66 countries. To
-/// view the holiday calendars, refer to the <a href="http://jollyday.sourceforge.net/data.html">Jollyday</a> library. For more
-/// information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html">Holidays
-/// Featurization</a>.</p>
+/// <p>Describes an additional dataset. This object is part of the <code>DataConfig</code> object. Forecast supports the Weather Index and Holidays additional datasets.</p>
+/// <p> <b>Weather Index</b> </p>
+/// <p>The Amazon Forecast Weather Index is a built-in dataset that incorporates historical and projected weather information into your model. The Weather Index supplements your datasets with over two years of historical weather data and up to 14 days of projected weather data. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/weather.html">Amazon Forecast Weather Index</a>.</p>
+/// <p> <b>Holidays</b> </p>
+/// <p>Holidays is a built-in dataset that incorporates national holiday information into your model. It provides native support for the holiday calendars of 66 countries. To view the holiday calendars, refer to the <a href="http://jollyday.sourceforge.net/data.html">Jollyday</a> library. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html">Holidays Featurization</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdditionalDataset {
-    /// <p>The name of the additional dataset. Valid names: <code>"holiday"</code> and
-    /// <code>"weather"</code>.</p>
+    /// <p>The name of the additional dataset. Valid names: <code>"holiday"</code> and <code>"weather"</code>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>
-    /// <b>Weather Index</b>
-    /// </p>
-    /// <p>To enable the Weather Index, do not specify a value for
-    /// <code>Configuration</code>.</p>
-    /// <p>
-    /// <b>Holidays</b>
-    /// </p>
-    /// <p>To enable Holidays, specify a country with one of the following two-letter country
-    /// codes:</p>
+    /// <p> <b>Weather Index</b> </p>
+    /// <p>To enable the Weather Index, do not specify a value for <code>Configuration</code>.</p>
+    /// <p> <b>Holidays</b> </p>
+    /// <p>To enable Holidays, set <code>CountryCode</code> to one of the following two-letter country codes:</p>
     /// <ul>
-    /// <li>
-    /// <p>"AL" - ALBANIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"AR" - ARGENTINA</p>
-    /// </li>
-    /// <li>
-    /// <p>"AT" - AUSTRIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"AU" - AUSTRALIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"BA" - BOSNIA HERZEGOVINA</p>
-    /// </li>
-    /// <li>
-    /// <p>"BE" - BELGIUM</p>
-    /// </li>
-    /// <li>
-    /// <p>"BG" - BULGARIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"BO" - BOLIVIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"BR" - BRAZIL</p>
-    /// </li>
-    /// <li>
-    /// <p>"BY" - BELARUS</p>
-    /// </li>
-    /// <li>
-    /// <p>"CA" - CANADA</p>
-    /// </li>
-    /// <li>
-    /// <p>"CL" - CHILE</p>
-    /// </li>
-    /// <li>
-    /// <p>"CO" - COLOMBIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"CR" - COSTA RICA</p>
-    /// </li>
-    /// <li>
-    /// <p>"HR" - CROATIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"CZ" - CZECH REPUBLIC</p>
-    /// </li>
-    /// <li>
-    /// <p>"DK" - DENMARK</p>
-    /// </li>
-    /// <li>
-    /// <p>"EC" - ECUADOR</p>
-    /// </li>
-    /// <li>
-    /// <p>"EE" - ESTONIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"ET" - ETHIOPIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"FI" - FINLAND</p>
-    /// </li>
-    /// <li>
-    /// <p>"FR" - FRANCE</p>
-    /// </li>
-    /// <li>
-    /// <p>"DE" - GERMANY</p>
-    /// </li>
-    /// <li>
-    /// <p>"GR" - GREECE</p>
-    /// </li>
-    /// <li>
-    /// <p>"HU" - HUNGARY</p>
-    /// </li>
-    /// <li>
-    /// <p>"IS" - ICELAND</p>
-    /// </li>
-    /// <li>
-    /// <p>"IN" - INDIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"IE" - IRELAND</p>
-    /// </li>
-    /// <li>
-    /// <p>"IT" - ITALY</p>
-    /// </li>
-    /// <li>
-    /// <p>"JP" - JAPAN</p>
-    /// </li>
-    /// <li>
-    /// <p>"KZ" - KAZAKHSTAN</p>
-    /// </li>
-    /// <li>
-    /// <p>"KR" - KOREA</p>
-    /// </li>
-    /// <li>
-    /// <p>"LV" - LATVIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"LI" - LIECHTENSTEIN</p>
-    /// </li>
-    /// <li>
-    /// <p>"LT" - LITHUANIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"LU" - LUXEMBOURG</p>
-    /// </li>
-    /// <li>
-    /// <p>"MK" - MACEDONIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"MT" - MALTA</p>
-    /// </li>
-    /// <li>
-    /// <p>"MX" - MEXICO</p>
-    /// </li>
-    /// <li>
-    /// <p>"MD" - MOLDOVA</p>
-    /// </li>
-    /// <li>
-    /// <p>"ME" - MONTENEGRO</p>
-    /// </li>
-    /// <li>
-    /// <p>"NL" - NETHERLANDS</p>
-    /// </li>
-    /// <li>
-    /// <p>"NZ" - NEW ZEALAND</p>
-    /// </li>
-    /// <li>
-    /// <p>"NI" - NICARAGUA</p>
-    /// </li>
-    /// <li>
-    /// <p>"NG" - NIGERIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"NO" - NORWAY</p>
-    /// </li>
-    /// <li>
-    /// <p>"PA" - PANAMA</p>
-    /// </li>
-    /// <li>
-    /// <p>"PY" - PARAGUAY</p>
-    /// </li>
-    /// <li>
-    /// <p>"PE" - PERU</p>
-    /// </li>
-    /// <li>
-    /// <p>"PL" - POLAND</p>
-    /// </li>
-    /// <li>
-    /// <p>"PT" - PORTUGAL</p>
-    /// </li>
-    /// <li>
-    /// <p>"RO" - ROMANIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"RU" - RUSSIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"RS" - SERBIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"SK" - SLOVAKIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"SI" - SLOVENIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"ZA" - SOUTH AFRICA</p>
-    /// </li>
-    /// <li>
-    /// <p>"ES" - SPAIN</p>
-    /// </li>
-    /// <li>
-    /// <p>"SE" - SWEDEN</p>
-    /// </li>
-    /// <li>
-    /// <p>"CH" - SWITZERLAND</p>
-    /// </li>
-    /// <li>
-    /// <p>"UA" - UKRAINE</p>
-    /// </li>
-    /// <li>
-    /// <p>"AE" - UNITED ARAB EMIRATES</p>
-    /// </li>
-    /// <li>
-    /// <p>"US" - UNITED STATES</p>
-    /// </li>
-    /// <li>
-    /// <p>"UK" - UNITED KINGDOM</p>
-    /// </li>
-    /// <li>
-    /// <p>"UY" - URUGUAY</p>
-    /// </li>
-    /// <li>
-    /// <p>"VE" - VENEZUELA</p>
-    /// </li>
+    /// <li> <p>"AL" - ALBANIA</p> </li>
+    /// <li> <p>"AR" - ARGENTINA</p> </li>
+    /// <li> <p>"AT" - AUSTRIA</p> </li>
+    /// <li> <p>"AU" - AUSTRALIA</p> </li>
+    /// <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li>
+    /// <li> <p>"BE" - BELGIUM</p> </li>
+    /// <li> <p>"BG" - BULGARIA</p> </li>
+    /// <li> <p>"BO" - BOLIVIA</p> </li>
+    /// <li> <p>"BR" - BRAZIL</p> </li>
+    /// <li> <p>"BY" - BELARUS</p> </li>
+    /// <li> <p>"CA" - CANADA</p> </li>
+    /// <li> <p>"CL" - CHILE</p> </li>
+    /// <li> <p>"CO" - COLOMBIA</p> </li>
+    /// <li> <p>"CR" - COSTA RICA</p> </li>
+    /// <li> <p>"HR" - CROATIA</p> </li>
+    /// <li> <p>"CZ" - CZECH REPUBLIC</p> </li>
+    /// <li> <p>"DK" - DENMARK</p> </li>
+    /// <li> <p>"EC" - ECUADOR</p> </li>
+    /// <li> <p>"EE" - ESTONIA</p> </li>
+    /// <li> <p>"ET" - ETHIOPIA</p> </li>
+    /// <li> <p>"FI" - FINLAND</p> </li>
+    /// <li> <p>"FR" - FRANCE</p> </li>
+    /// <li> <p>"DE" - GERMANY</p> </li>
+    /// <li> <p>"GR" - GREECE</p> </li>
+    /// <li> <p>"HU" - HUNGARY</p> </li>
+    /// <li> <p>"IS" - ICELAND</p> </li>
+    /// <li> <p>"IN" - INDIA</p> </li>
+    /// <li> <p>"IE" - IRELAND</p> </li>
+    /// <li> <p>"IT" - ITALY</p> </li>
+    /// <li> <p>"JP" - JAPAN</p> </li>
+    /// <li> <p>"KZ" - KAZAKHSTAN</p> </li>
+    /// <li> <p>"KR" - KOREA</p> </li>
+    /// <li> <p>"LV" - LATVIA</p> </li>
+    /// <li> <p>"LI" - LIECHTENSTEIN</p> </li>
+    /// <li> <p>"LT" - LITHUANIA</p> </li>
+    /// <li> <p>"LU" - LUXEMBOURG</p> </li>
+    /// <li> <p>"MK" - MACEDONIA</p> </li>
+    /// <li> <p>"MT" - MALTA</p> </li>
+    /// <li> <p>"MX" - MEXICO</p> </li>
+    /// <li> <p>"MD" - MOLDOVA</p> </li>
+    /// <li> <p>"ME" - MONTENEGRO</p> </li>
+    /// <li> <p>"NL" - NETHERLANDS</p> </li>
+    /// <li> <p>"NZ" - NEW ZEALAND</p> </li>
+    /// <li> <p>"NI" - NICARAGUA</p> </li>
+    /// <li> <p>"NG" - NIGERIA</p> </li>
+    /// <li> <p>"NO" - NORWAY</p> </li>
+    /// <li> <p>"PA" - PANAMA</p> </li>
+    /// <li> <p>"PY" - PARAGUAY</p> </li>
+    /// <li> <p>"PE" - PERU</p> </li>
+    /// <li> <p>"PL" - POLAND</p> </li>
+    /// <li> <p>"PT" - PORTUGAL</p> </li>
+    /// <li> <p>"RO" - ROMANIA</p> </li>
+    /// <li> <p>"RU" - RUSSIA</p> </li>
+    /// <li> <p>"RS" - SERBIA</p> </li>
+    /// <li> <p>"SK" - SLOVAKIA</p> </li>
+    /// <li> <p>"SI" - SLOVENIA</p> </li>
+    /// <li> <p>"ZA" - SOUTH AFRICA</p> </li>
+    /// <li> <p>"ES" - SPAIN</p> </li>
+    /// <li> <p>"SE" - SWEDEN</p> </li>
+    /// <li> <p>"CH" - SWITZERLAND</p> </li>
+    /// <li> <p>"UA" - UKRAINE</p> </li>
+    /// <li> <p>"AE" - UNITED ARAB EMIRATES</p> </li>
+    /// <li> <p>"US" - UNITED STATES</p> </li>
+    /// <li> <p>"UK" - UNITED KINGDOM</p> </li>
+    /// <li> <p>"UY" - URUGUAY</p> </li>
+    /// <li> <p>"VE" - VENEZUELA</p> </li>
     /// </ul>
     pub configuration: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
 }
 impl AdditionalDataset {
-    /// <p>The name of the additional dataset. Valid names: <code>"holiday"</code> and
-    /// <code>"weather"</code>.</p>
+    /// <p>The name of the additional dataset. Valid names: <code>"holiday"</code> and <code>"weather"</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>
-    /// <b>Weather Index</b>
-    /// </p>
-    /// <p>To enable the Weather Index, do not specify a value for
-    /// <code>Configuration</code>.</p>
-    /// <p>
-    /// <b>Holidays</b>
-    /// </p>
-    /// <p>To enable Holidays, specify a country with one of the following two-letter country
-    /// codes:</p>
+    /// <p> <b>Weather Index</b> </p>
+    /// <p>To enable the Weather Index, do not specify a value for <code>Configuration</code>.</p>
+    /// <p> <b>Holidays</b> </p>
+    /// <p>To enable Holidays, set <code>CountryCode</code> to one of the following two-letter country codes:</p>
     /// <ul>
-    /// <li>
-    /// <p>"AL" - ALBANIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"AR" - ARGENTINA</p>
-    /// </li>
-    /// <li>
-    /// <p>"AT" - AUSTRIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"AU" - AUSTRALIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"BA" - BOSNIA HERZEGOVINA</p>
-    /// </li>
-    /// <li>
-    /// <p>"BE" - BELGIUM</p>
-    /// </li>
-    /// <li>
-    /// <p>"BG" - BULGARIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"BO" - BOLIVIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"BR" - BRAZIL</p>
-    /// </li>
-    /// <li>
-    /// <p>"BY" - BELARUS</p>
-    /// </li>
-    /// <li>
-    /// <p>"CA" - CANADA</p>
-    /// </li>
-    /// <li>
-    /// <p>"CL" - CHILE</p>
-    /// </li>
-    /// <li>
-    /// <p>"CO" - COLOMBIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"CR" - COSTA RICA</p>
-    /// </li>
-    /// <li>
-    /// <p>"HR" - CROATIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"CZ" - CZECH REPUBLIC</p>
-    /// </li>
-    /// <li>
-    /// <p>"DK" - DENMARK</p>
-    /// </li>
-    /// <li>
-    /// <p>"EC" - ECUADOR</p>
-    /// </li>
-    /// <li>
-    /// <p>"EE" - ESTONIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"ET" - ETHIOPIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"FI" - FINLAND</p>
-    /// </li>
-    /// <li>
-    /// <p>"FR" - FRANCE</p>
-    /// </li>
-    /// <li>
-    /// <p>"DE" - GERMANY</p>
-    /// </li>
-    /// <li>
-    /// <p>"GR" - GREECE</p>
-    /// </li>
-    /// <li>
-    /// <p>"HU" - HUNGARY</p>
-    /// </li>
-    /// <li>
-    /// <p>"IS" - ICELAND</p>
-    /// </li>
-    /// <li>
-    /// <p>"IN" - INDIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"IE" - IRELAND</p>
-    /// </li>
-    /// <li>
-    /// <p>"IT" - ITALY</p>
-    /// </li>
-    /// <li>
-    /// <p>"JP" - JAPAN</p>
-    /// </li>
-    /// <li>
-    /// <p>"KZ" - KAZAKHSTAN</p>
-    /// </li>
-    /// <li>
-    /// <p>"KR" - KOREA</p>
-    /// </li>
-    /// <li>
-    /// <p>"LV" - LATVIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"LI" - LIECHTENSTEIN</p>
-    /// </li>
-    /// <li>
-    /// <p>"LT" - LITHUANIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"LU" - LUXEMBOURG</p>
-    /// </li>
-    /// <li>
-    /// <p>"MK" - MACEDONIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"MT" - MALTA</p>
-    /// </li>
-    /// <li>
-    /// <p>"MX" - MEXICO</p>
-    /// </li>
-    /// <li>
-    /// <p>"MD" - MOLDOVA</p>
-    /// </li>
-    /// <li>
-    /// <p>"ME" - MONTENEGRO</p>
-    /// </li>
-    /// <li>
-    /// <p>"NL" - NETHERLANDS</p>
-    /// </li>
-    /// <li>
-    /// <p>"NZ" - NEW ZEALAND</p>
-    /// </li>
-    /// <li>
-    /// <p>"NI" - NICARAGUA</p>
-    /// </li>
-    /// <li>
-    /// <p>"NG" - NIGERIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"NO" - NORWAY</p>
-    /// </li>
-    /// <li>
-    /// <p>"PA" - PANAMA</p>
-    /// </li>
-    /// <li>
-    /// <p>"PY" - PARAGUAY</p>
-    /// </li>
-    /// <li>
-    /// <p>"PE" - PERU</p>
-    /// </li>
-    /// <li>
-    /// <p>"PL" - POLAND</p>
-    /// </li>
-    /// <li>
-    /// <p>"PT" - PORTUGAL</p>
-    /// </li>
-    /// <li>
-    /// <p>"RO" - ROMANIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"RU" - RUSSIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"RS" - SERBIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"SK" - SLOVAKIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"SI" - SLOVENIA</p>
-    /// </li>
-    /// <li>
-    /// <p>"ZA" - SOUTH AFRICA</p>
-    /// </li>
-    /// <li>
-    /// <p>"ES" - SPAIN</p>
-    /// </li>
-    /// <li>
-    /// <p>"SE" - SWEDEN</p>
-    /// </li>
-    /// <li>
-    /// <p>"CH" - SWITZERLAND</p>
-    /// </li>
-    /// <li>
-    /// <p>"UA" - UKRAINE</p>
-    /// </li>
-    /// <li>
-    /// <p>"AE" - UNITED ARAB EMIRATES</p>
-    /// </li>
-    /// <li>
-    /// <p>"US" - UNITED STATES</p>
-    /// </li>
-    /// <li>
-    /// <p>"UK" - UNITED KINGDOM</p>
-    /// </li>
-    /// <li>
-    /// <p>"UY" - URUGUAY</p>
-    /// </li>
-    /// <li>
-    /// <p>"VE" - VENEZUELA</p>
-    /// </li>
+    /// <li> <p>"AL" - ALBANIA</p> </li>
+    /// <li> <p>"AR" - ARGENTINA</p> </li>
+    /// <li> <p>"AT" - AUSTRIA</p> </li>
+    /// <li> <p>"AU" - AUSTRALIA</p> </li>
+    /// <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li>
+    /// <li> <p>"BE" - BELGIUM</p> </li>
+    /// <li> <p>"BG" - BULGARIA</p> </li>
+    /// <li> <p>"BO" - BOLIVIA</p> </li>
+    /// <li> <p>"BR" - BRAZIL</p> </li>
+    /// <li> <p>"BY" - BELARUS</p> </li>
+    /// <li> <p>"CA" - CANADA</p> </li>
+    /// <li> <p>"CL" - CHILE</p> </li>
+    /// <li> <p>"CO" - COLOMBIA</p> </li>
+    /// <li> <p>"CR" - COSTA RICA</p> </li>
+    /// <li> <p>"HR" - CROATIA</p> </li>
+    /// <li> <p>"CZ" - CZECH REPUBLIC</p> </li>
+    /// <li> <p>"DK" - DENMARK</p> </li>
+    /// <li> <p>"EC" - ECUADOR</p> </li>
+    /// <li> <p>"EE" - ESTONIA</p> </li>
+    /// <li> <p>"ET" - ETHIOPIA</p> </li>
+    /// <li> <p>"FI" - FINLAND</p> </li>
+    /// <li> <p>"FR" - FRANCE</p> </li>
+    /// <li> <p>"DE" - GERMANY</p> </li>
+    /// <li> <p>"GR" - GREECE</p> </li>
+    /// <li> <p>"HU" - HUNGARY</p> </li>
+    /// <li> <p>"IS" - ICELAND</p> </li>
+    /// <li> <p>"IN" - INDIA</p> </li>
+    /// <li> <p>"IE" - IRELAND</p> </li>
+    /// <li> <p>"IT" - ITALY</p> </li>
+    /// <li> <p>"JP" - JAPAN</p> </li>
+    /// <li> <p>"KZ" - KAZAKHSTAN</p> </li>
+    /// <li> <p>"KR" - KOREA</p> </li>
+    /// <li> <p>"LV" - LATVIA</p> </li>
+    /// <li> <p>"LI" - LIECHTENSTEIN</p> </li>
+    /// <li> <p>"LT" - LITHUANIA</p> </li>
+    /// <li> <p>"LU" - LUXEMBOURG</p> </li>
+    /// <li> <p>"MK" - MACEDONIA</p> </li>
+    /// <li> <p>"MT" - MALTA</p> </li>
+    /// <li> <p>"MX" - MEXICO</p> </li>
+    /// <li> <p>"MD" - MOLDOVA</p> </li>
+    /// <li> <p>"ME" - MONTENEGRO</p> </li>
+    /// <li> <p>"NL" - NETHERLANDS</p> </li>
+    /// <li> <p>"NZ" - NEW ZEALAND</p> </li>
+    /// <li> <p>"NI" - NICARAGUA</p> </li>
+    /// <li> <p>"NG" - NIGERIA</p> </li>
+    /// <li> <p>"NO" - NORWAY</p> </li>
+    /// <li> <p>"PA" - PANAMA</p> </li>
+    /// <li> <p>"PY" - PARAGUAY</p> </li>
+    /// <li> <p>"PE" - PERU</p> </li>
+    /// <li> <p>"PL" - POLAND</p> </li>
+    /// <li> <p>"PT" - PORTUGAL</p> </li>
+    /// <li> <p>"RO" - ROMANIA</p> </li>
+    /// <li> <p>"RU" - RUSSIA</p> </li>
+    /// <li> <p>"RS" - SERBIA</p> </li>
+    /// <li> <p>"SK" - SLOVAKIA</p> </li>
+    /// <li> <p>"SI" - SLOVENIA</p> </li>
+    /// <li> <p>"ZA" - SOUTH AFRICA</p> </li>
+    /// <li> <p>"ES" - SPAIN</p> </li>
+    /// <li> <p>"SE" - SWEDEN</p> </li>
+    /// <li> <p>"CH" - SWITZERLAND</p> </li>
+    /// <li> <p>"UA" - UKRAINE</p> </li>
+    /// <li> <p>"AE" - UNITED ARAB EMIRATES</p> </li>
+    /// <li> <p>"US" - UNITED STATES</p> </li>
+    /// <li> <p>"UK" - UNITED KINGDOM</p> </li>
+    /// <li> <p>"UY" - URUGUAY</p> </li>
+    /// <li> <p>"VE" - VENEZUELA</p> </li>
     /// </ul>
     pub fn configuration(
         &self,
@@ -9231,14 +6813,12 @@ pub mod additional_dataset {
         >,
     }
     impl Builder {
-        /// <p>The name of the additional dataset. Valid names: <code>"holiday"</code> and
-        /// <code>"weather"</code>.</p>
+        /// <p>The name of the additional dataset. Valid names: <code>"holiday"</code> and <code>"weather"</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the additional dataset. Valid names: <code>"holiday"</code> and
-        /// <code>"weather"</code>.</p>
+        /// <p>The name of the additional dataset. Valid names: <code>"holiday"</code> and <code>"weather"</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -9247,435 +6827,159 @@ pub mod additional_dataset {
         ///
         /// To override the contents of this collection use [`set_configuration`](Self::set_configuration).
         ///
-        /// <p>
-        /// <b>Weather Index</b>
-        /// </p>
-        /// <p>To enable the Weather Index, do not specify a value for
-        /// <code>Configuration</code>.</p>
-        /// <p>
-        /// <b>Holidays</b>
-        /// </p>
-        /// <p>To enable Holidays, specify a country with one of the following two-letter country
-        /// codes:</p>
+        /// <p> <b>Weather Index</b> </p>
+        /// <p>To enable the Weather Index, do not specify a value for <code>Configuration</code>.</p>
+        /// <p> <b>Holidays</b> </p>
+        /// <p>To enable Holidays, set <code>CountryCode</code> to one of the following two-letter country codes:</p>
         /// <ul>
-        /// <li>
-        /// <p>"AL" - ALBANIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"AR" - ARGENTINA</p>
-        /// </li>
-        /// <li>
-        /// <p>"AT" - AUSTRIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"AU" - AUSTRALIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"BA" - BOSNIA HERZEGOVINA</p>
-        /// </li>
-        /// <li>
-        /// <p>"BE" - BELGIUM</p>
-        /// </li>
-        /// <li>
-        /// <p>"BG" - BULGARIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"BO" - BOLIVIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"BR" - BRAZIL</p>
-        /// </li>
-        /// <li>
-        /// <p>"BY" - BELARUS</p>
-        /// </li>
-        /// <li>
-        /// <p>"CA" - CANADA</p>
-        /// </li>
-        /// <li>
-        /// <p>"CL" - CHILE</p>
-        /// </li>
-        /// <li>
-        /// <p>"CO" - COLOMBIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"CR" - COSTA RICA</p>
-        /// </li>
-        /// <li>
-        /// <p>"HR" - CROATIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"CZ" - CZECH REPUBLIC</p>
-        /// </li>
-        /// <li>
-        /// <p>"DK" - DENMARK</p>
-        /// </li>
-        /// <li>
-        /// <p>"EC" - ECUADOR</p>
-        /// </li>
-        /// <li>
-        /// <p>"EE" - ESTONIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"ET" - ETHIOPIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"FI" - FINLAND</p>
-        /// </li>
-        /// <li>
-        /// <p>"FR" - FRANCE</p>
-        /// </li>
-        /// <li>
-        /// <p>"DE" - GERMANY</p>
-        /// </li>
-        /// <li>
-        /// <p>"GR" - GREECE</p>
-        /// </li>
-        /// <li>
-        /// <p>"HU" - HUNGARY</p>
-        /// </li>
-        /// <li>
-        /// <p>"IS" - ICELAND</p>
-        /// </li>
-        /// <li>
-        /// <p>"IN" - INDIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"IE" - IRELAND</p>
-        /// </li>
-        /// <li>
-        /// <p>"IT" - ITALY</p>
-        /// </li>
-        /// <li>
-        /// <p>"JP" - JAPAN</p>
-        /// </li>
-        /// <li>
-        /// <p>"KZ" - KAZAKHSTAN</p>
-        /// </li>
-        /// <li>
-        /// <p>"KR" - KOREA</p>
-        /// </li>
-        /// <li>
-        /// <p>"LV" - LATVIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"LI" - LIECHTENSTEIN</p>
-        /// </li>
-        /// <li>
-        /// <p>"LT" - LITHUANIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"LU" - LUXEMBOURG</p>
-        /// </li>
-        /// <li>
-        /// <p>"MK" - MACEDONIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"MT" - MALTA</p>
-        /// </li>
-        /// <li>
-        /// <p>"MX" - MEXICO</p>
-        /// </li>
-        /// <li>
-        /// <p>"MD" - MOLDOVA</p>
-        /// </li>
-        /// <li>
-        /// <p>"ME" - MONTENEGRO</p>
-        /// </li>
-        /// <li>
-        /// <p>"NL" - NETHERLANDS</p>
-        /// </li>
-        /// <li>
-        /// <p>"NZ" - NEW ZEALAND</p>
-        /// </li>
-        /// <li>
-        /// <p>"NI" - NICARAGUA</p>
-        /// </li>
-        /// <li>
-        /// <p>"NG" - NIGERIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"NO" - NORWAY</p>
-        /// </li>
-        /// <li>
-        /// <p>"PA" - PANAMA</p>
-        /// </li>
-        /// <li>
-        /// <p>"PY" - PARAGUAY</p>
-        /// </li>
-        /// <li>
-        /// <p>"PE" - PERU</p>
-        /// </li>
-        /// <li>
-        /// <p>"PL" - POLAND</p>
-        /// </li>
-        /// <li>
-        /// <p>"PT" - PORTUGAL</p>
-        /// </li>
-        /// <li>
-        /// <p>"RO" - ROMANIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"RU" - RUSSIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"RS" - SERBIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"SK" - SLOVAKIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"SI" - SLOVENIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"ZA" - SOUTH AFRICA</p>
-        /// </li>
-        /// <li>
-        /// <p>"ES" - SPAIN</p>
-        /// </li>
-        /// <li>
-        /// <p>"SE" - SWEDEN</p>
-        /// </li>
-        /// <li>
-        /// <p>"CH" - SWITZERLAND</p>
-        /// </li>
-        /// <li>
-        /// <p>"UA" - UKRAINE</p>
-        /// </li>
-        /// <li>
-        /// <p>"AE" - UNITED ARAB EMIRATES</p>
-        /// </li>
-        /// <li>
-        /// <p>"US" - UNITED STATES</p>
-        /// </li>
-        /// <li>
-        /// <p>"UK" - UNITED KINGDOM</p>
-        /// </li>
-        /// <li>
-        /// <p>"UY" - URUGUAY</p>
-        /// </li>
-        /// <li>
-        /// <p>"VE" - VENEZUELA</p>
-        /// </li>
+        /// <li> <p>"AL" - ALBANIA</p> </li>
+        /// <li> <p>"AR" - ARGENTINA</p> </li>
+        /// <li> <p>"AT" - AUSTRIA</p> </li>
+        /// <li> <p>"AU" - AUSTRALIA</p> </li>
+        /// <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li>
+        /// <li> <p>"BE" - BELGIUM</p> </li>
+        /// <li> <p>"BG" - BULGARIA</p> </li>
+        /// <li> <p>"BO" - BOLIVIA</p> </li>
+        /// <li> <p>"BR" - BRAZIL</p> </li>
+        /// <li> <p>"BY" - BELARUS</p> </li>
+        /// <li> <p>"CA" - CANADA</p> </li>
+        /// <li> <p>"CL" - CHILE</p> </li>
+        /// <li> <p>"CO" - COLOMBIA</p> </li>
+        /// <li> <p>"CR" - COSTA RICA</p> </li>
+        /// <li> <p>"HR" - CROATIA</p> </li>
+        /// <li> <p>"CZ" - CZECH REPUBLIC</p> </li>
+        /// <li> <p>"DK" - DENMARK</p> </li>
+        /// <li> <p>"EC" - ECUADOR</p> </li>
+        /// <li> <p>"EE" - ESTONIA</p> </li>
+        /// <li> <p>"ET" - ETHIOPIA</p> </li>
+        /// <li> <p>"FI" - FINLAND</p> </li>
+        /// <li> <p>"FR" - FRANCE</p> </li>
+        /// <li> <p>"DE" - GERMANY</p> </li>
+        /// <li> <p>"GR" - GREECE</p> </li>
+        /// <li> <p>"HU" - HUNGARY</p> </li>
+        /// <li> <p>"IS" - ICELAND</p> </li>
+        /// <li> <p>"IN" - INDIA</p> </li>
+        /// <li> <p>"IE" - IRELAND</p> </li>
+        /// <li> <p>"IT" - ITALY</p> </li>
+        /// <li> <p>"JP" - JAPAN</p> </li>
+        /// <li> <p>"KZ" - KAZAKHSTAN</p> </li>
+        /// <li> <p>"KR" - KOREA</p> </li>
+        /// <li> <p>"LV" - LATVIA</p> </li>
+        /// <li> <p>"LI" - LIECHTENSTEIN</p> </li>
+        /// <li> <p>"LT" - LITHUANIA</p> </li>
+        /// <li> <p>"LU" - LUXEMBOURG</p> </li>
+        /// <li> <p>"MK" - MACEDONIA</p> </li>
+        /// <li> <p>"MT" - MALTA</p> </li>
+        /// <li> <p>"MX" - MEXICO</p> </li>
+        /// <li> <p>"MD" - MOLDOVA</p> </li>
+        /// <li> <p>"ME" - MONTENEGRO</p> </li>
+        /// <li> <p>"NL" - NETHERLANDS</p> </li>
+        /// <li> <p>"NZ" - NEW ZEALAND</p> </li>
+        /// <li> <p>"NI" - NICARAGUA</p> </li>
+        /// <li> <p>"NG" - NIGERIA</p> </li>
+        /// <li> <p>"NO" - NORWAY</p> </li>
+        /// <li> <p>"PA" - PANAMA</p> </li>
+        /// <li> <p>"PY" - PARAGUAY</p> </li>
+        /// <li> <p>"PE" - PERU</p> </li>
+        /// <li> <p>"PL" - POLAND</p> </li>
+        /// <li> <p>"PT" - PORTUGAL</p> </li>
+        /// <li> <p>"RO" - ROMANIA</p> </li>
+        /// <li> <p>"RU" - RUSSIA</p> </li>
+        /// <li> <p>"RS" - SERBIA</p> </li>
+        /// <li> <p>"SK" - SLOVAKIA</p> </li>
+        /// <li> <p>"SI" - SLOVENIA</p> </li>
+        /// <li> <p>"ZA" - SOUTH AFRICA</p> </li>
+        /// <li> <p>"ES" - SPAIN</p> </li>
+        /// <li> <p>"SE" - SWEDEN</p> </li>
+        /// <li> <p>"CH" - SWITZERLAND</p> </li>
+        /// <li> <p>"UA" - UKRAINE</p> </li>
+        /// <li> <p>"AE" - UNITED ARAB EMIRATES</p> </li>
+        /// <li> <p>"US" - UNITED STATES</p> </li>
+        /// <li> <p>"UK" - UNITED KINGDOM</p> </li>
+        /// <li> <p>"UY" - URUGUAY</p> </li>
+        /// <li> <p>"VE" - VENEZUELA</p> </li>
         /// </ul>
         pub fn configuration(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.configuration.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.configuration = Some(hash_map);
             self
         }
-        /// <p>
-        /// <b>Weather Index</b>
-        /// </p>
-        /// <p>To enable the Weather Index, do not specify a value for
-        /// <code>Configuration</code>.</p>
-        /// <p>
-        /// <b>Holidays</b>
-        /// </p>
-        /// <p>To enable Holidays, specify a country with one of the following two-letter country
-        /// codes:</p>
+        /// <p> <b>Weather Index</b> </p>
+        /// <p>To enable the Weather Index, do not specify a value for <code>Configuration</code>.</p>
+        /// <p> <b>Holidays</b> </p>
+        /// <p>To enable Holidays, set <code>CountryCode</code> to one of the following two-letter country codes:</p>
         /// <ul>
-        /// <li>
-        /// <p>"AL" - ALBANIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"AR" - ARGENTINA</p>
-        /// </li>
-        /// <li>
-        /// <p>"AT" - AUSTRIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"AU" - AUSTRALIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"BA" - BOSNIA HERZEGOVINA</p>
-        /// </li>
-        /// <li>
-        /// <p>"BE" - BELGIUM</p>
-        /// </li>
-        /// <li>
-        /// <p>"BG" - BULGARIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"BO" - BOLIVIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"BR" - BRAZIL</p>
-        /// </li>
-        /// <li>
-        /// <p>"BY" - BELARUS</p>
-        /// </li>
-        /// <li>
-        /// <p>"CA" - CANADA</p>
-        /// </li>
-        /// <li>
-        /// <p>"CL" - CHILE</p>
-        /// </li>
-        /// <li>
-        /// <p>"CO" - COLOMBIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"CR" - COSTA RICA</p>
-        /// </li>
-        /// <li>
-        /// <p>"HR" - CROATIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"CZ" - CZECH REPUBLIC</p>
-        /// </li>
-        /// <li>
-        /// <p>"DK" - DENMARK</p>
-        /// </li>
-        /// <li>
-        /// <p>"EC" - ECUADOR</p>
-        /// </li>
-        /// <li>
-        /// <p>"EE" - ESTONIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"ET" - ETHIOPIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"FI" - FINLAND</p>
-        /// </li>
-        /// <li>
-        /// <p>"FR" - FRANCE</p>
-        /// </li>
-        /// <li>
-        /// <p>"DE" - GERMANY</p>
-        /// </li>
-        /// <li>
-        /// <p>"GR" - GREECE</p>
-        /// </li>
-        /// <li>
-        /// <p>"HU" - HUNGARY</p>
-        /// </li>
-        /// <li>
-        /// <p>"IS" - ICELAND</p>
-        /// </li>
-        /// <li>
-        /// <p>"IN" - INDIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"IE" - IRELAND</p>
-        /// </li>
-        /// <li>
-        /// <p>"IT" - ITALY</p>
-        /// </li>
-        /// <li>
-        /// <p>"JP" - JAPAN</p>
-        /// </li>
-        /// <li>
-        /// <p>"KZ" - KAZAKHSTAN</p>
-        /// </li>
-        /// <li>
-        /// <p>"KR" - KOREA</p>
-        /// </li>
-        /// <li>
-        /// <p>"LV" - LATVIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"LI" - LIECHTENSTEIN</p>
-        /// </li>
-        /// <li>
-        /// <p>"LT" - LITHUANIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"LU" - LUXEMBOURG</p>
-        /// </li>
-        /// <li>
-        /// <p>"MK" - MACEDONIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"MT" - MALTA</p>
-        /// </li>
-        /// <li>
-        /// <p>"MX" - MEXICO</p>
-        /// </li>
-        /// <li>
-        /// <p>"MD" - MOLDOVA</p>
-        /// </li>
-        /// <li>
-        /// <p>"ME" - MONTENEGRO</p>
-        /// </li>
-        /// <li>
-        /// <p>"NL" - NETHERLANDS</p>
-        /// </li>
-        /// <li>
-        /// <p>"NZ" - NEW ZEALAND</p>
-        /// </li>
-        /// <li>
-        /// <p>"NI" - NICARAGUA</p>
-        /// </li>
-        /// <li>
-        /// <p>"NG" - NIGERIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"NO" - NORWAY</p>
-        /// </li>
-        /// <li>
-        /// <p>"PA" - PANAMA</p>
-        /// </li>
-        /// <li>
-        /// <p>"PY" - PARAGUAY</p>
-        /// </li>
-        /// <li>
-        /// <p>"PE" - PERU</p>
-        /// </li>
-        /// <li>
-        /// <p>"PL" - POLAND</p>
-        /// </li>
-        /// <li>
-        /// <p>"PT" - PORTUGAL</p>
-        /// </li>
-        /// <li>
-        /// <p>"RO" - ROMANIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"RU" - RUSSIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"RS" - SERBIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"SK" - SLOVAKIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"SI" - SLOVENIA</p>
-        /// </li>
-        /// <li>
-        /// <p>"ZA" - SOUTH AFRICA</p>
-        /// </li>
-        /// <li>
-        /// <p>"ES" - SPAIN</p>
-        /// </li>
-        /// <li>
-        /// <p>"SE" - SWEDEN</p>
-        /// </li>
-        /// <li>
-        /// <p>"CH" - SWITZERLAND</p>
-        /// </li>
-        /// <li>
-        /// <p>"UA" - UKRAINE</p>
-        /// </li>
-        /// <li>
-        /// <p>"AE" - UNITED ARAB EMIRATES</p>
-        /// </li>
-        /// <li>
-        /// <p>"US" - UNITED STATES</p>
-        /// </li>
-        /// <li>
-        /// <p>"UK" - UNITED KINGDOM</p>
-        /// </li>
-        /// <li>
-        /// <p>"UY" - URUGUAY</p>
-        /// </li>
-        /// <li>
-        /// <p>"VE" - VENEZUELA</p>
-        /// </li>
+        /// <li> <p>"AL" - ALBANIA</p> </li>
+        /// <li> <p>"AR" - ARGENTINA</p> </li>
+        /// <li> <p>"AT" - AUSTRIA</p> </li>
+        /// <li> <p>"AU" - AUSTRALIA</p> </li>
+        /// <li> <p>"BA" - BOSNIA HERZEGOVINA</p> </li>
+        /// <li> <p>"BE" - BELGIUM</p> </li>
+        /// <li> <p>"BG" - BULGARIA</p> </li>
+        /// <li> <p>"BO" - BOLIVIA</p> </li>
+        /// <li> <p>"BR" - BRAZIL</p> </li>
+        /// <li> <p>"BY" - BELARUS</p> </li>
+        /// <li> <p>"CA" - CANADA</p> </li>
+        /// <li> <p>"CL" - CHILE</p> </li>
+        /// <li> <p>"CO" - COLOMBIA</p> </li>
+        /// <li> <p>"CR" - COSTA RICA</p> </li>
+        /// <li> <p>"HR" - CROATIA</p> </li>
+        /// <li> <p>"CZ" - CZECH REPUBLIC</p> </li>
+        /// <li> <p>"DK" - DENMARK</p> </li>
+        /// <li> <p>"EC" - ECUADOR</p> </li>
+        /// <li> <p>"EE" - ESTONIA</p> </li>
+        /// <li> <p>"ET" - ETHIOPIA</p> </li>
+        /// <li> <p>"FI" - FINLAND</p> </li>
+        /// <li> <p>"FR" - FRANCE</p> </li>
+        /// <li> <p>"DE" - GERMANY</p> </li>
+        /// <li> <p>"GR" - GREECE</p> </li>
+        /// <li> <p>"HU" - HUNGARY</p> </li>
+        /// <li> <p>"IS" - ICELAND</p> </li>
+        /// <li> <p>"IN" - INDIA</p> </li>
+        /// <li> <p>"IE" - IRELAND</p> </li>
+        /// <li> <p>"IT" - ITALY</p> </li>
+        /// <li> <p>"JP" - JAPAN</p> </li>
+        /// <li> <p>"KZ" - KAZAKHSTAN</p> </li>
+        /// <li> <p>"KR" - KOREA</p> </li>
+        /// <li> <p>"LV" - LATVIA</p> </li>
+        /// <li> <p>"LI" - LIECHTENSTEIN</p> </li>
+        /// <li> <p>"LT" - LITHUANIA</p> </li>
+        /// <li> <p>"LU" - LUXEMBOURG</p> </li>
+        /// <li> <p>"MK" - MACEDONIA</p> </li>
+        /// <li> <p>"MT" - MALTA</p> </li>
+        /// <li> <p>"MX" - MEXICO</p> </li>
+        /// <li> <p>"MD" - MOLDOVA</p> </li>
+        /// <li> <p>"ME" - MONTENEGRO</p> </li>
+        /// <li> <p>"NL" - NETHERLANDS</p> </li>
+        /// <li> <p>"NZ" - NEW ZEALAND</p> </li>
+        /// <li> <p>"NI" - NICARAGUA</p> </li>
+        /// <li> <p>"NG" - NIGERIA</p> </li>
+        /// <li> <p>"NO" - NORWAY</p> </li>
+        /// <li> <p>"PA" - PANAMA</p> </li>
+        /// <li> <p>"PY" - PARAGUAY</p> </li>
+        /// <li> <p>"PE" - PERU</p> </li>
+        /// <li> <p>"PL" - POLAND</p> </li>
+        /// <li> <p>"PT" - PORTUGAL</p> </li>
+        /// <li> <p>"RO" - ROMANIA</p> </li>
+        /// <li> <p>"RU" - RUSSIA</p> </li>
+        /// <li> <p>"RS" - SERBIA</p> </li>
+        /// <li> <p>"SK" - SLOVAKIA</p> </li>
+        /// <li> <p>"SI" - SLOVENIA</p> </li>
+        /// <li> <p>"ZA" - SOUTH AFRICA</p> </li>
+        /// <li> <p>"ES" - SPAIN</p> </li>
+        /// <li> <p>"SE" - SWEDEN</p> </li>
+        /// <li> <p>"CH" - SWITZERLAND</p> </li>
+        /// <li> <p>"UA" - UKRAINE</p> </li>
+        /// <li> <p>"AE" - UNITED ARAB EMIRATES</p> </li>
+        /// <li> <p>"US" - UNITED STATES</p> </li>
+        /// <li> <p>"UK" - UNITED KINGDOM</p> </li>
+        /// <li> <p>"UY" - URUGUAY</p> </li>
+        /// <li> <p>"VE" - VENEZUELA</p> </li>
         /// </ul>
         pub fn set_configuration(
             mut self,
@@ -9704,164 +7008,53 @@ impl AdditionalDataset {
 
 /// <p>Provides information about the method used to transform attributes.</p>
 /// <p>The following is an example using the RETAIL domain:</p>
-/// <p>
-/// <code>{</code>
-/// </p>
-/// <p>
-/// <code>"AttributeName": "demand",</code>
-/// </p>
-/// <p>
-/// <code>"Transformations": {"aggregation": "sum", "middlefill": "zero", "backfill":
-/// "zero"}</code>
-/// </p>
-/// <p>
-/// <code>}</code>
-/// </p>
+/// <p> <code>{</code> </p>
+/// <p> <code>"AttributeName": "demand",</code> </p>
+/// <p> <code>"Transformations": {"aggregation": "sum", "middlefill": "zero", "backfill": "zero"}</code> </p>
+/// <p> <code>}</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttributeConfig {
-    /// <p>The name of the attribute as specified in the schema. Amazon Forecast supports the
-    /// target field of the target time series and the related time series datasets. For
-    /// example, for the RETAIL domain, the target is <code>demand</code>.</p>
+    /// <p>The name of the attribute as specified in the schema. Amazon Forecast supports the target field of the target time series and the related time series datasets. For example, for the RETAIL domain, the target is <code>demand</code>.</p>
     pub attribute_name: std::option::Option<std::string::String>,
-    /// <p>The method parameters (key-value pairs), which are a map of override parameters.
-    /// Specify these parameters to override the default values. Related Time Series attributes
-    /// do not accept aggregation parameters.</p>
-    /// <p>The following list shows the parameters and their valid values for the "filling"
-    /// featurization method for a <b>Target Time Series</b> dataset.
-    /// Default values are bolded.</p>
+    /// <p>The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters to override the default values. Related Time Series attributes do not accept aggregation parameters.</p>
+    /// <p>The following list shows the parameters and their valid values for the "filling" featurization method for a <b>Target Time Series</b> dataset. Default values are bolded.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>aggregation</code>: <b>sum</b>,
-    /// <code>avg</code>, <code>first</code>, <code>min</code>,
-    /// <code>max</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>frontfill</code>: <b>none</b>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>middlefill</code>: <b>zero</b>,
-    /// <code>nan</code> (not a number), <code>value</code>, <code>median</code>,
-    /// <code>mean</code>, <code>min</code>, <code>max</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>backfill</code>: <b>zero</b>,
-    /// <code>nan</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
-    /// <code>min</code>, <code>max</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>aggregation</code>: <b>sum</b>, <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>frontfill</code>: <b>none</b> </p> </li>
+    /// <li> <p> <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number), <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>backfill</code>: <b>zero</b>, <code>nan</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
     /// </ul>
-    ///
-    /// <p>The following list shows the parameters and their valid values for a <b>Related Time Series</b> featurization method (there are no
-    /// defaults):</p>
+    /// <p>The following list shows the parameters and their valid values for a <b>Related Time Series</b> featurization method (there are no defaults):</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>middlefill</code>: <code>zero</code>, <code>value</code>,
-    /// <code>median</code>, <code>mean</code>, <code>min</code>,
-    /// <code>max</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>backfill</code>: <code>zero</code>, <code>value</code>,
-    /// <code>median</code>, <code>mean</code>, <code>min</code>,
-    /// <code>max</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>futurefill</code>: <code>zero</code>, <code>value</code>,
-    /// <code>median</code>, <code>mean</code>, <code>min</code>,
-    /// <code>max</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
     /// </ul>
-    /// <p>To set a filling method to a specific value, set the fill parameter to
-    /// <code>value</code> and define the value in a corresponding <code>_value</code>
-    /// parameter. For example, to set backfilling to a value of 2, include the following:
-    /// <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>. </p>
+    /// <p>To set a filling method to a specific value, set the fill parameter to <code>value</code> and define the value in a corresponding <code>_value</code> parameter. For example, to set backfilling to a value of 2, include the following: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>. </p>
     pub transformations:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl AttributeConfig {
-    /// <p>The name of the attribute as specified in the schema. Amazon Forecast supports the
-    /// target field of the target time series and the related time series datasets. For
-    /// example, for the RETAIL domain, the target is <code>demand</code>.</p>
+    /// <p>The name of the attribute as specified in the schema. Amazon Forecast supports the target field of the target time series and the related time series datasets. For example, for the RETAIL domain, the target is <code>demand</code>.</p>
     pub fn attribute_name(&self) -> std::option::Option<&str> {
         self.attribute_name.as_deref()
     }
-    /// <p>The method parameters (key-value pairs), which are a map of override parameters.
-    /// Specify these parameters to override the default values. Related Time Series attributes
-    /// do not accept aggregation parameters.</p>
-    /// <p>The following list shows the parameters and their valid values for the "filling"
-    /// featurization method for a <b>Target Time Series</b> dataset.
-    /// Default values are bolded.</p>
+    /// <p>The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters to override the default values. Related Time Series attributes do not accept aggregation parameters.</p>
+    /// <p>The following list shows the parameters and their valid values for the "filling" featurization method for a <b>Target Time Series</b> dataset. Default values are bolded.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>aggregation</code>: <b>sum</b>,
-    /// <code>avg</code>, <code>first</code>, <code>min</code>,
-    /// <code>max</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>frontfill</code>: <b>none</b>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>middlefill</code>: <b>zero</b>,
-    /// <code>nan</code> (not a number), <code>value</code>, <code>median</code>,
-    /// <code>mean</code>, <code>min</code>, <code>max</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>backfill</code>: <b>zero</b>,
-    /// <code>nan</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
-    /// <code>min</code>, <code>max</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>aggregation</code>: <b>sum</b>, <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>frontfill</code>: <b>none</b> </p> </li>
+    /// <li> <p> <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number), <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>backfill</code>: <b>zero</b>, <code>nan</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
     /// </ul>
-    ///
-    /// <p>The following list shows the parameters and their valid values for a <b>Related Time Series</b> featurization method (there are no
-    /// defaults):</p>
+    /// <p>The following list shows the parameters and their valid values for a <b>Related Time Series</b> featurization method (there are no defaults):</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>middlefill</code>: <code>zero</code>, <code>value</code>,
-    /// <code>median</code>, <code>mean</code>, <code>min</code>,
-    /// <code>max</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>backfill</code>: <code>zero</code>, <code>value</code>,
-    /// <code>median</code>, <code>mean</code>, <code>min</code>,
-    /// <code>max</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>futurefill</code>: <code>zero</code>, <code>value</code>,
-    /// <code>median</code>, <code>mean</code>, <code>min</code>,
-    /// <code>max</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
     /// </ul>
-    /// <p>To set a filling method to a specific value, set the fill parameter to
-    /// <code>value</code> and define the value in a corresponding <code>_value</code>
-    /// parameter. For example, to set backfilling to a value of 2, include the following:
-    /// <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>. </p>
+    /// <p>To set a filling method to a specific value, set the fill parameter to <code>value</code> and define the value in a corresponding <code>_value</code> parameter. For example, to set backfilling to a value of 2, include the following: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>. </p>
     pub fn transformations(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -9889,16 +7082,12 @@ pub mod attribute_config {
         >,
     }
     impl Builder {
-        /// <p>The name of the attribute as specified in the schema. Amazon Forecast supports the
-        /// target field of the target time series and the related time series datasets. For
-        /// example, for the RETAIL domain, the target is <code>demand</code>.</p>
+        /// <p>The name of the attribute as specified in the schema. Amazon Forecast supports the target field of the target time series and the related time series datasets. For example, for the RETAIL domain, the target is <code>demand</code>.</p>
         pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.attribute_name = Some(input.into());
             self
         }
-        /// <p>The name of the attribute as specified in the schema. Amazon Forecast supports the
-        /// target field of the target time series and the related time series datasets. For
-        /// example, for the RETAIL domain, the target is <code>demand</code>.</p>
+        /// <p>The name of the attribute as specified in the schema. Amazon Forecast supports the target field of the target time series and the related time series datasets. For example, for the RETAIL domain, the target is <code>demand</code>.</p>
         pub fn set_attribute_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9910,70 +7099,21 @@ pub mod attribute_config {
         ///
         /// To override the contents of this collection use [`set_transformations`](Self::set_transformations).
         ///
-        /// <p>The method parameters (key-value pairs), which are a map of override parameters.
-        /// Specify these parameters to override the default values. Related Time Series attributes
-        /// do not accept aggregation parameters.</p>
-        /// <p>The following list shows the parameters and their valid values for the "filling"
-        /// featurization method for a <b>Target Time Series</b> dataset.
-        /// Default values are bolded.</p>
+        /// <p>The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters to override the default values. Related Time Series attributes do not accept aggregation parameters.</p>
+        /// <p>The following list shows the parameters and their valid values for the "filling" featurization method for a <b>Target Time Series</b> dataset. Default values are bolded.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>aggregation</code>: <b>sum</b>,
-        /// <code>avg</code>, <code>first</code>, <code>min</code>,
-        /// <code>max</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>frontfill</code>: <b>none</b>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>middlefill</code>: <b>zero</b>,
-        /// <code>nan</code> (not a number), <code>value</code>, <code>median</code>,
-        /// <code>mean</code>, <code>min</code>, <code>max</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>backfill</code>: <b>zero</b>,
-        /// <code>nan</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
-        /// <code>min</code>, <code>max</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>aggregation</code>: <b>sum</b>, <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code> </p> </li>
+        /// <li> <p> <code>frontfill</code>: <b>none</b> </p> </li>
+        /// <li> <p> <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number), <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+        /// <li> <p> <code>backfill</code>: <b>zero</b>, <code>nan</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
         /// </ul>
-        ///
-        /// <p>The following list shows the parameters and their valid values for a <b>Related Time Series</b> featurization method (there are no
-        /// defaults):</p>
+        /// <p>The following list shows the parameters and their valid values for a <b>Related Time Series</b> featurization method (there are no defaults):</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>middlefill</code>: <code>zero</code>, <code>value</code>,
-        /// <code>median</code>, <code>mean</code>, <code>min</code>,
-        /// <code>max</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>backfill</code>: <code>zero</code>, <code>value</code>,
-        /// <code>median</code>, <code>mean</code>, <code>min</code>,
-        /// <code>max</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>futurefill</code>: <code>zero</code>, <code>value</code>,
-        /// <code>median</code>, <code>mean</code>, <code>min</code>,
-        /// <code>max</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+        /// <li> <p> <code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+        /// <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
         /// </ul>
-        /// <p>To set a filling method to a specific value, set the fill parameter to
-        /// <code>value</code> and define the value in a corresponding <code>_value</code>
-        /// parameter. For example, to set backfilling to a value of 2, include the following:
-        /// <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>. </p>
+        /// <p>To set a filling method to a specific value, set the fill parameter to <code>value</code> and define the value in a corresponding <code>_value</code> parameter. For example, to set backfilling to a value of 2, include the following: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>. </p>
         pub fn transformations(
             mut self,
             k: impl Into<std::string::String>,
@@ -9984,70 +7124,21 @@ pub mod attribute_config {
             self.transformations = Some(hash_map);
             self
         }
-        /// <p>The method parameters (key-value pairs), which are a map of override parameters.
-        /// Specify these parameters to override the default values. Related Time Series attributes
-        /// do not accept aggregation parameters.</p>
-        /// <p>The following list shows the parameters and their valid values for the "filling"
-        /// featurization method for a <b>Target Time Series</b> dataset.
-        /// Default values are bolded.</p>
+        /// <p>The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters to override the default values. Related Time Series attributes do not accept aggregation parameters.</p>
+        /// <p>The following list shows the parameters and their valid values for the "filling" featurization method for a <b>Target Time Series</b> dataset. Default values are bolded.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>aggregation</code>: <b>sum</b>,
-        /// <code>avg</code>, <code>first</code>, <code>min</code>,
-        /// <code>max</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>frontfill</code>: <b>none</b>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>middlefill</code>: <b>zero</b>,
-        /// <code>nan</code> (not a number), <code>value</code>, <code>median</code>,
-        /// <code>mean</code>, <code>min</code>, <code>max</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>backfill</code>: <b>zero</b>,
-        /// <code>nan</code>, <code>value</code>, <code>median</code>, <code>mean</code>,
-        /// <code>min</code>, <code>max</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>aggregation</code>: <b>sum</b>, <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code> </p> </li>
+        /// <li> <p> <code>frontfill</code>: <b>none</b> </p> </li>
+        /// <li> <p> <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number), <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+        /// <li> <p> <code>backfill</code>: <b>zero</b>, <code>nan</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
         /// </ul>
-        ///
-        /// <p>The following list shows the parameters and their valid values for a <b>Related Time Series</b> featurization method (there are no
-        /// defaults):</p>
+        /// <p>The following list shows the parameters and their valid values for a <b>Related Time Series</b> featurization method (there are no defaults):</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>middlefill</code>: <code>zero</code>, <code>value</code>,
-        /// <code>median</code>, <code>mean</code>, <code>min</code>,
-        /// <code>max</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>backfill</code>: <code>zero</code>, <code>value</code>,
-        /// <code>median</code>, <code>mean</code>, <code>min</code>,
-        /// <code>max</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>futurefill</code>: <code>zero</code>, <code>value</code>,
-        /// <code>median</code>, <code>mean</code>, <code>min</code>,
-        /// <code>max</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+        /// <li> <p> <code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+        /// <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
         /// </ul>
-        /// <p>To set a filling method to a specific value, set the fill parameter to
-        /// <code>value</code> and define the value in a corresponding <code>_value</code>
-        /// parameter. For example, to set backfilling to a value of 2, include the following:
-        /// <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>. </p>
+        /// <p>To set a filling method to a specific value, set the fill parameter to <code>value</code> and define the value in a corresponding <code>_value</code> parameter. For example, to set backfilling to a value of 2, include the following: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>. </p>
         pub fn set_transformations(
             mut self,
             input: std::option::Option<

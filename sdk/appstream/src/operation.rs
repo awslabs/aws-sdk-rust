@@ -33,6 +33,40 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateApplicationFlee
     }
 }
 
+/// Operation shape for `AssociateApplicationToEntitlement`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`associate_application_to_entitlement`](crate::client::Client::associate_application_to_entitlement).
+///
+/// See [`crate::client::fluent_builders::AssociateApplicationToEntitlement`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct AssociateApplicationToEntitlement {
+    _private: (),
+}
+impl AssociateApplicationToEntitlement {
+    /// Creates a new builder-style object to manufacture [`AssociateApplicationToEntitlementInput`](crate::input::AssociateApplicationToEntitlementInput)
+    pub fn builder() -> crate::input::associate_application_to_entitlement_input::Builder {
+        crate::input::associate_application_to_entitlement_input::Builder::default()
+    }
+    /// Creates a new `AssociateApplicationToEntitlement` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for AssociateApplicationToEntitlement {
+    type Output = std::result::Result<
+        crate::output::AssociateApplicationToEntitlementOutput,
+        crate::error::AssociateApplicationToEntitlementError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_associate_application_to_entitlement_error(response)
+        } else {
+            crate::operation_deser::parse_associate_application_to_entitlement_response(response)
+        }
+    }
+}
+
 /// Operation shape for `AssociateFleet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -260,6 +294,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDirectoryConfig {
             crate::operation_deser::parse_create_directory_config_error(response)
         } else {
             crate::operation_deser::parse_create_directory_config_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateEntitlement`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_entitlement`](crate::client::Client::create_entitlement).
+///
+/// See [`crate::client::fluent_builders::CreateEntitlement`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateEntitlement {
+    _private: (),
+}
+impl CreateEntitlement {
+    /// Creates a new builder-style object to manufacture [`CreateEntitlementInput`](crate::input::CreateEntitlementInput)
+    pub fn builder() -> crate::input::create_entitlement_input::Builder {
+        crate::input::create_entitlement_input::Builder::default()
+    }
+    /// Creates a new `CreateEntitlement` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateEntitlement {
+    type Output = std::result::Result<
+        crate::output::CreateEntitlementOutput,
+        crate::error::CreateEntitlementError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_entitlement_error(response)
+        } else {
+            crate::operation_deser::parse_create_entitlement_response(response)
         }
     }
 }
@@ -630,6 +698,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDirectoryConfig {
     }
 }
 
+/// Operation shape for `DeleteEntitlement`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_entitlement`](crate::client::Client::delete_entitlement).
+///
+/// See [`crate::client::fluent_builders::DeleteEntitlement`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteEntitlement {
+    _private: (),
+}
+impl DeleteEntitlement {
+    /// Creates a new builder-style object to manufacture [`DeleteEntitlementInput`](crate::input::DeleteEntitlementInput)
+    pub fn builder() -> crate::input::delete_entitlement_input::Builder {
+        crate::input::delete_entitlement_input::Builder::default()
+    }
+    /// Creates a new `DeleteEntitlement` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteEntitlement {
+    type Output = std::result::Result<
+        crate::output::DeleteEntitlementOutput,
+        crate::error::DeleteEntitlementError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_entitlement_error(response)
+        } else {
+            crate::operation_deser::parse_delete_entitlement_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteFleet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -992,6 +1094,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDirectoryConfigs
             crate::operation_deser::parse_describe_directory_configs_error(response)
         } else {
             crate::operation_deser::parse_describe_directory_configs_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeEntitlements`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_entitlements`](crate::client::Client::describe_entitlements).
+///
+/// See [`crate::client::fluent_builders::DescribeEntitlements`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeEntitlements {
+    _private: (),
+}
+impl DescribeEntitlements {
+    /// Creates a new builder-style object to manufacture [`DescribeEntitlementsInput`](crate::input::DescribeEntitlementsInput)
+    pub fn builder() -> crate::input::describe_entitlements_input::Builder {
+        crate::input::describe_entitlements_input::Builder::default()
+    }
+    /// Creates a new `DescribeEntitlements` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeEntitlements {
+    type Output = std::result::Result<
+        crate::output::DescribeEntitlementsOutput,
+        crate::error::DescribeEntitlementsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_entitlements_error(response)
+        } else {
+            crate::operation_deser::parse_describe_entitlements_response(response)
         }
     }
 }
@@ -1360,6 +1496,42 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateApplicationF
     }
 }
 
+/// Operation shape for `DisassociateApplicationFromEntitlement`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`disassociate_application_from_entitlement`](crate::client::Client::disassociate_application_from_entitlement).
+///
+/// See [`crate::client::fluent_builders::DisassociateApplicationFromEntitlement`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DisassociateApplicationFromEntitlement {
+    _private: (),
+}
+impl DisassociateApplicationFromEntitlement {
+    /// Creates a new builder-style object to manufacture [`DisassociateApplicationFromEntitlementInput`](crate::input::DisassociateApplicationFromEntitlementInput)
+    pub fn builder() -> crate::input::disassociate_application_from_entitlement_input::Builder {
+        crate::input::disassociate_application_from_entitlement_input::Builder::default()
+    }
+    /// Creates a new `DisassociateApplicationFromEntitlement` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DisassociateApplicationFromEntitlement {
+    type Output = std::result::Result<
+        crate::output::DisassociateApplicationFromEntitlementOutput,
+        crate::error::DisassociateApplicationFromEntitlementError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_disassociate_application_from_entitlement_error(response)
+        } else {
+            crate::operation_deser::parse_disassociate_application_from_entitlement_response(
+                response,
+            )
+        }
+    }
+}
+
 /// Operation shape for `DisassociateFleet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1522,6 +1694,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssociatedStacks {
             crate::operation_deser::parse_list_associated_stacks_error(response)
         } else {
             crate::operation_deser::parse_list_associated_stacks_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListEntitledApplications`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_entitled_applications`](crate::client::Client::list_entitled_applications).
+///
+/// See [`crate::client::fluent_builders::ListEntitledApplications`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListEntitledApplications {
+    _private: (),
+}
+impl ListEntitledApplications {
+    /// Creates a new builder-style object to manufacture [`ListEntitledApplicationsInput`](crate::input::ListEntitledApplicationsInput)
+    pub fn builder() -> crate::input::list_entitled_applications_input::Builder {
+        crate::input::list_entitled_applications_input::Builder::default()
+    }
+    /// Creates a new `ListEntitledApplications` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListEntitledApplications {
+    type Output = std::result::Result<
+        crate::output::ListEntitledApplicationsOutput,
+        crate::error::ListEntitledApplicationsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_entitled_applications_error(response)
+        } else {
+            crate::operation_deser::parse_list_entitled_applications_response(response)
         }
     }
 }
@@ -1819,6 +2025,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDirectoryConfig {
             crate::operation_deser::parse_update_directory_config_error(response)
         } else {
             crate::operation_deser::parse_update_directory_config_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateEntitlement`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_entitlement`](crate::client::Client::update_entitlement).
+///
+/// See [`crate::client::fluent_builders::UpdateEntitlement`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateEntitlement {
+    _private: (),
+}
+impl UpdateEntitlement {
+    /// Creates a new builder-style object to manufacture [`UpdateEntitlementInput`](crate::input::UpdateEntitlementInput)
+    pub fn builder() -> crate::input::update_entitlement_input::Builder {
+        crate::input::update_entitlement_input::Builder::default()
+    }
+    /// Creates a new `UpdateEntitlement` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateEntitlement {
+    type Output = std::result::Result<
+        crate::output::UpdateEntitlementOutput,
+        crate::error::UpdateEntitlementError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_entitlement_error(response)
+        } else {
+            crate::operation_deser::parse_update_entitlement_response(response)
         }
     }
 }

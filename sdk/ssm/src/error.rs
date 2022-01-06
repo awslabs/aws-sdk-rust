@@ -16,11 +16,9 @@ pub enum AddTagsToResourceErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The resource ID isn't valid. Verify that you entered the correct ID and try again.</p>
     InvalidResourceId(crate::error::InvalidResourceId),
-    /// <p>The resource type isn't valid. For example, if you are attempting to tag an EC2 instance, the
-    /// instance must be a registered managed node.</p>
+    /// <p>The resource type isn't valid. For example, if you are attempting to tag an EC2 instance, the instance must be a registered managed node.</p>
     InvalidResourceType(crate::error::InvalidResourceType),
-    /// <p>The <code>Targets</code> parameter includes too many tags. Remove one or more tags and try
-    /// the command again.</p>
+    /// <p>The <code>Targets</code> parameter includes too many tags. Remove one or more tags and try the command again.</p>
     TooManyTagsError(crate::error::TooManyTagsError),
     /// <p>There are concurrent updates for a resource that supports one update at a time.</p>
     TooManyUpdates(crate::error::TooManyUpdates),
@@ -69,8 +67,6 @@ impl AddTagsToResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -146,11 +142,9 @@ pub struct AssociateOpsItemRelatedItemError {
 pub enum AssociateOpsItemRelatedItemErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>A specified parameter argument isn't valid. Verify the available arguments and try
-    /// again.</p>
+    /// <p>A specified parameter argument isn't valid. Verify the available arguments and try again.</p>
     OpsItemInvalidParameterException(crate::error::OpsItemInvalidParameterException),
-    /// <p>The request caused OpsItems to exceed one or more quotas. For information about OpsItem
-    /// quotas, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What are the resource limits for OpsCenter?</a>.</p>
+    /// <p>The request caused OpsItems to exceed one or more quotas. For information about OpsItem quotas, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What are the resource limits for OpsCenter?</a>.</p>
     OpsItemLimitExceededException(crate::error::OpsItemLimitExceededException),
     /// <p>The specified OpsItem ID doesn't exist. Verify the ID and try again.</p>
     OpsItemNotFoundException(crate::error::OpsItemNotFoundException),
@@ -209,8 +203,6 @@ impl AssociateOpsItemRelatedItemError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -307,21 +299,10 @@ pub enum CancelCommandErrorKind {
     InvalidCommandId(crate::error::InvalidCommandId),
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
-    /// <li>
-    /// <p>You don't have permission to access the managed node.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
-    /// running.</p>
-    /// </li>
-    /// <li>
-    /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
-    /// </li>
-    /// <li>
-    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
-    /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
-    /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
-    /// </li>
+    /// <li> <p>You don't have permission to access the managed node.</p> </li>
+    /// <li> <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.</p> </li>
+    /// <li> <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p> </li>
+    /// <li> <p>The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p> </li>
     /// </ul>
     InvalidInstanceId(crate::error::InvalidInstanceId),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -368,8 +349,6 @@ impl CancelCommandError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -432,10 +411,8 @@ pub struct CancelMaintenanceWindowExecutionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelMaintenanceWindowExecutionErrorKind {
-    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch
-    /// baseline, doesn't exist.</p>
-    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
+    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -486,8 +463,6 @@ impl CancelMaintenanceWindowExecutionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -550,8 +525,7 @@ pub struct CreateActivationError {
 pub enum CreateActivationErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>You must specify values for all required parameters in the Amazon Web Services Systems Manager document (SSM
-    /// document). You can only supply values to parameters defined in the SSM document.</p>
+    /// <p>You must specify values for all required parameters in the Amazon Web Services Systems Manager document (SSM document). You can only supply values to parameters defined in the SSM document.</p>
     InvalidParameters(crate::error::InvalidParameters),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -595,8 +569,6 @@ impl CreateActivationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -664,35 +636,21 @@ pub enum CreateAssociationErrorKind {
     InvalidDocumentVersion(crate::error::InvalidDocumentVersion),
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
-    /// <li>
-    /// <p>You don't have permission to access the managed node.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
-    /// running.</p>
-    /// </li>
-    /// <li>
-    /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
-    /// </li>
-    /// <li>
-    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
-    /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
-    /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
-    /// </li>
+    /// <li> <p>You don't have permission to access the managed node.</p> </li>
+    /// <li> <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.</p> </li>
+    /// <li> <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p> </li>
+    /// <li> <p>The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p> </li>
     /// </ul>
     InvalidInstanceId(crate::error::InvalidInstanceId),
     /// <p>The output location isn't valid or doesn't exist.</p>
     InvalidOutputLocation(crate::error::InvalidOutputLocation),
-    /// <p>You must specify values for all required parameters in the Amazon Web Services Systems Manager document (SSM
-    /// document). You can only supply values to parameters defined in the SSM document.</p>
+    /// <p>You must specify values for all required parameters in the Amazon Web Services Systems Manager document (SSM document). You can only supply values to parameters defined in the SSM document.</p>
     InvalidParameters(crate::error::InvalidParameters),
     /// <p>The schedule is invalid. Verify your cron or rate expression and try again.</p>
     InvalidSchedule(crate::error::InvalidSchedule),
-    /// <p>The target isn't valid or doesn't exist. It might not be configured for Systems Manager or you might
-    /// not have permission to perform the operation.</p>
+    /// <p>The target isn't valid or doesn't exist. It might not be configured for Systems Manager or you might not have permission to perform the operation.</p>
     InvalidTarget(crate::error::InvalidTarget),
-    /// <p>The document doesn't support the platform type of the given managed node ID(s). For example, you
-    /// sent an document for a Windows managed node to a Linux node.</p>
+    /// <p>The document doesn't support the platform type of the given managed node ID(s). For example, you sent an document for a Windows managed node to a Linux node.</p>
     UnsupportedPlatformType(crate::error::UnsupportedPlatformType),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -745,8 +703,6 @@ impl CreateAssociationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -874,35 +830,21 @@ pub enum CreateAssociationBatchErrorKind {
     InvalidDocumentVersion(crate::error::InvalidDocumentVersion),
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
-    /// <li>
-    /// <p>You don't have permission to access the managed node.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
-    /// running.</p>
-    /// </li>
-    /// <li>
-    /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
-    /// </li>
-    /// <li>
-    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
-    /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
-    /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
-    /// </li>
+    /// <li> <p>You don't have permission to access the managed node.</p> </li>
+    /// <li> <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.</p> </li>
+    /// <li> <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p> </li>
+    /// <li> <p>The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p> </li>
     /// </ul>
     InvalidInstanceId(crate::error::InvalidInstanceId),
     /// <p>The output location isn't valid or doesn't exist.</p>
     InvalidOutputLocation(crate::error::InvalidOutputLocation),
-    /// <p>You must specify values for all required parameters in the Amazon Web Services Systems Manager document (SSM
-    /// document). You can only supply values to parameters defined in the SSM document.</p>
+    /// <p>You must specify values for all required parameters in the Amazon Web Services Systems Manager document (SSM document). You can only supply values to parameters defined in the SSM document.</p>
     InvalidParameters(crate::error::InvalidParameters),
     /// <p>The schedule is invalid. Verify your cron or rate expression and try again.</p>
     InvalidSchedule(crate::error::InvalidSchedule),
-    /// <p>The target isn't valid or doesn't exist. It might not be configured for Systems Manager or you might
-    /// not have permission to perform the operation.</p>
+    /// <p>The target isn't valid or doesn't exist. It might not be configured for Systems Manager or you might not have permission to perform the operation.</p>
     InvalidTarget(crate::error::InvalidTarget),
-    /// <p>The document doesn't support the platform type of the given managed node ID(s). For example, you
-    /// sent an document for a Windows managed node to a Linux node.</p>
+    /// <p>The document doesn't support the platform type of the given managed node ID(s). For example, you sent an document for a Windows managed node to a Linux node.</p>
     UnsupportedPlatformType(crate::error::UnsupportedPlatformType),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -955,8 +897,6 @@ impl CreateAssociationBatchError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1145,8 +1085,6 @@ impl CreateDocumentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1234,15 +1172,12 @@ pub struct CreateMaintenanceWindowError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateMaintenanceWindowErrorKind {
-    /// <p>Error returned when an idempotent operation is retried and the parameters don't match the
-    /// original call to the API with the same idempotency token. </p>
+    /// <p>Error returned when an idempotent operation is retried and the parameters don't match the original call to the API with the same idempotency token. </p>
     IdempotentParameterMismatch(crate::error::IdempotentParameterMismatch),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Error returned when the caller has exceeded the default resource quotas. For example, too
-    /// many maintenance windows or patch baselines have been created.</p>
-    /// <p>For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the caller has exceeded the default resource quotas. For example, too many maintenance windows or patch baselines have been created.</p>
+    /// <p>For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1289,8 +1224,6 @@ impl CreateMaintenanceWindowError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1363,11 +1296,9 @@ pub enum CreateOpsItemErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The OpsItem already exists.</p>
     OpsItemAlreadyExistsException(crate::error::OpsItemAlreadyExistsException),
-    /// <p>A specified parameter argument isn't valid. Verify the available arguments and try
-    /// again.</p>
+    /// <p>A specified parameter argument isn't valid. Verify the available arguments and try again.</p>
     OpsItemInvalidParameterException(crate::error::OpsItemInvalidParameterException),
-    /// <p>The request caused OpsItems to exceed one or more quotas. For information about OpsItem
-    /// quotas, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What are the resource limits for OpsCenter?</a>.</p>
+    /// <p>The request caused OpsItems to exceed one or more quotas. For information about OpsItem quotas, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What are the resource limits for OpsCenter?</a>.</p>
     OpsItemLimitExceededException(crate::error::OpsItemLimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1413,8 +1344,6 @@ impl CreateOpsItemError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1492,11 +1421,9 @@ pub enum CreateOpsMetadataErrorKind {
     OpsMetadataAlreadyExistsException(crate::error::OpsMetadataAlreadyExistsException),
     /// <p>One of the arguments passed is invalid. </p>
     OpsMetadataInvalidArgumentException(crate::error::OpsMetadataInvalidArgumentException),
-    /// <p>Your account reached the maximum number of OpsMetadata objects allowed by Application Manager. The
-    /// maximum is 200 OpsMetadata objects. Delete one or more OpsMetadata object and try again.</p>
+    /// <p>Your account reached the maximum number of OpsMetadata objects allowed by Application Manager. The maximum is 200 OpsMetadata objects. Delete one or more OpsMetadata object and try again.</p>
     OpsMetadataLimitExceededException(crate::error::OpsMetadataLimitExceededException),
-    /// <p>The system is processing too many concurrent updates. Wait a few moments and try
-    /// again.</p>
+    /// <p>The system is processing too many concurrent updates. Wait a few moments and try again.</p>
     OpsMetadataTooManyUpdatesException(crate::error::OpsMetadataTooManyUpdatesException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1545,8 +1472,6 @@ impl CreateOpsMetadataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1629,15 +1554,12 @@ pub struct CreatePatchBaselineError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreatePatchBaselineErrorKind {
-    /// <p>Error returned when an idempotent operation is retried and the parameters don't match the
-    /// original call to the API with the same idempotency token. </p>
+    /// <p>Error returned when an idempotent operation is retried and the parameters don't match the original call to the API with the same idempotency token. </p>
     IdempotentParameterMismatch(crate::error::IdempotentParameterMismatch),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Error returned when the caller has exceeded the default resource quotas. For example, too
-    /// many maintenance windows or patch baselines have been created.</p>
-    /// <p>For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the caller has exceeded the default resource quotas. For example, too many maintenance windows or patch baselines have been created.</p>
+    /// <p>For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1682,8 +1604,6 @@ impl CreatePatchBaselineError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1810,8 +1730,6 @@ impl CreateResourceDataSyncError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1894,11 +1812,9 @@ pub struct DeleteActivationError {
 pub enum DeleteActivationErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The activation isn't valid. The activation might have been deleted, or the ActivationId and
-    /// the ActivationCode don't match.</p>
+    /// <p>The activation isn't valid. The activation might have been deleted, or the ActivationId and the ActivationCode don't match.</p>
     InvalidActivation(crate::error::InvalidActivation),
-    /// <p>The activation ID isn't valid. Verify the you entered the correct ActivationId or
-    /// ActivationCode and try again.</p>
+    /// <p>The activation ID isn't valid. Verify the you entered the correct ActivationId or ActivationCode and try again.</p>
     InvalidActivationId(crate::error::InvalidActivationId),
     /// <p>There are concurrent updates for a resource that supports one update at a time.</p>
     TooManyUpdates(crate::error::TooManyUpdates),
@@ -1946,8 +1862,6 @@ impl DeleteActivationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2024,21 +1938,10 @@ pub enum DeleteAssociationErrorKind {
     InvalidDocument(crate::error::InvalidDocument),
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
-    /// <li>
-    /// <p>You don't have permission to access the managed node.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
-    /// running.</p>
-    /// </li>
-    /// <li>
-    /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
-    /// </li>
-    /// <li>
-    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
-    /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
-    /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
-    /// </li>
+    /// <li> <p>You don't have permission to access the managed node.</p> </li>
+    /// <li> <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.</p> </li>
+    /// <li> <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p> </li>
+    /// <li> <p>The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p> </li>
     /// </ul>
     InvalidInstanceId(crate::error::InvalidInstanceId),
     /// <p>There are concurrent updates for a resource that supports one update at a time.</p>
@@ -2088,8 +1991,6 @@ impl DeleteAssociationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2169,8 +2070,7 @@ pub enum DeleteDocumentErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The specified SSM document doesn't exist.</p>
     InvalidDocument(crate::error::InvalidDocument),
-    /// <p>You attempted to delete a document while it is still shared. You must stop sharing the
-    /// document before you can delete it.</p>
+    /// <p>You attempted to delete a document while it is still shared. You must stop sharing the document before you can delete it.</p>
     InvalidDocumentOperation(crate::error::InvalidDocumentOperation),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2216,8 +2116,6 @@ impl DeleteDocumentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2285,8 +2183,7 @@ pub struct DeleteInventoryError {
 pub enum DeleteInventoryErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>One or more of the parameters specified for the delete operation isn't valid. Verify all
-    /// parameters and try again.</p>
+    /// <p>One or more of the parameters specified for the delete operation isn't valid. Verify all parameters and try again.</p>
     InvalidDeleteInventoryParametersException(
         crate::error::InvalidDeleteInventoryParametersException,
     ),
@@ -2343,8 +2240,6 @@ impl DeleteInventoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2469,8 +2364,6 @@ impl DeleteMaintenanceWindowError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2572,8 +2465,6 @@ impl DeleteOpsMetadataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2686,8 +2577,6 @@ impl DeleteParameterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2783,8 +2672,6 @@ impl DeleteParametersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2837,8 +2724,7 @@ pub struct DeletePatchBaselineError {
 pub enum DeletePatchBaselineErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Error returned if an attempt is made to delete a patch baseline that is registered for a
-    /// patch group.</p>
+    /// <p>Error returned if an attempt is made to delete a patch baseline that is registered for a patch group.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2882,8 +2768,6 @@ impl DeletePatchBaselineError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2997,8 +2881,6 @@ impl DeleteResourceDataSyncError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3073,21 +2955,10 @@ pub enum DeregisterManagedInstanceErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
-    /// <li>
-    /// <p>You don't have permission to access the managed node.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
-    /// running.</p>
-    /// </li>
-    /// <li>
-    /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
-    /// </li>
-    /// <li>
-    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
-    /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
-    /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
-    /// </li>
+    /// <li> <p>You don't have permission to access the managed node.</p> </li>
+    /// <li> <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.</p> </li>
+    /// <li> <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p> </li>
+    /// <li> <p>The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p> </li>
     /// </ul>
     InvalidInstanceId(crate::error::InvalidInstanceId),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -3132,8 +3003,6 @@ impl DeregisterManagedInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3245,8 +3114,6 @@ impl DeregisterPatchBaselineForPatchGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3311,15 +3178,12 @@ pub struct DeregisterTargetFromMaintenanceWindowError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterTargetFromMaintenanceWindowErrorKind {
-    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch
-    /// baseline, doesn't exist.</p>
-    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
+    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>You specified the <code>Safe</code> option for the DeregisterTargetFromMaintenanceWindow
-    /// operation, but the target is still referenced in a task.</p>
+    /// <p>You specified the <code>Safe</code> option for the DeregisterTargetFromMaintenanceWindow operation, but the target is still referenced in a task.</p>
     TargetInUseException(crate::error::TargetInUseException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3373,8 +3237,6 @@ impl DeregisterTargetFromMaintenanceWindowError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3449,10 +3311,8 @@ pub struct DeregisterTaskFromMaintenanceWindowError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterTaskFromMaintenanceWindowErrorKind {
-    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch
-    /// baseline, doesn't exist.</p>
-    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
+    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -3505,8 +3365,6 @@ impl DeregisterTaskFromMaintenanceWindowError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3620,8 +3478,6 @@ impl DescribeActivationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3689,29 +3545,16 @@ pub enum DescribeAssociationErrorKind {
     AssociationDoesNotExist(crate::error::AssociationDoesNotExist),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The version you specified isn't valid. Use ListAssociationVersions to view all versions of
-    /// an association according to the association ID. Or, use the <code>$LATEST</code> parameter to
-    /// view the latest version of the association.</p>
+    /// <p>The version you specified isn't valid. Use ListAssociationVersions to view all versions of an association according to the association ID. Or, use the <code>$LATEST</code> parameter to view the latest version of the association.</p>
     InvalidAssociationVersion(crate::error::InvalidAssociationVersion),
     /// <p>The specified SSM document doesn't exist.</p>
     InvalidDocument(crate::error::InvalidDocument),
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
-    /// <li>
-    /// <p>You don't have permission to access the managed node.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
-    /// running.</p>
-    /// </li>
-    /// <li>
-    /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
-    /// </li>
-    /// <li>
-    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
-    /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
-    /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
-    /// </li>
+    /// <li> <p>You don't have permission to access the managed node.</p> </li>
+    /// <li> <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.</p> </li>
+    /// <li> <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p> </li>
+    /// <li> <p>The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p> </li>
     /// </ul>
     InvalidInstanceId(crate::error::InvalidInstanceId),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -3759,8 +3602,6 @@ impl DescribeAssociationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3894,8 +3735,6 @@ impl DescribeAssociationExecutionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4023,8 +3862,6 @@ impl DescribeAssociationExecutionTargetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4159,8 +3996,6 @@ impl DescribeAutomationExecutionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4235,8 +4070,7 @@ pub struct DescribeAutomationStepExecutionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAutomationStepExecutionsErrorKind {
-    /// <p>There is no automation execution information for the requested automation execution
-    /// ID.</p>
+    /// <p>There is no automation execution information for the requested automation execution ID.</p>
     AutomationExecutionNotFoundException(crate::error::AutomationExecutionNotFoundException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -4296,8 +4130,6 @@ impl DescribeAutomationStepExecutionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4425,8 +4257,6 @@ impl DescribeAvailablePatchesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4526,8 +4356,6 @@ impl DescribeDocumentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4595,13 +4423,11 @@ pub enum DescribeDocumentPermissionErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The specified SSM document doesn't exist.</p>
     InvalidDocument(crate::error::InvalidDocument),
-    /// <p>You attempted to delete a document while it is still shared. You must stop sharing the
-    /// document before you can delete it.</p>
+    /// <p>You attempted to delete a document while it is still shared. You must stop sharing the document before you can delete it.</p>
     InvalidDocumentOperation(crate::error::InvalidDocumentOperation),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// <p>The permission type isn't supported. <i>Share</i> is the only supported
-    /// permission type.</p>
+    /// <p>The permission type isn't supported. <i>Share</i> is the only supported permission type.</p>
     InvalidPermissionType(crate::error::InvalidPermissionType),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4648,8 +4474,6 @@ impl DescribeDocumentPermissionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4736,21 +4560,10 @@ pub enum DescribeEffectiveInstanceAssociationsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
-    /// <li>
-    /// <p>You don't have permission to access the managed node.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
-    /// running.</p>
-    /// </li>
-    /// <li>
-    /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
-    /// </li>
-    /// <li>
-    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
-    /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
-    /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
-    /// </li>
+    /// <li> <p>You don't have permission to access the managed node.</p> </li>
+    /// <li> <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.</p> </li>
+    /// <li> <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p> </li>
+    /// <li> <p>The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p> </li>
     /// </ul>
     InvalidInstanceId(crate::error::InvalidInstanceId),
     /// <p>The specified token isn't valid.</p>
@@ -4807,8 +4620,6 @@ impl DescribeEffectiveInstanceAssociationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4883,17 +4694,14 @@ pub struct DescribeEffectivePatchesForPatchBaselineError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEffectivePatchesForPatchBaselineErrorKind {
-    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch
-    /// baseline, doesn't exist.</p>
-    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
+    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The resource ID isn't valid. Verify that you entered the correct ID and try again.</p>
     InvalidResourceId(crate::error::InvalidResourceId),
-    /// <p>The operating systems you specified isn't supported, or the operation isn't supported for
-    /// the operating system.</p>
+    /// <p>The operating systems you specified isn't supported, or the operation isn't supported for the operating system.</p>
     UnsupportedOperatingSystem(crate::error::UnsupportedOperatingSystem),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4950,8 +4758,6 @@ impl DescribeEffectivePatchesForPatchBaselineError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5040,21 +4846,10 @@ pub enum DescribeInstanceAssociationsStatusErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
-    /// <li>
-    /// <p>You don't have permission to access the managed node.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
-    /// running.</p>
-    /// </li>
-    /// <li>
-    /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
-    /// </li>
-    /// <li>
-    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
-    /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
-    /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
-    /// </li>
+    /// <li> <p>You don't have permission to access the managed node.</p> </li>
+    /// <li> <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.</p> </li>
+    /// <li> <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p> </li>
+    /// <li> <p>The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p> </li>
     /// </ul>
     InvalidInstanceId(crate::error::InvalidInstanceId),
     /// <p>The specified token isn't valid.</p>
@@ -5107,8 +4902,6 @@ impl DescribeInstanceAssociationsStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5183,21 +4976,10 @@ pub enum DescribeInstanceInformationErrorKind {
     InvalidFilterKey(crate::error::InvalidFilterKey),
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
-    /// <li>
-    /// <p>You don't have permission to access the managed node.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
-    /// running.</p>
-    /// </li>
-    /// <li>
-    /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
-    /// </li>
-    /// <li>
-    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
-    /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
-    /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
-    /// </li>
+    /// <li> <p>You don't have permission to access the managed node.</p> </li>
+    /// <li> <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.</p> </li>
+    /// <li> <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p> </li>
+    /// <li> <p>The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p> </li>
     /// </ul>
     InvalidInstanceId(crate::error::InvalidInstanceId),
     /// <p>The specified filter value isn't valid.</p>
@@ -5251,8 +5033,6 @@ impl DescribeInstanceInformationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5343,21 +5123,10 @@ pub enum DescribeInstancePatchesErrorKind {
     InvalidFilter(crate::error::InvalidFilter),
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
-    /// <li>
-    /// <p>You don't have permission to access the managed node.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
-    /// running.</p>
-    /// </li>
-    /// <li>
-    /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
-    /// </li>
-    /// <li>
-    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
-    /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
-    /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
-    /// </li>
+    /// <li> <p>You don't have permission to access the managed node.</p> </li>
+    /// <li> <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.</p> </li>
+    /// <li> <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p> </li>
+    /// <li> <p>The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p> </li>
     /// </ul>
     InvalidInstanceId(crate::error::InvalidInstanceId),
     /// <p>The specified token isn't valid.</p>
@@ -5406,8 +5175,6 @@ impl DescribeInstancePatchesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5528,8 +5295,6 @@ impl DescribeInstancePatchStatesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5646,8 +5411,6 @@ impl DescribeInstancePatchStatesForPatchGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5724,8 +5487,7 @@ pub struct DescribeInventoryDeletionsError {
 pub enum DescribeInventoryDeletionsErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The ID specified for the delete operation doesn't exist or isn't valid. Verify the ID and
-    /// try again.</p>
+    /// <p>The ID specified for the delete operation doesn't exist or isn't valid. Verify the ID and try again.</p>
     InvalidDeletionIdException(crate::error::InvalidDeletionIdException),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
@@ -5774,8 +5536,6 @@ impl DescribeInventoryDeletionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5890,8 +5650,6 @@ impl DescribeMaintenanceWindowExecutionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5946,10 +5704,8 @@ pub struct DescribeMaintenanceWindowExecutionTaskInvocationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeMaintenanceWindowExecutionTaskInvocationsErrorKind {
-    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch
-    /// baseline, doesn't exist.</p>
-    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
+    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -6006,8 +5762,6 @@ impl DescribeMaintenanceWindowExecutionTaskInvocationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6072,10 +5826,8 @@ pub struct DescribeMaintenanceWindowExecutionTasksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeMaintenanceWindowExecutionTasksErrorKind {
-    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch
-    /// baseline, doesn't exist.</p>
-    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
+    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -6128,8 +5880,6 @@ impl DescribeMaintenanceWindowExecutionTasksError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6237,8 +5987,6 @@ impl DescribeMaintenanceWindowsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6289,10 +6037,8 @@ pub struct DescribeMaintenanceWindowScheduleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeMaintenanceWindowScheduleErrorKind {
-    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch
-    /// baseline, doesn't exist.</p>
-    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
+    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -6345,8 +6091,6 @@ impl DescribeMaintenanceWindowScheduleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6455,8 +6199,6 @@ impl DescribeMaintenanceWindowsForTargetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6511,10 +6253,8 @@ pub struct DescribeMaintenanceWindowTargetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeMaintenanceWindowTargetsErrorKind {
-    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch
-    /// baseline, doesn't exist.</p>
-    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
+    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -6565,8 +6305,6 @@ impl DescribeMaintenanceWindowTargetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6627,10 +6365,8 @@ pub struct DescribeMaintenanceWindowTasksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeMaintenanceWindowTasksErrorKind {
-    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch
-    /// baseline, doesn't exist.</p>
-    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
+    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -6679,8 +6415,6 @@ impl DescribeMaintenanceWindowTasksError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6782,8 +6516,6 @@ impl DescribeOpsItemsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6838,8 +6570,7 @@ pub enum DescribeParametersErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The specified key isn't valid.</p>
     InvalidFilterKey(crate::error::InvalidFilterKey),
-    /// <p>The specified filter option isn't valid. Valid options are Equals and BeginsWith. For Path
-    /// filter, valid options are Recursive and OneLevel.</p>
+    /// <p>The specified filter option isn't valid. Valid options are Equals and BeginsWith. For Path filter, valid options are Recursive and OneLevel.</p>
     InvalidFilterOption(crate::error::InvalidFilterOption),
     /// <p>The filter value isn't valid. Verify the value and try again.</p>
     InvalidFilterValue(crate::error::InvalidFilterValue),
@@ -6890,8 +6621,6 @@ impl DescribeParametersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7011,8 +6740,6 @@ impl DescribePatchBaselinesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7106,8 +6833,6 @@ impl DescribePatchGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7204,8 +6929,6 @@ impl DescribePatchGroupStateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7307,8 +7030,6 @@ impl DescribePatchPropertiesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7408,8 +7129,6 @@ impl DescribeSessionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7472,13 +7191,11 @@ pub struct DisassociateOpsItemRelatedItemError {
 pub enum DisassociateOpsItemRelatedItemErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>A specified parameter argument isn't valid. Verify the available arguments and try
-    /// again.</p>
+    /// <p>A specified parameter argument isn't valid. Verify the available arguments and try again.</p>
     OpsItemInvalidParameterException(crate::error::OpsItemInvalidParameterException),
     /// <p>The specified OpsItem ID doesn't exist. Verify the ID and try again.</p>
     OpsItemNotFoundException(crate::error::OpsItemNotFoundException),
-    /// <p>The association wasn't found using the parameters you specified in the call. Verify the
-    /// information and try again.</p>
+    /// <p>The association wasn't found using the parameters you specified in the call. Verify the information and try again.</p>
     OpsItemRelatedItemAssociationNotFoundException(
         crate::error::OpsItemRelatedItemAssociationNotFoundException,
     ),
@@ -7539,8 +7256,6 @@ impl DisassociateOpsItemRelatedItemError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7627,8 +7342,7 @@ pub struct GetAutomationExecutionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAutomationExecutionErrorKind {
-    /// <p>There is no automation execution information for the requested automation execution
-    /// ID.</p>
+    /// <p>There is no automation execution information for the requested automation execution ID.</p>
     AutomationExecutionNotFoundException(crate::error::AutomationExecutionNotFoundException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -7676,8 +7390,6 @@ impl GetAutomationExecutionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7742,8 +7454,7 @@ pub enum GetCalendarStateErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The specified SSM document doesn't exist.</p>
     InvalidDocument(crate::error::InvalidDocument),
-    /// <p>The SSM document type isn't valid. Valid document types are described in the
-    /// <code>DocumentType</code> property.</p>
+    /// <p>The SSM document type isn't valid. Valid document types are described in the <code>DocumentType</code> property.</p>
     InvalidDocumentType(crate::error::InvalidDocumentType),
     /// <p>The calendar entry contained in the specified SSM document isn't supported.</p>
     UnsupportedCalendarException(crate::error::UnsupportedCalendarException),
@@ -7791,8 +7502,6 @@ impl GetCalendarStateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7870,27 +7579,15 @@ pub enum GetCommandInvocationErrorKind {
     InvalidCommandId(crate::error::InvalidCommandId),
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
-    /// <li>
-    /// <p>You don't have permission to access the managed node.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
-    /// running.</p>
-    /// </li>
-    /// <li>
-    /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
-    /// </li>
-    /// <li>
-    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
-    /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
-    /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
-    /// </li>
+    /// <li> <p>You don't have permission to access the managed node.</p> </li>
+    /// <li> <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.</p> </li>
+    /// <li> <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p> </li>
+    /// <li> <p>The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p> </li>
     /// </ul>
     InvalidInstanceId(crate::error::InvalidInstanceId),
     /// <p>The plugin name isn't valid.</p>
     InvalidPluginName(crate::error::InvalidPluginName),
-    /// <p>The command ID and managed node ID you specified didn't match any invocations. Verify the
-    /// command ID and the managed node ID and try again. </p>
+    /// <p>The command ID and managed node ID you specified didn't match any invocations. Verify the command ID and the managed node ID and try again. </p>
     InvocationDoesNotExist(crate::error::InvocationDoesNotExist),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7937,8 +7634,6 @@ impl GetCommandInvocationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8064,8 +7759,6 @@ impl GetConnectionStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8159,8 +7852,6 @@ impl GetDefaultPatchBaselineError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8213,13 +7904,9 @@ pub struct GetDeployablePatchSnapshotForInstanceError {
 pub enum GetDeployablePatchSnapshotForInstanceErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Patching for applications released by Microsoft is only available on EC2 instances and
-    /// advanced instances. To patch applications released by Microsoft on on-premises servers and VMs,
-    /// you must enable advanced instances. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances-advanced.html">Enabling
-    /// the advanced-instances tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>Patching for applications released by Microsoft is only available on EC2 instances and advanced instances. To patch applications released by Microsoft on on-premises servers and VMs, you must enable advanced instances. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances-advanced.html">Enabling the advanced-instances tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     UnsupportedFeatureRequiredException(crate::error::UnsupportedFeatureRequiredException),
-    /// <p>The operating systems you specified isn't supported, or the operation isn't supported for
-    /// the operating system.</p>
+    /// <p>The operating systems you specified isn't supported, or the operation isn't supported for the operating system.</p>
     UnsupportedOperatingSystem(crate::error::UnsupportedOperatingSystem),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8273,8 +7960,6 @@ impl GetDeployablePatchSnapshotForInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8398,8 +8083,6 @@ impl GetDocumentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8459,9 +8142,7 @@ pub struct GetInventoryError {
 pub enum GetInventoryErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The specified aggregator isn't valid for inventory groups. Verify that the aggregator uses a
-    /// valid inventory type such as <code>AWS:Application</code> or
-    /// <code>AWS:InstanceInformation</code>.</p>
+    /// <p>The specified aggregator isn't valid for inventory groups. Verify that the aggregator uses a valid inventory type such as <code>AWS:Application</code> or <code>AWS:InstanceInformation</code>.</p>
     InvalidAggregatorException(crate::error::InvalidAggregatorException),
     /// <p>The filter name isn't valid. Verify the you entered the correct name and try again.</p>
     InvalidFilter(crate::error::InvalidFilter),
@@ -8520,8 +8201,6 @@ impl GetInventoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8660,8 +8339,6 @@ impl GetInventorySchemaError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8725,10 +8402,8 @@ pub struct GetMaintenanceWindowError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMaintenanceWindowErrorKind {
-    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch
-    /// baseline, doesn't exist.</p>
-    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
+    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -8774,8 +8449,6 @@ impl GetMaintenanceWindowError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8834,10 +8507,8 @@ pub struct GetMaintenanceWindowExecutionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMaintenanceWindowExecutionErrorKind {
-    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch
-    /// baseline, doesn't exist.</p>
-    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
+    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -8886,8 +8557,6 @@ impl GetMaintenanceWindowExecutionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8946,10 +8615,8 @@ pub struct GetMaintenanceWindowExecutionTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMaintenanceWindowExecutionTaskErrorKind {
-    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch
-    /// baseline, doesn't exist.</p>
-    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
+    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -9002,8 +8669,6 @@ impl GetMaintenanceWindowExecutionTaskError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9064,10 +8729,8 @@ pub struct GetMaintenanceWindowExecutionTaskInvocationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMaintenanceWindowExecutionTaskInvocationErrorKind {
-    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch
-    /// baseline, doesn't exist.</p>
-    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
+    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -9124,8 +8787,6 @@ impl GetMaintenanceWindowExecutionTaskInvocationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9190,10 +8851,8 @@ pub struct GetMaintenanceWindowTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMaintenanceWindowTaskErrorKind {
-    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch
-    /// baseline, doesn't exist.</p>
-    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
+    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -9239,8 +8898,6 @@ impl GetMaintenanceWindowTaskError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9345,8 +9002,6 @@ impl GetOpsItemError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9448,8 +9103,6 @@ impl GetOpsMetadataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9515,9 +9168,7 @@ pub struct GetOpsSummaryError {
 pub enum GetOpsSummaryErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The specified aggregator isn't valid for inventory groups. Verify that the aggregator uses a
-    /// valid inventory type such as <code>AWS:Application</code> or
-    /// <code>AWS:InstanceInformation</code>.</p>
+    /// <p>The specified aggregator isn't valid for inventory groups. Verify that the aggregator uses a valid inventory type such as <code>AWS:Application</code> or <code>AWS:InstanceInformation</code>.</p>
     InvalidAggregatorException(crate::error::InvalidAggregatorException),
     /// <p>The filter name isn't valid. Verify the you entered the correct name and try again.</p>
     InvalidFilter(crate::error::InvalidFilter),
@@ -9573,8 +9224,6 @@ impl GetOpsSummaryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9662,8 +9311,7 @@ pub enum GetParameterErrorKind {
     InvalidKeyId(crate::error::InvalidKeyId),
     /// <p>The parameter couldn't be found. Verify the name and try again.</p>
     ParameterNotFound(crate::error::ParameterNotFound),
-    /// <p>The specified parameter version wasn't found. Verify the parameter name and version, and try
-    /// again.</p>
+    /// <p>The specified parameter version wasn't found. Verify the parameter name and version, and try again.</p>
     ParameterVersionNotFound(crate::error::ParameterVersionNotFound),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9709,8 +9357,6 @@ impl GetParameterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9828,8 +9474,6 @@ impl GetParameterHistoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9947,8 +9591,6 @@ impl GetParametersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10005,8 +9647,7 @@ pub enum GetParametersByPathErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The specified key isn't valid.</p>
     InvalidFilterKey(crate::error::InvalidFilterKey),
-    /// <p>The specified filter option isn't valid. Valid options are Equals and BeginsWith. For Path
-    /// filter, valid options are Recursive and OneLevel.</p>
+    /// <p>The specified filter option isn't valid. Valid options are Equals and BeginsWith. For Path filter, valid options are Recursive and OneLevel.</p>
     InvalidFilterOption(crate::error::InvalidFilterOption),
     /// <p>The filter value isn't valid. Verify the value and try again.</p>
     InvalidFilterValue(crate::error::InvalidFilterValue),
@@ -10060,8 +9701,6 @@ impl GetParametersByPathError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10149,10 +9788,8 @@ pub struct GetPatchBaselineError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPatchBaselineErrorKind {
-    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch
-    /// baseline, doesn't exist.</p>
-    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
+    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -10201,8 +9838,6 @@ impl GetPatchBaselineError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10312,8 +9947,6 @@ impl GetPatchBaselineForPatchGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10366,8 +9999,7 @@ pub struct GetServiceSettingError {
 pub enum GetServiceSettingErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The specified service setting wasn't found. Either the service name or the setting hasn't
-    /// been provisioned by the Amazon Web Services service team.</p>
+    /// <p>The specified service setting wasn't found. Either the service name or the setting hasn't been provisioned by the Amazon Web Services service team.</p>
     ServiceSettingNotFound(crate::error::ServiceSettingNotFound),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10411,8 +10043,6 @@ impl GetServiceSettingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10477,8 +10107,7 @@ pub enum LabelParameterVersionErrorKind {
     ParameterNotFound(crate::error::ParameterNotFound),
     /// <p>A parameter version can have a maximum of ten labels.</p>
     ParameterVersionLabelLimitExceeded(crate::error::ParameterVersionLabelLimitExceeded),
-    /// <p>The specified parameter version wasn't found. Verify the parameter name and version, and try
-    /// again.</p>
+    /// <p>The specified parameter version wasn't found. Verify the parameter name and version, and try again.</p>
     ParameterVersionNotFound(crate::error::ParameterVersionNotFound),
     /// <p>There are concurrent updates for a resource that supports one update at a time.</p>
     TooManyUpdates(crate::error::TooManyUpdates),
@@ -10529,8 +10158,6 @@ impl LabelParameterVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10661,8 +10288,6 @@ impl ListAssociationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10767,8 +10392,6 @@ impl ListAssociationVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10843,21 +10466,10 @@ pub enum ListCommandInvocationsErrorKind {
     InvalidFilterKey(crate::error::InvalidFilterKey),
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
-    /// <li>
-    /// <p>You don't have permission to access the managed node.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
-    /// running.</p>
-    /// </li>
-    /// <li>
-    /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
-    /// </li>
-    /// <li>
-    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
-    /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
-    /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
-    /// </li>
+    /// <li> <p>You don't have permission to access the managed node.</p> </li>
+    /// <li> <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.</p> </li>
+    /// <li> <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p> </li>
+    /// <li> <p>The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p> </li>
     /// </ul>
     InvalidInstanceId(crate::error::InvalidInstanceId),
     /// <p>The specified token isn't valid.</p>
@@ -10907,8 +10519,6 @@ impl ListCommandInvocationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10999,21 +10609,10 @@ pub enum ListCommandsErrorKind {
     InvalidFilterKey(crate::error::InvalidFilterKey),
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
-    /// <li>
-    /// <p>You don't have permission to access the managed node.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
-    /// running.</p>
-    /// </li>
-    /// <li>
-    /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
-    /// </li>
-    /// <li>
-    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
-    /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
-    /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
-    /// </li>
+    /// <li> <p>You don't have permission to access the managed node.</p> </li>
+    /// <li> <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.</p> </li>
+    /// <li> <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p> </li>
+    /// <li> <p>The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p> </li>
     /// </ul>
     InvalidInstanceId(crate::error::InvalidInstanceId),
     /// <p>The specified token isn't valid.</p>
@@ -11063,8 +10662,6 @@ impl ListCommandsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11140,8 +10737,7 @@ pub enum ListComplianceItemsErrorKind {
     InvalidNextToken(crate::error::InvalidNextToken),
     /// <p>The resource ID isn't valid. Verify that you entered the correct ID and try again.</p>
     InvalidResourceId(crate::error::InvalidResourceId),
-    /// <p>The resource type isn't valid. For example, if you are attempting to tag an EC2 instance, the
-    /// instance must be a registered managed node.</p>
+    /// <p>The resource type isn't valid. For example, if you are attempting to tag an EC2 instance, the instance must be a registered managed node.</p>
     InvalidResourceType(crate::error::InvalidResourceType),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -11188,8 +10784,6 @@ impl ListComplianceItemsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11318,8 +10912,6 @@ impl ListComplianceSummariesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11438,8 +11030,6 @@ impl ListDocumentMetadataHistoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11563,8 +11153,6 @@ impl ListDocumentsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11671,8 +11259,6 @@ impl ListDocumentVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11745,21 +11331,10 @@ pub enum ListInventoryEntriesErrorKind {
     InvalidFilter(crate::error::InvalidFilter),
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
-    /// <li>
-    /// <p>You don't have permission to access the managed node.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
-    /// running.</p>
-    /// </li>
-    /// <li>
-    /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
-    /// </li>
-    /// <li>
-    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
-    /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
-    /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
-    /// </li>
+    /// <li> <p>You don't have permission to access the managed node.</p> </li>
+    /// <li> <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.</p> </li>
+    /// <li> <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p> </li>
+    /// <li> <p>The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p> </li>
     /// </ul>
     InvalidInstanceId(crate::error::InvalidInstanceId),
     /// <p>The specified token isn't valid.</p>
@@ -11811,8 +11386,6 @@ impl ListInventoryEntriesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11894,11 +11467,9 @@ pub struct ListOpsItemEventsError {
 pub enum ListOpsItemEventsErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>A specified parameter argument isn't valid. Verify the available arguments and try
-    /// again.</p>
+    /// <p>A specified parameter argument isn't valid. Verify the available arguments and try again.</p>
     OpsItemInvalidParameterException(crate::error::OpsItemInvalidParameterException),
-    /// <p>The request caused OpsItems to exceed one or more quotas. For information about OpsItem
-    /// quotas, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What are the resource limits for OpsCenter?</a>.</p>
+    /// <p>The request caused OpsItems to exceed one or more quotas. For information about OpsItem quotas, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What are the resource limits for OpsCenter?</a>.</p>
     OpsItemLimitExceededException(crate::error::OpsItemLimitExceededException),
     /// <p>The specified OpsItem ID doesn't exist. Verify the ID and try again.</p>
     OpsItemNotFoundException(crate::error::OpsItemNotFoundException),
@@ -11946,8 +11517,6 @@ impl ListOpsItemEventsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12024,8 +11593,7 @@ pub struct ListOpsItemRelatedItemsError {
 pub enum ListOpsItemRelatedItemsErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>A specified parameter argument isn't valid. Verify the available arguments and try
-    /// again.</p>
+    /// <p>A specified parameter argument isn't valid. Verify the available arguments and try again.</p>
     OpsItemInvalidParameterException(crate::error::OpsItemInvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12071,8 +11639,6 @@ impl ListOpsItemRelatedItemsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12179,8 +11745,6 @@ impl ListOpsMetadataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12288,8 +11852,6 @@ impl ListResourceComplianceSummariesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12409,8 +11971,6 @@ impl ListResourceDataSyncError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12483,8 +12043,7 @@ pub enum ListTagsForResourceErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The resource ID isn't valid. Verify that you entered the correct ID and try again.</p>
     InvalidResourceId(crate::error::InvalidResourceId),
-    /// <p>The resource type isn't valid. For example, if you are attempting to tag an EC2 instance, the
-    /// instance must be a registered managed node.</p>
+    /// <p>The resource type isn't valid. For example, if you are attempting to tag an EC2 instance, the instance must be a registered managed node.</p>
     InvalidResourceType(crate::error::InvalidResourceType),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12529,8 +12088,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12599,16 +12156,13 @@ pub struct ModifyDocumentPermissionError {
 pub enum ModifyDocumentPermissionErrorKind {
     /// <p>You can have at most 500 active SSM documents.</p>
     DocumentLimitExceeded(crate::error::DocumentLimitExceeded),
-    /// <p>The document can't be shared with more Amazon Web Services user accounts. You can share a document
-    /// with a maximum of 20 accounts. You can publicly share up to five documents. If you need to
-    /// increase this limit, contact Amazon Web Services Support.</p>
+    /// <p>The document can't be shared with more Amazon Web Services user accounts. You can share a document with a maximum of 20 accounts. You can publicly share up to five documents. If you need to increase this limit, contact Amazon Web Services Support.</p>
     DocumentPermissionLimit(crate::error::DocumentPermissionLimit),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The specified SSM document doesn't exist.</p>
     InvalidDocument(crate::error::InvalidDocument),
-    /// <p>The permission type isn't supported. <i>Share</i> is the only supported
-    /// permission type.</p>
+    /// <p>The permission type isn't supported. <i>Share</i> is the only supported permission type.</p>
     InvalidPermissionType(crate::error::InvalidPermissionType),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12655,8 +12209,6 @@ impl ModifyDocumentPermissionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12739,8 +12291,7 @@ pub struct PutComplianceItemsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutComplianceItemsErrorKind {
-    /// <p>You specified too many custom compliance types. You can specify a maximum of 10 different
-    /// types. </p>
+    /// <p>You specified too many custom compliance types. You can specify a maximum of 10 different types. </p>
     ComplianceTypeCountLimitExceededException(
         crate::error::ComplianceTypeCountLimitExceededException,
     ),
@@ -12750,8 +12301,7 @@ pub enum PutComplianceItemsErrorKind {
     InvalidItemContentException(crate::error::InvalidItemContentException),
     /// <p>The resource ID isn't valid. Verify that you entered the correct ID and try again.</p>
     InvalidResourceId(crate::error::InvalidResourceId),
-    /// <p>The resource type isn't valid. For example, if you are attempting to tag an EC2 instance, the
-    /// instance must be a registered managed node.</p>
+    /// <p>The resource type isn't valid. For example, if you are attempting to tag an EC2 instance, the instance must be a registered managed node.</p>
     InvalidResourceType(crate::error::InvalidResourceType),
     /// <p>The inventory item size has exceeded the size limit.</p>
     ItemSizeLimitExceededException(crate::error::ItemSizeLimitExceededException),
@@ -12806,8 +12356,6 @@ impl PutComplianceItemsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12908,32 +12456,19 @@ pub struct PutInventoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutInventoryErrorKind {
-    /// <p>You have exceeded the limit for custom schemas. Delete one or more custom schemas and try
-    /// again.</p>
+    /// <p>You have exceeded the limit for custom schemas. Delete one or more custom schemas and try again.</p>
     CustomSchemaCountLimitExceededException(crate::error::CustomSchemaCountLimitExceededException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
-    /// <li>
-    /// <p>You don't have permission to access the managed node.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
-    /// running.</p>
-    /// </li>
-    /// <li>
-    /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
-    /// </li>
-    /// <li>
-    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
-    /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
-    /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
-    /// </li>
+    /// <li> <p>You don't have permission to access the managed node.</p> </li>
+    /// <li> <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.</p> </li>
+    /// <li> <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p> </li>
+    /// <li> <p>The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p> </li>
     /// </ul>
     InvalidInstanceId(crate::error::InvalidInstanceId),
-    /// <p>You specified invalid keys or values in the <code>Context</code> attribute for
-    /// <code>InventoryItem</code>. Verify the keys and values, and try again.</p>
+    /// <p>You specified invalid keys or values in the <code>Context</code> attribute for <code>InventoryItem</code>. Verify the keys and values, and try again.</p>
     InvalidInventoryItemContextException(crate::error::InvalidInventoryItemContextException),
     /// <p>One or more content items isn't valid.</p>
     InvalidItemContentException(crate::error::InvalidItemContentException),
@@ -12947,14 +12482,11 @@ pub enum PutInventoryErrorKind {
     SubTypeCountLimitExceededException(crate::error::SubTypeCountLimitExceededException),
     /// <p>The size of inventory data has exceeded the total size limit for the resource.</p>
     TotalSizeLimitExceededException(crate::error::TotalSizeLimitExceededException),
-    /// <p>The <code>Context</code> attribute that you specified for the <code>InventoryItem</code>
-    /// isn't allowed for this inventory type. You can only use the <code>Context</code> attribute with
-    /// inventory types like <code>AWS:ComplianceItem</code>.</p>
+    /// <p>The <code>Context</code> attribute that you specified for the <code>InventoryItem</code> isn't allowed for this inventory type. You can only use the <code>Context</code> attribute with inventory types like <code>AWS:ComplianceItem</code>.</p>
     UnsupportedInventoryItemContextException(
         crate::error::UnsupportedInventoryItemContextException,
     ),
-    /// <p>Inventory item type schema version has to match supported versions in the service. Check
-    /// output of GetInventorySchema to see the available schema version for each type.</p>
+    /// <p>Inventory item type schema version has to match supported versions in the service. Check output of GetInventorySchema to see the available schema version for each type.</p>
     UnsupportedInventorySchemaVersionException(
         crate::error::UnsupportedInventorySchemaVersionException,
     ),
@@ -13014,8 +12546,6 @@ impl PutInventoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13150,15 +12680,11 @@ pub struct PutParameterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutParameterErrorKind {
-    /// <p>A hierarchy can have a maximum of 15 levels. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements and
-    /// constraints for parameter names</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+    /// <p>A hierarchy can have a maximum of 15 levels. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements and constraints for parameter names</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
     HierarchyLevelLimitExceededException(crate::error::HierarchyLevelLimitExceededException),
-    /// <p>Parameter Store doesn't support changing a parameter type in a hierarchy. For example, you
-    /// can't change a parameter from a <code>String</code> type to a <code>SecureString</code> type. You
-    /// must create a new, unique parameter.</p>
+    /// <p>Parameter Store doesn't support changing a parameter type in a hierarchy. For example, you can't change a parameter from a <code>String</code> type to a <code>SecureString</code> type. You must create a new, unique parameter.</p>
     HierarchyTypeMismatchException(crate::error::HierarchyTypeMismatchException),
-    /// <p>There is a conflict in the policies specified for this parameter. You can't, for example,
-    /// specify two Expiration policies for a parameter. Review your policies, and try again.</p>
+    /// <p>There is a conflict in the policies specified for this parameter. You can't, for example, specify two Expiration policies for a parameter. Review your policies, and try again.</p>
     IncompatiblePolicyException(crate::error::IncompatiblePolicyException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -13168,35 +12694,19 @@ pub enum PutParameterErrorKind {
     InvalidKeyId(crate::error::InvalidKeyId),
     /// <p>A policy attribute or its value is invalid. </p>
     InvalidPolicyAttributeException(crate::error::InvalidPolicyAttributeException),
-    /// <p>The policy type isn't supported. Parameter Store supports the following policy types:
-    /// Expiration, ExpirationNotification, and NoChangeNotification.</p>
+    /// <p>The policy type isn't supported. Parameter Store supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification.</p>
     InvalidPolicyTypeException(crate::error::InvalidPolicyTypeException),
     /// <p>The parameter already exists. You can't create duplicate parameters.</p>
     ParameterAlreadyExists(crate::error::ParameterAlreadyExists),
-    /// <p>You have exceeded the number of parameters for this Amazon Web Services account. Delete one or more
-    /// parameters and try again.</p>
+    /// <p>You have exceeded the number of parameters for this Amazon Web Services account. Delete one or more parameters and try again.</p>
     ParameterLimitExceeded(crate::error::ParameterLimitExceeded),
-    /// <p>Parameter Store retains the 100 most recently created versions of a parameter. After this
-    /// number of versions has been created, Parameter Store deletes the oldest version when a new one is
-    /// created. However, if the oldest version has a <i>label</i> attached to it,
-    /// Parameter Store won't delete the version and instead presents this error message:</p>
-    /// <p>
-    /// <code>An error occurred (ParameterMaxVersionLimitExceeded) when calling the PutParameter
-    /// operation: You attempted to create a new version of <i>parameter-name</i> by
-    /// calling the PutParameter API with the overwrite flag. Version
-    /// <i>version-number</i>, the oldest version, can't be deleted because it has a
-    /// label associated with it. Move the label to another version of the parameter, and try
-    /// again.</code>
-    /// </p>
-    /// <p>This safeguard is to prevent parameter versions with mission critical labels assigned to
-    /// them from being deleted. To continue creating new parameters, first move the label from the
-    /// oldest version of the parameter to a newer one for use in your operations. For information about
-    /// moving parameter labels, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-console-move">Move a parameter label (console)</a> or <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-cli-move">Move a parameter label (CLI)</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+    /// <p>Parameter Store retains the 100 most recently created versions of a parameter. After this number of versions has been created, Parameter Store deletes the oldest version when a new one is created. However, if the oldest version has a <i>label</i> attached to it, Parameter Store won't delete the version and instead presents this error message:</p>
+    /// <p> <code>An error occurred (ParameterMaxVersionLimitExceeded) when calling the PutParameter operation: You attempted to create a new version of <i>parameter-name</i> by calling the PutParameter API with the overwrite flag. Version <i>version-number</i>, the oldest version, can't be deleted because it has a label associated with it. Move the label to another version of the parameter, and try again.</code> </p>
+    /// <p>This safeguard is to prevent parameter versions with mission critical labels assigned to them from being deleted. To continue creating new parameters, first move the label from the oldest version of the parameter to a newer one for use in your operations. For information about moving parameter labels, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-console-move">Move a parameter label (console)</a> or <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-cli-move">Move a parameter label (CLI)</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
     ParameterMaxVersionLimitExceeded(crate::error::ParameterMaxVersionLimitExceeded),
     /// <p>The parameter name isn't valid.</p>
     ParameterPatternMismatchException(crate::error::ParameterPatternMismatchException),
-    /// <p>You specified more than the maximum number of allowed policies for the parameter. The
-    /// maximum is 10.</p>
+    /// <p>You specified more than the maximum number of allowed policies for the parameter. The maximum is 10.</p>
     PoliciesLimitExceededException(crate::error::PoliciesLimitExceededException),
     /// <p>There are concurrent updates for a resource that supports one update at a time.</p>
     TooManyUpdates(crate::error::TooManyUpdates),
@@ -13257,8 +12767,6 @@ impl PutParameterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13406,10 +12914,8 @@ pub struct RegisterDefaultPatchBaselineError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterDefaultPatchBaselineErrorKind {
-    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch
-    /// baseline, doesn't exist.</p>
-    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
+    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -13458,8 +12964,6 @@ impl RegisterDefaultPatchBaselineError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13526,22 +13030,17 @@ pub struct RegisterPatchBaselineForPatchGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterPatchBaselineForPatchGroupErrorKind {
-    /// <p>Error returned if an attempt is made to register a patch group with a patch baseline that is
-    /// already registered with a different patch baseline.</p>
+    /// <p>Error returned if an attempt is made to register a patch group with a patch baseline that is already registered with a different patch baseline.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
-    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch
-    /// baseline, doesn't exist.</p>
-    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
+    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The resource ID isn't valid. Verify that you entered the correct ID and try again.</p>
     InvalidResourceId(crate::error::InvalidResourceId),
-    /// <p>Error returned when the caller has exceeded the default resource quotas. For example, too
-    /// many maintenance windows or patch baselines have been created.</p>
-    /// <p>For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the caller has exceeded the default resource quotas. For example, too many maintenance windows or patch baselines have been created.</p>
+    /// <p>For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -13599,8 +13098,6 @@ impl RegisterPatchBaselineForPatchGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13691,20 +13188,15 @@ pub struct RegisterTargetWithMaintenanceWindowError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterTargetWithMaintenanceWindowErrorKind {
-    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch
-    /// baseline, doesn't exist.</p>
-    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
+    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     DoesNotExistException(crate::error::DoesNotExistException),
-    /// <p>Error returned when an idempotent operation is retried and the parameters don't match the
-    /// original call to the API with the same idempotency token. </p>
+    /// <p>Error returned when an idempotent operation is retried and the parameters don't match the original call to the API with the same idempotency token. </p>
     IdempotentParameterMismatch(crate::error::IdempotentParameterMismatch),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Error returned when the caller has exceeded the default resource quotas. For example, too
-    /// many maintenance windows or patch baselines have been created.</p>
-    /// <p>For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the caller has exceeded the default resource quotas. For example, too many maintenance windows or patch baselines have been created.</p>
+    /// <p>For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -13761,8 +13253,6 @@ impl RegisterTargetWithMaintenanceWindowError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13847,23 +13337,17 @@ pub struct RegisterTaskWithMaintenanceWindowError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterTaskWithMaintenanceWindowErrorKind {
-    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch
-    /// baseline, doesn't exist.</p>
-    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
+    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     DoesNotExistException(crate::error::DoesNotExistException),
-    /// <p>You attempted to register a <code>LAMBDA</code> or <code>STEP_FUNCTIONS</code> task in a
-    /// region where the corresponding service isn't available. </p>
+    /// <p>You attempted to register a <code>LAMBDA</code> or <code>STEP_FUNCTIONS</code> task in a region where the corresponding service isn't available. </p>
     FeatureNotAvailableException(crate::error::FeatureNotAvailableException),
-    /// <p>Error returned when an idempotent operation is retried and the parameters don't match the
-    /// original call to the API with the same idempotency token. </p>
+    /// <p>Error returned when an idempotent operation is retried and the parameters don't match the original call to the API with the same idempotency token. </p>
     IdempotentParameterMismatch(crate::error::IdempotentParameterMismatch),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Error returned when the caller has exceeded the default resource quotas. For example, too
-    /// many maintenance windows or patch baselines have been created.</p>
-    /// <p>For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the caller has exceeded the default resource quotas. For example, too many maintenance windows or patch baselines have been created.</p>
+    /// <p>For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -13923,8 +13407,6 @@ impl RegisterTaskWithMaintenanceWindowError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14019,8 +13501,7 @@ pub enum RemoveTagsFromResourceErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The resource ID isn't valid. Verify that you entered the correct ID and try again.</p>
     InvalidResourceId(crate::error::InvalidResourceId),
-    /// <p>The resource type isn't valid. For example, if you are attempting to tag an EC2 instance, the
-    /// instance must be a registered managed node.</p>
+    /// <p>The resource type isn't valid. For example, if you are attempting to tag an EC2 instance, the instance must be a registered managed node.</p>
     InvalidResourceType(crate::error::InvalidResourceType),
     /// <p>There are concurrent updates for a resource that supports one update at a time.</p>
     TooManyUpdates(crate::error::TooManyUpdates),
@@ -14068,8 +13549,6 @@ impl RemoveTagsFromResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14146,8 +13625,7 @@ pub struct ResetServiceSettingError {
 pub enum ResetServiceSettingErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The specified service setting wasn't found. Either the service name or the setting hasn't
-    /// been provisioned by the Amazon Web Services service team.</p>
+    /// <p>The specified service setting wasn't found. Either the service name or the setting hasn't been provisioned by the Amazon Web Services service team.</p>
     ServiceSettingNotFound(crate::error::ServiceSettingNotFound),
     /// <p>There are concurrent updates for a resource that supports one update at a time.</p>
     TooManyUpdates(crate::error::TooManyUpdates),
@@ -14194,8 +13672,6 @@ impl ResetServiceSettingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14259,10 +13735,8 @@ pub struct ResumeSessionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResumeSessionErrorKind {
-    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch
-    /// baseline, doesn't exist.</p>
-    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
+    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -14308,8 +13782,6 @@ impl ResumeSessionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14362,11 +13834,9 @@ pub struct SendAutomationSignalError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SendAutomationSignalErrorKind {
-    /// <p>There is no automation execution information for the requested automation execution
-    /// ID.</p>
+    /// <p>There is no automation execution information for the requested automation execution ID.</p>
     AutomationExecutionNotFoundException(crate::error::AutomationExecutionNotFoundException),
-    /// <p>The specified step name and execution ID don't exist. Verify the information and try
-    /// again.</p>
+    /// <p>The specified step name and execution ID don't exist. Verify the information and try again.</p>
     AutomationStepNotFoundException(crate::error::AutomationStepNotFoundException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -14420,8 +13890,6 @@ impl SendAutomationSignalError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14508,39 +13976,23 @@ pub enum SendCommandErrorKind {
     InvalidDocumentVersion(crate::error::InvalidDocumentVersion),
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
-    /// <li>
-    /// <p>You don't have permission to access the managed node.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
-    /// running.</p>
-    /// </li>
-    /// <li>
-    /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
-    /// </li>
-    /// <li>
-    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
-    /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
-    /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
-    /// </li>
+    /// <li> <p>You don't have permission to access the managed node.</p> </li>
+    /// <li> <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.</p> </li>
+    /// <li> <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p> </li>
+    /// <li> <p>The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p> </li>
     /// </ul>
     InvalidInstanceId(crate::error::InvalidInstanceId),
-    /// <p>One or more configuration items isn't valid. Verify that a valid Amazon Resource Name (ARN)
-    /// was provided for an Amazon Simple Notification Service topic.</p>
+    /// <p>One or more configuration items isn't valid. Verify that a valid Amazon Resource Name (ARN) was provided for an Amazon Simple Notification Service topic.</p>
     InvalidNotificationConfig(crate::error::InvalidNotificationConfig),
     /// <p>The S3 bucket doesn't exist.</p>
     InvalidOutputFolder(crate::error::InvalidOutputFolder),
-    /// <p>You must specify values for all required parameters in the Amazon Web Services Systems Manager document (SSM
-    /// document). You can only supply values to parameters defined in the SSM document.</p>
+    /// <p>You must specify values for all required parameters in the Amazon Web Services Systems Manager document (SSM document). You can only supply values to parameters defined in the SSM document.</p>
     InvalidParameters(crate::error::InvalidParameters),
-    /// <p>The role name can't contain invalid characters. Also verify that you specified an IAM role for notifications that includes the required trust policy. For information about
-    /// configuring the IAM role for Run Command notifications, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring Amazon SNS Notifications for Run Command</a> in the
-    /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>The role name can't contain invalid characters. Also verify that you specified an IAM role for notifications that includes the required trust policy. For information about configuring the IAM role for Run Command notifications, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring Amazon SNS Notifications for Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     InvalidRole(crate::error::InvalidRole),
     /// <p>The size limit of a document is 64 KB.</p>
     MaxDocumentSizeExceeded(crate::error::MaxDocumentSizeExceeded),
-    /// <p>The document doesn't support the platform type of the given managed node ID(s). For example, you
-    /// sent an document for a Windows managed node to a Linux node.</p>
+    /// <p>The document doesn't support the platform type of the given managed node ID(s). For example, you sent an document for a Windows managed node to a Linux node.</p>
     UnsupportedPlatformType(crate::error::UnsupportedPlatformType),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -14593,8 +14045,6 @@ impl SendCommandError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14741,8 +14191,6 @@ impl StartAssociationsOnceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14807,24 +14255,19 @@ pub enum StartAutomationExecutionErrorKind {
     AutomationDefinitionVersionNotFoundException(
         crate::error::AutomationDefinitionVersionNotFoundException,
     ),
-    /// <p>The number of simultaneously running Automation executions exceeded the allowable
-    /// limit.</p>
+    /// <p>The number of simultaneously running Automation executions exceeded the allowable limit.</p>
     AutomationExecutionLimitExceededException(
         crate::error::AutomationExecutionLimitExceededException,
     ),
-    /// <p>Error returned when an idempotent operation is retried and the parameters don't match the
-    /// original call to the API with the same idempotency token. </p>
+    /// <p>Error returned when an idempotent operation is retried and the parameters don't match the original call to the API with the same idempotency token. </p>
     IdempotentParameterMismatch(crate::error::IdempotentParameterMismatch),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The supplied parameters for invoking the specified Automation runbook are incorrect. For
-    /// example, they may not match the set of parameters permitted for the specified Automation
-    /// document.</p>
+    /// <p>The supplied parameters for invoking the specified Automation runbook are incorrect. For example, they may not match the set of parameters permitted for the specified Automation document.</p>
     InvalidAutomationExecutionParametersException(
         crate::error::InvalidAutomationExecutionParametersException,
     ),
-    /// <p>The target isn't valid or doesn't exist. It might not be configured for Systems Manager or you might
-    /// not have permission to perform the operation.</p>
+    /// <p>The target isn't valid or doesn't exist. It might not be configured for Systems Manager or you might not have permission to perform the operation.</p>
     InvalidTarget(crate::error::InvalidTarget),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -14881,8 +14324,6 @@ impl StartAutomationExecutionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14989,8 +14430,7 @@ pub struct StartChangeRequestExecutionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartChangeRequestExecutionErrorKind {
-    /// <p>Indicates that the Change Manager change template used in the change request was rejected or is
-    /// still in a pending state.</p>
+    /// <p>Indicates that the Change Manager change template used in the change request was rejected or is still in a pending state.</p>
     AutomationDefinitionNotApprovedException(
         crate::error::AutomationDefinitionNotApprovedException,
     ),
@@ -15000,19 +14440,15 @@ pub enum StartChangeRequestExecutionErrorKind {
     AutomationDefinitionVersionNotFoundException(
         crate::error::AutomationDefinitionVersionNotFoundException,
     ),
-    /// <p>The number of simultaneously running Automation executions exceeded the allowable
-    /// limit.</p>
+    /// <p>The number of simultaneously running Automation executions exceeded the allowable limit.</p>
     AutomationExecutionLimitExceededException(
         crate::error::AutomationExecutionLimitExceededException,
     ),
-    /// <p>Error returned when an idempotent operation is retried and the parameters don't match the
-    /// original call to the API with the same idempotency token. </p>
+    /// <p>Error returned when an idempotent operation is retried and the parameters don't match the original call to the API with the same idempotency token. </p>
     IdempotentParameterMismatch(crate::error::IdempotentParameterMismatch),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The supplied parameters for invoking the specified Automation runbook are incorrect. For
-    /// example, they may not match the set of parameters permitted for the specified Automation
-    /// document.</p>
+    /// <p>The supplied parameters for invoking the specified Automation runbook are incorrect. For example, they may not match the set of parameters permitted for the specified Automation document.</p>
     InvalidAutomationExecutionParametersException(
         crate::error::InvalidAutomationExecutionParametersException,
     ),
@@ -15075,8 +14511,6 @@ impl StartChangeRequestExecutionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15191,10 +14625,7 @@ pub enum StartSessionErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The specified SSM document doesn't exist.</p>
     InvalidDocument(crate::error::InvalidDocument),
-    /// <p>The specified target managed node for the session isn't fully configured for use with Session Manager. For
-    /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html">Getting started with
-    /// Session Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. This error is also returned if you
-    /// attempt to start a session on a managed node that is located in a different account or Region</p>
+    /// <p>The specified target managed node for the session isn't fully configured for use with Session Manager. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html">Getting started with Session Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. This error is also returned if you attempt to start a session on a managed node that is located in a different account or Region</p>
     TargetNotConnected(crate::error::TargetNotConnected),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -15239,8 +14670,6 @@ impl StartSessionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15298,8 +14727,7 @@ pub struct StopAutomationExecutionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopAutomationExecutionErrorKind {
-    /// <p>There is no automation execution information for the requested automation execution
-    /// ID.</p>
+    /// <p>There is no automation execution information for the requested automation execution ID.</p>
     AutomationExecutionNotFoundException(crate::error::AutomationExecutionNotFoundException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -15352,8 +14780,6 @@ impl StopAutomationExecutionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15424,10 +14850,8 @@ pub struct TerminateSessionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TerminateSessionErrorKind {
-    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch
-    /// baseline, doesn't exist.</p>
-    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
+    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -15473,8 +14897,6 @@ impl TerminateSessionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15537,8 +14959,7 @@ pub enum UnlabelParameterVersionErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The parameter couldn't be found. Verify the name and try again.</p>
     ParameterNotFound(crate::error::ParameterNotFound),
-    /// <p>The specified parameter version wasn't found. Verify the parameter name and version, and try
-    /// again.</p>
+    /// <p>The specified parameter version wasn't found. Verify the parameter name and version, and try again.</p>
     ParameterVersionNotFound(crate::error::ParameterVersionNotFound),
     /// <p>There are concurrent updates for a resource that supports one update at a time.</p>
     TooManyUpdates(crate::error::TooManyUpdates),
@@ -15586,8 +15007,6 @@ impl UnlabelParameterVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15664,14 +15083,11 @@ pub struct UpdateAssociationError {
 pub enum UpdateAssociationErrorKind {
     /// <p>The specified association doesn't exist.</p>
     AssociationDoesNotExist(crate::error::AssociationDoesNotExist),
-    /// <p>You have reached the maximum number versions allowed for an association. Each association
-    /// has a limit of 1,000 versions. </p>
+    /// <p>You have reached the maximum number versions allowed for an association. Each association has a limit of 1,000 versions. </p>
     AssociationVersionLimitExceeded(crate::error::AssociationVersionLimitExceeded),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The version you specified isn't valid. Use ListAssociationVersions to view all versions of
-    /// an association according to the association ID. Or, use the <code>$LATEST</code> parameter to
-    /// view the latest version of the association.</p>
+    /// <p>The version you specified isn't valid. Use ListAssociationVersions to view all versions of an association according to the association ID. Or, use the <code>$LATEST</code> parameter to view the latest version of the association.</p>
     InvalidAssociationVersion(crate::error::InvalidAssociationVersion),
     /// <p>The specified SSM document doesn't exist.</p>
     InvalidDocument(crate::error::InvalidDocument),
@@ -15679,13 +15095,11 @@ pub enum UpdateAssociationErrorKind {
     InvalidDocumentVersion(crate::error::InvalidDocumentVersion),
     /// <p>The output location isn't valid or doesn't exist.</p>
     InvalidOutputLocation(crate::error::InvalidOutputLocation),
-    /// <p>You must specify values for all required parameters in the Amazon Web Services Systems Manager document (SSM
-    /// document). You can only supply values to parameters defined in the SSM document.</p>
+    /// <p>You must specify values for all required parameters in the Amazon Web Services Systems Manager document (SSM document). You can only supply values to parameters defined in the SSM document.</p>
     InvalidParameters(crate::error::InvalidParameters),
     /// <p>The schedule is invalid. Verify your cron or rate expression and try again.</p>
     InvalidSchedule(crate::error::InvalidSchedule),
-    /// <p>The target isn't valid or doesn't exist. It might not be configured for Systems Manager or you might
-    /// not have permission to perform the operation.</p>
+    /// <p>The target isn't valid or doesn't exist. It might not be configured for Systems Manager or you might not have permission to perform the operation.</p>
     InvalidTarget(crate::error::InvalidTarget),
     /// <p>The update isn't valid.</p>
     InvalidUpdate(crate::error::InvalidUpdate),
@@ -15743,8 +15157,6 @@ impl UpdateAssociationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15873,21 +15285,10 @@ pub enum UpdateAssociationStatusErrorKind {
     InvalidDocument(crate::error::InvalidDocument),
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
-    /// <li>
-    /// <p>You don't have permission to access the managed node.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
-    /// running.</p>
-    /// </li>
-    /// <li>
-    /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
-    /// </li>
-    /// <li>
-    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
-    /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
-    /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
-    /// </li>
+    /// <li> <p>You don't have permission to access the managed node.</p> </li>
+    /// <li> <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.</p> </li>
+    /// <li> <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p> </li>
+    /// <li> <p>The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p> </li>
     /// </ul>
     InvalidInstanceId(crate::error::InvalidInstanceId),
     /// <p>The updated status is the same as the current status.</p>
@@ -15940,8 +15341,6 @@ impl UpdateAssociationStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16032,14 +15431,11 @@ pub struct UpdateDocumentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateDocumentErrorKind {
-    /// <p>The document has too many versions. Delete one or more document versions and try
-    /// again.</p>
+    /// <p>The document has too many versions. Delete one or more document versions and try again.</p>
     DocumentVersionLimitExceeded(crate::error::DocumentVersionLimitExceeded),
-    /// <p>The content of the association document matches another document. Change the content of the
-    /// document and try again.</p>
+    /// <p>The content of the association document matches another document. Change the content of the document and try again.</p>
     DuplicateDocumentContent(crate::error::DuplicateDocumentContent),
-    /// <p>The version name has already been used in this document. Specify a different version name,
-    /// and then try again.</p>
+    /// <p>The version name has already been used in this document. Specify a different version name, and then try again.</p>
     DuplicateDocumentVersionName(crate::error::DuplicateDocumentVersionName),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -16047,8 +15443,7 @@ pub enum UpdateDocumentErrorKind {
     InvalidDocument(crate::error::InvalidDocument),
     /// <p>The content for the document isn't valid.</p>
     InvalidDocumentContent(crate::error::InvalidDocumentContent),
-    /// <p>You attempted to delete a document while it is still shared. You must stop sharing the
-    /// document before you can delete it.</p>
+    /// <p>You attempted to delete a document while it is still shared. You must stop sharing the document before you can delete it.</p>
     InvalidDocumentOperation(crate::error::InvalidDocumentOperation),
     /// <p>The version of the document schema isn't supported.</p>
     InvalidDocumentSchemaVersion(crate::error::InvalidDocumentSchemaVersion),
@@ -16106,8 +15501,6 @@ impl UpdateDocumentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16278,8 +15671,6 @@ impl UpdateDocumentDefaultVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16360,8 +15751,7 @@ pub enum UpdateDocumentMetadataErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The specified SSM document doesn't exist.</p>
     InvalidDocument(crate::error::InvalidDocument),
-    /// <p>You attempted to delete a document while it is still shared. You must stop sharing the
-    /// document before you can delete it.</p>
+    /// <p>You attempted to delete a document while it is still shared. You must stop sharing the document before you can delete it.</p>
     InvalidDocumentOperation(crate::error::InvalidDocumentOperation),
     /// <p>The document version isn't valid or doesn't exist.</p>
     InvalidDocumentVersion(crate::error::InvalidDocumentVersion),
@@ -16409,8 +15799,6 @@ impl UpdateDocumentMetadataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16485,10 +15873,8 @@ pub struct UpdateMaintenanceWindowError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateMaintenanceWindowErrorKind {
-    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch
-    /// baseline, doesn't exist.</p>
-    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
+    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -16534,8 +15920,6 @@ impl UpdateMaintenanceWindowError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16594,10 +15978,8 @@ pub struct UpdateMaintenanceWindowTargetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateMaintenanceWindowTargetErrorKind {
-    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch
-    /// baseline, doesn't exist.</p>
-    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
+    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -16646,8 +16028,6 @@ impl UpdateMaintenanceWindowTargetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16706,10 +16086,8 @@ pub struct UpdateMaintenanceWindowTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateMaintenanceWindowTaskErrorKind {
-    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch
-    /// baseline, doesn't exist.</p>
-    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
+    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -16755,8 +16133,6 @@ impl UpdateMaintenanceWindowTaskError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16819,21 +16195,10 @@ pub enum UpdateManagedInstanceRoleErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
-    /// <li>
-    /// <p>You don't have permission to access the managed node.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
-    /// running.</p>
-    /// </li>
-    /// <li>
-    /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
-    /// </li>
-    /// <li>
-    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
-    /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
-    /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
-    /// </li>
+    /// <li> <p>You don't have permission to access the managed node.</p> </li>
+    /// <li> <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.</p> </li>
+    /// <li> <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p> </li>
+    /// <li> <p>The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p> </li>
     /// </ul>
     InvalidInstanceId(crate::error::InvalidInstanceId),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -16878,8 +16243,6 @@ impl UpdateManagedInstanceRoleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16942,11 +16305,9 @@ pub enum UpdateOpsItemErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The OpsItem already exists.</p>
     OpsItemAlreadyExistsException(crate::error::OpsItemAlreadyExistsException),
-    /// <p>A specified parameter argument isn't valid. Verify the available arguments and try
-    /// again.</p>
+    /// <p>A specified parameter argument isn't valid. Verify the available arguments and try again.</p>
     OpsItemInvalidParameterException(crate::error::OpsItemInvalidParameterException),
-    /// <p>The request caused OpsItems to exceed one or more quotas. For information about OpsItem
-    /// quotas, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What are the resource limits for OpsCenter?</a>.</p>
+    /// <p>The request caused OpsItems to exceed one or more quotas. For information about OpsItem quotas, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What are the resource limits for OpsCenter?</a>.</p>
     OpsItemLimitExceededException(crate::error::OpsItemLimitExceededException),
     /// <p>The specified OpsItem ID doesn't exist. Verify the ID and try again.</p>
     OpsItemNotFoundException(crate::error::OpsItemNotFoundException),
@@ -16995,8 +16356,6 @@ impl UpdateOpsItemError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17080,13 +16439,11 @@ pub enum UpdateOpsMetadataErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>One of the arguments passed is invalid. </p>
     OpsMetadataInvalidArgumentException(crate::error::OpsMetadataInvalidArgumentException),
-    /// <p>The OpsMetadata object exceeds the maximum number of OpsMetadata keys that you can assign to
-    /// an application in Application Manager.</p>
+    /// <p>The OpsMetadata object exceeds the maximum number of OpsMetadata keys that you can assign to an application in Application Manager.</p>
     OpsMetadataKeyLimitExceededException(crate::error::OpsMetadataKeyLimitExceededException),
     /// <p>The OpsMetadata object doesn't exist. </p>
     OpsMetadataNotFoundException(crate::error::OpsMetadataNotFoundException),
-    /// <p>The system is processing too many concurrent updates. Wait a few moments and try
-    /// again.</p>
+    /// <p>The system is processing too many concurrent updates. Wait a few moments and try again.</p>
     OpsMetadataTooManyUpdatesException(crate::error::OpsMetadataTooManyUpdatesException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -17137,8 +16494,6 @@ impl UpdateOpsMetadataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17223,10 +16578,8 @@ pub struct UpdatePatchBaselineError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdatePatchBaselineErrorKind {
-    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch
-    /// baseline, doesn't exist.</p>
-    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
+    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     DoesNotExistException(crate::error::DoesNotExistException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -17272,8 +16625,6 @@ impl UpdatePatchBaselineError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17334,8 +16685,7 @@ pub struct UpdateResourceDataSyncError {
 pub enum UpdateResourceDataSyncErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Another <code>UpdateResourceDataSync</code> request is being processed. Wait a few minutes
-    /// and try again.</p>
+    /// <p>Another <code>UpdateResourceDataSync</code> request is being processed. Wait a few minutes and try again.</p>
     ResourceDataSyncConflictException(crate::error::ResourceDataSyncConflictException),
     /// <p>The specified sync configuration is invalid.</p>
     ResourceDataSyncInvalidConfigurationException(
@@ -17393,8 +16743,6 @@ impl UpdateResourceDataSyncError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17477,8 +16825,7 @@ pub struct UpdateServiceSettingError {
 pub enum UpdateServiceSettingErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The specified service setting wasn't found. Either the service name or the setting hasn't
-    /// been provisioned by the Amazon Web Services service team.</p>
+    /// <p>The specified service setting wasn't found. Either the service name or the setting hasn't been provisioned by the Amazon Web Services service team.</p>
     ServiceSettingNotFound(crate::error::ServiceSettingNotFound),
     /// <p>There are concurrent updates for a resource that supports one update at a time.</p>
     TooManyUpdates(crate::error::TooManyUpdates),
@@ -17525,8 +16872,6 @@ impl UpdateServiceSettingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17641,8 +16986,7 @@ impl TooManyUpdates {
     }
 }
 
-/// <p>The specified service setting wasn't found. Either the service name or the setting hasn't
-/// been provisioned by the Amazon Web Services service team.</p>
+/// <p>The specified service setting wasn't found. Either the service name or the setting hasn't been provisioned by the Amazon Web Services service team.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceSettingNotFound {
@@ -17938,8 +17282,7 @@ impl ResourceDataSyncInvalidConfigurationException {
     }
 }
 
-/// <p>Another <code>UpdateResourceDataSync</code> request is being processed. Wait a few minutes
-/// and try again.</p>
+/// <p>Another <code>UpdateResourceDataSync</code> request is being processed. Wait a few minutes and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDataSyncConflictException {
@@ -18003,10 +17346,8 @@ impl ResourceDataSyncConflictException {
     }
 }
 
-/// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch
-/// baseline, doesn't exist.</p>
-/// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-/// <i>Amazon Web Services General Reference</i>.</p>
+/// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
+/// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DoesNotExistException {
@@ -18070,8 +17411,7 @@ impl DoesNotExistException {
     }
 }
 
-/// <p>The system is processing too many concurrent updates. Wait a few moments and try
-/// again.</p>
+/// <p>The system is processing too many concurrent updates. Wait a few moments and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsMetadataTooManyUpdatesException {
@@ -18199,8 +17539,7 @@ impl OpsMetadataNotFoundException {
     }
 }
 
-/// <p>The OpsMetadata object exceeds the maximum number of OpsMetadata keys that you can assign to
-/// an application in Application Manager.</p>
+/// <p>The OpsMetadata object exceeds the maximum number of OpsMetadata keys that you can assign to an application in Application Manager.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsMetadataKeyLimitExceededException {
@@ -18392,8 +17731,7 @@ impl OpsItemNotFoundException {
     }
 }
 
-/// <p>The request caused OpsItems to exceed one or more quotas. For information about OpsItem
-/// quotas, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What are the resource limits for OpsCenter?</a>.</p>
+/// <p>The request caused OpsItems to exceed one or more quotas. For information about OpsItem quotas, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What are the resource limits for OpsCenter?</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsItemLimitExceededException {
@@ -18524,8 +17862,7 @@ impl OpsItemLimitExceededException {
     }
 }
 
-/// <p>A specified parameter argument isn't valid. Verify the available arguments and try
-/// again.</p>
+/// <p>A specified parameter argument isn't valid. Verify the available arguments and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsItemInvalidParameterException {
@@ -18705,21 +18042,10 @@ impl OpsItemAlreadyExistsException {
 
 /// <p>The following problems can cause this exception:</p>
 /// <ul>
-/// <li>
-/// <p>You don't have permission to access the managed node.</p>
-/// </li>
-/// <li>
-/// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
-/// running.</p>
-/// </li>
-/// <li>
-/// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
-/// </li>
-/// <li>
-/// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
-/// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
-/// <code>Shutting-down</code> and <code>Terminated</code>.</p>
-/// </li>
+/// <li> <p>You don't have permission to access the managed node.</p> </li>
+/// <li> <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.</p> </li>
+/// <li> <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p> </li>
+/// <li> <p>The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -18848,8 +18174,7 @@ impl InvalidDocumentVersion {
     }
 }
 
-/// <p>You attempted to delete a document while it is still shared. You must stop sharing the
-/// document before you can delete it.</p>
+/// <p>You attempted to delete a document while it is still shared. You must stop sharing the document before you can delete it.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDocumentOperation {
@@ -18917,8 +18242,7 @@ impl InvalidDocumentOperation {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDocument {
-    /// <p>The SSM document doesn't exist or the document isn't available to the user. This exception
-    /// can be issued by various API operations. </p>
+    /// <p>The SSM document doesn't exist or the document isn't available to the user. This exception can be issued by various API operations. </p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidDocument {
@@ -18953,14 +18277,12 @@ pub mod invalid_document {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The SSM document doesn't exist or the document isn't available to the user. This exception
-        /// can be issued by various API operations. </p>
+        /// <p>The SSM document doesn't exist or the document isn't available to the user. This exception can be issued by various API operations. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The SSM document doesn't exist or the document isn't available to the user. This exception
-        /// can be issued by various API operations. </p>
+        /// <p>The SSM document doesn't exist or the document isn't available to the user. This exception can be issued by various API operations. </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -19172,8 +18494,7 @@ impl InvalidDocumentContent {
     }
 }
 
-/// <p>The version name has already been used in this document. Specify a different version name,
-/// and then try again.</p>
+/// <p>The version name has already been used in this document. Specify a different version name, and then try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateDocumentVersionName {
@@ -19237,8 +18558,7 @@ impl DuplicateDocumentVersionName {
     }
 }
 
-/// <p>The content of the association document matches another document. Change the content of the
-/// document and try again.</p>
+/// <p>The content of the association document matches another document. Change the content of the document and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateDocumentContent {
@@ -19302,8 +18622,7 @@ impl DuplicateDocumentContent {
     }
 }
 
-/// <p>The document has too many versions. Delete one or more document versions and try
-/// again.</p>
+/// <p>The document has too many versions. Delete one or more document versions and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentVersionLimitExceeded {
@@ -19559,8 +18878,7 @@ impl InvalidUpdate {
     }
 }
 
-/// <p>The target isn't valid or doesn't exist. It might not be configured for Systems Manager or you might
-/// not have permission to perform the operation.</p>
+/// <p>The target isn't valid or doesn't exist. It might not be configured for Systems Manager or you might not have permission to perform the operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTarget {
@@ -19688,8 +19006,7 @@ impl InvalidSchedule {
     }
 }
 
-/// <p>You must specify values for all required parameters in the Amazon Web Services Systems Manager document (SSM
-/// document). You can only supply values to parameters defined in the SSM document.</p>
+/// <p>You must specify values for all required parameters in the Amazon Web Services Systems Manager document (SSM document). You can only supply values to parameters defined in the SSM document.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameters {
@@ -19817,9 +19134,7 @@ impl InvalidOutputLocation {
     }
 }
 
-/// <p>The version you specified isn't valid. Use ListAssociationVersions to view all versions of
-/// an association according to the association ID. Or, use the <code>$LATEST</code> parameter to
-/// view the latest version of the association.</p>
+/// <p>The version you specified isn't valid. Use ListAssociationVersions to view all versions of an association according to the association ID. Or, use the <code>$LATEST</code> parameter to view the latest version of the association.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAssociationVersion {
@@ -19883,8 +19198,7 @@ impl InvalidAssociationVersion {
     }
 }
 
-/// <p>You have reached the maximum number versions allowed for an association. Each association
-/// has a limit of 1,000 versions. </p>
+/// <p>You have reached the maximum number versions allowed for an association. Each association has a limit of 1,000 versions. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociationVersionLimitExceeded {
@@ -19948,8 +19262,7 @@ impl AssociationVersionLimitExceeded {
     }
 }
 
-/// <p>The specified parameter version wasn't found. Verify the parameter name and version, and try
-/// again.</p>
+/// <p>The specified parameter version wasn't found. Verify the parameter name and version, and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterVersionNotFound {
@@ -20141,8 +19454,7 @@ impl InvalidAutomationStatusUpdateException {
     }
 }
 
-/// <p>There is no automation execution information for the requested automation execution
-/// ID.</p>
+/// <p>There is no automation execution information for the requested automation execution ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutomationExecutionNotFoundException {
@@ -20206,10 +19518,7 @@ impl AutomationExecutionNotFoundException {
     }
 }
 
-/// <p>The specified target managed node for the session isn't fully configured for use with Session Manager. For
-/// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html">Getting started with
-/// Session Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. This error is also returned if you
-/// attempt to start a session on a managed node that is located in a different account or Region</p>
+/// <p>The specified target managed node for the session isn't fully configured for use with Session Manager. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html">Getting started with Session Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. This error is also returned if you attempt to start a session on a managed node that is located in a different account or Region</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetNotConnected {
@@ -20273,9 +19582,7 @@ impl TargetNotConnected {
     }
 }
 
-/// <p>The supplied parameters for invoking the specified Automation runbook are incorrect. For
-/// example, they may not match the set of parameters permitted for the specified Automation
-/// document.</p>
+/// <p>The supplied parameters for invoking the specified Automation runbook are incorrect. For example, they may not match the set of parameters permitted for the specified Automation document.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAutomationExecutionParametersException {
@@ -20339,8 +19646,7 @@ impl InvalidAutomationExecutionParametersException {
     }
 }
 
-/// <p>Error returned when an idempotent operation is retried and the parameters don't match the
-/// original call to the API with the same idempotency token. </p>
+/// <p>Error returned when an idempotent operation is retried and the parameters don't match the original call to the API with the same idempotency token. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdempotentParameterMismatch {
@@ -20404,8 +19710,7 @@ impl IdempotentParameterMismatch {
     }
 }
 
-/// <p>The number of simultaneously running Automation executions exceeded the allowable
-/// limit.</p>
+/// <p>The number of simultaneously running Automation executions exceeded the allowable limit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutomationExecutionLimitExceededException {
@@ -20597,8 +19902,7 @@ impl AutomationDefinitionNotFoundException {
     }
 }
 
-/// <p>Indicates that the Change Manager change template used in the change request was rejected or is
-/// still in a pending state.</p>
+/// <p>Indicates that the Change Manager change template used in the change request was rejected or is still in a pending state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutomationDefinitionNotApprovedException {
@@ -20726,8 +20030,7 @@ impl InvalidAssociation {
     }
 }
 
-/// <p>The document doesn't support the platform type of the given managed node ID(s). For example, you
-/// sent an document for a Windows managed node to a Linux node.</p>
+/// <p>The document doesn't support the platform type of the given managed node ID(s). For example, you sent an document for a Windows managed node to a Linux node.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedPlatformType {
@@ -20791,9 +20094,7 @@ impl UnsupportedPlatformType {
     }
 }
 
-/// <p>The role name can't contain invalid characters. Also verify that you specified an IAM role for notifications that includes the required trust policy. For information about
-/// configuring the IAM role for Run Command notifications, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring Amazon SNS Notifications for Run Command</a> in the
-/// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+/// <p>The role name can't contain invalid characters. Also verify that you specified an IAM role for notifications that includes the required trust policy. For information about configuring the IAM role for Run Command notifications, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring Amazon SNS Notifications for Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRole {
@@ -20921,8 +20222,7 @@ impl InvalidOutputFolder {
     }
 }
 
-/// <p>One or more configuration items isn't valid. Verify that a valid Amazon Resource Name (ARN)
-/// was provided for an Amazon Simple Notification Service topic.</p>
+/// <p>One or more configuration items isn't valid. Verify that a valid Amazon Resource Name (ARN) was provided for an Amazon Simple Notification Service topic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNotificationConfig {
@@ -21114,8 +20414,7 @@ impl InvalidAutomationSignalException {
     }
 }
 
-/// <p>The specified step name and execution ID don't exist. Verify the information and try
-/// again.</p>
+/// <p>The specified step name and execution ID don't exist. Verify the information and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutomationStepNotFoundException {
@@ -21179,8 +20478,7 @@ impl AutomationStepNotFoundException {
     }
 }
 
-/// <p>The resource type isn't valid. For example, if you are attempting to tag an EC2 instance, the
-/// instance must be a registered managed node.</p>
+/// <p>The resource type isn't valid. For example, if you are attempting to tag an EC2 instance, the instance must be a registered managed node.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidResourceType {
@@ -21308,10 +20606,8 @@ impl InvalidResourceId {
     }
 }
 
-/// <p>Error returned when the caller has exceeded the default resource quotas. For example, too
-/// many maintenance windows or patch baselines have been created.</p>
-/// <p>For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-/// <i>Amazon Web Services General Reference</i>.</p>
+/// <p>Error returned when the caller has exceeded the default resource quotas. For example, too many maintenance windows or patch baselines have been created.</p>
+/// <p>For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceLimitExceededException {
@@ -21375,8 +20671,7 @@ impl ResourceLimitExceededException {
     }
 }
 
-/// <p>You attempted to register a <code>LAMBDA</code> or <code>STEP_FUNCTIONS</code> task in a
-/// region where the corresponding service isn't available. </p>
+/// <p>You attempted to register a <code>LAMBDA</code> or <code>STEP_FUNCTIONS</code> task in a region where the corresponding service isn't available. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FeatureNotAvailableException {
@@ -21440,8 +20735,7 @@ impl FeatureNotAvailableException {
     }
 }
 
-/// <p>Error returned if an attempt is made to register a patch group with a patch baseline that is
-/// already registered with a different patch baseline.</p>
+/// <p>Error returned if an attempt is made to register a patch group with a patch baseline that is already registered with a different patch baseline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlreadyExistsException {
@@ -21569,8 +20863,7 @@ impl UnsupportedParameterType {
     }
 }
 
-/// <p>You specified more than the maximum number of allowed policies for the parameter. The
-/// maximum is 10.</p>
+/// <p>You specified more than the maximum number of allowed policies for the parameter. The maximum is 10.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PoliciesLimitExceededException {
@@ -21698,22 +20991,9 @@ impl ParameterPatternMismatchException {
     }
 }
 
-/// <p>Parameter Store retains the 100 most recently created versions of a parameter. After this
-/// number of versions has been created, Parameter Store deletes the oldest version when a new one is
-/// created. However, if the oldest version has a <i>label</i> attached to it,
-/// Parameter Store won't delete the version and instead presents this error message:</p>
-/// <p>
-/// <code>An error occurred (ParameterMaxVersionLimitExceeded) when calling the PutParameter
-/// operation: You attempted to create a new version of <i>parameter-name</i> by
-/// calling the PutParameter API with the overwrite flag. Version
-/// <i>version-number</i>, the oldest version, can't be deleted because it has a
-/// label associated with it. Move the label to another version of the parameter, and try
-/// again.</code>
-/// </p>
-/// <p>This safeguard is to prevent parameter versions with mission critical labels assigned to
-/// them from being deleted. To continue creating new parameters, first move the label from the
-/// oldest version of the parameter to a newer one for use in your operations. For information about
-/// moving parameter labels, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-console-move">Move a parameter label (console)</a> or <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-cli-move">Move a parameter label (CLI)</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+/// <p>Parameter Store retains the 100 most recently created versions of a parameter. After this number of versions has been created, Parameter Store deletes the oldest version when a new one is created. However, if the oldest version has a <i>label</i> attached to it, Parameter Store won't delete the version and instead presents this error message:</p>
+/// <p> <code>An error occurred (ParameterMaxVersionLimitExceeded) when calling the PutParameter operation: You attempted to create a new version of <i>parameter-name</i> by calling the PutParameter API with the overwrite flag. Version <i>version-number</i>, the oldest version, can't be deleted because it has a label associated with it. Move the label to another version of the parameter, and try again.</code> </p>
+/// <p>This safeguard is to prevent parameter versions with mission critical labels assigned to them from being deleted. To continue creating new parameters, first move the label from the oldest version of the parameter to a newer one for use in your operations. For information about moving parameter labels, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-console-move">Move a parameter label (console)</a> or <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-cli-move">Move a parameter label (CLI)</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterMaxVersionLimitExceeded {
@@ -21777,8 +21057,7 @@ impl ParameterMaxVersionLimitExceeded {
     }
 }
 
-/// <p>You have exceeded the number of parameters for this Amazon Web Services account. Delete one or more
-/// parameters and try again.</p>
+/// <p>You have exceeded the number of parameters for this Amazon Web Services account. Delete one or more parameters and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterLimitExceeded {
@@ -21906,8 +21185,7 @@ impl ParameterAlreadyExists {
     }
 }
 
-/// <p>The policy type isn't supported. Parameter Store supports the following policy types:
-/// Expiration, ExpirationNotification, and NoChangeNotification.</p>
+/// <p>The policy type isn't supported. Parameter Store supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPolicyTypeException {
@@ -22163,8 +21441,7 @@ impl InvalidAllowedPatternException {
     }
 }
 
-/// <p>There is a conflict in the policies specified for this parameter. You can't, for example,
-/// specify two Expiration policies for a parameter. Review your policies, and try again.</p>
+/// <p>There is a conflict in the policies specified for this parameter. You can't, for example, specify two Expiration policies for a parameter. Review your policies, and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncompatiblePolicyException {
@@ -22228,15 +21505,11 @@ impl IncompatiblePolicyException {
     }
 }
 
-/// <p>Parameter Store doesn't support changing a parameter type in a hierarchy. For example, you
-/// can't change a parameter from a <code>String</code> type to a <code>SecureString</code> type. You
-/// must create a new, unique parameter.</p>
+/// <p>Parameter Store doesn't support changing a parameter type in a hierarchy. For example, you can't change a parameter from a <code>String</code> type to a <code>SecureString</code> type. You must create a new, unique parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HierarchyTypeMismatchException {
-    /// <p>Parameter Store doesn't support changing a parameter type in a hierarchy. For example, you
-    /// can't change a parameter from a <code>String</code> type to a <code>SecureString</code> type. You
-    /// must create a new, unique parameter.</p>
+    /// <p>Parameter Store doesn't support changing a parameter type in a hierarchy. For example, you can't change a parameter from a <code>String</code> type to a <code>SecureString</code> type. You must create a new, unique parameter.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for HierarchyTypeMismatchException {
@@ -22271,16 +21544,12 @@ pub mod hierarchy_type_mismatch_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Parameter Store doesn't support changing a parameter type in a hierarchy. For example, you
-        /// can't change a parameter from a <code>String</code> type to a <code>SecureString</code> type. You
-        /// must create a new, unique parameter.</p>
+        /// <p>Parameter Store doesn't support changing a parameter type in a hierarchy. For example, you can't change a parameter from a <code>String</code> type to a <code>SecureString</code> type. You must create a new, unique parameter.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>Parameter Store doesn't support changing a parameter type in a hierarchy. For example, you
-        /// can't change a parameter from a <code>String</code> type to a <code>SecureString</code> type. You
-        /// must create a new, unique parameter.</p>
+        /// <p>Parameter Store doesn't support changing a parameter type in a hierarchy. For example, you can't change a parameter from a <code>String</code> type to a <code>SecureString</code> type. You must create a new, unique parameter.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -22300,13 +21569,11 @@ impl HierarchyTypeMismatchException {
     }
 }
 
-/// <p>A hierarchy can have a maximum of 15 levels. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements and
-/// constraints for parameter names</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+/// <p>A hierarchy can have a maximum of 15 levels. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements and constraints for parameter names</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HierarchyLevelLimitExceededException {
-    /// <p>A hierarchy can have a maximum of 15 levels. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements and
-    /// constraints for parameter names</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+    /// <p>A hierarchy can have a maximum of 15 levels. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements and constraints for parameter names</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for HierarchyLevelLimitExceededException {
@@ -22341,14 +21608,12 @@ pub mod hierarchy_level_limit_exceeded_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A hierarchy can have a maximum of 15 levels. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements and
-        /// constraints for parameter names</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+        /// <p>A hierarchy can have a maximum of 15 levels. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements and constraints for parameter names</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>A hierarchy can have a maximum of 15 levels. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements and
-        /// constraints for parameter names</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+        /// <p>A hierarchy can have a maximum of 15 levels. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements and constraints for parameter names</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -22368,8 +21633,7 @@ impl HierarchyLevelLimitExceededException {
     }
 }
 
-/// <p>Inventory item type schema version has to match supported versions in the service. Check
-/// output of GetInventorySchema to see the available schema version for each type.</p>
+/// <p>Inventory item type schema version has to match supported versions in the service. Check output of GetInventorySchema to see the available schema version for each type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedInventorySchemaVersionException {
@@ -22433,9 +21697,7 @@ impl UnsupportedInventorySchemaVersionException {
     }
 }
 
-/// <p>The <code>Context</code> attribute that you specified for the <code>InventoryItem</code>
-/// isn't allowed for this inventory type. You can only use the <code>Context</code> attribute with
-/// inventory types like <code>AWS:ComplianceItem</code>.</p>
+/// <p>The <code>Context</code> attribute that you specified for the <code>InventoryItem</code> isn't allowed for this inventory type. You can only use the <code>Context</code> attribute with inventory types like <code>AWS:ComplianceItem</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedInventoryItemContextException {
@@ -22967,8 +22229,7 @@ impl InvalidItemContentException {
     }
 }
 
-/// <p>You specified invalid keys or values in the <code>Context</code> attribute for
-/// <code>InventoryItem</code>. Verify the keys and values, and try again.</p>
+/// <p>You specified invalid keys or values in the <code>Context</code> attribute for <code>InventoryItem</code>. Verify the keys and values, and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInventoryItemContextException {
@@ -23032,8 +22293,7 @@ impl InvalidInventoryItemContextException {
     }
 }
 
-/// <p>You have exceeded the limit for custom schemas. Delete one or more custom schemas and try
-/// again.</p>
+/// <p>You have exceeded the limit for custom schemas. Delete one or more custom schemas and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomSchemaCountLimitExceededException {
@@ -23097,8 +22357,7 @@ impl CustomSchemaCountLimitExceededException {
     }
 }
 
-/// <p>You specified too many custom compliance types. You can specify a maximum of 10 different
-/// types. </p>
+/// <p>You specified too many custom compliance types. You can specify a maximum of 10 different types. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComplianceTypeCountLimitExceededException {
@@ -23162,8 +22421,7 @@ impl ComplianceTypeCountLimitExceededException {
     }
 }
 
-/// <p>The permission type isn't supported. <i>Share</i> is the only supported
-/// permission type.</p>
+/// <p>The permission type isn't supported. <i>Share</i> is the only supported permission type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPermissionType {
@@ -23227,9 +22485,7 @@ impl InvalidPermissionType {
     }
 }
 
-/// <p>The document can't be shared with more Amazon Web Services user accounts. You can share a document
-/// with a maximum of 20 accounts. You can publicly share up to five documents. If you need to
-/// increase this limit, contact Amazon Web Services Support.</p>
+/// <p>The document can't be shared with more Amazon Web Services user accounts. You can share a document with a maximum of 20 accounts. You can publicly share up to five documents. If you need to increase this limit, contact Amazon Web Services Support.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentPermissionLimit {
@@ -23741,13 +22997,11 @@ impl InvalidFilterValue {
     }
 }
 
-/// <p>The specified filter option isn't valid. Valid options are Equals and BeginsWith. For Path
-/// filter, valid options are Recursive and OneLevel.</p>
+/// <p>The specified filter option isn't valid. Valid options are Equals and BeginsWith. For Path filter, valid options are Recursive and OneLevel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidFilterOption {
-    /// <p>The specified filter option isn't valid. Valid options are Equals and BeginsWith. For Path
-    /// filter, valid options are Recursive and OneLevel.</p>
+    /// <p>The specified filter option isn't valid. Valid options are Equals and BeginsWith. For Path filter, valid options are Recursive and OneLevel.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidFilterOption {
@@ -23782,14 +23036,12 @@ pub mod invalid_filter_option {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The specified filter option isn't valid. Valid options are Equals and BeginsWith. For Path
-        /// filter, valid options are Recursive and OneLevel.</p>
+        /// <p>The specified filter option isn't valid. Valid options are Equals and BeginsWith. For Path filter, valid options are Recursive and OneLevel.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The specified filter option isn't valid. Valid options are Equals and BeginsWith. For Path
-        /// filter, valid options are Recursive and OneLevel.</p>
+        /// <p>The specified filter option isn't valid. Valid options are Equals and BeginsWith. For Path filter, valid options are Recursive and OneLevel.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -23809,9 +23061,7 @@ impl InvalidFilterOption {
     }
 }
 
-/// <p>The specified aggregator isn't valid for inventory groups. Verify that the aggregator uses a
-/// valid inventory type such as <code>AWS:Application</code> or
-/// <code>AWS:InstanceInformation</code>.</p>
+/// <p>The specified aggregator isn't valid for inventory groups. Verify that the aggregator uses a valid inventory type such as <code>AWS:Application</code> or <code>AWS:InstanceInformation</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAggregatorException {
@@ -24003,8 +23253,7 @@ impl InvalidInventoryGroupException {
     }
 }
 
-/// <p>The operating systems you specified isn't supported, or the operation isn't supported for
-/// the operating system.</p>
+/// <p>The operating systems you specified isn't supported, or the operation isn't supported for the operating system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedOperatingSystem {
@@ -24068,10 +23317,7 @@ impl UnsupportedOperatingSystem {
     }
 }
 
-/// <p>Patching for applications released by Microsoft is only available on EC2 instances and
-/// advanced instances. To patch applications released by Microsoft on on-premises servers and VMs,
-/// you must enable advanced instances. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances-advanced.html">Enabling
-/// the advanced-instances tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+/// <p>Patching for applications released by Microsoft is only available on EC2 instances and advanced instances. To patch applications released by Microsoft on on-premises servers and VMs, you must enable advanced instances. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances-advanced.html">Enabling the advanced-instances tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedFeatureRequiredException {
@@ -24135,8 +23381,7 @@ impl UnsupportedFeatureRequiredException {
     }
 }
 
-/// <p>The command ID and managed node ID you specified didn't match any invocations. Verify the
-/// command ID and the managed node ID and try again. </p>
+/// <p>The command ID and managed node ID you specified didn't match any invocations. Verify the command ID and the managed node ID and try again. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvocationDoesNotExist {
@@ -24328,8 +23573,7 @@ impl UnsupportedCalendarException {
     }
 }
 
-/// <p>The SSM document type isn't valid. Valid document types are described in the
-/// <code>DocumentType</code> property.</p>
+/// <p>The SSM document type isn't valid. Valid document types are described in the <code>DocumentType</code> property.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDocumentType {
@@ -24393,8 +23637,7 @@ impl InvalidDocumentType {
     }
 }
 
-/// <p>The association wasn't found using the parameters you specified in the call. Verify the
-/// information and try again.</p>
+/// <p>The association wasn't found using the parameters you specified in the call. Verify the information and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsItemRelatedItemAssociationNotFoundException {
@@ -24459,8 +23702,7 @@ impl OpsItemRelatedItemAssociationNotFoundException {
     }
 }
 
-/// <p>The ID specified for the delete operation doesn't exist or isn't valid. Verify the ID and
-/// try again.</p>
+/// <p>The ID specified for the delete operation doesn't exist or isn't valid. Verify the ID and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDeletionIdException {
@@ -24652,8 +23894,7 @@ impl AssociationExecutionDoesNotExist {
     }
 }
 
-/// <p>You specified the <code>Safe</code> option for the DeregisterTargetFromMaintenanceWindow
-/// operation, but the target is still referenced in a task.</p>
+/// <p>You specified the <code>Safe</code> option for the DeregisterTargetFromMaintenanceWindow operation, but the target is still referenced in a task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetInUseException {
@@ -24717,8 +23958,7 @@ impl TargetInUseException {
     }
 }
 
-/// <p>Error returned if an attempt is made to delete a patch baseline that is registered for a
-/// patch group.</p>
+/// <p>Error returned if an attempt is made to delete a patch baseline that is registered for a patch group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseException {
@@ -24910,8 +24150,7 @@ impl InvalidInventoryRequestException {
     }
 }
 
-/// <p>One or more of the parameters specified for the delete operation isn't valid. Verify all
-/// parameters and try again.</p>
+/// <p>One or more of the parameters specified for the delete operation isn't valid. Verify all parameters and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDeleteInventoryParametersException {
@@ -25039,8 +24278,7 @@ impl AssociatedInstances {
     }
 }
 
-/// <p>The activation ID isn't valid. Verify the you entered the correct ActivationId or
-/// ActivationCode and try again.</p>
+/// <p>The activation ID isn't valid. Verify the you entered the correct ActivationId or ActivationCode and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidActivationId {
@@ -25104,8 +24342,7 @@ impl InvalidActivationId {
     }
 }
 
-/// <p>The activation isn't valid. The activation might have been deleted, or the ActivationId and
-/// the ActivationCode don't match.</p>
+/// <p>The activation isn't valid. The activation might have been deleted, or the ActivationId and the ActivationCode don't match.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidActivation {
@@ -25318,8 +24555,7 @@ impl ResourceDataSyncAlreadyExistsException {
     }
 }
 
-/// <p>Your account reached the maximum number of OpsMetadata objects allowed by Application Manager. The
-/// maximum is 200 OpsMetadata objects. Delete one or more OpsMetadata object and try again.</p>
+/// <p>Your account reached the maximum number of OpsMetadata objects allowed by Application Manager. The maximum is 200 OpsMetadata objects. Delete one or more OpsMetadata object and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsMetadataLimitExceededException {
@@ -25743,8 +24979,7 @@ impl OpsItemRelatedItemAlreadyExistsException {
     }
 }
 
-/// <p>The <code>Targets</code> parameter includes too many tags. Remove one or more tags and try
-/// the command again.</p>
+/// <p>The <code>Targets</code> parameter includes too many tags. Remove one or more tags and try the command again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsError {

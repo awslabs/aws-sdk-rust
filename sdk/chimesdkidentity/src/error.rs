@@ -14,8 +14,7 @@ pub struct CreateAppInstanceError {
 pub enum CreateAppInstanceErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -77,8 +76,6 @@ impl CreateAppInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -184,8 +181,7 @@ pub struct CreateAppInstanceAdminError {
 pub enum CreateAppInstanceAdminErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -249,8 +245,6 @@ impl CreateAppInstanceAdminError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -359,8 +353,7 @@ pub struct CreateAppInstanceUserError {
 pub enum CreateAppInstanceUserErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -422,8 +415,6 @@ impl CreateAppInstanceUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -591,8 +582,6 @@ impl DeleteAppInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -693,8 +682,7 @@ pub struct DeleteAppInstanceAdminError {
 pub enum DeleteAppInstanceAdminErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -758,8 +746,6 @@ impl DeleteAppInstanceAdminError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -868,8 +854,7 @@ pub struct DeleteAppInstanceUserError {
 pub enum DeleteAppInstanceUserErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -931,8 +916,6 @@ impl DeleteAppInstanceUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1110,8 +1093,6 @@ impl DeregisterAppInstanceUserEndpointError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1268,8 +1249,6 @@ impl DescribeAppInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1418,8 +1397,6 @@ impl DescribeAppInstanceAdminError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1568,8 +1545,6 @@ impl DescribeAppInstanceUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1729,8 +1704,6 @@ impl DescribeAppInstanceUserEndpointError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1898,8 +1871,6 @@ impl GetAppInstanceRetentionSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2059,8 +2030,6 @@ impl ListAppInstanceAdminsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2217,8 +2186,6 @@ impl ListAppInstancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2370,8 +2337,6 @@ impl ListAppInstanceUserEndpointsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2524,8 +2489,6 @@ impl ListAppInstanceUsersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2674,8 +2637,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2835,8 +2796,6 @@ impl PutAppInstanceRetentionSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2937,8 +2896,7 @@ pub struct RegisterAppInstanceUserEndpointError {
 pub enum RegisterAppInstanceUserEndpointErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -3013,8 +2971,6 @@ impl RegisterAppInstanceUserEndpointError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3192,8 +3148,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3341,8 +3295,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3429,8 +3381,7 @@ pub struct UpdateAppInstanceError {
 pub enum UpdateAppInstanceErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -3489,8 +3440,6 @@ impl UpdateAppInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3588,8 +3537,7 @@ pub struct UpdateAppInstanceUserError {
 pub enum UpdateAppInstanceUserErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -3651,8 +3599,6 @@ impl UpdateAppInstanceUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3761,8 +3707,7 @@ pub struct UpdateAppInstanceUserEndpointError {
 pub enum UpdateAppInstanceUserEndpointErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -3832,8 +3777,6 @@ impl UpdateAppInstanceUserEndpointError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4350,8 +4293,7 @@ impl ForbiddenException {
     }
 }
 
-/// <p>The request could not be processed because of conflict in the current state of the
-/// resource.</p>
+/// <p>The request could not be processed because of conflict in the current state of the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {

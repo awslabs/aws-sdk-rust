@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon EMR
@@ -257,6 +257,7 @@ where
     ///
     /// See [`ListBootstrapActions`](crate::client::fluent_builders::ListBootstrapActions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBootstrapActions::into_paginator).
     pub fn list_bootstrap_actions(&self) -> fluent_builders::ListBootstrapActions<C, M, R> {
         fluent_builders::ListBootstrapActions::new(self.handle.clone())
     }
@@ -264,6 +265,7 @@ where
     ///
     /// See [`ListClusters`](crate::client::fluent_builders::ListClusters) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListClusters::into_paginator).
     pub fn list_clusters(&self) -> fluent_builders::ListClusters<C, M, R> {
         fluent_builders::ListClusters::new(self.handle.clone())
     }
@@ -271,6 +273,7 @@ where
     ///
     /// See [`ListInstanceFleets`](crate::client::fluent_builders::ListInstanceFleets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInstanceFleets::into_paginator).
     pub fn list_instance_fleets(&self) -> fluent_builders::ListInstanceFleets<C, M, R> {
         fluent_builders::ListInstanceFleets::new(self.handle.clone())
     }
@@ -278,6 +281,7 @@ where
     ///
     /// See [`ListInstanceGroups`](crate::client::fluent_builders::ListInstanceGroups) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInstanceGroups::into_paginator).
     pub fn list_instance_groups(&self) -> fluent_builders::ListInstanceGroups<C, M, R> {
         fluent_builders::ListInstanceGroups::new(self.handle.clone())
     }
@@ -285,6 +289,7 @@ where
     ///
     /// See [`ListInstances`](crate::client::fluent_builders::ListInstances) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInstances::into_paginator).
     pub fn list_instances(&self) -> fluent_builders::ListInstances<C, M, R> {
         fluent_builders::ListInstances::new(self.handle.clone())
     }
@@ -292,6 +297,7 @@ where
     ///
     /// See [`ListNotebookExecutions`](crate::client::fluent_builders::ListNotebookExecutions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListNotebookExecutions::into_paginator).
     pub fn list_notebook_executions(&self) -> fluent_builders::ListNotebookExecutions<C, M, R> {
         fluent_builders::ListNotebookExecutions::new(self.handle.clone())
     }
@@ -299,6 +305,7 @@ where
     ///
     /// See [`ListReleaseLabels`](crate::client::fluent_builders::ListReleaseLabels) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListReleaseLabels::into_paginator).
     pub fn list_release_labels(&self) -> fluent_builders::ListReleaseLabels<C, M, R> {
         fluent_builders::ListReleaseLabels::new(self.handle.clone())
     }
@@ -306,6 +313,7 @@ where
     ///
     /// See [`ListSecurityConfigurations`](crate::client::fluent_builders::ListSecurityConfigurations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSecurityConfigurations::into_paginator).
     pub fn list_security_configurations(
         &self,
     ) -> fluent_builders::ListSecurityConfigurations<C, M, R> {
@@ -315,6 +323,7 @@ where
     ///
     /// See [`ListSteps`](crate::client::fluent_builders::ListSteps) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSteps::into_paginator).
     pub fn list_steps(&self) -> fluent_builders::ListSteps<C, M, R> {
         fluent_builders::ListSteps::new(self.handle.clone())
     }
@@ -322,6 +331,7 @@ where
     ///
     /// See [`ListStudios`](crate::client::fluent_builders::ListStudios) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListStudios::into_paginator).
     pub fn list_studios(&self) -> fluent_builders::ListStudios<C, M, R> {
         fluent_builders::ListStudios::new(self.handle.clone())
     }
@@ -329,6 +339,7 @@ where
     ///
     /// See [`ListStudioSessionMappings`](crate::client::fluent_builders::ListStudioSessionMappings) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListStudioSessionMappings::into_paginator).
     pub fn list_studio_session_mappings(
         &self,
     ) -> fluent_builders::ListStudioSessionMappings<C, M, R> {
@@ -488,12 +499,10 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AddInstanceFleet`.
     ///
-    /// <p>Adds an instance fleet to a running cluster.</p>
-    /// <note>
-    /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
-    /// later, excluding 5.0.x.</p>
+    /// <p>Adds an instance fleet to a running cluster.</p> <note>
+    /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddInstanceFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -538,10 +547,10 @@ pub mod fluent_builders {
                 crate::input::AddInstanceFleetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -550,8 +559,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the cluster.</p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>The unique identifier of the cluster.</p>
@@ -560,8 +569,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the configuration of the instance fleet.</p>
-        pub fn instance_fleet(mut self, inp: crate::model::InstanceFleetConfig) -> Self {
-            self.inner = self.inner.instance_fleet(inp);
+        pub fn instance_fleet(mut self, input: crate::model::InstanceFleetConfig) -> Self {
+            self.inner = self.inner.instance_fleet(input);
             self
         }
         /// <p>Specifies the configuration of the instance fleet.</p>
@@ -576,7 +585,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddInstanceGroups`.
     ///
     /// <p>Adds one or more instance groups to a running cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddInstanceGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -621,10 +630,10 @@ pub mod fluent_builders {
                 crate::input::AddInstanceGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -637,11 +646,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_instance_groups`](Self::set_instance_groups).
         ///
         /// <p>Instance groups to add.</p>
-        pub fn instance_groups(
-            mut self,
-            inp: impl Into<crate::model::InstanceGroupConfig>,
-        ) -> Self {
-            self.inner = self.inner.instance_groups(inp);
+        pub fn instance_groups(mut self, input: crate::model::InstanceGroupConfig) -> Self {
+            self.inner = self.inner.instance_groups(input);
             self
         }
         /// <p>Instance groups to add.</p>
@@ -653,8 +659,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Job flow in which to add the instance groups.</p>
-        pub fn job_flow_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_flow_id(inp);
+        pub fn job_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_flow_id(input.into());
             self
         }
         /// <p>Job flow in which to add the instance groups.</p>
@@ -665,24 +671,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AddJobFlowSteps`.
     ///
-    /// <p>AddJobFlowSteps adds new steps to a running cluster. A maximum of 256 steps are allowed
-    /// in each job flow.</p>
-    /// <p>If your cluster is long-running (such as a Hive data warehouse) or complex, you may
-    /// require more than 256 steps to process your data. You can bypass the 256-step limitation in
-    /// various ways, including using SSH to connect to the master node and submitting queries
-    /// directly to the software running on the master node, such as Hive and Hadoop. For more
-    /// information on how to do this, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html">Add More than 256 Steps to a
-    /// Cluster</a> in the <i>Amazon EMR Management Guide</i>.</p>
-    /// <p>A step specifies the location of a JAR file stored either on the master node of the
-    /// cluster or in Amazon S3. Each step is performed by the main function of the main class of
-    /// the JAR file. The main class can be specified either in the manifest of the JAR or by using
-    /// the MainFunction parameter of the step.</p>
-    /// <p>Amazon EMR executes each step in the order listed. For a step to be considered complete,
-    /// the main function must exit with a zero exit code and all Hadoop jobs started while the
-    /// step was running must have completed and run successfully.</p>
-    /// <p>You can only add steps to a cluster that is in one of the following states: STARTING,
-    /// BOOTSTRAPPING, RUNNING, or WAITING.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>AddJobFlowSteps adds new steps to a running cluster. A maximum of 256 steps are allowed in each job flow.</p>
+    /// <p>If your cluster is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps to process your data. You can bypass the 256-step limitation in various ways, including using SSH to connect to the master node and submitting queries directly to the software running on the master node, such as Hive and Hadoop. For more information on how to do this, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html">Add More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management Guide</i>.</p>
+    /// <p>A step specifies the location of a JAR file stored either on the master node of the cluster or in Amazon S3. Each step is performed by the main function of the main class of the JAR file. The main class can be specified either in the manifest of the JAR or by using the MainFunction parameter of the step.</p>
+    /// <p>Amazon EMR executes each step in the order listed. For a step to be considered complete, the main function must exit with a zero exit code and all Hadoop jobs started while the step was running must have completed and run successfully.</p>
+    /// <p>You can only add steps to a cluster that is in one of the following states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddJobFlowSteps<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -727,10 +721,10 @@ pub mod fluent_builders {
                 crate::input::AddJobFlowStepsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -738,14 +732,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A string that uniquely identifies the job flow. This identifier is returned by <a>RunJobFlow</a> and can also be obtained from <a>ListClusters</a>.
-        /// </p>
-        pub fn job_flow_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_flow_id(inp);
+        /// <p>A string that uniquely identifies the job flow. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>ListClusters</code>. </p>
+        pub fn job_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_flow_id(input.into());
             self
         }
-        /// <p>A string that uniquely identifies the job flow. This identifier is returned by <a>RunJobFlow</a> and can also be obtained from <a>ListClusters</a>.
-        /// </p>
+        /// <p>A string that uniquely identifies the job flow. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>ListClusters</code>. </p>
         pub fn set_job_flow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_flow_id(input);
             self
@@ -754,12 +746,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_steps`](Self::set_steps).
         ///
-        /// <p> A list of <a>StepConfig</a> to be executed by the job flow. </p>
-        pub fn steps(mut self, inp: impl Into<crate::model::StepConfig>) -> Self {
-            self.inner = self.inner.steps(inp);
+        /// <p> A list of <code>StepConfig</code> to be executed by the job flow. </p>
+        pub fn steps(mut self, input: crate::model::StepConfig) -> Self {
+            self.inner = self.inner.steps(input);
             self
         }
-        /// <p> A list of <a>StepConfig</a> to be executed by the job flow. </p>
+        /// <p> A list of <code>StepConfig</code> to be executed by the job flow. </p>
         pub fn set_steps(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StepConfig>>,
@@ -770,10 +762,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AddTags`.
     ///
-    /// <p>Adds tags to an Amazon EMR resource, such as a cluster or an Amazon EMR Studio. Tags make it easier to associate resources in
-    /// various ways, such as grouping clusters to track your Amazon EMR resource allocation costs.
-    /// For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag Clusters</a>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds tags to an Amazon EMR resource, such as a cluster or an Amazon EMR Studio. Tags make it easier to associate resources in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag Clusters</a>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -818,10 +808,10 @@ pub mod fluent_builders {
                 crate::input::AddTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -829,14 +819,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon EMR resource identifier to which tags will be added. For example, a
-        /// cluster identifier or an Amazon EMR Studio ID.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        /// <p>The Amazon EMR resource identifier to which tags will be added. For example, a cluster identifier or an Amazon EMR Studio ID.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
-        /// <p>The Amazon EMR resource identifier to which tags will be added. For example, a
-        /// cluster identifier or an Amazon EMR Studio ID.</p>
+        /// <p>The Amazon EMR resource identifier to which tags will be added. For example, a cluster identifier or an Amazon EMR Studio ID.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_id(input);
             self
@@ -845,16 +833,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags to associate with a resource. Tags are
-        /// user-defined key-value pairs that consist of a required key string with a maximum of 128
-        /// characters, and an optional value string with a maximum of 256 characters.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>A list of tags to associate with a resource. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of tags to associate with a resource. Tags are
-        /// user-defined key-value pairs that consist of a required key string with a maximum of 128
-        /// characters, and an optional value string with a maximum of 256 characters.</p>
+        /// <p>A list of tags to associate with a resource. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -865,11 +849,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CancelSteps`.
     ///
-    /// <p>Cancels a pending step or steps in a running cluster. Available only in Amazon EMR
-    /// versions 4.8.0 and later, excluding version 5.0.0. A maximum of 256 steps are allowed in
-    /// each CancelSteps request. CancelSteps is idempotent but asynchronous; it does not guarantee
-    /// that a step will be canceled, even if the request is successfully submitted. When you use Amazon EMR versions 5.28.0 and later, you can cancel steps that are in a <code>PENDING</code> or <code>RUNNING</code> state. In earlier versions of Amazon EMR, you can only cancel steps that are in a <code>PENDING</code> state. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Cancels a pending step or steps in a running cluster. Available only in Amazon EMR versions 4.8.0 and later, excluding version 5.0.0. A maximum of 256 steps are allowed in each CancelSteps request. CancelSteps is idempotent but asynchronous; it does not guarantee that a step will be canceled, even if the request is successfully submitted. When you use Amazon EMR versions 5.28.0 and later, you can cancel steps that are in a <code>PENDING</code> or <code>RUNNING</code> state. In earlier versions of Amazon EMR, you can only cancel steps that are in a <code>PENDING</code> state. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelSteps<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -914,10 +895,10 @@ pub mod fluent_builders {
                 crate::input::CancelStepsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -925,12 +906,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <code>ClusterID</code> for the specified steps that will be canceled. Use <a>RunJobFlow</a> and <a>ListClusters</a> to get ClusterIDs. </p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        /// <p>The <code>ClusterID</code> for the specified steps that will be canceled. Use <code>RunJobFlow</code> and <code>ListClusters</code> to get ClusterIDs. </p>
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
-        /// <p>The <code>ClusterID</code> for the specified steps that will be canceled. Use <a>RunJobFlow</a> and <a>ListClusters</a> to get ClusterIDs. </p>
+        /// <p>The <code>ClusterID</code> for the specified steps that will be canceled. Use <code>RunJobFlow</code> and <code>ListClusters</code> to get ClusterIDs. </p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster_id(input);
             self
@@ -939,14 +920,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_step_ids`](Self::set_step_ids).
         ///
-        /// <p>The list of <code>StepIDs</code> to cancel. Use <a>ListSteps</a> to get steps
-        /// and their states for the specified cluster.</p>
-        pub fn step_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.step_ids(inp);
+        /// <p>The list of <code>StepIDs</code> to cancel. Use <code>ListSteps</code> to get steps and their states for the specified cluster.</p>
+        pub fn step_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.step_ids(input.into());
             self
         }
-        /// <p>The list of <code>StepIDs</code> to cancel. Use <a>ListSteps</a> to get steps
-        /// and their states for the specified cluster.</p>
+        /// <p>The list of <code>StepIDs</code> to cancel. Use <code>ListSteps</code> to get steps and their states for the specified cluster.</p>
         pub fn set_step_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -954,17 +933,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_step_ids(input);
             self
         }
-        /// <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is
-        /// <code>SEND_INTERRUPT</code>.</p>
+        /// <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is <code>SEND_INTERRUPT</code>.</p>
         pub fn step_cancellation_option(
             mut self,
-            inp: crate::model::StepCancellationOption,
+            input: crate::model::StepCancellationOption,
         ) -> Self {
-            self.inner = self.inner.step_cancellation_option(inp);
+            self.inner = self.inner.step_cancellation_option(input);
             self
         }
-        /// <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is
-        /// <code>SEND_INTERRUPT</code>.</p>
+        /// <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is <code>SEND_INTERRUPT</code>.</p>
         pub fn set_step_cancellation_option(
             mut self,
             input: std::option::Option<crate::model::StepCancellationOption>,
@@ -975,9 +952,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSecurityConfiguration`.
     ///
-    /// <p>Creates a security configuration, which is stored in the service and can be specified
-    /// when a cluster is created.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a security configuration, which is stored in the service and can be specified when a cluster is created.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSecurityConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1022,10 +998,10 @@ pub mod fluent_builders {
                 crate::input::CreateSecurityConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1034,8 +1010,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the security configuration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the security configuration.</p>
@@ -1043,18 +1019,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The security configuration details in JSON format. For JSON parameters and examples, see
-        /// <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security
-        /// Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management
-        /// Guide</i>.</p>
-        pub fn security_configuration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_configuration(inp);
+        /// <p>The security configuration details in JSON format. For JSON parameters and examples, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.</p>
+        pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_configuration(input.into());
             self
         }
-        /// <p>The security configuration details in JSON format. For JSON parameters and examples, see
-        /// <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security
-        /// Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management
-        /// Guide</i>.</p>
+        /// <p>The security configuration details in JSON format. For JSON parameters and examples, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.</p>
         pub fn set_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1066,7 +1036,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateStudio`.
     ///
     /// <p>Creates a new Amazon EMR Studio.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStudio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1111,10 +1081,10 @@ pub mod fluent_builders {
                 crate::input::CreateStudioInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1123,8 +1093,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A descriptive name for the Amazon EMR Studio.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A descriptive name for the Amazon EMR Studio.</p>
@@ -1133,8 +1103,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A detailed description of the Amazon EMR Studio.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A detailed description of the Amazon EMR Studio.</p>
@@ -1143,8 +1113,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.</p>
-        pub fn auth_mode(mut self, inp: crate::model::AuthMode) -> Self {
-            self.inner = self.inner.auth_mode(inp);
+        pub fn auth_mode(mut self, input: crate::model::AuthMode) -> Self {
+            self.inner = self.inner.auth_mode(input);
             self
         }
         /// <p>Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.</p>
@@ -1152,14 +1122,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auth_mode(input);
             self
         }
-        /// <p>The ID of the Amazon Virtual Private Cloud (Amazon VPC) to associate with the
-        /// Studio.</p>
-        pub fn vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_id(inp);
+        /// <p>The ID of the Amazon Virtual Private Cloud (Amazon VPC) to associate with the Studio.</p>
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_id(input.into());
             self
         }
-        /// <p>The ID of the Amazon Virtual Private Cloud (Amazon VPC) to associate with the
-        /// Studio.</p>
+        /// <p>The ID of the Amazon Virtual Private Cloud (Amazon VPC) to associate with the Studio.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_vpc_id(input);
             self
@@ -1168,16 +1136,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
-        /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The subnets must belong to the VPC
-        /// specified by <code>VpcId</code>. Studio users can create a Workspace in any of the
-        /// specified subnets.</p>
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_ids(inp);
+        /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The subnets must belong to the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in any of the specified subnets.</p>
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_ids(input.into());
             self
         }
-        /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The subnets must belong to the VPC
-        /// specified by <code>VpcId</code>. Studio users can create a Workspace in any of the
-        /// specified subnets.</p>
+        /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The subnets must belong to the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in any of the specified subnets.</p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1185,42 +1149,35 @@ pub mod fluent_builders {
             self.inner = self.inner.set_subnet_ids(input);
             self
         }
-        /// <p>The IAM role that the Amazon EMR Studio assumes. The service role provides a
-        /// way for Amazon EMR Studio to interoperate with other Amazon Web Services services.</p>
-        pub fn service_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role(inp);
+        /// <p>The IAM role that the Amazon EMR Studio assumes. The service role provides a way for Amazon EMR Studio to interoperate with other Amazon Web Services services.</p>
+        pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role(input.into());
             self
         }
-        /// <p>The IAM role that the Amazon EMR Studio assumes. The service role provides a
-        /// way for Amazon EMR Studio to interoperate with other Amazon Web Services services.</p>
+        /// <p>The IAM role that the Amazon EMR Studio assumes. The service role provides a way for Amazon EMR Studio to interoperate with other Amazon Web Services services.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_service_role(input);
             self
         }
-        /// <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web Services SSO authentication. The
-        /// permissions attached to the <code>UserRole</code> can be scoped down for each user or group using
-        /// session policies.</p>
-        pub fn user_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_role(inp);
+        /// <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web Services SSO authentication. The permissions attached to the <code>UserRole</code> can be scoped down for each user or group using session policies.</p>
+        pub fn user_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_role(input.into());
             self
         }
-        /// <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web Services SSO authentication. The
-        /// permissions attached to the <code>UserRole</code> can be scoped down for each user or group using
-        /// session policies.</p>
+        /// <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web Services SSO authentication. The permissions attached to the <code>UserRole</code> can be scoped down for each user or group using session policies.</p>
         pub fn set_user_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_role(input);
             self
         }
-        /// <p>The ID of the Amazon EMR Studio Workspace security group. The Workspace security group
-        /// allows outbound network traffic to resources in the Engine security group, and it must be
-        /// in the same VPC specified by <code>VpcId</code>.</p>
-        pub fn workspace_security_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_security_group_id(inp);
+        /// <p>The ID of the Amazon EMR Studio Workspace security group. The Workspace security group allows outbound network traffic to resources in the Engine security group, and it must be in the same VPC specified by <code>VpcId</code>.</p>
+        pub fn workspace_security_group_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.workspace_security_group_id(input.into());
             self
         }
-        /// <p>The ID of the Amazon EMR Studio Workspace security group. The Workspace security group
-        /// allows outbound network traffic to resources in the Engine security group, and it must be
-        /// in the same VPC specified by <code>VpcId</code>.</p>
+        /// <p>The ID of the Amazon EMR Studio Workspace security group. The Workspace security group allows outbound network traffic to resources in the Engine security group, and it must be in the same VPC specified by <code>VpcId</code>.</p>
         pub fn set_workspace_security_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1228,16 +1185,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_workspace_security_group_id(input);
             self
         }
-        /// <p>The ID of the Amazon EMR Studio Engine security group. The Engine security group allows
-        /// inbound network traffic from the Workspace security group, and it must be in the same VPC
-        /// specified by <code>VpcId</code>.</p>
-        pub fn engine_security_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_security_group_id(inp);
+        /// <p>The ID of the Amazon EMR Studio Engine security group. The Engine security group allows inbound network traffic from the Workspace security group, and it must be in the same VPC specified by <code>VpcId</code>.</p>
+        pub fn engine_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_security_group_id(input.into());
             self
         }
-        /// <p>The ID of the Amazon EMR Studio Engine security group. The Engine security group allows
-        /// inbound network traffic from the Workspace security group, and it must be in the same VPC
-        /// specified by <code>VpcId</code>.</p>
+        /// <p>The ID of the Amazon EMR Studio Engine security group. The Engine security group allows inbound network traffic from the Workspace security group, and it must be in the same VPC specified by <code>VpcId</code>.</p>
         pub fn set_engine_security_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1246,8 +1199,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.</p>
-        pub fn default_s3_location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_s3_location(inp);
+        pub fn default_s3_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_s3_location(input.into());
             self
         }
         /// <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.</p>
@@ -1259,8 +1212,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authentication endpoint of your identity provider (IdP). Specify this value when you use IAM authentication and want to let federated users log in to a Studio with the Studio URL and credentials from your IdP. Amazon EMR Studio redirects users to this endpoint to enter credentials.</p>
-        pub fn idp_auth_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idp_auth_url(inp);
+        pub fn idp_auth_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idp_auth_url(input.into());
             self
         }
         /// <p>The authentication endpoint of your identity provider (IdP). Specify this value when you use IAM authentication and want to let federated users log in to a Studio with the Studio URL and credentials from your IdP. Amazon EMR Studio redirects users to this endpoint to enter credentials.</p>
@@ -1271,9 +1224,9 @@ pub mod fluent_builders {
         /// <p>The name that your identity provider (IdP) uses for its <code>RelayState</code> parameter. For example, <code>RelayState</code> or <code>TargetSource</code>. Specify this value when you use IAM authentication and want to let federated users log in to a Studio using the Studio URL. The <code>RelayState</code> parameter differs by IdP.</p>
         pub fn idp_relay_state_parameter_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.idp_relay_state_parameter_name(inp);
+            self.inner = self.inner.idp_relay_state_parameter_name(input.into());
             self
         }
         /// <p>The name that your identity provider (IdP) uses for its <code>RelayState</code> parameter. For example, <code>RelayState</code> or <code>TargetSource</code>. Specify this value when you use IAM authentication and want to let federated users log in to a Studio using the Studio URL. The <code>RelayState</code> parameter differs by IdP.</p>
@@ -1288,16 +1241,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that
-        /// consist of a required key string with a maximum of 128 characters, and an optional value
-        /// string with a maximum of 256 characters.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that
-        /// consist of a required key string with a maximum of 128 characters, and an optional value
-        /// string with a maximum of 256 characters.</p>
+        /// <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1308,9 +1257,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateStudioSessionMapping`.
     ///
-    /// <p>Maps a user or group to the Amazon EMR Studio specified by <code>StudioId</code>, and
-    /// applies a session policy to refine Studio permissions for that user or group. Use <code>CreateStudioSessionMapping</code> to assign users to a Studio when you use Amazon Web Services SSO authentication. For instructions on how to assign users to a Studio when you use IAM authentication, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-manage-users.html#emr-studio-assign-users-groups">Assign a user or group to your EMR Studio</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Maps a user or group to the Amazon EMR Studio specified by <code>StudioId</code>, and applies a session policy to refine Studio permissions for that user or group. Use <code>CreateStudioSessionMapping</code> to assign users to a Studio when you use Amazon Web Services SSO authentication. For instructions on how to assign users to a Studio when you use IAM authentication, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-manage-users.html#emr-studio-assign-users-groups">Assign a user or group to your EMR Studio</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStudioSessionMapping<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1355,10 +1303,10 @@ pub mod fluent_builders {
                 crate::input::CreateStudioSessionMappingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1367,8 +1315,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon EMR Studio to which the user or group will be mapped.</p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(input.into());
             self
         }
         /// <p>The ID of the Amazon EMR Studio to which the user or group will be mapped.</p>
@@ -1376,28 +1324,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_studio_id(input);
             self
         }
-        /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity
-        /// Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
-        pub fn identity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(inp);
+        /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
+        pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(input.into());
             self
         }
-        /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity
-        /// Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
+        /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_identity_id(input);
             self
         }
-        /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
-        pub fn identity_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_name(inp);
+        /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
+        pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_name(input.into());
             self
         }
-        /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
+        /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
         pub fn set_identity_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1406,8 +1348,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the identity to map to the Amazon EMR Studio is a user or a group.</p>
-        pub fn identity_type(mut self, inp: crate::model::IdentityType) -> Self {
-            self.inner = self.inner.identity_type(inp);
+        pub fn identity_type(mut self, input: crate::model::IdentityType) -> Self {
+            self.inner = self.inner.identity_type(input);
             self
         }
         /// <p>Specifies whether the identity to map to the Amazon EMR Studio is a user or a group.</p>
@@ -1418,14 +1360,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_identity_type(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user
-        /// or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR Studio User Role with Session Policies</a>.</p>
-        pub fn session_policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_policy_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR Studio User Role with Session Policies</a>.</p>
+        pub fn session_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_policy_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user
-        /// or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR Studio User Role with Session Policies</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR Studio User Role with Session Policies</a>.</p>
         pub fn set_session_policy_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1437,7 +1377,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSecurityConfiguration`.
     ///
     /// <p>Deletes a security configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSecurityConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1482,10 +1422,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSecurityConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1494,8 +1434,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the security configuration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the security configuration.</p>
@@ -1507,7 +1447,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteStudio`.
     ///
     /// <p>Removes an Amazon EMR Studio from the Studio metadata store.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStudio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1552,10 +1492,10 @@ pub mod fluent_builders {
                 crate::input::DeleteStudioInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1564,8 +1504,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon EMR Studio.</p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(input.into());
             self
         }
         /// <p>The ID of the Amazon EMR Studio.</p>
@@ -1577,7 +1517,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteStudioSessionMapping`.
     ///
     /// <p>Removes a user or group from an Amazon EMR Studio.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStudioSessionMapping<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1622,10 +1562,10 @@ pub mod fluent_builders {
                 crate::input::DeleteStudioSessionMappingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1634,8 +1574,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon EMR Studio.</p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(input.into());
             self
         }
         /// <p>The ID of the Amazon EMR Studio.</p>
@@ -1643,30 +1583,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_studio_id(input);
             self
         }
-        /// <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR
-        /// Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-        pub fn identity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(inp);
+        /// <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(input.into());
             self
         }
-        /// <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR
-        /// Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_identity_id(input);
             self
         }
-        /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see
-        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-        pub fn identity_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_name(inp);
+        /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_name(input.into());
             self
         }
-        /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see
-        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn set_identity_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1675,8 +1607,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the identity to delete from the Amazon EMR Studio is a user or a group.</p>
-        pub fn identity_type(mut self, inp: crate::model::IdentityType) -> Self {
-            self.inner = self.inner.identity_type(inp);
+        pub fn identity_type(mut self, input: crate::model::IdentityType) -> Self {
+            self.inner = self.inner.identity_type(input);
             self
         }
         /// <p>Specifies whether the identity to delete from the Amazon EMR Studio is a user or a group.</p>
@@ -1690,9 +1622,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeCluster`.
     ///
-    /// <p>Provides cluster-level details including status, hardware and software configuration,
-    /// VPC settings, and so on.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Provides cluster-level details including status, hardware and software configuration, VPC settings, and so on.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1737,10 +1668,10 @@ pub mod fluent_builders {
                 crate::input::DescribeClusterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1749,8 +1680,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the cluster to describe.</p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>The identifier of the cluster to describe.</p>
@@ -1761,28 +1692,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeJobFlows`.
     ///
-    /// <p>This API is no longer supported and will eventually be removed. We recommend you use
-    /// <a>ListClusters</a>, <a>DescribeCluster</a>, <a>ListSteps</a>, <a>ListInstanceGroups</a> and <a>ListBootstrapActions</a> instead.</p>
-    /// <p>DescribeJobFlows returns a list of job flows that match all of the supplied parameters.
-    /// The parameters can include a list of job flow IDs, job flow states, and restrictions on job
-    /// flow creation date and time.</p>
-    /// <p>Regardless of supplied parameters, only job flows created within the last two months are
-    /// returned.</p>
-    /// <p>If no parameters are supplied, then job flows matching either of the following criteria
-    /// are returned:</p>
+    /// <p>This API is no longer supported and will eventually be removed. We recommend you use <code>ListClusters</code>, <code>DescribeCluster</code>, <code>ListSteps</code>, <code>ListInstanceGroups</code> and <code>ListBootstrapActions</code> instead.</p>
+    /// <p>DescribeJobFlows returns a list of job flows that match all of the supplied parameters. The parameters can include a list of job flow IDs, job flow states, and restrictions on job flow creation date and time.</p>
+    /// <p>Regardless of supplied parameters, only job flows created within the last two months are returned.</p>
+    /// <p>If no parameters are supplied, then job flows matching either of the following criteria are returned:</p>
     /// <ul>
-    /// <li>
-    /// <p>Job flows created and completed in the last two weeks</p>
-    /// </li>
-    /// <li>
-    /// <p> Job flows created within the last two months that are in one of the following
-    /// states: <code>RUNNING</code>, <code>WAITING</code>, <code>SHUTTING_DOWN</code>,
-    /// <code>STARTING</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Job flows created and completed in the last two weeks</p> </li>
+    /// <li> <p> Job flows created within the last two months that are in one of the following states: <code>RUNNING</code>, <code>WAITING</code>, <code>SHUTTING_DOWN</code>, <code>STARTING</code> </p> </li>
     /// </ul>
     /// <p>Amazon EMR can return a maximum of 512 job flow descriptions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeJobFlows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1827,10 +1746,10 @@ pub mod fluent_builders {
                 crate::input::DescribeJobFlowsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1839,8 +1758,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Return only job flows created after this date and time.</p>
-        pub fn created_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_after(inp);
+        pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_after(input);
             self
         }
         /// <p>Return only job flows created after this date and time.</p>
@@ -1852,8 +1771,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Return only job flows created before this date and time.</p>
-        pub fn created_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_before(inp);
+        pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_before(input);
             self
         }
         /// <p>Return only job flows created before this date and time.</p>
@@ -1869,8 +1788,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_job_flow_ids`](Self::set_job_flow_ids).
         ///
         /// <p>Return only job flows whose job flow ID is contained in this list.</p>
-        pub fn job_flow_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_flow_ids(inp);
+        pub fn job_flow_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_flow_ids(input.into());
             self
         }
         /// <p>Return only job flows whose job flow ID is contained in this list.</p>
@@ -1886,11 +1805,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_job_flow_states`](Self::set_job_flow_states).
         ///
         /// <p>Return only job flows whose state is contained in this list.</p>
-        pub fn job_flow_states(
-            mut self,
-            inp: impl Into<crate::model::JobFlowExecutionState>,
-        ) -> Self {
-            self.inner = self.inner.job_flow_states(inp);
+        pub fn job_flow_states(mut self, input: crate::model::JobFlowExecutionState) -> Self {
+            self.inner = self.inner.job_flow_states(input);
             self
         }
         /// <p>Return only job flows whose state is contained in this list.</p>
@@ -1905,7 +1821,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeNotebookExecution`.
     ///
     /// <p>Provides details of a notebook execution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeNotebookExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1950,10 +1866,10 @@ pub mod fluent_builders {
                 crate::input::DescribeNotebookExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1962,8 +1878,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the notebook execution.</p>
-        pub fn notebook_execution_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notebook_execution_id(inp);
+        pub fn notebook_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notebook_execution_id(input.into());
             self
         }
         /// <p>The unique identifier of the notebook execution.</p>
@@ -1978,7 +1894,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeReleaseLabel`.
     ///
     /// <p>Provides EMR release label details, such as releases available the region where the API request is run, and the available applications for a specific EMR release label. Can also list EMR release versions that support a specified version of Spark.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReleaseLabel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2023,10 +1939,10 @@ pub mod fluent_builders {
                 crate::input::DescribeReleaseLabelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2035,8 +1951,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The target release label to be described.</p>
-        pub fn release_label(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.release_label(inp);
+        pub fn release_label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.release_label(input.into());
             self
         }
         /// <p>The target release label to be described.</p>
@@ -2048,8 +1964,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token. Reserved for future use. Currently set to null.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token. Reserved for future use. Currently set to null.</p>
@@ -2058,8 +1974,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reserved for future use. Currently set to null.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Reserved for future use. Currently set to null.</p>
@@ -2070,9 +1986,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeSecurityConfiguration`.
     ///
-    /// <p>Provides the details of a security configuration by returning the configuration
-    /// JSON.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Provides the details of a security configuration by returning the configuration JSON.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSecurityConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2117,10 +2032,10 @@ pub mod fluent_builders {
                 crate::input::DescribeSecurityConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2129,8 +2044,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the security configuration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the security configuration.</p>
@@ -2142,7 +2057,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeStep`.
     ///
     /// <p>Provides more detail about the cluster step.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStep<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2187,10 +2102,10 @@ pub mod fluent_builders {
                 crate::input::DescribeStepInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2199,8 +2114,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the cluster with steps to describe.</p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>The identifier of the cluster with steps to describe.</p>
@@ -2209,8 +2124,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the step to describe.</p>
-        pub fn step_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.step_id(inp);
+        pub fn step_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.step_id(input.into());
             self
         }
         /// <p>The identifier of the step to describe.</p>
@@ -2221,9 +2136,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeStudio`.
     ///
-    /// <p>Returns details for the specified Amazon EMR Studio including ID, Name, VPC, Studio
-    /// access URL, and so on.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns details for the specified Amazon EMR Studio including ID, Name, VPC, Studio access URL, and so on.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStudio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2268,10 +2182,10 @@ pub mod fluent_builders {
                 crate::input::DescribeStudioInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2280,8 +2194,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon EMR Studio ID.</p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(input.into());
             self
         }
         /// <p>The Amazon EMR Studio ID.</p>
@@ -2293,7 +2207,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAutoTerminationPolicy`.
     ///
     /// <p>Returns the auto-termination policy for an Amazon EMR cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAutoTerminationPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2338,10 +2252,10 @@ pub mod fluent_builders {
                 crate::input::GetAutoTerminationPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2350,8 +2264,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the ID of the Amazon EMR cluster for which the auto-termination policy will be fetched.</p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>Specifies the ID of the Amazon EMR cluster for which the auto-termination policy will be fetched.</p>
@@ -2362,11 +2276,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetBlockPublicAccessConfiguration`.
     ///
-    /// <p>Returns the Amazon EMR block public access configuration for your Amazon Web Services account in the
-    /// current Region. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure Block
-    /// Public Access for Amazon EMR</a> in the <i>Amazon EMR Management
-    /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the Amazon EMR block public access configuration for your Amazon Web Services account in the current Region. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure Block Public Access for Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBlockPublicAccessConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2411,10 +2322,10 @@ pub mod fluent_builders {
                 crate::input::GetBlockPublicAccessConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2426,7 +2337,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetManagedScalingPolicy`.
     ///
     /// <p>Fetches the attached managed scaling policy for an Amazon EMR cluster. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetManagedScalingPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2471,10 +2382,10 @@ pub mod fluent_builders {
                 crate::input::GetManagedScalingPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2482,14 +2393,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched.
-        /// </p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched. </p>
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
-        /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched.
-        /// </p>
+        /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched. </p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster_id(input);
             self
@@ -2497,9 +2406,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetStudioSessionMapping`.
     ///
-    /// <p>Fetches mapping details for the specified Amazon EMR Studio and identity (user or
-    /// group).</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Fetches mapping details for the specified Amazon EMR Studio and identity (user or group).</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStudioSessionMapping<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2544,10 +2452,10 @@ pub mod fluent_builders {
                 crate::input::GetStudioSessionMappingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2556,8 +2464,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon EMR Studio.</p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(input.into());
             self
         }
         /// <p>The ID of the Amazon EMR Studio.</p>
@@ -2565,28 +2473,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_studio_id(input);
             self
         }
-        /// <p>The globally unique identifier (GUID) of the user or group. For more information, see
-        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-        pub fn identity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(inp);
+        /// <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(input.into());
             self
         }
-        /// <p>The globally unique identifier (GUID) of the user or group. For more information, see
-        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_identity_id(input);
             self
         }
-        /// <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-        pub fn identity_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_name(inp);
+        /// <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_name(input.into());
             self
         }
-        /// <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn set_identity_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2595,8 +2497,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the identity to fetch is a user or a group.</p>
-        pub fn identity_type(mut self, inp: crate::model::IdentityType) -> Self {
-            self.inner = self.inner.identity_type(inp);
+        pub fn identity_type(mut self, input: crate::model::IdentityType) -> Self {
+            self.inner = self.inner.identity_type(input);
             self
         }
         /// <p>Specifies whether the identity to fetch is a user or a group.</p>
@@ -2611,7 +2513,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBootstrapActions`.
     ///
     /// <p>Provides information about the bootstrap actions associated with a cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBootstrapActions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2656,10 +2558,10 @@ pub mod fluent_builders {
                 crate::input::ListBootstrapActionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2667,9 +2569,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListBootstrapActionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListBootstrapActionsPaginator<C, M, R> {
+            crate::paginator::ListBootstrapActionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The cluster identifier for the bootstrap actions to list.</p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>The cluster identifier for the bootstrap actions to list.</p>
@@ -2678,8 +2586,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -2690,12 +2598,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListClusters`.
     ///
-    /// <p>Provides the status of all clusters visible to this Amazon Web Services account. Allows you to filter
-    /// the list of clusters based on certain criteria; for example, filtering by cluster creation
-    /// date and time or by status. This call returns a maximum of 50 clusters in unsorted order per call, but
-    /// returns a marker to track the paging of the cluster list across multiple ListClusters
-    /// calls.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Provides the status of all clusters visible to this Amazon Web Services account. Allows you to filter the list of clusters based on certain criteria; for example, filtering by cluster creation date and time or by status. This call returns a maximum of 50 clusters in unsorted order per call, but returns a marker to track the paging of the cluster list across multiple ListClusters calls.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListClusters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2740,10 +2644,10 @@ pub mod fluent_builders {
                 crate::input::ListClustersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2751,9 +2655,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListClustersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListClustersPaginator<C, M, R> {
+            crate::paginator::ListClustersPaginator::new(self.handle, self.inner)
+        }
         /// <p>The creation date and time beginning value filter for listing clusters.</p>
-        pub fn created_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_after(inp);
+        pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_after(input);
             self
         }
         /// <p>The creation date and time beginning value filter for listing clusters.</p>
@@ -2765,8 +2675,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The creation date and time end value filter for listing clusters.</p>
-        pub fn created_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_before(inp);
+        pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_before(input);
             self
         }
         /// <p>The creation date and time end value filter for listing clusters.</p>
@@ -2782,8 +2692,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_cluster_states`](Self::set_cluster_states).
         ///
         /// <p>The cluster state filters to apply when listing clusters. Clusters that change state while this action runs may be not be returned as expected in the list of clusters.</p>
-        pub fn cluster_states(mut self, inp: impl Into<crate::model::ClusterState>) -> Self {
-            self.inner = self.inner.cluster_states(inp);
+        pub fn cluster_states(mut self, input: crate::model::ClusterState) -> Self {
+            self.inner = self.inner.cluster_states(input);
             self
         }
         /// <p>The cluster state filters to apply when listing clusters. Clusters that change state while this action runs may be not be returned as expected in the list of clusters.</p>
@@ -2795,8 +2705,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -2807,12 +2717,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListInstanceFleets`.
     ///
-    /// <p>Lists all available details about the instance fleets in a cluster.</p>
-    /// <note>
-    /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
-    /// later, excluding 5.0.x versions.</p>
+    /// <p>Lists all available details about the instance fleets in a cluster.</p> <note>
+    /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInstanceFleets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2857,10 +2765,10 @@ pub mod fluent_builders {
                 crate::input::ListInstanceFleetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2868,9 +2776,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListInstanceFleetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListInstanceFleetsPaginator<C, M, R> {
+            crate::paginator::ListInstanceFleetsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The unique identifier of the cluster.</p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>The unique identifier of the cluster.</p>
@@ -2879,8 +2793,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -2892,7 +2806,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListInstanceGroups`.
     ///
     /// <p>Provides all available details about the instance groups in a cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInstanceGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2937,10 +2851,10 @@ pub mod fluent_builders {
                 crate::input::ListInstanceGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2948,9 +2862,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListInstanceGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListInstanceGroupsPaginator<C, M, R> {
+            crate::paginator::ListInstanceGroupsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the cluster for which to list the instance groups.</p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>The identifier of the cluster for which to list the instance groups.</p>
@@ -2959,8 +2879,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -2971,10 +2891,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListInstances`.
     ///
-    /// <p>Provides information for all active EC2 instances and EC2 instances terminated in the
-    /// last 30 days, up to a maximum of 2,000. EC2 instances in any of the following states are
-    /// considered active: AWAITING_FULFILLMENT, PROVISIONING, BOOTSTRAPPING, RUNNING.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Provides information for all active EC2 instances and EC2 instances terminated in the last 30 days, up to a maximum of 2,000. EC2 instances in any of the following states are considered active: AWAITING_FULFILLMENT, PROVISIONING, BOOTSTRAPPING, RUNNING.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3019,10 +2937,10 @@ pub mod fluent_builders {
                 crate::input::ListInstancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3030,9 +2948,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListInstancesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListInstancesPaginator<C, M, R> {
+            crate::paginator::ListInstancesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the cluster for which to list the instances.</p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>The identifier of the cluster for which to list the instances.</p>
@@ -3041,8 +2965,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the instance group for which to list the instances.</p>
-        pub fn instance_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_group_id(inp);
+        pub fn instance_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_group_id(input.into());
             self
         }
         /// <p>The identifier of the instance group for which to list the instances.</p>
@@ -3058,11 +2982,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_instance_group_types`](Self::set_instance_group_types).
         ///
         /// <p>The type of instance group for which to list the instances.</p>
-        pub fn instance_group_types(
-            mut self,
-            inp: impl Into<crate::model::InstanceGroupType>,
-        ) -> Self {
-            self.inner = self.inner.instance_group_types(inp);
+        pub fn instance_group_types(mut self, input: crate::model::InstanceGroupType) -> Self {
+            self.inner = self.inner.instance_group_types(input);
             self
         }
         /// <p>The type of instance group for which to list the instances.</p>
@@ -3074,8 +2995,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the instance fleet.</p>
-        pub fn instance_fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_fleet_id(inp);
+        pub fn instance_fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_fleet_id(input.into());
             self
         }
         /// <p>The unique identifier of the instance fleet.</p>
@@ -3087,8 +3008,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The node type of the instance fleet. For example MASTER, CORE, or TASK.</p>
-        pub fn instance_fleet_type(mut self, inp: crate::model::InstanceFleetType) -> Self {
-            self.inner = self.inner.instance_fleet_type(inp);
+        pub fn instance_fleet_type(mut self, input: crate::model::InstanceFleetType) -> Self {
+            self.inner = self.inner.instance_fleet_type(input);
             self
         }
         /// <p>The node type of the instance fleet. For example MASTER, CORE, or TASK.</p>
@@ -3103,14 +3024,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_instance_states`](Self::set_instance_states).
         ///
-        /// <p>A list of instance states that will filter the instances returned with this
-        /// request.</p>
-        pub fn instance_states(mut self, inp: impl Into<crate::model::InstanceState>) -> Self {
-            self.inner = self.inner.instance_states(inp);
+        /// <p>A list of instance states that will filter the instances returned with this request.</p>
+        pub fn instance_states(mut self, input: crate::model::InstanceState) -> Self {
+            self.inner = self.inner.instance_states(input);
             self
         }
-        /// <p>A list of instance states that will filter the instances returned with this
-        /// request.</p>
+        /// <p>A list of instance states that will filter the instances returned with this request.</p>
         pub fn set_instance_states(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceState>>,
@@ -3119,8 +3038,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -3131,11 +3050,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListNotebookExecutions`.
     ///
-    /// <p>Provides summaries of all notebook executions. You can filter the list based on multiple
-    /// criteria such as status, time range, and editor id. Returns a maximum of 50 notebook
-    /// executions and a marker to track the paging of a longer notebook execution list across
-    /// multiple <code>ListNotebookExecution</code> calls.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Provides summaries of all notebook executions. You can filter the list based on multiple criteria such as status, time range, and editor id. Returns a maximum of 50 notebook executions and a marker to track the paging of a longer notebook execution list across multiple <code>ListNotebookExecution</code> calls.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNotebookExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3180,10 +3096,10 @@ pub mod fluent_builders {
                 crate::input::ListNotebookExecutionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3191,9 +3107,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListNotebookExecutionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListNotebookExecutionsPaginator<C, M, R> {
+            crate::paginator::ListNotebookExecutionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The unique ID of the editor associated with the notebook execution.</p>
-        pub fn editor_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.editor_id(inp);
+        pub fn editor_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.editor_id(input.into());
             self
         }
         /// <p>The unique ID of the editor associated with the notebook execution.</p>
@@ -3203,111 +3125,33 @@ pub mod fluent_builders {
         }
         /// <p>The status filter for listing notebook executions.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>START_PENDING</code> indicates that the cluster has received the execution
-        /// request but execution has not begun.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STARTING</code> indicates that the execution is starting on the
-        /// cluster.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RUNNING</code> indicates that the execution is being processed by the
-        /// cluster.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FINISHING</code> indicates that execution processing is in the final
-        /// stages.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FINISHED</code> indicates that the execution has completed without
-        /// error.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILING</code> indicates that the execution is failing and will not finish
-        /// successfully.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> indicates that the execution failed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STOP_PENDING</code> indicates that the cluster has received a
-        /// <code>StopNotebookExecution</code> request and the stop is pending.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STOPPING</code> indicates that the cluster is in the process of stopping the
-        /// execution as a result of a <code>StopNotebookExecution</code> request.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STOPPED</code> indicates that the execution stopped because of a
-        /// <code>StopNotebookExecution</code> request.</p>
-        /// </li>
+        /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li>
+        /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li>
+        /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li>
+        /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li>
+        /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li>
+        /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li>
+        /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li>
+        /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li>
+        /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
+        /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
         /// </ul>
-        pub fn status(mut self, inp: crate::model::NotebookExecutionStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::NotebookExecutionStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The status filter for listing notebook executions.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>START_PENDING</code> indicates that the cluster has received the execution
-        /// request but execution has not begun.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STARTING</code> indicates that the execution is starting on the
-        /// cluster.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RUNNING</code> indicates that the execution is being processed by the
-        /// cluster.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FINISHING</code> indicates that execution processing is in the final
-        /// stages.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FINISHED</code> indicates that the execution has completed without
-        /// error.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILING</code> indicates that the execution is failing and will not finish
-        /// successfully.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> indicates that the execution failed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STOP_PENDING</code> indicates that the cluster has received a
-        /// <code>StopNotebookExecution</code> request and the stop is pending.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STOPPING</code> indicates that the cluster is in the process of stopping the
-        /// execution as a result of a <code>StopNotebookExecution</code> request.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STOPPED</code> indicates that the execution stopped because of a
-        /// <code>StopNotebookExecution</code> request.</p>
-        /// </li>
+        /// <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li>
+        /// <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li>
+        /// <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li>
+        /// <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li>
+        /// <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li>
+        /// <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li>
+        /// <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li>
+        /// <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li>
+        /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
+        /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -3316,40 +3160,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_status(input);
             self
         }
-        /// <p>The beginning of time range filter for listing notebook executions. The default is the
-        /// timestamp of 30 days ago.</p>
-        pub fn from(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.from(inp);
+        /// <p>The beginning of time range filter for listing notebook executions. The default is the timestamp of 30 days ago.</p>
+        pub fn from(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.from(input);
             self
         }
-        /// <p>The beginning of time range filter for listing notebook executions. The default is the
-        /// timestamp of 30 days ago.</p>
+        /// <p>The beginning of time range filter for listing notebook executions. The default is the timestamp of 30 days ago.</p>
         pub fn set_from(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.inner = self.inner.set_from(input);
             self
         }
-        /// <p>The end of time range filter for listing notebook executions. The default is the current
-        /// timestamp.</p>
-        pub fn to(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.to(inp);
+        /// <p>The end of time range filter for listing notebook executions. The default is the current timestamp.</p>
+        pub fn to(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.to(input);
             self
         }
-        /// <p>The end of time range filter for listing notebook executions. The default is the current
-        /// timestamp.</p>
+        /// <p>The end of time range filter for listing notebook executions. The default is the current timestamp.</p>
         pub fn set_to(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.inner = self.inner.set_to(input);
             self
         }
-        /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call,
-        /// that indicates the start of the list for this <code>ListNotebookExecutions</code>
-        /// call.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call, that indicates the start of the list for this <code>ListNotebookExecutions</code> call.</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call,
-        /// that indicates the start of the list for this <code>ListNotebookExecutions</code>
-        /// call.</p>
+        /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call, that indicates the start of the list for this <code>ListNotebookExecutions</code> call.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -3358,7 +3194,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListReleaseLabels`.
     ///
     /// <p>Retrieves release labels of EMR services in the region where the API is called.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListReleaseLabels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3403,10 +3239,10 @@ pub mod fluent_builders {
                 crate::input::ListReleaseLabelsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3414,9 +3250,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListReleaseLabelsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListReleaseLabelsPaginator<C, M, R> {
+            crate::paginator::ListReleaseLabelsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Filters the results of the request. <code>Prefix</code> specifies the prefix of release labels to return. <code>Application</code> specifies the application (with/without version) of release labels to return.</p>
-        pub fn filters(mut self, inp: crate::model::ReleaseLabelFilter) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::ReleaseLabelFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters the results of the request. <code>Prefix</code> specifies the prefix of release labels to return. <code>Application</code> specifies the application (with/without version) of release labels to return.</p>
@@ -3428,8 +3270,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the next page of results. If <code>NextToken</code> is not specified, which is usually the case for the first request of ListReleaseLabels, the first page of results are determined by other filtering parameters or by the latest version. The <code>ListReleaseLabels</code> request fails if the identity (Amazon Web Services account ID) and all filtering parameters are different from the original request, or if the <code>NextToken</code> is expired or tampered with.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Specifies the next page of results. If <code>NextToken</code> is not specified, which is usually the case for the first request of ListReleaseLabels, the first page of results are determined by other filtering parameters or by the latest version. The <code>ListReleaseLabels</code> request fails if the identity (Amazon Web Services account ID) and all filtering parameters are different from the original request, or if the <code>NextToken</code> is expired or tampered with.</p>
@@ -3438,8 +3280,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Defines the maximum number of release labels to return in a single response. The default is <code>100</code>.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Defines the maximum number of release labels to return in a single response. The default is <code>100</code>.</p>
@@ -3450,11 +3292,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSecurityConfigurations`.
     ///
-    /// <p>Lists all the security configurations visible to this account, providing their creation
-    /// dates and times, and their names. This call returns a maximum of 50 clusters per call, but
-    /// returns a marker to track the paging of the cluster list across multiple
-    /// ListSecurityConfigurations calls.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists all the security configurations visible to this account, providing their creation dates and times, and their names. This call returns a maximum of 50 clusters per call, but returns a marker to track the paging of the cluster list across multiple ListSecurityConfigurations calls.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSecurityConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3499,10 +3338,10 @@ pub mod fluent_builders {
                 crate::input::ListSecurityConfigurationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3510,9 +3349,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSecurityConfigurationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListSecurityConfigurationsPaginator<C, M, R> {
+            crate::paginator::ListSecurityConfigurationsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The pagination token that indicates the set of results to retrieve.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>The pagination token that indicates the set of results to retrieve.</p>
@@ -3523,10 +3370,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSteps`.
     ///
-    /// <p>Provides a list of steps for the cluster in reverse order unless you specify
-    /// <code>stepIds</code> with the request or filter by <code>StepStates</code>. You can
-    /// specify a maximum of 10 <code>stepIDs</code>. The CLI automatically paginates results to return a list greater than 50 steps. To return more than 50 steps using the CLI, specify a <code>Marker</code>, which is a pagination token that indicates the next set of steps to retrieve.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Provides a list of steps for the cluster in reverse order unless you specify <code>stepIds</code> with the request or filter by <code>StepStates</code>. You can specify a maximum of 10 <code>stepIDs</code>. The CLI automatically paginates results to return a list greater than 50 steps. To return more than 50 steps using the CLI, specify a <code>Marker</code>, which is a pagination token that indicates the next set of steps to retrieve.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSteps<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3571,10 +3416,10 @@ pub mod fluent_builders {
                 crate::input::ListStepsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3582,9 +3427,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListStepsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListStepsPaginator<C, M, R> {
+            crate::paginator::ListStepsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the cluster for which to list the steps.</p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>The identifier of the cluster for which to list the steps.</p>
@@ -3597,8 +3448,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_step_states`](Self::set_step_states).
         ///
         /// <p>The filter to limit the step list based on certain states.</p>
-        pub fn step_states(mut self, inp: impl Into<crate::model::StepState>) -> Self {
-            self.inner = self.inner.step_states(inp);
+        pub fn step_states(mut self, input: crate::model::StepState) -> Self {
+            self.inner = self.inner.step_states(input);
             self
         }
         /// <p>The filter to limit the step list based on certain states.</p>
@@ -3613,16 +3464,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_step_ids`](Self::set_step_ids).
         ///
-        /// <p>The filter to limit the step list based on the identifier of the steps. You can specify
-        /// a maximum of ten Step IDs. The character constraint applies to the overall length of the
-        /// array.</p>
-        pub fn step_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.step_ids(inp);
+        /// <p>The filter to limit the step list based on the identifier of the steps. You can specify a maximum of ten Step IDs. The character constraint applies to the overall length of the array.</p>
+        pub fn step_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.step_ids(input.into());
             self
         }
-        /// <p>The filter to limit the step list based on the identifier of the steps. You can specify
-        /// a maximum of ten Step IDs. The character constraint applies to the overall length of the
-        /// array.</p>
+        /// <p>The filter to limit the step list based on the identifier of the steps. You can specify a maximum of ten Step IDs. The character constraint applies to the overall length of the array.</p>
         pub fn set_step_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3631,8 +3478,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of steps that a single <code>ListSteps</code> action returns is 50. To return a longer list of steps, use multiple <code>ListSteps</code> actions along with the <code>Marker</code> parameter, which is a pagination token that indicates the next set of results to retrieve.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>The maximum number of steps that a single <code>ListSteps</code> action returns is 50. To return a longer list of steps, use multiple <code>ListSteps</code> actions along with the <code>Marker</code> parameter, which is a pagination token that indicates the next set of results to retrieve.</p>
@@ -3643,9 +3490,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListStudios`.
     ///
-    /// <p>Returns a list of all Amazon EMR Studios associated with the Amazon Web Services account. The list
-    /// includes details such as ID, Studio Access URL, and creation time for each Studio.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of all Amazon EMR Studios associated with the Amazon Web Services account. The list includes details such as ID, Studio Access URL, and creation time for each Studio.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStudios<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3690,10 +3536,10 @@ pub mod fluent_builders {
                 crate::input::ListStudiosInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3701,9 +3547,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListStudiosPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListStudiosPaginator<C, M, R> {
+            crate::paginator::ListStudiosPaginator::new(self.handle, self.inner)
+        }
         /// <p>The pagination token that indicates the set of results to retrieve.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>The pagination token that indicates the set of results to retrieve.</p>
@@ -3714,9 +3566,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListStudioSessionMappings`.
     ///
-    /// <p>Returns a list of all user or group session mappings for the Amazon EMR Studio specified by
-    /// <code>StudioId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of all user or group session mappings for the Amazon EMR Studio specified by <code>StudioId</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStudioSessionMappings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3761,10 +3612,10 @@ pub mod fluent_builders {
                 crate::input::ListStudioSessionMappingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3772,9 +3623,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListStudioSessionMappingsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListStudioSessionMappingsPaginator<C, M, R> {
+            crate::paginator::ListStudioSessionMappingsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the Amazon EMR Studio.</p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(input.into());
             self
         }
         /// <p>The ID of the Amazon EMR Studio.</p>
@@ -3782,14 +3641,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_studio_id(input);
             self
         }
-        /// <p>Specifies whether to return session mappings for users or groups. If not specified, the
-        /// results include session mapping details for both users and groups.</p>
-        pub fn identity_type(mut self, inp: crate::model::IdentityType) -> Self {
-            self.inner = self.inner.identity_type(inp);
+        /// <p>Specifies whether to return session mappings for users or groups. If not specified, the results include session mapping details for both users and groups.</p>
+        pub fn identity_type(mut self, input: crate::model::IdentityType) -> Self {
+            self.inner = self.inner.identity_type(input);
             self
         }
-        /// <p>Specifies whether to return session mappings for users or groups. If not specified, the
-        /// results include session mapping details for both users and groups.</p>
+        /// <p>Specifies whether to return session mappings for users or groups. If not specified, the results include session mapping details for both users and groups.</p>
         pub fn set_identity_type(
             mut self,
             input: std::option::Option<crate::model::IdentityType>,
@@ -3798,8 +3655,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the set of results to retrieve.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>The pagination token that indicates the set of results to retrieve.</p>
@@ -3810,9 +3667,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ModifyCluster`.
     ///
-    /// <p>Modifies the number of steps that can be executed concurrently for the cluster specified
-    /// using ClusterID.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Modifies the number of steps that can be executed concurrently for the cluster specified using ClusterID.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3857,10 +3713,10 @@ pub mod fluent_builders {
                 crate::input::ModifyClusterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3869,8 +3725,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the cluster.</p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>The unique identifier of the cluster.</p>
@@ -3878,12 +3734,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cluster_id(input);
             self
         }
-        /// <p>The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256 steps. We recommend that you do not change this parameter while steps are running or the <code>ActionOnFailure</code> setting may not behave as expected. For more information see <a>Step$ActionOnFailure</a>.</p>
-        pub fn step_concurrency_level(mut self, inp: i32) -> Self {
-            self.inner = self.inner.step_concurrency_level(inp);
+        /// <p>The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256 steps. We recommend that you do not change this parameter while steps are running or the <code>ActionOnFailure</code> setting may not behave as expected. For more information see <code>Step$ActionOnFailure</code>.</p>
+        pub fn step_concurrency_level(mut self, input: i32) -> Self {
+            self.inner = self.inner.step_concurrency_level(input);
             self
         }
-        /// <p>The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256 steps. We recommend that you do not change this parameter while steps are running or the <code>ActionOnFailure</code> setting may not behave as expected. For more information see <a>Step$ActionOnFailure</a>.</p>
+        /// <p>The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256 steps. We recommend that you do not change this parameter while steps are running or the <code>ActionOnFailure</code> setting may not behave as expected. For more information see <code>Step$ActionOnFailure</code>.</p>
         pub fn set_step_concurrency_level(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_step_concurrency_level(input);
             self
@@ -3891,14 +3747,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ModifyInstanceFleet`.
     ///
-    /// <p>Modifies the target On-Demand and target Spot capacities for the instance fleet with the
-    /// specified InstanceFleetID within the cluster specified using ClusterID. The call either
-    /// succeeds or fails atomically.</p>
-    /// <note>
-    /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
-    /// later, excluding 5.0.x versions.</p>
+    /// <p>Modifies the target On-Demand and target Spot capacities for the instance fleet with the specified InstanceFleetID within the cluster specified using ClusterID. The call either succeeds or fails atomically.</p> <note>
+    /// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyInstanceFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3943,10 +3795,10 @@ pub mod fluent_builders {
                 crate::input::ModifyInstanceFleetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3955,8 +3807,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the cluster.</p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>The unique identifier of the cluster.</p>
@@ -3965,8 +3817,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration parameters of the instance fleet.</p>
-        pub fn instance_fleet(mut self, inp: crate::model::InstanceFleetModifyConfig) -> Self {
-            self.inner = self.inner.instance_fleet(inp);
+        pub fn instance_fleet(mut self, input: crate::model::InstanceFleetModifyConfig) -> Self {
+            self.inner = self.inner.instance_fleet(input);
             self
         }
         /// <p>The configuration parameters of the instance fleet.</p>
@@ -3980,10 +3832,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ModifyInstanceGroups`.
     ///
-    /// <p>ModifyInstanceGroups modifies the number of nodes and configuration settings of an
-    /// instance group. The input parameters include the new target instance count for the group
-    /// and the instance group ID. The call will either succeed or fail atomically.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>ModifyInstanceGroups modifies the number of nodes and configuration settings of an instance group. The input parameters include the new target instance count for the group and the instance group ID. The call will either succeed or fail atomically.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyInstanceGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4028,10 +3878,10 @@ pub mod fluent_builders {
                 crate::input::ModifyInstanceGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4040,8 +3890,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the cluster to which the instance group belongs.</p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>The ID of the cluster to which the instance group belongs.</p>
@@ -4054,11 +3904,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_instance_groups`](Self::set_instance_groups).
         ///
         /// <p>Instance groups to change.</p>
-        pub fn instance_groups(
-            mut self,
-            inp: impl Into<crate::model::InstanceGroupModifyConfig>,
-        ) -> Self {
-            self.inner = self.inner.instance_groups(inp);
+        pub fn instance_groups(mut self, input: crate::model::InstanceGroupModifyConfig) -> Self {
+            self.inner = self.inner.instance_groups(input);
             self
         }
         /// <p>Instance groups to change.</p>
@@ -4072,11 +3919,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutAutoScalingPolicy`.
     ///
-    /// <p>Creates or updates an automatic scaling policy for a core instance group or task
-    /// instance group in an Amazon EMR cluster. The automatic scaling policy defines how an
-    /// instance group dynamically adds and terminates EC2 instances in response to the value of a
-    /// CloudWatch metric.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates or updates an automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAutoScalingPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4121,10 +3965,10 @@ pub mod fluent_builders {
                 crate::input::PutAutoScalingPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4132,26 +3976,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy
-        /// is applied is within this cluster.</p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
-        /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy
-        /// is applied is within this cluster.</p>
+        /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster_id(input);
             self
         }
-        /// <p>Specifies the ID of the instance group to which the automatic scaling policy is
-        /// applied.</p>
-        pub fn instance_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_group_id(inp);
+        /// <p>Specifies the ID of the instance group to which the automatic scaling policy is applied.</p>
+        pub fn instance_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_group_id(input.into());
             self
         }
-        /// <p>Specifies the ID of the instance group to which the automatic scaling policy is
-        /// applied.</p>
+        /// <p>Specifies the ID of the instance group to which the automatic scaling policy is applied.</p>
         pub fn set_instance_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4160,8 +4000,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the definition of the automatic scaling policy.</p>
-        pub fn auto_scaling_policy(mut self, inp: crate::model::AutoScalingPolicy) -> Self {
-            self.inner = self.inner.auto_scaling_policy(inp);
+        pub fn auto_scaling_policy(mut self, input: crate::model::AutoScalingPolicy) -> Self {
+            self.inner = self.inner.auto_scaling_policy(input);
             self
         }
         /// <p>Specifies the definition of the automatic scaling policy.</p>
@@ -4176,7 +4016,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutAutoTerminationPolicy`.
     ///
     /// <p>Creates or updates an auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control cluster termination</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAutoTerminationPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4221,10 +4061,10 @@ pub mod fluent_builders {
                 crate::input::PutAutoTerminationPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4233,8 +4073,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the ID of the Amazon EMR cluster to which the auto-termination policy will be attached.</p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>Specifies the ID of the Amazon EMR cluster to which the auto-termination policy will be attached.</p>
@@ -4243,8 +4083,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the auto-termination policy to attach to the cluster.</p>
-        pub fn auto_termination_policy(mut self, inp: crate::model::AutoTerminationPolicy) -> Self {
-            self.inner = self.inner.auto_termination_policy(inp);
+        pub fn auto_termination_policy(
+            mut self,
+            input: crate::model::AutoTerminationPolicy,
+        ) -> Self {
+            self.inner = self.inner.auto_termination_policy(input);
             self
         }
         /// <p>Specifies the auto-termination policy to attach to the cluster.</p>
@@ -4258,11 +4101,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutBlockPublicAccessConfiguration`.
     ///
-    /// <p>Creates or updates an Amazon EMR block public access configuration for your Amazon Web Services account
-    /// in the current Region. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure Block
-    /// Public Access for Amazon EMR</a> in the <i>Amazon EMR Management
-    /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates or updates an Amazon EMR block public access configuration for your Amazon Web Services account in the current Region. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure Block Public Access for Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutBlockPublicAccessConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4307,10 +4147,10 @@ pub mod fluent_builders {
                 crate::input::PutBlockPublicAccessConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4318,42 +4158,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A configuration for Amazon EMR block public access. The configuration applies to all
-        /// clusters created in your account for the current Region. The configuration specifies
-        /// whether block public access is enabled. If block public access is enabled, security groups
-        /// associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or
-        /// ::/0 on a port, unless the port is specified as an exception using
-        /// <code>PermittedPublicSecurityGroupRuleRanges</code> in the
-        /// <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception,
-        /// and public access is allowed on this port. You can change this by updating
-        /// <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p>
-        /// <note>
-        /// <p>For accounts that created clusters in a Region before November 25, 2019, block public
-        /// access is disabled by default in that Region. To use this feature, you must manually
-        /// enable and configure it. For accounts that did not create an EMR cluster in a Region
-        /// before this date, block public access is enabled by default in that Region.</p>
+        /// <p>A configuration for Amazon EMR block public access. The configuration applies to all clusters created in your account for the current Region. The configuration specifies whether block public access is enabled. If block public access is enabled, security groups associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p> <note>
+        /// <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>
         /// </note>
         pub fn block_public_access_configuration(
             mut self,
-            inp: crate::model::BlockPublicAccessConfiguration,
+            input: crate::model::BlockPublicAccessConfiguration,
         ) -> Self {
-            self.inner = self.inner.block_public_access_configuration(inp);
+            self.inner = self.inner.block_public_access_configuration(input);
             self
         }
-        /// <p>A configuration for Amazon EMR block public access. The configuration applies to all
-        /// clusters created in your account for the current Region. The configuration specifies
-        /// whether block public access is enabled. If block public access is enabled, security groups
-        /// associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or
-        /// ::/0 on a port, unless the port is specified as an exception using
-        /// <code>PermittedPublicSecurityGroupRuleRanges</code> in the
-        /// <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception,
-        /// and public access is allowed on this port. You can change this by updating
-        /// <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p>
-        /// <note>
-        /// <p>For accounts that created clusters in a Region before November 25, 2019, block public
-        /// access is disabled by default in that Region. To use this feature, you must manually
-        /// enable and configure it. For accounts that did not create an EMR cluster in a Region
-        /// before this date, block public access is enabled by default in that Region.</p>
+        /// <p>A configuration for Amazon EMR block public access. The configuration applies to all clusters created in your account for the current Region. The configuration specifies whether block public access is enabled. If block public access is enabled, security groups associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p> <note>
+        /// <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>
         /// </note>
         pub fn set_block_public_access_configuration(
             mut self,
@@ -4365,11 +4181,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutManagedScalingPolicy`.
     ///
-    /// <p>Creates or updates a managed scaling policy for an Amazon EMR cluster. The managed
-    /// scaling policy defines the limits for resources, such as EC2 instances that can be added or
-    /// terminated from a cluster. The policy only applies to the core and task nodes. The master
-    /// node cannot be scaled after initial configuration. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates or updates a managed scaling policy for an Amazon EMR cluster. The managed scaling policy defines the limits for resources, such as EC2 instances that can be added or terminated from a cluster. The policy only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutManagedScalingPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4414,10 +4227,10 @@ pub mod fluent_builders {
                 crate::input::PutManagedScalingPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4426,8 +4239,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the ID of an EMR cluster where the managed scaling policy is attached. </p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>Specifies the ID of an EMR cluster where the managed scaling policy is attached. </p>
@@ -4436,8 +4249,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the constraints for the managed scaling policy. </p>
-        pub fn managed_scaling_policy(mut self, inp: crate::model::ManagedScalingPolicy) -> Self {
-            self.inner = self.inner.managed_scaling_policy(inp);
+        pub fn managed_scaling_policy(mut self, input: crate::model::ManagedScalingPolicy) -> Self {
+            self.inner = self.inner.managed_scaling_policy(input);
             self
         }
         /// <p>Specifies the constraints for the managed scaling policy. </p>
@@ -4451,9 +4264,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RemoveAutoScalingPolicy`.
     ///
-    /// <p>Removes an automatic scaling policy from a specified instance group within an EMR
-    /// cluster.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes an automatic scaling policy from a specified instance group within an EMR cluster.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveAutoScalingPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4498,10 +4310,10 @@ pub mod fluent_builders {
                 crate::input::RemoveAutoScalingPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4509,21 +4321,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy
-        /// is applied is within this cluster.</p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
-        /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy
-        /// is applied is within this cluster.</p>
+        /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster_id(input);
             self
         }
         /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
-        pub fn instance_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_group_id(inp);
+        pub fn instance_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_group_id(input.into());
             self
         }
         /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
@@ -4538,7 +4348,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveAutoTerminationPolicy`.
     ///
     /// <p>Removes an auto-termination policy from an Amazon EMR cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveAutoTerminationPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4583,10 +4393,10 @@ pub mod fluent_builders {
                 crate::input::RemoveAutoTerminationPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4595,8 +4405,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the ID of the Amazon EMR cluster from which the auto-termination policy will be removed.</p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>Specifies the ID of the Amazon EMR cluster from which the auto-termination policy will be removed.</p>
@@ -4608,7 +4418,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveManagedScalingPolicy`.
     ///
     /// <p> Removes a managed scaling policy from a specified EMR cluster. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveManagedScalingPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4653,10 +4463,10 @@ pub mod fluent_builders {
                 crate::input::RemoveManagedScalingPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4664,14 +4474,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed.
-        /// </p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed. </p>
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
-        /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed.
-        /// </p>
+        /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed. </p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster_id(input);
             self
@@ -4679,11 +4487,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RemoveTags`.
     ///
-    /// <p>Removes tags from an Amazon EMR resource, such as a cluster or Amazon EMR Studio. Tags make it easier to associate resources in
-    /// various ways, such as grouping clusters to track your Amazon EMR resource allocation costs.
-    /// For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag Clusters</a>. </p>
+    /// <p>Removes tags from an Amazon EMR resource, such as a cluster or Amazon EMR Studio. Tags make it easier to associate resources in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag Clusters</a>. </p>
     /// <p>The following example removes the stack tag with value Prod from a cluster:</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4728,10 +4534,10 @@ pub mod fluent_builders {
                 crate::input::RemoveTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4739,14 +4545,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon EMR resource identifier from which tags will be removed. For example, a
-        /// cluster identifier or an Amazon EMR Studio ID.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        /// <p>The Amazon EMR resource identifier from which tags will be removed. For example, a cluster identifier or an Amazon EMR Studio ID.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
-        /// <p>The Amazon EMR resource identifier from which tags will be removed. For example, a
-        /// cluster identifier or an Amazon EMR Studio ID.</p>
+        /// <p>The Amazon EMR resource identifier from which tags will be removed. For example, a cluster identifier or an Amazon EMR Studio ID.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_id(input);
             self
@@ -4756,8 +4560,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>A list of tag keys to remove from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A list of tag keys to remove from the resource.</p>
@@ -4771,30 +4575,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RunJobFlow`.
     ///
-    /// <p>RunJobFlow creates and starts running a new cluster (job flow). The cluster runs the
-    /// steps specified. After the steps complete, the cluster stops and the HDFS partition is
-    /// lost. To prevent loss of data, configure the last step of the job flow to store results in
-    /// Amazon S3. If the <a>JobFlowInstancesConfig</a>
-    /// <code>KeepJobFlowAliveWhenNoSteps</code> parameter is set to <code>TRUE</code>, the cluster
-    /// transitions to the WAITING state rather than shutting down after the steps have completed. </p>
-    /// <p>For additional protection, you can set the <a>JobFlowInstancesConfig</a>
-    /// <code>TerminationProtected</code> parameter to <code>TRUE</code> to lock the cluster and
-    /// prevent it from being terminated by API call, user intervention, or in the event of a job
-    /// flow error.</p>
+    /// <p>RunJobFlow creates and starts running a new cluster (job flow). The cluster runs the steps specified. After the steps complete, the cluster stops and the HDFS partition is lost. To prevent loss of data, configure the last step of the job flow to store results in Amazon S3. If the <code>JobFlowInstancesConfig</code> <code>KeepJobFlowAliveWhenNoSteps</code> parameter is set to <code>TRUE</code>, the cluster transitions to the WAITING state rather than shutting down after the steps have completed. </p>
+    /// <p>For additional protection, you can set the <code>JobFlowInstancesConfig</code> <code>TerminationProtected</code> parameter to <code>TRUE</code> to lock the cluster and prevent it from being terminated by API call, user intervention, or in the event of a job flow error.</p>
     /// <p>A maximum of 256 steps are allowed in each job flow.</p>
-    /// <p>If your cluster is long-running (such as a Hive data warehouse) or complex, you may
-    /// require more than 256 steps to process your data. You can bypass the 256-step limitation in
-    /// various ways, including using the SSH shell to connect to the master node and submitting
-    /// queries directly to the software running on the master node, such as Hive and Hadoop. For
-    /// more information on how to do this, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html">Add More than 256 Steps to a
-    /// Cluster</a> in the <i>Amazon EMR Management Guide</i>.</p>
-    /// <p>For long running clusters, we recommend that you periodically store your results.</p>
-    /// <note>
-    /// <p>The instance fleets configuration is available only in Amazon EMR versions 4.8.0 and
-    /// later, excluding 5.0.x versions. The RunJobFlow request can contain InstanceFleets
-    /// parameters or InstanceGroups parameters, but not both.</p>
+    /// <p>If your cluster is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps to process your data. You can bypass the 256-step limitation in various ways, including using the SSH shell to connect to the master node and submitting queries directly to the software running on the master node, such as Hive and Hadoop. For more information on how to do this, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html">Add More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management Guide</i>.</p>
+    /// <p>For long running clusters, we recommend that you periodically store your results.</p> <note>
+    /// <p>The instance fleets configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. The RunJobFlow request can contain InstanceFleets parameters or InstanceGroups parameters, but not both.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RunJobFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4839,10 +4627,10 @@ pub mod fluent_builders {
                 crate::input::RunJobFlowInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4851,8 +4639,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the job flow.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the job flow.</p>
@@ -4860,28 +4648,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The location in Amazon S3 to write the log files of the job flow. If a value is not
-        /// provided, logs are not created.</p>
-        pub fn log_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_uri(inp);
+        /// <p>The location in Amazon S3 to write the log files of the job flow. If a value is not provided, logs are not created.</p>
+        pub fn log_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_uri(input.into());
             self
         }
-        /// <p>The location in Amazon S3 to write the log files of the job flow. If a value is not
-        /// provided, logs are not created.</p>
+        /// <p>The location in Amazon S3 to write the log files of the job flow. If a value is not provided, logs are not created.</p>
         pub fn set_log_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_log_uri(input);
             self
         }
-        /// <p>The KMS key used for encrypting log files. If a value is not
-        /// provided, the logs remain encrypted by AES-256. This attribute is only available with
-        /// Amazon EMR version 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
-        pub fn log_encryption_kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_encryption_kms_key_id(inp);
+        /// <p>The KMS key used for encrypting log files. If a value is not provided, the logs remain encrypted by AES-256. This attribute is only available with Amazon EMR version 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
+        pub fn log_encryption_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_encryption_kms_key_id(input.into());
             self
         }
-        /// <p>The KMS key used for encrypting log files. If a value is not
-        /// provided, the logs remain encrypted by AES-256. This attribute is only available with
-        /// Amazon EMR version 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
+        /// <p>The KMS key used for encrypting log files. If a value is not provided, the logs remain encrypted by AES-256. This attribute is only available with Amazon EMR version 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
         pub fn set_log_encryption_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4890,8 +4672,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A JSON string for selecting additional features.</p>
-        pub fn additional_info(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.additional_info(inp);
+        pub fn additional_info(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.additional_info(input.into());
             self
         }
         /// <p>A JSON string for selecting additional features.</p>
@@ -4902,38 +4684,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_additional_info(input);
             self
         }
-        /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and
-        /// later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
-        /// <code>CustomAmiID</code>.</p>
-        pub fn ami_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ami_version(inp);
+        /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.</p>
+        pub fn ami_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ami_version(input.into());
             self
         }
-        /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and
-        /// later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
-        /// <code>CustomAmiID</code>.</p>
+        /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.</p>
         pub fn set_ami_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_ami_version(input);
             self
         }
-        /// <p>The Amazon EMR release label, which determines the version of open-source application
-        /// packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>,
-        /// where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more
-        /// information about Amazon EMR release versions and included application versions and
-        /// features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release
-        /// label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use
-        /// <code>AmiVersion</code>.</p>
-        pub fn release_label(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.release_label(inp);
+        /// <p>The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application versions and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use <code>AmiVersion</code>.</p>
+        pub fn release_label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.release_label(input.into());
             self
         }
-        /// <p>The Amazon EMR release label, which determines the version of open-source application
-        /// packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>,
-        /// where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more
-        /// information about Amazon EMR release versions and included application versions and
-        /// features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release
-        /// label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use
-        /// <code>AmiVersion</code>.</p>
+        /// <p>The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application versions and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use <code>AmiVersion</code>.</p>
         pub fn set_release_label(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4942,8 +4708,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A specification of the number and type of Amazon EC2 instances.</p>
-        pub fn instances(mut self, inp: crate::model::JobFlowInstancesConfig) -> Self {
-            self.inner = self.inner.instances(inp);
+        pub fn instances(mut self, input: crate::model::JobFlowInstancesConfig) -> Self {
+            self.inner = self.inner.instances(input);
             self
         }
         /// <p>A specification of the number and type of Amazon EC2 instances.</p>
@@ -4959,8 +4725,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_steps`](Self::set_steps).
         ///
         /// <p>A list of steps to run.</p>
-        pub fn steps(mut self, inp: impl Into<crate::model::StepConfig>) -> Self {
-            self.inner = self.inner.steps(inp);
+        pub fn steps(mut self, input: crate::model::StepConfig) -> Self {
+            self.inner = self.inner.steps(input);
             self
         }
         /// <p>A list of steps to run.</p>
@@ -4976,11 +4742,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_bootstrap_actions`](Self::set_bootstrap_actions).
         ///
         /// <p>A list of bootstrap actions to run before Hadoop starts on the cluster nodes.</p>
-        pub fn bootstrap_actions(
-            mut self,
-            inp: impl Into<crate::model::BootstrapActionConfig>,
-        ) -> Self {
-            self.inner = self.inner.bootstrap_actions(inp);
+        pub fn bootstrap_actions(mut self, input: crate::model::BootstrapActionConfig) -> Self {
+            self.inner = self.inner.bootstrap_actions(input);
             self
         }
         /// <p>A list of bootstrap actions to run before Hadoop starts on the cluster nodes.</p>
@@ -4996,38 +4759,24 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_supported_products`](Self::set_supported_products).
         ///
         /// <note>
-        /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use
-        /// Applications.</p>
+        /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.</p>
         /// </note>
-        /// <p>A list of strings that indicates third-party software to use. For more information, see
-        /// the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR
-        /// Developer Guide</a>. Currently supported values are:</p>
+        /// <p>A list of strings that indicates third-party software to use. For more information, see the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Currently supported values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
-        /// </li>
-        /// <li>
-        /// <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p>
-        /// </li>
+        /// <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p> </li>
+        /// <li> <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li>
         /// </ul>
-        pub fn supported_products(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.supported_products(inp);
+        pub fn supported_products(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.supported_products(input.into());
             self
         }
         /// <note>
-        /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use
-        /// Applications.</p>
+        /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.</p>
         /// </note>
-        /// <p>A list of strings that indicates third-party software to use. For more information, see
-        /// the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR
-        /// Developer Guide</a>. Currently supported values are:</p>
+        /// <p>A list of strings that indicates third-party software to use. For more information, see the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Currently supported values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
-        /// </li>
-        /// <li>
-        /// <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p>
-        /// </li>
+        /// <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p> </li>
+        /// <li> <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li>
         /// </ul>
         pub fn set_supported_products(
             mut self,
@@ -5041,85 +4790,39 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_new_supported_products`](Self::set_new_supported_products).
         ///
         /// <note>
-        /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use
-        /// Applications.</p>
+        /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.</p>
         /// </note>
-        /// <p>A list of strings that indicates third-party software to use with the job flow that
-        /// accepts a user argument list. EMR accepts and forwards the argument list to the
-        /// corresponding installation script as bootstrap action arguments. For more information, see
-        /// "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Supported
-        /// values are:</p>
+        /// <p>A list of strings that indicates third-party software to use with the job flow that accepts a user argument list. EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action arguments. For more information, see "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Supported values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p>
-        /// </li>
-        /// <li>
-        /// <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p>
-        /// </li>
-        /// <li>
-        /// <p>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" -
-        /// launch the job flow using MapR M3 or M5 Edition respectively.</p>
-        /// </li>
-        /// <li>
-        /// <p>"mapr-m7" - launch the cluster using MapR M7 Edition.</p>
-        /// </li>
-        /// <li>
-        /// <p>"hunk" - launch the cluster with the Hunk Big Data Analytics Platform.</p>
-        /// </li>
-        /// <li>
-        /// <p>"hue"- launch the cluster with Hue installed.</p>
-        /// </li>
-        /// <li>
-        /// <p>"spark" - launch the cluster with Apache Spark installed.</p>
-        /// </li>
-        /// <li>
-        /// <p>"ganglia" - launch the cluster with the Ganglia Monitoring System
-        /// installed.</p>
-        /// </li>
+        /// <li> <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p> </li>
+        /// <li> <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p> </li>
+        /// <li> <p>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3 or M5 Edition respectively.</p> </li>
+        /// <li> <p>"mapr-m7" - launch the cluster using MapR M7 Edition.</p> </li>
+        /// <li> <p>"hunk" - launch the cluster with the Hunk Big Data Analytics Platform.</p> </li>
+        /// <li> <p>"hue"- launch the cluster with Hue installed.</p> </li>
+        /// <li> <p>"spark" - launch the cluster with Apache Spark installed.</p> </li>
+        /// <li> <p>"ganglia" - launch the cluster with the Ganglia Monitoring System installed.</p> </li>
         /// </ul>
         pub fn new_supported_products(
             mut self,
-            inp: impl Into<crate::model::SupportedProductConfig>,
+            input: crate::model::SupportedProductConfig,
         ) -> Self {
-            self.inner = self.inner.new_supported_products(inp);
+            self.inner = self.inner.new_supported_products(input);
             self
         }
         /// <note>
-        /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use
-        /// Applications.</p>
+        /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.</p>
         /// </note>
-        /// <p>A list of strings that indicates third-party software to use with the job flow that
-        /// accepts a user argument list. EMR accepts and forwards the argument list to the
-        /// corresponding installation script as bootstrap action arguments. For more information, see
-        /// "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Supported
-        /// values are:</p>
+        /// <p>A list of strings that indicates third-party software to use with the job flow that accepts a user argument list. EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action arguments. For more information, see "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Supported values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p>
-        /// </li>
-        /// <li>
-        /// <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p>
-        /// </li>
-        /// <li>
-        /// <p>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" -
-        /// launch the job flow using MapR M3 or M5 Edition respectively.</p>
-        /// </li>
-        /// <li>
-        /// <p>"mapr-m7" - launch the cluster using MapR M7 Edition.</p>
-        /// </li>
-        /// <li>
-        /// <p>"hunk" - launch the cluster with the Hunk Big Data Analytics Platform.</p>
-        /// </li>
-        /// <li>
-        /// <p>"hue"- launch the cluster with Hue installed.</p>
-        /// </li>
-        /// <li>
-        /// <p>"spark" - launch the cluster with Apache Spark installed.</p>
-        /// </li>
-        /// <li>
-        /// <p>"ganglia" - launch the cluster with the Ganglia Monitoring System
-        /// installed.</p>
-        /// </li>
+        /// <li> <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p> </li>
+        /// <li> <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p> </li>
+        /// <li> <p>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3 or M5 Edition respectively.</p> </li>
+        /// <li> <p>"mapr-m7" - launch the cluster using MapR M7 Edition.</p> </li>
+        /// <li> <p>"hunk" - launch the cluster with the Hunk Big Data Analytics Platform.</p> </li>
+        /// <li> <p>"hue"- launch the cluster with Hue installed.</p> </li>
+        /// <li> <p>"spark" - launch the cluster with Apache Spark installed.</p> </li>
+        /// <li> <p>"ganglia" - launch the cluster with the Ganglia Monitoring System installed.</p> </li>
         /// </ul>
         pub fn set_new_supported_products(
             mut self,
@@ -5132,18 +4835,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_applications`](Self::set_applications).
         ///
-        /// <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications
-        /// for Amazon EMR to install and configure when launching the cluster. For a list of
-        /// applications available for each Amazon EMR release version, see the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR Release
-        /// Guide</a>.</p>
-        pub fn applications(mut self, inp: impl Into<crate::model::Application>) -> Self {
-            self.inner = self.inner.applications(inp);
+        /// <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications for Amazon EMR to install and configure when launching the cluster. For a list of applications available for each Amazon EMR release version, see the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR Release Guide</a>.</p>
+        pub fn applications(mut self, input: crate::model::Application) -> Self {
+            self.inner = self.inner.applications(input);
             self
         }
-        /// <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications
-        /// for Amazon EMR to install and configure when launching the cluster. For a list of
-        /// applications available for each Amazon EMR release version, see the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR Release
-        /// Guide</a>.</p>
+        /// <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications for Amazon EMR to install and configure when launching the cluster. For a list of applications available for each Amazon EMR release version, see the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR Release Guide</a>.</p>
         pub fn set_applications(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Application>>,
@@ -5155,14 +4852,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
         ///
-        /// <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied for the EMR
-        /// cluster you are creating.</p>
-        pub fn configurations(mut self, inp: impl Into<crate::model::Configuration>) -> Self {
-            self.inner = self.inner.configurations(inp);
+        /// <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied for the EMR cluster you are creating.</p>
+        pub fn configurations(mut self, input: crate::model::Configuration) -> Self {
+            self.inner = self.inner.configurations(input);
             self
         }
-        /// <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied for the EMR
-        /// cluster you are creating.</p>
+        /// <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied for the EMR cluster you are creating.</p>
         pub fn set_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
@@ -5172,8 +4867,8 @@ pub mod fluent_builders {
         }
         /// <p>Set this value to <code>true</code> so that IAM principals in the Amazon Web Services account associated with the cluster can perform EMR actions on the cluster that their IAM policies allow. This value defaults to <code>true</code> for clusters created using the EMR API or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command.</p>
         /// <p>When set to <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions for the cluster, regardless of the IAM permissions policies attached to other IAM principals. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
-        pub fn visible_to_all_users(mut self, inp: bool) -> Self {
-            self.inner = self.inner.visible_to_all_users(inp);
+        pub fn visible_to_all_users(mut self, input: bool) -> Self {
+            self.inner = self.inner.visible_to_all_users(input);
             self
         }
         /// <p>Set this value to <code>true</code> so that IAM principals in the Amazon Web Services account associated with the cluster can perform EMR actions on the cluster that their IAM policies allow. This value defaults to <code>true</code> for clusters created using the EMR API or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command.</p>
@@ -5182,18 +4877,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_visible_to_all_users(input);
             self
         }
-        /// <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster. The EC2
-        /// instances of the cluster assume this role. The default role is
-        /// <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must have
-        /// already created it using the CLI or console.</p>
-        pub fn job_flow_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_flow_role(inp);
+        /// <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster. The EC2 instances of the cluster assume this role. The default role is <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must have already created it using the CLI or console.</p>
+        pub fn job_flow_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_flow_role(input.into());
             self
         }
-        /// <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster. The EC2
-        /// instances of the cluster assume this role. The default role is
-        /// <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must have
-        /// already created it using the CLI or console.</p>
+        /// <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster. The EC2 instances of the cluster assume this role. The default role is <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must have already created it using the CLI or console.</p>
         pub fn set_job_flow_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5201,14 +4890,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_flow_role(input);
             self
         }
-        /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on
-        /// your behalf.</p>
-        pub fn service_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role(inp);
+        /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on your behalf.</p>
+        pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role(input.into());
             self
         }
-        /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on
-        /// your behalf.</p>
+        /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on your behalf.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_service_role(input);
             self
@@ -5218,8 +4905,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to associate with a cluster and propagate to Amazon EC2 instances.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags to associate with a cluster and propagate to Amazon EC2 instances.</p>
@@ -5231,8 +4918,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of a security configuration to apply to the cluster.</p>
-        pub fn security_configuration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_configuration(inp);
+        pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_configuration(input.into());
             self
         }
         /// <p>The name of a security configuration to apply to the cluster.</p>
@@ -5243,18 +4930,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_security_configuration(input);
             self
         }
-        /// <p>An IAM role for automatic scaling policies. The default role is
-        /// <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the
-        /// automatic scaling feature requires to launch and terminate EC2 instances in an instance
-        /// group.</p>
-        pub fn auto_scaling_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_role(inp);
+        /// <p>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the automatic scaling feature requires to launch and terminate EC2 instances in an instance group.</p>
+        pub fn auto_scaling_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auto_scaling_role(input.into());
             self
         }
-        /// <p>An IAM role for automatic scaling policies. The default role is
-        /// <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the
-        /// automatic scaling feature requires to launch and terminate EC2 instances in an instance
-        /// group.</p>
+        /// <p>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the automatic scaling feature requires to launch and terminate EC2 instances in an instance group.</p>
         pub fn set_auto_scaling_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5262,34 +4943,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_scaling_role(input);
             self
         }
-        /// <p>Specifies the way that individual Amazon EC2 instances terminate when an automatic
-        /// scale-in activity occurs or an instance group is resized.
-        /// <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at
-        /// the instance-hour boundary, regardless of when the request to terminate the instance was
-        /// submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default
-        /// for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code>
-        /// indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before
-        /// terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either
-        /// behavior, Amazon EMR removes the least active nodes first and blocks instance termination
-        /// if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
-        /// only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR
-        /// earlier than 5.1.0.</p>
-        pub fn scale_down_behavior(mut self, inp: crate::model::ScaleDownBehavior) -> Self {
-            self.inner = self.inner.scale_down_behavior(inp);
+        /// <p>Specifies the way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
+        pub fn scale_down_behavior(mut self, input: crate::model::ScaleDownBehavior) -> Self {
+            self.inner = self.inner.scale_down_behavior(input);
             self
         }
-        /// <p>Specifies the way that individual Amazon EC2 instances terminate when an automatic
-        /// scale-in activity occurs or an instance group is resized.
-        /// <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at
-        /// the instance-hour boundary, regardless of when the request to terminate the instance was
-        /// submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default
-        /// for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code>
-        /// indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before
-        /// terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either
-        /// behavior, Amazon EMR removes the least active nodes first and blocks instance termination
-        /// if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
-        /// only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR
-        /// earlier than 5.1.0.</p>
+        /// <p>Specifies the way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
         pub fn set_scale_down_behavior(
             mut self,
             input: std::option::Option<crate::model::ScaleDownBehavior>,
@@ -5297,30 +4956,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_scale_down_behavior(input);
             self
         }
-        /// <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon
-        /// EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it launches cluster EC2
-        /// instances. For more information about custom AMIs in Amazon EMR, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using a Custom
-        /// AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the
-        /// cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For Amazon EMR
-        /// versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p>
-        /// <p>For information about creating a custom AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating an Amazon EBS-Backed
-        /// Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux
-        /// Instances</i>. For information about finding an AMI ID, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Linux
-        /// AMI</a>. </p>
-        pub fn custom_ami_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_ami_id(inp);
+        /// <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it launches cluster EC2 instances. For more information about custom AMIs in Amazon EMR, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p>
+        /// <p>For information about creating a custom AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating an Amazon EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For information about finding an AMI ID, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Linux AMI</a>. </p>
+        pub fn custom_ami_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_ami_id(input.into());
             self
         }
-        /// <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon
-        /// EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it launches cluster EC2
-        /// instances. For more information about custom AMIs in Amazon EMR, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using a Custom
-        /// AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the
-        /// cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For Amazon EMR
-        /// versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p>
-        /// <p>For information about creating a custom AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating an Amazon EBS-Backed
-        /// Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux
-        /// Instances</i>. For information about finding an AMI ID, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Linux
-        /// AMI</a>. </p>
+        /// <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it launches cluster EC2 instances. For more information about custom AMIs in Amazon EMR, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p>
+        /// <p>For information about creating a custom AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating an Amazon EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For information about finding an AMI ID, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Linux AMI</a>. </p>
         pub fn set_custom_ami_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5328,32 +4971,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_custom_ami_id(input);
             self
         }
-        /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for
-        /// each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
-        pub fn ebs_root_volume_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.ebs_root_volume_size(inp);
+        /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
+        pub fn ebs_root_volume_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.ebs_root_volume_size(input);
             self
         }
-        /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for
-        /// each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
+        /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
         pub fn set_ebs_root_volume_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_ebs_root_volume_size(input);
             self
         }
-        /// <p>Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the
-        /// Amazon Linux AMI package repositories to apply automatically when the instance boots using
-        /// the AMI. If omitted, the default is <code>SECURITY</code>, which indicates that only
-        /// security updates are applied. If <code>NONE</code> is specified, no updates are applied,
-        /// and all updates must be applied manually.</p>
-        pub fn repo_upgrade_on_boot(mut self, inp: crate::model::RepoUpgradeOnBoot) -> Self {
-            self.inner = self.inner.repo_upgrade_on_boot(inp);
+        /// <p>Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the Amazon Linux AMI package repositories to apply automatically when the instance boots using the AMI. If omitted, the default is <code>SECURITY</code>, which indicates that only security updates are applied. If <code>NONE</code> is specified, no updates are applied, and all updates must be applied manually.</p>
+        pub fn repo_upgrade_on_boot(mut self, input: crate::model::RepoUpgradeOnBoot) -> Self {
+            self.inner = self.inner.repo_upgrade_on_boot(input);
             self
         }
-        /// <p>Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the
-        /// Amazon Linux AMI package repositories to apply automatically when the instance boots using
-        /// the AMI. If omitted, the default is <code>SECURITY</code>, which indicates that only
-        /// security updates are applied. If <code>NONE</code> is specified, no updates are applied,
-        /// and all updates must be applied manually.</p>
+        /// <p>Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the Amazon Linux AMI package repositories to apply automatically when the instance boots using the AMI. If omitted, the default is <code>SECURITY</code>, which indicates that only security updates are applied. If <code>NONE</code> is specified, no updates are applied, and all updates must be applied manually.</p>
         pub fn set_repo_upgrade_on_boot(
             mut self,
             input: std::option::Option<crate::model::RepoUpgradeOnBoot>,
@@ -5361,16 +4994,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repo_upgrade_on_boot(input);
             self
         }
-        /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a
-        /// security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a>
-        /// in the <i>Amazon EMR Management Guide</i>.</p>
-        pub fn kerberos_attributes(mut self, inp: crate::model::KerberosAttributes) -> Self {
-            self.inner = self.inner.kerberos_attributes(inp);
+        /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
+        pub fn kerberos_attributes(mut self, input: crate::model::KerberosAttributes) -> Self {
+            self.inner = self.inner.kerberos_attributes(input);
             self
         }
-        /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a
-        /// security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a>
-        /// in the <i>Amazon EMR Management Guide</i>.</p>
+        /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
         pub fn set_kerberos_attributes(
             mut self,
             input: std::option::Option<crate::model::KerberosAttributes>,
@@ -5378,21 +5007,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kerberos_attributes(input);
             self
         }
-        /// <p>Specifies the number of steps that can be executed concurrently. The default value is
-        /// <code>1</code>. The maximum value is <code>256</code>.</p>
-        pub fn step_concurrency_level(mut self, inp: i32) -> Self {
-            self.inner = self.inner.step_concurrency_level(inp);
+        /// <p>Specifies the number of steps that can be executed concurrently. The default value is <code>1</code>. The maximum value is <code>256</code>.</p>
+        pub fn step_concurrency_level(mut self, input: i32) -> Self {
+            self.inner = self.inner.step_concurrency_level(input);
             self
         }
-        /// <p>Specifies the number of steps that can be executed concurrently. The default value is
-        /// <code>1</code>. The maximum value is <code>256</code>.</p>
+        /// <p>Specifies the number of steps that can be executed concurrently. The default value is <code>1</code>. The maximum value is <code>256</code>.</p>
         pub fn set_step_concurrency_level(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_step_concurrency_level(input);
             self
         }
         /// <p> The specified managed scaling policy for an Amazon EMR cluster. </p>
-        pub fn managed_scaling_policy(mut self, inp: crate::model::ManagedScalingPolicy) -> Self {
-            self.inner = self.inner.managed_scaling_policy(inp);
+        pub fn managed_scaling_policy(mut self, input: crate::model::ManagedScalingPolicy) -> Self {
+            self.inner = self.inner.managed_scaling_policy(input);
             self
         }
         /// <p> The specified managed scaling policy for an Amazon EMR cluster. </p>
@@ -5410,9 +5037,9 @@ pub mod fluent_builders {
         /// <p>The specified placement group configuration for an Amazon EMR cluster.</p>
         pub fn placement_group_configs(
             mut self,
-            inp: impl Into<crate::model::PlacementGroupConfig>,
+            input: crate::model::PlacementGroupConfig,
         ) -> Self {
-            self.inner = self.inner.placement_group_configs(inp);
+            self.inner = self.inner.placement_group_configs(input);
             self
         }
         /// <p>The specified placement group configuration for an Amazon EMR cluster.</p>
@@ -5424,8 +5051,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>An auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control cluster termination</a>.</p>
-        pub fn auto_termination_policy(mut self, inp: crate::model::AutoTerminationPolicy) -> Self {
-            self.inner = self.inner.auto_termination_policy(inp);
+        pub fn auto_termination_policy(
+            mut self,
+            input: crate::model::AutoTerminationPolicy,
+        ) -> Self {
+            self.inner = self.inner.auto_termination_policy(input);
             self
         }
         /// <p>An auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control cluster termination</a>.</p>
@@ -5439,22 +5069,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SetTerminationProtection`.
     ///
-    /// <p>SetTerminationProtection locks a cluster (job flow) so the EC2 instances in the cluster
-    /// cannot be terminated by user intervention, an API call, or in the event of a job-flow
-    /// error. The cluster still terminates upon successful completion of the job flow. Calling
-    /// <code>SetTerminationProtection</code> on a cluster is similar to calling the Amazon EC2
-    /// <code>DisableAPITermination</code> API on all EC2 instances in a cluster.</p>
-    /// <p>
-    /// <code>SetTerminationProtection</code> is used to prevent accidental termination of a
-    /// cluster and to ensure that in the event of an error, the instances persist so that you can
-    /// recover any data stored in their ephemeral instance storage.</p>
-    /// <p> To terminate a cluster that has been locked by setting
-    /// <code>SetTerminationProtection</code> to <code>true</code>, you must first unlock the
-    /// job flow by a subsequent call to <code>SetTerminationProtection</code> in which you set the
-    /// value to <code>false</code>. </p>
-    /// <p> For more information, see<a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_TerminationProtection.html">Managing Cluster
-    /// Termination</a> in the <i>Amazon EMR Management Guide</i>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>SetTerminationProtection locks a cluster (job flow) so the EC2 instances in the cluster cannot be terminated by user intervention, an API call, or in the event of a job-flow error. The cluster still terminates upon successful completion of the job flow. Calling <code>SetTerminationProtection</code> on a cluster is similar to calling the Amazon EC2 <code>DisableAPITermination</code> API on all EC2 instances in a cluster.</p>
+    /// <p> <code>SetTerminationProtection</code> is used to prevent accidental termination of a cluster and to ensure that in the event of an error, the instances persist so that you can recover any data stored in their ephemeral instance storage.</p>
+    /// <p> To terminate a cluster that has been locked by setting <code>SetTerminationProtection</code> to <code>true</code>, you must first unlock the job flow by a subsequent call to <code>SetTerminationProtection</code> in which you set the value to <code>false</code>. </p>
+    /// <p> For more information, see<a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_TerminationProtection.html">Managing Cluster Termination</a> in the <i>Amazon EMR Management Guide</i>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetTerminationProtection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5499,10 +5118,10 @@ pub mod fluent_builders {
                 crate::input::SetTerminationProtectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5514,14 +5133,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_job_flow_ids`](Self::set_job_flow_ids).
         ///
-        /// <p> A list of strings that uniquely identify the clusters to protect. This identifier is
-        /// returned by <a>RunJobFlow</a> and can also be obtained from <a>DescribeJobFlows</a> . </p>
-        pub fn job_flow_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_flow_ids(inp);
+        /// <p> A list of strings that uniquely identify the clusters to protect. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>DescribeJobFlows</code> . </p>
+        pub fn job_flow_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_flow_ids(input.into());
             self
         }
-        /// <p> A list of strings that uniquely identify the clusters to protect. This identifier is
-        /// returned by <a>RunJobFlow</a> and can also be obtained from <a>DescribeJobFlows</a> . </p>
+        /// <p> A list of strings that uniquely identify the clusters to protect. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>DescribeJobFlows</code> . </p>
         pub fn set_job_flow_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5529,16 +5146,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_flow_ids(input);
             self
         }
-        /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2
-        /// instances in the cluster from shutting down due to API calls, user intervention, or
-        /// job-flow error.</p>
-        pub fn termination_protected(mut self, inp: bool) -> Self {
-            self.inner = self.inner.termination_protected(inp);
+        /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error.</p>
+        pub fn termination_protected(mut self, input: bool) -> Self {
+            self.inner = self.inner.termination_protected(input);
             self
         }
-        /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2
-        /// instances in the cluster from shutting down due to API calls, user intervention, or
-        /// job-flow error.</p>
+        /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error.</p>
         pub fn set_termination_protected(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_termination_protected(input);
             self
@@ -5546,11 +5159,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SetVisibleToAllUsers`.
     ///
-    /// <p>Sets the <a>Cluster$VisibleToAllUsers</a> value for an EMR cluster. When <code>true</code>, IAM principals in the
-    /// Amazon Web Services account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions on the cluster, regardless of IAM permissions policies attached to other IAM principals.</p>
-    /// <p>This action works on running clusters. When you create a cluster, use the <a>RunJobFlowInput$VisibleToAllUsers</a> parameter.</p>
+    /// <p>Sets the <code>Cluster$VisibleToAllUsers</code> value for an EMR cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions on the cluster, regardless of IAM permissions policies attached to other IAM principals.</p>
+    /// <p>This action works on running clusters. When you create a cluster, use the <code>RunJobFlowInput$VisibleToAllUsers</code> parameter.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetVisibleToAllUsers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5595,10 +5207,10 @@ pub mod fluent_builders {
                 crate::input::SetVisibleToAllUsersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5611,8 +5223,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_job_flow_ids`](Self::set_job_flow_ids).
         ///
         /// <p>The unique identifier of the job flow (cluster).</p>
-        pub fn job_flow_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_flow_ids(inp);
+        pub fn job_flow_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_flow_ids(input.into());
             self
         }
         /// <p>The unique identifier of the job flow (cluster).</p>
@@ -5623,16 +5235,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_flow_ids(input);
             self
         }
-        /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform
-        /// EMR actions on the cluster that the IAM policies attached to the principal allow. A
-        /// value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
-        pub fn visible_to_all_users(mut self, inp: bool) -> Self {
-            self.inner = self.inner.visible_to_all_users(inp);
+        /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
+        pub fn visible_to_all_users(mut self, input: bool) -> Self {
+            self.inner = self.inner.visible_to_all_users(input);
             self
         }
-        /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform
-        /// EMR actions on the cluster that the IAM policies attached to the principal allow. A
-        /// value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
+        /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
         pub fn set_visible_to_all_users(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_visible_to_all_users(input);
             self
@@ -5641,7 +5249,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartNotebookExecution`.
     ///
     /// <p>Starts a notebook execution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartNotebookExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5686,10 +5294,10 @@ pub mod fluent_builders {
                 crate::input::StartNotebookExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5698,8 +5306,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the EMR Notebook to use for notebook execution.</p>
-        pub fn editor_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.editor_id(inp);
+        pub fn editor_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.editor_id(input.into());
             self
         }
         /// <p>The unique identifier of the EMR Notebook to use for notebook execution.</p>
@@ -5707,26 +5315,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_editor_id(input);
             self
         }
-        /// <p>The path and file name of the notebook file for this execution, relative to the path
-        /// specified for the EMR Notebook. For example, if you specify a path of
-        /// <code>s3://MyBucket/MyNotebooks</code> when you create an EMR Notebook for a notebook
-        /// with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of this
-        /// request), and you specify a <code>RelativePath</code> of
-        /// <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file
-        /// for the notebook execution is
-        /// <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>.</p>
-        pub fn relative_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.relative_path(inp);
+        /// <p>The path and file name of the notebook file for this execution, relative to the path specified for the EMR Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you create an EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of this request), and you specify a <code>RelativePath</code> of <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file for the notebook execution is <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>.</p>
+        pub fn relative_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.relative_path(input.into());
             self
         }
-        /// <p>The path and file name of the notebook file for this execution, relative to the path
-        /// specified for the EMR Notebook. For example, if you specify a path of
-        /// <code>s3://MyBucket/MyNotebooks</code> when you create an EMR Notebook for a notebook
-        /// with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of this
-        /// request), and you specify a <code>RelativePath</code> of
-        /// <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file
-        /// for the notebook execution is
-        /// <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>.</p>
+        /// <p>The path and file name of the notebook file for this execution, relative to the path specified for the EMR Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you create an EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of this request), and you specify a <code>RelativePath</code> of <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file for the notebook execution is <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>.</p>
         pub fn set_relative_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5735,8 +5329,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional name for the notebook execution.</p>
-        pub fn notebook_execution_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notebook_execution_name(inp);
+        pub fn notebook_execution_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notebook_execution_name(input.into());
             self
         }
         /// <p>An optional name for the notebook execution.</p>
@@ -5747,14 +5341,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notebook_execution_name(input);
             self
         }
-        /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for
-        /// execution.</p>
-        pub fn notebook_params(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notebook_params(inp);
+        /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for execution.</p>
+        pub fn notebook_params(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notebook_params(input.into());
             self
         }
-        /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for
-        /// execution.</p>
+        /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for execution.</p>
         pub fn set_notebook_params(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5763,8 +5355,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the execution engine (cluster) that runs the notebook execution.</p>
-        pub fn execution_engine(mut self, inp: crate::model::ExecutionEngineConfig) -> Self {
-            self.inner = self.inner.execution_engine(inp);
+        pub fn execution_engine(mut self, input: crate::model::ExecutionEngineConfig) -> Self {
+            self.inner = self.inner.execution_engine(input);
             self
         }
         /// <p>Specifies the execution engine (cluster) that runs the notebook execution.</p>
@@ -5775,29 +5367,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_execution_engine(input);
             self
         }
-        /// <p>The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR
-        /// role) for the notebook execution.</p>
-        pub fn service_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role(inp);
+        /// <p>The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR role) for the notebook execution.</p>
+        pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role(input.into());
             self
         }
-        /// <p>The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR
-        /// role) for the notebook execution.</p>
+        /// <p>The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR role) for the notebook execution.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_service_role(input);
             self
         }
-        /// <p>The unique identifier of the Amazon EC2 security group to associate with the EMR
-        /// Notebook for this notebook execution.</p>
+        /// <p>The unique identifier of the Amazon EC2 security group to associate with the EMR Notebook for this notebook execution.</p>
         pub fn notebook_instance_security_group_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.notebook_instance_security_group_id(inp);
+            self.inner = self.inner.notebook_instance_security_group_id(input.into());
             self
         }
-        /// <p>The unique identifier of the Amazon EC2 security group to associate with the EMR
-        /// Notebook for this notebook execution.</p>
+        /// <p>The unique identifier of the Amazon EC2 security group to associate with the EMR Notebook for this notebook execution.</p>
         pub fn set_notebook_instance_security_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5809,16 +5397,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value
-        /// pairs that consist of a required key string with a maximum of 128 characters and an
-        /// optional value string with a maximum of 256 characters.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters and an optional value string with a maximum of 256 characters.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value
-        /// pairs that consist of a required key string with a maximum of 128 characters and an
-        /// optional value string with a maximum of 256 characters.</p>
+        /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters and an optional value string with a maximum of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5830,7 +5414,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopNotebookExecution`.
     ///
     /// <p>Stops a notebook execution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopNotebookExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5875,10 +5459,10 @@ pub mod fluent_builders {
                 crate::input::StopNotebookExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5887,8 +5471,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the notebook execution.</p>
-        pub fn notebook_execution_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notebook_execution_id(inp);
+        pub fn notebook_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notebook_execution_id(input.into());
             self
         }
         /// <p>The unique identifier of the notebook execution.</p>
@@ -5902,15 +5486,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TerminateJobFlows`.
     ///
-    /// <p>TerminateJobFlows shuts a list of clusters (job flows) down. When a job flow is shut
-    /// down, any step not yet completed is canceled and the EC2 instances on which the cluster is
-    /// running are stopped. Any log files not already saved are uploaded to Amazon S3 if a LogUri
-    /// was specified when the cluster was created.</p>
-    /// <p>The maximum number of clusters allowed is 10. The call to <code>TerminateJobFlows</code>
-    /// is asynchronous. Depending on the configuration of the cluster, it may take up to 1-5
-    /// minutes for the cluster to completely terminate and release allocated resources, such as
-    /// Amazon EC2 instances.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>TerminateJobFlows shuts a list of clusters (job flows) down. When a job flow is shut down, any step not yet completed is canceled and the EC2 instances on which the cluster is running are stopped. Any log files not already saved are uploaded to Amazon S3 if a LogUri was specified when the cluster was created.</p>
+    /// <p>The maximum number of clusters allowed is 10. The call to <code>TerminateJobFlows</code> is asynchronous. Depending on the configuration of the cluster, it may take up to 1-5 minutes for the cluster to completely terminate and release allocated resources, such as Amazon EC2 instances.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TerminateJobFlows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5955,10 +5533,10 @@ pub mod fluent_builders {
                 crate::input::TerminateJobFlowsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5971,8 +5549,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_job_flow_ids`](Self::set_job_flow_ids).
         ///
         /// <p>A list of job flows to be shut down.</p>
-        pub fn job_flow_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_flow_ids(inp);
+        pub fn job_flow_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_flow_ids(input.into());
             self
         }
         /// <p>A list of job flows to be shut down.</p>
@@ -5987,7 +5565,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateStudio`.
     ///
     /// <p>Updates an Amazon EMR Studio configuration, including attributes such as name, description, and subnets.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateStudio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6032,10 +5610,10 @@ pub mod fluent_builders {
                 crate::input::UpdateStudioInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6044,8 +5622,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon EMR Studio to update.</p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(input.into());
             self
         }
         /// <p>The ID of the Amazon EMR Studio to update.</p>
@@ -6054,8 +5632,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A descriptive name for the Amazon EMR Studio.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A descriptive name for the Amazon EMR Studio.</p>
@@ -6064,8 +5642,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A detailed description to assign to the Amazon EMR Studio.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A detailed description to assign to the Amazon EMR Studio.</p>
@@ -6078,8 +5656,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
         /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. The list can include new subnet IDs, but must also include all of the subnet IDs previously associated with the Studio. The list order does not matter. A Studio can have a maximum of 5 subnets. The subnets must belong to the same VPC as the Studio. </p>
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_ids(inp);
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_ids(input.into());
             self
         }
         /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. The list can include new subnet IDs, but must also include all of the subnet IDs previously associated with the Studio. The list order does not matter. A Studio can have a maximum of 5 subnets. The subnets must belong to the same VPC as the Studio. </p>
@@ -6091,8 +5669,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.</p>
-        pub fn default_s3_location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_s3_location(inp);
+        pub fn default_s3_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_s3_location(input.into());
             self
         }
         /// <p>The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.</p>
@@ -6106,9 +5684,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateStudioSessionMapping`.
     ///
-    /// <p>Updates the session policy attached to the user or group for the specified Amazon EMR
-    /// Studio.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the session policy attached to the user or group for the specified Amazon EMR Studio.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateStudioSessionMapping<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6153,10 +5730,10 @@ pub mod fluent_builders {
                 crate::input::UpdateStudioSessionMappingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6165,8 +5742,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon EMR Studio.</p>
-        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(inp);
+        pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(input.into());
             self
         }
         /// <p>The ID of the Amazon EMR Studio.</p>
@@ -6174,28 +5751,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_studio_id(input);
             self
         }
-        /// <p>The globally unique identifier (GUID) of the user or group. For more information, see
-        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-        pub fn identity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(inp);
+        /// <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(input.into());
             self
         }
-        /// <p>The globally unique identifier (GUID) of the user or group. For more information, see
-        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_identity_id(input);
             self
         }
-        /// <p>The name of the user or group to update. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-        pub fn identity_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_name(inp);
+        /// <p>The name of the user or group to update. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_name(input.into());
             self
         }
-        /// <p>The name of the user or group to update. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// <p>The name of the user or group to update. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn set_identity_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6204,8 +5775,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the identity to update is a user or a group.</p>
-        pub fn identity_type(mut self, inp: crate::model::IdentityType) -> Self {
-            self.inner = self.inner.identity_type(inp);
+        pub fn identity_type(mut self, input: crate::model::IdentityType) -> Self {
+            self.inner = self.inner.identity_type(input);
             self
         }
         /// <p>Specifies whether the identity to update is a user or a group.</p>
@@ -6216,14 +5787,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_identity_type(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the session policy to associate with the specified
-        /// user or group.</p>
-        pub fn session_policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_policy_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the session policy to associate with the specified user or group.</p>
+        pub fn session_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_policy_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the session policy to associate with the specified
-        /// user or group.</p>
+        /// <p>The Amazon Resource Name (ARN) of the session policy to associate with the specified user or group.</p>
         pub fn set_session_policy_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6233,6 +5802,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

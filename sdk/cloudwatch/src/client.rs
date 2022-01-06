@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon CloudWatch
@@ -122,6 +122,7 @@ where
     ///
     /// See [`DescribeAlarmHistory`](crate::client::fluent_builders::DescribeAlarmHistory) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeAlarmHistory::into_paginator).
     pub fn describe_alarm_history(&self) -> fluent_builders::DescribeAlarmHistory<C, M, R> {
         fluent_builders::DescribeAlarmHistory::new(self.handle.clone())
     }
@@ -129,6 +130,7 @@ where
     ///
     /// See [`DescribeAlarms`](crate::client::fluent_builders::DescribeAlarms) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeAlarms::into_paginator).
     pub fn describe_alarms(&self) -> fluent_builders::DescribeAlarms<C, M, R> {
         fluent_builders::DescribeAlarms::new(self.handle.clone())
     }
@@ -150,6 +152,7 @@ where
     ///
     /// See [`DescribeInsightRules`](crate::client::fluent_builders::DescribeInsightRules) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeInsightRules::into_paginator).
     pub fn describe_insight_rules(&self) -> fluent_builders::DescribeInsightRules<C, M, R> {
         fluent_builders::DescribeInsightRules::new(self.handle.clone())
     }
@@ -199,6 +202,7 @@ where
     ///
     /// See [`GetMetricData`](crate::client::fluent_builders::GetMetricData) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetMetricData::into_paginator).
     pub fn get_metric_data(&self) -> fluent_builders::GetMetricData<C, M, R> {
         fluent_builders::GetMetricData::new(self.handle.clone())
     }
@@ -227,6 +231,7 @@ where
     ///
     /// See [`ListDashboards`](crate::client::fluent_builders::ListDashboards) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDashboards::into_paginator).
     pub fn list_dashboards(&self) -> fluent_builders::ListDashboards<C, M, R> {
         fluent_builders::ListDashboards::new(self.handle.clone())
     }
@@ -234,6 +239,7 @@ where
     ///
     /// See [`ListMetrics`](crate::client::fluent_builders::ListMetrics) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMetrics::into_paginator).
     pub fn list_metrics(&self) -> fluent_builders::ListMetrics<C, M, R> {
         fluent_builders::ListMetrics::new(self.handle.clone())
     }
@@ -241,6 +247,7 @@ where
     ///
     /// See [`ListMetricStreams`](crate::client::fluent_builders::ListMetricStreams) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMetricStreams::into_paginator).
     pub fn list_metric_streams(&self) -> fluent_builders::ListMetricStreams<C, M, R> {
         fluent_builders::ListMetricStreams::new(self.handle.clone())
     }
@@ -346,23 +353,13 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `DeleteAlarms`.
     ///
-    /// <p>Deletes the specified alarms. You can delete up to 100 alarms in one operation. However, this total can include no more
-    /// than one composite alarm. For example, you could delete 99 metric alarms and one composite alarms with one operation, but you can't
-    /// delete two composite alarms with one operation.</p>
-    /// <p>
-    /// In the event of an error, no alarms are
-    /// deleted.</p>
-    /// <note>
-    /// <p>It is possible to create a loop or cycle of composite alarms, where composite alarm A depends on composite alarm B, and
-    /// composite alarm B also depends on composite alarm A. In this scenario, you can't delete any composite alarm that is part of the cycle
-    /// because there is always still a composite alarm that depends on that alarm that you want to delete.</p>
-    /// <p>To get out of such a situation, you must
-    /// break the cycle by changing the rule of one of the composite alarms in the cycle to remove a dependency that creates the cycle. The simplest
-    /// change to make to break a cycle is to change the <code>AlarmRule</code> of one of the alarms to <code>False</code>. </p>
-    /// <p>Additionally, the evaluation of composite alarms stops if CloudWatch detects a cycle in the evaluation path.
-    /// </p>
+    /// <p>Deletes the specified alarms. You can delete up to 100 alarms in one operation. However, this total can include no more than one composite alarm. For example, you could delete 99 metric alarms and one composite alarms with one operation, but you can't delete two composite alarms with one operation.</p>
+    /// <p> In the event of an error, no alarms are deleted.</p> <note>
+    /// <p>It is possible to create a loop or cycle of composite alarms, where composite alarm A depends on composite alarm B, and composite alarm B also depends on composite alarm A. In this scenario, you can't delete any composite alarm that is part of the cycle because there is always still a composite alarm that depends on that alarm that you want to delete.</p>
+    /// <p>To get out of such a situation, you must break the cycle by changing the rule of one of the composite alarms in the cycle to remove a dependency that creates the cycle. The simplest change to make to break a cycle is to change the <code>AlarmRule</code> of one of the alarms to <code>False</code>. </p>
+    /// <p>Additionally, the evaluation of composite alarms stops if CloudWatch detects a cycle in the evaluation path. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAlarms<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -407,10 +404,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAlarmsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -423,8 +420,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_alarm_names`](Self::set_alarm_names).
         ///
         /// <p>The alarms to be deleted.</p>
-        pub fn alarm_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_names(inp);
+        pub fn alarm_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_names(input.into());
             self
         }
         /// <p>The alarms to be deleted.</p>
@@ -439,7 +436,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAnomalyDetector`.
     ///
     /// <p>Deletes the specified anomaly detection model from your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAnomalyDetector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -484,10 +481,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAnomalyDetectorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -496,8 +493,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The namespace associated with the anomaly detection model to delete.</p>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace associated with the anomaly detection model to delete.</p>
@@ -506,8 +503,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metric name associated with the anomaly detection model to delete.</p>
-        pub fn metric_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_name(inp);
+        pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_name(input.into());
             self
         }
         /// <p>The metric name associated with the anomaly detection model to delete.</p>
@@ -520,8 +517,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p>The metric dimensions associated with the anomaly detection model to delete.</p>
-        pub fn dimensions(mut self, inp: impl Into<crate::model::Dimension>) -> Self {
-            self.inner = self.inner.dimensions(inp);
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
+            self.inner = self.inner.dimensions(input);
             self
         }
         /// <p>The metric dimensions associated with the anomaly detection model to delete.</p>
@@ -533,8 +530,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The statistic associated with the anomaly detection model to delete.</p>
-        pub fn stat(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stat(inp);
+        pub fn stat(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stat(input.into());
             self
         }
         /// <p>The statistic associated with the anomaly detection model to delete.</p>
@@ -543,76 +540,32 @@ pub mod fluent_builders {
             self
         }
         /// <p>A single metric anomaly detector to be deleted.</p>
-        /// <p>When using <code>SingleMetricAnomalyDetector</code>,
-        /// you cannot include the following parameters in the same operation:</p>
-        ///
+        /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Dimensions</code>,</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MetricName</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Namespace</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Stat</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Dimensions</code>,</p> </li>
+        /// <li> <p> <code>MetricName</code> </p> </li>
+        /// <li> <p> <code>Namespace</code> </p> </li>
+        /// <li> <p> <code>Stat</code> </p> </li>
+        /// <li> <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li>
         /// </ul>
-        ///
-        /// <p>Instead, specify the single metric anomaly detector attributes
-        /// as part of the <code>SingleMetricAnomalyDetector</code> property.</p>
+        /// <p>Instead, specify the single metric anomaly detector attributes as part of the <code>SingleMetricAnomalyDetector</code> property.</p>
         pub fn single_metric_anomaly_detector(
             mut self,
-            inp: crate::model::SingleMetricAnomalyDetector,
+            input: crate::model::SingleMetricAnomalyDetector,
         ) -> Self {
-            self.inner = self.inner.single_metric_anomaly_detector(inp);
+            self.inner = self.inner.single_metric_anomaly_detector(input);
             self
         }
         /// <p>A single metric anomaly detector to be deleted.</p>
-        /// <p>When using <code>SingleMetricAnomalyDetector</code>,
-        /// you cannot include the following parameters in the same operation:</p>
-        ///
+        /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Dimensions</code>,</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MetricName</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Namespace</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Stat</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Dimensions</code>,</p> </li>
+        /// <li> <p> <code>MetricName</code> </p> </li>
+        /// <li> <p> <code>Namespace</code> </p> </li>
+        /// <li> <p> <code>Stat</code> </p> </li>
+        /// <li> <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li>
         /// </ul>
-        ///
-        /// <p>Instead, specify the single metric anomaly detector attributes
-        /// as part of the <code>SingleMetricAnomalyDetector</code> property.</p>
+        /// <p>Instead, specify the single metric anomaly detector attributes as part of the <code>SingleMetricAnomalyDetector</code> property.</p>
         pub fn set_single_metric_anomaly_detector(
             mut self,
             input: std::option::Option<crate::model::SingleMetricAnomalyDetector>,
@@ -622,73 +575,31 @@ pub mod fluent_builders {
         }
         /// <p>The metric math anomaly detector to be deleted.</p>
         /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include following parameters in the same operation:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Dimensions</code>,</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MetricName</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Namespace</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Stat</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Dimensions</code>,</p> </li>
+        /// <li> <p> <code>MetricName</code> </p> </li>
+        /// <li> <p> <code>Namespace</code> </p> </li>
+        /// <li> <p> <code>Stat</code> </p> </li>
+        /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li>
         /// </ul>
-        ///
-        /// <p>Instead, specify the metric math anomaly detector attributes as part of the
-        /// <code>MetricMathAnomalyDetector</code> property.</p>
+        /// <p>Instead, specify the metric math anomaly detector attributes as part of the <code>MetricMathAnomalyDetector</code> property.</p>
         pub fn metric_math_anomaly_detector(
             mut self,
-            inp: crate::model::MetricMathAnomalyDetector,
+            input: crate::model::MetricMathAnomalyDetector,
         ) -> Self {
-            self.inner = self.inner.metric_math_anomaly_detector(inp);
+            self.inner = self.inner.metric_math_anomaly_detector(input);
             self
         }
         /// <p>The metric math anomaly detector to be deleted.</p>
         /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include following parameters in the same operation:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Dimensions</code>,</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MetricName</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Namespace</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Stat</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Dimensions</code>,</p> </li>
+        /// <li> <p> <code>MetricName</code> </p> </li>
+        /// <li> <p> <code>Namespace</code> </p> </li>
+        /// <li> <p> <code>Stat</code> </p> </li>
+        /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li>
         /// </ul>
-        ///
-        /// <p>Instead, specify the metric math anomaly detector attributes as part of the
-        /// <code>MetricMathAnomalyDetector</code> property.</p>
+        /// <p>Instead, specify the metric math anomaly detector attributes as part of the <code>MetricMathAnomalyDetector</code> property.</p>
         pub fn set_metric_math_anomaly_detector(
             mut self,
             input: std::option::Option<crate::model::MetricMathAnomalyDetector>,
@@ -699,10 +610,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDashboards`.
     ///
-    /// <p>Deletes all dashboards that you specify. You
-    /// can specify up to 100 dashboards to delete. If there is an error during this call, no dashboards are
-    /// deleted.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes all dashboards that you specify. You can specify up to 100 dashboards to delete. If there is an error during this call, no dashboards are deleted.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDashboards<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -747,10 +656,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDashboardsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -763,8 +672,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_dashboard_names`](Self::set_dashboard_names).
         ///
         /// <p>The dashboards to be deleted. This parameter is required.</p>
-        pub fn dashboard_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_names(inp);
+        pub fn dashboard_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_names(input.into());
             self
         }
         /// <p>The dashboards to be deleted. This parameter is required.</p>
@@ -779,10 +688,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteInsightRules`.
     ///
     /// <p>Permanently deletes the specified Contributor Insights rules.</p>
-    /// <p>If you create a rule, delete it, and then re-create it with the same name, historical data from the first time
-    /// the rule was created might
-    /// not be available.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If you create a rule, delete it, and then re-create it with the same name, historical data from the first time the rule was created might not be available.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInsightRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -827,10 +734,10 @@ pub mod fluent_builders {
                 crate::input::DeleteInsightRulesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -843,8 +750,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_rule_names`](Self::set_rule_names).
         ///
         /// <p>An array of the rule names to delete. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
-        pub fn rule_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_names(inp);
+        pub fn rule_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_names(input.into());
             self
         }
         /// <p>An array of the rule names to delete. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
@@ -859,7 +766,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteMetricStream`.
     ///
     /// <p>Permanently deletes the metric stream that you specify.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMetricStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -904,10 +811,10 @@ pub mod fluent_builders {
                 crate::input::DeleteMetricStreamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -916,8 +823,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the metric stream to delete.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the metric stream to delete.</p>
@@ -928,13 +835,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAlarmHistory`.
     ///
-    /// <p>Retrieves the history for the specified alarm. You can filter the results by date range or item type.
-    /// If an alarm name is not specified, the histories for either all metric alarms or all composite alarms are returned.</p>
+    /// <p>Retrieves the history for the specified alarm. You can filter the results by date range or item type. If an alarm name is not specified, the histories for either all metric alarms or all composite alarms are returned.</p>
     /// <p>CloudWatch retains the history of an alarm even if you delete the alarm.</p>
-    /// <p>To use this operation and return information about a composite alarm, you must be signed on with
-    /// the <code>cloudwatch:DescribeAlarmHistory</code> permission that is scoped to <code>*</code>. You can't return information
-    /// about composite alarms if your <code>cloudwatch:DescribeAlarmHistory</code> permission has a narrower scope.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>To use this operation and return information about a composite alarm, you must be signed on with the <code>cloudwatch:DescribeAlarmHistory</code> permission that is scoped to <code>*</code>. You can't return information about composite alarms if your <code>cloudwatch:DescribeAlarmHistory</code> permission has a narrower scope.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAlarmHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -979,10 +883,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAlarmHistoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -990,9 +894,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeAlarmHistoryPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeAlarmHistoryPaginator<C, M, R> {
+            crate::paginator::DescribeAlarmHistoryPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the alarm.</p>
-        pub fn alarm_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_name(inp);
+        pub fn alarm_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_name(input.into());
             self
         }
         /// <p>The name of the alarm.</p>
@@ -1004,14 +914,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_alarm_types`](Self::set_alarm_types).
         ///
-        /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter,
-        /// only metric alarms are returned.</p>
-        pub fn alarm_types(mut self, inp: impl Into<crate::model::AlarmType>) -> Self {
-            self.inner = self.inner.alarm_types(inp);
+        /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
+        pub fn alarm_types(mut self, input: crate::model::AlarmType) -> Self {
+            self.inner = self.inner.alarm_types(input);
             self
         }
-        /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter,
-        /// only metric alarms are returned.</p>
+        /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
         pub fn set_alarm_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AlarmType>>,
@@ -1020,8 +928,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of alarm histories to retrieve.</p>
-        pub fn history_item_type(mut self, inp: crate::model::HistoryItemType) -> Self {
-            self.inner = self.inner.history_item_type(inp);
+        pub fn history_item_type(mut self, input: crate::model::HistoryItemType) -> Self {
+            self.inner = self.inner.history_item_type(input);
             self
         }
         /// <p>The type of alarm histories to retrieve.</p>
@@ -1033,8 +941,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The starting date to retrieve alarm history.</p>
-        pub fn start_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_date(inp);
+        pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_date(input);
             self
         }
         /// <p>The starting date to retrieve alarm history.</p>
@@ -1046,8 +954,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ending date to retrieve alarm history.</p>
-        pub fn end_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_date(inp);
+        pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_date(input);
             self
         }
         /// <p>The ending date to retrieve alarm history.</p>
@@ -1059,8 +967,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of alarm history records to retrieve.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of alarm history records to retrieve.</p>
@@ -1068,26 +976,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_records(input);
             self
         }
-        /// <p>The token returned by a previous call to indicate that there is more data
-        /// available.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token returned by a previous call to indicate that there is more data available.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token returned by a previous call to indicate that there is more data
-        /// available.</p>
+        /// <p>The token returned by a previous call to indicate that there is more data available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Specified whether to return the newest or oldest alarm history first. Specify <code>TimestampDescending</code> to have the newest
-        /// event history returned first, and specify <code>TimestampAscending</code> to have the oldest history returned first.</p>
-        pub fn scan_by(mut self, inp: crate::model::ScanBy) -> Self {
-            self.inner = self.inner.scan_by(inp);
+        /// <p>Specified whether to return the newest or oldest alarm history first. Specify <code>TimestampDescending</code> to have the newest event history returned first, and specify <code>TimestampAscending</code> to have the oldest history returned first.</p>
+        pub fn scan_by(mut self, input: crate::model::ScanBy) -> Self {
+            self.inner = self.inner.scan_by(input);
             self
         }
-        /// <p>Specified whether to return the newest or oldest alarm history first. Specify <code>TimestampDescending</code> to have the newest
-        /// event history returned first, and specify <code>TimestampAscending</code> to have the oldest history returned first.</p>
+        /// <p>Specified whether to return the newest or oldest alarm history first. Specify <code>TimestampDescending</code> to have the newest event history returned first, and specify <code>TimestampAscending</code> to have the oldest history returned first.</p>
         pub fn set_scan_by(mut self, input: std::option::Option<crate::model::ScanBy>) -> Self {
             self.inner = self.inner.set_scan_by(input);
             self
@@ -1095,12 +999,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAlarms`.
     ///
-    /// <p>Retrieves the specified alarms. You can filter the results by specifying a prefix for the alarm
-    /// name, the alarm state, or a prefix for any action.</p>
-    /// <p>To use this operation and return information about composite alarms, you must be signed on with
-    /// the <code>cloudwatch:DescribeAlarms</code> permission that is scoped to <code>*</code>. You can't return information
-    /// about composite alarms if your <code>cloudwatch:DescribeAlarms</code> permission has a narrower scope.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the specified alarms. You can filter the results by specifying a prefix for the alarm name, the alarm state, or a prefix for any action.</p>
+    /// <p>To use this operation and return information about composite alarms, you must be signed on with the <code>cloudwatch:DescribeAlarms</code> permission that is scoped to <code>*</code>. You can't return information about composite alarms if your <code>cloudwatch:DescribeAlarms</code> permission has a narrower scope.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAlarms<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1145,10 +1046,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAlarmsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1156,13 +1057,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeAlarmsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeAlarmsPaginator<C, M, R> {
+            crate::paginator::DescribeAlarmsPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `AlarmNames`.
         ///
         /// To override the contents of this collection use [`set_alarm_names`](Self::set_alarm_names).
         ///
         /// <p>The names of the alarms to retrieve information about.</p>
-        pub fn alarm_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_names(inp);
+        pub fn alarm_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_names(input.into());
             self
         }
         /// <p>The names of the alarms to retrieve information about.</p>
@@ -1173,18 +1080,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_alarm_names(input);
             self
         }
-        /// <p>An alarm name prefix. If you specify this parameter, you receive information about all alarms that have names
-        /// that start with this prefix.</p>
-        /// <p>If this parameter
-        /// is specified, you cannot specify <code>AlarmNames</code>.</p>
-        pub fn alarm_name_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_name_prefix(inp);
+        /// <p>An alarm name prefix. If you specify this parameter, you receive information about all alarms that have names that start with this prefix.</p>
+        /// <p>If this parameter is specified, you cannot specify <code>AlarmNames</code>.</p>
+        pub fn alarm_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_name_prefix(input.into());
             self
         }
-        /// <p>An alarm name prefix. If you specify this parameter, you receive information about all alarms that have names
-        /// that start with this prefix.</p>
-        /// <p>If this parameter
-        /// is specified, you cannot specify <code>AlarmNames</code>.</p>
+        /// <p>An alarm name prefix. If you specify this parameter, you receive information about all alarms that have names that start with this prefix.</p>
+        /// <p>If this parameter is specified, you cannot specify <code>AlarmNames</code>.</p>
         pub fn set_alarm_name_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1196,14 +1099,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_alarm_types`](Self::set_alarm_types).
         ///
-        /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter,
-        /// only metric alarms are returned.</p>
-        pub fn alarm_types(mut self, inp: impl Into<crate::model::AlarmType>) -> Self {
-            self.inner = self.inner.alarm_types(inp);
+        /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
+        pub fn alarm_types(mut self, input: crate::model::AlarmType) -> Self {
+            self.inner = self.inner.alarm_types(input);
             self
         }
-        /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter,
-        /// only metric alarms are returned.</p>
+        /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
         pub fn set_alarm_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AlarmType>>,
@@ -1211,43 +1112,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_alarm_types(input);
             self
         }
-        /// <p>If you use this parameter and specify the name of a composite alarm, the operation returns
-        /// information about the "children" alarms
-        /// of the alarm you specify. These are the metric alarms and composite alarms referenced in the
-        /// <code>AlarmRule</code> field of the composite alarm that you specify in
-        /// <code>ChildrenOfAlarmName</code>. Information about the composite alarm that you name in
-        /// <code>ChildrenOfAlarmName</code> is not returned.</p>
-        /// <p>If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the request except
-        /// for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you
-        /// receive a validation
-        /// error.</p>
-        /// <note>
-        /// <p>Only the <code>Alarm Name</code>, <code>ARN</code>, <code>StateValue</code> (OK/ALARM/INSUFFICIENT_DATA), and <code>StateUpdatedTimestamp</code>
-        /// information are returned by this operation
-        /// when you use this parameter. To get complete information about
-        /// these alarms, perform another <code>DescribeAlarms</code> operation and specify
-        /// the parent alarm names in the <code>AlarmNames</code> parameter.</p>
+        /// <p>If you use this parameter and specify the name of a composite alarm, the operation returns information about the "children" alarms of the alarm you specify. These are the metric alarms and composite alarms referenced in the <code>AlarmRule</code> field of the composite alarm that you specify in <code>ChildrenOfAlarmName</code>. Information about the composite alarm that you name in <code>ChildrenOfAlarmName</code> is not returned.</p>
+        /// <p>If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note>
+        /// <p>Only the <code>Alarm Name</code>, <code>ARN</code>, <code>StateValue</code> (OK/ALARM/INSUFFICIENT_DATA), and <code>StateUpdatedTimestamp</code> information are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p>
         /// </note>
-        pub fn children_of_alarm_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.children_of_alarm_name(inp);
+        pub fn children_of_alarm_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.children_of_alarm_name(input.into());
             self
         }
-        /// <p>If you use this parameter and specify the name of a composite alarm, the operation returns
-        /// information about the "children" alarms
-        /// of the alarm you specify. These are the metric alarms and composite alarms referenced in the
-        /// <code>AlarmRule</code> field of the composite alarm that you specify in
-        /// <code>ChildrenOfAlarmName</code>. Information about the composite alarm that you name in
-        /// <code>ChildrenOfAlarmName</code> is not returned.</p>
-        /// <p>If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the request except
-        /// for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you
-        /// receive a validation
-        /// error.</p>
-        /// <note>
-        /// <p>Only the <code>Alarm Name</code>, <code>ARN</code>, <code>StateValue</code> (OK/ALARM/INSUFFICIENT_DATA), and <code>StateUpdatedTimestamp</code>
-        /// information are returned by this operation
-        /// when you use this parameter. To get complete information about
-        /// these alarms, perform another <code>DescribeAlarms</code> operation and specify
-        /// the parent alarm names in the <code>AlarmNames</code> parameter.</p>
+        /// <p>If you use this parameter and specify the name of a composite alarm, the operation returns information about the "children" alarms of the alarm you specify. These are the metric alarms and composite alarms referenced in the <code>AlarmRule</code> field of the composite alarm that you specify in <code>ChildrenOfAlarmName</code>. Information about the composite alarm that you name in <code>ChildrenOfAlarmName</code> is not returned.</p>
+        /// <p>If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note>
+        /// <p>Only the <code>Alarm Name</code>, <code>ARN</code>, <code>StateValue</code> (OK/ALARM/INSUFFICIENT_DATA), and <code>StateUpdatedTimestamp</code> information are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p>
         /// </note>
         pub fn set_children_of_alarm_name(
             mut self,
@@ -1256,37 +1131,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_children_of_alarm_name(input);
             self
         }
-        /// <p>If you use this parameter and specify the name of a metric or composite alarm, the operation returns
-        /// information about the "parent" alarms
-        /// of the alarm you specify. These are the composite alarms that have <code>AlarmRule</code>
-        /// parameters that reference
-        /// the alarm named in <code>ParentsOfAlarmName</code>. Information about the alarm that you specify in
-        /// <code>ParentsOfAlarmName</code> is not returned.</p>
-        /// <p>If you specify <code>ParentsOfAlarmName</code>, you cannot specify any other parameters in the request except
-        /// for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation
-        /// error.</p>
-        /// <note>
-        /// <p>Only the Alarm Name and ARN are returned by this operation when you use this parameter. To get complete information about
-        /// these alarms, perform another <code>DescribeAlarms</code> operation and specify
-        /// the parent alarm names in the <code>AlarmNames</code> parameter.</p>
+        /// <p>If you use this parameter and specify the name of a metric or composite alarm, the operation returns information about the "parent" alarms of the alarm you specify. These are the composite alarms that have <code>AlarmRule</code> parameters that reference the alarm named in <code>ParentsOfAlarmName</code>. Information about the alarm that you specify in <code>ParentsOfAlarmName</code> is not returned.</p>
+        /// <p>If you specify <code>ParentsOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note>
+        /// <p>Only the Alarm Name and ARN are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p>
         /// </note>
-        pub fn parents_of_alarm_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parents_of_alarm_name(inp);
+        pub fn parents_of_alarm_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parents_of_alarm_name(input.into());
             self
         }
-        /// <p>If you use this parameter and specify the name of a metric or composite alarm, the operation returns
-        /// information about the "parent" alarms
-        /// of the alarm you specify. These are the composite alarms that have <code>AlarmRule</code>
-        /// parameters that reference
-        /// the alarm named in <code>ParentsOfAlarmName</code>. Information about the alarm that you specify in
-        /// <code>ParentsOfAlarmName</code> is not returned.</p>
-        /// <p>If you specify <code>ParentsOfAlarmName</code>, you cannot specify any other parameters in the request except
-        /// for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation
-        /// error.</p>
-        /// <note>
-        /// <p>Only the Alarm Name and ARN are returned by this operation when you use this parameter. To get complete information about
-        /// these alarms, perform another <code>DescribeAlarms</code> operation and specify
-        /// the parent alarm names in the <code>AlarmNames</code> parameter.</p>
+        /// <p>If you use this parameter and specify the name of a metric or composite alarm, the operation returns information about the "parent" alarms of the alarm you specify. These are the composite alarms that have <code>AlarmRule</code> parameters that reference the alarm named in <code>ParentsOfAlarmName</code>. Information about the alarm that you specify in <code>ParentsOfAlarmName</code> is not returned.</p>
+        /// <p>If you specify <code>ParentsOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note>
+        /// <p>Only the Alarm Name and ARN are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p>
         /// </note>
         pub fn set_parents_of_alarm_name(
             mut self,
@@ -1296,8 +1151,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify this parameter to receive information only about alarms that are currently in the state that you specify.</p>
-        pub fn state_value(mut self, inp: crate::model::StateValue) -> Self {
-            self.inner = self.inner.state_value(inp);
+        pub fn state_value(mut self, input: crate::model::StateValue) -> Self {
+            self.inner = self.inner.state_value(input);
             self
         }
         /// <p>Specify this parameter to receive information only about alarms that are currently in the state that you specify.</p>
@@ -1308,16 +1163,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_state_value(input);
             self
         }
-        /// <p>Use this parameter to filter the results of the operation to only those alarms that
-        /// use a certain alarm action. For example, you could specify the ARN of an SNS topic to find all
-        /// alarms that send notifications to that topic.</p>
-        pub fn action_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_prefix(inp);
+        /// <p>Use this parameter to filter the results of the operation to only those alarms that use a certain alarm action. For example, you could specify the ARN of an SNS topic to find all alarms that send notifications to that topic.</p>
+        pub fn action_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_prefix(input.into());
             self
         }
-        /// <p>Use this parameter to filter the results of the operation to only those alarms that
-        /// use a certain alarm action. For example, you could specify the ARN of an SNS topic to find all
-        /// alarms that send notifications to that topic.</p>
+        /// <p>Use this parameter to filter the results of the operation to only those alarms that use a certain alarm action. For example, you could specify the ARN of an SNS topic to find all alarms that send notifications to that topic.</p>
         pub fn set_action_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1326,8 +1177,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of alarm descriptions to retrieve.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of alarm descriptions to retrieve.</p>
@@ -1335,14 +1186,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_records(input);
             self
         }
-        /// <p>The token returned by a previous call to indicate that there is more data
-        /// available.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token returned by a previous call to indicate that there is more data available.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token returned by a previous call to indicate that there is more data
-        /// available.</p>
+        /// <p>The token returned by a previous call to indicate that there is more data available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1350,12 +1199,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAlarmsForMetric`.
     ///
-    /// <p>Retrieves the alarms for the specified metric. To
-    /// filter the results, specify a statistic, period, or unit.</p>
-    /// <p>This operation retrieves only standard alarms that are based on
-    /// the specified metric. It does not return alarms based on math expressions that
-    /// use the specified metric, or composite alarms that use the specified metric.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the alarms for the specified metric. To filter the results, specify a statistic, period, or unit.</p>
+    /// <p>This operation retrieves only standard alarms that are based on the specified metric. It does not return alarms based on math expressions that use the specified metric, or composite alarms that use the specified metric.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAlarmsForMetric<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1400,10 +1246,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAlarmsForMetricInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1412,8 +1258,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the metric.</p>
-        pub fn metric_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_name(inp);
+        pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_name(input.into());
             self
         }
         /// <p>The name of the metric.</p>
@@ -1422,8 +1268,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace of the metric.</p>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace of the metric.</p>
@@ -1431,14 +1277,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_namespace(input);
             self
         }
-        /// <p>The statistic for the metric, other than percentiles.
-        /// For percentile statistics, use <code>ExtendedStatistics</code>.</p>
-        pub fn statistic(mut self, inp: crate::model::Statistic) -> Self {
-            self.inner = self.inner.statistic(inp);
+        /// <p>The statistic for the metric, other than percentiles. For percentile statistics, use <code>ExtendedStatistics</code>.</p>
+        pub fn statistic(mut self, input: crate::model::Statistic) -> Self {
+            self.inner = self.inner.statistic(input);
             self
         }
-        /// <p>The statistic for the metric, other than percentiles.
-        /// For percentile statistics, use <code>ExtendedStatistics</code>.</p>
+        /// <p>The statistic for the metric, other than percentiles. For percentile statistics, use <code>ExtendedStatistics</code>.</p>
         pub fn set_statistic(
             mut self,
             input: std::option::Option<crate::model::Statistic>,
@@ -1446,14 +1290,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_statistic(input);
             self
         }
-        /// <p>The percentile statistic for the metric. Specify a value between
-        /// p0.0 and p100.</p>
-        pub fn extended_statistic(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.extended_statistic(inp);
+        /// <p>The percentile statistic for the metric. Specify a value between p0.0 and p100.</p>
+        pub fn extended_statistic(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.extended_statistic(input.into());
             self
         }
-        /// <p>The percentile statistic for the metric. Specify a value between
-        /// p0.0 and p100.</p>
+        /// <p>The percentile statistic for the metric. Specify a value between p0.0 and p100.</p>
         pub fn set_extended_statistic(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1465,14 +1307,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
-        /// <p>The dimensions associated with the metric. If the metric has any associated
-        /// dimensions, you must specify them in order for the call to succeed.</p>
-        pub fn dimensions(mut self, inp: impl Into<crate::model::Dimension>) -> Self {
-            self.inner = self.inner.dimensions(inp);
+        /// <p>The dimensions associated with the metric. If the metric has any associated dimensions, you must specify them in order for the call to succeed.</p>
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
+            self.inner = self.inner.dimensions(input);
             self
         }
-        /// <p>The dimensions associated with the metric. If the metric has any associated
-        /// dimensions, you must specify them in order for the call to succeed.</p>
+        /// <p>The dimensions associated with the metric. If the metric has any associated dimensions, you must specify them in order for the call to succeed.</p>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
@@ -1481,8 +1321,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The period, in seconds, over which the statistic is applied.</p>
-        pub fn period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.period(inp);
+        pub fn period(mut self, input: i32) -> Self {
+            self.inner = self.inner.period(input);
             self
         }
         /// <p>The period, in seconds, over which the statistic is applied.</p>
@@ -1491,8 +1331,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unit for the metric.</p>
-        pub fn unit(mut self, inp: crate::model::StandardUnit) -> Self {
-            self.inner = self.inner.unit(inp);
+        pub fn unit(mut self, input: crate::model::StandardUnit) -> Self {
+            self.inner = self.inner.unit(input);
             self
         }
         /// <p>The unit for the metric.</p>
@@ -1503,14 +1343,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAnomalyDetectors`.
     ///
-    /// <p>Lists the anomaly detection models that you have created in your account.
-    /// For single metric anomaly detectors,
-    /// you can list all of the models in your account or filter the results
-    /// to only the models that are related to a certain namespace, metric name, or metric dimension.
-    /// For metric math anomaly detectors,
-    /// you can list them by adding <code>METRIC_MATH</code> to the <code>AnomalyDetectorTypes</code> array.
-    /// This will return all metric math anomaly detectors in your account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the anomaly detection models that you have created in your account. For single metric anomaly detectors, you can list all of the models in your account or filter the results to only the models that are related to a certain namespace, metric name, or metric dimension. For metric math anomaly detectors, you can list them by adding <code>METRIC_MATH</code> to the <code>AnomalyDetectorTypes</code> array. This will return all metric math anomaly detectors in your account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAnomalyDetectors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1555,10 +1389,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAnomalyDetectorsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1567,8 +1401,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Use the token returned by the previous operation to request the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Use the token returned by the previous operation to request the next page of results.</p>
@@ -1576,44 +1410,34 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return in one operation. The maximum
-        /// value that you can specify is 100.</p>
-        /// <p>To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return in one operation. The maximum value that you can specify is 100.</p>
+        /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return in one operation. The maximum
-        /// value that you can specify is 100.</p>
-        /// <p>To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value. </p>
+        /// <p>The maximum number of results to return in one operation. The maximum value that you can specify is 100.</p>
+        /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Limits the results to only the anomaly detection models that
-        /// are associated with the specified namespace.</p>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        /// <p>Limits the results to only the anomaly detection models that are associated with the specified namespace.</p>
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p>Limits the results to only the anomaly detection models that
-        /// are associated with the specified namespace.</p>
+        /// <p>Limits the results to only the anomaly detection models that are associated with the specified namespace.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
             self
         }
-        /// <p>Limits the results to only the anomaly detection models that are associated with the
-        /// specified metric name. If there are multiple metrics with this name in different
-        /// namespaces that have anomaly detection models, they're all returned.</p>
-        pub fn metric_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_name(inp);
+        /// <p>Limits the results to only the anomaly detection models that are associated with the specified metric name. If there are multiple metrics with this name in different namespaces that have anomaly detection models, they're all returned.</p>
+        pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_name(input.into());
             self
         }
-        /// <p>Limits the results to only the anomaly detection models that are associated with the
-        /// specified metric name. If there are multiple metrics with this name in different
-        /// namespaces that have anomaly detection models, they're all returned.</p>
+        /// <p>Limits the results to only the anomaly detection models that are associated with the specified metric name. If there are multiple metrics with this name in different namespaces that have anomaly detection models, they're all returned.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_metric_name(input);
             self
@@ -1622,16 +1446,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
-        /// <p>Limits the results to only the anomaly detection models that are associated with the
-        /// specified metric dimensions. If there are multiple metrics that have these dimensions
-        /// and have anomaly detection models associated, they're all returned.</p>
-        pub fn dimensions(mut self, inp: impl Into<crate::model::Dimension>) -> Self {
-            self.inner = self.inner.dimensions(inp);
+        /// <p>Limits the results to only the anomaly detection models that are associated with the specified metric dimensions. If there are multiple metrics that have these dimensions and have anomaly detection models associated, they're all returned.</p>
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
+            self.inner = self.inner.dimensions(input);
             self
         }
-        /// <p>Limits the results to only the anomaly detection models that are associated with the
-        /// specified metric dimensions. If there are multiple metrics that have these dimensions
-        /// and have anomaly detection models associated, they're all returned.</p>
+        /// <p>Limits the results to only the anomaly detection models that are associated with the specified metric dimensions. If there are multiple metrics that have these dimensions and have anomaly detection models associated, they're all returned.</p>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
@@ -1643,17 +1463,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_anomaly_detector_types`](Self::set_anomaly_detector_types).
         ///
-        /// <p>The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>.
-        /// If empty, defaults to <code>SINGLE_METRIC</code>.</p>
-        pub fn anomaly_detector_types(
-            mut self,
-            inp: impl Into<crate::model::AnomalyDetectorType>,
-        ) -> Self {
-            self.inner = self.inner.anomaly_detector_types(inp);
+        /// <p>The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>. If empty, defaults to <code>SINGLE_METRIC</code>.</p>
+        pub fn anomaly_detector_types(mut self, input: crate::model::AnomalyDetectorType) -> Self {
+            self.inner = self.inner.anomaly_detector_types(input);
             self
         }
-        /// <p>The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>.
-        /// If empty, defaults to <code>SINGLE_METRIC</code>.</p>
+        /// <p>The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>. If empty, defaults to <code>SINGLE_METRIC</code>.</p>
         pub fn set_anomaly_detector_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AnomalyDetectorType>>,
@@ -1665,10 +1480,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeInsightRules`.
     ///
     /// <p>Returns a list of all the Contributor Insights rules in your account.</p>
-    ///
-    /// <p>For more information about Contributor Insights, see
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using Contributor Insights to Analyze High-Cardinality Data</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For more information about Contributor Insights, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using Contributor Insights to Analyze High-Cardinality Data</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInsightRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1713,10 +1526,10 @@ pub mod fluent_builders {
                 crate::input::DescribeInsightRulesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1724,9 +1537,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeInsightRulesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeInsightRulesPaginator<C, M, R> {
+            crate::paginator::DescribeInsightRulesPaginator::new(self.handle, self.inner)
+        }
         /// <p>Include this value, if it was returned by the previous operation, to get the next set of rules.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Include this value, if it was returned by the previous operation, to get the next set of rules.</p>
@@ -1734,14 +1553,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return in one operation. If you omit this
-        /// parameter, the default of 500 is used.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return in one operation. If you omit this parameter, the default of 500 is used.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return in one operation. If you omit this
-        /// parameter, the default of 500 is used.</p>
+        /// <p>The maximum number of results to return in one operation. If you omit this parameter, the default of 500 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1749,9 +1566,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisableAlarmActions`.
     ///
-    /// <p>Disables the actions for the specified alarms. When an alarm's actions are disabled, the
-    /// alarm actions do not execute when the alarm state changes.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Disables the actions for the specified alarms. When an alarm's actions are disabled, the alarm actions do not execute when the alarm state changes.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableAlarmActions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1796,10 +1612,10 @@ pub mod fluent_builders {
                 crate::input::DisableAlarmActionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1812,8 +1628,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_alarm_names`](Self::set_alarm_names).
         ///
         /// <p>The names of the alarms.</p>
-        pub fn alarm_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_names(inp);
+        pub fn alarm_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_names(input.into());
             self
         }
         /// <p>The names of the alarms.</p>
@@ -1827,9 +1643,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisableInsightRules`.
     ///
-    /// <p>Disables the specified Contributor Insights rules. When rules are disabled, they do not analyze log groups and do
-    /// not incur costs.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Disables the specified Contributor Insights rules. When rules are disabled, they do not analyze log groups and do not incur costs.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableInsightRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1874,10 +1689,10 @@ pub mod fluent_builders {
                 crate::input::DisableInsightRulesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1890,8 +1705,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_rule_names`](Self::set_rule_names).
         ///
         /// <p>An array of the rule names to disable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
-        pub fn rule_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_names(inp);
+        pub fn rule_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_names(input.into());
             self
         }
         /// <p>An array of the rule names to disable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
@@ -1906,7 +1721,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `EnableAlarmActions`.
     ///
     /// <p>Enables the actions for the specified alarms.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableAlarmActions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1951,10 +1766,10 @@ pub mod fluent_builders {
                 crate::input::EnableAlarmActionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1967,8 +1782,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_alarm_names`](Self::set_alarm_names).
         ///
         /// <p>The names of the alarms.</p>
-        pub fn alarm_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_names(inp);
+        pub fn alarm_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_names(input.into());
             self
         }
         /// <p>The names of the alarms.</p>
@@ -1983,7 +1798,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `EnableInsightRules`.
     ///
     /// <p>Enables the specified Contributor Insights rules. When rules are enabled, they immediately begin analyzing log data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableInsightRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2028,10 +1843,10 @@ pub mod fluent_builders {
                 crate::input::EnableInsightRulesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2044,8 +1859,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_rule_names`](Self::set_rule_names).
         ///
         /// <p>An array of the rule names to enable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
-        pub fn rule_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_names(inp);
+        pub fn rule_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_names(input.into());
             self
         }
         /// <p>An array of the rule names to enable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
@@ -2060,10 +1875,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDashboard`.
     ///
     /// <p>Displays the details of the dashboard that you specify.</p>
-    /// <p>To copy an existing dashboard, use <code>GetDashboard</code>, and then use the data returned
-    /// within <code>DashboardBody</code> as the template for the new dashboard when you call <code>PutDashboard</code> to create
-    /// the copy.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>To copy an existing dashboard, use <code>GetDashboard</code>, and then use the data returned within <code>DashboardBody</code> as the template for the new dashboard when you call <code>PutDashboard</code> to create the copy.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDashboard<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2108,10 +1921,10 @@ pub mod fluent_builders {
                 crate::input::GetDashboardInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2120,8 +1933,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dashboard to be described.</p>
-        pub fn dashboard_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_name(inp);
+        pub fn dashboard_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_name(input.into());
             self
         }
         /// <p>The name of the dashboard to be described.</p>
@@ -2135,44 +1948,18 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetInsightRuleReport`.
     ///
-    /// <p>This operation returns the time series data collected by a Contributor Insights rule. The data includes the identity and number of
-    /// contributors to the log group.</p>
+    /// <p>This operation returns the time series data collected by a Contributor Insights rule. The data includes the identity and number of contributors to the log group.</p>
     /// <p>You can also optionally return one or more statistics about each data point in the time series. These statistics can include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>UniqueContributors</code> -- the number of unique contributors for each data point.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the
-    /// contributor might change for each data point in the graph.</p>
-    /// <p>If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the
-    /// most occurrences in that period. If the rule aggregates by SUM, the top contributor is the contributor with the highest sum in the log field specified
-    /// by the rule's <code>Value</code>, during that period.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SampleCount</code> -- the number of data points matched by the rule.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Sum</code> -- the sum of the values from all contributors during the time period represented by that data point.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Minimum</code> -- the minimum value from a single observation during the time period represented by that data point.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Maximum</code> -- the maximum value from a single observation during the time period represented by that data point.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p>
-    /// </li>
+    /// <li> <p> <code>UniqueContributors</code> -- the number of unique contributors for each data point.</p> </li>
+    /// <li> <p> <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the contributor might change for each data point in the graph.</p> <p>If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most occurrences in that period. If the rule aggregates by SUM, the top contributor is the contributor with the highest sum in the log field specified by the rule's <code>Value</code>, during that period.</p> </li>
+    /// <li> <p> <code>SampleCount</code> -- the number of data points matched by the rule.</p> </li>
+    /// <li> <p> <code>Sum</code> -- the sum of the values from all contributors during the time period represented by that data point.</p> </li>
+    /// <li> <p> <code>Minimum</code> -- the minimum value from a single observation during the time period represented by that data point.</p> </li>
+    /// <li> <p> <code>Maximum</code> -- the maximum value from a single observation during the time period represented by that data point.</p> </li>
+    /// <li> <p> <code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInsightRuleReport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2217,10 +2004,10 @@ pub mod fluent_builders {
                 crate::input::GetInsightRuleReportInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2229,8 +2016,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the rule that you want to see data from.</p>
-        pub fn rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_name(inp);
+        pub fn rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_name(input.into());
             self
         }
         /// <p>The name of the rule that you want to see data from.</p>
@@ -2238,16 +2025,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rule_name(input);
             self
         }
-        /// <p>The start time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as
-        /// <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
-        /// <code>2019-07-01T23:59:59</code>.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        /// <p>The start time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
-        /// <p>The start time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as
-        /// <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
-        /// <code>2019-07-01T23:59:59</code>.</p>
+        /// <p>The start time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2255,16 +2038,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// <p>The end time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as
-        /// <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
-        /// <code>2019-07-01T23:59:59</code>.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        /// <p>The end time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
-        /// <p>The end time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as
-        /// <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
-        /// <code>2019-07-01T23:59:59</code>.</p>
+        /// <p>The end time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2273,8 +2052,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The period, in seconds, to use for the statistics in the <code>InsightRuleMetricDatapoint</code> results.</p>
-        pub fn period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.period(inp);
+        pub fn period(mut self, input: i32) -> Self {
+            self.inner = self.inner.period(input);
             self
         }
         /// <p>The period, in seconds, to use for the statistics in the <code>InsightRuleMetricDatapoint</code> results.</p>
@@ -2283,8 +2062,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of contributors to include in the report. The range is 1 to 100. If you omit this, the default of 10 is used.</p>
-        pub fn max_contributor_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_contributor_count(inp);
+        pub fn max_contributor_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_contributor_count(input);
             self
         }
         /// <p>The maximum number of contributors to include in the report. The range is 1 to 100. If you omit this, the default of 10 is used.</p>
@@ -2296,81 +2075,29 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
         ///
-        /// <p>Specifies which metrics to use for aggregation of contributor values for the report. You can specify one or more
-        /// of the following metrics:</p>
+        /// <p>Specifies which metrics to use for aggregation of contributor values for the report. You can specify one or more of the following metrics:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>UniqueContributors</code> -- the number of unique contributors for each data point.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the
-        /// contributor might change for each data point in the graph.</p>
-        /// <p>If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the
-        /// most occurrences in that period. If the rule aggregates by SUM, the top contributor is the contributor with the highest sum in the log field specified
-        /// by the rule's <code>Value</code>, during that period.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SampleCount</code> -- the number of data points matched by the rule.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Sum</code> -- the sum of the values from all contributors during the time period represented by that data point.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Minimum</code> -- the minimum value from a single observation during the time period represented by that data point.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Maximum</code> -- the maximum value from a single observation during the time period represented by that data point.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p>
-        /// </li>
+        /// <li> <p> <code>UniqueContributors</code> -- the number of unique contributors for each data point.</p> </li>
+        /// <li> <p> <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the contributor might change for each data point in the graph.</p> <p>If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most occurrences in that period. If the rule aggregates by SUM, the top contributor is the contributor with the highest sum in the log field specified by the rule's <code>Value</code>, during that period.</p> </li>
+        /// <li> <p> <code>SampleCount</code> -- the number of data points matched by the rule.</p> </li>
+        /// <li> <p> <code>Sum</code> -- the sum of the values from all contributors during the time period represented by that data point.</p> </li>
+        /// <li> <p> <code>Minimum</code> -- the minimum value from a single observation during the time period represented by that data point.</p> </li>
+        /// <li> <p> <code>Maximum</code> -- the maximum value from a single observation during the time period represented by that data point.</p> </li>
+        /// <li> <p> <code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p> </li>
         /// </ul>
-        pub fn metrics(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metrics(inp);
+        pub fn metrics(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metrics(input.into());
             self
         }
-        /// <p>Specifies which metrics to use for aggregation of contributor values for the report. You can specify one or more
-        /// of the following metrics:</p>
+        /// <p>Specifies which metrics to use for aggregation of contributor values for the report. You can specify one or more of the following metrics:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>UniqueContributors</code> -- the number of unique contributors for each data point.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the
-        /// contributor might change for each data point in the graph.</p>
-        /// <p>If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the
-        /// most occurrences in that period. If the rule aggregates by SUM, the top contributor is the contributor with the highest sum in the log field specified
-        /// by the rule's <code>Value</code>, during that period.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SampleCount</code> -- the number of data points matched by the rule.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Sum</code> -- the sum of the values from all contributors during the time period represented by that data point.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Minimum</code> -- the minimum value from a single observation during the time period represented by that data point.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Maximum</code> -- the maximum value from a single observation during the time period represented by that data point.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p>
-        /// </li>
+        /// <li> <p> <code>UniqueContributors</code> -- the number of unique contributors for each data point.</p> </li>
+        /// <li> <p> <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the contributor might change for each data point in the graph.</p> <p>If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most occurrences in that period. If the rule aggregates by SUM, the top contributor is the contributor with the highest sum in the log field specified by the rule's <code>Value</code>, during that period.</p> </li>
+        /// <li> <p> <code>SampleCount</code> -- the number of data points matched by the rule.</p> </li>
+        /// <li> <p> <code>Sum</code> -- the sum of the values from all contributors during the time period represented by that data point.</p> </li>
+        /// <li> <p> <code>Minimum</code> -- the minimum value from a single observation during the time period represented by that data point.</p> </li>
+        /// <li> <p> <code>Maximum</code> -- the maximum value from a single observation during the time period represented by that data point.</p> </li>
+        /// <li> <p> <code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p> </li>
         /// </ul>
         pub fn set_metrics(
             mut self,
@@ -2380,8 +2107,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Determines what statistic to use to rank the contributors. Valid values are SUM and MAXIMUM.</p>
-        pub fn order_by(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.order_by(inp);
+        pub fn order_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.order_by(input.into());
             self
         }
         /// <p>Determines what statistic to use to rank the contributors. Valid values are SUM and MAXIMUM.</p>
@@ -2392,43 +2119,18 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMetricData`.
     ///
-    /// <p>You can use the <code>GetMetricData</code> API to retrieve as many as 500 different
-    /// metrics in a single request, with a total of as many as 100,800 data points. You can also
-    /// optionally perform math expressions on the values of the returned statistics, to create
-    /// new time series that represent new insights into your data. For example, using Lambda
-    /// metrics, you could divide the Errors metric by the Invocations metric to get an error
-    /// rate time series. For more information about metric math expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User
-    /// Guide</i>.</p>
-    ///
-    /// <p>Calls to the <code>GetMetricData</code> API have a different pricing structure than
-    /// calls to <code>GetMetricStatistics</code>. For more information about pricing, see
-    /// <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
-    ///
+    /// <p>You can use the <code>GetMetricData</code> API to retrieve as many as 500 different metrics in a single request, with a total of as many as 100,800 data points. You can also optionally perform math expressions on the values of the returned statistics, to create new time series that represent new insights into your data. For example, using Lambda metrics, you could divide the Errors metric by the Invocations metric to get an error rate time series. For more information about metric math expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    /// <p>Calls to the <code>GetMetricData</code> API have a different pricing structure than calls to <code>GetMetricStatistics</code>. For more information about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
     /// <p>Amazon CloudWatch retains metric data as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Data points with a period of less than 60 seconds are available for 3 hours. These data points are high-resolution
-    /// metrics and are available only for custom metrics that have been defined with a <code>StorageResolution</code> of 1.</p>
-    /// </li>
-    /// <li>
-    /// <p>Data points with a period of 60 seconds (1-minute) are available for 15 days.</p>
-    /// </li>
-    /// <li>
-    /// <p>Data points with a period of 300 seconds (5-minute) are available for 63 days.</p>
-    /// </li>
-    /// <li>
-    /// <p>Data points with a period of 3600 seconds (1 hour) are available for 455 days (15 months).</p>
-    /// </li>
+    /// <li> <p>Data points with a period of less than 60 seconds are available for 3 hours. These data points are high-resolution metrics and are available only for custom metrics that have been defined with a <code>StorageResolution</code> of 1.</p> </li>
+    /// <li> <p>Data points with a period of 60 seconds (1-minute) are available for 15 days.</p> </li>
+    /// <li> <p>Data points with a period of 300 seconds (5-minute) are available for 63 days.</p> </li>
+    /// <li> <p>Data points with a period of 3600 seconds (1 hour) are available for 455 days (15 months).</p> </li>
     /// </ul>
-    /// <p>Data points that are initially published with a shorter period are aggregated together for long-term storage. For example, if you collect
-    /// data using a period of 1 minute, the data remains available for 15 days with 1-minute resolution. After 15 days, this data is still available,
-    /// but is aggregated and retrievable only with a resolution of 5 minutes. After 63 days, the data is further aggregated and is available with
-    /// a resolution of 1 hour.</p>
-    ///
-    /// <p>If you omit <code>Unit</code> in your request, all data that was collected with any unit is returned, along with the corresponding units that were specified
-    /// when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified.
-    /// If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Data points that are initially published with a shorter period are aggregated together for long-term storage. For example, if you collect data using a period of 1 minute, the data remains available for 15 days with 1-minute resolution. After 15 days, this data is still available, but is aggregated and retrievable only with a resolution of 5 minutes. After 63 days, the data is further aggregated and is available with a resolution of 1 hour.</p>
+    /// <p>If you omit <code>Unit</code> in your request, all data that was collected with any unit is returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified. If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMetricData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2473,10 +2175,10 @@ pub mod fluent_builders {
                 crate::input::GetMetricDataInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2484,21 +2186,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetMetricDataPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetMetricDataPaginator<C, M, R> {
+            crate::paginator::GetMetricDataPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `MetricDataQueries`.
         ///
         /// To override the contents of this collection use [`set_metric_data_queries`](Self::set_metric_data_queries).
         ///
-        /// <p>The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500 <code>MetricDataQuery</code>
-        /// structures. Each of these structures can specify either a metric to retrieve, or a math expression to perform on retrieved data. </p>
-        pub fn metric_data_queries(
-            mut self,
-            inp: impl Into<crate::model::MetricDataQuery>,
-        ) -> Self {
-            self.inner = self.inner.metric_data_queries(inp);
+        /// <p>The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500 <code>MetricDataQuery</code> structures. Each of these structures can specify either a metric to retrieve, or a math expression to perform on retrieved data. </p>
+        pub fn metric_data_queries(mut self, input: crate::model::MetricDataQuery) -> Self {
+            self.inner = self.inner.metric_data_queries(input);
             self
         }
-        /// <p>The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500 <code>MetricDataQuery</code>
-        /// structures. Each of these structures can specify either a metric to retrieve, or a math expression to perform on retrieved data. </p>
+        /// <p>The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500 <code>MetricDataQuery</code> structures. Each of these structures can specify either a metric to retrieve, or a math expression to perform on retrieved data. </p>
         pub fn set_metric_data_queries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
@@ -2510,66 +2213,26 @@ pub mod fluent_builders {
         /// <p>The value specified is inclusive; results include data points with the specified time stamp. </p>
         /// <p>CloudWatch rounds the specified time stamp as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>Start time less than 15 days ago - Round down to the nearest whole minute.
-        /// For example, 12:32:34 is rounded down to 12:32:00.</p>
-        /// </li>
-        /// <li>
-        /// <p>Start time between 15 and 63 days ago - Round down to the nearest 5-minute clock interval.
-        /// For example, 12:32:34 is rounded down to 12:30:00.</p>
-        /// </li>
-        /// <li>
-        /// <p>Start time greater than 63 days ago - Round down to the nearest 1-hour clock interval.
-        /// For example, 12:32:34 is rounded down to 12:00:00.</p>
-        /// </li>
+        /// <li> <p>Start time less than 15 days ago - Round down to the nearest whole minute. For example, 12:32:34 is rounded down to 12:32:00.</p> </li>
+        /// <li> <p>Start time between 15 and 63 days ago - Round down to the nearest 5-minute clock interval. For example, 12:32:34 is rounded down to 12:30:00.</p> </li>
+        /// <li> <p>Start time greater than 63 days ago - Round down to the nearest 1-hour clock interval. For example, 12:32:34 is rounded down to 12:00:00.</p> </li>
         /// </ul>
-        /// <p>If you set <code>Period</code> to 5, 10, or 30, the start time of your request is
-        /// rounded down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions
-        /// of a minute. For example, if you make a query at (HH:mm:ss) 01:05:23 for the previous
-        /// 10-second period, the start time of your request is rounded down and you receive data from 01:05:10 to
-        /// 01:05:20. If you make a query at 15:07:17 for the previous 5 minutes of data, using a
-        /// period of 5 seconds, you receive data
-        /// timestamped between 15:02:15 and 15:07:15.
-        /// </p>
-        /// <p>For better performance, specify <code>StartTime</code> and <code>EndTime</code>
-        /// values that align with the value of the metric's <code>Period</code> and sync up with
-        /// the beginning and end of an hour. For example, if the <code>Period</code> of a metric
-        /// is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code> can get a faster response
-        /// from CloudWatch than setting 12:07 or 12:29 as the <code>StartTime</code>.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        /// <p>If you set <code>Period</code> to 5, 10, or 30, the start time of your request is rounded down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions of a minute. For example, if you make a query at (HH:mm:ss) 01:05:23 for the previous 10-second period, the start time of your request is rounded down and you receive data from 01:05:10 to 01:05:20. If you make a query at 15:07:17 for the previous 5 minutes of data, using a period of 5 seconds, you receive data timestamped between 15:02:15 and 15:07:15. </p>
+        /// <p>For better performance, specify <code>StartTime</code> and <code>EndTime</code> values that align with the value of the metric's <code>Period</code> and sync up with the beginning and end of an hour. For example, if the <code>Period</code> of a metric is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code> can get a faster response from CloudWatch than setting 12:07 or 12:29 as the <code>StartTime</code>.</p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The time stamp indicating the earliest data to be returned.</p>
         /// <p>The value specified is inclusive; results include data points with the specified time stamp. </p>
         /// <p>CloudWatch rounds the specified time stamp as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>Start time less than 15 days ago - Round down to the nearest whole minute.
-        /// For example, 12:32:34 is rounded down to 12:32:00.</p>
-        /// </li>
-        /// <li>
-        /// <p>Start time between 15 and 63 days ago - Round down to the nearest 5-minute clock interval.
-        /// For example, 12:32:34 is rounded down to 12:30:00.</p>
-        /// </li>
-        /// <li>
-        /// <p>Start time greater than 63 days ago - Round down to the nearest 1-hour clock interval.
-        /// For example, 12:32:34 is rounded down to 12:00:00.</p>
-        /// </li>
+        /// <li> <p>Start time less than 15 days ago - Round down to the nearest whole minute. For example, 12:32:34 is rounded down to 12:32:00.</p> </li>
+        /// <li> <p>Start time between 15 and 63 days ago - Round down to the nearest 5-minute clock interval. For example, 12:32:34 is rounded down to 12:30:00.</p> </li>
+        /// <li> <p>Start time greater than 63 days ago - Round down to the nearest 1-hour clock interval. For example, 12:32:34 is rounded down to 12:00:00.</p> </li>
         /// </ul>
-        /// <p>If you set <code>Period</code> to 5, 10, or 30, the start time of your request is
-        /// rounded down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions
-        /// of a minute. For example, if you make a query at (HH:mm:ss) 01:05:23 for the previous
-        /// 10-second period, the start time of your request is rounded down and you receive data from 01:05:10 to
-        /// 01:05:20. If you make a query at 15:07:17 for the previous 5 minutes of data, using a
-        /// period of 5 seconds, you receive data
-        /// timestamped between 15:02:15 and 15:07:15.
-        /// </p>
-        /// <p>For better performance, specify <code>StartTime</code> and <code>EndTime</code>
-        /// values that align with the value of the metric's <code>Period</code> and sync up with
-        /// the beginning and end of an hour. For example, if the <code>Period</code> of a metric
-        /// is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code> can get a faster response
-        /// from CloudWatch than setting 12:07 or 12:29 as the <code>StartTime</code>.</p>
+        /// <p>If you set <code>Period</code> to 5, 10, or 30, the start time of your request is rounded down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions of a minute. For example, if you make a query at (HH:mm:ss) 01:05:23 for the previous 10-second period, the start time of your request is rounded down and you receive data from 01:05:10 to 01:05:20. If you make a query at 15:07:17 for the previous 5 minutes of data, using a period of 5 seconds, you receive data timestamped between 15:02:15 and 15:07:15. </p>
+        /// <p>For better performance, specify <code>StartTime</code> and <code>EndTime</code> values that align with the value of the metric's <code>Period</code> and sync up with the beginning and end of an hour. For example, if the <code>Period</code> of a metric is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code> can get a faster response from CloudWatch than setting 12:07 or 12:29 as the <code>StartTime</code>.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2579,22 +2242,14 @@ pub mod fluent_builders {
         }
         /// <p>The time stamp indicating the latest data to be returned.</p>
         /// <p>The value specified is exclusive; results include data points up to the specified time stamp.</p>
-        /// <p>For better performance, specify <code>StartTime</code> and <code>EndTime</code>
-        /// values that align with the value of the metric's <code>Period</code> and sync up with
-        /// the beginning and end of an hour. For example, if the <code>Period</code> of a metric
-        /// is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can get a faster response
-        /// from CloudWatch than setting 12:07 or 12:29 as the <code>EndTime</code>.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        /// <p>For better performance, specify <code>StartTime</code> and <code>EndTime</code> values that align with the value of the metric's <code>Period</code> and sync up with the beginning and end of an hour. For example, if the <code>Period</code> of a metric is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can get a faster response from CloudWatch than setting 12:07 or 12:29 as the <code>EndTime</code>.</p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The time stamp indicating the latest data to be returned.</p>
         /// <p>The value specified is exclusive; results include data points up to the specified time stamp.</p>
-        /// <p>For better performance, specify <code>StartTime</code> and <code>EndTime</code>
-        /// values that align with the value of the metric's <code>Period</code> and sync up with
-        /// the beginning and end of an hour. For example, if the <code>Period</code> of a metric
-        /// is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can get a faster response
-        /// from CloudWatch than setting 12:07 or 12:29 as the <code>EndTime</code>.</p>
+        /// <p>For better performance, specify <code>StartTime</code> and <code>EndTime</code> values that align with the value of the metric's <code>Period</code> and sync up with the beginning and end of an hour. For example, if the <code>Period</code> of a metric is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can get a faster response from CloudWatch than setting 12:07 or 12:29 as the <code>EndTime</code>.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2602,56 +2257,42 @@ pub mod fluent_builders {
             self.inner = self.inner.set_end_time(input);
             self
         }
-        /// <p>Include this value, if it was returned by the previous <code>GetMetricData</code> operation,
-        /// to get the next set of data points.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>Include this value, if it was returned by the previous <code>GetMetricData</code> operation, to get the next set of data points.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Include this value, if it was returned by the previous <code>GetMetricData</code> operation,
-        /// to get the next set of data points.</p>
+        /// <p>Include this value, if it was returned by the previous <code>GetMetricData</code> operation, to get the next set of data points.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The order in which data points should be returned. <code>TimestampDescending</code> returns the newest data first and paginates
-        /// when the <code>MaxDatapoints</code> limit is reached. <code>TimestampAscending</code> returns the oldest data first and paginates
-        /// when the <code>MaxDatapoints</code> limit is reached.</p>
-        pub fn scan_by(mut self, inp: crate::model::ScanBy) -> Self {
-            self.inner = self.inner.scan_by(inp);
+        /// <p>The order in which data points should be returned. <code>TimestampDescending</code> returns the newest data first and paginates when the <code>MaxDatapoints</code> limit is reached. <code>TimestampAscending</code> returns the oldest data first and paginates when the <code>MaxDatapoints</code> limit is reached.</p>
+        pub fn scan_by(mut self, input: crate::model::ScanBy) -> Self {
+            self.inner = self.inner.scan_by(input);
             self
         }
-        /// <p>The order in which data points should be returned. <code>TimestampDescending</code> returns the newest data first and paginates
-        /// when the <code>MaxDatapoints</code> limit is reached. <code>TimestampAscending</code> returns the oldest data first and paginates
-        /// when the <code>MaxDatapoints</code> limit is reached.</p>
+        /// <p>The order in which data points should be returned. <code>TimestampDescending</code> returns the newest data first and paginates when the <code>MaxDatapoints</code> limit is reached. <code>TimestampAscending</code> returns the oldest data first and paginates when the <code>MaxDatapoints</code> limit is reached.</p>
         pub fn set_scan_by(mut self, input: std::option::Option<crate::model::ScanBy>) -> Self {
             self.inner = self.inner.set_scan_by(input);
             self
         }
-        /// <p>The maximum number of data points the request should return before paginating. If you omit
-        /// this, the default of 100,800 is used.</p>
-        pub fn max_datapoints(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_datapoints(inp);
+        /// <p>The maximum number of data points the request should return before paginating. If you omit this, the default of 100,800 is used.</p>
+        pub fn max_datapoints(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_datapoints(input);
             self
         }
-        /// <p>The maximum number of data points the request should return before paginating. If you omit
-        /// this, the default of 100,800 is used.</p>
+        /// <p>The maximum number of data points the request should return before paginating. If you omit this, the default of 100,800 is used.</p>
         pub fn set_max_datapoints(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_datapoints(input);
             self
         }
-        /// <p>This structure includes the <code>Timezone</code> parameter, which you can use
-        /// to specify your time zone so that the labels of returned data display the
-        /// correct time
-        /// for your time zone. </p>
-        pub fn label_options(mut self, inp: crate::model::LabelOptions) -> Self {
-            self.inner = self.inner.label_options(inp);
+        /// <p>This structure includes the <code>Timezone</code> parameter, which you can use to specify your time zone so that the labels of returned data display the correct time for your time zone. </p>
+        pub fn label_options(mut self, input: crate::model::LabelOptions) -> Self {
+            self.inner = self.inner.label_options(input);
             self
         }
-        /// <p>This structure includes the <code>Timezone</code> parameter, which you can use
-        /// to specify your time zone so that the labels of returned data display the
-        /// correct time
-        /// for your time zone. </p>
+        /// <p>This structure includes the <code>Timezone</code> parameter, which you can use to specify your time zone so that the labels of returned data display the correct time for your time zone. </p>
         pub fn set_label_options(
             mut self,
             input: std::option::Option<crate::model::LabelOptions>,
@@ -2663,58 +2304,25 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMetricStatistics`.
     ///
     /// <p>Gets statistics for the specified metric.</p>
-    ///
-    ///
-    ///
-    /// <p>The maximum number of data points returned from a single call is 1,440. If  
-    /// you request more than 1,440 data points, CloudWatch returns an error.
-    /// To reduce the number of data points, you can narrow the specified time range and make
-    /// multiple requests across adjacent time ranges, or you can increase the specified period.
-    /// Data points are not returned in chronological order.</p>
-    ///
-    /// <p>CloudWatch aggregates data points based on the length of the period
-    /// that you specify. For example, if you request statistics with a one-hour period,
-    /// CloudWatch aggregates all data points with time stamps that fall within each
-    /// one-hour period. Therefore, the number of values aggregated by CloudWatch is larger than
-    /// the number of data points returned.</p>
-    /// <p>CloudWatch needs raw data points to calculate percentile statistics. If you publish
-    /// data using a statistic set instead, you can only retrieve
-    /// percentile statistics for this data if one of the following conditions is true:</p>
+    /// <p>The maximum number of data points returned from a single call is 1,440. If you request more than 1,440 data points, CloudWatch returns an error. To reduce the number of data points, you can narrow the specified time range and make multiple requests across adjacent time ranges, or you can increase the specified period. Data points are not returned in chronological order.</p>
+    /// <p>CloudWatch aggregates data points based on the length of the period that you specify. For example, if you request statistics with a one-hour period, CloudWatch aggregates all data points with time stamps that fall within each one-hour period. Therefore, the number of values aggregated by CloudWatch is larger than the number of data points returned.</p>
+    /// <p>CloudWatch needs raw data points to calculate percentile statistics. If you publish data using a statistic set instead, you can only retrieve percentile statistics for this data if one of the following conditions is true:</p>
     /// <ul>
-    /// <li>
-    /// <p>The SampleCount value of the statistic set is 1.</p>
-    /// </li>
-    /// <li>
-    /// <p>The Min and the Max values of the statistic set are equal.</p>
-    /// </li>
+    /// <li> <p>The SampleCount value of the statistic set is 1.</p> </li>
+    /// <li> <p>The Min and the Max values of the statistic set are equal.</p> </li>
     /// </ul>
     /// <p>Percentile statistics are not available for metrics when any of the metric values are negative numbers.</p>
     /// <p>Amazon CloudWatch retains metric data as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Data points with a period of less than 60 seconds are available for 3 hours. These data points are high-resolution
-    /// metrics and are available only for custom metrics that have been defined with a <code>StorageResolution</code> of 1.</p>
-    /// </li>
-    /// <li>
-    /// <p>Data points with a period of 60 seconds (1-minute) are available for 15 days.</p>
-    /// </li>
-    /// <li>
-    /// <p>Data points with a period of 300 seconds (5-minute) are available for 63 days.</p>
-    /// </li>
-    /// <li>
-    /// <p>Data points with a period of 3600 seconds (1 hour) are available for 455 days (15 months).</p>
-    /// </li>
+    /// <li> <p>Data points with a period of less than 60 seconds are available for 3 hours. These data points are high-resolution metrics and are available only for custom metrics that have been defined with a <code>StorageResolution</code> of 1.</p> </li>
+    /// <li> <p>Data points with a period of 60 seconds (1-minute) are available for 15 days.</p> </li>
+    /// <li> <p>Data points with a period of 300 seconds (5-minute) are available for 63 days.</p> </li>
+    /// <li> <p>Data points with a period of 3600 seconds (1 hour) are available for 455 days (15 months).</p> </li>
     /// </ul>
-    /// <p>Data points that are initially published with a shorter period are aggregated together for long-term storage. For example, if you collect
-    /// data using a period of 1 minute, the data remains available for 15 days with 1-minute resolution. After 15 days, this data is still available,
-    /// but is aggregated and retrievable only with a resolution of 5 minutes. After 63 days, the data is further aggregated and is available with
-    /// a resolution of 1 hour.</p>
-    /// <p>CloudWatch started retaining 5-minute and 1-hour metric data as of July 9, 2016.</p>  
-    ///
-    /// <p>For information about metrics and dimensions supported by Amazon Web Services services, see the
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon CloudWatch Metrics and Dimensions Reference</a> in the
-    /// <i>Amazon CloudWatch User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Data points that are initially published with a shorter period are aggregated together for long-term storage. For example, if you collect data using a period of 1 minute, the data remains available for 15 days with 1-minute resolution. After 15 days, this data is still available, but is aggregated and retrievable only with a resolution of 5 minutes. After 63 days, the data is further aggregated and is available with a resolution of 1 hour.</p>
+    /// <p>CloudWatch started retaining 5-minute and 1-hour metric data as of July 9, 2016.</p>
+    /// <p>For information about metrics and dimensions supported by Amazon Web Services services, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon CloudWatch Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMetricStatistics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2759,10 +2367,10 @@ pub mod fluent_builders {
                 crate::input::GetMetricStatisticsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2771,8 +2379,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The namespace of the metric, with or without spaces.</p>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace of the metric, with or without spaces.</p>
@@ -2781,8 +2389,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the metric, with or without spaces.</p>
-        pub fn metric_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_name(inp);
+        pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_name(input.into());
             self
         }
         /// <p>The name of the metric, with or without spaces.</p>
@@ -2794,22 +2402,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
-        /// <p>The dimensions. If the metric contains multiple dimensions, you must include a value for each dimension.
-        /// CloudWatch treats each unique combination of dimensions as a separate metric.
-        /// If a specific combination of dimensions was not published, you can't retrieve statistics for it.
-        /// You must specify the same dimensions that were used when the metrics were created. For an example,
-        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more information about specifying dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing Metrics</a> in the
-        /// <i>Amazon CloudWatch User Guide</i>.</p>
-        pub fn dimensions(mut self, inp: impl Into<crate::model::Dimension>) -> Self {
-            self.inner = self.inner.dimensions(inp);
+        /// <p>The dimensions. If the metric contains multiple dimensions, you must include a value for each dimension. CloudWatch treats each unique combination of dimensions as a separate metric. If a specific combination of dimensions was not published, you can't retrieve statistics for it. You must specify the same dimensions that were used when the metrics were created. For an example, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more information about specifying dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
+            self.inner = self.inner.dimensions(input);
             self
         }
-        /// <p>The dimensions. If the metric contains multiple dimensions, you must include a value for each dimension.
-        /// CloudWatch treats each unique combination of dimensions as a separate metric.
-        /// If a specific combination of dimensions was not published, you can't retrieve statistics for it.
-        /// You must specify the same dimensions that were used when the metrics were created. For an example,
-        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more information about specifying dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing Metrics</a> in the
-        /// <i>Amazon CloudWatch User Guide</i>.</p>
+        /// <p>The dimensions. If the metric contains multiple dimensions, you must include a value for each dimension. CloudWatch treats each unique combination of dimensions as a separate metric. If a specific combination of dimensions was not published, you can't retrieve statistics for it. You must specify the same dimensions that were used when the metrics were created. For an example, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more information about specifying dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
@@ -2817,64 +2415,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dimensions(input);
             self
         }
-        /// <p>The time stamp that determines the first data point to return. Start times are
-        /// evaluated relative to the time that CloudWatch receives the request.</p>
-        /// <p>The value specified is inclusive; results include data points with the specified time stamp.
-        /// In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).</p>
+        /// <p>The time stamp that determines the first data point to return. Start times are evaluated relative to the time that CloudWatch receives the request.</p>
+        /// <p>The value specified is inclusive; results include data points with the specified time stamp. In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).</p>
         /// <p>CloudWatch rounds the specified time stamp as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>Start time less than 15 days ago - Round down to the nearest whole minute.
-        /// For example, 12:32:34 is rounded down to 12:32:00.</p>
-        /// </li>
-        /// <li>
-        /// <p>Start time between 15 and 63 days ago - Round down to the nearest 5-minute clock interval.
-        /// For example, 12:32:34 is rounded down to 12:30:00.</p>
-        /// </li>
-        /// <li>
-        /// <p>Start time greater than 63 days ago - Round down to the nearest 1-hour clock interval.
-        /// For example, 12:32:34 is rounded down to 12:00:00.</p>
-        /// </li>
+        /// <li> <p>Start time less than 15 days ago - Round down to the nearest whole minute. For example, 12:32:34 is rounded down to 12:32:00.</p> </li>
+        /// <li> <p>Start time between 15 and 63 days ago - Round down to the nearest 5-minute clock interval. For example, 12:32:34 is rounded down to 12:30:00.</p> </li>
+        /// <li> <p>Start time greater than 63 days ago - Round down to the nearest 1-hour clock interval. For example, 12:32:34 is rounded down to 12:00:00.</p> </li>
         /// </ul>
-        /// <p>If you set <code>Period</code> to 5, 10, or 30, the start time of your request is
-        /// rounded down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions
-        /// of a minute. For example, if you make a query at (HH:mm:ss) 01:05:23 for the previous
-        /// 10-second period, the start time of your request is rounded down and you receive data from 01:05:10 to
-        /// 01:05:20. If you make a query at 15:07:17 for the previous 5 minutes of data, using a
-        /// period of 5 seconds, you receive data
-        /// timestamped between 15:02:15 and 15:07:15.
-        /// </p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        /// <p>If you set <code>Period</code> to 5, 10, or 30, the start time of your request is rounded down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions of a minute. For example, if you make a query at (HH:mm:ss) 01:05:23 for the previous 10-second period, the start time of your request is rounded down and you receive data from 01:05:10 to 01:05:20. If you make a query at 15:07:17 for the previous 5 minutes of data, using a period of 5 seconds, you receive data timestamped between 15:02:15 and 15:07:15. </p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
-        /// <p>The time stamp that determines the first data point to return. Start times are
-        /// evaluated relative to the time that CloudWatch receives the request.</p>
-        /// <p>The value specified is inclusive; results include data points with the specified time stamp.
-        /// In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).</p>
+        /// <p>The time stamp that determines the first data point to return. Start times are evaluated relative to the time that CloudWatch receives the request.</p>
+        /// <p>The value specified is inclusive; results include data points with the specified time stamp. In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).</p>
         /// <p>CloudWatch rounds the specified time stamp as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>Start time less than 15 days ago - Round down to the nearest whole minute.
-        /// For example, 12:32:34 is rounded down to 12:32:00.</p>
-        /// </li>
-        /// <li>
-        /// <p>Start time between 15 and 63 days ago - Round down to the nearest 5-minute clock interval.
-        /// For example, 12:32:34 is rounded down to 12:30:00.</p>
-        /// </li>
-        /// <li>
-        /// <p>Start time greater than 63 days ago - Round down to the nearest 1-hour clock interval.
-        /// For example, 12:32:34 is rounded down to 12:00:00.</p>
-        /// </li>
+        /// <li> <p>Start time less than 15 days ago - Round down to the nearest whole minute. For example, 12:32:34 is rounded down to 12:32:00.</p> </li>
+        /// <li> <p>Start time between 15 and 63 days ago - Round down to the nearest 5-minute clock interval. For example, 12:32:34 is rounded down to 12:30:00.</p> </li>
+        /// <li> <p>Start time greater than 63 days ago - Round down to the nearest 1-hour clock interval. For example, 12:32:34 is rounded down to 12:00:00.</p> </li>
         /// </ul>
-        /// <p>If you set <code>Period</code> to 5, 10, or 30, the start time of your request is
-        /// rounded down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions
-        /// of a minute. For example, if you make a query at (HH:mm:ss) 01:05:23 for the previous
-        /// 10-second period, the start time of your request is rounded down and you receive data from 01:05:10 to
-        /// 01:05:20. If you make a query at 15:07:17 for the previous 5 minutes of data, using a
-        /// period of 5 seconds, you receive data
-        /// timestamped between 15:02:15 and 15:07:15.
-        /// </p>
+        /// <p>If you set <code>Period</code> to 5, 10, or 30, the start time of your request is rounded down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions of a minute. For example, if you make a query at (HH:mm:ss) 01:05:23 for the previous 10-second period, the start time of your request is rounded down and you receive data from 01:05:10 to 01:05:20. If you make a query at 15:07:17 for the previous 5 minutes of data, using a period of 5 seconds, you receive data timestamped between 15:02:15 and 15:07:15. </p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2883,15 +2445,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time stamp that determines the last data point to return.</p>
-        /// <p>The value specified is exclusive; results include data points up to the specified time stamp.
-        /// In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        /// <p>The value specified is exclusive; results include data points up to the specified time stamp. In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).</p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The time stamp that determines the last data point to return.</p>
-        /// <p>The value specified is exclusive; results include data points up to the specified time stamp.
-        /// In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).</p>
+        /// <p>The value specified is exclusive; results include data points up to the specified time stamp. In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2899,43 +2459,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_end_time(input);
             self
         }
-        /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can
-        /// be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected
-        /// at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics
-        /// are those metrics stored by a <code>PutMetricData</code> call that includes a <code>StorageResolution</code> of 1 second.</p>
-        /// <p>If the <code>StartTime</code> parameter specifies a time stamp that is greater than
-        /// 3 hours ago, you must specify the period as follows or no data points in that time range is returned:</p>
+        /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics stored by a <code>PutMetricData</code> call that includes a <code>StorageResolution</code> of 1 second.</p>
+        /// <p>If the <code>StartTime</code> parameter specifies a time stamp that is greater than 3 hours ago, you must specify the period as follows or no data points in that time range is returned:</p>
         /// <ul>
-        /// <li>
-        /// <p>Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).</p>
-        /// </li>
-        /// <li>
-        /// <p>Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p>
-        /// </li>
-        /// <li>
-        /// <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).</p>
-        /// </li>
+        /// <li> <p>Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).</p> </li>
+        /// <li> <p>Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p> </li>
+        /// <li> <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).</p> </li>
         /// </ul>
-        pub fn period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.period(inp);
+        pub fn period(mut self, input: i32) -> Self {
+            self.inner = self.inner.period(input);
             self
         }
-        /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can
-        /// be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected
-        /// at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics
-        /// are those metrics stored by a <code>PutMetricData</code> call that includes a <code>StorageResolution</code> of 1 second.</p>
-        /// <p>If the <code>StartTime</code> parameter specifies a time stamp that is greater than
-        /// 3 hours ago, you must specify the period as follows or no data points in that time range is returned:</p>
+        /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics stored by a <code>PutMetricData</code> call that includes a <code>StorageResolution</code> of 1 second.</p>
+        /// <p>If the <code>StartTime</code> parameter specifies a time stamp that is greater than 3 hours ago, you must specify the period as follows or no data points in that time range is returned:</p>
         /// <ul>
-        /// <li>
-        /// <p>Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).</p>
-        /// </li>
-        /// <li>
-        /// <p>Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p>
-        /// </li>
-        /// <li>
-        /// <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).</p>
-        /// </li>
+        /// <li> <p>Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).</p> </li>
+        /// <li> <p>Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p> </li>
+        /// <li> <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).</p> </li>
         /// </ul>
         pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_period(input);
@@ -2945,16 +2485,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_statistics`](Self::set_statistics).
         ///
-        /// <p>The metric statistics, other than percentile. For percentile statistics,
-        /// use <code>ExtendedStatistics</code>. When calling <code>GetMetricStatistics</code>, you must
-        /// specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.</p>
-        pub fn statistics(mut self, inp: impl Into<crate::model::Statistic>) -> Self {
-            self.inner = self.inner.statistics(inp);
+        /// <p>The metric statistics, other than percentile. For percentile statistics, use <code>ExtendedStatistics</code>. When calling <code>GetMetricStatistics</code>, you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.</p>
+        pub fn statistics(mut self, input: crate::model::Statistic) -> Self {
+            self.inner = self.inner.statistics(input);
             self
         }
-        /// <p>The metric statistics, other than percentile. For percentile statistics,
-        /// use <code>ExtendedStatistics</code>. When calling <code>GetMetricStatistics</code>, you must
-        /// specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.</p>
+        /// <p>The metric statistics, other than percentile. For percentile statistics, use <code>ExtendedStatistics</code>. When calling <code>GetMetricStatistics</code>, you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.</p>
         pub fn set_statistics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Statistic>>,
@@ -2966,16 +2502,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_extended_statistics`](Self::set_extended_statistics).
         ///
-        /// <p>The percentile statistics. Specify values between p0.0 and p100. When calling <code>GetMetricStatistics</code>, you must
-        /// specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both. Percentile statistics are not
-        /// available for metrics when any of the metric values are negative numbers.</p>
-        pub fn extended_statistics(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.extended_statistics(inp);
+        /// <p>The percentile statistics. Specify values between p0.0 and p100. When calling <code>GetMetricStatistics</code>, you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both. Percentile statistics are not available for metrics when any of the metric values are negative numbers.</p>
+        pub fn extended_statistics(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.extended_statistics(input.into());
             self
         }
-        /// <p>The percentile statistics. Specify values between p0.0 and p100. When calling <code>GetMetricStatistics</code>, you must
-        /// specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both. Percentile statistics are not
-        /// available for metrics when any of the metric values are negative numbers.</p>
+        /// <p>The percentile statistics. Specify values between p0.0 and p100. When calling <code>GetMetricStatistics</code>, you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both. Percentile statistics are not available for metrics when any of the metric values are negative numbers.</p>
         pub fn set_extended_statistics(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2983,18 +2515,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_extended_statistics(input);
             self
         }
-        /// <p>The unit for a given metric.
-        /// If you omit <code>Unit</code>, all data that was collected with any unit is returned, along with the corresponding units that were specified
-        /// when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified.
-        /// If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.</p>
-        pub fn unit(mut self, inp: crate::model::StandardUnit) -> Self {
-            self.inner = self.inner.unit(inp);
+        /// <p>The unit for a given metric. If you omit <code>Unit</code>, all data that was collected with any unit is returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified. If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.</p>
+        pub fn unit(mut self, input: crate::model::StandardUnit) -> Self {
+            self.inner = self.inner.unit(input);
             self
         }
-        /// <p>The unit for a given metric.
-        /// If you omit <code>Unit</code>, all data that was collected with any unit is returned, along with the corresponding units that were specified
-        /// when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified.
-        /// If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.</p>
+        /// <p>The unit for a given metric. If you omit <code>Unit</code>, all data that was collected with any unit is returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified. If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.</p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::StandardUnit>) -> Self {
             self.inner = self.inner.set_unit(input);
             self
@@ -3003,7 +2529,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMetricStream`.
     ///
     /// <p>Returns information about the metric stream that you specify.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMetricStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3048,10 +2574,10 @@ pub mod fluent_builders {
                 crate::input::GetMetricStreamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3060,8 +2586,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the metric stream to retrieve information about.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the metric stream to retrieve information about.</p>
@@ -3072,25 +2598,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMetricWidgetImage`.
     ///
-    /// <p>You can use the <code>GetMetricWidgetImage</code> API to retrieve a snapshot graph of
-    /// one or more Amazon CloudWatch metrics as a bitmap image. You can then embed this
-    /// image into your services and products, such as wiki pages, reports, and documents.
-    /// You could also retrieve images regularly, such as every minute, and create your own
-    /// custom live dashboard.</p>
-    ///
-    /// <p>The graph you retrieve can include all CloudWatch metric graph features, including metric math
-    /// and horizontal and vertical annotations.</p>
-    ///
+    /// <p>You can use the <code>GetMetricWidgetImage</code> API to retrieve a snapshot graph of one or more Amazon CloudWatch metrics as a bitmap image. You can then embed this image into your services and products, such as wiki pages, reports, and documents. You could also retrieve images regularly, such as every minute, and create your own custom live dashboard.</p>
+    /// <p>The graph you retrieve can include all CloudWatch metric graph features, including metric math and horizontal and vertical annotations.</p>
     /// <p>There is a limit of 20 transactions per second for this API. Each <code>GetMetricWidgetImage</code> action has the following limits:</p>
     /// <ul>
-    /// <li>
-    /// <p>As many as 100 metrics in the graph.</p>
-    /// </li>
-    /// <li>
-    /// <p>Up to 100 KB uncompressed payload.</p>
-    /// </li>
+    /// <li> <p>As many as 100 metrics in the graph.</p> </li>
+    /// <li> <p>Up to 100 KB uncompressed payload.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMetricWidgetImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3135,10 +2650,10 @@ pub mod fluent_builders {
                 crate::input::GetMetricWidgetImageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3146,26 +2661,16 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A JSON string that defines the bitmap graph to be retrieved. The string includes the
-        /// metrics to include in the graph, statistics, annotations, title, axis limits, and so on.
-        /// You can include only one <code>MetricWidget</code> parameter in each <code>GetMetricWidgetImage</code> call.</p>
-        /// <p>For more information about the syntax of <code>MetricWidget</code> see
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Metric-Widget-Structure.html">GetMetricWidgetImage: Metric Widget Structure and Syntax</a>.</p>
-        ///
-        /// <p>If any metric on the graph could not load all the requested data points, an orange triangle with an exclamation
-        /// point appears next to the graph legend.</p>
-        pub fn metric_widget(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_widget(inp);
+        /// <p>A JSON string that defines the bitmap graph to be retrieved. The string includes the metrics to include in the graph, statistics, annotations, title, axis limits, and so on. You can include only one <code>MetricWidget</code> parameter in each <code>GetMetricWidgetImage</code> call.</p>
+        /// <p>For more information about the syntax of <code>MetricWidget</code> see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Metric-Widget-Structure.html">GetMetricWidgetImage: Metric Widget Structure and Syntax</a>.</p>
+        /// <p>If any metric on the graph could not load all the requested data points, an orange triangle with an exclamation point appears next to the graph legend.</p>
+        pub fn metric_widget(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_widget(input.into());
             self
         }
-        /// <p>A JSON string that defines the bitmap graph to be retrieved. The string includes the
-        /// metrics to include in the graph, statistics, annotations, title, axis limits, and so on.
-        /// You can include only one <code>MetricWidget</code> parameter in each <code>GetMetricWidgetImage</code> call.</p>
-        /// <p>For more information about the syntax of <code>MetricWidget</code> see
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Metric-Widget-Structure.html">GetMetricWidgetImage: Metric Widget Structure and Syntax</a>.</p>
-        ///
-        /// <p>If any metric on the graph could not load all the requested data points, an orange triangle with an exclamation
-        /// point appears next to the graph legend.</p>
+        /// <p>A JSON string that defines the bitmap graph to be retrieved. The string includes the metrics to include in the graph, statistics, annotations, title, axis limits, and so on. You can include only one <code>MetricWidget</code> parameter in each <code>GetMetricWidgetImage</code> call.</p>
+        /// <p>For more information about the syntax of <code>MetricWidget</code> see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Metric-Widget-Structure.html">GetMetricWidgetImage: Metric Widget Structure and Syntax</a>.</p>
+        /// <p>If any metric on the graph could not load all the requested data points, an orange triangle with an exclamation point appears next to the graph legend.</p>
         pub fn set_metric_widget(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3174,93 +2679,53 @@ pub mod fluent_builders {
             self
         }
         /// <p>The format of the resulting image. Only PNG images are supported.</p>
-        ///
-        /// <p>The default is <code>png</code>. If you specify <code>png</code>, the API returns an HTTP response with the
-        /// content-type set to <code>text/xml</code>. The image data is in a <code>MetricWidgetImage</code>
-        /// field. For example:</p>
-        ///
-        /// <p>
-        /// <code>
-        /// <GetMetricWidgetImageResponse xmlns=<URLstring>></code>
-        /// </p>
-        /// <p>
-        /// <code>  <GetMetricWidgetImageResult></code>
-        /// </p>
-        /// <p>
-        /// <code>    <MetricWidgetImage></code>
-        /// </p>
-        /// <p>
-        /// <code>       iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code>
-        /// </p>
-        /// <p>
-        /// <code>    </MetricWidgetImage></code>
-        /// </p>
-        /// <p>
-        /// <code>  </GetMetricWidgetImageResult></code>
-        /// </p>
-        /// <p>
-        /// <code>  <ResponseMetadata></code>
-        /// </p>
-        /// <p>
-        /// <code>    <RequestId>6f0d4192-4d42-11e8-82c1-f539a07e0e3b</RequestId></code>
-        /// </p>
-        /// <p>
-        /// <code>  </ResponseMetadata></code>
-        /// </p>
-        /// <p>
-        /// <code></GetMetricWidgetImageResponse></code>
-        /// </p>
-        ///
-        /// <p>The <code>image/png</code> setting is intended only for custom HTTP requests. For most
-        /// use cases, and all actions using an Amazon Web Services SDK, you should use <code>png</code>. If you specify
-        /// <code>image/png</code>, the HTTP response has a content-type set to <code>image/png</code>,
-        /// and the body of the response is a PNG image. </p>
-        pub fn output_format(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_format(inp);
+        /// <p>The default is <code>png</code>. If you specify <code>png</code>, the API returns an HTTP response with the content-type set to <code>text/xml</code>. The image data is in a <code>MetricWidgetImage</code> field. For example:</p>
+        /// <p> <code>
+        /// <getmetricwidgetimageresponse xmlns="<URLstring">
+        /// &gt;
+        /// </getmetricwidgetimageresponse></code> </p>
+        /// <p> <code>
+        /// <getmetricwidgetimageresult></getmetricwidgetimageresult></code> </p>
+        /// <p> <code>
+        /// <metricwidgetimage></metricwidgetimage></code> </p>
+        /// <p> <code> iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code> </p>
+        /// <p> <code> </code> </p>
+        /// <p> <code> </code> </p>
+        /// <p> <code>
+        /// <responsemetadata></responsemetadata></code> </p>
+        /// <p> <code>
+        /// <requestid>
+        /// 6f0d4192-4d42-11e8-82c1-f539a07e0e3b
+        /// </requestid></code> </p>
+        /// <p> <code> </code> </p>
+        /// <p> <code></code> </p>
+        /// <p>The <code>image/png</code> setting is intended only for custom HTTP requests. For most use cases, and all actions using an Amazon Web Services SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a content-type set to <code>image/png</code>, and the body of the response is a PNG image. </p>
+        pub fn output_format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_format(input.into());
             self
         }
         /// <p>The format of the resulting image. Only PNG images are supported.</p>
-        ///
-        /// <p>The default is <code>png</code>. If you specify <code>png</code>, the API returns an HTTP response with the
-        /// content-type set to <code>text/xml</code>. The image data is in a <code>MetricWidgetImage</code>
-        /// field. For example:</p>
-        ///
-        /// <p>
-        /// <code>
-        /// <GetMetricWidgetImageResponse xmlns=<URLstring>></code>
-        /// </p>
-        /// <p>
-        /// <code>  <GetMetricWidgetImageResult></code>
-        /// </p>
-        /// <p>
-        /// <code>    <MetricWidgetImage></code>
-        /// </p>
-        /// <p>
-        /// <code>       iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code>
-        /// </p>
-        /// <p>
-        /// <code>    </MetricWidgetImage></code>
-        /// </p>
-        /// <p>
-        /// <code>  </GetMetricWidgetImageResult></code>
-        /// </p>
-        /// <p>
-        /// <code>  <ResponseMetadata></code>
-        /// </p>
-        /// <p>
-        /// <code>    <RequestId>6f0d4192-4d42-11e8-82c1-f539a07e0e3b</RequestId></code>
-        /// </p>
-        /// <p>
-        /// <code>  </ResponseMetadata></code>
-        /// </p>
-        /// <p>
-        /// <code></GetMetricWidgetImageResponse></code>
-        /// </p>
-        ///
-        /// <p>The <code>image/png</code> setting is intended only for custom HTTP requests. For most
-        /// use cases, and all actions using an Amazon Web Services SDK, you should use <code>png</code>. If you specify
-        /// <code>image/png</code>, the HTTP response has a content-type set to <code>image/png</code>,
-        /// and the body of the response is a PNG image. </p>
+        /// <p>The default is <code>png</code>. If you specify <code>png</code>, the API returns an HTTP response with the content-type set to <code>text/xml</code>. The image data is in a <code>MetricWidgetImage</code> field. For example:</p>
+        /// <p> <code>
+        /// <getmetricwidgetimageresponse xmlns="<URLstring">
+        /// &gt;
+        /// </getmetricwidgetimageresponse></code> </p>
+        /// <p> <code>
+        /// <getmetricwidgetimageresult></getmetricwidgetimageresult></code> </p>
+        /// <p> <code>
+        /// <metricwidgetimage></metricwidgetimage></code> </p>
+        /// <p> <code> iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code> </p>
+        /// <p> <code> </code> </p>
+        /// <p> <code> </code> </p>
+        /// <p> <code>
+        /// <responsemetadata></responsemetadata></code> </p>
+        /// <p> <code>
+        /// <requestid>
+        /// 6f0d4192-4d42-11e8-82c1-f539a07e0e3b
+        /// </requestid></code> </p>
+        /// <p> <code> </code> </p>
+        /// <p> <code></code> </p>
+        /// <p>The <code>image/png</code> setting is intended only for custom HTTP requests. For most use cases, and all actions using an Amazon Web Services SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a content-type set to <code>image/png</code>, and the body of the response is a PNG image. </p>
         pub fn set_output_format(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3271,16 +2736,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDashboards`.
     ///
-    /// <p>Returns a list of the dashboards for your account. If you include <code>DashboardNamePrefix</code>, only
-    /// those dashboards with names starting with the prefix are listed. Otherwise, all dashboards in your account are
-    /// listed.
-    /// </p>
-    /// <p>
-    /// <code>ListDashboards</code> returns up to 1000 results on one page. If there
-    /// are more than 1000 dashboards, you can call <code>ListDashboards</code> again and
-    /// include the value you received for <code>NextToken</code> in the first call, to receive
-    /// the next 1000 results.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of the dashboards for your account. If you include <code>DashboardNamePrefix</code>, only those dashboards with names starting with the prefix are listed. Otherwise, all dashboards in your account are listed. </p>
+    /// <p> <code>ListDashboards</code> returns up to 1000 results on one page. If there are more than 1000 dashboards, you can call <code>ListDashboards</code> again and include the value you received for <code>NextToken</code> in the first call, to receive the next 1000 results.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDashboards<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3325,10 +2783,10 @@ pub mod fluent_builders {
                 crate::input::ListDashboardsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3336,20 +2794,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If you specify this parameter, only
-        /// the dashboards with names starting with the specified string are listed. The maximum length is 255, and
-        /// valid characters are A-Z, a-z, 0-9, ".", "-", and "_".
+        /// Create a paginator for this request
         ///
-        /// </p>
-        pub fn dashboard_name_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_name_prefix(inp);
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDashboardsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDashboardsPaginator<C, M, R> {
+            crate::paginator::ListDashboardsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If you specify this parameter, only the dashboards with names starting with the specified string are listed. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, ".", "-", and "_". </p>
+        pub fn dashboard_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_name_prefix(input.into());
             self
         }
-        /// <p>If you specify this parameter, only
-        /// the dashboards with names starting with the specified string are listed. The maximum length is 255, and
-        /// valid characters are A-Z, a-z, 0-9, ".", "-", and "_".
-        ///
-        /// </p>
+        /// <p>If you specify this parameter, only the dashboards with names starting with the specified string are listed. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, ".", "-", and "_". </p>
         pub fn set_dashboard_name_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3358,8 +2814,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token returned by a previous call to indicate that there is more data available.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token returned by a previous call to indicate that there is more data available.</p>
@@ -3370,21 +2826,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListMetrics`.
     ///
-    /// <p>List the specified metrics. You can use the returned metrics with
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a> or
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a> to obtain statistical data.</p>
-    /// <p>Up to 500 results are returned for any one call. To retrieve additional results,
-    /// use the returned token with subsequent calls.</p>
-    /// <p>After you create a metric, allow up to 15 minutes before the metric appears.
-    /// You can see statistics about the metric sooner by using <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a> or
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p>
-    ///
-    /// <p>
-    /// <code>ListMetrics</code> doesn't return information about metrics if those metrics haven't
-    /// reported data in the past two weeks. To retrieve those metrics, use
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a> or
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>List the specified metrics. You can use the returned metrics with <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a> to obtain statistical data.</p>
+    /// <p>Up to 500 results are returned for any one call. To retrieve additional results, use the returned token with subsequent calls.</p>
+    /// <p>After you create a metric, allow up to 15 minutes before the metric appears. You can see statistics about the metric sooner by using <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p>
+    /// <p> <code>ListMetrics</code> doesn't return information about metrics if those metrics haven't reported data in the past two weeks. To retrieve those metrics, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMetrics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3429,10 +2875,10 @@ pub mod fluent_builders {
                 crate::input::ListMetricsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3440,26 +2886,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The metric namespace to filter against. Only the namespace that matches exactly
-        /// will be returned.</p>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMetricsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListMetricsPaginator<C, M, R> {
+            crate::paginator::ListMetricsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The metric namespace to filter against. Only the namespace that matches exactly will be returned.</p>
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
-        /// <p>The metric namespace to filter against. Only the namespace that matches exactly
-        /// will be returned.</p>
+        /// <p>The metric namespace to filter against. Only the namespace that matches exactly will be returned.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
             self
         }
-        /// <p>The name of the metric to filter against.  Only the metrics with names that match exactly
-        /// will be returned.</p>
-        pub fn metric_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_name(inp);
+        /// <p>The name of the metric to filter against. Only the metrics with names that match exactly will be returned.</p>
+        pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_name(input.into());
             self
         }
-        /// <p>The name of the metric to filter against.  Only the metrics with names that match exactly
-        /// will be returned.</p>
+        /// <p>The name of the metric to filter against. Only the metrics with names that match exactly will be returned.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_metric_name(input);
             self
@@ -3468,14 +2916,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
-        /// <p>The dimensions to filter against.  Only the dimensions that match exactly
-        /// will be returned.</p>
-        pub fn dimensions(mut self, inp: impl Into<crate::model::DimensionFilter>) -> Self {
-            self.inner = self.inner.dimensions(inp);
+        /// <p>The dimensions to filter against. Only the dimensions that match exactly will be returned.</p>
+        pub fn dimensions(mut self, input: crate::model::DimensionFilter) -> Self {
+            self.inner = self.inner.dimensions(input);
             self
         }
-        /// <p>The dimensions to filter against.  Only the dimensions that match exactly
-        /// will be returned.</p>
+        /// <p>The dimensions to filter against. Only the dimensions that match exactly will be returned.</p>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DimensionFilter>>,
@@ -3483,36 +2929,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dimensions(input);
             self
         }
-        /// <p>The token returned by a previous call to indicate that there is more data
-        /// available.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token returned by a previous call to indicate that there is more data available.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token returned by a previous call to indicate that there is more data
-        /// available.</p>
+        /// <p>The token returned by a previous call to indicate that there is more data available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>To filter the results to show only metrics that have had data points published
-        /// in the past three hours, specify this parameter
-        /// with a value of <code>PT3H</code>. This is the only valid value
-        /// for this parameter.</p>
-        /// <p>The results that are returned are an approximation of the value you specify. There
-        /// is a low probability that the returned results include metrics with last published
-        /// data as much as 40 minutes more than the specified time interval.</p>
-        pub fn recently_active(mut self, inp: crate::model::RecentlyActive) -> Self {
-            self.inner = self.inner.recently_active(inp);
+        /// <p>To filter the results to show only metrics that have had data points published in the past three hours, specify this parameter with a value of <code>PT3H</code>. This is the only valid value for this parameter.</p>
+        /// <p>The results that are returned are an approximation of the value you specify. There is a low probability that the returned results include metrics with last published data as much as 40 minutes more than the specified time interval.</p>
+        pub fn recently_active(mut self, input: crate::model::RecentlyActive) -> Self {
+            self.inner = self.inner.recently_active(input);
             self
         }
-        /// <p>To filter the results to show only metrics that have had data points published
-        /// in the past three hours, specify this parameter
-        /// with a value of <code>PT3H</code>. This is the only valid value
-        /// for this parameter.</p>
-        /// <p>The results that are returned are an approximation of the value you specify. There
-        /// is a low probability that the returned results include metrics with last published
-        /// data as much as 40 minutes more than the specified time interval.</p>
+        /// <p>To filter the results to show only metrics that have had data points published in the past three hours, specify this parameter with a value of <code>PT3H</code>. This is the only valid value for this parameter.</p>
+        /// <p>The results that are returned are an approximation of the value you specify. There is a low probability that the returned results include metrics with last published data as much as 40 minutes more than the specified time interval.</p>
         pub fn set_recently_active(
             mut self,
             input: std::option::Option<crate::model::RecentlyActive>,
@@ -3524,7 +2958,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMetricStreams`.
     ///
     /// <p>Returns a list of metric streams in this account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMetricStreams<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3569,10 +3003,10 @@ pub mod fluent_builders {
                 crate::input::ListMetricStreamsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3580,9 +3014,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMetricStreamsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListMetricStreamsPaginator<C, M, R> {
+            crate::paginator::ListMetricStreamsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Include this value, if it was returned by the previous call, to get the next set of metric streams.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Include this value, if it was returned by the previous call, to get the next set of metric streams.</p>
@@ -3591,8 +3031,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in one operation.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in one operation.</p>
@@ -3603,9 +3043,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Displays the tags associated with a CloudWatch resource. Currently, alarms
-    /// and Contributor Insights rules support tagging.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Displays the tags associated with a CloudWatch resource. Currently, alarms and Contributor Insights rules support tagging.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3650,10 +3089,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3662,33 +3101,17 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the CloudWatch resource that you want to view tags for.</p>
-        /// <p>The ARN format of an alarm is
-        /// <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i>
-        /// </code>
-        /// </p>
-        /// <p>The ARN format of a Contributor Insights rule is
-        /// <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i>
-        /// </code>
-        /// </p>
-        /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource
-        /// Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General
-        /// Reference</i>.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p>
+        /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p>
+        /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the CloudWatch resource that you want to view tags for.</p>
-        /// <p>The ARN format of an alarm is
-        /// <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i>
-        /// </code>
-        /// </p>
-        /// <p>The ARN format of a Contributor Insights rule is
-        /// <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i>
-        /// </code>
-        /// </p>
-        /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource
-        /// Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General
-        /// Reference</i>.</p>
+        /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p>
+        /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p>
+        /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -3696,10 +3119,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutAnomalyDetector`.
     ///
-    /// <p>Creates an anomaly detection model for a CloudWatch metric. You can use the model
-    /// to display a band of expected normal values when the metric is graphed.</p>
+    /// <p>Creates an anomaly detection model for a CloudWatch metric. You can use the model to display a band of expected normal values when the metric is graphed.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Anomaly_Detection.html">CloudWatch Anomaly Detection</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAnomalyDetector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3744,10 +3166,10 @@ pub mod fluent_builders {
                 crate::input::PutAnomalyDetectorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3756,8 +3178,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The namespace of the metric to create the anomaly detection model for.</p>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace of the metric to create the anomaly detection model for.</p>
@@ -3766,8 +3188,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the metric to create the anomaly detection model for.</p>
-        pub fn metric_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_name(inp);
+        pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_name(input.into());
             self
         }
         /// <p>The name of the metric to create the anomaly detection model for.</p>
@@ -3780,8 +3202,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p>The metric dimensions to create the anomaly detection model for.</p>
-        pub fn dimensions(mut self, inp: impl Into<crate::model::Dimension>) -> Self {
-            self.inner = self.inner.dimensions(inp);
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
+            self.inner = self.inner.dimensions(input);
             self
         }
         /// <p>The metric dimensions to create the anomaly detection model for.</p>
@@ -3793,8 +3215,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The statistic to use for the metric and the anomaly detection model.</p>
-        pub fn stat(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stat(inp);
+        pub fn stat(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stat(input.into());
             self
         }
         /// <p>The statistic to use for the metric and the anomaly detection model.</p>
@@ -3802,22 +3224,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_stat(input);
             self
         }
-        /// <p>The configuration specifies details about how the
-        /// anomaly detection model is to be trained, including
-        /// time ranges to exclude when training and updating the model.
-        /// You can specify as many as 10 time ranges.</p>
-        /// <p>The configuration can also include the time zone to use for
-        /// the metric.</p>
-        pub fn configuration(mut self, inp: crate::model::AnomalyDetectorConfiguration) -> Self {
-            self.inner = self.inner.configuration(inp);
+        /// <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude when training and updating the model. You can specify as many as 10 time ranges.</p>
+        /// <p>The configuration can also include the time zone to use for the metric.</p>
+        pub fn configuration(mut self, input: crate::model::AnomalyDetectorConfiguration) -> Self {
+            self.inner = self.inner.configuration(input);
             self
         }
-        /// <p>The configuration specifies details about how the
-        /// anomaly detection model is to be trained, including
-        /// time ranges to exclude when training and updating the model.
-        /// You can specify as many as 10 time ranges.</p>
-        /// <p>The configuration can also include the time zone to use for
-        /// the metric.</p>
+        /// <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude when training and updating the model. You can specify as many as 10 time ranges.</p>
+        /// <p>The configuration can also include the time zone to use for the metric.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::AnomalyDetectorConfiguration>,
@@ -3826,78 +3240,32 @@ pub mod fluent_builders {
             self
         }
         /// <p>A single metric anomaly detector to be created.</p>
-        /// <p>When using <code>SingleMetricAnomalyDetector</code>,
-        /// you cannot include the following parameters in the same operation:</p>
-        ///
+        /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Dimensions</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MetricName</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Namespace</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Stat</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Dimensions</code> </p> </li>
+        /// <li> <p> <code>MetricName</code> </p> </li>
+        /// <li> <p> <code>Namespace</code> </p> </li>
+        /// <li> <p> <code>Stat</code> </p> </li>
+        /// <li> <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li>
         /// </ul>
-        ///
-        /// <p>Instead, specify the single metric anomaly detector attributes
-        /// as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
+        /// <p>Instead, specify the single metric anomaly detector attributes as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
         pub fn single_metric_anomaly_detector(
             mut self,
-            inp: crate::model::SingleMetricAnomalyDetector,
+            input: crate::model::SingleMetricAnomalyDetector,
         ) -> Self {
-            self.inner = self.inner.single_metric_anomaly_detector(inp);
+            self.inner = self.inner.single_metric_anomaly_detector(input);
             self
         }
         /// <p>A single metric anomaly detector to be created.</p>
-        /// <p>When using <code>SingleMetricAnomalyDetector</code>,
-        /// you cannot include the following parameters in the same operation:</p>
-        ///
+        /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Dimensions</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MetricName</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Namespace</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Stat</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Dimensions</code> </p> </li>
+        /// <li> <p> <code>MetricName</code> </p> </li>
+        /// <li> <p> <code>Namespace</code> </p> </li>
+        /// <li> <p> <code>Stat</code> </p> </li>
+        /// <li> <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li>
         /// </ul>
-        ///
-        /// <p>Instead, specify the single metric anomaly detector attributes
-        /// as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
+        /// <p>Instead, specify the single metric anomaly detector attributes as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
         pub fn set_single_metric_anomaly_detector(
             mut self,
             input: std::option::Option<crate::model::SingleMetricAnomalyDetector>,
@@ -3906,78 +3274,32 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metric math anomaly detector to be created.</p>
-        ///
         /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Dimensions</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MetricName</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Namespace</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Stat</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Dimensions</code> </p> </li>
+        /// <li> <p> <code>MetricName</code> </p> </li>
+        /// <li> <p> <code>Namespace</code> </p> </li>
+        /// <li> <p> <code>Stat</code> </p> </li>
+        /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li>
         /// </ul>
-        ///
-        /// <p>Instead, specify the metric math anomaly detector attributes
-        /// as part of the property <code>MetricMathAnomalyDetector</code>.</p>
+        /// <p>Instead, specify the metric math anomaly detector attributes as part of the property <code>MetricMathAnomalyDetector</code>.</p>
         pub fn metric_math_anomaly_detector(
             mut self,
-            inp: crate::model::MetricMathAnomalyDetector,
+            input: crate::model::MetricMathAnomalyDetector,
         ) -> Self {
-            self.inner = self.inner.metric_math_anomaly_detector(inp);
+            self.inner = self.inner.metric_math_anomaly_detector(input);
             self
         }
         /// <p>The metric math anomaly detector to be created.</p>
-        ///
         /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Dimensions</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MetricName</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Namespace</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Stat</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Dimensions</code> </p> </li>
+        /// <li> <p> <code>MetricName</code> </p> </li>
+        /// <li> <p> <code>Namespace</code> </p> </li>
+        /// <li> <p> <code>Stat</code> </p> </li>
+        /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li>
         /// </ul>
-        ///
-        /// <p>Instead, specify the metric math anomaly detector attributes
-        /// as part of the property <code>MetricMathAnomalyDetector</code>.</p>
+        /// <p>Instead, specify the metric math anomaly detector attributes as part of the property <code>MetricMathAnomalyDetector</code>.</p>
         pub fn set_metric_math_anomaly_detector(
             mut self,
             input: std::option::Option<crate::model::MetricMathAnomalyDetector>,
@@ -3988,47 +3310,19 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutCompositeAlarm`.
     ///
-    /// <p>Creates or updates a <i>composite alarm</i>. When you create a composite
-    /// alarm, you specify a rule expression for the alarm that takes into account the alarm
-    /// states of other alarms that you have created. The composite alarm goes into ALARM state
-    /// only if all conditions of the rule are met.</p>
-    /// <p>The alarms specified in a composite alarm's rule expression can include metric alarms
-    /// and other composite alarms.</p>
-    /// <p>Using composite alarms can reduce
-    /// alarm noise. You can create multiple metric alarms,
-    /// and also create a composite alarm and
-    /// set up alerts only
-    /// for the composite alarm. For example, you could create a composite
-    /// alarm that goes into ALARM state only when more than one of the underlying metric alarms
-    /// are in ALARM state.</p>
-    /// <p>Currently, the only alarm actions that can be taken by composite alarms are notifying
-    /// SNS topics.</p>
-    /// <note>
-    /// <p>It is possible to create a loop or cycle of composite alarms, where composite alarm A depends on composite alarm B, and
-    /// composite alarm B also depends on composite alarm A. In this scenario, you can't delete any composite alarm that is part of the cycle
-    /// because there is always still a composite alarm that depends on that alarm that you want to delete.</p>
-    /// <p>To get out of such a situation, you must
-    /// break the cycle by changing the rule of one of the composite alarms in the cycle to remove a dependency that creates the cycle. The simplest
-    /// change to make to break a cycle is to change the <code>AlarmRule</code> of one of the alarms to <code>False</code>. </p>
-    /// <p>Additionally, the evaluation of composite alarms stops if CloudWatch detects a cycle in the evaluation path.
-    /// </p>
+    /// <p>Creates or updates a <i>composite alarm</i>. When you create a composite alarm, you specify a rule expression for the alarm that takes into account the alarm states of other alarms that you have created. The composite alarm goes into ALARM state only if all conditions of the rule are met.</p>
+    /// <p>The alarms specified in a composite alarm's rule expression can include metric alarms and other composite alarms.</p>
+    /// <p>Using composite alarms can reduce alarm noise. You can create multiple metric alarms, and also create a composite alarm and set up alerts only for the composite alarm. For example, you could create a composite alarm that goes into ALARM state only when more than one of the underlying metric alarms are in ALARM state.</p>
+    /// <p>Currently, the only alarm actions that can be taken by composite alarms are notifying SNS topics.</p> <note>
+    /// <p>It is possible to create a loop or cycle of composite alarms, where composite alarm A depends on composite alarm B, and composite alarm B also depends on composite alarm A. In this scenario, you can't delete any composite alarm that is part of the cycle because there is always still a composite alarm that depends on that alarm that you want to delete.</p>
+    /// <p>To get out of such a situation, you must break the cycle by changing the rule of one of the composite alarms in the cycle to remove a dependency that creates the cycle. The simplest change to make to break a cycle is to change the <code>AlarmRule</code> of one of the alarms to <code>False</code>. </p>
+    /// <p>Additionally, the evaluation of composite alarms stops if CloudWatch detects a cycle in the evaluation path. </p>
     /// </note>
-    /// <p>When this operation creates an alarm, the alarm state is immediately set to
-    /// <code>INSUFFICIENT_DATA</code>. The alarm is then evaluated and its state is set
-    /// appropriately. Any actions associated with the new state are then executed. For a
-    /// composite alarm, this initial time after creation is the only time that
-    /// the
-    /// alarm can be in <code>INSUFFICIENT_DATA</code> state.</p>
-    /// <p>When you update an existing alarm, its state is left unchanged, but the update
-    /// completely overwrites the previous configuration of the alarm.</p>
-    ///
-    /// <p>To use this operation, you must be signed on with
-    /// the <code>cloudwatch:PutCompositeAlarm</code> permission that is scoped to <code>*</code>. You can't create a
-    /// composite alarms if your <code>cloudwatch:PutCompositeAlarm</code> permission has a narrower scope.</p>
-    ///
-    /// <p>If you are an IAM user, you must have <code>iam:CreateServiceLinkedRole</code> to create
-    /// a composite alarm that has Systems Manager OpsItem actions.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is then evaluated and its state is set appropriately. Any actions associated with the new state are then executed. For a composite alarm, this initial time after creation is the only time that the alarm can be in <code>INSUFFICIENT_DATA</code> state.</p>
+    /// <p>When you update an existing alarm, its state is left unchanged, but the update completely overwrites the previous configuration of the alarm.</p>
+    /// <p>To use this operation, you must be signed on with the <code>cloudwatch:PutCompositeAlarm</code> permission that is scoped to <code>*</code>. You can't create a composite alarms if your <code>cloudwatch:PutCompositeAlarm</code> permission has a narrower scope.</p>
+    /// <p>If you are an IAM user, you must have <code>iam:CreateServiceLinkedRole</code> to create a composite alarm that has Systems Manager OpsItem actions.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutCompositeAlarm<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4073,10 +3367,10 @@ pub mod fluent_builders {
                 crate::input::PutCompositeAlarmInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4084,14 +3378,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Indicates whether actions should be executed during any changes to the alarm state of the composite alarm. The default is
-        /// <code>TRUE</code>.</p>
-        pub fn actions_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.actions_enabled(inp);
+        /// <p>Indicates whether actions should be executed during any changes to the alarm state of the composite alarm. The default is <code>TRUE</code>.</p>
+        pub fn actions_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.actions_enabled(input);
             self
         }
-        /// <p>Indicates whether actions should be executed during any changes to the alarm state of the composite alarm. The default is
-        /// <code>TRUE</code>.</p>
+        /// <p>Indicates whether actions should be executed during any changes to the alarm state of the composite alarm. The default is <code>TRUE</code>.</p>
         pub fn set_actions_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_actions_enabled(input);
             self
@@ -4100,26 +3392,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_alarm_actions`](Self::set_alarm_actions).
         ///
-        /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state.
-        /// Each action is specified as an Amazon Resource Name (ARN).</p>
-        ///
-        /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
-        /// </code>
-        /// | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
-        /// </code>
-        /// </p>
-        pub fn alarm_actions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_actions(inp);
+        /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+        /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> </p>
+        pub fn alarm_actions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_actions(input.into());
             self
         }
-        /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state.
-        /// Each action is specified as an Amazon Resource Name (ARN).</p>
-        ///
-        /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
-        /// </code>
-        /// | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
-        /// </code>
-        /// </p>
+        /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+        /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> </p>
         pub fn set_alarm_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4128,8 +3408,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the composite alarm.</p>
-        pub fn alarm_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_description(inp);
+        pub fn alarm_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_description(input.into());
             self
         }
         /// <p>The description for the composite alarm.</p>
@@ -4141,8 +3421,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the composite alarm. This name must be unique within the Region.</p>
-        pub fn alarm_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_name(inp);
+        pub fn alarm_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_name(input.into());
             self
         }
         /// <p>The name for the composite alarm. This name must be unique within the Region.</p>
@@ -4150,136 +3430,48 @@ pub mod fluent_builders {
             self.inner = self.inner.set_alarm_name(input);
             self
         }
-        /// <p>An expression that specifies which other alarms are to be evaluated to determine this
-        /// composite alarm's state. For each alarm that you reference, you
-        /// designate a function that
-        /// specifies whether that alarm needs to be in ALARM state, OK state, or INSUFFICIENT_DATA state. You
-        /// can use operators (AND, OR and NOT) to combine multiple functions in a single expression. You can use parenthesis to logically group the
-        /// functions in your expression.</p>
+        /// <p>An expression that specifies which other alarms are to be evaluated to determine this composite alarm's state. For each alarm that you reference, you designate a function that specifies whether that alarm needs to be in ALARM state, OK state, or INSUFFICIENT_DATA state. You can use operators (AND, OR and NOT) to combine multiple functions in a single expression. You can use parenthesis to logically group the functions in your expression.</p>
         /// <p>You can use either alarm names or ARNs to reference the other alarms that are to be evaluated.</p>
         /// <p>Functions can include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALARM("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named
-        /// alarm is in ALARM state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OK("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named
-        /// alarm is in OK state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INSUFFICIENT_DATA("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named
-        /// alarm is in INSUFFICIENT_DATA state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TRUE</code> always evaluates to TRUE.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FALSE</code> always evaluates to FALSE.</p>
-        /// </li>
+        /// <li> <p> <code>ALARM("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in ALARM state.</p> </li>
+        /// <li> <p> <code>OK("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in OK state.</p> </li>
+        /// <li> <p> <code>INSUFFICIENT_DATA("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in INSUFFICIENT_DATA state.</p> </li>
+        /// <li> <p> <code>TRUE</code> always evaluates to TRUE.</p> </li>
+        /// <li> <p> <code>FALSE</code> always evaluates to FALSE.</p> </li>
         /// </ul>
-        /// <p>TRUE and FALSE are useful for testing a complex <code>AlarmRule</code> structure, and
-        /// for testing your alarm actions.</p>
+        /// <p>TRUE and FALSE are useful for testing a complex <code>AlarmRule</code> structure, and for testing your alarm actions.</p>
         /// <p>Alarm names specified in <code>AlarmRule</code> can be surrounded with double-quotes ("), but do not have to be.</p>
-        /// <p>The following
-        /// are some examples of <code>AlarmRule</code>:</p>
+        /// <p>The following are some examples of <code>AlarmRule</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALARM(CPUUtilizationTooHigh) AND ALARM(DiskReadOpsTooHigh)</code> specifies that the composite alarm goes into ALARM state only
-        /// if both CPUUtilizationTooHigh and DiskReadOpsTooHigh alarms are in ALARM state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALARM(CPUUtilizationTooHigh) AND NOT ALARM(DeploymentInProgress)</code>
-        /// specifies that the alarm goes to ALARM state if CPUUtilizationTooHigh is in ALARM state
-        /// and DeploymentInProgress is not in ALARM state. This example reduces
-        /// alarm noise during a known deployment window.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>(ALARM(CPUUtilizationTooHigh) OR ALARM(DiskReadOpsTooHigh)) AND OK(NetworkOutTooHigh)</code> goes into ALARM
-        /// state if CPUUtilizationTooHigh OR DiskReadOpsTooHigh is in ALARM state, and if NetworkOutTooHigh is in OK state.
-        /// This provides another example of using a composite alarm to prevent noise. This rule ensures that you are not notified with an
-        /// alarm action on high CPU or disk usage if a known network problem is also occurring.</p>
-        /// </li>
+        /// <li> <p> <code>ALARM(CPUUtilizationTooHigh) AND ALARM(DiskReadOpsTooHigh)</code> specifies that the composite alarm goes into ALARM state only if both CPUUtilizationTooHigh and DiskReadOpsTooHigh alarms are in ALARM state.</p> </li>
+        /// <li> <p> <code>ALARM(CPUUtilizationTooHigh) AND NOT ALARM(DeploymentInProgress)</code> specifies that the alarm goes to ALARM state if CPUUtilizationTooHigh is in ALARM state and DeploymentInProgress is not in ALARM state. This example reduces alarm noise during a known deployment window.</p> </li>
+        /// <li> <p> <code>(ALARM(CPUUtilizationTooHigh) OR ALARM(DiskReadOpsTooHigh)) AND OK(NetworkOutTooHigh)</code> goes into ALARM state if CPUUtilizationTooHigh OR DiskReadOpsTooHigh is in ALARM state, and if NetworkOutTooHigh is in OK state. This provides another example of using a composite alarm to prevent noise. This rule ensures that you are not notified with an alarm action on high CPU or disk usage if a known network problem is also occurring.</p> </li>
         /// </ul>
-        /// <p>The <code>AlarmRule</code> can specify as many as 100
-        /// "children" alarms. The <code>AlarmRule</code> expression can have as many as 500 elements. Elements
-        /// are child alarms, TRUE or FALSE statements, and
-        /// parentheses.</p>
-        pub fn alarm_rule(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_rule(inp);
+        /// <p>The <code>AlarmRule</code> can specify as many as 100 "children" alarms. The <code>AlarmRule</code> expression can have as many as 500 elements. Elements are child alarms, TRUE or FALSE statements, and parentheses.</p>
+        pub fn alarm_rule(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_rule(input.into());
             self
         }
-        /// <p>An expression that specifies which other alarms are to be evaluated to determine this
-        /// composite alarm's state. For each alarm that you reference, you
-        /// designate a function that
-        /// specifies whether that alarm needs to be in ALARM state, OK state, or INSUFFICIENT_DATA state. You
-        /// can use operators (AND, OR and NOT) to combine multiple functions in a single expression. You can use parenthesis to logically group the
-        /// functions in your expression.</p>
+        /// <p>An expression that specifies which other alarms are to be evaluated to determine this composite alarm's state. For each alarm that you reference, you designate a function that specifies whether that alarm needs to be in ALARM state, OK state, or INSUFFICIENT_DATA state. You can use operators (AND, OR and NOT) to combine multiple functions in a single expression. You can use parenthesis to logically group the functions in your expression.</p>
         /// <p>You can use either alarm names or ARNs to reference the other alarms that are to be evaluated.</p>
         /// <p>Functions can include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALARM("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named
-        /// alarm is in ALARM state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OK("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named
-        /// alarm is in OK state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INSUFFICIENT_DATA("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named
-        /// alarm is in INSUFFICIENT_DATA state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TRUE</code> always evaluates to TRUE.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FALSE</code> always evaluates to FALSE.</p>
-        /// </li>
+        /// <li> <p> <code>ALARM("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in ALARM state.</p> </li>
+        /// <li> <p> <code>OK("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in OK state.</p> </li>
+        /// <li> <p> <code>INSUFFICIENT_DATA("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in INSUFFICIENT_DATA state.</p> </li>
+        /// <li> <p> <code>TRUE</code> always evaluates to TRUE.</p> </li>
+        /// <li> <p> <code>FALSE</code> always evaluates to FALSE.</p> </li>
         /// </ul>
-        /// <p>TRUE and FALSE are useful for testing a complex <code>AlarmRule</code> structure, and
-        /// for testing your alarm actions.</p>
+        /// <p>TRUE and FALSE are useful for testing a complex <code>AlarmRule</code> structure, and for testing your alarm actions.</p>
         /// <p>Alarm names specified in <code>AlarmRule</code> can be surrounded with double-quotes ("), but do not have to be.</p>
-        /// <p>The following
-        /// are some examples of <code>AlarmRule</code>:</p>
+        /// <p>The following are some examples of <code>AlarmRule</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALARM(CPUUtilizationTooHigh) AND ALARM(DiskReadOpsTooHigh)</code> specifies that the composite alarm goes into ALARM state only
-        /// if both CPUUtilizationTooHigh and DiskReadOpsTooHigh alarms are in ALARM state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALARM(CPUUtilizationTooHigh) AND NOT ALARM(DeploymentInProgress)</code>
-        /// specifies that the alarm goes to ALARM state if CPUUtilizationTooHigh is in ALARM state
-        /// and DeploymentInProgress is not in ALARM state. This example reduces
-        /// alarm noise during a known deployment window.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>(ALARM(CPUUtilizationTooHigh) OR ALARM(DiskReadOpsTooHigh)) AND OK(NetworkOutTooHigh)</code> goes into ALARM
-        /// state if CPUUtilizationTooHigh OR DiskReadOpsTooHigh is in ALARM state, and if NetworkOutTooHigh is in OK state.
-        /// This provides another example of using a composite alarm to prevent noise. This rule ensures that you are not notified with an
-        /// alarm action on high CPU or disk usage if a known network problem is also occurring.</p>
-        /// </li>
+        /// <li> <p> <code>ALARM(CPUUtilizationTooHigh) AND ALARM(DiskReadOpsTooHigh)</code> specifies that the composite alarm goes into ALARM state only if both CPUUtilizationTooHigh and DiskReadOpsTooHigh alarms are in ALARM state.</p> </li>
+        /// <li> <p> <code>ALARM(CPUUtilizationTooHigh) AND NOT ALARM(DeploymentInProgress)</code> specifies that the alarm goes to ALARM state if CPUUtilizationTooHigh is in ALARM state and DeploymentInProgress is not in ALARM state. This example reduces alarm noise during a known deployment window.</p> </li>
+        /// <li> <p> <code>(ALARM(CPUUtilizationTooHigh) OR ALARM(DiskReadOpsTooHigh)) AND OK(NetworkOutTooHigh)</code> goes into ALARM state if CPUUtilizationTooHigh OR DiskReadOpsTooHigh is in ALARM state, and if NetworkOutTooHigh is in OK state. This provides another example of using a composite alarm to prevent noise. This rule ensures that you are not notified with an alarm action on high CPU or disk usage if a known network problem is also occurring.</p> </li>
         /// </ul>
-        /// <p>The <code>AlarmRule</code> can specify as many as 100
-        /// "children" alarms. The <code>AlarmRule</code> expression can have as many as 500 elements. Elements
-        /// are child alarms, TRUE or FALSE statements, and
-        /// parentheses.</p>
+        /// <p>The <code>AlarmRule</code> can specify as many as 100 "children" alarms. The <code>AlarmRule</code> expression can have as many as 500 elements. Elements are child alarms, TRUE or FALSE statements, and parentheses.</p>
         pub fn set_alarm_rule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_alarm_rule(input);
             self
@@ -4288,22 +3480,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_insufficient_data_actions`](Self::set_insufficient_data_actions).
         ///
-        /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state.
-        /// Each action is specified as an Amazon Resource Name (ARN).</p>
-        ///
-        /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
-        /// </code>
-        /// </p>
-        pub fn insufficient_data_actions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.insufficient_data_actions(inp);
+        /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+        /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> </p>
+        pub fn insufficient_data_actions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.insufficient_data_actions(input.into());
             self
         }
-        /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state.
-        /// Each action is specified as an Amazon Resource Name (ARN).</p>
-        ///
-        /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
-        /// </code>
-        /// </p>
+        /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+        /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> </p>
         pub fn set_insufficient_data_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4315,24 +3499,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_ok_actions`](Self::set_ok_actions).
         ///
-        /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state
-        /// from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-        ///
-        ///
-        /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
-        /// </code>
-        /// </p>
-        pub fn ok_actions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ok_actions(inp);
+        /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+        /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> </p>
+        pub fn ok_actions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ok_actions(input.into());
             self
         }
-        /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state
-        /// from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-        ///
-        ///
-        /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
-        /// </code>
-        /// </p>
+        /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+        /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> </p>
         pub fn set_ok_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4345,17 +3519,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with an alarm.</p>
-        /// <p>Tags can help you organize and categorize your
-        /// resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with
-        /// certain tag values.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with an alarm.</p>
-        /// <p>Tags can help you organize and categorize your
-        /// resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with
-        /// certain tag values.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4366,21 +3536,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutDashboard`.
     ///
-    /// <p>Creates a dashboard if it does not already exist, or updates an existing dashboard. If you update a dashboard,
-    /// the entire contents are replaced with what you specify here.</p>
+    /// <p>Creates a dashboard if it does not already exist, or updates an existing dashboard. If you update a dashboard, the entire contents are replaced with what you specify here.</p>
     /// <p>All dashboards in your account are global, not region-specific.</p>
-    /// <p>A simple way to create a dashboard using <code>PutDashboard</code> is to copy an
-    /// existing dashboard. To copy an existing dashboard using the console, you can load the dashboard
-    /// and then use the View/edit source command in the Actions menu to display the JSON  block
-    /// for that dashboard. Another way to copy a dashboard is to
-    /// use <code>GetDashboard</code>, and then use the data returned
-    /// within <code>DashboardBody</code> as the template for the new dashboard when you call <code>PutDashboard</code>.</p>
-    /// <p>When you create a dashboard with <code>PutDashboard</code>, a good practice is to
-    /// add a text widget at the top of the dashboard with a message that the dashboard was created by script and should
-    /// not be changed in the console. This message could also point console users to the location
-    /// of the <code>DashboardBody</code> script or the CloudFormation template used to create the
-    /// dashboard.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>A simple way to create a dashboard using <code>PutDashboard</code> is to copy an existing dashboard. To copy an existing dashboard using the console, you can load the dashboard and then use the View/edit source command in the Actions menu to display the JSON block for that dashboard. Another way to copy a dashboard is to use <code>GetDashboard</code>, and then use the data returned within <code>DashboardBody</code> as the template for the new dashboard when you call <code>PutDashboard</code>.</p>
+    /// <p>When you create a dashboard with <code>PutDashboard</code>, a good practice is to add a text widget at the top of the dashboard with a message that the dashboard was created by script and should not be changed in the console. This message could also point console users to the location of the <code>DashboardBody</code> script or the CloudFormation template used to create the dashboard.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDashboard<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4425,10 +3585,10 @@ pub mod fluent_builders {
                 crate::input::PutDashboardInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4436,16 +3596,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the dashboard. If a dashboard with this name already exists, this call modifies that dashboard, replacing
-        /// its current contents. Otherwise, a new dashboard is created. The maximum length is 255, and valid characters are
-        /// A-Z, a-z, 0-9, "-", and "_".  This parameter is required.</p>
-        pub fn dashboard_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_name(inp);
+        /// <p>The name of the dashboard. If a dashboard with this name already exists, this call modifies that dashboard, replacing its current contents. Otherwise, a new dashboard is created. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, "-", and "_". This parameter is required.</p>
+        pub fn dashboard_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_name(input.into());
             self
         }
-        /// <p>The name of the dashboard. If a dashboard with this name already exists, this call modifies that dashboard, replacing
-        /// its current contents. Otherwise, a new dashboard is created. The maximum length is 255, and valid characters are
-        /// A-Z, a-z, 0-9, "-", and "_".  This parameter is required.</p>
+        /// <p>The name of the dashboard. If a dashboard with this name already exists, this call modifies that dashboard, replacing its current contents. Otherwise, a new dashboard is created. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, "-", and "_". This parameter is required.</p>
         pub fn set_dashboard_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4453,18 +3609,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dashboard_name(input);
             self
         }
-        /// <p>The detailed information about the dashboard in JSON format, including the widgets to include and their location
-        /// on the dashboard.  This parameter is required.</p>
-        /// <p>For more information about the syntax,
-        /// see  <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>.</p>
-        pub fn dashboard_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_body(inp);
+        /// <p>The detailed information about the dashboard in JSON format, including the widgets to include and their location on the dashboard. This parameter is required.</p>
+        /// <p>For more information about the syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>.</p>
+        pub fn dashboard_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_body(input.into());
             self
         }
-        /// <p>The detailed information about the dashboard in JSON format, including the widgets to include and their location
-        /// on the dashboard.  This parameter is required.</p>
-        /// <p>For more information about the syntax,
-        /// see  <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>.</p>
+        /// <p>The detailed information about the dashboard in JSON format, including the widgets to include and their location on the dashboard. This parameter is required.</p>
+        /// <p>For more information about the syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>.</p>
         pub fn set_dashboard_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4475,12 +3627,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutInsightRule`.
     ///
-    /// <p>Creates a Contributor Insights rule. Rules evaluate log events in a
-    /// CloudWatch Logs log group, enabling you to find contributor data for the log events in that log group. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using Contributor Insights to Analyze High-Cardinality Data</a>.</p>
-    /// <p>If you create a rule, delete it, and then re-create it with the same name, historical data from the first time
-    /// the rule was created might not be available.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a Contributor Insights rule. Rules evaluate log events in a CloudWatch Logs log group, enabling you to find contributor data for the log events in that log group. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using Contributor Insights to Analyze High-Cardinality Data</a>.</p>
+    /// <p>If you create a rule, delete it, and then re-create it with the same name, historical data from the first time the rule was created might not be available.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutInsightRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4525,10 +3674,10 @@ pub mod fluent_builders {
                 crate::input::PutInsightRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4537,8 +3686,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique name for the rule.</p>
-        pub fn rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_name(inp);
+        pub fn rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_name(input.into());
             self
         }
         /// <p>A unique name for the rule.</p>
@@ -4547,8 +3696,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The state of the rule. Valid values are ENABLED and DISABLED.</p>
-        pub fn rule_state(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_state(inp);
+        pub fn rule_state(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_state(input.into());
             self
         }
         /// <p>The state of the rule. Valid values are ENABLED and DISABLED.</p>
@@ -4556,16 +3705,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rule_state(input);
             self
         }
-        /// <p>The definition of the rule, as a JSON object. For details on the valid syntax, see
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights
-        /// Rule Syntax</a>.</p>
-        pub fn rule_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_definition(inp);
+        /// <p>The definition of the rule, as a JSON object. For details on the valid syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights Rule Syntax</a>.</p>
+        pub fn rule_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_definition(input.into());
             self
         }
-        /// <p>The definition of the rule, as a JSON object. For details on the valid syntax, see
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights
-        /// Rule Syntax</a>.</p>
+        /// <p>The definition of the rule, as a JSON object. For details on the valid syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights Rule Syntax</a>.</p>
         pub fn set_rule_definition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4577,32 +3722,18 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs to associate with the Contributor Insights rule.
-        /// You can associate as many as 50 tags with a rule.</p>
-        /// <p>Tags can help you organize and categorize your
-        /// resources. You can also use them to scope user permissions, by
-        /// granting a user permission to access or change only the resources that have
-        /// certain tag values.</p>
-        /// <p>To be able to associate tags with a rule, you must have the <code>cloudwatch:TagResource</code>
-        /// permission in addition to the <code>cloudwatch:PutInsightRule</code> permission.</p>
-        /// <p>If you are using this operation to update an existing Contributor Insights rule, any tags
-        /// you specify in this parameter are ignored. To change the tags of an existing rule, use
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>A list of key-value pairs to associate with the Contributor Insights rule. You can associate as many as 50 tags with a rule.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
+        /// <p>To be able to associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission in addition to the <code>cloudwatch:PutInsightRule</code> permission.</p>
+        /// <p>If you are using this operation to update an existing Contributor Insights rule, any tags you specify in this parameter are ignored. To change the tags of an existing rule, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of key-value pairs to associate with the Contributor Insights rule.
-        /// You can associate as many as 50 tags with a rule.</p>
-        /// <p>Tags can help you organize and categorize your
-        /// resources. You can also use them to scope user permissions, by
-        /// granting a user permission to access or change only the resources that have
-        /// certain tag values.</p>
-        /// <p>To be able to associate tags with a rule, you must have the <code>cloudwatch:TagResource</code>
-        /// permission in addition to the <code>cloudwatch:PutInsightRule</code> permission.</p>
-        /// <p>If you are using this operation to update an existing Contributor Insights rule, any tags
-        /// you specify in this parameter are ignored. To change the tags of an existing rule, use
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
+        /// <p>A list of key-value pairs to associate with the Contributor Insights rule. You can associate as many as 50 tags with a rule.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
+        /// <p>To be able to associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission in addition to the <code>cloudwatch:PutInsightRule</code> permission.</p>
+        /// <p>If you are using this operation to update an existing Contributor Insights rule, any tags you specify in this parameter are ignored. To change the tags of an existing rule, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4613,71 +3744,23 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutMetricAlarm`.
     ///
-    /// <p>Creates or updates an alarm and associates it with the specified metric, metric math expression,
-    /// or anomaly detection model.</p>
-    ///
-    ///
+    /// <p>Creates or updates an alarm and associates it with the specified metric, metric math expression, or anomaly detection model.</p>
     /// <p>Alarms based on anomaly detection models cannot have Auto Scaling actions.</p>
-    /// <p>When this operation creates an alarm, the alarm state is immediately set to
-    /// <code>INSUFFICIENT_DATA</code>. The alarm is then evaluated and its state is set
-    /// appropriately. Any actions associated with the new state are then executed.</p>
-    /// <p>When you update an existing alarm, its state is left unchanged, but the
-    /// update completely overwrites the previous configuration of the alarm.</p>
-    ///
-    /// <p>If you are an IAM user, you must have
-    /// Amazon EC2 permissions for some alarm operations:</p>
+    /// <p>When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is then evaluated and its state is set appropriately. Any actions associated with the new state are then executed.</p>
+    /// <p>When you update an existing alarm, its state is left unchanged, but the update completely overwrites the previous configuration of the alarm.</p>
+    /// <p>If you are an IAM user, you must have Amazon EC2 permissions for some alarm operations:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>iam:CreateServiceLinkedRole</code> for all alarms with EC2 actions</p>
-    ///
-    /// </li>
-    /// <li>
-    ///
-    /// <p>The <code>iam:CreateServiceLinkedRole</code> to create an alarm
-    /// with Systems Manager OpsItem actions.</p>
-    /// </li>
+    /// <li> <p>The <code>iam:CreateServiceLinkedRole</code> for all alarms with EC2 actions</p> </li>
+    /// <li> <p>The <code>iam:CreateServiceLinkedRole</code> to create an alarm with Systems Manager OpsItem actions.</p> </li>
     /// </ul>
-    ///
-    ///
-    ///
-    ///
-    ///
-    ///
-    /// <p>The first time you create an alarm in the
-    /// Amazon Web Services Management Console, the CLI, or by using the PutMetricAlarm API, CloudWatch
-    /// creates the necessary service-linked role for you. The service-linked roles
-    /// are called <code>AWSServiceRoleForCloudWatchEvents</code> and
-    /// <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>.
-    /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">Amazon Web Services service-linked role</a>.</p>
-    ///
-    /// <p>
-    /// <b>Cross-account alarms</b>
-    /// </p>
-    ///
-    /// <p>You can set an alarm on metrics in the current account, or in another
-    /// account. To create a cross-account alarm that watches a metric in a different account, you must have completed the following
-    /// pre-requisites:</p>
+    /// <p>The first time you create an alarm in the Amazon Web Services Management Console, the CLI, or by using the PutMetricAlarm API, CloudWatch creates the necessary service-linked role for you. The service-linked roles are called <code>AWSServiceRoleForCloudWatchEvents</code> and <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">Amazon Web Services service-linked role</a>.</p>
+    /// <p> <b>Cross-account alarms</b> </p>
+    /// <p>You can set an alarm on metrics in the current account, or in another account. To create a cross-account alarm that watches a metric in a different account, you must have completed the following pre-requisites:</p>
     /// <ul>
-    /// <li>
-    /// <p>The account where the metrics are located (the <i>sharing account</i>) must
-    /// already have a sharing role named <b>CloudWatch-CrossAccountSharingRole</b>. If it does not already
-    /// have this role, you must create it using the instructions in <b>Set up a
-    /// sharing account</b> in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Cross-Account-Cross-Region.html#enable-cross-account-cross-Region">
-    /// Cross-account cross-Region CloudWatch console</a>. The policy for that
-    /// role must grant access
-    /// to the ID of the account where you are creating the alarm.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>The account where you are creating the alarm (the <i>monitoring account</i>) must
-    /// already have a service-linked role named
-    /// <b>AWSServiceRoleForCloudWatchCrossAccount</b> to allow
-    /// CloudWatch to assume the sharing role in the sharing account. If it does not, you must create it following the directions in <b>Set up a
-    /// monitoring account</b> in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Cross-Account-Cross-Region.html#enable-cross-account-cross-Region">
-    /// Cross-account cross-Region CloudWatch console</a>.</p>
-    /// </li>
+    /// <li> <p>The account where the metrics are located (the <i>sharing account</i>) must already have a sharing role named <b>CloudWatch-CrossAccountSharingRole</b>. If it does not already have this role, you must create it using the instructions in <b>Set up a sharing account</b> in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Cross-Account-Cross-Region.html#enable-cross-account-cross-Region"> Cross-account cross-Region CloudWatch console</a>. The policy for that role must grant access to the ID of the account where you are creating the alarm. </p> </li>
+    /// <li> <p>The account where you are creating the alarm (the <i>monitoring account</i>) must already have a service-linked role named <b>AWSServiceRoleForCloudWatchCrossAccount</b> to allow CloudWatch to assume the sharing role in the sharing account. If it does not, you must create it following the directions in <b>Set up a monitoring account</b> in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Cross-Account-Cross-Region.html#enable-cross-account-cross-Region"> Cross-account cross-Region CloudWatch console</a>.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutMetricAlarm<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4722,10 +3805,10 @@ pub mod fluent_builders {
                 crate::input::PutMetricAlarmInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4734,8 +3817,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the alarm. This name must be unique within the Region.</p>
-        pub fn alarm_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_name(inp);
+        pub fn alarm_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_name(input.into());
             self
         }
         /// <p>The name for the alarm. This name must be unique within the Region.</p>
@@ -4744,8 +3827,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the alarm.</p>
-        pub fn alarm_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_description(inp);
+        pub fn alarm_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_description(input.into());
             self
         }
         /// <p>The description for the alarm.</p>
@@ -4756,14 +3839,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_alarm_description(input);
             self
         }
-        /// <p>Indicates whether actions should be executed during any changes to the alarm state. The default is
-        /// <code>TRUE</code>.</p>
-        pub fn actions_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.actions_enabled(inp);
+        /// <p>Indicates whether actions should be executed during any changes to the alarm state. The default is <code>TRUE</code>.</p>
+        pub fn actions_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.actions_enabled(input);
             self
         }
-        /// <p>Indicates whether actions should be executed during any changes to the alarm state. The default is
-        /// <code>TRUE</code>.</p>
+        /// <p>Indicates whether actions should be executed during any changes to the alarm state. The default is <code>TRUE</code>.</p>
         pub fn set_actions_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_actions_enabled(input);
             self
@@ -4772,48 +3853,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_ok_actions`](Self::set_ok_actions).
         ///
-        /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state
-        /// from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-        ///
-        /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-        /// <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-        /// <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-        /// <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
-        /// <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
-        /// </code> |
-        /// <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-        /// </code>
-        /// </p>
-        ///
-        /// <p>Valid Values (for use with IAM roles):
-        /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-        /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
-        /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> |
-        /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
-        /// </p>
-        pub fn ok_actions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ok_actions(inp);
+        /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+        /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p>
+        /// <p>Valid Values (for use with IAM roles): <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code> </p>
+        pub fn ok_actions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ok_actions(input.into());
             self
         }
-        /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state
-        /// from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-        ///
-        /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-        /// <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-        /// <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-        /// <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
-        /// <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
-        /// </code> |
-        /// <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-        /// </code>
-        /// </p>
-        ///
-        /// <p>Valid Values (for use with IAM roles):
-        /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-        /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
-        /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> |
-        /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
-        /// </p>
+        /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+        /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p>
+        /// <p>Valid Values (for use with IAM roles): <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code> </p>
         pub fn set_ok_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4825,56 +3874,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_alarm_actions`](Self::set_alarm_actions).
         ///
-        /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state.
-        /// Each action is specified as an Amazon Resource Name (ARN).</p>
-        ///
-        /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-        /// <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-        /// <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-        /// <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
-        /// <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
-        /// </code> |
-        /// <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-        /// </code>
-        /// | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
-        /// </code>
-        /// | <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i>
-        /// </code>
-        /// </p>
-        ///
-        /// <p>Valid Values (for use with IAM roles):
-        /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-        /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
-        /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> |
-        /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
-        /// </p>
-        pub fn alarm_actions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_actions(inp);
+        /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+        /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> | <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i> </code> </p>
+        /// <p>Valid Values (for use with IAM roles): <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code> </p>
+        pub fn alarm_actions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_actions(input.into());
             self
         }
-        /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state.
-        /// Each action is specified as an Amazon Resource Name (ARN).</p>
-        ///
-        /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-        /// <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-        /// <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-        /// <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
-        /// <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
-        /// </code> |
-        /// <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-        /// </code>
-        /// | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
-        /// </code>
-        /// | <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i>
-        /// </code>
-        /// </p>
-        ///
-        /// <p>Valid Values (for use with IAM roles):
-        /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-        /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
-        /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> |
-        /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
-        /// </p>
+        /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+        /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> | <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i> </code> </p>
+        /// <p>Valid Values (for use with IAM roles): <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code> </p>
         pub fn set_alarm_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4886,46 +3895,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_insufficient_data_actions`](Self::set_insufficient_data_actions).
         ///
-        /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state.
-        /// Each action is specified as an Amazon Resource Name (ARN).</p>
-        ///
-        /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-        /// <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-        /// <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-        /// <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
-        /// <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
-        /// </code> |
-        /// <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-        /// </code>
-        /// </p>
-        ///
-        /// <p>Valid Values (for use with IAM roles):
-        /// <code>>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-        /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
-        /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
-        /// </p>
-        pub fn insufficient_data_actions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.insufficient_data_actions(inp);
+        /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+        /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p>
+        /// <p>Valid Values (for use with IAM roles): <code>&gt;arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> </p>
+        pub fn insufficient_data_actions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.insufficient_data_actions(input.into());
             self
         }
-        /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state.
-        /// Each action is specified as an Amazon Resource Name (ARN).</p>
-        ///
-        /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-        /// <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-        /// <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-        /// <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
-        /// <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
-        /// </code> |
-        /// <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-        /// </code>
-        /// </p>
-        ///
-        /// <p>Valid Values (for use with IAM roles):
-        /// <code>>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-        /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
-        /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
-        /// </p>
+        /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+        /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p>
+        /// <p>Valid Values (for use with IAM roles): <code>&gt;arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> </p>
         pub fn set_insufficient_data_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4933,29 +3912,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_insufficient_data_actions(input);
             self
         }
-        /// <p>The name for the metric associated with the alarm. For each <code>PutMetricAlarm</code>
-        /// operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
-        /// <p>If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the
-        /// <code>Dimensions</code>, <code>Period</code>,
-        /// <code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead, you specify
-        /// all this information in the <code>Metrics</code> array.</p>
-        pub fn metric_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_name(inp);
+        /// <p>The name for the metric associated with the alarm. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
+        /// <p>If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the <code>Metrics</code> array.</p>
+        pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_name(input.into());
             self
         }
-        /// <p>The name for the metric associated with the alarm. For each <code>PutMetricAlarm</code>
-        /// operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
-        /// <p>If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the
-        /// <code>Dimensions</code>, <code>Period</code>,
-        /// <code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead, you specify
-        /// all this information in the <code>Metrics</code> array.</p>
+        /// <p>The name for the metric associated with the alarm. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
+        /// <p>If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the <code>Metrics</code> array.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_metric_name(input);
             self
         }
         /// <p>The namespace for the metric associated specified in <code>MetricName</code>.</p>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace for the metric associated specified in <code>MetricName</code>.</p>
@@ -4963,18 +3934,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_namespace(input);
             self
         }
-        /// <p>The statistic for the metric specified in <code>MetricName</code>, other than percentile.
-        /// For percentile statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code> and specify
-        /// a <code>MetricName</code>, you must
-        /// specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
-        pub fn statistic(mut self, inp: crate::model::Statistic) -> Self {
-            self.inner = self.inner.statistic(inp);
+        /// <p>The statistic for the metric specified in <code>MetricName</code>, other than percentile. For percentile statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
+        pub fn statistic(mut self, input: crate::model::Statistic) -> Self {
+            self.inner = self.inner.statistic(input);
             self
         }
-        /// <p>The statistic for the metric specified in <code>MetricName</code>, other than percentile.
-        /// For percentile statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code> and specify
-        /// a <code>MetricName</code>, you must
-        /// specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
+        /// <p>The statistic for the metric specified in <code>MetricName</code>, other than percentile. For percentile statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
         pub fn set_statistic(
             mut self,
             input: std::option::Option<crate::model::Statistic>,
@@ -4982,18 +3947,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_statistic(input);
             self
         }
-        /// <p>The percentile statistic for the metric specified in <code>MetricName</code>. Specify a value
-        /// between p0.0 and p100. When you call <code>PutMetricAlarm</code> and specify
-        /// a <code>MetricName</code>, you must
-        /// specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
-        pub fn extended_statistic(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.extended_statistic(inp);
+        /// <p>The percentile statistic for the metric specified in <code>MetricName</code>. Specify a value between p0.0 and p100. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
+        pub fn extended_statistic(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.extended_statistic(input.into());
             self
         }
-        /// <p>The percentile statistic for the metric specified in <code>MetricName</code>. Specify a value
-        /// between p0.0 and p100. When you call <code>PutMetricAlarm</code> and specify
-        /// a <code>MetricName</code>, you must
-        /// specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
+        /// <p>The percentile statistic for the metric specified in <code>MetricName</code>. Specify a value between p0.0 and p100. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
         pub fn set_extended_statistic(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5006,8 +3965,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p>The dimensions for the metric specified in <code>MetricName</code>.</p>
-        pub fn dimensions(mut self, inp: impl Into<crate::model::Dimension>) -> Self {
-            self.inner = self.inner.dimensions(inp);
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
+            self.inner = self.inner.dimensions(input);
             self
         }
         /// <p>The dimensions for the metric specified in <code>MetricName</code>.</p>
@@ -5018,146 +3977,80 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dimensions(input);
             self
         }
-        /// <p>The length, in seconds, used each time the metric specified in <code>MetricName</code> is
-        /// evaluated. Valid values are 10, 30, and any multiple of 60.</p>
-        /// <p>
-        /// <code>Period</code> is required for alarms based on static thresholds. If
-        /// you are creating an alarm based on a metric math expression, you specify the
-        /// period for each metric within the objects in the <code>Metrics</code> array.</p>
-        /// <p>Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a
-        /// <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have
-        /// sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case,
-        /// it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm
-        /// might often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution alarm,
-        /// which has a higher charge than other alarms. For more information about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
-        /// <p>An alarm's total current evaluation period can
-        /// be no longer than one day, so <code>Period</code> multiplied by <code>EvaluationPeriods</code> cannot be more than 86,400 seconds.</p>
-        pub fn period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.period(inp);
+        /// <p>The length, in seconds, used each time the metric specified in <code>MetricName</code> is evaluated. Valid values are 10, 30, and any multiple of 60.</p>
+        /// <p> <code>Period</code> is required for alarms based on static thresholds. If you are creating an alarm based on a metric math expression, you specify the period for each metric within the objects in the <code>Metrics</code> array.</p>
+        /// <p>Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case, it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm might often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution alarm, which has a higher charge than other alarms. For more information about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
+        /// <p>An alarm's total current evaluation period can be no longer than one day, so <code>Period</code> multiplied by <code>EvaluationPeriods</code> cannot be more than 86,400 seconds.</p>
+        pub fn period(mut self, input: i32) -> Self {
+            self.inner = self.inner.period(input);
             self
         }
-        /// <p>The length, in seconds, used each time the metric specified in <code>MetricName</code> is
-        /// evaluated. Valid values are 10, 30, and any multiple of 60.</p>
-        /// <p>
-        /// <code>Period</code> is required for alarms based on static thresholds. If
-        /// you are creating an alarm based on a metric math expression, you specify the
-        /// period for each metric within the objects in the <code>Metrics</code> array.</p>
-        /// <p>Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a
-        /// <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have
-        /// sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case,
-        /// it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm
-        /// might often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution alarm,
-        /// which has a higher charge than other alarms. For more information about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
-        /// <p>An alarm's total current evaluation period can
-        /// be no longer than one day, so <code>Period</code> multiplied by <code>EvaluationPeriods</code> cannot be more than 86,400 seconds.</p>
+        /// <p>The length, in seconds, used each time the metric specified in <code>MetricName</code> is evaluated. Valid values are 10, 30, and any multiple of 60.</p>
+        /// <p> <code>Period</code> is required for alarms based on static thresholds. If you are creating an alarm based on a metric math expression, you specify the period for each metric within the objects in the <code>Metrics</code> array.</p>
+        /// <p>Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case, it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm might often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution alarm, which has a higher charge than other alarms. For more information about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
+        /// <p>An alarm's total current evaluation period can be no longer than one day, so <code>Period</code> multiplied by <code>EvaluationPeriods</code> cannot be more than 86,400 seconds.</p>
         pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_period(input);
             self
         }
-        /// <p>The unit of measure for the statistic. For example, the units for the Amazon EC2
-        /// NetworkIn metric are Bytes because NetworkIn tracks the number of bytes that an instance
-        /// receives on all network interfaces. You can also specify a unit when you create a custom
-        /// metric. Units help provide conceptual meaning to your data. Metric data points that
-        /// specify a unit of measure, such as Percent, are aggregated separately.</p>
-        /// <p>If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the
-        /// metric and attempts to evaluate the alarm.
-        /// Usually, metrics are
-        /// published with only one unit, so the alarm
-        /// works as intended.</p>
-        /// <p>However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's
-        /// behavior is not defined and
-        /// it behaves predictably.</p>
-        /// <p>We recommend omitting <code>Unit</code> so that you don't inadvertently
-        /// specify an incorrect unit that is not published for this metric. Doing so
-        /// causes the alarm to be stuck in the <code>INSUFFICIENT DATA</code> state.</p>
-        pub fn unit(mut self, inp: crate::model::StandardUnit) -> Self {
-            self.inner = self.inner.unit(inp);
+        /// <p>The unit of measure for the statistic. For example, the units for the Amazon EC2 NetworkIn metric are Bytes because NetworkIn tracks the number of bytes that an instance receives on all network interfaces. You can also specify a unit when you create a custom metric. Units help provide conceptual meaning to your data. Metric data points that specify a unit of measure, such as Percent, are aggregated separately.</p>
+        /// <p>If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the alarm works as intended.</p>
+        /// <p>However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's behavior is not defined and it behaves predictably.</p>
+        /// <p>We recommend omitting <code>Unit</code> so that you don't inadvertently specify an incorrect unit that is not published for this metric. Doing so causes the alarm to be stuck in the <code>INSUFFICIENT DATA</code> state.</p>
+        pub fn unit(mut self, input: crate::model::StandardUnit) -> Self {
+            self.inner = self.inner.unit(input);
             self
         }
-        /// <p>The unit of measure for the statistic. For example, the units for the Amazon EC2
-        /// NetworkIn metric are Bytes because NetworkIn tracks the number of bytes that an instance
-        /// receives on all network interfaces. You can also specify a unit when you create a custom
-        /// metric. Units help provide conceptual meaning to your data. Metric data points that
-        /// specify a unit of measure, such as Percent, are aggregated separately.</p>
-        /// <p>If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the
-        /// metric and attempts to evaluate the alarm.
-        /// Usually, metrics are
-        /// published with only one unit, so the alarm
-        /// works as intended.</p>
-        /// <p>However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's
-        /// behavior is not defined and
-        /// it behaves predictably.</p>
-        /// <p>We recommend omitting <code>Unit</code> so that you don't inadvertently
-        /// specify an incorrect unit that is not published for this metric. Doing so
-        /// causes the alarm to be stuck in the <code>INSUFFICIENT DATA</code> state.</p>
+        /// <p>The unit of measure for the statistic. For example, the units for the Amazon EC2 NetworkIn metric are Bytes because NetworkIn tracks the number of bytes that an instance receives on all network interfaces. You can also specify a unit when you create a custom metric. Units help provide conceptual meaning to your data. Metric data points that specify a unit of measure, such as Percent, are aggregated separately.</p>
+        /// <p>If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the alarm works as intended.</p>
+        /// <p>However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's behavior is not defined and it behaves predictably.</p>
+        /// <p>We recommend omitting <code>Unit</code> so that you don't inadvertently specify an incorrect unit that is not published for this metric. Doing so causes the alarm to be stuck in the <code>INSUFFICIENT DATA</code> state.</p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::StandardUnit>) -> Self {
             self.inner = self.inner.set_unit(input);
             self
         }
-        /// <p>The number of periods over which data is compared to the specified threshold. If you are
-        /// setting an alarm that requires that a number of consecutive data points be breaching to
-        /// trigger the alarm, this value specifies that number. If you are setting an "M out of N"
-        /// alarm, this value is the N.</p>
-        /// <p>An alarm's total current evaluation period can
-        /// be no longer than one day, so this number multiplied by <code>Period</code> cannot be more than 86,400 seconds.</p>
-        pub fn evaluation_periods(mut self, inp: i32) -> Self {
-            self.inner = self.inner.evaluation_periods(inp);
+        /// <p>The number of periods over which data is compared to the specified threshold. If you are setting an alarm that requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies that number. If you are setting an "M out of N" alarm, this value is the N.</p>
+        /// <p>An alarm's total current evaluation period can be no longer than one day, so this number multiplied by <code>Period</code> cannot be more than 86,400 seconds.</p>
+        pub fn evaluation_periods(mut self, input: i32) -> Self {
+            self.inner = self.inner.evaluation_periods(input);
             self
         }
-        /// <p>The number of periods over which data is compared to the specified threshold. If you are
-        /// setting an alarm that requires that a number of consecutive data points be breaching to
-        /// trigger the alarm, this value specifies that number. If you are setting an "M out of N"
-        /// alarm, this value is the N.</p>
-        /// <p>An alarm's total current evaluation period can
-        /// be no longer than one day, so this number multiplied by <code>Period</code> cannot be more than 86,400 seconds.</p>
+        /// <p>The number of periods over which data is compared to the specified threshold. If you are setting an alarm that requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies that number. If you are setting an "M out of N" alarm, this value is the N.</p>
+        /// <p>An alarm's total current evaluation period can be no longer than one day, so this number multiplied by <code>Period</code> cannot be more than 86,400 seconds.</p>
         pub fn set_evaluation_periods(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_evaluation_periods(input);
             self
         }
-        /// <p>The number of data points that must be breaching to trigger the alarm. This is used only if you are setting
-        /// an "M out of N" alarm. In that case, this value is the M. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating an Alarm</a> in the
-        /// <i>Amazon CloudWatch User Guide</i>.</p>
-        pub fn datapoints_to_alarm(mut self, inp: i32) -> Self {
-            self.inner = self.inner.datapoints_to_alarm(inp);
+        /// <p>The number of data points that must be breaching to trigger the alarm. This is used only if you are setting an "M out of N" alarm. In that case, this value is the M. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+        pub fn datapoints_to_alarm(mut self, input: i32) -> Self {
+            self.inner = self.inner.datapoints_to_alarm(input);
             self
         }
-        /// <p>The number of data points that must be breaching to trigger the alarm. This is used only if you are setting
-        /// an "M out of N" alarm. In that case, this value is the M. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating an Alarm</a> in the
-        /// <i>Amazon CloudWatch User Guide</i>.</p>
+        /// <p>The number of data points that must be breaching to trigger the alarm. This is used only if you are setting an "M out of N" alarm. In that case, this value is the M. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
         pub fn set_datapoints_to_alarm(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_datapoints_to_alarm(input);
             self
         }
         /// <p>The value against which the specified statistic is compared.</p>
-        /// <p>This parameter is required for alarms based on static thresholds, but should
-        /// not be used for alarms based on anomaly detection models.</p>
-        pub fn threshold(mut self, inp: f64) -> Self {
-            self.inner = self.inner.threshold(inp);
+        /// <p>This parameter is required for alarms based on static thresholds, but should not be used for alarms based on anomaly detection models.</p>
+        pub fn threshold(mut self, input: f64) -> Self {
+            self.inner = self.inner.threshold(input);
             self
         }
         /// <p>The value against which the specified statistic is compared.</p>
-        /// <p>This parameter is required for alarms based on static thresholds, but should
-        /// not be used for alarms based on anomaly detection models.</p>
+        /// <p>This parameter is required for alarms based on static thresholds, but should not be used for alarms based on anomaly detection models.</p>
         pub fn set_threshold(mut self, input: std::option::Option<f64>) -> Self {
             self.inner = self.inner.set_threshold(input);
             self
         }
-        /// <p> The arithmetic operation to use when comparing the specified statistic and
-        /// threshold. The specified statistic value is used as the first operand.</p>
-        /// <p>The values <code>LessThanLowerOrGreaterThanUpperThreshold</code>,
-        /// <code>LessThanLowerThreshold</code>, and <code>GreaterThanUpperThreshold</code>
-        /// are used only for alarms based on anomaly detection models.</p>
-        pub fn comparison_operator(mut self, inp: crate::model::ComparisonOperator) -> Self {
-            self.inner = self.inner.comparison_operator(inp);
+        /// <p> The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.</p>
+        /// <p>The values <code>LessThanLowerOrGreaterThanUpperThreshold</code>, <code>LessThanLowerThreshold</code>, and <code>GreaterThanUpperThreshold</code> are used only for alarms based on anomaly detection models.</p>
+        pub fn comparison_operator(mut self, input: crate::model::ComparisonOperator) -> Self {
+            self.inner = self.inner.comparison_operator(input);
             self
         }
-        /// <p> The arithmetic operation to use when comparing the specified statistic and
-        /// threshold. The specified statistic value is used as the first operand.</p>
-        /// <p>The values <code>LessThanLowerOrGreaterThanUpperThreshold</code>,
-        /// <code>LessThanLowerThreshold</code>, and <code>GreaterThanUpperThreshold</code>
-        /// are used only for alarms based on anomaly detection models.</p>
+        /// <p> The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.</p>
+        /// <p>The values <code>LessThanLowerOrGreaterThanUpperThreshold</code>, <code>LessThanLowerThreshold</code>, and <code>GreaterThanUpperThreshold</code> are used only for alarms based on anomaly detection models.</p>
         pub fn set_comparison_operator(
             mut self,
             input: std::option::Option<crate::model::ComparisonOperator>,
@@ -5165,20 +4058,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_comparison_operator(input);
             self
         }
-        /// <p> Sets how this alarm is to handle missing data points. If <code>TreatMissingData</code> is omitted, the default behavior of <code>missing</code> is used.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring How CloudWatch
-        /// Alarms Treats Missing Data</a>.</p>
-        /// <p>Valid Values: <code>breaching | notBreaching | ignore | missing</code>
-        /// </p>
-        pub fn treat_missing_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.treat_missing_data(inp);
+        /// <p> Sets how this alarm is to handle missing data points. If <code>TreatMissingData</code> is omitted, the default behavior of <code>missing</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring How CloudWatch Alarms Treats Missing Data</a>.</p>
+        /// <p>Valid Values: <code>breaching | notBreaching | ignore | missing</code> </p>
+        pub fn treat_missing_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.treat_missing_data(input.into());
             self
         }
-        /// <p> Sets how this alarm is to handle missing data points. If <code>TreatMissingData</code> is omitted, the default behavior of <code>missing</code> is used.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring How CloudWatch
-        /// Alarms Treats Missing Data</a>.</p>
-        /// <p>Valid Values: <code>breaching | notBreaching | ignore | missing</code>
-        /// </p>
+        /// <p> Sets how this alarm is to handle missing data points. If <code>TreatMissingData</code> is omitted, the default behavior of <code>missing</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring How CloudWatch Alarms Treats Missing Data</a>.</p>
+        /// <p>Valid Values: <code>breaching | notBreaching | ignore | missing</code> </p>
         pub fn set_treat_missing_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5186,23 +4073,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_treat_missing_data(input);
             self
         }
-        /// <p> Used only for alarms based on percentiles. If you specify <code>ignore</code>, the alarm state does not change during periods with too few data points to be
-        /// statistically significant. If you specify <code>evaluate</code> or omit this parameter, the alarm is always evaluated and possibly changes state
-        /// no matter how many data points are available. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based CloudWatch Alarms and Low Data Samples</a>.</p>
-        /// <p>Valid Values: <code>evaluate | ignore</code>
-        /// </p>
+        /// <p> Used only for alarms based on percentiles. If you specify <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If you specify <code>evaluate</code> or omit this parameter, the alarm is always evaluated and possibly changes state no matter how many data points are available. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based CloudWatch Alarms and Low Data Samples</a>.</p>
+        /// <p>Valid Values: <code>evaluate | ignore</code> </p>
         pub fn evaluate_low_sample_count_percentile(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.evaluate_low_sample_count_percentile(inp);
+            self.inner = self
+                .inner
+                .evaluate_low_sample_count_percentile(input.into());
             self
         }
-        /// <p> Used only for alarms based on percentiles. If you specify <code>ignore</code>, the alarm state does not change during periods with too few data points to be
-        /// statistically significant. If you specify <code>evaluate</code> or omit this parameter, the alarm is always evaluated and possibly changes state
-        /// no matter how many data points are available. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based CloudWatch Alarms and Low Data Samples</a>.</p>
-        /// <p>Valid Values: <code>evaluate | ignore</code>
-        /// </p>
+        /// <p> Used only for alarms based on percentiles. If you specify <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If you specify <code>evaluate</code> or omit this parameter, the alarm is always evaluated and possibly changes state no matter how many data points are available. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based CloudWatch Alarms and Low Data Samples</a>.</p>
+        /// <p>Valid Values: <code>evaluate | ignore</code> </p>
         pub fn set_evaluate_low_sample_count_percentile(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5214,30 +4097,18 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
         ///
-        /// <p>An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result of a
-        /// metric math expression. For each <code>PutMetricAlarm</code>
-        /// operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
+        /// <p>An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result of a metric math expression. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
         /// <p>Each item in the <code>Metrics</code> array either retrieves a metric or performs a math expression.</p>
-        /// <p>One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this expression
-        /// by setting <code>ReturnData</code> to true for this object in the array. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
-        /// <p>If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>,
-        /// <code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation.
-        /// Instead, you retrieve
-        /// the metrics you are using in your math expression as part of the <code>Metrics</code> array.</p>
-        pub fn metrics(mut self, inp: impl Into<crate::model::MetricDataQuery>) -> Self {
-            self.inner = self.inner.metrics(inp);
+        /// <p>One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this expression by setting <code>ReturnData</code> to true for this object in the array. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
+        /// <p>If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.</p>
+        pub fn metrics(mut self, input: crate::model::MetricDataQuery) -> Self {
+            self.inner = self.inner.metrics(input);
             self
         }
-        /// <p>An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result of a
-        /// metric math expression. For each <code>PutMetricAlarm</code>
-        /// operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
+        /// <p>An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result of a metric math expression. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
         /// <p>Each item in the <code>Metrics</code> array either retrieves a metric or performs a math expression.</p>
-        /// <p>One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this expression
-        /// by setting <code>ReturnData</code> to true for this object in the array. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
-        /// <p>If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>,
-        /// <code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation.
-        /// Instead, you retrieve
-        /// the metrics you are using in your math expression as part of the <code>Metrics</code> array.</p>
+        /// <p>One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this expression by setting <code>ReturnData</code> to true for this object in the array. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
+        /// <p>If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.</p>
         pub fn set_metrics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
@@ -5250,25 +4121,15 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-        /// permissions by granting a user
-        /// permission to access or change only resources with certain tag values.</p>
-        /// <p>If you are using this operation to update an existing alarm, any tags
-        /// you specify in this parameter are ignored. To change the tags of an existing alarm, use
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
-        /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+        /// <p>If you are using this operation to update an existing alarm, any tags you specify in this parameter are ignored. To change the tags of an existing alarm, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-        /// permissions by granting a user
-        /// permission to access or change only resources with certain tag values.</p>
-        /// <p>If you are using this operation to update an existing alarm, any tags
-        /// you specify in this parameter are ignored. To change the tags of an existing alarm, use
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
-        /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+        /// <p>If you are using this operation to update an existing alarm, any tags you specify in this parameter are ignored. To change the tags of an existing alarm, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5276,23 +4137,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>If this is an alarm based on an anomaly detection model, make this value match
-        /// the ID of
-        /// the <code>ANOMALY_DETECTION_BAND</code> function.</p>
-        /// <p>For an example of how to use this parameter, see the
-        /// <b>Anomaly Detection
-        /// Model Alarm</b> example on this page.</p>
+        /// <p>If this is an alarm based on an anomaly detection model, make this value match the ID of the <code>ANOMALY_DETECTION_BAND</code> function.</p>
+        /// <p>For an example of how to use this parameter, see the <b>Anomaly Detection Model Alarm</b> example on this page.</p>
         /// <p>If your alarm uses this parameter, it cannot have Auto Scaling actions.</p>
-        pub fn threshold_metric_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.threshold_metric_id(inp);
+        pub fn threshold_metric_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.threshold_metric_id(input.into());
             self
         }
-        /// <p>If this is an alarm based on an anomaly detection model, make this value match
-        /// the ID of
-        /// the <code>ANOMALY_DETECTION_BAND</code> function.</p>
-        /// <p>For an example of how to use this parameter, see the
-        /// <b>Anomaly Detection
-        /// Model Alarm</b> example on this page.</p>
+        /// <p>If this is an alarm based on an anomaly detection model, make this value match the ID of the <code>ANOMALY_DETECTION_BAND</code> function.</p>
+        /// <p>For an example of how to use this parameter, see the <b>Anomaly Detection Model Alarm</b> example on this page.</p>
         /// <p>If your alarm uses this parameter, it cannot have Auto Scaling actions.</p>
         pub fn set_threshold_metric_id(
             mut self,
@@ -5304,52 +4157,19 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutMetricData`.
     ///
-    /// <p>Publishes metric data points to Amazon CloudWatch. CloudWatch associates
-    /// the data points with the specified metric. If the specified metric does not exist,
-    /// CloudWatch creates the metric. When CloudWatch creates a metric, it can
-    /// take up to fifteen minutes for the metric to appear in calls to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
-    ///
-    /// <p>You can publish either individual data points in the <code>Value</code> field, or
-    /// arrays of values and the number of times each value occurred during the period by using the
-    /// <code>Values</code> and <code>Counts</code> fields in the <code>MetricDatum</code> structure. Using
-    /// the <code>Values</code> and <code>Counts</code> method enables you to publish up to 150 values per metric
-    /// with one <code>PutMetricData</code> request, and
-    /// supports retrieving percentile statistics on this data.</p>
-    /// <p>Each <code>PutMetricData</code> request is limited to 40 KB in size for HTTP POST requests. You can
-    /// send a payload compressed by gzip. Each request
-    /// is also limited to no more than 20 different metrics.</p>
-    /// <p>Although the <code>Value</code> parameter accepts numbers of type
-    /// <code>Double</code>, CloudWatch rejects values that are either too small
-    /// or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity,
-    /// -Infinity) are not supported.</p>
-    /// <p>You can use up to 10 dimensions per metric to further clarify what data the metric collects. Each dimension
-    /// consists of a Name and Value pair. For more information about specifying dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing Metrics</a> in the
-    /// <i>Amazon CloudWatch User Guide</i>.</p>
-    ///
-    /// <p>You specify the time stamp to be associated with each data point. You can specify
-    /// time stamps that are as much as two weeks before the current date, and as much as 2 hours after
-    /// the current day and time.</p>
-    /// <p>Data points with time stamps from 24 hours ago or longer can take at least 48
-    /// hours to become available for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a> or
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a> from the time they
-    /// are submitted. Data points with time stamps between 3 and 24 hours ago can take as much as 2 hours to become available
-    /// for for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a> or
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p>
-    /// <p>CloudWatch needs raw data points to calculate percentile statistics. If you publish
-    /// data using a statistic set instead, you can only retrieve
-    /// percentile statistics for this data if one of the following conditions is true:</p>
+    /// <p>Publishes metric data points to Amazon CloudWatch. CloudWatch associates the data points with the specified metric. If the specified metric does not exist, CloudWatch creates the metric. When CloudWatch creates a metric, it can take up to fifteen minutes for the metric to appear in calls to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
+    /// <p>You can publish either individual data points in the <code>Value</code> field, or arrays of values and the number of times each value occurred during the period by using the <code>Values</code> and <code>Counts</code> fields in the <code>MetricDatum</code> structure. Using the <code>Values</code> and <code>Counts</code> method enables you to publish up to 150 values per metric with one <code>PutMetricData</code> request, and supports retrieving percentile statistics on this data.</p>
+    /// <p>Each <code>PutMetricData</code> request is limited to 40 KB in size for HTTP POST requests. You can send a payload compressed by gzip. Each request is also limited to no more than 20 different metrics.</p>
+    /// <p>Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, CloudWatch rejects values that are either too small or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.</p>
+    /// <p>You can use up to 10 dimensions per metric to further clarify what data the metric collects. Each dimension consists of a Name and Value pair. For more information about specifying dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    /// <p>You specify the time stamp to be associated with each data point. You can specify time stamps that are as much as two weeks before the current date, and as much as 2 hours after the current day and time.</p>
+    /// <p>Data points with time stamps from 24 hours ago or longer can take at least 48 hours to become available for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a> from the time they are submitted. Data points with time stamps between 3 and 24 hours ago can take as much as 2 hours to become available for for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p>
+    /// <p>CloudWatch needs raw data points to calculate percentile statistics. If you publish data using a statistic set instead, you can only retrieve percentile statistics for this data if one of the following conditions is true:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>SampleCount</code> value of the statistic set is 1 and <code>Min</code>,
-    /// <code>Max</code>, and <code>Sum</code> are all equal.</p>
-    /// </li>
-    /// <li>
-    /// <p>The <code>Min</code> and
-    /// <code>Max</code> are equal, and <code>Sum</code> is equal to <code>Min</code>
-    /// multiplied by <code>SampleCount</code>.</p>
-    /// </li>
+    /// <li> <p>The <code>SampleCount</code> value of the statistic set is 1 and <code>Min</code>, <code>Max</code>, and <code>Sum</code> are all equal.</p> </li>
+    /// <li> <p>The <code>Min</code> and <code>Max</code> are equal, and <code>Sum</code> is equal to <code>Min</code> multiplied by <code>SampleCount</code>.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutMetricData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5394,10 +4214,10 @@ pub mod fluent_builders {
                 crate::input::PutMetricDataInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5406,17 +4226,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The namespace for the metric data.</p>
-        /// <p>To avoid conflicts
-        /// with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code>
-        /// </p>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(inp);
+        /// <p>To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code> </p>
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace for the metric data.</p>
-        /// <p>To avoid conflicts
-        /// with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code>
-        /// </p>
+        /// <p>To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code> </p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace(input);
             self
@@ -5426,8 +4242,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_metric_data`](Self::set_metric_data).
         ///
         /// <p>The data for the metric. The array can include no more than 20 metrics per call.</p>
-        pub fn metric_data(mut self, inp: impl Into<crate::model::MetricDatum>) -> Self {
-            self.inner = self.inner.metric_data(inp);
+        pub fn metric_data(mut self, input: crate::model::MetricDatum) -> Self {
+            self.inner = self.inner.metric_data(input);
             self
         }
         /// <p>The data for the metric. The array can include no more than 20 metrics per call.</p>
@@ -5441,35 +4257,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutMetricStream`.
     ///
-    /// <p>Creates or updates a metric stream. Metric streams can automatically stream CloudWatch metrics
-    /// to Amazon Web Services destinations including
-    /// Amazon S3 and to many third-party solutions.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Metric-Streams.html">
-    /// Using Metric Streams</a>.</p>
-    /// <p>To create a metric stream,
-    /// you must be logged on to an account that has the <code>iam:PassRole</code> permission
-    /// and either the <code>CloudWatchFullAccess</code>
-    /// policy or the <code>cloudwatch:PutMetricStream</code>
-    /// permission.</p>
+    /// <p>Creates or updates a metric stream. Metric streams can automatically stream CloudWatch metrics to Amazon Web Services destinations including Amazon S3 and to many third-party solutions.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Metric-Streams.html"> Using Metric Streams</a>.</p>
+    /// <p>To create a metric stream, you must be logged on to an account that has the <code>iam:PassRole</code> permission and either the <code>CloudWatchFullAccess</code> policy or the <code>cloudwatch:PutMetricStream</code> permission.</p>
     /// <p>When you create or update a metric stream, you choose one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Stream metrics from all metric namespaces in the account.</p>
-    /// </li>
-    /// <li>
-    /// <p>Stream metrics from all metric namespaces in the account, except
-    /// for the namespaces that you list in <code>ExcludeFilters</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Stream metrics from only the metric namespaces that you list in
-    /// <code>IncludeFilters</code>.</p>
-    /// </li>
+    /// <li> <p>Stream metrics from all metric namespaces in the account.</p> </li>
+    /// <li> <p>Stream metrics from all metric namespaces in the account, except for the namespaces that you list in <code>ExcludeFilters</code>.</p> </li>
+    /// <li> <p>Stream metrics from only the metric namespaces that you list in <code>IncludeFilters</code>.</p> </li>
     /// </ul>
-    ///
-    /// <p>When you use <code>PutMetricStream</code> to create a new metric stream, the stream
-    /// is created in the <code>running</code> state. If you use it to update an existing stream,
-    /// the state of the stream is not changed.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>When you use <code>PutMetricStream</code> to create a new metric stream, the stream is created in the <code>running</code> state. If you use it to update an existing stream, the state of the stream is not changed.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutMetricStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5514,10 +4312,10 @@ pub mod fluent_builders {
                 crate::input::PutMetricStreamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5525,16 +4323,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If you are creating a new metric stream, this is the name for the new stream. The name
-        /// must be different than the names of other metric streams in this account and Region.</p>
+        /// <p>If you are creating a new metric stream, this is the name for the new stream. The name must be different than the names of other metric streams in this account and Region.</p>
         /// <p>If you are updating a metric stream, specify the name of that stream here.</p>
         /// <p>Valid characters are A-Z, a-z, 0-9, "-" and "_".</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>If you are creating a new metric stream, this is the name for the new stream. The name
-        /// must be different than the names of other metric streams in this account and Region.</p>
+        /// <p>If you are creating a new metric stream, this is the name for the new stream. The name must be different than the names of other metric streams in this account and Region.</p>
         /// <p>If you are updating a metric stream, specify the name of that stream here.</p>
         /// <p>Valid characters are A-Z, a-z, 0-9, "-" and "_".</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -5545,18 +4341,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_include_filters`](Self::set_include_filters).
         ///
-        /// <p>If you specify this parameter, the stream sends only the
-        /// metrics from the metric namespaces that you specify here.</p>
-        /// <p>You cannot include <code>IncludeFilters</code> and <code>ExcludeFilters</code>
-        /// in the same operation.</p>
-        pub fn include_filters(mut self, inp: impl Into<crate::model::MetricStreamFilter>) -> Self {
-            self.inner = self.inner.include_filters(inp);
+        /// <p>If you specify this parameter, the stream sends only the metrics from the metric namespaces that you specify here.</p>
+        /// <p>You cannot include <code>IncludeFilters</code> and <code>ExcludeFilters</code> in the same operation.</p>
+        pub fn include_filters(mut self, input: crate::model::MetricStreamFilter) -> Self {
+            self.inner = self.inner.include_filters(input);
             self
         }
-        /// <p>If you specify this parameter, the stream sends only the
-        /// metrics from the metric namespaces that you specify here.</p>
-        /// <p>You cannot include <code>IncludeFilters</code> and <code>ExcludeFilters</code>
-        /// in the same operation.</p>
+        /// <p>If you specify this parameter, the stream sends only the metrics from the metric namespaces that you specify here.</p>
+        /// <p>You cannot include <code>IncludeFilters</code> and <code>ExcludeFilters</code> in the same operation.</p>
         pub fn set_include_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricStreamFilter>>,
@@ -5568,18 +4360,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_exclude_filters`](Self::set_exclude_filters).
         ///
-        /// <p>If you specify this parameter, the stream sends metrics from all
-        /// metric namespaces except for the namespaces that you specify here.</p>
-        /// <p>You cannot include <code>ExcludeFilters</code> and <code>IncludeFilters</code> in
-        /// the same operation.</p>
-        pub fn exclude_filters(mut self, inp: impl Into<crate::model::MetricStreamFilter>) -> Self {
-            self.inner = self.inner.exclude_filters(inp);
+        /// <p>If you specify this parameter, the stream sends metrics from all metric namespaces except for the namespaces that you specify here.</p>
+        /// <p>You cannot include <code>ExcludeFilters</code> and <code>IncludeFilters</code> in the same operation.</p>
+        pub fn exclude_filters(mut self, input: crate::model::MetricStreamFilter) -> Self {
+            self.inner = self.inner.exclude_filters(input);
             self
         }
-        /// <p>If you specify this parameter, the stream sends metrics from all
-        /// metric namespaces except for the namespaces that you specify here.</p>
-        /// <p>You cannot include <code>ExcludeFilters</code> and <code>IncludeFilters</code> in
-        /// the same operation.</p>
+        /// <p>If you specify this parameter, the stream sends metrics from all metric namespaces except for the namespaces that you specify here.</p>
+        /// <p>You cannot include <code>ExcludeFilters</code> and <code>IncludeFilters</code> in the same operation.</p>
         pub fn set_exclude_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricStreamFilter>>,
@@ -5587,64 +4375,40 @@ pub mod fluent_builders {
             self.inner = self.inner.set_exclude_filters(input);
             self
         }
-        /// <p>The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric stream.
-        /// This Amazon Kinesis Firehose delivery stream must already exist and must be in the same
-        /// account as the metric stream.</p>
-        pub fn firehose_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firehose_arn(inp);
+        /// <p>The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric stream. This Amazon Kinesis Firehose delivery stream must already exist and must be in the same account as the metric stream.</p>
+        pub fn firehose_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firehose_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric stream.
-        /// This Amazon Kinesis Firehose delivery stream must already exist and must be in the same
-        /// account as the metric stream.</p>
+        /// <p>The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric stream. This Amazon Kinesis Firehose delivery stream must already exist and must be in the same account as the metric stream.</p>
         pub fn set_firehose_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_firehose_arn(input);
             self
         }
-        /// <p>The ARN of an IAM role that this metric stream will use to access
-        /// Amazon Kinesis Firehose resources. This IAM role must already
-        /// exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>
+        /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>
         /// <ul>
-        /// <li>
-        /// <p>firehose:PutRecord</p>
-        /// </li>
-        /// <li>
-        /// <p>firehose:PutRecordBatch</p>
-        /// </li>
+        /// <li> <p>firehose:PutRecord</p> </li>
+        /// <li> <p>firehose:PutRecordBatch</p> </li>
         /// </ul>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The ARN of an IAM role that this metric stream will use to access
-        /// Amazon Kinesis Firehose resources. This IAM role must already
-        /// exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>
+        /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>
         /// <ul>
-        /// <li>
-        /// <p>firehose:PutRecord</p>
-        /// </li>
-        /// <li>
-        /// <p>firehose:PutRecordBatch</p>
-        /// </li>
+        /// <li> <p>firehose:PutRecord</p> </li>
+        /// <li> <p>firehose:PutRecordBatch</p> </li>
         /// </ul>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The output format for the stream. Valid values are <code>json</code>
-        /// and <code>opentelemetry0.7</code>. For more information about metric stream
-        /// output formats, see
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">
-        /// Metric streams output formats</a>.</p>
-        pub fn output_format(mut self, inp: crate::model::MetricStreamOutputFormat) -> Self {
-            self.inner = self.inner.output_format(inp);
+        /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html"> Metric streams output formats</a>.</p>
+        pub fn output_format(mut self, input: crate::model::MetricStreamOutputFormat) -> Self {
+            self.inner = self.inner.output_format(input);
             self
         }
-        /// <p>The output format for the stream. Valid values are <code>json</code>
-        /// and <code>opentelemetry0.7</code>. For more information about metric stream
-        /// output formats, see
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">
-        /// Metric streams output formats</a>.</p>
+        /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html"> Metric streams output formats</a>.</p>
         pub fn set_output_format(
             mut self,
             input: std::option::Option<crate::model::MetricStreamOutputFormat>,
@@ -5656,28 +4420,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs to associate with the metric stream. You can associate as
-        /// many as 50 tags with a metric stream.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-        /// permissions by granting a user
-        /// permission to access or change only resources with certain tag values.</p>
-        /// <p>You can use this parameter only when you are creating a new metric stream. If you are using this operation to update an existing metric stream, any tags
-        /// you specify in this parameter are ignored. To change the tags of an existing metric stream, use
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
-        /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>A list of key-value pairs to associate with the metric stream. You can associate as many as 50 tags with a metric stream.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+        /// <p>You can use this parameter only when you are creating a new metric stream. If you are using this operation to update an existing metric stream, any tags you specify in this parameter are ignored. To change the tags of an existing metric stream, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of key-value pairs to associate with the metric stream. You can associate as
-        /// many as 50 tags with a metric stream.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-        /// permissions by granting a user
-        /// permission to access or change only resources with certain tag values.</p>
-        /// <p>You can use this parameter only when you are creating a new metric stream. If you are using this operation to update an existing metric stream, any tags
-        /// you specify in this parameter are ignored. To change the tags of an existing metric stream, use
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
-        /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
+        /// <p>A list of key-value pairs to associate with the metric stream. You can associate as many as 50 tags with a metric stream.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+        /// <p>You can use this parameter only when you are creating a new metric stream. If you are using this operation to update an existing metric stream, any tags you specify in this parameter are ignored. To change the tags of an existing metric stream, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5688,23 +4440,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SetAlarmState`.
     ///
-    /// <p>Temporarily sets the state of an alarm for testing purposes. When the updated
-    /// state differs from the previous value, the action configured for
-    /// the appropriate state is invoked. For example, if your alarm is configured to send an
-    /// Amazon SNS message when an alarm is triggered, temporarily changing the alarm state to
-    /// <code>ALARM</code> sends an SNS message.</p>
-    /// <p>Metric alarms
-    /// returns to their actual state quickly, often within seconds. Because the metric alarm state change
-    /// happens quickly, it is typically only visible in the alarm's <b>History</b> tab in the Amazon CloudWatch console or through
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html">DescribeAlarmHistory</a>.</p>
-    /// <p>If you use <code>SetAlarmState</code> on a composite alarm, the composite alarm is not guaranteed to return
-    /// to its actual state. It
-    /// returns to its actual state only once any of its children alarms change state. It is also
-    /// reevaluated if you update its
-    /// configuration.</p>
-    /// <p>If an alarm triggers EC2 Auto Scaling policies or application Auto Scaling policies, you must include
-    /// information in the <code>StateReasonData</code> parameter to enable the policy to take the correct action.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Temporarily sets the state of an alarm for testing purposes. When the updated state differs from the previous value, the action configured for the appropriate state is invoked. For example, if your alarm is configured to send an Amazon SNS message when an alarm is triggered, temporarily changing the alarm state to <code>ALARM</code> sends an SNS message.</p>
+    /// <p>Metric alarms returns to their actual state quickly, often within seconds. Because the metric alarm state change happens quickly, it is typically only visible in the alarm's <b>History</b> tab in the Amazon CloudWatch console or through <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html">DescribeAlarmHistory</a>.</p>
+    /// <p>If you use <code>SetAlarmState</code> on a composite alarm, the composite alarm is not guaranteed to return to its actual state. It returns to its actual state only once any of its children alarms change state. It is also reevaluated if you update its configuration.</p>
+    /// <p>If an alarm triggers EC2 Auto Scaling policies or application Auto Scaling policies, you must include information in the <code>StateReasonData</code> parameter to enable the policy to take the correct action.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetAlarmState<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5749,10 +4489,10 @@ pub mod fluent_builders {
                 crate::input::SetAlarmStateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5761,8 +4501,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the alarm.</p>
-        pub fn alarm_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_name(inp);
+        pub fn alarm_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_name(input.into());
             self
         }
         /// <p>The name of the alarm.</p>
@@ -5771,8 +4511,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value of the state.</p>
-        pub fn state_value(mut self, inp: crate::model::StateValue) -> Self {
-            self.inner = self.inner.state_value(inp);
+        pub fn state_value(mut self, input: crate::model::StateValue) -> Self {
+            self.inner = self.inner.state_value(input);
             self
         }
         /// <p>The value of the state.</p>
@@ -5784,8 +4524,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reason that this alarm is set to this specific state, in text format.</p>
-        pub fn state_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.state_reason(inp);
+        pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.state_reason(input.into());
             self
         }
         /// <p>The reason that this alarm is set to this specific state, in text format.</p>
@@ -5794,15 +4534,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reason that this alarm is set to this specific state, in JSON format.</p>
-        /// <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling
-        /// alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.</p>
-        pub fn state_reason_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.state_reason_data(inp);
+        /// <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.</p>
+        pub fn state_reason_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.state_reason_data(input.into());
             self
         }
         /// <p>The reason that this alarm is set to this specific state, in JSON format.</p>
-        /// <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling
-        /// alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.</p>
+        /// <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.</p>
         pub fn set_state_reason_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5814,7 +4552,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartMetricStreams`.
     ///
     /// <p>Starts the streaming of metrics for one or more of your metric streams.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMetricStreams<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5859,10 +4597,10 @@ pub mod fluent_builders {
                 crate::input::StartMetricStreamsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5875,17 +4613,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
         /// <p>The array of the names of metric streams to start streaming.</p>
-        /// <p>This is an "all or nothing" operation. If you do not have
-        /// permission to access all of the metric streams that you list here, then none of the streams that you list
-        /// in the operation will start streaming.</p>
-        pub fn names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.names(inp);
+        /// <p>This is an "all or nothing" operation. If you do not have permission to access all of the metric streams that you list here, then none of the streams that you list in the operation will start streaming.</p>
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.names(input.into());
             self
         }
         /// <p>The array of the names of metric streams to start streaming.</p>
-        /// <p>This is an "all or nothing" operation. If you do not have
-        /// permission to access all of the metric streams that you list here, then none of the streams that you list
-        /// in the operation will start streaming.</p>
+        /// <p>This is an "all or nothing" operation. If you do not have permission to access all of the metric streams that you list here, then none of the streams that you list in the operation will start streaming.</p>
         pub fn set_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5897,7 +4631,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopMetricStreams`.
     ///
     /// <p>Stops the streaming of metrics for one or more of your metric streams.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopMetricStreams<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5942,10 +4676,10 @@ pub mod fluent_builders {
                 crate::input::StopMetricStreamsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5958,17 +4692,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
         /// <p>The array of the names of metric streams to stop streaming.</p>
-        /// <p>This is an "all or nothing" operation. If you do not have
-        /// permission to access all of the metric streams that you list here, then none of the streams that you list
-        /// in the operation will stop streaming.</p>
-        pub fn names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.names(inp);
+        /// <p>This is an "all or nothing" operation. If you do not have permission to access all of the metric streams that you list here, then none of the streams that you list in the operation will stop streaming.</p>
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.names(input.into());
             self
         }
         /// <p>The array of the names of metric streams to stop streaming.</p>
-        /// <p>This is an "all or nothing" operation. If you do not have
-        /// permission to access all of the metric streams that you list here, then none of the streams that you list
-        /// in the operation will stop streaming.</p>
+        /// <p>This is an "all or nothing" operation. If you do not have permission to access all of the metric streams that you list here, then none of the streams that you list in the operation will stop streaming.</p>
         pub fn set_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5979,18 +4709,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Assigns one or more tags (key-value pairs) to the specified CloudWatch resource. Currently, the only CloudWatch resources that
-    /// can be tagged are alarms and Contributor Insights rules.</p>
-    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-    /// permissions by granting a user
-    /// permission to access or change only resources with certain tag values.</p>
+    /// <p>Assigns one or more tags (key-value pairs) to the specified CloudWatch resource. Currently, the only CloudWatch resources that can be tagged are alarms and Contributor Insights rules.</p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-    /// <p>You can use the <code>TagResource</code> action with an alarm that already has tags. If you specify a new tag key for the alarm,
-    /// this tag is appended to the list of tags associated
-    /// with the alarm. If you specify a tag key that is already associated with the alarm, the new tag value that you specify replaces
-    /// the previous value for that tag.</p>
+    /// <p>You can use the <code>TagResource</code> action with an alarm that already has tags. If you specify a new tag key for the alarm, this tag is appended to the list of tags associated with the alarm. If you specify a tag key that is already associated with the alarm, the new tag value that you specify replaces the previous value for that tag.</p>
     /// <p>You can associate as many as 50 tags with a CloudWatch resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6035,10 +4759,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6047,33 +4771,17 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the CloudWatch resource that you're adding tags to.</p>
-        /// <p>The ARN format of an alarm is
-        /// <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i>
-        /// </code>
-        /// </p>
-        /// <p>The ARN format of a Contributor Insights rule is
-        /// <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i>
-        /// </code>
-        /// </p>
-        /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource
-        /// Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General
-        /// Reference</i>.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p>
+        /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p>
+        /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the CloudWatch resource that you're adding tags to.</p>
-        /// <p>The ARN format of an alarm is
-        /// <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i>
-        /// </code>
-        /// </p>
-        /// <p>The ARN format of a Contributor Insights rule is
-        /// <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i>
-        /// </code>
-        /// </p>
-        /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource
-        /// Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General
-        /// Reference</i>.</p>
+        /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p>
+        /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p>
+        /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -6083,8 +4791,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of key-value pairs to associate with the alarm.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The list of key-value pairs to associate with the alarm.</p>
@@ -6099,7 +4807,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags from the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6144,10 +4852,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6156,33 +4864,17 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the CloudWatch resource that you're removing tags from.</p>
-        /// <p>The ARN format of an alarm is
-        /// <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i>
-        /// </code>
-        /// </p>
-        /// <p>The ARN format of a Contributor Insights rule is
-        /// <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i>
-        /// </code>
-        /// </p>
-        /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource
-        /// Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General
-        /// Reference</i>.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p>
+        /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p>
+        /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the CloudWatch resource that you're removing tags from.</p>
-        /// <p>The ARN format of an alarm is
-        /// <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i>
-        /// </code>
-        /// </p>
-        /// <p>The ARN format of a Contributor Insights rule is
-        /// <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i>
-        /// </code>
-        /// </p>
-        /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource
-        /// Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General
-        /// Reference</i>.</p>
+        /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p>
+        /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p>
+        /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -6192,8 +4884,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The list of tag keys to remove from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The list of tag keys to remove from the resource.</p>
@@ -6206,6 +4898,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

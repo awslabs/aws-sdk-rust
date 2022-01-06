@@ -11,14 +11,12 @@ pub mod batch_check_layer_availability_input {
         pub(crate) layer_digests: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the public registry that contains the image layers to
-        /// check. If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the public registry that contains the image layers to check. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The AWS account ID associated with the public registry that contains the image layers to
-        /// check. If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the public registry that contains the image layers to check. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -74,7 +72,7 @@ pub mod batch_check_layer_availability_input {
 pub type BatchCheckLayerAvailabilityInputOperationOutputAlias =
     crate::operation::BatchCheckLayerAvailability;
 #[doc(hidden)]
-pub type BatchCheckLayerAvailabilityInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchCheckLayerAvailabilityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchCheckLayerAvailabilityInput {
     /// Consumes the builder and constructs an Operation<[`BatchCheckLayerAvailability`](crate::operation::BatchCheckLayerAvailability)>
     #[allow(clippy::let_and_return)]
@@ -85,7 +83,7 @@ impl BatchCheckLayerAvailabilityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchCheckLayerAvailability,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -171,7 +169,7 @@ impl BatchCheckLayerAvailabilityInput {
             "BatchCheckLayerAvailability",
             "ecrpublic",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -205,14 +203,12 @@ pub mod batch_delete_image_input {
         pub(crate) image_ids: std::option::Option<std::vec::Vec<crate::model::ImageIdentifier>>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry that contains the image to delete.
-        /// If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the registry that contains the image to delete. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The AWS account ID associated with the registry that contains the image to delete.
-        /// If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the registry that contains the image to delete. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -234,18 +230,14 @@ pub mod batch_delete_image_input {
         ///
         /// To override the contents of this collection use [`set_image_ids`](Self::set_image_ids).
         ///
-        /// <p>A list of image ID references that correspond to images to delete. The format of the
-        /// <code>imageIds</code> reference is <code>imageTag=tag</code> or
-        /// <code>imageDigest=digest</code>.</p>
-        pub fn image_ids(mut self, input: impl Into<crate::model::ImageIdentifier>) -> Self {
+        /// <p>A list of image ID references that correspond to images to delete. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
+        pub fn image_ids(mut self, input: crate::model::ImageIdentifier) -> Self {
             let mut v = self.image_ids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.image_ids = Some(v);
             self
         }
-        /// <p>A list of image ID references that correspond to images to delete. The format of the
-        /// <code>imageIds</code> reference is <code>imageTag=tag</code> or
-        /// <code>imageDigest=digest</code>.</p>
+        /// <p>A list of image ID references that correspond to images to delete. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
         pub fn set_image_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ImageIdentifier>>,
@@ -271,7 +263,7 @@ pub mod batch_delete_image_input {
 #[doc(hidden)]
 pub type BatchDeleteImageInputOperationOutputAlias = crate::operation::BatchDeleteImage;
 #[doc(hidden)]
-pub type BatchDeleteImageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchDeleteImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDeleteImageInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeleteImage`](crate::operation::BatchDeleteImage)>
     #[allow(clippy::let_and_return)]
@@ -282,7 +274,7 @@ impl BatchDeleteImageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDeleteImage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -367,7 +359,7 @@ impl BatchDeleteImageInput {
             "BatchDeleteImage",
             "ecrpublic",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -402,26 +394,22 @@ pub mod complete_layer_upload_input {
         pub(crate) layer_digests: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry to which to upload layers.
-        /// If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the registry to which to upload layers. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The AWS account ID associated with the registry to which to upload layers.
-        /// If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the registry to which to upload layers. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
         }
-        /// <p>The name of the repository in a public registry to associate with the image
-        /// layer.</p>
+        /// <p>The name of the repository in a public registry to associate with the image layer.</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository_name = Some(input.into());
             self
         }
-        /// <p>The name of the repository in a public registry to associate with the image
-        /// layer.</p>
+        /// <p>The name of the repository in a public registry to associate with the image layer.</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -429,14 +417,12 @@ pub mod complete_layer_upload_input {
             self.repository_name = input;
             self
         }
-        /// <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
-        /// associate with the image layer.</p>
+        /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the image layer.</p>
         pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.upload_id = Some(input.into());
             self
         }
-        /// <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
-        /// associate with the image layer.</p>
+        /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the image layer.</p>
         pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.upload_id = input;
             self
@@ -479,7 +465,7 @@ pub mod complete_layer_upload_input {
 #[doc(hidden)]
 pub type CompleteLayerUploadInputOperationOutputAlias = crate::operation::CompleteLayerUpload;
 #[doc(hidden)]
-pub type CompleteLayerUploadInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CompleteLayerUploadInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CompleteLayerUploadInput {
     /// Consumes the builder and constructs an Operation<[`CompleteLayerUpload`](crate::operation::CompleteLayerUpload)>
     #[allow(clippy::let_and_return)]
@@ -490,7 +476,7 @@ impl CompleteLayerUploadInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CompleteLayerUpload,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -575,7 +561,7 @@ impl CompleteLayerUploadInput {
             "CompleteLayerUpload",
             "ecrpublic",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -609,18 +595,12 @@ pub mod create_repository_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The name to use for the repository. This appears publicly in the Amazon ECR Public Gallery.
-        /// The repository name may be specified on its own (such as <code>nginx-web-app</code>) or it
-        /// can be prepended with a namespace to group the repository into a category (such as
-        /// <code>project-a/nginx-web-app</code>).</p>
+        /// <p>The name to use for the repository. This appears publicly in the Amazon ECR Public Gallery. The repository name may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository_name = Some(input.into());
             self
         }
-        /// <p>The name to use for the repository. This appears publicly in the Amazon ECR Public Gallery.
-        /// The repository name may be specified on its own (such as <code>nginx-web-app</code>) or it
-        /// can be prepended with a namespace to group the repository into a category (such as
-        /// <code>project-a/nginx-web-app</code>).</p>
+        /// <p>The name to use for the repository. This appears publicly in the Amazon ECR Public Gallery. The repository name may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -628,14 +608,12 @@ pub mod create_repository_input {
             self.repository_name = input;
             self
         }
-        /// <p>The details about the repository that are publicly visible in the
-        /// Amazon ECR Public Gallery.</p>
+        /// <p>The details about the repository that are publicly visible in the Amazon ECR Public Gallery.</p>
         pub fn catalog_data(mut self, input: crate::model::RepositoryCatalogDataInput) -> Self {
             self.catalog_data = Some(input);
             self
         }
-        /// <p>The details about the repository that are publicly visible in the
-        /// Amazon ECR Public Gallery.</p>
+        /// <p>The details about the repository that are publicly visible in the Amazon ECR Public Gallery.</p>
         pub fn set_catalog_data(
             mut self,
             input: std::option::Option<crate::model::RepositoryCatalogDataInput>,
@@ -647,18 +625,14 @@ pub mod create_repository_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The metadata that you apply to the repository to help you categorize and organize them.
-        /// Each tag consists of a key and an optional value, both of which you define.
-        /// Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>The metadata that you apply to the repository to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>The metadata that you apply to the repository to help you categorize and organize them.
-        /// Each tag consists of a key and an optional value, both of which you define.
-        /// Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+        /// <p>The metadata that you apply to the repository to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -684,7 +658,7 @@ pub mod create_repository_input {
 #[doc(hidden)]
 pub type CreateRepositoryInputOperationOutputAlias = crate::operation::CreateRepository;
 #[doc(hidden)]
-pub type CreateRepositoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateRepositoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRepositoryInput {
     /// Consumes the builder and constructs an Operation<[`CreateRepository`](crate::operation::CreateRepository)>
     #[allow(clippy::let_and_return)]
@@ -695,7 +669,7 @@ impl CreateRepositoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRepository,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -780,7 +754,7 @@ impl CreateRepositoryInput {
             "CreateRepository",
             "ecrpublic",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -814,14 +788,12 @@ pub mod delete_repository_input {
         pub(crate) force: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the public registry that contains the repository to
-        /// delete. If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the public registry that contains the repository to delete. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The AWS account ID associated with the public registry that contains the repository to
-        /// delete. If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the public registry that contains the repository to delete. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -867,7 +839,7 @@ pub mod delete_repository_input {
 #[doc(hidden)]
 pub type DeleteRepositoryInputOperationOutputAlias = crate::operation::DeleteRepository;
 #[doc(hidden)]
-pub type DeleteRepositoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRepositoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRepositoryInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRepository`](crate::operation::DeleteRepository)>
     #[allow(clippy::let_and_return)]
@@ -878,7 +850,7 @@ impl DeleteRepositoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRepository,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -963,7 +935,7 @@ impl DeleteRepositoryInput {
             "DeleteRepository",
             "ecrpublic",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -996,26 +968,22 @@ pub mod delete_repository_policy_input {
         pub(crate) repository_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the public registry that contains the repository
-        /// policy to delete. If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the public registry that contains the repository policy to delete. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The AWS account ID associated with the public registry that contains the repository
-        /// policy to delete. If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the public registry that contains the repository policy to delete. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
         }
-        /// <p>The name of the repository that is associated with the repository policy to
-        /// delete.</p>
+        /// <p>The name of the repository that is associated with the repository policy to delete.</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository_name = Some(input.into());
             self
         }
-        /// <p>The name of the repository that is associated with the repository policy to
-        /// delete.</p>
+        /// <p>The name of the repository that is associated with the repository policy to delete.</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1040,7 +1008,7 @@ pub mod delete_repository_policy_input {
 #[doc(hidden)]
 pub type DeleteRepositoryPolicyInputOperationOutputAlias = crate::operation::DeleteRepositoryPolicy;
 #[doc(hidden)]
-pub type DeleteRepositoryPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRepositoryPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRepositoryPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRepositoryPolicy`](crate::operation::DeleteRepositoryPolicy)>
     #[allow(clippy::let_and_return)]
@@ -1051,7 +1019,7 @@ impl DeleteRepositoryPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRepositoryPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1138,7 +1106,7 @@ impl DeleteRepositoryPolicyInput {
             "DeleteRepositoryPolicy",
             "ecrpublic",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1174,14 +1142,12 @@ pub mod describe_images_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the public registry that contains the repository in
-        /// which to describe images. If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the public registry that contains the repository in which to describe images. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The AWS account ID associated with the public registry that contains the repository in
-        /// which to describe images. If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the public registry that contains the repository in which to describe images. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -1204,9 +1170,9 @@ pub mod describe_images_input {
         /// To override the contents of this collection use [`set_image_ids`](Self::set_image_ids).
         ///
         /// <p>The list of image IDs for the requested repository.</p>
-        pub fn image_ids(mut self, input: impl Into<crate::model::ImageIdentifier>) -> Self {
+        pub fn image_ids(mut self, input: crate::model::ImageIdentifier) -> Self {
             let mut v = self.image_ids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.image_ids = Some(v);
             self
         }
@@ -1218,48 +1184,22 @@ pub mod describe_images_input {
             self.image_ids = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeImages</code> request where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value. This value is
-        /// <code>null</code> when there are no more results to return. This option cannot be used
-        /// when you specify images with <code>imageIds</code>.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeImages</code> request where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value. This value is
-        /// <code>null</code> when there are no more results to return. This option cannot be used
-        /// when you specify images with <code>imageIds</code>.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of repository results returned by <code>DescribeImages</code> in
-        /// paginated output. When this parameter is used, <code>DescribeImages</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>DescribeImages</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 1000. If this parameter is not
-        /// used, then <code>DescribeImages</code> returns up to 100 results and a
-        /// <code>nextToken</code> value, if applicable. This option cannot be used when you specify
-        /// images with <code>imageIds</code>.</p>
+        /// <p>The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images with <code>imageIds</code>.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of repository results returned by <code>DescribeImages</code> in
-        /// paginated output. When this parameter is used, <code>DescribeImages</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>DescribeImages</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 1000. If this parameter is not
-        /// used, then <code>DescribeImages</code> returns up to 100 results and a
-        /// <code>nextToken</code> value, if applicable. This option cannot be used when you specify
-        /// images with <code>imageIds</code>.</p>
+        /// <p>The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images with <code>imageIds</code>.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1284,7 +1224,7 @@ pub mod describe_images_input {
 #[doc(hidden)]
 pub type DescribeImagesInputOperationOutputAlias = crate::operation::DescribeImages;
 #[doc(hidden)]
-pub type DescribeImagesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeImagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeImagesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeImages`](crate::operation::DescribeImages)>
     #[allow(clippy::let_and_return)]
@@ -1295,7 +1235,7 @@ impl DescribeImagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeImages,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1380,7 +1320,7 @@ impl DescribeImagesInput {
             "DescribeImages",
             "ecrpublic",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1415,14 +1355,12 @@ pub mod describe_image_tags_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the public registry that contains the repository in
-        /// which to describe images. If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the public registry that contains the repository in which to describe images. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The AWS account ID associated with the public registry that contains the repository in
-        /// which to describe images. If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the public registry that contains the repository in which to describe images. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -1440,48 +1378,22 @@ pub mod describe_image_tags_input {
             self.repository_name = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeImageTags</code> request where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value. This value is
-        /// <code>null</code> when there are no more results to return. This option cannot be used
-        /// when you specify images with <code>imageIds</code>.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImageTags</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeImageTags</code> request where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value. This value is
-        /// <code>null</code> when there are no more results to return. This option cannot be used
-        /// when you specify images with <code>imageIds</code>.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImageTags</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of repository results returned by <code>DescribeImageTags</code> in
-        /// paginated output. When this parameter is used, <code>DescribeImageTags</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>DescribeImageTags</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 1000. If this parameter
-        /// is not used, then <code>DescribeImageTags</code> returns up to 100
-        /// results and a <code>nextToken</code> value, if applicable. This option cannot be used when
-        /// you specify images with <code>imageIds</code>.</p>
+        /// <p>The maximum number of repository results returned by <code>DescribeImageTags</code> in paginated output. When this parameter is used, <code>DescribeImageTags</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImageTags</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeImageTags</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images with <code>imageIds</code>.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of repository results returned by <code>DescribeImageTags</code> in
-        /// paginated output. When this parameter is used, <code>DescribeImageTags</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>DescribeImageTags</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 1000. If this parameter
-        /// is not used, then <code>DescribeImageTags</code> returns up to 100
-        /// results and a <code>nextToken</code> value, if applicable. This option cannot be used when
-        /// you specify images with <code>imageIds</code>.</p>
+        /// <p>The maximum number of repository results returned by <code>DescribeImageTags</code> in paginated output. When this parameter is used, <code>DescribeImageTags</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImageTags</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeImageTags</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images with <code>imageIds</code>.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1505,7 +1417,7 @@ pub mod describe_image_tags_input {
 #[doc(hidden)]
 pub type DescribeImageTagsInputOperationOutputAlias = crate::operation::DescribeImageTags;
 #[doc(hidden)]
-pub type DescribeImageTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeImageTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeImageTagsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeImageTags`](crate::operation::DescribeImageTags)>
     #[allow(clippy::let_and_return)]
@@ -1516,7 +1428,7 @@ impl DescribeImageTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeImageTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1601,7 +1513,7 @@ impl DescribeImageTagsInput {
             "DescribeImageTags",
             "ecrpublic",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1634,50 +1546,26 @@ pub mod describe_registries_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeRegistries</code> request where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value. This value is
-        /// <code>null</code> when there are no more results to return.</p>
-        /// <note>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeRegistries</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
         /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeRegistries</code> request where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value. This value is
-        /// <code>null</code> when there are no more results to return.</p>
-        /// <note>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeRegistries</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
         /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of repository results returned by <code>DescribeRegistries</code> in
-        /// paginated output. When this parameter is used, <code>DescribeRegistries</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>DescribeRegistries</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 1000. If this parameter
-        /// is not used, then <code>DescribeRegistries</code> returns up to 100
-        /// results and a <code>nextToken</code> value, if applicable.</p>
+        /// <p>The maximum number of repository results returned by <code>DescribeRegistries</code> in paginated output. When this parameter is used, <code>DescribeRegistries</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeRegistries</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeRegistries</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of repository results returned by <code>DescribeRegistries</code> in
-        /// paginated output. When this parameter is used, <code>DescribeRegistries</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>DescribeRegistries</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 1000. If this parameter
-        /// is not used, then <code>DescribeRegistries</code> returns up to 100
-        /// results and a <code>nextToken</code> value, if applicable.</p>
+        /// <p>The maximum number of repository results returned by <code>DescribeRegistries</code> in paginated output. When this parameter is used, <code>DescribeRegistries</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeRegistries</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeRegistries</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1699,7 +1587,7 @@ pub mod describe_registries_input {
 #[doc(hidden)]
 pub type DescribeRegistriesInputOperationOutputAlias = crate::operation::DescribeRegistries;
 #[doc(hidden)]
-pub type DescribeRegistriesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRegistriesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRegistriesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRegistries`](crate::operation::DescribeRegistries)>
     #[allow(clippy::let_and_return)]
@@ -1710,7 +1598,7 @@ impl DescribeRegistriesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRegistries,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1795,7 +1683,7 @@ impl DescribeRegistriesInput {
             "DescribeRegistries",
             "ecrpublic",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1830,14 +1718,12 @@ pub mod describe_repositories_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry that contains the repositories to be
-        /// described. If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the registry that contains the repositories to be described. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The AWS account ID associated with the registry that contains the repositories to be
-        /// described. If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the registry that contains the repositories to be described. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -1846,16 +1732,14 @@ pub mod describe_repositories_input {
         ///
         /// To override the contents of this collection use [`set_repository_names`](Self::set_repository_names).
         ///
-        /// <p>A list of repositories to describe. If this parameter is omitted, then all repositories
-        /// in a registry are described.</p>
+        /// <p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>
         pub fn repository_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.repository_names.unwrap_or_default();
             v.push(input.into());
             self.repository_names = Some(v);
             self
         }
-        /// <p>A list of repositories to describe. If this parameter is omitted, then all repositories
-        /// in a registry are described.</p>
+        /// <p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>
         pub fn set_repository_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1863,56 +1747,26 @@ pub mod describe_repositories_input {
             self.repository_names = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeRepositories</code> request where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value. This value is
-        /// <code>null</code> when there are no more results to return. This option cannot be used
-        /// when you specify repositories with <code>repositoryNames</code>.</p>
-        /// <note>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeRepositories</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p> <note>
         /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeRepositories</code> request where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value. This value is
-        /// <code>null</code> when there are no more results to return. This option cannot be used
-        /// when you specify repositories with <code>repositoryNames</code>.</p>
-        /// <note>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeRepositories</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p> <note>
         /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of repository results returned by <code>DescribeRepositories</code>
-        /// in paginated output. When this parameter is used, <code>DescribeRepositories</code> only
-        /// returns <code>maxResults</code> results in a single page along with a
-        /// <code>nextToken</code> response element. The remaining results of the initial request
-        /// can be seen by sending another <code>DescribeRepositories</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between 1 and
-        /// 1000. If this parameter is not used, then <code>DescribeRepositories</code>
-        /// returns up to 100 results and a <code>nextToken</code> value, if
-        /// applicable. This option cannot be used when you specify repositories with
-        /// <code>repositoryNames</code>.</p>
+        /// <p>The maximum number of repository results returned by <code>DescribeRepositories</code> in paginated output. When this parameter is used, <code>DescribeRepositories</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeRepositories</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeRepositories</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of repository results returned by <code>DescribeRepositories</code>
-        /// in paginated output. When this parameter is used, <code>DescribeRepositories</code> only
-        /// returns <code>maxResults</code> results in a single page along with a
-        /// <code>nextToken</code> response element. The remaining results of the initial request
-        /// can be seen by sending another <code>DescribeRepositories</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between 1 and
-        /// 1000. If this parameter is not used, then <code>DescribeRepositories</code>
-        /// returns up to 100 results and a <code>nextToken</code> value, if
-        /// applicable. This option cannot be used when you specify repositories with
-        /// <code>repositoryNames</code>.</p>
+        /// <p>The maximum number of repository results returned by <code>DescribeRepositories</code> in paginated output. When this parameter is used, <code>DescribeRepositories</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeRepositories</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeRepositories</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1936,7 +1790,7 @@ pub mod describe_repositories_input {
 #[doc(hidden)]
 pub type DescribeRepositoriesInputOperationOutputAlias = crate::operation::DescribeRepositories;
 #[doc(hidden)]
-pub type DescribeRepositoriesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRepositoriesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRepositoriesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRepositories`](crate::operation::DescribeRepositories)>
     #[allow(clippy::let_and_return)]
@@ -1947,7 +1801,7 @@ impl DescribeRepositoriesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRepositories,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2032,7 +1886,7 @@ impl DescribeRepositoriesInput {
             "DescribeRepositories",
             "ecrpublic",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2076,7 +1930,7 @@ pub mod get_authorization_token_input {
 #[doc(hidden)]
 pub type GetAuthorizationTokenInputOperationOutputAlias = crate::operation::GetAuthorizationToken;
 #[doc(hidden)]
-pub type GetAuthorizationTokenInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAuthorizationTokenInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAuthorizationTokenInput {
     /// Consumes the builder and constructs an Operation<[`GetAuthorizationToken`](crate::operation::GetAuthorizationToken)>
     #[allow(clippy::let_and_return)]
@@ -2087,7 +1941,7 @@ impl GetAuthorizationTokenInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAuthorizationToken,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2174,7 +2028,7 @@ impl GetAuthorizationTokenInput {
             "GetAuthorizationToken",
             "ecrpublic",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2210,7 +2064,7 @@ pub mod get_registry_catalog_data_input {
 #[doc(hidden)]
 pub type GetRegistryCatalogDataInputOperationOutputAlias = crate::operation::GetRegistryCatalogData;
 #[doc(hidden)]
-pub type GetRegistryCatalogDataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRegistryCatalogDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRegistryCatalogDataInput {
     /// Consumes the builder and constructs an Operation<[`GetRegistryCatalogData`](crate::operation::GetRegistryCatalogData)>
     #[allow(clippy::let_and_return)]
@@ -2221,7 +2075,7 @@ impl GetRegistryCatalogDataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRegistryCatalogData,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2308,7 +2162,7 @@ impl GetRegistryCatalogDataInput {
             "GetRegistryCatalogData",
             "ecrpublic",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2333,14 +2187,12 @@ pub mod get_repository_catalog_data_input {
         pub(crate) repository_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry that contains the repositories to be
-        /// described. If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the registry that contains the repositories to be described. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The AWS account ID associated with the registry that contains the repositories to be
-        /// described. If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the registry that contains the repositories to be described. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -2376,7 +2228,7 @@ pub mod get_repository_catalog_data_input {
 pub type GetRepositoryCatalogDataInputOperationOutputAlias =
     crate::operation::GetRepositoryCatalogData;
 #[doc(hidden)]
-pub type GetRepositoryCatalogDataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRepositoryCatalogDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRepositoryCatalogDataInput {
     /// Consumes the builder and constructs an Operation<[`GetRepositoryCatalogData`](crate::operation::GetRepositoryCatalogData)>
     #[allow(clippy::let_and_return)]
@@ -2387,7 +2239,7 @@ impl GetRepositoryCatalogDataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRepositoryCatalogData,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2474,7 +2326,7 @@ impl GetRepositoryCatalogDataInput {
             "GetRepositoryCatalogData",
             "ecrpublic",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2507,14 +2359,12 @@ pub mod get_repository_policy_input {
         pub(crate) repository_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the public registry that contains the repository.
-        /// If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the public registry that contains the repository. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The AWS account ID associated with the public registry that contains the repository.
-        /// If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the public registry that contains the repository. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -2549,7 +2399,7 @@ pub mod get_repository_policy_input {
 #[doc(hidden)]
 pub type GetRepositoryPolicyInputOperationOutputAlias = crate::operation::GetRepositoryPolicy;
 #[doc(hidden)]
-pub type GetRepositoryPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRepositoryPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRepositoryPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetRepositoryPolicy`](crate::operation::GetRepositoryPolicy)>
     #[allow(clippy::let_and_return)]
@@ -2560,7 +2410,7 @@ impl GetRepositoryPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRepositoryPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2645,7 +2495,7 @@ impl GetRepositoryPolicyInput {
             "GetRepositoryPolicy",
             "ecrpublic",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2678,14 +2528,12 @@ pub mod initiate_layer_upload_input {
         pub(crate) repository_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry to which you intend to upload layers.
-        /// If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the registry to which you intend to upload layers. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The AWS account ID associated with the registry to which you intend to upload layers.
-        /// If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the registry to which you intend to upload layers. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -2720,7 +2568,7 @@ pub mod initiate_layer_upload_input {
 #[doc(hidden)]
 pub type InitiateLayerUploadInputOperationOutputAlias = crate::operation::InitiateLayerUpload;
 #[doc(hidden)]
-pub type InitiateLayerUploadInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type InitiateLayerUploadInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InitiateLayerUploadInput {
     /// Consumes the builder and constructs an Operation<[`InitiateLayerUpload`](crate::operation::InitiateLayerUpload)>
     #[allow(clippy::let_and_return)]
@@ -2731,7 +2579,7 @@ impl InitiateLayerUploadInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::InitiateLayerUpload,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2816,7 +2664,7 @@ impl InitiateLayerUploadInput {
             "InitiateLayerUpload",
             "ecrpublic",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2848,14 +2696,12 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
-        /// supported resource is an Amazon ECR Public repository.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resource is an Amazon ECR Public repository.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
-        /// supported resource is an Amazon ECR Public repository.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resource is an Amazon ECR Public repository.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -2876,7 +2722,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -2887,7 +2733,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2974,7 +2820,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "ecrpublic",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3011,14 +2857,12 @@ pub mod put_image_input {
         pub(crate) image_digest: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the public registry that contains the repository in
-        /// which to put the image. If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the public registry that contains the repository in which to put the image. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The AWS account ID associated with the public registry that contains the repository in
-        /// which to put the image. If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the public registry that contains the repository in which to put the image. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -3049,16 +2893,12 @@ pub mod put_image_input {
             self.image_manifest = input;
             self
         }
-        /// <p>The media type of the image manifest. If you push an image manifest that does not
-        /// contain the <code>mediaType</code> field, you must specify the
-        /// <code>imageManifestMediaType</code> in the request.</p>
+        /// <p>The media type of the image manifest. If you push an image manifest that does not contain the <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.</p>
         pub fn image_manifest_media_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.image_manifest_media_type = Some(input.into());
             self
         }
-        /// <p>The media type of the image manifest. If you push an image manifest that does not
-        /// contain the <code>mediaType</code> field, you must specify the
-        /// <code>imageManifestMediaType</code> in the request.</p>
+        /// <p>The media type of the image manifest. If you push an image manifest that does not contain the <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.</p>
         pub fn set_image_manifest_media_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3066,14 +2906,12 @@ pub mod put_image_input {
             self.image_manifest_media_type = input;
             self
         }
-        /// <p>The tag to associate with the image. This parameter is required for images that use the
-        /// Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
+        /// <p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
         pub fn image_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.image_tag = Some(input.into());
             self
         }
-        /// <p>The tag to associate with the image. This parameter is required for images that use the
-        /// Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
+        /// <p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
         pub fn set_image_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_tag = input;
             self
@@ -3107,7 +2945,7 @@ pub mod put_image_input {
 #[doc(hidden)]
 pub type PutImageInputOperationOutputAlias = crate::operation::PutImage;
 #[doc(hidden)]
-pub type PutImageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutImageInput {
     /// Consumes the builder and constructs an Operation<[`PutImage`](crate::operation::PutImage)>
     #[allow(clippy::let_and_return)]
@@ -3118,7 +2956,7 @@ impl PutImageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutImage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3200,7 +3038,7 @@ impl PutImageInput {
                     "PutImage",
                     "ecrpublic",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3232,21 +3070,15 @@ pub mod put_registry_catalog_data_input {
         pub(crate) display_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The display name for a public registry. The display name is shown as the repository
-        /// author in the Amazon ECR Public Gallery.</p>
-        /// <note>
-        /// <p>The registry display name is only publicly visible in the Amazon ECR Public Gallery for
-        /// verified accounts.</p>
+        /// <p>The display name for a public registry. The display name is shown as the repository author in the Amazon ECR Public Gallery.</p> <note>
+        /// <p>The registry display name is only publicly visible in the Amazon ECR Public Gallery for verified accounts.</p>
         /// </note>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.display_name = Some(input.into());
             self
         }
-        /// <p>The display name for a public registry. The display name is shown as the repository
-        /// author in the Amazon ECR Public Gallery.</p>
-        /// <note>
-        /// <p>The registry display name is only publicly visible in the Amazon ECR Public Gallery for
-        /// verified accounts.</p>
+        /// <p>The display name for a public registry. The display name is shown as the repository author in the Amazon ECR Public Gallery.</p> <note>
+        /// <p>The registry display name is only publicly visible in the Amazon ECR Public Gallery for verified accounts.</p>
         /// </note>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
@@ -3268,7 +3100,7 @@ pub mod put_registry_catalog_data_input {
 #[doc(hidden)]
 pub type PutRegistryCatalogDataInputOperationOutputAlias = crate::operation::PutRegistryCatalogData;
 #[doc(hidden)]
-pub type PutRegistryCatalogDataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutRegistryCatalogDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutRegistryCatalogDataInput {
     /// Consumes the builder and constructs an Operation<[`PutRegistryCatalogData`](crate::operation::PutRegistryCatalogData)>
     #[allow(clippy::let_and_return)]
@@ -3279,7 +3111,7 @@ impl PutRegistryCatalogDataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutRegistryCatalogData,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3366,7 +3198,7 @@ impl PutRegistryCatalogDataInput {
             "PutRegistryCatalogData",
             "ecrpublic",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3400,14 +3232,12 @@ pub mod put_repository_catalog_data_input {
         pub(crate) catalog_data: std::option::Option<crate::model::RepositoryCatalogDataInput>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the public registry the repository is in.
-        /// If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the public registry the repository is in. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The AWS account ID associated with the public registry the repository is in.
-        /// If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the public registry the repository is in. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -3425,14 +3255,12 @@ pub mod put_repository_catalog_data_input {
             self.repository_name = input;
             self
         }
-        /// <p>An object containing the catalog data for a repository. This data is publicly visible in
-        /// the Amazon ECR Public Gallery.</p>
+        /// <p>An object containing the catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
         pub fn catalog_data(mut self, input: crate::model::RepositoryCatalogDataInput) -> Self {
             self.catalog_data = Some(input);
             self
         }
-        /// <p>An object containing the catalog data for a repository. This data is publicly visible in
-        /// the Amazon ECR Public Gallery.</p>
+        /// <p>An object containing the catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
         pub fn set_catalog_data(
             mut self,
             input: std::option::Option<crate::model::RepositoryCatalogDataInput>,
@@ -3459,7 +3287,7 @@ pub mod put_repository_catalog_data_input {
 pub type PutRepositoryCatalogDataInputOperationOutputAlias =
     crate::operation::PutRepositoryCatalogData;
 #[doc(hidden)]
-pub type PutRepositoryCatalogDataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutRepositoryCatalogDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutRepositoryCatalogDataInput {
     /// Consumes the builder and constructs an Operation<[`PutRepositoryCatalogData`](crate::operation::PutRepositoryCatalogData)>
     #[allow(clippy::let_and_return)]
@@ -3470,7 +3298,7 @@ impl PutRepositoryCatalogDataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutRepositoryCatalogData,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3557,7 +3385,7 @@ impl PutRepositoryCatalogDataInput {
             "PutRepositoryCatalogData",
             "ecrpublic",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3592,14 +3420,12 @@ pub mod set_repository_policy_input {
         pub(crate) force: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry that contains the repository.
-        /// If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the registry that contains the repository. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The AWS account ID associated with the registry that contains the repository.
-        /// If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the registry that contains the repository. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -3617,30 +3443,22 @@ pub mod set_repository_policy_input {
             self.repository_name = input;
             self
         }
-        /// <p>The JSON repository policy text to apply to the repository. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR Repository
-        /// Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+        /// <p>The JSON repository policy text to apply to the repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
         pub fn policy_text(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_text = Some(input.into());
             self
         }
-        /// <p>The JSON repository policy text to apply to the repository. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR Repository
-        /// Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+        /// <p>The JSON repository policy text to apply to the repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
         pub fn set_policy_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_text = input;
             self
         }
-        /// <p>If the policy you are attempting to set on a repository policy would prevent you from
-        /// setting another policy in the future, you must force the <a>SetRepositoryPolicy</a> operation. This is intended to prevent accidental
-        /// repository lock outs.</p>
+        /// <p>If the policy you are attempting to set on a repository policy would prevent you from setting another policy in the future, you must force the <code>SetRepositoryPolicy</code> operation. This is intended to prevent accidental repository lock outs.</p>
         pub fn force(mut self, input: bool) -> Self {
             self.force = Some(input);
             self
         }
-        /// <p>If the policy you are attempting to set on a repository policy would prevent you from
-        /// setting another policy in the future, you must force the <a>SetRepositoryPolicy</a> operation. This is intended to prevent accidental
-        /// repository lock outs.</p>
+        /// <p>If the policy you are attempting to set on a repository policy would prevent you from setting another policy in the future, you must force the <code>SetRepositoryPolicy</code> operation. This is intended to prevent accidental repository lock outs.</p>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.force = input;
             self
@@ -3664,7 +3482,7 @@ pub mod set_repository_policy_input {
 #[doc(hidden)]
 pub type SetRepositoryPolicyInputOperationOutputAlias = crate::operation::SetRepositoryPolicy;
 #[doc(hidden)]
-pub type SetRepositoryPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetRepositoryPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetRepositoryPolicyInput {
     /// Consumes the builder and constructs an Operation<[`SetRepositoryPolicy`](crate::operation::SetRepositoryPolicy)>
     #[allow(clippy::let_and_return)]
@@ -3675,7 +3493,7 @@ impl SetRepositoryPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetRepositoryPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3760,7 +3578,7 @@ impl SetRepositoryPolicyInput {
             "SetRepositoryPolicy",
             "ecrpublic",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3793,14 +3611,12 @@ pub mod tag_resource_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the
-        /// supported resource is an Amazon ECR Public repository.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resource is an Amazon ECR Public repository.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the
-        /// supported resource is an Amazon ECR Public repository.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resource is an Amazon ECR Public repository.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3809,16 +3625,14 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to add to the resource. A tag is an array of key-value pairs.
-        /// Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>The tags to add to the resource. A tag is an array of key-value pairs.
-        /// Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+        /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3843,7 +3657,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -3854,7 +3668,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3938,7 +3752,7 @@ impl TagResourceInput {
             "TagResource",
             "ecrpublic",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3971,14 +3785,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported
-        /// resource is an Amazon ECR Public repository.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported resource is an Amazon ECR Public repository.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported
-        /// resource is an Amazon ECR Public repository.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported resource is an Amazon ECR Public repository.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -4019,7 +3831,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -4030,7 +3842,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4114,7 +3926,7 @@ impl UntagResourceInput {
             "UntagResource",
             "ecrpublic",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4151,14 +3963,12 @@ pub mod upload_layer_part_input {
         pub(crate) layer_part_blob: std::option::Option<aws_smithy_types::Blob>,
     }
     impl Builder {
-        /// <p>The AWS account ID associated with the registry to which you are uploading layer parts.
-        /// If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the registry to which you are uploading layer parts. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The AWS account ID associated with the registry to which you are uploading layer parts.
-        /// If you do not specify a registry, the default public registry is assumed.</p>
+        /// <p>The AWS account ID associated with the registry to which you are uploading layer parts. If you do not specify a registry, the default public registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -4176,14 +3986,12 @@ pub mod upload_layer_part_input {
             self.repository_name = input;
             self
         }
-        /// <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
-        /// associate with the layer part upload.</p>
+        /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the layer part upload.</p>
         pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.upload_id = Some(input.into());
             self
         }
-        /// <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
-        /// associate with the layer part upload.</p>
+        /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the layer part upload.</p>
         pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.upload_id = input;
             self
@@ -4242,7 +4050,7 @@ pub mod upload_layer_part_input {
 #[doc(hidden)]
 pub type UploadLayerPartInputOperationOutputAlias = crate::operation::UploadLayerPart;
 #[doc(hidden)]
-pub type UploadLayerPartInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UploadLayerPartInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UploadLayerPartInput {
     /// Consumes the builder and constructs an Operation<[`UploadLayerPart`](crate::operation::UploadLayerPart)>
     #[allow(clippy::let_and_return)]
@@ -4253,7 +4061,7 @@ impl UploadLayerPartInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UploadLayerPart,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4338,7 +4146,7 @@ impl UploadLayerPartInput {
             "UploadLayerPart",
             "ecrpublic",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4365,13 +4173,11 @@ impl UploadLayerPartInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UploadLayerPartInput {
-    /// <p>The AWS account ID associated with the registry to which you are uploading layer parts.
-    /// If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the registry to which you are uploading layer parts. If you do not specify a registry, the default public registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository to which you are uploading layer parts.</p>
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
-    /// associate with the layer part upload.</p>
+    /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the layer part upload.</p>
     pub upload_id: std::option::Option<std::string::String>,
     /// <p>The position of the first byte of the layer part witin the overall image layer.</p>
     pub part_first_byte: std::option::Option<i64>,
@@ -4381,8 +4187,7 @@ pub struct UploadLayerPartInput {
     pub layer_part_blob: std::option::Option<aws_smithy_types::Blob>,
 }
 impl UploadLayerPartInput {
-    /// <p>The AWS account ID associated with the registry to which you are uploading layer parts.
-    /// If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the registry to which you are uploading layer parts. If you do not specify a registry, the default public registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -4390,8 +4195,7 @@ impl UploadLayerPartInput {
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
-    /// associate with the layer part upload.</p>
+    /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the layer part upload.</p>
     pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
@@ -4425,15 +4229,13 @@ impl std::fmt::Debug for UploadLayerPartInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported
-    /// resource is an Amazon ECR Public repository.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported resource is an Amazon ECR Public repository.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of the tags to be removed.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported
-    /// resource is an Amazon ECR Public repository.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported resource is an Amazon ECR Public repository.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -4455,21 +4257,17 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the
-    /// supported resource is an Amazon ECR Public repository.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resource is an Amazon ECR Public repository.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The tags to add to the resource. A tag is an array of key-value pairs.
-    /// Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+    /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the
-    /// supported resource is an Amazon ECR Public repository.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resource is an Amazon ECR Public repository.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The tags to add to the resource. A tag is an array of key-value pairs.
-    /// Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+    /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -4487,23 +4285,17 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetRepositoryPolicyInput {
-    /// <p>The AWS account ID associated with the registry that contains the repository.
-    /// If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the registry that contains the repository. If you do not specify a registry, the default public registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository to receive the policy.</p>
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>The JSON repository policy text to apply to the repository. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR Repository
-    /// Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+    /// <p>The JSON repository policy text to apply to the repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
     pub policy_text: std::option::Option<std::string::String>,
-    /// <p>If the policy you are attempting to set on a repository policy would prevent you from
-    /// setting another policy in the future, you must force the <a>SetRepositoryPolicy</a> operation. This is intended to prevent accidental
-    /// repository lock outs.</p>
+    /// <p>If the policy you are attempting to set on a repository policy would prevent you from setting another policy in the future, you must force the <code>SetRepositoryPolicy</code> operation. This is intended to prevent accidental repository lock outs.</p>
     pub force: bool,
 }
 impl SetRepositoryPolicyInput {
-    /// <p>The AWS account ID associated with the registry that contains the repository.
-    /// If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the registry that contains the repository. If you do not specify a registry, the default public registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -4511,15 +4303,11 @@ impl SetRepositoryPolicyInput {
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>The JSON repository policy text to apply to the repository. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR Repository
-    /// Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+    /// <p>The JSON repository policy text to apply to the repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
     pub fn policy_text(&self) -> std::option::Option<&str> {
         self.policy_text.as_deref()
     }
-    /// <p>If the policy you are attempting to set on a repository policy would prevent you from
-    /// setting another policy in the future, you must force the <a>SetRepositoryPolicy</a> operation. This is intended to prevent accidental
-    /// repository lock outs.</p>
+    /// <p>If the policy you are attempting to set on a repository policy would prevent you from setting another policy in the future, you must force the <code>SetRepositoryPolicy</code> operation. This is intended to prevent accidental repository lock outs.</p>
     pub fn force(&self) -> bool {
         self.force
     }
@@ -4539,18 +4327,15 @@ impl std::fmt::Debug for SetRepositoryPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRepositoryCatalogDataInput {
-    /// <p>The AWS account ID associated with the public registry the repository is in.
-    /// If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the public registry the repository is in. If you do not specify a registry, the default public registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository to create or update the catalog data for.</p>
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>An object containing the catalog data for a repository. This data is publicly visible in
-    /// the Amazon ECR Public Gallery.</p>
+    /// <p>An object containing the catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
     pub catalog_data: std::option::Option<crate::model::RepositoryCatalogDataInput>,
 }
 impl PutRepositoryCatalogDataInput {
-    /// <p>The AWS account ID associated with the public registry the repository is in.
-    /// If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the public registry the repository is in. If you do not specify a registry, the default public registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -4558,8 +4343,7 @@ impl PutRepositoryCatalogDataInput {
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>An object containing the catalog data for a repository. This data is publicly visible in
-    /// the Amazon ECR Public Gallery.</p>
+    /// <p>An object containing the catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
     pub fn catalog_data(&self) -> std::option::Option<&crate::model::RepositoryCatalogDataInput> {
         self.catalog_data.as_ref()
     }
@@ -4578,20 +4362,14 @@ impl std::fmt::Debug for PutRepositoryCatalogDataInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRegistryCatalogDataInput {
-    /// <p>The display name for a public registry. The display name is shown as the repository
-    /// author in the Amazon ECR Public Gallery.</p>
-    /// <note>
-    /// <p>The registry display name is only publicly visible in the Amazon ECR Public Gallery for
-    /// verified accounts.</p>
+    /// <p>The display name for a public registry. The display name is shown as the repository author in the Amazon ECR Public Gallery.</p> <note>
+    /// <p>The registry display name is only publicly visible in the Amazon ECR Public Gallery for verified accounts.</p>
     /// </note>
     pub display_name: std::option::Option<std::string::String>,
 }
 impl PutRegistryCatalogDataInput {
-    /// <p>The display name for a public registry. The display name is shown as the repository
-    /// author in the Amazon ECR Public Gallery.</p>
-    /// <note>
-    /// <p>The registry display name is only publicly visible in the Amazon ECR Public Gallery for
-    /// verified accounts.</p>
+    /// <p>The display name for a public registry. The display name is shown as the repository author in the Amazon ECR Public Gallery.</p> <note>
+    /// <p>The registry display name is only publicly visible in the Amazon ECR Public Gallery for verified accounts.</p>
     /// </note>
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
@@ -4609,26 +4387,21 @@ impl std::fmt::Debug for PutRegistryCatalogDataInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutImageInput {
-    /// <p>The AWS account ID associated with the public registry that contains the repository in
-    /// which to put the image. If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the public registry that contains the repository in which to put the image. If you do not specify a registry, the default public registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository in which to put the image.</p>
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The image manifest corresponding to the image to be uploaded.</p>
     pub image_manifest: std::option::Option<std::string::String>,
-    /// <p>The media type of the image manifest. If you push an image manifest that does not
-    /// contain the <code>mediaType</code> field, you must specify the
-    /// <code>imageManifestMediaType</code> in the request.</p>
+    /// <p>The media type of the image manifest. If you push an image manifest that does not contain the <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.</p>
     pub image_manifest_media_type: std::option::Option<std::string::String>,
-    /// <p>The tag to associate with the image. This parameter is required for images that use the
-    /// Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
+    /// <p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
     pub image_tag: std::option::Option<std::string::String>,
     /// <p>The image digest of the image manifest corresponding to the image.</p>
     pub image_digest: std::option::Option<std::string::String>,
 }
 impl PutImageInput {
-    /// <p>The AWS account ID associated with the public registry that contains the repository in
-    /// which to put the image. If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the public registry that contains the repository in which to put the image. If you do not specify a registry, the default public registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -4640,14 +4413,11 @@ impl PutImageInput {
     pub fn image_manifest(&self) -> std::option::Option<&str> {
         self.image_manifest.as_deref()
     }
-    /// <p>The media type of the image manifest. If you push an image manifest that does not
-    /// contain the <code>mediaType</code> field, you must specify the
-    /// <code>imageManifestMediaType</code> in the request.</p>
+    /// <p>The media type of the image manifest. If you push an image manifest that does not contain the <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.</p>
     pub fn image_manifest_media_type(&self) -> std::option::Option<&str> {
         self.image_manifest_media_type.as_deref()
     }
-    /// <p>The tag to associate with the image. This parameter is required for images that use the
-    /// Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
+    /// <p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
     pub fn image_tag(&self) -> std::option::Option<&str> {
         self.image_tag.as_deref()
     }
@@ -4673,13 +4443,11 @@ impl std::fmt::Debug for PutImageInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
-    /// supported resource is an Amazon ECR Public repository.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resource is an Amazon ECR Public repository.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
-    /// supported resource is an Amazon ECR Public repository.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resource is an Amazon ECR Public repository.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -4696,15 +4464,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InitiateLayerUploadInput {
-    /// <p>The AWS account ID associated with the registry to which you intend to upload layers.
-    /// If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the registry to which you intend to upload layers. If you do not specify a registry, the default public registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository to which you intend to upload layers.</p>
     pub repository_name: std::option::Option<std::string::String>,
 }
 impl InitiateLayerUploadInput {
-    /// <p>The AWS account ID associated with the registry to which you intend to upload layers.
-    /// If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the registry to which you intend to upload layers. If you do not specify a registry, the default public registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -4726,15 +4492,13 @@ impl std::fmt::Debug for InitiateLayerUploadInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRepositoryPolicyInput {
-    /// <p>The AWS account ID associated with the public registry that contains the repository.
-    /// If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the public registry that contains the repository. If you do not specify a registry, the default public registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository with the policy to retrieve.</p>
     pub repository_name: std::option::Option<std::string::String>,
 }
 impl GetRepositoryPolicyInput {
-    /// <p>The AWS account ID associated with the public registry that contains the repository.
-    /// If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the public registry that contains the repository. If you do not specify a registry, the default public registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -4756,15 +4520,13 @@ impl std::fmt::Debug for GetRepositoryPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRepositoryCatalogDataInput {
-    /// <p>The AWS account ID associated with the registry that contains the repositories to be
-    /// described. If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the registry that contains the repositories to be described. If you do not specify a registry, the default public registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository to retrieve the catalog metadata for.</p>
     pub repository_name: std::option::Option<std::string::String>,
 }
 impl GetRepositoryCatalogDataInput {
-    /// <p>The AWS account ID associated with the registry that contains the repositories to be
-    /// described. If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the registry that contains the repositories to be described. If you do not specify a registry, the default public registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -4808,67 +4570,33 @@ impl std::fmt::Debug for GetAuthorizationTokenInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRepositoriesInput {
-    /// <p>The AWS account ID associated with the registry that contains the repositories to be
-    /// described. If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the registry that contains the repositories to be described. If you do not specify a registry, the default public registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
-    /// <p>A list of repositories to describe. If this parameter is omitted, then all repositories
-    /// in a registry are described.</p>
+    /// <p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>
     pub repository_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>DescribeRepositories</code> request where <code>maxResults</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value. This value is
-    /// <code>null</code> when there are no more results to return. This option cannot be used
-    /// when you specify repositories with <code>repositoryNames</code>.</p>
-    /// <note>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeRepositories</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of repository results returned by <code>DescribeRepositories</code>
-    /// in paginated output. When this parameter is used, <code>DescribeRepositories</code> only
-    /// returns <code>maxResults</code> results in a single page along with a
-    /// <code>nextToken</code> response element. The remaining results of the initial request
-    /// can be seen by sending another <code>DescribeRepositories</code> request with the returned
-    /// <code>nextToken</code> value. This value can be between 1 and
-    /// 1000. If this parameter is not used, then <code>DescribeRepositories</code>
-    /// returns up to 100 results and a <code>nextToken</code> value, if
-    /// applicable. This option cannot be used when you specify repositories with
-    /// <code>repositoryNames</code>.</p>
+    /// <p>The maximum number of repository results returned by <code>DescribeRepositories</code> in paginated output. When this parameter is used, <code>DescribeRepositories</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeRepositories</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeRepositories</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeRepositoriesInput {
-    /// <p>The AWS account ID associated with the registry that contains the repositories to be
-    /// described. If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the registry that contains the repositories to be described. If you do not specify a registry, the default public registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
-    /// <p>A list of repositories to describe. If this parameter is omitted, then all repositories
-    /// in a registry are described.</p>
+    /// <p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>
     pub fn repository_names(&self) -> std::option::Option<&[std::string::String]> {
         self.repository_names.as_deref()
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>DescribeRepositories</code> request where <code>maxResults</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value. This value is
-    /// <code>null</code> when there are no more results to return. This option cannot be used
-    /// when you specify repositories with <code>repositoryNames</code>.</p>
-    /// <note>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeRepositories</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of repository results returned by <code>DescribeRepositories</code>
-    /// in paginated output. When this parameter is used, <code>DescribeRepositories</code> only
-    /// returns <code>maxResults</code> results in a single page along with a
-    /// <code>nextToken</code> response element. The remaining results of the initial request
-    /// can be seen by sending another <code>DescribeRepositories</code> request with the returned
-    /// <code>nextToken</code> value. This value can be between 1 and
-    /// 1000. If this parameter is not used, then <code>DescribeRepositories</code>
-    /// returns up to 100 results and a <code>nextToken</code> value, if
-    /// applicable. This option cannot be used when you specify repositories with
-    /// <code>repositoryNames</code>.</p>
+    /// <p>The maximum number of repository results returned by <code>DescribeRepositories</code> in paginated output. When this parameter is used, <code>DescribeRepositories</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeRepositories</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeRepositories</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -4888,45 +4616,21 @@ impl std::fmt::Debug for DescribeRepositoriesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRegistriesInput {
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>DescribeRegistries</code> request where <code>maxResults</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value. This value is
-    /// <code>null</code> when there are no more results to return.</p>
-    /// <note>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeRegistries</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of repository results returned by <code>DescribeRegistries</code> in
-    /// paginated output. When this parameter is used, <code>DescribeRegistries</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>DescribeRegistries</code> request with the returned <code>nextToken</code>
-    /// value. This value can be between 1 and 1000. If this parameter
-    /// is not used, then <code>DescribeRegistries</code> returns up to 100
-    /// results and a <code>nextToken</code> value, if applicable.</p>
+    /// <p>The maximum number of repository results returned by <code>DescribeRegistries</code> in paginated output. When this parameter is used, <code>DescribeRegistries</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeRegistries</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeRegistries</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeRegistriesInput {
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>DescribeRegistries</code> request where <code>maxResults</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value. This value is
-    /// <code>null</code> when there are no more results to return.</p>
-    /// <note>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeRegistries</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of repository results returned by <code>DescribeRegistries</code> in
-    /// paginated output. When this parameter is used, <code>DescribeRegistries</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>DescribeRegistries</code> request with the returned <code>nextToken</code>
-    /// value. This value can be between 1 and 1000. If this parameter
-    /// is not used, then <code>DescribeRegistries</code> returns up to 100
-    /// results and a <code>nextToken</code> value, if applicable.</p>
+    /// <p>The maximum number of repository results returned by <code>DescribeRegistries</code> in paginated output. When this parameter is used, <code>DescribeRegistries</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeRegistries</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeRegistries</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -4944,32 +4648,17 @@ impl std::fmt::Debug for DescribeRegistriesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImageTagsInput {
-    /// <p>The AWS account ID associated with the public registry that contains the repository in
-    /// which to describe images. If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the public registry that contains the repository in which to describe images. If you do not specify a registry, the default public registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository that contains the image tag details to describe.</p>
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>DescribeImageTags</code> request where <code>maxResults</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value. This value is
-    /// <code>null</code> when there are no more results to return. This option cannot be used
-    /// when you specify images with <code>imageIds</code>.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImageTags</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of repository results returned by <code>DescribeImageTags</code> in
-    /// paginated output. When this parameter is used, <code>DescribeImageTags</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>DescribeImageTags</code> request with the returned <code>nextToken</code>
-    /// value. This value can be between 1 and 1000. If this parameter
-    /// is not used, then <code>DescribeImageTags</code> returns up to 100
-    /// results and a <code>nextToken</code> value, if applicable. This option cannot be used when
-    /// you specify images with <code>imageIds</code>.</p>
+    /// <p>The maximum number of repository results returned by <code>DescribeImageTags</code> in paginated output. When this parameter is used, <code>DescribeImageTags</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImageTags</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeImageTags</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images with <code>imageIds</code>.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeImageTagsInput {
-    /// <p>The AWS account ID associated with the public registry that contains the repository in
-    /// which to describe images. If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the public registry that contains the repository in which to describe images. If you do not specify a registry, the default public registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -4977,24 +4666,11 @@ impl DescribeImageTagsInput {
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>DescribeImageTags</code> request where <code>maxResults</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value. This value is
-    /// <code>null</code> when there are no more results to return. This option cannot be used
-    /// when you specify images with <code>imageIds</code>.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImageTags</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of repository results returned by <code>DescribeImageTags</code> in
-    /// paginated output. When this parameter is used, <code>DescribeImageTags</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>DescribeImageTags</code> request with the returned <code>nextToken</code>
-    /// value. This value can be between 1 and 1000. If this parameter
-    /// is not used, then <code>DescribeImageTags</code> returns up to 100
-    /// results and a <code>nextToken</code> value, if applicable. This option cannot be used when
-    /// you specify images with <code>imageIds</code>.</p>
+    /// <p>The maximum number of repository results returned by <code>DescribeImageTags</code> in paginated output. When this parameter is used, <code>DescribeImageTags</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImageTags</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeImageTags</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images with <code>imageIds</code>.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5014,34 +4690,19 @@ impl std::fmt::Debug for DescribeImageTagsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImagesInput {
-    /// <p>The AWS account ID associated with the public registry that contains the repository in
-    /// which to describe images. If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the public registry that contains the repository in which to describe images. If you do not specify a registry, the default public registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository that contains the images to describe.</p>
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The list of image IDs for the requested repository.</p>
     pub image_ids: std::option::Option<std::vec::Vec<crate::model::ImageIdentifier>>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>DescribeImages</code> request where <code>maxResults</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value. This value is
-    /// <code>null</code> when there are no more results to return. This option cannot be used
-    /// when you specify images with <code>imageIds</code>.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of repository results returned by <code>DescribeImages</code> in
-    /// paginated output. When this parameter is used, <code>DescribeImages</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>DescribeImages</code> request with the returned <code>nextToken</code> value.
-    /// This value can be between 1 and 1000. If this parameter is not
-    /// used, then <code>DescribeImages</code> returns up to 100 results and a
-    /// <code>nextToken</code> value, if applicable. This option cannot be used when you specify
-    /// images with <code>imageIds</code>.</p>
+    /// <p>The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images with <code>imageIds</code>.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeImagesInput {
-    /// <p>The AWS account ID associated with the public registry that contains the repository in
-    /// which to describe images. If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the public registry that contains the repository in which to describe images. If you do not specify a registry, the default public registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -5053,24 +4714,11 @@ impl DescribeImagesInput {
     pub fn image_ids(&self) -> std::option::Option<&[crate::model::ImageIdentifier]> {
         self.image_ids.as_deref()
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>DescribeImages</code> request where <code>maxResults</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value. This value is
-    /// <code>null</code> when there are no more results to return. This option cannot be used
-    /// when you specify images with <code>imageIds</code>.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of repository results returned by <code>DescribeImages</code> in
-    /// paginated output. When this parameter is used, <code>DescribeImages</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>DescribeImages</code> request with the returned <code>nextToken</code> value.
-    /// This value can be between 1 and 1000. If this parameter is not
-    /// used, then <code>DescribeImages</code> returns up to 100 results and a
-    /// <code>nextToken</code> value, if applicable. This option cannot be used when you specify
-    /// images with <code>imageIds</code>.</p>
+    /// <p>The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images with <code>imageIds</code>.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5091,21 +4739,17 @@ impl std::fmt::Debug for DescribeImagesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRepositoryPolicyInput {
-    /// <p>The AWS account ID associated with the public registry that contains the repository
-    /// policy to delete. If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the public registry that contains the repository policy to delete. If you do not specify a registry, the default public registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
-    /// <p>The name of the repository that is associated with the repository policy to
-    /// delete.</p>
+    /// <p>The name of the repository that is associated with the repository policy to delete.</p>
     pub repository_name: std::option::Option<std::string::String>,
 }
 impl DeleteRepositoryPolicyInput {
-    /// <p>The AWS account ID associated with the public registry that contains the repository
-    /// policy to delete. If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the public registry that contains the repository policy to delete. If you do not specify a registry, the default public registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
-    /// <p>The name of the repository that is associated with the repository policy to
-    /// delete.</p>
+    /// <p>The name of the repository that is associated with the repository policy to delete.</p>
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
@@ -5123,8 +4767,7 @@ impl std::fmt::Debug for DeleteRepositoryPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRepositoryInput {
-    /// <p>The AWS account ID associated with the public registry that contains the repository to
-    /// delete. If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the public registry that contains the repository to delete. If you do not specify a registry, the default public registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository to delete.</p>
     pub repository_name: std::option::Option<std::string::String>,
@@ -5132,8 +4775,7 @@ pub struct DeleteRepositoryInput {
     pub force: bool,
 }
 impl DeleteRepositoryInput {
-    /// <p>The AWS account ID associated with the public registry that contains the repository to
-    /// delete. If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the public registry that contains the repository to delete. If you do not specify a registry, the default public registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -5160,35 +4802,23 @@ impl std::fmt::Debug for DeleteRepositoryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRepositoryInput {
-    /// <p>The name to use for the repository. This appears publicly in the Amazon ECR Public Gallery.
-    /// The repository name may be specified on its own (such as <code>nginx-web-app</code>) or it
-    /// can be prepended with a namespace to group the repository into a category (such as
-    /// <code>project-a/nginx-web-app</code>).</p>
+    /// <p>The name to use for the repository. This appears publicly in the Amazon ECR Public Gallery. The repository name may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>The details about the repository that are publicly visible in the
-    /// Amazon ECR Public Gallery.</p>
+    /// <p>The details about the repository that are publicly visible in the Amazon ECR Public Gallery.</p>
     pub catalog_data: std::option::Option<crate::model::RepositoryCatalogDataInput>,
-    /// <p>The metadata that you apply to the repository to help you categorize and organize them.
-    /// Each tag consists of a key and an optional value, both of which you define.
-    /// Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+    /// <p>The metadata that you apply to the repository to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateRepositoryInput {
-    /// <p>The name to use for the repository. This appears publicly in the Amazon ECR Public Gallery.
-    /// The repository name may be specified on its own (such as <code>nginx-web-app</code>) or it
-    /// can be prepended with a namespace to group the repository into a category (such as
-    /// <code>project-a/nginx-web-app</code>).</p>
+    /// <p>The name to use for the repository. This appears publicly in the Amazon ECR Public Gallery. The repository name may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>The details about the repository that are publicly visible in the
-    /// Amazon ECR Public Gallery.</p>
+    /// <p>The details about the repository that are publicly visible in the Amazon ECR Public Gallery.</p>
     pub fn catalog_data(&self) -> std::option::Option<&crate::model::RepositoryCatalogDataInput> {
         self.catalog_data.as_ref()
     }
-    /// <p>The metadata that you apply to the repository to help you categorize and organize them.
-    /// Each tag consists of a key and an optional value, both of which you define.
-    /// Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+    /// <p>The metadata that you apply to the repository to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -5207,31 +4837,25 @@ impl std::fmt::Debug for CreateRepositoryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompleteLayerUploadInput {
-    /// <p>The AWS account ID associated with the registry to which to upload layers.
-    /// If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the registry to which to upload layers. If you do not specify a registry, the default public registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
-    /// <p>The name of the repository in a public registry to associate with the image
-    /// layer.</p>
+    /// <p>The name of the repository in a public registry to associate with the image layer.</p>
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
-    /// associate with the image layer.</p>
+    /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the image layer.</p>
     pub upload_id: std::option::Option<std::string::String>,
     /// <p>The <code>sha256</code> digest of the image layer.</p>
     pub layer_digests: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CompleteLayerUploadInput {
-    /// <p>The AWS account ID associated with the registry to which to upload layers.
-    /// If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the registry to which to upload layers. If you do not specify a registry, the default public registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
-    /// <p>The name of the repository in a public registry to associate with the image
-    /// layer.</p>
+    /// <p>The name of the repository in a public registry to associate with the image layer.</p>
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
-    /// associate with the image layer.</p>
+    /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the image layer.</p>
     pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
@@ -5255,19 +4879,15 @@ impl std::fmt::Debug for CompleteLayerUploadInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteImageInput {
-    /// <p>The AWS account ID associated with the registry that contains the image to delete.
-    /// If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the registry that contains the image to delete. If you do not specify a registry, the default public registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository in a public registry that contains the image to delete.</p>
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>A list of image ID references that correspond to images to delete. The format of the
-    /// <code>imageIds</code> reference is <code>imageTag=tag</code> or
-    /// <code>imageDigest=digest</code>.</p>
+    /// <p>A list of image ID references that correspond to images to delete. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
     pub image_ids: std::option::Option<std::vec::Vec<crate::model::ImageIdentifier>>,
 }
 impl BatchDeleteImageInput {
-    /// <p>The AWS account ID associated with the registry that contains the image to delete.
-    /// If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the registry that contains the image to delete. If you do not specify a registry, the default public registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -5275,9 +4895,7 @@ impl BatchDeleteImageInput {
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>A list of image ID references that correspond to images to delete. The format of the
-    /// <code>imageIds</code> reference is <code>imageTag=tag</code> or
-    /// <code>imageDigest=digest</code>.</p>
+    /// <p>A list of image ID references that correspond to images to delete. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
     pub fn image_ids(&self) -> std::option::Option<&[crate::model::ImageIdentifier]> {
         self.image_ids.as_deref()
     }
@@ -5296,8 +4914,7 @@ impl std::fmt::Debug for BatchDeleteImageInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCheckLayerAvailabilityInput {
-    /// <p>The AWS account ID associated with the public registry that contains the image layers to
-    /// check. If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the public registry that contains the image layers to check. If you do not specify a registry, the default public registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository that is associated with the image layers to check.</p>
     pub repository_name: std::option::Option<std::string::String>,
@@ -5305,8 +4922,7 @@ pub struct BatchCheckLayerAvailabilityInput {
     pub layer_digests: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchCheckLayerAvailabilityInput {
-    /// <p>The AWS account ID associated with the public registry that contains the image layers to
-    /// check. If you do not specify a registry, the default public registry is assumed.</p>
+    /// <p>The AWS account ID associated with the public registry that contains the image layers to check. If you do not specify a registry, the default public registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }

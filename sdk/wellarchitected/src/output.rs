@@ -299,7 +299,7 @@ pub struct UpdateAnswerOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ARN for the lens.</p>
     pub lens_arn: std::option::Option<std::string::String>,
@@ -312,7 +312,7 @@ impl UpdateAnswerOutput {
         self.workload_id.as_deref()
     }
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
@@ -358,13 +358,13 @@ pub mod update_answer_output {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -533,10 +533,10 @@ pub mod list_workload_shares_output {
         /// <p>A list of workload share summaries.</p>
         pub fn workload_share_summaries(
             mut self,
-            input: impl Into<crate::model::WorkloadShareSummary>,
+            input: crate::model::WorkloadShareSummary,
         ) -> Self {
             let mut v = self.workload_share_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.workload_share_summaries = Some(v);
             self
         }
@@ -618,12 +618,9 @@ pub mod list_workloads_output {
         /// To override the contents of this collection use [`set_workload_summaries`](Self::set_workload_summaries).
         ///
         /// <p>A list of workload summaries.</p>
-        pub fn workload_summaries(
-            mut self,
-            input: impl Into<crate::model::WorkloadSummary>,
-        ) -> Self {
+        pub fn workload_summaries(mut self, input: crate::model::WorkloadSummary) -> Self {
             let mut v = self.workload_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.workload_summaries = Some(v);
             self
         }
@@ -785,10 +782,10 @@ pub mod list_share_invitations_output {
         /// <p>List of share invitation summaries in a workload.</p>
         pub fn share_invitation_summaries(
             mut self,
-            input: impl Into<crate::model::ShareInvitationSummary>,
+            input: crate::model::ShareInvitationSummary,
         ) -> Self {
             let mut v = self.share_invitation_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.share_invitation_summaries = Some(v);
             self
         }
@@ -872,12 +869,9 @@ pub mod list_notifications_output {
         /// To override the contents of this collection use [`set_notification_summaries`](Self::set_notification_summaries).
         ///
         /// <p>List of lens notification summaries in a workload.</p>
-        pub fn notification_summaries(
-            mut self,
-            input: impl Into<crate::model::NotificationSummary>,
-        ) -> Self {
+        pub fn notification_summaries(mut self, input: crate::model::NotificationSummary) -> Self {
             let mut v = self.notification_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.notification_summaries = Some(v);
             self
         }
@@ -976,12 +970,9 @@ pub mod list_milestones_output {
         /// To override the contents of this collection use [`set_milestone_summaries`](Self::set_milestone_summaries).
         ///
         /// <p>A list of milestone summaries.</p>
-        pub fn milestone_summaries(
-            mut self,
-            input: impl Into<crate::model::MilestoneSummary>,
-        ) -> Self {
+        pub fn milestone_summaries(mut self, input: crate::model::MilestoneSummary) -> Self {
             let mut v = self.milestone_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.milestone_summaries = Some(v);
             self
         }
@@ -1063,12 +1054,9 @@ pub mod list_lens_shares_output {
         /// To override the contents of this collection use [`set_lens_share_summaries`](Self::set_lens_share_summaries).
         ///
         /// <p>A list of lens share summaries.</p>
-        pub fn lens_share_summaries(
-            mut self,
-            input: impl Into<crate::model::LensShareSummary>,
-        ) -> Self {
+        pub fn lens_share_summaries(mut self, input: crate::model::LensShareSummary) -> Self {
             let mut v = self.lens_share_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lens_share_summaries = Some(v);
             self
         }
@@ -1189,12 +1177,9 @@ pub mod list_lens_reviews_output {
         /// To override the contents of this collection use [`set_lens_review_summaries`](Self::set_lens_review_summaries).
         ///
         /// <p>List of lens summaries of lens reviews of a workload.</p>
-        pub fn lens_review_summaries(
-            mut self,
-            input: impl Into<crate::model::LensReviewSummary>,
-        ) -> Self {
+        pub fn lens_review_summaries(mut self, input: crate::model::LensReviewSummary) -> Self {
             let mut v = self.lens_review_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lens_review_summaries = Some(v);
             self
         }
@@ -1244,7 +1229,7 @@ pub struct ListLensReviewImprovementsOutput {
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub milestone_number: i32,
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ARN for the lens.</p>
     pub lens_arn: std::option::Option<std::string::String>,
@@ -1264,7 +1249,7 @@ impl ListLensReviewImprovementsOutput {
         self.milestone_number
     }
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
@@ -1333,13 +1318,13 @@ pub mod list_lens_review_improvements_output {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -1359,12 +1344,9 @@ pub mod list_lens_review_improvements_output {
         /// To override the contents of this collection use [`set_improvement_summaries`](Self::set_improvement_summaries).
         ///
         /// <p>List of improvement summaries of lens review in a workload.</p>
-        pub fn improvement_summaries(
-            mut self,
-            input: impl Into<crate::model::ImprovementSummary>,
-        ) -> Self {
+        pub fn improvement_summaries(mut self, input: crate::model::ImprovementSummary) -> Self {
             let mut v = self.improvement_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.improvement_summaries = Some(v);
             self
         }
@@ -1448,9 +1430,9 @@ pub mod list_lenses_output {
         /// To override the contents of this collection use [`set_lens_summaries`](Self::set_lens_summaries).
         ///
         /// <p>List of lens summaries of available lenses.</p>
-        pub fn lens_summaries(mut self, input: impl Into<crate::model::LensSummary>) -> Self {
+        pub fn lens_summaries(mut self, input: crate::model::LensSummary) -> Self {
             let mut v = self.lens_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lens_summaries = Some(v);
             self
         }
@@ -1498,7 +1480,7 @@ pub struct ListAnswersOutput {
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub milestone_number: i32,
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ARN for the lens.</p>
     pub lens_arn: std::option::Option<std::string::String>,
@@ -1518,7 +1500,7 @@ impl ListAnswersOutput {
         self.milestone_number
     }
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
@@ -1585,13 +1567,13 @@ pub mod list_answers_output {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -1611,9 +1593,9 @@ pub mod list_answers_output {
         /// To override the contents of this collection use [`set_answer_summaries`](Self::set_answer_summaries).
         ///
         /// <p>List of answer summaries of lens review in a workload.</p>
-        pub fn answer_summaries(mut self, input: impl Into<crate::model::AnswerSummary>) -> Self {
+        pub fn answer_summaries(mut self, input: crate::model::AnswerSummary) -> Self {
             let mut v = self.answer_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.answer_summaries = Some(v);
             self
         }
@@ -1866,7 +1848,7 @@ impl GetMilestoneOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLensVersionDifferenceOutput {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ARN for the lens.</p>
     pub lens_arn: std::option::Option<std::string::String>,
@@ -1881,7 +1863,7 @@ pub struct GetLensVersionDifferenceOutput {
 }
 impl GetLensVersionDifferenceOutput {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
@@ -1933,13 +1915,13 @@ pub mod get_lens_version_difference_output {
     }
     impl Builder {
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -2286,7 +2268,7 @@ pub struct GetAnswerOutput {
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub milestone_number: i32,
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ARN for the lens.</p>
     pub lens_arn: std::option::Option<std::string::String>,
@@ -2304,7 +2286,7 @@ impl GetAnswerOutput {
         self.milestone_number
     }
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
@@ -2364,13 +2346,13 @@ pub mod get_answer_output {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self

@@ -10,28 +10,22 @@ pub mod acknowledge_job_input {
         pub(crate) nonce: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique system-generated ID of the job for which you want to confirm
-        /// receipt.</p>
+        /// <p>The unique system-generated ID of the job for which you want to confirm receipt.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The unique system-generated ID of the job for which you want to confirm
-        /// receipt.</p>
+        /// <p>The unique system-generated ID of the job for which you want to confirm receipt.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
         }
-        /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job
-        /// is being worked on by only one job worker. Get this number from the response of the
-        /// <a>PollForJobs</a> request that returned this job.</p>
+        /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the <code>PollForJobs</code> request that returned this job.</p>
         pub fn nonce(mut self, input: impl Into<std::string::String>) -> Self {
             self.nonce = Some(input.into());
             self
         }
-        /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job
-        /// is being worked on by only one job worker. Get this number from the response of the
-        /// <a>PollForJobs</a> request that returned this job.</p>
+        /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the <code>PollForJobs</code> request that returned this job.</p>
         pub fn set_nonce(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.nonce = input;
             self
@@ -53,7 +47,7 @@ pub mod acknowledge_job_input {
 #[doc(hidden)]
 pub type AcknowledgeJobInputOperationOutputAlias = crate::operation::AcknowledgeJob;
 #[doc(hidden)]
-pub type AcknowledgeJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AcknowledgeJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AcknowledgeJobInput {
     /// Consumes the builder and constructs an Operation<[`AcknowledgeJob`](crate::operation::AcknowledgeJob)>
     #[allow(clippy::let_and_return)]
@@ -64,7 +58,7 @@ impl AcknowledgeJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AcknowledgeJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -149,7 +143,7 @@ impl AcknowledgeJobInput {
             "AcknowledgeJob",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -193,26 +187,22 @@ pub mod acknowledge_third_party_job_input {
             self.job_id = input;
             self
         }
-        /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job
-        /// is being worked on by only one job worker. Get this number from the response to a <a>GetThirdPartyJobDetails</a> request.</p>
+        /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response to a <code>GetThirdPartyJobDetails</code> request.</p>
         pub fn nonce(mut self, input: impl Into<std::string::String>) -> Self {
             self.nonce = Some(input.into());
             self
         }
-        /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job
-        /// is being worked on by only one job worker. Get this number from the response to a <a>GetThirdPartyJobDetails</a> request.</p>
+        /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response to a <code>GetThirdPartyJobDetails</code> request.</p>
         pub fn set_nonce(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.nonce = input;
             self
         }
-        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
-        /// the calling entity is allowed access to the job and its details.</p>
+        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
-        /// the calling entity is allowed access to the job and its details.</p>
+        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -236,7 +226,7 @@ pub mod acknowledge_third_party_job_input {
 pub type AcknowledgeThirdPartyJobInputOperationOutputAlias =
     crate::operation::AcknowledgeThirdPartyJob;
 #[doc(hidden)]
-pub type AcknowledgeThirdPartyJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AcknowledgeThirdPartyJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AcknowledgeThirdPartyJobInput {
     /// Consumes the builder and constructs an Operation<[`AcknowledgeThirdPartyJob`](crate::operation::AcknowledgeThirdPartyJob)>
     #[allow(clippy::let_and_return)]
@@ -247,7 +237,7 @@ impl AcknowledgeThirdPartyJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AcknowledgeThirdPartyJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -334,7 +324,7 @@ impl AcknowledgeThirdPartyJobInput {
             "AcknowledgeThirdPartyJob",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -374,14 +364,12 @@ pub mod create_custom_action_type_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The category of the custom action, such as a build action or a test
-        /// action.</p>
+        /// <p>The category of the custom action, such as a build action or a test action.</p>
         pub fn category(mut self, input: crate::model::ActionCategory) -> Self {
             self.category = Some(input);
             self
         }
-        /// <p>The category of the custom action, such as a build action or a test
-        /// action.</p>
+        /// <p>The category of the custom action, such as a build action or a test action.</p>
         pub fn set_category(
             mut self,
             input: std::option::Option<crate::model::ActionCategory>,
@@ -389,14 +377,12 @@ pub mod create_custom_action_type_input {
             self.category = input;
             self
         }
-        /// <p>The provider of the service used in the custom action, such as AWS
-        /// CodeDeploy.</p>
+        /// <p>The provider of the service used in the custom action, such as AWS CodeDeploy.</p>
         pub fn provider(mut self, input: impl Into<std::string::String>) -> Self {
             self.provider = Some(input.into());
             self
         }
-        /// <p>The provider of the service used in the custom action, such as AWS
-        /// CodeDeploy.</p>
+        /// <p>The provider of the service used in the custom action, such as AWS CodeDeploy.</p>
         pub fn set_provider(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.provider = input;
             self
@@ -428,30 +414,20 @@ pub mod create_custom_action_type_input {
         ///
         /// To override the contents of this collection use [`set_configuration_properties`](Self::set_configuration_properties).
         ///
-        /// <p>The configuration properties for the custom action.</p>
-        /// <note>
-        /// <p>You can refer to a name in the configuration properties of the custom action
-        /// within the URL templates by following the format of {Config:name}, as long as the
-        /// configuration property is both required and not secret. For more information, see
-        /// <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a
-        /// Custom Action for a Pipeline</a>.</p>
+        /// <p>The configuration properties for the custom action.</p> <note>
+        /// <p>You can refer to a name in the configuration properties of the custom action within the URL templates by following the format of {Config:name}, as long as the configuration property is both required and not secret. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom Action for a Pipeline</a>.</p>
         /// </note>
         pub fn configuration_properties(
             mut self,
-            input: impl Into<crate::model::ActionConfigurationProperty>,
+            input: crate::model::ActionConfigurationProperty,
         ) -> Self {
             let mut v = self.configuration_properties.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configuration_properties = Some(v);
             self
         }
-        /// <p>The configuration properties for the custom action.</p>
-        /// <note>
-        /// <p>You can refer to a name in the configuration properties of the custom action
-        /// within the URL templates by following the format of {Config:name}, as long as the
-        /// configuration property is both required and not secret. For more information, see
-        /// <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a
-        /// Custom Action for a Pipeline</a>.</p>
+        /// <p>The configuration properties for the custom action.</p> <note>
+        /// <p>You can refer to a name in the configuration properties of the custom action within the URL templates by following the format of {Config:name}, as long as the configuration property is both required and not secret. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom Action for a Pipeline</a>.</p>
         /// </note>
         pub fn set_configuration_properties(
             mut self,
@@ -491,9 +467,9 @@ pub mod create_custom_action_type_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the custom action.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -528,7 +504,7 @@ pub mod create_custom_action_type_input {
 #[doc(hidden)]
 pub type CreateCustomActionTypeInputOperationOutputAlias = crate::operation::CreateCustomActionType;
 #[doc(hidden)]
-pub type CreateCustomActionTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateCustomActionTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCustomActionTypeInput {
     /// Consumes the builder and constructs an Operation<[`CreateCustomActionType`](crate::operation::CreateCustomActionType)>
     #[allow(clippy::let_and_return)]
@@ -539,7 +515,7 @@ impl CreateCustomActionTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCustomActionType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -626,7 +602,7 @@ impl CreateCustomActionTypeInput {
             "CreateCustomActionType",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -659,14 +635,12 @@ pub mod create_pipeline_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>Represents the structure of actions and stages to be performed in the pipeline.
-        /// </p>
+        /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
         pub fn pipeline(mut self, input: crate::model::PipelineDeclaration) -> Self {
             self.pipeline = Some(input);
             self
         }
-        /// <p>Represents the structure of actions and stages to be performed in the pipeline.
-        /// </p>
+        /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
         pub fn set_pipeline(
             mut self,
             input: std::option::Option<crate::model::PipelineDeclaration>,
@@ -679,9 +653,9 @@ pub mod create_pipeline_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the pipeline.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -710,7 +684,7 @@ pub mod create_pipeline_input {
 #[doc(hidden)]
 pub type CreatePipelineInputOperationOutputAlias = crate::operation::CreatePipeline;
 #[doc(hidden)]
-pub type CreatePipelineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePipelineInput {
     /// Consumes the builder and constructs an Operation<[`CreatePipeline`](crate::operation::CreatePipeline)>
     #[allow(clippy::let_and_return)]
@@ -721,7 +695,7 @@ impl CreatePipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePipeline,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -806,7 +780,7 @@ impl CreatePipelineInput {
             "CreatePipeline",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -840,14 +814,12 @@ pub mod delete_custom_action_type_input {
         pub(crate) version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The category of the custom action that you want to delete, such as source or
-        /// deploy.</p>
+        /// <p>The category of the custom action that you want to delete, such as source or deploy.</p>
         pub fn category(mut self, input: crate::model::ActionCategory) -> Self {
             self.category = Some(input);
             self
         }
-        /// <p>The category of the custom action that you want to delete, such as source or
-        /// deploy.</p>
+        /// <p>The category of the custom action that you want to delete, such as source or deploy.</p>
         pub fn set_category(
             mut self,
             input: std::option::Option<crate::model::ActionCategory>,
@@ -855,14 +827,12 @@ pub mod delete_custom_action_type_input {
             self.category = input;
             self
         }
-        /// <p>The provider of the service used in the custom action, such as AWS
-        /// CodeDeploy.</p>
+        /// <p>The provider of the service used in the custom action, such as AWS CodeDeploy.</p>
         pub fn provider(mut self, input: impl Into<std::string::String>) -> Self {
             self.provider = Some(input.into());
             self
         }
-        /// <p>The provider of the service used in the custom action, such as AWS
-        /// CodeDeploy.</p>
+        /// <p>The provider of the service used in the custom action, such as AWS CodeDeploy.</p>
         pub fn set_provider(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.provider = input;
             self
@@ -895,7 +865,7 @@ pub mod delete_custom_action_type_input {
 #[doc(hidden)]
 pub type DeleteCustomActionTypeInputOperationOutputAlias = crate::operation::DeleteCustomActionType;
 #[doc(hidden)]
-pub type DeleteCustomActionTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteCustomActionTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCustomActionTypeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCustomActionType`](crate::operation::DeleteCustomActionType)>
     #[allow(clippy::let_and_return)]
@@ -906,7 +876,7 @@ impl DeleteCustomActionTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCustomActionType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -993,7 +963,7 @@ impl DeleteCustomActionTypeInput {
             "DeleteCustomActionType",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1049,7 +1019,7 @@ pub mod delete_pipeline_input {
 #[doc(hidden)]
 pub type DeletePipelineInputOperationOutputAlias = crate::operation::DeletePipeline;
 #[doc(hidden)]
-pub type DeletePipelineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePipelineInput {
     /// Consumes the builder and constructs an Operation<[`DeletePipeline`](crate::operation::DeletePipeline)>
     #[allow(clippy::let_and_return)]
@@ -1060,7 +1030,7 @@ impl DeletePipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePipeline,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1145,7 +1115,7 @@ impl DeletePipelineInput {
             "DeletePipeline",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1201,7 +1171,7 @@ pub mod delete_webhook_input {
 #[doc(hidden)]
 pub type DeleteWebhookInputOperationOutputAlias = crate::operation::DeleteWebhook;
 #[doc(hidden)]
-pub type DeleteWebhookInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteWebhookInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWebhookInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWebhook`](crate::operation::DeleteWebhook)>
     #[allow(clippy::let_and_return)]
@@ -1212,7 +1182,7 @@ impl DeleteWebhookInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteWebhook,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1296,7 +1266,7 @@ impl DeleteWebhookInput {
             "DeleteWebhook",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1355,7 +1325,8 @@ pub mod deregister_webhook_with_third_party_input {
 pub type DeregisterWebhookWithThirdPartyInputOperationOutputAlias =
     crate::operation::DeregisterWebhookWithThirdParty;
 #[doc(hidden)]
-pub type DeregisterWebhookWithThirdPartyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeregisterWebhookWithThirdPartyInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterWebhookWithThirdPartyInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterWebhookWithThirdParty`](crate::operation::DeregisterWebhookWithThirdParty)>
     #[allow(clippy::let_and_return)]
@@ -1366,7 +1337,7 @@ impl DeregisterWebhookWithThirdPartyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeregisterWebhookWithThirdParty,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1452,7 +1423,7 @@ impl DeregisterWebhookWithThirdPartyInput {
             "DeregisterWebhookWithThirdParty",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1487,14 +1458,12 @@ pub mod disable_stage_transition_input {
         pub(crate) reason: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the pipeline in which you want to disable the flow of artifacts from
-        /// one stage to another.</p>
+        /// <p>The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.</p>
         pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.pipeline_name = Some(input.into());
             self
         }
-        /// <p>The name of the pipeline in which you want to disable the flow of artifacts from
-        /// one stage to another.</p>
+        /// <p>The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.</p>
         pub fn set_pipeline_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1502,30 +1471,22 @@ pub mod disable_stage_transition_input {
             self.pipeline_name = input;
             self
         }
-        /// <p>The name of the stage where you want to disable the inbound or outbound transition
-        /// of artifacts.</p>
+        /// <p>The name of the stage where you want to disable the inbound or outbound transition of artifacts.</p>
         pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.stage_name = Some(input.into());
             self
         }
-        /// <p>The name of the stage where you want to disable the inbound or outbound transition
-        /// of artifacts.</p>
+        /// <p>The name of the stage where you want to disable the inbound or outbound transition of artifacts.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage_name = input;
             self
         }
-        /// <p>Specifies whether artifacts are prevented from transitioning into the stage and
-        /// being processed by the actions in that stage (inbound), or prevented from transitioning
-        /// from the stage after they have been processed by the actions in that stage
-        /// (outbound).</p>
+        /// <p>Specifies whether artifacts are prevented from transitioning into the stage and being processed by the actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by the actions in that stage (outbound).</p>
         pub fn transition_type(mut self, input: crate::model::StageTransitionType) -> Self {
             self.transition_type = Some(input);
             self
         }
-        /// <p>Specifies whether artifacts are prevented from transitioning into the stage and
-        /// being processed by the actions in that stage (inbound), or prevented from transitioning
-        /// from the stage after they have been processed by the actions in that stage
-        /// (outbound).</p>
+        /// <p>Specifies whether artifacts are prevented from transitioning into the stage and being processed by the actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by the actions in that stage (outbound).</p>
         pub fn set_transition_type(
             mut self,
             input: std::option::Option<crate::model::StageTransitionType>,
@@ -1533,16 +1494,12 @@ pub mod disable_stage_transition_input {
             self.transition_type = input;
             self
         }
-        /// <p>The reason given to the user that a stage is disabled, such as waiting for manual
-        /// approval or manual tests. This message is displayed in the pipeline console
-        /// UI.</p>
+        /// <p>The reason given to the user that a stage is disabled, such as waiting for manual approval or manual tests. This message is displayed in the pipeline console UI.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.reason = Some(input.into());
             self
         }
-        /// <p>The reason given to the user that a stage is disabled, such as waiting for manual
-        /// approval or manual tests. This message is displayed in the pipeline console
-        /// UI.</p>
+        /// <p>The reason given to the user that a stage is disabled, such as waiting for manual approval or manual tests. This message is displayed in the pipeline console UI.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -1566,7 +1523,7 @@ pub mod disable_stage_transition_input {
 #[doc(hidden)]
 pub type DisableStageTransitionInputOperationOutputAlias = crate::operation::DisableStageTransition;
 #[doc(hidden)]
-pub type DisableStageTransitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisableStageTransitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisableStageTransitionInput {
     /// Consumes the builder and constructs an Operation<[`DisableStageTransition`](crate::operation::DisableStageTransition)>
     #[allow(clippy::let_and_return)]
@@ -1577,7 +1534,7 @@ impl DisableStageTransitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisableStageTransition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1664,7 +1621,7 @@ impl DisableStageTransitionInput {
             "DisableStageTransition",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1698,14 +1655,12 @@ pub mod enable_stage_transition_input {
         pub(crate) transition_type: std::option::Option<crate::model::StageTransitionType>,
     }
     impl Builder {
-        /// <p>The name of the pipeline in which you want to enable the flow of artifacts from one
-        /// stage to another.</p>
+        /// <p>The name of the pipeline in which you want to enable the flow of artifacts from one stage to another.</p>
         pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.pipeline_name = Some(input.into());
             self
         }
-        /// <p>The name of the pipeline in which you want to enable the flow of artifacts from one
-        /// stage to another.</p>
+        /// <p>The name of the pipeline in which you want to enable the flow of artifacts from one stage to another.</p>
         pub fn set_pipeline_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1713,28 +1668,22 @@ pub mod enable_stage_transition_input {
             self.pipeline_name = input;
             self
         }
-        /// <p>The name of the stage where you want to enable the transition of artifacts, either
-        /// into the stage (inbound) or from that stage to the next stage (outbound).</p>
+        /// <p>The name of the stage where you want to enable the transition of artifacts, either into the stage (inbound) or from that stage to the next stage (outbound).</p>
         pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.stage_name = Some(input.into());
             self
         }
-        /// <p>The name of the stage where you want to enable the transition of artifacts, either
-        /// into the stage (inbound) or from that stage to the next stage (outbound).</p>
+        /// <p>The name of the stage where you want to enable the transition of artifacts, either into the stage (inbound) or from that stage to the next stage (outbound).</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage_name = input;
             self
         }
-        /// <p>Specifies whether artifacts are allowed to enter the stage and be processed by the
-        /// actions in that stage (inbound) or whether already processed artifacts are allowed to
-        /// transition to the next stage (outbound).</p>
+        /// <p>Specifies whether artifacts are allowed to enter the stage and be processed by the actions in that stage (inbound) or whether already processed artifacts are allowed to transition to the next stage (outbound).</p>
         pub fn transition_type(mut self, input: crate::model::StageTransitionType) -> Self {
             self.transition_type = Some(input);
             self
         }
-        /// <p>Specifies whether artifacts are allowed to enter the stage and be processed by the
-        /// actions in that stage (inbound) or whether already processed artifacts are allowed to
-        /// transition to the next stage (outbound).</p>
+        /// <p>Specifies whether artifacts are allowed to enter the stage and be processed by the actions in that stage (inbound) or whether already processed artifacts are allowed to transition to the next stage (outbound).</p>
         pub fn set_transition_type(
             mut self,
             input: std::option::Option<crate::model::StageTransitionType>,
@@ -1760,7 +1709,7 @@ pub mod enable_stage_transition_input {
 #[doc(hidden)]
 pub type EnableStageTransitionInputOperationOutputAlias = crate::operation::EnableStageTransition;
 #[doc(hidden)]
-pub type EnableStageTransitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type EnableStageTransitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EnableStageTransitionInput {
     /// Consumes the builder and constructs an Operation<[`EnableStageTransition`](crate::operation::EnableStageTransition)>
     #[allow(clippy::let_and_return)]
@@ -1771,7 +1720,7 @@ impl EnableStageTransitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::EnableStageTransition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1858,7 +1807,7 @@ impl EnableStageTransitionInput {
             "EnableStageTransition",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1893,77 +1842,27 @@ pub mod get_action_type_input {
         pub(crate) version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Defines what kind of action can be taken in the stage. The following are the valid
-        /// values:</p>
+        /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Source</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Build</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Test</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Deploy</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Approval</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Invoke</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Source</code> </p> </li>
+        /// <li> <p> <code>Build</code> </p> </li>
+        /// <li> <p> <code>Test</code> </p> </li>
+        /// <li> <p> <code>Deploy</code> </p> </li>
+        /// <li> <p> <code>Approval</code> </p> </li>
+        /// <li> <p> <code>Invoke</code> </p> </li>
         /// </ul>
         pub fn category(mut self, input: crate::model::ActionCategory) -> Self {
             self.category = Some(input);
             self
         }
-        /// <p>Defines what kind of action can be taken in the stage. The following are the valid
-        /// values:</p>
+        /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Source</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Build</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Test</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Deploy</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Approval</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Invoke</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Source</code> </p> </li>
+        /// <li> <p> <code>Build</code> </p> </li>
+        /// <li> <p> <code>Test</code> </p> </li>
+        /// <li> <p> <code>Deploy</code> </p> </li>
+        /// <li> <p> <code>Approval</code> </p> </li>
+        /// <li> <p> <code>Invoke</code> </p> </li>
         /// </ul>
         pub fn set_category(
             mut self,
@@ -1972,26 +1871,22 @@ pub mod get_action_type_input {
             self.category = input;
             self
         }
-        /// <p>The creator of an action type that was created with any supported integration model.
-        /// There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
+        /// <p>The creator of an action type that was created with any supported integration model. There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner = Some(input.into());
             self
         }
-        /// <p>The creator of an action type that was created with any supported integration model.
-        /// There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
+        /// <p>The creator of an action type that was created with any supported integration model. There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
         }
-        /// <p>The provider of the action type being called. The provider name is specified when the
-        /// action type is created.</p>
+        /// <p>The provider of the action type being called. The provider name is specified when the action type is created.</p>
         pub fn provider(mut self, input: impl Into<std::string::String>) -> Self {
             self.provider = Some(input.into());
             self
         }
-        /// <p>The provider of the action type being called. The provider name is specified when the
-        /// action type is created.</p>
+        /// <p>The provider of the action type being called. The provider name is specified when the action type is created.</p>
         pub fn set_provider(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.provider = input;
             self
@@ -2025,7 +1920,7 @@ pub mod get_action_type_input {
 #[doc(hidden)]
 pub type GetActionTypeInputOperationOutputAlias = crate::operation::GetActionType;
 #[doc(hidden)]
-pub type GetActionTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetActionTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetActionTypeInput {
     /// Consumes the builder and constructs an Operation<[`GetActionType`](crate::operation::GetActionType)>
     #[allow(clippy::let_and_return)]
@@ -2036,7 +1931,7 @@ impl GetActionTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetActionType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2121,7 +2016,7 @@ impl GetActionTypeInput {
             "GetActionType",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2179,7 +2074,7 @@ pub mod get_job_details_input {
 #[doc(hidden)]
 pub type GetJobDetailsInputOperationOutputAlias = crate::operation::GetJobDetails;
 #[doc(hidden)]
-pub type GetJobDetailsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetJobDetailsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetJobDetailsInput {
     /// Consumes the builder and constructs an Operation<[`GetJobDetails`](crate::operation::GetJobDetails)>
     #[allow(clippy::let_and_return)]
@@ -2190,7 +2085,7 @@ impl GetJobDetailsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetJobDetails,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2275,7 +2170,7 @@ impl GetJobDetailsInput {
             "GetJobDetails",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2308,26 +2203,22 @@ pub mod get_pipeline_input {
         pub(crate) version: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The name of the pipeline for which you want to get information. Pipeline names must
-        /// be unique under an AWS user account.</p>
+        /// <p>The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user account.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the pipeline for which you want to get information. Pipeline names must
-        /// be unique under an AWS user account.</p>
+        /// <p>The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user account.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The version number of the pipeline. If you do not specify a version, defaults to
-        /// the current version.</p>
+        /// <p>The version number of the pipeline. If you do not specify a version, defaults to the current version.</p>
         pub fn version(mut self, input: i32) -> Self {
             self.version = Some(input);
             self
         }
-        /// <p>The version number of the pipeline. If you do not specify a version, defaults to
-        /// the current version.</p>
+        /// <p>The version number of the pipeline. If you do not specify a version, defaults to the current version.</p>
         pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
             self.version = input;
             self
@@ -2349,7 +2240,7 @@ pub mod get_pipeline_input {
 #[doc(hidden)]
 pub type GetPipelineInputOperationOutputAlias = crate::operation::GetPipeline;
 #[doc(hidden)]
-pub type GetPipelineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPipelineInput {
     /// Consumes the builder and constructs an Operation<[`GetPipeline`](crate::operation::GetPipeline)>
     #[allow(clippy::let_and_return)]
@@ -2360,7 +2251,7 @@ impl GetPipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPipeline,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2444,7 +2335,7 @@ impl GetPipelineInput {
             "GetPipeline",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2490,14 +2381,12 @@ pub mod get_pipeline_execution_input {
             self.pipeline_name = input;
             self
         }
-        /// <p>The ID of the pipeline execution about which you want to get execution
-        /// details.</p>
+        /// <p>The ID of the pipeline execution about which you want to get execution details.</p>
         pub fn pipeline_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.pipeline_execution_id = Some(input.into());
             self
         }
-        /// <p>The ID of the pipeline execution about which you want to get execution
-        /// details.</p>
+        /// <p>The ID of the pipeline execution about which you want to get execution details.</p>
         pub fn set_pipeline_execution_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2522,7 +2411,7 @@ pub mod get_pipeline_execution_input {
 #[doc(hidden)]
 pub type GetPipelineExecutionInputOperationOutputAlias = crate::operation::GetPipelineExecution;
 #[doc(hidden)]
-pub type GetPipelineExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPipelineExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPipelineExecutionInput {
     /// Consumes the builder and constructs an Operation<[`GetPipelineExecution`](crate::operation::GetPipelineExecution)>
     #[allow(clippy::let_and_return)]
@@ -2533,7 +2422,7 @@ impl GetPipelineExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPipelineExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2620,7 +2509,7 @@ impl GetPipelineExecutionInput {
             "GetPipelineExecution",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2676,7 +2565,7 @@ pub mod get_pipeline_state_input {
 #[doc(hidden)]
 pub type GetPipelineStateInputOperationOutputAlias = crate::operation::GetPipelineState;
 #[doc(hidden)]
-pub type GetPipelineStateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPipelineStateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPipelineStateInput {
     /// Consumes the builder and constructs an Operation<[`GetPipelineState`](crate::operation::GetPipelineState)>
     #[allow(clippy::let_and_return)]
@@ -2687,7 +2576,7 @@ impl GetPipelineStateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPipelineState,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2772,7 +2661,7 @@ impl GetPipelineStateInput {
             "GetPipelineState",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2815,14 +2704,12 @@ pub mod get_third_party_job_details_input {
             self.job_id = input;
             self
         }
-        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
-        /// the calling entity is allowed access to the job and its details.</p>
+        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
-        /// the calling entity is allowed access to the job and its details.</p>
+        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -2845,7 +2732,7 @@ pub mod get_third_party_job_details_input {
 pub type GetThirdPartyJobDetailsInputOperationOutputAlias =
     crate::operation::GetThirdPartyJobDetails;
 #[doc(hidden)]
-pub type GetThirdPartyJobDetailsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetThirdPartyJobDetailsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetThirdPartyJobDetailsInput {
     /// Consumes the builder and constructs an Operation<[`GetThirdPartyJobDetails`](crate::operation::GetThirdPartyJobDetails)>
     #[allow(clippy::let_and_return)]
@@ -2856,7 +2743,7 @@ impl GetThirdPartyJobDetailsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetThirdPartyJobDetails,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2943,7 +2830,7 @@ impl GetThirdPartyJobDetailsInput {
             "GetThirdPartyJobDetails",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3004,38 +2891,26 @@ pub mod list_action_executions_input {
             self.filter = input;
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned nextToken value. Action execution history
-        /// is retained for up to 12 months, based on action execution start times. Default value is
-        /// 100. </p>
-        /// <note>
-        /// <p>Detailed execution history is available for executions run on or after February
-        /// 21, 2019.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Action execution history is retained for up to 12 months, based on action execution start times. Default value is 100. </p> <note>
+        /// <p>Detailed execution history is available for executions run on or after February 21, 2019.</p>
         /// </note>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned nextToken value. Action execution history
-        /// is retained for up to 12 months, based on action execution start times. Default value is
-        /// 100. </p>
-        /// <note>
-        /// <p>Detailed execution history is available for executions run on or after February
-        /// 21, 2019.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Action execution history is retained for up to 12 months, based on action execution start times. Default value is 100. </p> <note>
+        /// <p>Detailed execution history is available for executions run on or after February 21, 2019.</p>
         /// </note>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The token that was returned from the previous <code>ListActionExecutions</code> call,
-        /// which can be used to return the next set of action executions in the list.</p>
+        /// <p>The token that was returned from the previous <code>ListActionExecutions</code> call, which can be used to return the next set of action executions in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that was returned from the previous <code>ListActionExecutions</code> call,
-        /// which can be used to return the next set of action executions in the list.</p>
+        /// <p>The token that was returned from the previous <code>ListActionExecutions</code> call, which can be used to return the next set of action executions in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3059,7 +2934,7 @@ pub mod list_action_executions_input {
 #[doc(hidden)]
 pub type ListActionExecutionsInputOperationOutputAlias = crate::operation::ListActionExecutions;
 #[doc(hidden)]
-pub type ListActionExecutionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListActionExecutionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListActionExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`ListActionExecutions`](crate::operation::ListActionExecutions)>
     #[allow(clippy::let_and_return)]
@@ -3070,7 +2945,7 @@ impl ListActionExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListActionExecutions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3157,7 +3032,7 @@ impl ListActionExecutionsInput {
             "ListActionExecutions",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3204,14 +3079,12 @@ pub mod list_action_types_input {
             self.action_owner_filter = input;
             self
         }
-        /// <p>An identifier that was returned from the previous list action types call, which can
-        /// be used to return the next set of action types in the list.</p>
+        /// <p>An identifier that was returned from the previous list action types call, which can be used to return the next set of action types in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous list action types call, which can
-        /// be used to return the next set of action types in the list.</p>
+        /// <p>An identifier that was returned from the previous list action types call, which can be used to return the next set of action types in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3247,7 +3120,7 @@ pub mod list_action_types_input {
 #[doc(hidden)]
 pub type ListActionTypesInputOperationOutputAlias = crate::operation::ListActionTypes;
 #[doc(hidden)]
-pub type ListActionTypesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListActionTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListActionTypesInput {
     /// Consumes the builder and constructs an Operation<[`ListActionTypes`](crate::operation::ListActionTypes)>
     #[allow(clippy::let_and_return)]
@@ -3258,7 +3131,7 @@ impl ListActionTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListActionTypes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3343,7 +3216,7 @@ impl ListActionTypesInput {
             "ListActionTypes",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3377,14 +3250,12 @@ pub mod list_pipeline_executions_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the pipeline for which you want to get execution summary
-        /// information.</p>
+        /// <p>The name of the pipeline for which you want to get execution summary information.</p>
         pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.pipeline_name = Some(input.into());
             self
         }
-        /// <p>The name of the pipeline for which you want to get execution summary
-        /// information.</p>
+        /// <p>The name of the pipeline for which you want to get execution summary information.</p>
         pub fn set_pipeline_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3392,32 +3263,22 @@ pub mod list_pipeline_executions_input {
             self.pipeline_name = input;
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned nextToken value. Pipeline history is
-        /// limited to the most recent 12 months, based on pipeline execution start times. Default
-        /// value is 100.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Pipeline history is limited to the most recent 12 months, based on pipeline execution start times. Default value is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned nextToken value. Pipeline history is
-        /// limited to the most recent 12 months, based on pipeline execution start times. Default
-        /// value is 100.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Pipeline history is limited to the most recent 12 months, based on pipeline execution start times. Default value is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The token that was returned from the previous <code>ListPipelineExecutions</code>
-        /// call, which can be used to return the next set of pipeline executions in the
-        /// list.</p>
+        /// <p>The token that was returned from the previous <code>ListPipelineExecutions</code> call, which can be used to return the next set of pipeline executions in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that was returned from the previous <code>ListPipelineExecutions</code>
-        /// call, which can be used to return the next set of pipeline executions in the
-        /// list.</p>
+        /// <p>The token that was returned from the previous <code>ListPipelineExecutions</code> call, which can be used to return the next set of pipeline executions in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3440,7 +3301,7 @@ pub mod list_pipeline_executions_input {
 #[doc(hidden)]
 pub type ListPipelineExecutionsInputOperationOutputAlias = crate::operation::ListPipelineExecutions;
 #[doc(hidden)]
-pub type ListPipelineExecutionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPipelineExecutionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPipelineExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`ListPipelineExecutions`](crate::operation::ListPipelineExecutions)>
     #[allow(clippy::let_and_return)]
@@ -3451,7 +3312,7 @@ impl ListPipelineExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPipelineExecutions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3538,7 +3399,7 @@ impl ListPipelineExecutionsInput {
             "ListPipelineExecutions",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3571,28 +3432,22 @@ pub mod list_pipelines_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>An identifier that was returned from the previous list pipelines call. It can be
-        /// used to return the next set of pipelines in the list.</p>
+        /// <p>An identifier that was returned from the previous list pipelines call. It can be used to return the next set of pipelines in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous list pipelines call. It can be
-        /// used to return the next set of pipelines in the list.</p>
+        /// <p>An identifier that was returned from the previous list pipelines call. It can be used to return the next set of pipelines in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of pipelines to return in a single call. To retrieve the remaining
-        /// pipelines, make another call with the returned nextToken value. The minimum value you
-        /// can specify is 1. The maximum accepted value is 1000.</p>
+        /// <p>The maximum number of pipelines to return in a single call. To retrieve the remaining pipelines, make another call with the returned nextToken value. The minimum value you can specify is 1. The maximum accepted value is 1000.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of pipelines to return in a single call. To retrieve the remaining
-        /// pipelines, make another call with the returned nextToken value. The minimum value you
-        /// can specify is 1. The maximum accepted value is 1000.</p>
+        /// <p>The maximum number of pipelines to return in a single call. To retrieve the remaining pipelines, make another call with the returned nextToken value. The minimum value you can specify is 1. The maximum accepted value is 1000.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3614,7 +3469,7 @@ pub mod list_pipelines_input {
 #[doc(hidden)]
 pub type ListPipelinesInputOperationOutputAlias = crate::operation::ListPipelines;
 #[doc(hidden)]
-pub type ListPipelinesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPipelinesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPipelinesInput {
     /// Consumes the builder and constructs an Operation<[`ListPipelines`](crate::operation::ListPipelines)>
     #[allow(clippy::let_and_return)]
@@ -3625,7 +3480,7 @@ impl ListPipelinesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPipelines,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3709,7 +3564,7 @@ impl ListPipelinesInput {
             "ListPipelines",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3753,16 +3608,12 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = input;
             self
         }
-        /// <p>The token that was returned from the previous API call, which would be used to return
-        /// the next page of the list. The ListTagsforResource call lists all available tags in one
-        /// call and does not use pagination.</p>
+        /// <p>The token that was returned from the previous API call, which would be used to return the next page of the list. The ListTagsforResource call lists all available tags in one call and does not use pagination.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that was returned from the previous API call, which would be used to return
-        /// the next page of the list. The ListTagsforResource call lists all available tags in one
-        /// call and does not use pagination.</p>
+        /// <p>The token that was returned from the previous API call, which would be used to return the next page of the list. The ListTagsforResource call lists all available tags in one call and does not use pagination.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3795,7 +3646,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -3806,7 +3657,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3893,7 +3744,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3926,26 +3777,22 @@ pub mod list_webhooks_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The token that was returned from the previous ListWebhooks call, which can be used
-        /// to return the next set of webhooks in the list.</p>
+        /// <p>The token that was returned from the previous ListWebhooks call, which can be used to return the next set of webhooks in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that was returned from the previous ListWebhooks call, which can be used
-        /// to return the next set of webhooks in the list.</p>
+        /// <p>The token that was returned from the previous ListWebhooks call, which can be used to return the next set of webhooks in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned nextToken value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned nextToken value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3967,7 +3814,7 @@ pub mod list_webhooks_input {
 #[doc(hidden)]
 pub type ListWebhooksInputOperationOutputAlias = crate::operation::ListWebhooks;
 #[doc(hidden)]
-pub type ListWebhooksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListWebhooksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWebhooksInput {
     /// Consumes the builder and constructs an Operation<[`ListWebhooks`](crate::operation::ListWebhooks)>
     #[allow(clippy::let_and_return)]
@@ -3978,7 +3825,7 @@ impl ListWebhooksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWebhooks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4062,7 +3909,7 @@ impl ListWebhooksInput {
             "ListWebhooks",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4125,10 +3972,7 @@ pub mod poll_for_jobs_input {
         ///
         /// To override the contents of this collection use [`set_query_param`](Self::set_query_param).
         ///
-        /// <p>A map of property names and values. For an action type with no queryable
-        /// properties, this value must be null or an empty map. For an action type with a queryable
-        /// property, you must supply that property as a key in the map. Only jobs whose action
-        /// configuration matches the mapped value are returned.</p>
+        /// <p>A map of property names and values. For an action type with no queryable properties, this value must be null or an empty map. For an action type with a queryable property, you must supply that property as a key in the map. Only jobs whose action configuration matches the mapped value are returned.</p>
         pub fn query_param(
             mut self,
             k: impl Into<std::string::String>,
@@ -4139,10 +3983,7 @@ pub mod poll_for_jobs_input {
             self.query_param = Some(hash_map);
             self
         }
-        /// <p>A map of property names and values. For an action type with no queryable
-        /// properties, this value must be null or an empty map. For an action type with a queryable
-        /// property, you must supply that property as a key in the map. Only jobs whose action
-        /// configuration matches the mapped value are returned.</p>
+        /// <p>A map of property names and values. For an action type with no queryable properties, this value must be null or an empty map. For an action type with a queryable property, you must supply that property as a key in the map. Only jobs whose action configuration matches the mapped value are returned.</p>
         pub fn set_query_param(
             mut self,
             input: std::option::Option<
@@ -4170,7 +4011,7 @@ pub mod poll_for_jobs_input {
 #[doc(hidden)]
 pub type PollForJobsInputOperationOutputAlias = crate::operation::PollForJobs;
 #[doc(hidden)]
-pub type PollForJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PollForJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PollForJobsInput {
     /// Consumes the builder and constructs an Operation<[`PollForJobs`](crate::operation::PollForJobs)>
     #[allow(clippy::let_and_return)]
@@ -4181,7 +4022,7 @@ impl PollForJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PollForJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4265,7 +4106,7 @@ impl PollForJobsInput {
             "PollForJobs",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4338,7 +4179,7 @@ pub mod poll_for_third_party_jobs_input {
 #[doc(hidden)]
 pub type PollForThirdPartyJobsInputOperationOutputAlias = crate::operation::PollForThirdPartyJobs;
 #[doc(hidden)]
-pub type PollForThirdPartyJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PollForThirdPartyJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PollForThirdPartyJobsInput {
     /// Consumes the builder and constructs an Operation<[`PollForThirdPartyJobs`](crate::operation::PollForThirdPartyJobs)>
     #[allow(clippy::let_and_return)]
@@ -4349,7 +4190,7 @@ impl PollForThirdPartyJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PollForThirdPartyJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4436,7 +4277,7 @@ impl PollForThirdPartyJobsInput {
             "PollForThirdPartyJobs",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4471,14 +4312,12 @@ pub mod put_action_revision_input {
         pub(crate) action_revision: std::option::Option<crate::model::ActionRevision>,
     }
     impl Builder {
-        /// <p>The name of the pipeline that starts processing the revision to the
-        /// source.</p>
+        /// <p>The name of the pipeline that starts processing the revision to the source.</p>
         pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.pipeline_name = Some(input.into());
             self
         }
-        /// <p>The name of the pipeline that starts processing the revision to the
-        /// source.</p>
+        /// <p>The name of the pipeline that starts processing the revision to the source.</p>
         pub fn set_pipeline_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4538,7 +4377,7 @@ pub mod put_action_revision_input {
 #[doc(hidden)]
 pub type PutActionRevisionInputOperationOutputAlias = crate::operation::PutActionRevision;
 #[doc(hidden)]
-pub type PutActionRevisionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutActionRevisionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutActionRevisionInput {
     /// Consumes the builder and constructs an Operation<[`PutActionRevision`](crate::operation::PutActionRevision)>
     #[allow(clippy::let_and_return)]
@@ -4549,7 +4388,7 @@ impl PutActionRevisionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutActionRevision,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4634,7 +4473,7 @@ impl PutActionRevisionInput {
             "PutActionRevision",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4716,16 +4555,12 @@ pub mod put_approval_result_input {
             self.result = input;
             self
         }
-        /// <p>The system-generated token used to identify a unique approval request. The token
-        /// for each open approval request can be obtained using the <a>GetPipelineState</a> action. It is used to validate that the approval
-        /// request corresponding to this token is still valid.</p>
+        /// <p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <code>GetPipelineState</code> action. It is used to validate that the approval request corresponding to this token is still valid.</p>
         pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
             self.token = Some(input.into());
             self
         }
-        /// <p>The system-generated token used to identify a unique approval request. The token
-        /// for each open approval request can be obtained using the <a>GetPipelineState</a> action. It is used to validate that the approval
-        /// request corresponding to this token is still valid.</p>
+        /// <p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <code>GetPipelineState</code> action. It is used to validate that the approval request corresponding to this token is still valid.</p>
         pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token = input;
             self
@@ -4750,7 +4585,7 @@ pub mod put_approval_result_input {
 #[doc(hidden)]
 pub type PutApprovalResultInputOperationOutputAlias = crate::operation::PutApprovalResult;
 #[doc(hidden)]
-pub type PutApprovalResultInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutApprovalResultInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutApprovalResultInput {
     /// Consumes the builder and constructs an Operation<[`PutApprovalResult`](crate::operation::PutApprovalResult)>
     #[allow(clippy::let_and_return)]
@@ -4761,7 +4596,7 @@ impl PutApprovalResultInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutApprovalResult,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4846,7 +4681,7 @@ impl PutApprovalResultInput {
             "PutApprovalResult",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4879,14 +4714,12 @@ pub mod put_job_failure_result_input {
         pub(crate) failure_details: std::option::Option<crate::model::FailureDetails>,
     }
     impl Builder {
-        /// <p>The unique system-generated ID of the job that failed. This is the same ID returned
-        /// from <code>PollForJobs</code>.</p>
+        /// <p>The unique system-generated ID of the job that failed. This is the same ID returned from <code>PollForJobs</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The unique system-generated ID of the job that failed. This is the same ID returned
-        /// from <code>PollForJobs</code>.</p>
+        /// <p>The unique system-generated ID of the job that failed. This is the same ID returned from <code>PollForJobs</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -4921,7 +4754,7 @@ pub mod put_job_failure_result_input {
 #[doc(hidden)]
 pub type PutJobFailureResultInputOperationOutputAlias = crate::operation::PutJobFailureResult;
 #[doc(hidden)]
-pub type PutJobFailureResultInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutJobFailureResultInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutJobFailureResultInput {
     /// Consumes the builder and constructs an Operation<[`PutJobFailureResult`](crate::operation::PutJobFailureResult)>
     #[allow(clippy::let_and_return)]
@@ -4932,7 +4765,7 @@ impl PutJobFailureResultInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutJobFailureResult,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5019,7 +4852,7 @@ impl PutJobFailureResultInput {
             "PutJobFailureResult",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5057,26 +4890,22 @@ pub mod put_job_success_result_input {
         >,
     }
     impl Builder {
-        /// <p>The unique system-generated ID of the job that succeeded. This is the same ID
-        /// returned from <code>PollForJobs</code>.</p>
+        /// <p>The unique system-generated ID of the job that succeeded. This is the same ID returned from <code>PollForJobs</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The unique system-generated ID of the job that succeeded. This is the same ID
-        /// returned from <code>PollForJobs</code>.</p>
+        /// <p>The unique system-generated ID of the job that succeeded. This is the same ID returned from <code>PollForJobs</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
         }
-        /// <p>The ID of the current revision of the artifact successfully worked on by the
-        /// job.</p>
+        /// <p>The ID of the current revision of the artifact successfully worked on by the job.</p>
         pub fn current_revision(mut self, input: crate::model::CurrentRevision) -> Self {
             self.current_revision = Some(input);
             self
         }
-        /// <p>The ID of the current revision of the artifact successfully worked on by the
-        /// job.</p>
+        /// <p>The ID of the current revision of the artifact successfully worked on by the job.</p>
         pub fn set_current_revision(
             mut self,
             input: std::option::Option<crate::model::CurrentRevision>,
@@ -5084,20 +4913,12 @@ pub mod put_job_success_result_input {
             self.current_revision = input;
             self
         }
-        /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a
-        /// successful job provides to identify a custom action in progress. Future jobs use this
-        /// token to identify the running instance of the action. It can be reused to return more
-        /// information about the progress of the custom action. When the action is complete, no
-        /// continuation token should be supplied.</p>
+        /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a successful job provides to identify a custom action in progress. Future jobs use this token to identify the running instance of the action. It can be reused to return more information about the progress of the custom action. When the action is complete, no continuation token should be supplied.</p>
         pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.continuation_token = Some(input.into());
             self
         }
-        /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a
-        /// successful job provides to identify a custom action in progress. Future jobs use this
-        /// token to identify the running instance of the action. It can be reused to return more
-        /// information about the progress of the custom action. When the action is complete, no
-        /// continuation token should be supplied.</p>
+        /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a successful job provides to identify a custom action in progress. Future jobs use this token to identify the running instance of the action. It can be reused to return more information about the progress of the custom action. When the action is complete, no continuation token should be supplied.</p>
         pub fn set_continuation_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5105,14 +4926,12 @@ pub mod put_job_success_result_input {
             self.continuation_token = input;
             self
         }
-        /// <p>The execution details of the successful job, such as the actions taken by the job
-        /// worker.</p>
+        /// <p>The execution details of the successful job, such as the actions taken by the job worker.</p>
         pub fn execution_details(mut self, input: crate::model::ExecutionDetails) -> Self {
             self.execution_details = Some(input);
             self
         }
-        /// <p>The execution details of the successful job, such as the actions taken by the job
-        /// worker.</p>
+        /// <p>The execution details of the successful job, such as the actions taken by the job worker.</p>
         pub fn set_execution_details(
             mut self,
             input: std::option::Option<crate::model::ExecutionDetails>,
@@ -5124,9 +4943,7 @@ pub mod put_job_success_result_input {
         ///
         /// To override the contents of this collection use [`set_output_variables`](Self::set_output_variables).
         ///
-        /// <p>Key-value pairs produced as output by a job worker that can be made available to a
-        /// downstream action configuration. <code>outputVariables</code> can be included only when
-        /// there is no continuation token on the request.</p>
+        /// <p>Key-value pairs produced as output by a job worker that can be made available to a downstream action configuration. <code>outputVariables</code> can be included only when there is no continuation token on the request.</p>
         pub fn output_variables(
             mut self,
             k: impl Into<std::string::String>,
@@ -5137,9 +4954,7 @@ pub mod put_job_success_result_input {
             self.output_variables = Some(hash_map);
             self
         }
-        /// <p>Key-value pairs produced as output by a job worker that can be made available to a
-        /// downstream action configuration. <code>outputVariables</code> can be included only when
-        /// there is no continuation token on the request.</p>
+        /// <p>Key-value pairs produced as output by a job worker that can be made available to a downstream action configuration. <code>outputVariables</code> can be included only when there is no continuation token on the request.</p>
         pub fn set_output_variables(
             mut self,
             input: std::option::Option<
@@ -5169,7 +4984,7 @@ pub mod put_job_success_result_input {
 #[doc(hidden)]
 pub type PutJobSuccessResultInputOperationOutputAlias = crate::operation::PutJobSuccessResult;
 #[doc(hidden)]
-pub type PutJobSuccessResultInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutJobSuccessResultInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutJobSuccessResultInput {
     /// Consumes the builder and constructs an Operation<[`PutJobSuccessResult`](crate::operation::PutJobSuccessResult)>
     #[allow(clippy::let_and_return)]
@@ -5180,7 +4995,7 @@ impl PutJobSuccessResultInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutJobSuccessResult,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5267,7 +5082,7 @@ impl PutJobSuccessResultInput {
             "PutJobSuccessResult",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5301,26 +5116,22 @@ pub mod put_third_party_job_failure_result_input {
         pub(crate) failure_details: std::option::Option<crate::model::FailureDetails>,
     }
     impl Builder {
-        /// <p>The ID of the job that failed. This is the same ID returned from
-        /// <code>PollForThirdPartyJobs</code>.</p>
+        /// <p>The ID of the job that failed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The ID of the job that failed. This is the same ID returned from
-        /// <code>PollForThirdPartyJobs</code>.</p>
+        /// <p>The ID of the job that failed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
         }
-        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
-        /// the calling entity is allowed access to the job and its details.</p>
+        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
-        /// the calling entity is allowed access to the job and its details.</p>
+        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -5357,7 +5168,8 @@ pub mod put_third_party_job_failure_result_input {
 pub type PutThirdPartyJobFailureResultInputOperationOutputAlias =
     crate::operation::PutThirdPartyJobFailureResult;
 #[doc(hidden)]
-pub type PutThirdPartyJobFailureResultInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutThirdPartyJobFailureResultInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl PutThirdPartyJobFailureResultInput {
     /// Consumes the builder and constructs an Operation<[`PutThirdPartyJobFailureResult`](crate::operation::PutThirdPartyJobFailureResult)>
     #[allow(clippy::let_and_return)]
@@ -5368,7 +5180,7 @@ impl PutThirdPartyJobFailureResultInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutThirdPartyJobFailureResult,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5454,7 +5266,7 @@ impl PutThirdPartyJobFailureResultInput {
             "PutThirdPartyJobFailureResult",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5490,26 +5302,22 @@ pub mod put_third_party_job_success_result_input {
         pub(crate) execution_details: std::option::Option<crate::model::ExecutionDetails>,
     }
     impl Builder {
-        /// <p>The ID of the job that successfully completed. This is the same ID returned from
-        /// <code>PollForThirdPartyJobs</code>.</p>
+        /// <p>The ID of the job that successfully completed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The ID of the job that successfully completed. This is the same ID returned from
-        /// <code>PollForThirdPartyJobs</code>.</p>
+        /// <p>The ID of the job that successfully completed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
         }
-        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
-        /// the calling entity is allowed access to the job and its details.</p>
+        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
-        /// the calling entity is allowed access to the job and its details.</p>
+        /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -5527,20 +5335,12 @@ pub mod put_third_party_job_success_result_input {
             self.current_revision = input;
             self
         }
-        /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a
-        /// successful job provides to identify a partner action in progress. Future jobs use this
-        /// token to identify the running instance of the action. It can be reused to return more
-        /// information about the progress of the partner action. When the action is complete, no
-        /// continuation token should be supplied.</p>
+        /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a successful job provides to identify a partner action in progress. Future jobs use this token to identify the running instance of the action. It can be reused to return more information about the progress of the partner action. When the action is complete, no continuation token should be supplied.</p>
         pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.continuation_token = Some(input.into());
             self
         }
-        /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a
-        /// successful job provides to identify a partner action in progress. Future jobs use this
-        /// token to identify the running instance of the action. It can be reused to return more
-        /// information about the progress of the partner action. When the action is complete, no
-        /// continuation token should be supplied.</p>
+        /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a successful job provides to identify a partner action in progress. Future jobs use this token to identify the running instance of the action. It can be reused to return more information about the progress of the partner action. When the action is complete, no continuation token should be supplied.</p>
         pub fn set_continuation_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5548,14 +5348,12 @@ pub mod put_third_party_job_success_result_input {
             self.continuation_token = input;
             self
         }
-        /// <p>The details of the actions taken and results produced on an artifact as it passes
-        /// through stages in the pipeline. </p>
+        /// <p>The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline. </p>
         pub fn execution_details(mut self, input: crate::model::ExecutionDetails) -> Self {
             self.execution_details = Some(input);
             self
         }
-        /// <p>The details of the actions taken and results produced on an artifact as it passes
-        /// through stages in the pipeline. </p>
+        /// <p>The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline. </p>
         pub fn set_execution_details(
             mut self,
             input: std::option::Option<crate::model::ExecutionDetails>,
@@ -5584,7 +5382,8 @@ pub mod put_third_party_job_success_result_input {
 pub type PutThirdPartyJobSuccessResultInputOperationOutputAlias =
     crate::operation::PutThirdPartyJobSuccessResult;
 #[doc(hidden)]
-pub type PutThirdPartyJobSuccessResultInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutThirdPartyJobSuccessResultInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl PutThirdPartyJobSuccessResultInput {
     /// Consumes the builder and constructs an Operation<[`PutThirdPartyJobSuccessResult`](crate::operation::PutThirdPartyJobSuccessResult)>
     #[allow(clippy::let_and_return)]
@@ -5595,7 +5394,7 @@ impl PutThirdPartyJobSuccessResultInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutThirdPartyJobSuccessResult,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5681,7 +5480,7 @@ impl PutThirdPartyJobSuccessResultInput {
             "PutThirdPartyJobSuccessResult",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5714,18 +5513,12 @@ pub mod put_webhook_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The detail provided in an input file to create the webhook, such as the webhook
-        /// name, the pipeline name, and the action name. Give the webhook a unique name that helps
-        /// you identify it. You might name the webhook after the pipeline and action it targets so
-        /// that you can easily recognize what it's used for later.</p>
+        /// <p>The detail provided in an input file to create the webhook, such as the webhook name, the pipeline name, and the action name. Give the webhook a unique name that helps you identify it. You might name the webhook after the pipeline and action it targets so that you can easily recognize what it's used for later.</p>
         pub fn webhook(mut self, input: crate::model::WebhookDefinition) -> Self {
             self.webhook = Some(input);
             self
         }
-        /// <p>The detail provided in an input file to create the webhook, such as the webhook
-        /// name, the pipeline name, and the action name. Give the webhook a unique name that helps
-        /// you identify it. You might name the webhook after the pipeline and action it targets so
-        /// that you can easily recognize what it's used for later.</p>
+        /// <p>The detail provided in an input file to create the webhook, such as the webhook name, the pipeline name, and the action name. Give the webhook a unique name that helps you identify it. You might name the webhook after the pipeline and action it targets so that you can easily recognize what it's used for later.</p>
         pub fn set_webhook(
             mut self,
             input: std::option::Option<crate::model::WebhookDefinition>,
@@ -5738,9 +5531,9 @@ pub mod put_webhook_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the webhook.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5769,7 +5562,7 @@ pub mod put_webhook_input {
 #[doc(hidden)]
 pub type PutWebhookInputOperationOutputAlias = crate::operation::PutWebhook;
 #[doc(hidden)]
-pub type PutWebhookInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutWebhookInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutWebhookInput {
     /// Consumes the builder and constructs an Operation<[`PutWebhook`](crate::operation::PutWebhook)>
     #[allow(clippy::let_and_return)]
@@ -5780,7 +5573,7 @@ impl PutWebhookInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutWebhook,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5864,7 +5657,7 @@ impl PutWebhookInput {
             "PutWebhook",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5896,14 +5689,12 @@ pub mod register_webhook_with_third_party_input {
         pub(crate) webhook_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of an existing webhook created with PutWebhook to register with a
-        /// supported third party. </p>
+        /// <p>The name of an existing webhook created with PutWebhook to register with a supported third party. </p>
         pub fn webhook_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.webhook_name = Some(input.into());
             self
         }
-        /// <p>The name of an existing webhook created with PutWebhook to register with a
-        /// supported third party. </p>
+        /// <p>The name of an existing webhook created with PutWebhook to register with a supported third party. </p>
         pub fn set_webhook_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.webhook_name = input;
             self
@@ -5925,7 +5716,8 @@ pub mod register_webhook_with_third_party_input {
 pub type RegisterWebhookWithThirdPartyInputOperationOutputAlias =
     crate::operation::RegisterWebhookWithThirdParty;
 #[doc(hidden)]
-pub type RegisterWebhookWithThirdPartyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterWebhookWithThirdPartyInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterWebhookWithThirdPartyInput {
     /// Consumes the builder and constructs an Operation<[`RegisterWebhookWithThirdParty`](crate::operation::RegisterWebhookWithThirdParty)>
     #[allow(clippy::let_and_return)]
@@ -5936,7 +5728,7 @@ impl RegisterWebhookWithThirdPartyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterWebhookWithThirdParty,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6022,7 +5814,7 @@ impl RegisterWebhookWithThirdPartyInput {
             "RegisterWebhookWithThirdParty",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6080,14 +5872,12 @@ pub mod retry_stage_execution_input {
             self.stage_name = input;
             self
         }
-        /// <p>The ID of the pipeline execution in the failed stage to be retried. Use the <a>GetPipelineState</a> action to retrieve the current pipelineExecutionId of
-        /// the failed stage</p>
+        /// <p>The ID of the pipeline execution in the failed stage to be retried. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId of the failed stage</p>
         pub fn pipeline_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.pipeline_execution_id = Some(input.into());
             self
         }
-        /// <p>The ID of the pipeline execution in the failed stage to be retried. Use the <a>GetPipelineState</a> action to retrieve the current pipelineExecutionId of
-        /// the failed stage</p>
+        /// <p>The ID of the pipeline execution in the failed stage to be retried. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId of the failed stage</p>
         pub fn set_pipeline_execution_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6095,14 +5885,12 @@ pub mod retry_stage_execution_input {
             self.pipeline_execution_id = input;
             self
         }
-        /// <p>The scope of the retry attempt. Currently, the only supported value is
-        /// FAILED_ACTIONS.</p>
+        /// <p>The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.</p>
         pub fn retry_mode(mut self, input: crate::model::StageRetryMode) -> Self {
             self.retry_mode = Some(input);
             self
         }
-        /// <p>The scope of the retry attempt. Currently, the only supported value is
-        /// FAILED_ACTIONS.</p>
+        /// <p>The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.</p>
         pub fn set_retry_mode(
             mut self,
             input: std::option::Option<crate::model::StageRetryMode>,
@@ -6129,7 +5917,7 @@ pub mod retry_stage_execution_input {
 #[doc(hidden)]
 pub type RetryStageExecutionInputOperationOutputAlias = crate::operation::RetryStageExecution;
 #[doc(hidden)]
-pub type RetryStageExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RetryStageExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RetryStageExecutionInput {
     /// Consumes the builder and constructs an Operation<[`RetryStageExecution`](crate::operation::RetryStageExecution)>
     #[allow(clippy::let_and_return)]
@@ -6140,7 +5928,7 @@ impl RetryStageExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RetryStageExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6225,7 +6013,7 @@ impl RetryStageExecutionInput {
             "RetryStageExecution",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6268,14 +6056,12 @@ pub mod start_pipeline_execution_input {
             self.name = input;
             self
         }
-        /// <p>The system-generated unique ID used to identify a unique execution
-        /// request.</p>
+        /// <p>The system-generated unique ID used to identify a unique execution request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>The system-generated unique ID used to identify a unique execution
-        /// request.</p>
+        /// <p>The system-generated unique ID used to identify a unique execution request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6300,7 +6086,7 @@ pub mod start_pipeline_execution_input {
 #[doc(hidden)]
 pub type StartPipelineExecutionInputOperationOutputAlias = crate::operation::StartPipelineExecution;
 #[doc(hidden)]
-pub type StartPipelineExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartPipelineExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartPipelineExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StartPipelineExecution`](crate::operation::StartPipelineExecution)>
     #[allow(clippy::let_and_return)]
@@ -6311,7 +6097,7 @@ impl StartPipelineExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartPipelineExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6401,7 +6187,7 @@ impl StartPipelineExecutionInput {
             "StartPipelineExecution",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6449,16 +6235,12 @@ pub mod stop_pipeline_execution_input {
             self.pipeline_name = input;
             self
         }
-        /// <p>The ID of the pipeline execution to be stopped in the current stage. Use the
-        /// <code>GetPipelineState</code> action to retrieve the current
-        /// pipelineExecutionId.</p>
+        /// <p>The ID of the pipeline execution to be stopped in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId.</p>
         pub fn pipeline_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.pipeline_execution_id = Some(input.into());
             self
         }
-        /// <p>The ID of the pipeline execution to be stopped in the current stage. Use the
-        /// <code>GetPipelineState</code> action to retrieve the current
-        /// pipelineExecutionId.</p>
+        /// <p>The ID of the pipeline execution to be stopped in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId.</p>
         pub fn set_pipeline_execution_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6466,18 +6248,14 @@ pub mod stop_pipeline_execution_input {
             self.pipeline_execution_id = input;
             self
         }
-        /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing,
-        /// in-progress actions.</p>
-        /// <note>
+        /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p> <note>
         /// <p>This option can lead to failed or out-of-sequence tasks.</p>
         /// </note>
         pub fn abandon(mut self, input: bool) -> Self {
             self.abandon = Some(input);
             self
         }
-        /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing,
-        /// in-progress actions.</p>
-        /// <note>
+        /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p> <note>
         /// <p>This option can lead to failed or out-of-sequence tasks.</p>
         /// </note>
         pub fn set_abandon(mut self, input: std::option::Option<bool>) -> Self {
@@ -6513,7 +6291,7 @@ pub mod stop_pipeline_execution_input {
 #[doc(hidden)]
 pub type StopPipelineExecutionInputOperationOutputAlias = crate::operation::StopPipelineExecution;
 #[doc(hidden)]
-pub type StopPipelineExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopPipelineExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopPipelineExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StopPipelineExecution`](crate::operation::StopPipelineExecution)>
     #[allow(clippy::let_and_return)]
@@ -6524,7 +6302,7 @@ impl StopPipelineExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopPipelineExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6611,7 +6389,7 @@ impl StopPipelineExecutionInput {
             "StopPipelineExecution",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6659,9 +6437,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags you want to modify or add to the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6690,7 +6468,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -6701,7 +6479,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6785,7 +6563,7 @@ impl TagResourceInput {
             "TagResource",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6864,7 +6642,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -6875,7 +6653,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6959,7 +6737,7 @@ impl UntagResourceInput {
             "UntagResource",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7020,7 +6798,7 @@ pub mod update_action_type_input {
 #[doc(hidden)]
 pub type UpdateActionTypeInputOperationOutputAlias = crate::operation::UpdateActionType;
 #[doc(hidden)]
-pub type UpdateActionTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateActionTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateActionTypeInput {
     /// Consumes the builder and constructs an Operation<[`UpdateActionType`](crate::operation::UpdateActionType)>
     #[allow(clippy::let_and_return)]
@@ -7031,7 +6809,7 @@ impl UpdateActionTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateActionType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7116,7 +6894,7 @@ impl UpdateActionTypeInput {
             "UpdateActionType",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7177,7 +6955,7 @@ pub mod update_pipeline_input {
 #[doc(hidden)]
 pub type UpdatePipelineInputOperationOutputAlias = crate::operation::UpdatePipeline;
 #[doc(hidden)]
-pub type UpdatePipelineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdatePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePipelineInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePipeline`](crate::operation::UpdatePipeline)>
     #[allow(clippy::let_and_return)]
@@ -7188,7 +6966,7 @@ impl UpdatePipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePipeline,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7273,7 +7051,7 @@ impl UpdatePipelineInput {
             "UpdatePipeline",
             "codepipeline",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7400,13 +7178,9 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct StopPipelineExecutionInput {
     /// <p>The name of the pipeline to stop.</p>
     pub pipeline_name: std::option::Option<std::string::String>,
-    /// <p>The ID of the pipeline execution to be stopped in the current stage. Use the
-    /// <code>GetPipelineState</code> action to retrieve the current
-    /// pipelineExecutionId.</p>
+    /// <p>The ID of the pipeline execution to be stopped in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId.</p>
     pub pipeline_execution_id: std::option::Option<std::string::String>,
-    /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing,
-    /// in-progress actions.</p>
-    /// <note>
+    /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p> <note>
     /// <p>This option can lead to failed or out-of-sequence tasks.</p>
     /// </note>
     pub abandon: bool,
@@ -7418,15 +7192,11 @@ impl StopPipelineExecutionInput {
     pub fn pipeline_name(&self) -> std::option::Option<&str> {
         self.pipeline_name.as_deref()
     }
-    /// <p>The ID of the pipeline execution to be stopped in the current stage. Use the
-    /// <code>GetPipelineState</code> action to retrieve the current
-    /// pipelineExecutionId.</p>
+    /// <p>The ID of the pipeline execution to be stopped in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId.</p>
     pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
         self.pipeline_execution_id.as_deref()
     }
-    /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing,
-    /// in-progress actions.</p>
-    /// <note>
+    /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p> <note>
     /// <p>This option can lead to failed or out-of-sequence tasks.</p>
     /// </note>
     pub fn abandon(&self) -> bool {
@@ -7454,8 +7224,7 @@ impl std::fmt::Debug for StopPipelineExecutionInput {
 pub struct StartPipelineExecutionInput {
     /// <p>The name of the pipeline to start.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The system-generated unique ID used to identify a unique execution
-    /// request.</p>
+    /// <p>The system-generated unique ID used to identify a unique execution request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl StartPipelineExecutionInput {
@@ -7463,8 +7232,7 @@ impl StartPipelineExecutionInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The system-generated unique ID used to identify a unique execution
-    /// request.</p>
+    /// <p>The system-generated unique ID used to identify a unique execution request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -7486,11 +7254,9 @@ pub struct RetryStageExecutionInput {
     pub pipeline_name: std::option::Option<std::string::String>,
     /// <p>The name of the failed stage to be retried.</p>
     pub stage_name: std::option::Option<std::string::String>,
-    /// <p>The ID of the pipeline execution in the failed stage to be retried. Use the <a>GetPipelineState</a> action to retrieve the current pipelineExecutionId of
-    /// the failed stage</p>
+    /// <p>The ID of the pipeline execution in the failed stage to be retried. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId of the failed stage</p>
     pub pipeline_execution_id: std::option::Option<std::string::String>,
-    /// <p>The scope of the retry attempt. Currently, the only supported value is
-    /// FAILED_ACTIONS.</p>
+    /// <p>The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.</p>
     pub retry_mode: std::option::Option<crate::model::StageRetryMode>,
 }
 impl RetryStageExecutionInput {
@@ -7502,13 +7268,11 @@ impl RetryStageExecutionInput {
     pub fn stage_name(&self) -> std::option::Option<&str> {
         self.stage_name.as_deref()
     }
-    /// <p>The ID of the pipeline execution in the failed stage to be retried. Use the <a>GetPipelineState</a> action to retrieve the current pipelineExecutionId of
-    /// the failed stage</p>
+    /// <p>The ID of the pipeline execution in the failed stage to be retried. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId of the failed stage</p>
     pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
         self.pipeline_execution_id.as_deref()
     }
-    /// <p>The scope of the retry attempt. Currently, the only supported value is
-    /// FAILED_ACTIONS.</p>
+    /// <p>The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.</p>
     pub fn retry_mode(&self) -> std::option::Option<&crate::model::StageRetryMode> {
         self.retry_mode.as_ref()
     }
@@ -7528,13 +7292,11 @@ impl std::fmt::Debug for RetryStageExecutionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterWebhookWithThirdPartyInput {
-    /// <p>The name of an existing webhook created with PutWebhook to register with a
-    /// supported third party. </p>
+    /// <p>The name of an existing webhook created with PutWebhook to register with a supported third party. </p>
     pub webhook_name: std::option::Option<std::string::String>,
 }
 impl RegisterWebhookWithThirdPartyInput {
-    /// <p>The name of an existing webhook created with PutWebhook to register with a
-    /// supported third party. </p>
+    /// <p>The name of an existing webhook created with PutWebhook to register with a supported third party. </p>
     pub fn webhook_name(&self) -> std::option::Option<&str> {
         self.webhook_name.as_deref()
     }
@@ -7551,19 +7313,13 @@ impl std::fmt::Debug for RegisterWebhookWithThirdPartyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutWebhookInput {
-    /// <p>The detail provided in an input file to create the webhook, such as the webhook
-    /// name, the pipeline name, and the action name. Give the webhook a unique name that helps
-    /// you identify it. You might name the webhook after the pipeline and action it targets so
-    /// that you can easily recognize what it's used for later.</p>
+    /// <p>The detail provided in an input file to create the webhook, such as the webhook name, the pipeline name, and the action name. Give the webhook a unique name that helps you identify it. You might name the webhook after the pipeline and action it targets so that you can easily recognize what it's used for later.</p>
     pub webhook: std::option::Option<crate::model::WebhookDefinition>,
     /// <p>The tags for the webhook.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl PutWebhookInput {
-    /// <p>The detail provided in an input file to create the webhook, such as the webhook
-    /// name, the pipeline name, and the action name. Give the webhook a unique name that helps
-    /// you identify it. You might name the webhook after the pipeline and action it targets so
-    /// that you can easily recognize what it's used for later.</p>
+    /// <p>The detail provided in an input file to create the webhook, such as the webhook name, the pipeline name, and the action name. Give the webhook a unique name that helps you identify it. You might name the webhook after the pipeline and action it targets so that you can easily recognize what it's used for later.</p>
     pub fn webhook(&self) -> std::option::Option<&crate::model::WebhookDefinition> {
         self.webhook.as_ref()
     }
@@ -7581,37 +7337,27 @@ impl std::fmt::Debug for PutWebhookInput {
     }
 }
 
-/// <p>Represents the input of a <code>PutThirdPartyJobSuccessResult</code>
-/// action.</p>
+/// <p>Represents the input of a <code>PutThirdPartyJobSuccessResult</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutThirdPartyJobSuccessResultInput {
-    /// <p>The ID of the job that successfully completed. This is the same ID returned from
-    /// <code>PollForThirdPartyJobs</code>.</p>
+    /// <p>The ID of the job that successfully completed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
-    /// the calling entity is allowed access to the job and its details.</p>
+    /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Represents information about a current revision.</p>
     pub current_revision: std::option::Option<crate::model::CurrentRevision>,
-    /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a
-    /// successful job provides to identify a partner action in progress. Future jobs use this
-    /// token to identify the running instance of the action. It can be reused to return more
-    /// information about the progress of the partner action. When the action is complete, no
-    /// continuation token should be supplied.</p>
+    /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a successful job provides to identify a partner action in progress. Future jobs use this token to identify the running instance of the action. It can be reused to return more information about the progress of the partner action. When the action is complete, no continuation token should be supplied.</p>
     pub continuation_token: std::option::Option<std::string::String>,
-    /// <p>The details of the actions taken and results produced on an artifact as it passes
-    /// through stages in the pipeline. </p>
+    /// <p>The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline. </p>
     pub execution_details: std::option::Option<crate::model::ExecutionDetails>,
 }
 impl PutThirdPartyJobSuccessResultInput {
-    /// <p>The ID of the job that successfully completed. This is the same ID returned from
-    /// <code>PollForThirdPartyJobs</code>.</p>
+    /// <p>The ID of the job that successfully completed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
-    /// the calling entity is allowed access to the job and its details.</p>
+    /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -7619,16 +7365,11 @@ impl PutThirdPartyJobSuccessResultInput {
     pub fn current_revision(&self) -> std::option::Option<&crate::model::CurrentRevision> {
         self.current_revision.as_ref()
     }
-    /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a
-    /// successful job provides to identify a partner action in progress. Future jobs use this
-    /// token to identify the running instance of the action. It can be reused to return more
-    /// information about the progress of the partner action. When the action is complete, no
-    /// continuation token should be supplied.</p>
+    /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a successful job provides to identify a partner action in progress. Future jobs use this token to identify the running instance of the action. It can be reused to return more information about the progress of the partner action. When the action is complete, no continuation token should be supplied.</p>
     pub fn continuation_token(&self) -> std::option::Option<&str> {
         self.continuation_token.as_deref()
     }
-    /// <p>The details of the actions taken and results produced on an artifact as it passes
-    /// through stages in the pipeline. </p>
+    /// <p>The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline. </p>
     pub fn execution_details(&self) -> std::option::Option<&crate::model::ExecutionDetails> {
         self.execution_details.as_ref()
     }
@@ -7645,28 +7386,23 @@ impl std::fmt::Debug for PutThirdPartyJobSuccessResultInput {
     }
 }
 
-/// <p>Represents the input of a <code>PutThirdPartyJobFailureResult</code>
-/// action.</p>
+/// <p>Represents the input of a <code>PutThirdPartyJobFailureResult</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutThirdPartyJobFailureResultInput {
-    /// <p>The ID of the job that failed. This is the same ID returned from
-    /// <code>PollForThirdPartyJobs</code>.</p>
+    /// <p>The ID of the job that failed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
-    /// the calling entity is allowed access to the job and its details.</p>
+    /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Represents information about failure details.</p>
     pub failure_details: std::option::Option<crate::model::FailureDetails>,
 }
 impl PutThirdPartyJobFailureResultInput {
-    /// <p>The ID of the job that failed. This is the same ID returned from
-    /// <code>PollForThirdPartyJobs</code>.</p>
+    /// <p>The ID of the job that failed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
-    /// the calling entity is allowed access to the job and its details.</p>
+    /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -7689,54 +7425,36 @@ impl std::fmt::Debug for PutThirdPartyJobFailureResultInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutJobSuccessResultInput {
-    /// <p>The unique system-generated ID of the job that succeeded. This is the same ID
-    /// returned from <code>PollForJobs</code>.</p>
+    /// <p>The unique system-generated ID of the job that succeeded. This is the same ID returned from <code>PollForJobs</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the current revision of the artifact successfully worked on by the
-    /// job.</p>
+    /// <p>The ID of the current revision of the artifact successfully worked on by the job.</p>
     pub current_revision: std::option::Option<crate::model::CurrentRevision>,
-    /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a
-    /// successful job provides to identify a custom action in progress. Future jobs use this
-    /// token to identify the running instance of the action. It can be reused to return more
-    /// information about the progress of the custom action. When the action is complete, no
-    /// continuation token should be supplied.</p>
+    /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a successful job provides to identify a custom action in progress. Future jobs use this token to identify the running instance of the action. It can be reused to return more information about the progress of the custom action. When the action is complete, no continuation token should be supplied.</p>
     pub continuation_token: std::option::Option<std::string::String>,
-    /// <p>The execution details of the successful job, such as the actions taken by the job
-    /// worker.</p>
+    /// <p>The execution details of the successful job, such as the actions taken by the job worker.</p>
     pub execution_details: std::option::Option<crate::model::ExecutionDetails>,
-    /// <p>Key-value pairs produced as output by a job worker that can be made available to a
-    /// downstream action configuration. <code>outputVariables</code> can be included only when
-    /// there is no continuation token on the request.</p>
+    /// <p>Key-value pairs produced as output by a job worker that can be made available to a downstream action configuration. <code>outputVariables</code> can be included only when there is no continuation token on the request.</p>
     pub output_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl PutJobSuccessResultInput {
-    /// <p>The unique system-generated ID of the job that succeeded. This is the same ID
-    /// returned from <code>PollForJobs</code>.</p>
+    /// <p>The unique system-generated ID of the job that succeeded. This is the same ID returned from <code>PollForJobs</code>.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>The ID of the current revision of the artifact successfully worked on by the
-    /// job.</p>
+    /// <p>The ID of the current revision of the artifact successfully worked on by the job.</p>
     pub fn current_revision(&self) -> std::option::Option<&crate::model::CurrentRevision> {
         self.current_revision.as_ref()
     }
-    /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a
-    /// successful job provides to identify a custom action in progress. Future jobs use this
-    /// token to identify the running instance of the action. It can be reused to return more
-    /// information about the progress of the custom action. When the action is complete, no
-    /// continuation token should be supplied.</p>
+    /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a successful job provides to identify a custom action in progress. Future jobs use this token to identify the running instance of the action. It can be reused to return more information about the progress of the custom action. When the action is complete, no continuation token should be supplied.</p>
     pub fn continuation_token(&self) -> std::option::Option<&str> {
         self.continuation_token.as_deref()
     }
-    /// <p>The execution details of the successful job, such as the actions taken by the job
-    /// worker.</p>
+    /// <p>The execution details of the successful job, such as the actions taken by the job worker.</p>
     pub fn execution_details(&self) -> std::option::Option<&crate::model::ExecutionDetails> {
         self.execution_details.as_ref()
     }
-    /// <p>Key-value pairs produced as output by a job worker that can be made available to a
-    /// downstream action configuration. <code>outputVariables</code> can be included only when
-    /// there is no continuation token on the request.</p>
+    /// <p>Key-value pairs produced as output by a job worker that can be made available to a downstream action configuration. <code>outputVariables</code> can be included only when there is no continuation token on the request.</p>
     pub fn output_variables(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -7760,15 +7478,13 @@ impl std::fmt::Debug for PutJobSuccessResultInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutJobFailureResultInput {
-    /// <p>The unique system-generated ID of the job that failed. This is the same ID returned
-    /// from <code>PollForJobs</code>.</p>
+    /// <p>The unique system-generated ID of the job that failed. This is the same ID returned from <code>PollForJobs</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The details about the failure of a job.</p>
     pub failure_details: std::option::Option<crate::model::FailureDetails>,
 }
 impl PutJobFailureResultInput {
-    /// <p>The unique system-generated ID of the job that failed. This is the same ID returned
-    /// from <code>PollForJobs</code>.</p>
+    /// <p>The unique system-generated ID of the job that failed. This is the same ID returned from <code>PollForJobs</code>.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -7798,9 +7514,7 @@ pub struct PutApprovalResultInput {
     pub action_name: std::option::Option<std::string::String>,
     /// <p>Represents information about the result of the approval request.</p>
     pub result: std::option::Option<crate::model::ApprovalResult>,
-    /// <p>The system-generated token used to identify a unique approval request. The token
-    /// for each open approval request can be obtained using the <a>GetPipelineState</a> action. It is used to validate that the approval
-    /// request corresponding to this token is still valid.</p>
+    /// <p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <code>GetPipelineState</code> action. It is used to validate that the approval request corresponding to this token is still valid.</p>
     pub token: std::option::Option<std::string::String>,
 }
 impl PutApprovalResultInput {
@@ -7820,9 +7534,7 @@ impl PutApprovalResultInput {
     pub fn result(&self) -> std::option::Option<&crate::model::ApprovalResult> {
         self.result.as_ref()
     }
-    /// <p>The system-generated token used to identify a unique approval request. The token
-    /// for each open approval request can be obtained using the <a>GetPipelineState</a> action. It is used to validate that the approval
-    /// request corresponding to this token is still valid.</p>
+    /// <p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <code>GetPipelineState</code> action. It is used to validate that the approval request corresponding to this token is still valid.</p>
     pub fn token(&self) -> std::option::Option<&str> {
         self.token.as_deref()
     }
@@ -7843,8 +7555,7 @@ impl std::fmt::Debug for PutApprovalResultInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutActionRevisionInput {
-    /// <p>The name of the pipeline that starts processing the revision to the
-    /// source.</p>
+    /// <p>The name of the pipeline that starts processing the revision to the source.</p>
     pub pipeline_name: std::option::Option<std::string::String>,
     /// <p>The name of the stage that contains the action that acts on the revision.</p>
     pub stage_name: std::option::Option<std::string::String>,
@@ -7854,8 +7565,7 @@ pub struct PutActionRevisionInput {
     pub action_revision: std::option::Option<crate::model::ActionRevision>,
 }
 impl PutActionRevisionInput {
-    /// <p>The name of the pipeline that starts processing the revision to the
-    /// source.</p>
+    /// <p>The name of the pipeline that starts processing the revision to the source.</p>
     pub fn pipeline_name(&self) -> std::option::Option<&str> {
         self.pipeline_name.as_deref()
     }
@@ -7919,10 +7629,7 @@ pub struct PollForJobsInput {
     pub action_type_id: std::option::Option<crate::model::ActionTypeId>,
     /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
     pub max_batch_size: std::option::Option<i32>,
-    /// <p>A map of property names and values. For an action type with no queryable
-    /// properties, this value must be null or an empty map. For an action type with a queryable
-    /// property, you must supply that property as a key in the map. Only jobs whose action
-    /// configuration matches the mapped value are returned.</p>
+    /// <p>A map of property names and values. For an action type with no queryable properties, this value must be null or an empty map. For an action type with a queryable property, you must supply that property as a key in the map. Only jobs whose action configuration matches the mapped value are returned.</p>
     pub query_param:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7935,10 +7642,7 @@ impl PollForJobsInput {
     pub fn max_batch_size(&self) -> std::option::Option<i32> {
         self.max_batch_size
     }
-    /// <p>A map of property names and values. For an action type with no queryable
-    /// properties, this value must be null or an empty map. For an action type with a queryable
-    /// property, you must supply that property as a key in the map. Only jobs whose action
-    /// configuration matches the mapped value are returned.</p>
+    /// <p>A map of property names and values. For an action type with no queryable properties, this value must be null or an empty map. For an action type with a queryable property, you must supply that property as a key in the map. Only jobs whose action configuration matches the mapped value are returned.</p>
     pub fn query_param(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -7960,21 +7664,17 @@ impl std::fmt::Debug for PollForJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWebhooksInput {
-    /// <p>The token that was returned from the previous ListWebhooks call, which can be used
-    /// to return the next set of webhooks in the list.</p>
+    /// <p>The token that was returned from the previous ListWebhooks call, which can be used to return the next set of webhooks in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-    /// results, make another call with the returned nextToken value.</p>
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListWebhooksInput {
-    /// <p>The token that was returned from the previous ListWebhooks call, which can be used
-    /// to return the next set of webhooks in the list.</p>
+    /// <p>The token that was returned from the previous ListWebhooks call, which can be used to return the next set of webhooks in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-    /// results, make another call with the returned nextToken value.</p>
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -7994,9 +7694,7 @@ impl std::fmt::Debug for ListWebhooksInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to get tags for.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The token that was returned from the previous API call, which would be used to return
-    /// the next page of the list. The ListTagsforResource call lists all available tags in one
-    /// call and does not use pagination.</p>
+    /// <p>The token that was returned from the previous API call, which would be used to return the next page of the list. The ListTagsforResource call lists all available tags in one call and does not use pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
@@ -8006,9 +7704,7 @@ impl ListTagsForResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The token that was returned from the previous API call, which would be used to return
-    /// the next page of the list. The ListTagsforResource call lists all available tags in one
-    /// call and does not use pagination.</p>
+    /// <p>The token that was returned from the previous API call, which would be used to return the next page of the list. The ListTagsforResource call lists all available tags in one call and does not use pagination.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8031,23 +7727,17 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPipelinesInput {
-    /// <p>An identifier that was returned from the previous list pipelines call. It can be
-    /// used to return the next set of pipelines in the list.</p>
+    /// <p>An identifier that was returned from the previous list pipelines call. It can be used to return the next set of pipelines in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of pipelines to return in a single call. To retrieve the remaining
-    /// pipelines, make another call with the returned nextToken value. The minimum value you
-    /// can specify is 1. The maximum accepted value is 1000.</p>
+    /// <p>The maximum number of pipelines to return in a single call. To retrieve the remaining pipelines, make another call with the returned nextToken value. The minimum value you can specify is 1. The maximum accepted value is 1000.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListPipelinesInput {
-    /// <p>An identifier that was returned from the previous list pipelines call. It can be
-    /// used to return the next set of pipelines in the list.</p>
+    /// <p>An identifier that was returned from the previous list pipelines call. It can be used to return the next set of pipelines in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of pipelines to return in a single call. To retrieve the remaining
-    /// pipelines, make another call with the returned nextToken value. The minimum value you
-    /// can specify is 1. The maximum accepted value is 1000.</p>
+    /// <p>The maximum number of pipelines to return in a single call. To retrieve the remaining pipelines, make another call with the returned nextToken value. The minimum value you can specify is 1. The maximum accepted value is 1000.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -8065,35 +7755,23 @@ impl std::fmt::Debug for ListPipelinesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPipelineExecutionsInput {
-    /// <p>The name of the pipeline for which you want to get execution summary
-    /// information.</p>
+    /// <p>The name of the pipeline for which you want to get execution summary information.</p>
     pub pipeline_name: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-    /// results, make another call with the returned nextToken value. Pipeline history is
-    /// limited to the most recent 12 months, based on pipeline execution start times. Default
-    /// value is 100.</p>
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Pipeline history is limited to the most recent 12 months, based on pipeline execution start times. Default value is 100.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The token that was returned from the previous <code>ListPipelineExecutions</code>
-    /// call, which can be used to return the next set of pipeline executions in the
-    /// list.</p>
+    /// <p>The token that was returned from the previous <code>ListPipelineExecutions</code> call, which can be used to return the next set of pipeline executions in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPipelineExecutionsInput {
-    /// <p>The name of the pipeline for which you want to get execution summary
-    /// information.</p>
+    /// <p>The name of the pipeline for which you want to get execution summary information.</p>
     pub fn pipeline_name(&self) -> std::option::Option<&str> {
         self.pipeline_name.as_deref()
     }
-    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-    /// results, make another call with the returned nextToken value. Pipeline history is
-    /// limited to the most recent 12 months, based on pipeline execution start times. Default
-    /// value is 100.</p>
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Pipeline history is limited to the most recent 12 months, based on pipeline execution start times. Default value is 100.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token that was returned from the previous <code>ListPipelineExecutions</code>
-    /// call, which can be used to return the next set of pipeline executions in the
-    /// list.</p>
+    /// <p>The token that was returned from the previous <code>ListPipelineExecutions</code> call, which can be used to return the next set of pipeline executions in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8114,8 +7792,7 @@ impl std::fmt::Debug for ListPipelineExecutionsInput {
 pub struct ListActionTypesInput {
     /// <p>Filters the list of action types to those created by a specified entity.</p>
     pub action_owner_filter: std::option::Option<crate::model::ActionOwner>,
-    /// <p>An identifier that was returned from the previous list action types call, which can
-    /// be used to return the next set of action types in the list.</p>
+    /// <p>An identifier that was returned from the previous list action types call, which can be used to return the next set of action types in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Region to filter on for the list of action types.</p>
     pub region_filter: std::option::Option<std::string::String>,
@@ -8125,8 +7802,7 @@ impl ListActionTypesInput {
     pub fn action_owner_filter(&self) -> std::option::Option<&crate::model::ActionOwner> {
         self.action_owner_filter.as_ref()
     }
-    /// <p>An identifier that was returned from the previous list action types call, which can
-    /// be used to return the next set of action types in the list.</p>
+    /// <p>An identifier that was returned from the previous list action types call, which can be used to return the next set of action types in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8153,17 +7829,11 @@ pub struct ListActionExecutionsInput {
     pub pipeline_name: std::option::Option<std::string::String>,
     /// <p>Input information used to filter action execution history.</p>
     pub filter: std::option::Option<crate::model::ActionExecutionFilter>,
-    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-    /// results, make another call with the returned nextToken value. Action execution history
-    /// is retained for up to 12 months, based on action execution start times. Default value is
-    /// 100. </p>
-    /// <note>
-    /// <p>Detailed execution history is available for executions run on or after February
-    /// 21, 2019.</p>
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Action execution history is retained for up to 12 months, based on action execution start times. Default value is 100. </p> <note>
+    /// <p>Detailed execution history is available for executions run on or after February 21, 2019.</p>
     /// </note>
     pub max_results: std::option::Option<i32>,
-    /// <p>The token that was returned from the previous <code>ListActionExecutions</code> call,
-    /// which can be used to return the next set of action executions in the list.</p>
+    /// <p>The token that was returned from the previous <code>ListActionExecutions</code> call, which can be used to return the next set of action executions in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListActionExecutionsInput {
@@ -8175,19 +7845,13 @@ impl ListActionExecutionsInput {
     pub fn filter(&self) -> std::option::Option<&crate::model::ActionExecutionFilter> {
         self.filter.as_ref()
     }
-    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-    /// results, make another call with the returned nextToken value. Action execution history
-    /// is retained for up to 12 months, based on action execution start times. Default value is
-    /// 100. </p>
-    /// <note>
-    /// <p>Detailed execution history is available for executions run on or after February
-    /// 21, 2019.</p>
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Action execution history is retained for up to 12 months, based on action execution start times. Default value is 100. </p> <note>
+    /// <p>Detailed execution history is available for executions run on or after February 21, 2019.</p>
     /// </note>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token that was returned from the previous <code>ListActionExecutions</code> call,
-    /// which can be used to return the next set of action executions in the list.</p>
+    /// <p>The token that was returned from the previous <code>ListActionExecutions</code> call, which can be used to return the next set of action executions in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8209,8 +7873,7 @@ impl std::fmt::Debug for ListActionExecutionsInput {
 pub struct GetThirdPartyJobDetailsInput {
     /// <p>The unique system-generated ID used for identifying the job.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
-    /// the calling entity is allowed access to the job and its details.</p>
+    /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl GetThirdPartyJobDetailsInput {
@@ -8218,8 +7881,7 @@ impl GetThirdPartyJobDetailsInput {
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
-    /// the calling entity is allowed access to the job and its details.</p>
+    /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -8260,8 +7922,7 @@ impl std::fmt::Debug for GetPipelineStateInput {
 pub struct GetPipelineExecutionInput {
     /// <p>The name of the pipeline about which you want to get execution details.</p>
     pub pipeline_name: std::option::Option<std::string::String>,
-    /// <p>The ID of the pipeline execution about which you want to get execution
-    /// details.</p>
+    /// <p>The ID of the pipeline execution about which you want to get execution details.</p>
     pub pipeline_execution_id: std::option::Option<std::string::String>,
 }
 impl GetPipelineExecutionInput {
@@ -8269,8 +7930,7 @@ impl GetPipelineExecutionInput {
     pub fn pipeline_name(&self) -> std::option::Option<&str> {
         self.pipeline_name.as_deref()
     }
-    /// <p>The ID of the pipeline execution about which you want to get execution
-    /// details.</p>
+    /// <p>The ID of the pipeline execution about which you want to get execution details.</p>
     pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
         self.pipeline_execution_id.as_deref()
     }
@@ -8288,21 +7948,17 @@ impl std::fmt::Debug for GetPipelineExecutionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPipelineInput {
-    /// <p>The name of the pipeline for which you want to get information. Pipeline names must
-    /// be unique under an AWS user account.</p>
+    /// <p>The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user account.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The version number of the pipeline. If you do not specify a version, defaults to
-    /// the current version.</p>
+    /// <p>The version number of the pipeline. If you do not specify a version, defaults to the current version.</p>
     pub version: std::option::Option<i32>,
 }
 impl GetPipelineInput {
-    /// <p>The name of the pipeline for which you want to get information. Pipeline names must
-    /// be unique under an AWS user account.</p>
+    /// <p>The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user account.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The version number of the pipeline. If you do not specify a version, defaults to
-    /// the current version.</p>
+    /// <p>The version number of the pipeline. If you do not specify a version, defaults to the current version.</p>
     pub fn version(&self) -> std::option::Option<i32> {
         self.version
     }
@@ -8341,95 +7997,41 @@ impl std::fmt::Debug for GetJobDetailsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetActionTypeInput {
-    /// <p>Defines what kind of action can be taken in the stage. The following are the valid
-    /// values:</p>
+    /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Source</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Build</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Test</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Deploy</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Approval</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Invoke</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Source</code> </p> </li>
+    /// <li> <p> <code>Build</code> </p> </li>
+    /// <li> <p> <code>Test</code> </p> </li>
+    /// <li> <p> <code>Deploy</code> </p> </li>
+    /// <li> <p> <code>Approval</code> </p> </li>
+    /// <li> <p> <code>Invoke</code> </p> </li>
     /// </ul>
     pub category: std::option::Option<crate::model::ActionCategory>,
-    /// <p>The creator of an action type that was created with any supported integration model.
-    /// There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
+    /// <p>The creator of an action type that was created with any supported integration model. There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
     pub owner: std::option::Option<std::string::String>,
-    /// <p>The provider of the action type being called. The provider name is specified when the
-    /// action type is created.</p>
+    /// <p>The provider of the action type being called. The provider name is specified when the action type is created.</p>
     pub provider: std::option::Option<std::string::String>,
     /// <p>A string that describes the action type version.</p>
     pub version: std::option::Option<std::string::String>,
 }
 impl GetActionTypeInput {
-    /// <p>Defines what kind of action can be taken in the stage. The following are the valid
-    /// values:</p>
+    /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Source</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Build</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Test</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Deploy</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Approval</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Invoke</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Source</code> </p> </li>
+    /// <li> <p> <code>Build</code> </p> </li>
+    /// <li> <p> <code>Test</code> </p> </li>
+    /// <li> <p> <code>Deploy</code> </p> </li>
+    /// <li> <p> <code>Approval</code> </p> </li>
+    /// <li> <p> <code>Invoke</code> </p> </li>
     /// </ul>
     pub fn category(&self) -> std::option::Option<&crate::model::ActionCategory> {
         self.category.as_ref()
     }
-    /// <p>The creator of an action type that was created with any supported integration model.
-    /// There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
+    /// <p>The creator of an action type that was created with any supported integration model. There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
     pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
     }
-    /// <p>The provider of the action type being called. The provider name is specified when the
-    /// action type is created.</p>
+    /// <p>The provider of the action type being called. The provider name is specified when the action type is created.</p>
     pub fn provider(&self) -> std::option::Option<&str> {
         self.provider.as_deref()
     }
@@ -8453,31 +8055,23 @@ impl std::fmt::Debug for GetActionTypeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableStageTransitionInput {
-    /// <p>The name of the pipeline in which you want to enable the flow of artifacts from one
-    /// stage to another.</p>
+    /// <p>The name of the pipeline in which you want to enable the flow of artifacts from one stage to another.</p>
     pub pipeline_name: std::option::Option<std::string::String>,
-    /// <p>The name of the stage where you want to enable the transition of artifacts, either
-    /// into the stage (inbound) or from that stage to the next stage (outbound).</p>
+    /// <p>The name of the stage where you want to enable the transition of artifacts, either into the stage (inbound) or from that stage to the next stage (outbound).</p>
     pub stage_name: std::option::Option<std::string::String>,
-    /// <p>Specifies whether artifacts are allowed to enter the stage and be processed by the
-    /// actions in that stage (inbound) or whether already processed artifacts are allowed to
-    /// transition to the next stage (outbound).</p>
+    /// <p>Specifies whether artifacts are allowed to enter the stage and be processed by the actions in that stage (inbound) or whether already processed artifacts are allowed to transition to the next stage (outbound).</p>
     pub transition_type: std::option::Option<crate::model::StageTransitionType>,
 }
 impl EnableStageTransitionInput {
-    /// <p>The name of the pipeline in which you want to enable the flow of artifacts from one
-    /// stage to another.</p>
+    /// <p>The name of the pipeline in which you want to enable the flow of artifacts from one stage to another.</p>
     pub fn pipeline_name(&self) -> std::option::Option<&str> {
         self.pipeline_name.as_deref()
     }
-    /// <p>The name of the stage where you want to enable the transition of artifacts, either
-    /// into the stage (inbound) or from that stage to the next stage (outbound).</p>
+    /// <p>The name of the stage where you want to enable the transition of artifacts, either into the stage (inbound) or from that stage to the next stage (outbound).</p>
     pub fn stage_name(&self) -> std::option::Option<&str> {
         self.stage_name.as_deref()
     }
-    /// <p>Specifies whether artifacts are allowed to enter the stage and be processed by the
-    /// actions in that stage (inbound) or whether already processed artifacts are allowed to
-    /// transition to the next stage (outbound).</p>
+    /// <p>Specifies whether artifacts are allowed to enter the stage and be processed by the actions in that stage (inbound) or whether already processed artifacts are allowed to transition to the next stage (outbound).</p>
     pub fn transition_type(&self) -> std::option::Option<&crate::model::StageTransitionType> {
         self.transition_type.as_ref()
     }
@@ -8496,43 +8090,29 @@ impl std::fmt::Debug for EnableStageTransitionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableStageTransitionInput {
-    /// <p>The name of the pipeline in which you want to disable the flow of artifacts from
-    /// one stage to another.</p>
+    /// <p>The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.</p>
     pub pipeline_name: std::option::Option<std::string::String>,
-    /// <p>The name of the stage where you want to disable the inbound or outbound transition
-    /// of artifacts.</p>
+    /// <p>The name of the stage where you want to disable the inbound or outbound transition of artifacts.</p>
     pub stage_name: std::option::Option<std::string::String>,
-    /// <p>Specifies whether artifacts are prevented from transitioning into the stage and
-    /// being processed by the actions in that stage (inbound), or prevented from transitioning
-    /// from the stage after they have been processed by the actions in that stage
-    /// (outbound).</p>
+    /// <p>Specifies whether artifacts are prevented from transitioning into the stage and being processed by the actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by the actions in that stage (outbound).</p>
     pub transition_type: std::option::Option<crate::model::StageTransitionType>,
-    /// <p>The reason given to the user that a stage is disabled, such as waiting for manual
-    /// approval or manual tests. This message is displayed in the pipeline console
-    /// UI.</p>
+    /// <p>The reason given to the user that a stage is disabled, such as waiting for manual approval or manual tests. This message is displayed in the pipeline console UI.</p>
     pub reason: std::option::Option<std::string::String>,
 }
 impl DisableStageTransitionInput {
-    /// <p>The name of the pipeline in which you want to disable the flow of artifacts from
-    /// one stage to another.</p>
+    /// <p>The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.</p>
     pub fn pipeline_name(&self) -> std::option::Option<&str> {
         self.pipeline_name.as_deref()
     }
-    /// <p>The name of the stage where you want to disable the inbound or outbound transition
-    /// of artifacts.</p>
+    /// <p>The name of the stage where you want to disable the inbound or outbound transition of artifacts.</p>
     pub fn stage_name(&self) -> std::option::Option<&str> {
         self.stage_name.as_deref()
     }
-    /// <p>Specifies whether artifacts are prevented from transitioning into the stage and
-    /// being processed by the actions in that stage (inbound), or prevented from transitioning
-    /// from the stage after they have been processed by the actions in that stage
-    /// (outbound).</p>
+    /// <p>Specifies whether artifacts are prevented from transitioning into the stage and being processed by the actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by the actions in that stage (outbound).</p>
     pub fn transition_type(&self) -> std::option::Option<&crate::model::StageTransitionType> {
         self.transition_type.as_ref()
     }
-    /// <p>The reason given to the user that a stage is disabled, such as waiting for manual
-    /// approval or manual tests. This message is displayed in the pipeline console
-    /// UI.</p>
+    /// <p>The reason given to the user that a stage is disabled, such as waiting for manual approval or manual tests. This message is displayed in the pipeline console UI.</p>
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
@@ -8611,28 +8191,23 @@ impl std::fmt::Debug for DeletePipelineInput {
     }
 }
 
-/// <p>Represents the input of a <code>DeleteCustomActionType</code> operation. The custom
-/// action will be marked as deleted.</p>
+/// <p>Represents the input of a <code>DeleteCustomActionType</code> operation. The custom action will be marked as deleted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCustomActionTypeInput {
-    /// <p>The category of the custom action that you want to delete, such as source or
-    /// deploy.</p>
+    /// <p>The category of the custom action that you want to delete, such as source or deploy.</p>
     pub category: std::option::Option<crate::model::ActionCategory>,
-    /// <p>The provider of the service used in the custom action, such as AWS
-    /// CodeDeploy.</p>
+    /// <p>The provider of the service used in the custom action, such as AWS CodeDeploy.</p>
     pub provider: std::option::Option<std::string::String>,
     /// <p>The version of the custom action to delete.</p>
     pub version: std::option::Option<std::string::String>,
 }
 impl DeleteCustomActionTypeInput {
-    /// <p>The category of the custom action that you want to delete, such as source or
-    /// deploy.</p>
+    /// <p>The category of the custom action that you want to delete, such as source or deploy.</p>
     pub fn category(&self) -> std::option::Option<&crate::model::ActionCategory> {
         self.category.as_ref()
     }
-    /// <p>The provider of the service used in the custom action, such as AWS
-    /// CodeDeploy.</p>
+    /// <p>The provider of the service used in the custom action, such as AWS CodeDeploy.</p>
     pub fn provider(&self) -> std::option::Option<&str> {
         self.provider.as_deref()
     }
@@ -8655,15 +8230,13 @@ impl std::fmt::Debug for DeleteCustomActionTypeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePipelineInput {
-    /// <p>Represents the structure of actions and stages to be performed in the pipeline.
-    /// </p>
+    /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
     pub pipeline: std::option::Option<crate::model::PipelineDeclaration>,
     /// <p>The tags for the pipeline.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreatePipelineInput {
-    /// <p>Represents the structure of actions and stages to be performed in the pipeline.
-    /// </p>
+    /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
     pub fn pipeline(&self) -> std::option::Option<&crate::model::PipelineDeclaration> {
         self.pipeline.as_ref()
     }
@@ -8685,23 +8258,16 @@ impl std::fmt::Debug for CreatePipelineInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCustomActionTypeInput {
-    /// <p>The category of the custom action, such as a build action or a test
-    /// action.</p>
+    /// <p>The category of the custom action, such as a build action or a test action.</p>
     pub category: std::option::Option<crate::model::ActionCategory>,
-    /// <p>The provider of the service used in the custom action, such as AWS
-    /// CodeDeploy.</p>
+    /// <p>The provider of the service used in the custom action, such as AWS CodeDeploy.</p>
     pub provider: std::option::Option<std::string::String>,
     /// <p>The version identifier of the custom action.</p>
     pub version: std::option::Option<std::string::String>,
     /// <p>URLs that provide users information about this custom action.</p>
     pub settings: std::option::Option<crate::model::ActionTypeSettings>,
-    /// <p>The configuration properties for the custom action.</p>
-    /// <note>
-    /// <p>You can refer to a name in the configuration properties of the custom action
-    /// within the URL templates by following the format of {Config:name}, as long as the
-    /// configuration property is both required and not secret. For more information, see
-    /// <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a
-    /// Custom Action for a Pipeline</a>.</p>
+    /// <p>The configuration properties for the custom action.</p> <note>
+    /// <p>You can refer to a name in the configuration properties of the custom action within the URL templates by following the format of {Config:name}, as long as the configuration property is both required and not secret. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom Action for a Pipeline</a>.</p>
     /// </note>
     pub configuration_properties:
         std::option::Option<std::vec::Vec<crate::model::ActionConfigurationProperty>>,
@@ -8713,13 +8279,11 @@ pub struct CreateCustomActionTypeInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateCustomActionTypeInput {
-    /// <p>The category of the custom action, such as a build action or a test
-    /// action.</p>
+    /// <p>The category of the custom action, such as a build action or a test action.</p>
     pub fn category(&self) -> std::option::Option<&crate::model::ActionCategory> {
         self.category.as_ref()
     }
-    /// <p>The provider of the service used in the custom action, such as AWS
-    /// CodeDeploy.</p>
+    /// <p>The provider of the service used in the custom action, such as AWS CodeDeploy.</p>
     pub fn provider(&self) -> std::option::Option<&str> {
         self.provider.as_deref()
     }
@@ -8731,13 +8295,8 @@ impl CreateCustomActionTypeInput {
     pub fn settings(&self) -> std::option::Option<&crate::model::ActionTypeSettings> {
         self.settings.as_ref()
     }
-    /// <p>The configuration properties for the custom action.</p>
-    /// <note>
-    /// <p>You can refer to a name in the configuration properties of the custom action
-    /// within the URL templates by following the format of {Config:name}, as long as the
-    /// configuration property is both required and not secret. For more information, see
-    /// <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a
-    /// Custom Action for a Pipeline</a>.</p>
+    /// <p>The configuration properties for the custom action.</p> <note>
+    /// <p>You can refer to a name in the configuration properties of the custom action within the URL templates by following the format of {Config:name}, as long as the configuration property is both required and not secret. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom Action for a Pipeline</a>.</p>
     /// </note>
     pub fn configuration_properties(
         &self,
@@ -8778,11 +8337,9 @@ impl std::fmt::Debug for CreateCustomActionTypeInput {
 pub struct AcknowledgeThirdPartyJobInput {
     /// <p>The unique system-generated ID of the job.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job
-    /// is being worked on by only one job worker. Get this number from the response to a <a>GetThirdPartyJobDetails</a> request.</p>
+    /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response to a <code>GetThirdPartyJobDetails</code> request.</p>
     pub nonce: std::option::Option<std::string::String>,
-    /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
-    /// the calling entity is allowed access to the job and its details.</p>
+    /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl AcknowledgeThirdPartyJobInput {
@@ -8790,13 +8347,11 @@ impl AcknowledgeThirdPartyJobInput {
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job
-    /// is being worked on by only one job worker. Get this number from the response to a <a>GetThirdPartyJobDetails</a> request.</p>
+    /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response to a <code>GetThirdPartyJobDetails</code> request.</p>
     pub fn nonce(&self) -> std::option::Option<&str> {
         self.nonce.as_deref()
     }
-    /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
-    /// the calling entity is allowed access to the job and its details.</p>
+    /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -8815,23 +8370,17 @@ impl std::fmt::Debug for AcknowledgeThirdPartyJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcknowledgeJobInput {
-    /// <p>The unique system-generated ID of the job for which you want to confirm
-    /// receipt.</p>
+    /// <p>The unique system-generated ID of the job for which you want to confirm receipt.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job
-    /// is being worked on by only one job worker. Get this number from the response of the
-    /// <a>PollForJobs</a> request that returned this job.</p>
+    /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the <code>PollForJobs</code> request that returned this job.</p>
     pub nonce: std::option::Option<std::string::String>,
 }
 impl AcknowledgeJobInput {
-    /// <p>The unique system-generated ID of the job for which you want to confirm
-    /// receipt.</p>
+    /// <p>The unique system-generated ID of the job for which you want to confirm receipt.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job
-    /// is being worked on by only one job worker. Get this number from the response of the
-    /// <a>PollForJobs</a> request that returned this job.</p>
+    /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the <code>PollForJobs</code> request that returned this job.</p>
     pub fn nonce(&self) -> std::option::Option<&str> {
         self.nonce.as_deref()
     }

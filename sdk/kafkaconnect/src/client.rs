@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Managed Streaming for Kafka Connect
@@ -140,6 +140,7 @@ where
     ///
     /// See [`ListConnectors`](crate::client::fluent_builders::ListConnectors) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListConnectors::into_paginator).
     pub fn list_connectors(&self) -> fluent_builders::ListConnectors<C, M, R> {
         fluent_builders::ListConnectors::new(self.handle.clone())
     }
@@ -147,6 +148,7 @@ where
     ///
     /// See [`ListCustomPlugins`](crate::client::fluent_builders::ListCustomPlugins) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCustomPlugins::into_paginator).
     pub fn list_custom_plugins(&self) -> fluent_builders::ListCustomPlugins<C, M, R> {
         fluent_builders::ListCustomPlugins::new(self.handle.clone())
     }
@@ -154,6 +156,7 @@ where
     ///
     /// See [`ListWorkerConfigurations`](crate::client::fluent_builders::ListWorkerConfigurations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorkerConfigurations::into_paginator).
     pub fn list_worker_configurations(&self) -> fluent_builders::ListWorkerConfigurations<C, M, R> {
         fluent_builders::ListWorkerConfigurations::new(self.handle.clone())
     }
@@ -176,7 +179,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateConnector`.
     ///
     /// <p>Creates a connector using the specified properties.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConnector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -221,10 +224,10 @@ pub mod fluent_builders {
                 crate::input::CreateConnectorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -233,8 +236,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Information about the capacity allocated to the connector. Exactly one of the two properties must be specified.</p>
-        pub fn capacity(mut self, inp: crate::model::Capacity) -> Self {
-            self.inner = self.inner.capacity(inp);
+        pub fn capacity(mut self, input: crate::model::Capacity) -> Self {
+            self.inner = self.inner.capacity(input);
             self
         }
         /// <p>Information about the capacity allocated to the connector. Exactly one of the two properties must be specified.</p>
@@ -252,7 +255,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.connector_configuration(k, v);
+            self.inner = self.inner.connector_configuration(k.into(), v.into());
             self
         }
         /// <p>A map of keys to values that represent the configuration for the connector.</p>
@@ -266,8 +269,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A summary description of the connector.</p>
-        pub fn connector_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connector_description(inp);
+        pub fn connector_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_description(input.into());
             self
         }
         /// <p>A summary description of the connector.</p>
@@ -279,8 +282,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the connector.</p>
-        pub fn connector_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connector_name(inp);
+        pub fn connector_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_name(input.into());
             self
         }
         /// <p>The name of the connector.</p>
@@ -292,8 +295,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies which Apache Kafka cluster to connect to.</p>
-        pub fn kafka_cluster(mut self, inp: crate::model::KafkaCluster) -> Self {
-            self.inner = self.inner.kafka_cluster(inp);
+        pub fn kafka_cluster(mut self, input: crate::model::KafkaCluster) -> Self {
+            self.inner = self.inner.kafka_cluster(input);
             self
         }
         /// <p>Specifies which Apache Kafka cluster to connect to.</p>
@@ -307,9 +310,9 @@ pub mod fluent_builders {
         /// <p>Details of the client authentication used by the Apache Kafka cluster.</p>
         pub fn kafka_cluster_client_authentication(
             mut self,
-            inp: crate::model::KafkaClusterClientAuthentication,
+            input: crate::model::KafkaClusterClientAuthentication,
         ) -> Self {
-            self.inner = self.inner.kafka_cluster_client_authentication(inp);
+            self.inner = self.inner.kafka_cluster_client_authentication(input);
             self
         }
         /// <p>Details of the client authentication used by the Apache Kafka cluster.</p>
@@ -323,9 +326,9 @@ pub mod fluent_builders {
         /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
         pub fn kafka_cluster_encryption_in_transit(
             mut self,
-            inp: crate::model::KafkaClusterEncryptionInTransit,
+            input: crate::model::KafkaClusterEncryptionInTransit,
         ) -> Self {
-            self.inner = self.inner.kafka_cluster_encryption_in_transit(inp);
+            self.inner = self.inner.kafka_cluster_encryption_in_transit(input);
             self
         }
         /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
@@ -337,8 +340,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>
-        pub fn kafka_connect_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kafka_connect_version(inp);
+        pub fn kafka_connect_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kafka_connect_version(input.into());
             self
         }
         /// <p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>
@@ -350,8 +353,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Details about log delivery.</p>
-        pub fn log_delivery(mut self, inp: crate::model::LogDelivery) -> Self {
-            self.inner = self.inner.log_delivery(inp);
+        pub fn log_delivery(mut self, input: crate::model::LogDelivery) -> Self {
+            self.inner = self.inner.log_delivery(input);
             self
         }
         /// <p>Details about log delivery.</p>
@@ -367,8 +370,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_plugins`](Self::set_plugins).
         ///
         /// <p>Specifies which plugins to use for the connector.</p>
-        pub fn plugins(mut self, inp: impl Into<crate::model::Plugin>) -> Self {
-            self.inner = self.inner.plugins(inp);
+        pub fn plugins(mut self, input: crate::model::Plugin) -> Self {
+            self.inner = self.inner.plugins(input);
             self
         }
         /// <p>Specifies which plugins to use for the connector.</p>
@@ -380,8 +383,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access the Amazon Web Services resources that it needs. The types of resources depends on the logic of the connector. For example, a connector that has Amazon S3 as a destination must have permissions that allow it to write to the S3 destination bucket.</p>
-        pub fn service_execution_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_execution_role_arn(inp);
+        pub fn service_execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_execution_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access the Amazon Web Services resources that it needs. The types of resources depends on the logic of the connector. For example, a connector that has Amazon S3 as a destination must have permissions that allow it to write to the S3 destination bucket.</p>
@@ -393,8 +396,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies which worker configuration to use with the connector.</p>
-        pub fn worker_configuration(mut self, inp: crate::model::WorkerConfiguration) -> Self {
-            self.inner = self.inner.worker_configuration(inp);
+        pub fn worker_configuration(mut self, input: crate::model::WorkerConfiguration) -> Self {
+            self.inner = self.inner.worker_configuration(input);
             self
         }
         /// <p>Specifies which worker configuration to use with the connector.</p>
@@ -409,7 +412,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateCustomPlugin`.
     ///
     /// <p>Creates a custom plugin using the specified properties.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCustomPlugin<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -454,10 +457,10 @@ pub mod fluent_builders {
                 crate::input::CreateCustomPluginInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -466,8 +469,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The type of the plugin file.</p>
-        pub fn content_type(mut self, inp: crate::model::CustomPluginContentType) -> Self {
-            self.inner = self.inner.content_type(inp);
+        pub fn content_type(mut self, input: crate::model::CustomPluginContentType) -> Self {
+            self.inner = self.inner.content_type(input);
             self
         }
         /// <p>The type of the plugin file.</p>
@@ -479,8 +482,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A summary description of the custom plugin.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A summary description of the custom plugin.</p>
@@ -489,8 +492,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the location of a custom plugin.</p>
-        pub fn location(mut self, inp: crate::model::CustomPluginLocation) -> Self {
-            self.inner = self.inner.location(inp);
+        pub fn location(mut self, input: crate::model::CustomPluginLocation) -> Self {
+            self.inner = self.inner.location(input);
             self
         }
         /// <p>Information about the location of a custom plugin.</p>
@@ -502,8 +505,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the custom plugin.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the custom plugin.</p>
@@ -515,7 +518,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWorkerConfiguration`.
     ///
     /// <p>Creates a worker configuration using the specified properties.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkerConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -560,10 +563,10 @@ pub mod fluent_builders {
                 crate::input::CreateWorkerConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -572,8 +575,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A summary description of the worker configuration.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A summary description of the worker configuration.</p>
@@ -582,8 +585,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the worker configuration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the worker configuration.</p>
@@ -592,8 +595,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Base64 encoded contents of connect-distributed.properties file.</p>
-        pub fn properties_file_content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.properties_file_content(inp);
+        pub fn properties_file_content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.properties_file_content(input.into());
             self
         }
         /// <p>Base64 encoded contents of connect-distributed.properties file.</p>
@@ -608,7 +611,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteConnector`.
     ///
     /// <p>Deletes the specified connector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConnector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -653,10 +656,10 @@ pub mod fluent_builders {
                 crate::input::DeleteConnectorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -665,8 +668,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the connector that you want to delete.</p>
-        pub fn connector_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connector_arn(inp);
+        pub fn connector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the connector that you want to delete.</p>
@@ -678,8 +681,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The current version of the connector that you want to delete.</p>
-        pub fn current_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_version(inp);
+        pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_version(input.into());
             self
         }
         /// <p>The current version of the connector that you want to delete.</p>
@@ -694,7 +697,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeConnector`.
     ///
     /// <p>Returns summary information about the connector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConnector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -739,10 +742,10 @@ pub mod fluent_builders {
                 crate::input::DescribeConnectorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -751,8 +754,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the connector that you want to describe.</p>
-        pub fn connector_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connector_arn(inp);
+        pub fn connector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the connector that you want to describe.</p>
@@ -767,7 +770,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCustomPlugin`.
     ///
     /// <p>A summary description of the custom plugin.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCustomPlugin<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -812,10 +815,10 @@ pub mod fluent_builders {
                 crate::input::DescribeCustomPluginInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -824,8 +827,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Returns information about a custom plugin.</p>
-        pub fn custom_plugin_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_plugin_arn(inp);
+        pub fn custom_plugin_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_plugin_arn(input.into());
             self
         }
         /// <p>Returns information about a custom plugin.</p>
@@ -840,7 +843,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeWorkerConfiguration`.
     ///
     /// <p>Returns information about a worker configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorkerConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -885,10 +888,10 @@ pub mod fluent_builders {
                 crate::input::DescribeWorkerConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -897,8 +900,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the worker configuration that you want to get information about.</p>
-        pub fn worker_configuration_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.worker_configuration_arn(inp);
+        pub fn worker_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.worker_configuration_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the worker configuration that you want to get information about.</p>
@@ -913,7 +916,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListConnectors`.
     ///
     /// <p>Returns a list of all the connectors in this account and Region. The list is limited to connectors whose name starts with the specified prefix. The response also includes a description of each of the listed connectors.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConnectors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -958,10 +961,10 @@ pub mod fluent_builders {
                 crate::input::ListConnectorsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -969,9 +972,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListConnectorsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListConnectorsPaginator<C, M, R> {
+            crate::paginator::ListConnectorsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name prefix that you want to use to search for and list connectors.</p>
-        pub fn connector_name_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connector_name_prefix(inp);
+        pub fn connector_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_name_prefix(input.into());
             self
         }
         /// <p>The name prefix that you want to use to search for and list connectors.</p>
@@ -983,8 +992,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of connectors to list in one response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of connectors to list in one response.</p>
@@ -993,8 +1002,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
@@ -1006,7 +1015,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCustomPlugins`.
     ///
     /// <p>Returns a list of all of the custom plugins in this account and Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCustomPlugins<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1051,10 +1060,10 @@ pub mod fluent_builders {
                 crate::input::ListCustomPluginsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1062,9 +1071,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCustomPluginsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListCustomPluginsPaginator<C, M, R> {
+            crate::paginator::ListCustomPluginsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of custom plugins to list in one response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of custom plugins to list in one response.</p>
@@ -1073,8 +1088,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If the response of a ListCustomPlugins operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the response of a ListCustomPlugins operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
@@ -1086,7 +1101,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWorkerConfigurations`.
     ///
     /// <p>Returns a list of all of the worker configurations in this account and Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorkerConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1131,10 +1146,10 @@ pub mod fluent_builders {
                 crate::input::ListWorkerConfigurationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1142,9 +1157,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListWorkerConfigurationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListWorkerConfigurationsPaginator<C, M, R> {
+            crate::paginator::ListWorkerConfigurationsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of worker configurations to list in one response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of worker configurations to list in one response.</p>
@@ -1153,8 +1176,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
@@ -1166,7 +1189,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateConnector`.
     ///
     /// <p>Updates the specified connector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConnector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1211,10 +1234,10 @@ pub mod fluent_builders {
                 crate::input::UpdateConnectorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1223,8 +1246,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The target capacity.</p>
-        pub fn capacity(mut self, inp: crate::model::CapacityUpdate) -> Self {
-            self.inner = self.inner.capacity(inp);
+        pub fn capacity(mut self, input: crate::model::CapacityUpdate) -> Self {
+            self.inner = self.inner.capacity(input);
             self
         }
         /// <p>The target capacity.</p>
@@ -1236,8 +1259,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the connector that you want to update.</p>
-        pub fn connector_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connector_arn(inp);
+        pub fn connector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the connector that you want to update.</p>
@@ -1249,8 +1272,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The current version of the connector that you want to update.</p>
-        pub fn current_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_version(inp);
+        pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_version(input.into());
             self
         }
         /// <p>The current version of the connector that you want to update.</p>
@@ -1263,6 +1286,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

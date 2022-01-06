@@ -201,12 +201,9 @@ pub mod unmonitor_instances_output {
         /// To override the contents of this collection use [`set_instance_monitorings`](Self::set_instance_monitorings).
         ///
         /// <p>The monitoring information.</p>
-        pub fn instance_monitorings(
-            mut self,
-            input: impl Into<crate::model::InstanceMonitoring>,
-        ) -> Self {
+        pub fn instance_monitorings(mut self, input: crate::model::InstanceMonitoring) -> Self {
             let mut v = self.instance_monitorings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_monitorings = Some(v);
             self
         }
@@ -271,7 +268,7 @@ pub struct UnassignIpv6AddressesOutput {
     pub network_interface_id: std::option::Option<std::string::String>,
     /// <p>The IPv6 addresses that have been unassigned from the network interface.</p>
     pub unassigned_ipv6_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The IPv4 prefixes that have been unassigned from  the network interface.</p>
+    /// <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
     pub unassigned_ipv6_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UnassignIpv6AddressesOutput {
@@ -283,7 +280,7 @@ impl UnassignIpv6AddressesOutput {
     pub fn unassigned_ipv6_addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.unassigned_ipv6_addresses.as_deref()
     }
-    /// <p>The IPv4 prefixes that have been unassigned from  the network interface.</p>
+    /// <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
     pub fn unassigned_ipv6_prefixes(&self) -> std::option::Option<&[std::string::String]> {
         self.unassigned_ipv6_prefixes.as_deref()
     }
@@ -346,14 +343,14 @@ pub mod unassign_ipv6_addresses_output {
         ///
         /// To override the contents of this collection use [`set_unassigned_ipv6_prefixes`](Self::set_unassigned_ipv6_prefixes).
         ///
-        /// <p>The IPv4 prefixes that have been unassigned from  the network interface.</p>
+        /// <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
         pub fn unassigned_ipv6_prefixes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.unassigned_ipv6_prefixes.unwrap_or_default();
             v.push(input.into());
             self.unassigned_ipv6_prefixes = Some(v);
             self
         }
-        /// <p>The IPv4 prefixes that have been unassigned from  the network interface.</p>
+        /// <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
         pub fn set_unassigned_ipv6_prefixes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -416,12 +413,9 @@ pub mod terminate_instances_output {
         /// To override the contents of this collection use [`set_terminating_instances`](Self::set_terminating_instances).
         ///
         /// <p>Information about the terminated instances.</p>
-        pub fn terminating_instances(
-            mut self,
-            input: impl Into<crate::model::InstanceStateChange>,
-        ) -> Self {
+        pub fn terminating_instances(mut self, input: crate::model::InstanceStateChange) -> Self {
             let mut v = self.terminating_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.terminating_instances = Some(v);
             self
         }
@@ -527,10 +521,10 @@ pub mod terminate_client_vpn_connections_output {
         /// <p>The current state of the client connections.</p>
         pub fn connection_statuses(
             mut self,
-            input: impl Into<crate::model::TerminateConnectionStatus>,
+            input: crate::model::TerminateConnectionStatus,
         ) -> Self {
             let mut v = self.connection_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connection_statuses = Some(v);
             self
         }
@@ -594,12 +588,9 @@ pub mod stop_instances_output {
         /// To override the contents of this collection use [`set_stopping_instances`](Self::set_stopping_instances).
         ///
         /// <p>Information about the stopped instances.</p>
-        pub fn stopping_instances(
-            mut self,
-            input: impl Into<crate::model::InstanceStateChange>,
-        ) -> Self {
+        pub fn stopping_instances(mut self, input: crate::model::InstanceStateChange) -> Self {
             let mut v = self.stopping_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stopping_instances = Some(v);
             self
         }
@@ -848,12 +839,9 @@ pub mod start_instances_output {
         /// To override the contents of this collection use [`set_starting_instances`](Self::set_starting_instances).
         ///
         /// <p>Information about the started instances.</p>
-        pub fn starting_instances(
-            mut self,
-            input: impl Into<crate::model::InstanceStateChange>,
-        ) -> Self {
+        pub fn starting_instances(mut self, input: crate::model::InstanceStateChange) -> Self {
             let mut v = self.starting_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.starting_instances = Some(v);
             self
         }
@@ -955,9 +943,9 @@ pub mod search_transit_gateway_routes_output {
         /// To override the contents of this collection use [`set_routes`](Self::set_routes).
         ///
         /// <p>Information about the routes.</p>
-        pub fn routes(mut self, input: impl Into<crate::model::TransitGatewayRoute>) -> Self {
+        pub fn routes(mut self, input: crate::model::TransitGatewayRoute) -> Self {
             let mut v = self.routes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.routes = Some(v);
             self
         }
@@ -999,14 +987,14 @@ impl SearchTransitGatewayRoutesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchTransitGatewayMulticastGroupsOutput {
-    /// <p>Information about the  transit gateway multicast group.</p>
+    /// <p>Information about the transit gateway multicast group.</p>
     pub multicast_groups:
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayMulticastGroup>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchTransitGatewayMulticastGroupsOutput {
-    /// <p>Information about the  transit gateway multicast group.</p>
+    /// <p>Information about the transit gateway multicast group.</p>
     pub fn multicast_groups(
         &self,
     ) -> std::option::Option<&[crate::model::TransitGatewayMulticastGroup]> {
@@ -1040,17 +1028,17 @@ pub mod search_transit_gateway_multicast_groups_output {
         ///
         /// To override the contents of this collection use [`set_multicast_groups`](Self::set_multicast_groups).
         ///
-        /// <p>Information about the  transit gateway multicast group.</p>
+        /// <p>Information about the transit gateway multicast group.</p>
         pub fn multicast_groups(
             mut self,
-            input: impl Into<crate::model::TransitGatewayMulticastGroup>,
+            input: crate::model::TransitGatewayMulticastGroup,
         ) -> Self {
             let mut v = self.multicast_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.multicast_groups = Some(v);
             self
         }
-        /// <p>Information about the  transit gateway multicast group.</p>
+        /// <p>Information about the transit gateway multicast group.</p>
         pub fn set_multicast_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TransitGatewayMulticastGroup>>,
@@ -1126,9 +1114,9 @@ pub mod search_local_gateway_routes_output {
         /// To override the contents of this collection use [`set_routes`](Self::set_routes).
         ///
         /// <p>Information about the routes.</p>
-        pub fn routes(mut self, input: impl Into<crate::model::LocalGatewayRoute>) -> Self {
+        pub fn routes(mut self, input: crate::model::LocalGatewayRoute) -> Self {
             let mut v = self.routes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.routes = Some(v);
             self
         }
@@ -1229,9 +1217,7 @@ impl RunScheduledInstancesOutput {
     }
 }
 
-/// <p>Describes a launch request for one or more instances, and includes
-/// owner, requester, and security group information that applies to all
-/// instances in the launch request.</p>
+/// <p>Describes a launch request for one or more instances, and includes owner, requester, and security group information that applies to all instances in the launch request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RunInstancesOutput {
@@ -1241,8 +1227,7 @@ pub struct RunInstancesOutput {
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
     /// <p>The ID of the Amazon Web Services account that owns the reservation.</p>
     pub owner_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the requester that launched the instances on your behalf (for example,
-    /// Amazon Web Services Management Console or Auto Scaling).</p>
+    /// <p>The ID of the requester that launched the instances on your behalf (for example, Amazon Web Services Management Console or Auto Scaling).</p>
     pub requester_id: std::option::Option<std::string::String>,
     /// <p>The ID of the reservation.</p>
     pub reservation_id: std::option::Option<std::string::String>,
@@ -1260,8 +1245,7 @@ impl RunInstancesOutput {
     pub fn owner_id(&self) -> std::option::Option<&str> {
         self.owner_id.as_deref()
     }
-    /// <p>The ID of the requester that launched the instances on your behalf (for example,
-    /// Amazon Web Services Management Console or Auto Scaling).</p>
+    /// <p>The ID of the requester that launched the instances on your behalf (for example, Amazon Web Services Management Console or Auto Scaling).</p>
     pub fn requester_id(&self) -> std::option::Option<&str> {
         self.requester_id.as_deref()
     }
@@ -1299,9 +1283,9 @@ pub mod run_instances_output {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <p>[EC2-Classic only] The security groups.</p>
-        pub fn groups(mut self, input: impl Into<crate::model::GroupIdentifier>) -> Self {
+        pub fn groups(mut self, input: crate::model::GroupIdentifier) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
@@ -1318,9 +1302,9 @@ pub mod run_instances_output {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>The instances.</p>
-        pub fn instances(mut self, input: impl Into<crate::model::Instance>) -> Self {
+        pub fn instances(mut self, input: crate::model::Instance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }
@@ -1342,14 +1326,12 @@ pub mod run_instances_output {
             self.owner_id = input;
             self
         }
-        /// <p>The ID of the requester that launched the instances on your behalf (for example,
-        /// Amazon Web Services Management Console or Auto Scaling).</p>
+        /// <p>The ID of the requester that launched the instances on your behalf (for example, Amazon Web Services Management Console or Auto Scaling).</p>
         pub fn requester_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.requester_id = Some(input.into());
             self
         }
-        /// <p>The ID of the requester that launched the instances on your behalf (for example,
-        /// Amazon Web Services Management Console or Auto Scaling).</p>
+        /// <p>The ID of the requester that launched the instances on your behalf (for example, Amazon Web Services Management Console or Auto Scaling).</p>
         pub fn set_requester_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.requester_id = input;
             self
@@ -1392,9 +1374,7 @@ impl RunInstancesOutput {
 pub struct RevokeSecurityGroupIngressOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
     pub r#return: std::option::Option<bool>,
-    /// <p>The inbound rules that were unknown to the service. In some cases,
-    /// <code>unknownIpPermissionSet</code> might be in a different format from the request
-    /// parameter. </p>
+    /// <p>The inbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
     pub unknown_ip_permissions: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
 }
 impl RevokeSecurityGroupIngressOutput {
@@ -1402,9 +1382,7 @@ impl RevokeSecurityGroupIngressOutput {
     pub fn r#return(&self) -> std::option::Option<bool> {
         self.r#return
     }
-    /// <p>The inbound rules that were unknown to the service. In some cases,
-    /// <code>unknownIpPermissionSet</code> might be in a different format from the request
-    /// parameter. </p>
+    /// <p>The inbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
     pub fn unknown_ip_permissions(&self) -> std::option::Option<&[crate::model::IpPermission]> {
         self.unknown_ip_permissions.as_deref()
     }
@@ -1442,21 +1420,14 @@ pub mod revoke_security_group_ingress_output {
         ///
         /// To override the contents of this collection use [`set_unknown_ip_permissions`](Self::set_unknown_ip_permissions).
         ///
-        /// <p>The inbound rules that were unknown to the service. In some cases,
-        /// <code>unknownIpPermissionSet</code> might be in a different format from the request
-        /// parameter. </p>
-        pub fn unknown_ip_permissions(
-            mut self,
-            input: impl Into<crate::model::IpPermission>,
-        ) -> Self {
+        /// <p>The inbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
+        pub fn unknown_ip_permissions(mut self, input: crate::model::IpPermission) -> Self {
             let mut v = self.unknown_ip_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unknown_ip_permissions = Some(v);
             self
         }
-        /// <p>The inbound rules that were unknown to the service. In some cases,
-        /// <code>unknownIpPermissionSet</code> might be in a different format from the request
-        /// parameter. </p>
+        /// <p>The inbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
         pub fn set_unknown_ip_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
@@ -1486,9 +1457,7 @@ impl RevokeSecurityGroupIngressOutput {
 pub struct RevokeSecurityGroupEgressOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
     pub r#return: std::option::Option<bool>,
-    /// <p>The outbound rules that were unknown to the service. In some cases,
-    /// <code>unknownIpPermissionSet</code> might be in a different format from the request
-    /// parameter. </p>
+    /// <p>The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
     pub unknown_ip_permissions: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
 }
 impl RevokeSecurityGroupEgressOutput {
@@ -1496,9 +1465,7 @@ impl RevokeSecurityGroupEgressOutput {
     pub fn r#return(&self) -> std::option::Option<bool> {
         self.r#return
     }
-    /// <p>The outbound rules that were unknown to the service. In some cases,
-    /// <code>unknownIpPermissionSet</code> might be in a different format from the request
-    /// parameter. </p>
+    /// <p>The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
     pub fn unknown_ip_permissions(&self) -> std::option::Option<&[crate::model::IpPermission]> {
         self.unknown_ip_permissions.as_deref()
     }
@@ -1536,21 +1503,14 @@ pub mod revoke_security_group_egress_output {
         ///
         /// To override the contents of this collection use [`set_unknown_ip_permissions`](Self::set_unknown_ip_permissions).
         ///
-        /// <p>The outbound rules that were unknown to the service. In some cases,
-        /// <code>unknownIpPermissionSet</code> might be in a different format from the request
-        /// parameter. </p>
-        pub fn unknown_ip_permissions(
-            mut self,
-            input: impl Into<crate::model::IpPermission>,
-        ) -> Self {
+        /// <p>The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
+        pub fn unknown_ip_permissions(mut self, input: crate::model::IpPermission) -> Self {
             let mut v = self.unknown_ip_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unknown_ip_permissions = Some(v);
             self
         }
-        /// <p>The outbound rules that were unknown to the service. In some cases,
-        /// <code>unknownIpPermissionSet</code> might be in a different format from the request
-        /// parameter. </p>
+        /// <p>The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
         pub fn set_unknown_ip_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
@@ -1639,11 +1599,9 @@ pub struct RestoreSnapshotTierOutput {
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The date and time when the snapshot restore process started.</p>
     pub restore_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>For temporary restores only. The number of days for which the archived snapshot
-    /// is temporarily restored.</p>
+    /// <p>For temporary restores only. The number of days for which the archived snapshot is temporarily restored.</p>
     pub restore_duration: std::option::Option<i32>,
-    /// <p>Indicates whether the snapshot is permanently restored. <code>true</code> indicates a permanent
-    /// restore. <code>false</code> indicates a temporary restore.</p>
+    /// <p>Indicates whether the snapshot is permanently restored. <code>true</code> indicates a permanent restore. <code>false</code> indicates a temporary restore.</p>
     pub is_permanent_restore: std::option::Option<bool>,
 }
 impl RestoreSnapshotTierOutput {
@@ -1655,13 +1613,11 @@ impl RestoreSnapshotTierOutput {
     pub fn restore_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.restore_start_time.as_ref()
     }
-    /// <p>For temporary restores only. The number of days for which the archived snapshot
-    /// is temporarily restored.</p>
+    /// <p>For temporary restores only. The number of days for which the archived snapshot is temporarily restored.</p>
     pub fn restore_duration(&self) -> std::option::Option<i32> {
         self.restore_duration
     }
-    /// <p>Indicates whether the snapshot is permanently restored. <code>true</code> indicates a permanent
-    /// restore. <code>false</code> indicates a temporary restore.</p>
+    /// <p>Indicates whether the snapshot is permanently restored. <code>true</code> indicates a permanent restore. <code>false</code> indicates a temporary restore.</p>
     pub fn is_permanent_restore(&self) -> std::option::Option<bool> {
         self.is_permanent_restore
     }
@@ -1711,26 +1667,22 @@ pub mod restore_snapshot_tier_output {
             self.restore_start_time = input;
             self
         }
-        /// <p>For temporary restores only. The number of days for which the archived snapshot
-        /// is temporarily restored.</p>
+        /// <p>For temporary restores only. The number of days for which the archived snapshot is temporarily restored.</p>
         pub fn restore_duration(mut self, input: i32) -> Self {
             self.restore_duration = Some(input);
             self
         }
-        /// <p>For temporary restores only. The number of days for which the archived snapshot
-        /// is temporarily restored.</p>
+        /// <p>For temporary restores only. The number of days for which the archived snapshot is temporarily restored.</p>
         pub fn set_restore_duration(mut self, input: std::option::Option<i32>) -> Self {
             self.restore_duration = input;
             self
         }
-        /// <p>Indicates whether the snapshot is permanently restored. <code>true</code> indicates a permanent
-        /// restore. <code>false</code> indicates a temporary restore.</p>
+        /// <p>Indicates whether the snapshot is permanently restored. <code>true</code> indicates a permanent restore. <code>false</code> indicates a temporary restore.</p>
         pub fn is_permanent_restore(mut self, input: bool) -> Self {
             self.is_permanent_restore = Some(input);
             self
         }
-        /// <p>Indicates whether the snapshot is permanently restored. <code>true</code> indicates a permanent
-        /// restore. <code>false</code> indicates a temporary restore.</p>
+        /// <p>Indicates whether the snapshot is permanently restored. <code>true</code> indicates a permanent restore. <code>false</code> indicates a temporary restore.</p>
         pub fn set_is_permanent_restore(mut self, input: std::option::Option<bool>) -> Self {
             self.is_permanent_restore = input;
             self
@@ -1759,8 +1711,7 @@ impl RestoreSnapshotTierOutput {
 pub struct RestoreSnapshotFromRecycleBinOutput {
     /// <p>The ID of the snapshot.</p>
     pub snapshot_id: std::option::Option<std::string::String>,
-    /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the
-    /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub outpost_arn: std::option::Option<std::string::String>,
     /// <p>The description for the snapshot.</p>
     pub description: std::option::Option<std::string::String>,
@@ -1784,8 +1735,7 @@ impl RestoreSnapshotFromRecycleBinOutput {
     pub fn snapshot_id(&self) -> std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
-    /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the
-    /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn outpost_arn(&self) -> std::option::Option<&str> {
         self.outpost_arn.as_deref()
     }
@@ -1866,14 +1816,12 @@ pub mod restore_snapshot_from_recycle_bin_output {
             self.snapshot_id = input;
             self
         }
-        /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the
-        /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn outpost_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the
-        /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn set_outpost_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.outpost_arn = input;
             self
@@ -2441,12 +2389,9 @@ pub mod request_spot_instances_output {
         /// To override the contents of this collection use [`set_spot_instance_requests`](Self::set_spot_instance_requests).
         ///
         /// <p>One or more Spot Instance requests.</p>
-        pub fn spot_instance_requests(
-            mut self,
-            input: impl Into<crate::model::SpotInstanceRequest>,
-        ) -> Self {
+        pub fn spot_instance_requests(mut self, input: crate::model::SpotInstanceRequest) -> Self {
             let mut v = self.spot_instance_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.spot_instance_requests = Some(v);
             self
         }
@@ -2943,8 +2888,7 @@ impl ReleaseIpamPoolAllocationOutput {
 pub struct ReleaseHostsOutput {
     /// <p>The IDs of the Dedicated Hosts that were successfully released.</p>
     pub successful: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The IDs of the Dedicated Hosts that could not be released, including an error
-    /// message.</p>
+    /// <p>The IDs of the Dedicated Hosts that could not be released, including an error message.</p>
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
 }
 impl ReleaseHostsOutput {
@@ -2952,8 +2896,7 @@ impl ReleaseHostsOutput {
     pub fn successful(&self) -> std::option::Option<&[std::string::String]> {
         self.successful.as_deref()
     }
-    /// <p>The IDs of the Dedicated Hosts that could not be released, including an error
-    /// message.</p>
+    /// <p>The IDs of the Dedicated Hosts that could not be released, including an error message.</p>
     pub fn unsuccessful(&self) -> std::option::Option<&[crate::model::UnsuccessfulItem]> {
         self.unsuccessful.as_deref()
     }
@@ -2999,16 +2942,14 @@ pub mod release_hosts_output {
         ///
         /// To override the contents of this collection use [`set_unsuccessful`](Self::set_unsuccessful).
         ///
-        /// <p>The IDs of the Dedicated Hosts that could not be released, including an error
-        /// message.</p>
-        pub fn unsuccessful(mut self, input: impl Into<crate::model::UnsuccessfulItem>) -> Self {
+        /// <p>The IDs of the Dedicated Hosts that could not be released, including an error message.</p>
+        pub fn unsuccessful(mut self, input: crate::model::UnsuccessfulItem) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessful = Some(v);
             self
         }
-        /// <p>The IDs of the Dedicated Hosts that could not be released, including an error
-        /// message.</p>
+        /// <p>The IDs of the Dedicated Hosts that could not be released, including an error message.</p>
         pub fn set_unsuccessful(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
@@ -3150,9 +3091,9 @@ pub mod reject_vpc_endpoint_connections_output {
         /// To override the contents of this collection use [`set_unsuccessful`](Self::set_unsuccessful).
         ///
         /// <p>Information about the endpoints that were not rejected, if applicable.</p>
-        pub fn unsuccessful(mut self, input: impl Into<crate::model::UnsuccessfulItem>) -> Self {
+        pub fn unsuccessful(mut self, input: crate::model::UnsuccessfulItem) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessful = Some(v);
             self
         }
@@ -3382,12 +3323,12 @@ impl RejectTransitGatewayMulticastDomainAssociationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterTransitGatewayMulticastGroupSourcesOutput {
-    /// <p>Information about the  transit gateway multicast group sources.</p>
+    /// <p>Information about the transit gateway multicast group sources.</p>
     pub registered_multicast_group_sources:
         std::option::Option<crate::model::TransitGatewayMulticastRegisteredGroupSources>,
 }
 impl RegisterTransitGatewayMulticastGroupSourcesOutput {
-    /// <p>Information about the  transit gateway multicast group sources.</p>
+    /// <p>Information about the transit gateway multicast group sources.</p>
     pub fn registered_multicast_group_sources(
         &self,
     ) -> std::option::Option<&crate::model::TransitGatewayMulticastRegisteredGroupSources> {
@@ -3414,7 +3355,7 @@ pub mod register_transit_gateway_multicast_group_sources_output {
             std::option::Option<crate::model::TransitGatewayMulticastRegisteredGroupSources>,
     }
     impl Builder {
-        /// <p>Information about the  transit gateway multicast group sources.</p>
+        /// <p>Information about the transit gateway multicast group sources.</p>
         pub fn registered_multicast_group_sources(
             mut self,
             input: crate::model::TransitGatewayMulticastRegisteredGroupSources,
@@ -3422,7 +3363,7 @@ pub mod register_transit_gateway_multicast_group_sources_output {
             self.registered_multicast_group_sources = Some(input);
             self
         }
-        /// <p>Information about the  transit gateway multicast group sources.</p>
+        /// <p>Information about the transit gateway multicast group sources.</p>
         pub fn set_registered_multicast_group_sources(
             mut self,
             input: std::option::Option<crate::model::TransitGatewayMulticastRegisteredGroupSources>,
@@ -3450,12 +3391,12 @@ impl RegisterTransitGatewayMulticastGroupSourcesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterTransitGatewayMulticastGroupMembersOutput {
-    /// <p>Information about the registered  transit gateway multicast group members.</p>
+    /// <p>Information about the registered transit gateway multicast group members.</p>
     pub registered_multicast_group_members:
         std::option::Option<crate::model::TransitGatewayMulticastRegisteredGroupMembers>,
 }
 impl RegisterTransitGatewayMulticastGroupMembersOutput {
-    /// <p>Information about the registered  transit gateway multicast group members.</p>
+    /// <p>Information about the registered transit gateway multicast group members.</p>
     pub fn registered_multicast_group_members(
         &self,
     ) -> std::option::Option<&crate::model::TransitGatewayMulticastRegisteredGroupMembers> {
@@ -3482,7 +3423,7 @@ pub mod register_transit_gateway_multicast_group_members_output {
             std::option::Option<crate::model::TransitGatewayMulticastRegisteredGroupMembers>,
     }
     impl Builder {
-        /// <p>Information about the registered  transit gateway multicast group members.</p>
+        /// <p>Information about the registered transit gateway multicast group members.</p>
         pub fn registered_multicast_group_members(
             mut self,
             input: crate::model::TransitGatewayMulticastRegisteredGroupMembers,
@@ -3490,7 +3431,7 @@ pub mod register_transit_gateway_multicast_group_members_output {
             self.registered_multicast_group_members = Some(input);
             self
         }
-        /// <p>Information about the registered  transit gateway multicast group members.</p>
+        /// <p>Information about the registered transit gateway multicast group members.</p>
         pub fn set_registered_multicast_group_members(
             mut self,
             input: std::option::Option<crate::model::TransitGatewayMulticastRegisteredGroupMembers>,
@@ -3699,12 +3640,9 @@ pub mod purchase_scheduled_instances_output {
         /// To override the contents of this collection use [`set_scheduled_instance_set`](Self::set_scheduled_instance_set).
         ///
         /// <p>Information about the Scheduled Instances.</p>
-        pub fn scheduled_instance_set(
-            mut self,
-            input: impl Into<crate::model::ScheduledInstance>,
-        ) -> Self {
+        pub fn scheduled_instance_set(mut self, input: crate::model::ScheduledInstance) -> Self {
             let mut v = self.scheduled_instance_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scheduled_instance_set = Some(v);
             self
         }
@@ -3735,15 +3673,11 @@ impl PurchaseScheduledInstancesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PurchaseReservedInstancesOfferingOutput {
-    /// <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted
-    /// pricing tier, the final Reserved Instances IDs might change. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing
-    /// pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted pricing tier, the final Reserved Instances IDs might change. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub reserved_instances_id: std::option::Option<std::string::String>,
 }
 impl PurchaseReservedInstancesOfferingOutput {
-    /// <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted
-    /// pricing tier, the final Reserved Instances IDs might change. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing
-    /// pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted pricing tier, the final Reserved Instances IDs might change. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn reserved_instances_id(&self) -> std::option::Option<&str> {
         self.reserved_instances_id.as_deref()
     }
@@ -3764,16 +3698,12 @@ pub mod purchase_reserved_instances_offering_output {
         pub(crate) reserved_instances_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted
-        /// pricing tier, the final Reserved Instances IDs might change. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing
-        /// pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted pricing tier, the final Reserved Instances IDs might change. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn reserved_instances_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.reserved_instances_id = Some(input.into());
             self
         }
-        /// <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted
-        /// pricing tier, the final Reserved Instances IDs might change. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing
-        /// pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted pricing tier, the final Reserved Instances IDs might change. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn set_reserved_instances_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3802,9 +3732,7 @@ impl PurchaseReservedInstancesOfferingOutput {
 pub struct PurchaseHostReservationOutput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The currency in which the <code>totalUpfrontPrice</code> and
-    /// <code>totalHourlyPrice</code> amounts are specified. At this time, the only
-    /// supported currency is <code>USD</code>.</p>
+    /// <p>The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
     pub currency_code: std::option::Option<crate::model::CurrencyCodeValues>,
     /// <p>Describes the details of the purchase.</p>
     pub purchase: std::option::Option<std::vec::Vec<crate::model::Purchase>>,
@@ -3818,9 +3746,7 @@ impl PurchaseHostReservationOutput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The currency in which the <code>totalUpfrontPrice</code> and
-    /// <code>totalHourlyPrice</code> amounts are specified. At this time, the only
-    /// supported currency is <code>USD</code>.</p>
+    /// <p>The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
     pub fn currency_code(&self) -> std::option::Option<&crate::model::CurrencyCodeValues> {
         self.currency_code.as_ref()
     }
@@ -3871,16 +3797,12 @@ pub mod purchase_host_reservation_output {
             self.client_token = input;
             self
         }
-        /// <p>The currency in which the <code>totalUpfrontPrice</code> and
-        /// <code>totalHourlyPrice</code> amounts are specified. At this time, the only
-        /// supported currency is <code>USD</code>.</p>
+        /// <p>The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
         pub fn currency_code(mut self, input: crate::model::CurrencyCodeValues) -> Self {
             self.currency_code = Some(input);
             self
         }
-        /// <p>The currency in which the <code>totalUpfrontPrice</code> and
-        /// <code>totalHourlyPrice</code> amounts are specified. At this time, the only
-        /// supported currency is <code>USD</code>.</p>
+        /// <p>The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
         pub fn set_currency_code(
             mut self,
             input: std::option::Option<crate::model::CurrencyCodeValues>,
@@ -3893,9 +3815,9 @@ pub mod purchase_host_reservation_output {
         /// To override the contents of this collection use [`set_purchase`](Self::set_purchase).
         ///
         /// <p>Describes the details of the purchase.</p>
-        pub fn purchase(mut self, input: impl Into<crate::model::Purchase>) -> Self {
+        pub fn purchase(mut self, input: crate::model::Purchase) -> Self {
             let mut v = self.purchase.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.purchase = Some(v);
             self
         }
@@ -4146,13 +4068,11 @@ impl ProvisionByoipCidrOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MoveByoipCidrToIpamOutput {
-    /// <p>Information about an address range that is provisioned for use with your Amazon Web Services resources
-    /// through bring your own IP addresses (BYOIP).</p>
+    /// <p>Information about an address range that is provisioned for use with your Amazon Web Services resources through bring your own IP addresses (BYOIP).</p>
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
 }
 impl MoveByoipCidrToIpamOutput {
-    /// <p>Information about an address range that is provisioned for use with your Amazon Web Services resources
-    /// through bring your own IP addresses (BYOIP).</p>
+    /// <p>Information about an address range that is provisioned for use with your Amazon Web Services resources through bring your own IP addresses (BYOIP).</p>
     pub fn byoip_cidr(&self) -> std::option::Option<&crate::model::ByoipCidr> {
         self.byoip_cidr.as_ref()
     }
@@ -4173,14 +4093,12 @@ pub mod move_byoip_cidr_to_ipam_output {
         pub(crate) byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
     }
     impl Builder {
-        /// <p>Information about an address range that is provisioned for use with your Amazon Web Services resources
-        /// through bring your own IP addresses (BYOIP).</p>
+        /// <p>Information about an address range that is provisioned for use with your Amazon Web Services resources through bring your own IP addresses (BYOIP).</p>
         pub fn byoip_cidr(mut self, input: crate::model::ByoipCidr) -> Self {
             self.byoip_cidr = Some(input);
             self
         }
-        /// <p>Information about an address range that is provisioned for use with your Amazon Web Services resources
-        /// through bring your own IP addresses (BYOIP).</p>
+        /// <p>Information about an address range that is provisioned for use with your Amazon Web Services resources through bring your own IP addresses (BYOIP).</p>
         pub fn set_byoip_cidr(
             mut self,
             input: std::option::Option<crate::model::ByoipCidr>,
@@ -4314,12 +4232,9 @@ pub mod monitor_instances_output {
         /// To override the contents of this collection use [`set_instance_monitorings`](Self::set_instance_monitorings).
         ///
         /// <p>The monitoring information.</p>
-        pub fn instance_monitorings(
-            mut self,
-            input: impl Into<crate::model::InstanceMonitoring>,
-        ) -> Self {
+        pub fn instance_monitorings(mut self, input: crate::model::InstanceMonitoring) -> Self {
             let mut v = self.instance_monitorings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_monitorings = Some(v);
             self
         }
@@ -4578,13 +4493,11 @@ impl ModifyVpnConnectionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyVpcTenancyOutput {
-    /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an
-    /// error.</p>
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
     pub return_value: std::option::Option<bool>,
 }
 impl ModifyVpcTenancyOutput {
-    /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an
-    /// error.</p>
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
     pub fn return_value(&self) -> std::option::Option<bool> {
         self.return_value
     }
@@ -4605,14 +4518,12 @@ pub mod modify_vpc_tenancy_output {
         pub(crate) return_value: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an
-        /// error.</p>
+        /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
         pub fn return_value(mut self, input: bool) -> Self {
             self.return_value = Some(input);
             self
         }
-        /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an
-        /// error.</p>
+        /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
         pub fn set_return_value(mut self, input: std::option::Option<bool>) -> Self {
             self.return_value = input;
             self
@@ -4782,6 +4693,61 @@ impl ModifyVpcEndpointServicePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`ModifyVpcEndpointServicePermissionsOutput`](crate::output::ModifyVpcEndpointServicePermissionsOutput)
     pub fn builder() -> crate::output::modify_vpc_endpoint_service_permissions_output::Builder {
         crate::output::modify_vpc_endpoint_service_permissions_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModifyVpcEndpointServicePayerResponsibilityOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub return_value: std::option::Option<bool>,
+}
+impl ModifyVpcEndpointServicePayerResponsibilityOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub fn return_value(&self) -> std::option::Option<bool> {
+        self.return_value
+    }
+}
+impl std::fmt::Debug for ModifyVpcEndpointServicePayerResponsibilityOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModifyVpcEndpointServicePayerResponsibilityOutput");
+        formatter.field("return_value", &self.return_value);
+        formatter.finish()
+    }
+}
+/// See [`ModifyVpcEndpointServicePayerResponsibilityOutput`](crate::output::ModifyVpcEndpointServicePayerResponsibilityOutput)
+pub mod modify_vpc_endpoint_service_payer_responsibility_output {
+    /// A builder for [`ModifyVpcEndpointServicePayerResponsibilityOutput`](crate::output::ModifyVpcEndpointServicePayerResponsibilityOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) return_value: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+        pub fn return_value(mut self, input: bool) -> Self {
+            self.return_value = Some(input);
+            self
+        }
+        /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+        pub fn set_return_value(mut self, input: std::option::Option<bool>) -> Self {
+            self.return_value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModifyVpcEndpointServicePayerResponsibilityOutput`](crate::output::ModifyVpcEndpointServicePayerResponsibilityOutput)
+        pub fn build(self) -> crate::output::ModifyVpcEndpointServicePayerResponsibilityOutput {
+            crate::output::ModifyVpcEndpointServicePayerResponsibilityOutput {
+                return_value: self.return_value,
+            }
+        }
+    }
+}
+impl ModifyVpcEndpointServicePayerResponsibilityOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyVpcEndpointServicePayerResponsibilityOutput`](crate::output::ModifyVpcEndpointServicePayerResponsibilityOutput)
+    pub fn builder(
+    ) -> crate::output::modify_vpc_endpoint_service_payer_responsibility_output::Builder {
+        crate::output::modify_vpc_endpoint_service_payer_responsibility_output::Builder::default()
     }
 }
 
@@ -6417,26 +6383,22 @@ impl ModifyInstanceEventStartTimeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyInstanceCreditSpecificationOutput {
-    /// <p>Information about the instances whose credit option for CPU usage was successfully
-    /// modified.</p>
+    /// <p>Information about the instances whose credit option for CPU usage was successfully modified.</p>
     pub successful_instance_credit_specifications:
         std::option::Option<std::vec::Vec<crate::model::SuccessfulInstanceCreditSpecificationItem>>,
-    /// <p>Information about the instances whose credit option for CPU usage was not
-    /// modified.</p>
+    /// <p>Information about the instances whose credit option for CPU usage was not modified.</p>
     pub unsuccessful_instance_credit_specifications: std::option::Option<
         std::vec::Vec<crate::model::UnsuccessfulInstanceCreditSpecificationItem>,
     >,
 }
 impl ModifyInstanceCreditSpecificationOutput {
-    /// <p>Information about the instances whose credit option for CPU usage was successfully
-    /// modified.</p>
+    /// <p>Information about the instances whose credit option for CPU usage was successfully modified.</p>
     pub fn successful_instance_credit_specifications(
         &self,
     ) -> std::option::Option<&[crate::model::SuccessfulInstanceCreditSpecificationItem]> {
         self.successful_instance_credit_specifications.as_deref()
     }
-    /// <p>Information about the instances whose credit option for CPU usage was not
-    /// modified.</p>
+    /// <p>Information about the instances whose credit option for CPU usage was not modified.</p>
     pub fn unsuccessful_instance_credit_specifications(
         &self,
     ) -> std::option::Option<&[crate::model::UnsuccessfulInstanceCreditSpecificationItem]> {
@@ -6475,21 +6437,19 @@ pub mod modify_instance_credit_specification_output {
         ///
         /// To override the contents of this collection use [`set_successful_instance_credit_specifications`](Self::set_successful_instance_credit_specifications).
         ///
-        /// <p>Information about the instances whose credit option for CPU usage was successfully
-        /// modified.</p>
+        /// <p>Information about the instances whose credit option for CPU usage was successfully modified.</p>
         pub fn successful_instance_credit_specifications(
             mut self,
-            input: impl Into<crate::model::SuccessfulInstanceCreditSpecificationItem>,
+            input: crate::model::SuccessfulInstanceCreditSpecificationItem,
         ) -> Self {
             let mut v = self
                 .successful_instance_credit_specifications
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successful_instance_credit_specifications = Some(v);
             self
         }
-        /// <p>Information about the instances whose credit option for CPU usage was successfully
-        /// modified.</p>
+        /// <p>Information about the instances whose credit option for CPU usage was successfully modified.</p>
         pub fn set_successful_instance_credit_specifications(
             mut self,
             input: std::option::Option<
@@ -6503,21 +6463,19 @@ pub mod modify_instance_credit_specification_output {
         ///
         /// To override the contents of this collection use [`set_unsuccessful_instance_credit_specifications`](Self::set_unsuccessful_instance_credit_specifications).
         ///
-        /// <p>Information about the instances whose credit option for CPU usage was not
-        /// modified.</p>
+        /// <p>Information about the instances whose credit option for CPU usage was not modified.</p>
         pub fn unsuccessful_instance_credit_specifications(
             mut self,
-            input: impl Into<crate::model::UnsuccessfulInstanceCreditSpecificationItem>,
+            input: crate::model::UnsuccessfulInstanceCreditSpecificationItem,
         ) -> Self {
             let mut v = self
                 .unsuccessful_instance_credit_specifications
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessful_instance_credit_specifications = Some(v);
             self
         }
-        /// <p>Information about the instances whose credit option for CPU usage was not
-        /// modified.</p>
+        /// <p>Information about the instances whose credit option for CPU usage was not modified.</p>
         pub fn set_unsuccessful_instance_credit_specifications(
             mut self,
             input: std::option::Option<
@@ -6726,8 +6684,7 @@ impl ModifyIdentityIdFormatOutput {
 pub struct ModifyHostsOutput {
     /// <p>The IDs of the Dedicated Hosts that were successfully modified.</p>
     pub successful: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the
-    /// setting you requested can be used.</p>
+    /// <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the setting you requested can be used.</p>
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
 }
 impl ModifyHostsOutput {
@@ -6735,8 +6692,7 @@ impl ModifyHostsOutput {
     pub fn successful(&self) -> std::option::Option<&[std::string::String]> {
         self.successful.as_deref()
     }
-    /// <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the
-    /// setting you requested can be used.</p>
+    /// <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the setting you requested can be used.</p>
     pub fn unsuccessful(&self) -> std::option::Option<&[crate::model::UnsuccessfulItem]> {
         self.unsuccessful.as_deref()
     }
@@ -6782,16 +6738,14 @@ pub mod modify_hosts_output {
         ///
         /// To override the contents of this collection use [`set_unsuccessful`](Self::set_unsuccessful).
         ///
-        /// <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the
-        /// setting you requested can be used.</p>
-        pub fn unsuccessful(mut self, input: impl Into<crate::model::UnsuccessfulItem>) -> Self {
+        /// <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the setting you requested can be used.</p>
+        pub fn unsuccessful(mut self, input: crate::model::UnsuccessfulItem) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessful = Some(v);
             self
         }
-        /// <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the
-        /// setting you requested can be used.</p>
+        /// <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the setting you requested can be used.</p>
         pub fn set_unsuccessful(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
@@ -7363,9 +7317,9 @@ pub mod list_snapshots_in_recycle_bin_output {
         /// To override the contents of this collection use [`set_snapshots`](Self::set_snapshots).
         ///
         /// <p>Information about the snapshots.</p>
-        pub fn snapshots(mut self, input: impl Into<crate::model::SnapshotRecycleBinInfo>) -> Self {
+        pub fn snapshots(mut self, input: crate::model::SnapshotRecycleBinInfo) -> Self {
             let mut v = self.snapshots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.snapshots = Some(v);
             self
         }
@@ -7554,9 +7508,9 @@ pub mod import_snapshot_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Any tags assigned to the import snapshot task.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -7677,9 +7631,9 @@ pub mod import_key_pair_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags applied to the imported key pair.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8029,9 +7983,9 @@ pub mod import_image_output {
         /// To override the contents of this collection use [`set_snapshot_details`](Self::set_snapshot_details).
         ///
         /// <p>Information about the snapshots.</p>
-        pub fn snapshot_details(mut self, input: impl Into<crate::model::SnapshotDetail>) -> Self {
+        pub fn snapshot_details(mut self, input: crate::model::SnapshotDetail) -> Self {
             let mut v = self.snapshot_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.snapshot_details = Some(v);
             self
         }
@@ -8073,10 +8027,10 @@ pub mod import_image_output {
         /// <p>The ARNs of the license configurations.</p>
         pub fn license_specifications(
             mut self,
-            input: impl Into<crate::model::ImportImageLicenseConfigurationResponse>,
+            input: crate::model::ImportImageLicenseConfigurationResponse,
         ) -> Self {
             let mut v = self.license_specifications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.license_specifications = Some(v);
             self
         }
@@ -8095,9 +8049,9 @@ pub mod import_image_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Any tags assigned to the import image task.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8212,30 +8166,20 @@ impl ImportClientVpnClientCertificateRevocationListOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVpnConnectionDeviceTypesOutput {
-    /// <p>List of customer gateway devices that have a sample configuration file available for
-    /// use.</p>
+    /// <p>List of customer gateway devices that have a sample configuration file available for use.</p>
     pub vpn_connection_device_types:
         std::option::Option<std::vec::Vec<crate::model::VpnConnectionDeviceType>>,
-    /// <p>The <code>NextToken</code> value to include in a future
-    /// <code>GetVpnConnectionDeviceTypes</code> request. When the results of a
-    /// <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>,
-    /// this value can be used to retrieve the next page of results. This value is null when
-    /// there are no more results to return.</p>
+    /// <p>The <code>NextToken</code> value to include in a future <code>GetVpnConnectionDeviceTypes</code> request. When the results of a <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetVpnConnectionDeviceTypesOutput {
-    /// <p>List of customer gateway devices that have a sample configuration file available for
-    /// use.</p>
+    /// <p>List of customer gateway devices that have a sample configuration file available for use.</p>
     pub fn vpn_connection_device_types(
         &self,
     ) -> std::option::Option<&[crate::model::VpnConnectionDeviceType]> {
         self.vpn_connection_device_types.as_deref()
     }
-    /// <p>The <code>NextToken</code> value to include in a future
-    /// <code>GetVpnConnectionDeviceTypes</code> request. When the results of a
-    /// <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>,
-    /// this value can be used to retrieve the next page of results. This value is null when
-    /// there are no more results to return.</p>
+    /// <p>The <code>NextToken</code> value to include in a future <code>GetVpnConnectionDeviceTypes</code> request. When the results of a <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8266,19 +8210,17 @@ pub mod get_vpn_connection_device_types_output {
         ///
         /// To override the contents of this collection use [`set_vpn_connection_device_types`](Self::set_vpn_connection_device_types).
         ///
-        /// <p>List of customer gateway devices that have a sample configuration file available for
-        /// use.</p>
+        /// <p>List of customer gateway devices that have a sample configuration file available for use.</p>
         pub fn vpn_connection_device_types(
             mut self,
-            input: impl Into<crate::model::VpnConnectionDeviceType>,
+            input: crate::model::VpnConnectionDeviceType,
         ) -> Self {
             let mut v = self.vpn_connection_device_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpn_connection_device_types = Some(v);
             self
         }
-        /// <p>List of customer gateway devices that have a sample configuration file available for
-        /// use.</p>
+        /// <p>List of customer gateway devices that have a sample configuration file available for use.</p>
         pub fn set_vpn_connection_device_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VpnConnectionDeviceType>>,
@@ -8286,20 +8228,12 @@ pub mod get_vpn_connection_device_types_output {
             self.vpn_connection_device_types = input;
             self
         }
-        /// <p>The <code>NextToken</code> value to include in a future
-        /// <code>GetVpnConnectionDeviceTypes</code> request. When the results of a
-        /// <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>,
-        /// this value can be used to retrieve the next page of results. This value is null when
-        /// there are no more results to return.</p>
+        /// <p>The <code>NextToken</code> value to include in a future <code>GetVpnConnectionDeviceTypes</code> request. When the results of a <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>NextToken</code> value to include in a future
-        /// <code>GetVpnConnectionDeviceTypes</code> request. When the results of a
-        /// <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>,
-        /// this value can be used to retrieve the next page of results. This value is null when
-        /// there are no more results to return.</p>
+        /// <p>The <code>NextToken</code> value to include in a future <code>GetVpnConnectionDeviceTypes</code> request. When the results of a <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8437,12 +8371,12 @@ pub mod get_transit_gateway_route_table_propagations_output {
         /// <p>Information about the route table propagations.</p>
         pub fn transit_gateway_route_table_propagations(
             mut self,
-            input: impl Into<crate::model::TransitGatewayRouteTablePropagation>,
+            input: crate::model::TransitGatewayRouteTablePropagation,
         ) -> Self {
             let mut v = self
                 .transit_gateway_route_table_propagations
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transit_gateway_route_table_propagations = Some(v);
             self
         }
@@ -8532,10 +8466,10 @@ pub mod get_transit_gateway_route_table_associations_output {
         /// <p>Information about the associations.</p>
         pub fn associations(
             mut self,
-            input: impl Into<crate::model::TransitGatewayRouteTableAssociation>,
+            input: crate::model::TransitGatewayRouteTableAssociation,
         ) -> Self {
             let mut v = self.associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.associations = Some(v);
             self
         }
@@ -8627,12 +8561,12 @@ pub mod get_transit_gateway_prefix_list_references_output {
         /// <p>Information about the prefix list references.</p>
         pub fn transit_gateway_prefix_list_references(
             mut self,
-            input: impl Into<crate::model::TransitGatewayPrefixListReference>,
+            input: crate::model::TransitGatewayPrefixListReference,
         ) -> Self {
             let mut v = self
                 .transit_gateway_prefix_list_references
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transit_gateway_prefix_list_references = Some(v);
             self
         }
@@ -8724,10 +8658,10 @@ pub mod get_transit_gateway_multicast_domain_associations_output {
         /// <p>Information about the multicast domain associations.</p>
         pub fn multicast_domain_associations(
             mut self,
-            input: impl Into<crate::model::TransitGatewayMulticastDomainAssociation>,
+            input: crate::model::TransitGatewayMulticastDomainAssociation,
         ) -> Self {
             let mut v = self.multicast_domain_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.multicast_domain_associations = Some(v);
             self
         }
@@ -8819,12 +8753,12 @@ pub mod get_transit_gateway_attachment_propagations_output {
         /// <p>Information about the propagation route tables.</p>
         pub fn transit_gateway_attachment_propagations(
             mut self,
-            input: impl Into<crate::model::TransitGatewayAttachmentPropagation>,
+            input: crate::model::TransitGatewayAttachmentPropagation,
         ) -> Self {
             let mut v = self
                 .transit_gateway_attachment_propagations
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transit_gateway_attachment_propagations = Some(v);
             self
         }
@@ -8931,10 +8865,10 @@ pub mod get_subnet_cidr_reservations_output {
         /// <p>Information about the IPv4 subnet CIDR reservations.</p>
         pub fn subnet_ipv4_cidr_reservations(
             mut self,
-            input: impl Into<crate::model::SubnetCidrReservation>,
+            input: crate::model::SubnetCidrReservation,
         ) -> Self {
             let mut v = self.subnet_ipv4_cidr_reservations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subnet_ipv4_cidr_reservations = Some(v);
             self
         }
@@ -8953,10 +8887,10 @@ pub mod get_subnet_cidr_reservations_output {
         /// <p>Information about the IPv6 subnet CIDR reservations.</p>
         pub fn subnet_ipv6_cidr_reservations(
             mut self,
-            input: impl Into<crate::model::SubnetCidrReservation>,
+            input: crate::model::SubnetCidrReservation,
         ) -> Self {
             let mut v = self.subnet_ipv6_cidr_reservations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subnet_ipv6_cidr_reservations = Some(v);
             self
         }
@@ -8999,42 +8933,20 @@ impl GetSubnetCidrReservationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSpotPlacementScoresOutput {
-    /// <p>The Spot placement score for the top 10 Regions or Availability Zones, scored on a scale
-    /// from 1 to 10. Each score  reflects how likely it is that each Region or Availability Zone
-    /// will succeed at fulfilling the specified target capacity  <i>at the time of the Spot
-    /// placement score request</i>. A score of <code>10</code> means that your Spot
-    /// capacity request is highly likely to succeed in that Region or Availability Zone. </p>
-    /// <p>If you request a Spot placement score for Regions, a high score assumes that your fleet
-    /// request will be configured to use all Availability Zones and the
-    /// <code>capacity-optimized</code> allocation strategy. If you request a Spot placement
-    /// score for Availability Zones, a high score assumes that your fleet request will be
-    /// configured to use a single Availability Zone and the <code>capacity-optimized</code>
-    /// allocation strategy.</p>
-    /// <p>Different  Regions or Availability Zones might return the same score.</p>
-    /// <note>
-    /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your
-    /// Spot request will be fully or partially fulfilled.</p>
+    /// <p>The Spot placement score for the top 10 Regions or Availability Zones, scored on a scale from 1 to 10. Each score  reflects how likely it is that each Region or Availability Zone will succeed at fulfilling the specified target capacity  <i>at the time of the Spot placement score request</i>. A score of <code>10</code> means that your Spot capacity request is highly likely to succeed in that Region or Availability Zone. </p>
+    /// <p>If you request a Spot placement score for Regions, a high score assumes that your fleet request will be configured to use all Availability Zones and the <code>capacity-optimized</code> allocation strategy. If you request a Spot placement score for Availability Zones, a high score assumes that your fleet request will be configured to use a single Availability Zone and the <code>capacity-optimized</code> allocation strategy.</p>
+    /// <p>Different  Regions or Availability Zones might return the same score.</p> <note>
+    /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your Spot request will be fully or partially fulfilled.</p>
     /// </note>
     pub spot_placement_scores: std::option::Option<std::vec::Vec<crate::model::SpotPlacementScore>>,
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetSpotPlacementScoresOutput {
-    /// <p>The Spot placement score for the top 10 Regions or Availability Zones, scored on a scale
-    /// from 1 to 10. Each score  reflects how likely it is that each Region or Availability Zone
-    /// will succeed at fulfilling the specified target capacity  <i>at the time of the Spot
-    /// placement score request</i>. A score of <code>10</code> means that your Spot
-    /// capacity request is highly likely to succeed in that Region or Availability Zone. </p>
-    /// <p>If you request a Spot placement score for Regions, a high score assumes that your fleet
-    /// request will be configured to use all Availability Zones and the
-    /// <code>capacity-optimized</code> allocation strategy. If you request a Spot placement
-    /// score for Availability Zones, a high score assumes that your fleet request will be
-    /// configured to use a single Availability Zone and the <code>capacity-optimized</code>
-    /// allocation strategy.</p>
-    /// <p>Different  Regions or Availability Zones might return the same score.</p>
-    /// <note>
-    /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your
-    /// Spot request will be fully or partially fulfilled.</p>
+    /// <p>The Spot placement score for the top 10 Regions or Availability Zones, scored on a scale from 1 to 10. Each score  reflects how likely it is that each Region or Availability Zone will succeed at fulfilling the specified target capacity  <i>at the time of the Spot placement score request</i>. A score of <code>10</code> means that your Spot capacity request is highly likely to succeed in that Region or Availability Zone. </p>
+    /// <p>If you request a Spot placement score for Regions, a high score assumes that your fleet request will be configured to use all Availability Zones and the <code>capacity-optimized</code> allocation strategy. If you request a Spot placement score for Availability Zones, a high score assumes that your fleet request will be configured to use a single Availability Zone and the <code>capacity-optimized</code> allocation strategy.</p>
+    /// <p>Different  Regions or Availability Zones might return the same score.</p> <note>
+    /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your Spot request will be fully or partially fulfilled.</p>
     /// </note>
     pub fn spot_placement_scores(
         &self,
@@ -9069,46 +8981,21 @@ pub mod get_spot_placement_scores_output {
         ///
         /// To override the contents of this collection use [`set_spot_placement_scores`](Self::set_spot_placement_scores).
         ///
-        /// <p>The Spot placement score for the top 10 Regions or Availability Zones, scored on a scale
-        /// from 1 to 10. Each score  reflects how likely it is that each Region or Availability Zone
-        /// will succeed at fulfilling the specified target capacity  <i>at the time of the Spot
-        /// placement score request</i>. A score of <code>10</code> means that your Spot
-        /// capacity request is highly likely to succeed in that Region or Availability Zone. </p>
-        /// <p>If you request a Spot placement score for Regions, a high score assumes that your fleet
-        /// request will be configured to use all Availability Zones and the
-        /// <code>capacity-optimized</code> allocation strategy. If you request a Spot placement
-        /// score for Availability Zones, a high score assumes that your fleet request will be
-        /// configured to use a single Availability Zone and the <code>capacity-optimized</code>
-        /// allocation strategy.</p>
-        /// <p>Different  Regions or Availability Zones might return the same score.</p>
-        /// <note>
-        /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your
-        /// Spot request will be fully or partially fulfilled.</p>
+        /// <p>The Spot placement score for the top 10 Regions or Availability Zones, scored on a scale from 1 to 10. Each score  reflects how likely it is that each Region or Availability Zone will succeed at fulfilling the specified target capacity  <i>at the time of the Spot placement score request</i>. A score of <code>10</code> means that your Spot capacity request is highly likely to succeed in that Region or Availability Zone. </p>
+        /// <p>If you request a Spot placement score for Regions, a high score assumes that your fleet request will be configured to use all Availability Zones and the <code>capacity-optimized</code> allocation strategy. If you request a Spot placement score for Availability Zones, a high score assumes that your fleet request will be configured to use a single Availability Zone and the <code>capacity-optimized</code> allocation strategy.</p>
+        /// <p>Different  Regions or Availability Zones might return the same score.</p> <note>
+        /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your Spot request will be fully or partially fulfilled.</p>
         /// </note>
-        pub fn spot_placement_scores(
-            mut self,
-            input: impl Into<crate::model::SpotPlacementScore>,
-        ) -> Self {
+        pub fn spot_placement_scores(mut self, input: crate::model::SpotPlacementScore) -> Self {
             let mut v = self.spot_placement_scores.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.spot_placement_scores = Some(v);
             self
         }
-        /// <p>The Spot placement score for the top 10 Regions or Availability Zones, scored on a scale
-        /// from 1 to 10. Each score  reflects how likely it is that each Region or Availability Zone
-        /// will succeed at fulfilling the specified target capacity  <i>at the time of the Spot
-        /// placement score request</i>. A score of <code>10</code> means that your Spot
-        /// capacity request is highly likely to succeed in that Region or Availability Zone. </p>
-        /// <p>If you request a Spot placement score for Regions, a high score assumes that your fleet
-        /// request will be configured to use all Availability Zones and the
-        /// <code>capacity-optimized</code> allocation strategy. If you request a Spot placement
-        /// score for Availability Zones, a high score assumes that your fleet request will be
-        /// configured to use a single Availability Zone and the <code>capacity-optimized</code>
-        /// allocation strategy.</p>
-        /// <p>Different  Regions or Availability Zones might return the same score.</p>
-        /// <note>
-        /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your
-        /// Spot request will be fully or partially fulfilled.</p>
+        /// <p>The Spot placement score for the top 10 Regions or Availability Zones, scored on a scale from 1 to 10. Each score  reflects how likely it is that each Region or Availability Zone will succeed at fulfilling the specified target capacity  <i>at the time of the Spot placement score request</i>. A score of <code>10</code> means that your Spot capacity request is highly likely to succeed in that Region or Availability Zone. </p>
+        /// <p>If you request a Spot placement score for Regions, a high score assumes that your fleet request will be configured to use all Availability Zones and the <code>capacity-optimized</code> allocation strategy. If you request a Spot placement score for Availability Zones, a high score assumes that your fleet request will be configured to use a single Availability Zone and the <code>capacity-optimized</code> allocation strategy.</p>
+        /// <p>Different  Regions or Availability Zones might return the same score.</p> <note>
+        /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your Spot request will be fully or partially fulfilled.</p>
         /// </note>
         pub fn set_spot_placement_scores(
             mut self,
@@ -9147,15 +9034,11 @@ impl GetSpotPlacementScoresOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSerialConsoleAccessStatusOutput {
-    /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
-    /// your account. If <code>false</code>, access to the EC2 serial console of all instances
-    /// is disabled for your account.</p>
+    /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
     pub serial_console_access_enabled: std::option::Option<bool>,
 }
 impl GetSerialConsoleAccessStatusOutput {
-    /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
-    /// your account. If <code>false</code>, access to the EC2 serial console of all instances
-    /// is disabled for your account.</p>
+    /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
     pub fn serial_console_access_enabled(&self) -> std::option::Option<bool> {
         self.serial_console_access_enabled
     }
@@ -9179,16 +9062,12 @@ pub mod get_serial_console_access_status_output {
         pub(crate) serial_console_access_enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
-        /// your account. If <code>false</code>, access to the EC2 serial console of all instances
-        /// is disabled for your account.</p>
+        /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
         pub fn serial_console_access_enabled(mut self, input: bool) -> Self {
             self.serial_console_access_enabled = Some(input);
             self
         }
-        /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
-        /// your account. If <code>false</code>, access to the EC2 serial console of all instances
-        /// is disabled for your account.</p>
+        /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
         pub fn set_serial_console_access_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -9408,10 +9287,10 @@ pub mod get_reserved_instances_exchange_quote_output {
         /// <p>The configuration of your Convertible Reserved Instances.</p>
         pub fn reserved_instance_value_set(
             mut self,
-            input: impl Into<crate::model::ReservedInstanceReservationValue>,
+            input: crate::model::ReservedInstanceReservationValue,
         ) -> Self {
             let mut v = self.reserved_instance_value_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_instance_value_set = Some(v);
             self
         }
@@ -9448,10 +9327,10 @@ pub mod get_reserved_instances_exchange_quote_output {
         /// <p>The values of the target Convertible Reserved Instances.</p>
         pub fn target_configuration_value_set(
             mut self,
-            input: impl Into<crate::model::TargetReservationValue>,
+            input: crate::model::TargetReservationValue,
         ) -> Self {
             let mut v = self.target_configuration_value_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_configuration_value_set = Some(v);
             self
         }
@@ -9506,8 +9385,7 @@ impl GetReservedInstancesExchangeQuoteOutput {
 pub struct GetPasswordDataOutput {
     /// <p>The ID of the Windows instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The password of the instance. Returns an empty string if the password is not
-    /// available.</p>
+    /// <p>The password of the instance. Returns an empty string if the password is not available.</p>
     pub password_data: std::option::Option<std::string::String>,
     /// <p>The time the data was last updated.</p>
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -9517,8 +9395,7 @@ impl GetPasswordDataOutput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The password of the instance. Returns an empty string if the password is not
-    /// available.</p>
+    /// <p>The password of the instance. Returns an empty string if the password is not available.</p>
     pub fn password_data(&self) -> std::option::Option<&str> {
         self.password_data.as_deref()
     }
@@ -9557,14 +9434,12 @@ pub mod get_password_data_output {
             self.instance_id = input;
             self
         }
-        /// <p>The password of the instance. Returns an empty string if the password is not
-        /// available.</p>
+        /// <p>The password of the instance. Returns an empty string if the password is not available.</p>
         pub fn password_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.password_data = Some(input.into());
             self
         }
-        /// <p>The password of the instance. Returns an empty string if the password is not
-        /// available.</p>
+        /// <p>The password of the instance. Returns an empty string if the password is not available.</p>
         pub fn set_password_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9766,10 +9641,10 @@ pub mod get_network_insights_access_scope_analysis_findings_output {
         /// <p>The findings associated with Network Access Scope Analysis.</p>
         pub fn analysis_findings(
             mut self,
-            input: impl Into<crate::model::AccessScopeAnalysisFinding>,
+            input: crate::model::AccessScopeAnalysisFinding,
         ) -> Self {
             let mut v = self.analysis_findings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.analysis_findings = Some(v);
             self
         }
@@ -9854,9 +9729,9 @@ pub mod get_managed_prefix_list_entries_output {
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
         /// <p>Information about the prefix list entries.</p>
-        pub fn entries(mut self, input: impl Into<crate::model::PrefixListEntry>) -> Self {
+        pub fn entries(mut self, input: crate::model::PrefixListEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
@@ -9942,10 +9817,10 @@ pub mod get_managed_prefix_list_associations_output {
         /// <p>Information about the associations.</p>
         pub fn prefix_list_associations(
             mut self,
-            input: impl Into<crate::model::PrefixListAssociation>,
+            input: crate::model::PrefixListAssociation,
         ) -> Self {
             let mut v = self.prefix_list_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.prefix_list_associations = Some(v);
             self
         }
@@ -10099,12 +9974,9 @@ pub mod get_ipam_resource_cidrs_output {
         /// To override the contents of this collection use [`set_ipam_resource_cidrs`](Self::set_ipam_resource_cidrs).
         ///
         /// <p>The resource CIDRs.</p>
-        pub fn ipam_resource_cidrs(
-            mut self,
-            input: impl Into<crate::model::IpamResourceCidr>,
-        ) -> Self {
+        pub fn ipam_resource_cidrs(mut self, input: crate::model::IpamResourceCidr) -> Self {
             let mut v = self.ipam_resource_cidrs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ipam_resource_cidrs = Some(v);
             self
         }
@@ -10174,9 +10046,9 @@ pub mod get_ipam_pool_cidrs_output {
         /// To override the contents of this collection use [`set_ipam_pool_cidrs`](Self::set_ipam_pool_cidrs).
         ///
         /// <p>Information about the CIDRs provisioned to an IPAM pool.</p>
-        pub fn ipam_pool_cidrs(mut self, input: impl Into<crate::model::IpamPoolCidr>) -> Self {
+        pub fn ipam_pool_cidrs(mut self, input: crate::model::IpamPoolCidr) -> Self {
             let mut v = self.ipam_pool_cidrs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ipam_pool_cidrs = Some(v);
             self
         }
@@ -10259,12 +10131,9 @@ pub mod get_ipam_pool_allocations_output {
         /// To override the contents of this collection use [`set_ipam_pool_allocations`](Self::set_ipam_pool_allocations).
         ///
         /// <p>The IPAM pool allocations you want information on.</p>
-        pub fn ipam_pool_allocations(
-            mut self,
-            input: impl Into<crate::model::IpamPoolAllocation>,
-        ) -> Self {
+        pub fn ipam_pool_allocations(mut self, input: crate::model::IpamPoolAllocation) -> Self {
             let mut v = self.ipam_pool_allocations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ipam_pool_allocations = Some(v);
             self
         }
@@ -10347,12 +10216,9 @@ pub mod get_ipam_address_history_output {
         /// To override the contents of this collection use [`set_history_records`](Self::set_history_records).
         ///
         /// <p>A historical record for a CIDR within an IPAM scope. If the CIDR is associated with an EC2 instance, you will see an object in the response for the instance and one for the network interface.</p>
-        pub fn history_records(
-            mut self,
-            input: impl Into<crate::model::IpamAddressHistoryRecord>,
-        ) -> Self {
+        pub fn history_records(mut self, input: crate::model::IpamAddressHistoryRecord) -> Self {
             let mut v = self.history_records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.history_records = Some(v);
             self
         }
@@ -10439,10 +10305,10 @@ pub mod get_instance_types_from_instance_requirements_output {
         /// <p>The instance types with the specified instance attributes.</p>
         pub fn instance_types(
             mut self,
-            input: impl Into<crate::model::InstanceTypeInfoFromInstanceRequirements>,
+            input: crate::model::InstanceTypeInfoFromInstanceRequirements,
         ) -> Self {
             let mut v = self.instance_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_types = Some(v);
             self
         }
@@ -10487,12 +10353,9 @@ impl GetInstanceTypesFromInstanceRequirementsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetHostReservationPurchasePreviewOutput {
-    /// <p>The currency in which the <code>totalUpfrontPrice</code> and
-    /// <code>totalHourlyPrice</code> amounts are specified. At this time, the only
-    /// supported currency is <code>USD</code>.</p>
+    /// <p>The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
     pub currency_code: std::option::Option<crate::model::CurrencyCodeValues>,
-    /// <p>The purchase information of the Dedicated Host reservation and the Dedicated Hosts
-    /// associated with it.</p>
+    /// <p>The purchase information of the Dedicated Host reservation and the Dedicated Hosts associated with it.</p>
     pub purchase: std::option::Option<std::vec::Vec<crate::model::Purchase>>,
     /// <p>The potential total hourly price of the reservation per hour.</p>
     pub total_hourly_price: std::option::Option<std::string::String>,
@@ -10500,14 +10363,11 @@ pub struct GetHostReservationPurchasePreviewOutput {
     pub total_upfront_price: std::option::Option<std::string::String>,
 }
 impl GetHostReservationPurchasePreviewOutput {
-    /// <p>The currency in which the <code>totalUpfrontPrice</code> and
-    /// <code>totalHourlyPrice</code> amounts are specified. At this time, the only
-    /// supported currency is <code>USD</code>.</p>
+    /// <p>The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
     pub fn currency_code(&self) -> std::option::Option<&crate::model::CurrencyCodeValues> {
         self.currency_code.as_ref()
     }
-    /// <p>The purchase information of the Dedicated Host reservation and the Dedicated Hosts
-    /// associated with it.</p>
+    /// <p>The purchase information of the Dedicated Host reservation and the Dedicated Hosts associated with it.</p>
     pub fn purchase(&self) -> std::option::Option<&[crate::model::Purchase]> {
         self.purchase.as_deref()
     }
@@ -10542,16 +10402,12 @@ pub mod get_host_reservation_purchase_preview_output {
         pub(crate) total_upfront_price: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The currency in which the <code>totalUpfrontPrice</code> and
-        /// <code>totalHourlyPrice</code> amounts are specified. At this time, the only
-        /// supported currency is <code>USD</code>.</p>
+        /// <p>The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
         pub fn currency_code(mut self, input: crate::model::CurrencyCodeValues) -> Self {
             self.currency_code = Some(input);
             self
         }
-        /// <p>The currency in which the <code>totalUpfrontPrice</code> and
-        /// <code>totalHourlyPrice</code> amounts are specified. At this time, the only
-        /// supported currency is <code>USD</code>.</p>
+        /// <p>The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
         pub fn set_currency_code(
             mut self,
             input: std::option::Option<crate::model::CurrencyCodeValues>,
@@ -10563,16 +10419,14 @@ pub mod get_host_reservation_purchase_preview_output {
         ///
         /// To override the contents of this collection use [`set_purchase`](Self::set_purchase).
         ///
-        /// <p>The purchase information of the Dedicated Host reservation and the Dedicated Hosts
-        /// associated with it.</p>
-        pub fn purchase(mut self, input: impl Into<crate::model::Purchase>) -> Self {
+        /// <p>The purchase information of the Dedicated Host reservation and the Dedicated Hosts associated with it.</p>
+        pub fn purchase(mut self, input: crate::model::Purchase) -> Self {
             let mut v = self.purchase.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.purchase = Some(v);
             self
         }
-        /// <p>The purchase information of the Dedicated Host reservation and the Dedicated Hosts
-        /// associated with it.</p>
+        /// <p>The purchase information of the Dedicated Host reservation and the Dedicated Hosts associated with it.</p>
         pub fn set_purchase(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Purchase>>,
@@ -10685,10 +10539,10 @@ pub mod get_groups_for_capacity_reservation_output {
         /// <p>Information about the resource groups to which the Capacity Reservation has been added.</p>
         pub fn capacity_reservation_groups(
             mut self,
-            input: impl Into<crate::model::CapacityReservationGroup>,
+            input: crate::model::CapacityReservationGroup,
         ) -> Self {
             let mut v = self.capacity_reservation_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capacity_reservation_groups = Some(v);
             self
         }
@@ -11024,8 +10878,7 @@ impl GetConsoleScreenshotOutput {
 pub struct GetConsoleOutputOutput {
     /// <p>The ID of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The console output, base64-encoded. If you are using a command line tool, the tool
-    /// decodes the output for you.</p>
+    /// <p>The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.</p>
     pub output: std::option::Option<std::string::String>,
     /// <p>The time at which the output was last updated.</p>
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -11035,8 +10888,7 @@ impl GetConsoleOutputOutput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The console output, base64-encoded. If you are using a command line tool, the tool
-    /// decodes the output for you.</p>
+    /// <p>The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.</p>
     pub fn output(&self) -> std::option::Option<&str> {
         self.output.as_deref()
     }
@@ -11075,14 +10927,12 @@ pub mod get_console_output_output {
             self.instance_id = input;
             self
         }
-        /// <p>The console output, base64-encoded. If you are using a command line tool, the tool
-        /// decodes the output for you.</p>
+        /// <p>The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.</p>
         pub fn output(mut self, input: impl Into<std::string::String>) -> Self {
             self.output = Some(input.into());
             self
         }
-        /// <p>The console output, base64-encoded. If you are using a command line tool, the tool
-        /// decodes the output for you.</p>
+        /// <p>The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.</p>
         pub fn set_output(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.output = input;
             self
@@ -11181,12 +11031,9 @@ pub mod get_coip_pool_usage_output {
         /// To override the contents of this collection use [`set_coip_address_usages`](Self::set_coip_address_usages).
         ///
         /// <p>Information about the address usage.</p>
-        pub fn coip_address_usages(
-            mut self,
-            input: impl Into<crate::model::CoipAddressUsage>,
-        ) -> Self {
+        pub fn coip_address_usages(mut self, input: crate::model::CoipAddressUsage) -> Self {
             let mut v = self.coip_address_usages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.coip_address_usages = Some(v);
             self
         }
@@ -11247,31 +11094,11 @@ pub struct GetCapacityReservationUsageOutput {
     pub available_instance_count: std::option::Option<i32>,
     /// <p>The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified
-    /// in your request. The reserved capacity is no longer available for your use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no
-    /// longer available for your use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code> - The Capacity Reservation request was successful but the capacity
-    /// provisioning is still pending.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>failed</code> - The Capacity Reservation request has failed. A request might fail
-    /// due to invalid request parameters, capacity constraints, or instance limit constraints.
-    /// Failed requests are retained for 60 minutes.</p>
-    /// </li>
+    /// <li> <p> <code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p> </li>
+    /// <li> <p> <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your request. The reserved capacity is no longer available for your use.</p> </li>
+    /// <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for your use.</p> </li>
+    /// <li> <p> <code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still pending.</p> </li>
+    /// <li> <p> <code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.</p> </li>
     /// </ul>
     pub state: std::option::Option<crate::model::CapacityReservationState>,
     /// <p>Information about the Capacity Reservation usage.</p>
@@ -11300,31 +11127,11 @@ impl GetCapacityReservationUsageOutput {
     }
     /// <p>The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified
-    /// in your request. The reserved capacity is no longer available for your use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no
-    /// longer available for your use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code> - The Capacity Reservation request was successful but the capacity
-    /// provisioning is still pending.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>failed</code> - The Capacity Reservation request has failed. A request might fail
-    /// due to invalid request parameters, capacity constraints, or instance limit constraints.
-    /// Failed requests are retained for 60 minutes.</p>
-    /// </li>
+    /// <li> <p> <code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p> </li>
+    /// <li> <p> <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your request. The reserved capacity is no longer available for your use.</p> </li>
+    /// <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for your use.</p> </li>
+    /// <li> <p> <code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still pending.</p> </li>
+    /// <li> <p> <code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.</p> </li>
     /// </ul>
     pub fn state(&self) -> std::option::Option<&crate::model::CapacityReservationState> {
         self.state.as_ref()
@@ -11420,31 +11227,11 @@ pub mod get_capacity_reservation_usage_output {
         }
         /// <p>The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified
-        /// in your request. The reserved capacity is no longer available for your use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no
-        /// longer available for your use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code> - The Capacity Reservation request was successful but the capacity
-        /// provisioning is still pending.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>failed</code> - The Capacity Reservation request has failed. A request might fail
-        /// due to invalid request parameters, capacity constraints, or instance limit constraints.
-        /// Failed requests are retained for 60 minutes.</p>
-        /// </li>
+        /// <li> <p> <code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p> </li>
+        /// <li> <p> <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your request. The reserved capacity is no longer available for your use.</p> </li>
+        /// <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for your use.</p> </li>
+        /// <li> <p> <code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still pending.</p> </li>
+        /// <li> <p> <code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.</p> </li>
         /// </ul>
         pub fn state(mut self, input: crate::model::CapacityReservationState) -> Self {
             self.state = Some(input);
@@ -11452,31 +11239,11 @@ pub mod get_capacity_reservation_usage_output {
         }
         /// <p>The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified
-        /// in your request. The reserved capacity is no longer available for your use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no
-        /// longer available for your use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code> - The Capacity Reservation request was successful but the capacity
-        /// provisioning is still pending.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>failed</code> - The Capacity Reservation request has failed. A request might fail
-        /// due to invalid request parameters, capacity constraints, or instance limit constraints.
-        /// Failed requests are retained for 60 minutes.</p>
-        /// </li>
+        /// <li> <p> <code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p> </li>
+        /// <li> <p> <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your request. The reserved capacity is no longer available for your use.</p> </li>
+        /// <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for your use.</p> </li>
+        /// <li> <p> <code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still pending.</p> </li>
+        /// <li> <p> <code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.</p> </li>
         /// </ul>
         pub fn set_state(
             mut self,
@@ -11490,9 +11257,9 @@ pub mod get_capacity_reservation_usage_output {
         /// To override the contents of this collection use [`set_instance_usages`](Self::set_instance_usages).
         ///
         /// <p>Information about the Capacity Reservation usage.</p>
-        pub fn instance_usages(mut self, input: impl Into<crate::model::InstanceUsage>) -> Self {
+        pub fn instance_usages(mut self, input: crate::model::InstanceUsage) -> Self {
             let mut v = self.instance_usages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_usages = Some(v);
             self
         }
@@ -11571,12 +11338,9 @@ pub mod get_associated_ipv6_pool_cidrs_output {
         /// To override the contents of this collection use [`set_ipv6_cidr_associations`](Self::set_ipv6_cidr_associations).
         ///
         /// <p>Information about the IPv6 CIDR block associations.</p>
-        pub fn ipv6_cidr_associations(
-            mut self,
-            input: impl Into<crate::model::Ipv6CidrAssociation>,
-        ) -> Self {
+        pub fn ipv6_cidr_associations(mut self, input: crate::model::Ipv6CidrAssociation) -> Self {
             let mut v = self.ipv6_cidr_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ipv6_cidr_associations = Some(v);
             self
         }
@@ -11649,9 +11413,9 @@ pub mod get_associated_enclave_certificate_iam_roles_output {
         /// To override the contents of this collection use [`set_associated_roles`](Self::set_associated_roles).
         ///
         /// <p>Information about the associated IAM roles.</p>
-        pub fn associated_roles(mut self, input: impl Into<crate::model::AssociatedRole>) -> Self {
+        pub fn associated_roles(mut self, input: crate::model::AssociatedRole) -> Self {
             let mut v = self.associated_roles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.associated_roles = Some(v);
             self
         }
@@ -11683,13 +11447,11 @@ impl GetAssociatedEnclaveCertificateIamRolesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportTransitGatewayRoutesOutput {
-    /// <p>The URL of the exported file in Amazon S3. For example,
-    /// s3://<i>bucket_name</i>/VPCTransitGateway/TransitGatewayRouteTables/<i>file_name</i>.</p>
+    /// <p>The URL of the exported file in Amazon S3. For example, s3://<i>bucket_name</i>/VPCTransitGateway/TransitGatewayRouteTables/<i>file_name</i>.</p>
     pub s3_location: std::option::Option<std::string::String>,
 }
 impl ExportTransitGatewayRoutesOutput {
-    /// <p>The URL of the exported file in Amazon S3. For example,
-    /// s3://<i>bucket_name</i>/VPCTransitGateway/TransitGatewayRouteTables/<i>file_name</i>.</p>
+    /// <p>The URL of the exported file in Amazon S3. For example, s3://<i>bucket_name</i>/VPCTransitGateway/TransitGatewayRouteTables/<i>file_name</i>.</p>
     pub fn s3_location(&self) -> std::option::Option<&str> {
         self.s3_location.as_deref()
     }
@@ -11710,14 +11472,12 @@ pub mod export_transit_gateway_routes_output {
         pub(crate) s3_location: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The URL of the exported file in Amazon S3. For example,
-        /// s3://<i>bucket_name</i>/VPCTransitGateway/TransitGatewayRouteTables/<i>file_name</i>.</p>
+        /// <p>The URL of the exported file in Amazon S3. For example, s3://<i>bucket_name</i>/VPCTransitGateway/TransitGatewayRouteTables/<i>file_name</i>.</p>
         pub fn s3_location(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_location = Some(input.into());
             self
         }
-        /// <p>The URL of the exported file in Amazon S3. For example,
-        /// s3://<i>bucket_name</i>/VPCTransitGateway/TransitGatewayRouteTables/<i>file_name</i>.</p>
+        /// <p>The URL of the exported file in Amazon S3. For example, s3://<i>bucket_name</i>/VPCTransitGateway/TransitGatewayRouteTables/<i>file_name</i>.</p>
         pub fn set_s3_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_location = input;
             self
@@ -11749,15 +11509,13 @@ pub struct ExportImageOutput {
     pub export_image_task_id: std::option::Option<std::string::String>,
     /// <p>The ID of the image.</p>
     pub image_id: std::option::Option<std::string::String>,
-    /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon
-    /// S3 bucket.</p>
+    /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket.</p>
     pub role_name: std::option::Option<std::string::String>,
     /// <p>The percent complete of the export image task.</p>
     pub progress: std::option::Option<std::string::String>,
     /// <p>Information about the destination Amazon S3 bucket.</p>
     pub s3_export_location: std::option::Option<crate::model::ExportTaskS3Location>,
-    /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>,
-    /// <code>deleting</code>, and <code>deleted</code>.</p>
+    /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>, <code>deleting</code>, and <code>deleted</code>.</p>
     pub status: std::option::Option<std::string::String>,
     /// <p>The status message for the export image task.</p>
     pub status_message: std::option::Option<std::string::String>,
@@ -11781,8 +11539,7 @@ impl ExportImageOutput {
     pub fn image_id(&self) -> std::option::Option<&str> {
         self.image_id.as_deref()
     }
-    /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon
-    /// S3 bucket.</p>
+    /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket.</p>
     pub fn role_name(&self) -> std::option::Option<&str> {
         self.role_name.as_deref()
     }
@@ -11794,8 +11551,7 @@ impl ExportImageOutput {
     pub fn s3_export_location(&self) -> std::option::Option<&crate::model::ExportTaskS3Location> {
         self.s3_export_location.as_ref()
     }
-    /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>,
-    /// <code>deleting</code>, and <code>deleted</code>.</p>
+    /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>, <code>deleting</code>, and <code>deleted</code>.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -11888,14 +11644,12 @@ pub mod export_image_output {
             self.image_id = input;
             self
         }
-        /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon
-        /// S3 bucket.</p>
+        /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket.</p>
         pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_name = Some(input.into());
             self
         }
-        /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon
-        /// S3 bucket.</p>
+        /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket.</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_name = input;
             self
@@ -11923,14 +11677,12 @@ pub mod export_image_output {
             self.s3_export_location = input;
             self
         }
-        /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>,
-        /// <code>deleting</code>, and <code>deleted</code>.</p>
+        /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>, <code>deleting</code>, and <code>deleted</code>.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>,
-        /// <code>deleting</code>, and <code>deleted</code>.</p>
+        /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>, <code>deleting</code>, and <code>deleted</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -11953,9 +11705,9 @@ pub mod export_image_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Any tags assigned to the export image task.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12370,15 +12122,11 @@ impl EnableTransitGatewayRouteTablePropagationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableSerialConsoleAccessOutput {
-    /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
-    /// your account. If <code>false</code>, access to the EC2 serial console of all instances
-    /// is disabled for your account.</p>
+    /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
     pub serial_console_access_enabled: std::option::Option<bool>,
 }
 impl EnableSerialConsoleAccessOutput {
-    /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
-    /// your account. If <code>false</code>, access to the EC2 serial console of all instances
-    /// is disabled for your account.</p>
+    /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
     pub fn serial_console_access_enabled(&self) -> std::option::Option<bool> {
         self.serial_console_access_enabled
     }
@@ -12402,16 +12150,12 @@ pub mod enable_serial_console_access_output {
         pub(crate) serial_console_access_enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
-        /// your account. If <code>false</code>, access to the EC2 serial console of all instances
-        /// is disabled for your account.</p>
+        /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
         pub fn serial_console_access_enabled(mut self, input: bool) -> Self {
             self.serial_console_access_enabled = Some(input);
             self
         }
-        /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
-        /// your account. If <code>false</code>, access to the EC2 serial console of all instances
-        /// is disabled for your account.</p>
+        /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
         pub fn set_serial_console_access_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -12594,10 +12338,10 @@ pub mod enable_fast_snapshot_restores_output {
         /// <p>Information about the snapshots for which fast snapshot restores were successfully enabled.</p>
         pub fn successful(
             mut self,
-            input: impl Into<crate::model::EnableFastSnapshotRestoreSuccessItem>,
+            input: crate::model::EnableFastSnapshotRestoreSuccessItem,
         ) -> Self {
             let mut v = self.successful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successful = Some(v);
             self
         }
@@ -12618,10 +12362,10 @@ pub mod enable_fast_snapshot_restores_output {
         /// <p>Information about the snapshots for which fast snapshot restores could not be enabled.</p>
         pub fn unsuccessful(
             mut self,
-            input: impl Into<crate::model::EnableFastSnapshotRestoreErrorItem>,
+            input: crate::model::EnableFastSnapshotRestoreErrorItem,
         ) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessful = Some(v);
             self
         }
@@ -12824,9 +12568,7 @@ impl DisassociateVpcCidrBlockOutput {
 pub struct DisassociateTrunkInterfaceOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub r#return: std::option::Option<bool>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-    /// Idempotency</a>.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DisassociateTrunkInterfaceOutput {
@@ -12834,9 +12576,7 @@ impl DisassociateTrunkInterfaceOutput {
     pub fn r#return(&self) -> std::option::Option<bool> {
         self.r#return
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-    /// Idempotency</a>.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -12869,16 +12609,12 @@ pub mod disassociate_trunk_interface_output {
             self.r#return = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-        /// Idempotency</a>.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-        /// Idempotency</a>.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -13623,15 +13359,11 @@ impl DisableTransitGatewayRouteTablePropagationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableSerialConsoleAccessOutput {
-    /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
-    /// your account. If <code>false</code>, access to the EC2 serial console of all instances
-    /// is disabled for your account.</p>
+    /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
     pub serial_console_access_enabled: std::option::Option<bool>,
 }
 impl DisableSerialConsoleAccessOutput {
-    /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
-    /// your account. If <code>false</code>, access to the EC2 serial console of all instances
-    /// is disabled for your account.</p>
+    /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
     pub fn serial_console_access_enabled(&self) -> std::option::Option<bool> {
         self.serial_console_access_enabled
     }
@@ -13655,16 +13387,12 @@ pub mod disable_serial_console_access_output {
         pub(crate) serial_console_access_enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
-        /// your account. If <code>false</code>, access to the EC2 serial console of all instances
-        /// is disabled for your account.</p>
+        /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
         pub fn serial_console_access_enabled(mut self, input: bool) -> Self {
             self.serial_console_access_enabled = Some(input);
             self
         }
-        /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
-        /// your account. If <code>false</code>, access to the EC2 serial console of all instances
-        /// is disabled for your account.</p>
+        /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
         pub fn set_serial_console_access_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -13847,10 +13575,10 @@ pub mod disable_fast_snapshot_restores_output {
         /// <p>Information about the snapshots for which fast snapshot restores were successfully disabled.</p>
         pub fn successful(
             mut self,
-            input: impl Into<crate::model::DisableFastSnapshotRestoreSuccessItem>,
+            input: crate::model::DisableFastSnapshotRestoreSuccessItem,
         ) -> Self {
             let mut v = self.successful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successful = Some(v);
             self
         }
@@ -13871,10 +13599,10 @@ pub mod disable_fast_snapshot_restores_output {
         /// <p>Information about the snapshots for which fast snapshot restores could not be disabled.</p>
         pub fn unsuccessful(
             mut self,
-            input: impl Into<crate::model::DisableFastSnapshotRestoreErrorItem>,
+            input: crate::model::DisableFastSnapshotRestoreErrorItem,
         ) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessful = Some(v);
             self
         }
@@ -14291,9 +14019,9 @@ pub mod describe_vpn_gateways_output {
         /// To override the contents of this collection use [`set_vpn_gateways`](Self::set_vpn_gateways).
         ///
         /// <p>Information about one or more virtual private gateways.</p>
-        pub fn vpn_gateways(mut self, input: impl Into<crate::model::VpnGateway>) -> Self {
+        pub fn vpn_gateways(mut self, input: crate::model::VpnGateway) -> Self {
             let mut v = self.vpn_gateways.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpn_gateways = Some(v);
             self
         }
@@ -14354,9 +14082,9 @@ pub mod describe_vpn_connections_output {
         /// To override the contents of this collection use [`set_vpn_connections`](Self::set_vpn_connections).
         ///
         /// <p>Information about one or more VPN connections.</p>
-        pub fn vpn_connections(mut self, input: impl Into<crate::model::VpnConnection>) -> Self {
+        pub fn vpn_connections(mut self, input: crate::model::VpnConnection) -> Self {
             let mut v = self.vpn_connections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpn_connections = Some(v);
             self
         }
@@ -14425,9 +14153,9 @@ pub mod describe_vpcs_output {
         /// To override the contents of this collection use [`set_vpcs`](Self::set_vpcs).
         ///
         /// <p>Information about one or more VPCs.</p>
-        pub fn vpcs(mut self, input: impl Into<crate::model::Vpc>) -> Self {
+        pub fn vpcs(mut self, input: crate::model::Vpc) -> Self {
             let mut v = self.vpcs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpcs = Some(v);
             self
         }
@@ -14513,10 +14241,10 @@ pub mod describe_vpc_peering_connections_output {
         /// <p>Information about the VPC peering connections.</p>
         pub fn vpc_peering_connections(
             mut self,
-            input: impl Into<crate::model::VpcPeeringConnection>,
+            input: crate::model::VpcPeeringConnection,
         ) -> Self {
             let mut v = self.vpc_peering_connections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_peering_connections = Some(v);
             self
         }
@@ -14623,9 +14351,9 @@ pub mod describe_vpc_endpoint_services_output {
         /// To override the contents of this collection use [`set_service_details`](Self::set_service_details).
         ///
         /// <p>Information about the service.</p>
-        pub fn service_details(mut self, input: impl Into<crate::model::ServiceDetail>) -> Self {
+        pub fn service_details(mut self, input: crate::model::ServiceDetail) -> Self {
             let mut v = self.service_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_details = Some(v);
             self
         }
@@ -14707,12 +14435,9 @@ pub mod describe_vpc_endpoint_service_permissions_output {
         /// To override the contents of this collection use [`set_allowed_principals`](Self::set_allowed_principals).
         ///
         /// <p>Information about one or more allowed principals.</p>
-        pub fn allowed_principals(
-            mut self,
-            input: impl Into<crate::model::AllowedPrincipal>,
-        ) -> Self {
+        pub fn allowed_principals(mut self, input: crate::model::AllowedPrincipal) -> Self {
             let mut v = self.allowed_principals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.allowed_principals = Some(v);
             self
         }
@@ -14796,12 +14521,9 @@ pub mod describe_vpc_endpoint_service_configurations_output {
         /// To override the contents of this collection use [`set_service_configurations`](Self::set_service_configurations).
         ///
         /// <p>Information about one or more services.</p>
-        pub fn service_configurations(
-            mut self,
-            input: impl Into<crate::model::ServiceConfiguration>,
-        ) -> Self {
+        pub fn service_configurations(mut self, input: crate::model::ServiceConfiguration) -> Self {
             let mut v = self.service_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_configurations = Some(v);
             self
         }
@@ -14882,9 +14604,9 @@ pub mod describe_vpc_endpoints_output {
         /// To override the contents of this collection use [`set_vpc_endpoints`](Self::set_vpc_endpoints).
         ///
         /// <p>Information about the endpoints.</p>
-        pub fn vpc_endpoints(mut self, input: impl Into<crate::model::VpcEndpoint>) -> Self {
+        pub fn vpc_endpoints(mut self, input: crate::model::VpcEndpoint) -> Self {
             let mut v = self.vpc_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_endpoints = Some(v);
             self
         }
@@ -14970,10 +14692,10 @@ pub mod describe_vpc_endpoint_connections_output {
         /// <p>Information about one or more VPC endpoint connections.</p>
         pub fn vpc_endpoint_connections(
             mut self,
-            input: impl Into<crate::model::VpcEndpointConnection>,
+            input: crate::model::VpcEndpointConnection,
         ) -> Self {
             let mut v = self.vpc_endpoint_connections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_endpoint_connections = Some(v);
             self
         }
@@ -15018,8 +14740,7 @@ pub struct DescribeVpcEndpointConnectionNotificationsOutput {
     /// <p>One or more notifications.</p>
     pub connection_notification_set:
         std::option::Option<std::vec::Vec<crate::model::ConnectionNotification>>,
-    /// <p>The token to use to retrieve the next page of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeVpcEndpointConnectionNotificationsOutput {
@@ -15029,8 +14750,7 @@ impl DescribeVpcEndpointConnectionNotificationsOutput {
     ) -> std::option::Option<&[crate::model::ConnectionNotification]> {
         self.connection_notification_set.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -15064,10 +14784,10 @@ pub mod describe_vpc_endpoint_connection_notifications_output {
         /// <p>One or more notifications.</p>
         pub fn connection_notification_set(
             mut self,
-            input: impl Into<crate::model::ConnectionNotification>,
+            input: crate::model::ConnectionNotification,
         ) -> Self {
             let mut v = self.connection_notification_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connection_notification_set = Some(v);
             self
         }
@@ -15079,14 +14799,12 @@ pub mod describe_vpc_endpoint_connection_notifications_output {
             self.connection_notification_set = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -15160,9 +14878,9 @@ pub mod describe_vpc_classic_link_dns_support_output {
         /// To override the contents of this collection use [`set_vpcs`](Self::set_vpcs).
         ///
         /// <p>Information about the ClassicLink DNS support status of the VPCs.</p>
-        pub fn vpcs(mut self, input: impl Into<crate::model::ClassicLinkDnsSupport>) -> Self {
+        pub fn vpcs(mut self, input: crate::model::ClassicLinkDnsSupport) -> Self {
             let mut v = self.vpcs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpcs = Some(v);
             self
         }
@@ -15224,9 +14942,9 @@ pub mod describe_vpc_classic_link_output {
         /// To override the contents of this collection use [`set_vpcs`](Self::set_vpcs).
         ///
         /// <p>The ClassicLink status of one or more VPCs.</p>
-        pub fn vpcs(mut self, input: impl Into<crate::model::VpcClassicLink>) -> Self {
+        pub fn vpcs(mut self, input: crate::model::VpcClassicLink) -> Self {
             let mut v = self.vpcs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpcs = Some(v);
             self
         }
@@ -15257,14 +14975,9 @@ impl DescribeVpcClassicLinkOutput {
 pub struct DescribeVpcAttributeOutput {
     /// <p>The ID of the VPC.</p>
     pub vpc_id: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the instances launched in the VPC get DNS hostnames.
-    /// If this attribute is <code>true</code>, instances in the VPC get DNS hostnames;
-    /// otherwise, they do not.</p>
+    /// <p>Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is <code>true</code>, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
     pub enable_dns_hostnames: std::option::Option<crate::model::AttributeBooleanValue>,
-    /// <p>Indicates whether DNS resolution is enabled for
-    /// the VPC. If this attribute is <code>true</code>, the Amazon DNS server
-    /// resolves DNS hostnames for your instances to their corresponding
-    /// IP addresses; otherwise, it does not.</p>
+    /// <p>Indicates whether DNS resolution is enabled for the VPC. If this attribute is <code>true</code>, the Amazon DNS server resolves DNS hostnames for your instances to their corresponding IP addresses; otherwise, it does not.</p>
     pub enable_dns_support: std::option::Option<crate::model::AttributeBooleanValue>,
 }
 impl DescribeVpcAttributeOutput {
@@ -15272,18 +14985,13 @@ impl DescribeVpcAttributeOutput {
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
-    /// <p>Indicates whether the instances launched in the VPC get DNS hostnames.
-    /// If this attribute is <code>true</code>, instances in the VPC get DNS hostnames;
-    /// otherwise, they do not.</p>
+    /// <p>Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is <code>true</code>, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
     pub fn enable_dns_hostnames(
         &self,
     ) -> std::option::Option<&crate::model::AttributeBooleanValue> {
         self.enable_dns_hostnames.as_ref()
     }
-    /// <p>Indicates whether DNS resolution is enabled for
-    /// the VPC. If this attribute is <code>true</code>, the Amazon DNS server
-    /// resolves DNS hostnames for your instances to their corresponding
-    /// IP addresses; otherwise, it does not.</p>
+    /// <p>Indicates whether DNS resolution is enabled for the VPC. If this attribute is <code>true</code>, the Amazon DNS server resolves DNS hostnames for your instances to their corresponding IP addresses; otherwise, it does not.</p>
     pub fn enable_dns_support(&self) -> std::option::Option<&crate::model::AttributeBooleanValue> {
         self.enable_dns_support.as_ref()
     }
@@ -15318,16 +15026,12 @@ pub mod describe_vpc_attribute_output {
             self.vpc_id = input;
             self
         }
-        /// <p>Indicates whether the instances launched in the VPC get DNS hostnames.
-        /// If this attribute is <code>true</code>, instances in the VPC get DNS hostnames;
-        /// otherwise, they do not.</p>
+        /// <p>Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is <code>true</code>, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
         pub fn enable_dns_hostnames(mut self, input: crate::model::AttributeBooleanValue) -> Self {
             self.enable_dns_hostnames = Some(input);
             self
         }
-        /// <p>Indicates whether the instances launched in the VPC get DNS hostnames.
-        /// If this attribute is <code>true</code>, instances in the VPC get DNS hostnames;
-        /// otherwise, they do not.</p>
+        /// <p>Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is <code>true</code>, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
         pub fn set_enable_dns_hostnames(
             mut self,
             input: std::option::Option<crate::model::AttributeBooleanValue>,
@@ -15335,18 +15039,12 @@ pub mod describe_vpc_attribute_output {
             self.enable_dns_hostnames = input;
             self
         }
-        /// <p>Indicates whether DNS resolution is enabled for
-        /// the VPC. If this attribute is <code>true</code>, the Amazon DNS server
-        /// resolves DNS hostnames for your instances to their corresponding
-        /// IP addresses; otherwise, it does not.</p>
+        /// <p>Indicates whether DNS resolution is enabled for the VPC. If this attribute is <code>true</code>, the Amazon DNS server resolves DNS hostnames for your instances to their corresponding IP addresses; otherwise, it does not.</p>
         pub fn enable_dns_support(mut self, input: crate::model::AttributeBooleanValue) -> Self {
             self.enable_dns_support = Some(input);
             self
         }
-        /// <p>Indicates whether DNS resolution is enabled for
-        /// the VPC. If this attribute is <code>true</code>, the Amazon DNS server
-        /// resolves DNS hostnames for your instances to their corresponding
-        /// IP addresses; otherwise, it does not.</p>
+        /// <p>Indicates whether DNS resolution is enabled for the VPC. If this attribute is <code>true</code>, the Amazon DNS server resolves DNS hostnames for your instances to their corresponding IP addresses; otherwise, it does not.</p>
         pub fn set_enable_dns_support(
             mut self,
             input: std::option::Option<crate::model::AttributeBooleanValue>,
@@ -15375,15 +15073,13 @@ impl DescribeVpcAttributeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVolumeStatusOutput {
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the status of the volumes.</p>
     pub volume_statuses: std::option::Option<std::vec::Vec<crate::model::VolumeStatusItem>>,
 }
 impl DescribeVolumeStatusOutput {
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -15411,14 +15107,12 @@ pub mod describe_volume_status_output {
             std::option::Option<std::vec::Vec<crate::model::VolumeStatusItem>>,
     }
     impl Builder {
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -15428,9 +15122,9 @@ pub mod describe_volume_status_output {
         /// To override the contents of this collection use [`set_volume_statuses`](Self::set_volume_statuses).
         ///
         /// <p>Information about the status of the volumes.</p>
-        pub fn volume_statuses(mut self, input: impl Into<crate::model::VolumeStatusItem>) -> Self {
+        pub fn volume_statuses(mut self, input: crate::model::VolumeStatusItem) -> Self {
             let mut v = self.volume_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.volume_statuses = Some(v);
             self
         }
@@ -15503,12 +15197,9 @@ pub mod describe_volumes_modifications_output {
         /// To override the contents of this collection use [`set_volumes_modifications`](Self::set_volumes_modifications).
         ///
         /// <p>Information about the volume modifications.</p>
-        pub fn volumes_modifications(
-            mut self,
-            input: impl Into<crate::model::VolumeModification>,
-        ) -> Self {
+        pub fn volumes_modifications(mut self, input: crate::model::VolumeModification) -> Self {
             let mut v = self.volumes_modifications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.volumes_modifications = Some(v);
             self
         }
@@ -15552,10 +15243,7 @@ impl DescribeVolumesModificationsOutput {
 pub struct DescribeVolumesOutput {
     /// <p>Information about the volumes.</p>
     pub volumes: std::option::Option<std::vec::Vec<crate::model::Volume>>,
-    /// <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumes</code>
-    /// request. When the results of a <code>DescribeVolumes</code> request exceed
-    /// <code>MaxResults</code>, this value can be used to retrieve the next page of results. This
-    /// value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumes</code> request. When the results of a <code>DescribeVolumes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeVolumesOutput {
@@ -15563,10 +15251,7 @@ impl DescribeVolumesOutput {
     pub fn volumes(&self) -> std::option::Option<&[crate::model::Volume]> {
         self.volumes.as_deref()
     }
-    /// <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumes</code>
-    /// request. When the results of a <code>DescribeVolumes</code> request exceed
-    /// <code>MaxResults</code>, this value can be used to retrieve the next page of results. This
-    /// value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumes</code> request. When the results of a <code>DescribeVolumes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -15594,9 +15279,9 @@ pub mod describe_volumes_output {
         /// To override the contents of this collection use [`set_volumes`](Self::set_volumes).
         ///
         /// <p>Information about the volumes.</p>
-        pub fn volumes(mut self, input: impl Into<crate::model::Volume>) -> Self {
+        pub fn volumes(mut self, input: crate::model::Volume) -> Self {
             let mut v = self.volumes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.volumes = Some(v);
             self
         }
@@ -15608,18 +15293,12 @@ pub mod describe_volumes_output {
             self.volumes = input;
             self
         }
-        /// <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumes</code>
-        /// request. When the results of a <code>DescribeVolumes</code> request exceed
-        /// <code>MaxResults</code>, this value can be used to retrieve the next page of results. This
-        /// value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumes</code> request. When the results of a <code>DescribeVolumes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumes</code>
-        /// request. When the results of a <code>DescribeVolumes</code> request exceed
-        /// <code>MaxResults</code>, this value can be used to retrieve the next page of results. This
-        /// value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumes</code> request. When the results of a <code>DescribeVolumes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -15703,9 +15382,9 @@ pub mod describe_volume_attribute_output {
         /// To override the contents of this collection use [`set_product_codes`](Self::set_product_codes).
         ///
         /// <p>A list of product codes.</p>
-        pub fn product_codes(mut self, input: impl Into<crate::model::ProductCode>) -> Self {
+        pub fn product_codes(mut self, input: crate::model::ProductCode) -> Self {
             let mut v = self.product_codes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.product_codes = Some(v);
             self
         }
@@ -15792,10 +15471,10 @@ pub mod describe_trunk_interface_associations_output {
         /// <p>Information about the trunk associations.</p>
         pub fn interface_associations(
             mut self,
-            input: impl Into<crate::model::TrunkInterfaceAssociation>,
+            input: crate::model::TrunkInterfaceAssociation,
         ) -> Self {
             let mut v = self.interface_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.interface_associations = Some(v);
             self
         }
@@ -15884,10 +15563,10 @@ pub mod describe_transit_gateway_vpc_attachments_output {
         /// <p>Information about the VPC attachments.</p>
         pub fn transit_gateway_vpc_attachments(
             mut self,
-            input: impl Into<crate::model::TransitGatewayVpcAttachment>,
+            input: crate::model::TransitGatewayVpcAttachment,
         ) -> Self {
             let mut v = self.transit_gateway_vpc_attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transit_gateway_vpc_attachments = Some(v);
             self
         }
@@ -15968,9 +15647,9 @@ pub mod describe_transit_gateways_output {
         /// To override the contents of this collection use [`set_transit_gateways`](Self::set_transit_gateways).
         ///
         /// <p>Information about the transit gateways.</p>
-        pub fn transit_gateways(mut self, input: impl Into<crate::model::TransitGateway>) -> Self {
+        pub fn transit_gateways(mut self, input: crate::model::TransitGateway) -> Self {
             let mut v = self.transit_gateways.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transit_gateways = Some(v);
             self
         }
@@ -16059,10 +15738,10 @@ pub mod describe_transit_gateway_route_tables_output {
         /// <p>Information about the transit gateway route tables.</p>
         pub fn transit_gateway_route_tables(
             mut self,
-            input: impl Into<crate::model::TransitGatewayRouteTable>,
+            input: crate::model::TransitGatewayRouteTable,
         ) -> Self {
             let mut v = self.transit_gateway_route_tables.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transit_gateway_route_tables = Some(v);
             self
         }
@@ -16151,10 +15830,10 @@ pub mod describe_transit_gateway_peering_attachments_output {
         /// <p>The transit gateway peering attachments.</p>
         pub fn transit_gateway_peering_attachments(
             mut self,
-            input: impl Into<crate::model::TransitGatewayPeeringAttachment>,
+            input: crate::model::TransitGatewayPeeringAttachment,
         ) -> Self {
             let mut v = self.transit_gateway_peering_attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transit_gateway_peering_attachments = Some(v);
             self
         }
@@ -16246,10 +15925,10 @@ pub mod describe_transit_gateway_multicast_domains_output {
         /// <p>Information about the transit gateway multicast domains.</p>
         pub fn transit_gateway_multicast_domains(
             mut self,
-            input: impl Into<crate::model::TransitGatewayMulticastDomain>,
+            input: crate::model::TransitGatewayMulticastDomain,
         ) -> Self {
             let mut v = self.transit_gateway_multicast_domains.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transit_gateway_multicast_domains = Some(v);
             self
         }
@@ -16335,10 +16014,10 @@ pub mod describe_transit_gateway_connects_output {
         /// <p>Information about the Connect attachments.</p>
         pub fn transit_gateway_connects(
             mut self,
-            input: impl Into<crate::model::TransitGatewayConnect>,
+            input: crate::model::TransitGatewayConnect,
         ) -> Self {
             let mut v = self.transit_gateway_connects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transit_gateway_connects = Some(v);
             self
         }
@@ -16427,10 +16106,10 @@ pub mod describe_transit_gateway_connect_peers_output {
         /// <p>Information about the Connect peers.</p>
         pub fn transit_gateway_connect_peers(
             mut self,
-            input: impl Into<crate::model::TransitGatewayConnectPeer>,
+            input: crate::model::TransitGatewayConnectPeer,
         ) -> Self {
             let mut v = self.transit_gateway_connect_peers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transit_gateway_connect_peers = Some(v);
             self
         }
@@ -16519,10 +16198,10 @@ pub mod describe_transit_gateway_attachments_output {
         /// <p>Information about the attachments.</p>
         pub fn transit_gateway_attachments(
             mut self,
-            input: impl Into<crate::model::TransitGatewayAttachment>,
+            input: crate::model::TransitGatewayAttachment,
         ) -> Self {
             let mut v = self.transit_gateway_attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transit_gateway_attachments = Some(v);
             self
         }
@@ -16606,12 +16285,9 @@ pub mod describe_traffic_mirror_targets_output {
         /// To override the contents of this collection use [`set_traffic_mirror_targets`](Self::set_traffic_mirror_targets).
         ///
         /// <p>Information about one or more Traffic Mirror targets.</p>
-        pub fn traffic_mirror_targets(
-            mut self,
-            input: impl Into<crate::model::TrafficMirrorTarget>,
-        ) -> Self {
+        pub fn traffic_mirror_targets(mut self, input: crate::model::TrafficMirrorTarget) -> Self {
             let mut v = self.traffic_mirror_targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.traffic_mirror_targets = Some(v);
             self
         }
@@ -16697,10 +16373,10 @@ pub mod describe_traffic_mirror_sessions_output {
         /// <p>Describes one or more Traffic Mirror sessions. By default, all Traffic Mirror sessions are described. Alternatively, you can filter the results.</p>
         pub fn traffic_mirror_sessions(
             mut self,
-            input: impl Into<crate::model::TrafficMirrorSession>,
+            input: crate::model::TrafficMirrorSession,
         ) -> Self {
             let mut v = self.traffic_mirror_sessions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.traffic_mirror_sessions = Some(v);
             self
         }
@@ -16784,12 +16460,9 @@ pub mod describe_traffic_mirror_filters_output {
         /// To override the contents of this collection use [`set_traffic_mirror_filters`](Self::set_traffic_mirror_filters).
         ///
         /// <p>Information about one or more Traffic Mirror filters.</p>
-        pub fn traffic_mirror_filters(
-            mut self,
-            input: impl Into<crate::model::TrafficMirrorFilter>,
-        ) -> Self {
+        pub fn traffic_mirror_filters(mut self, input: crate::model::TrafficMirrorFilter) -> Self {
             let mut v = self.traffic_mirror_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.traffic_mirror_filters = Some(v);
             self
         }
@@ -16831,15 +16504,13 @@ impl DescribeTrafficMirrorFiltersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTagsOutput {
-    /// <p>The token to use to retrieve the next page of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagDescription>>,
 }
 impl DescribeTagsOutput {
-    /// <p>The token to use to retrieve the next page of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -16866,14 +16537,12 @@ pub mod describe_tags_output {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::TagDescription>>,
     }
     impl Builder {
-        /// <p>The token to use to retrieve the next page of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -16883,9 +16552,9 @@ pub mod describe_tags_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagDescription>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagDescription) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -16955,9 +16624,9 @@ pub mod describe_subnets_output {
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
         /// <p>Information about one or more subnets.</p>
-        pub fn subnets(mut self, input: impl Into<crate::model::Subnet>) -> Self {
+        pub fn subnets(mut self, input: crate::model::Subnet) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subnets = Some(v);
             self
         }
@@ -17002,8 +16671,7 @@ pub struct DescribeStoreImageTasksOutput {
     /// <p>The information about the AMI store tasks.</p>
     pub store_image_task_results:
         std::option::Option<std::vec::Vec<crate::model::StoreImageTaskResult>>,
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeStoreImageTasksOutput {
@@ -17013,8 +16681,7 @@ impl DescribeStoreImageTasksOutput {
     ) -> std::option::Option<&[crate::model::StoreImageTaskResult]> {
         self.store_image_task_results.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17045,10 +16712,10 @@ pub mod describe_store_image_tasks_output {
         /// <p>The information about the AMI store tasks.</p>
         pub fn store_image_task_results(
             mut self,
-            input: impl Into<crate::model::StoreImageTaskResult>,
+            input: crate::model::StoreImageTaskResult,
         ) -> Self {
             let mut v = self.store_image_task_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.store_image_task_results = Some(v);
             self
         }
@@ -17060,14 +16727,12 @@ pub mod describe_store_image_tasks_output {
             self.store_image_task_results = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -17144,12 +16809,9 @@ pub mod describe_stale_security_groups_output {
         /// To override the contents of this collection use [`set_stale_security_group_set`](Self::set_stale_security_group_set).
         ///
         /// <p>Information about the stale security groups.</p>
-        pub fn stale_security_group_set(
-            mut self,
-            input: impl Into<crate::model::StaleSecurityGroup>,
-        ) -> Self {
+        pub fn stale_security_group_set(mut self, input: crate::model::StaleSecurityGroup) -> Self {
             let mut v = self.stale_security_group_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stale_security_group_set = Some(v);
             self
         }
@@ -17181,15 +16843,13 @@ impl DescribeStaleSecurityGroupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSpotPriceHistoryOutput {
-    /// <p>The token required to retrieve the next set of results. This value is null or an empty
-    /// string when there are no more results to return.</p>
+    /// <p>The token required to retrieve the next set of results. This value is null or an empty string when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The historical Spot prices.</p>
     pub spot_price_history: std::option::Option<std::vec::Vec<crate::model::SpotPrice>>,
 }
 impl DescribeSpotPriceHistoryOutput {
-    /// <p>The token required to retrieve the next set of results. This value is null or an empty
-    /// string when there are no more results to return.</p>
+    /// <p>The token required to retrieve the next set of results. This value is null or an empty string when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17216,14 +16876,12 @@ pub mod describe_spot_price_history_output {
         pub(crate) spot_price_history: std::option::Option<std::vec::Vec<crate::model::SpotPrice>>,
     }
     impl Builder {
-        /// <p>The token required to retrieve the next set of results. This value is null or an empty
-        /// string when there are no more results to return.</p>
+        /// <p>The token required to retrieve the next set of results. This value is null or an empty string when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token required to retrieve the next set of results. This value is null or an empty
-        /// string when there are no more results to return.</p>
+        /// <p>The token required to retrieve the next set of results. This value is null or an empty string when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -17233,9 +16891,9 @@ pub mod describe_spot_price_history_output {
         /// To override the contents of this collection use [`set_spot_price_history`](Self::set_spot_price_history).
         ///
         /// <p>The historical Spot prices.</p>
-        pub fn spot_price_history(mut self, input: impl Into<crate::model::SpotPrice>) -> Self {
+        pub fn spot_price_history(mut self, input: crate::model::SpotPrice) -> Self {
             let mut v = self.spot_price_history.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.spot_price_history = Some(v);
             self
         }
@@ -17270,8 +16928,7 @@ pub struct DescribeSpotInstanceRequestsOutput {
     /// <p>One or more Spot Instance requests.</p>
     pub spot_instance_requests:
         std::option::Option<std::vec::Vec<crate::model::SpotInstanceRequest>>,
-    /// <p>The token to use to retrieve the next set of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSpotInstanceRequestsOutput {
@@ -17281,8 +16938,7 @@ impl DescribeSpotInstanceRequestsOutput {
     ) -> std::option::Option<&[crate::model::SpotInstanceRequest]> {
         self.spot_instance_requests.as_deref()
     }
-    /// <p>The token to use to retrieve the next set of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17311,12 +16967,9 @@ pub mod describe_spot_instance_requests_output {
         /// To override the contents of this collection use [`set_spot_instance_requests`](Self::set_spot_instance_requests).
         ///
         /// <p>One or more Spot Instance requests.</p>
-        pub fn spot_instance_requests(
-            mut self,
-            input: impl Into<crate::model::SpotInstanceRequest>,
-        ) -> Self {
+        pub fn spot_instance_requests(mut self, input: crate::model::SpotInstanceRequest) -> Self {
             let mut v = self.spot_instance_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.spot_instance_requests = Some(v);
             self
         }
@@ -17328,14 +16981,12 @@ pub mod describe_spot_instance_requests_output {
             self.spot_instance_requests = input;
             self
         }
-        /// <p>The token to use to retrieve the next set of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next set of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -17360,16 +17011,14 @@ impl DescribeSpotInstanceRequestsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSpotFleetRequestsOutput {
-    /// <p>The token required to retrieve the next set of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the configuration of your Spot Fleet.</p>
     pub spot_fleet_request_configs:
         std::option::Option<std::vec::Vec<crate::model::SpotFleetRequestConfig>>,
 }
 impl DescribeSpotFleetRequestsOutput {
-    /// <p>The token required to retrieve the next set of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17402,14 +17051,12 @@ pub mod describe_spot_fleet_requests_output {
             std::option::Option<std::vec::Vec<crate::model::SpotFleetRequestConfig>>,
     }
     impl Builder {
-        /// <p>The token required to retrieve the next set of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token required to retrieve the next set of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -17421,10 +17068,10 @@ pub mod describe_spot_fleet_requests_output {
         /// <p>Information about the configuration of your Spot Fleet.</p>
         pub fn spot_fleet_request_configs(
             mut self,
-            input: impl Into<crate::model::SpotFleetRequestConfig>,
+            input: crate::model::SpotFleetRequestConfig,
         ) -> Self {
             let mut v = self.spot_fleet_request_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.spot_fleet_request_configs = Some(v);
             self
         }
@@ -17458,19 +17105,14 @@ impl DescribeSpotFleetRequestsOutput {
 pub struct DescribeSpotFleetRequestHistoryOutput {
     /// <p>Information about the events in the history of the Spot Fleet request.</p>
     pub history_records: std::option::Option<std::vec::Vec<crate::model::HistoryRecord>>,
-    /// <p>The last date and time for the events, in UTC format (for example,
-    /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-    /// All records up to this time were retrieved.</p>
-    /// <p>If <code>nextToken</code> indicates that there are more results, this value is not
-    /// present.</p>
+    /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
+    /// <p>If <code>nextToken</code> indicates that there are more results, this value is not present.</p>
     pub last_evaluated_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The token required to retrieve the next set of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the Spot Fleet request.</p>
     pub spot_fleet_request_id: std::option::Option<std::string::String>,
-    /// <p>The starting date and time for the events, in UTC format (for example,
-    /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    /// <p>The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeSpotFleetRequestHistoryOutput {
@@ -17478,16 +17120,12 @@ impl DescribeSpotFleetRequestHistoryOutput {
     pub fn history_records(&self) -> std::option::Option<&[crate::model::HistoryRecord]> {
         self.history_records.as_deref()
     }
-    /// <p>The last date and time for the events, in UTC format (for example,
-    /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-    /// All records up to this time were retrieved.</p>
-    /// <p>If <code>nextToken</code> indicates that there are more results, this value is not
-    /// present.</p>
+    /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
+    /// <p>If <code>nextToken</code> indicates that there are more results, this value is not present.</p>
     pub fn last_evaluated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_evaluated_time.as_ref()
     }
-    /// <p>The token required to retrieve the next set of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17495,8 +17133,7 @@ impl DescribeSpotFleetRequestHistoryOutput {
     pub fn spot_fleet_request_id(&self) -> std::option::Option<&str> {
         self.spot_fleet_request_id.as_deref()
     }
-    /// <p>The starting date and time for the events, in UTC format (for example,
-    /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    /// <p>The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
@@ -17530,9 +17167,9 @@ pub mod describe_spot_fleet_request_history_output {
         /// To override the contents of this collection use [`set_history_records`](Self::set_history_records).
         ///
         /// <p>Information about the events in the history of the Spot Fleet request.</p>
-        pub fn history_records(mut self, input: impl Into<crate::model::HistoryRecord>) -> Self {
+        pub fn history_records(mut self, input: crate::model::HistoryRecord) -> Self {
             let mut v = self.history_records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.history_records = Some(v);
             self
         }
@@ -17544,20 +17181,14 @@ pub mod describe_spot_fleet_request_history_output {
             self.history_records = input;
             self
         }
-        /// <p>The last date and time for the events, in UTC format (for example,
-        /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-        /// All records up to this time were retrieved.</p>
-        /// <p>If <code>nextToken</code> indicates that there are more results, this value is not
-        /// present.</p>
+        /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
+        /// <p>If <code>nextToken</code> indicates that there are more results, this value is not present.</p>
         pub fn last_evaluated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_evaluated_time = Some(input);
             self
         }
-        /// <p>The last date and time for the events, in UTC format (for example,
-        /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-        /// All records up to this time were retrieved.</p>
-        /// <p>If <code>nextToken</code> indicates that there are more results, this value is not
-        /// present.</p>
+        /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
+        /// <p>If <code>nextToken</code> indicates that there are more results, this value is not present.</p>
         pub fn set_last_evaluated_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -17565,14 +17196,12 @@ pub mod describe_spot_fleet_request_history_output {
             self.last_evaluated_time = input;
             self
         }
-        /// <p>The token required to retrieve the next set of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token required to retrieve the next set of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -17590,14 +17219,12 @@ pub mod describe_spot_fleet_request_history_output {
             self.spot_fleet_request_id = input;
             self
         }
-        /// <p>The starting date and time for the events, in UTC format (for example,
-        /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+        /// <p>The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The starting date and time for the events, in UTC format (for example,
-        /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+        /// <p>The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -17628,23 +17255,19 @@ impl DescribeSpotFleetRequestHistoryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSpotFleetInstancesOutput {
-    /// <p>The running instances. This list is refreshed periodically and might be out of
-    /// date.</p>
+    /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
     pub active_instances: std::option::Option<std::vec::Vec<crate::model::ActiveInstance>>,
-    /// <p>The token required to retrieve the next set of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the Spot Fleet request.</p>
     pub spot_fleet_request_id: std::option::Option<std::string::String>,
 }
 impl DescribeSpotFleetInstancesOutput {
-    /// <p>The running instances. This list is refreshed periodically and might be out of
-    /// date.</p>
+    /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
     pub fn active_instances(&self) -> std::option::Option<&[crate::model::ActiveInstance]> {
         self.active_instances.as_deref()
     }
-    /// <p>The token required to retrieve the next set of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17678,16 +17301,14 @@ pub mod describe_spot_fleet_instances_output {
         ///
         /// To override the contents of this collection use [`set_active_instances`](Self::set_active_instances).
         ///
-        /// <p>The running instances. This list is refreshed periodically and might be out of
-        /// date.</p>
-        pub fn active_instances(mut self, input: impl Into<crate::model::ActiveInstance>) -> Self {
+        /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
+        pub fn active_instances(mut self, input: crate::model::ActiveInstance) -> Self {
             let mut v = self.active_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.active_instances = Some(v);
             self
         }
-        /// <p>The running instances. This list is refreshed periodically and might be out of
-        /// date.</p>
+        /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
         pub fn set_active_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ActiveInstance>>,
@@ -17695,14 +17316,12 @@ pub mod describe_spot_fleet_instances_output {
             self.active_instances = input;
             self
         }
-        /// <p>The token required to retrieve the next set of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token required to retrieve the next set of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -17849,12 +17468,9 @@ pub mod describe_snapshot_tier_status_output {
         /// To override the contents of this collection use [`set_snapshot_tier_statuses`](Self::set_snapshot_tier_statuses).
         ///
         /// <p>Information about the snapshot's storage tier.</p>
-        pub fn snapshot_tier_statuses(
-            mut self,
-            input: impl Into<crate::model::SnapshotTierStatus>,
-        ) -> Self {
+        pub fn snapshot_tier_statuses(mut self, input: crate::model::SnapshotTierStatus) -> Self {
             let mut v = self.snapshot_tier_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.snapshot_tier_statuses = Some(v);
             self
         }
@@ -17898,10 +17514,7 @@ impl DescribeSnapshotTierStatusOutput {
 pub struct DescribeSnapshotsOutput {
     /// <p>Information about the snapshots.</p>
     pub snapshots: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
-    /// <p>The <code>NextToken</code> value to include in a future <code>DescribeSnapshots</code>
-    /// request. When the results of a <code>DescribeSnapshots</code> request exceed
-    /// <code>MaxResults</code>, this value can be used to retrieve the next page of results. This
-    /// value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>NextToken</code> value to include in a future <code>DescribeSnapshots</code> request. When the results of a <code>DescribeSnapshots</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSnapshotsOutput {
@@ -17909,10 +17522,7 @@ impl DescribeSnapshotsOutput {
     pub fn snapshots(&self) -> std::option::Option<&[crate::model::Snapshot]> {
         self.snapshots.as_deref()
     }
-    /// <p>The <code>NextToken</code> value to include in a future <code>DescribeSnapshots</code>
-    /// request. When the results of a <code>DescribeSnapshots</code> request exceed
-    /// <code>MaxResults</code>, this value can be used to retrieve the next page of results. This
-    /// value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>NextToken</code> value to include in a future <code>DescribeSnapshots</code> request. When the results of a <code>DescribeSnapshots</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17940,9 +17550,9 @@ pub mod describe_snapshots_output {
         /// To override the contents of this collection use [`set_snapshots`](Self::set_snapshots).
         ///
         /// <p>Information about the snapshots.</p>
-        pub fn snapshots(mut self, input: impl Into<crate::model::Snapshot>) -> Self {
+        pub fn snapshots(mut self, input: crate::model::Snapshot) -> Self {
             let mut v = self.snapshots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.snapshots = Some(v);
             self
         }
@@ -17954,18 +17564,12 @@ pub mod describe_snapshots_output {
             self.snapshots = input;
             self
         }
-        /// <p>The <code>NextToken</code> value to include in a future <code>DescribeSnapshots</code>
-        /// request. When the results of a <code>DescribeSnapshots</code> request exceed
-        /// <code>MaxResults</code>, this value can be used to retrieve the next page of results. This
-        /// value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>NextToken</code> value to include in a future <code>DescribeSnapshots</code> request. When the results of a <code>DescribeSnapshots</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>NextToken</code> value to include in a future <code>DescribeSnapshots</code>
-        /// request. When the results of a <code>DescribeSnapshots</code> request exceed
-        /// <code>MaxResults</code>, this value can be used to retrieve the next page of results. This
-        /// value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>NextToken</code> value to include in a future <code>DescribeSnapshots</code> request. When the results of a <code>DescribeSnapshots</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -17990,8 +17594,7 @@ impl DescribeSnapshotsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSnapshotAttributeOutput {
-    /// <p>The users and groups that have the permissions for creating volumes from the
-    /// snapshot.</p>
+    /// <p>The users and groups that have the permissions for creating volumes from the snapshot.</p>
     pub create_volume_permissions:
         std::option::Option<std::vec::Vec<crate::model::CreateVolumePermission>>,
     /// <p>The product codes.</p>
@@ -18000,8 +17603,7 @@ pub struct DescribeSnapshotAttributeOutput {
     pub snapshot_id: std::option::Option<std::string::String>,
 }
 impl DescribeSnapshotAttributeOutput {
-    /// <p>The users and groups that have the permissions for creating volumes from the
-    /// snapshot.</p>
+    /// <p>The users and groups that have the permissions for creating volumes from the snapshot.</p>
     pub fn create_volume_permissions(
         &self,
     ) -> std::option::Option<&[crate::model::CreateVolumePermission]> {
@@ -18041,19 +17643,17 @@ pub mod describe_snapshot_attribute_output {
         ///
         /// To override the contents of this collection use [`set_create_volume_permissions`](Self::set_create_volume_permissions).
         ///
-        /// <p>The users and groups that have the permissions for creating volumes from the
-        /// snapshot.</p>
+        /// <p>The users and groups that have the permissions for creating volumes from the snapshot.</p>
         pub fn create_volume_permissions(
             mut self,
-            input: impl Into<crate::model::CreateVolumePermission>,
+            input: crate::model::CreateVolumePermission,
         ) -> Self {
             let mut v = self.create_volume_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.create_volume_permissions = Some(v);
             self
         }
-        /// <p>The users and groups that have the permissions for creating volumes from the
-        /// snapshot.</p>
+        /// <p>The users and groups that have the permissions for creating volumes from the snapshot.</p>
         pub fn set_create_volume_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CreateVolumePermission>>,
@@ -18066,9 +17666,9 @@ pub mod describe_snapshot_attribute_output {
         /// To override the contents of this collection use [`set_product_codes`](Self::set_product_codes).
         ///
         /// <p>The product codes.</p>
-        pub fn product_codes(mut self, input: impl Into<crate::model::ProductCode>) -> Self {
+        pub fn product_codes(mut self, input: crate::model::ProductCode) -> Self {
             let mut v = self.product_codes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.product_codes = Some(v);
             self
         }
@@ -18149,9 +17749,9 @@ pub mod describe_security_groups_output {
         /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
         ///
         /// <p>Information about the security groups.</p>
-        pub fn security_groups(mut self, input: impl Into<crate::model::SecurityGroup>) -> Self {
+        pub fn security_groups(mut self, input: crate::model::SecurityGroup) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.security_groups = Some(v);
             self
         }
@@ -18232,12 +17832,9 @@ pub mod describe_security_group_rules_output {
         /// To override the contents of this collection use [`set_security_group_rules`](Self::set_security_group_rules).
         ///
         /// <p>Information about security group rules.</p>
-        pub fn security_group_rules(
-            mut self,
-            input: impl Into<crate::model::SecurityGroupRule>,
-        ) -> Self {
+        pub fn security_group_rules(mut self, input: crate::model::SecurityGroupRule) -> Self {
             let mut v = self.security_group_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.security_group_rules = Some(v);
             self
         }
@@ -18318,10 +17915,10 @@ pub mod describe_security_group_references_output {
         /// <p>Information about the VPCs with the referencing security groups.</p>
         pub fn security_group_reference_set(
             mut self,
-            input: impl Into<crate::model::SecurityGroupReference>,
+            input: crate::model::SecurityGroupReference,
         ) -> Self {
             let mut v = self.security_group_reference_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.security_group_reference_set = Some(v);
             self
         }
@@ -18403,12 +18000,9 @@ pub mod describe_scheduled_instances_output {
         /// To override the contents of this collection use [`set_scheduled_instance_set`](Self::set_scheduled_instance_set).
         ///
         /// <p>Information about the Scheduled Instances.</p>
-        pub fn scheduled_instance_set(
-            mut self,
-            input: impl Into<crate::model::ScheduledInstance>,
-        ) -> Self {
+        pub fn scheduled_instance_set(mut self, input: crate::model::ScheduledInstance) -> Self {
             let mut v = self.scheduled_instance_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scheduled_instance_set = Some(v);
             self
         }
@@ -18497,10 +18091,10 @@ pub mod describe_scheduled_instance_availability_output {
         /// <p>Information about the available Scheduled Instances.</p>
         pub fn scheduled_instance_availability_set(
             mut self,
-            input: impl Into<crate::model::ScheduledInstanceAvailability>,
+            input: crate::model::ScheduledInstanceAvailability,
         ) -> Self {
             let mut v = self.scheduled_instance_availability_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scheduled_instance_availability_set = Some(v);
             self
         }
@@ -18570,9 +18164,9 @@ pub mod describe_route_tables_output {
         /// To override the contents of this collection use [`set_route_tables`](Self::set_route_tables).
         ///
         /// <p>Information about one or more route tables.</p>
-        pub fn route_tables(mut self, input: impl Into<crate::model::RouteTable>) -> Self {
+        pub fn route_tables(mut self, input: crate::model::RouteTable) -> Self {
             let mut v = self.route_tables.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.route_tables = Some(v);
             self
         }
@@ -18617,8 +18211,7 @@ pub struct DescribeReservedInstancesOfferingsOutput {
     /// <p>A list of Reserved Instances offerings.</p>
     pub reserved_instances_offerings:
         std::option::Option<std::vec::Vec<crate::model::ReservedInstancesOffering>>,
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when
-    /// there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeReservedInstancesOfferingsOutput {
@@ -18628,8 +18221,7 @@ impl DescribeReservedInstancesOfferingsOutput {
     ) -> std::option::Option<&[crate::model::ReservedInstancesOffering]> {
         self.reserved_instances_offerings.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when
-    /// there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -18663,10 +18255,10 @@ pub mod describe_reserved_instances_offerings_output {
         /// <p>A list of Reserved Instances offerings.</p>
         pub fn reserved_instances_offerings(
             mut self,
-            input: impl Into<crate::model::ReservedInstancesOffering>,
+            input: crate::model::ReservedInstancesOffering,
         ) -> Self {
             let mut v = self.reserved_instances_offerings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_instances_offerings = Some(v);
             self
         }
@@ -18678,14 +18270,12 @@ pub mod describe_reserved_instances_offerings_output {
             self.reserved_instances_offerings = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when
-        /// there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when
-        /// there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -18710,16 +18300,14 @@ impl DescribeReservedInstancesOfferingsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservedInstancesModificationsOutput {
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when
-    /// there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Reserved Instance modification information.</p>
     pub reserved_instances_modifications:
         std::option::Option<std::vec::Vec<crate::model::ReservedInstancesModification>>,
 }
 impl DescribeReservedInstancesModificationsOutput {
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when
-    /// there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -18752,14 +18340,12 @@ pub mod describe_reserved_instances_modifications_output {
             std::option::Option<std::vec::Vec<crate::model::ReservedInstancesModification>>,
     }
     impl Builder {
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when
-        /// there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when
-        /// there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -18771,10 +18357,10 @@ pub mod describe_reserved_instances_modifications_output {
         /// <p>The Reserved Instance modification information.</p>
         pub fn reserved_instances_modifications(
             mut self,
-            input: impl Into<crate::model::ReservedInstancesModification>,
+            input: crate::model::ReservedInstancesModification,
         ) -> Self {
             let mut v = self.reserved_instances_modifications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_instances_modifications = Some(v);
             self
         }
@@ -18845,10 +18431,10 @@ pub mod describe_reserved_instances_listings_output {
         /// <p>Information about the Reserved Instance listing.</p>
         pub fn reserved_instances_listings(
             mut self,
-            input: impl Into<crate::model::ReservedInstancesListing>,
+            input: crate::model::ReservedInstancesListing,
         ) -> Self {
             let mut v = self.reserved_instances_listings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_instances_listings = Some(v);
             self
         }
@@ -18910,12 +18496,9 @@ pub mod describe_reserved_instances_output {
         /// To override the contents of this collection use [`set_reserved_instances`](Self::set_reserved_instances).
         ///
         /// <p>A list of Reserved Instances.</p>
-        pub fn reserved_instances(
-            mut self,
-            input: impl Into<crate::model::ReservedInstances>,
-        ) -> Self {
+        pub fn reserved_instances(mut self, input: crate::model::ReservedInstances) -> Self {
             let mut v = self.reserved_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_instances = Some(v);
             self
         }
@@ -18990,10 +18573,10 @@ pub mod describe_replace_root_volume_tasks_output {
         /// <p>Information about the root volume replacement task.</p>
         pub fn replace_root_volume_tasks(
             mut self,
-            input: impl Into<crate::model::ReplaceRootVolumeTask>,
+            input: crate::model::ReplaceRootVolumeTask,
         ) -> Self {
             let mut v = self.replace_root_volume_tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replace_root_volume_tasks = Some(v);
             self
         }
@@ -19065,9 +18648,9 @@ pub mod describe_regions_output {
         /// To override the contents of this collection use [`set_regions`](Self::set_regions).
         ///
         /// <p>Information about the Regions.</p>
-        pub fn regions(mut self, input: impl Into<crate::model::Region>) -> Self {
+        pub fn regions(mut self, input: crate::model::Region) -> Self {
             let mut v = self.regions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.regions = Some(v);
             self
         }
@@ -19137,9 +18720,9 @@ pub mod describe_public_ipv4_pools_output {
         /// To override the contents of this collection use [`set_public_ipv4_pools`](Self::set_public_ipv4_pools).
         ///
         /// <p>Information about the address pools.</p>
-        pub fn public_ipv4_pools(mut self, input: impl Into<crate::model::PublicIpv4Pool>) -> Self {
+        pub fn public_ipv4_pools(mut self, input: crate::model::PublicIpv4Pool) -> Self {
             let mut v = self.public_ipv4_pools.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.public_ipv4_pools = Some(v);
             self
         }
@@ -19219,9 +18802,9 @@ pub mod describe_principal_id_format_output {
         /// To override the contents of this collection use [`set_principals`](Self::set_principals).
         ///
         /// <p>Information about the ID format settings for the ARN.</p>
-        pub fn principals(mut self, input: impl Into<crate::model::PrincipalIdFormat>) -> Self {
+        pub fn principals(mut self, input: crate::model::PrincipalIdFormat) -> Self {
             let mut v = self.principals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.principals = Some(v);
             self
         }
@@ -19311,9 +18894,9 @@ pub mod describe_prefix_lists_output {
         /// To override the contents of this collection use [`set_prefix_lists`](Self::set_prefix_lists).
         ///
         /// <p>All available prefix lists.</p>
-        pub fn prefix_lists(mut self, input: impl Into<crate::model::PrefixList>) -> Self {
+        pub fn prefix_lists(mut self, input: crate::model::PrefixList) -> Self {
             let mut v = self.prefix_lists.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.prefix_lists = Some(v);
             self
         }
@@ -19376,9 +18959,9 @@ pub mod describe_placement_groups_output {
         /// To override the contents of this collection use [`set_placement_groups`](Self::set_placement_groups).
         ///
         /// <p>Information about the placement groups.</p>
-        pub fn placement_groups(mut self, input: impl Into<crate::model::PlacementGroup>) -> Self {
+        pub fn placement_groups(mut self, input: crate::model::PlacementGroup) -> Self {
             let mut v = self.placement_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.placement_groups = Some(v);
             self
         }
@@ -19448,12 +19031,9 @@ pub mod describe_network_interfaces_output {
         /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
         ///
         /// <p>Information about one or more network interfaces.</p>
-        pub fn network_interfaces(
-            mut self,
-            input: impl Into<crate::model::NetworkInterface>,
-        ) -> Self {
+        pub fn network_interfaces(mut self, input: crate::model::NetworkInterface) -> Self {
             let mut v = self.network_interfaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_interfaces = Some(v);
             self
         }
@@ -19542,10 +19122,10 @@ pub mod describe_network_interface_permissions_output {
         /// <p>The network interface permissions.</p>
         pub fn network_interface_permissions(
             mut self,
-            input: impl Into<crate::model::NetworkInterfacePermission>,
+            input: crate::model::NetworkInterfacePermission,
         ) -> Self {
             let mut v = self.network_interface_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_interface_permissions = Some(v);
             self
         }
@@ -19675,9 +19255,9 @@ pub mod describe_network_interface_attribute_output {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <p>The security groups associated with the network interface.</p>
-        pub fn groups(mut self, input: impl Into<crate::model::GroupIdentifier>) -> Self {
+        pub fn groups(mut self, input: crate::model::GroupIdentifier) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
@@ -19780,12 +19360,9 @@ pub mod describe_network_insights_paths_output {
         /// To override the contents of this collection use [`set_network_insights_paths`](Self::set_network_insights_paths).
         ///
         /// <p>Information about the paths.</p>
-        pub fn network_insights_paths(
-            mut self,
-            input: impl Into<crate::model::NetworkInsightsPath>,
-        ) -> Self {
+        pub fn network_insights_paths(mut self, input: crate::model::NetworkInsightsPath) -> Self {
             let mut v = self.network_insights_paths.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_insights_paths = Some(v);
             self
         }
@@ -19871,10 +19448,10 @@ pub mod describe_network_insights_analyses_output {
         /// <p>Information about the network insights analyses.</p>
         pub fn network_insights_analyses(
             mut self,
-            input: impl Into<crate::model::NetworkInsightsAnalysis>,
+            input: crate::model::NetworkInsightsAnalysis,
         ) -> Self {
             let mut v = self.network_insights_analyses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_insights_analyses = Some(v);
             self
         }
@@ -19963,10 +19540,10 @@ pub mod describe_network_insights_access_scopes_output {
         /// <p>The Network Access Scopes.</p>
         pub fn network_insights_access_scopes(
             mut self,
-            input: impl Into<crate::model::NetworkInsightsAccessScope>,
+            input: crate::model::NetworkInsightsAccessScope,
         ) -> Self {
             let mut v = self.network_insights_access_scopes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_insights_access_scopes = Some(v);
             self
         }
@@ -20055,12 +19632,12 @@ pub mod describe_network_insights_access_scope_analyses_output {
         /// <p>The Network Access Scope analyses.</p>
         pub fn network_insights_access_scope_analyses(
             mut self,
-            input: impl Into<crate::model::NetworkInsightsAccessScopeAnalysis>,
+            input: crate::model::NetworkInsightsAccessScopeAnalysis,
         ) -> Self {
             let mut v = self
                 .network_insights_access_scope_analyses
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_insights_access_scope_analyses = Some(v);
             self
         }
@@ -20143,9 +19720,9 @@ pub mod describe_network_acls_output {
         /// To override the contents of this collection use [`set_network_acls`](Self::set_network_acls).
         ///
         /// <p>Information about one or more network ACLs.</p>
-        pub fn network_acls(mut self, input: impl Into<crate::model::NetworkAcl>) -> Self {
+        pub fn network_acls(mut self, input: crate::model::NetworkAcl) -> Self {
             let mut v = self.network_acls.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_acls = Some(v);
             self
         }
@@ -20225,9 +19802,9 @@ pub mod describe_nat_gateways_output {
         /// To override the contents of this collection use [`set_nat_gateways`](Self::set_nat_gateways).
         ///
         /// <p>Information about the NAT gateways.</p>
-        pub fn nat_gateways(mut self, input: impl Into<crate::model::NatGateway>) -> Self {
+        pub fn nat_gateways(mut self, input: crate::model::NatGateway) -> Self {
             let mut v = self.nat_gateways.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.nat_gateways = Some(v);
             self
         }
@@ -20311,12 +19888,9 @@ pub mod describe_moving_addresses_output {
         /// To override the contents of this collection use [`set_moving_address_statuses`](Self::set_moving_address_statuses).
         ///
         /// <p>The status for each Elastic IP address.</p>
-        pub fn moving_address_statuses(
-            mut self,
-            input: impl Into<crate::model::MovingAddressStatus>,
-        ) -> Self {
+        pub fn moving_address_statuses(mut self, input: crate::model::MovingAddressStatus) -> Self {
             let mut v = self.moving_address_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.moving_address_statuses = Some(v);
             self
         }
@@ -20407,9 +19981,9 @@ pub mod describe_managed_prefix_lists_output {
         /// To override the contents of this collection use [`set_prefix_lists`](Self::set_prefix_lists).
         ///
         /// <p>Information about the prefix lists.</p>
-        pub fn prefix_lists(mut self, input: impl Into<crate::model::ManagedPrefixList>) -> Self {
+        pub fn prefix_lists(mut self, input: crate::model::ManagedPrefixList) -> Self {
             let mut v = self.prefix_lists.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.prefix_lists = Some(v);
             self
         }
@@ -20488,10 +20062,10 @@ pub mod describe_local_gateway_virtual_interfaces_output {
         /// <p>Information about the virtual interfaces.</p>
         pub fn local_gateway_virtual_interfaces(
             mut self,
-            input: impl Into<crate::model::LocalGatewayVirtualInterface>,
+            input: crate::model::LocalGatewayVirtualInterface,
         ) -> Self {
             let mut v = self.local_gateway_virtual_interfaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.local_gateway_virtual_interfaces = Some(v);
             self
         }
@@ -20580,12 +20154,12 @@ pub mod describe_local_gateway_virtual_interface_groups_output {
         /// <p>The virtual interface groups.</p>
         pub fn local_gateway_virtual_interface_groups(
             mut self,
-            input: impl Into<crate::model::LocalGatewayVirtualInterfaceGroup>,
+            input: crate::model::LocalGatewayVirtualInterfaceGroup,
         ) -> Self {
             let mut v = self
                 .local_gateway_virtual_interface_groups
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.local_gateway_virtual_interface_groups = Some(v);
             self
         }
@@ -20668,9 +20242,9 @@ pub mod describe_local_gateways_output {
         /// To override the contents of this collection use [`set_local_gateways`](Self::set_local_gateways).
         ///
         /// <p>Information about the local gateways.</p>
-        pub fn local_gateways(mut self, input: impl Into<crate::model::LocalGateway>) -> Self {
+        pub fn local_gateways(mut self, input: crate::model::LocalGateway) -> Self {
             let mut v = self.local_gateways.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.local_gateways = Some(v);
             self
         }
@@ -20759,12 +20333,12 @@ pub mod describe_local_gateway_route_table_vpc_associations_output {
         /// <p>Information about the associations.</p>
         pub fn local_gateway_route_table_vpc_associations(
             mut self,
-            input: impl Into<crate::model::LocalGatewayRouteTableVpcAssociation>,
+            input: crate::model::LocalGatewayRouteTableVpcAssociation,
         ) -> Self {
             let mut v = self
                 .local_gateway_route_table_vpc_associations
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.local_gateway_route_table_vpc_associations = Some(v);
             self
         }
@@ -20864,12 +20438,12 @@ pub mod describe_local_gateway_route_table_virtual_interface_group_associations_
         /// <p>Information about the associations.</p>
         pub fn local_gateway_route_table_virtual_interface_group_associations(
             mut self,
-            input: impl Into<crate::model::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>,
+            input: crate::model::LocalGatewayRouteTableVirtualInterfaceGroupAssociation,
         ) -> Self {
             let mut v = self
                 .local_gateway_route_table_virtual_interface_group_associations
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.local_gateway_route_table_virtual_interface_group_associations = Some(v);
             self
         }
@@ -20964,10 +20538,10 @@ pub mod describe_local_gateway_route_tables_output {
         /// <p>Information about the local gateway route tables.</p>
         pub fn local_gateway_route_tables(
             mut self,
-            input: impl Into<crate::model::LocalGatewayRouteTable>,
+            input: crate::model::LocalGatewayRouteTable,
         ) -> Self {
             let mut v = self.local_gateway_route_tables.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.local_gateway_route_tables = Some(v);
             self
         }
@@ -21012,8 +20586,7 @@ pub struct DescribeLaunchTemplateVersionsOutput {
     /// <p>Information about the launch template versions.</p>
     pub launch_template_versions:
         std::option::Option<std::vec::Vec<crate::model::LaunchTemplateVersion>>,
-    /// <p>The token to use to retrieve the next page of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeLaunchTemplateVersionsOutput {
@@ -21023,8 +20596,7 @@ impl DescribeLaunchTemplateVersionsOutput {
     ) -> std::option::Option<&[crate::model::LaunchTemplateVersion]> {
         self.launch_template_versions.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -21055,10 +20627,10 @@ pub mod describe_launch_template_versions_output {
         /// <p>Information about the launch template versions.</p>
         pub fn launch_template_versions(
             mut self,
-            input: impl Into<crate::model::LaunchTemplateVersion>,
+            input: crate::model::LaunchTemplateVersion,
         ) -> Self {
             let mut v = self.launch_template_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.launch_template_versions = Some(v);
             self
         }
@@ -21070,14 +20642,12 @@ pub mod describe_launch_template_versions_output {
             self.launch_template_versions = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -21104,8 +20674,7 @@ impl DescribeLaunchTemplateVersionsOutput {
 pub struct DescribeLaunchTemplatesOutput {
     /// <p>Information about the launch templates.</p>
     pub launch_templates: std::option::Option<std::vec::Vec<crate::model::LaunchTemplate>>,
-    /// <p>The token to use to retrieve the next page of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeLaunchTemplatesOutput {
@@ -21113,8 +20682,7 @@ impl DescribeLaunchTemplatesOutput {
     pub fn launch_templates(&self) -> std::option::Option<&[crate::model::LaunchTemplate]> {
         self.launch_templates.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -21143,9 +20711,9 @@ pub mod describe_launch_templates_output {
         /// To override the contents of this collection use [`set_launch_templates`](Self::set_launch_templates).
         ///
         /// <p>Information about the launch templates.</p>
-        pub fn launch_templates(mut self, input: impl Into<crate::model::LaunchTemplate>) -> Self {
+        pub fn launch_templates(mut self, input: crate::model::LaunchTemplate) -> Self {
             let mut v = self.launch_templates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.launch_templates = Some(v);
             self
         }
@@ -21157,14 +20725,12 @@ pub mod describe_launch_templates_output {
             self.launch_templates = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -21219,9 +20785,9 @@ pub mod describe_key_pairs_output {
         /// To override the contents of this collection use [`set_key_pairs`](Self::set_key_pairs).
         ///
         /// <p>Information about the key pairs.</p>
-        pub fn key_pairs(mut self, input: impl Into<crate::model::KeyPairInfo>) -> Self {
+        pub fn key_pairs(mut self, input: crate::model::KeyPairInfo) -> Self {
             let mut v = self.key_pairs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.key_pairs = Some(v);
             self
         }
@@ -21290,9 +20856,9 @@ pub mod describe_ipv6_pools_output {
         /// To override the contents of this collection use [`set_ipv6_pools`](Self::set_ipv6_pools).
         ///
         /// <p>Information about the IPv6 address pools.</p>
-        pub fn ipv6_pools(mut self, input: impl Into<crate::model::Ipv6Pool>) -> Self {
+        pub fn ipv6_pools(mut self, input: crate::model::Ipv6Pool) -> Self {
             let mut v = self.ipv6_pools.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ipv6_pools = Some(v);
             self
         }
@@ -21382,9 +20948,9 @@ pub mod describe_ipam_scopes_output {
         /// To override the contents of this collection use [`set_ipam_scopes`](Self::set_ipam_scopes).
         ///
         /// <p>The scopes you want information on.</p>
-        pub fn ipam_scopes(mut self, input: impl Into<crate::model::IpamScope>) -> Self {
+        pub fn ipam_scopes(mut self, input: crate::model::IpamScope) -> Self {
             let mut v = self.ipam_scopes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ipam_scopes = Some(v);
             self
         }
@@ -21464,9 +21030,9 @@ pub mod describe_ipams_output {
         /// To override the contents of this collection use [`set_ipams`](Self::set_ipams).
         ///
         /// <p>Information about the IPAMs.</p>
-        pub fn ipams(mut self, input: impl Into<crate::model::Ipam>) -> Self {
+        pub fn ipams(mut self, input: crate::model::Ipam) -> Self {
             let mut v = self.ipams.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ipams = Some(v);
             self
         }
@@ -21546,9 +21112,9 @@ pub mod describe_ipam_pools_output {
         /// To override the contents of this collection use [`set_ipam_pools`](Self::set_ipam_pools).
         ///
         /// <p>Information about the IPAM pools.</p>
-        pub fn ipam_pools(mut self, input: impl Into<crate::model::IpamPool>) -> Self {
+        pub fn ipam_pools(mut self, input: crate::model::IpamPool) -> Self {
             let mut v = self.ipam_pools.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ipam_pools = Some(v);
             self
         }
@@ -21619,12 +21185,9 @@ pub mod describe_internet_gateways_output {
         /// To override the contents of this collection use [`set_internet_gateways`](Self::set_internet_gateways).
         ///
         /// <p>Information about one or more internet gateways.</p>
-        pub fn internet_gateways(
-            mut self,
-            input: impl Into<crate::model::InternetGateway>,
-        ) -> Self {
+        pub fn internet_gateways(mut self, input: crate::model::InternetGateway) -> Self {
             let mut v = self.internet_gateways.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.internet_gateways = Some(v);
             self
         }
@@ -21668,8 +21231,7 @@ impl DescribeInternetGatewaysOutput {
 pub struct DescribeInstanceTypesOutput {
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub instance_types: std::option::Option<std::vec::Vec<crate::model::InstanceTypeInfo>>,
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there
-    /// are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceTypesOutput {
@@ -21677,8 +21239,7 @@ impl DescribeInstanceTypesOutput {
     pub fn instance_types(&self) -> std::option::Option<&[crate::model::InstanceTypeInfo]> {
         self.instance_types.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there
-    /// are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -21707,9 +21268,9 @@ pub mod describe_instance_types_output {
         /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
         ///
         /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
-        pub fn instance_types(mut self, input: impl Into<crate::model::InstanceTypeInfo>) -> Self {
+        pub fn instance_types(mut self, input: crate::model::InstanceTypeInfo) -> Self {
             let mut v = self.instance_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_types = Some(v);
             self
         }
@@ -21721,14 +21282,12 @@ pub mod describe_instance_types_output {
             self.instance_types = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there
-        /// are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there
-        /// are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -21756,8 +21315,7 @@ pub struct DescribeInstanceTypeOfferingsOutput {
     /// <p>The instance types offered.</p>
     pub instance_type_offerings:
         std::option::Option<std::vec::Vec<crate::model::InstanceTypeOffering>>,
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there
-    /// are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceTypeOfferingsOutput {
@@ -21767,8 +21325,7 @@ impl DescribeInstanceTypeOfferingsOutput {
     ) -> std::option::Option<&[crate::model::InstanceTypeOffering]> {
         self.instance_type_offerings.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there
-    /// are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -21799,10 +21356,10 @@ pub mod describe_instance_type_offerings_output {
         /// <p>The instance types offered.</p>
         pub fn instance_type_offerings(
             mut self,
-            input: impl Into<crate::model::InstanceTypeOffering>,
+            input: crate::model::InstanceTypeOffering,
         ) -> Self {
             let mut v = self.instance_type_offerings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_type_offerings = Some(v);
             self
         }
@@ -21814,14 +21371,12 @@ pub mod describe_instance_type_offerings_output {
             self.instance_type_offerings = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there
-        /// are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there
-        /// are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -21848,8 +21403,7 @@ impl DescribeInstanceTypeOfferingsOutput {
 pub struct DescribeInstanceStatusOutput {
     /// <p>Information about the status of the instances.</p>
     pub instance_statuses: std::option::Option<std::vec::Vec<crate::model::InstanceStatus>>,
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceStatusOutput {
@@ -21857,8 +21411,7 @@ impl DescribeInstanceStatusOutput {
     pub fn instance_statuses(&self) -> std::option::Option<&[crate::model::InstanceStatus]> {
         self.instance_statuses.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -21887,9 +21440,9 @@ pub mod describe_instance_status_output {
         /// To override the contents of this collection use [`set_instance_statuses`](Self::set_instance_statuses).
         ///
         /// <p>Information about the status of the instances.</p>
-        pub fn instance_statuses(mut self, input: impl Into<crate::model::InstanceStatus>) -> Self {
+        pub fn instance_statuses(mut self, input: crate::model::InstanceStatus) -> Self {
             let mut v = self.instance_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_statuses = Some(v);
             self
         }
@@ -21901,14 +21454,12 @@ pub mod describe_instance_status_output {
             self.instance_statuses = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -21935,8 +21486,7 @@ impl DescribeInstanceStatusOutput {
 pub struct DescribeInstancesOutput {
     /// <p>Information about the reservations.</p>
     pub reservations: std::option::Option<std::vec::Vec<crate::model::Reservation>>,
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstancesOutput {
@@ -21944,8 +21494,7 @@ impl DescribeInstancesOutput {
     pub fn reservations(&self) -> std::option::Option<&[crate::model::Reservation]> {
         self.reservations.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -21973,9 +21522,9 @@ pub mod describe_instances_output {
         /// To override the contents of this collection use [`set_reservations`](Self::set_reservations).
         ///
         /// <p>Information about the reservations.</p>
-        pub fn reservations(mut self, input: impl Into<crate::model::Reservation>) -> Self {
+        pub fn reservations(mut self, input: crate::model::Reservation) -> Self {
             let mut v = self.reservations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reservations = Some(v);
             self
         }
@@ -21987,14 +21536,12 @@ pub mod describe_instances_output {
             self.reservations = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -22061,12 +21608,9 @@ pub mod describe_instance_event_windows_output {
         /// To override the contents of this collection use [`set_instance_event_windows`](Self::set_instance_event_windows).
         ///
         /// <p>Information about the event windows.</p>
-        pub fn instance_event_windows(
-            mut self,
-            input: impl Into<crate::model::InstanceEventWindow>,
-        ) -> Self {
+        pub fn instance_event_windows(mut self, input: crate::model::InstanceEventWindow) -> Self {
             let mut v = self.instance_event_windows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_event_windows = Some(v);
             self
         }
@@ -22175,8 +21719,7 @@ pub struct DescribeInstanceCreditSpecificationsOutput {
     /// <p>Information about the credit option for CPU usage of an instance.</p>
     pub instance_credit_specifications:
         std::option::Option<std::vec::Vec<crate::model::InstanceCreditSpecification>>,
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceCreditSpecificationsOutput {
@@ -22186,8 +21729,7 @@ impl DescribeInstanceCreditSpecificationsOutput {
     ) -> std::option::Option<&[crate::model::InstanceCreditSpecification]> {
         self.instance_credit_specifications.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -22221,10 +21763,10 @@ pub mod describe_instance_credit_specifications_output {
         /// <p>Information about the credit option for CPU usage of an instance.</p>
         pub fn instance_credit_specifications(
             mut self,
-            input: impl Into<crate::model::InstanceCreditSpecification>,
+            input: crate::model::InstanceCreditSpecification,
         ) -> Self {
             let mut v = self.instance_credit_specifications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_credit_specifications = Some(v);
             self
         }
@@ -22236,14 +21778,12 @@ pub mod describe_instance_credit_specifications_output {
             self.instance_credit_specifications = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -22273,20 +21813,17 @@ pub struct DescribeInstanceAttributeOutput {
     /// <p>The block device mapping of the instance.</p>
     pub block_device_mappings:
         std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
-    /// <p>If the value is <code>true</code>, you can't terminate the instance through the Amazon
-    /// EC2 console, CLI, or API; otherwise, you can.</p>
+    /// <p>If the value is <code>true</code>, you can't terminate the instance through the Amazon EC2 console, CLI, or API; otherwise, you can.</p>
     pub disable_api_termination: std::option::Option<crate::model::AttributeBooleanValue>,
     /// <p>Indicates whether enhanced networking with ENA is enabled.</p>
     pub ena_support: std::option::Option<crate::model::AttributeBooleanValue>,
-    /// <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>; otherwise,
-    /// set it to <code>false</code>.</p>
+    /// <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
     pub enclave_options: std::option::Option<crate::model::EnclaveOptions>,
     /// <p>Indicates whether the instance is optimized for Amazon EBS I/O.</p>
     pub ebs_optimized: std::option::Option<crate::model::AttributeBooleanValue>,
     /// <p>The ID of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the
-    /// instance (using the operating system command for system shutdown).</p>
+    /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
     pub instance_initiated_shutdown_behavior: std::option::Option<crate::model::AttributeValue>,
     /// <p>The instance type.</p>
     pub instance_type: std::option::Option<crate::model::AttributeValue>,
@@ -22296,18 +21833,11 @@ pub struct DescribeInstanceAttributeOutput {
     pub product_codes: std::option::Option<std::vec::Vec<crate::model::ProductCode>>,
     /// <p>The RAM disk ID.</p>
     pub ramdisk_id: std::option::Option<crate::model::AttributeValue>,
-    /// <p>The device name of the root device volume (for example,
-    /// <code>/dev/sda1</code>).</p>
+    /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
     pub root_device_name: std::option::Option<crate::model::AttributeValue>,
-    /// <p>Enable or disable source/destination checks, which ensure that the instance
-    /// is either the source or the destination of any traffic that it receives.
-    /// If the value is <code>true</code>, source/destination checks are enabled;
-    /// otherwise, they are disabled. The default value is <code>true</code>.
-    /// You must disable source/destination checks if the instance runs services
-    /// such as network address translation, routing, or firewalls.</p>
+    /// <p>Enable or disable source/destination checks, which ensure that the instance is either the source or the destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable source/destination checks if the instance runs services such as network address translation, routing, or firewalls.</p>
     pub source_dest_check: std::option::Option<crate::model::AttributeBooleanValue>,
-    /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface
-    /// is enabled.</p>
+    /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
     pub sriov_net_support: std::option::Option<crate::model::AttributeValue>,
     /// <p>The user data.</p>
     pub user_data: std::option::Option<crate::model::AttributeValue>,
@@ -22323,8 +21853,7 @@ impl DescribeInstanceAttributeOutput {
     ) -> std::option::Option<&[crate::model::InstanceBlockDeviceMapping]> {
         self.block_device_mappings.as_deref()
     }
-    /// <p>If the value is <code>true</code>, you can't terminate the instance through the Amazon
-    /// EC2 console, CLI, or API; otherwise, you can.</p>
+    /// <p>If the value is <code>true</code>, you can't terminate the instance through the Amazon EC2 console, CLI, or API; otherwise, you can.</p>
     pub fn disable_api_termination(
         &self,
     ) -> std::option::Option<&crate::model::AttributeBooleanValue> {
@@ -22334,8 +21863,7 @@ impl DescribeInstanceAttributeOutput {
     pub fn ena_support(&self) -> std::option::Option<&crate::model::AttributeBooleanValue> {
         self.ena_support.as_ref()
     }
-    /// <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>; otherwise,
-    /// set it to <code>false</code>.</p>
+    /// <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
     pub fn enclave_options(&self) -> std::option::Option<&crate::model::EnclaveOptions> {
         self.enclave_options.as_ref()
     }
@@ -22347,8 +21875,7 @@ impl DescribeInstanceAttributeOutput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the
-    /// instance (using the operating system command for system shutdown).</p>
+    /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
     pub fn instance_initiated_shutdown_behavior(
         &self,
     ) -> std::option::Option<&crate::model::AttributeValue> {
@@ -22370,22 +21897,15 @@ impl DescribeInstanceAttributeOutput {
     pub fn ramdisk_id(&self) -> std::option::Option<&crate::model::AttributeValue> {
         self.ramdisk_id.as_ref()
     }
-    /// <p>The device name of the root device volume (for example,
-    /// <code>/dev/sda1</code>).</p>
+    /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
     pub fn root_device_name(&self) -> std::option::Option<&crate::model::AttributeValue> {
         self.root_device_name.as_ref()
     }
-    /// <p>Enable or disable source/destination checks, which ensure that the instance
-    /// is either the source or the destination of any traffic that it receives.
-    /// If the value is <code>true</code>, source/destination checks are enabled;
-    /// otherwise, they are disabled. The default value is <code>true</code>.
-    /// You must disable source/destination checks if the instance runs services
-    /// such as network address translation, routing, or firewalls.</p>
+    /// <p>Enable or disable source/destination checks, which ensure that the instance is either the source or the destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable source/destination checks if the instance runs services such as network address translation, routing, or firewalls.</p>
     pub fn source_dest_check(&self) -> std::option::Option<&crate::model::AttributeBooleanValue> {
         self.source_dest_check.as_ref()
     }
-    /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface
-    /// is enabled.</p>
+    /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
     pub fn sriov_net_support(&self) -> std::option::Option<&crate::model::AttributeValue> {
         self.sriov_net_support.as_ref()
     }
@@ -22451,9 +21971,9 @@ pub mod describe_instance_attribute_output {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <p>The security groups associated with the instance.</p>
-        pub fn groups(mut self, input: impl Into<crate::model::GroupIdentifier>) -> Self {
+        pub fn groups(mut self, input: crate::model::GroupIdentifier) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
@@ -22472,10 +21992,10 @@ pub mod describe_instance_attribute_output {
         /// <p>The block device mapping of the instance.</p>
         pub fn block_device_mappings(
             mut self,
-            input: impl Into<crate::model::InstanceBlockDeviceMapping>,
+            input: crate::model::InstanceBlockDeviceMapping,
         ) -> Self {
             let mut v = self.block_device_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.block_device_mappings = Some(v);
             self
         }
@@ -22487,8 +22007,7 @@ pub mod describe_instance_attribute_output {
             self.block_device_mappings = input;
             self
         }
-        /// <p>If the value is <code>true</code>, you can't terminate the instance through the Amazon
-        /// EC2 console, CLI, or API; otherwise, you can.</p>
+        /// <p>If the value is <code>true</code>, you can't terminate the instance through the Amazon EC2 console, CLI, or API; otherwise, you can.</p>
         pub fn disable_api_termination(
             mut self,
             input: crate::model::AttributeBooleanValue,
@@ -22496,8 +22015,7 @@ pub mod describe_instance_attribute_output {
             self.disable_api_termination = Some(input);
             self
         }
-        /// <p>If the value is <code>true</code>, you can't terminate the instance through the Amazon
-        /// EC2 console, CLI, or API; otherwise, you can.</p>
+        /// <p>If the value is <code>true</code>, you can't terminate the instance through the Amazon EC2 console, CLI, or API; otherwise, you can.</p>
         pub fn set_disable_api_termination(
             mut self,
             input: std::option::Option<crate::model::AttributeBooleanValue>,
@@ -22518,14 +22036,12 @@ pub mod describe_instance_attribute_output {
             self.ena_support = input;
             self
         }
-        /// <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>; otherwise,
-        /// set it to <code>false</code>.</p>
+        /// <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
         pub fn enclave_options(mut self, input: crate::model::EnclaveOptions) -> Self {
             self.enclave_options = Some(input);
             self
         }
-        /// <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>; otherwise,
-        /// set it to <code>false</code>.</p>
+        /// <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
         pub fn set_enclave_options(
             mut self,
             input: std::option::Option<crate::model::EnclaveOptions>,
@@ -22556,8 +22072,7 @@ pub mod describe_instance_attribute_output {
             self.instance_id = input;
             self
         }
-        /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the
-        /// instance (using the operating system command for system shutdown).</p>
+        /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
         pub fn instance_initiated_shutdown_behavior(
             mut self,
             input: crate::model::AttributeValue,
@@ -22565,8 +22080,7 @@ pub mod describe_instance_attribute_output {
             self.instance_initiated_shutdown_behavior = Some(input);
             self
         }
-        /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the
-        /// instance (using the operating system command for system shutdown).</p>
+        /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
         pub fn set_instance_initiated_shutdown_behavior(
             mut self,
             input: std::option::Option<crate::model::AttributeValue>,
@@ -22605,9 +22119,9 @@ pub mod describe_instance_attribute_output {
         /// To override the contents of this collection use [`set_product_codes`](Self::set_product_codes).
         ///
         /// <p>A list of product codes.</p>
-        pub fn product_codes(mut self, input: impl Into<crate::model::ProductCode>) -> Self {
+        pub fn product_codes(mut self, input: crate::model::ProductCode) -> Self {
             let mut v = self.product_codes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.product_codes = Some(v);
             self
         }
@@ -22632,14 +22146,12 @@ pub mod describe_instance_attribute_output {
             self.ramdisk_id = input;
             self
         }
-        /// <p>The device name of the root device volume (for example,
-        /// <code>/dev/sda1</code>).</p>
+        /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
         pub fn root_device_name(mut self, input: crate::model::AttributeValue) -> Self {
             self.root_device_name = Some(input);
             self
         }
-        /// <p>The device name of the root device volume (for example,
-        /// <code>/dev/sda1</code>).</p>
+        /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
         pub fn set_root_device_name(
             mut self,
             input: std::option::Option<crate::model::AttributeValue>,
@@ -22647,22 +22159,12 @@ pub mod describe_instance_attribute_output {
             self.root_device_name = input;
             self
         }
-        /// <p>Enable or disable source/destination checks, which ensure that the instance
-        /// is either the source or the destination of any traffic that it receives.
-        /// If the value is <code>true</code>, source/destination checks are enabled;
-        /// otherwise, they are disabled. The default value is <code>true</code>.
-        /// You must disable source/destination checks if the instance runs services
-        /// such as network address translation, routing, or firewalls.</p>
+        /// <p>Enable or disable source/destination checks, which ensure that the instance is either the source or the destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable source/destination checks if the instance runs services such as network address translation, routing, or firewalls.</p>
         pub fn source_dest_check(mut self, input: crate::model::AttributeBooleanValue) -> Self {
             self.source_dest_check = Some(input);
             self
         }
-        /// <p>Enable or disable source/destination checks, which ensure that the instance
-        /// is either the source or the destination of any traffic that it receives.
-        /// If the value is <code>true</code>, source/destination checks are enabled;
-        /// otherwise, they are disabled. The default value is <code>true</code>.
-        /// You must disable source/destination checks if the instance runs services
-        /// such as network address translation, routing, or firewalls.</p>
+        /// <p>Enable or disable source/destination checks, which ensure that the instance is either the source or the destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable source/destination checks if the instance runs services such as network address translation, routing, or firewalls.</p>
         pub fn set_source_dest_check(
             mut self,
             input: std::option::Option<crate::model::AttributeBooleanValue>,
@@ -22670,14 +22172,12 @@ pub mod describe_instance_attribute_output {
             self.source_dest_check = input;
             self
         }
-        /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface
-        /// is enabled.</p>
+        /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
         pub fn sriov_net_support(mut self, input: crate::model::AttributeValue) -> Self {
             self.sriov_net_support = Some(input);
             self
         }
-        /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface
-        /// is enabled.</p>
+        /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
         pub fn set_sriov_net_support(
             mut self,
             input: std::option::Option<crate::model::AttributeValue>,
@@ -22732,23 +22232,19 @@ impl DescribeInstanceAttributeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImportSnapshotTasksOutput {
-    /// <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the
-    /// previous 7 days.</p>
+    /// <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the previous 7 days.</p>
     pub import_snapshot_tasks: std::option::Option<std::vec::Vec<crate::model::ImportSnapshotTask>>,
-    /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
-    /// to return.</p>
+    /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeImportSnapshotTasksOutput {
-    /// <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the
-    /// previous 7 days.</p>
+    /// <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the previous 7 days.</p>
     pub fn import_snapshot_tasks(
         &self,
     ) -> std::option::Option<&[crate::model::ImportSnapshotTask]> {
         self.import_snapshot_tasks.as_deref()
     }
-    /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
-    /// to return.</p>
+    /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -22776,19 +22272,14 @@ pub mod describe_import_snapshot_tasks_output {
         ///
         /// To override the contents of this collection use [`set_import_snapshot_tasks`](Self::set_import_snapshot_tasks).
         ///
-        /// <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the
-        /// previous 7 days.</p>
-        pub fn import_snapshot_tasks(
-            mut self,
-            input: impl Into<crate::model::ImportSnapshotTask>,
-        ) -> Self {
+        /// <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the previous 7 days.</p>
+        pub fn import_snapshot_tasks(mut self, input: crate::model::ImportSnapshotTask) -> Self {
             let mut v = self.import_snapshot_tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.import_snapshot_tasks = Some(v);
             self
         }
-        /// <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the
-        /// previous 7 days.</p>
+        /// <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the previous 7 days.</p>
         pub fn set_import_snapshot_tasks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ImportSnapshotTask>>,
@@ -22796,14 +22287,12 @@ pub mod describe_import_snapshot_tasks_output {
             self.import_snapshot_tasks = input;
             self
         }
-        /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
-        /// to return.</p>
+        /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
-        /// to return.</p>
+        /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -22828,21 +22317,17 @@ impl DescribeImportSnapshotTasksOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImportImageTasksOutput {
-    /// <p>A list of zero or more import image tasks that are currently active or were completed or canceled in the
-    /// previous 7 days.</p>
+    /// <p>A list of zero or more import image tasks that are currently active or were completed or canceled in the previous 7 days.</p>
     pub import_image_tasks: std::option::Option<std::vec::Vec<crate::model::ImportImageTask>>,
-    /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
-    /// to return.</p>
+    /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeImportImageTasksOutput {
-    /// <p>A list of zero or more import image tasks that are currently active or were completed or canceled in the
-    /// previous 7 days.</p>
+    /// <p>A list of zero or more import image tasks that are currently active or were completed or canceled in the previous 7 days.</p>
     pub fn import_image_tasks(&self) -> std::option::Option<&[crate::model::ImportImageTask]> {
         self.import_image_tasks.as_deref()
     }
-    /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
-    /// to return.</p>
+    /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -22870,19 +22355,14 @@ pub mod describe_import_image_tasks_output {
         ///
         /// To override the contents of this collection use [`set_import_image_tasks`](Self::set_import_image_tasks).
         ///
-        /// <p>A list of zero or more import image tasks that are currently active or were completed or canceled in the
-        /// previous 7 days.</p>
-        pub fn import_image_tasks(
-            mut self,
-            input: impl Into<crate::model::ImportImageTask>,
-        ) -> Self {
+        /// <p>A list of zero or more import image tasks that are currently active or were completed or canceled in the previous 7 days.</p>
+        pub fn import_image_tasks(mut self, input: crate::model::ImportImageTask) -> Self {
             let mut v = self.import_image_tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.import_image_tasks = Some(v);
             self
         }
-        /// <p>A list of zero or more import image tasks that are currently active or were completed or canceled in the
-        /// previous 7 days.</p>
+        /// <p>A list of zero or more import image tasks that are currently active or were completed or canceled in the previous 7 days.</p>
         pub fn set_import_image_tasks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ImportImageTask>>,
@@ -22890,14 +22370,12 @@ pub mod describe_import_image_tasks_output {
             self.import_image_tasks = input;
             self
         }
-        /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
-        /// to return.</p>
+        /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
-        /// to return.</p>
+        /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -22952,9 +22430,9 @@ pub mod describe_images_output {
         /// To override the contents of this collection use [`set_images`](Self::set_images).
         ///
         /// <p>Information about the images.</p>
-        pub fn images(mut self, input: impl Into<crate::model::Image>) -> Self {
+        pub fn images(mut self, input: crate::model::Image) -> Self {
             let mut v = self.images.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.images = Some(v);
             self
         }
@@ -23083,12 +22561,9 @@ pub mod describe_image_attribute_output {
         /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
         ///
         /// <p>The block device mapping entries.</p>
-        pub fn block_device_mappings(
-            mut self,
-            input: impl Into<crate::model::BlockDeviceMapping>,
-        ) -> Self {
+        pub fn block_device_mappings(mut self, input: crate::model::BlockDeviceMapping) -> Self {
             let mut v = self.block_device_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.block_device_mappings = Some(v);
             self
         }
@@ -23115,12 +22590,9 @@ pub mod describe_image_attribute_output {
         /// To override the contents of this collection use [`set_launch_permissions`](Self::set_launch_permissions).
         ///
         /// <p>The launch permissions.</p>
-        pub fn launch_permissions(
-            mut self,
-            input: impl Into<crate::model::LaunchPermission>,
-        ) -> Self {
+        pub fn launch_permissions(mut self, input: crate::model::LaunchPermission) -> Self {
             let mut v = self.launch_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.launch_permissions = Some(v);
             self
         }
@@ -23137,9 +22609,9 @@ pub mod describe_image_attribute_output {
         /// To override the contents of this collection use [`set_product_codes`](Self::set_product_codes).
         ///
         /// <p>The product codes.</p>
-        pub fn product_codes(mut self, input: impl Into<crate::model::ProductCode>) -> Self {
+        pub fn product_codes(mut self, input: crate::model::ProductCode) -> Self {
             let mut v = self.product_codes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.product_codes = Some(v);
             self
         }
@@ -23273,9 +22745,9 @@ pub mod describe_id_format_output {
         /// To override the contents of this collection use [`set_statuses`](Self::set_statuses).
         ///
         /// <p>Information about the ID format for the resource.</p>
-        pub fn statuses(mut self, input: impl Into<crate::model::IdFormat>) -> Self {
+        pub fn statuses(mut self, input: crate::model::IdFormat) -> Self {
             let mut v = self.statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statuses = Some(v);
             self
         }
@@ -23336,9 +22808,9 @@ pub mod describe_identity_id_format_output {
         /// To override the contents of this collection use [`set_statuses`](Self::set_statuses).
         ///
         /// <p>Information about the ID format for the resources.</p>
-        pub fn statuses(mut self, input: impl Into<crate::model::IdFormat>) -> Self {
+        pub fn statuses(mut self, input: crate::model::IdFormat) -> Self {
             let mut v = self.statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statuses = Some(v);
             self
         }
@@ -23416,10 +22888,10 @@ pub mod describe_iam_instance_profile_associations_output {
         /// <p>Information about the IAM instance profile associations.</p>
         pub fn iam_instance_profile_associations(
             mut self,
-            input: impl Into<crate::model::IamInstanceProfileAssociation>,
+            input: crate::model::IamInstanceProfileAssociation,
         ) -> Self {
             let mut v = self.iam_instance_profile_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.iam_instance_profile_associations = Some(v);
             self
         }
@@ -23499,9 +22971,9 @@ pub mod describe_hosts_output {
         /// To override the contents of this collection use [`set_hosts`](Self::set_hosts).
         ///
         /// <p>Information about the Dedicated Hosts.</p>
-        pub fn hosts(mut self, input: impl Into<crate::model::Host>) -> Self {
+        pub fn hosts(mut self, input: crate::model::Host) -> Self {
             let mut v = self.hosts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hosts = Some(v);
             self
         }
@@ -23582,12 +23054,9 @@ pub mod describe_host_reservations_output {
         /// To override the contents of this collection use [`set_host_reservation_set`](Self::set_host_reservation_set).
         ///
         /// <p>Details about the reservation's configuration.</p>
-        pub fn host_reservation_set(
-            mut self,
-            input: impl Into<crate::model::HostReservation>,
-        ) -> Self {
+        pub fn host_reservation_set(mut self, input: crate::model::HostReservation) -> Self {
             let mut v = self.host_reservation_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.host_reservation_set = Some(v);
             self
         }
@@ -23677,9 +23146,9 @@ pub mod describe_host_reservation_offerings_output {
         /// To override the contents of this collection use [`set_offering_set`](Self::set_offering_set).
         ///
         /// <p>Information about the offerings.</p>
-        pub fn offering_set(mut self, input: impl Into<crate::model::HostOffering>) -> Self {
+        pub fn offering_set(mut self, input: crate::model::HostOffering) -> Self {
             let mut v = self.offering_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.offering_set = Some(v);
             self
         }
@@ -23749,9 +23218,9 @@ pub mod describe_fpga_images_output {
         /// To override the contents of this collection use [`set_fpga_images`](Self::set_fpga_images).
         ///
         /// <p>Information about the FPGA images.</p>
-        pub fn fpga_images(mut self, input: impl Into<crate::model::FpgaImage>) -> Self {
+        pub fn fpga_images(mut self, input: crate::model::FpgaImage) -> Self {
             let mut v = self.fpga_images.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fpga_images = Some(v);
             self
         }
@@ -23888,9 +23357,9 @@ pub mod describe_flow_logs_output {
         /// To override the contents of this collection use [`set_flow_logs`](Self::set_flow_logs).
         ///
         /// <p>Information about the flow logs.</p>
-        pub fn flow_logs(mut self, input: impl Into<crate::model::FlowLog>) -> Self {
+        pub fn flow_logs(mut self, input: crate::model::FlowLog) -> Self {
             let mut v = self.flow_logs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.flow_logs = Some(v);
             self
         }
@@ -23980,9 +23449,9 @@ pub mod describe_fleets_output {
         /// To override the contents of this collection use [`set_fleets`](Self::set_fleets).
         ///
         /// <p>Information about the EC2 Fleets.</p>
-        pub fn fleets(mut self, input: impl Into<crate::model::FleetData>) -> Self {
+        pub fn fleets(mut self, input: crate::model::FleetData) -> Self {
             let mut v = self.fleets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fleets = Some(v);
             self
         }
@@ -24014,8 +23483,7 @@ impl DescribeFleetsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetInstancesOutput {
-    /// <p>The running instances. This list is refreshed periodically and might be out of
-    /// date.</p>
+    /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
     pub active_instances: std::option::Option<std::vec::Vec<crate::model::ActiveInstance>>,
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -24023,8 +23491,7 @@ pub struct DescribeFleetInstancesOutput {
     pub fleet_id: std::option::Option<std::string::String>,
 }
 impl DescribeFleetInstancesOutput {
-    /// <p>The running instances. This list is refreshed periodically and might be out of
-    /// date.</p>
+    /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
     pub fn active_instances(&self) -> std::option::Option<&[crate::model::ActiveInstance]> {
         self.active_instances.as_deref()
     }
@@ -24062,16 +23529,14 @@ pub mod describe_fleet_instances_output {
         ///
         /// To override the contents of this collection use [`set_active_instances`](Self::set_active_instances).
         ///
-        /// <p>The running instances. This list is refreshed periodically and might be out of
-        /// date.</p>
-        pub fn active_instances(mut self, input: impl Into<crate::model::ActiveInstance>) -> Self {
+        /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
+        pub fn active_instances(mut self, input: crate::model::ActiveInstance) -> Self {
             let mut v = self.active_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.active_instances = Some(v);
             self
         }
-        /// <p>The running instances. This list is refreshed periodically and might be out of
-        /// date.</p>
+        /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
         pub fn set_active_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ActiveInstance>>,
@@ -24122,18 +23587,14 @@ impl DescribeFleetInstancesOutput {
 pub struct DescribeFleetHistoryOutput {
     /// <p>Information about the events in the history of the EC2 Fleet.</p>
     pub history_records: std::option::Option<std::vec::Vec<crate::model::HistoryRecordEntry>>,
-    /// <p>The last date and time for the events, in UTC format (for example,
-    /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-    /// All records up to this time were retrieved.</p>
-    /// <p>If <code>nextToken</code> indicates that there are more results, this value is not
-    /// present.</p>
+    /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
+    /// <p>If <code>nextToken</code> indicates that there are more results, this value is not present.</p>
     pub last_evaluated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the EC Fleet.</p>
     pub fleet_id: std::option::Option<std::string::String>,
-    /// <p>The start date and time for the events, in UTC format (for example,
-    /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    /// <p>The start date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeFleetHistoryOutput {
@@ -24141,11 +23602,8 @@ impl DescribeFleetHistoryOutput {
     pub fn history_records(&self) -> std::option::Option<&[crate::model::HistoryRecordEntry]> {
         self.history_records.as_deref()
     }
-    /// <p>The last date and time for the events, in UTC format (for example,
-    /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-    /// All records up to this time were retrieved.</p>
-    /// <p>If <code>nextToken</code> indicates that there are more results, this value is not
-    /// present.</p>
+    /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
+    /// <p>If <code>nextToken</code> indicates that there are more results, this value is not present.</p>
     pub fn last_evaluated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_evaluated_time.as_ref()
     }
@@ -24157,8 +23615,7 @@ impl DescribeFleetHistoryOutput {
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>The start date and time for the events, in UTC format (for example,
-    /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    /// <p>The start date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
@@ -24193,12 +23650,9 @@ pub mod describe_fleet_history_output {
         /// To override the contents of this collection use [`set_history_records`](Self::set_history_records).
         ///
         /// <p>Information about the events in the history of the EC2 Fleet.</p>
-        pub fn history_records(
-            mut self,
-            input: impl Into<crate::model::HistoryRecordEntry>,
-        ) -> Self {
+        pub fn history_records(mut self, input: crate::model::HistoryRecordEntry) -> Self {
             let mut v = self.history_records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.history_records = Some(v);
             self
         }
@@ -24210,20 +23664,14 @@ pub mod describe_fleet_history_output {
             self.history_records = input;
             self
         }
-        /// <p>The last date and time for the events, in UTC format (for example,
-        /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-        /// All records up to this time were retrieved.</p>
-        /// <p>If <code>nextToken</code> indicates that there are more results, this value is not
-        /// present.</p>
+        /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
+        /// <p>If <code>nextToken</code> indicates that there are more results, this value is not present.</p>
         pub fn last_evaluated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_evaluated_time = Some(input);
             self
         }
-        /// <p>The last date and time for the events, in UTC format (for example,
-        /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-        /// All records up to this time were retrieved.</p>
-        /// <p>If <code>nextToken</code> indicates that there are more results, this value is not
-        /// present.</p>
+        /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
+        /// <p>If <code>nextToken</code> indicates that there are more results, this value is not present.</p>
         pub fn set_last_evaluated_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -24251,14 +23699,12 @@ pub mod describe_fleet_history_output {
             self.fleet_id = input;
             self
         }
-        /// <p>The start date and time for the events, in UTC format (for example,
-        /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+        /// <p>The start date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The start date and time for the events, in UTC format (for example,
-        /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+        /// <p>The start date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -24334,10 +23780,10 @@ pub mod describe_fast_snapshot_restores_output {
         /// <p>Information about the state of fast snapshot restores.</p>
         pub fn fast_snapshot_restores(
             mut self,
-            input: impl Into<crate::model::DescribeFastSnapshotRestoreSuccessItem>,
+            input: crate::model::DescribeFastSnapshotRestoreSuccessItem,
         ) -> Self {
             let mut v = self.fast_snapshot_restores.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fast_snapshot_restores = Some(v);
             self
         }
@@ -24411,9 +23857,9 @@ pub mod describe_export_tasks_output {
         /// To override the contents of this collection use [`set_export_tasks`](Self::set_export_tasks).
         ///
         /// <p>Information about the export tasks.</p>
-        pub fn export_tasks(mut self, input: impl Into<crate::model::ExportTask>) -> Self {
+        pub fn export_tasks(mut self, input: crate::model::ExportTask) -> Self {
             let mut v = self.export_tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.export_tasks = Some(v);
             self
         }
@@ -24446,8 +23892,7 @@ impl DescribeExportTasksOutput {
 pub struct DescribeExportImageTasksOutput {
     /// <p>Information about the export image tasks.</p>
     pub export_image_tasks: std::option::Option<std::vec::Vec<crate::model::ExportImageTask>>,
-    /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
-    /// to return.</p>
+    /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeExportImageTasksOutput {
@@ -24455,8 +23900,7 @@ impl DescribeExportImageTasksOutput {
     pub fn export_image_tasks(&self) -> std::option::Option<&[crate::model::ExportImageTask]> {
         self.export_image_tasks.as_deref()
     }
-    /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
-    /// to return.</p>
+    /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -24485,12 +23929,9 @@ pub mod describe_export_image_tasks_output {
         /// To override the contents of this collection use [`set_export_image_tasks`](Self::set_export_image_tasks).
         ///
         /// <p>Information about the export image tasks.</p>
-        pub fn export_image_tasks(
-            mut self,
-            input: impl Into<crate::model::ExportImageTask>,
-        ) -> Self {
+        pub fn export_image_tasks(mut self, input: crate::model::ExportImageTask) -> Self {
             let mut v = self.export_image_tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.export_image_tasks = Some(v);
             self
         }
@@ -24502,14 +23943,12 @@ pub mod describe_export_image_tasks_output {
             self.export_image_tasks = input;
             self
         }
-        /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
-        /// to return.</p>
+        /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
-        /// to return.</p>
+        /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -24536,12 +23975,9 @@ impl DescribeExportImageTasksOutput {
 pub struct DescribeElasticGpusOutput {
     /// <p>Information about the Elastic Graphics accelerators.</p>
     pub elastic_gpu_set: std::option::Option<std::vec::Vec<crate::model::ElasticGpus>>,
-    /// <p>The total number of items to return. If the total number of items available is more
-    /// than the value specified in max-items then a Next-Token will be provided in the output
-    /// that you can use to resume pagination.</p>
+    /// <p>The total number of items to return. If the total number of items available is more than the value specified in max-items then a Next-Token will be provided in the output that you can use to resume pagination.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The token to use to retrieve the next page of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeElasticGpusOutput {
@@ -24549,14 +23985,11 @@ impl DescribeElasticGpusOutput {
     pub fn elastic_gpu_set(&self) -> std::option::Option<&[crate::model::ElasticGpus]> {
         self.elastic_gpu_set.as_deref()
     }
-    /// <p>The total number of items to return. If the total number of items available is more
-    /// than the value specified in max-items then a Next-Token will be provided in the output
-    /// that you can use to resume pagination.</p>
+    /// <p>The total number of items to return. If the total number of items available is more than the value specified in max-items then a Next-Token will be provided in the output that you can use to resume pagination.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token to use to retrieve the next page of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -24586,9 +24019,9 @@ pub mod describe_elastic_gpus_output {
         /// To override the contents of this collection use [`set_elastic_gpu_set`](Self::set_elastic_gpu_set).
         ///
         /// <p>Information about the Elastic Graphics accelerators.</p>
-        pub fn elastic_gpu_set(mut self, input: impl Into<crate::model::ElasticGpus>) -> Self {
+        pub fn elastic_gpu_set(mut self, input: crate::model::ElasticGpus) -> Self {
             let mut v = self.elastic_gpu_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.elastic_gpu_set = Some(v);
             self
         }
@@ -24600,28 +24033,22 @@ pub mod describe_elastic_gpus_output {
             self.elastic_gpu_set = input;
             self
         }
-        /// <p>The total number of items to return. If the total number of items available is more
-        /// than the value specified in max-items then a Next-Token will be provided in the output
-        /// that you can use to resume pagination.</p>
+        /// <p>The total number of items to return. If the total number of items available is more than the value specified in max-items then a Next-Token will be provided in the output that you can use to resume pagination.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The total number of items to return. If the total number of items available is more
-        /// than the value specified in max-items then a Next-Token will be provided in the output
-        /// that you can use to resume pagination.</p>
+        /// <p>The total number of items to return. If the total number of items available is more than the value specified in max-items then a Next-Token will be provided in the output that you can use to resume pagination.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -24694,10 +24121,10 @@ pub mod describe_egress_only_internet_gateways_output {
         /// <p>Information about the egress-only internet gateways.</p>
         pub fn egress_only_internet_gateways(
             mut self,
-            input: impl Into<crate::model::EgressOnlyInternetGateway>,
+            input: crate::model::EgressOnlyInternetGateway,
         ) -> Self {
             let mut v = self.egress_only_internet_gateways.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.egress_only_internet_gateways = Some(v);
             self
         }
@@ -24777,9 +24204,9 @@ pub mod describe_dhcp_options_output {
         /// To override the contents of this collection use [`set_dhcp_options`](Self::set_dhcp_options).
         ///
         /// <p>Information about one or more DHCP options sets.</p>
-        pub fn dhcp_options(mut self, input: impl Into<crate::model::DhcpOptions>) -> Self {
+        pub fn dhcp_options(mut self, input: crate::model::DhcpOptions) -> Self {
             let mut v = self.dhcp_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dhcp_options = Some(v);
             self
         }
@@ -24852,12 +24279,9 @@ pub mod describe_customer_gateways_output {
         /// To override the contents of this collection use [`set_customer_gateways`](Self::set_customer_gateways).
         ///
         /// <p>Information about one or more customer gateways.</p>
-        pub fn customer_gateways(
-            mut self,
-            input: impl Into<crate::model::CustomerGateway>,
-        ) -> Self {
+        pub fn customer_gateways(mut self, input: crate::model::CustomerGateway) -> Self {
             let mut v = self.customer_gateways.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.customer_gateways = Some(v);
             self
         }
@@ -24919,9 +24343,9 @@ pub mod describe_conversion_tasks_output {
         /// To override the contents of this collection use [`set_conversion_tasks`](Self::set_conversion_tasks).
         ///
         /// <p>Information about the conversion tasks.</p>
-        pub fn conversion_tasks(mut self, input: impl Into<crate::model::ConversionTask>) -> Self {
+        pub fn conversion_tasks(mut self, input: crate::model::ConversionTask) -> Self {
             let mut v = self.conversion_tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conversion_tasks = Some(v);
             self
         }
@@ -24990,9 +24414,9 @@ pub mod describe_coip_pools_output {
         /// To override the contents of this collection use [`set_coip_pools`](Self::set_coip_pools).
         ///
         /// <p>Information about the address pools.</p>
-        pub fn coip_pools(mut self, input: impl Into<crate::model::CoipPool>) -> Self {
+        pub fn coip_pools(mut self, input: crate::model::CoipPool) -> Self {
             let mut v = self.coip_pools.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.coip_pools = Some(v);
             self
         }
@@ -25078,12 +24502,9 @@ pub mod describe_client_vpn_target_networks_output {
         /// To override the contents of this collection use [`set_client_vpn_target_networks`](Self::set_client_vpn_target_networks).
         ///
         /// <p>Information about the associated target networks.</p>
-        pub fn client_vpn_target_networks(
-            mut self,
-            input: impl Into<crate::model::TargetNetwork>,
-        ) -> Self {
+        pub fn client_vpn_target_networks(mut self, input: crate::model::TargetNetwork) -> Self {
             let mut v = self.client_vpn_target_networks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.client_vpn_target_networks = Some(v);
             self
         }
@@ -25163,9 +24584,9 @@ pub mod describe_client_vpn_routes_output {
         /// To override the contents of this collection use [`set_routes`](Self::set_routes).
         ///
         /// <p>Information about the Client VPN endpoint routes.</p>
-        pub fn routes(mut self, input: impl Into<crate::model::ClientVpnRoute>) -> Self {
+        pub fn routes(mut self, input: crate::model::ClientVpnRoute) -> Self {
             let mut v = self.routes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.routes = Some(v);
             self
         }
@@ -25246,12 +24667,9 @@ pub mod describe_client_vpn_endpoints_output {
         /// To override the contents of this collection use [`set_client_vpn_endpoints`](Self::set_client_vpn_endpoints).
         ///
         /// <p>Information about the Client VPN endpoints.</p>
-        pub fn client_vpn_endpoints(
-            mut self,
-            input: impl Into<crate::model::ClientVpnEndpoint>,
-        ) -> Self {
+        pub fn client_vpn_endpoints(mut self, input: crate::model::ClientVpnEndpoint) -> Self {
             let mut v = self.client_vpn_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.client_vpn_endpoints = Some(v);
             self
         }
@@ -25332,9 +24750,9 @@ pub mod describe_client_vpn_connections_output {
         /// To override the contents of this collection use [`set_connections`](Self::set_connections).
         ///
         /// <p>Information about the active and terminated client connections.</p>
-        pub fn connections(mut self, input: impl Into<crate::model::ClientVpnConnection>) -> Self {
+        pub fn connections(mut self, input: crate::model::ClientVpnConnection) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connections = Some(v);
             self
         }
@@ -25415,12 +24833,9 @@ pub mod describe_client_vpn_authorization_rules_output {
         /// To override the contents of this collection use [`set_authorization_rules`](Self::set_authorization_rules).
         ///
         /// <p>Information about the authorization rules.</p>
-        pub fn authorization_rules(
-            mut self,
-            input: impl Into<crate::model::AuthorizationRule>,
-        ) -> Self {
+        pub fn authorization_rules(mut self, input: crate::model::AuthorizationRule) -> Self {
             let mut v = self.authorization_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.authorization_rules = Some(v);
             self
         }
@@ -25500,9 +24915,9 @@ pub mod describe_classic_link_instances_output {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>Information about one or more linked EC2-Classic instances.</p>
-        pub fn instances(mut self, input: impl Into<crate::model::ClassicLinkInstance>) -> Self {
+        pub fn instances(mut self, input: crate::model::ClassicLinkInstance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }
@@ -25583,9 +24998,9 @@ pub mod describe_carrier_gateways_output {
         /// To override the contents of this collection use [`set_carrier_gateways`](Self::set_carrier_gateways).
         ///
         /// <p>Information about the carrier gateway.</p>
-        pub fn carrier_gateways(mut self, input: impl Into<crate::model::CarrierGateway>) -> Self {
+        pub fn carrier_gateways(mut self, input: crate::model::CarrierGateway) -> Self {
             let mut v = self.carrier_gateways.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.carrier_gateways = Some(v);
             self
         }
@@ -25679,12 +25094,9 @@ pub mod describe_capacity_reservations_output {
         /// To override the contents of this collection use [`set_capacity_reservations`](Self::set_capacity_reservations).
         ///
         /// <p>Information about the Capacity Reservations.</p>
-        pub fn capacity_reservations(
-            mut self,
-            input: impl Into<crate::model::CapacityReservation>,
-        ) -> Self {
+        pub fn capacity_reservations(mut self, input: crate::model::CapacityReservation) -> Self {
             let mut v = self.capacity_reservations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capacity_reservations = Some(v);
             self
         }
@@ -25763,10 +25175,10 @@ pub mod describe_capacity_reservation_fleets_output {
         /// <p>Information about the Capacity Reservation Fleets.</p>
         pub fn capacity_reservation_fleets(
             mut self,
-            input: impl Into<crate::model::CapacityReservationFleet>,
+            input: crate::model::CapacityReservationFleet,
         ) -> Self {
             let mut v = self.capacity_reservation_fleets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capacity_reservation_fleets = Some(v);
             self
         }
@@ -25846,9 +25258,9 @@ pub mod describe_byoip_cidrs_output {
         /// To override the contents of this collection use [`set_byoip_cidrs`](Self::set_byoip_cidrs).
         ///
         /// <p>Information about your address ranges.</p>
-        pub fn byoip_cidrs(mut self, input: impl Into<crate::model::ByoipCidr>) -> Self {
+        pub fn byoip_cidrs(mut self, input: crate::model::ByoipCidr) -> Self {
             let mut v = self.byoip_cidrs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.byoip_cidrs = Some(v);
             self
         }
@@ -25920,9 +25332,9 @@ pub mod describe_bundle_tasks_output {
         /// To override the contents of this collection use [`set_bundle_tasks`](Self::set_bundle_tasks).
         ///
         /// <p>Information about the bundle tasks.</p>
-        pub fn bundle_tasks(mut self, input: impl Into<crate::model::BundleTask>) -> Self {
+        pub fn bundle_tasks(mut self, input: crate::model::BundleTask) -> Self {
             let mut v = self.bundle_tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bundle_tasks = Some(v);
             self
         }
@@ -25984,12 +25396,9 @@ pub mod describe_availability_zones_output {
         /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
         ///
         /// <p>Information about the Availability Zones, Local Zones, and Wavelength Zones.</p>
-        pub fn availability_zones(
-            mut self,
-            input: impl Into<crate::model::AvailabilityZone>,
-        ) -> Self {
+        pub fn availability_zones(mut self, input: crate::model::AvailabilityZone) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.availability_zones = Some(v);
             self
         }
@@ -26020,17 +25429,13 @@ impl DescribeAvailabilityZonesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAggregateIdFormatOutput {
-    /// <p>Indicates whether all resource types in the Region are configured to use longer IDs.
-    /// This value is only <code>true</code> if all users are configured to use longer IDs for
-    /// all resources types in the Region.</p>
+    /// <p>Indicates whether all resource types in the Region are configured to use longer IDs. This value is only <code>true</code> if all users are configured to use longer IDs for all resources types in the Region.</p>
     pub use_long_ids_aggregated: std::option::Option<bool>,
     /// <p>Information about each resource's ID format.</p>
     pub statuses: std::option::Option<std::vec::Vec<crate::model::IdFormat>>,
 }
 impl DescribeAggregateIdFormatOutput {
-    /// <p>Indicates whether all resource types in the Region are configured to use longer IDs.
-    /// This value is only <code>true</code> if all users are configured to use longer IDs for
-    /// all resources types in the Region.</p>
+    /// <p>Indicates whether all resource types in the Region are configured to use longer IDs. This value is only <code>true</code> if all users are configured to use longer IDs for all resources types in the Region.</p>
     pub fn use_long_ids_aggregated(&self) -> std::option::Option<bool> {
         self.use_long_ids_aggregated
     }
@@ -26057,16 +25462,12 @@ pub mod describe_aggregate_id_format_output {
         pub(crate) statuses: std::option::Option<std::vec::Vec<crate::model::IdFormat>>,
     }
     impl Builder {
-        /// <p>Indicates whether all resource types in the Region are configured to use longer IDs.
-        /// This value is only <code>true</code> if all users are configured to use longer IDs for
-        /// all resources types in the Region.</p>
+        /// <p>Indicates whether all resource types in the Region are configured to use longer IDs. This value is only <code>true</code> if all users are configured to use longer IDs for all resources types in the Region.</p>
         pub fn use_long_ids_aggregated(mut self, input: bool) -> Self {
             self.use_long_ids_aggregated = Some(input);
             self
         }
-        /// <p>Indicates whether all resource types in the Region are configured to use longer IDs.
-        /// This value is only <code>true</code> if all users are configured to use longer IDs for
-        /// all resources types in the Region.</p>
+        /// <p>Indicates whether all resource types in the Region are configured to use longer IDs. This value is only <code>true</code> if all users are configured to use longer IDs for all resources types in the Region.</p>
         pub fn set_use_long_ids_aggregated(mut self, input: std::option::Option<bool>) -> Self {
             self.use_long_ids_aggregated = input;
             self
@@ -26076,9 +25477,9 @@ pub mod describe_aggregate_id_format_output {
         /// To override the contents of this collection use [`set_statuses`](Self::set_statuses).
         ///
         /// <p>Information about each resource's ID format.</p>
-        pub fn statuses(mut self, input: impl Into<crate::model::IdFormat>) -> Self {
+        pub fn statuses(mut self, input: crate::model::IdFormat) -> Self {
             let mut v = self.statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statuses = Some(v);
             self
         }
@@ -26148,9 +25549,9 @@ pub mod describe_addresses_attribute_output {
         /// To override the contents of this collection use [`set_addresses`](Self::set_addresses).
         ///
         /// <p>Information about the IP addresses.</p>
-        pub fn addresses(mut self, input: impl Into<crate::model::AddressAttribute>) -> Self {
+        pub fn addresses(mut self, input: crate::model::AddressAttribute) -> Self {
             let mut v = self.addresses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.addresses = Some(v);
             self
         }
@@ -26222,9 +25623,9 @@ pub mod describe_addresses_output {
         /// To override the contents of this collection use [`set_addresses`](Self::set_addresses).
         ///
         /// <p>Information about the Elastic IP addresses.</p>
-        pub fn addresses(mut self, input: impl Into<crate::model::Address>) -> Self {
+        pub fn addresses(mut self, input: crate::model::Address) -> Self {
             let mut v = self.addresses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.addresses = Some(v);
             self
         }
@@ -26286,12 +25687,9 @@ pub mod describe_account_attributes_output {
         /// To override the contents of this collection use [`set_account_attributes`](Self::set_account_attributes).
         ///
         /// <p>Information about the account attributes.</p>
-        pub fn account_attributes(
-            mut self,
-            input: impl Into<crate::model::AccountAttribute>,
-        ) -> Self {
+        pub fn account_attributes(mut self, input: crate::model::AccountAttribute) -> Self {
             let mut v = self.account_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.account_attributes = Some(v);
             self
         }
@@ -26896,13 +26294,11 @@ impl DeleteVpcPeeringConnectionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVpcEndpointServiceConfigurationsOutput {
-    /// <p>Information about the service configurations that were not deleted, if
-    /// applicable.</p>
+    /// <p>Information about the service configurations that were not deleted, if applicable.</p>
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
 }
 impl DeleteVpcEndpointServiceConfigurationsOutput {
-    /// <p>Information about the service configurations that were not deleted, if
-    /// applicable.</p>
+    /// <p>Information about the service configurations that were not deleted, if applicable.</p>
     pub fn unsuccessful(&self) -> std::option::Option<&[crate::model::UnsuccessfulItem]> {
         self.unsuccessful.as_deref()
     }
@@ -26927,16 +26323,14 @@ pub mod delete_vpc_endpoint_service_configurations_output {
         ///
         /// To override the contents of this collection use [`set_unsuccessful`](Self::set_unsuccessful).
         ///
-        /// <p>Information about the service configurations that were not deleted, if
-        /// applicable.</p>
-        pub fn unsuccessful(mut self, input: impl Into<crate::model::UnsuccessfulItem>) -> Self {
+        /// <p>Information about the service configurations that were not deleted, if applicable.</p>
+        pub fn unsuccessful(mut self, input: crate::model::UnsuccessfulItem) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessful = Some(v);
             self
         }
-        /// <p>Information about the service configurations that were not deleted, if
-        /// applicable.</p>
+        /// <p>Information about the service configurations that were not deleted, if applicable.</p>
         pub fn set_unsuccessful(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
@@ -26993,9 +26387,9 @@ pub mod delete_vpc_endpoints_output {
         /// To override the contents of this collection use [`set_unsuccessful`](Self::set_unsuccessful).
         ///
         /// <p>Information about the VPC endpoints that were not successfully deleted.</p>
-        pub fn unsuccessful(mut self, input: impl Into<crate::model::UnsuccessfulItem>) -> Self {
+        pub fn unsuccessful(mut self, input: crate::model::UnsuccessfulItem) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessful = Some(v);
             self
         }
@@ -27026,13 +26420,11 @@ impl DeleteVpcEndpointsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVpcEndpointConnectionNotificationsOutput {
-    /// <p>Information about the notifications that could not be deleted
-    /// successfully.</p>
+    /// <p>Information about the notifications that could not be deleted successfully.</p>
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
 }
 impl DeleteVpcEndpointConnectionNotificationsOutput {
-    /// <p>Information about the notifications that could not be deleted
-    /// successfully.</p>
+    /// <p>Information about the notifications that could not be deleted successfully.</p>
     pub fn unsuccessful(&self) -> std::option::Option<&[crate::model::UnsuccessfulItem]> {
         self.unsuccessful.as_deref()
     }
@@ -27057,16 +26449,14 @@ pub mod delete_vpc_endpoint_connection_notifications_output {
         ///
         /// To override the contents of this collection use [`set_unsuccessful`](Self::set_unsuccessful).
         ///
-        /// <p>Information about the notifications that could not be deleted
-        /// successfully.</p>
-        pub fn unsuccessful(mut self, input: impl Into<crate::model::UnsuccessfulItem>) -> Self {
+        /// <p>Information about the notifications that could not be deleted successfully.</p>
+        pub fn unsuccessful(mut self, input: crate::model::UnsuccessfulItem) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessful = Some(v);
             self
         }
-        /// <p>Information about the notifications that could not be deleted
-        /// successfully.</p>
+        /// <p>Information about the notifications that could not be deleted successfully.</p>
         pub fn set_unsuccessful(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
@@ -28294,12 +27684,12 @@ pub mod delete_queued_reserved_instances_output {
         /// <p>Information about the queued purchases that were successfully deleted.</p>
         pub fn successful_queued_purchase_deletions(
             mut self,
-            input: impl Into<crate::model::SuccessfulQueuedPurchaseDeletion>,
+            input: crate::model::SuccessfulQueuedPurchaseDeletion,
         ) -> Self {
             let mut v = self
                 .successful_queued_purchase_deletions
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successful_queued_purchase_deletions = Some(v);
             self
         }
@@ -28320,10 +27710,10 @@ pub mod delete_queued_reserved_instances_output {
         /// <p>Information about the queued purchases that could not be deleted.</p>
         pub fn failed_queued_purchase_deletions(
             mut self,
-            input: impl Into<crate::model::FailedQueuedPurchaseDeletion>,
+            input: crate::model::FailedQueuedPurchaseDeletion,
         ) -> Self {
             let mut v = self.failed_queued_purchase_deletions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_queued_purchase_deletions = Some(v);
             self
         }
@@ -29070,8 +28460,7 @@ impl DeleteLocalGatewayRouteOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLaunchTemplateVersionsOutput {
-    /// <p>Information about the launch template versions that were successfully
-    /// deleted.</p>
+    /// <p>Information about the launch template versions that were successfully deleted.</p>
     pub successfully_deleted_launch_template_versions: std::option::Option<
         std::vec::Vec<crate::model::DeleteLaunchTemplateVersionsResponseSuccessItem>,
     >,
@@ -29081,8 +28470,7 @@ pub struct DeleteLaunchTemplateVersionsOutput {
     >,
 }
 impl DeleteLaunchTemplateVersionsOutput {
-    /// <p>Information about the launch template versions that were successfully
-    /// deleted.</p>
+    /// <p>Information about the launch template versions that were successfully deleted.</p>
     pub fn successfully_deleted_launch_template_versions(
         &self,
     ) -> std::option::Option<&[crate::model::DeleteLaunchTemplateVersionsResponseSuccessItem]> {
@@ -29129,21 +28517,19 @@ pub mod delete_launch_template_versions_output {
         ///
         /// To override the contents of this collection use [`set_successfully_deleted_launch_template_versions`](Self::set_successfully_deleted_launch_template_versions).
         ///
-        /// <p>Information about the launch template versions that were successfully
-        /// deleted.</p>
+        /// <p>Information about the launch template versions that were successfully deleted.</p>
         pub fn successfully_deleted_launch_template_versions(
             mut self,
-            input: impl Into<crate::model::DeleteLaunchTemplateVersionsResponseSuccessItem>,
+            input: crate::model::DeleteLaunchTemplateVersionsResponseSuccessItem,
         ) -> Self {
             let mut v = self
                 .successfully_deleted_launch_template_versions
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successfully_deleted_launch_template_versions = Some(v);
             self
         }
-        /// <p>Information about the launch template versions that were successfully
-        /// deleted.</p>
+        /// <p>Information about the launch template versions that were successfully deleted.</p>
         pub fn set_successfully_deleted_launch_template_versions(
             mut self,
             input: std::option::Option<
@@ -29160,12 +28546,12 @@ pub mod delete_launch_template_versions_output {
         /// <p>Information about the launch template versions that could not be deleted.</p>
         pub fn unsuccessfully_deleted_launch_template_versions(
             mut self,
-            input: impl Into<crate::model::DeleteLaunchTemplateVersionsResponseErrorItem>,
+            input: crate::model::DeleteLaunchTemplateVersionsResponseErrorItem,
         ) -> Self {
             let mut v = self
                 .unsuccessfully_deleted_launch_template_versions
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessfully_deleted_launch_template_versions = Some(v);
             self
         }
@@ -29632,9 +29018,9 @@ pub mod delete_flow_logs_output {
         /// To override the contents of this collection use [`set_unsuccessful`](Self::set_unsuccessful).
         ///
         /// <p>Information about the flow logs that could not be deleted successfully.</p>
-        pub fn unsuccessful(mut self, input: impl Into<crate::model::UnsuccessfulItem>) -> Self {
+        pub fn unsuccessful(mut self, input: crate::model::UnsuccessfulItem) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessful = Some(v);
             self
         }
@@ -29719,10 +29105,10 @@ pub mod delete_fleets_output {
         /// <p>Information about the EC2 Fleets that are successfully deleted.</p>
         pub fn successful_fleet_deletions(
             mut self,
-            input: impl Into<crate::model::DeleteFleetSuccessItem>,
+            input: crate::model::DeleteFleetSuccessItem,
         ) -> Self {
             let mut v = self.successful_fleet_deletions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successful_fleet_deletions = Some(v);
             self
         }
@@ -29741,10 +29127,10 @@ pub mod delete_fleets_output {
         /// <p>Information about the EC2 Fleets that are not successfully deleted.</p>
         pub fn unsuccessful_fleet_deletions(
             mut self,
-            input: impl Into<crate::model::DeleteFleetErrorItem>,
+            input: crate::model::DeleteFleetErrorItem,
         ) -> Self {
             let mut v = self.unsuccessful_fleet_deletions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessful_fleet_deletions = Some(v);
             self
         }
@@ -30266,8 +29652,7 @@ impl CreateVpcPeeringConnectionOutput {
 pub struct CreateVpcEndpointServiceConfigurationOutput {
     /// <p>Information about the service configuration.</p>
     pub service_configuration: std::option::Option<crate::model::ServiceConfiguration>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateVpcEndpointServiceConfigurationOutput {
@@ -30277,8 +29662,7 @@ impl CreateVpcEndpointServiceConfigurationOutput {
     ) -> std::option::Option<&crate::model::ServiceConfiguration> {
         self.service_configuration.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -30314,14 +29698,12 @@ pub mod create_vpc_endpoint_service_configuration_output {
             self.service_configuration = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -30348,8 +29730,7 @@ impl CreateVpcEndpointServiceConfigurationOutput {
 pub struct CreateVpcEndpointConnectionNotificationOutput {
     /// <p>Information about the notification.</p>
     pub connection_notification: std::option::Option<crate::model::ConnectionNotification>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateVpcEndpointConnectionNotificationOutput {
@@ -30359,8 +29740,7 @@ impl CreateVpcEndpointConnectionNotificationOutput {
     ) -> std::option::Option<&crate::model::ConnectionNotification> {
         self.connection_notification.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -30400,14 +29780,12 @@ pub mod create_vpc_endpoint_connection_notification_output {
             self.connection_notification = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -30434,8 +29812,7 @@ impl CreateVpcEndpointConnectionNotificationOutput {
 pub struct CreateVpcEndpointOutput {
     /// <p>Information about the endpoint.</p>
     pub vpc_endpoint: std::option::Option<crate::model::VpcEndpoint>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateVpcEndpointOutput {
@@ -30443,8 +29820,7 @@ impl CreateVpcEndpointOutput {
     pub fn vpc_endpoint(&self) -> std::option::Option<&crate::model::VpcEndpoint> {
         self.vpc_endpoint.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -30480,14 +29856,12 @@ pub mod create_vpc_endpoint_output {
             self.vpc_endpoint = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -30572,8 +29946,7 @@ pub struct CreateVolumeOutput {
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates whether the volume is encrypted.</p>
     pub encrypted: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the
-    /// volume encryption key for the volume.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the volume.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub outpost_arn: std::option::Option<std::string::String>,
@@ -30585,9 +29958,7 @@ pub struct CreateVolumeOutput {
     pub state: std::option::Option<crate::model::VolumeState>,
     /// <p>The ID of the volume.</p>
     pub volume_id: std::option::Option<std::string::String>,
-    /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents
-    /// the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline
-    /// performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
+    /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
     pub iops: std::option::Option<i32>,
     /// <p>Any tags assigned to the volume.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -30617,8 +29988,7 @@ impl CreateVolumeOutput {
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the
-    /// volume encryption key for the volume.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the volume.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -30642,9 +30012,7 @@ impl CreateVolumeOutput {
     pub fn volume_id(&self) -> std::option::Option<&str> {
         self.volume_id.as_deref()
     }
-    /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents
-    /// the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline
-    /// performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
+    /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
     pub fn iops(&self) -> std::option::Option<i32> {
         self.iops
     }
@@ -30720,9 +30088,9 @@ pub mod create_volume_output {
         /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
         ///
         /// <p>Information about the volume attachments.</p>
-        pub fn attachments(mut self, input: impl Into<crate::model::VolumeAttachment>) -> Self {
+        pub fn attachments(mut self, input: crate::model::VolumeAttachment) -> Self {
             let mut v = self.attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attachments = Some(v);
             self
         }
@@ -30770,14 +30138,12 @@ pub mod create_volume_output {
             self.encrypted = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the
-        /// volume encryption key for the volume.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the volume.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the
-        /// volume encryption key for the volume.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the volume.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -30832,16 +30198,12 @@ pub mod create_volume_output {
             self.volume_id = input;
             self
         }
-        /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents
-        /// the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline
-        /// performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
+        /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
         pub fn iops(mut self, input: i32) -> Self {
             self.iops = Some(input);
             self
         }
-        /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents
-        /// the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline
-        /// performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
+        /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
         pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
             self.iops = input;
             self
@@ -30851,9 +30213,9 @@ pub mod create_volume_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Any tags assigned to the volume.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -32130,9 +31492,9 @@ pub mod create_snapshots_output {
         /// To override the contents of this collection use [`set_snapshots`](Self::set_snapshots).
         ///
         /// <p>List of snapshots.</p>
-        pub fn snapshots(mut self, input: impl Into<crate::model::SnapshotInfo>) -> Self {
+        pub fn snapshots(mut self, input: crate::model::SnapshotInfo) -> Self {
             let mut v = self.snapshots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.snapshots = Some(v);
             self
         }
@@ -32163,63 +31525,43 @@ impl CreateSnapshotsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSnapshotOutput {
-    /// <p>The data encryption key identifier for the snapshot. This value is a unique identifier
-    /// that corresponds to the data encryption key that was used to encrypt the original volume or
-    /// snapshot copy. Because data encryption keys are inherited by volumes created from snapshots,
-    /// and vice versa, if snapshots share the same data encryption key identifier, then they belong
-    /// to the same volume/snapshot lineage. This parameter is only returned by <a>DescribeSnapshots</a>.</p>
+    /// <p>The data encryption key identifier for the snapshot. This value is a unique identifier that corresponds to the data encryption key that was used to encrypt the original volume or snapshot copy. Because data encryption keys are inherited by volumes created from snapshots, and vice versa, if snapshots share the same data encryption key identifier, then they belong to the same volume/snapshot lineage. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
     pub data_encryption_key_id: std::option::Option<std::string::String>,
     /// <p>The description for the snapshot.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>Indicates whether the snapshot is encrypted.</p>
     pub encrypted: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the
-    /// volume encryption key for the parent volume.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the parent volume.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the EBS snapshot.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The progress of the snapshot, as a percentage.</p>
     pub progress: std::option::Option<std::string::String>,
-    /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is
-    /// created.</p>
+    /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is created.</p>
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The time stamp when the snapshot was initiated.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The snapshot state.</p>
     pub state: std::option::Option<crate::model::SnapshotState>,
-    /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails
-    /// (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error
-    /// state details to help you diagnose why the error occurred. This parameter is only returned by
-    /// <a>DescribeSnapshots</a>.</p>
+    /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error state details to help you diagnose why the error occurred. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
     pub state_message: std::option::Option<std::string::String>,
-    /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by the <a>CopySnapshot</a> action have an arbitrary volume ID that should not be used for any
-    /// purpose.</p>
+    /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by the <code>CopySnapshot</code> action have an arbitrary volume ID that should not be used for any purpose.</p>
     pub volume_id: std::option::Option<std::string::String>,
     /// <p>The size of the volume, in GiB.</p>
     pub volume_size: std::option::Option<i32>,
-    /// <p>The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not  
-    /// the user-configured Amazon Web Services account alias set using the IAM console.</p>
+    /// <p>The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the user-configured Amazon Web Services account alias set using the IAM console.</p>
     pub owner_alias: std::option::Option<std::string::String>,
-    /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the
-    /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub outpost_arn: std::option::Option<std::string::String>,
     /// <p>Any tags assigned to the snapshot.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates
-    /// that the snapshot is stored in the standard snapshot storage tier and that it is ready
-    /// for use. <code>archive</code> indicates that the snapshot is currently archived and that
-    /// it must be restored before it can be used.</p>
+    /// <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates that the snapshot is stored in the standard snapshot storage tier and that it is ready for use. <code>archive</code> indicates that the snapshot is currently archived and that it must be restored before it can be used.</p>
     pub storage_tier: std::option::Option<crate::model::StorageTier>,
-    /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and
-    /// time when a temporarily restored snapshot will be automatically re-archived.</p>
+    /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and time when a temporarily restored snapshot will be automatically re-archived.</p>
     pub restore_expiry_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateSnapshotOutput {
-    /// <p>The data encryption key identifier for the snapshot. This value is a unique identifier
-    /// that corresponds to the data encryption key that was used to encrypt the original volume or
-    /// snapshot copy. Because data encryption keys are inherited by volumes created from snapshots,
-    /// and vice versa, if snapshots share the same data encryption key identifier, then they belong
-    /// to the same volume/snapshot lineage. This parameter is only returned by <a>DescribeSnapshots</a>.</p>
+    /// <p>The data encryption key identifier for the snapshot. This value is a unique identifier that corresponds to the data encryption key that was used to encrypt the original volume or snapshot copy. Because data encryption keys are inherited by volumes created from snapshots, and vice versa, if snapshots share the same data encryption key identifier, then they belong to the same volume/snapshot lineage. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
     pub fn data_encryption_key_id(&self) -> std::option::Option<&str> {
         self.data_encryption_key_id.as_deref()
     }
@@ -32231,8 +31573,7 @@ impl CreateSnapshotOutput {
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the
-    /// volume encryption key for the parent volume.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the parent volume.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -32244,8 +31585,7 @@ impl CreateSnapshotOutput {
     pub fn progress(&self) -> std::option::Option<&str> {
         self.progress.as_deref()
     }
-    /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is
-    /// created.</p>
+    /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is created.</p>
     pub fn snapshot_id(&self) -> std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
@@ -32257,15 +31597,11 @@ impl CreateSnapshotOutput {
     pub fn state(&self) -> std::option::Option<&crate::model::SnapshotState> {
         self.state.as_ref()
     }
-    /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails
-    /// (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error
-    /// state details to help you diagnose why the error occurred. This parameter is only returned by
-    /// <a>DescribeSnapshots</a>.</p>
+    /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error state details to help you diagnose why the error occurred. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
     pub fn state_message(&self) -> std::option::Option<&str> {
         self.state_message.as_deref()
     }
-    /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by the <a>CopySnapshot</a> action have an arbitrary volume ID that should not be used for any
-    /// purpose.</p>
+    /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by the <code>CopySnapshot</code> action have an arbitrary volume ID that should not be used for any purpose.</p>
     pub fn volume_id(&self) -> std::option::Option<&str> {
         self.volume_id.as_deref()
     }
@@ -32273,13 +31609,11 @@ impl CreateSnapshotOutput {
     pub fn volume_size(&self) -> std::option::Option<i32> {
         self.volume_size
     }
-    /// <p>The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not  
-    /// the user-configured Amazon Web Services account alias set using the IAM console.</p>
+    /// <p>The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the user-configured Amazon Web Services account alias set using the IAM console.</p>
     pub fn owner_alias(&self) -> std::option::Option<&str> {
         self.owner_alias.as_deref()
     }
-    /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the
-    /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn outpost_arn(&self) -> std::option::Option<&str> {
         self.outpost_arn.as_deref()
     }
@@ -32287,15 +31621,11 @@ impl CreateSnapshotOutput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates
-    /// that the snapshot is stored in the standard snapshot storage tier and that it is ready
-    /// for use. <code>archive</code> indicates that the snapshot is currently archived and that
-    /// it must be restored before it can be used.</p>
+    /// <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates that the snapshot is stored in the standard snapshot storage tier and that it is ready for use. <code>archive</code> indicates that the snapshot is currently archived and that it must be restored before it can be used.</p>
     pub fn storage_tier(&self) -> std::option::Option<&crate::model::StorageTier> {
         self.storage_tier.as_ref()
     }
-    /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and
-    /// time when a temporarily restored snapshot will be automatically re-archived.</p>
+    /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and time when a temporarily restored snapshot will be automatically re-archived.</p>
     pub fn restore_expiry_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.restore_expiry_time.as_ref()
     }
@@ -32348,20 +31678,12 @@ pub mod create_snapshot_output {
         pub(crate) restore_expiry_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The data encryption key identifier for the snapshot. This value is a unique identifier
-        /// that corresponds to the data encryption key that was used to encrypt the original volume or
-        /// snapshot copy. Because data encryption keys are inherited by volumes created from snapshots,
-        /// and vice versa, if snapshots share the same data encryption key identifier, then they belong
-        /// to the same volume/snapshot lineage. This parameter is only returned by <a>DescribeSnapshots</a>.</p>
+        /// <p>The data encryption key identifier for the snapshot. This value is a unique identifier that corresponds to the data encryption key that was used to encrypt the original volume or snapshot copy. Because data encryption keys are inherited by volumes created from snapshots, and vice versa, if snapshots share the same data encryption key identifier, then they belong to the same volume/snapshot lineage. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
         pub fn data_encryption_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_encryption_key_id = Some(input.into());
             self
         }
-        /// <p>The data encryption key identifier for the snapshot. This value is a unique identifier
-        /// that corresponds to the data encryption key that was used to encrypt the original volume or
-        /// snapshot copy. Because data encryption keys are inherited by volumes created from snapshots,
-        /// and vice versa, if snapshots share the same data encryption key identifier, then they belong
-        /// to the same volume/snapshot lineage. This parameter is only returned by <a>DescribeSnapshots</a>.</p>
+        /// <p>The data encryption key identifier for the snapshot. This value is a unique identifier that corresponds to the data encryption key that was used to encrypt the original volume or snapshot copy. Because data encryption keys are inherited by volumes created from snapshots, and vice versa, if snapshots share the same data encryption key identifier, then they belong to the same volume/snapshot lineage. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
         pub fn set_data_encryption_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -32389,14 +31711,12 @@ pub mod create_snapshot_output {
             self.encrypted = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the
-        /// volume encryption key for the parent volume.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the parent volume.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the
-        /// volume encryption key for the parent volume.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the parent volume.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -32421,14 +31741,12 @@ pub mod create_snapshot_output {
             self.progress = input;
             self
         }
-        /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is
-        /// created.</p>
+        /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is created.</p>
         pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.snapshot_id = Some(input.into());
             self
         }
-        /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is
-        /// created.</p>
+        /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is created.</p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.snapshot_id = input;
             self
@@ -32459,18 +31777,12 @@ pub mod create_snapshot_output {
             self.state = input;
             self
         }
-        /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails
-        /// (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error
-        /// state details to help you diagnose why the error occurred. This parameter is only returned by
-        /// <a>DescribeSnapshots</a>.</p>
+        /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error state details to help you diagnose why the error occurred. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
         pub fn state_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.state_message = Some(input.into());
             self
         }
-        /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails
-        /// (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error
-        /// state details to help you diagnose why the error occurred. This parameter is only returned by
-        /// <a>DescribeSnapshots</a>.</p>
+        /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error state details to help you diagnose why the error occurred. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
         pub fn set_state_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -32478,14 +31790,12 @@ pub mod create_snapshot_output {
             self.state_message = input;
             self
         }
-        /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by the <a>CopySnapshot</a> action have an arbitrary volume ID that should not be used for any
-        /// purpose.</p>
+        /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by the <code>CopySnapshot</code> action have an arbitrary volume ID that should not be used for any purpose.</p>
         pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.volume_id = Some(input.into());
             self
         }
-        /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by the <a>CopySnapshot</a> action have an arbitrary volume ID that should not be used for any
-        /// purpose.</p>
+        /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by the <code>CopySnapshot</code> action have an arbitrary volume ID that should not be used for any purpose.</p>
         pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.volume_id = input;
             self
@@ -32500,26 +31810,22 @@ pub mod create_snapshot_output {
             self.volume_size = input;
             self
         }
-        /// <p>The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not  
-        /// the user-configured Amazon Web Services account alias set using the IAM console.</p>
+        /// <p>The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the user-configured Amazon Web Services account alias set using the IAM console.</p>
         pub fn owner_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_alias = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not  
-        /// the user-configured Amazon Web Services account alias set using the IAM console.</p>
+        /// <p>The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the user-configured Amazon Web Services account alias set using the IAM console.</p>
         pub fn set_owner_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner_alias = input;
             self
         }
-        /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the
-        /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn outpost_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the
-        /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn set_outpost_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.outpost_arn = input;
             self
@@ -32529,9 +31835,9 @@ pub mod create_snapshot_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Any tags assigned to the snapshot.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -32543,18 +31849,12 @@ pub mod create_snapshot_output {
             self.tags = input;
             self
         }
-        /// <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates
-        /// that the snapshot is stored in the standard snapshot storage tier and that it is ready
-        /// for use. <code>archive</code> indicates that the snapshot is currently archived and that
-        /// it must be restored before it can be used.</p>
+        /// <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates that the snapshot is stored in the standard snapshot storage tier and that it is ready for use. <code>archive</code> indicates that the snapshot is currently archived and that it must be restored before it can be used.</p>
         pub fn storage_tier(mut self, input: crate::model::StorageTier) -> Self {
             self.storage_tier = Some(input);
             self
         }
-        /// <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates
-        /// that the snapshot is stored in the standard snapshot storage tier and that it is ready
-        /// for use. <code>archive</code> indicates that the snapshot is currently archived and that
-        /// it must be restored before it can be used.</p>
+        /// <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates that the snapshot is stored in the standard snapshot storage tier and that it is ready for use. <code>archive</code> indicates that the snapshot is currently archived and that it must be restored before it can be used.</p>
         pub fn set_storage_tier(
             mut self,
             input: std::option::Option<crate::model::StorageTier>,
@@ -32562,14 +31862,12 @@ pub mod create_snapshot_output {
             self.storage_tier = input;
             self
         }
-        /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and
-        /// time when a temporarily restored snapshot will be automatically re-archived.</p>
+        /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and time when a temporarily restored snapshot will be automatically re-archived.</p>
         pub fn restore_expiry_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.restore_expiry_time = Some(input);
             self
         }
-        /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and
-        /// time when a temporarily restored snapshot will be automatically re-archived.</p>
+        /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and time when a temporarily restored snapshot will be automatically re-archived.</p>
         pub fn set_restore_expiry_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -32660,9 +31958,9 @@ pub mod create_security_group_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to the security group.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -32898,10 +32196,10 @@ pub mod create_reserved_instances_listing_output {
         /// <p>Information about the Standard Reserved Instance listing.</p>
         pub fn reserved_instances_listings(
             mut self,
-            input: impl Into<crate::model::ReservedInstancesListing>,
+            input: crate::model::ReservedInstancesListing,
         ) -> Self {
             let mut v = self.reserved_instances_listings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_instances_listings = Some(v);
             self
         }
@@ -34014,9 +33312,9 @@ pub mod create_key_pair_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Any tags applied to the key pair.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -34518,8 +33816,7 @@ impl CreateFpgaImageOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFlowLogsOutput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The IDs of the flow logs.</p>
     pub flow_log_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -34527,8 +33824,7 @@ pub struct CreateFlowLogsOutput {
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
 }
 impl CreateFlowLogsOutput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -34561,14 +33857,12 @@ pub mod create_flow_logs_output {
         pub(crate) unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -34597,9 +33891,9 @@ pub mod create_flow_logs_output {
         /// To override the contents of this collection use [`set_unsuccessful`](Self::set_unsuccessful).
         ///
         /// <p>Information about the flow logs that could not be created successfully.</p>
-        pub fn unsuccessful(mut self, input: impl Into<crate::model::UnsuccessfulItem>) -> Self {
+        pub fn unsuccessful(mut self, input: crate::model::UnsuccessfulItem) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessful = Some(v);
             self
         }
@@ -34634,11 +33928,9 @@ impl CreateFlowLogsOutput {
 pub struct CreateFleetOutput {
     /// <p>The ID of the EC2 Fleet.</p>
     pub fleet_id: std::option::Option<std::string::String>,
-    /// <p>Information about the instances that could not be launched by the fleet. Supported only for
-    /// fleets of type <code>instant</code>.</p>
+    /// <p>Information about the instances that could not be launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::CreateFleetError>>,
-    /// <p>Information about the instances that were launched by the fleet. Supported only for
-    /// fleets of type <code>instant</code>.</p>
+    /// <p>Information about the instances that were launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
     pub instances: std::option::Option<std::vec::Vec<crate::model::CreateFleetInstance>>,
 }
 impl CreateFleetOutput {
@@ -34646,13 +33938,11 @@ impl CreateFleetOutput {
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>Information about the instances that could not be launched by the fleet. Supported only for
-    /// fleets of type <code>instant</code>.</p>
+    /// <p>Information about the instances that could not be launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
     pub fn errors(&self) -> std::option::Option<&[crate::model::CreateFleetError]> {
         self.errors.as_deref()
     }
-    /// <p>Information about the instances that were launched by the fleet. Supported only for
-    /// fleets of type <code>instant</code>.</p>
+    /// <p>Information about the instances that were launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
     pub fn instances(&self) -> std::option::Option<&[crate::model::CreateFleetInstance]> {
         self.instances.as_deref()
     }
@@ -34691,16 +33981,14 @@ pub mod create_fleet_output {
         ///
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
-        /// <p>Information about the instances that could not be launched by the fleet. Supported only for
-        /// fleets of type <code>instant</code>.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::CreateFleetError>) -> Self {
+        /// <p>Information about the instances that could not be launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
+        pub fn errors(mut self, input: crate::model::CreateFleetError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
-        /// <p>Information about the instances that could not be launched by the fleet. Supported only for
-        /// fleets of type <code>instant</code>.</p>
+        /// <p>Information about the instances that could not be launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CreateFleetError>>,
@@ -34712,16 +34000,14 @@ pub mod create_fleet_output {
         ///
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
-        /// <p>Information about the instances that were launched by the fleet. Supported only for
-        /// fleets of type <code>instant</code>.</p>
-        pub fn instances(mut self, input: impl Into<crate::model::CreateFleetInstance>) -> Self {
+        /// <p>Information about the instances that were launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
+        pub fn instances(mut self, input: crate::model::CreateFleetInstance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }
-        /// <p>Information about the instances that were launched by the fleet. Supported only for
-        /// fleets of type <code>instant</code>.</p>
+        /// <p>Information about the instances that were launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
         pub fn set_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CreateFleetInstance>>,
@@ -34750,15 +34036,13 @@ impl CreateFleetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEgressOnlyInternetGatewayOutput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Information about the egress-only internet gateway.</p>
     pub egress_only_internet_gateway: std::option::Option<crate::model::EgressOnlyInternetGateway>,
 }
 impl CreateEgressOnlyInternetGatewayOutput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -34791,14 +34075,12 @@ pub mod create_egress_only_internet_gateway_output {
             std::option::Option<crate::model::EgressOnlyInternetGateway>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -35513,10 +34795,10 @@ pub mod create_capacity_reservation_fleet_output {
         /// <p>Information about the individual Capacity Reservations in the Capacity Reservation Fleet.</p>
         pub fn fleet_capacity_reservations(
             mut self,
-            input: impl Into<crate::model::FleetCapacityReservation>,
+            input: crate::model::FleetCapacityReservation,
         ) -> Self {
             let mut v = self.fleet_capacity_reservations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fleet_capacity_reservations = Some(v);
             self
         }
@@ -35533,9 +34815,9 @@ pub mod create_capacity_reservation_fleet_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags assigned to the Capacity Reservation Fleet.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -35681,9 +34963,9 @@ pub mod copy_snapshot_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Any tags applied to the new snapshot.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -35826,21 +35108,17 @@ impl CopyFpgaImageOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfirmProductInstanceOutput {
-    /// <p>The Amazon Web Services account ID of the instance owner. This is only present if the product code is
-    /// attached to the instance.</p>
+    /// <p>The Amazon Web Services account ID of the instance owner. This is only present if the product code is attached to the instance.</p>
     pub owner_id: std::option::Option<std::string::String>,
-    /// <p>The return value of the request. Returns <code>true</code> if the specified product
-    /// code is owned by the requester and associated with the specified instance.</p>
+    /// <p>The return value of the request. Returns <code>true</code> if the specified product code is owned by the requester and associated with the specified instance.</p>
     pub r#return: std::option::Option<bool>,
 }
 impl ConfirmProductInstanceOutput {
-    /// <p>The Amazon Web Services account ID of the instance owner. This is only present if the product code is
-    /// attached to the instance.</p>
+    /// <p>The Amazon Web Services account ID of the instance owner. This is only present if the product code is attached to the instance.</p>
     pub fn owner_id(&self) -> std::option::Option<&str> {
         self.owner_id.as_deref()
     }
-    /// <p>The return value of the request. Returns <code>true</code> if the specified product
-    /// code is owned by the requester and associated with the specified instance.</p>
+    /// <p>The return value of the request. Returns <code>true</code> if the specified product code is owned by the requester and associated with the specified instance.</p>
     pub fn r#return(&self) -> std::option::Option<bool> {
         self.r#return
     }
@@ -35863,26 +35141,22 @@ pub mod confirm_product_instance_output {
         pub(crate) r#return: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID of the instance owner. This is only present if the product code is
-        /// attached to the instance.</p>
+        /// <p>The Amazon Web Services account ID of the instance owner. This is only present if the product code is attached to the instance.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID of the instance owner. This is only present if the product code is
-        /// attached to the instance.</p>
+        /// <p>The Amazon Web Services account ID of the instance owner. This is only present if the product code is attached to the instance.</p>
         pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner_id = input;
             self
         }
-        /// <p>The return value of the request. Returns <code>true</code> if the specified product
-        /// code is owned by the requester and associated with the specified instance.</p>
+        /// <p>The return value of the request. Returns <code>true</code> if the specified product code is owned by the requester and associated with the specified instance.</p>
         pub fn r#return(mut self, input: bool) -> Self {
             self.r#return = Some(input);
             self
         }
-        /// <p>The return value of the request. Returns <code>true</code> if the specified product
-        /// code is owned by the requester and associated with the specified instance.</p>
+        /// <p>The return value of the request. Returns <code>true</code> if the specified product code is owned by the requester and associated with the specified instance.</p>
         pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
             self.r#return = input;
             self
@@ -35946,10 +35220,10 @@ pub mod cancel_spot_instance_requests_output {
         /// <p>One or more Spot Instance requests.</p>
         pub fn cancelled_spot_instance_requests(
             mut self,
-            input: impl Into<crate::model::CancelledSpotInstanceRequest>,
+            input: crate::model::CancelledSpotInstanceRequest,
         ) -> Self {
             let mut v = self.cancelled_spot_instance_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cancelled_spot_instance_requests = Some(v);
             self
         }
@@ -36031,10 +35305,10 @@ pub mod cancel_spot_fleet_requests_output {
         /// <p>Information about the Spot Fleet requests that are successfully canceled.</p>
         pub fn successful_fleet_requests(
             mut self,
-            input: impl Into<crate::model::CancelSpotFleetRequestsSuccessItem>,
+            input: crate::model::CancelSpotFleetRequestsSuccessItem,
         ) -> Self {
             let mut v = self.successful_fleet_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successful_fleet_requests = Some(v);
             self
         }
@@ -36055,10 +35329,10 @@ pub mod cancel_spot_fleet_requests_output {
         /// <p>Information about the Spot Fleet requests that are not successfully canceled.</p>
         pub fn unsuccessful_fleet_requests(
             mut self,
-            input: impl Into<crate::model::CancelSpotFleetRequestsErrorItem>,
+            input: crate::model::CancelSpotFleetRequestsErrorItem,
         ) -> Self {
             let mut v = self.unsuccessful_fleet_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessful_fleet_requests = Some(v);
             self
         }
@@ -36131,10 +35405,10 @@ pub mod cancel_reserved_instances_listing_output {
         /// <p>The Reserved Instance listing.</p>
         pub fn reserved_instances_listings(
             mut self,
-            input: impl Into<crate::model::ReservedInstancesListing>,
+            input: crate::model::ReservedInstancesListing,
         ) -> Self {
             let mut v = self.reserved_instances_listings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_instances_listings = Some(v);
             self
         }
@@ -36381,10 +35655,10 @@ pub mod cancel_capacity_reservation_fleets_output {
         /// <p>Information about the Capacity Reservation Fleets that were successfully cancelled.</p>
         pub fn successful_fleet_cancellations(
             mut self,
-            input: impl Into<crate::model::CapacityReservationFleetCancellationState>,
+            input: crate::model::CapacityReservationFleetCancellationState,
         ) -> Self {
             let mut v = self.successful_fleet_cancellations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successful_fleet_cancellations = Some(v);
             self
         }
@@ -36405,10 +35679,10 @@ pub mod cancel_capacity_reservation_fleets_output {
         /// <p>Information about the Capacity Reservation Fleets that could not be cancelled.</p>
         pub fn failed_fleet_cancellations(
             mut self,
-            input: impl Into<crate::model::FailedCapacityReservationFleetCancellationResult>,
+            input: crate::model::FailedCapacityReservationFleetCancellationResult,
         ) -> Self {
             let mut v = self.failed_fleet_cancellations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_fleet_cancellations = Some(v);
             self
         }
@@ -36659,12 +35933,9 @@ pub mod authorize_security_group_ingress_output {
         /// To override the contents of this collection use [`set_security_group_rules`](Self::set_security_group_rules).
         ///
         /// <p>Information about the inbound (ingress) security group rules that were added.</p>
-        pub fn security_group_rules(
-            mut self,
-            input: impl Into<crate::model::SecurityGroupRule>,
-        ) -> Self {
+        pub fn security_group_rules(mut self, input: crate::model::SecurityGroupRule) -> Self {
             let mut v = self.security_group_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.security_group_rules = Some(v);
             self
         }
@@ -36745,12 +36016,9 @@ pub mod authorize_security_group_egress_output {
         /// To override the contents of this collection use [`set_security_group_rules`](Self::set_security_group_rules).
         ///
         /// <p>Information about the outbound (egress) security group rules that were added.</p>
-        pub fn security_group_rules(
-            mut self,
-            input: impl Into<crate::model::SecurityGroupRule>,
-        ) -> Self {
+        pub fn security_group_rules(mut self, input: crate::model::SecurityGroupRule) -> Self {
             let mut v = self.security_group_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.security_group_rules = Some(v);
             self
         }
@@ -37326,9 +36594,7 @@ impl AssociateVpcCidrBlockOutput {
 pub struct AssociateTrunkInterfaceOutput {
     /// <p>Information about the association between the trunk network interface and branch network interface.</p>
     pub interface_association: std::option::Option<crate::model::TrunkInterfaceAssociation>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-    /// Idempotency</a>.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl AssociateTrunkInterfaceOutput {
@@ -37338,9 +36604,7 @@ impl AssociateTrunkInterfaceOutput {
     ) -> std::option::Option<&crate::model::TrunkInterfaceAssociation> {
         self.interface_association.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-    /// Idempotency</a>.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -37380,16 +36644,12 @@ pub mod associate_trunk_interface_output {
             self.interface_association = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-        /// Idempotency</a>.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-        /// Idempotency</a>.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -37620,15 +36880,13 @@ impl AssociateSubnetCidrBlockOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateRouteTableOutput {
-    /// <p>The route table association ID. This ID is required for disassociating the route
-    /// table.</p>
+    /// <p>The route table association ID. This ID is required for disassociating the route table.</p>
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The state of the association.</p>
     pub association_state: std::option::Option<crate::model::RouteTableAssociationState>,
 }
 impl AssociateRouteTableOutput {
-    /// <p>The route table association ID. This ID is required for disassociating the route
-    /// table.</p>
+    /// <p>The route table association ID. This ID is required for disassociating the route table.</p>
     pub fn association_id(&self) -> std::option::Option<&str> {
         self.association_id.as_deref()
     }
@@ -37657,14 +36915,12 @@ pub mod associate_route_table_output {
         pub(crate) association_state: std::option::Option<crate::model::RouteTableAssociationState>,
     }
     impl Builder {
-        /// <p>The route table association ID. This ID is required for disassociating the route
-        /// table.</p>
+        /// <p>The route table association ID. This ID is required for disassociating the route table.</p>
         pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.association_id = Some(input.into());
             self
         }
-        /// <p>The route table association ID. This ID is required for disassociating the route
-        /// table.</p>
+        /// <p>The route table association ID. This ID is required for disassociating the route table.</p>
         pub fn set_association_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -37834,8 +37090,7 @@ impl AssociateIamInstanceProfileOutput {
 pub struct AssociateEnclaveCertificateIamRoleOutput {
     /// <p>The name of the Amazon S3 bucket to which the certificate was uploaded.</p>
     pub certificate_s3_bucket_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored. The
-    /// object key is formatted as follows:  <code>role_arn</code>/<code>certificate_arn</code>.</p>
+    /// <p>The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored. The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.</p>
     pub certificate_s3_object_key: std::option::Option<std::string::String>,
     /// <p>The ID of the KMS key used to encrypt the private key of the certificate.</p>
     pub encryption_kms_key_id: std::option::Option<std::string::String>,
@@ -37845,8 +37100,7 @@ impl AssociateEnclaveCertificateIamRoleOutput {
     pub fn certificate_s3_bucket_name(&self) -> std::option::Option<&str> {
         self.certificate_s3_bucket_name.as_deref()
     }
-    /// <p>The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored. The
-    /// object key is formatted as follows:  <code>role_arn</code>/<code>certificate_arn</code>.</p>
+    /// <p>The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored. The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.</p>
     pub fn certificate_s3_object_key(&self) -> std::option::Option<&str> {
         self.certificate_s3_object_key.as_deref()
     }
@@ -37891,14 +37145,12 @@ pub mod associate_enclave_certificate_iam_role_output {
             self.certificate_s3_bucket_name = input;
             self
         }
-        /// <p>The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored. The
-        /// object key is formatted as follows:  <code>role_arn</code>/<code>certificate_arn</code>.</p>
+        /// <p>The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored. The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.</p>
         pub fn certificate_s3_object_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_s3_object_key = Some(input.into());
             self
         }
-        /// <p>The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored. The
-        /// object key is formatted as follows:  <code>role_arn</code>/<code>certificate_arn</code>.</p>
+        /// <p>The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored. The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.</p>
         pub fn set_certificate_s3_object_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -38178,10 +37430,10 @@ pub mod assign_private_ip_addresses_output {
         /// <p>The private IP addresses assigned to the network interface.</p>
         pub fn assigned_private_ip_addresses(
             mut self,
-            input: impl Into<crate::model::AssignedPrivateIpAddress>,
+            input: crate::model::AssignedPrivateIpAddress,
         ) -> Self {
             let mut v = self.assigned_private_ip_addresses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.assigned_private_ip_addresses = Some(v);
             self
         }
@@ -38200,10 +37452,10 @@ pub mod assign_private_ip_addresses_output {
         /// <p>The IPv4 prefixes that are assigned to the network interface.</p>
         pub fn assigned_ipv4_prefixes(
             mut self,
-            input: impl Into<crate::model::Ipv4PrefixSpecification>,
+            input: crate::model::Ipv4PrefixSpecification,
         ) -> Self {
             let mut v = self.assigned_ipv4_prefixes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.assigned_ipv4_prefixes = Some(v);
             self
         }
@@ -38236,8 +37488,7 @@ impl AssignPrivateIpAddressesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssignIpv6AddressesOutput {
-    /// <p>The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses
-    /// that were assigned to the network interface before the request are not included.</p>
+    /// <p>The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses that were assigned to the network interface before the request are not included.</p>
     pub assigned_ipv6_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IPv6 prefixes that are assigned to the network interface.</p>
     pub assigned_ipv6_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -38245,8 +37496,7 @@ pub struct AssignIpv6AddressesOutput {
     pub network_interface_id: std::option::Option<std::string::String>,
 }
 impl AssignIpv6AddressesOutput {
-    /// <p>The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses
-    /// that were assigned to the network interface before the request are not included.</p>
+    /// <p>The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses that were assigned to the network interface before the request are not included.</p>
     pub fn assigned_ipv6_addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.assigned_ipv6_addresses.as_deref()
     }
@@ -38283,16 +37533,14 @@ pub mod assign_ipv6_addresses_output {
         ///
         /// To override the contents of this collection use [`set_assigned_ipv6_addresses`](Self::set_assigned_ipv6_addresses).
         ///
-        /// <p>The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses
-        /// that were assigned to the network interface before the request are not included.</p>
+        /// <p>The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses that were assigned to the network interface before the request are not included.</p>
         pub fn assigned_ipv6_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.assigned_ipv6_addresses.unwrap_or_default();
             v.push(input.into());
             self.assigned_ipv6_addresses = Some(v);
             self
         }
-        /// <p>The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses
-        /// that were assigned to the network interface before the request are not included.</p>
+        /// <p>The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses that were assigned to the network interface before the request are not included.</p>
         pub fn set_assigned_ipv6_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -38474,13 +37722,11 @@ impl AllocateIpamPoolCidrOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AllocateHostsOutput {
-    /// <p>The ID of the allocated Dedicated Host. This is used to launch an instance onto a
-    /// specific host.</p>
+    /// <p>The ID of the allocated Dedicated Host. This is used to launch an instance onto a specific host.</p>
     pub host_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AllocateHostsOutput {
-    /// <p>The ID of the allocated Dedicated Host. This is used to launch an instance onto a
-    /// specific host.</p>
+    /// <p>The ID of the allocated Dedicated Host. This is used to launch an instance onto a specific host.</p>
     pub fn host_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.host_ids.as_deref()
     }
@@ -38505,16 +37751,14 @@ pub mod allocate_hosts_output {
         ///
         /// To override the contents of this collection use [`set_host_ids`](Self::set_host_ids).
         ///
-        /// <p>The ID of the allocated Dedicated Host. This is used to launch an instance onto a
-        /// specific host.</p>
+        /// <p>The ID of the allocated Dedicated Host. This is used to launch an instance onto a specific host.</p>
         pub fn host_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.host_ids.unwrap_or_default();
             v.push(input.into());
             self.host_ids = Some(v);
             self
         }
-        /// <p>The ID of the allocated Dedicated Host. This is used to launch an instance onto a
-        /// specific host.</p>
+        /// <p>The ID of the allocated Dedicated Host. This is used to launch an instance onto a specific host.</p>
         pub fn set_host_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -38547,18 +37791,15 @@ pub struct AllocateAddressOutput {
     pub allocation_id: std::option::Option<std::string::String>,
     /// <p>The ID of an address pool.</p>
     pub public_ipv4_pool: std::option::Option<std::string::String>,
-    /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises
-    /// IP addresses.</p>
+    /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses.</p>
     pub network_border_group: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or
-    /// instances in EC2-Classic (<code>standard</code>).</p>
+    /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or instances in EC2-Classic (<code>standard</code>).</p>
     pub domain: std::option::Option<crate::model::DomainType>,
     /// <p>The customer-owned IP address.</p>
     pub customer_owned_ip: std::option::Option<std::string::String>,
     /// <p>The ID of the customer-owned address pool.</p>
     pub customer_owned_ipv4_pool: std::option::Option<std::string::String>,
-    /// <p>The carrier IP address. This option is only available for network interfaces which  reside
-    /// in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
+    /// <p>The carrier IP address. This option is only available for network interfaces which reside in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
     pub carrier_ip: std::option::Option<std::string::String>,
 }
 impl AllocateAddressOutput {
@@ -38574,13 +37815,11 @@ impl AllocateAddressOutput {
     pub fn public_ipv4_pool(&self) -> std::option::Option<&str> {
         self.public_ipv4_pool.as_deref()
     }
-    /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises
-    /// IP addresses.</p>
+    /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses.</p>
     pub fn network_border_group(&self) -> std::option::Option<&str> {
         self.network_border_group.as_deref()
     }
-    /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or
-    /// instances in EC2-Classic (<code>standard</code>).</p>
+    /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or instances in EC2-Classic (<code>standard</code>).</p>
     pub fn domain(&self) -> std::option::Option<&crate::model::DomainType> {
         self.domain.as_ref()
     }
@@ -38592,8 +37831,7 @@ impl AllocateAddressOutput {
     pub fn customer_owned_ipv4_pool(&self) -> std::option::Option<&str> {
         self.customer_owned_ipv4_pool.as_deref()
     }
-    /// <p>The carrier IP address. This option is only available for network interfaces which  reside
-    /// in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
+    /// <p>The carrier IP address. This option is only available for network interfaces which reside in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
     pub fn carrier_ip(&self) -> std::option::Option<&str> {
         self.carrier_ip.as_deref()
     }
@@ -38664,14 +37902,12 @@ pub mod allocate_address_output {
             self.public_ipv4_pool = input;
             self
         }
-        /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises
-        /// IP addresses.</p>
+        /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses.</p>
         pub fn network_border_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.network_border_group = Some(input.into());
             self
         }
-        /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises
-        /// IP addresses.</p>
+        /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses.</p>
         pub fn set_network_border_group(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -38679,14 +37915,12 @@ pub mod allocate_address_output {
             self.network_border_group = input;
             self
         }
-        /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or
-        /// instances in EC2-Classic (<code>standard</code>).</p>
+        /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or instances in EC2-Classic (<code>standard</code>).</p>
         pub fn domain(mut self, input: crate::model::DomainType) -> Self {
             self.domain = Some(input);
             self
         }
-        /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or
-        /// instances in EC2-Classic (<code>standard</code>).</p>
+        /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or instances in EC2-Classic (<code>standard</code>).</p>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::DomainType>) -> Self {
             self.domain = input;
             self
@@ -38717,14 +37951,12 @@ pub mod allocate_address_output {
             self.customer_owned_ipv4_pool = input;
             self
         }
-        /// <p>The carrier IP address. This option is only available for network interfaces which  reside
-        /// in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
+        /// <p>The carrier IP address. This option is only available for network interfaces which reside in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
         pub fn carrier_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.carrier_ip = Some(input.into());
             self
         }
-        /// <p>The carrier IP address. This option is only available for network interfaces which  reside
-        /// in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
+        /// <p>The carrier IP address. This option is only available for network interfaces which reside in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
         pub fn set_carrier_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.carrier_ip = input;
             self
@@ -38871,13 +38103,11 @@ impl AcceptVpcPeeringConnectionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptVpcEndpointConnectionsOutput {
-    /// <p>Information about the interface endpoints that were not accepted, if
-    /// applicable.</p>
+    /// <p>Information about the interface endpoints that were not accepted, if applicable.</p>
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
 }
 impl AcceptVpcEndpointConnectionsOutput {
-    /// <p>Information about the interface endpoints that were not accepted, if
-    /// applicable.</p>
+    /// <p>Information about the interface endpoints that were not accepted, if applicable.</p>
     pub fn unsuccessful(&self) -> std::option::Option<&[crate::model::UnsuccessfulItem]> {
         self.unsuccessful.as_deref()
     }
@@ -38902,16 +38132,14 @@ pub mod accept_vpc_endpoint_connections_output {
         ///
         /// To override the contents of this collection use [`set_unsuccessful`](Self::set_unsuccessful).
         ///
-        /// <p>Information about the interface endpoints that were not accepted, if
-        /// applicable.</p>
-        pub fn unsuccessful(mut self, input: impl Into<crate::model::UnsuccessfulItem>) -> Self {
+        /// <p>Information about the interface endpoints that were not accepted, if applicable.</p>
+        pub fn unsuccessful(mut self, input: crate::model::UnsuccessfulItem) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unsuccessful = Some(v);
             self
         }
-        /// <p>Information about the interface endpoints that were not accepted, if
-        /// applicable.</p>
+        /// <p>Information about the interface endpoints that were not accepted, if applicable.</p>
         pub fn set_unsuccessful(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,

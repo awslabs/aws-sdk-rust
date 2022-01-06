@@ -61,6 +61,20 @@ pub fn parse_accept_domain_transfer_from_another_aws_account_error(
                                                     }
             tmp
         })},
+        "UnsupportedTLD" => crate::error::AcceptDomainTransferFromAnotherAwsAccountError { meta: generic, kind: crate::error::AcceptDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::unsupported_tld::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::AcceptDomainTransferFromAnotherAwsAccountError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         _ => crate::error::AcceptDomainTransferFromAnotherAwsAccountError::generic(generic)
     })
 }
@@ -123,6 +137,20 @@ pub fn parse_cancel_domain_transfer_to_another_aws_account_error(
                     #[allow(unused_mut)]let mut output = crate::error::operation_limit_exceeded::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::CancelDomainTransferToAnotherAwsAccountError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "UnsupportedTLD" => crate::error::CancelDomainTransferToAnotherAwsAccountError { meta: generic, kind: crate::error::CancelDomainTransferToAnotherAwsAccountErrorKind::UnsupportedTld({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::unsupported_tld::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::CancelDomainTransferToAnotherAwsAccountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -316,6 +344,116 @@ pub fn parse_check_domain_transferability_response(
             output,
         )
         .map_err(crate::error::CheckDomainTransferabilityError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_domain_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteDomainOutput, crate::error::DeleteDomainError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteDomainError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DeleteDomainError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "DuplicateRequest" => {
+            crate::error::DeleteDomainError {
+                meta: generic,
+                kind: crate::error::DeleteDomainErrorKind::DuplicateRequest({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::duplicate_request::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_duplicate_request_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDomainError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InvalidInput" => crate::error::DeleteDomainError {
+            meta: generic,
+            kind: crate::error::DeleteDomainErrorKind::InvalidInput({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteDomainError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "TLDRulesViolation" => crate::error::DeleteDomainError {
+            meta: generic,
+            kind: crate::error::DeleteDomainErrorKind::TldRulesViolation({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::tld_rules_violation::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_tld_rules_violation_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDomainError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedTLD" => {
+            crate::error::DeleteDomainError {
+                meta: generic,
+                kind: crate::error::DeleteDomainErrorKind::UnsupportedTld({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::unsupported_tld::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDomainError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::DeleteDomainError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_domain_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteDomainOutput, crate::error::DeleteDomainError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_domain_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_delete_domain(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteDomainError::unhandled)?;
         output.build()
     })
 }
@@ -1285,6 +1423,80 @@ pub fn parse_list_operations_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_prices_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListPricesOutput, crate::error::ListPricesError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListPricesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListPricesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidInput" => crate::error::ListPricesError {
+            meta: generic,
+            kind: crate::error::ListPricesErrorKind::InvalidInput({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListPricesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedTLD" => {
+            crate::error::ListPricesError {
+                meta: generic,
+                kind: crate::error::ListPricesErrorKind::UnsupportedTld({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::unsupported_tld::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::ListPricesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::ListPricesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_prices_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListPricesOutput, crate::error::ListPricesError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_prices_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_prices(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListPricesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_tags_for_domain_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListTagsForDomainOutput, crate::error::ListTagsForDomainError>
@@ -1561,6 +1773,20 @@ pub fn parse_reject_domain_transfer_from_another_aws_account_error(
                     #[allow(unused_mut)]let mut output = crate::error::operation_limit_exceeded::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::RejectDomainTransferFromAnotherAwsAccountError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "UnsupportedTLD" => crate::error::RejectDomainTransferFromAnotherAwsAccountError { meta: generic, kind: crate::error::RejectDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::unsupported_tld::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::RejectDomainTransferFromAnotherAwsAccountError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2122,6 +2348,25 @@ pub fn parse_transfer_domain_to_another_aws_account_error(
                 },
             ),
         },
+        "UnsupportedTLD" => {
+            crate::error::TransferDomainToAnotherAwsAccountError {
+                meta: generic,
+                kind: crate::error::TransferDomainToAnotherAwsAccountErrorKind::UnsupportedTld({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::unsupported_tld::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_unsupported_tld_json_err(response.body().as_ref(), output).map_err(crate::error::TransferDomainToAnotherAwsAccountError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::TransferDomainToAnotherAwsAccountError::generic(generic),
     })
 }

@@ -34,10 +34,10 @@ pub mod batch_get_aggregate_resource_config_input {
         /// <p>A list of aggregate ResourceIdentifiers objects. </p>
         pub fn resource_identifiers(
             mut self,
-            input: impl Into<crate::model::AggregateResourceIdentifier>,
+            input: crate::model::AggregateResourceIdentifier,
         ) -> Self {
             let mut v = self.resource_identifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_identifiers = Some(v);
             self
         }
@@ -67,7 +67,8 @@ pub mod batch_get_aggregate_resource_config_input {
 pub type BatchGetAggregateResourceConfigInputOperationOutputAlias =
     crate::operation::BatchGetAggregateResourceConfig;
 #[doc(hidden)]
-pub type BatchGetAggregateResourceConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchGetAggregateResourceConfigInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetAggregateResourceConfigInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetAggregateResourceConfig`](crate::operation::BatchGetAggregateResourceConfig)>
     #[allow(clippy::let_and_return)]
@@ -78,7 +79,7 @@ impl BatchGetAggregateResourceConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGetAggregateResourceConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -164,7 +165,7 @@ impl BatchGetAggregateResourceConfigInput {
             "BatchGetAggregateResourceConfig",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -200,18 +201,14 @@ pub mod batch_get_resource_config_input {
         ///
         /// To override the contents of this collection use [`set_resource_keys`](Self::set_resource_keys).
         ///
-        /// <p>A list of resource keys to be processed with the current
-        /// request. Each element in the list consists of the resource type and
-        /// resource ID.</p>
-        pub fn resource_keys(mut self, input: impl Into<crate::model::ResourceKey>) -> Self {
+        /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
+        pub fn resource_keys(mut self, input: crate::model::ResourceKey) -> Self {
             let mut v = self.resource_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_keys = Some(v);
             self
         }
-        /// <p>A list of resource keys to be processed with the current
-        /// request. Each element in the list consists of the resource type and
-        /// resource ID.</p>
+        /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
         pub fn set_resource_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceKey>>,
@@ -235,7 +232,7 @@ pub mod batch_get_resource_config_input {
 #[doc(hidden)]
 pub type BatchGetResourceConfigInputOperationOutputAlias = crate::operation::BatchGetResourceConfig;
 #[doc(hidden)]
-pub type BatchGetResourceConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchGetResourceConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetResourceConfigInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetResourceConfig`](crate::operation::BatchGetResourceConfig)>
     #[allow(clippy::let_and_return)]
@@ -246,7 +243,7 @@ impl BatchGetResourceConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGetResourceConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -333,7 +330,7 @@ impl BatchGetResourceConfigInput {
             "BatchGetResourceConfig",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -366,14 +363,12 @@ pub mod delete_aggregation_authorization_input {
         pub(crate) authorized_aws_region: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The 12-digit account ID of the account authorized to aggregate
-        /// data.</p>
+        /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
         pub fn authorized_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.authorized_account_id = Some(input.into());
             self
         }
-        /// <p>The 12-digit account ID of the account authorized to aggregate
-        /// data.</p>
+        /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
         pub fn set_authorized_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -412,7 +407,8 @@ pub mod delete_aggregation_authorization_input {
 pub type DeleteAggregationAuthorizationInputOperationOutputAlias =
     crate::operation::DeleteAggregationAuthorization;
 #[doc(hidden)]
-pub type DeleteAggregationAuthorizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAggregationAuthorizationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAggregationAuthorizationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAggregationAuthorization`](crate::operation::DeleteAggregationAuthorization)>
     #[allow(clippy::let_and_return)]
@@ -423,7 +419,7 @@ impl DeleteAggregationAuthorizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAggregationAuthorization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -509,7 +505,7 @@ impl DeleteAggregationAuthorizationInput {
             "DeleteAggregationAuthorization",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -541,14 +537,12 @@ pub mod delete_config_rule_input {
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the Config rule that you want to
-        /// delete.</p>
+        /// <p>The name of the Config rule that you want to delete.</p>
         pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_name = Some(input.into());
             self
         }
-        /// <p>The name of the Config rule that you want to
-        /// delete.</p>
+        /// <p>The name of the Config rule that you want to delete.</p>
         pub fn set_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -572,7 +566,7 @@ pub mod delete_config_rule_input {
 #[doc(hidden)]
 pub type DeleteConfigRuleInputOperationOutputAlias = crate::operation::DeleteConfigRule;
 #[doc(hidden)]
-pub type DeleteConfigRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteConfigRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConfigRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConfigRule`](crate::operation::DeleteConfigRule)>
     #[allow(clippy::let_and_return)]
@@ -583,7 +577,7 @@ impl DeleteConfigRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteConfigRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -668,7 +662,7 @@ impl DeleteConfigRuleInput {
             "DeleteConfigRule",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -733,7 +727,8 @@ pub mod delete_configuration_aggregator_input {
 pub type DeleteConfigurationAggregatorInputOperationOutputAlias =
     crate::operation::DeleteConfigurationAggregator;
 #[doc(hidden)]
-pub type DeleteConfigurationAggregatorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteConfigurationAggregatorInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConfigurationAggregatorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConfigurationAggregator`](crate::operation::DeleteConfigurationAggregator)>
     #[allow(clippy::let_and_return)]
@@ -744,7 +739,7 @@ impl DeleteConfigurationAggregatorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteConfigurationAggregator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -830,7 +825,7 @@ impl DeleteConfigurationAggregatorInput {
             "DeleteConfigurationAggregator",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -862,9 +857,7 @@ pub mod delete_configuration_recorder_input {
         pub(crate) configuration_recorder_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the configuration recorder to be deleted. You can
-        /// retrieve the name of your configuration recorder by using the
-        /// <code>DescribeConfigurationRecorders</code> action.</p>
+        /// <p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>
         pub fn configuration_recorder_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -872,9 +865,7 @@ pub mod delete_configuration_recorder_input {
             self.configuration_recorder_name = Some(input.into());
             self
         }
-        /// <p>The name of the configuration recorder to be deleted. You can
-        /// retrieve the name of your configuration recorder by using the
-        /// <code>DescribeConfigurationRecorders</code> action.</p>
+        /// <p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>
         pub fn set_configuration_recorder_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -899,7 +890,7 @@ pub mod delete_configuration_recorder_input {
 pub type DeleteConfigurationRecorderInputOperationOutputAlias =
     crate::operation::DeleteConfigurationRecorder;
 #[doc(hidden)]
-pub type DeleteConfigurationRecorderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteConfigurationRecorderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConfigurationRecorderInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConfigurationRecorder`](crate::operation::DeleteConfigurationRecorder)>
     #[allow(clippy::let_and_return)]
@@ -910,7 +901,7 @@ impl DeleteConfigurationRecorderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteConfigurationRecorder,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -996,7 +987,7 @@ impl DeleteConfigurationRecorderInput {
             "DeleteConfigurationRecorder",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1057,7 +1048,7 @@ pub mod delete_conformance_pack_input {
 #[doc(hidden)]
 pub type DeleteConformancePackInputOperationOutputAlias = crate::operation::DeleteConformancePack;
 #[doc(hidden)]
-pub type DeleteConformancePackInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteConformancePackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConformancePackInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConformancePack`](crate::operation::DeleteConformancePack)>
     #[allow(clippy::let_and_return)]
@@ -1068,7 +1059,7 @@ impl DeleteConformancePackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteConformancePack,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1155,7 +1146,7 @@ impl DeleteConformancePackInput {
             "DeleteConformancePack",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1216,7 +1207,7 @@ pub mod delete_delivery_channel_input {
 #[doc(hidden)]
 pub type DeleteDeliveryChannelInputOperationOutputAlias = crate::operation::DeleteDeliveryChannel;
 #[doc(hidden)]
-pub type DeleteDeliveryChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDeliveryChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDeliveryChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDeliveryChannel`](crate::operation::DeleteDeliveryChannel)>
     #[allow(clippy::let_and_return)]
@@ -1227,7 +1218,7 @@ impl DeleteDeliveryChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDeliveryChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1314,7 +1305,7 @@ impl DeleteDeliveryChannelInput {
             "DeleteDeliveryChannel",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1346,14 +1337,12 @@ pub mod delete_evaluation_results_input {
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the Config rule for which you want to delete
-        /// the evaluation results.</p>
+        /// <p>The name of the Config rule for which you want to delete the evaluation results.</p>
         pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_name = Some(input.into());
             self
         }
-        /// <p>The name of the Config rule for which you want to delete
-        /// the evaluation results.</p>
+        /// <p>The name of the Config rule for which you want to delete the evaluation results.</p>
         pub fn set_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1378,7 +1367,7 @@ pub mod delete_evaluation_results_input {
 pub type DeleteEvaluationResultsInputOperationOutputAlias =
     crate::operation::DeleteEvaluationResults;
 #[doc(hidden)]
-pub type DeleteEvaluationResultsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteEvaluationResultsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEvaluationResultsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEvaluationResults`](crate::operation::DeleteEvaluationResults)>
     #[allow(clippy::let_and_return)]
@@ -1389,7 +1378,7 @@ impl DeleteEvaluationResultsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEvaluationResults,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1476,7 +1465,7 @@ impl DeleteEvaluationResultsInput {
             "DeleteEvaluationResults",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1541,7 +1530,8 @@ pub mod delete_organization_config_rule_input {
 pub type DeleteOrganizationConfigRuleInputOperationOutputAlias =
     crate::operation::DeleteOrganizationConfigRule;
 #[doc(hidden)]
-pub type DeleteOrganizationConfigRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteOrganizationConfigRuleInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteOrganizationConfigRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteOrganizationConfigRule`](crate::operation::DeleteOrganizationConfigRule)>
     #[allow(clippy::let_and_return)]
@@ -1552,7 +1542,7 @@ impl DeleteOrganizationConfigRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteOrganizationConfigRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1638,7 +1628,7 @@ impl DeleteOrganizationConfigRuleInput {
             "DeleteOrganizationConfigRule",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1703,7 +1693,8 @@ pub mod delete_organization_conformance_pack_input {
 pub type DeleteOrganizationConformancePackInputOperationOutputAlias =
     crate::operation::DeleteOrganizationConformancePack;
 #[doc(hidden)]
-pub type DeleteOrganizationConformancePackInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteOrganizationConformancePackInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteOrganizationConformancePackInput {
     /// Consumes the builder and constructs an Operation<[`DeleteOrganizationConformancePack`](crate::operation::DeleteOrganizationConformancePack)>
     #[allow(clippy::let_and_return)]
@@ -1714,7 +1705,7 @@ impl DeleteOrganizationConformancePackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteOrganizationConformancePack,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1800,7 +1791,7 @@ impl DeleteOrganizationConformancePackInput {
             "DeleteOrganizationConformancePack",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1833,14 +1824,12 @@ pub mod delete_pending_aggregation_request_input {
         pub(crate) requester_aws_region: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The 12-digit account ID of the account requesting to aggregate
-        /// data.</p>
+        /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
         pub fn requester_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.requester_account_id = Some(input.into());
             self
         }
-        /// <p>The 12-digit account ID of the account requesting to aggregate
-        /// data.</p>
+        /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
         pub fn set_requester_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1879,7 +1868,8 @@ pub mod delete_pending_aggregation_request_input {
 pub type DeletePendingAggregationRequestInputOperationOutputAlias =
     crate::operation::DeletePendingAggregationRequest;
 #[doc(hidden)]
-pub type DeletePendingAggregationRequestInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePendingAggregationRequestInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePendingAggregationRequestInput {
     /// Consumes the builder and constructs an Operation<[`DeletePendingAggregationRequest`](crate::operation::DeletePendingAggregationRequest)>
     #[allow(clippy::let_and_return)]
@@ -1890,7 +1880,7 @@ impl DeletePendingAggregationRequestInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePendingAggregationRequest,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1976,7 +1966,7 @@ impl DeletePendingAggregationRequestInput {
             "DeletePendingAggregationRequest",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2053,7 +2043,8 @@ pub mod delete_remediation_configuration_input {
 pub type DeleteRemediationConfigurationInputOperationOutputAlias =
     crate::operation::DeleteRemediationConfiguration;
 #[doc(hidden)]
-pub type DeleteRemediationConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRemediationConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRemediationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRemediationConfiguration`](crate::operation::DeleteRemediationConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -2064,7 +2055,7 @@ impl DeleteRemediationConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRemediationConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2150,7 +2141,7 @@ impl DeleteRemediationConfigurationInput {
             "DeleteRemediationConfiguration",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2204,10 +2195,10 @@ pub mod delete_remediation_exceptions_input {
         /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
         pub fn resource_keys(
             mut self,
-            input: impl Into<crate::model::RemediationExceptionResourceKey>,
+            input: crate::model::RemediationExceptionResourceKey,
         ) -> Self {
             let mut v = self.resource_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_keys = Some(v);
             self
         }
@@ -2239,7 +2230,7 @@ pub mod delete_remediation_exceptions_input {
 pub type DeleteRemediationExceptionsInputOperationOutputAlias =
     crate::operation::DeleteRemediationExceptions;
 #[doc(hidden)]
-pub type DeleteRemediationExceptionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRemediationExceptionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRemediationExceptionsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRemediationExceptions`](crate::operation::DeleteRemediationExceptions)>
     #[allow(clippy::let_and_return)]
@@ -2250,7 +2241,7 @@ impl DeleteRemediationExceptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRemediationExceptions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2336,7 +2327,7 @@ impl DeleteRemediationExceptionsInput {
             "DeleteRemediationExceptions",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2409,7 +2400,7 @@ pub mod delete_resource_config_input {
 #[doc(hidden)]
 pub type DeleteResourceConfigInputOperationOutputAlias = crate::operation::DeleteResourceConfig;
 #[doc(hidden)]
-pub type DeleteResourceConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteResourceConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResourceConfigInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResourceConfig`](crate::operation::DeleteResourceConfig)>
     #[allow(clippy::let_and_return)]
@@ -2420,7 +2411,7 @@ impl DeleteResourceConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteResourceConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2507,7 +2498,7 @@ impl DeleteResourceConfigInput {
             "DeleteResourceConfig",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2572,7 +2563,8 @@ pub mod delete_retention_configuration_input {
 pub type DeleteRetentionConfigurationInputOperationOutputAlias =
     crate::operation::DeleteRetentionConfiguration;
 #[doc(hidden)]
-pub type DeleteRetentionConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRetentionConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRetentionConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRetentionConfiguration`](crate::operation::DeleteRetentionConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -2583,7 +2575,7 @@ impl DeleteRetentionConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRetentionConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2669,7 +2661,7 @@ impl DeleteRetentionConfigurationInput {
             "DeleteRetentionConfiguration",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2727,7 +2719,7 @@ pub mod delete_stored_query_input {
 #[doc(hidden)]
 pub type DeleteStoredQueryInputOperationOutputAlias = crate::operation::DeleteStoredQuery;
 #[doc(hidden)]
-pub type DeleteStoredQueryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteStoredQueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStoredQueryInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStoredQuery`](crate::operation::DeleteStoredQuery)>
     #[allow(clippy::let_and_return)]
@@ -2738,7 +2730,7 @@ impl DeleteStoredQueryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteStoredQuery,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2823,7 +2815,7 @@ impl DeleteStoredQueryInput {
             "DeleteStoredQuery",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2855,14 +2847,12 @@ pub mod deliver_config_snapshot_input {
         pub(crate) delivery_channel_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the delivery channel through which the snapshot is
-        /// delivered.</p>
+        /// <p>The name of the delivery channel through which the snapshot is delivered.</p>
         pub fn delivery_channel_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.delivery_channel_name = Some(input.into());
             self
         }
-        /// <p>The name of the delivery channel through which the snapshot is
-        /// delivered.</p>
+        /// <p>The name of the delivery channel through which the snapshot is delivered.</p>
         pub fn set_delivery_channel_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2886,7 +2876,7 @@ pub mod deliver_config_snapshot_input {
 #[doc(hidden)]
 pub type DeliverConfigSnapshotInputOperationOutputAlias = crate::operation::DeliverConfigSnapshot;
 #[doc(hidden)]
-pub type DeliverConfigSnapshotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeliverConfigSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeliverConfigSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`DeliverConfigSnapshot`](crate::operation::DeliverConfigSnapshot)>
     #[allow(clippy::let_and_return)]
@@ -2897,7 +2887,7 @@ impl DeliverConfigSnapshotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeliverConfigSnapshot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2984,7 +2974,7 @@ impl DeliverConfigSnapshotInput {
             "DeliverConfigSnapshot",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3035,14 +3025,12 @@ pub mod describe_aggregate_compliance_by_config_rules_input {
             self.configuration_aggregator_name = input;
             self
         }
-        /// <p>Filters the results by ConfigRuleComplianceFilters object.
-        /// </p>
+        /// <p>Filters the results by ConfigRuleComplianceFilters object. </p>
         pub fn filters(mut self, input: crate::model::ConfigRuleComplianceFilters) -> Self {
             self.filters = Some(input);
             self
         }
-        /// <p>Filters the results by ConfigRuleComplianceFilters object.
-        /// </p>
+        /// <p>Filters the results by ConfigRuleComplianceFilters object. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::ConfigRuleComplianceFilters>,
@@ -3050,30 +3038,22 @@ pub mod describe_aggregate_compliance_by_config_rules_input {
             self.filters = input;
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is
-        /// maximum.
-        /// If you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is
-        /// maximum.
-        /// If you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3101,7 +3081,7 @@ pub type DescribeAggregateComplianceByConfigRulesInputOperationOutputAlias =
     crate::operation::DescribeAggregateComplianceByConfigRules;
 #[doc(hidden)]
 pub type DescribeAggregateComplianceByConfigRulesInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAggregateComplianceByConfigRulesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAggregateComplianceByConfigRules`](crate::operation::DescribeAggregateComplianceByConfigRules)>
     #[allow(clippy::let_and_return)]
@@ -3112,7 +3092,7 @@ impl DescribeAggregateComplianceByConfigRulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAggregateComplianceByConfigRules,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3198,7 +3178,7 @@ impl DescribeAggregateComplianceByConfigRulesInput {
             "DescribeAggregateComplianceByConfigRules",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3309,7 +3289,7 @@ pub type DescribeAggregateComplianceByConformancePacksInputOperationOutputAlias 
     crate::operation::DescribeAggregateComplianceByConformancePacks;
 #[doc(hidden)]
 pub type DescribeAggregateComplianceByConformancePacksInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAggregateComplianceByConformancePacksInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAggregateComplianceByConformancePacks`](crate::operation::DescribeAggregateComplianceByConformancePacks)>
     #[allow(clippy::let_and_return)]
@@ -3320,7 +3300,7 @@ impl DescribeAggregateComplianceByConformancePacksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAggregateComplianceByConformancePacks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3406,7 +3386,7 @@ impl DescribeAggregateComplianceByConformancePacksInput {
             "DescribeAggregateComplianceByConformancePacks",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3440,28 +3420,22 @@ pub mod describe_aggregation_authorizations_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The maximum number of AggregationAuthorizations returned on
-        /// each page. The default is maximum. If you specify 0, Config uses
-        /// the default.</p>
+        /// <p>The maximum number of AggregationAuthorizations returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of AggregationAuthorizations returned on
-        /// each page. The default is maximum. If you specify 0, Config uses
-        /// the default.</p>
+        /// <p>The maximum number of AggregationAuthorizations returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3484,7 +3458,8 @@ pub mod describe_aggregation_authorizations_input {
 pub type DescribeAggregationAuthorizationsInputOperationOutputAlias =
     crate::operation::DescribeAggregationAuthorizations;
 #[doc(hidden)]
-pub type DescribeAggregationAuthorizationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAggregationAuthorizationsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAggregationAuthorizationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAggregationAuthorizations`](crate::operation::DescribeAggregationAuthorizations)>
     #[allow(clippy::let_and_return)]
@@ -3495,7 +3470,7 @@ impl DescribeAggregationAuthorizationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAggregationAuthorizations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3581,7 +3556,7 @@ impl DescribeAggregationAuthorizationsInput {
             "DescribeAggregationAuthorizations",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3620,16 +3595,14 @@ pub mod describe_compliance_by_config_rule_input {
         ///
         /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
         ///
-        /// <p>Specify one or more Config rule names to filter the results
-        /// by rule.</p>
+        /// <p>Specify one or more Config rule names to filter the results by rule.</p>
         pub fn config_rule_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.config_rule_names.unwrap_or_default();
             v.push(input.into());
             self.config_rule_names = Some(v);
             self
         }
-        /// <p>Specify one or more Config rule names to filter the results
-        /// by rule.</p>
+        /// <p>Specify one or more Config rule names to filter the results by rule.</p>
         pub fn set_config_rule_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3643,9 +3616,9 @@ pub mod describe_compliance_by_config_rule_input {
         ///
         /// <p>Filters the results by compliance.</p>
         /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
-        pub fn compliance_types(mut self, input: impl Into<crate::model::ComplianceType>) -> Self {
+        pub fn compliance_types(mut self, input: crate::model::ComplianceType) -> Self {
             let mut v = self.compliance_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compliance_types = Some(v);
             self
         }
@@ -3658,16 +3631,12 @@ pub mod describe_compliance_by_config_rule_input {
             self.compliance_types = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3691,7 +3660,8 @@ pub mod describe_compliance_by_config_rule_input {
 pub type DescribeComplianceByConfigRuleInputOperationOutputAlias =
     crate::operation::DescribeComplianceByConfigRule;
 #[doc(hidden)]
-pub type DescribeComplianceByConfigRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeComplianceByConfigRuleInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeComplianceByConfigRuleInput {
     /// Consumes the builder and constructs an Operation<[`DescribeComplianceByConfigRule`](crate::operation::DescribeComplianceByConfigRule)>
     #[allow(clippy::let_and_return)]
@@ -3702,7 +3672,7 @@ impl DescribeComplianceByConfigRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeComplianceByConfigRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3788,7 +3758,7 @@ impl DescribeComplianceByConfigRuleInput {
             "DescribeComplianceByConfigRule",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3825,18 +3795,12 @@ pub mod describe_compliance_by_resource_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The types of Amazon Web Services resources for which you want compliance
-        /// information (for example, <code>AWS::EC2::Instance</code>). For this
-        /// action, you can specify that the resource type is an Amazon Web Services account by
-        /// specifying <code>AWS::::Account</code>.</p>
+        /// <p>The types of Amazon Web Services resources for which you want compliance information (for example, <code>AWS::EC2::Instance</code>). For this action, you can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>The types of Amazon Web Services resources for which you want compliance
-        /// information (for example, <code>AWS::EC2::Instance</code>). For this
-        /// action, you can specify that the resource type is an Amazon Web Services account by
-        /// specifying <code>AWS::::Account</code>.</p>
+        /// <p>The types of Amazon Web Services resources for which you want compliance information (for example, <code>AWS::EC2::Instance</code>). For this action, you can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3844,18 +3808,12 @@ pub mod describe_compliance_by_resource_input {
             self.resource_type = input;
             self
         }
-        /// <p>The ID of the Amazon Web Services resource for which you want compliance
-        /// information. You can specify only one resource ID. If you specify a
-        /// resource ID, you must also specify a type for
-        /// <code>ResourceType</code>.</p>
+        /// <p>The ID of the Amazon Web Services resource for which you want compliance information. You can specify only one resource ID. If you specify a resource ID, you must also specify a type for <code>ResourceType</code>.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Amazon Web Services resource for which you want compliance
-        /// information. You can specify only one resource ID. If you specify a
-        /// resource ID, you must also specify a type for
-        /// <code>ResourceType</code>.</p>
+        /// <p>The ID of the Amazon Web Services resource for which you want compliance information. You can specify only one resource ID. If you specify a resource ID, you must also specify a type for <code>ResourceType</code>.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -3866,9 +3824,9 @@ pub mod describe_compliance_by_resource_input {
         ///
         /// <p>Filters the results by compliance.</p>
         /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.</p>
-        pub fn compliance_types(mut self, input: impl Into<crate::model::ComplianceType>) -> Self {
+        pub fn compliance_types(mut self, input: crate::model::ComplianceType) -> Self {
             let mut v = self.compliance_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compliance_types = Some(v);
             self
         }
@@ -3881,30 +3839,22 @@ pub mod describe_compliance_by_resource_input {
             self.compliance_types = input;
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is 10. You cannot specify a number greater than 100. If
-        /// you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is 10. You cannot specify a number greater than 100. If
-        /// you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3930,7 +3880,8 @@ pub mod describe_compliance_by_resource_input {
 pub type DescribeComplianceByResourceInputOperationOutputAlias =
     crate::operation::DescribeComplianceByResource;
 #[doc(hidden)]
-pub type DescribeComplianceByResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeComplianceByResourceInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeComplianceByResourceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeComplianceByResource`](crate::operation::DescribeComplianceByResource)>
     #[allow(clippy::let_and_return)]
@@ -3941,7 +3892,7 @@ impl DescribeComplianceByResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeComplianceByResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4027,7 +3978,7 @@ impl DescribeComplianceByResourceInput {
             "DescribeComplianceByResource",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4065,20 +4016,14 @@ pub mod describe_config_rule_evaluation_status_input {
         ///
         /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
         ///
-        /// <p>The name of the Config managed rules for which you want
-        /// status information. If you do not specify any names, Config
-        /// returns status information for all Config managed rules that you
-        /// use.</p>
+        /// <p>The name of the Config managed rules for which you want status information. If you do not specify any names, Config returns status information for all Config managed rules that you use.</p>
         pub fn config_rule_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.config_rule_names.unwrap_or_default();
             v.push(input.into());
             self.config_rule_names = Some(v);
             self
         }
-        /// <p>The name of the Config managed rules for which you want
-        /// status information. If you do not specify any names, Config
-        /// returns status information for all Config managed rules that you
-        /// use.</p>
+        /// <p>The name of the Config managed rules for which you want status information. If you do not specify any names, Config returns status information for all Config managed rules that you use.</p>
         pub fn set_config_rule_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4086,40 +4031,26 @@ pub mod describe_config_rule_evaluation_status_input {
             self.config_rule_names = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The number of rule evaluation results that you want
-        /// returned.</p>
-        ///
-        /// <p>This parameter is required if the rule limit for your account
-        /// is more than the default of 150 rules.</p>
-        /// <p>For information about requesting a rule limit increase, see
-        /// <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General
-        /// Reference Guide</i>.</p>
+        /// <p>The number of rule evaluation results that you want returned.</p>
+        /// <p>This parameter is required if the rule limit for your account is more than the default of 150 rules.</p>
+        /// <p>For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The number of rule evaluation results that you want
-        /// returned.</p>
-        ///
-        /// <p>This parameter is required if the rule limit for your account
-        /// is more than the default of 150 rules.</p>
-        /// <p>For information about requesting a rule limit increase, see
-        /// <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General
-        /// Reference Guide</i>.</p>
+        /// <p>The number of rule evaluation results that you want returned.</p>
+        /// <p>This parameter is required if the rule limit for your account is more than the default of 150 rules.</p>
+        /// <p>For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -4143,7 +4074,8 @@ pub mod describe_config_rule_evaluation_status_input {
 pub type DescribeConfigRuleEvaluationStatusInputOperationOutputAlias =
     crate::operation::DescribeConfigRuleEvaluationStatus;
 #[doc(hidden)]
-pub type DescribeConfigRuleEvaluationStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeConfigRuleEvaluationStatusInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConfigRuleEvaluationStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConfigRuleEvaluationStatus`](crate::operation::DescribeConfigRuleEvaluationStatus)>
     #[allow(clippy::let_and_return)]
@@ -4154,7 +4086,7 @@ impl DescribeConfigRuleEvaluationStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConfigRuleEvaluationStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4240,7 +4172,7 @@ impl DescribeConfigRuleEvaluationStatusInput {
             "DescribeConfigRuleEvaluationStatus",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4277,18 +4209,14 @@ pub mod describe_config_rules_input {
         ///
         /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
         ///
-        /// <p>The names of the Config rules for which you want details.
-        /// If you do not specify any names, Config returns details for all
-        /// your rules.</p>
+        /// <p>The names of the Config rules for which you want details. If you do not specify any names, Config returns details for all your rules.</p>
         pub fn config_rule_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.config_rule_names.unwrap_or_default();
             v.push(input.into());
             self.config_rule_names = Some(v);
             self
         }
-        /// <p>The names of the Config rules for which you want details.
-        /// If you do not specify any names, Config returns details for all
-        /// your rules.</p>
+        /// <p>The names of the Config rules for which you want details. If you do not specify any names, Config returns details for all your rules.</p>
         pub fn set_config_rule_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4296,16 +4224,12 @@ pub mod describe_config_rules_input {
             self.config_rule_names = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4327,7 +4251,7 @@ pub mod describe_config_rules_input {
 #[doc(hidden)]
 pub type DescribeConfigRulesInputOperationOutputAlias = crate::operation::DescribeConfigRules;
 #[doc(hidden)]
-pub type DescribeConfigRulesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeConfigRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConfigRulesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConfigRules`](crate::operation::DescribeConfigRules)>
     #[allow(clippy::let_and_return)]
@@ -4338,7 +4262,7 @@ impl DescribeConfigRulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConfigRules,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4423,7 +4347,7 @@ impl DescribeConfigRulesInput {
             "DescribeConfigRules",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4480,28 +4404,22 @@ pub mod describe_configuration_aggregators_input {
             self.configuration_aggregator_names = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of configuration aggregators returned on
-        /// each page. The default is maximum. If you specify 0, Config uses
-        /// the default.</p>
+        /// <p>The maximum number of configuration aggregators returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of configuration aggregators returned on
-        /// each page. The default is maximum. If you specify 0, Config uses
-        /// the default.</p>
+        /// <p>The maximum number of configuration aggregators returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -4525,7 +4443,8 @@ pub mod describe_configuration_aggregators_input {
 pub type DescribeConfigurationAggregatorsInputOperationOutputAlias =
     crate::operation::DescribeConfigurationAggregators;
 #[doc(hidden)]
-pub type DescribeConfigurationAggregatorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeConfigurationAggregatorsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConfigurationAggregatorsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConfigurationAggregators`](crate::operation::DescribeConfigurationAggregators)>
     #[allow(clippy::let_and_return)]
@@ -4536,7 +4455,7 @@ impl DescribeConfigurationAggregatorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConfigurationAggregators,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4622,7 +4541,7 @@ impl DescribeConfigurationAggregatorsInput {
             "DescribeConfigurationAggregators",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4680,42 +4599,21 @@ pub mod describe_configuration_aggregator_sources_status_input {
         ///
         /// <p>Filters the status type.</p>
         /// <ul>
-        /// <li>
-        /// <p>Valid value FAILED indicates errors while moving
-        /// data.</p>
-        /// </li>
-        /// <li>
-        /// <p>Valid value SUCCEEDED indicates the data was
-        /// successfully moved.</p>
-        /// </li>
-        /// <li>
-        /// <p>Valid value OUTDATED indicates the data is not the most
-        /// recent.</p>
-        /// </li>
+        /// <li> <p>Valid value FAILED indicates errors while moving data.</p> </li>
+        /// <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li>
+        /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li>
         /// </ul>
-        pub fn update_status(
-            mut self,
-            input: impl Into<crate::model::AggregatedSourceStatusType>,
-        ) -> Self {
+        pub fn update_status(mut self, input: crate::model::AggregatedSourceStatusType) -> Self {
             let mut v = self.update_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.update_status = Some(v);
             self
         }
         /// <p>Filters the status type.</p>
         /// <ul>
-        /// <li>
-        /// <p>Valid value FAILED indicates errors while moving
-        /// data.</p>
-        /// </li>
-        /// <li>
-        /// <p>Valid value SUCCEEDED indicates the data was
-        /// successfully moved.</p>
-        /// </li>
-        /// <li>
-        /// <p>Valid value OUTDATED indicates the data is not the most
-        /// recent.</p>
-        /// </li>
+        /// <li> <p>Valid value FAILED indicates errors while moving data.</p> </li>
+        /// <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li>
+        /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li>
         /// </ul>
         pub fn set_update_status(
             mut self,
@@ -4724,28 +4622,22 @@ pub mod describe_configuration_aggregator_sources_status_input {
             self.update_status = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of AggregatorSourceStatus returned on each
-        /// page. The default is maximum. If you specify 0, Config uses the
-        /// default.</p>
+        /// <p>The maximum number of AggregatorSourceStatus returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of AggregatorSourceStatus returned on each
-        /// page. The default is maximum. If you specify 0, Config uses the
-        /// default.</p>
+        /// <p>The maximum number of AggregatorSourceStatus returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -4773,7 +4665,7 @@ pub type DescribeConfigurationAggregatorSourcesStatusInputOperationOutputAlias =
     crate::operation::DescribeConfigurationAggregatorSourcesStatus;
 #[doc(hidden)]
 pub type DescribeConfigurationAggregatorSourcesStatusInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConfigurationAggregatorSourcesStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConfigurationAggregatorSourcesStatus`](crate::operation::DescribeConfigurationAggregatorSourcesStatus)>
     #[allow(clippy::let_and_return)]
@@ -4784,7 +4676,7 @@ impl DescribeConfigurationAggregatorSourcesStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConfigurationAggregatorSourcesStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4870,7 +4762,7 @@ impl DescribeConfigurationAggregatorSourcesStatusInput {
             "DescribeConfigurationAggregatorSourcesStatus",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4943,7 +4835,8 @@ pub mod describe_configuration_recorders_input {
 pub type DescribeConfigurationRecordersInputOperationOutputAlias =
     crate::operation::DescribeConfigurationRecorders;
 #[doc(hidden)]
-pub type DescribeConfigurationRecordersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeConfigurationRecordersInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConfigurationRecordersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConfigurationRecorders`](crate::operation::DescribeConfigurationRecorders)>
     #[allow(clippy::let_and_return)]
@@ -4954,7 +4847,7 @@ impl DescribeConfigurationRecordersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConfigurationRecorders,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5040,7 +4933,7 @@ impl DescribeConfigurationRecordersInput {
             "DescribeConfigurationRecorders",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5077,9 +4970,7 @@ pub mod describe_configuration_recorder_status_input {
         ///
         /// To override the contents of this collection use [`set_configuration_recorder_names`](Self::set_configuration_recorder_names).
         ///
-        /// <p>The name(s) of the configuration recorder. If the name is not
-        /// specified, the action returns the current status of all the
-        /// configuration recorders associated with the account.</p>
+        /// <p>The name(s) of the configuration recorder. If the name is not specified, the action returns the current status of all the configuration recorders associated with the account.</p>
         pub fn configuration_recorder_names(
             mut self,
             input: impl Into<std::string::String>,
@@ -5089,9 +4980,7 @@ pub mod describe_configuration_recorder_status_input {
             self.configuration_recorder_names = Some(v);
             self
         }
-        /// <p>The name(s) of the configuration recorder. If the name is not
-        /// specified, the action returns the current status of all the
-        /// configuration recorders associated with the account.</p>
+        /// <p>The name(s) of the configuration recorder. If the name is not specified, the action returns the current status of all the configuration recorders associated with the account.</p>
         pub fn set_configuration_recorder_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5117,7 +5006,7 @@ pub type DescribeConfigurationRecorderStatusInputOperationOutputAlias =
     crate::operation::DescribeConfigurationRecorderStatus;
 #[doc(hidden)]
 pub type DescribeConfigurationRecorderStatusInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConfigurationRecorderStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConfigurationRecorderStatus`](crate::operation::DescribeConfigurationRecorderStatus)>
     #[allow(clippy::let_and_return)]
@@ -5128,7 +5017,7 @@ impl DescribeConfigurationRecorderStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConfigurationRecorderStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5214,7 +5103,7 @@ impl DescribeConfigurationRecorderStatusInput {
             "DescribeConfigurationRecorderStatus",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5315,7 +5204,8 @@ pub mod describe_conformance_pack_compliance_input {
 pub type DescribeConformancePackComplianceInputOperationOutputAlias =
     crate::operation::DescribeConformancePackCompliance;
 #[doc(hidden)]
-pub type DescribeConformancePackComplianceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeConformancePackComplianceInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConformancePackComplianceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConformancePackCompliance`](crate::operation::DescribeConformancePackCompliance)>
     #[allow(clippy::let_and_return)]
@@ -5326,7 +5216,7 @@ impl DescribeConformancePackComplianceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConformancePackCompliance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5412,7 +5302,7 @@ impl DescribeConformancePackComplianceInput {
             "DescribeConformancePackCompliance",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5504,7 +5394,7 @@ pub mod describe_conformance_packs_input {
 pub type DescribeConformancePacksInputOperationOutputAlias =
     crate::operation::DescribeConformancePacks;
 #[doc(hidden)]
-pub type DescribeConformancePacksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeConformancePacksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConformancePacksInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConformancePacks`](crate::operation::DescribeConformancePacks)>
     #[allow(clippy::let_and_return)]
@@ -5515,7 +5405,7 @@ impl DescribeConformancePacksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConformancePacks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5602,7 +5492,7 @@ impl DescribeConformancePacksInput {
             "DescribeConformancePacks",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5694,7 +5584,8 @@ pub mod describe_conformance_pack_status_input {
 pub type DescribeConformancePackStatusInputOperationOutputAlias =
     crate::operation::DescribeConformancePackStatus;
 #[doc(hidden)]
-pub type DescribeConformancePackStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeConformancePackStatusInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConformancePackStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConformancePackStatus`](crate::operation::DescribeConformancePackStatus)>
     #[allow(clippy::let_and_return)]
@@ -5705,7 +5596,7 @@ impl DescribeConformancePackStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConformancePackStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5791,7 +5682,7 @@ impl DescribeConformancePackStatusInput {
             "DescribeConformancePackStatus",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5859,7 +5750,7 @@ pub mod describe_delivery_channels_input {
 pub type DescribeDeliveryChannelsInputOperationOutputAlias =
     crate::operation::DescribeDeliveryChannels;
 #[doc(hidden)]
-pub type DescribeDeliveryChannelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDeliveryChannelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDeliveryChannelsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDeliveryChannels`](crate::operation::DescribeDeliveryChannels)>
     #[allow(clippy::let_and_return)]
@@ -5870,7 +5761,7 @@ impl DescribeDeliveryChannelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDeliveryChannels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5957,7 +5848,7 @@ impl DescribeDeliveryChannelsInput {
             "DescribeDeliveryChannels",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6025,7 +5916,8 @@ pub mod describe_delivery_channel_status_input {
 pub type DescribeDeliveryChannelStatusInputOperationOutputAlias =
     crate::operation::DescribeDeliveryChannelStatus;
 #[doc(hidden)]
-pub type DescribeDeliveryChannelStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDeliveryChannelStatusInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDeliveryChannelStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDeliveryChannelStatus`](crate::operation::DescribeDeliveryChannelStatus)>
     #[allow(clippy::let_and_return)]
@@ -6036,7 +5928,7 @@ impl DescribeDeliveryChannelStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDeliveryChannelStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6122,7 +6014,7 @@ impl DescribeDeliveryChannelStatusInput {
             "DescribeDeliveryChannelStatus",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6218,7 +6110,8 @@ pub mod describe_organization_config_rules_input {
 pub type DescribeOrganizationConfigRulesInputOperationOutputAlias =
     crate::operation::DescribeOrganizationConfigRules;
 #[doc(hidden)]
-pub type DescribeOrganizationConfigRulesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeOrganizationConfigRulesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeOrganizationConfigRulesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOrganizationConfigRules`](crate::operation::DescribeOrganizationConfigRules)>
     #[allow(clippy::let_and_return)]
@@ -6229,7 +6122,7 @@ impl DescribeOrganizationConfigRulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeOrganizationConfigRules,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6315,7 +6208,7 @@ impl DescribeOrganizationConfigRulesInput {
             "DescribeOrganizationConfigRules",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6412,7 +6305,7 @@ pub type DescribeOrganizationConfigRuleStatusesInputOperationOutputAlias =
     crate::operation::DescribeOrganizationConfigRuleStatuses;
 #[doc(hidden)]
 pub type DescribeOrganizationConfigRuleStatusesInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeOrganizationConfigRuleStatusesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOrganizationConfigRuleStatuses`](crate::operation::DescribeOrganizationConfigRuleStatuses)>
     #[allow(clippy::let_and_return)]
@@ -6423,7 +6316,7 @@ impl DescribeOrganizationConfigRuleStatusesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeOrganizationConfigRuleStatuses,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6509,7 +6402,7 @@ impl DescribeOrganizationConfigRuleStatusesInput {
             "DescribeOrganizationConfigRuleStatuses",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6566,26 +6459,22 @@ pub mod describe_organization_conformance_packs_input {
             self.organization_conformance_pack_names = input;
             self
         }
-        /// <p>The maximum number of organization config packs returned on each page. If you do no specify a
-        /// number, Config uses the default. The default is 100.</p>
+        /// <p>The maximum number of organization config packs returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of organization config packs returned on each page. If you do no specify a
-        /// number, Config uses the default. The default is 100.</p>
+        /// <p>The maximum number of organization config packs returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a
-        /// paginated response.</p>
+        /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a
-        /// paginated response.</p>
+        /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6610,7 +6499,7 @@ pub type DescribeOrganizationConformancePacksInputOperationOutputAlias =
     crate::operation::DescribeOrganizationConformancePacks;
 #[doc(hidden)]
 pub type DescribeOrganizationConformancePacksInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeOrganizationConformancePacksInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOrganizationConformancePacks`](crate::operation::DescribeOrganizationConformancePacks)>
     #[allow(clippy::let_and_return)]
@@ -6621,7 +6510,7 @@ impl DescribeOrganizationConformancePacksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeOrganizationConformancePacks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6707,7 +6596,7 @@ impl DescribeOrganizationConformancePacksInput {
             "DescribeOrganizationConformancePacks",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6746,8 +6635,7 @@ pub mod describe_organization_conformance_pack_statuses_input {
         ///
         /// To override the contents of this collection use [`set_organization_conformance_pack_names`](Self::set_organization_conformance_pack_names).
         ///
-        /// <p>The names of organization conformance packs for which you want status details.
-        /// If you do not specify any names, Config returns details for all your organization conformance packs. </p>
+        /// <p>The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs. </p>
         pub fn organization_conformance_pack_names(
             mut self,
             input: impl Into<std::string::String>,
@@ -6757,8 +6645,7 @@ pub mod describe_organization_conformance_pack_statuses_input {
             self.organization_conformance_pack_names = Some(v);
             self
         }
-        /// <p>The names of organization conformance packs for which you want status details.
-        /// If you do not specify any names, Config returns details for all your organization conformance packs. </p>
+        /// <p>The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs. </p>
         pub fn set_organization_conformance_pack_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6766,14 +6653,12 @@ pub mod describe_organization_conformance_pack_statuses_input {
             self.organization_conformance_pack_names = input;
             self
         }
-        /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page.
-        /// If you do no specify a number, Config uses the default. The default is 100. </p>
+        /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page. If you do no specify a number, Config uses the default. The default is 100. </p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page.
-        /// If you do no specify a number, Config uses the default. The default is 100. </p>
+        /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page. If you do no specify a number, Config uses the default. The default is 100. </p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -6810,7 +6695,7 @@ pub type DescribeOrganizationConformancePackStatusesInputOperationOutputAlias =
     crate::operation::DescribeOrganizationConformancePackStatuses;
 #[doc(hidden)]
 pub type DescribeOrganizationConformancePackStatusesInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeOrganizationConformancePackStatusesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOrganizationConformancePackStatuses`](crate::operation::DescribeOrganizationConformancePackStatuses)>
     #[allow(clippy::let_and_return)]
@@ -6821,7 +6706,7 @@ impl DescribeOrganizationConformancePackStatusesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeOrganizationConformancePackStatuses,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6907,7 +6792,7 @@ impl DescribeOrganizationConformancePackStatusesInput {
             "DescribeOrganizationConformancePackStatuses",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6941,28 +6826,22 @@ pub mod describe_pending_aggregation_requests_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is maximum. If you specify 0, Config uses the
-        /// default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is maximum. If you specify 0, Config uses the
-        /// default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6985,7 +6864,8 @@ pub mod describe_pending_aggregation_requests_input {
 pub type DescribePendingAggregationRequestsInputOperationOutputAlias =
     crate::operation::DescribePendingAggregationRequests;
 #[doc(hidden)]
-pub type DescribePendingAggregationRequestsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribePendingAggregationRequestsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePendingAggregationRequestsInput {
     /// Consumes the builder and constructs an Operation<[`DescribePendingAggregationRequests`](crate::operation::DescribePendingAggregationRequests)>
     #[allow(clippy::let_and_return)]
@@ -6996,7 +6876,7 @@ impl DescribePendingAggregationRequestsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePendingAggregationRequests,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7082,7 +6962,7 @@ impl DescribePendingAggregationRequestsInput {
             "DescribePendingAggregationRequests",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7150,7 +7030,8 @@ pub mod describe_remediation_configurations_input {
 pub type DescribeRemediationConfigurationsInputOperationOutputAlias =
     crate::operation::DescribeRemediationConfigurations;
 #[doc(hidden)]
-pub type DescribeRemediationConfigurationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRemediationConfigurationsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRemediationConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRemediationConfigurations`](crate::operation::DescribeRemediationConfigurations)>
     #[allow(clippy::let_and_return)]
@@ -7161,7 +7042,7 @@ impl DescribeRemediationConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRemediationConfigurations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7247,7 +7128,7 @@ impl DescribeRemediationConfigurationsInput {
             "DescribeRemediationConfigurations",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7303,10 +7184,10 @@ pub mod describe_remediation_exceptions_input {
         /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
         pub fn resource_keys(
             mut self,
-            input: impl Into<crate::model::RemediationExceptionResourceKey>,
+            input: crate::model::RemediationExceptionResourceKey,
         ) -> Self {
             let mut v = self.resource_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_keys = Some(v);
             self
         }
@@ -7360,7 +7241,8 @@ pub mod describe_remediation_exceptions_input {
 pub type DescribeRemediationExceptionsInputOperationOutputAlias =
     crate::operation::DescribeRemediationExceptions;
 #[doc(hidden)]
-pub type DescribeRemediationExceptionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRemediationExceptionsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRemediationExceptionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRemediationExceptions`](crate::operation::DescribeRemediationExceptions)>
     #[allow(clippy::let_and_return)]
@@ -7371,7 +7253,7 @@ impl DescribeRemediationExceptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRemediationExceptions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7457,7 +7339,7 @@ impl DescribeRemediationExceptionsInput {
             "DescribeRemediationExceptions",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7510,9 +7392,9 @@ pub mod describe_remediation_execution_status_input {
         /// To override the contents of this collection use [`set_resource_keys`](Self::set_resource_keys).
         ///
         /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
-        pub fn resource_keys(mut self, input: impl Into<crate::model::ResourceKey>) -> Self {
+        pub fn resource_keys(mut self, input: crate::model::ResourceKey) -> Self {
             let mut v = self.resource_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_keys = Some(v);
             self
         }
@@ -7564,7 +7446,8 @@ pub mod describe_remediation_execution_status_input {
 pub type DescribeRemediationExecutionStatusInputOperationOutputAlias =
     crate::operation::DescribeRemediationExecutionStatus;
 #[doc(hidden)]
-pub type DescribeRemediationExecutionStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRemediationExecutionStatusInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRemediationExecutionStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRemediationExecutionStatus`](crate::operation::DescribeRemediationExecutionStatus)>
     #[allow(clippy::let_and_return)]
@@ -7575,7 +7458,7 @@ impl DescribeRemediationExecutionStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRemediationExecutionStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7661,7 +7544,7 @@ impl DescribeRemediationExecutionStatusInput {
             "DescribeRemediationExecutionStatus",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7699,12 +7582,8 @@ pub mod describe_retention_configurations_input {
         ///
         /// To override the contents of this collection use [`set_retention_configuration_names`](Self::set_retention_configuration_names).
         ///
-        /// <p>A list of names of retention configurations for which you want
-        /// details. If you do not specify a name, Config returns details
-        /// for all the retention configurations for that account.</p>
-        /// <note>
-        /// <p>Currently, Config supports only one retention
-        /// configuration per region in your account.</p>
+        /// <p>A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.</p> <note>
+        /// <p>Currently, Config supports only one retention configuration per region in your account.</p>
         /// </note>
         pub fn retention_configuration_names(
             mut self,
@@ -7715,12 +7594,8 @@ pub mod describe_retention_configurations_input {
             self.retention_configuration_names = Some(v);
             self
         }
-        /// <p>A list of names of retention configurations for which you want
-        /// details. If you do not specify a name, Config returns details
-        /// for all the retention configurations for that account.</p>
-        /// <note>
-        /// <p>Currently, Config supports only one retention
-        /// configuration per region in your account.</p>
+        /// <p>A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.</p> <note>
+        /// <p>Currently, Config supports only one retention configuration per region in your account.</p>
         /// </note>
         pub fn set_retention_configuration_names(
             mut self,
@@ -7729,16 +7604,12 @@ pub mod describe_retention_configurations_input {
             self.retention_configuration_names = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response. </p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response. </p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7761,7 +7632,8 @@ pub mod describe_retention_configurations_input {
 pub type DescribeRetentionConfigurationsInputOperationOutputAlias =
     crate::operation::DescribeRetentionConfigurations;
 #[doc(hidden)]
-pub type DescribeRetentionConfigurationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRetentionConfigurationsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRetentionConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRetentionConfigurations`](crate::operation::DescribeRetentionConfigurations)>
     #[allow(clippy::let_and_return)]
@@ -7772,7 +7644,7 @@ impl DescribeRetentionConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRetentionConfigurations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7858,7 +7730,7 @@ impl DescribeRetentionConfigurationsInput {
             "DescribeRetentionConfigurations",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7912,14 +7784,12 @@ pub mod get_aggregate_compliance_details_by_config_rule_input {
             self.configuration_aggregator_name = input;
             self
         }
-        /// <p>The name of the Config rule for which you want compliance
-        /// information.</p>
+        /// <p>The name of the Config rule for which you want compliance information.</p>
         pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_name = Some(input.into());
             self
         }
-        /// <p>The name of the Config rule for which you want compliance
-        /// information.</p>
+        /// <p>The name of the Config rule for which you want compliance information.</p>
         pub fn set_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7947,27 +7817,15 @@ pub mod get_aggregate_compliance_details_by_config_rule_input {
             self.aws_region = input;
             self
         }
-        /// <p>The resource compliance status.</p>
-        /// <note>
-        /// <p>For the
-        /// <code>GetAggregateComplianceDetailsByConfigRuleRequest</code>
-        /// data type, Config supports only the <code>COMPLIANT</code>
-        /// and <code>NON_COMPLIANT</code>. Config does not support the
-        /// <code>NOT_APPLICABLE</code> and
-        /// <code>INSUFFICIENT_DATA</code> values.</p>
+        /// <p>The resource compliance status.</p> <note>
+        /// <p>For the <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> values.</p>
         /// </note>
         pub fn compliance_type(mut self, input: crate::model::ComplianceType) -> Self {
             self.compliance_type = Some(input);
             self
         }
-        /// <p>The resource compliance status.</p>
-        /// <note>
-        /// <p>For the
-        /// <code>GetAggregateComplianceDetailsByConfigRuleRequest</code>
-        /// data type, Config supports only the <code>COMPLIANT</code>
-        /// and <code>NON_COMPLIANT</code>. Config does not support the
-        /// <code>NOT_APPLICABLE</code> and
-        /// <code>INSUFFICIENT_DATA</code> values.</p>
+        /// <p>The resource compliance status.</p> <note>
+        /// <p>For the <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> values.</p>
         /// </note>
         pub fn set_compliance_type(
             mut self,
@@ -7976,28 +7834,22 @@ pub mod get_aggregate_compliance_details_by_config_rule_input {
             self.compliance_type = input;
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is 50. You cannot specify a number greater than 100. If
-        /// you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is 50. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is 50. You cannot specify a number greater than 100. If
-        /// you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is 50. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8028,7 +7880,7 @@ pub type GetAggregateComplianceDetailsByConfigRuleInputOperationOutputAlias =
     crate::operation::GetAggregateComplianceDetailsByConfigRule;
 #[doc(hidden)]
 pub type GetAggregateComplianceDetailsByConfigRuleInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetAggregateComplianceDetailsByConfigRuleInput {
     /// Consumes the builder and constructs an Operation<[`GetAggregateComplianceDetailsByConfigRule`](crate::operation::GetAggregateComplianceDetailsByConfigRule)>
     #[allow(clippy::let_and_return)]
@@ -8039,7 +7891,7 @@ impl GetAggregateComplianceDetailsByConfigRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAggregateComplianceDetailsByConfigRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8125,7 +7977,7 @@ impl GetAggregateComplianceDetailsByConfigRuleInput {
             "GetAggregateComplianceDetailsByConfigRule",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8179,14 +8031,12 @@ pub mod get_aggregate_config_rule_compliance_summary_input {
             self.configuration_aggregator_name = input;
             self
         }
-        /// <p>Filters the results based on the
-        /// ConfigRuleComplianceSummaryFilters object.</p>
+        /// <p>Filters the results based on the ConfigRuleComplianceSummaryFilters object.</p>
         pub fn filters(mut self, input: crate::model::ConfigRuleComplianceSummaryFilters) -> Self {
             self.filters = Some(input);
             self
         }
-        /// <p>Filters the results based on the
-        /// ConfigRuleComplianceSummaryFilters object.</p>
+        /// <p>Filters the results based on the ConfigRuleComplianceSummaryFilters object.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::ConfigRuleComplianceSummaryFilters>,
@@ -8210,28 +8060,22 @@ pub mod get_aggregate_config_rule_compliance_summary_input {
             self.group_by_key = input;
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is 1000. You cannot specify a number greater than 1000.
-        /// If you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is 1000. You cannot specify a number greater than 1000.
-        /// If you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8258,7 +8102,7 @@ pub type GetAggregateConfigRuleComplianceSummaryInputOperationOutputAlias =
     crate::operation::GetAggregateConfigRuleComplianceSummary;
 #[doc(hidden)]
 pub type GetAggregateConfigRuleComplianceSummaryInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetAggregateConfigRuleComplianceSummaryInput {
     /// Consumes the builder and constructs an Operation<[`GetAggregateConfigRuleComplianceSummary`](crate::operation::GetAggregateConfigRuleComplianceSummary)>
     #[allow(clippy::let_and_return)]
@@ -8269,7 +8113,7 @@ impl GetAggregateConfigRuleComplianceSummaryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAggregateConfigRuleComplianceSummary,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8355,7 +8199,7 @@ impl GetAggregateConfigRuleComplianceSummaryInput {
             "GetAggregateConfigRuleComplianceSummary",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8489,7 +8333,7 @@ pub type GetAggregateConformancePackComplianceSummaryInputOperationOutputAlias =
     crate::operation::GetAggregateConformancePackComplianceSummary;
 #[doc(hidden)]
 pub type GetAggregateConformancePackComplianceSummaryInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetAggregateConformancePackComplianceSummaryInput {
     /// Consumes the builder and constructs an Operation<[`GetAggregateConformancePackComplianceSummary`](crate::operation::GetAggregateConformancePackComplianceSummary)>
     #[allow(clippy::let_and_return)]
@@ -8500,7 +8344,7 @@ impl GetAggregateConformancePackComplianceSummaryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAggregateConformancePackComplianceSummary,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8586,7 +8430,7 @@ impl GetAggregateConformancePackComplianceSummaryInput {
             "GetAggregateConformancePackComplianceSummary",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8665,12 +8509,12 @@ pub mod get_aggregate_discovered_resource_counts_input {
             self.group_by_key = input;
             self
         }
-        /// <p>The maximum number of <a>GroupedResourceCount</a> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of <code>GroupedResourceCount</code> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of <a>GroupedResourceCount</a> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of <code>GroupedResourceCount</code> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -8707,7 +8551,7 @@ pub type GetAggregateDiscoveredResourceCountsInputOperationOutputAlias =
     crate::operation::GetAggregateDiscoveredResourceCounts;
 #[doc(hidden)]
 pub type GetAggregateDiscoveredResourceCountsInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetAggregateDiscoveredResourceCountsInput {
     /// Consumes the builder and constructs an Operation<[`GetAggregateDiscoveredResourceCounts`](crate::operation::GetAggregateDiscoveredResourceCounts)>
     #[allow(clippy::let_and_return)]
@@ -8718,7 +8562,7 @@ impl GetAggregateDiscoveredResourceCountsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAggregateDiscoveredResourceCounts,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8804,7 +8648,7 @@ impl GetAggregateDiscoveredResourceCountsInput {
             "GetAggregateDiscoveredResourceCounts",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8888,7 +8732,7 @@ pub mod get_aggregate_resource_config_input {
 pub type GetAggregateResourceConfigInputOperationOutputAlias =
     crate::operation::GetAggregateResourceConfig;
 #[doc(hidden)]
-pub type GetAggregateResourceConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAggregateResourceConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAggregateResourceConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetAggregateResourceConfig`](crate::operation::GetAggregateResourceConfig)>
     #[allow(clippy::let_and_return)]
@@ -8899,7 +8743,7 @@ impl GetAggregateResourceConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAggregateResourceConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8985,7 +8829,7 @@ impl GetAggregateResourceConfigInput {
             "GetAggregateResourceConfig",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9021,14 +8865,12 @@ pub mod get_compliance_details_by_config_rule_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the Config rule for which you want compliance
-        /// information.</p>
+        /// <p>The name of the Config rule for which you want compliance information.</p>
         pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.config_rule_name = Some(input.into());
             self
         }
-        /// <p>The name of the Config rule for which you want compliance
-        /// information.</p>
+        /// <p>The name of the Config rule for which you want compliance information.</p>
         pub fn set_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9041,19 +8883,15 @@ pub mod get_compliance_details_by_config_rule_input {
         /// To override the contents of this collection use [`set_compliance_types`](Self::set_compliance_types).
         ///
         /// <p>Filters the results by compliance.</p>
-        /// <p>The allowed values are <code>COMPLIANT</code>,
-        /// <code>NON_COMPLIANT</code>, and
-        /// <code>NOT_APPLICABLE</code>.</p>
-        pub fn compliance_types(mut self, input: impl Into<crate::model::ComplianceType>) -> Self {
+        /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.</p>
+        pub fn compliance_types(mut self, input: crate::model::ComplianceType) -> Self {
             let mut v = self.compliance_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compliance_types = Some(v);
             self
         }
         /// <p>Filters the results by compliance.</p>
-        /// <p>The allowed values are <code>COMPLIANT</code>,
-        /// <code>NON_COMPLIANT</code>, and
-        /// <code>NOT_APPLICABLE</code>.</p>
+        /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.</p>
         pub fn set_compliance_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ComplianceType>>,
@@ -9061,30 +8899,22 @@ pub mod get_compliance_details_by_config_rule_input {
             self.compliance_types = input;
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is 10. You cannot specify a number greater than 100. If
-        /// you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is 10. You cannot specify a number greater than 100. If
-        /// you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9109,7 +8939,8 @@ pub mod get_compliance_details_by_config_rule_input {
 pub type GetComplianceDetailsByConfigRuleInputOperationOutputAlias =
     crate::operation::GetComplianceDetailsByConfigRule;
 #[doc(hidden)]
-pub type GetComplianceDetailsByConfigRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetComplianceDetailsByConfigRuleInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetComplianceDetailsByConfigRuleInput {
     /// Consumes the builder and constructs an Operation<[`GetComplianceDetailsByConfigRule`](crate::operation::GetComplianceDetailsByConfigRule)>
     #[allow(clippy::let_and_return)]
@@ -9120,7 +8951,7 @@ impl GetComplianceDetailsByConfigRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetComplianceDetailsByConfigRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9206,7 +9037,7 @@ impl GetComplianceDetailsByConfigRuleInput {
             "GetComplianceDetailsByConfigRule",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9242,14 +9073,12 @@ pub mod get_compliance_details_by_resource_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The type of the Amazon Web Services resource for which you want compliance
-        /// information.</p>
+        /// <p>The type of the Amazon Web Services resource for which you want compliance information.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>The type of the Amazon Web Services resource for which you want compliance
-        /// information.</p>
+        /// <p>The type of the Amazon Web Services resource for which you want compliance information.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9257,14 +9086,12 @@ pub mod get_compliance_details_by_resource_input {
             self.resource_type = input;
             self
         }
-        /// <p>The ID of the Amazon Web Services resource for which you want compliance
-        /// information.</p>
+        /// <p>The ID of the Amazon Web Services resource for which you want compliance information.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Amazon Web Services resource for which you want compliance
-        /// information.</p>
+        /// <p>The ID of the Amazon Web Services resource for which you want compliance information.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -9274,19 +9101,15 @@ pub mod get_compliance_details_by_resource_input {
         /// To override the contents of this collection use [`set_compliance_types`](Self::set_compliance_types).
         ///
         /// <p>Filters the results by compliance.</p>
-        /// <p>The allowed values are <code>COMPLIANT</code>,
-        /// <code>NON_COMPLIANT</code>, and
-        /// <code>NOT_APPLICABLE</code>.</p>
-        pub fn compliance_types(mut self, input: impl Into<crate::model::ComplianceType>) -> Self {
+        /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.</p>
+        pub fn compliance_types(mut self, input: crate::model::ComplianceType) -> Self {
             let mut v = self.compliance_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compliance_types = Some(v);
             self
         }
         /// <p>Filters the results by compliance.</p>
-        /// <p>The allowed values are <code>COMPLIANT</code>,
-        /// <code>NON_COMPLIANT</code>, and
-        /// <code>NOT_APPLICABLE</code>.</p>
+        /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.</p>
         pub fn set_compliance_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ComplianceType>>,
@@ -9294,16 +9117,12 @@ pub mod get_compliance_details_by_resource_input {
             self.compliance_types = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9328,7 +9147,8 @@ pub mod get_compliance_details_by_resource_input {
 pub type GetComplianceDetailsByResourceInputOperationOutputAlias =
     crate::operation::GetComplianceDetailsByResource;
 #[doc(hidden)]
-pub type GetComplianceDetailsByResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetComplianceDetailsByResourceInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetComplianceDetailsByResourceInput {
     /// Consumes the builder and constructs an Operation<[`GetComplianceDetailsByResource`](crate::operation::GetComplianceDetailsByResource)>
     #[allow(clippy::let_and_return)]
@@ -9339,7 +9159,7 @@ impl GetComplianceDetailsByResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetComplianceDetailsByResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9425,7 +9245,7 @@ impl GetComplianceDetailsByResourceInput {
             "GetComplianceDetailsByResource",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9470,7 +9290,8 @@ pub mod get_compliance_summary_by_config_rule_input {
 pub type GetComplianceSummaryByConfigRuleInputOperationOutputAlias =
     crate::operation::GetComplianceSummaryByConfigRule;
 #[doc(hidden)]
-pub type GetComplianceSummaryByConfigRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetComplianceSummaryByConfigRuleInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetComplianceSummaryByConfigRuleInput {
     /// Consumes the builder and constructs an Operation<[`GetComplianceSummaryByConfigRule`](crate::operation::GetComplianceSummaryByConfigRule)>
     #[allow(clippy::let_and_return)]
@@ -9481,7 +9302,7 @@ impl GetComplianceSummaryByConfigRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetComplianceSummaryByConfigRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9567,7 +9388,7 @@ impl GetComplianceSummaryByConfigRuleInput {
             "GetComplianceSummaryByConfigRule",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9595,26 +9416,16 @@ pub mod get_compliance_summary_by_resource_type_input {
         ///
         /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
         ///
-        /// <p>Specify one or more resource types to get the number of
-        /// resources that are compliant and the number that are noncompliant
-        /// for each resource type.</p>
-        /// <p>For this request, you can specify an Amazon Web Services resource type such as
-        /// <code>AWS::EC2::Instance</code>. You can specify that the
-        /// resource type is an Amazon Web Services account by specifying
-        /// <code>AWS::::Account</code>.</p>
+        /// <p>Specify one or more resource types to get the number of resources that are compliant and the number that are noncompliant for each resource type.</p>
+        /// <p>For this request, you can specify an Amazon Web Services resource type such as <code>AWS::EC2::Instance</code>. You can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
         pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
             v.push(input.into());
             self.resource_types = Some(v);
             self
         }
-        /// <p>Specify one or more resource types to get the number of
-        /// resources that are compliant and the number that are noncompliant
-        /// for each resource type.</p>
-        /// <p>For this request, you can specify an Amazon Web Services resource type such as
-        /// <code>AWS::EC2::Instance</code>. You can specify that the
-        /// resource type is an Amazon Web Services account by specifying
-        /// <code>AWS::::Account</code>.</p>
+        /// <p>Specify one or more resource types to get the number of resources that are compliant and the number that are noncompliant for each resource type.</p>
+        /// <p>For this request, you can specify an Amazon Web Services resource type such as <code>AWS::EC2::Instance</code>. You can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
         pub fn set_resource_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9639,7 +9450,8 @@ pub mod get_compliance_summary_by_resource_type_input {
 pub type GetComplianceSummaryByResourceTypeInputOperationOutputAlias =
     crate::operation::GetComplianceSummaryByResourceType;
 #[doc(hidden)]
-pub type GetComplianceSummaryByResourceTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetComplianceSummaryByResourceTypeInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetComplianceSummaryByResourceTypeInput {
     /// Consumes the builder and constructs an Operation<[`GetComplianceSummaryByResourceType`](crate::operation::GetComplianceSummaryByResourceType)>
     #[allow(clippy::let_and_return)]
@@ -9650,7 +9462,7 @@ impl GetComplianceSummaryByResourceTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetComplianceSummaryByResourceType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9736,7 +9548,7 @@ impl GetComplianceSummaryByResourceTypeInput {
             "GetComplianceSummaryByResourceType",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9838,7 +9650,7 @@ pub type GetConformancePackComplianceDetailsInputOperationOutputAlias =
     crate::operation::GetConformancePackComplianceDetails;
 #[doc(hidden)]
 pub type GetConformancePackComplianceDetailsInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetConformancePackComplianceDetailsInput {
     /// Consumes the builder and constructs an Operation<[`GetConformancePackComplianceDetails`](crate::operation::GetConformancePackComplianceDetails)>
     #[allow(clippy::let_and_return)]
@@ -9849,7 +9661,7 @@ impl GetConformancePackComplianceDetailsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetConformancePackComplianceDetails,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9935,7 +9747,7 @@ impl GetConformancePackComplianceDetailsInput {
             "GetConformancePackComplianceDetails",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10028,7 +9840,7 @@ pub type GetConformancePackComplianceSummaryInputOperationOutputAlias =
     crate::operation::GetConformancePackComplianceSummary;
 #[doc(hidden)]
 pub type GetConformancePackComplianceSummaryInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetConformancePackComplianceSummaryInput {
     /// Consumes the builder and constructs an Operation<[`GetConformancePackComplianceSummary`](crate::operation::GetConformancePackComplianceSummary)>
     #[allow(clippy::let_and_return)]
@@ -10039,7 +9851,7 @@ impl GetConformancePackComplianceSummaryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetConformancePackComplianceSummary,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10125,7 +9937,7 @@ impl GetConformancePackComplianceSummaryInput {
             "GetConformancePackComplianceSummary",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10163,19 +9975,9 @@ pub mod get_discovered_resource_counts_input {
         ///
         /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
         ///
-        /// <p>The comma-separated list that specifies the resource types that
-        /// you want Config to return (for example,
-        /// <code>"AWS::EC2::Instance"</code>,
-        /// <code>"AWS::IAM::User"</code>).</p>
-        ///
-        /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in
-        /// the region for your account.</p>
-        /// <note>
-        /// <p>If the configuration recorder is turned off, Config
-        /// returns an empty list of <a>ResourceCount</a>
-        /// objects. If the configuration recorder is not recording a
-        /// specific resource type (for example, S3 buckets), that resource
-        /// type is not returned in the list of <a>ResourceCount</a> objects.</p>
+        /// <p>The comma-separated list that specifies the resource types that you want Config to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).</p>
+        /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note>
+        /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p>
         /// </note>
         pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
@@ -10183,19 +9985,9 @@ pub mod get_discovered_resource_counts_input {
             self.resource_types = Some(v);
             self
         }
-        /// <p>The comma-separated list that specifies the resource types that
-        /// you want Config to return (for example,
-        /// <code>"AWS::EC2::Instance"</code>,
-        /// <code>"AWS::IAM::User"</code>).</p>
-        ///
-        /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in
-        /// the region for your account.</p>
-        /// <note>
-        /// <p>If the configuration recorder is turned off, Config
-        /// returns an empty list of <a>ResourceCount</a>
-        /// objects. If the configuration recorder is not recording a
-        /// specific resource type (for example, S3 buckets), that resource
-        /// type is not returned in the list of <a>ResourceCount</a> objects.</p>
+        /// <p>The comma-separated list that specifies the resource types that you want Config to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).</p>
+        /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note>
+        /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p>
         /// </note>
         pub fn set_resource_types(
             mut self,
@@ -10204,32 +9996,22 @@ pub mod get_discovered_resource_counts_input {
             self.resource_types = input;
             self
         }
-        /// <p>The maximum number of <a>ResourceCount</a> objects
-        /// returned on each page. The default is 100. You cannot specify a
-        /// number greater than 100. If you specify 0, Config uses the
-        /// default.</p>
+        /// <p>The maximum number of <code>ResourceCount</code> objects returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of <a>ResourceCount</a> objects
-        /// returned on each page. The default is 100. You cannot specify a
-        /// number greater than 100. If you specify 0, Config uses the
-        /// default.</p>
+        /// <p>The maximum number of <code>ResourceCount</code> objects returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -10253,7 +10035,7 @@ pub mod get_discovered_resource_counts_input {
 pub type GetDiscoveredResourceCountsInputOperationOutputAlias =
     crate::operation::GetDiscoveredResourceCounts;
 #[doc(hidden)]
-pub type GetDiscoveredResourceCountsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDiscoveredResourceCountsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDiscoveredResourceCountsInput {
     /// Consumes the builder and constructs an Operation<[`GetDiscoveredResourceCounts`](crate::operation::GetDiscoveredResourceCounts)>
     #[allow(clippy::let_and_return)]
@@ -10264,7 +10046,7 @@ impl GetDiscoveredResourceCountsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDiscoveredResourceCounts,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10350,7 +10132,7 @@ impl GetDiscoveredResourceCountsInput {
             "GetDiscoveredResourceCounts",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10455,7 +10237,7 @@ pub type GetOrganizationConfigRuleDetailedStatusInputOperationOutputAlias =
     crate::operation::GetOrganizationConfigRuleDetailedStatus;
 #[doc(hidden)]
 pub type GetOrganizationConfigRuleDetailedStatusInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetOrganizationConfigRuleDetailedStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetOrganizationConfigRuleDetailedStatus`](crate::operation::GetOrganizationConfigRuleDetailedStatus)>
     #[allow(clippy::let_and_return)]
@@ -10466,7 +10248,7 @@ impl GetOrganizationConfigRuleDetailedStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetOrganizationConfigRuleDetailedStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10552,7 +10334,7 @@ impl GetOrganizationConfigRuleDetailedStatusInput {
             "GetOrganizationConfigRuleDetailedStatus",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10620,14 +10402,12 @@ pub mod get_organization_conformance_pack_detailed_status_input {
             self.filters = input;
             self
         }
-        /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page.
-        /// If you do not specify a number, Config uses the default. The default is 100. </p>
+        /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100. </p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page.
-        /// If you do not specify a number, Config uses the default. The default is 100. </p>
+        /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100. </p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -10665,7 +10445,7 @@ pub type GetOrganizationConformancePackDetailedStatusInputOperationOutputAlias =
     crate::operation::GetOrganizationConformancePackDetailedStatus;
 #[doc(hidden)]
 pub type GetOrganizationConformancePackDetailedStatusInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetOrganizationConformancePackDetailedStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetOrganizationConformancePackDetailedStatus`](crate::operation::GetOrganizationConformancePackDetailedStatus)>
     #[allow(clippy::let_and_return)]
@@ -10676,7 +10456,7 @@ impl GetOrganizationConformancePackDetailedStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetOrganizationConformancePackDetailedStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10762,7 +10542,7 @@ impl GetOrganizationConformancePackDetailedStatusInput {
             "GetOrganizationConformancePackDetailedStatus",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10814,26 +10594,22 @@ pub mod get_resource_config_history_input {
             self.resource_type = input;
             self
         }
-        /// <p>The ID of the resource (for example.,
-        /// <code>sg-xxxxxx</code>).</p>
+        /// <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>The ID of the resource (for example.,
-        /// <code>sg-xxxxxx</code>).</p>
+        /// <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>The time stamp that indicates a later time. If not specified,
-        /// current time is taken.</p>
+        /// <p>The time stamp that indicates a later time. If not specified, current time is taken.</p>
         pub fn later_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.later_time = Some(input);
             self
         }
-        /// <p>The time stamp that indicates a later time. If not specified,
-        /// current time is taken.</p>
+        /// <p>The time stamp that indicates a later time. If not specified, current time is taken.</p>
         pub fn set_later_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -10841,18 +10617,12 @@ pub mod get_resource_config_history_input {
             self.later_time = input;
             self
         }
-        /// <p>The time stamp that indicates an earlier time. If not
-        /// specified, the action returns paginated results that contain
-        /// configuration items that start when the first configuration item was
-        /// recorded.</p>
+        /// <p>The time stamp that indicates an earlier time. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
         pub fn earlier_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.earlier_time = Some(input);
             self
         }
-        /// <p>The time stamp that indicates an earlier time. If not
-        /// specified, the action returns paginated results that contain
-        /// configuration items that start when the first configuration item was
-        /// recorded.</p>
+        /// <p>The time stamp that indicates an earlier time. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
         pub fn set_earlier_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -10860,16 +10630,12 @@ pub mod get_resource_config_history_input {
             self.earlier_time = input;
             self
         }
-        /// <p>The chronological order for configuration items listed. By
-        /// default, the results are listed in reverse chronological
-        /// order.</p>
+        /// <p>The chronological order for configuration items listed. By default, the results are listed in reverse chronological order.</p>
         pub fn chronological_order(mut self, input: crate::model::ChronologicalOrder) -> Self {
             self.chronological_order = Some(input);
             self
         }
-        /// <p>The chronological order for configuration items listed. By
-        /// default, the results are listed in reverse chronological
-        /// order.</p>
+        /// <p>The chronological order for configuration items listed. By default, the results are listed in reverse chronological order.</p>
         pub fn set_chronological_order(
             mut self,
             input: std::option::Option<crate::model::ChronologicalOrder>,
@@ -10877,30 +10643,22 @@ pub mod get_resource_config_history_input {
             self.chronological_order = input;
             self
         }
-        /// <p>The maximum number of configuration items returned on each
-        /// page. The default is 10. You cannot specify a number greater than
-        /// 100. If you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of configuration items returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of configuration items returned on each
-        /// page. The default is 10. You cannot specify a number greater than
-        /// 100. If you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of configuration items returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -10928,7 +10686,7 @@ pub mod get_resource_config_history_input {
 pub type GetResourceConfigHistoryInputOperationOutputAlias =
     crate::operation::GetResourceConfigHistory;
 #[doc(hidden)]
-pub type GetResourceConfigHistoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetResourceConfigHistoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourceConfigHistoryInput {
     /// Consumes the builder and constructs an Operation<[`GetResourceConfigHistory`](crate::operation::GetResourceConfigHistory)>
     #[allow(clippy::let_and_return)]
@@ -10939,7 +10697,7 @@ impl GetResourceConfigHistoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResourceConfigHistory,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11026,7 +10784,7 @@ impl GetResourceConfigHistoryInput {
             "GetResourceConfigHistory",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11084,7 +10842,7 @@ pub mod get_stored_query_input {
 #[doc(hidden)]
 pub type GetStoredQueryInputOperationOutputAlias = crate::operation::GetStoredQuery;
 #[doc(hidden)]
-pub type GetStoredQueryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetStoredQueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetStoredQueryInput {
     /// Consumes the builder and constructs an Operation<[`GetStoredQuery`](crate::operation::GetStoredQuery)>
     #[allow(clippy::let_and_return)]
@@ -11095,7 +10853,7 @@ impl GetStoredQueryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetStoredQuery,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11180,7 +10938,7 @@ impl GetStoredQueryInput {
             "GetStoredQuery",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11299,7 +11057,8 @@ pub mod list_aggregate_discovered_resources_input {
 pub type ListAggregateDiscoveredResourcesInputOperationOutputAlias =
     crate::operation::ListAggregateDiscoveredResources;
 #[doc(hidden)]
-pub type ListAggregateDiscoveredResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAggregateDiscoveredResourcesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListAggregateDiscoveredResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListAggregateDiscoveredResources`](crate::operation::ListAggregateDiscoveredResources)>
     #[allow(clippy::let_and_return)]
@@ -11310,7 +11069,7 @@ impl ListAggregateDiscoveredResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAggregateDiscoveredResources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11396,7 +11155,7 @@ impl ListAggregateDiscoveredResourcesInput {
             "ListAggregateDiscoveredResources",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11433,14 +11192,12 @@ pub mod list_discovered_resources_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The type of resources that you want Config to list in the
-        /// response.</p>
+        /// <p>The type of resources that you want Config to list in the response.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.resource_type = Some(input);
             self
         }
-        /// <p>The type of resources that you want Config to list in the
-        /// response.</p>
+        /// <p>The type of resources that you want Config to list in the response.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -11452,18 +11209,14 @@ pub mod list_discovered_resources_input {
         ///
         /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
         ///
-        /// <p>The IDs of only those resources that you want Config to
-        /// list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has
-        /// discovered.</p>
+        /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
         pub fn resource_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_ids.unwrap_or_default();
             v.push(input.into());
             self.resource_ids = Some(v);
             self
         }
-        /// <p>The IDs of only those resources that you want Config to
-        /// list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has
-        /// discovered.</p>
+        /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
         pub fn set_resource_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11471,16 +11224,12 @@ pub mod list_discovered_resources_input {
             self.resource_ids = input;
             self
         }
-        /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this
-        /// parameter, Config lists all resources of the specified type that
-        /// it has discovered.</p>
+        /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
         pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_name = Some(input.into());
             self
         }
-        /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this
-        /// parameter, Config lists all resources of the specified type that
-        /// it has discovered.</p>
+        /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
         pub fn set_resource_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11488,42 +11237,32 @@ pub mod list_discovered_resources_input {
             self.resource_name = input;
             self
         }
-        /// <p>The maximum number of resource identifiers returned on each
-        /// page. The default is 100. You cannot specify a number greater than
-        /// 100. If you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of resource identifiers returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of resource identifiers returned on each
-        /// page. The default is 100. You cannot specify a number greater than
-        /// 100. If you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of resource identifiers returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>Specifies whether Config includes deleted resources in the
-        /// results. By default, deleted resources are not included.</p>
+        /// <p>Specifies whether Config includes deleted resources in the results. By default, deleted resources are not included.</p>
         pub fn include_deleted_resources(mut self, input: bool) -> Self {
             self.include_deleted_resources = Some(input);
             self
         }
-        /// <p>Specifies whether Config includes deleted resources in the
-        /// results. By default, deleted resources are not included.</p>
+        /// <p>Specifies whether Config includes deleted resources in the results. By default, deleted resources are not included.</p>
         pub fn set_include_deleted_resources(mut self, input: std::option::Option<bool>) -> Self {
             self.include_deleted_resources = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -11550,7 +11289,7 @@ pub mod list_discovered_resources_input {
 pub type ListDiscoveredResourcesInputOperationOutputAlias =
     crate::operation::ListDiscoveredResources;
 #[doc(hidden)]
-pub type ListDiscoveredResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDiscoveredResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDiscoveredResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListDiscoveredResources`](crate::operation::ListDiscoveredResources)>
     #[allow(clippy::let_and_return)]
@@ -11561,7 +11300,7 @@ impl ListDiscoveredResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDiscoveredResources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11648,7 +11387,7 @@ impl ListDiscoveredResourcesInput {
             "ListDiscoveredResources",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11718,7 +11457,7 @@ pub mod list_stored_queries_input {
 #[doc(hidden)]
 pub type ListStoredQueriesInputOperationOutputAlias = crate::operation::ListStoredQueries;
 #[doc(hidden)]
-pub type ListStoredQueriesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListStoredQueriesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStoredQueriesInput {
     /// Consumes the builder and constructs an Operation<[`ListStoredQueries`](crate::operation::ListStoredQueries)>
     #[allow(clippy::let_and_return)]
@@ -11729,7 +11468,7 @@ impl ListStoredQueriesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListStoredQueries,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11814,7 +11553,7 @@ impl ListStoredQueriesInput {
             "ListStoredQueries",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11896,7 +11635,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -11907,7 +11646,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11994,7 +11733,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12059,9 +11798,9 @@ pub mod put_aggregation_authorization_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of tag object.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12092,7 +11831,7 @@ pub mod put_aggregation_authorization_input {
 pub type PutAggregationAuthorizationInputOperationOutputAlias =
     crate::operation::PutAggregationAuthorization;
 #[doc(hidden)]
-pub type PutAggregationAuthorizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutAggregationAuthorizationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutAggregationAuthorizationInput {
     /// Consumes the builder and constructs an Operation<[`PutAggregationAuthorization`](crate::operation::PutAggregationAuthorization)>
     #[allow(clippy::let_and_return)]
@@ -12103,7 +11842,7 @@ impl PutAggregationAuthorizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutAggregationAuthorization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12189,7 +11928,7 @@ impl PutAggregationAuthorizationInput {
             "PutAggregationAuthorization",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12240,9 +11979,9 @@ pub mod put_config_rule_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of tag object.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12271,7 +12010,7 @@ pub mod put_config_rule_input {
 #[doc(hidden)]
 pub type PutConfigRuleInputOperationOutputAlias = crate::operation::PutConfigRule;
 #[doc(hidden)]
-pub type PutConfigRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutConfigRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutConfigRuleInput {
     /// Consumes the builder and constructs an Operation<[`PutConfigRule`](crate::operation::PutConfigRule)>
     #[allow(clippy::let_and_return)]
@@ -12282,7 +12021,7 @@ impl PutConfigRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutConfigRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12367,7 +12106,7 @@ impl PutConfigRuleInput {
             "PutConfigRule",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12424,21 +12163,17 @@ pub mod put_configuration_aggregator_input {
         ///
         /// To override the contents of this collection use [`set_account_aggregation_sources`](Self::set_account_aggregation_sources).
         ///
-        /// <p>A list of AccountAggregationSource object.
-        ///
-        /// </p>
+        /// <p>A list of AccountAggregationSource object. </p>
         pub fn account_aggregation_sources(
             mut self,
-            input: impl Into<crate::model::AccountAggregationSource>,
+            input: crate::model::AccountAggregationSource,
         ) -> Self {
             let mut v = self.account_aggregation_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.account_aggregation_sources = Some(v);
             self
         }
-        /// <p>A list of AccountAggregationSource object.
-        ///
-        /// </p>
+        /// <p>A list of AccountAggregationSource object. </p>
         pub fn set_account_aggregation_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AccountAggregationSource>>,
@@ -12467,9 +12202,9 @@ pub mod put_configuration_aggregator_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of tag object.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12501,7 +12236,7 @@ pub mod put_configuration_aggregator_input {
 pub type PutConfigurationAggregatorInputOperationOutputAlias =
     crate::operation::PutConfigurationAggregator;
 #[doc(hidden)]
-pub type PutConfigurationAggregatorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutConfigurationAggregatorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutConfigurationAggregatorInput {
     /// Consumes the builder and constructs an Operation<[`PutConfigurationAggregator`](crate::operation::PutConfigurationAggregator)>
     #[allow(clippy::let_and_return)]
@@ -12512,7 +12247,7 @@ impl PutConfigurationAggregatorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutConfigurationAggregator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12599,7 +12334,7 @@ impl PutConfigurationAggregatorInput {
             "PutConfigurationAggregator",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12631,8 +12366,7 @@ pub mod put_configuration_recorder_input {
         pub(crate) configuration_recorder: std::option::Option<crate::model::ConfigurationRecorder>,
     }
     impl Builder {
-        /// <p>The configuration recorder object that records each
-        /// configuration change made to the resources.</p>
+        /// <p>The configuration recorder object that records each configuration change made to the resources.</p>
         pub fn configuration_recorder(
             mut self,
             input: crate::model::ConfigurationRecorder,
@@ -12640,8 +12374,7 @@ pub mod put_configuration_recorder_input {
             self.configuration_recorder = Some(input);
             self
         }
-        /// <p>The configuration recorder object that records each
-        /// configuration change made to the resources.</p>
+        /// <p>The configuration recorder object that records each configuration change made to the resources.</p>
         pub fn set_configuration_recorder(
             mut self,
             input: std::option::Option<crate::model::ConfigurationRecorder>,
@@ -12666,7 +12399,7 @@ pub mod put_configuration_recorder_input {
 pub type PutConfigurationRecorderInputOperationOutputAlias =
     crate::operation::PutConfigurationRecorder;
 #[doc(hidden)]
-pub type PutConfigurationRecorderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutConfigurationRecorderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutConfigurationRecorderInput {
     /// Consumes the builder and constructs an Operation<[`PutConfigurationRecorder`](crate::operation::PutConfigurationRecorder)>
     #[allow(clippy::let_and_return)]
@@ -12677,7 +12410,7 @@ impl PutConfigurationRecorderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutConfigurationRecorder,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12764,7 +12497,7 @@ impl PutConfigurationRecorderInput {
             "PutConfigurationRecorder",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12815,16 +12548,14 @@ pub mod put_conformance_pack_input {
             self.conformance_pack_name = input;
             self
         }
-        /// <p>Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p>
-        /// <note>
+        /// <p>Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p> <note>
         /// <p>You must have access to read Amazon S3 bucket.</p>
         /// </note>
         pub fn template_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_s3_uri = Some(input.into());
             self
         }
-        /// <p>Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p>
-        /// <note>
+        /// <p>Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p> <note>
         /// <p>You must have access to read Amazon S3 bucket.</p>
         /// </note>
         pub fn set_template_s3_uri(
@@ -12834,16 +12565,14 @@ pub mod put_conformance_pack_input {
             self.template_s3_uri = input;
             self
         }
-        /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
-        /// <note>
+        /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
         /// <p>You can only use a YAML template with one resource type, that is, config rule and a remediation action. </p>
         /// </note>
         pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_body = Some(input.into());
             self
         }
-        /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
-        /// <note>
+        /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
         /// <p>You can only use a YAML template with one resource type, that is, config rule and a remediation action. </p>
         /// </note>
         pub fn set_template_body(
@@ -12853,16 +12582,14 @@ pub mod put_conformance_pack_input {
             self.template_body = input;
             self
         }
-        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
-        /// <note>
+        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
         /// <p>This field is optional.</p>
         /// </note>
         pub fn delivery_s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.delivery_s3_bucket = Some(input.into());
             self
         }
-        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
-        /// <note>
+        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
         /// <p>This field is optional.</p>
         /// </note>
         pub fn set_delivery_s3_bucket(
@@ -12872,16 +12599,14 @@ pub mod put_conformance_pack_input {
             self.delivery_s3_bucket = input;
             self
         }
-        /// <p>The prefix for the Amazon S3 bucket. </p>
-        /// <note>
+        /// <p>The prefix for the Amazon S3 bucket. </p> <note>
         /// <p>This field is optional.</p>
         /// </note>
         pub fn delivery_s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.delivery_s3_key_prefix = Some(input.into());
             self
         }
-        /// <p>The prefix for the Amazon S3 bucket. </p>
-        /// <note>
+        /// <p>The prefix for the Amazon S3 bucket. </p> <note>
         /// <p>This field is optional.</p>
         /// </note>
         pub fn set_delivery_s3_key_prefix(
@@ -12898,10 +12623,10 @@ pub mod put_conformance_pack_input {
         /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
         pub fn conformance_pack_input_parameters(
             mut self,
-            input: impl Into<crate::model::ConformancePackInputParameter>,
+            input: crate::model::ConformancePackInputParameter,
         ) -> Self {
             let mut v = self.conformance_pack_input_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conformance_pack_input_parameters = Some(v);
             self
         }
@@ -12934,7 +12659,7 @@ pub mod put_conformance_pack_input {
 #[doc(hidden)]
 pub type PutConformancePackInputOperationOutputAlias = crate::operation::PutConformancePack;
 #[doc(hidden)]
-pub type PutConformancePackInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutConformancePackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutConformancePackInput {
     /// Consumes the builder and constructs an Operation<[`PutConformancePack`](crate::operation::PutConformancePack)>
     #[allow(clippy::let_and_return)]
@@ -12945,7 +12670,7 @@ impl PutConformancePackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutConformancePack,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13030,7 +12755,7 @@ impl PutConformancePackInput {
             "PutConformancePack",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13062,16 +12787,12 @@ pub mod put_delivery_channel_input {
         pub(crate) delivery_channel: std::option::Option<crate::model::DeliveryChannel>,
     }
     impl Builder {
-        /// <p>The configuration delivery channel object that delivers the
-        /// configuration information to an Amazon S3 bucket and to an Amazon
-        /// SNS topic.</p>
+        /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
         pub fn delivery_channel(mut self, input: crate::model::DeliveryChannel) -> Self {
             self.delivery_channel = Some(input);
             self
         }
-        /// <p>The configuration delivery channel object that delivers the
-        /// configuration information to an Amazon S3 bucket and to an Amazon
-        /// SNS topic.</p>
+        /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
         pub fn set_delivery_channel(
             mut self,
             input: std::option::Option<crate::model::DeliveryChannel>,
@@ -13095,7 +12816,7 @@ pub mod put_delivery_channel_input {
 #[doc(hidden)]
 pub type PutDeliveryChannelInputOperationOutputAlias = crate::operation::PutDeliveryChannel;
 #[doc(hidden)]
-pub type PutDeliveryChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutDeliveryChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutDeliveryChannelInput {
     /// Consumes the builder and constructs an Operation<[`PutDeliveryChannel`](crate::operation::PutDeliveryChannel)>
     #[allow(clippy::let_and_return)]
@@ -13106,7 +12827,7 @@ impl PutDeliveryChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutDeliveryChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13191,7 +12912,7 @@ impl PutDeliveryChannelInput {
             "PutDeliveryChannel",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13229,20 +12950,14 @@ pub mod put_evaluations_input {
         ///
         /// To override the contents of this collection use [`set_evaluations`](Self::set_evaluations).
         ///
-        /// <p>The assessments that the Lambda function performs. Each
-        /// evaluation identifies an Amazon Web Services resource and indicates whether it
-        /// complies with the Config rule that invokes the Lambda
-        /// function.</p>
-        pub fn evaluations(mut self, input: impl Into<crate::model::Evaluation>) -> Self {
+        /// <p>The assessments that the Lambda function performs. Each evaluation identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that invokes the Lambda function.</p>
+        pub fn evaluations(mut self, input: crate::model::Evaluation) -> Self {
             let mut v = self.evaluations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.evaluations = Some(v);
             self
         }
-        /// <p>The assessments that the Lambda function performs. Each
-        /// evaluation identifies an Amazon Web Services resource and indicates whether it
-        /// complies with the Config rule that invokes the Lambda
-        /// function.</p>
+        /// <p>The assessments that the Lambda function performs. Each evaluation identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that invokes the Lambda function.</p>
         pub fn set_evaluations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Evaluation>>,
@@ -13250,43 +12965,25 @@ pub mod put_evaluations_input {
             self.evaluations = input;
             self
         }
-        /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the
-        /// evaluation.</p>
+        /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the evaluation.</p>
         pub fn result_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.result_token = Some(input.into());
             self
         }
-        /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the
-        /// evaluation.</p>
+        /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the evaluation.</p>
         pub fn set_result_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.result_token = input;
             self
         }
-        /// <p>Use this parameter to specify a test run for
-        /// <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No
-        /// updates occur to your existing evaluations, and evaluation results
-        /// are not sent to Config.</p>
-        ///
-        /// <note>
-        /// <p>When <code>TestMode</code> is <code>true</code>,
-        /// <code>PutEvaluations</code> doesn't require a valid value
-        /// for the <code>ResultToken</code> parameter, but the value cannot
-        /// be null.</p>
+        /// <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No updates occur to your existing evaluations, and evaluation results are not sent to Config.</p> <note>
+        /// <p>When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for the <code>ResultToken</code> parameter, but the value cannot be null.</p>
         /// </note>
         pub fn test_mode(mut self, input: bool) -> Self {
             self.test_mode = Some(input);
             self
         }
-        /// <p>Use this parameter to specify a test run for
-        /// <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No
-        /// updates occur to your existing evaluations, and evaluation results
-        /// are not sent to Config.</p>
-        ///
-        /// <note>
-        /// <p>When <code>TestMode</code> is <code>true</code>,
-        /// <code>PutEvaluations</code> doesn't require a valid value
-        /// for the <code>ResultToken</code> parameter, but the value cannot
-        /// be null.</p>
+        /// <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No updates occur to your existing evaluations, and evaluation results are not sent to Config.</p> <note>
+        /// <p>When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for the <code>ResultToken</code> parameter, but the value cannot be null.</p>
         /// </note>
         pub fn set_test_mode(mut self, input: std::option::Option<bool>) -> Self {
             self.test_mode = input;
@@ -13310,7 +13007,7 @@ pub mod put_evaluations_input {
 #[doc(hidden)]
 pub type PutEvaluationsInputOperationOutputAlias = crate::operation::PutEvaluations;
 #[doc(hidden)]
-pub type PutEvaluationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutEvaluationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutEvaluationsInput {
     /// Consumes the builder and constructs an Operation<[`PutEvaluations`](crate::operation::PutEvaluations)>
     #[allow(clippy::let_and_return)]
@@ -13321,7 +13018,7 @@ impl PutEvaluationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutEvaluations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13406,7 +13103,7 @@ impl PutEvaluationsInput {
             "PutEvaluations",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13482,7 +13179,7 @@ pub mod put_external_evaluation_input {
 #[doc(hidden)]
 pub type PutExternalEvaluationInputOperationOutputAlias = crate::operation::PutExternalEvaluation;
 #[doc(hidden)]
-pub type PutExternalEvaluationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutExternalEvaluationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutExternalEvaluationInput {
     /// Consumes the builder and constructs an Operation<[`PutExternalEvaluation`](crate::operation::PutExternalEvaluation)>
     #[allow(clippy::let_and_return)]
@@ -13493,7 +13190,7 @@ impl PutExternalEvaluationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutExternalEvaluation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13580,7 +13277,7 @@ impl PutExternalEvaluationInput {
             "PutExternalEvaluation",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13704,7 +13401,7 @@ pub mod put_organization_config_rule_input {
 pub type PutOrganizationConfigRuleInputOperationOutputAlias =
     crate::operation::PutOrganizationConfigRule;
 #[doc(hidden)]
-pub type PutOrganizationConfigRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutOrganizationConfigRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutOrganizationConfigRuleInput {
     /// Consumes the builder and constructs an Operation<[`PutOrganizationConfigRule`](crate::operation::PutOrganizationConfigRule)>
     #[allow(clippy::let_and_return)]
@@ -13715,7 +13412,7 @@ impl PutOrganizationConfigRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutOrganizationConfigRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13802,7 +13499,7 @@ impl PutOrganizationConfigRuleInput {
             "PutOrganizationConfigRule",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13857,18 +13554,14 @@ pub mod put_organization_conformance_pack_input {
             self.organization_conformance_pack_name = input;
             self
         }
-        /// <p>Location of file containing the template body. The uri must point to the conformance pack template
-        /// (max size: 300 KB).</p>
-        /// <note>
+        /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p> <note>
         /// <p>You must have access to read Amazon S3 bucket.</p>
         /// </note>
         pub fn template_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_s3_uri = Some(input.into());
             self
         }
-        /// <p>Location of file containing the template body. The uri must point to the conformance pack template
-        /// (max size: 300 KB).</p>
-        /// <note>
+        /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p> <note>
         /// <p>You must have access to read Amazon S3 bucket.</p>
         /// </note>
         pub fn set_template_s3_uri(
@@ -13878,14 +13571,12 @@ pub mod put_organization_conformance_pack_input {
             self.template_s3_uri = input;
             self
         }
-        /// <p>A string containing full conformance pack template body. Structure containing the template body
-        /// with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
+        /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
         pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_body = Some(input.into());
             self
         }
-        /// <p>A string containing full conformance pack template body. Structure containing the template body
-        /// with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
+        /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
         pub fn set_template_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13893,16 +13584,14 @@ pub mod put_organization_conformance_pack_input {
             self.template_body = input;
             self
         }
-        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
-        /// <note>
+        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
         /// <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>
         /// </note>
         pub fn delivery_s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.delivery_s3_bucket = Some(input.into());
             self
         }
-        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
-        /// <note>
+        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
         /// <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>
         /// </note>
         pub fn set_delivery_s3_bucket(
@@ -13912,16 +13601,14 @@ pub mod put_organization_conformance_pack_input {
             self.delivery_s3_bucket = input;
             self
         }
-        /// <p>The prefix for the Amazon S3 bucket.</p>
-        /// <note>
+        /// <p>The prefix for the Amazon S3 bucket.</p> <note>
         /// <p>This field is optional.</p>
         /// </note>
         pub fn delivery_s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.delivery_s3_key_prefix = Some(input.into());
             self
         }
-        /// <p>The prefix for the Amazon S3 bucket.</p>
-        /// <note>
+        /// <p>The prefix for the Amazon S3 bucket.</p> <note>
         /// <p>This field is optional.</p>
         /// </note>
         pub fn set_delivery_s3_key_prefix(
@@ -13938,10 +13625,10 @@ pub mod put_organization_conformance_pack_input {
         /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
         pub fn conformance_pack_input_parameters(
             mut self,
-            input: impl Into<crate::model::ConformancePackInputParameter>,
+            input: crate::model::ConformancePackInputParameter,
         ) -> Self {
             let mut v = self.conformance_pack_input_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conformance_pack_input_parameters = Some(v);
             self
         }
@@ -13995,7 +13682,8 @@ pub mod put_organization_conformance_pack_input {
 pub type PutOrganizationConformancePackInputOperationOutputAlias =
     crate::operation::PutOrganizationConformancePack;
 #[doc(hidden)]
-pub type PutOrganizationConformancePackInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutOrganizationConformancePackInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl PutOrganizationConformancePackInput {
     /// Consumes the builder and constructs an Operation<[`PutOrganizationConformancePack`](crate::operation::PutOrganizationConformancePack)>
     #[allow(clippy::let_and_return)]
@@ -14006,7 +13694,7 @@ impl PutOrganizationConformancePackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutOrganizationConformancePack,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14092,7 +13780,7 @@ impl PutOrganizationConformancePackInput {
             "PutOrganizationConformancePack",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14132,10 +13820,10 @@ pub mod put_remediation_configurations_input {
         /// <p>A list of remediation configuration objects.</p>
         pub fn remediation_configurations(
             mut self,
-            input: impl Into<crate::model::RemediationConfiguration>,
+            input: crate::model::RemediationConfiguration,
         ) -> Self {
             let mut v = self.remediation_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.remediation_configurations = Some(v);
             self
         }
@@ -14164,7 +13852,8 @@ pub mod put_remediation_configurations_input {
 pub type PutRemediationConfigurationsInputOperationOutputAlias =
     crate::operation::PutRemediationConfigurations;
 #[doc(hidden)]
-pub type PutRemediationConfigurationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutRemediationConfigurationsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl PutRemediationConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`PutRemediationConfigurations`](crate::operation::PutRemediationConfigurations)>
     #[allow(clippy::let_and_return)]
@@ -14175,7 +13864,7 @@ impl PutRemediationConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutRemediationConfigurations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14261,7 +13950,7 @@ impl PutRemediationConfigurationsInput {
             "PutRemediationConfigurations",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14317,10 +14006,10 @@ pub mod put_remediation_exceptions_input {
         /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
         pub fn resource_keys(
             mut self,
-            input: impl Into<crate::model::RemediationExceptionResourceKey>,
+            input: crate::model::RemediationExceptionResourceKey,
         ) -> Self {
             let mut v = self.resource_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_keys = Some(v);
             self
         }
@@ -14377,7 +14066,7 @@ pub mod put_remediation_exceptions_input {
 pub type PutRemediationExceptionsInputOperationOutputAlias =
     crate::operation::PutRemediationExceptions;
 #[doc(hidden)]
-pub type PutRemediationExceptionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutRemediationExceptionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutRemediationExceptionsInput {
     /// Consumes the builder and constructs an Operation<[`PutRemediationExceptions`](crate::operation::PutRemediationExceptions)>
     #[allow(clippy::let_and_return)]
@@ -14388,7 +14077,7 @@ impl PutRemediationExceptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutRemediationExceptions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14475,7 +14164,7 @@ impl PutRemediationExceptionsInput {
             "PutRemediationExceptions",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14514,16 +14203,14 @@ pub mod put_resource_config_input {
         >,
     }
     impl Builder {
-        /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p>
-        /// <note>
+        /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p> <note>
         /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
         /// </note>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p>
-        /// <note>
+        /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p> <note>
         /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
         /// </note>
         pub fn set_resource_type(
@@ -14569,16 +14256,14 @@ pub mod put_resource_config_input {
             self.resource_name = input;
             self
         }
-        /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p>
-        /// <note>
+        /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p> <note>
         /// <p>The configuration JSON must not exceed 64 KB.</p>
         /// </note>
         pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration = Some(input.into());
             self
         }
-        /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p>
-        /// <note>
+        /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p> <note>
         /// <p>The configuration JSON must not exceed 64 KB.</p>
         /// </note>
         pub fn set_configuration(
@@ -14634,7 +14319,7 @@ pub mod put_resource_config_input {
 #[doc(hidden)]
 pub type PutResourceConfigInputOperationOutputAlias = crate::operation::PutResourceConfig;
 #[doc(hidden)]
-pub type PutResourceConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutResourceConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutResourceConfigInput {
     /// Consumes the builder and constructs an Operation<[`PutResourceConfig`](crate::operation::PutResourceConfig)>
     #[allow(clippy::let_and_return)]
@@ -14645,7 +14330,7 @@ impl PutResourceConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutResourceConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14730,7 +14415,7 @@ impl PutResourceConfigInput {
             "PutResourceConfig",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14762,21 +14447,15 @@ pub mod put_retention_configuration_input {
         pub(crate) retention_period_in_days: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Number of days Config stores your historical
-        /// information.</p>
-        /// <note>
-        /// <p>Currently, only applicable to the configuration item
-        /// history.</p>
+        /// <p>Number of days Config stores your historical information.</p> <note>
+        /// <p>Currently, only applicable to the configuration item history.</p>
         /// </note>
         pub fn retention_period_in_days(mut self, input: i32) -> Self {
             self.retention_period_in_days = Some(input);
             self
         }
-        /// <p>Number of days Config stores your historical
-        /// information.</p>
-        /// <note>
-        /// <p>Currently, only applicable to the configuration item
-        /// history.</p>
+        /// <p>Number of days Config stores your historical information.</p> <note>
+        /// <p>Currently, only applicable to the configuration item history.</p>
         /// </note>
         pub fn set_retention_period_in_days(mut self, input: std::option::Option<i32>) -> Self {
             self.retention_period_in_days = input;
@@ -14799,7 +14478,7 @@ pub mod put_retention_configuration_input {
 pub type PutRetentionConfigurationInputOperationOutputAlias =
     crate::operation::PutRetentionConfiguration;
 #[doc(hidden)]
-pub type PutRetentionConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutRetentionConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutRetentionConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutRetentionConfiguration`](crate::operation::PutRetentionConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -14810,7 +14489,7 @@ impl PutRetentionConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutRetentionConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14897,7 +14576,7 @@ impl PutRetentionConfigurationInput {
             "PutRetentionConfiguration",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14930,21 +14609,15 @@ pub mod put_stored_query_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>A list of <code>StoredQuery</code> objects.
-        /// The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p>
-        /// <note>
-        /// <p>When you are creating a query, you must provide a query name and an expression.
-        /// When you are updating a query, you must provide a query name but updating the description is optional.</p>
+        /// <p>A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p> <note>
+        /// <p>When you are creating a query, you must provide a query name and an expression. When you are updating a query, you must provide a query name but updating the description is optional.</p>
         /// </note>
         pub fn stored_query(mut self, input: crate::model::StoredQuery) -> Self {
             self.stored_query = Some(input);
             self
         }
-        /// <p>A list of <code>StoredQuery</code> objects.
-        /// The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p>
-        /// <note>
-        /// <p>When you are creating a query, you must provide a query name and an expression.
-        /// When you are updating a query, you must provide a query name but updating the description is optional.</p>
+        /// <p>A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p> <note>
+        /// <p>When you are creating a query, you must provide a query name and an expression. When you are updating a query, you must provide a query name but updating the description is optional.</p>
         /// </note>
         pub fn set_stored_query(
             mut self,
@@ -14958,9 +14631,9 @@ pub mod put_stored_query_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tags</code> object.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -14989,7 +14662,7 @@ pub mod put_stored_query_input {
 #[doc(hidden)]
 pub type PutStoredQueryInputOperationOutputAlias = crate::operation::PutStoredQuery;
 #[doc(hidden)]
-pub type PutStoredQueryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutStoredQueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutStoredQueryInput {
     /// Consumes the builder and constructs an Operation<[`PutStoredQuery`](crate::operation::PutStoredQuery)>
     #[allow(clippy::let_and_return)]
@@ -15000,7 +14673,7 @@ impl PutStoredQueryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutStoredQuery,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15085,7 +14758,7 @@ impl PutStoredQueryInput {
             "PutStoredQuery",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15198,7 +14871,8 @@ pub mod select_aggregate_resource_config_input {
 pub type SelectAggregateResourceConfigInputOperationOutputAlias =
     crate::operation::SelectAggregateResourceConfig;
 #[doc(hidden)]
-pub type SelectAggregateResourceConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SelectAggregateResourceConfigInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl SelectAggregateResourceConfigInput {
     /// Consumes the builder and constructs an Operation<[`SelectAggregateResourceConfig`](crate::operation::SelectAggregateResourceConfig)>
     #[allow(clippy::let_and_return)]
@@ -15209,7 +14883,7 @@ impl SelectAggregateResourceConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SelectAggregateResourceConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15295,7 +14969,7 @@ impl SelectAggregateResourceConfigInput {
             "SelectAggregateResourceConfig",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15377,7 +15051,7 @@ pub mod select_resource_config_input {
 #[doc(hidden)]
 pub type SelectResourceConfigInputOperationOutputAlias = crate::operation::SelectResourceConfig;
 #[doc(hidden)]
-pub type SelectResourceConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SelectResourceConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SelectResourceConfigInput {
     /// Consumes the builder and constructs an Operation<[`SelectResourceConfig`](crate::operation::SelectResourceConfig)>
     #[allow(clippy::let_and_return)]
@@ -15388,7 +15062,7 @@ impl SelectResourceConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SelectResourceConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15475,7 +15149,7 @@ impl SelectResourceConfigInput {
             "SelectResourceConfig",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15511,16 +15185,14 @@ pub mod start_config_rules_evaluation_input {
         ///
         /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
         ///
-        /// <p>The list of names of Config rules that you want to run
-        /// evaluations for.</p>
+        /// <p>The list of names of Config rules that you want to run evaluations for.</p>
         pub fn config_rule_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.config_rule_names.unwrap_or_default();
             v.push(input.into());
             self.config_rule_names = Some(v);
             self
         }
-        /// <p>The list of names of Config rules that you want to run
-        /// evaluations for.</p>
+        /// <p>The list of names of Config rules that you want to run evaluations for.</p>
         pub fn set_config_rule_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15545,7 +15217,7 @@ pub mod start_config_rules_evaluation_input {
 pub type StartConfigRulesEvaluationInputOperationOutputAlias =
     crate::operation::StartConfigRulesEvaluation;
 #[doc(hidden)]
-pub type StartConfigRulesEvaluationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartConfigRulesEvaluationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartConfigRulesEvaluationInput {
     /// Consumes the builder and constructs an Operation<[`StartConfigRulesEvaluation`](crate::operation::StartConfigRulesEvaluation)>
     #[allow(clippy::let_and_return)]
@@ -15556,7 +15228,7 @@ impl StartConfigRulesEvaluationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartConfigRulesEvaluation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15642,7 +15314,7 @@ impl StartConfigRulesEvaluationInput {
             "StartConfigRulesEvaluation",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15674,8 +15346,7 @@ pub mod start_configuration_recorder_input {
         pub(crate) configuration_recorder_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the recorder object that records each configuration
-        /// change made to the resources.</p>
+        /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
         pub fn configuration_recorder_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -15683,8 +15354,7 @@ pub mod start_configuration_recorder_input {
             self.configuration_recorder_name = Some(input.into());
             self
         }
-        /// <p>The name of the recorder object that records each configuration
-        /// change made to the resources.</p>
+        /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
         pub fn set_configuration_recorder_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15709,7 +15379,7 @@ pub mod start_configuration_recorder_input {
 pub type StartConfigurationRecorderInputOperationOutputAlias =
     crate::operation::StartConfigurationRecorder;
 #[doc(hidden)]
-pub type StartConfigurationRecorderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartConfigurationRecorderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartConfigurationRecorderInput {
     /// Consumes the builder and constructs an Operation<[`StartConfigurationRecorder`](crate::operation::StartConfigurationRecorder)>
     #[allow(clippy::let_and_return)]
@@ -15720,7 +15390,7 @@ impl StartConfigurationRecorderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartConfigurationRecorder,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15807,7 +15477,7 @@ impl StartConfigurationRecorderInput {
             "StartConfigurationRecorder",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15858,9 +15528,9 @@ pub mod start_remediation_execution_input {
         /// To override the contents of this collection use [`set_resource_keys`](Self::set_resource_keys).
         ///
         /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
-        pub fn resource_keys(mut self, input: impl Into<crate::model::ResourceKey>) -> Self {
+        pub fn resource_keys(mut self, input: crate::model::ResourceKey) -> Self {
             let mut v = self.resource_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_keys = Some(v);
             self
         }
@@ -15890,7 +15560,7 @@ pub mod start_remediation_execution_input {
 pub type StartRemediationExecutionInputOperationOutputAlias =
     crate::operation::StartRemediationExecution;
 #[doc(hidden)]
-pub type StartRemediationExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartRemediationExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartRemediationExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StartRemediationExecution`](crate::operation::StartRemediationExecution)>
     #[allow(clippy::let_and_return)]
@@ -15901,7 +15571,7 @@ impl StartRemediationExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartRemediationExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15988,7 +15658,7 @@ impl StartRemediationExecutionInput {
             "StartRemediationExecution",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16053,7 +15723,7 @@ pub mod stop_configuration_recorder_input {
 pub type StopConfigurationRecorderInputOperationOutputAlias =
     crate::operation::StopConfigurationRecorder;
 #[doc(hidden)]
-pub type StopConfigurationRecorderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopConfigurationRecorderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopConfigurationRecorderInput {
     /// Consumes the builder and constructs an Operation<[`StopConfigurationRecorder`](crate::operation::StopConfigurationRecorder)>
     #[allow(clippy::let_and_return)]
@@ -16064,7 +15734,7 @@ impl StopConfigurationRecorderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopConfigurationRecorder,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16151,7 +15821,7 @@ impl StopConfigurationRecorderInput {
             "StopConfigurationRecorder",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16199,9 +15869,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of tag object.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -16230,7 +15900,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -16241,7 +15911,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16325,7 +15995,7 @@ impl TagResourceInput {
             "TagResource",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16404,7 +16074,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -16415,7 +16085,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16499,7 +16169,7 @@ impl UntagResourceInput {
             "UntagResource",
             "configservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16578,7 +16248,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
-/// <p>The input for the <a>StopConfigurationRecorder</a> action.</p>
+/// <p>The input for the <code>StopConfigurationRecorder</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopConfigurationRecorderInput {
@@ -16630,18 +16300,15 @@ impl std::fmt::Debug for StartRemediationExecutionInput {
     }
 }
 
-/// <p>The input for the <a>StartConfigurationRecorder</a>
-/// action.</p>
+/// <p>The input for the <code>StartConfigurationRecorder</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartConfigurationRecorderInput {
-    /// <p>The name of the recorder object that records each configuration
-    /// change made to the resources.</p>
+    /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
     pub configuration_recorder_name: std::option::Option<std::string::String>,
 }
 impl StartConfigurationRecorderInput {
-    /// <p>The name of the recorder object that records each configuration
-    /// change made to the resources.</p>
+    /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
     pub fn configuration_recorder_name(&self) -> std::option::Option<&str> {
         self.configuration_recorder_name.as_deref()
     }
@@ -16661,13 +16328,11 @@ impl std::fmt::Debug for StartConfigurationRecorderInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartConfigRulesEvaluationInput {
-    /// <p>The list of names of Config rules that you want to run
-    /// evaluations for.</p>
+    /// <p>The list of names of Config rules that you want to run evaluations for.</p>
     pub config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StartConfigRulesEvaluationInput {
-    /// <p>The list of names of Config rules that you want to run
-    /// evaluations for.</p>
+    /// <p>The list of names of Config rules that you want to run evaluations for.</p>
     pub fn config_rule_names(&self) -> std::option::Option<&[std::string::String]> {
         self.config_rule_names.as_deref()
     }
@@ -16771,22 +16436,16 @@ impl std::fmt::Debug for SelectAggregateResourceConfigInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutStoredQueryInput {
-    /// <p>A list of <code>StoredQuery</code> objects.
-    /// The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p>
-    /// <note>
-    /// <p>When you are creating a query, you must provide a query name and an expression.
-    /// When you are updating a query, you must provide a query name but updating the description is optional.</p>
+    /// <p>A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p> <note>
+    /// <p>When you are creating a query, you must provide a query name and an expression. When you are updating a query, you must provide a query name but updating the description is optional.</p>
     /// </note>
     pub stored_query: std::option::Option<crate::model::StoredQuery>,
     /// <p>A list of <code>Tags</code> object.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl PutStoredQueryInput {
-    /// <p>A list of <code>StoredQuery</code> objects.
-    /// The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p>
-    /// <note>
-    /// <p>When you are creating a query, you must provide a query name and an expression.
-    /// When you are updating a query, you must provide a query name but updating the description is optional.</p>
+    /// <p>A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p> <note>
+    /// <p>When you are creating a query, you must provide a query name and an expression. When you are updating a query, you must provide a query name but updating the description is optional.</p>
     /// </note>
     pub fn stored_query(&self) -> std::option::Option<&crate::model::StoredQuery> {
         self.stored_query.as_ref()
@@ -16809,20 +16468,14 @@ impl std::fmt::Debug for PutStoredQueryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRetentionConfigurationInput {
-    /// <p>Number of days Config stores your historical
-    /// information.</p>
-    /// <note>
-    /// <p>Currently, only applicable to the configuration item
-    /// history.</p>
+    /// <p>Number of days Config stores your historical information.</p> <note>
+    /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
     pub retention_period_in_days: i32,
 }
 impl PutRetentionConfigurationInput {
-    /// <p>Number of days Config stores your historical
-    /// information.</p>
-    /// <note>
-    /// <p>Currently, only applicable to the configuration item
-    /// history.</p>
+    /// <p>Number of days Config stores your historical information.</p> <note>
+    /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
     pub fn retention_period_in_days(&self) -> i32 {
         self.retention_period_in_days
@@ -16840,8 +16493,7 @@ impl std::fmt::Debug for PutRetentionConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourceConfigInput {
-    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p>
-    /// <note>
+    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p> <note>
     /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
     /// </note>
     pub resource_type: std::option::Option<std::string::String>,
@@ -16851,8 +16503,7 @@ pub struct PutResourceConfigInput {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Name of the resource.</p>
     pub resource_name: std::option::Option<std::string::String>,
-    /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p>
-    /// <note>
+    /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p> <note>
     /// <p>The configuration JSON must not exceed 64 KB.</p>
     /// </note>
     pub configuration: std::option::Option<std::string::String>,
@@ -16861,8 +16512,7 @@ pub struct PutResourceConfigInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl PutResourceConfigInput {
-    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p>
-    /// <note>
+    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p> <note>
     /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
     /// </note>
     pub fn resource_type(&self) -> std::option::Option<&str> {
@@ -16880,8 +16530,7 @@ impl PutResourceConfigInput {
     pub fn resource_name(&self) -> std::option::Option<&str> {
         self.resource_name.as_deref()
     }
-    /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p>
-    /// <note>
+    /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p> <note>
     /// <p>The configuration JSON must not exceed 64 KB.</p>
     /// </note>
     pub fn configuration(&self) -> std::option::Option<&str> {
@@ -16986,22 +16635,17 @@ impl std::fmt::Debug for PutRemediationConfigurationsInput {
 pub struct PutOrganizationConformancePackInput {
     /// <p>Name of the organization conformance pack you want to create.</p>
     pub organization_conformance_pack_name: std::option::Option<std::string::String>,
-    /// <p>Location of file containing the template body. The uri must point to the conformance pack template
-    /// (max size: 300 KB).</p>
-    /// <note>
+    /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p> <note>
     /// <p>You must have access to read Amazon S3 bucket.</p>
     /// </note>
     pub template_s3_uri: std::option::Option<std::string::String>,
-    /// <p>A string containing full conformance pack template body. Structure containing the template body
-    /// with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
+    /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
     pub template_body: std::option::Option<std::string::String>,
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
-    /// <note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>
     /// </note>
     pub delivery_s3_bucket: std::option::Option<std::string::String>,
-    /// <p>The prefix for the Amazon S3 bucket.</p>
-    /// <note>
+    /// <p>The prefix for the Amazon S3 bucket.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub delivery_s3_key_prefix: std::option::Option<std::string::String>,
@@ -17016,28 +16660,23 @@ impl PutOrganizationConformancePackInput {
     pub fn organization_conformance_pack_name(&self) -> std::option::Option<&str> {
         self.organization_conformance_pack_name.as_deref()
     }
-    /// <p>Location of file containing the template body. The uri must point to the conformance pack template
-    /// (max size: 300 KB).</p>
-    /// <note>
+    /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p> <note>
     /// <p>You must have access to read Amazon S3 bucket.</p>
     /// </note>
     pub fn template_s3_uri(&self) -> std::option::Option<&str> {
         self.template_s3_uri.as_deref()
     }
-    /// <p>A string containing full conformance pack template body. Structure containing the template body
-    /// with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
+    /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
     pub fn template_body(&self) -> std::option::Option<&str> {
         self.template_body.as_deref()
     }
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
-    /// <note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>
     /// </note>
     pub fn delivery_s3_bucket(&self) -> std::option::Option<&str> {
         self.delivery_s3_bucket.as_deref()
     }
-    /// <p>The prefix for the Amazon S3 bucket.</p>
-    /// <note>
+    /// <p>The prefix for the Amazon S3 bucket.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn delivery_s3_key_prefix(&self) -> std::option::Option<&str> {
@@ -17163,50 +16802,26 @@ impl std::fmt::Debug for PutExternalEvaluationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEvaluationsInput {
-    /// <p>The assessments that the Lambda function performs. Each
-    /// evaluation identifies an Amazon Web Services resource and indicates whether it
-    /// complies with the Config rule that invokes the Lambda
-    /// function.</p>
+    /// <p>The assessments that the Lambda function performs. Each evaluation identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that invokes the Lambda function.</p>
     pub evaluations: std::option::Option<std::vec::Vec<crate::model::Evaluation>>,
-    /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the
-    /// evaluation.</p>
+    /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the evaluation.</p>
     pub result_token: std::option::Option<std::string::String>,
-    /// <p>Use this parameter to specify a test run for
-    /// <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No
-    /// updates occur to your existing evaluations, and evaluation results
-    /// are not sent to Config.</p>
-    ///
-    /// <note>
-    /// <p>When <code>TestMode</code> is <code>true</code>,
-    /// <code>PutEvaluations</code> doesn't require a valid value
-    /// for the <code>ResultToken</code> parameter, but the value cannot
-    /// be null.</p>
+    /// <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No updates occur to your existing evaluations, and evaluation results are not sent to Config.</p> <note>
+    /// <p>When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for the <code>ResultToken</code> parameter, but the value cannot be null.</p>
     /// </note>
     pub test_mode: bool,
 }
 impl PutEvaluationsInput {
-    /// <p>The assessments that the Lambda function performs. Each
-    /// evaluation identifies an Amazon Web Services resource and indicates whether it
-    /// complies with the Config rule that invokes the Lambda
-    /// function.</p>
+    /// <p>The assessments that the Lambda function performs. Each evaluation identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that invokes the Lambda function.</p>
     pub fn evaluations(&self) -> std::option::Option<&[crate::model::Evaluation]> {
         self.evaluations.as_deref()
     }
-    /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the
-    /// evaluation.</p>
+    /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the evaluation.</p>
     pub fn result_token(&self) -> std::option::Option<&str> {
         self.result_token.as_deref()
     }
-    /// <p>Use this parameter to specify a test run for
-    /// <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No
-    /// updates occur to your existing evaluations, and evaluation results
-    /// are not sent to Config.</p>
-    ///
-    /// <note>
-    /// <p>When <code>TestMode</code> is <code>true</code>,
-    /// <code>PutEvaluations</code> doesn't require a valid value
-    /// for the <code>ResultToken</code> parameter, but the value cannot
-    /// be null.</p>
+    /// <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No updates occur to your existing evaluations, and evaluation results are not sent to Config.</p> <note>
+    /// <p>When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for the <code>ResultToken</code> parameter, but the value cannot be null.</p>
     /// </note>
     pub fn test_mode(&self) -> bool {
         self.test_mode
@@ -17222,20 +16837,15 @@ impl std::fmt::Debug for PutEvaluationsInput {
     }
 }
 
-/// <p>The input for the <a>PutDeliveryChannel</a>
-/// action.</p>
+/// <p>The input for the <code>PutDeliveryChannel</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutDeliveryChannelInput {
-    /// <p>The configuration delivery channel object that delivers the
-    /// configuration information to an Amazon S3 bucket and to an Amazon
-    /// SNS topic.</p>
+    /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
     pub delivery_channel: std::option::Option<crate::model::DeliveryChannel>,
 }
 impl PutDeliveryChannelInput {
-    /// <p>The configuration delivery channel object that delivers the
-    /// configuration information to an Amazon S3 bucket and to an Amazon
-    /// SNS topic.</p>
+    /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
     pub fn delivery_channel(&self) -> std::option::Option<&crate::model::DeliveryChannel> {
         self.delivery_channel.as_ref()
     }
@@ -17254,23 +16864,19 @@ impl std::fmt::Debug for PutDeliveryChannelInput {
 pub struct PutConformancePackInput {
     /// <p>Name of the conformance pack you want to create.</p>
     pub conformance_pack_name: std::option::Option<std::string::String>,
-    /// <p>Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p>
-    /// <note>
+    /// <p>Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p> <note>
     /// <p>You must have access to read Amazon S3 bucket.</p>
     /// </note>
     pub template_s3_uri: std::option::Option<std::string::String>,
-    /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
-    /// <note>
+    /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
     /// <p>You can only use a YAML template with one resource type, that is, config rule and a remediation action. </p>
     /// </note>
     pub template_body: std::option::Option<std::string::String>,
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
-    /// <note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub delivery_s3_bucket: std::option::Option<std::string::String>,
-    /// <p>The prefix for the Amazon S3 bucket. </p>
-    /// <note>
+    /// <p>The prefix for the Amazon S3 bucket. </p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub delivery_s3_key_prefix: std::option::Option<std::string::String>,
@@ -17283,29 +16889,25 @@ impl PutConformancePackInput {
     pub fn conformance_pack_name(&self) -> std::option::Option<&str> {
         self.conformance_pack_name.as_deref()
     }
-    /// <p>Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p>
-    /// <note>
+    /// <p>Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p> <note>
     /// <p>You must have access to read Amazon S3 bucket.</p>
     /// </note>
     pub fn template_s3_uri(&self) -> std::option::Option<&str> {
         self.template_s3_uri.as_deref()
     }
-    /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
-    /// <note>
+    /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
     /// <p>You can only use a YAML template with one resource type, that is, config rule and a remediation action. </p>
     /// </note>
     pub fn template_body(&self) -> std::option::Option<&str> {
         self.template_body.as_deref()
     }
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
-    /// <note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn delivery_s3_bucket(&self) -> std::option::Option<&str> {
         self.delivery_s3_bucket.as_deref()
     }
-    /// <p>The prefix for the Amazon S3 bucket. </p>
-    /// <note>
+    /// <p>The prefix for the Amazon S3 bucket. </p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn delivery_s3_key_prefix(&self) -> std::option::Option<&str> {
@@ -17334,18 +16936,15 @@ impl std::fmt::Debug for PutConformancePackInput {
     }
 }
 
-/// <p>The input for the <a>PutConfigurationRecorder</a>
-/// action.</p>
+/// <p>The input for the <code>PutConfigurationRecorder</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutConfigurationRecorderInput {
-    /// <p>The configuration recorder object that records each
-    /// configuration change made to the resources.</p>
+    /// <p>The configuration recorder object that records each configuration change made to the resources.</p>
     pub configuration_recorder: std::option::Option<crate::model::ConfigurationRecorder>,
 }
 impl PutConfigurationRecorderInput {
-    /// <p>The configuration recorder object that records each
-    /// configuration change made to the resources.</p>
+    /// <p>The configuration recorder object that records each configuration change made to the resources.</p>
     pub fn configuration_recorder(
         &self,
     ) -> std::option::Option<&crate::model::ConfigurationRecorder> {
@@ -17366,9 +16965,7 @@ impl std::fmt::Debug for PutConfigurationRecorderInput {
 pub struct PutConfigurationAggregatorInput {
     /// <p>The name of the configuration aggregator.</p>
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
-    /// <p>A list of AccountAggregationSource object.
-    ///
-    /// </p>
+    /// <p>A list of AccountAggregationSource object. </p>
     pub account_aggregation_sources:
         std::option::Option<std::vec::Vec<crate::model::AccountAggregationSource>>,
     /// <p>An OrganizationAggregationSource object.</p>
@@ -17382,9 +16979,7 @@ impl PutConfigurationAggregatorInput {
     pub fn configuration_aggregator_name(&self) -> std::option::Option<&str> {
         self.configuration_aggregator_name.as_deref()
     }
-    /// <p>A list of AccountAggregationSource object.
-    ///
-    /// </p>
+    /// <p>A list of AccountAggregationSource object. </p>
     pub fn account_aggregation_sources(
         &self,
     ) -> std::option::Option<&[crate::model::AccountAggregationSource]> {
@@ -17551,61 +17146,41 @@ impl std::fmt::Debug for ListStoredQueriesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDiscoveredResourcesInput {
-    /// <p>The type of resources that you want Config to list in the
-    /// response.</p>
+    /// <p>The type of resources that you want Config to list in the response.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
-    /// <p>The IDs of only those resources that you want Config to
-    /// list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has
-    /// discovered.</p>
+    /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
     pub resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this
-    /// parameter, Config lists all resources of the specified type that
-    /// it has discovered.</p>
+    /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
     pub resource_name: std::option::Option<std::string::String>,
-    /// <p>The maximum number of resource identifiers returned on each
-    /// page. The default is 100. You cannot specify a number greater than
-    /// 100. If you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of resource identifiers returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub limit: i32,
-    /// <p>Specifies whether Config includes deleted resources in the
-    /// results. By default, deleted resources are not included.</p>
+    /// <p>Specifies whether Config includes deleted resources in the results. By default, deleted resources are not included.</p>
     pub include_deleted_resources: bool,
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDiscoveredResourcesInput {
-    /// <p>The type of resources that you want Config to list in the
-    /// response.</p>
+    /// <p>The type of resources that you want Config to list in the response.</p>
     pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>The IDs of only those resources that you want Config to
-    /// list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has
-    /// discovered.</p>
+    /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
     pub fn resource_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_ids.as_deref()
     }
-    /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this
-    /// parameter, Config lists all resources of the specified type that
-    /// it has discovered.</p>
+    /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
     pub fn resource_name(&self) -> std::option::Option<&str> {
         self.resource_name.as_deref()
     }
-    /// <p>The maximum number of resource identifiers returned on each
-    /// page. The default is 100. You cannot specify a number greater than
-    /// 100. If you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of resource identifiers returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
-    /// <p>Specifies whether Config includes deleted resources in the
-    /// results. By default, deleted resources are not included.</p>
+    /// <p>Specifies whether Config includes deleted resources in the results. By default, deleted resources are not included.</p>
     pub fn include_deleted_resources(&self) -> bool {
         self.include_deleted_resources
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17696,35 +17271,23 @@ impl std::fmt::Debug for GetStoredQueryInput {
     }
 }
 
-/// <p>The input for the <a>GetResourceConfigHistory</a>
-/// action.</p>
+/// <p>The input for the <code>GetResourceConfigHistory</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceConfigHistoryInput {
     /// <p>The resource type.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
-    /// <p>The ID of the resource (for example.,
-    /// <code>sg-xxxxxx</code>).</p>
+    /// <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>The time stamp that indicates a later time. If not specified,
-    /// current time is taken.</p>
+    /// <p>The time stamp that indicates a later time. If not specified, current time is taken.</p>
     pub later_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The time stamp that indicates an earlier time. If not
-    /// specified, the action returns paginated results that contain
-    /// configuration items that start when the first configuration item was
-    /// recorded.</p>
+    /// <p>The time stamp that indicates an earlier time. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
     pub earlier_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The chronological order for configuration items listed. By
-    /// default, the results are listed in reverse chronological
-    /// order.</p>
+    /// <p>The chronological order for configuration items listed. By default, the results are listed in reverse chronological order.</p>
     pub chronological_order: std::option::Option<crate::model::ChronologicalOrder>,
-    /// <p>The maximum number of configuration items returned on each
-    /// page. The default is 10. You cannot specify a number greater than
-    /// 100. If you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of configuration items returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub limit: i32,
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetResourceConfigHistoryInput {
@@ -17732,38 +17295,27 @@ impl GetResourceConfigHistoryInput {
     pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>The ID of the resource (for example.,
-    /// <code>sg-xxxxxx</code>).</p>
+    /// <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>The time stamp that indicates a later time. If not specified,
-    /// current time is taken.</p>
+    /// <p>The time stamp that indicates a later time. If not specified, current time is taken.</p>
     pub fn later_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.later_time.as_ref()
     }
-    /// <p>The time stamp that indicates an earlier time. If not
-    /// specified, the action returns paginated results that contain
-    /// configuration items that start when the first configuration item was
-    /// recorded.</p>
+    /// <p>The time stamp that indicates an earlier time. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
     pub fn earlier_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.earlier_time.as_ref()
     }
-    /// <p>The chronological order for configuration items listed. By
-    /// default, the results are listed in reverse chronological
-    /// order.</p>
+    /// <p>The chronological order for configuration items listed. By default, the results are listed in reverse chronological order.</p>
     pub fn chronological_order(&self) -> std::option::Option<&crate::model::ChronologicalOrder> {
         self.chronological_order.as_ref()
     }
-    /// <p>The maximum number of configuration items returned on each
-    /// page. The default is 10. You cannot specify a number greater than
-    /// 100. If you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of configuration items returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17790,8 +17342,7 @@ pub struct GetOrganizationConformancePackDetailedStatusInput {
     pub organization_conformance_pack_name: std::option::Option<std::string::String>,
     /// <p>An <code>OrganizationResourceDetailedStatusFilters</code> object.</p>
     pub filters: std::option::Option<crate::model::OrganizationResourceDetailedStatusFilters>,
-    /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page.
-    /// If you do not specify a number, Config uses the default. The default is 100. </p>
+    /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100. </p>
     pub limit: i32,
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
@@ -17807,8 +17358,7 @@ impl GetOrganizationConformancePackDetailedStatusInput {
     ) -> std::option::Option<&crate::model::OrganizationResourceDetailedStatusFilters> {
         self.filters.as_ref()
     }
-    /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page.
-    /// If you do not specify a number, Config uses the default. The default is 100. </p>
+    /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100. </p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
@@ -17880,59 +17430,29 @@ impl std::fmt::Debug for GetOrganizationConfigRuleDetailedStatusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDiscoveredResourceCountsInput {
-    /// <p>The comma-separated list that specifies the resource types that
-    /// you want Config to return (for example,
-    /// <code>"AWS::EC2::Instance"</code>,
-    /// <code>"AWS::IAM::User"</code>).</p>
-    ///
-    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in
-    /// the region for your account.</p>
-    /// <note>
-    /// <p>If the configuration recorder is turned off, Config
-    /// returns an empty list of <a>ResourceCount</a>
-    /// objects. If the configuration recorder is not recording a
-    /// specific resource type (for example, S3 buckets), that resource
-    /// type is not returned in the list of <a>ResourceCount</a> objects.</p>
+    /// <p>The comma-separated list that specifies the resource types that you want Config to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).</p>
+    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note>
+    /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p>
     /// </note>
     pub resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of <a>ResourceCount</a> objects
-    /// returned on each page. The default is 100. You cannot specify a
-    /// number greater than 100. If you specify 0, Config uses the
-    /// default.</p>
+    /// <p>The maximum number of <code>ResourceCount</code> objects returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub limit: i32,
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDiscoveredResourceCountsInput {
-    /// <p>The comma-separated list that specifies the resource types that
-    /// you want Config to return (for example,
-    /// <code>"AWS::EC2::Instance"</code>,
-    /// <code>"AWS::IAM::User"</code>).</p>
-    ///
-    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in
-    /// the region for your account.</p>
-    /// <note>
-    /// <p>If the configuration recorder is turned off, Config
-    /// returns an empty list of <a>ResourceCount</a>
-    /// objects. If the configuration recorder is not recording a
-    /// specific resource type (for example, S3 buckets), that resource
-    /// type is not returned in the list of <a>ResourceCount</a> objects.</p>
+    /// <p>The comma-separated list that specifies the resource types that you want Config to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).</p>
+    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note>
+    /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p>
     /// </note>
     pub fn resource_types(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_types.as_deref()
     }
-    /// <p>The maximum number of <a>ResourceCount</a> objects
-    /// returned on each page. The default is 100. You cannot specify a
-    /// number greater than 100. If you specify 0, Config uses the
-    /// default.</p>
+    /// <p>The maximum number of <code>ResourceCount</code> objects returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -18028,23 +17548,13 @@ impl std::fmt::Debug for GetConformancePackComplianceDetailsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComplianceSummaryByResourceTypeInput {
-    /// <p>Specify one or more resource types to get the number of
-    /// resources that are compliant and the number that are noncompliant
-    /// for each resource type.</p>
-    /// <p>For this request, you can specify an Amazon Web Services resource type such as
-    /// <code>AWS::EC2::Instance</code>. You can specify that the
-    /// resource type is an Amazon Web Services account by specifying
-    /// <code>AWS::::Account</code>.</p>
+    /// <p>Specify one or more resource types to get the number of resources that are compliant and the number that are noncompliant for each resource type.</p>
+    /// <p>For this request, you can specify an Amazon Web Services resource type such as <code>AWS::EC2::Instance</code>. You can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
     pub resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetComplianceSummaryByResourceTypeInput {
-    /// <p>Specify one or more resource types to get the number of
-    /// resources that are compliant and the number that are noncompliant
-    /// for each resource type.</p>
-    /// <p>For this request, you can specify an Amazon Web Services resource type such as
-    /// <code>AWS::EC2::Instance</code>. You can specify that the
-    /// resource type is an Amazon Web Services account by specifying
-    /// <code>AWS::::Account</code>.</p>
+    /// <p>Specify one or more resource types to get the number of resources that are compliant and the number that are noncompliant for each resource type.</p>
+    /// <p>For this request, you can specify an Amazon Web Services resource type such as <code>AWS::EC2::Instance</code>. You can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
     pub fn resource_types(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_types.as_deref()
     }
@@ -18072,43 +17582,31 @@ impl std::fmt::Debug for GetComplianceSummaryByConfigRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComplianceDetailsByResourceInput {
-    /// <p>The type of the Amazon Web Services resource for which you want compliance
-    /// information.</p>
+    /// <p>The type of the Amazon Web Services resource for which you want compliance information.</p>
     pub resource_type: std::option::Option<std::string::String>,
-    /// <p>The ID of the Amazon Web Services resource for which you want compliance
-    /// information.</p>
+    /// <p>The ID of the Amazon Web Services resource for which you want compliance information.</p>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Filters the results by compliance.</p>
-    /// <p>The allowed values are <code>COMPLIANT</code>,
-    /// <code>NON_COMPLIANT</code>, and
-    /// <code>NOT_APPLICABLE</code>.</p>
+    /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.</p>
     pub compliance_types: std::option::Option<std::vec::Vec<crate::model::ComplianceType>>,
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetComplianceDetailsByResourceInput {
-    /// <p>The type of the Amazon Web Services resource for which you want compliance
-    /// information.</p>
+    /// <p>The type of the Amazon Web Services resource for which you want compliance information.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
-    /// <p>The ID of the Amazon Web Services resource for which you want compliance
-    /// information.</p>
+    /// <p>The ID of the Amazon Web Services resource for which you want compliance information.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>Filters the results by compliance.</p>
-    /// <p>The allowed values are <code>COMPLIANT</code>,
-    /// <code>NON_COMPLIANT</code>, and
-    /// <code>NOT_APPLICABLE</code>.</p>
+    /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.</p>
     pub fn compliance_types(&self) -> std::option::Option<&[crate::model::ComplianceType]> {
         self.compliance_types.as_deref()
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -18128,45 +17626,31 @@ impl std::fmt::Debug for GetComplianceDetailsByResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComplianceDetailsByConfigRuleInput {
-    /// <p>The name of the Config rule for which you want compliance
-    /// information.</p>
+    /// <p>The name of the Config rule for which you want compliance information.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
     /// <p>Filters the results by compliance.</p>
-    /// <p>The allowed values are <code>COMPLIANT</code>,
-    /// <code>NON_COMPLIANT</code>, and
-    /// <code>NOT_APPLICABLE</code>.</p>
+    /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.</p>
     pub compliance_types: std::option::Option<std::vec::Vec<crate::model::ComplianceType>>,
-    /// <p>The maximum number of evaluation results returned on each page.
-    /// The default is 10. You cannot specify a number greater than 100. If
-    /// you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub limit: i32,
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetComplianceDetailsByConfigRuleInput {
-    /// <p>The name of the Config rule for which you want compliance
-    /// information.</p>
+    /// <p>The name of the Config rule for which you want compliance information.</p>
     pub fn config_rule_name(&self) -> std::option::Option<&str> {
         self.config_rule_name.as_deref()
     }
     /// <p>Filters the results by compliance.</p>
-    /// <p>The allowed values are <code>COMPLIANT</code>,
-    /// <code>NON_COMPLIANT</code>, and
-    /// <code>NOT_APPLICABLE</code>.</p>
+    /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.</p>
     pub fn compliance_types(&self) -> std::option::Option<&[crate::model::ComplianceType]> {
         self.compliance_types.as_deref()
     }
-    /// <p>The maximum number of evaluation results returned on each page.
-    /// The default is 10. You cannot specify a number greater than 100. If
-    /// you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -18225,7 +17709,7 @@ pub struct GetAggregateDiscoveredResourceCountsInput {
     pub filters: std::option::Option<crate::model::ResourceCountFilters>,
     /// <p>The key to group the resource counts.</p>
     pub group_by_key: std::option::Option<crate::model::ResourceCountGroupKey>,
-    /// <p>The maximum number of <a>GroupedResourceCount</a> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of <code>GroupedResourceCount</code> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
     pub limit: i32,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
@@ -18243,7 +17727,7 @@ impl GetAggregateDiscoveredResourceCountsInput {
     pub fn group_by_key(&self) -> std::option::Option<&crate::model::ResourceCountGroupKey> {
         self.group_by_key.as_ref()
     }
-    /// <p>The maximum number of <a>GroupedResourceCount</a> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of <code>GroupedResourceCount</code> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
@@ -18331,17 +17815,13 @@ impl std::fmt::Debug for GetAggregateConformancePackComplianceSummaryInput {
 pub struct GetAggregateConfigRuleComplianceSummaryInput {
     /// <p>The name of the configuration aggregator.</p>
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
-    /// <p>Filters the results based on the
-    /// ConfigRuleComplianceSummaryFilters object.</p>
+    /// <p>Filters the results based on the ConfigRuleComplianceSummaryFilters object.</p>
     pub filters: std::option::Option<crate::model::ConfigRuleComplianceSummaryFilters>,
     /// <p>Groups the result based on ACCOUNT_ID or AWS_REGION.</p>
     pub group_by_key: std::option::Option<crate::model::ConfigRuleComplianceSummaryGroupKey>,
-    /// <p>The maximum number of evaluation results returned on each page.
-    /// The default is 1000. You cannot specify a number greater than 1000.
-    /// If you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of evaluation results returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
     pub limit: i32,
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetAggregateConfigRuleComplianceSummaryInput {
@@ -18349,8 +17829,7 @@ impl GetAggregateConfigRuleComplianceSummaryInput {
     pub fn configuration_aggregator_name(&self) -> std::option::Option<&str> {
         self.configuration_aggregator_name.as_deref()
     }
-    /// <p>Filters the results based on the
-    /// ConfigRuleComplianceSummaryFilters object.</p>
+    /// <p>Filters the results based on the ConfigRuleComplianceSummaryFilters object.</p>
     pub fn filters(
         &self,
     ) -> std::option::Option<&crate::model::ConfigRuleComplianceSummaryFilters> {
@@ -18362,14 +17841,11 @@ impl GetAggregateConfigRuleComplianceSummaryInput {
     ) -> std::option::Option<&crate::model::ConfigRuleComplianceSummaryGroupKey> {
         self.group_by_key.as_ref()
     }
-    /// <p>The maximum number of evaluation results returned on each page.
-    /// The default is 1000. You cannot specify a number greater than 1000.
-    /// If you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of evaluation results returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -18395,29 +17871,19 @@ impl std::fmt::Debug for GetAggregateConfigRuleComplianceSummaryInput {
 pub struct GetAggregateComplianceDetailsByConfigRuleInput {
     /// <p>The name of the configuration aggregator.</p>
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
-    /// <p>The name of the Config rule for which you want compliance
-    /// information.</p>
+    /// <p>The name of the Config rule for which you want compliance information.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
     /// <p>The 12-digit account ID of the source account.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The source region from where the data is aggregated.</p>
     pub aws_region: std::option::Option<std::string::String>,
-    /// <p>The resource compliance status.</p>
-    /// <note>
-    /// <p>For the
-    /// <code>GetAggregateComplianceDetailsByConfigRuleRequest</code>
-    /// data type, Config supports only the <code>COMPLIANT</code>
-    /// and <code>NON_COMPLIANT</code>. Config does not support the
-    /// <code>NOT_APPLICABLE</code> and
-    /// <code>INSUFFICIENT_DATA</code> values.</p>
+    /// <p>The resource compliance status.</p> <note>
+    /// <p>For the <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> values.</p>
     /// </note>
     pub compliance_type: std::option::Option<crate::model::ComplianceType>,
-    /// <p>The maximum number of evaluation results returned on each page.
-    /// The default is 50. You cannot specify a number greater than 100. If
-    /// you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of evaluation results returned on each page. The default is 50. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub limit: i32,
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetAggregateComplianceDetailsByConfigRuleInput {
@@ -18425,8 +17891,7 @@ impl GetAggregateComplianceDetailsByConfigRuleInput {
     pub fn configuration_aggregator_name(&self) -> std::option::Option<&str> {
         self.configuration_aggregator_name.as_deref()
     }
-    /// <p>The name of the Config rule for which you want compliance
-    /// information.</p>
+    /// <p>The name of the Config rule for which you want compliance information.</p>
     pub fn config_rule_name(&self) -> std::option::Option<&str> {
         self.config_rule_name.as_deref()
     }
@@ -18438,26 +17903,17 @@ impl GetAggregateComplianceDetailsByConfigRuleInput {
     pub fn aws_region(&self) -> std::option::Option<&str> {
         self.aws_region.as_deref()
     }
-    /// <p>The resource compliance status.</p>
-    /// <note>
-    /// <p>For the
-    /// <code>GetAggregateComplianceDetailsByConfigRuleRequest</code>
-    /// data type, Config supports only the <code>COMPLIANT</code>
-    /// and <code>NON_COMPLIANT</code>. Config does not support the
-    /// <code>NOT_APPLICABLE</code> and
-    /// <code>INSUFFICIENT_DATA</code> values.</p>
+    /// <p>The resource compliance status.</p> <note>
+    /// <p>For the <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> values.</p>
     /// </note>
     pub fn compliance_type(&self) -> std::option::Option<&crate::model::ComplianceType> {
         self.compliance_type.as_ref()
     }
-    /// <p>The maximum number of evaluation results returned on each page.
-    /// The default is 50. You cannot specify a number greater than 100. If
-    /// you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of evaluation results returned on each page. The default is 50. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -18483,33 +17939,21 @@ impl std::fmt::Debug for GetAggregateComplianceDetailsByConfigRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRetentionConfigurationsInput {
-    /// <p>A list of names of retention configurations for which you want
-    /// details. If you do not specify a name, Config returns details
-    /// for all the retention configurations for that account.</p>
-    /// <note>
-    /// <p>Currently, Config supports only one retention
-    /// configuration per region in your account.</p>
+    /// <p>A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.</p> <note>
+    /// <p>Currently, Config supports only one retention configuration per region in your account.</p>
     /// </note>
     pub retention_configuration_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response. </p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeRetentionConfigurationsInput {
-    /// <p>A list of names of retention configurations for which you want
-    /// details. If you do not specify a name, Config returns details
-    /// for all the retention configurations for that account.</p>
-    /// <note>
-    /// <p>Currently, Config supports only one retention
-    /// configuration per region in your account.</p>
+    /// <p>A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.</p> <note>
+    /// <p>Currently, Config supports only one retention configuration per region in your account.</p>
     /// </note>
     pub fn retention_configuration_names(&self) -> std::option::Option<&[std::string::String]> {
         self.retention_configuration_names.as_deref()
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response. </p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -18638,23 +18082,17 @@ impl std::fmt::Debug for DescribeRemediationConfigurationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePendingAggregationRequestsInput {
-    /// <p>The maximum number of evaluation results returned on each page.
-    /// The default is maximum. If you specify 0, Config uses the
-    /// default.</p>
+    /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub limit: i32,
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribePendingAggregationRequestsInput {
-    /// <p>The maximum number of evaluation results returned on each page.
-    /// The default is maximum. If you specify 0, Config uses the
-    /// default.</p>
+    /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -18672,26 +18110,22 @@ impl std::fmt::Debug for DescribePendingAggregationRequestsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationConformancePackStatusesInput {
-    /// <p>The names of organization conformance packs for which you want status details.
-    /// If you do not specify any names, Config returns details for all your organization conformance packs. </p>
+    /// <p>The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs. </p>
     pub organization_conformance_pack_names:
         std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page.
-    /// If you do no specify a number, Config uses the default. The default is 100. </p>
+    /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page. If you do no specify a number, Config uses the default. The default is 100. </p>
     pub limit: i32,
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeOrganizationConformancePackStatusesInput {
-    /// <p>The names of organization conformance packs for which you want status details.
-    /// If you do not specify any names, Config returns details for all your organization conformance packs. </p>
+    /// <p>The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs. </p>
     pub fn organization_conformance_pack_names(
         &self,
     ) -> std::option::Option<&[std::string::String]> {
         self.organization_conformance_pack_names.as_deref()
     }
-    /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page.
-    /// If you do no specify a number, Config uses the default. The default is 100. </p>
+    /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page. If you do no specify a number, Config uses the default. The default is 100. </p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
@@ -18720,11 +18154,9 @@ pub struct DescribeOrganizationConformancePacksInput {
     /// <p>The name that you assign to an organization conformance pack.</p>
     pub organization_conformance_pack_names:
         std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of organization config packs returned on each page. If you do no specify a
-    /// number, Config uses the default. The default is 100.</p>
+    /// <p>The maximum number of organization config packs returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
     pub limit: i32,
-    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a
-    /// paginated response.</p>
+    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeOrganizationConformancePacksInput {
@@ -18734,13 +18166,11 @@ impl DescribeOrganizationConformancePacksInput {
     ) -> std::option::Option<&[std::string::String]> {
         self.organization_conformance_pack_names.as_deref()
     }
-    /// <p>The maximum number of organization config packs returned on each page. If you do no specify a
-    /// number, Config uses the default. The default is 100.</p>
+    /// <p>The maximum number of organization config packs returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
-    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a
-    /// paginated response.</p>
+    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -18834,8 +18264,7 @@ impl std::fmt::Debug for DescribeOrganizationConfigRulesInput {
     }
 }
 
-/// <p>The input for the <a>DeliveryChannelStatus</a>
-/// action.</p>
+/// <p>The input for the <code>DeliveryChannelStatus</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeliveryChannelStatusInput {
@@ -18856,8 +18285,7 @@ impl std::fmt::Debug for DescribeDeliveryChannelStatusInput {
     }
 }
 
-/// <p>The input for the <a>DescribeDeliveryChannels</a>
-/// action.</p>
+/// <p>The input for the <code>DescribeDeliveryChannels</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeliveryChannelsInput {
@@ -18990,20 +18418,15 @@ impl std::fmt::Debug for DescribeConformancePackComplianceInput {
     }
 }
 
-/// <p>The input for the <a>DescribeConfigurationRecorderStatus</a>
-/// action.</p>
+/// <p>The input for the <code>DescribeConfigurationRecorderStatus</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationRecorderStatusInput {
-    /// <p>The name(s) of the configuration recorder. If the name is not
-    /// specified, the action returns the current status of all the
-    /// configuration recorders associated with the account.</p>
+    /// <p>The name(s) of the configuration recorder. If the name is not specified, the action returns the current status of all the configuration recorders associated with the account.</p>
     pub configuration_recorder_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeConfigurationRecorderStatusInput {
-    /// <p>The name(s) of the configuration recorder. If the name is not
-    /// specified, the action returns the current status of all the
-    /// configuration recorders associated with the account.</p>
+    /// <p>The name(s) of the configuration recorder. If the name is not specified, the action returns the current status of all the configuration recorders associated with the account.</p>
     pub fn configuration_recorder_names(&self) -> std::option::Option<&[std::string::String]> {
         self.configuration_recorder_names.as_deref()
     }
@@ -19019,7 +18442,7 @@ impl std::fmt::Debug for DescribeConfigurationRecorderStatusInput {
     }
 }
 
-/// <p>The input for the <a>DescribeConfigurationRecorders</a> action.</p>
+/// <p>The input for the <code>DescribeConfigurationRecorders</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationRecordersInput {
@@ -19051,26 +18474,14 @@ pub struct DescribeConfigurationAggregatorSourcesStatusInput {
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
     /// <p>Filters the status type.</p>
     /// <ul>
-    /// <li>
-    /// <p>Valid value FAILED indicates errors while moving
-    /// data.</p>
-    /// </li>
-    /// <li>
-    /// <p>Valid value SUCCEEDED indicates the data was
-    /// successfully moved.</p>
-    /// </li>
-    /// <li>
-    /// <p>Valid value OUTDATED indicates the data is not the most
-    /// recent.</p>
-    /// </li>
+    /// <li> <p>Valid value FAILED indicates errors while moving data.</p> </li>
+    /// <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li>
+    /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li>
     /// </ul>
     pub update_status: std::option::Option<std::vec::Vec<crate::model::AggregatedSourceStatusType>>,
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of AggregatorSourceStatus returned on each
-    /// page. The default is maximum. If you specify 0, Config uses the
-    /// default.</p>
+    /// <p>The maximum number of AggregatorSourceStatus returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub limit: i32,
 }
 impl DescribeConfigurationAggregatorSourcesStatusInput {
@@ -19080,32 +18491,20 @@ impl DescribeConfigurationAggregatorSourcesStatusInput {
     }
     /// <p>Filters the status type.</p>
     /// <ul>
-    /// <li>
-    /// <p>Valid value FAILED indicates errors while moving
-    /// data.</p>
-    /// </li>
-    /// <li>
-    /// <p>Valid value SUCCEEDED indicates the data was
-    /// successfully moved.</p>
-    /// </li>
-    /// <li>
-    /// <p>Valid value OUTDATED indicates the data is not the most
-    /// recent.</p>
-    /// </li>
+    /// <li> <p>Valid value FAILED indicates errors while moving data.</p> </li>
+    /// <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li>
+    /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li>
     /// </ul>
     pub fn update_status(
         &self,
     ) -> std::option::Option<&[crate::model::AggregatedSourceStatusType]> {
         self.update_status.as_deref()
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of AggregatorSourceStatus returned on each
-    /// page. The default is maximum. If you specify 0, Config uses the
-    /// default.</p>
+    /// <p>The maximum number of AggregatorSourceStatus returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
@@ -19130,12 +18529,9 @@ impl std::fmt::Debug for DescribeConfigurationAggregatorSourcesStatusInput {
 pub struct DescribeConfigurationAggregatorsInput {
     /// <p>The name of the configuration aggregators.</p>
     pub configuration_aggregator_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of configuration aggregators returned on
-    /// each page. The default is maximum. If you specify 0, Config uses
-    /// the default.</p>
+    /// <p>The maximum number of configuration aggregators returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub limit: i32,
 }
 impl DescribeConfigurationAggregatorsInput {
@@ -19143,14 +18539,11 @@ impl DescribeConfigurationAggregatorsInput {
     pub fn configuration_aggregator_names(&self) -> std::option::Option<&[std::string::String]> {
         self.configuration_aggregator_names.as_deref()
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of configuration aggregators returned on
-    /// each page. The default is maximum. If you specify 0, Config uses
-    /// the default.</p>
+    /// <p>The maximum number of configuration aggregators returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
@@ -19172,25 +18565,17 @@ impl std::fmt::Debug for DescribeConfigurationAggregatorsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigRulesInput {
-    /// <p>The names of the Config rules for which you want details.
-    /// If you do not specify any names, Config returns details for all
-    /// your rules.</p>
+    /// <p>The names of the Config rules for which you want details. If you do not specify any names, Config returns details for all your rules.</p>
     pub config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConfigRulesInput {
-    /// <p>The names of the Config rules for which you want details.
-    /// If you do not specify any names, Config returns details for all
-    /// your rules.</p>
+    /// <p>The names of the Config rules for which you want details. If you do not specify any names, Config returns details for all your rules.</p>
     pub fn config_rule_names(&self) -> std::option::Option<&[std::string::String]> {
         self.config_rule_names.as_deref()
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -19208,47 +18593,27 @@ impl std::fmt::Debug for DescribeConfigRulesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigRuleEvaluationStatusInput {
-    /// <p>The name of the Config managed rules for which you want
-    /// status information. If you do not specify any names, Config
-    /// returns status information for all Config managed rules that you
-    /// use.</p>
+    /// <p>The name of the Config managed rules for which you want status information. If you do not specify any names, Config returns status information for all Config managed rules that you use.</p>
     pub config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The number of rule evaluation results that you want
-    /// returned.</p>
-    ///
-    /// <p>This parameter is required if the rule limit for your account
-    /// is more than the default of 150 rules.</p>
-    /// <p>For information about requesting a rule limit increase, see
-    /// <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General
-    /// Reference Guide</i>.</p>
+    /// <p>The number of rule evaluation results that you want returned.</p>
+    /// <p>This parameter is required if the rule limit for your account is more than the default of 150 rules.</p>
+    /// <p>For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub limit: i32,
 }
 impl DescribeConfigRuleEvaluationStatusInput {
-    /// <p>The name of the Config managed rules for which you want
-    /// status information. If you do not specify any names, Config
-    /// returns status information for all Config managed rules that you
-    /// use.</p>
+    /// <p>The name of the Config managed rules for which you want status information. If you do not specify any names, Config returns status information for all Config managed rules that you use.</p>
     pub fn config_rule_names(&self) -> std::option::Option<&[std::string::String]> {
         self.config_rule_names.as_deref()
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The number of rule evaluation results that you want
-    /// returned.</p>
-    ///
-    /// <p>This parameter is required if the rule limit for your account
-    /// is more than the default of 150 rules.</p>
-    /// <p>For information about requesting a rule limit increase, see
-    /// <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General
-    /// Reference Guide</i>.</p>
+    /// <p>The number of rule evaluation results that you want returned.</p>
+    /// <p>This parameter is required if the rule limit for your account is more than the default of 150 rules.</p>
+    /// <p>For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
@@ -19267,40 +18632,24 @@ impl std::fmt::Debug for DescribeConfigRuleEvaluationStatusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeComplianceByResourceInput {
-    /// <p>The types of Amazon Web Services resources for which you want compliance
-    /// information (for example, <code>AWS::EC2::Instance</code>). For this
-    /// action, you can specify that the resource type is an Amazon Web Services account by
-    /// specifying <code>AWS::::Account</code>.</p>
+    /// <p>The types of Amazon Web Services resources for which you want compliance information (for example, <code>AWS::EC2::Instance</code>). For this action, you can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
     pub resource_type: std::option::Option<std::string::String>,
-    /// <p>The ID of the Amazon Web Services resource for which you want compliance
-    /// information. You can specify only one resource ID. If you specify a
-    /// resource ID, you must also specify a type for
-    /// <code>ResourceType</code>.</p>
+    /// <p>The ID of the Amazon Web Services resource for which you want compliance information. You can specify only one resource ID. If you specify a resource ID, you must also specify a type for <code>ResourceType</code>.</p>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Filters the results by compliance.</p>
     /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.</p>
     pub compliance_types: std::option::Option<std::vec::Vec<crate::model::ComplianceType>>,
-    /// <p>The maximum number of evaluation results returned on each page.
-    /// The default is 10. You cannot specify a number greater than 100. If
-    /// you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub limit: i32,
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeComplianceByResourceInput {
-    /// <p>The types of Amazon Web Services resources for which you want compliance
-    /// information (for example, <code>AWS::EC2::Instance</code>). For this
-    /// action, you can specify that the resource type is an Amazon Web Services account by
-    /// specifying <code>AWS::::Account</code>.</p>
+    /// <p>The types of Amazon Web Services resources for which you want compliance information (for example, <code>AWS::EC2::Instance</code>). For this action, you can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
-    /// <p>The ID of the Amazon Web Services resource for which you want compliance
-    /// information. You can specify only one resource ID. If you specify a
-    /// resource ID, you must also specify a type for
-    /// <code>ResourceType</code>.</p>
+    /// <p>The ID of the Amazon Web Services resource for which you want compliance information. You can specify only one resource ID. If you specify a resource ID, you must also specify a type for <code>ResourceType</code>.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
@@ -19309,15 +18658,11 @@ impl DescribeComplianceByResourceInput {
     pub fn compliance_types(&self) -> std::option::Option<&[crate::model::ComplianceType]> {
         self.compliance_types.as_deref()
     }
-    /// <p>The maximum number of evaluation results returned on each page.
-    /// The default is 10. You cannot specify a number greater than 100. If
-    /// you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -19338,20 +18683,16 @@ impl std::fmt::Debug for DescribeComplianceByResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeComplianceByConfigRuleInput {
-    /// <p>Specify one or more Config rule names to filter the results
-    /// by rule.</p>
+    /// <p>Specify one or more Config rule names to filter the results by rule.</p>
     pub config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Filters the results by compliance.</p>
     /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
     pub compliance_types: std::option::Option<std::vec::Vec<crate::model::ComplianceType>>,
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeComplianceByConfigRuleInput {
-    /// <p>Specify one or more Config rule names to filter the results
-    /// by rule.</p>
+    /// <p>Specify one or more Config rule names to filter the results by rule.</p>
     pub fn config_rule_names(&self) -> std::option::Option<&[std::string::String]> {
         self.config_rule_names.as_deref()
     }
@@ -19360,9 +18701,7 @@ impl DescribeComplianceByConfigRuleInput {
     pub fn compliance_types(&self) -> std::option::Option<&[crate::model::ComplianceType]> {
         self.compliance_types.as_deref()
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -19381,23 +18720,17 @@ impl std::fmt::Debug for DescribeComplianceByConfigRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAggregationAuthorizationsInput {
-    /// <p>The maximum number of AggregationAuthorizations returned on
-    /// each page. The default is maximum. If you specify 0, Config uses
-    /// the default.</p>
+    /// <p>The maximum number of AggregationAuthorizations returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub limit: i32,
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAggregationAuthorizationsInput {
-    /// <p>The maximum number of AggregationAuthorizations returned on
-    /// each page. The default is maximum. If you specify 0, Config uses
-    /// the default.</p>
+    /// <p>The maximum number of AggregationAuthorizations returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -19464,16 +18797,11 @@ impl std::fmt::Debug for DescribeAggregateComplianceByConformancePacksInput {
 pub struct DescribeAggregateComplianceByConfigRulesInput {
     /// <p>The name of the configuration aggregator.</p>
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
-    /// <p>Filters the results by ConfigRuleComplianceFilters object.
-    /// </p>
+    /// <p>Filters the results by ConfigRuleComplianceFilters object. </p>
     pub filters: std::option::Option<crate::model::ConfigRuleComplianceFilters>,
-    /// <p>The maximum number of evaluation results returned on each page.
-    /// The default is
-    /// maximum.
-    /// If you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub limit: i32,
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAggregateComplianceByConfigRulesInput {
@@ -19481,20 +18809,15 @@ impl DescribeAggregateComplianceByConfigRulesInput {
     pub fn configuration_aggregator_name(&self) -> std::option::Option<&str> {
         self.configuration_aggregator_name.as_deref()
     }
-    /// <p>Filters the results by ConfigRuleComplianceFilters object.
-    /// </p>
+    /// <p>Filters the results by ConfigRuleComplianceFilters object. </p>
     pub fn filters(&self) -> std::option::Option<&crate::model::ConfigRuleComplianceFilters> {
         self.filters.as_ref()
     }
-    /// <p>The maximum number of evaluation results returned on each page.
-    /// The default is
-    /// maximum.
-    /// If you specify 0, Config uses the default.</p>
+    /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -19513,18 +18836,15 @@ impl std::fmt::Debug for DescribeAggregateComplianceByConfigRulesInput {
     }
 }
 
-/// <p>The input for the <a>DeliverConfigSnapshot</a>
-/// action.</p>
+/// <p>The input for the <code>DeliverConfigSnapshot</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeliverConfigSnapshotInput {
-    /// <p>The name of the delivery channel through which the snapshot is
-    /// delivered.</p>
+    /// <p>The name of the delivery channel through which the snapshot is delivered.</p>
     pub delivery_channel_name: std::option::Option<std::string::String>,
 }
 impl DeliverConfigSnapshotInput {
-    /// <p>The name of the delivery channel through which the snapshot is
-    /// delivered.</p>
+    /// <p>The name of the delivery channel through which the snapshot is delivered.</p>
     pub fn delivery_channel_name(&self) -> std::option::Option<&str> {
         self.delivery_channel_name.as_deref()
     }
@@ -19673,15 +18993,13 @@ impl std::fmt::Debug for DeleteRemediationConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePendingAggregationRequestInput {
-    /// <p>The 12-digit account ID of the account requesting to aggregate
-    /// data.</p>
+    /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
     pub requester_account_id: std::option::Option<std::string::String>,
     /// <p>The region requesting to aggregate data.</p>
     pub requester_aws_region: std::option::Option<std::string::String>,
 }
 impl DeletePendingAggregationRequestInput {
-    /// <p>The 12-digit account ID of the account requesting to aggregate
-    /// data.</p>
+    /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
     pub fn requester_account_id(&self) -> std::option::Option<&str> {
         self.requester_account_id.as_deref()
     }
@@ -19751,13 +19069,11 @@ impl std::fmt::Debug for DeleteOrganizationConfigRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEvaluationResultsInput {
-    /// <p>The name of the Config rule for which you want to delete
-    /// the evaluation results.</p>
+    /// <p>The name of the Config rule for which you want to delete the evaluation results.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
 }
 impl DeleteEvaluationResultsInput {
-    /// <p>The name of the Config rule for which you want to delete
-    /// the evaluation results.</p>
+    /// <p>The name of the Config rule for which you want to delete the evaluation results.</p>
     pub fn config_rule_name(&self) -> std::option::Option<&str> {
         self.config_rule_name.as_deref()
     }
@@ -19770,9 +19086,7 @@ impl std::fmt::Debug for DeleteEvaluationResultsInput {
     }
 }
 
-/// <p>The input for the <a>DeleteDeliveryChannel</a>
-/// action. The action accepts the following data, in JSON format.
-/// </p>
+/// <p>The input for the <code>DeleteDeliveryChannel</code> action. The action accepts the following data, in JSON format. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDeliveryChannelInput {
@@ -19814,20 +19128,15 @@ impl std::fmt::Debug for DeleteConformancePackInput {
     }
 }
 
-/// <p>The request object for the
-/// <code>DeleteConfigurationRecorder</code> action.</p>
+/// <p>The request object for the <code>DeleteConfigurationRecorder</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConfigurationRecorderInput {
-    /// <p>The name of the configuration recorder to be deleted. You can
-    /// retrieve the name of your configuration recorder by using the
-    /// <code>DescribeConfigurationRecorders</code> action.</p>
+    /// <p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>
     pub configuration_recorder_name: std::option::Option<std::string::String>,
 }
 impl DeleteConfigurationRecorderInput {
-    /// <p>The name of the configuration recorder to be deleted. You can
-    /// retrieve the name of your configuration recorder by using the
-    /// <code>DescribeConfigurationRecorders</code> action.</p>
+    /// <p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>
     pub fn configuration_recorder_name(&self) -> std::option::Option<&str> {
         self.configuration_recorder_name.as_deref()
     }
@@ -19871,13 +19180,11 @@ impl std::fmt::Debug for DeleteConfigurationAggregatorInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConfigRuleInput {
-    /// <p>The name of the Config rule that you want to
-    /// delete.</p>
+    /// <p>The name of the Config rule that you want to delete.</p>
     pub config_rule_name: std::option::Option<std::string::String>,
 }
 impl DeleteConfigRuleInput {
-    /// <p>The name of the Config rule that you want to
-    /// delete.</p>
+    /// <p>The name of the Config rule that you want to delete.</p>
     pub fn config_rule_name(&self) -> std::option::Option<&str> {
         self.config_rule_name.as_deref()
     }
@@ -19894,15 +19201,13 @@ impl std::fmt::Debug for DeleteConfigRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAggregationAuthorizationInput {
-    /// <p>The 12-digit account ID of the account authorized to aggregate
-    /// data.</p>
+    /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
     pub authorized_account_id: std::option::Option<std::string::String>,
     /// <p>The region authorized to collect aggregated data.</p>
     pub authorized_aws_region: std::option::Option<std::string::String>,
 }
 impl DeleteAggregationAuthorizationInput {
-    /// <p>The 12-digit account ID of the account authorized to aggregate
-    /// data.</p>
+    /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
     pub fn authorized_account_id(&self) -> std::option::Option<&str> {
         self.authorized_account_id.as_deref()
     }
@@ -19924,15 +19229,11 @@ impl std::fmt::Debug for DeleteAggregationAuthorizationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetResourceConfigInput {
-    /// <p>A list of resource keys to be processed with the current
-    /// request. Each element in the list consists of the resource type and
-    /// resource ID.</p>
+    /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
     pub resource_keys: std::option::Option<std::vec::Vec<crate::model::ResourceKey>>,
 }
 impl BatchGetResourceConfigInput {
-    /// <p>A list of resource keys to be processed with the current
-    /// request. Each element in the list consists of the resource type and
-    /// resource ID.</p>
+    /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
     pub fn resource_keys(&self) -> std::option::Option<&[crate::model::ResourceKey]> {
         self.resource_keys.as_deref()
     }

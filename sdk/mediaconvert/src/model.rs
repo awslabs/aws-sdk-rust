@@ -1102,12 +1102,9 @@ pub mod preset_settings {
         /// To override the contents of this collection use [`set_audio_descriptions`](Self::set_audio_descriptions).
         ///
         /// (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one instance of (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding settings.
-        pub fn audio_descriptions(
-            mut self,
-            input: impl Into<crate::model::AudioDescription>,
-        ) -> Self {
+        pub fn audio_descriptions(mut self, input: crate::model::AudioDescription) -> Self {
             let mut v = self.audio_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.audio_descriptions = Some(v);
             self
         }
@@ -1126,10 +1123,10 @@ pub mod preset_settings {
         /// This object holds groups of settings related to captions for one output. For each output that has captions, include one instance of CaptionDescriptions.
         pub fn caption_descriptions(
             mut self,
-            input: impl Into<crate::model::CaptionDescriptionPreset>,
+            input: crate::model::CaptionDescriptionPreset,
         ) -> Self {
             let mut v = self.caption_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.caption_descriptions = Some(v);
             self
         }
@@ -1201,7 +1198,7 @@ pub struct VideoDescription {
     pub crop: std::option::Option<crate::model::Rectangle>,
     /// Applies only to 29.97 fps outputs. When this feature is enabled, the service will use drop-frame timecode on outputs. If it is not possible to use drop-frame timecode, the system will fall back to non-drop-frame. This setting is enabled by default when Timecode insertion (TimecodeInsertion) is enabled.
     pub drop_frame_timecode: std::option::Option<crate::model::DropFrameTimecode>,
-    /// Applies only if you set AFD Signaling(AfdSignaling) to Fixed (FIXED). Use Fixed (FixedAfd) to specify a four-bit AFD value which the service will write on all  frames of this video output.
+    /// Applies only if you set AFD Signaling(AfdSignaling) to Fixed (FIXED). Use Fixed (FixedAfd) to specify a four-bit AFD value which the service will write on all frames of this video output.
     pub fixed_afd: i32,
     /// Use the Height (Height) setting to define the video resolution height for this output. Specify in pixels. If you don't provide a value here, the service will use the input height.
     pub height: i32,
@@ -1213,7 +1210,7 @@ pub struct VideoDescription {
     pub scaling_behavior: std::option::Option<crate::model::ScalingBehavior>,
     /// Use Sharpness (Sharpness) setting to specify the strength of anti-aliasing. This setting changes the width of the anti-alias filter kernel used for scaling. Sharpness only applies if your output resolution is different from your input resolution. 0 is the softest setting, 100 the sharpest, and 50 recommended for most content.
     pub sharpness: i32,
-    /// Applies only to H.264, H.265, MPEG2, and ProRes outputs. Only enable Timecode insertion when the input frame rate is identical to the output frame rate. To include timecodes in this output, set Timecode insertion (VideoTimecodeInsertion) to PIC_TIMING_SEI. To leave them out, set it to DISABLED. Default is DISABLED. When the service inserts timecodes in an output, by default, it uses any embedded timecodes from the input. If none are present, the service will set the timecode for the first output frame to zero. To change this default behavior, adjust the settings under Timecode configuration (TimecodeConfig). In the console, these settings are located under Job > Job settings > Timecode configuration. Note - Timecode source under input settings (InputTimecodeSource) does not affect the timecodes that are inserted in the output. Source under Job settings > Timecode configuration (TimecodeSource) does.
+    /// Applies only to H.264, H.265, MPEG2, and ProRes outputs. Only enable Timecode insertion when the input frame rate is identical to the output frame rate. To include timecodes in this output, set Timecode insertion (VideoTimecodeInsertion) to PIC_TIMING_SEI. To leave them out, set it to DISABLED. Default is DISABLED. When the service inserts timecodes in an output, by default, it uses any embedded timecodes from the input. If none are present, the service will set the timecode for the first output frame to zero. To change this default behavior, adjust the settings under Timecode configuration (TimecodeConfig). In the console, these settings are located under Job &gt; Job settings &gt; Timecode configuration. Note - Timecode source under input settings (InputTimecodeSource) does not affect the timecodes that are inserted in the output. Source under Job settings &gt; Timecode configuration (TimecodeSource) does.
     pub timecode_insertion: std::option::Option<crate::model::VideoTimecodeInsertion>,
     /// Find additional transcoding features under Preprocessors (VideoPreprocessors). Enable the features at each output individually. These features are disabled by default.
     pub video_preprocessors: std::option::Option<crate::model::VideoPreprocessor>,
@@ -1245,7 +1242,7 @@ impl VideoDescription {
     pub fn drop_frame_timecode(&self) -> std::option::Option<&crate::model::DropFrameTimecode> {
         self.drop_frame_timecode.as_ref()
     }
-    /// Applies only if you set AFD Signaling(AfdSignaling) to Fixed (FIXED). Use Fixed (FixedAfd) to specify a four-bit AFD value which the service will write on all  frames of this video output.
+    /// Applies only if you set AFD Signaling(AfdSignaling) to Fixed (FIXED). Use Fixed (FixedAfd) to specify a four-bit AFD value which the service will write on all frames of this video output.
     pub fn fixed_afd(&self) -> i32 {
         self.fixed_afd
     }
@@ -1269,7 +1266,7 @@ impl VideoDescription {
     pub fn sharpness(&self) -> i32 {
         self.sharpness
     }
-    /// Applies only to H.264, H.265, MPEG2, and ProRes outputs. Only enable Timecode insertion when the input frame rate is identical to the output frame rate. To include timecodes in this output, set Timecode insertion (VideoTimecodeInsertion) to PIC_TIMING_SEI. To leave them out, set it to DISABLED. Default is DISABLED. When the service inserts timecodes in an output, by default, it uses any embedded timecodes from the input. If none are present, the service will set the timecode for the first output frame to zero. To change this default behavior, adjust the settings under Timecode configuration (TimecodeConfig). In the console, these settings are located under Job > Job settings > Timecode configuration. Note - Timecode source under input settings (InputTimecodeSource) does not affect the timecodes that are inserted in the output. Source under Job settings > Timecode configuration (TimecodeSource) does.
+    /// Applies only to H.264, H.265, MPEG2, and ProRes outputs. Only enable Timecode insertion when the input frame rate is identical to the output frame rate. To include timecodes in this output, set Timecode insertion (VideoTimecodeInsertion) to PIC_TIMING_SEI. To leave them out, set it to DISABLED. Default is DISABLED. When the service inserts timecodes in an output, by default, it uses any embedded timecodes from the input. If none are present, the service will set the timecode for the first output frame to zero. To change this default behavior, adjust the settings under Timecode configuration (TimecodeConfig). In the console, these settings are located under Job &gt; Job settings &gt; Timecode configuration. Note - Timecode source under input settings (InputTimecodeSource) does not affect the timecodes that are inserted in the output. Source under Job settings &gt; Timecode configuration (TimecodeSource) does.
     pub fn timecode_insertion(&self) -> std::option::Option<&crate::model::VideoTimecodeInsertion> {
         self.timecode_insertion.as_ref()
     }
@@ -1401,12 +1398,12 @@ pub mod video_description {
             self.drop_frame_timecode = input;
             self
         }
-        /// Applies only if you set AFD Signaling(AfdSignaling) to Fixed (FIXED). Use Fixed (FixedAfd) to specify a four-bit AFD value which the service will write on all  frames of this video output.
+        /// Applies only if you set AFD Signaling(AfdSignaling) to Fixed (FIXED). Use Fixed (FixedAfd) to specify a four-bit AFD value which the service will write on all frames of this video output.
         pub fn fixed_afd(mut self, input: i32) -> Self {
             self.fixed_afd = Some(input);
             self
         }
-        /// Applies only if you set AFD Signaling(AfdSignaling) to Fixed (FIXED). Use Fixed (FixedAfd) to specify a four-bit AFD value which the service will write on all  frames of this video output.
+        /// Applies only if you set AFD Signaling(AfdSignaling) to Fixed (FIXED). Use Fixed (FixedAfd) to specify a four-bit AFD value which the service will write on all frames of this video output.
         pub fn set_fixed_afd(mut self, input: std::option::Option<i32>) -> Self {
             self.fixed_afd = input;
             self
@@ -1467,12 +1464,12 @@ pub mod video_description {
             self.sharpness = input;
             self
         }
-        /// Applies only to H.264, H.265, MPEG2, and ProRes outputs. Only enable Timecode insertion when the input frame rate is identical to the output frame rate. To include timecodes in this output, set Timecode insertion (VideoTimecodeInsertion) to PIC_TIMING_SEI. To leave them out, set it to DISABLED. Default is DISABLED. When the service inserts timecodes in an output, by default, it uses any embedded timecodes from the input. If none are present, the service will set the timecode for the first output frame to zero. To change this default behavior, adjust the settings under Timecode configuration (TimecodeConfig). In the console, these settings are located under Job > Job settings > Timecode configuration. Note - Timecode source under input settings (InputTimecodeSource) does not affect the timecodes that are inserted in the output. Source under Job settings > Timecode configuration (TimecodeSource) does.
+        /// Applies only to H.264, H.265, MPEG2, and ProRes outputs. Only enable Timecode insertion when the input frame rate is identical to the output frame rate. To include timecodes in this output, set Timecode insertion (VideoTimecodeInsertion) to PIC_TIMING_SEI. To leave them out, set it to DISABLED. Default is DISABLED. When the service inserts timecodes in an output, by default, it uses any embedded timecodes from the input. If none are present, the service will set the timecode for the first output frame to zero. To change this default behavior, adjust the settings under Timecode configuration (TimecodeConfig). In the console, these settings are located under Job &gt; Job settings &gt; Timecode configuration. Note - Timecode source under input settings (InputTimecodeSource) does not affect the timecodes that are inserted in the output. Source under Job settings &gt; Timecode configuration (TimecodeSource) does.
         pub fn timecode_insertion(mut self, input: crate::model::VideoTimecodeInsertion) -> Self {
             self.timecode_insertion = Some(input);
             self
         }
-        /// Applies only to H.264, H.265, MPEG2, and ProRes outputs. Only enable Timecode insertion when the input frame rate is identical to the output frame rate. To include timecodes in this output, set Timecode insertion (VideoTimecodeInsertion) to PIC_TIMING_SEI. To leave them out, set it to DISABLED. Default is DISABLED. When the service inserts timecodes in an output, by default, it uses any embedded timecodes from the input. If none are present, the service will set the timecode for the first output frame to zero. To change this default behavior, adjust the settings under Timecode configuration (TimecodeConfig). In the console, these settings are located under Job > Job settings > Timecode configuration. Note - Timecode source under input settings (InputTimecodeSource) does not affect the timecodes that are inserted in the output. Source under Job settings > Timecode configuration (TimecodeSource) does.
+        /// Applies only to H.264, H.265, MPEG2, and ProRes outputs. Only enable Timecode insertion when the input frame rate is identical to the output frame rate. To include timecodes in this output, set Timecode insertion (VideoTimecodeInsertion) to PIC_TIMING_SEI. To leave them out, set it to DISABLED. Default is DISABLED. When the service inserts timecodes in an output, by default, it uses any embedded timecodes from the input. If none are present, the service will set the timecode for the first output frame to zero. To change this default behavior, adjust the settings under Timecode configuration (TimecodeConfig). In the console, these settings are located under Job &gt; Job settings &gt; Timecode configuration. Note - Timecode source under input settings (InputTimecodeSource) does not affect the timecodes that are inserted in the output. Source under Job settings &gt; Timecode configuration (TimecodeSource) does.
         pub fn set_timecode_insertion(
             mut self,
             input: std::option::Option<crate::model::VideoTimecodeInsertion>,
@@ -2324,9 +2321,12 @@ impl NoiseReducer {
 pub struct NoiseReducerTemporalFilterSettings {
     /// Use Aggressive mode for content that has complex motion. Higher values produce stronger temporal filtering. This filters highly complex scenes more aggressively and creates better VQ for low bitrate outputs.
     pub aggressive_mode: i32,
-    /// Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can use this setting to apply sharpening. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply filtering, depending on input type and quality. When you set Noise reducer to Temporal, your output bandwidth is reduced. When Post temporal sharpening is also enabled, that bandwidth reduction is smaller.
+    /// When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the sharpness of your output is reduced. You can optionally use Post temporal sharpening (PostTemporalSharpening) to apply sharpening to the edges of your output. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled (ENABLED), specify how much sharpening is applied using Post temporal sharpening strength (PostTemporalSharpeningStrength). Set Post temporal sharpening to Disabled (DISABLED) to not apply sharpening.
     pub post_temporal_sharpening:
         std::option::Option<crate::model::NoiseFilterPostTemporalSharpening>,
+    /// Use Post temporal sharpening strength (PostTemporalSharpeningStrength) to define the amount of sharpening the transcoder applies to your output. Set Post temporal sharpening strength to Low (LOW), or leave blank, to apply a low amount of sharpening. Set Post temporal sharpening strength to Medium (MEDIUM) to apply medium amount of sharpening. Set Post temporal sharpening strength to High (HIGH) to apply a high amount of sharpening.
+    pub post_temporal_sharpening_strength:
+        std::option::Option<crate::model::NoiseFilterPostTemporalSharpeningStrength>,
     /// The speed of the filter (higher number is faster). Low setting reduces bit rate at the cost of transcode time, high setting improves transcode time at the cost of bit rate.
     pub speed: i32,
     /// Specify the strength of the noise reducing filter on this output. Higher values produce stronger filtering. We recommend the following value ranges, depending on the result that you want: * 0-2 for complexity reduction with minimal sharpness loss * 2-8 for complexity reduction with image preservation * 8-16 for a high level of complexity reduction
@@ -2337,11 +2337,17 @@ impl NoiseReducerTemporalFilterSettings {
     pub fn aggressive_mode(&self) -> i32 {
         self.aggressive_mode
     }
-    /// Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can use this setting to apply sharpening. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply filtering, depending on input type and quality. When you set Noise reducer to Temporal, your output bandwidth is reduced. When Post temporal sharpening is also enabled, that bandwidth reduction is smaller.
+    /// When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the sharpness of your output is reduced. You can optionally use Post temporal sharpening (PostTemporalSharpening) to apply sharpening to the edges of your output. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled (ENABLED), specify how much sharpening is applied using Post temporal sharpening strength (PostTemporalSharpeningStrength). Set Post temporal sharpening to Disabled (DISABLED) to not apply sharpening.
     pub fn post_temporal_sharpening(
         &self,
     ) -> std::option::Option<&crate::model::NoiseFilterPostTemporalSharpening> {
         self.post_temporal_sharpening.as_ref()
+    }
+    /// Use Post temporal sharpening strength (PostTemporalSharpeningStrength) to define the amount of sharpening the transcoder applies to your output. Set Post temporal sharpening strength to Low (LOW), or leave blank, to apply a low amount of sharpening. Set Post temporal sharpening strength to Medium (MEDIUM) to apply medium amount of sharpening. Set Post temporal sharpening strength to High (HIGH) to apply a high amount of sharpening.
+    pub fn post_temporal_sharpening_strength(
+        &self,
+    ) -> std::option::Option<&crate::model::NoiseFilterPostTemporalSharpeningStrength> {
+        self.post_temporal_sharpening_strength.as_ref()
     }
     /// The speed of the filter (higher number is faster). Low setting reduces bit rate at the cost of transcode time, high setting improves transcode time at the cost of bit rate.
     pub fn speed(&self) -> i32 {
@@ -2357,6 +2363,10 @@ impl std::fmt::Debug for NoiseReducerTemporalFilterSettings {
         let mut formatter = f.debug_struct("NoiseReducerTemporalFilterSettings");
         formatter.field("aggressive_mode", &self.aggressive_mode);
         formatter.field("post_temporal_sharpening", &self.post_temporal_sharpening);
+        formatter.field(
+            "post_temporal_sharpening_strength",
+            &self.post_temporal_sharpening_strength,
+        );
         formatter.field("speed", &self.speed);
         formatter.field("strength", &self.strength);
         formatter.finish()
@@ -2371,6 +2381,8 @@ pub mod noise_reducer_temporal_filter_settings {
         pub(crate) aggressive_mode: std::option::Option<i32>,
         pub(crate) post_temporal_sharpening:
             std::option::Option<crate::model::NoiseFilterPostTemporalSharpening>,
+        pub(crate) post_temporal_sharpening_strength:
+            std::option::Option<crate::model::NoiseFilterPostTemporalSharpeningStrength>,
         pub(crate) speed: std::option::Option<i32>,
         pub(crate) strength: std::option::Option<i32>,
     }
@@ -2385,7 +2397,7 @@ pub mod noise_reducer_temporal_filter_settings {
             self.aggressive_mode = input;
             self
         }
-        /// Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can use this setting to apply sharpening. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply filtering, depending on input type and quality. When you set Noise reducer to Temporal, your output bandwidth is reduced. When Post temporal sharpening is also enabled, that bandwidth reduction is smaller.
+        /// When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the sharpness of your output is reduced. You can optionally use Post temporal sharpening (PostTemporalSharpening) to apply sharpening to the edges of your output. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled (ENABLED), specify how much sharpening is applied using Post temporal sharpening strength (PostTemporalSharpeningStrength). Set Post temporal sharpening to Disabled (DISABLED) to not apply sharpening.
         pub fn post_temporal_sharpening(
             mut self,
             input: crate::model::NoiseFilterPostTemporalSharpening,
@@ -2393,12 +2405,28 @@ pub mod noise_reducer_temporal_filter_settings {
             self.post_temporal_sharpening = Some(input);
             self
         }
-        /// Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can use this setting to apply sharpening. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply filtering, depending on input type and quality. When you set Noise reducer to Temporal, your output bandwidth is reduced. When Post temporal sharpening is also enabled, that bandwidth reduction is smaller.
+        /// When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the sharpness of your output is reduced. You can optionally use Post temporal sharpening (PostTemporalSharpening) to apply sharpening to the edges of your output. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled (ENABLED), specify how much sharpening is applied using Post temporal sharpening strength (PostTemporalSharpeningStrength). Set Post temporal sharpening to Disabled (DISABLED) to not apply sharpening.
         pub fn set_post_temporal_sharpening(
             mut self,
             input: std::option::Option<crate::model::NoiseFilterPostTemporalSharpening>,
         ) -> Self {
             self.post_temporal_sharpening = input;
+            self
+        }
+        /// Use Post temporal sharpening strength (PostTemporalSharpeningStrength) to define the amount of sharpening the transcoder applies to your output. Set Post temporal sharpening strength to Low (LOW), or leave blank, to apply a low amount of sharpening. Set Post temporal sharpening strength to Medium (MEDIUM) to apply medium amount of sharpening. Set Post temporal sharpening strength to High (HIGH) to apply a high amount of sharpening.
+        pub fn post_temporal_sharpening_strength(
+            mut self,
+            input: crate::model::NoiseFilterPostTemporalSharpeningStrength,
+        ) -> Self {
+            self.post_temporal_sharpening_strength = Some(input);
+            self
+        }
+        /// Use Post temporal sharpening strength (PostTemporalSharpeningStrength) to define the amount of sharpening the transcoder applies to your output. Set Post temporal sharpening strength to Low (LOW), or leave blank, to apply a low amount of sharpening. Set Post temporal sharpening strength to Medium (MEDIUM) to apply medium amount of sharpening. Set Post temporal sharpening strength to High (HIGH) to apply a high amount of sharpening.
+        pub fn set_post_temporal_sharpening_strength(
+            mut self,
+            input: std::option::Option<crate::model::NoiseFilterPostTemporalSharpeningStrength>,
+        ) -> Self {
+            self.post_temporal_sharpening_strength = input;
             self
         }
         /// The speed of the filter (higher number is faster). Low setting reduces bit rate at the cost of transcode time, high setting improves transcode time at the cost of bit rate.
@@ -2426,6 +2454,7 @@ pub mod noise_reducer_temporal_filter_settings {
             crate::model::NoiseReducerTemporalFilterSettings {
                 aggressive_mode: self.aggressive_mode.unwrap_or_default(),
                 post_temporal_sharpening: self.post_temporal_sharpening,
+                post_temporal_sharpening_strength: self.post_temporal_sharpening_strength,
                 speed: self.speed.unwrap_or_default(),
                 strength: self.strength.unwrap_or_default(),
             }
@@ -2439,7 +2468,66 @@ impl NoiseReducerTemporalFilterSettings {
     }
 }
 
-/// Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can use this setting to apply sharpening. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply filtering, depending on input type and quality. When you set Noise reducer to Temporal, your output bandwidth is reduced. When Post temporal sharpening is also enabled, that bandwidth reduction is smaller.
+/// Use Post temporal sharpening strength (PostTemporalSharpeningStrength) to define the amount of sharpening the transcoder applies to your output. Set Post temporal sharpening strength to Low (LOW), or leave blank, to apply a low amount of sharpening. Set Post temporal sharpening strength to Medium (MEDIUM) to apply medium amount of sharpening. Set Post temporal sharpening strength to High (HIGH) to apply a high amount of sharpening.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum NoiseFilterPostTemporalSharpeningStrength {
+    #[allow(missing_docs)] // documentation missing in model
+    High,
+    #[allow(missing_docs)] // documentation missing in model
+    Low,
+    #[allow(missing_docs)] // documentation missing in model
+    Medium,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for NoiseFilterPostTemporalSharpeningStrength {
+    fn from(s: &str) -> Self {
+        match s {
+            "HIGH" => NoiseFilterPostTemporalSharpeningStrength::High,
+            "LOW" => NoiseFilterPostTemporalSharpeningStrength::Low,
+            "MEDIUM" => NoiseFilterPostTemporalSharpeningStrength::Medium,
+            other => NoiseFilterPostTemporalSharpeningStrength::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for NoiseFilterPostTemporalSharpeningStrength {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(NoiseFilterPostTemporalSharpeningStrength::from(s))
+    }
+}
+impl NoiseFilterPostTemporalSharpeningStrength {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            NoiseFilterPostTemporalSharpeningStrength::High => "HIGH",
+            NoiseFilterPostTemporalSharpeningStrength::Low => "LOW",
+            NoiseFilterPostTemporalSharpeningStrength::Medium => "MEDIUM",
+            NoiseFilterPostTemporalSharpeningStrength::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["HIGH", "LOW", "MEDIUM"]
+    }
+}
+impl AsRef<str> for NoiseFilterPostTemporalSharpeningStrength {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the sharpness of your output is reduced. You can optionally use Post temporal sharpening (PostTemporalSharpening) to apply sharpening to the edges of your output. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled (ENABLED), specify how much sharpening is applied using Post temporal sharpening strength (PostTemporalSharpeningStrength). Set Post temporal sharpening to Disabled (DISABLED) to not apply sharpening.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2770,12 +2858,9 @@ pub mod image_inserter {
         /// To override the contents of this collection use [`set_insertable_images`](Self::set_insertable_images).
         ///
         /// Specify the images that you want to overlay on your video. The images must be PNG or TGA files.
-        pub fn insertable_images(
-            mut self,
-            input: impl Into<crate::model::InsertableImage>,
-        ) -> Self {
+        pub fn insertable_images(mut self, input: crate::model::InsertableImage) -> Self {
             let mut v = self.insertable_images.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.insertable_images = Some(v);
             self
         }
@@ -3412,7 +3497,7 @@ impl DolbyVisionLevel6Metadata {
 pub struct Deinterlacer {
     /// Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace (DEINTERLACE) or Adaptive (ADAPTIVE). Motion adaptive interpolate (INTERPOLATE) produces sharper pictures, while blend (BLEND) produces smoother motion. Use (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a ticker, such as a scrolling headline at the bottom of the frame.
     pub algorithm: std::option::Option<crate::model::DeinterlaceAlgorithm>,
-    /// - When set to NORMAL (default), the deinterlacer does not convert frames that are tagged  in metadata as progressive. It will only convert those that are tagged as some other type. - When set to FORCE_ALL_FRAMES, the deinterlacer converts every frame to progressive - even those that are already tagged as progressive. Turn Force mode on only if there is  a good chance that the metadata has tagged frames as progressive when they are not  progressive. Do not turn on otherwise; processing frames that are already progressive  into progressive will probably result in lower quality video.
+    /// - When set to NORMAL (default), the deinterlacer does not convert frames that are tagged in metadata as progressive. It will only convert those that are tagged as some other type. - When set to FORCE_ALL_FRAMES, the deinterlacer converts every frame to progressive - even those that are already tagged as progressive. Turn Force mode on only if there is a good chance that the metadata has tagged frames as progressive when they are not progressive. Do not turn on otherwise; processing frames that are already progressive into progressive will probably result in lower quality video.
     pub control: std::option::Option<crate::model::DeinterlacerControl>,
     /// Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is Deinterlace. - Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive 23.976p. - Adaptive auto-detects and converts to progressive.
     pub mode: std::option::Option<crate::model::DeinterlacerMode>,
@@ -3422,7 +3507,7 @@ impl Deinterlacer {
     pub fn algorithm(&self) -> std::option::Option<&crate::model::DeinterlaceAlgorithm> {
         self.algorithm.as_ref()
     }
-    /// - When set to NORMAL (default), the deinterlacer does not convert frames that are tagged  in metadata as progressive. It will only convert those that are tagged as some other type. - When set to FORCE_ALL_FRAMES, the deinterlacer converts every frame to progressive - even those that are already tagged as progressive. Turn Force mode on only if there is  a good chance that the metadata has tagged frames as progressive when they are not  progressive. Do not turn on otherwise; processing frames that are already progressive  into progressive will probably result in lower quality video.
+    /// - When set to NORMAL (default), the deinterlacer does not convert frames that are tagged in metadata as progressive. It will only convert those that are tagged as some other type. - When set to FORCE_ALL_FRAMES, the deinterlacer converts every frame to progressive - even those that are already tagged as progressive. Turn Force mode on only if there is a good chance that the metadata has tagged frames as progressive when they are not progressive. Do not turn on otherwise; processing frames that are already progressive into progressive will probably result in lower quality video.
     pub fn control(&self) -> std::option::Option<&crate::model::DeinterlacerControl> {
         self.control.as_ref()
     }
@@ -3464,12 +3549,12 @@ pub mod deinterlacer {
             self.algorithm = input;
             self
         }
-        /// - When set to NORMAL (default), the deinterlacer does not convert frames that are tagged  in metadata as progressive. It will only convert those that are tagged as some other type. - When set to FORCE_ALL_FRAMES, the deinterlacer converts every frame to progressive - even those that are already tagged as progressive. Turn Force mode on only if there is  a good chance that the metadata has tagged frames as progressive when they are not  progressive. Do not turn on otherwise; processing frames that are already progressive  into progressive will probably result in lower quality video.
+        /// - When set to NORMAL (default), the deinterlacer does not convert frames that are tagged in metadata as progressive. It will only convert those that are tagged as some other type. - When set to FORCE_ALL_FRAMES, the deinterlacer converts every frame to progressive - even those that are already tagged as progressive. Turn Force mode on only if there is a good chance that the metadata has tagged frames as progressive when they are not progressive. Do not turn on otherwise; processing frames that are already progressive into progressive will probably result in lower quality video.
         pub fn control(mut self, input: crate::model::DeinterlacerControl) -> Self {
             self.control = Some(input);
             self
         }
-        /// - When set to NORMAL (default), the deinterlacer does not convert frames that are tagged  in metadata as progressive. It will only convert those that are tagged as some other type. - When set to FORCE_ALL_FRAMES, the deinterlacer converts every frame to progressive - even those that are already tagged as progressive. Turn Force mode on only if there is  a good chance that the metadata has tagged frames as progressive when they are not  progressive. Do not turn on otherwise; processing frames that are already progressive  into progressive will probably result in lower quality video.
+        /// - When set to NORMAL (default), the deinterlacer does not convert frames that are tagged in metadata as progressive. It will only convert those that are tagged as some other type. - When set to FORCE_ALL_FRAMES, the deinterlacer converts every frame to progressive - even those that are already tagged as progressive. Turn Force mode on only if there is a good chance that the metadata has tagged frames as progressive when they are not progressive. Do not turn on otherwise; processing frames that are already progressive into progressive will probably result in lower quality video.
         pub fn set_control(
             mut self,
             input: std::option::Option<crate::model::DeinterlacerControl>,
@@ -3936,7 +4021,7 @@ pub struct Hdr10Metadata {
     pub green_primary_x: i32,
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
     pub green_primary_y: i32,
-    /// Maximum light level among all samples in the coded video sequence, in units of candelas per square meter.  This setting doesn't have a default value; you must specify a value that is suitable for the content.
+    /// Maximum light level among all samples in the coded video sequence, in units of candelas per square meter. This setting doesn't have a default value; you must specify a value that is suitable for the content.
     pub max_content_light_level: i32,
     /// Maximum average light level of any frame in the coded video sequence, in units of candelas per square meter. This setting doesn't have a default value; you must specify a value that is suitable for the content.
     pub max_frame_average_light_level: i32,
@@ -3970,7 +4055,7 @@ impl Hdr10Metadata {
     pub fn green_primary_y(&self) -> i32 {
         self.green_primary_y
     }
-    /// Maximum light level among all samples in the coded video sequence, in units of candelas per square meter.  This setting doesn't have a default value; you must specify a value that is suitable for the content.
+    /// Maximum light level among all samples in the coded video sequence, in units of candelas per square meter. This setting doesn't have a default value; you must specify a value that is suitable for the content.
     pub fn max_content_light_level(&self) -> i32 {
         self.max_content_light_level
     }
@@ -4084,12 +4169,12 @@ pub mod hdr10_metadata {
             self.green_primary_y = input;
             self
         }
-        /// Maximum light level among all samples in the coded video sequence, in units of candelas per square meter.  This setting doesn't have a default value; you must specify a value that is suitable for the content.
+        /// Maximum light level among all samples in the coded video sequence, in units of candelas per square meter. This setting doesn't have a default value; you must specify a value that is suitable for the content.
         pub fn max_content_light_level(mut self, input: i32) -> Self {
             self.max_content_light_level = Some(input);
             self
         }
-        /// Maximum light level among all samples in the coded video sequence, in units of candelas per square meter.  This setting doesn't have a default value; you must specify a value that is suitable for the content.
+        /// Maximum light level among all samples in the coded video sequence, in units of candelas per square meter. This setting doesn't have a default value; you must specify a value that is suitable for the content.
         pub fn set_max_content_light_level(mut self, input: std::option::Option<i32>) -> Self {
             self.max_content_light_level = input;
             self
@@ -4662,33 +4747,33 @@ impl AsRef<str> for ColorMetadata {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VideoCodecSettings {
-    /// Required when you set Codec, under VideoDescription>CodecSettings to the value AV1.
+    /// Required when you set Codec, under VideoDescription&gt;CodecSettings to the value AV1.
     pub av1_settings: std::option::Option<crate::model::Av1Settings>,
     /// Required when you choose AVC-Intra for your output video codec. For more information about the AVC-Intra settings, see the relevant specification. For detailed information about SD and HD in AVC-Intra, see https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-Intra, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
     pub avc_intra_settings: std::option::Option<crate::model::AvcIntraSettings>,
-    /// Specifies the video codec. This must be equal to one of the enum values defined by the object  VideoCodec.
+    /// Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
     pub codec: std::option::Option<crate::model::VideoCodec>,
-    /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value FRAME_CAPTURE.
+    /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value FRAME_CAPTURE.
     pub frame_capture_settings: std::option::Option<crate::model::FrameCaptureSettings>,
-    /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value H_264.
+    /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value H_264.
     pub h264_settings: std::option::Option<crate::model::H264Settings>,
     /// Settings for H265 codec
     pub h265_settings: std::option::Option<crate::model::H265Settings>,
-    /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value MPEG2.
+    /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value MPEG2.
     pub mpeg2_settings: std::option::Option<crate::model::Mpeg2Settings>,
-    /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value PRORES.
+    /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value PRORES.
     pub prores_settings: std::option::Option<crate::model::ProresSettings>,
-    /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VC3
+    /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value VC3
     pub vc3_settings: std::option::Option<crate::model::Vc3Settings>,
-    /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP8.
+    /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value VP8.
     pub vp8_settings: std::option::Option<crate::model::Vp8Settings>,
-    /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP9.
+    /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value VP9.
     pub vp9_settings: std::option::Option<crate::model::Vp9Settings>,
-    /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value XAVC.
+    /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value XAVC.
     pub xavc_settings: std::option::Option<crate::model::XavcSettings>,
 }
 impl VideoCodecSettings {
-    /// Required when you set Codec, under VideoDescription>CodecSettings to the value AV1.
+    /// Required when you set Codec, under VideoDescription&gt;CodecSettings to the value AV1.
     pub fn av1_settings(&self) -> std::option::Option<&crate::model::Av1Settings> {
         self.av1_settings.as_ref()
     }
@@ -4696,17 +4781,17 @@ impl VideoCodecSettings {
     pub fn avc_intra_settings(&self) -> std::option::Option<&crate::model::AvcIntraSettings> {
         self.avc_intra_settings.as_ref()
     }
-    /// Specifies the video codec. This must be equal to one of the enum values defined by the object  VideoCodec.
+    /// Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
     pub fn codec(&self) -> std::option::Option<&crate::model::VideoCodec> {
         self.codec.as_ref()
     }
-    /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value FRAME_CAPTURE.
+    /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value FRAME_CAPTURE.
     pub fn frame_capture_settings(
         &self,
     ) -> std::option::Option<&crate::model::FrameCaptureSettings> {
         self.frame_capture_settings.as_ref()
     }
-    /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value H_264.
+    /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value H_264.
     pub fn h264_settings(&self) -> std::option::Option<&crate::model::H264Settings> {
         self.h264_settings.as_ref()
     }
@@ -4714,27 +4799,27 @@ impl VideoCodecSettings {
     pub fn h265_settings(&self) -> std::option::Option<&crate::model::H265Settings> {
         self.h265_settings.as_ref()
     }
-    /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value MPEG2.
+    /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value MPEG2.
     pub fn mpeg2_settings(&self) -> std::option::Option<&crate::model::Mpeg2Settings> {
         self.mpeg2_settings.as_ref()
     }
-    /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value PRORES.
+    /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value PRORES.
     pub fn prores_settings(&self) -> std::option::Option<&crate::model::ProresSettings> {
         self.prores_settings.as_ref()
     }
-    /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VC3
+    /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value VC3
     pub fn vc3_settings(&self) -> std::option::Option<&crate::model::Vc3Settings> {
         self.vc3_settings.as_ref()
     }
-    /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP8.
+    /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value VP8.
     pub fn vp8_settings(&self) -> std::option::Option<&crate::model::Vp8Settings> {
         self.vp8_settings.as_ref()
     }
-    /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP9.
+    /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value VP9.
     pub fn vp9_settings(&self) -> std::option::Option<&crate::model::Vp9Settings> {
         self.vp9_settings.as_ref()
     }
-    /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value XAVC.
+    /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value XAVC.
     pub fn xavc_settings(&self) -> std::option::Option<&crate::model::XavcSettings> {
         self.xavc_settings.as_ref()
     }
@@ -4777,12 +4862,12 @@ pub mod video_codec_settings {
         pub(crate) xavc_settings: std::option::Option<crate::model::XavcSettings>,
     }
     impl Builder {
-        /// Required when you set Codec, under VideoDescription>CodecSettings to the value AV1.
+        /// Required when you set Codec, under VideoDescription&gt;CodecSettings to the value AV1.
         pub fn av1_settings(mut self, input: crate::model::Av1Settings) -> Self {
             self.av1_settings = Some(input);
             self
         }
-        /// Required when you set Codec, under VideoDescription>CodecSettings to the value AV1.
+        /// Required when you set Codec, under VideoDescription&gt;CodecSettings to the value AV1.
         pub fn set_av1_settings(
             mut self,
             input: std::option::Option<crate::model::Av1Settings>,
@@ -4803,22 +4888,22 @@ pub mod video_codec_settings {
             self.avc_intra_settings = input;
             self
         }
-        /// Specifies the video codec. This must be equal to one of the enum values defined by the object  VideoCodec.
+        /// Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
         pub fn codec(mut self, input: crate::model::VideoCodec) -> Self {
             self.codec = Some(input);
             self
         }
-        /// Specifies the video codec. This must be equal to one of the enum values defined by the object  VideoCodec.
+        /// Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
         pub fn set_codec(mut self, input: std::option::Option<crate::model::VideoCodec>) -> Self {
             self.codec = input;
             self
         }
-        /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value FRAME_CAPTURE.
+        /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value FRAME_CAPTURE.
         pub fn frame_capture_settings(mut self, input: crate::model::FrameCaptureSettings) -> Self {
             self.frame_capture_settings = Some(input);
             self
         }
-        /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value FRAME_CAPTURE.
+        /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value FRAME_CAPTURE.
         pub fn set_frame_capture_settings(
             mut self,
             input: std::option::Option<crate::model::FrameCaptureSettings>,
@@ -4826,12 +4911,12 @@ pub mod video_codec_settings {
             self.frame_capture_settings = input;
             self
         }
-        /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value H_264.
+        /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value H_264.
         pub fn h264_settings(mut self, input: crate::model::H264Settings) -> Self {
             self.h264_settings = Some(input);
             self
         }
-        /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value H_264.
+        /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value H_264.
         pub fn set_h264_settings(
             mut self,
             input: std::option::Option<crate::model::H264Settings>,
@@ -4852,12 +4937,12 @@ pub mod video_codec_settings {
             self.h265_settings = input;
             self
         }
-        /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value MPEG2.
+        /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value MPEG2.
         pub fn mpeg2_settings(mut self, input: crate::model::Mpeg2Settings) -> Self {
             self.mpeg2_settings = Some(input);
             self
         }
-        /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value MPEG2.
+        /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value MPEG2.
         pub fn set_mpeg2_settings(
             mut self,
             input: std::option::Option<crate::model::Mpeg2Settings>,
@@ -4865,12 +4950,12 @@ pub mod video_codec_settings {
             self.mpeg2_settings = input;
             self
         }
-        /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value PRORES.
+        /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value PRORES.
         pub fn prores_settings(mut self, input: crate::model::ProresSettings) -> Self {
             self.prores_settings = Some(input);
             self
         }
-        /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value PRORES.
+        /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value PRORES.
         pub fn set_prores_settings(
             mut self,
             input: std::option::Option<crate::model::ProresSettings>,
@@ -4878,12 +4963,12 @@ pub mod video_codec_settings {
             self.prores_settings = input;
             self
         }
-        /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VC3
+        /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value VC3
         pub fn vc3_settings(mut self, input: crate::model::Vc3Settings) -> Self {
             self.vc3_settings = Some(input);
             self
         }
-        /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VC3
+        /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value VC3
         pub fn set_vc3_settings(
             mut self,
             input: std::option::Option<crate::model::Vc3Settings>,
@@ -4891,12 +4976,12 @@ pub mod video_codec_settings {
             self.vc3_settings = input;
             self
         }
-        /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP8.
+        /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value VP8.
         pub fn vp8_settings(mut self, input: crate::model::Vp8Settings) -> Self {
             self.vp8_settings = Some(input);
             self
         }
-        /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP8.
+        /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value VP8.
         pub fn set_vp8_settings(
             mut self,
             input: std::option::Option<crate::model::Vp8Settings>,
@@ -4904,12 +4989,12 @@ pub mod video_codec_settings {
             self.vp8_settings = input;
             self
         }
-        /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP9.
+        /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value VP9.
         pub fn vp9_settings(mut self, input: crate::model::Vp9Settings) -> Self {
             self.vp9_settings = Some(input);
             self
         }
-        /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP9.
+        /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value VP9.
         pub fn set_vp9_settings(
             mut self,
             input: std::option::Option<crate::model::Vp9Settings>,
@@ -4917,12 +5002,12 @@ pub mod video_codec_settings {
             self.vp9_settings = input;
             self
         }
-        /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value XAVC.
+        /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value XAVC.
         pub fn xavc_settings(mut self, input: crate::model::XavcSettings) -> Self {
             self.xavc_settings = Some(input);
             self
         }
-        /// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value XAVC.
+        /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value XAVC.
         pub fn set_xavc_settings(
             mut self,
             input: std::option::Option<crate::model::XavcSettings>,
@@ -4956,7 +5041,7 @@ impl VideoCodecSettings {
     }
 }
 
-/// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value XAVC.
+/// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value XAVC.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct XavcSettings {
@@ -4985,18 +5070,18 @@ pub struct XavcSettings {
     /// The best way to set up adaptive quantization is to keep the default value, Auto (AUTO), for the setting Adaptive quantization (adaptiveQuantization). When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. For this setting, keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on temporal variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to disable this feature. Related setting: When you enable temporal adaptive quantization, adjust the strength of the filter with the setting Adaptive quantization (adaptiveQuantization).
     pub temporal_adaptive_quantization:
         std::option::Option<crate::model::XavcTemporalAdaptiveQuantization>,
-    /// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_4K_INTRA_CBG.
+    /// Required when you set (Profile) under (VideoDescription)&gt;(CodecSettings)&gt;(XavcSettings) to the value XAVC_4K_INTRA_CBG.
     pub xavc4k_intra_cbg_profile_settings:
         std::option::Option<crate::model::Xavc4kIntraCbgProfileSettings>,
-    /// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_4K_INTRA_VBR.
+    /// Required when you set (Profile) under (VideoDescription)&gt;(CodecSettings)&gt;(XavcSettings) to the value XAVC_4K_INTRA_VBR.
     pub xavc4k_intra_vbr_profile_settings:
         std::option::Option<crate::model::Xavc4kIntraVbrProfileSettings>,
-    /// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_4K.
+    /// Required when you set (Profile) under (VideoDescription)&gt;(CodecSettings)&gt;(XavcSettings) to the value XAVC_4K.
     pub xavc4k_profile_settings: std::option::Option<crate::model::Xavc4kProfileSettings>,
-    /// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_HD_INTRA_CBG.
+    /// Required when you set (Profile) under (VideoDescription)&gt;(CodecSettings)&gt;(XavcSettings) to the value XAVC_HD_INTRA_CBG.
     pub xavc_hd_intra_cbg_profile_settings:
         std::option::Option<crate::model::XavcHdIntraCbgProfileSettings>,
-    /// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_HD.
+    /// Required when you set (Profile) under (VideoDescription)&gt;(CodecSettings)&gt;(XavcSettings) to the value XAVC_HD.
     pub xavc_hd_profile_settings: std::option::Option<crate::model::XavcHdProfileSettings>,
 }
 impl XavcSettings {
@@ -5052,31 +5137,31 @@ impl XavcSettings {
     ) -> std::option::Option<&crate::model::XavcTemporalAdaptiveQuantization> {
         self.temporal_adaptive_quantization.as_ref()
     }
-    /// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_4K_INTRA_CBG.
+    /// Required when you set (Profile) under (VideoDescription)&gt;(CodecSettings)&gt;(XavcSettings) to the value XAVC_4K_INTRA_CBG.
     pub fn xavc4k_intra_cbg_profile_settings(
         &self,
     ) -> std::option::Option<&crate::model::Xavc4kIntraCbgProfileSettings> {
         self.xavc4k_intra_cbg_profile_settings.as_ref()
     }
-    /// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_4K_INTRA_VBR.
+    /// Required when you set (Profile) under (VideoDescription)&gt;(CodecSettings)&gt;(XavcSettings) to the value XAVC_4K_INTRA_VBR.
     pub fn xavc4k_intra_vbr_profile_settings(
         &self,
     ) -> std::option::Option<&crate::model::Xavc4kIntraVbrProfileSettings> {
         self.xavc4k_intra_vbr_profile_settings.as_ref()
     }
-    /// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_4K.
+    /// Required when you set (Profile) under (VideoDescription)&gt;(CodecSettings)&gt;(XavcSettings) to the value XAVC_4K.
     pub fn xavc4k_profile_settings(
         &self,
     ) -> std::option::Option<&crate::model::Xavc4kProfileSettings> {
         self.xavc4k_profile_settings.as_ref()
     }
-    /// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_HD_INTRA_CBG.
+    /// Required when you set (Profile) under (VideoDescription)&gt;(CodecSettings)&gt;(XavcSettings) to the value XAVC_HD_INTRA_CBG.
     pub fn xavc_hd_intra_cbg_profile_settings(
         &self,
     ) -> std::option::Option<&crate::model::XavcHdIntraCbgProfileSettings> {
         self.xavc_hd_intra_cbg_profile_settings.as_ref()
     }
-    /// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_HD.
+    /// Required when you set (Profile) under (VideoDescription)&gt;(CodecSettings)&gt;(XavcSettings) to the value XAVC_HD.
     pub fn xavc_hd_profile_settings(
         &self,
     ) -> std::option::Option<&crate::model::XavcHdProfileSettings> {
@@ -5302,7 +5387,7 @@ pub mod xavc_settings {
             self.temporal_adaptive_quantization = input;
             self
         }
-        /// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_4K_INTRA_CBG.
+        /// Required when you set (Profile) under (VideoDescription)&gt;(CodecSettings)&gt;(XavcSettings) to the value XAVC_4K_INTRA_CBG.
         pub fn xavc4k_intra_cbg_profile_settings(
             mut self,
             input: crate::model::Xavc4kIntraCbgProfileSettings,
@@ -5310,7 +5395,7 @@ pub mod xavc_settings {
             self.xavc4k_intra_cbg_profile_settings = Some(input);
             self
         }
-        /// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_4K_INTRA_CBG.
+        /// Required when you set (Profile) under (VideoDescription)&gt;(CodecSettings)&gt;(XavcSettings) to the value XAVC_4K_INTRA_CBG.
         pub fn set_xavc4k_intra_cbg_profile_settings(
             mut self,
             input: std::option::Option<crate::model::Xavc4kIntraCbgProfileSettings>,
@@ -5318,7 +5403,7 @@ pub mod xavc_settings {
             self.xavc4k_intra_cbg_profile_settings = input;
             self
         }
-        /// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_4K_INTRA_VBR.
+        /// Required when you set (Profile) under (VideoDescription)&gt;(CodecSettings)&gt;(XavcSettings) to the value XAVC_4K_INTRA_VBR.
         pub fn xavc4k_intra_vbr_profile_settings(
             mut self,
             input: crate::model::Xavc4kIntraVbrProfileSettings,
@@ -5326,7 +5411,7 @@ pub mod xavc_settings {
             self.xavc4k_intra_vbr_profile_settings = Some(input);
             self
         }
-        /// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_4K_INTRA_VBR.
+        /// Required when you set (Profile) under (VideoDescription)&gt;(CodecSettings)&gt;(XavcSettings) to the value XAVC_4K_INTRA_VBR.
         pub fn set_xavc4k_intra_vbr_profile_settings(
             mut self,
             input: std::option::Option<crate::model::Xavc4kIntraVbrProfileSettings>,
@@ -5334,7 +5419,7 @@ pub mod xavc_settings {
             self.xavc4k_intra_vbr_profile_settings = input;
             self
         }
-        /// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_4K.
+        /// Required when you set (Profile) under (VideoDescription)&gt;(CodecSettings)&gt;(XavcSettings) to the value XAVC_4K.
         pub fn xavc4k_profile_settings(
             mut self,
             input: crate::model::Xavc4kProfileSettings,
@@ -5342,7 +5427,7 @@ pub mod xavc_settings {
             self.xavc4k_profile_settings = Some(input);
             self
         }
-        /// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_4K.
+        /// Required when you set (Profile) under (VideoDescription)&gt;(CodecSettings)&gt;(XavcSettings) to the value XAVC_4K.
         pub fn set_xavc4k_profile_settings(
             mut self,
             input: std::option::Option<crate::model::Xavc4kProfileSettings>,
@@ -5350,7 +5435,7 @@ pub mod xavc_settings {
             self.xavc4k_profile_settings = input;
             self
         }
-        /// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_HD_INTRA_CBG.
+        /// Required when you set (Profile) under (VideoDescription)&gt;(CodecSettings)&gt;(XavcSettings) to the value XAVC_HD_INTRA_CBG.
         pub fn xavc_hd_intra_cbg_profile_settings(
             mut self,
             input: crate::model::XavcHdIntraCbgProfileSettings,
@@ -5358,7 +5443,7 @@ pub mod xavc_settings {
             self.xavc_hd_intra_cbg_profile_settings = Some(input);
             self
         }
-        /// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_HD_INTRA_CBG.
+        /// Required when you set (Profile) under (VideoDescription)&gt;(CodecSettings)&gt;(XavcSettings) to the value XAVC_HD_INTRA_CBG.
         pub fn set_xavc_hd_intra_cbg_profile_settings(
             mut self,
             input: std::option::Option<crate::model::XavcHdIntraCbgProfileSettings>,
@@ -5366,7 +5451,7 @@ pub mod xavc_settings {
             self.xavc_hd_intra_cbg_profile_settings = input;
             self
         }
-        /// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_HD.
+        /// Required when you set (Profile) under (VideoDescription)&gt;(CodecSettings)&gt;(XavcSettings) to the value XAVC_HD.
         pub fn xavc_hd_profile_settings(
             mut self,
             input: crate::model::XavcHdProfileSettings,
@@ -5374,7 +5459,7 @@ pub mod xavc_settings {
             self.xavc_hd_profile_settings = Some(input);
             self
         }
-        /// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_HD.
+        /// Required when you set (Profile) under (VideoDescription)&gt;(CodecSettings)&gt;(XavcSettings) to the value XAVC_HD.
         pub fn set_xavc_hd_profile_settings(
             mut self,
             input: std::option::Option<crate::model::XavcHdProfileSettings>,
@@ -5412,7 +5497,7 @@ impl XavcSettings {
     }
 }
 
-/// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_HD.
+/// Required when you set (Profile) under (VideoDescription)&gt;(CodecSettings)&gt;(XavcSettings) to the value XAVC_HD.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct XavcHdProfileSettings {
@@ -6008,7 +6093,7 @@ impl AsRef<str> for XavcHdProfileBitrateClass {
     }
 }
 
-/// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_HD_INTRA_CBG.
+/// Required when you set (Profile) under (VideoDescription)&gt;(CodecSettings)&gt;(XavcSettings) to the value XAVC_HD_INTRA_CBG.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct XavcHdIntraCbgProfileSettings {
@@ -6124,7 +6209,7 @@ impl AsRef<str> for XavcHdIntraCbgProfileClass {
     }
 }
 
-/// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_4K.
+/// Required when you set (Profile) under (VideoDescription)&gt;(CodecSettings)&gt;(XavcSettings) to the value XAVC_4K.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Xavc4kProfileSettings {
@@ -6519,7 +6604,7 @@ impl AsRef<str> for Xavc4kProfileBitrateClass {
     }
 }
 
-/// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_4K_INTRA_VBR.
+/// Required when you set (Profile) under (VideoDescription)&gt;(CodecSettings)&gt;(XavcSettings) to the value XAVC_4K_INTRA_VBR.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Xavc4kIntraVbrProfileSettings {
@@ -6635,7 +6720,7 @@ impl AsRef<str> for Xavc4kIntraVbrProfileClass {
     }
 }
 
-/// Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_4K_INTRA_CBG.
+/// Required when you set (Profile) under (VideoDescription)&gt;(CodecSettings)&gt;(XavcSettings) to the value XAVC_4K_INTRA_CBG.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Xavc4kIntraCbgProfileSettings {
@@ -7237,7 +7322,7 @@ impl AsRef<str> for XavcAdaptiveQuantization {
     }
 }
 
-/// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP9.
+/// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value VP9.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Vp9Settings {
@@ -7248,9 +7333,9 @@ pub struct Vp9Settings {
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
     pub framerate_conversion_algorithm:
         std::option::Option<crate::model::Vp9FramerateConversionAlgorithm>,
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub framerate_denominator: i32,
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub framerate_numerator: i32,
     /// GOP Length (keyframe interval) in frames. Must be greater than zero.
     pub gop_size: f64,
@@ -7284,11 +7369,11 @@ impl Vp9Settings {
     ) -> std::option::Option<&crate::model::Vp9FramerateConversionAlgorithm> {
         self.framerate_conversion_algorithm.as_ref()
     }
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn framerate_denominator(&self) -> i32 {
         self.framerate_denominator
     }
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn framerate_numerator(&self) -> i32 {
         self.framerate_numerator
     }
@@ -7410,22 +7495,22 @@ pub mod vp9_settings {
             self.framerate_conversion_algorithm = input;
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn framerate_denominator(mut self, input: i32) -> Self {
             self.framerate_denominator = Some(input);
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn set_framerate_denominator(mut self, input: std::option::Option<i32>) -> Self {
             self.framerate_denominator = input;
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn framerate_numerator(mut self, input: i32) -> Self {
             self.framerate_numerator = Some(input);
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn set_framerate_numerator(mut self, input: std::option::Option<i32>) -> Self {
             self.framerate_numerator = input;
             self
@@ -7821,7 +7906,7 @@ impl AsRef<str> for Vp9FramerateControl {
     }
 }
 
-/// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP8.
+/// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value VP8.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Vp8Settings {
@@ -7832,9 +7917,9 @@ pub struct Vp8Settings {
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
     pub framerate_conversion_algorithm:
         std::option::Option<crate::model::Vp8FramerateConversionAlgorithm>,
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub framerate_denominator: i32,
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub framerate_numerator: i32,
     /// GOP Length (keyframe interval) in frames. Must be greater than zero.
     pub gop_size: f64,
@@ -7868,11 +7953,11 @@ impl Vp8Settings {
     ) -> std::option::Option<&crate::model::Vp8FramerateConversionAlgorithm> {
         self.framerate_conversion_algorithm.as_ref()
     }
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn framerate_denominator(&self) -> i32 {
         self.framerate_denominator
     }
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn framerate_numerator(&self) -> i32 {
         self.framerate_numerator
     }
@@ -7994,22 +8079,22 @@ pub mod vp8_settings {
             self.framerate_conversion_algorithm = input;
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn framerate_denominator(mut self, input: i32) -> Self {
             self.framerate_denominator = Some(input);
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn set_framerate_denominator(mut self, input: std::option::Option<i32>) -> Self {
             self.framerate_denominator = input;
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn framerate_numerator(mut self, input: i32) -> Self {
             self.framerate_numerator = Some(input);
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn set_framerate_numerator(mut self, input: std::option::Option<i32>) -> Self {
             self.framerate_numerator = input;
             self
@@ -8405,7 +8490,7 @@ impl AsRef<str> for Vp8FramerateControl {
     }
 }
 
-/// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VC3
+/// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value VC3
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Vc3Settings {
@@ -8414,9 +8499,9 @@ pub struct Vc3Settings {
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
     pub framerate_conversion_algorithm:
         std::option::Option<crate::model::Vc3FramerateConversionAlgorithm>,
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub framerate_denominator: i32,
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub framerate_numerator: i32,
     /// Optional. Choose the scan line type for this output. If you don't specify a value, MediaConvert will create a progressive output.
     pub interlace_mode: std::option::Option<crate::model::Vc3InterlaceMode>,
@@ -8440,11 +8525,11 @@ impl Vc3Settings {
     ) -> std::option::Option<&crate::model::Vc3FramerateConversionAlgorithm> {
         self.framerate_conversion_algorithm.as_ref()
     }
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn framerate_denominator(&self) -> i32 {
         self.framerate_denominator
     }
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn framerate_numerator(&self) -> i32 {
         self.framerate_numerator
     }
@@ -8537,22 +8622,22 @@ pub mod vc3_settings {
             self.framerate_conversion_algorithm = input;
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn framerate_denominator(mut self, input: i32) -> Self {
             self.framerate_denominator = Some(input);
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn set_framerate_denominator(mut self, input: std::option::Option<i32>) -> Self {
             self.framerate_denominator = input;
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn framerate_numerator(mut self, input: i32) -> Self {
             self.framerate_numerator = Some(input);
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn set_framerate_numerator(mut self, input: std::option::Option<i32>) -> Self {
             self.framerate_numerator = input;
             self
@@ -9038,7 +9123,7 @@ impl AsRef<str> for Vc3FramerateControl {
     }
 }
 
-/// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value PRORES.
+/// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value PRORES.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProresSettings {
@@ -9051,9 +9136,9 @@ pub struct ProresSettings {
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
     pub framerate_conversion_algorithm:
         std::option::Option<crate::model::ProresFramerateConversionAlgorithm>,
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub framerate_denominator: i32,
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub framerate_numerator: i32,
     /// Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
     pub interlace_mode: std::option::Option<crate::model::ProresInterlaceMode>,
@@ -9089,11 +9174,11 @@ impl ProresSettings {
     ) -> std::option::Option<&crate::model::ProresFramerateConversionAlgorithm> {
         self.framerate_conversion_algorithm.as_ref()
     }
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn framerate_denominator(&self) -> i32 {
         self.framerate_denominator
     }
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn framerate_numerator(&self) -> i32 {
         self.framerate_numerator
     }
@@ -9228,22 +9313,22 @@ pub mod prores_settings {
             self.framerate_conversion_algorithm = input;
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn framerate_denominator(mut self, input: i32) -> Self {
             self.framerate_denominator = Some(input);
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn set_framerate_denominator(mut self, input: std::option::Option<i32>) -> Self {
             self.framerate_denominator = input;
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn framerate_numerator(mut self, input: i32) -> Self {
             self.framerate_numerator = Some(input);
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn set_framerate_numerator(mut self, input: std::option::Option<i32>) -> Self {
             self.framerate_numerator = input;
             self
@@ -9903,7 +9988,7 @@ impl AsRef<str> for ProresChromaSampling {
     }
 }
 
-/// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value MPEG2.
+/// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value MPEG2.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Mpeg2Settings {
@@ -9922,9 +10007,9 @@ pub struct Mpeg2Settings {
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
     pub framerate_conversion_algorithm:
         std::option::Option<crate::model::Mpeg2FramerateConversionAlgorithm>,
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub framerate_denominator: i32,
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub framerate_numerator: i32,
     /// Specify the relative frequency of open to closed GOPs in this output. For example, if you want to allow four open GOPs and then require a closed GOP, set this value to 5. When you create a streaming output, we recommend that you keep the default value, 1, so that players starting mid-stream receive an IDR frame as quickly as possible. Don't set this value to 0; that would break output segmenting.
     pub gop_closed_cadence: i32,
@@ -9967,7 +10052,7 @@ pub struct Mpeg2Settings {
     /// Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
     pub spatial_adaptive_quantization:
         std::option::Option<crate::model::Mpeg2SpatialAdaptiveQuantization>,
-    /// Specify whether this output's video uses the D10 syntax. Keep the default value to  not use the syntax. Related settings: When you choose D10 (D_10) for your MXF  profile (profile), you must also set this value to to D10 (D_10).
+    /// Specify whether this output's video uses the D10 syntax. Keep the default value to not use the syntax. Related settings: When you choose D10 (D_10) for your MXF profile (profile), you must also set this value to to D10 (D_10).
     pub syntax: std::option::Option<crate::model::Mpeg2Syntax>,
     /// When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard or soft telecine to create a smoother picture. Hard telecine (HARD) produces a 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that signals to the video player device to do the conversion during play back. When you keep the default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
     pub telecine: std::option::Option<crate::model::Mpeg2Telecine>,
@@ -10008,11 +10093,11 @@ impl Mpeg2Settings {
     ) -> std::option::Option<&crate::model::Mpeg2FramerateConversionAlgorithm> {
         self.framerate_conversion_algorithm.as_ref()
     }
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn framerate_denominator(&self) -> i32 {
         self.framerate_denominator
     }
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn framerate_numerator(&self) -> i32 {
         self.framerate_numerator
     }
@@ -10104,7 +10189,7 @@ impl Mpeg2Settings {
     ) -> std::option::Option<&crate::model::Mpeg2SpatialAdaptiveQuantization> {
         self.spatial_adaptive_quantization.as_ref()
     }
-    /// Specify whether this output's video uses the D10 syntax. Keep the default value to  not use the syntax. Related settings: When you choose D10 (D_10) for your MXF  profile (profile), you must also set this value to to D10 (D_10).
+    /// Specify whether this output's video uses the D10 syntax. Keep the default value to not use the syntax. Related settings: When you choose D10 (D_10) for your MXF profile (profile), you must also set this value to to D10 (D_10).
     pub fn syntax(&self) -> std::option::Option<&crate::model::Mpeg2Syntax> {
         self.syntax.as_ref()
     }
@@ -10311,22 +10396,22 @@ pub mod mpeg2_settings {
             self.framerate_conversion_algorithm = input;
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn framerate_denominator(mut self, input: i32) -> Self {
             self.framerate_denominator = Some(input);
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn set_framerate_denominator(mut self, input: std::option::Option<i32>) -> Self {
             self.framerate_denominator = input;
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn framerate_numerator(mut self, input: i32) -> Self {
             self.framerate_numerator = Some(input);
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn set_framerate_numerator(mut self, input: std::option::Option<i32>) -> Self {
             self.framerate_numerator = input;
             self
@@ -10576,12 +10661,12 @@ pub mod mpeg2_settings {
             self.spatial_adaptive_quantization = input;
             self
         }
-        /// Specify whether this output's video uses the D10 syntax. Keep the default value to  not use the syntax. Related settings: When you choose D10 (D_10) for your MXF  profile (profile), you must also set this value to to D10 (D_10).
+        /// Specify whether this output's video uses the D10 syntax. Keep the default value to not use the syntax. Related settings: When you choose D10 (D_10) for your MXF profile (profile), you must also set this value to to D10 (D_10).
         pub fn syntax(mut self, input: crate::model::Mpeg2Syntax) -> Self {
             self.syntax = Some(input);
             self
         }
-        /// Specify whether this output's video uses the D10 syntax. Keep the default value to  not use the syntax. Related settings: When you choose D10 (D_10) for your MXF  profile (profile), you must also set this value to to D10 (D_10).
+        /// Specify whether this output's video uses the D10 syntax. Keep the default value to not use the syntax. Related settings: When you choose D10 (D_10) for your MXF profile (profile), you must also set this value to to D10 (D_10).
         pub fn set_syntax(mut self, input: std::option::Option<crate::model::Mpeg2Syntax>) -> Self {
             self.syntax = input;
             self
@@ -11799,11 +11884,11 @@ pub struct H265Settings {
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
     pub framerate_conversion_algorithm:
         std::option::Option<crate::model::H265FramerateConversionAlgorithm>,
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub framerate_denominator: i32,
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub framerate_numerator: i32,
-    /// If enable, use reference B frames for GOP structures that have B frames > 1.
+    /// If enable, use reference B frames for GOP structures that have B frames &gt; 1.
     pub gop_b_reference: std::option::Option<crate::model::H265GopBReference>,
     /// Specify the relative frequency of open to closed GOPs in this output. For example, if you want to allow four open GOPs and then require a closed GOP, set this value to 5. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, keep the default value by leaving this setting out of your JSON job specification. In the console, do this by keeping the default empty value. If you do explicitly specify a value, for segmented outputs, don't set this value to 0.
     pub gop_closed_cadence: i32,
@@ -11837,7 +11922,7 @@ pub struct H265Settings {
     pub qvbr_settings: std::option::Option<crate::model::H265QvbrSettings>,
     /// Use this setting to specify whether this output has a variable bitrate (VBR), constant bitrate (CBR) or quality-defined variable bitrate (QVBR).
     pub rate_control_mode: std::option::Option<crate::model::H265RateControlMode>,
-    /// Specify Sample Adaptive Offset (SAO) filter strength.  Adaptive mode dynamically selects best strength based on content
+    /// Specify Sample Adaptive Offset (SAO) filter strength. Adaptive mode dynamically selects best strength based on content
     pub sample_adaptive_offset_filter_mode:
         std::option::Option<crate::model::H265SampleAdaptiveOffsetFilterMode>,
     /// Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
@@ -11851,7 +11936,7 @@ pub struct H265Settings {
     /// Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
     pub spatial_adaptive_quantization:
         std::option::Option<crate::model::H265SpatialAdaptiveQuantization>,
-    /// This field applies only if the Streams > Advanced > Framerate (framerate) field  is set to 29.970. This field works with the Streams > Advanced > Preprocessors > Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced Mode field (interlace_mode)  to identify the scan type for the output: Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976 input. - Soft: produces 23.976; the player converts this output to 29.97i.
+    /// This field applies only if the Streams &gt; Advanced &gt; Framerate (framerate) field is set to 29.970. This field works with the Streams &gt; Advanced &gt; Preprocessors &gt; Deinterlacer field (deinterlace_mode) and the Streams &gt; Advanced &gt; Interlaced Mode field (interlace_mode) to identify the scan type for the output: Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976 input. - Soft: produces 23.976; the player converts this output to 29.97i.
     pub telecine: std::option::Option<crate::model::H265Telecine>,
     /// Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on temporal variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to disable this feature. Related setting: When you enable temporal quantization, adjust the strength of the filter with the setting Adaptive quantization (adaptiveQuantization).
     pub temporal_adaptive_quantization:
@@ -11910,15 +11995,15 @@ impl H265Settings {
     ) -> std::option::Option<&crate::model::H265FramerateConversionAlgorithm> {
         self.framerate_conversion_algorithm.as_ref()
     }
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn framerate_denominator(&self) -> i32 {
         self.framerate_denominator
     }
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn framerate_numerator(&self) -> i32 {
         self.framerate_numerator
     }
-    /// If enable, use reference B frames for GOP structures that have B frames > 1.
+    /// If enable, use reference B frames for GOP structures that have B frames &gt; 1.
     pub fn gop_b_reference(&self) -> std::option::Option<&crate::model::H265GopBReference> {
         self.gop_b_reference.as_ref()
     }
@@ -11988,7 +12073,7 @@ impl H265Settings {
     pub fn rate_control_mode(&self) -> std::option::Option<&crate::model::H265RateControlMode> {
         self.rate_control_mode.as_ref()
     }
-    /// Specify Sample Adaptive Offset (SAO) filter strength.  Adaptive mode dynamically selects best strength based on content
+    /// Specify Sample Adaptive Offset (SAO) filter strength. Adaptive mode dynamically selects best strength based on content
     pub fn sample_adaptive_offset_filter_mode(
         &self,
     ) -> std::option::Option<&crate::model::H265SampleAdaptiveOffsetFilterMode> {
@@ -12018,7 +12103,7 @@ impl H265Settings {
     ) -> std::option::Option<&crate::model::H265SpatialAdaptiveQuantization> {
         self.spatial_adaptive_quantization.as_ref()
     }
-    /// This field applies only if the Streams > Advanced > Framerate (framerate) field  is set to 29.970. This field works with the Streams > Advanced > Preprocessors > Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced Mode field (interlace_mode)  to identify the scan type for the output: Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976 input. - Soft: produces 23.976; the player converts this output to 29.97i.
+    /// This field applies only if the Streams &gt; Advanced &gt; Framerate (framerate) field is set to 29.970. This field works with the Streams &gt; Advanced &gt; Preprocessors &gt; Deinterlacer field (deinterlace_mode) and the Streams &gt; Advanced &gt; Interlaced Mode field (interlace_mode) to identify the scan type for the output: Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976 input. - Soft: produces 23.976; the player converts this output to 29.97i.
     pub fn telecine(&self) -> std::option::Option<&crate::model::H265Telecine> {
         self.telecine.as_ref()
     }
@@ -12303,32 +12388,32 @@ pub mod h265_settings {
             self.framerate_conversion_algorithm = input;
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn framerate_denominator(mut self, input: i32) -> Self {
             self.framerate_denominator = Some(input);
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn set_framerate_denominator(mut self, input: std::option::Option<i32>) -> Self {
             self.framerate_denominator = input;
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn framerate_numerator(mut self, input: i32) -> Self {
             self.framerate_numerator = Some(input);
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn set_framerate_numerator(mut self, input: std::option::Option<i32>) -> Self {
             self.framerate_numerator = input;
             self
         }
-        /// If enable, use reference B frames for GOP structures that have B frames > 1.
+        /// If enable, use reference B frames for GOP structures that have B frames &gt; 1.
         pub fn gop_b_reference(mut self, input: crate::model::H265GopBReference) -> Self {
             self.gop_b_reference = Some(input);
             self
         }
-        /// If enable, use reference B frames for GOP structures that have B frames > 1.
+        /// If enable, use reference B frames for GOP structures that have B frames &gt; 1.
         pub fn set_gop_b_reference(
             mut self,
             input: std::option::Option<crate::model::H265GopBReference>,
@@ -12520,7 +12605,7 @@ pub mod h265_settings {
             self.rate_control_mode = input;
             self
         }
-        /// Specify Sample Adaptive Offset (SAO) filter strength.  Adaptive mode dynamically selects best strength based on content
+        /// Specify Sample Adaptive Offset (SAO) filter strength. Adaptive mode dynamically selects best strength based on content
         pub fn sample_adaptive_offset_filter_mode(
             mut self,
             input: crate::model::H265SampleAdaptiveOffsetFilterMode,
@@ -12528,7 +12613,7 @@ pub mod h265_settings {
             self.sample_adaptive_offset_filter_mode = Some(input);
             self
         }
-        /// Specify Sample Adaptive Offset (SAO) filter strength.  Adaptive mode dynamically selects best strength based on content
+        /// Specify Sample Adaptive Offset (SAO) filter strength. Adaptive mode dynamically selects best strength based on content
         pub fn set_sample_adaptive_offset_filter_mode(
             mut self,
             input: std::option::Option<crate::model::H265SampleAdaptiveOffsetFilterMode>,
@@ -12604,12 +12689,12 @@ pub mod h265_settings {
             self.spatial_adaptive_quantization = input;
             self
         }
-        /// This field applies only if the Streams > Advanced > Framerate (framerate) field  is set to 29.970. This field works with the Streams > Advanced > Preprocessors > Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced Mode field (interlace_mode)  to identify the scan type for the output: Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976 input. - Soft: produces 23.976; the player converts this output to 29.97i.
+        /// This field applies only if the Streams &gt; Advanced &gt; Framerate (framerate) field is set to 29.970. This field works with the Streams &gt; Advanced &gt; Preprocessors &gt; Deinterlacer field (deinterlace_mode) and the Streams &gt; Advanced &gt; Interlaced Mode field (interlace_mode) to identify the scan type for the output: Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976 input. - Soft: produces 23.976; the player converts this output to 29.97i.
         pub fn telecine(mut self, input: crate::model::H265Telecine) -> Self {
             self.telecine = Some(input);
             self
         }
-        /// This field applies only if the Streams > Advanced > Framerate (framerate) field  is set to 29.970. This field works with the Streams > Advanced > Preprocessors > Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced Mode field (interlace_mode)  to identify the scan type for the output: Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976 input. - Soft: produces 23.976; the player converts this output to 29.97i.
+        /// This field applies only if the Streams &gt; Advanced &gt; Framerate (framerate) field is set to 29.970. This field works with the Streams &gt; Advanced &gt; Preprocessors &gt; Deinterlacer field (deinterlace_mode) and the Streams &gt; Advanced &gt; Interlaced Mode field (interlace_mode) to identify the scan type for the output: Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976 input. - Soft: produces 23.976; the player converts this output to 29.97i.
         pub fn set_telecine(
             mut self,
             input: std::option::Option<crate::model::H265Telecine>,
@@ -14374,7 +14459,7 @@ impl AsRef<str> for H265AdaptiveQuantization {
     }
 }
 
-/// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value H_264.
+/// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value H_264.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct H264Settings {
@@ -14400,11 +14485,11 @@ pub struct H264Settings {
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
     pub framerate_conversion_algorithm:
         std::option::Option<crate::model::H264FramerateConversionAlgorithm>,
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub framerate_denominator: i32,
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub framerate_numerator: i32,
-    /// If enable, use reference B frames for GOP structures that have B frames > 1.
+    /// If enable, use reference B frames for GOP structures that have B frames &gt; 1.
     pub gop_b_reference: std::option::Option<crate::model::H264GopBReference>,
     /// Specify the relative frequency of open to closed GOPs in this output. For example, if you want to allow four open GOPs and then require a closed GOP, set this value to 5. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, keep the default value by leaving this setting out of your JSON job specification. In the console, do this by keeping the default empty value. If you do explicitly specify a value, for segmented outputs, don't set this value to 0.
     pub gop_closed_cadence: i32,
@@ -14510,15 +14595,15 @@ impl H264Settings {
     ) -> std::option::Option<&crate::model::H264FramerateConversionAlgorithm> {
         self.framerate_conversion_algorithm.as_ref()
     }
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn framerate_denominator(&self) -> i32 {
         self.framerate_denominator
     }
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn framerate_numerator(&self) -> i32 {
         self.framerate_numerator
     }
-    /// If enable, use reference B frames for GOP structures that have B frames > 1.
+    /// If enable, use reference B frames for GOP structures that have B frames &gt; 1.
     pub fn gop_b_reference(&self) -> std::option::Option<&crate::model::H264GopBReference> {
         self.gop_b_reference.as_ref()
     }
@@ -14896,32 +14981,32 @@ pub mod h264_settings {
             self.framerate_conversion_algorithm = input;
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn framerate_denominator(mut self, input: i32) -> Self {
             self.framerate_denominator = Some(input);
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn set_framerate_denominator(mut self, input: std::option::Option<i32>) -> Self {
             self.framerate_denominator = input;
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn framerate_numerator(mut self, input: i32) -> Self {
             self.framerate_numerator = Some(input);
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn set_framerate_numerator(mut self, input: std::option::Option<i32>) -> Self {
             self.framerate_numerator = input;
             self
         }
-        /// If enable, use reference B frames for GOP structures that have B frames > 1.
+        /// If enable, use reference B frames for GOP structures that have B frames &gt; 1.
         pub fn gop_b_reference(mut self, input: crate::model::H264GopBReference) -> Self {
             self.gop_b_reference = Some(input);
             self
         }
-        /// If enable, use reference B frames for GOP structures that have B frames > 1.
+        /// If enable, use reference B frames for GOP structures that have B frames &gt; 1.
         pub fn set_gop_b_reference(
             mut self,
             input: std::option::Option<crate::model::H264GopBReference>,
@@ -16899,7 +16984,7 @@ impl AsRef<str> for H264AdaptiveQuantization {
     }
 }
 
-/// Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value FRAME_CAPTURE.
+/// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value FRAME_CAPTURE.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FrameCaptureSettings {
@@ -17126,9 +17211,9 @@ pub struct AvcIntraSettings {
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
     pub framerate_conversion_algorithm:
         std::option::Option<crate::model::AvcIntraFramerateConversionAlgorithm>,
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub framerate_denominator: i32,
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub framerate_numerator: i32,
     /// Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
     pub interlace_mode: std::option::Option<crate::model::AvcIntraInterlaceMode>,
@@ -17163,11 +17248,11 @@ impl AvcIntraSettings {
     ) -> std::option::Option<&crate::model::AvcIntraFramerateConversionAlgorithm> {
         self.framerate_conversion_algorithm.as_ref()
     }
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn framerate_denominator(&self) -> i32 {
         self.framerate_denominator
     }
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn framerate_numerator(&self) -> i32 {
         self.framerate_numerator
     }
@@ -17284,22 +17369,22 @@ pub mod avc_intra_settings {
             self.framerate_conversion_algorithm = input;
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn framerate_denominator(mut self, input: i32) -> Self {
             self.framerate_denominator = Some(input);
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn set_framerate_denominator(mut self, input: std::option::Option<i32>) -> Self {
             self.framerate_denominator = input;
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn framerate_numerator(mut self, input: i32) -> Self {
             self.framerate_numerator = Some(input);
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn set_framerate_numerator(mut self, input: std::option::Option<i32>) -> Self {
             self.framerate_numerator = input;
             self
@@ -17916,7 +18001,7 @@ impl AsRef<str> for AvcIntraClass {
     }
 }
 
-/// Required when you set Codec, under VideoDescription>CodecSettings to the value AV1.
+/// Required when you set Codec, under VideoDescription&gt;CodecSettings to the value AV1.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Av1Settings {
@@ -17927,9 +18012,9 @@ pub struct Av1Settings {
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
     pub framerate_conversion_algorithm:
         std::option::Option<crate::model::Av1FramerateConversionAlgorithm>,
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub framerate_denominator: i32,
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub framerate_numerator: i32,
     /// Specify the GOP length (keyframe interval) in frames. With AV1, MediaConvert doesn't support GOP length in seconds. This value must be greater than zero and preferably equal to 1 + ((numberBFrames + 1) * x), where x is an integer value.
     pub gop_size: f64,
@@ -17964,11 +18049,11 @@ impl Av1Settings {
     ) -> std::option::Option<&crate::model::Av1FramerateConversionAlgorithm> {
         self.framerate_conversion_algorithm.as_ref()
     }
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn framerate_denominator(&self) -> i32 {
         self.framerate_denominator
     }
-    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn framerate_numerator(&self) -> i32 {
         self.framerate_numerator
     }
@@ -18098,22 +18183,22 @@ pub mod av1_settings {
             self.framerate_conversion_algorithm = input;
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn framerate_denominator(mut self, input: i32) -> Self {
             self.framerate_denominator = Some(input);
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn set_framerate_denominator(mut self, input: std::option::Option<i32>) -> Self {
             self.framerate_denominator = input;
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn framerate_numerator(mut self, input: i32) -> Self {
             self.framerate_numerator = Some(input);
             self
         }
-        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+        /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
         pub fn set_framerate_numerator(mut self, input: std::option::Option<i32>) -> Self {
             self.framerate_numerator = input;
             self
@@ -19301,12 +19386,15 @@ impl AsRef<str> for MxfAfdSignaling {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MpdSettings {
-    /// Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH manifest with <Accessibility> elements for embedded 608 captions. This markup isn't generally required, but some video players require it to discover and play embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these elements out. When you enable this setting, this is the markup that MediaConvert includes in your manifest: <Accessibility schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
+    /// Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH manifest with <accessibility>
+    /// elements for embedded 608 captions. This markup isn't generally required, but some video players require it to discover and play embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these elements out. When you enable this setting, this is the markup that MediaConvert includes in your manifest:
+    /// <accessibility schemeiduri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng" />
+    /// </accessibility>
     pub accessibility_caption_hints:
         std::option::Option<crate::model::MpdAccessibilityCaptionHints>,
     /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
     pub audio_duration: std::option::Option<crate::model::MpdAudioDuration>,
-    /// Use this setting only in DASH output groups that include sidecar TTML or IMSC captions.  You specify sidecar captions in a separate output from your audio and video. Choose Raw (RAW) for captions in a single XML file in a raw container. Choose Fragmented MPEG-4 (FRAGMENTED_MP4) for captions in XML format contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
+    /// Use this setting only in DASH output groups that include sidecar TTML or IMSC captions. You specify sidecar captions in a separate output from your audio and video. Choose Raw (RAW) for captions in a single XML file in a raw container. Choose Fragmented MPEG-4 (FRAGMENTED_MP4) for captions in XML format contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
     pub caption_container_type: std::option::Option<crate::model::MpdCaptionContainerType>,
     /// Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
     pub scte35_esam: std::option::Option<crate::model::MpdScte35Esam>,
@@ -19314,7 +19402,10 @@ pub struct MpdSettings {
     pub scte35_source: std::option::Option<crate::model::MpdScte35Source>,
 }
 impl MpdSettings {
-    /// Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH manifest with <Accessibility> elements for embedded 608 captions. This markup isn't generally required, but some video players require it to discover and play embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these elements out. When you enable this setting, this is the markup that MediaConvert includes in your manifest: <Accessibility schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
+    /// Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH manifest with <accessibility>
+    /// elements for embedded 608 captions. This markup isn't generally required, but some video players require it to discover and play embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these elements out. When you enable this setting, this is the markup that MediaConvert includes in your manifest:
+    /// <accessibility schemeiduri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng" />
+    /// </accessibility>
     pub fn accessibility_caption_hints(
         &self,
     ) -> std::option::Option<&crate::model::MpdAccessibilityCaptionHints> {
@@ -19324,7 +19415,7 @@ impl MpdSettings {
     pub fn audio_duration(&self) -> std::option::Option<&crate::model::MpdAudioDuration> {
         self.audio_duration.as_ref()
     }
-    /// Use this setting only in DASH output groups that include sidecar TTML or IMSC captions.  You specify sidecar captions in a separate output from your audio and video. Choose Raw (RAW) for captions in a single XML file in a raw container. Choose Fragmented MPEG-4 (FRAGMENTED_MP4) for captions in XML format contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
+    /// Use this setting only in DASH output groups that include sidecar TTML or IMSC captions. You specify sidecar captions in a separate output from your audio and video. Choose Raw (RAW) for captions in a single XML file in a raw container. Choose Fragmented MPEG-4 (FRAGMENTED_MP4) for captions in XML format contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
     pub fn caption_container_type(
         &self,
     ) -> std::option::Option<&crate::model::MpdCaptionContainerType> {
@@ -19368,7 +19459,10 @@ pub mod mpd_settings {
         pub(crate) scte35_source: std::option::Option<crate::model::MpdScte35Source>,
     }
     impl Builder {
-        /// Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH manifest with <Accessibility> elements for embedded 608 captions. This markup isn't generally required, but some video players require it to discover and play embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these elements out. When you enable this setting, this is the markup that MediaConvert includes in your manifest: <Accessibility schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
+        /// Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH manifest with <accessibility>
+        /// elements for embedded 608 captions. This markup isn't generally required, but some video players require it to discover and play embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these elements out. When you enable this setting, this is the markup that MediaConvert includes in your manifest:
+        /// <accessibility schemeiduri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng" />
+        /// </accessibility>
         pub fn accessibility_caption_hints(
             mut self,
             input: crate::model::MpdAccessibilityCaptionHints,
@@ -19376,7 +19470,10 @@ pub mod mpd_settings {
             self.accessibility_caption_hints = Some(input);
             self
         }
-        /// Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH manifest with <Accessibility> elements for embedded 608 captions. This markup isn't generally required, but some video players require it to discover and play embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these elements out. When you enable this setting, this is the markup that MediaConvert includes in your manifest: <Accessibility schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
+        /// Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH manifest with <accessibility>
+        /// elements for embedded 608 captions. This markup isn't generally required, but some video players require it to discover and play embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these elements out. When you enable this setting, this is the markup that MediaConvert includes in your manifest:
+        /// <accessibility schemeiduri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng" />
+        /// </accessibility>
         pub fn set_accessibility_caption_hints(
             mut self,
             input: std::option::Option<crate::model::MpdAccessibilityCaptionHints>,
@@ -19397,7 +19494,7 @@ pub mod mpd_settings {
             self.audio_duration = input;
             self
         }
-        /// Use this setting only in DASH output groups that include sidecar TTML or IMSC captions.  You specify sidecar captions in a separate output from your audio and video. Choose Raw (RAW) for captions in a single XML file in a raw container. Choose Fragmented MPEG-4 (FRAGMENTED_MP4) for captions in XML format contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
+        /// Use this setting only in DASH output groups that include sidecar TTML or IMSC captions. You specify sidecar captions in a separate output from your audio and video. Choose Raw (RAW) for captions in a single XML file in a raw container. Choose Fragmented MPEG-4 (FRAGMENTED_MP4) for captions in XML format contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
         pub fn caption_container_type(
             mut self,
             input: crate::model::MpdCaptionContainerType,
@@ -19405,7 +19502,7 @@ pub mod mpd_settings {
             self.caption_container_type = Some(input);
             self
         }
-        /// Use this setting only in DASH output groups that include sidecar TTML or IMSC captions.  You specify sidecar captions in a separate output from your audio and video. Choose Raw (RAW) for captions in a single XML file in a raw container. Choose Fragmented MPEG-4 (FRAGMENTED_MP4) for captions in XML format contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
+        /// Use this setting only in DASH output groups that include sidecar TTML or IMSC captions. You specify sidecar captions in a separate output from your audio and video. Choose Raw (RAW) for captions in a single XML file in a raw container. Choose Fragmented MPEG-4 (FRAGMENTED_MP4) for captions in XML format contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
         pub fn set_caption_container_type(
             mut self,
             input: std::option::Option<crate::model::MpdCaptionContainerType>,
@@ -20740,9 +20837,9 @@ pub mod m3u8_settings {
         /// To override the contents of this collection use [`set_audio_pids`](Self::set_audio_pids).
         ///
         /// Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation.
-        pub fn audio_pids(mut self, input: impl Into<i32>) -> Self {
+        pub fn audio_pids(mut self, input: i32) -> Self {
             let mut v = self.audio_pids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.audio_pids = Some(v);
             self
         }
@@ -21303,7 +21400,7 @@ pub struct M2tsSettings {
     pub audio_pids: std::option::Option<std::vec::Vec<i32>>,
     /// Specify the output bitrate of the transport stream in bits per second. Setting to 0 lets the muxer automatically determine the appropriate bitrate. Other common values are 3750000, 7500000, and 15000000.
     pub bitrate: i32,
-    /// Controls what buffer model to use for accurate interleaving. If set to MULTIPLEX, use multiplex  buffer model. If set to NONE, this can lead to lower latency, but low-memory devices may not be able to play back the stream without interruptions.
+    /// Controls what buffer model to use for accurate interleaving. If set to MULTIPLEX, use multiplex buffer model. If set to NONE, this can lead to lower latency, but low-memory devices may not be able to play back the stream without interruptions.
     pub buffer_model: std::option::Option<crate::model::M2tsBufferModel>,
     /// If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
     pub data_pts_control: std::option::Option<crate::model::M2tsDataPtsControl>,
@@ -21391,7 +21488,7 @@ impl M2tsSettings {
     pub fn bitrate(&self) -> i32 {
         self.bitrate
     }
-    /// Controls what buffer model to use for accurate interleaving. If set to MULTIPLEX, use multiplex  buffer model. If set to NONE, this can lead to lower latency, but low-memory devices may not be able to play back the stream without interruptions.
+    /// Controls what buffer model to use for accurate interleaving. If set to MULTIPLEX, use multiplex buffer model. If set to NONE, this can lead to lower latency, but low-memory devices may not be able to play back the stream without interruptions.
     pub fn buffer_model(&self) -> std::option::Option<&crate::model::M2tsBufferModel> {
         self.buffer_model.as_ref()
     }
@@ -21660,9 +21757,9 @@ pub mod m2ts_settings {
         /// To override the contents of this collection use [`set_audio_pids`](Self::set_audio_pids).
         ///
         /// Specify the packet identifiers (PIDs) for any elementary audio streams you include in this output. Specify multiple PIDs as a JSON array. Default is the range 482-492.
-        pub fn audio_pids(mut self, input: impl Into<i32>) -> Self {
+        pub fn audio_pids(mut self, input: i32) -> Self {
             let mut v = self.audio_pids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.audio_pids = Some(v);
             self
         }
@@ -21681,12 +21778,12 @@ pub mod m2ts_settings {
             self.bitrate = input;
             self
         }
-        /// Controls what buffer model to use for accurate interleaving. If set to MULTIPLEX, use multiplex  buffer model. If set to NONE, this can lead to lower latency, but low-memory devices may not be able to play back the stream without interruptions.
+        /// Controls what buffer model to use for accurate interleaving. If set to MULTIPLEX, use multiplex buffer model. If set to NONE, this can lead to lower latency, but low-memory devices may not be able to play back the stream without interruptions.
         pub fn buffer_model(mut self, input: crate::model::M2tsBufferModel) -> Self {
             self.buffer_model = Some(input);
             self
         }
-        /// Controls what buffer model to use for accurate interleaving. If set to MULTIPLEX, use multiplex  buffer model. If set to NONE, this can lead to lower latency, but low-memory devices may not be able to play back the stream without interruptions.
+        /// Controls what buffer model to use for accurate interleaving. If set to MULTIPLEX, use multiplex buffer model. If set to NONE, this can lead to lower latency, but low-memory devices may not be able to play back the stream without interruptions.
         pub fn set_buffer_model(
             mut self,
             input: std::option::Option<crate::model::M2tsBufferModel>,
@@ -21738,9 +21835,9 @@ pub mod m2ts_settings {
         /// To override the contents of this collection use [`set_dvb_sub_pids`](Self::set_dvb_sub_pids).
         ///
         /// Specify the packet identifiers (PIDs) for DVB subtitle data included in this output. Specify multiple PIDs as a JSON array. Default is the range 460-479.
-        pub fn dvb_sub_pids(mut self, input: impl Into<i32>) -> Self {
+        pub fn dvb_sub_pids(mut self, input: i32) -> Self {
             let mut v = self.dvb_sub_pids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dvb_sub_pids = Some(v);
             self
         }
@@ -22808,7 +22905,7 @@ impl DvbTdtSettings {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DvbSdtSettings {
-    /// Selects method of inserting SDT information into output stream.  "Follow input SDT" copies SDT information from input stream to  output stream. "Follow input SDT if present" copies SDT information from  input stream to output stream if SDT information is present in the input, otherwise it will fall back on the user-defined values. Enter "SDT  Manually" means user will enter the SDT information. "No SDT" means output  stream will not contain SDT information.
+    /// Selects method of inserting SDT information into output stream. "Follow input SDT" copies SDT information from input stream to output stream. "Follow input SDT if present" copies SDT information from input stream to output stream if SDT information is present in the input, otherwise it will fall back on the user-defined values. Enter "SDT Manually" means user will enter the SDT information. "No SDT" means output stream will not contain SDT information.
     pub output_sdt: std::option::Option<crate::model::OutputSdt>,
     /// The number of milliseconds between instances of this table in the output transport stream.
     pub sdt_interval: i32,
@@ -22818,7 +22915,7 @@ pub struct DvbSdtSettings {
     pub service_provider_name: std::option::Option<std::string::String>,
 }
 impl DvbSdtSettings {
-    /// Selects method of inserting SDT information into output stream.  "Follow input SDT" copies SDT information from input stream to  output stream. "Follow input SDT if present" copies SDT information from  input stream to output stream if SDT information is present in the input, otherwise it will fall back on the user-defined values. Enter "SDT  Manually" means user will enter the SDT information. "No SDT" means output  stream will not contain SDT information.
+    /// Selects method of inserting SDT information into output stream. "Follow input SDT" copies SDT information from input stream to output stream. "Follow input SDT if present" copies SDT information from input stream to output stream if SDT information is present in the input, otherwise it will fall back on the user-defined values. Enter "SDT Manually" means user will enter the SDT information. "No SDT" means output stream will not contain SDT information.
     pub fn output_sdt(&self) -> std::option::Option<&crate::model::OutputSdt> {
         self.output_sdt.as_ref()
     }
@@ -22857,12 +22954,12 @@ pub mod dvb_sdt_settings {
         pub(crate) service_provider_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Selects method of inserting SDT information into output stream.  "Follow input SDT" copies SDT information from input stream to  output stream. "Follow input SDT if present" copies SDT information from  input stream to output stream if SDT information is present in the input, otherwise it will fall back on the user-defined values. Enter "SDT  Manually" means user will enter the SDT information. "No SDT" means output  stream will not contain SDT information.
+        /// Selects method of inserting SDT information into output stream. "Follow input SDT" copies SDT information from input stream to output stream. "Follow input SDT if present" copies SDT information from input stream to output stream if SDT information is present in the input, otherwise it will fall back on the user-defined values. Enter "SDT Manually" means user will enter the SDT information. "No SDT" means output stream will not contain SDT information.
         pub fn output_sdt(mut self, input: crate::model::OutputSdt) -> Self {
             self.output_sdt = Some(input);
             self
         }
-        /// Selects method of inserting SDT information into output stream.  "Follow input SDT" copies SDT information from input stream to  output stream. "Follow input SDT if present" copies SDT information from  input stream to output stream if SDT information is present in the input, otherwise it will fall back on the user-defined values. Enter "SDT  Manually" means user will enter the SDT information. "No SDT" means output  stream will not contain SDT information.
+        /// Selects method of inserting SDT information into output stream. "Follow input SDT" copies SDT information from input stream to output stream. "Follow input SDT if present" copies SDT information from input stream to output stream if SDT information is present in the input, otherwise it will fall back on the user-defined values. Enter "SDT Manually" means user will enter the SDT information. "No SDT" means output stream will not contain SDT information.
         pub fn set_output_sdt(
             mut self,
             input: std::option::Option<crate::model::OutputSdt>,
@@ -25578,9 +25675,9 @@ pub mod teletext_destination_settings {
         /// To override the contents of this collection use [`set_page_types`](Self::set_page_types).
         ///
         /// Specify the page types for this Teletext page. If you don't specify a value here, the service sets the page type to the default value Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of Teletext data, don't use this field. When you pass through a set of Teletext pages, your output has the same page types as your input.
-        pub fn page_types(mut self, input: impl Into<crate::model::TeletextPageType>) -> Self {
+        pub fn page_types(mut self, input: crate::model::TeletextPageType) -> Self {
             let mut v = self.page_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.page_types = Some(v);
             self
         }
@@ -26150,11 +26247,9 @@ pub struct DvbSubDestinationSettings {
     pub fallback_font: std::option::Option<crate::model::DvbSubSubtitleFallbackFont>,
     /// Specify the color of the captions text. Leave Font color (FontColor) blank and set Style passthrough (StylePassthrough) to enabled to use the font color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
     pub font_color: std::option::Option<crate::model::DvbSubtitleFontColor>,
-    /// Specify the opacity of the burned-in captions. 255 is opaque; 0 is transparent.
-    /// Within your job settings, all of your DVB-Sub settings must be identical.
+    /// Specify the opacity of the burned-in captions. 255 is opaque; 0 is transparent. Within your job settings, all of your DVB-Sub settings must be identical.
     pub font_opacity: i32,
-    /// Specify the Font resolution (FontResolution) in DPI (dots per inch).
-    /// Within your job settings, all of your DVB-Sub settings must be identical.
+    /// Specify the Font resolution (FontResolution) in DPI (dots per inch). Within your job settings, all of your DVB-Sub settings must be identical.
     pub font_resolution: i32,
     /// Set Font script (FontScript) to Automatically determined (AUTOMATIC), or leave blank, to automatically determine the font script in your input captions. Otherwise, set to Simplified Chinese (HANS) or Traditional Chinese (HANT) if your input font script uses Simplified or Traditional Chinese. Within your job settings, all of your DVB-Sub settings must be identical.
     pub font_script: std::option::Option<crate::model::FontScript>,
@@ -26230,13 +26325,11 @@ impl DvbSubDestinationSettings {
     pub fn font_color(&self) -> std::option::Option<&crate::model::DvbSubtitleFontColor> {
         self.font_color.as_ref()
     }
-    /// Specify the opacity of the burned-in captions. 255 is opaque; 0 is transparent.
-    /// Within your job settings, all of your DVB-Sub settings must be identical.
+    /// Specify the opacity of the burned-in captions. 255 is opaque; 0 is transparent. Within your job settings, all of your DVB-Sub settings must be identical.
     pub fn font_opacity(&self) -> i32 {
         self.font_opacity
     }
-    /// Specify the Font resolution (FontResolution) in DPI (dots per inch).
-    /// Within your job settings, all of your DVB-Sub settings must be identical.
+    /// Specify the Font resolution (FontResolution) in DPI (dots per inch). Within your job settings, all of your DVB-Sub settings must be identical.
     pub fn font_resolution(&self) -> i32 {
         self.font_resolution
     }
@@ -26486,26 +26579,22 @@ pub mod dvb_sub_destination_settings {
             self.font_color = input;
             self
         }
-        /// Specify the opacity of the burned-in captions. 255 is opaque; 0 is transparent.
-        /// Within your job settings, all of your DVB-Sub settings must be identical.
+        /// Specify the opacity of the burned-in captions. 255 is opaque; 0 is transparent. Within your job settings, all of your DVB-Sub settings must be identical.
         pub fn font_opacity(mut self, input: i32) -> Self {
             self.font_opacity = Some(input);
             self
         }
-        /// Specify the opacity of the burned-in captions. 255 is opaque; 0 is transparent.
-        /// Within your job settings, all of your DVB-Sub settings must be identical.
+        /// Specify the opacity of the burned-in captions. 255 is opaque; 0 is transparent. Within your job settings, all of your DVB-Sub settings must be identical.
         pub fn set_font_opacity(mut self, input: std::option::Option<i32>) -> Self {
             self.font_opacity = input;
             self
         }
-        /// Specify the Font resolution (FontResolution) in DPI (dots per inch).
-        /// Within your job settings, all of your DVB-Sub settings must be identical.
+        /// Specify the Font resolution (FontResolution) in DPI (dots per inch). Within your job settings, all of your DVB-Sub settings must be identical.
         pub fn font_resolution(mut self, input: i32) -> Self {
             self.font_resolution = Some(input);
             self
         }
-        /// Specify the Font resolution (FontResolution) in DPI (dots per inch).
-        /// Within your job settings, all of your DVB-Sub settings must be identical.
+        /// Specify the Font resolution (FontResolution) in DPI (dots per inch). Within your job settings, all of your DVB-Sub settings must be identical.
         pub fn set_font_resolution(mut self, input: std::option::Option<i32>) -> Self {
             self.font_resolution = input;
             self
@@ -29099,12 +29188,9 @@ pub mod channel_mapping {
         /// To override the contents of this collection use [`set_output_channels`](Self::set_output_channels).
         ///
         /// In your JSON job specification, include one child of OutputChannels for each audio channel that you want in your output. Each child should contain one instance of InputChannels or InputChannelsFineTune.
-        pub fn output_channels(
-            mut self,
-            input: impl Into<crate::model::OutputChannelMapping>,
-        ) -> Self {
+        pub fn output_channels(mut self, input: crate::model::OutputChannelMapping) -> Self {
             let mut v = self.output_channels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_channels = Some(v);
             self
         }
@@ -29173,9 +29259,9 @@ pub mod output_channel_mapping {
         /// To override the contents of this collection use [`set_input_channels`](Self::set_input_channels).
         ///
         /// Use this setting to specify your remix values when they are integers, such as -10, 0, or 4.
-        pub fn input_channels(mut self, input: impl Into<i32>) -> Self {
+        pub fn input_channels(mut self, input: i32) -> Self {
             let mut v = self.input_channels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_channels = Some(v);
             self
         }
@@ -29192,9 +29278,9 @@ pub mod output_channel_mapping {
         /// To override the contents of this collection use [`set_input_channels_fine_tune`](Self::set_input_channels_fine_tune).
         ///
         /// Use this setting to specify your remix values when they have a decimal component, such as -10.312, 0.08, or 4.9. MediaConvert rounds your remixing values to the nearest thousandth.
-        pub fn input_channels_fine_tune(mut self, input: impl Into<f64>) -> Self {
+        pub fn input_channels_fine_tune(mut self, input: f64) -> Self {
             let mut v = self.input_channels_fine_tune.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_channels_fine_tune = Some(v);
             self
         }
@@ -29281,39 +29367,39 @@ impl AsRef<str> for AudioLanguageCodeControl {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioCodecSettings {
-    /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AAC. The service accepts one of two mutually exclusive groups of AAC settings--VBR and CBR. To select one of these modes, set the value of Bitrate control mode (rateControlMode) to "VBR" or "CBR".  In VBR mode, you control the audio quality with the setting VBR quality (vbrQuality). In CBR mode, you use the setting Bitrate (bitrate). Defaults and valid values depend on the rate control mode.
+    /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value AAC. The service accepts one of two mutually exclusive groups of AAC settings--VBR and CBR. To select one of these modes, set the value of Bitrate control mode (rateControlMode) to "VBR" or "CBR". In VBR mode, you control the audio quality with the setting VBR quality (vbrQuality). In CBR mode, you use the setting Bitrate (bitrate). Defaults and valid values depend on the rate control mode.
     pub aac_settings: std::option::Option<crate::model::AacSettings>,
-    /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AC3.
+    /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value AC3.
     pub ac3_settings: std::option::Option<crate::model::Ac3Settings>,
-    /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AIFF.
+    /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value AIFF.
     pub aiff_settings: std::option::Option<crate::model::AiffSettings>,
     /// Choose the audio codec for this output. Note that the option Dolby Digital passthrough (PASSTHROUGH) applies only to Dolby Digital and Dolby Digital Plus audio inputs. Make sure that you choose a codec that's supported with your output container: https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference-codecs-containers-output-audio For audio-only outputs, make sure that both your input audio codec and your output audio codec are supported for audio-only workflows. For more information, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers-input.html#reference-codecs-containers-input-audio-only and https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
     pub codec: std::option::Option<crate::model::AudioCodec>,
-    /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3_ATMOS.
+    /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value EAC3_ATMOS.
     pub eac3_atmos_settings: std::option::Option<crate::model::Eac3AtmosSettings>,
-    /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3.
+    /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value EAC3.
     pub eac3_settings: std::option::Option<crate::model::Eac3Settings>,
-    /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value MP2.
+    /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value MP2.
     pub mp2_settings: std::option::Option<crate::model::Mp2Settings>,
-    /// Required when you set Codec, under AudioDescriptions>CodecSettings, to the value MP3.
+    /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value MP3.
     pub mp3_settings: std::option::Option<crate::model::Mp3Settings>,
-    /// Required when you set Codec, under AudioDescriptions>CodecSettings, to the value OPUS.
+    /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value OPUS.
     pub opus_settings: std::option::Option<crate::model::OpusSettings>,
-    /// Required when you set Codec, under AudioDescriptions>CodecSettings, to the value Vorbis.
+    /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value Vorbis.
     pub vorbis_settings: std::option::Option<crate::model::VorbisSettings>,
-    /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value WAV.
+    /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value WAV.
     pub wav_settings: std::option::Option<crate::model::WavSettings>,
 }
 impl AudioCodecSettings {
-    /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AAC. The service accepts one of two mutually exclusive groups of AAC settings--VBR and CBR. To select one of these modes, set the value of Bitrate control mode (rateControlMode) to "VBR" or "CBR".  In VBR mode, you control the audio quality with the setting VBR quality (vbrQuality). In CBR mode, you use the setting Bitrate (bitrate). Defaults and valid values depend on the rate control mode.
+    /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value AAC. The service accepts one of two mutually exclusive groups of AAC settings--VBR and CBR. To select one of these modes, set the value of Bitrate control mode (rateControlMode) to "VBR" or "CBR". In VBR mode, you control the audio quality with the setting VBR quality (vbrQuality). In CBR mode, you use the setting Bitrate (bitrate). Defaults and valid values depend on the rate control mode.
     pub fn aac_settings(&self) -> std::option::Option<&crate::model::AacSettings> {
         self.aac_settings.as_ref()
     }
-    /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AC3.
+    /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value AC3.
     pub fn ac3_settings(&self) -> std::option::Option<&crate::model::Ac3Settings> {
         self.ac3_settings.as_ref()
     }
-    /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AIFF.
+    /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value AIFF.
     pub fn aiff_settings(&self) -> std::option::Option<&crate::model::AiffSettings> {
         self.aiff_settings.as_ref()
     }
@@ -29321,31 +29407,31 @@ impl AudioCodecSettings {
     pub fn codec(&self) -> std::option::Option<&crate::model::AudioCodec> {
         self.codec.as_ref()
     }
-    /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3_ATMOS.
+    /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value EAC3_ATMOS.
     pub fn eac3_atmos_settings(&self) -> std::option::Option<&crate::model::Eac3AtmosSettings> {
         self.eac3_atmos_settings.as_ref()
     }
-    /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3.
+    /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value EAC3.
     pub fn eac3_settings(&self) -> std::option::Option<&crate::model::Eac3Settings> {
         self.eac3_settings.as_ref()
     }
-    /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value MP2.
+    /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value MP2.
     pub fn mp2_settings(&self) -> std::option::Option<&crate::model::Mp2Settings> {
         self.mp2_settings.as_ref()
     }
-    /// Required when you set Codec, under AudioDescriptions>CodecSettings, to the value MP3.
+    /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value MP3.
     pub fn mp3_settings(&self) -> std::option::Option<&crate::model::Mp3Settings> {
         self.mp3_settings.as_ref()
     }
-    /// Required when you set Codec, under AudioDescriptions>CodecSettings, to the value OPUS.
+    /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value OPUS.
     pub fn opus_settings(&self) -> std::option::Option<&crate::model::OpusSettings> {
         self.opus_settings.as_ref()
     }
-    /// Required when you set Codec, under AudioDescriptions>CodecSettings, to the value Vorbis.
+    /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value Vorbis.
     pub fn vorbis_settings(&self) -> std::option::Option<&crate::model::VorbisSettings> {
         self.vorbis_settings.as_ref()
     }
-    /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value WAV.
+    /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value WAV.
     pub fn wav_settings(&self) -> std::option::Option<&crate::model::WavSettings> {
         self.wav_settings.as_ref()
     }
@@ -29386,12 +29472,12 @@ pub mod audio_codec_settings {
         pub(crate) wav_settings: std::option::Option<crate::model::WavSettings>,
     }
     impl Builder {
-        /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AAC. The service accepts one of two mutually exclusive groups of AAC settings--VBR and CBR. To select one of these modes, set the value of Bitrate control mode (rateControlMode) to "VBR" or "CBR".  In VBR mode, you control the audio quality with the setting VBR quality (vbrQuality). In CBR mode, you use the setting Bitrate (bitrate). Defaults and valid values depend on the rate control mode.
+        /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value AAC. The service accepts one of two mutually exclusive groups of AAC settings--VBR and CBR. To select one of these modes, set the value of Bitrate control mode (rateControlMode) to "VBR" or "CBR". In VBR mode, you control the audio quality with the setting VBR quality (vbrQuality). In CBR mode, you use the setting Bitrate (bitrate). Defaults and valid values depend on the rate control mode.
         pub fn aac_settings(mut self, input: crate::model::AacSettings) -> Self {
             self.aac_settings = Some(input);
             self
         }
-        /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AAC. The service accepts one of two mutually exclusive groups of AAC settings--VBR and CBR. To select one of these modes, set the value of Bitrate control mode (rateControlMode) to "VBR" or "CBR".  In VBR mode, you control the audio quality with the setting VBR quality (vbrQuality). In CBR mode, you use the setting Bitrate (bitrate). Defaults and valid values depend on the rate control mode.
+        /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value AAC. The service accepts one of two mutually exclusive groups of AAC settings--VBR and CBR. To select one of these modes, set the value of Bitrate control mode (rateControlMode) to "VBR" or "CBR". In VBR mode, you control the audio quality with the setting VBR quality (vbrQuality). In CBR mode, you use the setting Bitrate (bitrate). Defaults and valid values depend on the rate control mode.
         pub fn set_aac_settings(
             mut self,
             input: std::option::Option<crate::model::AacSettings>,
@@ -29399,12 +29485,12 @@ pub mod audio_codec_settings {
             self.aac_settings = input;
             self
         }
-        /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AC3.
+        /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value AC3.
         pub fn ac3_settings(mut self, input: crate::model::Ac3Settings) -> Self {
             self.ac3_settings = Some(input);
             self
         }
-        /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AC3.
+        /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value AC3.
         pub fn set_ac3_settings(
             mut self,
             input: std::option::Option<crate::model::Ac3Settings>,
@@ -29412,12 +29498,12 @@ pub mod audio_codec_settings {
             self.ac3_settings = input;
             self
         }
-        /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AIFF.
+        /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value AIFF.
         pub fn aiff_settings(mut self, input: crate::model::AiffSettings) -> Self {
             self.aiff_settings = Some(input);
             self
         }
-        /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AIFF.
+        /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value AIFF.
         pub fn set_aiff_settings(
             mut self,
             input: std::option::Option<crate::model::AiffSettings>,
@@ -29435,12 +29521,12 @@ pub mod audio_codec_settings {
             self.codec = input;
             self
         }
-        /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3_ATMOS.
+        /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value EAC3_ATMOS.
         pub fn eac3_atmos_settings(mut self, input: crate::model::Eac3AtmosSettings) -> Self {
             self.eac3_atmos_settings = Some(input);
             self
         }
-        /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3_ATMOS.
+        /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value EAC3_ATMOS.
         pub fn set_eac3_atmos_settings(
             mut self,
             input: std::option::Option<crate::model::Eac3AtmosSettings>,
@@ -29448,12 +29534,12 @@ pub mod audio_codec_settings {
             self.eac3_atmos_settings = input;
             self
         }
-        /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3.
+        /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value EAC3.
         pub fn eac3_settings(mut self, input: crate::model::Eac3Settings) -> Self {
             self.eac3_settings = Some(input);
             self
         }
-        /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3.
+        /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value EAC3.
         pub fn set_eac3_settings(
             mut self,
             input: std::option::Option<crate::model::Eac3Settings>,
@@ -29461,12 +29547,12 @@ pub mod audio_codec_settings {
             self.eac3_settings = input;
             self
         }
-        /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value MP2.
+        /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value MP2.
         pub fn mp2_settings(mut self, input: crate::model::Mp2Settings) -> Self {
             self.mp2_settings = Some(input);
             self
         }
-        /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value MP2.
+        /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value MP2.
         pub fn set_mp2_settings(
             mut self,
             input: std::option::Option<crate::model::Mp2Settings>,
@@ -29474,12 +29560,12 @@ pub mod audio_codec_settings {
             self.mp2_settings = input;
             self
         }
-        /// Required when you set Codec, under AudioDescriptions>CodecSettings, to the value MP3.
+        /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value MP3.
         pub fn mp3_settings(mut self, input: crate::model::Mp3Settings) -> Self {
             self.mp3_settings = Some(input);
             self
         }
-        /// Required when you set Codec, under AudioDescriptions>CodecSettings, to the value MP3.
+        /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value MP3.
         pub fn set_mp3_settings(
             mut self,
             input: std::option::Option<crate::model::Mp3Settings>,
@@ -29487,12 +29573,12 @@ pub mod audio_codec_settings {
             self.mp3_settings = input;
             self
         }
-        /// Required when you set Codec, under AudioDescriptions>CodecSettings, to the value OPUS.
+        /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value OPUS.
         pub fn opus_settings(mut self, input: crate::model::OpusSettings) -> Self {
             self.opus_settings = Some(input);
             self
         }
-        /// Required when you set Codec, under AudioDescriptions>CodecSettings, to the value OPUS.
+        /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value OPUS.
         pub fn set_opus_settings(
             mut self,
             input: std::option::Option<crate::model::OpusSettings>,
@@ -29500,12 +29586,12 @@ pub mod audio_codec_settings {
             self.opus_settings = input;
             self
         }
-        /// Required when you set Codec, under AudioDescriptions>CodecSettings, to the value Vorbis.
+        /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value Vorbis.
         pub fn vorbis_settings(mut self, input: crate::model::VorbisSettings) -> Self {
             self.vorbis_settings = Some(input);
             self
         }
-        /// Required when you set Codec, under AudioDescriptions>CodecSettings, to the value Vorbis.
+        /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value Vorbis.
         pub fn set_vorbis_settings(
             mut self,
             input: std::option::Option<crate::model::VorbisSettings>,
@@ -29513,12 +29599,12 @@ pub mod audio_codec_settings {
             self.vorbis_settings = input;
             self
         }
-        /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value WAV.
+        /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value WAV.
         pub fn wav_settings(mut self, input: crate::model::WavSettings) -> Self {
             self.wav_settings = Some(input);
             self
         }
-        /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value WAV.
+        /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value WAV.
         pub fn set_wav_settings(
             mut self,
             input: std::option::Option<crate::model::WavSettings>,
@@ -29551,7 +29637,7 @@ impl AudioCodecSettings {
     }
 }
 
-/// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value WAV.
+/// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value WAV.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WavSettings {
@@ -29717,7 +29803,7 @@ impl AsRef<str> for WavFormat {
     }
 }
 
-/// Required when you set Codec, under AudioDescriptions>CodecSettings, to the value Vorbis.
+/// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value Vorbis.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VorbisSettings {
@@ -29809,7 +29895,7 @@ impl VorbisSettings {
     }
 }
 
-/// Required when you set Codec, under AudioDescriptions>CodecSettings, to the value OPUS.
+/// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value OPUS.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpusSettings {
@@ -29901,7 +29987,7 @@ impl OpusSettings {
     }
 }
 
-/// Required when you set Codec, under AudioDescriptions>CodecSettings, to the value MP3.
+/// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value MP3.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Mp3Settings {
@@ -30089,7 +30175,7 @@ impl AsRef<str> for Mp3RateControlMode {
     }
 }
 
-/// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value MP2.
+/// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value MP2.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Mp2Settings {
@@ -30181,7 +30267,7 @@ impl Mp2Settings {
     }
 }
 
-/// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3.
+/// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value EAC3.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Eac3Settings {
@@ -31535,7 +31621,7 @@ impl AsRef<str> for Eac3AttenuationControl {
     }
 }
 
-/// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3_ATMOS.
+/// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value EAC3_ATMOS.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Eac3AtmosSettings {
@@ -31547,7 +31633,7 @@ pub struct Eac3AtmosSettings {
     pub coding_mode: std::option::Option<crate::model::Eac3AtmosCodingMode>,
     /// Enable Dolby Dialogue Intelligence to adjust loudness based on dialogue analysis.
     pub dialogue_intelligence: std::option::Option<crate::model::Eac3AtmosDialogueIntelligence>,
-    /// Specify whether MediaConvert should use any downmix metadata from your input file. Keep the default value, Custom (SPECIFIED) to provide downmix values in your job settings. Choose Follow source (INITIALIZE_FROM_SOURCE) to use the metadata from your input. Related settings--Use these settings to specify your downmix values: Left only/Right only surround (LoRoSurroundMixLevel), Left total/Right total surround (LtRtSurroundMixLevel), Left total/Right total center (LtRtCenterMixLevel), Left only/Right only center (LoRoCenterMixLevel),  and Stereo downmix (StereoDownmix). When you keep Custom (SPECIFIED) for Downmix control (DownmixControl) and you don't specify values for the related settings, MediaConvert uses default values for those settings.
+    /// Specify whether MediaConvert should use any downmix metadata from your input file. Keep the default value, Custom (SPECIFIED) to provide downmix values in your job settings. Choose Follow source (INITIALIZE_FROM_SOURCE) to use the metadata from your input. Related settings--Use these settings to specify your downmix values: Left only/Right only surround (LoRoSurroundMixLevel), Left total/Right total surround (LtRtSurroundMixLevel), Left total/Right total center (LtRtCenterMixLevel), Left only/Right only center (LoRoCenterMixLevel), and Stereo downmix (StereoDownmix). When you keep Custom (SPECIFIED) for Downmix control (DownmixControl) and you don't specify values for the related settings, MediaConvert uses default values for those settings.
     pub downmix_control: std::option::Option<crate::model::Eac3AtmosDownmixControl>,
     /// Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby stream for the line operating mode. Default value: Film light (ATMOS_STORAGE_DDP_COMPR_FILM_LIGHT) Related setting: To have MediaConvert use the value you specify here, keep the default value, Custom (SPECIFIED) for the setting Dynamic range control (DynamicRangeControl). Otherwise, MediaConvert ignores Dynamic range compression line (DynamicRangeCompressionLine). For information about the Dolby DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
     pub dynamic_range_compression_line:
@@ -31595,7 +31681,7 @@ impl Eac3AtmosSettings {
     ) -> std::option::Option<&crate::model::Eac3AtmosDialogueIntelligence> {
         self.dialogue_intelligence.as_ref()
     }
-    /// Specify whether MediaConvert should use any downmix metadata from your input file. Keep the default value, Custom (SPECIFIED) to provide downmix values in your job settings. Choose Follow source (INITIALIZE_FROM_SOURCE) to use the metadata from your input. Related settings--Use these settings to specify your downmix values: Left only/Right only surround (LoRoSurroundMixLevel), Left total/Right total surround (LtRtSurroundMixLevel), Left total/Right total center (LtRtCenterMixLevel), Left only/Right only center (LoRoCenterMixLevel),  and Stereo downmix (StereoDownmix). When you keep Custom (SPECIFIED) for Downmix control (DownmixControl) and you don't specify values for the related settings, MediaConvert uses default values for those settings.
+    /// Specify whether MediaConvert should use any downmix metadata from your input file. Keep the default value, Custom (SPECIFIED) to provide downmix values in your job settings. Choose Follow source (INITIALIZE_FROM_SOURCE) to use the metadata from your input. Related settings--Use these settings to specify your downmix values: Left only/Right only surround (LoRoSurroundMixLevel), Left total/Right total surround (LtRtSurroundMixLevel), Left total/Right total center (LtRtCenterMixLevel), Left only/Right only center (LoRoCenterMixLevel), and Stereo downmix (StereoDownmix). When you keep Custom (SPECIFIED) for Downmix control (DownmixControl) and you don't specify values for the related settings, MediaConvert uses default values for those settings.
     pub fn downmix_control(&self) -> std::option::Option<&crate::model::Eac3AtmosDownmixControl> {
         self.downmix_control.as_ref()
     }
@@ -31764,12 +31850,12 @@ pub mod eac3_atmos_settings {
             self.dialogue_intelligence = input;
             self
         }
-        /// Specify whether MediaConvert should use any downmix metadata from your input file. Keep the default value, Custom (SPECIFIED) to provide downmix values in your job settings. Choose Follow source (INITIALIZE_FROM_SOURCE) to use the metadata from your input. Related settings--Use these settings to specify your downmix values: Left only/Right only surround (LoRoSurroundMixLevel), Left total/Right total surround (LtRtSurroundMixLevel), Left total/Right total center (LtRtCenterMixLevel), Left only/Right only center (LoRoCenterMixLevel),  and Stereo downmix (StereoDownmix). When you keep Custom (SPECIFIED) for Downmix control (DownmixControl) and you don't specify values for the related settings, MediaConvert uses default values for those settings.
+        /// Specify whether MediaConvert should use any downmix metadata from your input file. Keep the default value, Custom (SPECIFIED) to provide downmix values in your job settings. Choose Follow source (INITIALIZE_FROM_SOURCE) to use the metadata from your input. Related settings--Use these settings to specify your downmix values: Left only/Right only surround (LoRoSurroundMixLevel), Left total/Right total surround (LtRtSurroundMixLevel), Left total/Right total center (LtRtCenterMixLevel), Left only/Right only center (LoRoCenterMixLevel), and Stereo downmix (StereoDownmix). When you keep Custom (SPECIFIED) for Downmix control (DownmixControl) and you don't specify values for the related settings, MediaConvert uses default values for those settings.
         pub fn downmix_control(mut self, input: crate::model::Eac3AtmosDownmixControl) -> Self {
             self.downmix_control = Some(input);
             self
         }
-        /// Specify whether MediaConvert should use any downmix metadata from your input file. Keep the default value, Custom (SPECIFIED) to provide downmix values in your job settings. Choose Follow source (INITIALIZE_FROM_SOURCE) to use the metadata from your input. Related settings--Use these settings to specify your downmix values: Left only/Right only surround (LoRoSurroundMixLevel), Left total/Right total surround (LtRtSurroundMixLevel), Left total/Right total center (LtRtCenterMixLevel), Left only/Right only center (LoRoCenterMixLevel),  and Stereo downmix (StereoDownmix). When you keep Custom (SPECIFIED) for Downmix control (DownmixControl) and you don't specify values for the related settings, MediaConvert uses default values for those settings.
+        /// Specify whether MediaConvert should use any downmix metadata from your input file. Keep the default value, Custom (SPECIFIED) to provide downmix values in your job settings. Choose Follow source (INITIALIZE_FROM_SOURCE) to use the metadata from your input. Related settings--Use these settings to specify your downmix values: Left only/Right only surround (LoRoSurroundMixLevel), Left total/Right total surround (LtRtSurroundMixLevel), Left total/Right total center (LtRtCenterMixLevel), Left only/Right only center (LoRoCenterMixLevel), and Stereo downmix (StereoDownmix). When you keep Custom (SPECIFIED) for Downmix control (DownmixControl) and you don't specify values for the related settings, MediaConvert uses default values for those settings.
         pub fn set_downmix_control(
             mut self,
             input: std::option::Option<crate::model::Eac3AtmosDownmixControl>,
@@ -32693,7 +32779,7 @@ impl AsRef<str> for AudioCodec {
     }
 }
 
-/// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AIFF.
+/// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value AIFF.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AiffSettings {
@@ -32785,7 +32871,7 @@ impl AiffSettings {
     }
 }
 
-/// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AC3.
+/// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value AC3.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ac3Settings {
@@ -33538,11 +33624,11 @@ impl AsRef<str> for Ac3BitstreamMode {
     }
 }
 
-/// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AAC. The service accepts one of two mutually exclusive groups of AAC settings--VBR and CBR. To select one of these modes, set the value of Bitrate control mode (rateControlMode) to "VBR" or "CBR".  In VBR mode, you control the audio quality with the setting VBR quality (vbrQuality). In CBR mode, you use the setting Bitrate (bitrate). Defaults and valid values depend on the rate control mode.
+/// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value AAC. The service accepts one of two mutually exclusive groups of AAC settings--VBR and CBR. To select one of these modes, set the value of Bitrate control mode (rateControlMode) to "VBR" or "CBR". In VBR mode, you control the audio quality with the setting VBR quality (vbrQuality). In CBR mode, you use the setting Bitrate (bitrate). Defaults and valid values depend on the rate control mode.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AacSettings {
-    /// Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and  FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType.
+    /// Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType.
     pub audio_description_broadcaster_mix:
         std::option::Option<crate::model::AacAudioDescriptionBroadcasterMix>,
     /// Specify the average bitrate in bits per second. The set of valid values for this setting is: 6000, 8000, 10000, 12000, 14000, 16000, 20000, 24000, 28000, 32000, 40000, 48000, 56000, 64000, 80000, 96000, 112000, 128000, 160000, 192000, 224000, 256000, 288000, 320000, 384000, 448000, 512000, 576000, 640000, 768000, 896000, 1024000. The value you set is also constrained by the values that you choose for Profile (codecProfile), Bitrate control mode (codingMode), and Sample rate (sampleRate). Default values depend on Bitrate control mode and Profile.
@@ -33563,7 +33649,7 @@ pub struct AacSettings {
     pub vbr_quality: std::option::Option<crate::model::AacVbrQuality>,
 }
 impl AacSettings {
-    /// Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and  FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType.
+    /// Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType.
     pub fn audio_description_broadcaster_mix(
         &self,
     ) -> std::option::Option<&crate::model::AacAudioDescriptionBroadcasterMix> {
@@ -33638,7 +33724,7 @@ pub mod aac_settings {
         pub(crate) vbr_quality: std::option::Option<crate::model::AacVbrQuality>,
     }
     impl Builder {
-        /// Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and  FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType.
+        /// Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType.
         pub fn audio_description_broadcaster_mix(
             mut self,
             input: crate::model::AacAudioDescriptionBroadcasterMix,
@@ -33646,7 +33732,7 @@ pub mod aac_settings {
             self.audio_description_broadcaster_mix = Some(input);
             self
         }
-        /// Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and  FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType.
+        /// Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType.
         pub fn set_audio_description_broadcaster_mix(
             mut self,
             input: std::option::Option<crate::model::AacAudioDescriptionBroadcasterMix>,
@@ -34661,11 +34747,11 @@ impl AsRef<str> for AudioNormalizationAlgorithm {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioChannelTaggingSettings {
-    /// You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout.  For example, if this track is the left surround channel, choose Left surround (LS).
+    /// You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout. For example, if this track is the left surround channel, choose Left surround (LS).
     pub channel_tag: std::option::Option<crate::model::AudioChannelTag>,
 }
 impl AudioChannelTaggingSettings {
-    /// You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout.  For example, if this track is the left surround channel, choose Left surround (LS).
+    /// You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout. For example, if this track is the left surround channel, choose Left surround (LS).
     pub fn channel_tag(&self) -> std::option::Option<&crate::model::AudioChannelTag> {
         self.channel_tag.as_ref()
     }
@@ -34686,12 +34772,12 @@ pub mod audio_channel_tagging_settings {
         pub(crate) channel_tag: std::option::Option<crate::model::AudioChannelTag>,
     }
     impl Builder {
-        /// You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout.  For example, if this track is the left surround channel, choose Left surround (LS).
+        /// You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout. For example, if this track is the left surround channel, choose Left surround (LS).
         pub fn channel_tag(mut self, input: crate::model::AudioChannelTag) -> Self {
             self.channel_tag = Some(input);
             self
         }
-        /// You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout.  For example, if this track is the left surround channel, choose Left surround (LS).
+        /// You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout. For example, if this track is the left surround channel, choose Left surround (LS).
         pub fn set_channel_tag(
             mut self,
             input: std::option::Option<crate::model::AudioChannelTag>,
@@ -35015,9 +35101,9 @@ pub mod job_template {
         /// To override the contents of this collection use [`set_hop_destinations`](Self::set_hop_destinations).
         ///
         /// Optional list of hop destinations.
-        pub fn hop_destinations(mut self, input: impl Into<crate::model::HopDestination>) -> Self {
+        pub fn hop_destinations(mut self, input: crate::model::HopDestination) -> Self {
             let mut v = self.hop_destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hop_destinations = Some(v);
             self
         }
@@ -35264,13 +35350,13 @@ impl AsRef<str> for StatusUpdateInterval {
 pub struct JobTemplateSettings {
     /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time.
     pub ad_avail_offset: i32,
-    /// Settings for ad avail blanking.  Video can be blanked or overlaid with an image, and audio muted during SCTE-35 triggered ad avails.
+    /// Settings for ad avail blanking. Video can be blanked or overlaid with an image, and audio muted during SCTE-35 triggered ad avails.
     pub avail_blanking: std::option::Option<crate::model::AvailBlanking>,
     /// Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings.
     pub esam: std::option::Option<crate::model::EsamSettings>,
     /// If your source content has EIA-608 Line 21 Data Services, enable this feature to specify what MediaConvert does with the Extended Data Services (XDS) packets. You can choose to pass through XDS packets, or remove them from the output. For more information about XDS, see EIA-608 Line Data Services, section 9.5.1.5 05h Content Advisory.
     pub extended_data_services: std::option::Option<crate::model::ExtendedDataServices>,
-    /// Use Inputs (inputs) to define the source file used in the transcode job. There can only be one input in a job template.  Using the API, you can include multiple inputs when referencing a job template.
+    /// Use Inputs (inputs) to define the source file used in the transcode job. There can only be one input in a job template. Using the API, you can include multiple inputs when referencing a job template.
     pub inputs: std::option::Option<std::vec::Vec<crate::model::InputTemplate>>,
     /// Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to generate and place Kantar watermarks in your output audio. These settings apply to every output in your job. In addition to specifying these values, you also need to store your Kantar credentials in AWS Secrets Manager. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
     pub kantar_watermark: std::option::Option<crate::model::KantarWatermarkSettings>,
@@ -35278,10 +35364,10 @@ pub struct JobTemplateSettings {
     pub motion_image_inserter: std::option::Option<crate::model::MotionImageInserter>,
     /// Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs in the job. To enable Nielsen configuration programmatically, include an instance of nielsenConfiguration in your JSON job specification. Even if you don't include any children of nielsenConfiguration, you still enable the setting.
     pub nielsen_configuration: std::option::Option<crate::model::NielsenConfiguration>,
-    /// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that  MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to  specifying these values, you also need to set up your cloud TIC server. These settings apply to  every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
+    /// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to specifying these values, you also need to set up your cloud TIC server. These settings apply to every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
     pub nielsen_non_linear_watermark:
         std::option::Option<crate::model::NielsenNonLinearWatermarkSettings>,
-    /// (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in (OutputGroups) is a group of settings that apply to the whole group. This required object depends on the value you set for (Type) under (OutputGroups)>(OutputGroupSettings). Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
+    /// (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in (OutputGroups) is a group of settings that apply to the whole group. This required object depends on the value you set for (Type) under (OutputGroups)&gt;(OutputGroupSettings). Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
     pub output_groups: std::option::Option<std::vec::Vec<crate::model::OutputGroup>>,
     /// These settings control how the service handles timecodes throughout the job. These settings don't affect input clipping.
     pub timecode_config: std::option::Option<crate::model::TimecodeConfig>,
@@ -35293,7 +35379,7 @@ impl JobTemplateSettings {
     pub fn ad_avail_offset(&self) -> i32 {
         self.ad_avail_offset
     }
-    /// Settings for ad avail blanking.  Video can be blanked or overlaid with an image, and audio muted during SCTE-35 triggered ad avails.
+    /// Settings for ad avail blanking. Video can be blanked or overlaid with an image, and audio muted during SCTE-35 triggered ad avails.
     pub fn avail_blanking(&self) -> std::option::Option<&crate::model::AvailBlanking> {
         self.avail_blanking.as_ref()
     }
@@ -35307,7 +35393,7 @@ impl JobTemplateSettings {
     ) -> std::option::Option<&crate::model::ExtendedDataServices> {
         self.extended_data_services.as_ref()
     }
-    /// Use Inputs (inputs) to define the source file used in the transcode job. There can only be one input in a job template.  Using the API, you can include multiple inputs when referencing a job template.
+    /// Use Inputs (inputs) to define the source file used in the transcode job. There can only be one input in a job template. Using the API, you can include multiple inputs when referencing a job template.
     pub fn inputs(&self) -> std::option::Option<&[crate::model::InputTemplate]> {
         self.inputs.as_deref()
     }
@@ -35325,13 +35411,13 @@ impl JobTemplateSettings {
     ) -> std::option::Option<&crate::model::NielsenConfiguration> {
         self.nielsen_configuration.as_ref()
     }
-    /// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that  MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to  specifying these values, you also need to set up your cloud TIC server. These settings apply to  every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
+    /// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to specifying these values, you also need to set up your cloud TIC server. These settings apply to every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
     pub fn nielsen_non_linear_watermark(
         &self,
     ) -> std::option::Option<&crate::model::NielsenNonLinearWatermarkSettings> {
         self.nielsen_non_linear_watermark.as_ref()
     }
-    /// (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in (OutputGroups) is a group of settings that apply to the whole group. This required object depends on the value you set for (Type) under (OutputGroups)>(OutputGroupSettings). Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
+    /// (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in (OutputGroups) is a group of settings that apply to the whole group. This required object depends on the value you set for (Type) under (OutputGroups)&gt;(OutputGroupSettings). Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
     pub fn output_groups(&self) -> std::option::Option<&[crate::model::OutputGroup]> {
         self.output_groups.as_deref()
     }
@@ -35399,12 +35485,12 @@ pub mod job_template_settings {
             self.ad_avail_offset = input;
             self
         }
-        /// Settings for ad avail blanking.  Video can be blanked or overlaid with an image, and audio muted during SCTE-35 triggered ad avails.
+        /// Settings for ad avail blanking. Video can be blanked or overlaid with an image, and audio muted during SCTE-35 triggered ad avails.
         pub fn avail_blanking(mut self, input: crate::model::AvailBlanking) -> Self {
             self.avail_blanking = Some(input);
             self
         }
-        /// Settings for ad avail blanking.  Video can be blanked or overlaid with an image, and audio muted during SCTE-35 triggered ad avails.
+        /// Settings for ad avail blanking. Video can be blanked or overlaid with an image, and audio muted during SCTE-35 triggered ad avails.
         pub fn set_avail_blanking(
             mut self,
             input: std::option::Option<crate::model::AvailBlanking>,
@@ -35439,14 +35525,14 @@ pub mod job_template_settings {
         ///
         /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
         ///
-        /// Use Inputs (inputs) to define the source file used in the transcode job. There can only be one input in a job template.  Using the API, you can include multiple inputs when referencing a job template.
-        pub fn inputs(mut self, input: impl Into<crate::model::InputTemplate>) -> Self {
+        /// Use Inputs (inputs) to define the source file used in the transcode job. There can only be one input in a job template. Using the API, you can include multiple inputs when referencing a job template.
+        pub fn inputs(mut self, input: crate::model::InputTemplate) -> Self {
             let mut v = self.inputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.inputs = Some(v);
             self
         }
-        /// Use Inputs (inputs) to define the source file used in the transcode job. There can only be one input in a job template.  Using the API, you can include multiple inputs when referencing a job template.
+        /// Use Inputs (inputs) to define the source file used in the transcode job. There can only be one input in a job template. Using the API, you can include multiple inputs when referencing a job template.
         pub fn set_inputs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputTemplate>>,
@@ -35493,7 +35579,7 @@ pub mod job_template_settings {
             self.nielsen_configuration = input;
             self
         }
-        /// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that  MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to  specifying these values, you also need to set up your cloud TIC server. These settings apply to  every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
+        /// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to specifying these values, you also need to set up your cloud TIC server. These settings apply to every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
         pub fn nielsen_non_linear_watermark(
             mut self,
             input: crate::model::NielsenNonLinearWatermarkSettings,
@@ -35501,7 +35587,7 @@ pub mod job_template_settings {
             self.nielsen_non_linear_watermark = Some(input);
             self
         }
-        /// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that  MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to  specifying these values, you also need to set up your cloud TIC server. These settings apply to  every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
+        /// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to specifying these values, you also need to set up your cloud TIC server. These settings apply to every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
         pub fn set_nielsen_non_linear_watermark(
             mut self,
             input: std::option::Option<crate::model::NielsenNonLinearWatermarkSettings>,
@@ -35513,14 +35599,14 @@ pub mod job_template_settings {
         ///
         /// To override the contents of this collection use [`set_output_groups`](Self::set_output_groups).
         ///
-        /// (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in (OutputGroups) is a group of settings that apply to the whole group. This required object depends on the value you set for (Type) under (OutputGroups)>(OutputGroupSettings). Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
-        pub fn output_groups(mut self, input: impl Into<crate::model::OutputGroup>) -> Self {
+        /// (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in (OutputGroups) is a group of settings that apply to the whole group. This required object depends on the value you set for (Type) under (OutputGroups)&gt;(OutputGroupSettings). Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
+        pub fn output_groups(mut self, input: crate::model::OutputGroup) -> Self {
             let mut v = self.output_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_groups = Some(v);
             self
         }
-        /// (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in (OutputGroups) is a group of settings that apply to the whole group. This required object depends on the value you set for (Type) under (OutputGroups)>(OutputGroupSettings). Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
+        /// (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in (OutputGroups) is a group of settings that apply to the whole group. This required object depends on the value you set for (Type) under (OutputGroups)&gt;(OutputGroupSettings). Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
         pub fn set_output_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OutputGroup>>,
@@ -35617,9 +35703,9 @@ pub mod timed_metadata_insertion {
         /// To override the contents of this collection use [`set_id3_insertions`](Self::set_id3_insertions).
         ///
         /// Id3Insertions contains the array of Id3Insertion instances.
-        pub fn id3_insertions(mut self, input: impl Into<crate::model::Id3Insertion>) -> Self {
+        pub fn id3_insertions(mut self, input: crate::model::Id3Insertion) -> Self {
             let mut v = self.id3_insertions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.id3_insertions = Some(v);
             self
         }
@@ -35723,17 +35809,17 @@ impl Id3Insertion {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimecodeConfig {
-    /// If you use an editing platform that relies on an anchor timecode, use Anchor Timecode (Anchor) to specify a timecode that will match the input video frame to the output video frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF). This setting ignores frame rate conversion. System behavior for Anchor Timecode varies depending on your setting for Source (TimecodeSource). * If Source (TimecodeSource) is set to Specified Start (SPECIFIEDSTART), the first input frame is the specified value in Start Timecode (Start). Anchor Timecode (Anchor) and Start Timecode (Start) are used calculate output timecode. * If Source (TimecodeSource) is set to Start at 0 (ZEROBASED)  the  first frame is 00:00:00:00. * If Source (TimecodeSource) is set to Embedded (EMBEDDED), the  first frame is the timecode value on the first input frame of the input.
+    /// If you use an editing platform that relies on an anchor timecode, use Anchor Timecode (Anchor) to specify a timecode that will match the input video frame to the output video frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF). This setting ignores frame rate conversion. System behavior for Anchor Timecode varies depending on your setting for Source (TimecodeSource). * If Source (TimecodeSource) is set to Specified Start (SPECIFIEDSTART), the first input frame is the specified value in Start Timecode (Start). Anchor Timecode (Anchor) and Start Timecode (Start) are used calculate output timecode. * If Source (TimecodeSource) is set to Start at 0 (ZEROBASED) the first frame is 00:00:00:00. * If Source (TimecodeSource) is set to Embedded (EMBEDDED), the first frame is the timecode value on the first input frame of the input.
     pub anchor: std::option::Option<std::string::String>,
     /// Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your video, audio, captions, and markers are synchronized and that time-based features, such as image inserter, work correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour format with frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in the input video. If no embedded timecode is in the source, the service will use Start at 0 (ZEROBASED) instead. * Start at 0 (ZEROBASED) - Set the timecode of the initial frame to 00:00:00:00. * Specified Start (SPECIFIEDSTART) - Set the timecode of the initial frame to a value other than zero. You use Start timecode (Start) to provide this value.
     pub source: std::option::Option<crate::model::TimecodeSource>,
     /// Only use when you set Source (TimecodeSource) to Specified start (SPECIFIEDSTART). Use Start timecode (Start) to specify the timecode for the initial frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF).
     pub start: std::option::Option<std::string::String>,
-    /// Only applies to outputs that support program-date-time stamp. Use Timestamp offset (TimestampOffset) to overwrite the timecode date without affecting the time and frame number. Provide the new date as a string in the format "yyyy-mm-dd".  To use Time stamp offset, you must also enable Insert program-date-time (InsertProgramDateTime) in the output settings. For example, if the date part of your timecodes is 2002-1-25 and you want to change it to one year later, set Timestamp offset (TimestampOffset) to 2003-1-25.
+    /// Only applies to outputs that support program-date-time stamp. Use Timestamp offset (TimestampOffset) to overwrite the timecode date without affecting the time and frame number. Provide the new date as a string in the format "yyyy-mm-dd". To use Time stamp offset, you must also enable Insert program-date-time (InsertProgramDateTime) in the output settings. For example, if the date part of your timecodes is 2002-1-25 and you want to change it to one year later, set Timestamp offset (TimestampOffset) to 2003-1-25.
     pub timestamp_offset: std::option::Option<std::string::String>,
 }
 impl TimecodeConfig {
-    /// If you use an editing platform that relies on an anchor timecode, use Anchor Timecode (Anchor) to specify a timecode that will match the input video frame to the output video frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF). This setting ignores frame rate conversion. System behavior for Anchor Timecode varies depending on your setting for Source (TimecodeSource). * If Source (TimecodeSource) is set to Specified Start (SPECIFIEDSTART), the first input frame is the specified value in Start Timecode (Start). Anchor Timecode (Anchor) and Start Timecode (Start) are used calculate output timecode. * If Source (TimecodeSource) is set to Start at 0 (ZEROBASED)  the  first frame is 00:00:00:00. * If Source (TimecodeSource) is set to Embedded (EMBEDDED), the  first frame is the timecode value on the first input frame of the input.
+    /// If you use an editing platform that relies on an anchor timecode, use Anchor Timecode (Anchor) to specify a timecode that will match the input video frame to the output video frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF). This setting ignores frame rate conversion. System behavior for Anchor Timecode varies depending on your setting for Source (TimecodeSource). * If Source (TimecodeSource) is set to Specified Start (SPECIFIEDSTART), the first input frame is the specified value in Start Timecode (Start). Anchor Timecode (Anchor) and Start Timecode (Start) are used calculate output timecode. * If Source (TimecodeSource) is set to Start at 0 (ZEROBASED) the first frame is 00:00:00:00. * If Source (TimecodeSource) is set to Embedded (EMBEDDED), the first frame is the timecode value on the first input frame of the input.
     pub fn anchor(&self) -> std::option::Option<&str> {
         self.anchor.as_deref()
     }
@@ -35745,7 +35831,7 @@ impl TimecodeConfig {
     pub fn start(&self) -> std::option::Option<&str> {
         self.start.as_deref()
     }
-    /// Only applies to outputs that support program-date-time stamp. Use Timestamp offset (TimestampOffset) to overwrite the timecode date without affecting the time and frame number. Provide the new date as a string in the format "yyyy-mm-dd".  To use Time stamp offset, you must also enable Insert program-date-time (InsertProgramDateTime) in the output settings. For example, if the date part of your timecodes is 2002-1-25 and you want to change it to one year later, set Timestamp offset (TimestampOffset) to 2003-1-25.
+    /// Only applies to outputs that support program-date-time stamp. Use Timestamp offset (TimestampOffset) to overwrite the timecode date without affecting the time and frame number. Provide the new date as a string in the format "yyyy-mm-dd". To use Time stamp offset, you must also enable Insert program-date-time (InsertProgramDateTime) in the output settings. For example, if the date part of your timecodes is 2002-1-25 and you want to change it to one year later, set Timestamp offset (TimestampOffset) to 2003-1-25.
     pub fn timestamp_offset(&self) -> std::option::Option<&str> {
         self.timestamp_offset.as_deref()
     }
@@ -35772,12 +35858,12 @@ pub mod timecode_config {
         pub(crate) timestamp_offset: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// If you use an editing platform that relies on an anchor timecode, use Anchor Timecode (Anchor) to specify a timecode that will match the input video frame to the output video frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF). This setting ignores frame rate conversion. System behavior for Anchor Timecode varies depending on your setting for Source (TimecodeSource). * If Source (TimecodeSource) is set to Specified Start (SPECIFIEDSTART), the first input frame is the specified value in Start Timecode (Start). Anchor Timecode (Anchor) and Start Timecode (Start) are used calculate output timecode. * If Source (TimecodeSource) is set to Start at 0 (ZEROBASED)  the  first frame is 00:00:00:00. * If Source (TimecodeSource) is set to Embedded (EMBEDDED), the  first frame is the timecode value on the first input frame of the input.
+        /// If you use an editing platform that relies on an anchor timecode, use Anchor Timecode (Anchor) to specify a timecode that will match the input video frame to the output video frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF). This setting ignores frame rate conversion. System behavior for Anchor Timecode varies depending on your setting for Source (TimecodeSource). * If Source (TimecodeSource) is set to Specified Start (SPECIFIEDSTART), the first input frame is the specified value in Start Timecode (Start). Anchor Timecode (Anchor) and Start Timecode (Start) are used calculate output timecode. * If Source (TimecodeSource) is set to Start at 0 (ZEROBASED) the first frame is 00:00:00:00. * If Source (TimecodeSource) is set to Embedded (EMBEDDED), the first frame is the timecode value on the first input frame of the input.
         pub fn anchor(mut self, input: impl Into<std::string::String>) -> Self {
             self.anchor = Some(input.into());
             self
         }
-        /// If you use an editing platform that relies on an anchor timecode, use Anchor Timecode (Anchor) to specify a timecode that will match the input video frame to the output video frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF). This setting ignores frame rate conversion. System behavior for Anchor Timecode varies depending on your setting for Source (TimecodeSource). * If Source (TimecodeSource) is set to Specified Start (SPECIFIEDSTART), the first input frame is the specified value in Start Timecode (Start). Anchor Timecode (Anchor) and Start Timecode (Start) are used calculate output timecode. * If Source (TimecodeSource) is set to Start at 0 (ZEROBASED)  the  first frame is 00:00:00:00. * If Source (TimecodeSource) is set to Embedded (EMBEDDED), the  first frame is the timecode value on the first input frame of the input.
+        /// If you use an editing platform that relies on an anchor timecode, use Anchor Timecode (Anchor) to specify a timecode that will match the input video frame to the output video frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF). This setting ignores frame rate conversion. System behavior for Anchor Timecode varies depending on your setting for Source (TimecodeSource). * If Source (TimecodeSource) is set to Specified Start (SPECIFIEDSTART), the first input frame is the specified value in Start Timecode (Start). Anchor Timecode (Anchor) and Start Timecode (Start) are used calculate output timecode. * If Source (TimecodeSource) is set to Start at 0 (ZEROBASED) the first frame is 00:00:00:00. * If Source (TimecodeSource) is set to Embedded (EMBEDDED), the first frame is the timecode value on the first input frame of the input.
         pub fn set_anchor(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.anchor = input;
             self
@@ -35805,12 +35891,12 @@ pub mod timecode_config {
             self.start = input;
             self
         }
-        /// Only applies to outputs that support program-date-time stamp. Use Timestamp offset (TimestampOffset) to overwrite the timecode date without affecting the time and frame number. Provide the new date as a string in the format "yyyy-mm-dd".  To use Time stamp offset, you must also enable Insert program-date-time (InsertProgramDateTime) in the output settings. For example, if the date part of your timecodes is 2002-1-25 and you want to change it to one year later, set Timestamp offset (TimestampOffset) to 2003-1-25.
+        /// Only applies to outputs that support program-date-time stamp. Use Timestamp offset (TimestampOffset) to overwrite the timecode date without affecting the time and frame number. Provide the new date as a string in the format "yyyy-mm-dd". To use Time stamp offset, you must also enable Insert program-date-time (InsertProgramDateTime) in the output settings. For example, if the date part of your timecodes is 2002-1-25 and you want to change it to one year later, set Timestamp offset (TimestampOffset) to 2003-1-25.
         pub fn timestamp_offset(mut self, input: impl Into<std::string::String>) -> Self {
             self.timestamp_offset = Some(input.into());
             self
         }
-        /// Only applies to outputs that support program-date-time stamp. Use Timestamp offset (TimestampOffset) to overwrite the timecode date without affecting the time and frame number. Provide the new date as a string in the format "yyyy-mm-dd".  To use Time stamp offset, you must also enable Insert program-date-time (InsertProgramDateTime) in the output settings. For example, if the date part of your timecodes is 2002-1-25 and you want to change it to one year later, set Timestamp offset (TimestampOffset) to 2003-1-25.
+        /// Only applies to outputs that support program-date-time stamp. Use Timestamp offset (TimestampOffset) to overwrite the timecode date without affecting the time and frame number. Provide the new date as a string in the format "yyyy-mm-dd". To use Time stamp offset, you must also enable Insert program-date-time (InsertProgramDateTime) in the output settings. For example, if the date part of your timecodes is 2002-1-25 and you want to change it to one year later, set Timestamp offset (TimestampOffset) to 2003-1-25.
         pub fn set_timestamp_offset(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -36016,9 +36102,9 @@ pub mod output_group {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// This object holds groups of encoding settings, one group of settings per output.
-        pub fn outputs(mut self, input: impl Into<crate::model::Output>) -> Self {
+        pub fn outputs(mut self, input: crate::model::Output) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -36141,12 +36227,9 @@ pub mod output {
         /// To override the contents of this collection use [`set_audio_descriptions`](Self::set_audio_descriptions).
         ///
         /// (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one instance of (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding settings.
-        pub fn audio_descriptions(
-            mut self,
-            input: impl Into<crate::model::AudioDescription>,
-        ) -> Self {
+        pub fn audio_descriptions(mut self, input: crate::model::AudioDescription) -> Self {
             let mut v = self.audio_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.audio_descriptions = Some(v);
             self
         }
@@ -36163,12 +36246,9 @@ pub mod output {
         /// To override the contents of this collection use [`set_caption_descriptions`](Self::set_caption_descriptions).
         ///
         /// (CaptionDescriptions) contains groups of captions settings. For each output that has captions, include one instance of (CaptionDescriptions). (CaptionDescriptions) can contain multiple groups of captions settings.
-        pub fn caption_descriptions(
-            mut self,
-            input: impl Into<crate::model::CaptionDescription>,
-        ) -> Self {
+        pub fn caption_descriptions(mut self, input: crate::model::CaptionDescription) -> Self {
             let mut v = self.caption_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.caption_descriptions = Some(v);
             self
         }
@@ -36775,7 +36855,9 @@ impl AsRef<str> for HlsAudioOnlyContainer {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CaptionDescription {
-    /// Specifies which "Caption Selector":#inputs-caption_selector to use from each input when generating captions. The name should be of the format "Caption Selector <N>", which denotes that the Nth Caption Selector will be used from each input.
+    /// Specifies which "Caption Selector":#inputs-caption_selector to use from each input when generating captions. The name should be of the format "Caption Selector <n>
+    /// ", which denotes that the Nth Caption Selector will be used from each input.
+    /// </n>
     pub caption_selector_name: std::option::Option<std::string::String>,
     /// Specify the language for this captions output track. For most captions output formats, the encoder puts this language information in the output captions metadata. If your output captions format is DVB-Sub or Burn in, the encoder uses this language information when automatically selecting the font script for rendering the captions text. For all outputs, you can use an ISO 639-2 or ISO 639-3 code. For streaming outputs, you can also use any other code in the full RFC-5646 specification. Streaming outputs are those that are in one of the following output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth Streaming.
     pub custom_language_code: std::option::Option<std::string::String>,
@@ -36787,7 +36869,9 @@ pub struct CaptionDescription {
     pub language_description: std::option::Option<std::string::String>,
 }
 impl CaptionDescription {
-    /// Specifies which "Caption Selector":#inputs-caption_selector to use from each input when generating captions. The name should be of the format "Caption Selector <N>", which denotes that the Nth Caption Selector will be used from each input.
+    /// Specifies which "Caption Selector":#inputs-caption_selector to use from each input when generating captions. The name should be of the format "Caption Selector <n>
+    /// ", which denotes that the Nth Caption Selector will be used from each input.
+    /// </n>
     pub fn caption_selector_name(&self) -> std::option::Option<&str> {
         self.caption_selector_name.as_deref()
     }
@@ -36835,12 +36919,16 @@ pub mod caption_description {
         pub(crate) language_description: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Specifies which "Caption Selector":#inputs-caption_selector to use from each input when generating captions. The name should be of the format "Caption Selector <N>", which denotes that the Nth Caption Selector will be used from each input.
+        /// Specifies which "Caption Selector":#inputs-caption_selector to use from each input when generating captions. The name should be of the format "Caption Selector <n>
+        /// ", which denotes that the Nth Caption Selector will be used from each input.
+        /// </n>
         pub fn caption_selector_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.caption_selector_name = Some(input.into());
             self
         }
-        /// Specifies which "Caption Selector":#inputs-caption_selector to use from each input when generating captions. The name should be of the format "Caption Selector <N>", which denotes that the Nth Caption Selector will be used from each input.
+        /// Specifies which "Caption Selector":#inputs-caption_selector to use from each input when generating captions. The name should be of the format "Caption Selector <n>
+        /// ", which denotes that the Nth Caption Selector will be used from each input.
+        /// </n>
         pub fn set_caption_selector_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -37277,10 +37365,10 @@ pub mod ms_smooth_group_settings {
         /// By default, the service creates one .ism Microsoft Smooth Streaming manifest for each Microsoft Smooth Streaming output group in your job. This default manifest references every output in the output group. To create additional manifests that reference a subset of the outputs in the output group, specify a list of them here.
         pub fn additional_manifests(
             mut self,
-            input: impl Into<crate::model::MsSmoothAdditionalManifest>,
+            input: crate::model::MsSmoothAdditionalManifest,
         ) -> Self {
             let mut v = self.additional_manifests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_manifests = Some(v);
             self
         }
@@ -37519,11 +37607,11 @@ impl AsRef<str> for MsSmoothFragmentLengthControl {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MsSmoothEncryptionSettings {
-    /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider.  If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
+    /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
     pub speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
 }
 impl MsSmoothEncryptionSettings {
-    /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider.  If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
+    /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
     pub fn speke_key_provider(&self) -> std::option::Option<&crate::model::SpekeKeyProvider> {
         self.speke_key_provider.as_ref()
     }
@@ -37544,12 +37632,12 @@ pub mod ms_smooth_encryption_settings {
         pub(crate) speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
     }
     impl Builder {
-        /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider.  If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
+        /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
         pub fn speke_key_provider(mut self, input: crate::model::SpekeKeyProvider) -> Self {
             self.speke_key_provider = Some(input);
             self
         }
-        /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider.  If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
+        /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
         pub fn set_speke_key_provider(
             mut self,
             input: std::option::Option<crate::model::SpekeKeyProvider>,
@@ -37572,7 +37660,7 @@ impl MsSmoothEncryptionSettings {
     }
 }
 
-/// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider.  If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
+/// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SpekeKeyProvider {
@@ -37580,8 +37668,7 @@ pub struct SpekeKeyProvider {
     pub certificate_arn: std::option::Option<std::string::String>,
     /// Specify the resource ID that your SPEKE-compliant key provider uses to identify this content.
     pub resource_id: std::option::Option<std::string::String>,
-    /// Relates to SPEKE implementation. DRM system identifiers. DASH output groups support a max of two system ids. Other group types support one system id. See
-    /// https://dashif.org/identifiers/content_protection/ for more details.
+    /// Relates to SPEKE implementation. DRM system identifiers. DASH output groups support a max of two system ids. Other group types support one system id. See https://dashif.org/identifiers/content_protection/ for more details.
     pub system_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// Specify the URL to the key server that your SPEKE-compliant DRM key provider uses to provide keys for encrypting your content.
     pub url: std::option::Option<std::string::String>,
@@ -37595,8 +37682,7 @@ impl SpekeKeyProvider {
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// Relates to SPEKE implementation. DRM system identifiers. DASH output groups support a max of two system ids. Other group types support one system id. See
-    /// https://dashif.org/identifiers/content_protection/ for more details.
+    /// Relates to SPEKE implementation. DRM system identifiers. DASH output groups support a max of two system ids. Other group types support one system id. See https://dashif.org/identifiers/content_protection/ for more details.
     pub fn system_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.system_ids.as_deref()
     }
@@ -37654,16 +37740,14 @@ pub mod speke_key_provider {
         ///
         /// To override the contents of this collection use [`set_system_ids`](Self::set_system_ids).
         ///
-        /// Relates to SPEKE implementation. DRM system identifiers. DASH output groups support a max of two system ids. Other group types support one system id. See
-        /// https://dashif.org/identifiers/content_protection/ for more details.
+        /// Relates to SPEKE implementation. DRM system identifiers. DASH output groups support a max of two system ids. Other group types support one system id. See https://dashif.org/identifiers/content_protection/ for more details.
         pub fn system_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.system_ids.unwrap_or_default();
             v.push(input.into());
             self.system_ids = Some(v);
             self
         }
-        /// Relates to SPEKE implementation. DRM system identifiers. DASH output groups support a max of two system ids. Other group types support one system id. See
-        /// https://dashif.org/identifiers/content_protection/ for more details.
+        /// Relates to SPEKE implementation. DRM system identifiers. DASH output groups support a max of two system ids. Other group types support one system id. See https://dashif.org/identifiers/content_protection/ for more details.
         pub fn set_system_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -37839,7 +37923,7 @@ impl S3DestinationSettings {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3EncryptionSettings {
-    /// Specify how you want your data keys managed. AWS uses data keys to encrypt your content. AWS also encrypts the data keys themselves, using a customer master key (CMK), and then stores the encrypted data keys alongside your encrypted content. Use this setting to specify which AWS service manages the CMK. For simplest set up, choose Amazon S3 (SERVER_SIDE_ENCRYPTION_S3). If you want your master key to be managed by AWS Key Management Service (KMS), choose AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). By default, when you choose AWS KMS, KMS uses the AWS managed customer master key (CMK) associated with Amazon S3 to encrypt your data keys. You can optionally choose to specify a different, customer managed CMK. Do so by specifying the Amazon Resource Name (ARN) of the key for the setting  KMS ARN (kmsKeyArn).
+    /// Specify how you want your data keys managed. AWS uses data keys to encrypt your content. AWS also encrypts the data keys themselves, using a customer master key (CMK), and then stores the encrypted data keys alongside your encrypted content. Use this setting to specify which AWS service manages the CMK. For simplest set up, choose Amazon S3 (SERVER_SIDE_ENCRYPTION_S3). If you want your master key to be managed by AWS Key Management Service (KMS), choose AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). By default, when you choose AWS KMS, KMS uses the AWS managed customer master key (CMK) associated with Amazon S3 to encrypt your data keys. You can optionally choose to specify a different, customer managed CMK. Do so by specifying the Amazon Resource Name (ARN) of the key for the setting KMS ARN (kmsKeyArn).
     pub encryption_type: std::option::Option<crate::model::S3ServerSideEncryptionType>,
     /// Optionally, specify the encryption context that you want to use alongside your KMS key. AWS KMS uses this encryption context as additional authenticated data (AAD) to support authenticated encryption. This value must be a base64-encoded UTF-8 string holding JSON which represents a string-string map. To use this setting, you must also set Server-side encryption (S3ServerSideEncryptionType) to AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). For more information about encryption context, see: https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context.
     pub kms_encryption_context: std::option::Option<std::string::String>,
@@ -37847,7 +37931,7 @@ pub struct S3EncryptionSettings {
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl S3EncryptionSettings {
-    /// Specify how you want your data keys managed. AWS uses data keys to encrypt your content. AWS also encrypts the data keys themselves, using a customer master key (CMK), and then stores the encrypted data keys alongside your encrypted content. Use this setting to specify which AWS service manages the CMK. For simplest set up, choose Amazon S3 (SERVER_SIDE_ENCRYPTION_S3). If you want your master key to be managed by AWS Key Management Service (KMS), choose AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). By default, when you choose AWS KMS, KMS uses the AWS managed customer master key (CMK) associated with Amazon S3 to encrypt your data keys. You can optionally choose to specify a different, customer managed CMK. Do so by specifying the Amazon Resource Name (ARN) of the key for the setting  KMS ARN (kmsKeyArn).
+    /// Specify how you want your data keys managed. AWS uses data keys to encrypt your content. AWS also encrypts the data keys themselves, using a customer master key (CMK), and then stores the encrypted data keys alongside your encrypted content. Use this setting to specify which AWS service manages the CMK. For simplest set up, choose Amazon S3 (SERVER_SIDE_ENCRYPTION_S3). If you want your master key to be managed by AWS Key Management Service (KMS), choose AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). By default, when you choose AWS KMS, KMS uses the AWS managed customer master key (CMK) associated with Amazon S3 to encrypt your data keys. You can optionally choose to specify a different, customer managed CMK. Do so by specifying the Amazon Resource Name (ARN) of the key for the setting KMS ARN (kmsKeyArn).
     pub fn encryption_type(
         &self,
     ) -> std::option::Option<&crate::model::S3ServerSideEncryptionType> {
@@ -37882,12 +37966,12 @@ pub mod s3_encryption_settings {
         pub(crate) kms_key_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Specify how you want your data keys managed. AWS uses data keys to encrypt your content. AWS also encrypts the data keys themselves, using a customer master key (CMK), and then stores the encrypted data keys alongside your encrypted content. Use this setting to specify which AWS service manages the CMK. For simplest set up, choose Amazon S3 (SERVER_SIDE_ENCRYPTION_S3). If you want your master key to be managed by AWS Key Management Service (KMS), choose AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). By default, when you choose AWS KMS, KMS uses the AWS managed customer master key (CMK) associated with Amazon S3 to encrypt your data keys. You can optionally choose to specify a different, customer managed CMK. Do so by specifying the Amazon Resource Name (ARN) of the key for the setting  KMS ARN (kmsKeyArn).
+        /// Specify how you want your data keys managed. AWS uses data keys to encrypt your content. AWS also encrypts the data keys themselves, using a customer master key (CMK), and then stores the encrypted data keys alongside your encrypted content. Use this setting to specify which AWS service manages the CMK. For simplest set up, choose Amazon S3 (SERVER_SIDE_ENCRYPTION_S3). If you want your master key to be managed by AWS Key Management Service (KMS), choose AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). By default, when you choose AWS KMS, KMS uses the AWS managed customer master key (CMK) associated with Amazon S3 to encrypt your data keys. You can optionally choose to specify a different, customer managed CMK. Do so by specifying the Amazon Resource Name (ARN) of the key for the setting KMS ARN (kmsKeyArn).
         pub fn encryption_type(mut self, input: crate::model::S3ServerSideEncryptionType) -> Self {
             self.encryption_type = Some(input);
             self
         }
-        /// Specify how you want your data keys managed. AWS uses data keys to encrypt your content. AWS also encrypts the data keys themselves, using a customer master key (CMK), and then stores the encrypted data keys alongside your encrypted content. Use this setting to specify which AWS service manages the CMK. For simplest set up, choose Amazon S3 (SERVER_SIDE_ENCRYPTION_S3). If you want your master key to be managed by AWS Key Management Service (KMS), choose AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). By default, when you choose AWS KMS, KMS uses the AWS managed customer master key (CMK) associated with Amazon S3 to encrypt your data keys. You can optionally choose to specify a different, customer managed CMK. Do so by specifying the Amazon Resource Name (ARN) of the key for the setting  KMS ARN (kmsKeyArn).
+        /// Specify how you want your data keys managed. AWS uses data keys to encrypt your content. AWS also encrypts the data keys themselves, using a customer master key (CMK), and then stores the encrypted data keys alongside your encrypted content. Use this setting to specify which AWS service manages the CMK. For simplest set up, choose Amazon S3 (SERVER_SIDE_ENCRYPTION_S3). If you want your master key to be managed by AWS Key Management Service (KMS), choose AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). By default, when you choose AWS KMS, KMS uses the AWS managed customer master key (CMK) associated with Amazon S3 to encrypt your data keys. You can optionally choose to specify a different, customer managed CMK. Do so by specifying the Amazon Resource Name (ARN) of the key for the setting KMS ARN (kmsKeyArn).
         pub fn set_encryption_type(
             mut self,
             input: std::option::Option<crate::model::S3ServerSideEncryptionType>,
@@ -38314,7 +38398,7 @@ pub struct HlsGroupSettings {
     pub segments_per_subdirectory: i32,
     /// Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
     pub stream_inf_resolution: std::option::Option<crate::model::HlsStreamInfResolution>,
-    /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
+    /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (&gt;= 0.5) and rounded down if less than 0.5 (&lt; 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
     pub target_duration_compatibility_mode:
         std::option::Option<crate::model::HlsTargetDurationCompatibilityMode>,
     /// Indicates ID3 frame that has the timecode.
@@ -38447,7 +38531,7 @@ impl HlsGroupSettings {
     ) -> std::option::Option<&crate::model::HlsStreamInfResolution> {
         self.stream_inf_resolution.as_ref()
     }
-    /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
+    /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (&gt;= 0.5) and rounded down if less than 0.5 (&lt; 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
     pub fn target_duration_compatibility_mode(
         &self,
     ) -> std::option::Option<&crate::model::HlsTargetDurationCompatibilityMode> {
@@ -38565,9 +38649,9 @@ pub mod hls_group_settings {
         /// To override the contents of this collection use [`set_ad_markers`](Self::set_ad_markers).
         ///
         /// Choose one or more ad marker types to decorate your Apple HLS manifest. This setting does not determine whether SCTE-35 markers appear in the outputs themselves.
-        pub fn ad_markers(mut self, input: impl Into<crate::model::HlsAdMarkers>) -> Self {
+        pub fn ad_markers(mut self, input: crate::model::HlsAdMarkers) -> Self {
             let mut v = self.ad_markers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ad_markers = Some(v);
             self
         }
@@ -38584,12 +38668,9 @@ pub mod hls_group_settings {
         /// To override the contents of this collection use [`set_additional_manifests`](Self::set_additional_manifests).
         ///
         /// By default, the service creates one top-level .m3u8 HLS manifest for each HLS output group in your job. This default manifest references every output in the output group. To create additional top-level manifests that reference a subset of the outputs in the output group, specify a list of them here.
-        pub fn additional_manifests(
-            mut self,
-            input: impl Into<crate::model::HlsAdditionalManifest>,
-        ) -> Self {
+        pub fn additional_manifests(mut self, input: crate::model::HlsAdditionalManifest) -> Self {
             let mut v = self.additional_manifests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_manifests = Some(v);
             self
         }
@@ -38631,10 +38712,10 @@ pub mod hls_group_settings {
         /// Language to be used on Caption outputs
         pub fn caption_language_mappings(
             mut self,
-            input: impl Into<crate::model::HlsCaptionLanguageMapping>,
+            input: crate::model::HlsCaptionLanguageMapping,
         ) -> Self {
             let mut v = self.caption_language_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.caption_language_mappings = Some(v);
             self
         }
@@ -38919,7 +39000,7 @@ pub mod hls_group_settings {
             self.stream_inf_resolution = input;
             self
         }
-        /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
+        /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (&gt;= 0.5) and rounded down if less than 0.5 (&lt; 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
         pub fn target_duration_compatibility_mode(
             mut self,
             input: crate::model::HlsTargetDurationCompatibilityMode,
@@ -38927,7 +39008,7 @@ pub mod hls_group_settings {
             self.target_duration_compatibility_mode = Some(input);
             self
         }
-        /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
+        /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (&gt;= 0.5) and rounded down if less than 0.5 (&lt; 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
         pub fn set_target_duration_compatibility_mode(
             mut self,
             input: std::option::Option<crate::model::HlsTargetDurationCompatibilityMode>,
@@ -39518,33 +39599,33 @@ impl AsRef<str> for HlsManifestCompression {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HlsImageBasedTrickPlaySettings {
-    /// The cadence MediaConvert follows for generating thumbnails.  If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence).  If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
+    /// The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
     pub interval_cadence: std::option::Option<crate::model::HlsIntervalCadence>,
-    /// Height of each thumbnail within each tile image, in pixels.  Leave blank to maintain aspect ratio with thumbnail width.  If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected.  Must be divisible by 2.
+    /// Height of each thumbnail within each tile image, in pixels. Leave blank to maintain aspect ratio with thumbnail width. If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected. Must be divisible by 2.
     pub thumbnail_height: i32,
-    /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails.  If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate.  For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
+    /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails. If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate. For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
     pub thumbnail_interval: f64,
-    /// Width of each thumbnail within each tile image, in pixels.  Default is 312.  Must be divisible by 8.
+    /// Width of each thumbnail within each tile image, in pixels. Default is 312. Must be divisible by 8.
     pub thumbnail_width: i32,
     /// Number of thumbnails in each column of a tile image. Set a value between 2 and 2048. Must be divisible by 2.
     pub tile_height: i32,
-    /// Number of thumbnails in each row of a tile image.  Set a value between 1 and 512.
+    /// Number of thumbnails in each row of a tile image. Set a value between 1 and 512.
     pub tile_width: i32,
 }
 impl HlsImageBasedTrickPlaySettings {
-    /// The cadence MediaConvert follows for generating thumbnails.  If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence).  If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
+    /// The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
     pub fn interval_cadence(&self) -> std::option::Option<&crate::model::HlsIntervalCadence> {
         self.interval_cadence.as_ref()
     }
-    /// Height of each thumbnail within each tile image, in pixels.  Leave blank to maintain aspect ratio with thumbnail width.  If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected.  Must be divisible by 2.
+    /// Height of each thumbnail within each tile image, in pixels. Leave blank to maintain aspect ratio with thumbnail width. If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected. Must be divisible by 2.
     pub fn thumbnail_height(&self) -> i32 {
         self.thumbnail_height
     }
-    /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails.  If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate.  For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
+    /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails. If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate. For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
     pub fn thumbnail_interval(&self) -> f64 {
         self.thumbnail_interval
     }
-    /// Width of each thumbnail within each tile image, in pixels.  Default is 312.  Must be divisible by 8.
+    /// Width of each thumbnail within each tile image, in pixels. Default is 312. Must be divisible by 8.
     pub fn thumbnail_width(&self) -> i32 {
         self.thumbnail_width
     }
@@ -39552,7 +39633,7 @@ impl HlsImageBasedTrickPlaySettings {
     pub fn tile_height(&self) -> i32 {
         self.tile_height
     }
-    /// Number of thumbnails in each row of a tile image.  Set a value between 1 and 512.
+    /// Number of thumbnails in each row of a tile image. Set a value between 1 and 512.
     pub fn tile_width(&self) -> i32 {
         self.tile_width
     }
@@ -39583,12 +39664,12 @@ pub mod hls_image_based_trick_play_settings {
         pub(crate) tile_width: std::option::Option<i32>,
     }
     impl Builder {
-        /// The cadence MediaConvert follows for generating thumbnails.  If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence).  If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
+        /// The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
         pub fn interval_cadence(mut self, input: crate::model::HlsIntervalCadence) -> Self {
             self.interval_cadence = Some(input);
             self
         }
-        /// The cadence MediaConvert follows for generating thumbnails.  If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence).  If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
+        /// The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
         pub fn set_interval_cadence(
             mut self,
             input: std::option::Option<crate::model::HlsIntervalCadence>,
@@ -39596,32 +39677,32 @@ pub mod hls_image_based_trick_play_settings {
             self.interval_cadence = input;
             self
         }
-        /// Height of each thumbnail within each tile image, in pixels.  Leave blank to maintain aspect ratio with thumbnail width.  If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected.  Must be divisible by 2.
+        /// Height of each thumbnail within each tile image, in pixels. Leave blank to maintain aspect ratio with thumbnail width. If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected. Must be divisible by 2.
         pub fn thumbnail_height(mut self, input: i32) -> Self {
             self.thumbnail_height = Some(input);
             self
         }
-        /// Height of each thumbnail within each tile image, in pixels.  Leave blank to maintain aspect ratio with thumbnail width.  If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected.  Must be divisible by 2.
+        /// Height of each thumbnail within each tile image, in pixels. Leave blank to maintain aspect ratio with thumbnail width. If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected. Must be divisible by 2.
         pub fn set_thumbnail_height(mut self, input: std::option::Option<i32>) -> Self {
             self.thumbnail_height = input;
             self
         }
-        /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails.  If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate.  For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
+        /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails. If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate. For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
         pub fn thumbnail_interval(mut self, input: f64) -> Self {
             self.thumbnail_interval = Some(input);
             self
         }
-        /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails.  If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate.  For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
+        /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails. If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate. For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
         pub fn set_thumbnail_interval(mut self, input: std::option::Option<f64>) -> Self {
             self.thumbnail_interval = input;
             self
         }
-        /// Width of each thumbnail within each tile image, in pixels.  Default is 312.  Must be divisible by 8.
+        /// Width of each thumbnail within each tile image, in pixels. Default is 312. Must be divisible by 8.
         pub fn thumbnail_width(mut self, input: i32) -> Self {
             self.thumbnail_width = Some(input);
             self
         }
-        /// Width of each thumbnail within each tile image, in pixels.  Default is 312.  Must be divisible by 8.
+        /// Width of each thumbnail within each tile image, in pixels. Default is 312. Must be divisible by 8.
         pub fn set_thumbnail_width(mut self, input: std::option::Option<i32>) -> Self {
             self.thumbnail_width = input;
             self
@@ -39636,12 +39717,12 @@ pub mod hls_image_based_trick_play_settings {
             self.tile_height = input;
             self
         }
-        /// Number of thumbnails in each row of a tile image.  Set a value between 1 and 512.
+        /// Number of thumbnails in each row of a tile image. Set a value between 1 and 512.
         pub fn tile_width(mut self, input: i32) -> Self {
             self.tile_width = Some(input);
             self
         }
-        /// Number of thumbnails in each row of a tile image.  Set a value between 1 and 512.
+        /// Number of thumbnails in each row of a tile image. Set a value between 1 and 512.
         pub fn set_tile_width(mut self, input: std::option::Option<i32>) -> Self {
             self.tile_width = input;
             self
@@ -39797,7 +39878,7 @@ pub struct HlsEncryptionSettings {
         std::option::Option<crate::model::HlsInitializationVectorInManifest>,
     /// Enable this setting to insert the EXT-X-SESSION-KEY element into the master playlist. This allows for offline Apple HLS FairPlay content protection.
     pub offline_encrypted: std::option::Option<crate::model::HlsOfflineEncrypted>,
-    /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider.  If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
+    /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
     pub speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
     /// Use these settings to set up encryption with a static key provider.
     pub static_key_provider: std::option::Option<crate::model::StaticKeyProvider>,
@@ -39823,7 +39904,7 @@ impl HlsEncryptionSettings {
     pub fn offline_encrypted(&self) -> std::option::Option<&crate::model::HlsOfflineEncrypted> {
         self.offline_encrypted.as_ref()
     }
-    /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider.  If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
+    /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
     pub fn speke_key_provider(&self) -> std::option::Option<&crate::model::SpekeKeyProvider> {
         self.speke_key_provider.as_ref()
     }
@@ -39929,12 +40010,12 @@ pub mod hls_encryption_settings {
             self.offline_encrypted = input;
             self
         }
-        /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider.  If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
+        /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
         pub fn speke_key_provider(mut self, input: crate::model::SpekeKeyProvider) -> Self {
             self.speke_key_provider = Some(input);
             self
         }
-        /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider.  If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
+        /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
         pub fn set_speke_key_provider(
             mut self,
             input: std::option::Option<crate::model::SpekeKeyProvider>,
@@ -40972,7 +41053,7 @@ pub struct DashIsoGroupSettings {
     pub min_buffer_time: i32,
     /// Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back the end of your video asset. If you know that player devices are hanging on the final segment of your video because the length of your final segment is too short, use this setting to specify a minimum final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify a value for this setting, the encoder will combine any final segment that is shorter than the length that you specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5 seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final segment is 3.5 seconds.
     pub min_final_segment_length: f64,
-    /// Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals  urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
+    /// Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
     pub mpd_profile: std::option::Option<crate::model::DashIsoMpdProfile>,
     /// Use this setting only when your output video stream has B-frames, which causes the initial presentation time stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you want MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based (ZERO_BASED) to have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero regardless of your choice here.
     pub pts_offset_handling_for_b_frames:
@@ -41044,7 +41125,7 @@ impl DashIsoGroupSettings {
     pub fn min_final_segment_length(&self) -> f64 {
         self.min_final_segment_length
     }
-    /// Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals  urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
+    /// Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
     pub fn mpd_profile(&self) -> std::option::Option<&crate::model::DashIsoMpdProfile> {
         self.mpd_profile.as_ref()
     }
@@ -41149,12 +41230,9 @@ pub mod dash_iso_group_settings {
         /// To override the contents of this collection use [`set_additional_manifests`](Self::set_additional_manifests).
         ///
         /// By default, the service creates one .mpd DASH manifest for each DASH ISO output group in your job. This default manifest references every output in the output group. To create additional DASH manifests that reference a subset of the outputs in the output group, specify a list of them here.
-        pub fn additional_manifests(
-            mut self,
-            input: impl Into<crate::model::DashAdditionalManifest>,
-        ) -> Self {
+        pub fn additional_manifests(mut self, input: crate::model::DashAdditionalManifest) -> Self {
             let mut v = self.additional_manifests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_manifests = Some(v);
             self
         }
@@ -41303,12 +41381,12 @@ pub mod dash_iso_group_settings {
             self.min_final_segment_length = input;
             self
         }
-        /// Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals  urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
+        /// Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
         pub fn mpd_profile(mut self, input: crate::model::DashIsoMpdProfile) -> Self {
             self.mpd_profile = Some(input);
             self
         }
-        /// Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals  urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
+        /// Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
         pub fn set_mpd_profile(
             mut self,
             input: std::option::Option<crate::model::DashIsoMpdProfile>,
@@ -41699,33 +41777,33 @@ impl AsRef<str> for DashIsoMpdProfile {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DashIsoImageBasedTrickPlaySettings {
-    /// The cadence MediaConvert follows for generating thumbnails.  If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence).  If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
+    /// The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
     pub interval_cadence: std::option::Option<crate::model::DashIsoIntervalCadence>,
-    /// Height of each thumbnail within each tile image, in pixels.  Leave blank to maintain aspect ratio with thumbnail width.  If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected.  Must be divisible by 2.
+    /// Height of each thumbnail within each tile image, in pixels. Leave blank to maintain aspect ratio with thumbnail width. If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected. Must be divisible by 2.
     pub thumbnail_height: i32,
-    /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails.  If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate.  For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
+    /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails. If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate. For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
     pub thumbnail_interval: f64,
-    /// Width of each thumbnail within each tile image, in pixels.  Default is 312.  Must be divisible by 8.
+    /// Width of each thumbnail within each tile image, in pixels. Default is 312. Must be divisible by 8.
     pub thumbnail_width: i32,
     /// Number of thumbnails in each column of a tile image. Set a value between 2 and 2048. Must be divisible by 2.
     pub tile_height: i32,
-    /// Number of thumbnails in each row of a tile image.  Set a value between 1 and 512.
+    /// Number of thumbnails in each row of a tile image. Set a value between 1 and 512.
     pub tile_width: i32,
 }
 impl DashIsoImageBasedTrickPlaySettings {
-    /// The cadence MediaConvert follows for generating thumbnails.  If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence).  If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
+    /// The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
     pub fn interval_cadence(&self) -> std::option::Option<&crate::model::DashIsoIntervalCadence> {
         self.interval_cadence.as_ref()
     }
-    /// Height of each thumbnail within each tile image, in pixels.  Leave blank to maintain aspect ratio with thumbnail width.  If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected.  Must be divisible by 2.
+    /// Height of each thumbnail within each tile image, in pixels. Leave blank to maintain aspect ratio with thumbnail width. If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected. Must be divisible by 2.
     pub fn thumbnail_height(&self) -> i32 {
         self.thumbnail_height
     }
-    /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails.  If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate.  For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
+    /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails. If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate. For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
     pub fn thumbnail_interval(&self) -> f64 {
         self.thumbnail_interval
     }
-    /// Width of each thumbnail within each tile image, in pixels.  Default is 312.  Must be divisible by 8.
+    /// Width of each thumbnail within each tile image, in pixels. Default is 312. Must be divisible by 8.
     pub fn thumbnail_width(&self) -> i32 {
         self.thumbnail_width
     }
@@ -41733,7 +41811,7 @@ impl DashIsoImageBasedTrickPlaySettings {
     pub fn tile_height(&self) -> i32 {
         self.tile_height
     }
-    /// Number of thumbnails in each row of a tile image.  Set a value between 1 and 512.
+    /// Number of thumbnails in each row of a tile image. Set a value between 1 and 512.
     pub fn tile_width(&self) -> i32 {
         self.tile_width
     }
@@ -41764,12 +41842,12 @@ pub mod dash_iso_image_based_trick_play_settings {
         pub(crate) tile_width: std::option::Option<i32>,
     }
     impl Builder {
-        /// The cadence MediaConvert follows for generating thumbnails.  If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence).  If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
+        /// The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
         pub fn interval_cadence(mut self, input: crate::model::DashIsoIntervalCadence) -> Self {
             self.interval_cadence = Some(input);
             self
         }
-        /// The cadence MediaConvert follows for generating thumbnails.  If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence).  If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
+        /// The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
         pub fn set_interval_cadence(
             mut self,
             input: std::option::Option<crate::model::DashIsoIntervalCadence>,
@@ -41777,32 +41855,32 @@ pub mod dash_iso_image_based_trick_play_settings {
             self.interval_cadence = input;
             self
         }
-        /// Height of each thumbnail within each tile image, in pixels.  Leave blank to maintain aspect ratio with thumbnail width.  If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected.  Must be divisible by 2.
+        /// Height of each thumbnail within each tile image, in pixels. Leave blank to maintain aspect ratio with thumbnail width. If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected. Must be divisible by 2.
         pub fn thumbnail_height(mut self, input: i32) -> Self {
             self.thumbnail_height = Some(input);
             self
         }
-        /// Height of each thumbnail within each tile image, in pixels.  Leave blank to maintain aspect ratio with thumbnail width.  If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected.  Must be divisible by 2.
+        /// Height of each thumbnail within each tile image, in pixels. Leave blank to maintain aspect ratio with thumbnail width. If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected. Must be divisible by 2.
         pub fn set_thumbnail_height(mut self, input: std::option::Option<i32>) -> Self {
             self.thumbnail_height = input;
             self
         }
-        /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails.  If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate.  For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
+        /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails. If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate. For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
         pub fn thumbnail_interval(mut self, input: f64) -> Self {
             self.thumbnail_interval = Some(input);
             self
         }
-        /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails.  If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate.  For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
+        /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails. If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate. For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
         pub fn set_thumbnail_interval(mut self, input: std::option::Option<f64>) -> Self {
             self.thumbnail_interval = input;
             self
         }
-        /// Width of each thumbnail within each tile image, in pixels.  Default is 312.  Must be divisible by 8.
+        /// Width of each thumbnail within each tile image, in pixels. Default is 312. Must be divisible by 8.
         pub fn thumbnail_width(mut self, input: i32) -> Self {
             self.thumbnail_width = Some(input);
             self
         }
-        /// Width of each thumbnail within each tile image, in pixels.  Default is 312.  Must be divisible by 8.
+        /// Width of each thumbnail within each tile image, in pixels. Default is 312. Must be divisible by 8.
         pub fn set_thumbnail_width(mut self, input: std::option::Option<i32>) -> Self {
             self.thumbnail_width = input;
             self
@@ -41817,12 +41895,12 @@ pub mod dash_iso_image_based_trick_play_settings {
             self.tile_height = input;
             self
         }
-        /// Number of thumbnails in each row of a tile image.  Set a value between 1 and 512.
+        /// Number of thumbnails in each row of a tile image. Set a value between 1 and 512.
         pub fn tile_width(mut self, input: i32) -> Self {
             self.tile_width = Some(input);
             self
         }
-        /// Number of thumbnails in each row of a tile image.  Set a value between 1 and 512.
+        /// Number of thumbnails in each row of a tile image. Set a value between 1 and 512.
         pub fn set_tile_width(mut self, input: std::option::Option<i32>) -> Self {
             self.tile_width = input;
             self
@@ -42027,7 +42105,7 @@ pub struct DashIsoEncryptionSettings {
     /// This setting can improve the compatibility of your output with video players on obsolete devices. It applies only to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI (UNENCRYPTED_SEI) only to correct problems with playback on older devices. Otherwise, keep the default setting CENC v1 (CENC_V1). If you choose Unencrypted SEI, for that output, the service will exclude the access unit delimiter and will leave the SEI NAL units unencrypted.
     pub playback_device_compatibility:
         std::option::Option<crate::model::DashIsoPlaybackDeviceCompatibility>,
-    /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider.  If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
+    /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
     pub speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
 }
 impl DashIsoEncryptionSettings {
@@ -42037,7 +42115,7 @@ impl DashIsoEncryptionSettings {
     ) -> std::option::Option<&crate::model::DashIsoPlaybackDeviceCompatibility> {
         self.playback_device_compatibility.as_ref()
     }
-    /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider.  If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
+    /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
     pub fn speke_key_provider(&self) -> std::option::Option<&crate::model::SpekeKeyProvider> {
         self.speke_key_provider.as_ref()
     }
@@ -42080,12 +42158,12 @@ pub mod dash_iso_encryption_settings {
             self.playback_device_compatibility = input;
             self
         }
-        /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider.  If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
+        /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
         pub fn speke_key_provider(mut self, input: crate::model::SpekeKeyProvider) -> Self {
             self.speke_key_provider = Some(input);
             self
         }
-        /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider.  If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
+        /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
         pub fn set_speke_key_provider(
             mut self,
             input: std::option::Option<crate::model::SpekeKeyProvider>,
@@ -42346,7 +42424,7 @@ pub struct CmafGroupSettings {
     pub min_buffer_time: i32,
     /// Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back the end of your video asset. If you know that player devices are hanging on the final segment of your video because the length of your final segment is too short, use this setting to specify a minimum final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify a value for this setting, the encoder will combine any final segment that is shorter than the length that you specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5 seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final segment is 3.5 seconds.
     pub min_final_segment_length: f64,
-    /// Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals  urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
+    /// Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
     pub mpd_profile: std::option::Option<crate::model::CmafMpdProfile>,
     /// Use this setting only when your output video stream has B-frames, which causes the initial presentation time stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you want MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based (ZERO_BASED) to have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero regardless of your choice here.
     pub pts_offset_handling_for_b_frames:
@@ -42359,7 +42437,7 @@ pub struct CmafGroupSettings {
     pub segment_length_control: std::option::Option<crate::model::CmafSegmentLengthControl>,
     /// Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
     pub stream_inf_resolution: std::option::Option<crate::model::CmafStreamInfResolution>,
-    /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
+    /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (&gt;= 0.5) and rounded down if less than 0.5 (&lt; 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
     pub target_duration_compatibility_mode:
         std::option::Option<crate::model::CmafTargetDurationCompatibilityMode>,
     /// When set to ENABLED, a DASH MPD manifest will be generated for this output.
@@ -42439,7 +42517,7 @@ impl CmafGroupSettings {
     pub fn min_final_segment_length(&self) -> f64 {
         self.min_final_segment_length
     }
-    /// Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals  urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
+    /// Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
     pub fn mpd_profile(&self) -> std::option::Option<&crate::model::CmafMpdProfile> {
         self.mpd_profile.as_ref()
     }
@@ -42469,7 +42547,7 @@ impl CmafGroupSettings {
     ) -> std::option::Option<&crate::model::CmafStreamInfResolution> {
         self.stream_inf_resolution.as_ref()
     }
-    /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
+    /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (&gt;= 0.5) and rounded down if less than 0.5 (&lt; 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
     pub fn target_duration_compatibility_mode(
         &self,
     ) -> std::option::Option<&crate::model::CmafTargetDurationCompatibilityMode> {
@@ -42578,12 +42656,9 @@ pub mod cmaf_group_settings {
         /// To override the contents of this collection use [`set_additional_manifests`](Self::set_additional_manifests).
         ///
         /// By default, the service creates one top-level .m3u8 HLS manifest and one top -level .mpd DASH manifest for each CMAF output group in your job. These default manifests reference every output in the output group. To create additional top-level manifests that reference a subset of the outputs in the output group, specify a list of them here. For each additional manifest that you specify, the service creates one HLS manifest and one DASH manifest.
-        pub fn additional_manifests(
-            mut self,
-            input: impl Into<crate::model::CmafAdditionalManifest>,
-        ) -> Self {
+        pub fn additional_manifests(mut self, input: crate::model::CmafAdditionalManifest) -> Self {
             let mut v = self.additional_manifests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_manifests = Some(v);
             self
         }
@@ -42761,12 +42836,12 @@ pub mod cmaf_group_settings {
             self.min_final_segment_length = input;
             self
         }
-        /// Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals  urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
+        /// Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
         pub fn mpd_profile(mut self, input: crate::model::CmafMpdProfile) -> Self {
             self.mpd_profile = Some(input);
             self
         }
-        /// Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals  urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
+        /// Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
         pub fn set_mpd_profile(
             mut self,
             input: std::option::Option<crate::model::CmafMpdProfile>,
@@ -42845,7 +42920,7 @@ pub mod cmaf_group_settings {
             self.stream_inf_resolution = input;
             self
         }
-        /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
+        /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (&gt;= 0.5) and rounded down if less than 0.5 (&lt; 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
         pub fn target_duration_compatibility_mode(
             mut self,
             input: crate::model::CmafTargetDurationCompatibilityMode,
@@ -42853,7 +42928,7 @@ pub mod cmaf_group_settings {
             self.target_duration_compatibility_mode = Some(input);
             self
         }
-        /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
+        /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (&gt;= 0.5) and rounded down if less than 0.5 (&lt; 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
         pub fn set_target_duration_compatibility_mode(
             mut self,
             input: std::option::Option<crate::model::CmafTargetDurationCompatibilityMode>,
@@ -43551,33 +43626,33 @@ impl AsRef<str> for CmafManifestCompression {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CmafImageBasedTrickPlaySettings {
-    /// The cadence MediaConvert follows for generating thumbnails.  If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence).  If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
+    /// The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
     pub interval_cadence: std::option::Option<crate::model::CmafIntervalCadence>,
-    /// Height of each thumbnail within each tile image, in pixels.  Leave blank to maintain aspect ratio with thumbnail width.  If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected.  Must be divisible by 2.
+    /// Height of each thumbnail within each tile image, in pixels. Leave blank to maintain aspect ratio with thumbnail width. If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected. Must be divisible by 2.
     pub thumbnail_height: i32,
-    /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails.  If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate.  For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
+    /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails. If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate. For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
     pub thumbnail_interval: f64,
-    /// Width of each thumbnail within each tile image, in pixels.  Default is 312.  Must be divisible by 8.
+    /// Width of each thumbnail within each tile image, in pixels. Default is 312. Must be divisible by 8.
     pub thumbnail_width: i32,
     /// Number of thumbnails in each column of a tile image. Set a value between 2 and 2048. Must be divisible by 2.
     pub tile_height: i32,
-    /// Number of thumbnails in each row of a tile image.  Set a value between 1 and 512.
+    /// Number of thumbnails in each row of a tile image. Set a value between 1 and 512.
     pub tile_width: i32,
 }
 impl CmafImageBasedTrickPlaySettings {
-    /// The cadence MediaConvert follows for generating thumbnails.  If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence).  If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
+    /// The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
     pub fn interval_cadence(&self) -> std::option::Option<&crate::model::CmafIntervalCadence> {
         self.interval_cadence.as_ref()
     }
-    /// Height of each thumbnail within each tile image, in pixels.  Leave blank to maintain aspect ratio with thumbnail width.  If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected.  Must be divisible by 2.
+    /// Height of each thumbnail within each tile image, in pixels. Leave blank to maintain aspect ratio with thumbnail width. If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected. Must be divisible by 2.
     pub fn thumbnail_height(&self) -> i32 {
         self.thumbnail_height
     }
-    /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails.  If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate.  For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
+    /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails. If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate. For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
     pub fn thumbnail_interval(&self) -> f64 {
         self.thumbnail_interval
     }
-    /// Width of each thumbnail within each tile image, in pixels.  Default is 312.  Must be divisible by 8.
+    /// Width of each thumbnail within each tile image, in pixels. Default is 312. Must be divisible by 8.
     pub fn thumbnail_width(&self) -> i32 {
         self.thumbnail_width
     }
@@ -43585,7 +43660,7 @@ impl CmafImageBasedTrickPlaySettings {
     pub fn tile_height(&self) -> i32 {
         self.tile_height
     }
-    /// Number of thumbnails in each row of a tile image.  Set a value between 1 and 512.
+    /// Number of thumbnails in each row of a tile image. Set a value between 1 and 512.
     pub fn tile_width(&self) -> i32 {
         self.tile_width
     }
@@ -43616,12 +43691,12 @@ pub mod cmaf_image_based_trick_play_settings {
         pub(crate) tile_width: std::option::Option<i32>,
     }
     impl Builder {
-        /// The cadence MediaConvert follows for generating thumbnails.  If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence).  If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
+        /// The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
         pub fn interval_cadence(mut self, input: crate::model::CmafIntervalCadence) -> Self {
             self.interval_cadence = Some(input);
             self
         }
-        /// The cadence MediaConvert follows for generating thumbnails.  If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence).  If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
+        /// The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
         pub fn set_interval_cadence(
             mut self,
             input: std::option::Option<crate::model::CmafIntervalCadence>,
@@ -43629,32 +43704,32 @@ pub mod cmaf_image_based_trick_play_settings {
             self.interval_cadence = input;
             self
         }
-        /// Height of each thumbnail within each tile image, in pixels.  Leave blank to maintain aspect ratio with thumbnail width.  If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected.  Must be divisible by 2.
+        /// Height of each thumbnail within each tile image, in pixels. Leave blank to maintain aspect ratio with thumbnail width. If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected. Must be divisible by 2.
         pub fn thumbnail_height(mut self, input: i32) -> Self {
             self.thumbnail_height = Some(input);
             self
         }
-        /// Height of each thumbnail within each tile image, in pixels.  Leave blank to maintain aspect ratio with thumbnail width.  If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected.  Must be divisible by 2.
+        /// Height of each thumbnail within each tile image, in pixels. Leave blank to maintain aspect ratio with thumbnail width. If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected. Must be divisible by 2.
         pub fn set_thumbnail_height(mut self, input: std::option::Option<i32>) -> Self {
             self.thumbnail_height = input;
             self
         }
-        /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails.  If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate.  For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
+        /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails. If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate. For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
         pub fn thumbnail_interval(mut self, input: f64) -> Self {
             self.thumbnail_interval = Some(input);
             self
         }
-        /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails.  If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate.  For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
+        /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails. If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate. For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
         pub fn set_thumbnail_interval(mut self, input: std::option::Option<f64>) -> Self {
             self.thumbnail_interval = input;
             self
         }
-        /// Width of each thumbnail within each tile image, in pixels.  Default is 312.  Must be divisible by 8.
+        /// Width of each thumbnail within each tile image, in pixels. Default is 312. Must be divisible by 8.
         pub fn thumbnail_width(mut self, input: i32) -> Self {
             self.thumbnail_width = Some(input);
             self
         }
-        /// Width of each thumbnail within each tile image, in pixels.  Default is 312.  Must be divisible by 8.
+        /// Width of each thumbnail within each tile image, in pixels. Default is 312. Must be divisible by 8.
         pub fn set_thumbnail_width(mut self, input: std::option::Option<i32>) -> Self {
             self.thumbnail_width = input;
             self
@@ -43669,12 +43744,12 @@ pub mod cmaf_image_based_trick_play_settings {
             self.tile_height = input;
             self
         }
-        /// Number of thumbnails in each row of a tile image.  Set a value between 1 and 512.
+        /// Number of thumbnails in each row of a tile image. Set a value between 1 and 512.
         pub fn tile_width(mut self, input: i32) -> Self {
             self.tile_width = Some(input);
             self
         }
-        /// Number of thumbnails in each row of a tile image.  Set a value between 1 and 512.
+        /// Number of thumbnails in each row of a tile image. Set a value between 1 and 512.
         pub fn set_tile_width(mut self, input: std::option::Option<i32>) -> Self {
             self.tile_width = input;
             self
@@ -44661,14 +44736,14 @@ impl AutomatedAbrSettings {
     }
 }
 
-/// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that  MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to  specifying these values, you also need to set up your cloud TIC server. These settings apply to  every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
+/// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to specifying these values, you also need to set up your cloud TIC server. These settings apply to every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NielsenNonLinearWatermarkSettings {
     /// Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW (NAES2_AND_NW), you must provide a value for the setting SID (sourceId). When you choose CBET (CBET), you must provide a value for the setting CSID (cbetSourceId). When you choose NAES 2, NW, and CBET (NAES2_AND_NW_AND_CBET), you must provide values for both of these settings.
     pub active_watermark_process:
         std::option::Option<crate::model::NielsenActiveWatermarkProcessType>,
-    /// Optional. Use this setting when you want the service to include an ADI file in the Nielsen  metadata .zip file. To provide an ADI file, store it in Amazon S3 and provide a URL to it  here. The URL should be in the following format: S3://bucket/path/ADI-file. For more information about the metadata .zip file, see the setting Metadata destination (metadataDestination).
+    /// Optional. Use this setting when you want the service to include an ADI file in the Nielsen metadata .zip file. To provide an ADI file, store it in Amazon S3 and provide a URL to it here. The URL should be in the following format: S3://bucket/path/ADI-file. For more information about the metadata .zip file, see the setting Metadata destination (metadataDestination).
     pub adi_filename: std::option::Option<std::string::String>,
     /// Use the asset ID that you provide to Nielsen to uniquely identify this asset. Required for all Nielsen non-linear watermarking.
     pub asset_id: std::option::Option<std::string::String>,
@@ -44682,7 +44757,7 @@ pub struct NielsenNonLinearWatermarkSettings {
     pub metadata_destination: std::option::Option<std::string::String>,
     /// Use the SID that Nielsen provides to you. This source ID should be unique to your Nielsen account but common to all of your output assets. Required for all Nielsen non-linear watermarking. This ID should be unique to your Nielsen account but common to all of your output assets. Required for all Nielsen non-linear watermarking.
     pub source_id: i32,
-    /// Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this value to Watermarked (WATERMARKED), the service fails the job. Nielsen requires that you add non-linear watermarking to only clean content that doesn't already  have non-linear Nielsen watermarks.
+    /// Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this value to Watermarked (WATERMARKED), the service fails the job. Nielsen requires that you add non-linear watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
     pub source_watermark_status:
         std::option::Option<crate::model::NielsenSourceWatermarkStatusType>,
     /// Specify the endpoint for the TIC server that you have deployed and configured in the AWS Cloud. Required for all Nielsen non-linear watermarking. MediaConvert can't connect directly to a TIC server. Instead, you must use API Gateway to provide a RESTful interface between MediaConvert and a TIC server that you deploy in your AWS account. For more information on deploying a TIC server in your AWS account and the required API Gateway, contact Nielsen support.
@@ -44698,7 +44773,7 @@ impl NielsenNonLinearWatermarkSettings {
     ) -> std::option::Option<&crate::model::NielsenActiveWatermarkProcessType> {
         self.active_watermark_process.as_ref()
     }
-    /// Optional. Use this setting when you want the service to include an ADI file in the Nielsen  metadata .zip file. To provide an ADI file, store it in Amazon S3 and provide a URL to it  here. The URL should be in the following format: S3://bucket/path/ADI-file. For more information about the metadata .zip file, see the setting Metadata destination (metadataDestination).
+    /// Optional. Use this setting when you want the service to include an ADI file in the Nielsen metadata .zip file. To provide an ADI file, store it in Amazon S3 and provide a URL to it here. The URL should be in the following format: S3://bucket/path/ADI-file. For more information about the metadata .zip file, see the setting Metadata destination (metadataDestination).
     pub fn adi_filename(&self) -> std::option::Option<&str> {
         self.adi_filename.as_deref()
     }
@@ -44726,7 +44801,7 @@ impl NielsenNonLinearWatermarkSettings {
     pub fn source_id(&self) -> i32 {
         self.source_id
     }
-    /// Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this value to Watermarked (WATERMARKED), the service fails the job. Nielsen requires that you add non-linear watermarking to only clean content that doesn't already  have non-linear Nielsen watermarks.
+    /// Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this value to Watermarked (WATERMARKED), the service fails the job. Nielsen requires that you add non-linear watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
     pub fn source_watermark_status(
         &self,
     ) -> std::option::Option<&crate::model::NielsenSourceWatermarkStatusType> {
@@ -44801,12 +44876,12 @@ pub mod nielsen_non_linear_watermark_settings {
             self.active_watermark_process = input;
             self
         }
-        /// Optional. Use this setting when you want the service to include an ADI file in the Nielsen  metadata .zip file. To provide an ADI file, store it in Amazon S3 and provide a URL to it  here. The URL should be in the following format: S3://bucket/path/ADI-file. For more information about the metadata .zip file, see the setting Metadata destination (metadataDestination).
+        /// Optional. Use this setting when you want the service to include an ADI file in the Nielsen metadata .zip file. To provide an ADI file, store it in Amazon S3 and provide a URL to it here. The URL should be in the following format: S3://bucket/path/ADI-file. For more information about the metadata .zip file, see the setting Metadata destination (metadataDestination).
         pub fn adi_filename(mut self, input: impl Into<std::string::String>) -> Self {
             self.adi_filename = Some(input.into());
             self
         }
-        /// Optional. Use this setting when you want the service to include an ADI file in the Nielsen  metadata .zip file. To provide an ADI file, store it in Amazon S3 and provide a URL to it  here. The URL should be in the following format: S3://bucket/path/ADI-file. For more information about the metadata .zip file, see the setting Metadata destination (metadataDestination).
+        /// Optional. Use this setting when you want the service to include an ADI file in the Nielsen metadata .zip file. To provide an ADI file, store it in Amazon S3 and provide a URL to it here. The URL should be in the following format: S3://bucket/path/ADI-file. For more information about the metadata .zip file, see the setting Metadata destination (metadataDestination).
         pub fn set_adi_filename(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.adi_filename = input;
             self
@@ -44877,7 +44952,7 @@ pub mod nielsen_non_linear_watermark_settings {
             self.source_id = input;
             self
         }
-        /// Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this value to Watermarked (WATERMARKED), the service fails the job. Nielsen requires that you add non-linear watermarking to only clean content that doesn't already  have non-linear Nielsen watermarks.
+        /// Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this value to Watermarked (WATERMARKED), the service fails the job. Nielsen requires that you add non-linear watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
         pub fn source_watermark_status(
             mut self,
             input: crate::model::NielsenSourceWatermarkStatusType,
@@ -44885,7 +44960,7 @@ pub mod nielsen_non_linear_watermark_settings {
             self.source_watermark_status = Some(input);
             self
         }
-        /// Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this value to Watermarked (WATERMARKED), the service fails the job. Nielsen requires that you add non-linear watermarking to only clean content that doesn't already  have non-linear Nielsen watermarks.
+        /// Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this value to Watermarked (WATERMARKED), the service fails the job. Nielsen requires that you add non-linear watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
         pub fn set_source_watermark_status(
             mut self,
             input: std::option::Option<crate::model::NielsenSourceWatermarkStatusType>,
@@ -45210,7 +45285,7 @@ pub struct MotionImageInserter {
     pub offset: std::option::Option<crate::model::MotionImageInsertionOffset>,
     /// Specify whether your motion graphic overlay repeats on a loop or plays only once.
     pub playback: std::option::Option<crate::model::MotionImagePlayback>,
-    /// Specify when the motion overlay begins. Use timecode format (HH:MM:SS:FF or HH:MM:SS;FF). Make sure that the timecode you provide here takes into account how you have set up your timecode configuration under both job settings and input settings. The simplest way to do that is to set both to start at 0. If you need to set up your job to follow timecodes embedded in your source that don't start at zero, make sure that you specify a start time that is after the first embedded timecode. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/setting-up-timecode.html Find job-wide and input timecode configuration settings in your JSON job settings specification at settings>timecodeConfig>source and settings>inputs>timecodeSource.
+    /// Specify when the motion overlay begins. Use timecode format (HH:MM:SS:FF or HH:MM:SS;FF). Make sure that the timecode you provide here takes into account how you have set up your timecode configuration under both job settings and input settings. The simplest way to do that is to set both to start at 0. If you need to set up your job to follow timecodes embedded in your source that don't start at zero, make sure that you specify a start time that is after the first embedded timecode. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/setting-up-timecode.html Find job-wide and input timecode configuration settings in your JSON job settings specification at settings&gt;timecodeConfig&gt;source and settings&gt;inputs&gt;timecodeSource.
     pub start_time: std::option::Option<std::string::String>,
 }
 impl MotionImageInserter {
@@ -45234,7 +45309,7 @@ impl MotionImageInserter {
     pub fn playback(&self) -> std::option::Option<&crate::model::MotionImagePlayback> {
         self.playback.as_ref()
     }
-    /// Specify when the motion overlay begins. Use timecode format (HH:MM:SS:FF or HH:MM:SS;FF). Make sure that the timecode you provide here takes into account how you have set up your timecode configuration under both job settings and input settings. The simplest way to do that is to set both to start at 0. If you need to set up your job to follow timecodes embedded in your source that don't start at zero, make sure that you specify a start time that is after the first embedded timecode. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/setting-up-timecode.html Find job-wide and input timecode configuration settings in your JSON job settings specification at settings>timecodeConfig>source and settings>inputs>timecodeSource.
+    /// Specify when the motion overlay begins. Use timecode format (HH:MM:SS:FF or HH:MM:SS;FF). Make sure that the timecode you provide here takes into account how you have set up your timecode configuration under both job settings and input settings. The simplest way to do that is to set both to start at 0. If you need to set up your job to follow timecodes embedded in your source that don't start at zero, make sure that you specify a start time that is after the first embedded timecode. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/setting-up-timecode.html Find job-wide and input timecode configuration settings in your JSON job settings specification at settings&gt;timecodeConfig&gt;source and settings&gt;inputs&gt;timecodeSource.
     pub fn start_time(&self) -> std::option::Option<&str> {
         self.start_time.as_deref()
     }
@@ -45327,12 +45402,12 @@ pub mod motion_image_inserter {
             self.playback = input;
             self
         }
-        /// Specify when the motion overlay begins. Use timecode format (HH:MM:SS:FF or HH:MM:SS;FF). Make sure that the timecode you provide here takes into account how you have set up your timecode configuration under both job settings and input settings. The simplest way to do that is to set both to start at 0. If you need to set up your job to follow timecodes embedded in your source that don't start at zero, make sure that you specify a start time that is after the first embedded timecode. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/setting-up-timecode.html Find job-wide and input timecode configuration settings in your JSON job settings specification at settings>timecodeConfig>source and settings>inputs>timecodeSource.
+        /// Specify when the motion overlay begins. Use timecode format (HH:MM:SS:FF or HH:MM:SS;FF). Make sure that the timecode you provide here takes into account how you have set up your timecode configuration under both job settings and input settings. The simplest way to do that is to set both to start at 0. If you need to set up your job to follow timecodes embedded in your source that don't start at zero, make sure that you specify a start time that is after the first embedded timecode. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/setting-up-timecode.html Find job-wide and input timecode configuration settings in your JSON job settings specification at settings&gt;timecodeConfig&gt;source and settings&gt;inputs&gt;timecodeSource.
         pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.start_time = Some(input.into());
             self
         }
-        /// Specify when the motion overlay begins. Use timecode format (HH:MM:SS:FF or HH:MM:SS;FF). Make sure that the timecode you provide here takes into account how you have set up your timecode configuration under both job settings and input settings. The simplest way to do that is to set both to start at 0. If you need to set up your job to follow timecodes embedded in your source that don't start at zero, make sure that you specify a start time that is after the first embedded timecode. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/setting-up-timecode.html Find job-wide and input timecode configuration settings in your JSON job settings specification at settings>timecodeConfig>source and settings>inputs>timecodeSource.
+        /// Specify when the motion overlay begins. Use timecode format (HH:MM:SS:FF or HH:MM:SS;FF). Make sure that the timecode you provide here takes into account how you have set up your timecode configuration under both job settings and input settings. The simplest way to do that is to set both to start at 0. If you need to set up your job to follow timecodes embedded in your source that don't start at zero, make sure that you specify a start time that is after the first embedded timecode. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/setting-up-timecode.html Find job-wide and input timecode configuration settings in your JSON job settings specification at settings&gt;timecodeConfig&gt;source and settings&gt;inputs&gt;timecodeSource.
         pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start_time = input;
             self
@@ -45927,7 +46002,7 @@ pub struct InputTemplate {
     pub crop: std::option::Option<crate::model::Rectangle>,
     /// Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manually controllable for MPEG2 and uncompressed video inputs.
     pub deblock_filter: std::option::Option<crate::model::InputDeblockFilter>,
-    /// Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
+    /// Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
     pub denoise_filter: std::option::Option<crate::model::InputDenoiseFilter>,
     /// Specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The input is filtered regardless of input type.
     pub filter_enable: std::option::Option<crate::model::InputFilterEnable>,
@@ -45985,7 +46060,7 @@ impl InputTemplate {
     pub fn deblock_filter(&self) -> std::option::Option<&crate::model::InputDeblockFilter> {
         self.deblock_filter.as_ref()
     }
-    /// Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
+    /// Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
     pub fn denoise_filter(&self) -> std::option::Option<&crate::model::InputDenoiseFilter> {
         self.denoise_filter.as_ref()
     }
@@ -46096,10 +46171,10 @@ pub mod input_template {
         pub fn audio_selector_groups(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AudioSelectorGroup>,
+            v: crate::model::AudioSelectorGroup,
         ) -> Self {
             let mut hash_map = self.audio_selector_groups.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.audio_selector_groups = Some(hash_map);
             self
         }
@@ -46121,10 +46196,10 @@ pub mod input_template {
         pub fn audio_selectors(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AudioSelector>,
+            v: crate::model::AudioSelector,
         ) -> Self {
             let mut hash_map = self.audio_selectors.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.audio_selectors = Some(hash_map);
             self
         }
@@ -46146,10 +46221,10 @@ pub mod input_template {
         pub fn caption_selectors(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::CaptionSelector>,
+            v: crate::model::CaptionSelector,
         ) -> Self {
             let mut hash_map = self.caption_selectors.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.caption_selectors = Some(hash_map);
             self
         }
@@ -46186,12 +46261,12 @@ pub mod input_template {
             self.deblock_filter = input;
             self
         }
-        /// Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
+        /// Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
         pub fn denoise_filter(mut self, input: crate::model::InputDenoiseFilter) -> Self {
             self.denoise_filter = Some(input);
             self
         }
-        /// Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
+        /// Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
         pub fn set_denoise_filter(
             mut self,
             input: std::option::Option<crate::model::InputDenoiseFilter>,
@@ -46240,9 +46315,9 @@ pub mod input_template {
         /// To override the contents of this collection use [`set_input_clippings`](Self::set_input_clippings).
         ///
         /// (InputClippings) contains sets of start and end times that together specify a portion of the input to be used in the outputs. If you provide only a start time, the clip will be the entire input from that point to the end. If you provide only an end time, it will be the entire input up to that point. When you specify more than one input clip, the transcoding service creates the job outputs by stringing the clips together in the order you specify them.
-        pub fn input_clippings(mut self, input: impl Into<crate::model::InputClipping>) -> Self {
+        pub fn input_clippings(mut self, input: crate::model::InputClipping) -> Self {
             let mut v = self.input_clippings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_clippings = Some(v);
             self
         }
@@ -47408,7 +47483,7 @@ pub struct CaptionSourceSettings {
     pub embedded_source_settings: std::option::Option<crate::model::EmbeddedSourceSettings>,
     /// If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an xml file, specify the URI of the input caption source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
     pub file_source_settings: std::option::Option<crate::model::FileSourceSettings>,
-    /// Use Source (SourceType) to identify the format of your input captions.  The service cannot auto-detect caption format.
+    /// Use Source (SourceType) to identify the format of your input captions. The service cannot auto-detect caption format.
     pub source_type: std::option::Option<crate::model::CaptionSourceType>,
     /// Settings specific to Teletext caption sources, including Page number.
     pub teletext_source_settings: std::option::Option<crate::model::TeletextSourceSettings>,
@@ -47440,7 +47515,7 @@ impl CaptionSourceSettings {
     pub fn file_source_settings(&self) -> std::option::Option<&crate::model::FileSourceSettings> {
         self.file_source_settings.as_ref()
     }
-    /// Use Source (SourceType) to identify the format of your input captions.  The service cannot auto-detect caption format.
+    /// Use Source (SourceType) to identify the format of your input captions. The service cannot auto-detect caption format.
     pub fn source_type(&self) -> std::option::Option<&crate::model::CaptionSourceType> {
         self.source_type.as_ref()
     }
@@ -47559,12 +47634,12 @@ pub mod caption_source_settings {
             self.file_source_settings = input;
             self
         }
-        /// Use Source (SourceType) to identify the format of your input captions.  The service cannot auto-detect caption format.
+        /// Use Source (SourceType) to identify the format of your input captions. The service cannot auto-detect caption format.
         pub fn source_type(mut self, input: crate::model::CaptionSourceType) -> Self {
             self.source_type = Some(input);
             self
         }
-        /// Use Source (SourceType) to identify the format of your input captions.  The service cannot auto-detect caption format.
+        /// Use Source (SourceType) to identify the format of your input captions. The service cannot auto-detect caption format.
         pub fn set_source_type(
             mut self,
             input: std::option::Option<crate::model::CaptionSourceType>,
@@ -48996,9 +49071,9 @@ pub mod audio_selector {
         /// To override the contents of this collection use [`set_pids`](Self::set_pids).
         ///
         /// Selects a specific PID from within an audio source (e.g. 257 selects PID 0x101).
-        pub fn pids(mut self, input: impl Into<i32>) -> Self {
+        pub fn pids(mut self, input: i32) -> Self {
             let mut v = self.pids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pids = Some(v);
             self
         }
@@ -49048,9 +49123,9 @@ pub mod audio_selector {
         /// To override the contents of this collection use [`set_tracks`](Self::set_tracks).
         ///
         /// Identify a track from the input audio to include in this selector by entering the track index number. To include several tracks in a single audio selector, specify multiple tracks as follows. Using the console, enter a comma-separated list. For examle, type "1,2,3" to include tracks 1 through 3. Specifying directly in your JSON job file, provide the track numbers in an array. For example, "tracks": [1,2,3].
-        pub fn tracks(mut self, input: impl Into<i32>) -> Self {
+        pub fn tracks(mut self, input: i32) -> Self {
             let mut v = self.tracks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tracks = Some(v);
             self
         }
@@ -49307,11 +49382,11 @@ impl AsRef<str> for AudioDefaultSelection {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioSelectorGroup {
-    /// Name of an Audio Selector within the same input to include in the group.  Audio selector names are standardized, based on their order within the input (e.g., "Audio Selector 1"). The audio selector name parameter can be repeated to add any number of audio selectors to the group.
+    /// Name of an Audio Selector within the same input to include in the group. Audio selector names are standardized, based on their order within the input (e.g., "Audio Selector 1"). The audio selector name parameter can be repeated to add any number of audio selectors to the group.
     pub audio_selector_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AudioSelectorGroup {
-    /// Name of an Audio Selector within the same input to include in the group.  Audio selector names are standardized, based on their order within the input (e.g., "Audio Selector 1"). The audio selector name parameter can be repeated to add any number of audio selectors to the group.
+    /// Name of an Audio Selector within the same input to include in the group. Audio selector names are standardized, based on their order within the input (e.g., "Audio Selector 1"). The audio selector name parameter can be repeated to add any number of audio selectors to the group.
     pub fn audio_selector_names(&self) -> std::option::Option<&[std::string::String]> {
         self.audio_selector_names.as_deref()
     }
@@ -49336,14 +49411,14 @@ pub mod audio_selector_group {
         ///
         /// To override the contents of this collection use [`set_audio_selector_names`](Self::set_audio_selector_names).
         ///
-        /// Name of an Audio Selector within the same input to include in the group.  Audio selector names are standardized, based on their order within the input (e.g., "Audio Selector 1"). The audio selector name parameter can be repeated to add any number of audio selectors to the group.
+        /// Name of an Audio Selector within the same input to include in the group. Audio selector names are standardized, based on their order within the input (e.g., "Audio Selector 1"). The audio selector name parameter can be repeated to add any number of audio selectors to the group.
         pub fn audio_selector_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.audio_selector_names.unwrap_or_default();
             v.push(input.into());
             self.audio_selector_names = Some(v);
             self
         }
-        /// Name of an Audio Selector within the same input to include in the group.  Audio selector names are standardized, based on their order within the input (e.g., "Audio Selector 1"). The audio selector name parameter can be repeated to add any number of audio selectors to the group.
+        /// Name of an Audio Selector within the same input to include in the group. Audio selector names are standardized, based on their order within the input (e.g., "Audio Selector 1"). The audio selector name parameter can be repeated to add any number of audio selectors to the group.
         pub fn set_audio_selector_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -49370,19 +49445,19 @@ impl AudioSelectorGroup {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExtendedDataServices {
-    /// The action to take on copy and redistribution control XDS packets.  If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
+    /// The action to take on copy and redistribution control XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
     pub copy_protection_action: std::option::Option<crate::model::CopyProtectionAction>,
-    /// The action to take on content advisory XDS packets.  If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
+    /// The action to take on content advisory XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
     pub vchip_action: std::option::Option<crate::model::VchipAction>,
 }
 impl ExtendedDataServices {
-    /// The action to take on copy and redistribution control XDS packets.  If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
+    /// The action to take on copy and redistribution control XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
     pub fn copy_protection_action(
         &self,
     ) -> std::option::Option<&crate::model::CopyProtectionAction> {
         self.copy_protection_action.as_ref()
     }
-    /// The action to take on content advisory XDS packets.  If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
+    /// The action to take on content advisory XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
     pub fn vchip_action(&self) -> std::option::Option<&crate::model::VchipAction> {
         self.vchip_action.as_ref()
     }
@@ -49405,12 +49480,12 @@ pub mod extended_data_services {
         pub(crate) vchip_action: std::option::Option<crate::model::VchipAction>,
     }
     impl Builder {
-        /// The action to take on copy and redistribution control XDS packets.  If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
+        /// The action to take on copy and redistribution control XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
         pub fn copy_protection_action(mut self, input: crate::model::CopyProtectionAction) -> Self {
             self.copy_protection_action = Some(input);
             self
         }
-        /// The action to take on copy and redistribution control XDS packets.  If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
+        /// The action to take on copy and redistribution control XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
         pub fn set_copy_protection_action(
             mut self,
             input: std::option::Option<crate::model::CopyProtectionAction>,
@@ -49418,12 +49493,12 @@ pub mod extended_data_services {
             self.copy_protection_action = input;
             self
         }
-        /// The action to take on content advisory XDS packets.  If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
+        /// The action to take on content advisory XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
         pub fn vchip_action(mut self, input: crate::model::VchipAction) -> Self {
             self.vchip_action = Some(input);
             self
         }
-        /// The action to take on content advisory XDS packets.  If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
+        /// The action to take on content advisory XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
         pub fn set_vchip_action(
             mut self,
             input: std::option::Option<crate::model::VchipAction>,
@@ -50865,9 +50940,9 @@ pub mod job {
         /// To override the contents of this collection use [`set_hop_destinations`](Self::set_hop_destinations).
         ///
         /// Optional list of hop destinations.
-        pub fn hop_destinations(mut self, input: impl Into<crate::model::HopDestination>) -> Self {
+        pub fn hop_destinations(mut self, input: crate::model::HopDestination) -> Self {
             let mut v = self.hop_destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hop_destinations = Some(v);
             self
         }
@@ -50927,12 +51002,9 @@ pub mod job {
         /// To override the contents of this collection use [`set_output_group_details`](Self::set_output_group_details).
         ///
         /// List of output group details
-        pub fn output_group_details(
-            mut self,
-            input: impl Into<crate::model::OutputGroupDetail>,
-        ) -> Self {
+        pub fn output_group_details(mut self, input: crate::model::OutputGroupDetail) -> Self {
             let mut v = self.output_group_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_group_details = Some(v);
             self
         }
@@ -50969,12 +51041,9 @@ pub mod job {
         /// To override the contents of this collection use [`set_queue_transitions`](Self::set_queue_transitions).
         ///
         /// The job's queue hopping history.
-        pub fn queue_transitions(
-            mut self,
-            input: impl Into<crate::model::QueueTransition>,
-        ) -> Self {
+        pub fn queue_transitions(mut self, input: crate::model::QueueTransition) -> Self {
             let mut v = self.queue_transitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.queue_transitions = Some(v);
             self
         }
@@ -51361,7 +51430,7 @@ impl AsRef<str> for SimulateReservedQueue {
 pub struct JobSettings {
     /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time.
     pub ad_avail_offset: i32,
-    /// Settings for ad avail blanking.  Video can be blanked or overlaid with an image, and audio muted during SCTE-35 triggered ad avails.
+    /// Settings for ad avail blanking. Video can be blanked or overlaid with an image, and audio muted during SCTE-35 triggered ad avails.
     pub avail_blanking: std::option::Option<crate::model::AvailBlanking>,
     /// Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings.
     pub esam: std::option::Option<crate::model::EsamSettings>,
@@ -51375,10 +51444,10 @@ pub struct JobSettings {
     pub motion_image_inserter: std::option::Option<crate::model::MotionImageInserter>,
     /// Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs in the job. To enable Nielsen configuration programmatically, include an instance of nielsenConfiguration in your JSON job specification. Even if you don't include any children of nielsenConfiguration, you still enable the setting.
     pub nielsen_configuration: std::option::Option<crate::model::NielsenConfiguration>,
-    /// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that  MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to  specifying these values, you also need to set up your cloud TIC server. These settings apply to  every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
+    /// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to specifying these values, you also need to set up your cloud TIC server. These settings apply to every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
     pub nielsen_non_linear_watermark:
         std::option::Option<crate::model::NielsenNonLinearWatermarkSettings>,
-    /// (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in (OutputGroups) is a group of settings that apply to the whole group. This required object depends on the value you set for (Type) under (OutputGroups)>(OutputGroupSettings). Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
+    /// (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in (OutputGroups) is a group of settings that apply to the whole group. This required object depends on the value you set for (Type) under (OutputGroups)&gt;(OutputGroupSettings). Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
     pub output_groups: std::option::Option<std::vec::Vec<crate::model::OutputGroup>>,
     /// These settings control how the service handles timecodes throughout the job. These settings don't affect input clipping.
     pub timecode_config: std::option::Option<crate::model::TimecodeConfig>,
@@ -51390,7 +51459,7 @@ impl JobSettings {
     pub fn ad_avail_offset(&self) -> i32 {
         self.ad_avail_offset
     }
-    /// Settings for ad avail blanking.  Video can be blanked or overlaid with an image, and audio muted during SCTE-35 triggered ad avails.
+    /// Settings for ad avail blanking. Video can be blanked or overlaid with an image, and audio muted during SCTE-35 triggered ad avails.
     pub fn avail_blanking(&self) -> std::option::Option<&crate::model::AvailBlanking> {
         self.avail_blanking.as_ref()
     }
@@ -51422,13 +51491,13 @@ impl JobSettings {
     ) -> std::option::Option<&crate::model::NielsenConfiguration> {
         self.nielsen_configuration.as_ref()
     }
-    /// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that  MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to  specifying these values, you also need to set up your cloud TIC server. These settings apply to  every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
+    /// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to specifying these values, you also need to set up your cloud TIC server. These settings apply to every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
     pub fn nielsen_non_linear_watermark(
         &self,
     ) -> std::option::Option<&crate::model::NielsenNonLinearWatermarkSettings> {
         self.nielsen_non_linear_watermark.as_ref()
     }
-    /// (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in (OutputGroups) is a group of settings that apply to the whole group. This required object depends on the value you set for (Type) under (OutputGroups)>(OutputGroupSettings). Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
+    /// (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in (OutputGroups) is a group of settings that apply to the whole group. This required object depends on the value you set for (Type) under (OutputGroups)&gt;(OutputGroupSettings). Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
     pub fn output_groups(&self) -> std::option::Option<&[crate::model::OutputGroup]> {
         self.output_groups.as_deref()
     }
@@ -51496,12 +51565,12 @@ pub mod job_settings {
             self.ad_avail_offset = input;
             self
         }
-        /// Settings for ad avail blanking.  Video can be blanked or overlaid with an image, and audio muted during SCTE-35 triggered ad avails.
+        /// Settings for ad avail blanking. Video can be blanked or overlaid with an image, and audio muted during SCTE-35 triggered ad avails.
         pub fn avail_blanking(mut self, input: crate::model::AvailBlanking) -> Self {
             self.avail_blanking = Some(input);
             self
         }
-        /// Settings for ad avail blanking.  Video can be blanked or overlaid with an image, and audio muted during SCTE-35 triggered ad avails.
+        /// Settings for ad avail blanking. Video can be blanked or overlaid with an image, and audio muted during SCTE-35 triggered ad avails.
         pub fn set_avail_blanking(
             mut self,
             input: std::option::Option<crate::model::AvailBlanking>,
@@ -51537,9 +51606,9 @@ pub mod job_settings {
         /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
         ///
         /// Use Inputs (inputs) to define source file used in the transcode job. There can be multiple inputs add in a job. These inputs will be concantenated together to create the output.
-        pub fn inputs(mut self, input: impl Into<crate::model::Input>) -> Self {
+        pub fn inputs(mut self, input: crate::model::Input) -> Self {
             let mut v = self.inputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.inputs = Some(v);
             self
         }
@@ -51590,7 +51659,7 @@ pub mod job_settings {
             self.nielsen_configuration = input;
             self
         }
-        /// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that  MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to  specifying these values, you also need to set up your cloud TIC server. These settings apply to  every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
+        /// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to specifying these values, you also need to set up your cloud TIC server. These settings apply to every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
         pub fn nielsen_non_linear_watermark(
             mut self,
             input: crate::model::NielsenNonLinearWatermarkSettings,
@@ -51598,7 +51667,7 @@ pub mod job_settings {
             self.nielsen_non_linear_watermark = Some(input);
             self
         }
-        /// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that  MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to  specifying these values, you also need to set up your cloud TIC server. These settings apply to  every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
+        /// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to specifying these values, you also need to set up your cloud TIC server. These settings apply to every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
         pub fn set_nielsen_non_linear_watermark(
             mut self,
             input: std::option::Option<crate::model::NielsenNonLinearWatermarkSettings>,
@@ -51610,14 +51679,14 @@ pub mod job_settings {
         ///
         /// To override the contents of this collection use [`set_output_groups`](Self::set_output_groups).
         ///
-        /// (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in (OutputGroups) is a group of settings that apply to the whole group. This required object depends on the value you set for (Type) under (OutputGroups)>(OutputGroupSettings). Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
-        pub fn output_groups(mut self, input: impl Into<crate::model::OutputGroup>) -> Self {
+        /// (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in (OutputGroups) is a group of settings that apply to the whole group. This required object depends on the value you set for (Type) under (OutputGroups)&gt;(OutputGroupSettings). Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
+        pub fn output_groups(mut self, input: crate::model::OutputGroup) -> Self {
             let mut v = self.output_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_groups = Some(v);
             self
         }
-        /// (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in (OutputGroups) is a group of settings that apply to the whole group. This required object depends on the value you set for (Type) under (OutputGroups)>(OutputGroupSettings). Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
+        /// (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in (OutputGroups) is a group of settings that apply to the whole group. This required object depends on the value you set for (Type) under (OutputGroups)&gt;(OutputGroupSettings). Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
         pub fn set_output_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OutputGroup>>,
@@ -51702,7 +51771,7 @@ pub struct Input {
     pub deblock_filter: std::option::Option<crate::model::InputDeblockFilter>,
     /// Settings for decrypting any input files that you encrypt before you upload them to Amazon S3. MediaConvert can decrypt files only when you use AWS Key Management Service (KMS) to encrypt the data key that you use to encrypt your content.
     pub decryption_settings: std::option::Option<crate::model::InputDecryptionSettings>,
-    /// Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
+    /// Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
     pub denoise_filter: std::option::Option<crate::model::InputDenoiseFilter>,
     /// Specify the source file for your transcoding job. You can use multiple inputs in a single job. The service concatenates these inputs, in the order that you specify them in the job, to create the outputs. If your input format is IMF, specify your input by providing the path to your CPL. For example, "s3://bucket/vf/cpl.xml". If the CPL is in an incomplete IMP, make sure to use *Supplemental IMPs* (SupplementalImps) to specify any supplemental IMPs that contain assets referenced by the CPL.
     pub file_input: std::option::Option<std::string::String>,
@@ -51770,7 +51839,7 @@ impl Input {
     ) -> std::option::Option<&crate::model::InputDecryptionSettings> {
         self.decryption_settings.as_ref()
     }
-    /// Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
+    /// Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
     pub fn denoise_filter(&self) -> std::option::Option<&crate::model::InputDenoiseFilter> {
         self.denoise_filter.as_ref()
     }
@@ -51895,10 +51964,10 @@ pub mod input {
         pub fn audio_selector_groups(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AudioSelectorGroup>,
+            v: crate::model::AudioSelectorGroup,
         ) -> Self {
             let mut hash_map = self.audio_selector_groups.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.audio_selector_groups = Some(hash_map);
             self
         }
@@ -51920,10 +51989,10 @@ pub mod input {
         pub fn audio_selectors(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AudioSelector>,
+            v: crate::model::AudioSelector,
         ) -> Self {
             let mut hash_map = self.audio_selectors.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.audio_selectors = Some(hash_map);
             self
         }
@@ -51945,10 +52014,10 @@ pub mod input {
         pub fn caption_selectors(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::CaptionSelector>,
+            v: crate::model::CaptionSelector,
         ) -> Self {
             let mut hash_map = self.caption_selectors.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.caption_selectors = Some(hash_map);
             self
         }
@@ -51998,12 +52067,12 @@ pub mod input {
             self.decryption_settings = input;
             self
         }
-        /// Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
+        /// Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
         pub fn denoise_filter(mut self, input: crate::model::InputDenoiseFilter) -> Self {
             self.denoise_filter = Some(input);
             self
         }
-        /// Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
+        /// Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
         pub fn set_denoise_filter(
             mut self,
             input: std::option::Option<crate::model::InputDenoiseFilter>,
@@ -52062,9 +52131,9 @@ pub mod input {
         /// To override the contents of this collection use [`set_input_clippings`](Self::set_input_clippings).
         ///
         /// (InputClippings) contains sets of start and end times that together specify a portion of the input to be used in the outputs. If you provide only a start time, the clip will be the entire input from that point to the end. If you provide only an end time, it will be the entire input up to that point. When you specify more than one input clip, the transcoding service creates the job outputs by stringing the clips together in the order you specify them.
-        pub fn input_clippings(mut self, input: impl Into<crate::model::InputClipping>) -> Self {
+        pub fn input_clippings(mut self, input: crate::model::InputClipping) -> Self {
             let mut v = self.input_clippings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_clippings = Some(v);
             self
         }
@@ -52528,9 +52597,9 @@ pub mod output_group_detail {
         /// To override the contents of this collection use [`set_output_details`](Self::set_output_details).
         ///
         /// Details about the output
-        pub fn output_details(mut self, input: impl Into<crate::model::OutputDetail>) -> Self {
+        pub fn output_details(mut self, input: crate::model::OutputDetail) -> Self {
             let mut v = self.output_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_details = Some(v);
             self
         }

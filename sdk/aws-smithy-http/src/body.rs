@@ -21,7 +21,7 @@ pub type Error = Box<dyn StdError + Send + Sync>;
 /// For handling responses, the type of the body will be controlled
 /// by the HTTP stack.
 ///
-/// TODO: Consider renaming to simply `Body`, although I'm concerned about naming headaches
+/// TODO(naming): Consider renaming to simply `Body`, although I'm concerned about naming headaches
 /// between hyper::Body and our Body
 #[pin_project]
 pub struct SdkBody {

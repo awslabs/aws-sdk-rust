@@ -352,8 +352,7 @@ pub struct MatchingResponse {
     pub job_schedule: std::option::Option<crate::model::JobSchedule>,
     /// <p>Configuration information about the auto-merging process.</p>
     pub auto_merging: std::option::Option<crate::model::AutoMerging>,
-    /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3
-    /// bucket.</p>
+    /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3 bucket.</p>
     pub exporting_config: std::option::Option<crate::model::ExportingConfig>,
 }
 impl MatchingResponse {
@@ -369,8 +368,7 @@ impl MatchingResponse {
     pub fn auto_merging(&self) -> std::option::Option<&crate::model::AutoMerging> {
         self.auto_merging.as_ref()
     }
-    /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3
-    /// bucket.</p>
+    /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3 bucket.</p>
     pub fn exporting_config(&self) -> std::option::Option<&crate::model::ExportingConfig> {
         self.exporting_config.as_ref()
     }
@@ -433,14 +431,12 @@ pub mod matching_response {
             self.auto_merging = input;
             self
         }
-        /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3
-        /// bucket.</p>
+        /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3 bucket.</p>
         pub fn exporting_config(mut self, input: crate::model::ExportingConfig) -> Self {
             self.exporting_config = Some(input);
             self
         }
-        /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3
-        /// bucket.</p>
+        /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3 bucket.</p>
         pub fn set_exporting_config(
             mut self,
             input: std::option::Option<crate::model::ExportingConfig>,
@@ -466,12 +462,8 @@ impl MatchingResponse {
     }
 }
 
-/// <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files. </p>
-/// <note>
-/// <p>You need to give Customer Profiles service principal write permission to your S3 bucket.
-/// Otherwise, you'll get an exception in the API response. For an example policy, see
-/// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service">Amazon Connect Customer Profiles cross-service confused deputy prevention</a>.
-/// </p>
+/// <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files. </p> <note>
+/// <p>You need to give Customer Profiles service principal write permission to your S3 bucket. Otherwise, you'll get an exception in the API response. For an example policy, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service">Amazon Connect Customer Profiles cross-service confused deputy prevention</a>. </p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -611,13 +603,9 @@ impl S3ExportingConfig {
 pub struct AutoMerging {
     /// <p>The flag that enables the auto-merging of duplicate profiles.</p>
     pub enabled: std::option::Option<bool>,
-    /// <p>A list of matching attributes that represent matching criteria. If two profiles meet at
-    /// least one of the requirements in the matching attributes list, they will be merged.</p>
+    /// <p>A list of matching attributes that represent matching criteria. If two profiles meet at least one of the requirements in the matching attributes list, they will be merged.</p>
     pub consolidation: std::option::Option<crate::model::Consolidation>,
-    /// <p>How the auto-merging process should resolve conflicts between different profiles. For
-    /// example, if Profile A and Profile B have the same <code>FirstName</code> and
-    /// <code>LastName</code> (and that is the matching criteria), which
-    /// <code>EmailAddress</code> should be used? </p>
+    /// <p>How the auto-merging process should resolve conflicts between different profiles. For example, if Profile A and Profile B have the same <code>FirstName</code> and <code>LastName</code> (and that is the matching criteria), which <code>EmailAddress</code> should be used? </p>
     pub conflict_resolution: std::option::Option<crate::model::ConflictResolution>,
 }
 impl AutoMerging {
@@ -625,15 +613,11 @@ impl AutoMerging {
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
-    /// <p>A list of matching attributes that represent matching criteria. If two profiles meet at
-    /// least one of the requirements in the matching attributes list, they will be merged.</p>
+    /// <p>A list of matching attributes that represent matching criteria. If two profiles meet at least one of the requirements in the matching attributes list, they will be merged.</p>
     pub fn consolidation(&self) -> std::option::Option<&crate::model::Consolidation> {
         self.consolidation.as_ref()
     }
-    /// <p>How the auto-merging process should resolve conflicts between different profiles. For
-    /// example, if Profile A and Profile B have the same <code>FirstName</code> and
-    /// <code>LastName</code> (and that is the matching criteria), which
-    /// <code>EmailAddress</code> should be used? </p>
+    /// <p>How the auto-merging process should resolve conflicts between different profiles. For example, if Profile A and Profile B have the same <code>FirstName</code> and <code>LastName</code> (and that is the matching criteria), which <code>EmailAddress</code> should be used? </p>
     pub fn conflict_resolution(&self) -> std::option::Option<&crate::model::ConflictResolution> {
         self.conflict_resolution.as_ref()
     }
@@ -668,14 +652,12 @@ pub mod auto_merging {
             self.enabled = input;
             self
         }
-        /// <p>A list of matching attributes that represent matching criteria. If two profiles meet at
-        /// least one of the requirements in the matching attributes list, they will be merged.</p>
+        /// <p>A list of matching attributes that represent matching criteria. If two profiles meet at least one of the requirements in the matching attributes list, they will be merged.</p>
         pub fn consolidation(mut self, input: crate::model::Consolidation) -> Self {
             self.consolidation = Some(input);
             self
         }
-        /// <p>A list of matching attributes that represent matching criteria. If two profiles meet at
-        /// least one of the requirements in the matching attributes list, they will be merged.</p>
+        /// <p>A list of matching attributes that represent matching criteria. If two profiles meet at least one of the requirements in the matching attributes list, they will be merged.</p>
         pub fn set_consolidation(
             mut self,
             input: std::option::Option<crate::model::Consolidation>,
@@ -683,18 +665,12 @@ pub mod auto_merging {
             self.consolidation = input;
             self
         }
-        /// <p>How the auto-merging process should resolve conflicts between different profiles. For
-        /// example, if Profile A and Profile B have the same <code>FirstName</code> and
-        /// <code>LastName</code> (and that is the matching criteria), which
-        /// <code>EmailAddress</code> should be used? </p>
+        /// <p>How the auto-merging process should resolve conflicts between different profiles. For example, if Profile A and Profile B have the same <code>FirstName</code> and <code>LastName</code> (and that is the matching criteria), which <code>EmailAddress</code> should be used? </p>
         pub fn conflict_resolution(mut self, input: crate::model::ConflictResolution) -> Self {
             self.conflict_resolution = Some(input);
             self
         }
-        /// <p>How the auto-merging process should resolve conflicts between different profiles. For
-        /// example, if Profile A and Profile B have the same <code>FirstName</code> and
-        /// <code>LastName</code> (and that is the matching criteria), which
-        /// <code>EmailAddress</code> should be used? </p>
+        /// <p>How the auto-merging process should resolve conflicts between different profiles. For example, if Profile A and Profile B have the same <code>FirstName</code> and <code>LastName</code> (and that is the matching criteria), which <code>EmailAddress</code> should be used? </p>
         pub fn set_conflict_resolution(
             mut self,
             input: std::option::Option<crate::model::ConflictResolution>,
@@ -725,45 +701,25 @@ impl AutoMerging {
 pub struct ConflictResolution {
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>RECENCY</code>: Uses the data that was most recently updated.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SOURCE</code>: Uses the data from a specific source. For example, if a
-    /// company has been aquired or two departments have merged, data from the specified
-    /// source is used. If two duplicate profiles are from the same source, then
-    /// <code>RECENCY</code> is used again.</p>
-    /// </li>
+    /// <li> <p> <code>RECENCY</code>: Uses the data that was most recently updated.</p> </li>
+    /// <li> <p> <code>SOURCE</code>: Uses the data from a specific source. For example, if a company has been aquired or two departments have merged, data from the specified source is used. If two duplicate profiles are from the same source, then <code>RECENCY</code> is used again.</p> </li>
     /// </ul>
     pub conflict_resolving_model: std::option::Option<crate::model::ConflictResolvingModel>,
-    /// <p>The <code>ObjectType</code> name that is used to resolve profile merging conflicts when
-    /// choosing <code>SOURCE</code> as the <code>ConflictResolvingModel</code>.</p>
+    /// <p>The <code>ObjectType</code> name that is used to resolve profile merging conflicts when choosing <code>SOURCE</code> as the <code>ConflictResolvingModel</code>.</p>
     pub source_name: std::option::Option<std::string::String>,
 }
 impl ConflictResolution {
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>RECENCY</code>: Uses the data that was most recently updated.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SOURCE</code>: Uses the data from a specific source. For example, if a
-    /// company has been aquired or two departments have merged, data from the specified
-    /// source is used. If two duplicate profiles are from the same source, then
-    /// <code>RECENCY</code> is used again.</p>
-    /// </li>
+    /// <li> <p> <code>RECENCY</code>: Uses the data that was most recently updated.</p> </li>
+    /// <li> <p> <code>SOURCE</code>: Uses the data from a specific source. For example, if a company has been aquired or two departments have merged, data from the specified source is used. If two duplicate profiles are from the same source, then <code>RECENCY</code> is used again.</p> </li>
     /// </ul>
     pub fn conflict_resolving_model(
         &self,
     ) -> std::option::Option<&crate::model::ConflictResolvingModel> {
         self.conflict_resolving_model.as_ref()
     }
-    /// <p>The <code>ObjectType</code> name that is used to resolve profile merging conflicts when
-    /// choosing <code>SOURCE</code> as the <code>ConflictResolvingModel</code>.</p>
+    /// <p>The <code>ObjectType</code> name that is used to resolve profile merging conflicts when choosing <code>SOURCE</code> as the <code>ConflictResolvingModel</code>.</p>
     pub fn source_name(&self) -> std::option::Option<&str> {
         self.source_name.as_deref()
     }
@@ -789,17 +745,8 @@ pub mod conflict_resolution {
     impl Builder {
         /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>RECENCY</code>: Uses the data that was most recently updated.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SOURCE</code>: Uses the data from a specific source. For example, if a
-        /// company has been aquired or two departments have merged, data from the specified
-        /// source is used. If two duplicate profiles are from the same source, then
-        /// <code>RECENCY</code> is used again.</p>
-        /// </li>
+        /// <li> <p> <code>RECENCY</code>: Uses the data that was most recently updated.</p> </li>
+        /// <li> <p> <code>SOURCE</code>: Uses the data from a specific source. For example, if a company has been aquired or two departments have merged, data from the specified source is used. If two duplicate profiles are from the same source, then <code>RECENCY</code> is used again.</p> </li>
         /// </ul>
         pub fn conflict_resolving_model(
             mut self,
@@ -810,17 +757,8 @@ pub mod conflict_resolution {
         }
         /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>RECENCY</code>: Uses the data that was most recently updated.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SOURCE</code>: Uses the data from a specific source. For example, if a
-        /// company has been aquired or two departments have merged, data from the specified
-        /// source is used. If two duplicate profiles are from the same source, then
-        /// <code>RECENCY</code> is used again.</p>
-        /// </li>
+        /// <li> <p> <code>RECENCY</code>: Uses the data that was most recently updated.</p> </li>
+        /// <li> <p> <code>SOURCE</code>: Uses the data from a specific source. For example, if a company has been aquired or two departments have merged, data from the specified source is used. If two duplicate profiles are from the same source, then <code>RECENCY</code> is used again.</p> </li>
         /// </ul>
         pub fn set_conflict_resolving_model(
             mut self,
@@ -829,14 +767,12 @@ pub mod conflict_resolution {
             self.conflict_resolving_model = input;
             self
         }
-        /// <p>The <code>ObjectType</code> name that is used to resolve profile merging conflicts when
-        /// choosing <code>SOURCE</code> as the <code>ConflictResolvingModel</code>.</p>
+        /// <p>The <code>ObjectType</code> name that is used to resolve profile merging conflicts when choosing <code>SOURCE</code> as the <code>ConflictResolvingModel</code>.</p>
         pub fn source_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_name = Some(input.into());
             self
         }
-        /// <p>The <code>ObjectType</code> name that is used to resolve profile merging conflicts when
-        /// choosing <code>SOURCE</code> as the <code>ConflictResolvingModel</code>.</p>
+        /// <p>The <code>ObjectType</code> name that is used to resolve profile merging conflicts when choosing <code>SOURCE</code> as the <code>ConflictResolvingModel</code>.</p>
         pub fn set_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_name = input;
             self
@@ -952,10 +888,10 @@ pub mod consolidation {
         /// <p>A list of matching criteria.</p>
         pub fn matching_attributes_list(
             mut self,
-            input: impl Into<std::vec::Vec<std::string::String>>,
+            input: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut v = self.matching_attributes_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.matching_attributes_list = Some(v);
             self
         }
@@ -1151,8 +1087,7 @@ pub struct MatchingRequest {
     pub job_schedule: std::option::Option<crate::model::JobSchedule>,
     /// <p>Configuration information about the auto-merging process.</p>
     pub auto_merging: std::option::Option<crate::model::AutoMerging>,
-    /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3
-    /// bucket.</p>
+    /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3 bucket.</p>
     pub exporting_config: std::option::Option<crate::model::ExportingConfig>,
 }
 impl MatchingRequest {
@@ -1168,8 +1103,7 @@ impl MatchingRequest {
     pub fn auto_merging(&self) -> std::option::Option<&crate::model::AutoMerging> {
         self.auto_merging.as_ref()
     }
-    /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3
-    /// bucket.</p>
+    /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3 bucket.</p>
     pub fn exporting_config(&self) -> std::option::Option<&crate::model::ExportingConfig> {
         self.exporting_config.as_ref()
     }
@@ -1232,14 +1166,12 @@ pub mod matching_request {
             self.auto_merging = input;
             self
         }
-        /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3
-        /// bucket.</p>
+        /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3 bucket.</p>
         pub fn exporting_config(mut self, input: crate::model::ExportingConfig) -> Self {
             self.exporting_config = Some(input);
             self
         }
-        /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3
-        /// bucket.</p>
+        /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3 bucket.</p>
         pub fn set_exporting_config(
             mut self,
             input: std::option::Option<crate::model::ExportingConfig>,
@@ -1289,8 +1221,7 @@ pub struct Profile {
     pub birth_date: std::option::Option<std::string::String>,
     /// <p>The gender with which the customer identifies. </p>
     pub gender: std::option::Option<crate::model::Gender>,
-    /// <p>The customer's phone number, which has not been specified as a mobile, home, or business
-    /// number.</p>
+    /// <p>The customer's phone number, which has not been specified as a mobile, home, or business number.</p>
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The customer’s mobile phone number.</p>
     pub mobile_phone_number: std::option::Option<std::string::String>,
@@ -1298,15 +1229,13 @@ pub struct Profile {
     pub home_phone_number: std::option::Option<std::string::String>,
     /// <p>The customer’s home phone number.</p>
     pub business_phone_number: std::option::Option<std::string::String>,
-    /// <p>The customer’s email address, which has not been specified as a personal or business
-    /// address. </p>
+    /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The customer’s personal email address.</p>
     pub personal_email_address: std::option::Option<std::string::String>,
     /// <p>The customer’s business email address.</p>
     pub business_email_address: std::option::Option<std::string::String>,
-    /// <p>A generic address associated with the customer that is not mailing, shipping, or
-    /// billing.</p>
+    /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
     pub address: std::option::Option<crate::model::Address>,
     /// <p>The customer’s shipping address.</p>
     pub shipping_address: std::option::Option<crate::model::Address>,
@@ -1359,8 +1288,7 @@ impl Profile {
     pub fn gender(&self) -> std::option::Option<&crate::model::Gender> {
         self.gender.as_ref()
     }
-    /// <p>The customer's phone number, which has not been specified as a mobile, home, or business
-    /// number.</p>
+    /// <p>The customer's phone number, which has not been specified as a mobile, home, or business number.</p>
     pub fn phone_number(&self) -> std::option::Option<&str> {
         self.phone_number.as_deref()
     }
@@ -1376,8 +1304,7 @@ impl Profile {
     pub fn business_phone_number(&self) -> std::option::Option<&str> {
         self.business_phone_number.as_deref()
     }
-    /// <p>The customer’s email address, which has not been specified as a personal or business
-    /// address. </p>
+    /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
     pub fn email_address(&self) -> std::option::Option<&str> {
         self.email_address.as_deref()
     }
@@ -1389,8 +1316,7 @@ impl Profile {
     pub fn business_email_address(&self) -> std::option::Option<&str> {
         self.business_email_address.as_deref()
     }
-    /// <p>A generic address associated with the customer that is not mailing, shipping, or
-    /// billing.</p>
+    /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
     pub fn address(&self) -> std::option::Option<&crate::model::Address> {
         self.address.as_ref()
     }
@@ -1586,14 +1512,12 @@ pub mod profile {
             self.gender = input;
             self
         }
-        /// <p>The customer's phone number, which has not been specified as a mobile, home, or business
-        /// number.</p>
+        /// <p>The customer's phone number, which has not been specified as a mobile, home, or business number.</p>
         pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.phone_number = Some(input.into());
             self
         }
-        /// <p>The customer's phone number, which has not been specified as a mobile, home, or business
-        /// number.</p>
+        /// <p>The customer's phone number, which has not been specified as a mobile, home, or business number.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
@@ -1637,14 +1561,12 @@ pub mod profile {
             self.business_phone_number = input;
             self
         }
-        /// <p>The customer’s email address, which has not been specified as a personal or business
-        /// address. </p>
+        /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
         pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.email_address = Some(input.into());
             self
         }
-        /// <p>The customer’s email address, which has not been specified as a personal or business
-        /// address. </p>
+        /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1678,14 +1600,12 @@ pub mod profile {
             self.business_email_address = input;
             self
         }
-        /// <p>A generic address associated with the customer that is not mailing, shipping, or
-        /// billing.</p>
+        /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
         pub fn address(mut self, input: crate::model::Address) -> Self {
             self.address = Some(input);
             self
         }
-        /// <p>A generic address associated with the customer that is not mailing, shipping, or
-        /// billing.</p>
+        /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
         pub fn set_address(mut self, input: std::option::Option<crate::model::Address>) -> Self {
             self.address = input;
             self
@@ -1790,8 +1710,7 @@ impl Profile {
     }
 }
 
-/// <p>A generic address associated with the customer that is not mailing, shipping, or
-/// billing.</p>
+/// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Address {
@@ -2016,32 +1935,17 @@ impl Address {
     }
 }
 
-/// <p>An object that defines the Key element of a ProfileObject. A Key is a special element
-/// that can be used to search for a customer profile.</p>
+/// <p>An object that defines the Key element of a ProfileObject. A Key is a special element that can be used to search for a customer profile.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectTypeKey {
-    /// <p>The types of keys that a ProfileObject can have. Each ProfileObject can have only 1
-    /// UNIQUE key but multiple PROFILE keys. PROFILE, ASSET or CASE means that this key can be
-    /// used to tie an object to a PROFILE, ASSET or CASE respectively. UNIQUE means that it can be
-    /// used to uniquely identify an object. If a key a is marked as SECONDARY, it will be used to
-    /// search for profiles after all other PROFILE keys have been searched. A LOOKUP_ONLY key is
-    /// only used to match a profile but is not persisted to be used for searching of the profile.
-    /// A NEW_ONLY key is only used if the profile does not already exist before the object is
-    /// ingested, otherwise it is only used for matching objects to profiles.</p>
+    /// <p>The types of keys that a ProfileObject can have. Each ProfileObject can have only 1 UNIQUE key but multiple PROFILE keys. PROFILE, ASSET, CASE, or ORDER means that this key can be used to tie an object to a PROFILE, ASSET, CASE, or ORDER respectively. UNIQUE means that it can be used to uniquely identify an object. If a key a is marked as SECONDARY, it will be used to search for profiles after all other PROFILE keys have been searched. A LOOKUP_ONLY key is only used to match a profile but is not persisted to be used for searching of the profile. A NEW_ONLY key is only used if the profile does not already exist before the object is ingested, otherwise it is only used for matching objects to profiles.</p>
     pub standard_identifiers: std::option::Option<std::vec::Vec<crate::model::StandardIdentifier>>,
     /// <p>The reference for the key name of the fields map.</p>
     pub field_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ObjectTypeKey {
-    /// <p>The types of keys that a ProfileObject can have. Each ProfileObject can have only 1
-    /// UNIQUE key but multiple PROFILE keys. PROFILE, ASSET or CASE means that this key can be
-    /// used to tie an object to a PROFILE, ASSET or CASE respectively. UNIQUE means that it can be
-    /// used to uniquely identify an object. If a key a is marked as SECONDARY, it will be used to
-    /// search for profiles after all other PROFILE keys have been searched. A LOOKUP_ONLY key is
-    /// only used to match a profile but is not persisted to be used for searching of the profile.
-    /// A NEW_ONLY key is only used if the profile does not already exist before the object is
-    /// ingested, otherwise it is only used for matching objects to profiles.</p>
+    /// <p>The types of keys that a ProfileObject can have. Each ProfileObject can have only 1 UNIQUE key but multiple PROFILE keys. PROFILE, ASSET, CASE, or ORDER means that this key can be used to tie an object to a PROFILE, ASSET, CASE, or ORDER respectively. UNIQUE means that it can be used to uniquely identify an object. If a key a is marked as SECONDARY, it will be used to search for profiles after all other PROFILE keys have been searched. A LOOKUP_ONLY key is only used to match a profile but is not persisted to be used for searching of the profile. A NEW_ONLY key is only used if the profile does not already exist before the object is ingested, otherwise it is only used for matching objects to profiles.</p>
     pub fn standard_identifiers(&self) -> std::option::Option<&[crate::model::StandardIdentifier]> {
         self.standard_identifiers.as_deref()
     }
@@ -2073,31 +1977,14 @@ pub mod object_type_key {
         ///
         /// To override the contents of this collection use [`set_standard_identifiers`](Self::set_standard_identifiers).
         ///
-        /// <p>The types of keys that a ProfileObject can have. Each ProfileObject can have only 1
-        /// UNIQUE key but multiple PROFILE keys. PROFILE, ASSET or CASE means that this key can be
-        /// used to tie an object to a PROFILE, ASSET or CASE respectively. UNIQUE means that it can be
-        /// used to uniquely identify an object. If a key a is marked as SECONDARY, it will be used to
-        /// search for profiles after all other PROFILE keys have been searched. A LOOKUP_ONLY key is
-        /// only used to match a profile but is not persisted to be used for searching of the profile.
-        /// A NEW_ONLY key is only used if the profile does not already exist before the object is
-        /// ingested, otherwise it is only used for matching objects to profiles.</p>
-        pub fn standard_identifiers(
-            mut self,
-            input: impl Into<crate::model::StandardIdentifier>,
-        ) -> Self {
+        /// <p>The types of keys that a ProfileObject can have. Each ProfileObject can have only 1 UNIQUE key but multiple PROFILE keys. PROFILE, ASSET, CASE, or ORDER means that this key can be used to tie an object to a PROFILE, ASSET, CASE, or ORDER respectively. UNIQUE means that it can be used to uniquely identify an object. If a key a is marked as SECONDARY, it will be used to search for profiles after all other PROFILE keys have been searched. A LOOKUP_ONLY key is only used to match a profile but is not persisted to be used for searching of the profile. A NEW_ONLY key is only used if the profile does not already exist before the object is ingested, otherwise it is only used for matching objects to profiles.</p>
+        pub fn standard_identifiers(mut self, input: crate::model::StandardIdentifier) -> Self {
             let mut v = self.standard_identifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.standard_identifiers = Some(v);
             self
         }
-        /// <p>The types of keys that a ProfileObject can have. Each ProfileObject can have only 1
-        /// UNIQUE key but multiple PROFILE keys. PROFILE, ASSET or CASE means that this key can be
-        /// used to tie an object to a PROFILE, ASSET or CASE respectively. UNIQUE means that it can be
-        /// used to uniquely identify an object. If a key a is marked as SECONDARY, it will be used to
-        /// search for profiles after all other PROFILE keys have been searched. A LOOKUP_ONLY key is
-        /// only used to match a profile but is not persisted to be used for searching of the profile.
-        /// A NEW_ONLY key is only used if the profile does not already exist before the object is
-        /// ingested, otherwise it is only used for matching objects to profiles.</p>
+        /// <p>The types of keys that a ProfileObject can have. Each ProfileObject can have only 1 UNIQUE key but multiple PROFILE keys. PROFILE, ASSET, CASE, or ORDER means that this key can be used to tie an object to a PROFILE, ASSET, CASE, or ORDER respectively. UNIQUE means that it can be used to uniquely identify an object. If a key a is marked as SECONDARY, it will be used to search for profiles after all other PROFILE keys have been searched. A LOOKUP_ONLY key is only used to match a profile but is not persisted to be used for searching of the profile. A NEW_ONLY key is only used if the profile does not already exist before the object is ingested, otherwise it is only used for matching objects to profiles.</p>
         pub fn set_standard_identifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StandardIdentifier>>,
@@ -2161,6 +2048,8 @@ pub enum StandardIdentifier {
     #[allow(missing_docs)] // documentation missing in model
     NewOnly,
     #[allow(missing_docs)] // documentation missing in model
+    Order,
+    #[allow(missing_docs)] // documentation missing in model
     Profile,
     #[allow(missing_docs)] // documentation missing in model
     Secondary,
@@ -2176,6 +2065,7 @@ impl std::convert::From<&str> for StandardIdentifier {
             "CASE" => StandardIdentifier::Case,
             "LOOKUP_ONLY" => StandardIdentifier::LookupOnly,
             "NEW_ONLY" => StandardIdentifier::NewOnly,
+            "ORDER" => StandardIdentifier::Order,
             "PROFILE" => StandardIdentifier::Profile,
             "SECONDARY" => StandardIdentifier::Secondary,
             "UNIQUE" => StandardIdentifier::Unique,
@@ -2198,6 +2088,7 @@ impl StandardIdentifier {
             StandardIdentifier::Case => "CASE",
             StandardIdentifier::LookupOnly => "LOOKUP_ONLY",
             StandardIdentifier::NewOnly => "NEW_ONLY",
+            StandardIdentifier::Order => "ORDER",
             StandardIdentifier::Profile => "PROFILE",
             StandardIdentifier::Secondary => "SECONDARY",
             StandardIdentifier::Unique => "UNIQUE",
@@ -2211,6 +2102,7 @@ impl StandardIdentifier {
             "CASE",
             "LOOKUP_ONLY",
             "NEW_ONLY",
+            "ORDER",
             "PROFILE",
             "SECONDARY",
             "UNIQUE",
@@ -2227,23 +2119,19 @@ impl AsRef<str> for StandardIdentifier {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectTypeField {
-    /// <p>A field of a ProfileObject. For example: _source.FirstName, where “_source” is a
-    /// ProfileObjectType of a Zendesk user and “FirstName” is a field in that ObjectType.</p>
+    /// <p>A field of a ProfileObject. For example: _source.FirstName, where “_source” is a ProfileObjectType of a Zendesk user and “FirstName” is a field in that ObjectType.</p>
     pub source: std::option::Option<std::string::String>,
-    /// <p>The location of the data in the standard ProfileObject model. For example:
-    /// _profile.Address.PostalCode.</p>
+    /// <p>The location of the data in the standard ProfileObject model. For example: _profile.Address.PostalCode.</p>
     pub target: std::option::Option<std::string::String>,
     /// <p>The content type of the field. Used for determining equality when searching.</p>
     pub content_type: std::option::Option<crate::model::FieldContentType>,
 }
 impl ObjectTypeField {
-    /// <p>A field of a ProfileObject. For example: _source.FirstName, where “_source” is a
-    /// ProfileObjectType of a Zendesk user and “FirstName” is a field in that ObjectType.</p>
+    /// <p>A field of a ProfileObject. For example: _source.FirstName, where “_source” is a ProfileObjectType of a Zendesk user and “FirstName” is a field in that ObjectType.</p>
     pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
     }
-    /// <p>The location of the data in the standard ProfileObject model. For example:
-    /// _profile.Address.PostalCode.</p>
+    /// <p>The location of the data in the standard ProfileObject model. For example: _profile.Address.PostalCode.</p>
     pub fn target(&self) -> std::option::Option<&str> {
         self.target.as_deref()
     }
@@ -2272,26 +2160,22 @@ pub mod object_type_field {
         pub(crate) content_type: std::option::Option<crate::model::FieldContentType>,
     }
     impl Builder {
-        /// <p>A field of a ProfileObject. For example: _source.FirstName, where “_source” is a
-        /// ProfileObjectType of a Zendesk user and “FirstName” is a field in that ObjectType.</p>
+        /// <p>A field of a ProfileObject. For example: _source.FirstName, where “_source” is a ProfileObjectType of a Zendesk user and “FirstName” is a field in that ObjectType.</p>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
             self.source = Some(input.into());
             self
         }
-        /// <p>A field of a ProfileObject. For example: _source.FirstName, where “_source” is a
-        /// ProfileObjectType of a Zendesk user and “FirstName” is a field in that ObjectType.</p>
+        /// <p>A field of a ProfileObject. For example: _source.FirstName, where “_source” is a ProfileObjectType of a Zendesk user and “FirstName” is a field in that ObjectType.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
         }
-        /// <p>The location of the data in the standard ProfileObject model. For example:
-        /// _profile.Address.PostalCode.</p>
+        /// <p>The location of the data in the standard ProfileObject model. For example: _profile.Address.PostalCode.</p>
         pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
             self.target = Some(input.into());
             self
         }
-        /// <p>The location of the data in the standard ProfileObject model. For example:
-        /// _profile.Address.PostalCode.</p>
+        /// <p>The location of the data in the standard ProfileObject model. For example: _profile.Address.PostalCode.</p>
         pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target = input;
             self
@@ -2393,24 +2277,19 @@ impl AsRef<str> for FieldContentType {
     }
 }
 
-/// <p>The configurations that control how Customer Profiles retrieves data from the source,
-/// Amazon AppFlow. Customer Profiles uses this information to create an AppFlow flow on behalf of
-/// customers.</p>
+/// <p>The configurations that control how Customer Profiles retrieves data from the source, Amazon AppFlow. Customer Profiles uses this information to create an AppFlow flow on behalf of customers.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FlowDefinition {
     /// <p>A description of the flow you want to create.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are not
-    /// allowed.</p>
+    /// <p>The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are not allowed.</p>
     pub flow_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name of the AWS Key Management Service (KMS) key you provide for encryption.</p>
     pub kms_arn: std::option::Option<std::string::String>,
-    /// <p>The configuration that controls how Customer Profiles retrieves data from the
-    /// source.</p>
+    /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
     pub source_flow_config: std::option::Option<crate::model::SourceFlowConfig>,
-    /// <p>A list of tasks that Customer Profiles performs while transferring the data in the flow
-    /// run.</p>
+    /// <p>A list of tasks that Customer Profiles performs while transferring the data in the flow run.</p>
     pub tasks: std::option::Option<std::vec::Vec<crate::model::Task>>,
     /// <p>The trigger settings that determine how and when the flow runs.</p>
     pub trigger_config: std::option::Option<crate::model::TriggerConfig>,
@@ -2420,8 +2299,7 @@ impl FlowDefinition {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are not
-    /// allowed.</p>
+    /// <p>The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are not allowed.</p>
     pub fn flow_name(&self) -> std::option::Option<&str> {
         self.flow_name.as_deref()
     }
@@ -2429,13 +2307,11 @@ impl FlowDefinition {
     pub fn kms_arn(&self) -> std::option::Option<&str> {
         self.kms_arn.as_deref()
     }
-    /// <p>The configuration that controls how Customer Profiles retrieves data from the
-    /// source.</p>
+    /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
     pub fn source_flow_config(&self) -> std::option::Option<&crate::model::SourceFlowConfig> {
         self.source_flow_config.as_ref()
     }
-    /// <p>A list of tasks that Customer Profiles performs while transferring the data in the flow
-    /// run.</p>
+    /// <p>A list of tasks that Customer Profiles performs while transferring the data in the flow run.</p>
     pub fn tasks(&self) -> std::option::Option<&[crate::model::Task]> {
         self.tasks.as_deref()
     }
@@ -2480,14 +2356,12 @@ pub mod flow_definition {
             self.description = input;
             self
         }
-        /// <p>The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are not
-        /// allowed.</p>
+        /// <p>The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are not allowed.</p>
         pub fn flow_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.flow_name = Some(input.into());
             self
         }
-        /// <p>The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are not
-        /// allowed.</p>
+        /// <p>The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are not allowed.</p>
         pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_name = input;
             self
@@ -2502,14 +2376,12 @@ pub mod flow_definition {
             self.kms_arn = input;
             self
         }
-        /// <p>The configuration that controls how Customer Profiles retrieves data from the
-        /// source.</p>
+        /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
         pub fn source_flow_config(mut self, input: crate::model::SourceFlowConfig) -> Self {
             self.source_flow_config = Some(input);
             self
         }
-        /// <p>The configuration that controls how Customer Profiles retrieves data from the
-        /// source.</p>
+        /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
         pub fn set_source_flow_config(
             mut self,
             input: std::option::Option<crate::model::SourceFlowConfig>,
@@ -2521,16 +2393,14 @@ pub mod flow_definition {
         ///
         /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
         ///
-        /// <p>A list of tasks that Customer Profiles performs while transferring the data in the flow
-        /// run.</p>
-        pub fn tasks(mut self, input: impl Into<crate::model::Task>) -> Self {
+        /// <p>A list of tasks that Customer Profiles performs while transferring the data in the flow run.</p>
+        pub fn tasks(mut self, input: crate::model::Task) -> Self {
             let mut v = self.tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tasks = Some(v);
             self
         }
-        /// <p>A list of tasks that Customer Profiles performs while transferring the data in the flow
-        /// run.</p>
+        /// <p>A list of tasks that Customer Profiles performs while transferring the data in the flow run.</p>
         pub fn set_tasks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Task>>,
@@ -2571,15 +2441,13 @@ impl FlowDefinition {
     }
 }
 
-/// <p>The trigger settings that determine how and when Amazon AppFlow runs the specified
-/// flow.</p>
+/// <p>The trigger settings that determine how and when Amazon AppFlow runs the specified flow.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TriggerConfig {
     /// <p>Specifies the type of flow trigger. It can be OnDemand, Scheduled, or Event.</p>
     pub trigger_type: std::option::Option<crate::model::TriggerType>,
-    /// <p>Specifies the configuration details of a schedule-triggered flow that you define.
-    /// Currently, these settings only apply to the Scheduled trigger type.</p>
+    /// <p>Specifies the configuration details of a schedule-triggered flow that you define. Currently, these settings only apply to the Scheduled trigger type.</p>
     pub trigger_properties: std::option::Option<crate::model::TriggerProperties>,
 }
 impl TriggerConfig {
@@ -2587,8 +2455,7 @@ impl TriggerConfig {
     pub fn trigger_type(&self) -> std::option::Option<&crate::model::TriggerType> {
         self.trigger_type.as_ref()
     }
-    /// <p>Specifies the configuration details of a schedule-triggered flow that you define.
-    /// Currently, these settings only apply to the Scheduled trigger type.</p>
+    /// <p>Specifies the configuration details of a schedule-triggered flow that you define. Currently, these settings only apply to the Scheduled trigger type.</p>
     pub fn trigger_properties(&self) -> std::option::Option<&crate::model::TriggerProperties> {
         self.trigger_properties.as_ref()
     }
@@ -2624,14 +2491,12 @@ pub mod trigger_config {
             self.trigger_type = input;
             self
         }
-        /// <p>Specifies the configuration details of a schedule-triggered flow that you define.
-        /// Currently, these settings only apply to the Scheduled trigger type.</p>
+        /// <p>Specifies the configuration details of a schedule-triggered flow that you define. Currently, these settings only apply to the Scheduled trigger type.</p>
         pub fn trigger_properties(mut self, input: crate::model::TriggerProperties) -> Self {
             self.trigger_properties = Some(input);
             self
         }
-        /// <p>Specifies the configuration details of a schedule-triggered flow that you define.
-        /// Currently, these settings only apply to the Scheduled trigger type.</p>
+        /// <p>Specifies the configuration details of a schedule-triggered flow that you define. Currently, these settings only apply to the Scheduled trigger type.</p>
         pub fn set_trigger_properties(
             mut self,
             input: std::option::Option<crate::model::TriggerProperties>,
@@ -2655,8 +2520,7 @@ impl TriggerConfig {
     }
 }
 
-/// <p>Specifies the configuration details that control the trigger for a flow. Currently,
-/// these settings only apply to the Scheduled trigger type.</p>
+/// <p>Specifies the configuration details that control the trigger for a flow. Currently, these settings only apply to the Scheduled trigger type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TriggerProperties {
@@ -2713,39 +2577,31 @@ impl TriggerProperties {
     }
 }
 
-/// <p>Specifies the configuration details of a scheduled-trigger flow that you define.
-/// Currently, these settings only apply to the scheduled-trigger type.</p>
+/// <p>Specifies the configuration details of a scheduled-trigger flow that you define. Currently, these settings only apply to the scheduled-trigger type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduledTriggerProperties {
-    /// <p>The scheduling expression that determines the rate at which the schedule will run, for
-    /// example rate (5 minutes).</p>
+    /// <p>The scheduling expression that determines the rate at which the schedule will run, for example rate (5 minutes).</p>
     pub schedule_expression: std::option::Option<std::string::String>,
-    /// <p>Specifies whether a scheduled flow has an incremental data transfer or a complete data
-    /// transfer for each flow run.</p>
+    /// <p>Specifies whether a scheduled flow has an incremental data transfer or a complete data transfer for each flow run.</p>
     pub data_pull_mode: std::option::Option<crate::model::DataPullMode>,
     /// <p>Specifies the scheduled start time for a scheduled-trigger flow.</p>
     pub schedule_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the scheduled end time for a scheduled-trigger flow.</p>
     pub schedule_end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Specifies the time zone used when referring to the date and time of a
-    /// scheduled-triggered flow, such as America/New_York.</p>
+    /// <p>Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as America/New_York.</p>
     pub timezone: std::option::Option<std::string::String>,
-    /// <p>Specifies the optional offset that is added to the time interval for a
-    /// schedule-triggered flow.</p>
+    /// <p>Specifies the optional offset that is added to the time interval for a schedule-triggered flow.</p>
     pub schedule_offset: std::option::Option<i64>,
-    /// <p>Specifies the date range for the records to import from the connector in the first flow
-    /// run.</p>
+    /// <p>Specifies the date range for the records to import from the connector in the first flow run.</p>
     pub first_execution_from: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ScheduledTriggerProperties {
-    /// <p>The scheduling expression that determines the rate at which the schedule will run, for
-    /// example rate (5 minutes).</p>
+    /// <p>The scheduling expression that determines the rate at which the schedule will run, for example rate (5 minutes).</p>
     pub fn schedule_expression(&self) -> std::option::Option<&str> {
         self.schedule_expression.as_deref()
     }
-    /// <p>Specifies whether a scheduled flow has an incremental data transfer or a complete data
-    /// transfer for each flow run.</p>
+    /// <p>Specifies whether a scheduled flow has an incremental data transfer or a complete data transfer for each flow run.</p>
     pub fn data_pull_mode(&self) -> std::option::Option<&crate::model::DataPullMode> {
         self.data_pull_mode.as_ref()
     }
@@ -2757,18 +2613,15 @@ impl ScheduledTriggerProperties {
     pub fn schedule_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.schedule_end_time.as_ref()
     }
-    /// <p>Specifies the time zone used when referring to the date and time of a
-    /// scheduled-triggered flow, such as America/New_York.</p>
+    /// <p>Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as America/New_York.</p>
     pub fn timezone(&self) -> std::option::Option<&str> {
         self.timezone.as_deref()
     }
-    /// <p>Specifies the optional offset that is added to the time interval for a
-    /// schedule-triggered flow.</p>
+    /// <p>Specifies the optional offset that is added to the time interval for a schedule-triggered flow.</p>
     pub fn schedule_offset(&self) -> std::option::Option<i64> {
         self.schedule_offset
     }
-    /// <p>Specifies the date range for the records to import from the connector in the first flow
-    /// run.</p>
+    /// <p>Specifies the date range for the records to import from the connector in the first flow run.</p>
     pub fn first_execution_from(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.first_execution_from.as_ref()
     }
@@ -2801,14 +2654,12 @@ pub mod scheduled_trigger_properties {
         pub(crate) first_execution_from: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The scheduling expression that determines the rate at which the schedule will run, for
-        /// example rate (5 minutes).</p>
+        /// <p>The scheduling expression that determines the rate at which the schedule will run, for example rate (5 minutes).</p>
         pub fn schedule_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.schedule_expression = Some(input.into());
             self
         }
-        /// <p>The scheduling expression that determines the rate at which the schedule will run, for
-        /// example rate (5 minutes).</p>
+        /// <p>The scheduling expression that determines the rate at which the schedule will run, for example rate (5 minutes).</p>
         pub fn set_schedule_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2816,14 +2667,12 @@ pub mod scheduled_trigger_properties {
             self.schedule_expression = input;
             self
         }
-        /// <p>Specifies whether a scheduled flow has an incremental data transfer or a complete data
-        /// transfer for each flow run.</p>
+        /// <p>Specifies whether a scheduled flow has an incremental data transfer or a complete data transfer for each flow run.</p>
         pub fn data_pull_mode(mut self, input: crate::model::DataPullMode) -> Self {
             self.data_pull_mode = Some(input);
             self
         }
-        /// <p>Specifies whether a scheduled flow has an incremental data transfer or a complete data
-        /// transfer for each flow run.</p>
+        /// <p>Specifies whether a scheduled flow has an incremental data transfer or a complete data transfer for each flow run.</p>
         pub fn set_data_pull_mode(
             mut self,
             input: std::option::Option<crate::model::DataPullMode>,
@@ -2857,38 +2706,32 @@ pub mod scheduled_trigger_properties {
             self.schedule_end_time = input;
             self
         }
-        /// <p>Specifies the time zone used when referring to the date and time of a
-        /// scheduled-triggered flow, such as America/New_York.</p>
+        /// <p>Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as America/New_York.</p>
         pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
             self.timezone = Some(input.into());
             self
         }
-        /// <p>Specifies the time zone used when referring to the date and time of a
-        /// scheduled-triggered flow, such as America/New_York.</p>
+        /// <p>Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as America/New_York.</p>
         pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timezone = input;
             self
         }
-        /// <p>Specifies the optional offset that is added to the time interval for a
-        /// schedule-triggered flow.</p>
+        /// <p>Specifies the optional offset that is added to the time interval for a schedule-triggered flow.</p>
         pub fn schedule_offset(mut self, input: i64) -> Self {
             self.schedule_offset = Some(input);
             self
         }
-        /// <p>Specifies the optional offset that is added to the time interval for a
-        /// schedule-triggered flow.</p>
+        /// <p>Specifies the optional offset that is added to the time interval for a schedule-triggered flow.</p>
         pub fn set_schedule_offset(mut self, input: std::option::Option<i64>) -> Self {
             self.schedule_offset = input;
             self
         }
-        /// <p>Specifies the date range for the records to import from the connector in the first flow
-        /// run.</p>
+        /// <p>Specifies the date range for the records to import from the connector in the first flow run.</p>
         pub fn first_execution_from(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.first_execution_from = Some(input);
             self
         }
-        /// <p>Specifies the date range for the records to import from the connector in the first flow
-        /// run.</p>
+        /// <p>Specifies the date range for the records to import from the connector in the first flow run.</p>
         pub fn set_first_execution_from(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3031,20 +2874,17 @@ impl AsRef<str> for TriggerType {
     }
 }
 
-/// <p>A class for modeling different type of tasks. Task implementation varies based on the
-/// TaskType.</p>
+/// <p>A class for modeling different type of tasks. Task implementation varies based on the TaskType.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Task {
     /// <p>The operation to be performed on the provided source fields.</p>
     pub connector_operator: std::option::Option<crate::model::ConnectorOperator>,
-    /// <p>A field in a destination connector, or a field value against which Amazon AppFlow validates a
-    /// source field.</p>
+    /// <p>A field in a destination connector, or a field value against which Amazon AppFlow validates a source field.</p>
     pub destination_field: std::option::Option<std::string::String>,
     /// <p>The source fields to which a particular task is applied.</p>
     pub source_fields: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A map used to store task-related information. The service looks for particular
-    /// information based on the TaskType.</p>
+    /// <p>A map used to store task-related information. The service looks for particular information based on the TaskType.</p>
     pub task_properties: std::option::Option<
         std::collections::HashMap<crate::model::OperatorPropertiesKeys, std::string::String>,
     >,
@@ -3056,8 +2896,7 @@ impl Task {
     pub fn connector_operator(&self) -> std::option::Option<&crate::model::ConnectorOperator> {
         self.connector_operator.as_ref()
     }
-    /// <p>A field in a destination connector, or a field value against which Amazon AppFlow validates a
-    /// source field.</p>
+    /// <p>A field in a destination connector, or a field value against which Amazon AppFlow validates a source field.</p>
     pub fn destination_field(&self) -> std::option::Option<&str> {
         self.destination_field.as_deref()
     }
@@ -3065,8 +2904,7 @@ impl Task {
     pub fn source_fields(&self) -> std::option::Option<&[std::string::String]> {
         self.source_fields.as_deref()
     }
-    /// <p>A map used to store task-related information. The service looks for particular
-    /// information based on the TaskType.</p>
+    /// <p>A map used to store task-related information. The service looks for particular information based on the TaskType.</p>
     pub fn task_properties(
         &self,
     ) -> std::option::Option<
@@ -3118,14 +2956,12 @@ pub mod task {
             self.connector_operator = input;
             self
         }
-        /// <p>A field in a destination connector, or a field value against which Amazon AppFlow validates a
-        /// source field.</p>
+        /// <p>A field in a destination connector, or a field value against which Amazon AppFlow validates a source field.</p>
         pub fn destination_field(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination_field = Some(input.into());
             self
         }
-        /// <p>A field in a destination connector, or a field value against which Amazon AppFlow validates a
-        /// source field.</p>
+        /// <p>A field in a destination connector, or a field value against which Amazon AppFlow validates a source field.</p>
         pub fn set_destination_field(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3156,20 +2992,18 @@ pub mod task {
         ///
         /// To override the contents of this collection use [`set_task_properties`](Self::set_task_properties).
         ///
-        /// <p>A map used to store task-related information. The service looks for particular
-        /// information based on the TaskType.</p>
+        /// <p>A map used to store task-related information. The service looks for particular information based on the TaskType.</p>
         pub fn task_properties(
             mut self,
-            k: impl Into<crate::model::OperatorPropertiesKeys>,
+            k: crate::model::OperatorPropertiesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.task_properties.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.task_properties = Some(hash_map);
             self
         }
-        /// <p>A map used to store task-related information. The service looks for particular
-        /// information based on the TaskType.</p>
+        /// <p>A map used to store task-related information. The service looks for particular information based on the TaskType.</p>
         pub fn set_task_properties(
             mut self,
             input: std::option::Option<
@@ -4257,27 +4091,21 @@ impl AsRef<str> for MarketoConnectorOperator {
     }
 }
 
-/// <p>Contains information about the configuration of the source connector used in the
-/// flow.</p>
+/// <p>Contains information about the configuration of the source connector used in the flow.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceFlowConfig {
-    /// <p>The name of the AppFlow connector profile. This name must be unique for each connector
-    /// profile in the AWS account.</p>
+    /// <p>The name of the AppFlow connector profile. This name must be unique for each connector profile in the AWS account.</p>
     pub connector_profile_name: std::option::Option<std::string::String>,
     /// <p>The type of connector, such as Salesforce, Marketo, and so on.</p>
     pub connector_type: std::option::Option<crate::model::SourceConnectorType>,
-    /// <p>Defines the configuration for a scheduled incremental data pull. If a valid
-    /// configuration is provided, the fields specified in the configuration are used when querying
-    /// for the incremental data pull.</p>
+    /// <p>Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields specified in the configuration are used when querying for the incremental data pull.</p>
     pub incremental_pull_config: std::option::Option<crate::model::IncrementalPullConfig>,
-    /// <p>Specifies the information that is required to query a particular source
-    /// connector.</p>
+    /// <p>Specifies the information that is required to query a particular source connector.</p>
     pub source_connector_properties: std::option::Option<crate::model::SourceConnectorProperties>,
 }
 impl SourceFlowConfig {
-    /// <p>The name of the AppFlow connector profile. This name must be unique for each connector
-    /// profile in the AWS account.</p>
+    /// <p>The name of the AppFlow connector profile. This name must be unique for each connector profile in the AWS account.</p>
     pub fn connector_profile_name(&self) -> std::option::Option<&str> {
         self.connector_profile_name.as_deref()
     }
@@ -4285,16 +4113,13 @@ impl SourceFlowConfig {
     pub fn connector_type(&self) -> std::option::Option<&crate::model::SourceConnectorType> {
         self.connector_type.as_ref()
     }
-    /// <p>Defines the configuration for a scheduled incremental data pull. If a valid
-    /// configuration is provided, the fields specified in the configuration are used when querying
-    /// for the incremental data pull.</p>
+    /// <p>Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields specified in the configuration are used when querying for the incremental data pull.</p>
     pub fn incremental_pull_config(
         &self,
     ) -> std::option::Option<&crate::model::IncrementalPullConfig> {
         self.incremental_pull_config.as_ref()
     }
-    /// <p>Specifies the information that is required to query a particular source
-    /// connector.</p>
+    /// <p>Specifies the information that is required to query a particular source connector.</p>
     pub fn source_connector_properties(
         &self,
     ) -> std::option::Option<&crate::model::SourceConnectorProperties> {
@@ -4328,14 +4153,12 @@ pub mod source_flow_config {
             std::option::Option<crate::model::SourceConnectorProperties>,
     }
     impl Builder {
-        /// <p>The name of the AppFlow connector profile. This name must be unique for each connector
-        /// profile in the AWS account.</p>
+        /// <p>The name of the AppFlow connector profile. This name must be unique for each connector profile in the AWS account.</p>
         pub fn connector_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.connector_profile_name = Some(input.into());
             self
         }
-        /// <p>The name of the AppFlow connector profile. This name must be unique for each connector
-        /// profile in the AWS account.</p>
+        /// <p>The name of the AppFlow connector profile. This name must be unique for each connector profile in the AWS account.</p>
         pub fn set_connector_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4356,9 +4179,7 @@ pub mod source_flow_config {
             self.connector_type = input;
             self
         }
-        /// <p>Defines the configuration for a scheduled incremental data pull. If a valid
-        /// configuration is provided, the fields specified in the configuration are used when querying
-        /// for the incremental data pull.</p>
+        /// <p>Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields specified in the configuration are used when querying for the incremental data pull.</p>
         pub fn incremental_pull_config(
             mut self,
             input: crate::model::IncrementalPullConfig,
@@ -4366,9 +4187,7 @@ pub mod source_flow_config {
             self.incremental_pull_config = Some(input);
             self
         }
-        /// <p>Defines the configuration for a scheduled incremental data pull. If a valid
-        /// configuration is provided, the fields specified in the configuration are used when querying
-        /// for the incremental data pull.</p>
+        /// <p>Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields specified in the configuration are used when querying for the incremental data pull.</p>
         pub fn set_incremental_pull_config(
             mut self,
             input: std::option::Option<crate::model::IncrementalPullConfig>,
@@ -4376,8 +4195,7 @@ pub mod source_flow_config {
             self.incremental_pull_config = input;
             self
         }
-        /// <p>Specifies the information that is required to query a particular source
-        /// connector.</p>
+        /// <p>Specifies the information that is required to query a particular source connector.</p>
         pub fn source_connector_properties(
             mut self,
             input: crate::model::SourceConnectorProperties,
@@ -4385,8 +4203,7 @@ pub mod source_flow_config {
             self.source_connector_properties = Some(input);
             self
         }
-        /// <p>Specifies the information that is required to query a particular source
-        /// connector.</p>
+        /// <p>Specifies the information that is required to query a particular source connector.</p>
         pub fn set_source_connector_properties(
             mut self,
             input: std::option::Option<crate::model::SourceConnectorProperties>,
@@ -4412,8 +4229,7 @@ impl SourceFlowConfig {
     }
 }
 
-/// <p>Specifies the information that is required to query a particular Amazon AppFlow connector.
-/// Customer Profiles supports Salesforce, Zendesk, Marketo, ServiceNow and Amazon S3.</p>
+/// <p>Specifies the information that is required to query a particular Amazon AppFlow connector. Customer Profiles supports Salesforce, Zendesk, Marketo, ServiceNow and Amazon S3.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceConnectorProperties {
@@ -4672,8 +4488,7 @@ impl ServiceNowSourceProperties {
 pub struct SalesforceSourceProperties {
     /// <p>The object specified in the Salesforce flow source.</p>
     pub object: std::option::Option<std::string::String>,
-    /// <p>The flag that enables dynamic fetching of new (recently added) fields in the Salesforce
-    /// objects while running a flow.</p>
+    /// <p>The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a flow.</p>
     pub enable_dynamic_field_update: bool,
     /// <p>Indicates whether Amazon AppFlow includes deleted files in the flow run.</p>
     pub include_deleted_records: bool,
@@ -4683,8 +4498,7 @@ impl SalesforceSourceProperties {
     pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
     }
-    /// <p>The flag that enables dynamic fetching of new (recently added) fields in the Salesforce
-    /// objects while running a flow.</p>
+    /// <p>The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a flow.</p>
     pub fn enable_dynamic_field_update(&self) -> bool {
         self.enable_dynamic_field_update
     }
@@ -4726,14 +4540,12 @@ pub mod salesforce_source_properties {
             self.object = input;
             self
         }
-        /// <p>The flag that enables dynamic fetching of new (recently added) fields in the Salesforce
-        /// objects while running a flow.</p>
+        /// <p>The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a flow.</p>
         pub fn enable_dynamic_field_update(mut self, input: bool) -> Self {
             self.enable_dynamic_field_update = Some(input);
             self
         }
-        /// <p>The flag that enables dynamic fetching of new (recently added) fields in the Salesforce
-        /// objects while running a flow.</p>
+        /// <p>The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a flow.</p>
         pub fn set_enable_dynamic_field_update(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_dynamic_field_update = input;
             self
@@ -4895,18 +4707,15 @@ impl MarketoSourceProperties {
     }
 }
 
-/// <p>Specifies the configuration used when importing incremental records from the
-/// source.</p>
+/// <p>Specifies the configuration used when importing incremental records from the source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncrementalPullConfig {
-    /// <p>A field that specifies the date time or timestamp field as the criteria to use when
-    /// importing incremental records from the source.</p>
+    /// <p>A field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source.</p>
     pub datetime_type_field_name: std::option::Option<std::string::String>,
 }
 impl IncrementalPullConfig {
-    /// <p>A field that specifies the date time or timestamp field as the criteria to use when
-    /// importing incremental records from the source.</p>
+    /// <p>A field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source.</p>
     pub fn datetime_type_field_name(&self) -> std::option::Option<&str> {
         self.datetime_type_field_name.as_deref()
     }
@@ -4927,14 +4736,12 @@ pub mod incremental_pull_config {
         pub(crate) datetime_type_field_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A field that specifies the date time or timestamp field as the criteria to use when
-        /// importing incremental records from the source.</p>
+        /// <p>A field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source.</p>
         pub fn datetime_type_field_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.datetime_type_field_name = Some(input.into());
             self
         }
-        /// <p>A field that specifies the date time or timestamp field as the criteria to use when
-        /// importing incremental records from the source.</p>
+        /// <p>A field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source.</p>
         pub fn set_datetime_type_field_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5774,8 +5581,7 @@ impl ListProfileObjectTypeItem {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProfileObjectsItem {
-    /// <p>Specifies the kind of object being added to a profile, such as
-    /// "Salesforce-Account."</p>
+    /// <p>Specifies the kind of object being added to a profile, such as "Salesforce-Account."</p>
     pub object_type_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the ProfileObject generated by the service.</p>
     pub profile_object_unique_key: std::option::Option<std::string::String>,
@@ -5783,8 +5589,7 @@ pub struct ListProfileObjectsItem {
     pub object: std::option::Option<std::string::String>,
 }
 impl ListProfileObjectsItem {
-    /// <p>Specifies the kind of object being added to a profile, such as
-    /// "Salesforce-Account."</p>
+    /// <p>Specifies the kind of object being added to a profile, such as "Salesforce-Account."</p>
     pub fn object_type_name(&self) -> std::option::Option<&str> {
         self.object_type_name.as_deref()
     }
@@ -5817,14 +5622,12 @@ pub mod list_profile_objects_item {
         pub(crate) object: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the kind of object being added to a profile, such as
-        /// "Salesforce-Account."</p>
+        /// <p>Specifies the kind of object being added to a profile, such as "Salesforce-Account."</p>
         pub fn object_type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.object_type_name = Some(input.into());
             self
         }
-        /// <p>Specifies the kind of object being added to a profile, such as
-        /// "Salesforce-Account."</p>
+        /// <p>Specifies the kind of object being added to a profile, such as "Salesforce-Account."</p>
         pub fn set_object_type_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5872,23 +5675,17 @@ impl ListProfileObjectsItem {
     }
 }
 
-/// <p>The filter applied to ListProfileObjects response to include profile objects with the
-/// specified index values. This filter is only supported for ObjectTypeName _asset and
-/// _case.</p>
+/// <p>The filter applied to ListProfileObjects response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset, _case and _order.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectFilter {
-    /// <p>A searchable identifier of a standard profile object. The predefined keys you can use to
-    /// search for _asset include: _assetId, _assetName, _serialNumber. The predefined keys you can
-    /// use to search for _case include: _caseId.</p>
+    /// <p>A searchable identifier of a standard profile object. The predefined keys you can use to search for _asset include: _assetId, _assetName, _serialNumber. The predefined keys you can use to search for _case include: _caseId. The predefined keys you can use to search for _order include: _orderId.</p>
     pub key_name: std::option::Option<std::string::String>,
     /// <p>A list of key values.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ObjectFilter {
-    /// <p>A searchable identifier of a standard profile object. The predefined keys you can use to
-    /// search for _asset include: _assetId, _assetName, _serialNumber. The predefined keys you can
-    /// use to search for _case include: _caseId.</p>
+    /// <p>A searchable identifier of a standard profile object. The predefined keys you can use to search for _asset include: _assetId, _assetName, _serialNumber. The predefined keys you can use to search for _case include: _caseId. The predefined keys you can use to search for _order include: _orderId.</p>
     pub fn key_name(&self) -> std::option::Option<&str> {
         self.key_name.as_deref()
     }
@@ -5915,16 +5712,12 @@ pub mod object_filter {
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>A searchable identifier of a standard profile object. The predefined keys you can use to
-        /// search for _asset include: _assetId, _assetName, _serialNumber. The predefined keys you can
-        /// use to search for _case include: _caseId.</p>
+        /// <p>A searchable identifier of a standard profile object. The predefined keys you can use to search for _asset include: _assetId, _assetName, _serialNumber. The predefined keys you can use to search for _case include: _caseId. The predefined keys you can use to search for _order include: _orderId.</p>
         pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_name = Some(input.into());
             self
         }
-        /// <p>A searchable identifier of a standard profile object. The predefined keys you can use to
-        /// search for _asset include: _assetId, _assetName, _serialNumber. The predefined keys you can
-        /// use to search for _case include: _caseId.</p>
+        /// <p>A searchable identifier of a standard profile object. The predefined keys you can use to search for _asset include: _assetId, _assetName, _serialNumber. The predefined keys you can use to search for _case include: _caseId. The predefined keys you can use to search for _order include: _orderId.</p>
         pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_name = input;
             self
@@ -5981,6 +5774,9 @@ pub struct ListIntegrationItem {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
+    pub object_type_names:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListIntegrationItem {
     /// <p>The unique name of the domain.</p>
@@ -6010,6 +5806,13 @@ impl ListIntegrationItem {
     {
         self.tags.as_ref()
     }
+    /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
+    pub fn object_type_names(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.object_type_names.as_ref()
+    }
 }
 impl std::fmt::Debug for ListIntegrationItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6020,6 +5823,7 @@ impl std::fmt::Debug for ListIntegrationItem {
         formatter.field("created_at", &self.created_at);
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("tags", &self.tags);
+        formatter.field("object_type_names", &self.object_type_names);
         formatter.finish()
     }
 }
@@ -6035,6 +5839,9 @@ pub mod list_integration_item {
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+        pub(crate) object_type_names: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
@@ -6123,6 +5930,31 @@ pub mod list_integration_item {
             self.tags = input;
             self
         }
+        /// Adds a key-value pair to `object_type_names`.
+        ///
+        /// To override the contents of this collection use [`set_object_type_names`](Self::set_object_type_names).
+        ///
+        /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
+        pub fn object_type_names(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.object_type_names.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.object_type_names = Some(hash_map);
+            self
+        }
+        /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
+        pub fn set_object_type_names(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.object_type_names = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListIntegrationItem`](crate::model::ListIntegrationItem)
         pub fn build(self) -> crate::model::ListIntegrationItem {
             crate::model::ListIntegrationItem {
@@ -6132,6 +5964,7 @@ pub mod list_integration_item {
                 created_at: self.created_at,
                 last_updated_at: self.last_updated_at,
                 tags: self.tags,
+                object_type_names: self.object_type_names,
             }
         }
     }
@@ -6153,39 +5986,13 @@ pub struct IdentityResolutionJob {
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The status of the Identity Resolution Job.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn
-    /// off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are
-    /// deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to
-    /// identify profiles that belong to the same matching group.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is
-    /// merged. The Identity Resolution Job writes a message indicating the source of the problem.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message
-    /// indicating the source of the problem.</p>
-    /// </li>
+    /// <li> <p> <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are deleted.</p> </li>
+    /// <li> <p> <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p> </li>
+    /// <li> <p> <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to identify profiles that belong to the same matching group.</p> </li>
+    /// <li> <p> <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p> </li>
+    /// <li> <p> <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p> </li>
+    /// <li> <p> <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::IdentityResolutionJobStatus>,
     /// <p>The timestamp of when the job was started or will be started.</p>
@@ -6210,39 +6017,13 @@ impl IdentityResolutionJob {
     }
     /// <p>The status of the Identity Resolution Job.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn
-    /// off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are
-    /// deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to
-    /// identify profiles that belong to the same matching group.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is
-    /// merged. The Identity Resolution Job writes a message indicating the source of the problem.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message
-    /// indicating the source of the problem.</p>
-    /// </li>
+    /// <li> <p> <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are deleted.</p> </li>
+    /// <li> <p> <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p> </li>
+    /// <li> <p> <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to identify profiles that belong to the same matching group.</p> </li>
+    /// <li> <p> <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p> </li>
+    /// <li> <p> <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p> </li>
+    /// <li> <p> <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::IdentityResolutionJobStatus> {
         self.status.as_ref()
@@ -6320,39 +6101,13 @@ pub mod identity_resolution_job {
         }
         /// <p>The status of the Identity Resolution Job.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn
-        /// off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are
-        /// deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to
-        /// identify profiles that belong to the same matching group.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is
-        /// merged. The Identity Resolution Job writes a message indicating the source of the problem.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message
-        /// indicating the source of the problem.</p>
-        /// </li>
+        /// <li> <p> <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are deleted.</p> </li>
+        /// <li> <p> <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p> </li>
+        /// <li> <p> <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to identify profiles that belong to the same matching group.</p> </li>
+        /// <li> <p> <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p> </li>
+        /// <li> <p> <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p> </li>
+        /// <li> <p> <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p> </li>
+        /// <li> <p> <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::IdentityResolutionJobStatus) -> Self {
             self.status = Some(input);
@@ -6360,39 +6115,13 @@ pub mod identity_resolution_job {
         }
         /// <p>The status of the Identity Resolution Job.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn
-        /// off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are
-        /// deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to
-        /// identify profiles that belong to the same matching group.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is
-        /// merged. The Identity Resolution Job writes a message indicating the source of the problem.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message
-        /// indicating the source of the problem.</p>
-        /// </li>
+        /// <li> <p> <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started yet. If you turn off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code> state are deleted.</p> </li>
+        /// <li> <p> <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.</p> </li>
+        /// <li> <p> <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning model to identify profiles that belong to the same matching group.</p> </li>
+        /// <li> <p> <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.</p> </li>
+        /// <li> <p> <code>COMPLETED</code>: The Identity Resolution Job completed successfully.</p> </li>
+        /// <li> <p> <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p> </li>
+        /// <li> <p> <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -6939,8 +6668,7 @@ pub struct MatchItem {
     pub match_id: std::option::Option<std::string::String>,
     /// <p>A list of identifiers for profiles that match.</p>
     pub profile_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A number between 0 and 1 that represents the confidence level of assigning profiles to a
-    /// matching group. A score of 1 likely indicates an exact match.</p>
+    /// <p>A number between 0 and 1 that represents the confidence level of assigning profiles to a matching group. A score of 1 likely indicates an exact match.</p>
     pub confidence_score: std::option::Option<f64>,
 }
 impl MatchItem {
@@ -6952,8 +6680,7 @@ impl MatchItem {
     pub fn profile_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.profile_ids.as_deref()
     }
-    /// <p>A number between 0 and 1 that represents the confidence level of assigning profiles to a
-    /// matching group. A score of 1 likely indicates an exact match.</p>
+    /// <p>A number between 0 and 1 that represents the confidence level of assigning profiles to a matching group. A score of 1 likely indicates an exact match.</p>
     pub fn confidence_score(&self) -> std::option::Option<f64> {
         self.confidence_score
     }
@@ -7007,14 +6734,12 @@ pub mod match_item {
             self.profile_ids = input;
             self
         }
-        /// <p>A number between 0 and 1 that represents the confidence level of assigning profiles to a
-        /// matching group. A score of 1 likely indicates an exact match.</p>
+        /// <p>A number between 0 and 1 that represents the confidence level of assigning profiles to a matching group. A score of 1 likely indicates an exact match.</p>
         pub fn confidence_score(mut self, input: f64) -> Self {
             self.confidence_score = Some(input);
             self
         }
-        /// <p>A number between 0 and 1 that represents the confidence level of assigning profiles to a
-        /// matching group. A score of 1 likely indicates an exact match.</p>
+        /// <p>A number between 0 and 1 that represents the confidence level of assigning profiles to a matching group. A score of 1 likely indicates an exact match.</p>
         pub fn set_confidence_score(mut self, input: std::option::Option<f64>) -> Self {
             self.confidence_score = input;
             self
@@ -7042,9 +6767,7 @@ impl MatchItem {
 pub struct DomainStats {
     /// <p>The total number of profiles currently in the domain.</p>
     pub profile_count: i64,
-    /// <p>The number of profiles that you are currently paying for in the domain. If you have more
-    /// than 100 objects associated with a single profile, that profile counts as two profiles. If
-    /// you have more than 200 objects, that profile counts as three, and so on.</p>
+    /// <p>The number of profiles that you are currently paying for in the domain. If you have more than 100 objects associated with a single profile, that profile counts as two profiles. If you have more than 200 objects, that profile counts as three, and so on.</p>
     pub metering_profile_count: i64,
     /// <p>The total number of objects in domain.</p>
     pub object_count: i64,
@@ -7056,9 +6779,7 @@ impl DomainStats {
     pub fn profile_count(&self) -> i64 {
         self.profile_count
     }
-    /// <p>The number of profiles that you are currently paying for in the domain. If you have more
-    /// than 100 objects associated with a single profile, that profile counts as two profiles. If
-    /// you have more than 200 objects, that profile counts as three, and so on.</p>
+    /// <p>The number of profiles that you are currently paying for in the domain. If you have more than 100 objects associated with a single profile, that profile counts as two profiles. If you have more than 200 objects, that profile counts as three, and so on.</p>
     pub fn metering_profile_count(&self) -> i64 {
         self.metering_profile_count
     }
@@ -7103,16 +6824,12 @@ pub mod domain_stats {
             self.profile_count = input;
             self
         }
-        /// <p>The number of profiles that you are currently paying for in the domain. If you have more
-        /// than 100 objects associated with a single profile, that profile counts as two profiles. If
-        /// you have more than 200 objects, that profile counts as three, and so on.</p>
+        /// <p>The number of profiles that you are currently paying for in the domain. If you have more than 100 objects associated with a single profile, that profile counts as two profiles. If you have more than 200 objects, that profile counts as three, and so on.</p>
         pub fn metering_profile_count(mut self, input: i64) -> Self {
             self.metering_profile_count = Some(input);
             self
         }
-        /// <p>The number of profiles that you are currently paying for in the domain. If you have more
-        /// than 100 objects associated with a single profile, that profile counts as two profiles. If
-        /// you have more than 200 objects, that profile counts as three, and so on.</p>
+        /// <p>The number of profiles that you are currently paying for in the domain. If you have more than 100 objects associated with a single profile, that profile counts as two profiles. If you have more than 200 objects, that profile counts as three, and so on.</p>
         pub fn set_metering_profile_count(mut self, input: std::option::Option<i64>) -> Self {
             self.metering_profile_count = input;
             self

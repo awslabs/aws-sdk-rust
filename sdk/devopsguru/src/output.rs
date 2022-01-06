@@ -93,34 +93,28 @@ impl StartCostEstimationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchOrganizationInsightsOutput {
-    /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services
-    /// account.</p>
+    /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
     pub proactive_insights:
         std::option::Option<std::vec::Vec<crate::model::ProactiveInsightSummary>>,
-    /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services
-    /// account.</p>
+    /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
     pub reactive_insights: std::option::Option<std::vec::Vec<crate::model::ReactiveInsightSummary>>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchOrganizationInsightsOutput {
-    /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services
-    /// account.</p>
+    /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
     pub fn proactive_insights(
         &self,
     ) -> std::option::Option<&[crate::model::ProactiveInsightSummary]> {
         self.proactive_insights.as_deref()
     }
-    /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services
-    /// account.</p>
+    /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
     pub fn reactive_insights(
         &self,
     ) -> std::option::Option<&[crate::model::ReactiveInsightSummary]> {
         self.reactive_insights.as_deref()
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -151,19 +145,14 @@ pub mod search_organization_insights_output {
         ///
         /// To override the contents of this collection use [`set_proactive_insights`](Self::set_proactive_insights).
         ///
-        /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services
-        /// account.</p>
-        pub fn proactive_insights(
-            mut self,
-            input: impl Into<crate::model::ProactiveInsightSummary>,
-        ) -> Self {
+        /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
+        pub fn proactive_insights(mut self, input: crate::model::ProactiveInsightSummary) -> Self {
             let mut v = self.proactive_insights.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.proactive_insights = Some(v);
             self
         }
-        /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services
-        /// account.</p>
+        /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
         pub fn set_proactive_insights(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProactiveInsightSummary>>,
@@ -175,19 +164,14 @@ pub mod search_organization_insights_output {
         ///
         /// To override the contents of this collection use [`set_reactive_insights`](Self::set_reactive_insights).
         ///
-        /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services
-        /// account.</p>
-        pub fn reactive_insights(
-            mut self,
-            input: impl Into<crate::model::ReactiveInsightSummary>,
-        ) -> Self {
+        /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
+        pub fn reactive_insights(mut self, input: crate::model::ReactiveInsightSummary) -> Self {
             let mut v = self.reactive_insights.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reactive_insights = Some(v);
             self
         }
-        /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services
-        /// account.</p>
+        /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
         pub fn set_reactive_insights(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReactiveInsightSummary>>,
@@ -195,14 +179,12 @@ pub mod search_organization_insights_output {
             self.reactive_insights = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -233,8 +215,7 @@ pub struct SearchInsightsOutput {
         std::option::Option<std::vec::Vec<crate::model::ProactiveInsightSummary>>,
     /// <p> The returned reactive insights. </p>
     pub reactive_insights: std::option::Option<std::vec::Vec<crate::model::ReactiveInsightSummary>>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchInsightsOutput {
@@ -250,8 +231,7 @@ impl SearchInsightsOutput {
     ) -> std::option::Option<&[crate::model::ReactiveInsightSummary]> {
         self.reactive_insights.as_deref()
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -283,12 +263,9 @@ pub mod search_insights_output {
         /// To override the contents of this collection use [`set_proactive_insights`](Self::set_proactive_insights).
         ///
         /// <p> The returned proactive insights. </p>
-        pub fn proactive_insights(
-            mut self,
-            input: impl Into<crate::model::ProactiveInsightSummary>,
-        ) -> Self {
+        pub fn proactive_insights(mut self, input: crate::model::ProactiveInsightSummary) -> Self {
             let mut v = self.proactive_insights.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.proactive_insights = Some(v);
             self
         }
@@ -305,12 +282,9 @@ pub mod search_insights_output {
         /// To override the contents of this collection use [`set_reactive_insights`](Self::set_reactive_insights).
         ///
         /// <p> The returned reactive insights. </p>
-        pub fn reactive_insights(
-            mut self,
-            input: impl Into<crate::model::ReactiveInsightSummary>,
-        ) -> Self {
+        pub fn reactive_insights(mut self, input: crate::model::ReactiveInsightSummary) -> Self {
             let mut v = self.reactive_insights.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reactive_insights = Some(v);
             self
         }
@@ -322,14 +296,12 @@ pub mod search_insights_output {
             self.reactive_insights = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -417,8 +389,7 @@ impl PutFeedbackOutput {
 pub struct ListRecommendationsOutput {
     /// <p> An array of the requested recommendations. </p>
     pub recommendations: std::option::Option<std::vec::Vec<crate::model::Recommendation>>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRecommendationsOutput {
@@ -426,8 +397,7 @@ impl ListRecommendationsOutput {
     pub fn recommendations(&self) -> std::option::Option<&[crate::model::Recommendation]> {
         self.recommendations.as_deref()
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -456,9 +426,9 @@ pub mod list_recommendations_output {
         /// To override the contents of this collection use [`set_recommendations`](Self::set_recommendations).
         ///
         /// <p> An array of the requested recommendations. </p>
-        pub fn recommendations(mut self, input: impl Into<crate::model::Recommendation>) -> Self {
+        pub fn recommendations(mut self, input: crate::model::Recommendation) -> Self {
             let mut v = self.recommendations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recommendations = Some(v);
             self
         }
@@ -470,14 +440,12 @@ pub mod list_recommendations_output {
             self.recommendations = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -502,35 +470,29 @@ impl ListRecommendationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrganizationInsightsOutput {
-    /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services
-    /// account.</p>
+    /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
     pub proactive_insights:
         std::option::Option<std::vec::Vec<crate::model::ProactiveOrganizationInsightSummary>>,
-    /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services
-    /// account.</p>
+    /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
     pub reactive_insights:
         std::option::Option<std::vec::Vec<crate::model::ReactiveOrganizationInsightSummary>>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOrganizationInsightsOutput {
-    /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services
-    /// account.</p>
+    /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
     pub fn proactive_insights(
         &self,
     ) -> std::option::Option<&[crate::model::ProactiveOrganizationInsightSummary]> {
         self.proactive_insights.as_deref()
     }
-    /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services
-    /// account.</p>
+    /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
     pub fn reactive_insights(
         &self,
     ) -> std::option::Option<&[crate::model::ReactiveOrganizationInsightSummary]> {
         self.reactive_insights.as_deref()
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -561,19 +523,17 @@ pub mod list_organization_insights_output {
         ///
         /// To override the contents of this collection use [`set_proactive_insights`](Self::set_proactive_insights).
         ///
-        /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services
-        /// account.</p>
+        /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
         pub fn proactive_insights(
             mut self,
-            input: impl Into<crate::model::ProactiveOrganizationInsightSummary>,
+            input: crate::model::ProactiveOrganizationInsightSummary,
         ) -> Self {
             let mut v = self.proactive_insights.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.proactive_insights = Some(v);
             self
         }
-        /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services
-        /// account.</p>
+        /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
         pub fn set_proactive_insights(
             mut self,
             input: std::option::Option<
@@ -587,19 +547,17 @@ pub mod list_organization_insights_output {
         ///
         /// To override the contents of this collection use [`set_reactive_insights`](Self::set_reactive_insights).
         ///
-        /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services
-        /// account.</p>
+        /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
         pub fn reactive_insights(
             mut self,
-            input: impl Into<crate::model::ReactiveOrganizationInsightSummary>,
+            input: crate::model::ReactiveOrganizationInsightSummary,
         ) -> Self {
             let mut v = self.reactive_insights.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reactive_insights = Some(v);
             self
         }
-        /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services
-        /// account.</p>
+        /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
         pub fn set_reactive_insights(
             mut self,
             input: std::option::Option<
@@ -609,14 +567,12 @@ pub mod list_organization_insights_output {
             self.reactive_insights = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -644,8 +600,7 @@ impl ListOrganizationInsightsOutput {
 pub struct ListNotificationChannelsOutput {
     /// <p> An array that contains the requested notification channels. </p>
     pub channels: std::option::Option<std::vec::Vec<crate::model::NotificationChannel>>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListNotificationChannelsOutput {
@@ -653,8 +608,7 @@ impl ListNotificationChannelsOutput {
     pub fn channels(&self) -> std::option::Option<&[crate::model::NotificationChannel]> {
         self.channels.as_deref()
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -682,9 +636,9 @@ pub mod list_notification_channels_output {
         /// To override the contents of this collection use [`set_channels`](Self::set_channels).
         ///
         /// <p> An array that contains the requested notification channels. </p>
-        pub fn channels(mut self, input: impl Into<crate::model::NotificationChannel>) -> Self {
+        pub fn channels(mut self, input: crate::model::NotificationChannel) -> Self {
             let mut v = self.channels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.channels = Some(v);
             self
         }
@@ -696,14 +650,12 @@ pub mod list_notification_channels_output {
             self.channels = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -733,8 +685,7 @@ pub struct ListInsightsOutput {
         std::option::Option<std::vec::Vec<crate::model::ProactiveInsightSummary>>,
     /// <p> The returned list of reactive insights. </p>
     pub reactive_insights: std::option::Option<std::vec::Vec<crate::model::ReactiveInsightSummary>>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInsightsOutput {
@@ -750,8 +701,7 @@ impl ListInsightsOutput {
     ) -> std::option::Option<&[crate::model::ReactiveInsightSummary]> {
         self.reactive_insights.as_deref()
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -783,12 +733,9 @@ pub mod list_insights_output {
         /// To override the contents of this collection use [`set_proactive_insights`](Self::set_proactive_insights).
         ///
         /// <p> The returned list of proactive insights. </p>
-        pub fn proactive_insights(
-            mut self,
-            input: impl Into<crate::model::ProactiveInsightSummary>,
-        ) -> Self {
+        pub fn proactive_insights(mut self, input: crate::model::ProactiveInsightSummary) -> Self {
             let mut v = self.proactive_insights.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.proactive_insights = Some(v);
             self
         }
@@ -805,12 +752,9 @@ pub mod list_insights_output {
         /// To override the contents of this collection use [`set_reactive_insights`](Self::set_reactive_insights).
         ///
         /// <p> The returned list of reactive insights. </p>
-        pub fn reactive_insights(
-            mut self,
-            input: impl Into<crate::model::ReactiveInsightSummary>,
-        ) -> Self {
+        pub fn reactive_insights(mut self, input: crate::model::ReactiveInsightSummary) -> Self {
             let mut v = self.reactive_insights.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reactive_insights = Some(v);
             self
         }
@@ -822,14 +766,12 @@ pub mod list_insights_output {
             self.reactive_insights = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -857,8 +799,7 @@ impl ListInsightsOutput {
 pub struct ListEventsOutput {
     /// <p> A list of the requested events. </p>
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEventsOutput {
@@ -866,8 +807,7 @@ impl ListEventsOutput {
     pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
         self.events.as_deref()
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -895,9 +835,9 @@ pub mod list_events_output {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p> A list of the requested events. </p>
-        pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
+        pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -909,14 +849,12 @@ pub mod list_events_output {
             self.events = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -941,35 +879,29 @@ impl ListEventsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAnomaliesForInsightOutput {
-    /// <p> An array of <code>ProactiveAnomalySummary</code> objects that represent the requested
-    /// anomalies </p>
+    /// <p> An array of <code>ProactiveAnomalySummary</code> objects that represent the requested anomalies </p>
     pub proactive_anomalies:
         std::option::Option<std::vec::Vec<crate::model::ProactiveAnomalySummary>>,
-    /// <p> An array of <code>ReactiveAnomalySummary</code> objects that represent the requested
-    /// anomalies </p>
+    /// <p> An array of <code>ReactiveAnomalySummary</code> objects that represent the requested anomalies </p>
     pub reactive_anomalies:
         std::option::Option<std::vec::Vec<crate::model::ReactiveAnomalySummary>>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAnomaliesForInsightOutput {
-    /// <p> An array of <code>ProactiveAnomalySummary</code> objects that represent the requested
-    /// anomalies </p>
+    /// <p> An array of <code>ProactiveAnomalySummary</code> objects that represent the requested anomalies </p>
     pub fn proactive_anomalies(
         &self,
     ) -> std::option::Option<&[crate::model::ProactiveAnomalySummary]> {
         self.proactive_anomalies.as_deref()
     }
-    /// <p> An array of <code>ReactiveAnomalySummary</code> objects that represent the requested
-    /// anomalies </p>
+    /// <p> An array of <code>ReactiveAnomalySummary</code> objects that represent the requested anomalies </p>
     pub fn reactive_anomalies(
         &self,
     ) -> std::option::Option<&[crate::model::ReactiveAnomalySummary]> {
         self.reactive_anomalies.as_deref()
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1000,19 +932,14 @@ pub mod list_anomalies_for_insight_output {
         ///
         /// To override the contents of this collection use [`set_proactive_anomalies`](Self::set_proactive_anomalies).
         ///
-        /// <p> An array of <code>ProactiveAnomalySummary</code> objects that represent the requested
-        /// anomalies </p>
-        pub fn proactive_anomalies(
-            mut self,
-            input: impl Into<crate::model::ProactiveAnomalySummary>,
-        ) -> Self {
+        /// <p> An array of <code>ProactiveAnomalySummary</code> objects that represent the requested anomalies </p>
+        pub fn proactive_anomalies(mut self, input: crate::model::ProactiveAnomalySummary) -> Self {
             let mut v = self.proactive_anomalies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.proactive_anomalies = Some(v);
             self
         }
-        /// <p> An array of <code>ProactiveAnomalySummary</code> objects that represent the requested
-        /// anomalies </p>
+        /// <p> An array of <code>ProactiveAnomalySummary</code> objects that represent the requested anomalies </p>
         pub fn set_proactive_anomalies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProactiveAnomalySummary>>,
@@ -1024,19 +951,14 @@ pub mod list_anomalies_for_insight_output {
         ///
         /// To override the contents of this collection use [`set_reactive_anomalies`](Self::set_reactive_anomalies).
         ///
-        /// <p> An array of <code>ReactiveAnomalySummary</code> objects that represent the requested
-        /// anomalies </p>
-        pub fn reactive_anomalies(
-            mut self,
-            input: impl Into<crate::model::ReactiveAnomalySummary>,
-        ) -> Self {
+        /// <p> An array of <code>ReactiveAnomalySummary</code> objects that represent the requested anomalies </p>
+        pub fn reactive_anomalies(mut self, input: crate::model::ReactiveAnomalySummary) -> Self {
             let mut v = self.reactive_anomalies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reactive_anomalies = Some(v);
             self
         }
-        /// <p> An array of <code>ReactiveAnomalySummary</code> objects that represent the requested
-        /// anomalies </p>
+        /// <p> An array of <code>ReactiveAnomalySummary</code> objects that represent the requested anomalies </p>
         pub fn set_reactive_anomalies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReactiveAnomalySummary>>,
@@ -1044,14 +966,12 @@ pub mod list_anomalies_for_insight_output {
             self.reactive_anomalies = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1077,27 +997,19 @@ impl ListAnomaliesForInsightOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceCollectionOutput {
-    /// <p> The requested list of Amazon Web Services resource collections.
-    /// The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
-    /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
-    /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    /// <p> The requested list of Amazon Web Services resource collections. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub resource_collection: std::option::Option<crate::model::ResourceCollectionFilter>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetResourceCollectionOutput {
-    /// <p> The requested list of Amazon Web Services resource collections.
-    /// The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
-    /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
-    /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    /// <p> The requested list of Amazon Web Services resource collections. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn resource_collection(
         &self,
     ) -> std::option::Option<&crate::model::ResourceCollectionFilter> {
         self.resource_collection.as_ref()
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1120,10 +1032,7 @@ pub mod get_resource_collection_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The requested list of Amazon Web Services resource collections.
-        /// The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
-        /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
-        /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+        /// <p> The requested list of Amazon Web Services resource collections. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
         pub fn resource_collection(
             mut self,
             input: crate::model::ResourceCollectionFilter,
@@ -1131,10 +1040,7 @@ pub mod get_resource_collection_output {
             self.resource_collection = Some(input);
             self
         }
-        /// <p> The requested list of Amazon Web Services resource collections.
-        /// The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
-        /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
-        /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+        /// <p> The requested list of Amazon Web Services resource collections. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
         pub fn set_resource_collection(
             mut self,
             input: std::option::Option<crate::model::ResourceCollectionFilter>,
@@ -1142,14 +1048,12 @@ pub mod get_resource_collection_output {
             self.resource_collection = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1174,43 +1078,32 @@ impl GetResourceCollectionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCostEstimationOutput {
-    /// <p>The collection of the Amazon Web Services resources used to create your monthly DevOps Guru cost
-    /// estimate.</p>
+    /// <p>The collection of the Amazon Web Services resources used to create your monthly DevOps Guru cost estimate.</p>
     pub resource_collection:
         std::option::Option<crate::model::CostEstimationResourceCollectionFilter>,
-    /// <p>The status of creating this cost estimate. If it's still in progress, the status
-    /// <code>ONGOING</code> is returned. If it is finished, the status
-    /// <code>COMPLETED</code> is returned.</p>
+    /// <p>The status of creating this cost estimate. If it's still in progress, the status <code>ONGOING</code> is returned. If it is finished, the status <code>COMPLETED</code> is returned.</p>
     pub status: std::option::Option<crate::model::CostEstimationStatus>,
-    /// <p>An array of <code>ResourceCost</code> objects that each contains details about the
-    /// monthly cost estimate to analyze one of your Amazon Web Services resources.</p>
+    /// <p>An array of <code>ResourceCost</code> objects that each contains details about the monthly cost estimate to analyze one of your Amazon Web Services resources.</p>
     pub costs: std::option::Option<std::vec::Vec<crate::model::ServiceResourceCost>>,
     /// <p>The start and end time of the cost estimation.</p>
     pub time_range: std::option::Option<crate::model::CostEstimationTimeRange>,
-    /// <p>The estimated monthly cost to analyze the Amazon Web Services resources. This value is the sum of
-    /// the estimated costs to analyze each resource in the <code>Costs</code> object in this
-    /// response.</p>
+    /// <p>The estimated monthly cost to analyze the Amazon Web Services resources. This value is the sum of the estimated costs to analyze each resource in the <code>Costs</code> object in this response.</p>
     pub total_cost: f64,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetCostEstimationOutput {
-    /// <p>The collection of the Amazon Web Services resources used to create your monthly DevOps Guru cost
-    /// estimate.</p>
+    /// <p>The collection of the Amazon Web Services resources used to create your monthly DevOps Guru cost estimate.</p>
     pub fn resource_collection(
         &self,
     ) -> std::option::Option<&crate::model::CostEstimationResourceCollectionFilter> {
         self.resource_collection.as_ref()
     }
-    /// <p>The status of creating this cost estimate. If it's still in progress, the status
-    /// <code>ONGOING</code> is returned. If it is finished, the status
-    /// <code>COMPLETED</code> is returned.</p>
+    /// <p>The status of creating this cost estimate. If it's still in progress, the status <code>ONGOING</code> is returned. If it is finished, the status <code>COMPLETED</code> is returned.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::CostEstimationStatus> {
         self.status.as_ref()
     }
-    /// <p>An array of <code>ResourceCost</code> objects that each contains details about the
-    /// monthly cost estimate to analyze one of your Amazon Web Services resources.</p>
+    /// <p>An array of <code>ResourceCost</code> objects that each contains details about the monthly cost estimate to analyze one of your Amazon Web Services resources.</p>
     pub fn costs(&self) -> std::option::Option<&[crate::model::ServiceResourceCost]> {
         self.costs.as_deref()
     }
@@ -1218,14 +1111,11 @@ impl GetCostEstimationOutput {
     pub fn time_range(&self) -> std::option::Option<&crate::model::CostEstimationTimeRange> {
         self.time_range.as_ref()
     }
-    /// <p>The estimated monthly cost to analyze the Amazon Web Services resources. This value is the sum of
-    /// the estimated costs to analyze each resource in the <code>Costs</code> object in this
-    /// response.</p>
+    /// <p>The estimated monthly cost to analyze the Amazon Web Services resources. This value is the sum of the estimated costs to analyze each resource in the <code>Costs</code> object in this response.</p>
     pub fn total_cost(&self) -> f64 {
         self.total_cost
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1257,8 +1147,7 @@ pub mod get_cost_estimation_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The collection of the Amazon Web Services resources used to create your monthly DevOps Guru cost
-        /// estimate.</p>
+        /// <p>The collection of the Amazon Web Services resources used to create your monthly DevOps Guru cost estimate.</p>
         pub fn resource_collection(
             mut self,
             input: crate::model::CostEstimationResourceCollectionFilter,
@@ -1266,8 +1155,7 @@ pub mod get_cost_estimation_output {
             self.resource_collection = Some(input);
             self
         }
-        /// <p>The collection of the Amazon Web Services resources used to create your monthly DevOps Guru cost
-        /// estimate.</p>
+        /// <p>The collection of the Amazon Web Services resources used to create your monthly DevOps Guru cost estimate.</p>
         pub fn set_resource_collection(
             mut self,
             input: std::option::Option<crate::model::CostEstimationResourceCollectionFilter>,
@@ -1275,16 +1163,12 @@ pub mod get_cost_estimation_output {
             self.resource_collection = input;
             self
         }
-        /// <p>The status of creating this cost estimate. If it's still in progress, the status
-        /// <code>ONGOING</code> is returned. If it is finished, the status
-        /// <code>COMPLETED</code> is returned.</p>
+        /// <p>The status of creating this cost estimate. If it's still in progress, the status <code>ONGOING</code> is returned. If it is finished, the status <code>COMPLETED</code> is returned.</p>
         pub fn status(mut self, input: crate::model::CostEstimationStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of creating this cost estimate. If it's still in progress, the status
-        /// <code>ONGOING</code> is returned. If it is finished, the status
-        /// <code>COMPLETED</code> is returned.</p>
+        /// <p>The status of creating this cost estimate. If it's still in progress, the status <code>ONGOING</code> is returned. If it is finished, the status <code>COMPLETED</code> is returned.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::CostEstimationStatus>,
@@ -1296,16 +1180,14 @@ pub mod get_cost_estimation_output {
         ///
         /// To override the contents of this collection use [`set_costs`](Self::set_costs).
         ///
-        /// <p>An array of <code>ResourceCost</code> objects that each contains details about the
-        /// monthly cost estimate to analyze one of your Amazon Web Services resources.</p>
-        pub fn costs(mut self, input: impl Into<crate::model::ServiceResourceCost>) -> Self {
+        /// <p>An array of <code>ResourceCost</code> objects that each contains details about the monthly cost estimate to analyze one of your Amazon Web Services resources.</p>
+        pub fn costs(mut self, input: crate::model::ServiceResourceCost) -> Self {
             let mut v = self.costs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.costs = Some(v);
             self
         }
-        /// <p>An array of <code>ResourceCost</code> objects that each contains details about the
-        /// monthly cost estimate to analyze one of your Amazon Web Services resources.</p>
+        /// <p>An array of <code>ResourceCost</code> objects that each contains details about the monthly cost estimate to analyze one of your Amazon Web Services resources.</p>
         pub fn set_costs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ServiceResourceCost>>,
@@ -1326,28 +1208,22 @@ pub mod get_cost_estimation_output {
             self.time_range = input;
             self
         }
-        /// <p>The estimated monthly cost to analyze the Amazon Web Services resources. This value is the sum of
-        /// the estimated costs to analyze each resource in the <code>Costs</code> object in this
-        /// response.</p>
+        /// <p>The estimated monthly cost to analyze the Amazon Web Services resources. This value is the sum of the estimated costs to analyze each resource in the <code>Costs</code> object in this response.</p>
         pub fn total_cost(mut self, input: f64) -> Self {
             self.total_cost = Some(input);
             self
         }
-        /// <p>The estimated monthly cost to analyze the Amazon Web Services resources. This value is the sum of
-        /// the estimated costs to analyze each resource in the <code>Costs</code> object in this
-        /// response.</p>
+        /// <p>The estimated monthly cost to analyze the Amazon Web Services resources. This value is the sum of the estimated costs to analyze each resource in the <code>Costs</code> object in this response.</p>
         pub fn set_total_cost(mut self, input: std::option::Option<f64>) -> Self {
             self.total_cost = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1376,13 +1252,11 @@ impl GetCostEstimationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServiceIntegrationOutput {
-    /// <p> Information about the integration of DevOps Guru with another Amazon Web Services service, such as
-    /// Amazon Web Services Systems Manager. </p>
+    /// <p> Information about the integration of DevOps Guru with another Amazon Web Services service, such as Amazon Web Services Systems Manager. </p>
     pub service_integration: std::option::Option<crate::model::ServiceIntegrationConfig>,
 }
 impl DescribeServiceIntegrationOutput {
-    /// <p> Information about the integration of DevOps Guru with another Amazon Web Services service, such as
-    /// Amazon Web Services Systems Manager. </p>
+    /// <p> Information about the integration of DevOps Guru with another Amazon Web Services service, such as Amazon Web Services Systems Manager. </p>
     pub fn service_integration(
         &self,
     ) -> std::option::Option<&crate::model::ServiceIntegrationConfig> {
@@ -1405,8 +1279,7 @@ pub mod describe_service_integration_output {
         pub(crate) service_integration: std::option::Option<crate::model::ServiceIntegrationConfig>,
     }
     impl Builder {
-        /// <p> Information about the integration of DevOps Guru with another Amazon Web Services service, such as
-        /// Amazon Web Services Systems Manager. </p>
+        /// <p> Information about the integration of DevOps Guru with another Amazon Web Services service, such as Amazon Web Services Systems Manager. </p>
         pub fn service_integration(
             mut self,
             input: crate::model::ServiceIntegrationConfig,
@@ -1414,8 +1287,7 @@ pub mod describe_service_integration_output {
             self.service_integration = Some(input);
             self
         }
-        /// <p> Information about the integration of DevOps Guru with another Amazon Web Services service, such as
-        /// Amazon Web Services Systems Manager. </p>
+        /// <p> Information about the integration of DevOps Guru with another Amazon Web Services service, such as Amazon Web Services Systems Manager. </p>
         pub fn set_service_integration(
             mut self,
             input: std::option::Option<crate::model::ServiceIntegrationConfig>,
@@ -1442,102 +1314,46 @@ impl DescribeServiceIntegrationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeResourceCollectionHealthOutput {
-    /// <p> The returned <code>CloudFormationHealthOverview</code> object that contains an
-    /// <code>InsightHealthOverview</code> object with the requested system health
-    /// information. </p>
+    /// <p> The returned <code>CloudFormationHealthOverview</code> object that contains an <code>InsightHealthOverview</code> object with the requested system health information. </p>
     pub cloud_formation: std::option::Option<std::vec::Vec<crate::model::CloudFormationHealth>>,
-    /// <p>An array of <code>ServiceHealth</code> objects that describes the health of the Amazon Web Services
-    /// services associated with the resources in the collection.</p>
+    /// <p>An array of <code>ServiceHealth</code> objects that describes the health of the Amazon Web Services services associated with the resources in the collection.</p>
     pub service: std::option::Option<std::vec::Vec<crate::model::ServiceHealth>>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services tags that are used by resources in the resource collection.</p>
-    /// <p>Tags help you identify and organize your Amazon Web Services resources. Many Amazon Web Services services support
-    /// tagging, so you can assign the same tag to resources from different services to indicate
-    /// that the resources are related. For example, you can assign the same tag to an Amazon DynamoDB
-    /// table resource that you assign to an Lambda function. For more information about
-    /// using tags, see the <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
-    /// best practices</a> whitepaper. </p>
+    /// <p>Tags help you identify and organize your Amazon Web Services resources. Many Amazon Web Services services support tagging, so you can assign the same tag to resources from different services to indicate that the resources are related. For example, you can assign the same tag to an Amazon DynamoDB table resource that you assign to an Lambda function. For more information about using tags, see the <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging best practices</a> whitepaper. </p>
     /// <p>Each Amazon Web Services tag has two parts. </p>
     /// <ul>
-    /// <li>
-    /// <p>A tag <i>key</i> (for example, <code>CostCenter</code>,
-    /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
-    /// <i>keys</i> are case-sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>An optional field known as a tag <i>value</i> (for example,
-    /// <code>111122223333</code>, <code>Production</code>, or a team
-    /// name). Omitting the tag <i>value</i> is the same as using an empty
-    /// string. Like tag <i>keys</i>, tag <i>values</i> are
-    /// case-sensitive.</p>
-    /// </li>
+    /// <li> <p>A tag <i>key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag <i>keys</i> are case-sensitive.</p> </li>
+    /// <li> <p>An optional field known as a tag <i>value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag <i>value</i> is the same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are case-sensitive.</p> </li>
     /// </ul>
-    /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p>
-    /// <important>
-    /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the
-    /// prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
-    /// <code>Devops-guru-deployment-application</code> or
-    /// <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the
-    /// case of <i>key</i> characters don't matter to DevOps Guru. For example, DevOps Guru works with a
-    /// <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named
-    /// <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your
-    /// application might be <code>Devops-Guru-production-application/RDS</code> or
-    /// <code>Devops-Guru-production-application/containers</code>.</p>
+    /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p> <important>
+    /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>Devops-guru-deployment-application</code> or <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the case of <i>key</i> characters don't matter to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagHealth>>,
 }
 impl DescribeResourceCollectionHealthOutput {
-    /// <p> The returned <code>CloudFormationHealthOverview</code> object that contains an
-    /// <code>InsightHealthOverview</code> object with the requested system health
-    /// information. </p>
+    /// <p> The returned <code>CloudFormationHealthOverview</code> object that contains an <code>InsightHealthOverview</code> object with the requested system health information. </p>
     pub fn cloud_formation(&self) -> std::option::Option<&[crate::model::CloudFormationHealth]> {
         self.cloud_formation.as_deref()
     }
-    /// <p>An array of <code>ServiceHealth</code> objects that describes the health of the Amazon Web Services
-    /// services associated with the resources in the collection.</p>
+    /// <p>An array of <code>ServiceHealth</code> objects that describes the health of the Amazon Web Services services associated with the resources in the collection.</p>
     pub fn service(&self) -> std::option::Option<&[crate::model::ServiceHealth]> {
         self.service.as_deref()
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Web Services tags that are used by resources in the resource collection.</p>
-    /// <p>Tags help you identify and organize your Amazon Web Services resources. Many Amazon Web Services services support
-    /// tagging, so you can assign the same tag to resources from different services to indicate
-    /// that the resources are related. For example, you can assign the same tag to an Amazon DynamoDB
-    /// table resource that you assign to an Lambda function. For more information about
-    /// using tags, see the <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
-    /// best practices</a> whitepaper. </p>
+    /// <p>Tags help you identify and organize your Amazon Web Services resources. Many Amazon Web Services services support tagging, so you can assign the same tag to resources from different services to indicate that the resources are related. For example, you can assign the same tag to an Amazon DynamoDB table resource that you assign to an Lambda function. For more information about using tags, see the <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging best practices</a> whitepaper. </p>
     /// <p>Each Amazon Web Services tag has two parts. </p>
     /// <ul>
-    /// <li>
-    /// <p>A tag <i>key</i> (for example, <code>CostCenter</code>,
-    /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
-    /// <i>keys</i> are case-sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>An optional field known as a tag <i>value</i> (for example,
-    /// <code>111122223333</code>, <code>Production</code>, or a team
-    /// name). Omitting the tag <i>value</i> is the same as using an empty
-    /// string. Like tag <i>keys</i>, tag <i>values</i> are
-    /// case-sensitive.</p>
-    /// </li>
+    /// <li> <p>A tag <i>key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag <i>keys</i> are case-sensitive.</p> </li>
+    /// <li> <p>An optional field known as a tag <i>value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag <i>value</i> is the same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are case-sensitive.</p> </li>
     /// </ul>
-    /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p>
-    /// <important>
-    /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the
-    /// prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
-    /// <code>Devops-guru-deployment-application</code> or
-    /// <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the
-    /// case of <i>key</i> characters don't matter to DevOps Guru. For example, DevOps Guru works with a
-    /// <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named
-    /// <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your
-    /// application might be <code>Devops-Guru-production-application/RDS</code> or
-    /// <code>Devops-Guru-production-application/containers</code>.</p>
+    /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p> <important>
+    /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>Devops-guru-deployment-application</code> or <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the case of <i>key</i> characters don't matter to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
     pub fn tags(&self) -> std::option::Option<&[crate::model::TagHealth]> {
         self.tags.as_deref()
@@ -1570,21 +1386,14 @@ pub mod describe_resource_collection_health_output {
         ///
         /// To override the contents of this collection use [`set_cloud_formation`](Self::set_cloud_formation).
         ///
-        /// <p> The returned <code>CloudFormationHealthOverview</code> object that contains an
-        /// <code>InsightHealthOverview</code> object with the requested system health
-        /// information. </p>
-        pub fn cloud_formation(
-            mut self,
-            input: impl Into<crate::model::CloudFormationHealth>,
-        ) -> Self {
+        /// <p> The returned <code>CloudFormationHealthOverview</code> object that contains an <code>InsightHealthOverview</code> object with the requested system health information. </p>
+        pub fn cloud_formation(mut self, input: crate::model::CloudFormationHealth) -> Self {
             let mut v = self.cloud_formation.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cloud_formation = Some(v);
             self
         }
-        /// <p> The returned <code>CloudFormationHealthOverview</code> object that contains an
-        /// <code>InsightHealthOverview</code> object with the requested system health
-        /// information. </p>
+        /// <p> The returned <code>CloudFormationHealthOverview</code> object that contains an <code>InsightHealthOverview</code> object with the requested system health information. </p>
         pub fn set_cloud_formation(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CloudFormationHealth>>,
@@ -1596,16 +1405,14 @@ pub mod describe_resource_collection_health_output {
         ///
         /// To override the contents of this collection use [`set_service`](Self::set_service).
         ///
-        /// <p>An array of <code>ServiceHealth</code> objects that describes the health of the Amazon Web Services
-        /// services associated with the resources in the collection.</p>
-        pub fn service(mut self, input: impl Into<crate::model::ServiceHealth>) -> Self {
+        /// <p>An array of <code>ServiceHealth</code> objects that describes the health of the Amazon Web Services services associated with the resources in the collection.</p>
+        pub fn service(mut self, input: crate::model::ServiceHealth) -> Self {
             let mut v = self.service.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service = Some(v);
             self
         }
-        /// <p>An array of <code>ServiceHealth</code> objects that describes the health of the Amazon Web Services
-        /// services associated with the resources in the collection.</p>
+        /// <p>An array of <code>ServiceHealth</code> objects that describes the health of the Amazon Web Services services associated with the resources in the collection.</p>
         pub fn set_service(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ServiceHealth>>,
@@ -1613,14 +1420,12 @@ pub mod describe_resource_collection_health_output {
             self.service = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1630,78 +1435,30 @@ pub mod describe_resource_collection_health_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The Amazon Web Services tags that are used by resources in the resource collection.</p>
-        /// <p>Tags help you identify and organize your Amazon Web Services resources. Many Amazon Web Services services support
-        /// tagging, so you can assign the same tag to resources from different services to indicate
-        /// that the resources are related. For example, you can assign the same tag to an Amazon DynamoDB
-        /// table resource that you assign to an Lambda function. For more information about
-        /// using tags, see the <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
-        /// best practices</a> whitepaper. </p>
+        /// <p>Tags help you identify and organize your Amazon Web Services resources. Many Amazon Web Services services support tagging, so you can assign the same tag to resources from different services to indicate that the resources are related. For example, you can assign the same tag to an Amazon DynamoDB table resource that you assign to an Lambda function. For more information about using tags, see the <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging best practices</a> whitepaper. </p>
         /// <p>Each Amazon Web Services tag has two parts. </p>
         /// <ul>
-        /// <li>
-        /// <p>A tag <i>key</i> (for example, <code>CostCenter</code>,
-        /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
-        /// <i>keys</i> are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>An optional field known as a tag <i>value</i> (for example,
-        /// <code>111122223333</code>, <code>Production</code>, or a team
-        /// name). Omitting the tag <i>value</i> is the same as using an empty
-        /// string. Like tag <i>keys</i>, tag <i>values</i> are
-        /// case-sensitive.</p>
-        /// </li>
+        /// <li> <p>A tag <i>key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag <i>keys</i> are case-sensitive.</p> </li>
+        /// <li> <p>An optional field known as a tag <i>value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag <i>value</i> is the same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are case-sensitive.</p> </li>
         /// </ul>
-        /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p>
-        /// <important>
-        /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the
-        /// prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
-        /// <code>Devops-guru-deployment-application</code> or
-        /// <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the
-        /// case of <i>key</i> characters don't matter to DevOps Guru. For example, DevOps Guru works with a
-        /// <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named
-        /// <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your
-        /// application might be <code>Devops-Guru-production-application/RDS</code> or
-        /// <code>Devops-Guru-production-application/containers</code>.</p>
+        /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p> <important>
+        /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>Devops-guru-deployment-application</code> or <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the case of <i>key</i> characters don't matter to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
         /// </important>
-        pub fn tags(mut self, input: impl Into<crate::model::TagHealth>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagHealth) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
         /// <p>The Amazon Web Services tags that are used by resources in the resource collection.</p>
-        /// <p>Tags help you identify and organize your Amazon Web Services resources. Many Amazon Web Services services support
-        /// tagging, so you can assign the same tag to resources from different services to indicate
-        /// that the resources are related. For example, you can assign the same tag to an Amazon DynamoDB
-        /// table resource that you assign to an Lambda function. For more information about
-        /// using tags, see the <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
-        /// best practices</a> whitepaper. </p>
+        /// <p>Tags help you identify and organize your Amazon Web Services resources. Many Amazon Web Services services support tagging, so you can assign the same tag to resources from different services to indicate that the resources are related. For example, you can assign the same tag to an Amazon DynamoDB table resource that you assign to an Lambda function. For more information about using tags, see the <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging best practices</a> whitepaper. </p>
         /// <p>Each Amazon Web Services tag has two parts. </p>
         /// <ul>
-        /// <li>
-        /// <p>A tag <i>key</i> (for example, <code>CostCenter</code>,
-        /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
-        /// <i>keys</i> are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>An optional field known as a tag <i>value</i> (for example,
-        /// <code>111122223333</code>, <code>Production</code>, or a team
-        /// name). Omitting the tag <i>value</i> is the same as using an empty
-        /// string. Like tag <i>keys</i>, tag <i>values</i> are
-        /// case-sensitive.</p>
-        /// </li>
+        /// <li> <p>A tag <i>key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag <i>keys</i> are case-sensitive.</p> </li>
+        /// <li> <p>An optional field known as a tag <i>value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag <i>value</i> is the same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are case-sensitive.</p> </li>
         /// </ul>
-        /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p>
-        /// <important>
-        /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the
-        /// prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
-        /// <code>Devops-guru-deployment-application</code> or
-        /// <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the
-        /// case of <i>key</i> characters don't matter to DevOps Guru. For example, DevOps Guru works with a
-        /// <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named
-        /// <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your
-        /// application might be <code>Devops-Guru-production-application/RDS</code> or
-        /// <code>Devops-Guru-production-application/containers</code>.</p>
+        /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p> <important>
+        /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>Devops-guru-deployment-application</code> or <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the case of <i>key</i> characters don't matter to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
         /// </important>
         pub fn set_tags(
             mut self,
@@ -1732,28 +1489,31 @@ impl DescribeResourceCollectionHealthOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationResourceCollectionHealthOutput {
-    /// <p>The returned <code>CloudFormationHealthOverview</code> object that contains an
-    /// <code>InsightHealthOverview</code> object with the requested system health
-    /// information.</p>
+    /// <p>The returned <code>CloudFormationHealthOverview</code> object that contains an <code>InsightHealthOverview</code> object with the requested system health information.</p>
     pub cloud_formation: std::option::Option<std::vec::Vec<crate::model::CloudFormationHealth>>,
-    /// <p>An array of <code>ServiceHealth</code> objects that describes the health of the Amazon Web Services
-    /// services associated with the resources in the collection.</p>
+    /// <p>An array of <code>ServiceHealth</code> objects that describes the health of the Amazon Web Services services associated with the resources in the collection.</p>
     pub service: std::option::Option<std::vec::Vec<crate::model::ServiceHealth>>,
     /// <p>The name of the organization's account.</p>
     pub account: std::option::Option<std::vec::Vec<crate::model::AccountHealth>>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
+    /// <p>Tags help you identify and organize your Amazon Web Services resources. Many Amazon Web Services services support tagging, so you can assign the same tag to resources from different services to indicate that the resources are related. For example, you can assign the same tag to an Amazon DynamoDB table resource that you assign to an Lambda function. For more information about using tags, see the <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging best practices</a> whitepaper. </p>
+    /// <p>Each Amazon Web Services tag has two parts. </p>
+    /// <ul>
+    /// <li> <p>A tag <i>key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag <i>keys</i> are case-sensitive.</p> </li>
+    /// <li> <p>An optional field known as a tag <i>value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag <i>value</i> is the same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are case-sensitive.</p> </li>
+    /// </ul>
+    /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p> <important>
+    /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>Devops-guru-deployment-application</code> or <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the case of <i>key</i> characters don't matter to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
+    /// </important>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::TagHealth>>,
 }
 impl DescribeOrganizationResourceCollectionHealthOutput {
-    /// <p>The returned <code>CloudFormationHealthOverview</code> object that contains an
-    /// <code>InsightHealthOverview</code> object with the requested system health
-    /// information.</p>
+    /// <p>The returned <code>CloudFormationHealthOverview</code> object that contains an <code>InsightHealthOverview</code> object with the requested system health information.</p>
     pub fn cloud_formation(&self) -> std::option::Option<&[crate::model::CloudFormationHealth]> {
         self.cloud_formation.as_deref()
     }
-    /// <p>An array of <code>ServiceHealth</code> objects that describes the health of the Amazon Web Services
-    /// services associated with the resources in the collection.</p>
+    /// <p>An array of <code>ServiceHealth</code> objects that describes the health of the Amazon Web Services services associated with the resources in the collection.</p>
     pub fn service(&self) -> std::option::Option<&[crate::model::ServiceHealth]> {
         self.service.as_deref()
     }
@@ -1761,10 +1521,21 @@ impl DescribeOrganizationResourceCollectionHealthOutput {
     pub fn account(&self) -> std::option::Option<&[crate::model::AccountHealth]> {
         self.account.as_deref()
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+    /// <p>Tags help you identify and organize your Amazon Web Services resources. Many Amazon Web Services services support tagging, so you can assign the same tag to resources from different services to indicate that the resources are related. For example, you can assign the same tag to an Amazon DynamoDB table resource that you assign to an Lambda function. For more information about using tags, see the <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging best practices</a> whitepaper. </p>
+    /// <p>Each Amazon Web Services tag has two parts. </p>
+    /// <ul>
+    /// <li> <p>A tag <i>key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag <i>keys</i> are case-sensitive.</p> </li>
+    /// <li> <p>An optional field known as a tag <i>value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag <i>value</i> is the same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are case-sensitive.</p> </li>
+    /// </ul>
+    /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p> <important>
+    /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>Devops-guru-deployment-application</code> or <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the case of <i>key</i> characters don't matter to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
+    /// </important>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::TagHealth]> {
+        self.tags.as_deref()
     }
 }
 impl std::fmt::Debug for DescribeOrganizationResourceCollectionHealthOutput {
@@ -1774,6 +1545,7 @@ impl std::fmt::Debug for DescribeOrganizationResourceCollectionHealthOutput {
         formatter.field("service", &self.service);
         formatter.field("account", &self.account);
         formatter.field("next_token", &self.next_token);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -1788,27 +1560,21 @@ pub mod describe_organization_resource_collection_health_output {
         pub(crate) service: std::option::Option<std::vec::Vec<crate::model::ServiceHealth>>,
         pub(crate) account: std::option::Option<std::vec::Vec<crate::model::AccountHealth>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::TagHealth>>,
     }
     impl Builder {
         /// Appends an item to `cloud_formation`.
         ///
         /// To override the contents of this collection use [`set_cloud_formation`](Self::set_cloud_formation).
         ///
-        /// <p>The returned <code>CloudFormationHealthOverview</code> object that contains an
-        /// <code>InsightHealthOverview</code> object with the requested system health
-        /// information.</p>
-        pub fn cloud_formation(
-            mut self,
-            input: impl Into<crate::model::CloudFormationHealth>,
-        ) -> Self {
+        /// <p>The returned <code>CloudFormationHealthOverview</code> object that contains an <code>InsightHealthOverview</code> object with the requested system health information.</p>
+        pub fn cloud_formation(mut self, input: crate::model::CloudFormationHealth) -> Self {
             let mut v = self.cloud_formation.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cloud_formation = Some(v);
             self
         }
-        /// <p>The returned <code>CloudFormationHealthOverview</code> object that contains an
-        /// <code>InsightHealthOverview</code> object with the requested system health
-        /// information.</p>
+        /// <p>The returned <code>CloudFormationHealthOverview</code> object that contains an <code>InsightHealthOverview</code> object with the requested system health information.</p>
         pub fn set_cloud_formation(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CloudFormationHealth>>,
@@ -1820,16 +1586,14 @@ pub mod describe_organization_resource_collection_health_output {
         ///
         /// To override the contents of this collection use [`set_service`](Self::set_service).
         ///
-        /// <p>An array of <code>ServiceHealth</code> objects that describes the health of the Amazon Web Services
-        /// services associated with the resources in the collection.</p>
-        pub fn service(mut self, input: impl Into<crate::model::ServiceHealth>) -> Self {
+        /// <p>An array of <code>ServiceHealth</code> objects that describes the health of the Amazon Web Services services associated with the resources in the collection.</p>
+        pub fn service(mut self, input: crate::model::ServiceHealth) -> Self {
             let mut v = self.service.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service = Some(v);
             self
         }
-        /// <p>An array of <code>ServiceHealth</code> objects that describes the health of the Amazon Web Services
-        /// services associated with the resources in the collection.</p>
+        /// <p>An array of <code>ServiceHealth</code> objects that describes the health of the Amazon Web Services services associated with the resources in the collection.</p>
         pub fn set_service(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ServiceHealth>>,
@@ -1842,9 +1606,9 @@ pub mod describe_organization_resource_collection_health_output {
         /// To override the contents of this collection use [`set_account`](Self::set_account).
         ///
         /// <p>The name of the organization's account.</p>
-        pub fn account(mut self, input: impl Into<crate::model::AccountHealth>) -> Self {
+        pub fn account(mut self, input: crate::model::AccountHealth) -> Self {
             let mut v = self.account.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.account = Some(v);
             self
         }
@@ -1856,16 +1620,49 @@ pub mod describe_organization_resource_collection_health_output {
             self.account = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If there are no more pages, this value is null.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags help you identify and organize your Amazon Web Services resources. Many Amazon Web Services services support tagging, so you can assign the same tag to resources from different services to indicate that the resources are related. For example, you can assign the same tag to an Amazon DynamoDB table resource that you assign to an Lambda function. For more information about using tags, see the <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging best practices</a> whitepaper. </p>
+        /// <p>Each Amazon Web Services tag has two parts. </p>
+        /// <ul>
+        /// <li> <p>A tag <i>key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag <i>keys</i> are case-sensitive.</p> </li>
+        /// <li> <p>An optional field known as a tag <i>value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag <i>value</i> is the same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are case-sensitive.</p> </li>
+        /// </ul>
+        /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p> <important>
+        /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>Devops-guru-deployment-application</code> or <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the case of <i>key</i> characters don't matter to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
+        /// </important>
+        pub fn tags(mut self, input: crate::model::TagHealth) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>Tags help you identify and organize your Amazon Web Services resources. Many Amazon Web Services services support tagging, so you can assign the same tag to resources from different services to indicate that the resources are related. For example, you can assign the same tag to an Amazon DynamoDB table resource that you assign to an Lambda function. For more information about using tags, see the <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging best practices</a> whitepaper. </p>
+        /// <p>Each Amazon Web Services tag has two parts. </p>
+        /// <ul>
+        /// <li> <p>A tag <i>key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag <i>keys</i> are case-sensitive.</p> </li>
+        /// <li> <p>An optional field known as a tag <i>value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag <i>value</i> is the same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are case-sensitive.</p> </li>
+        /// </ul>
+        /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p> <important>
+        /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>Devops-guru-deployment-application</code> or <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the case of <i>key</i> characters don't matter to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
+        /// </important>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TagHealth>>,
+        ) -> Self {
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeOrganizationResourceCollectionHealthOutput`](crate::output::DescribeOrganizationResourceCollectionHealthOutput)
@@ -1875,6 +1672,7 @@ pub mod describe_organization_resource_collection_health_output {
                 service: self.service,
                 account: self.account,
                 next_token: self.next_token,
+                tags: self.tags,
             }
         }
     }
@@ -1891,21 +1689,17 @@ impl DescribeOrganizationResourceCollectionHealthOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationOverviewOutput {
-    /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services
-    /// account.</p>
+    /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
     pub reactive_insights: i32,
-    /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services
-    /// account.</p>
+    /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
     pub proactive_insights: i32,
 }
 impl DescribeOrganizationOverviewOutput {
-    /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services
-    /// account.</p>
+    /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
     pub fn reactive_insights(&self) -> i32 {
         self.reactive_insights
     }
-    /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services
-    /// account.</p>
+    /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
     pub fn proactive_insights(&self) -> i32 {
         self.proactive_insights
     }
@@ -1928,26 +1722,22 @@ pub mod describe_organization_overview_output {
         pub(crate) proactive_insights: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services
-        /// account.</p>
+        /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
         pub fn reactive_insights(mut self, input: i32) -> Self {
             self.reactive_insights = Some(input);
             self
         }
-        /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services
-        /// account.</p>
+        /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
         pub fn set_reactive_insights(mut self, input: std::option::Option<i32>) -> Self {
             self.reactive_insights = input;
             self
         }
-        /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services
-        /// account.</p>
+        /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
         pub fn proactive_insights(mut self, input: i32) -> Self {
             self.proactive_insights = Some(input);
             self
         }
-        /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services
-        /// account.</p>
+        /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
         pub fn set_proactive_insights(mut self, input: std::option::Option<i32>) -> Self {
             self.proactive_insights = input;
             self
@@ -1972,37 +1762,29 @@ impl DescribeOrganizationOverviewOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationHealthOutput {
-    /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services
-    /// account.</p>
+    /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
     pub open_reactive_insights: i32,
-    /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services
-    /// account.</p>
+    /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
     pub open_proactive_insights: i32,
-    /// <p>An integer that specifies the number of metrics that have been analyzed in your
-    /// organization.</p>
+    /// <p>An integer that specifies the number of metrics that have been analyzed in your organization.</p>
     pub metrics_analyzed: i32,
-    /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in
-    /// the last hour. </p>
+    /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in the last hour. </p>
     pub resource_hours: std::option::Option<i64>,
 }
 impl DescribeOrganizationHealthOutput {
-    /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services
-    /// account.</p>
+    /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
     pub fn open_reactive_insights(&self) -> i32 {
         self.open_reactive_insights
     }
-    /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services
-    /// account.</p>
+    /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
     pub fn open_proactive_insights(&self) -> i32 {
         self.open_proactive_insights
     }
-    /// <p>An integer that specifies the number of metrics that have been analyzed in your
-    /// organization.</p>
+    /// <p>An integer that specifies the number of metrics that have been analyzed in your organization.</p>
     pub fn metrics_analyzed(&self) -> i32 {
         self.metrics_analyzed
     }
-    /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in
-    /// the last hour. </p>
+    /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in the last hour. </p>
     pub fn resource_hours(&self) -> std::option::Option<i64> {
         self.resource_hours
     }
@@ -2029,50 +1811,42 @@ pub mod describe_organization_health_output {
         pub(crate) resource_hours: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services
-        /// account.</p>
+        /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
         pub fn open_reactive_insights(mut self, input: i32) -> Self {
             self.open_reactive_insights = Some(input);
             self
         }
-        /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services
-        /// account.</p>
+        /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
         pub fn set_open_reactive_insights(mut self, input: std::option::Option<i32>) -> Self {
             self.open_reactive_insights = input;
             self
         }
-        /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services
-        /// account.</p>
+        /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
         pub fn open_proactive_insights(mut self, input: i32) -> Self {
             self.open_proactive_insights = Some(input);
             self
         }
-        /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services
-        /// account.</p>
+        /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
         pub fn set_open_proactive_insights(mut self, input: std::option::Option<i32>) -> Self {
             self.open_proactive_insights = input;
             self
         }
-        /// <p>An integer that specifies the number of metrics that have been analyzed in your
-        /// organization.</p>
+        /// <p>An integer that specifies the number of metrics that have been analyzed in your organization.</p>
         pub fn metrics_analyzed(mut self, input: i32) -> Self {
             self.metrics_analyzed = Some(input);
             self
         }
-        /// <p>An integer that specifies the number of metrics that have been analyzed in your
-        /// organization.</p>
+        /// <p>An integer that specifies the number of metrics that have been analyzed in your organization.</p>
         pub fn set_metrics_analyzed(mut self, input: std::option::Option<i32>) -> Self {
             self.metrics_analyzed = input;
             self
         }
-        /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in
-        /// the last hour. </p>
+        /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in the last hour. </p>
         pub fn resource_hours(mut self, input: i64) -> Self {
             self.resource_hours = Some(input);
             self
         }
-        /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in
-        /// the last hour. </p>
+        /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in the last hour. </p>
         pub fn set_resource_hours(mut self, input: std::option::Option<i64>) -> Self {
             self.resource_hours = input;
             self
@@ -2314,29 +2088,23 @@ impl DescribeAnomalyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountOverviewOutput {
-    /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account
-    /// that were created during the time range passed in. </p>
+    /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account that were created during the time range passed in. </p>
     pub reactive_insights: i32,
-    /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services account
-    /// that were created during the time range passed in. </p>
+    /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services account that were created during the time range passed in. </p>
     pub proactive_insights: i32,
-    /// <p> The Mean Time to Recover (MTTR) for all closed insights that were created during the time range passed in.
-    /// </p>
+    /// <p> The Mean Time to Recover (MTTR) for all closed insights that were created during the time range passed in. </p>
     pub mean_time_to_recover_in_milliseconds: std::option::Option<i64>,
 }
 impl DescribeAccountOverviewOutput {
-    /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account
-    /// that were created during the time range passed in. </p>
+    /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account that were created during the time range passed in. </p>
     pub fn reactive_insights(&self) -> i32 {
         self.reactive_insights
     }
-    /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services account
-    /// that were created during the time range passed in. </p>
+    /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services account that were created during the time range passed in. </p>
     pub fn proactive_insights(&self) -> i32 {
         self.proactive_insights
     }
-    /// <p> The Mean Time to Recover (MTTR) for all closed insights that were created during the time range passed in.
-    /// </p>
+    /// <p> The Mean Time to Recover (MTTR) for all closed insights that were created during the time range passed in. </p>
     pub fn mean_time_to_recover_in_milliseconds(&self) -> std::option::Option<i64> {
         self.mean_time_to_recover_in_milliseconds
     }
@@ -2364,38 +2132,32 @@ pub mod describe_account_overview_output {
         pub(crate) mean_time_to_recover_in_milliseconds: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account
-        /// that were created during the time range passed in. </p>
+        /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account that were created during the time range passed in. </p>
         pub fn reactive_insights(mut self, input: i32) -> Self {
             self.reactive_insights = Some(input);
             self
         }
-        /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account
-        /// that were created during the time range passed in. </p>
+        /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account that were created during the time range passed in. </p>
         pub fn set_reactive_insights(mut self, input: std::option::Option<i32>) -> Self {
             self.reactive_insights = input;
             self
         }
-        /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services account
-        /// that were created during the time range passed in. </p>
+        /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services account that were created during the time range passed in. </p>
         pub fn proactive_insights(mut self, input: i32) -> Self {
             self.proactive_insights = Some(input);
             self
         }
-        /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services account
-        /// that were created during the time range passed in. </p>
+        /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services account that were created during the time range passed in. </p>
         pub fn set_proactive_insights(mut self, input: std::option::Option<i32>) -> Self {
             self.proactive_insights = input;
             self
         }
-        /// <p> The Mean Time to Recover (MTTR) for all closed insights that were created during the time range passed in.
-        /// </p>
+        /// <p> The Mean Time to Recover (MTTR) for all closed insights that were created during the time range passed in. </p>
         pub fn mean_time_to_recover_in_milliseconds(mut self, input: i64) -> Self {
             self.mean_time_to_recover_in_milliseconds = Some(input);
             self
         }
-        /// <p> The Mean Time to Recover (MTTR) for all closed insights that were created during the time range passed in.
-        /// </p>
+        /// <p> The Mean Time to Recover (MTTR) for all closed insights that were created during the time range passed in. </p>
         pub fn set_mean_time_to_recover_in_milliseconds(
             mut self,
             input: std::option::Option<i64>,
@@ -2424,37 +2186,29 @@ impl DescribeAccountOverviewOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountHealthOutput {
-    /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account.
-    /// </p>
+    /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account. </p>
     pub open_reactive_insights: i32,
-    /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services
-    /// account. </p>
+    /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services account. </p>
     pub open_proactive_insights: i32,
-    /// <p> An integer that specifies the number of metrics that have been analyzed in your Amazon Web Services
-    /// account. </p>
+    /// <p> An integer that specifies the number of metrics that have been analyzed in your Amazon Web Services account. </p>
     pub metrics_analyzed: i32,
-    /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in
-    /// the last hour. </p>
+    /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in the last hour. </p>
     pub resource_hours: std::option::Option<i64>,
 }
 impl DescribeAccountHealthOutput {
-    /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account.
-    /// </p>
+    /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account. </p>
     pub fn open_reactive_insights(&self) -> i32 {
         self.open_reactive_insights
     }
-    /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services
-    /// account. </p>
+    /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services account. </p>
     pub fn open_proactive_insights(&self) -> i32 {
         self.open_proactive_insights
     }
-    /// <p> An integer that specifies the number of metrics that have been analyzed in your Amazon Web Services
-    /// account. </p>
+    /// <p> An integer that specifies the number of metrics that have been analyzed in your Amazon Web Services account. </p>
     pub fn metrics_analyzed(&self) -> i32 {
         self.metrics_analyzed
     }
-    /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in
-    /// the last hour. </p>
+    /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in the last hour. </p>
     pub fn resource_hours(&self) -> std::option::Option<i64> {
         self.resource_hours
     }
@@ -2481,50 +2235,42 @@ pub mod describe_account_health_output {
         pub(crate) resource_hours: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account.
-        /// </p>
+        /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account. </p>
         pub fn open_reactive_insights(mut self, input: i32) -> Self {
             self.open_reactive_insights = Some(input);
             self
         }
-        /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account.
-        /// </p>
+        /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account. </p>
         pub fn set_open_reactive_insights(mut self, input: std::option::Option<i32>) -> Self {
             self.open_reactive_insights = input;
             self
         }
-        /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services
-        /// account. </p>
+        /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services account. </p>
         pub fn open_proactive_insights(mut self, input: i32) -> Self {
             self.open_proactive_insights = Some(input);
             self
         }
-        /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services
-        /// account. </p>
+        /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services account. </p>
         pub fn set_open_proactive_insights(mut self, input: std::option::Option<i32>) -> Self {
             self.open_proactive_insights = input;
             self
         }
-        /// <p> An integer that specifies the number of metrics that have been analyzed in your Amazon Web Services
-        /// account. </p>
+        /// <p> An integer that specifies the number of metrics that have been analyzed in your Amazon Web Services account. </p>
         pub fn metrics_analyzed(mut self, input: i32) -> Self {
             self.metrics_analyzed = Some(input);
             self
         }
-        /// <p> An integer that specifies the number of metrics that have been analyzed in your Amazon Web Services
-        /// account. </p>
+        /// <p> An integer that specifies the number of metrics that have been analyzed in your Amazon Web Services account. </p>
         pub fn set_metrics_analyzed(mut self, input: std::option::Option<i32>) -> Self {
             self.metrics_analyzed = input;
             self
         }
-        /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in
-        /// the last hour. </p>
+        /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in the last hour. </p>
         pub fn resource_hours(mut self, input: i64) -> Self {
             self.resource_hours = Some(input);
             self
         }
-        /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in
-        /// the last hour. </p>
+        /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in the last hour. </p>
         pub fn set_resource_hours(mut self, input: std::option::Option<i64>) -> Self {
             self.resource_hours = input;
             self

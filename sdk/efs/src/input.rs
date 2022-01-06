@@ -13,14 +13,12 @@ pub mod create_access_point_input {
         pub(crate) root_directory: std::option::Option<crate::model::RootDirectory>,
     }
     impl Builder {
-        /// <p>A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent
-        /// creation.</p>
+        /// <p>A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent
-        /// creation.</p>
+        /// <p>A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -29,18 +27,14 @@ pub mod create_access_point_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Creates tags associated with the access point. Each tag is a key-value pair, each key must be unique. For more
-        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
-        /// in the <i>Amazon Web Services General Reference Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>Creates tags associated with the access point. Each tag is a key-value pair, each key must be unique. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Creates tags associated with the access point. Each tag is a key-value pair, each key must be unique. For more
-        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
-        /// in the <i>Amazon Web Services General Reference Guide</i>.</p>
+        /// <p>Creates tags associated with the access point. Each tag is a key-value pair, each key must be unique. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -61,14 +55,12 @@ pub mod create_access_point_input {
             self.file_system_id = input;
             self
         }
-        /// <p>The operating system user and
-        /// group applied to all file system requests made using the access point.</p>
+        /// <p>The operating system user and group applied to all file system requests made using the access point.</p>
         pub fn posix_user(mut self, input: crate::model::PosixUser) -> Self {
             self.posix_user = Some(input);
             self
         }
-        /// <p>The operating system user and
-        /// group applied to all file system requests made using the access point.</p>
+        /// <p>The operating system user and group applied to all file system requests made using the access point.</p>
         pub fn set_posix_user(
             mut self,
             input: std::option::Option<crate::model::PosixUser>,
@@ -76,28 +68,14 @@ pub mod create_access_point_input {
             self.posix_user = input;
             self
         }
-        /// <p>Specifies the directory on the Amazon EFS file system that the access point exposes as
-        /// the root directory of your file system to NFS clients using the access point.
-        /// The clients using the access point can only access the root directory and below.
-        /// If the <code>RootDirectory</code> > <code>Path</code> specified does not exist,
-        /// EFS creates it and applies the <code>CreationInfo</code> settings when a client connects to an access point.
-        /// When specifying a <code>RootDirectory</code>, you need to provide the <code>Path</code>, and the <code>CreationInfo</code>.</p>
-        /// <p>Amazon EFS creates a root directory only if you have provided the  CreationInfo: OwnUid, OwnGID, and permissions for the directory.
-        /// If  you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount
-        /// using the access point will fail.</p>
+        /// <p>Specifies the directory on the Amazon EFS file system that the access point exposes as the root directory of your file system to NFS clients using the access point. The clients using the access point can only access the root directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates it and applies the <code>CreationInfo</code> settings when a client connects to an access point. When specifying a <code>RootDirectory</code>, you need to provide the <code>Path</code>, and the <code>CreationInfo</code>.</p>
+        /// <p>Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the directory. If you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount using the access point will fail.</p>
         pub fn root_directory(mut self, input: crate::model::RootDirectory) -> Self {
             self.root_directory = Some(input);
             self
         }
-        /// <p>Specifies the directory on the Amazon EFS file system that the access point exposes as
-        /// the root directory of your file system to NFS clients using the access point.
-        /// The clients using the access point can only access the root directory and below.
-        /// If the <code>RootDirectory</code> > <code>Path</code> specified does not exist,
-        /// EFS creates it and applies the <code>CreationInfo</code> settings when a client connects to an access point.
-        /// When specifying a <code>RootDirectory</code>, you need to provide the <code>Path</code>, and the <code>CreationInfo</code>.</p>
-        /// <p>Amazon EFS creates a root directory only if you have provided the  CreationInfo: OwnUid, OwnGID, and permissions for the directory.
-        /// If  you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount
-        /// using the access point will fail.</p>
+        /// <p>Specifies the directory on the Amazon EFS file system that the access point exposes as the root directory of your file system to NFS clients using the access point. The clients using the access point can only access the root directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates it and applies the <code>CreationInfo</code> settings when a client connects to an access point. When specifying a <code>RootDirectory</code>, you need to provide the <code>Path</code>, and the <code>CreationInfo</code>.</p>
+        /// <p>Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the directory. If you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount using the access point will fail.</p>
         pub fn set_root_directory(
             mut self,
             input: std::option::Option<crate::model::RootDirectory>,
@@ -125,7 +103,7 @@ pub mod create_access_point_input {
 #[doc(hidden)]
 pub type CreateAccessPointInputOperationOutputAlias = crate::operation::CreateAccessPoint;
 #[doc(hidden)]
-pub type CreateAccessPointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAccessPointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAccessPointInput {
     /// Consumes the builder and constructs an Operation<[`CreateAccessPoint`](crate::operation::CreateAccessPoint)>
     #[allow(clippy::let_and_return)]
@@ -136,7 +114,7 @@ impl CreateAccessPointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAccessPoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -219,7 +197,7 @@ impl CreateAccessPointInput {
             "CreateAccessPoint",
             "efs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -259,14 +237,12 @@ pub mod create_file_system_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>A string of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent
-        /// creation.</p>
+        /// <p>A string of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.</p>
         pub fn creation_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.creation_token = Some(input.into());
             self
         }
-        /// <p>A string of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent
-        /// creation.</p>
+        /// <p>A string of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.</p>
         pub fn set_creation_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -274,24 +250,14 @@ pub mod create_file_system_input {
             self.creation_token = input;
             self
         }
-        /// <p>The performance mode of the file system. We recommend <code>generalPurpose</code>
-        /// performance mode for most file systems. File systems using the <code>maxIO</code> performance
-        /// mode can scale to higher levels of aggregate throughput and operations per second with a
-        /// tradeoff of slightly higher latencies for most file operations. The performance mode
-        /// can't be changed after the file system has been created.</p>
-        /// <note>
+        /// <p>The performance mode of the file system. We recommend <code>generalPurpose</code> performance mode for most file systems. File systems using the <code>maxIO</code> performance mode can scale to higher levels of aggregate throughput and operations per second with a tradeoff of slightly higher latencies for most file operations. The performance mode can't be changed after the file system has been created.</p> <note>
         /// <p>The <code>maxIO</code> mode is not supported on file systems using One Zone storage classes.</p>
         /// </note>
         pub fn performance_mode(mut self, input: crate::model::PerformanceMode) -> Self {
             self.performance_mode = Some(input);
             self
         }
-        /// <p>The performance mode of the file system. We recommend <code>generalPurpose</code>
-        /// performance mode for most file systems. File systems using the <code>maxIO</code> performance
-        /// mode can scale to higher levels of aggregate throughput and operations per second with a
-        /// tradeoff of slightly higher latencies for most file operations. The performance mode
-        /// can't be changed after the file system has been created.</p>
-        /// <note>
+        /// <p>The performance mode of the file system. We recommend <code>generalPurpose</code> performance mode for most file systems. File systems using the <code>maxIO</code> performance mode can scale to higher levels of aggregate throughput and operations per second with a tradeoff of slightly higher latencies for most file operations. The performance mode can't be changed after the file system has been created.</p> <note>
         /// <p>The <code>maxIO</code> mode is not supported on file systems using One Zone storage classes.</p>
         /// </note>
         pub fn set_performance_mode(
@@ -301,105 +267,51 @@ pub mod create_file_system_input {
             self.performance_mode = input;
             self
         }
-        /// <p>A Boolean value that, if true, creates an encrypted file system. When creating an
-        /// encrypted file system, you have the option of specifying <a>CreateFileSystemRequest$KmsKeyId</a> for an existing Key Management Service (KMS
-        /// customer master key (CMK). If you don't specify a CMK, then the default CMK for
-        /// Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system.
-        /// </p>
+        /// <p>A Boolean value that, if true, creates an encrypted file system. When creating an encrypted file system, you have the option of specifying <code>CreateFileSystemRequest$KmsKeyId</code> for an existing Key Management Service (KMS customer master key (CMK). If you don't specify a CMK, then the default CMK for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system. </p>
         pub fn encrypted(mut self, input: bool) -> Self {
             self.encrypted = Some(input);
             self
         }
-        /// <p>A Boolean value that, if true, creates an encrypted file system. When creating an
-        /// encrypted file system, you have the option of specifying <a>CreateFileSystemRequest$KmsKeyId</a> for an existing Key Management Service (KMS
-        /// customer master key (CMK). If you don't specify a CMK, then the default CMK for
-        /// Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system.
-        /// </p>
+        /// <p>A Boolean value that, if true, creates an encrypted file system. When creating an encrypted file system, you have the option of specifying <code>CreateFileSystemRequest$KmsKeyId</code> for an existing Key Management Service (KMS customer master key (CMK). If you don't specify a CMK, then the default CMK for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system. </p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.encrypted = input;
             self
         }
-        /// <p>The ID of the KMS CMK that you want to use to protect the encrypted file system. This
-        /// parameter is only required if you want to use a non-default KMS key. If this parameter is not
-        /// specified, the default CMK for Amazon EFS is used. This ID can be in one of the following
-        /// formats:</p>
+        /// <p>The ID of the KMS CMK that you want to use to protect the encrypted file system. This parameter is only required if you want to use a non-default KMS key. If this parameter is not specified, the default CMK for Amazon EFS is used. This ID can be in one of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>Key ID - A unique identifier of the key, for example
-        /// <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN - An Amazon Resource Name (ARN) for the key, for example
-        /// <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>Key alias - A previously created display name for a key, for example
-        /// <code>alias/projectKey1</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>Key alias ARN - An ARN for a key alias, for example
-        /// <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p>
-        /// </li>
+        /// <li> <p>Key ID - A unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+        /// <li> <p>ARN - An Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+        /// <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li>
+        /// <li> <p>Key alias ARN - An ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
         /// </ul>
-        /// <p>If <code>KmsKeyId</code> is specified, the <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
-        /// <important>
+        /// <p>If <code>KmsKeyId</code> is specified, the <code>CreateFileSystemRequest$Encrypted</code> parameter must be set to true.</p> <important>
         /// <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with EFS file systems.</p>
         /// </important>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The ID of the KMS CMK that you want to use to protect the encrypted file system. This
-        /// parameter is only required if you want to use a non-default KMS key. If this parameter is not
-        /// specified, the default CMK for Amazon EFS is used. This ID can be in one of the following
-        /// formats:</p>
+        /// <p>The ID of the KMS CMK that you want to use to protect the encrypted file system. This parameter is only required if you want to use a non-default KMS key. If this parameter is not specified, the default CMK for Amazon EFS is used. This ID can be in one of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>Key ID - A unique identifier of the key, for example
-        /// <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN - An Amazon Resource Name (ARN) for the key, for example
-        /// <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>Key alias - A previously created display name for a key, for example
-        /// <code>alias/projectKey1</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>Key alias ARN - An ARN for a key alias, for example
-        /// <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p>
-        /// </li>
+        /// <li> <p>Key ID - A unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+        /// <li> <p>ARN - An Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+        /// <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li>
+        /// <li> <p>Key alias ARN - An ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
         /// </ul>
-        /// <p>If <code>KmsKeyId</code> is specified, the <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
-        /// <important>
+        /// <p>If <code>KmsKeyId</code> is specified, the <code>CreateFileSystemRequest$Encrypted</code> parameter must be set to true.</p> <important>
         /// <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with EFS file systems.</p>
         /// </important>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
         }
-        /// <p>Specifies the throughput mode for the file system, either <code>bursting</code> or
-        /// <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-        /// <code>provisioned</code>, you must also set a value for
-        /// <code>ProvisionedThroughputInMibps</code>. After you create the file system, you can
-        /// decrease your file system's throughput in Provisioned Throughput mode or change between
-        /// the throughput modes, as long as it’s been more than 24 hours since the last decrease or
-        /// throughput mode change. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying throughput with
-        /// provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
+        /// <p>Specifies the throughput mode for the file system, either <code>bursting</code> or <code>provisioned</code>. If you set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>. After you create the file system, you can decrease your file system's throughput in Provisioned Throughput mode or change between the throughput modes, as long as it’s been more than 24 hours since the last decrease or throughput mode change. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
         /// <p>Default is <code>bursting</code>.</p>
         pub fn throughput_mode(mut self, input: crate::model::ThroughputMode) -> Self {
             self.throughput_mode = Some(input);
             self
         }
-        /// <p>Specifies the throughput mode for the file system, either <code>bursting</code> or
-        /// <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-        /// <code>provisioned</code>, you must also set a value for
-        /// <code>ProvisionedThroughputInMibps</code>. After you create the file system, you can
-        /// decrease your file system's throughput in Provisioned Throughput mode or change between
-        /// the throughput modes, as long as it’s been more than 24 hours since the last decrease or
-        /// throughput mode change. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying throughput with
-        /// provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
+        /// <p>Specifies the throughput mode for the file system, either <code>bursting</code> or <code>provisioned</code>. If you set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>. After you create the file system, you can decrease your file system's throughput in Provisioned Throughput mode or change between the throughput modes, as long as it’s been more than 24 hours since the last decrease or throughput mode change. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
         /// <p>Default is <code>bursting</code>.</p>
         pub fn set_throughput_mode(
             mut self,
@@ -408,20 +320,12 @@ pub mod create_file_system_input {
             self.throughput_mode = input;
             self
         }
-        /// <p>The throughput, measured in MiB/s, that you want to provision for a file system that
-        /// you're creating. Valid values are 1-1024. Required if <code>ThroughputMode</code> is set
-        /// to <code>provisioned</code>. The upper limit for throughput is 1024 MiB/s. To increase this
-        /// limit, contact Amazon Web Services Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS quotas that you can increase</a>
-        /// in the <i>Amazon EFS User Guide</i>.</p>
+        /// <p>The throughput, measured in MiB/s, that you want to provision for a file system that you're creating. Valid values are 1-1024. Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit for throughput is 1024 MiB/s. To increase this limit, contact Amazon Web Services Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
         pub fn provisioned_throughput_in_mibps(mut self, input: f64) -> Self {
             self.provisioned_throughput_in_mibps = Some(input);
             self
         }
-        /// <p>The throughput, measured in MiB/s, that you want to provision for a file system that
-        /// you're creating. Valid values are 1-1024. Required if <code>ThroughputMode</code> is set
-        /// to <code>provisioned</code>. The upper limit for throughput is 1024 MiB/s. To increase this
-        /// limit, contact Amazon Web Services Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS quotas that you can increase</a>
-        /// in the <i>Amazon EFS User Guide</i>.</p>
+        /// <p>The throughput, measured in MiB/s, that you want to provision for a file system that you're creating. Valid values are 1-1024. Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit for throughput is 1024 MiB/s. To increase this limit, contact Amazon Web Services Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
         pub fn set_provisioned_throughput_in_mibps(
             mut self,
             input: std::option::Option<f64>,
@@ -429,25 +333,15 @@ pub mod create_file_system_input {
             self.provisioned_throughput_in_mibps = input;
             self
         }
-        /// <p>Used to create a file system that uses One Zone storage classes. It specifies the Amazon Web Services
-        /// Availability Zone in which to create the file system. Use the format <code>us-east-1a</code>
-        /// to specify the Availability Zone. For
-        /// more information about One Zone storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
-        /// <note>
-        /// <p>One Zone storage classes are not available in all Availability Zones in Amazon Web Services Regions where
-        /// Amazon EFS is available.</p>
+        /// <p>Used to create a file system that uses One Zone storage classes. It specifies the Amazon Web Services Availability Zone in which to create the file system. Use the format <code>us-east-1a</code> to specify the Availability Zone. For more information about One Zone storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p> <note>
+        /// <p>One Zone storage classes are not available in all Availability Zones in Amazon Web Services Regions where Amazon EFS is available.</p>
         /// </note>
         pub fn availability_zone_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.availability_zone_name = Some(input.into());
             self
         }
-        /// <p>Used to create a file system that uses One Zone storage classes. It specifies the Amazon Web Services
-        /// Availability Zone in which to create the file system. Use the format <code>us-east-1a</code>
-        /// to specify the Availability Zone. For
-        /// more information about One Zone storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
-        /// <note>
-        /// <p>One Zone storage classes are not available in all Availability Zones in Amazon Web Services Regions where
-        /// Amazon EFS is available.</p>
+        /// <p>Used to create a file system that uses One Zone storage classes. It specifies the Amazon Web Services Availability Zone in which to create the file system. Use the format <code>us-east-1a</code> to specify the Availability Zone. For more information about One Zone storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p> <note>
+        /// <p>One Zone storage classes are not available in all Availability Zones in Amazon Web Services Regions where Amazon EFS is available.</p>
         /// </note>
         pub fn set_availability_zone_name(
             mut self,
@@ -456,28 +350,16 @@ pub mod create_file_system_input {
             self.availability_zone_name = input;
             self
         }
-        /// <p>Specifies whether automatic backups are enabled on the file system that you are creating.
-        /// Set the value to <code>true</code> to enable automatic backups. If you are creating a file
-        /// system that uses One Zone storage classes, automatic backups are enabled by default. For more
-        /// information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic backups</a> in the
-        /// <i>Amazon EFS User Guide</i>.</p>
-        /// <p>Default is <code>false</code>. However, if you specify an <code>AvailabilityZoneName</code>,
-        /// the default is <code>true</code>.</p>
-        /// <note>
+        /// <p>Specifies whether automatic backups are enabled on the file system that you are creating. Set the value to <code>true</code> to enable automatic backups. If you are creating a file system that uses One Zone storage classes, automatic backups are enabled by default. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic backups</a> in the <i>Amazon EFS User Guide</i>.</p>
+        /// <p>Default is <code>false</code>. However, if you specify an <code>AvailabilityZoneName</code>, the default is <code>true</code>.</p> <note>
         /// <p>Backup is not available in all Amazon Web Services Regionswhere Amazon EFS is available.</p>
         /// </note>
         pub fn backup(mut self, input: bool) -> Self {
             self.backup = Some(input);
             self
         }
-        /// <p>Specifies whether automatic backups are enabled on the file system that you are creating.
-        /// Set the value to <code>true</code> to enable automatic backups. If you are creating a file
-        /// system that uses One Zone storage classes, automatic backups are enabled by default. For more
-        /// information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic backups</a> in the
-        /// <i>Amazon EFS User Guide</i>.</p>
-        /// <p>Default is <code>false</code>. However, if you specify an <code>AvailabilityZoneName</code>,
-        /// the default is <code>true</code>.</p>
-        /// <note>
+        /// <p>Specifies whether automatic backups are enabled on the file system that you are creating. Set the value to <code>true</code> to enable automatic backups. If you are creating a file system that uses One Zone storage classes, automatic backups are enabled by default. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic backups</a> in the <i>Amazon EFS User Guide</i>.</p>
+        /// <p>Default is <code>false</code>. However, if you specify an <code>AvailabilityZoneName</code>, the default is <code>true</code>.</p> <note>
         /// <p>Backup is not available in all Amazon Web Services Regionswhere Amazon EFS is available.</p>
         /// </note>
         pub fn set_backup(mut self, input: std::option::Option<bool>) -> Self {
@@ -488,22 +370,14 @@ pub mod create_file_system_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Use to create one or more tags associated with the file system. Each
-        /// tag is a user-defined key-value pair. Name your file system on creation by including a
-        /// <code>"Key":"Name","Value":"{value}"</code> key-value pair. Each key must be unique. For more
-        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
-        /// in the <i>Amazon Web Services General Reference Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>Use to create one or more tags associated with the file system. Each tag is a user-defined key-value pair. Name your file system on creation by including a <code>"Key":"Name","Value":"{value}"</code> key-value pair. Each key must be unique. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Use to create one or more tags associated with the file system. Each
-        /// tag is a user-defined key-value pair. Name your file system on creation by including a
-        /// <code>"Key":"Name","Value":"{value}"</code> key-value pair. Each key must be unique. For more
-        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
-        /// in the <i>Amazon Web Services General Reference Guide</i>.</p>
+        /// <p>Use to create one or more tags associated with the file system. Each tag is a user-defined key-value pair. Name your file system on creation by including a <code>"Key":"Name","Value":"{value}"</code> key-value pair. Each key must be unique. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -535,7 +409,7 @@ pub mod create_file_system_input {
 #[doc(hidden)]
 pub type CreateFileSystemInputOperationOutputAlias = crate::operation::CreateFileSystem;
 #[doc(hidden)]
-pub type CreateFileSystemInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFileSystemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFileSystemInput {
     /// Consumes the builder and constructs an Operation<[`CreateFileSystem`](crate::operation::CreateFileSystem)>
     #[allow(clippy::let_and_return)]
@@ -546,7 +420,7 @@ impl CreateFileSystemInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFileSystem,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -629,7 +503,7 @@ impl CreateFileSystemInput {
             "CreateFileSystem",
             "efs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -677,14 +551,12 @@ pub mod create_mount_target_input {
             self.file_system_id = input;
             self
         }
-        /// <p>The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the subnet
-        /// that is associated with the file system's Availability Zone.</p>
+        /// <p>The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the subnet that is associated with the file system's Availability Zone.</p>
         pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.subnet_id = Some(input.into());
             self
         }
-        /// <p>The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the subnet
-        /// that is associated with the file system's Availability Zone.</p>
+        /// <p>The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the subnet that is associated with the file system's Availability Zone.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subnet_id = input;
             self
@@ -703,16 +575,14 @@ pub mod create_mount_target_input {
         ///
         /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
         ///
-        /// <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be
-        /// for the same VPC as subnet specified.</p>
+        /// <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet specified.</p>
         pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
             v.push(input.into());
             self.security_groups = Some(v);
             self
         }
-        /// <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be
-        /// for the same VPC as subnet specified.</p>
+        /// <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet specified.</p>
         pub fn set_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -739,7 +609,7 @@ pub mod create_mount_target_input {
 #[doc(hidden)]
 pub type CreateMountTargetInputOperationOutputAlias = crate::operation::CreateMountTarget;
 #[doc(hidden)]
-pub type CreateMountTargetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateMountTargetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMountTargetInput {
     /// Consumes the builder and constructs an Operation<[`CreateMountTarget`](crate::operation::CreateMountTarget)>
     #[allow(clippy::let_and_return)]
@@ -750,7 +620,7 @@ impl CreateMountTargetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMountTarget,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -830,7 +700,7 @@ impl CreateMountTargetInput {
             "CreateMountTarget",
             "efs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -863,14 +733,12 @@ pub mod create_tags_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The ID of the file system whose tags you want to modify (String). This operation modifies
-        /// the tags only, not the file system.</p>
+        /// <p>The ID of the file system whose tags you want to modify (String). This operation modifies the tags only, not the file system.</p>
         pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_system_id = Some(input.into());
             self
         }
-        /// <p>The ID of the file system whose tags you want to modify (String). This operation modifies
-        /// the tags only, not the file system.</p>
+        /// <p>The ID of the file system whose tags you want to modify (String). This operation modifies the tags only, not the file system.</p>
         pub fn set_file_system_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -882,16 +750,14 @@ pub mod create_tags_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value
-        /// pair. </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair. </p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value
-        /// pair. </p>
+        /// <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -916,7 +782,7 @@ pub mod create_tags_input {
 #[doc(hidden)]
 pub type CreateTagsInputOperationOutputAlias = crate::operation::CreateTags;
 #[doc(hidden)]
-pub type CreateTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTagsInput {
     /// Consumes the builder and constructs an Operation<[`CreateTags`](crate::operation::CreateTags)>
     #[allow(clippy::let_and_return)]
@@ -927,7 +793,7 @@ impl CreateTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1026,7 +892,7 @@ impl CreateTagsInput {
             "CreateTags",
             "efs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1087,7 +953,7 @@ pub mod delete_access_point_input {
 #[doc(hidden)]
 pub type DeleteAccessPointInputOperationOutputAlias = crate::operation::DeleteAccessPoint;
 #[doc(hidden)]
-pub type DeleteAccessPointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAccessPointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAccessPointInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAccessPoint`](crate::operation::DeleteAccessPoint)>
     #[allow(clippy::let_and_return)]
@@ -1098,7 +964,7 @@ impl DeleteAccessPointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAccessPoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1192,7 +1058,7 @@ impl DeleteAccessPointInput {
             "DeleteAccessPoint",
             "efs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1245,7 +1111,7 @@ pub mod delete_file_system_input {
 #[doc(hidden)]
 pub type DeleteFileSystemInputOperationOutputAlias = crate::operation::DeleteFileSystem;
 #[doc(hidden)]
-pub type DeleteFileSystemInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFileSystemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFileSystemInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFileSystem`](crate::operation::DeleteFileSystem)>
     #[allow(clippy::let_and_return)]
@@ -1256,7 +1122,7 @@ impl DeleteFileSystemInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFileSystem,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1350,7 +1216,7 @@ impl DeleteFileSystemInput {
             "DeleteFileSystem",
             "efs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1403,7 +1269,7 @@ pub mod delete_file_system_policy_input {
 #[doc(hidden)]
 pub type DeleteFileSystemPolicyInputOperationOutputAlias = crate::operation::DeleteFileSystemPolicy;
 #[doc(hidden)]
-pub type DeleteFileSystemPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFileSystemPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFileSystemPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFileSystemPolicy`](crate::operation::DeleteFileSystemPolicy)>
     #[allow(clippy::let_and_return)]
@@ -1414,7 +1280,7 @@ impl DeleteFileSystemPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFileSystemPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1508,7 +1374,7 @@ impl DeleteFileSystemPolicyInput {
             "DeleteFileSystemPolicy",
             "efs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1561,7 +1427,7 @@ pub mod delete_mount_target_input {
 #[doc(hidden)]
 pub type DeleteMountTargetInputOperationOutputAlias = crate::operation::DeleteMountTarget;
 #[doc(hidden)]
-pub type DeleteMountTargetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteMountTargetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMountTargetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMountTarget`](crate::operation::DeleteMountTarget)>
     #[allow(clippy::let_and_return)]
@@ -1572,7 +1438,7 @@ impl DeleteMountTargetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMountTarget,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1666,7 +1532,7 @@ impl DeleteMountTargetInput {
             "DeleteMountTarget",
             "efs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1740,7 +1606,7 @@ pub mod delete_tags_input {
 #[doc(hidden)]
 pub type DeleteTagsInputOperationOutputAlias = crate::operation::DeleteTags;
 #[doc(hidden)]
-pub type DeleteTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTagsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTags`](crate::operation::DeleteTags)>
     #[allow(clippy::let_and_return)]
@@ -1751,7 +1617,7 @@ impl DeleteTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1850,7 +1716,7 @@ impl DeleteTagsInput {
             "DeleteTags",
             "efs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1885,28 +1751,22 @@ pub mod describe_access_points_input {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>(Optional) When retrieving all access points for a file system,
-        /// you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response.  
-        /// The default value is 100. </p>
+        /// <p>(Optional) When retrieving all access points for a file system, you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>(Optional) When retrieving all access points for a file system,
-        /// you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response.  
-        /// The default value is 100. </p>
+        /// <p>(Optional) When retrieving all access points for a file system, you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>
-        /// <code>NextToken</code> is present if the response is paginated. You can use <code>NextMarker</code> in the subsequent request to fetch the next page of access point descriptions.</p>
+        /// <p> <code>NextToken</code> is present if the response is paginated. You can use <code>NextMarker</code> in the subsequent request to fetch the next page of access point descriptions.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// <code>NextToken</code> is present if the response is paginated. You can use <code>NextMarker</code> in the subsequent request to fetch the next page of access point descriptions.</p>
+        /// <p> <code>NextToken</code> is present if the response is paginated. You can use <code>NextMarker</code> in the subsequent request to fetch the next page of access point descriptions.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1956,7 +1816,7 @@ pub mod describe_access_points_input {
 #[doc(hidden)]
 pub type DescribeAccessPointsInputOperationOutputAlias = crate::operation::DescribeAccessPoints;
 #[doc(hidden)]
-pub type DescribeAccessPointsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAccessPointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAccessPointsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccessPoints`](crate::operation::DescribeAccessPoints)>
     #[allow(clippy::let_and_return)]
@@ -1967,7 +1827,7 @@ impl DescribeAccessPointsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAccessPoints,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2070,7 +1930,7 @@ impl DescribeAccessPointsInput {
             "DescribeAccessPoints",
             "efs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2095,28 +1955,22 @@ pub mod describe_account_preferences_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>(Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of
-        /// Amazon Web Services account preferences if the response payload was paginated.</p>
+        /// <p>(Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of Amazon Web Services account preferences if the response payload was paginated.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>(Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of
-        /// Amazon Web Services account preferences if the response payload was paginated.</p>
+        /// <p>(Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of Amazon Web Services account preferences if the response payload was paginated.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>(Optional) When retrieving account preferences,
-        /// you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response.  
-        /// The default value is 100. </p>
+        /// <p>(Optional) When retrieving account preferences, you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>(Optional) When retrieving account preferences,
-        /// you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response.  
-        /// The default value is 100. </p>
+        /// <p>(Optional) When retrieving account preferences, you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2139,7 +1993,7 @@ pub mod describe_account_preferences_input {
 pub type DescribeAccountPreferencesInputOperationOutputAlias =
     crate::operation::DescribeAccountPreferences;
 #[doc(hidden)]
-pub type DescribeAccountPreferencesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAccountPreferencesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAccountPreferencesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccountPreferences`](crate::operation::DescribeAccountPreferences)>
     #[allow(clippy::let_and_return)]
@@ -2150,7 +2004,7 @@ impl DescribeAccountPreferencesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAccountPreferences,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2232,7 +2086,7 @@ impl DescribeAccountPreferencesInput {
             "DescribeAccountPreferences",
             "efs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2293,7 +2147,7 @@ pub mod describe_backup_policy_input {
 #[doc(hidden)]
 pub type DescribeBackupPolicyInputOperationOutputAlias = crate::operation::DescribeBackupPolicy;
 #[doc(hidden)]
-pub type DescribeBackupPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeBackupPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBackupPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBackupPolicy`](crate::operation::DescribeBackupPolicy)>
     #[allow(clippy::let_and_return)]
@@ -2304,7 +2158,7 @@ impl DescribeBackupPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBackupPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2398,7 +2252,7 @@ impl DescribeBackupPolicyInput {
             "DescribeBackupPolicy",
             "efs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2452,7 +2306,7 @@ pub mod describe_file_system_policy_input {
 pub type DescribeFileSystemPolicyInputOperationOutputAlias =
     crate::operation::DescribeFileSystemPolicy;
 #[doc(hidden)]
-pub type DescribeFileSystemPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFileSystemPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFileSystemPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFileSystemPolicy`](crate::operation::DescribeFileSystemPolicy)>
     #[allow(clippy::let_and_return)]
@@ -2463,7 +2317,7 @@ impl DescribeFileSystemPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFileSystemPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2557,7 +2411,7 @@ impl DescribeFileSystemPolicyInput {
             "DescribeFileSystemPolicy",
             "efs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2584,42 +2438,32 @@ pub mod describe_file_systems_input {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>(Optional) Specifies the maximum number of file systems to return in the response
-        /// (integer). This number is automatically set to 100. The response is paginated at 100 per page if you have more than 100 file systems.
-        /// </p>
+        /// <p>(Optional) Specifies the maximum number of file systems to return in the response (integer). This number is automatically set to 100. The response is paginated at 100 per page if you have more than 100 file systems. </p>
         pub fn max_items(mut self, input: i32) -> Self {
             self.max_items = Some(input);
             self
         }
-        /// <p>(Optional) Specifies the maximum number of file systems to return in the response
-        /// (integer). This number is automatically set to 100. The response is paginated at 100 per page if you have more than 100 file systems.
-        /// </p>
+        /// <p>(Optional) Specifies the maximum number of file systems to return in the response (integer). This number is automatically set to 100. The response is paginated at 100 per page if you have more than 100 file systems. </p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
         }
-        /// <p>(Optional) Opaque pagination token returned from a previous
-        /// <code>DescribeFileSystems</code> operation (String). If present, specifies to continue the
-        /// list from where the returning call had left off. </p>
+        /// <p>(Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If present, specifies to continue the list from where the returning call had left off. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>(Optional) Opaque pagination token returned from a previous
-        /// <code>DescribeFileSystems</code> operation (String). If present, specifies to continue the
-        /// list from where the returning call had left off. </p>
+        /// <p>(Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If present, specifies to continue the list from where the returning call had left off. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
         }
-        /// <p>(Optional) Restricts the list to the file system with this creation token (String). You
-        /// specify a creation token when you create an Amazon EFS file system.</p>
+        /// <p>(Optional) Restricts the list to the file system with this creation token (String). You specify a creation token when you create an Amazon EFS file system.</p>
         pub fn creation_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.creation_token = Some(input.into());
             self
         }
-        /// <p>(Optional) Restricts the list to the file system with this creation token (String). You
-        /// specify a creation token when you create an Amazon EFS file system.</p>
+        /// <p>(Optional) Restricts the list to the file system with this creation token (String). You specify a creation token when you create an Amazon EFS file system.</p>
         pub fn set_creation_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2627,14 +2471,12 @@ pub mod describe_file_systems_input {
             self.creation_token = input;
             self
         }
-        /// <p>(Optional) ID of the file system whose description you want to retrieve
-        /// (String).</p>
+        /// <p>(Optional) ID of the file system whose description you want to retrieve (String).</p>
         pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_system_id = Some(input.into());
             self
         }
-        /// <p>(Optional) ID of the file system whose description you want to retrieve
-        /// (String).</p>
+        /// <p>(Optional) ID of the file system whose description you want to retrieve (String).</p>
         pub fn set_file_system_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2661,7 +2503,7 @@ pub mod describe_file_systems_input {
 #[doc(hidden)]
 pub type DescribeFileSystemsInputOperationOutputAlias = crate::operation::DescribeFileSystems;
 #[doc(hidden)]
-pub type DescribeFileSystemsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFileSystemsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFileSystemsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFileSystems`](crate::operation::DescribeFileSystems)>
     #[allow(clippy::let_and_return)]
@@ -2672,7 +2514,7 @@ impl DescribeFileSystemsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFileSystems,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2775,7 +2617,7 @@ impl DescribeFileSystemsInput {
             "DescribeFileSystems",
             "efs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2799,14 +2641,12 @@ pub mod describe_lifecycle_configuration_input {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the file system whose <code>LifecycleConfiguration</code> object you want to
-        /// retrieve (String).</p>
+        /// <p>The ID of the file system whose <code>LifecycleConfiguration</code> object you want to retrieve (String).</p>
         pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_system_id = Some(input.into());
             self
         }
-        /// <p>The ID of the file system whose <code>LifecycleConfiguration</code> object you want to
-        /// retrieve (String).</p>
+        /// <p>The ID of the file system whose <code>LifecycleConfiguration</code> object you want to retrieve (String).</p>
         pub fn set_file_system_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2831,7 +2671,8 @@ pub mod describe_lifecycle_configuration_input {
 pub type DescribeLifecycleConfigurationInputOperationOutputAlias =
     crate::operation::DescribeLifecycleConfiguration;
 #[doc(hidden)]
-pub type DescribeLifecycleConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeLifecycleConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLifecycleConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLifecycleConfiguration`](crate::operation::DescribeLifecycleConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -2842,7 +2683,7 @@ impl DescribeLifecycleConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLifecycleConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2936,7 +2777,7 @@ impl DescribeLifecycleConfigurationInput {
             "DescribeLifecycleConfiguration",
             "efs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2964,42 +2805,32 @@ pub mod describe_mount_targets_input {
         pub(crate) access_point_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>(Optional) Maximum number of mount targets to return in the response. Currently, this
-        /// number is automatically set to
-        /// 10, and other values are ignored. The response is paginated at 100 per page if you have more than 100 mount targets.</p>
+        /// <p>(Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set to 10, and other values are ignored. The response is paginated at 100 per page if you have more than 100 mount targets.</p>
         pub fn max_items(mut self, input: i32) -> Self {
             self.max_items = Some(input);
             self
         }
-        /// <p>(Optional) Maximum number of mount targets to return in the response. Currently, this
-        /// number is automatically set to
-        /// 10, and other values are ignored. The response is paginated at 100 per page if you have more than 100 mount targets.</p>
+        /// <p>(Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set to 10, and other values are ignored. The response is paginated at 100 per page if you have more than 100 mount targets.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
         }
-        /// <p>(Optional) Opaque pagination token returned from a previous
-        /// <code>DescribeMountTargets</code> operation (String). If present, it specifies to continue
-        /// the list from where the previous returning call left off.</p>
+        /// <p>(Optional) Opaque pagination token returned from a previous <code>DescribeMountTargets</code> operation (String). If present, it specifies to continue the list from where the previous returning call left off.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>(Optional) Opaque pagination token returned from a previous
-        /// <code>DescribeMountTargets</code> operation (String). If present, it specifies to continue
-        /// the list from where the previous returning call left off.</p>
+        /// <p>(Optional) Opaque pagination token returned from a previous <code>DescribeMountTargets</code> operation (String). If present, it specifies to continue the list from where the previous returning call left off.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
         }
-        /// <p>(Optional) ID of the file system whose mount targets you want to list (String). It must
-        /// be included in your request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts either a file system ID or ARN as input.</p>
+        /// <p>(Optional) ID of the file system whose mount targets you want to list (String). It must be included in your request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts either a file system ID or ARN as input.</p>
         pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_system_id = Some(input.into());
             self
         }
-        /// <p>(Optional) ID of the file system whose mount targets you want to list (String). It must
-        /// be included in your request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts either a file system ID or ARN as input.</p>
+        /// <p>(Optional) ID of the file system whose mount targets you want to list (String). It must be included in your request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts either a file system ID or ARN as input.</p>
         pub fn set_file_system_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3007,14 +2838,12 @@ pub mod describe_mount_targets_input {
             self.file_system_id = input;
             self
         }
-        /// <p>(Optional) ID of the mount target that you want to have described (String). It must be
-        /// included in your request if <code>FileSystemId</code> is not included. Accepts either a mount target ID or ARN as input.</p>
+        /// <p>(Optional) ID of the mount target that you want to have described (String). It must be included in your request if <code>FileSystemId</code> is not included. Accepts either a mount target ID or ARN as input.</p>
         pub fn mount_target_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.mount_target_id = Some(input.into());
             self
         }
-        /// <p>(Optional) ID of the mount target that you want to have described (String). It must be
-        /// included in your request if <code>FileSystemId</code> is not included. Accepts either a mount target ID or ARN as input.</p>
+        /// <p>(Optional) ID of the mount target that you want to have described (String). It must be included in your request if <code>FileSystemId</code> is not included. Accepts either a mount target ID or ARN as input.</p>
         pub fn set_mount_target_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3022,14 +2851,12 @@ pub mod describe_mount_targets_input {
             self.mount_target_id = input;
             self
         }
-        /// <p>(Optional) The ID of the access point whose mount targets that you want to list. It must be included in your request if a
-        /// <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request. Accepts either an access point ID or ARN as input.</p>
+        /// <p>(Optional) The ID of the access point whose mount targets that you want to list. It must be included in your request if a <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request. Accepts either an access point ID or ARN as input.</p>
         pub fn access_point_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_point_id = Some(input.into());
             self
         }
-        /// <p>(Optional) The ID of the access point whose mount targets that you want to list. It must be included in your request if a
-        /// <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request. Accepts either an access point ID or ARN as input.</p>
+        /// <p>(Optional) The ID of the access point whose mount targets that you want to list. It must be included in your request if a <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request. Accepts either an access point ID or ARN as input.</p>
         pub fn set_access_point_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3057,7 +2884,7 @@ pub mod describe_mount_targets_input {
 #[doc(hidden)]
 pub type DescribeMountTargetsInputOperationOutputAlias = crate::operation::DescribeMountTargets;
 #[doc(hidden)]
-pub type DescribeMountTargetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeMountTargetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeMountTargetsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeMountTargets`](crate::operation::DescribeMountTargets)>
     #[allow(clippy::let_and_return)]
@@ -3068,7 +2895,7 @@ impl DescribeMountTargetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeMountTargets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3177,7 +3004,7 @@ impl DescribeMountTargetsInput {
             "DescribeMountTargets",
             "efs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3231,7 +3058,8 @@ pub mod describe_mount_target_security_groups_input {
 pub type DescribeMountTargetSecurityGroupsInputOperationOutputAlias =
     crate::operation::DescribeMountTargetSecurityGroups;
 #[doc(hidden)]
-pub type DescribeMountTargetSecurityGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeMountTargetSecurityGroupsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeMountTargetSecurityGroupsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeMountTargetSecurityGroups`](crate::operation::DescribeMountTargetSecurityGroups)>
     #[allow(clippy::let_and_return)]
@@ -3242,7 +3070,7 @@ impl DescribeMountTargetSecurityGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeMountTargetSecurityGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3336,7 +3164,7 @@ impl DescribeMountTargetSecurityGroupsInput {
             "DescribeMountTargetSecurityGroups",
             "efs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3362,30 +3190,22 @@ pub mod describe_tags_input {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>(Optional) The maximum number of file system tags to return in the response. Currently,
-        /// this number is automatically set to
-        /// 100, and other values are ignored. The response is paginated at 100 per page if you have more than 100 tags.</p>
+        /// <p>(Optional) The maximum number of file system tags to return in the response. Currently, this number is automatically set to 100, and other values are ignored. The response is paginated at 100 per page if you have more than 100 tags.</p>
         pub fn max_items(mut self, input: i32) -> Self {
             self.max_items = Some(input);
             self
         }
-        /// <p>(Optional) The maximum number of file system tags to return in the response. Currently,
-        /// this number is automatically set to
-        /// 100, and other values are ignored. The response is paginated at 100 per page if you have more than 100 tags.</p>
+        /// <p>(Optional) The maximum number of file system tags to return in the response. Currently, this number is automatically set to 100, and other values are ignored. The response is paginated at 100 per page if you have more than 100 tags.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
         }
-        /// <p>(Optional) An opaque pagination token returned from a previous
-        /// <code>DescribeTags</code> operation (String). If present, it specifies to continue the list
-        /// from where the previous call left off.</p>
+        /// <p>(Optional) An opaque pagination token returned from a previous <code>DescribeTags</code> operation (String). If present, it specifies to continue the list from where the previous call left off.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>(Optional) An opaque pagination token returned from a previous
-        /// <code>DescribeTags</code> operation (String). If present, it specifies to continue the list
-        /// from where the previous call left off.</p>
+        /// <p>(Optional) An opaque pagination token returned from a previous <code>DescribeTags</code> operation (String). If present, it specifies to continue the list from where the previous call left off.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -3421,7 +3241,7 @@ pub mod describe_tags_input {
 #[doc(hidden)]
 pub type DescribeTagsInputOperationOutputAlias = crate::operation::DescribeTags;
 #[doc(hidden)]
-pub type DescribeTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTagsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTags`](crate::operation::DescribeTags)>
     #[allow(clippy::let_and_return)]
@@ -3432,7 +3252,7 @@ impl DescribeTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3543,7 +3363,7 @@ impl DescribeTagsInput {
             "DescribeTags",
             "efs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3617,7 +3437,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -3628,7 +3448,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3739,7 +3559,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "efs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3814,7 +3634,8 @@ pub mod modify_mount_target_security_groups_input {
 pub type ModifyMountTargetSecurityGroupsInputOperationOutputAlias =
     crate::operation::ModifyMountTargetSecurityGroups;
 #[doc(hidden)]
-pub type ModifyMountTargetSecurityGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyMountTargetSecurityGroupsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyMountTargetSecurityGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ModifyMountTargetSecurityGroups`](crate::operation::ModifyMountTargetSecurityGroups)>
     #[allow(clippy::let_and_return)]
@@ -3825,7 +3646,7 @@ impl ModifyMountTargetSecurityGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyMountTargetSecurityGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3926,7 +3747,7 @@ impl ModifyMountTargetSecurityGroupsInput {
             "ModifyMountTargetSecurityGroups",
             "efs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3958,21 +3779,15 @@ pub mod put_account_preferences_input {
         pub(crate) resource_id_type: std::option::Option<crate::model::ResourceIdType>,
     }
     impl Builder {
-        /// <p>Specifies the EFS resource ID preference to set for the user's Amazon Web Services account, in the current Amazon Web Services Region,
-        /// either <code>LONG_ID</code> (17 characters), or <code>SHORT_ID</code> (8 characters).</p>
-        /// <note>
-        /// <p>Starting in October, 2021, you will receive an error when setting the account preference to <code>SHORT_ID</code>.
-        /// Contact Amazon Web Services support if you receive an error and need to use short IDs for file system and mount target resources.</p>
+        /// <p>Specifies the EFS resource ID preference to set for the user's Amazon Web Services account, in the current Amazon Web Services Region, either <code>LONG_ID</code> (17 characters), or <code>SHORT_ID</code> (8 characters).</p> <note>
+        /// <p>Starting in October, 2021, you will receive an error when setting the account preference to <code>SHORT_ID</code>. Contact Amazon Web Services support if you receive an error and need to use short IDs for file system and mount target resources.</p>
         /// </note>
         pub fn resource_id_type(mut self, input: crate::model::ResourceIdType) -> Self {
             self.resource_id_type = Some(input);
             self
         }
-        /// <p>Specifies the EFS resource ID preference to set for the user's Amazon Web Services account, in the current Amazon Web Services Region,
-        /// either <code>LONG_ID</code> (17 characters), or <code>SHORT_ID</code> (8 characters).</p>
-        /// <note>
-        /// <p>Starting in October, 2021, you will receive an error when setting the account preference to <code>SHORT_ID</code>.
-        /// Contact Amazon Web Services support if you receive an error and need to use short IDs for file system and mount target resources.</p>
+        /// <p>Specifies the EFS resource ID preference to set for the user's Amazon Web Services account, in the current Amazon Web Services Region, either <code>LONG_ID</code> (17 characters), or <code>SHORT_ID</code> (8 characters).</p> <note>
+        /// <p>Starting in October, 2021, you will receive an error when setting the account preference to <code>SHORT_ID</code>. Contact Amazon Web Services support if you receive an error and need to use short IDs for file system and mount target resources.</p>
         /// </note>
         pub fn set_resource_id_type(
             mut self,
@@ -3997,7 +3812,7 @@ pub mod put_account_preferences_input {
 #[doc(hidden)]
 pub type PutAccountPreferencesInputOperationOutputAlias = crate::operation::PutAccountPreferences;
 #[doc(hidden)]
-pub type PutAccountPreferencesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutAccountPreferencesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutAccountPreferencesInput {
     /// Consumes the builder and constructs an Operation<[`PutAccountPreferences`](crate::operation::PutAccountPreferences)>
     #[allow(clippy::let_and_return)]
@@ -4008,7 +3823,7 @@ impl PutAccountPreferencesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutAccountPreferences,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4090,7 +3905,7 @@ impl PutAccountPreferencesInput {
             "PutAccountPreferences",
             "efs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4166,7 +3981,7 @@ pub mod put_backup_policy_input {
 #[doc(hidden)]
 pub type PutBackupPolicyInputOperationOutputAlias = crate::operation::PutBackupPolicy;
 #[doc(hidden)]
-pub type PutBackupPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutBackupPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutBackupPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutBackupPolicy`](crate::operation::PutBackupPolicy)>
     #[allow(clippy::let_and_return)]
@@ -4177,7 +3992,7 @@ impl PutBackupPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutBackupPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4277,7 +4092,7 @@ impl PutBackupPolicyInput {
             "PutBackupPolicy",
             "efs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4324,40 +4139,22 @@ pub mod put_file_system_policy_input {
             self.file_system_id = input;
             self
         }
-        /// <p>The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition.
-        /// EFS file system policies have a 20,000 character limit.
-        /// To find out more about the elements that make up a file system policy, see
-        /// <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">EFS Resource-based Policies</a>.
-        /// </p>
+        /// <p>The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition. EFS file system policies have a 20,000 character limit. To find out more about the elements that make up a file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">EFS Resource-based Policies</a>. </p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
             self
         }
-        /// <p>The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition.
-        /// EFS file system policies have a 20,000 character limit.
-        /// To find out more about the elements that make up a file system policy, see
-        /// <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">EFS Resource-based Policies</a>.
-        /// </p>
+        /// <p>The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition. EFS file system policies have a 20,000 character limit. To find out more about the elements that make up a file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">EFS Resource-based Policies</a>. </p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
         }
-        /// <p>(Optional) A flag to indicate whether to bypass the <code>FileSystemPolicy</code> lockout safety check. The policy lockout safety check
-        /// determines whether the policy in the request will prevent the principal making the request will be locked out from making future <code>PutFileSystemPolicy</code> requests on the file system.
-        /// Set <code>BypassPolicyLockoutSafetyCheck</code> to <code>True</code> only when you intend to prevent
-        /// the principal that is making the request from making a subsequent <code>PutFileSystemPolicy</code> request on the file system.
-        /// The default value is False.
-        /// </p>
+        /// <p>(Optional) A flag to indicate whether to bypass the <code>FileSystemPolicy</code> lockout safety check. The policy lockout safety check determines whether the policy in the request will prevent the principal making the request will be locked out from making future <code>PutFileSystemPolicy</code> requests on the file system. Set <code>BypassPolicyLockoutSafetyCheck</code> to <code>True</code> only when you intend to prevent the principal that is making the request from making a subsequent <code>PutFileSystemPolicy</code> request on the file system. The default value is False. </p>
         pub fn bypass_policy_lockout_safety_check(mut self, input: bool) -> Self {
             self.bypass_policy_lockout_safety_check = Some(input);
             self
         }
-        /// <p>(Optional) A flag to indicate whether to bypass the <code>FileSystemPolicy</code> lockout safety check. The policy lockout safety check
-        /// determines whether the policy in the request will prevent the principal making the request will be locked out from making future <code>PutFileSystemPolicy</code> requests on the file system.
-        /// Set <code>BypassPolicyLockoutSafetyCheck</code> to <code>True</code> only when you intend to prevent
-        /// the principal that is making the request from making a subsequent <code>PutFileSystemPolicy</code> request on the file system.
-        /// The default value is False.
-        /// </p>
+        /// <p>(Optional) A flag to indicate whether to bypass the <code>FileSystemPolicy</code> lockout safety check. The policy lockout safety check determines whether the policy in the request will prevent the principal making the request will be locked out from making future <code>PutFileSystemPolicy</code> requests on the file system. Set <code>BypassPolicyLockoutSafetyCheck</code> to <code>True</code> only when you intend to prevent the principal that is making the request from making a subsequent <code>PutFileSystemPolicy</code> request on the file system. The default value is False. </p>
         pub fn set_bypass_policy_lockout_safety_check(
             mut self,
             input: std::option::Option<bool>,
@@ -4385,7 +4182,7 @@ pub mod put_file_system_policy_input {
 #[doc(hidden)]
 pub type PutFileSystemPolicyInputOperationOutputAlias = crate::operation::PutFileSystemPolicy;
 #[doc(hidden)]
-pub type PutFileSystemPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutFileSystemPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutFileSystemPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutFileSystemPolicy`](crate::operation::PutFileSystemPolicy)>
     #[allow(clippy::let_and_return)]
@@ -4396,7 +4193,7 @@ impl PutFileSystemPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutFileSystemPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4498,7 +4295,7 @@ impl PutFileSystemPolicyInput {
             "PutFileSystemPolicy",
             "efs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4532,14 +4329,12 @@ pub mod put_lifecycle_configuration_input {
             std::option::Option<std::vec::Vec<crate::model::LifecyclePolicy>>,
     }
     impl Builder {
-        /// <p>The ID of the file system for which you are creating the
-        /// <code>LifecycleConfiguration</code> object (String).</p>
+        /// <p>The ID of the file system for which you are creating the <code>LifecycleConfiguration</code> object (String).</p>
         pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_system_id = Some(input.into());
             self
         }
-        /// <p>The ID of the file system for which you are creating the
-        /// <code>LifecycleConfiguration</code> object (String).</p>
+        /// <p>The ID of the file system for which you are creating the <code>LifecycleConfiguration</code> object (String).</p>
         pub fn set_file_system_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4551,50 +4346,25 @@ pub mod put_lifecycle_configuration_input {
         ///
         /// To override the contents of this collection use [`set_lifecycle_policies`](Self::set_lifecycle_policies).
         ///
-        /// <p>An array of <code>LifecyclePolicy</code> objects that define the file system's
-        /// <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object
-        /// informs EFS lifecycle management and intelligent tiering of the following:</p>
+        /// <p>An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object informs EFS lifecycle management and intelligent tiering of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>When to move files in the file system from primary storage to the IA storage class.</p>
-        /// </li>
-        /// <li>
-        /// <p>When to move files that are in IA storage to primary storage.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action,
-        /// Amazon EFS requires that each <code>LifecyclePolicy</code>
-        /// object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> needs to be structured as
-        /// an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>.
-        /// See the example requests in the following section for more information.</p>
+        /// <li> <p>When to move files in the file system from primary storage to the IA storage class.</p> </li>
+        /// <li> <p>When to move files that are in IA storage to primary storage.</p> </li>
+        /// </ul> <note>
+        /// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> needs to be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. See the example requests in the following section for more information.</p>
         /// </note>
-        pub fn lifecycle_policies(
-            mut self,
-            input: impl Into<crate::model::LifecyclePolicy>,
-        ) -> Self {
+        pub fn lifecycle_policies(mut self, input: crate::model::LifecyclePolicy) -> Self {
             let mut v = self.lifecycle_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lifecycle_policies = Some(v);
             self
         }
-        /// <p>An array of <code>LifecyclePolicy</code> objects that define the file system's
-        /// <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object
-        /// informs EFS lifecycle management and intelligent tiering of the following:</p>
+        /// <p>An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object informs EFS lifecycle management and intelligent tiering of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>When to move files in the file system from primary storage to the IA storage class.</p>
-        /// </li>
-        /// <li>
-        /// <p>When to move files that are in IA storage to primary storage.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action,
-        /// Amazon EFS requires that each <code>LifecyclePolicy</code>
-        /// object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> needs to be structured as
-        /// an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>.
-        /// See the example requests in the following section for more information.</p>
+        /// <li> <p>When to move files in the file system from primary storage to the IA storage class.</p> </li>
+        /// <li> <p>When to move files that are in IA storage to primary storage.</p> </li>
+        /// </ul> <note>
+        /// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> needs to be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. See the example requests in the following section for more information.</p>
         /// </note>
         pub fn set_lifecycle_policies(
             mut self,
@@ -4621,7 +4391,7 @@ pub mod put_lifecycle_configuration_input {
 pub type PutLifecycleConfigurationInputOperationOutputAlias =
     crate::operation::PutLifecycleConfiguration;
 #[doc(hidden)]
-pub type PutLifecycleConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutLifecycleConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutLifecycleConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutLifecycleConfiguration`](crate::operation::PutLifecycleConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -4632,7 +4402,7 @@ impl PutLifecycleConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutLifecycleConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4734,7 +4504,7 @@ impl PutLifecycleConfigurationInput {
             "PutLifecycleConfiguration",
             "efs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4781,16 +4551,14 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value
-        /// pair.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value
-        /// pair.</p>
+        /// <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4815,7 +4583,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -4826,7 +4594,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4925,7 +4693,7 @@ impl TagResourceInput {
             "TagResource",
             "efs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4972,16 +4740,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>The keys of the key-value tag pairs that you want to remove from the specified EFS
-        /// resource.</p>
+        /// <p>The keys of the key-value tag pairs that you want to remove from the specified EFS resource.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>The keys of the key-value tag pairs that you want to remove from the specified EFS
-        /// resource.</p>
+        /// <p>The keys of the key-value tag pairs that you want to remove from the specified EFS resource.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5006,7 +4772,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -5017,7 +4783,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5124,7 +4890,7 @@ impl UntagResourceInput {
             "UntagResource",
             "efs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5163,18 +4929,12 @@ pub mod update_file_system_input {
             self.file_system_id = input;
             self
         }
-        /// <p>(Optional) Updates the file system's throughput mode. If you're not
-        /// updating your throughput mode, you don't need to provide this value in your
-        /// request. If you are changing the <code>ThroughputMode</code> to <code>provisioned</code>,
-        /// you must also set a value for <code>ProvisionedThroughputInMibps</code>.</p>
+        /// <p>(Optional) Updates the file system's throughput mode. If you're not updating your throughput mode, you don't need to provide this value in your request. If you are changing the <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>.</p>
         pub fn throughput_mode(mut self, input: crate::model::ThroughputMode) -> Self {
             self.throughput_mode = Some(input);
             self
         }
-        /// <p>(Optional) Updates the file system's throughput mode. If you're not
-        /// updating your throughput mode, you don't need to provide this value in your
-        /// request. If you are changing the <code>ThroughputMode</code> to <code>provisioned</code>,
-        /// you must also set a value for <code>ProvisionedThroughputInMibps</code>.</p>
+        /// <p>(Optional) Updates the file system's throughput mode. If you're not updating your throughput mode, you don't need to provide this value in your request. If you are changing the <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>.</p>
         pub fn set_throughput_mode(
             mut self,
             input: std::option::Option<crate::model::ThroughputMode>,
@@ -5182,18 +4942,12 @@ pub mod update_file_system_input {
             self.throughput_mode = input;
             self
         }
-        /// <p>(Optional) Sets the amount of provisioned throughput, in MiB/s, for the file
-        /// system. Valid values are 1-1024. If you are changing the throughput mode to provisioned, you must also
-        /// provide the amount of provisioned throughput. Required if <code>ThroughputMode</code> is changed
-        /// to <code>provisioned</code> on update.</p>
+        /// <p>(Optional) Sets the amount of provisioned throughput, in MiB/s, for the file system. Valid values are 1-1024. If you are changing the throughput mode to provisioned, you must also provide the amount of provisioned throughput. Required if <code>ThroughputMode</code> is changed to <code>provisioned</code> on update.</p>
         pub fn provisioned_throughput_in_mibps(mut self, input: f64) -> Self {
             self.provisioned_throughput_in_mibps = Some(input);
             self
         }
-        /// <p>(Optional) Sets the amount of provisioned throughput, in MiB/s, for the file
-        /// system. Valid values are 1-1024. If you are changing the throughput mode to provisioned, you must also
-        /// provide the amount of provisioned throughput. Required if <code>ThroughputMode</code> is changed
-        /// to <code>provisioned</code> on update.</p>
+        /// <p>(Optional) Sets the amount of provisioned throughput, in MiB/s, for the file system. Valid values are 1-1024. If you are changing the throughput mode to provisioned, you must also provide the amount of provisioned throughput. Required if <code>ThroughputMode</code> is changed to <code>provisioned</code> on update.</p>
         pub fn set_provisioned_throughput_in_mibps(
             mut self,
             input: std::option::Option<f64>,
@@ -5219,7 +4973,7 @@ pub mod update_file_system_input {
 #[doc(hidden)]
 pub type UpdateFileSystemInputOperationOutputAlias = crate::operation::UpdateFileSystem;
 #[doc(hidden)]
-pub type UpdateFileSystemInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFileSystemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFileSystemInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFileSystem`](crate::operation::UpdateFileSystem)>
     #[allow(clippy::let_and_return)]
@@ -5230,7 +4984,7 @@ impl UpdateFileSystemInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFileSystem,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5330,7 +5084,7 @@ impl UpdateFileSystemInput {
             "UpdateFileSystem",
             "efs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5359,15 +5113,9 @@ impl UpdateFileSystemInput {
 pub struct UpdateFileSystemInput {
     /// <p>The ID of the file system that you want to update.</p>
     pub file_system_id: std::option::Option<std::string::String>,
-    /// <p>(Optional) Updates the file system's throughput mode. If you're not
-    /// updating your throughput mode, you don't need to provide this value in your
-    /// request. If you are changing the <code>ThroughputMode</code> to <code>provisioned</code>,
-    /// you must also set a value for <code>ProvisionedThroughputInMibps</code>.</p>
+    /// <p>(Optional) Updates the file system's throughput mode. If you're not updating your throughput mode, you don't need to provide this value in your request. If you are changing the <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>.</p>
     pub throughput_mode: std::option::Option<crate::model::ThroughputMode>,
-    /// <p>(Optional) Sets the amount of provisioned throughput, in MiB/s, for the file
-    /// system. Valid values are 1-1024. If you are changing the throughput mode to provisioned, you must also
-    /// provide the amount of provisioned throughput. Required if <code>ThroughputMode</code> is changed
-    /// to <code>provisioned</code> on update.</p>
+    /// <p>(Optional) Sets the amount of provisioned throughput, in MiB/s, for the file system. Valid values are 1-1024. If you are changing the throughput mode to provisioned, you must also provide the amount of provisioned throughput. Required if <code>ThroughputMode</code> is changed to <code>provisioned</code> on update.</p>
     pub provisioned_throughput_in_mibps: std::option::Option<f64>,
 }
 impl UpdateFileSystemInput {
@@ -5375,17 +5123,11 @@ impl UpdateFileSystemInput {
     pub fn file_system_id(&self) -> std::option::Option<&str> {
         self.file_system_id.as_deref()
     }
-    /// <p>(Optional) Updates the file system's throughput mode. If you're not
-    /// updating your throughput mode, you don't need to provide this value in your
-    /// request. If you are changing the <code>ThroughputMode</code> to <code>provisioned</code>,
-    /// you must also set a value for <code>ProvisionedThroughputInMibps</code>.</p>
+    /// <p>(Optional) Updates the file system's throughput mode. If you're not updating your throughput mode, you don't need to provide this value in your request. If you are changing the <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>.</p>
     pub fn throughput_mode(&self) -> std::option::Option<&crate::model::ThroughputMode> {
         self.throughput_mode.as_ref()
     }
-    /// <p>(Optional) Sets the amount of provisioned throughput, in MiB/s, for the file
-    /// system. Valid values are 1-1024. If you are changing the throughput mode to provisioned, you must also
-    /// provide the amount of provisioned throughput. Required if <code>ThroughputMode</code> is changed
-    /// to <code>provisioned</code> on update.</p>
+    /// <p>(Optional) Sets the amount of provisioned throughput, in MiB/s, for the file system. Valid values are 1-1024. If you are changing the throughput mode to provisioned, you must also provide the amount of provisioned throughput. Required if <code>ThroughputMode</code> is changed to <code>provisioned</code> on update.</p>
     pub fn provisioned_throughput_in_mibps(&self) -> std::option::Option<f64> {
         self.provisioned_throughput_in_mibps
     }
@@ -5409,8 +5151,7 @@ impl std::fmt::Debug for UpdateFileSystemInput {
 pub struct UntagResourceInput {
     /// <p>Specifies the EFS resource that you want to remove tags from.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>The keys of the key-value tag pairs that you want to remove from the specified EFS
-    /// resource.</p>
+    /// <p>The keys of the key-value tag pairs that you want to remove from the specified EFS resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -5418,8 +5159,7 @@ impl UntagResourceInput {
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>The keys of the key-value tag pairs that you want to remove from the specified EFS
-    /// resource.</p>
+    /// <p>The keys of the key-value tag pairs that you want to remove from the specified EFS resource.</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -5439,8 +5179,7 @@ impl std::fmt::Debug for UntagResourceInput {
 pub struct TagResourceInput {
     /// <p>The ID specifying the EFS resource that you want to create a tag for.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value
-    /// pair.</p>
+    /// <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -5448,8 +5187,7 @@ impl TagResourceInput {
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value
-    /// pair.</p>
+    /// <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -5467,52 +5205,28 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLifecycleConfigurationInput {
-    /// <p>The ID of the file system for which you are creating the
-    /// <code>LifecycleConfiguration</code> object (String).</p>
+    /// <p>The ID of the file system for which you are creating the <code>LifecycleConfiguration</code> object (String).</p>
     pub file_system_id: std::option::Option<std::string::String>,
-    /// <p>An array of <code>LifecyclePolicy</code> objects that define the file system's
-    /// <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object
-    /// informs EFS lifecycle management and intelligent tiering of the following:</p>
+    /// <p>An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object informs EFS lifecycle management and intelligent tiering of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>When to move files in the file system from primary storage to the IA storage class.</p>
-    /// </li>
-    /// <li>
-    /// <p>When to move files that are in IA storage to primary storage.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action,
-    /// Amazon EFS requires that each <code>LifecyclePolicy</code>
-    /// object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> needs to be structured as
-    /// an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>.
-    /// See the example requests in the following section for more information.</p>
+    /// <li> <p>When to move files in the file system from primary storage to the IA storage class.</p> </li>
+    /// <li> <p>When to move files that are in IA storage to primary storage.</p> </li>
+    /// </ul> <note>
+    /// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> needs to be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. See the example requests in the following section for more information.</p>
     /// </note>
     pub lifecycle_policies: std::option::Option<std::vec::Vec<crate::model::LifecyclePolicy>>,
 }
 impl PutLifecycleConfigurationInput {
-    /// <p>The ID of the file system for which you are creating the
-    /// <code>LifecycleConfiguration</code> object (String).</p>
+    /// <p>The ID of the file system for which you are creating the <code>LifecycleConfiguration</code> object (String).</p>
     pub fn file_system_id(&self) -> std::option::Option<&str> {
         self.file_system_id.as_deref()
     }
-    /// <p>An array of <code>LifecyclePolicy</code> objects that define the file system's
-    /// <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object
-    /// informs EFS lifecycle management and intelligent tiering of the following:</p>
+    /// <p>An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object informs EFS lifecycle management and intelligent tiering of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>When to move files in the file system from primary storage to the IA storage class.</p>
-    /// </li>
-    /// <li>
-    /// <p>When to move files that are in IA storage to primary storage.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action,
-    /// Amazon EFS requires that each <code>LifecyclePolicy</code>
-    /// object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> needs to be structured as
-    /// an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>.
-    /// See the example requests in the following section for more information.</p>
+    /// <li> <p>When to move files in the file system from primary storage to the IA storage class.</p> </li>
+    /// <li> <p>When to move files that are in IA storage to primary storage.</p> </li>
+    /// </ul> <note>
+    /// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> needs to be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. See the example requests in the following section for more information.</p>
     /// </note>
     pub fn lifecycle_policies(&self) -> std::option::Option<&[crate::model::LifecyclePolicy]> {
         self.lifecycle_policies.as_deref()
@@ -5533,18 +5247,9 @@ impl std::fmt::Debug for PutLifecycleConfigurationInput {
 pub struct PutFileSystemPolicyInput {
     /// <p>The ID of the EFS file system that you want to create or update the <code>FileSystemPolicy</code> for.</p>
     pub file_system_id: std::option::Option<std::string::String>,
-    /// <p>The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition.
-    /// EFS file system policies have a 20,000 character limit.
-    /// To find out more about the elements that make up a file system policy, see
-    /// <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">EFS Resource-based Policies</a>.
-    /// </p>
+    /// <p>The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition. EFS file system policies have a 20,000 character limit. To find out more about the elements that make up a file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">EFS Resource-based Policies</a>. </p>
     pub policy: std::option::Option<std::string::String>,
-    /// <p>(Optional) A flag to indicate whether to bypass the <code>FileSystemPolicy</code> lockout safety check. The policy lockout safety check
-    /// determines whether the policy in the request will prevent the principal making the request will be locked out from making future <code>PutFileSystemPolicy</code> requests on the file system.
-    /// Set <code>BypassPolicyLockoutSafetyCheck</code> to <code>True</code> only when you intend to prevent
-    /// the principal that is making the request from making a subsequent <code>PutFileSystemPolicy</code> request on the file system.
-    /// The default value is False.
-    /// </p>
+    /// <p>(Optional) A flag to indicate whether to bypass the <code>FileSystemPolicy</code> lockout safety check. The policy lockout safety check determines whether the policy in the request will prevent the principal making the request will be locked out from making future <code>PutFileSystemPolicy</code> requests on the file system. Set <code>BypassPolicyLockoutSafetyCheck</code> to <code>True</code> only when you intend to prevent the principal that is making the request from making a subsequent <code>PutFileSystemPolicy</code> request on the file system. The default value is False. </p>
     pub bypass_policy_lockout_safety_check: bool,
 }
 impl PutFileSystemPolicyInput {
@@ -5552,20 +5257,11 @@ impl PutFileSystemPolicyInput {
     pub fn file_system_id(&self) -> std::option::Option<&str> {
         self.file_system_id.as_deref()
     }
-    /// <p>The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition.
-    /// EFS file system policies have a 20,000 character limit.
-    /// To find out more about the elements that make up a file system policy, see
-    /// <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">EFS Resource-based Policies</a>.
-    /// </p>
+    /// <p>The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition. EFS file system policies have a 20,000 character limit. To find out more about the elements that make up a file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">EFS Resource-based Policies</a>. </p>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
-    /// <p>(Optional) A flag to indicate whether to bypass the <code>FileSystemPolicy</code> lockout safety check. The policy lockout safety check
-    /// determines whether the policy in the request will prevent the principal making the request will be locked out from making future <code>PutFileSystemPolicy</code> requests on the file system.
-    /// Set <code>BypassPolicyLockoutSafetyCheck</code> to <code>True</code> only when you intend to prevent
-    /// the principal that is making the request from making a subsequent <code>PutFileSystemPolicy</code> request on the file system.
-    /// The default value is False.
-    /// </p>
+    /// <p>(Optional) A flag to indicate whether to bypass the <code>FileSystemPolicy</code> lockout safety check. The policy lockout safety check determines whether the policy in the request will prevent the principal making the request will be locked out from making future <code>PutFileSystemPolicy</code> requests on the file system. Set <code>BypassPolicyLockoutSafetyCheck</code> to <code>True</code> only when you intend to prevent the principal that is making the request from making a subsequent <code>PutFileSystemPolicy</code> request on the file system. The default value is False. </p>
     pub fn bypass_policy_lockout_safety_check(&self) -> bool {
         self.bypass_policy_lockout_safety_check
     }
@@ -5615,20 +5311,14 @@ impl std::fmt::Debug for PutBackupPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAccountPreferencesInput {
-    /// <p>Specifies the EFS resource ID preference to set for the user's Amazon Web Services account, in the current Amazon Web Services Region,
-    /// either <code>LONG_ID</code> (17 characters), or <code>SHORT_ID</code> (8 characters).</p>
-    /// <note>
-    /// <p>Starting in October, 2021, you will receive an error when setting the account preference to <code>SHORT_ID</code>.
-    /// Contact Amazon Web Services support if you receive an error and need to use short IDs for file system and mount target resources.</p>
+    /// <p>Specifies the EFS resource ID preference to set for the user's Amazon Web Services account, in the current Amazon Web Services Region, either <code>LONG_ID</code> (17 characters), or <code>SHORT_ID</code> (8 characters).</p> <note>
+    /// <p>Starting in October, 2021, you will receive an error when setting the account preference to <code>SHORT_ID</code>. Contact Amazon Web Services support if you receive an error and need to use short IDs for file system and mount target resources.</p>
     /// </note>
     pub resource_id_type: std::option::Option<crate::model::ResourceIdType>,
 }
 impl PutAccountPreferencesInput {
-    /// <p>Specifies the EFS resource ID preference to set for the user's Amazon Web Services account, in the current Amazon Web Services Region,
-    /// either <code>LONG_ID</code> (17 characters), or <code>SHORT_ID</code> (8 characters).</p>
-    /// <note>
-    /// <p>Starting in October, 2021, you will receive an error when setting the account preference to <code>SHORT_ID</code>.
-    /// Contact Amazon Web Services support if you receive an error and need to use short IDs for file system and mount target resources.</p>
+    /// <p>Specifies the EFS resource ID preference to set for the user's Amazon Web Services account, in the current Amazon Web Services Region, either <code>LONG_ID</code> (17 characters), or <code>SHORT_ID</code> (8 characters).</p> <note>
+    /// <p>Starting in October, 2021, you will receive an error when setting the account preference to <code>SHORT_ID</code>. Contact Amazon Web Services support if you receive an error and need to use short IDs for file system and mount target resources.</p>
     /// </note>
     pub fn resource_id_type(&self) -> std::option::Option<&crate::model::ResourceIdType> {
         self.resource_id_type.as_ref()
@@ -5709,27 +5399,19 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTagsInput {
-    /// <p>(Optional) The maximum number of file system tags to return in the response. Currently,
-    /// this number is automatically set to
-    /// 100, and other values are ignored. The response is paginated at 100 per page if you have more than 100 tags.</p>
+    /// <p>(Optional) The maximum number of file system tags to return in the response. Currently, this number is automatically set to 100, and other values are ignored. The response is paginated at 100 per page if you have more than 100 tags.</p>
     pub max_items: std::option::Option<i32>,
-    /// <p>(Optional) An opaque pagination token returned from a previous
-    /// <code>DescribeTags</code> operation (String). If present, it specifies to continue the list
-    /// from where the previous call left off.</p>
+    /// <p>(Optional) An opaque pagination token returned from a previous <code>DescribeTags</code> operation (String). If present, it specifies to continue the list from where the previous call left off.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The ID of the file system whose tag set you want to retrieve.</p>
     pub file_system_id: std::option::Option<std::string::String>,
 }
 impl DescribeTagsInput {
-    /// <p>(Optional) The maximum number of file system tags to return in the response. Currently,
-    /// this number is automatically set to
-    /// 100, and other values are ignored. The response is paginated at 100 per page if you have more than 100 tags.</p>
+    /// <p>(Optional) The maximum number of file system tags to return in the response. Currently, this number is automatically set to 100, and other values are ignored. The response is paginated at 100 per page if you have more than 100 tags.</p>
     pub fn max_items(&self) -> std::option::Option<i32> {
         self.max_items
     }
-    /// <p>(Optional) An opaque pagination token returned from a previous
-    /// <code>DescribeTags</code> operation (String). If present, it specifies to continue the list
-    /// from where the previous call left off.</p>
+    /// <p>(Optional) An opaque pagination token returned from a previous <code>DescribeTags</code> operation (String). If present, it specifies to continue the list from where the previous call left off.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -5773,49 +5455,35 @@ impl std::fmt::Debug for DescribeMountTargetSecurityGroupsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMountTargetsInput {
-    /// <p>(Optional) Maximum number of mount targets to return in the response. Currently, this
-    /// number is automatically set to
-    /// 10, and other values are ignored. The response is paginated at 100 per page if you have more than 100 mount targets.</p>
+    /// <p>(Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set to 10, and other values are ignored. The response is paginated at 100 per page if you have more than 100 mount targets.</p>
     pub max_items: std::option::Option<i32>,
-    /// <p>(Optional) Opaque pagination token returned from a previous
-    /// <code>DescribeMountTargets</code> operation (String). If present, it specifies to continue
-    /// the list from where the previous returning call left off.</p>
+    /// <p>(Optional) Opaque pagination token returned from a previous <code>DescribeMountTargets</code> operation (String). If present, it specifies to continue the list from where the previous returning call left off.</p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>(Optional) ID of the file system whose mount targets you want to list (String). It must
-    /// be included in your request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts either a file system ID or ARN as input.</p>
+    /// <p>(Optional) ID of the file system whose mount targets you want to list (String). It must be included in your request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts either a file system ID or ARN as input.</p>
     pub file_system_id: std::option::Option<std::string::String>,
-    /// <p>(Optional) ID of the mount target that you want to have described (String). It must be
-    /// included in your request if <code>FileSystemId</code> is not included. Accepts either a mount target ID or ARN as input.</p>
+    /// <p>(Optional) ID of the mount target that you want to have described (String). It must be included in your request if <code>FileSystemId</code> is not included. Accepts either a mount target ID or ARN as input.</p>
     pub mount_target_id: std::option::Option<std::string::String>,
-    /// <p>(Optional) The ID of the access point whose mount targets that you want to list. It must be included in your request if a
-    /// <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request. Accepts either an access point ID or ARN as input.</p>
+    /// <p>(Optional) The ID of the access point whose mount targets that you want to list. It must be included in your request if a <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request. Accepts either an access point ID or ARN as input.</p>
     pub access_point_id: std::option::Option<std::string::String>,
 }
 impl DescribeMountTargetsInput {
-    /// <p>(Optional) Maximum number of mount targets to return in the response. Currently, this
-    /// number is automatically set to
-    /// 10, and other values are ignored. The response is paginated at 100 per page if you have more than 100 mount targets.</p>
+    /// <p>(Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set to 10, and other values are ignored. The response is paginated at 100 per page if you have more than 100 mount targets.</p>
     pub fn max_items(&self) -> std::option::Option<i32> {
         self.max_items
     }
-    /// <p>(Optional) Opaque pagination token returned from a previous
-    /// <code>DescribeMountTargets</code> operation (String). If present, it specifies to continue
-    /// the list from where the previous returning call left off.</p>
+    /// <p>(Optional) Opaque pagination token returned from a previous <code>DescribeMountTargets</code> operation (String). If present, it specifies to continue the list from where the previous returning call left off.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>(Optional) ID of the file system whose mount targets you want to list (String). It must
-    /// be included in your request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts either a file system ID or ARN as input.</p>
+    /// <p>(Optional) ID of the file system whose mount targets you want to list (String). It must be included in your request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts either a file system ID or ARN as input.</p>
     pub fn file_system_id(&self) -> std::option::Option<&str> {
         self.file_system_id.as_deref()
     }
-    /// <p>(Optional) ID of the mount target that you want to have described (String). It must be
-    /// included in your request if <code>FileSystemId</code> is not included. Accepts either a mount target ID or ARN as input.</p>
+    /// <p>(Optional) ID of the mount target that you want to have described (String). It must be included in your request if <code>FileSystemId</code> is not included. Accepts either a mount target ID or ARN as input.</p>
     pub fn mount_target_id(&self) -> std::option::Option<&str> {
         self.mount_target_id.as_deref()
     }
-    /// <p>(Optional) The ID of the access point whose mount targets that you want to list. It must be included in your request if a
-    /// <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request. Accepts either an access point ID or ARN as input.</p>
+    /// <p>(Optional) The ID of the access point whose mount targets that you want to list. It must be included in your request if a <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request. Accepts either an access point ID or ARN as input.</p>
     pub fn access_point_id(&self) -> std::option::Option<&str> {
         self.access_point_id.as_deref()
     }
@@ -5836,13 +5504,11 @@ impl std::fmt::Debug for DescribeMountTargetsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLifecycleConfigurationInput {
-    /// <p>The ID of the file system whose <code>LifecycleConfiguration</code> object you want to
-    /// retrieve (String).</p>
+    /// <p>The ID of the file system whose <code>LifecycleConfiguration</code> object you want to retrieve (String).</p>
     pub file_system_id: std::option::Option<std::string::String>,
 }
 impl DescribeLifecycleConfigurationInput {
-    /// <p>The ID of the file system whose <code>LifecycleConfiguration</code> object you want to
-    /// retrieve (String).</p>
+    /// <p>The ID of the file system whose <code>LifecycleConfiguration</code> object you want to retrieve (String).</p>
     pub fn file_system_id(&self) -> std::option::Option<&str> {
         self.file_system_id.as_deref()
     }
@@ -5859,41 +5525,29 @@ impl std::fmt::Debug for DescribeLifecycleConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFileSystemsInput {
-    /// <p>(Optional) Specifies the maximum number of file systems to return in the response
-    /// (integer). This number is automatically set to 100. The response is paginated at 100 per page if you have more than 100 file systems.
-    /// </p>
+    /// <p>(Optional) Specifies the maximum number of file systems to return in the response (integer). This number is automatically set to 100. The response is paginated at 100 per page if you have more than 100 file systems. </p>
     pub max_items: std::option::Option<i32>,
-    /// <p>(Optional) Opaque pagination token returned from a previous
-    /// <code>DescribeFileSystems</code> operation (String). If present, specifies to continue the
-    /// list from where the returning call had left off. </p>
+    /// <p>(Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If present, specifies to continue the list from where the returning call had left off. </p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>(Optional) Restricts the list to the file system with this creation token (String). You
-    /// specify a creation token when you create an Amazon EFS file system.</p>
+    /// <p>(Optional) Restricts the list to the file system with this creation token (String). You specify a creation token when you create an Amazon EFS file system.</p>
     pub creation_token: std::option::Option<std::string::String>,
-    /// <p>(Optional) ID of the file system whose description you want to retrieve
-    /// (String).</p>
+    /// <p>(Optional) ID of the file system whose description you want to retrieve (String).</p>
     pub file_system_id: std::option::Option<std::string::String>,
 }
 impl DescribeFileSystemsInput {
-    /// <p>(Optional) Specifies the maximum number of file systems to return in the response
-    /// (integer). This number is automatically set to 100. The response is paginated at 100 per page if you have more than 100 file systems.
-    /// </p>
+    /// <p>(Optional) Specifies the maximum number of file systems to return in the response (integer). This number is automatically set to 100. The response is paginated at 100 per page if you have more than 100 file systems. </p>
     pub fn max_items(&self) -> std::option::Option<i32> {
         self.max_items
     }
-    /// <p>(Optional) Opaque pagination token returned from a previous
-    /// <code>DescribeFileSystems</code> operation (String). If present, specifies to continue the
-    /// list from where the returning call had left off. </p>
+    /// <p>(Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If present, specifies to continue the list from where the returning call had left off. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>(Optional) Restricts the list to the file system with this creation token (String). You
-    /// specify a creation token when you create an Amazon EFS file system.</p>
+    /// <p>(Optional) Restricts the list to the file system with this creation token (String). You specify a creation token when you create an Amazon EFS file system.</p>
     pub fn creation_token(&self) -> std::option::Option<&str> {
         self.creation_token.as_deref()
     }
-    /// <p>(Optional) ID of the file system whose description you want to retrieve
-    /// (String).</p>
+    /// <p>(Optional) ID of the file system whose description you want to retrieve (String).</p>
     pub fn file_system_id(&self) -> std::option::Option<&str> {
         self.file_system_id.as_deref()
     }
@@ -5955,23 +5609,17 @@ impl std::fmt::Debug for DescribeBackupPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountPreferencesInput {
-    /// <p>(Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of
-    /// Amazon Web Services account preferences if the response payload was paginated.</p>
+    /// <p>(Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of Amazon Web Services account preferences if the response payload was paginated.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>(Optional) When retrieving account preferences,
-    /// you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response.  
-    /// The default value is 100. </p>
+    /// <p>(Optional) When retrieving account preferences, you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeAccountPreferencesInput {
-    /// <p>(Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of
-    /// Amazon Web Services account preferences if the response payload was paginated.</p>
+    /// <p>(Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of Amazon Web Services account preferences if the response payload was paginated.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>(Optional) When retrieving account preferences,
-    /// you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response.  
-    /// The default value is 100. </p>
+    /// <p>(Optional) When retrieving account preferences, you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5989,12 +5637,9 @@ impl std::fmt::Debug for DescribeAccountPreferencesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccessPointsInput {
-    /// <p>(Optional) When retrieving all access points for a file system,
-    /// you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response.  
-    /// The default value is 100. </p>
+    /// <p>(Optional) When retrieving all access points for a file system, you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>
-    /// <code>NextToken</code> is present if the response is paginated. You can use <code>NextMarker</code> in the subsequent request to fetch the next page of access point descriptions.</p>
+    /// <p> <code>NextToken</code> is present if the response is paginated. You can use <code>NextMarker</code> in the subsequent request to fetch the next page of access point descriptions.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>(Optional) Specifies an EFS access point to describe in the response; mutually exclusive with <code>FileSystemId</code>.</p>
     pub access_point_id: std::option::Option<std::string::String>,
@@ -6002,14 +5647,11 @@ pub struct DescribeAccessPointsInput {
     pub file_system_id: std::option::Option<std::string::String>,
 }
 impl DescribeAccessPointsInput {
-    /// <p>(Optional) When retrieving all access points for a file system,
-    /// you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response.  
-    /// The default value is 100. </p>
+    /// <p>(Optional) When retrieving all access points for a file system, you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>
-    /// <code>NextToken</code> is present if the response is paginated. You can use <code>NextMarker</code> in the subsequent request to fetch the next page of access point descriptions.</p>
+    /// <p> <code>NextToken</code> is present if the response is paginated. You can use <code>NextMarker</code> in the subsequent request to fetch the next page of access point descriptions.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6149,21 +5791,17 @@ impl std::fmt::Debug for DeleteAccessPointInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTagsInput {
-    /// <p>The ID of the file system whose tags you want to modify (String). This operation modifies
-    /// the tags only, not the file system.</p>
+    /// <p>The ID of the file system whose tags you want to modify (String). This operation modifies the tags only, not the file system.</p>
     pub file_system_id: std::option::Option<std::string::String>,
-    /// <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value
-    /// pair. </p>
+    /// <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateTagsInput {
-    /// <p>The ID of the file system whose tags you want to modify (String). This operation modifies
-    /// the tags only, not the file system.</p>
+    /// <p>The ID of the file system whose tags you want to modify (String). This operation modifies the tags only, not the file system.</p>
     pub fn file_system_id(&self) -> std::option::Option<&str> {
         self.file_system_id.as_deref()
     }
-    /// <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value
-    /// pair. </p>
+    /// <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -6183,13 +5821,11 @@ impl std::fmt::Debug for CreateTagsInput {
 pub struct CreateMountTargetInput {
     /// <p>The ID of the file system for which to create the mount target.</p>
     pub file_system_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the subnet
-    /// that is associated with the file system's Availability Zone.</p>
+    /// <p>The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the subnet that is associated with the file system's Availability Zone.</p>
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>Valid IPv4 address within the address range of the specified subnet.</p>
     pub ip_address: std::option::Option<std::string::String>,
-    /// <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be
-    /// for the same VPC as subnet specified.</p>
+    /// <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet specified.</p>
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateMountTargetInput {
@@ -6197,8 +5833,7 @@ impl CreateMountTargetInput {
     pub fn file_system_id(&self) -> std::option::Option<&str> {
         self.file_system_id.as_deref()
     }
-    /// <p>The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the subnet
-    /// that is associated with the file system's Availability Zone.</p>
+    /// <p>The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the subnet that is associated with the file system's Availability Zone.</p>
     pub fn subnet_id(&self) -> std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
@@ -6206,8 +5841,7 @@ impl CreateMountTargetInput {
     pub fn ip_address(&self) -> std::option::Option<&str> {
         self.ip_address.as_deref()
     }
-    /// <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be
-    /// for the same VPC as subnet specified.</p>
+    /// <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet specified.</p>
     pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.security_groups.as_deref()
     }
@@ -6227,197 +5861,93 @@ impl std::fmt::Debug for CreateMountTargetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFileSystemInput {
-    /// <p>A string of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent
-    /// creation.</p>
+    /// <p>A string of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.</p>
     pub creation_token: std::option::Option<std::string::String>,
-    /// <p>The performance mode of the file system. We recommend <code>generalPurpose</code>
-    /// performance mode for most file systems. File systems using the <code>maxIO</code> performance
-    /// mode can scale to higher levels of aggregate throughput and operations per second with a
-    /// tradeoff of slightly higher latencies for most file operations. The performance mode
-    /// can't be changed after the file system has been created.</p>
-    /// <note>
+    /// <p>The performance mode of the file system. We recommend <code>generalPurpose</code> performance mode for most file systems. File systems using the <code>maxIO</code> performance mode can scale to higher levels of aggregate throughput and operations per second with a tradeoff of slightly higher latencies for most file operations. The performance mode can't be changed after the file system has been created.</p> <note>
     /// <p>The <code>maxIO</code> mode is not supported on file systems using One Zone storage classes.</p>
     /// </note>
     pub performance_mode: std::option::Option<crate::model::PerformanceMode>,
-    /// <p>A Boolean value that, if true, creates an encrypted file system. When creating an
-    /// encrypted file system, you have the option of specifying <a>CreateFileSystemRequest$KmsKeyId</a> for an existing Key Management Service (KMS
-    /// customer master key (CMK). If you don't specify a CMK, then the default CMK for
-    /// Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system.
-    /// </p>
+    /// <p>A Boolean value that, if true, creates an encrypted file system. When creating an encrypted file system, you have the option of specifying <code>CreateFileSystemRequest$KmsKeyId</code> for an existing Key Management Service (KMS customer master key (CMK). If you don't specify a CMK, then the default CMK for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system. </p>
     pub encrypted: std::option::Option<bool>,
-    /// <p>The ID of the KMS CMK that you want to use to protect the encrypted file system. This
-    /// parameter is only required if you want to use a non-default KMS key. If this parameter is not
-    /// specified, the default CMK for Amazon EFS is used. This ID can be in one of the following
-    /// formats:</p>
+    /// <p>The ID of the KMS CMK that you want to use to protect the encrypted file system. This parameter is only required if you want to use a non-default KMS key. If this parameter is not specified, the default CMK for Amazon EFS is used. This ID can be in one of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>Key ID - A unique identifier of the key, for example
-    /// <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN - An Amazon Resource Name (ARN) for the key, for example
-    /// <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Key alias - A previously created display name for a key, for example
-    /// <code>alias/projectKey1</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Key alias ARN - An ARN for a key alias, for example
-    /// <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p>
-    /// </li>
+    /// <li> <p>Key ID - A unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+    /// <li> <p>ARN - An Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+    /// <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li>
+    /// <li> <p>Key alias ARN - An ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
     /// </ul>
-    /// <p>If <code>KmsKeyId</code> is specified, the <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
-    /// <important>
+    /// <p>If <code>KmsKeyId</code> is specified, the <code>CreateFileSystemRequest$Encrypted</code> parameter must be set to true.</p> <important>
     /// <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with EFS file systems.</p>
     /// </important>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the throughput mode for the file system, either <code>bursting</code> or
-    /// <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-    /// <code>provisioned</code>, you must also set a value for
-    /// <code>ProvisionedThroughputInMibps</code>. After you create the file system, you can
-    /// decrease your file system's throughput in Provisioned Throughput mode or change between
-    /// the throughput modes, as long as it’s been more than 24 hours since the last decrease or
-    /// throughput mode change. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying throughput with
-    /// provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
+    /// <p>Specifies the throughput mode for the file system, either <code>bursting</code> or <code>provisioned</code>. If you set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>. After you create the file system, you can decrease your file system's throughput in Provisioned Throughput mode or change between the throughput modes, as long as it’s been more than 24 hours since the last decrease or throughput mode change. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
     /// <p>Default is <code>bursting</code>.</p>
     pub throughput_mode: std::option::Option<crate::model::ThroughputMode>,
-    /// <p>The throughput, measured in MiB/s, that you want to provision for a file system that
-    /// you're creating. Valid values are 1-1024. Required if <code>ThroughputMode</code> is set
-    /// to <code>provisioned</code>. The upper limit for throughput is 1024 MiB/s. To increase this
-    /// limit, contact Amazon Web Services Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS quotas that you can increase</a>
-    /// in the <i>Amazon EFS User Guide</i>.</p>
+    /// <p>The throughput, measured in MiB/s, that you want to provision for a file system that you're creating. Valid values are 1-1024. Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit for throughput is 1024 MiB/s. To increase this limit, contact Amazon Web Services Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
     pub provisioned_throughput_in_mibps: std::option::Option<f64>,
-    /// <p>Used to create a file system that uses One Zone storage classes. It specifies the Amazon Web Services
-    /// Availability Zone in which to create the file system. Use the format <code>us-east-1a</code>
-    /// to specify the Availability Zone. For
-    /// more information about One Zone storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
-    /// <note>
-    /// <p>One Zone storage classes are not available in all Availability Zones in Amazon Web Services Regions where
-    /// Amazon EFS is available.</p>
+    /// <p>Used to create a file system that uses One Zone storage classes. It specifies the Amazon Web Services Availability Zone in which to create the file system. Use the format <code>us-east-1a</code> to specify the Availability Zone. For more information about One Zone storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p> <note>
+    /// <p>One Zone storage classes are not available in all Availability Zones in Amazon Web Services Regions where Amazon EFS is available.</p>
     /// </note>
     pub availability_zone_name: std::option::Option<std::string::String>,
-    /// <p>Specifies whether automatic backups are enabled on the file system that you are creating.
-    /// Set the value to <code>true</code> to enable automatic backups. If you are creating a file
-    /// system that uses One Zone storage classes, automatic backups are enabled by default. For more
-    /// information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic backups</a> in the
-    /// <i>Amazon EFS User Guide</i>.</p>
-    /// <p>Default is <code>false</code>. However, if you specify an <code>AvailabilityZoneName</code>,
-    /// the default is <code>true</code>.</p>
-    /// <note>
+    /// <p>Specifies whether automatic backups are enabled on the file system that you are creating. Set the value to <code>true</code> to enable automatic backups. If you are creating a file system that uses One Zone storage classes, automatic backups are enabled by default. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic backups</a> in the <i>Amazon EFS User Guide</i>.</p>
+    /// <p>Default is <code>false</code>. However, if you specify an <code>AvailabilityZoneName</code>, the default is <code>true</code>.</p> <note>
     /// <p>Backup is not available in all Amazon Web Services Regionswhere Amazon EFS is available.</p>
     /// </note>
     pub backup: std::option::Option<bool>,
-    /// <p>Use to create one or more tags associated with the file system. Each
-    /// tag is a user-defined key-value pair. Name your file system on creation by including a
-    /// <code>"Key":"Name","Value":"{value}"</code> key-value pair. Each key must be unique. For more
-    /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
-    /// in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    /// <p>Use to create one or more tags associated with the file system. Each tag is a user-defined key-value pair. Name your file system on creation by including a <code>"Key":"Name","Value":"{value}"</code> key-value pair. Each key must be unique. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateFileSystemInput {
-    /// <p>A string of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent
-    /// creation.</p>
+    /// <p>A string of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.</p>
     pub fn creation_token(&self) -> std::option::Option<&str> {
         self.creation_token.as_deref()
     }
-    /// <p>The performance mode of the file system. We recommend <code>generalPurpose</code>
-    /// performance mode for most file systems. File systems using the <code>maxIO</code> performance
-    /// mode can scale to higher levels of aggregate throughput and operations per second with a
-    /// tradeoff of slightly higher latencies for most file operations. The performance mode
-    /// can't be changed after the file system has been created.</p>
-    /// <note>
+    /// <p>The performance mode of the file system. We recommend <code>generalPurpose</code> performance mode for most file systems. File systems using the <code>maxIO</code> performance mode can scale to higher levels of aggregate throughput and operations per second with a tradeoff of slightly higher latencies for most file operations. The performance mode can't be changed after the file system has been created.</p> <note>
     /// <p>The <code>maxIO</code> mode is not supported on file systems using One Zone storage classes.</p>
     /// </note>
     pub fn performance_mode(&self) -> std::option::Option<&crate::model::PerformanceMode> {
         self.performance_mode.as_ref()
     }
-    /// <p>A Boolean value that, if true, creates an encrypted file system. When creating an
-    /// encrypted file system, you have the option of specifying <a>CreateFileSystemRequest$KmsKeyId</a> for an existing Key Management Service (KMS
-    /// customer master key (CMK). If you don't specify a CMK, then the default CMK for
-    /// Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system.
-    /// </p>
+    /// <p>A Boolean value that, if true, creates an encrypted file system. When creating an encrypted file system, you have the option of specifying <code>CreateFileSystemRequest$KmsKeyId</code> for an existing Key Management Service (KMS customer master key (CMK). If you don't specify a CMK, then the default CMK for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system. </p>
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>The ID of the KMS CMK that you want to use to protect the encrypted file system. This
-    /// parameter is only required if you want to use a non-default KMS key. If this parameter is not
-    /// specified, the default CMK for Amazon EFS is used. This ID can be in one of the following
-    /// formats:</p>
+    /// <p>The ID of the KMS CMK that you want to use to protect the encrypted file system. This parameter is only required if you want to use a non-default KMS key. If this parameter is not specified, the default CMK for Amazon EFS is used. This ID can be in one of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>Key ID - A unique identifier of the key, for example
-    /// <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN - An Amazon Resource Name (ARN) for the key, for example
-    /// <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Key alias - A previously created display name for a key, for example
-    /// <code>alias/projectKey1</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Key alias ARN - An ARN for a key alias, for example
-    /// <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p>
-    /// </li>
+    /// <li> <p>Key ID - A unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+    /// <li> <p>ARN - An Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
+    /// <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li>
+    /// <li> <p>Key alias ARN - An ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
     /// </ul>
-    /// <p>If <code>KmsKeyId</code> is specified, the <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
-    /// <important>
+    /// <p>If <code>KmsKeyId</code> is specified, the <code>CreateFileSystemRequest$Encrypted</code> parameter must be set to true.</p> <important>
     /// <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with EFS file systems.</p>
     /// </important>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>Specifies the throughput mode for the file system, either <code>bursting</code> or
-    /// <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-    /// <code>provisioned</code>, you must also set a value for
-    /// <code>ProvisionedThroughputInMibps</code>. After you create the file system, you can
-    /// decrease your file system's throughput in Provisioned Throughput mode or change between
-    /// the throughput modes, as long as it’s been more than 24 hours since the last decrease or
-    /// throughput mode change. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying throughput with
-    /// provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
+    /// <p>Specifies the throughput mode for the file system, either <code>bursting</code> or <code>provisioned</code>. If you set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>. After you create the file system, you can decrease your file system's throughput in Provisioned Throughput mode or change between the throughput modes, as long as it’s been more than 24 hours since the last decrease or throughput mode change. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
     /// <p>Default is <code>bursting</code>.</p>
     pub fn throughput_mode(&self) -> std::option::Option<&crate::model::ThroughputMode> {
         self.throughput_mode.as_ref()
     }
-    /// <p>The throughput, measured in MiB/s, that you want to provision for a file system that
-    /// you're creating. Valid values are 1-1024. Required if <code>ThroughputMode</code> is set
-    /// to <code>provisioned</code>. The upper limit for throughput is 1024 MiB/s. To increase this
-    /// limit, contact Amazon Web Services Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS quotas that you can increase</a>
-    /// in the <i>Amazon EFS User Guide</i>.</p>
+    /// <p>The throughput, measured in MiB/s, that you want to provision for a file system that you're creating. Valid values are 1-1024. Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit for throughput is 1024 MiB/s. To increase this limit, contact Amazon Web Services Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
     pub fn provisioned_throughput_in_mibps(&self) -> std::option::Option<f64> {
         self.provisioned_throughput_in_mibps
     }
-    /// <p>Used to create a file system that uses One Zone storage classes. It specifies the Amazon Web Services
-    /// Availability Zone in which to create the file system. Use the format <code>us-east-1a</code>
-    /// to specify the Availability Zone. For
-    /// more information about One Zone storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
-    /// <note>
-    /// <p>One Zone storage classes are not available in all Availability Zones in Amazon Web Services Regions where
-    /// Amazon EFS is available.</p>
+    /// <p>Used to create a file system that uses One Zone storage classes. It specifies the Amazon Web Services Availability Zone in which to create the file system. Use the format <code>us-east-1a</code> to specify the Availability Zone. For more information about One Zone storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p> <note>
+    /// <p>One Zone storage classes are not available in all Availability Zones in Amazon Web Services Regions where Amazon EFS is available.</p>
     /// </note>
     pub fn availability_zone_name(&self) -> std::option::Option<&str> {
         self.availability_zone_name.as_deref()
     }
-    /// <p>Specifies whether automatic backups are enabled on the file system that you are creating.
-    /// Set the value to <code>true</code> to enable automatic backups. If you are creating a file
-    /// system that uses One Zone storage classes, automatic backups are enabled by default. For more
-    /// information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic backups</a> in the
-    /// <i>Amazon EFS User Guide</i>.</p>
-    /// <p>Default is <code>false</code>. However, if you specify an <code>AvailabilityZoneName</code>,
-    /// the default is <code>true</code>.</p>
-    /// <note>
+    /// <p>Specifies whether automatic backups are enabled on the file system that you are creating. Set the value to <code>true</code> to enable automatic backups. If you are creating a file system that uses One Zone storage classes, automatic backups are enabled by default. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic backups</a> in the <i>Amazon EFS User Guide</i>.</p>
+    /// <p>Default is <code>false</code>. However, if you specify an <code>AvailabilityZoneName</code>, the default is <code>true</code>.</p> <note>
     /// <p>Backup is not available in all Amazon Web Services Regionswhere Amazon EFS is available.</p>
     /// </note>
     pub fn backup(&self) -> std::option::Option<bool> {
         self.backup
     }
-    /// <p>Use to create one or more tags associated with the file system. Each
-    /// tag is a user-defined key-value pair. Name your file system on creation by including a
-    /// <code>"Key":"Name","Value":"{value}"</code> key-value pair. Each key must be unique. For more
-    /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
-    /// in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    /// <p>Use to create one or more tags associated with the file system. Each tag is a user-defined key-value pair. Name your file system on creation by including a <code>"Key":"Name","Value":"{value}"</code> key-value pair. Each key must be unique. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -6445,38 +5975,24 @@ impl std::fmt::Debug for CreateFileSystemInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccessPointInput {
-    /// <p>A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent
-    /// creation.</p>
+    /// <p>A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>Creates tags associated with the access point. Each tag is a key-value pair, each key must be unique. For more
-    /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
-    /// in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    /// <p>Creates tags associated with the access point. Each tag is a key-value pair, each key must be unique. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The ID of the EFS file system that the access point provides access to.</p>
     pub file_system_id: std::option::Option<std::string::String>,
-    /// <p>The operating system user and
-    /// group applied to all file system requests made using the access point.</p>
+    /// <p>The operating system user and group applied to all file system requests made using the access point.</p>
     pub posix_user: std::option::Option<crate::model::PosixUser>,
-    /// <p>Specifies the directory on the Amazon EFS file system that the access point exposes as
-    /// the root directory of your file system to NFS clients using the access point.
-    /// The clients using the access point can only access the root directory and below.
-    /// If the <code>RootDirectory</code> > <code>Path</code> specified does not exist,
-    /// EFS creates it and applies the <code>CreationInfo</code> settings when a client connects to an access point.
-    /// When specifying a <code>RootDirectory</code>, you need to provide the <code>Path</code>, and the <code>CreationInfo</code>.</p>
-    /// <p>Amazon EFS creates a root directory only if you have provided the  CreationInfo: OwnUid, OwnGID, and permissions for the directory.
-    /// If  you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount
-    /// using the access point will fail.</p>
+    /// <p>Specifies the directory on the Amazon EFS file system that the access point exposes as the root directory of your file system to NFS clients using the access point. The clients using the access point can only access the root directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates it and applies the <code>CreationInfo</code> settings when a client connects to an access point. When specifying a <code>RootDirectory</code>, you need to provide the <code>Path</code>, and the <code>CreationInfo</code>.</p>
+    /// <p>Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the directory. If you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount using the access point will fail.</p>
     pub root_directory: std::option::Option<crate::model::RootDirectory>,
 }
 impl CreateAccessPointInput {
-    /// <p>A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent
-    /// creation.</p>
+    /// <p>A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>Creates tags associated with the access point. Each tag is a key-value pair, each key must be unique. For more
-    /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
-    /// in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    /// <p>Creates tags associated with the access point. Each tag is a key-value pair, each key must be unique. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -6484,20 +6000,12 @@ impl CreateAccessPointInput {
     pub fn file_system_id(&self) -> std::option::Option<&str> {
         self.file_system_id.as_deref()
     }
-    /// <p>The operating system user and
-    /// group applied to all file system requests made using the access point.</p>
+    /// <p>The operating system user and group applied to all file system requests made using the access point.</p>
     pub fn posix_user(&self) -> std::option::Option<&crate::model::PosixUser> {
         self.posix_user.as_ref()
     }
-    /// <p>Specifies the directory on the Amazon EFS file system that the access point exposes as
-    /// the root directory of your file system to NFS clients using the access point.
-    /// The clients using the access point can only access the root directory and below.
-    /// If the <code>RootDirectory</code> > <code>Path</code> specified does not exist,
-    /// EFS creates it and applies the <code>CreationInfo</code> settings when a client connects to an access point.
-    /// When specifying a <code>RootDirectory</code>, you need to provide the <code>Path</code>, and the <code>CreationInfo</code>.</p>
-    /// <p>Amazon EFS creates a root directory only if you have provided the  CreationInfo: OwnUid, OwnGID, and permissions for the directory.
-    /// If  you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount
-    /// using the access point will fail.</p>
+    /// <p>Specifies the directory on the Amazon EFS file system that the access point exposes as the root directory of your file system to NFS clients using the access point. The clients using the access point can only access the root directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates it and applies the <code>CreationInfo</code> settings when a client connects to an access point. When specifying a <code>RootDirectory</code>, you need to provide the <code>Path</code>, and the <code>CreationInfo</code>.</p>
+    /// <p>Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the directory. If you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount using the access point will fail.</p>
     pub fn root_directory(&self) -> std::option::Option<&crate::model::RootDirectory> {
         self.root_directory.as_ref()
     }

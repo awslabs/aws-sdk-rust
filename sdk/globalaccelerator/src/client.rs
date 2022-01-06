@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Global Accelerator
@@ -290,6 +290,7 @@ where
     ///
     /// See [`ListAccelerators`](crate::client::fluent_builders::ListAccelerators) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAccelerators::into_paginator).
     pub fn list_accelerators(&self) -> fluent_builders::ListAccelerators<C, M, R> {
         fluent_builders::ListAccelerators::new(self.handle.clone())
     }
@@ -297,6 +298,7 @@ where
     ///
     /// See [`ListByoipCidrs`](crate::client::fluent_builders::ListByoipCidrs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListByoipCidrs::into_paginator).
     pub fn list_byoip_cidrs(&self) -> fluent_builders::ListByoipCidrs<C, M, R> {
         fluent_builders::ListByoipCidrs::new(self.handle.clone())
     }
@@ -304,6 +306,7 @@ where
     ///
     /// See [`ListCustomRoutingAccelerators`](crate::client::fluent_builders::ListCustomRoutingAccelerators) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCustomRoutingAccelerators::into_paginator).
     pub fn list_custom_routing_accelerators(
         &self,
     ) -> fluent_builders::ListCustomRoutingAccelerators<C, M, R> {
@@ -313,6 +316,7 @@ where
     ///
     /// See [`ListCustomRoutingEndpointGroups`](crate::client::fluent_builders::ListCustomRoutingEndpointGroups) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCustomRoutingEndpointGroups::into_paginator).
     pub fn list_custom_routing_endpoint_groups(
         &self,
     ) -> fluent_builders::ListCustomRoutingEndpointGroups<C, M, R> {
@@ -322,6 +326,7 @@ where
     ///
     /// See [`ListCustomRoutingListeners`](crate::client::fluent_builders::ListCustomRoutingListeners) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCustomRoutingListeners::into_paginator).
     pub fn list_custom_routing_listeners(
         &self,
     ) -> fluent_builders::ListCustomRoutingListeners<C, M, R> {
@@ -331,6 +336,7 @@ where
     ///
     /// See [`ListCustomRoutingPortMappings`](crate::client::fluent_builders::ListCustomRoutingPortMappings) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCustomRoutingPortMappings::into_paginator).
     pub fn list_custom_routing_port_mappings(
         &self,
     ) -> fluent_builders::ListCustomRoutingPortMappings<C, M, R> {
@@ -340,6 +346,7 @@ where
     ///
     /// See [`ListCustomRoutingPortMappingsByDestination`](crate::client::fluent_builders::ListCustomRoutingPortMappingsByDestination) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCustomRoutingPortMappingsByDestination::into_paginator).
     pub fn list_custom_routing_port_mappings_by_destination(
         &self,
     ) -> fluent_builders::ListCustomRoutingPortMappingsByDestination<C, M, R> {
@@ -349,6 +356,7 @@ where
     ///
     /// See [`ListEndpointGroups`](crate::client::fluent_builders::ListEndpointGroups) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEndpointGroups::into_paginator).
     pub fn list_endpoint_groups(&self) -> fluent_builders::ListEndpointGroups<C, M, R> {
         fluent_builders::ListEndpointGroups::new(self.handle.clone())
     }
@@ -356,6 +364,7 @@ where
     ///
     /// See [`ListListeners`](crate::client::fluent_builders::ListListeners) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListListeners::into_paginator).
     pub fn list_listeners(&self) -> fluent_builders::ListListeners<C, M, R> {
         fluent_builders::ListListeners::new(self.handle.clone())
     }
@@ -472,17 +481,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddCustomRoutingEndpoints`.
     ///
     /// <p>Associate a virtual private cloud (VPC) subnet endpoint with your custom routing accelerator.</p>
-    /// <p>The listener port range must be large enough to support the number of IP addresses that can be
-    /// specified in your subnet. The number of ports required is: subnet size times the number
-    /// of ports per destination EC2 instances. For example, a subnet defined as /24 requires a listener
-    /// port range of at least 255 ports. </p>
-    /// <p>Note: You must have enough remaining listener ports available to
-    /// map to the subnet ports, or the call will fail with a LimitExceededException.</p>
-    /// <p>By default, all destinations in a subnet in a custom routing accelerator cannot receive traffic. To enable all
-    /// destinations to receive traffic, or to specify individual port mappings that can receive
-    /// traffic, see the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_AllowCustomRoutingTraffic.html">
-    /// AllowCustomRoutingTraffic</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>The listener port range must be large enough to support the number of IP addresses that can be specified in your subnet. The number of ports required is: subnet size times the number of ports per destination EC2 instances. For example, a subnet defined as /24 requires a listener port range of at least 255 ports. </p>
+    /// <p>Note: You must have enough remaining listener ports available to map to the subnet ports, or the call will fail with a LimitExceededException.</p>
+    /// <p>By default, all destinations in a subnet in a custom routing accelerator cannot receive traffic. To enable all destinations to receive traffic, or to specify individual port mappings that can receive traffic, see the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_AllowCustomRoutingTraffic.html"> AllowCustomRoutingTraffic</a> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddCustomRoutingEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -527,10 +529,10 @@ pub mod fluent_builders {
                 crate::input::AddCustomRoutingEndpointsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -545,9 +547,9 @@ pub mod fluent_builders {
         /// <p>The list of endpoint objects to add to a custom routing accelerator.</p>
         pub fn endpoint_configurations(
             mut self,
-            inp: impl Into<crate::model::CustomRoutingEndpointConfiguration>,
+            input: crate::model::CustomRoutingEndpointConfiguration,
         ) -> Self {
-            self.inner = self.inner.endpoint_configurations(inp);
+            self.inner = self.inner.endpoint_configurations(input);
             self
         }
         /// <p>The list of endpoint objects to add to a custom routing accelerator.</p>
@@ -561,8 +563,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
-        pub fn endpoint_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_group_arn(inp);
+        pub fn endpoint_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_group_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
@@ -576,14 +578,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AdvertiseByoipCidr`.
     ///
-    /// <p>Advertises an IPv4 address range that is provisioned for use with your AWS resources
-    /// through bring your own IP addresses (BYOIP). It can take a few minutes before traffic to
-    /// the specified addresses starts routing to AWS because of propagation delays. </p>
-    /// <p>To stop advertising the BYOIP address range, use <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/WithdrawByoipCidr.html">
-    /// WithdrawByoipCidr</a>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own
-    /// IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Advertises an IPv4 address range that is provisioned for use with your AWS resources through bring your own IP addresses (BYOIP). It can take a few minutes before traffic to the specified addresses starts routing to AWS because of propagation delays. </p>
+    /// <p>To stop advertising the BYOIP address range, use <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/WithdrawByoipCidr.html"> WithdrawByoipCidr</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdvertiseByoipCidr<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -628,10 +626,10 @@ pub mod fluent_builders {
                 crate::input::AdvertiseByoipCidrInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -639,14 +637,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned.
-        /// You can't advertise only a portion of the provisioned range.</p>
-        pub fn cidr(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cidr(inp);
+        /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned. You can't advertise only a portion of the provisioned range.</p>
+        pub fn cidr(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cidr(input.into());
             self
         }
-        /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned.
-        /// You can't advertise only a portion of the provisioned range.</p>
+        /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned. You can't advertise only a portion of the provisioned range.</p>
         pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cidr(input);
             self
@@ -654,13 +650,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AllowCustomRoutingTraffic`.
     ///
-    /// <p>Specify the Amazon EC2 instance (destination) IP addresses and ports for a VPC subnet endpoint that can receive traffic
-    /// for a custom routing accelerator. You can allow traffic to all destinations in the subnet endpoint, or allow traffic to a
-    /// specified list of destination IP addresses and ports in the subnet. Note that you cannot specify IP addresses or ports
-    /// outside of the range that you configured for the endpoint group.</p>
-    /// <p>After you make changes, you can verify that the updates are complete by checking the status of your
-    /// accelerator: the status changes from IN_PROGRESS to DEPLOYED.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Specify the Amazon EC2 instance (destination) IP addresses and ports for a VPC subnet endpoint that can receive traffic for a custom routing accelerator. You can allow traffic to all destinations in the subnet endpoint, or allow traffic to a specified list of destination IP addresses and ports in the subnet. Note that you cannot specify IP addresses or ports outside of the range that you configured for the endpoint group.</p>
+    /// <p>After you make changes, you can verify that the updates are complete by checking the status of your accelerator: the status changes from IN_PROGRESS to DEPLOYED.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AllowCustomRoutingTraffic<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -705,10 +697,10 @@ pub mod fluent_builders {
                 crate::input::AllowCustomRoutingTrafficInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -717,8 +709,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-        pub fn endpoint_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_group_arn(inp);
+        pub fn endpoint_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_group_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
@@ -730,8 +722,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.</p>
-        pub fn endpoint_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_id(inp);
+        pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_id(input.into());
             self
         }
         /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.</p>
@@ -743,20 +735,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_destination_addresses`](Self::set_destination_addresses).
         ///
-        /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive
-        /// traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.</p>
-        /// <p>
-        /// <code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is
-        /// not specified.</p>
-        pub fn destination_addresses(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_addresses(inp);
+        /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.</p>
+        /// <p> <code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is not specified.</p>
+        pub fn destination_addresses(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_addresses(input.into());
             self
         }
-        /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive
-        /// traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.</p>
-        /// <p>
-        /// <code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is
-        /// not specified.</p>
+        /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.</p>
+        /// <p> <code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is not specified.</p>
         pub fn set_destination_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -769,8 +755,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_destination_ports`](Self::set_destination_ports).
         ///
         /// <p>A list of specific Amazon EC2 instance ports (destination ports) that you want to allow to receive traffic.</p>
-        pub fn destination_ports(mut self, inp: impl Into<i32>) -> Self {
-            self.inner = self.inner.destination_ports(inp);
+        pub fn destination_ports(mut self, input: i32) -> Self {
+            self.inner = self.inner.destination_ports(input);
             self
         }
         /// <p>A list of specific Amazon EC2 instance ports (destination ports) that you want to allow to receive traffic.</p>
@@ -781,25 +767,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_ports(input);
             self
         }
-        /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint can receive traffic
-        /// from a custom routing accelerator. The value is TRUE or FALSE. </p>
-        /// <p>When set to TRUE, <i>all</i> destinations in the custom routing VPC subnet can receive traffic. Note
-        /// that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
-        /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that are allowed
-        /// to receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is
-        /// the same as the ports configured for the endpoint group.</p>
+        /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint can receive traffic from a custom routing accelerator. The value is TRUE or FALSE. </p>
+        /// <p>When set to TRUE, <i>all</i> destinations in the custom routing VPC subnet can receive traffic. Note that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
+        /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that are allowed to receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is the same as the ports configured for the endpoint group.</p>
         /// <p>The default value is FALSE.</p>
-        pub fn allow_all_traffic_to_endpoint(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_all_traffic_to_endpoint(inp);
+        pub fn allow_all_traffic_to_endpoint(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_all_traffic_to_endpoint(input);
             self
         }
-        /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint can receive traffic
-        /// from a custom routing accelerator. The value is TRUE or FALSE. </p>
-        /// <p>When set to TRUE, <i>all</i> destinations in the custom routing VPC subnet can receive traffic. Note
-        /// that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
-        /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that are allowed
-        /// to receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is
-        /// the same as the ports configured for the endpoint group.</p>
+        /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint can receive traffic from a custom routing accelerator. The value is TRUE or FALSE. </p>
+        /// <p>When set to TRUE, <i>all</i> destinations in the custom routing VPC subnet can receive traffic. Note that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
+        /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that are allowed to receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is the same as the ports configured for the endpoint group.</p>
         /// <p>The default value is FALSE.</p>
         pub fn set_allow_all_traffic_to_endpoint(
             mut self,
@@ -811,13 +789,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAccelerator`.
     ///
-    /// <p>Create an accelerator. An accelerator includes one or more listeners that process inbound connections and direct traffic
-    /// to one or more endpoint groups, each of which includes endpoints, such as Network Load Balancers. </p>  
-    /// <important>
-    /// <p>Global Accelerator is a global service that supports endpoints in multiple AWS Regions but you must specify the
-    /// US West (Oregon) Region to create or update accelerators.</p>
+    /// <p>Create an accelerator. An accelerator includes one or more listeners that process inbound connections and direct traffic to one or more endpoint groups, each of which includes endpoints, such as Network Load Balancers. </p> <important>
+    /// <p>Global Accelerator is a global service that supports endpoints in multiple AWS Regions but you must specify the US West (Oregon) Region to create or update accelerators.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAccelerator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -862,10 +837,10 @@ pub mod fluent_builders {
                 crate::input::CreateAcceleratorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -873,21 +848,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
-        /// hyphens (-), and must not begin or end with a hyphen.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name of an accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of an accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
-        /// hyphens (-), and must not begin or end with a hyphen.</p>
+        /// <p>The name of an accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The value for the address type must be IPv4.</p>
-        pub fn ip_address_type(mut self, inp: crate::model::IpAddressType) -> Self {
-            self.inner = self.inner.ip_address_type(inp);
+        pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
+            self.inner = self.inner.ip_address_type(input);
             self
         }
         /// <p>The value for the address type must be IPv4.</p>
@@ -902,30 +875,18 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_ip_addresses`](Self::set_ip_addresses).
         ///
-        /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses
-        /// from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can
-        /// specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
-        /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only
-        /// one IP address from your IP address range, Global Accelerator assigns a second static IP address for the
-        /// accelerator from the AWS IP address pool.</p>
-        /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new
-        /// accelerator with the new addresses.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own
-        /// IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-        pub fn ip_addresses(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ip_addresses(inp);
+        /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
+        /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only one IP address from your IP address range, Global Accelerator assigns a second static IP address for the accelerator from the AWS IP address pool.</p>
+        /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        pub fn ip_addresses(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ip_addresses(input.into());
             self
         }
-        /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses
-        /// from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can
-        /// specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
-        /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only
-        /// one IP address from your IP address range, Global Accelerator assigns a second static IP address for the
-        /// accelerator from the AWS IP address pool.</p>
-        /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new
-        /// accelerator with the new addresses.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own
-        /// IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
+        /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only one IP address from your IP address range, Global Accelerator assigns a second static IP address for the accelerator from the AWS IP address pool.</p>
+        /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_ip_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -935,8 +896,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
         /// <p>If the value is set to true, an accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enabled(inp);
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.enabled(input);
             self
         }
         /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
@@ -945,14 +906,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_enabled(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-        /// uniqueness—of an accelerator.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of an accelerator.</p>
+        pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-        /// uniqueness—of an accelerator.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of an accelerator.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -965,15 +924,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Create tags for an accelerator.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
-        /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Create tags for an accelerator.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
-        /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -984,17 +941,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateCustomRoutingAccelerator`.
     ///
-    /// <p>Create a custom routing accelerator. A custom routing accelerator directs traffic to one of possibly thousands
-    /// of Amazon EC2 instance destinations running in a single or multiple virtual private clouds (VPC) subnet endpoints.</p>
-    /// <p>Be aware that, by default, all destination EC2 instances in a VPC subnet endpoint cannot receive
-    /// traffic. To enable all destinations to receive traffic, or to specify individual port
-    /// mappings that can receive traffic, see the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_AllowCustomRoutingTraffic.html">
-    /// AllowCustomRoutingTraffic</a> operation.</p>
-    /// <important>
-    /// <p>Global Accelerator is a global service that supports endpoints in multiple AWS Regions but you must specify the
-    /// US West (Oregon) Region to create or update accelerators.</p>
+    /// <p>Create a custom routing accelerator. A custom routing accelerator directs traffic to one of possibly thousands of Amazon EC2 instance destinations running in a single or multiple virtual private clouds (VPC) subnet endpoints.</p>
+    /// <p>Be aware that, by default, all destination EC2 instances in a VPC subnet endpoint cannot receive traffic. To enable all destinations to receive traffic, or to specify individual port mappings that can receive traffic, see the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_AllowCustomRoutingTraffic.html"> AllowCustomRoutingTraffic</a> operation.</p> <important>
+    /// <p>Global Accelerator is a global service that supports endpoints in multiple AWS Regions but you must specify the US West (Oregon) Region to create or update accelerators.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCustomRoutingAccelerator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1039,10 +990,10 @@ pub mod fluent_builders {
                 crate::input::CreateCustomRoutingAcceleratorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1050,21 +1001,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of a custom routing accelerator. The name can have a maximum of 64 characters, must contain
-        /// only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name of a custom routing accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of a custom routing accelerator. The name can have a maximum of 64 characters, must contain
-        /// only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
+        /// <p>The name of a custom routing accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The value for the address type must be IPv4.</p>
-        pub fn ip_address_type(mut self, inp: crate::model::IpAddressType) -> Self {
-            self.inner = self.inner.ip_address_type(inp);
+        pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
+            self.inner = self.inner.ip_address_type(input);
             self
         }
         /// <p>The value for the address type must be IPv4.</p>
@@ -1079,30 +1028,18 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_ip_addresses`](Self::set_ip_addresses).
         ///
-        /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses
-        /// from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can
-        /// specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
-        /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only
-        /// one IP address from your IP address range, Global Accelerator assigns a second static IP address for the
-        /// accelerator from the AWS IP address pool.</p>
-        /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new
-        /// accelerator with the new addresses.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
-        /// your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-        pub fn ip_addresses(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ip_addresses(inp);
+        /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
+        /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only one IP address from your IP address range, Global Accelerator assigns a second static IP address for the accelerator from the AWS IP address pool.</p>
+        /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        pub fn ip_addresses(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ip_addresses(input.into());
             self
         }
-        /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses
-        /// from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can
-        /// specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
-        /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only
-        /// one IP address from your IP address range, Global Accelerator assigns a second static IP address for the
-        /// accelerator from the AWS IP address pool.</p>
-        /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new
-        /// accelerator with the new addresses.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
-        /// your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
+        /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only one IP address from your IP address range, Global Accelerator assigns a second static IP address for the accelerator from the AWS IP address pool.</p>
+        /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_ip_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1112,8 +1049,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
         /// <p>If the value is set to true, an accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enabled(inp);
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.enabled(input);
             self
         }
         /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
@@ -1122,14 +1059,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_enabled(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that
-        /// is, the uniqueness—of the request.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
+        pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that
-        /// is, the uniqueness—of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1142,15 +1077,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Create tags for an accelerator.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
-        /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Create tags for an accelerator.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
-        /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1161,10 +1094,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateCustomRoutingEndpointGroup`.
     ///
-    /// <p>Create an endpoint group for the specified listener for a custom routing accelerator.
-    /// An endpoint group is a collection of endpoints in one AWS
-    /// Region. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Create an endpoint group for the specified listener for a custom routing accelerator. An endpoint group is a collection of endpoints in one AWS Region. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCustomRoutingEndpointGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1209,10 +1140,10 @@ pub mod fluent_builders {
                 crate::input::CreateCustomRoutingEndpointGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1221,8 +1152,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the listener for a custom routing endpoint.</p>
-        pub fn listener_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.listener_arn(inp);
+        pub fn listener_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.listener_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the listener for a custom routing endpoint.</p>
@@ -1230,14 +1161,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_listener_arn(input);
             self
         }
-        /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a
-        /// specific Region.</p>
-        pub fn endpoint_group_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_group_region(inp);
+        /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
+        pub fn endpoint_group_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_group_region(input.into());
             self
         }
-        /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a
-        /// specific Region.</p>
+        /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
         pub fn set_endpoint_group_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1249,17 +1178,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_destination_configurations`](Self::set_destination_configurations).
         ///
-        /// <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept
-        /// client traffic on.</p>
+        /// <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept client traffic on.</p>
         pub fn destination_configurations(
             mut self,
-            inp: impl Into<crate::model::CustomRoutingDestinationConfiguration>,
+            input: crate::model::CustomRoutingDestinationConfiguration,
         ) -> Self {
-            self.inner = self.inner.destination_configurations(inp);
+            self.inner = self.inner.destination_configurations(input);
             self
         }
-        /// <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept
-        /// client traffic on.</p>
+        /// <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept client traffic on.</p>
         pub fn set_destination_configurations(
             mut self,
             input: std::option::Option<
@@ -1269,14 +1196,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_configurations(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-        /// uniqueness—of the request.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
+        pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-        /// uniqueness—of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1287,9 +1212,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateCustomRoutingListener`.
     ///
-    /// <p>Create a listener to process inbound connections from clients to a custom routing accelerator.
-    /// Connections arrive to assigned static IP addresses on the port range that you specify. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Create a listener to process inbound connections from clients to a custom routing accelerator. Connections arrive to assigned static IP addresses on the port range that you specify. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCustomRoutingListener<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1334,10 +1258,10 @@ pub mod fluent_builders {
                 crate::input::CreateCustomRoutingListenerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1346,8 +1270,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator for a custom routing listener.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator for a custom routing listener.</p>
@@ -1363,15 +1287,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_port_ranges`](Self::set_port_ranges).
         ///
         /// <p>The port range to support for connections from clients to your accelerator.</p>
-        /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
-        /// endpoints for custom routing accelerators</a>.</p>
-        pub fn port_ranges(mut self, inp: impl Into<crate::model::PortRange>) -> Self {
-            self.inner = self.inner.port_ranges(inp);
+        /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
+        pub fn port_ranges(mut self, input: crate::model::PortRange) -> Self {
+            self.inner = self.inner.port_ranges(input);
             self
         }
         /// <p>The port range to support for connections from clients to your accelerator.</p>
-        /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
-        /// endpoints for custom routing accelerators</a>.</p>
+        /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
         pub fn set_port_ranges(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
@@ -1379,14 +1301,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_port_ranges(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-        /// uniqueness—of the request.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
+        pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-        /// uniqueness—of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1397,9 +1317,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateEndpointGroup`.
     ///
-    /// <p>Create an endpoint group for the specified listener. An endpoint group is a collection of endpoints in one AWS
-    /// Region. A resource must be valid and active when you add it as an endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Create an endpoint group for the specified listener. An endpoint group is a collection of endpoints in one AWS Region. A resource must be valid and active when you add it as an endpoint.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEndpointGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1444,10 +1363,10 @@ pub mod fluent_builders {
                 crate::input::CreateEndpointGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1456,8 +1375,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-        pub fn listener_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.listener_arn(inp);
+        pub fn listener_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.listener_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
@@ -1465,14 +1384,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_listener_arn(input);
             self
         }
-        /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a
-        /// specific Region.</p>
-        pub fn endpoint_group_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_group_region(inp);
+        /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
+        pub fn endpoint_group_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_group_region(input.into());
             self
         }
-        /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a
-        /// specific Region.</p>
+        /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
         pub fn set_endpoint_group_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1487,9 +1404,9 @@ pub mod fluent_builders {
         /// <p>The list of endpoint objects.</p>
         pub fn endpoint_configurations(
             mut self,
-            inp: impl Into<crate::model::EndpointConfiguration>,
+            input: crate::model::EndpointConfiguration,
         ) -> Self {
-            self.inner = self.inner.endpoint_configurations(inp);
+            self.inner = self.inner.endpoint_configurations(input);
             self
         }
         /// <p>The list of endpoint objects.</p>
@@ -1500,46 +1417,36 @@ pub mod fluent_builders {
             self.inner = self.inner.set_endpoint_configurations(input);
             self
         }
-        /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for
-        /// this listener. </p>
-        /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is
-        /// applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
+        /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
+        /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
         /// <p>The default value is 100.</p>
-        pub fn traffic_dial_percentage(mut self, inp: f32) -> Self {
-            self.inner = self.inner.traffic_dial_percentage(inp);
+        pub fn traffic_dial_percentage(mut self, input: f32) -> Self {
+            self.inner = self.inner.traffic_dial_percentage(input);
             self
         }
-        /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for
-        /// this listener. </p>
-        /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is
-        /// applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
+        /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
+        /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
         /// <p>The default value is 100.</p>
         pub fn set_traffic_dial_percentage(mut self, input: std::option::Option<f32>) -> Self {
             self.inner = self.inner.set_traffic_dial_percentage(input);
             self
         }
-        /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port
-        /// is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the
-        /// first port in the list.</p>
-        pub fn health_check_port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.health_check_port(inp);
+        /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
+        pub fn health_check_port(mut self, input: i32) -> Self {
+            self.inner = self.inner.health_check_port(input);
             self
         }
-        /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port
-        /// is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the
-        /// first port in the list.</p>
+        /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
         pub fn set_health_check_port(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_health_check_port(input);
             self
         }
-        /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default
-        /// value is TCP.</p>
-        pub fn health_check_protocol(mut self, inp: crate::model::HealthCheckProtocol) -> Self {
-            self.inner = self.inner.health_check_protocol(inp);
+        /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
+        pub fn health_check_protocol(mut self, input: crate::model::HealthCheckProtocol) -> Self {
+            self.inner = self.inner.health_check_protocol(input);
             self
         }
-        /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default
-        /// value is TCP.</p>
+        /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
         pub fn set_health_check_protocol(
             mut self,
             input: std::option::Option<crate::model::HealthCheckProtocol>,
@@ -1547,14 +1454,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_health_check_protocol(input);
             self
         }
-        /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The
-        /// default value is slash (/).</p>
-        pub fn health_check_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.health_check_path(inp);
+        /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>
+        pub fn health_check_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.health_check_path(input.into());
             self
         }
-        /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The
-        /// default value is slash (/).</p>
+        /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>
         pub fn set_health_check_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1563,8 +1468,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.</p>
-        pub fn health_check_interval_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.health_check_interval_seconds(inp);
+        pub fn health_check_interval_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.health_check_interval_seconds(input);
             self
         }
         /// <p>The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.</p>
@@ -1575,26 +1480,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_health_check_interval_seconds(input);
             self
         }
-        /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an
-        /// unhealthy endpoint to healthy. The default value is 3.</p>
-        pub fn threshold_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.threshold_count(inp);
+        /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>
+        pub fn threshold_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.threshold_count(input);
             self
         }
-        /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an
-        /// unhealthy endpoint to healthy. The default value is 3.</p>
+        /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>
         pub fn set_threshold_count(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_threshold_count(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-        /// uniqueness—of the request.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
+        pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-        /// uniqueness—of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1606,22 +1507,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_port_overrides`](Self::set_port_overrides).
         ///
-        /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group.
-        /// For example, you can create a port override in which the listener
-        /// receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080
-        /// and 1443, respectively, on the endpoints.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
-        /// Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-        pub fn port_overrides(mut self, inp: impl Into<crate::model::PortOverride>) -> Self {
-            self.inner = self.inner.port_overrides(inp);
+        /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        pub fn port_overrides(mut self, input: crate::model::PortOverride) -> Self {
+            self.inner = self.inner.port_overrides(input);
             self
         }
-        /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group.
-        /// For example, you can create a port override in which the listener
-        /// receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080
-        /// and 1443, respectively, on the endpoints.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
-        /// Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_port_overrides(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PortOverride>>,
@@ -1632,9 +1525,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateListener`.
     ///
-    /// <p>Create a listener to process inbound connections from clients to an accelerator. Connections arrive to assigned static
-    /// IP addresses on a port, port range, or list of port ranges that you specify. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Create a listener to process inbound connections from clients to an accelerator. Connections arrive to assigned static IP addresses on a port, port range, or list of port ranges that you specify. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateListener<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1679,10 +1571,10 @@ pub mod fluent_builders {
                 crate::input::CreateListenerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1691,8 +1583,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of your accelerator.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of your accelerator.</p>
@@ -1708,8 +1600,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_port_ranges`](Self::set_port_ranges).
         ///
         /// <p>The list of port ranges to support for connections from clients to your accelerator.</p>
-        pub fn port_ranges(mut self, inp: impl Into<crate::model::PortRange>) -> Self {
-            self.inner = self.inner.port_ranges(inp);
+        pub fn port_ranges(mut self, input: crate::model::PortRange) -> Self {
+            self.inner = self.inner.port_ranges(input);
             self
         }
         /// <p>The list of port ranges to support for connections from clients to your accelerator.</p>
@@ -1721,8 +1613,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The protocol for connections from clients to your accelerator.</p>
-        pub fn protocol(mut self, inp: crate::model::Protocol) -> Self {
-            self.inner = self.inner.protocol(inp);
+        pub fn protocol(mut self, input: crate::model::Protocol) -> Self {
+            self.inner = self.inner.protocol(input);
             self
         }
         /// <p>The protocol for connections from clients to your accelerator.</p>
@@ -1730,33 +1622,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_protocol(input);
             self
         }
-        /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications,
-        /// regardless of the port and protocol of the client request. Client affinity gives you control over whether to always
-        /// route each client to the same specific endpoint.</p>
-        /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client
-        /// affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port,
-        /// destination IP address, destination port, and protocol—to select the hash value, and then chooses the best
-        /// endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not
-        /// be always routed to the same endpoint because the hash value changes. </p>
-        /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code>
-        /// instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties—
-        /// source (client) IP address and destination IP address—to select the hash value.</p>
+        /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Client affinity gives you control over whether to always route each client to the same specific endpoint.</p>
+        /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p>
+        /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.</p>
         /// <p>The default value is <code>NONE</code>.</p>
-        pub fn client_affinity(mut self, inp: crate::model::ClientAffinity) -> Self {
-            self.inner = self.inner.client_affinity(inp);
+        pub fn client_affinity(mut self, input: crate::model::ClientAffinity) -> Self {
+            self.inner = self.inner.client_affinity(input);
             self
         }
-        /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications,
-        /// regardless of the port and protocol of the client request. Client affinity gives you control over whether to always
-        /// route each client to the same specific endpoint.</p>
-        /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client
-        /// affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port,
-        /// destination IP address, destination port, and protocol—to select the hash value, and then chooses the best
-        /// endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not
-        /// be always routed to the same endpoint because the hash value changes. </p>
-        /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code>
-        /// instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties—
-        /// source (client) IP address and destination IP address—to select the hash value.</p>
+        /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Client affinity gives you control over whether to always route each client to the same specific endpoint.</p>
+        /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p>
+        /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.</p>
         /// <p>The default value is <code>NONE</code>.</p>
         pub fn set_client_affinity(
             mut self,
@@ -1765,14 +1641,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_affinity(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-        /// uniqueness—of the request.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
+        pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
-        /// uniqueness—of the request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1783,21 +1657,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAccelerator`.
     ///
-    /// <p>Delete an accelerator. Before you can delete an accelerator, you must disable it and remove all dependent resources
-    /// (listeners and endpoint groups). To disable the accelerator, update the accelerator to set <code>Enabled</code> to false.</p>
-    /// <important>
-    /// <p>When you create an accelerator, by default, Global Accelerator provides you with a set of two static IP addresses.
-    /// Alternatively, you can bring your own IP address ranges to Global Accelerator and assign IP addresses from those ranges.
-    /// </p>
-    /// <p>The IP addresses are assigned to your accelerator for as long as it exists, even if you disable the accelerator and
-    /// it no longer accepts or routes traffic. However, when you <i>delete</i> an accelerator, you lose the
-    /// static IP addresses that are assigned to the accelerator, so you can no longer route traffic by using them.
-    /// As a best practice, ensure that you have permissions in place to avoid inadvertently deleting accelerators. You
-    /// can use IAM policies with Global Accelerator to limit the users who have permissions to delete an accelerator. For more information,
-    /// see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html">Authentication and Access Control</a> in
-    /// the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    /// <p>Delete an accelerator. Before you can delete an accelerator, you must disable it and remove all dependent resources (listeners and endpoint groups). To disable the accelerator, update the accelerator to set <code>Enabled</code> to false.</p> <important>
+    /// <p>When you create an accelerator, by default, Global Accelerator provides you with a set of two static IP addresses. Alternatively, you can bring your own IP address ranges to Global Accelerator and assign IP addresses from those ranges. </p>
+    /// <p>The IP addresses are assigned to your accelerator for as long as it exists, even if you disable the accelerator and it no longer accepts or routes traffic. However, when you <i>delete</i> an accelerator, you lose the static IP addresses that are assigned to the accelerator, so you can no longer route traffic by using them. As a best practice, ensure that you have permissions in place to avoid inadvertently deleting accelerators. You can use IAM policies with Global Accelerator to limit the users who have permissions to delete an accelerator. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html">Authentication and Access Control</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAccelerator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1842,10 +1706,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAcceleratorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1854,8 +1718,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of an accelerator.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an accelerator.</p>
@@ -1869,21 +1733,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteCustomRoutingAccelerator`.
     ///
-    /// <p>Delete a custom routing accelerator. Before you can delete an accelerator, you must disable it and remove all dependent resources
-    /// (listeners and endpoint groups). To disable the accelerator, update the accelerator to set <code>Enabled</code> to false.</p>
-    /// <important>
-    /// <p>When you create a custom routing accelerator, by default, Global Accelerator provides you with a set of two static IP addresses.
-    /// </p>
-    /// <p>The IP
-    /// addresses are assigned to your accelerator for as long as it exists, even if you disable the accelerator and
-    /// it no longer accepts or routes traffic. However, when you <i>delete</i> an accelerator, you lose the
-    /// static IP addresses that are assigned to the accelerator, so you can no longer route traffic by using them.
-    /// As a best practice, ensure that you have permissions in place to avoid inadvertently deleting accelerators. You
-    /// can use IAM policies with Global Accelerator to limit the users who have permissions to delete an accelerator. For more information,
-    /// see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html">Authentication and Access Control</a> in
-    /// the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    /// <p>Delete a custom routing accelerator. Before you can delete an accelerator, you must disable it and remove all dependent resources (listeners and endpoint groups). To disable the accelerator, update the accelerator to set <code>Enabled</code> to false.</p> <important>
+    /// <p>When you create a custom routing accelerator, by default, Global Accelerator provides you with a set of two static IP addresses. </p>
+    /// <p>The IP addresses are assigned to your accelerator for as long as it exists, even if you disable the accelerator and it no longer accepts or routes traffic. However, when you <i>delete</i> an accelerator, you lose the static IP addresses that are assigned to the accelerator, so you can no longer route traffic by using them. As a best practice, ensure that you have permissions in place to avoid inadvertently deleting accelerators. You can use IAM policies with Global Accelerator to limit the users who have permissions to delete an accelerator. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html">Authentication and Access Control</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCustomRoutingAccelerator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1928,10 +1782,10 @@ pub mod fluent_builders {
                 crate::input::DeleteCustomRoutingAcceleratorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1940,8 +1794,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to delete.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to delete.</p>
@@ -1956,7 +1810,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCustomRoutingEndpointGroup`.
     ///
     /// <p>Delete an endpoint group from a listener for a custom routing accelerator.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCustomRoutingEndpointGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2001,10 +1855,10 @@ pub mod fluent_builders {
                 crate::input::DeleteCustomRoutingEndpointGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2013,8 +1867,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
-        pub fn endpoint_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_group_arn(inp);
+        pub fn endpoint_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_group_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
@@ -2029,7 +1883,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCustomRoutingListener`.
     ///
     /// <p>Delete a listener for a custom routing accelerator.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCustomRoutingListener<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2074,10 +1928,10 @@ pub mod fluent_builders {
                 crate::input::DeleteCustomRoutingListenerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2086,8 +1940,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the listener to delete.</p>
-        pub fn listener_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.listener_arn(inp);
+        pub fn listener_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.listener_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the listener to delete.</p>
@@ -2099,7 +1953,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEndpointGroup`.
     ///
     /// <p>Delete an endpoint group from a listener.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEndpointGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2144,10 +1998,10 @@ pub mod fluent_builders {
                 crate::input::DeleteEndpointGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2156,8 +2010,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
-        pub fn endpoint_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_group_arn(inp);
+        pub fn endpoint_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_group_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
@@ -2172,7 +2026,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteListener`.
     ///
     /// <p>Delete a listener from an accelerator.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteListener<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2217,10 +2071,10 @@ pub mod fluent_builders {
                 crate::input::DeleteListenerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2229,8 +2083,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-        pub fn listener_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.listener_arn(inp);
+        pub fn listener_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.listener_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
@@ -2241,13 +2095,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DenyCustomRoutingTraffic`.
     ///
-    /// <p>Specify the Amazon EC2 instance (destination) IP addresses and ports for a VPC subnet endpoint that cannot receive traffic
-    /// for a custom routing accelerator. You can deny traffic to all destinations in the VPC endpoint, or deny traffic to a
-    /// specified list of destination IP addresses and ports. Note that you cannot specify IP addresses
-    /// or ports outside of the range that you configured for the endpoint group.</p>
-    /// <p>After you make changes, you can verify that the updates are complete by checking the status of your
-    /// accelerator: the status changes from IN_PROGRESS to DEPLOYED.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Specify the Amazon EC2 instance (destination) IP addresses and ports for a VPC subnet endpoint that cannot receive traffic for a custom routing accelerator. You can deny traffic to all destinations in the VPC endpoint, or deny traffic to a specified list of destination IP addresses and ports. Note that you cannot specify IP addresses or ports outside of the range that you configured for the endpoint group.</p>
+    /// <p>After you make changes, you can verify that the updates are complete by checking the status of your accelerator: the status changes from IN_PROGRESS to DEPLOYED.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DenyCustomRoutingTraffic<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2292,10 +2142,10 @@ pub mod fluent_builders {
                 crate::input::DenyCustomRoutingTrafficInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2304,8 +2154,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-        pub fn endpoint_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_group_arn(inp);
+        pub fn endpoint_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_group_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
@@ -2317,8 +2167,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.</p>
-        pub fn endpoint_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_id(inp);
+        pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_id(input.into());
             self
         }
         /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.</p>
@@ -2330,16 +2180,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_destination_addresses`](Self::set_destination_addresses).
         ///
-        /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to prevent from receiving
-        /// traffic. The IP addresses must be a subset of the IP addresses allowed for the VPC subnet associated with the
-        /// endpoint group.</p>
-        pub fn destination_addresses(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_addresses(inp);
+        /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to prevent from receiving traffic. The IP addresses must be a subset of the IP addresses allowed for the VPC subnet associated with the endpoint group.</p>
+        pub fn destination_addresses(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_addresses(input.into());
             self
         }
-        /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to prevent from receiving
-        /// traffic. The IP addresses must be a subset of the IP addresses allowed for the VPC subnet associated with the
-        /// endpoint group.</p>
+        /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to prevent from receiving traffic. The IP addresses must be a subset of the IP addresses allowed for the VPC subnet associated with the endpoint group.</p>
         pub fn set_destination_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2351,14 +2197,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_destination_ports`](Self::set_destination_ports).
         ///
-        /// <p>A list of specific Amazon EC2 instance ports (destination ports) in a subnet endpoint that you want to prevent from
-        /// receiving traffic.</p>
-        pub fn destination_ports(mut self, inp: impl Into<i32>) -> Self {
-            self.inner = self.inner.destination_ports(inp);
+        /// <p>A list of specific Amazon EC2 instance ports (destination ports) in a subnet endpoint that you want to prevent from receiving traffic.</p>
+        pub fn destination_ports(mut self, input: i32) -> Self {
+            self.inner = self.inner.destination_ports(input);
             self
         }
-        /// <p>A list of specific Amazon EC2 instance ports (destination ports) in a subnet endpoint that you want to prevent from
-        /// receiving traffic.</p>
+        /// <p>A list of specific Amazon EC2 instance ports (destination ports) in a subnet endpoint that you want to prevent from receiving traffic.</p>
         pub fn set_destination_ports(
             mut self,
             input: std::option::Option<std::vec::Vec<i32>>,
@@ -2366,25 +2210,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_ports(input);
             self
         }
-        /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint <i>cannot</i>
-        /// receive traffic from a custom routing accelerator. The value is TRUE or FALSE. </p>
-        /// <p>When set to TRUE, <i>no</i> destinations in the custom routing VPC subnet can receive traffic. Note
-        /// that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
-        /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that cannot receive
-        /// traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is
-        /// the same as the ports configured for the endpoint group.</p>
+        /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint <i>cannot</i> receive traffic from a custom routing accelerator. The value is TRUE or FALSE. </p>
+        /// <p>When set to TRUE, <i>no</i> destinations in the custom routing VPC subnet can receive traffic. Note that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
+        /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that cannot receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is the same as the ports configured for the endpoint group.</p>
         /// <p>The default value is FALSE.</p>
-        pub fn deny_all_traffic_to_endpoint(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deny_all_traffic_to_endpoint(inp);
+        pub fn deny_all_traffic_to_endpoint(mut self, input: bool) -> Self {
+            self.inner = self.inner.deny_all_traffic_to_endpoint(input);
             self
         }
-        /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint <i>cannot</i>
-        /// receive traffic from a custom routing accelerator. The value is TRUE or FALSE. </p>
-        /// <p>When set to TRUE, <i>no</i> destinations in the custom routing VPC subnet can receive traffic. Note
-        /// that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
-        /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that cannot receive
-        /// traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is
-        /// the same as the ports configured for the endpoint group.</p>
+        /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint <i>cannot</i> receive traffic from a custom routing accelerator. The value is TRUE or FALSE. </p>
+        /// <p>When set to TRUE, <i>no</i> destinations in the custom routing VPC subnet can receive traffic. Note that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
+        /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that cannot receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is the same as the ports configured for the endpoint group.</p>
         /// <p>The default value is FALSE.</p>
         pub fn set_deny_all_traffic_to_endpoint(
             mut self,
@@ -2396,14 +2232,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeprovisionByoipCidr`.
     ///
-    /// <p>Releases the specified address range that you provisioned to use with your AWS resources
-    /// through bring your own IP addresses (BYOIP) and deletes the corresponding address pool. </p>
-    /// <p>Before you can release an address range, you must stop advertising it by using <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/WithdrawByoipCidr.html">WithdrawByoipCidr</a> and you must not have
-    /// any accelerators that are using static IP addresses allocated from its address range.
-    /// </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own
-    /// IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Releases the specified address range that you provisioned to use with your AWS resources through bring your own IP addresses (BYOIP) and deletes the corresponding address pool. </p>
+    /// <p>Before you can release an address range, you must stop advertising it by using <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/WithdrawByoipCidr.html">WithdrawByoipCidr</a> and you must not have any accelerators that are using static IP addresses allocated from its address range. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeprovisionByoipCidr<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2448,10 +2280,10 @@ pub mod fluent_builders {
                 crate::input::DeprovisionByoipCidrInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2459,14 +2291,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified
-        /// when you provisioned the address range.</p>
-        pub fn cidr(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cidr(inp);
+        /// <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified when you provisioned the address range.</p>
+        pub fn cidr(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cidr(input.into());
             self
         }
-        /// <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified
-        /// when you provisioned the address range.</p>
+        /// <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified when you provisioned the address range.</p>
         pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cidr(input);
             self
@@ -2475,7 +2305,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAccelerator`.
     ///
     /// <p>Describe an accelerator. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccelerator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2520,10 +2350,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAcceleratorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2532,8 +2362,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
@@ -2547,9 +2377,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAcceleratorAttributes`.
     ///
-    /// <p>Describe the attributes of an accelerator.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describe the attributes of an accelerator. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAcceleratorAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2594,10 +2423,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAcceleratorAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2606,8 +2435,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe.</p>
@@ -2622,7 +2451,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCustomRoutingAccelerator`.
     ///
     /// <p>Describe a custom routing accelerator. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCustomRoutingAccelerator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2667,10 +2496,10 @@ pub mod fluent_builders {
                 crate::input::DescribeCustomRoutingAcceleratorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2679,8 +2508,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
@@ -2695,7 +2524,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCustomRoutingAcceleratorAttributes`.
     ///
     /// <p>Describe the attributes of a custom routing accelerator. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCustomRoutingAcceleratorAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2742,10 +2571,10 @@ pub mod fluent_builders {
                 crate::input::DescribeCustomRoutingAcceleratorAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2754,8 +2583,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to describe the attributes for.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to describe the attributes for.</p>
@@ -2770,7 +2599,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCustomRoutingEndpointGroup`.
     ///
     /// <p>Describe an endpoint group for a custom routing accelerator. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCustomRoutingEndpointGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2817,10 +2646,10 @@ pub mod fluent_builders {
                 crate::input::DescribeCustomRoutingEndpointGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2829,8 +2658,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
-        pub fn endpoint_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_group_arn(inp);
+        pub fn endpoint_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_group_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
@@ -2845,7 +2674,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCustomRoutingListener`.
     ///
     /// <p>The description of a listener for a custom routing accelerator.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCustomRoutingListener<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2890,10 +2719,10 @@ pub mod fluent_builders {
                 crate::input::DescribeCustomRoutingListenerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2902,8 +2731,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
-        pub fn listener_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.listener_arn(inp);
+        pub fn listener_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.listener_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
@@ -2915,7 +2744,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEndpointGroup`.
     ///
     /// <p>Describe an endpoint group. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEndpointGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2960,10 +2789,10 @@ pub mod fluent_builders {
                 crate::input::DescribeEndpointGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2972,8 +2801,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
-        pub fn endpoint_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_group_arn(inp);
+        pub fn endpoint_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_group_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
@@ -2988,7 +2817,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeListener`.
     ///
     /// <p>Describe a listener. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeListener<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3033,10 +2862,10 @@ pub mod fluent_builders {
                 crate::input::DescribeListenerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3045,8 +2874,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
-        pub fn listener_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.listener_arn(inp);
+        pub fn listener_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.listener_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
@@ -3058,7 +2887,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAccelerators`.
     ///
     /// <p>List the accelerators for an AWS account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccelerators<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3103,10 +2932,10 @@ pub mod fluent_builders {
                 crate::input::ListAcceleratorsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3114,9 +2943,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAcceleratorsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAcceleratorsPaginator<C, M, R> {
+            crate::paginator::ListAcceleratorsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The number of Global Accelerator objects that you want to return with this call. The default value is 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of Global Accelerator objects that you want to return with this call. The default value is 10.</p>
@@ -3125,8 +2960,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -3137,9 +2972,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListByoipCidrs`.
     ///
-    /// <p>Lists the IP address ranges that were specified in calls to <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/ProvisionByoipCidr.html">ProvisionByoipCidr</a>, including
-    /// the current state and a history of state changes.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the IP address ranges that were specified in calls to <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/ProvisionByoipCidr.html">ProvisionByoipCidr</a>, including the current state and a history of state changes.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListByoipCidrs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3184,10 +3018,10 @@ pub mod fluent_builders {
                 crate::input::ListByoipCidrsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3195,21 +3029,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make
-        /// another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListByoipCidrsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListByoipCidrsPaginator<C, M, R> {
+            crate::paginator::ListByoipCidrsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make
-        /// another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -3221,7 +3059,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCustomRoutingAccelerators`.
     ///
     /// <p>List the custom routing accelerators for an AWS account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCustomRoutingAccelerators<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3266,10 +3104,10 @@ pub mod fluent_builders {
                 crate::input::ListCustomRoutingAcceleratorsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3277,9 +3115,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCustomRoutingAcceleratorsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListCustomRoutingAcceleratorsPaginator<C, M, R> {
+            crate::paginator::ListCustomRoutingAcceleratorsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The number of custom routing Global Accelerator objects that you want to return with this call. The default value is 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of custom routing Global Accelerator objects that you want to return with this call. The default value is 10.</p>
@@ -3288,8 +3134,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -3301,7 +3147,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCustomRoutingEndpointGroups`.
     ///
     /// <p>List the endpoint groups that are associated with a listener for a custom routing accelerator. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCustomRoutingEndpointGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3346,10 +3192,10 @@ pub mod fluent_builders {
                 crate::input::ListCustomRoutingEndpointGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3357,9 +3203,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCustomRoutingEndpointGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListCustomRoutingEndpointGroupsPaginator<C, M, R> {
+            crate::paginator::ListCustomRoutingEndpointGroupsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) of the listener to list endpoint groups for.</p>
-        pub fn listener_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.listener_arn(inp);
+        pub fn listener_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.listener_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the listener to list endpoint groups for.</p>
@@ -3368,8 +3222,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of endpoint group objects that you want to return with this call. The default value is 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of endpoint group objects that you want to return with this call. The default value is 10.</p>
@@ -3378,8 +3232,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -3391,7 +3245,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCustomRoutingListeners`.
     ///
     /// <p>List the listeners for a custom routing accelerator. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCustomRoutingListeners<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3436,10 +3290,10 @@ pub mod fluent_builders {
                 crate::input::ListCustomRoutingListenersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3447,9 +3301,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCustomRoutingListenersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListCustomRoutingListenersPaginator<C, M, R> {
+            crate::paginator::ListCustomRoutingListenersPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) of the accelerator to list listeners for.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator to list listeners for.</p>
@@ -3461,8 +3323,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of listener objects that you want to return with this call. The default value is 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of listener objects that you want to return with this call. The default value is 10.</p>
@@ -3471,8 +3333,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -3483,16 +3345,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListCustomRoutingPortMappings`.
     ///
-    /// <p>Provides a complete mapping from the public accelerator IP address and port to destination EC2 instance
-    /// IP addresses and ports in the virtual public cloud (VPC) subnet endpoint for a custom routing accelerator.
-    /// For each subnet endpoint that you add, Global Accelerator creates a new static port mapping for the accelerator. The port
-    /// mappings don't change after Global Accelerator generates them, so you can retrieve and cache the full mapping on your servers. </p>
-    /// <p>If you remove a subnet from your accelerator, Global Accelerator removes (reclaims) the port mappings. If you add a subnet to
-    /// your accelerator, Global Accelerator creates new port mappings (the existing ones don't change). If you add or remove EC2 instances
-    /// in your subnet, the port mappings don't change, because the mappings are created when you add the subnet to Global Accelerator.</p>
-    /// <p>The mappings also include a flag for each destination denoting which destination IP addresses and
-    /// ports are allowed or denied traffic.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Provides a complete mapping from the public accelerator IP address and port to destination EC2 instance IP addresses and ports in the virtual public cloud (VPC) subnet endpoint for a custom routing accelerator. For each subnet endpoint that you add, Global Accelerator creates a new static port mapping for the accelerator. The port mappings don't change after Global Accelerator generates them, so you can retrieve and cache the full mapping on your servers. </p>
+    /// <p>If you remove a subnet from your accelerator, Global Accelerator removes (reclaims) the port mappings. If you add a subnet to your accelerator, Global Accelerator creates new port mappings (the existing ones don't change). If you add or remove EC2 instances in your subnet, the port mappings don't change, because the mappings are created when you add the subnet to Global Accelerator.</p>
+    /// <p>The mappings also include a flag for each destination denoting which destination IP addresses and ports are allowed or denied traffic.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCustomRoutingPortMappings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3537,10 +3393,10 @@ pub mod fluent_builders {
                 crate::input::ListCustomRoutingPortMappingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3548,9 +3404,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCustomRoutingPortMappingsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListCustomRoutingPortMappingsPaginator<C, M, R> {
+            crate::paginator::ListCustomRoutingPortMappingsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) of the accelerator to list the custom routing port mappings for.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator to list the custom routing port mappings for.</p>
@@ -3562,8 +3426,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group to list the custom routing port mappings for.</p>
-        pub fn endpoint_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_group_arn(inp);
+        pub fn endpoint_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_group_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group to list the custom routing port mappings for.</p>
@@ -3575,8 +3439,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of destination port mappings that you want to return with this call. The default value is 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of destination port mappings that you want to return with this call. The default value is 10.</p>
@@ -3585,8 +3449,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -3597,11 +3461,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListCustomRoutingPortMappingsByDestination`.
     ///
-    /// <p>List the port mappings for a specific EC2 instance (destination) in a VPC subnet endpoint. The
-    /// response is the mappings for one destination IP address. This is useful when your subnet endpoint has mappings that
-    /// span multiple custom routing accelerators in your account, or for scenarios where you only want to
-    /// list the port mappings for a specific destination instance.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>List the port mappings for a specific EC2 instance (destination) in a VPC subnet endpoint. The response is the mappings for one destination IP address. This is useful when your subnet endpoint has mappings that span multiple custom routing accelerators in your account, or for scenarios where you only want to list the port mappings for a specific destination instance.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCustomRoutingPortMappingsByDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3648,10 +3509,10 @@ pub mod fluent_builders {
                 crate::input::ListCustomRoutingPortMappingsByDestinationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3659,9 +3520,21 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCustomRoutingPortMappingsByDestinationPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListCustomRoutingPortMappingsByDestinationPaginator<C, M, R>
+        {
+            crate::paginator::ListCustomRoutingPortMappingsByDestinationPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The ID for the virtual private cloud (VPC) subnet.</p>
-        pub fn endpoint_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_id(inp);
+        pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_id(input.into());
             self
         }
         /// <p>The ID for the virtual private cloud (VPC) subnet.</p>
@@ -3669,14 +3542,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_endpoint_id(input);
             self
         }
-        /// <p>The endpoint IP address in a virtual private cloud (VPC) subnet for which you want to receive back port
-        /// mappings.</p>
-        pub fn destination_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_address(inp);
+        /// <p>The endpoint IP address in a virtual private cloud (VPC) subnet for which you want to receive back port mappings.</p>
+        pub fn destination_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_address(input.into());
             self
         }
-        /// <p>The endpoint IP address in a virtual private cloud (VPC) subnet for which you want to receive back port
-        /// mappings.</p>
+        /// <p>The endpoint IP address in a virtual private cloud (VPC) subnet for which you want to receive back port mappings.</p>
         pub fn set_destination_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3685,8 +3556,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of destination port mappings that you want to return with this call. The default value is 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of destination port mappings that you want to return with this call. The default value is 10.</p>
@@ -3695,8 +3566,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -3708,7 +3579,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEndpointGroups`.
     ///
     /// <p>List the endpoint groups that are associated with a listener. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEndpointGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3753,10 +3624,10 @@ pub mod fluent_builders {
                 crate::input::ListEndpointGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3764,9 +3635,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEndpointGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListEndpointGroupsPaginator<C, M, R> {
+            crate::paginator::ListEndpointGroupsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-        pub fn listener_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.listener_arn(inp);
+        pub fn listener_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.listener_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
@@ -3775,8 +3652,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of endpoint group objects that you want to return with this call. The default value is 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of endpoint group objects that you want to return with this call. The default value is 10.</p>
@@ -3785,8 +3662,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -3798,7 +3675,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListListeners`.
     ///
     /// <p>List the listeners for an accelerator. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListListeners<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3843,10 +3720,10 @@ pub mod fluent_builders {
                 crate::input::ListListenersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3854,9 +3731,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListListenersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListListenersPaginator<C, M, R> {
+            crate::paginator::ListListenersPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) of the accelerator for which you want to list listener objects.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator for which you want to list listener objects.</p>
@@ -3868,8 +3751,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of listener objects that you want to return with this call. The default value is 10.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of listener objects that you want to return with this call. The default value is 10.</p>
@@ -3878,8 +3761,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -3891,9 +3774,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>List all tags for an accelerator. </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
-    /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3938,10 +3820,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3950,8 +3832,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator to list tags for. An ARN uniquely identifies an accelerator.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator to list tags for. An ARN uniquely identifies an accelerator.</p>
@@ -3962,13 +3844,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ProvisionByoipCidr`.
     ///
-    /// <p>Provisions an IP address range to use with your AWS resources through bring your own IP
-    /// addresses (BYOIP) and creates a corresponding address pool. After the address range is provisioned,
-    /// it is ready to be advertised using <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/AdvertiseByoipCidr.html">
-    /// AdvertiseByoipCidr</a>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own
-    /// IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Provisions an IP address range to use with your AWS resources through bring your own IP addresses (BYOIP) and creates a corresponding address pool. After the address range is provisioned, it is ready to be advertised using <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/AdvertiseByoipCidr.html"> AdvertiseByoipCidr</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ProvisionByoipCidr<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4013,10 +3891,10 @@ pub mod fluent_builders {
                 crate::input::ProvisionByoipCidrInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4024,33 +3902,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can
-        /// specify is /24. The address range cannot overlap with another address range that you've brought
-        /// to this or another Region.</p>
-        pub fn cidr(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cidr(inp);
+        /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
+        pub fn cidr(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cidr(input.into());
             self
         }
-        /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can
-        /// specify is /24. The address range cannot overlap with another address range that you've brought
-        /// to this or another Region.</p>
+        /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
         pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cidr(input);
             self
         }
-        /// <p>A signed document that proves that you are authorized to bring the specified IP address range to
-        /// Amazon using BYOIP.
-        /// </p>
+        /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. </p>
         pub fn cidr_authorization_context(
             mut self,
-            inp: crate::model::CidrAuthorizationContext,
+            input: crate::model::CidrAuthorizationContext,
         ) -> Self {
-            self.inner = self.inner.cidr_authorization_context(inp);
+            self.inner = self.inner.cidr_authorization_context(input);
             self
         }
-        /// <p>A signed document that proves that you are authorized to bring the specified IP address range to
-        /// Amazon using BYOIP.
-        /// </p>
+        /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. </p>
         pub fn set_cidr_authorization_context(
             mut self,
             input: std::option::Option<crate::model::CidrAuthorizationContext>,
@@ -4062,7 +3932,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveCustomRoutingEndpoints`.
     ///
     /// <p>Remove endpoints from a custom routing accelerator.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveCustomRoutingEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4107,10 +3977,10 @@ pub mod fluent_builders {
                 crate::input::RemoveCustomRoutingEndpointsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4122,14 +3992,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_endpoint_ids`](Self::set_endpoint_ids).
         ///
-        /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC)
-        /// subnet IDs. </p>
-        pub fn endpoint_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_ids(inp);
+        /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs. </p>
+        pub fn endpoint_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_ids(input.into());
             self
         }
-        /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC)
-        /// subnet IDs. </p>
+        /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs. </p>
         pub fn set_endpoint_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4138,8 +4006,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group to remove endpoints from.</p>
-        pub fn endpoint_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_group_arn(inp);
+        pub fn endpoint_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_group_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group to remove endpoints from.</p>
@@ -4154,9 +4022,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Add tags to an accelerator resource. </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
-    /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4201,10 +4068,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4213,8 +4080,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Global Accelerator resource to add tags to. An ARN uniquely identifies a resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Global Accelerator resource to add tags to. An ARN uniquely identifies a resource.</p>
@@ -4227,8 +4094,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add to a resource. A tag consists of a key and a value that you define.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to add to a resource. A tag consists of a key and a value that you define.</p>
@@ -4242,11 +4109,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Remove tags from a Global Accelerator resource. When you specify a tag key, the action removes both that key and its associated value.
-    /// The operation succeeds even if you attempt to remove tags from an accelerator that was already removed.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
-    /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Remove tags from a Global Accelerator resource. When you specify a tag key, the action removes both that key and its associated value. The operation succeeds even if you attempt to remove tags from an accelerator that was already removed.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4291,10 +4156,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4303,8 +4168,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Global Accelerator resource to remove tags from. An ARN uniquely identifies a resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Global Accelerator resource to remove tags from. An ARN uniquely identifies a resource.</p>
@@ -4317,8 +4182,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag key pairs that you want to remove from the specified resources.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag key pairs that you want to remove from the specified resources.</p>
@@ -4332,13 +4197,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateAccelerator`.
     ///
-    /// <p>Update an accelerator. </p>
-    ///
-    /// <important>
-    /// <p>Global Accelerator is a global service that supports endpoints in multiple AWS Regions but you must specify the
-    /// US West (Oregon) Region to create or update accelerators.</p>
+    /// <p>Update an accelerator. </p> <important>
+    /// <p>Global Accelerator is a global service that supports endpoints in multiple AWS Regions but you must specify the US West (Oregon) Region to create or update accelerators.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAccelerator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4383,10 +4245,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAcceleratorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4395,8 +4257,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
@@ -4407,21 +4269,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_accelerator_arn(input);
             self
         }
-        /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
-        /// hyphens (-), and must not begin or end with a hyphen.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
-        /// hyphens (-), and must not begin or end with a hyphen.</p>
+        /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The IP address type, which must be IPv4.</p>
-        pub fn ip_address_type(mut self, inp: crate::model::IpAddressType) -> Self {
-            self.inner = self.inner.ip_address_type(inp);
+        pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
+            self.inner = self.inner.ip_address_type(input);
             self
         }
         /// <p>The IP address type, which must be IPv4.</p>
@@ -4434,8 +4294,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
         /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enabled(inp);
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.enabled(input);
             self
         }
         /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
@@ -4448,7 +4308,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAcceleratorAttributes`.
     ///
     /// <p>Update the attributes for an accelerator. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAcceleratorAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4493,10 +4353,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAcceleratorAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4505,8 +4365,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.</p>
@@ -4517,32 +4377,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_accelerator_arn(input);
             self
         }
-        /// <p>Update whether flow logs are enabled. The default value is false. If the value is true,
-        /// <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in
-        /// the <i>AWS Global Accelerator Developer Guide</i>.</p>
-        pub fn flow_logs_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.flow_logs_enabled(inp);
+        /// <p>Update whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        pub fn flow_logs_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.flow_logs_enabled(input);
             self
         }
-        /// <p>Update whether flow logs are enabled. The default value is false. If the value is true,
-        /// <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in
-        /// the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>Update whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_flow_logs_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_flow_logs_enabled(input);
             self
         }
-        /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
-        /// <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the
-        /// bucket.</p>
-        pub fn flow_logs_s3_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_logs_s3_bucket(inp);
+        /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the bucket.</p>
+        pub fn flow_logs_s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_logs_s3_bucket(input.into());
             self
         }
-        /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
-        /// <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the
-        /// bucket.</p>
+        /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the bucket.</p>
         pub fn set_flow_logs_s3_bucket(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4550,19 +4402,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_flow_logs_s3_bucket(input);
             self
         }
-        /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
-        /// <code>FlowLogsEnabled</code> is <code>true</code>. </p>
-        /// <p>If you don’t specify a prefix, the flow logs are stored in the
-        /// root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
+        /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
+        /// <p>If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
         /// <p>s3-bucket_name//AWSLogs/aws_account_id</p>
-        pub fn flow_logs_s3_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_logs_s3_prefix(inp);
+        pub fn flow_logs_s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_logs_s3_prefix(input.into());
             self
         }
-        /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
-        /// <code>FlowLogsEnabled</code> is <code>true</code>. </p>
-        /// <p>If you don’t specify a prefix, the flow logs are stored in the
-        /// root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
+        /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
+        /// <p>If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
         /// <p>s3-bucket_name//AWSLogs/aws_account_id</p>
         pub fn set_flow_logs_s3_prefix(
             mut self,
@@ -4575,7 +4423,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCustomRoutingAccelerator`.
     ///
     /// <p>Update a custom routing accelerator. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCustomRoutingAccelerator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4620,10 +4468,10 @@ pub mod fluent_builders {
                 crate::input::UpdateCustomRoutingAcceleratorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4632,8 +4480,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
@@ -4644,21 +4492,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_accelerator_arn(input);
             self
         }
-        /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
-        /// hyphens (-), and must not begin or end with a hyphen.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
-        /// hyphens (-), and must not begin or end with a hyphen.</p>
+        /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The value for the address type must be IPv4.</p>
-        pub fn ip_address_type(mut self, inp: crate::model::IpAddressType) -> Self {
-            self.inner = self.inner.ip_address_type(inp);
+        pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
+            self.inner = self.inner.ip_address_type(input);
             self
         }
         /// <p>The value for the address type must be IPv4.</p>
@@ -4671,8 +4517,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
         /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enabled(inp);
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.enabled(input);
             self
         }
         /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
@@ -4685,7 +4531,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCustomRoutingAcceleratorAttributes`.
     ///
     /// <p>Update the attributes for a custom routing accelerator. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCustomRoutingAcceleratorAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4732,10 +4578,10 @@ pub mod fluent_builders {
                 crate::input::UpdateCustomRoutingAcceleratorAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4744,8 +4590,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to update attributes for.</p>
-        pub fn accelerator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_arn(inp);
+        pub fn accelerator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to update attributes for.</p>
@@ -4756,32 +4602,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_accelerator_arn(input);
             self
         }
-        /// <p>Update whether flow logs are enabled. The default value is false. If the value is true,
-        /// <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in
-        /// the <i>AWS Global Accelerator Developer Guide</i>.</p>
-        pub fn flow_logs_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.flow_logs_enabled(inp);
+        /// <p>Update whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        pub fn flow_logs_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.flow_logs_enabled(input);
             self
         }
-        /// <p>Update whether flow logs are enabled. The default value is false. If the value is true,
-        /// <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in
-        /// the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>Update whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_flow_logs_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_flow_logs_enabled(input);
             self
         }
-        /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
-        /// <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the
-        /// bucket.</p>
-        pub fn flow_logs_s3_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_logs_s3_bucket(inp);
+        /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the bucket.</p>
+        pub fn flow_logs_s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_logs_s3_bucket(input.into());
             self
         }
-        /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
-        /// <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the
-        /// bucket.</p>
+        /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the bucket.</p>
         pub fn set_flow_logs_s3_bucket(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4789,19 +4627,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_flow_logs_s3_bucket(input);
             self
         }
-        /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
-        /// <code>FlowLogsEnabled</code> is <code>true</code>. </p>
-        /// <p>If you don’t specify a prefix, the flow logs are stored in the
-        /// root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
+        /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
+        /// <p>If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
         /// <p>DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id</p>
-        pub fn flow_logs_s3_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_logs_s3_prefix(inp);
+        pub fn flow_logs_s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_logs_s3_prefix(input.into());
             self
         }
-        /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
-        /// <code>FlowLogsEnabled</code> is <code>true</code>. </p>
-        /// <p>If you don’t specify a prefix, the flow logs are stored in the
-        /// root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
+        /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
+        /// <p>If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
         /// <p>DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id</p>
         pub fn set_flow_logs_s3_prefix(
             mut self,
@@ -4814,7 +4648,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCustomRoutingListener`.
     ///
     /// <p>Update a listener for a custom routing accelerator. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCustomRoutingListener<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4859,10 +4693,10 @@ pub mod fluent_builders {
                 crate::input::UpdateCustomRoutingListenerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4871,8 +4705,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the listener to update.</p>
-        pub fn listener_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.listener_arn(inp);
+        pub fn listener_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.listener_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the listener to update.</p>
@@ -4884,18 +4718,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_port_ranges`](Self::set_port_ranges).
         ///
-        /// <p>The updated port range to support for connections from clients to your accelerator. If you remove ports that are
-        /// currently being used by a subnet endpoint, the call fails.</p>
-        /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
-        /// endpoints for custom routing accelerators</a>.</p>
-        pub fn port_ranges(mut self, inp: impl Into<crate::model::PortRange>) -> Self {
-            self.inner = self.inner.port_ranges(inp);
+        /// <p>The updated port range to support for connections from clients to your accelerator. If you remove ports that are currently being used by a subnet endpoint, the call fails.</p>
+        /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
+        pub fn port_ranges(mut self, input: crate::model::PortRange) -> Self {
+            self.inner = self.inner.port_ranges(input);
             self
         }
-        /// <p>The updated port range to support for connections from clients to your accelerator. If you remove ports that are
-        /// currently being used by a subnet endpoint, the call fails.</p>
-        /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
-        /// endpoints for custom routing accelerators</a>.</p>
+        /// <p>The updated port range to support for connections from clients to your accelerator. If you remove ports that are currently being used by a subnet endpoint, the call fails.</p>
+        /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
         pub fn set_port_ranges(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
@@ -4907,7 +4737,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateEndpointGroup`.
     ///
     /// <p>Update an endpoint group. A resource must be valid and active when you add it as an endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEndpointGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4952,10 +4782,10 @@ pub mod fluent_builders {
                 crate::input::UpdateEndpointGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4964,8 +4794,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-        pub fn endpoint_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_group_arn(inp);
+        pub fn endpoint_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_group_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
@@ -4983,9 +4813,9 @@ pub mod fluent_builders {
         /// <p>The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.</p>
         pub fn endpoint_configurations(
             mut self,
-            inp: impl Into<crate::model::EndpointConfiguration>,
+            input: crate::model::EndpointConfiguration,
         ) -> Self {
-            self.inner = self.inner.endpoint_configurations(inp);
+            self.inner = self.inner.endpoint_configurations(input);
             self
         }
         /// <p>The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.</p>
@@ -4996,46 +4826,36 @@ pub mod fluent_builders {
             self.inner = self.inner.set_endpoint_configurations(input);
             self
         }
-        /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for
-        /// this listener. </p>
-        /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is
-        /// applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
+        /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
+        /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
         /// <p>The default value is 100.</p>
-        pub fn traffic_dial_percentage(mut self, inp: f32) -> Self {
-            self.inner = self.inner.traffic_dial_percentage(inp);
+        pub fn traffic_dial_percentage(mut self, input: f32) -> Self {
+            self.inner = self.inner.traffic_dial_percentage(input);
             self
         }
-        /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for
-        /// this listener. </p>
-        /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is
-        /// applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
+        /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
+        /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
         /// <p>The default value is 100.</p>
         pub fn set_traffic_dial_percentage(mut self, input: std::option::Option<f32>) -> Self {
             self.inner = self.inner.set_traffic_dial_percentage(input);
             self
         }
-        /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port
-        /// is the listener port that this endpoint group is associated with. If the listener port is a list of ports, Global Accelerator uses
-        /// the first port in the list.</p>
-        pub fn health_check_port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.health_check_port(inp);
+        /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If the listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
+        pub fn health_check_port(mut self, input: i32) -> Self {
+            self.inner = self.inner.health_check_port(input);
             self
         }
-        /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port
-        /// is the listener port that this endpoint group is associated with. If the listener port is a list of ports, Global Accelerator uses
-        /// the first port in the list.</p>
+        /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If the listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
         pub fn set_health_check_port(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_health_check_port(input);
             self
         }
-        /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default
-        /// value is TCP.</p>
-        pub fn health_check_protocol(mut self, inp: crate::model::HealthCheckProtocol) -> Self {
-            self.inner = self.inner.health_check_protocol(inp);
+        /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
+        pub fn health_check_protocol(mut self, input: crate::model::HealthCheckProtocol) -> Self {
+            self.inner = self.inner.health_check_protocol(input);
             self
         }
-        /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default
-        /// value is TCP.</p>
+        /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
         pub fn set_health_check_protocol(
             mut self,
             input: std::option::Option<crate::model::HealthCheckProtocol>,
@@ -5043,14 +4863,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_health_check_protocol(input);
             self
         }
-        /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The
-        /// default value is slash (/).</p>
-        pub fn health_check_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.health_check_path(inp);
+        /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>
+        pub fn health_check_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.health_check_path(input.into());
             self
         }
-        /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The
-        /// default value is slash (/).</p>
+        /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>
         pub fn set_health_check_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5059,8 +4877,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.</p>
-        pub fn health_check_interval_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.health_check_interval_seconds(inp);
+        pub fn health_check_interval_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.health_check_interval_seconds(input);
             self
         }
         /// <p>The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.</p>
@@ -5071,14 +4889,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_health_check_interval_seconds(input);
             self
         }
-        /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an
-        /// unhealthy endpoint to healthy. The default value is 3.</p>
-        pub fn threshold_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.threshold_count(inp);
+        /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>
+        pub fn threshold_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.threshold_count(input);
             self
         }
-        /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an
-        /// unhealthy endpoint to healthy. The default value is 3.</p>
+        /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>
         pub fn set_threshold_count(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_threshold_count(input);
             self
@@ -5087,22 +4903,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_port_overrides`](Self::set_port_overrides).
         ///
-        /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group.
-        /// For example, you can create a port override in which the listener
-        /// receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080
-        /// and 1443, respectively, on the endpoints.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
-        /// Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-        pub fn port_overrides(mut self, inp: impl Into<crate::model::PortOverride>) -> Self {
-            self.inner = self.inner.port_overrides(inp);
+        /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        pub fn port_overrides(mut self, input: crate::model::PortOverride) -> Self {
+            self.inner = self.inner.port_overrides(input);
             self
         }
-        /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group.
-        /// For example, you can create a port override in which the listener
-        /// receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080
-        /// and 1443, respectively, on the endpoints.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
-        /// Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_port_overrides(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PortOverride>>,
@@ -5114,7 +4922,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateListener`.
     ///
     /// <p>Update a listener. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateListener<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5159,10 +4967,10 @@ pub mod fluent_builders {
                 crate::input::UpdateListenerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5171,8 +4979,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the listener to update.</p>
-        pub fn listener_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.listener_arn(inp);
+        pub fn listener_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.listener_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the listener to update.</p>
@@ -5185,8 +4993,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_port_ranges`](Self::set_port_ranges).
         ///
         /// <p>The updated list of port ranges for the connections from clients to the accelerator.</p>
-        pub fn port_ranges(mut self, inp: impl Into<crate::model::PortRange>) -> Self {
-            self.inner = self.inner.port_ranges(inp);
+        pub fn port_ranges(mut self, input: crate::model::PortRange) -> Self {
+            self.inner = self.inner.port_ranges(input);
             self
         }
         /// <p>The updated list of port ranges for the connections from clients to the accelerator.</p>
@@ -5198,8 +5006,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated protocol for the connections from clients to the accelerator.</p>
-        pub fn protocol(mut self, inp: crate::model::Protocol) -> Self {
-            self.inner = self.inner.protocol(inp);
+        pub fn protocol(mut self, input: crate::model::Protocol) -> Self {
+            self.inner = self.inner.protocol(input);
             self
         }
         /// <p>The updated protocol for the connections from clients to the accelerator.</p>
@@ -5207,33 +5015,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_protocol(input);
             self
         }
-        /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications,
-        /// regardless of the port and protocol of the client request. Client affinity gives you control over whether to always
-        /// route each client to the same specific endpoint.</p>
-        /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client
-        /// affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port,
-        /// destination IP address, destination port, and protocol—to select the hash value, and then chooses the best
-        /// endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not
-        /// be always routed to the same endpoint because the hash value changes. </p>
-        /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code>
-        /// instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties—
-        /// source (client) IP address and destination IP address—to select the hash value.</p>
+        /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Client affinity gives you control over whether to always route each client to the same specific endpoint.</p>
+        /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p>
+        /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.</p>
         /// <p>The default value is <code>NONE</code>.</p>
-        pub fn client_affinity(mut self, inp: crate::model::ClientAffinity) -> Self {
-            self.inner = self.inner.client_affinity(inp);
+        pub fn client_affinity(mut self, input: crate::model::ClientAffinity) -> Self {
+            self.inner = self.inner.client_affinity(input);
             self
         }
-        /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications,
-        /// regardless of the port and protocol of the client request. Client affinity gives you control over whether to always
-        /// route each client to the same specific endpoint.</p>
-        /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client
-        /// affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port,
-        /// destination IP address, destination port, and protocol—to select the hash value, and then chooses the best
-        /// endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not
-        /// be always routed to the same endpoint because the hash value changes. </p>
-        /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code>
-        /// instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties—
-        /// source (client) IP address and destination IP address—to select the hash value.</p>
+        /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Client affinity gives you control over whether to always route each client to the same specific endpoint.</p>
+        /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p>
+        /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.</p>
         /// <p>The default value is <code>NONE</code>.</p>
         pub fn set_client_affinity(
             mut self,
@@ -5245,14 +5037,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `WithdrawByoipCidr`.
     ///
-    /// <p>Stops advertising an address range that is provisioned as an address pool.
-    /// You can perform this operation at most once every 10 seconds, even if you specify different address
-    /// ranges each time.</p>
-    /// <p>It can take a few minutes before traffic to the specified addresses stops routing to AWS because of
-    /// propagation delays.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own
-    /// IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Stops advertising an address range that is provisioned as an address pool. You can perform this operation at most once every 10 seconds, even if you specify different address ranges each time.</p>
+    /// <p>It can take a few minutes before traffic to the specified addresses stops routing to AWS because of propagation delays.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct WithdrawByoipCidr<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5297,10 +5085,10 @@ pub mod fluent_builders {
                 crate::input::WithdrawByoipCidrInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5309,8 +5097,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The address range, in CIDR notation.</p>
-        pub fn cidr(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cidr(inp);
+        pub fn cidr(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cidr(input.into());
             self
         }
         /// <p>The address range, in CIDR notation.</p>
@@ -5320,6 +5108,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Application Discovery Service
@@ -145,6 +145,7 @@ where
     ///
     /// See [`DescribeContinuousExports`](crate::client::fluent_builders::DescribeContinuousExports) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeContinuousExports::into_paginator).
     pub fn describe_continuous_exports(
         &self,
     ) -> fluent_builders::DescribeContinuousExports<C, M, R> {
@@ -170,6 +171,7 @@ where
     ///
     /// See [`DescribeImportTasks`](crate::client::fluent_builders::DescribeImportTasks) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeImportTasks::into_paginator).
     pub fn describe_import_tasks(&self) -> fluent_builders::DescribeImportTasks<C, M, R> {
         fluent_builders::DescribeImportTasks::new(self.handle.clone())
     }
@@ -282,7 +284,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateConfigurationItemsToApplication`.
     ///
     /// <p>Associates one or more configuration items with an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateConfigurationItemsToApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -329,10 +331,10 @@ pub mod fluent_builders {
                 crate::input::AssociateConfigurationItemsToApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -341,8 +343,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The configuration ID of an application with which items are to be associated.</p>
-        pub fn application_configuration_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_configuration_id(inp);
+        pub fn application_configuration_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.application_configuration_id(input.into());
             self
         }
         /// <p>The configuration ID of an application with which items are to be associated.</p>
@@ -358,8 +363,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_configuration_ids`](Self::set_configuration_ids).
         ///
         /// <p>The ID of each configuration item to be associated with an application.</p>
-        pub fn configuration_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_ids(inp);
+        pub fn configuration_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_ids(input.into());
             self
         }
         /// <p>The ID of each configuration item to be associated with an application.</p>
@@ -373,15 +378,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchDeleteImportData`.
     ///
-    /// <p>Deletes one or more import tasks, each identified by their import ID. Each import task has
-    /// a number of records that can identify servers or applications. </p>
-    ///
-    /// <p>AWS Application Discovery Service has built-in matching logic that will identify when
-    /// discovered servers match existing entries that you've previously discovered, the information
-    /// for the already-existing discovered server is updated. When you delete an import task that
-    /// contains records that were used to match, the information in those matched records that comes
-    /// from the deleted records will also be deleted.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes one or more import tasks, each identified by their import ID. Each import task has a number of records that can identify servers or applications. </p>
+    /// <p>AWS Application Discovery Service has built-in matching logic that will identify when discovered servers match existing entries that you've previously discovered, the information for the already-existing discovered server is updated. When you delete an import task that contains records that were used to match, the information in those matched records that comes from the deleted records will also be deleted.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeleteImportData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -426,10 +425,10 @@ pub mod fluent_builders {
                 crate::input::BatchDeleteImportDataInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -442,8 +441,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_import_task_ids`](Self::set_import_task_ids).
         ///
         /// <p>The IDs for the import tasks that you want to delete.</p>
-        pub fn import_task_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.import_task_ids(inp);
+        pub fn import_task_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.import_task_ids(input.into());
             self
         }
         /// <p>The IDs for the import tasks that you want to delete.</p>
@@ -458,7 +457,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateApplication`.
     ///
     /// <p>Creates an application with the given name and description.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -503,10 +502,10 @@ pub mod fluent_builders {
                 crate::input::CreateApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -515,8 +514,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the application to be created.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of the application to be created.</p>
@@ -525,8 +524,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Description of the application to be created.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>Description of the application to be created.</p>
@@ -537,9 +536,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateTags`.
     ///
-    /// <p>Creates one or more tags for configuration items. Tags are metadata that help you
-    /// categorize IT assets. This API accepts a list of multiple configuration items.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates one or more tags for configuration items. Tags are metadata that help you categorize IT assets. This API accepts a list of multiple configuration items.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -584,10 +582,10 @@ pub mod fluent_builders {
                 crate::input::CreateTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -600,8 +598,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_configuration_ids`](Self::set_configuration_ids).
         ///
         /// <p>A list of configuration items that you want to tag.</p>
-        pub fn configuration_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_ids(inp);
+        pub fn configuration_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_ids(input.into());
             self
         }
         /// <p>A list of configuration items that you want to tag.</p>
@@ -616,22 +614,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags that you want to associate with one or more configuration items. Specify the tags
-        /// that you want to create in a <i>key</i>-<i>value</i> format. For
-        /// example:</p>
-        /// <p>
-        /// <code>{"key": "serverType", "value": "webServer"}</code>
-        /// </p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>Tags that you want to associate with one or more configuration items. Specify the tags that you want to create in a <i>key</i>-<i>value</i> format. For example:</p>
+        /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Tags that you want to associate with one or more configuration items. Specify the tags
-        /// that you want to create in a <i>key</i>-<i>value</i> format. For
-        /// example:</p>
-        /// <p>
-        /// <code>{"key": "serverType", "value": "webServer"}</code>
-        /// </p>
+        /// <p>Tags that you want to associate with one or more configuration items. Specify the tags that you want to create in a <i>key</i>-<i>value</i> format. For example:</p>
+        /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -642,9 +632,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteApplications`.
     ///
-    /// <p>Deletes a list of applications and their associations with configuration
-    /// items.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a list of applications and their associations with configuration items.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -689,10 +678,10 @@ pub mod fluent_builders {
                 crate::input::DeleteApplicationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -705,8 +694,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_configuration_ids`](Self::set_configuration_ids).
         ///
         /// <p>Configuration ID of an application to be deleted.</p>
-        pub fn configuration_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_ids(inp);
+        pub fn configuration_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_ids(input.into());
             self
         }
         /// <p>Configuration ID of an application to be deleted.</p>
@@ -720,9 +709,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteTags`.
     ///
-    /// <p>Deletes the association between configuration items and one or more tags. This API
-    /// accepts a list of multiple configuration items.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the association between configuration items and one or more tags. This API accepts a list of multiple configuration items.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -767,10 +755,10 @@ pub mod fluent_builders {
                 crate::input::DeleteTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -783,8 +771,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_configuration_ids`](Self::set_configuration_ids).
         ///
         /// <p>A list of configuration items with tags that you want to delete.</p>
-        pub fn configuration_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_ids(inp);
+        pub fn configuration_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_ids(input.into());
             self
         }
         /// <p>A list of configuration items with tags that you want to delete.</p>
@@ -799,22 +787,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags that you want to delete from one or more configuration items. Specify the tags
-        /// that you want to delete in a <i>key</i>-<i>value</i> format. For
-        /// example:</p>
-        /// <p>
-        /// <code>{"key": "serverType", "value": "webServer"}</code>
-        /// </p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>Tags that you want to delete from one or more configuration items. Specify the tags that you want to delete in a <i>key</i>-<i>value</i> format. For example:</p>
+        /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Tags that you want to delete from one or more configuration items. Specify the tags
-        /// that you want to delete in a <i>key</i>-<i>value</i> format. For
-        /// example:</p>
-        /// <p>
-        /// <code>{"key": "serverType", "value": "webServer"}</code>
-        /// </p>
+        /// <p>Tags that you want to delete from one or more configuration items. Specify the tags that you want to delete in a <i>key</i>-<i>value</i> format. For example:</p>
+        /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -825,10 +805,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAgents`.
     ///
-    /// <p>Lists agents or connectors as specified by ID or other filters. All agents/connectors
-    /// associated with your user account can be listed if you call <code>DescribeAgents</code> as is
-    /// without passing any parameters.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists agents or connectors as specified by ID or other filters. All agents/connectors associated with your user account can be listed if you call <code>DescribeAgents</code> as is without passing any parameters.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAgents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -873,10 +851,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAgentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -888,16 +866,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_agent_ids`](Self::set_agent_ids).
         ///
-        /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs,
-        /// the system returns information about all agents/Connectors associated with your AWS user
-        /// account.</p>
-        pub fn agent_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agent_ids(inp);
+        /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your AWS user account.</p>
+        pub fn agent_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_ids(input.into());
             self
         }
-        /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs,
-        /// the system returns information about all agents/Connectors associated with your AWS user
-        /// account.</p>
+        /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your AWS user account.</p>
         pub fn set_agent_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -909,20 +883,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>You can filter the request using various logical operators and a
-        /// <i>key</i>-<i>value</i> format. For example: </p>
-        /// <p>
-        /// <code>{"key": "collectionStatus", "value": "STARTED"}</code>
-        /// </p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
+        /// <p> <code>{"key": "collectionStatus", "value": "STARTED"}</code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>You can filter the request using various logical operators and a
-        /// <i>key</i>-<i>value</i> format. For example: </p>
-        /// <p>
-        /// <code>{"key": "collectionStatus", "value": "STARTED"}</code>
-        /// </p>
+        /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
+        /// <p> <code>{"key": "collectionStatus", "value": "STARTED"}</code> </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -930,30 +898,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The total number of agents/Connectors to return in a single page of output. The maximum
-        /// value is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The total number of agents/Connectors to return in a single page of output. The maximum value is 100.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The total number of agents/Connectors to return in a single page of output. The maximum
-        /// value is 100.</p>
+        /// <p>The total number of agents/Connectors to return in a single page of output. The maximum value is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Token to retrieve the next set of results. For example, if you previously specified 100
-        /// IDs for <code>DescribeAgentsRequest$agentIds</code> but set
-        /// <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along
-        /// with a token. Use that token in this query to get the next set of 10.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Token to retrieve the next set of results. For example, if you previously specified 100
-        /// IDs for <code>DescribeAgentsRequest$agentIds</code> but set
-        /// <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along
-        /// with a token. Use that token in this query to get the next set of 10.</p>
+        /// <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -961,33 +921,18 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeConfigurations`.
     ///
-    /// <p>Retrieves attributes for a list of configuration item IDs.</p>
-    ///
-    /// <note>
-    /// <p>All of the supplied IDs must be for the same asset type from one of the
-    /// following:</p>
+    /// <p>Retrieves attributes for a list of configuration item IDs.</p> <note>
+    /// <p>All of the supplied IDs must be for the same asset type from one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>server</p>
-    /// </li>
-    /// <li>
-    /// <p>application</p>
-    /// </li>
-    /// <li>
-    /// <p>process</p>
-    /// </li>
-    /// <li>
-    /// <p>connection</p>
-    /// </li>
+    /// <li> <p>server</p> </li>
+    /// <li> <p>application</p> </li>
+    /// <li> <p>process</p> </li>
+    /// <li> <p>connection</p> </li>
     /// </ul>
-    ///
-    /// <p>Output fields are specific to the asset type specified. For example, the output for a
-    /// <i>server</i> configuration item includes a list of attributes about the
-    /// server, such as host name, operating system, number of network cards, etc.</p>
-    /// <p>For a complete list of outputs for each asset type, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#DescribeConfigurations">Using the DescribeConfigurations Action</a> in the <i>AWS Application
-    /// Discovery Service User Guide</i>.</p>
+    /// <p>Output fields are specific to the asset type specified. For example, the output for a <i>server</i> configuration item includes a list of attributes about the server, such as host name, operating system, number of network cards, etc.</p>
+    /// <p>For a complete list of outputs for each asset type, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#DescribeConfigurations">Using the DescribeConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1032,10 +977,10 @@ pub mod fluent_builders {
                 crate::input::DescribeConfigurationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1048,8 +993,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_configuration_ids`](Self::set_configuration_ids).
         ///
         /// <p>One or more configuration IDs.</p>
-        pub fn configuration_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_ids(inp);
+        pub fn configuration_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_ids(input.into());
             self
         }
         /// <p>One or more configuration IDs.</p>
@@ -1063,10 +1008,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeContinuousExports`.
     ///
-    /// <p>Lists exports as specified by ID. All continuous exports associated with your user
-    /// account can be listed if you call <code>DescribeContinuousExports</code> as is without passing
-    /// any parameters.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists exports as specified by ID. All continuous exports associated with your user account can be listed if you call <code>DescribeContinuousExports</code> as is without passing any parameters.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeContinuousExports<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1111,10 +1054,10 @@ pub mod fluent_builders {
                 crate::input::DescribeContinuousExportsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1122,13 +1065,21 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeContinuousExportsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeContinuousExportsPaginator<C, M, R> {
+            crate::paginator::DescribeContinuousExportsPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `exportIds`.
         ///
         /// To override the contents of this collection use [`set_export_ids`](Self::set_export_ids).
         ///
         /// <p>The unique IDs assigned to the exports.</p>
-        pub fn export_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.export_ids(inp);
+        pub fn export_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.export_ids(input.into());
             self
         }
         /// <p>The unique IDs assigned to the exports.</p>
@@ -1139,21 +1090,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_export_ids(input);
             self
         }
-        /// <p>A number between 1 and 100 specifying the maximum number of continuous export
-        /// descriptions returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>A number between 1 and 100 specifying the maximum number of continuous export
-        /// descriptions returned.</p>
+        /// <p>A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>The token from the previous call to <code>DescribeExportTasks</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token from the previous call to <code>DescribeExportTasks</code>.</p>
@@ -1164,9 +1113,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeExportConfigurations`.
     ///
-    /// <p>
-    /// <code>DescribeExportConfigurations</code> is deprecated. Use <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">DescribeImportTasks</a>, instead.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <code>DescribeExportConfigurations</code> is deprecated. Use <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">DescribeImportTasks</a>, instead.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeExportConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1211,10 +1159,10 @@ pub mod fluent_builders {
                 crate::input::DescribeExportConfigurationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1227,8 +1175,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_export_ids`](Self::set_export_ids).
         ///
         /// <p>A list of continuous export IDs to search for.</p>
-        pub fn export_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.export_ids(inp);
+        pub fn export_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.export_ids(input.into());
             self
         }
         /// <p>A list of continuous export IDs to search for.</p>
@@ -1239,21 +1187,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_export_ids(input);
             self
         }
-        /// <p>A number between 1 and 100 specifying the maximum number of continuous export
-        /// descriptions returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>A number between 1 and 100 specifying the maximum number of continuous export
-        /// descriptions returned.</p>
+        /// <p>A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>The token from the previous call to describe-export-tasks.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token from the previous call to describe-export-tasks.</p>
@@ -1264,9 +1210,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeExportTasks`.
     ///
-    /// <p>Retrieve status of one or more export tasks. You can retrieve the status of up to 100
-    /// export tasks.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieve status of one or more export tasks. You can retrieve the status of up to 100 export tasks.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeExportTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1311,10 +1256,10 @@ pub mod fluent_builders {
                 crate::input::DescribeExportTasksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1327,8 +1272,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_export_ids`](Self::set_export_ids).
         ///
         /// <p>One or more unique identifiers used to query the status of an export request.</p>
-        pub fn export_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.export_ids(inp);
+        pub fn export_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.export_ids(input.into());
             self
         }
         /// <p>One or more unique identifiers used to query the status of an export request.</p>
@@ -1345,23 +1290,15 @@ pub mod fluent_builders {
         ///
         /// <p>One or more filters.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AgentId</code> - ID of the agent whose collected data will be
-        /// exported</p>
-        /// </li>
+        /// <li> <p> <code>AgentId</code> - ID of the agent whose collected data will be exported</p> </li>
         /// </ul>
-        pub fn filters(mut self, inp: impl Into<crate::model::ExportFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::ExportFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>One or more filters.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AgentId</code> - ID of the agent whose collected data will be
-        /// exported</p>
-        /// </li>
+        /// <li> <p> <code>AgentId</code> - ID of the agent whose collected data will be exported</p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -1370,36 +1307,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of volume results returned by <code>DescribeExportTasks</code> in
-        /// paginated output. When this parameter is used, <code>DescribeExportTasks</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of volume results returned by <code>DescribeExportTasks</code> in paginated output. When this parameter is used, <code>DescribeExportTasks</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of volume results returned by <code>DescribeExportTasks</code> in
-        /// paginated output. When this parameter is used, <code>DescribeExportTasks</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element.</p>
+        /// <p>The maximum number of volume results returned by <code>DescribeExportTasks</code> in paginated output. When this parameter is used, <code>DescribeExportTasks</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeExportTasks</code> request where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value. This value is null when there
-        /// are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeExportTasks</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeExportTasks</code> request where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value. This value is null when there
-        /// are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeExportTasks</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1407,9 +1330,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeImportTasks`.
     ///
-    /// <p>Returns an array of import tasks for your account, including status information, times,
-    /// IDs, the Amazon S3 Object URL for the import file, and more.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns an array of import tasks for your account, including status information, times, IDs, the Amazon S3 Object URL for the import file, and more.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeImportTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1454,10 +1376,10 @@ pub mod fluent_builders {
                 crate::input::DescribeImportTasksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1465,20 +1387,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeImportTasksPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeImportTasksPaginator<C, M, R> {
+            crate::paginator::DescribeImportTasksPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>An array of name-value pairs that you provide to filter the results for the
-        /// <code>DescribeImportTask</code> request to a specific subset of results. Currently, wildcard
-        /// values aren't supported for filters.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::ImportTaskFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>An array of name-value pairs that you provide to filter the results for the <code>DescribeImportTask</code> request to a specific subset of results. Currently, wildcard values aren't supported for filters.</p>
+        pub fn filters(mut self, input: crate::model::ImportTaskFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>An array of name-value pairs that you provide to filter the results for the
-        /// <code>DescribeImportTask</code> request to a specific subset of results. Currently, wildcard
-        /// values aren't supported for filters.</p>
+        /// <p>An array of name-value pairs that you provide to filter the results for the <code>DescribeImportTask</code> request to a specific subset of results. Currently, wildcard values aren't supported for filters.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ImportTaskFilter>>,
@@ -1487,8 +1411,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results that you want this request to return, up to 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results that you want this request to return, up to 100.</p>
@@ -1497,8 +1421,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to request a specific page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to request a specific page of results.</p>
@@ -1509,23 +1433,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeTags`.
     ///
-    /// <p>Retrieves a list of configuration items that have tags as specified by the key-value
-    /// pairs, name and value, passed to the optional parameter <code>filters</code>.</p>
+    /// <p>Retrieves a list of configuration items that have tags as specified by the key-value pairs, name and value, passed to the optional parameter <code>filters</code>.</p>
     /// <p>There are three valid tag filter names:</p>
     /// <ul>
-    /// <li>
-    /// <p>tagKey</p>
-    /// </li>
-    /// <li>
-    /// <p>tagValue</p>
-    /// </li>
-    /// <li>
-    /// <p>configurationId</p>
-    /// </li>
+    /// <li> <p>tagKey</p> </li>
+    /// <li> <p>tagValue</p> </li>
+    /// <li> <p>configurationId</p> </li>
     /// </ul>
-    /// <p>Also, all configuration items associated with your user account that have tags can be
-    /// listed if you call <code>DescribeTags</code> as is without passing any parameters.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Also, all configuration items associated with your user account that have tags can be listed if you call <code>DescribeTags</code> as is without passing any parameters.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1570,10 +1486,10 @@ pub mod fluent_builders {
                 crate::input::DescribeTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1585,16 +1501,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>You can filter the list using a <i>key</i>-<i>value</i>
-        /// format. You can separate these items by using logical operators. Allowed filters include
-        /// <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>
-        pub fn filters(mut self, inp: impl Into<crate::model::TagFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>
+        pub fn filters(mut self, input: crate::model::TagFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>You can filter the list using a <i>key</i>-<i>value</i>
-        /// format. You can separate these items by using logical operators. Allowed filters include
-        /// <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>
+        /// <p>You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
@@ -1602,21 +1514,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The total number of items to return in a single page of output. The maximum value is
-        /// 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The total number of items to return in a single page of output. The maximum value is 100.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The total number of items to return in a single page of output. The maximum value is
-        /// 100.</p>
+        /// <p>The total number of items to return in a single page of output. The maximum value is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results.</p>
@@ -1628,7 +1538,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateConfigurationItemsFromApplication`.
     ///
     /// <p>Disassociates one or more configuration items from an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateConfigurationItemsFromApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1666,10 +1576,10 @@ pub mod fluent_builders {
                                     crate::error::DisassociateConfigurationItemsFromApplicationError,
                                     crate::input::DisassociateConfigurationItemsFromApplicationInputOperationRetryAlias>,
                                 {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1678,8 +1588,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Configuration ID of an application from which each item is disassociated.</p>
-        pub fn application_configuration_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_configuration_id(inp);
+        pub fn application_configuration_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.application_configuration_id(input.into());
             self
         }
         /// <p>Configuration ID of an application from which each item is disassociated.</p>
@@ -1695,8 +1608,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_configuration_ids`](Self::set_configuration_ids).
         ///
         /// <p>Configuration ID of each item to be disassociated from an application.</p>
-        pub fn configuration_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_ids(inp);
+        pub fn configuration_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_ids(input.into());
             self
         }
         /// <p>Configuration ID of each item to be disassociated from an application.</p>
@@ -1711,12 +1624,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ExportConfigurations`.
     ///
     /// <p>Deprecated. Use <code>StartExportTask</code> instead.</p>
-    /// <p>Exports all discovered configuration data to an Amazon S3 bucket or an application that
-    /// enables you to view and evaluate the data. Data includes tags and tag associations, processes,
-    /// connections, servers, and system performance. This API returns an export ID that you can query
-    /// using the <i>DescribeExportConfigurations</i> API. The system imposes a limit of
-    /// two configuration exports in six hours.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Exports all discovered configuration data to an Amazon S3 bucket or an application that enables you to view and evaluate the data. Data includes tags and tag associations, processes, connections, servers, and system performance. This API returns an export ID that you can query using the <i>DescribeExportConfigurations</i> API. The system imposes a limit of two configuration exports in six hours.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1761,10 +1670,10 @@ pub mod fluent_builders {
                 crate::input::ExportConfigurationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1776,9 +1685,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDiscoverySummary`.
     ///
     /// <p>Retrieves a short summary of discovered assets.</p>
-    /// <p>This API operation takes no request parameters and is called as is at the command
-    /// prompt as shown in the example.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This API operation takes no request parameters and is called as is at the command prompt as shown in the example.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDiscoverySummary<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1823,10 +1731,10 @@ pub mod fluent_builders {
                 crate::input::GetDiscoverySummaryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1837,10 +1745,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListConfigurations`.
     ///
-    /// <p>Retrieves a list of configuration items as specified by the value passed to the
-    /// required parameter <code>configurationType</code>. Optional filtering may be applied to refine
-    /// search results.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves a list of configuration items as specified by the value passed to the required parameter <code>configurationType</code>. Optional filtering may be applied to refine search results.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1885,10 +1791,10 @@ pub mod fluent_builders {
                 crate::input::ListConfigurationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1897,8 +1803,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A valid configuration identified by Application Discovery Service. </p>
-        pub fn configuration_type(mut self, inp: crate::model::ConfigurationItemType) -> Self {
-            self.inner = self.inner.configuration_type(inp);
+        pub fn configuration_type(mut self, input: crate::model::ConfigurationItemType) -> Self {
+            self.inner = self.inner.configuration_type(input);
             self
         }
         /// <p>A valid configuration identified by Application Discovery Service. </p>
@@ -1913,26 +1819,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>You can filter the request using various logical operators and a
-        /// <i>key</i>-<i>value</i> format. For example: </p>
-        /// <p>
-        /// <code>{"key": "serverType", "value": "webServer"}</code>
-        /// </p>
-        /// <p>For a complete list of filter options and guidance about using them with this action,
-        /// see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery
-        /// Service User Guide</i>.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
+        /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
+        /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>You can filter the request using various logical operators and a
-        /// <i>key</i>-<i>value</i> format. For example: </p>
-        /// <p>
-        /// <code>{"key": "serverType", "value": "webServer"}</code>
-        /// </p>
-        /// <p>For a complete list of filter options and guidance about using them with this action,
-        /// see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery
-        /// Service User Guide</i>.</p>
+        /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
+        /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
+        /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -1941,8 +1837,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The total number of items to return. The maximum value is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The total number of items to return. The maximum value is 100.</p>
@@ -1950,18 +1846,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Token to retrieve the next set of results. For example, if a previous call to
-        /// ListConfigurations returned 100 items, but you set
-        /// <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results
-        /// along with a token. Use that token in this query to get the next set of 10.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Token to retrieve the next set of results. For example, if a previous call to
-        /// ListConfigurations returned 100 items, but you set
-        /// <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results
-        /// along with a token. Use that token in this query to get the next set of 10.</p>
+        /// <p>Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1970,16 +1860,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_order_by`](Self::set_order_by).
         ///
-        /// <p>Certain filter criteria return output that can be sorted in ascending or descending
-        /// order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery
-        /// Service User Guide</i>.</p>
-        pub fn order_by(mut self, inp: impl Into<crate::model::OrderByElement>) -> Self {
-            self.inner = self.inner.order_by(inp);
+        /// <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
+        pub fn order_by(mut self, input: crate::model::OrderByElement) -> Self {
+            self.inner = self.inner.order_by(input);
             self
         }
-        /// <p>Certain filter criteria return output that can be sorted in ascending or descending
-        /// order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery
-        /// Service User Guide</i>.</p>
+        /// <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
         pub fn set_order_by(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OrderByElement>>,
@@ -1990,9 +1876,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListServerNeighbors`.
     ///
-    /// <p>Retrieves a list of servers that are one network hop away from a specified
-    /// server.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves a list of servers that are one network hop away from a specified server.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServerNeighbors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2037,10 +1922,10 @@ pub mod fluent_builders {
                 crate::input::ListServerNeighborsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2049,8 +1934,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Configuration ID of the server for which neighbors are being listed.</p>
-        pub fn configuration_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_id(inp);
+        pub fn configuration_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_id(input.into());
             self
         }
         /// <p>Configuration ID of the server for which neighbors are being listed.</p>
@@ -2061,14 +1946,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration_id(input);
             self
         }
-        /// <p>Flag to indicate if port and protocol information is needed as part of the
-        /// response.</p>
-        pub fn port_information_needed(mut self, inp: bool) -> Self {
-            self.inner = self.inner.port_information_needed(inp);
+        /// <p>Flag to indicate if port and protocol information is needed as part of the response.</p>
+        pub fn port_information_needed(mut self, input: bool) -> Self {
+            self.inner = self.inner.port_information_needed(input);
             self
         }
-        /// <p>Flag to indicate if port and protocol information is needed as part of the
-        /// response.</p>
+        /// <p>Flag to indicate if port and protocol information is needed as part of the response.</p>
         pub fn set_port_information_needed(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_port_information_needed(input);
             self
@@ -2078,8 +1961,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_neighbor_configuration_ids`](Self::set_neighbor_configuration_ids).
         ///
         /// <p>List of configuration IDs to test for one-hop-away.</p>
-        pub fn neighbor_configuration_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.neighbor_configuration_ids(inp);
+        pub fn neighbor_configuration_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.neighbor_configuration_ids(input.into());
             self
         }
         /// <p>List of configuration IDs to test for one-hop-away.</p>
@@ -2091,8 +1974,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results to return in a single page of output.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of results to return in a single page of output.</p>
@@ -2100,18 +1983,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Token to retrieve the next set of results. For example, if you previously specified 100
-        /// IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set
-        /// <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results
-        /// along with a token. Use that token in this query to get the next set of 10.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Token to retrieve the next set of results. For example, if you previously specified 100
-        /// IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set
-        /// <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results
-        /// along with a token. Use that token in this query to get the next set of 10.</p>
+        /// <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2120,7 +1997,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartContinuousExport`.
     ///
     /// <p>Start the continuous flow of agent's discovered data into Amazon Athena.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartContinuousExport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2165,10 +2042,10 @@ pub mod fluent_builders {
                 crate::input::StartContinuousExportInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2180,7 +2057,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartDataCollectionByAgentIds`.
     ///
     /// <p>Instructs the specified agents or connectors to start collecting data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartDataCollectionByAgentIds<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2225,10 +2102,10 @@ pub mod fluent_builders {
                 crate::input::StartDataCollectionByAgentIdsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2240,24 +2117,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_agent_ids`](Self::set_agent_ids).
         ///
-        /// <p>The IDs of the agents or connectors from which to start collecting data. If you send a
-        /// request to an agent/connector ID that you do not have permission to contact, according to your
-        /// AWS account, the service does not throw an exception. Instead, it returns the error in the
-        /// <i>Description</i> field. If you send a request to multiple agents/connectors
-        /// and you do not have permission to contact some of those agents/connectors, the system does not
-        /// throw an exception. Instead, the system shows <code>Failed</code> in the
-        /// <i>Description</i> field.</p>
-        pub fn agent_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agent_ids(inp);
+        /// <p>The IDs of the agents or connectors from which to start collecting data. If you send a request to an agent/connector ID that you do not have permission to contact, according to your AWS account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
+        pub fn agent_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_ids(input.into());
             self
         }
-        /// <p>The IDs of the agents or connectors from which to start collecting data. If you send a
-        /// request to an agent/connector ID that you do not have permission to contact, according to your
-        /// AWS account, the service does not throw an exception. Instead, it returns the error in the
-        /// <i>Description</i> field. If you send a request to multiple agents/connectors
-        /// and you do not have permission to contact some of those agents/connectors, the system does not
-        /// throw an exception. Instead, the system shows <code>Failed</code> in the
-        /// <i>Description</i> field.</p>
+        /// <p>The IDs of the agents or connectors from which to start collecting data. If you send a request to an agent/connector ID that you do not have permission to contact, according to your AWS account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
         pub fn set_agent_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2269,15 +2134,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartExportTask`.
     ///
     /// <p> Begins the export of discovered data to an S3 bucket.</p>
-    /// <p> If you specify <code>agentIds</code> in a filter, the task exports up to 72 hours of
-    /// detailed data collected by the identified Application Discovery Agent, including network,
-    /// process, and performance details. A time range for exported agent data may be set by using
-    /// <code>startTime</code> and <code>endTime</code>. Export of detailed agent data is limited to
-    /// five concurrently running exports. </p>
-    /// <p> If you do not include an <code>agentIds</code> filter, summary data is exported that
-    /// includes both AWS Agentless Discovery Connector data and summary data from AWS Discovery
-    /// Agents. Export of summary data is limited to two exports per day. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> If you specify <code>agentIds</code> in a filter, the task exports up to 72 hours of detailed data collected by the identified Application Discovery Agent, including network, process, and performance details. A time range for exported agent data may be set by using <code>startTime</code> and <code>endTime</code>. Export of detailed agent data is limited to five concurrently running exports. </p>
+    /// <p> If you do not include an <code>agentIds</code> filter, summary data is exported that includes both AWS Agentless Discovery Connector data and summary data from AWS Discovery Agents. Export of summary data is limited to two exports per day. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartExportTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2322,10 +2181,10 @@ pub mod fluent_builders {
                 crate::input::StartExportTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2337,25 +2196,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_export_data_format`](Self::set_export_data_format).
         ///
-        /// <p>The file format for the returned export data. Default value is <code>CSV</code>.
-        /// <b>Note:</b>
-        /// <i>The</i>
-        /// <code>GRAPHML</code>
-        /// <i>option has been deprecated.</i>
-        /// </p>
-        pub fn export_data_format(
-            mut self,
-            inp: impl Into<crate::model::ExportDataFormat>,
-        ) -> Self {
-            self.inner = self.inner.export_data_format(inp);
+        /// <p>The file format for the returned export data. Default value is <code>CSV</code>. <b>Note:</b> <i>The</i> <code>GRAPHML</code> <i>option has been deprecated.</i> </p>
+        pub fn export_data_format(mut self, input: crate::model::ExportDataFormat) -> Self {
+            self.inner = self.inner.export_data_format(input);
             self
         }
-        /// <p>The file format for the returned export data. Default value is <code>CSV</code>.
-        /// <b>Note:</b>
-        /// <i>The</i>
-        /// <code>GRAPHML</code>
-        /// <i>option has been deprecated.</i>
-        /// </p>
+        /// <p>The file format for the returned export data. Default value is <code>CSV</code>. <b>Note:</b> <i>The</i> <code>GRAPHML</code> <i>option has been deprecated.</i> </p>
         pub fn set_export_data_format(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExportDataFormat>>,
@@ -2367,22 +2213,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>If a filter is present, it selects the single <code>agentId</code> of the Application
-        /// Discovery Agent for which data is exported. The <code>agentId</code> can be found in the
-        /// results of the <code>DescribeAgents</code> API or CLI. If no filter is present,
-        /// <code>startTime</code> and <code>endTime</code> are ignored and exported data includes both
-        /// Agentless Discovery Connector data and summary data from Application Discovery agents.
-        /// </p>
-        pub fn filters(mut self, inp: impl Into<crate::model::ExportFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for which data is exported. The <code>agentId</code> can be found in the results of the <code>DescribeAgents</code> API or CLI. If no filter is present, <code>startTime</code> and <code>endTime</code> are ignored and exported data includes both Agentless Discovery Connector data and summary data from Application Discovery agents. </p>
+        pub fn filters(mut self, input: crate::model::ExportFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>If a filter is present, it selects the single <code>agentId</code> of the Application
-        /// Discovery Agent for which data is exported. The <code>agentId</code> can be found in the
-        /// results of the <code>DescribeAgents</code> API or CLI. If no filter is present,
-        /// <code>startTime</code> and <code>endTime</code> are ignored and exported data includes both
-        /// Agentless Discovery Connector data and summary data from Application Discovery agents.
-        /// </p>
+        /// <p>If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for which data is exported. The <code>agentId</code> can be found in the results of the <code>DescribeAgents</code> API or CLI. If no filter is present, <code>startTime</code> and <code>endTime</code> are ignored and exported data includes both Agentless Discovery Connector data and summary data from Application Discovery agents. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExportFilter>>,
@@ -2390,16 +2226,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The start timestamp for exported data from the single Application Discovery Agent
-        /// selected in the filters. If no value is specified, data is exported starting from the first
-        /// data collected by the agent.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        /// <p>The start timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, data is exported starting from the first data collected by the agent.</p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
-        /// <p>The start timestamp for exported data from the single Application Discovery Agent
-        /// selected in the filters. If no value is specified, data is exported starting from the first
-        /// data collected by the agent.</p>
+        /// <p>The start timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, data is exported starting from the first data collected by the agent.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2407,16 +2239,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// <p>The end timestamp for exported data from the single Application Discovery Agent
-        /// selected in the filters. If no value is specified, exported data includes the most recent data
-        /// collected by the agent.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        /// <p>The end timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, exported data includes the most recent data collected by the agent.</p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
-        /// <p>The end timestamp for exported data from the single Application Discovery Agent
-        /// selected in the filters. If no value is specified, exported data includes the most recent data
-        /// collected by the agent.</p>
+        /// <p>The end timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, exported data includes the most recent data collected by the agent.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2427,43 +2255,18 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartImportTask`.
     ///
-    /// <p>Starts an import task, which allows you to import details of your on-premises environment
-    /// directly into AWS Migration Hub without having to use the Application Discovery Service (ADS)
-    /// tools such as the Discovery Connector or Discovery Agent. This gives you the option to perform
-    /// migration assessment and planning directly from your imported data, including the ability to
-    /// group your devices as applications and track their migration status.</p>
-    ///
+    /// <p>Starts an import task, which allows you to import details of your on-premises environment directly into AWS Migration Hub without having to use the Application Discovery Service (ADS) tools such as the Discovery Connector or Discovery Agent. This gives you the option to perform migration assessment and planning directly from your imported data, including the ability to group your devices as applications and track their migration status.</p>
     /// <p>To start an import request, do this:</p>
-    ///
     /// <ol>
-    /// <li>
-    /// <p>Download the specially formatted comma separated value (CSV) import template, which
-    /// you can find here: <a href="https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv">https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Fill out the template with your server and application data.</p>
-    /// </li>
-    /// <li>
-    /// <p>Upload your import file to an Amazon S3 bucket, and make a note of it's Object URL.
-    /// Your import file must be in the CSV format.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use the console or the <code>StartImportTask</code> command with the AWS CLI or one of
-    /// the AWS SDKs to import the records from your file.</p>
-    /// </li>
+    /// <li> <p>Download the specially formatted comma separated value (CSV) import template, which you can find here: <a href="https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv">https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv</a>.</p> </li>
+    /// <li> <p>Fill out the template with your server and application data.</p> </li>
+    /// <li> <p>Upload your import file to an Amazon S3 bucket, and make a note of it's Object URL. Your import file must be in the CSV format.</p> </li>
+    /// <li> <p>Use the console or the <code>StartImportTask</code> command with the AWS CLI or one of the AWS SDKs to import the records from your file.</p> </li>
     /// </ol>
-    ///
-    /// <p>For more information, including step-by-step procedures, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html">Migration Hub
-    /// Import</a> in the <i>AWS Application Discovery Service User
-    /// Guide</i>.</p>
-    ///
-    /// <note>
-    /// <p>There are limits to the number of import tasks you can create (and delete) in an AWS
-    /// account. For more information, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html">AWS Application
-    /// Discovery Service Limits</a> in the <i>AWS Application Discovery Service User
-    /// Guide</i>.</p>
+    /// <p>For more information, including step-by-step procedures, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html">Migration Hub Import</a> in the <i>AWS Application Discovery Service User Guide</i>.</p> <note>
+    /// <p>There are limits to the number of import tasks you can create (and delete) in an AWS account. For more information, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html">AWS Application Discovery Service Limits</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartImportTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2508,10 +2311,10 @@ pub mod fluent_builders {
                 crate::input::StartImportTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2519,24 +2322,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Optional. A unique token that you can provide to prevent the same import request from
-        /// occurring more than once. If you don't provide a token, a token is automatically
-        /// generated.</p>
-        ///
-        /// <p>Sending more than one <code>StartImportTask</code> request with the same client request
-        /// token will return information about the original import task with that client request
-        /// token.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>Optional. A unique token that you can provide to prevent the same import request from occurring more than once. If you don't provide a token, a token is automatically generated.</p>
+        /// <p>Sending more than one <code>StartImportTask</code> request with the same client request token will return information about the original import task with that client request token.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>Optional. A unique token that you can provide to prevent the same import request from
-        /// occurring more than once. If you don't provide a token, a token is automatically
-        /// generated.</p>
-        ///
-        /// <p>Sending more than one <code>StartImportTask</code> request with the same client request
-        /// token will return information about the original import task with that client request
-        /// token.</p>
+        /// <p>Optional. A unique token that you can provide to prevent the same import request from occurring more than once. If you don't provide a token, a token is automatically generated.</p>
+        /// <p>Sending more than one <code>StartImportTask</code> request with the same client request token will return information about the original import task with that client request token.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2544,37 +2337,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>A descriptive name for this request. You can use this name to filter future requests
-        /// related to this import task, such as identifying applications and servers that were included
-        /// in this import task. We recommend that you use a meaningful name for each import task.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>A descriptive name for this request. You can use this name to filter future requests related to this import task, such as identifying applications and servers that were included in this import task. We recommend that you use a meaningful name for each import task.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>A descriptive name for this request. You can use this name to filter future requests
-        /// related to this import task, such as identifying applications and servers that were included
-        /// in this import task. We recommend that you use a meaningful name for each import task.</p>
+        /// <p>A descriptive name for this request. You can use this name to filter future requests related to this import task, such as identifying applications and servers that were included in this import task. We recommend that you use a meaningful name for each import task.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The URL for your import file that you've uploaded to Amazon S3.</p>
-        ///
-        /// <note>
-        /// <p>If you're using the AWS CLI, this URL is structured as follows:
-        /// <code>s3://BucketName/ImportFileName.CSV</code>
-        /// </p>
+        /// <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note>
+        /// <p>If you're using the AWS CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
         /// </note>
-        pub fn import_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.import_url(inp);
+        pub fn import_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.import_url(input.into());
             self
         }
-        /// <p>The URL for your import file that you've uploaded to Amazon S3.</p>
-        ///
-        /// <note>
-        /// <p>If you're using the AWS CLI, this URL is structured as follows:
-        /// <code>s3://BucketName/ImportFileName.CSV</code>
-        /// </p>
+        /// <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note>
+        /// <p>If you're using the AWS CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
         /// </note>
         pub fn set_import_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_import_url(input);
@@ -2584,7 +2365,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopContinuousExport`.
     ///
     /// <p>Stop the continuous flow of agent's discovered data into Amazon Athena.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopContinuousExport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2629,10 +2410,10 @@ pub mod fluent_builders {
                 crate::input::StopContinuousExportInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2641,8 +2422,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID assigned to this export.</p>
-        pub fn export_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.export_id(inp);
+        pub fn export_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.export_id(input.into());
             self
         }
         /// <p>The unique ID assigned to this export.</p>
@@ -2654,7 +2435,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopDataCollectionByAgentIds`.
     ///
     /// <p>Instructs the specified agents or connectors to stop collecting data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopDataCollectionByAgentIds<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2699,10 +2480,10 @@ pub mod fluent_builders {
                 crate::input::StopDataCollectionByAgentIdsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2715,8 +2496,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_agent_ids`](Self::set_agent_ids).
         ///
         /// <p>The IDs of the agents or connectors from which to stop collecting data.</p>
-        pub fn agent_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agent_ids(inp);
+        pub fn agent_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_ids(input.into());
             self
         }
         /// <p>The IDs of the agents or connectors from which to stop collecting data.</p>
@@ -2731,7 +2512,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApplication`.
     ///
     /// <p>Updates metadata about an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2776,10 +2557,10 @@ pub mod fluent_builders {
                 crate::input::UpdateApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2788,8 +2569,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Configuration ID of the application to be updated.</p>
-        pub fn configuration_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_id(inp);
+        pub fn configuration_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_id(input.into());
             self
         }
         /// <p>Configuration ID of the application to be updated.</p>
@@ -2801,8 +2582,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>New name of the application to be updated.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>New name of the application to be updated.</p>
@@ -2811,8 +2592,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>New description of the application to be updated.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>New description of the application to be updated.</p>
@@ -2822,6 +2603,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

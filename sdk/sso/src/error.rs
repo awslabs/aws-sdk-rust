@@ -12,8 +12,7 @@ pub struct GetRoleCredentialsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRoleCredentialsErrorKind {
-    /// <p>Indicates that a problem occurred with the input to the request. For example, a required
-    /// parameter might be missing or out of range.</p>
+    /// <p>Indicates that a problem occurred with the input to the request. For example, a required parameter might be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The specified resource doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -65,8 +64,6 @@ impl GetRoleCredentialsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -141,8 +138,7 @@ pub struct ListAccountRolesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAccountRolesErrorKind {
-    /// <p>Indicates that a problem occurred with the input to the request. For example, a required
-    /// parameter might be missing or out of range.</p>
+    /// <p>Indicates that a problem occurred with the input to the request. For example, a required parameter might be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The specified resource doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -194,8 +190,6 @@ impl ListAccountRolesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -270,8 +264,7 @@ pub struct ListAccountsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAccountsErrorKind {
-    /// <p>Indicates that a problem occurred with the input to the request. For example, a required
-    /// parameter might be missing or out of range.</p>
+    /// <p>Indicates that a problem occurred with the input to the request. For example, a required parameter might be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The specified resource doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -323,8 +316,6 @@ impl ListAccountsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -396,8 +387,7 @@ pub struct LogoutError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum LogoutErrorKind {
-    /// <p>Indicates that a problem occurred with the input to the request. For example, a required
-    /// parameter might be missing or out of range.</p>
+    /// <p>Indicates that a problem occurred with the input to the request. For example, a required parameter might be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Indicates that the request is being made too frequently and is more than what the server can handle.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -446,8 +436,6 @@ impl LogoutError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -620,8 +608,7 @@ impl TooManyRequestsException {
     }
 }
 
-/// <p>Indicates that a problem occurred with the input to the request. For example, a required
-/// parameter might be missing or out of range.</p>
+/// <p>Indicates that a problem occurred with the input to the request. For example, a required parameter might be missing or out of range.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRequestException {

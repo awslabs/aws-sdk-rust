@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Config
@@ -233,6 +233,7 @@ where
     ///
     /// See [`DescribeAggregateComplianceByConfigRules`](crate::client::fluent_builders::DescribeAggregateComplianceByConfigRules) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeAggregateComplianceByConfigRules::into_paginator).
     pub fn describe_aggregate_compliance_by_config_rules(
         &self,
     ) -> fluent_builders::DescribeAggregateComplianceByConfigRules<C, M, R> {
@@ -242,6 +243,7 @@ where
     ///
     /// See [`DescribeAggregateComplianceByConformancePacks`](crate::client::fluent_builders::DescribeAggregateComplianceByConformancePacks) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeAggregateComplianceByConformancePacks::into_paginator).
     pub fn describe_aggregate_compliance_by_conformance_packs(
         &self,
     ) -> fluent_builders::DescribeAggregateComplianceByConformancePacks<C, M, R> {
@@ -251,6 +253,7 @@ where
     ///
     /// See [`DescribeAggregationAuthorizations`](crate::client::fluent_builders::DescribeAggregationAuthorizations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeAggregationAuthorizations::into_paginator).
     pub fn describe_aggregation_authorizations(
         &self,
     ) -> fluent_builders::DescribeAggregationAuthorizations<C, M, R> {
@@ -260,6 +263,7 @@ where
     ///
     /// See [`DescribeComplianceByConfigRule`](crate::client::fluent_builders::DescribeComplianceByConfigRule) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeComplianceByConfigRule::into_paginator).
     pub fn describe_compliance_by_config_rule(
         &self,
     ) -> fluent_builders::DescribeComplianceByConfigRule<C, M, R> {
@@ -269,6 +273,7 @@ where
     ///
     /// See [`DescribeComplianceByResource`](crate::client::fluent_builders::DescribeComplianceByResource) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeComplianceByResource::into_paginator).
     pub fn describe_compliance_by_resource(
         &self,
     ) -> fluent_builders::DescribeComplianceByResource<C, M, R> {
@@ -278,6 +283,7 @@ where
     ///
     /// See [`DescribeConfigRuleEvaluationStatus`](crate::client::fluent_builders::DescribeConfigRuleEvaluationStatus) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeConfigRuleEvaluationStatus::into_paginator).
     pub fn describe_config_rule_evaluation_status(
         &self,
     ) -> fluent_builders::DescribeConfigRuleEvaluationStatus<C, M, R> {
@@ -287,6 +293,7 @@ where
     ///
     /// See [`DescribeConfigRules`](crate::client::fluent_builders::DescribeConfigRules) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeConfigRules::into_paginator).
     pub fn describe_config_rules(&self) -> fluent_builders::DescribeConfigRules<C, M, R> {
         fluent_builders::DescribeConfigRules::new(self.handle.clone())
     }
@@ -294,6 +301,7 @@ where
     ///
     /// See [`DescribeConfigurationAggregators`](crate::client::fluent_builders::DescribeConfigurationAggregators) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeConfigurationAggregators::into_paginator).
     pub fn describe_configuration_aggregators(
         &self,
     ) -> fluent_builders::DescribeConfigurationAggregators<C, M, R> {
@@ -303,6 +311,7 @@ where
     ///
     /// See [`DescribeConfigurationAggregatorSourcesStatus`](crate::client::fluent_builders::DescribeConfigurationAggregatorSourcesStatus) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeConfigurationAggregatorSourcesStatus::into_paginator).
     pub fn describe_configuration_aggregator_sources_status(
         &self,
     ) -> fluent_builders::DescribeConfigurationAggregatorSourcesStatus<C, M, R> {
@@ -330,6 +339,7 @@ where
     ///
     /// See [`DescribeConformancePackCompliance`](crate::client::fluent_builders::DescribeConformancePackCompliance) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeConformancePackCompliance::into_paginator).
     pub fn describe_conformance_pack_compliance(
         &self,
     ) -> fluent_builders::DescribeConformancePackCompliance<C, M, R> {
@@ -339,6 +349,7 @@ where
     ///
     /// See [`DescribeConformancePacks`](crate::client::fluent_builders::DescribeConformancePacks) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeConformancePacks::into_paginator).
     pub fn describe_conformance_packs(&self) -> fluent_builders::DescribeConformancePacks<C, M, R> {
         fluent_builders::DescribeConformancePacks::new(self.handle.clone())
     }
@@ -346,6 +357,7 @@ where
     ///
     /// See [`DescribeConformancePackStatus`](crate::client::fluent_builders::DescribeConformancePackStatus) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeConformancePackStatus::into_paginator).
     pub fn describe_conformance_pack_status(
         &self,
     ) -> fluent_builders::DescribeConformancePackStatus<C, M, R> {
@@ -371,6 +383,7 @@ where
     ///
     /// See [`DescribeOrganizationConfigRules`](crate::client::fluent_builders::DescribeOrganizationConfigRules) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeOrganizationConfigRules::into_paginator).
     pub fn describe_organization_config_rules(
         &self,
     ) -> fluent_builders::DescribeOrganizationConfigRules<C, M, R> {
@@ -380,6 +393,7 @@ where
     ///
     /// See [`DescribeOrganizationConfigRuleStatuses`](crate::client::fluent_builders::DescribeOrganizationConfigRuleStatuses) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeOrganizationConfigRuleStatuses::into_paginator).
     pub fn describe_organization_config_rule_statuses(
         &self,
     ) -> fluent_builders::DescribeOrganizationConfigRuleStatuses<C, M, R> {
@@ -389,6 +403,7 @@ where
     ///
     /// See [`DescribeOrganizationConformancePacks`](crate::client::fluent_builders::DescribeOrganizationConformancePacks) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeOrganizationConformancePacks::into_paginator).
     pub fn describe_organization_conformance_packs(
         &self,
     ) -> fluent_builders::DescribeOrganizationConformancePacks<C, M, R> {
@@ -398,6 +413,7 @@ where
     ///
     /// See [`DescribeOrganizationConformancePackStatuses`](crate::client::fluent_builders::DescribeOrganizationConformancePackStatuses) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeOrganizationConformancePackStatuses::into_paginator).
     pub fn describe_organization_conformance_pack_statuses(
         &self,
     ) -> fluent_builders::DescribeOrganizationConformancePackStatuses<C, M, R> {
@@ -407,6 +423,7 @@ where
     ///
     /// See [`DescribePendingAggregationRequests`](crate::client::fluent_builders::DescribePendingAggregationRequests) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribePendingAggregationRequests::into_paginator).
     pub fn describe_pending_aggregation_requests(
         &self,
     ) -> fluent_builders::DescribePendingAggregationRequests<C, M, R> {
@@ -425,6 +442,7 @@ where
     ///
     /// See [`DescribeRemediationExceptions`](crate::client::fluent_builders::DescribeRemediationExceptions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeRemediationExceptions::into_paginator).
     pub fn describe_remediation_exceptions(
         &self,
     ) -> fluent_builders::DescribeRemediationExceptions<C, M, R> {
@@ -434,6 +452,7 @@ where
     ///
     /// See [`DescribeRemediationExecutionStatus`](crate::client::fluent_builders::DescribeRemediationExecutionStatus) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeRemediationExecutionStatus::into_paginator).
     pub fn describe_remediation_execution_status(
         &self,
     ) -> fluent_builders::DescribeRemediationExecutionStatus<C, M, R> {
@@ -443,6 +462,7 @@ where
     ///
     /// See [`DescribeRetentionConfigurations`](crate::client::fluent_builders::DescribeRetentionConfigurations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeRetentionConfigurations::into_paginator).
     pub fn describe_retention_configurations(
         &self,
     ) -> fluent_builders::DescribeRetentionConfigurations<C, M, R> {
@@ -452,6 +472,7 @@ where
     ///
     /// See [`GetAggregateComplianceDetailsByConfigRule`](crate::client::fluent_builders::GetAggregateComplianceDetailsByConfigRule) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetAggregateComplianceDetailsByConfigRule::into_paginator).
     pub fn get_aggregate_compliance_details_by_config_rule(
         &self,
     ) -> fluent_builders::GetAggregateComplianceDetailsByConfigRule<C, M, R> {
@@ -461,6 +482,7 @@ where
     ///
     /// See [`GetAggregateConfigRuleComplianceSummary`](crate::client::fluent_builders::GetAggregateConfigRuleComplianceSummary) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetAggregateConfigRuleComplianceSummary::into_paginator).
     pub fn get_aggregate_config_rule_compliance_summary(
         &self,
     ) -> fluent_builders::GetAggregateConfigRuleComplianceSummary<C, M, R> {
@@ -470,6 +492,7 @@ where
     ///
     /// See [`GetAggregateConformancePackComplianceSummary`](crate::client::fluent_builders::GetAggregateConformancePackComplianceSummary) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetAggregateConformancePackComplianceSummary::into_paginator).
     pub fn get_aggregate_conformance_pack_compliance_summary(
         &self,
     ) -> fluent_builders::GetAggregateConformancePackComplianceSummary<C, M, R> {
@@ -479,6 +502,7 @@ where
     ///
     /// See [`GetAggregateDiscoveredResourceCounts`](crate::client::fluent_builders::GetAggregateDiscoveredResourceCounts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetAggregateDiscoveredResourceCounts::into_paginator).
     pub fn get_aggregate_discovered_resource_counts(
         &self,
     ) -> fluent_builders::GetAggregateDiscoveredResourceCounts<C, M, R> {
@@ -497,6 +521,7 @@ where
     ///
     /// See [`GetComplianceDetailsByConfigRule`](crate::client::fluent_builders::GetComplianceDetailsByConfigRule) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetComplianceDetailsByConfigRule::into_paginator).
     pub fn get_compliance_details_by_config_rule(
         &self,
     ) -> fluent_builders::GetComplianceDetailsByConfigRule<C, M, R> {
@@ -506,6 +531,7 @@ where
     ///
     /// See [`GetComplianceDetailsByResource`](crate::client::fluent_builders::GetComplianceDetailsByResource) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetComplianceDetailsByResource::into_paginator).
     pub fn get_compliance_details_by_resource(
         &self,
     ) -> fluent_builders::GetComplianceDetailsByResource<C, M, R> {
@@ -533,6 +559,7 @@ where
     ///
     /// See [`GetConformancePackComplianceDetails`](crate::client::fluent_builders::GetConformancePackComplianceDetails) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetConformancePackComplianceDetails::into_paginator).
     pub fn get_conformance_pack_compliance_details(
         &self,
     ) -> fluent_builders::GetConformancePackComplianceDetails<C, M, R> {
@@ -542,6 +569,7 @@ where
     ///
     /// See [`GetConformancePackComplianceSummary`](crate::client::fluent_builders::GetConformancePackComplianceSummary) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetConformancePackComplianceSummary::into_paginator).
     pub fn get_conformance_pack_compliance_summary(
         &self,
     ) -> fluent_builders::GetConformancePackComplianceSummary<C, M, R> {
@@ -551,6 +579,7 @@ where
     ///
     /// See [`GetDiscoveredResourceCounts`](crate::client::fluent_builders::GetDiscoveredResourceCounts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetDiscoveredResourceCounts::into_paginator).
     pub fn get_discovered_resource_counts(
         &self,
     ) -> fluent_builders::GetDiscoveredResourceCounts<C, M, R> {
@@ -560,6 +589,7 @@ where
     ///
     /// See [`GetOrganizationConfigRuleDetailedStatus`](crate::client::fluent_builders::GetOrganizationConfigRuleDetailedStatus) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetOrganizationConfigRuleDetailedStatus::into_paginator).
     pub fn get_organization_config_rule_detailed_status(
         &self,
     ) -> fluent_builders::GetOrganizationConfigRuleDetailedStatus<C, M, R> {
@@ -569,6 +599,7 @@ where
     ///
     /// See [`GetOrganizationConformancePackDetailedStatus`](crate::client::fluent_builders::GetOrganizationConformancePackDetailedStatus) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetOrganizationConformancePackDetailedStatus::into_paginator).
     pub fn get_organization_conformance_pack_detailed_status(
         &self,
     ) -> fluent_builders::GetOrganizationConformancePackDetailedStatus<C, M, R> {
@@ -578,6 +609,7 @@ where
     ///
     /// See [`GetResourceConfigHistory`](crate::client::fluent_builders::GetResourceConfigHistory) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetResourceConfigHistory::into_paginator).
     pub fn get_resource_config_history(
         &self,
     ) -> fluent_builders::GetResourceConfigHistory<C, M, R> {
@@ -594,6 +626,7 @@ where
     ///
     /// See [`ListAggregateDiscoveredResources`](crate::client::fluent_builders::ListAggregateDiscoveredResources) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAggregateDiscoveredResources::into_paginator).
     pub fn list_aggregate_discovered_resources(
         &self,
     ) -> fluent_builders::ListAggregateDiscoveredResources<C, M, R> {
@@ -603,6 +636,7 @@ where
     ///
     /// See [`ListDiscoveredResources`](crate::client::fluent_builders::ListDiscoveredResources) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDiscoveredResources::into_paginator).
     pub fn list_discovered_resources(&self) -> fluent_builders::ListDiscoveredResources<C, M, R> {
         fluent_builders::ListDiscoveredResources::new(self.handle.clone())
     }
@@ -610,6 +644,7 @@ where
     ///
     /// See [`ListStoredQueries`](crate::client::fluent_builders::ListStoredQueries) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListStoredQueries::into_paginator).
     pub fn list_stored_queries(&self) -> fluent_builders::ListStoredQueries<C, M, R> {
         fluent_builders::ListStoredQueries::new(self.handle.clone())
     }
@@ -617,6 +652,7 @@ where
     ///
     /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
@@ -741,6 +777,7 @@ where
     ///
     /// See [`SelectAggregateResourceConfig`](crate::client::fluent_builders::SelectAggregateResourceConfig) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SelectAggregateResourceConfig::into_paginator).
     pub fn select_aggregate_resource_config(
         &self,
     ) -> fluent_builders::SelectAggregateResourceConfig<C, M, R> {
@@ -750,6 +787,7 @@ where
     ///
     /// See [`SelectResourceConfig`](crate::client::fluent_builders::SelectResourceConfig) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SelectResourceConfig::into_paginator).
     pub fn select_resource_config(&self) -> fluent_builders::SelectResourceConfig<C, M, R> {
         fluent_builders::SelectResourceConfig::new(self.handle.clone())
     }
@@ -814,20 +852,13 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `BatchGetAggregateResourceConfig`.
     ///
-    /// <p>Returns the current configuration items for resources that are present in your Config aggregator. The operation also returns a list of resources that are not processed in the current request.
-    /// If there are no unprocessed resources, the operation returns an empty <code>unprocessedResourceIdentifiers</code> list. </p>
-    ///
-    /// <note>
+    /// <p>Returns the current configuration items for resources that are present in your Config aggregator. The operation also returns a list of resources that are not processed in the current request. If there are no unprocessed resources, the operation returns an empty <code>unprocessedResourceIdentifiers</code> list. </p> <note>
     /// <ul>
-    /// <li>
-    /// <p>The API does not return results for deleted resources.</p>
-    /// </li>
-    /// <li>
-    /// <p> The API does not return tags and relationships.</p>
-    /// </li>
+    /// <li> <p>The API does not return results for deleted resources.</p> </li>
+    /// <li> <p> The API does not return tags and relationships.</p> </li>
     /// </ul>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetAggregateResourceConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -872,10 +903,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetAggregateResourceConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -886,9 +917,9 @@ pub mod fluent_builders {
         /// <p>The name of the configuration aggregator.</p>
         pub fn configuration_aggregator_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_aggregator_name(inp);
+            self.inner = self.inner.configuration_aggregator_name(input.into());
             self
         }
         /// <p>The name of the configuration aggregator.</p>
@@ -906,9 +937,9 @@ pub mod fluent_builders {
         /// <p>A list of aggregate ResourceIdentifiers objects. </p>
         pub fn resource_identifiers(
             mut self,
-            inp: impl Into<crate::model::AggregateResourceIdentifier>,
+            input: crate::model::AggregateResourceIdentifier,
         ) -> Self {
-            self.inner = self.inner.resource_identifiers(inp);
+            self.inner = self.inner.resource_identifiers(input);
             self
         }
         /// <p>A list of aggregate ResourceIdentifiers objects. </p>
@@ -922,26 +953,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchGetResourceConfig`.
     ///
-    /// <p>Returns the <code>BaseConfigurationItem</code> for one or more requested resources.
-    /// The operation also returns a list of resources that are
-    /// not processed in the current request. If there are no unprocessed
-    /// resources, the operation returns an empty unprocessedResourceKeys
-    /// list. </p>
-    /// <note>
+    /// <p>Returns the <code>BaseConfigurationItem</code> for one or more requested resources. The operation also returns a list of resources that are not processed in the current request. If there are no unprocessed resources, the operation returns an empty unprocessedResourceKeys list. </p> <note>
     /// <ul>
-    /// <li>
-    /// <p>The API does not return results for deleted
-    /// resources.</p>
-    /// </li>
-    /// <li>
-    /// <p> The API does not return any tags for the requested
-    /// resources. This information is filtered out of the
-    /// supplementaryConfiguration section of the API
-    /// response.</p>
-    /// </li>
+    /// <li> <p>The API does not return results for deleted resources.</p> </li>
+    /// <li> <p> The API does not return any tags for the requested resources. This information is filtered out of the supplementaryConfiguration section of the API response.</p> </li>
     /// </ul>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetResourceConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -986,10 +1004,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetResourceConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1001,16 +1019,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_keys`](Self::set_resource_keys).
         ///
-        /// <p>A list of resource keys to be processed with the current
-        /// request. Each element in the list consists of the resource type and
-        /// resource ID.</p>
-        pub fn resource_keys(mut self, inp: impl Into<crate::model::ResourceKey>) -> Self {
-            self.inner = self.inner.resource_keys(inp);
+        /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
+        pub fn resource_keys(mut self, input: crate::model::ResourceKey) -> Self {
+            self.inner = self.inner.resource_keys(input);
             self
         }
-        /// <p>A list of resource keys to be processed with the current
-        /// request. Each element in the list consists of the resource type and
-        /// resource ID.</p>
+        /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
         pub fn set_resource_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceKey>>,
@@ -1021,9 +1035,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAggregationAuthorization`.
     ///
-    /// <p>Deletes the authorization granted to the specified
-    /// configuration aggregator account in a specified region.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the authorization granted to the specified configuration aggregator account in a specified region.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAggregationAuthorization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1068,10 +1081,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAggregationAuthorizationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1079,14 +1092,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The 12-digit account ID of the account authorized to aggregate
-        /// data.</p>
-        pub fn authorized_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorized_account_id(inp);
+        /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
+        pub fn authorized_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorized_account_id(input.into());
             self
         }
-        /// <p>The 12-digit account ID of the account authorized to aggregate
-        /// data.</p>
+        /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
         pub fn set_authorized_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1095,8 +1106,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The region authorized to collect aggregated data.</p>
-        pub fn authorized_aws_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorized_aws_region(inp);
+        pub fn authorized_aws_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorized_aws_region(input.into());
             self
         }
         /// <p>The region authorized to collect aggregated data.</p>
@@ -1110,16 +1121,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteConfigRule`.
     ///
-    /// <p>Deletes the specified Config rule and all of its evaluation
-    /// results.</p>
-    /// <p>Config sets the state of a rule to <code>DELETING</code>
-    /// until the deletion is complete. You cannot update a rule while it is
-    /// in this state. If you make a <code>PutConfigRule</code> or
-    /// <code>DeleteConfigRule</code> request for the rule, you will
-    /// receive a <code>ResourceInUseException</code>.</p>
-    /// <p>You can check the state of a rule by using the
-    /// <code>DescribeConfigRules</code> request.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the specified Config rule and all of its evaluation results.</p>
+    /// <p>Config sets the state of a rule to <code>DELETING</code> until the deletion is complete. You cannot update a rule while it is in this state. If you make a <code>PutConfigRule</code> or <code>DeleteConfigRule</code> request for the rule, you will receive a <code>ResourceInUseException</code>.</p>
+    /// <p>You can check the state of a rule by using the <code>DescribeConfigRules</code> request.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConfigRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1164,10 +1169,10 @@ pub mod fluent_builders {
                 crate::input::DeleteConfigRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1175,14 +1180,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the Config rule that you want to
-        /// delete.</p>
-        pub fn config_rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_rule_name(inp);
+        /// <p>The name of the Config rule that you want to delete.</p>
+        pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_rule_name(input.into());
             self
         }
-        /// <p>The name of the Config rule that you want to
-        /// delete.</p>
+        /// <p>The name of the Config rule that you want to delete.</p>
         pub fn set_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1193,9 +1196,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteConfigurationAggregator`.
     ///
-    /// <p>Deletes the specified configuration aggregator and the
-    /// aggregated data associated with the aggregator.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the specified configuration aggregator and the aggregated data associated with the aggregator.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConfigurationAggregator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1240,10 +1242,10 @@ pub mod fluent_builders {
                 crate::input::DeleteConfigurationAggregatorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1254,9 +1256,9 @@ pub mod fluent_builders {
         /// <p>The name of the configuration aggregator.</p>
         pub fn configuration_aggregator_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_aggregator_name(inp);
+            self.inner = self.inner.configuration_aggregator_name(input.into());
             self
         }
         /// <p>The name of the configuration aggregator.</p>
@@ -1271,16 +1273,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteConfigurationRecorder`.
     ///
     /// <p>Deletes the configuration recorder.</p>
-    /// <p>After the configuration recorder is deleted, Config will
-    /// not record resource configuration changes until you create a new
-    /// configuration recorder.</p>
-    /// <p>This action does not delete the configuration information that
-    /// was previously recorded. You will be able to access the previously
-    /// recorded information by using the
-    /// <code>GetResourceConfigHistory</code> action, but you will not
-    /// be able to access this information in the Config console until
-    /// you create a new configuration recorder.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>After the configuration recorder is deleted, Config will not record resource configuration changes until you create a new configuration recorder.</p>
+    /// <p>This action does not delete the configuration information that was previously recorded. You will be able to access the previously recorded information by using the <code>GetResourceConfigHistory</code> action, but you will not be able to access this information in the Config console until you create a new configuration recorder.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConfigurationRecorder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1325,10 +1320,10 @@ pub mod fluent_builders {
                 crate::input::DeleteConfigurationRecorderInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1336,16 +1331,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the configuration recorder to be deleted. You can
-        /// retrieve the name of your configuration recorder by using the
-        /// <code>DescribeConfigurationRecorders</code> action.</p>
-        pub fn configuration_recorder_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_recorder_name(inp);
+        /// <p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>
+        pub fn configuration_recorder_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.configuration_recorder_name(input.into());
             self
         }
-        /// <p>The name of the configuration recorder to be deleted. You can
-        /// retrieve the name of your configuration recorder by using the
-        /// <code>DescribeConfigurationRecorders</code> action.</p>
+        /// <p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>
         pub fn set_configuration_recorder_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1356,11 +1350,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteConformancePack`.
     ///
-    /// <p>Deletes the specified conformance pack and all the Config rules, remediation actions, and all evaluation results within that
-    /// conformance pack.</p>
-    /// <p>Config sets the conformance pack to <code>DELETE_IN_PROGRESS</code> until the deletion is complete.
-    /// You cannot update a conformance pack while it is in this state.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the specified conformance pack and all the Config rules, remediation actions, and all evaluation results within that conformance pack.</p>
+    /// <p>Config sets the conformance pack to <code>DELETE_IN_PROGRESS</code> until the deletion is complete. You cannot update a conformance pack while it is in this state.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConformancePack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1405,10 +1397,10 @@ pub mod fluent_builders {
                 crate::input::DeleteConformancePackInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1417,8 +1409,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the conformance pack you want to delete.</p>
-        pub fn conformance_pack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.conformance_pack_name(inp);
+        pub fn conformance_pack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.conformance_pack_name(input.into());
             self
         }
         /// <p>Name of the conformance pack you want to delete.</p>
@@ -1433,9 +1425,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDeliveryChannel`.
     ///
     /// <p>Deletes the delivery channel.</p>
-    /// <p>Before you can delete the delivery channel, you must stop the
-    /// configuration recorder by using the <a>StopConfigurationRecorder</a> action.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Before you can delete the delivery channel, you must stop the configuration recorder by using the <code>StopConfigurationRecorder</code> action.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDeliveryChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1480,10 +1471,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDeliveryChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1492,8 +1483,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the delivery channel to delete.</p>
-        pub fn delivery_channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_channel_name(inp);
+        pub fn delivery_channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_channel_name(input.into());
             self
         }
         /// <p>The name of the delivery channel to delete.</p>
@@ -1507,11 +1498,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteEvaluationResults`.
     ///
-    /// <p>Deletes the evaluation results for the specified Config
-    /// rule. You can specify one Config rule per request. After you
-    /// delete the evaluation results, you can call the <a>StartConfigRulesEvaluation</a> API to start evaluating
-    /// your Amazon Web Services resources against the rule.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the evaluation results for the specified Config rule. You can specify one Config rule per request. After you delete the evaluation results, you can call the <code>StartConfigRulesEvaluation</code> API to start evaluating your Amazon Web Services resources against the rule.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEvaluationResults<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1556,10 +1544,10 @@ pub mod fluent_builders {
                 crate::input::DeleteEvaluationResultsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1567,14 +1555,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the Config rule for which you want to delete
-        /// the evaluation results.</p>
-        pub fn config_rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_rule_name(inp);
+        /// <p>The name of the Config rule for which you want to delete the evaluation results.</p>
+        pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_rule_name(input.into());
             self
         }
-        /// <p>The name of the Config rule for which you want to delete
-        /// the evaluation results.</p>
+        /// <p>The name of the Config rule for which you want to delete the evaluation results.</p>
         pub fn set_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1586,12 +1572,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteOrganizationConfigRule`.
     ///
     /// <p>Deletes the specified organization config rule and all of its evaluation results from all member accounts in that organization. </p>
-    /// <p>Only a master account and a delegated administrator account can delete an organization config rule.
-    /// When calling this API with a delegated administrator, you must ensure Organizations
-    /// <code>ListDelegatedAdministrator</code> permissions are added.</p>
-    /// <p>Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion is complete.
-    /// You cannot update a rule while it is in this state.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Only a master account and a delegated administrator account can delete an organization config rule. When calling this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added.</p>
+    /// <p>Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion is complete. You cannot update a rule while it is in this state.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteOrganizationConfigRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1636,10 +1619,10 @@ pub mod fluent_builders {
                 crate::input::DeleteOrganizationConfigRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1650,9 +1633,9 @@ pub mod fluent_builders {
         /// <p>The name of organization config rule that you want to delete.</p>
         pub fn organization_config_rule_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.organization_config_rule_name(inp);
+            self.inner = self.inner.organization_config_rule_name(input.into());
             self
         }
         /// <p>The name of organization config rule that you want to delete.</p>
@@ -1666,14 +1649,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteOrganizationConformancePack`.
     ///
-    /// <p>Deletes the specified organization conformance pack and all of the config rules and remediation actions from
-    /// all member accounts in that organization. </p>
-    /// <p> Only a master account or a delegated administrator account can delete an organization conformance pack.
-    /// When calling this API with a delegated administrator, you must ensure Organizations
-    /// <code>ListDelegatedAdministrator</code> permissions are added.</p>
-    /// <p>Config sets the state of a conformance pack to DELETE_IN_PROGRESS until the deletion is complete.
-    /// You cannot update a conformance pack while it is in this state. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the specified organization conformance pack and all of the config rules and remediation actions from all member accounts in that organization. </p>
+    /// <p> Only a master account or a delegated administrator account can delete an organization conformance pack. When calling this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added.</p>
+    /// <p>Config sets the state of a conformance pack to DELETE_IN_PROGRESS until the deletion is complete. You cannot update a conformance pack while it is in this state. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteOrganizationConformancePack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1718,10 +1697,10 @@ pub mod fluent_builders {
                 crate::input::DeleteOrganizationConformancePackInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1732,9 +1711,9 @@ pub mod fluent_builders {
         /// <p>The name of organization conformance pack that you want to delete.</p>
         pub fn organization_conformance_pack_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.organization_conformance_pack_name(inp);
+            self.inner = self.inner.organization_conformance_pack_name(input.into());
             self
         }
         /// <p>The name of organization conformance pack that you want to delete.</p>
@@ -1748,9 +1727,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeletePendingAggregationRequest`.
     ///
-    /// <p>Deletes pending authorization requests for a specified
-    /// aggregator account in a specified region.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes pending authorization requests for a specified aggregator account in a specified region.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePendingAggregationRequest<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1795,10 +1773,10 @@ pub mod fluent_builders {
                 crate::input::DeletePendingAggregationRequestInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1806,14 +1784,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The 12-digit account ID of the account requesting to aggregate
-        /// data.</p>
-        pub fn requester_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.requester_account_id(inp);
+        /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
+        pub fn requester_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.requester_account_id(input.into());
             self
         }
-        /// <p>The 12-digit account ID of the account requesting to aggregate
-        /// data.</p>
+        /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
         pub fn set_requester_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1822,8 +1798,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The region requesting to aggregate data.</p>
-        pub fn requester_aws_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.requester_aws_region(inp);
+        pub fn requester_aws_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.requester_aws_region(input.into());
             self
         }
         /// <p>The region requesting to aggregate data.</p>
@@ -1838,7 +1814,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRemediationConfiguration`.
     ///
     /// <p>Deletes the remediation configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRemediationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1883,10 +1859,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRemediationConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1895,8 +1871,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Config rule for which you want to delete remediation configuration.</p>
-        pub fn config_rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_rule_name(inp);
+        pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_rule_name(input.into());
             self
         }
         /// <p>The name of the Config rule for which you want to delete remediation configuration.</p>
@@ -1908,8 +1884,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of a resource.</p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
         /// <p>The type of a resource.</p>
@@ -1923,12 +1899,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteRemediationExceptions`.
     ///
-    /// <p>Deletes one or more remediation exceptions mentioned in the resource keys.</p>
-    /// <note>
-    /// <p>Config generates a remediation exception when a problem occurs executing a remediation action to a specific resource.
-    /// Remediation exceptions blocks auto-remediation until the exception is cleared.</p>
+    /// <p>Deletes one or more remediation exceptions mentioned in the resource keys.</p> <note>
+    /// <p>Config generates a remediation exception when a problem occurs executing a remediation action to a specific resource. Remediation exceptions blocks auto-remediation until the exception is cleared.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRemediationExceptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1973,10 +1947,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRemediationExceptionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1985,8 +1959,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Config rule for which you want to delete remediation exception configuration.</p>
-        pub fn config_rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_rule_name(inp);
+        pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_rule_name(input.into());
             self
         }
         /// <p>The name of the Config rule for which you want to delete remediation exception configuration.</p>
@@ -2004,9 +1978,9 @@ pub mod fluent_builders {
         /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
         pub fn resource_keys(
             mut self,
-            inp: impl Into<crate::model::RemediationExceptionResourceKey>,
+            input: crate::model::RemediationExceptionResourceKey,
         ) -> Self {
-            self.inner = self.inner.resource_keys(inp);
+            self.inner = self.inner.resource_keys(input);
             self
         }
         /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
@@ -2022,9 +1996,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteResourceConfig`.
     ///
-    /// <p>Records the configuration state for a custom resource that has been deleted.  This API records a new ConfigurationItem with a ResourceDeleted status. You can retrieve the ConfigurationItems recorded for this resource in your Config History.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Records the configuration state for a custom resource that has been deleted. This API records a new ConfigurationItem with a ResourceDeleted status. You can retrieve the ConfigurationItems recorded for this resource in your Config History. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourceConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2069,10 +2042,10 @@ pub mod fluent_builders {
                 crate::input::DeleteResourceConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2081,8 +2054,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The type of the resource.</p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
         /// <p>The type of the resource.</p>
@@ -2094,8 +2067,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unique identifier of the resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>Unique identifier of the resource.</p>
@@ -2107,7 +2080,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRetentionConfiguration`.
     ///
     /// <p>Deletes the retention configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRetentionConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2152,10 +2125,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRetentionConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2164,8 +2137,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the retention configuration to delete.</p>
-        pub fn retention_configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.retention_configuration_name(inp);
+        pub fn retention_configuration_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.retention_configuration_name(input.into());
             self
         }
         /// <p>The name of the retention configuration to delete.</p>
@@ -2180,7 +2156,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteStoredQuery`.
     ///
     /// <p>Deletes the stored query for a single Amazon Web Services account and a single Amazon Web Services Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStoredQuery<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2225,10 +2201,10 @@ pub mod fluent_builders {
                 crate::input::DeleteStoredQueryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2237,8 +2213,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the query that you want to delete.</p>
-        pub fn query_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_name(inp);
+        pub fn query_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_name(input.into());
             self
         }
         /// <p>The name of the query that you want to delete.</p>
@@ -2249,24 +2225,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeliverConfigSnapshot`.
     ///
-    /// <p>Schedules delivery of a configuration snapshot to the Amazon S3
-    /// bucket in the specified delivery channel. After the delivery has
-    /// started, Config sends the following notifications using an
-    /// Amazon SNS topic that you have specified.</p>
+    /// <p>Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified delivery channel. After the delivery has started, Config sends the following notifications using an Amazon SNS topic that you have specified.</p>
     /// <ul>
-    /// <li>
-    /// <p>Notification of the start of the delivery.</p>
-    /// </li>
-    /// <li>
-    /// <p>Notification of the completion of the delivery, if the
-    /// delivery was successfully completed.</p>
-    /// </li>
-    /// <li>
-    /// <p>Notification of delivery failure, if the delivery
-    /// failed.</p>
-    /// </li>
+    /// <li> <p>Notification of the start of the delivery.</p> </li>
+    /// <li> <p>Notification of the completion of the delivery, if the delivery was successfully completed.</p> </li>
+    /// <li> <p>Notification of delivery failure, if the delivery failed.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeliverConfigSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2311,10 +2276,10 @@ pub mod fluent_builders {
                 crate::input::DeliverConfigSnapshotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2322,14 +2287,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the delivery channel through which the snapshot is
-        /// delivered.</p>
-        pub fn delivery_channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_channel_name(inp);
+        /// <p>The name of the delivery channel through which the snapshot is delivered.</p>
+        pub fn delivery_channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_channel_name(input.into());
             self
         }
-        /// <p>The name of the delivery channel through which the snapshot is
-        /// delivered.</p>
+        /// <p>The name of the delivery channel through which the snapshot is delivered.</p>
         pub fn set_delivery_channel_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2340,15 +2303,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAggregateComplianceByConfigRules`.
     ///
-    /// <p>Returns a list of compliant and noncompliant rules with the
-    /// number of resources for compliant and noncompliant rules. Does not display rules that do not have compliance results.
-    /// </p>
-    /// <note>
-    /// <p>The results can return an empty result page, but if you
-    /// have a <code>nextToken</code>, the results are displayed on the next
-    /// page.</p>
+    /// <p>Returns a list of compliant and noncompliant rules with the number of resources for compliant and noncompliant rules. Does not display rules that do not have compliance results. </p> <note>
+    /// <p>The results can return an empty result page, but if you have a <code>nextToken</code>, the results are displayed on the next page.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAggregateComplianceByConfigRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2395,10 +2353,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAggregateComplianceByConfigRulesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2406,12 +2364,23 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeAggregateComplianceByConfigRulesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeAggregateComplianceByConfigRulesPaginator<C, M, R> {
+            crate::paginator::DescribeAggregateComplianceByConfigRulesPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The name of the configuration aggregator.</p>
         pub fn configuration_aggregator_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_aggregator_name(inp);
+            self.inner = self.inner.configuration_aggregator_name(input.into());
             self
         }
         /// <p>The name of the configuration aggregator.</p>
@@ -2422,14 +2391,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration_aggregator_name(input);
             self
         }
-        /// <p>Filters the results by ConfigRuleComplianceFilters object.
-        /// </p>
-        pub fn filters(mut self, inp: crate::model::ConfigRuleComplianceFilters) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>Filters the results by ConfigRuleComplianceFilters object. </p>
+        pub fn filters(mut self, input: crate::model::ConfigRuleComplianceFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Filters the results by ConfigRuleComplianceFilters object.
-        /// </p>
+        /// <p>Filters the results by ConfigRuleComplianceFilters object. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::ConfigRuleComplianceFilters>,
@@ -2437,30 +2404,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is
-        /// maximum.
-        /// If you specify 0, Config uses the default.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is
-        /// maximum.
-        /// If you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2468,12 +2427,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAggregateComplianceByConformancePacks`.
     ///
-    /// <p>Returns a list of the conformance packs and their associated compliance status with the count of compliant and noncompliant Config rules within each conformance pack.
-    /// Also returns the total rule count which includes compliant rules, noncompliant rules, and rules that cannot be evaluated due to insufficient data.</p>
-    /// <note>
+    /// <p>Returns a list of the conformance packs and their associated compliance status with the count of compliant and noncompliant Config rules within each conformance pack. Also returns the total rule count which includes compliant rules, noncompliant rules, and rules that cannot be evaluated due to insufficient data.</p> <note>
     /// <p>The results can return an empty result page, but if you have a <code>nextToken</code>, the results are displayed on the next page.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAggregateComplianceByConformancePacks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2511,10 +2468,10 @@ pub mod fluent_builders {
                                     crate::error::DescribeAggregateComplianceByConformancePacksError,
                                     crate::input::DescribeAggregateComplianceByConformancePacksInputOperationRetryAlias>,
                                 {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2522,12 +2479,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeAggregateComplianceByConformancePacksPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeAggregateComplianceByConformancePacksPaginator<C, M, R>
+        {
+            crate::paginator::DescribeAggregateComplianceByConformancePacksPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The name of the configuration aggregator.</p>
         pub fn configuration_aggregator_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_aggregator_name(inp);
+            self.inner = self.inner.configuration_aggregator_name(input.into());
             self
         }
         /// <p>The name of the configuration aggregator.</p>
@@ -2541,9 +2510,9 @@ pub mod fluent_builders {
         /// <p>Filters the result by <code>AggregateConformancePackComplianceFilters</code> object.</p>
         pub fn filters(
             mut self,
-            inp: crate::model::AggregateConformancePackComplianceFilters,
+            input: crate::model::AggregateConformancePackComplianceFilters,
         ) -> Self {
-            self.inner = self.inner.filters(inp);
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters the result by <code>AggregateConformancePackComplianceFilters</code> object.</p>
@@ -2555,8 +2524,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of conformance packs compliance details returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of conformance packs compliance details returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
@@ -2565,8 +2534,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -2577,9 +2546,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAggregationAuthorizations`.
     ///
-    /// <p>Returns a list of authorizations granted to various aggregator
-    /// accounts and regions.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of authorizations granted to various aggregator accounts and regions.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAggregationAuthorizations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2624,10 +2592,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAggregationAuthorizationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2635,28 +2603,33 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of AggregationAuthorizations returned on
-        /// each page. The default is maximum. If you specify 0, Config uses
-        /// the default.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeAggregationAuthorizationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeAggregationAuthorizationsPaginator<C, M, R> {
+            crate::paginator::DescribeAggregationAuthorizationsPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p>The maximum number of AggregationAuthorizations returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of AggregationAuthorizations returned on
-        /// each page. The default is maximum. If you specify 0, Config uses
-        /// the default.</p>
+        /// <p>The maximum number of AggregationAuthorizations returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2664,40 +2637,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeComplianceByConfigRule`.
     ///
-    /// <p>Indicates whether the specified Config rules are compliant.
-    /// If a rule is noncompliant, this action returns the number of Amazon Web Services
-    /// resources that do not comply with the rule.</p>
-    /// <p>A rule is compliant if all of the evaluated resources comply
-    /// with it. It is noncompliant if any of these resources do not
-    /// comply.</p>
-    /// <p>If Config has no current evaluation results for the rule,
-    /// it returns <code>INSUFFICIENT_DATA</code>. This result might
-    /// indicate one of the following conditions:</p>
+    /// <p>Indicates whether the specified Config rules are compliant. If a rule is noncompliant, this action returns the number of Amazon Web Services resources that do not comply with the rule.</p>
+    /// <p>A rule is compliant if all of the evaluated resources comply with it. It is noncompliant if any of these resources do not comply.</p>
+    /// <p>If Config has no current evaluation results for the rule, it returns <code>INSUFFICIENT_DATA</code>. This result might indicate one of the following conditions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Config has never invoked an evaluation for the
-    /// rule. To check whether it has, use the
-    /// <code>DescribeConfigRuleEvaluationStatus</code> action
-    /// to get the <code>LastSuccessfulInvocationTime</code> and
-    /// <code>LastFailedInvocationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>The rule's Lambda function is failing to send
-    /// evaluation results to Config. Verify that the role you
-    /// assigned to your configuration recorder includes the
-    /// <code>config:PutEvaluations</code> permission. If the
-    /// rule is a custom rule, verify that the Lambda execution
-    /// role includes the <code>config:PutEvaluations</code>
-    /// permission.</p>
-    /// </li>
-    /// <li>
-    /// <p>The rule's Lambda function has returned
-    /// <code>NOT_APPLICABLE</code> for all evaluation results.
-    /// This can occur if the resources were deleted or removed from
-    /// the rule's scope.</p>
-    /// </li>
+    /// <li> <p>Config has never invoked an evaluation for the rule. To check whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code> action to get the <code>LastSuccessfulInvocationTime</code> and <code>LastFailedInvocationTime</code>.</p> </li>
+    /// <li> <p>The rule's Lambda function is failing to send evaluation results to Config. Verify that the role you assigned to your configuration recorder includes the <code>config:PutEvaluations</code> permission. If the rule is a custom rule, verify that the Lambda execution role includes the <code>config:PutEvaluations</code> permission.</p> </li>
+    /// <li> <p>The rule's Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation results. This can occur if the resources were deleted or removed from the rule's scope.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeComplianceByConfigRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2742,10 +2690,10 @@ pub mod fluent_builders {
                 crate::input::DescribeComplianceByConfigRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2753,18 +2701,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeComplianceByConfigRulePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeComplianceByConfigRulePaginator<C, M, R> {
+            crate::paginator::DescribeComplianceByConfigRulePaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `ConfigRuleNames`.
         ///
         /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
         ///
-        /// <p>Specify one or more Config rule names to filter the results
-        /// by rule.</p>
-        pub fn config_rule_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_rule_names(inp);
+        /// <p>Specify one or more Config rule names to filter the results by rule.</p>
+        pub fn config_rule_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_rule_names(input.into());
             self
         }
-        /// <p>Specify one or more Config rule names to filter the results
-        /// by rule.</p>
+        /// <p>Specify one or more Config rule names to filter the results by rule.</p>
         pub fn set_config_rule_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2778,8 +2732,8 @@ pub mod fluent_builders {
         ///
         /// <p>Filters the results by compliance.</p>
         /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
-        pub fn compliance_types(mut self, inp: impl Into<crate::model::ComplianceType>) -> Self {
-            self.inner = self.inner.compliance_types(inp);
+        pub fn compliance_types(mut self, input: crate::model::ComplianceType) -> Self {
+            self.inner = self.inner.compliance_types(input);
             self
         }
         /// <p>Filters the results by compliance.</p>
@@ -2791,16 +2745,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_compliance_types(input);
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2808,40 +2758,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeComplianceByResource`.
     ///
-    /// <p>Indicates whether the specified Amazon Web Services resources are compliant. If
-    /// a resource is noncompliant, this action returns the number of Config rules that the resource does not comply with.</p>
-    /// <p>A resource is compliant if it complies with all the Config
-    /// rules that evaluate it. It is noncompliant if it does not comply
-    /// with one or more of these rules.</p>
-    /// <p>If Config has no current evaluation results for the
-    /// resource, it returns <code>INSUFFICIENT_DATA</code>. This result
-    /// might indicate one of the following conditions about the rules that
-    /// evaluate the resource:</p>
+    /// <p>Indicates whether the specified Amazon Web Services resources are compliant. If a resource is noncompliant, this action returns the number of Config rules that the resource does not comply with.</p>
+    /// <p>A resource is compliant if it complies with all the Config rules that evaluate it. It is noncompliant if it does not comply with one or more of these rules.</p>
+    /// <p>If Config has no current evaluation results for the resource, it returns <code>INSUFFICIENT_DATA</code>. This result might indicate one of the following conditions about the rules that evaluate the resource:</p>
     /// <ul>
-    /// <li>
-    /// <p>Config has never invoked an evaluation for the
-    /// rule. To check whether it has, use the
-    /// <code>DescribeConfigRuleEvaluationStatus</code> action
-    /// to get the <code>LastSuccessfulInvocationTime</code> and
-    /// <code>LastFailedInvocationTime</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>The rule's Lambda function is failing to send
-    /// evaluation results to Config. Verify that the role that
-    /// you assigned to your configuration recorder includes the
-    /// <code>config:PutEvaluations</code> permission. If the
-    /// rule is a custom rule, verify that the Lambda execution
-    /// role includes the <code>config:PutEvaluations</code>
-    /// permission.</p>
-    /// </li>
-    /// <li>
-    /// <p>The rule's Lambda function has returned
-    /// <code>NOT_APPLICABLE</code> for all evaluation results.
-    /// This can occur if the resources were deleted or removed from
-    /// the rule's scope.</p>
-    /// </li>
+    /// <li> <p>Config has never invoked an evaluation for the rule. To check whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code> action to get the <code>LastSuccessfulInvocationTime</code> and <code>LastFailedInvocationTime</code>.</p> </li>
+    /// <li> <p>The rule's Lambda function is failing to send evaluation results to Config. Verify that the role that you assigned to your configuration recorder includes the <code>config:PutEvaluations</code> permission. If the rule is a custom rule, verify that the Lambda execution role includes the <code>config:PutEvaluations</code> permission.</p> </li>
+    /// <li> <p>The rule's Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation results. This can occur if the resources were deleted or removed from the rule's scope.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeComplianceByResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2886,10 +2811,10 @@ pub mod fluent_builders {
                 crate::input::DescribeComplianceByResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2897,18 +2822,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The types of Amazon Web Services resources for which you want compliance
-        /// information (for example, <code>AWS::EC2::Instance</code>). For this
-        /// action, you can specify that the resource type is an Amazon Web Services account by
-        /// specifying <code>AWS::::Account</code>.</p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeComplianceByResourcePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeComplianceByResourcePaginator<C, M, R> {
+            crate::paginator::DescribeComplianceByResourcePaginator::new(self.handle, self.inner)
+        }
+        /// <p>The types of Amazon Web Services resources for which you want compliance information (for example, <code>AWS::EC2::Instance</code>). For this action, you can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
-        /// <p>The types of Amazon Web Services resources for which you want compliance
-        /// information (for example, <code>AWS::EC2::Instance</code>). For this
-        /// action, you can specify that the resource type is an Amazon Web Services account by
-        /// specifying <code>AWS::::Account</code>.</p>
+        /// <p>The types of Amazon Web Services resources for which you want compliance information (for example, <code>AWS::EC2::Instance</code>). For this action, you can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2916,18 +2843,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_type(input);
             self
         }
-        /// <p>The ID of the Amazon Web Services resource for which you want compliance
-        /// information. You can specify only one resource ID. If you specify a
-        /// resource ID, you must also specify a type for
-        /// <code>ResourceType</code>.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        /// <p>The ID of the Amazon Web Services resource for which you want compliance information. You can specify only one resource ID. If you specify a resource ID, you must also specify a type for <code>ResourceType</code>.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
-        /// <p>The ID of the Amazon Web Services resource for which you want compliance
-        /// information. You can specify only one resource ID. If you specify a
-        /// resource ID, you must also specify a type for
-        /// <code>ResourceType</code>.</p>
+        /// <p>The ID of the Amazon Web Services resource for which you want compliance information. You can specify only one resource ID. If you specify a resource ID, you must also specify a type for <code>ResourceType</code>.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_id(input);
             self
@@ -2938,8 +2859,8 @@ pub mod fluent_builders {
         ///
         /// <p>Filters the results by compliance.</p>
         /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.</p>
-        pub fn compliance_types(mut self, inp: impl Into<crate::model::ComplianceType>) -> Self {
-            self.inner = self.inner.compliance_types(inp);
+        pub fn compliance_types(mut self, input: crate::model::ComplianceType) -> Self {
+            self.inner = self.inner.compliance_types(input);
             self
         }
         /// <p>Filters the results by compliance.</p>
@@ -2951,30 +2872,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_compliance_types(input);
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is 10. You cannot specify a number greater than 100. If
-        /// you specify 0, Config uses the default.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is 10. You cannot specify a number greater than 100. If
-        /// you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2982,9 +2895,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeConfigRuleEvaluationStatus`.
     ///
-    /// <p>Returns status information for each of your Config managed rules. The status includes information such as the last time Config invoked the rule, the last time Config failed to invoke
-    /// the rule, and the related error for the last failure.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns status information for each of your Config managed rules. The status includes information such as the last time Config invoked the rule, the last time Config failed to invoke the rule, and the related error for the last failure.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConfigRuleEvaluationStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3031,10 +2943,10 @@ pub mod fluent_builders {
                 crate::input::DescribeConfigRuleEvaluationStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3042,22 +2954,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeConfigRuleEvaluationStatusPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeConfigRuleEvaluationStatusPaginator<C, M, R> {
+            crate::paginator::DescribeConfigRuleEvaluationStatusPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// Appends an item to `ConfigRuleNames`.
         ///
         /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
         ///
-        /// <p>The name of the Config managed rules for which you want
-        /// status information. If you do not specify any names, Config
-        /// returns status information for all Config managed rules that you
-        /// use.</p>
-        pub fn config_rule_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_rule_names(inp);
+        /// <p>The name of the Config managed rules for which you want status information. If you do not specify any names, Config returns status information for all Config managed rules that you use.</p>
+        pub fn config_rule_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_rule_names(input.into());
             self
         }
-        /// <p>The name of the Config managed rules for which you want
-        /// status information. If you do not specify any names, Config
-        /// returns status information for all Config managed rules that you
-        /// use.</p>
+        /// <p>The name of the Config managed rules for which you want status information. If you do not specify any names, Config returns status information for all Config managed rules that you use.</p>
         pub fn set_config_rule_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3065,40 +2982,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_config_rule_names(input);
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The number of rule evaluation results that you want
-        /// returned.</p>
-        ///
-        /// <p>This parameter is required if the rule limit for your account
-        /// is more than the default of 150 rules.</p>
-        /// <p>For information about requesting a rule limit increase, see
-        /// <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General
-        /// Reference Guide</i>.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The number of rule evaluation results that you want returned.</p>
+        /// <p>This parameter is required if the rule limit for your account is more than the default of 150 rules.</p>
+        /// <p>For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The number of rule evaluation results that you want
-        /// returned.</p>
-        ///
-        /// <p>This parameter is required if the rule limit for your account
-        /// is more than the default of 150 rules.</p>
-        /// <p>For information about requesting a rule limit increase, see
-        /// <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General
-        /// Reference Guide</i>.</p>
+        /// <p>The number of rule evaluation results that you want returned.</p>
+        /// <p>This parameter is required if the rule limit for your account is more than the default of 150 rules.</p>
+        /// <p>For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
@@ -3107,7 +3010,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeConfigRules`.
     ///
     /// <p>Returns details about your Config rules.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConfigRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3152,10 +3055,10 @@ pub mod fluent_builders {
                 crate::input::DescribeConfigRulesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3163,20 +3066,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeConfigRulesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeConfigRulesPaginator<C, M, R> {
+            crate::paginator::DescribeConfigRulesPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `ConfigRuleNames`.
         ///
         /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
         ///
-        /// <p>The names of the Config rules for which you want details.
-        /// If you do not specify any names, Config returns details for all
-        /// your rules.</p>
-        pub fn config_rule_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_rule_names(inp);
+        /// <p>The names of the Config rules for which you want details. If you do not specify any names, Config returns details for all your rules.</p>
+        pub fn config_rule_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_rule_names(input.into());
             self
         }
-        /// <p>The names of the Config rules for which you want details.
-        /// If you do not specify any names, Config returns details for all
-        /// your rules.</p>
+        /// <p>The names of the Config rules for which you want details. If you do not specify any names, Config returns details for all your rules.</p>
         pub fn set_config_rule_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3184,16 +3089,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_config_rule_names(input);
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3201,11 +3102,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeConfigurationAggregators`.
     ///
-    /// <p>Returns the details of one or more configuration aggregators.
-    /// If the configuration aggregator is not specified, this action
-    /// returns the details for all the configuration aggregators associated
-    /// with the account. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the details of one or more configuration aggregators. If the configuration aggregator is not specified, this action returns the details for all the configuration aggregators associated with the account. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConfigurationAggregators<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3250,16 +3148,27 @@ pub mod fluent_builders {
                 crate::input::DescribeConfigurationAggregatorsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeConfigurationAggregatorsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeConfigurationAggregatorsPaginator<C, M, R> {
+            crate::paginator::DescribeConfigurationAggregatorsPaginator::new(
+                self.handle,
+                self.inner,
+            )
         }
         /// Appends an item to `ConfigurationAggregatorNames`.
         ///
@@ -3268,9 +3177,9 @@ pub mod fluent_builders {
         /// <p>The name of the configuration aggregators.</p>
         pub fn configuration_aggregator_names(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_aggregator_names(inp);
+            self.inner = self.inner.configuration_aggregator_names(input.into());
             self
         }
         /// <p>The name of the configuration aggregators.</p>
@@ -3281,28 +3190,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration_aggregator_names(input);
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of configuration aggregators returned on
-        /// each page. The default is maximum. If you specify 0, Config uses
-        /// the default.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The maximum number of configuration aggregators returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of configuration aggregators returned on
-        /// each page. The default is maximum. If you specify 0, Config uses
-        /// the default.</p>
+        /// <p>The maximum number of configuration aggregators returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
@@ -3310,9 +3213,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeConfigurationAggregatorSourcesStatus`.
     ///
-    /// <p>Returns status information for sources within an aggregator.
-    /// The status includes information about the last time Config verified authorization between the source account and an aggregator account. In case of a failure, the status contains the related error code or message. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns status information for sources within an aggregator. The status includes information about the last time Config verified authorization between the source account and an aggregator account. In case of a failure, the status contains the related error code or message. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConfigurationAggregatorSourcesStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3359,10 +3261,10 @@ pub mod fluent_builders {
                 crate::input::DescribeConfigurationAggregatorSourcesStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3370,12 +3272,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeConfigurationAggregatorSourcesStatusPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeConfigurationAggregatorSourcesStatusPaginator<C, M, R>
+        {
+            crate::paginator::DescribeConfigurationAggregatorSourcesStatusPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The name of the configuration aggregator.</p>
         pub fn configuration_aggregator_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_aggregator_name(inp);
+            self.inner = self.inner.configuration_aggregator_name(input.into());
             self
         }
         /// <p>The name of the configuration aggregator.</p>
@@ -3392,40 +3306,19 @@ pub mod fluent_builders {
         ///
         /// <p>Filters the status type.</p>
         /// <ul>
-        /// <li>
-        /// <p>Valid value FAILED indicates errors while moving
-        /// data.</p>
-        /// </li>
-        /// <li>
-        /// <p>Valid value SUCCEEDED indicates the data was
-        /// successfully moved.</p>
-        /// </li>
-        /// <li>
-        /// <p>Valid value OUTDATED indicates the data is not the most
-        /// recent.</p>
-        /// </li>
+        /// <li> <p>Valid value FAILED indicates errors while moving data.</p> </li>
+        /// <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li>
+        /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li>
         /// </ul>
-        pub fn update_status(
-            mut self,
-            inp: impl Into<crate::model::AggregatedSourceStatusType>,
-        ) -> Self {
-            self.inner = self.inner.update_status(inp);
+        pub fn update_status(mut self, input: crate::model::AggregatedSourceStatusType) -> Self {
+            self.inner = self.inner.update_status(input);
             self
         }
         /// <p>Filters the status type.</p>
         /// <ul>
-        /// <li>
-        /// <p>Valid value FAILED indicates errors while moving
-        /// data.</p>
-        /// </li>
-        /// <li>
-        /// <p>Valid value SUCCEEDED indicates the data was
-        /// successfully moved.</p>
-        /// </li>
-        /// <li>
-        /// <p>Valid value OUTDATED indicates the data is not the most
-        /// recent.</p>
-        /// </li>
+        /// <li> <p>Valid value FAILED indicates errors while moving data.</p> </li>
+        /// <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li>
+        /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li>
         /// </ul>
         pub fn set_update_status(
             mut self,
@@ -3434,28 +3327,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_update_status(input);
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of AggregatorSourceStatus returned on each
-        /// page. The default is maximum. If you specify 0, Config uses the
-        /// default.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The maximum number of AggregatorSourceStatus returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of AggregatorSourceStatus returned on each
-        /// page. The default is maximum. If you specify 0, Config uses the
-        /// default.</p>
+        /// <p>The maximum number of AggregatorSourceStatus returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
@@ -3463,15 +3350,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeConfigurationRecorders`.
     ///
-    /// <p>Returns the details for the specified configuration recorders.
-    /// If the configuration recorder is not specified, this action returns
-    /// the details for all configuration recorders associated with the
-    /// account.</p>
-    /// <note>
-    /// <p>Currently, you can specify only one configuration recorder
-    /// per region in your account.</p>
+    /// <p>Returns the details for the specified configuration recorders. If the configuration recorder is not specified, this action returns the details for all configuration recorders associated with the account.</p> <note>
+    /// <p>Currently, you can specify only one configuration recorder per region in your account.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConfigurationRecorders<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3516,10 +3398,10 @@ pub mod fluent_builders {
                 crate::input::DescribeConfigurationRecordersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3532,8 +3414,11 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_configuration_recorder_names`](Self::set_configuration_recorder_names).
         ///
         /// <p>A list of configuration recorder names.</p>
-        pub fn configuration_recorder_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_recorder_names(inp);
+        pub fn configuration_recorder_names(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.configuration_recorder_names(input.into());
             self
         }
         /// <p>A list of configuration recorder names.</p>
@@ -3547,15 +3432,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeConfigurationRecorderStatus`.
     ///
-    /// <p>Returns the current status of the specified configuration
-    /// recorder. If a configuration recorder is not specified, this action
-    /// returns the status of all configuration recorders associated with
-    /// the account.</p>
-    /// <note>
-    /// <p>Currently, you can specify only one configuration recorder
-    /// per region in your account.</p>
+    /// <p>Returns the current status of the specified configuration recorder. If a configuration recorder is not specified, this action returns the status of all configuration recorders associated with the account.</p> <note>
+    /// <p>Currently, you can specify only one configuration recorder per region in your account.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConfigurationRecorderStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3602,10 +3482,10 @@ pub mod fluent_builders {
                 crate::input::DescribeConfigurationRecorderStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3617,16 +3497,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_configuration_recorder_names`](Self::set_configuration_recorder_names).
         ///
-        /// <p>The name(s) of the configuration recorder. If the name is not
-        /// specified, the action returns the current status of all the
-        /// configuration recorders associated with the account.</p>
-        pub fn configuration_recorder_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_recorder_names(inp);
+        /// <p>The name(s) of the configuration recorder. If the name is not specified, the action returns the current status of all the configuration recorders associated with the account.</p>
+        pub fn configuration_recorder_names(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.configuration_recorder_names(input.into());
             self
         }
-        /// <p>The name(s) of the configuration recorder. If the name is not
-        /// specified, the action returns the current status of all the
-        /// configuration recorders associated with the account.</p>
+        /// <p>The name(s) of the configuration recorder. If the name is not specified, the action returns the current status of all the configuration recorders associated with the account.</p>
         pub fn set_configuration_recorder_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3637,11 +3516,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeConformancePackCompliance`.
     ///
-    /// <p>Returns compliance details for each rule in that conformance pack.</p>
-    /// <note>
+    /// <p>Returns compliance details for each rule in that conformance pack.</p> <note>
     /// <p>You must provide exact rule names.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConformancePackCompliance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3686,10 +3564,10 @@ pub mod fluent_builders {
                 crate::input::DescribeConformancePackComplianceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3697,9 +3575,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeConformancePackCompliancePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeConformancePackCompliancePaginator<C, M, R> {
+            crate::paginator::DescribeConformancePackCompliancePaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>Name of the conformance pack.</p>
-        pub fn conformance_pack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.conformance_pack_name(inp);
+        pub fn conformance_pack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.conformance_pack_name(input.into());
             self
         }
         /// <p>Name of the conformance pack.</p>
@@ -3711,8 +3600,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A <code>ConformancePackComplianceFilters</code> object.</p>
-        pub fn filters(mut self, inp: crate::model::ConformancePackComplianceFilters) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::ConformancePackComplianceFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A <code>ConformancePackComplianceFilters</code> object.</p>
@@ -3724,8 +3613,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of Config rules within a conformance pack are returned on each page.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of Config rules within a conformance pack are returned on each page.</p>
@@ -3734,8 +3623,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
@@ -3747,7 +3636,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeConformancePacks`.
     ///
     /// <p>Returns a list of one or more conformance packs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConformancePacks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3792,10 +3681,10 @@ pub mod fluent_builders {
                 crate::input::DescribeConformancePacksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3803,13 +3692,21 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeConformancePacksPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeConformancePacksPaginator<C, M, R> {
+            crate::paginator::DescribeConformancePacksPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `ConformancePackNames`.
         ///
         /// To override the contents of this collection use [`set_conformance_pack_names`](Self::set_conformance_pack_names).
         ///
         /// <p>Comma-separated list of conformance pack names for which you want details. If you do not specify any names, Config returns details for all your conformance packs. </p>
-        pub fn conformance_pack_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.conformance_pack_names(inp);
+        pub fn conformance_pack_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.conformance_pack_names(input.into());
             self
         }
         /// <p>Comma-separated list of conformance pack names for which you want details. If you do not specify any names, Config returns details for all your conformance packs. </p>
@@ -3821,8 +3718,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of conformance packs returned on each page.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of conformance packs returned on each page.</p>
@@ -3831,8 +3728,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
@@ -3843,11 +3740,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeConformancePackStatus`.
     ///
-    /// <p>Provides one or more conformance packs deployment status.</p>
-    /// <note>
+    /// <p>Provides one or more conformance packs deployment status.</p> <note>
     /// <p>If there are no conformance packs then you will see an empty result.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConformancePackStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3892,10 +3788,10 @@ pub mod fluent_builders {
                 crate::input::DescribeConformancePackStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3903,13 +3799,21 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeConformancePackStatusPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeConformancePackStatusPaginator<C, M, R> {
+            crate::paginator::DescribeConformancePackStatusPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `ConformancePackNames`.
         ///
         /// To override the contents of this collection use [`set_conformance_pack_names`](Self::set_conformance_pack_names).
         ///
         /// <p>Comma-separated list of conformance pack names.</p>
-        pub fn conformance_pack_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.conformance_pack_names(inp);
+        pub fn conformance_pack_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.conformance_pack_names(input.into());
             self
         }
         /// <p>Comma-separated list of conformance pack names.</p>
@@ -3921,8 +3825,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of conformance packs status returned on each page.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of conformance packs status returned on each page.</p>
@@ -3931,8 +3835,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
@@ -3943,14 +3847,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDeliveryChannels`.
     ///
-    /// <p>Returns details about the specified delivery channel. If a
-    /// delivery channel is not specified, this action returns the details
-    /// of all delivery channels associated with the account.</p>
-    /// <note>
-    /// <p>Currently, you can specify only one delivery channel per
-    /// region in your account.</p>
+    /// <p>Returns details about the specified delivery channel. If a delivery channel is not specified, this action returns the details of all delivery channels associated with the account.</p> <note>
+    /// <p>Currently, you can specify only one delivery channel per region in your account.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDeliveryChannels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3995,10 +3895,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDeliveryChannelsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4011,8 +3911,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_delivery_channel_names`](Self::set_delivery_channel_names).
         ///
         /// <p>A list of delivery channel names.</p>
-        pub fn delivery_channel_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_channel_names(inp);
+        pub fn delivery_channel_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_channel_names(input.into());
             self
         }
         /// <p>A list of delivery channel names.</p>
@@ -4026,15 +3926,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDeliveryChannelStatus`.
     ///
-    /// <p>Returns the current status of the specified delivery channel.
-    /// If a delivery channel is not specified, this action returns the
-    /// current status of all delivery channels associated with the
-    /// account.</p>
-    /// <note>
-    /// <p>Currently, you can specify only one delivery channel per
-    /// region in your account.</p>
+    /// <p>Returns the current status of the specified delivery channel. If a delivery channel is not specified, this action returns the current status of all delivery channels associated with the account.</p> <note>
+    /// <p>Currently, you can specify only one delivery channel per region in your account.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDeliveryChannelStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4079,10 +3974,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDeliveryChannelStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4095,8 +3990,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_delivery_channel_names`](Self::set_delivery_channel_names).
         ///
         /// <p>A list of delivery channel names.</p>
-        pub fn delivery_channel_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_channel_names(inp);
+        pub fn delivery_channel_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_channel_names(input.into());
             self
         }
         /// <p>A list of delivery channel names.</p>
@@ -4110,14 +4005,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeOrganizationConfigRules`.
     ///
-    /// <p>Returns a list of organization config rules. </p>
-    ///
-    /// <note>
-    /// <p>When you specify the limit and the next token, you receive a paginated response.
-    /// Limit and next token are not applicable if you specify organization config rule names.
-    /// It is only applicable, when you request all the organization config rules.</p>
+    /// <p>Returns a list of organization config rules. </p> <note>
+    /// <p>When you specify the limit and the next token, you receive a paginated response. Limit and next token are not applicable if you specify organization config rule names. It is only applicable, when you request all the organization config rules.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationConfigRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4162,16 +4053,24 @@ pub mod fluent_builders {
                 crate::input::DescribeOrganizationConfigRulesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeOrganizationConfigRulesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeOrganizationConfigRulesPaginator<C, M, R> {
+            crate::paginator::DescribeOrganizationConfigRulesPaginator::new(self.handle, self.inner)
         }
         /// Appends an item to `OrganizationConfigRuleNames`.
         ///
@@ -4180,9 +4079,9 @@ pub mod fluent_builders {
         /// <p>The names of organization config rules for which you want details. If you do not specify any names, Config returns details for all your organization config rules.</p>
         pub fn organization_config_rule_names(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.organization_config_rule_names(inp);
+            self.inner = self.inner.organization_config_rule_names(input.into());
             self
         }
         /// <p>The names of organization config rules for which you want details. If you do not specify any names, Config returns details for all your organization config rules.</p>
@@ -4194,8 +4093,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of organization config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of organization config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
@@ -4204,8 +4103,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
@@ -4216,16 +4115,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeOrganizationConfigRuleStatuses`.
     ///
-    /// <p>Provides organization config rule deployment status for an organization.</p>
-    ///
-    /// <note>
-    /// <p>The status is not considered successful until organization config rule is successfully deployed in all the member
-    /// accounts with an exception of excluded accounts.</p>
-    /// <p>When you specify the limit and the next token, you receive a paginated response.
-    /// Limit and next token are not applicable if you specify organization config rule names.
-    /// It is only applicable, when you request all the organization config rules.</p>
+    /// <p>Provides organization config rule deployment status for an organization.</p> <note>
+    /// <p>The status is not considered successful until organization config rule is successfully deployed in all the member accounts with an exception of excluded accounts.</p>
+    /// <p>When you specify the limit and the next token, you receive a paginated response. Limit and next token are not applicable if you specify organization config rule names. It is only applicable, when you request all the organization config rules.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationConfigRuleStatuses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4272,16 +4166,27 @@ pub mod fluent_builders {
                 crate::input::DescribeOrganizationConfigRuleStatusesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeOrganizationConfigRuleStatusesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeOrganizationConfigRuleStatusesPaginator<C, M, R> {
+            crate::paginator::DescribeOrganizationConfigRuleStatusesPaginator::new(
+                self.handle,
+                self.inner,
+            )
         }
         /// Appends an item to `OrganizationConfigRuleNames`.
         ///
@@ -4290,9 +4195,9 @@ pub mod fluent_builders {
         /// <p>The names of organization config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
         pub fn organization_config_rule_names(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.organization_config_rule_names(inp);
+            self.inner = self.inner.organization_config_rule_names(input.into());
             self
         }
         /// <p>The names of organization config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
@@ -4304,8 +4209,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of <code>OrganizationConfigRuleStatuses</code> returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of <code>OrganizationConfigRuleStatuses</code> returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
@@ -4314,8 +4219,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
@@ -4326,13 +4231,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeOrganizationConformancePacks`.
     ///
-    /// <p>Returns a list of organization conformance packs. </p>
-    /// <note>
+    /// <p>Returns a list of organization conformance packs. </p> <note>
     /// <p>When you specify the limit and the next token, you receive a paginated response. </p>
-    /// <p>Limit and next token are not applicable if you specify organization conformance packs names. They are only applicable,
-    /// when you request all the organization conformance packs. </p>
+    /// <p>Limit and next token are not applicable if you specify organization conformance packs names. They are only applicable, when you request all the organization conformance packs. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationConformancePacks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4379,16 +4282,27 @@ pub mod fluent_builders {
                 crate::input::DescribeOrganizationConformancePacksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeOrganizationConformancePacksPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeOrganizationConformancePacksPaginator<C, M, R> {
+            crate::paginator::DescribeOrganizationConformancePacksPaginator::new(
+                self.handle,
+                self.inner,
+            )
         }
         /// Appends an item to `OrganizationConformancePackNames`.
         ///
@@ -4397,9 +4311,9 @@ pub mod fluent_builders {
         /// <p>The name that you assign to an organization conformance pack.</p>
         pub fn organization_conformance_pack_names(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.organization_conformance_pack_names(inp);
+            self.inner = self.inner.organization_conformance_pack_names(input.into());
             self
         }
         /// <p>The name that you assign to an organization conformance pack.</p>
@@ -4410,26 +4324,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_conformance_pack_names(input);
             self
         }
-        /// <p>The maximum number of organization config packs returned on each page. If you do no specify a
-        /// number, Config uses the default. The default is 100.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The maximum number of organization config packs returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of organization config packs returned on each page. If you do no specify a
-        /// number, Config uses the default. The default is 100.</p>
+        /// <p>The maximum number of organization config packs returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a
-        /// paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a
-        /// paginated response.</p>
+        /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4437,15 +4347,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeOrganizationConformancePackStatuses`.
     ///
-    /// <p>Provides organization conformance pack deployment status for an organization. </p>
-    /// <note>
-    /// <p>The status is not considered successful until organization conformance pack is successfully
-    /// deployed in all the member accounts with an exception of excluded accounts.</p>
-    /// <p>When you specify the limit and the next token, you receive a paginated response.
-    /// Limit and next token are not applicable if you specify organization conformance pack names.
-    /// They are only applicable, when you request all the organization conformance packs.</p>
+    /// <p>Provides organization conformance pack deployment status for an organization. </p> <note>
+    /// <p>The status is not considered successful until organization conformance pack is successfully deployed in all the member accounts with an exception of excluded accounts.</p>
+    /// <p>When you specify the limit and the next token, you receive a paginated response. Limit and next token are not applicable if you specify organization conformance pack names. They are only applicable, when you request all the organization conformance packs.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationConformancePackStatuses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4492,10 +4398,10 @@ pub mod fluent_builders {
                 crate::input::DescribeOrganizationConformancePackStatusesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4503,21 +4409,31 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeOrganizationConformancePackStatusesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeOrganizationConformancePackStatusesPaginator<C, M, R>
+        {
+            crate::paginator::DescribeOrganizationConformancePackStatusesPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// Appends an item to `OrganizationConformancePackNames`.
         ///
         /// To override the contents of this collection use [`set_organization_conformance_pack_names`](Self::set_organization_conformance_pack_names).
         ///
-        /// <p>The names of organization conformance packs for which you want status details.
-        /// If you do not specify any names, Config returns details for all your organization conformance packs. </p>
+        /// <p>The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs. </p>
         pub fn organization_conformance_pack_names(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.organization_conformance_pack_names(inp);
+            self.inner = self.inner.organization_conformance_pack_names(input.into());
             self
         }
-        /// <p>The names of organization conformance packs for which you want status details.
-        /// If you do not specify any names, Config returns details for all your organization conformance packs. </p>
+        /// <p>The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs. </p>
         pub fn set_organization_conformance_pack_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4525,21 +4441,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_conformance_pack_names(input);
             self
         }
-        /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page.
-        /// If you do no specify a number, Config uses the default. The default is 100. </p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page. If you do no specify a number, Config uses the default. The default is 100. </p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page.
-        /// If you do no specify a number, Config uses the default. The default is 100. </p>
+        /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page. If you do no specify a number, Config uses the default. The default is 100. </p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
         }
         /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
@@ -4551,7 +4465,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePendingAggregationRequests`.
     ///
     /// <p>Returns a list of all pending aggregation requests.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePendingAggregationRequests<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4598,10 +4512,10 @@ pub mod fluent_builders {
                 crate::input::DescribePendingAggregationRequestsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4609,28 +4523,33 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is maximum. If you specify 0, Config uses the
-        /// default.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribePendingAggregationRequestsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribePendingAggregationRequestsPaginator<C, M, R> {
+            crate::paginator::DescribePendingAggregationRequestsPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is maximum. If you specify 0, Config uses the
-        /// default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4639,7 +4558,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRemediationConfigurations`.
     ///
     /// <p>Returns the details of one or more remediation configurations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRemediationConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4684,10 +4603,10 @@ pub mod fluent_builders {
                 crate::input::DescribeRemediationConfigurationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4700,8 +4619,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
         ///
         /// <p>A list of Config rule names of remediation configurations for which you want details. </p>
-        pub fn config_rule_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_rule_names(inp);
+        pub fn config_rule_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_rule_names(input.into());
             self
         }
         /// <p>A list of Config rule names of remediation configurations for which you want details. </p>
@@ -4715,15 +4634,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeRemediationExceptions`.
     ///
-    /// <p>Returns the details of one or more remediation exceptions. A detailed view of a remediation exception for a set of resources that includes an explanation of an exception and the time when the exception will be deleted.
-    /// When you specify the limit and the next token, you receive a paginated response. </p>
-    /// <note>
-    /// <p>Config generates a remediation exception when a problem occurs executing a remediation action to a specific resource.
-    /// Remediation exceptions blocks auto-remediation until the exception is cleared.</p>
+    /// <p>Returns the details of one or more remediation exceptions. A detailed view of a remediation exception for a set of resources that includes an explanation of an exception and the time when the exception will be deleted. When you specify the limit and the next token, you receive a paginated response. </p> <note>
+    /// <p>Config generates a remediation exception when a problem occurs executing a remediation action to a specific resource. Remediation exceptions blocks auto-remediation until the exception is cleared.</p>
     /// <p>When you specify the limit and the next token, you receive a paginated response. </p>
     /// <p>Limit and next token are not applicable if you request resources in batch. It is only applicable, when you request all resources.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRemediationExceptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4768,10 +4684,10 @@ pub mod fluent_builders {
                 crate::input::DescribeRemediationExceptionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4779,9 +4695,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeRemediationExceptionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeRemediationExceptionsPaginator<C, M, R> {
+            crate::paginator::DescribeRemediationExceptionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the Config rule.</p>
-        pub fn config_rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_rule_name(inp);
+        pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_rule_name(input.into());
             self
         }
         /// <p>The name of the Config rule.</p>
@@ -4799,9 +4723,9 @@ pub mod fluent_builders {
         /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
         pub fn resource_keys(
             mut self,
-            inp: impl Into<crate::model::RemediationExceptionResourceKey>,
+            input: crate::model::RemediationExceptionResourceKey,
         ) -> Self {
-            self.inner = self.inner.resource_keys(inp);
+            self.inner = self.inner.resource_keys(input);
             self
         }
         /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
@@ -4815,8 +4739,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of RemediationExceptionResourceKey returned on each page. The default is 25. If you specify 0, Config uses the default.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of RemediationExceptionResourceKey returned on each page. The default is 25. If you specify 0, Config uses the default.</p>
@@ -4825,8 +4749,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
@@ -4837,9 +4761,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeRemediationExecutionStatus`.
     ///
-    /// <p>Provides a detailed view of a Remediation Execution for a set of resources including state, timestamps for when steps for the remediation execution occur, and any error messages for steps that have failed.
-    /// When you specify the limit and the next token, you receive a paginated response.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Provides a detailed view of a Remediation Execution for a set of resources including state, timestamps for when steps for the remediation execution occur, and any error messages for steps that have failed. When you specify the limit and the next token, you receive a paginated response.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRemediationExecutionStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4886,10 +4809,10 @@ pub mod fluent_builders {
                 crate::input::DescribeRemediationExecutionStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4897,9 +4820,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeRemediationExecutionStatusPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeRemediationExecutionStatusPaginator<C, M, R> {
+            crate::paginator::DescribeRemediationExecutionStatusPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>A list of Config rule names.</p>
-        pub fn config_rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_rule_name(inp);
+        pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_rule_name(input.into());
             self
         }
         /// <p>A list of Config rule names.</p>
@@ -4915,8 +4849,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resource_keys`](Self::set_resource_keys).
         ///
         /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
-        pub fn resource_keys(mut self, inp: impl Into<crate::model::ResourceKey>) -> Self {
-            self.inner = self.inner.resource_keys(inp);
+        pub fn resource_keys(mut self, input: crate::model::ResourceKey) -> Self {
+            self.inner = self.inner.resource_keys(input);
             self
         }
         /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
@@ -4928,8 +4862,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of RemediationExecutionStatuses returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of RemediationExecutionStatuses returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
@@ -4938,8 +4872,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -4950,15 +4884,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeRetentionConfigurations`.
     ///
-    /// <p>Returns the details of one or more retention configurations. If
-    /// the retention configuration name is not specified, this action
-    /// returns the details for all the retention configurations for that
-    /// account.</p>
-    /// <note>
-    /// <p>Currently, Config supports only one retention
-    /// configuration per region in your account.</p>
+    /// <p>Returns the details of one or more retention configurations. If the retention configuration name is not specified, this action returns the details for all the retention configurations for that account.</p> <note>
+    /// <p>Currently, Config supports only one retention configuration per region in your account.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRetentionConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5003,10 +4932,10 @@ pub mod fluent_builders {
                 crate::input::DescribeRetentionConfigurationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5014,30 +4943,30 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeRetentionConfigurationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeRetentionConfigurationsPaginator<C, M, R> {
+            crate::paginator::DescribeRetentionConfigurationsPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `RetentionConfigurationNames`.
         ///
         /// To override the contents of this collection use [`set_retention_configuration_names`](Self::set_retention_configuration_names).
         ///
-        /// <p>A list of names of retention configurations for which you want
-        /// details. If you do not specify a name, Config returns details
-        /// for all the retention configurations for that account.</p>
-        /// <note>
-        /// <p>Currently, Config supports only one retention
-        /// configuration per region in your account.</p>
+        /// <p>A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.</p> <note>
+        /// <p>Currently, Config supports only one retention configuration per region in your account.</p>
         /// </note>
         pub fn retention_configuration_names(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.retention_configuration_names(inp);
+            self.inner = self.inner.retention_configuration_names(input.into());
             self
         }
-        /// <p>A list of names of retention configurations for which you want
-        /// details. If you do not specify a name, Config returns details
-        /// for all the retention configurations for that account.</p>
-        /// <note>
-        /// <p>Currently, Config supports only one retention
-        /// configuration per region in your account.</p>
+        /// <p>A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.</p> <note>
+        /// <p>Currently, Config supports only one retention configuration per region in your account.</p>
         /// </note>
         pub fn set_retention_configuration_names(
             mut self,
@@ -5046,16 +4975,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_retention_configuration_names(input);
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response. </p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5063,16 +4988,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAggregateComplianceDetailsByConfigRule`.
     ///
-    /// <p>Returns the evaluation results for the specified Config
-    /// rule for a specific resource in a rule. The results indicate which
-    /// Amazon Web Services resources were evaluated by the rule, when each resource was
-    /// last evaluated, and whether each resource complies with the rule. </p>
-    /// <note>
-    /// <p>The results can return an empty result page. But if you
-    /// have a <code>nextToken</code>, the results are displayed on the next
-    /// page.</p>
+    /// <p>Returns the evaluation results for the specified Config rule for a specific resource in a rule. The results indicate which Amazon Web Services resources were evaluated by the rule, when each resource was last evaluated, and whether each resource complies with the rule. </p> <note>
+    /// <p>The results can return an empty result page. But if you have a <code>nextToken</code>, the results are displayed on the next page.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAggregateComplianceDetailsByConfigRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5119,10 +5038,10 @@ pub mod fluent_builders {
                 crate::input::GetAggregateComplianceDetailsByConfigRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5130,12 +5049,23 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetAggregateComplianceDetailsByConfigRulePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetAggregateComplianceDetailsByConfigRulePaginator<C, M, R> {
+            crate::paginator::GetAggregateComplianceDetailsByConfigRulePaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The name of the configuration aggregator.</p>
         pub fn configuration_aggregator_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_aggregator_name(inp);
+            self.inner = self.inner.configuration_aggregator_name(input.into());
             self
         }
         /// <p>The name of the configuration aggregator.</p>
@@ -5146,14 +5076,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration_aggregator_name(input);
             self
         }
-        /// <p>The name of the Config rule for which you want compliance
-        /// information.</p>
-        pub fn config_rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_rule_name(inp);
+        /// <p>The name of the Config rule for which you want compliance information.</p>
+        pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_rule_name(input.into());
             self
         }
-        /// <p>The name of the Config rule for which you want compliance
-        /// information.</p>
+        /// <p>The name of the Config rule for which you want compliance information.</p>
         pub fn set_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5162,8 +5090,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The 12-digit account ID of the source account.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The 12-digit account ID of the source account.</p>
@@ -5172,8 +5100,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The source region from where the data is aggregated.</p>
-        pub fn aws_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_region(inp);
+        pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_region(input.into());
             self
         }
         /// <p>The source region from where the data is aggregated.</p>
@@ -5181,27 +5109,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_region(input);
             self
         }
-        /// <p>The resource compliance status.</p>
-        /// <note>
-        /// <p>For the
-        /// <code>GetAggregateComplianceDetailsByConfigRuleRequest</code>
-        /// data type, Config supports only the <code>COMPLIANT</code>
-        /// and <code>NON_COMPLIANT</code>. Config does not support the
-        /// <code>NOT_APPLICABLE</code> and
-        /// <code>INSUFFICIENT_DATA</code> values.</p>
+        /// <p>The resource compliance status.</p> <note>
+        /// <p>For the <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> values.</p>
         /// </note>
-        pub fn compliance_type(mut self, inp: crate::model::ComplianceType) -> Self {
-            self.inner = self.inner.compliance_type(inp);
+        pub fn compliance_type(mut self, input: crate::model::ComplianceType) -> Self {
+            self.inner = self.inner.compliance_type(input);
             self
         }
-        /// <p>The resource compliance status.</p>
-        /// <note>
-        /// <p>For the
-        /// <code>GetAggregateComplianceDetailsByConfigRuleRequest</code>
-        /// data type, Config supports only the <code>COMPLIANT</code>
-        /// and <code>NON_COMPLIANT</code>. Config does not support the
-        /// <code>NOT_APPLICABLE</code> and
-        /// <code>INSUFFICIENT_DATA</code> values.</p>
+        /// <p>The resource compliance status.</p> <note>
+        /// <p>For the <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> values.</p>
         /// </note>
         pub fn set_compliance_type(
             mut self,
@@ -5210,28 +5126,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_compliance_type(input);
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is 50. You cannot specify a number greater than 100. If
-        /// you specify 0, Config uses the default.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The maximum number of evaluation results returned on each page. The default is 50. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is 50. You cannot specify a number greater than 100. If
-        /// you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is 50. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5239,14 +5149,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAggregateConfigRuleComplianceSummary`.
     ///
-    /// <p>Returns the number of compliant and noncompliant rules for one
-    /// or more accounts and regions in an aggregator.</p>
-    /// <note>
-    /// <p>The results can return an empty result page, but if you
-    /// have a nextToken, the results are displayed on the next
-    /// page.</p>
+    /// <p>Returns the number of compliant and noncompliant rules for one or more accounts and regions in an aggregator.</p> <note>
+    /// <p>The results can return an empty result page, but if you have a nextToken, the results are displayed on the next page.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAggregateConfigRuleComplianceSummary<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5293,10 +5199,10 @@ pub mod fluent_builders {
                 crate::input::GetAggregateConfigRuleComplianceSummaryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5304,12 +5210,23 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetAggregateConfigRuleComplianceSummaryPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetAggregateConfigRuleComplianceSummaryPaginator<C, M, R> {
+            crate::paginator::GetAggregateConfigRuleComplianceSummaryPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The name of the configuration aggregator.</p>
         pub fn configuration_aggregator_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_aggregator_name(inp);
+            self.inner = self.inner.configuration_aggregator_name(input.into());
             self
         }
         /// <p>The name of the configuration aggregator.</p>
@@ -5320,14 +5237,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration_aggregator_name(input);
             self
         }
-        /// <p>Filters the results based on the
-        /// ConfigRuleComplianceSummaryFilters object.</p>
-        pub fn filters(mut self, inp: crate::model::ConfigRuleComplianceSummaryFilters) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>Filters the results based on the ConfigRuleComplianceSummaryFilters object.</p>
+        pub fn filters(mut self, input: crate::model::ConfigRuleComplianceSummaryFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Filters the results based on the
-        /// ConfigRuleComplianceSummaryFilters object.</p>
+        /// <p>Filters the results based on the ConfigRuleComplianceSummaryFilters object.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::ConfigRuleComplianceSummaryFilters>,
@@ -5338,9 +5253,9 @@ pub mod fluent_builders {
         /// <p>Groups the result based on ACCOUNT_ID or AWS_REGION.</p>
         pub fn group_by_key(
             mut self,
-            inp: crate::model::ConfigRuleComplianceSummaryGroupKey,
+            input: crate::model::ConfigRuleComplianceSummaryGroupKey,
         ) -> Self {
-            self.inner = self.inner.group_by_key(inp);
+            self.inner = self.inner.group_by_key(input);
             self
         }
         /// <p>Groups the result based on ACCOUNT_ID or AWS_REGION.</p>
@@ -5351,28 +5266,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_group_by_key(input);
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is 1000. You cannot specify a number greater than 1000.
-        /// If you specify 0, Config uses the default.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The maximum number of evaluation results returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is 1000. You cannot specify a number greater than 1000.
-        /// If you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5380,11 +5289,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAggregateConformancePackComplianceSummary`.
     ///
-    /// <p>Returns the count of compliant and noncompliant conformance packs across all Amazon Web Services accounts and Amazon Web Services Regions in an aggregator. You can filter based on Amazon Web Services account ID or Amazon Web Services Region.</p>
-    /// <note>
+    /// <p>Returns the count of compliant and noncompliant conformance packs across all Amazon Web Services accounts and Amazon Web Services Regions in an aggregator. You can filter based on Amazon Web Services account ID or Amazon Web Services Region.</p> <note>
     /// <p>The results can return an empty result page, but if you have a nextToken, the results are displayed on the next page.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAggregateConformancePackComplianceSummary<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5431,10 +5339,10 @@ pub mod fluent_builders {
                 crate::input::GetAggregateConformancePackComplianceSummaryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5442,12 +5350,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetAggregateConformancePackComplianceSummaryPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetAggregateConformancePackComplianceSummaryPaginator<C, M, R>
+        {
+            crate::paginator::GetAggregateConformancePackComplianceSummaryPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The name of the configuration aggregator.</p>
         pub fn configuration_aggregator_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_aggregator_name(inp);
+            self.inner = self.inner.configuration_aggregator_name(input.into());
             self
         }
         /// <p>The name of the configuration aggregator.</p>
@@ -5461,9 +5381,9 @@ pub mod fluent_builders {
         /// <p>Filters the results based on the <code>AggregateConformancePackComplianceSummaryFilters</code> object.</p>
         pub fn filters(
             mut self,
-            inp: crate::model::AggregateConformancePackComplianceSummaryFilters,
+            input: crate::model::AggregateConformancePackComplianceSummaryFilters,
         ) -> Self {
-            self.inner = self.inner.filters(inp);
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters the results based on the <code>AggregateConformancePackComplianceSummaryFilters</code> object.</p>
@@ -5479,9 +5399,9 @@ pub mod fluent_builders {
         /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
         pub fn group_by_key(
             mut self,
-            inp: crate::model::AggregateConformancePackComplianceSummaryGroupKey,
+            input: crate::model::AggregateConformancePackComplianceSummaryGroupKey,
         ) -> Self {
-            self.inner = self.inner.group_by_key(inp);
+            self.inner = self.inner.group_by_key(input);
             self
         }
         /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
@@ -5495,8 +5415,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
@@ -5505,8 +5425,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -5518,9 +5438,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAggregateDiscoveredResourceCounts`.
     ///
     /// <p>Returns the resource counts across accounts and regions that are present in your Config aggregator. You can request the resource counts by providing filters and GroupByKey.</p>
-    /// <p>For example, if the input contains accountID 12345678910 and region us-east-1 in filters, the API returns the count of resources in account ID 12345678910 and region us-east-1.
-    /// If the input contains ACCOUNT_ID as a GroupByKey, the API returns resource counts for all source accounts that are present in your aggregator.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For example, if the input contains accountID 12345678910 and region us-east-1 in filters, the API returns the count of resources in account ID 12345678910 and region us-east-1. If the input contains ACCOUNT_ID as a GroupByKey, the API returns resource counts for all source accounts that are present in your aggregator.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAggregateDiscoveredResourceCounts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5567,10 +5486,10 @@ pub mod fluent_builders {
                 crate::input::GetAggregateDiscoveredResourceCountsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5578,12 +5497,23 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetAggregateDiscoveredResourceCountsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetAggregateDiscoveredResourceCountsPaginator<C, M, R> {
+            crate::paginator::GetAggregateDiscoveredResourceCountsPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The name of the configuration aggregator.</p>
         pub fn configuration_aggregator_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_aggregator_name(inp);
+            self.inner = self.inner.configuration_aggregator_name(input.into());
             self
         }
         /// <p>The name of the configuration aggregator.</p>
@@ -5595,8 +5525,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters the results based on the <code>ResourceCountFilters</code> object.</p>
-        pub fn filters(mut self, inp: crate::model::ResourceCountFilters) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::ResourceCountFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters the results based on the <code>ResourceCountFilters</code> object.</p>
@@ -5608,8 +5538,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The key to group the resource counts.</p>
-        pub fn group_by_key(mut self, inp: crate::model::ResourceCountGroupKey) -> Self {
-            self.inner = self.inner.group_by_key(inp);
+        pub fn group_by_key(mut self, input: crate::model::ResourceCountGroupKey) -> Self {
+            self.inner = self.inner.group_by_key(input);
             self
         }
         /// <p>The key to group the resource counts.</p>
@@ -5620,19 +5550,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_group_by_key(input);
             self
         }
-        /// <p>The maximum number of <a>GroupedResourceCount</a> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The maximum number of <code>GroupedResourceCount</code> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of <a>GroupedResourceCount</a> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of <code>GroupedResourceCount</code> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
@@ -5644,7 +5574,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAggregateResourceConfig`.
     ///
     /// <p>Returns configuration item that is aggregated for your specific resource in a specific source account and region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAggregateResourceConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5689,10 +5619,10 @@ pub mod fluent_builders {
                 crate::input::GetAggregateResourceConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5703,9 +5633,9 @@ pub mod fluent_builders {
         /// <p>The name of the configuration aggregator.</p>
         pub fn configuration_aggregator_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_aggregator_name(inp);
+            self.inner = self.inner.configuration_aggregator_name(input.into());
             self
         }
         /// <p>The name of the configuration aggregator.</p>
@@ -5719,9 +5649,9 @@ pub mod fluent_builders {
         /// <p>An object that identifies aggregate resource.</p>
         pub fn resource_identifier(
             mut self,
-            inp: crate::model::AggregateResourceIdentifier,
+            input: crate::model::AggregateResourceIdentifier,
         ) -> Self {
-            self.inner = self.inner.resource_identifier(inp);
+            self.inner = self.inner.resource_identifier(input);
             self
         }
         /// <p>An object that identifies aggregate resource.</p>
@@ -5735,11 +5665,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetComplianceDetailsByConfigRule`.
     ///
-    /// <p>Returns the evaluation results for the specified Config
-    /// rule. The results indicate which Amazon Web Services resources were evaluated by the
-    /// rule, when each resource was last evaluated, and whether each
-    /// resource complies with the rule.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the evaluation results for the specified Config rule. The results indicate which Amazon Web Services resources were evaluated by the rule, when each resource was last evaluated, and whether each resource complies with the rule.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetComplianceDetailsByConfigRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5784,10 +5711,10 @@ pub mod fluent_builders {
                 crate::input::GetComplianceDetailsByConfigRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5795,14 +5722,23 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the Config rule for which you want compliance
-        /// information.</p>
-        pub fn config_rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_rule_name(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetComplianceDetailsByConfigRulePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetComplianceDetailsByConfigRulePaginator<C, M, R> {
+            crate::paginator::GetComplianceDetailsByConfigRulePaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p>The name of the Config rule for which you want compliance information.</p>
+        pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_rule_name(input.into());
             self
         }
-        /// <p>The name of the Config rule for which you want compliance
-        /// information.</p>
+        /// <p>The name of the Config rule for which you want compliance information.</p>
         pub fn set_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5815,17 +5751,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_compliance_types`](Self::set_compliance_types).
         ///
         /// <p>Filters the results by compliance.</p>
-        /// <p>The allowed values are <code>COMPLIANT</code>,
-        /// <code>NON_COMPLIANT</code>, and
-        /// <code>NOT_APPLICABLE</code>.</p>
-        pub fn compliance_types(mut self, inp: impl Into<crate::model::ComplianceType>) -> Self {
-            self.inner = self.inner.compliance_types(inp);
+        /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.</p>
+        pub fn compliance_types(mut self, input: crate::model::ComplianceType) -> Self {
+            self.inner = self.inner.compliance_types(input);
             self
         }
         /// <p>Filters the results by compliance.</p>
-        /// <p>The allowed values are <code>COMPLIANT</code>,
-        /// <code>NON_COMPLIANT</code>, and
-        /// <code>NOT_APPLICABLE</code>.</p>
+        /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.</p>
         pub fn set_compliance_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ComplianceType>>,
@@ -5833,30 +5765,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_compliance_types(input);
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is 10. You cannot specify a number greater than 100. If
-        /// you specify 0, Config uses the default.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of evaluation results returned on each page.
-        /// The default is 10. You cannot specify a number greater than 100. If
-        /// you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5864,11 +5788,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetComplianceDetailsByResource`.
     ///
-    /// <p>Returns the evaluation results for the specified Amazon Web Services resource.
-    /// The results indicate which Config rules were used to evaluate
-    /// the resource, when each rule was last used, and whether the resource
-    /// complies with each rule.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the evaluation results for the specified Amazon Web Services resource. The results indicate which Config rules were used to evaluate the resource, when each rule was last used, and whether the resource complies with each rule.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetComplianceDetailsByResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5913,10 +5834,10 @@ pub mod fluent_builders {
                 crate::input::GetComplianceDetailsByResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5924,14 +5845,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The type of the Amazon Web Services resource for which you want compliance
-        /// information.</p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetComplianceDetailsByResourcePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetComplianceDetailsByResourcePaginator<C, M, R> {
+            crate::paginator::GetComplianceDetailsByResourcePaginator::new(self.handle, self.inner)
+        }
+        /// <p>The type of the Amazon Web Services resource for which you want compliance information.</p>
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
-        /// <p>The type of the Amazon Web Services resource for which you want compliance
-        /// information.</p>
+        /// <p>The type of the Amazon Web Services resource for which you want compliance information.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5939,14 +5866,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_type(input);
             self
         }
-        /// <p>The ID of the Amazon Web Services resource for which you want compliance
-        /// information.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        /// <p>The ID of the Amazon Web Services resource for which you want compliance information.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
-        /// <p>The ID of the Amazon Web Services resource for which you want compliance
-        /// information.</p>
+        /// <p>The ID of the Amazon Web Services resource for which you want compliance information.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_id(input);
             self
@@ -5956,17 +5881,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_compliance_types`](Self::set_compliance_types).
         ///
         /// <p>Filters the results by compliance.</p>
-        /// <p>The allowed values are <code>COMPLIANT</code>,
-        /// <code>NON_COMPLIANT</code>, and
-        /// <code>NOT_APPLICABLE</code>.</p>
-        pub fn compliance_types(mut self, inp: impl Into<crate::model::ComplianceType>) -> Self {
-            self.inner = self.inner.compliance_types(inp);
+        /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.</p>
+        pub fn compliance_types(mut self, input: crate::model::ComplianceType) -> Self {
+            self.inner = self.inner.compliance_types(input);
             self
         }
         /// <p>Filters the results by compliance.</p>
-        /// <p>The allowed values are <code>COMPLIANT</code>,
-        /// <code>NON_COMPLIANT</code>, and
-        /// <code>NOT_APPLICABLE</code>.</p>
+        /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.</p>
         pub fn set_compliance_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ComplianceType>>,
@@ -5974,16 +5895,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_compliance_types(input);
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5991,9 +5908,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetComplianceSummaryByConfigRule`.
     ///
-    /// <p>Returns the number of Config rules that are compliant and
-    /// noncompliant, up to a maximum of 25 for each.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the number of Config rules that are compliant and noncompliant, up to a maximum of 25 for each.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetComplianceSummaryByConfigRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6038,10 +5954,10 @@ pub mod fluent_builders {
                 crate::input::GetComplianceSummaryByConfigRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6052,11 +5968,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetComplianceSummaryByResourceType`.
     ///
-    /// <p>Returns the number of resources that are compliant and the
-    /// number that are noncompliant. You can specify one or more resource
-    /// types to get these numbers for each resource type. The maximum
-    /// number returned is 100.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the number of resources that are compliant and the number that are noncompliant. You can specify one or more resource types to get these numbers for each resource type. The maximum number returned is 100.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetComplianceSummaryByResourceType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6103,10 +6016,10 @@ pub mod fluent_builders {
                 crate::input::GetComplianceSummaryByResourceTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6118,24 +6031,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
         ///
-        /// <p>Specify one or more resource types to get the number of
-        /// resources that are compliant and the number that are noncompliant
-        /// for each resource type.</p>
-        /// <p>For this request, you can specify an Amazon Web Services resource type such as
-        /// <code>AWS::EC2::Instance</code>. You can specify that the
-        /// resource type is an Amazon Web Services account by specifying
-        /// <code>AWS::::Account</code>.</p>
-        pub fn resource_types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_types(inp);
+        /// <p>Specify one or more resource types to get the number of resources that are compliant and the number that are noncompliant for each resource type.</p>
+        /// <p>For this request, you can specify an Amazon Web Services resource type such as <code>AWS::EC2::Instance</code>. You can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
+        pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_types(input.into());
             self
         }
-        /// <p>Specify one or more resource types to get the number of
-        /// resources that are compliant and the number that are noncompliant
-        /// for each resource type.</p>
-        /// <p>For this request, you can specify an Amazon Web Services resource type such as
-        /// <code>AWS::EC2::Instance</code>. You can specify that the
-        /// resource type is an Amazon Web Services account by specifying
-        /// <code>AWS::::Account</code>.</p>
+        /// <p>Specify one or more resource types to get the number of resources that are compliant and the number that are noncompliant for each resource type.</p>
+        /// <p>For this request, you can specify an Amazon Web Services resource type such as <code>AWS::EC2::Instance</code>. You can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
         pub fn set_resource_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6147,7 +6050,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetConformancePackComplianceDetails`.
     ///
     /// <p>Returns compliance details of a conformance pack for all Amazon Web Services resources that are monitered by conformance pack.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConformancePackComplianceDetails<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6194,10 +6097,10 @@ pub mod fluent_builders {
                 crate::input::GetConformancePackComplianceDetailsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6205,9 +6108,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetConformancePackComplianceDetailsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetConformancePackComplianceDetailsPaginator<C, M, R> {
+            crate::paginator::GetConformancePackComplianceDetailsPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>Name of the conformance pack.</p>
-        pub fn conformance_pack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.conformance_pack_name(inp);
+        pub fn conformance_pack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.conformance_pack_name(input.into());
             self
         }
         /// <p>Name of the conformance pack.</p>
@@ -6219,8 +6133,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A <code>ConformancePackEvaluationFilters</code> object.</p>
-        pub fn filters(mut self, inp: crate::model::ConformancePackEvaluationFilters) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::ConformancePackEvaluationFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A <code>ConformancePackEvaluationFilters</code> object.</p>
@@ -6232,8 +6146,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of evaluation results returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of evaluation results returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
@@ -6242,8 +6156,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
@@ -6255,7 +6169,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetConformancePackComplianceSummary`.
     ///
     /// <p>Returns compliance details for the conformance pack based on the cumulative compliance results of all the rules in that conformance pack.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConformancePackComplianceSummary<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6302,10 +6216,10 @@ pub mod fluent_builders {
                 crate::input::GetConformancePackComplianceSummaryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6313,13 +6227,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetConformancePackComplianceSummaryPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetConformancePackComplianceSummaryPaginator<C, M, R> {
+            crate::paginator::GetConformancePackComplianceSummaryPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// Appends an item to `ConformancePackNames`.
         ///
         /// To override the contents of this collection use [`set_conformance_pack_names`](Self::set_conformance_pack_names).
         ///
         /// <p>Names of conformance packs.</p>
-        pub fn conformance_pack_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.conformance_pack_names(inp);
+        pub fn conformance_pack_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.conformance_pack_names(input.into());
             self
         }
         /// <p>Names of conformance packs.</p>
@@ -6331,8 +6256,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of conformance packs returned on each page.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of conformance packs returned on each page.</p>
@@ -6341,8 +6266,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -6353,71 +6278,27 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDiscoveredResourceCounts`.
     ///
-    /// <p>Returns the resource types, the number of each resource type,
-    /// and the total number of resources that Config is recording in
-    /// this region for your Amazon Web Services account. </p>
-    /// <p class="title">
-    /// <b>Example</b>
-    /// </p>
+    /// <p>Returns the resource types, the number of each resource type, and the total number of resources that Config is recording in this region for your Amazon Web Services account. </p>
+    /// <p class="title"> <b>Example</b> </p>
     /// <ol>
-    /// <li>
-    /// <p>Config is recording three resource types in the US
-    /// East (Ohio) Region for your account: 25 EC2 instances, 20
-    /// IAM users, and 15 S3 buckets.</p>
-    /// </li>
-    /// <li>
-    /// <p>You make a call to the
-    /// <code>GetDiscoveredResourceCounts</code> action and
-    /// specify that you want all resource types. </p>
-    /// </li>
-    /// <li>
-    /// <p>Config returns the following:</p>
-    ///
+    /// <li> <p>Config is recording three resource types in the US East (Ohio) Region for your account: 25 EC2 instances, 20 IAM users, and 15 S3 buckets.</p> </li>
+    /// <li> <p>You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify that you want all resource types. </p> </li>
+    /// <li> <p>Config returns the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The resource types (EC2 instances, IAM users,
-    /// and S3 buckets).</p>
-    /// </li>
-    /// <li>
-    /// <p>The number of each resource type (25, 20, and
-    /// 15).</p>
-    /// </li>
-    /// <li>
-    /// <p>The total number of all resources
-    /// (60).</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// </li>
+    /// <li> <p>The resource types (EC2 instances, IAM users, and S3 buckets).</p> </li>
+    /// <li> <p>The number of each resource type (25, 20, and 15).</p> </li>
+    /// <li> <p>The total number of all resources (60).</p> </li>
+    /// </ul> </li>
     /// </ol>
-    ///
-    /// <p>The response is paginated. By default, Config lists 100
-    /// <a>ResourceCount</a> objects on each page. You can
-    /// customize this number with the <code>limit</code> parameter. The
-    /// response includes a <code>nextToken</code> string. To get the next
-    /// page of results, run the request again and specify the string for
-    /// the <code>nextToken</code> parameter.</p>
-    ///
-    /// <note>
-    /// <p>If you make a call to the <a>GetDiscoveredResourceCounts</a> action, you might
-    /// not immediately receive resource counts in the following
-    /// situations:</p>
-    ///
+    /// <p>The response is paginated. By default, Config lists 100 <code>ResourceCount</code> objects on each page. You can customize this number with the <code>limit</code> parameter. The response includes a <code>nextToken</code> string. To get the next page of results, run the request again and specify the string for the <code>nextToken</code> parameter.</p> <note>
+    /// <p>If you make a call to the <code>GetDiscoveredResourceCounts</code> action, you might not immediately receive resource counts in the following situations:</p>
     /// <ul>
-    /// <li>
-    /// <p>You are a new Config customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>You just enabled resource recording.</p>
-    /// </li>
+    /// <li> <p>You are a new Config customer.</p> </li>
+    /// <li> <p>You just enabled resource recording.</p> </li>
     /// </ul>
-    ///
-    /// <p>It might take a few minutes for Config to record and
-    /// count your resources. Wait a few minutes and then retry the
-    /// <a>GetDiscoveredResourceCounts</a> action.
-    /// </p>
+    /// <p>It might take a few minutes for Config to record and count your resources. Wait a few minutes and then retry the <code>GetDiscoveredResourceCounts</code> action. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDiscoveredResourceCounts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6462,10 +6343,10 @@ pub mod fluent_builders {
                 crate::input::GetDiscoveredResourceCountsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6473,41 +6354,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetDiscoveredResourceCountsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetDiscoveredResourceCountsPaginator<C, M, R> {
+            crate::paginator::GetDiscoveredResourceCountsPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `resourceTypes`.
         ///
         /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
         ///
-        /// <p>The comma-separated list that specifies the resource types that
-        /// you want Config to return (for example,
-        /// <code>"AWS::EC2::Instance"</code>,
-        /// <code>"AWS::IAM::User"</code>).</p>
-        ///
-        /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in
-        /// the region for your account.</p>
-        /// <note>
-        /// <p>If the configuration recorder is turned off, Config
-        /// returns an empty list of <a>ResourceCount</a>
-        /// objects. If the configuration recorder is not recording a
-        /// specific resource type (for example, S3 buckets), that resource
-        /// type is not returned in the list of <a>ResourceCount</a> objects.</p>
+        /// <p>The comma-separated list that specifies the resource types that you want Config to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).</p>
+        /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note>
+        /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p>
         /// </note>
-        pub fn resource_types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_types(inp);
+        pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_types(input.into());
             self
         }
-        /// <p>The comma-separated list that specifies the resource types that
-        /// you want Config to return (for example,
-        /// <code>"AWS::EC2::Instance"</code>,
-        /// <code>"AWS::IAM::User"</code>).</p>
-        ///
-        /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in
-        /// the region for your account.</p>
-        /// <note>
-        /// <p>If the configuration recorder is turned off, Config
-        /// returns an empty list of <a>ResourceCount</a>
-        /// objects. If the configuration recorder is not recording a
-        /// specific resource type (for example, S3 buckets), that resource
-        /// type is not returned in the list of <a>ResourceCount</a> objects.</p>
+        /// <p>The comma-separated list that specifies the resource types that you want Config to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).</p>
+        /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note>
+        /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p>
         /// </note>
         pub fn set_resource_types(
             mut self,
@@ -6516,32 +6385,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_types(input);
             self
         }
-        /// <p>The maximum number of <a>ResourceCount</a> objects
-        /// returned on each page. The default is 100. You cannot specify a
-        /// number greater than 100. If you specify 0, Config uses the
-        /// default.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The maximum number of <code>ResourceCount</code> objects returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of <a>ResourceCount</a> objects
-        /// returned on each page. The default is 100. You cannot specify a
-        /// number greater than 100. If you specify 0, Config uses the
-        /// default.</p>
+        /// <p>The maximum number of <code>ResourceCount</code> objects returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -6550,7 +6409,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetOrganizationConfigRuleDetailedStatus`.
     ///
     /// <p>Returns detailed status for each member account within an organization for a given organization config rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOrganizationConfigRuleDetailedStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6597,10 +6456,10 @@ pub mod fluent_builders {
                 crate::input::GetOrganizationConfigRuleDetailedStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6608,12 +6467,23 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetOrganizationConfigRuleDetailedStatusPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetOrganizationConfigRuleDetailedStatusPaginator<C, M, R> {
+            crate::paginator::GetOrganizationConfigRuleDetailedStatusPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The name of organization config rule for which you want status details for member accounts.</p>
         pub fn organization_config_rule_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.organization_config_rule_name(inp);
+            self.inner = self.inner.organization_config_rule_name(input.into());
             self
         }
         /// <p>The name of organization config rule for which you want status details for member accounts.</p>
@@ -6625,8 +6495,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A <code>StatusDetailFilters</code> object.</p>
-        pub fn filters(mut self, inp: crate::model::StatusDetailFilters) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::StatusDetailFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A <code>StatusDetailFilters</code> object.</p>
@@ -6638,8 +6508,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of <code>OrganizationConfigRuleDetailedStatus</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of <code>OrganizationConfigRuleDetailedStatus</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100.</p>
@@ -6648,8 +6518,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
@@ -6661,7 +6531,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetOrganizationConformancePackDetailedStatus`.
     ///
     /// <p>Returns detailed status for each member account within an organization for a given organization conformance pack.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOrganizationConformancePackDetailedStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6708,10 +6578,10 @@ pub mod fluent_builders {
                 crate::input::GetOrganizationConformancePackDetailedStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6719,12 +6589,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetOrganizationConformancePackDetailedStatusPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetOrganizationConformancePackDetailedStatusPaginator<C, M, R>
+        {
+            crate::paginator::GetOrganizationConformancePackDetailedStatusPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The name of organization conformance pack for which you want status details for member accounts.</p>
         pub fn organization_conformance_pack_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.organization_conformance_pack_name(inp);
+            self.inner = self.inner.organization_conformance_pack_name(input.into());
             self
         }
         /// <p>The name of organization conformance pack for which you want status details for member accounts.</p>
@@ -6738,9 +6620,9 @@ pub mod fluent_builders {
         /// <p>An <code>OrganizationResourceDetailedStatusFilters</code> object.</p>
         pub fn filters(
             mut self,
-            inp: crate::model::OrganizationResourceDetailedStatusFilters,
+            input: crate::model::OrganizationResourceDetailedStatusFilters,
         ) -> Self {
-            self.inner = self.inner.filters(inp);
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>An <code>OrganizationResourceDetailedStatusFilters</code> object.</p>
@@ -6751,21 +6633,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page.
-        /// If you do not specify a number, Config uses the default. The default is 100. </p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100. </p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page.
-        /// If you do not specify a number, Config uses the default. The default is 100. </p>
+        /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100. </p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
         }
         /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
@@ -6776,27 +6656,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetResourceConfigHistory`.
     ///
-    /// <p>Returns a list of <code>ConfigurationItems</code> for the specified resource.
-    /// The list contains details about each state of the resource
-    /// during the specified time interval. If you specified a retention
-    /// period to retain your <code>ConfigurationItems</code> between a
-    /// minimum of 30 days and a maximum of 7 years (2557 days), Config
-    /// returns the <code>ConfigurationItems</code> for the specified
-    /// retention period. </p>
-    /// <p>The response is paginated. By default, Config returns a
-    /// limit of 10 configuration items per page. You can customize this
-    /// number with the <code>limit</code> parameter. The response includes
-    /// a <code>nextToken</code> string. To get the next page of results,
-    /// run the request again and specify the string for the
-    /// <code>nextToken</code> parameter.</p>
-    /// <note>
-    /// <p>Each call to the API is limited to span a duration of seven
-    /// days. It is likely that the number of records returned is
-    /// smaller than the specified <code>limit</code>. In such cases,
-    /// you can make another call, using the
-    /// <code>nextToken</code>.</p>
+    /// <p>Returns a list of <code>ConfigurationItems</code> for the specified resource. The list contains details about each state of the resource during the specified time interval. If you specified a retention period to retain your <code>ConfigurationItems</code> between a minimum of 30 days and a maximum of 7 years (2557 days), Config returns the <code>ConfigurationItems</code> for the specified retention period. </p>
+    /// <p>The response is paginated. By default, Config returns a limit of 10 configuration items per page. You can customize this number with the <code>limit</code> parameter. The response includes a <code>nextToken</code> string. To get the next page of results, run the request again and specify the string for the <code>nextToken</code> parameter.</p> <note>
+    /// <p>Each call to the API is limited to span a duration of seven days. It is likely that the number of records returned is smaller than the specified <code>limit</code>. In such cases, you can make another call, using the <code>nextToken</code>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourceConfigHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6841,10 +6705,10 @@ pub mod fluent_builders {
                 crate::input::GetResourceConfigHistoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6852,9 +6716,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetResourceConfigHistoryPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetResourceConfigHistoryPaginator<C, M, R> {
+            crate::paginator::GetResourceConfigHistoryPaginator::new(self.handle, self.inner)
+        }
         /// <p>The resource type.</p>
-        pub fn resource_type(mut self, inp: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The resource type.</p>
@@ -6865,26 +6737,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_type(input);
             self
         }
-        /// <p>The ID of the resource (for example.,
-        /// <code>sg-xxxxxx</code>).</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        /// <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
-        /// <p>The ID of the resource (for example.,
-        /// <code>sg-xxxxxx</code>).</p>
+        /// <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_id(input);
             self
         }
-        /// <p>The time stamp that indicates a later time. If not specified,
-        /// current time is taken.</p>
-        pub fn later_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.later_time(inp);
+        /// <p>The time stamp that indicates a later time. If not specified, current time is taken.</p>
+        pub fn later_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.later_time(input);
             self
         }
-        /// <p>The time stamp that indicates a later time. If not specified,
-        /// current time is taken.</p>
+        /// <p>The time stamp that indicates a later time. If not specified, current time is taken.</p>
         pub fn set_later_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6892,18 +6760,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_later_time(input);
             self
         }
-        /// <p>The time stamp that indicates an earlier time. If not
-        /// specified, the action returns paginated results that contain
-        /// configuration items that start when the first configuration item was
-        /// recorded.</p>
-        pub fn earlier_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.earlier_time(inp);
+        /// <p>The time stamp that indicates an earlier time. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
+        pub fn earlier_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.earlier_time(input);
             self
         }
-        /// <p>The time stamp that indicates an earlier time. If not
-        /// specified, the action returns paginated results that contain
-        /// configuration items that start when the first configuration item was
-        /// recorded.</p>
+        /// <p>The time stamp that indicates an earlier time. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
         pub fn set_earlier_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6911,16 +6773,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_earlier_time(input);
             self
         }
-        /// <p>The chronological order for configuration items listed. By
-        /// default, the results are listed in reverse chronological
-        /// order.</p>
-        pub fn chronological_order(mut self, inp: crate::model::ChronologicalOrder) -> Self {
-            self.inner = self.inner.chronological_order(inp);
+        /// <p>The chronological order for configuration items listed. By default, the results are listed in reverse chronological order.</p>
+        pub fn chronological_order(mut self, input: crate::model::ChronologicalOrder) -> Self {
+            self.inner = self.inner.chronological_order(input);
             self
         }
-        /// <p>The chronological order for configuration items listed. By
-        /// default, the results are listed in reverse chronological
-        /// order.</p>
+        /// <p>The chronological order for configuration items listed. By default, the results are listed in reverse chronological order.</p>
         pub fn set_chronological_order(
             mut self,
             input: std::option::Option<crate::model::ChronologicalOrder>,
@@ -6928,30 +6786,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_chronological_order(input);
             self
         }
-        /// <p>The maximum number of configuration items returned on each
-        /// page. The default is 10. You cannot specify a number greater than
-        /// 100. If you specify 0, Config uses the default.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The maximum number of configuration items returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of configuration items returned on each
-        /// page. The default is 10. You cannot specify a number greater than
-        /// 100. If you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of configuration items returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -6960,7 +6810,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetStoredQuery`.
     ///
     /// <p>Returns the details of a specific stored query.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStoredQuery<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7005,10 +6855,10 @@ pub mod fluent_builders {
                 crate::input::GetStoredQueryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7017,8 +6867,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the query.</p>
-        pub fn query_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_name(inp);
+        pub fn query_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_name(input.into());
             self
         }
         /// <p>The name of the query.</p>
@@ -7029,11 +6879,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAggregateDiscoveredResources`.
     ///
-    /// <p>Accepts a resource type and returns a list of resource identifiers that are aggregated for a specific resource type across accounts and regions.
-    /// A resource identifier includes the resource type, ID, (if available) the custom resource name, source account, and source region.
-    /// You can narrow the results to include only resources that have specific resource IDs, or a resource name, or source account ID, or source region.</p>
+    /// <p>Accepts a resource type and returns a list of resource identifiers that are aggregated for a specific resource type across accounts and regions. A resource identifier includes the resource type, ID, (if available) the custom resource name, source account, and source region. You can narrow the results to include only resources that have specific resource IDs, or a resource name, or source account ID, or source region.</p>
     /// <p>For example, if the input consists of accountID 12345678910 and the region is us-east-1 for resource type <code>AWS::EC2::Instance</code> then the API returns all the EC2 instance identifiers of accountID 12345678910 and region us-east-1.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAggregateDiscoveredResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7078,10 +6926,10 @@ pub mod fluent_builders {
                 crate::input::ListAggregateDiscoveredResourcesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7089,12 +6937,23 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAggregateDiscoveredResourcesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListAggregateDiscoveredResourcesPaginator<C, M, R> {
+            crate::paginator::ListAggregateDiscoveredResourcesPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The name of the configuration aggregator. </p>
         pub fn configuration_aggregator_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_aggregator_name(inp);
+            self.inner = self.inner.configuration_aggregator_name(input.into());
             self
         }
         /// <p>The name of the configuration aggregator. </p>
@@ -7106,8 +6965,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of resources that you want Config to list in the response.</p>
-        pub fn resource_type(mut self, inp: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The type of resources that you want Config to list in the response.</p>
@@ -7119,8 +6978,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters the results based on the <code>ResourceFilters</code> object.</p>
-        pub fn filters(mut self, inp: crate::model::ResourceFilters) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::ResourceFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters the results based on the <code>ResourceFilters</code> object.</p>
@@ -7132,8 +6991,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
@@ -7142,8 +7001,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -7154,24 +7013,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDiscoveredResources`.
     ///
-    /// <p>Accepts a resource type and returns a list of resource
-    /// identifiers for the resources of that type. A resource identifier
-    /// includes the resource type, ID, and (if available) the custom
-    /// resource name. The results consist of resources that Config has
-    /// discovered, including those that Config is not currently
-    /// recording. You can narrow the results to include only resources that
-    /// have specific resource IDs or a resource name.</p>
-    /// <note>
-    /// <p>You can specify either resource IDs or a resource name, but
-    /// not both, in the same request.</p>
+    /// <p>Accepts a resource type and returns a list of resource identifiers for the resources of that type. A resource identifier includes the resource type, ID, and (if available) the custom resource name. The results consist of resources that Config has discovered, including those that Config is not currently recording. You can narrow the results to include only resources that have specific resource IDs or a resource name.</p> <note>
+    /// <p>You can specify either resource IDs or a resource name, but not both, in the same request.</p>
     /// </note>
-    /// <p>The response is paginated. By default, Config lists 100
-    /// resource identifiers on each page. You can customize this number
-    /// with the <code>limit</code> parameter. The response includes a
-    /// <code>nextToken</code> string. To get the next page of results,
-    /// run the request again and specify the string for the
-    /// <code>nextToken</code> parameter.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>The response is paginated. By default, Config lists 100 resource identifiers on each page. You can customize this number with the <code>limit</code> parameter. The response includes a <code>nextToken</code> string. To get the next page of results, run the request again and specify the string for the <code>nextToken</code> parameter.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDiscoveredResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7216,10 +7062,10 @@ pub mod fluent_builders {
                 crate::input::ListDiscoveredResourcesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7227,14 +7073,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The type of resources that you want Config to list in the
-        /// response.</p>
-        pub fn resource_type(mut self, inp: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDiscoveredResourcesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDiscoveredResourcesPaginator<C, M, R> {
+            crate::paginator::ListDiscoveredResourcesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The type of resources that you want Config to list in the response.</p>
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
-        /// <p>The type of resources that you want Config to list in the
-        /// response.</p>
+        /// <p>The type of resources that you want Config to list in the response.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -7246,16 +7096,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
         ///
-        /// <p>The IDs of only those resources that you want Config to
-        /// list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has
-        /// discovered.</p>
-        pub fn resource_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_ids(inp);
+        /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
+        pub fn resource_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_ids(input.into());
             self
         }
-        /// <p>The IDs of only those resources that you want Config to
-        /// list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has
-        /// discovered.</p>
+        /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
         pub fn set_resource_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7263,16 +7109,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_ids(input);
             self
         }
-        /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this
-        /// parameter, Config lists all resources of the specified type that
-        /// it has discovered.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input.into());
             self
         }
-        /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this
-        /// parameter, Config lists all resources of the specified type that
-        /// it has discovered.</p>
+        /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
         pub fn set_resource_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7280,42 +7122,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_name(input);
             self
         }
-        /// <p>The maximum number of resource identifiers returned on each
-        /// page. The default is 100. You cannot specify a number greater than
-        /// 100. If you specify 0, Config uses the default.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The maximum number of resource identifiers returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of resource identifiers returned on each
-        /// page. The default is 100. You cannot specify a number greater than
-        /// 100. If you specify 0, Config uses the default.</p>
+        /// <p>The maximum number of resource identifiers returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>Specifies whether Config includes deleted resources in the
-        /// results. By default, deleted resources are not included.</p>
-        pub fn include_deleted_resources(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_deleted_resources(inp);
+        /// <p>Specifies whether Config includes deleted resources in the results. By default, deleted resources are not included.</p>
+        pub fn include_deleted_resources(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_deleted_resources(input);
             self
         }
-        /// <p>Specifies whether Config includes deleted resources in the
-        /// results. By default, deleted resources are not included.</p>
+        /// <p>Specifies whether Config includes deleted resources in the results. By default, deleted resources are not included.</p>
         pub fn set_include_deleted_resources(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_include_deleted_resources(input);
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -7324,7 +7156,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListStoredQueries`.
     ///
     /// <p>Lists the stored queries for a single Amazon Web Services account and a single Amazon Web Services Region. The default is 100. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStoredQueries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7369,10 +7201,10 @@ pub mod fluent_builders {
                 crate::input::ListStoredQueriesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7380,9 +7212,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListStoredQueriesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListStoredQueriesPaginator<C, M, R> {
+            crate::paginator::ListStoredQueriesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response.</p>
@@ -7391,8 +7229,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned with a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be returned with a single call.</p>
@@ -7404,7 +7242,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>List the tags for Config resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7449,10 +7287,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7460,9 +7298,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTagsForResourcePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTagsForResourcePaginator<C, M, R> {
+            crate::paginator::ListTagsForResourcePaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
@@ -7471,8 +7315,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of tags returned on each page. The limit maximum is 50. You cannot specify a number greater than 50. If you specify 0, Config uses the default. </p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of tags returned on each page. The limit maximum is 50. You cannot specify a number greater than 50. If you specify 0, Config uses the default. </p>
@@ -7481,8 +7325,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
@@ -7493,9 +7337,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutAggregationAuthorization`.
     ///
-    /// <p>Authorizes the aggregator account and region to collect data
-    /// from the source account and region. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Authorizes the aggregator account and region to collect data from the source account and region. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAggregationAuthorization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7540,10 +7383,10 @@ pub mod fluent_builders {
                 crate::input::PutAggregationAuthorizationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7552,8 +7395,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
-        pub fn authorized_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorized_account_id(inp);
+        pub fn authorized_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorized_account_id(input.into());
             self
         }
         /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
@@ -7565,8 +7408,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The region authorized to collect aggregated data.</p>
-        pub fn authorized_aws_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorized_aws_region(inp);
+        pub fn authorized_aws_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorized_aws_region(input.into());
             self
         }
         /// <p>The region authorized to collect aggregated data.</p>
@@ -7582,8 +7425,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of tag object.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>An array of tag object.</p>
@@ -7597,42 +7440,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutConfigRule`.
     ///
-    /// <p>Adds or updates an Config rule for evaluating whether your
-    /// Amazon Web Services resources comply with your desired configurations.</p>
-    /// <p>You can use this action for custom Config rules and Config
-    /// managed rules. A custom Config rule is a rule that you
-    /// develop and maintain. An Config managed rule is a customizable,
-    /// predefined rule that Config provides.</p>
-    /// <p>If you are adding a new custom Config rule, you must first
-    /// create the Lambda function that the rule invokes to evaluate
-    /// your resources. When you use the <code>PutConfigRule</code> action
-    /// to add the rule to Config, you must specify the Amazon Resource
-    /// Name (ARN) that Lambda assigns to the function. Specify the ARN
-    /// for the <code>SourceIdentifier</code> key. This key is part of the
-    /// <code>Source</code> object, which is part of the
-    /// <code>ConfigRule</code> object. </p>
-    /// <p>If you are adding an Config managed rule, specify the
-    /// rule's identifier for the <code>SourceIdentifier</code> key. To
-    /// reference Config managed rule identifiers, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">About Config managed rules</a>.</p>
-    /// <p>For any new rule that you add, specify the
-    /// <code>ConfigRuleName</code> in the <code>ConfigRule</code>
-    /// object. Do not specify the <code>ConfigRuleArn</code> or the
-    /// <code>ConfigRuleId</code>. These values are generated by Config for new rules.</p>
-    /// <p>If you are updating a rule that you added previously, you can
-    /// specify the rule by <code>ConfigRuleName</code>,
-    /// <code>ConfigRuleId</code>, or <code>ConfigRuleArn</code> in the
-    /// <code>ConfigRule</code> data type that you use in this
-    /// request.</p>
+    /// <p>Adds or updates an Config rule for evaluating whether your Amazon Web Services resources comply with your desired configurations.</p>
+    /// <p>You can use this action for custom Config rules and Config managed rules. A custom Config rule is a rule that you develop and maintain. An Config managed rule is a customizable, predefined rule that Config provides.</p>
+    /// <p>If you are adding a new custom Config rule, you must first create the Lambda function that the rule invokes to evaluate your resources. When you use the <code>PutConfigRule</code> action to add the rule to Config, you must specify the Amazon Resource Name (ARN) that Lambda assigns to the function. Specify the ARN for the <code>SourceIdentifier</code> key. This key is part of the <code>Source</code> object, which is part of the <code>ConfigRule</code> object. </p>
+    /// <p>If you are adding an Config managed rule, specify the rule's identifier for the <code>SourceIdentifier</code> key. To reference Config managed rule identifiers, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">About Config managed rules</a>.</p>
+    /// <p>For any new rule that you add, specify the <code>ConfigRuleName</code> in the <code>ConfigRule</code> object. Do not specify the <code>ConfigRuleArn</code> or the <code>ConfigRuleId</code>. These values are generated by Config for new rules.</p>
+    /// <p>If you are updating a rule that you added previously, you can specify the rule by <code>ConfigRuleName</code>, <code>ConfigRuleId</code>, or <code>ConfigRuleArn</code> in the <code>ConfigRule</code> data type that you use in this request.</p>
     /// <p>The maximum number of rules that Config supports is 150.</p>
-    ///
-    /// <p>For information about requesting a rule limit increase, see
-    /// <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General
-    /// Reference Guide</i>.</p>
-    ///
-    /// <p>For more information about developing and using Config
-    /// rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating Amazon Web Services resource Configurations with Config</a>
-    /// in the <i>Config Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    /// <p>For more information about developing and using Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating Amazon Web Services resource Configurations with Config</a> in the <i>Config Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConfigRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7677,10 +7494,10 @@ pub mod fluent_builders {
                 crate::input::PutConfigRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7689,8 +7506,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The rule that you want to add to your account.</p>
-        pub fn config_rule(mut self, inp: crate::model::ConfigRule) -> Self {
-            self.inner = self.inner.config_rule(inp);
+        pub fn config_rule(mut self, input: crate::model::ConfigRule) -> Self {
+            self.inner = self.inner.config_rule(input);
             self
         }
         /// <p>The rule that you want to add to your account.</p>
@@ -7706,8 +7523,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of tag object.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>An array of tag object.</p>
@@ -7721,23 +7538,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutConfigurationAggregator`.
     ///
-    /// <p>Creates and updates the configuration aggregator with the
-    /// selected source accounts and regions. The source account can be
-    /// individual account(s) or an organization.</p>
-    ///
-    /// <p>
-    /// <code>accountIds</code> that are passed will be replaced with existing accounts.
-    /// If you want to add additional accounts into the aggregator, call <code>DescribeAggregator</code> to get the previous accounts and then append new ones.</p>
-    /// <note>
-    /// <p>Config should be enabled in source accounts and regions
-    /// you want to aggregate.</p>
-    ///
-    /// <p>If your source type is an organization, you must be signed in to the management account or a registered delegated administrator and all the features must be enabled in your organization.
-    /// If the caller is a management account, Config calls <code>EnableAwsServiceAccess</code> API to enable integration between Config and Organizations.
-    /// If the caller is a registered delegated administrator, Config calls <code>ListDelegatedAdministrators</code> API to verify whether the caller is a valid delegated administrator.</p>
+    /// <p>Creates and updates the configuration aggregator with the selected source accounts and regions. The source account can be individual account(s) or an organization.</p>
+    /// <p> <code>accountIds</code> that are passed will be replaced with existing accounts. If you want to add additional accounts into the aggregator, call <code>DescribeAggregator</code> to get the previous accounts and then append new ones.</p> <note>
+    /// <p>Config should be enabled in source accounts and regions you want to aggregate.</p>
+    /// <p>If your source type is an organization, you must be signed in to the management account or a registered delegated administrator and all the features must be enabled in your organization. If the caller is a management account, Config calls <code>EnableAwsServiceAccess</code> API to enable integration between Config and Organizations. If the caller is a registered delegated administrator, Config calls <code>ListDelegatedAdministrators</code> API to verify whether the caller is a valid delegated administrator.</p>
     /// <p>To register a delegated administrator, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli">Register a Delegated Administrator</a> in the Config developer guide. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConfigurationAggregator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7782,10 +7589,10 @@ pub mod fluent_builders {
                 crate::input::PutConfigurationAggregatorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7796,9 +7603,9 @@ pub mod fluent_builders {
         /// <p>The name of the configuration aggregator.</p>
         pub fn configuration_aggregator_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_aggregator_name(inp);
+            self.inner = self.inner.configuration_aggregator_name(input.into());
             self
         }
         /// <p>The name of the configuration aggregator.</p>
@@ -7813,19 +7620,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_account_aggregation_sources`](Self::set_account_aggregation_sources).
         ///
-        /// <p>A list of AccountAggregationSource object.
-        ///
-        /// </p>
+        /// <p>A list of AccountAggregationSource object. </p>
         pub fn account_aggregation_sources(
             mut self,
-            inp: impl Into<crate::model::AccountAggregationSource>,
+            input: crate::model::AccountAggregationSource,
         ) -> Self {
-            self.inner = self.inner.account_aggregation_sources(inp);
+            self.inner = self.inner.account_aggregation_sources(input);
             self
         }
-        /// <p>A list of AccountAggregationSource object.
-        ///
-        /// </p>
+        /// <p>A list of AccountAggregationSource object. </p>
         pub fn set_account_aggregation_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AccountAggregationSource>>,
@@ -7836,9 +7639,9 @@ pub mod fluent_builders {
         /// <p>An OrganizationAggregationSource object.</p>
         pub fn organization_aggregation_source(
             mut self,
-            inp: crate::model::OrganizationAggregationSource,
+            input: crate::model::OrganizationAggregationSource,
         ) -> Self {
-            self.inner = self.inner.organization_aggregation_source(inp);
+            self.inner = self.inner.organization_aggregation_source(input);
             self
         }
         /// <p>An OrganizationAggregationSource object.</p>
@@ -7854,8 +7657,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of tag object.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>An array of tag object.</p>
@@ -7869,21 +7672,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutConfigurationRecorder`.
     ///
-    /// <p>Creates a new configuration recorder to record the selected
-    /// resource configurations.</p>
-    /// <p>You can use this action to change the role <code>roleARN</code>
-    /// or the <code>recordingGroup</code> of an existing recorder. To
-    /// change the role, call the action on the existing configuration
-    /// recorder and specify a role.</p>
-    /// <note>
-    /// <p>Currently, you can specify only one configuration recorder
-    /// per region in your account.</p>
-    /// <p>If <code>ConfigurationRecorder</code> does not have the
-    /// <b>recordingGroup</b> parameter
-    /// specified, the default is to record all supported resource
-    /// types.</p>
+    /// <p>Creates a new configuration recorder to record the selected resource configurations.</p>
+    /// <p>You can use this action to change the role <code>roleARN</code> or the <code>recordingGroup</code> of an existing recorder. To change the role, call the action on the existing configuration recorder and specify a role.</p> <note>
+    /// <p>Currently, you can specify only one configuration recorder per region in your account.</p>
+    /// <p>If <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b> parameter specified, the default is to record all supported resource types.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConfigurationRecorder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7928,10 +7722,10 @@ pub mod fluent_builders {
                 crate::input::PutConfigurationRecorderInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7939,14 +7733,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The configuration recorder object that records each
-        /// configuration change made to the resources.</p>
-        pub fn configuration_recorder(mut self, inp: crate::model::ConfigurationRecorder) -> Self {
-            self.inner = self.inner.configuration_recorder(inp);
+        /// <p>The configuration recorder object that records each configuration change made to the resources.</p>
+        pub fn configuration_recorder(
+            mut self,
+            input: crate::model::ConfigurationRecorder,
+        ) -> Self {
+            self.inner = self.inner.configuration_recorder(input);
             self
         }
-        /// <p>The configuration recorder object that records each
-        /// configuration change made to the resources.</p>
+        /// <p>The configuration recorder object that records each configuration change made to the resources.</p>
         pub fn set_configuration_recorder(
             mut self,
             input: std::option::Option<crate::model::ConfigurationRecorder>,
@@ -7958,13 +7753,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutConformancePack`.
     ///
     /// <p>Creates or updates a conformance pack. A conformance pack is a collection of Config rules that can be easily deployed in an account and a region and across Amazon Web Services Organization.</p>
-    /// <p>This API creates a service linked role <code>AWSServiceRoleForConfigConforms</code> in your account.
-    /// The service linked role is created only when the role does not exist in your account. </p>
-    /// <note>
-    /// <p>You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code> parameter, but not both.
-    /// If you provide both Config uses the <code>TemplateS3Uri</code> parameter and ignores the <code>TemplateBody</code> parameter.</p>
+    /// <p>This API creates a service linked role <code>AWSServiceRoleForConfigConforms</code> in your account. The service linked role is created only when the role does not exist in your account. </p> <note>
+    /// <p>You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code> parameter, but not both. If you provide both Config uses the <code>TemplateS3Uri</code> parameter and ignores the <code>TemplateBody</code> parameter.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConformancePack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8009,10 +7801,10 @@ pub mod fluent_builders {
                 crate::input::PutConformancePackInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8021,8 +7813,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the conformance pack you want to create.</p>
-        pub fn conformance_pack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.conformance_pack_name(inp);
+        pub fn conformance_pack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.conformance_pack_name(input.into());
             self
         }
         /// <p>Name of the conformance pack you want to create.</p>
@@ -8033,16 +7825,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_conformance_pack_name(input);
             self
         }
-        /// <p>Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p>
-        /// <note>
+        /// <p>Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p> <note>
         /// <p>You must have access to read Amazon S3 bucket.</p>
         /// </note>
-        pub fn template_s3_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_s3_uri(inp);
+        pub fn template_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_s3_uri(input.into());
             self
         }
-        /// <p>Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p>
-        /// <note>
+        /// <p>Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p> <note>
         /// <p>You must have access to read Amazon S3 bucket.</p>
         /// </note>
         pub fn set_template_s3_uri(
@@ -8052,16 +7842,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_s3_uri(input);
             self
         }
-        /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
-        /// <note>
+        /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
         /// <p>You can only use a YAML template with one resource type, that is, config rule and a remediation action. </p>
         /// </note>
-        pub fn template_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_body(inp);
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_body(input.into());
             self
         }
-        /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
-        /// <note>
+        /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
         /// <p>You can only use a YAML template with one resource type, that is, config rule and a remediation action. </p>
         /// </note>
         pub fn set_template_body(
@@ -8071,16 +7859,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_body(input);
             self
         }
-        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
-        /// <note>
+        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
         /// <p>This field is optional.</p>
         /// </note>
-        pub fn delivery_s3_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_s3_bucket(inp);
+        pub fn delivery_s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_s3_bucket(input.into());
             self
         }
-        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
-        /// <note>
+        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
         /// <p>This field is optional.</p>
         /// </note>
         pub fn set_delivery_s3_bucket(
@@ -8090,16 +7876,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_delivery_s3_bucket(input);
             self
         }
-        /// <p>The prefix for the Amazon S3 bucket. </p>
-        /// <note>
+        /// <p>The prefix for the Amazon S3 bucket. </p> <note>
         /// <p>This field is optional.</p>
         /// </note>
-        pub fn delivery_s3_key_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_s3_key_prefix(inp);
+        pub fn delivery_s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_s3_key_prefix(input.into());
             self
         }
-        /// <p>The prefix for the Amazon S3 bucket. </p>
-        /// <note>
+        /// <p>The prefix for the Amazon S3 bucket. </p> <note>
         /// <p>This field is optional.</p>
         /// </note>
         pub fn set_delivery_s3_key_prefix(
@@ -8116,9 +7900,9 @@ pub mod fluent_builders {
         /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
         pub fn conformance_pack_input_parameters(
             mut self,
-            inp: impl Into<crate::model::ConformancePackInputParameter>,
+            input: crate::model::ConformancePackInputParameter,
         ) -> Self {
-            self.inner = self.inner.conformance_pack_input_parameters(inp);
+            self.inner = self.inner.conformance_pack_input_parameters(input);
             self
         }
         /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
@@ -8132,24 +7916,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutDeliveryChannel`.
     ///
-    /// <p>Creates a delivery channel object to deliver configuration
-    /// information to an Amazon S3 bucket and Amazon SNS topic.</p>
-    /// <p>Before you can create a delivery channel, you must create a
-    /// configuration recorder.</p>
-    /// <p>You can use this action to change the Amazon S3 bucket or an
-    /// Amazon SNS topic of the existing delivery channel. To change the
-    /// Amazon S3 bucket or an Amazon SNS topic, call this action and
-    /// specify the changed values for the S3 bucket and the SNS topic. If
-    /// you specify a different value for either the S3 bucket or the SNS
-    /// topic, this action will keep the existing value for the parameter
-    /// that is not changed.</p>
-    /// <note>
-    /// <p>You can have only one delivery channel per region in your
-    /// account.</p>
-    ///
-    ///
+    /// <p>Creates a delivery channel object to deliver configuration information to an Amazon S3 bucket and Amazon SNS topic.</p>
+    /// <p>Before you can create a delivery channel, you must create a configuration recorder.</p>
+    /// <p>You can use this action to change the Amazon S3 bucket or an Amazon SNS topic of the existing delivery channel. To change the Amazon S3 bucket or an Amazon SNS topic, call this action and specify the changed values for the S3 bucket and the SNS topic. If you specify a different value for either the S3 bucket or the SNS topic, this action will keep the existing value for the parameter that is not changed.</p> <note>
+    /// <p>You can have only one delivery channel per region in your account.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDeliveryChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8194,10 +7966,10 @@ pub mod fluent_builders {
                 crate::input::PutDeliveryChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8205,16 +7977,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The configuration delivery channel object that delivers the
-        /// configuration information to an Amazon S3 bucket and to an Amazon
-        /// SNS topic.</p>
-        pub fn delivery_channel(mut self, inp: crate::model::DeliveryChannel) -> Self {
-            self.inner = self.inner.delivery_channel(inp);
+        /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
+        pub fn delivery_channel(mut self, input: crate::model::DeliveryChannel) -> Self {
+            self.inner = self.inner.delivery_channel(input);
             self
         }
-        /// <p>The configuration delivery channel object that delivers the
-        /// configuration information to an Amazon S3 bucket and to an Amazon
-        /// SNS topic.</p>
+        /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
         pub fn set_delivery_channel(
             mut self,
             input: std::option::Option<crate::model::DeliveryChannel>,
@@ -8225,10 +7993,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutEvaluations`.
     ///
-    /// <p>Used by an Lambda function to deliver evaluation results to
-    /// Config. This action is required in every Lambda function
-    /// that is invoked by an Config rule.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Used by an Lambda function to deliver evaluation results to Config. This action is required in every Lambda function that is invoked by an Config rule.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEvaluations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8273,10 +8039,10 @@ pub mod fluent_builders {
                 crate::input::PutEvaluationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8288,18 +8054,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_evaluations`](Self::set_evaluations).
         ///
-        /// <p>The assessments that the Lambda function performs. Each
-        /// evaluation identifies an Amazon Web Services resource and indicates whether it
-        /// complies with the Config rule that invokes the Lambda
-        /// function.</p>
-        pub fn evaluations(mut self, inp: impl Into<crate::model::Evaluation>) -> Self {
-            self.inner = self.inner.evaluations(inp);
+        /// <p>The assessments that the Lambda function performs. Each evaluation identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that invokes the Lambda function.</p>
+        pub fn evaluations(mut self, input: crate::model::Evaluation) -> Self {
+            self.inner = self.inner.evaluations(input);
             self
         }
-        /// <p>The assessments that the Lambda function performs. Each
-        /// evaluation identifies an Amazon Web Services resource and indicates whether it
-        /// complies with the Config rule that invokes the Lambda
-        /// function.</p>
+        /// <p>The assessments that the Lambda function performs. Each evaluation identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that invokes the Lambda function.</p>
         pub fn set_evaluations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Evaluation>>,
@@ -8307,43 +8067,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_evaluations(input);
             self
         }
-        /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the
-        /// evaluation.</p>
-        pub fn result_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.result_token(inp);
+        /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the evaluation.</p>
+        pub fn result_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.result_token(input.into());
             self
         }
-        /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the
-        /// evaluation.</p>
+        /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the evaluation.</p>
         pub fn set_result_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_result_token(input);
             self
         }
-        /// <p>Use this parameter to specify a test run for
-        /// <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No
-        /// updates occur to your existing evaluations, and evaluation results
-        /// are not sent to Config.</p>
-        ///
-        /// <note>
-        /// <p>When <code>TestMode</code> is <code>true</code>,
-        /// <code>PutEvaluations</code> doesn't require a valid value
-        /// for the <code>ResultToken</code> parameter, but the value cannot
-        /// be null.</p>
+        /// <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No updates occur to your existing evaluations, and evaluation results are not sent to Config.</p> <note>
+        /// <p>When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for the <code>ResultToken</code> parameter, but the value cannot be null.</p>
         /// </note>
-        pub fn test_mode(mut self, inp: bool) -> Self {
-            self.inner = self.inner.test_mode(inp);
+        pub fn test_mode(mut self, input: bool) -> Self {
+            self.inner = self.inner.test_mode(input);
             self
         }
-        /// <p>Use this parameter to specify a test run for
-        /// <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No
-        /// updates occur to your existing evaluations, and evaluation results
-        /// are not sent to Config.</p>
-        ///
-        /// <note>
-        /// <p>When <code>TestMode</code> is <code>true</code>,
-        /// <code>PutEvaluations</code> doesn't require a valid value
-        /// for the <code>ResultToken</code> parameter, but the value cannot
-        /// be null.</p>
+        /// <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No updates occur to your existing evaluations, and evaluation results are not sent to Config.</p> <note>
+        /// <p>When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for the <code>ResultToken</code> parameter, but the value cannot be null.</p>
         /// </note>
         pub fn set_test_mode(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_test_mode(input);
@@ -8352,9 +8094,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutExternalEvaluation`.
     ///
-    /// <p>Add or updates the evaluations for process checks.    
-    /// This API checks if the rule is a process check when the name of the Config rule is provided.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Add or updates the evaluations for process checks. This API checks if the rule is a process check when the name of the Config rule is provided.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutExternalEvaluation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8399,10 +8140,10 @@ pub mod fluent_builders {
                 crate::input::PutExternalEvaluationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8411,8 +8152,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Config rule.</p>
-        pub fn config_rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_rule_name(inp);
+        pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_rule_name(input.into());
             self
         }
         /// <p>The name of the Config rule.</p>
@@ -8424,8 +8165,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An <code>ExternalEvaluation</code> object that provides details about compliance.</p>
-        pub fn external_evaluation(mut self, inp: crate::model::ExternalEvaluation) -> Self {
-            self.inner = self.inner.external_evaluation(inp);
+        pub fn external_evaluation(mut self, input: crate::model::ExternalEvaluation) -> Self {
+            self.inner = self.inner.external_evaluation(input);
             self
         }
         /// <p>An <code>ExternalEvaluation</code> object that provides details about compliance.</p>
@@ -8439,29 +8180,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutOrganizationConfigRule`.
     ///
-    /// <p>Adds or updates organization config rule for your entire organization evaluating whether your Amazon Web Services resources comply with your
-    /// desired configurations.</p>
-    /// <p> Only a master account and a delegated administrator can create or update an organization config rule.
-    /// When calling this API with a delegated administrator, you must ensure Organizations
-    /// <code>ListDelegatedAdministrator</code> permissions are added. </p>
-    /// <p>This API enables organization service access through the <code>EnableAWSServiceAccess</code> action and creates a service linked
-    /// role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated administrator account of your organization.
-    /// The service linked role is created only when the role does not exist in the caller account.
-    /// Config verifies the existence of role with <code>GetRole</code> action.</p>
-    /// <p>To use this API with delegated administrator, register a delegated administrator by calling Amazon Web Services Organization
-    /// <code>register-delegated-administrator</code> for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
-    /// <p>You can use this action to create both custom Config rules and Config managed rules.
-    /// If you are adding a new custom Config rule, you must first create Lambda function in the master account or a delegated
-    /// administrator that the rule invokes to evaluate your resources. You also need to create an IAM role in the managed-account that can be assumed by the Lambda function.
-    /// When you use the <code>PutOrganizationConfigRule</code> action to add the rule to Config, you must
-    /// specify the Amazon Resource Name (ARN) that Lambda assigns to the function.
-    /// If you are adding an Config managed rule, specify the rule's identifier for the <code>RuleIdentifier</code> key.</p>
-    /// <p>The maximum number of organization config rules that Config supports is 150 and 3 delegated administrator per organization. </p>
-    /// <note>
+    /// <p>Adds or updates organization config rule for your entire organization evaluating whether your Amazon Web Services resources comply with your desired configurations.</p>
+    /// <p> Only a master account and a delegated administrator can create or update an organization config rule. When calling this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added. </p>
+    /// <p>This API enables organization service access through the <code>EnableAWSServiceAccess</code> action and creates a service linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated administrator account of your organization. The service linked role is created only when the role does not exist in the caller account. Config verifies the existence of role with <code>GetRole</code> action.</p>
+    /// <p>To use this API with delegated administrator, register a delegated administrator by calling Amazon Web Services Organization <code>register-delegated-administrator</code> for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
+    /// <p>You can use this action to create both custom Config rules and Config managed rules. If you are adding a new custom Config rule, you must first create Lambda function in the master account or a delegated administrator that the rule invokes to evaluate your resources. You also need to create an IAM role in the managed-account that can be assumed by the Lambda function. When you use the <code>PutOrganizationConfigRule</code> action to add the rule to Config, you must specify the Amazon Resource Name (ARN) that Lambda assigns to the function. If you are adding an Config managed rule, specify the rule's identifier for the <code>RuleIdentifier</code> key.</p>
+    /// <p>The maximum number of organization config rules that Config supports is 150 and 3 delegated administrator per organization. </p> <note>
     /// <p>Prerequisite: Ensure you call <code>EnableAllFeatures</code> API to enable all features in an organization.</p>
     /// <p>Specify either <code>OrganizationCustomRuleMetadata</code> or <code>OrganizationManagedRuleMetadata</code>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutOrganizationConfigRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8506,10 +8234,10 @@ pub mod fluent_builders {
                 crate::input::PutOrganizationConfigRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8520,9 +8248,9 @@ pub mod fluent_builders {
         /// <p>The name that you assign to an organization config rule.</p>
         pub fn organization_config_rule_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.organization_config_rule_name(inp);
+            self.inner = self.inner.organization_config_rule_name(input.into());
             self
         }
         /// <p>The name that you assign to an organization config rule.</p>
@@ -8536,9 +8264,9 @@ pub mod fluent_builders {
         /// <p>An <code>OrganizationManagedRuleMetadata</code> object. </p>
         pub fn organization_managed_rule_metadata(
             mut self,
-            inp: crate::model::OrganizationManagedRuleMetadata,
+            input: crate::model::OrganizationManagedRuleMetadata,
         ) -> Self {
-            self.inner = self.inner.organization_managed_rule_metadata(inp);
+            self.inner = self.inner.organization_managed_rule_metadata(input);
             self
         }
         /// <p>An <code>OrganizationManagedRuleMetadata</code> object. </p>
@@ -8552,9 +8280,9 @@ pub mod fluent_builders {
         /// <p>An <code>OrganizationCustomRuleMetadata</code> object.</p>
         pub fn organization_custom_rule_metadata(
             mut self,
-            inp: crate::model::OrganizationCustomRuleMetadata,
+            input: crate::model::OrganizationCustomRuleMetadata,
         ) -> Self {
-            self.inner = self.inner.organization_custom_rule_metadata(inp);
+            self.inner = self.inner.organization_custom_rule_metadata(input);
             self
         }
         /// <p>An <code>OrganizationCustomRuleMetadata</code> object.</p>
@@ -8570,8 +8298,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_excluded_accounts`](Self::set_excluded_accounts).
         ///
         /// <p>A comma-separated list of accounts that you want to exclude from an organization config rule.</p>
-        pub fn excluded_accounts(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.excluded_accounts(inp);
+        pub fn excluded_accounts(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.excluded_accounts(input.into());
             self
         }
         /// <p>A comma-separated list of accounts that you want to exclude from an organization config rule.</p>
@@ -8586,27 +8314,14 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutOrganizationConformancePack`.
     ///
     /// <p>Deploys conformance packs across member accounts in an Amazon Web Services Organization.</p>
-    /// <p>Only a master account and a delegated administrator can call this API.
-    /// When calling this API with a delegated administrator, you must ensure Organizations
-    /// <code>ListDelegatedAdministrator</code> permissions are added.</p>
-    /// <p>This API enables organization service access for <code>config-multiaccountsetup.amazonaws.com</code>
-    /// through the <code>EnableAWSServiceAccess</code> action and creates a
-    /// service linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated administrator account of your organization.
-    /// The service linked role is created only when the role does not exist in the caller account.
-    /// To use this API with delegated administrator, register a delegated administrator by calling Amazon Web Services Organization
-    /// <code>register-delegate-admin</code> for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
-    ///
-    ///
-    ///
-    /// <note>
+    /// <p>Only a master account and a delegated administrator can call this API. When calling this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added.</p>
+    /// <p>This API enables organization service access for <code>config-multiaccountsetup.amazonaws.com</code> through the <code>EnableAWSServiceAccess</code> action and creates a service linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated administrator account of your organization. The service linked role is created only when the role does not exist in the caller account. To use this API with delegated administrator, register a delegated administrator by calling Amazon Web Services Organization <code>register-delegate-admin</code> for <code>config-multiaccountsetup.amazonaws.com</code>.</p> <note>
     /// <p>Prerequisite: Ensure you call <code>EnableAllFeatures</code> API to enable all features in an organization.</p>
-    /// <p>You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code> parameter, but not both.
-    /// If you provide both Config uses the <code>TemplateS3Uri</code> parameter and ignores the <code>TemplateBody</code> parameter.</p>
-    /// <p>Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS until the conformance pack is created or updated.  
-    /// You cannot update a conformance pack while it is in this state.</p>
+    /// <p>You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code> parameter, but not both. If you provide both Config uses the <code>TemplateS3Uri</code> parameter and ignores the <code>TemplateBody</code> parameter.</p>
+    /// <p>Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS until the conformance pack is created or updated. You cannot update a conformance pack while it is in this state.</p>
     /// <p>You can create 50 conformance packs with 25 Config rules in each pack and 3 delegated administrator per organization. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutOrganizationConformancePack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8651,10 +8366,10 @@ pub mod fluent_builders {
                 crate::input::PutOrganizationConformancePackInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8665,9 +8380,9 @@ pub mod fluent_builders {
         /// <p>Name of the organization conformance pack you want to create.</p>
         pub fn organization_conformance_pack_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.organization_conformance_pack_name(inp);
+            self.inner = self.inner.organization_conformance_pack_name(input.into());
             self
         }
         /// <p>Name of the organization conformance pack you want to create.</p>
@@ -8678,18 +8393,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_conformance_pack_name(input);
             self
         }
-        /// <p>Location of file containing the template body. The uri must point to the conformance pack template
-        /// (max size: 300 KB).</p>
-        /// <note>
+        /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p> <note>
         /// <p>You must have access to read Amazon S3 bucket.</p>
         /// </note>
-        pub fn template_s3_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_s3_uri(inp);
+        pub fn template_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_s3_uri(input.into());
             self
         }
-        /// <p>Location of file containing the template body. The uri must point to the conformance pack template
-        /// (max size: 300 KB).</p>
-        /// <note>
+        /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p> <note>
         /// <p>You must have access to read Amazon S3 bucket.</p>
         /// </note>
         pub fn set_template_s3_uri(
@@ -8699,14 +8410,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_s3_uri(input);
             self
         }
-        /// <p>A string containing full conformance pack template body. Structure containing the template body
-        /// with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
-        pub fn template_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_body(inp);
+        /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_body(input.into());
             self
         }
-        /// <p>A string containing full conformance pack template body. Structure containing the template body
-        /// with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
+        /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
         pub fn set_template_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8714,16 +8423,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_body(input);
             self
         }
-        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
-        /// <note>
+        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
         /// <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>
         /// </note>
-        pub fn delivery_s3_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_s3_bucket(inp);
+        pub fn delivery_s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_s3_bucket(input.into());
             self
         }
-        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
-        /// <note>
+        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
         /// <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>
         /// </note>
         pub fn set_delivery_s3_bucket(
@@ -8733,16 +8440,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_delivery_s3_bucket(input);
             self
         }
-        /// <p>The prefix for the Amazon S3 bucket.</p>
-        /// <note>
+        /// <p>The prefix for the Amazon S3 bucket.</p> <note>
         /// <p>This field is optional.</p>
         /// </note>
-        pub fn delivery_s3_key_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_s3_key_prefix(inp);
+        pub fn delivery_s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_s3_key_prefix(input.into());
             self
         }
-        /// <p>The prefix for the Amazon S3 bucket.</p>
-        /// <note>
+        /// <p>The prefix for the Amazon S3 bucket.</p> <note>
         /// <p>This field is optional.</p>
         /// </note>
         pub fn set_delivery_s3_key_prefix(
@@ -8759,9 +8464,9 @@ pub mod fluent_builders {
         /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
         pub fn conformance_pack_input_parameters(
             mut self,
-            inp: impl Into<crate::model::ConformancePackInputParameter>,
+            input: crate::model::ConformancePackInputParameter,
         ) -> Self {
-            self.inner = self.inner.conformance_pack_input_parameters(inp);
+            self.inner = self.inner.conformance_pack_input_parameters(input);
             self
         }
         /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
@@ -8777,8 +8482,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_excluded_accounts`](Self::set_excluded_accounts).
         ///
         /// <p>A list of Amazon Web Services accounts to be excluded from an organization conformance pack while deploying a conformance pack.</p>
-        pub fn excluded_accounts(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.excluded_accounts(inp);
+        pub fn excluded_accounts(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.excluded_accounts(input.into());
             self
         }
         /// <p>A list of Amazon Web Services accounts to be excluded from an organization conformance pack while deploying a conformance pack.</p>
@@ -8792,18 +8497,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutRemediationConfigurations`.
     ///
-    /// <p>Adds or updates the remediation configuration with a specific Config rule with the
-    /// selected target or action.
-    /// The API creates the <code>RemediationConfiguration</code> object for the Config rule.
-    /// The Config rule must already exist for you to add a remediation configuration.
-    /// The target (SSM document) must exist and have permissions to use the target. </p>
-    /// <note>
-    /// <p>If you make backward incompatible changes to the SSM document,
-    /// you must call this again to ensure the remediations can run.</p>
-    /// <p>This API does not support adding remediation configurations for service-linked Config Rules such as Organization Config rules,
-    /// the rules deployed by conformance packs, and rules deployed by Amazon Web Services Security Hub.</p>
+    /// <p>Adds or updates the remediation configuration with a specific Config rule with the selected target or action. The API creates the <code>RemediationConfiguration</code> object for the Config rule. The Config rule must already exist for you to add a remediation configuration. The target (SSM document) must exist and have permissions to use the target. </p> <note>
+    /// <p>If you make backward incompatible changes to the SSM document, you must call this again to ensure the remediations can run.</p>
+    /// <p>This API does not support adding remediation configurations for service-linked Config Rules such as Organization Config rules, the rules deployed by conformance packs, and rules deployed by Amazon Web Services Security Hub.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRemediationConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8848,10 +8546,10 @@ pub mod fluent_builders {
                 crate::input::PutRemediationConfigurationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8866,9 +8564,9 @@ pub mod fluent_builders {
         /// <p>A list of remediation configuration objects.</p>
         pub fn remediation_configurations(
             mut self,
-            inp: impl Into<crate::model::RemediationConfiguration>,
+            input: crate::model::RemediationConfiguration,
         ) -> Self {
-            self.inner = self.inner.remediation_configurations(inp);
+            self.inner = self.inner.remediation_configurations(input);
             self
         }
         /// <p>A list of remediation configuration objects.</p>
@@ -8882,13 +8580,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutRemediationExceptions`.
     ///
-    /// <p>A remediation exception is when a specific resource is no longer considered for auto-remediation.
-    /// This API adds a new exception or updates an existing exception for a specific resource with a specific Config rule. </p>
-    /// <note>
-    /// <p>Config generates a remediation exception when a problem occurs executing a remediation action to a specific resource.
-    /// Remediation exceptions blocks auto-remediation until the exception is cleared.</p>
+    /// <p>A remediation exception is when a specific resource is no longer considered for auto-remediation. This API adds a new exception or updates an existing exception for a specific resource with a specific Config rule. </p> <note>
+    /// <p>Config generates a remediation exception when a problem occurs executing a remediation action to a specific resource. Remediation exceptions blocks auto-remediation until the exception is cleared.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRemediationExceptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8933,10 +8628,10 @@ pub mod fluent_builders {
                 crate::input::PutRemediationExceptionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8945,8 +8640,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Config rule for which you want to create remediation exception.</p>
-        pub fn config_rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_rule_name(inp);
+        pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_rule_name(input.into());
             self
         }
         /// <p>The name of the Config rule for which you want to create remediation exception.</p>
@@ -8964,9 +8659,9 @@ pub mod fluent_builders {
         /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
         pub fn resource_keys(
             mut self,
-            inp: impl Into<crate::model::RemediationExceptionResourceKey>,
+            input: crate::model::RemediationExceptionResourceKey,
         ) -> Self {
-            self.inner = self.inner.resource_keys(inp);
+            self.inner = self.inner.resource_keys(input);
             self
         }
         /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
@@ -8980,8 +8675,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The message contains an explanation of the exception.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message(inp);
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message(input.into());
             self
         }
         /// <p>The message contains an explanation of the exception.</p>
@@ -8990,8 +8685,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The exception is automatically deleted after the expiration date.</p>
-        pub fn expiration_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.expiration_time(inp);
+        pub fn expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.expiration_time(input);
             self
         }
         /// <p>The exception is automatically deleted after the expiration date.</p>
@@ -9005,17 +8700,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutResourceConfig`.
     ///
-    /// <p>Records the configuration state for the resource provided in the request.
-    ///
-    /// The configuration state of a resource is represented in Config as Configuration Items.
-    /// Once this API records the configuration item, you can retrieve the list of configuration items for the custom resource type using existing Config APIs. </p>
-    /// <note>
+    /// <p>Records the configuration state for the resource provided in the request. The configuration state of a resource is represented in Config as Configuration Items. Once this API records the configuration item, you can retrieve the list of configuration items for the custom resource type using existing Config APIs. </p> <note>
     /// <p>The custom resource type must be registered with CloudFormation. This API accepts the configuration item registered with CloudFormation.</p>
-    /// <p>When you call this API, Config only stores configuration state of the resource provided in the request. This API does not change or remediate the configuration of the resource.
-    /// </p>
+    /// <p>When you call this API, Config only stores configuration state of the resource provided in the request. This API does not change or remediate the configuration of the resource. </p>
     /// <p>Write-only schema properites are not recorded as part of the published configuration item.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutResourceConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9060,10 +8750,10 @@ pub mod fluent_builders {
                 crate::input::PutResourceConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9071,16 +8761,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p>
-        /// <note>
+        /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p> <note>
         /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
         /// </note>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
-        /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p>
-        /// <note>
+        /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p> <note>
         /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
         /// </note>
         pub fn set_resource_type(
@@ -9091,8 +8779,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Version of the schema registered for the ResourceType in CloudFormation.</p>
-        pub fn schema_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_version_id(inp);
+        pub fn schema_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_version_id(input.into());
             self
         }
         /// <p>Version of the schema registered for the ResourceType in CloudFormation.</p>
@@ -9104,8 +8792,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unique identifier of the resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>Unique identifier of the resource.</p>
@@ -9114,8 +8802,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of the resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input.into());
             self
         }
         /// <p>Name of the resource.</p>
@@ -9126,16 +8814,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_name(input);
             self
         }
-        /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p>
-        /// <note>
+        /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p> <note>
         /// <p>The configuration JSON must not exceed 64 KB.</p>
         /// </note>
-        pub fn configuration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration(inp);
+        pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration(input.into());
             self
         }
-        /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p>
-        /// <note>
+        /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p> <note>
         /// <p>The configuration JSON must not exceed 64 KB.</p>
         /// </note>
         pub fn set_configuration(
@@ -9155,7 +8841,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags associated with the resource.</p>
@@ -9171,18 +8857,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutRetentionConfiguration`.
     ///
-    /// <p>Creates and updates the retention configuration with details
-    /// about retention period (number of days) that Config stores your
-    /// historical information. The API creates the
-    /// <code>RetentionConfiguration</code> object and names the object
-    /// as <b>default</b>. When you have a
-    /// <code>RetentionConfiguration</code> object named <b>default</b>, calling the API modifies the
-    /// default object. </p>
-    /// <note>
-    /// <p>Currently, Config supports only one retention
-    /// configuration per region in your account.</p>
+    /// <p>Creates and updates the retention configuration with details about retention period (number of days) that Config stores your historical information. The API creates the <code>RetentionConfiguration</code> object and names the object as <b>default</b>. When you have a <code>RetentionConfiguration</code> object named <b>default</b>, calling the API modifies the default object. </p> <note>
+    /// <p>Currently, Config supports only one retention configuration per region in your account.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRetentionConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9227,10 +8905,10 @@ pub mod fluent_builders {
                 crate::input::PutRetentionConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9238,21 +8916,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Number of days Config stores your historical
-        /// information.</p>
-        /// <note>
-        /// <p>Currently, only applicable to the configuration item
-        /// history.</p>
+        /// <p>Number of days Config stores your historical information.</p> <note>
+        /// <p>Currently, only applicable to the configuration item history.</p>
         /// </note>
-        pub fn retention_period_in_days(mut self, inp: i32) -> Self {
-            self.inner = self.inner.retention_period_in_days(inp);
+        pub fn retention_period_in_days(mut self, input: i32) -> Self {
+            self.inner = self.inner.retention_period_in_days(input);
             self
         }
-        /// <p>Number of days Config stores your historical
-        /// information.</p>
-        /// <note>
-        /// <p>Currently, only applicable to the configuration item
-        /// history.</p>
+        /// <p>Number of days Config stores your historical information.</p> <note>
+        /// <p>Currently, only applicable to the configuration item history.</p>
         /// </note>
         pub fn set_retention_period_in_days(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_retention_period_in_days(input);
@@ -9261,9 +8933,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutStoredQuery`.
     ///
-    /// <p>Saves a new query or updates an existing saved query. The <code>QueryName</code> must be unique for a single Amazon Web Services account and a single Amazon Web Services Region.
-    /// You can create upto 300 queries in a single Amazon Web Services account and a single Amazon Web Services Region.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Saves a new query or updates an existing saved query. The <code>QueryName</code> must be unique for a single Amazon Web Services account and a single Amazon Web Services Region. You can create upto 300 queries in a single Amazon Web Services account and a single Amazon Web Services Region.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutStoredQuery<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9308,10 +8979,10 @@ pub mod fluent_builders {
                 crate::input::PutStoredQueryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9319,21 +8990,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A list of <code>StoredQuery</code> objects.
-        /// The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p>
-        /// <note>
-        /// <p>When you are creating a query, you must provide a query name and an expression.
-        /// When you are updating a query, you must provide a query name but updating the description is optional.</p>
+        /// <p>A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p> <note>
+        /// <p>When you are creating a query, you must provide a query name and an expression. When you are updating a query, you must provide a query name but updating the description is optional.</p>
         /// </note>
-        pub fn stored_query(mut self, inp: crate::model::StoredQuery) -> Self {
-            self.inner = self.inner.stored_query(inp);
+        pub fn stored_query(mut self, input: crate::model::StoredQuery) -> Self {
+            self.inner = self.inner.stored_query(input);
             self
         }
-        /// <p>A list of <code>StoredQuery</code> objects.
-        /// The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p>
-        /// <note>
-        /// <p>When you are creating a query, you must provide a query name and an expression.
-        /// When you are updating a query, you must provide a query name but updating the description is optional.</p>
+        /// <p>A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p> <note>
+        /// <p>When you are creating a query, you must provide a query name and an expression. When you are updating a query, you must provide a query name but updating the description is optional.</p>
         /// </note>
         pub fn set_stored_query(
             mut self,
@@ -9347,8 +9012,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tags</code> object.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of <code>Tags</code> object.</p>
@@ -9362,21 +9027,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SelectAggregateResourceConfig`.
     ///
-    /// <p>Accepts a structured query language (SQL) SELECT command and an aggregator to query configuration state of Amazon Web Services resources across multiple accounts and regions,
-    /// performs the corresponding search, and returns resource configurations matching the properties.</p>
-    /// <p>For more information about query components, see the
-    /// <a href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html">
-    /// <b>Query Components</b>
-    /// </a> section in the Config Developer Guide.</p>
-    ///
-    /// <note>
-    /// <p>If you run an aggregation query (i.e., using <code>GROUP BY</code> or using aggregate functions such as <code>COUNT</code>; e.g., <code>SELECT resourceId, COUNT(*) WHERE resourceType = 'AWS::IAM::Role' GROUP BY resourceId</code>)
-    /// and do not specify the <code>MaxResults</code> or the <code>Limit</code> query parameters, the default page size is set to 500.</p>
-    ///
-    /// <p>If you run a non-aggregation query (i.e., not using <code>GROUP BY</code> or aggregate function; e.g., <code>SELECT * WHERE resourceType = 'AWS::IAM::Role'</code>)
-    /// and do not specify the <code>MaxResults</code> or the <code>Limit</code> query parameters, the default page size is set to 25.</p>
+    /// <p>Accepts a structured query language (SQL) SELECT command and an aggregator to query configuration state of Amazon Web Services resources across multiple accounts and regions, performs the corresponding search, and returns resource configurations matching the properties.</p>
+    /// <p>For more information about query components, see the <a href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html"> <b>Query Components</b> </a> section in the Config Developer Guide.</p> <note>
+    /// <p>If you run an aggregation query (i.e., using <code>GROUP BY</code> or using aggregate functions such as <code>COUNT</code>; e.g., <code>SELECT resourceId, COUNT(*) WHERE resourceType = 'AWS::IAM::Role' GROUP BY resourceId</code>) and do not specify the <code>MaxResults</code> or the <code>Limit</code> query parameters, the default page size is set to 500.</p>
+    /// <p>If you run a non-aggregation query (i.e., not using <code>GROUP BY</code> or aggregate function; e.g., <code>SELECT * WHERE resourceType = 'AWS::IAM::Role'</code>) and do not specify the <code>MaxResults</code> or the <code>Limit</code> query parameters, the default page size is set to 25.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SelectAggregateResourceConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9421,10 +9077,10 @@ pub mod fluent_builders {
                 crate::input::SelectAggregateResourceConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9432,9 +9088,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SelectAggregateResourceConfigPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::SelectAggregateResourceConfigPaginator<C, M, R> {
+            crate::paginator::SelectAggregateResourceConfigPaginator::new(self.handle, self.inner)
+        }
         /// <p>The SQL query SELECT command. </p>
-        pub fn expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expression(inp);
+        pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expression(input.into());
             self
         }
         /// <p>The SQL query SELECT command. </p>
@@ -9445,9 +9109,9 @@ pub mod fluent_builders {
         /// <p>The name of the configuration aggregator.</p>
         pub fn configuration_aggregator_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_aggregator_name(inp);
+            self.inner = self.inner.configuration_aggregator_name(input.into());
             self
         }
         /// <p>The name of the configuration aggregator.</p>
@@ -9459,8 +9123,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of query results returned on each page. </p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of query results returned on each page. </p>
@@ -9469,8 +9133,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of query results returned on each page. Config also allows the Limit request parameter.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of query results returned on each page. Config also allows the Limit request parameter.</p>
@@ -9479,8 +9143,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response. </p>
@@ -9492,11 +9156,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SelectResourceConfig`.
     ///
     /// <p>Accepts a structured query language (SQL) <code>SELECT</code> command, performs the corresponding search, and returns resource configurations matching the properties.</p>
-    /// <p>For more information about query components, see the
-    /// <a href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html">
-    /// <b>Query Components</b>
-    /// </a> section in the Config Developer Guide.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For more information about query components, see the <a href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html"> <b>Query Components</b> </a> section in the Config Developer Guide.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SelectResourceConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9541,10 +9202,10 @@ pub mod fluent_builders {
                 crate::input::SelectResourceConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9552,9 +9213,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SelectResourceConfigPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::SelectResourceConfigPaginator<C, M, R> {
+            crate::paginator::SelectResourceConfigPaginator::new(self.handle, self.inner)
+        }
         /// <p>The SQL query <code>SELECT</code> command.</p>
-        pub fn expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expression(inp);
+        pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expression(input.into());
             self
         }
         /// <p>The SQL query <code>SELECT</code> command.</p>
@@ -9563,8 +9230,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of query results returned on each page. </p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of query results returned on each page. </p>
@@ -9573,8 +9240,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
@@ -9585,55 +9252,20 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartConfigRulesEvaluation`.
     ///
-    /// <p>Runs an on-demand evaluation for the specified Config rules
-    /// against the last known configuration state of the resources. Use
-    /// <code>StartConfigRulesEvaluation</code> when you want to test
-    /// that a rule you updated is working as expected.
-    /// <code>StartConfigRulesEvaluation</code> does not re-record the
-    /// latest configuration state for your resources. It re-runs an
-    /// evaluation against the last known state of your resources. </p>
+    /// <p>Runs an on-demand evaluation for the specified Config rules against the last known configuration state of the resources. Use <code>StartConfigRulesEvaluation</code> when you want to test that a rule you updated is working as expected. <code>StartConfigRulesEvaluation</code> does not re-record the latest configuration state for your resources. It re-runs an evaluation against the last known state of your resources. </p>
     /// <p>You can specify up to 25 Config rules per request. </p>
-    ///
-    ///
-    /// <p>An existing <code>StartConfigRulesEvaluation</code> call for
-    /// the specified rules must complete before you can call the API again.
-    /// If you chose to have Config stream to an Amazon SNS topic, you
-    /// will receive a <code>ConfigRuleEvaluationStarted</code> notification
-    /// when the evaluation starts.</p>
-    /// <note>
-    /// <p>You don't need to call the
-    /// <code>StartConfigRulesEvaluation</code> API to run an
-    /// evaluation for a new rule. When you create a rule, Config
-    /// evaluates your resources against the rule automatically.
-    /// </p>
+    /// <p>An existing <code>StartConfigRulesEvaluation</code> call for the specified rules must complete before you can call the API again. If you chose to have Config stream to an Amazon SNS topic, you will receive a <code>ConfigRuleEvaluationStarted</code> notification when the evaluation starts.</p> <note>
+    /// <p>You don't need to call the <code>StartConfigRulesEvaluation</code> API to run an evaluation for a new rule. When you create a rule, Config evaluates your resources against the rule automatically. </p>
     /// </note>
-    /// <p>The <code>StartConfigRulesEvaluation</code> API is useful if
-    /// you want to run on-demand evaluations, such as the following
-    /// example:</p>
+    /// <p>The <code>StartConfigRulesEvaluation</code> API is useful if you want to run on-demand evaluations, such as the following example:</p>
     /// <ol>
-    /// <li>
-    /// <p>You have a custom rule that evaluates your IAM
-    /// resources every 24 hours.</p>
-    /// </li>
-    /// <li>
-    /// <p>You update your Lambda function to add additional
-    /// conditions to your rule.</p>
-    /// </li>
-    /// <li>
-    /// <p>Instead of waiting for the next periodic evaluation,
-    /// you call the <code>StartConfigRulesEvaluation</code>
-    /// API.</p>
-    /// </li>
-    /// <li>
-    /// <p>Config invokes your Lambda function and evaluates
-    /// your IAM resources.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your custom rule will still run periodic evaluations
-    /// every 24 hours.</p>
-    /// </li>
+    /// <li> <p>You have a custom rule that evaluates your IAM resources every 24 hours.</p> </li>
+    /// <li> <p>You update your Lambda function to add additional conditions to your rule.</p> </li>
+    /// <li> <p>Instead of waiting for the next periodic evaluation, you call the <code>StartConfigRulesEvaluation</code> API.</p> </li>
+    /// <li> <p>Config invokes your Lambda function and evaluates your IAM resources.</p> </li>
+    /// <li> <p>Your custom rule will still run periodic evaluations every 24 hours.</p> </li>
     /// </ol>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartConfigRulesEvaluation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9678,10 +9310,10 @@ pub mod fluent_builders {
                 crate::input::StartConfigRulesEvaluationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9693,14 +9325,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
         ///
-        /// <p>The list of names of Config rules that you want to run
-        /// evaluations for.</p>
-        pub fn config_rule_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_rule_names(inp);
+        /// <p>The list of names of Config rules that you want to run evaluations for.</p>
+        pub fn config_rule_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_rule_names(input.into());
             self
         }
-        /// <p>The list of names of Config rules that you want to run
-        /// evaluations for.</p>
+        /// <p>The list of names of Config rules that you want to run evaluations for.</p>
         pub fn set_config_rule_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9711,11 +9341,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartConfigurationRecorder`.
     ///
-    /// <p>Starts recording configurations of the Amazon Web Services resources you have
-    /// selected to record in your Amazon Web Services account.</p>
-    /// <p>You must have created at least one delivery channel to
-    /// successfully start the configuration recorder.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Starts recording configurations of the Amazon Web Services resources you have selected to record in your Amazon Web Services account.</p>
+    /// <p>You must have created at least one delivery channel to successfully start the configuration recorder.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartConfigurationRecorder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9760,10 +9388,10 @@ pub mod fluent_builders {
                 crate::input::StartConfigurationRecorderInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9771,14 +9399,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the recorder object that records each configuration
-        /// change made to the resources.</p>
-        pub fn configuration_recorder_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_recorder_name(inp);
+        /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
+        pub fn configuration_recorder_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.configuration_recorder_name(input.into());
             self
         }
-        /// <p>The name of the recorder object that records each configuration
-        /// change made to the resources.</p>
+        /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
         pub fn set_configuration_recorder_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9791,7 +9420,7 @@ pub mod fluent_builders {
     ///
     /// <p>Runs an on-demand remediation for the specified Config rules against the last known remediation configuration. It runs an execution against the current state of your resources. Remediation execution is asynchronous.</p>
     /// <p>You can specify up to 100 resource keys per request. An existing StartRemediationExecution call for the specified resource keys must complete before you can call the API again.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartRemediationExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9836,10 +9465,10 @@ pub mod fluent_builders {
                 crate::input::StartRemediationExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9848,8 +9477,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The list of names of Config rules that you want to run remediation execution for.</p>
-        pub fn config_rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_rule_name(inp);
+        pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_rule_name(input.into());
             self
         }
         /// <p>The list of names of Config rules that you want to run remediation execution for.</p>
@@ -9865,8 +9494,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resource_keys`](Self::set_resource_keys).
         ///
         /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
-        pub fn resource_keys(mut self, inp: impl Into<crate::model::ResourceKey>) -> Self {
-            self.inner = self.inner.resource_keys(inp);
+        pub fn resource_keys(mut self, input: crate::model::ResourceKey) -> Self {
+            self.inner = self.inner.resource_keys(input);
             self
         }
         /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
@@ -9881,7 +9510,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopConfigurationRecorder`.
     ///
     /// <p>Stops recording configurations of the Amazon Web Services resources you have selected to record in your Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopConfigurationRecorder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9926,10 +9555,10 @@ pub mod fluent_builders {
                 crate::input::StopConfigurationRecorderInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9938,8 +9567,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
-        pub fn configuration_recorder_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_recorder_name(inp);
+        pub fn configuration_recorder_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.configuration_recorder_name(input.into());
             self
         }
         /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
@@ -9953,9 +9585,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Associates the specified tags to a resource with the specified resourceArn. If existing tags on a resource are not specified in the request parameters, they are not changed.
-    /// When a resource is deleted, the tags associated with that resource are deleted as well.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Associates the specified tags to a resource with the specified resourceArn. If existing tags on a resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags associated with that resource are deleted as well.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10000,10 +9631,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10012,8 +9643,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
@@ -10026,8 +9657,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of tag object.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>An array of tag object.</p>
@@ -10042,7 +9673,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Deletes specified tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10087,10 +9718,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10099,8 +9730,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
@@ -10113,8 +9744,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The keys of the tags to be removed.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The keys of the tags to be removed.</p>
@@ -10127,6 +9758,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

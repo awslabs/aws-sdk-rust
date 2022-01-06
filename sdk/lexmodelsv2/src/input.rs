@@ -11,42 +11,32 @@ pub mod build_bot_locale_input {
         pub(crate) locale_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the bot to build. The identifier is returned in
-        /// the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
+        /// <p>The identifier of the bot to build. The identifier is returned in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
         pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the bot to build. The identifier is returned in
-        /// the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
+        /// <p>The identifier of the bot to build. The identifier is returned in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
         }
-        /// <p>The version of the bot to build. This can only be the draft version
-        /// of the bot.</p>
+        /// <p>The version of the bot to build. This can only be the draft version of the bot.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_version = Some(input.into());
             self
         }
-        /// <p>The version of the bot to build. This can only be the draft version
-        /// of the bot.</p>
+        /// <p>The version of the bot to build. This can only be the draft version of the bot.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
         }
-        /// <p>The identifier of the language and locale that the bot will be used
-        /// in. The string must match one of the supported locales. All of the
-        /// intents, slot types, and slots used in the bot must have the same
-        /// locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the language and locale that the bot will be used
-        /// in. The string must match one of the supported locales. All of the
-        /// intents, slot types, and slots used in the bot must have the same
-        /// locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -69,7 +59,7 @@ pub mod build_bot_locale_input {
 #[doc(hidden)]
 pub type BuildBotLocaleInputOperationOutputAlias = crate::operation::BuildBotLocale;
 #[doc(hidden)]
-pub type BuildBotLocaleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BuildBotLocaleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BuildBotLocaleInput {
     /// Consumes the builder and constructs an Operation<[`BuildBotLocale`](crate::operation::BuildBotLocale)>
     #[allow(clippy::let_and_return)]
@@ -80,7 +70,7 @@ impl BuildBotLocaleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BuildBotLocale,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -206,7 +196,7 @@ impl BuildBotLocaleInput {
             "BuildBotLocale",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -240,50 +230,42 @@ pub mod create_bot_input {
         >,
     }
     impl Builder {
-        /// <p>The name of the bot. The bot name must be unique in the account that
-        /// creates the bot.</p>
+        /// <p>The name of the bot. The bot name must be unique in the account that creates the bot.</p>
         pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_name = Some(input.into());
             self
         }
-        /// <p>The name of the bot. The bot name must be unique in the account that
-        /// creates the bot.</p>
+        /// <p>The name of the bot. The bot name must be unique in the account that creates the bot.</p>
         pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_name = input;
             self
         }
-        /// <p>A description of the bot. It appears in lists to help you identify a
-        /// particular bot.</p>
+        /// <p>A description of the bot. It appears in lists to help you identify a particular bot.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>A description of the bot. It appears in lists to help you identify a
-        /// particular bot.</p>
+        /// <p>A description of the bot. It appears in lists to help you identify a particular bot.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to
-        /// access the bot.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the bot.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to
-        /// access the bot.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the bot.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>Provides information on additional privacy protections Amazon Lex should
-        /// use with the bot's data.</p>
+        /// <p>Provides information on additional privacy protections Amazon Lex should use with the bot's data.</p>
         pub fn data_privacy(mut self, input: crate::model::DataPrivacy) -> Self {
             self.data_privacy = Some(input);
             self
         }
-        /// <p>Provides information on additional privacy protections Amazon Lex should
-        /// use with the bot's data.</p>
+        /// <p>Provides information on additional privacy protections Amazon Lex should use with the bot's data.</p>
         pub fn set_data_privacy(
             mut self,
             input: std::option::Option<crate::model::DataPrivacy>,
@@ -291,24 +273,16 @@ pub mod create_bot_input {
             self.data_privacy = input;
             self
         }
-        /// <p>The time, in seconds, that Amazon Lex should keep information about a
-        /// user's conversation with the bot. </p>
-        /// <p>A user interaction remains active for the amount of time specified.
-        /// If no conversation occurs during this time, the session expires and
-        /// Amazon Lex deletes any data provided before the timeout.</p>
-        /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours)
-        /// seconds.</p>
+        /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
+        /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
+        /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
         pub fn idle_session_ttl_in_seconds(mut self, input: i32) -> Self {
             self.idle_session_ttl_in_seconds = Some(input);
             self
         }
-        /// <p>The time, in seconds, that Amazon Lex should keep information about a
-        /// user's conversation with the bot. </p>
-        /// <p>A user interaction remains active for the amount of time specified.
-        /// If no conversation occurs during this time, the session expires and
-        /// Amazon Lex deletes any data provided before the timeout.</p>
-        /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours)
-        /// seconds.</p>
+        /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
+        /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
+        /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
         pub fn set_idle_session_ttl_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.idle_session_ttl_in_seconds = input;
             self
@@ -317,10 +291,7 @@ pub mod create_bot_input {
         ///
         /// To override the contents of this collection use [`set_bot_tags`](Self::set_bot_tags).
         ///
-        /// <p>A list of tags to add to the bot. You can only add tags when you
-        /// create a bot. You can't use the <code>UpdateBot</code> operation to
-        /// update tags. To update tags, use the <code>TagResource</code>
-        /// operation.</p>
+        /// <p>A list of tags to add to the bot. You can only add tags when you create a bot. You can't use the <code>UpdateBot</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
         pub fn bot_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -331,10 +302,7 @@ pub mod create_bot_input {
             self.bot_tags = Some(hash_map);
             self
         }
-        /// <p>A list of tags to add to the bot. You can only add tags when you
-        /// create a bot. You can't use the <code>UpdateBot</code> operation to
-        /// update tags. To update tags, use the <code>TagResource</code>
-        /// operation.</p>
+        /// <p>A list of tags to add to the bot. You can only add tags when you create a bot. You can't use the <code>UpdateBot</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
         pub fn set_bot_tags(
             mut self,
             input: std::option::Option<
@@ -348,10 +316,7 @@ pub mod create_bot_input {
         ///
         /// To override the contents of this collection use [`set_test_bot_alias_tags`](Self::set_test_bot_alias_tags).
         ///
-        /// <p>A list of tags to add to the test alias for a bot. You can only add
-        /// tags when you create a bot. You can't use the <code>UpdateAlias</code>
-        /// operation to update tags. To update tags on the test alias, use the
-        /// <code>TagResource</code> operation.</p>
+        /// <p>A list of tags to add to the test alias for a bot. You can only add tags when you create a bot. You can't use the <code>UpdateAlias</code> operation to update tags. To update tags on the test alias, use the <code>TagResource</code> operation.</p>
         pub fn test_bot_alias_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -362,10 +327,7 @@ pub mod create_bot_input {
             self.test_bot_alias_tags = Some(hash_map);
             self
         }
-        /// <p>A list of tags to add to the test alias for a bot. You can only add
-        /// tags when you create a bot. You can't use the <code>UpdateAlias</code>
-        /// operation to update tags. To update tags on the test alias, use the
-        /// <code>TagResource</code> operation.</p>
+        /// <p>A list of tags to add to the test alias for a bot. You can only add tags when you create a bot. You can't use the <code>UpdateAlias</code> operation to update tags. To update tags on the test alias, use the <code>TagResource</code> operation.</p>
         pub fn set_test_bot_alias_tags(
             mut self,
             input: std::option::Option<
@@ -395,7 +357,7 @@ pub mod create_bot_input {
 #[doc(hidden)]
 pub type CreateBotInputOperationOutputAlias = crate::operation::CreateBot;
 #[doc(hidden)]
-pub type CreateBotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateBotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBotInput {
     /// Consumes the builder and constructs an Operation<[`CreateBot`](crate::operation::CreateBot)>
     #[allow(clippy::let_and_return)]
@@ -406,7 +368,7 @@ impl CreateBotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -483,7 +445,7 @@ impl CreateBotInput {
                     "CreateBot",
                     "lexmodelsv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -541,28 +503,22 @@ pub mod create_bot_alias_input {
             self.bot_alias_name = input;
             self
         }
-        /// <p>A description of the alias. Use this description to help identify
-        /// the alias.</p>
+        /// <p>A description of the alias. Use this description to help identify the alias.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>A description of the alias. Use this description to help identify
-        /// the alias.</p>
+        /// <p>A description of the alias. Use this description to help identify the alias.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>The version of the bot that this alias points to. You can use the
-        /// <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBotAlias.html">UpdateBotAlias</a> operation to change the
-        /// bot version associated with the alias.</p>
+        /// <p>The version of the bot that this alias points to. You can use the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBotAlias.html">UpdateBotAlias</a> operation to change the bot version associated with the alias.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_version = Some(input.into());
             self
         }
-        /// <p>The version of the bot that this alias points to. You can use the
-        /// <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBotAlias.html">UpdateBotAlias</a> operation to change the
-        /// bot version associated with the alias.</p>
+        /// <p>The version of the bot that this alias points to. You can use the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBotAlias.html">UpdateBotAlias</a> operation to change the bot version associated with the alias.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -571,22 +527,18 @@ pub mod create_bot_alias_input {
         ///
         /// To override the contents of this collection use [`set_bot_alias_locale_settings`](Self::set_bot_alias_locale_settings).
         ///
-        /// <p>Maps configuration information to a specific locale. You can use
-        /// this parameter to specify a specific Lambda function to run different
-        /// functions in different locales.</p>
+        /// <p>Maps configuration information to a specific locale. You can use this parameter to specify a specific Lambda function to run different functions in different locales.</p>
         pub fn bot_alias_locale_settings(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::BotAliasLocaleSettings>,
+            v: crate::model::BotAliasLocaleSettings,
         ) -> Self {
             let mut hash_map = self.bot_alias_locale_settings.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.bot_alias_locale_settings = Some(hash_map);
             self
         }
-        /// <p>Maps configuration information to a specific locale. You can use
-        /// this parameter to specify a specific Lambda function to run different
-        /// functions in different locales.</p>
+        /// <p>Maps configuration information to a specific locale. You can use this parameter to specify a specific Lambda function to run different functions in different locales.</p>
         pub fn set_bot_alias_locale_settings(
             mut self,
             input: std::option::Option<
@@ -599,10 +551,7 @@ pub mod create_bot_alias_input {
             self.bot_alias_locale_settings = input;
             self
         }
-        /// <p>Specifies whether Amazon Lex logs text and audio for a conversation with
-        /// the bot. When you enable conversation logs, text logs store text input,
-        /// transcripts of audio input, and associated metadata in Amazon CloudWatch Logs. Audio
-        /// logs store audio input in Amazon S3.</p>
+        /// <p>Specifies whether Amazon Lex logs text and audio for a conversation with the bot. When you enable conversation logs, text logs store text input, transcripts of audio input, and associated metadata in Amazon CloudWatch Logs. Audio logs store audio input in Amazon S3.</p>
         pub fn conversation_log_settings(
             mut self,
             input: crate::model::ConversationLogSettings,
@@ -610,10 +559,7 @@ pub mod create_bot_alias_input {
             self.conversation_log_settings = Some(input);
             self
         }
-        /// <p>Specifies whether Amazon Lex logs text and audio for a conversation with
-        /// the bot. When you enable conversation logs, text logs store text input,
-        /// transcripts of audio input, and associated metadata in Amazon CloudWatch Logs. Audio
-        /// logs store audio input in Amazon S3.</p>
+        /// <p>Specifies whether Amazon Lex logs text and audio for a conversation with the bot. When you enable conversation logs, text logs store text input, transcripts of audio input, and associated metadata in Amazon CloudWatch Logs. Audio logs store audio input in Amazon S3.</p>
         pub fn set_conversation_log_settings(
             mut self,
             input: std::option::Option<crate::model::ConversationLogSettings>,
@@ -621,8 +567,7 @@ pub mod create_bot_alias_input {
             self.conversation_log_settings = input;
             self
         }
-        /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of
-        /// user utterances.</p>
+        /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
         pub fn sentiment_analysis_settings(
             mut self,
             input: crate::model::SentimentAnalysisSettings,
@@ -630,8 +575,7 @@ pub mod create_bot_alias_input {
             self.sentiment_analysis_settings = Some(input);
             self
         }
-        /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of
-        /// user utterances.</p>
+        /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
         pub fn set_sentiment_analysis_settings(
             mut self,
             input: std::option::Option<crate::model::SentimentAnalysisSettings>,
@@ -653,10 +597,7 @@ pub mod create_bot_alias_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags to add to the bot alias. You can only add tags when
-        /// you create an alias, you can't use the <code>UpdateBotAlias</code>
-        /// operation to update the tags on a bot alias. To update tags, use the
-        /// <code>TagResource</code> operation.</p>
+        /// <p>A list of tags to add to the bot alias. You can only add tags when you create an alias, you can't use the <code>UpdateBotAlias</code> operation to update the tags on a bot alias. To update tags, use the <code>TagResource</code> operation.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -667,10 +608,7 @@ pub mod create_bot_alias_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A list of tags to add to the bot alias. You can only add tags when
-        /// you create an alias, you can't use the <code>UpdateBotAlias</code>
-        /// operation to update the tags on a bot alias. To update tags, use the
-        /// <code>TagResource</code> operation.</p>
+        /// <p>A list of tags to add to the bot alias. You can only add tags when you create an alias, you can't use the <code>UpdateBotAlias</code> operation to update the tags on a bot alias. To update tags, use the <code>TagResource</code> operation.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -703,7 +641,7 @@ pub mod create_bot_alias_input {
 #[doc(hidden)]
 pub type CreateBotAliasInputOperationOutputAlias = crate::operation::CreateBotAlias;
 #[doc(hidden)]
-pub type CreateBotAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateBotAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBotAliasInput {
     /// Consumes the builder and constructs an Operation<[`CreateBotAlias`](crate::operation::CreateBotAlias)>
     #[allow(clippy::let_and_return)]
@@ -714,7 +652,7 @@ impl CreateBotAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBotAlias,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -810,7 +748,7 @@ impl CreateBotAliasInput {
             "CreateBotAlias",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -857,99 +795,55 @@ pub mod create_bot_locale_input {
             self.bot_id = input;
             self
         }
-        /// <p>The version of the bot to create the locale for. This can only be
-        /// the draft version of the bot.</p>
+        /// <p>The version of the bot to create the locale for. This can only be the draft version of the bot.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_version = Some(input.into());
             self
         }
-        /// <p>The version of the bot to create the locale for. This can only be
-        /// the draft version of the bot.</p>
+        /// <p>The version of the bot to create the locale for. This can only be the draft version of the bot.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
         }
-        /// <p>The identifier of the language and locale that the bot will be used
-        /// in. The string must match one of the supported locales. All of the
-        /// intents, slot types, and slots used in the bot must have the same
-        /// locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the language and locale that the bot will be used
-        /// in. The string must match one of the supported locales. All of the
-        /// intents, slot types, and slots used in the bot must have the same
-        /// locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
         }
-        /// <p>A description of the bot locale. Use this to help identify the bot
-        /// locale in lists.</p>
+        /// <p>A description of the bot locale. Use this to help identify the bot locale in lists.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>A description of the bot locale. Use this to help identify the bot
-        /// locale in lists.</p>
+        /// <p>A description of the bot locale. Use this to help identify the bot locale in lists.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>Determines the threshold where Amazon Lex will insert the
-        /// <code>AMAZON.FallbackIntent</code>,
-        /// <code>AMAZON.KendraSearchIntent</code>, or both when returning
-        /// alternative intents. <code>AMAZON.FallbackIntent</code> and
-        /// <code>AMAZON.KendraSearchIntent</code> are only inserted if they are
-        /// configured for the bot.</p>
-        /// <p>For example, suppose a bot is configured with the confidence
-        /// threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex
-        /// returns three alternative intents with the following confidence scores:
-        /// IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the
-        /// <code>RecognizeText</code> operation would be:</p>
+        /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
+        /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>RecognizeText</code> operation would be:</p>
         /// <ul>
-        /// <li>
-        /// <p>AMAZON.FallbackIntent</p>
-        /// </li>
-        /// <li>
-        /// <p>IntentA</p>
-        /// </li>
-        /// <li>
-        /// <p>IntentB</p>
-        /// </li>
-        /// <li>
-        /// <p>IntentC</p>
-        /// </li>
+        /// <li> <p>AMAZON.FallbackIntent</p> </li>
+        /// <li> <p>IntentA</p> </li>
+        /// <li> <p>IntentB</p> </li>
+        /// <li> <p>IntentC</p> </li>
         /// </ul>
         pub fn nlu_intent_confidence_threshold(mut self, input: f64) -> Self {
             self.nlu_intent_confidence_threshold = Some(input);
             self
         }
-        /// <p>Determines the threshold where Amazon Lex will insert the
-        /// <code>AMAZON.FallbackIntent</code>,
-        /// <code>AMAZON.KendraSearchIntent</code>, or both when returning
-        /// alternative intents. <code>AMAZON.FallbackIntent</code> and
-        /// <code>AMAZON.KendraSearchIntent</code> are only inserted if they are
-        /// configured for the bot.</p>
-        /// <p>For example, suppose a bot is configured with the confidence
-        /// threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex
-        /// returns three alternative intents with the following confidence scores:
-        /// IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the
-        /// <code>RecognizeText</code> operation would be:</p>
+        /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
+        /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>RecognizeText</code> operation would be:</p>
         /// <ul>
-        /// <li>
-        /// <p>AMAZON.FallbackIntent</p>
-        /// </li>
-        /// <li>
-        /// <p>IntentA</p>
-        /// </li>
-        /// <li>
-        /// <p>IntentB</p>
-        /// </li>
-        /// <li>
-        /// <p>IntentC</p>
-        /// </li>
+        /// <li> <p>AMAZON.FallbackIntent</p> </li>
+        /// <li> <p>IntentA</p> </li>
+        /// <li> <p>IntentB</p> </li>
+        /// <li> <p>IntentC</p> </li>
         /// </ul>
         pub fn set_nlu_intent_confidence_threshold(
             mut self,
@@ -958,14 +852,12 @@ pub mod create_bot_locale_input {
             self.nlu_intent_confidence_threshold = input;
             self
         }
-        /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the
-        /// user.</p>
+        /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.</p>
         pub fn voice_settings(mut self, input: crate::model::VoiceSettings) -> Self {
             self.voice_settings = Some(input);
             self
         }
-        /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the
-        /// user.</p>
+        /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.</p>
         pub fn set_voice_settings(
             mut self,
             input: std::option::Option<crate::model::VoiceSettings>,
@@ -994,7 +886,7 @@ pub mod create_bot_locale_input {
 #[doc(hidden)]
 pub type CreateBotLocaleInputOperationOutputAlias = crate::operation::CreateBotLocale;
 #[doc(hidden)]
-pub type CreateBotLocaleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateBotLocaleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBotLocaleInput {
     /// Consumes the builder and constructs an Operation<[`CreateBotLocale`](crate::operation::CreateBotLocale)>
     #[allow(clippy::let_and_return)]
@@ -1005,7 +897,7 @@ impl CreateBotLocaleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBotLocale,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1121,7 +1013,7 @@ impl CreateBotLocaleInput {
             "CreateBotLocale",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1167,14 +1059,12 @@ pub mod create_bot_version_input {
             self.bot_id = input;
             self
         }
-        /// <p>A description of the version. Use the description to help identify
-        /// the version in lists.</p>
+        /// <p>A description of the version. Use the description to help identify the version in lists.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>A description of the version. Use the description to help identify
-        /// the version in lists.</p>
+        /// <p>A description of the version. Use the description to help identify the version in lists.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1183,24 +1073,18 @@ pub mod create_bot_version_input {
         ///
         /// To override the contents of this collection use [`set_bot_version_locale_specification`](Self::set_bot_version_locale_specification).
         ///
-        /// <p>Specifies the locales that Amazon Lex adds to this version. You can
-        /// choose the <code>Draft</code> version or any other previously published
-        /// version for each locale. When you specify a source version, the locale
-        /// data is copied from the source version to the new version.</p>
+        /// <p>Specifies the locales that Amazon Lex adds to this version. You can choose the <code>Draft</code> version or any other previously published version for each locale. When you specify a source version, the locale data is copied from the source version to the new version.</p>
         pub fn bot_version_locale_specification(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::BotVersionLocaleDetails>,
+            v: crate::model::BotVersionLocaleDetails,
         ) -> Self {
             let mut hash_map = self.bot_version_locale_specification.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.bot_version_locale_specification = Some(hash_map);
             self
         }
-        /// <p>Specifies the locales that Amazon Lex adds to this version. You can
-        /// choose the <code>Draft</code> version or any other previously published
-        /// version for each locale. When you specify a source version, the locale
-        /// data is copied from the source version to the new version.</p>
+        /// <p>Specifies the locales that Amazon Lex adds to this version. You can choose the <code>Draft</code> version or any other previously published version for each locale. When you specify a source version, the locale data is copied from the source version to the new version.</p>
         pub fn set_bot_version_locale_specification(
             mut self,
             input: std::option::Option<
@@ -1231,7 +1115,7 @@ pub mod create_bot_version_input {
 #[doc(hidden)]
 pub type CreateBotVersionInputOperationOutputAlias = crate::operation::CreateBotVersion;
 #[doc(hidden)]
-pub type CreateBotVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateBotVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBotVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateBotVersion`](crate::operation::CreateBotVersion)>
     #[allow(clippy::let_and_return)]
@@ -1242,7 +1126,7 @@ impl CreateBotVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBotVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1338,7 +1222,7 @@ impl CreateBotVersionInput {
             "CreateBotVersion",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1373,8 +1257,7 @@ pub mod create_export_input {
         pub(crate) file_password: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the type of resource to export, either a bot or a bot
-        /// locale. You can only specify one type of resource to export.</p>
+        /// <p>Specifies the type of resource to export, either a bot or a bot locale. You can only specify one type of resource to export.</p>
         pub fn resource_specification(
             mut self,
             input: crate::model::ExportResourceSpecification,
@@ -1382,8 +1265,7 @@ pub mod create_export_input {
             self.resource_specification = Some(input);
             self
         }
-        /// <p>Specifies the type of resource to export, either a bot or a bot
-        /// locale. You can only specify one type of resource to export.</p>
+        /// <p>Specifies the type of resource to export, either a bot or a bot locale. You can only specify one type of resource to export.</p>
         pub fn set_resource_specification(
             mut self,
             input: std::option::Option<crate::model::ExportResourceSpecification>,
@@ -1404,16 +1286,12 @@ pub mod create_export_input {
             self.file_format = input;
             self
         }
-        /// <p>An password to use to encrypt the exported archive. Using a password
-        /// is optional, but you should encrypt the archive to protect the data in
-        /// transit between Amazon Lex and your local computer.</p>
+        /// <p>An password to use to encrypt the exported archive. Using a password is optional, but you should encrypt the archive to protect the data in transit between Amazon Lex and your local computer.</p>
         pub fn file_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_password = Some(input.into());
             self
         }
-        /// <p>An password to use to encrypt the exported archive. Using a password
-        /// is optional, but you should encrypt the archive to protect the data in
-        /// transit between Amazon Lex and your local computer.</p>
+        /// <p>An password to use to encrypt the exported archive. Using a password is optional, but you should encrypt the archive to protect the data in transit between Amazon Lex and your local computer.</p>
         pub fn set_file_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1439,7 +1317,7 @@ pub mod create_export_input {
 #[doc(hidden)]
 pub type CreateExportInputOperationOutputAlias = crate::operation::CreateExport;
 #[doc(hidden)]
-pub type CreateExportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateExportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateExportInput {
     /// Consumes the builder and constructs an Operation<[`CreateExport`](crate::operation::CreateExport)>
     #[allow(clippy::let_and_return)]
@@ -1450,7 +1328,7 @@ impl CreateExportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateExport,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1529,7 +1407,7 @@ impl CreateExportInput {
             "CreateExport",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1577,40 +1455,32 @@ pub mod create_intent_input {
         pub(crate) locale_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the intent. Intent names must be unique in the locale
-        /// that contains the intent and cannot match the name of any built-in
-        /// intent.</p>
+        /// <p>The name of the intent. Intent names must be unique in the locale that contains the intent and cannot match the name of any built-in intent.</p>
         pub fn intent_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.intent_name = Some(input.into());
             self
         }
-        /// <p>The name of the intent. Intent names must be unique in the locale
-        /// that contains the intent and cannot match the name of any built-in
-        /// intent.</p>
+        /// <p>The name of the intent. Intent names must be unique in the locale that contains the intent and cannot match the name of any built-in intent.</p>
         pub fn set_intent_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.intent_name = input;
             self
         }
-        /// <p>A description of the intent. Use the description to help identify
-        /// the intent in lists.</p>
+        /// <p>A description of the intent. Use the description to help identify the intent in lists.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>A description of the intent. Use the description to help identify
-        /// the intent in lists.</p>
+        /// <p>A description of the intent. Use the description to help identify the intent in lists.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>A unique identifier for the built-in intent to base this intent
-        /// on.</p>
+        /// <p>A unique identifier for the built-in intent to base this intent on.</p>
         pub fn parent_intent_signature(mut self, input: impl Into<std::string::String>) -> Self {
             self.parent_intent_signature = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the built-in intent to base this intent
-        /// on.</p>
+        /// <p>A unique identifier for the built-in intent to base this intent on.</p>
         pub fn set_parent_intent_signature(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1622,25 +1492,16 @@ pub mod create_intent_input {
         ///
         /// To override the contents of this collection use [`set_sample_utterances`](Self::set_sample_utterances).
         ///
-        /// <p>An array of strings that a user might say to signal the intent. For
-        /// example, "I want a pizza", or "I want a {PizzaSize} pizza". </p>
-        /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}")
-        /// to indicate where they should be displayed in the utterance shown to
-        /// the user.. </p>
-        pub fn sample_utterances(
-            mut self,
-            input: impl Into<crate::model::SampleUtterance>,
-        ) -> Self {
+        /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza". </p>
+        /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where they should be displayed in the utterance shown to the user.. </p>
+        pub fn sample_utterances(mut self, input: crate::model::SampleUtterance) -> Self {
             let mut v = self.sample_utterances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sample_utterances = Some(v);
             self
         }
-        /// <p>An array of strings that a user might say to signal the intent. For
-        /// example, "I want a pizza", or "I want a {PizzaSize} pizza". </p>
-        /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}")
-        /// to indicate where they should be displayed in the utterance shown to
-        /// the user.. </p>
+        /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza". </p>
+        /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where they should be displayed in the utterance shown to the user.. </p>
         pub fn set_sample_utterances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>,
@@ -1648,30 +1509,14 @@ pub mod create_intent_input {
             self.sample_utterances = input;
             self
         }
-        /// <p>Specifies that Amazon Lex invokes the alias Lambda function for each user
-        /// input. You can invoke this Lambda function to personalize user
-        /// interaction.</p>
-        /// <p>For example, suppose that your bot determines that the user's name
-        /// is John. You Lambda function might retrieve John's information from a
-        /// backend database and prepopulate some of the values. For example, if
-        /// you find that John is gluten intolerant, you might set the
-        /// corresponding intent slot, <code>glutenIntolerant</code> to
-        /// <code>true</code>. You might find John's phone number and set the
-        /// corresponding session attribute.</p>
+        /// <p>Specifies that Amazon Lex invokes the alias Lambda function for each user input. You can invoke this Lambda function to personalize user interaction.</p>
+        /// <p>For example, suppose that your bot determines that the user's name is John. You Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, <code>glutenIntolerant</code> to <code>true</code>. You might find John's phone number and set the corresponding session attribute.</p>
         pub fn dialog_code_hook(mut self, input: crate::model::DialogCodeHookSettings) -> Self {
             self.dialog_code_hook = Some(input);
             self
         }
-        /// <p>Specifies that Amazon Lex invokes the alias Lambda function for each user
-        /// input. You can invoke this Lambda function to personalize user
-        /// interaction.</p>
-        /// <p>For example, suppose that your bot determines that the user's name
-        /// is John. You Lambda function might retrieve John's information from a
-        /// backend database and prepopulate some of the values. For example, if
-        /// you find that John is gluten intolerant, you might set the
-        /// corresponding intent slot, <code>glutenIntolerant</code> to
-        /// <code>true</code>. You might find John's phone number and set the
-        /// corresponding session attribute.</p>
+        /// <p>Specifies that Amazon Lex invokes the alias Lambda function for each user input. You can invoke this Lambda function to personalize user interaction.</p>
+        /// <p>For example, suppose that your bot determines that the user's name is John. You Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, <code>glutenIntolerant</code> to <code>true</code>. You might find John's phone number and set the corresponding session attribute.</p>
         pub fn set_dialog_code_hook(
             mut self,
             input: std::option::Option<crate::model::DialogCodeHookSettings>,
@@ -1679,12 +1524,8 @@ pub mod create_intent_input {
             self.dialog_code_hook = input;
             self
         }
-        /// <p>Specifies that Amazon Lex invokes the alias Lambda function when the
-        /// intent is ready for fulfillment. You can invoke this function to
-        /// complete the bot's transaction with the user.</p>
-        /// <p>For example, in a pizza ordering bot, the Lambda function can look up
-        /// the closest pizza restaurant to the customer's location and then place
-        /// an order on the customer's behalf.</p>
+        /// <p>Specifies that Amazon Lex invokes the alias Lambda function when the intent is ready for fulfillment. You can invoke this function to complete the bot's transaction with the user.</p>
+        /// <p>For example, in a pizza ordering bot, the Lambda function can look up the closest pizza restaurant to the customer's location and then place an order on the customer's behalf.</p>
         pub fn fulfillment_code_hook(
             mut self,
             input: crate::model::FulfillmentCodeHookSettings,
@@ -1692,12 +1533,8 @@ pub mod create_intent_input {
             self.fulfillment_code_hook = Some(input);
             self
         }
-        /// <p>Specifies that Amazon Lex invokes the alias Lambda function when the
-        /// intent is ready for fulfillment. You can invoke this function to
-        /// complete the bot's transaction with the user.</p>
-        /// <p>For example, in a pizza ordering bot, the Lambda function can look up
-        /// the closest pizza restaurant to the customer's location and then place
-        /// an order on the customer's behalf.</p>
+        /// <p>Specifies that Amazon Lex invokes the alias Lambda function when the intent is ready for fulfillment. You can invoke this function to complete the bot's transaction with the user.</p>
+        /// <p>For example, in a pizza ordering bot, the Lambda function can look up the closest pizza restaurant to the customer's location and then place an order on the customer's behalf.</p>
         pub fn set_fulfillment_code_hook(
             mut self,
             input: std::option::Option<crate::model::FulfillmentCodeHookSettings>,
@@ -1705,9 +1542,7 @@ pub mod create_intent_input {
             self.fulfillment_code_hook = input;
             self
         }
-        /// <p>Provides prompts that Amazon Lex sends to the user to confirm the
-        /// completion of an intent. If the user answers "no," the settings contain
-        /// a statement that is sent to the user to end the intent.</p>
+        /// <p>Provides prompts that Amazon Lex sends to the user to confirm the completion of an intent. If the user answers "no," the settings contain a statement that is sent to the user to end the intent.</p>
         pub fn intent_confirmation_setting(
             mut self,
             input: crate::model::IntentConfirmationSetting,
@@ -1715,9 +1550,7 @@ pub mod create_intent_input {
             self.intent_confirmation_setting = Some(input);
             self
         }
-        /// <p>Provides prompts that Amazon Lex sends to the user to confirm the
-        /// completion of an intent. If the user answers "no," the settings contain
-        /// a statement that is sent to the user to end the intent.</p>
+        /// <p>Provides prompts that Amazon Lex sends to the user to confirm the completion of an intent. If the user answers "no," the settings contain a statement that is sent to the user to end the intent.</p>
         pub fn set_intent_confirmation_setting(
             mut self,
             input: std::option::Option<crate::model::IntentConfirmationSetting>,
@@ -1725,14 +1558,12 @@ pub mod create_intent_input {
             self.intent_confirmation_setting = input;
             self
         }
-        /// <p>Sets the response that Amazon Lex sends to the user when the intent is
-        /// closed.</p>
+        /// <p>Sets the response that Amazon Lex sends to the user when the intent is closed.</p>
         pub fn intent_closing_setting(mut self, input: crate::model::IntentClosingSetting) -> Self {
             self.intent_closing_setting = Some(input);
             self
         }
-        /// <p>Sets the response that Amazon Lex sends to the user when the intent is
-        /// closed.</p>
+        /// <p>Sets the response that Amazon Lex sends to the user when the intent is closed.</p>
         pub fn set_intent_closing_setting(
             mut self,
             input: std::option::Option<crate::model::IntentClosingSetting>,
@@ -1744,42 +1575,22 @@ pub mod create_intent_input {
         ///
         /// To override the contents of this collection use [`set_input_contexts`](Self::set_input_contexts).
         ///
-        /// <p>A list of contexts that must be active for this intent to be
-        /// considered by Amazon Lex.</p>
-        /// <p>When an intent has an input context list, Amazon Lex only considers using
-        /// the intent in an interaction with the user when the specified contexts
-        /// are included in the active context list for the session. If the
-        /// contexts are not active, then Amazon Lex will not use the intent.</p>
-        /// <p>A context can be automatically activated using the
-        /// <code>outputContexts</code> property or it can be set at
-        /// runtime.</p>
-        /// <p> For example, if there are two intents with different input contexts
-        /// that respond to the same utterances, only the intent with the active
-        /// context will respond.</p>
-        /// <p>An intent may have up to 5 input contexts. If an intent has multiple
-        /// input contexts, all of the contexts must be active to consider the
-        /// intent.</p>
-        pub fn input_contexts(mut self, input: impl Into<crate::model::InputContext>) -> Self {
+        /// <p>A list of contexts that must be active for this intent to be considered by Amazon Lex.</p>
+        /// <p>When an intent has an input context list, Amazon Lex only considers using the intent in an interaction with the user when the specified contexts are included in the active context list for the session. If the contexts are not active, then Amazon Lex will not use the intent.</p>
+        /// <p>A context can be automatically activated using the <code>outputContexts</code> property or it can be set at runtime.</p>
+        /// <p> For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p>
+        /// <p>An intent may have up to 5 input contexts. If an intent has multiple input contexts, all of the contexts must be active to consider the intent.</p>
+        pub fn input_contexts(mut self, input: crate::model::InputContext) -> Self {
             let mut v = self.input_contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_contexts = Some(v);
             self
         }
-        /// <p>A list of contexts that must be active for this intent to be
-        /// considered by Amazon Lex.</p>
-        /// <p>When an intent has an input context list, Amazon Lex only considers using
-        /// the intent in an interaction with the user when the specified contexts
-        /// are included in the active context list for the session. If the
-        /// contexts are not active, then Amazon Lex will not use the intent.</p>
-        /// <p>A context can be automatically activated using the
-        /// <code>outputContexts</code> property or it can be set at
-        /// runtime.</p>
-        /// <p> For example, if there are two intents with different input contexts
-        /// that respond to the same utterances, only the intent with the active
-        /// context will respond.</p>
-        /// <p>An intent may have up to 5 input contexts. If an intent has multiple
-        /// input contexts, all of the contexts must be active to consider the
-        /// intent.</p>
+        /// <p>A list of contexts that must be active for this intent to be considered by Amazon Lex.</p>
+        /// <p>When an intent has an input context list, Amazon Lex only considers using the intent in an interaction with the user when the specified contexts are included in the active context list for the session. If the contexts are not active, then Amazon Lex will not use the intent.</p>
+        /// <p>A context can be automatically activated using the <code>outputContexts</code> property or it can be set at runtime.</p>
+        /// <p> For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p>
+        /// <p>An intent may have up to 5 input contexts. If an intent has multiple input contexts, all of the contexts must be active to consider the intent.</p>
         pub fn set_input_contexts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputContext>>,
@@ -1791,30 +1602,18 @@ pub mod create_intent_input {
         ///
         /// To override the contents of this collection use [`set_output_contexts`](Self::set_output_contexts).
         ///
-        /// <p>A lists of contexts that the intent activates when it is
-        /// fulfilled.</p>
-        /// <p>You can use an output context to indicate the intents that Amazon Lex
-        /// should consider for the next turn of the conversation with a customer. </p>
-        /// <p>When you use the <code>outputContextsList</code> property, all of
-        /// the contexts specified in the list are activated when the intent is
-        /// fulfilled. You can set up to 10 output contexts. You can also set the
-        /// number of conversation turns that the context should be active, or the
-        /// length of time that the context should be active.</p>
-        pub fn output_contexts(mut self, input: impl Into<crate::model::OutputContext>) -> Self {
+        /// <p>A lists of contexts that the intent activates when it is fulfilled.</p>
+        /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer. </p>
+        /// <p>When you use the <code>outputContextsList</code> property, all of the contexts specified in the list are activated when the intent is fulfilled. You can set up to 10 output contexts. You can also set the number of conversation turns that the context should be active, or the length of time that the context should be active.</p>
+        pub fn output_contexts(mut self, input: crate::model::OutputContext) -> Self {
             let mut v = self.output_contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_contexts = Some(v);
             self
         }
-        /// <p>A lists of contexts that the intent activates when it is
-        /// fulfilled.</p>
-        /// <p>You can use an output context to indicate the intents that Amazon Lex
-        /// should consider for the next turn of the conversation with a customer. </p>
-        /// <p>When you use the <code>outputContextsList</code> property, all of
-        /// the contexts specified in the list are activated when the intent is
-        /// fulfilled. You can set up to 10 output contexts. You can also set the
-        /// number of conversation turns that the context should be active, or the
-        /// length of time that the context should be active.</p>
+        /// <p>A lists of contexts that the intent activates when it is fulfilled.</p>
+        /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer. </p>
+        /// <p>When you use the <code>outputContextsList</code> property, all of the contexts specified in the list are activated when the intent is fulfilled. You can set up to 10 output contexts. You can also set the number of conversation turns that the context should be active, or the length of time that the context should be active.</p>
         pub fn set_output_contexts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OutputContext>>,
@@ -1822,18 +1621,12 @@ pub mod create_intent_input {
             self.output_contexts = input;
             self
         }
-        /// <p>Configuration information required to use the
-        /// <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra
-        /// index. The <code>AMAZON.KendraSearchIntent</code> intent is called when
-        /// Amazon Lex can't determine another intent to invoke.</p>
+        /// <p>Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra index. The <code>AMAZON.KendraSearchIntent</code> intent is called when Amazon Lex can't determine another intent to invoke.</p>
         pub fn kendra_configuration(mut self, input: crate::model::KendraConfiguration) -> Self {
             self.kendra_configuration = Some(input);
             self
         }
-        /// <p>Configuration information required to use the
-        /// <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra
-        /// index. The <code>AMAZON.KendraSearchIntent</code> intent is called when
-        /// Amazon Lex can't determine another intent to invoke.</p>
+        /// <p>Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra index. The <code>AMAZON.KendraSearchIntent</code> intent is called when Amazon Lex can't determine another intent to invoke.</p>
         pub fn set_kendra_configuration(
             mut self,
             input: std::option::Option<crate::model::KendraConfiguration>,
@@ -1851,28 +1644,22 @@ pub mod create_intent_input {
             self.bot_id = input;
             self
         }
-        /// <p>The identifier of the version of the bot associated with this
-        /// intent.</p>
+        /// <p>The identifier of the version of the bot associated with this intent.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_version = Some(input.into());
             self
         }
-        /// <p>The identifier of the version of the bot associated with this
-        /// intent.</p>
+        /// <p>The identifier of the version of the bot associated with this intent.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
         }
-        /// <p>The identifier of the language and locale where this intent is used.
-        /// All of the bots, slot types, and slots used by the intent must have the
-        /// same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale where this intent is used. All of the bots, slot types, and slots used by the intent must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the language and locale where this intent is used.
-        /// All of the bots, slot types, and slots used by the intent must have the
-        /// same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale where this intent is used. All of the bots, slot types, and slots used by the intent must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -1906,7 +1693,7 @@ pub mod create_intent_input {
 #[doc(hidden)]
 pub type CreateIntentInputOperationOutputAlias = crate::operation::CreateIntent;
 #[doc(hidden)]
-pub type CreateIntentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateIntentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateIntentInput {
     /// Consumes the builder and constructs an Operation<[`CreateIntent`](crate::operation::CreateIntent)>
     #[allow(clippy::let_and_return)]
@@ -1917,7 +1704,7 @@ impl CreateIntentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateIntent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2048,7 +1835,7 @@ impl CreateIntentInput {
             "CreateIntent",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2081,36 +1868,24 @@ pub mod create_resource_policy_input {
         pub(crate) policy: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-        /// resource policy is attached to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-        /// resource policy is attached to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
-        /// <p>A resource policy to add to the resource. The policy is a JSON
-        /// structure that contains one or more statements that define the policy.
-        /// The policy must follow the IAM syntax. For more information about the
-        /// contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy
-        /// reference </a>. </p>
-        /// <p>If the policy isn't valid, Amazon Lex returns a validation
-        /// exception.</p>
+        /// <p>A resource policy to add to the resource. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy reference </a>. </p>
+        /// <p>If the policy isn't valid, Amazon Lex returns a validation exception.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
             self
         }
-        /// <p>A resource policy to add to the resource. The policy is a JSON
-        /// structure that contains one or more statements that define the policy.
-        /// The policy must follow the IAM syntax. For more information about the
-        /// contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy
-        /// reference </a>. </p>
-        /// <p>If the policy isn't valid, Amazon Lex returns a validation
-        /// exception.</p>
+        /// <p>A resource policy to add to the resource. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy reference </a>. </p>
+        /// <p>If the policy isn't valid, Amazon Lex returns a validation exception.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -2132,7 +1907,7 @@ pub mod create_resource_policy_input {
 #[doc(hidden)]
 pub type CreateResourcePolicyInputOperationOutputAlias = crate::operation::CreateResourcePolicy;
 #[doc(hidden)]
-pub type CreateResourcePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`CreateResourcePolicy`](crate::operation::CreateResourcePolicy)>
     #[allow(clippy::let_and_return)]
@@ -2143,7 +1918,7 @@ impl CreateResourcePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateResourcePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2241,7 +2016,7 @@ impl CreateResourcePolicyInput {
             "CreateResourcePolicy",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2284,42 +2059,32 @@ pub mod create_resource_policy_statement_input {
         pub(crate) expected_revision_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-        /// resource policy is attached to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-        /// resource policy is attached to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
-        /// <p>The name of the statement. The ID is the same as the
-        /// <code>Sid</code> IAM property. The statement name must be unique
-        /// within the policy. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html">IAM
-        /// JSON policy elements: Sid</a>. </p>
+        /// <p>The name of the statement. The ID is the same as the <code>Sid</code> IAM property. The statement name must be unique within the policy. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html">IAM JSON policy elements: Sid</a>. </p>
         pub fn statement_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.statement_id = Some(input.into());
             self
         }
-        /// <p>The name of the statement. The ID is the same as the
-        /// <code>Sid</code> IAM property. The statement name must be unique
-        /// within the policy. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html">IAM
-        /// JSON policy elements: Sid</a>. </p>
+        /// <p>The name of the statement. The ID is the same as the <code>Sid</code> IAM property. The statement name must be unique within the policy. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html">IAM JSON policy elements: Sid</a>. </p>
         pub fn set_statement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.statement_id = input;
             self
         }
-        /// <p>Determines whether the statement allows or denies access to the
-        /// resource.</p>
+        /// <p>Determines whether the statement allows or denies access to the resource.</p>
         pub fn effect(mut self, input: crate::model::Effect) -> Self {
             self.effect = Some(input);
             self
         }
-        /// <p>Determines whether the statement allows or denies access to the
-        /// resource.</p>
+        /// <p>Determines whether the statement allows or denies access to the resource.</p>
         pub fn set_effect(mut self, input: std::option::Option<crate::model::Effect>) -> Self {
             self.effect = input;
             self
@@ -2328,18 +2093,14 @@ pub mod create_resource_policy_statement_input {
         ///
         /// To override the contents of this collection use [`set_principal`](Self::set_principal).
         ///
-        /// <p>An IAM principal, such as an IAM users, IAM roles, or AWS services
-        /// that is allowed or denied access to a resource. For more information,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS JSON policy elements: Principal</a>.</p>
-        pub fn principal(mut self, input: impl Into<crate::model::Principal>) -> Self {
+        /// <p>An IAM principal, such as an IAM users, IAM roles, or AWS services that is allowed or denied access to a resource. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS JSON policy elements: Principal</a>.</p>
+        pub fn principal(mut self, input: crate::model::Principal) -> Self {
             let mut v = self.principal.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.principal = Some(v);
             self
         }
-        /// <p>An IAM principal, such as an IAM users, IAM roles, or AWS services
-        /// that is allowed or denied access to a resource. For more information,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS JSON policy elements: Principal</a>.</p>
+        /// <p>An IAM principal, such as an IAM users, IAM roles, or AWS services that is allowed or denied access to a resource. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS JSON policy elements: Principal</a>.</p>
         pub fn set_principal(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Principal>>,
@@ -2351,20 +2112,14 @@ pub mod create_resource_policy_statement_input {
         ///
         /// To override the contents of this collection use [`set_action`](Self::set_action).
         ///
-        /// <p>The Amazon Lex action that this policy either allows or denies. The
-        /// action must apply to the resource type of the specified ARN. For more
-        /// information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlexv2.html">
-        /// Actions, resources, and condition keys for Amazon Lex V2</a>.</p>
+        /// <p>The Amazon Lex action that this policy either allows or denies. The action must apply to the resource type of the specified ARN. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlexv2.html"> Actions, resources, and condition keys for Amazon Lex V2</a>.</p>
         pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.action.unwrap_or_default();
             v.push(input.into());
             self.action = Some(v);
             self
         }
-        /// <p>The Amazon Lex action that this policy either allows or denies. The
-        /// action must apply to the resource type of the specified ARN. For more
-        /// information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlexv2.html">
-        /// Actions, resources, and condition keys for Amazon Lex V2</a>.</p>
+        /// <p>The Amazon Lex action that this policy either allows or denies. The action must apply to the resource type of the specified ARN. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlexv2.html"> Actions, resources, and condition keys for Amazon Lex V2</a>.</p>
         pub fn set_action(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2376,25 +2131,19 @@ pub mod create_resource_policy_statement_input {
         ///
         /// To override the contents of this collection use [`set_condition`](Self::set_condition).
         ///
-        /// <p>Specifies a condition when the policy is in effect. If the principal
-        /// of the policy is a service principal, you must provide two condition
-        /// blocks, one with a SourceAccount global condition key and one with a
-        /// SourceArn global condition key.</p>
+        /// <p>Specifies a condition when the policy is in effect. If the principal of the policy is a service principal, you must provide two condition blocks, one with a SourceAccount global condition key and one with a SourceArn global condition key.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM JSON policy elements: Condition </a>.</p>
         pub fn condition(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            v: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
             let mut hash_map = self.condition.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.condition = Some(hash_map);
             self
         }
-        /// <p>Specifies a condition when the policy is in effect. If the principal
-        /// of the policy is a service principal, you must provide two condition
-        /// blocks, one with a SourceAccount global condition key and one with a
-        /// SourceArn global condition key.</p>
+        /// <p>Specifies a condition when the policy is in effect. If the principal of the policy is a service principal, you must provide two condition blocks, one with a SourceAccount global condition key and one with a SourceArn global condition key.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM JSON policy elements: Condition </a>.</p>
         pub fn set_condition(
             mut self,
@@ -2408,20 +2157,14 @@ pub mod create_resource_policy_statement_input {
             self.condition = input;
             self
         }
-        /// <p>The identifier of the revision of the policy to edit. If this
-        /// revision ID doesn't match the current revision ID, Amazon Lex throws an
-        /// exception.</p>
-        /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of
-        /// the policy with the new values.</p>
+        /// <p>The identifier of the revision of the policy to edit. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
+        /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
         pub fn expected_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_revision_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the revision of the policy to edit. If this
-        /// revision ID doesn't match the current revision ID, Amazon Lex throws an
-        /// exception.</p>
-        /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of
-        /// the policy with the new values.</p>
+        /// <p>The identifier of the revision of the policy to edit. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
+        /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
         pub fn set_expected_revision_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2452,7 +2195,8 @@ pub mod create_resource_policy_statement_input {
 pub type CreateResourcePolicyStatementInputOperationOutputAlias =
     crate::operation::CreateResourcePolicyStatement;
 #[doc(hidden)]
-pub type CreateResourcePolicyStatementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateResourcePolicyStatementInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateResourcePolicyStatementInput {
     /// Consumes the builder and constructs an Operation<[`CreateResourcePolicyStatement`](crate::operation::CreateResourcePolicyStatement)>
     #[allow(clippy::let_and_return)]
@@ -2463,7 +2207,7 @@ impl CreateResourcePolicyStatementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateResourcePolicyStatement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2578,7 +2322,7 @@ impl CreateResourcePolicyStatementInput {
             "CreateResourcePolicyStatement",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2621,46 +2365,37 @@ pub mod create_slot_input {
             std::option::Option<crate::model::MultipleValuesSetting>,
     }
     impl Builder {
-        /// <p>The name of the slot. Slot names must be unique within the bot that
-        /// contains the slot.</p>
+        /// <p>The name of the slot. Slot names must be unique within the bot that contains the slot.</p>
         pub fn slot_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.slot_name = Some(input.into());
             self
         }
-        /// <p>The name of the slot. Slot names must be unique within the bot that
-        /// contains the slot.</p>
+        /// <p>The name of the slot. Slot names must be unique within the bot that contains the slot.</p>
         pub fn set_slot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.slot_name = input;
             self
         }
-        /// <p>A description of the slot. Use this to help identify the slot in
-        /// lists.</p>
+        /// <p>A description of the slot. Use this to help identify the slot in lists.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>A description of the slot. Use this to help identify the slot in
-        /// lists.</p>
+        /// <p>A description of the slot. Use this to help identify the slot in lists.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>The unique identifier for the slot type associated with this slot.
-        /// The slot type determines the values that can be entered into the
-        /// slot.</p>
+        /// <p>The unique identifier for the slot type associated with this slot. The slot type determines the values that can be entered into the slot.</p>
         pub fn slot_type_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.slot_type_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the slot type associated with this slot.
-        /// The slot type determines the values that can be entered into the
-        /// slot.</p>
+        /// <p>The unique identifier for the slot type associated with this slot. The slot type determines the values that can be entered into the slot.</p>
         pub fn set_slot_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.slot_type_id = input;
             self
         }
-        /// <p>Specifies prompts that Amazon Lex sends to the user to elicit a response
-        /// that provides the value for the slot. </p>
+        /// <p>Specifies prompts that Amazon Lex sends to the user to elicit a response that provides the value for the slot. </p>
         pub fn value_elicitation_setting(
             mut self,
             input: crate::model::SlotValueElicitationSetting,
@@ -2668,8 +2403,7 @@ pub mod create_slot_input {
             self.value_elicitation_setting = Some(input);
             self
         }
-        /// <p>Specifies prompts that Amazon Lex sends to the user to elicit a response
-        /// that provides the value for the slot. </p>
+        /// <p>Specifies prompts that Amazon Lex sends to the user to elicit a response that provides the value for the slot. </p>
         pub fn set_value_elicitation_setting(
             mut self,
             input: std::option::Option<crate::model::SlotValueElicitationSetting>,
@@ -2677,21 +2411,13 @@ pub mod create_slot_input {
             self.value_elicitation_setting = input;
             self
         }
-        /// <p>Determines how slot values are used in Amazon CloudWatch logs. If the value of
-        /// the <code>obfuscationSetting</code> parameter is
-        /// <code>DefaultObfuscation</code>, slot values are obfuscated in the
-        /// log output. If the value is <code>None</code>, the actual value is
-        /// present in the log output.</p>
+        /// <p>Determines how slot values are used in Amazon CloudWatch logs. If the value of the <code>obfuscationSetting</code> parameter is <code>DefaultObfuscation</code>, slot values are obfuscated in the log output. If the value is <code>None</code>, the actual value is present in the log output.</p>
         /// <p>The default is to obfuscate values in the CloudWatch logs.</p>
         pub fn obfuscation_setting(mut self, input: crate::model::ObfuscationSetting) -> Self {
             self.obfuscation_setting = Some(input);
             self
         }
-        /// <p>Determines how slot values are used in Amazon CloudWatch logs. If the value of
-        /// the <code>obfuscationSetting</code> parameter is
-        /// <code>DefaultObfuscation</code>, slot values are obfuscated in the
-        /// log output. If the value is <code>None</code>, the actual value is
-        /// present in the log output.</p>
+        /// <p>Determines how slot values are used in Amazon CloudWatch logs. If the value of the <code>obfuscationSetting</code> parameter is <code>DefaultObfuscation</code>, slot values are obfuscated in the log output. If the value is <code>None</code>, the actual value is present in the log output.</p>
         /// <p>The default is to obfuscate values in the CloudWatch logs.</p>
         pub fn set_obfuscation_setting(
             mut self,
@@ -2720,18 +2446,12 @@ pub mod create_slot_input {
             self.bot_version = input;
             self
         }
-        /// <p>The identifier of the language and locale that the slot will be used
-        /// in. The string must match one of the supported locales. All of the
-        /// bots, intents, slot types used by the slot must have the same locale.
-        /// For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale that the slot will be used in. The string must match one of the supported locales. All of the bots, intents, slot types used by the slot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the language and locale that the slot will be used
-        /// in. The string must match one of the supported locales. All of the
-        /// bots, intents, slot types used by the slot must have the same locale.
-        /// For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale that the slot will be used in. The string must match one of the supported locales. All of the bots, intents, slot types used by the slot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -2746,12 +2466,8 @@ pub mod create_slot_input {
             self.intent_id = input;
             self
         }
-        /// <p>Indicates whether the slot returns multiple values in one response.
-        /// Multi-value slots are only available in the en-US locale. If you set
-        /// this value to <code>true</code> in any other locale, Amazon Lex throws a
-        /// <code>ValidationException</code>. </p>
-        /// <p>If the <code>multipleValuesSetting</code> is not set, the default
-        /// value is <code>false</code>.</p>
+        /// <p>Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>. </p>
+        /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
         pub fn multiple_values_setting(
             mut self,
             input: crate::model::MultipleValuesSetting,
@@ -2759,12 +2475,8 @@ pub mod create_slot_input {
             self.multiple_values_setting = Some(input);
             self
         }
-        /// <p>Indicates whether the slot returns multiple values in one response.
-        /// Multi-value slots are only available in the en-US locale. If you set
-        /// this value to <code>true</code> in any other locale, Amazon Lex throws a
-        /// <code>ValidationException</code>. </p>
-        /// <p>If the <code>multipleValuesSetting</code> is not set, the default
-        /// value is <code>false</code>.</p>
+        /// <p>Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>. </p>
+        /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
         pub fn set_multiple_values_setting(
             mut self,
             input: std::option::Option<crate::model::MultipleValuesSetting>,
@@ -2797,7 +2509,7 @@ pub mod create_slot_input {
 #[doc(hidden)]
 pub type CreateSlotInputOperationOutputAlias = crate::operation::CreateSlot;
 #[doc(hidden)]
-pub type CreateSlotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSlotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSlotInput {
     /// Consumes the builder and constructs an Operation<[`CreateSlot`](crate::operation::CreateSlot)>
     #[allow(clippy::let_and_return)]
@@ -2808,7 +2520,7 @@ impl CreateSlotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSlot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2947,7 +2659,7 @@ impl CreateSlotInput {
             "CreateSlot",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2986,16 +2698,16 @@ pub mod create_slot_type_input {
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) locale_id: std::option::Option<std::string::String>,
+        pub(crate) external_source_setting:
+            std::option::Option<crate::model::ExternalSourceSetting>,
     }
     impl Builder {
-        /// <p>The name for the slot. A slot type name must be unique within the
-        /// account.</p>
+        /// <p>The name for the slot. A slot type name must be unique within the account.</p>
         pub fn slot_type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.slot_type_name = Some(input.into());
             self
         }
-        /// <p>The name for the slot. A slot type name must be unique within the
-        /// account.</p>
+        /// <p>The name for the slot. A slot type name must be unique within the account.</p>
         pub fn set_slot_type_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3003,14 +2715,12 @@ pub mod create_slot_type_input {
             self.slot_type_name = input;
             self
         }
-        /// <p>A description of the slot type. Use the description to help identify
-        /// the slot type in lists.</p>
+        /// <p>A description of the slot type. Use the description to help identify the slot type in lists.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>A description of the slot type. Use the description to help identify
-        /// the slot type in lists.</p>
+        /// <p>A description of the slot type. Use the description to help identify the slot type in lists.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3019,20 +2729,14 @@ pub mod create_slot_type_input {
         ///
         /// To override the contents of this collection use [`set_slot_type_values`](Self::set_slot_type_values).
         ///
-        /// <p>A list of <code>SlotTypeValue</code> objects that defines the values
-        /// that the slot type can take. Each value can have a list of synonyms,
-        /// additional values that help train the machine learning model about the
-        /// values that it resolves for a slot.</p>
-        pub fn slot_type_values(mut self, input: impl Into<crate::model::SlotTypeValue>) -> Self {
+        /// <p>A list of <code>SlotTypeValue</code> objects that defines the values that the slot type can take. Each value can have a list of synonyms, additional values that help train the machine learning model about the values that it resolves for a slot.</p>
+        pub fn slot_type_values(mut self, input: crate::model::SlotTypeValue) -> Self {
             let mut v = self.slot_type_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.slot_type_values = Some(v);
             self
         }
-        /// <p>A list of <code>SlotTypeValue</code> objects that defines the values
-        /// that the slot type can take. Each value can have a list of synonyms,
-        /// additional values that help train the machine learning model about the
-        /// values that it resolves for a slot.</p>
+        /// <p>A list of <code>SlotTypeValue</code> objects that defines the values that the slot type can take. Each value can have a list of synonyms, additional values that help train the machine learning model about the values that it resolves for a slot.</p>
         pub fn set_slot_type_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SlotTypeValue>>,
@@ -3040,24 +2744,12 @@ pub mod create_slot_type_input {
             self.slot_type_values = input;
             self
         }
-        /// <p>Determines the strategy that Amazon Lex uses to select a value from the
-        /// list of possible values. The field can be set to one of the following
-        /// values:</p>
+        /// <p>Determines the strategy that Amazon Lex uses to select a value from the list of possible values. The field can be set to one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>OriginalValue</code> - Returns the value entered by the
-        /// user, if the user value is similar to the slot value.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TopResolution</code> - If there is a resolution list for
-        /// the slot, return the first value in the resolution list. If there
-        /// is no resolution list, return null.</p>
-        /// </li>
+        /// <li> <p> <code>OriginalValue</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li>
+        /// <li> <p> <code>TopResolution</code> - If there is a resolution list for the slot, return the first value in the resolution list. If there is no resolution list, return null.</p> </li>
         /// </ul>
-        /// <p>If you don't specify the <code>valueSelectionSetting</code>
-        /// parameter, the default is <code>OriginalValue</code>.</p>
+        /// <p>If you don't specify the <code>valueSelectionSetting</code> parameter, the default is <code>OriginalValue</code>.</p>
         pub fn value_selection_setting(
             mut self,
             input: crate::model::SlotValueSelectionSetting,
@@ -3065,24 +2757,12 @@ pub mod create_slot_type_input {
             self.value_selection_setting = Some(input);
             self
         }
-        /// <p>Determines the strategy that Amazon Lex uses to select a value from the
-        /// list of possible values. The field can be set to one of the following
-        /// values:</p>
+        /// <p>Determines the strategy that Amazon Lex uses to select a value from the list of possible values. The field can be set to one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>OriginalValue</code> - Returns the value entered by the
-        /// user, if the user value is similar to the slot value.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TopResolution</code> - If there is a resolution list for
-        /// the slot, return the first value in the resolution list. If there
-        /// is no resolution list, return null.</p>
-        /// </li>
+        /// <li> <p> <code>OriginalValue</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li>
+        /// <li> <p> <code>TopResolution</code> - If there is a resolution list for the slot, return the first value in the resolution list. If there is no resolution list, return null.</p> </li>
         /// </ul>
-        /// <p>If you don't specify the <code>valueSelectionSetting</code>
-        /// parameter, the default is <code>OriginalValue</code>.</p>
+        /// <p>If you don't specify the <code>valueSelectionSetting</code> parameter, the default is <code>OriginalValue</code>.</p>
         pub fn set_value_selection_setting(
             mut self,
             input: std::option::Option<crate::model::SlotValueSelectionSetting>,
@@ -3090,17 +2770,13 @@ pub mod create_slot_type_input {
             self.value_selection_setting = input;
             self
         }
-        /// <p>The built-in slot type used as a parent of this slot type. When you
-        /// define a parent slot type, the new slot type has the configuration of
-        /// the parent slot type.</p>
+        /// <p>The built-in slot type used as a parent of this slot type. When you define a parent slot type, the new slot type has the configuration of the parent slot type.</p>
         /// <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
         pub fn parent_slot_type_signature(mut self, input: impl Into<std::string::String>) -> Self {
             self.parent_slot_type_signature = Some(input.into());
             self
         }
-        /// <p>The built-in slot type used as a parent of this slot type. When you
-        /// define a parent slot type, the new slot type has the configuration of
-        /// the parent slot type.</p>
+        /// <p>The built-in slot type used as a parent of this slot type. When you define a parent slot type, the new slot type has the configuration of the parent slot type.</p>
         /// <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
         pub fn set_parent_slot_type_signature(
             mut self,
@@ -3119,32 +2795,40 @@ pub mod create_slot_type_input {
             self.bot_id = input;
             self
         }
-        /// <p>The identifier of the bot version associated with this slot
-        /// type.</p>
+        /// <p>The identifier of the bot version associated with this slot type.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_version = Some(input.into());
             self
         }
-        /// <p>The identifier of the bot version associated with this slot
-        /// type.</p>
+        /// <p>The identifier of the bot version associated with this slot type.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
         }
-        /// <p>The identifier of the language and locale that the slot type will be
-        /// used in. The string must match one of the supported locales. All of the
-        /// bots, intents, and slots used by the slot type must have the same
-        /// locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale that the slot type will be used in. The string must match one of the supported locales. All of the bots, intents, and slots used by the slot type must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the language and locale that the slot type will be
-        /// used in. The string must match one of the supported locales. All of the
-        /// bots, intents, and slots used by the slot type must have the same
-        /// locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale that the slot type will be used in. The string must match one of the supported locales. All of the bots, intents, and slots used by the slot type must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
+            self
+        }
+        /// <p>Sets the type of external information used to create the slot type.</p>
+        pub fn external_source_setting(
+            mut self,
+            input: crate::model::ExternalSourceSetting,
+        ) -> Self {
+            self.external_source_setting = Some(input);
+            self
+        }
+        /// <p>Sets the type of external information used to create the slot type.</p>
+        pub fn set_external_source_setting(
+            mut self,
+            input: std::option::Option<crate::model::ExternalSourceSetting>,
+        ) -> Self {
+            self.external_source_setting = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateSlotTypeInput`](crate::input::CreateSlotTypeInput)
@@ -3163,6 +2847,7 @@ pub mod create_slot_type_input {
                 bot_id: self.bot_id,
                 bot_version: self.bot_version,
                 locale_id: self.locale_id,
+                external_source_setting: self.external_source_setting,
             })
         }
     }
@@ -3170,7 +2855,7 @@ pub mod create_slot_type_input {
 #[doc(hidden)]
 pub type CreateSlotTypeInputOperationOutputAlias = crate::operation::CreateSlotType;
 #[doc(hidden)]
-pub type CreateSlotTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSlotTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSlotTypeInput {
     /// Consumes the builder and constructs an Operation<[`CreateSlotType`](crate::operation::CreateSlotType)>
     #[allow(clippy::let_and_return)]
@@ -3181,7 +2866,7 @@ impl CreateSlotTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSlotType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3313,7 +2998,7 @@ impl CreateSlotTypeInput {
             "CreateSlotType",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3357,7 +3042,7 @@ pub mod create_upload_url_input {
 #[doc(hidden)]
 pub type CreateUploadUrlInputOperationOutputAlias = crate::operation::CreateUploadUrl;
 #[doc(hidden)]
-pub type CreateUploadUrlInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateUploadUrlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUploadUrlInput {
     /// Consumes the builder and constructs an Operation<[`CreateUploadUrl`](crate::operation::CreateUploadUrl)>
     #[allow(clippy::let_and_return)]
@@ -3368,7 +3053,7 @@ impl CreateUploadUrlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateUploadUrl,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3442,7 +3127,7 @@ impl CreateUploadUrlInput {
             "CreateUploadUrl",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3477,16 +3162,12 @@ pub mod delete_bot_input {
             self.bot_id = input;
             self
         }
-        /// <p>When <code>true</code>, Amazon Lex doesn't check to see if another
-        /// resource, such as an alias, is using the bot before it is
-        /// deleted.</p>
+        /// <p>When <code>true</code>, Amazon Lex doesn't check to see if another resource, such as an alias, is using the bot before it is deleted.</p>
         pub fn skip_resource_in_use_check(mut self, input: bool) -> Self {
             self.skip_resource_in_use_check = Some(input);
             self
         }
-        /// <p>When <code>true</code>, Amazon Lex doesn't check to see if another
-        /// resource, such as an alias, is using the bot before it is
-        /// deleted.</p>
+        /// <p>When <code>true</code>, Amazon Lex doesn't check to see if another resource, such as an alias, is using the bot before it is deleted.</p>
         pub fn set_skip_resource_in_use_check(mut self, input: std::option::Option<bool>) -> Self {
             self.skip_resource_in_use_check = input;
             self
@@ -3506,7 +3187,7 @@ pub mod delete_bot_input {
 #[doc(hidden)]
 pub type DeleteBotInputOperationOutputAlias = crate::operation::DeleteBot;
 #[doc(hidden)]
-pub type DeleteBotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteBotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBotInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBot`](crate::operation::DeleteBot)>
     #[allow(clippy::let_and_return)]
@@ -3517,7 +3198,7 @@ impl DeleteBotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3619,7 +3300,7 @@ impl DeleteBotInput {
                     "DeleteBot",
                     "lexmodelsv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3655,26 +3336,22 @@ pub mod delete_bot_alias_input {
             self.bot_alias_id = input;
             self
         }
-        /// <p>The unique identifier of the bot associated with the alias to
-        /// delete.</p>
+        /// <p>The unique identifier of the bot associated with the alias to delete.</p>
         pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the bot associated with the alias to
-        /// delete.</p>
+        /// <p>The unique identifier of the bot associated with the alias to delete.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
         }
-        /// <p>When this parameter is true, Amazon Lex doesn't check to see if any other
-        /// resource is using the alias before it is deleted.</p>
+        /// <p>When this parameter is true, Amazon Lex doesn't check to see if any other resource is using the alias before it is deleted.</p>
         pub fn skip_resource_in_use_check(mut self, input: bool) -> Self {
             self.skip_resource_in_use_check = Some(input);
             self
         }
-        /// <p>When this parameter is true, Amazon Lex doesn't check to see if any other
-        /// resource is using the alias before it is deleted.</p>
+        /// <p>When this parameter is true, Amazon Lex doesn't check to see if any other resource is using the alias before it is deleted.</p>
         pub fn set_skip_resource_in_use_check(mut self, input: std::option::Option<bool>) -> Self {
             self.skip_resource_in_use_check = input;
             self
@@ -3697,7 +3374,7 @@ pub mod delete_bot_alias_input {
 #[doc(hidden)]
 pub type DeleteBotAliasInputOperationOutputAlias = crate::operation::DeleteBotAlias;
 #[doc(hidden)]
-pub type DeleteBotAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteBotAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBotAliasInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBotAlias`](crate::operation::DeleteBotAlias)>
     #[allow(clippy::let_and_return)]
@@ -3708,7 +3385,7 @@ impl DeleteBotAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBotAlias,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3833,7 +3510,7 @@ impl DeleteBotAliasInput {
             "DeleteBotAlias",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3879,16 +3556,12 @@ pub mod delete_bot_locale_input {
             self.bot_version = input;
             self
         }
-        /// <p>The identifier of the language and locale that will be deleted. The
-        /// string must match one of the supported locales. For more information,
-        /// see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale that will be deleted. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the language and locale that will be deleted. The
-        /// string must match one of the supported locales. For more information,
-        /// see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale that will be deleted. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -3911,7 +3584,7 @@ pub mod delete_bot_locale_input {
 #[doc(hidden)]
 pub type DeleteBotLocaleInputOperationOutputAlias = crate::operation::DeleteBotLocale;
 #[doc(hidden)]
-pub type DeleteBotLocaleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteBotLocaleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBotLocaleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBotLocale`](crate::operation::DeleteBotLocale)>
     #[allow(clippy::let_and_return)]
@@ -3922,7 +3595,7 @@ impl DeleteBotLocaleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBotLocale,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4048,7 +3721,7 @@ impl DeleteBotLocaleInput {
             "DeleteBotLocale",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4094,22 +3767,12 @@ pub mod delete_bot_version_input {
             self.bot_version = input;
             self
         }
-        /// <p>By default, the <code>DeleteBotVersion</code> operations throws a
-        /// <code>ResourceInUseException</code> exception if you try to delete a
-        /// bot version that has an alias pointing at it. Set the
-        /// <code>skipResourceInUseCheck</code> parameter to <code>true</code>
-        /// to skip this check and remove the version even if an alias points to
-        /// it.</p>
+        /// <p>By default, the <code>DeleteBotVersion</code> operations throws a <code>ResourceInUseException</code> exception if you try to delete a bot version that has an alias pointing at it. Set the <code>skipResourceInUseCheck</code> parameter to <code>true</code> to skip this check and remove the version even if an alias points to it.</p>
         pub fn skip_resource_in_use_check(mut self, input: bool) -> Self {
             self.skip_resource_in_use_check = Some(input);
             self
         }
-        /// <p>By default, the <code>DeleteBotVersion</code> operations throws a
-        /// <code>ResourceInUseException</code> exception if you try to delete a
-        /// bot version that has an alias pointing at it. Set the
-        /// <code>skipResourceInUseCheck</code> parameter to <code>true</code>
-        /// to skip this check and remove the version even if an alias points to
-        /// it.</p>
+        /// <p>By default, the <code>DeleteBotVersion</code> operations throws a <code>ResourceInUseException</code> exception if you try to delete a bot version that has an alias pointing at it. Set the <code>skipResourceInUseCheck</code> parameter to <code>true</code> to skip this check and remove the version even if an alias points to it.</p>
         pub fn set_skip_resource_in_use_check(mut self, input: std::option::Option<bool>) -> Self {
             self.skip_resource_in_use_check = input;
             self
@@ -4132,7 +3795,7 @@ pub mod delete_bot_version_input {
 #[doc(hidden)]
 pub type DeleteBotVersionInputOperationOutputAlias = crate::operation::DeleteBotVersion;
 #[doc(hidden)]
-pub type DeleteBotVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteBotVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBotVersionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBotVersion`](crate::operation::DeleteBotVersion)>
     #[allow(clippy::let_and_return)]
@@ -4143,7 +3806,7 @@ impl DeleteBotVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBotVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4268,7 +3931,7 @@ impl DeleteBotVersionInput {
             "DeleteBotVersion",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4318,7 +3981,7 @@ pub mod delete_export_input {
 #[doc(hidden)]
 pub type DeleteExportInputOperationOutputAlias = crate::operation::DeleteExport;
 #[doc(hidden)]
-pub type DeleteExportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteExportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteExportInput {
     /// Consumes the builder and constructs an Operation<[`DeleteExport`](crate::operation::DeleteExport)>
     #[allow(clippy::let_and_return)]
@@ -4329,7 +3992,7 @@ impl DeleteExportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteExport,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4419,7 +4082,7 @@ impl DeleteExportInput {
             "DeleteExport",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4469,7 +4132,7 @@ pub mod delete_import_input {
 #[doc(hidden)]
 pub type DeleteImportInputOperationOutputAlias = crate::operation::DeleteImport;
 #[doc(hidden)]
-pub type DeleteImportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteImportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteImportInput {
     /// Consumes the builder and constructs an Operation<[`DeleteImport`](crate::operation::DeleteImport)>
     #[allow(clippy::let_and_return)]
@@ -4480,7 +4143,7 @@ impl DeleteImportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteImport,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4570,7 +4233,7 @@ impl DeleteImportInput {
             "DeleteImport",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4627,16 +4290,12 @@ pub mod delete_intent_input {
             self.bot_version = input;
             self
         }
-        /// <p>The identifier of the language and locale where the bot will be
-        /// deleted. The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale where the bot will be deleted. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the language and locale where the bot will be
-        /// deleted. The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale where the bot will be deleted. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -4660,7 +4319,7 @@ pub mod delete_intent_input {
 #[doc(hidden)]
 pub type DeleteIntentInputOperationOutputAlias = crate::operation::DeleteIntent;
 #[doc(hidden)]
-pub type DeleteIntentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteIntentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteIntentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteIntent`](crate::operation::DeleteIntent)>
     #[allow(clippy::let_and_return)]
@@ -4671,7 +4330,7 @@ impl DeleteIntentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteIntent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4813,7 +4472,7 @@ impl DeleteIntentInput {
             "DeleteIntent",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4838,30 +4497,24 @@ pub mod delete_resource_policy_input {
         pub(crate) expected_revision_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that has the
-        /// resource policy attached.</p>
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that has the resource policy attached.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that has the
-        /// resource policy attached.</p>
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that has the resource policy attached.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
-        /// <p>The identifier of the revision to edit. If this ID doesn't match the
-        /// current revision number, Amazon Lex returns an exception</p>
-        /// <p>If you don't specify a revision ID, Amazon Lex will delete the current
-        /// policy.</p>
+        /// <p>The identifier of the revision to edit. If this ID doesn't match the current revision number, Amazon Lex returns an exception</p>
+        /// <p>If you don't specify a revision ID, Amazon Lex will delete the current policy.</p>
         pub fn expected_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_revision_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the revision to edit. If this ID doesn't match the
-        /// current revision number, Amazon Lex returns an exception</p>
-        /// <p>If you don't specify a revision ID, Amazon Lex will delete the current
-        /// policy.</p>
+        /// <p>The identifier of the revision to edit. If this ID doesn't match the current revision number, Amazon Lex returns an exception</p>
+        /// <p>If you don't specify a revision ID, Amazon Lex will delete the current policy.</p>
         pub fn set_expected_revision_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4886,7 +4539,7 @@ pub mod delete_resource_policy_input {
 #[doc(hidden)]
 pub type DeleteResourcePolicyInputOperationOutputAlias = crate::operation::DeleteResourcePolicy;
 #[doc(hidden)]
-pub type DeleteResourcePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResourcePolicy`](crate::operation::DeleteResourcePolicy)>
     #[allow(clippy::let_and_return)]
@@ -4897,7 +4550,7 @@ impl DeleteResourcePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteResourcePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5001,7 +4654,7 @@ impl DeleteResourcePolicyInput {
             "DeleteResourcePolicy",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5027,14 +4680,12 @@ pub mod delete_resource_policy_statement_input {
         pub(crate) expected_revision_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-        /// resource policy is attached to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-        /// resource policy is attached to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -5049,20 +4700,14 @@ pub mod delete_resource_policy_statement_input {
             self.statement_id = input;
             self
         }
-        /// <p>The identifier of the revision of the policy to delete the statement
-        /// from. If this revision ID doesn't match the current revision ID, Amazon Lex
-        /// throws an exception.</p>
-        /// <p>If you don't specify a revision, Amazon Lex removes the current contents
-        /// of the statement. </p>
+        /// <p>The identifier of the revision of the policy to delete the statement from. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
+        /// <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement. </p>
         pub fn expected_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_revision_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the revision of the policy to delete the statement
-        /// from. If this revision ID doesn't match the current revision ID, Amazon Lex
-        /// throws an exception.</p>
-        /// <p>If you don't specify a revision, Amazon Lex removes the current contents
-        /// of the statement. </p>
+        /// <p>The identifier of the revision of the policy to delete the statement from. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
+        /// <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement. </p>
         pub fn set_expected_revision_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5089,7 +4734,8 @@ pub mod delete_resource_policy_statement_input {
 pub type DeleteResourcePolicyStatementInputOperationOutputAlias =
     crate::operation::DeleteResourcePolicyStatement;
 #[doc(hidden)]
-pub type DeleteResourcePolicyStatementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteResourcePolicyStatementInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResourcePolicyStatementInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResourcePolicyStatement`](crate::operation::DeleteResourcePolicyStatement)>
     #[allow(clippy::let_and_return)]
@@ -5100,7 +4746,7 @@ impl DeleteResourcePolicyStatementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteResourcePolicyStatement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5224,7 +4870,7 @@ impl DeleteResourcePolicyStatementInput {
             "DeleteResourcePolicyStatement",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5282,16 +4928,12 @@ pub mod delete_slot_input {
             self.bot_version = input;
             self
         }
-        /// <p>The identifier of the language and locale that the slot will be
-        /// deleted from. The string must match one of the supported locales. For
-        /// more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale that the slot will be deleted from. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the language and locale that the slot will be
-        /// deleted from. The string must match one of the supported locales. For
-        /// more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale that the slot will be deleted from. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -5326,7 +4968,7 @@ pub mod delete_slot_input {
 #[doc(hidden)]
 pub type DeleteSlotInputOperationOutputAlias = crate::operation::DeleteSlot;
 #[doc(hidden)]
-pub type DeleteSlotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSlotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSlotInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSlot`](crate::operation::DeleteSlot)>
     #[allow(clippy::let_and_return)]
@@ -5337,7 +4979,7 @@ impl DeleteSlotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSlot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5486,7 +5128,7 @@ impl DeleteSlotInput {
             "DeleteSlot",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5544,34 +5186,22 @@ pub mod delete_slot_type_input {
             self.bot_version = input;
             self
         }
-        /// <p>The identifier of the language and locale that the slot type will be
-        /// deleted from. The string must match one of the supported locales. For
-        /// more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale that the slot type will be deleted from. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the language and locale that the slot type will be
-        /// deleted from. The string must match one of the supported locales. For
-        /// more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale that the slot type will be deleted from. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
         }
-        /// <p>By default, the <code>DeleteSlotType</code> operations throws a
-        /// <code>ResourceInUseException</code> exception if you try to delete a
-        /// slot type used by a slot. Set the <code>skipResourceInUseCheck</code>
-        /// parameter to <code>true</code> to skip this check and remove the slot
-        /// type even if a slot uses it.</p>
+        /// <p>By default, the <code>DeleteSlotType</code> operations throws a <code>ResourceInUseException</code> exception if you try to delete a slot type used by a slot. Set the <code>skipResourceInUseCheck</code> parameter to <code>true</code> to skip this check and remove the slot type even if a slot uses it.</p>
         pub fn skip_resource_in_use_check(mut self, input: bool) -> Self {
             self.skip_resource_in_use_check = Some(input);
             self
         }
-        /// <p>By default, the <code>DeleteSlotType</code> operations throws a
-        /// <code>ResourceInUseException</code> exception if you try to delete a
-        /// slot type used by a slot. Set the <code>skipResourceInUseCheck</code>
-        /// parameter to <code>true</code> to skip this check and remove the slot
-        /// type even if a slot uses it.</p>
+        /// <p>By default, the <code>DeleteSlotType</code> operations throws a <code>ResourceInUseException</code> exception if you try to delete a slot type used by a slot. Set the <code>skipResourceInUseCheck</code> parameter to <code>true</code> to skip this check and remove the slot type even if a slot uses it.</p>
         pub fn set_skip_resource_in_use_check(mut self, input: std::option::Option<bool>) -> Self {
             self.skip_resource_in_use_check = input;
             self
@@ -5596,7 +5226,7 @@ pub mod delete_slot_type_input {
 #[doc(hidden)]
 pub type DeleteSlotTypeInputOperationOutputAlias = crate::operation::DeleteSlotType;
 #[doc(hidden)]
-pub type DeleteSlotTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSlotTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSlotTypeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSlotType`](crate::operation::DeleteSlotType)>
     #[allow(clippy::let_and_return)]
@@ -5607,7 +5237,7 @@ impl DeleteSlotTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSlotType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5756,7 +5386,7 @@ impl DeleteSlotTypeInput {
             "DeleteSlotType",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5782,42 +5412,32 @@ pub mod delete_utterances_input {
         pub(crate) session_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier of the bot that contains the
-        /// utterances.</p>
+        /// <p>The unique identifier of the bot that contains the utterances.</p>
         pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the bot that contains the
-        /// utterances.</p>
+        /// <p>The unique identifier of the bot that contains the utterances.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
         }
-        /// <p>The identifier of the language and locale where the utterances were
-        /// collected. The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
-        /// languages</a>.</p>
+        /// <p>The identifier of the language and locale where the utterances were collected. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the language and locale where the utterances were
-        /// collected. The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
-        /// languages</a>.</p>
+        /// <p>The identifier of the language and locale where the utterances were collected. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
         }
-        /// <p>The unique identifier of the session with the user. The ID is
-        /// returned in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeText.html">RecognizeText</a> and <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeUtterance.html">RecognizeUtterance</a> operations.</p>
+        /// <p>The unique identifier of the session with the user. The ID is returned in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeText.html">RecognizeText</a> and <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeUtterance.html">RecognizeUtterance</a> operations.</p>
         pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.session_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the session with the user. The ID is
-        /// returned in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeText.html">RecognizeText</a> and <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeUtterance.html">RecognizeUtterance</a> operations.</p>
+        /// <p>The unique identifier of the session with the user. The ID is returned in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeText.html">RecognizeText</a> and <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeUtterance.html">RecognizeUtterance</a> operations.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session_id = input;
             self
@@ -5840,7 +5460,7 @@ pub mod delete_utterances_input {
 #[doc(hidden)]
 pub type DeleteUtterancesInputOperationOutputAlias = crate::operation::DeleteUtterances;
 #[doc(hidden)]
-pub type DeleteUtterancesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteUtterancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteUtterancesInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUtterances`](crate::operation::DeleteUtterances)>
     #[allow(clippy::let_and_return)]
@@ -5851,7 +5471,7 @@ impl DeleteUtterancesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteUtterances,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5955,7 +5575,7 @@ impl DeleteUtterancesInput {
             "DeleteUtterances",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6005,7 +5625,7 @@ pub mod describe_bot_input {
 #[doc(hidden)]
 pub type DescribeBotInputOperationOutputAlias = crate::operation::DescribeBot;
 #[doc(hidden)]
-pub type DescribeBotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeBotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBotInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBot`](crate::operation::DescribeBot)>
     #[allow(clippy::let_and_return)]
@@ -6016,7 +5636,7 @@ impl DescribeBotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6105,7 +5725,7 @@ impl DescribeBotInput {
             "DescribeBot",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6140,14 +5760,12 @@ pub mod describe_bot_alias_input {
             self.bot_alias_id = input;
             self
         }
-        /// <p>The identifier of the bot associated with the bot alias to
-        /// describe.</p>
+        /// <p>The identifier of the bot associated with the bot alias to describe.</p>
         pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the bot associated with the bot alias to
-        /// describe.</p>
+        /// <p>The identifier of the bot associated with the bot alias to describe.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -6169,7 +5787,7 @@ pub mod describe_bot_alias_input {
 #[doc(hidden)]
 pub type DescribeBotAliasInputOperationOutputAlias = crate::operation::DescribeBotAlias;
 #[doc(hidden)]
-pub type DescribeBotAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeBotAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBotAliasInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBotAlias`](crate::operation::DescribeBotAlias)>
     #[allow(clippy::let_and_return)]
@@ -6180,7 +5798,7 @@ impl DescribeBotAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBotAlias,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6290,7 +5908,7 @@ impl DescribeBotAliasInput {
             "DescribeBotAlias",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6326,26 +5944,22 @@ pub mod describe_bot_locale_input {
             self.bot_id = input;
             self
         }
-        /// <p>The identifier of the version of the bot associated with the
-        /// locale.</p>
+        /// <p>The identifier of the version of the bot associated with the locale.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_version = Some(input.into());
             self
         }
-        /// <p>The identifier of the version of the bot associated with the
-        /// locale.</p>
+        /// <p>The identifier of the version of the bot associated with the locale.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
         }
-        /// <p>The unique identifier of the locale to describe. The string must
-        /// match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>. </p>
+        /// <p>The unique identifier of the locale to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>. </p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the locale to describe. The string must
-        /// match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>. </p>
+        /// <p>The unique identifier of the locale to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>. </p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -6368,7 +5982,7 @@ pub mod describe_bot_locale_input {
 #[doc(hidden)]
 pub type DescribeBotLocaleInputOperationOutputAlias = crate::operation::DescribeBotLocale;
 #[doc(hidden)]
-pub type DescribeBotLocaleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeBotLocaleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBotLocaleInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBotLocale`](crate::operation::DescribeBotLocale)>
     #[allow(clippy::let_and_return)]
@@ -6379,7 +5993,7 @@ impl DescribeBotLocaleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBotLocale,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6505,7 +6119,7 @@ impl DescribeBotLocaleInput {
             "DescribeBotLocale",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6532,40 +6146,32 @@ pub mod describe_bot_recommendation_input {
         pub(crate) bot_recommendation_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier of the bot associated with the bot
-        /// recommendation.</p>
+        /// <p>The unique identifier of the bot associated with the bot recommendation.</p>
         pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the bot associated with the bot
-        /// recommendation.</p>
+        /// <p>The unique identifier of the bot associated with the bot recommendation.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
         }
-        /// <p>The version of the bot associated with the bot
-        /// recommendation.</p>
+        /// <p>The version of the bot associated with the bot recommendation.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_version = Some(input.into());
             self
         }
-        /// <p>The version of the bot associated with the bot
-        /// recommendation.</p>
+        /// <p>The version of the bot associated with the bot recommendation.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
         }
-        /// <p>The identifier of the language and locale of the bot recommendation
-        /// to describe. The string must match one of the supported locales. For
-        /// more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale of the bot recommendation to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the language and locale of the bot recommendation
-        /// to describe. The string must match one of the supported locales. For
-        /// more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale of the bot recommendation to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -6603,7 +6209,7 @@ pub mod describe_bot_recommendation_input {
 pub type DescribeBotRecommendationInputOperationOutputAlias =
     crate::operation::DescribeBotRecommendation;
 #[doc(hidden)]
-pub type DescribeBotRecommendationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeBotRecommendationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBotRecommendationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBotRecommendation`](crate::operation::DescribeBotRecommendation)>
     #[allow(clippy::let_and_return)]
@@ -6614,7 +6220,7 @@ impl DescribeBotRecommendationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBotRecommendation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6748,7 +6354,7 @@ impl DescribeBotRecommendationInput {
             "DescribeBotRecommendation",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6773,14 +6379,12 @@ pub mod describe_bot_version_input {
         pub(crate) bot_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the bot containing the version to return metadata
-        /// for.</p>
+        /// <p>The identifier of the bot containing the version to return metadata for.</p>
         pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the bot containing the version to return metadata
-        /// for.</p>
+        /// <p>The identifier of the bot containing the version to return metadata for.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -6812,7 +6416,7 @@ pub mod describe_bot_version_input {
 #[doc(hidden)]
 pub type DescribeBotVersionInputOperationOutputAlias = crate::operation::DescribeBotVersion;
 #[doc(hidden)]
-pub type DescribeBotVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeBotVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBotVersionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBotVersion`](crate::operation::DescribeBotVersion)>
     #[allow(clippy::let_and_return)]
@@ -6823,7 +6427,7 @@ impl DescribeBotVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBotVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6933,7 +6537,7 @@ impl DescribeBotVersionInput {
             "DescribeBotVersion",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6983,7 +6587,7 @@ pub mod describe_export_input {
 #[doc(hidden)]
 pub type DescribeExportInputOperationOutputAlias = crate::operation::DescribeExport;
 #[doc(hidden)]
-pub type DescribeExportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeExportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeExportInput {
     /// Consumes the builder and constructs an Operation<[`DescribeExport`](crate::operation::DescribeExport)>
     #[allow(clippy::let_and_return)]
@@ -6994,7 +6598,7 @@ impl DescribeExportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeExport,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7084,7 +6688,7 @@ impl DescribeExportInput {
             "DescribeExport",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7134,7 +6738,7 @@ pub mod describe_import_input {
 #[doc(hidden)]
 pub type DescribeImportInputOperationOutputAlias = crate::operation::DescribeImport;
 #[doc(hidden)]
-pub type DescribeImportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeImportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeImportInput {
     /// Consumes the builder and constructs an Operation<[`DescribeImport`](crate::operation::DescribeImport)>
     #[allow(clippy::let_and_return)]
@@ -7145,7 +6749,7 @@ impl DescribeImportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeImport,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7235,7 +6839,7 @@ impl DescribeImportInput {
             "DescribeImport",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7292,16 +6896,12 @@ pub mod describe_intent_input {
             self.bot_version = input;
             self
         }
-        /// <p>The identifier of the language and locale of the intent to describe.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale of the intent to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the language and locale of the intent to describe.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale of the intent to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -7325,7 +6925,7 @@ pub mod describe_intent_input {
 #[doc(hidden)]
 pub type DescribeIntentInputOperationOutputAlias = crate::operation::DescribeIntent;
 #[doc(hidden)]
-pub type DescribeIntentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeIntentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeIntentInput {
     /// Consumes the builder and constructs an Operation<[`DescribeIntent`](crate::operation::DescribeIntent)>
     #[allow(clippy::let_and_return)]
@@ -7336,7 +6936,7 @@ impl DescribeIntentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeIntent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7478,7 +7078,7 @@ impl DescribeIntentInput {
             "DescribeIntent",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7502,14 +7102,12 @@ pub mod describe_resource_policy_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-        /// resource policy is attached to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-        /// resource policy is attached to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -7530,7 +7128,7 @@ pub mod describe_resource_policy_input {
 #[doc(hidden)]
 pub type DescribeResourcePolicyInputOperationOutputAlias = crate::operation::DescribeResourcePolicy;
 #[doc(hidden)]
-pub type DescribeResourcePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DescribeResourcePolicy`](crate::operation::DescribeResourcePolicy)>
     #[allow(clippy::let_and_return)]
@@ -7541,7 +7139,7 @@ impl DescribeResourcePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeResourcePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7631,7 +7229,7 @@ impl DescribeResourcePolicyInput {
             "DescribeResourcePolicy",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7689,16 +7287,12 @@ pub mod describe_slot_input {
             self.bot_version = input;
             self
         }
-        /// <p>The identifier of the language and locale of the slot to describe.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale of the slot to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the language and locale of the slot to describe.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale of the slot to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -7733,7 +7327,7 @@ pub mod describe_slot_input {
 #[doc(hidden)]
 pub type DescribeSlotInputOperationOutputAlias = crate::operation::DescribeSlot;
 #[doc(hidden)]
-pub type DescribeSlotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSlotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSlotInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSlot`](crate::operation::DescribeSlot)>
     #[allow(clippy::let_and_return)]
@@ -7744,7 +7338,7 @@ impl DescribeSlotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSlot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7893,7 +7487,7 @@ impl DescribeSlotInput {
             "DescribeSlot",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7950,16 +7544,12 @@ pub mod describe_slot_type_input {
             self.bot_version = input;
             self
         }
-        /// <p>The identifier of the language and locale of the slot type to
-        /// describe. The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale of the slot type to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the language and locale of the slot type to
-        /// describe. The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale of the slot type to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -7983,7 +7573,7 @@ pub mod describe_slot_type_input {
 #[doc(hidden)]
 pub type DescribeSlotTypeInputOperationOutputAlias = crate::operation::DescribeSlotType;
 #[doc(hidden)]
-pub type DescribeSlotTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSlotTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSlotTypeInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSlotType`](crate::operation::DescribeSlotType)>
     #[allow(clippy::let_and_return)]
@@ -7994,7 +7584,7 @@ impl DescribeSlotTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSlotType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8128,7 +7718,7 @@ impl DescribeSlotTypeInput {
             "DescribeSlotType",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8162,58 +7752,47 @@ pub mod list_aggregated_utterances_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier of the bot associated with this
-        /// request.</p>
+        /// <p>The unique identifier of the bot associated with this request.</p>
         pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the bot associated with this
-        /// request.</p>
+        /// <p>The unique identifier of the bot associated with this request.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
         }
-        /// <p>The identifier of the bot alias associated with this request. If you
-        /// specify the bot alias, you can't specify the bot version.</p>
+        /// <p>The identifier of the bot alias associated with this request. If you specify the bot alias, you can't specify the bot version.</p>
         pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_alias_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the bot alias associated with this request. If you
-        /// specify the bot alias, you can't specify the bot version.</p>
+        /// <p>The identifier of the bot alias associated with this request. If you specify the bot alias, you can't specify the bot version.</p>
         pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_alias_id = input;
             self
         }
-        /// <p>The identifier of the bot version associated with this request. If
-        /// you specify the bot version, you can't specify the bot alias.</p>
+        /// <p>The identifier of the bot version associated with this request. If you specify the bot version, you can't specify the bot alias.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_version = Some(input.into());
             self
         }
-        /// <p>The identifier of the bot version associated with this request. If
-        /// you specify the bot version, you can't specify the bot alias.</p>
+        /// <p>The identifier of the bot version associated with this request. If you specify the bot version, you can't specify the bot alias.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
         }
-        /// <p>The identifier of the language and locale where the utterances were
-        /// collected. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
-        /// languages</a>.</p>
+        /// <p>The identifier of the language and locale where the utterances were collected. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the language and locale where the utterances were
-        /// collected. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
-        /// languages</a>.</p>
+        /// <p>The identifier of the language and locale where the utterances were collected. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
         }
-        /// <p>The time window for aggregating the utterance information. You can
-        /// specify a time between one hour and two weeks.</p>
+        /// <p>The time window for aggregating the utterance information. You can specify a time between one hour and two weeks.</p>
         pub fn aggregation_duration(
             mut self,
             input: crate::model::UtteranceAggregationDuration,
@@ -8221,8 +7800,7 @@ pub mod list_aggregated_utterances_input {
             self.aggregation_duration = Some(input);
             self
         }
-        /// <p>The time window for aggregating the utterance information. You can
-        /// specify a time between one hour and two weeks.</p>
+        /// <p>The time window for aggregating the utterance information. You can specify a time between one hour and two weeks.</p>
         pub fn set_aggregation_duration(
             mut self,
             input: std::option::Option<crate::model::UtteranceAggregationDuration>,
@@ -8230,16 +7808,12 @@ pub mod list_aggregated_utterances_input {
             self.aggregation_duration = input;
             self
         }
-        /// <p>Specifies sorting parameters for the list of utterances. You can
-        /// sort by the hit count, the missed count, or the number of distinct
-        /// sessions the utterance appeared in.</p>
+        /// <p>Specifies sorting parameters for the list of utterances. You can sort by the hit count, the missed count, or the number of distinct sessions the utterance appeared in.</p>
         pub fn sort_by(mut self, input: crate::model::AggregatedUtterancesSortBy) -> Self {
             self.sort_by = Some(input);
             self
         }
-        /// <p>Specifies sorting parameters for the list of utterances. You can
-        /// sort by the hit count, the missed count, or the number of distinct
-        /// sessions the utterance appeared in.</p>
+        /// <p>Specifies sorting parameters for the list of utterances. You can sort by the hit count, the missed count, or the number of distinct sessions the utterance appeared in.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::AggregatedUtterancesSortBy>,
@@ -8251,21 +7825,14 @@ pub mod list_aggregated_utterances_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Provides the specification of a filter used to limit the utterances
-        /// in the response to only those that match the filter specification. You
-        /// can only specify one filter and one string to filter on.</p>
-        pub fn filters(
-            mut self,
-            input: impl Into<crate::model::AggregatedUtterancesFilter>,
-        ) -> Self {
+        /// <p>Provides the specification of a filter used to limit the utterances in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
+        pub fn filters(mut self, input: crate::model::AggregatedUtterancesFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>Provides the specification of a filter used to limit the utterances
-        /// in the response to only those that match the filter specification. You
-        /// can only specify one filter and one string to filter on.</p>
+        /// <p>Provides the specification of a filter used to limit the utterances in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AggregatedUtterancesFilter>>,
@@ -8273,38 +7840,22 @@ pub mod list_aggregated_utterances_input {
             self.filters = input;
             self
         }
-        /// <p>The maximum number of utterances to return in each page of results.
-        /// If there are fewer results than the maximum page size, only the actual
-        /// number of results are returned. If you don't specify the
-        /// <code>maxResults</code> parameter, 1,000 results are
-        /// returned.</p>
+        /// <p>The maximum number of utterances to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned. If you don't specify the <code>maxResults</code> parameter, 1,000 results are returned.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of utterances to return in each page of results.
-        /// If there are fewer results than the maximum page size, only the actual
-        /// number of results are returned. If you don't specify the
-        /// <code>maxResults</code> parameter, 1,000 results are
-        /// returned.</p>
+        /// <p>The maximum number of utterances to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned. If you don't specify the <code>maxResults</code> parameter, 1,000 results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>If the response from the <code>ListAggregatedUtterances</code>
-        /// operation contains more results that specified in the
-        /// <code>maxResults</code> parameter, a token is returned in the
-        /// response. Use that token in the <code>nextToken</code> parameter to
-        /// return the next page of results.</p>
+        /// <p>If the response from the <code>ListAggregatedUtterances</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response from the <code>ListAggregatedUtterances</code>
-        /// operation contains more results that specified in the
-        /// <code>maxResults</code> parameter, a token is returned in the
-        /// response. Use that token in the <code>nextToken</code> parameter to
-        /// return the next page of results.</p>
+        /// <p>If the response from the <code>ListAggregatedUtterances</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8334,7 +7885,7 @@ pub mod list_aggregated_utterances_input {
 pub type ListAggregatedUtterancesInputOperationOutputAlias =
     crate::operation::ListAggregatedUtterances;
 #[doc(hidden)]
-pub type ListAggregatedUtterancesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAggregatedUtterancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAggregatedUtterancesInput {
     /// Consumes the builder and constructs an Operation<[`ListAggregatedUtterances`](crate::operation::ListAggregatedUtterances)>
     #[allow(clippy::let_and_return)]
@@ -8345,7 +7896,7 @@ impl ListAggregatedUtterancesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAggregatedUtterances,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8443,7 +7994,7 @@ impl ListAggregatedUtterancesInput {
             "ListAggregatedUtterances",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8487,34 +8038,22 @@ pub mod list_bot_aliases_input {
             self.bot_id = input;
             self
         }
-        /// <p>The maximum number of aliases to return in each page of results. If
-        /// there are fewer results than the max page size, only the actual number
-        /// of results are returned.</p>
+        /// <p>The maximum number of aliases to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of aliases to return in each page of results. If
-        /// there are fewer results than the max page size, only the actual number
-        /// of results are returned.</p>
+        /// <p>The maximum number of aliases to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>If the response from the <code>ListBotAliases</code> operation
-        /// contains more results than specified in the <code>maxResults</code>
-        /// parameter, a token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response from the <code>ListBotAliases</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response from the <code>ListBotAliases</code> operation
-        /// contains more results than specified in the <code>maxResults</code>
-        /// parameter, a token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response from the <code>ListBotAliases</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8537,7 +8076,7 @@ pub mod list_bot_aliases_input {
 #[doc(hidden)]
 pub type ListBotAliasesInputOperationOutputAlias = crate::operation::ListBotAliases;
 #[doc(hidden)]
-pub type ListBotAliasesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListBotAliasesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBotAliasesInput {
     /// Consumes the builder and constructs an Operation<[`ListBotAliases`](crate::operation::ListBotAliases)>
     #[allow(clippy::let_and_return)]
@@ -8548,7 +8087,7 @@ impl ListBotAliasesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBotAliases,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8644,7 +8183,7 @@ impl ListBotAliasesInput {
             "ListBotAliases",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8701,14 +8240,12 @@ pub mod list_bot_locales_input {
             self.bot_version = input;
             self
         }
-        /// <p>Specifies sorting parameters for the list of locales. You can sort
-        /// by locale name in ascending or descending order.</p>
+        /// <p>Specifies sorting parameters for the list of locales. You can sort by locale name in ascending or descending order.</p>
         pub fn sort_by(mut self, input: crate::model::BotLocaleSortBy) -> Self {
             self.sort_by = Some(input);
             self
         }
-        /// <p>Specifies sorting parameters for the list of locales. You can sort
-        /// by locale name in ascending or descending order.</p>
+        /// <p>Specifies sorting parameters for the list of locales. You can sort by locale name in ascending or descending order.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::BotLocaleSortBy>,
@@ -8720,18 +8257,14 @@ pub mod list_bot_locales_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Provides the specification for a filter used to limit the response
-        /// to only those locales that match the filter specification. You can only
-        /// specify one filter and one value to filter on.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::BotLocaleFilter>) -> Self {
+        /// <p>Provides the specification for a filter used to limit the response to only those locales that match the filter specification. You can only specify one filter and one value to filter on.</p>
+        pub fn filters(mut self, input: crate::model::BotLocaleFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>Provides the specification for a filter used to limit the response
-        /// to only those locales that match the filter specification. You can only
-        /// specify one filter and one value to filter on.</p>
+        /// <p>Provides the specification for a filter used to limit the response to only those locales that match the filter specification. You can only specify one filter and one value to filter on.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BotLocaleFilter>>,
@@ -8739,34 +8272,22 @@ pub mod list_bot_locales_input {
             self.filters = input;
             self
         }
-        /// <p>The maximum number of aliases to return in each page of results. If
-        /// there are fewer results than the max page size, only the actual number
-        /// of results are returned.</p>
+        /// <p>The maximum number of aliases to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of aliases to return in each page of results. If
-        /// there are fewer results than the max page size, only the actual number
-        /// of results are returned.</p>
+        /// <p>The maximum number of aliases to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>If the response from the <code>ListBotLocales</code> operation
-        /// contains more results than specified in the <code>maxResults</code>
-        /// parameter, a token is returned in the response. Use that token as the
-        /// <code>nextToken</code> parameter to return the next page of results.
-        /// </p>
+        /// <p>If the response from the <code>ListBotLocales</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token as the <code>nextToken</code> parameter to return the next page of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response from the <code>ListBotLocales</code> operation
-        /// contains more results than specified in the <code>maxResults</code>
-        /// parameter, a token is returned in the response. Use that token as the
-        /// <code>nextToken</code> parameter to return the next page of results.
-        /// </p>
+        /// <p>If the response from the <code>ListBotLocales</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token as the <code>nextToken</code> parameter to return the next page of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8792,7 +8313,7 @@ pub mod list_bot_locales_input {
 #[doc(hidden)]
 pub type ListBotLocalesInputOperationOutputAlias = crate::operation::ListBotLocales;
 #[doc(hidden)]
-pub type ListBotLocalesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListBotLocalesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBotLocalesInput {
     /// Consumes the builder and constructs an Operation<[`ListBotLocales`](crate::operation::ListBotLocales)>
     #[allow(clippy::let_and_return)]
@@ -8803,7 +8324,7 @@ impl ListBotLocalesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBotLocales,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8919,7 +8440,7 @@ impl ListBotLocalesInput {
             "ListBotLocales",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8955,68 +8476,52 @@ pub mod list_bot_recommendations_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier of the bot that contains the bot
-        /// recommendation list.</p>
+        /// <p>The unique identifier of the bot that contains the bot recommendation list.</p>
         pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the bot that contains the bot
-        /// recommendation list.</p>
+        /// <p>The unique identifier of the bot that contains the bot recommendation list.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
         }
-        /// <p>The version of the bot that contains the bot recommendation
-        /// list.</p>
+        /// <p>The version of the bot that contains the bot recommendation list.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_version = Some(input.into());
             self
         }
-        /// <p>The version of the bot that contains the bot recommendation
-        /// list.</p>
+        /// <p>The version of the bot that contains the bot recommendation list.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
         }
-        /// <p>The identifier of the language and locale of the bot recommendation
-        /// list.</p>
+        /// <p>The identifier of the language and locale of the bot recommendation list.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the language and locale of the bot recommendation
-        /// list.</p>
+        /// <p>The identifier of the language and locale of the bot recommendation list.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
         }
-        /// <p>The maximum number of bot recommendations to return in each page of
-        /// results. If there are fewer results than the max page size, only the
-        /// actual number of results are returned.</p>
+        /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of bot recommendations to return in each page of
-        /// results. If there are fewer results than the max page size, only the
-        /// actual number of results are returned.</p>
+        /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>If the response from the ListBotRecommendation operation contains
-        /// more results than specified in the maxResults parameter, a token is
-        /// returned in the response. Use that token in the nextToken parameter to
-        /// return the next page of results.</p>
+        /// <p>If the response from the ListBotRecommendation operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response from the ListBotRecommendation operation contains
-        /// more results than specified in the maxResults parameter, a token is
-        /// returned in the response. Use that token in the nextToken parameter to
-        /// return the next page of results.</p>
+        /// <p>If the response from the ListBotRecommendation operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9041,7 +8546,7 @@ pub mod list_bot_recommendations_input {
 #[doc(hidden)]
 pub type ListBotRecommendationsInputOperationOutputAlias = crate::operation::ListBotRecommendations;
 #[doc(hidden)]
-pub type ListBotRecommendationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListBotRecommendationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBotRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`ListBotRecommendations`](crate::operation::ListBotRecommendations)>
     #[allow(clippy::let_and_return)]
@@ -9052,7 +8557,7 @@ impl ListBotRecommendationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBotRecommendations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9186,7 +8691,7 @@ impl ListBotRecommendationsInput {
             "ListBotRecommendations",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9221,16 +8726,12 @@ pub mod list_bots_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies sorting parameters for the list of bots. You can specify
-        /// that the list be sorted by bot name in ascending or descending
-        /// order.</p>
+        /// <p>Specifies sorting parameters for the list of bots. You can specify that the list be sorted by bot name in ascending or descending order.</p>
         pub fn sort_by(mut self, input: crate::model::BotSortBy) -> Self {
             self.sort_by = Some(input);
             self
         }
-        /// <p>Specifies sorting parameters for the list of bots. You can specify
-        /// that the list be sorted by bot name in ascending or descending
-        /// order.</p>
+        /// <p>Specifies sorting parameters for the list of bots. You can specify that the list be sorted by bot name in ascending or descending order.</p>
         pub fn set_sort_by(mut self, input: std::option::Option<crate::model::BotSortBy>) -> Self {
             self.sort_by = input;
             self
@@ -9239,18 +8740,14 @@ pub mod list_bots_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Provides the specification of a filter used to limit the bots in the
-        /// response to only those that match the filter specification. You can
-        /// only specify one filter and one string to filter on.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::BotFilter>) -> Self {
+        /// <p>Provides the specification of a filter used to limit the bots in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
+        pub fn filters(mut self, input: crate::model::BotFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>Provides the specification of a filter used to limit the bots in the
-        /// response to only those that match the filter specification. You can
-        /// only specify one filter and one string to filter on.</p>
+        /// <p>Provides the specification of a filter used to limit the bots in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BotFilter>>,
@@ -9258,34 +8755,22 @@ pub mod list_bots_input {
             self.filters = input;
             self
         }
-        /// <p>The maximum number of bots to return in each page of results. If
-        /// there are fewer results than the maximum page size, only the actual
-        /// number of results are returned.</p>
+        /// <p>The maximum number of bots to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of bots to return in each page of results. If
-        /// there are fewer results than the maximum page size, only the actual
-        /// number of results are returned.</p>
+        /// <p>The maximum number of bots to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>If the response from the <code>ListBots</code> operation contains
-        /// more results than specified in the <code>maxResults</code> parameter, a
-        /// token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response from the <code>ListBots</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response from the <code>ListBots</code> operation contains
-        /// more results than specified in the <code>maxResults</code> parameter, a
-        /// token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response from the <code>ListBots</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9307,7 +8792,7 @@ pub mod list_bots_input {
 #[doc(hidden)]
 pub type ListBotsInputOperationOutputAlias = crate::operation::ListBots;
 #[doc(hidden)]
-pub type ListBotsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListBotsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBotsInput {
     /// Consumes the builder and constructs an Operation<[`ListBots`](crate::operation::ListBots)>
     #[allow(clippy::let_and_return)]
@@ -9318,7 +8803,7 @@ impl ListBotsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBots,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9395,7 +8880,7 @@ impl ListBotsInput {
                     "ListBots",
                     "lexmodelsv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9440,16 +8925,12 @@ pub mod list_bot_versions_input {
             self.bot_id = input;
             self
         }
-        /// <p>Specifies sorting parameters for the list of versions. You can
-        /// specify that the list be sorted by version name in either ascending or
-        /// descending order.</p>
+        /// <p>Specifies sorting parameters for the list of versions. You can specify that the list be sorted by version name in either ascending or descending order.</p>
         pub fn sort_by(mut self, input: crate::model::BotVersionSortBy) -> Self {
             self.sort_by = Some(input);
             self
         }
-        /// <p>Specifies sorting parameters for the list of versions. You can
-        /// specify that the list be sorted by version name in either ascending or
-        /// descending order.</p>
+        /// <p>Specifies sorting parameters for the list of versions. You can specify that the list be sorted by version name in either ascending or descending order.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::BotVersionSortBy>,
@@ -9457,34 +8938,22 @@ pub mod list_bot_versions_input {
             self.sort_by = input;
             self
         }
-        /// <p>The maximum number of versions to return in each page of results. If
-        /// there are fewer results than the max page size, only the actual number
-        /// of results are returned.</p>
+        /// <p>The maximum number of versions to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of versions to return in each page of results. If
-        /// there are fewer results than the max page size, only the actual number
-        /// of results are returned.</p>
+        /// <p>The maximum number of versions to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>If the response to the <code>ListBotVersion</code> operation
-        /// contains more results than specified in the <code>maxResults</code>
-        /// parameter, a token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response to the <code>ListBotVersion</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response to the <code>ListBotVersion</code> operation
-        /// contains more results than specified in the <code>maxResults</code>
-        /// parameter, a token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response to the <code>ListBotVersion</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9508,7 +8977,7 @@ pub mod list_bot_versions_input {
 #[doc(hidden)]
 pub type ListBotVersionsInputOperationOutputAlias = crate::operation::ListBotVersions;
 #[doc(hidden)]
-pub type ListBotVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListBotVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBotVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListBotVersions`](crate::operation::ListBotVersions)>
     #[allow(clippy::let_and_return)]
@@ -9519,7 +8988,7 @@ impl ListBotVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBotVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9615,7 +9084,7 @@ impl ListBotVersionsInput {
             "ListBotVersions",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9650,30 +9119,22 @@ pub mod list_built_in_intents_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the language and locale of the intents to list.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the language and locale of the intents to list.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
         }
-        /// <p>Specifies sorting parameters for the list of built-in intents. You
-        /// can specify that the list be sorted by the built-in intent signature in
-        /// either ascending or descending order.</p>
+        /// <p>Specifies sorting parameters for the list of built-in intents. You can specify that the list be sorted by the built-in intent signature in either ascending or descending order.</p>
         pub fn sort_by(mut self, input: crate::model::BuiltInIntentSortBy) -> Self {
             self.sort_by = Some(input);
             self
         }
-        /// <p>Specifies sorting parameters for the list of built-in intents. You
-        /// can specify that the list be sorted by the built-in intent signature in
-        /// either ascending or descending order.</p>
+        /// <p>Specifies sorting parameters for the list of built-in intents. You can specify that the list be sorted by the built-in intent signature in either ascending or descending order.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::BuiltInIntentSortBy>,
@@ -9681,34 +9142,22 @@ pub mod list_built_in_intents_input {
             self.sort_by = input;
             self
         }
-        /// <p>The maximum number of built-in intents to return in each page of
-        /// results. If there are fewer results than the max page size, only the
-        /// actual number of results are returned.</p>
+        /// <p>The maximum number of built-in intents to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of built-in intents to return in each page of
-        /// results. If there are fewer results than the max page size, only the
-        /// actual number of results are returned.</p>
+        /// <p>The maximum number of built-in intents to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>If the response from the <code>ListBuiltInIntents</code> operation
-        /// contains more results than specified in the <code>maxResults</code>
-        /// parameter, a token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response from the <code>ListBuiltInIntents</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response from the <code>ListBuiltInIntents</code> operation
-        /// contains more results than specified in the <code>maxResults</code>
-        /// parameter, a token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response from the <code>ListBuiltInIntents</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9732,7 +9181,7 @@ pub mod list_built_in_intents_input {
 #[doc(hidden)]
 pub type ListBuiltInIntentsInputOperationOutputAlias = crate::operation::ListBuiltInIntents;
 #[doc(hidden)]
-pub type ListBuiltInIntentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListBuiltInIntentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBuiltInIntentsInput {
     /// Consumes the builder and constructs an Operation<[`ListBuiltInIntents`](crate::operation::ListBuiltInIntents)>
     #[allow(clippy::let_and_return)]
@@ -9743,7 +9192,7 @@ impl ListBuiltInIntentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBuiltInIntents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9843,7 +9292,7 @@ impl ListBuiltInIntentsInput {
             "ListBuiltInIntents",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9878,32 +9327,22 @@ pub mod list_built_in_slot_types_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the language and locale of the slot types to list.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale of the slot types to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the language and locale of the slot types to list.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale of the slot types to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
         }
-        /// <p>Determines the sort order for the response from the
-        /// <code>ListBuiltInSlotTypes</code> operation. You can choose to sort
-        /// by the slot type signature in either ascending or descending
-        /// order.</p>
+        /// <p>Determines the sort order for the response from the <code>ListBuiltInSlotTypes</code> operation. You can choose to sort by the slot type signature in either ascending or descending order.</p>
         pub fn sort_by(mut self, input: crate::model::BuiltInSlotTypeSortBy) -> Self {
             self.sort_by = Some(input);
             self
         }
-        /// <p>Determines the sort order for the response from the
-        /// <code>ListBuiltInSlotTypes</code> operation. You can choose to sort
-        /// by the slot type signature in either ascending or descending
-        /// order.</p>
+        /// <p>Determines the sort order for the response from the <code>ListBuiltInSlotTypes</code> operation. You can choose to sort by the slot type signature in either ascending or descending order.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::BuiltInSlotTypeSortBy>,
@@ -9911,34 +9350,22 @@ pub mod list_built_in_slot_types_input {
             self.sort_by = input;
             self
         }
-        /// <p>The maximum number of built-in slot types to return in each page of
-        /// results. If there are fewer results than the max page size, only the
-        /// actual number of results are returned.</p>
+        /// <p>The maximum number of built-in slot types to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of built-in slot types to return in each page of
-        /// results. If there are fewer results than the max page size, only the
-        /// actual number of results are returned.</p>
+        /// <p>The maximum number of built-in slot types to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>If the response from the <code>ListBuiltInSlotTypes</code> operation
-        /// contains more results than specified in the <code>maxResults</code>
-        /// parameter, a token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response from the <code>ListBuiltInSlotTypes</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response from the <code>ListBuiltInSlotTypes</code> operation
-        /// contains more results than specified in the <code>maxResults</code>
-        /// parameter, a token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response from the <code>ListBuiltInSlotTypes</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9962,7 +9389,7 @@ pub mod list_built_in_slot_types_input {
 #[doc(hidden)]
 pub type ListBuiltInSlotTypesInputOperationOutputAlias = crate::operation::ListBuiltInSlotTypes;
 #[doc(hidden)]
-pub type ListBuiltInSlotTypesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListBuiltInSlotTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBuiltInSlotTypesInput {
     /// Consumes the builder and constructs an Operation<[`ListBuiltInSlotTypes`](crate::operation::ListBuiltInSlotTypes)>
     #[allow(clippy::let_and_return)]
@@ -9973,7 +9400,7 @@ impl ListBuiltInSlotTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBuiltInSlotTypes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10075,7 +9502,7 @@ impl ListBuiltInSlotTypesInput {
             "ListBuiltInSlotTypes",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10132,16 +9559,12 @@ pub mod list_exports_input {
             self.bot_version = input;
             self
         }
-        /// <p>Determines the field that the list of exports is sorted by. You can
-        /// sort by the <code>LastUpdatedDateTime</code> field in ascending or
-        /// descending order.</p>
+        /// <p>Determines the field that the list of exports is sorted by. You can sort by the <code>LastUpdatedDateTime</code> field in ascending or descending order.</p>
         pub fn sort_by(mut self, input: crate::model::ExportSortBy) -> Self {
             self.sort_by = Some(input);
             self
         }
-        /// <p>Determines the field that the list of exports is sorted by. You can
-        /// sort by the <code>LastUpdatedDateTime</code> field in ascending or
-        /// descending order.</p>
+        /// <p>Determines the field that the list of exports is sorted by. You can sort by the <code>LastUpdatedDateTime</code> field in ascending or descending order.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::ExportSortBy>,
@@ -10153,18 +9576,14 @@ pub mod list_exports_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Provides the specification of a filter used to limit the exports in
-        /// the response to only those that match the filter specification. You can
-        /// only specify one filter and one string to filter on.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::ExportFilter>) -> Self {
+        /// <p>Provides the specification of a filter used to limit the exports in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
+        pub fn filters(mut self, input: crate::model::ExportFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>Provides the specification of a filter used to limit the exports in
-        /// the response to only those that match the filter specification. You can
-        /// only specify one filter and one string to filter on.</p>
+        /// <p>Provides the specification of a filter used to limit the exports in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExportFilter>>,
@@ -10172,34 +9591,22 @@ pub mod list_exports_input {
             self.filters = input;
             self
         }
-        /// <p>The maximum number of exports to return in each page of results. If
-        /// there are fewer results than the max page size, only the actual number
-        /// of results are returned.</p>
+        /// <p>The maximum number of exports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of exports to return in each page of results. If
-        /// there are fewer results than the max page size, only the actual number
-        /// of results are returned.</p>
+        /// <p>The maximum number of exports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>If the response from the <code>ListExports</code> operation contains
-        /// more results that specified in the <code>maxResults</code> parameter, a
-        /// token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response from the <code>ListExports</code> operation contains
-        /// more results that specified in the <code>maxResults</code> parameter, a
-        /// token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -10225,7 +9632,7 @@ pub mod list_exports_input {
 #[doc(hidden)]
 pub type ListExportsInputOperationOutputAlias = crate::operation::ListExports;
 #[doc(hidden)]
-pub type ListExportsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListExportsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListExportsInput {
     /// Consumes the builder and constructs an Operation<[`ListExports`](crate::operation::ListExports)>
     #[allow(clippy::let_and_return)]
@@ -10236,7 +9643,7 @@ impl ListExportsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListExports,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10315,7 +9722,7 @@ impl ListExportsInput {
             "ListExports",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10372,16 +9779,12 @@ pub mod list_imports_input {
             self.bot_version = input;
             self
         }
-        /// <p>Determines the field that the list of imports is sorted by. You can
-        /// sort by the <code>LastUpdatedDateTime</code> field in ascending or
-        /// descending order.</p>
+        /// <p>Determines the field that the list of imports is sorted by. You can sort by the <code>LastUpdatedDateTime</code> field in ascending or descending order.</p>
         pub fn sort_by(mut self, input: crate::model::ImportSortBy) -> Self {
             self.sort_by = Some(input);
             self
         }
-        /// <p>Determines the field that the list of imports is sorted by. You can
-        /// sort by the <code>LastUpdatedDateTime</code> field in ascending or
-        /// descending order.</p>
+        /// <p>Determines the field that the list of imports is sorted by. You can sort by the <code>LastUpdatedDateTime</code> field in ascending or descending order.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::ImportSortBy>,
@@ -10393,18 +9796,14 @@ pub mod list_imports_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Provides the specification of a filter used to limit the bots in the
-        /// response to only those that match the filter specification. You can
-        /// only specify one filter and one string to filter on.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::ImportFilter>) -> Self {
+        /// <p>Provides the specification of a filter used to limit the bots in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
+        pub fn filters(mut self, input: crate::model::ImportFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>Provides the specification of a filter used to limit the bots in the
-        /// response to only those that match the filter specification. You can
-        /// only specify one filter and one string to filter on.</p>
+        /// <p>Provides the specification of a filter used to limit the bots in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ImportFilter>>,
@@ -10412,34 +9811,22 @@ pub mod list_imports_input {
             self.filters = input;
             self
         }
-        /// <p>The maximum number of imports to return in each page of results. If
-        /// there are fewer results than the max page size, only the actual number
-        /// of results are returned.</p>
+        /// <p>The maximum number of imports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of imports to return in each page of results. If
-        /// there are fewer results than the max page size, only the actual number
-        /// of results are returned.</p>
+        /// <p>The maximum number of imports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>If the response from the <code>ListImports</code> operation contains
-        /// more results than specified in the <code>maxResults</code> parameter, a
-        /// token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response from the <code>ListImports</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response from the <code>ListImports</code> operation contains
-        /// more results than specified in the <code>maxResults</code> parameter, a
-        /// token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response from the <code>ListImports</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -10465,7 +9852,7 @@ pub mod list_imports_input {
 #[doc(hidden)]
 pub type ListImportsInputOperationOutputAlias = crate::operation::ListImports;
 #[doc(hidden)]
-pub type ListImportsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListImportsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListImportsInput {
     /// Consumes the builder and constructs an Operation<[`ListImports`](crate::operation::ListImports)>
     #[allow(clippy::let_and_return)]
@@ -10476,7 +9863,7 @@ impl ListImportsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListImports,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10555,7 +9942,7 @@ impl ListImportsInput {
             "ListImports",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10613,32 +10000,22 @@ pub mod list_intents_input {
             self.bot_version = input;
             self
         }
-        /// <p>The identifier of the language and locale of the intents to list.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the language and locale of the intents to list.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
         }
-        /// <p>Determines the sort order for the response from the
-        /// <code>ListIntents</code> operation. You can choose to sort by the
-        /// intent name or last updated date in either ascending or descending
-        /// order.</p>
+        /// <p>Determines the sort order for the response from the <code>ListIntents</code> operation. You can choose to sort by the intent name or last updated date in either ascending or descending order.</p>
         pub fn sort_by(mut self, input: crate::model::IntentSortBy) -> Self {
             self.sort_by = Some(input);
             self
         }
-        /// <p>Determines the sort order for the response from the
-        /// <code>ListIntents</code> operation. You can choose to sort by the
-        /// intent name or last updated date in either ascending or descending
-        /// order.</p>
+        /// <p>Determines the sort order for the response from the <code>ListIntents</code> operation. You can choose to sort by the intent name or last updated date in either ascending or descending order.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::IntentSortBy>,
@@ -10650,18 +10027,14 @@ pub mod list_intents_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Provides the specification of a filter used to limit the intents in
-        /// the response to only those that match the filter specification. You can
-        /// only specify one filter and only one string to filter on.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::IntentFilter>) -> Self {
+        /// <p>Provides the specification of a filter used to limit the intents in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.</p>
+        pub fn filters(mut self, input: crate::model::IntentFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>Provides the specification of a filter used to limit the intents in
-        /// the response to only those that match the filter specification. You can
-        /// only specify one filter and only one string to filter on.</p>
+        /// <p>Provides the specification of a filter used to limit the intents in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IntentFilter>>,
@@ -10669,34 +10042,22 @@ pub mod list_intents_input {
             self.filters = input;
             self
         }
-        /// <p>The maximum number of intents to return in each page of results. If
-        /// there are fewer results than the max page size, only the actual number
-        /// of results are returned.</p>
+        /// <p>The maximum number of intents to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of intents to return in each page of results. If
-        /// there are fewer results than the max page size, only the actual number
-        /// of results are returned.</p>
+        /// <p>The maximum number of intents to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>If the response from the <code>ListIntents</code> operation contains
-        /// more results than specified in the <code>maxResults</code> parameter, a
-        /// token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response from the <code>ListIntents</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response from the <code>ListIntents</code> operation contains
-        /// more results than specified in the <code>maxResults</code> parameter, a
-        /// token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response from the <code>ListIntents</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -10723,7 +10084,7 @@ pub mod list_intents_input {
 #[doc(hidden)]
 pub type ListIntentsInputOperationOutputAlias = crate::operation::ListIntents;
 #[doc(hidden)]
-pub type ListIntentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListIntentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListIntentsInput {
     /// Consumes the builder and constructs an Operation<[`ListIntents`](crate::operation::ListIntents)>
     #[allow(clippy::let_and_return)]
@@ -10734,7 +10095,7 @@ impl ListIntentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListIntents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10865,7 +10226,7 @@ impl ListIntentsInput {
             "ListIntents",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10902,14 +10263,12 @@ pub mod list_recommended_intents_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The unique identifier of the bot associated with the recommended
-        /// intents.</p>
+        /// <p>The unique identifier of the bot associated with the recommended intents.</p>
         pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the bot associated with the recommended
-        /// intents.</p>
+        /// <p>The unique identifier of the bot associated with the recommended intents.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -10924,26 +10283,22 @@ pub mod list_recommended_intents_input {
             self.bot_version = input;
             self
         }
-        /// <p>The identifier of the language and locale of the recommended
-        /// intents.</p>
+        /// <p>The identifier of the language and locale of the recommended intents.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the language and locale of the recommended
-        /// intents.</p>
+        /// <p>The identifier of the language and locale of the recommended intents.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
         }
-        /// <p>The identifier of the bot recommendation that contains the
-        /// recommended intents.</p>
+        /// <p>The identifier of the bot recommendation that contains the recommended intents.</p>
         pub fn bot_recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_recommendation_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the bot recommendation that contains the
-        /// recommended intents.</p>
+        /// <p>The identifier of the bot recommendation that contains the recommended intents.</p>
         pub fn set_bot_recommendation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10951,32 +10306,22 @@ pub mod list_recommended_intents_input {
             self.bot_recommendation_id = input;
             self
         }
-        /// <p>If the response from the ListRecommendedIntents operation contains
-        /// more results than specified in the maxResults parameter, a token is
-        /// returned in the response. Use that token in the nextToken parameter to
-        /// return the next page of results.</p>
+        /// <p>If the response from the ListRecommendedIntents operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response from the ListRecommendedIntents operation contains
-        /// more results than specified in the maxResults parameter, a token is
-        /// returned in the response. Use that token in the nextToken parameter to
-        /// return the next page of results.</p>
+        /// <p>If the response from the ListRecommendedIntents operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of bot recommendations to return in each page of
-        /// results. If there are fewer results than the max page size, only the
-        /// actual number of results are returned.</p>
+        /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of bot recommendations to return in each page of
-        /// results. If there are fewer results than the max page size, only the
-        /// actual number of results are returned.</p>
+        /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -11002,7 +10347,7 @@ pub mod list_recommended_intents_input {
 #[doc(hidden)]
 pub type ListRecommendedIntentsInputOperationOutputAlias = crate::operation::ListRecommendedIntents;
 #[doc(hidden)]
-pub type ListRecommendedIntentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRecommendedIntentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRecommendedIntentsInput {
     /// Consumes the builder and constructs an Operation<[`ListRecommendedIntents`](crate::operation::ListRecommendedIntents)>
     #[allow(clippy::let_and_return)]
@@ -11013,7 +10358,7 @@ impl ListRecommendedIntentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRecommendedIntents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11155,7 +10500,7 @@ impl ListRecommendedIntentsInput {
             "ListRecommendedIntents",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11214,16 +10559,12 @@ pub mod list_slots_input {
             self.bot_version = input;
             self
         }
-        /// <p>The identifier of the language and locale of the slots to list. The
-        /// string must match one of the supported locales. For more information,
-        /// see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale of the slots to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the language and locale of the slots to list. The
-        /// string must match one of the supported locales. For more information,
-        /// see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale of the slots to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -11238,18 +10579,12 @@ pub mod list_slots_input {
             self.intent_id = input;
             self
         }
-        /// <p>Determines the sort order for the response from the
-        /// <code>ListSlots</code> operation. You can choose to sort by the slot
-        /// name or last updated date in either ascending or descending
-        /// order.</p>
+        /// <p>Determines the sort order for the response from the <code>ListSlots</code> operation. You can choose to sort by the slot name or last updated date in either ascending or descending order.</p>
         pub fn sort_by(mut self, input: crate::model::SlotSortBy) -> Self {
             self.sort_by = Some(input);
             self
         }
-        /// <p>Determines the sort order for the response from the
-        /// <code>ListSlots</code> operation. You can choose to sort by the slot
-        /// name or last updated date in either ascending or descending
-        /// order.</p>
+        /// <p>Determines the sort order for the response from the <code>ListSlots</code> operation. You can choose to sort by the slot name or last updated date in either ascending or descending order.</p>
         pub fn set_sort_by(mut self, input: std::option::Option<crate::model::SlotSortBy>) -> Self {
             self.sort_by = input;
             self
@@ -11258,18 +10593,14 @@ pub mod list_slots_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Provides the specification of a filter used to limit the slots in
-        /// the response to only those that match the filter specification. You can
-        /// only specify one filter and only one string to filter on.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::SlotFilter>) -> Self {
+        /// <p>Provides the specification of a filter used to limit the slots in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.</p>
+        pub fn filters(mut self, input: crate::model::SlotFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>Provides the specification of a filter used to limit the slots in
-        /// the response to only those that match the filter specification. You can
-        /// only specify one filter and only one string to filter on.</p>
+        /// <p>Provides the specification of a filter used to limit the slots in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SlotFilter>>,
@@ -11277,34 +10608,22 @@ pub mod list_slots_input {
             self.filters = input;
             self
         }
-        /// <p>The maximum number of slots to return in each page of results. If
-        /// there are fewer results than the max page size, only the actual number
-        /// of results are returned.</p>
+        /// <p>The maximum number of slots to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of slots to return in each page of results. If
-        /// there are fewer results than the max page size, only the actual number
-        /// of results are returned.</p>
+        /// <p>The maximum number of slots to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>If the response from the <code>ListSlots</code> operation contains
-        /// more results than specified in the <code>maxResults</code> parameter, a
-        /// token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response from the <code>ListSlots</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response from the <code>ListSlots</code> operation contains
-        /// more results than specified in the <code>maxResults</code> parameter, a
-        /// token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response from the <code>ListSlots</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -11330,7 +10649,7 @@ pub mod list_slots_input {
 #[doc(hidden)]
 pub type ListSlotsInputOperationOutputAlias = crate::operation::ListSlots;
 #[doc(hidden)]
-pub type ListSlotsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSlotsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSlotsInput {
     /// Consumes the builder and constructs an Operation<[`ListSlots`](crate::operation::ListSlots)>
     #[allow(clippy::let_and_return)]
@@ -11341,7 +10660,7 @@ impl ListSlotsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSlots,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11478,7 +10797,7 @@ impl ListSlotsInput {
                     "ListSlots",
                     "lexmodelsv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11516,14 +10835,12 @@ pub mod list_slot_types_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier of the bot that contains the slot
-        /// types.</p>
+        /// <p>The unique identifier of the bot that contains the slot types.</p>
         pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the bot that contains the slot
-        /// types.</p>
+        /// <p>The unique identifier of the bot that contains the slot types.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -11538,32 +10855,22 @@ pub mod list_slot_types_input {
             self.bot_version = input;
             self
         }
-        /// <p>The identifier of the language and locale of the slot types to list.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale of the slot types to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the language and locale of the slot types to list.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale of the slot types to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
         }
-        /// <p>Determines the sort order for the response from the
-        /// <code>ListSlotTypes</code> operation. You can choose to sort by the
-        /// slot type name or last updated date in either ascending or descending
-        /// order.</p>
+        /// <p>Determines the sort order for the response from the <code>ListSlotTypes</code> operation. You can choose to sort by the slot type name or last updated date in either ascending or descending order.</p>
         pub fn sort_by(mut self, input: crate::model::SlotTypeSortBy) -> Self {
             self.sort_by = Some(input);
             self
         }
-        /// <p>Determines the sort order for the response from the
-        /// <code>ListSlotTypes</code> operation. You can choose to sort by the
-        /// slot type name or last updated date in either ascending or descending
-        /// order.</p>
+        /// <p>Determines the sort order for the response from the <code>ListSlotTypes</code> operation. You can choose to sort by the slot type name or last updated date in either ascending or descending order.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::SlotTypeSortBy>,
@@ -11575,18 +10882,14 @@ pub mod list_slot_types_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Provides the specification of a filter used to limit the slot types
-        /// in the response to only those that match the filter specification. You
-        /// can only specify one filter and only one string to filter on.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::SlotTypeFilter>) -> Self {
+        /// <p>Provides the specification of a filter used to limit the slot types in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.</p>
+        pub fn filters(mut self, input: crate::model::SlotTypeFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>Provides the specification of a filter used to limit the slot types
-        /// in the response to only those that match the filter specification. You
-        /// can only specify one filter and only one string to filter on.</p>
+        /// <p>Provides the specification of a filter used to limit the slot types in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SlotTypeFilter>>,
@@ -11594,34 +10897,22 @@ pub mod list_slot_types_input {
             self.filters = input;
             self
         }
-        /// <p>The maximum number of slot types to return in each page of results.
-        /// If there are fewer results than the max page size, only the actual
-        /// number of results are returned.</p>
+        /// <p>The maximum number of slot types to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of slot types to return in each page of results.
-        /// If there are fewer results than the max page size, only the actual
-        /// number of results are returned.</p>
+        /// <p>The maximum number of slot types to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>If the response from the <code>ListSlotTypes</code> operation
-        /// contains more results than specified in the <code>maxResults</code>
-        /// parameter, a token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response from the <code>ListSlotTypes</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response from the <code>ListSlotTypes</code> operation
-        /// contains more results than specified in the <code>maxResults</code>
-        /// parameter, a token is returned in the response. Use that token in the
-        /// <code>nextToken</code> parameter to return the next page of
-        /// results.</p>
+        /// <p>If the response from the <code>ListSlotTypes</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -11648,7 +10939,7 @@ pub mod list_slot_types_input {
 #[doc(hidden)]
 pub type ListSlotTypesInputOperationOutputAlias = crate::operation::ListSlotTypes;
 #[doc(hidden)]
-pub type ListSlotTypesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSlotTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSlotTypesInput {
     /// Consumes the builder and constructs an Operation<[`ListSlotTypes`](crate::operation::ListSlotTypes)>
     #[allow(clippy::let_and_return)]
@@ -11659,7 +10950,7 @@ impl ListSlotTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSlotTypes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11791,7 +11082,7 @@ impl ListSlotTypesInput {
             "ListSlotTypes",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11823,14 +11114,12 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource to get a list of tags
-        /// for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to get a list of tags for.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to get a list of tags
-        /// for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to get a list of tags for.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -11851,7 +11140,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -11862,7 +11151,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11952,7 +11241,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11984,54 +11273,42 @@ pub mod search_associated_transcripts_input {
         pub(crate) next_index: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The unique identifier of the bot associated with the transcripts
-        /// that you are searching.</p>
+        /// <p>The unique identifier of the bot associated with the transcripts that you are searching.</p>
         pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the bot associated with the transcripts
-        /// that you are searching.</p>
+        /// <p>The unique identifier of the bot associated with the transcripts that you are searching.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
         }
-        /// <p>The version of the bot containing the transcripts that you are
-        /// searching.</p>
+        /// <p>The version of the bot containing the transcripts that you are searching.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_version = Some(input.into());
             self
         }
-        /// <p>The version of the bot containing the transcripts that you are
-        /// searching.</p>
+        /// <p>The version of the bot containing the transcripts that you are searching.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
         }
-        /// <p>The identifier of the language and locale of the transcripts to
-        /// search. The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
-        /// </p>
+        /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the language and locale of the transcripts to
-        /// search. The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
-        /// </p>
+        /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
         }
-        /// <p>The unique identifier of the bot recommendation associated with the
-        /// transcripts to search.</p>
+        /// <p>The unique identifier of the bot recommendation associated with the transcripts to search.</p>
         pub fn bot_recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_recommendation_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the bot recommendation associated with the
-        /// transcripts to search.</p>
+        /// <p>The unique identifier of the bot recommendation associated with the transcripts to search.</p>
         pub fn set_bot_recommendation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12039,14 +11316,12 @@ pub mod search_associated_transcripts_input {
             self.bot_recommendation_id = input;
             self
         }
-        /// <p>How SearchResults are ordered. Valid values are Ascending or
-        /// Descending. The default is Descending.</p>
+        /// <p>How SearchResults are ordered. Valid values are Ascending or Descending. The default is Descending.</p>
         pub fn search_order(mut self, input: crate::model::SearchOrder) -> Self {
             self.search_order = Some(input);
             self
         }
-        /// <p>How SearchResults are ordered. Valid values are Ascending or
-        /// Descending. The default is Descending.</p>
+        /// <p>How SearchResults are ordered. Valid values are Ascending or Descending. The default is Descending.</p>
         pub fn set_search_order(
             mut self,
             input: std::option::Option<crate::model::SearchOrder>,
@@ -12059,12 +11334,9 @@ pub mod search_associated_transcripts_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>A list of filter objects.</p>
-        pub fn filters(
-            mut self,
-            input: impl Into<crate::model::AssociatedTranscriptFilter>,
-        ) -> Self {
+        pub fn filters(mut self, input: crate::model::AssociatedTranscriptFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -12076,32 +11348,22 @@ pub mod search_associated_transcripts_input {
             self.filters = input;
             self
         }
-        /// <p>The maximum number of bot recommendations to return in each page of
-        /// results. If there are fewer results than the max page size, only the
-        /// actual number of results are returned.</p>
+        /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of bot recommendations to return in each page of
-        /// results. If there are fewer results than the max page size, only the
-        /// actual number of results are returned.</p>
+        /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>If the response from the SearchAssociatedTranscriptsRequest
-        /// operation contains more results than specified in the maxResults
-        /// parameter, an index is returned in the response. Use that index in the
-        /// nextIndex parameter to return the next page of results.</p>
+        /// <p>If the response from the SearchAssociatedTranscriptsRequest operation contains more results than specified in the maxResults parameter, an index is returned in the response. Use that index in the nextIndex parameter to return the next page of results.</p>
         pub fn next_index(mut self, input: i32) -> Self {
             self.next_index = Some(input);
             self
         }
-        /// <p>If the response from the SearchAssociatedTranscriptsRequest
-        /// operation contains more results than specified in the maxResults
-        /// parameter, an index is returned in the response. Use that index in the
-        /// nextIndex parameter to return the next page of results.</p>
+        /// <p>If the response from the SearchAssociatedTranscriptsRequest operation contains more results than specified in the maxResults parameter, an index is returned in the response. Use that index in the nextIndex parameter to return the next page of results.</p>
         pub fn set_next_index(mut self, input: std::option::Option<i32>) -> Self {
             self.next_index = input;
             self
@@ -12130,7 +11392,7 @@ pub mod search_associated_transcripts_input {
 pub type SearchAssociatedTranscriptsInputOperationOutputAlias =
     crate::operation::SearchAssociatedTranscripts;
 #[doc(hidden)]
-pub type SearchAssociatedTranscriptsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchAssociatedTranscriptsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchAssociatedTranscriptsInput {
     /// Consumes the builder and constructs an Operation<[`SearchAssociatedTranscripts`](crate::operation::SearchAssociatedTranscripts)>
     #[allow(clippy::let_and_return)]
@@ -12141,7 +11403,7 @@ impl SearchAssociatedTranscriptsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchAssociatedTranscripts,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12282,7 +11544,7 @@ impl SearchAssociatedTranscriptsInput {
             "SearchAssociatedTranscripts",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12319,14 +11581,12 @@ pub mod start_bot_recommendation_input {
         pub(crate) encryption_setting: std::option::Option<crate::model::EncryptionSetting>,
     }
     impl Builder {
-        /// <p>The unique identifier of the bot containing the bot
-        /// recommendation.</p>
+        /// <p>The unique identifier of the bot containing the bot recommendation.</p>
         pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the bot containing the bot
-        /// recommendation.</p>
+        /// <p>The unique identifier of the bot containing the bot recommendation.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -12341,24 +11601,17 @@ pub mod start_bot_recommendation_input {
             self.bot_version = input;
             self
         }
-        /// <p>The identifier of the language and locale of the bot recommendation
-        /// to start. The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
-        /// </p>
+        /// <p>The identifier of the language and locale of the bot recommendation to start. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the language and locale of the bot recommendation
-        /// to start. The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
-        /// </p>
+        /// <p>The identifier of the language and locale of the bot recommendation to start. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
         }
-        /// <p>The object representing the Amazon S3 bucket containing the transcript,
-        /// as well as the associated metadata.</p>
+        /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
         pub fn transcript_source_setting(
             mut self,
             input: crate::model::TranscriptSourceSetting,
@@ -12366,8 +11619,7 @@ pub mod start_bot_recommendation_input {
             self.transcript_source_setting = Some(input);
             self
         }
-        /// <p>The object representing the Amazon S3 bucket containing the transcript,
-        /// as well as the associated metadata.</p>
+        /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
         pub fn set_transcript_source_setting(
             mut self,
             input: std::option::Option<crate::model::TranscriptSourceSetting>,
@@ -12375,16 +11627,12 @@ pub mod start_bot_recommendation_input {
             self.transcript_source_setting = input;
             self
         }
-        /// <p>The object representing the passwords that will be used to encrypt
-        /// the data related to the bot recommendation results, as well as the KMS
-        /// key ARN used to encrypt the associated metadata.</p>
+        /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
         pub fn encryption_setting(mut self, input: crate::model::EncryptionSetting) -> Self {
             self.encryption_setting = Some(input);
             self
         }
-        /// <p>The object representing the passwords that will be used to encrypt
-        /// the data related to the bot recommendation results, as well as the KMS
-        /// key ARN used to encrypt the associated metadata.</p>
+        /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
         pub fn set_encryption_setting(
             mut self,
             input: std::option::Option<crate::model::EncryptionSetting>,
@@ -12412,7 +11660,7 @@ pub mod start_bot_recommendation_input {
 #[doc(hidden)]
 pub type StartBotRecommendationInputOperationOutputAlias = crate::operation::StartBotRecommendation;
 #[doc(hidden)]
-pub type StartBotRecommendationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartBotRecommendationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartBotRecommendationInput {
     /// Consumes the builder and constructs an Operation<[`StartBotRecommendation`](crate::operation::StartBotRecommendation)>
     #[allow(clippy::let_and_return)]
@@ -12423,7 +11671,7 @@ impl StartBotRecommendationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartBotRecommendation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12557,7 +11805,7 @@ impl StartBotRecommendationInput {
             "StartBotRecommendation",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12593,14 +11841,12 @@ pub mod start_import_input {
         pub(crate) file_password: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier for the import. It is included in the response
-        /// from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
+        /// <p>The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
         pub fn import_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.import_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the import. It is included in the response
-        /// from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
+        /// <p>The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
         pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.import_id = input;
             self
@@ -12621,18 +11867,12 @@ pub mod start_import_input {
             self.resource_specification = input;
             self
         }
-        /// <p>The strategy to use when there is a name conflict between the
-        /// imported resource and an existing resource. When the merge strategy is
-        /// <code>FailOnConflict</code> existing resources are not overwritten
-        /// and the import fails.</p>
+        /// <p>The strategy to use when there is a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
         pub fn merge_strategy(mut self, input: crate::model::MergeStrategy) -> Self {
             self.merge_strategy = Some(input);
             self
         }
-        /// <p>The strategy to use when there is a name conflict between the
-        /// imported resource and an existing resource. When the merge strategy is
-        /// <code>FailOnConflict</code> existing resources are not overwritten
-        /// and the import fails.</p>
+        /// <p>The strategy to use when there is a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
         pub fn set_merge_strategy(
             mut self,
             input: std::option::Option<crate::model::MergeStrategy>,
@@ -12640,16 +11880,12 @@ pub mod start_import_input {
             self.merge_strategy = input;
             self
         }
-        /// <p>The password used to encrypt the zip archive that contains the bot
-        /// or bot locale definition. You should always encrypt the zip archive to
-        /// protect it during transit between your site and Amazon Lex.</p>
+        /// <p>The password used to encrypt the zip archive that contains the bot or bot locale definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.</p>
         pub fn file_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_password = Some(input.into());
             self
         }
-        /// <p>The password used to encrypt the zip archive that contains the bot
-        /// or bot locale definition. You should always encrypt the zip archive to
-        /// protect it during transit between your site and Amazon Lex.</p>
+        /// <p>The password used to encrypt the zip archive that contains the bot or bot locale definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.</p>
         pub fn set_file_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12676,7 +11912,7 @@ pub mod start_import_input {
 #[doc(hidden)]
 pub type StartImportInputOperationOutputAlias = crate::operation::StartImport;
 #[doc(hidden)]
-pub type StartImportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartImportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartImportInput {
     /// Consumes the builder and constructs an Operation<[`StartImport`](crate::operation::StartImport)>
     #[allow(clippy::let_and_return)]
@@ -12687,7 +11923,7 @@ impl StartImportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartImport,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12766,7 +12002,7 @@ impl StartImportInput {
             "StartImport",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12801,14 +12037,12 @@ pub mod tag_resource_input {
         >,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel
-        /// to tag.</p>
+        /// <p>The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel to tag.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel
-        /// to tag.</p>
+        /// <p>The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel to tag.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -12817,8 +12051,7 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tag keys to add to the resource. If a tag key already
-        /// exists, the existing value is replaced with the new value.</p>
+        /// <p>A list of tag keys to add to the resource. If a tag key already exists, the existing value is replaced with the new value.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -12829,8 +12062,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A list of tag keys to add to the resource. If a tag key already
-        /// exists, the existing value is replaced with the new value.</p>
+        /// <p>A list of tag keys to add to the resource. If a tag key already exists, the existing value is replaced with the new value.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -12857,7 +12089,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -12868,7 +12100,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12963,7 +12195,7 @@ impl TagResourceInput {
             "TagResource",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12996,14 +12228,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource to remove the tags
-        /// from.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to remove the tags
-        /// from.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -13012,16 +12242,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>A list of tag keys to remove from the resource. If a tag key does
-        /// not exist on the resource, it is ignored.</p>
+        /// <p>A list of tag keys to remove from the resource. If a tag key does not exist on the resource, it is ignored.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>A list of tag keys to remove from the resource. If a tag key does
-        /// not exist on the resource, it is ignored.</p>
+        /// <p>A list of tag keys to remove from the resource. If a tag key does not exist on the resource, it is ignored.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13046,7 +12274,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -13057,7 +12285,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13160,7 +12388,7 @@ impl UntagResourceInput {
             "UntagResource",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13189,26 +12417,22 @@ pub mod update_bot_input {
         pub(crate) idle_session_ttl_in_seconds: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The unique identifier of the bot to update. This identifier is
-        /// returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
+        /// <p>The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
         pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the bot to update. This identifier is
-        /// returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
+        /// <p>The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
         }
-        /// <p>The new name of the bot. The name must be unique in the account that
-        /// creates the bot.</p>
+        /// <p>The new name of the bot. The name must be unique in the account that creates the bot.</p>
         pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_name = Some(input.into());
             self
         }
-        /// <p>The new name of the bot. The name must be unique in the account that
-        /// creates the bot.</p>
+        /// <p>The new name of the bot. The name must be unique in the account that creates the bot.</p>
         pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_name = input;
             self
@@ -13223,26 +12447,22 @@ pub mod update_bot_input {
             self.description = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions
-        /// to access the bot.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the bot.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions
-        /// to access the bot.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the bot.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>Provides information on additional privacy protections Amazon Lex should
-        /// use with the bot's data.</p>
+        /// <p>Provides information on additional privacy protections Amazon Lex should use with the bot's data.</p>
         pub fn data_privacy(mut self, input: crate::model::DataPrivacy) -> Self {
             self.data_privacy = Some(input);
             self
         }
-        /// <p>Provides information on additional privacy protections Amazon Lex should
-        /// use with the bot's data.</p>
+        /// <p>Provides information on additional privacy protections Amazon Lex should use with the bot's data.</p>
         pub fn set_data_privacy(
             mut self,
             input: std::option::Option<crate::model::DataPrivacy>,
@@ -13250,24 +12470,16 @@ pub mod update_bot_input {
             self.data_privacy = input;
             self
         }
-        /// <p>The time, in seconds, that Amazon Lex should keep information about a
-        /// user's conversation with the bot.</p>
-        /// <p>A user interaction remains active for the amount of time specified.
-        /// If no conversation occurs during this time, the session expires and
-        /// Amazon Lex deletes any data provided before the timeout.</p>
-        /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours)
-        /// seconds.</p>
+        /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.</p>
+        /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
+        /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
         pub fn idle_session_ttl_in_seconds(mut self, input: i32) -> Self {
             self.idle_session_ttl_in_seconds = Some(input);
             self
         }
-        /// <p>The time, in seconds, that Amazon Lex should keep information about a
-        /// user's conversation with the bot.</p>
-        /// <p>A user interaction remains active for the amount of time specified.
-        /// If no conversation occurs during this time, the session expires and
-        /// Amazon Lex deletes any data provided before the timeout.</p>
-        /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours)
-        /// seconds.</p>
+        /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.</p>
+        /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
+        /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
         pub fn set_idle_session_ttl_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.idle_session_ttl_in_seconds = input;
             self
@@ -13291,7 +12503,7 @@ pub mod update_bot_input {
 #[doc(hidden)]
 pub type UpdateBotInputOperationOutputAlias = crate::operation::UpdateBot;
 #[doc(hidden)]
-pub type UpdateBotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateBotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBotInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBot`](crate::operation::UpdateBot)>
     #[allow(clippy::let_and_return)]
@@ -13302,7 +12514,7 @@ impl UpdateBotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateBot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13394,7 +12606,7 @@ impl UpdateBotInput {
                     "UpdateBot",
                     "lexmodelsv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13484,20 +12696,18 @@ pub mod update_bot_alias_input {
         ///
         /// To override the contents of this collection use [`set_bot_alias_locale_settings`](Self::set_bot_alias_locale_settings).
         ///
-        /// <p>The new Lambda functions to use in each locale for the bot
-        /// alias.</p>
+        /// <p>The new Lambda functions to use in each locale for the bot alias.</p>
         pub fn bot_alias_locale_settings(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::BotAliasLocaleSettings>,
+            v: crate::model::BotAliasLocaleSettings,
         ) -> Self {
             let mut hash_map = self.bot_alias_locale_settings.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.bot_alias_locale_settings = Some(hash_map);
             self
         }
-        /// <p>The new Lambda functions to use in each locale for the bot
-        /// alias.</p>
+        /// <p>The new Lambda functions to use in each locale for the bot alias.</p>
         pub fn set_bot_alias_locale_settings(
             mut self,
             input: std::option::Option<
@@ -13510,8 +12720,7 @@ pub mod update_bot_alias_input {
             self.bot_alias_locale_settings = input;
             self
         }
-        /// <p>The new settings for storing conversation logs in Amazon CloudWatch Logs and
-        /// Amazon S3 buckets.</p>
+        /// <p>The new settings for storing conversation logs in Amazon CloudWatch Logs and Amazon S3 buckets.</p>
         pub fn conversation_log_settings(
             mut self,
             input: crate::model::ConversationLogSettings,
@@ -13519,8 +12728,7 @@ pub mod update_bot_alias_input {
             self.conversation_log_settings = Some(input);
             self
         }
-        /// <p>The new settings for storing conversation logs in Amazon CloudWatch Logs and
-        /// Amazon S3 buckets.</p>
+        /// <p>The new settings for storing conversation logs in Amazon CloudWatch Logs and Amazon S3 buckets.</p>
         pub fn set_conversation_log_settings(
             mut self,
             input: std::option::Option<crate::model::ConversationLogSettings>,
@@ -13528,8 +12736,7 @@ pub mod update_bot_alias_input {
             self.conversation_log_settings = input;
             self
         }
-        /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of
-        /// user utterances.</p>
+        /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
         pub fn sentiment_analysis_settings(
             mut self,
             input: crate::model::SentimentAnalysisSettings,
@@ -13537,8 +12744,7 @@ pub mod update_bot_alias_input {
             self.sentiment_analysis_settings = Some(input);
             self
         }
-        /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of
-        /// user utterances.</p>
+        /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
         pub fn set_sentiment_analysis_settings(
             mut self,
             input: std::option::Option<crate::model::SentimentAnalysisSettings>,
@@ -13579,7 +12785,7 @@ pub mod update_bot_alias_input {
 #[doc(hidden)]
 pub type UpdateBotAliasInputOperationOutputAlias = crate::operation::UpdateBotAlias;
 #[doc(hidden)]
-pub type UpdateBotAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateBotAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBotAliasInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBotAlias`](crate::operation::UpdateBotAlias)>
     #[allow(clippy::let_and_return)]
@@ -13590,7 +12796,7 @@ impl UpdateBotAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateBotAlias,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13706,7 +12912,7 @@ impl UpdateBotAliasInput {
             "UpdateBotAlias",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13753,26 +12959,22 @@ pub mod update_bot_locale_input {
             self.bot_id = input;
             self
         }
-        /// <p>The version of the bot that contains the locale to be updated. The
-        /// version can only be the <code>DRAFT</code> version.</p>
+        /// <p>The version of the bot that contains the locale to be updated. The version can only be the <code>DRAFT</code> version.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_version = Some(input.into());
             self
         }
-        /// <p>The version of the bot that contains the locale to be updated. The
-        /// version can only be the <code>DRAFT</code> version.</p>
+        /// <p>The version of the bot that contains the locale to be updated. The version can only be the <code>DRAFT</code> version.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
         }
-        /// <p>The identifier of the language and locale to update. The string must
-        /// match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the language and locale to update. The string must
-        /// match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -13787,18 +12989,12 @@ pub mod update_bot_locale_input {
             self.description = input;
             self
         }
-        /// <p>The new confidence threshold where Amazon Lex inserts the
-        /// <code>AMAZON.FallbackIntent</code> and
-        /// <code>AMAZON.KendraSearchIntent</code> intents in the list of
-        /// possible intents for an utterance.</p>
+        /// <p>The new confidence threshold where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents in the list of possible intents for an utterance.</p>
         pub fn nlu_intent_confidence_threshold(mut self, input: f64) -> Self {
             self.nlu_intent_confidence_threshold = Some(input);
             self
         }
-        /// <p>The new confidence threshold where Amazon Lex inserts the
-        /// <code>AMAZON.FallbackIntent</code> and
-        /// <code>AMAZON.KendraSearchIntent</code> intents in the list of
-        /// possible intents for an utterance.</p>
+        /// <p>The new confidence threshold where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents in the list of possible intents for an utterance.</p>
         pub fn set_nlu_intent_confidence_threshold(
             mut self,
             input: std::option::Option<f64>,
@@ -13806,14 +13002,12 @@ pub mod update_bot_locale_input {
             self.nlu_intent_confidence_threshold = input;
             self
         }
-        /// <p>The new Amazon Polly voice Amazon Lex should use for voice interaction with the
-        /// user.</p>
+        /// <p>The new Amazon Polly voice Amazon Lex should use for voice interaction with the user.</p>
         pub fn voice_settings(mut self, input: crate::model::VoiceSettings) -> Self {
             self.voice_settings = Some(input);
             self
         }
-        /// <p>The new Amazon Polly voice Amazon Lex should use for voice interaction with the
-        /// user.</p>
+        /// <p>The new Amazon Polly voice Amazon Lex should use for voice interaction with the user.</p>
         pub fn set_voice_settings(
             mut self,
             input: std::option::Option<crate::model::VoiceSettings>,
@@ -13842,7 +13036,7 @@ pub mod update_bot_locale_input {
 #[doc(hidden)]
 pub type UpdateBotLocaleInputOperationOutputAlias = crate::operation::UpdateBotLocale;
 #[doc(hidden)]
-pub type UpdateBotLocaleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateBotLocaleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBotLocaleInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBotLocale`](crate::operation::UpdateBotLocale)>
     #[allow(clippy::let_and_return)]
@@ -13853,7 +13047,7 @@ impl UpdateBotLocaleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateBotLocale,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13985,7 +13179,7 @@ impl UpdateBotLocaleInput {
             "UpdateBotLocale",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14021,54 +13215,42 @@ pub mod update_bot_recommendation_input {
         pub(crate) encryption_setting: std::option::Option<crate::model::EncryptionSetting>,
     }
     impl Builder {
-        /// <p>The unique identifier of the bot containing the bot recommendation
-        /// to be updated.</p>
+        /// <p>The unique identifier of the bot containing the bot recommendation to be updated.</p>
         pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the bot containing the bot recommendation
-        /// to be updated.</p>
+        /// <p>The unique identifier of the bot containing the bot recommendation to be updated.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
         }
-        /// <p>The version of the bot containing the bot recommendation to be
-        /// updated.</p>
+        /// <p>The version of the bot containing the bot recommendation to be updated.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_version = Some(input.into());
             self
         }
-        /// <p>The version of the bot containing the bot recommendation to be
-        /// updated.</p>
+        /// <p>The version of the bot containing the bot recommendation to be updated.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
         }
-        /// <p>The identifier of the language and locale of the bot recommendation
-        /// to update. The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
-        /// </p>
+        /// <p>The identifier of the language and locale of the bot recommendation to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the language and locale of the bot recommendation
-        /// to update. The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
-        /// </p>
+        /// <p>The identifier of the language and locale of the bot recommendation to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
         }
-        /// <p>The unique identifier of the bot recommendation to be
-        /// updated.</p>
+        /// <p>The unique identifier of the bot recommendation to be updated.</p>
         pub fn bot_recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_recommendation_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the bot recommendation to be
-        /// updated.</p>
+        /// <p>The unique identifier of the bot recommendation to be updated.</p>
         pub fn set_bot_recommendation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14076,16 +13258,12 @@ pub mod update_bot_recommendation_input {
             self.bot_recommendation_id = input;
             self
         }
-        /// <p>The object representing the passwords that will be used to encrypt
-        /// the data related to the bot recommendation results, as well as the KMS
-        /// key ARN used to encrypt the associated metadata.</p>
+        /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
         pub fn encryption_setting(mut self, input: crate::model::EncryptionSetting) -> Self {
             self.encryption_setting = Some(input);
             self
         }
-        /// <p>The object representing the passwords that will be used to encrypt
-        /// the data related to the bot recommendation results, as well as the KMS
-        /// key ARN used to encrypt the associated metadata.</p>
+        /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
         pub fn set_encryption_setting(
             mut self,
             input: std::option::Option<crate::model::EncryptionSetting>,
@@ -14114,7 +13292,7 @@ pub mod update_bot_recommendation_input {
 pub type UpdateBotRecommendationInputOperationOutputAlias =
     crate::operation::UpdateBotRecommendation;
 #[doc(hidden)]
-pub type UpdateBotRecommendationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateBotRecommendationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBotRecommendationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBotRecommendation`](crate::operation::UpdateBotRecommendation)>
     #[allow(clippy::let_and_return)]
@@ -14125,7 +13303,7 @@ impl UpdateBotRecommendationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateBotRecommendation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14267,7 +13445,7 @@ impl UpdateBotRecommendationInput {
             "UpdateBotRecommendation",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14340,7 +13518,7 @@ pub mod update_export_input {
 #[doc(hidden)]
 pub type UpdateExportInputOperationOutputAlias = crate::operation::UpdateExport;
 #[doc(hidden)]
-pub type UpdateExportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateExportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateExportInput {
     /// Consumes the builder and constructs an Operation<[`UpdateExport`](crate::operation::UpdateExport)>
     #[allow(clippy::let_and_return)]
@@ -14351,7 +13529,7 @@ impl UpdateExportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateExport,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14446,7 +13624,7 @@ impl UpdateExportInput {
             "UpdateExport",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14526,14 +13704,12 @@ pub mod update_intent_input {
             self.description = input;
             self
         }
-        /// <p>The signature of the new built-in intent to use as the parent of
-        /// this intent.</p>
+        /// <p>The signature of the new built-in intent to use as the parent of this intent.</p>
         pub fn parent_intent_signature(mut self, input: impl Into<std::string::String>) -> Self {
             self.parent_intent_signature = Some(input.into());
             self
         }
-        /// <p>The signature of the new built-in intent to use as the parent of
-        /// this intent.</p>
+        /// <p>The signature of the new built-in intent to use as the parent of this intent.</p>
         pub fn set_parent_intent_signature(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14546,12 +13722,9 @@ pub mod update_intent_input {
         /// To override the contents of this collection use [`set_sample_utterances`](Self::set_sample_utterances).
         ///
         /// <p>New utterances used to invoke the intent.</p>
-        pub fn sample_utterances(
-            mut self,
-            input: impl Into<crate::model::SampleUtterance>,
-        ) -> Self {
+        pub fn sample_utterances(mut self, input: crate::model::SampleUtterance) -> Self {
             let mut v = self.sample_utterances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sample_utterances = Some(v);
             self
         }
@@ -14563,14 +13736,12 @@ pub mod update_intent_input {
             self.sample_utterances = input;
             self
         }
-        /// <p>The new Lambda function to use between each turn of the conversation
-        /// with the bot.</p>
+        /// <p>The new Lambda function to use between each turn of the conversation with the bot.</p>
         pub fn dialog_code_hook(mut self, input: crate::model::DialogCodeHookSettings) -> Self {
             self.dialog_code_hook = Some(input);
             self
         }
-        /// <p>The new Lambda function to use between each turn of the conversation
-        /// with the bot.</p>
+        /// <p>The new Lambda function to use between each turn of the conversation with the bot.</p>
         pub fn set_dialog_code_hook(
             mut self,
             input: std::option::Option<crate::model::DialogCodeHookSettings>,
@@ -14578,8 +13749,7 @@ pub mod update_intent_input {
             self.dialog_code_hook = input;
             self
         }
-        /// <p>The new Lambda function to call when all of the intents required
-        /// slots are provided and the intent is ready for fulfillment.</p>
+        /// <p>The new Lambda function to call when all of the intents required slots are provided and the intent is ready for fulfillment.</p>
         pub fn fulfillment_code_hook(
             mut self,
             input: crate::model::FulfillmentCodeHookSettings,
@@ -14587,8 +13757,7 @@ pub mod update_intent_input {
             self.fulfillment_code_hook = Some(input);
             self
         }
-        /// <p>The new Lambda function to call when all of the intents required
-        /// slots are provided and the intent is ready for fulfillment.</p>
+        /// <p>The new Lambda function to call when all of the intents required slots are provided and the intent is ready for fulfillment.</p>
         pub fn set_fulfillment_code_hook(
             mut self,
             input: std::option::Option<crate::model::FulfillmentCodeHookSettings>,
@@ -14600,16 +13769,14 @@ pub mod update_intent_input {
         ///
         /// To override the contents of this collection use [`set_slot_priorities`](Self::set_slot_priorities).
         ///
-        /// <p>A new list of slots and their priorities that are contained by the
-        /// intent.</p>
-        pub fn slot_priorities(mut self, input: impl Into<crate::model::SlotPriority>) -> Self {
+        /// <p>A new list of slots and their priorities that are contained by the intent.</p>
+        pub fn slot_priorities(mut self, input: crate::model::SlotPriority) -> Self {
             let mut v = self.slot_priorities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.slot_priorities = Some(v);
             self
         }
-        /// <p>A new list of slots and their priorities that are contained by the
-        /// intent.</p>
+        /// <p>A new list of slots and their priorities that are contained by the intent.</p>
         pub fn set_slot_priorities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SlotPriority>>,
@@ -14617,8 +13784,7 @@ pub mod update_intent_input {
             self.slot_priorities = input;
             self
         }
-        /// <p>New prompts that Amazon Lex sends to the user to confirm the completion
-        /// of an intent.</p>
+        /// <p>New prompts that Amazon Lex sends to the user to confirm the completion of an intent.</p>
         pub fn intent_confirmation_setting(
             mut self,
             input: crate::model::IntentConfirmationSetting,
@@ -14626,8 +13792,7 @@ pub mod update_intent_input {
             self.intent_confirmation_setting = Some(input);
             self
         }
-        /// <p>New prompts that Amazon Lex sends to the user to confirm the completion
-        /// of an intent.</p>
+        /// <p>New prompts that Amazon Lex sends to the user to confirm the completion of an intent.</p>
         pub fn set_intent_confirmation_setting(
             mut self,
             input: std::option::Option<crate::model::IntentConfirmationSetting>,
@@ -14635,14 +13800,12 @@ pub mod update_intent_input {
             self.intent_confirmation_setting = input;
             self
         }
-        /// <p>The new response that Amazon Lex sends the user when the intent is
-        /// closed.</p>
+        /// <p>The new response that Amazon Lex sends the user when the intent is closed.</p>
         pub fn intent_closing_setting(mut self, input: crate::model::IntentClosingSetting) -> Self {
             self.intent_closing_setting = Some(input);
             self
         }
-        /// <p>The new response that Amazon Lex sends the user when the intent is
-        /// closed.</p>
+        /// <p>The new response that Amazon Lex sends the user when the intent is closed.</p>
         pub fn set_intent_closing_setting(
             mut self,
             input: std::option::Option<crate::model::IntentClosingSetting>,
@@ -14654,16 +13817,14 @@ pub mod update_intent_input {
         ///
         /// To override the contents of this collection use [`set_input_contexts`](Self::set_input_contexts).
         ///
-        /// <p>A new list of contexts that must be active in order for Amazon Lex to
-        /// consider the intent.</p>
-        pub fn input_contexts(mut self, input: impl Into<crate::model::InputContext>) -> Self {
+        /// <p>A new list of contexts that must be active in order for Amazon Lex to consider the intent.</p>
+        pub fn input_contexts(mut self, input: crate::model::InputContext) -> Self {
             let mut v = self.input_contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_contexts = Some(v);
             self
         }
-        /// <p>A new list of contexts that must be active in order for Amazon Lex to
-        /// consider the intent.</p>
+        /// <p>A new list of contexts that must be active in order for Amazon Lex to consider the intent.</p>
         pub fn set_input_contexts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputContext>>,
@@ -14675,16 +13836,14 @@ pub mod update_intent_input {
         ///
         /// To override the contents of this collection use [`set_output_contexts`](Self::set_output_contexts).
         ///
-        /// <p>A new list of contexts that Amazon Lex activates when the intent is
-        /// fulfilled.</p>
-        pub fn output_contexts(mut self, input: impl Into<crate::model::OutputContext>) -> Self {
+        /// <p>A new list of contexts that Amazon Lex activates when the intent is fulfilled.</p>
+        pub fn output_contexts(mut self, input: crate::model::OutputContext) -> Self {
             let mut v = self.output_contexts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.output_contexts = Some(v);
             self
         }
-        /// <p>A new list of contexts that Amazon Lex activates when the intent is
-        /// fulfilled.</p>
+        /// <p>A new list of contexts that Amazon Lex activates when the intent is fulfilled.</p>
         pub fn set_output_contexts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OutputContext>>,
@@ -14715,28 +13874,22 @@ pub mod update_intent_input {
             self.bot_id = input;
             self
         }
-        /// <p>The version of the bot that contains the intent. Must be
-        /// <code>DRAFT</code>.</p>
+        /// <p>The version of the bot that contains the intent. Must be <code>DRAFT</code>.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_version = Some(input.into());
             self
         }
-        /// <p>The version of the bot that contains the intent. Must be
-        /// <code>DRAFT</code>.</p>
+        /// <p>The version of the bot that contains the intent. Must be <code>DRAFT</code>.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
         }
-        /// <p>The identifier of the language and locale where this intent is used.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale where this intent is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the language and locale where this intent is used.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale where this intent is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -14772,7 +13925,7 @@ pub mod update_intent_input {
 #[doc(hidden)]
 pub type UpdateIntentInputOperationOutputAlias = crate::operation::UpdateIntent;
 #[doc(hidden)]
-pub type UpdateIntentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateIntentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateIntentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateIntent`](crate::operation::UpdateIntent)>
     #[allow(clippy::let_and_return)]
@@ -14783,7 +13936,7 @@ impl UpdateIntentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateIntent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14930,7 +14083,7 @@ impl UpdateIntentInput {
             "UpdateIntent",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14964,54 +14117,36 @@ pub mod update_resource_policy_input {
         pub(crate) expected_revision_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-        /// resource policy is attached to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-        /// resource policy is attached to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
-        /// <p>A resource policy to add to the resource. The policy is a JSON
-        /// structure that contains one or more statements that define the policy.
-        /// The policy must follow the IAM syntax. For more information about the
-        /// contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy
-        /// reference </a>. </p>
-        /// <p>If the policy isn't valid, Amazon Lex returns a validation
-        /// exception.</p>
+        /// <p>A resource policy to add to the resource. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy reference </a>. </p>
+        /// <p>If the policy isn't valid, Amazon Lex returns a validation exception.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
             self
         }
-        /// <p>A resource policy to add to the resource. The policy is a JSON
-        /// structure that contains one or more statements that define the policy.
-        /// The policy must follow the IAM syntax. For more information about the
-        /// contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy
-        /// reference </a>. </p>
-        /// <p>If the policy isn't valid, Amazon Lex returns a validation
-        /// exception.</p>
+        /// <p>A resource policy to add to the resource. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy reference </a>. </p>
+        /// <p>If the policy isn't valid, Amazon Lex returns a validation exception.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
         }
-        /// <p>The identifier of the revision of the policy to update. If this
-        /// revision ID doesn't match the current revision ID, Amazon Lex throws an
-        /// exception.</p>
-        /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of
-        /// the policy with the new values.</p>
+        /// <p>The identifier of the revision of the policy to update. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
+        /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
         pub fn expected_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_revision_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the revision of the policy to update. If this
-        /// revision ID doesn't match the current revision ID, Amazon Lex throws an
-        /// exception.</p>
-        /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of
-        /// the policy with the new values.</p>
+        /// <p>The identifier of the revision of the policy to update. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
+        /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
         pub fn set_expected_revision_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15037,7 +14172,7 @@ pub mod update_resource_policy_input {
 #[doc(hidden)]
 pub type UpdateResourcePolicyInputOperationOutputAlias = crate::operation::UpdateResourcePolicy;
 #[doc(hidden)]
-pub type UpdateResourcePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateResourcePolicy`](crate::operation::UpdateResourcePolicy)>
     #[allow(clippy::let_and_return)]
@@ -15048,7 +14183,7 @@ impl UpdateResourcePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateResourcePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15160,7 +14295,7 @@ impl UpdateResourcePolicyInput {
             "UpdateResourcePolicy",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15234,20 +14369,17 @@ pub mod update_slot_input {
             self.description = input;
             self
         }
-        /// <p>The unique identifier of the new slot type to associate with this
-        /// slot. </p>
+        /// <p>The unique identifier of the new slot type to associate with this slot. </p>
         pub fn slot_type_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.slot_type_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the new slot type to associate with this
-        /// slot. </p>
+        /// <p>The unique identifier of the new slot type to associate with this slot. </p>
         pub fn set_slot_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.slot_type_id = input;
             self
         }
-        /// <p>A new set of prompts that Amazon Lex sends to the user to elicit a
-        /// response the provides a value for the slot.</p>
+        /// <p>A new set of prompts that Amazon Lex sends to the user to elicit a response the provides a value for the slot.</p>
         pub fn value_elicitation_setting(
             mut self,
             input: crate::model::SlotValueElicitationSetting,
@@ -15255,8 +14387,7 @@ pub mod update_slot_input {
             self.value_elicitation_setting = Some(input);
             self
         }
-        /// <p>A new set of prompts that Amazon Lex sends to the user to elicit a
-        /// response the provides a value for the slot.</p>
+        /// <p>A new set of prompts that Amazon Lex sends to the user to elicit a response the provides a value for the slot.</p>
         pub fn set_value_elicitation_setting(
             mut self,
             input: std::option::Option<crate::model::SlotValueElicitationSetting>,
@@ -15264,14 +14395,12 @@ pub mod update_slot_input {
             self.value_elicitation_setting = input;
             self
         }
-        /// <p>New settings that determine how slot values are formatted in Amazon CloudWatch
-        /// logs. </p>
+        /// <p>New settings that determine how slot values are formatted in Amazon CloudWatch logs. </p>
         pub fn obfuscation_setting(mut self, input: crate::model::ObfuscationSetting) -> Self {
             self.obfuscation_setting = Some(input);
             self
         }
-        /// <p>New settings that determine how slot values are formatted in Amazon CloudWatch
-        /// logs. </p>
+        /// <p>New settings that determine how slot values are formatted in Amazon CloudWatch logs. </p>
         pub fn set_obfuscation_setting(
             mut self,
             input: std::option::Option<crate::model::ObfuscationSetting>,
@@ -15289,28 +14418,22 @@ pub mod update_slot_input {
             self.bot_id = input;
             self
         }
-        /// <p>The version of the bot that contains the slot. Must always be
-        /// <code>DRAFT</code>.</p>
+        /// <p>The version of the bot that contains the slot. Must always be <code>DRAFT</code>.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_version = Some(input.into());
             self
         }
-        /// <p>The version of the bot that contains the slot. Must always be
-        /// <code>DRAFT</code>.</p>
+        /// <p>The version of the bot that contains the slot. Must always be <code>DRAFT</code>.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
         }
-        /// <p>The identifier of the language and locale that contains the slot.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale that contains the slot. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the language and locale that contains the slot.
-        /// The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale that contains the slot. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -15325,12 +14448,8 @@ pub mod update_slot_input {
             self.intent_id = input;
             self
         }
-        /// <p>Determines whether the slot accepts multiple values in one response.
-        /// Multiple value slots are only available in the en-US locale. If you set
-        /// this value to <code>true</code> in any other locale, Amazon Lex throws a
-        /// <code>ValidationException</code>.</p>
-        /// <p>If the <code>multipleValuesSetting</code> is not set, the default
-        /// value is <code>false</code>.</p>
+        /// <p>Determines whether the slot accepts multiple values in one response. Multiple value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p>
+        /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
         pub fn multiple_values_setting(
             mut self,
             input: crate::model::MultipleValuesSetting,
@@ -15338,12 +14457,8 @@ pub mod update_slot_input {
             self.multiple_values_setting = Some(input);
             self
         }
-        /// <p>Determines whether the slot accepts multiple values in one response.
-        /// Multiple value slots are only available in the en-US locale. If you set
-        /// this value to <code>true</code> in any other locale, Amazon Lex throws a
-        /// <code>ValidationException</code>.</p>
-        /// <p>If the <code>multipleValuesSetting</code> is not set, the default
-        /// value is <code>false</code>.</p>
+        /// <p>Determines whether the slot accepts multiple values in one response. Multiple value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p>
+        /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
         pub fn set_multiple_values_setting(
             mut self,
             input: std::option::Option<crate::model::MultipleValuesSetting>,
@@ -15377,7 +14492,7 @@ pub mod update_slot_input {
 #[doc(hidden)]
 pub type UpdateSlotInputOperationOutputAlias = crate::operation::UpdateSlot;
 #[doc(hidden)]
-pub type UpdateSlotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateSlotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSlotInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSlot`](crate::operation::UpdateSlot)>
     #[allow(clippy::let_and_return)]
@@ -15388,7 +14503,7 @@ impl UpdateSlotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSlot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15542,7 +14657,7 @@ impl UpdateSlotInput {
             "UpdateSlot",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15582,6 +14697,8 @@ pub mod update_slot_type_input {
         pub(crate) bot_id: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) locale_id: std::option::Option<std::string::String>,
+        pub(crate) external_source_setting:
+            std::option::Option<crate::model::ExternalSourceSetting>,
     }
     impl Builder {
         /// <p>The unique identifier of the slot type to update.</p>
@@ -15621,16 +14738,14 @@ pub mod update_slot_type_input {
         ///
         /// To override the contents of this collection use [`set_slot_type_values`](Self::set_slot_type_values).
         ///
-        /// <p>A new list of values and their optional synonyms that define the
-        /// values that the slot type can take.</p>
-        pub fn slot_type_values(mut self, input: impl Into<crate::model::SlotTypeValue>) -> Self {
+        /// <p>A new list of values and their optional synonyms that define the values that the slot type can take.</p>
+        pub fn slot_type_values(mut self, input: crate::model::SlotTypeValue) -> Self {
             let mut v = self.slot_type_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.slot_type_values = Some(v);
             self
         }
-        /// <p>A new list of values and their optional synonyms that define the
-        /// values that the slot type can take.</p>
+        /// <p>A new list of values and their optional synonyms that define the values that the slot type can take.</p>
         pub fn set_slot_type_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SlotTypeValue>>,
@@ -15638,8 +14753,7 @@ pub mod update_slot_type_input {
             self.slot_type_values = input;
             self
         }
-        /// <p>The strategy that Amazon Lex should use when deciding on a value from the
-        /// list of slot type values.</p>
+        /// <p>The strategy that Amazon Lex should use when deciding on a value from the list of slot type values.</p>
         pub fn value_selection_setting(
             mut self,
             input: crate::model::SlotValueSelectionSetting,
@@ -15647,8 +14761,7 @@ pub mod update_slot_type_input {
             self.value_selection_setting = Some(input);
             self
         }
-        /// <p>The strategy that Amazon Lex should use when deciding on a value from the
-        /// list of slot type values.</p>
+        /// <p>The strategy that Amazon Lex should use when deciding on a value from the list of slot type values.</p>
         pub fn set_value_selection_setting(
             mut self,
             input: std::option::Option<crate::model::SlotValueSelectionSetting>,
@@ -15656,14 +14769,12 @@ pub mod update_slot_type_input {
             self.value_selection_setting = input;
             self
         }
-        /// <p>The new built-in slot type that should be used as the parent of this
-        /// slot type.</p>
+        /// <p>The new built-in slot type that should be used as the parent of this slot type.</p>
         pub fn parent_slot_type_signature(mut self, input: impl Into<std::string::String>) -> Self {
             self.parent_slot_type_signature = Some(input.into());
             self
         }
-        /// <p>The new built-in slot type that should be used as the parent of this
-        /// slot type.</p>
+        /// <p>The new built-in slot type that should be used as the parent of this slot type.</p>
         pub fn set_parent_slot_type_signature(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15681,30 +14792,40 @@ pub mod update_slot_type_input {
             self.bot_id = input;
             self
         }
-        /// <p>The version of the bot that contains the slot type. Must be
-        /// <code>DRAFT</code>.</p>
+        /// <p>The version of the bot that contains the slot type. Must be <code>DRAFT</code>.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_version = Some(input.into());
             self
         }
-        /// <p>The version of the bot that contains the slot type. Must be
-        /// <code>DRAFT</code>.</p>
+        /// <p>The version of the bot that contains the slot type. Must be <code>DRAFT</code>.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
         }
-        /// <p>The identifier of the language and locale that contains the slot
-        /// type. The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale that contains the slot type. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the language and locale that contains the slot
-        /// type. The string must match one of the supported locales. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+        /// <p>The identifier of the language and locale that contains the slot type. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
+            self
+        }
+        /// <p>Provides information about the external source of the slot type's definition.</p>
+        pub fn external_source_setting(
+            mut self,
+            input: crate::model::ExternalSourceSetting,
+        ) -> Self {
+            self.external_source_setting = Some(input);
+            self
+        }
+        /// <p>Provides information about the external source of the slot type's definition.</p>
+        pub fn set_external_source_setting(
+            mut self,
+            input: std::option::Option<crate::model::ExternalSourceSetting>,
+        ) -> Self {
+            self.external_source_setting = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateSlotTypeInput`](crate::input::UpdateSlotTypeInput)
@@ -15724,6 +14845,7 @@ pub mod update_slot_type_input {
                 bot_id: self.bot_id,
                 bot_version: self.bot_version,
                 locale_id: self.locale_id,
+                external_source_setting: self.external_source_setting,
             })
         }
     }
@@ -15731,7 +14853,7 @@ pub mod update_slot_type_input {
 #[doc(hidden)]
 pub type UpdateSlotTypeInputOperationOutputAlias = crate::operation::UpdateSlotType;
 #[doc(hidden)]
-pub type UpdateSlotTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateSlotTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSlotTypeInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSlotType`](crate::operation::UpdateSlotType)>
     #[allow(clippy::let_and_return)]
@@ -15742,7 +14864,7 @@ impl UpdateSlotTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSlotType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15882,7 +15004,7 @@ impl UpdateSlotTypeInput {
             "UpdateSlotType",
             "lexmodelsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15915,24 +15037,20 @@ pub struct UpdateSlotTypeInput {
     pub slot_type_name: std::option::Option<std::string::String>,
     /// <p>The new description of the slot type.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A new list of values and their optional synonyms that define the
-    /// values that the slot type can take.</p>
+    /// <p>A new list of values and their optional synonyms that define the values that the slot type can take.</p>
     pub slot_type_values: std::option::Option<std::vec::Vec<crate::model::SlotTypeValue>>,
-    /// <p>The strategy that Amazon Lex should use when deciding on a value from the
-    /// list of slot type values.</p>
+    /// <p>The strategy that Amazon Lex should use when deciding on a value from the list of slot type values.</p>
     pub value_selection_setting: std::option::Option<crate::model::SlotValueSelectionSetting>,
-    /// <p>The new built-in slot type that should be used as the parent of this
-    /// slot type.</p>
+    /// <p>The new built-in slot type that should be used as the parent of this slot type.</p>
     pub parent_slot_type_signature: std::option::Option<std::string::String>,
     /// <p>The identifier of the bot that contains the slot type.</p>
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>The version of the bot that contains the slot type. Must be
-    /// <code>DRAFT</code>.</p>
+    /// <p>The version of the bot that contains the slot type. Must be <code>DRAFT</code>.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The identifier of the language and locale that contains the slot
-    /// type. The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale that contains the slot type. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub locale_id: std::option::Option<std::string::String>,
+    /// <p>Provides information about the external source of the slot type's definition.</p>
+    pub external_source_setting: std::option::Option<crate::model::ExternalSourceSetting>,
 }
 impl UpdateSlotTypeInput {
     /// <p>The unique identifier of the slot type to update.</p>
@@ -15947,20 +15065,17 @@ impl UpdateSlotTypeInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A new list of values and their optional synonyms that define the
-    /// values that the slot type can take.</p>
+    /// <p>A new list of values and their optional synonyms that define the values that the slot type can take.</p>
     pub fn slot_type_values(&self) -> std::option::Option<&[crate::model::SlotTypeValue]> {
         self.slot_type_values.as_deref()
     }
-    /// <p>The strategy that Amazon Lex should use when deciding on a value from the
-    /// list of slot type values.</p>
+    /// <p>The strategy that Amazon Lex should use when deciding on a value from the list of slot type values.</p>
     pub fn value_selection_setting(
         &self,
     ) -> std::option::Option<&crate::model::SlotValueSelectionSetting> {
         self.value_selection_setting.as_ref()
     }
-    /// <p>The new built-in slot type that should be used as the parent of this
-    /// slot type.</p>
+    /// <p>The new built-in slot type that should be used as the parent of this slot type.</p>
     pub fn parent_slot_type_signature(&self) -> std::option::Option<&str> {
         self.parent_slot_type_signature.as_deref()
     }
@@ -15968,16 +15083,19 @@ impl UpdateSlotTypeInput {
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>The version of the bot that contains the slot type. Must be
-    /// <code>DRAFT</code>.</p>
+    /// <p>The version of the bot that contains the slot type. Must be <code>DRAFT</code>.</p>
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The identifier of the language and locale that contains the slot
-    /// type. The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale that contains the slot type. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
+    }
+    /// <p>Provides information about the external source of the slot type's definition.</p>
+    pub fn external_source_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::ExternalSourceSetting> {
+        self.external_source_setting.as_ref()
     }
 }
 impl std::fmt::Debug for UpdateSlotTypeInput {
@@ -15995,6 +15113,7 @@ impl std::fmt::Debug for UpdateSlotTypeInput {
         formatter.field("bot_id", &self.bot_id);
         formatter.field("bot_version", &self.bot_version);
         formatter.field("locale_id", &self.locale_id);
+        formatter.field("external_source_setting", &self.external_source_setting);
         formatter.finish()
     }
 }
@@ -16009,32 +15128,22 @@ pub struct UpdateSlotInput {
     pub slot_name: std::option::Option<std::string::String>,
     /// <p>The new description for the slot.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of the new slot type to associate with this
-    /// slot. </p>
+    /// <p>The unique identifier of the new slot type to associate with this slot. </p>
     pub slot_type_id: std::option::Option<std::string::String>,
-    /// <p>A new set of prompts that Amazon Lex sends to the user to elicit a
-    /// response the provides a value for the slot.</p>
+    /// <p>A new set of prompts that Amazon Lex sends to the user to elicit a response the provides a value for the slot.</p>
     pub value_elicitation_setting: std::option::Option<crate::model::SlotValueElicitationSetting>,
-    /// <p>New settings that determine how slot values are formatted in Amazon CloudWatch
-    /// logs. </p>
+    /// <p>New settings that determine how slot values are formatted in Amazon CloudWatch logs. </p>
     pub obfuscation_setting: std::option::Option<crate::model::ObfuscationSetting>,
     /// <p>The unique identifier of the bot that contains the slot.</p>
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>The version of the bot that contains the slot. Must always be
-    /// <code>DRAFT</code>.</p>
+    /// <p>The version of the bot that contains the slot. Must always be <code>DRAFT</code>.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The identifier of the language and locale that contains the slot.
-    /// The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale that contains the slot. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub locale_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the intent that contains the slot.</p>
     pub intent_id: std::option::Option<std::string::String>,
-    /// <p>Determines whether the slot accepts multiple values in one response.
-    /// Multiple value slots are only available in the en-US locale. If you set
-    /// this value to <code>true</code> in any other locale, Amazon Lex throws a
-    /// <code>ValidationException</code>.</p>
-    /// <p>If the <code>multipleValuesSetting</code> is not set, the default
-    /// value is <code>false</code>.</p>
+    /// <p>Determines whether the slot accepts multiple values in one response. Multiple value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p>
+    /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
     pub multiple_values_setting: std::option::Option<crate::model::MultipleValuesSetting>,
 }
 impl UpdateSlotInput {
@@ -16050,20 +15159,17 @@ impl UpdateSlotInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The unique identifier of the new slot type to associate with this
-    /// slot. </p>
+    /// <p>The unique identifier of the new slot type to associate with this slot. </p>
     pub fn slot_type_id(&self) -> std::option::Option<&str> {
         self.slot_type_id.as_deref()
     }
-    /// <p>A new set of prompts that Amazon Lex sends to the user to elicit a
-    /// response the provides a value for the slot.</p>
+    /// <p>A new set of prompts that Amazon Lex sends to the user to elicit a response the provides a value for the slot.</p>
     pub fn value_elicitation_setting(
         &self,
     ) -> std::option::Option<&crate::model::SlotValueElicitationSetting> {
         self.value_elicitation_setting.as_ref()
     }
-    /// <p>New settings that determine how slot values are formatted in Amazon CloudWatch
-    /// logs. </p>
+    /// <p>New settings that determine how slot values are formatted in Amazon CloudWatch logs. </p>
     pub fn obfuscation_setting(&self) -> std::option::Option<&crate::model::ObfuscationSetting> {
         self.obfuscation_setting.as_ref()
     }
@@ -16071,14 +15177,11 @@ impl UpdateSlotInput {
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>The version of the bot that contains the slot. Must always be
-    /// <code>DRAFT</code>.</p>
+    /// <p>The version of the bot that contains the slot. Must always be <code>DRAFT</code>.</p>
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The identifier of the language and locale that contains the slot.
-    /// The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale that contains the slot. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
@@ -16086,12 +15189,8 @@ impl UpdateSlotInput {
     pub fn intent_id(&self) -> std::option::Option<&str> {
         self.intent_id.as_deref()
     }
-    /// <p>Determines whether the slot accepts multiple values in one response.
-    /// Multiple value slots are only available in the en-US locale. If you set
-    /// this value to <code>true</code> in any other locale, Amazon Lex throws a
-    /// <code>ValidationException</code>.</p>
-    /// <p>If the <code>multipleValuesSetting</code> is not set, the default
-    /// value is <code>false</code>.</p>
+    /// <p>Determines whether the slot accepts multiple values in one response. Multiple value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p>
+    /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
     pub fn multiple_values_setting(
         &self,
     ) -> std::option::Option<&crate::model::MultipleValuesSetting> {
@@ -16120,45 +15219,27 @@ impl std::fmt::Debug for UpdateSlotInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResourcePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-    /// resource policy is attached to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A resource policy to add to the resource. The policy is a JSON
-    /// structure that contains one or more statements that define the policy.
-    /// The policy must follow the IAM syntax. For more information about the
-    /// contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy
-    /// reference </a>. </p>
-    /// <p>If the policy isn't valid, Amazon Lex returns a validation
-    /// exception.</p>
+    /// <p>A resource policy to add to the resource. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy reference </a>. </p>
+    /// <p>If the policy isn't valid, Amazon Lex returns a validation exception.</p>
     pub policy: std::option::Option<std::string::String>,
-    /// <p>The identifier of the revision of the policy to update. If this
-    /// revision ID doesn't match the current revision ID, Amazon Lex throws an
-    /// exception.</p>
-    /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of
-    /// the policy with the new values.</p>
+    /// <p>The identifier of the revision of the policy to update. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
+    /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
     pub expected_revision_id: std::option::Option<std::string::String>,
 }
 impl UpdateResourcePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-    /// resource policy is attached to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A resource policy to add to the resource. The policy is a JSON
-    /// structure that contains one or more statements that define the policy.
-    /// The policy must follow the IAM syntax. For more information about the
-    /// contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy
-    /// reference </a>. </p>
-    /// <p>If the policy isn't valid, Amazon Lex returns a validation
-    /// exception.</p>
+    /// <p>A resource policy to add to the resource. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy reference </a>. </p>
+    /// <p>If the policy isn't valid, Amazon Lex returns a validation exception.</p>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
-    /// <p>The identifier of the revision of the policy to update. If this
-    /// revision ID doesn't match the current revision ID, Amazon Lex throws an
-    /// exception.</p>
-    /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of
-    /// the policy with the new values.</p>
+    /// <p>The identifier of the revision of the policy to update. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
+    /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
     pub fn expected_revision_id(&self) -> std::option::Option<&str> {
         self.expected_revision_id.as_deref()
     }
@@ -16183,42 +15264,31 @@ pub struct UpdateIntentInput {
     pub intent_name: std::option::Option<std::string::String>,
     /// <p>The new description of the intent.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The signature of the new built-in intent to use as the parent of
-    /// this intent.</p>
+    /// <p>The signature of the new built-in intent to use as the parent of this intent.</p>
     pub parent_intent_signature: std::option::Option<std::string::String>,
     /// <p>New utterances used to invoke the intent.</p>
     pub sample_utterances: std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>,
-    /// <p>The new Lambda function to use between each turn of the conversation
-    /// with the bot.</p>
+    /// <p>The new Lambda function to use between each turn of the conversation with the bot.</p>
     pub dialog_code_hook: std::option::Option<crate::model::DialogCodeHookSettings>,
-    /// <p>The new Lambda function to call when all of the intents required
-    /// slots are provided and the intent is ready for fulfillment.</p>
+    /// <p>The new Lambda function to call when all of the intents required slots are provided and the intent is ready for fulfillment.</p>
     pub fulfillment_code_hook: std::option::Option<crate::model::FulfillmentCodeHookSettings>,
-    /// <p>A new list of slots and their priorities that are contained by the
-    /// intent.</p>
+    /// <p>A new list of slots and their priorities that are contained by the intent.</p>
     pub slot_priorities: std::option::Option<std::vec::Vec<crate::model::SlotPriority>>,
-    /// <p>New prompts that Amazon Lex sends to the user to confirm the completion
-    /// of an intent.</p>
+    /// <p>New prompts that Amazon Lex sends to the user to confirm the completion of an intent.</p>
     pub intent_confirmation_setting: std::option::Option<crate::model::IntentConfirmationSetting>,
-    /// <p>The new response that Amazon Lex sends the user when the intent is
-    /// closed.</p>
+    /// <p>The new response that Amazon Lex sends the user when the intent is closed.</p>
     pub intent_closing_setting: std::option::Option<crate::model::IntentClosingSetting>,
-    /// <p>A new list of contexts that must be active in order for Amazon Lex to
-    /// consider the intent.</p>
+    /// <p>A new list of contexts that must be active in order for Amazon Lex to consider the intent.</p>
     pub input_contexts: std::option::Option<std::vec::Vec<crate::model::InputContext>>,
-    /// <p>A new list of contexts that Amazon Lex activates when the intent is
-    /// fulfilled.</p>
+    /// <p>A new list of contexts that Amazon Lex activates when the intent is fulfilled.</p>
     pub output_contexts: std::option::Option<std::vec::Vec<crate::model::OutputContext>>,
     /// <p>New configuration settings for connecting to an Amazon Kendra index.</p>
     pub kendra_configuration: std::option::Option<crate::model::KendraConfiguration>,
     /// <p>The identifier of the bot that contains the intent.</p>
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>The version of the bot that contains the intent. Must be
-    /// <code>DRAFT</code>.</p>
+    /// <p>The version of the bot that contains the intent. Must be <code>DRAFT</code>.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The identifier of the language and locale where this intent is used.
-    /// The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale where this intent is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub locale_id: std::option::Option<std::string::String>,
 }
 impl UpdateIntentInput {
@@ -16234,8 +15304,7 @@ impl UpdateIntentInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The signature of the new built-in intent to use as the parent of
-    /// this intent.</p>
+    /// <p>The signature of the new built-in intent to use as the parent of this intent.</p>
     pub fn parent_intent_signature(&self) -> std::option::Option<&str> {
         self.parent_intent_signature.as_deref()
     }
@@ -16243,44 +15312,37 @@ impl UpdateIntentInput {
     pub fn sample_utterances(&self) -> std::option::Option<&[crate::model::SampleUtterance]> {
         self.sample_utterances.as_deref()
     }
-    /// <p>The new Lambda function to use between each turn of the conversation
-    /// with the bot.</p>
+    /// <p>The new Lambda function to use between each turn of the conversation with the bot.</p>
     pub fn dialog_code_hook(&self) -> std::option::Option<&crate::model::DialogCodeHookSettings> {
         self.dialog_code_hook.as_ref()
     }
-    /// <p>The new Lambda function to call when all of the intents required
-    /// slots are provided and the intent is ready for fulfillment.</p>
+    /// <p>The new Lambda function to call when all of the intents required slots are provided and the intent is ready for fulfillment.</p>
     pub fn fulfillment_code_hook(
         &self,
     ) -> std::option::Option<&crate::model::FulfillmentCodeHookSettings> {
         self.fulfillment_code_hook.as_ref()
     }
-    /// <p>A new list of slots and their priorities that are contained by the
-    /// intent.</p>
+    /// <p>A new list of slots and their priorities that are contained by the intent.</p>
     pub fn slot_priorities(&self) -> std::option::Option<&[crate::model::SlotPriority]> {
         self.slot_priorities.as_deref()
     }
-    /// <p>New prompts that Amazon Lex sends to the user to confirm the completion
-    /// of an intent.</p>
+    /// <p>New prompts that Amazon Lex sends to the user to confirm the completion of an intent.</p>
     pub fn intent_confirmation_setting(
         &self,
     ) -> std::option::Option<&crate::model::IntentConfirmationSetting> {
         self.intent_confirmation_setting.as_ref()
     }
-    /// <p>The new response that Amazon Lex sends the user when the intent is
-    /// closed.</p>
+    /// <p>The new response that Amazon Lex sends the user when the intent is closed.</p>
     pub fn intent_closing_setting(
         &self,
     ) -> std::option::Option<&crate::model::IntentClosingSetting> {
         self.intent_closing_setting.as_ref()
     }
-    /// <p>A new list of contexts that must be active in order for Amazon Lex to
-    /// consider the intent.</p>
+    /// <p>A new list of contexts that must be active in order for Amazon Lex to consider the intent.</p>
     pub fn input_contexts(&self) -> std::option::Option<&[crate::model::InputContext]> {
         self.input_contexts.as_deref()
     }
-    /// <p>A new list of contexts that Amazon Lex activates when the intent is
-    /// fulfilled.</p>
+    /// <p>A new list of contexts that Amazon Lex activates when the intent is fulfilled.</p>
     pub fn output_contexts(&self) -> std::option::Option<&[crate::model::OutputContext]> {
         self.output_contexts.as_deref()
     }
@@ -16292,14 +15354,11 @@ impl UpdateIntentInput {
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>The version of the bot that contains the intent. Must be
-    /// <code>DRAFT</code>.</p>
+    /// <p>The version of the bot that contains the intent. Must be <code>DRAFT</code>.</p>
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The identifier of the language and locale where this intent is used.
-    /// The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale where this intent is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
@@ -16362,51 +15421,35 @@ impl std::fmt::Debug for UpdateExportInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBotRecommendationInput {
-    /// <p>The unique identifier of the bot containing the bot recommendation
-    /// to be updated.</p>
+    /// <p>The unique identifier of the bot containing the bot recommendation to be updated.</p>
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>The version of the bot containing the bot recommendation to be
-    /// updated.</p>
+    /// <p>The version of the bot containing the bot recommendation to be updated.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The identifier of the language and locale of the bot recommendation
-    /// to update. The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
-    /// </p>
+    /// <p>The identifier of the language and locale of the bot recommendation to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
     pub locale_id: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of the bot recommendation to be
-    /// updated.</p>
+    /// <p>The unique identifier of the bot recommendation to be updated.</p>
     pub bot_recommendation_id: std::option::Option<std::string::String>,
-    /// <p>The object representing the passwords that will be used to encrypt
-    /// the data related to the bot recommendation results, as well as the KMS
-    /// key ARN used to encrypt the associated metadata.</p>
+    /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
     pub encryption_setting: std::option::Option<crate::model::EncryptionSetting>,
 }
 impl UpdateBotRecommendationInput {
-    /// <p>The unique identifier of the bot containing the bot recommendation
-    /// to be updated.</p>
+    /// <p>The unique identifier of the bot containing the bot recommendation to be updated.</p>
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>The version of the bot containing the bot recommendation to be
-    /// updated.</p>
+    /// <p>The version of the bot containing the bot recommendation to be updated.</p>
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The identifier of the language and locale of the bot recommendation
-    /// to update. The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
-    /// </p>
+    /// <p>The identifier of the language and locale of the bot recommendation to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
-    /// <p>The unique identifier of the bot recommendation to be
-    /// updated.</p>
+    /// <p>The unique identifier of the bot recommendation to be updated.</p>
     pub fn bot_recommendation_id(&self) -> std::option::Option<&str> {
         self.bot_recommendation_id.as_deref()
     }
-    /// <p>The object representing the passwords that will be used to encrypt
-    /// the data related to the bot recommendation results, as well as the KMS
-    /// key ARN used to encrypt the associated metadata.</p>
+    /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
     pub fn encryption_setting(&self) -> std::option::Option<&crate::model::EncryptionSetting> {
         self.encryption_setting.as_ref()
     }
@@ -16429,21 +15472,15 @@ impl std::fmt::Debug for UpdateBotRecommendationInput {
 pub struct UpdateBotLocaleInput {
     /// <p>The unique identifier of the bot that contains the locale.</p>
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>The version of the bot that contains the locale to be updated. The
-    /// version can only be the <code>DRAFT</code> version.</p>
+    /// <p>The version of the bot that contains the locale to be updated. The version can only be the <code>DRAFT</code> version.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The identifier of the language and locale to update. The string must
-    /// match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub locale_id: std::option::Option<std::string::String>,
     /// <p>The new description of the locale.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The new confidence threshold where Amazon Lex inserts the
-    /// <code>AMAZON.FallbackIntent</code> and
-    /// <code>AMAZON.KendraSearchIntent</code> intents in the list of
-    /// possible intents for an utterance.</p>
+    /// <p>The new confidence threshold where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents in the list of possible intents for an utterance.</p>
     pub nlu_intent_confidence_threshold: std::option::Option<f64>,
-    /// <p>The new Amazon Polly voice Amazon Lex should use for voice interaction with the
-    /// user.</p>
+    /// <p>The new Amazon Polly voice Amazon Lex should use for voice interaction with the user.</p>
     pub voice_settings: std::option::Option<crate::model::VoiceSettings>,
 }
 impl UpdateBotLocaleInput {
@@ -16451,13 +15488,11 @@ impl UpdateBotLocaleInput {
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>The version of the bot that contains the locale to be updated. The
-    /// version can only be the <code>DRAFT</code> version.</p>
+    /// <p>The version of the bot that contains the locale to be updated. The version can only be the <code>DRAFT</code> version.</p>
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The identifier of the language and locale to update. The string must
-    /// match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
@@ -16465,15 +15500,11 @@ impl UpdateBotLocaleInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The new confidence threshold where Amazon Lex inserts the
-    /// <code>AMAZON.FallbackIntent</code> and
-    /// <code>AMAZON.KendraSearchIntent</code> intents in the list of
-    /// possible intents for an utterance.</p>
+    /// <p>The new confidence threshold where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents in the list of possible intents for an utterance.</p>
     pub fn nlu_intent_confidence_threshold(&self) -> std::option::Option<f64> {
         self.nlu_intent_confidence_threshold
     }
-    /// <p>The new Amazon Polly voice Amazon Lex should use for voice interaction with the
-    /// user.</p>
+    /// <p>The new Amazon Polly voice Amazon Lex should use for voice interaction with the user.</p>
     pub fn voice_settings(&self) -> std::option::Option<&crate::model::VoiceSettings> {
         self.voice_settings.as_ref()
     }
@@ -16506,16 +15537,13 @@ pub struct UpdateBotAliasInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The new bot version to assign to the bot alias.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The new Lambda functions to use in each locale for the bot
-    /// alias.</p>
+    /// <p>The new Lambda functions to use in each locale for the bot alias.</p>
     pub bot_alias_locale_settings: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::BotAliasLocaleSettings>,
     >,
-    /// <p>The new settings for storing conversation logs in Amazon CloudWatch Logs and
-    /// Amazon S3 buckets.</p>
+    /// <p>The new settings for storing conversation logs in Amazon CloudWatch Logs and Amazon S3 buckets.</p>
     pub conversation_log_settings: std::option::Option<crate::model::ConversationLogSettings>,
-    /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of
-    /// user utterances.</p>
+    /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
     pub sentiment_analysis_settings: std::option::Option<crate::model::SentimentAnalysisSettings>,
     /// <p>The identifier of the bot with the updated alias.</p>
     pub bot_id: std::option::Option<std::string::String>,
@@ -16537,8 +15565,7 @@ impl UpdateBotAliasInput {
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The new Lambda functions to use in each locale for the bot
-    /// alias.</p>
+    /// <p>The new Lambda functions to use in each locale for the bot alias.</p>
     pub fn bot_alias_locale_settings(
         &self,
     ) -> std::option::Option<
@@ -16546,15 +15573,13 @@ impl UpdateBotAliasInput {
     > {
         self.bot_alias_locale_settings.as_ref()
     }
-    /// <p>The new settings for storing conversation logs in Amazon CloudWatch Logs and
-    /// Amazon S3 buckets.</p>
+    /// <p>The new settings for storing conversation logs in Amazon CloudWatch Logs and Amazon S3 buckets.</p>
     pub fn conversation_log_settings(
         &self,
     ) -> std::option::Option<&crate::model::ConversationLogSettings> {
         self.conversation_log_settings.as_ref()
     }
-    /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of
-    /// user utterances.</p>
+    /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
     pub fn sentiment_analysis_settings(
         &self,
     ) -> std::option::Option<&crate::model::SentimentAnalysisSettings> {
@@ -16587,37 +15612,27 @@ impl std::fmt::Debug for UpdateBotAliasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBotInput {
-    /// <p>The unique identifier of the bot to update. This identifier is
-    /// returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
+    /// <p>The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>The new name of the bot. The name must be unique in the account that
-    /// creates the bot.</p>
+    /// <p>The new name of the bot. The name must be unique in the account that creates the bot.</p>
     pub bot_name: std::option::Option<std::string::String>,
     /// <p>A description of the bot.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions
-    /// to access the bot.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the bot.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>Provides information on additional privacy protections Amazon Lex should
-    /// use with the bot's data.</p>
+    /// <p>Provides information on additional privacy protections Amazon Lex should use with the bot's data.</p>
     pub data_privacy: std::option::Option<crate::model::DataPrivacy>,
-    /// <p>The time, in seconds, that Amazon Lex should keep information about a
-    /// user's conversation with the bot.</p>
-    /// <p>A user interaction remains active for the amount of time specified.
-    /// If no conversation occurs during this time, the session expires and
-    /// Amazon Lex deletes any data provided before the timeout.</p>
-    /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours)
-    /// seconds.</p>
+    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.</p>
+    /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
+    /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
     pub idle_session_ttl_in_seconds: std::option::Option<i32>,
 }
 impl UpdateBotInput {
-    /// <p>The unique identifier of the bot to update. This identifier is
-    /// returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
+    /// <p>The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>The new name of the bot. The name must be unique in the account that
-    /// creates the bot.</p>
+    /// <p>The new name of the bot. The name must be unique in the account that creates the bot.</p>
     pub fn bot_name(&self) -> std::option::Option<&str> {
         self.bot_name.as_deref()
     }
@@ -16625,23 +15640,17 @@ impl UpdateBotInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions
-    /// to access the bot.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the bot.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>Provides information on additional privacy protections Amazon Lex should
-    /// use with the bot's data.</p>
+    /// <p>Provides information on additional privacy protections Amazon Lex should use with the bot's data.</p>
     pub fn data_privacy(&self) -> std::option::Option<&crate::model::DataPrivacy> {
         self.data_privacy.as_ref()
     }
-    /// <p>The time, in seconds, that Amazon Lex should keep information about a
-    /// user's conversation with the bot.</p>
-    /// <p>A user interaction remains active for the amount of time specified.
-    /// If no conversation occurs during this time, the session expires and
-    /// Amazon Lex deletes any data provided before the timeout.</p>
-    /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours)
-    /// seconds.</p>
+    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.</p>
+    /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
+    /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
     pub fn idle_session_ttl_in_seconds(&self) -> std::option::Option<i32> {
         self.idle_session_ttl_in_seconds
     }
@@ -16666,21 +15675,17 @@ impl std::fmt::Debug for UpdateBotInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource to remove the tags
-    /// from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A list of tag keys to remove from the resource. If a tag key does
-    /// not exist on the resource, it is ignored.</p>
+    /// <p>A list of tag keys to remove from the resource. If a tag key does not exist on the resource, it is ignored.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource to remove the tags
-    /// from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A list of tag keys to remove from the resource. If a tag key does
-    /// not exist on the resource, it is ignored.</p>
+    /// <p>A list of tag keys to remove from the resource. If a tag key does not exist on the resource, it is ignored.</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -16698,22 +15703,18 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel
-    /// to tag.</p>
+    /// <p>The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel to tag.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A list of tag keys to add to the resource. If a tag key already
-    /// exists, the existing value is replaced with the new value.</p>
+    /// <p>A list of tag keys to add to the resource. If a tag key already exists, the existing value is replaced with the new value.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel
-    /// to tag.</p>
+    /// <p>The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel to tag.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A list of tag keys to add to the resource. If a tag key already
-    /// exists, the existing value is replaced with the new value.</p>
+    /// <p>A list of tag keys to add to the resource. If a tag key already exists, the existing value is replaced with the new value.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -16734,24 +15735,17 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartImportInput {
-    /// <p>The unique identifier for the import. It is included in the response
-    /// from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
+    /// <p>The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
     pub import_id: std::option::Option<std::string::String>,
     /// <p>Parameters for creating the bot or bot locale.</p>
     pub resource_specification: std::option::Option<crate::model::ImportResourceSpecification>,
-    /// <p>The strategy to use when there is a name conflict between the
-    /// imported resource and an existing resource. When the merge strategy is
-    /// <code>FailOnConflict</code> existing resources are not overwritten
-    /// and the import fails.</p>
+    /// <p>The strategy to use when there is a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
     pub merge_strategy: std::option::Option<crate::model::MergeStrategy>,
-    /// <p>The password used to encrypt the zip archive that contains the bot
-    /// or bot locale definition. You should always encrypt the zip archive to
-    /// protect it during transit between your site and Amazon Lex.</p>
+    /// <p>The password used to encrypt the zip archive that contains the bot or bot locale definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.</p>
     pub file_password: std::option::Option<std::string::String>,
 }
 impl StartImportInput {
-    /// <p>The unique identifier for the import. It is included in the response
-    /// from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
+    /// <p>The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
     pub fn import_id(&self) -> std::option::Option<&str> {
         self.import_id.as_deref()
     }
@@ -16761,16 +15755,11 @@ impl StartImportInput {
     ) -> std::option::Option<&crate::model::ImportResourceSpecification> {
         self.resource_specification.as_ref()
     }
-    /// <p>The strategy to use when there is a name conflict between the
-    /// imported resource and an existing resource. When the merge strategy is
-    /// <code>FailOnConflict</code> existing resources are not overwritten
-    /// and the import fails.</p>
+    /// <p>The strategy to use when there is a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
     pub fn merge_strategy(&self) -> std::option::Option<&crate::model::MergeStrategy> {
         self.merge_strategy.as_ref()
     }
-    /// <p>The password used to encrypt the zip archive that contains the bot
-    /// or bot locale definition. You should always encrypt the zip archive to
-    /// protect it during transit between your site and Amazon Lex.</p>
+    /// <p>The password used to encrypt the zip archive that contains the bot or bot locale definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.</p>
     pub fn file_password(&self) -> std::option::Option<&str> {
         self.file_password.as_deref()
     }
@@ -16790,27 +15779,19 @@ impl std::fmt::Debug for StartImportInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartBotRecommendationInput {
-    /// <p>The unique identifier of the bot containing the bot
-    /// recommendation.</p>
+    /// <p>The unique identifier of the bot containing the bot recommendation.</p>
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The version of the bot containing the bot recommendation.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The identifier of the language and locale of the bot recommendation
-    /// to start. The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
-    /// </p>
+    /// <p>The identifier of the language and locale of the bot recommendation to start. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
     pub locale_id: std::option::Option<std::string::String>,
-    /// <p>The object representing the Amazon S3 bucket containing the transcript,
-    /// as well as the associated metadata.</p>
+    /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
     pub transcript_source_setting: std::option::Option<crate::model::TranscriptSourceSetting>,
-    /// <p>The object representing the passwords that will be used to encrypt
-    /// the data related to the bot recommendation results, as well as the KMS
-    /// key ARN used to encrypt the associated metadata.</p>
+    /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
     pub encryption_setting: std::option::Option<crate::model::EncryptionSetting>,
 }
 impl StartBotRecommendationInput {
-    /// <p>The unique identifier of the bot containing the bot
-    /// recommendation.</p>
+    /// <p>The unique identifier of the bot containing the bot recommendation.</p>
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
@@ -16818,23 +15799,17 @@ impl StartBotRecommendationInput {
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The identifier of the language and locale of the bot recommendation
-    /// to start. The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
-    /// </p>
+    /// <p>The identifier of the language and locale of the bot recommendation to start. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
-    /// <p>The object representing the Amazon S3 bucket containing the transcript,
-    /// as well as the associated metadata.</p>
+    /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
     pub fn transcript_source_setting(
         &self,
     ) -> std::option::Option<&crate::model::TranscriptSourceSetting> {
         self.transcript_source_setting.as_ref()
     }
-    /// <p>The object representing the passwords that will be used to encrypt
-    /// the data related to the bot recommendation results, as well as the KMS
-    /// key ARN used to encrypt the associated metadata.</p>
+    /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
     pub fn encryption_setting(&self) -> std::option::Option<&crate::model::EncryptionSetting> {
         self.encryption_setting.as_ref()
     }
@@ -16855,60 +15830,41 @@ impl std::fmt::Debug for StartBotRecommendationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchAssociatedTranscriptsInput {
-    /// <p>The unique identifier of the bot associated with the transcripts
-    /// that you are searching.</p>
+    /// <p>The unique identifier of the bot associated with the transcripts that you are searching.</p>
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>The version of the bot containing the transcripts that you are
-    /// searching.</p>
+    /// <p>The version of the bot containing the transcripts that you are searching.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The identifier of the language and locale of the transcripts to
-    /// search. The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
-    /// </p>
+    /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
     pub locale_id: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of the bot recommendation associated with the
-    /// transcripts to search.</p>
+    /// <p>The unique identifier of the bot recommendation associated with the transcripts to search.</p>
     pub bot_recommendation_id: std::option::Option<std::string::String>,
-    /// <p>How SearchResults are ordered. Valid values are Ascending or
-    /// Descending. The default is Descending.</p>
+    /// <p>How SearchResults are ordered. Valid values are Ascending or Descending. The default is Descending.</p>
     pub search_order: std::option::Option<crate::model::SearchOrder>,
     /// <p>A list of filter objects.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::AssociatedTranscriptFilter>>,
-    /// <p>The maximum number of bot recommendations to return in each page of
-    /// results. If there are fewer results than the max page size, only the
-    /// actual number of results are returned.</p>
+    /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If the response from the SearchAssociatedTranscriptsRequest
-    /// operation contains more results than specified in the maxResults
-    /// parameter, an index is returned in the response. Use that index in the
-    /// nextIndex parameter to return the next page of results.</p>
+    /// <p>If the response from the SearchAssociatedTranscriptsRequest operation contains more results than specified in the maxResults parameter, an index is returned in the response. Use that index in the nextIndex parameter to return the next page of results.</p>
     pub next_index: std::option::Option<i32>,
 }
 impl SearchAssociatedTranscriptsInput {
-    /// <p>The unique identifier of the bot associated with the transcripts
-    /// that you are searching.</p>
+    /// <p>The unique identifier of the bot associated with the transcripts that you are searching.</p>
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>The version of the bot containing the transcripts that you are
-    /// searching.</p>
+    /// <p>The version of the bot containing the transcripts that you are searching.</p>
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The identifier of the language and locale of the transcripts to
-    /// search. The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>
-    /// </p>
+    /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
-    /// <p>The unique identifier of the bot recommendation associated with the
-    /// transcripts to search.</p>
+    /// <p>The unique identifier of the bot recommendation associated with the transcripts to search.</p>
     pub fn bot_recommendation_id(&self) -> std::option::Option<&str> {
         self.bot_recommendation_id.as_deref()
     }
-    /// <p>How SearchResults are ordered. Valid values are Ascending or
-    /// Descending. The default is Descending.</p>
+    /// <p>How SearchResults are ordered. Valid values are Ascending or Descending. The default is Descending.</p>
     pub fn search_order(&self) -> std::option::Option<&crate::model::SearchOrder> {
         self.search_order.as_ref()
     }
@@ -16916,16 +15872,11 @@ impl SearchAssociatedTranscriptsInput {
     pub fn filters(&self) -> std::option::Option<&[crate::model::AssociatedTranscriptFilter]> {
         self.filters.as_deref()
     }
-    /// <p>The maximum number of bot recommendations to return in each page of
-    /// results. If there are fewer results than the max page size, only the
-    /// actual number of results are returned.</p>
+    /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If the response from the SearchAssociatedTranscriptsRequest
-    /// operation contains more results than specified in the maxResults
-    /// parameter, an index is returned in the response. Use that index in the
-    /// nextIndex parameter to return the next page of results.</p>
+    /// <p>If the response from the SearchAssociatedTranscriptsRequest operation contains more results than specified in the maxResults parameter, an index is returned in the response. Use that index in the nextIndex parameter to return the next page of results.</p>
     pub fn next_index(&self) -> std::option::Option<i32> {
         self.next_index
     }
@@ -16949,13 +15900,11 @@ impl std::fmt::Debug for SearchAssociatedTranscriptsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource to get a list of tags
-    /// for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to get a list of tags for.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource to get a list of tags
-    /// for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to get a list of tags for.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -16972,38 +15921,23 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSlotTypesInput {
-    /// <p>The unique identifier of the bot that contains the slot
-    /// types.</p>
+    /// <p>The unique identifier of the bot that contains the slot types.</p>
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The version of the bot that contains the slot type.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The identifier of the language and locale of the slot types to list.
-    /// The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale of the slot types to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub locale_id: std::option::Option<std::string::String>,
-    /// <p>Determines the sort order for the response from the
-    /// <code>ListSlotTypes</code> operation. You can choose to sort by the
-    /// slot type name or last updated date in either ascending or descending
-    /// order.</p>
+    /// <p>Determines the sort order for the response from the <code>ListSlotTypes</code> operation. You can choose to sort by the slot type name or last updated date in either ascending or descending order.</p>
     pub sort_by: std::option::Option<crate::model::SlotTypeSortBy>,
-    /// <p>Provides the specification of a filter used to limit the slot types
-    /// in the response to only those that match the filter specification. You
-    /// can only specify one filter and only one string to filter on.</p>
+    /// <p>Provides the specification of a filter used to limit the slot types in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::SlotTypeFilter>>,
-    /// <p>The maximum number of slot types to return in each page of results.
-    /// If there are fewer results than the max page size, only the actual
-    /// number of results are returned.</p>
+    /// <p>The maximum number of slot types to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If the response from the <code>ListSlotTypes</code> operation
-    /// contains more results than specified in the <code>maxResults</code>
-    /// parameter, a token is returned in the response. Use that token in the
-    /// <code>nextToken</code> parameter to return the next page of
-    /// results.</p>
+    /// <p>If the response from the <code>ListSlotTypes</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSlotTypesInput {
-    /// <p>The unique identifier of the bot that contains the slot
-    /// types.</p>
+    /// <p>The unique identifier of the bot that contains the slot types.</p>
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
@@ -17011,36 +15945,23 @@ impl ListSlotTypesInput {
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The identifier of the language and locale of the slot types to list.
-    /// The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale of the slot types to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
-    /// <p>Determines the sort order for the response from the
-    /// <code>ListSlotTypes</code> operation. You can choose to sort by the
-    /// slot type name or last updated date in either ascending or descending
-    /// order.</p>
+    /// <p>Determines the sort order for the response from the <code>ListSlotTypes</code> operation. You can choose to sort by the slot type name or last updated date in either ascending or descending order.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::SlotTypeSortBy> {
         self.sort_by.as_ref()
     }
-    /// <p>Provides the specification of a filter used to limit the slot types
-    /// in the response to only those that match the filter specification. You
-    /// can only specify one filter and only one string to filter on.</p>
+    /// <p>Provides the specification of a filter used to limit the slot types in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::SlotTypeFilter]> {
         self.filters.as_deref()
     }
-    /// <p>The maximum number of slot types to return in each page of results.
-    /// If there are fewer results than the max page size, only the actual
-    /// number of results are returned.</p>
+    /// <p>The maximum number of slot types to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If the response from the <code>ListSlotTypes</code> operation
-    /// contains more results than specified in the <code>maxResults</code>
-    /// parameter, a token is returned in the response. Use that token in the
-    /// <code>nextToken</code> parameter to return the next page of
-    /// results.</p>
+    /// <p>If the response from the <code>ListSlotTypes</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17067,30 +15988,17 @@ pub struct ListSlotsInput {
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The version of the bot that contains the slot.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The identifier of the language and locale of the slots to list. The
-    /// string must match one of the supported locales. For more information,
-    /// see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale of the slots to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub locale_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the intent that contains the slot.</p>
     pub intent_id: std::option::Option<std::string::String>,
-    /// <p>Determines the sort order for the response from the
-    /// <code>ListSlots</code> operation. You can choose to sort by the slot
-    /// name or last updated date in either ascending or descending
-    /// order.</p>
+    /// <p>Determines the sort order for the response from the <code>ListSlots</code> operation. You can choose to sort by the slot name or last updated date in either ascending or descending order.</p>
     pub sort_by: std::option::Option<crate::model::SlotSortBy>,
-    /// <p>Provides the specification of a filter used to limit the slots in
-    /// the response to only those that match the filter specification. You can
-    /// only specify one filter and only one string to filter on.</p>
+    /// <p>Provides the specification of a filter used to limit the slots in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::SlotFilter>>,
-    /// <p>The maximum number of slots to return in each page of results. If
-    /// there are fewer results than the max page size, only the actual number
-    /// of results are returned.</p>
+    /// <p>The maximum number of slots to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If the response from the <code>ListSlots</code> operation contains
-    /// more results than specified in the <code>maxResults</code> parameter, a
-    /// token is returned in the response. Use that token in the
-    /// <code>nextToken</code> parameter to return the next page of
-    /// results.</p>
+    /// <p>If the response from the <code>ListSlots</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSlotsInput {
@@ -17102,9 +16010,7 @@ impl ListSlotsInput {
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The identifier of the language and locale of the slots to list. The
-    /// string must match one of the supported locales. For more information,
-    /// see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale of the slots to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
@@ -17112,30 +16018,19 @@ impl ListSlotsInput {
     pub fn intent_id(&self) -> std::option::Option<&str> {
         self.intent_id.as_deref()
     }
-    /// <p>Determines the sort order for the response from the
-    /// <code>ListSlots</code> operation. You can choose to sort by the slot
-    /// name or last updated date in either ascending or descending
-    /// order.</p>
+    /// <p>Determines the sort order for the response from the <code>ListSlots</code> operation. You can choose to sort by the slot name or last updated date in either ascending or descending order.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::SlotSortBy> {
         self.sort_by.as_ref()
     }
-    /// <p>Provides the specification of a filter used to limit the slots in
-    /// the response to only those that match the filter specification. You can
-    /// only specify one filter and only one string to filter on.</p>
+    /// <p>Provides the specification of a filter used to limit the slots in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::SlotFilter]> {
         self.filters.as_deref()
     }
-    /// <p>The maximum number of slots to return in each page of results. If
-    /// there are fewer results than the max page size, only the actual number
-    /// of results are returned.</p>
+    /// <p>The maximum number of slots to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If the response from the <code>ListSlots</code> operation contains
-    /// more results than specified in the <code>maxResults</code> parameter, a
-    /// token is returned in the response. Use that token in the
-    /// <code>nextToken</code> parameter to return the next page of
-    /// results.</p>
+    /// <p>If the response from the <code>ListSlots</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17159,30 +16054,21 @@ impl std::fmt::Debug for ListSlotsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecommendedIntentsInput {
-    /// <p>The unique identifier of the bot associated with the recommended
-    /// intents.</p>
+    /// <p>The unique identifier of the bot associated with the recommended intents.</p>
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The version of the bot that contains the recommended intents.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The identifier of the language and locale of the recommended
-    /// intents.</p>
+    /// <p>The identifier of the language and locale of the recommended intents.</p>
     pub locale_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the bot recommendation that contains the
-    /// recommended intents.</p>
+    /// <p>The identifier of the bot recommendation that contains the recommended intents.</p>
     pub bot_recommendation_id: std::option::Option<std::string::String>,
-    /// <p>If the response from the ListRecommendedIntents operation contains
-    /// more results than specified in the maxResults parameter, a token is
-    /// returned in the response. Use that token in the nextToken parameter to
-    /// return the next page of results.</p>
+    /// <p>If the response from the ListRecommendedIntents operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of bot recommendations to return in each page of
-    /// results. If there are fewer results than the max page size, only the
-    /// actual number of results are returned.</p>
+    /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListRecommendedIntentsInput {
-    /// <p>The unique identifier of the bot associated with the recommended
-    /// intents.</p>
+    /// <p>The unique identifier of the bot associated with the recommended intents.</p>
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
@@ -17190,26 +16076,19 @@ impl ListRecommendedIntentsInput {
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The identifier of the language and locale of the recommended
-    /// intents.</p>
+    /// <p>The identifier of the language and locale of the recommended intents.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
-    /// <p>The identifier of the bot recommendation that contains the
-    /// recommended intents.</p>
+    /// <p>The identifier of the bot recommendation that contains the recommended intents.</p>
     pub fn bot_recommendation_id(&self) -> std::option::Option<&str> {
         self.bot_recommendation_id.as_deref()
     }
-    /// <p>If the response from the ListRecommendedIntents operation contains
-    /// more results than specified in the maxResults parameter, a token is
-    /// returned in the response. Use that token in the nextToken parameter to
-    /// return the next page of results.</p>
+    /// <p>If the response from the ListRecommendedIntents operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of bot recommendations to return in each page of
-    /// results. If there are fewer results than the max page size, only the
-    /// actual number of results are returned.</p>
+    /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -17235,28 +16114,15 @@ pub struct ListIntentsInput {
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The version of the bot that contains the intent.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The identifier of the language and locale of the intents to list.
-    /// The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub locale_id: std::option::Option<std::string::String>,
-    /// <p>Determines the sort order for the response from the
-    /// <code>ListIntents</code> operation. You can choose to sort by the
-    /// intent name or last updated date in either ascending or descending
-    /// order.</p>
+    /// <p>Determines the sort order for the response from the <code>ListIntents</code> operation. You can choose to sort by the intent name or last updated date in either ascending or descending order.</p>
     pub sort_by: std::option::Option<crate::model::IntentSortBy>,
-    /// <p>Provides the specification of a filter used to limit the intents in
-    /// the response to only those that match the filter specification. You can
-    /// only specify one filter and only one string to filter on.</p>
+    /// <p>Provides the specification of a filter used to limit the intents in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::IntentFilter>>,
-    /// <p>The maximum number of intents to return in each page of results. If
-    /// there are fewer results than the max page size, only the actual number
-    /// of results are returned.</p>
+    /// <p>The maximum number of intents to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If the response from the <code>ListIntents</code> operation contains
-    /// more results than specified in the <code>maxResults</code> parameter, a
-    /// token is returned in the response. Use that token in the
-    /// <code>nextToken</code> parameter to return the next page of
-    /// results.</p>
+    /// <p>If the response from the <code>ListIntents</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIntentsInput {
@@ -17268,36 +16134,23 @@ impl ListIntentsInput {
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The identifier of the language and locale of the intents to list.
-    /// The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
-    /// <p>Determines the sort order for the response from the
-    /// <code>ListIntents</code> operation. You can choose to sort by the
-    /// intent name or last updated date in either ascending or descending
-    /// order.</p>
+    /// <p>Determines the sort order for the response from the <code>ListIntents</code> operation. You can choose to sort by the intent name or last updated date in either ascending or descending order.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::IntentSortBy> {
         self.sort_by.as_ref()
     }
-    /// <p>Provides the specification of a filter used to limit the intents in
-    /// the response to only those that match the filter specification. You can
-    /// only specify one filter and only one string to filter on.</p>
+    /// <p>Provides the specification of a filter used to limit the intents in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::IntentFilter]> {
         self.filters.as_deref()
     }
-    /// <p>The maximum number of intents to return in each page of results. If
-    /// there are fewer results than the max page size, only the actual number
-    /// of results are returned.</p>
+    /// <p>The maximum number of intents to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If the response from the <code>ListIntents</code> operation contains
-    /// more results than specified in the <code>maxResults</code> parameter, a
-    /// token is returned in the response. Use that token in the
-    /// <code>nextToken</code> parameter to return the next page of
-    /// results.</p>
+    /// <p>If the response from the <code>ListIntents</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17324,23 +16177,13 @@ pub struct ListImportsInput {
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The version of the bot to list imports for.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>Determines the field that the list of imports is sorted by. You can
-    /// sort by the <code>LastUpdatedDateTime</code> field in ascending or
-    /// descending order.</p>
+    /// <p>Determines the field that the list of imports is sorted by. You can sort by the <code>LastUpdatedDateTime</code> field in ascending or descending order.</p>
     pub sort_by: std::option::Option<crate::model::ImportSortBy>,
-    /// <p>Provides the specification of a filter used to limit the bots in the
-    /// response to only those that match the filter specification. You can
-    /// only specify one filter and one string to filter on.</p>
+    /// <p>Provides the specification of a filter used to limit the bots in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::ImportFilter>>,
-    /// <p>The maximum number of imports to return in each page of results. If
-    /// there are fewer results than the max page size, only the actual number
-    /// of results are returned.</p>
+    /// <p>The maximum number of imports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If the response from the <code>ListImports</code> operation contains
-    /// more results than specified in the <code>maxResults</code> parameter, a
-    /// token is returned in the response. Use that token in the
-    /// <code>nextToken</code> parameter to return the next page of
-    /// results.</p>
+    /// <p>If the response from the <code>ListImports</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListImportsInput {
@@ -17352,29 +16195,19 @@ impl ListImportsInput {
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>Determines the field that the list of imports is sorted by. You can
-    /// sort by the <code>LastUpdatedDateTime</code> field in ascending or
-    /// descending order.</p>
+    /// <p>Determines the field that the list of imports is sorted by. You can sort by the <code>LastUpdatedDateTime</code> field in ascending or descending order.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::ImportSortBy> {
         self.sort_by.as_ref()
     }
-    /// <p>Provides the specification of a filter used to limit the bots in the
-    /// response to only those that match the filter specification. You can
-    /// only specify one filter and one string to filter on.</p>
+    /// <p>Provides the specification of a filter used to limit the bots in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::ImportFilter]> {
         self.filters.as_deref()
     }
-    /// <p>The maximum number of imports to return in each page of results. If
-    /// there are fewer results than the max page size, only the actual number
-    /// of results are returned.</p>
+    /// <p>The maximum number of imports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If the response from the <code>ListImports</code> operation contains
-    /// more results than specified in the <code>maxResults</code> parameter, a
-    /// token is returned in the response. Use that token in the
-    /// <code>nextToken</code> parameter to return the next page of
-    /// results.</p>
+    /// <p>If the response from the <code>ListImports</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17400,23 +16233,13 @@ pub struct ListExportsInput {
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The version of the bot to list exports for. </p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>Determines the field that the list of exports is sorted by. You can
-    /// sort by the <code>LastUpdatedDateTime</code> field in ascending or
-    /// descending order.</p>
+    /// <p>Determines the field that the list of exports is sorted by. You can sort by the <code>LastUpdatedDateTime</code> field in ascending or descending order.</p>
     pub sort_by: std::option::Option<crate::model::ExportSortBy>,
-    /// <p>Provides the specification of a filter used to limit the exports in
-    /// the response to only those that match the filter specification. You can
-    /// only specify one filter and one string to filter on.</p>
+    /// <p>Provides the specification of a filter used to limit the exports in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::ExportFilter>>,
-    /// <p>The maximum number of exports to return in each page of results. If
-    /// there are fewer results than the max page size, only the actual number
-    /// of results are returned.</p>
+    /// <p>The maximum number of exports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If the response from the <code>ListExports</code> operation contains
-    /// more results that specified in the <code>maxResults</code> parameter, a
-    /// token is returned in the response. Use that token in the
-    /// <code>nextToken</code> parameter to return the next page of
-    /// results.</p>
+    /// <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExportsInput {
@@ -17428,29 +16251,19 @@ impl ListExportsInput {
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>Determines the field that the list of exports is sorted by. You can
-    /// sort by the <code>LastUpdatedDateTime</code> field in ascending or
-    /// descending order.</p>
+    /// <p>Determines the field that the list of exports is sorted by. You can sort by the <code>LastUpdatedDateTime</code> field in ascending or descending order.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::ExportSortBy> {
         self.sort_by.as_ref()
     }
-    /// <p>Provides the specification of a filter used to limit the exports in
-    /// the response to only those that match the filter specification. You can
-    /// only specify one filter and one string to filter on.</p>
+    /// <p>Provides the specification of a filter used to limit the exports in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::ExportFilter]> {
         self.filters.as_deref()
     }
-    /// <p>The maximum number of exports to return in each page of results. If
-    /// there are fewer results than the max page size, only the actual number
-    /// of results are returned.</p>
+    /// <p>The maximum number of exports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If the response from the <code>ListExports</code> operation contains
-    /// more results that specified in the <code>maxResults</code> parameter, a
-    /// token is returned in the response. Use that token in the
-    /// <code>nextToken</code> parameter to return the next page of
-    /// results.</p>
+    /// <p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17472,51 +16285,29 @@ impl std::fmt::Debug for ListExportsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBuiltInSlotTypesInput {
-    /// <p>The identifier of the language and locale of the slot types to list.
-    /// The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale of the slot types to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub locale_id: std::option::Option<std::string::String>,
-    /// <p>Determines the sort order for the response from the
-    /// <code>ListBuiltInSlotTypes</code> operation. You can choose to sort
-    /// by the slot type signature in either ascending or descending
-    /// order.</p>
+    /// <p>Determines the sort order for the response from the <code>ListBuiltInSlotTypes</code> operation. You can choose to sort by the slot type signature in either ascending or descending order.</p>
     pub sort_by: std::option::Option<crate::model::BuiltInSlotTypeSortBy>,
-    /// <p>The maximum number of built-in slot types to return in each page of
-    /// results. If there are fewer results than the max page size, only the
-    /// actual number of results are returned.</p>
+    /// <p>The maximum number of built-in slot types to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If the response from the <code>ListBuiltInSlotTypes</code> operation
-    /// contains more results than specified in the <code>maxResults</code>
-    /// parameter, a token is returned in the response. Use that token in the
-    /// <code>nextToken</code> parameter to return the next page of
-    /// results.</p>
+    /// <p>If the response from the <code>ListBuiltInSlotTypes</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBuiltInSlotTypesInput {
-    /// <p>The identifier of the language and locale of the slot types to list.
-    /// The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale of the slot types to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
-    /// <p>Determines the sort order for the response from the
-    /// <code>ListBuiltInSlotTypes</code> operation. You can choose to sort
-    /// by the slot type signature in either ascending or descending
-    /// order.</p>
+    /// <p>Determines the sort order for the response from the <code>ListBuiltInSlotTypes</code> operation. You can choose to sort by the slot type signature in either ascending or descending order.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::BuiltInSlotTypeSortBy> {
         self.sort_by.as_ref()
     }
-    /// <p>The maximum number of built-in slot types to return in each page of
-    /// results. If there are fewer results than the max page size, only the
-    /// actual number of results are returned.</p>
+    /// <p>The maximum number of built-in slot types to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If the response from the <code>ListBuiltInSlotTypes</code> operation
-    /// contains more results than specified in the <code>maxResults</code>
-    /// parameter, a token is returned in the response. Use that token in the
-    /// <code>nextToken</code> parameter to return the next page of
-    /// results.</p>
+    /// <p>If the response from the <code>ListBuiltInSlotTypes</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17536,49 +16327,29 @@ impl std::fmt::Debug for ListBuiltInSlotTypesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBuiltInIntentsInput {
-    /// <p>The identifier of the language and locale of the intents to list.
-    /// The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub locale_id: std::option::Option<std::string::String>,
-    /// <p>Specifies sorting parameters for the list of built-in intents. You
-    /// can specify that the list be sorted by the built-in intent signature in
-    /// either ascending or descending order.</p>
+    /// <p>Specifies sorting parameters for the list of built-in intents. You can specify that the list be sorted by the built-in intent signature in either ascending or descending order.</p>
     pub sort_by: std::option::Option<crate::model::BuiltInIntentSortBy>,
-    /// <p>The maximum number of built-in intents to return in each page of
-    /// results. If there are fewer results than the max page size, only the
-    /// actual number of results are returned.</p>
+    /// <p>The maximum number of built-in intents to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If the response from the <code>ListBuiltInIntents</code> operation
-    /// contains more results than specified in the <code>maxResults</code>
-    /// parameter, a token is returned in the response. Use that token in the
-    /// <code>nextToken</code> parameter to return the next page of
-    /// results.</p>
+    /// <p>If the response from the <code>ListBuiltInIntents</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBuiltInIntentsInput {
-    /// <p>The identifier of the language and locale of the intents to list.
-    /// The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
-    /// <p>Specifies sorting parameters for the list of built-in intents. You
-    /// can specify that the list be sorted by the built-in intent signature in
-    /// either ascending or descending order.</p>
+    /// <p>Specifies sorting parameters for the list of built-in intents. You can specify that the list be sorted by the built-in intent signature in either ascending or descending order.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::BuiltInIntentSortBy> {
         self.sort_by.as_ref()
     }
-    /// <p>The maximum number of built-in intents to return in each page of
-    /// results. If there are fewer results than the max page size, only the
-    /// actual number of results are returned.</p>
+    /// <p>The maximum number of built-in intents to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If the response from the <code>ListBuiltInIntents</code> operation
-    /// contains more results than specified in the <code>maxResults</code>
-    /// parameter, a token is returned in the response. Use that token in the
-    /// <code>nextToken</code> parameter to return the next page of
-    /// results.</p>
+    /// <p>If the response from the <code>ListBuiltInIntents</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17600,19 +16371,11 @@ impl std::fmt::Debug for ListBuiltInIntentsInput {
 pub struct ListBotVersionsInput {
     /// <p>The identifier of the bot to list versions for.</p>
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>Specifies sorting parameters for the list of versions. You can
-    /// specify that the list be sorted by version name in either ascending or
-    /// descending order.</p>
+    /// <p>Specifies sorting parameters for the list of versions. You can specify that the list be sorted by version name in either ascending or descending order.</p>
     pub sort_by: std::option::Option<crate::model::BotVersionSortBy>,
-    /// <p>The maximum number of versions to return in each page of results. If
-    /// there are fewer results than the max page size, only the actual number
-    /// of results are returned.</p>
+    /// <p>The maximum number of versions to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If the response to the <code>ListBotVersion</code> operation
-    /// contains more results than specified in the <code>maxResults</code>
-    /// parameter, a token is returned in the response. Use that token in the
-    /// <code>nextToken</code> parameter to return the next page of
-    /// results.</p>
+    /// <p>If the response to the <code>ListBotVersion</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBotVersionsInput {
@@ -17620,23 +16383,15 @@ impl ListBotVersionsInput {
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>Specifies sorting parameters for the list of versions. You can
-    /// specify that the list be sorted by version name in either ascending or
-    /// descending order.</p>
+    /// <p>Specifies sorting parameters for the list of versions. You can specify that the list be sorted by version name in either ascending or descending order.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::BotVersionSortBy> {
         self.sort_by.as_ref()
     }
-    /// <p>The maximum number of versions to return in each page of results. If
-    /// there are fewer results than the max page size, only the actual number
-    /// of results are returned.</p>
+    /// <p>The maximum number of versions to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If the response to the <code>ListBotVersion</code> operation
-    /// contains more results than specified in the <code>maxResults</code>
-    /// parameter, a token is returned in the response. Use that token in the
-    /// <code>nextToken</code> parameter to return the next page of
-    /// results.</p>
+    /// <p>If the response to the <code>ListBotVersion</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17656,49 +16411,29 @@ impl std::fmt::Debug for ListBotVersionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBotsInput {
-    /// <p>Specifies sorting parameters for the list of bots. You can specify
-    /// that the list be sorted by bot name in ascending or descending
-    /// order.</p>
+    /// <p>Specifies sorting parameters for the list of bots. You can specify that the list be sorted by bot name in ascending or descending order.</p>
     pub sort_by: std::option::Option<crate::model::BotSortBy>,
-    /// <p>Provides the specification of a filter used to limit the bots in the
-    /// response to only those that match the filter specification. You can
-    /// only specify one filter and one string to filter on.</p>
+    /// <p>Provides the specification of a filter used to limit the bots in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::BotFilter>>,
-    /// <p>The maximum number of bots to return in each page of results. If
-    /// there are fewer results than the maximum page size, only the actual
-    /// number of results are returned.</p>
+    /// <p>The maximum number of bots to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If the response from the <code>ListBots</code> operation contains
-    /// more results than specified in the <code>maxResults</code> parameter, a
-    /// token is returned in the response. Use that token in the
-    /// <code>nextToken</code> parameter to return the next page of
-    /// results.</p>
+    /// <p>If the response from the <code>ListBots</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBotsInput {
-    /// <p>Specifies sorting parameters for the list of bots. You can specify
-    /// that the list be sorted by bot name in ascending or descending
-    /// order.</p>
+    /// <p>Specifies sorting parameters for the list of bots. You can specify that the list be sorted by bot name in ascending or descending order.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::BotSortBy> {
         self.sort_by.as_ref()
     }
-    /// <p>Provides the specification of a filter used to limit the bots in the
-    /// response to only those that match the filter specification. You can
-    /// only specify one filter and one string to filter on.</p>
+    /// <p>Provides the specification of a filter used to limit the bots in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::BotFilter]> {
         self.filters.as_deref()
     }
-    /// <p>The maximum number of bots to return in each page of results. If
-    /// there are fewer results than the maximum page size, only the actual
-    /// number of results are returned.</p>
+    /// <p>The maximum number of bots to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If the response from the <code>ListBots</code> operation contains
-    /// more results than specified in the <code>maxResults</code> parameter, a
-    /// token is returned in the response. Use that token in the
-    /// <code>nextToken</code> parameter to return the next page of
-    /// results.</p>
+    /// <p>If the response from the <code>ListBots</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17718,51 +16453,35 @@ impl std::fmt::Debug for ListBotsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBotRecommendationsInput {
-    /// <p>The unique identifier of the bot that contains the bot
-    /// recommendation list.</p>
+    /// <p>The unique identifier of the bot that contains the bot recommendation list.</p>
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>The version of the bot that contains the bot recommendation
-    /// list.</p>
+    /// <p>The version of the bot that contains the bot recommendation list.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The identifier of the language and locale of the bot recommendation
-    /// list.</p>
+    /// <p>The identifier of the language and locale of the bot recommendation list.</p>
     pub locale_id: std::option::Option<std::string::String>,
-    /// <p>The maximum number of bot recommendations to return in each page of
-    /// results. If there are fewer results than the max page size, only the
-    /// actual number of results are returned.</p>
+    /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If the response from the ListBotRecommendation operation contains
-    /// more results than specified in the maxResults parameter, a token is
-    /// returned in the response. Use that token in the nextToken parameter to
-    /// return the next page of results.</p>
+    /// <p>If the response from the ListBotRecommendation operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBotRecommendationsInput {
-    /// <p>The unique identifier of the bot that contains the bot
-    /// recommendation list.</p>
+    /// <p>The unique identifier of the bot that contains the bot recommendation list.</p>
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>The version of the bot that contains the bot recommendation
-    /// list.</p>
+    /// <p>The version of the bot that contains the bot recommendation list.</p>
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The identifier of the language and locale of the bot recommendation
-    /// list.</p>
+    /// <p>The identifier of the language and locale of the bot recommendation list.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
-    /// <p>The maximum number of bot recommendations to return in each page of
-    /// results. If there are fewer results than the max page size, only the
-    /// actual number of results are returned.</p>
+    /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If the response from the ListBotRecommendation operation contains
-    /// more results than specified in the maxResults parameter, a token is
-    /// returned in the response. Use that token in the nextToken parameter to
-    /// return the next page of results.</p>
+    /// <p>If the response from the ListBotRecommendation operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17787,22 +16506,13 @@ pub struct ListBotLocalesInput {
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The version of the bot to list locales for.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>Specifies sorting parameters for the list of locales. You can sort
-    /// by locale name in ascending or descending order.</p>
+    /// <p>Specifies sorting parameters for the list of locales. You can sort by locale name in ascending or descending order.</p>
     pub sort_by: std::option::Option<crate::model::BotLocaleSortBy>,
-    /// <p>Provides the specification for a filter used to limit the response
-    /// to only those locales that match the filter specification. You can only
-    /// specify one filter and one value to filter on.</p>
+    /// <p>Provides the specification for a filter used to limit the response to only those locales that match the filter specification. You can only specify one filter and one value to filter on.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::BotLocaleFilter>>,
-    /// <p>The maximum number of aliases to return in each page of results. If
-    /// there are fewer results than the max page size, only the actual number
-    /// of results are returned.</p>
+    /// <p>The maximum number of aliases to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If the response from the <code>ListBotLocales</code> operation
-    /// contains more results than specified in the <code>maxResults</code>
-    /// parameter, a token is returned in the response. Use that token as the
-    /// <code>nextToken</code> parameter to return the next page of results.
-    /// </p>
+    /// <p>If the response from the <code>ListBotLocales</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token as the <code>nextToken</code> parameter to return the next page of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBotLocalesInput {
@@ -17814,28 +16524,19 @@ impl ListBotLocalesInput {
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>Specifies sorting parameters for the list of locales. You can sort
-    /// by locale name in ascending or descending order.</p>
+    /// <p>Specifies sorting parameters for the list of locales. You can sort by locale name in ascending or descending order.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::BotLocaleSortBy> {
         self.sort_by.as_ref()
     }
-    /// <p>Provides the specification for a filter used to limit the response
-    /// to only those locales that match the filter specification. You can only
-    /// specify one filter and one value to filter on.</p>
+    /// <p>Provides the specification for a filter used to limit the response to only those locales that match the filter specification. You can only specify one filter and one value to filter on.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::BotLocaleFilter]> {
         self.filters.as_deref()
     }
-    /// <p>The maximum number of aliases to return in each page of results. If
-    /// there are fewer results than the max page size, only the actual number
-    /// of results are returned.</p>
+    /// <p>The maximum number of aliases to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If the response from the <code>ListBotLocales</code> operation
-    /// contains more results than specified in the <code>maxResults</code>
-    /// parameter, a token is returned in the response. Use that token as the
-    /// <code>nextToken</code> parameter to return the next page of results.
-    /// </p>
+    /// <p>If the response from the <code>ListBotLocales</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token as the <code>nextToken</code> parameter to return the next page of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17859,15 +16560,9 @@ impl std::fmt::Debug for ListBotLocalesInput {
 pub struct ListBotAliasesInput {
     /// <p>The identifier of the bot to list aliases for.</p>
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>The maximum number of aliases to return in each page of results. If
-    /// there are fewer results than the max page size, only the actual number
-    /// of results are returned.</p>
+    /// <p>The maximum number of aliases to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If the response from the <code>ListBotAliases</code> operation
-    /// contains more results than specified in the <code>maxResults</code>
-    /// parameter, a token is returned in the response. Use that token in the
-    /// <code>nextToken</code> parameter to return the next page of
-    /// results.</p>
+    /// <p>If the response from the <code>ListBotAliases</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBotAliasesInput {
@@ -17875,17 +16570,11 @@ impl ListBotAliasesInput {
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>The maximum number of aliases to return in each page of results. If
-    /// there are fewer results than the max page size, only the actual number
-    /// of results are returned.</p>
+    /// <p>The maximum number of aliases to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If the response from the <code>ListBotAliases</code> operation
-    /// contains more results than specified in the <code>maxResults</code>
-    /// parameter, a token is returned in the response. Use that token in the
-    /// <code>nextToken</code> parameter to return the next page of
-    /// results.</p>
+    /// <p>If the response from the <code>ListBotAliases</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17904,97 +16593,61 @@ impl std::fmt::Debug for ListBotAliasesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAggregatedUtterancesInput {
-    /// <p>The unique identifier of the bot associated with this
-    /// request.</p>
+    /// <p>The unique identifier of the bot associated with this request.</p>
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the bot alias associated with this request. If you
-    /// specify the bot alias, you can't specify the bot version.</p>
+    /// <p>The identifier of the bot alias associated with this request. If you specify the bot alias, you can't specify the bot version.</p>
     pub bot_alias_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the bot version associated with this request. If
-    /// you specify the bot version, you can't specify the bot alias.</p>
+    /// <p>The identifier of the bot version associated with this request. If you specify the bot version, you can't specify the bot alias.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The identifier of the language and locale where the utterances were
-    /// collected. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
-    /// languages</a>.</p>
+    /// <p>The identifier of the language and locale where the utterances were collected. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub locale_id: std::option::Option<std::string::String>,
-    /// <p>The time window for aggregating the utterance information. You can
-    /// specify a time between one hour and two weeks.</p>
+    /// <p>The time window for aggregating the utterance information. You can specify a time between one hour and two weeks.</p>
     pub aggregation_duration: std::option::Option<crate::model::UtteranceAggregationDuration>,
-    /// <p>Specifies sorting parameters for the list of utterances. You can
-    /// sort by the hit count, the missed count, or the number of distinct
-    /// sessions the utterance appeared in.</p>
+    /// <p>Specifies sorting parameters for the list of utterances. You can sort by the hit count, the missed count, or the number of distinct sessions the utterance appeared in.</p>
     pub sort_by: std::option::Option<crate::model::AggregatedUtterancesSortBy>,
-    /// <p>Provides the specification of a filter used to limit the utterances
-    /// in the response to only those that match the filter specification. You
-    /// can only specify one filter and one string to filter on.</p>
+    /// <p>Provides the specification of a filter used to limit the utterances in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::AggregatedUtterancesFilter>>,
-    /// <p>The maximum number of utterances to return in each page of results.
-    /// If there are fewer results than the maximum page size, only the actual
-    /// number of results are returned. If you don't specify the
-    /// <code>maxResults</code> parameter, 1,000 results are
-    /// returned.</p>
+    /// <p>The maximum number of utterances to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned. If you don't specify the <code>maxResults</code> parameter, 1,000 results are returned.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If the response from the <code>ListAggregatedUtterances</code>
-    /// operation contains more results that specified in the
-    /// <code>maxResults</code> parameter, a token is returned in the
-    /// response. Use that token in the <code>nextToken</code> parameter to
-    /// return the next page of results.</p>
+    /// <p>If the response from the <code>ListAggregatedUtterances</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAggregatedUtterancesInput {
-    /// <p>The unique identifier of the bot associated with this
-    /// request.</p>
+    /// <p>The unique identifier of the bot associated with this request.</p>
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>The identifier of the bot alias associated with this request. If you
-    /// specify the bot alias, you can't specify the bot version.</p>
+    /// <p>The identifier of the bot alias associated with this request. If you specify the bot alias, you can't specify the bot version.</p>
     pub fn bot_alias_id(&self) -> std::option::Option<&str> {
         self.bot_alias_id.as_deref()
     }
-    /// <p>The identifier of the bot version associated with this request. If
-    /// you specify the bot version, you can't specify the bot alias.</p>
+    /// <p>The identifier of the bot version associated with this request. If you specify the bot version, you can't specify the bot alias.</p>
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The identifier of the language and locale where the utterances were
-    /// collected. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
-    /// languages</a>.</p>
+    /// <p>The identifier of the language and locale where the utterances were collected. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
-    /// <p>The time window for aggregating the utterance information. You can
-    /// specify a time between one hour and two weeks.</p>
+    /// <p>The time window for aggregating the utterance information. You can specify a time between one hour and two weeks.</p>
     pub fn aggregation_duration(
         &self,
     ) -> std::option::Option<&crate::model::UtteranceAggregationDuration> {
         self.aggregation_duration.as_ref()
     }
-    /// <p>Specifies sorting parameters for the list of utterances. You can
-    /// sort by the hit count, the missed count, or the number of distinct
-    /// sessions the utterance appeared in.</p>
+    /// <p>Specifies sorting parameters for the list of utterances. You can sort by the hit count, the missed count, or the number of distinct sessions the utterance appeared in.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::AggregatedUtterancesSortBy> {
         self.sort_by.as_ref()
     }
-    /// <p>Provides the specification of a filter used to limit the utterances
-    /// in the response to only those that match the filter specification. You
-    /// can only specify one filter and one string to filter on.</p>
+    /// <p>Provides the specification of a filter used to limit the utterances in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::AggregatedUtterancesFilter]> {
         self.filters.as_deref()
     }
-    /// <p>The maximum number of utterances to return in each page of results.
-    /// If there are fewer results than the maximum page size, only the actual
-    /// number of results are returned. If you don't specify the
-    /// <code>maxResults</code> parameter, 1,000 results are
-    /// returned.</p>
+    /// <p>The maximum number of utterances to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned. If you don't specify the <code>maxResults</code> parameter, 1,000 results are returned.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If the response from the <code>ListAggregatedUtterances</code>
-    /// operation contains more results that specified in the
-    /// <code>maxResults</code> parameter, a token is returned in the
-    /// response. Use that token in the <code>nextToken</code> parameter to
-    /// return the next page of results.</p>
+    /// <p>If the response from the <code>ListAggregatedUtterances</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -18025,9 +16678,7 @@ pub struct DescribeSlotTypeInput {
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The version of the bot associated with the slot type.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The identifier of the language and locale of the slot type to
-    /// describe. The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale of the slot type to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub locale_id: std::option::Option<std::string::String>,
 }
 impl DescribeSlotTypeInput {
@@ -18043,9 +16694,7 @@ impl DescribeSlotTypeInput {
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The identifier of the language and locale of the slot type to
-    /// describe. The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale of the slot type to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
@@ -18071,9 +16720,7 @@ pub struct DescribeSlotInput {
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The version of the bot associated with the slot.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The identifier of the language and locale of the slot to describe.
-    /// The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale of the slot to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub locale_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the intent that contains the slot.</p>
     pub intent_id: std::option::Option<std::string::String>,
@@ -18091,9 +16738,7 @@ impl DescribeSlotInput {
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The identifier of the language and locale of the slot to describe.
-    /// The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale of the slot to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
@@ -18118,13 +16763,11 @@ impl std::fmt::Debug for DescribeSlotInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeResourcePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-    /// resource policy is attached to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DescribeResourcePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-    /// resource policy is attached to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -18147,9 +16790,7 @@ pub struct DescribeIntentInput {
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The version of the bot associated with the intent.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The identifier of the language and locale of the intent to describe.
-    /// The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale of the intent to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub locale_id: std::option::Option<std::string::String>,
 }
 impl DescribeIntentInput {
@@ -18165,9 +16806,7 @@ impl DescribeIntentInput {
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The identifier of the language and locale of the intent to describe.
-    /// The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale of the intent to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
@@ -18229,15 +16868,13 @@ impl std::fmt::Debug for DescribeExportInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBotVersionInput {
-    /// <p>The identifier of the bot containing the version to return metadata
-    /// for.</p>
+    /// <p>The identifier of the bot containing the version to return metadata for.</p>
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The version of the bot to return metadata for.</p>
     pub bot_version: std::option::Option<std::string::String>,
 }
 impl DescribeBotVersionInput {
-    /// <p>The identifier of the bot containing the version to return metadata
-    /// for.</p>
+    /// <p>The identifier of the bot containing the version to return metadata for.</p>
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
@@ -18259,33 +16896,25 @@ impl std::fmt::Debug for DescribeBotVersionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBotRecommendationInput {
-    /// <p>The unique identifier of the bot associated with the bot
-    /// recommendation.</p>
+    /// <p>The unique identifier of the bot associated with the bot recommendation.</p>
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>The version of the bot associated with the bot
-    /// recommendation.</p>
+    /// <p>The version of the bot associated with the bot recommendation.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The identifier of the language and locale of the bot recommendation
-    /// to describe. The string must match one of the supported locales. For
-    /// more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale of the bot recommendation to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub locale_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the bot recommendation to describe.</p>
     pub bot_recommendation_id: std::option::Option<std::string::String>,
 }
 impl DescribeBotRecommendationInput {
-    /// <p>The unique identifier of the bot associated with the bot
-    /// recommendation.</p>
+    /// <p>The unique identifier of the bot associated with the bot recommendation.</p>
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>The version of the bot associated with the bot
-    /// recommendation.</p>
+    /// <p>The version of the bot associated with the bot recommendation.</p>
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The identifier of the language and locale of the bot recommendation
-    /// to describe. The string must match one of the supported locales. For
-    /// more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale of the bot recommendation to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
@@ -18311,11 +16940,9 @@ impl std::fmt::Debug for DescribeBotRecommendationInput {
 pub struct DescribeBotLocaleInput {
     /// <p>The identifier of the bot associated with the locale.</p>
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the version of the bot associated with the
-    /// locale.</p>
+    /// <p>The identifier of the version of the bot associated with the locale.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of the locale to describe. The string must
-    /// match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>. </p>
+    /// <p>The unique identifier of the locale to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>. </p>
     pub locale_id: std::option::Option<std::string::String>,
 }
 impl DescribeBotLocaleInput {
@@ -18323,13 +16950,11 @@ impl DescribeBotLocaleInput {
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>The identifier of the version of the bot associated with the
-    /// locale.</p>
+    /// <p>The identifier of the version of the bot associated with the locale.</p>
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The unique identifier of the locale to describe. The string must
-    /// match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>. </p>
+    /// <p>The unique identifier of the locale to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>. </p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
@@ -18350,8 +16975,7 @@ impl std::fmt::Debug for DescribeBotLocaleInput {
 pub struct DescribeBotAliasInput {
     /// <p>The identifier of the bot alias to describe.</p>
     pub bot_alias_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the bot associated with the bot alias to
-    /// describe.</p>
+    /// <p>The identifier of the bot associated with the bot alias to describe.</p>
     pub bot_id: std::option::Option<std::string::String>,
 }
 impl DescribeBotAliasInput {
@@ -18359,8 +16983,7 @@ impl DescribeBotAliasInput {
     pub fn bot_alias_id(&self) -> std::option::Option<&str> {
         self.bot_alias_id.as_deref()
     }
-    /// <p>The identifier of the bot associated with the bot alias to
-    /// describe.</p>
+    /// <p>The identifier of the bot associated with the bot alias to describe.</p>
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
@@ -18399,33 +17022,23 @@ impl std::fmt::Debug for DescribeBotInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUtterancesInput {
-    /// <p>The unique identifier of the bot that contains the
-    /// utterances.</p>
+    /// <p>The unique identifier of the bot that contains the utterances.</p>
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the language and locale where the utterances were
-    /// collected. The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
-    /// languages</a>.</p>
+    /// <p>The identifier of the language and locale where the utterances were collected. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub locale_id: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of the session with the user. The ID is
-    /// returned in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeText.html">RecognizeText</a> and <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeUtterance.html">RecognizeUtterance</a> operations.</p>
+    /// <p>The unique identifier of the session with the user. The ID is returned in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeText.html">RecognizeText</a> and <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeUtterance.html">RecognizeUtterance</a> operations.</p>
     pub session_id: std::option::Option<std::string::String>,
 }
 impl DeleteUtterancesInput {
-    /// <p>The unique identifier of the bot that contains the
-    /// utterances.</p>
+    /// <p>The unique identifier of the bot that contains the utterances.</p>
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>The identifier of the language and locale where the utterances were
-    /// collected. The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
-    /// languages</a>.</p>
+    /// <p>The identifier of the language and locale where the utterances were collected. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
-    /// <p>The unique identifier of the session with the user. The ID is
-    /// returned in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeText.html">RecognizeText</a> and <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeUtterance.html">RecognizeUtterance</a> operations.</p>
+    /// <p>The unique identifier of the session with the user. The ID is returned in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeText.html">RecognizeText</a> and <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeUtterance.html">RecognizeUtterance</a> operations.</p>
     pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
     }
@@ -18450,15 +17063,9 @@ pub struct DeleteSlotTypeInput {
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The version of the bot associated with the slot type.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The identifier of the language and locale that the slot type will be
-    /// deleted from. The string must match one of the supported locales. For
-    /// more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale that the slot type will be deleted from. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub locale_id: std::option::Option<std::string::String>,
-    /// <p>By default, the <code>DeleteSlotType</code> operations throws a
-    /// <code>ResourceInUseException</code> exception if you try to delete a
-    /// slot type used by a slot. Set the <code>skipResourceInUseCheck</code>
-    /// parameter to <code>true</code> to skip this check and remove the slot
-    /// type even if a slot uses it.</p>
+    /// <p>By default, the <code>DeleteSlotType</code> operations throws a <code>ResourceInUseException</code> exception if you try to delete a slot type used by a slot. Set the <code>skipResourceInUseCheck</code> parameter to <code>true</code> to skip this check and remove the slot type even if a slot uses it.</p>
     pub skip_resource_in_use_check: bool,
 }
 impl DeleteSlotTypeInput {
@@ -18474,17 +17081,11 @@ impl DeleteSlotTypeInput {
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The identifier of the language and locale that the slot type will be
-    /// deleted from. The string must match one of the supported locales. For
-    /// more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale that the slot type will be deleted from. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
-    /// <p>By default, the <code>DeleteSlotType</code> operations throws a
-    /// <code>ResourceInUseException</code> exception if you try to delete a
-    /// slot type used by a slot. Set the <code>skipResourceInUseCheck</code>
-    /// parameter to <code>true</code> to skip this check and remove the slot
-    /// type even if a slot uses it.</p>
+    /// <p>By default, the <code>DeleteSlotType</code> operations throws a <code>ResourceInUseException</code> exception if you try to delete a slot type used by a slot. Set the <code>skipResourceInUseCheck</code> parameter to <code>true</code> to skip this check and remove the slot type even if a slot uses it.</p>
     pub fn skip_resource_in_use_check(&self) -> bool {
         self.skip_resource_in_use_check
     }
@@ -18514,9 +17115,7 @@ pub struct DeleteSlotInput {
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The version of the bot associated with the slot to delete.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The identifier of the language and locale that the slot will be
-    /// deleted from. The string must match one of the supported locales. For
-    /// more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale that the slot will be deleted from. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub locale_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the intent associated with the slot.</p>
     pub intent_id: std::option::Option<std::string::String>,
@@ -18534,9 +17133,7 @@ impl DeleteSlotInput {
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The identifier of the language and locale that the slot will be
-    /// deleted from. The string must match one of the supported locales. For
-    /// more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale that the slot will be deleted from. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
@@ -18561,21 +17158,16 @@ impl std::fmt::Debug for DeleteSlotInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourcePolicyStatementInput {
-    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-    /// resource policy is attached to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The name of the statement (SID) to delete from the policy.</p>
     pub statement_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the revision of the policy to delete the statement
-    /// from. If this revision ID doesn't match the current revision ID, Amazon Lex
-    /// throws an exception.</p>
-    /// <p>If you don't specify a revision, Amazon Lex removes the current contents
-    /// of the statement. </p>
+    /// <p>The identifier of the revision of the policy to delete the statement from. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
+    /// <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement. </p>
     pub expected_revision_id: std::option::Option<std::string::String>,
 }
 impl DeleteResourcePolicyStatementInput {
-    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-    /// resource policy is attached to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -18583,11 +17175,8 @@ impl DeleteResourcePolicyStatementInput {
     pub fn statement_id(&self) -> std::option::Option<&str> {
         self.statement_id.as_deref()
     }
-    /// <p>The identifier of the revision of the policy to delete the statement
-    /// from. If this revision ID doesn't match the current revision ID, Amazon Lex
-    /// throws an exception.</p>
-    /// <p>If you don't specify a revision, Amazon Lex removes the current contents
-    /// of the statement. </p>
+    /// <p>The identifier of the revision of the policy to delete the statement from. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
+    /// <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement. </p>
     pub fn expected_revision_id(&self) -> std::option::Option<&str> {
         self.expected_revision_id.as_deref()
     }
@@ -18606,25 +17195,19 @@ impl std::fmt::Debug for DeleteResourcePolicyStatementInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourcePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that has the
-    /// resource policy attached.</p>
+    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that has the resource policy attached.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The identifier of the revision to edit. If this ID doesn't match the
-    /// current revision number, Amazon Lex returns an exception</p>
-    /// <p>If you don't specify a revision ID, Amazon Lex will delete the current
-    /// policy.</p>
+    /// <p>The identifier of the revision to edit. If this ID doesn't match the current revision number, Amazon Lex returns an exception</p>
+    /// <p>If you don't specify a revision ID, Amazon Lex will delete the current policy.</p>
     pub expected_revision_id: std::option::Option<std::string::String>,
 }
 impl DeleteResourcePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that has the
-    /// resource policy attached.</p>
+    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that has the resource policy attached.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The identifier of the revision to edit. If this ID doesn't match the
-    /// current revision number, Amazon Lex returns an exception</p>
-    /// <p>If you don't specify a revision ID, Amazon Lex will delete the current
-    /// policy.</p>
+    /// <p>The identifier of the revision to edit. If this ID doesn't match the current revision number, Amazon Lex returns an exception</p>
+    /// <p>If you don't specify a revision ID, Amazon Lex will delete the current policy.</p>
     pub fn expected_revision_id(&self) -> std::option::Option<&str> {
         self.expected_revision_id.as_deref()
     }
@@ -18648,9 +17231,7 @@ pub struct DeleteIntentInput {
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The version of the bot associated with the intent.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The identifier of the language and locale where the bot will be
-    /// deleted. The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale where the bot will be deleted. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub locale_id: std::option::Option<std::string::String>,
 }
 impl DeleteIntentInput {
@@ -18666,9 +17247,7 @@ impl DeleteIntentInput {
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The identifier of the language and locale where the bot will be
-    /// deleted. The string must match one of the supported locales. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale where the bot will be deleted. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
@@ -18734,12 +17313,7 @@ pub struct DeleteBotVersionInput {
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The version of the bot to delete.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>By default, the <code>DeleteBotVersion</code> operations throws a
-    /// <code>ResourceInUseException</code> exception if you try to delete a
-    /// bot version that has an alias pointing at it. Set the
-    /// <code>skipResourceInUseCheck</code> parameter to <code>true</code>
-    /// to skip this check and remove the version even if an alias points to
-    /// it.</p>
+    /// <p>By default, the <code>DeleteBotVersion</code> operations throws a <code>ResourceInUseException</code> exception if you try to delete a bot version that has an alias pointing at it. Set the <code>skipResourceInUseCheck</code> parameter to <code>true</code> to skip this check and remove the version even if an alias points to it.</p>
     pub skip_resource_in_use_check: bool,
 }
 impl DeleteBotVersionInput {
@@ -18751,12 +17325,7 @@ impl DeleteBotVersionInput {
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>By default, the <code>DeleteBotVersion</code> operations throws a
-    /// <code>ResourceInUseException</code> exception if you try to delete a
-    /// bot version that has an alias pointing at it. Set the
-    /// <code>skipResourceInUseCheck</code> parameter to <code>true</code>
-    /// to skip this check and remove the version even if an alias points to
-    /// it.</p>
+    /// <p>By default, the <code>DeleteBotVersion</code> operations throws a <code>ResourceInUseException</code> exception if you try to delete a bot version that has an alias pointing at it. Set the <code>skipResourceInUseCheck</code> parameter to <code>true</code> to skip this check and remove the version even if an alias points to it.</p>
     pub fn skip_resource_in_use_check(&self) -> bool {
         self.skip_resource_in_use_check
     }
@@ -18782,9 +17351,7 @@ pub struct DeleteBotLocaleInput {
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The version of the bot that contains the locale. </p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The identifier of the language and locale that will be deleted. The
-    /// string must match one of the supported locales. For more information,
-    /// see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale that will be deleted. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub locale_id: std::option::Option<std::string::String>,
 }
 impl DeleteBotLocaleInput {
@@ -18796,9 +17363,7 @@ impl DeleteBotLocaleInput {
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The identifier of the language and locale that will be deleted. The
-    /// string must match one of the supported locales. For more information,
-    /// see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale that will be deleted. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
@@ -18819,11 +17384,9 @@ impl std::fmt::Debug for DeleteBotLocaleInput {
 pub struct DeleteBotAliasInput {
     /// <p>The unique identifier of the bot alias to delete.</p>
     pub bot_alias_id: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of the bot associated with the alias to
-    /// delete.</p>
+    /// <p>The unique identifier of the bot associated with the alias to delete.</p>
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>When this parameter is true, Amazon Lex doesn't check to see if any other
-    /// resource is using the alias before it is deleted.</p>
+    /// <p>When this parameter is true, Amazon Lex doesn't check to see if any other resource is using the alias before it is deleted.</p>
     pub skip_resource_in_use_check: bool,
 }
 impl DeleteBotAliasInput {
@@ -18831,13 +17394,11 @@ impl DeleteBotAliasInput {
     pub fn bot_alias_id(&self) -> std::option::Option<&str> {
         self.bot_alias_id.as_deref()
     }
-    /// <p>The unique identifier of the bot associated with the alias to
-    /// delete.</p>
+    /// <p>The unique identifier of the bot associated with the alias to delete.</p>
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>When this parameter is true, Amazon Lex doesn't check to see if any other
-    /// resource is using the alias before it is deleted.</p>
+    /// <p>When this parameter is true, Amazon Lex doesn't check to see if any other resource is using the alias before it is deleted.</p>
     pub fn skip_resource_in_use_check(&self) -> bool {
         self.skip_resource_in_use_check
     }
@@ -18861,9 +17422,7 @@ impl std::fmt::Debug for DeleteBotAliasInput {
 pub struct DeleteBotInput {
     /// <p>The identifier of the bot to delete. </p>
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>When <code>true</code>, Amazon Lex doesn't check to see if another
-    /// resource, such as an alias, is using the bot before it is
-    /// deleted.</p>
+    /// <p>When <code>true</code>, Amazon Lex doesn't check to see if another resource, such as an alias, is using the bot before it is deleted.</p>
     pub skip_resource_in_use_check: bool,
 }
 impl DeleteBotInput {
@@ -18871,9 +17430,7 @@ impl DeleteBotInput {
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>When <code>true</code>, Amazon Lex doesn't check to see if another
-    /// resource, such as an alias, is using the bot before it is
-    /// deleted.</p>
+    /// <p>When <code>true</code>, Amazon Lex doesn't check to see if another resource, such as an alias, is using the bot before it is deleted.</p>
     pub fn skip_resource_in_use_check(&self) -> bool {
         self.skip_resource_in_use_check
     }
@@ -18905,96 +17462,56 @@ impl std::fmt::Debug for CreateUploadUrlInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSlotTypeInput {
-    /// <p>The name for the slot. A slot type name must be unique within the
-    /// account.</p>
+    /// <p>The name for the slot. A slot type name must be unique within the account.</p>
     pub slot_type_name: std::option::Option<std::string::String>,
-    /// <p>A description of the slot type. Use the description to help identify
-    /// the slot type in lists.</p>
+    /// <p>A description of the slot type. Use the description to help identify the slot type in lists.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A list of <code>SlotTypeValue</code> objects that defines the values
-    /// that the slot type can take. Each value can have a list of synonyms,
-    /// additional values that help train the machine learning model about the
-    /// values that it resolves for a slot.</p>
+    /// <p>A list of <code>SlotTypeValue</code> objects that defines the values that the slot type can take. Each value can have a list of synonyms, additional values that help train the machine learning model about the values that it resolves for a slot.</p>
     pub slot_type_values: std::option::Option<std::vec::Vec<crate::model::SlotTypeValue>>,
-    /// <p>Determines the strategy that Amazon Lex uses to select a value from the
-    /// list of possible values. The field can be set to one of the following
-    /// values:</p>
+    /// <p>Determines the strategy that Amazon Lex uses to select a value from the list of possible values. The field can be set to one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>OriginalValue</code> - Returns the value entered by the
-    /// user, if the user value is similar to the slot value.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TopResolution</code> - If there is a resolution list for
-    /// the slot, return the first value in the resolution list. If there
-    /// is no resolution list, return null.</p>
-    /// </li>
+    /// <li> <p> <code>OriginalValue</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li>
+    /// <li> <p> <code>TopResolution</code> - If there is a resolution list for the slot, return the first value in the resolution list. If there is no resolution list, return null.</p> </li>
     /// </ul>
-    /// <p>If you don't specify the <code>valueSelectionSetting</code>
-    /// parameter, the default is <code>OriginalValue</code>.</p>
+    /// <p>If you don't specify the <code>valueSelectionSetting</code> parameter, the default is <code>OriginalValue</code>.</p>
     pub value_selection_setting: std::option::Option<crate::model::SlotValueSelectionSetting>,
-    /// <p>The built-in slot type used as a parent of this slot type. When you
-    /// define a parent slot type, the new slot type has the configuration of
-    /// the parent slot type.</p>
+    /// <p>The built-in slot type used as a parent of this slot type. When you define a parent slot type, the new slot type has the configuration of the parent slot type.</p>
     /// <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
     pub parent_slot_type_signature: std::option::Option<std::string::String>,
     /// <p>The identifier of the bot associated with this slot type.</p>
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the bot version associated with this slot
-    /// type.</p>
+    /// <p>The identifier of the bot version associated with this slot type.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The identifier of the language and locale that the slot type will be
-    /// used in. The string must match one of the supported locales. All of the
-    /// bots, intents, and slots used by the slot type must have the same
-    /// locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale that the slot type will be used in. The string must match one of the supported locales. All of the bots, intents, and slots used by the slot type must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub locale_id: std::option::Option<std::string::String>,
+    /// <p>Sets the type of external information used to create the slot type.</p>
+    pub external_source_setting: std::option::Option<crate::model::ExternalSourceSetting>,
 }
 impl CreateSlotTypeInput {
-    /// <p>The name for the slot. A slot type name must be unique within the
-    /// account.</p>
+    /// <p>The name for the slot. A slot type name must be unique within the account.</p>
     pub fn slot_type_name(&self) -> std::option::Option<&str> {
         self.slot_type_name.as_deref()
     }
-    /// <p>A description of the slot type. Use the description to help identify
-    /// the slot type in lists.</p>
+    /// <p>A description of the slot type. Use the description to help identify the slot type in lists.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A list of <code>SlotTypeValue</code> objects that defines the values
-    /// that the slot type can take. Each value can have a list of synonyms,
-    /// additional values that help train the machine learning model about the
-    /// values that it resolves for a slot.</p>
+    /// <p>A list of <code>SlotTypeValue</code> objects that defines the values that the slot type can take. Each value can have a list of synonyms, additional values that help train the machine learning model about the values that it resolves for a slot.</p>
     pub fn slot_type_values(&self) -> std::option::Option<&[crate::model::SlotTypeValue]> {
         self.slot_type_values.as_deref()
     }
-    /// <p>Determines the strategy that Amazon Lex uses to select a value from the
-    /// list of possible values. The field can be set to one of the following
-    /// values:</p>
+    /// <p>Determines the strategy that Amazon Lex uses to select a value from the list of possible values. The field can be set to one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>OriginalValue</code> - Returns the value entered by the
-    /// user, if the user value is similar to the slot value.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TopResolution</code> - If there is a resolution list for
-    /// the slot, return the first value in the resolution list. If there
-    /// is no resolution list, return null.</p>
-    /// </li>
+    /// <li> <p> <code>OriginalValue</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li>
+    /// <li> <p> <code>TopResolution</code> - If there is a resolution list for the slot, return the first value in the resolution list. If there is no resolution list, return null.</p> </li>
     /// </ul>
-    /// <p>If you don't specify the <code>valueSelectionSetting</code>
-    /// parameter, the default is <code>OriginalValue</code>.</p>
+    /// <p>If you don't specify the <code>valueSelectionSetting</code> parameter, the default is <code>OriginalValue</code>.</p>
     pub fn value_selection_setting(
         &self,
     ) -> std::option::Option<&crate::model::SlotValueSelectionSetting> {
         self.value_selection_setting.as_ref()
     }
-    /// <p>The built-in slot type used as a parent of this slot type. When you
-    /// define a parent slot type, the new slot type has the configuration of
-    /// the parent slot type.</p>
+    /// <p>The built-in slot type used as a parent of this slot type. When you define a parent slot type, the new slot type has the configuration of the parent slot type.</p>
     /// <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
     pub fn parent_slot_type_signature(&self) -> std::option::Option<&str> {
         self.parent_slot_type_signature.as_deref()
@@ -19003,17 +17520,19 @@ impl CreateSlotTypeInput {
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>The identifier of the bot version associated with this slot
-    /// type.</p>
+    /// <p>The identifier of the bot version associated with this slot type.</p>
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The identifier of the language and locale that the slot type will be
-    /// used in. The string must match one of the supported locales. All of the
-    /// bots, intents, and slots used by the slot type must have the same
-    /// locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale that the slot type will be used in. The string must match one of the supported locales. All of the bots, intents, and slots used by the slot type must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
+    }
+    /// <p>Sets the type of external information used to create the slot type.</p>
+    pub fn external_source_setting(
+        &self,
+    ) -> std::option::Option<&crate::model::ExternalSourceSetting> {
+        self.external_source_setting.as_ref()
     }
 }
 impl std::fmt::Debug for CreateSlotTypeInput {
@@ -19030,6 +17549,7 @@ impl std::fmt::Debug for CreateSlotTypeInput {
         formatter.field("bot_id", &self.bot_id);
         formatter.field("bot_version", &self.bot_version);
         formatter.field("locale_id", &self.locale_id);
+        formatter.field("external_source_setting", &self.external_source_setting);
         formatter.finish()
     }
 }
@@ -19038,74 +17558,49 @@ impl std::fmt::Debug for CreateSlotTypeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSlotInput {
-    /// <p>The name of the slot. Slot names must be unique within the bot that
-    /// contains the slot.</p>
+    /// <p>The name of the slot. Slot names must be unique within the bot that contains the slot.</p>
     pub slot_name: std::option::Option<std::string::String>,
-    /// <p>A description of the slot. Use this to help identify the slot in
-    /// lists.</p>
+    /// <p>A description of the slot. Use this to help identify the slot in lists.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The unique identifier for the slot type associated with this slot.
-    /// The slot type determines the values that can be entered into the
-    /// slot.</p>
+    /// <p>The unique identifier for the slot type associated with this slot. The slot type determines the values that can be entered into the slot.</p>
     pub slot_type_id: std::option::Option<std::string::String>,
-    /// <p>Specifies prompts that Amazon Lex sends to the user to elicit a response
-    /// that provides the value for the slot. </p>
+    /// <p>Specifies prompts that Amazon Lex sends to the user to elicit a response that provides the value for the slot. </p>
     pub value_elicitation_setting: std::option::Option<crate::model::SlotValueElicitationSetting>,
-    /// <p>Determines how slot values are used in Amazon CloudWatch logs. If the value of
-    /// the <code>obfuscationSetting</code> parameter is
-    /// <code>DefaultObfuscation</code>, slot values are obfuscated in the
-    /// log output. If the value is <code>None</code>, the actual value is
-    /// present in the log output.</p>
+    /// <p>Determines how slot values are used in Amazon CloudWatch logs. If the value of the <code>obfuscationSetting</code> parameter is <code>DefaultObfuscation</code>, slot values are obfuscated in the log output. If the value is <code>None</code>, the actual value is present in the log output.</p>
     /// <p>The default is to obfuscate values in the CloudWatch logs.</p>
     pub obfuscation_setting: std::option::Option<crate::model::ObfuscationSetting>,
     /// <p>The identifier of the bot associated with the slot.</p>
     pub bot_id: std::option::Option<std::string::String>,
     /// <p>The version of the bot associated with the slot.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The identifier of the language and locale that the slot will be used
-    /// in. The string must match one of the supported locales. All of the
-    /// bots, intents, slot types used by the slot must have the same locale.
-    /// For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale that the slot will be used in. The string must match one of the supported locales. All of the bots, intents, slot types used by the slot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub locale_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the intent that contains the slot.</p>
     pub intent_id: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the slot returns multiple values in one response.
-    /// Multi-value slots are only available in the en-US locale. If you set
-    /// this value to <code>true</code> in any other locale, Amazon Lex throws a
-    /// <code>ValidationException</code>. </p>
-    /// <p>If the <code>multipleValuesSetting</code> is not set, the default
-    /// value is <code>false</code>.</p>
+    /// <p>Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>. </p>
+    /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
     pub multiple_values_setting: std::option::Option<crate::model::MultipleValuesSetting>,
 }
 impl CreateSlotInput {
-    /// <p>The name of the slot. Slot names must be unique within the bot that
-    /// contains the slot.</p>
+    /// <p>The name of the slot. Slot names must be unique within the bot that contains the slot.</p>
     pub fn slot_name(&self) -> std::option::Option<&str> {
         self.slot_name.as_deref()
     }
-    /// <p>A description of the slot. Use this to help identify the slot in
-    /// lists.</p>
+    /// <p>A description of the slot. Use this to help identify the slot in lists.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The unique identifier for the slot type associated with this slot.
-    /// The slot type determines the values that can be entered into the
-    /// slot.</p>
+    /// <p>The unique identifier for the slot type associated with this slot. The slot type determines the values that can be entered into the slot.</p>
     pub fn slot_type_id(&self) -> std::option::Option<&str> {
         self.slot_type_id.as_deref()
     }
-    /// <p>Specifies prompts that Amazon Lex sends to the user to elicit a response
-    /// that provides the value for the slot. </p>
+    /// <p>Specifies prompts that Amazon Lex sends to the user to elicit a response that provides the value for the slot. </p>
     pub fn value_elicitation_setting(
         &self,
     ) -> std::option::Option<&crate::model::SlotValueElicitationSetting> {
         self.value_elicitation_setting.as_ref()
     }
-    /// <p>Determines how slot values are used in Amazon CloudWatch logs. If the value of
-    /// the <code>obfuscationSetting</code> parameter is
-    /// <code>DefaultObfuscation</code>, slot values are obfuscated in the
-    /// log output. If the value is <code>None</code>, the actual value is
-    /// present in the log output.</p>
+    /// <p>Determines how slot values are used in Amazon CloudWatch logs. If the value of the <code>obfuscationSetting</code> parameter is <code>DefaultObfuscation</code>, slot values are obfuscated in the log output. If the value is <code>None</code>, the actual value is present in the log output.</p>
     /// <p>The default is to obfuscate values in the CloudWatch logs.</p>
     pub fn obfuscation_setting(&self) -> std::option::Option<&crate::model::ObfuscationSetting> {
         self.obfuscation_setting.as_ref()
@@ -19118,10 +17613,7 @@ impl CreateSlotInput {
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The identifier of the language and locale that the slot will be used
-    /// in. The string must match one of the supported locales. All of the
-    /// bots, intents, slot types used by the slot must have the same locale.
-    /// For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale that the slot will be used in. The string must match one of the supported locales. All of the bots, intents, slot types used by the slot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
@@ -19129,12 +17621,8 @@ impl CreateSlotInput {
     pub fn intent_id(&self) -> std::option::Option<&str> {
         self.intent_id.as_deref()
     }
-    /// <p>Indicates whether the slot returns multiple values in one response.
-    /// Multi-value slots are only available in the en-US locale. If you set
-    /// this value to <code>true</code> in any other locale, Amazon Lex throws a
-    /// <code>ValidationException</code>. </p>
-    /// <p>If the <code>multipleValuesSetting</code> is not set, the default
-    /// value is <code>false</code>.</p>
+    /// <p>Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>. </p>
+    /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
     pub fn multiple_values_setting(
         &self,
     ) -> std::option::Option<&crate::model::MultipleValuesSetting> {
@@ -19162,30 +17650,17 @@ impl std::fmt::Debug for CreateSlotInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResourcePolicyStatementInput {
-    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-    /// resource policy is attached to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the statement. The ID is the same as the
-    /// <code>Sid</code> IAM property. The statement name must be unique
-    /// within the policy. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html">IAM
-    /// JSON policy elements: Sid</a>. </p>
+    /// <p>The name of the statement. The ID is the same as the <code>Sid</code> IAM property. The statement name must be unique within the policy. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html">IAM JSON policy elements: Sid</a>. </p>
     pub statement_id: std::option::Option<std::string::String>,
-    /// <p>Determines whether the statement allows or denies access to the
-    /// resource.</p>
+    /// <p>Determines whether the statement allows or denies access to the resource.</p>
     pub effect: std::option::Option<crate::model::Effect>,
-    /// <p>An IAM principal, such as an IAM users, IAM roles, or AWS services
-    /// that is allowed or denied access to a resource. For more information,
-    /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS JSON policy elements: Principal</a>.</p>
+    /// <p>An IAM principal, such as an IAM users, IAM roles, or AWS services that is allowed or denied access to a resource. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS JSON policy elements: Principal</a>.</p>
     pub principal: std::option::Option<std::vec::Vec<crate::model::Principal>>,
-    /// <p>The Amazon Lex action that this policy either allows or denies. The
-    /// action must apply to the resource type of the specified ARN. For more
-    /// information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlexv2.html">
-    /// Actions, resources, and condition keys for Amazon Lex V2</a>.</p>
+    /// <p>The Amazon Lex action that this policy either allows or denies. The action must apply to the resource type of the specified ARN. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlexv2.html"> Actions, resources, and condition keys for Amazon Lex V2</a>.</p>
     pub action: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies a condition when the policy is in effect. If the principal
-    /// of the policy is a service principal, you must provide two condition
-    /// blocks, one with a SourceAccount global condition key and one with a
-    /// SourceArn global condition key.</p>
+    /// <p>Specifies a condition when the policy is in effect. If the principal of the policy is a service principal, you must provide two condition blocks, one with a SourceAccount global condition key and one with a SourceArn global condition key.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM JSON policy elements: Condition </a>.</p>
     pub condition: std::option::Option<
         std::collections::HashMap<
@@ -19193,48 +17668,32 @@ pub struct CreateResourcePolicyStatementInput {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     >,
-    /// <p>The identifier of the revision of the policy to edit. If this
-    /// revision ID doesn't match the current revision ID, Amazon Lex throws an
-    /// exception.</p>
-    /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of
-    /// the policy with the new values.</p>
+    /// <p>The identifier of the revision of the policy to edit. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
+    /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
     pub expected_revision_id: std::option::Option<std::string::String>,
 }
 impl CreateResourcePolicyStatementInput {
-    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-    /// resource policy is attached to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The name of the statement. The ID is the same as the
-    /// <code>Sid</code> IAM property. The statement name must be unique
-    /// within the policy. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html">IAM
-    /// JSON policy elements: Sid</a>. </p>
+    /// <p>The name of the statement. The ID is the same as the <code>Sid</code> IAM property. The statement name must be unique within the policy. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html">IAM JSON policy elements: Sid</a>. </p>
     pub fn statement_id(&self) -> std::option::Option<&str> {
         self.statement_id.as_deref()
     }
-    /// <p>Determines whether the statement allows or denies access to the
-    /// resource.</p>
+    /// <p>Determines whether the statement allows or denies access to the resource.</p>
     pub fn effect(&self) -> std::option::Option<&crate::model::Effect> {
         self.effect.as_ref()
     }
-    /// <p>An IAM principal, such as an IAM users, IAM roles, or AWS services
-    /// that is allowed or denied access to a resource. For more information,
-    /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS JSON policy elements: Principal</a>.</p>
+    /// <p>An IAM principal, such as an IAM users, IAM roles, or AWS services that is allowed or denied access to a resource. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS JSON policy elements: Principal</a>.</p>
     pub fn principal(&self) -> std::option::Option<&[crate::model::Principal]> {
         self.principal.as_deref()
     }
-    /// <p>The Amazon Lex action that this policy either allows or denies. The
-    /// action must apply to the resource type of the specified ARN. For more
-    /// information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlexv2.html">
-    /// Actions, resources, and condition keys for Amazon Lex V2</a>.</p>
+    /// <p>The Amazon Lex action that this policy either allows or denies. The action must apply to the resource type of the specified ARN. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlexv2.html"> Actions, resources, and condition keys for Amazon Lex V2</a>.</p>
     pub fn action(&self) -> std::option::Option<&[std::string::String]> {
         self.action.as_deref()
     }
-    /// <p>Specifies a condition when the policy is in effect. If the principal
-    /// of the policy is a service principal, you must provide two condition
-    /// blocks, one with a SourceAccount global condition key and one with a
-    /// SourceArn global condition key.</p>
+    /// <p>Specifies a condition when the policy is in effect. If the principal of the policy is a service principal, you must provide two condition blocks, one with a SourceAccount global condition key and one with a SourceArn global condition key.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM JSON policy elements: Condition </a>.</p>
     pub fn condition(
         &self,
@@ -19246,11 +17705,8 @@ impl CreateResourcePolicyStatementInput {
     > {
         self.condition.as_ref()
     }
-    /// <p>The identifier of the revision of the policy to edit. If this
-    /// revision ID doesn't match the current revision ID, Amazon Lex throws an
-    /// exception.</p>
-    /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of
-    /// the policy with the new values.</p>
+    /// <p>The identifier of the revision of the policy to edit. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
+    /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
     pub fn expected_revision_id(&self) -> std::option::Option<&str> {
         self.expected_revision_id.as_deref()
     }
@@ -19273,31 +17729,19 @@ impl std::fmt::Debug for CreateResourcePolicyStatementInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResourcePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-    /// resource policy is attached to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A resource policy to add to the resource. The policy is a JSON
-    /// structure that contains one or more statements that define the policy.
-    /// The policy must follow the IAM syntax. For more information about the
-    /// contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy
-    /// reference </a>. </p>
-    /// <p>If the policy isn't valid, Amazon Lex returns a validation
-    /// exception.</p>
+    /// <p>A resource policy to add to the resource. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy reference </a>. </p>
+    /// <p>If the policy isn't valid, Amazon Lex returns a validation exception.</p>
     pub policy: std::option::Option<std::string::String>,
 }
 impl CreateResourcePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
-    /// resource policy is attached to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A resource policy to add to the resource. The policy is a JSON
-    /// structure that contains one or more statements that define the policy.
-    /// The policy must follow the IAM syntax. For more information about the
-    /// contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy
-    /// reference </a>. </p>
-    /// <p>If the policy isn't valid, Amazon Lex returns a validation
-    /// exception.</p>
+    /// <p>A resource policy to add to the resource. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy reference </a>. </p>
+    /// <p>If the policy isn't valid, Amazon Lex returns a validation exception.</p>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
@@ -19315,186 +17759,101 @@ impl std::fmt::Debug for CreateResourcePolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIntentInput {
-    /// <p>The name of the intent. Intent names must be unique in the locale
-    /// that contains the intent and cannot match the name of any built-in
-    /// intent.</p>
+    /// <p>The name of the intent. Intent names must be unique in the locale that contains the intent and cannot match the name of any built-in intent.</p>
     pub intent_name: std::option::Option<std::string::String>,
-    /// <p>A description of the intent. Use the description to help identify
-    /// the intent in lists.</p>
+    /// <p>A description of the intent. Use the description to help identify the intent in lists.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the built-in intent to base this intent
-    /// on.</p>
+    /// <p>A unique identifier for the built-in intent to base this intent on.</p>
     pub parent_intent_signature: std::option::Option<std::string::String>,
-    /// <p>An array of strings that a user might say to signal the intent. For
-    /// example, "I want a pizza", or "I want a {PizzaSize} pizza". </p>
-    /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}")
-    /// to indicate where they should be displayed in the utterance shown to
-    /// the user.. </p>
+    /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza". </p>
+    /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where they should be displayed in the utterance shown to the user.. </p>
     pub sample_utterances: std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>,
-    /// <p>Specifies that Amazon Lex invokes the alias Lambda function for each user
-    /// input. You can invoke this Lambda function to personalize user
-    /// interaction.</p>
-    /// <p>For example, suppose that your bot determines that the user's name
-    /// is John. You Lambda function might retrieve John's information from a
-    /// backend database and prepopulate some of the values. For example, if
-    /// you find that John is gluten intolerant, you might set the
-    /// corresponding intent slot, <code>glutenIntolerant</code> to
-    /// <code>true</code>. You might find John's phone number and set the
-    /// corresponding session attribute.</p>
+    /// <p>Specifies that Amazon Lex invokes the alias Lambda function for each user input. You can invoke this Lambda function to personalize user interaction.</p>
+    /// <p>For example, suppose that your bot determines that the user's name is John. You Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, <code>glutenIntolerant</code> to <code>true</code>. You might find John's phone number and set the corresponding session attribute.</p>
     pub dialog_code_hook: std::option::Option<crate::model::DialogCodeHookSettings>,
-    /// <p>Specifies that Amazon Lex invokes the alias Lambda function when the
-    /// intent is ready for fulfillment. You can invoke this function to
-    /// complete the bot's transaction with the user.</p>
-    /// <p>For example, in a pizza ordering bot, the Lambda function can look up
-    /// the closest pizza restaurant to the customer's location and then place
-    /// an order on the customer's behalf.</p>
+    /// <p>Specifies that Amazon Lex invokes the alias Lambda function when the intent is ready for fulfillment. You can invoke this function to complete the bot's transaction with the user.</p>
+    /// <p>For example, in a pizza ordering bot, the Lambda function can look up the closest pizza restaurant to the customer's location and then place an order on the customer's behalf.</p>
     pub fulfillment_code_hook: std::option::Option<crate::model::FulfillmentCodeHookSettings>,
-    /// <p>Provides prompts that Amazon Lex sends to the user to confirm the
-    /// completion of an intent. If the user answers "no," the settings contain
-    /// a statement that is sent to the user to end the intent.</p>
+    /// <p>Provides prompts that Amazon Lex sends to the user to confirm the completion of an intent. If the user answers "no," the settings contain a statement that is sent to the user to end the intent.</p>
     pub intent_confirmation_setting: std::option::Option<crate::model::IntentConfirmationSetting>,
-    /// <p>Sets the response that Amazon Lex sends to the user when the intent is
-    /// closed.</p>
+    /// <p>Sets the response that Amazon Lex sends to the user when the intent is closed.</p>
     pub intent_closing_setting: std::option::Option<crate::model::IntentClosingSetting>,
-    /// <p>A list of contexts that must be active for this intent to be
-    /// considered by Amazon Lex.</p>
-    /// <p>When an intent has an input context list, Amazon Lex only considers using
-    /// the intent in an interaction with the user when the specified contexts
-    /// are included in the active context list for the session. If the
-    /// contexts are not active, then Amazon Lex will not use the intent.</p>
-    /// <p>A context can be automatically activated using the
-    /// <code>outputContexts</code> property or it can be set at
-    /// runtime.</p>
-    /// <p> For example, if there are two intents with different input contexts
-    /// that respond to the same utterances, only the intent with the active
-    /// context will respond.</p>
-    /// <p>An intent may have up to 5 input contexts. If an intent has multiple
-    /// input contexts, all of the contexts must be active to consider the
-    /// intent.</p>
+    /// <p>A list of contexts that must be active for this intent to be considered by Amazon Lex.</p>
+    /// <p>When an intent has an input context list, Amazon Lex only considers using the intent in an interaction with the user when the specified contexts are included in the active context list for the session. If the contexts are not active, then Amazon Lex will not use the intent.</p>
+    /// <p>A context can be automatically activated using the <code>outputContexts</code> property or it can be set at runtime.</p>
+    /// <p> For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p>
+    /// <p>An intent may have up to 5 input contexts. If an intent has multiple input contexts, all of the contexts must be active to consider the intent.</p>
     pub input_contexts: std::option::Option<std::vec::Vec<crate::model::InputContext>>,
-    /// <p>A lists of contexts that the intent activates when it is
-    /// fulfilled.</p>
-    /// <p>You can use an output context to indicate the intents that Amazon Lex
-    /// should consider for the next turn of the conversation with a customer. </p>
-    /// <p>When you use the <code>outputContextsList</code> property, all of
-    /// the contexts specified in the list are activated when the intent is
-    /// fulfilled. You can set up to 10 output contexts. You can also set the
-    /// number of conversation turns that the context should be active, or the
-    /// length of time that the context should be active.</p>
+    /// <p>A lists of contexts that the intent activates when it is fulfilled.</p>
+    /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer. </p>
+    /// <p>When you use the <code>outputContextsList</code> property, all of the contexts specified in the list are activated when the intent is fulfilled. You can set up to 10 output contexts. You can also set the number of conversation turns that the context should be active, or the length of time that the context should be active.</p>
     pub output_contexts: std::option::Option<std::vec::Vec<crate::model::OutputContext>>,
-    /// <p>Configuration information required to use the
-    /// <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra
-    /// index. The <code>AMAZON.KendraSearchIntent</code> intent is called when
-    /// Amazon Lex can't determine another intent to invoke.</p>
+    /// <p>Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra index. The <code>AMAZON.KendraSearchIntent</code> intent is called when Amazon Lex can't determine another intent to invoke.</p>
     pub kendra_configuration: std::option::Option<crate::model::KendraConfiguration>,
     /// <p>The identifier of the bot associated with this intent.</p>
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the version of the bot associated with this
-    /// intent.</p>
+    /// <p>The identifier of the version of the bot associated with this intent.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The identifier of the language and locale where this intent is used.
-    /// All of the bots, slot types, and slots used by the intent must have the
-    /// same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale where this intent is used. All of the bots, slot types, and slots used by the intent must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub locale_id: std::option::Option<std::string::String>,
 }
 impl CreateIntentInput {
-    /// <p>The name of the intent. Intent names must be unique in the locale
-    /// that contains the intent and cannot match the name of any built-in
-    /// intent.</p>
+    /// <p>The name of the intent. Intent names must be unique in the locale that contains the intent and cannot match the name of any built-in intent.</p>
     pub fn intent_name(&self) -> std::option::Option<&str> {
         self.intent_name.as_deref()
     }
-    /// <p>A description of the intent. Use the description to help identify
-    /// the intent in lists.</p>
+    /// <p>A description of the intent. Use the description to help identify the intent in lists.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A unique identifier for the built-in intent to base this intent
-    /// on.</p>
+    /// <p>A unique identifier for the built-in intent to base this intent on.</p>
     pub fn parent_intent_signature(&self) -> std::option::Option<&str> {
         self.parent_intent_signature.as_deref()
     }
-    /// <p>An array of strings that a user might say to signal the intent. For
-    /// example, "I want a pizza", or "I want a {PizzaSize} pizza". </p>
-    /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}")
-    /// to indicate where they should be displayed in the utterance shown to
-    /// the user.. </p>
+    /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza". </p>
+    /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where they should be displayed in the utterance shown to the user.. </p>
     pub fn sample_utterances(&self) -> std::option::Option<&[crate::model::SampleUtterance]> {
         self.sample_utterances.as_deref()
     }
-    /// <p>Specifies that Amazon Lex invokes the alias Lambda function for each user
-    /// input. You can invoke this Lambda function to personalize user
-    /// interaction.</p>
-    /// <p>For example, suppose that your bot determines that the user's name
-    /// is John. You Lambda function might retrieve John's information from a
-    /// backend database and prepopulate some of the values. For example, if
-    /// you find that John is gluten intolerant, you might set the
-    /// corresponding intent slot, <code>glutenIntolerant</code> to
-    /// <code>true</code>. You might find John's phone number and set the
-    /// corresponding session attribute.</p>
+    /// <p>Specifies that Amazon Lex invokes the alias Lambda function for each user input. You can invoke this Lambda function to personalize user interaction.</p>
+    /// <p>For example, suppose that your bot determines that the user's name is John. You Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, <code>glutenIntolerant</code> to <code>true</code>. You might find John's phone number and set the corresponding session attribute.</p>
     pub fn dialog_code_hook(&self) -> std::option::Option<&crate::model::DialogCodeHookSettings> {
         self.dialog_code_hook.as_ref()
     }
-    /// <p>Specifies that Amazon Lex invokes the alias Lambda function when the
-    /// intent is ready for fulfillment. You can invoke this function to
-    /// complete the bot's transaction with the user.</p>
-    /// <p>For example, in a pizza ordering bot, the Lambda function can look up
-    /// the closest pizza restaurant to the customer's location and then place
-    /// an order on the customer's behalf.</p>
+    /// <p>Specifies that Amazon Lex invokes the alias Lambda function when the intent is ready for fulfillment. You can invoke this function to complete the bot's transaction with the user.</p>
+    /// <p>For example, in a pizza ordering bot, the Lambda function can look up the closest pizza restaurant to the customer's location and then place an order on the customer's behalf.</p>
     pub fn fulfillment_code_hook(
         &self,
     ) -> std::option::Option<&crate::model::FulfillmentCodeHookSettings> {
         self.fulfillment_code_hook.as_ref()
     }
-    /// <p>Provides prompts that Amazon Lex sends to the user to confirm the
-    /// completion of an intent. If the user answers "no," the settings contain
-    /// a statement that is sent to the user to end the intent.</p>
+    /// <p>Provides prompts that Amazon Lex sends to the user to confirm the completion of an intent. If the user answers "no," the settings contain a statement that is sent to the user to end the intent.</p>
     pub fn intent_confirmation_setting(
         &self,
     ) -> std::option::Option<&crate::model::IntentConfirmationSetting> {
         self.intent_confirmation_setting.as_ref()
     }
-    /// <p>Sets the response that Amazon Lex sends to the user when the intent is
-    /// closed.</p>
+    /// <p>Sets the response that Amazon Lex sends to the user when the intent is closed.</p>
     pub fn intent_closing_setting(
         &self,
     ) -> std::option::Option<&crate::model::IntentClosingSetting> {
         self.intent_closing_setting.as_ref()
     }
-    /// <p>A list of contexts that must be active for this intent to be
-    /// considered by Amazon Lex.</p>
-    /// <p>When an intent has an input context list, Amazon Lex only considers using
-    /// the intent in an interaction with the user when the specified contexts
-    /// are included in the active context list for the session. If the
-    /// contexts are not active, then Amazon Lex will not use the intent.</p>
-    /// <p>A context can be automatically activated using the
-    /// <code>outputContexts</code> property or it can be set at
-    /// runtime.</p>
-    /// <p> For example, if there are two intents with different input contexts
-    /// that respond to the same utterances, only the intent with the active
-    /// context will respond.</p>
-    /// <p>An intent may have up to 5 input contexts. If an intent has multiple
-    /// input contexts, all of the contexts must be active to consider the
-    /// intent.</p>
+    /// <p>A list of contexts that must be active for this intent to be considered by Amazon Lex.</p>
+    /// <p>When an intent has an input context list, Amazon Lex only considers using the intent in an interaction with the user when the specified contexts are included in the active context list for the session. If the contexts are not active, then Amazon Lex will not use the intent.</p>
+    /// <p>A context can be automatically activated using the <code>outputContexts</code> property or it can be set at runtime.</p>
+    /// <p> For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p>
+    /// <p>An intent may have up to 5 input contexts. If an intent has multiple input contexts, all of the contexts must be active to consider the intent.</p>
     pub fn input_contexts(&self) -> std::option::Option<&[crate::model::InputContext]> {
         self.input_contexts.as_deref()
     }
-    /// <p>A lists of contexts that the intent activates when it is
-    /// fulfilled.</p>
-    /// <p>You can use an output context to indicate the intents that Amazon Lex
-    /// should consider for the next turn of the conversation with a customer. </p>
-    /// <p>When you use the <code>outputContextsList</code> property, all of
-    /// the contexts specified in the list are activated when the intent is
-    /// fulfilled. You can set up to 10 output contexts. You can also set the
-    /// number of conversation turns that the context should be active, or the
-    /// length of time that the context should be active.</p>
+    /// <p>A lists of contexts that the intent activates when it is fulfilled.</p>
+    /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer. </p>
+    /// <p>When you use the <code>outputContextsList</code> property, all of the contexts specified in the list are activated when the intent is fulfilled. You can set up to 10 output contexts. You can also set the number of conversation turns that the context should be active, or the length of time that the context should be active.</p>
     pub fn output_contexts(&self) -> std::option::Option<&[crate::model::OutputContext]> {
         self.output_contexts.as_deref()
     }
-    /// <p>Configuration information required to use the
-    /// <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra
-    /// index. The <code>AMAZON.KendraSearchIntent</code> intent is called when
-    /// Amazon Lex can't determine another intent to invoke.</p>
+    /// <p>Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra index. The <code>AMAZON.KendraSearchIntent</code> intent is called when Amazon Lex can't determine another intent to invoke.</p>
     pub fn kendra_configuration(&self) -> std::option::Option<&crate::model::KendraConfiguration> {
         self.kendra_configuration.as_ref()
     }
@@ -19502,14 +17861,11 @@ impl CreateIntentInput {
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>The identifier of the version of the bot associated with this
-    /// intent.</p>
+    /// <p>The identifier of the version of the bot associated with this intent.</p>
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The identifier of the language and locale where this intent is used.
-    /// All of the bots, slot types, and slots used by the intent must have the
-    /// same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale where this intent is used. All of the bots, slot types, and slots used by the intent must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
@@ -19542,19 +17898,15 @@ impl std::fmt::Debug for CreateIntentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExportInput {
-    /// <p>Specifies the type of resource to export, either a bot or a bot
-    /// locale. You can only specify one type of resource to export.</p>
+    /// <p>Specifies the type of resource to export, either a bot or a bot locale. You can only specify one type of resource to export.</p>
     pub resource_specification: std::option::Option<crate::model::ExportResourceSpecification>,
     /// <p>The file format of the bot or bot locale definition files.</p>
     pub file_format: std::option::Option<crate::model::ImportExportFileFormat>,
-    /// <p>An password to use to encrypt the exported archive. Using a password
-    /// is optional, but you should encrypt the archive to protect the data in
-    /// transit between Amazon Lex and your local computer.</p>
+    /// <p>An password to use to encrypt the exported archive. Using a password is optional, but you should encrypt the archive to protect the data in transit between Amazon Lex and your local computer.</p>
     pub file_password: std::option::Option<std::string::String>,
 }
 impl CreateExportInput {
-    /// <p>Specifies the type of resource to export, either a bot or a bot
-    /// locale. You can only specify one type of resource to export.</p>
+    /// <p>Specifies the type of resource to export, either a bot or a bot locale. You can only specify one type of resource to export.</p>
     pub fn resource_specification(
         &self,
     ) -> std::option::Option<&crate::model::ExportResourceSpecification> {
@@ -19564,9 +17916,7 @@ impl CreateExportInput {
     pub fn file_format(&self) -> std::option::Option<&crate::model::ImportExportFileFormat> {
         self.file_format.as_ref()
     }
-    /// <p>An password to use to encrypt the exported archive. Using a password
-    /// is optional, but you should encrypt the archive to protect the data in
-    /// transit between Amazon Lex and your local computer.</p>
+    /// <p>An password to use to encrypt the exported archive. Using a password is optional, but you should encrypt the archive to protect the data in transit between Amazon Lex and your local computer.</p>
     pub fn file_password(&self) -> std::option::Option<&str> {
         self.file_password.as_deref()
     }
@@ -19587,13 +17937,9 @@ impl std::fmt::Debug for CreateExportInput {
 pub struct CreateBotVersionInput {
     /// <p>The identifier of the bot to create the version for.</p>
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>A description of the version. Use the description to help identify
-    /// the version in lists.</p>
+    /// <p>A description of the version. Use the description to help identify the version in lists.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Specifies the locales that Amazon Lex adds to this version. You can
-    /// choose the <code>Draft</code> version or any other previously published
-    /// version for each locale. When you specify a source version, the locale
-    /// data is copied from the source version to the new version.</p>
+    /// <p>Specifies the locales that Amazon Lex adds to this version. You can choose the <code>Draft</code> version or any other previously published version for each locale. When you specify a source version, the locale data is copied from the source version to the new version.</p>
     pub bot_version_locale_specification: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::BotVersionLocaleDetails>,
     >,
@@ -19603,15 +17949,11 @@ impl CreateBotVersionInput {
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>A description of the version. Use the description to help identify
-    /// the version in lists.</p>
+    /// <p>A description of the version. Use the description to help identify the version in lists.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Specifies the locales that Amazon Lex adds to this version. You can
-    /// choose the <code>Draft</code> version or any other previously published
-    /// version for each locale. When you specify a source version, the locale
-    /// data is copied from the source version to the new version.</p>
+    /// <p>Specifies the locales that Amazon Lex adds to this version. You can choose the <code>Draft</code> version or any other previously published version for each locale. When you specify a source version, the locale data is copied from the source version to the new version.</p>
     pub fn bot_version_locale_specification(
         &self,
     ) -> std::option::Option<
@@ -19639,45 +17981,22 @@ impl std::fmt::Debug for CreateBotVersionInput {
 pub struct CreateBotLocaleInput {
     /// <p>The identifier of the bot to create the locale for.</p>
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>The version of the bot to create the locale for. This can only be
-    /// the draft version of the bot.</p>
+    /// <p>The version of the bot to create the locale for. This can only be the draft version of the bot.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The identifier of the language and locale that the bot will be used
-    /// in. The string must match one of the supported locales. All of the
-    /// intents, slot types, and slots used in the bot must have the same
-    /// locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub locale_id: std::option::Option<std::string::String>,
-    /// <p>A description of the bot locale. Use this to help identify the bot
-    /// locale in lists.</p>
+    /// <p>A description of the bot locale. Use this to help identify the bot locale in lists.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Determines the threshold where Amazon Lex will insert the
-    /// <code>AMAZON.FallbackIntent</code>,
-    /// <code>AMAZON.KendraSearchIntent</code>, or both when returning
-    /// alternative intents. <code>AMAZON.FallbackIntent</code> and
-    /// <code>AMAZON.KendraSearchIntent</code> are only inserted if they are
-    /// configured for the bot.</p>
-    /// <p>For example, suppose a bot is configured with the confidence
-    /// threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex
-    /// returns three alternative intents with the following confidence scores:
-    /// IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the
-    /// <code>RecognizeText</code> operation would be:</p>
+    /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
+    /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>RecognizeText</code> operation would be:</p>
     /// <ul>
-    /// <li>
-    /// <p>AMAZON.FallbackIntent</p>
-    /// </li>
-    /// <li>
-    /// <p>IntentA</p>
-    /// </li>
-    /// <li>
-    /// <p>IntentB</p>
-    /// </li>
-    /// <li>
-    /// <p>IntentC</p>
-    /// </li>
+    /// <li> <p>AMAZON.FallbackIntent</p> </li>
+    /// <li> <p>IntentA</p> </li>
+    /// <li> <p>IntentB</p> </li>
+    /// <li> <p>IntentC</p> </li>
     /// </ul>
     pub nlu_intent_confidence_threshold: std::option::Option<f64>,
-    /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the
-    /// user.</p>
+    /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.</p>
     pub voice_settings: std::option::Option<crate::model::VoiceSettings>,
 }
 impl CreateBotLocaleInput {
@@ -19685,53 +18004,30 @@ impl CreateBotLocaleInput {
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>The version of the bot to create the locale for. This can only be
-    /// the draft version of the bot.</p>
+    /// <p>The version of the bot to create the locale for. This can only be the draft version of the bot.</p>
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The identifier of the language and locale that the bot will be used
-    /// in. The string must match one of the supported locales. All of the
-    /// intents, slot types, and slots used in the bot must have the same
-    /// locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
-    /// <p>A description of the bot locale. Use this to help identify the bot
-    /// locale in lists.</p>
+    /// <p>A description of the bot locale. Use this to help identify the bot locale in lists.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Determines the threshold where Amazon Lex will insert the
-    /// <code>AMAZON.FallbackIntent</code>,
-    /// <code>AMAZON.KendraSearchIntent</code>, or both when returning
-    /// alternative intents. <code>AMAZON.FallbackIntent</code> and
-    /// <code>AMAZON.KendraSearchIntent</code> are only inserted if they are
-    /// configured for the bot.</p>
-    /// <p>For example, suppose a bot is configured with the confidence
-    /// threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex
-    /// returns three alternative intents with the following confidence scores:
-    /// IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the
-    /// <code>RecognizeText</code> operation would be:</p>
+    /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
+    /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>RecognizeText</code> operation would be:</p>
     /// <ul>
-    /// <li>
-    /// <p>AMAZON.FallbackIntent</p>
-    /// </li>
-    /// <li>
-    /// <p>IntentA</p>
-    /// </li>
-    /// <li>
-    /// <p>IntentB</p>
-    /// </li>
-    /// <li>
-    /// <p>IntentC</p>
-    /// </li>
+    /// <li> <p>AMAZON.FallbackIntent</p> </li>
+    /// <li> <p>IntentA</p> </li>
+    /// <li> <p>IntentB</p> </li>
+    /// <li> <p>IntentC</p> </li>
     /// </ul>
     pub fn nlu_intent_confidence_threshold(&self) -> std::option::Option<f64> {
         self.nlu_intent_confidence_threshold
     }
-    /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the
-    /// user.</p>
+    /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.</p>
     pub fn voice_settings(&self) -> std::option::Option<&crate::model::VoiceSettings> {
         self.voice_settings.as_ref()
     }
@@ -19758,33 +18054,21 @@ impl std::fmt::Debug for CreateBotLocaleInput {
 pub struct CreateBotAliasInput {
     /// <p>The alias to create. The name must be unique for the bot.</p>
     pub bot_alias_name: std::option::Option<std::string::String>,
-    /// <p>A description of the alias. Use this description to help identify
-    /// the alias.</p>
+    /// <p>A description of the alias. Use this description to help identify the alias.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The version of the bot that this alias points to. You can use the
-    /// <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBotAlias.html">UpdateBotAlias</a> operation to change the
-    /// bot version associated with the alias.</p>
+    /// <p>The version of the bot that this alias points to. You can use the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBotAlias.html">UpdateBotAlias</a> operation to change the bot version associated with the alias.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>Maps configuration information to a specific locale. You can use
-    /// this parameter to specify a specific Lambda function to run different
-    /// functions in different locales.</p>
+    /// <p>Maps configuration information to a specific locale. You can use this parameter to specify a specific Lambda function to run different functions in different locales.</p>
     pub bot_alias_locale_settings: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::BotAliasLocaleSettings>,
     >,
-    /// <p>Specifies whether Amazon Lex logs text and audio for a conversation with
-    /// the bot. When you enable conversation logs, text logs store text input,
-    /// transcripts of audio input, and associated metadata in Amazon CloudWatch Logs. Audio
-    /// logs store audio input in Amazon S3.</p>
+    /// <p>Specifies whether Amazon Lex logs text and audio for a conversation with the bot. When you enable conversation logs, text logs store text input, transcripts of audio input, and associated metadata in Amazon CloudWatch Logs. Audio logs store audio input in Amazon S3.</p>
     pub conversation_log_settings: std::option::Option<crate::model::ConversationLogSettings>,
-    /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of
-    /// user utterances.</p>
+    /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
     pub sentiment_analysis_settings: std::option::Option<crate::model::SentimentAnalysisSettings>,
     /// <p>The unique identifier of the bot that the alias applies to.</p>
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>A list of tags to add to the bot alias. You can only add tags when
-    /// you create an alias, you can't use the <code>UpdateBotAlias</code>
-    /// operation to update the tags on a bot alias. To update tags, use the
-    /// <code>TagResource</code> operation.</p>
+    /// <p>A list of tags to add to the bot alias. You can only add tags when you create an alias, you can't use the <code>UpdateBotAlias</code> operation to update the tags on a bot alias. To update tags, use the <code>TagResource</code> operation.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -19793,20 +18077,15 @@ impl CreateBotAliasInput {
     pub fn bot_alias_name(&self) -> std::option::Option<&str> {
         self.bot_alias_name.as_deref()
     }
-    /// <p>A description of the alias. Use this description to help identify
-    /// the alias.</p>
+    /// <p>A description of the alias. Use this description to help identify the alias.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The version of the bot that this alias points to. You can use the
-    /// <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBotAlias.html">UpdateBotAlias</a> operation to change the
-    /// bot version associated with the alias.</p>
+    /// <p>The version of the bot that this alias points to. You can use the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBotAlias.html">UpdateBotAlias</a> operation to change the bot version associated with the alias.</p>
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>Maps configuration information to a specific locale. You can use
-    /// this parameter to specify a specific Lambda function to run different
-    /// functions in different locales.</p>
+    /// <p>Maps configuration information to a specific locale. You can use this parameter to specify a specific Lambda function to run different functions in different locales.</p>
     pub fn bot_alias_locale_settings(
         &self,
     ) -> std::option::Option<
@@ -19814,17 +18093,13 @@ impl CreateBotAliasInput {
     > {
         self.bot_alias_locale_settings.as_ref()
     }
-    /// <p>Specifies whether Amazon Lex logs text and audio for a conversation with
-    /// the bot. When you enable conversation logs, text logs store text input,
-    /// transcripts of audio input, and associated metadata in Amazon CloudWatch Logs. Audio
-    /// logs store audio input in Amazon S3.</p>
+    /// <p>Specifies whether Amazon Lex logs text and audio for a conversation with the bot. When you enable conversation logs, text logs store text input, transcripts of audio input, and associated metadata in Amazon CloudWatch Logs. Audio logs store audio input in Amazon S3.</p>
     pub fn conversation_log_settings(
         &self,
     ) -> std::option::Option<&crate::model::ConversationLogSettings> {
         self.conversation_log_settings.as_ref()
     }
-    /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of
-    /// user utterances.</p>
+    /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
     pub fn sentiment_analysis_settings(
         &self,
     ) -> std::option::Option<&crate::model::SentimentAnalysisSettings> {
@@ -19834,10 +18109,7 @@ impl CreateBotAliasInput {
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>A list of tags to add to the bot alias. You can only add tags when
-    /// you create an alias, you can't use the <code>UpdateBotAlias</code>
-    /// operation to update the tags on a bot alias. To update tags, use the
-    /// <code>TagResource</code> operation.</p>
+    /// <p>A list of tags to add to the bot alias. You can only add tags when you create an alias, you can't use the <code>UpdateBotAlias</code> operation to update the tags on a bot alias. To update tags, use the <code>TagResource</code> operation.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -19867,84 +18139,56 @@ impl std::fmt::Debug for CreateBotAliasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBotInput {
-    /// <p>The name of the bot. The bot name must be unique in the account that
-    /// creates the bot.</p>
+    /// <p>The name of the bot. The bot name must be unique in the account that creates the bot.</p>
     pub bot_name: std::option::Option<std::string::String>,
-    /// <p>A description of the bot. It appears in lists to help you identify a
-    /// particular bot.</p>
+    /// <p>A description of the bot. It appears in lists to help you identify a particular bot.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to
-    /// access the bot.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the bot.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>Provides information on additional privacy protections Amazon Lex should
-    /// use with the bot's data.</p>
+    /// <p>Provides information on additional privacy protections Amazon Lex should use with the bot's data.</p>
     pub data_privacy: std::option::Option<crate::model::DataPrivacy>,
-    /// <p>The time, in seconds, that Amazon Lex should keep information about a
-    /// user's conversation with the bot. </p>
-    /// <p>A user interaction remains active for the amount of time specified.
-    /// If no conversation occurs during this time, the session expires and
-    /// Amazon Lex deletes any data provided before the timeout.</p>
-    /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours)
-    /// seconds.</p>
+    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
+    /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
+    /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
     pub idle_session_ttl_in_seconds: std::option::Option<i32>,
-    /// <p>A list of tags to add to the bot. You can only add tags when you
-    /// create a bot. You can't use the <code>UpdateBot</code> operation to
-    /// update tags. To update tags, use the <code>TagResource</code>
-    /// operation.</p>
+    /// <p>A list of tags to add to the bot. You can only add tags when you create a bot. You can't use the <code>UpdateBot</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
     pub bot_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A list of tags to add to the test alias for a bot. You can only add
-    /// tags when you create a bot. You can't use the <code>UpdateAlias</code>
-    /// operation to update tags. To update tags on the test alias, use the
-    /// <code>TagResource</code> operation.</p>
+    /// <p>A list of tags to add to the test alias for a bot. You can only add tags when you create a bot. You can't use the <code>UpdateAlias</code> operation to update tags. To update tags on the test alias, use the <code>TagResource</code> operation.</p>
     pub test_bot_alias_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateBotInput {
-    /// <p>The name of the bot. The bot name must be unique in the account that
-    /// creates the bot.</p>
+    /// <p>The name of the bot. The bot name must be unique in the account that creates the bot.</p>
     pub fn bot_name(&self) -> std::option::Option<&str> {
         self.bot_name.as_deref()
     }
-    /// <p>A description of the bot. It appears in lists to help you identify a
-    /// particular bot.</p>
+    /// <p>A description of the bot. It appears in lists to help you identify a particular bot.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to
-    /// access the bot.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the bot.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>Provides information on additional privacy protections Amazon Lex should
-    /// use with the bot's data.</p>
+    /// <p>Provides information on additional privacy protections Amazon Lex should use with the bot's data.</p>
     pub fn data_privacy(&self) -> std::option::Option<&crate::model::DataPrivacy> {
         self.data_privacy.as_ref()
     }
-    /// <p>The time, in seconds, that Amazon Lex should keep information about a
-    /// user's conversation with the bot. </p>
-    /// <p>A user interaction remains active for the amount of time specified.
-    /// If no conversation occurs during this time, the session expires and
-    /// Amazon Lex deletes any data provided before the timeout.</p>
-    /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours)
-    /// seconds.</p>
+    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
+    /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
+    /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
     pub fn idle_session_ttl_in_seconds(&self) -> std::option::Option<i32> {
         self.idle_session_ttl_in_seconds
     }
-    /// <p>A list of tags to add to the bot. You can only add tags when you
-    /// create a bot. You can't use the <code>UpdateBot</code> operation to
-    /// update tags. To update tags, use the <code>TagResource</code>
-    /// operation.</p>
+    /// <p>A list of tags to add to the bot. You can only add tags when you create a bot. You can't use the <code>UpdateBot</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
     pub fn bot_tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.bot_tags.as_ref()
     }
-    /// <p>A list of tags to add to the test alias for a bot. You can only add
-    /// tags when you create a bot. You can't use the <code>UpdateAlias</code>
-    /// operation to update tags. To update tags on the test alias, use the
-    /// <code>TagResource</code> operation.</p>
+    /// <p>A list of tags to add to the test alias for a bot. You can only add tags when you create a bot. You can't use the <code>UpdateAlias</code> operation to update tags. To update tags on the test alias, use the <code>TagResource</code> operation.</p>
     pub fn test_bot_alias_tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -19973,33 +18217,23 @@ impl std::fmt::Debug for CreateBotInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BuildBotLocaleInput {
-    /// <p>The identifier of the bot to build. The identifier is returned in
-    /// the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
+    /// <p>The identifier of the bot to build. The identifier is returned in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
     pub bot_id: std::option::Option<std::string::String>,
-    /// <p>The version of the bot to build. This can only be the draft version
-    /// of the bot.</p>
+    /// <p>The version of the bot to build. This can only be the draft version of the bot.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>The identifier of the language and locale that the bot will be used
-    /// in. The string must match one of the supported locales. All of the
-    /// intents, slot types, and slots used in the bot must have the same
-    /// locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub locale_id: std::option::Option<std::string::String>,
 }
 impl BuildBotLocaleInput {
-    /// <p>The identifier of the bot to build. The identifier is returned in
-    /// the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
+    /// <p>The identifier of the bot to build. The identifier is returned in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.</p>
     pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
-    /// <p>The version of the bot to build. This can only be the draft version
-    /// of the bot.</p>
+    /// <p>The version of the bot to build. This can only be the draft version of the bot.</p>
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The identifier of the language and locale that the bot will be used
-    /// in. The string must match one of the supported locales. All of the
-    /// intents, slot types, and slots used in the bot must have the same
-    /// locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// <p>The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }

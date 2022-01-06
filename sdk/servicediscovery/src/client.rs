@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Cloud Map
@@ -154,6 +154,7 @@ where
     ///
     /// See [`GetInstancesHealthStatus`](crate::client::fluent_builders::GetInstancesHealthStatus) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetInstancesHealthStatus::into_paginator).
     pub fn get_instances_health_status(
         &self,
     ) -> fluent_builders::GetInstancesHealthStatus<C, M, R> {
@@ -184,6 +185,7 @@ where
     ///
     /// See [`ListInstances`](crate::client::fluent_builders::ListInstances) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInstances::into_paginator).
     pub fn list_instances(&self) -> fluent_builders::ListInstances<C, M, R> {
         fluent_builders::ListInstances::new(self.handle.clone())
     }
@@ -191,6 +193,7 @@ where
     ///
     /// See [`ListNamespaces`](crate::client::fluent_builders::ListNamespaces) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListNamespaces::into_paginator).
     pub fn list_namespaces(&self) -> fluent_builders::ListNamespaces<C, M, R> {
         fluent_builders::ListNamespaces::new(self.handle.clone())
     }
@@ -198,6 +201,7 @@ where
     ///
     /// See [`ListOperations`](crate::client::fluent_builders::ListOperations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOperations::into_paginator).
     pub fn list_operations(&self) -> fluent_builders::ListOperations<C, M, R> {
         fluent_builders::ListOperations::new(self.handle.clone())
     }
@@ -205,6 +209,7 @@ where
     ///
     /// See [`ListServices`](crate::client::fluent_builders::ListServices) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServices::into_paginator).
     pub fn list_services(&self) -> fluent_builders::ListServices<C, M, R> {
         fluent_builders::ListServices::new(self.handle.clone())
     }
@@ -288,12 +293,9 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateHttpNamespace`.
     ///
-    /// <p>Creates an HTTP namespace. Service instances registered using an HTTP namespace can be discovered using a
-    /// <code>DiscoverInstances</code> request but can't be discovered using DNS.</p>
-    /// <p>For the current quota on the number of namespaces that you can create using the same account,
-    /// see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the
-    /// <i>Cloud Map Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an HTTP namespace. Service instances registered using an HTTP namespace can be discovered using a <code>DiscoverInstances</code> request but can't be discovered using DNS.</p>
+    /// <p>For the current quota on the number of namespaces that you can create using the same account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHttpNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -338,10 +340,10 @@ pub mod fluent_builders {
                 crate::input::CreateHttpNamespaceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -350,8 +352,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name that you want to assign to this namespace.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name that you want to assign to this namespace.</p>
@@ -359,16 +361,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>A unique string that identifies the request and that allows failed <code>CreateHttpNamespace</code> requests to
-        /// be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string
-        /// (for example, a date/time stamp).</p>
-        pub fn creator_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.creator_request_id(inp);
+        /// <p>A unique string that identifies the request and that allows failed <code>CreateHttpNamespace</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/time stamp).</p>
+        pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.creator_request_id(input.into());
             self
         }
-        /// <p>A unique string that identifies the request and that allows failed <code>CreateHttpNamespace</code> requests to
-        /// be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string
-        /// (for example, a date/time stamp).</p>
+        /// <p>A unique string that identifies the request and that allows failed <code>CreateHttpNamespace</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/time stamp).</p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -377,8 +375,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the namespace.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the namespace.</p>
@@ -390,16 +388,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define.
-        /// Tags keys can be up to 128 characters in length, and tag values can be up to 256
-        /// characters in length.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define.
-        /// Tags keys can be up to 128 characters in length, and tag values can be up to 256
-        /// characters in length.</p>
+        /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -410,14 +404,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePrivateDnsNamespace`.
     ///
-    /// <p>Creates a private namespace based on DNS, which is visible only inside a specified Amazon VPC. The namespace
-    /// defines your service naming scheme. For example, if you name your namespace <code>example.com</code> and name your
-    /// service <code>backend</code>, the resulting DNS name for the service is <code>backend.example.com</code>. Service
-    /// instances that are registered using a private DNS namespace can be discovered using either a
-    /// <code>DiscoverInstances</code> request or using DNS. For the current quota on the number of namespaces that you can
-    /// create using the same account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the
-    /// <i>Cloud Map Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a private namespace based on DNS, which is visible only inside a specified Amazon VPC. The namespace defines your service naming scheme. For example, if you name your namespace <code>example.com</code> and name your service <code>backend</code>, the resulting DNS name for the service is <code>backend.example.com</code>. Service instances that are registered using a private DNS namespace can be discovered using either a <code>DiscoverInstances</code> request or using DNS. For the current quota on the number of namespaces that you can create using the same account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePrivateDnsNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -462,10 +450,10 @@ pub mod fluent_builders {
                 crate::input::CreatePrivateDnsNamespaceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -473,28 +461,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name that you want to assign to this namespace. When you create a private DNS namespace, Cloud Map
-        /// automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name that you want to assign to this namespace. When you create a private DNS namespace, Cloud Map automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name that you want to assign to this namespace. When you create a private DNS namespace, Cloud Map
-        /// automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.</p>
+        /// <p>The name that you want to assign to this namespace. When you create a private DNS namespace, Cloud Map automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code>
-        /// requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any
-        /// unique string (for example, a date/timestamp).</p>
-        pub fn creator_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.creator_request_id(inp);
+        /// <p>A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
+        pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.creator_request_id(input.into());
             self
         }
-        /// <p>A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code>
-        /// requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any
-        /// unique string (for example, a date/timestamp).</p>
+        /// <p>A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -503,8 +485,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the namespace.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the namespace.</p>
@@ -513,8 +495,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Amazon VPC that you want to associate the namespace with.</p>
-        pub fn vpc(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc(inp);
+        pub fn vpc(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc(input.into());
             self
         }
         /// <p>The ID of the Amazon VPC that you want to associate the namespace with.</p>
@@ -526,16 +508,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define.
-        /// Tags keys can be up to 128 characters in length, and tag values can be up to 256
-        /// characters in length.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define.
-        /// Tags keys can be up to 128 characters in length, and tag values can be up to 256
-        /// characters in length.</p>
+        /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -543,14 +521,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Properties for the private DNS
-        /// namespace.</p>
-        pub fn properties(mut self, inp: crate::model::PrivateDnsNamespaceProperties) -> Self {
-            self.inner = self.inner.properties(inp);
+        /// <p>Properties for the private DNS namespace.</p>
+        pub fn properties(mut self, input: crate::model::PrivateDnsNamespaceProperties) -> Self {
+            self.inner = self.inner.properties(input);
             self
         }
-        /// <p>Properties for the private DNS
-        /// namespace.</p>
+        /// <p>Properties for the private DNS namespace.</p>
         pub fn set_properties(
             mut self,
             input: std::option::Option<crate::model::PrivateDnsNamespaceProperties>,
@@ -561,13 +537,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePublicDnsNamespace`.
     ///
-    /// <p>Creates a public namespace based on DNS, which is visible on the internet. The namespace defines your service
-    /// naming scheme. For example, if you name your namespace <code>example.com</code> and name your service
-    /// <code>backend</code>, the resulting DNS name for the service is <code>backend.example.com</code>. You can discover
-    /// instances that were registered with a public DNS namespace by using either a <code>DiscoverInstances</code> request
-    /// or using DNS. For the current quota on the number of namespaces that you can create using the same account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map
-    /// quotas</a> in the <i>Cloud Map Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a public namespace based on DNS, which is visible on the internet. The namespace defines your service naming scheme. For example, if you name your namespace <code>example.com</code> and name your service <code>backend</code>, the resulting DNS name for the service is <code>backend.example.com</code>. You can discover instances that were registered with a public DNS namespace by using either a <code>DiscoverInstances</code> request or using DNS. For the current quota on the number of namespaces that you can create using the same account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePublicDnsNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -612,10 +583,10 @@ pub mod fluent_builders {
                 crate::input::CreatePublicDnsNamespaceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -624,8 +595,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name that you want to assign to this namespace.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name that you want to assign to this namespace.</p>
@@ -633,16 +604,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>A unique string that identifies the request and that allows failed <code>CreatePublicDnsNamespace</code>
-        /// requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any
-        /// unique string (for example, a date/timestamp).</p>
-        pub fn creator_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.creator_request_id(inp);
+        /// <p>A unique string that identifies the request and that allows failed <code>CreatePublicDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
+        pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.creator_request_id(input.into());
             self
         }
-        /// <p>A unique string that identifies the request and that allows failed <code>CreatePublicDnsNamespace</code>
-        /// requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any
-        /// unique string (for example, a date/timestamp).</p>
+        /// <p>A unique string that identifies the request and that allows failed <code>CreatePublicDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -651,8 +618,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the namespace.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the namespace.</p>
@@ -664,16 +631,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define.
-        /// Tags keys can be up to 128 characters in length, and tag values can be up to 256
-        /// characters in length.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define.
-        /// Tags keys can be up to 128 characters in length, and tag values can be up to 256
-        /// characters in length.</p>
+        /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -681,14 +644,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Properties for the public DNS
-        /// namespace.</p>
-        pub fn properties(mut self, inp: crate::model::PublicDnsNamespaceProperties) -> Self {
-            self.inner = self.inner.properties(inp);
+        /// <p>Properties for the public DNS namespace.</p>
+        pub fn properties(mut self, input: crate::model::PublicDnsNamespaceProperties) -> Self {
+            self.inner = self.inner.properties(input);
             self
         }
-        /// <p>Properties for the public DNS
-        /// namespace.</p>
+        /// <p>Properties for the public DNS namespace.</p>
         pub fn set_properties(
             mut self,
             input: std::option::Option<crate::model::PublicDnsNamespaceProperties>,
@@ -701,46 +662,19 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a service. This action defines the configuration for the following entities:</p>
     /// <ul>
-    /// <li>
-    /// <p>For public and private DNS namespaces, one of the following combinations of DNS records in Amazon Route 53:</p>
+    /// <li> <p>For public and private DNS namespaces, one of the following combinations of DNS records in Amazon Route 53:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>A</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AAAA</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>A</code> and <code>AAAA</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SRV</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CNAME</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>A</code> </p> </li>
+    /// <li> <p> <code>AAAA</code> </p> </li>
+    /// <li> <p> <code>A</code> and <code>AAAA</code> </p> </li>
+    /// <li> <p> <code>SRV</code> </p> </li>
+    /// <li> <p> <code>CNAME</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Optionally, a health check</p> </li>
     /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Optionally, a health check</p>
-    /// </li>
-    /// </ul>
-    /// <p>After you create the service, you can submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request, and Cloud Map uses the
-    /// values in the configuration to create the specified entities.</p>
-    /// <p>For the current quota on the number of instances that you can register using the same namespace and using the
-    /// same service, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map
-    /// quotas</a> in the <i>Cloud Map Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>After you create the service, you can submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request, and Cloud Map uses the values in the configuration to create the specified entities.</p>
+    /// <p>For the current quota on the number of instances that you can register using the same namespace and using the same service, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -785,10 +719,10 @@ pub mod fluent_builders {
                 crate::input::CreateServiceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -797,77 +731,49 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name that you want to assign to the service.</p>
-        /// <p>If you want Cloud Map to create an <code>SRV</code> record when you register an instance and you're using a
-        /// system that requires a specific <code>SRV</code> format, such as <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for <code>Name</code>:</p>
+        /// <p>If you want Cloud Map to create an <code>SRV</code> record when you register an instance and you're using a system that requires a specific <code>SRV</code> format, such as <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for <code>Name</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>Start the name with an underscore (_), such as <code>_exampleservice</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>End the name with <i>._protocol</i>, such as <code>._tcp</code>.</p>
-        /// </li>
+        /// <li> <p>Start the name with an underscore (_), such as <code>_exampleservice</code>.</p> </li>
+        /// <li> <p>End the name with <i>._protocol</i>, such as <code>._tcp</code>.</p> </li>
         /// </ul>
-        /// <p>When you register an instance, Cloud Map creates an <code>SRV</code> record and assigns a name to the record by
-        /// concatenating the service name and the namespace name (for example,</p>
-        /// <p>
-        /// <code>_exampleservice._tcp.example.com</code>).</p>
-        /// <note>
-        /// <p>For services that are accessible by DNS queries, you can't create multiple services with names that differ only
-        /// by case (such as EXAMPLE and example). Otherwise, these services have the same DNS name and can't be distinguished.
-        /// However, if you use a namespace that's only accessible by API calls, then you can create services that with names
-        /// that differ only by case.</p>
+        /// <p>When you register an instance, Cloud Map creates an <code>SRV</code> record and assigns a name to the record by concatenating the service name and the namespace name (for example,</p>
+        /// <p> <code>_exampleservice._tcp.example.com</code>).</p> <note>
+        /// <p>For services that are accessible by DNS queries, you can't create multiple services with names that differ only by case (such as EXAMPLE and example). Otherwise, these services have the same DNS name and can't be distinguished. However, if you use a namespace that's only accessible by API calls, then you can create services that with names that differ only by case.</p>
         /// </note>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name that you want to assign to the service.</p>
-        /// <p>If you want Cloud Map to create an <code>SRV</code> record when you register an instance and you're using a
-        /// system that requires a specific <code>SRV</code> format, such as <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for <code>Name</code>:</p>
+        /// <p>If you want Cloud Map to create an <code>SRV</code> record when you register an instance and you're using a system that requires a specific <code>SRV</code> format, such as <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for <code>Name</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>Start the name with an underscore (_), such as <code>_exampleservice</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>End the name with <i>._protocol</i>, such as <code>._tcp</code>.</p>
-        /// </li>
+        /// <li> <p>Start the name with an underscore (_), such as <code>_exampleservice</code>.</p> </li>
+        /// <li> <p>End the name with <i>._protocol</i>, such as <code>._tcp</code>.</p> </li>
         /// </ul>
-        /// <p>When you register an instance, Cloud Map creates an <code>SRV</code> record and assigns a name to the record by
-        /// concatenating the service name and the namespace name (for example,</p>
-        /// <p>
-        /// <code>_exampleservice._tcp.example.com</code>).</p>
-        /// <note>
-        /// <p>For services that are accessible by DNS queries, you can't create multiple services with names that differ only
-        /// by case (such as EXAMPLE and example). Otherwise, these services have the same DNS name and can't be distinguished.
-        /// However, if you use a namespace that's only accessible by API calls, then you can create services that with names
-        /// that differ only by case.</p>
+        /// <p>When you register an instance, Cloud Map creates an <code>SRV</code> record and assigns a name to the record by concatenating the service name and the namespace name (for example,</p>
+        /// <p> <code>_exampleservice._tcp.example.com</code>).</p> <note>
+        /// <p>For services that are accessible by DNS queries, you can't create multiple services with names that differ only by case (such as EXAMPLE and example). Otherwise, these services have the same DNS name and can't be distinguished. However, if you use a namespace that's only accessible by API calls, then you can create services that with names that differ only by case.</p>
         /// </note>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The ID of the namespace that you want to use to create the service. The namespace ID must be specified, but it
-        /// can be specified either here or in the <code>DnsConfig</code> object.</p>
-        pub fn namespace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace_id(inp);
+        /// <p>The ID of the namespace that you want to use to create the service. The namespace ID must be specified, but it can be specified either here or in the <code>DnsConfig</code> object.</p>
+        pub fn namespace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace_id(input.into());
             self
         }
-        /// <p>The ID of the namespace that you want to use to create the service. The namespace ID must be specified, but it
-        /// can be specified either here or in the <code>DnsConfig</code> object.</p>
+        /// <p>The ID of the namespace that you want to use to create the service. The namespace ID must be specified, but it can be specified either here or in the <code>DnsConfig</code> object.</p>
         pub fn set_namespace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_namespace_id(input);
             self
         }
-        /// <p>A unique string that identifies the request and that allows failed <code>CreateService</code> requests to be
-        /// retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for
-        /// example, a date/timestamp).</p>
-        pub fn creator_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.creator_request_id(inp);
+        /// <p>A unique string that identifies the request and that allows failed <code>CreateService</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
+        pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.creator_request_id(input.into());
             self
         }
-        /// <p>A unique string that identifies the request and that allows failed <code>CreateService</code> requests to be
-        /// retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for
-        /// example, a date/timestamp).</p>
+        /// <p>A unique string that identifies the request and that allows failed <code>CreateService</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -876,8 +782,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the service.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the service.</p>
@@ -885,14 +791,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>A complex type that contains information about the Amazon Route 53 records that you want Cloud Map to create when you
-        /// register an instance. </p>
-        pub fn dns_config(mut self, inp: crate::model::DnsConfig) -> Self {
-            self.inner = self.inner.dns_config(inp);
+        /// <p>A complex type that contains information about the Amazon Route 53 records that you want Cloud Map to create when you register an instance. </p>
+        pub fn dns_config(mut self, input: crate::model::DnsConfig) -> Self {
+            self.inner = self.inner.dns_config(input);
             self
         }
-        /// <p>A complex type that contains information about the Amazon Route 53 records that you want Cloud Map to create when you
-        /// register an instance. </p>
+        /// <p>A complex type that contains information about the Amazon Route 53 records that you want Cloud Map to create when you register an instance. </p>
         pub fn set_dns_config(
             mut self,
             input: std::option::Option<crate::model::DnsConfig>,
@@ -900,26 +804,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dns_config(input);
             self
         }
-        /// <p>
-        /// <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional
-        /// Route 53 health check. If you specify settings for a health check, Cloud Map associates the health check with all the
-        /// Route 53 DNS records that you specify in <code>DnsConfig</code>.</p>
-        /// <important>
-        /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or
-        /// <code>HealthCheckConfig</code> but not both.</p>
+        /// <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional Route 53 health check. If you specify settings for a health check, Cloud Map associates the health check with all the Route 53 DNS records that you specify in <code>DnsConfig</code>.</p> <important>
+        /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
         /// </important>
         /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/cloud-map/pricing/">Cloud Map Pricing</a>.</p>
-        pub fn health_check_config(mut self, inp: crate::model::HealthCheckConfig) -> Self {
-            self.inner = self.inner.health_check_config(inp);
+        pub fn health_check_config(mut self, input: crate::model::HealthCheckConfig) -> Self {
+            self.inner = self.inner.health_check_config(input);
             self
         }
-        /// <p>
-        /// <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional
-        /// Route 53 health check. If you specify settings for a health check, Cloud Map associates the health check with all the
-        /// Route 53 DNS records that you specify in <code>DnsConfig</code>.</p>
-        /// <important>
-        /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or
-        /// <code>HealthCheckConfig</code> but not both.</p>
+        /// <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional Route 53 health check. If you specify settings for a health check, Cloud Map associates the health check with all the Route 53 DNS records that you specify in <code>DnsConfig</code>.</p> <important>
+        /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
         /// </important>
         /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/cloud-map/pricing/">Cloud Map Pricing</a>.</p>
         pub fn set_health_check_config(
@@ -929,27 +823,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_health_check_config(input);
             self
         }
-        /// <p>A complex type that contains information about an optional custom health check.</p>
-        /// <important>
-        /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or
-        /// <code>HealthCheckConfig</code> but not both.</p>
+        /// <p>A complex type that contains information about an optional custom health check.</p> <important>
+        /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
         /// </important>
-        /// <p>You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration from an existing
-        /// service.</p>
+        /// <p>You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration from an existing service.</p>
         pub fn health_check_custom_config(
             mut self,
-            inp: crate::model::HealthCheckCustomConfig,
+            input: crate::model::HealthCheckCustomConfig,
         ) -> Self {
-            self.inner = self.inner.health_check_custom_config(inp);
+            self.inner = self.inner.health_check_custom_config(input);
             self
         }
-        /// <p>A complex type that contains information about an optional custom health check.</p>
-        /// <important>
-        /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or
-        /// <code>HealthCheckConfig</code> but not both.</p>
+        /// <p>A complex type that contains information about an optional custom health check.</p> <important>
+        /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
         /// </important>
-        /// <p>You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration from an existing
-        /// service.</p>
+        /// <p>You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration from an existing service.</p>
         pub fn set_health_check_custom_config(
             mut self,
             input: std::option::Option<crate::model::HealthCheckCustomConfig>,
@@ -961,16 +849,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to add to the service. Each tag consists of a key and an optional value that you define.
-        /// Tags keys can be up to 128 characters in length, and tag values can be up to 256
-        /// characters in length.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>The tags to add to the service. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The tags to add to the service. Each tag consists of a key and an optional value that you define.
-        /// Tags keys can be up to 128 characters in length, and tag values can be up to 256
-        /// characters in length.</p>
+        /// <p>The tags to add to the service. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -978,16 +862,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>If present, specifies that the service instances are only discoverable using the <code>DiscoverInstances</code>
-        /// API operation. No DNS records is registered for the service instances. The only valid value is
-        /// <code>HTTP</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::ServiceTypeOption) -> Self {
-            self.inner = self.inner.r#type(inp);
+        /// <p>If present, specifies that the service instances are only discoverable using the <code>DiscoverInstances</code> API operation. No DNS records is registered for the service instances. The only valid value is <code>HTTP</code>.</p>
+        pub fn r#type(mut self, input: crate::model::ServiceTypeOption) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>If present, specifies that the service instances are only discoverable using the <code>DiscoverInstances</code>
-        /// API operation. No DNS records is registered for the service instances. The only valid value is
-        /// <code>HTTP</code>.</p>
+        /// <p>If present, specifies that the service instances are only discoverable using the <code>DiscoverInstances</code> API operation. No DNS records is registered for the service instances. The only valid value is <code>HTTP</code>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ServiceTypeOption>,
@@ -998,9 +878,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteNamespace`.
     ///
-    /// <p>Deletes a namespace from the current account. If the namespace still contains one or more services, the request
-    /// fails.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a namespace from the current account. If the namespace still contains one or more services, the request fails.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1045,10 +924,10 @@ pub mod fluent_builders {
                 crate::input::DeleteNamespaceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1057,8 +936,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the namespace that you want to delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the namespace that you want to delete.</p>
@@ -1069,9 +948,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteService`.
     ///
-    /// <p>Deletes a specified service. If the service still contains one or more registered instances, the request
-    /// fails.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a specified service. If the service still contains one or more registered instances, the request fails.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1116,10 +994,10 @@ pub mod fluent_builders {
                 crate::input::DeleteServiceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1128,8 +1006,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the service that you want to delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the service that you want to delete.</p>
@@ -1140,9 +1018,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeregisterInstance`.
     ///
-    /// <p>Deletes the Amazon Route 53 DNS records and health check, if any, that Cloud Map created for the specified
-    /// instance.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the Amazon Route 53 DNS records and health check, if any, that Cloud Map created for the specified instance.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1187,10 +1064,10 @@ pub mod fluent_builders {
                 crate::input::DeregisterInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1199,8 +1076,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the service that the instance is associated with.</p>
-        pub fn service_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_id(inp);
+        pub fn service_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_id(input.into());
             self
         }
         /// <p>The ID of the service that the instance is associated with.</p>
@@ -1209,8 +1086,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value that you specified for <code>Id</code> in the <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The value that you specified for <code>Id</code> in the <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request.</p>
@@ -1221,10 +1098,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DiscoverInstances`.
     ///
-    /// <p>Discovers registered instances for a specified namespace and service. You can use <code>DiscoverInstances</code>
-    /// to discover instances for any type of namespace. For public and private DNS namespaces, you can also use DNS queries
-    /// to discover instances.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Discovers registered instances for a specified namespace and service. You can use <code>DiscoverInstances</code> to discover instances for any type of namespace. For public and private DNS namespaces, you can also use DNS queries to discover instances.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DiscoverInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1269,10 +1144,10 @@ pub mod fluent_builders {
                 crate::input::DiscoverInstancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1280,14 +1155,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the
-        /// <code>Properties</code> member of the namespace.</p>
-        pub fn namespace_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace_name(inp);
+        /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
+        pub fn namespace_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace_name(input.into());
             self
         }
-        /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the
-        /// <code>Properties</code> member of the namespace.</p>
+        /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
         pub fn set_namespace_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1296,8 +1169,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service that you specified when you registered the instance.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
             self
         }
         /// <p>The name of the service that you specified when you registered the instance.</p>
@@ -1305,16 +1178,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_name(input);
             self
         }
-        /// <p>The maximum number of instances that you want Cloud Map to return in the response to a
-        /// <code>DiscoverInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up
-        /// to 100 instances.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of instances that you want Cloud Map to return in the response to a <code>DiscoverInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of instances that you want Cloud Map to return in the response to a
-        /// <code>DiscoverInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up
-        /// to 100 instances.</p>
+        /// <p>The maximum number of instances that you want Cloud Map to return in the response to a <code>DiscoverInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1323,18 +1192,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_query_parameters`](Self::set_query_parameters).
         ///
-        /// <p>Filters to scope the results based on custom attributes for the instance (for example, <code>{version=v1,
-        /// az=1a}</code>). Only instances that match all the specified key-value pairs are returned.</p>
+        /// <p>Filters to scope the results based on custom attributes for the instance (for example, <code>{version=v1, az=1a}</code>). Only instances that match all the specified key-value pairs are returned.</p>
         pub fn query_parameters(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.query_parameters(k, v);
+            self.inner = self.inner.query_parameters(k.into(), v.into());
             self
         }
-        /// <p>Filters to scope the results based on custom attributes for the instance (for example, <code>{version=v1,
-        /// az=1a}</code>). Only instances that match all the specified key-value pairs are returned.</p>
+        /// <p>Filters to scope the results based on custom attributes for the instance (for example, <code>{version=v1, az=1a}</code>). Only instances that match all the specified key-value pairs are returned.</p>
         pub fn set_query_parameters(
             mut self,
             input: std::option::Option<
@@ -1348,22 +1215,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_optional_parameters`](Self::set_optional_parameters).
         ///
-        /// <p>Opportunistic filters to scope the results based on custom attributes. If there are instances that match both
-        /// the filters specified in both the <code>QueryParameters</code> parameter and this parameter, all of these instances
-        /// are returned. Otherwise, the filters are ignored, and only instances that match the filters that are specified in the
-        /// <code>QueryParameters</code> parameter are returned.</p>
+        /// <p>Opportunistic filters to scope the results based on custom attributes. If there are instances that match both the filters specified in both the <code>QueryParameters</code> parameter and this parameter, all of these instances are returned. Otherwise, the filters are ignored, and only instances that match the filters that are specified in the <code>QueryParameters</code> parameter are returned.</p>
         pub fn optional_parameters(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.optional_parameters(k, v);
+            self.inner = self.inner.optional_parameters(k.into(), v.into());
             self
         }
-        /// <p>Opportunistic filters to scope the results based on custom attributes. If there are instances that match both
-        /// the filters specified in both the <code>QueryParameters</code> parameter and this parameter, all of these instances
-        /// are returned. Otherwise, the filters are ignored, and only instances that match the filters that are specified in the
-        /// <code>QueryParameters</code> parameter are returned.</p>
+        /// <p>Opportunistic filters to scope the results based on custom attributes. If there are instances that match both the filters specified in both the <code>QueryParameters</code> parameter and this parameter, all of these instances are returned. Otherwise, the filters are ignored, and only instances that match the filters that are specified in the <code>QueryParameters</code> parameter are returned.</p>
         pub fn set_optional_parameters(
             mut self,
             input: std::option::Option<
@@ -1373,54 +1234,62 @@ pub mod fluent_builders {
             self.inner = self.inner.set_optional_parameters(input);
             self
         }
-        /// <p>The health status of the instances that you want to discover. This parameter is ignored for services that don't
-        /// have a health check configured, and
-        /// all
-        /// instances are returned.</p>
+        /// <p>The health status of the instances that you want to discover. This parameter is ignored for services that don't have a health check configured, and all instances are returned.</p>
         /// <dl>
-        /// <dt>HEALTHY</dt>
+        /// <dt>
+        /// HEALTHY
+        /// </dt>
         /// <dd>
         /// <p>Returns healthy instances.</p>
         /// </dd>
-        /// <dt>UNHEALTHY</dt>
+        /// <dt>
+        /// UNHEALTHY
+        /// </dt>
         /// <dd>
         /// <p>Returns unhealthy instances.</p>
         /// </dd>
-        /// <dt>ALL</dt>
+        /// <dt>
+        /// ALL
+        /// </dt>
         /// <dd>
         /// <p>Returns all instances.</p>
         /// </dd>
-        /// <dt>HEALTHY_OR_ELSE_ALL</dt>
+        /// <dt>
+        /// HEALTHY_OR_ELSE_ALL
+        /// </dt>
         /// <dd>
-        /// <p>Returns healthy instances, unless none are reporting a healthy state. In that case, return all instances.
-        /// This is also called failing open.</p>
+        /// <p>Returns healthy instances, unless none are reporting a healthy state. In that case, return all instances. This is also called failing open.</p>
         /// </dd>
         /// </dl>
-        pub fn health_status(mut self, inp: crate::model::HealthStatusFilter) -> Self {
-            self.inner = self.inner.health_status(inp);
+        pub fn health_status(mut self, input: crate::model::HealthStatusFilter) -> Self {
+            self.inner = self.inner.health_status(input);
             self
         }
-        /// <p>The health status of the instances that you want to discover. This parameter is ignored for services that don't
-        /// have a health check configured, and
-        /// all
-        /// instances are returned.</p>
+        /// <p>The health status of the instances that you want to discover. This parameter is ignored for services that don't have a health check configured, and all instances are returned.</p>
         /// <dl>
-        /// <dt>HEALTHY</dt>
+        /// <dt>
+        /// HEALTHY
+        /// </dt>
         /// <dd>
         /// <p>Returns healthy instances.</p>
         /// </dd>
-        /// <dt>UNHEALTHY</dt>
+        /// <dt>
+        /// UNHEALTHY
+        /// </dt>
         /// <dd>
         /// <p>Returns unhealthy instances.</p>
         /// </dd>
-        /// <dt>ALL</dt>
+        /// <dt>
+        /// ALL
+        /// </dt>
         /// <dd>
         /// <p>Returns all instances.</p>
         /// </dd>
-        /// <dt>HEALTHY_OR_ELSE_ALL</dt>
+        /// <dt>
+        /// HEALTHY_OR_ELSE_ALL
+        /// </dt>
         /// <dd>
-        /// <p>Returns healthy instances, unless none are reporting a healthy state. In that case, return all instances.
-        /// This is also called failing open.</p>
+        /// <p>Returns healthy instances, unless none are reporting a healthy state. In that case, return all instances. This is also called failing open.</p>
         /// </dd>
         /// </dl>
         pub fn set_health_status(
@@ -1434,7 +1303,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetInstance`.
     ///
     /// <p>Gets information about a specified instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1479,10 +1348,10 @@ pub mod fluent_builders {
                 crate::input::GetInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1491,8 +1360,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the service that the instance is associated with.</p>
-        pub fn service_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_id(inp);
+        pub fn service_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_id(input.into());
             self
         }
         /// <p>The ID of the service that the instance is associated with.</p>
@@ -1501,8 +1370,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the instance that you want to get information about.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The ID of the instance that you want to get information about.</p>
@@ -1513,13 +1382,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetInstancesHealthStatus`.
     ///
-    /// <p>Gets the current health status (<code>Healthy</code>, <code>Unhealthy</code>, or <code>Unknown</code>) of one or
-    /// more instances that are associated with a specified service.</p>
-    /// <note>
-    /// <p>There's a brief delay between when you register an instance and when the health status for the instance is
-    /// available. </p>
+    /// <p>Gets the current health status (<code>Healthy</code>, <code>Unhealthy</code>, or <code>Unknown</code>) of one or more instances that are associated with a specified service.</p> <note>
+    /// <p>There's a brief delay between when you register an instance and when the health status for the instance is available. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInstancesHealthStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1564,10 +1430,10 @@ pub mod fluent_builders {
                 crate::input::GetInstancesHealthStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1575,9 +1441,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetInstancesHealthStatusPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetInstancesHealthStatusPaginator<C, M, R> {
+            crate::paginator::GetInstancesHealthStatusPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the service that the instance is associated with.</p>
-        pub fn service_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_id(inp);
+        pub fn service_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_id(input.into());
             self
         }
         /// <p>The ID of the service that the instance is associated with.</p>
@@ -1590,19 +1464,15 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>An array that contains the IDs of all the instances that you want to get the health status for.</p>
-        /// <p>If you omit <code>Instances</code>, Cloud Map returns the health status for all the instances that are
-        /// associated with the specified service.</p>
-        /// <note>
+        /// <p>If you omit <code>Instances</code>, Cloud Map returns the health status for all the instances that are associated with the specified service.</p> <note>
         /// <p>To get the IDs for the instances that you've registered by using a specified service, submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a> request.</p>
         /// </note>
-        pub fn instances(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instances(inp);
+        pub fn instances(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instances(input.into());
             self
         }
         /// <p>An array that contains the IDs of all the instances that you want to get the health status for.</p>
-        /// <p>If you omit <code>Instances</code>, Cloud Map returns the health status for all the instances that are
-        /// associated with the specified service.</p>
-        /// <note>
+        /// <p>If you omit <code>Instances</code>, Cloud Map returns the health status for all the instances that are associated with the specified service.</p> <note>
         /// <p>To get the IDs for the instances that you've registered by using a specified service, submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a> request.</p>
         /// </note>
         pub fn set_instances(
@@ -1612,32 +1482,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instances(input);
             self
         }
-        /// <p>The maximum number of instances that you want Cloud Map to return in the response to a
-        /// <code>GetInstancesHealthStatus</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map
-        /// returns up to 100 instances.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of instances that you want Cloud Map to return in the response to a <code>GetInstancesHealthStatus</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of instances that you want Cloud Map to return in the response to a
-        /// <code>GetInstancesHealthStatus</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map
-        /// returns up to 100 instances.</p>
+        /// <p>The maximum number of instances that you want Cloud Map to return in the response to a <code>GetInstancesHealthStatus</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>For the first <code>GetInstancesHealthStatus</code> request, omit this value.</p>
-        /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another
-        /// <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of
-        /// <code>NextToken</code> from the previous response in the next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first <code>GetInstancesHealthStatus</code> request, omit this value.</p>
-        /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another
-        /// <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of
-        /// <code>NextToken</code> from the previous response in the next request.</p>
+        /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1646,7 +1508,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetNamespace`.
     ///
     /// <p>Gets information about a namespace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1691,10 +1553,10 @@ pub mod fluent_builders {
                 crate::input::GetNamespaceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1703,8 +1565,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the namespace that you want to get information about.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the namespace that you want to get information about.</p>
@@ -1715,12 +1577,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetOperation`.
     ///
-    /// <p>Gets information about any operation that returns an operation ID in the response, such as a
-    /// <code>CreateService</code> request.</p>
-    /// <note>
+    /// <p>Gets information about any operation that returns an operation ID in the response, such as a <code>CreateService</code> request.</p> <note>
     /// <p>To get a list of operations that match specified criteria, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListOperations.html">ListOperations</a>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOperation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1765,10 +1625,10 @@ pub mod fluent_builders {
                 crate::input::GetOperationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1777,8 +1637,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the operation that you want to get more information about.</p>
-        pub fn operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.operation_id(inp);
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.operation_id(input.into());
             self
         }
         /// <p>The ID of the operation that you want to get more information about.</p>
@@ -1790,7 +1650,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetService`.
     ///
     /// <p>Gets the settings for a specified service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1835,10 +1695,10 @@ pub mod fluent_builders {
                 crate::input::GetServiceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1847,8 +1707,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the service that you want to get settings for.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the service that you want to get settings for.</p>
@@ -1860,7 +1720,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListInstances`.
     ///
     /// <p>Lists summary information about the instances that you registered by using a specified service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1905,10 +1765,10 @@ pub mod fluent_builders {
                 crate::input::ListInstancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1916,9 +1776,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListInstancesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListInstancesPaginator<C, M, R> {
+            crate::paginator::ListInstancesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the service that you want to list instances for.</p>
-        pub fn service_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_id(inp);
+        pub fn service_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_id(input.into());
             self
         }
         /// <p>The ID of the service that you want to list instances for.</p>
@@ -1927,31 +1793,23 @@ pub mod fluent_builders {
             self
         }
         /// <p>For the first <code>ListInstances</code> request, omit this value.</p>
-        /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another
-        /// <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code>
-        /// from the previous response in the next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first <code>ListInstances</code> request, omit this value.</p>
-        /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another
-        /// <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code>
-        /// from the previous response in the next request.</p>
+        /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of instances that you want Cloud Map to return in the response to a
-        /// <code>ListInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up
-        /// to 100 instances.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of instances that you want Cloud Map to return in the response to a <code>ListInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of instances that you want Cloud Map to return in the response to a
-        /// <code>ListInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up
-        /// to 100 instances.</p>
+        /// <p>The maximum number of instances that you want Cloud Map to return in the response to a <code>ListInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1960,7 +1818,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListNamespaces`.
     ///
     /// <p>Lists summary information about the namespaces that were created by the current account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNamespaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2005,10 +1863,10 @@ pub mod fluent_builders {
                 crate::input::ListNamespacesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2016,42 +1874,34 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListNamespacesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListNamespacesPaginator<C, M, R> {
+            crate::paginator::ListNamespacesPaginator::new(self.handle, self.inner)
+        }
         /// <p>For the first <code>ListNamespaces</code> request, omit this value.</p>
-        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the
-        /// next group of results. Specify the value of <code>NextToken</code> from the previous response in the next
-        /// request.</p>
-        /// <note>
-        /// <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's
-        /// possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that
-        /// subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p>
+        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
+        /// <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first <code>ListNamespaces</code> request, omit this value.</p>
-        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the
-        /// next group of results. Specify the value of <code>NextToken</code> from the previous response in the next
-        /// request.</p>
-        /// <note>
-        /// <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's
-        /// possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that
-        /// subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p>
+        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
+        /// <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of namespaces that you want Cloud Map to return in the response to a
-        /// <code>ListNamespaces</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up
-        /// to 100 namespaces.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of namespaces that you want Cloud Map to return in the response to a <code>ListNamespaces</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 namespaces.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of namespaces that you want Cloud Map to return in the response to a
-        /// <code>ListNamespaces</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up
-        /// to 100 namespaces.</p>
+        /// <p>The maximum number of namespaces that you want Cloud Map to return in the response to a <code>ListNamespaces</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 namespaces.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2061,15 +1911,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>A complex type that contains specifications for the namespaces that you want to list.</p>
-        /// <p>If you specify more than one filter, a namespace must match all filters to be returned by
-        /// <code>ListNamespaces</code>.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::NamespaceFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>If you specify more than one filter, a namespace must match all filters to be returned by <code>ListNamespaces</code>.</p>
+        pub fn filters(mut self, input: crate::model::NamespaceFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A complex type that contains specifications for the namespaces that you want to list.</p>
-        /// <p>If you specify more than one filter, a namespace must match all filters to be returned by
-        /// <code>ListNamespaces</code>.</p>
+        /// <p>If you specify more than one filter, a namespace must match all filters to be returned by <code>ListNamespaces</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NamespaceFilter>>,
@@ -2081,7 +1929,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListOperations`.
     ///
     /// <p>Lists operations that match the criteria that you specify.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOperations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2126,10 +1974,10 @@ pub mod fluent_builders {
                 crate::input::ListOperationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2137,40 +1985,34 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListOperationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListOperationsPaginator<C, M, R> {
+            crate::paginator::ListOperationsPaginator::new(self.handle, self.inner)
+        }
         /// <p>For the first <code>ListOperations</code> request, omit this value.</p>
-        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the
-        /// next group of results. Specify the value of <code>NextToken</code> from the previous response in the next
-        /// request.</p>
-        /// <note>
-        /// <p>Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's
-        /// possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that
-        /// subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p>
+        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
+        /// <p>Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first <code>ListOperations</code> request, omit this value.</p>
-        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the
-        /// next group of results. Specify the value of <code>NextToken</code> from the previous response in the next
-        /// request.</p>
-        /// <note>
-        /// <p>Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's
-        /// possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that
-        /// subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p>
+        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
+        /// <p>Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items that you want Cloud Map to return in the response to a <code>ListOperations</code>
-        /// request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 operations.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of items that you want Cloud Map to return in the response to a <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 operations.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items that you want Cloud Map to return in the response to a <code>ListOperations</code>
-        /// request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 operations.</p>
+        /// <p>The maximum number of items that you want Cloud Map to return in the response to a <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 operations.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2179,18 +2021,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>A complex type that contains specifications for the operations that you want to list, for example, operations
-        /// that you started between a specified start date and end date.</p>
-        /// <p>If you specify more than one filter, an operation must match all filters to be returned by
-        /// <code>ListOperations</code>.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::OperationFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>A complex type that contains specifications for the operations that you want to list, for example, operations that you started between a specified start date and end date.</p>
+        /// <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListOperations</code>.</p>
+        pub fn filters(mut self, input: crate::model::OperationFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>A complex type that contains specifications for the operations that you want to list, for example, operations
-        /// that you started between a specified start date and end date.</p>
-        /// <p>If you specify more than one filter, an operation must match all filters to be returned by
-        /// <code>ListOperations</code>.</p>
+        /// <p>A complex type that contains specifications for the operations that you want to list, for example, operations that you started between a specified start date and end date.</p>
+        /// <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListOperations</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OperationFilter>>,
@@ -2202,7 +2040,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServices`.
     ///
     /// <p>Lists summary information for all the services that are associated with one or more specified namespaces.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2247,10 +2085,10 @@ pub mod fluent_builders {
                 crate::input::ListServicesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2258,40 +2096,34 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListServicesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListServicesPaginator<C, M, R> {
+            crate::paginator::ListServicesPaginator::new(self.handle, self.inner)
+        }
         /// <p>For the first <code>ListServices</code> request, omit this value.</p>
-        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the
-        /// next group of results. Specify the value of <code>NextToken</code> from the previous response in the next
-        /// request.</p>
-        /// <note>
-        /// <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's
-        /// possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that
-        /// subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p>
+        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
+        /// <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first <code>ListServices</code> request, omit this value.</p>
-        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the
-        /// next group of results. Specify the value of <code>NextToken</code> from the previous response in the next
-        /// request.</p>
-        /// <note>
-        /// <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's
-        /// possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that
-        /// subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p>
+        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
+        /// <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of services that you want Cloud Map to return in the response to a <code>ListServices</code>
-        /// request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 services.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of services that you want Cloud Map to return in the response to a <code>ListServices</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 services.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of services that you want Cloud Map to return in the response to a <code>ListServices</code>
-        /// request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 services.</p>
+        /// <p>The maximum number of services that you want Cloud Map to return in the response to a <code>ListServices</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 services.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2301,15 +2133,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>A complex type that contains specifications for the namespaces that you want to list services for. </p>
-        /// <p>If you specify more than one filter, an operation must match all filters to be returned by
-        /// <code>ListServices</code>.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::ServiceFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListServices</code>.</p>
+        pub fn filters(mut self, input: crate::model::ServiceFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A complex type that contains specifications for the namespaces that you want to list services for. </p>
-        /// <p>If you specify more than one filter, an operation must match all filters to be returned by
-        /// <code>ListServices</code>.</p>
+        /// <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListServices</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ServiceFilter>>,
@@ -2321,7 +2151,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists tags for the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2366,10 +2196,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2378,8 +2208,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tags for.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tags for.</p>
@@ -2390,47 +2220,23 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterInstance`.
     ///
-    /// <p>Creates or updates one or more records and, optionally, creates a health check based on the settings in a
-    /// specified service. When you submit a <code>RegisterInstance</code> request, the following occurs:</p>
+    /// <p>Creates or updates one or more records and, optionally, creates a health check based on the settings in a specified service. When you submit a <code>RegisterInstance</code> request, the following occurs:</p>
     /// <ul>
-    /// <li>
-    /// <p>For each DNS record that you define in the service that's specified by <code>ServiceId</code>, a record is
-    /// created or updated in the hosted zone that's associated with the corresponding namespace.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the service includes <code>HealthCheckConfig</code>, a health check is created based on the settings in the
-    /// health check configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>The health check, if any, is associated with each of the new or updated records.</p>
-    /// </li>
-    /// </ul>
-    /// <important>
-    /// <p>One <code>RegisterInstance</code> request must complete before you can submit another request and specify the
-    /// same service ID and instance ID.</p>
+    /// <li> <p>For each DNS record that you define in the service that's specified by <code>ServiceId</code>, a record is created or updated in the hosted zone that's associated with the corresponding namespace.</p> </li>
+    /// <li> <p>If the service includes <code>HealthCheckConfig</code>, a health check is created based on the settings in the health check configuration.</p> </li>
+    /// <li> <p>The health check, if any, is associated with each of the new or updated records.</p> </li>
+    /// </ul> <important>
+    /// <p>One <code>RegisterInstance</code> request must complete before you can submit another request and specify the same service ID and instance ID.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.</p>
     /// <p>When Cloud Map receives a DNS query for the specified DNS name, it returns the applicable value:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>If the health check is healthy</b>: returns all the records</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>If the health check is unhealthy</b>: returns the applicable value for the last
-    /// healthy instance</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>If you didn't specify a health check configuration</b>: returns all the
-    /// records</p>
-    /// </li>
+    /// <li> <p> <b>If the health check is healthy</b>: returns all the records</p> </li>
+    /// <li> <p> <b>If the health check is unhealthy</b>: returns the applicable value for the last healthy instance</p> </li>
+    /// <li> <p> <b>If you didn't specify a health check configuration</b>: returns all the records</p> </li>
     /// </ul>
-    /// <p>For the current quota on the number of instances that you can register using the same namespace and using the
-    /// same service, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map
-    /// quotas</a> in the <i>Cloud Map Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For the current quota on the number of instances that you can register using the same namespace and using the same service, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2475,10 +2281,10 @@ pub mod fluent_builders {
                 crate::input::RegisterInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2487,8 +2293,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the service that you want to use for settings for the instance.</p>
-        pub fn service_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_id(inp);
+        pub fn service_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_id(input.into());
             self
         }
         /// <p>The ID of the service that you want to use for settings for the instance.</p>
@@ -2498,74 +2304,36 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that you want to associate with the instance. Note the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>If the service that's specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record,
-        /// the value of <code>InstanceId</code> is automatically included as part of the value for the <code>SRV</code>
-        /// record. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord > Type</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>You can use this value to update an existing instance.</p>
-        /// </li>
-        /// <li>
-        /// <p>To register a new instance, you must specify a value that's unique among instances that you register by using
-        /// the same service. </p>
-        /// </li>
-        /// <li>
-        /// <p>If you specify an existing <code>InstanceId</code> and <code>ServiceId</code>, Cloud Map updates the existing
-        /// DNS records, if any. If there's also an existing health check, Cloud Map deletes the old health check and creates
-        /// a new one. </p>
-        /// <note>
-        /// <p>The health check isn't deleted immediately, so it will still appear for a while if you submit a
-        /// <code>ListHealthChecks</code> request, for example.</p>
-        /// </note>
-        /// </li>
+        /// <li> <p>If the service that's specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record, the value of <code>InstanceId</code> is automatically included as part of the value for the <code>SRV</code> record. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord &gt; Type</a>.</p> </li>
+        /// <li> <p>You can use this value to update an existing instance.</p> </li>
+        /// <li> <p>To register a new instance, you must specify a value that's unique among instances that you register by using the same service. </p> </li>
+        /// <li> <p>If you specify an existing <code>InstanceId</code> and <code>ServiceId</code>, Cloud Map updates the existing DNS records, if any. If there's also an existing health check, Cloud Map deletes the old health check and creates a new one. </p> <note>
+        /// <p>The health check isn't deleted immediately, so it will still appear for a while if you submit a <code>ListHealthChecks</code> request, for example.</p>
+        /// </note> </li>
         /// </ul>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>An identifier that you want to associate with the instance. Note the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>If the service that's specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record,
-        /// the value of <code>InstanceId</code> is automatically included as part of the value for the <code>SRV</code>
-        /// record. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord > Type</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>You can use this value to update an existing instance.</p>
-        /// </li>
-        /// <li>
-        /// <p>To register a new instance, you must specify a value that's unique among instances that you register by using
-        /// the same service. </p>
-        /// </li>
-        /// <li>
-        /// <p>If you specify an existing <code>InstanceId</code> and <code>ServiceId</code>, Cloud Map updates the existing
-        /// DNS records, if any. If there's also an existing health check, Cloud Map deletes the old health check and creates
-        /// a new one. </p>
-        /// <note>
-        /// <p>The health check isn't deleted immediately, so it will still appear for a while if you submit a
-        /// <code>ListHealthChecks</code> request, for example.</p>
-        /// </note>
-        /// </li>
+        /// <li> <p>If the service that's specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record, the value of <code>InstanceId</code> is automatically included as part of the value for the <code>SRV</code> record. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord &gt; Type</a>.</p> </li>
+        /// <li> <p>You can use this value to update an existing instance.</p> </li>
+        /// <li> <p>To register a new instance, you must specify a value that's unique among instances that you register by using the same service. </p> </li>
+        /// <li> <p>If you specify an existing <code>InstanceId</code> and <code>ServiceId</code>, Cloud Map updates the existing DNS records, if any. If there's also an existing health check, Cloud Map deletes the old health check and creates a new one. </p> <note>
+        /// <p>The health check isn't deleted immediately, so it will still appear for a while if you submit a <code>ListHealthChecks</code> request, for example.</p>
+        /// </note> </li>
         /// </ul>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>A unique string that identifies the request and that allows failed <code>RegisterInstance</code> requests to be
-        /// retried without the risk of executing the operation twice. You must use a unique <code>CreatorRequestId</code> string
-        /// every time you submit a <code>RegisterInstance</code> request if you're registering additional instances for the same
-        /// namespace and service. <code>CreatorRequestId</code> can be any unique string (for example, a date/time
-        /// stamp).</p>
-        pub fn creator_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.creator_request_id(inp);
+        /// <p>A unique string that identifies the request and that allows failed <code>RegisterInstance</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CreatorRequestId</code> string every time you submit a <code>RegisterInstance</code> request if you're registering additional instances for the same namespace and service. <code>CreatorRequestId</code> can be any unique string (for example, a date/time stamp).</p>
+        pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.creator_request_id(input.into());
             self
         }
-        /// <p>A unique string that identifies the request and that allows failed <code>RegisterInstance</code> requests to be
-        /// retried without the risk of executing the operation twice. You must use a unique <code>CreatorRequestId</code> string
-        /// every time you submit a <code>RegisterInstance</code> request if you're registering additional instances for the same
-        /// namespace and service. <code>CreatorRequestId</code> can be any unique string (for example, a date/time
-        /// stamp).</p>
+        /// <p>A unique string that identifies the request and that allows failed <code>RegisterInstance</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CreatorRequestId</code> string every time you submit a <code>RegisterInstance</code> request if you're registering additional instances for the same namespace and service. <code>CreatorRequestId</code> can be any unique string (for example, a date/time stamp).</p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2577,100 +2345,73 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>A string map that contains the following information for the service that you specify in
-        /// <code>ServiceId</code>:</p>
+        /// <p>A string map that contains the following information for the service that you specify in <code>ServiceId</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>The attributes that apply to the records that are defined in the service. </p>
-        /// </li>
-        /// <li>
-        /// <p>For each attribute, the applicable value.</p>
-        /// </li>
+        /// <li> <p>The attributes that apply to the records that are defined in the service. </p> </li>
+        /// <li> <p>For each attribute, the applicable value.</p> </li>
         /// </ul>
         /// <p>Supported attribute keys include the following:</p>
         /// <dl>
-        /// <dt>AWS_ALIAS_DNS_NAME</dt>
+        /// <dt>
+        /// AWS_ALIAS_DNS_NAME
+        /// </dt>
         /// <dd>
-        /// <p>If you want Cloud Map to create an Amazon Route 53 alias record that routes traffic to an Elastic Load Balancing load balancer,
-        /// specify the DNS name that's associated with the load balancer. For information about how to get the DNS name, see
-        /// "DNSName" in the topic <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a> in the <i>Route 53 API Reference</i>.</p>
+        /// <p>If you want Cloud Map to create an Amazon Route 53 alias record that routes traffic to an Elastic Load Balancing load balancer, specify the DNS name that's associated with the load balancer. For information about how to get the DNS name, see "DNSName" in the topic <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a> in the <i>Route 53 API Reference</i>.</p>
         /// <p>Note the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an
-        /// <code>A</code> record, an <code>AAAA</code> record, or both.</p>
-        /// </li>
-        /// <li>
-        /// <p>In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be
-        /// <code>WEIGHTED</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings,
-        /// Cloud Map will create the Route 53 health check, but it doesn't associate the health check with the alias
-        /// record.</p>
-        /// </li>
-        /// <li>
-        /// <p>Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services
-        /// resources other than Elastic Load Balancing load balancers.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the
-        /// <code>AWS_INSTANCE</code> attributes.</p>
-        /// </li>
+        /// <li> <p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an <code>A</code> record, an <code>AAAA</code> record, or both.</p> </li>
+        /// <li> <p>In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be <code>WEIGHTED</code>.</p> </li>
+        /// <li> <p>If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, Cloud Map will create the Route 53 health check, but it doesn't associate the health check with the alias record.</p> </li>
+        /// <li> <p>Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than Elastic Load Balancing load balancers.</p> </li>
+        /// <li> <p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the <code>AWS_INSTANCE</code> attributes.</p> </li>
         /// </ul>
         /// </dd>
-        /// <dt>AWS_EC2_INSTANCE_ID</dt>
+        /// <dt>
+        /// AWS_EC2_INSTANCE_ID
+        /// </dt>
         /// <dd>
-        /// <p>
-        /// <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. If the
-        /// <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the only other attribute that can be specified is
-        /// <code>AWS_INIT_HEALTH_STATUS</code>. When the <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the
-        /// <code>AWS_INSTANCE_IPV4</code> attribute will be filled out with the primary private IPv4 address.</p>
+        /// <p> <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. If the <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the only other attribute that can be specified is <code>AWS_INIT_HEALTH_STATUS</code>. When the <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute will be filled out with the primary private IPv4 address.</p>
         /// </dd>
-        /// <dt>AWS_INIT_HEALTH_STATUS</dt>
+        /// <dt>
+        /// AWS_INIT_HEALTH_STATUS
+        /// </dt>
         /// <dd>
-        /// <p>If the service configuration includes <code>HealthCheckCustomConfig</code>, you can optionally use
-        /// <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom health check,
-        /// <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't specify a value for
-        /// <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is <code>HEALTHY</code>.</p>
+        /// <p>If the service configuration includes <code>HealthCheckCustomConfig</code>, you can optionally use <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is <code>HEALTHY</code>.</p>
         /// </dd>
-        /// <dt>AWS_INSTANCE_CNAME</dt>
+        /// <dt>
+        /// AWS_INSTANCE_CNAME
+        /// </dt>
         /// <dd>
-        /// <p>If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53 to
-        /// return in response to DNS queries (for example, <code>example.com</code>).</p>
-        /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an
-        /// <code>CNAME</code> record.</p>
+        /// <p>If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53 to return in response to DNS queries (for example, <code>example.com</code>).</p>
+        /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>CNAME</code> record.</p>
         /// </dd>
-        /// <dt>AWS_INSTANCE_IPV4</dt>
+        /// <dt>
+        /// AWS_INSTANCE_IPV4
+        /// </dt>
         /// <dd>
-        /// <p>If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to
-        /// return in response to DNS queries (for example, <code>192.0.2.44</code>).</p>
-        /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an
-        /// <code>A</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a value
-        /// for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
+        /// <p>If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to return in response to DNS queries (for example, <code>192.0.2.44</code>).</p>
+        /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>A</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
         /// </dd>
-        /// <dt>AWS_INSTANCE_IPV6</dt>
+        /// <dt>
+        /// AWS_INSTANCE_IPV6
+        /// </dt>
         /// <dd>
-        /// <p>If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
-        /// return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>
-        /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an
-        /// <code>AAAA</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a
-        /// value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
+        /// <p>If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>
+        /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>AAAA</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
         /// </dd>
-        /// <dt>AWS_INSTANCE_PORT</dt>
+        /// <dt>
+        /// AWS_INSTANCE_PORT
+        /// </dt>
         /// <dd>
-        /// <p>If the service includes an <code>SRV</code> record, the value that you want Route 53 to return for the
-        /// port.</p>
-        /// <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53 to send
-        /// requests to. </p>
-        /// <p>This value is required if you specified settings for an <code>SRV</code> record or a Route 53 health check when
-        /// you created the service.</p>
+        /// <p>If the service includes an <code>SRV</code> record, the value that you want Route 53 to return for the port.</p>
+        /// <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53 to send requests to. </p>
+        /// <p>This value is required if you specified settings for an <code>SRV</code> record or a Route 53 health check when you created the service.</p>
         /// </dd>
-        /// <dt>Custom attributes</dt>
+        /// <dt>
+        /// Custom attributes
+        /// </dt>
         /// <dd>
-        /// <p>You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name is
-        /// 255 characters, and the maximum length of the attribute value is 1,024 characters. The total size of all provided
-        /// attributes (sum of all keys and values) must not exceed 5,000 characters.</p>
+        /// <p>You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name is 255 characters, and the maximum length of the attribute value is 1,024 characters. The total size of all provided attributes (sum of all keys and values) must not exceed 5,000 characters.</p>
         /// </dd>
         /// </dl>
         pub fn attributes(
@@ -2678,103 +2419,76 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.attributes(k, v);
+            self.inner = self.inner.attributes(k.into(), v.into());
             self
         }
-        /// <p>A string map that contains the following information for the service that you specify in
-        /// <code>ServiceId</code>:</p>
+        /// <p>A string map that contains the following information for the service that you specify in <code>ServiceId</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>The attributes that apply to the records that are defined in the service. </p>
-        /// </li>
-        /// <li>
-        /// <p>For each attribute, the applicable value.</p>
-        /// </li>
+        /// <li> <p>The attributes that apply to the records that are defined in the service. </p> </li>
+        /// <li> <p>For each attribute, the applicable value.</p> </li>
         /// </ul>
         /// <p>Supported attribute keys include the following:</p>
         /// <dl>
-        /// <dt>AWS_ALIAS_DNS_NAME</dt>
+        /// <dt>
+        /// AWS_ALIAS_DNS_NAME
+        /// </dt>
         /// <dd>
-        /// <p>If you want Cloud Map to create an Amazon Route 53 alias record that routes traffic to an Elastic Load Balancing load balancer,
-        /// specify the DNS name that's associated with the load balancer. For information about how to get the DNS name, see
-        /// "DNSName" in the topic <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a> in the <i>Route 53 API Reference</i>.</p>
+        /// <p>If you want Cloud Map to create an Amazon Route 53 alias record that routes traffic to an Elastic Load Balancing load balancer, specify the DNS name that's associated with the load balancer. For information about how to get the DNS name, see "DNSName" in the topic <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a> in the <i>Route 53 API Reference</i>.</p>
         /// <p>Note the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an
-        /// <code>A</code> record, an <code>AAAA</code> record, or both.</p>
-        /// </li>
-        /// <li>
-        /// <p>In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be
-        /// <code>WEIGHTED</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings,
-        /// Cloud Map will create the Route 53 health check, but it doesn't associate the health check with the alias
-        /// record.</p>
-        /// </li>
-        /// <li>
-        /// <p>Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services
-        /// resources other than Elastic Load Balancing load balancers.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the
-        /// <code>AWS_INSTANCE</code> attributes.</p>
-        /// </li>
+        /// <li> <p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an <code>A</code> record, an <code>AAAA</code> record, or both.</p> </li>
+        /// <li> <p>In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be <code>WEIGHTED</code>.</p> </li>
+        /// <li> <p>If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, Cloud Map will create the Route 53 health check, but it doesn't associate the health check with the alias record.</p> </li>
+        /// <li> <p>Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than Elastic Load Balancing load balancers.</p> </li>
+        /// <li> <p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the <code>AWS_INSTANCE</code> attributes.</p> </li>
         /// </ul>
         /// </dd>
-        /// <dt>AWS_EC2_INSTANCE_ID</dt>
+        /// <dt>
+        /// AWS_EC2_INSTANCE_ID
+        /// </dt>
         /// <dd>
-        /// <p>
-        /// <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. If the
-        /// <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the only other attribute that can be specified is
-        /// <code>AWS_INIT_HEALTH_STATUS</code>. When the <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the
-        /// <code>AWS_INSTANCE_IPV4</code> attribute will be filled out with the primary private IPv4 address.</p>
+        /// <p> <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. If the <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the only other attribute that can be specified is <code>AWS_INIT_HEALTH_STATUS</code>. When the <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute will be filled out with the primary private IPv4 address.</p>
         /// </dd>
-        /// <dt>AWS_INIT_HEALTH_STATUS</dt>
+        /// <dt>
+        /// AWS_INIT_HEALTH_STATUS
+        /// </dt>
         /// <dd>
-        /// <p>If the service configuration includes <code>HealthCheckCustomConfig</code>, you can optionally use
-        /// <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom health check,
-        /// <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't specify a value for
-        /// <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is <code>HEALTHY</code>.</p>
+        /// <p>If the service configuration includes <code>HealthCheckCustomConfig</code>, you can optionally use <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is <code>HEALTHY</code>.</p>
         /// </dd>
-        /// <dt>AWS_INSTANCE_CNAME</dt>
+        /// <dt>
+        /// AWS_INSTANCE_CNAME
+        /// </dt>
         /// <dd>
-        /// <p>If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53 to
-        /// return in response to DNS queries (for example, <code>example.com</code>).</p>
-        /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an
-        /// <code>CNAME</code> record.</p>
+        /// <p>If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53 to return in response to DNS queries (for example, <code>example.com</code>).</p>
+        /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>CNAME</code> record.</p>
         /// </dd>
-        /// <dt>AWS_INSTANCE_IPV4</dt>
+        /// <dt>
+        /// AWS_INSTANCE_IPV4
+        /// </dt>
         /// <dd>
-        /// <p>If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to
-        /// return in response to DNS queries (for example, <code>192.0.2.44</code>).</p>
-        /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an
-        /// <code>A</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a value
-        /// for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
+        /// <p>If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to return in response to DNS queries (for example, <code>192.0.2.44</code>).</p>
+        /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>A</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
         /// </dd>
-        /// <dt>AWS_INSTANCE_IPV6</dt>
+        /// <dt>
+        /// AWS_INSTANCE_IPV6
+        /// </dt>
         /// <dd>
-        /// <p>If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
-        /// return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>
-        /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an
-        /// <code>AAAA</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a
-        /// value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
+        /// <p>If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>
+        /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>AAAA</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
         /// </dd>
-        /// <dt>AWS_INSTANCE_PORT</dt>
+        /// <dt>
+        /// AWS_INSTANCE_PORT
+        /// </dt>
         /// <dd>
-        /// <p>If the service includes an <code>SRV</code> record, the value that you want Route 53 to return for the
-        /// port.</p>
-        /// <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53 to send
-        /// requests to. </p>
-        /// <p>This value is required if you specified settings for an <code>SRV</code> record or a Route 53 health check when
-        /// you created the service.</p>
+        /// <p>If the service includes an <code>SRV</code> record, the value that you want Route 53 to return for the port.</p>
+        /// <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53 to send requests to. </p>
+        /// <p>This value is required if you specified settings for an <code>SRV</code> record or a Route 53 health check when you created the service.</p>
         /// </dd>
-        /// <dt>Custom attributes</dt>
+        /// <dt>
+        /// Custom attributes
+        /// </dt>
         /// <dd>
-        /// <p>You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name is
-        /// 255 characters, and the maximum length of the attribute value is 1,024 characters. The total size of all provided
-        /// attributes (sum of all keys and values) must not exceed 5,000 characters.</p>
+        /// <p>You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name is 255 characters, and the maximum length of the attribute value is 1,024 characters. The total size of all provided attributes (sum of all keys and values) must not exceed 5,000 characters.</p>
         /// </dd>
         /// </dl>
         pub fn set_attributes(
@@ -2790,7 +2504,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds one or more tags to the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2835,10 +2549,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2847,8 +2561,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tags for.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tags for.</p>
@@ -2860,14 +2574,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to add to the specified resource. Specifying the tag key is required. You can set the value of a tag to
-        /// an empty string, but you can't set the value of a tag to null.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>The tags to add to the specified resource. Specifying the tag key is required. You can set the value of a tag to an empty string, but you can't set the value of a tag to null.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The tags to add to the specified resource. Specifying the tag key is required. You can set the value of a tag to
-        /// an empty string, but you can't set the value of a tag to null.</p>
+        /// <p>The tags to add to the specified resource. Specifying the tag key is required. You can set the value of a tag to an empty string, but you can't set the value of a tag to null.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2879,7 +2591,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags from the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2924,10 +2636,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2936,8 +2648,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tags for.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tags for.</p>
@@ -2950,8 +2662,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys to remove from the specified resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys to remove from the specified resource.</p>
@@ -2965,9 +2677,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateHttpNamespace`.
     ///
-    /// <p>Updates an HTTP
-    /// namespace.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates an HTTP namespace.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateHttpNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3012,10 +2723,10 @@ pub mod fluent_builders {
                 crate::input::UpdateHttpNamespaceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3023,30 +2734,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the namespace that you want to
-        /// update.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        /// <p>The ID of the namespace that you want to update.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The ID of the namespace that you want to
-        /// update.</p>
+        /// <p>The ID of the namespace that you want to update.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>A unique string that identifies the
-        /// request and that allows failed <code>UpdateHttpNamespace</code> requests to be retried without the risk of running
-        /// the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a
-        /// date/timestamp).</p>
-        pub fn updater_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.updater_request_id(inp);
+        /// <p>A unique string that identifies the request and that allows failed <code>UpdateHttpNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
+        pub fn updater_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.updater_request_id(input.into());
             self
         }
-        /// <p>A unique string that identifies the
-        /// request and that allows failed <code>UpdateHttpNamespace</code> requests to be retried without the risk of running
-        /// the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a
-        /// date/timestamp).</p>
+        /// <p>A unique string that identifies the request and that allows failed <code>UpdateHttpNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
         pub fn set_updater_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3054,14 +2757,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_updater_request_id(input);
             self
         }
-        /// <p>Updated properties for the the HTTP
-        /// namespace.</p>
-        pub fn namespace(mut self, inp: crate::model::HttpNamespaceChange) -> Self {
-            self.inner = self.inner.namespace(inp);
+        /// <p>Updated properties for the the HTTP namespace.</p>
+        pub fn namespace(mut self, input: crate::model::HttpNamespaceChange) -> Self {
+            self.inner = self.inner.namespace(input);
             self
         }
-        /// <p>Updated properties for the the HTTP
-        /// namespace.</p>
+        /// <p>Updated properties for the the HTTP namespace.</p>
         pub fn set_namespace(
             mut self,
             input: std::option::Option<crate::model::HttpNamespaceChange>,
@@ -3073,11 +2774,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateInstanceCustomHealthStatus`.
     ///
     /// <p>Submits a request to change the health status of a custom health check to healthy or unhealthy.</p>
-    /// <p>You can use <code>UpdateInstanceCustomHealthStatus</code> to change the status only for custom health checks,
-    /// which you define using <code>HealthCheckCustomConfig</code> when you create a service. You can't use it to change the
-    /// status for Route 53 health checks, which you define using <code>HealthCheckConfig</code>.</p>
+    /// <p>You can use <code>UpdateInstanceCustomHealthStatus</code> to change the status only for custom health checks, which you define using <code>HealthCheckCustomConfig</code> when you create a service. You can't use it to change the status for Route 53 health checks, which you define using <code>HealthCheckConfig</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_HealthCheckCustomConfig.html">HealthCheckCustomConfig</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateInstanceCustomHealthStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3122,10 +2821,10 @@ pub mod fluent_builders {
                 crate::input::UpdateInstanceCustomHealthStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3133,21 +2832,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the service that includes the configuration for the custom health check that you want to change the
-        /// status for.</p>
-        pub fn service_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_id(inp);
+        /// <p>The ID of the service that includes the configuration for the custom health check that you want to change the status for.</p>
+        pub fn service_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_id(input.into());
             self
         }
-        /// <p>The ID of the service that includes the configuration for the custom health check that you want to change the
-        /// status for.</p>
+        /// <p>The ID of the service that includes the configuration for the custom health check that you want to change the status for.</p>
         pub fn set_service_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_service_id(input);
             self
         }
         /// <p>The ID of the instance that you want to change the health status for.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The ID of the instance that you want to change the health status for.</p>
@@ -3156,8 +2853,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new status of the instance, <code>HEALTHY</code> or <code>UNHEALTHY</code>.</p>
-        pub fn status(mut self, inp: crate::model::CustomHealthStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::CustomHealthStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The new status of the instance, <code>HEALTHY</code> or <code>UNHEALTHY</code>.</p>
@@ -3171,9 +2868,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdatePrivateDnsNamespace`.
     ///
-    /// <p>Updates a private DNS
-    /// namespace.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates a private DNS namespace.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePrivateDnsNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3218,10 +2914,10 @@ pub mod fluent_builders {
                 crate::input::UpdatePrivateDnsNamespaceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3229,30 +2925,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the namespace that you want to
-        /// update.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        /// <p>The ID of the namespace that you want to update.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The ID of the namespace that you want to
-        /// update.</p>
+        /// <p>The ID of the namespace that you want to update.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>A unique string that identifies the
-        /// request and that allows failed <code>UpdatePrivateDnsNamespace</code> requests to be retried without the risk of
-        /// running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a
-        /// date/timestamp).</p>
-        pub fn updater_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.updater_request_id(inp);
+        /// <p>A unique string that identifies the request and that allows failed <code>UpdatePrivateDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
+        pub fn updater_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.updater_request_id(input.into());
             self
         }
-        /// <p>A unique string that identifies the
-        /// request and that allows failed <code>UpdatePrivateDnsNamespace</code> requests to be retried without the risk of
-        /// running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a
-        /// date/timestamp).</p>
+        /// <p>A unique string that identifies the request and that allows failed <code>UpdatePrivateDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
         pub fn set_updater_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3260,14 +2948,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_updater_request_id(input);
             self
         }
-        /// <p>Updated properties for the private DNS
-        /// namespace.</p>
-        pub fn namespace(mut self, inp: crate::model::PrivateDnsNamespaceChange) -> Self {
-            self.inner = self.inner.namespace(inp);
+        /// <p>Updated properties for the private DNS namespace.</p>
+        pub fn namespace(mut self, input: crate::model::PrivateDnsNamespaceChange) -> Self {
+            self.inner = self.inner.namespace(input);
             self
         }
-        /// <p>Updated properties for the private DNS
-        /// namespace.</p>
+        /// <p>Updated properties for the private DNS namespace.</p>
         pub fn set_namespace(
             mut self,
             input: std::option::Option<crate::model::PrivateDnsNamespaceChange>,
@@ -3278,9 +2964,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdatePublicDnsNamespace`.
     ///
-    /// <p>Updates a public DNS
-    /// namespace.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates a public DNS namespace.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePublicDnsNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3325,10 +3010,10 @@ pub mod fluent_builders {
                 crate::input::UpdatePublicDnsNamespaceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3336,30 +3021,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the namespace being
-        /// updated.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        /// <p>The ID of the namespace being updated.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The ID of the namespace being
-        /// updated.</p>
+        /// <p>The ID of the namespace being updated.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>A unique string that identifies the
-        /// request and that allows failed <code>UpdatePublicDnsNamespace</code> requests to be retried without the risk of
-        /// running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a
-        /// date/timestamp).</p>
-        pub fn updater_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.updater_request_id(inp);
+        /// <p>A unique string that identifies the request and that allows failed <code>UpdatePublicDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
+        pub fn updater_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.updater_request_id(input.into());
             self
         }
-        /// <p>A unique string that identifies the
-        /// request and that allows failed <code>UpdatePublicDnsNamespace</code> requests to be retried without the risk of
-        /// running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a
-        /// date/timestamp).</p>
+        /// <p>A unique string that identifies the request and that allows failed <code>UpdatePublicDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
         pub fn set_updater_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3367,14 +3044,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_updater_request_id(input);
             self
         }
-        /// <p>Updated properties for the public DNS
-        /// namespace.</p>
-        pub fn namespace(mut self, inp: crate::model::PublicDnsNamespaceChange) -> Self {
-            self.inner = self.inner.namespace(inp);
+        /// <p>Updated properties for the public DNS namespace.</p>
+        pub fn namespace(mut self, input: crate::model::PublicDnsNamespaceChange) -> Self {
+            self.inner = self.inner.namespace(input);
             self
         }
-        /// <p>Updated properties for the public DNS
-        /// namespace.</p>
+        /// <p>Updated properties for the public DNS namespace.</p>
         pub fn set_namespace(
             mut self,
             input: std::option::Option<crate::model::PublicDnsNamespaceChange>,
@@ -3387,30 +3062,18 @@ pub mod fluent_builders {
     ///
     /// <p>Submits a request to perform the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p>Update the TTL setting for existing <code>DnsRecords</code> configurations</p>
-    /// </li>
-    /// <li>
-    /// <p>Add, update, or delete <code>HealthCheckConfig</code> for a specified service</p>
-    /// <note>
+    /// <li> <p>Update the TTL setting for existing <code>DnsRecords</code> configurations</p> </li>
+    /// <li> <p>Add, update, or delete <code>HealthCheckConfig</code> for a specified service</p> <note>
     /// <p>You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration.</p>
-    /// </note>
-    /// </li>
+    /// </note> </li>
     /// </ul>
     /// <p>For public and private DNS namespaces, note the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you omit any existing <code>DnsRecords</code> or <code>HealthCheckConfig</code> configurations from an
-    /// <code>UpdateService</code> request, the configurations are deleted from the service.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you omit an existing <code>HealthCheckCustomConfig</code> configuration from an <code>UpdateService</code>
-    /// request, the configuration isn't deleted from the service.</p>
-    /// </li>
+    /// <li> <p>If you omit any existing <code>DnsRecords</code> or <code>HealthCheckConfig</code> configurations from an <code>UpdateService</code> request, the configurations are deleted from the service.</p> </li>
+    /// <li> <p>If you omit an existing <code>HealthCheckCustomConfig</code> configuration from an <code>UpdateService</code> request, the configuration isn't deleted from the service.</p> </li>
     /// </ul>
-    /// <p>When you update settings for a service, Cloud Map also updates the corresponding settings in all the records
-    /// and health checks that were created by using the specified service.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>When you update settings for a service, Cloud Map also updates the corresponding settings in all the records and health checks that were created by using the specified service.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3455,10 +3118,10 @@ pub mod fluent_builders {
                 crate::input::UpdateServiceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3467,8 +3130,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the service that you want to update.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the service that you want to update.</p>
@@ -3477,8 +3140,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A complex type that contains the new settings for the service.</p>
-        pub fn service(mut self, inp: crate::model::ServiceChange) -> Self {
-            self.inner = self.inner.service(inp);
+        pub fn service(mut self, input: crate::model::ServiceChange) -> Self {
+            self.inner = self.inner.service(input);
             self
         }
         /// <p>A complex type that contains the new settings for the service.</p>
@@ -3491,6 +3154,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

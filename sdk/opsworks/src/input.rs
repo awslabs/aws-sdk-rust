@@ -56,7 +56,7 @@ pub mod assign_instance_input {
 #[doc(hidden)]
 pub type AssignInstanceInputOperationOutputAlias = crate::operation::AssignInstance;
 #[doc(hidden)]
-pub type AssignInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssignInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssignInstanceInput {
     /// Consumes the builder and constructs an Operation<[`AssignInstance`](crate::operation::AssignInstance)>
     #[allow(clippy::let_and_return)]
@@ -67,7 +67,7 @@ impl AssignInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssignInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -152,7 +152,7 @@ impl AssignInstanceInput {
             "AssignInstance",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -222,7 +222,7 @@ pub mod assign_volume_input {
 #[doc(hidden)]
 pub type AssignVolumeInputOperationOutputAlias = crate::operation::AssignVolume;
 #[doc(hidden)]
-pub type AssignVolumeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssignVolumeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssignVolumeInput {
     /// Consumes the builder and constructs an Operation<[`AssignVolume`](crate::operation::AssignVolume)>
     #[allow(clippy::let_and_return)]
@@ -233,7 +233,7 @@ impl AssignVolumeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssignVolume,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -317,7 +317,7 @@ impl AssignVolumeInput {
             "AssignVolume",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -387,7 +387,7 @@ pub mod associate_elastic_ip_input {
 #[doc(hidden)]
 pub type AssociateElasticIpInputOperationOutputAlias = crate::operation::AssociateElasticIp;
 #[doc(hidden)]
-pub type AssociateElasticIpInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateElasticIpInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateElasticIpInput {
     /// Consumes the builder and constructs an Operation<[`AssociateElasticIp`](crate::operation::AssociateElasticIp)>
     #[allow(clippy::let_and_return)]
@@ -398,7 +398,7 @@ impl AssociateElasticIpInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateElasticIp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -483,7 +483,7 @@ impl AssociateElasticIpInput {
             "AssociateElasticIp",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -557,7 +557,7 @@ pub mod attach_elastic_load_balancer_input {
 pub type AttachElasticLoadBalancerInputOperationOutputAlias =
     crate::operation::AttachElasticLoadBalancer;
 #[doc(hidden)]
-pub type AttachElasticLoadBalancerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AttachElasticLoadBalancerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AttachElasticLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`AttachElasticLoadBalancer`](crate::operation::AttachElasticLoadBalancer)>
     #[allow(clippy::let_and_return)]
@@ -568,7 +568,7 @@ impl AttachElasticLoadBalancerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AttachElasticLoadBalancer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -655,7 +655,7 @@ impl AttachElasticLoadBalancerInput {
             "AttachElasticLoadBalancer",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -734,76 +734,44 @@ pub mod clone_stack_input {
             self.name = input;
             self
         }
-        /// <p>The cloned stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+        /// <p>The cloned stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The cloned stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+        /// <p>The cloned stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
         }
-        /// <p>The ID of the VPC that the cloned stack is to be launched into. It must be in the specified region. All
-        /// instances are launched into this VPC, and you cannot change the ID later.</p>
+        /// <p>The ID of the VPC that the cloned stack is to be launched into. It must be in the specified region. All instances are launched into this VPC, and you cannot change the ID later.</p>
         /// <ul>
-        /// <li>
-        /// <p>If your account supports EC2 Classic, the default value is no VPC.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your account does not support EC2 Classic, the default value is the default VPC for the specified region.</p>
-        /// </li>
+        /// <li> <p>If your account supports EC2 Classic, the default value is no VPC.</p> </li>
+        /// <li> <p>If your account does not support EC2 Classic, the default value is the default VPC for the specified region.</p> </li>
         /// </ul>
-        /// <p>If the VPC ID corresponds to a default VPC and you have specified either the
-        /// <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only,
-        /// AWS OpsWorks Stacks infers the value of the other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets
-        /// these parameters to the first valid Availability Zone for the specified region and the
-        /// corresponding default VPC subnet ID, respectively. </p>
+        /// <p>If the VPC ID corresponds to a default VPC and you have specified either the <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only, AWS OpsWorks Stacks infers the value of the other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets these parameters to the first valid Availability Zone for the specified region and the corresponding default VPC subnet ID, respectively. </p>
         /// <p>If you specify a nondefault VPC ID, note the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>It must belong to a VPC in your account that is in the specified region.</p>
-        /// </li>
-        /// <li>
-        /// <p>You must specify a value for <code>DefaultSubnetId</code>.</p>
-        /// </li>
+        /// <li> <p>It must belong to a VPC in your account that is in the specified region.</p> </li>
+        /// <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>
         /// </ul>
-        /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
-        /// VPC</a>. For more information about default VPC and EC2 Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-        /// Platforms</a>. </p>
+        /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>. For more information about default VPC and EC2 Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>. </p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.vpc_id = Some(input.into());
             self
         }
-        /// <p>The ID of the VPC that the cloned stack is to be launched into. It must be in the specified region. All
-        /// instances are launched into this VPC, and you cannot change the ID later.</p>
+        /// <p>The ID of the VPC that the cloned stack is to be launched into. It must be in the specified region. All instances are launched into this VPC, and you cannot change the ID later.</p>
         /// <ul>
-        /// <li>
-        /// <p>If your account supports EC2 Classic, the default value is no VPC.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your account does not support EC2 Classic, the default value is the default VPC for the specified region.</p>
-        /// </li>
+        /// <li> <p>If your account supports EC2 Classic, the default value is no VPC.</p> </li>
+        /// <li> <p>If your account does not support EC2 Classic, the default value is the default VPC for the specified region.</p> </li>
         /// </ul>
-        /// <p>If the VPC ID corresponds to a default VPC and you have specified either the
-        /// <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only,
-        /// AWS OpsWorks Stacks infers the value of the other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets
-        /// these parameters to the first valid Availability Zone for the specified region and the
-        /// corresponding default VPC subnet ID, respectively. </p>
+        /// <p>If the VPC ID corresponds to a default VPC and you have specified either the <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only, AWS OpsWorks Stacks infers the value of the other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets these parameters to the first valid Availability Zone for the specified region and the corresponding default VPC subnet ID, respectively. </p>
         /// <p>If you specify a nondefault VPC ID, note the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>It must belong to a VPC in your account that is in the specified region.</p>
-        /// </li>
-        /// <li>
-        /// <p>You must specify a value for <code>DefaultSubnetId</code>.</p>
-        /// </li>
+        /// <li> <p>It must belong to a VPC in your account that is in the specified region.</p> </li>
+        /// <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>
         /// </ul>
-        /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
-        /// VPC</a>. For more information about default VPC and EC2 Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-        /// Platforms</a>. </p>
+        /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>. For more information about default VPC and EC2 Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>. </p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
@@ -815,11 +783,11 @@ pub mod clone_stack_input {
         /// <p>A list of stack attributes and values as key/value pairs to be added to the cloned stack.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::StackAttributesKeys>,
+            k: crate::model::StackAttributesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.attributes = Some(hash_map);
             self
         }
@@ -833,26 +801,14 @@ pub mod clone_stack_input {
             self.attributes = input;
             self
         }
-        /// <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS
-        /// resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an
-        /// existing IAM role. If you create a stack by using the AWS OpsWorks Stacks console, it creates the role for
-        /// you. You can obtain an existing stack's IAM ARN programmatically by calling
-        /// <a>DescribePermissions</a>. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
-        /// <note>
+        /// <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. If you create a stack by using the AWS OpsWorks Stacks console, it creates the role for you. You can obtain an existing stack's IAM ARN programmatically by calling <code>DescribePermissions</code>. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p> <note>
         /// <p>You must set this parameter to a valid service role ARN or the action will fail; there is no default value. You can specify the source stack's service role ARN, if you prefer, but you must do so explicitly.</p>
         /// </note>
         pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role_arn = Some(input.into());
             self
         }
-        /// <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS
-        /// resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an
-        /// existing IAM role. If you create a stack by using the AWS OpsWorks Stacks console, it creates the role for
-        /// you. You can obtain an existing stack's IAM ARN programmatically by calling
-        /// <a>DescribePermissions</a>. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
-        /// <note>
+        /// <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. If you create a stack by using the AWS OpsWorks Stacks console, it creates the role for you. You can obtain an existing stack's IAM ARN programmatically by calling <code>DescribePermissions</code>. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p> <note>
         /// <p>You must set this parameter to a valid service role ARN or the action will fail; there is no default value. You can specify the source stack's service role ARN, if you prefer, but you must do so explicitly.</p>
         /// </note>
         pub fn set_service_role_arn(
@@ -862,9 +818,7 @@ pub mod clone_stack_input {
             self.service_role_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances.
-        /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn default_instance_profile_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -872,9 +826,7 @@ pub mod clone_stack_input {
             self.default_instance_profile_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances.
-        /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn set_default_instance_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -884,38 +836,14 @@ pub mod clone_stack_input {
         }
         /// <p>The stack's operating system, which must be set to one of the following.</p>
         /// <ul>
-        /// <li>
-        /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux
-        /// 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CentOS Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Red Hat Enterprise Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when
-        /// you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-        /// Custom AMIs</a>.</p>
-        /// </li>
+        /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+        /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+        /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+        /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+        /// <li> <p> <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+        /// <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> </li>
         /// </ul>
-        /// <p>The default option is the parent stack's operating system.
-        /// For more information about supported operating systems,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-        /// <note>
+        /// <p>The default option is the parent stack's operating system. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p> <note>
         /// <p>You can specify a different Linux operating system for the cloned stack, but you cannot change from Linux to Windows or Windows to Linux.</p>
         /// </note>
         pub fn default_os(mut self, input: impl Into<std::string::String>) -> Self {
@@ -924,174 +852,54 @@ pub mod clone_stack_input {
         }
         /// <p>The stack's operating system, which must be set to one of the following.</p>
         /// <ul>
-        /// <li>
-        /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux
-        /// 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CentOS Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Red Hat Enterprise Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when
-        /// you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-        /// Custom AMIs</a>.</p>
-        /// </li>
+        /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+        /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+        /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+        /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+        /// <li> <p> <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+        /// <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> </li>
         /// </ul>
-        /// <p>The default option is the parent stack's operating system.
-        /// For more information about supported operating systems,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-        /// <note>
+        /// <p>The default option is the parent stack's operating system. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p> <note>
         /// <p>You can specify a different Linux operating system for the cloned stack, but you cannot change from Linux to Windows or Windows to Linux.</p>
         /// </note>
         pub fn set_default_os(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.default_os = input;
             self
         }
-        /// <p>The stack's host name theme, with spaces are replaced by underscores. The theme is used to
-        /// generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set
-        /// to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's
-        /// short name. The other themes are:</p>
+        /// <p>The stack's host name theme, with spaces are replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Baked_Goods</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Clouds</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Europe_Cities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fruits</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Greek_Deities_and_Titans</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Legendary_creatures_from_Japan</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Planets_and_Moons</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Roman_Deities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Scottish_Islands</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>US_Cities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Wild_Cats</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Baked_Goods</code> </p> </li>
+        /// <li> <p> <code>Clouds</code> </p> </li>
+        /// <li> <p> <code>Europe_Cities</code> </p> </li>
+        /// <li> <p> <code>Fruits</code> </p> </li>
+        /// <li> <p> <code>Greek_Deities_and_Titans</code> </p> </li>
+        /// <li> <p> <code>Legendary_creatures_from_Japan</code> </p> </li>
+        /// <li> <p> <code>Planets_and_Moons</code> </p> </li>
+        /// <li> <p> <code>Roman_Deities</code> </p> </li>
+        /// <li> <p> <code>Scottish_Islands</code> </p> </li>
+        /// <li> <p> <code>US_Cities</code> </p> </li>
+        /// <li> <p> <code>Wild_Cats</code> </p> </li>
         /// </ul>
-        /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a
-        /// host name based on the current theme.</p>
+        /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
         pub fn hostname_theme(mut self, input: impl Into<std::string::String>) -> Self {
             self.hostname_theme = Some(input.into());
             self
         }
-        /// <p>The stack's host name theme, with spaces are replaced by underscores. The theme is used to
-        /// generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set
-        /// to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's
-        /// short name. The other themes are:</p>
+        /// <p>The stack's host name theme, with spaces are replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Baked_Goods</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Clouds</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Europe_Cities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fruits</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Greek_Deities_and_Titans</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Legendary_creatures_from_Japan</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Planets_and_Moons</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Roman_Deities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Scottish_Islands</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>US_Cities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Wild_Cats</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Baked_Goods</code> </p> </li>
+        /// <li> <p> <code>Clouds</code> </p> </li>
+        /// <li> <p> <code>Europe_Cities</code> </p> </li>
+        /// <li> <p> <code>Fruits</code> </p> </li>
+        /// <li> <p> <code>Greek_Deities_and_Titans</code> </p> </li>
+        /// <li> <p> <code>Legendary_creatures_from_Japan</code> </p> </li>
+        /// <li> <p> <code>Planets_and_Moons</code> </p> </li>
+        /// <li> <p> <code>Roman_Deities</code> </p> </li>
+        /// <li> <p> <code>Scottish_Islands</code> </p> </li>
+        /// <li> <p> <code>US_Cities</code> </p> </li>
+        /// <li> <p> <code>Wild_Cats</code> </p> </li>
         /// </ul>
-        /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a
-        /// host name based on the current theme.</p>
+        /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
         pub fn set_hostname_theme(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1099,20 +907,12 @@ pub mod clone_stack_input {
             self.hostname_theme = input;
             self
         }
-        /// <p>The cloned stack's default Availability Zone, which must be in the specified region. For more
-        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-        /// Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must
-        /// be in the same zone. For more information, see the <code>VpcId</code> parameter description.
-        /// </p>
+        /// <p>The cloned stack's default Availability Zone, which must be in the specified region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see the <code>VpcId</code> parameter description. </p>
         pub fn default_availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_availability_zone = Some(input.into());
             self
         }
-        /// <p>The cloned stack's default Availability Zone, which must be in the specified region. For more
-        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-        /// Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must
-        /// be in the same zone. For more information, see the <code>VpcId</code> parameter description.
-        /// </p>
+        /// <p>The cloned stack's default Availability Zone, which must be in the specified region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see the <code>VpcId</code> parameter description. </p>
         pub fn set_default_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1120,22 +920,12 @@ pub mod clone_stack_input {
             self.default_availability_zone = input;
             self
         }
-        /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the
-        /// <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify
-        /// otherwise when you create the instance. If you also specify a value for
-        /// <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on
-        /// default values and when this parameter is required, see the <code>VpcId</code> parameter
-        /// description. </p>
+        /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description. </p>
         pub fn default_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_subnet_id = Some(input.into());
             self
         }
-        /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the
-        /// <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify
-        /// otherwise when you create the instance. If you also specify a value for
-        /// <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on
-        /// default values and when this parameter is required, see the <code>VpcId</code> parameter
-        /// description. </p>
+        /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description. </p>
         pub fn set_default_subnet_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1144,23 +934,15 @@ pub mod clone_stack_input {
             self
         }
         /// <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format:</p>
-        /// <p>
-        /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-        /// </p>
-        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-        /// Modify the Stack Configuration Attributes</a>
-        /// </p>
+        /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a> </p>
         pub fn custom_json(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_json = Some(input.into());
             self
         }
         /// <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format:</p>
-        /// <p>
-        /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-        /// </p>
-        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-        /// Modify the Stack Configuration Attributes</a>
-        /// </p>
+        /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a> </p>
         pub fn set_custom_json(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.custom_json = input;
             self
@@ -1181,14 +963,12 @@ pub mod clone_stack_input {
             self.configuration_manager = input;
             self
         }
-        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
-        /// Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
         pub fn chef_configuration(mut self, input: crate::model::ChefConfiguration) -> Self {
             self.chef_configuration = Some(input);
             self
         }
-        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
-        /// Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
         pub fn set_chef_configuration(
             mut self,
             input: std::option::Option<crate::model::ChefConfiguration>,
@@ -1207,39 +987,23 @@ pub mod clone_stack_input {
             self
         }
         /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
-        /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are
-        /// associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead
-        /// provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the
-        /// following settings: </p>
+        /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the following settings: </p>
         /// <ul>
-        /// <li>
-        /// <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it but you cannot delete the built-in security group.</p>
-        /// </li>
-        /// <li>
-        /// <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2) security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p>
-        /// </li>
+        /// <li> <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it but you cannot delete the built-in security group.</p> </li>
+        /// <li> <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2) security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
-        /// Stack</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
         pub fn use_opsworks_security_groups(mut self, input: bool) -> Self {
             self.use_opsworks_security_groups = Some(input);
             self
         }
         /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
-        /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are
-        /// associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead
-        /// provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the
-        /// following settings: </p>
+        /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the following settings: </p>
         /// <ul>
-        /// <li>
-        /// <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it but you cannot delete the built-in security group.</p>
-        /// </li>
-        /// <li>
-        /// <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2) security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p>
-        /// </li>
+        /// <li> <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it but you cannot delete the built-in security group.</p> </li>
+        /// <li> <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2) security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
-        /// Stack</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
         pub fn set_use_opsworks_security_groups(
             mut self,
             input: std::option::Option<bool>,
@@ -1247,14 +1011,12 @@ pub mod clone_stack_input {
             self.use_opsworks_security_groups = input;
             self
         }
-        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
         pub fn custom_cookbooks_source(mut self, input: crate::model::Source) -> Self {
             self.custom_cookbooks_source = Some(input);
             self
         }
-        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
         pub fn set_custom_cookbooks_source(
             mut self,
             input: std::option::Option<crate::model::Source>,
@@ -1262,24 +1024,12 @@ pub mod clone_stack_input {
             self.custom_cookbooks_source = input;
             self
         }
-        /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS
-        /// OpsWorks installs the public key on the instance and you can use the private key with an SSH
-        /// client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
-        /// Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
-        /// Access</a>. You can override this setting by specifying a different key pair, or no key
-        /// pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
-        /// create an instance</a>. </p>
+        /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS OpsWorks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>. </p>
         pub fn default_ssh_key_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_ssh_key_name = Some(input.into());
             self
         }
-        /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS
-        /// OpsWorks installs the public key on the instance and you can use the private key with an SSH
-        /// client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
-        /// Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
-        /// Access</a>. You can override this setting by specifying a different key pair, or no key
-        /// pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
-        /// create an instance</a>. </p>
+        /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS OpsWorks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>. </p>
         pub fn set_default_ssh_key_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1316,14 +1066,12 @@ pub mod clone_stack_input {
             self.clone_app_ids = input;
             self
         }
-        /// <p>The default root device type. This value is used by default for all instances in the cloned
-        /// stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+        /// <p>The default root device type. This value is used by default for all instances in the cloned stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
         pub fn default_root_device_type(mut self, input: crate::model::RootDeviceType) -> Self {
             self.default_root_device_type = Some(input);
             self
         }
-        /// <p>The default root device type. This value is used by default for all instances in the cloned
-        /// stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+        /// <p>The default root device type. This value is used by default for all instances in the cloned stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
         pub fn set_default_root_device_type(
             mut self,
             input: std::option::Option<crate::model::RootDeviceType>,
@@ -1333,21 +1081,10 @@ pub mod clone_stack_input {
         }
         /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks
-        /// automatically installs new agent versions on the stack's instances as soon as
-        /// they are available.</p>
-        /// </li>
-        /// <li>
-        /// <p>Fixed version - Set this parameter to your preferred agent version. To update
-        /// the agent version, you must edit the stack configuration and specify a new version.
-        /// AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p>
-        /// </li>
+        /// <li> <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent versions on the stack's instances as soon as they are available.</p> </li>
+        /// <li> <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p> </li>
         /// </ul>
-        /// <p>The default setting is <code>LATEST</code>. To specify an agent version,
-        /// you must use the complete version number, not the abbreviated number shown on the console.
-        /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.</p>
-        /// <note>
+        /// <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>
         /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
         /// </note>
         pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1356,21 +1093,10 @@ pub mod clone_stack_input {
         }
         /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks
-        /// automatically installs new agent versions on the stack's instances as soon as
-        /// they are available.</p>
-        /// </li>
-        /// <li>
-        /// <p>Fixed version - Set this parameter to your preferred agent version. To update
-        /// the agent version, you must edit the stack configuration and specify a new version.
-        /// AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p>
-        /// </li>
+        /// <li> <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent versions on the stack's instances as soon as they are available.</p> </li>
+        /// <li> <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p> </li>
         /// </ul>
-        /// <p>The default setting is <code>LATEST</code>. To specify an agent version,
-        /// you must use the complete version number, not the abbreviated number shown on the console.
-        /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.</p>
-        /// <note>
+        /// <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>
         /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
         /// </note>
         pub fn set_agent_version(
@@ -1417,7 +1143,7 @@ pub mod clone_stack_input {
 #[doc(hidden)]
 pub type CloneStackInputOperationOutputAlias = crate::operation::CloneStack;
 #[doc(hidden)]
-pub type CloneStackInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CloneStackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CloneStackInput {
     /// Consumes the builder and constructs an Operation<[`CloneStack`](crate::operation::CloneStack)>
     #[allow(clippy::let_and_return)]
@@ -1428,7 +1154,7 @@ impl CloneStackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CloneStack,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1512,7 +1238,7 @@ impl CloneStackInput {
             "CloneStack",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1603,9 +1329,9 @@ pub mod create_app_input {
         /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
         ///
         /// <p>The app's data source.</p>
-        pub fn data_sources(mut self, input: impl Into<crate::model::DataSource>) -> Self {
+        pub fn data_sources(mut self, input: crate::model::DataSource) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_sources = Some(v);
             self
         }
@@ -1617,18 +1343,12 @@ pub mod create_app_input {
             self.data_sources = input;
             self
         }
-        /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP
-        /// applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances
-        /// that are members of the corresponding layer. If your app isn't one of the standard types, or
-        /// you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
+        /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
         pub fn r#type(mut self, input: crate::model::AppType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP
-        /// applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances
-        /// that are members of the corresponding layer. If your app isn't one of the standard types, or
-        /// you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
+        /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::AppType>) -> Self {
             self.r#type = input;
             self
@@ -1647,18 +1367,14 @@ pub mod create_app_input {
         ///
         /// To override the contents of this collection use [`set_domains`](Self::set_domains).
         ///
-        /// <p>The app virtual host settings, with multiple domains separated by commas. For example:
-        /// <code>'www.example.com, example.com'</code>
-        /// </p>
+        /// <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
         pub fn domains(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.domains.unwrap_or_default();
             v.push(input.into());
             self.domains = Some(v);
             self
         }
-        /// <p>The app virtual host settings, with multiple domains separated by commas. For example:
-        /// <code>'www.example.com, example.com'</code>
-        /// </p>
+        /// <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
         pub fn set_domains(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1696,11 +1412,11 @@ pub mod create_app_input {
         /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::AppAttributesKeys>,
+            k: crate::model::AppAttributesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.attributes = Some(hash_map);
             self
         }
@@ -1718,24 +1434,18 @@ pub mod create_app_input {
         ///
         /// To override the contents of this collection use [`set_environment`](Self::set_environment).
         ///
-        /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be
-        /// associated with the app. After you deploy the app, these variables are defined on the
-        /// associated app server instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
-        /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p>
-        /// <note>
+        /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
+        /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p> <note>
         /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
         /// </note>
-        pub fn environment(mut self, input: impl Into<crate::model::EnvironmentVariable>) -> Self {
+        pub fn environment(mut self, input: crate::model::EnvironmentVariable) -> Self {
             let mut v = self.environment.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environment = Some(v);
             self
         }
-        /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be
-        /// associated with the app. After you deploy the app, these variables are defined on the
-        /// associated app server instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
-        /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p>
-        /// <note>
+        /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
+        /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p> <note>
         /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
         /// </note>
         pub fn set_environment(
@@ -1770,7 +1480,7 @@ pub mod create_app_input {
 #[doc(hidden)]
 pub type CreateAppInputOperationOutputAlias = crate::operation::CreateApp;
 #[doc(hidden)]
-pub type CreateAppInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAppInput {
     /// Consumes the builder and constructs an Operation<[`CreateApp`](crate::operation::CreateApp)>
     #[allow(clippy::let_and_return)]
@@ -1781,7 +1491,7 @@ impl CreateAppInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateApp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1863,7 +1573,7 @@ impl CreateAppInput {
                     "CreateApp",
                     "opsworks",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1959,14 +1669,12 @@ pub mod create_deployment_input {
             self.layer_ids = input;
             self
         }
-        /// <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any
-        /// associated arguments.</p>
+        /// <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any associated arguments.</p>
         pub fn command(mut self, input: crate::model::DeploymentCommand) -> Self {
             self.command = Some(input);
             self
         }
-        /// <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any
-        /// associated arguments.</p>
+        /// <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any associated arguments.</p>
         pub fn set_command(
             mut self,
             input: std::option::Option<crate::model::DeploymentCommand>,
@@ -1985,23 +1693,15 @@ pub mod create_deployment_input {
             self
         }
         /// <p>A string that contains user-defined, custom JSON. You can use this parameter to override some corresponding default stack configuration JSON values. The string should be in the following format:</p>
-        /// <p>
-        /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-        /// </p>
-        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-        /// Modify the Stack Configuration Attributes</a> and
-        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">Overriding Attributes With Custom JSON</a>.</p>
+        /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">Overriding Attributes With Custom JSON</a>.</p>
         pub fn custom_json(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_json = Some(input.into());
             self
         }
         /// <p>A string that contains user-defined, custom JSON. You can use this parameter to override some corresponding default stack configuration JSON values. The string should be in the following format:</p>
-        /// <p>
-        /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-        /// </p>
-        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-        /// Modify the Stack Configuration Attributes</a> and
-        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">Overriding Attributes With Custom JSON</a>.</p>
+        /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">Overriding Attributes With Custom JSON</a>.</p>
         pub fn set_custom_json(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.custom_json = input;
             self
@@ -2028,7 +1728,7 @@ pub mod create_deployment_input {
 #[doc(hidden)]
 pub type CreateDeploymentInputOperationOutputAlias = crate::operation::CreateDeployment;
 #[doc(hidden)]
-pub type CreateDeploymentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDeploymentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`CreateDeployment`](crate::operation::CreateDeployment)>
     #[allow(clippy::let_and_return)]
@@ -2039,7 +1739,7 @@ impl CreateDeploymentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDeployment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2124,7 +1824,7 @@ impl CreateDeploymentInput {
             "CreateDeployment",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2203,20 +1903,12 @@ pub mod create_instance_input {
             self.layer_ids = input;
             self
         }
-        /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types,
-        /// open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>.
-        /// The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// Families and Types</a>. The parameter values that you use to specify the various types are
-        /// in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
+        /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_type = Some(input.into());
             self
         }
-        /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types,
-        /// open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>.
-        /// The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// Families and Types</a>. The parameter values that you use to specify the various types are
-        /// in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
+        /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2249,96 +1941,42 @@ pub mod create_instance_input {
         }
         /// <p>The instance's operating system, which must be set to one of the following.</p>
         /// <ul>
-        /// <li>
-        /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-        /// <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CentOS Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Red Hat Enterprise Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A custom AMI: <code>Custom</code>.</p>
-        /// </li>
+        /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+        /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+        /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+        /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+        /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+        /// <li> <p>A custom AMI: <code>Custom</code>.</p> </li>
         /// </ul>
-        /// <p>For more information about the supported operating systems,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-        /// <p>The default option is the current Amazon Linux version. If you set this parameter to
-        /// <code>Custom</code>, you must use the <a>CreateInstance</a> action's AmiId parameter to
-        /// specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about supported operating
-        /// systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-        /// Custom AMIs</a>.</p>
+        /// <p>For more information about the supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+        /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the <code>CreateInstance</code> action's AmiId parameter to specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
         pub fn os(mut self, input: impl Into<std::string::String>) -> Self {
             self.os = Some(input.into());
             self
         }
         /// <p>The instance's operating system, which must be set to one of the following.</p>
         /// <ul>
-        /// <li>
-        /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-        /// <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CentOS Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Red Hat Enterprise Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A custom AMI: <code>Custom</code>.</p>
-        /// </li>
+        /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+        /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+        /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+        /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+        /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+        /// <li> <p>A custom AMI: <code>Custom</code>.</p> </li>
         /// </ul>
-        /// <p>For more information about the supported operating systems,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-        /// <p>The default option is the current Amazon Linux version. If you set this parameter to
-        /// <code>Custom</code>, you must use the <a>CreateInstance</a> action's AmiId parameter to
-        /// specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about supported operating
-        /// systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-        /// Custom AMIs</a>.</p>
+        /// <p>For more information about the supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+        /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the <code>CreateInstance</code> action's AmiId parameter to specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
         pub fn set_os(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.os = input;
             self
         }
-        /// <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the
-        /// supported operating systems.
-        /// For more information, see
-        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
-        /// <note>
+        /// <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported operating systems. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>
         /// <p>If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.</p>
         /// </note>
         pub fn ami_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ami_id = Some(input.into());
             self
         }
-        /// <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the
-        /// supported operating systems.
-        /// For more information, see
-        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
-        /// <note>
+        /// <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported operating systems. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>
         /// <p>If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.</p>
         /// </note>
         pub fn set_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -2391,18 +2029,12 @@ pub mod create_instance_input {
             self.subnet_id = input;
             self
         }
-        /// <p>The instance architecture. The default option is <code>x86_64</code>. Instance types do not
-        /// necessarily support both architectures. For a list of the architectures that are supported by
-        /// the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and
-        /// Types</a>.</p>
+        /// <p>The instance architecture. The default option is <code>x86_64</code>. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
         pub fn architecture(mut self, input: crate::model::Architecture) -> Self {
             self.architecture = Some(input);
             self
         }
-        /// <p>The instance architecture. The default option is <code>x86_64</code>. Instance types do not
-        /// necessarily support both architectures. For a list of the architectures that are supported by
-        /// the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and
-        /// Types</a>.</p>
+        /// <p>The instance architecture. The default option is <code>x86_64</code>. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
         pub fn set_architecture(
             mut self,
             input: std::option::Option<crate::model::Architecture>,
@@ -2427,21 +2059,14 @@ pub mod create_instance_input {
         ///
         /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
         ///
-        /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block
-        /// devices. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
-        /// Device Mapping</a>. Note that block device mappings are not supported for custom AMIs.</p>
-        pub fn block_device_mappings(
-            mut self,
-            input: impl Into<crate::model::BlockDeviceMapping>,
-        ) -> Self {
+        /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block devices. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a>. Note that block device mappings are not supported for custom AMIs.</p>
+        pub fn block_device_mappings(mut self, input: crate::model::BlockDeviceMapping) -> Self {
             let mut v = self.block_device_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.block_device_mappings = Some(v);
             self
         }
-        /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block
-        /// devices. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
-        /// Device Mapping</a>. Note that block device mappings are not supported for custom AMIs.</p>
+        /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block devices. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a>. Note that block device mappings are not supported for custom AMIs.</p>
         pub fn set_block_device_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BlockDeviceMapping>>,
@@ -2449,29 +2074,15 @@ pub mod create_instance_input {
             self.block_device_mappings = input;
             self
         }
-        /// <p>Whether to install operating system and package updates when the instance boots. The default
-        /// value is <code>true</code>. To control when updates are installed, set this value to
-        /// <code>false</code>. You must then update your instances manually by using
-        /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
-        /// by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-        /// instances. </p>
-        /// <note>
-        /// <p>We strongly recommend using the default value of <code>true</code> to ensure that your
-        /// instances have the latest security updates.</p>
+        /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+        /// <p>We strongly recommend using the default value of <code>true</code> to ensure that your instances have the latest security updates.</p>
         /// </note>
         pub fn install_updates_on_boot(mut self, input: bool) -> Self {
             self.install_updates_on_boot = Some(input);
             self
         }
-        /// <p>Whether to install operating system and package updates when the instance boots. The default
-        /// value is <code>true</code>. To control when updates are installed, set this value to
-        /// <code>false</code>. You must then update your instances manually by using
-        /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
-        /// by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-        /// instances. </p>
-        /// <note>
-        /// <p>We strongly recommend using the default value of <code>true</code> to ensure that your
-        /// instances have the latest security updates.</p>
+        /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+        /// <p>We strongly recommend using the default value of <code>true</code> to ensure that your instances have the latest security updates.</p>
         /// </note>
         pub fn set_install_updates_on_boot(mut self, input: std::option::Option<bool>) -> Self {
             self.install_updates_on_boot = input;
@@ -2489,44 +2100,20 @@ pub mod create_instance_input {
         }
         /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INHERIT</code> - Use the stack's default agent version setting.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>version_number</i> - Use the specified agent version.
-        /// This value overrides the stack's default setting.
-        /// To update the agent version, edit the instance configuration and specify a
-        /// new version.
-        /// AWS OpsWorks Stacks then automatically installs that version on the instance.</p>
-        /// </li>
+        /// <li> <p> <code>INHERIT</code> - Use the stack's default agent version setting.</p> </li>
+        /// <li> <p> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the instance.</p> </li>
         /// </ul>
-        /// <p>The default setting is <code>INHERIT</code>. To specify an agent version,
-        /// you must use the complete version number, not the abbreviated number shown on the console.
-        /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.</p>
+        /// <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p>
         pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.agent_version = Some(input.into());
             self
         }
         /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INHERIT</code> - Use the stack's default agent version setting.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>version_number</i> - Use the specified agent version.
-        /// This value overrides the stack's default setting.
-        /// To update the agent version, edit the instance configuration and specify a
-        /// new version.
-        /// AWS OpsWorks Stacks then automatically installs that version on the instance.</p>
-        /// </li>
+        /// <li> <p> <code>INHERIT</code> - Use the stack's default agent version setting.</p> </li>
+        /// <li> <p> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the instance.</p> </li>
         /// </ul>
-        /// <p>The default setting is <code>INHERIT</code>. To specify an agent version,
-        /// you must use the complete version number, not the abbreviated number shown on the console.
-        /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.</p>
+        /// <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p>
         pub fn set_agent_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2534,12 +2121,12 @@ pub mod create_instance_input {
             self.agent_version = input;
             self
         }
-        /// <p>The instance's tenancy option. The default option is no tenancy, or if the instance is running in a VPC, inherit tenancy settings from the VPC. The following are valid values for this parameter:  <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs associated with changes in tenancy options, we recommend that you research tenancy options before choosing them for your instances. For more information about dedicated hosts, see <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts Overview</a> and <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon EC2 Dedicated Instances</a>.</p>
+        /// <p>The instance's tenancy option. The default option is no tenancy, or if the instance is running in a VPC, inherit tenancy settings from the VPC. The following are valid values for this parameter: <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs associated with changes in tenancy options, we recommend that you research tenancy options before choosing them for your instances. For more information about dedicated hosts, see <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts Overview</a> and <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon EC2 Dedicated Instances</a>.</p>
         pub fn tenancy(mut self, input: impl Into<std::string::String>) -> Self {
             self.tenancy = Some(input.into());
             self
         }
-        /// <p>The instance's tenancy option. The default option is no tenancy, or if the instance is running in a VPC, inherit tenancy settings from the VPC. The following are valid values for this parameter:  <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs associated with changes in tenancy options, we recommend that you research tenancy options before choosing them for your instances. For more information about dedicated hosts, see <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts Overview</a> and <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon EC2 Dedicated Instances</a>.</p>
+        /// <p>The instance's tenancy option. The default option is no tenancy, or if the instance is running in a VPC, inherit tenancy settings from the VPC. The following are valid values for this parameter: <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs associated with changes in tenancy options, we recommend that you research tenancy options before choosing them for your instances. For more information about dedicated hosts, see <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts Overview</a> and <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon EC2 Dedicated Instances</a>.</p>
         pub fn set_tenancy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tenancy = input;
             self
@@ -2577,7 +2164,7 @@ pub mod create_instance_input {
 #[doc(hidden)]
 pub type CreateInstanceInputOperationOutputAlias = crate::operation::CreateInstance;
 #[doc(hidden)]
-pub type CreateInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateInstanceInput {
     /// Consumes the builder and constructs an Operation<[`CreateInstance`](crate::operation::CreateInstance)>
     #[allow(clippy::let_and_return)]
@@ -2588,7 +2175,7 @@ impl CreateInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2673,7 +2260,7 @@ impl CreateInstanceInput {
             "CreateInstance",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2778,11 +2365,11 @@ pub mod create_layer_input {
         /// <p>To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's ARN.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::LayerAttributesKeys>,
+            k: crate::model::LayerAttributesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.attributes = Some(hash_map);
             self
         }
@@ -2797,7 +2384,7 @@ pub mod create_layer_input {
             self.attributes = input;
             self
         }
-        /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <a>CloudWatchLogsLogStream</a>.</p>
+        /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
         pub fn cloud_watch_logs_configuration(
             mut self,
             input: crate::model::CloudWatchLogsConfiguration,
@@ -2805,7 +2392,7 @@ pub mod create_layer_input {
             self.cloud_watch_logs_configuration = Some(input);
             self
         }
-        /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <a>CloudWatchLogsLogStream</a>.</p>
+        /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
         pub fn set_cloud_watch_logs_configuration(
             mut self,
             input: std::option::Option<crate::model::CloudWatchLogsConfiguration>,
@@ -2813,8 +2400,7 @@ pub mod create_layer_input {
             self.cloud_watch_logs_configuration = input;
             self
         }
-        /// <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more information
-        /// about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+        /// <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn custom_instance_profile_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -2822,8 +2408,7 @@ pub mod create_layer_input {
             self.custom_instance_profile_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more information
-        /// about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+        /// <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn set_custom_instance_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2831,20 +2416,12 @@ pub mod create_layer_input {
             self.custom_instance_profile_arn = input;
             self
         }
-        /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes
-        /// to be installed on the layer's instances. For more information, see
-        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
-        /// Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
-        /// </p>
+        /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI. </p>
         pub fn custom_json(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_json = Some(input.into());
             self
         }
-        /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes
-        /// to be installed on the layer's instances. For more information, see
-        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
-        /// Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
-        /// </p>
+        /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI. </p>
         pub fn set_custom_json(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.custom_json = input;
             self
@@ -2892,12 +2469,9 @@ pub mod create_layer_input {
         /// To override the contents of this collection use [`set_volume_configurations`](Self::set_volume_configurations).
         ///
         /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
-        pub fn volume_configurations(
-            mut self,
-            input: impl Into<crate::model::VolumeConfiguration>,
-        ) -> Self {
+        pub fn volume_configurations(mut self, input: crate::model::VolumeConfiguration) -> Self {
             let mut v = self.volume_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.volume_configurations = Some(v);
             self
         }
@@ -2919,30 +2493,22 @@ pub mod create_layer_input {
             self.enable_auto_healing = input;
             self
         }
-        /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
-        /// address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-        /// a Layer</a>.</p>
+        /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
         pub fn auto_assign_elastic_ips(mut self, input: bool) -> Self {
             self.auto_assign_elastic_ips = Some(input);
             self
         }
-        /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
-        /// address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-        /// a Layer</a>.</p>
+        /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
         pub fn set_auto_assign_elastic_ips(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_assign_elastic_ips = input;
             self
         }
-        /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to
-        /// the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-        /// a Layer</a>.</p>
+        /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
         pub fn auto_assign_public_ips(mut self, input: bool) -> Self {
             self.auto_assign_public_ips = Some(input);
             self
         }
-        /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to
-        /// the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-        /// a Layer</a>.</p>
+        /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
         pub fn set_auto_assign_public_ips(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_assign_public_ips = input;
             self
@@ -2960,29 +2526,15 @@ pub mod create_layer_input {
             self.custom_recipes = input;
             self
         }
-        /// <p>Whether to install operating system and package updates when the instance boots. The default
-        /// value is <code>true</code>. To control when updates are installed, set this value to
-        /// <code>false</code>. You must then update your instances manually by using
-        /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
-        /// by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-        /// instances. </p>
-        /// <note>
-        /// <p>To ensure that your
-        /// instances have the latest security updates, we strongly recommend using the default value of <code>true</code>.</p>
+        /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+        /// <p>To ensure that your instances have the latest security updates, we strongly recommend using the default value of <code>true</code>.</p>
         /// </note>
         pub fn install_updates_on_boot(mut self, input: bool) -> Self {
             self.install_updates_on_boot = Some(input);
             self
         }
-        /// <p>Whether to install operating system and package updates when the instance boots. The default
-        /// value is <code>true</code>. To control when updates are installed, set this value to
-        /// <code>false</code>. You must then update your instances manually by using
-        /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
-        /// by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-        /// instances. </p>
-        /// <note>
-        /// <p>To ensure that your
-        /// instances have the latest security updates, we strongly recommend using the default value of <code>true</code>.</p>
+        /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+        /// <p>To ensure that your instances have the latest security updates, we strongly recommend using the default value of <code>true</code>.</p>
         /// </note>
         pub fn set_install_updates_on_boot(mut self, input: std::option::Option<bool>) -> Self {
             self.install_updates_on_boot = input;
@@ -2998,9 +2550,7 @@ pub mod create_layer_input {
             self.use_ebs_optimized_instances = input;
             self
         }
-        /// <p>A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to
-        /// specify an execution timeout and enable or disable Elastic Load Balancer connection
-        /// draining.</p>
+        /// <p>A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to specify an execution timeout and enable or disable Elastic Load Balancer connection draining.</p>
         pub fn lifecycle_event_configuration(
             mut self,
             input: crate::model::LifecycleEventConfiguration,
@@ -3008,9 +2558,7 @@ pub mod create_layer_input {
             self.lifecycle_event_configuration = Some(input);
             self
         }
-        /// <p>A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to
-        /// specify an execution timeout and enable or disable Elastic Load Balancer connection
-        /// draining.</p>
+        /// <p>A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to specify an execution timeout and enable or disable Elastic Load Balancer connection draining.</p>
         pub fn set_lifecycle_event_configuration(
             mut self,
             input: std::option::Option<crate::model::LifecycleEventConfiguration>,
@@ -3051,7 +2599,7 @@ pub mod create_layer_input {
 #[doc(hidden)]
 pub type CreateLayerInputOperationOutputAlias = crate::operation::CreateLayer;
 #[doc(hidden)]
-pub type CreateLayerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateLayerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLayerInput {
     /// Consumes the builder and constructs an Operation<[`CreateLayer`](crate::operation::CreateLayer)>
     #[allow(clippy::let_and_return)]
@@ -3062,7 +2610,7 @@ impl CreateLayerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLayer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3146,7 +2694,7 @@ impl CreateLayerInput {
             "CreateLayer",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3209,51 +2757,15 @@ pub mod create_stack_input {
             self.name = input;
             self
         }
-        /// <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information about
-        /// Amazon regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-        /// <note>
-        /// <p>In the AWS CLI, this API maps to the <code>--stack-region</code> parameter. If the
-        /// <code>--stack-region</code> parameter and the AWS CLI common parameter
-        /// <code>--region</code> are set to the same value, the stack uses a
-        /// <i>regional</i> endpoint. If the <code>--stack-region</code>
-        /// parameter is not set, but the AWS CLI <code>--region</code> parameter is, this also
-        /// results in a stack with a <i>regional</i> endpoint. However, if the
-        /// <code>--region</code> parameter is set to <code>us-east-1</code>, and the
-        /// <code>--stack-region</code> parameter is set to one of the following, then the
-        /// stack uses a legacy or <i>classic</i> region: <code>us-west-1,
-        /// us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1,
-        /// ap-southeast-2</code>. In this case, the actual API endpoint of the stack is in
-        /// <code>us-east-1</code>. Only the preceding regions are supported as classic
-        /// regions in the <code>us-east-1</code> API endpoint. Because it is a best practice to
-        /// choose the regional endpoint that is closest to where you manage AWS, we recommend
-        /// that you use regional endpoints for new stacks. The AWS CLI common
-        /// <code>--region</code> parameter always specifies a regional API endpoint; it
-        /// cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
+        /// <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information about Amazon regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p> <note>
+        /// <p>In the AWS CLI, this API maps to the <code>--stack-region</code> parameter. If the <code>--stack-region</code> parameter and the AWS CLI common parameter <code>--region</code> are set to the same value, the stack uses a <i>regional</i> endpoint. If the <code>--stack-region</code> parameter is not set, but the AWS CLI <code>--region</code> parameter is, this also results in a stack with a <i>regional</i> endpoint. However, if the <code>--region</code> parameter is set to <code>us-east-1</code>, and the <code>--stack-region</code> parameter is set to one of the following, then the stack uses a legacy or <i>classic</i> region: <code>us-west-1, us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1, ap-southeast-2</code>. In this case, the actual API endpoint of the stack is in <code>us-east-1</code>. Only the preceding regions are supported as classic regions in the <code>us-east-1</code> API endpoint. Because it is a best practice to choose the regional endpoint that is closest to where you manage AWS, we recommend that you use regional endpoints for new stacks. The AWS CLI common <code>--region</code> parameter always specifies a regional API endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
         /// </note>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information about
-        /// Amazon regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-        /// <note>
-        /// <p>In the AWS CLI, this API maps to the <code>--stack-region</code> parameter. If the
-        /// <code>--stack-region</code> parameter and the AWS CLI common parameter
-        /// <code>--region</code> are set to the same value, the stack uses a
-        /// <i>regional</i> endpoint. If the <code>--stack-region</code>
-        /// parameter is not set, but the AWS CLI <code>--region</code> parameter is, this also
-        /// results in a stack with a <i>regional</i> endpoint. However, if the
-        /// <code>--region</code> parameter is set to <code>us-east-1</code>, and the
-        /// <code>--stack-region</code> parameter is set to one of the following, then the
-        /// stack uses a legacy or <i>classic</i> region: <code>us-west-1,
-        /// us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1,
-        /// ap-southeast-2</code>. In this case, the actual API endpoint of the stack is in
-        /// <code>us-east-1</code>. Only the preceding regions are supported as classic
-        /// regions in the <code>us-east-1</code> API endpoint. Because it is a best practice to
-        /// choose the regional endpoint that is closest to where you manage AWS, we recommend
-        /// that you use regional endpoints for new stacks. The AWS CLI common
-        /// <code>--region</code> parameter always specifies a regional API endpoint; it
-        /// cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
+        /// <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information about Amazon regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p> <note>
+        /// <p>In the AWS CLI, this API maps to the <code>--stack-region</code> parameter. If the <code>--stack-region</code> parameter and the AWS CLI common parameter <code>--region</code> are set to the same value, the stack uses a <i>regional</i> endpoint. If the <code>--stack-region</code> parameter is not set, but the AWS CLI <code>--region</code> parameter is, this also results in a stack with a <i>regional</i> endpoint. However, if the <code>--region</code> parameter is set to <code>us-east-1</code>, and the <code>--stack-region</code> parameter is set to one of the following, then the stack uses a legacy or <i>classic</i> region: <code>us-west-1, us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1, ap-southeast-2</code>. In this case, the actual API endpoint of the stack is in <code>us-east-1</code>. Only the preceding regions are supported as classic regions in the <code>us-east-1</code> API endpoint. Because it is a best practice to choose the regional endpoint that is closest to where you manage AWS, we recommend that you use regional endpoints for new stacks. The AWS CLI common <code>--region</code> parameter always specifies a regional API endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
         /// </note>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
@@ -3261,62 +2773,32 @@ pub mod create_stack_input {
         }
         /// <p>The ID of the VPC that the stack is to be launched into. The VPC must be in the stack's region. All instances are launched into this VPC. You cannot change the ID later.</p>
         /// <ul>
-        /// <li>
-        /// <p>If your account supports EC2-Classic, the default value is <code>no VPC</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your account does not support EC2-Classic, the default value is the default VPC for the specified region.</p>
-        /// </li>
+        /// <li> <p>If your account supports EC2-Classic, the default value is <code>no VPC</code>.</p> </li>
+        /// <li> <p>If your account does not support EC2-Classic, the default value is the default VPC for the specified region.</p> </li>
         /// </ul>
-        /// <p>If the VPC ID corresponds to a default VPC and you have specified either the
-        /// <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only,
-        /// AWS OpsWorks Stacks infers the value of the
-        /// other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets
-        /// these parameters to the first valid Availability Zone for the specified region and the
-        /// corresponding default VPC subnet ID, respectively.</p>
+        /// <p>If the VPC ID corresponds to a default VPC and you have specified either the <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only, AWS OpsWorks Stacks infers the value of the other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets these parameters to the first valid Availability Zone for the specified region and the corresponding default VPC subnet ID, respectively.</p>
         /// <p>If you specify a nondefault VPC ID, note the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>It must belong to a VPC in your account that is in the specified region.</p>
-        /// </li>
-        /// <li>
-        /// <p>You must specify a value for <code>DefaultSubnetId</code>.</p>
-        /// </li>
+        /// <li> <p>It must belong to a VPC in your account that is in the specified region.</p> </li>
+        /// <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>
         /// </ul>
-        /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
-        /// VPC</a>. For more information about default VPC and EC2-Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-        /// Platforms</a>. </p>
+        /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>. For more information about default VPC and EC2-Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>. </p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.vpc_id = Some(input.into());
             self
         }
         /// <p>The ID of the VPC that the stack is to be launched into. The VPC must be in the stack's region. All instances are launched into this VPC. You cannot change the ID later.</p>
         /// <ul>
-        /// <li>
-        /// <p>If your account supports EC2-Classic, the default value is <code>no VPC</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your account does not support EC2-Classic, the default value is the default VPC for the specified region.</p>
-        /// </li>
+        /// <li> <p>If your account supports EC2-Classic, the default value is <code>no VPC</code>.</p> </li>
+        /// <li> <p>If your account does not support EC2-Classic, the default value is the default VPC for the specified region.</p> </li>
         /// </ul>
-        /// <p>If the VPC ID corresponds to a default VPC and you have specified either the
-        /// <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only,
-        /// AWS OpsWorks Stacks infers the value of the
-        /// other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets
-        /// these parameters to the first valid Availability Zone for the specified region and the
-        /// corresponding default VPC subnet ID, respectively.</p>
+        /// <p>If the VPC ID corresponds to a default VPC and you have specified either the <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only, AWS OpsWorks Stacks infers the value of the other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets these parameters to the first valid Availability Zone for the specified region and the corresponding default VPC subnet ID, respectively.</p>
         /// <p>If you specify a nondefault VPC ID, note the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>It must belong to a VPC in your account that is in the specified region.</p>
-        /// </li>
-        /// <li>
-        /// <p>You must specify a value for <code>DefaultSubnetId</code>.</p>
-        /// </li>
+        /// <li> <p>It must belong to a VPC in your account that is in the specified region.</p> </li>
+        /// <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>
         /// </ul>
-        /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
-        /// VPC</a>. For more information about default VPC and EC2-Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-        /// Platforms</a>. </p>
+        /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>. For more information about default VPC and EC2-Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>. </p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
@@ -3328,11 +2810,11 @@ pub mod create_stack_input {
         /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::StackAttributesKeys>,
+            k: crate::model::StackAttributesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.attributes = Some(hash_map);
             self
         }
@@ -3346,18 +2828,12 @@ pub mod create_stack_input {
             self.attributes = input;
             self
         }
-        /// <p>The stack's AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS
-        /// resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an
-        /// existing IAM role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
+        /// <p>The stack's AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role_arn = Some(input.into());
             self
         }
-        /// <p>The stack's AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS
-        /// resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an
-        /// existing IAM role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
+        /// <p>The stack's AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn set_service_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3365,9 +2841,7 @@ pub mod create_stack_input {
             self.service_role_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances.
-        /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn default_instance_profile_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -3375,9 +2849,7 @@ pub mod create_stack_input {
             self.default_instance_profile_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances.
-        /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn set_default_instance_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3387,212 +2859,66 @@ pub mod create_stack_input {
         }
         /// <p>The stack's default operating system, which is installed on every instance unless you specify a different operating system when you create the instance. You can specify one of the following.</p>
         /// <ul>
-        /// <li>
-        /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-        /// <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CentOS Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Red Hat Enterprise Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>,
-        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
-        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when
-        /// you create instances. For more
-        /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">
-        /// Using Custom AMIs</a>.</p>
-        /// </li>
+        /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+        /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+        /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+        /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+        /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+        /// <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"> Using Custom AMIs</a>.</p> </li>
         /// </ul>
-        /// <p>The default option is the current Amazon Linux version.
-        /// For more information about supported operating systems,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+        /// <p>The default option is the current Amazon Linux version. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
         pub fn default_os(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_os = Some(input.into());
             self
         }
         /// <p>The stack's default operating system, which is installed on every instance unless you specify a different operating system when you create the instance. You can specify one of the following.</p>
         /// <ul>
-        /// <li>
-        /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-        /// <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CentOS Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Red Hat Enterprise Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>,
-        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
-        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when
-        /// you create instances. For more
-        /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">
-        /// Using Custom AMIs</a>.</p>
-        /// </li>
+        /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+        /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+        /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+        /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+        /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+        /// <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"> Using Custom AMIs</a>.</p> </li>
         /// </ul>
-        /// <p>The default option is the current Amazon Linux version.
-        /// For more information about supported operating systems,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+        /// <p>The default option is the current Amazon Linux version. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
         pub fn set_default_os(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.default_os = input;
             self
         }
-        /// <p>The stack's host name theme, with spaces replaced by underscores. The theme is used to
-        /// generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set
-        /// to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's
-        /// short name. The other themes are:</p>
+        /// <p>The stack's host name theme, with spaces replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Baked_Goods</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Clouds</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Europe_Cities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fruits</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Greek_Deities_and_Titans</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Legendary_creatures_from_Japan</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Planets_and_Moons</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Roman_Deities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Scottish_Islands</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>US_Cities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Wild_Cats</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Baked_Goods</code> </p> </li>
+        /// <li> <p> <code>Clouds</code> </p> </li>
+        /// <li> <p> <code>Europe_Cities</code> </p> </li>
+        /// <li> <p> <code>Fruits</code> </p> </li>
+        /// <li> <p> <code>Greek_Deities_and_Titans</code> </p> </li>
+        /// <li> <p> <code>Legendary_creatures_from_Japan</code> </p> </li>
+        /// <li> <p> <code>Planets_and_Moons</code> </p> </li>
+        /// <li> <p> <code>Roman_Deities</code> </p> </li>
+        /// <li> <p> <code>Scottish_Islands</code> </p> </li>
+        /// <li> <p> <code>US_Cities</code> </p> </li>
+        /// <li> <p> <code>Wild_Cats</code> </p> </li>
         /// </ul>
-        /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a
-        /// host name based on the current theme.</p>
+        /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
         pub fn hostname_theme(mut self, input: impl Into<std::string::String>) -> Self {
             self.hostname_theme = Some(input.into());
             self
         }
-        /// <p>The stack's host name theme, with spaces replaced by underscores. The theme is used to
-        /// generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set
-        /// to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's
-        /// short name. The other themes are:</p>
+        /// <p>The stack's host name theme, with spaces replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Baked_Goods</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Clouds</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Europe_Cities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fruits</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Greek_Deities_and_Titans</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Legendary_creatures_from_Japan</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Planets_and_Moons</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Roman_Deities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Scottish_Islands</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>US_Cities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Wild_Cats</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Baked_Goods</code> </p> </li>
+        /// <li> <p> <code>Clouds</code> </p> </li>
+        /// <li> <p> <code>Europe_Cities</code> </p> </li>
+        /// <li> <p> <code>Fruits</code> </p> </li>
+        /// <li> <p> <code>Greek_Deities_and_Titans</code> </p> </li>
+        /// <li> <p> <code>Legendary_creatures_from_Japan</code> </p> </li>
+        /// <li> <p> <code>Planets_and_Moons</code> </p> </li>
+        /// <li> <p> <code>Roman_Deities</code> </p> </li>
+        /// <li> <p> <code>Scottish_Islands</code> </p> </li>
+        /// <li> <p> <code>US_Cities</code> </p> </li>
+        /// <li> <p> <code>Wild_Cats</code> </p> </li>
         /// </ul>
-        /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a
-        /// host name based on the current theme.</p>
+        /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
         pub fn set_hostname_theme(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3600,20 +2926,12 @@ pub mod create_stack_input {
             self.hostname_theme = input;
             self
         }
-        /// <p>The stack's default Availability Zone, which must be in the specified region. For more
-        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-        /// Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must
-        /// be in the same zone. For more information, see the <code>VpcId</code> parameter description.
-        /// </p>
+        /// <p>The stack's default Availability Zone, which must be in the specified region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see the <code>VpcId</code> parameter description. </p>
         pub fn default_availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_availability_zone = Some(input.into());
             self
         }
-        /// <p>The stack's default Availability Zone, which must be in the specified region. For more
-        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-        /// Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must
-        /// be in the same zone. For more information, see the <code>VpcId</code> parameter description.
-        /// </p>
+        /// <p>The stack's default Availability Zone, which must be in the specified region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see the <code>VpcId</code> parameter description. </p>
         pub fn set_default_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3621,22 +2939,12 @@ pub mod create_stack_input {
             self.default_availability_zone = input;
             self
         }
-        /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the
-        /// <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify
-        /// otherwise when you create the instance. If you also specify a value for
-        /// <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on
-        /// default values and when this parameter is required, see the <code>VpcId</code> parameter
-        /// description. </p>
+        /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description. </p>
         pub fn default_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_subnet_id = Some(input.into());
             self
         }
-        /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the
-        /// <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify
-        /// otherwise when you create the instance. If you also specify a value for
-        /// <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on
-        /// default values and when this parameter is required, see the <code>VpcId</code> parameter
-        /// description. </p>
+        /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description. </p>
         pub fn set_default_subnet_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3645,21 +2953,15 @@ pub mod create_stack_input {
             self
         }
         /// <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>
-        /// <p>
-        /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-        /// </p>
-        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-        /// Modify the Stack Configuration Attributes</a>.</p>
+        /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
         pub fn custom_json(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_json = Some(input.into());
             self
         }
         /// <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>
-        /// <p>
-        /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-        /// </p>
-        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-        /// Modify the Stack Configuration Attributes</a>.</p>
+        /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
         pub fn set_custom_json(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.custom_json = input;
             self
@@ -3680,14 +2982,12 @@ pub mod create_stack_input {
             self.configuration_manager = input;
             self
         }
-        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
-        /// Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
         pub fn chef_configuration(mut self, input: crate::model::ChefConfiguration) -> Self {
             self.chef_configuration = Some(input);
             self
         }
-        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
-        /// Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
         pub fn set_chef_configuration(
             mut self,
             input: std::option::Option<crate::model::ChefConfiguration>,
@@ -3706,39 +3006,23 @@ pub mod create_stack_input {
             self
         }
         /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
-        /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are
-        /// associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead
-        /// provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the
-        /// following settings: </p>
+        /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the following settings: </p>
         /// <ul>
-        /// <li>
-        /// <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p>
-        /// </li>
-        /// <li>
-        /// <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p>
-        /// </li>
+        /// <li> <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p> </li>
+        /// <li> <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
-        /// Stack</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
         pub fn use_opsworks_security_groups(mut self, input: bool) -> Self {
             self.use_opsworks_security_groups = Some(input);
             self
         }
         /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
-        /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are
-        /// associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead
-        /// provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the
-        /// following settings: </p>
+        /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the following settings: </p>
         /// <ul>
-        /// <li>
-        /// <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p>
-        /// </li>
-        /// <li>
-        /// <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p>
-        /// </li>
+        /// <li> <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p> </li>
+        /// <li> <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
-        /// Stack</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
         pub fn set_use_opsworks_security_groups(
             mut self,
             input: std::option::Option<bool>,
@@ -3746,16 +3030,12 @@ pub mod create_stack_input {
             self.use_opsworks_security_groups = input;
             self
         }
-        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or
-        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
         pub fn custom_cookbooks_source(mut self, input: crate::model::Source) -> Self {
             self.custom_cookbooks_source = Some(input);
             self
         }
-        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or
-        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
         pub fn set_custom_cookbooks_source(
             mut self,
             input: std::option::Option<crate::model::Source>,
@@ -3763,24 +3043,12 @@ pub mod create_stack_input {
             self.custom_cookbooks_source = input;
             self
         }
-        /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS
-        /// OpsWorks installs the public key on the instance and you can use the private key with an SSH
-        /// client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
-        /// Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
-        /// Access</a>. You can override this setting by specifying a different key pair, or no key
-        /// pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
-        /// create an instance</a>. </p>
+        /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS OpsWorks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>. </p>
         pub fn default_ssh_key_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_ssh_key_name = Some(input.into());
             self
         }
-        /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS
-        /// OpsWorks installs the public key on the instance and you can use the private key with an SSH
-        /// client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
-        /// Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
-        /// Access</a>. You can override this setting by specifying a different key pair, or no key
-        /// pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
-        /// create an instance</a>. </p>
+        /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS OpsWorks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>. </p>
         pub fn set_default_ssh_key_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3788,16 +3056,12 @@ pub mod create_stack_input {
             self.default_ssh_key_name = input;
             self
         }
-        /// <p>The default root device type. This value is the default for all instances in the stack,
-        /// but you can override it when you create an instance. The default option is
-        /// <code>instance-store</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+        /// <p>The default root device type. This value is the default for all instances in the stack, but you can override it when you create an instance. The default option is <code>instance-store</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
         pub fn default_root_device_type(mut self, input: crate::model::RootDeviceType) -> Self {
             self.default_root_device_type = Some(input);
             self
         }
-        /// <p>The default root device type. This value is the default for all instances in the stack,
-        /// but you can override it when you create an instance. The default option is
-        /// <code>instance-store</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+        /// <p>The default root device type. This value is the default for all instances in the stack, but you can override it when you create an instance. The default option is <code>instance-store</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
         pub fn set_default_root_device_type(
             mut self,
             input: std::option::Option<crate::model::RootDeviceType>,
@@ -3807,19 +3071,10 @@ pub mod create_stack_input {
         }
         /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks
-        /// automatically installs new agent versions on the stack's instances as soon as
-        /// they are available.</p>
-        /// </li>
-        /// <li>
-        /// <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p>
-        /// </li>
+        /// <li> <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent versions on the stack's instances as soon as they are available.</p> </li>
+        /// <li> <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p> </li>
         /// </ul>
-        /// <p>The default setting is the most recent release of the agent. To specify an agent version,
-        /// you must use the complete version number, not the abbreviated number shown on the console.
-        /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.</p>
-        /// <note>
+        /// <p>The default setting is the most recent release of the agent. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>
         /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
         /// </note>
         pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3828,19 +3083,10 @@ pub mod create_stack_input {
         }
         /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks
-        /// automatically installs new agent versions on the stack's instances as soon as
-        /// they are available.</p>
-        /// </li>
-        /// <li>
-        /// <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p>
-        /// </li>
+        /// <li> <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent versions on the stack's instances as soon as they are available.</p> </li>
+        /// <li> <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p> </li>
         /// </ul>
-        /// <p>The default setting is the most recent release of the agent. To specify an agent version,
-        /// you must use the complete version number, not the abbreviated number shown on the console.
-        /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.</p>
-        /// <note>
+        /// <p>The default setting is the most recent release of the agent. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>
         /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
         /// </note>
         pub fn set_agent_version(
@@ -3884,7 +3130,7 @@ pub mod create_stack_input {
 #[doc(hidden)]
 pub type CreateStackInputOperationOutputAlias = crate::operation::CreateStack;
 #[doc(hidden)]
-pub type CreateStackInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateStackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStackInput {
     /// Consumes the builder and constructs an Operation<[`CreateStack`](crate::operation::CreateStack)>
     #[allow(clippy::let_and_return)]
@@ -3895,7 +3141,7 @@ impl CreateStackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateStack,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3979,7 +3225,7 @@ impl CreateStackInput {
             "CreateStack",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4024,18 +3270,12 @@ pub mod create_user_profile_input {
             self.iam_user_arn = input;
             self
         }
-        /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If
-        /// the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example,
-        /// <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH
-        /// user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
+        /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
         pub fn ssh_username(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssh_username = Some(input.into());
             self
         }
-        /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If
-        /// the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example,
-        /// <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH
-        /// user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
+        /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
         pub fn set_ssh_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ssh_username = input;
             self
@@ -4053,16 +3293,12 @@ pub mod create_user_profile_input {
             self.ssh_public_key = input;
             self
         }
-        /// <p>Whether users can specify their own SSH public key through the My Settings page. For more
-        /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Setting an IAM
-        /// User's Public SSH Key</a>.</p>
+        /// <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Setting an IAM User's Public SSH Key</a>.</p>
         pub fn allow_self_management(mut self, input: bool) -> Self {
             self.allow_self_management = Some(input);
             self
         }
-        /// <p>Whether users can specify their own SSH public key through the My Settings page. For more
-        /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Setting an IAM
-        /// User's Public SSH Key</a>.</p>
+        /// <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Setting an IAM User's Public SSH Key</a>.</p>
         pub fn set_allow_self_management(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_self_management = input;
             self
@@ -4086,7 +3322,7 @@ pub mod create_user_profile_input {
 #[doc(hidden)]
 pub type CreateUserProfileInputOperationOutputAlias = crate::operation::CreateUserProfile;
 #[doc(hidden)]
-pub type CreateUserProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateUserProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUserProfileInput {
     /// Consumes the builder and constructs an Operation<[`CreateUserProfile`](crate::operation::CreateUserProfile)>
     #[allow(clippy::let_and_return)]
@@ -4097,7 +3333,7 @@ impl CreateUserProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateUserProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4182,7 +3418,7 @@ impl CreateUserProfileInput {
             "CreateUserProfile",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4238,7 +3474,7 @@ pub mod delete_app_input {
 #[doc(hidden)]
 pub type DeleteAppInputOperationOutputAlias = crate::operation::DeleteApp;
 #[doc(hidden)]
-pub type DeleteAppInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAppInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApp`](crate::operation::DeleteApp)>
     #[allow(clippy::let_and_return)]
@@ -4249,7 +3485,7 @@ impl DeleteAppInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4331,7 +3567,7 @@ impl DeleteAppInput {
                     "DeleteApp",
                     "opsworks",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4413,7 +3649,7 @@ pub mod delete_instance_input {
 #[doc(hidden)]
 pub type DeleteInstanceInputOperationOutputAlias = crate::operation::DeleteInstance;
 #[doc(hidden)]
-pub type DeleteInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteInstanceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInstance`](crate::operation::DeleteInstance)>
     #[allow(clippy::let_and_return)]
@@ -4424,7 +3660,7 @@ impl DeleteInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4509,7 +3745,7 @@ impl DeleteInstanceInput {
             "DeleteInstance",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4567,7 +3803,7 @@ pub mod delete_layer_input {
 #[doc(hidden)]
 pub type DeleteLayerInputOperationOutputAlias = crate::operation::DeleteLayer;
 #[doc(hidden)]
-pub type DeleteLayerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteLayerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLayerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLayer`](crate::operation::DeleteLayer)>
     #[allow(clippy::let_and_return)]
@@ -4578,7 +3814,7 @@ impl DeleteLayerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLayer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4662,7 +3898,7 @@ impl DeleteLayerInput {
             "DeleteLayer",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4720,7 +3956,7 @@ pub mod delete_stack_input {
 #[doc(hidden)]
 pub type DeleteStackInputOperationOutputAlias = crate::operation::DeleteStack;
 #[doc(hidden)]
-pub type DeleteStackInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteStackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStackInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStack`](crate::operation::DeleteStack)>
     #[allow(clippy::let_and_return)]
@@ -4731,7 +3967,7 @@ impl DeleteStackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteStack,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4815,7 +4051,7 @@ impl DeleteStackInput {
             "DeleteStack",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4873,7 +4109,7 @@ pub mod delete_user_profile_input {
 #[doc(hidden)]
 pub type DeleteUserProfileInputOperationOutputAlias = crate::operation::DeleteUserProfile;
 #[doc(hidden)]
-pub type DeleteUserProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteUserProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteUserProfileInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUserProfile`](crate::operation::DeleteUserProfile)>
     #[allow(clippy::let_and_return)]
@@ -4884,7 +4120,7 @@ impl DeleteUserProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteUserProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4969,7 +4205,7 @@ impl DeleteUserProfileInput {
             "DeleteUserProfile",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5030,7 +4266,7 @@ pub mod deregister_ecs_cluster_input {
 #[doc(hidden)]
 pub type DeregisterEcsClusterInputOperationOutputAlias = crate::operation::DeregisterEcsCluster;
 #[doc(hidden)]
-pub type DeregisterEcsClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeregisterEcsClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterEcsClusterInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterEcsCluster`](crate::operation::DeregisterEcsCluster)>
     #[allow(clippy::let_and_return)]
@@ -5041,7 +4277,7 @@ impl DeregisterEcsClusterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeregisterEcsCluster,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5128,7 +4364,7 @@ impl DeregisterEcsClusterInput {
             "DeregisterEcsCluster",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5186,7 +4422,7 @@ pub mod deregister_elastic_ip_input {
 #[doc(hidden)]
 pub type DeregisterElasticIpInputOperationOutputAlias = crate::operation::DeregisterElasticIp;
 #[doc(hidden)]
-pub type DeregisterElasticIpInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeregisterElasticIpInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterElasticIpInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterElasticIp`](crate::operation::DeregisterElasticIp)>
     #[allow(clippy::let_and_return)]
@@ -5197,7 +4433,7 @@ impl DeregisterElasticIpInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeregisterElasticIp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5282,7 +4518,7 @@ impl DeregisterElasticIpInput {
             "DeregisterElasticIp",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5340,7 +4576,7 @@ pub mod deregister_instance_input {
 #[doc(hidden)]
 pub type DeregisterInstanceInputOperationOutputAlias = crate::operation::DeregisterInstance;
 #[doc(hidden)]
-pub type DeregisterInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeregisterInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterInstanceInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterInstance`](crate::operation::DeregisterInstance)>
     #[allow(clippy::let_and_return)]
@@ -5351,7 +4587,7 @@ impl DeregisterInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeregisterInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5436,7 +4672,7 @@ impl DeregisterInstanceInput {
             "DeregisterInstance",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5498,7 +4734,7 @@ pub mod deregister_rds_db_instance_input {
 pub type DeregisterRdsDbInstanceInputOperationOutputAlias =
     crate::operation::DeregisterRdsDbInstance;
 #[doc(hidden)]
-pub type DeregisterRdsDbInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeregisterRdsDbInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterRdsDbInstanceInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterRdsDbInstance`](crate::operation::DeregisterRdsDbInstance)>
     #[allow(clippy::let_and_return)]
@@ -5509,7 +4745,7 @@ impl DeregisterRdsDbInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeregisterRdsDbInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5596,7 +4832,7 @@ impl DeregisterRdsDbInstanceInput {
             "DeregisterRdsDbInstance",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5654,7 +4890,7 @@ pub mod deregister_volume_input {
 #[doc(hidden)]
 pub type DeregisterVolumeInputOperationOutputAlias = crate::operation::DeregisterVolume;
 #[doc(hidden)]
-pub type DeregisterVolumeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeregisterVolumeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterVolumeInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterVolume`](crate::operation::DeregisterVolume)>
     #[allow(clippy::let_and_return)]
@@ -5665,7 +4901,7 @@ impl DeregisterVolumeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeregisterVolume,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5750,7 +4986,7 @@ impl DeregisterVolumeInput {
             "DeregisterVolume",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5827,7 +5063,7 @@ pub mod describe_agent_versions_input {
 #[doc(hidden)]
 pub type DescribeAgentVersionsInputOperationOutputAlias = crate::operation::DescribeAgentVersions;
 #[doc(hidden)]
-pub type DescribeAgentVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAgentVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAgentVersionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAgentVersions`](crate::operation::DescribeAgentVersions)>
     #[allow(clippy::let_and_return)]
@@ -5838,7 +5074,7 @@ impl DescribeAgentVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAgentVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5925,7 +5161,7 @@ impl DescribeAgentVersionsInput {
             "DescribeAgentVersions",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5958,14 +5194,12 @@ pub mod describe_apps_input {
         pub(crate) app_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description
-        /// of the apps in the specified stack.</p>
+        /// <p>The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description of the apps in the specified stack.</p>
         pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_id = Some(input.into());
             self
         }
-        /// <p>The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description
-        /// of the apps in the specified stack.</p>
+        /// <p>The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description of the apps in the specified stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -5974,18 +5208,14 @@ pub mod describe_apps_input {
         ///
         /// To override the contents of this collection use [`set_app_ids`](Self::set_app_ids).
         ///
-        /// <p>An array of app IDs for the apps to be described. If you use this parameter,
-        /// <code>DescribeApps</code> returns a description of the specified apps. Otherwise, it returns
-        /// a description of every app.</p>
+        /// <p>An array of app IDs for the apps to be described. If you use this parameter, <code>DescribeApps</code> returns a description of the specified apps. Otherwise, it returns a description of every app.</p>
         pub fn app_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.app_ids.unwrap_or_default();
             v.push(input.into());
             self.app_ids = Some(v);
             self
         }
-        /// <p>An array of app IDs for the apps to be described. If you use this parameter,
-        /// <code>DescribeApps</code> returns a description of the specified apps. Otherwise, it returns
-        /// a description of every app.</p>
+        /// <p>An array of app IDs for the apps to be described. If you use this parameter, <code>DescribeApps</code> returns a description of the specified apps. Otherwise, it returns a description of every app.</p>
         pub fn set_app_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6010,7 +5240,7 @@ pub mod describe_apps_input {
 #[doc(hidden)]
 pub type DescribeAppsInputOperationOutputAlias = crate::operation::DescribeApps;
 #[doc(hidden)]
-pub type DescribeAppsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAppsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAppsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeApps`](crate::operation::DescribeApps)>
     #[allow(clippy::let_and_return)]
@@ -6021,7 +5251,7 @@ impl DescribeAppsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeApps,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6105,7 +5335,7 @@ impl DescribeAppsInput {
             "DescribeApps",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6139,14 +5369,12 @@ pub mod describe_commands_input {
         pub(crate) command_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The deployment ID. If you include this parameter, <code>DescribeCommands</code> returns a
-        /// description of the commands associated with the specified deployment.</p>
+        /// <p>The deployment ID. If you include this parameter, <code>DescribeCommands</code> returns a description of the commands associated with the specified deployment.</p>
         pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.deployment_id = Some(input.into());
             self
         }
-        /// <p>The deployment ID. If you include this parameter, <code>DescribeCommands</code> returns a
-        /// description of the commands associated with the specified deployment.</p>
+        /// <p>The deployment ID. If you include this parameter, <code>DescribeCommands</code> returns a description of the commands associated with the specified deployment.</p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6154,14 +5382,12 @@ pub mod describe_commands_input {
             self.deployment_id = input;
             self
         }
-        /// <p>The instance ID. If you include this parameter, <code>DescribeCommands</code> returns a
-        /// description of the commands associated with the specified instance.</p>
+        /// <p>The instance ID. If you include this parameter, <code>DescribeCommands</code> returns a description of the commands associated with the specified instance.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_id = Some(input.into());
             self
         }
-        /// <p>The instance ID. If you include this parameter, <code>DescribeCommands</code> returns a
-        /// description of the commands associated with the specified instance.</p>
+        /// <p>The instance ID. If you include this parameter, <code>DescribeCommands</code> returns a description of the commands associated with the specified instance.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -6170,18 +5396,14 @@ pub mod describe_commands_input {
         ///
         /// To override the contents of this collection use [`set_command_ids`](Self::set_command_ids).
         ///
-        /// <p>An array of command IDs. If you include this parameter, <code>DescribeCommands</code> returns
-        /// a description of the specified commands. Otherwise, it returns a description of every
-        /// command.</p>
+        /// <p>An array of command IDs. If you include this parameter, <code>DescribeCommands</code> returns a description of the specified commands. Otherwise, it returns a description of every command.</p>
         pub fn command_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.command_ids.unwrap_or_default();
             v.push(input.into());
             self.command_ids = Some(v);
             self
         }
-        /// <p>An array of command IDs. If you include this parameter, <code>DescribeCommands</code> returns
-        /// a description of the specified commands. Otherwise, it returns a description of every
-        /// command.</p>
+        /// <p>An array of command IDs. If you include this parameter, <code>DescribeCommands</code> returns a description of the specified commands. Otherwise, it returns a description of every command.</p>
         pub fn set_command_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6207,7 +5429,7 @@ pub mod describe_commands_input {
 #[doc(hidden)]
 pub type DescribeCommandsInputOperationOutputAlias = crate::operation::DescribeCommands;
 #[doc(hidden)]
-pub type DescribeCommandsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeCommandsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCommandsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCommands`](crate::operation::DescribeCommands)>
     #[allow(clippy::let_and_return)]
@@ -6218,7 +5440,7 @@ impl DescribeCommandsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCommands,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6303,7 +5525,7 @@ impl DescribeCommandsInput {
             "DescribeCommands",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6337,26 +5559,22 @@ pub mod describe_deployments_input {
         pub(crate) deployment_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The stack ID. If you include this parameter, the command returns a
-        /// description of the commands associated with the specified stack.</p>
+        /// <p>The stack ID. If you include this parameter, the command returns a description of the commands associated with the specified stack.</p>
         pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_id = Some(input.into());
             self
         }
-        /// <p>The stack ID. If you include this parameter, the command returns a
-        /// description of the commands associated with the specified stack.</p>
+        /// <p>The stack ID. If you include this parameter, the command returns a description of the commands associated with the specified stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
         }
-        /// <p>The app ID. If you include this parameter, the command returns a
-        /// description of the commands associated with the specified app.</p>
+        /// <p>The app ID. If you include this parameter, the command returns a description of the commands associated with the specified app.</p>
         pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_id = Some(input.into());
             self
         }
-        /// <p>The app ID. If you include this parameter, the command returns a
-        /// description of the commands associated with the specified app.</p>
+        /// <p>The app ID. If you include this parameter, the command returns a description of the commands associated with the specified app.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_id = input;
             self
@@ -6365,18 +5583,14 @@ pub mod describe_deployments_input {
         ///
         /// To override the contents of this collection use [`set_deployment_ids`](Self::set_deployment_ids).
         ///
-        /// <p>An array of deployment IDs to be described. If you include this parameter,
-        /// the command returns a description of the specified deployments.
-        /// Otherwise, it returns a description of every deployment.</p>
+        /// <p>An array of deployment IDs to be described. If you include this parameter, the command returns a description of the specified deployments. Otherwise, it returns a description of every deployment.</p>
         pub fn deployment_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.deployment_ids.unwrap_or_default();
             v.push(input.into());
             self.deployment_ids = Some(v);
             self
         }
-        /// <p>An array of deployment IDs to be described. If you include this parameter,
-        /// the command returns a description of the specified deployments.
-        /// Otherwise, it returns a description of every deployment.</p>
+        /// <p>An array of deployment IDs to be described. If you include this parameter, the command returns a description of the specified deployments. Otherwise, it returns a description of every deployment.</p>
         pub fn set_deployment_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6402,7 +5616,7 @@ pub mod describe_deployments_input {
 #[doc(hidden)]
 pub type DescribeDeploymentsInputOperationOutputAlias = crate::operation::DescribeDeployments;
 #[doc(hidden)]
-pub type DescribeDeploymentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDeploymentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDeploymentsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDeployments`](crate::operation::DescribeDeployments)>
     #[allow(clippy::let_and_return)]
@@ -6413,7 +5627,7 @@ impl DescribeDeploymentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDeployments,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6498,7 +5712,7 @@ impl DescribeDeploymentsInput {
             "DescribeDeployments",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6552,50 +5766,32 @@ pub mod describe_ecs_clusters_input {
             self.ecs_cluster_arns = input;
             self
         }
-        /// <p>A stack ID.
-        /// <code>DescribeEcsClusters</code> returns a description of the cluster that is registered with the stack.</p>
+        /// <p>A stack ID. <code>DescribeEcsClusters</code> returns a description of the cluster that is registered with the stack.</p>
         pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_id = Some(input.into());
             self
         }
-        /// <p>A stack ID.
-        /// <code>DescribeEcsClusters</code> returns a description of the cluster that is registered with the stack.</p>
+        /// <p>A stack ID. <code>DescribeEcsClusters</code> returns a description of the cluster that is registered with the stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results,
-        /// the response object's<code>NextToken</code> parameter value is set to a token.
-        /// To retrieve the next set of results, call <code>DescribeEcsClusters</code>
-        /// again and assign that token to the request object's <code>NextToken</code> parameter.
-        /// If there are no remaining results, the previous response
-        /// object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's<code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>DescribeEcsClusters</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results,
-        /// the response object's<code>NextToken</code> parameter value is set to a token.
-        /// To retrieve the next set of results, call <code>DescribeEcsClusters</code>
-        /// again and assign that token to the request object's <code>NextToken</code> parameter.
-        /// If there are no remaining results, the previous response
-        /// object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's<code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>DescribeEcsClusters</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>To receive a paginated response, use this parameter to specify the maximum number
-        /// of results to be returned with a single call. If the number of available results exceeds this maximum, the
-        /// response includes a <code>NextToken</code> value that you can assign
-        /// to the <code>NextToken</code> request parameter to get the next set of results.</p>
+        /// <p>To receive a paginated response, use this parameter to specify the maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>To receive a paginated response, use this parameter to specify the maximum number
-        /// of results to be returned with a single call. If the number of available results exceeds this maximum, the
-        /// response includes a <code>NextToken</code> value that you can assign
-        /// to the <code>NextToken</code> request parameter to get the next set of results.</p>
+        /// <p>To receive a paginated response, use this parameter to specify the maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6619,7 +5815,7 @@ pub mod describe_ecs_clusters_input {
 #[doc(hidden)]
 pub type DescribeEcsClustersInputOperationOutputAlias = crate::operation::DescribeEcsClusters;
 #[doc(hidden)]
-pub type DescribeEcsClustersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEcsClustersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEcsClustersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEcsClusters`](crate::operation::DescribeEcsClusters)>
     #[allow(clippy::let_and_return)]
@@ -6630,7 +5826,7 @@ impl DescribeEcsClustersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEcsClusters,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6715,7 +5911,7 @@ impl DescribeEcsClustersInput {
             "DescribeEcsClusters",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6749,26 +5945,22 @@ pub mod describe_elastic_ips_input {
         pub(crate) ips: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The instance ID. If you include this parameter, <code>DescribeElasticIps</code> returns a
-        /// description of the Elastic IP addresses associated with the specified instance.</p>
+        /// <p>The instance ID. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the Elastic IP addresses associated with the specified instance.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_id = Some(input.into());
             self
         }
-        /// <p>The instance ID. If you include this parameter, <code>DescribeElasticIps</code> returns a
-        /// description of the Elastic IP addresses associated with the specified instance.</p>
+        /// <p>The instance ID. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the Elastic IP addresses associated with the specified instance.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
         }
-        /// <p>A stack ID. If you include this parameter, <code>DescribeElasticIps</code> returns a
-        /// description of the Elastic IP addresses that are registered with the specified stack.</p>
+        /// <p>A stack ID. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the Elastic IP addresses that are registered with the specified stack.</p>
         pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_id = Some(input.into());
             self
         }
-        /// <p>A stack ID. If you include this parameter, <code>DescribeElasticIps</code> returns a
-        /// description of the Elastic IP addresses that are registered with the specified stack.</p>
+        /// <p>A stack ID. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the Elastic IP addresses that are registered with the specified stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -6777,18 +5969,14 @@ pub mod describe_elastic_ips_input {
         ///
         /// To override the contents of this collection use [`set_ips`](Self::set_ips).
         ///
-        /// <p>An array of Elastic IP addresses to be described. If you include this parameter,
-        /// <code>DescribeElasticIps</code> returns a description of the specified Elastic IP addresses.
-        /// Otherwise, it returns a description of every Elastic IP address.</p>
+        /// <p>An array of Elastic IP addresses to be described. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the specified Elastic IP addresses. Otherwise, it returns a description of every Elastic IP address.</p>
         pub fn ips(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ips.unwrap_or_default();
             v.push(input.into());
             self.ips = Some(v);
             self
         }
-        /// <p>An array of Elastic IP addresses to be described. If you include this parameter,
-        /// <code>DescribeElasticIps</code> returns a description of the specified Elastic IP addresses.
-        /// Otherwise, it returns a description of every Elastic IP address.</p>
+        /// <p>An array of Elastic IP addresses to be described. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the specified Elastic IP addresses. Otherwise, it returns a description of every Elastic IP address.</p>
         pub fn set_ips(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6814,7 +6002,7 @@ pub mod describe_elastic_ips_input {
 #[doc(hidden)]
 pub type DescribeElasticIpsInputOperationOutputAlias = crate::operation::DescribeElasticIps;
 #[doc(hidden)]
-pub type DescribeElasticIpsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeElasticIpsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeElasticIpsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeElasticIps`](crate::operation::DescribeElasticIps)>
     #[allow(clippy::let_and_return)]
@@ -6825,7 +6013,7 @@ impl DescribeElasticIpsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeElasticIps,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6910,7 +6098,7 @@ impl DescribeElasticIpsInput {
             "DescribeElasticIps",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6990,7 +6178,8 @@ pub mod describe_elastic_load_balancers_input {
 pub type DescribeElasticLoadBalancersInputOperationOutputAlias =
     crate::operation::DescribeElasticLoadBalancers;
 #[doc(hidden)]
-pub type DescribeElasticLoadBalancersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeElasticLoadBalancersInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeElasticLoadBalancersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeElasticLoadBalancers`](crate::operation::DescribeElasticLoadBalancers)>
     #[allow(clippy::let_and_return)]
@@ -7001,7 +6190,7 @@ impl DescribeElasticLoadBalancersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeElasticLoadBalancers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7087,7 +6276,7 @@ impl DescribeElasticLoadBalancersInput {
             "DescribeElasticLoadBalancers",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7121,26 +6310,22 @@ pub mod describe_instances_input {
         pub(crate) instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of
-        /// the instances associated with the specified stack.</p>
+        /// <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of the instances associated with the specified stack.</p>
         pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_id = Some(input.into());
             self
         }
-        /// <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of
-        /// the instances associated with the specified stack.</p>
+        /// <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of the instances associated with the specified stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
         }
-        /// <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of
-        /// the instances associated with the specified layer.</p>
+        /// <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of the instances associated with the specified layer.</p>
         pub fn layer_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.layer_id = Some(input.into());
             self
         }
-        /// <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of
-        /// the instances associated with the specified layer.</p>
+        /// <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of the instances associated with the specified layer.</p>
         pub fn set_layer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.layer_id = input;
             self
@@ -7149,18 +6334,14 @@ pub mod describe_instances_input {
         ///
         /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
         ///
-        /// <p>An array of instance IDs to be described. If you use this parameter,
-        /// <code>DescribeInstances</code> returns a description of the specified instances. Otherwise,
-        /// it returns a description of every instance.</p>
+        /// <p>An array of instance IDs to be described. If you use this parameter, <code>DescribeInstances</code> returns a description of the specified instances. Otherwise, it returns a description of every instance.</p>
         pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_ids.unwrap_or_default();
             v.push(input.into());
             self.instance_ids = Some(v);
             self
         }
-        /// <p>An array of instance IDs to be described. If you use this parameter,
-        /// <code>DescribeInstances</code> returns a description of the specified instances. Otherwise,
-        /// it returns a description of every instance.</p>
+        /// <p>An array of instance IDs to be described. If you use this parameter, <code>DescribeInstances</code> returns a description of the specified instances. Otherwise, it returns a description of every instance.</p>
         pub fn set_instance_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7186,7 +6367,7 @@ pub mod describe_instances_input {
 #[doc(hidden)]
 pub type DescribeInstancesInputOperationOutputAlias = crate::operation::DescribeInstances;
 #[doc(hidden)]
-pub type DescribeInstancesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeInstancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeInstancesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInstances`](crate::operation::DescribeInstances)>
     #[allow(clippy::let_and_return)]
@@ -7197,7 +6378,7 @@ impl DescribeInstancesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeInstances,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7282,7 +6463,7 @@ impl DescribeInstancesInput {
             "DescribeInstances",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7329,16 +6510,14 @@ pub mod describe_layers_input {
         ///
         /// To override the contents of this collection use [`set_layer_ids`](Self::set_layer_ids).
         ///
-        /// <p>An array of layer IDs that specify the layers to be described. If you omit this parameter,
-        /// <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
+        /// <p>An array of layer IDs that specify the layers to be described. If you omit this parameter, <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
         pub fn layer_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.layer_ids.unwrap_or_default();
             v.push(input.into());
             self.layer_ids = Some(v);
             self
         }
-        /// <p>An array of layer IDs that specify the layers to be described. If you omit this parameter,
-        /// <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
+        /// <p>An array of layer IDs that specify the layers to be described. If you omit this parameter, <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
         pub fn set_layer_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7363,7 +6542,7 @@ pub mod describe_layers_input {
 #[doc(hidden)]
 pub type DescribeLayersInputOperationOutputAlias = crate::operation::DescribeLayers;
 #[doc(hidden)]
-pub type DescribeLayersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeLayersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLayersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLayers`](crate::operation::DescribeLayers)>
     #[allow(clippy::let_and_return)]
@@ -7374,7 +6553,7 @@ impl DescribeLayersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLayers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7459,7 +6638,7 @@ impl DescribeLayersInput {
             "DescribeLayers",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7527,7 +6706,8 @@ pub mod describe_load_based_auto_scaling_input {
 pub type DescribeLoadBasedAutoScalingInputOperationOutputAlias =
     crate::operation::DescribeLoadBasedAutoScaling;
 #[doc(hidden)]
-pub type DescribeLoadBasedAutoScalingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeLoadBasedAutoScalingInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLoadBasedAutoScalingInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoadBasedAutoScaling`](crate::operation::DescribeLoadBasedAutoScaling)>
     #[allow(clippy::let_and_return)]
@@ -7538,7 +6718,7 @@ impl DescribeLoadBasedAutoScalingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLoadBasedAutoScaling,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7624,7 +6804,7 @@ impl DescribeLoadBasedAutoScalingInput {
             "DescribeLoadBasedAutoScaling",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7668,7 +6848,7 @@ pub mod describe_my_user_profile_input {
 #[doc(hidden)]
 pub type DescribeMyUserProfileInputOperationOutputAlias = crate::operation::DescribeMyUserProfile;
 #[doc(hidden)]
-pub type DescribeMyUserProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeMyUserProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeMyUserProfileInput {
     /// Consumes the builder and constructs an Operation<[`DescribeMyUserProfile`](crate::operation::DescribeMyUserProfile)>
     #[allow(clippy::let_and_return)]
@@ -7679,7 +6859,7 @@ impl DescribeMyUserProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeMyUserProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7766,7 +6946,7 @@ impl DescribeMyUserProfileInput {
             "DescribeMyUserProfile",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7803,7 +6983,7 @@ pub mod describe_operating_systems_input {
 pub type DescribeOperatingSystemsInputOperationOutputAlias =
     crate::operation::DescribeOperatingSystems;
 #[doc(hidden)]
-pub type DescribeOperatingSystemsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeOperatingSystemsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeOperatingSystemsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOperatingSystems`](crate::operation::DescribeOperatingSystems)>
     #[allow(clippy::let_and_return)]
@@ -7814,7 +6994,7 @@ impl DescribeOperatingSystemsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeOperatingSystems,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7901,7 +7081,7 @@ impl DescribeOperatingSystemsInput {
             "DescribeOperatingSystems",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7926,14 +7106,12 @@ pub mod describe_permissions_input {
         pub(crate) stack_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
+        /// <p>The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn iam_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_user_arn = Some(input.into());
             self
         }
-        /// <p>The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
+        /// <p>The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn set_iam_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_user_arn = input;
             self
@@ -7965,7 +7143,7 @@ pub mod describe_permissions_input {
 #[doc(hidden)]
 pub type DescribePermissionsInputOperationOutputAlias = crate::operation::DescribePermissions;
 #[doc(hidden)]
-pub type DescribePermissionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribePermissionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePermissionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribePermissions`](crate::operation::DescribePermissions)>
     #[allow(clippy::let_and_return)]
@@ -7976,7 +7154,7 @@ impl DescribePermissionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePermissions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8061,7 +7239,7 @@ impl DescribePermissionsInput {
             "DescribePermissions",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8095,14 +7273,12 @@ pub mod describe_raid_arrays_input {
         pub(crate) raid_array_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns
-        /// descriptions of the RAID arrays associated with the specified instance. </p>
+        /// <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the RAID arrays associated with the specified instance. </p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_id = Some(input.into());
             self
         }
-        /// <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns
-        /// descriptions of the RAID arrays associated with the specified instance. </p>
+        /// <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the RAID arrays associated with the specified instance. </p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -8121,18 +7297,14 @@ pub mod describe_raid_arrays_input {
         ///
         /// To override the contents of this collection use [`set_raid_array_ids`](Self::set_raid_array_ids).
         ///
-        /// <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code>
-        /// returns descriptions of the specified arrays. Otherwise, it returns a description of every
-        /// array.</p>
+        /// <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the specified arrays. Otherwise, it returns a description of every array.</p>
         pub fn raid_array_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.raid_array_ids.unwrap_or_default();
             v.push(input.into());
             self.raid_array_ids = Some(v);
             self
         }
-        /// <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code>
-        /// returns descriptions of the specified arrays. Otherwise, it returns a description of every
-        /// array.</p>
+        /// <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the specified arrays. Otherwise, it returns a description of every array.</p>
         pub fn set_raid_array_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8158,7 +7330,7 @@ pub mod describe_raid_arrays_input {
 #[doc(hidden)]
 pub type DescribeRaidArraysInputOperationOutputAlias = crate::operation::DescribeRaidArrays;
 #[doc(hidden)]
-pub type DescribeRaidArraysInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRaidArraysInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRaidArraysInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRaidArrays`](crate::operation::DescribeRaidArrays)>
     #[allow(clippy::let_and_return)]
@@ -8169,7 +7341,7 @@ impl DescribeRaidArraysInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRaidArrays,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8254,7 +7426,7 @@ impl DescribeRaidArraysInput {
             "DescribeRaidArrays",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8333,7 +7505,7 @@ pub mod describe_rds_db_instances_input {
 #[doc(hidden)]
 pub type DescribeRdsDbInstancesInputOperationOutputAlias = crate::operation::DescribeRdsDbInstances;
 #[doc(hidden)]
-pub type DescribeRdsDbInstancesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRdsDbInstancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRdsDbInstancesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRdsDbInstances`](crate::operation::DescribeRdsDbInstances)>
     #[allow(clippy::let_and_return)]
@@ -8344,7 +7516,7 @@ impl DescribeRdsDbInstancesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRdsDbInstances,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8431,7 +7603,7 @@ impl DescribeRdsDbInstancesInput {
             "DescribeRdsDbInstances",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8465,26 +7637,22 @@ pub mod describe_service_errors_input {
         pub(crate) service_error_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns
-        /// descriptions of the errors associated with the specified stack.</p>
+        /// <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified stack.</p>
         pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_id = Some(input.into());
             self
         }
-        /// <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns
-        /// descriptions of the errors associated with the specified stack.</p>
+        /// <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
         }
-        /// <p>The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns
-        /// descriptions of the errors associated with the specified instance.</p>
+        /// <p>The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified instance.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_id = Some(input.into());
             self
         }
-        /// <p>The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns
-        /// descriptions of the errors associated with the specified instance.</p>
+        /// <p>The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified instance.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -8493,18 +7661,14 @@ pub mod describe_service_errors_input {
         ///
         /// To override the contents of this collection use [`set_service_error_ids`](Self::set_service_error_ids).
         ///
-        /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code>
-        /// returns descriptions of the specified errors. Otherwise, it returns a description of every
-        /// error.</p>
+        /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the specified errors. Otherwise, it returns a description of every error.</p>
         pub fn service_error_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.service_error_ids.unwrap_or_default();
             v.push(input.into());
             self.service_error_ids = Some(v);
             self
         }
-        /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code>
-        /// returns descriptions of the specified errors. Otherwise, it returns a description of every
-        /// error.</p>
+        /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the specified errors. Otherwise, it returns a description of every error.</p>
         pub fn set_service_error_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8530,7 +7694,7 @@ pub mod describe_service_errors_input {
 #[doc(hidden)]
 pub type DescribeServiceErrorsInputOperationOutputAlias = crate::operation::DescribeServiceErrors;
 #[doc(hidden)]
-pub type DescribeServiceErrorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeServiceErrorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeServiceErrorsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeServiceErrors`](crate::operation::DescribeServiceErrors)>
     #[allow(clippy::let_and_return)]
@@ -8541,7 +7705,7 @@ impl DescribeServiceErrorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeServiceErrors,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8628,7 +7792,7 @@ impl DescribeServiceErrorsInput {
             "DescribeServiceErrors",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8688,7 +7852,7 @@ pub type DescribeStackProvisioningParametersInputOperationOutputAlias =
     crate::operation::DescribeStackProvisioningParameters;
 #[doc(hidden)]
 pub type DescribeStackProvisioningParametersInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeStackProvisioningParametersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStackProvisioningParameters`](crate::operation::DescribeStackProvisioningParameters)>
     #[allow(clippy::let_and_return)]
@@ -8699,7 +7863,7 @@ impl DescribeStackProvisioningParametersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeStackProvisioningParameters,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8785,7 +7949,7 @@ impl DescribeStackProvisioningParametersInput {
             "DescribeStackProvisioningParameters",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8821,16 +7985,14 @@ pub mod describe_stacks_input {
         ///
         /// To override the contents of this collection use [`set_stack_ids`](Self::set_stack_ids).
         ///
-        /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter,
-        /// <code>DescribeStacks</code> returns a description of every stack.</p>
+        /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <code>DescribeStacks</code> returns a description of every stack.</p>
         pub fn stack_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stack_ids.unwrap_or_default();
             v.push(input.into());
             self.stack_ids = Some(v);
             self
         }
-        /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter,
-        /// <code>DescribeStacks</code> returns a description of every stack.</p>
+        /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <code>DescribeStacks</code> returns a description of every stack.</p>
         pub fn set_stack_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8854,7 +8016,7 @@ pub mod describe_stacks_input {
 #[doc(hidden)]
 pub type DescribeStacksInputOperationOutputAlias = crate::operation::DescribeStacks;
 #[doc(hidden)]
-pub type DescribeStacksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeStacksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeStacksInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStacks`](crate::operation::DescribeStacks)>
     #[allow(clippy::let_and_return)]
@@ -8865,7 +8027,7 @@ impl DescribeStacksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeStacks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8950,7 +8112,7 @@ impl DescribeStacksInput {
             "DescribeStacks",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9008,7 +8170,7 @@ pub mod describe_stack_summary_input {
 #[doc(hidden)]
 pub type DescribeStackSummaryInputOperationOutputAlias = crate::operation::DescribeStackSummary;
 #[doc(hidden)]
-pub type DescribeStackSummaryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeStackSummaryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeStackSummaryInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStackSummary`](crate::operation::DescribeStackSummary)>
     #[allow(clippy::let_and_return)]
@@ -9019,7 +8181,7 @@ impl DescribeStackSummaryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeStackSummary,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9106,7 +8268,7 @@ impl DescribeStackSummaryInput {
             "DescribeStackSummary",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9174,7 +8336,8 @@ pub mod describe_time_based_auto_scaling_input {
 pub type DescribeTimeBasedAutoScalingInputOperationOutputAlias =
     crate::operation::DescribeTimeBasedAutoScaling;
 #[doc(hidden)]
-pub type DescribeTimeBasedAutoScalingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTimeBasedAutoScalingInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTimeBasedAutoScalingInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTimeBasedAutoScaling`](crate::operation::DescribeTimeBasedAutoScaling)>
     #[allow(clippy::let_and_return)]
@@ -9185,7 +8348,7 @@ impl DescribeTimeBasedAutoScalingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTimeBasedAutoScaling,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9271,7 +8434,7 @@ impl DescribeTimeBasedAutoScalingInput {
             "DescribeTimeBasedAutoScaling",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9338,7 +8501,7 @@ pub mod describe_user_profiles_input {
 #[doc(hidden)]
 pub type DescribeUserProfilesInputOperationOutputAlias = crate::operation::DescribeUserProfiles;
 #[doc(hidden)]
-pub type DescribeUserProfilesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeUserProfilesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeUserProfilesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeUserProfiles`](crate::operation::DescribeUserProfiles)>
     #[allow(clippy::let_and_return)]
@@ -9349,7 +8512,7 @@ impl DescribeUserProfilesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeUserProfiles,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9436,7 +8599,7 @@ impl DescribeUserProfilesInput {
             "DescribeUserProfiles",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9471,14 +8634,12 @@ pub mod describe_volumes_input {
         pub(crate) volume_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions
-        /// of the volumes associated with the specified instance.</p>
+        /// <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified instance.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_id = Some(input.into());
             self
         }
-        /// <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions
-        /// of the volumes associated with the specified instance.</p>
+        /// <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified instance.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -9493,14 +8654,12 @@ pub mod describe_volumes_input {
             self.stack_id = input;
             self
         }
-        /// <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code> returns
-        /// descriptions of the volumes associated with the specified RAID array.</p>
+        /// <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified RAID array.</p>
         pub fn raid_array_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.raid_array_id = Some(input.into());
             self
         }
-        /// <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code> returns
-        /// descriptions of the volumes associated with the specified RAID array.</p>
+        /// <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified RAID array.</p>
         pub fn set_raid_array_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9512,18 +8671,14 @@ pub mod describe_volumes_input {
         ///
         /// To override the contents of this collection use [`set_volume_ids`](Self::set_volume_ids).
         ///
-        /// <p>Am array of volume IDs. If you use this parameter, <code>DescribeVolumes</code> returns
-        /// descriptions of the specified volumes. Otherwise, it returns a description of every
-        /// volume.</p>
+        /// <p>Am array of volume IDs. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the specified volumes. Otherwise, it returns a description of every volume.</p>
         pub fn volume_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.volume_ids.unwrap_or_default();
             v.push(input.into());
             self.volume_ids = Some(v);
             self
         }
-        /// <p>Am array of volume IDs. If you use this parameter, <code>DescribeVolumes</code> returns
-        /// descriptions of the specified volumes. Otherwise, it returns a description of every
-        /// volume.</p>
+        /// <p>Am array of volume IDs. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the specified volumes. Otherwise, it returns a description of every volume.</p>
         pub fn set_volume_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9550,7 +8705,7 @@ pub mod describe_volumes_input {
 #[doc(hidden)]
 pub type DescribeVolumesInputOperationOutputAlias = crate::operation::DescribeVolumes;
 #[doc(hidden)]
-pub type DescribeVolumesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeVolumesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeVolumesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeVolumes`](crate::operation::DescribeVolumes)>
     #[allow(clippy::let_and_return)]
@@ -9561,7 +8716,7 @@ impl DescribeVolumesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeVolumes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9646,7 +8801,7 @@ impl DescribeVolumesInput {
             "DescribeVolumes",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9720,7 +8875,7 @@ pub mod detach_elastic_load_balancer_input {
 pub type DetachElasticLoadBalancerInputOperationOutputAlias =
     crate::operation::DetachElasticLoadBalancer;
 #[doc(hidden)]
-pub type DetachElasticLoadBalancerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetachElasticLoadBalancerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetachElasticLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`DetachElasticLoadBalancer`](crate::operation::DetachElasticLoadBalancer)>
     #[allow(clippy::let_and_return)]
@@ -9731,7 +8886,7 @@ impl DetachElasticLoadBalancerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetachElasticLoadBalancer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9818,7 +8973,7 @@ impl DetachElasticLoadBalancerInput {
             "DetachElasticLoadBalancer",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9876,7 +9031,7 @@ pub mod disassociate_elastic_ip_input {
 #[doc(hidden)]
 pub type DisassociateElasticIpInputOperationOutputAlias = crate::operation::DisassociateElasticIp;
 #[doc(hidden)]
-pub type DisassociateElasticIpInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateElasticIpInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateElasticIpInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateElasticIp`](crate::operation::DisassociateElasticIp)>
     #[allow(clippy::let_and_return)]
@@ -9887,7 +9042,7 @@ impl DisassociateElasticIpInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateElasticIp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9974,7 +9129,7 @@ impl DisassociateElasticIpInput {
             "DisassociateElasticIp",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10032,7 +9187,7 @@ pub mod get_hostname_suggestion_input {
 #[doc(hidden)]
 pub type GetHostnameSuggestionInputOperationOutputAlias = crate::operation::GetHostnameSuggestion;
 #[doc(hidden)]
-pub type GetHostnameSuggestionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetHostnameSuggestionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetHostnameSuggestionInput {
     /// Consumes the builder and constructs an Operation<[`GetHostnameSuggestion`](crate::operation::GetHostnameSuggestion)>
     #[allow(clippy::let_and_return)]
@@ -10043,7 +9198,7 @@ impl GetHostnameSuggestionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetHostnameSuggestion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10130,7 +9285,7 @@ impl GetHostnameSuggestionInput {
             "GetHostnameSuggestion",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10200,7 +9355,7 @@ pub mod grant_access_input {
 #[doc(hidden)]
 pub type GrantAccessInputOperationOutputAlias = crate::operation::GrantAccess;
 #[doc(hidden)]
-pub type GrantAccessInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GrantAccessInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GrantAccessInput {
     /// Consumes the builder and constructs an Operation<[`GrantAccess`](crate::operation::GrantAccess)>
     #[allow(clippy::let_and_return)]
@@ -10211,7 +9366,7 @@ impl GrantAccessInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GrantAccess,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10295,7 +9450,7 @@ impl GrantAccessInput {
             "GrantAccess",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10339,26 +9494,22 @@ pub mod list_tags_input {
             self.resource_arn = input;
             self
         }
-        /// <p>Do not use. A validation exception occurs if you add a <code>MaxResults</code> parameter to a <code>ListTagsRequest</code> call.
-        /// </p>
+        /// <p>Do not use. A validation exception occurs if you add a <code>MaxResults</code> parameter to a <code>ListTagsRequest</code> call. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Do not use. A validation exception occurs if you add a <code>MaxResults</code> parameter to a <code>ListTagsRequest</code> call.
-        /// </p>
+        /// <p>Do not use. A validation exception occurs if you add a <code>MaxResults</code> parameter to a <code>ListTagsRequest</code> call. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>Do not use. A validation exception occurs if you add a <code>NextToken</code> parameter to a <code>ListTagsRequest</code> call.
-        /// </p>
+        /// <p>Do not use. A validation exception occurs if you add a <code>NextToken</code> parameter to a <code>ListTagsRequest</code> call. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Do not use. A validation exception occurs if you add a <code>NextToken</code> parameter to a <code>ListTagsRequest</code> call.
-        /// </p>
+        /// <p>Do not use. A validation exception occurs if you add a <code>NextToken</code> parameter to a <code>ListTagsRequest</code> call. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -10379,7 +9530,7 @@ pub mod list_tags_input {
 #[doc(hidden)]
 pub type ListTagsInputOperationOutputAlias = crate::operation::ListTags;
 #[doc(hidden)]
-pub type ListTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsInput {
     /// Consumes the builder and constructs an Operation<[`ListTags`](crate::operation::ListTags)>
     #[allow(clippy::let_and_return)]
@@ -10390,7 +9541,7 @@ impl ListTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10471,7 +9622,7 @@ impl ListTagsInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "ListTags", "opsworks",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10529,7 +9680,7 @@ pub mod reboot_instance_input {
 #[doc(hidden)]
 pub type RebootInstanceInputOperationOutputAlias = crate::operation::RebootInstance;
 #[doc(hidden)]
-pub type RebootInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RebootInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RebootInstanceInput {
     /// Consumes the builder and constructs an Operation<[`RebootInstance`](crate::operation::RebootInstance)>
     #[allow(clippy::let_and_return)]
@@ -10540,7 +9691,7 @@ impl RebootInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RebootInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10625,7 +9776,7 @@ impl RebootInstanceInput {
             "RebootInstance",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10698,7 +9849,7 @@ pub mod register_ecs_cluster_input {
 #[doc(hidden)]
 pub type RegisterEcsClusterInputOperationOutputAlias = crate::operation::RegisterEcsCluster;
 #[doc(hidden)]
-pub type RegisterEcsClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterEcsClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterEcsClusterInput {
     /// Consumes the builder and constructs an Operation<[`RegisterEcsCluster`](crate::operation::RegisterEcsCluster)>
     #[allow(clippy::let_and_return)]
@@ -10709,7 +9860,7 @@ impl RegisterEcsClusterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterEcsCluster,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10794,7 +9945,7 @@ impl RegisterEcsClusterInput {
             "RegisterEcsCluster",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10864,7 +10015,7 @@ pub mod register_elastic_ip_input {
 #[doc(hidden)]
 pub type RegisterElasticIpInputOperationOutputAlias = crate::operation::RegisterElasticIp;
 #[doc(hidden)]
-pub type RegisterElasticIpInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterElasticIpInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterElasticIpInput {
     /// Consumes the builder and constructs an Operation<[`RegisterElasticIp`](crate::operation::RegisterElasticIp)>
     #[allow(clippy::let_and_return)]
@@ -10875,7 +10026,7 @@ impl RegisterElasticIpInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterElasticIp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10960,7 +10111,7 @@ impl RegisterElasticIpInput {
             "RegisterElasticIp",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11099,7 +10250,7 @@ pub mod register_instance_input {
 #[doc(hidden)]
 pub type RegisterInstanceInputOperationOutputAlias = crate::operation::RegisterInstance;
 #[doc(hidden)]
-pub type RegisterInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterInstanceInput {
     /// Consumes the builder and constructs an Operation<[`RegisterInstance`](crate::operation::RegisterInstance)>
     #[allow(clippy::let_and_return)]
@@ -11110,7 +10261,7 @@ impl RegisterInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11195,7 +10346,7 @@ impl RegisterInstanceInput {
             "RegisterInstance",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11292,7 +10443,7 @@ pub mod register_rds_db_instance_input {
 #[doc(hidden)]
 pub type RegisterRdsDbInstanceInputOperationOutputAlias = crate::operation::RegisterRdsDbInstance;
 #[doc(hidden)]
-pub type RegisterRdsDbInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterRdsDbInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterRdsDbInstanceInput {
     /// Consumes the builder and constructs an Operation<[`RegisterRdsDbInstance`](crate::operation::RegisterRdsDbInstance)>
     #[allow(clippy::let_and_return)]
@@ -11303,7 +10454,7 @@ impl RegisterRdsDbInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterRdsDbInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11390,7 +10541,7 @@ impl RegisterRdsDbInstanceInput {
             "RegisterRdsDbInstance",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11463,7 +10614,7 @@ pub mod register_volume_input {
 #[doc(hidden)]
 pub type RegisterVolumeInputOperationOutputAlias = crate::operation::RegisterVolume;
 #[doc(hidden)]
-pub type RegisterVolumeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterVolumeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterVolumeInput {
     /// Consumes the builder and constructs an Operation<[`RegisterVolume`](crate::operation::RegisterVolume)>
     #[allow(clippy::let_and_return)]
@@ -11474,7 +10625,7 @@ impl RegisterVolumeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterVolume,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11559,7 +10710,7 @@ impl RegisterVolumeInput {
             "RegisterVolume",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11614,16 +10765,12 @@ pub mod set_load_based_auto_scaling_input {
             self.enable = input;
             self
         }
-        /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If
-        /// the load exceeds these thresholds for a specified amount of time, AWS OpsWorks Stacks starts a specified
-        /// number of instances.</p>
+        /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If the load exceeds these thresholds for a specified amount of time, AWS OpsWorks Stacks starts a specified number of instances.</p>
         pub fn up_scaling(mut self, input: crate::model::AutoScalingThresholds) -> Self {
             self.up_scaling = Some(input);
             self
         }
-        /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If
-        /// the load exceeds these thresholds for a specified amount of time, AWS OpsWorks Stacks starts a specified
-        /// number of instances.</p>
+        /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If the load exceeds these thresholds for a specified amount of time, AWS OpsWorks Stacks starts a specified number of instances.</p>
         pub fn set_up_scaling(
             mut self,
             input: std::option::Option<crate::model::AutoScalingThresholds>,
@@ -11631,16 +10778,12 @@ pub mod set_load_based_auto_scaling_input {
             self.up_scaling = input;
             self
         }
-        /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If
-        /// the load falls below these thresholds for a specified amount of time, AWS OpsWorks Stacks stops a specified
-        /// number of instances.</p>
+        /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If the load falls below these thresholds for a specified amount of time, AWS OpsWorks Stacks stops a specified number of instances.</p>
         pub fn down_scaling(mut self, input: crate::model::AutoScalingThresholds) -> Self {
             self.down_scaling = Some(input);
             self
         }
-        /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If
-        /// the load falls below these thresholds for a specified amount of time, AWS OpsWorks Stacks stops a specified
-        /// number of instances.</p>
+        /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If the load falls below these thresholds for a specified amount of time, AWS OpsWorks Stacks stops a specified number of instances.</p>
         pub fn set_down_scaling(
             mut self,
             input: std::option::Option<crate::model::AutoScalingThresholds>,
@@ -11668,7 +10811,7 @@ pub mod set_load_based_auto_scaling_input {
 pub type SetLoadBasedAutoScalingInputOperationOutputAlias =
     crate::operation::SetLoadBasedAutoScaling;
 #[doc(hidden)]
-pub type SetLoadBasedAutoScalingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetLoadBasedAutoScalingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetLoadBasedAutoScalingInput {
     /// Consumes the builder and constructs an Operation<[`SetLoadBasedAutoScaling`](crate::operation::SetLoadBasedAutoScaling)>
     #[allow(clippy::let_and_return)]
@@ -11679,7 +10822,7 @@ impl SetLoadBasedAutoScalingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetLoadBasedAutoScaling,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11766,7 +10909,7 @@ impl SetLoadBasedAutoScalingInput {
             "SetLoadBasedAutoScaling",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11844,31 +10987,11 @@ pub mod set_permission_input {
         }
         /// <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>deny</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>show</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deploy</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>manage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>iam_only</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>deny</code> </p> </li>
+        /// <li> <p> <code>show</code> </p> </li>
+        /// <li> <p> <code>deploy</code> </p> </li>
+        /// <li> <p> <code>manage</code> </p> </li>
+        /// <li> <p> <code>iam_only</code> </p> </li>
         /// </ul>
         /// <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
         pub fn level(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11877,31 +11000,11 @@ pub mod set_permission_input {
         }
         /// <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>deny</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>show</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deploy</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>manage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>iam_only</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>deny</code> </p> </li>
+        /// <li> <p> <code>show</code> </p> </li>
+        /// <li> <p> <code>deploy</code> </p> </li>
+        /// <li> <p> <code>manage</code> </p> </li>
+        /// <li> <p> <code>iam_only</code> </p> </li>
         /// </ul>
         /// <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
         pub fn set_level(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -11928,7 +11031,7 @@ pub mod set_permission_input {
 #[doc(hidden)]
 pub type SetPermissionInputOperationOutputAlias = crate::operation::SetPermission;
 #[doc(hidden)]
-pub type SetPermissionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetPermissionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetPermissionInput {
     /// Consumes the builder and constructs an Operation<[`SetPermission`](crate::operation::SetPermission)>
     #[allow(clippy::let_and_return)]
@@ -11939,7 +11042,7 @@ impl SetPermissionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetPermission,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12023,7 +11126,7 @@ impl SetPermissionInput {
             "SetPermission",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12101,7 +11204,7 @@ pub mod set_time_based_auto_scaling_input {
 pub type SetTimeBasedAutoScalingInputOperationOutputAlias =
     crate::operation::SetTimeBasedAutoScaling;
 #[doc(hidden)]
-pub type SetTimeBasedAutoScalingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetTimeBasedAutoScalingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetTimeBasedAutoScalingInput {
     /// Consumes the builder and constructs an Operation<[`SetTimeBasedAutoScaling`](crate::operation::SetTimeBasedAutoScaling)>
     #[allow(clippy::let_and_return)]
@@ -12112,7 +11215,7 @@ impl SetTimeBasedAutoScalingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetTimeBasedAutoScaling,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12199,7 +11302,7 @@ impl SetTimeBasedAutoScalingInput {
             "SetTimeBasedAutoScaling",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12257,7 +11360,7 @@ pub mod start_instance_input {
 #[doc(hidden)]
 pub type StartInstanceInputOperationOutputAlias = crate::operation::StartInstance;
 #[doc(hidden)]
-pub type StartInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartInstanceInput {
     /// Consumes the builder and constructs an Operation<[`StartInstance`](crate::operation::StartInstance)>
     #[allow(clippy::let_and_return)]
@@ -12268,7 +11371,7 @@ impl StartInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12352,7 +11455,7 @@ impl StartInstanceInput {
             "StartInstance",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12410,7 +11513,7 @@ pub mod start_stack_input {
 #[doc(hidden)]
 pub type StartStackInputOperationOutputAlias = crate::operation::StartStack;
 #[doc(hidden)]
-pub type StartStackInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartStackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartStackInput {
     /// Consumes the builder and constructs an Operation<[`StartStack`](crate::operation::StartStack)>
     #[allow(clippy::let_and_return)]
@@ -12421,7 +11524,7 @@ impl StartStackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartStack,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12505,7 +11608,7 @@ impl StartStackInput {
             "StartStack",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12548,16 +11651,12 @@ pub mod stop_instance_input {
             self.instance_id = input;
             self
         }
-        /// <p>Specifies whether to force an instance to stop. If the instance's root device type is <code>ebs</code>, or EBS-backed,
-        /// adding the <code>Force</code> parameter to the <code>StopInstances</code> API call disassociates the AWS OpsWorks Stacks instance from EC2, and forces deletion of <i>only</i> the OpsWorks Stacks instance.
-        /// You must also delete the formerly-associated instance in EC2 after troubleshooting and replacing the AWS OpsWorks Stacks instance with a new one.</p>
+        /// <p>Specifies whether to force an instance to stop. If the instance's root device type is <code>ebs</code>, or EBS-backed, adding the <code>Force</code> parameter to the <code>StopInstances</code> API call disassociates the AWS OpsWorks Stacks instance from EC2, and forces deletion of <i>only</i> the OpsWorks Stacks instance. You must also delete the formerly-associated instance in EC2 after troubleshooting and replacing the AWS OpsWorks Stacks instance with a new one.</p>
         pub fn force(mut self, input: bool) -> Self {
             self.force = Some(input);
             self
         }
-        /// <p>Specifies whether to force an instance to stop. If the instance's root device type is <code>ebs</code>, or EBS-backed,
-        /// adding the <code>Force</code> parameter to the <code>StopInstances</code> API call disassociates the AWS OpsWorks Stacks instance from EC2, and forces deletion of <i>only</i> the OpsWorks Stacks instance.
-        /// You must also delete the formerly-associated instance in EC2 after troubleshooting and replacing the AWS OpsWorks Stacks instance with a new one.</p>
+        /// <p>Specifies whether to force an instance to stop. If the instance's root device type is <code>ebs</code>, or EBS-backed, adding the <code>Force</code> parameter to the <code>StopInstances</code> API call disassociates the AWS OpsWorks Stacks instance from EC2, and forces deletion of <i>only</i> the OpsWorks Stacks instance. You must also delete the formerly-associated instance in EC2 after troubleshooting and replacing the AWS OpsWorks Stacks instance with a new one.</p>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.force = input;
             self
@@ -12579,7 +11678,7 @@ pub mod stop_instance_input {
 #[doc(hidden)]
 pub type StopInstanceInputOperationOutputAlias = crate::operation::StopInstance;
 #[doc(hidden)]
-pub type StopInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopInstanceInput {
     /// Consumes the builder and constructs an Operation<[`StopInstance`](crate::operation::StopInstance)>
     #[allow(clippy::let_and_return)]
@@ -12590,7 +11689,7 @@ impl StopInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12674,7 +11773,7 @@ impl StopInstanceInput {
             "StopInstance",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12730,7 +11829,7 @@ pub mod stop_stack_input {
 #[doc(hidden)]
 pub type StopStackInputOperationOutputAlias = crate::operation::StopStack;
 #[doc(hidden)]
-pub type StopStackInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopStackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopStackInput {
     /// Consumes the builder and constructs an Operation<[`StopStack`](crate::operation::StopStack)>
     #[allow(clippy::let_and_return)]
@@ -12741,7 +11840,7 @@ impl StopStackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopStack,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12823,7 +11922,7 @@ impl StopStackInput {
                     "StopStack",
                     "opsworks",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12874,23 +11973,11 @@ pub mod tag_resource_input {
         ///
         /// <p>A map that contains tag keys and tag values that are attached to a stack or layer.</p>
         /// <ul>
-        /// <li>
-        /// <p>The key cannot be empty.</p>
-        /// </li>
-        /// <li>
-        /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p>
-        /// </li>
-        /// <li>
-        /// <p>A maximum of 40 tags is allowed for any resource.</p>
-        /// </li>
+        /// <li> <p>The key cannot be empty.</p> </li>
+        /// <li> <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+        /// <li> <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+        /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
+        /// <li> <p>A maximum of 40 tags is allowed for any resource.</p> </li>
         /// </ul>
         pub fn tags(
             mut self,
@@ -12904,23 +11991,11 @@ pub mod tag_resource_input {
         }
         /// <p>A map that contains tag keys and tag values that are attached to a stack or layer.</p>
         /// <ul>
-        /// <li>
-        /// <p>The key cannot be empty.</p>
-        /// </li>
-        /// <li>
-        /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p>
-        /// </li>
-        /// <li>
-        /// <p>A maximum of 40 tags is allowed for any resource.</p>
-        /// </li>
+        /// <li> <p>The key cannot be empty.</p> </li>
+        /// <li> <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+        /// <li> <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+        /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
+        /// <li> <p>A maximum of 40 tags is allowed for any resource.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -12948,7 +12023,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -12959,7 +12034,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13043,7 +12118,7 @@ impl TagResourceInput {
             "TagResource",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13101,7 +12176,7 @@ pub mod unassign_instance_input {
 #[doc(hidden)]
 pub type UnassignInstanceInputOperationOutputAlias = crate::operation::UnassignInstance;
 #[doc(hidden)]
-pub type UnassignInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UnassignInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UnassignInstanceInput {
     /// Consumes the builder and constructs an Operation<[`UnassignInstance`](crate::operation::UnassignInstance)>
     #[allow(clippy::let_and_return)]
@@ -13112,7 +12187,7 @@ impl UnassignInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UnassignInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13197,7 +12272,7 @@ impl UnassignInstanceInput {
             "UnassignInstance",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13255,7 +12330,7 @@ pub mod unassign_volume_input {
 #[doc(hidden)]
 pub type UnassignVolumeInputOperationOutputAlias = crate::operation::UnassignVolume;
 #[doc(hidden)]
-pub type UnassignVolumeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UnassignVolumeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UnassignVolumeInput {
     /// Consumes the builder and constructs an Operation<[`UnassignVolume`](crate::operation::UnassignVolume)>
     #[allow(clippy::let_and_return)]
@@ -13266,7 +12341,7 @@ impl UnassignVolumeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UnassignVolume,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13351,7 +12426,7 @@ impl UnassignVolumeInput {
             "UnassignVolume",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13430,7 +12505,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -13441,7 +12516,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13525,7 +12600,7 @@ impl UntagResourceInput {
             "UntagResource",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13605,9 +12680,9 @@ pub mod update_app_input {
         /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
         ///
         /// <p>The app's data sources.</p>
-        pub fn data_sources(mut self, input: impl Into<crate::model::DataSource>) -> Self {
+        pub fn data_sources(mut self, input: crate::model::DataSource) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_sources = Some(v);
             self
         }
@@ -13643,18 +12718,14 @@ pub mod update_app_input {
         ///
         /// To override the contents of this collection use [`set_domains`](Self::set_domains).
         ///
-        /// <p>The app's virtual host settings, with multiple domains separated by commas. For example:
-        /// <code>'www.example.com, example.com'</code>
-        /// </p>
+        /// <p>The app's virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
         pub fn domains(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.domains.unwrap_or_default();
             v.push(input.into());
             self.domains = Some(v);
             self
         }
-        /// <p>The app's virtual host settings, with multiple domains separated by commas. For example:
-        /// <code>'www.example.com, example.com'</code>
-        /// </p>
+        /// <p>The app's virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
         pub fn set_domains(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13692,11 +12763,11 @@ pub mod update_app_input {
         /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::AppAttributesKeys>,
+            k: crate::model::AppAttributesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.attributes = Some(hash_map);
             self
         }
@@ -13714,24 +12785,18 @@ pub mod update_app_input {
         ///
         /// To override the contents of this collection use [`set_environment`](Self::set_environment).
         ///
-        /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be
-        /// associated with the app. After you deploy the app, these variables are defined on the
-        /// associated app server instances.For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
-        /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20 KB)."</p>
-        /// <note>
+        /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances.For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
+        /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20 KB)."</p> <note>
         /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
         /// </note>
-        pub fn environment(mut self, input: impl Into<crate::model::EnvironmentVariable>) -> Self {
+        pub fn environment(mut self, input: crate::model::EnvironmentVariable) -> Self {
             let mut v = self.environment.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environment = Some(v);
             self
         }
-        /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be
-        /// associated with the app. After you deploy the app, these variables are defined on the
-        /// associated app server instances.For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
-        /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20 KB)."</p>
-        /// <note>
+        /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances.For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
+        /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20 KB)."</p> <note>
         /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
         /// </note>
         pub fn set_environment(
@@ -13765,7 +12830,7 @@ pub mod update_app_input {
 #[doc(hidden)]
 pub type UpdateAppInputOperationOutputAlias = crate::operation::UpdateApp;
 #[doc(hidden)]
-pub type UpdateAppInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAppInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApp`](crate::operation::UpdateApp)>
     #[allow(clippy::let_and_return)]
@@ -13776,7 +12841,7 @@ impl UpdateAppInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13858,7 +12923,7 @@ impl UpdateAppInput {
                     "UpdateApp",
                     "opsworks",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13928,7 +12993,7 @@ pub mod update_elastic_ip_input {
 #[doc(hidden)]
 pub type UpdateElasticIpInputOperationOutputAlias = crate::operation::UpdateElasticIp;
 #[doc(hidden)]
-pub type UpdateElasticIpInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateElasticIpInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateElasticIpInput {
     /// Consumes the builder and constructs an Operation<[`UpdateElasticIp`](crate::operation::UpdateElasticIp)>
     #[allow(clippy::let_and_return)]
@@ -13939,7 +13004,7 @@ impl UpdateElasticIpInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateElasticIp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14024,7 +13089,7 @@ impl UpdateElasticIpInput {
             "UpdateElasticIp",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14096,20 +13161,12 @@ pub mod update_instance_input {
             self.layer_ids = input;
             self
         }
-        /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types,
-        /// open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>.
-        /// The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// Families and Types</a>. The parameter values that you use to specify the various types are
-        /// in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
+        /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_type = Some(input.into());
             self
         }
-        /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types,
-        /// open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>.
-        /// The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// Families and Types</a>. The parameter values that you use to specify the various types are
-        /// in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
+        /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14142,36 +13199,14 @@ pub mod update_instance_input {
         }
         /// <p>The instance's operating system, which must be set to one of the following. You cannot update an instance that is using a custom AMI.</p>
         /// <ul>
-        /// <li>
-        /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux
-        /// 2015.03</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CentOS Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Red Hat Enterprise Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-        /// </li>
+        /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+        /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+        /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+        /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+        /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
         /// </ul>
-        /// <p>For more information about supported operating systems,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-        /// <p>The default option is the current Amazon Linux version. If you set this parameter to
-        /// <code>Custom</code>, you must use the AmiId parameter to
-        /// specify the custom AMI that you want to use. For more information about supported operating
-        /// systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-        /// Custom AMIs</a>.</p>
-        /// <note>
+        /// <p>For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+        /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the AmiId parameter to specify the custom AMI that you want to use. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>
         /// <p>You can specify a different Linux operating system for the updated stack, but you cannot change from Linux to Windows or Windows to Linux.</p>
         /// </note>
         pub fn os(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14180,52 +13215,26 @@ pub mod update_instance_input {
         }
         /// <p>The instance's operating system, which must be set to one of the following. You cannot update an instance that is using a custom AMI.</p>
         /// <ul>
-        /// <li>
-        /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux
-        /// 2015.03</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CentOS Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Red Hat Enterprise Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-        /// </li>
+        /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+        /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+        /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+        /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+        /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
         /// </ul>
-        /// <p>For more information about supported operating systems,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-        /// <p>The default option is the current Amazon Linux version. If you set this parameter to
-        /// <code>Custom</code>, you must use the AmiId parameter to
-        /// specify the custom AMI that you want to use. For more information about supported operating
-        /// systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-        /// Custom AMIs</a>.</p>
-        /// <note>
+        /// <p>For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+        /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the AmiId parameter to specify the custom AMI that you want to use. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>
         /// <p>You can specify a different Linux operating system for the updated stack, but you cannot change from Linux to Windows or Windows to Linux.</p>
         /// </note>
         pub fn set_os(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.os = input;
             self
         }
-        /// <p>The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI ID that the instance is already using.
-        /// You cannot apply a new AMI to an instance by running UpdateInstance. UpdateInstance does not work on instances that are using custom AMIs.
-        /// </p>
+        /// <p>The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI ID that the instance is already using. You cannot apply a new AMI to an instance by running UpdateInstance. UpdateInstance does not work on instances that are using custom AMIs. </p>
         pub fn ami_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ami_id = Some(input.into());
             self
         }
-        /// <p>The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI ID that the instance is already using.
-        /// You cannot apply a new AMI to an instance by running UpdateInstance. UpdateInstance does not work on instances that are using custom AMIs.
-        /// </p>
+        /// <p>The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI ID that the instance is already using. You cannot apply a new AMI to an instance by running UpdateInstance. UpdateInstance does not work on instances that are using custom AMIs. </p>
         pub fn set_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ami_id = input;
             self
@@ -14240,16 +13249,12 @@ pub mod update_instance_input {
             self.ssh_key_name = input;
             self
         }
-        /// <p>The instance architecture. Instance types do not necessarily support both architectures. For
-        /// a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// Families and Types</a>.</p>
+        /// <p>The instance architecture. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
         pub fn architecture(mut self, input: crate::model::Architecture) -> Self {
             self.architecture = Some(input);
             self
         }
-        /// <p>The instance architecture. Instance types do not necessarily support both architectures. For
-        /// a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// Families and Types</a>.</p>
+        /// <p>The instance architecture. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
         pub fn set_architecture(
             mut self,
             input: std::option::Option<crate::model::Architecture>,
@@ -14257,29 +13262,15 @@ pub mod update_instance_input {
             self.architecture = input;
             self
         }
-        /// <p>Whether to install operating system and package updates when the instance boots. The default
-        /// value is <code>true</code>. To control when updates are installed, set this value to
-        /// <code>false</code>. You must then update your instances manually by using
-        /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
-        /// by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-        /// instances. </p>
-        /// <note>
-        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your
-        /// instances have the latest security updates.</p>
+        /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
         /// </note>
         pub fn install_updates_on_boot(mut self, input: bool) -> Self {
             self.install_updates_on_boot = Some(input);
             self
         }
-        /// <p>Whether to install operating system and package updates when the instance boots. The default
-        /// value is <code>true</code>. To control when updates are installed, set this value to
-        /// <code>false</code>. You must then update your instances manually by using
-        /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
-        /// by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-        /// instances. </p>
-        /// <note>
-        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your
-        /// instances have the latest security updates.</p>
+        /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
         /// </note>
         pub fn set_install_updates_on_boot(mut self, input: std::option::Option<bool>) -> Self {
             self.install_updates_on_boot = input;
@@ -14297,22 +13288,10 @@ pub mod update_instance_input {
         }
         /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INHERIT</code> - Use the stack's default agent version setting.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>version_number</i> - Use the specified agent version.
-        /// This value overrides the stack's default setting.
-        /// To update the agent version, you must edit the instance configuration and specify a
-        /// new version.
-        /// AWS OpsWorks Stacks then automatically installs that version on the instance.</p>
-        /// </li>
+        /// <li> <p> <code>INHERIT</code> - Use the stack's default agent version setting.</p> </li>
+        /// <li> <p> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, you must edit the instance configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the instance.</p> </li>
         /// </ul>
-        /// <p>The default setting is <code>INHERIT</code>. To specify an agent version,
-        /// you must use the complete version number, not the abbreviated number shown on the console.
-        /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.</p>
+        /// <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>.</p>
         /// <p>AgentVersion cannot be set to Chef 12.2.</p>
         pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.agent_version = Some(input.into());
@@ -14320,22 +13299,10 @@ pub mod update_instance_input {
         }
         /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INHERIT</code> - Use the stack's default agent version setting.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>version_number</i> - Use the specified agent version.
-        /// This value overrides the stack's default setting.
-        /// To update the agent version, you must edit the instance configuration and specify a
-        /// new version.
-        /// AWS OpsWorks Stacks then automatically installs that version on the instance.</p>
-        /// </li>
+        /// <li> <p> <code>INHERIT</code> - Use the stack's default agent version setting.</p> </li>
+        /// <li> <p> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, you must edit the instance configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the instance.</p> </li>
         /// </ul>
-        /// <p>The default setting is <code>INHERIT</code>. To specify an agent version,
-        /// you must use the complete version number, not the abbreviated number shown on the console.
-        /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.</p>
+        /// <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>.</p>
         /// <p>AgentVersion cannot be set to Chef 12.2.</p>
         pub fn set_agent_version(
             mut self,
@@ -14371,7 +13338,7 @@ pub mod update_instance_input {
 #[doc(hidden)]
 pub type UpdateInstanceInputOperationOutputAlias = crate::operation::UpdateInstance;
 #[doc(hidden)]
-pub type UpdateInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateInstanceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateInstance`](crate::operation::UpdateInstance)>
     #[allow(clippy::let_and_return)]
@@ -14382,7 +13349,7 @@ impl UpdateInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14467,7 +13434,7 @@ impl UpdateInstanceInput {
             "UpdateInstance",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14542,15 +13509,13 @@ pub mod update_layer_input {
             self
         }
         /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.</p>
-        /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>
-        /// </p>
+        /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a> </p>
         pub fn shortname(mut self, input: impl Into<std::string::String>) -> Self {
             self.shortname = Some(input.into());
             self
         }
         /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.</p>
-        /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>
-        /// </p>
+        /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a> </p>
         pub fn set_shortname(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.shortname = input;
             self
@@ -14562,11 +13527,11 @@ pub mod update_layer_input {
         /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::LayerAttributesKeys>,
+            k: crate::model::LayerAttributesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.attributes = Some(hash_map);
             self
         }
@@ -14580,7 +13545,7 @@ pub mod update_layer_input {
             self.attributes = input;
             self
         }
-        /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <a>CloudWatchLogsLogStream</a>.</p>
+        /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
         pub fn cloud_watch_logs_configuration(
             mut self,
             input: crate::model::CloudWatchLogsConfiguration,
@@ -14588,7 +13553,7 @@ pub mod update_layer_input {
             self.cloud_watch_logs_configuration = Some(input);
             self
         }
-        /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <a>CloudWatchLogsLogStream</a>.</p>
+        /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
         pub fn set_cloud_watch_logs_configuration(
             mut self,
             input: std::option::Option<crate::model::CloudWatchLogsConfiguration>,
@@ -14596,9 +13561,7 @@ pub mod update_layer_input {
             self.cloud_watch_logs_configuration = input;
             self
         }
-        /// <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more
-        /// information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
+        /// <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn custom_instance_profile_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -14606,9 +13569,7 @@ pub mod update_layer_input {
             self.custom_instance_profile_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more
-        /// information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
+        /// <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn set_custom_instance_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14616,20 +13577,12 @@ pub mod update_layer_input {
             self.custom_instance_profile_arn = input;
             self
         }
-        /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes
-        /// to be installed on the layer's instances. For more information, see
-        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
-        /// Using Custom JSON</a>.
-        /// </p>
+        /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. </p>
         pub fn custom_json(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_json = Some(input.into());
             self
         }
-        /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes
-        /// to be installed on the layer's instances. For more information, see
-        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
-        /// Using Custom JSON</a>.
-        /// </p>
+        /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. </p>
         pub fn set_custom_json(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.custom_json = input;
             self
@@ -14677,12 +13630,9 @@ pub mod update_layer_input {
         /// To override the contents of this collection use [`set_volume_configurations`](Self::set_volume_configurations).
         ///
         /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
-        pub fn volume_configurations(
-            mut self,
-            input: impl Into<crate::model::VolumeConfiguration>,
-        ) -> Self {
+        pub fn volume_configurations(mut self, input: crate::model::VolumeConfiguration) -> Self {
             let mut v = self.volume_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.volume_configurations = Some(v);
             self
         }
@@ -14704,30 +13654,22 @@ pub mod update_layer_input {
             self.enable_auto_healing = input;
             self
         }
-        /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
-        /// address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-        /// a Layer</a>.</p>
+        /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
         pub fn auto_assign_elastic_ips(mut self, input: bool) -> Self {
             self.auto_assign_elastic_ips = Some(input);
             self
         }
-        /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
-        /// address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-        /// a Layer</a>.</p>
+        /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
         pub fn set_auto_assign_elastic_ips(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_assign_elastic_ips = input;
             self
         }
-        /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to
-        /// the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-        /// a Layer</a>.</p>
+        /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
         pub fn auto_assign_public_ips(mut self, input: bool) -> Self {
             self.auto_assign_public_ips = Some(input);
             self
         }
-        /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to
-        /// the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-        /// a Layer</a>.</p>
+        /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
         pub fn set_auto_assign_public_ips(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_assign_public_ips = input;
             self
@@ -14745,29 +13687,15 @@ pub mod update_layer_input {
             self.custom_recipes = input;
             self
         }
-        /// <p>Whether to install operating system and package updates when the instance boots. The default
-        /// value is <code>true</code>. To control when updates are installed, set this value to
-        /// <code>false</code>. You must then update your instances manually by using
-        /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
-        /// manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-        /// instances. </p>
-        /// <note>
-        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your
-        /// instances have the latest security updates.</p>
+        /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
         /// </note>
         pub fn install_updates_on_boot(mut self, input: bool) -> Self {
             self.install_updates_on_boot = Some(input);
             self
         }
-        /// <p>Whether to install operating system and package updates when the instance boots. The default
-        /// value is <code>true</code>. To control when updates are installed, set this value to
-        /// <code>false</code>. You must then update your instances manually by using
-        /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
-        /// manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-        /// instances. </p>
-        /// <note>
-        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your
-        /// instances have the latest security updates.</p>
+        /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
         /// </note>
         pub fn set_install_updates_on_boot(mut self, input: std::option::Option<bool>) -> Self {
             self.install_updates_on_boot = input;
@@ -14831,7 +13759,7 @@ pub mod update_layer_input {
 #[doc(hidden)]
 pub type UpdateLayerInputOperationOutputAlias = crate::operation::UpdateLayer;
 #[doc(hidden)]
-pub type UpdateLayerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateLayerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLayerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLayer`](crate::operation::UpdateLayer)>
     #[allow(clippy::let_and_return)]
@@ -14842,7 +13770,7 @@ impl UpdateLayerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateLayer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14926,7 +13854,7 @@ impl UpdateLayerInput {
             "UpdateLayer",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14987,7 +13915,7 @@ pub mod update_my_user_profile_input {
 #[doc(hidden)]
 pub type UpdateMyUserProfileInputOperationOutputAlias = crate::operation::UpdateMyUserProfile;
 #[doc(hidden)]
-pub type UpdateMyUserProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateMyUserProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateMyUserProfileInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMyUserProfile`](crate::operation::UpdateMyUserProfile)>
     #[allow(clippy::let_and_return)]
@@ -14998,7 +13926,7 @@ impl UpdateMyUserProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateMyUserProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15085,7 +14013,7 @@ impl UpdateMyUserProfileInput {
             "UpdateMyUserProfile",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15170,7 +14098,7 @@ pub mod update_rds_db_instance_input {
 #[doc(hidden)]
 pub type UpdateRdsDbInstanceInputOperationOutputAlias = crate::operation::UpdateRdsDbInstance;
 #[doc(hidden)]
-pub type UpdateRdsDbInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateRdsDbInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRdsDbInstanceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRdsDbInstance`](crate::operation::UpdateRdsDbInstance)>
     #[allow(clippy::let_and_return)]
@@ -15181,7 +14109,7 @@ impl UpdateRdsDbInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRdsDbInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15268,7 +14196,7 @@ impl UpdateRdsDbInstanceInput {
             "UpdateRdsDbInstance",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15347,11 +14275,11 @@ pub mod update_stack_input {
         /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::StackAttributesKeys>,
+            k: crate::model::StackAttributesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.attributes = Some(hash_map);
             self
         }
@@ -15378,9 +14306,7 @@ pub mod update_stack_input {
             self.service_role_arn = input;
             self
         }
-        /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances.
-        /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
+        /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn default_instance_profile_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -15388,9 +14314,7 @@ pub mod update_stack_input {
             self.default_instance_profile_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances.
-        /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
+        /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn set_default_instance_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15400,206 +14324,66 @@ pub mod update_stack_input {
         }
         /// <p>The stack's operating system, which must be set to one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-        /// <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CentOS Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Red Hat Enterprise Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when
-        /// you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-        /// Custom AMIs</a>.</p>
-        /// </li>
+        /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+        /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+        /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+        /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+        /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+        /// <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> </li>
         /// </ul>
-        /// <p>The default option is the stack's current operating system.
-        /// For more information about supported operating systems,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+        /// <p>The default option is the stack's current operating system. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
         pub fn default_os(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_os = Some(input.into());
             self
         }
         /// <p>The stack's operating system, which must be set to one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-        /// <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CentOS Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Red Hat Enterprise Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when
-        /// you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-        /// Custom AMIs</a>.</p>
-        /// </li>
+        /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+        /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+        /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+        /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+        /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+        /// <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> </li>
         /// </ul>
-        /// <p>The default option is the stack's current operating system.
-        /// For more information about supported operating systems,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+        /// <p>The default option is the stack's current operating system. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
         pub fn set_default_os(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.default_os = input;
             self
         }
-        /// <p>The stack's new host name theme, with spaces replaced by underscores.
-        /// The theme is used to generate host names for the stack's instances.
-        /// By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the
-        /// layer's short name. The other themes are:</p>
+        /// <p>The stack's new host name theme, with spaces replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Baked_Goods</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Clouds</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Europe_Cities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fruits</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Greek_Deities_and_Titans</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Legendary_creatures_from_Japan</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Planets_and_Moons</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Roman_Deities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Scottish_Islands</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>US_Cities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Wild_Cats</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Baked_Goods</code> </p> </li>
+        /// <li> <p> <code>Clouds</code> </p> </li>
+        /// <li> <p> <code>Europe_Cities</code> </p> </li>
+        /// <li> <p> <code>Fruits</code> </p> </li>
+        /// <li> <p> <code>Greek_Deities_and_Titans</code> </p> </li>
+        /// <li> <p> <code>Legendary_creatures_from_Japan</code> </p> </li>
+        /// <li> <p> <code>Planets_and_Moons</code> </p> </li>
+        /// <li> <p> <code>Roman_Deities</code> </p> </li>
+        /// <li> <p> <code>Scottish_Islands</code> </p> </li>
+        /// <li> <p> <code>US_Cities</code> </p> </li>
+        /// <li> <p> <code>Wild_Cats</code> </p> </li>
         /// </ul>
-        /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a
-        /// host name based on the current theme.</p>
+        /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
         pub fn hostname_theme(mut self, input: impl Into<std::string::String>) -> Self {
             self.hostname_theme = Some(input.into());
             self
         }
-        /// <p>The stack's new host name theme, with spaces replaced by underscores.
-        /// The theme is used to generate host names for the stack's instances.
-        /// By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the
-        /// layer's short name. The other themes are:</p>
+        /// <p>The stack's new host name theme, with spaces replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Baked_Goods</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Clouds</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Europe_Cities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fruits</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Greek_Deities_and_Titans</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Legendary_creatures_from_Japan</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Planets_and_Moons</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Roman_Deities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Scottish_Islands</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>US_Cities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Wild_Cats</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Baked_Goods</code> </p> </li>
+        /// <li> <p> <code>Clouds</code> </p> </li>
+        /// <li> <p> <code>Europe_Cities</code> </p> </li>
+        /// <li> <p> <code>Fruits</code> </p> </li>
+        /// <li> <p> <code>Greek_Deities_and_Titans</code> </p> </li>
+        /// <li> <p> <code>Legendary_creatures_from_Japan</code> </p> </li>
+        /// <li> <p> <code>Planets_and_Moons</code> </p> </li>
+        /// <li> <p> <code>Roman_Deities</code> </p> </li>
+        /// <li> <p> <code>Scottish_Islands</code> </p> </li>
+        /// <li> <p> <code>US_Cities</code> </p> </li>
+        /// <li> <p> <code>Wild_Cats</code> </p> </li>
         /// </ul>
-        /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a
-        /// host name based on the current theme.</p>
+        /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
         pub fn set_hostname_theme(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15607,20 +14391,12 @@ pub mod update_stack_input {
             self.hostname_theme = input;
             self
         }
-        /// <p>The stack's default Availability Zone, which must be in the
-        /// stack's region. For more
-        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-        /// Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must
-        /// be in the same zone. For more information, see <a>CreateStack</a>. </p>
+        /// <p>The stack's default Availability Zone, which must be in the stack's region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see <code>CreateStack</code>. </p>
         pub fn default_availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_availability_zone = Some(input.into());
             self
         }
-        /// <p>The stack's default Availability Zone, which must be in the
-        /// stack's region. For more
-        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-        /// Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must
-        /// be in the same zone. For more information, see <a>CreateStack</a>. </p>
+        /// <p>The stack's default Availability Zone, which must be in the stack's region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see <code>CreateStack</code>. </p>
         pub fn set_default_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15628,22 +14404,12 @@ pub mod update_stack_input {
             self.default_availability_zone = input;
             self
         }
-        /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the
-        /// <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify
-        /// otherwise when you create the instance. If you also specify a value for
-        /// <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on
-        /// default values and when this parameter is required, see the <code>VpcId</code> parameter
-        /// description. </p>
+        /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description. </p>
         pub fn default_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_subnet_id = Some(input.into());
             self
         }
-        /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the
-        /// <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify
-        /// otherwise when you create the instance. If you also specify a value for
-        /// <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on
-        /// default values and when this parameter is required, see the <code>VpcId</code> parameter
-        /// description. </p>
+        /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description. </p>
         pub fn set_default_subnet_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15652,21 +14418,15 @@ pub mod update_stack_input {
             self
         }
         /// <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration JSON values or to pass data to recipes. The string should be in the following format:</p>
-        /// <p>
-        /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-        /// </p>
-        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-        /// Modify the Stack Configuration Attributes</a>.</p>
+        /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
         pub fn custom_json(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_json = Some(input.into());
             self
         }
         /// <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration JSON values or to pass data to recipes. The string should be in the following format:</p>
-        /// <p>
-        /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-        /// </p>
-        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-        /// Modify the Stack Configuration Attributes</a>.</p>
+        /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
         pub fn set_custom_json(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.custom_json = input;
             self
@@ -15687,14 +14447,12 @@ pub mod update_stack_input {
             self.configuration_manager = input;
             self
         }
-        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
-        /// Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
         pub fn chef_configuration(mut self, input: crate::model::ChefConfiguration) -> Self {
             self.chef_configuration = Some(input);
             self
         }
-        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
-        /// Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
         pub fn set_chef_configuration(
             mut self,
             input: std::option::Option<crate::model::ChefConfiguration>,
@@ -15712,14 +14470,12 @@ pub mod update_stack_input {
             self.use_custom_cookbooks = input;
             self
         }
-        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
         pub fn custom_cookbooks_source(mut self, input: crate::model::Source) -> Self {
             self.custom_cookbooks_source = Some(input);
             self
         }
-        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
         pub fn set_custom_cookbooks_source(
             mut self,
             input: std::option::Option<crate::model::Source>,
@@ -15727,26 +14483,12 @@ pub mod update_stack_input {
             self.custom_cookbooks_source = input;
             self
         }
-        /// <p>A default Amazon EC2 key-pair name. The default value is
-        /// <code>none</code>. If you specify a key-pair name,
-        /// AWS OpsWorks Stacks installs the public key on the instance and you can use the private key with an SSH
-        /// client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
-        /// Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
-        /// Access</a>. You can override this setting by specifying a different key pair, or no key
-        /// pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
-        /// create an instance</a>. </p>
+        /// <p>A default Amazon EC2 key-pair name. The default value is <code>none</code>. If you specify a key-pair name, AWS OpsWorks Stacks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>. </p>
         pub fn default_ssh_key_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_ssh_key_name = Some(input.into());
             self
         }
-        /// <p>A default Amazon EC2 key-pair name. The default value is
-        /// <code>none</code>. If you specify a key-pair name,
-        /// AWS OpsWorks Stacks installs the public key on the instance and you can use the private key with an SSH
-        /// client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
-        /// Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
-        /// Access</a>. You can override this setting by specifying a different key pair, or no key
-        /// pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
-        /// create an instance</a>. </p>
+        /// <p>A default Amazon EC2 key-pair name. The default value is <code>none</code>. If you specify a key-pair name, AWS OpsWorks Stacks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>. </p>
         pub fn set_default_ssh_key_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15754,14 +14496,12 @@ pub mod update_stack_input {
             self.default_ssh_key_name = input;
             self
         }
-        /// <p>The default root device type. This value is used by default for all instances in the stack,
-        /// but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+        /// <p>The default root device type. This value is used by default for all instances in the stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
         pub fn default_root_device_type(mut self, input: crate::model::RootDeviceType) -> Self {
             self.default_root_device_type = Some(input);
             self
         }
-        /// <p>The default root device type. This value is used by default for all instances in the stack,
-        /// but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+        /// <p>The default root device type. This value is used by default for all instances in the stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
         pub fn set_default_root_device_type(
             mut self,
             input: std::option::Option<crate::model::RootDeviceType>,
@@ -15770,41 +14510,23 @@ pub mod update_stack_input {
             self
         }
         /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
-        /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are
-        /// associated with layers by default. <code>UseOpsworksSecurityGroups</code> allows you to
-        /// provide your own custom security groups
-        /// instead of using the built-in groups. <code>UseOpsworksSecurityGroups</code> has
-        /// the following settings: </p>
+        /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are associated with layers by default. <code>UseOpsworksSecurityGroups</code> allows you to provide your own custom security groups instead of using the built-in groups. <code>UseOpsworksSecurityGroups</code> has the following settings: </p>
         /// <ul>
-        /// <li>
-        /// <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p>
-        /// </li>
-        /// <li>
-        /// <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on. Custom security groups are required only for those layers that need custom settings.</p>
-        /// </li>
+        /// <li> <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p> </li>
+        /// <li> <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on. Custom security groups are required only for those layers that need custom settings.</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
-        /// Stack</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
         pub fn use_opsworks_security_groups(mut self, input: bool) -> Self {
             self.use_opsworks_security_groups = Some(input);
             self
         }
         /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
-        /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are
-        /// associated with layers by default. <code>UseOpsworksSecurityGroups</code> allows you to
-        /// provide your own custom security groups
-        /// instead of using the built-in groups. <code>UseOpsworksSecurityGroups</code> has
-        /// the following settings: </p>
+        /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are associated with layers by default. <code>UseOpsworksSecurityGroups</code> allows you to provide your own custom security groups instead of using the built-in groups. <code>UseOpsworksSecurityGroups</code> has the following settings: </p>
         /// <ul>
-        /// <li>
-        /// <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p>
-        /// </li>
-        /// <li>
-        /// <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on. Custom security groups are required only for those layers that need custom settings.</p>
-        /// </li>
+        /// <li> <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p> </li>
+        /// <li> <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on. Custom security groups are required only for those layers that need custom settings.</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
-        /// Stack</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
         pub fn set_use_opsworks_security_groups(
             mut self,
             input: std::option::Option<bool>,
@@ -15814,20 +14536,10 @@ pub mod update_stack_input {
         }
         /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks
-        /// automatically installs new agent versions on the stack's instances as soon as
-        /// they are available.</p>
-        /// </li>
-        /// <li>
-        /// <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p>
-        /// </li>
+        /// <li> <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent versions on the stack's instances as soon as they are available.</p> </li>
+        /// <li> <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p> </li>
         /// </ul>
-        /// <p>The default setting is <code>LATEST</code>. To specify an agent version,
-        /// you must use the complete version number, not the abbreviated number shown on the console.
-        /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.
-        /// AgentVersion cannot be set to Chef 12.2.</p>
-        /// <note>
+        /// <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>
         /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
         /// </note>
         pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -15836,20 +14548,10 @@ pub mod update_stack_input {
         }
         /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks
-        /// automatically installs new agent versions on the stack's instances as soon as
-        /// they are available.</p>
-        /// </li>
-        /// <li>
-        /// <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p>
-        /// </li>
+        /// <li> <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent versions on the stack's instances as soon as they are available.</p> </li>
+        /// <li> <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p> </li>
         /// </ul>
-        /// <p>The default setting is <code>LATEST</code>. To specify an agent version,
-        /// you must use the complete version number, not the abbreviated number shown on the console.
-        /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.
-        /// AgentVersion cannot be set to Chef 12.2.</p>
-        /// <note>
+        /// <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>
         /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
         /// </note>
         pub fn set_agent_version(
@@ -15892,7 +14594,7 @@ pub mod update_stack_input {
 #[doc(hidden)]
 pub type UpdateStackInputOperationOutputAlias = crate::operation::UpdateStack;
 #[doc(hidden)]
-pub type UpdateStackInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateStackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateStackInput {
     /// Consumes the builder and constructs an Operation<[`UpdateStack`](crate::operation::UpdateStack)>
     #[allow(clippy::let_and_return)]
@@ -15903,7 +14605,7 @@ impl UpdateStackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateStack,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15987,7 +14689,7 @@ impl UpdateStackInput {
             "UpdateStack",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16032,18 +14734,12 @@ pub mod update_user_profile_input {
             self.iam_user_arn = input;
             self
         }
-        /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If
-        /// the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example,
-        /// <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH
-        /// user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
+        /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
         pub fn ssh_username(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssh_username = Some(input.into());
             self
         }
-        /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If
-        /// the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example,
-        /// <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH
-        /// user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
+        /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
         pub fn set_ssh_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ssh_username = input;
             self
@@ -16061,16 +14757,12 @@ pub mod update_user_profile_input {
             self.ssh_public_key = input;
             self
         }
-        /// <p>Whether users can specify their own SSH public key through the My Settings page. For more
-        /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
-        /// Permissions</a>.</p>
+        /// <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.</p>
         pub fn allow_self_management(mut self, input: bool) -> Self {
             self.allow_self_management = Some(input);
             self
         }
-        /// <p>Whether users can specify their own SSH public key through the My Settings page. For more
-        /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
-        /// Permissions</a>.</p>
+        /// <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.</p>
         pub fn set_allow_self_management(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_self_management = input;
             self
@@ -16094,7 +14786,7 @@ pub mod update_user_profile_input {
 #[doc(hidden)]
 pub type UpdateUserProfileInputOperationOutputAlias = crate::operation::UpdateUserProfile;
 #[doc(hidden)]
-pub type UpdateUserProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateUserProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateUserProfileInput {
     /// Consumes the builder and constructs an Operation<[`UpdateUserProfile`](crate::operation::UpdateUserProfile)>
     #[allow(clippy::let_and_return)]
@@ -16105,7 +14797,7 @@ impl UpdateUserProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateUserProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16190,7 +14882,7 @@ impl UpdateUserProfileInput {
             "UpdateUserProfile",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16272,7 +14964,7 @@ pub mod update_volume_input {
 #[doc(hidden)]
 pub type UpdateVolumeInputOperationOutputAlias = crate::operation::UpdateVolume;
 #[doc(hidden)]
-pub type UpdateVolumeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateVolumeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateVolumeInput {
     /// Consumes the builder and constructs an Operation<[`UpdateVolume`](crate::operation::UpdateVolume)>
     #[allow(clippy::let_and_return)]
@@ -16283,7 +14975,7 @@ impl UpdateVolumeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateVolume,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16367,7 +15059,7 @@ impl UpdateVolumeInput {
             "UpdateVolume",
             "opsworks",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16431,16 +15123,11 @@ impl std::fmt::Debug for UpdateVolumeInput {
 pub struct UpdateUserProfileInput {
     /// <p>The user IAM ARN. This can also be a federated user's ARN.</p>
     pub iam_user_arn: std::option::Option<std::string::String>,
-    /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If
-    /// the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example,
-    /// <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH
-    /// user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
+    /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
     pub ssh_username: std::option::Option<std::string::String>,
     /// <p>The user's new SSH public key.</p>
     pub ssh_public_key: std::option::Option<std::string::String>,
-    /// <p>Whether users can specify their own SSH public key through the My Settings page. For more
-    /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
-    /// Permissions</a>.</p>
+    /// <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.</p>
     pub allow_self_management: std::option::Option<bool>,
 }
 impl UpdateUserProfileInput {
@@ -16448,10 +15135,7 @@ impl UpdateUserProfileInput {
     pub fn iam_user_arn(&self) -> std::option::Option<&str> {
         self.iam_user_arn.as_deref()
     }
-    /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If
-    /// the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example,
-    /// <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH
-    /// user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
+    /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
     pub fn ssh_username(&self) -> std::option::Option<&str> {
         self.ssh_username.as_deref()
     }
@@ -16459,9 +15143,7 @@ impl UpdateUserProfileInput {
     pub fn ssh_public_key(&self) -> std::option::Option<&str> {
         self.ssh_public_key.as_deref()
     }
-    /// <p>Whether users can specify their own SSH public key through the My Settings page. For more
-    /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
-    /// Permissions</a>.</p>
+    /// <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.</p>
     pub fn allow_self_management(&self) -> std::option::Option<bool> {
         self.allow_self_management
     }
@@ -16491,182 +15173,69 @@ pub struct UpdateStackInput {
     >,
     /// <p>Do not use this parameter. You cannot update a stack's service role.</p>
     pub service_role_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances.
-    /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-    /// Identifiers</a>.</p>
+    /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub default_instance_profile_arn: std::option::Option<std::string::String>,
     /// <p>The stack's operating system, which must be set to one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-    /// <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CentOS Linux 7</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Red Hat Enterprise Linux 7</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-    /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when
-    /// you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-    /// Custom AMIs</a>.</p>
-    /// </li>
+    /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+    /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+    /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+    /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+    /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+    /// <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> </li>
     /// </ul>
-    /// <p>The default option is the stack's current operating system.
-    /// For more information about supported operating systems,
-    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+    /// <p>The default option is the stack's current operating system. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
     pub default_os: std::option::Option<std::string::String>,
-    /// <p>The stack's new host name theme, with spaces replaced by underscores.
-    /// The theme is used to generate host names for the stack's instances.
-    /// By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the
-    /// layer's short name. The other themes are:</p>
+    /// <p>The stack's new host name theme, with spaces replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Baked_Goods</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Clouds</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Europe_Cities</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Fruits</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Greek_Deities_and_Titans</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Legendary_creatures_from_Japan</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Planets_and_Moons</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Roman_Deities</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Scottish_Islands</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>US_Cities</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Wild_Cats</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Baked_Goods</code> </p> </li>
+    /// <li> <p> <code>Clouds</code> </p> </li>
+    /// <li> <p> <code>Europe_Cities</code> </p> </li>
+    /// <li> <p> <code>Fruits</code> </p> </li>
+    /// <li> <p> <code>Greek_Deities_and_Titans</code> </p> </li>
+    /// <li> <p> <code>Legendary_creatures_from_Japan</code> </p> </li>
+    /// <li> <p> <code>Planets_and_Moons</code> </p> </li>
+    /// <li> <p> <code>Roman_Deities</code> </p> </li>
+    /// <li> <p> <code>Scottish_Islands</code> </p> </li>
+    /// <li> <p> <code>US_Cities</code> </p> </li>
+    /// <li> <p> <code>Wild_Cats</code> </p> </li>
     /// </ul>
-    /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a
-    /// host name based on the current theme.</p>
+    /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
     pub hostname_theme: std::option::Option<std::string::String>,
-    /// <p>The stack's default Availability Zone, which must be in the
-    /// stack's region. For more
-    /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-    /// Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must
-    /// be in the same zone. For more information, see <a>CreateStack</a>. </p>
+    /// <p>The stack's default Availability Zone, which must be in the stack's region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see <code>CreateStack</code>. </p>
     pub default_availability_zone: std::option::Option<std::string::String>,
-    /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the
-    /// <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify
-    /// otherwise when you create the instance. If you also specify a value for
-    /// <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on
-    /// default values and when this parameter is required, see the <code>VpcId</code> parameter
-    /// description. </p>
+    /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description. </p>
     pub default_subnet_id: std::option::Option<std::string::String>,
     /// <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration JSON values or to pass data to recipes. The string should be in the following format:</p>
-    /// <p>
-    /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-    /// </p>
-    /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-    /// Modify the Stack Configuration Attributes</a>.</p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+    /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
     pub custom_json: std::option::Option<std::string::String>,
     /// <p>The configuration manager. When you update a stack, we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
     pub configuration_manager: std::option::Option<crate::model::StackConfigurationManager>,
-    /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
-    /// Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+    /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
     pub chef_configuration: std::option::Option<crate::model::ChefConfiguration>,
     /// <p>Whether the stack uses custom cookbooks.</p>
     pub use_custom_cookbooks: std::option::Option<bool>,
-    /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
-    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+    /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
     pub custom_cookbooks_source: std::option::Option<crate::model::Source>,
-    /// <p>A default Amazon EC2 key-pair name. The default value is
-    /// <code>none</code>. If you specify a key-pair name,
-    /// AWS OpsWorks Stacks installs the public key on the instance and you can use the private key with an SSH
-    /// client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
-    /// Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
-    /// Access</a>. You can override this setting by specifying a different key pair, or no key
-    /// pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
-    /// create an instance</a>. </p>
+    /// <p>A default Amazon EC2 key-pair name. The default value is <code>none</code>. If you specify a key-pair name, AWS OpsWorks Stacks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>. </p>
     pub default_ssh_key_name: std::option::Option<std::string::String>,
-    /// <p>The default root device type. This value is used by default for all instances in the stack,
-    /// but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    /// <p>The default root device type. This value is used by default for all instances in the stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
     pub default_root_device_type: std::option::Option<crate::model::RootDeviceType>,
     /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
-    /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are
-    /// associated with layers by default. <code>UseOpsworksSecurityGroups</code> allows you to
-    /// provide your own custom security groups
-    /// instead of using the built-in groups. <code>UseOpsworksSecurityGroups</code> has
-    /// the following settings: </p>
+    /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are associated with layers by default. <code>UseOpsworksSecurityGroups</code> allows you to provide your own custom security groups instead of using the built-in groups. <code>UseOpsworksSecurityGroups</code> has the following settings: </p>
     /// <ul>
-    /// <li>
-    /// <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p>
-    /// </li>
-    /// <li>
-    /// <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on. Custom security groups are required only for those layers that need custom settings.</p>
-    /// </li>
+    /// <li> <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p> </li>
+    /// <li> <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on. Custom security groups are required only for those layers that need custom settings.</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
-    /// Stack</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
     pub use_opsworks_security_groups: std::option::Option<bool>,
     /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks
-    /// automatically installs new agent versions on the stack's instances as soon as
-    /// they are available.</p>
-    /// </li>
-    /// <li>
-    /// <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p>
-    /// </li>
+    /// <li> <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent versions on the stack's instances as soon as they are available.</p> </li>
+    /// <li> <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p> </li>
     /// </ul>
-    /// <p>The default setting is <code>LATEST</code>. To specify an agent version,
-    /// you must use the complete version number, not the abbreviated number shown on the console.
-    /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.
-    /// AgentVersion cannot be set to Chef 12.2.</p>
-    /// <note>
+    /// <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>
     /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
     /// </note>
     pub agent_version: std::option::Option<std::string::String>,
@@ -16692,136 +15261,52 @@ impl UpdateStackInput {
     pub fn service_role_arn(&self) -> std::option::Option<&str> {
         self.service_role_arn.as_deref()
     }
-    /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances.
-    /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-    /// Identifiers</a>.</p>
+    /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn default_instance_profile_arn(&self) -> std::option::Option<&str> {
         self.default_instance_profile_arn.as_deref()
     }
     /// <p>The stack's operating system, which must be set to one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-    /// <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CentOS Linux 7</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Red Hat Enterprise Linux 7</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-    /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when
-    /// you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-    /// Custom AMIs</a>.</p>
-    /// </li>
+    /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+    /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+    /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+    /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+    /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+    /// <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> </li>
     /// </ul>
-    /// <p>The default option is the stack's current operating system.
-    /// For more information about supported operating systems,
-    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+    /// <p>The default option is the stack's current operating system. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
     pub fn default_os(&self) -> std::option::Option<&str> {
         self.default_os.as_deref()
     }
-    /// <p>The stack's new host name theme, with spaces replaced by underscores.
-    /// The theme is used to generate host names for the stack's instances.
-    /// By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the
-    /// layer's short name. The other themes are:</p>
+    /// <p>The stack's new host name theme, with spaces replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Baked_Goods</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Clouds</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Europe_Cities</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Fruits</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Greek_Deities_and_Titans</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Legendary_creatures_from_Japan</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Planets_and_Moons</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Roman_Deities</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Scottish_Islands</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>US_Cities</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Wild_Cats</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Baked_Goods</code> </p> </li>
+    /// <li> <p> <code>Clouds</code> </p> </li>
+    /// <li> <p> <code>Europe_Cities</code> </p> </li>
+    /// <li> <p> <code>Fruits</code> </p> </li>
+    /// <li> <p> <code>Greek_Deities_and_Titans</code> </p> </li>
+    /// <li> <p> <code>Legendary_creatures_from_Japan</code> </p> </li>
+    /// <li> <p> <code>Planets_and_Moons</code> </p> </li>
+    /// <li> <p> <code>Roman_Deities</code> </p> </li>
+    /// <li> <p> <code>Scottish_Islands</code> </p> </li>
+    /// <li> <p> <code>US_Cities</code> </p> </li>
+    /// <li> <p> <code>Wild_Cats</code> </p> </li>
     /// </ul>
-    /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a
-    /// host name based on the current theme.</p>
+    /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
     pub fn hostname_theme(&self) -> std::option::Option<&str> {
         self.hostname_theme.as_deref()
     }
-    /// <p>The stack's default Availability Zone, which must be in the
-    /// stack's region. For more
-    /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-    /// Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must
-    /// be in the same zone. For more information, see <a>CreateStack</a>. </p>
+    /// <p>The stack's default Availability Zone, which must be in the stack's region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see <code>CreateStack</code>. </p>
     pub fn default_availability_zone(&self) -> std::option::Option<&str> {
         self.default_availability_zone.as_deref()
     }
-    /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the
-    /// <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify
-    /// otherwise when you create the instance. If you also specify a value for
-    /// <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on
-    /// default values and when this parameter is required, see the <code>VpcId</code> parameter
-    /// description. </p>
+    /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description. </p>
     pub fn default_subnet_id(&self) -> std::option::Option<&str> {
         self.default_subnet_id.as_deref()
     }
     /// <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration JSON values or to pass data to recipes. The string should be in the following format:</p>
-    /// <p>
-    /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-    /// </p>
-    /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-    /// Modify the Stack Configuration Attributes</a>.</p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+    /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
     pub fn custom_json(&self) -> std::option::Option<&str> {
         self.custom_json.as_deref()
     }
@@ -16831,8 +15316,7 @@ impl UpdateStackInput {
     ) -> std::option::Option<&crate::model::StackConfigurationManager> {
         self.configuration_manager.as_ref()
     }
-    /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
-    /// Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+    /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
     pub fn chef_configuration(&self) -> std::option::Option<&crate::model::ChefConfiguration> {
         self.chef_configuration.as_ref()
     }
@@ -16840,62 +15324,34 @@ impl UpdateStackInput {
     pub fn use_custom_cookbooks(&self) -> std::option::Option<bool> {
         self.use_custom_cookbooks
     }
-    /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
-    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+    /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
     pub fn custom_cookbooks_source(&self) -> std::option::Option<&crate::model::Source> {
         self.custom_cookbooks_source.as_ref()
     }
-    /// <p>A default Amazon EC2 key-pair name. The default value is
-    /// <code>none</code>. If you specify a key-pair name,
-    /// AWS OpsWorks Stacks installs the public key on the instance and you can use the private key with an SSH
-    /// client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
-    /// Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
-    /// Access</a>. You can override this setting by specifying a different key pair, or no key
-    /// pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
-    /// create an instance</a>. </p>
+    /// <p>A default Amazon EC2 key-pair name. The default value is <code>none</code>. If you specify a key-pair name, AWS OpsWorks Stacks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>. </p>
     pub fn default_ssh_key_name(&self) -> std::option::Option<&str> {
         self.default_ssh_key_name.as_deref()
     }
-    /// <p>The default root device type. This value is used by default for all instances in the stack,
-    /// but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    /// <p>The default root device type. This value is used by default for all instances in the stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
     pub fn default_root_device_type(&self) -> std::option::Option<&crate::model::RootDeviceType> {
         self.default_root_device_type.as_ref()
     }
     /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
-    /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are
-    /// associated with layers by default. <code>UseOpsworksSecurityGroups</code> allows you to
-    /// provide your own custom security groups
-    /// instead of using the built-in groups. <code>UseOpsworksSecurityGroups</code> has
-    /// the following settings: </p>
+    /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are associated with layers by default. <code>UseOpsworksSecurityGroups</code> allows you to provide your own custom security groups instead of using the built-in groups. <code>UseOpsworksSecurityGroups</code> has the following settings: </p>
     /// <ul>
-    /// <li>
-    /// <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p>
-    /// </li>
-    /// <li>
-    /// <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on. Custom security groups are required only for those layers that need custom settings.</p>
-    /// </li>
+    /// <li> <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p> </li>
+    /// <li> <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on. Custom security groups are required only for those layers that need custom settings.</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
-    /// Stack</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
     pub fn use_opsworks_security_groups(&self) -> std::option::Option<bool> {
         self.use_opsworks_security_groups
     }
     /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks
-    /// automatically installs new agent versions on the stack's instances as soon as
-    /// they are available.</p>
-    /// </li>
-    /// <li>
-    /// <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p>
-    /// </li>
+    /// <li> <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent versions on the stack's instances as soon as they are available.</p> </li>
+    /// <li> <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p> </li>
     /// </ul>
-    /// <p>The default setting is <code>LATEST</code>. To specify an agent version,
-    /// you must use the complete version number, not the abbreviated number shown on the console.
-    /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.
-    /// AgentVersion cannot be set to Chef 12.2.</p>
-    /// <note>
+    /// <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>
     /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
     /// </note>
     pub fn agent_version(&self) -> std::option::Option<&str> {
@@ -16998,25 +15454,18 @@ pub struct UpdateLayerInput {
     /// <p>The layer name, which is used by the console.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.</p>
-    /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>
-    /// </p>
+    /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a> </p>
     pub shortname: std::option::Option<std::string::String>,
     /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
     pub attributes: std::option::Option<
         std::collections::HashMap<crate::model::LayerAttributesKeys, std::string::String>,
     >,
-    /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <a>CloudWatchLogsLogStream</a>.</p>
+    /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
     pub cloud_watch_logs_configuration:
         std::option::Option<crate::model::CloudWatchLogsConfiguration>,
-    /// <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more
-    /// information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-    /// Identifiers</a>.</p>
+    /// <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub custom_instance_profile_arn: std::option::Option<std::string::String>,
-    /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes
-    /// to be installed on the layer's instances. For more information, see
-    /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
-    /// Using Custom JSON</a>.
-    /// </p>
+    /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. </p>
     pub custom_json: std::option::Option<std::string::String>,
     /// <p>An array containing the layer's custom security group IDs.</p>
     pub custom_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -17027,25 +15476,14 @@ pub struct UpdateLayerInput {
         std::option::Option<std::vec::Vec<crate::model::VolumeConfiguration>>,
     /// <p>Whether to disable auto healing for the layer.</p>
     pub enable_auto_healing: std::option::Option<bool>,
-    /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
-    /// address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-    /// a Layer</a>.</p>
+    /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
     pub auto_assign_elastic_ips: std::option::Option<bool>,
-    /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to
-    /// the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-    /// a Layer</a>.</p>
+    /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
     pub auto_assign_public_ips: std::option::Option<bool>,
     /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
     pub custom_recipes: std::option::Option<crate::model::Recipes>,
-    /// <p>Whether to install operating system and package updates when the instance boots. The default
-    /// value is <code>true</code>. To control when updates are installed, set this value to
-    /// <code>false</code>. You must then update your instances manually by using
-    /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
-    /// manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-    /// instances. </p>
-    /// <note>
-    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your
-    /// instances have the latest security updates.</p>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
     /// </note>
     pub install_updates_on_boot: std::option::Option<bool>,
     /// <p>Whether to use Amazon EBS-optimized instances.</p>
@@ -17064,8 +15502,7 @@ impl UpdateLayerInput {
         self.name.as_deref()
     }
     /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.</p>
-    /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>
-    /// </p>
+    /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a> </p>
     pub fn shortname(&self) -> std::option::Option<&str> {
         self.shortname.as_deref()
     }
@@ -17077,23 +15514,17 @@ impl UpdateLayerInput {
     > {
         self.attributes.as_ref()
     }
-    /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <a>CloudWatchLogsLogStream</a>.</p>
+    /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
     pub fn cloud_watch_logs_configuration(
         &self,
     ) -> std::option::Option<&crate::model::CloudWatchLogsConfiguration> {
         self.cloud_watch_logs_configuration.as_ref()
     }
-    /// <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more
-    /// information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-    /// Identifiers</a>.</p>
+    /// <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn custom_instance_profile_arn(&self) -> std::option::Option<&str> {
         self.custom_instance_profile_arn.as_deref()
     }
-    /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes
-    /// to be installed on the layer's instances. For more information, see
-    /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
-    /// Using Custom JSON</a>.
-    /// </p>
+    /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. </p>
     pub fn custom_json(&self) -> std::option::Option<&str> {
         self.custom_json.as_deref()
     }
@@ -17115,15 +15546,11 @@ impl UpdateLayerInput {
     pub fn enable_auto_healing(&self) -> std::option::Option<bool> {
         self.enable_auto_healing
     }
-    /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
-    /// address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-    /// a Layer</a>.</p>
+    /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
     pub fn auto_assign_elastic_ips(&self) -> std::option::Option<bool> {
         self.auto_assign_elastic_ips
     }
-    /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to
-    /// the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-    /// a Layer</a>.</p>
+    /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
     pub fn auto_assign_public_ips(&self) -> std::option::Option<bool> {
         self.auto_assign_public_ips
     }
@@ -17131,15 +15558,8 @@ impl UpdateLayerInput {
     pub fn custom_recipes(&self) -> std::option::Option<&crate::model::Recipes> {
         self.custom_recipes.as_ref()
     }
-    /// <p>Whether to install operating system and package updates when the instance boots. The default
-    /// value is <code>true</code>. To control when updates are installed, set this value to
-    /// <code>false</code>. You must then update your instances manually by using
-    /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
-    /// manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-    /// instances. </p>
-    /// <note>
-    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your
-    /// instances have the latest security updates.</p>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
     /// </note>
     pub fn install_updates_on_boot(&self) -> std::option::Option<bool> {
         self.install_updates_on_boot
@@ -17199,11 +15619,7 @@ pub struct UpdateInstanceInput {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The instance's layer IDs.</p>
     pub layer_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types,
-    /// open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>.
-    /// The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-    /// Families and Types</a>. The parameter values that you use to specify the various types are
-    /// in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
+    /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
     pub auto_scaling_type: std::option::Option<crate::model::AutoScalingType>,
@@ -17211,80 +15627,35 @@ pub struct UpdateInstanceInput {
     pub hostname: std::option::Option<std::string::String>,
     /// <p>The instance's operating system, which must be set to one of the following. You cannot update an instance that is using a custom AMI.</p>
     /// <ul>
-    /// <li>
-    /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux
-    /// 2015.03</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CentOS Linux 7</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Red Hat Enterprise Linux 7</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-    /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-    /// </li>
+    /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+    /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+    /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+    /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+    /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
     /// </ul>
-    /// <p>For more information about supported operating systems,
-    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-    /// <p>The default option is the current Amazon Linux version. If you set this parameter to
-    /// <code>Custom</code>, you must use the AmiId parameter to
-    /// specify the custom AMI that you want to use. For more information about supported operating
-    /// systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-    /// Custom AMIs</a>.</p>
-    /// <note>
+    /// <p>For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+    /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the AmiId parameter to specify the custom AMI that you want to use. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>
     /// <p>You can specify a different Linux operating system for the updated stack, but you cannot change from Linux to Windows or Windows to Linux.</p>
     /// </note>
     pub os: std::option::Option<std::string::String>,
-    /// <p>The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI ID that the instance is already using.
-    /// You cannot apply a new AMI to an instance by running UpdateInstance. UpdateInstance does not work on instances that are using custom AMIs.
-    /// </p>
+    /// <p>The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI ID that the instance is already using. You cannot apply a new AMI to an instance by running UpdateInstance. UpdateInstance does not work on instances that are using custom AMIs. </p>
     pub ami_id: std::option::Option<std::string::String>,
     /// <p>The instance's Amazon EC2 key name.</p>
     pub ssh_key_name: std::option::Option<std::string::String>,
-    /// <p>The instance architecture. Instance types do not necessarily support both architectures. For
-    /// a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-    /// Families and Types</a>.</p>
+    /// <p>The instance architecture. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
     pub architecture: std::option::Option<crate::model::Architecture>,
-    /// <p>Whether to install operating system and package updates when the instance boots. The default
-    /// value is <code>true</code>. To control when updates are installed, set this value to
-    /// <code>false</code>. You must then update your instances manually by using
-    /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
-    /// by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-    /// instances. </p>
-    /// <note>
-    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your
-    /// instances have the latest security updates.</p>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
     /// </note>
     pub install_updates_on_boot: std::option::Option<bool>,
     /// <p>This property cannot be updated.</p>
     pub ebs_optimized: std::option::Option<bool>,
     /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INHERIT</code> - Use the stack's default agent version setting.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>version_number</i> - Use the specified agent version.
-    /// This value overrides the stack's default setting.
-    /// To update the agent version, you must edit the instance configuration and specify a
-    /// new version.
-    /// AWS OpsWorks Stacks then automatically installs that version on the instance.</p>
-    /// </li>
+    /// <li> <p> <code>INHERIT</code> - Use the stack's default agent version setting.</p> </li>
+    /// <li> <p> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, you must edit the instance configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the instance.</p> </li>
     /// </ul>
-    /// <p>The default setting is <code>INHERIT</code>. To specify an agent version,
-    /// you must use the complete version number, not the abbreviated number shown on the console.
-    /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.</p>
+    /// <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>.</p>
     /// <p>AgentVersion cannot be set to Chef 12.2.</p>
     pub agent_version: std::option::Option<std::string::String>,
 }
@@ -17297,11 +15668,7 @@ impl UpdateInstanceInput {
     pub fn layer_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.layer_ids.as_deref()
     }
-    /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types,
-    /// open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>.
-    /// The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-    /// Families and Types</a>. The parameter values that you use to specify the various types are
-    /// in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
+    /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
     pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
     }
@@ -17315,44 +15682,20 @@ impl UpdateInstanceInput {
     }
     /// <p>The instance's operating system, which must be set to one of the following. You cannot update an instance that is using a custom AMI.</p>
     /// <ul>
-    /// <li>
-    /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux
-    /// 2015.03</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CentOS Linux 7</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Red Hat Enterprise Linux 7</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-    /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-    /// </li>
+    /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+    /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+    /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+    /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+    /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
     /// </ul>
-    /// <p>For more information about supported operating systems,
-    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-    /// <p>The default option is the current Amazon Linux version. If you set this parameter to
-    /// <code>Custom</code>, you must use the AmiId parameter to
-    /// specify the custom AMI that you want to use. For more information about supported operating
-    /// systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-    /// Custom AMIs</a>.</p>
-    /// <note>
+    /// <p>For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+    /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the AmiId parameter to specify the custom AMI that you want to use. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>
     /// <p>You can specify a different Linux operating system for the updated stack, but you cannot change from Linux to Windows or Windows to Linux.</p>
     /// </note>
     pub fn os(&self) -> std::option::Option<&str> {
         self.os.as_deref()
     }
-    /// <p>The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI ID that the instance is already using.
-    /// You cannot apply a new AMI to an instance by running UpdateInstance. UpdateInstance does not work on instances that are using custom AMIs.
-    /// </p>
+    /// <p>The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI ID that the instance is already using. You cannot apply a new AMI to an instance by running UpdateInstance. UpdateInstance does not work on instances that are using custom AMIs. </p>
     pub fn ami_id(&self) -> std::option::Option<&str> {
         self.ami_id.as_deref()
     }
@@ -17360,21 +15703,12 @@ impl UpdateInstanceInput {
     pub fn ssh_key_name(&self) -> std::option::Option<&str> {
         self.ssh_key_name.as_deref()
     }
-    /// <p>The instance architecture. Instance types do not necessarily support both architectures. For
-    /// a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-    /// Families and Types</a>.</p>
+    /// <p>The instance architecture. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
     pub fn architecture(&self) -> std::option::Option<&crate::model::Architecture> {
         self.architecture.as_ref()
     }
-    /// <p>Whether to install operating system and package updates when the instance boots. The default
-    /// value is <code>true</code>. To control when updates are installed, set this value to
-    /// <code>false</code>. You must then update your instances manually by using
-    /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
-    /// by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-    /// instances. </p>
-    /// <note>
-    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your
-    /// instances have the latest security updates.</p>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
     /// </note>
     pub fn install_updates_on_boot(&self) -> std::option::Option<bool> {
         self.install_updates_on_boot
@@ -17385,22 +15719,10 @@ impl UpdateInstanceInput {
     }
     /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INHERIT</code> - Use the stack's default agent version setting.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>version_number</i> - Use the specified agent version.
-    /// This value overrides the stack's default setting.
-    /// To update the agent version, you must edit the instance configuration and specify a
-    /// new version.
-    /// AWS OpsWorks Stacks then automatically installs that version on the instance.</p>
-    /// </li>
+    /// <li> <p> <code>INHERIT</code> - Use the stack's default agent version setting.</p> </li>
+    /// <li> <p> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, you must edit the instance configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the instance.</p> </li>
     /// </ul>
-    /// <p>The default setting is <code>INHERIT</code>. To specify an agent version,
-    /// you must use the complete version number, not the abbreviated number shown on the console.
-    /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.</p>
+    /// <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>.</p>
     /// <p>AgentVersion cannot be set to Chef 12.2.</p>
     pub fn agent_version(&self) -> std::option::Option<&str> {
         self.agent_version.as_deref()
@@ -17469,9 +15791,7 @@ pub struct UpdateAppInput {
     pub r#type: std::option::Option<crate::model::AppType>,
     /// <p>A <code>Source</code> object that specifies the app repository.</p>
     pub app_source: std::option::Option<crate::model::Source>,
-    /// <p>The app's virtual host settings, with multiple domains separated by commas. For example:
-    /// <code>'www.example.com, example.com'</code>
-    /// </p>
+    /// <p>The app's virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
     pub domains: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Whether SSL is enabled for the app.</p>
     pub enable_ssl: std::option::Option<bool>,
@@ -17481,11 +15801,8 @@ pub struct UpdateAppInput {
     pub attributes: std::option::Option<
         std::collections::HashMap<crate::model::AppAttributesKeys, std::string::String>,
     >,
-    /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be
-    /// associated with the app. After you deploy the app, these variables are defined on the
-    /// associated app server instances.For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
-    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20 KB)."</p>
-    /// <note>
+    /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances.For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
+    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20 KB)."</p> <note>
     /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
     /// </note>
     pub environment: std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
@@ -17515,9 +15832,7 @@ impl UpdateAppInput {
     pub fn app_source(&self) -> std::option::Option<&crate::model::Source> {
         self.app_source.as_ref()
     }
-    /// <p>The app's virtual host settings, with multiple domains separated by commas. For example:
-    /// <code>'www.example.com, example.com'</code>
-    /// </p>
+    /// <p>The app's virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
     pub fn domains(&self) -> std::option::Option<&[std::string::String]> {
         self.domains.as_deref()
     }
@@ -17537,11 +15852,8 @@ impl UpdateAppInput {
     > {
         self.attributes.as_ref()
     }
-    /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be
-    /// associated with the app. After you deploy the app, these variables are defined on the
-    /// associated app server instances.For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
-    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20 KB)."</p>
-    /// <note>
+    /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances.For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
+    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20 KB)."</p> <note>
     /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
     /// </note>
     pub fn environment(&self) -> std::option::Option<&[crate::model::EnvironmentVariable]> {
@@ -17644,23 +15956,11 @@ pub struct TagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A map that contains tag keys and tag values that are attached to a stack or layer.</p>
     /// <ul>
-    /// <li>
-    /// <p>The key cannot be empty.</p>
-    /// </li>
-    /// <li>
-    /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p>
-    /// </li>
-    /// <li>
-    /// <p>A maximum of 40 tags is allowed for any resource.</p>
-    /// </li>
+    /// <li> <p>The key cannot be empty.</p> </li>
+    /// <li> <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+    /// <li> <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+    /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
+    /// <li> <p>A maximum of 40 tags is allowed for any resource.</p> </li>
     /// </ul>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -17672,23 +15972,11 @@ impl TagResourceInput {
     }
     /// <p>A map that contains tag keys and tag values that are attached to a stack or layer.</p>
     /// <ul>
-    /// <li>
-    /// <p>The key cannot be empty.</p>
-    /// </li>
-    /// <li>
-    /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p>
-    /// </li>
-    /// <li>
-    /// <p>A maximum of 40 tags is allowed for any resource.</p>
-    /// </li>
+    /// <li> <p>The key cannot be empty.</p> </li>
+    /// <li> <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+    /// <li> <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+    /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
+    /// <li> <p>A maximum of 40 tags is allowed for any resource.</p> </li>
     /// </ul>
     pub fn tags(
         &self,
@@ -17733,9 +16021,7 @@ impl std::fmt::Debug for StopStackInput {
 pub struct StopInstanceInput {
     /// <p>The instance ID.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>Specifies whether to force an instance to stop. If the instance's root device type is <code>ebs</code>, or EBS-backed,
-    /// adding the <code>Force</code> parameter to the <code>StopInstances</code> API call disassociates the AWS OpsWorks Stacks instance from EC2, and forces deletion of <i>only</i> the OpsWorks Stacks instance.
-    /// You must also delete the formerly-associated instance in EC2 after troubleshooting and replacing the AWS OpsWorks Stacks instance with a new one.</p>
+    /// <p>Specifies whether to force an instance to stop. If the instance's root device type is <code>ebs</code>, or EBS-backed, adding the <code>Force</code> parameter to the <code>StopInstances</code> API call disassociates the AWS OpsWorks Stacks instance from EC2, and forces deletion of <i>only</i> the OpsWorks Stacks instance. You must also delete the formerly-associated instance in EC2 after troubleshooting and replacing the AWS OpsWorks Stacks instance with a new one.</p>
     pub force: std::option::Option<bool>,
 }
 impl StopInstanceInput {
@@ -17743,9 +16029,7 @@ impl StopInstanceInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>Specifies whether to force an instance to stop. If the instance's root device type is <code>ebs</code>, or EBS-backed,
-    /// adding the <code>Force</code> parameter to the <code>StopInstances</code> API call disassociates the AWS OpsWorks Stacks instance from EC2, and forces deletion of <i>only</i> the OpsWorks Stacks instance.
-    /// You must also delete the formerly-associated instance in EC2 after troubleshooting and replacing the AWS OpsWorks Stacks instance with a new one.</p>
+    /// <p>Specifies whether to force an instance to stop. If the instance's root device type is <code>ebs</code>, or EBS-backed, adding the <code>Force</code> parameter to the <code>StopInstances</code> API call disassociates the AWS OpsWorks Stacks instance from EC2, and forces deletion of <i>only</i> the OpsWorks Stacks instance. You must also delete the formerly-associated instance in EC2 after troubleshooting and replacing the AWS OpsWorks Stacks instance with a new one.</p>
     pub fn force(&self) -> std::option::Option<bool> {
         self.force
     }
@@ -17845,31 +16129,11 @@ pub struct SetPermissionInput {
     pub allow_sudo: std::option::Option<bool>,
     /// <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>deny</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>show</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deploy</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>manage</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>iam_only</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>deny</code> </p> </li>
+    /// <li> <p> <code>show</code> </p> </li>
+    /// <li> <p> <code>deploy</code> </p> </li>
+    /// <li> <p> <code>manage</code> </p> </li>
+    /// <li> <p> <code>iam_only</code> </p> </li>
     /// </ul>
     /// <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
     pub level: std::option::Option<std::string::String>,
@@ -17893,31 +16157,11 @@ impl SetPermissionInput {
     }
     /// <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>deny</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>show</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deploy</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>manage</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>iam_only</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>deny</code> </p> </li>
+    /// <li> <p> <code>show</code> </p> </li>
+    /// <li> <p> <code>deploy</code> </p> </li>
+    /// <li> <p> <code>manage</code> </p> </li>
+    /// <li> <p> <code>iam_only</code> </p> </li>
     /// </ul>
     /// <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
     pub fn level(&self) -> std::option::Option<&str> {
@@ -17944,13 +16188,9 @@ pub struct SetLoadBasedAutoScalingInput {
     pub layer_id: std::option::Option<std::string::String>,
     /// <p>Enables load-based auto scaling for the layer.</p>
     pub enable: std::option::Option<bool>,
-    /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If
-    /// the load exceeds these thresholds for a specified amount of time, AWS OpsWorks Stacks starts a specified
-    /// number of instances.</p>
+    /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If the load exceeds these thresholds for a specified amount of time, AWS OpsWorks Stacks starts a specified number of instances.</p>
     pub up_scaling: std::option::Option<crate::model::AutoScalingThresholds>,
-    /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If
-    /// the load falls below these thresholds for a specified amount of time, AWS OpsWorks Stacks stops a specified
-    /// number of instances.</p>
+    /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If the load falls below these thresholds for a specified amount of time, AWS OpsWorks Stacks stops a specified number of instances.</p>
     pub down_scaling: std::option::Option<crate::model::AutoScalingThresholds>,
 }
 impl SetLoadBasedAutoScalingInput {
@@ -17962,15 +16202,11 @@ impl SetLoadBasedAutoScalingInput {
     pub fn enable(&self) -> std::option::Option<bool> {
         self.enable
     }
-    /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If
-    /// the load exceeds these thresholds for a specified amount of time, AWS OpsWorks Stacks starts a specified
-    /// number of instances.</p>
+    /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If the load exceeds these thresholds for a specified amount of time, AWS OpsWorks Stacks starts a specified number of instances.</p>
     pub fn up_scaling(&self) -> std::option::Option<&crate::model::AutoScalingThresholds> {
         self.up_scaling.as_ref()
     }
-    /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If
-    /// the load falls below these thresholds for a specified amount of time, AWS OpsWorks Stacks stops a specified
-    /// number of instances.</p>
+    /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If the load falls below these thresholds for a specified amount of time, AWS OpsWorks Stacks stops a specified number of instances.</p>
     pub fn down_scaling(&self) -> std::option::Option<&crate::model::AutoScalingThresholds> {
         self.down_scaling.as_ref()
     }
@@ -18205,11 +16441,9 @@ impl std::fmt::Debug for RebootInstanceInput {
 pub struct ListTagsInput {
     /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>Do not use. A validation exception occurs if you add a <code>MaxResults</code> parameter to a <code>ListTagsRequest</code> call.
-    /// </p>
+    /// <p>Do not use. A validation exception occurs if you add a <code>MaxResults</code> parameter to a <code>ListTagsRequest</code> call. </p>
     pub max_results: i32,
-    /// <p>Do not use. A validation exception occurs if you add a <code>NextToken</code> parameter to a <code>ListTagsRequest</code> call.
-    /// </p>
+    /// <p>Do not use. A validation exception occurs if you add a <code>NextToken</code> parameter to a <code>ListTagsRequest</code> call. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsInput {
@@ -18217,13 +16451,11 @@ impl ListTagsInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>Do not use. A validation exception occurs if you add a <code>MaxResults</code> parameter to a <code>ListTagsRequest</code> call.
-    /// </p>
+    /// <p>Do not use. A validation exception occurs if you add a <code>MaxResults</code> parameter to a <code>ListTagsRequest</code> call. </p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>Do not use. A validation exception occurs if you add a <code>NextToken</code> parameter to a <code>ListTagsRequest</code> call.
-    /// </p>
+    /// <p>Do not use. A validation exception occurs if you add a <code>NextToken</code> parameter to a <code>ListTagsRequest</code> call. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -18343,22 +16575,17 @@ impl std::fmt::Debug for DetachElasticLoadBalancerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVolumesInput {
-    /// <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions
-    /// of the volumes associated with the specified instance.</p>
+    /// <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>A stack ID. The action describes the stack's registered Amazon EBS volumes.</p>
     pub stack_id: std::option::Option<std::string::String>,
-    /// <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code> returns
-    /// descriptions of the volumes associated with the specified RAID array.</p>
+    /// <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified RAID array.</p>
     pub raid_array_id: std::option::Option<std::string::String>,
-    /// <p>Am array of volume IDs. If you use this parameter, <code>DescribeVolumes</code> returns
-    /// descriptions of the specified volumes. Otherwise, it returns a description of every
-    /// volume.</p>
+    /// <p>Am array of volume IDs. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the specified volumes. Otherwise, it returns a description of every volume.</p>
     pub volume_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeVolumesInput {
-    /// <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions
-    /// of the volumes associated with the specified instance.</p>
+    /// <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified instance.</p>
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
@@ -18366,14 +16593,11 @@ impl DescribeVolumesInput {
     pub fn stack_id(&self) -> std::option::Option<&str> {
         self.stack_id.as_deref()
     }
-    /// <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code> returns
-    /// descriptions of the volumes associated with the specified RAID array.</p>
+    /// <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified RAID array.</p>
     pub fn raid_array_id(&self) -> std::option::Option<&str> {
         self.raid_array_id.as_deref()
     }
-    /// <p>Am array of volume IDs. If you use this parameter, <code>DescribeVolumes</code> returns
-    /// descriptions of the specified volumes. Otherwise, it returns a description of every
-    /// volume.</p>
+    /// <p>Am array of volume IDs. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the specified volumes. Otherwise, it returns a description of every volume.</p>
     pub fn volume_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.volume_ids.as_deref()
     }
@@ -18456,13 +16680,11 @@ impl std::fmt::Debug for DescribeStackSummaryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStacksInput {
-    /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter,
-    /// <code>DescribeStacks</code> returns a description of every stack.</p>
+    /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <code>DescribeStacks</code> returns a description of every stack.</p>
     pub stack_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeStacksInput {
-    /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter,
-    /// <code>DescribeStacks</code> returns a description of every stack.</p>
+    /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <code>DescribeStacks</code> returns a description of every stack.</p>
     pub fn stack_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.stack_ids.as_deref()
     }
@@ -18500,31 +16722,23 @@ impl std::fmt::Debug for DescribeStackProvisioningParametersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServiceErrorsInput {
-    /// <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns
-    /// descriptions of the errors associated with the specified stack.</p>
+    /// <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified stack.</p>
     pub stack_id: std::option::Option<std::string::String>,
-    /// <p>The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns
-    /// descriptions of the errors associated with the specified instance.</p>
+    /// <p>The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code>
-    /// returns descriptions of the specified errors. Otherwise, it returns a description of every
-    /// error.</p>
+    /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the specified errors. Otherwise, it returns a description of every error.</p>
     pub service_error_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeServiceErrorsInput {
-    /// <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns
-    /// descriptions of the errors associated with the specified stack.</p>
+    /// <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified stack.</p>
     pub fn stack_id(&self) -> std::option::Option<&str> {
         self.stack_id.as_deref()
     }
-    /// <p>The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns
-    /// descriptions of the errors associated with the specified instance.</p>
+    /// <p>The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified instance.</p>
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code>
-    /// returns descriptions of the specified errors. Otherwise, it returns a description of every
-    /// error.</p>
+    /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the specified errors. Otherwise, it returns a description of every error.</p>
     pub fn service_error_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.service_error_ids.as_deref()
     }
@@ -18571,19 +16785,15 @@ impl std::fmt::Debug for DescribeRdsDbInstancesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRaidArraysInput {
-    /// <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns
-    /// descriptions of the RAID arrays associated with the specified instance. </p>
+    /// <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the RAID arrays associated with the specified instance. </p>
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The stack ID.</p>
     pub stack_id: std::option::Option<std::string::String>,
-    /// <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code>
-    /// returns descriptions of the specified arrays. Otherwise, it returns a description of every
-    /// array.</p>
+    /// <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the specified arrays. Otherwise, it returns a description of every array.</p>
     pub raid_array_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeRaidArraysInput {
-    /// <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns
-    /// descriptions of the RAID arrays associated with the specified instance. </p>
+    /// <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the RAID arrays associated with the specified instance. </p>
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
@@ -18591,9 +16801,7 @@ impl DescribeRaidArraysInput {
     pub fn stack_id(&self) -> std::option::Option<&str> {
         self.stack_id.as_deref()
     }
-    /// <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code>
-    /// returns descriptions of the specified arrays. Otherwise, it returns a description of every
-    /// array.</p>
+    /// <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the specified arrays. Otherwise, it returns a description of every array.</p>
     pub fn raid_array_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.raid_array_ids.as_deref()
     }
@@ -18612,15 +16820,13 @@ impl std::fmt::Debug for DescribeRaidArraysInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePermissionsInput {
-    /// <p>The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-    /// Identifiers</a>.</p>
+    /// <p>The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub iam_user_arn: std::option::Option<std::string::String>,
     /// <p>The stack ID.</p>
     pub stack_id: std::option::Option<std::string::String>,
 }
 impl DescribePermissionsInput {
-    /// <p>The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-    /// Identifiers</a>.</p>
+    /// <p>The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn iam_user_arn(&self) -> std::option::Option<&str> {
         self.iam_user_arn.as_deref()
     }
@@ -18687,8 +16893,7 @@ impl std::fmt::Debug for DescribeLoadBasedAutoScalingInput {
 pub struct DescribeLayersInput {
     /// <p>The stack ID.</p>
     pub stack_id: std::option::Option<std::string::String>,
-    /// <p>An array of layer IDs that specify the layers to be described. If you omit this parameter,
-    /// <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
+    /// <p>An array of layer IDs that specify the layers to be described. If you omit this parameter, <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
     pub layer_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeLayersInput {
@@ -18696,8 +16901,7 @@ impl DescribeLayersInput {
     pub fn stack_id(&self) -> std::option::Option<&str> {
         self.stack_id.as_deref()
     }
-    /// <p>An array of layer IDs that specify the layers to be described. If you omit this parameter,
-    /// <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
+    /// <p>An array of layer IDs that specify the layers to be described. If you omit this parameter, <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
     pub fn layer_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.layer_ids.as_deref()
     }
@@ -18715,31 +16919,23 @@ impl std::fmt::Debug for DescribeLayersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstancesInput {
-    /// <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of
-    /// the instances associated with the specified stack.</p>
+    /// <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of the instances associated with the specified stack.</p>
     pub stack_id: std::option::Option<std::string::String>,
-    /// <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of
-    /// the instances associated with the specified layer.</p>
+    /// <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of the instances associated with the specified layer.</p>
     pub layer_id: std::option::Option<std::string::String>,
-    /// <p>An array of instance IDs to be described. If you use this parameter,
-    /// <code>DescribeInstances</code> returns a description of the specified instances. Otherwise,
-    /// it returns a description of every instance.</p>
+    /// <p>An array of instance IDs to be described. If you use this parameter, <code>DescribeInstances</code> returns a description of the specified instances. Otherwise, it returns a description of every instance.</p>
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeInstancesInput {
-    /// <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of
-    /// the instances associated with the specified stack.</p>
+    /// <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of the instances associated with the specified stack.</p>
     pub fn stack_id(&self) -> std::option::Option<&str> {
         self.stack_id.as_deref()
     }
-    /// <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of
-    /// the instances associated with the specified layer.</p>
+    /// <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of the instances associated with the specified layer.</p>
     pub fn layer_id(&self) -> std::option::Option<&str> {
         self.layer_id.as_deref()
     }
-    /// <p>An array of instance IDs to be described. If you use this parameter,
-    /// <code>DescribeInstances</code> returns a description of the specified instances. Otherwise,
-    /// it returns a description of every instance.</p>
+    /// <p>An array of instance IDs to be described. If you use this parameter, <code>DescribeInstances</code> returns a description of the specified instances. Otherwise, it returns a description of every instance.</p>
     pub fn instance_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.instance_ids.as_deref()
     }
@@ -18786,31 +16982,23 @@ impl std::fmt::Debug for DescribeElasticLoadBalancersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeElasticIpsInput {
-    /// <p>The instance ID. If you include this parameter, <code>DescribeElasticIps</code> returns a
-    /// description of the Elastic IP addresses associated with the specified instance.</p>
+    /// <p>The instance ID. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the Elastic IP addresses associated with the specified instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>A stack ID. If you include this parameter, <code>DescribeElasticIps</code> returns a
-    /// description of the Elastic IP addresses that are registered with the specified stack.</p>
+    /// <p>A stack ID. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the Elastic IP addresses that are registered with the specified stack.</p>
     pub stack_id: std::option::Option<std::string::String>,
-    /// <p>An array of Elastic IP addresses to be described. If you include this parameter,
-    /// <code>DescribeElasticIps</code> returns a description of the specified Elastic IP addresses.
-    /// Otherwise, it returns a description of every Elastic IP address.</p>
+    /// <p>An array of Elastic IP addresses to be described. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the specified Elastic IP addresses. Otherwise, it returns a description of every Elastic IP address.</p>
     pub ips: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeElasticIpsInput {
-    /// <p>The instance ID. If you include this parameter, <code>DescribeElasticIps</code> returns a
-    /// description of the Elastic IP addresses associated with the specified instance.</p>
+    /// <p>The instance ID. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the Elastic IP addresses associated with the specified instance.</p>
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>A stack ID. If you include this parameter, <code>DescribeElasticIps</code> returns a
-    /// description of the Elastic IP addresses that are registered with the specified stack.</p>
+    /// <p>A stack ID. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the Elastic IP addresses that are registered with the specified stack.</p>
     pub fn stack_id(&self) -> std::option::Option<&str> {
         self.stack_id.as_deref()
     }
-    /// <p>An array of Elastic IP addresses to be described. If you include this parameter,
-    /// <code>DescribeElasticIps</code> returns a description of the specified Elastic IP addresses.
-    /// Otherwise, it returns a description of every Elastic IP address.</p>
+    /// <p>An array of Elastic IP addresses to be described. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the specified Elastic IP addresses. Otherwise, it returns a description of every Elastic IP address.</p>
     pub fn ips(&self) -> std::option::Option<&[std::string::String]> {
         self.ips.as_deref()
     }
@@ -18831,20 +17019,11 @@ impl std::fmt::Debug for DescribeElasticIpsInput {
 pub struct DescribeEcsClustersInput {
     /// <p>A list of ARNs, one for each cluster to be described.</p>
     pub ecs_cluster_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A stack ID.
-    /// <code>DescribeEcsClusters</code> returns a description of the cluster that is registered with the stack.</p>
+    /// <p>A stack ID. <code>DescribeEcsClusters</code> returns a description of the cluster that is registered with the stack.</p>
     pub stack_id: std::option::Option<std::string::String>,
-    /// <p>If the previous paginated request did not return all of the remaining results,
-    /// the response object's<code>NextToken</code> parameter value is set to a token.
-    /// To retrieve the next set of results, call <code>DescribeEcsClusters</code>
-    /// again and assign that token to the request object's <code>NextToken</code> parameter.
-    /// If there are no remaining results, the previous response
-    /// object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's<code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>DescribeEcsClusters</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>To receive a paginated response, use this parameter to specify the maximum number
-    /// of results to be returned with a single call. If the number of available results exceeds this maximum, the
-    /// response includes a <code>NextToken</code> value that you can assign
-    /// to the <code>NextToken</code> request parameter to get the next set of results.</p>
+    /// <p>To receive a paginated response, use this parameter to specify the maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeEcsClustersInput {
@@ -18852,24 +17031,15 @@ impl DescribeEcsClustersInput {
     pub fn ecs_cluster_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.ecs_cluster_arns.as_deref()
     }
-    /// <p>A stack ID.
-    /// <code>DescribeEcsClusters</code> returns a description of the cluster that is registered with the stack.</p>
+    /// <p>A stack ID. <code>DescribeEcsClusters</code> returns a description of the cluster that is registered with the stack.</p>
     pub fn stack_id(&self) -> std::option::Option<&str> {
         self.stack_id.as_deref()
     }
-    /// <p>If the previous paginated request did not return all of the remaining results,
-    /// the response object's<code>NextToken</code> parameter value is set to a token.
-    /// To retrieve the next set of results, call <code>DescribeEcsClusters</code>
-    /// again and assign that token to the request object's <code>NextToken</code> parameter.
-    /// If there are no remaining results, the previous response
-    /// object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's<code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>DescribeEcsClusters</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>To receive a paginated response, use this parameter to specify the maximum number
-    /// of results to be returned with a single call. If the number of available results exceeds this maximum, the
-    /// response includes a <code>NextToken</code> value that you can assign
-    /// to the <code>NextToken</code> request parameter to get the next set of results.</p>
+    /// <p>To receive a paginated response, use this parameter to specify the maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -18889,31 +17059,23 @@ impl std::fmt::Debug for DescribeEcsClustersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeploymentsInput {
-    /// <p>The stack ID. If you include this parameter, the command returns a
-    /// description of the commands associated with the specified stack.</p>
+    /// <p>The stack ID. If you include this parameter, the command returns a description of the commands associated with the specified stack.</p>
     pub stack_id: std::option::Option<std::string::String>,
-    /// <p>The app ID. If you include this parameter, the command returns a
-    /// description of the commands associated with the specified app.</p>
+    /// <p>The app ID. If you include this parameter, the command returns a description of the commands associated with the specified app.</p>
     pub app_id: std::option::Option<std::string::String>,
-    /// <p>An array of deployment IDs to be described. If you include this parameter,
-    /// the command returns a description of the specified deployments.
-    /// Otherwise, it returns a description of every deployment.</p>
+    /// <p>An array of deployment IDs to be described. If you include this parameter, the command returns a description of the specified deployments. Otherwise, it returns a description of every deployment.</p>
     pub deployment_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeDeploymentsInput {
-    /// <p>The stack ID. If you include this parameter, the command returns a
-    /// description of the commands associated with the specified stack.</p>
+    /// <p>The stack ID. If you include this parameter, the command returns a description of the commands associated with the specified stack.</p>
     pub fn stack_id(&self) -> std::option::Option<&str> {
         self.stack_id.as_deref()
     }
-    /// <p>The app ID. If you include this parameter, the command returns a
-    /// description of the commands associated with the specified app.</p>
+    /// <p>The app ID. If you include this parameter, the command returns a description of the commands associated with the specified app.</p>
     pub fn app_id(&self) -> std::option::Option<&str> {
         self.app_id.as_deref()
     }
-    /// <p>An array of deployment IDs to be described. If you include this parameter,
-    /// the command returns a description of the specified deployments.
-    /// Otherwise, it returns a description of every deployment.</p>
+    /// <p>An array of deployment IDs to be described. If you include this parameter, the command returns a description of the specified deployments. Otherwise, it returns a description of every deployment.</p>
     pub fn deployment_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.deployment_ids.as_deref()
     }
@@ -18932,31 +17094,23 @@ impl std::fmt::Debug for DescribeDeploymentsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCommandsInput {
-    /// <p>The deployment ID. If you include this parameter, <code>DescribeCommands</code> returns a
-    /// description of the commands associated with the specified deployment.</p>
+    /// <p>The deployment ID. If you include this parameter, <code>DescribeCommands</code> returns a description of the commands associated with the specified deployment.</p>
     pub deployment_id: std::option::Option<std::string::String>,
-    /// <p>The instance ID. If you include this parameter, <code>DescribeCommands</code> returns a
-    /// description of the commands associated with the specified instance.</p>
+    /// <p>The instance ID. If you include this parameter, <code>DescribeCommands</code> returns a description of the commands associated with the specified instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>An array of command IDs. If you include this parameter, <code>DescribeCommands</code> returns
-    /// a description of the specified commands. Otherwise, it returns a description of every
-    /// command.</p>
+    /// <p>An array of command IDs. If you include this parameter, <code>DescribeCommands</code> returns a description of the specified commands. Otherwise, it returns a description of every command.</p>
     pub command_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeCommandsInput {
-    /// <p>The deployment ID. If you include this parameter, <code>DescribeCommands</code> returns a
-    /// description of the commands associated with the specified deployment.</p>
+    /// <p>The deployment ID. If you include this parameter, <code>DescribeCommands</code> returns a description of the commands associated with the specified deployment.</p>
     pub fn deployment_id(&self) -> std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
-    /// <p>The instance ID. If you include this parameter, <code>DescribeCommands</code> returns a
-    /// description of the commands associated with the specified instance.</p>
+    /// <p>The instance ID. If you include this parameter, <code>DescribeCommands</code> returns a description of the commands associated with the specified instance.</p>
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>An array of command IDs. If you include this parameter, <code>DescribeCommands</code> returns
-    /// a description of the specified commands. Otherwise, it returns a description of every
-    /// command.</p>
+    /// <p>An array of command IDs. If you include this parameter, <code>DescribeCommands</code> returns a description of the specified commands. Otherwise, it returns a description of every command.</p>
     pub fn command_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.command_ids.as_deref()
     }
@@ -18975,23 +17129,17 @@ impl std::fmt::Debug for DescribeCommandsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppsInput {
-    /// <p>The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description
-    /// of the apps in the specified stack.</p>
+    /// <p>The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description of the apps in the specified stack.</p>
     pub stack_id: std::option::Option<std::string::String>,
-    /// <p>An array of app IDs for the apps to be described. If you use this parameter,
-    /// <code>DescribeApps</code> returns a description of the specified apps. Otherwise, it returns
-    /// a description of every app.</p>
+    /// <p>An array of app IDs for the apps to be described. If you use this parameter, <code>DescribeApps</code> returns a description of the specified apps. Otherwise, it returns a description of every app.</p>
     pub app_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeAppsInput {
-    /// <p>The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description
-    /// of the apps in the specified stack.</p>
+    /// <p>The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description of the apps in the specified stack.</p>
     pub fn stack_id(&self) -> std::option::Option<&str> {
         self.stack_id.as_deref()
     }
-    /// <p>An array of app IDs for the apps to be described. If you use this parameter,
-    /// <code>DescribeApps</code> returns a description of the specified apps. Otherwise, it returns
-    /// a description of every app.</p>
+    /// <p>An array of app IDs for the apps to be described. If you use this parameter, <code>DescribeApps</code> returns a description of the specified apps. Otherwise, it returns a description of every app.</p>
     pub fn app_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.app_ids.as_deref()
     }
@@ -19265,16 +17413,11 @@ impl std::fmt::Debug for DeleteAppInput {
 pub struct CreateUserProfileInput {
     /// <p>The user's IAM ARN; this can also be a federated user's ARN.</p>
     pub iam_user_arn: std::option::Option<std::string::String>,
-    /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If
-    /// the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example,
-    /// <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH
-    /// user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
+    /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
     pub ssh_username: std::option::Option<std::string::String>,
     /// <p>The user's public SSH key.</p>
     pub ssh_public_key: std::option::Option<std::string::String>,
-    /// <p>Whether users can specify their own SSH public key through the My Settings page. For more
-    /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Setting an IAM
-    /// User's Public SSH Key</a>.</p>
+    /// <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Setting an IAM User's Public SSH Key</a>.</p>
     pub allow_self_management: std::option::Option<bool>,
 }
 impl CreateUserProfileInput {
@@ -19282,10 +17425,7 @@ impl CreateUserProfileInput {
     pub fn iam_user_arn(&self) -> std::option::Option<&str> {
         self.iam_user_arn.as_deref()
     }
-    /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If
-    /// the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example,
-    /// <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH
-    /// user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
+    /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
     pub fn ssh_username(&self) -> std::option::Option<&str> {
         self.ssh_username.as_deref()
     }
@@ -19293,9 +17433,7 @@ impl CreateUserProfileInput {
     pub fn ssh_public_key(&self) -> std::option::Option<&str> {
         self.ssh_public_key.as_deref()
     }
-    /// <p>Whether users can specify their own SSH public key through the My Settings page. For more
-    /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Setting an IAM
-    /// User's Public SSH Key</a>.</p>
+    /// <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Setting an IAM User's Public SSH Key</a>.</p>
     pub fn allow_self_management(&self) -> std::option::Option<bool> {
         self.allow_self_management
     }
@@ -19317,243 +17455,92 @@ impl std::fmt::Debug for CreateUserProfileInput {
 pub struct CreateStackInput {
     /// <p>The stack name.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information about
-    /// Amazon regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-    /// <note>
-    /// <p>In the AWS CLI, this API maps to the <code>--stack-region</code> parameter. If the
-    /// <code>--stack-region</code> parameter and the AWS CLI common parameter
-    /// <code>--region</code> are set to the same value, the stack uses a
-    /// <i>regional</i> endpoint. If the <code>--stack-region</code>
-    /// parameter is not set, but the AWS CLI <code>--region</code> parameter is, this also
-    /// results in a stack with a <i>regional</i> endpoint. However, if the
-    /// <code>--region</code> parameter is set to <code>us-east-1</code>, and the
-    /// <code>--stack-region</code> parameter is set to one of the following, then the
-    /// stack uses a legacy or <i>classic</i> region: <code>us-west-1,
-    /// us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1,
-    /// ap-southeast-2</code>. In this case, the actual API endpoint of the stack is in
-    /// <code>us-east-1</code>. Only the preceding regions are supported as classic
-    /// regions in the <code>us-east-1</code> API endpoint. Because it is a best practice to
-    /// choose the regional endpoint that is closest to where you manage AWS, we recommend
-    /// that you use regional endpoints for new stacks. The AWS CLI common
-    /// <code>--region</code> parameter always specifies a regional API endpoint; it
-    /// cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
+    /// <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information about Amazon regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p> <note>
+    /// <p>In the AWS CLI, this API maps to the <code>--stack-region</code> parameter. If the <code>--stack-region</code> parameter and the AWS CLI common parameter <code>--region</code> are set to the same value, the stack uses a <i>regional</i> endpoint. If the <code>--stack-region</code> parameter is not set, but the AWS CLI <code>--region</code> parameter is, this also results in a stack with a <i>regional</i> endpoint. However, if the <code>--region</code> parameter is set to <code>us-east-1</code>, and the <code>--stack-region</code> parameter is set to one of the following, then the stack uses a legacy or <i>classic</i> region: <code>us-west-1, us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1, ap-southeast-2</code>. In this case, the actual API endpoint of the stack is in <code>us-east-1</code>. Only the preceding regions are supported as classic regions in the <code>us-east-1</code> API endpoint. Because it is a best practice to choose the regional endpoint that is closest to where you manage AWS, we recommend that you use regional endpoints for new stacks. The AWS CLI common <code>--region</code> parameter always specifies a regional API endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
     /// </note>
     pub region: std::option::Option<std::string::String>,
     /// <p>The ID of the VPC that the stack is to be launched into. The VPC must be in the stack's region. All instances are launched into this VPC. You cannot change the ID later.</p>
     /// <ul>
-    /// <li>
-    /// <p>If your account supports EC2-Classic, the default value is <code>no VPC</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>If your account does not support EC2-Classic, the default value is the default VPC for the specified region.</p>
-    /// </li>
+    /// <li> <p>If your account supports EC2-Classic, the default value is <code>no VPC</code>.</p> </li>
+    /// <li> <p>If your account does not support EC2-Classic, the default value is the default VPC for the specified region.</p> </li>
     /// </ul>
-    /// <p>If the VPC ID corresponds to a default VPC and you have specified either the
-    /// <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only,
-    /// AWS OpsWorks Stacks infers the value of the
-    /// other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets
-    /// these parameters to the first valid Availability Zone for the specified region and the
-    /// corresponding default VPC subnet ID, respectively.</p>
+    /// <p>If the VPC ID corresponds to a default VPC and you have specified either the <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only, AWS OpsWorks Stacks infers the value of the other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets these parameters to the first valid Availability Zone for the specified region and the corresponding default VPC subnet ID, respectively.</p>
     /// <p>If you specify a nondefault VPC ID, note the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>It must belong to a VPC in your account that is in the specified region.</p>
-    /// </li>
-    /// <li>
-    /// <p>You must specify a value for <code>DefaultSubnetId</code>.</p>
-    /// </li>
+    /// <li> <p>It must belong to a VPC in your account that is in the specified region.</p> </li>
+    /// <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>
     /// </ul>
-    /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
-    /// VPC</a>. For more information about default VPC and EC2-Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-    /// Platforms</a>. </p>
+    /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>. For more information about default VPC and EC2-Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>. </p>
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
     pub attributes: std::option::Option<
         std::collections::HashMap<crate::model::StackAttributesKeys, std::string::String>,
     >,
-    /// <p>The stack's AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS
-    /// resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an
-    /// existing IAM role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-    /// Identifiers</a>.</p>
+    /// <p>The stack's AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub service_role_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances.
-    /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-    /// Identifiers</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub default_instance_profile_arn: std::option::Option<std::string::String>,
     /// <p>The stack's default operating system, which is installed on every instance unless you specify a different operating system when you create the instance. You can specify one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-    /// <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CentOS Linux 7</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Red Hat Enterprise Linux 7</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>,
-    /// <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-    /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
-    /// <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when
-    /// you create instances. For more
-    /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">
-    /// Using Custom AMIs</a>.</p>
-    /// </li>
+    /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+    /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+    /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+    /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+    /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+    /// <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"> Using Custom AMIs</a>.</p> </li>
     /// </ul>
-    /// <p>The default option is the current Amazon Linux version.
-    /// For more information about supported operating systems,
-    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+    /// <p>The default option is the current Amazon Linux version. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
     pub default_os: std::option::Option<std::string::String>,
-    /// <p>The stack's host name theme, with spaces replaced by underscores. The theme is used to
-    /// generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set
-    /// to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's
-    /// short name. The other themes are:</p>
+    /// <p>The stack's host name theme, with spaces replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Baked_Goods</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Clouds</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Europe_Cities</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Fruits</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Greek_Deities_and_Titans</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Legendary_creatures_from_Japan</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Planets_and_Moons</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Roman_Deities</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Scottish_Islands</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>US_Cities</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Wild_Cats</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Baked_Goods</code> </p> </li>
+    /// <li> <p> <code>Clouds</code> </p> </li>
+    /// <li> <p> <code>Europe_Cities</code> </p> </li>
+    /// <li> <p> <code>Fruits</code> </p> </li>
+    /// <li> <p> <code>Greek_Deities_and_Titans</code> </p> </li>
+    /// <li> <p> <code>Legendary_creatures_from_Japan</code> </p> </li>
+    /// <li> <p> <code>Planets_and_Moons</code> </p> </li>
+    /// <li> <p> <code>Roman_Deities</code> </p> </li>
+    /// <li> <p> <code>Scottish_Islands</code> </p> </li>
+    /// <li> <p> <code>US_Cities</code> </p> </li>
+    /// <li> <p> <code>Wild_Cats</code> </p> </li>
     /// </ul>
-    /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a
-    /// host name based on the current theme.</p>
+    /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
     pub hostname_theme: std::option::Option<std::string::String>,
-    /// <p>The stack's default Availability Zone, which must be in the specified region. For more
-    /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-    /// Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must
-    /// be in the same zone. For more information, see the <code>VpcId</code> parameter description.
-    /// </p>
+    /// <p>The stack's default Availability Zone, which must be in the specified region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see the <code>VpcId</code> parameter description. </p>
     pub default_availability_zone: std::option::Option<std::string::String>,
-    /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the
-    /// <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify
-    /// otherwise when you create the instance. If you also specify a value for
-    /// <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on
-    /// default values and when this parameter is required, see the <code>VpcId</code> parameter
-    /// description. </p>
+    /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description. </p>
     pub default_subnet_id: std::option::Option<std::string::String>,
     /// <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>
-    /// <p>
-    /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-    /// </p>
-    /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-    /// Modify the Stack Configuration Attributes</a>.</p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+    /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
     pub custom_json: std::option::Option<std::string::String>,
     /// <p>The configuration manager. When you create a stack we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
     pub configuration_manager: std::option::Option<crate::model::StackConfigurationManager>,
-    /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
-    /// Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+    /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
     pub chef_configuration: std::option::Option<crate::model::ChefConfiguration>,
     /// <p>Whether the stack uses custom cookbooks.</p>
     pub use_custom_cookbooks: std::option::Option<bool>,
     /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
-    /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are
-    /// associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead
-    /// provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the
-    /// following settings: </p>
+    /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the following settings: </p>
     /// <ul>
-    /// <li>
-    /// <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p>
-    /// </li>
-    /// <li>
-    /// <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p>
-    /// </li>
+    /// <li> <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p> </li>
+    /// <li> <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
-    /// Stack</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
     pub use_opsworks_security_groups: std::option::Option<bool>,
-    /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
-    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or
-    /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+    /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
     pub custom_cookbooks_source: std::option::Option<crate::model::Source>,
-    /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS
-    /// OpsWorks installs the public key on the instance and you can use the private key with an SSH
-    /// client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
-    /// Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
-    /// Access</a>. You can override this setting by specifying a different key pair, or no key
-    /// pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
-    /// create an instance</a>. </p>
+    /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS OpsWorks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>. </p>
     pub default_ssh_key_name: std::option::Option<std::string::String>,
-    /// <p>The default root device type. This value is the default for all instances in the stack,
-    /// but you can override it when you create an instance. The default option is
-    /// <code>instance-store</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    /// <p>The default root device type. This value is the default for all instances in the stack, but you can override it when you create an instance. The default option is <code>instance-store</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
     pub default_root_device_type: std::option::Option<crate::model::RootDeviceType>,
     /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks
-    /// automatically installs new agent versions on the stack's instances as soon as
-    /// they are available.</p>
-    /// </li>
-    /// <li>
-    /// <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p>
-    /// </li>
+    /// <li> <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent versions on the stack's instances as soon as they are available.</p> </li>
+    /// <li> <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p> </li>
     /// </ul>
-    /// <p>The default setting is the most recent release of the agent. To specify an agent version,
-    /// you must use the complete version number, not the abbreviated number shown on the console.
-    /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.</p>
-    /// <note>
+    /// <p>The default setting is the most recent release of the agent. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>
     /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
     /// </note>
     pub agent_version: std::option::Option<std::string::String>,
@@ -19563,57 +17550,24 @@ impl CreateStackInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information about
-    /// Amazon regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-    /// <note>
-    /// <p>In the AWS CLI, this API maps to the <code>--stack-region</code> parameter. If the
-    /// <code>--stack-region</code> parameter and the AWS CLI common parameter
-    /// <code>--region</code> are set to the same value, the stack uses a
-    /// <i>regional</i> endpoint. If the <code>--stack-region</code>
-    /// parameter is not set, but the AWS CLI <code>--region</code> parameter is, this also
-    /// results in a stack with a <i>regional</i> endpoint. However, if the
-    /// <code>--region</code> parameter is set to <code>us-east-1</code>, and the
-    /// <code>--stack-region</code> parameter is set to one of the following, then the
-    /// stack uses a legacy or <i>classic</i> region: <code>us-west-1,
-    /// us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1,
-    /// ap-southeast-2</code>. In this case, the actual API endpoint of the stack is in
-    /// <code>us-east-1</code>. Only the preceding regions are supported as classic
-    /// regions in the <code>us-east-1</code> API endpoint. Because it is a best practice to
-    /// choose the regional endpoint that is closest to where you manage AWS, we recommend
-    /// that you use regional endpoints for new stacks. The AWS CLI common
-    /// <code>--region</code> parameter always specifies a regional API endpoint; it
-    /// cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
+    /// <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information about Amazon regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p> <note>
+    /// <p>In the AWS CLI, this API maps to the <code>--stack-region</code> parameter. If the <code>--stack-region</code> parameter and the AWS CLI common parameter <code>--region</code> are set to the same value, the stack uses a <i>regional</i> endpoint. If the <code>--stack-region</code> parameter is not set, but the AWS CLI <code>--region</code> parameter is, this also results in a stack with a <i>regional</i> endpoint. However, if the <code>--region</code> parameter is set to <code>us-east-1</code>, and the <code>--stack-region</code> parameter is set to one of the following, then the stack uses a legacy or <i>classic</i> region: <code>us-west-1, us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1, ap-southeast-2</code>. In this case, the actual API endpoint of the stack is in <code>us-east-1</code>. Only the preceding regions are supported as classic regions in the <code>us-east-1</code> API endpoint. Because it is a best practice to choose the regional endpoint that is closest to where you manage AWS, we recommend that you use regional endpoints for new stacks. The AWS CLI common <code>--region</code> parameter always specifies a regional API endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
     /// </note>
     pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
     }
     /// <p>The ID of the VPC that the stack is to be launched into. The VPC must be in the stack's region. All instances are launched into this VPC. You cannot change the ID later.</p>
     /// <ul>
-    /// <li>
-    /// <p>If your account supports EC2-Classic, the default value is <code>no VPC</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>If your account does not support EC2-Classic, the default value is the default VPC for the specified region.</p>
-    /// </li>
+    /// <li> <p>If your account supports EC2-Classic, the default value is <code>no VPC</code>.</p> </li>
+    /// <li> <p>If your account does not support EC2-Classic, the default value is the default VPC for the specified region.</p> </li>
     /// </ul>
-    /// <p>If the VPC ID corresponds to a default VPC and you have specified either the
-    /// <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only,
-    /// AWS OpsWorks Stacks infers the value of the
-    /// other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets
-    /// these parameters to the first valid Availability Zone for the specified region and the
-    /// corresponding default VPC subnet ID, respectively.</p>
+    /// <p>If the VPC ID corresponds to a default VPC and you have specified either the <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only, AWS OpsWorks Stacks infers the value of the other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets these parameters to the first valid Availability Zone for the specified region and the corresponding default VPC subnet ID, respectively.</p>
     /// <p>If you specify a nondefault VPC ID, note the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>It must belong to a VPC in your account that is in the specified region.</p>
-    /// </li>
-    /// <li>
-    /// <p>You must specify a value for <code>DefaultSubnetId</code>.</p>
-    /// </li>
+    /// <li> <p>It must belong to a VPC in your account that is in the specified region.</p> </li>
+    /// <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>
     /// </ul>
-    /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
-    /// VPC</a>. For more information about default VPC and EC2-Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-    /// Platforms</a>. </p>
+    /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>. For more information about default VPC and EC2-Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>. </p>
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
@@ -19625,146 +17579,56 @@ impl CreateStackInput {
     > {
         self.attributes.as_ref()
     }
-    /// <p>The stack's AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS
-    /// resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an
-    /// existing IAM role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-    /// Identifiers</a>.</p>
+    /// <p>The stack's AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn service_role_arn(&self) -> std::option::Option<&str> {
         self.service_role_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances.
-    /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-    /// Identifiers</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn default_instance_profile_arn(&self) -> std::option::Option<&str> {
         self.default_instance_profile_arn.as_deref()
     }
     /// <p>The stack's default operating system, which is installed on every instance unless you specify a different operating system when you create the instance. You can specify one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-    /// <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CentOS Linux 7</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Red Hat Enterprise Linux 7</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>,
-    /// <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-    /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
-    /// <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when
-    /// you create instances. For more
-    /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">
-    /// Using Custom AMIs</a>.</p>
-    /// </li>
+    /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+    /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+    /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+    /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+    /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+    /// <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"> Using Custom AMIs</a>.</p> </li>
     /// </ul>
-    /// <p>The default option is the current Amazon Linux version.
-    /// For more information about supported operating systems,
-    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+    /// <p>The default option is the current Amazon Linux version. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
     pub fn default_os(&self) -> std::option::Option<&str> {
         self.default_os.as_deref()
     }
-    /// <p>The stack's host name theme, with spaces replaced by underscores. The theme is used to
-    /// generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set
-    /// to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's
-    /// short name. The other themes are:</p>
+    /// <p>The stack's host name theme, with spaces replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Baked_Goods</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Clouds</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Europe_Cities</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Fruits</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Greek_Deities_and_Titans</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Legendary_creatures_from_Japan</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Planets_and_Moons</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Roman_Deities</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Scottish_Islands</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>US_Cities</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Wild_Cats</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Baked_Goods</code> </p> </li>
+    /// <li> <p> <code>Clouds</code> </p> </li>
+    /// <li> <p> <code>Europe_Cities</code> </p> </li>
+    /// <li> <p> <code>Fruits</code> </p> </li>
+    /// <li> <p> <code>Greek_Deities_and_Titans</code> </p> </li>
+    /// <li> <p> <code>Legendary_creatures_from_Japan</code> </p> </li>
+    /// <li> <p> <code>Planets_and_Moons</code> </p> </li>
+    /// <li> <p> <code>Roman_Deities</code> </p> </li>
+    /// <li> <p> <code>Scottish_Islands</code> </p> </li>
+    /// <li> <p> <code>US_Cities</code> </p> </li>
+    /// <li> <p> <code>Wild_Cats</code> </p> </li>
     /// </ul>
-    /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a
-    /// host name based on the current theme.</p>
+    /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
     pub fn hostname_theme(&self) -> std::option::Option<&str> {
         self.hostname_theme.as_deref()
     }
-    /// <p>The stack's default Availability Zone, which must be in the specified region. For more
-    /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-    /// Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must
-    /// be in the same zone. For more information, see the <code>VpcId</code> parameter description.
-    /// </p>
+    /// <p>The stack's default Availability Zone, which must be in the specified region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see the <code>VpcId</code> parameter description. </p>
     pub fn default_availability_zone(&self) -> std::option::Option<&str> {
         self.default_availability_zone.as_deref()
     }
-    /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the
-    /// <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify
-    /// otherwise when you create the instance. If you also specify a value for
-    /// <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on
-    /// default values and when this parameter is required, see the <code>VpcId</code> parameter
-    /// description. </p>
+    /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description. </p>
     pub fn default_subnet_id(&self) -> std::option::Option<&str> {
         self.default_subnet_id.as_deref()
     }
     /// <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>
-    /// <p>
-    /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-    /// </p>
-    /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-    /// Modify the Stack Configuration Attributes</a>.</p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+    /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
     pub fn custom_json(&self) -> std::option::Option<&str> {
         self.custom_json.as_deref()
     }
@@ -19774,8 +17638,7 @@ impl CreateStackInput {
     ) -> std::option::Option<&crate::model::StackConfigurationManager> {
         self.configuration_manager.as_ref()
     }
-    /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
-    /// Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+    /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
     pub fn chef_configuration(&self) -> std::option::Option<&crate::model::ChefConfiguration> {
         self.chef_configuration.as_ref()
     }
@@ -19784,60 +17647,33 @@ impl CreateStackInput {
         self.use_custom_cookbooks
     }
     /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
-    /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are
-    /// associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead
-    /// provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the
-    /// following settings: </p>
+    /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the following settings: </p>
     /// <ul>
-    /// <li>
-    /// <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p>
-    /// </li>
-    /// <li>
-    /// <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p>
-    /// </li>
+    /// <li> <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p> </li>
+    /// <li> <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
-    /// Stack</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
     pub fn use_opsworks_security_groups(&self) -> std::option::Option<bool> {
         self.use_opsworks_security_groups
     }
-    /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
-    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or
-    /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+    /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
     pub fn custom_cookbooks_source(&self) -> std::option::Option<&crate::model::Source> {
         self.custom_cookbooks_source.as_ref()
     }
-    /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS
-    /// OpsWorks installs the public key on the instance and you can use the private key with an SSH
-    /// client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
-    /// Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
-    /// Access</a>. You can override this setting by specifying a different key pair, or no key
-    /// pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
-    /// create an instance</a>. </p>
+    /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS OpsWorks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>. </p>
     pub fn default_ssh_key_name(&self) -> std::option::Option<&str> {
         self.default_ssh_key_name.as_deref()
     }
-    /// <p>The default root device type. This value is the default for all instances in the stack,
-    /// but you can override it when you create an instance. The default option is
-    /// <code>instance-store</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    /// <p>The default root device type. This value is the default for all instances in the stack, but you can override it when you create an instance. The default option is <code>instance-store</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
     pub fn default_root_device_type(&self) -> std::option::Option<&crate::model::RootDeviceType> {
         self.default_root_device_type.as_ref()
     }
     /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks
-    /// automatically installs new agent versions on the stack's instances as soon as
-    /// they are available.</p>
-    /// </li>
-    /// <li>
-    /// <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p>
-    /// </li>
+    /// <li> <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent versions on the stack's instances as soon as they are available.</p> </li>
+    /// <li> <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p> </li>
     /// </ul>
-    /// <p>The default setting is the most recent release of the agent. To specify an agent version,
-    /// you must use the complete version number, not the abbreviated number shown on the console.
-    /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.</p>
-    /// <note>
+    /// <p>The default setting is the most recent release of the agent. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>
     /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
     /// </note>
     pub fn agent_version(&self) -> std::option::Option<&str> {
@@ -19894,17 +17730,12 @@ pub struct CreateLayerInput {
     pub attributes: std::option::Option<
         std::collections::HashMap<crate::model::LayerAttributesKeys, std::string::String>,
     >,
-    /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <a>CloudWatchLogsLogStream</a>.</p>
+    /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
     pub cloud_watch_logs_configuration:
         std::option::Option<crate::model::CloudWatchLogsConfiguration>,
-    /// <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more information
-    /// about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    /// <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub custom_instance_profile_arn: std::option::Option<std::string::String>,
-    /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes
-    /// to be installed on the layer's instances. For more information, see
-    /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
-    /// Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
-    /// </p>
+    /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI. </p>
     pub custom_json: std::option::Option<std::string::String>,
     /// <p>An array containing the layer custom security group IDs.</p>
     pub custom_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -19915,32 +17746,19 @@ pub struct CreateLayerInput {
         std::option::Option<std::vec::Vec<crate::model::VolumeConfiguration>>,
     /// <p>Whether to disable auto healing for the layer.</p>
     pub enable_auto_healing: std::option::Option<bool>,
-    /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
-    /// address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-    /// a Layer</a>.</p>
+    /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
     pub auto_assign_elastic_ips: std::option::Option<bool>,
-    /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to
-    /// the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-    /// a Layer</a>.</p>
+    /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
     pub auto_assign_public_ips: std::option::Option<bool>,
     /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer custom recipes.</p>
     pub custom_recipes: std::option::Option<crate::model::Recipes>,
-    /// <p>Whether to install operating system and package updates when the instance boots. The default
-    /// value is <code>true</code>. To control when updates are installed, set this value to
-    /// <code>false</code>. You must then update your instances manually by using
-    /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
-    /// by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-    /// instances. </p>
-    /// <note>
-    /// <p>To ensure that your
-    /// instances have the latest security updates, we strongly recommend using the default value of <code>true</code>.</p>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+    /// <p>To ensure that your instances have the latest security updates, we strongly recommend using the default value of <code>true</code>.</p>
     /// </note>
     pub install_updates_on_boot: std::option::Option<bool>,
     /// <p>Whether to use Amazon EBS-optimized instances.</p>
     pub use_ebs_optimized_instances: std::option::Option<bool>,
-    /// <p>A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to
-    /// specify an execution timeout and enable or disable Elastic Load Balancer connection
-    /// draining.</p>
+    /// <p>A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to specify an execution timeout and enable or disable Elastic Load Balancer connection draining.</p>
     pub lifecycle_event_configuration:
         std::option::Option<crate::model::LifecycleEventConfiguration>,
 }
@@ -19971,22 +17789,17 @@ impl CreateLayerInput {
     > {
         self.attributes.as_ref()
     }
-    /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <a>CloudWatchLogsLogStream</a>.</p>
+    /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
     pub fn cloud_watch_logs_configuration(
         &self,
     ) -> std::option::Option<&crate::model::CloudWatchLogsConfiguration> {
         self.cloud_watch_logs_configuration.as_ref()
     }
-    /// <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more information
-    /// about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    /// <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn custom_instance_profile_arn(&self) -> std::option::Option<&str> {
         self.custom_instance_profile_arn.as_deref()
     }
-    /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes
-    /// to be installed on the layer's instances. For more information, see
-    /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
-    /// Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
-    /// </p>
+    /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI. </p>
     pub fn custom_json(&self) -> std::option::Option<&str> {
         self.custom_json.as_deref()
     }
@@ -20008,15 +17821,11 @@ impl CreateLayerInput {
     pub fn enable_auto_healing(&self) -> std::option::Option<bool> {
         self.enable_auto_healing
     }
-    /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
-    /// address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-    /// a Layer</a>.</p>
+    /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
     pub fn auto_assign_elastic_ips(&self) -> std::option::Option<bool> {
         self.auto_assign_elastic_ips
     }
-    /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to
-    /// the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-    /// a Layer</a>.</p>
+    /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
     pub fn auto_assign_public_ips(&self) -> std::option::Option<bool> {
         self.auto_assign_public_ips
     }
@@ -20024,15 +17833,8 @@ impl CreateLayerInput {
     pub fn custom_recipes(&self) -> std::option::Option<&crate::model::Recipes> {
         self.custom_recipes.as_ref()
     }
-    /// <p>Whether to install operating system and package updates when the instance boots. The default
-    /// value is <code>true</code>. To control when updates are installed, set this value to
-    /// <code>false</code>. You must then update your instances manually by using
-    /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
-    /// by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-    /// instances. </p>
-    /// <note>
-    /// <p>To ensure that your
-    /// instances have the latest security updates, we strongly recommend using the default value of <code>true</code>.</p>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+    /// <p>To ensure that your instances have the latest security updates, we strongly recommend using the default value of <code>true</code>.</p>
     /// </note>
     pub fn install_updates_on_boot(&self) -> std::option::Option<bool> {
         self.install_updates_on_boot
@@ -20041,9 +17843,7 @@ impl CreateLayerInput {
     pub fn use_ebs_optimized_instances(&self) -> std::option::Option<bool> {
         self.use_ebs_optimized_instances
     }
-    /// <p>A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to
-    /// specify an execution timeout and enable or disable Elastic Load Balancer connection
-    /// draining.</p>
+    /// <p>A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to specify an execution timeout and enable or disable Elastic Load Balancer connection draining.</p>
     pub fn lifecycle_event_configuration(
         &self,
     ) -> std::option::Option<&crate::model::LifecycleEventConfiguration> {
@@ -20095,11 +17895,7 @@ pub struct CreateInstanceInput {
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>An array that contains the instance's layer IDs.</p>
     pub layer_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types,
-    /// open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>.
-    /// The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-    /// Families and Types</a>. The parameter values that you use to specify the various types are
-    /// in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
+    /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
     pub auto_scaling_type: std::option::Option<crate::model::AutoScalingType>,
@@ -20107,44 +17903,17 @@ pub struct CreateInstanceInput {
     pub hostname: std::option::Option<std::string::String>,
     /// <p>The instance's operating system, which must be set to one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-    /// <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CentOS Linux 7</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Red Hat Enterprise Linux 7</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-    /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>A custom AMI: <code>Custom</code>.</p>
-    /// </li>
+    /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+    /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+    /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+    /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+    /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+    /// <li> <p>A custom AMI: <code>Custom</code>.</p> </li>
     /// </ul>
-    /// <p>For more information about the supported operating systems,
-    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-    /// <p>The default option is the current Amazon Linux version. If you set this parameter to
-    /// <code>Custom</code>, you must use the <a>CreateInstance</a> action's AmiId parameter to
-    /// specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about supported operating
-    /// systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-    /// Custom AMIs</a>.</p>
+    /// <p>For more information about the supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+    /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the <code>CreateInstance</code> action's AmiId parameter to specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
     pub os: std::option::Option<std::string::String>,
-    /// <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the
-    /// supported operating systems.
-    /// For more information, see
-    /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
-    /// <note>
+    /// <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported operating systems. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>
     /// <p>If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.</p>
     /// </note>
     pub ami_id: std::option::Option<std::string::String>,
@@ -20156,50 +17925,26 @@ pub struct CreateInstanceInput {
     pub virtualization_type: std::option::Option<std::string::String>,
     /// <p>The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct AWS OpsWorks Stacks to launch the instance in a different subnet.</p>
     pub subnet_id: std::option::Option<std::string::String>,
-    /// <p>The instance architecture. The default option is <code>x86_64</code>. Instance types do not
-    /// necessarily support both architectures. For a list of the architectures that are supported by
-    /// the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and
-    /// Types</a>.</p>
+    /// <p>The instance architecture. The default option is <code>x86_64</code>. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
     pub architecture: std::option::Option<crate::model::Architecture>,
     /// <p>The instance root device type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
     pub root_device_type: std::option::Option<crate::model::RootDeviceType>,
-    /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block
-    /// devices. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
-    /// Device Mapping</a>. Note that block device mappings are not supported for custom AMIs.</p>
+    /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block devices. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a>. Note that block device mappings are not supported for custom AMIs.</p>
     pub block_device_mappings: std::option::Option<std::vec::Vec<crate::model::BlockDeviceMapping>>,
-    /// <p>Whether to install operating system and package updates when the instance boots. The default
-    /// value is <code>true</code>. To control when updates are installed, set this value to
-    /// <code>false</code>. You must then update your instances manually by using
-    /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
-    /// by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-    /// instances. </p>
-    /// <note>
-    /// <p>We strongly recommend using the default value of <code>true</code> to ensure that your
-    /// instances have the latest security updates.</p>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+    /// <p>We strongly recommend using the default value of <code>true</code> to ensure that your instances have the latest security updates.</p>
     /// </note>
     pub install_updates_on_boot: std::option::Option<bool>,
     /// <p>Whether to create an Amazon EBS-optimized instance.</p>
     pub ebs_optimized: std::option::Option<bool>,
     /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INHERIT</code> - Use the stack's default agent version setting.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>version_number</i> - Use the specified agent version.
-    /// This value overrides the stack's default setting.
-    /// To update the agent version, edit the instance configuration and specify a
-    /// new version.
-    /// AWS OpsWorks Stacks then automatically installs that version on the instance.</p>
-    /// </li>
+    /// <li> <p> <code>INHERIT</code> - Use the stack's default agent version setting.</p> </li>
+    /// <li> <p> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the instance.</p> </li>
     /// </ul>
-    /// <p>The default setting is <code>INHERIT</code>. To specify an agent version,
-    /// you must use the complete version number, not the abbreviated number shown on the console.
-    /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.</p>
+    /// <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p>
     pub agent_version: std::option::Option<std::string::String>,
-    /// <p>The instance's tenancy option. The default option is no tenancy, or if the instance is running in a VPC, inherit tenancy settings from the VPC. The following are valid values for this parameter:  <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs associated with changes in tenancy options, we recommend that you research tenancy options before choosing them for your instances. For more information about dedicated hosts, see <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts Overview</a> and <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon EC2 Dedicated Instances</a>.</p>
+    /// <p>The instance's tenancy option. The default option is no tenancy, or if the instance is running in a VPC, inherit tenancy settings from the VPC. The following are valid values for this parameter: <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs associated with changes in tenancy options, we recommend that you research tenancy options before choosing them for your instances. For more information about dedicated hosts, see <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts Overview</a> and <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon EC2 Dedicated Instances</a>.</p>
     pub tenancy: std::option::Option<std::string::String>,
 }
 impl CreateInstanceInput {
@@ -20211,11 +17956,7 @@ impl CreateInstanceInput {
     pub fn layer_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.layer_ids.as_deref()
     }
-    /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types,
-    /// open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>.
-    /// The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-    /// Families and Types</a>. The parameter values that you use to specify the various types are
-    /// in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
+    /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
     pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
     }
@@ -20229,46 +17970,19 @@ impl CreateInstanceInput {
     }
     /// <p>The instance's operating system, which must be set to one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-    /// <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CentOS Linux 7</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Red Hat Enterprise Linux 7</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-    /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>A custom AMI: <code>Custom</code>.</p>
-    /// </li>
+    /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+    /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+    /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+    /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+    /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+    /// <li> <p>A custom AMI: <code>Custom</code>.</p> </li>
     /// </ul>
-    /// <p>For more information about the supported operating systems,
-    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-    /// <p>The default option is the current Amazon Linux version. If you set this parameter to
-    /// <code>Custom</code>, you must use the <a>CreateInstance</a> action's AmiId parameter to
-    /// specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about supported operating
-    /// systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-    /// Custom AMIs</a>.</p>
+    /// <p>For more information about the supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+    /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the <code>CreateInstance</code> action's AmiId parameter to specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
     pub fn os(&self) -> std::option::Option<&str> {
         self.os.as_deref()
     }
-    /// <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the
-    /// supported operating systems.
-    /// For more information, see
-    /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
-    /// <note>
+    /// <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported operating systems. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>
     /// <p>If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.</p>
     /// </note>
     pub fn ami_id(&self) -> std::option::Option<&str> {
@@ -20290,10 +18004,7 @@ impl CreateInstanceInput {
     pub fn subnet_id(&self) -> std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
-    /// <p>The instance architecture. The default option is <code>x86_64</code>. Instance types do not
-    /// necessarily support both architectures. For a list of the architectures that are supported by
-    /// the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and
-    /// Types</a>.</p>
+    /// <p>The instance architecture. The default option is <code>x86_64</code>. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
     pub fn architecture(&self) -> std::option::Option<&crate::model::Architecture> {
         self.architecture.as_ref()
     }
@@ -20301,23 +18012,14 @@ impl CreateInstanceInput {
     pub fn root_device_type(&self) -> std::option::Option<&crate::model::RootDeviceType> {
         self.root_device_type.as_ref()
     }
-    /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block
-    /// devices. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
-    /// Device Mapping</a>. Note that block device mappings are not supported for custom AMIs.</p>
+    /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block devices. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a>. Note that block device mappings are not supported for custom AMIs.</p>
     pub fn block_device_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::BlockDeviceMapping]> {
         self.block_device_mappings.as_deref()
     }
-    /// <p>Whether to install operating system and package updates when the instance boots. The default
-    /// value is <code>true</code>. To control when updates are installed, set this value to
-    /// <code>false</code>. You must then update your instances manually by using
-    /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
-    /// by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-    /// instances. </p>
-    /// <note>
-    /// <p>We strongly recommend using the default value of <code>true</code> to ensure that your
-    /// instances have the latest security updates.</p>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+    /// <p>We strongly recommend using the default value of <code>true</code> to ensure that your instances have the latest security updates.</p>
     /// </note>
     pub fn install_updates_on_boot(&self) -> std::option::Option<bool> {
         self.install_updates_on_boot
@@ -20328,26 +18030,14 @@ impl CreateInstanceInput {
     }
     /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INHERIT</code> - Use the stack's default agent version setting.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>version_number</i> - Use the specified agent version.
-    /// This value overrides the stack's default setting.
-    /// To update the agent version, edit the instance configuration and specify a
-    /// new version.
-    /// AWS OpsWorks Stacks then automatically installs that version on the instance.</p>
-    /// </li>
+    /// <li> <p> <code>INHERIT</code> - Use the stack's default agent version setting.</p> </li>
+    /// <li> <p> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the instance.</p> </li>
     /// </ul>
-    /// <p>The default setting is <code>INHERIT</code>. To specify an agent version,
-    /// you must use the complete version number, not the abbreviated number shown on the console.
-    /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.</p>
+    /// <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p>
     pub fn agent_version(&self) -> std::option::Option<&str> {
         self.agent_version.as_deref()
     }
-    /// <p>The instance's tenancy option. The default option is no tenancy, or if the instance is running in a VPC, inherit tenancy settings from the VPC. The following are valid values for this parameter:  <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs associated with changes in tenancy options, we recommend that you research tenancy options before choosing them for your instances. For more information about dedicated hosts, see <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts Overview</a> and <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon EC2 Dedicated Instances</a>.</p>
+    /// <p>The instance's tenancy option. The default option is no tenancy, or if the instance is running in a VPC, inherit tenancy settings from the VPC. The following are valid values for this parameter: <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs associated with changes in tenancy options, we recommend that you research tenancy options before choosing them for your instances. For more information about dedicated hosts, see <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts Overview</a> and <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon EC2 Dedicated Instances</a>.</p>
     pub fn tenancy(&self) -> std::option::Option<&str> {
         self.tenancy.as_deref()
     }
@@ -20389,18 +18079,13 @@ pub struct CreateDeploymentInput {
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The layer IDs for the deployment targets.</p>
     pub layer_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any
-    /// associated arguments.</p>
+    /// <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any associated arguments.</p>
     pub command: std::option::Option<crate::model::DeploymentCommand>,
     /// <p>A user-defined comment.</p>
     pub comment: std::option::Option<std::string::String>,
     /// <p>A string that contains user-defined, custom JSON. You can use this parameter to override some corresponding default stack configuration JSON values. The string should be in the following format:</p>
-    /// <p>
-    /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-    /// </p>
-    /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-    /// Modify the Stack Configuration Attributes</a> and
-    /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">Overriding Attributes With Custom JSON</a>.</p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+    /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">Overriding Attributes With Custom JSON</a>.</p>
     pub custom_json: std::option::Option<std::string::String>,
 }
 impl CreateDeploymentInput {
@@ -20420,8 +18105,7 @@ impl CreateDeploymentInput {
     pub fn layer_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.layer_ids.as_deref()
     }
-    /// <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any
-    /// associated arguments.</p>
+    /// <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any associated arguments.</p>
     pub fn command(&self) -> std::option::Option<&crate::model::DeploymentCommand> {
         self.command.as_ref()
     }
@@ -20430,12 +18114,8 @@ impl CreateDeploymentInput {
         self.comment.as_deref()
     }
     /// <p>A string that contains user-defined, custom JSON. You can use this parameter to override some corresponding default stack configuration JSON values. The string should be in the following format:</p>
-    /// <p>
-    /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-    /// </p>
-    /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-    /// Modify the Stack Configuration Attributes</a> and
-    /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">Overriding Attributes With Custom JSON</a>.</p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+    /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">Overriding Attributes With Custom JSON</a>.</p>
     pub fn custom_json(&self) -> std::option::Option<&str> {
         self.custom_json.as_deref()
     }
@@ -20468,16 +18148,11 @@ pub struct CreateAppInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The app's data source.</p>
     pub data_sources: std::option::Option<std::vec::Vec<crate::model::DataSource>>,
-    /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP
-    /// applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances
-    /// that are members of the corresponding layer. If your app isn't one of the standard types, or
-    /// you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
+    /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
     pub r#type: std::option::Option<crate::model::AppType>,
     /// <p>A <code>Source</code> object that specifies the app repository.</p>
     pub app_source: std::option::Option<crate::model::Source>,
-    /// <p>The app virtual host settings, with multiple domains separated by commas. For example:
-    /// <code>'www.example.com, example.com'</code>
-    /// </p>
+    /// <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
     pub domains: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Whether to enable SSL for the app.</p>
     pub enable_ssl: std::option::Option<bool>,
@@ -20487,11 +18162,8 @@ pub struct CreateAppInput {
     pub attributes: std::option::Option<
         std::collections::HashMap<crate::model::AppAttributesKeys, std::string::String>,
     >,
-    /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be
-    /// associated with the app. After you deploy the app, these variables are defined on the
-    /// associated app server instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
-    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p>
-    /// <note>
+    /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
+    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p> <note>
     /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
     /// </note>
     pub environment: std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
@@ -20517,10 +18189,7 @@ impl CreateAppInput {
     pub fn data_sources(&self) -> std::option::Option<&[crate::model::DataSource]> {
         self.data_sources.as_deref()
     }
-    /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP
-    /// applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances
-    /// that are members of the corresponding layer. If your app isn't one of the standard types, or
-    /// you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
+    /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::AppType> {
         self.r#type.as_ref()
     }
@@ -20528,9 +18197,7 @@ impl CreateAppInput {
     pub fn app_source(&self) -> std::option::Option<&crate::model::Source> {
         self.app_source.as_ref()
     }
-    /// <p>The app virtual host settings, with multiple domains separated by commas. For example:
-    /// <code>'www.example.com, example.com'</code>
-    /// </p>
+    /// <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
     pub fn domains(&self) -> std::option::Option<&[std::string::String]> {
         self.domains.as_deref()
     }
@@ -20550,11 +18217,8 @@ impl CreateAppInput {
     > {
         self.attributes.as_ref()
     }
-    /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be
-    /// associated with the app. After you deploy the app, these variables are defined on the
-    /// associated app server instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
-    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p>
-    /// <note>
+    /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
+    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p> <note>
     /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
     /// </note>
     pub fn environment(&self) -> std::option::Option<&[crate::model::EnvironmentVariable]> {
@@ -20588,235 +18252,98 @@ pub struct CloneStackInput {
     pub source_stack_id: std::option::Option<std::string::String>,
     /// <p>The cloned stack name.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The cloned stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see
-    /// <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    /// <p>The cloned stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub region: std::option::Option<std::string::String>,
-    /// <p>The ID of the VPC that the cloned stack is to be launched into. It must be in the specified region. All
-    /// instances are launched into this VPC, and you cannot change the ID later.</p>
+    /// <p>The ID of the VPC that the cloned stack is to be launched into. It must be in the specified region. All instances are launched into this VPC, and you cannot change the ID later.</p>
     /// <ul>
-    /// <li>
-    /// <p>If your account supports EC2 Classic, the default value is no VPC.</p>
-    /// </li>
-    /// <li>
-    /// <p>If your account does not support EC2 Classic, the default value is the default VPC for the specified region.</p>
-    /// </li>
+    /// <li> <p>If your account supports EC2 Classic, the default value is no VPC.</p> </li>
+    /// <li> <p>If your account does not support EC2 Classic, the default value is the default VPC for the specified region.</p> </li>
     /// </ul>
-    /// <p>If the VPC ID corresponds to a default VPC and you have specified either the
-    /// <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only,
-    /// AWS OpsWorks Stacks infers the value of the other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets
-    /// these parameters to the first valid Availability Zone for the specified region and the
-    /// corresponding default VPC subnet ID, respectively. </p>
+    /// <p>If the VPC ID corresponds to a default VPC and you have specified either the <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only, AWS OpsWorks Stacks infers the value of the other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets these parameters to the first valid Availability Zone for the specified region and the corresponding default VPC subnet ID, respectively. </p>
     /// <p>If you specify a nondefault VPC ID, note the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>It must belong to a VPC in your account that is in the specified region.</p>
-    /// </li>
-    /// <li>
-    /// <p>You must specify a value for <code>DefaultSubnetId</code>.</p>
-    /// </li>
+    /// <li> <p>It must belong to a VPC in your account that is in the specified region.</p> </li>
+    /// <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>
     /// </ul>
-    /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
-    /// VPC</a>. For more information about default VPC and EC2 Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-    /// Platforms</a>. </p>
+    /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>. For more information about default VPC and EC2 Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>. </p>
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>A list of stack attributes and values as key/value pairs to be added to the cloned stack.</p>
     pub attributes: std::option::Option<
         std::collections::HashMap<crate::model::StackAttributesKeys, std::string::String>,
     >,
-    /// <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS
-    /// resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an
-    /// existing IAM role. If you create a stack by using the AWS OpsWorks Stacks console, it creates the role for
-    /// you. You can obtain an existing stack's IAM ARN programmatically by calling
-    /// <a>DescribePermissions</a>. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-    /// Identifiers</a>.</p>
-    /// <note>
+    /// <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. If you create a stack by using the AWS OpsWorks Stacks console, it creates the role for you. You can obtain an existing stack's IAM ARN programmatically by calling <code>DescribePermissions</code>. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p> <note>
     /// <p>You must set this parameter to a valid service role ARN or the action will fail; there is no default value. You can specify the source stack's service role ARN, if you prefer, but you must do so explicitly.</p>
     /// </note>
     pub service_role_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances.
-    /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-    /// Identifiers</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub default_instance_profile_arn: std::option::Option<std::string::String>,
     /// <p>The stack's operating system, which must be set to one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux
-    /// 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CentOS Linux 7</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Red Hat Enterprise Linux 7</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-    /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when
-    /// you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-    /// Custom AMIs</a>.</p>
-    /// </li>
+    /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+    /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+    /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+    /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+    /// <li> <p> <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+    /// <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> </li>
     /// </ul>
-    /// <p>The default option is the parent stack's operating system.
-    /// For more information about supported operating systems,
-    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-    /// <note>
+    /// <p>The default option is the parent stack's operating system. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p> <note>
     /// <p>You can specify a different Linux operating system for the cloned stack, but you cannot change from Linux to Windows or Windows to Linux.</p>
     /// </note>
     pub default_os: std::option::Option<std::string::String>,
-    /// <p>The stack's host name theme, with spaces are replaced by underscores. The theme is used to
-    /// generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set
-    /// to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's
-    /// short name. The other themes are:</p>
+    /// <p>The stack's host name theme, with spaces are replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Baked_Goods</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Clouds</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Europe_Cities</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Fruits</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Greek_Deities_and_Titans</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Legendary_creatures_from_Japan</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Planets_and_Moons</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Roman_Deities</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Scottish_Islands</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>US_Cities</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Wild_Cats</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Baked_Goods</code> </p> </li>
+    /// <li> <p> <code>Clouds</code> </p> </li>
+    /// <li> <p> <code>Europe_Cities</code> </p> </li>
+    /// <li> <p> <code>Fruits</code> </p> </li>
+    /// <li> <p> <code>Greek_Deities_and_Titans</code> </p> </li>
+    /// <li> <p> <code>Legendary_creatures_from_Japan</code> </p> </li>
+    /// <li> <p> <code>Planets_and_Moons</code> </p> </li>
+    /// <li> <p> <code>Roman_Deities</code> </p> </li>
+    /// <li> <p> <code>Scottish_Islands</code> </p> </li>
+    /// <li> <p> <code>US_Cities</code> </p> </li>
+    /// <li> <p> <code>Wild_Cats</code> </p> </li>
     /// </ul>
-    /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a
-    /// host name based on the current theme.</p>
+    /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
     pub hostname_theme: std::option::Option<std::string::String>,
-    /// <p>The cloned stack's default Availability Zone, which must be in the specified region. For more
-    /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-    /// Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must
-    /// be in the same zone. For more information, see the <code>VpcId</code> parameter description.
-    /// </p>
+    /// <p>The cloned stack's default Availability Zone, which must be in the specified region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see the <code>VpcId</code> parameter description. </p>
     pub default_availability_zone: std::option::Option<std::string::String>,
-    /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the
-    /// <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify
-    /// otherwise when you create the instance. If you also specify a value for
-    /// <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on
-    /// default values and when this parameter is required, see the <code>VpcId</code> parameter
-    /// description. </p>
+    /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description. </p>
     pub default_subnet_id: std::option::Option<std::string::String>,
     /// <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format:</p>
-    /// <p>
-    /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-    /// </p>
-    /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-    /// Modify the Stack Configuration Attributes</a>
-    /// </p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+    /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a> </p>
     pub custom_json: std::option::Option<std::string::String>,
     /// <p>The configuration manager. When you clone a stack we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
     pub configuration_manager: std::option::Option<crate::model::StackConfigurationManager>,
-    /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
-    /// Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+    /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
     pub chef_configuration: std::option::Option<crate::model::ChefConfiguration>,
     /// <p>Whether to use custom cookbooks.</p>
     pub use_custom_cookbooks: std::option::Option<bool>,
     /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
-    /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are
-    /// associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead
-    /// provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the
-    /// following settings: </p>
+    /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the following settings: </p>
     /// <ul>
-    /// <li>
-    /// <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it but you cannot delete the built-in security group.</p>
-    /// </li>
-    /// <li>
-    /// <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2) security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p>
-    /// </li>
+    /// <li> <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it but you cannot delete the built-in security group.</p> </li>
+    /// <li> <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2) security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
-    /// Stack</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
     pub use_opsworks_security_groups: std::option::Option<bool>,
-    /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
-    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+    /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
     pub custom_cookbooks_source: std::option::Option<crate::model::Source>,
-    /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS
-    /// OpsWorks installs the public key on the instance and you can use the private key with an SSH
-    /// client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
-    /// Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
-    /// Access</a>. You can override this setting by specifying a different key pair, or no key
-    /// pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
-    /// create an instance</a>. </p>
+    /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS OpsWorks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>. </p>
     pub default_ssh_key_name: std::option::Option<std::string::String>,
     /// <p>Whether to clone the source stack's permissions.</p>
     pub clone_permissions: std::option::Option<bool>,
     /// <p>A list of source stack app IDs to be included in the cloned stack.</p>
     pub clone_app_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The default root device type. This value is used by default for all instances in the cloned
-    /// stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    /// <p>The default root device type. This value is used by default for all instances in the cloned stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
     pub default_root_device_type: std::option::Option<crate::model::RootDeviceType>,
     /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks
-    /// automatically installs new agent versions on the stack's instances as soon as
-    /// they are available.</p>
-    /// </li>
-    /// <li>
-    /// <p>Fixed version - Set this parameter to your preferred agent version. To update
-    /// the agent version, you must edit the stack configuration and specify a new version.
-    /// AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p>
-    /// </li>
+    /// <li> <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent versions on the stack's instances as soon as they are available.</p> </li>
+    /// <li> <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p> </li>
     /// </ul>
-    /// <p>The default setting is <code>LATEST</code>. To specify an agent version,
-    /// you must use the complete version number, not the abbreviated number shown on the console.
-    /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.</p>
-    /// <note>
+    /// <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>
     /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
     /// </note>
     pub agent_version: std::option::Option<std::string::String>,
@@ -20830,38 +18357,22 @@ impl CloneStackInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The cloned stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see
-    /// <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    /// <p>The cloned stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
     }
-    /// <p>The ID of the VPC that the cloned stack is to be launched into. It must be in the specified region. All
-    /// instances are launched into this VPC, and you cannot change the ID later.</p>
+    /// <p>The ID of the VPC that the cloned stack is to be launched into. It must be in the specified region. All instances are launched into this VPC, and you cannot change the ID later.</p>
     /// <ul>
-    /// <li>
-    /// <p>If your account supports EC2 Classic, the default value is no VPC.</p>
-    /// </li>
-    /// <li>
-    /// <p>If your account does not support EC2 Classic, the default value is the default VPC for the specified region.</p>
-    /// </li>
+    /// <li> <p>If your account supports EC2 Classic, the default value is no VPC.</p> </li>
+    /// <li> <p>If your account does not support EC2 Classic, the default value is the default VPC for the specified region.</p> </li>
     /// </ul>
-    /// <p>If the VPC ID corresponds to a default VPC and you have specified either the
-    /// <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only,
-    /// AWS OpsWorks Stacks infers the value of the other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets
-    /// these parameters to the first valid Availability Zone for the specified region and the
-    /// corresponding default VPC subnet ID, respectively. </p>
+    /// <p>If the VPC ID corresponds to a default VPC and you have specified either the <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only, AWS OpsWorks Stacks infers the value of the other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets these parameters to the first valid Availability Zone for the specified region and the corresponding default VPC subnet ID, respectively. </p>
     /// <p>If you specify a nondefault VPC ID, note the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>It must belong to a VPC in your account that is in the specified region.</p>
-    /// </li>
-    /// <li>
-    /// <p>You must specify a value for <code>DefaultSubnetId</code>.</p>
-    /// </li>
+    /// <li> <p>It must belong to a VPC in your account that is in the specified region.</p> </li>
+    /// <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>
     /// </ul>
-    /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
-    /// VPC</a>. For more information about default VPC and EC2 Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-    /// Platforms</a>. </p>
+    /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>. For more information about default VPC and EC2 Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>. </p>
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
@@ -20873,153 +18384,60 @@ impl CloneStackInput {
     > {
         self.attributes.as_ref()
     }
-    /// <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS
-    /// resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an
-    /// existing IAM role. If you create a stack by using the AWS OpsWorks Stacks console, it creates the role for
-    /// you. You can obtain an existing stack's IAM ARN programmatically by calling
-    /// <a>DescribePermissions</a>. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-    /// Identifiers</a>.</p>
-    /// <note>
+    /// <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. If you create a stack by using the AWS OpsWorks Stacks console, it creates the role for you. You can obtain an existing stack's IAM ARN programmatically by calling <code>DescribePermissions</code>. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p> <note>
     /// <p>You must set this parameter to a valid service role ARN or the action will fail; there is no default value. You can specify the source stack's service role ARN, if you prefer, but you must do so explicitly.</p>
     /// </note>
     pub fn service_role_arn(&self) -> std::option::Option<&str> {
         self.service_role_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances.
-    /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-    /// Identifiers</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn default_instance_profile_arn(&self) -> std::option::Option<&str> {
         self.default_instance_profile_arn.as_deref()
     }
     /// <p>The stack's operating system, which must be set to one of the following.</p>
     /// <ul>
-    /// <li>
-    /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux
-    /// 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CentOS Linux 7</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Red Hat Enterprise Linux 7</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-    /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when
-    /// you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-    /// Custom AMIs</a>.</p>
-    /// </li>
+    /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+    /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+    /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+    /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+    /// <li> <p> <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+    /// <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> </li>
     /// </ul>
-    /// <p>The default option is the parent stack's operating system.
-    /// For more information about supported operating systems,
-    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-    /// <note>
+    /// <p>The default option is the parent stack's operating system. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p> <note>
     /// <p>You can specify a different Linux operating system for the cloned stack, but you cannot change from Linux to Windows or Windows to Linux.</p>
     /// </note>
     pub fn default_os(&self) -> std::option::Option<&str> {
         self.default_os.as_deref()
     }
-    /// <p>The stack's host name theme, with spaces are replaced by underscores. The theme is used to
-    /// generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set
-    /// to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's
-    /// short name. The other themes are:</p>
+    /// <p>The stack's host name theme, with spaces are replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Baked_Goods</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Clouds</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Europe_Cities</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Fruits</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Greek_Deities_and_Titans</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Legendary_creatures_from_Japan</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Planets_and_Moons</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Roman_Deities</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Scottish_Islands</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>US_Cities</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Wild_Cats</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Baked_Goods</code> </p> </li>
+    /// <li> <p> <code>Clouds</code> </p> </li>
+    /// <li> <p> <code>Europe_Cities</code> </p> </li>
+    /// <li> <p> <code>Fruits</code> </p> </li>
+    /// <li> <p> <code>Greek_Deities_and_Titans</code> </p> </li>
+    /// <li> <p> <code>Legendary_creatures_from_Japan</code> </p> </li>
+    /// <li> <p> <code>Planets_and_Moons</code> </p> </li>
+    /// <li> <p> <code>Roman_Deities</code> </p> </li>
+    /// <li> <p> <code>Scottish_Islands</code> </p> </li>
+    /// <li> <p> <code>US_Cities</code> </p> </li>
+    /// <li> <p> <code>Wild_Cats</code> </p> </li>
     /// </ul>
-    /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a
-    /// host name based on the current theme.</p>
+    /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
     pub fn hostname_theme(&self) -> std::option::Option<&str> {
         self.hostname_theme.as_deref()
     }
-    /// <p>The cloned stack's default Availability Zone, which must be in the specified region. For more
-    /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-    /// Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must
-    /// be in the same zone. For more information, see the <code>VpcId</code> parameter description.
-    /// </p>
+    /// <p>The cloned stack's default Availability Zone, which must be in the specified region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see the <code>VpcId</code> parameter description. </p>
     pub fn default_availability_zone(&self) -> std::option::Option<&str> {
         self.default_availability_zone.as_deref()
     }
-    /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the
-    /// <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify
-    /// otherwise when you create the instance. If you also specify a value for
-    /// <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on
-    /// default values and when this parameter is required, see the <code>VpcId</code> parameter
-    /// description. </p>
+    /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description. </p>
     pub fn default_subnet_id(&self) -> std::option::Option<&str> {
         self.default_subnet_id.as_deref()
     }
     /// <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format:</p>
-    /// <p>
-    /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-    /// </p>
-    /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-    /// Modify the Stack Configuration Attributes</a>
-    /// </p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+    /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a> </p>
     pub fn custom_json(&self) -> std::option::Option<&str> {
         self.custom_json.as_deref()
     }
@@ -21029,8 +18447,7 @@ impl CloneStackInput {
     ) -> std::option::Option<&crate::model::StackConfigurationManager> {
         self.configuration_manager.as_ref()
     }
-    /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
-    /// Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+    /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
     pub fn chef_configuration(&self) -> std::option::Option<&crate::model::ChefConfiguration> {
         self.chef_configuration.as_ref()
     }
@@ -21039,35 +18456,20 @@ impl CloneStackInput {
         self.use_custom_cookbooks
     }
     /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
-    /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are
-    /// associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead
-    /// provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the
-    /// following settings: </p>
+    /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the following settings: </p>
     /// <ul>
-    /// <li>
-    /// <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it but you cannot delete the built-in security group.</p>
-    /// </li>
-    /// <li>
-    /// <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2) security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p>
-    /// </li>
+    /// <li> <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it but you cannot delete the built-in security group.</p> </li>
+    /// <li> <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2) security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
-    /// Stack</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
     pub fn use_opsworks_security_groups(&self) -> std::option::Option<bool> {
         self.use_opsworks_security_groups
     }
-    /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
-    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+    /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
     pub fn custom_cookbooks_source(&self) -> std::option::Option<&crate::model::Source> {
         self.custom_cookbooks_source.as_ref()
     }
-    /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS
-    /// OpsWorks installs the public key on the instance and you can use the private key with an SSH
-    /// client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
-    /// Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
-    /// Access</a>. You can override this setting by specifying a different key pair, or no key
-    /// pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
-    /// create an instance</a>. </p>
+    /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS OpsWorks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>. </p>
     pub fn default_ssh_key_name(&self) -> std::option::Option<&str> {
         self.default_ssh_key_name.as_deref()
     }
@@ -21079,28 +18481,16 @@ impl CloneStackInput {
     pub fn clone_app_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.clone_app_ids.as_deref()
     }
-    /// <p>The default root device type. This value is used by default for all instances in the cloned
-    /// stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    /// <p>The default root device type. This value is used by default for all instances in the cloned stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
     pub fn default_root_device_type(&self) -> std::option::Option<&crate::model::RootDeviceType> {
         self.default_root_device_type.as_ref()
     }
     /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks
-    /// automatically installs new agent versions on the stack's instances as soon as
-    /// they are available.</p>
-    /// </li>
-    /// <li>
-    /// <p>Fixed version - Set this parameter to your preferred agent version. To update
-    /// the agent version, you must edit the stack configuration and specify a new version.
-    /// AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p>
-    /// </li>
+    /// <li> <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent versions on the stack's instances as soon as they are available.</p> </li>
+    /// <li> <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p> </li>
     /// </ul>
-    /// <p>The default setting is <code>LATEST</code>. To specify an agent version,
-    /// you must use the complete version number, not the abbreviated number shown on the console.
-    /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.</p>
-    /// <note>
+    /// <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>
     /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
     /// </note>
     pub fn agent_version(&self) -> std::option::Option<&str> {

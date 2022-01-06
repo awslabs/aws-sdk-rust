@@ -17,9 +17,9 @@ pub mod batch_execute_statement_input {
         /// To override the contents of this collection use [`set_statements`](Self::set_statements).
         ///
         /// <p>The list of PartiQL statements representing the batch to run.</p>
-        pub fn statements(mut self, input: impl Into<crate::model::BatchStatementRequest>) -> Self {
+        pub fn statements(mut self, input: crate::model::BatchStatementRequest) -> Self {
             let mut v = self.statements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statements = Some(v);
             self
         }
@@ -31,30 +31,11 @@ pub mod batch_execute_statement_input {
             self.statements = input;
             self
         }
-        /// <p>Determines the level of detail about either provisioned or on-demand throughput
-        /// consumption that is returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INDEXES</code> - The response includes the aggregate
-        /// <code>ConsumedCapacity</code> for the operation, together with
-        /// <code>ConsumedCapacity</code> for each table and secondary index that was
-        /// accessed.</p>
-        /// <p>Note that some operations, such as <code>GetItem</code> and
-        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-        /// information for table(s).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOTAL</code> - The response includes only the aggregate
-        /// <code>ConsumedCapacity</code> for the operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-        /// response.</p>
-        /// </li>
+        /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+        /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+        /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
@@ -63,30 +44,11 @@ pub mod batch_execute_statement_input {
             self.return_consumed_capacity = Some(input);
             self
         }
-        /// <p>Determines the level of detail about either provisioned or on-demand throughput
-        /// consumption that is returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INDEXES</code> - The response includes the aggregate
-        /// <code>ConsumedCapacity</code> for the operation, together with
-        /// <code>ConsumedCapacity</code> for each table and secondary index that was
-        /// accessed.</p>
-        /// <p>Note that some operations, such as <code>GetItem</code> and
-        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-        /// information for table(s).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOTAL</code> - The response includes only the aggregate
-        /// <code>ConsumedCapacity</code> for the operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-        /// response.</p>
-        /// </li>
+        /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+        /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+        /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
         /// </ul>
         pub fn set_return_consumed_capacity(
             mut self,
@@ -112,7 +74,7 @@ pub mod batch_execute_statement_input {
 #[doc(hidden)]
 pub type BatchExecuteStatementInputOperationOutputAlias = crate::operation::BatchExecuteStatement;
 #[doc(hidden)]
-pub type BatchExecuteStatementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchExecuteStatementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchExecuteStatementInput {
     /// Consumes the builder and constructs an Operation<[`BatchExecuteStatement`](crate::operation::BatchExecuteStatement)>
     #[allow(clippy::let_and_return)]
@@ -123,7 +85,7 @@ impl BatchExecuteStatementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchExecuteStatement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -210,7 +172,7 @@ impl BatchExecuteStatementInput {
             "BatchExecuteStatement",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -250,215 +212,65 @@ pub mod batch_get_item_input {
         ///
         /// To override the contents of this collection use [`set_request_items`](Self::set_request_items).
         ///
-        /// <p>A map of one or more table names and, for each table, a map that describes one or more
-        /// items to retrieve from that table. Each table name can be used only once per
-        /// <code>BatchGetItem</code> request.</p>
+        /// <p>A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <code>BatchGetItem</code> request.</p>
         /// <p>Each element in the map of items to retrieve consists of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent read
-        /// is used; if <code>false</code> (the default), an eventually consistent read is
-        /// used.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ExpressionAttributeNames</code> - One or more substitution tokens for
-        /// attribute names in the <code>ProjectionExpression</code> parameter. The
-        /// following are some use cases for using
-        /// <code>ExpressionAttributeNames</code>:</p>
+        /// <li> <p> <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent read is used; if <code>false</code> (the default), an eventually consistent read is used.</p> </li>
+        /// <li> <p> <code>ExpressionAttributeNames</code> - One or more substitution tokens for attribute names in the <code>ProjectionExpression</code> parameter. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
-        /// word.</p>
-        /// </li>
-        /// <li>
-        /// <p>To create a placeholder for repeating occurrences of an attribute name
-        /// in an expression.</p>
-        /// </li>
-        /// <li>
-        /// <p>To prevent special characters in an attribute name from being
-        /// misinterpreted in an expression.</p>
-        /// </li>
-        /// </ul>
-        /// <p>Use the <b>#</b> character in an expression to
-        /// dereference an attribute name. For example, consider the following attribute
-        /// name:</p>
+        /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
+        /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
+        /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
+        /// </ul> <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Percentile</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be
-        /// used directly in an expression. (For the complete list of reserved words, see
-        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
-        /// Words</a> in the <i>Amazon DynamoDB Developer Guide</i>).
-        /// To work around this, you could specify the following for
-        /// <code>ExpressionAttributeNames</code>:</p>
+        /// <li> <p> <code>Percentile</code> </p> </li>
+        /// </ul> <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>{"#P":"Percentile"}</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <p>You could then use this substitution in an expression, as in this
-        /// example:</p>
+        /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
+        /// </ul> <p>You could then use this substitution in an expression, as in this example:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>#P = :val</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Tokens that begin with the <b>:</b> character
-        /// are <i>expression attribute values</i>, which are placeholders
-        /// for the actual value at runtime.</p>
-        /// </note>
-        /// <p>For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB
-        /// Developer Guide</i>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Keys</code> - An array of primary key attribute values that define
-        /// specific items in the table. For each primary key, you must provide
-        /// <i>all</i> of the key attributes. For example, with a simple
-        /// primary key, you only need to provide the partition key value. For a composite
-        /// key, you must provide <i>both</i> the partition key value and the
-        /// sort key value.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ProjectionExpression</code> - A string that identifies one or more
-        /// attributes to retrieve from the table. These attributes can include scalars,
-        /// sets, or elements of a JSON document. The attributes in the expression must be
-        /// separated by commas.</p>
-        /// <p>If no attribute names are specified, then all attributes are returned. If any
-        /// of the requested attributes are not found, they do not appear in the
-        /// result.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB
-        /// Developer Guide</i>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AttributesToGet</code> - This is a legacy parameter. Use
-        /// <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>. </p>
-        ///
-        /// </li>
+        /// <li> <p> <code>#P = :val</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
+        /// </note> <p>For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
+        /// <li> <p> <code>Keys</code> - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key value. For a composite key, you must provide <i>both</i> the partition key value and the sort key value.</p> </li>
+        /// <li> <p> <code>ProjectionExpression</code> - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p> <p>If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not found, they do not appear in the result.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
+        /// <li> <p> <code>AttributesToGet</code> - This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p> </li>
         /// </ul>
         pub fn request_items(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::KeysAndAttributes>,
+            v: crate::model::KeysAndAttributes,
         ) -> Self {
             let mut hash_map = self.request_items.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.request_items = Some(hash_map);
             self
         }
-        /// <p>A map of one or more table names and, for each table, a map that describes one or more
-        /// items to retrieve from that table. Each table name can be used only once per
-        /// <code>BatchGetItem</code> request.</p>
+        /// <p>A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <code>BatchGetItem</code> request.</p>
         /// <p>Each element in the map of items to retrieve consists of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent read
-        /// is used; if <code>false</code> (the default), an eventually consistent read is
-        /// used.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ExpressionAttributeNames</code> - One or more substitution tokens for
-        /// attribute names in the <code>ProjectionExpression</code> parameter. The
-        /// following are some use cases for using
-        /// <code>ExpressionAttributeNames</code>:</p>
+        /// <li> <p> <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent read is used; if <code>false</code> (the default), an eventually consistent read is used.</p> </li>
+        /// <li> <p> <code>ExpressionAttributeNames</code> - One or more substitution tokens for attribute names in the <code>ProjectionExpression</code> parameter. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
-        /// word.</p>
-        /// </li>
-        /// <li>
-        /// <p>To create a placeholder for repeating occurrences of an attribute name
-        /// in an expression.</p>
-        /// </li>
-        /// <li>
-        /// <p>To prevent special characters in an attribute name from being
-        /// misinterpreted in an expression.</p>
-        /// </li>
-        /// </ul>
-        /// <p>Use the <b>#</b> character in an expression to
-        /// dereference an attribute name. For example, consider the following attribute
-        /// name:</p>
+        /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
+        /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
+        /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
+        /// </ul> <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Percentile</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be
-        /// used directly in an expression. (For the complete list of reserved words, see
-        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
-        /// Words</a> in the <i>Amazon DynamoDB Developer Guide</i>).
-        /// To work around this, you could specify the following for
-        /// <code>ExpressionAttributeNames</code>:</p>
+        /// <li> <p> <code>Percentile</code> </p> </li>
+        /// </ul> <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>{"#P":"Percentile"}</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <p>You could then use this substitution in an expression, as in this
-        /// example:</p>
+        /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
+        /// </ul> <p>You could then use this substitution in an expression, as in this example:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>#P = :val</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Tokens that begin with the <b>:</b> character
-        /// are <i>expression attribute values</i>, which are placeholders
-        /// for the actual value at runtime.</p>
-        /// </note>
-        /// <p>For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB
-        /// Developer Guide</i>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Keys</code> - An array of primary key attribute values that define
-        /// specific items in the table. For each primary key, you must provide
-        /// <i>all</i> of the key attributes. For example, with a simple
-        /// primary key, you only need to provide the partition key value. For a composite
-        /// key, you must provide <i>both</i> the partition key value and the
-        /// sort key value.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ProjectionExpression</code> - A string that identifies one or more
-        /// attributes to retrieve from the table. These attributes can include scalars,
-        /// sets, or elements of a JSON document. The attributes in the expression must be
-        /// separated by commas.</p>
-        /// <p>If no attribute names are specified, then all attributes are returned. If any
-        /// of the requested attributes are not found, they do not appear in the
-        /// result.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB
-        /// Developer Guide</i>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AttributesToGet</code> - This is a legacy parameter. Use
-        /// <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>. </p>
-        ///
-        /// </li>
+        /// <li> <p> <code>#P = :val</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
+        /// </note> <p>For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
+        /// <li> <p> <code>Keys</code> - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key value. For a composite key, you must provide <i>both</i> the partition key value and the sort key value.</p> </li>
+        /// <li> <p> <code>ProjectionExpression</code> - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p> <p>If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not found, they do not appear in the result.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
+        /// <li> <p> <code>AttributesToGet</code> - This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p> </li>
         /// </ul>
         pub fn set_request_items(
             mut self,
@@ -469,30 +281,11 @@ pub mod batch_get_item_input {
             self.request_items = input;
             self
         }
-        /// <p>Determines the level of detail about either provisioned or on-demand throughput
-        /// consumption that is returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INDEXES</code> - The response includes the aggregate
-        /// <code>ConsumedCapacity</code> for the operation, together with
-        /// <code>ConsumedCapacity</code> for each table and secondary index that was
-        /// accessed.</p>
-        /// <p>Note that some operations, such as <code>GetItem</code> and
-        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-        /// information for table(s).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOTAL</code> - The response includes only the aggregate
-        /// <code>ConsumedCapacity</code> for the operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-        /// response.</p>
-        /// </li>
+        /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+        /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+        /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
@@ -501,30 +294,11 @@ pub mod batch_get_item_input {
             self.return_consumed_capacity = Some(input);
             self
         }
-        /// <p>Determines the level of detail about either provisioned or on-demand throughput
-        /// consumption that is returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INDEXES</code> - The response includes the aggregate
-        /// <code>ConsumedCapacity</code> for the operation, together with
-        /// <code>ConsumedCapacity</code> for each table and secondary index that was
-        /// accessed.</p>
-        /// <p>Note that some operations, such as <code>GetItem</code> and
-        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-        /// information for table(s).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOTAL</code> - The response includes only the aggregate
-        /// <code>ConsumedCapacity</code> for the operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-        /// response.</p>
-        /// </li>
+        /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+        /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+        /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
         /// </ul>
         pub fn set_return_consumed_capacity(
             mut self,
@@ -550,7 +324,7 @@ pub mod batch_get_item_input {
 #[doc(hidden)]
 pub type BatchGetItemInputOperationOutputAlias = crate::operation::BatchGetItem;
 #[doc(hidden)]
-pub type BatchGetItemInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchGetItemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetItemInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetItem`](crate::operation::BatchGetItem)>
     #[allow(clippy::let_and_return)]
@@ -561,7 +335,7 @@ impl BatchGetItemInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGetItem,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -645,7 +419,7 @@ impl BatchGetItemInput {
             "BatchGetItem",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -690,101 +464,37 @@ pub mod batch_write_item_input {
         ///
         /// To override the contents of this collection use [`set_request_items`](Self::set_request_items).
         ///
-        /// <p>A map of one or more table names and, for each table, a list of operations to be
-        /// performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the
-        /// map consists of the following:</p>
+        /// <p>A map of one or more table names and, for each table, a list of operations to be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
-        /// specified item. The item to be deleted is identified by a <code>Key</code>
-        /// subelement:</p>
+        /// <li> <p> <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be deleted is identified by a <code>Key</code> subelement:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - A map of primary key attribute values that uniquely
-        /// identify the item. Each entry in this map consists of an attribute name
-        /// and an attribute value. For each primary key, you must provide
-        /// <i>all</i> of the key attributes. For example, with a
-        /// simple primary key, you only need to provide a value for the partition
-        /// key. For a composite primary key, you must provide values for
-        /// <i>both</i> the partition key and the sort key.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the
-        /// specified item. The item to be put is identified by an <code>Item</code>
-        /// subelement:</p>
+        /// <li> <p> <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be put is identified by an <code>Item</code> subelement:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Item</code> - A map of attributes and their values. Each entry in
-        /// this map consists of an attribute name and an attribute value. Attribute
-        /// values must not be null; string and binary type attributes must have
-        /// lengths greater than zero; and set type attributes must not be empty.
-        /// Requests that contain empty values are rejected with a
-        /// <code>ValidationException</code> exception.</p>
-        /// <p>If you specify any attributes that are part of an index key, then the
-        /// data types for those attributes must match those of the schema in the
-        /// table's attribute definition.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values are rejected with a <code>ValidationException</code> exception.</p> <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn request_items(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<crate::model::WriteRequest>>,
+            v: std::vec::Vec<crate::model::WriteRequest>,
         ) -> Self {
             let mut hash_map = self.request_items.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.request_items = Some(hash_map);
             self
         }
-        /// <p>A map of one or more table names and, for each table, a list of operations to be
-        /// performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the
-        /// map consists of the following:</p>
+        /// <p>A map of one or more table names and, for each table, a list of operations to be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
-        /// specified item. The item to be deleted is identified by a <code>Key</code>
-        /// subelement:</p>
+        /// <li> <p> <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be deleted is identified by a <code>Key</code> subelement:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - A map of primary key attribute values that uniquely
-        /// identify the item. Each entry in this map consists of an attribute name
-        /// and an attribute value. For each primary key, you must provide
-        /// <i>all</i> of the key attributes. For example, with a
-        /// simple primary key, you only need to provide a value for the partition
-        /// key. For a composite primary key, you must provide values for
-        /// <i>both</i> the partition key and the sort key.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the
-        /// specified item. The item to be put is identified by an <code>Item</code>
-        /// subelement:</p>
+        /// <li> <p> <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be put is identified by an <code>Item</code> subelement:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Item</code> - A map of attributes and their values. Each entry in
-        /// this map consists of an attribute name and an attribute value. Attribute
-        /// values must not be null; string and binary type attributes must have
-        /// lengths greater than zero; and set type attributes must not be empty.
-        /// Requests that contain empty values are rejected with a
-        /// <code>ValidationException</code> exception.</p>
-        /// <p>If you specify any attributes that are part of an index key, then the
-        /// data types for those attributes must match those of the schema in the
-        /// table's attribute definition.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values are rejected with a <code>ValidationException</code> exception.</p> <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_request_items(
             mut self,
@@ -798,30 +508,11 @@ pub mod batch_write_item_input {
             self.request_items = input;
             self
         }
-        /// <p>Determines the level of detail about either provisioned or on-demand throughput
-        /// consumption that is returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INDEXES</code> - The response includes the aggregate
-        /// <code>ConsumedCapacity</code> for the operation, together with
-        /// <code>ConsumedCapacity</code> for each table and secondary index that was
-        /// accessed.</p>
-        /// <p>Note that some operations, such as <code>GetItem</code> and
-        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-        /// information for table(s).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOTAL</code> - The response includes only the aggregate
-        /// <code>ConsumedCapacity</code> for the operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-        /// response.</p>
-        /// </li>
+        /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+        /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+        /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
@@ -830,30 +521,11 @@ pub mod batch_write_item_input {
             self.return_consumed_capacity = Some(input);
             self
         }
-        /// <p>Determines the level of detail about either provisioned or on-demand throughput
-        /// consumption that is returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INDEXES</code> - The response includes the aggregate
-        /// <code>ConsumedCapacity</code> for the operation, together with
-        /// <code>ConsumedCapacity</code> for each table and secondary index that was
-        /// accessed.</p>
-        /// <p>Note that some operations, such as <code>GetItem</code> and
-        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-        /// information for table(s).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOTAL</code> - The response includes only the aggregate
-        /// <code>ConsumedCapacity</code> for the operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-        /// response.</p>
-        /// </li>
+        /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+        /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+        /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
         /// </ul>
         pub fn set_return_consumed_capacity(
             mut self,
@@ -862,10 +534,7 @@ pub mod batch_write_item_input {
             self.return_consumed_capacity = input;
             self
         }
-        /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>,
-        /// the response includes statistics about item collections, if any, that were modified
-        /// during the operation are returned in the response. If set to <code>NONE</code> (the
-        /// default), no statistics are returned.</p>
+        /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
         pub fn return_item_collection_metrics(
             mut self,
             input: crate::model::ReturnItemCollectionMetrics,
@@ -873,10 +542,7 @@ pub mod batch_write_item_input {
             self.return_item_collection_metrics = Some(input);
             self
         }
-        /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>,
-        /// the response includes statistics about item collections, if any, that were modified
-        /// during the operation are returned in the response. If set to <code>NONE</code> (the
-        /// default), no statistics are returned.</p>
+        /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
         pub fn set_return_item_collection_metrics(
             mut self,
             input: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
@@ -902,7 +568,7 @@ pub mod batch_write_item_input {
 #[doc(hidden)]
 pub type BatchWriteItemInputOperationOutputAlias = crate::operation::BatchWriteItem;
 #[doc(hidden)]
-pub type BatchWriteItemInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchWriteItemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchWriteItemInput {
     /// Consumes the builder and constructs an Operation<[`BatchWriteItem`](crate::operation::BatchWriteItem)>
     #[allow(clippy::let_and_return)]
@@ -913,7 +579,7 @@ impl BatchWriteItemInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchWriteItem,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -998,7 +664,7 @@ impl BatchWriteItemInput {
             "BatchWriteItem",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1068,7 +734,7 @@ pub mod create_backup_input {
 #[doc(hidden)]
 pub type CreateBackupInputOperationOutputAlias = crate::operation::CreateBackup;
 #[doc(hidden)]
-pub type CreateBackupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateBackupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBackupInput {
     /// Consumes the builder and constructs an Operation<[`CreateBackup`](crate::operation::CreateBackup)>
     #[allow(clippy::let_and_return)]
@@ -1079,7 +745,7 @@ impl CreateBackupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBackup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1163,7 +829,7 @@ impl CreateBackupInput {
             "CreateBackup",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1214,9 +880,9 @@ pub mod create_global_table_input {
         /// To override the contents of this collection use [`set_replication_group`](Self::set_replication_group).
         ///
         /// <p>The Regions where the global table needs to be created.</p>
-        pub fn replication_group(mut self, input: impl Into<crate::model::Replica>) -> Self {
+        pub fn replication_group(mut self, input: crate::model::Replica) -> Self {
             let mut v = self.replication_group.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replication_group = Some(v);
             self
         }
@@ -1245,7 +911,7 @@ pub mod create_global_table_input {
 #[doc(hidden)]
 pub type CreateGlobalTableInputOperationOutputAlias = crate::operation::CreateGlobalTable;
 #[doc(hidden)]
-pub type CreateGlobalTableInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateGlobalTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGlobalTableInput {
     /// Consumes the builder and constructs an Operation<[`CreateGlobalTable`](crate::operation::CreateGlobalTable)>
     #[allow(clippy::let_and_return)]
@@ -1256,7 +922,7 @@ impl CreateGlobalTableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateGlobalTable,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1341,7 +1007,7 @@ impl CreateGlobalTableInput {
             "CreateGlobalTable",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1391,12 +1057,9 @@ pub mod create_table_input {
         /// To override the contents of this collection use [`set_attribute_definitions`](Self::set_attribute_definitions).
         ///
         /// <p>An array of attributes that describe the key schema for the table and indexes.</p>
-        pub fn attribute_definitions(
-            mut self,
-            input: impl Into<crate::model::AttributeDefinition>,
-        ) -> Self {
+        pub fn attribute_definitions(mut self, input: crate::model::AttributeDefinition) -> Self {
             let mut v = self.attribute_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attribute_definitions = Some(v);
             self
         }
@@ -1422,100 +1085,44 @@ pub mod create_table_input {
         ///
         /// To override the contents of this collection use [`set_key_schema`](Self::set_key_schema).
         ///
-        /// <p>Specifies the attributes that make up the primary key for a table or an index. The
-        /// attributes in <code>KeySchema</code> must also be defined in the
-        /// <code>AttributeDefinitions</code> array. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
-        /// Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>Specifies the attributes that make up the primary key for a table or an index. The attributes in <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         /// <p>Each <code>KeySchemaElement</code> in the array is composed of:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AttributeName</code> - The name of this key attribute.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KeyType</code> - The role that the key attribute will assume:</p>
+        /// <li> <p> <code>AttributeName</code> - The name of this key attribute.</p> </li>
+        /// <li> <p> <code>KeyType</code> - The role that the key attribute will assume:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>HASH</code> - partition key</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RANGE</code> - sort key</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>The partition key of an item is also known as its <i>hash
-        /// attribute</i>. The term "hash attribute" derives from the DynamoDB usage
-        /// of an internal hash function to evenly distribute data items across partitions,
-        /// based on their partition key values.</p>
-        /// <p>The sort key of an item is also known as its <i>range attribute</i>.
-        /// The term "range attribute" derives from the way DynamoDB stores items with the same
-        /// partition key physically close together, in sorted order by the sort key
-        /// value.</p>
+        /// <li> <p> <code>HASH</code> - partition key</p> </li>
+        /// <li> <p> <code>RANGE</code> - sort key</p> </li>
+        /// </ul> </li>
+        /// </ul> <note>
+        /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from the DynamoDB usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
+        /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
         /// </note>
-        ///
-        /// <p>For a simple primary key (partition key), you must provide exactly one element with a
-        /// <code>KeyType</code> of <code>HASH</code>.</p>
-        /// <p>For a composite primary key (partition key and sort key), you must provide exactly two
-        /// elements, in this order: The first element must have a <code>KeyType</code> of
-        /// <code>HASH</code>, and the second element must have a <code>KeyType</code> of
-        /// <code>RANGE</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working with Tables</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
-        pub fn key_schema(mut self, input: impl Into<crate::model::KeySchemaElement>) -> Self {
+        /// <p>For a simple primary key (partition key), you must provide exactly one element with a <code>KeyType</code> of <code>HASH</code>.</p>
+        /// <p>For a composite primary key (partition key and sort key), you must provide exactly two elements, in this order: The first element must have a <code>KeyType</code> of <code>HASH</code>, and the second element must have a <code>KeyType</code> of <code>RANGE</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        pub fn key_schema(mut self, input: crate::model::KeySchemaElement) -> Self {
             let mut v = self.key_schema.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.key_schema = Some(v);
             self
         }
-        /// <p>Specifies the attributes that make up the primary key for a table or an index. The
-        /// attributes in <code>KeySchema</code> must also be defined in the
-        /// <code>AttributeDefinitions</code> array. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
-        /// Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>Specifies the attributes that make up the primary key for a table or an index. The attributes in <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         /// <p>Each <code>KeySchemaElement</code> in the array is composed of:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AttributeName</code> - The name of this key attribute.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KeyType</code> - The role that the key attribute will assume:</p>
+        /// <li> <p> <code>AttributeName</code> - The name of this key attribute.</p> </li>
+        /// <li> <p> <code>KeyType</code> - The role that the key attribute will assume:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>HASH</code> - partition key</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RANGE</code> - sort key</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>The partition key of an item is also known as its <i>hash
-        /// attribute</i>. The term "hash attribute" derives from the DynamoDB usage
-        /// of an internal hash function to evenly distribute data items across partitions,
-        /// based on their partition key values.</p>
-        /// <p>The sort key of an item is also known as its <i>range attribute</i>.
-        /// The term "range attribute" derives from the way DynamoDB stores items with the same
-        /// partition key physically close together, in sorted order by the sort key
-        /// value.</p>
+        /// <li> <p> <code>HASH</code> - partition key</p> </li>
+        /// <li> <p> <code>RANGE</code> - sort key</p> </li>
+        /// </ul> </li>
+        /// </ul> <note>
+        /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from the DynamoDB usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
+        /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
         /// </note>
-        ///
-        /// <p>For a simple primary key (partition key), you must provide exactly one element with a
-        /// <code>KeyType</code> of <code>HASH</code>.</p>
-        /// <p>For a composite primary key (partition key and sort key), you must provide exactly two
-        /// elements, in this order: The first element must have a <code>KeyType</code> of
-        /// <code>HASH</code>, and the second element must have a <code>KeyType</code> of
-        /// <code>RANGE</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working with Tables</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>For a simple primary key (partition key), you must provide exactly one element with a <code>KeyType</code> of <code>HASH</code>.</p>
+        /// <p>For a composite primary key (partition key and sort key), you must provide exactly two elements, in this order: The first element must have a <code>KeyType</code> of <code>HASH</code>, and the second element must have a <code>KeyType</code> of <code>RANGE</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_key_schema(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
@@ -1527,130 +1134,43 @@ pub mod create_table_input {
         ///
         /// To override the contents of this collection use [`set_local_secondary_indexes`](Self::set_local_secondary_indexes).
         ///
-        /// <p>One or more local secondary indexes (the maximum is 5) to be created on the table.
-        /// Each index is scoped to a given partition key value. There is a 10 GB size limit per
-        /// partition key value; otherwise, the size of a local secondary index is
-        /// unconstrained.</p>
+        /// <p>One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a local secondary index is unconstrained.</p>
         /// <p>Each local secondary index in the array includes the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>IndexName</code> - The name of the local secondary index. Must be unique
-        /// only for this table.</p>
-        /// <p></p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KeySchema</code> - Specifies the key schema for the local secondary index.
-        /// The key schema must begin with the same partition key as the table.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Projection</code> - Specifies attributes that are copied (projected) from
-        /// the table into the index. These are in addition to the primary key attributes
-        /// and index key attributes, which are automatically projected. Each attribute
-        /// specification is composed of:</p>
+        /// <li> <p> <code>IndexName</code> - The name of the local secondary index. Must be unique only for this table.</p> <p></p> </li>
+        /// <li> <p> <code>KeySchema</code> - Specifies the key schema for the local secondary index. The key schema must begin with the same partition key as the table.</p> </li>
+        /// <li> <p> <code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ProjectionType</code> - One of the following:</p>
+        /// <li> <p> <code>ProjectionType</code> - One of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>KEYS_ONLY</code> - Only the index and primary keys are
-        /// projected into the index.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INCLUDE</code> - Only the specified table attributes are
-        /// projected into the index. The list of projected attributes is in
-        /// <code>NonKeyAttributes</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL</code> - All of the table attributes are projected
-        /// into the index.</p>
-        /// </li>
+        /// <li> <p> <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p> </li>
+        /// <li> <p> <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p> </li>
+        /// <li> <p> <code>ALL</code> - All of the table attributes are projected into the index.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li>
+        /// </ul> </li>
         /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NonKeyAttributes</code> - A list of one or more non-key attribute
-        /// names that are projected into the secondary index. The total count of
-        /// attributes provided in <code>NonKeyAttributes</code>, summed across all
-        /// of the secondary indexes, must not exceed 100. If you project the same
-        /// attribute into two different indexes, this counts as two distinct
-        /// attributes when determining the total.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// </ul>
-        pub fn local_secondary_indexes(
-            mut self,
-            input: impl Into<crate::model::LocalSecondaryIndex>,
-        ) -> Self {
+        pub fn local_secondary_indexes(mut self, input: crate::model::LocalSecondaryIndex) -> Self {
             let mut v = self.local_secondary_indexes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.local_secondary_indexes = Some(v);
             self
         }
-        /// <p>One or more local secondary indexes (the maximum is 5) to be created on the table.
-        /// Each index is scoped to a given partition key value. There is a 10 GB size limit per
-        /// partition key value; otherwise, the size of a local secondary index is
-        /// unconstrained.</p>
+        /// <p>One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a local secondary index is unconstrained.</p>
         /// <p>Each local secondary index in the array includes the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>IndexName</code> - The name of the local secondary index. Must be unique
-        /// only for this table.</p>
-        /// <p></p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KeySchema</code> - Specifies the key schema for the local secondary index.
-        /// The key schema must begin with the same partition key as the table.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Projection</code> - Specifies attributes that are copied (projected) from
-        /// the table into the index. These are in addition to the primary key attributes
-        /// and index key attributes, which are automatically projected. Each attribute
-        /// specification is composed of:</p>
+        /// <li> <p> <code>IndexName</code> - The name of the local secondary index. Must be unique only for this table.</p> <p></p> </li>
+        /// <li> <p> <code>KeySchema</code> - Specifies the key schema for the local secondary index. The key schema must begin with the same partition key as the table.</p> </li>
+        /// <li> <p> <code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ProjectionType</code> - One of the following:</p>
+        /// <li> <p> <code>ProjectionType</code> - One of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>KEYS_ONLY</code> - Only the index and primary keys are
-        /// projected into the index.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INCLUDE</code> - Only the specified table attributes are
-        /// projected into the index. The list of projected attributes is in
-        /// <code>NonKeyAttributes</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL</code> - All of the table attributes are projected
-        /// into the index.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NonKeyAttributes</code> - A list of one or more non-key attribute
-        /// names that are projected into the secondary index. The total count of
-        /// attributes provided in <code>NonKeyAttributes</code>, summed across all
-        /// of the secondary indexes, must not exceed 100. If you project the same
-        /// attribute into two different indexes, this counts as two distinct
-        /// attributes when determining the total.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p> </li>
+        /// <li> <p> <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p> </li>
+        /// <li> <p> <code>ALL</code> - All of the table attributes are projected into the index.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_local_secondary_indexes(
             mut self,
@@ -1663,134 +1183,46 @@ pub mod create_table_input {
         ///
         /// To override the contents of this collection use [`set_global_secondary_indexes`](Self::set_global_secondary_indexes).
         ///
-        /// <p>One or more global secondary indexes (the maximum is 20) to be created on the table.
-        /// Each global secondary index in the array includes the following:</p>
+        /// <p>One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary index in the array includes the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>IndexName</code> - The name of the global secondary index. Must be unique
-        /// only for this table.</p>
-        /// <p></p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KeySchema</code> - Specifies the key schema for the global secondary
-        /// index.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Projection</code> - Specifies attributes that are copied (projected) from
-        /// the table into the index. These are in addition to the primary key attributes
-        /// and index key attributes, which are automatically projected. Each attribute
-        /// specification is composed of:</p>
+        /// <li> <p> <code>IndexName</code> - The name of the global secondary index. Must be unique only for this table.</p> <p></p> </li>
+        /// <li> <p> <code>KeySchema</code> - Specifies the key schema for the global secondary index.</p> </li>
+        /// <li> <p> <code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ProjectionType</code> - One of the following:</p>
+        /// <li> <p> <code>ProjectionType</code> - One of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>KEYS_ONLY</code> - Only the index and primary keys are
-        /// projected into the index.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INCLUDE</code> - Only the specified table attributes are
-        /// projected into the index. The list of projected attributes is in
-        /// <code>NonKeyAttributes</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL</code> - All of the table attributes are projected
-        /// into the index.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NonKeyAttributes</code> - A list of one or more non-key attribute
-        /// names that are projected into the secondary index. The total count of
-        /// attributes provided in <code>NonKeyAttributes</code>, summed across all
-        /// of the secondary indexes, must not exceed 100. If you project the same
-        /// attribute into two different indexes, this counts as two distinct
-        /// attributes when determining the total.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ProvisionedThroughput</code> - The provisioned throughput settings for the
-        /// global secondary index, consisting of read and write capacity units.</p>
-        /// </li>
+        /// <li> <p> <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p> </li>
+        /// <li> <p> <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p> </li>
+        /// <li> <p> <code>ALL</code> - All of the table attributes are projected into the index.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units.</p> </li>
         /// </ul>
         pub fn global_secondary_indexes(
             mut self,
-            input: impl Into<crate::model::GlobalSecondaryIndex>,
+            input: crate::model::GlobalSecondaryIndex,
         ) -> Self {
             let mut v = self.global_secondary_indexes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.global_secondary_indexes = Some(v);
             self
         }
-        /// <p>One or more global secondary indexes (the maximum is 20) to be created on the table.
-        /// Each global secondary index in the array includes the following:</p>
+        /// <p>One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary index in the array includes the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>IndexName</code> - The name of the global secondary index. Must be unique
-        /// only for this table.</p>
-        /// <p></p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KeySchema</code> - Specifies the key schema for the global secondary
-        /// index.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Projection</code> - Specifies attributes that are copied (projected) from
-        /// the table into the index. These are in addition to the primary key attributes
-        /// and index key attributes, which are automatically projected. Each attribute
-        /// specification is composed of:</p>
+        /// <li> <p> <code>IndexName</code> - The name of the global secondary index. Must be unique only for this table.</p> <p></p> </li>
+        /// <li> <p> <code>KeySchema</code> - Specifies the key schema for the global secondary index.</p> </li>
+        /// <li> <p> <code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ProjectionType</code> - One of the following:</p>
+        /// <li> <p> <code>ProjectionType</code> - One of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>KEYS_ONLY</code> - Only the index and primary keys are
-        /// projected into the index.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INCLUDE</code> - Only the specified table attributes are
-        /// projected into the index. The list of projected attributes is in
-        /// <code>NonKeyAttributes</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL</code> - All of the table attributes are projected
-        /// into the index.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NonKeyAttributes</code> - A list of one or more non-key attribute
-        /// names that are projected into the secondary index. The total count of
-        /// attributes provided in <code>NonKeyAttributes</code>, summed across all
-        /// of the secondary indexes, must not exceed 100. If you project the same
-        /// attribute into two different indexes, this counts as two distinct
-        /// attributes when determining the total.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ProvisionedThroughput</code> - The provisioned throughput settings for the
-        /// global secondary index, consisting of read and write capacity units.</p>
-        /// </li>
+        /// <li> <p> <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p> </li>
+        /// <li> <p> <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p> </li>
+        /// <li> <p> <code>ALL</code> - All of the table attributes are projected into the index.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units.</p> </li>
         /// </ul>
         pub fn set_global_secondary_indexes(
             mut self,
@@ -1799,39 +1231,19 @@ pub mod create_table_input {
             self.global_secondary_indexes = input;
             self
         }
-        /// <p>Controls how you are charged for read and write throughput and how you manage
-        /// capacity. This setting can be changed later.</p>
+        /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for
-        /// predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code>
-        /// for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode
-        /// to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p>
-        /// </li>
+        /// <li> <p> <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p> </li>
+        /// <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p> </li>
         /// </ul>
         pub fn billing_mode(mut self, input: crate::model::BillingMode) -> Self {
             self.billing_mode = Some(input);
             self
         }
-        /// <p>Controls how you are charged for read and write throughput and how you manage
-        /// capacity. This setting can be changed later.</p>
+        /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for
-        /// predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code>
-        /// for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode
-        /// to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p>
-        /// </li>
+        /// <li> <p> <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p> </li>
+        /// <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p> </li>
         /// </ul>
         pub fn set_billing_mode(
             mut self,
@@ -1840,14 +1252,9 @@ pub mod create_table_input {
             self.billing_mode = input;
             self
         }
-        /// <p>Represents the provisioned throughput settings for a specified table or index. The
-        /// settings can be modified using the <code>UpdateTable</code> operation.</p>
-        /// <p> If you set BillingMode as <code>PROVISIONED</code>, you must specify this property.
-        /// If you set BillingMode as <code>PAY_PER_REQUEST</code>, you cannot specify this
-        /// property.</p>
-        /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
-        /// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p>
+        /// <p> If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>, you cannot specify this property.</p>
+        /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn provisioned_throughput(
             mut self,
             input: crate::model::ProvisionedThroughput,
@@ -1855,14 +1262,9 @@ pub mod create_table_input {
             self.provisioned_throughput = Some(input);
             self
         }
-        /// <p>Represents the provisioned throughput settings for a specified table or index. The
-        /// settings can be modified using the <code>UpdateTable</code> operation.</p>
-        /// <p> If you set BillingMode as <code>PROVISIONED</code>, you must specify this property.
-        /// If you set BillingMode as <code>PAY_PER_REQUEST</code>, you cannot specify this
-        /// property.</p>
-        /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
-        /// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p>
+        /// <p> If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>, you cannot specify this property.</p>
+        /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_provisioned_throughput(
             mut self,
             input: std::option::Option<crate::model::ProvisionedThroughput>,
@@ -1872,39 +1274,14 @@ pub mod create_table_input {
         }
         /// <p>The settings for DynamoDB Streams on the table. These settings consist of:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled
-        /// (true) or disabled (false).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>StreamViewType</code> - When an item in the table is modified,
-        /// <code>StreamViewType</code> determines what information is written to the
-        /// table's stream. Valid values for <code>StreamViewType</code> are:</p>
+        /// <li> <p> <code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled (true) or disabled (false).</p> </li>
+        /// <li> <p> <code>StreamViewType</code> - When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the table's stream. Valid values for <code>StreamViewType</code> are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>KEYS_ONLY</code> - Only the key attributes of the modified item
-        /// are written to the stream.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NEW_IMAGE</code> - The entire item, as it appears after it was
-        /// modified, is written to the stream.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OLD_IMAGE</code> - The entire item, as it appeared before it was
-        /// modified, is written to the stream.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images
-        /// of the item are written to the stream.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p> </li>
+        /// <li> <p> <code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written to the stream.</p> </li>
+        /// <li> <p> <code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is written to the stream.</p> </li>
+        /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn stream_specification(mut self, input: crate::model::StreamSpecification) -> Self {
             self.stream_specification = Some(input);
@@ -1912,39 +1289,14 @@ pub mod create_table_input {
         }
         /// <p>The settings for DynamoDB Streams on the table. These settings consist of:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled
-        /// (true) or disabled (false).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>StreamViewType</code> - When an item in the table is modified,
-        /// <code>StreamViewType</code> determines what information is written to the
-        /// table's stream. Valid values for <code>StreamViewType</code> are:</p>
+        /// <li> <p> <code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled (true) or disabled (false).</p> </li>
+        /// <li> <p> <code>StreamViewType</code> - When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the table's stream. Valid values for <code>StreamViewType</code> are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>KEYS_ONLY</code> - Only the key attributes of the modified item
-        /// are written to the stream.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NEW_IMAGE</code> - The entire item, as it appears after it was
-        /// modified, is written to the stream.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OLD_IMAGE</code> - The entire item, as it appeared before it was
-        /// modified, is written to the stream.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images
-        /// of the item are written to the stream.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p> </li>
+        /// <li> <p> <code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written to the stream.</p> </li>
+        /// <li> <p> <code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is written to the stream.</p> </li>
+        /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_stream_specification(
             mut self,
@@ -1970,16 +1322,14 @@ pub mod create_table_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs to label the table. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging
-        /// for DynamoDB</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>A list of key-value pairs to label the table. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of key-value pairs to label the table. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging
-        /// for DynamoDB</a>.</p>
+        /// <p>A list of key-value pairs to label the table. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1987,14 +1337,12 @@ pub mod create_table_input {
             self.tags = input;
             self
         }
-        /// <p>The table class of the new table. Valid values are <code>STANDARD</code> and
-        /// <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+        /// <p>The table class of the new table. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
         pub fn table_class(mut self, input: crate::model::TableClass) -> Self {
             self.table_class = Some(input);
             self
         }
-        /// <p>The table class of the new table. Valid values are <code>STANDARD</code> and
-        /// <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+        /// <p>The table class of the new table. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
         pub fn set_table_class(
             mut self,
             input: std::option::Option<crate::model::TableClass>,
@@ -2028,7 +1376,7 @@ pub mod create_table_input {
 #[doc(hidden)]
 pub type CreateTableInputOperationOutputAlias = crate::operation::CreateTable;
 #[doc(hidden)]
-pub type CreateTableInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTableInput {
     /// Consumes the builder and constructs an Operation<[`CreateTable`](crate::operation::CreateTable)>
     #[allow(clippy::let_and_return)]
@@ -2039,7 +1387,7 @@ impl CreateTableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTable,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2123,7 +1471,7 @@ impl CreateTableInput {
             "CreateTable",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2181,7 +1529,7 @@ pub mod delete_backup_input {
 #[doc(hidden)]
 pub type DeleteBackupInputOperationOutputAlias = crate::operation::DeleteBackup;
 #[doc(hidden)]
-pub type DeleteBackupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteBackupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBackupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBackup`](crate::operation::DeleteBackup)>
     #[allow(clippy::let_and_return)]
@@ -2192,7 +1540,7 @@ impl DeleteBackupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBackup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2276,7 +1624,7 @@ impl DeleteBackupInput {
             "DeleteBackup",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2341,28 +1689,20 @@ pub mod delete_item_input {
         ///
         /// To override the contents of this collection use [`set_key`](Self::set_key).
         ///
-        /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the
-        /// primary key of the item to delete.</p>
-        /// <p>For the primary key, you must provide all of the attributes. For example, with a
-        /// simple primary key, you only need to provide a value for the partition key. For a
-        /// composite primary key, you must provide values for both the partition key and the sort
-        /// key.</p>
+        /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the primary key of the item to delete.</p>
+        /// <p>For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</p>
         pub fn key(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.key.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.key = Some(hash_map);
             self
         }
-        /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the
-        /// primary key of the item to delete.</p>
-        /// <p>For the primary key, you must provide all of the attributes. For example, with a
-        /// simple primary key, you only need to provide a value for the partition key. For a
-        /// composite primary key, you must provide values for both the partition key and the sort
-        /// key.</p>
+        /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the primary key of the item to delete.</p>
+        /// <p>For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</p>
         pub fn set_key(
             mut self,
             input: std::option::Option<
@@ -2376,22 +1716,18 @@ pub mod delete_item_input {
         ///
         /// To override the contents of this collection use [`set_expected`](Self::set_expected).
         ///
-        /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn expected(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ExpectedAttributeValue>,
+            v: crate::model::ExpectedAttributeValue,
         ) -> Self {
             let mut hash_map = self.expected.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.expected = Some(hash_map);
             self
         }
-        /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_expected(
             mut self,
             input: std::option::Option<
@@ -2404,16 +1740,12 @@ pub mod delete_item_input {
             self.expected = input;
             self
         }
-        /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn conditional_operator(mut self, input: crate::model::ConditionalOperator) -> Self {
             self.conditional_operator = Some(input);
             self
         }
-        /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_conditional_operator(
             mut self,
             input: std::option::Option<crate::model::ConditionalOperator>,
@@ -2421,47 +1753,23 @@ pub mod delete_item_input {
             self.conditional_operator = input;
             self
         }
-        /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appeared
-        /// before they were deleted. For <code>DeleteItem</code>, the valid values are:</p>
+        /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appeared before they were deleted. For <code>DeleteItem</code>, the valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its
-        /// value is <code>NONE</code>, then nothing is returned. (This setting is the
-        /// default for <code>ReturnValues</code>.)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL_OLD</code> - The content of the old item is returned.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>The <code>ReturnValues</code> parameter is used by several DynamoDB operations;
-        /// however, <code>DeleteItem</code> does not recognize any values other than
-        /// <code>NONE</code> or <code>ALL_OLD</code>.</p>
+        /// <li> <p> <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <code>ReturnValues</code>.)</p> </li>
+        /// <li> <p> <code>ALL_OLD</code> - The content of the old item is returned.</p> </li>
+        /// </ul> <note>
+        /// <p>The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however, <code>DeleteItem</code> does not recognize any values other than <code>NONE</code> or <code>ALL_OLD</code>.</p>
         /// </note>
         pub fn return_values(mut self, input: crate::model::ReturnValue) -> Self {
             self.return_values = Some(input);
             self
         }
-        /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appeared
-        /// before they were deleted. For <code>DeleteItem</code>, the valid values are:</p>
+        /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appeared before they were deleted. For <code>DeleteItem</code>, the valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its
-        /// value is <code>NONE</code>, then nothing is returned. (This setting is the
-        /// default for <code>ReturnValues</code>.)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL_OLD</code> - The content of the old item is returned.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>The <code>ReturnValues</code> parameter is used by several DynamoDB operations;
-        /// however, <code>DeleteItem</code> does not recognize any values other than
-        /// <code>NONE</code> or <code>ALL_OLD</code>.</p>
+        /// <li> <p> <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <code>ReturnValues</code>.)</p> </li>
+        /// <li> <p> <code>ALL_OLD</code> - The content of the old item is returned.</p> </li>
+        /// </ul> <note>
+        /// <p>The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however, <code>DeleteItem</code> does not recognize any values other than <code>NONE</code> or <code>ALL_OLD</code>.</p>
         /// </note>
         pub fn set_return_values(
             mut self,
@@ -2470,30 +1778,11 @@ pub mod delete_item_input {
             self.return_values = input;
             self
         }
-        /// <p>Determines the level of detail about either provisioned or on-demand throughput
-        /// consumption that is returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INDEXES</code> - The response includes the aggregate
-        /// <code>ConsumedCapacity</code> for the operation, together with
-        /// <code>ConsumedCapacity</code> for each table and secondary index that was
-        /// accessed.</p>
-        /// <p>Note that some operations, such as <code>GetItem</code> and
-        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-        /// information for table(s).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOTAL</code> - The response includes only the aggregate
-        /// <code>ConsumedCapacity</code> for the operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-        /// response.</p>
-        /// </li>
+        /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+        /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+        /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
@@ -2502,30 +1791,11 @@ pub mod delete_item_input {
             self.return_consumed_capacity = Some(input);
             self
         }
-        /// <p>Determines the level of detail about either provisioned or on-demand throughput
-        /// consumption that is returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INDEXES</code> - The response includes the aggregate
-        /// <code>ConsumedCapacity</code> for the operation, together with
-        /// <code>ConsumedCapacity</code> for each table and secondary index that was
-        /// accessed.</p>
-        /// <p>Note that some operations, such as <code>GetItem</code> and
-        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-        /// information for table(s).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOTAL</code> - The response includes only the aggregate
-        /// <code>ConsumedCapacity</code> for the operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-        /// response.</p>
-        /// </li>
+        /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+        /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+        /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
         /// </ul>
         pub fn set_return_consumed_capacity(
             mut self,
@@ -2534,10 +1804,7 @@ pub mod delete_item_input {
             self.return_consumed_capacity = input;
             self
         }
-        /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>,
-        /// the response includes statistics about item collections, if any, that were modified
-        /// during the operation are returned in the response. If set to <code>NONE</code> (the
-        /// default), no statistics are returned.</p>
+        /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
         pub fn return_item_collection_metrics(
             mut self,
             input: crate::model::ReturnItemCollectionMetrics,
@@ -2545,10 +1812,7 @@ pub mod delete_item_input {
             self.return_item_collection_metrics = Some(input);
             self
         }
-        /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>,
-        /// the response includes statistics about item collections, if any, that were modified
-        /// during the operation are returned in the response. If set to <code>NONE</code> (the
-        /// default), no statistics are returned.</p>
+        /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
         pub fn set_return_item_collection_metrics(
             mut self,
             input: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
@@ -2556,56 +1820,26 @@ pub mod delete_item_input {
             self.return_item_collection_metrics = input;
             self
         }
-        /// <p>A condition that must be satisfied in order for a conditional <code>DeleteItem</code>
-        /// to succeed.</p>
+        /// <p>A condition that must be satisfied in order for a conditional <code>DeleteItem</code> to succeed.</p>
         /// <p>An expression can contain any of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type |
-        /// contains | begins_with | size</code>
-        /// </p>
-        /// <p>These function names are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Comparison operators: <code>= | <> |
-        /// < | > | <= | >= |
-        /// BETWEEN | IN </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p> Logical operators: <code>AND | OR | NOT</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type | contains | begins_with | size</code> </p> <p>These function names are case-sensitive.</p> </li>
+        /// <li> <p>Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code> </p> </li>
+        /// <li> <p> Logical operators: <code>AND | OR | NOT</code> </p> </li>
         /// </ul>
-        /// <p>For more information about condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>For more information about condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn condition_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.condition_expression = Some(input.into());
             self
         }
-        /// <p>A condition that must be satisfied in order for a conditional <code>DeleteItem</code>
-        /// to succeed.</p>
+        /// <p>A condition that must be satisfied in order for a conditional <code>DeleteItem</code> to succeed.</p>
         /// <p>An expression can contain any of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type |
-        /// contains | begins_with | size</code>
-        /// </p>
-        /// <p>These function names are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Comparison operators: <code>= | <> |
-        /// < | > | <= | >= |
-        /// BETWEEN | IN </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p> Logical operators: <code>AND | OR | NOT</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type | contains | begins_with | size</code> </p> <p>These function names are case-sensitive.</p> </li>
+        /// <li> <p>Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code> </p> </li>
+        /// <li> <p> Logical operators: <code>AND | OR | NOT</code> </p> </li>
         /// </ul>
-        /// <p>For more information about condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>For more information about condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_condition_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2617,57 +1851,27 @@ pub mod delete_item_input {
         ///
         /// To override the contents of this collection use [`set_expression_attribute_names`](Self::set_expression_attribute_names).
         ///
-        /// <p>One or more substitution tokens for attribute names in an expression. The following
-        /// are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+        /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
-        /// word.</p>
-        /// </li>
-        /// <li>
-        /// <p>To create a placeholder for repeating occurrences of an attribute name in an
-        /// expression.</p>
-        /// </li>
-        /// <li>
-        /// <p>To prevent special characters in an attribute name from being misinterpreted
-        /// in an expression.</p>
-        /// </li>
+        /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
+        /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
+        /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
         /// </ul>
-        /// <p>Use the <b>#</b> character in an expression to dereference
-        /// an attribute name. For example, consider the following attribute name:</p>
+        /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Percentile</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Percentile</code> </p> </li>
         /// </ul>
-        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used
-        /// directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>). To work around this, you could specify the following for
-        /// <code>ExpressionAttributeNames</code>:</p>
+        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>{"#P":"Percentile"}</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
         /// </ul>
         /// <p>You could then use this substitution in an expression, as in this example:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>#P = :val</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Tokens that begin with the <b>:</b> character are
-        /// <i>expression attribute values</i>, which are placeholders for the
-        /// actual value at runtime.</p>
+        /// <li> <p> <code>#P = :val</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
         /// </note>
-        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn expression_attribute_names(
             mut self,
             k: impl Into<std::string::String>,
@@ -2678,57 +1882,27 @@ pub mod delete_item_input {
             self.expression_attribute_names = Some(hash_map);
             self
         }
-        /// <p>One or more substitution tokens for attribute names in an expression. The following
-        /// are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+        /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
-        /// word.</p>
-        /// </li>
-        /// <li>
-        /// <p>To create a placeholder for repeating occurrences of an attribute name in an
-        /// expression.</p>
-        /// </li>
-        /// <li>
-        /// <p>To prevent special characters in an attribute name from being misinterpreted
-        /// in an expression.</p>
-        /// </li>
+        /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
+        /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
+        /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
         /// </ul>
-        /// <p>Use the <b>#</b> character in an expression to dereference
-        /// an attribute name. For example, consider the following attribute name:</p>
+        /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Percentile</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Percentile</code> </p> </li>
         /// </ul>
-        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used
-        /// directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>). To work around this, you could specify the following for
-        /// <code>ExpressionAttributeNames</code>:</p>
+        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>{"#P":"Percentile"}</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
         /// </ul>
         /// <p>You could then use this substitution in an expression, as in this example:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>#P = :val</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Tokens that begin with the <b>:</b> character are
-        /// <i>expression attribute values</i>, which are placeholders for the
-        /// actual value at runtime.</p>
+        /// <li> <p> <code>#P = :val</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
         /// </note>
-        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_expression_attribute_names(
             mut self,
             input: std::option::Option<
@@ -2743,53 +1917,31 @@ pub mod delete_item_input {
         /// To override the contents of this collection use [`set_expression_attribute_values`](Self::set_expression_attribute_values).
         ///
         /// <p>One or more values that can be substituted in an expression.</p>
-        /// <p>Use the <b>:</b> (colon) character in an expression to
-        /// dereference an attribute value. For example, suppose that you wanted to check whether
-        /// the value of the <i>ProductStatus</i> attribute was one of the following: </p>
-        /// <p>
-        /// <code>Available | Backordered | Discontinued</code>
-        /// </p>
-        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as
-        /// follows:</p>
-        /// <p>
-        /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-        /// ":disc":{"S":"Discontinued"} }</code>
-        /// </p>
+        /// <p>Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the following: </p>
+        /// <p> <code>Available | Backordered | Discontinued</code> </p>
+        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+        /// <p> <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code> </p>
         /// <p>You could then use these values in an expression, such as this:</p>
-        /// <p>
-        /// <code>ProductStatus IN (:avail, :back, :disc)</code>
-        /// </p>
-        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p> <code>ProductStatus IN (:avail, :back, :disc)</code> </p>
+        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn expression_attribute_values(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.expression_attribute_values.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.expression_attribute_values = Some(hash_map);
             self
         }
         /// <p>One or more values that can be substituted in an expression.</p>
-        /// <p>Use the <b>:</b> (colon) character in an expression to
-        /// dereference an attribute value. For example, suppose that you wanted to check whether
-        /// the value of the <i>ProductStatus</i> attribute was one of the following: </p>
-        /// <p>
-        /// <code>Available | Backordered | Discontinued</code>
-        /// </p>
-        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as
-        /// follows:</p>
-        /// <p>
-        /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-        /// ":disc":{"S":"Discontinued"} }</code>
-        /// </p>
+        /// <p>Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the following: </p>
+        /// <p> <code>Available | Backordered | Discontinued</code> </p>
+        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+        /// <p> <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code> </p>
         /// <p>You could then use these values in an expression, such as this:</p>
-        /// <p>
-        /// <code>ProductStatus IN (:avail, :back, :disc)</code>
-        /// </p>
-        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p> <code>ProductStatus IN (:avail, :back, :disc)</code> </p>
+        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_expression_attribute_values(
             mut self,
             input: std::option::Option<
@@ -2824,7 +1976,7 @@ pub mod delete_item_input {
 #[doc(hidden)]
 pub type DeleteItemInputOperationOutputAlias = crate::operation::DeleteItem;
 #[doc(hidden)]
-pub type DeleteItemInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteItemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteItemInput {
     /// Consumes the builder and constructs an Operation<[`DeleteItem`](crate::operation::DeleteItem)>
     #[allow(clippy::let_and_return)]
@@ -2835,7 +1987,7 @@ impl DeleteItemInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteItem,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2919,7 +2071,7 @@ impl DeleteItemInput {
             "DeleteItem",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2977,7 +2129,7 @@ pub mod delete_table_input {
 #[doc(hidden)]
 pub type DeleteTableInputOperationOutputAlias = crate::operation::DeleteTable;
 #[doc(hidden)]
-pub type DeleteTableInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTableInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTable`](crate::operation::DeleteTable)>
     #[allow(clippy::let_and_return)]
@@ -2988,7 +2140,7 @@ impl DeleteTableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTable,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3072,7 +2224,7 @@ impl DeleteTableInput {
             "DeleteTable",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3130,7 +2282,7 @@ pub mod describe_backup_input {
 #[doc(hidden)]
 pub type DescribeBackupInputOperationOutputAlias = crate::operation::DescribeBackup;
 #[doc(hidden)]
-pub type DescribeBackupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeBackupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBackupInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBackup`](crate::operation::DescribeBackup)>
     #[allow(clippy::let_and_return)]
@@ -3141,7 +2293,7 @@ impl DescribeBackupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBackup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3226,7 +2378,7 @@ impl DescribeBackupInput {
             "DescribeBackup",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3258,14 +2410,12 @@ pub mod describe_continuous_backups_input {
         pub(crate) table_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Name of the table for which the customer wants to check the continuous backups and
-        /// point in time recovery settings.</p>
+        /// <p>Name of the table for which the customer wants to check the continuous backups and point in time recovery settings.</p>
         pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.table_name = Some(input.into());
             self
         }
-        /// <p>Name of the table for which the customer wants to check the continuous backups and
-        /// point in time recovery settings.</p>
+        /// <p>Name of the table for which the customer wants to check the continuous backups and point in time recovery settings.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -3287,7 +2437,7 @@ pub mod describe_continuous_backups_input {
 pub type DescribeContinuousBackupsInputOperationOutputAlias =
     crate::operation::DescribeContinuousBackups;
 #[doc(hidden)]
-pub type DescribeContinuousBackupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeContinuousBackupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeContinuousBackupsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeContinuousBackups`](crate::operation::DescribeContinuousBackups)>
     #[allow(clippy::let_and_return)]
@@ -3298,7 +2448,7 @@ impl DescribeContinuousBackupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeContinuousBackups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3385,7 +2535,7 @@ impl DescribeContinuousBackupsInput {
             "DescribeContinuousBackups",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3456,7 +2606,7 @@ pub mod describe_contributor_insights_input {
 pub type DescribeContributorInsightsInputOperationOutputAlias =
     crate::operation::DescribeContributorInsights;
 #[doc(hidden)]
-pub type DescribeContributorInsightsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeContributorInsightsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeContributorInsightsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeContributorInsights`](crate::operation::DescribeContributorInsights)>
     #[allow(clippy::let_and_return)]
@@ -3467,7 +2617,7 @@ impl DescribeContributorInsightsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeContributorInsights,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3553,7 +2703,7 @@ impl DescribeContributorInsightsInput {
             "DescribeContributorInsights",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3597,7 +2747,7 @@ pub mod describe_endpoints_input {
 #[doc(hidden)]
 pub type DescribeEndpointsInputOperationOutputAlias = crate::operation::DescribeEndpoints;
 #[doc(hidden)]
-pub type DescribeEndpointsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEndpointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEndpoints`](crate::operation::DescribeEndpoints)>
     #[allow(clippy::let_and_return)]
@@ -3608,7 +2758,7 @@ impl DescribeEndpointsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEndpoints,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3693,7 +2843,7 @@ impl DescribeEndpointsInput {
             "DescribeEndpoints",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3743,7 +2893,7 @@ pub mod describe_export_input {
 #[doc(hidden)]
 pub type DescribeExportInputOperationOutputAlias = crate::operation::DescribeExport;
 #[doc(hidden)]
-pub type DescribeExportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeExportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeExportInput {
     /// Consumes the builder and constructs an Operation<[`DescribeExport`](crate::operation::DescribeExport)>
     #[allow(clippy::let_and_return)]
@@ -3754,7 +2904,7 @@ impl DescribeExportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeExport,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3839,7 +2989,7 @@ impl DescribeExportInput {
             "DescribeExport",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3900,7 +3050,7 @@ pub mod describe_global_table_input {
 #[doc(hidden)]
 pub type DescribeGlobalTableInputOperationOutputAlias = crate::operation::DescribeGlobalTable;
 #[doc(hidden)]
-pub type DescribeGlobalTableInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeGlobalTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGlobalTableInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGlobalTable`](crate::operation::DescribeGlobalTable)>
     #[allow(clippy::let_and_return)]
@@ -3911,7 +3061,7 @@ impl DescribeGlobalTableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeGlobalTable,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3996,7 +3146,7 @@ impl DescribeGlobalTableInput {
             "DescribeGlobalTable",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4058,7 +3208,7 @@ pub mod describe_global_table_settings_input {
 pub type DescribeGlobalTableSettingsInputOperationOutputAlias =
     crate::operation::DescribeGlobalTableSettings;
 #[doc(hidden)]
-pub type DescribeGlobalTableSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeGlobalTableSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGlobalTableSettingsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGlobalTableSettings`](crate::operation::DescribeGlobalTableSettings)>
     #[allow(clippy::let_and_return)]
@@ -4069,7 +3219,7 @@ impl DescribeGlobalTableSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeGlobalTableSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4155,7 +3305,7 @@ impl DescribeGlobalTableSettingsInput {
             "DescribeGlobalTableSettings",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4215,7 +3365,7 @@ pub type DescribeKinesisStreamingDestinationInputOperationOutputAlias =
     crate::operation::DescribeKinesisStreamingDestination;
 #[doc(hidden)]
 pub type DescribeKinesisStreamingDestinationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeKinesisStreamingDestinationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeKinesisStreamingDestination`](crate::operation::DescribeKinesisStreamingDestination)>
     #[allow(clippy::let_and_return)]
@@ -4226,7 +3376,7 @@ impl DescribeKinesisStreamingDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeKinesisStreamingDestination,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4312,7 +3462,7 @@ impl DescribeKinesisStreamingDestinationInput {
             "DescribeKinesisStreamingDestination",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4356,7 +3506,7 @@ pub mod describe_limits_input {
 #[doc(hidden)]
 pub type DescribeLimitsInputOperationOutputAlias = crate::operation::DescribeLimits;
 #[doc(hidden)]
-pub type DescribeLimitsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeLimitsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLimitsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLimits`](crate::operation::DescribeLimits)>
     #[allow(clippy::let_and_return)]
@@ -4367,7 +3517,7 @@ impl DescribeLimitsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLimits,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4452,7 +3602,7 @@ impl DescribeLimitsInput {
             "DescribeLimits",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4502,7 +3652,7 @@ pub mod describe_table_input {
 #[doc(hidden)]
 pub type DescribeTableInputOperationOutputAlias = crate::operation::DescribeTable;
 #[doc(hidden)]
-pub type DescribeTableInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTableInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTable`](crate::operation::DescribeTable)>
     #[allow(clippy::let_and_return)]
@@ -4513,7 +3663,7 @@ impl DescribeTableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTable,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4597,7 +3747,7 @@ impl DescribeTableInput {
             "DescribeTable",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4656,7 +3806,8 @@ pub mod describe_table_replica_auto_scaling_input {
 pub type DescribeTableReplicaAutoScalingInputOperationOutputAlias =
     crate::operation::DescribeTableReplicaAutoScaling;
 #[doc(hidden)]
-pub type DescribeTableReplicaAutoScalingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTableReplicaAutoScalingInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTableReplicaAutoScalingInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTableReplicaAutoScaling`](crate::operation::DescribeTableReplicaAutoScaling)>
     #[allow(clippy::let_and_return)]
@@ -4667,7 +3818,7 @@ impl DescribeTableReplicaAutoScalingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTableReplicaAutoScaling,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4753,7 +3904,7 @@ impl DescribeTableReplicaAutoScalingInput {
             "DescribeTableReplicaAutoScaling",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4811,7 +3962,7 @@ pub mod describe_time_to_live_input {
 #[doc(hidden)]
 pub type DescribeTimeToLiveInputOperationOutputAlias = crate::operation::DescribeTimeToLive;
 #[doc(hidden)]
-pub type DescribeTimeToLiveInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTimeToLiveInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTimeToLiveInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTimeToLive`](crate::operation::DescribeTimeToLive)>
     #[allow(clippy::let_and_return)]
@@ -4822,7 +3973,7 @@ impl DescribeTimeToLiveInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTimeToLive,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4907,7 +4058,7 @@ impl DescribeTimeToLiveInput {
             "DescribeTimeToLive",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4978,7 +4129,8 @@ pub mod disable_kinesis_streaming_destination_input {
 pub type DisableKinesisStreamingDestinationInputOperationOutputAlias =
     crate::operation::DisableKinesisStreamingDestination;
 #[doc(hidden)]
-pub type DisableKinesisStreamingDestinationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisableKinesisStreamingDestinationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisableKinesisStreamingDestinationInput {
     /// Consumes the builder and constructs an Operation<[`DisableKinesisStreamingDestination`](crate::operation::DisableKinesisStreamingDestination)>
     #[allow(clippy::let_and_return)]
@@ -4989,7 +4141,7 @@ impl DisableKinesisStreamingDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisableKinesisStreamingDestination,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5075,7 +4227,7 @@ impl DisableKinesisStreamingDestinationInput {
             "DisableKinesisStreamingDestination",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5146,7 +4298,8 @@ pub mod enable_kinesis_streaming_destination_input {
 pub type EnableKinesisStreamingDestinationInputOperationOutputAlias =
     crate::operation::EnableKinesisStreamingDestination;
 #[doc(hidden)]
-pub type EnableKinesisStreamingDestinationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type EnableKinesisStreamingDestinationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl EnableKinesisStreamingDestinationInput {
     /// Consumes the builder and constructs an Operation<[`EnableKinesisStreamingDestination`](crate::operation::EnableKinesisStreamingDestination)>
     #[allow(clippy::let_and_return)]
@@ -5157,7 +4310,7 @@ impl EnableKinesisStreamingDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::EnableKinesisStreamingDestination,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5243,7 +4396,7 @@ impl EnableKinesisStreamingDestinationInput {
             "EnableKinesisStreamingDestination",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5295,9 +4448,9 @@ pub mod execute_statement_input {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The parameters for the PartiQL statement, if any.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::AttributeValue>) -> Self {
+        pub fn parameters(mut self, input: crate::model::AttributeValue) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -5309,54 +4462,31 @@ pub mod execute_statement_input {
             self.parameters = input;
             self
         }
-        /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly
-        /// consistent read is used; otherwise, an eventually consistent read is used.</p>
+        /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p>
         pub fn consistent_read(mut self, input: bool) -> Self {
             self.consistent_read = Some(input);
             self
         }
-        /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly
-        /// consistent read is used; otherwise, an eventually consistent read is used.</p>
+        /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p>
         pub fn set_consistent_read(mut self, input: std::option::Option<bool>) -> Self {
             self.consistent_read = input;
             self
         }
-        /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the
-        /// statement response.</p>
+        /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the statement response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the
-        /// statement response.</p>
+        /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the statement response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>Determines the level of detail about either provisioned or on-demand throughput
-        /// consumption that is returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INDEXES</code> - The response includes the aggregate
-        /// <code>ConsumedCapacity</code> for the operation, together with
-        /// <code>ConsumedCapacity</code> for each table and secondary index that was
-        /// accessed.</p>
-        /// <p>Note that some operations, such as <code>GetItem</code> and
-        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-        /// information for table(s).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOTAL</code> - The response includes only the aggregate
-        /// <code>ConsumedCapacity</code> for the operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-        /// response.</p>
-        /// </li>
+        /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+        /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+        /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
@@ -5365,30 +4495,11 @@ pub mod execute_statement_input {
             self.return_consumed_capacity = Some(input);
             self
         }
-        /// <p>Determines the level of detail about either provisioned or on-demand throughput
-        /// consumption that is returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INDEXES</code> - The response includes the aggregate
-        /// <code>ConsumedCapacity</code> for the operation, together with
-        /// <code>ConsumedCapacity</code> for each table and secondary index that was
-        /// accessed.</p>
-        /// <p>Note that some operations, such as <code>GetItem</code> and
-        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-        /// information for table(s).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOTAL</code> - The response includes only the aggregate
-        /// <code>ConsumedCapacity</code> for the operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-        /// response.</p>
-        /// </li>
+        /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+        /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+        /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
         /// </ul>
         pub fn set_return_consumed_capacity(
             mut self,
@@ -5417,7 +4528,7 @@ pub mod execute_statement_input {
 #[doc(hidden)]
 pub type ExecuteStatementInputOperationOutputAlias = crate::operation::ExecuteStatement;
 #[doc(hidden)]
-pub type ExecuteStatementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ExecuteStatementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExecuteStatementInput {
     /// Consumes the builder and constructs an Operation<[`ExecuteStatement`](crate::operation::ExecuteStatement)>
     #[allow(clippy::let_and_return)]
@@ -5428,7 +4539,7 @@ impl ExecuteStatementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExecuteStatement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5513,7 +4624,7 @@ impl ExecuteStatementInput {
             "ExecuteStatement",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5554,12 +4665,9 @@ pub mod execute_transaction_input {
         /// To override the contents of this collection use [`set_transact_statements`](Self::set_transact_statements).
         ///
         /// <p>The list of PartiQL statements representing the transaction to run.</p>
-        pub fn transact_statements(
-            mut self,
-            input: impl Into<crate::model::ParameterizedStatement>,
-        ) -> Self {
+        pub fn transact_statements(mut self, input: crate::model::ParameterizedStatement) -> Self {
             let mut v = self.transact_statements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transact_statements = Some(v);
             self
         }
@@ -5571,14 +4679,12 @@ pub mod execute_transaction_input {
             self.transact_statements = input;
             self
         }
-        /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the
-        /// statement response.</p>
+        /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the statement response.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the
-        /// statement response.</p>
+        /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the statement response.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5586,8 +4692,7 @@ pub mod execute_transaction_input {
             self.client_request_token = input;
             self
         }
-        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is
-        /// returned in the response. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html">TransactGetItems</a> and <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html">TransactWriteItems</a>.</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html">TransactGetItems</a> and <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html">TransactWriteItems</a>.</p>
         pub fn return_consumed_capacity(
             mut self,
             input: crate::model::ReturnConsumedCapacity,
@@ -5595,8 +4700,7 @@ pub mod execute_transaction_input {
             self.return_consumed_capacity = Some(input);
             self
         }
-        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is
-        /// returned in the response. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html">TransactGetItems</a> and <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html">TransactWriteItems</a>.</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html">TransactGetItems</a> and <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html">TransactWriteItems</a>.</p>
         pub fn set_return_consumed_capacity(
             mut self,
             input: std::option::Option<crate::model::ReturnConsumedCapacity>,
@@ -5622,7 +4726,7 @@ pub mod execute_transaction_input {
 #[doc(hidden)]
 pub type ExecuteTransactionInputOperationOutputAlias = crate::operation::ExecuteTransaction;
 #[doc(hidden)]
-pub type ExecuteTransactionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ExecuteTransactionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExecuteTransactionInput {
     /// Consumes the builder and constructs an Operation<[`ExecuteTransaction`](crate::operation::ExecuteTransaction)>
     #[allow(clippy::let_and_return)]
@@ -5633,7 +4737,7 @@ impl ExecuteTransactionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExecuteTransaction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5721,7 +4825,7 @@ impl ExecuteTransactionInput {
             "ExecuteTransaction",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5771,14 +4875,12 @@ pub mod export_table_to_point_in_time_input {
             self.table_arn = input;
             self
         }
-        /// <p>Time in the past from which to export table data. The table export will be a snapshot
-        /// of the table's state at this point in time.</p>
+        /// <p>Time in the past from which to export table data. The table export will be a snapshot of the table's state at this point in time.</p>
         pub fn export_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.export_time = Some(input);
             self
         }
-        /// <p>Time in the past from which to export table data. The table export will be a snapshot
-        /// of the table's state at this point in time.</p>
+        /// <p>Time in the past from which to export table data. The table export will be a snapshot of the table's state at this point in time.</p>
         pub fn set_export_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5786,30 +4888,16 @@ pub mod export_table_to_point_in_time_input {
             self.export_time = input;
             self
         }
-        /// <p>Providing a <code>ClientToken</code> makes the call to
-        /// <code>ExportTableToPointInTimeInput</code> idempotent, meaning that multiple
-        /// identical calls have the same effect as one single call.</p>
-        /// <p>A client token is valid for 8 hours after the first request that uses it is completed.
-        /// After 8 hours, any request with the same client token is treated as a new request. Do
-        /// not resubmit the same request with the same client token for more than 8 hours, or the
-        /// result might not be idempotent.</p>
-        /// <p>If you submit a request with the same client token but a change in other parameters
-        /// within the 8-hour idempotency window, DynamoDB returns an
-        /// <code>IdempotentParameterMismatch</code> exception.</p>
+        /// <p>Providing a <code>ClientToken</code> makes the call to <code>ExportTableToPointInTimeInput</code> idempotent, meaning that multiple identical calls have the same effect as one single call.</p>
+        /// <p>A client token is valid for 8 hours after the first request that uses it is completed. After 8 hours, any request with the same client token is treated as a new request. Do not resubmit the same request with the same client token for more than 8 hours, or the result might not be idempotent.</p>
+        /// <p>If you submit a request with the same client token but a change in other parameters within the 8-hour idempotency window, DynamoDB returns an <code>IdempotentParameterMismatch</code> exception.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Providing a <code>ClientToken</code> makes the call to
-        /// <code>ExportTableToPointInTimeInput</code> idempotent, meaning that multiple
-        /// identical calls have the same effect as one single call.</p>
-        /// <p>A client token is valid for 8 hours after the first request that uses it is completed.
-        /// After 8 hours, any request with the same client token is treated as a new request. Do
-        /// not resubmit the same request with the same client token for more than 8 hours, or the
-        /// result might not be idempotent.</p>
-        /// <p>If you submit a request with the same client token but a change in other parameters
-        /// within the 8-hour idempotency window, DynamoDB returns an
-        /// <code>IdempotentParameterMismatch</code> exception.</p>
+        /// <p>Providing a <code>ClientToken</code> makes the call to <code>ExportTableToPointInTimeInput</code> idempotent, meaning that multiple identical calls have the same effect as one single call.</p>
+        /// <p>A client token is valid for 8 hours after the first request that uses it is completed. After 8 hours, any request with the same client token is treated as a new request. Do not resubmit the same request with the same client token for more than 8 hours, or the result might not be idempotent.</p>
+        /// <p>If you submit a request with the same client token but a change in other parameters within the 8-hour idempotency window, DynamoDB returns an <code>IdempotentParameterMismatch</code> exception.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -5824,14 +4912,12 @@ pub mod export_table_to_point_in_time_input {
             self.s3_bucket = input;
             self
         }
-        /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be
-        /// stored in.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p>
         pub fn s3_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be
-        /// stored in.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p>
         pub fn set_s3_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5839,49 +4925,29 @@ pub mod export_table_to_point_in_time_input {
             self.s3_bucket_owner = input;
             self
         }
-        /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported
-        /// snapshot.</p>
+        /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported snapshot.</p>
         pub fn s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_prefix = Some(input.into());
             self
         }
-        /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported
-        /// snapshot.</p>
+        /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported snapshot.</p>
         pub fn set_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_prefix = input;
             self
         }
-        /// <p>Type of encryption used on the bucket where export data will be stored. Valid values
-        /// for <code>S3SseAlgorithm</code> are:</p>
+        /// <p>Type of encryption used on the bucket where export data will be stored. Valid values for <code>S3SseAlgorithm</code> are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AES256</code> - server-side encryption with Amazon S3 managed
-        /// keys</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KMS</code> - server-side encryption with KMS managed
-        /// keys</p>
-        /// </li>
+        /// <li> <p> <code>AES256</code> - server-side encryption with Amazon S3 managed keys</p> </li>
+        /// <li> <p> <code>KMS</code> - server-side encryption with KMS managed keys</p> </li>
         /// </ul>
         pub fn s3_sse_algorithm(mut self, input: crate::model::S3SseAlgorithm) -> Self {
             self.s3_sse_algorithm = Some(input);
             self
         }
-        /// <p>Type of encryption used on the bucket where export data will be stored. Valid values
-        /// for <code>S3SseAlgorithm</code> are:</p>
+        /// <p>Type of encryption used on the bucket where export data will be stored. Valid values for <code>S3SseAlgorithm</code> are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AES256</code> - server-side encryption with Amazon S3 managed
-        /// keys</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KMS</code> - server-side encryption with KMS managed
-        /// keys</p>
-        /// </li>
+        /// <li> <p> <code>AES256</code> - server-side encryption with Amazon S3 managed keys</p> </li>
+        /// <li> <p> <code>KMS</code> - server-side encryption with KMS managed keys</p> </li>
         /// </ul>
         pub fn set_s3_sse_algorithm(
             mut self,
@@ -5890,14 +4956,12 @@ pub mod export_table_to_point_in_time_input {
             self.s3_sse_algorithm = input;
             self
         }
-        /// <p>The ID of the KMS managed key used to encrypt the S3 bucket where
-        /// export data will be stored (if applicable).</p>
+        /// <p>The ID of the KMS managed key used to encrypt the S3 bucket where export data will be stored (if applicable).</p>
         pub fn s3_sse_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_sse_kms_key_id = Some(input.into());
             self
         }
-        /// <p>The ID of the KMS managed key used to encrypt the S3 bucket where
-        /// export data will be stored (if applicable).</p>
+        /// <p>The ID of the KMS managed key used to encrypt the S3 bucket where export data will be stored (if applicable).</p>
         pub fn set_s3_sse_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5905,14 +4969,12 @@ pub mod export_table_to_point_in_time_input {
             self.s3_sse_kms_key_id = input;
             self
         }
-        /// <p>The format for the exported data. Valid values for <code>ExportFormat</code> are
-        /// <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
+        /// <p>The format for the exported data. Valid values for <code>ExportFormat</code> are <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
         pub fn export_format(mut self, input: crate::model::ExportFormat) -> Self {
             self.export_format = Some(input);
             self
         }
-        /// <p>The format for the exported data. Valid values for <code>ExportFormat</code> are
-        /// <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
+        /// <p>The format for the exported data. Valid values for <code>ExportFormat</code> are <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
         pub fn set_export_format(
             mut self,
             input: std::option::Option<crate::model::ExportFormat>,
@@ -5945,7 +5007,7 @@ pub mod export_table_to_point_in_time_input {
 pub type ExportTableToPointInTimeInputOperationOutputAlias =
     crate::operation::ExportTableToPointInTime;
 #[doc(hidden)]
-pub type ExportTableToPointInTimeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ExportTableToPointInTimeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExportTableToPointInTimeInput {
     /// Consumes the builder and constructs an Operation<[`ExportTableToPointInTime`](crate::operation::ExportTableToPointInTime)>
     #[allow(clippy::let_and_return)]
@@ -5956,7 +5018,7 @@ impl ExportTableToPointInTimeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExportTableToPointInTime,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6045,7 +5107,7 @@ impl ExportTableToPointInTimeInput {
             "ExportTableToPointInTime",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6102,28 +5164,20 @@ pub mod get_item_input {
         ///
         /// To override the contents of this collection use [`set_key`](Self::set_key).
         ///
-        /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the
-        /// primary key of the item to retrieve.</p>
-        /// <p>For the primary key, you must provide all of the attributes. For example, with a
-        /// simple primary key, you only need to provide a value for the partition key. For a
-        /// composite primary key, you must provide values for both the partition key and the sort
-        /// key.</p>
+        /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the primary key of the item to retrieve.</p>
+        /// <p>For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</p>
         pub fn key(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.key.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.key = Some(hash_map);
             self
         }
-        /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the
-        /// primary key of the item to retrieve.</p>
-        /// <p>For the primary key, you must provide all of the attributes. For example, with a
-        /// simple primary key, you only need to provide a value for the partition key. For a
-        /// composite primary key, you must provide values for both the partition key and the sort
-        /// key.</p>
+        /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the primary key of the item to retrieve.</p>
+        /// <p>For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</p>
         pub fn set_key(
             mut self,
             input: std::option::Option<
@@ -6137,18 +5191,14 @@ pub mod get_item_input {
         ///
         /// To override the contents of this collection use [`set_attributes_to_get`](Self::set_attributes_to_get).
         ///
-        /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn attributes_to_get(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attributes_to_get.unwrap_or_default();
             v.push(input.into());
             self.attributes_to_get = Some(v);
             self
         }
-        /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_attributes_to_get(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6156,44 +5206,21 @@ pub mod get_item_input {
             self.attributes_to_get = input;
             self
         }
-        /// <p>Determines the read consistency model: If set to <code>true</code>, then the operation
-        /// uses strongly consistent reads; otherwise, the operation uses eventually consistent
-        /// reads.</p>
+        /// <p>Determines the read consistency model: If set to <code>true</code>, then the operation uses strongly consistent reads; otherwise, the operation uses eventually consistent reads.</p>
         pub fn consistent_read(mut self, input: bool) -> Self {
             self.consistent_read = Some(input);
             self
         }
-        /// <p>Determines the read consistency model: If set to <code>true</code>, then the operation
-        /// uses strongly consistent reads; otherwise, the operation uses eventually consistent
-        /// reads.</p>
+        /// <p>Determines the read consistency model: If set to <code>true</code>, then the operation uses strongly consistent reads; otherwise, the operation uses eventually consistent reads.</p>
         pub fn set_consistent_read(mut self, input: std::option::Option<bool>) -> Self {
             self.consistent_read = input;
             self
         }
-        /// <p>Determines the level of detail about either provisioned or on-demand throughput
-        /// consumption that is returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INDEXES</code> - The response includes the aggregate
-        /// <code>ConsumedCapacity</code> for the operation, together with
-        /// <code>ConsumedCapacity</code> for each table and secondary index that was
-        /// accessed.</p>
-        /// <p>Note that some operations, such as <code>GetItem</code> and
-        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-        /// information for table(s).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOTAL</code> - The response includes only the aggregate
-        /// <code>ConsumedCapacity</code> for the operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-        /// response.</p>
-        /// </li>
+        /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+        /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+        /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
@@ -6202,30 +5229,11 @@ pub mod get_item_input {
             self.return_consumed_capacity = Some(input);
             self
         }
-        /// <p>Determines the level of detail about either provisioned or on-demand throughput
-        /// consumption that is returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INDEXES</code> - The response includes the aggregate
-        /// <code>ConsumedCapacity</code> for the operation, together with
-        /// <code>ConsumedCapacity</code> for each table and secondary index that was
-        /// accessed.</p>
-        /// <p>Note that some operations, such as <code>GetItem</code> and
-        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-        /// information for table(s).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOTAL</code> - The response includes only the aggregate
-        /// <code>ConsumedCapacity</code> for the operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-        /// response.</p>
-        /// </li>
+        /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+        /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+        /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
         /// </ul>
         pub fn set_return_consumed_capacity(
             mut self,
@@ -6234,24 +5242,16 @@ pub mod get_item_input {
             self.return_consumed_capacity = input;
             self
         }
-        /// <p>A string that identifies one or more attributes to retrieve from the table. These
-        /// attributes can include scalars, sets, or elements of a JSON document. The attributes in
-        /// the expression must be separated by commas.</p>
-        /// <p>If no attribute names are specified, then all attributes are returned. If any of the
-        /// requested attributes are not found, they do not appear in the result.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p>
+        /// <p>If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not found, they do not appear in the result.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn projection_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.projection_expression = Some(input.into());
             self
         }
-        /// <p>A string that identifies one or more attributes to retrieve from the table. These
-        /// attributes can include scalars, sets, or elements of a JSON document. The attributes in
-        /// the expression must be separated by commas.</p>
-        /// <p>If no attribute names are specified, then all attributes are returned. If any of the
-        /// requested attributes are not found, they do not appear in the result.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p>
+        /// <p>If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not found, they do not appear in the result.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_projection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6263,57 +5263,27 @@ pub mod get_item_input {
         ///
         /// To override the contents of this collection use [`set_expression_attribute_names`](Self::set_expression_attribute_names).
         ///
-        /// <p>One or more substitution tokens for attribute names in an expression. The following
-        /// are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+        /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
-        /// word.</p>
-        /// </li>
-        /// <li>
-        /// <p>To create a placeholder for repeating occurrences of an attribute name in an
-        /// expression.</p>
-        /// </li>
-        /// <li>
-        /// <p>To prevent special characters in an attribute name from being misinterpreted
-        /// in an expression.</p>
-        /// </li>
+        /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
+        /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
+        /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
         /// </ul>
-        /// <p>Use the <b>#</b> character in an expression to dereference
-        /// an attribute name. For example, consider the following attribute name:</p>
+        /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Percentile</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Percentile</code> </p> </li>
         /// </ul>
-        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used
-        /// directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>). To work around this, you could specify the following for
-        /// <code>ExpressionAttributeNames</code>:</p>
+        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>{"#P":"Percentile"}</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
         /// </ul>
         /// <p>You could then use this substitution in an expression, as in this example:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>#P = :val</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Tokens that begin with the <b>:</b> character are
-        /// <i>expression attribute values</i>, which are placeholders for the
-        /// actual value at runtime.</p>
+        /// <li> <p> <code>#P = :val</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
         /// </note>
-        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn expression_attribute_names(
             mut self,
             k: impl Into<std::string::String>,
@@ -6324,57 +5294,27 @@ pub mod get_item_input {
             self.expression_attribute_names = Some(hash_map);
             self
         }
-        /// <p>One or more substitution tokens for attribute names in an expression. The following
-        /// are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+        /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
-        /// word.</p>
-        /// </li>
-        /// <li>
-        /// <p>To create a placeholder for repeating occurrences of an attribute name in an
-        /// expression.</p>
-        /// </li>
-        /// <li>
-        /// <p>To prevent special characters in an attribute name from being misinterpreted
-        /// in an expression.</p>
-        /// </li>
+        /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
+        /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
+        /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
         /// </ul>
-        /// <p>Use the <b>#</b> character in an expression to dereference
-        /// an attribute name. For example, consider the following attribute name:</p>
+        /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Percentile</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Percentile</code> </p> </li>
         /// </ul>
-        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used
-        /// directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>). To work around this, you could specify the following for
-        /// <code>ExpressionAttributeNames</code>:</p>
+        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>{"#P":"Percentile"}</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
         /// </ul>
         /// <p>You could then use this substitution in an expression, as in this example:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>#P = :val</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Tokens that begin with the <b>:</b> character are
-        /// <i>expression attribute values</i>, which are placeholders for the
-        /// actual value at runtime.</p>
+        /// <li> <p> <code>#P = :val</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
         /// </note>
-        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_expression_attribute_names(
             mut self,
             input: std::option::Option<
@@ -6404,7 +5344,7 @@ pub mod get_item_input {
 #[doc(hidden)]
 pub type GetItemInputOperationOutputAlias = crate::operation::GetItem;
 #[doc(hidden)]
-pub type GetItemInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetItemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetItemInput {
     /// Consumes the builder and constructs an Operation<[`GetItem`](crate::operation::GetItem)>
     #[allow(clippy::let_and_return)]
@@ -6415,7 +5355,7 @@ impl GetItemInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetItem,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6496,7 +5436,7 @@ impl GetItemInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "GetItem", "dynamodb",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6553,14 +5493,12 @@ pub mod list_backups_input {
             self.limit = input;
             self
         }
-        /// <p>Only backups created after this time are listed. <code>TimeRangeLowerBound</code> is
-        /// inclusive.</p>
+        /// <p>Only backups created after this time are listed. <code>TimeRangeLowerBound</code> is inclusive.</p>
         pub fn time_range_lower_bound(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.time_range_lower_bound = Some(input);
             self
         }
-        /// <p>Only backups created after this time are listed. <code>TimeRangeLowerBound</code> is
-        /// inclusive.</p>
+        /// <p>Only backups created after this time are listed. <code>TimeRangeLowerBound</code> is inclusive.</p>
         pub fn set_time_range_lower_bound(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6568,14 +5506,12 @@ pub mod list_backups_input {
             self.time_range_lower_bound = input;
             self
         }
-        /// <p>Only backups created before this time are listed. <code>TimeRangeUpperBound</code> is
-        /// exclusive. </p>
+        /// <p>Only backups created before this time are listed. <code>TimeRangeUpperBound</code> is exclusive. </p>
         pub fn time_range_upper_bound(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.time_range_upper_bound = Some(input);
             self
         }
-        /// <p>Only backups created before this time are listed. <code>TimeRangeUpperBound</code> is
-        /// exclusive. </p>
+        /// <p>Only backups created before this time are listed. <code>TimeRangeUpperBound</code> is exclusive. </p>
         pub fn set_time_range_upper_bound(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6583,22 +5519,12 @@ pub mod list_backups_input {
             self.time_range_upper_bound = input;
             self
         }
-        /// <p>
-        /// <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the backup last
-        /// evaluated when the current page of results was returned, inclusive of the current page
-        /// of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a
-        /// new <code>ListBackups</code> operation in order to fetch the next page of results.
-        /// </p>
+        /// <p> <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the backup last evaluated when the current page of results was returned, inclusive of the current page of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page of results. </p>
         pub fn exclusive_start_backup_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.exclusive_start_backup_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the backup last
-        /// evaluated when the current page of results was returned, inclusive of the current page
-        /// of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a
-        /// new <code>ListBackups</code> operation in order to fetch the next page of results.
-        /// </p>
+        /// <p> <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the backup last evaluated when the current page of results was returned, inclusive of the current page of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page of results. </p>
         pub fn set_exclusive_start_backup_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6609,18 +5535,9 @@ pub mod list_backups_input {
         /// <p>The backups from the table specified by <code>BackupType</code> are listed.</p>
         /// <p>Where <code>BackupType</code> can be:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>USER</code> - On-demand backup created by you.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL</code> - All types of on-demand backups (USER and SYSTEM).</p>
-        /// </li>
+        /// <li> <p> <code>USER</code> - On-demand backup created by you.</p> </li>
+        /// <li> <p> <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</p> </li>
+        /// <li> <p> <code>ALL</code> - All types of on-demand backups (USER and SYSTEM).</p> </li>
         /// </ul>
         pub fn backup_type(mut self, input: crate::model::BackupTypeFilter) -> Self {
             self.backup_type = Some(input);
@@ -6629,18 +5546,9 @@ pub mod list_backups_input {
         /// <p>The backups from the table specified by <code>BackupType</code> are listed.</p>
         /// <p>Where <code>BackupType</code> can be:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>USER</code> - On-demand backup created by you.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL</code> - All types of on-demand backups (USER and SYSTEM).</p>
-        /// </li>
+        /// <li> <p> <code>USER</code> - On-demand backup created by you.</p> </li>
+        /// <li> <p> <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</p> </li>
+        /// <li> <p> <code>ALL</code> - All types of on-demand backups (USER and SYSTEM).</p> </li>
         /// </ul>
         pub fn set_backup_type(
             mut self,
@@ -6670,7 +5578,7 @@ pub mod list_backups_input {
 #[doc(hidden)]
 pub type ListBackupsInputOperationOutputAlias = crate::operation::ListBackups;
 #[doc(hidden)]
-pub type ListBackupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListBackupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBackupsInput {
     /// Consumes the builder and constructs an Operation<[`ListBackups`](crate::operation::ListBackups)>
     #[allow(clippy::let_and_return)]
@@ -6681,7 +5589,7 @@ impl ListBackupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBackups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6765,7 +5673,7 @@ impl ListBackupsInput {
             "ListBackups",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6848,7 +5756,7 @@ pub mod list_contributor_insights_input {
 pub type ListContributorInsightsInputOperationOutputAlias =
     crate::operation::ListContributorInsights;
 #[doc(hidden)]
-pub type ListContributorInsightsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListContributorInsightsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListContributorInsightsInput {
     /// Consumes the builder and constructs an Operation<[`ListContributorInsights`](crate::operation::ListContributorInsights)>
     #[allow(clippy::let_and_return)]
@@ -6859,7 +5767,7 @@ impl ListContributorInsightsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListContributorInsights,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6946,7 +5854,7 @@ impl ListContributorInsightsInput {
             "ListContributorInsights",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7000,16 +5908,12 @@ pub mod list_exports_input {
             self.max_results = input;
             self
         }
-        /// <p>An optional string that, if supplied, must be copied from the output of a previous
-        /// call to <code>ListExports</code>. When provided in this manner, the API fetches the next
-        /// page of results.</p>
+        /// <p>An optional string that, if supplied, must be copied from the output of a previous call to <code>ListExports</code>. When provided in this manner, the API fetches the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional string that, if supplied, must be copied from the output of a previous
-        /// call to <code>ListExports</code>. When provided in this manner, the API fetches the next
-        /// page of results.</p>
+        /// <p>An optional string that, if supplied, must be copied from the output of a previous call to <code>ListExports</code>. When provided in this manner, the API fetches the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7032,7 +5936,7 @@ pub mod list_exports_input {
 #[doc(hidden)]
 pub type ListExportsInputOperationOutputAlias = crate::operation::ListExports;
 #[doc(hidden)]
-pub type ListExportsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListExportsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListExportsInput {
     /// Consumes the builder and constructs an Operation<[`ListExports`](crate::operation::ListExports)>
     #[allow(clippy::let_and_return)]
@@ -7043,7 +5947,7 @@ impl ListExportsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListExports,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7127,7 +6031,7 @@ impl ListExportsInput {
             "ListExports",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7177,22 +6081,14 @@ pub mod list_global_tables_input {
             self.exclusive_start_global_table_name = input;
             self
         }
-        /// <p>The maximum number of table names to return, if the parameter is not specified
-        /// DynamoDB defaults to 100.</p>
-        /// <p>If the number of global tables DynamoDB finds reaches this limit, it stops the
-        /// operation and returns the table names collected up to that point, with a table name in
-        /// the <code>LastEvaluatedGlobalTableName</code> to apply in a subsequent operation to the
-        /// <code>ExclusiveStartGlobalTableName</code> parameter.</p>
+        /// <p>The maximum number of table names to return, if the parameter is not specified DynamoDB defaults to 100.</p>
+        /// <p>If the number of global tables DynamoDB finds reaches this limit, it stops the operation and returns the table names collected up to that point, with a table name in the <code>LastEvaluatedGlobalTableName</code> to apply in a subsequent operation to the <code>ExclusiveStartGlobalTableName</code> parameter.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of table names to return, if the parameter is not specified
-        /// DynamoDB defaults to 100.</p>
-        /// <p>If the number of global tables DynamoDB finds reaches this limit, it stops the
-        /// operation and returns the table names collected up to that point, with a table name in
-        /// the <code>LastEvaluatedGlobalTableName</code> to apply in a subsequent operation to the
-        /// <code>ExclusiveStartGlobalTableName</code> parameter.</p>
+        /// <p>The maximum number of table names to return, if the parameter is not specified DynamoDB defaults to 100.</p>
+        /// <p>If the number of global tables DynamoDB finds reaches this limit, it stops the operation and returns the table names collected up to that point, with a table name in the <code>LastEvaluatedGlobalTableName</code> to apply in a subsequent operation to the <code>ExclusiveStartGlobalTableName</code> parameter.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -7225,7 +6121,7 @@ pub mod list_global_tables_input {
 #[doc(hidden)]
 pub type ListGlobalTablesInputOperationOutputAlias = crate::operation::ListGlobalTables;
 #[doc(hidden)]
-pub type ListGlobalTablesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListGlobalTablesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGlobalTablesInput {
     /// Consumes the builder and constructs an Operation<[`ListGlobalTables`](crate::operation::ListGlobalTables)>
     #[allow(clippy::let_and_return)]
@@ -7236,7 +6132,7 @@ impl ListGlobalTablesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListGlobalTables,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7321,7 +6217,7 @@ impl ListGlobalTablesInput {
             "ListGlobalTables",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7354,16 +6250,12 @@ pub mod list_tables_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The first table name that this operation will evaluate. Use the value that was
-        /// returned for <code>LastEvaluatedTableName</code> in a previous operation, so that you
-        /// can obtain the next page of results.</p>
+        /// <p>The first table name that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedTableName</code> in a previous operation, so that you can obtain the next page of results.</p>
         pub fn exclusive_start_table_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.exclusive_start_table_name = Some(input.into());
             self
         }
-        /// <p>The first table name that this operation will evaluate. Use the value that was
-        /// returned for <code>LastEvaluatedTableName</code> in a previous operation, so that you
-        /// can obtain the next page of results.</p>
+        /// <p>The first table name that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedTableName</code> in a previous operation, so that you can obtain the next page of results.</p>
         pub fn set_exclusive_start_table_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7371,14 +6263,12 @@ pub mod list_tables_input {
             self.exclusive_start_table_name = input;
             self
         }
-        /// <p>A maximum number of table names to return. If this parameter is not specified, the
-        /// limit is 100.</p>
+        /// <p>A maximum number of table names to return. If this parameter is not specified, the limit is 100.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>A maximum number of table names to return. If this parameter is not specified, the
-        /// limit is 100.</p>
+        /// <p>A maximum number of table names to return. If this parameter is not specified, the limit is 100.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -7400,7 +6290,7 @@ pub mod list_tables_input {
 #[doc(hidden)]
 pub type ListTablesInputOperationOutputAlias = crate::operation::ListTables;
 #[doc(hidden)]
-pub type ListTablesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTablesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTablesInput {
     /// Consumes the builder and constructs an Operation<[`ListTables`](crate::operation::ListTables)>
     #[allow(clippy::let_and_return)]
@@ -7411,7 +6301,7 @@ impl ListTablesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTables,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7495,7 +6385,7 @@ impl ListTablesInput {
             "ListTables",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7528,28 +6418,22 @@ pub mod list_tags_of_resource_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon DynamoDB resource with tags to be listed. This value is an Amazon Resource
-        /// Name (ARN).</p>
+        /// <p>The Amazon DynamoDB resource with tags to be listed. This value is an Amazon Resource Name (ARN).</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon DynamoDB resource with tags to be listed. This value is an Amazon Resource
-        /// Name (ARN).</p>
+        /// <p>The Amazon DynamoDB resource with tags to be listed. This value is an Amazon Resource Name (ARN).</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
-        /// <p>An optional string that, if supplied, must be copied from the output of a previous
-        /// call to ListTagOfResource. When provided in this manner, this API fetches the next page
-        /// of results.</p>
+        /// <p>An optional string that, if supplied, must be copied from the output of a previous call to ListTagOfResource. When provided in this manner, this API fetches the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional string that, if supplied, must be copied from the output of a previous
-        /// call to ListTagOfResource. When provided in this manner, this API fetches the next page
-        /// of results.</p>
+        /// <p>An optional string that, if supplied, must be copied from the output of a previous call to ListTagOfResource. When provided in this manner, this API fetches the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7571,7 +6455,7 @@ pub mod list_tags_of_resource_input {
 #[doc(hidden)]
 pub type ListTagsOfResourceInputOperationOutputAlias = crate::operation::ListTagsOfResource;
 #[doc(hidden)]
-pub type ListTagsOfResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsOfResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsOfResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsOfResource`](crate::operation::ListTagsOfResource)>
     #[allow(clippy::let_and_return)]
@@ -7582,7 +6466,7 @@ impl ListTagsOfResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsOfResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7667,7 +6551,7 @@ impl ListTagsOfResourceInput {
             "ListTagsOfResource",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7732,52 +6616,28 @@ pub mod put_item_input {
         ///
         /// To override the contents of this collection use [`set_item`](Self::set_item).
         ///
-        /// <p>A map of attribute name/value pairs, one for each attribute. Only the primary key
-        /// attributes are required; you can optionally provide other attribute name-value pairs for
-        /// the item.</p>
-        /// <p>You must provide all of the attributes for the primary key. For example, with a simple
-        /// primary key, you only need to provide a value for the partition key. For a composite
-        /// primary key, you must provide both values for both the partition key and the sort
-        /// key.</p>
-        /// <p>If you specify any attributes that are part of an index key, then the data types for
-        /// those attributes must match those of the schema in the table's attribute
-        /// definition.</p>
-        /// <p>Empty String and Binary attribute values are allowed. Attribute values of type String
-        /// and Binary must have a length greater than zero if the attribute is used as a key
-        /// attribute for a table or index.</p>
-        ///
-        /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
-        /// <p>Each element in the <code>Item</code> map is an <code>AttributeValue</code>
-        /// object.</p>
+        /// <p>A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item.</p>
+        /// <p>You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key.</p>
+        /// <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p>
+        /// <p>Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a length greater than zero if the attribute is used as a key attribute for a table or index.</p>
+        /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>Each element in the <code>Item</code> map is an <code>AttributeValue</code> object.</p>
         pub fn item(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.item.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.item = Some(hash_map);
             self
         }
-        /// <p>A map of attribute name/value pairs, one for each attribute. Only the primary key
-        /// attributes are required; you can optionally provide other attribute name-value pairs for
-        /// the item.</p>
-        /// <p>You must provide all of the attributes for the primary key. For example, with a simple
-        /// primary key, you only need to provide a value for the partition key. For a composite
-        /// primary key, you must provide both values for both the partition key and the sort
-        /// key.</p>
-        /// <p>If you specify any attributes that are part of an index key, then the data types for
-        /// those attributes must match those of the schema in the table's attribute
-        /// definition.</p>
-        /// <p>Empty String and Binary attribute values are allowed. Attribute values of type String
-        /// and Binary must have a length greater than zero if the attribute is used as a key
-        /// attribute for a table or index.</p>
-        ///
-        /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
-        /// <p>Each element in the <code>Item</code> map is an <code>AttributeValue</code>
-        /// object.</p>
+        /// <p>A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item.</p>
+        /// <p>You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key.</p>
+        /// <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p>
+        /// <p>Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a length greater than zero if the attribute is used as a key attribute for a table or index.</p>
+        /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>Each element in the <code>Item</code> map is an <code>AttributeValue</code> object.</p>
         pub fn set_item(
             mut self,
             input: std::option::Option<
@@ -7791,22 +6651,18 @@ pub mod put_item_input {
         ///
         /// To override the contents of this collection use [`set_expected`](Self::set_expected).
         ///
-        /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn expected(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ExpectedAttributeValue>,
+            v: crate::model::ExpectedAttributeValue,
         ) -> Self {
             let mut hash_map = self.expected.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.expected = Some(hash_map);
             self
         }
-        /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_expected(
             mut self,
             input: std::option::Option<
@@ -7819,53 +6675,25 @@ pub mod put_item_input {
             self.expected = input;
             self
         }
-        /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appeared
-        /// before they were updated with the <code>PutItem</code> request. For
-        /// <code>PutItem</code>, the valid values are:</p>
+        /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appeared before they were updated with the <code>PutItem</code> request. For <code>PutItem</code>, the valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its
-        /// value is <code>NONE</code>, then nothing is returned. (This setting is the
-        /// default for <code>ReturnValues</code>.)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL_OLD</code> - If <code>PutItem</code> overwrote an attribute name-value
-        /// pair, then the content of the old item is returned.</p>
-        /// </li>
+        /// <li> <p> <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <code>ReturnValues</code>.)</p> </li>
+        /// <li> <p> <code>ALL_OLD</code> - If <code>PutItem</code> overwrote an attribute name-value pair, then the content of the old item is returned.</p> </li>
         /// </ul>
-        /// <p>The values returned are strongly consistent.</p>
-        /// <note>
-        /// <p>The <code>ReturnValues</code> parameter is used by several DynamoDB operations;
-        /// however, <code>PutItem</code> does not recognize any values other than
-        /// <code>NONE</code> or <code>ALL_OLD</code>.</p>
+        /// <p>The values returned are strongly consistent.</p> <note>
+        /// <p>The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however, <code>PutItem</code> does not recognize any values other than <code>NONE</code> or <code>ALL_OLD</code>.</p>
         /// </note>
         pub fn return_values(mut self, input: crate::model::ReturnValue) -> Self {
             self.return_values = Some(input);
             self
         }
-        /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appeared
-        /// before they were updated with the <code>PutItem</code> request. For
-        /// <code>PutItem</code>, the valid values are:</p>
+        /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appeared before they were updated with the <code>PutItem</code> request. For <code>PutItem</code>, the valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its
-        /// value is <code>NONE</code>, then nothing is returned. (This setting is the
-        /// default for <code>ReturnValues</code>.)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL_OLD</code> - If <code>PutItem</code> overwrote an attribute name-value
-        /// pair, then the content of the old item is returned.</p>
-        /// </li>
+        /// <li> <p> <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <code>ReturnValues</code>.)</p> </li>
+        /// <li> <p> <code>ALL_OLD</code> - If <code>PutItem</code> overwrote an attribute name-value pair, then the content of the old item is returned.</p> </li>
         /// </ul>
-        /// <p>The values returned are strongly consistent.</p>
-        /// <note>
-        /// <p>The <code>ReturnValues</code> parameter is used by several DynamoDB operations;
-        /// however, <code>PutItem</code> does not recognize any values other than
-        /// <code>NONE</code> or <code>ALL_OLD</code>.</p>
+        /// <p>The values returned are strongly consistent.</p> <note>
+        /// <p>The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however, <code>PutItem</code> does not recognize any values other than <code>NONE</code> or <code>ALL_OLD</code>.</p>
         /// </note>
         pub fn set_return_values(
             mut self,
@@ -7874,30 +6702,11 @@ pub mod put_item_input {
             self.return_values = input;
             self
         }
-        /// <p>Determines the level of detail about either provisioned or on-demand throughput
-        /// consumption that is returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INDEXES</code> - The response includes the aggregate
-        /// <code>ConsumedCapacity</code> for the operation, together with
-        /// <code>ConsumedCapacity</code> for each table and secondary index that was
-        /// accessed.</p>
-        /// <p>Note that some operations, such as <code>GetItem</code> and
-        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-        /// information for table(s).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOTAL</code> - The response includes only the aggregate
-        /// <code>ConsumedCapacity</code> for the operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-        /// response.</p>
-        /// </li>
+        /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+        /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+        /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
@@ -7906,30 +6715,11 @@ pub mod put_item_input {
             self.return_consumed_capacity = Some(input);
             self
         }
-        /// <p>Determines the level of detail about either provisioned or on-demand throughput
-        /// consumption that is returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INDEXES</code> - The response includes the aggregate
-        /// <code>ConsumedCapacity</code> for the operation, together with
-        /// <code>ConsumedCapacity</code> for each table and secondary index that was
-        /// accessed.</p>
-        /// <p>Note that some operations, such as <code>GetItem</code> and
-        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-        /// information for table(s).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOTAL</code> - The response includes only the aggregate
-        /// <code>ConsumedCapacity</code> for the operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-        /// response.</p>
-        /// </li>
+        /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+        /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+        /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
         /// </ul>
         pub fn set_return_consumed_capacity(
             mut self,
@@ -7938,10 +6728,7 @@ pub mod put_item_input {
             self.return_consumed_capacity = input;
             self
         }
-        /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>,
-        /// the response includes statistics about item collections, if any, that were modified
-        /// during the operation are returned in the response. If set to <code>NONE</code> (the
-        /// default), no statistics are returned.</p>
+        /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
         pub fn return_item_collection_metrics(
             mut self,
             input: crate::model::ReturnItemCollectionMetrics,
@@ -7949,10 +6736,7 @@ pub mod put_item_input {
             self.return_item_collection_metrics = Some(input);
             self
         }
-        /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>,
-        /// the response includes statistics about item collections, if any, that were modified
-        /// during the operation are returned in the response. If set to <code>NONE</code> (the
-        /// default), no statistics are returned.</p>
+        /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
         pub fn set_return_item_collection_metrics(
             mut self,
             input: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
@@ -7960,16 +6744,12 @@ pub mod put_item_input {
             self.return_item_collection_metrics = input;
             self
         }
-        /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn conditional_operator(mut self, input: crate::model::ConditionalOperator) -> Self {
             self.conditional_operator = Some(input);
             self
         }
-        /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_conditional_operator(
             mut self,
             input: std::option::Option<crate::model::ConditionalOperator>,
@@ -7977,56 +6757,26 @@ pub mod put_item_input {
             self.conditional_operator = input;
             self
         }
-        /// <p>A condition that must be satisfied in order for a conditional <code>PutItem</code>
-        /// operation to succeed.</p>
+        /// <p>A condition that must be satisfied in order for a conditional <code>PutItem</code> operation to succeed.</p>
         /// <p>An expression can contain any of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type |
-        /// contains | begins_with | size</code>
-        /// </p>
-        /// <p>These function names are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Comparison operators: <code>= | <> |
-        /// < | > | <= | >= |
-        /// BETWEEN | IN </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p> Logical operators: <code>AND | OR | NOT</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type | contains | begins_with | size</code> </p> <p>These function names are case-sensitive.</p> </li>
+        /// <li> <p>Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code> </p> </li>
+        /// <li> <p> Logical operators: <code>AND | OR | NOT</code> </p> </li>
         /// </ul>
-        /// <p>For more information on condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>For more information on condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn condition_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.condition_expression = Some(input.into());
             self
         }
-        /// <p>A condition that must be satisfied in order for a conditional <code>PutItem</code>
-        /// operation to succeed.</p>
+        /// <p>A condition that must be satisfied in order for a conditional <code>PutItem</code> operation to succeed.</p>
         /// <p>An expression can contain any of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type |
-        /// contains | begins_with | size</code>
-        /// </p>
-        /// <p>These function names are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Comparison operators: <code>= | <> |
-        /// < | > | <= | >= |
-        /// BETWEEN | IN </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p> Logical operators: <code>AND | OR | NOT</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type | contains | begins_with | size</code> </p> <p>These function names are case-sensitive.</p> </li>
+        /// <li> <p>Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code> </p> </li>
+        /// <li> <p> Logical operators: <code>AND | OR | NOT</code> </p> </li>
         /// </ul>
-        /// <p>For more information on condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>For more information on condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_condition_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8038,57 +6788,27 @@ pub mod put_item_input {
         ///
         /// To override the contents of this collection use [`set_expression_attribute_names`](Self::set_expression_attribute_names).
         ///
-        /// <p>One or more substitution tokens for attribute names in an expression. The following
-        /// are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+        /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
-        /// word.</p>
-        /// </li>
-        /// <li>
-        /// <p>To create a placeholder for repeating occurrences of an attribute name in an
-        /// expression.</p>
-        /// </li>
-        /// <li>
-        /// <p>To prevent special characters in an attribute name from being misinterpreted
-        /// in an expression.</p>
-        /// </li>
+        /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
+        /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
+        /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
         /// </ul>
-        /// <p>Use the <b>#</b> character in an expression to dereference
-        /// an attribute name. For example, consider the following attribute name:</p>
+        /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Percentile</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Percentile</code> </p> </li>
         /// </ul>
-        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used
-        /// directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>). To work around this, you could specify the following for
-        /// <code>ExpressionAttributeNames</code>:</p>
+        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>{"#P":"Percentile"}</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
         /// </ul>
         /// <p>You could then use this substitution in an expression, as in this example:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>#P = :val</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Tokens that begin with the <b>:</b> character are
-        /// <i>expression attribute values</i>, which are placeholders for the
-        /// actual value at runtime.</p>
+        /// <li> <p> <code>#P = :val</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
         /// </note>
-        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn expression_attribute_names(
             mut self,
             k: impl Into<std::string::String>,
@@ -8099,57 +6819,27 @@ pub mod put_item_input {
             self.expression_attribute_names = Some(hash_map);
             self
         }
-        /// <p>One or more substitution tokens for attribute names in an expression. The following
-        /// are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+        /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
-        /// word.</p>
-        /// </li>
-        /// <li>
-        /// <p>To create a placeholder for repeating occurrences of an attribute name in an
-        /// expression.</p>
-        /// </li>
-        /// <li>
-        /// <p>To prevent special characters in an attribute name from being misinterpreted
-        /// in an expression.</p>
-        /// </li>
+        /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
+        /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
+        /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
         /// </ul>
-        /// <p>Use the <b>#</b> character in an expression to dereference
-        /// an attribute name. For example, consider the following attribute name:</p>
+        /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Percentile</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Percentile</code> </p> </li>
         /// </ul>
-        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used
-        /// directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>). To work around this, you could specify the following for
-        /// <code>ExpressionAttributeNames</code>:</p>
+        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>{"#P":"Percentile"}</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
         /// </ul>
         /// <p>You could then use this substitution in an expression, as in this example:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>#P = :val</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Tokens that begin with the <b>:</b> character are
-        /// <i>expression attribute values</i>, which are placeholders for the
-        /// actual value at runtime.</p>
+        /// <li> <p> <code>#P = :val</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
         /// </note>
-        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_expression_attribute_names(
             mut self,
             input: std::option::Option<
@@ -8164,53 +6854,31 @@ pub mod put_item_input {
         /// To override the contents of this collection use [`set_expression_attribute_values`](Self::set_expression_attribute_values).
         ///
         /// <p>One or more values that can be substituted in an expression.</p>
-        /// <p>Use the <b>:</b> (colon) character in an expression to
-        /// dereference an attribute value. For example, suppose that you wanted to check whether
-        /// the value of the <i>ProductStatus</i> attribute was one of the following: </p>
-        /// <p>
-        /// <code>Available | Backordered | Discontinued</code>
-        /// </p>
-        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as
-        /// follows:</p>
-        /// <p>
-        /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-        /// ":disc":{"S":"Discontinued"} }</code>
-        /// </p>
+        /// <p>Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the following: </p>
+        /// <p> <code>Available | Backordered | Discontinued</code> </p>
+        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+        /// <p> <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code> </p>
         /// <p>You could then use these values in an expression, such as this:</p>
-        /// <p>
-        /// <code>ProductStatus IN (:avail, :back, :disc)</code>
-        /// </p>
-        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p> <code>ProductStatus IN (:avail, :back, :disc)</code> </p>
+        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn expression_attribute_values(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.expression_attribute_values.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.expression_attribute_values = Some(hash_map);
             self
         }
         /// <p>One or more values that can be substituted in an expression.</p>
-        /// <p>Use the <b>:</b> (colon) character in an expression to
-        /// dereference an attribute value. For example, suppose that you wanted to check whether
-        /// the value of the <i>ProductStatus</i> attribute was one of the following: </p>
-        /// <p>
-        /// <code>Available | Backordered | Discontinued</code>
-        /// </p>
-        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as
-        /// follows:</p>
-        /// <p>
-        /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-        /// ":disc":{"S":"Discontinued"} }</code>
-        /// </p>
+        /// <p>Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the following: </p>
+        /// <p> <code>Available | Backordered | Discontinued</code> </p>
+        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+        /// <p> <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code> </p>
         /// <p>You could then use these values in an expression, such as this:</p>
-        /// <p>
-        /// <code>ProductStatus IN (:avail, :back, :disc)</code>
-        /// </p>
-        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p> <code>ProductStatus IN (:avail, :back, :disc)</code> </p>
+        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_expression_attribute_values(
             mut self,
             input: std::option::Option<
@@ -8243,7 +6911,7 @@ pub mod put_item_input {
 #[doc(hidden)]
 pub type PutItemInputOperationOutputAlias = crate::operation::PutItem;
 #[doc(hidden)]
-pub type PutItemInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutItemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutItemInput {
     /// Consumes the builder and constructs an Operation<[`PutItem`](crate::operation::PutItem)>
     #[allow(clippy::let_and_return)]
@@ -8254,7 +6922,7 @@ impl PutItemInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutItem,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8335,7 +7003,7 @@ impl PutItemInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "PutItem", "dynamodb",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8404,131 +7072,39 @@ pub mod query_input {
             self.table_name = input;
             self
         }
-        /// <p>The name of an index to query. This index can be any local secondary index or global
-        /// secondary index on the table. Note that if you use the <code>IndexName</code> parameter,
-        /// you must also provide <code>TableName.</code>
-        /// </p>
+        /// <p>The name of an index to query. This index can be any local secondary index or global secondary index on the table. Note that if you use the <code>IndexName</code> parameter, you must also provide <code>TableName.</code> </p>
         pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_name = Some(input.into());
             self
         }
-        /// <p>The name of an index to query. This index can be any local secondary index or global
-        /// secondary index on the table. Note that if you use the <code>IndexName</code> parameter,
-        /// you must also provide <code>TableName.</code>
-        /// </p>
+        /// <p>The name of an index to query. This index can be any local secondary index or global secondary index on the table. Note that if you use the <code>IndexName</code> parameter, you must also provide <code>TableName.</code> </p>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_name = input;
             self
         }
-        /// <p>The attributes to be returned in the result. You can retrieve all item attributes,
-        /// specific item attributes, the count of matching items, or in the case of an index, some
-        /// or all of the attributes projected into the index.</p>
+        /// <p>The attributes to be returned in the result. You can retrieve all item attributes, specific item attributes, the count of matching items, or in the case of an index, some or all of the attributes projected into the index.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the
-        /// specified table or index. If you query a local secondary index, then for each
-        /// matching item in the index, DynamoDB fetches the entire item from the parent
-        /// table. If the index is configured to project all item attributes, then all of
-        /// the data can be obtained from the local secondary index, and no fetching is
-        /// required.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an index.
-        /// Retrieves all attributes that have been projected into the index. If the index
-        /// is configured to project all attributes, this return value is equivalent to
-        /// specifying <code>ALL_ATTRIBUTES</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COUNT</code> - Returns the number of matching items, rather than the
-        /// matching items themselves.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
-        /// <code>AttributesToGet</code>. This return value is equivalent to specifying
-        /// <code>AttributesToGet</code> without specifying any value for
-        /// <code>Select</code>.</p>
-        /// <p>If you query or scan a local secondary index and request only attributes that
-        /// are projected into that index, the operation will read only the index and not
-        /// the table. If any of the requested attributes are not projected into the local
-        /// secondary index, DynamoDB fetches each of these attributes from the parent
-        /// table. This extra fetching incurs additional throughput cost and latency.</p>
-        /// <p>If you query or scan a global secondary index, you can only request attributes
-        /// that are projected into the index. Global secondary index queries cannot fetch
-        /// attributes from the parent table.</p>
-        /// </li>
+        /// <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If you query a local secondary index, then for each matching item in the index, DynamoDB fetches the entire item from the parent table. If the index is configured to project all item attributes, then all of the data can be obtained from the local secondary index, and no fetching is required.</p> </li>
+        /// <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an index. Retrieves all attributes that have been projected into the index. If the index is configured to project all attributes, this return value is equivalent to specifying <code>ALL_ATTRIBUTES</code>.</p> </li>
+        /// <li> <p> <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.</p> </li>
+        /// <li> <p> <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in <code>AttributesToGet</code>. This return value is equivalent to specifying <code>AttributesToGet</code> without specifying any value for <code>Select</code>.</p> <p>If you query or scan a local secondary index and request only attributes that are projected into that index, the operation will read only the index and not the table. If any of the requested attributes are not projected into the local secondary index, DynamoDB fetches each of these attributes from the parent table. This extra fetching incurs additional throughput cost and latency.</p> <p>If you query or scan a global secondary index, you can only request attributes that are projected into the index. Global secondary index queries cannot fetch attributes from the parent table.</p> </li>
         /// </ul>
-        /// <p>If neither <code>Select</code> nor <code>AttributesToGet</code> are specified,
-        /// DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a table, and
-        /// <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You cannot use both
-        /// <code>Select</code> and <code>AttributesToGet</code> together in a single request,
-        /// unless the value for <code>Select</code> is <code>SPECIFIC_ATTRIBUTES</code>. (This
-        /// usage is equivalent to specifying <code>AttributesToGet</code> without any value for
-        /// <code>Select</code>.)</p>
-        /// <note>
-        /// <p>If you use the <code>ProjectionExpression</code> parameter, then the value for
-        /// <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other
-        /// value for <code>Select</code> will return an error.</p>
+        /// <p>If neither <code>Select</code> nor <code>AttributesToGet</code> are specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You cannot use both <code>Select</code> and <code>AttributesToGet</code> together in a single request, unless the value for <code>Select</code> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying <code>AttributesToGet</code> without any value for <code>Select</code>.)</p> <note>
+        /// <p>If you use the <code>ProjectionExpression</code> parameter, then the value for <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <code>Select</code> will return an error.</p>
         /// </note>
         pub fn select(mut self, input: crate::model::Select) -> Self {
             self.select = Some(input);
             self
         }
-        /// <p>The attributes to be returned in the result. You can retrieve all item attributes,
-        /// specific item attributes, the count of matching items, or in the case of an index, some
-        /// or all of the attributes projected into the index.</p>
+        /// <p>The attributes to be returned in the result. You can retrieve all item attributes, specific item attributes, the count of matching items, or in the case of an index, some or all of the attributes projected into the index.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the
-        /// specified table or index. If you query a local secondary index, then for each
-        /// matching item in the index, DynamoDB fetches the entire item from the parent
-        /// table. If the index is configured to project all item attributes, then all of
-        /// the data can be obtained from the local secondary index, and no fetching is
-        /// required.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an index.
-        /// Retrieves all attributes that have been projected into the index. If the index
-        /// is configured to project all attributes, this return value is equivalent to
-        /// specifying <code>ALL_ATTRIBUTES</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COUNT</code> - Returns the number of matching items, rather than the
-        /// matching items themselves.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
-        /// <code>AttributesToGet</code>. This return value is equivalent to specifying
-        /// <code>AttributesToGet</code> without specifying any value for
-        /// <code>Select</code>.</p>
-        /// <p>If you query or scan a local secondary index and request only attributes that
-        /// are projected into that index, the operation will read only the index and not
-        /// the table. If any of the requested attributes are not projected into the local
-        /// secondary index, DynamoDB fetches each of these attributes from the parent
-        /// table. This extra fetching incurs additional throughput cost and latency.</p>
-        /// <p>If you query or scan a global secondary index, you can only request attributes
-        /// that are projected into the index. Global secondary index queries cannot fetch
-        /// attributes from the parent table.</p>
-        /// </li>
+        /// <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If you query a local secondary index, then for each matching item in the index, DynamoDB fetches the entire item from the parent table. If the index is configured to project all item attributes, then all of the data can be obtained from the local secondary index, and no fetching is required.</p> </li>
+        /// <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an index. Retrieves all attributes that have been projected into the index. If the index is configured to project all attributes, this return value is equivalent to specifying <code>ALL_ATTRIBUTES</code>.</p> </li>
+        /// <li> <p> <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.</p> </li>
+        /// <li> <p> <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in <code>AttributesToGet</code>. This return value is equivalent to specifying <code>AttributesToGet</code> without specifying any value for <code>Select</code>.</p> <p>If you query or scan a local secondary index and request only attributes that are projected into that index, the operation will read only the index and not the table. If any of the requested attributes are not projected into the local secondary index, DynamoDB fetches each of these attributes from the parent table. This extra fetching incurs additional throughput cost and latency.</p> <p>If you query or scan a global secondary index, you can only request attributes that are projected into the index. Global secondary index queries cannot fetch attributes from the parent table.</p> </li>
         /// </ul>
-        /// <p>If neither <code>Select</code> nor <code>AttributesToGet</code> are specified,
-        /// DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a table, and
-        /// <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You cannot use both
-        /// <code>Select</code> and <code>AttributesToGet</code> together in a single request,
-        /// unless the value for <code>Select</code> is <code>SPECIFIC_ATTRIBUTES</code>. (This
-        /// usage is equivalent to specifying <code>AttributesToGet</code> without any value for
-        /// <code>Select</code>.)</p>
-        /// <note>
-        /// <p>If you use the <code>ProjectionExpression</code> parameter, then the value for
-        /// <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other
-        /// value for <code>Select</code> will return an error.</p>
+        /// <p>If neither <code>Select</code> nor <code>AttributesToGet</code> are specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You cannot use both <code>Select</code> and <code>AttributesToGet</code> together in a single request, unless the value for <code>Select</code> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying <code>AttributesToGet</code> without any value for <code>Select</code>.)</p> <note>
+        /// <p>If you use the <code>ProjectionExpression</code> parameter, then the value for <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <code>Select</code> will return an error.</p>
         /// </note>
         pub fn set_select(mut self, input: std::option::Option<crate::model::Select>) -> Self {
             self.select = input;
@@ -8538,18 +7114,14 @@ pub mod query_input {
         ///
         /// To override the contents of this collection use [`set_attributes_to_get`](Self::set_attributes_to_get).
         ///
-        /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn attributes_to_get(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attributes_to_get.unwrap_or_default();
             v.push(input.into());
             self.attributes_to_get = Some(v);
             self
         }
-        /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_attributes_to_get(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8557,48 +7129,24 @@ pub mod query_input {
             self.attributes_to_get = input;
             self
         }
-        /// <p>The maximum number of items to evaluate (not necessarily the number of matching
-        /// items). If DynamoDB processes the number of items up to the limit while processing the
-        /// results, it stops the operation and returns the matching values up to that point, and a
-        /// key in <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that you can
-        /// pick up where you left off. Also, if the processed dataset size exceeds 1 MB before
-        /// DynamoDB reaches this limit, it stops the operation and returns the matching values up
-        /// to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent
-        /// operation to continue the operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and Scan</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the number of items up to the limit while processing the results, it stops the operation and returns the matching values up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that you can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values up to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of items to evaluate (not necessarily the number of matching
-        /// items). If DynamoDB processes the number of items up to the limit while processing the
-        /// results, it stops the operation and returns the matching values up to that point, and a
-        /// key in <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that you can
-        /// pick up where you left off. Also, if the processed dataset size exceeds 1 MB before
-        /// DynamoDB reaches this limit, it stops the operation and returns the matching values up
-        /// to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent
-        /// operation to continue the operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and Scan</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the number of items up to the limit while processing the results, it stops the operation and returns the matching values up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that you can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values up to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>Determines the read consistency model: If set to <code>true</code>, then the operation
-        /// uses strongly consistent reads; otherwise, the operation uses eventually consistent
-        /// reads.</p>
-        /// <p>Strongly consistent reads are not supported on global secondary indexes. If you query
-        /// a global secondary index with <code>ConsistentRead</code> set to <code>true</code>, you
-        /// will receive a <code>ValidationException</code>.</p>
+        /// <p>Determines the read consistency model: If set to <code>true</code>, then the operation uses strongly consistent reads; otherwise, the operation uses eventually consistent reads.</p>
+        /// <p>Strongly consistent reads are not supported on global secondary indexes. If you query a global secondary index with <code>ConsistentRead</code> set to <code>true</code>, you will receive a <code>ValidationException</code>.</p>
         pub fn consistent_read(mut self, input: bool) -> Self {
             self.consistent_read = Some(input);
             self
         }
-        /// <p>Determines the read consistency model: If set to <code>true</code>, then the operation
-        /// uses strongly consistent reads; otherwise, the operation uses eventually consistent
-        /// reads.</p>
-        /// <p>Strongly consistent reads are not supported on global secondary indexes. If you query
-        /// a global secondary index with <code>ConsistentRead</code> set to <code>true</code>, you
-        /// will receive a <code>ValidationException</code>.</p>
+        /// <p>Determines the read consistency model: If set to <code>true</code>, then the operation uses strongly consistent reads; otherwise, the operation uses eventually consistent reads.</p>
+        /// <p>Strongly consistent reads are not supported on global secondary indexes. If you query a global secondary index with <code>ConsistentRead</code> set to <code>true</code>, you will receive a <code>ValidationException</code>.</p>
         pub fn set_consistent_read(mut self, input: std::option::Option<bool>) -> Self {
             self.consistent_read = input;
             self
@@ -8607,22 +7155,18 @@ pub mod query_input {
         ///
         /// To override the contents of this collection use [`set_key_conditions`](Self::set_key_conditions).
         ///
-        /// <p>This is a legacy parameter. Use <code>KeyConditionExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>KeyConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn key_conditions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Condition>,
+            v: crate::model::Condition,
         ) -> Self {
             let mut hash_map = self.key_conditions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.key_conditions = Some(hash_map);
             self
         }
-        /// <p>This is a legacy parameter. Use <code>KeyConditionExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>KeyConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_key_conditions(
             mut self,
             input: std::option::Option<
@@ -8636,22 +7180,18 @@ pub mod query_input {
         ///
         /// To override the contents of this collection use [`set_query_filter`](Self::set_query_filter).
         ///
-        /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn query_filter(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Condition>,
+            v: crate::model::Condition,
         ) -> Self {
             let mut hash_map = self.query_filter.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.query_filter = Some(hash_map);
             self
         }
-        /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_query_filter(
             mut self,
             input: std::option::Option<
@@ -8661,16 +7201,12 @@ pub mod query_input {
             self.query_filter = input;
             self
         }
-        /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn conditional_operator(mut self, input: crate::model::ConditionalOperator) -> Self {
             self.conditional_operator = Some(input);
             self
         }
-        /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_conditional_operator(
             mut self,
             input: std::option::Option<crate::model::ConditionalOperator>,
@@ -8678,32 +7214,16 @@ pub mod query_input {
             self.conditional_operator = input;
             self
         }
-        /// <p>Specifies the order for index traversal: If <code>true</code> (default), the traversal
-        /// is performed in ascending order; if <code>false</code>, the traversal is performed in
-        /// descending order. </p>
-        /// <p>Items with the same partition key value are stored in sorted order by sort key. If the
-        /// sort key data type is Number, the results are stored in numeric order. For type String,
-        /// the results are stored in order of UTF-8 bytes. For type Binary, DynamoDB treats each
-        /// byte of the binary data as unsigned.</p>
-        /// <p>If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in
-        /// the order in which they are stored (by sort key value). This is the default behavior. If
-        /// <code>ScanIndexForward</code> is <code>false</code>, DynamoDB reads the results in
-        /// reverse order by sort key value, and then returns the results to the client.</p>
+        /// <p>Specifies the order for index traversal: If <code>true</code> (default), the traversal is performed in ascending order; if <code>false</code>, the traversal is performed in descending order. </p>
+        /// <p>Items with the same partition key value are stored in sorted order by sort key. If the sort key data type is Number, the results are stored in numeric order. For type String, the results are stored in order of UTF-8 bytes. For type Binary, DynamoDB treats each byte of the binary data as unsigned.</p>
+        /// <p>If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in the order in which they are stored (by sort key value). This is the default behavior. If <code>ScanIndexForward</code> is <code>false</code>, DynamoDB reads the results in reverse order by sort key value, and then returns the results to the client.</p>
         pub fn scan_index_forward(mut self, input: bool) -> Self {
             self.scan_index_forward = Some(input);
             self
         }
-        /// <p>Specifies the order for index traversal: If <code>true</code> (default), the traversal
-        /// is performed in ascending order; if <code>false</code>, the traversal is performed in
-        /// descending order. </p>
-        /// <p>Items with the same partition key value are stored in sorted order by sort key. If the
-        /// sort key data type is Number, the results are stored in numeric order. For type String,
-        /// the results are stored in order of UTF-8 bytes. For type Binary, DynamoDB treats each
-        /// byte of the binary data as unsigned.</p>
-        /// <p>If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in
-        /// the order in which they are stored (by sort key value). This is the default behavior. If
-        /// <code>ScanIndexForward</code> is <code>false</code>, DynamoDB reads the results in
-        /// reverse order by sort key value, and then returns the results to the client.</p>
+        /// <p>Specifies the order for index traversal: If <code>true</code> (default), the traversal is performed in ascending order; if <code>false</code>, the traversal is performed in descending order. </p>
+        /// <p>Items with the same partition key value are stored in sorted order by sort key. If the sort key data type is Number, the results are stored in numeric order. For type String, the results are stored in order of UTF-8 bytes. For type Binary, DynamoDB treats each byte of the binary data as unsigned.</p>
+        /// <p>If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in the order in which they are stored (by sort key value). This is the default behavior. If <code>ScanIndexForward</code> is <code>false</code>, DynamoDB reads the results in reverse order by sort key value, and then returns the results to the client.</p>
         pub fn set_scan_index_forward(mut self, input: std::option::Option<bool>) -> Self {
             self.scan_index_forward = input;
             self
@@ -8712,24 +7232,20 @@ pub mod query_input {
         ///
         /// To override the contents of this collection use [`set_exclusive_start_key`](Self::set_exclusive_start_key).
         ///
-        /// <p>The primary key of the first item that this operation will evaluate. Use the value
-        /// that was returned for <code>LastEvaluatedKey</code> in the previous operation.</p>
-        /// <p>The data type for <code>ExclusiveStartKey</code> must be String, Number, or Binary. No
-        /// set data types are allowed.</p>
+        /// <p>The primary key of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedKey</code> in the previous operation.</p>
+        /// <p>The data type for <code>ExclusiveStartKey</code> must be String, Number, or Binary. No set data types are allowed.</p>
         pub fn exclusive_start_key(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.exclusive_start_key.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.exclusive_start_key = Some(hash_map);
             self
         }
-        /// <p>The primary key of the first item that this operation will evaluate. Use the value
-        /// that was returned for <code>LastEvaluatedKey</code> in the previous operation.</p>
-        /// <p>The data type for <code>ExclusiveStartKey</code> must be String, Number, or Binary. No
-        /// set data types are allowed.</p>
+        /// <p>The primary key of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedKey</code> in the previous operation.</p>
+        /// <p>The data type for <code>ExclusiveStartKey</code> must be String, Number, or Binary. No set data types are allowed.</p>
         pub fn set_exclusive_start_key(
             mut self,
             input: std::option::Option<
@@ -8739,30 +7255,11 @@ pub mod query_input {
             self.exclusive_start_key = input;
             self
         }
-        /// <p>Determines the level of detail about either provisioned or on-demand throughput
-        /// consumption that is returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INDEXES</code> - The response includes the aggregate
-        /// <code>ConsumedCapacity</code> for the operation, together with
-        /// <code>ConsumedCapacity</code> for each table and secondary index that was
-        /// accessed.</p>
-        /// <p>Note that some operations, such as <code>GetItem</code> and
-        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-        /// information for table(s).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOTAL</code> - The response includes only the aggregate
-        /// <code>ConsumedCapacity</code> for the operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-        /// response.</p>
-        /// </li>
+        /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+        /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+        /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
@@ -8771,30 +7268,11 @@ pub mod query_input {
             self.return_consumed_capacity = Some(input);
             self
         }
-        /// <p>Determines the level of detail about either provisioned or on-demand throughput
-        /// consumption that is returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INDEXES</code> - The response includes the aggregate
-        /// <code>ConsumedCapacity</code> for the operation, together with
-        /// <code>ConsumedCapacity</code> for each table and secondary index that was
-        /// accessed.</p>
-        /// <p>Note that some operations, such as <code>GetItem</code> and
-        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-        /// information for table(s).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOTAL</code> - The response includes only the aggregate
-        /// <code>ConsumedCapacity</code> for the operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-        /// response.</p>
-        /// </li>
+        /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+        /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+        /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
         /// </ul>
         pub fn set_return_consumed_capacity(
             mut self,
@@ -8803,24 +7281,16 @@ pub mod query_input {
             self.return_consumed_capacity = input;
             self
         }
-        /// <p>A string that identifies one or more attributes to retrieve from the table. These
-        /// attributes can include scalars, sets, or elements of a JSON document. The attributes in
-        /// the expression must be separated by commas.</p>
-        /// <p>If no attribute names are specified, then all attributes will be returned. If any of
-        /// the requested attributes are not found, they will not appear in the result.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p>
+        /// <p>If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn projection_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.projection_expression = Some(input.into());
             self
         }
-        /// <p>A string that identifies one or more attributes to retrieve from the table. These
-        /// attributes can include scalars, sets, or elements of a JSON document. The attributes in
-        /// the expression must be separated by commas.</p>
-        /// <p>If no attribute names are specified, then all attributes will be returned. If any of
-        /// the requested attributes are not found, they will not appear in the result.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p>
+        /// <p>If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_projection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8828,34 +7298,20 @@ pub mod query_input {
             self.projection_expression = input;
             self
         }
-        /// <p>A string that contains conditions that DynamoDB applies after the <code>Query</code>
-        /// operation, but before the data is returned to you. Items that do not satisfy the
-        /// <code>FilterExpression</code> criteria are not returned.</p>
-        /// <p>A <code>FilterExpression</code> does not allow key attributes. You cannot define a
-        /// filter expression based on a partition key or a sort key.</p>
-        /// <note>
-        /// <p>A <code>FilterExpression</code> is applied after the items have already been read;
-        /// the process of filtering does not consume any additional read capacity units.</p>
+        /// <p>A string that contains conditions that DynamoDB applies after the <code>Query</code> operation, but before the data is returned to you. Items that do not satisfy the <code>FilterExpression</code> criteria are not returned.</p>
+        /// <p>A <code>FilterExpression</code> does not allow key attributes. You cannot define a filter expression based on a partition key or a sort key.</p> <note>
+        /// <p>A <code>FilterExpression</code> is applied after the items have already been read; the process of filtering does not consume any additional read capacity units.</p>
         /// </note>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
-        /// Expressions</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.filter_expression = Some(input.into());
             self
         }
-        /// <p>A string that contains conditions that DynamoDB applies after the <code>Query</code>
-        /// operation, but before the data is returned to you. Items that do not satisfy the
-        /// <code>FilterExpression</code> criteria are not returned.</p>
-        /// <p>A <code>FilterExpression</code> does not allow key attributes. You cannot define a
-        /// filter expression based on a partition key or a sort key.</p>
-        /// <note>
-        /// <p>A <code>FilterExpression</code> is applied after the items have already been read;
-        /// the process of filtering does not consume any additional read capacity units.</p>
+        /// <p>A string that contains conditions that DynamoDB applies after the <code>Query</code> operation, but before the data is returned to you. Items that do not satisfy the <code>FilterExpression</code> criteria are not returned.</p>
+        /// <p>A <code>FilterExpression</code> does not allow key attributes. You cannot define a filter expression based on a partition key or a sort key.</p> <note>
+        /// <p>A <code>FilterExpression</code> is applied after the items have already been read; the process of filtering does not consume any additional read capacity units.</p>
         /// </note>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
-        /// Expressions</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_filter_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8863,254 +7319,66 @@ pub mod query_input {
             self.filter_expression = input;
             self
         }
-        /// <p>The condition that specifies the key values for items to be retrieved by the
-        /// <code>Query</code> action.</p>
-        ///
+        /// <p>The condition that specifies the key values for items to be retrieved by the <code>Query</code> action.</p>
         /// <p>The condition must perform an equality test on a single partition key value.</p>
-        /// <p>The condition can optionally perform one of several comparison tests on a single sort
-        /// key value. This allows <code>Query</code> to retrieve one item with a given partition
-        /// key value and sort key value, or several items that have the same partition key value
-        /// but different sort key values.</p>
-        ///
-        /// <p>The partition key equality test is required, and must be specified in the following
-        /// format:</p>
-        ///
-        /// <p>
-        /// <code>partitionKeyName</code>
-        /// <i>=</i>
-        /// <code>:partitionkeyval</code>
-        /// </p>
-        ///
-        /// <p>If you also want to provide a condition for the sort key, it must be combined using
-        /// <code>AND</code> with the condition for the sort key. Following is an example, using
-        /// the <b>=</b> comparison operator for the sort key:</p>
-        ///
-        /// <p>
-        /// <code>partitionKeyName</code>
-        /// <code>=</code>
-        /// <code>:partitionkeyval</code>
-        /// <code>AND</code>
-        /// <code>sortKeyName</code>
-        /// <code>=</code>
-        /// <code>:sortkeyval</code>
-        /// </p>
+        /// <p>The condition can optionally perform one of several comparison tests on a single sort key value. This allows <code>Query</code> to retrieve one item with a given partition key value and sort key value, or several items that have the same partition key value but different sort key values.</p>
+        /// <p>The partition key equality test is required, and must be specified in the following format:</p>
+        /// <p> <code>partitionKeyName</code> <i>=</i> <code>:partitionkeyval</code> </p>
+        /// <p>If you also want to provide a condition for the sort key, it must be combined using <code>AND</code> with the condition for the sort key. Following is an example, using the <b>=</b> comparison operator for the sort key:</p>
+        /// <p> <code>partitionKeyName</code> <code>=</code> <code>:partitionkeyval</code> <code>AND</code> <code>sortKeyName</code> <code>=</code> <code>:sortkeyval</code> </p>
         /// <p>Valid comparisons for the sort key condition are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>sortKeyName</code>
-        /// <code>=</code>
-        /// <code>:sortkeyval</code> - true if the sort key value is equal to
-        /// <code>:sortkeyval</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sortKeyName</code>
-        /// <code><</code>
-        /// <code>:sortkeyval</code> - true if the sort key value is less than
-        /// <code>:sortkeyval</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sortKeyName</code>
-        /// <code><=</code>
-        /// <code>:sortkeyval</code> - true if the sort key value is less than or equal to
-        /// <code>:sortkeyval</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sortKeyName</code>
-        /// <code>></code>
-        /// <code>:sortkeyval</code> - true if the sort key value is greater than
-        /// <code>:sortkeyval</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sortKeyName</code>
-        /// <code>>= </code>
-        /// <code>:sortkeyval</code> - true if the sort key value is greater than or equal
-        /// to <code>:sortkeyval</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sortKeyName</code>
-        /// <code>BETWEEN</code>
-        /// <code>:sortkeyval1</code>
-        /// <code>AND</code>
-        /// <code>:sortkeyval2</code> - true if the sort key value is greater than or equal
-        /// to <code>:sortkeyval1</code>, and less than or equal to
-        /// <code>:sortkeyval2</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>begins_with (</code>
-        /// <code>sortKeyName</code>, <code>:sortkeyval</code>
-        /// <code>)</code> - true if the sort key value begins with a particular operand.
-        /// (You cannot use this function with a sort key that is of type Number.) Note that
-        /// the function name <code>begins_with</code> is case-sensitive.</p>
-        ///
-        /// </li>
+        /// <li> <p> <code>sortKeyName</code> <code>=</code> <code>:sortkeyval</code> - true if the sort key value is equal to <code>:sortkeyval</code>.</p> </li>
+        /// <li> <p> <code>sortKeyName</code> <code>&lt;</code> <code>:sortkeyval</code> - true if the sort key value is less than <code>:sortkeyval</code>.</p> </li>
+        /// <li> <p> <code>sortKeyName</code> <code>&lt;=</code> <code>:sortkeyval</code> - true if the sort key value is less than or equal to <code>:sortkeyval</code>.</p> </li>
+        /// <li> <p> <code>sortKeyName</code> <code>&gt;</code> <code>:sortkeyval</code> - true if the sort key value is greater than <code>:sortkeyval</code>.</p> </li>
+        /// <li> <p> <code>sortKeyName</code> <code>&gt;= </code> <code>:sortkeyval</code> - true if the sort key value is greater than or equal to <code>:sortkeyval</code>.</p> </li>
+        /// <li> <p> <code>sortKeyName</code> <code>BETWEEN</code> <code>:sortkeyval1</code> <code>AND</code> <code>:sortkeyval2</code> - true if the sort key value is greater than or equal to <code>:sortkeyval1</code>, and less than or equal to <code>:sortkeyval2</code>.</p> </li>
+        /// <li> <p> <code>begins_with (</code> <code>sortKeyName</code>, <code>:sortkeyval</code> <code>)</code> - true if the sort key value begins with a particular operand. (You cannot use this function with a sort key that is of type Number.) Note that the function name <code>begins_with</code> is case-sensitive.</p> </li>
         /// </ul>
-        ///
-        /// <p>Use the <code>ExpressionAttributeValues</code> parameter to replace tokens such as
-        /// <code>:partitionval</code> and <code>:sortval</code> with actual values at
-        /// runtime.</p>
-        ///
-        /// <p>You can optionally use the <code>ExpressionAttributeNames</code> parameter to replace
-        /// the names of the partition key and sort key with placeholder tokens. This option might
-        /// be necessary if an attribute name conflicts with a DynamoDB reserved word. For example,
-        /// the following <code>KeyConditionExpression</code> parameter causes an error because
-        /// <i>Size</i> is a reserved word:</p>
+        /// <p>Use the <code>ExpressionAttributeValues</code> parameter to replace tokens such as <code>:partitionval</code> and <code>:sortval</code> with actual values at runtime.</p>
+        /// <p>You can optionally use the <code>ExpressionAttributeNames</code> parameter to replace the names of the partition key and sort key with placeholder tokens. This option might be necessary if an attribute name conflicts with a DynamoDB reserved word. For example, the following <code>KeyConditionExpression</code> parameter causes an error because <i>Size</i> is a reserved word:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Size = :myval</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Size = :myval</code> </p> </li>
         /// </ul>
-        /// <p>To work around this, define a placeholder (such a <code>#S</code>) to represent the
-        /// attribute name <i>Size</i>. <code>KeyConditionExpression</code> then is as
-        /// follows:</p>
+        /// <p>To work around this, define a placeholder (such a <code>#S</code>) to represent the attribute name <i>Size</i>. <code>KeyConditionExpression</code> then is as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>#S = :myval</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>#S = :myval</code> </p> </li>
         /// </ul>
-        /// <p>For a list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a>
-        /// in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        ///
-        /// <p>For more information on <code>ExpressionAttributeNames</code> and
-        /// <code>ExpressionAttributeValues</code>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
-        /// Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB
-        /// Developer Guide</i>.</p>
+        /// <p>For a list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>For more information on <code>ExpressionAttributeNames</code> and <code>ExpressionAttributeValues</code>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn key_condition_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_condition_expression = Some(input.into());
             self
         }
-        /// <p>The condition that specifies the key values for items to be retrieved by the
-        /// <code>Query</code> action.</p>
-        ///
+        /// <p>The condition that specifies the key values for items to be retrieved by the <code>Query</code> action.</p>
         /// <p>The condition must perform an equality test on a single partition key value.</p>
-        /// <p>The condition can optionally perform one of several comparison tests on a single sort
-        /// key value. This allows <code>Query</code> to retrieve one item with a given partition
-        /// key value and sort key value, or several items that have the same partition key value
-        /// but different sort key values.</p>
-        ///
-        /// <p>The partition key equality test is required, and must be specified in the following
-        /// format:</p>
-        ///
-        /// <p>
-        /// <code>partitionKeyName</code>
-        /// <i>=</i>
-        /// <code>:partitionkeyval</code>
-        /// </p>
-        ///
-        /// <p>If you also want to provide a condition for the sort key, it must be combined using
-        /// <code>AND</code> with the condition for the sort key. Following is an example, using
-        /// the <b>=</b> comparison operator for the sort key:</p>
-        ///
-        /// <p>
-        /// <code>partitionKeyName</code>
-        /// <code>=</code>
-        /// <code>:partitionkeyval</code>
-        /// <code>AND</code>
-        /// <code>sortKeyName</code>
-        /// <code>=</code>
-        /// <code>:sortkeyval</code>
-        /// </p>
+        /// <p>The condition can optionally perform one of several comparison tests on a single sort key value. This allows <code>Query</code> to retrieve one item with a given partition key value and sort key value, or several items that have the same partition key value but different sort key values.</p>
+        /// <p>The partition key equality test is required, and must be specified in the following format:</p>
+        /// <p> <code>partitionKeyName</code> <i>=</i> <code>:partitionkeyval</code> </p>
+        /// <p>If you also want to provide a condition for the sort key, it must be combined using <code>AND</code> with the condition for the sort key. Following is an example, using the <b>=</b> comparison operator for the sort key:</p>
+        /// <p> <code>partitionKeyName</code> <code>=</code> <code>:partitionkeyval</code> <code>AND</code> <code>sortKeyName</code> <code>=</code> <code>:sortkeyval</code> </p>
         /// <p>Valid comparisons for the sort key condition are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>sortKeyName</code>
-        /// <code>=</code>
-        /// <code>:sortkeyval</code> - true if the sort key value is equal to
-        /// <code>:sortkeyval</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sortKeyName</code>
-        /// <code><</code>
-        /// <code>:sortkeyval</code> - true if the sort key value is less than
-        /// <code>:sortkeyval</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sortKeyName</code>
-        /// <code><=</code>
-        /// <code>:sortkeyval</code> - true if the sort key value is less than or equal to
-        /// <code>:sortkeyval</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sortKeyName</code>
-        /// <code>></code>
-        /// <code>:sortkeyval</code> - true if the sort key value is greater than
-        /// <code>:sortkeyval</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sortKeyName</code>
-        /// <code>>= </code>
-        /// <code>:sortkeyval</code> - true if the sort key value is greater than or equal
-        /// to <code>:sortkeyval</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sortKeyName</code>
-        /// <code>BETWEEN</code>
-        /// <code>:sortkeyval1</code>
-        /// <code>AND</code>
-        /// <code>:sortkeyval2</code> - true if the sort key value is greater than or equal
-        /// to <code>:sortkeyval1</code>, and less than or equal to
-        /// <code>:sortkeyval2</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>begins_with (</code>
-        /// <code>sortKeyName</code>, <code>:sortkeyval</code>
-        /// <code>)</code> - true if the sort key value begins with a particular operand.
-        /// (You cannot use this function with a sort key that is of type Number.) Note that
-        /// the function name <code>begins_with</code> is case-sensitive.</p>
-        ///
-        /// </li>
+        /// <li> <p> <code>sortKeyName</code> <code>=</code> <code>:sortkeyval</code> - true if the sort key value is equal to <code>:sortkeyval</code>.</p> </li>
+        /// <li> <p> <code>sortKeyName</code> <code>&lt;</code> <code>:sortkeyval</code> - true if the sort key value is less than <code>:sortkeyval</code>.</p> </li>
+        /// <li> <p> <code>sortKeyName</code> <code>&lt;=</code> <code>:sortkeyval</code> - true if the sort key value is less than or equal to <code>:sortkeyval</code>.</p> </li>
+        /// <li> <p> <code>sortKeyName</code> <code>&gt;</code> <code>:sortkeyval</code> - true if the sort key value is greater than <code>:sortkeyval</code>.</p> </li>
+        /// <li> <p> <code>sortKeyName</code> <code>&gt;= </code> <code>:sortkeyval</code> - true if the sort key value is greater than or equal to <code>:sortkeyval</code>.</p> </li>
+        /// <li> <p> <code>sortKeyName</code> <code>BETWEEN</code> <code>:sortkeyval1</code> <code>AND</code> <code>:sortkeyval2</code> - true if the sort key value is greater than or equal to <code>:sortkeyval1</code>, and less than or equal to <code>:sortkeyval2</code>.</p> </li>
+        /// <li> <p> <code>begins_with (</code> <code>sortKeyName</code>, <code>:sortkeyval</code> <code>)</code> - true if the sort key value begins with a particular operand. (You cannot use this function with a sort key that is of type Number.) Note that the function name <code>begins_with</code> is case-sensitive.</p> </li>
         /// </ul>
-        ///
-        /// <p>Use the <code>ExpressionAttributeValues</code> parameter to replace tokens such as
-        /// <code>:partitionval</code> and <code>:sortval</code> with actual values at
-        /// runtime.</p>
-        ///
-        /// <p>You can optionally use the <code>ExpressionAttributeNames</code> parameter to replace
-        /// the names of the partition key and sort key with placeholder tokens. This option might
-        /// be necessary if an attribute name conflicts with a DynamoDB reserved word. For example,
-        /// the following <code>KeyConditionExpression</code> parameter causes an error because
-        /// <i>Size</i> is a reserved word:</p>
+        /// <p>Use the <code>ExpressionAttributeValues</code> parameter to replace tokens such as <code>:partitionval</code> and <code>:sortval</code> with actual values at runtime.</p>
+        /// <p>You can optionally use the <code>ExpressionAttributeNames</code> parameter to replace the names of the partition key and sort key with placeholder tokens. This option might be necessary if an attribute name conflicts with a DynamoDB reserved word. For example, the following <code>KeyConditionExpression</code> parameter causes an error because <i>Size</i> is a reserved word:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Size = :myval</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Size = :myval</code> </p> </li>
         /// </ul>
-        /// <p>To work around this, define a placeholder (such a <code>#S</code>) to represent the
-        /// attribute name <i>Size</i>. <code>KeyConditionExpression</code> then is as
-        /// follows:</p>
+        /// <p>To work around this, define a placeholder (such a <code>#S</code>) to represent the attribute name <i>Size</i>. <code>KeyConditionExpression</code> then is as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>#S = :myval</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>#S = :myval</code> </p> </li>
         /// </ul>
-        /// <p>For a list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a>
-        /// in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        ///
-        /// <p>For more information on <code>ExpressionAttributeNames</code> and
-        /// <code>ExpressionAttributeValues</code>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
-        /// Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB
-        /// Developer Guide</i>.</p>
+        /// <p>For a list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>For more information on <code>ExpressionAttributeNames</code> and <code>ExpressionAttributeValues</code>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_key_condition_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9122,57 +7390,27 @@ pub mod query_input {
         ///
         /// To override the contents of this collection use [`set_expression_attribute_names`](Self::set_expression_attribute_names).
         ///
-        /// <p>One or more substitution tokens for attribute names in an expression. The following
-        /// are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+        /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
-        /// word.</p>
-        /// </li>
-        /// <li>
-        /// <p>To create a placeholder for repeating occurrences of an attribute name in an
-        /// expression.</p>
-        /// </li>
-        /// <li>
-        /// <p>To prevent special characters in an attribute name from being misinterpreted
-        /// in an expression.</p>
-        /// </li>
+        /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
+        /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
+        /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
         /// </ul>
-        /// <p>Use the <b>#</b> character in an expression to dereference
-        /// an attribute name. For example, consider the following attribute name:</p>
+        /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Percentile</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Percentile</code> </p> </li>
         /// </ul>
-        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used
-        /// directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>). To work around this, you could specify the following for
-        /// <code>ExpressionAttributeNames</code>:</p>
+        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>{"#P":"Percentile"}</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
         /// </ul>
         /// <p>You could then use this substitution in an expression, as in this example:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>#P = :val</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Tokens that begin with the <b>:</b> character are
-        /// <i>expression attribute values</i>, which are placeholders for the
-        /// actual value at runtime.</p>
+        /// <li> <p> <code>#P = :val</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
         /// </note>
-        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn expression_attribute_names(
             mut self,
             k: impl Into<std::string::String>,
@@ -9183,57 +7421,27 @@ pub mod query_input {
             self.expression_attribute_names = Some(hash_map);
             self
         }
-        /// <p>One or more substitution tokens for attribute names in an expression. The following
-        /// are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+        /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
-        /// word.</p>
-        /// </li>
-        /// <li>
-        /// <p>To create a placeholder for repeating occurrences of an attribute name in an
-        /// expression.</p>
-        /// </li>
-        /// <li>
-        /// <p>To prevent special characters in an attribute name from being misinterpreted
-        /// in an expression.</p>
-        /// </li>
+        /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
+        /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
+        /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
         /// </ul>
-        /// <p>Use the <b>#</b> character in an expression to dereference
-        /// an attribute name. For example, consider the following attribute name:</p>
+        /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Percentile</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Percentile</code> </p> </li>
         /// </ul>
-        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used
-        /// directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>). To work around this, you could specify the following for
-        /// <code>ExpressionAttributeNames</code>:</p>
+        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>{"#P":"Percentile"}</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
         /// </ul>
         /// <p>You could then use this substitution in an expression, as in this example:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>#P = :val</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Tokens that begin with the <b>:</b> character are
-        /// <i>expression attribute values</i>, which are placeholders for the
-        /// actual value at runtime.</p>
+        /// <li> <p> <code>#P = :val</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
         /// </note>
-        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_expression_attribute_names(
             mut self,
             input: std::option::Option<
@@ -9248,53 +7456,31 @@ pub mod query_input {
         /// To override the contents of this collection use [`set_expression_attribute_values`](Self::set_expression_attribute_values).
         ///
         /// <p>One or more values that can be substituted in an expression.</p>
-        /// <p>Use the <b>:</b> (colon) character in an expression to
-        /// dereference an attribute value. For example, suppose that you wanted to check whether
-        /// the value of the <i>ProductStatus</i> attribute was one of the following: </p>
-        /// <p>
-        /// <code>Available | Backordered | Discontinued</code>
-        /// </p>
-        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as
-        /// follows:</p>
-        /// <p>
-        /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-        /// ":disc":{"S":"Discontinued"} }</code>
-        /// </p>
+        /// <p>Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the following: </p>
+        /// <p> <code>Available | Backordered | Discontinued</code> </p>
+        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+        /// <p> <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code> </p>
         /// <p>You could then use these values in an expression, such as this:</p>
-        /// <p>
-        /// <code>ProductStatus IN (:avail, :back, :disc)</code>
-        /// </p>
-        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying Conditions</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p> <code>ProductStatus IN (:avail, :back, :disc)</code> </p>
+        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn expression_attribute_values(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.expression_attribute_values.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.expression_attribute_values = Some(hash_map);
             self
         }
         /// <p>One or more values that can be substituted in an expression.</p>
-        /// <p>Use the <b>:</b> (colon) character in an expression to
-        /// dereference an attribute value. For example, suppose that you wanted to check whether
-        /// the value of the <i>ProductStatus</i> attribute was one of the following: </p>
-        /// <p>
-        /// <code>Available | Backordered | Discontinued</code>
-        /// </p>
-        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as
-        /// follows:</p>
-        /// <p>
-        /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-        /// ":disc":{"S":"Discontinued"} }</code>
-        /// </p>
+        /// <p>Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the following: </p>
+        /// <p> <code>Available | Backordered | Discontinued</code> </p>
+        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+        /// <p> <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code> </p>
         /// <p>You could then use these values in an expression, such as this:</p>
-        /// <p>
-        /// <code>ProductStatus IN (:avail, :back, :disc)</code>
-        /// </p>
-        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying Conditions</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p> <code>ProductStatus IN (:avail, :back, :disc)</code> </p>
+        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_expression_attribute_values(
             mut self,
             input: std::option::Option<
@@ -9334,7 +7520,7 @@ pub mod query_input {
 #[doc(hidden)]
 pub type QueryInputOperationOutputAlias = crate::operation::Query;
 #[doc(hidden)]
-pub type QueryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type QueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl QueryInput {
     /// Consumes the builder and constructs an Operation<[`Query`](crate::operation::Query)>
     #[allow(clippy::let_and_return)]
@@ -9345,7 +7531,7 @@ impl QueryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::Query,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9426,7 +7612,7 @@ impl QueryInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "Query", "dynamodb",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9507,21 +7693,17 @@ pub mod restore_table_from_backup_input {
         ///
         /// To override the contents of this collection use [`set_global_secondary_index_override`](Self::set_global_secondary_index_override).
         ///
-        /// <p>List of global secondary indexes for the restored table. The indexes provided should
-        /// match existing secondary indexes. You can choose to exclude some or all of the indexes
-        /// at the time of restore.</p>
+        /// <p>List of global secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
         pub fn global_secondary_index_override(
             mut self,
-            input: impl Into<crate::model::GlobalSecondaryIndex>,
+            input: crate::model::GlobalSecondaryIndex,
         ) -> Self {
             let mut v = self.global_secondary_index_override.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.global_secondary_index_override = Some(v);
             self
         }
-        /// <p>List of global secondary indexes for the restored table. The indexes provided should
-        /// match existing secondary indexes. You can choose to exclude some or all of the indexes
-        /// at the time of restore.</p>
+        /// <p>List of global secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
         pub fn set_global_secondary_index_override(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
@@ -9533,21 +7715,17 @@ pub mod restore_table_from_backup_input {
         ///
         /// To override the contents of this collection use [`set_local_secondary_index_override`](Self::set_local_secondary_index_override).
         ///
-        /// <p>List of local secondary indexes for the restored table. The indexes provided should
-        /// match existing secondary indexes. You can choose to exclude some or all of the indexes
-        /// at the time of restore.</p>
+        /// <p>List of local secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
         pub fn local_secondary_index_override(
             mut self,
-            input: impl Into<crate::model::LocalSecondaryIndex>,
+            input: crate::model::LocalSecondaryIndex,
         ) -> Self {
             let mut v = self.local_secondary_index_override.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.local_secondary_index_override = Some(v);
             self
         }
-        /// <p>List of local secondary indexes for the restored table. The indexes provided should
-        /// match existing secondary indexes. You can choose to exclude some or all of the indexes
-        /// at the time of restore.</p>
+        /// <p>List of local secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
         pub fn set_local_secondary_index_override(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndex>>,
@@ -9606,7 +7784,7 @@ pub mod restore_table_from_backup_input {
 #[doc(hidden)]
 pub type RestoreTableFromBackupInputOperationOutputAlias = crate::operation::RestoreTableFromBackup;
 #[doc(hidden)]
-pub type RestoreTableFromBackupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RestoreTableFromBackupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RestoreTableFromBackupInput {
     /// Consumes the builder and constructs an Operation<[`RestoreTableFromBackup`](crate::operation::RestoreTableFromBackup)>
     #[allow(clippy::let_and_return)]
@@ -9617,7 +7795,7 @@ impl RestoreTableFromBackupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RestoreTableFromBackup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9704,7 +7882,7 @@ impl RestoreTableFromBackupInput {
             "RestoreTableFromBackup",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9748,14 +7926,12 @@ pub mod restore_table_to_point_in_time_input {
         pub(crate) sse_specification_override: std::option::Option<crate::model::SseSpecification>,
     }
     impl Builder {
-        /// <p>The DynamoDB table that will be restored. This value is an Amazon Resource Name
-        /// (ARN).</p>
+        /// <p>The DynamoDB table that will be restored. This value is an Amazon Resource Name (ARN).</p>
         pub fn source_table_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_table_arn = Some(input.into());
             self
         }
-        /// <p>The DynamoDB table that will be restored. This value is an Amazon Resource Name
-        /// (ARN).</p>
+        /// <p>The DynamoDB table that will be restored. This value is an Amazon Resource Name (ARN).</p>
         pub fn set_source_table_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9789,14 +7965,12 @@ pub mod restore_table_to_point_in_time_input {
             self.target_table_name = input;
             self
         }
-        /// <p>Restore the table to the latest possible time. <code>LatestRestorableDateTime</code>
-        /// is typically 5 minutes before the current time. </p>
+        /// <p>Restore the table to the latest possible time. <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time. </p>
         pub fn use_latest_restorable_time(mut self, input: bool) -> Self {
             self.use_latest_restorable_time = Some(input);
             self
         }
-        /// <p>Restore the table to the latest possible time. <code>LatestRestorableDateTime</code>
-        /// is typically 5 minutes before the current time. </p>
+        /// <p>Restore the table to the latest possible time. <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time. </p>
         pub fn set_use_latest_restorable_time(mut self, input: std::option::Option<bool>) -> Self {
             self.use_latest_restorable_time = input;
             self
@@ -9831,21 +8005,17 @@ pub mod restore_table_to_point_in_time_input {
         ///
         /// To override the contents of this collection use [`set_global_secondary_index_override`](Self::set_global_secondary_index_override).
         ///
-        /// <p>List of global secondary indexes for the restored table. The indexes provided should
-        /// match existing secondary indexes. You can choose to exclude some or all of the indexes
-        /// at the time of restore.</p>
+        /// <p>List of global secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
         pub fn global_secondary_index_override(
             mut self,
-            input: impl Into<crate::model::GlobalSecondaryIndex>,
+            input: crate::model::GlobalSecondaryIndex,
         ) -> Self {
             let mut v = self.global_secondary_index_override.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.global_secondary_index_override = Some(v);
             self
         }
-        /// <p>List of global secondary indexes for the restored table. The indexes provided should
-        /// match existing secondary indexes. You can choose to exclude some or all of the indexes
-        /// at the time of restore.</p>
+        /// <p>List of global secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
         pub fn set_global_secondary_index_override(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
@@ -9857,21 +8027,17 @@ pub mod restore_table_to_point_in_time_input {
         ///
         /// To override the contents of this collection use [`set_local_secondary_index_override`](Self::set_local_secondary_index_override).
         ///
-        /// <p>List of local secondary indexes for the restored table. The indexes provided should
-        /// match existing secondary indexes. You can choose to exclude some or all of the indexes
-        /// at the time of restore.</p>
+        /// <p>List of local secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
         pub fn local_secondary_index_override(
             mut self,
-            input: impl Into<crate::model::LocalSecondaryIndex>,
+            input: crate::model::LocalSecondaryIndex,
         ) -> Self {
             let mut v = self.local_secondary_index_override.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.local_secondary_index_override = Some(v);
             self
         }
-        /// <p>List of local secondary indexes for the restored table. The indexes provided should
-        /// match existing secondary indexes. You can choose to exclude some or all of the indexes
-        /// at the time of restore.</p>
+        /// <p>List of local secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
         pub fn set_local_secondary_index_override(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndex>>,
@@ -9934,7 +8100,7 @@ pub mod restore_table_to_point_in_time_input {
 pub type RestoreTableToPointInTimeInputOperationOutputAlias =
     crate::operation::RestoreTableToPointInTime;
 #[doc(hidden)]
-pub type RestoreTableToPointInTimeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RestoreTableToPointInTimeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RestoreTableToPointInTimeInput {
     /// Consumes the builder and constructs an Operation<[`RestoreTableToPointInTime`](crate::operation::RestoreTableToPointInTime)>
     #[allow(clippy::let_and_return)]
@@ -9945,7 +8111,7 @@ impl RestoreTableToPointInTimeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RestoreTableToPointInTime,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10031,7 +8197,7 @@ impl RestoreTableToPointInTimeInput {
             "RestoreTableToPointInTime",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10087,28 +8253,22 @@ pub mod scan_input {
         pub(crate) consistent_read: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The name of the table containing the requested items; or, if you provide
-        /// <code>IndexName</code>, the name of the table to which that index belongs.</p>
+        /// <p>The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the table to which that index belongs.</p>
         pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.table_name = Some(input.into());
             self
         }
-        /// <p>The name of the table containing the requested items; or, if you provide
-        /// <code>IndexName</code>, the name of the table to which that index belongs.</p>
+        /// <p>The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the table to which that index belongs.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
         }
-        /// <p>The name of a secondary index to scan. This index can be any local secondary index or
-        /// global secondary index. Note that if you use the <code>IndexName</code> parameter, you
-        /// must also provide <code>TableName</code>.</p>
+        /// <p>The name of a secondary index to scan. This index can be any local secondary index or global secondary index. Note that if you use the <code>IndexName</code> parameter, you must also provide <code>TableName</code>.</p>
         pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_name = Some(input.into());
             self
         }
-        /// <p>The name of a secondary index to scan. This index can be any local secondary index or
-        /// global secondary index. Note that if you use the <code>IndexName</code> parameter, you
-        /// must also provide <code>TableName</code>.</p>
+        /// <p>The name of a secondary index to scan. This index can be any local secondary index or global secondary index. Note that if you use the <code>IndexName</code> parameter, you must also provide <code>TableName</code>.</p>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_name = input;
             self
@@ -10117,18 +8277,14 @@ pub mod scan_input {
         ///
         /// To override the contents of this collection use [`set_attributes_to_get`](Self::set_attributes_to_get).
         ///
-        /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn attributes_to_get(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attributes_to_get.unwrap_or_default();
             v.push(input.into());
             self.attributes_to_get = Some(v);
             self
         }
-        /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_attributes_to_get(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10136,141 +8292,39 @@ pub mod scan_input {
             self.attributes_to_get = input;
             self
         }
-        /// <p>The maximum number of items to evaluate (not necessarily the number of matching
-        /// items). If DynamoDB processes the number of items up to the limit while processing the
-        /// results, it stops the operation and returns the matching values up to that point, and a
-        /// key in <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that you can
-        /// pick up where you left off. Also, if the processed dataset size exceeds 1 MB before
-        /// DynamoDB reaches this limit, it stops the operation and returns the matching values up
-        /// to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent
-        /// operation to continue the operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Working with Queries</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the number of items up to the limit while processing the results, it stops the operation and returns the matching values up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that you can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values up to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Working with Queries</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of items to evaluate (not necessarily the number of matching
-        /// items). If DynamoDB processes the number of items up to the limit while processing the
-        /// results, it stops the operation and returns the matching values up to that point, and a
-        /// key in <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that you can
-        /// pick up where you left off. Also, if the processed dataset size exceeds 1 MB before
-        /// DynamoDB reaches this limit, it stops the operation and returns the matching values up
-        /// to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent
-        /// operation to continue the operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Working with Queries</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the number of items up to the limit while processing the results, it stops the operation and returns the matching values up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that you can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values up to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Working with Queries</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>The attributes to be returned in the result. You can retrieve all item attributes,
-        /// specific item attributes, the count of matching items, or in the case of an index, some
-        /// or all of the attributes projected into the index.</p>
+        /// <p>The attributes to be returned in the result. You can retrieve all item attributes, specific item attributes, the count of matching items, or in the case of an index, some or all of the attributes projected into the index.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the
-        /// specified table or index. If you query a local secondary index, then for each
-        /// matching item in the index, DynamoDB fetches the entire item from the parent
-        /// table. If the index is configured to project all item attributes, then all of
-        /// the data can be obtained from the local secondary index, and no fetching is
-        /// required.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an index.
-        /// Retrieves all attributes that have been projected into the index. If the index
-        /// is configured to project all attributes, this return value is equivalent to
-        /// specifying <code>ALL_ATTRIBUTES</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COUNT</code> - Returns the number of matching items, rather than the
-        /// matching items themselves.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
-        /// <code>AttributesToGet</code>. This return value is equivalent to specifying
-        /// <code>AttributesToGet</code> without specifying any value for
-        /// <code>Select</code>.</p>
-        /// <p>If you query or scan a local secondary index and request only attributes that
-        /// are projected into that index, the operation reads only the index and not the
-        /// table. If any of the requested attributes are not projected into the local
-        /// secondary index, DynamoDB fetches each of these attributes from the parent
-        /// table. This extra fetching incurs additional throughput cost and latency.</p>
-        /// <p>If you query or scan a global secondary index, you can only request attributes
-        /// that are projected into the index. Global secondary index queries cannot fetch
-        /// attributes from the parent table.</p>
-        /// </li>
+        /// <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If you query a local secondary index, then for each matching item in the index, DynamoDB fetches the entire item from the parent table. If the index is configured to project all item attributes, then all of the data can be obtained from the local secondary index, and no fetching is required.</p> </li>
+        /// <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an index. Retrieves all attributes that have been projected into the index. If the index is configured to project all attributes, this return value is equivalent to specifying <code>ALL_ATTRIBUTES</code>.</p> </li>
+        /// <li> <p> <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.</p> </li>
+        /// <li> <p> <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in <code>AttributesToGet</code>. This return value is equivalent to specifying <code>AttributesToGet</code> without specifying any value for <code>Select</code>.</p> <p>If you query or scan a local secondary index and request only attributes that are projected into that index, the operation reads only the index and not the table. If any of the requested attributes are not projected into the local secondary index, DynamoDB fetches each of these attributes from the parent table. This extra fetching incurs additional throughput cost and latency.</p> <p>If you query or scan a global secondary index, you can only request attributes that are projected into the index. Global secondary index queries cannot fetch attributes from the parent table.</p> </li>
         /// </ul>
-        /// <p>If neither <code>Select</code> nor <code>AttributesToGet</code> are specified,
-        /// DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a table, and
-        /// <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You cannot use both
-        /// <code>Select</code> and <code>AttributesToGet</code> together in a single request,
-        /// unless the value for <code>Select</code> is <code>SPECIFIC_ATTRIBUTES</code>. (This
-        /// usage is equivalent to specifying <code>AttributesToGet</code> without any value for
-        /// <code>Select</code>.)</p>
-        /// <note>
-        /// <p>If you use the <code>ProjectionExpression</code> parameter, then the value for
-        /// <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other
-        /// value for <code>Select</code> will return an error.</p>
+        /// <p>If neither <code>Select</code> nor <code>AttributesToGet</code> are specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You cannot use both <code>Select</code> and <code>AttributesToGet</code> together in a single request, unless the value for <code>Select</code> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying <code>AttributesToGet</code> without any value for <code>Select</code>.)</p> <note>
+        /// <p>If you use the <code>ProjectionExpression</code> parameter, then the value for <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <code>Select</code> will return an error.</p>
         /// </note>
         pub fn select(mut self, input: crate::model::Select) -> Self {
             self.select = Some(input);
             self
         }
-        /// <p>The attributes to be returned in the result. You can retrieve all item attributes,
-        /// specific item attributes, the count of matching items, or in the case of an index, some
-        /// or all of the attributes projected into the index.</p>
+        /// <p>The attributes to be returned in the result. You can retrieve all item attributes, specific item attributes, the count of matching items, or in the case of an index, some or all of the attributes projected into the index.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the
-        /// specified table or index. If you query a local secondary index, then for each
-        /// matching item in the index, DynamoDB fetches the entire item from the parent
-        /// table. If the index is configured to project all item attributes, then all of
-        /// the data can be obtained from the local secondary index, and no fetching is
-        /// required.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an index.
-        /// Retrieves all attributes that have been projected into the index. If the index
-        /// is configured to project all attributes, this return value is equivalent to
-        /// specifying <code>ALL_ATTRIBUTES</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COUNT</code> - Returns the number of matching items, rather than the
-        /// matching items themselves.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
-        /// <code>AttributesToGet</code>. This return value is equivalent to specifying
-        /// <code>AttributesToGet</code> without specifying any value for
-        /// <code>Select</code>.</p>
-        /// <p>If you query or scan a local secondary index and request only attributes that
-        /// are projected into that index, the operation reads only the index and not the
-        /// table. If any of the requested attributes are not projected into the local
-        /// secondary index, DynamoDB fetches each of these attributes from the parent
-        /// table. This extra fetching incurs additional throughput cost and latency.</p>
-        /// <p>If you query or scan a global secondary index, you can only request attributes
-        /// that are projected into the index. Global secondary index queries cannot fetch
-        /// attributes from the parent table.</p>
-        /// </li>
+        /// <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If you query a local secondary index, then for each matching item in the index, DynamoDB fetches the entire item from the parent table. If the index is configured to project all item attributes, then all of the data can be obtained from the local secondary index, and no fetching is required.</p> </li>
+        /// <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an index. Retrieves all attributes that have been projected into the index. If the index is configured to project all attributes, this return value is equivalent to specifying <code>ALL_ATTRIBUTES</code>.</p> </li>
+        /// <li> <p> <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.</p> </li>
+        /// <li> <p> <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in <code>AttributesToGet</code>. This return value is equivalent to specifying <code>AttributesToGet</code> without specifying any value for <code>Select</code>.</p> <p>If you query or scan a local secondary index and request only attributes that are projected into that index, the operation reads only the index and not the table. If any of the requested attributes are not projected into the local secondary index, DynamoDB fetches each of these attributes from the parent table. This extra fetching incurs additional throughput cost and latency.</p> <p>If you query or scan a global secondary index, you can only request attributes that are projected into the index. Global secondary index queries cannot fetch attributes from the parent table.</p> </li>
         /// </ul>
-        /// <p>If neither <code>Select</code> nor <code>AttributesToGet</code> are specified,
-        /// DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a table, and
-        /// <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You cannot use both
-        /// <code>Select</code> and <code>AttributesToGet</code> together in a single request,
-        /// unless the value for <code>Select</code> is <code>SPECIFIC_ATTRIBUTES</code>. (This
-        /// usage is equivalent to specifying <code>AttributesToGet</code> without any value for
-        /// <code>Select</code>.)</p>
-        /// <note>
-        /// <p>If you use the <code>ProjectionExpression</code> parameter, then the value for
-        /// <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other
-        /// value for <code>Select</code> will return an error.</p>
+        /// <p>If neither <code>Select</code> nor <code>AttributesToGet</code> are specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You cannot use both <code>Select</code> and <code>AttributesToGet</code> together in a single request, unless the value for <code>Select</code> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying <code>AttributesToGet</code> without any value for <code>Select</code>.)</p> <note>
+        /// <p>If you use the <code>ProjectionExpression</code> parameter, then the value for <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <code>Select</code> will return an error.</p>
         /// </note>
         pub fn set_select(mut self, input: std::option::Option<crate::model::Select>) -> Self {
             self.select = input;
@@ -10280,22 +8334,18 @@ pub mod scan_input {
         ///
         /// To override the contents of this collection use [`set_scan_filter`](Self::set_scan_filter).
         ///
-        /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html">ScanFilter</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html">ScanFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn scan_filter(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Condition>,
+            v: crate::model::Condition,
         ) -> Self {
             let mut hash_map = self.scan_filter.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.scan_filter = Some(hash_map);
             self
         }
-        /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html">ScanFilter</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html">ScanFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_scan_filter(
             mut self,
             input: std::option::Option<
@@ -10305,16 +8355,12 @@ pub mod scan_input {
             self.scan_filter = input;
             self
         }
-        /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn conditional_operator(mut self, input: crate::model::ConditionalOperator) -> Self {
             self.conditional_operator = Some(input);
             self
         }
-        /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_conditional_operator(
             mut self,
             input: std::option::Option<crate::model::ConditionalOperator>,
@@ -10326,32 +8372,22 @@ pub mod scan_input {
         ///
         /// To override the contents of this collection use [`set_exclusive_start_key`](Self::set_exclusive_start_key).
         ///
-        /// <p>The primary key of the first item that this operation will evaluate. Use the value
-        /// that was returned for <code>LastEvaluatedKey</code> in the previous operation.</p>
-        /// <p>The data type for <code>ExclusiveStartKey</code> must be String, Number or Binary. No
-        /// set data types are allowed.</p>
-        /// <p>In a parallel scan, a <code>Scan</code> request that includes
-        /// <code>ExclusiveStartKey</code> must specify the same segment whose previous
-        /// <code>Scan</code> returned the corresponding value of
-        /// <code>LastEvaluatedKey</code>.</p>
+        /// <p>The primary key of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedKey</code> in the previous operation.</p>
+        /// <p>The data type for <code>ExclusiveStartKey</code> must be String, Number or Binary. No set data types are allowed.</p>
+        /// <p>In a parallel scan, a <code>Scan</code> request that includes <code>ExclusiveStartKey</code> must specify the same segment whose previous <code>Scan</code> returned the corresponding value of <code>LastEvaluatedKey</code>.</p>
         pub fn exclusive_start_key(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.exclusive_start_key.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.exclusive_start_key = Some(hash_map);
             self
         }
-        /// <p>The primary key of the first item that this operation will evaluate. Use the value
-        /// that was returned for <code>LastEvaluatedKey</code> in the previous operation.</p>
-        /// <p>The data type for <code>ExclusiveStartKey</code> must be String, Number or Binary. No
-        /// set data types are allowed.</p>
-        /// <p>In a parallel scan, a <code>Scan</code> request that includes
-        /// <code>ExclusiveStartKey</code> must specify the same segment whose previous
-        /// <code>Scan</code> returned the corresponding value of
-        /// <code>LastEvaluatedKey</code>.</p>
+        /// <p>The primary key of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedKey</code> in the previous operation.</p>
+        /// <p>The data type for <code>ExclusiveStartKey</code> must be String, Number or Binary. No set data types are allowed.</p>
+        /// <p>In a parallel scan, a <code>Scan</code> request that includes <code>ExclusiveStartKey</code> must specify the same segment whose previous <code>Scan</code> returned the corresponding value of <code>LastEvaluatedKey</code>.</p>
         pub fn set_exclusive_start_key(
             mut self,
             input: std::option::Option<
@@ -10361,30 +8397,11 @@ pub mod scan_input {
             self.exclusive_start_key = input;
             self
         }
-        /// <p>Determines the level of detail about either provisioned or on-demand throughput
-        /// consumption that is returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INDEXES</code> - The response includes the aggregate
-        /// <code>ConsumedCapacity</code> for the operation, together with
-        /// <code>ConsumedCapacity</code> for each table and secondary index that was
-        /// accessed.</p>
-        /// <p>Note that some operations, such as <code>GetItem</code> and
-        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-        /// information for table(s).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOTAL</code> - The response includes only the aggregate
-        /// <code>ConsumedCapacity</code> for the operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-        /// response.</p>
-        /// </li>
+        /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+        /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+        /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
@@ -10393,30 +8410,11 @@ pub mod scan_input {
             self.return_consumed_capacity = Some(input);
             self
         }
-        /// <p>Determines the level of detail about either provisioned or on-demand throughput
-        /// consumption that is returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INDEXES</code> - The response includes the aggregate
-        /// <code>ConsumedCapacity</code> for the operation, together with
-        /// <code>ConsumedCapacity</code> for each table and secondary index that was
-        /// accessed.</p>
-        /// <p>Note that some operations, such as <code>GetItem</code> and
-        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-        /// information for table(s).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOTAL</code> - The response includes only the aggregate
-        /// <code>ConsumedCapacity</code> for the operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-        /// response.</p>
-        /// </li>
+        /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+        /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+        /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
         /// </ul>
         pub fn set_return_consumed_capacity(
             mut self,
@@ -10425,88 +8423,48 @@ pub mod scan_input {
             self.return_consumed_capacity = input;
             self
         }
-        /// <p>For a parallel <code>Scan</code> request, <code>TotalSegments</code> represents the
-        /// total number of segments into which the <code>Scan</code> operation will be divided. The
-        /// value of <code>TotalSegments</code> corresponds to the number of application workers
-        /// that will perform the parallel scan. For example, if you want to use four application
-        /// threads to scan a table or an index, specify a <code>TotalSegments</code> value of
-        /// 4.</p>
-        /// <p>The value for <code>TotalSegments</code> must be greater than or equal to 1, and less
-        /// than or equal to 1000000. If you specify a <code>TotalSegments</code> value of 1, the
-        /// <code>Scan</code> operation will be sequential rather than parallel.</p>
-        /// <p>If you specify <code>TotalSegments</code>, you must also specify
-        /// <code>Segment</code>.</p>
+        /// <p>For a parallel <code>Scan</code> request, <code>TotalSegments</code> represents the total number of segments into which the <code>Scan</code> operation will be divided. The value of <code>TotalSegments</code> corresponds to the number of application workers that will perform the parallel scan. For example, if you want to use four application threads to scan a table or an index, specify a <code>TotalSegments</code> value of 4.</p>
+        /// <p>The value for <code>TotalSegments</code> must be greater than or equal to 1, and less than or equal to 1000000. If you specify a <code>TotalSegments</code> value of 1, the <code>Scan</code> operation will be sequential rather than parallel.</p>
+        /// <p>If you specify <code>TotalSegments</code>, you must also specify <code>Segment</code>.</p>
         pub fn total_segments(mut self, input: i32) -> Self {
             self.total_segments = Some(input);
             self
         }
-        /// <p>For a parallel <code>Scan</code> request, <code>TotalSegments</code> represents the
-        /// total number of segments into which the <code>Scan</code> operation will be divided. The
-        /// value of <code>TotalSegments</code> corresponds to the number of application workers
-        /// that will perform the parallel scan. For example, if you want to use four application
-        /// threads to scan a table or an index, specify a <code>TotalSegments</code> value of
-        /// 4.</p>
-        /// <p>The value for <code>TotalSegments</code> must be greater than or equal to 1, and less
-        /// than or equal to 1000000. If you specify a <code>TotalSegments</code> value of 1, the
-        /// <code>Scan</code> operation will be sequential rather than parallel.</p>
-        /// <p>If you specify <code>TotalSegments</code>, you must also specify
-        /// <code>Segment</code>.</p>
+        /// <p>For a parallel <code>Scan</code> request, <code>TotalSegments</code> represents the total number of segments into which the <code>Scan</code> operation will be divided. The value of <code>TotalSegments</code> corresponds to the number of application workers that will perform the parallel scan. For example, if you want to use four application threads to scan a table or an index, specify a <code>TotalSegments</code> value of 4.</p>
+        /// <p>The value for <code>TotalSegments</code> must be greater than or equal to 1, and less than or equal to 1000000. If you specify a <code>TotalSegments</code> value of 1, the <code>Scan</code> operation will be sequential rather than parallel.</p>
+        /// <p>If you specify <code>TotalSegments</code>, you must also specify <code>Segment</code>.</p>
         pub fn set_total_segments(mut self, input: std::option::Option<i32>) -> Self {
             self.total_segments = input;
             self
         }
-        /// <p>For a parallel <code>Scan</code> request, <code>Segment</code> identifies an
-        /// individual segment to be scanned by an application worker.</p>
-        /// <p>Segment IDs are zero-based, so the first segment is always 0. For example, if you want
-        /// to use four application threads to scan a table or an index, then the first thread
-        /// specifies a <code>Segment</code> value of 0, the second thread specifies 1, and so
-        /// on.</p>
-        /// <p>The value of <code>LastEvaluatedKey</code> returned from a parallel <code>Scan</code>
-        /// request must be used as <code>ExclusiveStartKey</code> with the same segment ID in a
-        /// subsequent <code>Scan</code> operation.</p>
-        /// <p>The value for <code>Segment</code> must be greater than or equal to 0, and less than
-        /// the value provided for <code>TotalSegments</code>.</p>
-        /// <p>If you provide <code>Segment</code>, you must also provide
-        /// <code>TotalSegments</code>.</p>
+        /// <p>For a parallel <code>Scan</code> request, <code>Segment</code> identifies an individual segment to be scanned by an application worker.</p>
+        /// <p>Segment IDs are zero-based, so the first segment is always 0. For example, if you want to use four application threads to scan a table or an index, then the first thread specifies a <code>Segment</code> value of 0, the second thread specifies 1, and so on.</p>
+        /// <p>The value of <code>LastEvaluatedKey</code> returned from a parallel <code>Scan</code> request must be used as <code>ExclusiveStartKey</code> with the same segment ID in a subsequent <code>Scan</code> operation.</p>
+        /// <p>The value for <code>Segment</code> must be greater than or equal to 0, and less than the value provided for <code>TotalSegments</code>.</p>
+        /// <p>If you provide <code>Segment</code>, you must also provide <code>TotalSegments</code>.</p>
         pub fn segment(mut self, input: i32) -> Self {
             self.segment = Some(input);
             self
         }
-        /// <p>For a parallel <code>Scan</code> request, <code>Segment</code> identifies an
-        /// individual segment to be scanned by an application worker.</p>
-        /// <p>Segment IDs are zero-based, so the first segment is always 0. For example, if you want
-        /// to use four application threads to scan a table or an index, then the first thread
-        /// specifies a <code>Segment</code> value of 0, the second thread specifies 1, and so
-        /// on.</p>
-        /// <p>The value of <code>LastEvaluatedKey</code> returned from a parallel <code>Scan</code>
-        /// request must be used as <code>ExclusiveStartKey</code> with the same segment ID in a
-        /// subsequent <code>Scan</code> operation.</p>
-        /// <p>The value for <code>Segment</code> must be greater than or equal to 0, and less than
-        /// the value provided for <code>TotalSegments</code>.</p>
-        /// <p>If you provide <code>Segment</code>, you must also provide
-        /// <code>TotalSegments</code>.</p>
+        /// <p>For a parallel <code>Scan</code> request, <code>Segment</code> identifies an individual segment to be scanned by an application worker.</p>
+        /// <p>Segment IDs are zero-based, so the first segment is always 0. For example, if you want to use four application threads to scan a table or an index, then the first thread specifies a <code>Segment</code> value of 0, the second thread specifies 1, and so on.</p>
+        /// <p>The value of <code>LastEvaluatedKey</code> returned from a parallel <code>Scan</code> request must be used as <code>ExclusiveStartKey</code> with the same segment ID in a subsequent <code>Scan</code> operation.</p>
+        /// <p>The value for <code>Segment</code> must be greater than or equal to 0, and less than the value provided for <code>TotalSegments</code>.</p>
+        /// <p>If you provide <code>Segment</code>, you must also provide <code>TotalSegments</code>.</p>
         pub fn set_segment(mut self, input: std::option::Option<i32>) -> Self {
             self.segment = input;
             self
         }
-        /// <p>A string that identifies one or more attributes to retrieve from the specified table
-        /// or index. These attributes can include scalars, sets, or elements of a JSON document.
-        /// The attributes in the expression must be separated by commas.</p>
-        /// <p>If no attribute names are specified, then all attributes will be returned. If any of
-        /// the requested attributes are not found, they will not appear in the result.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>A string that identifies one or more attributes to retrieve from the specified table or index. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p>
+        /// <p>If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn projection_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.projection_expression = Some(input.into());
             self
         }
-        /// <p>A string that identifies one or more attributes to retrieve from the specified table
-        /// or index. These attributes can include scalars, sets, or elements of a JSON document.
-        /// The attributes in the expression must be separated by commas.</p>
-        /// <p>If no attribute names are specified, then all attributes will be returned. If any of
-        /// the requested attributes are not found, they will not appear in the result.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>A string that identifies one or more attributes to retrieve from the specified table or index. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p>
+        /// <p>If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_projection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10514,30 +8472,18 @@ pub mod scan_input {
             self.projection_expression = input;
             self
         }
-        /// <p>A string that contains conditions that DynamoDB applies after the <code>Scan</code>
-        /// operation, but before the data is returned to you. Items that do not satisfy the
-        /// <code>FilterExpression</code> criteria are not returned.</p>
-        /// <note>
-        /// <p>A <code>FilterExpression</code> is applied after the items have already been read;
-        /// the process of filtering does not consume any additional read capacity units.</p>
+        /// <p>A string that contains conditions that DynamoDB applies after the <code>Scan</code> operation, but before the data is returned to you. Items that do not satisfy the <code>FilterExpression</code> criteria are not returned.</p> <note>
+        /// <p>A <code>FilterExpression</code> is applied after the items have already been read; the process of filtering does not consume any additional read capacity units.</p>
         /// </note>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
-        /// Expressions</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.filter_expression = Some(input.into());
             self
         }
-        /// <p>A string that contains conditions that DynamoDB applies after the <code>Scan</code>
-        /// operation, but before the data is returned to you. Items that do not satisfy the
-        /// <code>FilterExpression</code> criteria are not returned.</p>
-        /// <note>
-        /// <p>A <code>FilterExpression</code> is applied after the items have already been read;
-        /// the process of filtering does not consume any additional read capacity units.</p>
+        /// <p>A string that contains conditions that DynamoDB applies after the <code>Scan</code> operation, but before the data is returned to you. Items that do not satisfy the <code>FilterExpression</code> criteria are not returned.</p> <note>
+        /// <p>A <code>FilterExpression</code> is applied after the items have already been read; the process of filtering does not consume any additional read capacity units.</p>
         /// </note>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
-        /// Expressions</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_filter_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10549,57 +8495,27 @@ pub mod scan_input {
         ///
         /// To override the contents of this collection use [`set_expression_attribute_names`](Self::set_expression_attribute_names).
         ///
-        /// <p>One or more substitution tokens for attribute names in an expression. The following
-        /// are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+        /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
-        /// word.</p>
-        /// </li>
-        /// <li>
-        /// <p>To create a placeholder for repeating occurrences of an attribute name in an
-        /// expression.</p>
-        /// </li>
-        /// <li>
-        /// <p>To prevent special characters in an attribute name from being misinterpreted
-        /// in an expression.</p>
-        /// </li>
+        /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
+        /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
+        /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
         /// </ul>
-        /// <p>Use the <b>#</b> character in an expression to dereference
-        /// an attribute name. For example, consider the following attribute name:</p>
+        /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Percentile</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Percentile</code> </p> </li>
         /// </ul>
-        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used
-        /// directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>). To work around this, you could specify the following for
-        /// <code>ExpressionAttributeNames</code>:</p>
+        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>{"#P":"Percentile"}</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
         /// </ul>
         /// <p>You could then use this substitution in an expression, as in this example:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>#P = :val</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Tokens that begin with the <b>:</b> character are
-        /// <i>expression attribute values</i>, which are placeholders for the
-        /// actual value at runtime.</p>
+        /// <li> <p> <code>#P = :val</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
         /// </note>
-        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn expression_attribute_names(
             mut self,
             k: impl Into<std::string::String>,
@@ -10610,57 +8526,27 @@ pub mod scan_input {
             self.expression_attribute_names = Some(hash_map);
             self
         }
-        /// <p>One or more substitution tokens for attribute names in an expression. The following
-        /// are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+        /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
-        /// word.</p>
-        /// </li>
-        /// <li>
-        /// <p>To create a placeholder for repeating occurrences of an attribute name in an
-        /// expression.</p>
-        /// </li>
-        /// <li>
-        /// <p>To prevent special characters in an attribute name from being misinterpreted
-        /// in an expression.</p>
-        /// </li>
+        /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
+        /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
+        /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
         /// </ul>
-        /// <p>Use the <b>#</b> character in an expression to dereference
-        /// an attribute name. For example, consider the following attribute name:</p>
+        /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Percentile</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Percentile</code> </p> </li>
         /// </ul>
-        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used
-        /// directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>). To work around this, you could specify the following for
-        /// <code>ExpressionAttributeNames</code>:</p>
+        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>{"#P":"Percentile"}</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
         /// </ul>
         /// <p>You could then use this substitution in an expression, as in this example:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>#P = :val</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Tokens that begin with the <b>:</b> character are
-        /// <i>expression attribute values</i>, which are placeholders for the
-        /// actual value at runtime.</p>
+        /// <li> <p> <code>#P = :val</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
         /// </note>
-        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_expression_attribute_names(
             mut self,
             input: std::option::Option<
@@ -10675,53 +8561,31 @@ pub mod scan_input {
         /// To override the contents of this collection use [`set_expression_attribute_values`](Self::set_expression_attribute_values).
         ///
         /// <p>One or more values that can be substituted in an expression.</p>
-        /// <p>Use the <b>:</b> (colon) character in an expression to
-        /// dereference an attribute value. For example, suppose that you wanted to check whether
-        /// the value of the <code>ProductStatus</code> attribute was one of the following: </p>
-        /// <p>
-        /// <code>Available | Backordered | Discontinued</code>
-        /// </p>
-        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as
-        /// follows:</p>
-        /// <p>
-        /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-        /// ":disc":{"S":"Discontinued"} }</code>
-        /// </p>
+        /// <p>Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the <code>ProductStatus</code> attribute was one of the following: </p>
+        /// <p> <code>Available | Backordered | Discontinued</code> </p>
+        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+        /// <p> <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code> </p>
         /// <p>You could then use these values in an expression, such as this:</p>
-        /// <p>
-        /// <code>ProductStatus IN (:avail, :back, :disc)</code>
-        /// </p>
-        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p> <code>ProductStatus IN (:avail, :back, :disc)</code> </p>
+        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn expression_attribute_values(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.expression_attribute_values.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.expression_attribute_values = Some(hash_map);
             self
         }
         /// <p>One or more values that can be substituted in an expression.</p>
-        /// <p>Use the <b>:</b> (colon) character in an expression to
-        /// dereference an attribute value. For example, suppose that you wanted to check whether
-        /// the value of the <code>ProductStatus</code> attribute was one of the following: </p>
-        /// <p>
-        /// <code>Available | Backordered | Discontinued</code>
-        /// </p>
-        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as
-        /// follows:</p>
-        /// <p>
-        /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-        /// ":disc":{"S":"Discontinued"} }</code>
-        /// </p>
+        /// <p>Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the <code>ProductStatus</code> attribute was one of the following: </p>
+        /// <p> <code>Available | Backordered | Discontinued</code> </p>
+        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+        /// <p> <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code> </p>
         /// <p>You could then use these values in an expression, such as this:</p>
-        /// <p>
-        /// <code>ProductStatus IN (:avail, :back, :disc)</code>
-        /// </p>
-        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p> <code>ProductStatus IN (:avail, :back, :disc)</code> </p>
+        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_expression_attribute_values(
             mut self,
             input: std::option::Option<
@@ -10733,44 +8597,22 @@ pub mod scan_input {
         }
         /// <p>A Boolean value that determines the read consistency model during the scan:</p>
         /// <ul>
-        /// <li>
-        /// <p>If <code>ConsistentRead</code> is <code>false</code>, then the data returned
-        /// from <code>Scan</code> might not contain the results from other recently
-        /// completed write operations (<code>PutItem</code>, <code>UpdateItem</code>, or
-        /// <code>DeleteItem</code>).</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>ConsistentRead</code> is <code>true</code>, then all of the write
-        /// operations that completed before the <code>Scan</code> began are guaranteed to
-        /// be contained in the <code>Scan</code> response.</p>
-        /// </li>
+        /// <li> <p>If <code>ConsistentRead</code> is <code>false</code>, then the data returned from <code>Scan</code> might not contain the results from other recently completed write operations (<code>PutItem</code>, <code>UpdateItem</code>, or <code>DeleteItem</code>).</p> </li>
+        /// <li> <p>If <code>ConsistentRead</code> is <code>true</code>, then all of the write operations that completed before the <code>Scan</code> began are guaranteed to be contained in the <code>Scan</code> response.</p> </li>
         /// </ul>
         /// <p>The default setting for <code>ConsistentRead</code> is <code>false</code>.</p>
-        /// <p>The <code>ConsistentRead</code> parameter is not supported on global secondary
-        /// indexes. If you scan a global secondary index with <code>ConsistentRead</code> set to
-        /// true, you will receive a <code>ValidationException</code>.</p>
+        /// <p>The <code>ConsistentRead</code> parameter is not supported on global secondary indexes. If you scan a global secondary index with <code>ConsistentRead</code> set to true, you will receive a <code>ValidationException</code>.</p>
         pub fn consistent_read(mut self, input: bool) -> Self {
             self.consistent_read = Some(input);
             self
         }
         /// <p>A Boolean value that determines the read consistency model during the scan:</p>
         /// <ul>
-        /// <li>
-        /// <p>If <code>ConsistentRead</code> is <code>false</code>, then the data returned
-        /// from <code>Scan</code> might not contain the results from other recently
-        /// completed write operations (<code>PutItem</code>, <code>UpdateItem</code>, or
-        /// <code>DeleteItem</code>).</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>ConsistentRead</code> is <code>true</code>, then all of the write
-        /// operations that completed before the <code>Scan</code> began are guaranteed to
-        /// be contained in the <code>Scan</code> response.</p>
-        /// </li>
+        /// <li> <p>If <code>ConsistentRead</code> is <code>false</code>, then the data returned from <code>Scan</code> might not contain the results from other recently completed write operations (<code>PutItem</code>, <code>UpdateItem</code>, or <code>DeleteItem</code>).</p> </li>
+        /// <li> <p>If <code>ConsistentRead</code> is <code>true</code>, then all of the write operations that completed before the <code>Scan</code> began are guaranteed to be contained in the <code>Scan</code> response.</p> </li>
         /// </ul>
         /// <p>The default setting for <code>ConsistentRead</code> is <code>false</code>.</p>
-        /// <p>The <code>ConsistentRead</code> parameter is not supported on global secondary
-        /// indexes. If you scan a global secondary index with <code>ConsistentRead</code> set to
-        /// true, you will receive a <code>ValidationException</code>.</p>
+        /// <p>The <code>ConsistentRead</code> parameter is not supported on global secondary indexes. If you scan a global secondary index with <code>ConsistentRead</code> set to true, you will receive a <code>ValidationException</code>.</p>
         pub fn set_consistent_read(mut self, input: std::option::Option<bool>) -> Self {
             self.consistent_read = input;
             self
@@ -10804,7 +8646,7 @@ pub mod scan_input {
 #[doc(hidden)]
 pub type ScanInputOperationOutputAlias = crate::operation::Scan;
 #[doc(hidden)]
-pub type ScanInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ScanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ScanInput {
     /// Consumes the builder and constructs an Operation<[`Scan`](crate::operation::Scan)>
     #[allow(clippy::let_and_return)]
@@ -10815,7 +8657,7 @@ impl ScanInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::Scan,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10895,7 +8737,7 @@ impl ScanInput {
             .with_metadata(aws_smithy_http::operation::Metadata::new(
                 "Scan", "dynamodb",
             ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10928,14 +8770,12 @@ pub mod tag_resource_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>Identifies the Amazon DynamoDB resource to which tags should be added. This value is
-        /// an Amazon Resource Name (ARN).</p>
+        /// <p>Identifies the Amazon DynamoDB resource to which tags should be added. This value is an Amazon Resource Name (ARN).</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>Identifies the Amazon DynamoDB resource to which tags should be added. This value is
-        /// an Amazon Resource Name (ARN).</p>
+        /// <p>Identifies the Amazon DynamoDB resource to which tags should be added. This value is an Amazon Resource Name (ARN).</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -10945,9 +8785,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be assigned to the Amazon DynamoDB resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -10976,7 +8816,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -10987,7 +8827,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11071,7 +8911,7 @@ impl TagResourceInput {
             "TagResource",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11110,16 +8950,14 @@ pub mod transact_get_items_input {
         ///
         /// To override the contents of this collection use [`set_transact_items`](Self::set_transact_items).
         ///
-        /// <p>An ordered array of up to 25 <code>TransactGetItem</code> objects, each of which
-        /// contains a <code>Get</code> structure.</p>
-        pub fn transact_items(mut self, input: impl Into<crate::model::TransactGetItem>) -> Self {
+        /// <p>An ordered array of up to 25 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure.</p>
+        pub fn transact_items(mut self, input: crate::model::TransactGetItem) -> Self {
             let mut v = self.transact_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transact_items = Some(v);
             self
         }
-        /// <p>An ordered array of up to 25 <code>TransactGetItem</code> objects, each of which
-        /// contains a <code>Get</code> structure.</p>
+        /// <p>An ordered array of up to 25 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure.</p>
         pub fn set_transact_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TransactGetItem>>,
@@ -11127,9 +8965,7 @@ pub mod transact_get_items_input {
             self.transact_items = input;
             self
         }
-        /// <p>A value of <code>TOTAL</code> causes consumed capacity information to be returned, and
-        /// a value of <code>NONE</code> prevents that information from being returned. No other
-        /// value is valid.</p>
+        /// <p>A value of <code>TOTAL</code> causes consumed capacity information to be returned, and a value of <code>NONE</code> prevents that information from being returned. No other value is valid.</p>
         pub fn return_consumed_capacity(
             mut self,
             input: crate::model::ReturnConsumedCapacity,
@@ -11137,9 +8973,7 @@ pub mod transact_get_items_input {
             self.return_consumed_capacity = Some(input);
             self
         }
-        /// <p>A value of <code>TOTAL</code> causes consumed capacity information to be returned, and
-        /// a value of <code>NONE</code> prevents that information from being returned. No other
-        /// value is valid.</p>
+        /// <p>A value of <code>TOTAL</code> causes consumed capacity information to be returned, and a value of <code>NONE</code> prevents that information from being returned. No other value is valid.</p>
         pub fn set_return_consumed_capacity(
             mut self,
             input: std::option::Option<crate::model::ReturnConsumedCapacity>,
@@ -11164,7 +8998,7 @@ pub mod transact_get_items_input {
 #[doc(hidden)]
 pub type TransactGetItemsInputOperationOutputAlias = crate::operation::TransactGetItems;
 #[doc(hidden)]
-pub type TransactGetItemsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TransactGetItemsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TransactGetItemsInput {
     /// Consumes the builder and constructs an Operation<[`TransactGetItems`](crate::operation::TransactGetItems)>
     #[allow(clippy::let_and_return)]
@@ -11175,7 +9009,7 @@ impl TransactGetItemsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TransactGetItems,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11260,7 +9094,7 @@ impl TransactGetItemsInput {
             "TransactGetItems",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11302,22 +9136,14 @@ pub mod transact_write_items_input {
         ///
         /// To override the contents of this collection use [`set_transact_items`](Self::set_transact_items).
         ///
-        /// <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of which
-        /// contains a <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or
-        /// <code>Delete</code> object. These can operate on items in different tables, but the
-        /// tables must reside in the same Amazon Web Services account and Region, and no two of them
-        /// can operate on the same item. </p>
-        pub fn transact_items(mut self, input: impl Into<crate::model::TransactWriteItem>) -> Self {
+        /// <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of which contains a <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or <code>Delete</code> object. These can operate on items in different tables, but the tables must reside in the same Amazon Web Services account and Region, and no two of them can operate on the same item. </p>
+        pub fn transact_items(mut self, input: crate::model::TransactWriteItem) -> Self {
             let mut v = self.transact_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transact_items = Some(v);
             self
         }
-        /// <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of which
-        /// contains a <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or
-        /// <code>Delete</code> object. These can operate on items in different tables, but the
-        /// tables must reside in the same Amazon Web Services account and Region, and no two of them
-        /// can operate on the same item. </p>
+        /// <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of which contains a <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or <code>Delete</code> object. These can operate on items in different tables, but the tables must reside in the same Amazon Web Services account and Region, and no two of them can operate on the same item. </p>
         pub fn set_transact_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TransactWriteItem>>,
@@ -11325,30 +9151,11 @@ pub mod transact_write_items_input {
             self.transact_items = input;
             self
         }
-        /// <p>Determines the level of detail about either provisioned or on-demand throughput
-        /// consumption that is returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INDEXES</code> - The response includes the aggregate
-        /// <code>ConsumedCapacity</code> for the operation, together with
-        /// <code>ConsumedCapacity</code> for each table and secondary index that was
-        /// accessed.</p>
-        /// <p>Note that some operations, such as <code>GetItem</code> and
-        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-        /// information for table(s).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOTAL</code> - The response includes only the aggregate
-        /// <code>ConsumedCapacity</code> for the operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-        /// response.</p>
-        /// </li>
+        /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+        /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+        /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
@@ -11357,30 +9164,11 @@ pub mod transact_write_items_input {
             self.return_consumed_capacity = Some(input);
             self
         }
-        /// <p>Determines the level of detail about either provisioned or on-demand throughput
-        /// consumption that is returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INDEXES</code> - The response includes the aggregate
-        /// <code>ConsumedCapacity</code> for the operation, together with
-        /// <code>ConsumedCapacity</code> for each table and secondary index that was
-        /// accessed.</p>
-        /// <p>Note that some operations, such as <code>GetItem</code> and
-        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-        /// information for table(s).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOTAL</code> - The response includes only the aggregate
-        /// <code>ConsumedCapacity</code> for the operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-        /// response.</p>
-        /// </li>
+        /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+        /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+        /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
         /// </ul>
         pub fn set_return_consumed_capacity(
             mut self,
@@ -11389,10 +9177,7 @@ pub mod transact_write_items_input {
             self.return_consumed_capacity = input;
             self
         }
-        /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>,
-        /// the response includes statistics about item collections (if any), that were modified
-        /// during the operation and are returned in the response. If set to <code>NONE</code> (the
-        /// default), no statistics are returned. </p>
+        /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections (if any), that were modified during the operation and are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned. </p>
         pub fn return_item_collection_metrics(
             mut self,
             input: crate::model::ReturnItemCollectionMetrics,
@@ -11400,10 +9185,7 @@ pub mod transact_write_items_input {
             self.return_item_collection_metrics = Some(input);
             self
         }
-        /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>,
-        /// the response includes statistics about item collections (if any), that were modified
-        /// during the operation and are returned in the response. If set to <code>NONE</code> (the
-        /// default), no statistics are returned. </p>
+        /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections (if any), that were modified during the operation and are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned. </p>
         pub fn set_return_item_collection_metrics(
             mut self,
             input: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
@@ -11411,44 +9193,18 @@ pub mod transact_write_items_input {
             self.return_item_collection_metrics = input;
             self
         }
-        /// <p>Providing a <code>ClientRequestToken</code> makes the call to
-        /// <code>TransactWriteItems</code> idempotent, meaning that multiple identical calls
-        /// have the same effect as one single call.</p>
-        /// <p>Although multiple identical calls using the same client request token produce the same
-        /// result on the server (no side effects), the responses to the calls might not be the
-        /// same. If the <code>ReturnConsumedCapacity></code> parameter is set, then the initial
-        /// <code>TransactWriteItems</code> call returns the amount of write capacity units
-        /// consumed in making the changes. Subsequent <code>TransactWriteItems</code> calls with
-        /// the same client token return the number of read capacity units consumed in reading the
-        /// item.</p>
-        /// <p>A client request token is valid for 10 minutes after the first request that uses it is
-        /// completed. After 10 minutes, any request with the same client token is treated as a new
-        /// request. Do not resubmit the same request with the same client token for more than 10
-        /// minutes, or the result might not be idempotent.</p>
-        /// <p>If you submit a request with the same client token but a change in other parameters
-        /// within the 10-minute idempotency window, DynamoDB returns an
-        /// <code>IdempotentParameterMismatch</code> exception.</p>
+        /// <p>Providing a <code>ClientRequestToken</code> makes the call to <code>TransactWriteItems</code> idempotent, meaning that multiple identical calls have the same effect as one single call.</p>
+        /// <p>Although multiple identical calls using the same client request token produce the same result on the server (no side effects), the responses to the calls might not be the same. If the <code>ReturnConsumedCapacity&gt;</code> parameter is set, then the initial <code>TransactWriteItems</code> call returns the amount of write capacity units consumed in making the changes. Subsequent <code>TransactWriteItems</code> calls with the same client token return the number of read capacity units consumed in reading the item.</p>
+        /// <p>A client request token is valid for 10 minutes after the first request that uses it is completed. After 10 minutes, any request with the same client token is treated as a new request. Do not resubmit the same request with the same client token for more than 10 minutes, or the result might not be idempotent.</p>
+        /// <p>If you submit a request with the same client token but a change in other parameters within the 10-minute idempotency window, DynamoDB returns an <code>IdempotentParameterMismatch</code> exception.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Providing a <code>ClientRequestToken</code> makes the call to
-        /// <code>TransactWriteItems</code> idempotent, meaning that multiple identical calls
-        /// have the same effect as one single call.</p>
-        /// <p>Although multiple identical calls using the same client request token produce the same
-        /// result on the server (no side effects), the responses to the calls might not be the
-        /// same. If the <code>ReturnConsumedCapacity></code> parameter is set, then the initial
-        /// <code>TransactWriteItems</code> call returns the amount of write capacity units
-        /// consumed in making the changes. Subsequent <code>TransactWriteItems</code> calls with
-        /// the same client token return the number of read capacity units consumed in reading the
-        /// item.</p>
-        /// <p>A client request token is valid for 10 minutes after the first request that uses it is
-        /// completed. After 10 minutes, any request with the same client token is treated as a new
-        /// request. Do not resubmit the same request with the same client token for more than 10
-        /// minutes, or the result might not be idempotent.</p>
-        /// <p>If you submit a request with the same client token but a change in other parameters
-        /// within the 10-minute idempotency window, DynamoDB returns an
-        /// <code>IdempotentParameterMismatch</code> exception.</p>
+        /// <p>Providing a <code>ClientRequestToken</code> makes the call to <code>TransactWriteItems</code> idempotent, meaning that multiple identical calls have the same effect as one single call.</p>
+        /// <p>Although multiple identical calls using the same client request token produce the same result on the server (no side effects), the responses to the calls might not be the same. If the <code>ReturnConsumedCapacity&gt;</code> parameter is set, then the initial <code>TransactWriteItems</code> call returns the amount of write capacity units consumed in making the changes. Subsequent <code>TransactWriteItems</code> calls with the same client token return the number of read capacity units consumed in reading the item.</p>
+        /// <p>A client request token is valid for 10 minutes after the first request that uses it is completed. After 10 minutes, any request with the same client token is treated as a new request. Do not resubmit the same request with the same client token for more than 10 minutes, or the result might not be idempotent.</p>
+        /// <p>If you submit a request with the same client token but a change in other parameters within the 10-minute idempotency window, DynamoDB returns an <code>IdempotentParameterMismatch</code> exception.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11475,7 +9231,7 @@ pub mod transact_write_items_input {
 #[doc(hidden)]
 pub type TransactWriteItemsInputOperationOutputAlias = crate::operation::TransactWriteItems;
 #[doc(hidden)]
-pub type TransactWriteItemsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TransactWriteItemsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TransactWriteItemsInput {
     /// Consumes the builder and constructs an Operation<[`TransactWriteItems`](crate::operation::TransactWriteItems)>
     #[allow(clippy::let_and_return)]
@@ -11486,7 +9242,7 @@ impl TransactWriteItemsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TransactWriteItems,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11574,7 +9330,7 @@ impl TransactWriteItemsInput {
             "TransactWriteItems",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11607,14 +9363,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The DynamoDB resource that the tags will be removed from. This value is an Amazon
-        /// Resource Name (ARN).</p>
+        /// <p>The DynamoDB resource that the tags will be removed from. This value is an Amazon Resource Name (ARN).</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The DynamoDB resource that the tags will be removed from. This value is an Amazon
-        /// Resource Name (ARN).</p>
+        /// <p>The DynamoDB resource that the tags will be removed from. This value is an Amazon Resource Name (ARN).</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -11623,16 +9377,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>A list of tag keys. Existing tags of the resource whose keys are members of this list
-        /// will be removed from the DynamoDB resource.</p>
+        /// <p>A list of tag keys. Existing tags of the resource whose keys are members of this list will be removed from the DynamoDB resource.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>A list of tag keys. Existing tags of the resource whose keys are members of this list
-        /// will be removed from the DynamoDB resource.</p>
+        /// <p>A list of tag keys. Existing tags of the resource whose keys are members of this list will be removed from the DynamoDB resource.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11657,7 +9409,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -11668,7 +9420,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11752,7 +9504,7 @@ impl UntagResourceInput {
             "UntagResource",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11830,7 +9582,7 @@ pub mod update_continuous_backups_input {
 pub type UpdateContinuousBackupsInputOperationOutputAlias =
     crate::operation::UpdateContinuousBackups;
 #[doc(hidden)]
-pub type UpdateContinuousBackupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateContinuousBackupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateContinuousBackupsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateContinuousBackups`](crate::operation::UpdateContinuousBackups)>
     #[allow(clippy::let_and_return)]
@@ -11841,7 +9593,7 @@ impl UpdateContinuousBackupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateContinuousBackups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11928,7 +9680,7 @@ impl UpdateContinuousBackupsInput {
             "UpdateContinuousBackups",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12018,7 +9770,7 @@ pub mod update_contributor_insights_input {
 pub type UpdateContributorInsightsInputOperationOutputAlias =
     crate::operation::UpdateContributorInsights;
 #[doc(hidden)]
-pub type UpdateContributorInsightsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateContributorInsightsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateContributorInsightsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateContributorInsights`](crate::operation::UpdateContributorInsights)>
     #[allow(clippy::let_and_return)]
@@ -12029,7 +9781,7 @@ impl UpdateContributorInsightsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateContributorInsights,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12116,7 +9868,7 @@ impl UpdateContributorInsightsInput {
             "UpdateContributorInsights",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12167,9 +9919,9 @@ pub mod update_global_table_input {
         /// To override the contents of this collection use [`set_replica_updates`](Self::set_replica_updates).
         ///
         /// <p>A list of Regions that should be added or removed from the global table.</p>
-        pub fn replica_updates(mut self, input: impl Into<crate::model::ReplicaUpdate>) -> Self {
+        pub fn replica_updates(mut self, input: crate::model::ReplicaUpdate) -> Self {
             let mut v = self.replica_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replica_updates = Some(v);
             self
         }
@@ -12198,7 +9950,7 @@ pub mod update_global_table_input {
 #[doc(hidden)]
 pub type UpdateGlobalTableInputOperationOutputAlias = crate::operation::UpdateGlobalTable;
 #[doc(hidden)]
-pub type UpdateGlobalTableInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateGlobalTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGlobalTableInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGlobalTable`](crate::operation::UpdateGlobalTable)>
     #[allow(clippy::let_and_return)]
@@ -12209,7 +9961,7 @@ impl UpdateGlobalTableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateGlobalTable,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12294,7 +10046,7 @@ impl UpdateGlobalTableInput {
             "UpdateGlobalTable",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12348,41 +10100,19 @@ pub mod update_global_table_settings_input {
             self.global_table_name = input;
             self
         }
-        /// <p>The billing mode of the global table. If <code>GlobalTableBillingMode</code> is not
-        /// specified, the global table defaults to <code>PROVISIONED</code> capacity billing
-        /// mode.</p>
+        /// <p>The billing mode of the global table. If <code>GlobalTableBillingMode</code> is not specified, the global table defaults to <code>PROVISIONED</code> capacity billing mode.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for
-        /// predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code>
-        /// for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode
-        /// to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p>
-        /// </li>
+        /// <li> <p> <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p> </li>
+        /// <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p> </li>
         /// </ul>
         pub fn global_table_billing_mode(mut self, input: crate::model::BillingMode) -> Self {
             self.global_table_billing_mode = Some(input);
             self
         }
-        /// <p>The billing mode of the global table. If <code>GlobalTableBillingMode</code> is not
-        /// specified, the global table defaults to <code>PROVISIONED</code> capacity billing
-        /// mode.</p>
+        /// <p>The billing mode of the global table. If <code>GlobalTableBillingMode</code> is not specified, the global table defaults to <code>PROVISIONED</code> capacity billing mode.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for
-        /// predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code>
-        /// for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode
-        /// to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p>
-        /// </li>
+        /// <li> <p> <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p> </li>
+        /// <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p> </li>
         /// </ul>
         pub fn set_global_table_billing_mode(
             mut self,
@@ -12391,16 +10121,12 @@ pub mod update_global_table_settings_input {
             self.global_table_billing_mode = input;
             self
         }
-        /// <p>The maximum number of writes consumed per second before DynamoDB returns a
-        /// <code>ThrottlingException.</code>
-        /// </p>
+        /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code> </p>
         pub fn global_table_provisioned_write_capacity_units(mut self, input: i64) -> Self {
             self.global_table_provisioned_write_capacity_units = Some(input);
             self
         }
-        /// <p>The maximum number of writes consumed per second before DynamoDB returns a
-        /// <code>ThrottlingException.</code>
-        /// </p>
+        /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code> </p>
         pub fn set_global_table_provisioned_write_capacity_units(
             mut self,
             input: std::option::Option<i64>,
@@ -12408,8 +10134,7 @@ pub mod update_global_table_settings_input {
             self.global_table_provisioned_write_capacity_units = input;
             self
         }
-        /// <p>Auto scaling settings for managing provisioned write capacity for the global
-        /// table.</p>
+        /// <p>Auto scaling settings for managing provisioned write capacity for the global table.</p>
         pub fn global_table_provisioned_write_capacity_auto_scaling_settings_update(
             mut self,
             input: crate::model::AutoScalingSettingsUpdate,
@@ -12417,8 +10142,7 @@ pub mod update_global_table_settings_input {
             self.global_table_provisioned_write_capacity_auto_scaling_settings_update = Some(input);
             self
         }
-        /// <p>Auto scaling settings for managing provisioned write capacity for the global
-        /// table.</p>
+        /// <p>Auto scaling settings for managing provisioned write capacity for the global table.</p>
         pub fn set_global_table_provisioned_write_capacity_auto_scaling_settings_update(
             mut self,
             input: std::option::Option<crate::model::AutoScalingSettingsUpdate>,
@@ -12430,21 +10154,19 @@ pub mod update_global_table_settings_input {
         ///
         /// To override the contents of this collection use [`set_global_table_global_secondary_index_settings_update`](Self::set_global_table_global_secondary_index_settings_update).
         ///
-        /// <p>Represents the settings of a global secondary index for a global table that will be
-        /// modified.</p>
+        /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
         pub fn global_table_global_secondary_index_settings_update(
             mut self,
-            input: impl Into<crate::model::GlobalTableGlobalSecondaryIndexSettingsUpdate>,
+            input: crate::model::GlobalTableGlobalSecondaryIndexSettingsUpdate,
         ) -> Self {
             let mut v = self
                 .global_table_global_secondary_index_settings_update
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.global_table_global_secondary_index_settings_update = Some(v);
             self
         }
-        /// <p>Represents the settings of a global secondary index for a global table that will be
-        /// modified.</p>
+        /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
         pub fn set_global_table_global_secondary_index_settings_update(
             mut self,
             input: std::option::Option<
@@ -12461,10 +10183,10 @@ pub mod update_global_table_settings_input {
         /// <p>Represents the settings for a global table in a Region that will be modified.</p>
         pub fn replica_settings_update(
             mut self,
-            input: impl Into<crate::model::ReplicaSettingsUpdate>,
+            input: crate::model::ReplicaSettingsUpdate,
         ) -> Self {
             let mut v = self.replica_settings_update.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replica_settings_update = Some(v);
             self
         }
@@ -12501,7 +10223,7 @@ pub mod update_global_table_settings_input {
 pub type UpdateGlobalTableSettingsInputOperationOutputAlias =
     crate::operation::UpdateGlobalTableSettings;
 #[doc(hidden)]
-pub type UpdateGlobalTableSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateGlobalTableSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGlobalTableSettingsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGlobalTableSettings`](crate::operation::UpdateGlobalTableSettings)>
     #[allow(clippy::let_and_return)]
@@ -12512,7 +10234,7 @@ impl UpdateGlobalTableSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateGlobalTableSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12599,7 +10321,7 @@ impl UpdateGlobalTableSettingsInput {
             "UpdateGlobalTableSettings",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12668,28 +10390,20 @@ pub mod update_item_input {
         ///
         /// To override the contents of this collection use [`set_key`](Self::set_key).
         ///
-        /// <p>The primary key of the item to be updated. Each element consists of an attribute name
-        /// and a value for that attribute.</p>
-        /// <p>For the primary key, you must provide all of the attributes. For example, with a
-        /// simple primary key, you only need to provide a value for the partition key. For a
-        /// composite primary key, you must provide values for both the partition key and the sort
-        /// key.</p>
+        /// <p>The primary key of the item to be updated. Each element consists of an attribute name and a value for that attribute.</p>
+        /// <p>For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</p>
         pub fn key(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.key.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.key = Some(hash_map);
             self
         }
-        /// <p>The primary key of the item to be updated. Each element consists of an attribute name
-        /// and a value for that attribute.</p>
-        /// <p>For the primary key, you must provide all of the attributes. For example, with a
-        /// simple primary key, you only need to provide a value for the partition key. For a
-        /// composite primary key, you must provide values for both the partition key and the sort
-        /// key.</p>
+        /// <p>The primary key of the item to be updated. Each element consists of an attribute name and a value for that attribute.</p>
+        /// <p>For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</p>
         pub fn set_key(
             mut self,
             input: std::option::Option<
@@ -12703,22 +10417,18 @@ pub mod update_item_input {
         ///
         /// To override the contents of this collection use [`set_attribute_updates`](Self::set_attribute_updates).
         ///
-        /// <p>This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn attribute_updates(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValueUpdate>,
+            v: crate::model::AttributeValueUpdate,
         ) -> Self {
             let mut hash_map = self.attribute_updates.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.attribute_updates = Some(hash_map);
             self
         }
-        /// <p>This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_attribute_updates(
             mut self,
             input: std::option::Option<
@@ -12732,22 +10442,18 @@ pub mod update_item_input {
         ///
         /// To override the contents of this collection use [`set_expected`](Self::set_expected).
         ///
-        /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn expected(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ExpectedAttributeValue>,
+            v: crate::model::ExpectedAttributeValue,
         ) -> Self {
             let mut hash_map = self.expected.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.expected = Some(hash_map);
             self
         }
-        /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_expected(
             mut self,
             input: std::option::Option<
@@ -12760,16 +10466,12 @@ pub mod update_item_input {
             self.expected = input;
             self
         }
-        /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn conditional_operator(mut self, input: crate::model::ConditionalOperator) -> Self {
             self.conditional_operator = Some(input);
             self
         }
-        /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_conditional_operator(
             mut self,
             input: std::option::Option<crate::model::ConditionalOperator>,
@@ -12777,79 +10479,29 @@ pub mod update_item_input {
             self.conditional_operator = input;
             self
         }
-        /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appear
-        /// before or after they are updated. For <code>UpdateItem</code>, the valid values
-        /// are:</p>
+        /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they are updated. For <code>UpdateItem</code>, the valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its
-        /// value is <code>NONE</code>, then nothing is returned. (This setting is the
-        /// default for <code>ReturnValues</code>.)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL_OLD</code> - Returns all of the attributes of the item, as they
-        /// appeared before the UpdateItem operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared
-        /// before the UpdateItem operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear
-        /// after the UpdateItem operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear
-        /// after the UpdateItem operation.</p>
-        /// </li>
+        /// <li> <p> <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <code>ReturnValues</code>.)</p> </li>
+        /// <li> <p> <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem operation.</p> </li>
+        /// <li> <p> <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem operation.</p> </li>
+        /// <li> <p> <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem operation.</p> </li>
+        /// <li> <p> <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem operation.</p> </li>
         /// </ul>
-        /// <p>There is no additional cost associated with requesting a return value aside from the
-        /// small network and processing overhead of receiving a larger response. No read capacity
-        /// units are consumed.</p>
+        /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>
         /// <p>The values returned are strongly consistent.</p>
         pub fn return_values(mut self, input: crate::model::ReturnValue) -> Self {
             self.return_values = Some(input);
             self
         }
-        /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appear
-        /// before or after they are updated. For <code>UpdateItem</code>, the valid values
-        /// are:</p>
+        /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they are updated. For <code>UpdateItem</code>, the valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its
-        /// value is <code>NONE</code>, then nothing is returned. (This setting is the
-        /// default for <code>ReturnValues</code>.)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL_OLD</code> - Returns all of the attributes of the item, as they
-        /// appeared before the UpdateItem operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared
-        /// before the UpdateItem operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear
-        /// after the UpdateItem operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear
-        /// after the UpdateItem operation.</p>
-        /// </li>
+        /// <li> <p> <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <code>ReturnValues</code>.)</p> </li>
+        /// <li> <p> <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem operation.</p> </li>
+        /// <li> <p> <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem operation.</p> </li>
+        /// <li> <p> <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem operation.</p> </li>
+        /// <li> <p> <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem operation.</p> </li>
         /// </ul>
-        /// <p>There is no additional cost associated with requesting a return value aside from the
-        /// small network and processing overhead of receiving a larger response. No read capacity
-        /// units are consumed.</p>
+        /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>
         /// <p>The values returned are strongly consistent.</p>
         pub fn set_return_values(
             mut self,
@@ -12858,30 +10510,11 @@ pub mod update_item_input {
             self.return_values = input;
             self
         }
-        /// <p>Determines the level of detail about either provisioned or on-demand throughput
-        /// consumption that is returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INDEXES</code> - The response includes the aggregate
-        /// <code>ConsumedCapacity</code> for the operation, together with
-        /// <code>ConsumedCapacity</code> for each table and secondary index that was
-        /// accessed.</p>
-        /// <p>Note that some operations, such as <code>GetItem</code> and
-        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-        /// information for table(s).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOTAL</code> - The response includes only the aggregate
-        /// <code>ConsumedCapacity</code> for the operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-        /// response.</p>
-        /// </li>
+        /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+        /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+        /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
@@ -12890,30 +10523,11 @@ pub mod update_item_input {
             self.return_consumed_capacity = Some(input);
             self
         }
-        /// <p>Determines the level of detail about either provisioned or on-demand throughput
-        /// consumption that is returned in the response:</p>
+        /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INDEXES</code> - The response includes the aggregate
-        /// <code>ConsumedCapacity</code> for the operation, together with
-        /// <code>ConsumedCapacity</code> for each table and secondary index that was
-        /// accessed.</p>
-        /// <p>Note that some operations, such as <code>GetItem</code> and
-        /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-        /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-        /// information for table(s).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOTAL</code> - The response includes only the aggregate
-        /// <code>ConsumedCapacity</code> for the operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-        /// response.</p>
-        /// </li>
+        /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+        /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+        /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
         /// </ul>
         pub fn set_return_consumed_capacity(
             mut self,
@@ -12922,10 +10536,7 @@ pub mod update_item_input {
             self.return_consumed_capacity = input;
             self
         }
-        /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>,
-        /// the response includes statistics about item collections, if any, that were modified
-        /// during the operation are returned in the response. If set to <code>NONE</code> (the
-        /// default), no statistics are returned.</p>
+        /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
         pub fn return_item_collection_metrics(
             mut self,
             input: crate::model::ReturnItemCollectionMetrics,
@@ -12933,10 +10544,7 @@ pub mod update_item_input {
             self.return_item_collection_metrics = Some(input);
             self
         }
-        /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>,
-        /// the response includes statistics about item collections, if any, that were modified
-        /// during the operation are returned in the response. If set to <code>NONE</code> (the
-        /// default), no statistics are returned.</p>
+        /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
         pub fn set_return_item_collection_metrics(
             mut self,
             input: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
@@ -12944,216 +10552,60 @@ pub mod update_item_input {
             self.return_item_collection_metrics = input;
             self
         }
-        /// <p>An expression that defines one or more attributes to be updated, the action to be
-        /// performed on them, and new values for them.</p>
+        /// <p>An expression that defines one or more attributes to be updated, the action to be performed on them, and new values for them.</p>
         /// <p>The following action values are available for <code>UpdateExpression</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SET</code> - Adds one or more attributes and values to an item. If any of
-        /// these attributes already exist, they are replaced by the new values. You can
-        /// also use <code>SET</code> to add or subtract from an attribute that is of type
-        /// Number. For example: <code>SET myNum = myNum + :val</code>
-        /// </p>
-        /// <p>
-        /// <code>SET</code> supports the following functions:</p>
+        /// <li> <p> <code>SET</code> - Adds one or more attributes and values to an item. If any of these attributes already exist, they are replaced by the new values. You can also use <code>SET</code> to add or subtract from an attribute that is of type Number. For example: <code>SET myNum = myNum + :val</code> </p> <p> <code>SET</code> supports the following functions:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>if_not_exists (path, operand)</code> - if the item does not
-        /// contain an attribute at the specified path, then
-        /// <code>if_not_exists</code> evaluates to operand; otherwise, it
-        /// evaluates to path. You can use this function to avoid overwriting an
-        /// attribute that may already be present in the item.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>list_append (operand, operand)</code> - evaluates to a list with a
-        /// new element added to it. You can append the new element to the start or
-        /// the end of the list by reversing the order of the operands.</p>
-        /// </li>
-        /// </ul>
-        /// <p>These function names are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REMOVE</code> - Removes one or more attributes from an item.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ADD</code> - Adds the specified value to the item, if the attribute does
-        /// not already exist. If the attribute does exist, then the behavior of
-        /// <code>ADD</code> depends on the data type of the attribute:</p>
+        /// <li> <p> <code>if_not_exists (path, operand)</code> - if the item does not contain an attribute at the specified path, then <code>if_not_exists</code> evaluates to operand; otherwise, it evaluates to path. You can use this function to avoid overwriting an attribute that may already be present in the item.</p> </li>
+        /// <li> <p> <code>list_append (operand, operand)</code> - evaluates to a list with a new element added to it. You can append the new element to the start or the end of the list by reversing the order of the operands.</p> </li>
+        /// </ul> <p>These function names are case-sensitive.</p> </li>
+        /// <li> <p> <code>REMOVE</code> - Removes one or more attributes from an item.</p> </li>
+        /// <li> <p> <code>ADD</code> - Adds the specified value to the item, if the attribute does not already exist. If the attribute does exist, then the behavior of <code>ADD</code> depends on the data type of the attribute:</p>
         /// <ul>
-        /// <li>
-        /// <p>If the existing attribute is a number, and if <code>Value</code> is
-        /// also a number, then <code>Value</code> is mathematically added to the
-        /// existing attribute. If <code>Value</code> is a negative number, then it
-        /// is subtracted from the existing attribute.</p>
-        /// <note>
-        /// <p>If you use <code>ADD</code> to increment or decrement a number
-        /// value for an item that doesn't exist before the update, DynamoDB
-        /// uses <code>0</code> as the initial value.</p>
-        /// <p>Similarly, if you use <code>ADD</code> for an existing item to
-        /// increment or decrement an attribute value that doesn't exist before
-        /// the update, DynamoDB uses <code>0</code> as the initial value. For
-        /// example, suppose that the item you want to update doesn't have an
-        /// attribute named <code>itemcount</code>, but you decide to
-        /// <code>ADD</code> the number <code>3</code> to this attribute
-        /// anyway. DynamoDB will create the <code>itemcount</code> attribute,
-        /// set its initial value to <code>0</code>, and finally add
-        /// <code>3</code> to it. The result will be a new
-        /// <code>itemcount</code> attribute in the item, with a value of
-        /// <code>3</code>.</p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>If the existing data type is a set and if <code>Value</code> is also a
-        /// set, then <code>Value</code> is added to the existing set. For example,
-        /// if the attribute value is the set <code>[1,2]</code>, and the
-        /// <code>ADD</code> action specified <code>[3]</code>, then the final
-        /// attribute value is <code>[1,2,3]</code>. An error occurs if an
-        /// <code>ADD</code> action is specified for a set attribute and the
-        /// attribute type specified does not match the existing set type. </p>
-        /// <p>Both sets must have the same primitive data type. For example, if the
-        /// existing data type is a set of strings, the <code>Value</code> must also
-        /// be a set of strings.</p>
-        /// </li>
+        /// <li> <p>If the existing attribute is a number, and if <code>Value</code> is also a number, then <code>Value</code> is mathematically added to the existing attribute. If <code>Value</code> is a negative number, then it is subtracted from the existing attribute.</p> <note>
+        /// <p>If you use <code>ADD</code> to increment or decrement a number value for an item that doesn't exist before the update, DynamoDB uses <code>0</code> as the initial value.</p>
+        /// <p>Similarly, if you use <code>ADD</code> for an existing item to increment or decrement an attribute value that doesn't exist before the update, DynamoDB uses <code>0</code> as the initial value. For example, suppose that the item you want to update doesn't have an attribute named <code>itemcount</code>, but you decide to <code>ADD</code> the number <code>3</code> to this attribute anyway. DynamoDB will create the <code>itemcount</code> attribute, set its initial value to <code>0</code>, and finally add <code>3</code> to it. The result will be a new <code>itemcount</code> attribute in the item, with a value of <code>3</code>.</p>
+        /// </note> </li>
+        /// <li> <p>If the existing data type is a set and if <code>Value</code> is also a set, then <code>Value</code> is added to the existing set. For example, if the attribute value is the set <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>, then the final attribute value is <code>[1,2,3]</code>. An error occurs if an <code>ADD</code> action is specified for a set attribute and the attribute type specified does not match the existing set type. </p> <p>Both sets must have the same primitive data type. For example, if the existing data type is a set of strings, the <code>Value</code> must also be a set of strings.</p> </li>
+        /// </ul> <important>
+        /// <p>The <code>ADD</code> action only supports Number and set data types. In addition, <code>ADD</code> can only be used on top-level attributes, not nested attributes.</p>
+        /// </important> </li>
+        /// <li> <p> <code>DELETE</code> - Deletes an element from a set.</p> <p>If a set of values is specified, then those values are subtracted from the old set. For example, if the attribute value was the set <code>[a,b,c]</code> and the <code>DELETE</code> action specifies <code>[a,c]</code>, then the final attribute value is <code>[b]</code>. Specifying an empty set is an error.</p> <important>
+        /// <p>The <code>DELETE</code> action only supports set data types. In addition, <code>DELETE</code> can only be used on top-level attributes, not nested attributes.</p>
+        /// </important> </li>
         /// </ul>
-        /// <important>
-        /// <p>The <code>ADD</code> action only supports Number and set data types. In
-        /// addition, <code>ADD</code> can only be used on top-level attributes, not
-        /// nested attributes.</p>
-        /// </important>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE</code> - Deletes an element from a set.</p>
-        /// <p>If a set of values is specified, then those values are subtracted from the old
-        /// set. For example, if the attribute value was the set <code>[a,b,c]</code> and
-        /// the <code>DELETE</code> action specifies <code>[a,c]</code>, then the final
-        /// attribute value is <code>[b]</code>. Specifying an empty set is an error.</p>
-        /// <important>
-        /// <p>The <code>DELETE</code> action only supports set data types. In addition,
-        /// <code>DELETE</code> can only be used on top-level attributes, not nested
-        /// attributes.</p>
-        /// </important>
-        ///
-        /// </li>
-        /// </ul>
-        /// <p>You can have many actions in a single expression, such as the following: <code>SET
-        /// a=:value1, b=:value2 DELETE :value3, :value4, :value5</code>
-        /// </p>
-        /// <p>For more information on update expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying
-        /// Items and Attributes</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>You can have many actions in a single expression, such as the following: <code>SET a=:value1, b=:value2 DELETE :value3, :value4, :value5</code> </p>
+        /// <p>For more information on update expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying Items and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn update_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.update_expression = Some(input.into());
             self
         }
-        /// <p>An expression that defines one or more attributes to be updated, the action to be
-        /// performed on them, and new values for them.</p>
+        /// <p>An expression that defines one or more attributes to be updated, the action to be performed on them, and new values for them.</p>
         /// <p>The following action values are available for <code>UpdateExpression</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SET</code> - Adds one or more attributes and values to an item. If any of
-        /// these attributes already exist, they are replaced by the new values. You can
-        /// also use <code>SET</code> to add or subtract from an attribute that is of type
-        /// Number. For example: <code>SET myNum = myNum + :val</code>
-        /// </p>
-        /// <p>
-        /// <code>SET</code> supports the following functions:</p>
+        /// <li> <p> <code>SET</code> - Adds one or more attributes and values to an item. If any of these attributes already exist, they are replaced by the new values. You can also use <code>SET</code> to add or subtract from an attribute that is of type Number. For example: <code>SET myNum = myNum + :val</code> </p> <p> <code>SET</code> supports the following functions:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>if_not_exists (path, operand)</code> - if the item does not
-        /// contain an attribute at the specified path, then
-        /// <code>if_not_exists</code> evaluates to operand; otherwise, it
-        /// evaluates to path. You can use this function to avoid overwriting an
-        /// attribute that may already be present in the item.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>list_append (operand, operand)</code> - evaluates to a list with a
-        /// new element added to it. You can append the new element to the start or
-        /// the end of the list by reversing the order of the operands.</p>
-        /// </li>
-        /// </ul>
-        /// <p>These function names are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REMOVE</code> - Removes one or more attributes from an item.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ADD</code> - Adds the specified value to the item, if the attribute does
-        /// not already exist. If the attribute does exist, then the behavior of
-        /// <code>ADD</code> depends on the data type of the attribute:</p>
+        /// <li> <p> <code>if_not_exists (path, operand)</code> - if the item does not contain an attribute at the specified path, then <code>if_not_exists</code> evaluates to operand; otherwise, it evaluates to path. You can use this function to avoid overwriting an attribute that may already be present in the item.</p> </li>
+        /// <li> <p> <code>list_append (operand, operand)</code> - evaluates to a list with a new element added to it. You can append the new element to the start or the end of the list by reversing the order of the operands.</p> </li>
+        /// </ul> <p>These function names are case-sensitive.</p> </li>
+        /// <li> <p> <code>REMOVE</code> - Removes one or more attributes from an item.</p> </li>
+        /// <li> <p> <code>ADD</code> - Adds the specified value to the item, if the attribute does not already exist. If the attribute does exist, then the behavior of <code>ADD</code> depends on the data type of the attribute:</p>
         /// <ul>
-        /// <li>
-        /// <p>If the existing attribute is a number, and if <code>Value</code> is
-        /// also a number, then <code>Value</code> is mathematically added to the
-        /// existing attribute. If <code>Value</code> is a negative number, then it
-        /// is subtracted from the existing attribute.</p>
-        /// <note>
-        /// <p>If you use <code>ADD</code> to increment or decrement a number
-        /// value for an item that doesn't exist before the update, DynamoDB
-        /// uses <code>0</code> as the initial value.</p>
-        /// <p>Similarly, if you use <code>ADD</code> for an existing item to
-        /// increment or decrement an attribute value that doesn't exist before
-        /// the update, DynamoDB uses <code>0</code> as the initial value. For
-        /// example, suppose that the item you want to update doesn't have an
-        /// attribute named <code>itemcount</code>, but you decide to
-        /// <code>ADD</code> the number <code>3</code> to this attribute
-        /// anyway. DynamoDB will create the <code>itemcount</code> attribute,
-        /// set its initial value to <code>0</code>, and finally add
-        /// <code>3</code> to it. The result will be a new
-        /// <code>itemcount</code> attribute in the item, with a value of
-        /// <code>3</code>.</p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>If the existing data type is a set and if <code>Value</code> is also a
-        /// set, then <code>Value</code> is added to the existing set. For example,
-        /// if the attribute value is the set <code>[1,2]</code>, and the
-        /// <code>ADD</code> action specified <code>[3]</code>, then the final
-        /// attribute value is <code>[1,2,3]</code>. An error occurs if an
-        /// <code>ADD</code> action is specified for a set attribute and the
-        /// attribute type specified does not match the existing set type. </p>
-        /// <p>Both sets must have the same primitive data type. For example, if the
-        /// existing data type is a set of strings, the <code>Value</code> must also
-        /// be a set of strings.</p>
-        /// </li>
+        /// <li> <p>If the existing attribute is a number, and if <code>Value</code> is also a number, then <code>Value</code> is mathematically added to the existing attribute. If <code>Value</code> is a negative number, then it is subtracted from the existing attribute.</p> <note>
+        /// <p>If you use <code>ADD</code> to increment or decrement a number value for an item that doesn't exist before the update, DynamoDB uses <code>0</code> as the initial value.</p>
+        /// <p>Similarly, if you use <code>ADD</code> for an existing item to increment or decrement an attribute value that doesn't exist before the update, DynamoDB uses <code>0</code> as the initial value. For example, suppose that the item you want to update doesn't have an attribute named <code>itemcount</code>, but you decide to <code>ADD</code> the number <code>3</code> to this attribute anyway. DynamoDB will create the <code>itemcount</code> attribute, set its initial value to <code>0</code>, and finally add <code>3</code> to it. The result will be a new <code>itemcount</code> attribute in the item, with a value of <code>3</code>.</p>
+        /// </note> </li>
+        /// <li> <p>If the existing data type is a set and if <code>Value</code> is also a set, then <code>Value</code> is added to the existing set. For example, if the attribute value is the set <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>, then the final attribute value is <code>[1,2,3]</code>. An error occurs if an <code>ADD</code> action is specified for a set attribute and the attribute type specified does not match the existing set type. </p> <p>Both sets must have the same primitive data type. For example, if the existing data type is a set of strings, the <code>Value</code> must also be a set of strings.</p> </li>
+        /// </ul> <important>
+        /// <p>The <code>ADD</code> action only supports Number and set data types. In addition, <code>ADD</code> can only be used on top-level attributes, not nested attributes.</p>
+        /// </important> </li>
+        /// <li> <p> <code>DELETE</code> - Deletes an element from a set.</p> <p>If a set of values is specified, then those values are subtracted from the old set. For example, if the attribute value was the set <code>[a,b,c]</code> and the <code>DELETE</code> action specifies <code>[a,c]</code>, then the final attribute value is <code>[b]</code>. Specifying an empty set is an error.</p> <important>
+        /// <p>The <code>DELETE</code> action only supports set data types. In addition, <code>DELETE</code> can only be used on top-level attributes, not nested attributes.</p>
+        /// </important> </li>
         /// </ul>
-        /// <important>
-        /// <p>The <code>ADD</code> action only supports Number and set data types. In
-        /// addition, <code>ADD</code> can only be used on top-level attributes, not
-        /// nested attributes.</p>
-        /// </important>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE</code> - Deletes an element from a set.</p>
-        /// <p>If a set of values is specified, then those values are subtracted from the old
-        /// set. For example, if the attribute value was the set <code>[a,b,c]</code> and
-        /// the <code>DELETE</code> action specifies <code>[a,c]</code>, then the final
-        /// attribute value is <code>[b]</code>. Specifying an empty set is an error.</p>
-        /// <important>
-        /// <p>The <code>DELETE</code> action only supports set data types. In addition,
-        /// <code>DELETE</code> can only be used on top-level attributes, not nested
-        /// attributes.</p>
-        /// </important>
-        ///
-        /// </li>
-        /// </ul>
-        /// <p>You can have many actions in a single expression, such as the following: <code>SET
-        /// a=:value1, b=:value2 DELETE :value3, :value4, :value5</code>
-        /// </p>
-        /// <p>For more information on update expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying
-        /// Items and Attributes</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>You can have many actions in a single expression, such as the following: <code>SET a=:value1, b=:value2 DELETE :value3, :value4, :value5</code> </p>
+        /// <p>For more information on update expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying Items and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_update_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13161,56 +10613,26 @@ pub mod update_item_input {
             self.update_expression = input;
             self
         }
-        /// <p>A condition that must be satisfied in order for a conditional update to
-        /// succeed.</p>
+        /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
         /// <p>An expression can contain any of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type |
-        /// contains | begins_with | size</code>
-        /// </p>
-        /// <p>These function names are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Comparison operators: <code>= | <> |
-        /// < | > | <= | >= |
-        /// BETWEEN | IN </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p> Logical operators: <code>AND | OR | NOT</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type | contains | begins_with | size</code> </p> <p>These function names are case-sensitive.</p> </li>
+        /// <li> <p>Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code> </p> </li>
+        /// <li> <p> Logical operators: <code>AND | OR | NOT</code> </p> </li>
         /// </ul>
-        /// <p>For more information about condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying Conditions</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>For more information about condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn condition_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.condition_expression = Some(input.into());
             self
         }
-        /// <p>A condition that must be satisfied in order for a conditional update to
-        /// succeed.</p>
+        /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
         /// <p>An expression can contain any of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type |
-        /// contains | begins_with | size</code>
-        /// </p>
-        /// <p>These function names are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Comparison operators: <code>= | <> |
-        /// < | > | <= | >= |
-        /// BETWEEN | IN </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p> Logical operators: <code>AND | OR | NOT</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type | contains | begins_with | size</code> </p> <p>These function names are case-sensitive.</p> </li>
+        /// <li> <p>Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code> </p> </li>
+        /// <li> <p> Logical operators: <code>AND | OR | NOT</code> </p> </li>
         /// </ul>
-        /// <p>For more information about condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying Conditions</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>For more information about condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_condition_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13222,57 +10644,27 @@ pub mod update_item_input {
         ///
         /// To override the contents of this collection use [`set_expression_attribute_names`](Self::set_expression_attribute_names).
         ///
-        /// <p>One or more substitution tokens for attribute names in an expression. The following
-        /// are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+        /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
-        /// word.</p>
-        /// </li>
-        /// <li>
-        /// <p>To create a placeholder for repeating occurrences of an attribute name in an
-        /// expression.</p>
-        /// </li>
-        /// <li>
-        /// <p>To prevent special characters in an attribute name from being misinterpreted
-        /// in an expression.</p>
-        /// </li>
+        /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
+        /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
+        /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
         /// </ul>
-        /// <p>Use the <b>#</b> character in an expression to dereference
-        /// an attribute name. For example, consider the following attribute name:</p>
+        /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Percentile</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Percentile</code> </p> </li>
         /// </ul>
-        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used
-        /// directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.) To work around this, you could specify the following for
-        /// <code>ExpressionAttributeNames</code>:</p>
+        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.) To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>{"#P":"Percentile"}</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
         /// </ul>
         /// <p>You could then use this substitution in an expression, as in this example:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>#P = :val</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Tokens that begin with the <b>:</b> character are
-        /// <i>expression attribute values</i>, which are placeholders for the
-        /// actual value at runtime.</p>
+        /// <li> <p> <code>#P = :val</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
         /// </note>
-        /// <p>For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn expression_attribute_names(
             mut self,
             k: impl Into<std::string::String>,
@@ -13283,57 +10675,27 @@ pub mod update_item_input {
             self.expression_attribute_names = Some(hash_map);
             self
         }
-        /// <p>One or more substitution tokens for attribute names in an expression. The following
-        /// are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+        /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
-        /// word.</p>
-        /// </li>
-        /// <li>
-        /// <p>To create a placeholder for repeating occurrences of an attribute name in an
-        /// expression.</p>
-        /// </li>
-        /// <li>
-        /// <p>To prevent special characters in an attribute name from being misinterpreted
-        /// in an expression.</p>
-        /// </li>
+        /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
+        /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
+        /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
         /// </ul>
-        /// <p>Use the <b>#</b> character in an expression to dereference
-        /// an attribute name. For example, consider the following attribute name:</p>
+        /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Percentile</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Percentile</code> </p> </li>
         /// </ul>
-        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used
-        /// directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.) To work around this, you could specify the following for
-        /// <code>ExpressionAttributeNames</code>:</p>
+        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.) To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>{"#P":"Percentile"}</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
         /// </ul>
         /// <p>You could then use this substitution in an expression, as in this example:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>#P = :val</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Tokens that begin with the <b>:</b> character are
-        /// <i>expression attribute values</i>, which are placeholders for the
-        /// actual value at runtime.</p>
+        /// <li> <p> <code>#P = :val</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
         /// </note>
-        /// <p>For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p>For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_expression_attribute_names(
             mut self,
             input: std::option::Option<
@@ -13348,53 +10710,31 @@ pub mod update_item_input {
         /// To override the contents of this collection use [`set_expression_attribute_values`](Self::set_expression_attribute_values).
         ///
         /// <p>One or more values that can be substituted in an expression.</p>
-        /// <p>Use the <b>:</b> (colon) character in an expression to
-        /// dereference an attribute value. For example, suppose that you wanted to check whether
-        /// the value of the <code>ProductStatus</code> attribute was one of the following: </p>
-        /// <p>
-        /// <code>Available | Backordered | Discontinued</code>
-        /// </p>
-        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as
-        /// follows:</p>
-        /// <p>
-        /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-        /// ":disc":{"S":"Discontinued"} }</code>
-        /// </p>
+        /// <p>Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the <code>ProductStatus</code> attribute was one of the following: </p>
+        /// <p> <code>Available | Backordered | Discontinued</code> </p>
+        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+        /// <p> <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code> </p>
         /// <p>You could then use these values in an expression, such as this:</p>
-        /// <p>
-        /// <code>ProductStatus IN (:avail, :back, :disc)</code>
-        /// </p>
-        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p> <code>ProductStatus IN (:avail, :back, :disc)</code> </p>
+        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn expression_attribute_values(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.expression_attribute_values.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.expression_attribute_values = Some(hash_map);
             self
         }
         /// <p>One or more values that can be substituted in an expression.</p>
-        /// <p>Use the <b>:</b> (colon) character in an expression to
-        /// dereference an attribute value. For example, suppose that you wanted to check whether
-        /// the value of the <code>ProductStatus</code> attribute was one of the following: </p>
-        /// <p>
-        /// <code>Available | Backordered | Discontinued</code>
-        /// </p>
-        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as
-        /// follows:</p>
-        /// <p>
-        /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-        /// ":disc":{"S":"Discontinued"} }</code>
-        /// </p>
+        /// <p>Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the <code>ProductStatus</code> attribute was one of the following: </p>
+        /// <p> <code>Available | Backordered | Discontinued</code> </p>
+        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+        /// <p> <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code> </p>
         /// <p>You could then use these values in an expression, such as this:</p>
-        /// <p>
-        /// <code>ProductStatus IN (:avail, :back, :disc)</code>
-        /// </p>
-        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>.</p>
+        /// <p> <code>ProductStatus IN (:avail, :back, :disc)</code> </p>
+        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_expression_attribute_values(
             mut self,
             input: std::option::Option<
@@ -13431,7 +10771,7 @@ pub mod update_item_input {
 #[doc(hidden)]
 pub type UpdateItemInputOperationOutputAlias = crate::operation::UpdateItem;
 #[doc(hidden)]
-pub type UpdateItemInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateItemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateItemInput {
     /// Consumes the builder and constructs an Operation<[`UpdateItem`](crate::operation::UpdateItem)>
     #[allow(clippy::let_and_return)]
@@ -13442,7 +10782,7 @@ impl UpdateItemInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateItem,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13526,7 +10866,7 @@ impl UpdateItemInput {
             "UpdateItem",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13573,21 +10913,14 @@ pub mod update_table_input {
         ///
         /// To override the contents of this collection use [`set_attribute_definitions`](Self::set_attribute_definitions).
         ///
-        /// <p>An array of attributes that describe the key schema for the table and indexes. If you
-        /// are adding a new global secondary index to the table, <code>AttributeDefinitions</code>
-        /// must include the key element(s) of the new index.</p>
-        pub fn attribute_definitions(
-            mut self,
-            input: impl Into<crate::model::AttributeDefinition>,
-        ) -> Self {
+        /// <p>An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, <code>AttributeDefinitions</code> must include the key element(s) of the new index.</p>
+        pub fn attribute_definitions(mut self, input: crate::model::AttributeDefinition) -> Self {
             let mut v = self.attribute_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attribute_definitions = Some(v);
             self
         }
-        /// <p>An array of attributes that describe the key schema for the table and indexes. If you
-        /// are adding a new global secondary index to the table, <code>AttributeDefinitions</code>
-        /// must include the key element(s) of the new index.</p>
+        /// <p>An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, <code>AttributeDefinitions</code> must include the key element(s) of the new index.</p>
         pub fn set_attribute_definitions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeDefinition>>,
@@ -13605,45 +10938,19 @@ pub mod update_table_input {
             self.table_name = input;
             self
         }
-        /// <p>Controls how you are charged for read and write throughput and how you manage
-        /// capacity. When switching from pay-per-request to provisioned capacity, initial
-        /// provisioned capacity values must be set. The initial provisioned capacity values are
-        /// estimated based on the consumed read and write capacity of your table and global
-        /// secondary indexes over the past 30 minutes.</p>
+        /// <p>Controls how you are charged for read and write throughput and how you manage capacity. When switching from pay-per-request to provisioned capacity, initial provisioned capacity values must be set. The initial provisioned capacity values are estimated based on the consumed read and write capacity of your table and global secondary indexes over the past 30 minutes.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for
-        /// predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code>
-        /// for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode
-        /// to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p>
-        /// </li>
+        /// <li> <p> <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p> </li>
+        /// <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p> </li>
         /// </ul>
         pub fn billing_mode(mut self, input: crate::model::BillingMode) -> Self {
             self.billing_mode = Some(input);
             self
         }
-        /// <p>Controls how you are charged for read and write throughput and how you manage
-        /// capacity. When switching from pay-per-request to provisioned capacity, initial
-        /// provisioned capacity values must be set. The initial provisioned capacity values are
-        /// estimated based on the consumed read and write capacity of your table and global
-        /// secondary indexes over the past 30 minutes.</p>
+        /// <p>Controls how you are charged for read and write throughput and how you manage capacity. When switching from pay-per-request to provisioned capacity, initial provisioned capacity values must be set. The initial provisioned capacity values are estimated based on the consumed read and write capacity of your table and global secondary indexes over the past 30 minutes.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for
-        /// predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code>
-        /// for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode
-        /// to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p>
-        /// </li>
+        /// <li> <p> <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p> </li>
+        /// <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p> </li>
         /// </ul>
         pub fn set_billing_mode(
             mut self,
@@ -13672,59 +10979,31 @@ pub mod update_table_input {
         ///
         /// To override the contents of this collection use [`set_global_secondary_index_updates`](Self::set_global_secondary_index_updates).
         ///
-        /// <p>An array of one or more global secondary indexes for the table. For each index in the
-        /// array, you can request one action:</p>
+        /// <p>An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Create</code> - add a new global secondary index to the table.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Update</code> - modify the provisioned throughput settings of an existing
-        /// global secondary index.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Delete</code> - remove a global secondary index from the table.</p>
-        /// </li>
+        /// <li> <p> <code>Create</code> - add a new global secondary index to the table.</p> </li>
+        /// <li> <p> <code>Update</code> - modify the provisioned throughput settings of an existing global secondary index.</p> </li>
+        /// <li> <p> <code>Delete</code> - remove a global secondary index from the table.</p> </li>
         /// </ul>
-        /// <p>You can create or delete only one global secondary index per <code>UpdateTable</code>
-        /// operation.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global
-        /// Secondary Indexes</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>. </p>
+        /// <p>You can create or delete only one global secondary index per <code>UpdateTable</code> operation.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
         pub fn global_secondary_index_updates(
             mut self,
-            input: impl Into<crate::model::GlobalSecondaryIndexUpdate>,
+            input: crate::model::GlobalSecondaryIndexUpdate,
         ) -> Self {
             let mut v = self.global_secondary_index_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.global_secondary_index_updates = Some(v);
             self
         }
-        /// <p>An array of one or more global secondary indexes for the table. For each index in the
-        /// array, you can request one action:</p>
+        /// <p>An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Create</code> - add a new global secondary index to the table.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Update</code> - modify the provisioned throughput settings of an existing
-        /// global secondary index.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Delete</code> - remove a global secondary index from the table.</p>
-        /// </li>
+        /// <li> <p> <code>Create</code> - add a new global secondary index to the table.</p> </li>
+        /// <li> <p> <code>Update</code> - modify the provisioned throughput settings of an existing global secondary index.</p> </li>
+        /// <li> <p> <code>Delete</code> - remove a global secondary index from the table.</p> </li>
         /// </ul>
-        /// <p>You can create or delete only one global secondary index per <code>UpdateTable</code>
-        /// operation.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global
-        /// Secondary Indexes</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>. </p>
+        /// <p>You can create or delete only one global secondary index per <code>UpdateTable</code> operation.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
         pub fn set_global_secondary_index_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndexUpdate>>,
@@ -13732,21 +11011,15 @@ pub mod update_table_input {
             self.global_secondary_index_updates = input;
             self
         }
-        /// <p>Represents the DynamoDB Streams configuration for the table.</p>
-        /// <note>
-        /// <p>You receive a <code>ResourceInUseException</code> if you try to enable a stream on
-        /// a table that already has a stream, or if you try to disable a stream on a table that
-        /// doesn't have a stream.</p>
+        /// <p>Represents the DynamoDB Streams configuration for the table.</p> <note>
+        /// <p>You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn't have a stream.</p>
         /// </note>
         pub fn stream_specification(mut self, input: crate::model::StreamSpecification) -> Self {
             self.stream_specification = Some(input);
             self
         }
-        /// <p>Represents the DynamoDB Streams configuration for the table.</p>
-        /// <note>
-        /// <p>You receive a <code>ResourceInUseException</code> if you try to enable a stream on
-        /// a table that already has a stream, or if you try to disable a stream on a table that
-        /// doesn't have a stream.</p>
+        /// <p>Represents the DynamoDB Streams configuration for the table.</p> <note>
+        /// <p>You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn't have a stream.</p>
         /// </note>
         pub fn set_stream_specification(
             mut self,
@@ -13772,24 +11045,17 @@ pub mod update_table_input {
         ///
         /// To override the contents of this collection use [`set_replica_updates`](Self::set_replica_updates).
         ///
-        /// <p>A list of replica update actions (create, delete, or update) for the table.</p>
-        /// <note>
-        /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21</a> of global tables.</p>
+        /// <p>A list of replica update actions (create, delete, or update) for the table.</p> <note>
+        /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21</a> of global tables.</p>
         /// </note>
-        pub fn replica_updates(
-            mut self,
-            input: impl Into<crate::model::ReplicationGroupUpdate>,
-        ) -> Self {
+        pub fn replica_updates(mut self, input: crate::model::ReplicationGroupUpdate) -> Self {
             let mut v = self.replica_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replica_updates = Some(v);
             self
         }
-        /// <p>A list of replica update actions (create, delete, or update) for the table.</p>
-        /// <note>
-        /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21</a> of global tables.</p>
+        /// <p>A list of replica update actions (create, delete, or update) for the table.</p> <note>
+        /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21</a> of global tables.</p>
         /// </note>
         pub fn set_replica_updates(
             mut self,
@@ -13798,14 +11064,12 @@ pub mod update_table_input {
             self.replica_updates = input;
             self
         }
-        /// <p>The table class of the table to be updated. Valid values are <code>STANDARD</code> and
-        /// <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+        /// <p>The table class of the table to be updated. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
         pub fn table_class(mut self, input: crate::model::TableClass) -> Self {
             self.table_class = Some(input);
             self
         }
-        /// <p>The table class of the table to be updated. Valid values are <code>STANDARD</code> and
-        /// <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+        /// <p>The table class of the table to be updated. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
         pub fn set_table_class(
             mut self,
             input: std::option::Option<crate::model::TableClass>,
@@ -13837,7 +11101,7 @@ pub mod update_table_input {
 #[doc(hidden)]
 pub type UpdateTableInputOperationOutputAlias = crate::operation::UpdateTable;
 #[doc(hidden)]
-pub type UpdateTableInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTableInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTable`](crate::operation::UpdateTable)>
     #[allow(clippy::let_and_return)]
@@ -13848,7 +11112,7 @@ impl UpdateTableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTable,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13932,7 +11196,7 @@ impl UpdateTableInput {
             "UpdateTable",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13974,19 +11238,17 @@ pub mod update_table_replica_auto_scaling_input {
         ///
         /// To override the contents of this collection use [`set_global_secondary_index_updates`](Self::set_global_secondary_index_updates).
         ///
-        /// <p>Represents the auto scaling settings of the global secondary indexes of the replica to
-        /// be updated.</p>
+        /// <p>Represents the auto scaling settings of the global secondary indexes of the replica to be updated.</p>
         pub fn global_secondary_index_updates(
             mut self,
-            input: impl Into<crate::model::GlobalSecondaryIndexAutoScalingUpdate>,
+            input: crate::model::GlobalSecondaryIndexAutoScalingUpdate,
         ) -> Self {
             let mut v = self.global_secondary_index_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.global_secondary_index_updates = Some(v);
             self
         }
-        /// <p>Represents the auto scaling settings of the global secondary indexes of the replica to
-        /// be updated.</p>
+        /// <p>Represents the auto scaling settings of the global secondary indexes of the replica to be updated.</p>
         pub fn set_global_secondary_index_updates(
             mut self,
             input: std::option::Option<
@@ -14006,8 +11268,7 @@ pub mod update_table_replica_auto_scaling_input {
             self.table_name = input;
             self
         }
-        /// <p>Represents the auto scaling settings to be modified for a global table or global
-        /// secondary index.</p>
+        /// <p>Represents the auto scaling settings to be modified for a global table or global secondary index.</p>
         pub fn provisioned_write_capacity_auto_scaling_update(
             mut self,
             input: crate::model::AutoScalingSettingsUpdate,
@@ -14015,8 +11276,7 @@ pub mod update_table_replica_auto_scaling_input {
             self.provisioned_write_capacity_auto_scaling_update = Some(input);
             self
         }
-        /// <p>Represents the auto scaling settings to be modified for a global table or global
-        /// secondary index.</p>
+        /// <p>Represents the auto scaling settings to be modified for a global table or global secondary index.</p>
         pub fn set_provisioned_write_capacity_auto_scaling_update(
             mut self,
             input: std::option::Option<crate::model::AutoScalingSettingsUpdate>,
@@ -14028,19 +11288,14 @@ pub mod update_table_replica_auto_scaling_input {
         ///
         /// To override the contents of this collection use [`set_replica_updates`](Self::set_replica_updates).
         ///
-        /// <p>Represents the auto scaling settings of replicas of the table that will be
-        /// modified.</p>
-        pub fn replica_updates(
-            mut self,
-            input: impl Into<crate::model::ReplicaAutoScalingUpdate>,
-        ) -> Self {
+        /// <p>Represents the auto scaling settings of replicas of the table that will be modified.</p>
+        pub fn replica_updates(mut self, input: crate::model::ReplicaAutoScalingUpdate) -> Self {
             let mut v = self.replica_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replica_updates = Some(v);
             self
         }
-        /// <p>Represents the auto scaling settings of replicas of the table that will be
-        /// modified.</p>
+        /// <p>Represents the auto scaling settings of replicas of the table that will be modified.</p>
         pub fn set_replica_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReplicaAutoScalingUpdate>>,
@@ -14069,7 +11324,8 @@ pub mod update_table_replica_auto_scaling_input {
 pub type UpdateTableReplicaAutoScalingInputOperationOutputAlias =
     crate::operation::UpdateTableReplicaAutoScaling;
 #[doc(hidden)]
-pub type UpdateTableReplicaAutoScalingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateTableReplicaAutoScalingInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTableReplicaAutoScalingInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTableReplicaAutoScaling`](crate::operation::UpdateTableReplicaAutoScaling)>
     #[allow(clippy::let_and_return)]
@@ -14080,7 +11336,7 @@ impl UpdateTableReplicaAutoScalingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTableReplicaAutoScaling,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14166,7 +11422,7 @@ impl UpdateTableReplicaAutoScalingInput {
             "UpdateTableReplicaAutoScaling",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14210,8 +11466,7 @@ pub mod update_time_to_live_input {
             self.table_name = input;
             self
         }
-        /// <p>Represents the settings used to enable or disable Time to Live for the specified
-        /// table.</p>
+        /// <p>Represents the settings used to enable or disable Time to Live for the specified table.</p>
         pub fn time_to_live_specification(
             mut self,
             input: crate::model::TimeToLiveSpecification,
@@ -14219,8 +11474,7 @@ pub mod update_time_to_live_input {
             self.time_to_live_specification = Some(input);
             self
         }
-        /// <p>Represents the settings used to enable or disable Time to Live for the specified
-        /// table.</p>
+        /// <p>Represents the settings used to enable or disable Time to Live for the specified table.</p>
         pub fn set_time_to_live_specification(
             mut self,
             input: std::option::Option<crate::model::TimeToLiveSpecification>,
@@ -14245,7 +11499,7 @@ pub mod update_time_to_live_input {
 #[doc(hidden)]
 pub type UpdateTimeToLiveInputOperationOutputAlias = crate::operation::UpdateTimeToLive;
 #[doc(hidden)]
-pub type UpdateTimeToLiveInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateTimeToLiveInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTimeToLiveInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTimeToLive`](crate::operation::UpdateTimeToLive)>
     #[allow(clippy::let_and_return)]
@@ -14256,7 +11510,7 @@ impl UpdateTimeToLiveInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTimeToLive,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14341,7 +11595,7 @@ impl UpdateTimeToLiveInput {
             "UpdateTimeToLive",
             "dynamodb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14370,8 +11624,7 @@ impl UpdateTimeToLiveInput {
 pub struct UpdateTimeToLiveInput {
     /// <p>The name of the table to be configured.</p>
     pub table_name: std::option::Option<std::string::String>,
-    /// <p>Represents the settings used to enable or disable Time to Live for the specified
-    /// table.</p>
+    /// <p>Represents the settings used to enable or disable Time to Live for the specified table.</p>
     pub time_to_live_specification: std::option::Option<crate::model::TimeToLiveSpecification>,
 }
 impl UpdateTimeToLiveInput {
@@ -14379,8 +11632,7 @@ impl UpdateTimeToLiveInput {
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
-    /// <p>Represents the settings used to enable or disable Time to Live for the specified
-    /// table.</p>
+    /// <p>Represents the settings used to enable or disable Time to Live for the specified table.</p>
     pub fn time_to_live_specification(
         &self,
     ) -> std::option::Option<&crate::model::TimeToLiveSpecification> {
@@ -14403,23 +11655,19 @@ impl std::fmt::Debug for UpdateTimeToLiveInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTableReplicaAutoScalingInput {
-    /// <p>Represents the auto scaling settings of the global secondary indexes of the replica to
-    /// be updated.</p>
+    /// <p>Represents the auto scaling settings of the global secondary indexes of the replica to be updated.</p>
     pub global_secondary_index_updates:
         std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndexAutoScalingUpdate>>,
     /// <p>The name of the global table to be updated.</p>
     pub table_name: std::option::Option<std::string::String>,
-    /// <p>Represents the auto scaling settings to be modified for a global table or global
-    /// secondary index.</p>
+    /// <p>Represents the auto scaling settings to be modified for a global table or global secondary index.</p>
     pub provisioned_write_capacity_auto_scaling_update:
         std::option::Option<crate::model::AutoScalingSettingsUpdate>,
-    /// <p>Represents the auto scaling settings of replicas of the table that will be
-    /// modified.</p>
+    /// <p>Represents the auto scaling settings of replicas of the table that will be modified.</p>
     pub replica_updates: std::option::Option<std::vec::Vec<crate::model::ReplicaAutoScalingUpdate>>,
 }
 impl UpdateTableReplicaAutoScalingInput {
-    /// <p>Represents the auto scaling settings of the global secondary indexes of the replica to
-    /// be updated.</p>
+    /// <p>Represents the auto scaling settings of the global secondary indexes of the replica to be updated.</p>
     pub fn global_secondary_index_updates(
         &self,
     ) -> std::option::Option<&[crate::model::GlobalSecondaryIndexAutoScalingUpdate]> {
@@ -14429,15 +11677,13 @@ impl UpdateTableReplicaAutoScalingInput {
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
-    /// <p>Represents the auto scaling settings to be modified for a global table or global
-    /// secondary index.</p>
+    /// <p>Represents the auto scaling settings to be modified for a global table or global secondary index.</p>
     pub fn provisioned_write_capacity_auto_scaling_update(
         &self,
     ) -> std::option::Option<&crate::model::AutoScalingSettingsUpdate> {
         self.provisioned_write_capacity_auto_scaling_update.as_ref()
     }
-    /// <p>Represents the auto scaling settings of replicas of the table that will be
-    /// modified.</p>
+    /// <p>Represents the auto scaling settings of replicas of the table that will be modified.</p>
     pub fn replica_updates(
         &self,
     ) -> std::option::Option<&[crate::model::ReplicaAutoScalingUpdate]> {
@@ -14465,81 +11711,44 @@ impl std::fmt::Debug for UpdateTableReplicaAutoScalingInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTableInput {
-    /// <p>An array of attributes that describe the key schema for the table and indexes. If you
-    /// are adding a new global secondary index to the table, <code>AttributeDefinitions</code>
-    /// must include the key element(s) of the new index.</p>
+    /// <p>An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, <code>AttributeDefinitions</code> must include the key element(s) of the new index.</p>
     pub attribute_definitions:
         std::option::Option<std::vec::Vec<crate::model::AttributeDefinition>>,
     /// <p>The name of the table to be updated.</p>
     pub table_name: std::option::Option<std::string::String>,
-    /// <p>Controls how you are charged for read and write throughput and how you manage
-    /// capacity. When switching from pay-per-request to provisioned capacity, initial
-    /// provisioned capacity values must be set. The initial provisioned capacity values are
-    /// estimated based on the consumed read and write capacity of your table and global
-    /// secondary indexes over the past 30 minutes.</p>
+    /// <p>Controls how you are charged for read and write throughput and how you manage capacity. When switching from pay-per-request to provisioned capacity, initial provisioned capacity values must be set. The initial provisioned capacity values are estimated based on the consumed read and write capacity of your table and global secondary indexes over the past 30 minutes.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for
-    /// predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code>
-    /// for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode
-    /// to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p>
-    /// </li>
+    /// <li> <p> <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p> </li>
+    /// <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p> </li>
     /// </ul>
     pub billing_mode: std::option::Option<crate::model::BillingMode>,
     /// <p>The new provisioned throughput settings for the specified table or index.</p>
     pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
-    /// <p>An array of one or more global secondary indexes for the table. For each index in the
-    /// array, you can request one action:</p>
+    /// <p>An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Create</code> - add a new global secondary index to the table.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Update</code> - modify the provisioned throughput settings of an existing
-    /// global secondary index.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Delete</code> - remove a global secondary index from the table.</p>
-    /// </li>
+    /// <li> <p> <code>Create</code> - add a new global secondary index to the table.</p> </li>
+    /// <li> <p> <code>Update</code> - modify the provisioned throughput settings of an existing global secondary index.</p> </li>
+    /// <li> <p> <code>Delete</code> - remove a global secondary index from the table.</p> </li>
     /// </ul>
-    /// <p>You can create or delete only one global secondary index per <code>UpdateTable</code>
-    /// operation.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global
-    /// Secondary Indexes</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>. </p>
+    /// <p>You can create or delete only one global secondary index per <code>UpdateTable</code> operation.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
     pub global_secondary_index_updates:
         std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndexUpdate>>,
-    /// <p>Represents the DynamoDB Streams configuration for the table.</p>
-    /// <note>
-    /// <p>You receive a <code>ResourceInUseException</code> if you try to enable a stream on
-    /// a table that already has a stream, or if you try to disable a stream on a table that
-    /// doesn't have a stream.</p>
+    /// <p>Represents the DynamoDB Streams configuration for the table.</p> <note>
+    /// <p>You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn't have a stream.</p>
     /// </note>
     pub stream_specification: std::option::Option<crate::model::StreamSpecification>,
     /// <p>The new server-side encryption settings for the specified table.</p>
     pub sse_specification: std::option::Option<crate::model::SseSpecification>,
-    /// <p>A list of replica update actions (create, delete, or update) for the table.</p>
-    /// <note>
-    /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-    /// 2019.11.21</a> of global tables.</p>
+    /// <p>A list of replica update actions (create, delete, or update) for the table.</p> <note>
+    /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21</a> of global tables.</p>
     /// </note>
     pub replica_updates: std::option::Option<std::vec::Vec<crate::model::ReplicationGroupUpdate>>,
-    /// <p>The table class of the table to be updated. Valid values are <code>STANDARD</code> and
-    /// <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+    /// <p>The table class of the table to be updated. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
     pub table_class: std::option::Option<crate::model::TableClass>,
 }
 impl UpdateTableInput {
-    /// <p>An array of attributes that describe the key schema for the table and indexes. If you
-    /// are adding a new global secondary index to the table, <code>AttributeDefinitions</code>
-    /// must include the key element(s) of the new index.</p>
+    /// <p>An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, <code>AttributeDefinitions</code> must include the key element(s) of the new index.</p>
     pub fn attribute_definitions(
         &self,
     ) -> std::option::Option<&[crate::model::AttributeDefinition]> {
@@ -14549,23 +11758,10 @@ impl UpdateTableInput {
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
-    /// <p>Controls how you are charged for read and write throughput and how you manage
-    /// capacity. When switching from pay-per-request to provisioned capacity, initial
-    /// provisioned capacity values must be set. The initial provisioned capacity values are
-    /// estimated based on the consumed read and write capacity of your table and global
-    /// secondary indexes over the past 30 minutes.</p>
+    /// <p>Controls how you are charged for read and write throughput and how you manage capacity. When switching from pay-per-request to provisioned capacity, initial provisioned capacity values must be set. The initial provisioned capacity values are estimated based on the consumed read and write capacity of your table and global secondary indexes over the past 30 minutes.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for
-    /// predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code>
-    /// for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode
-    /// to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p>
-    /// </li>
+    /// <li> <p> <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p> </li>
+    /// <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p> </li>
     /// </ul>
     pub fn billing_mode(&self) -> std::option::Option<&crate::model::BillingMode> {
         self.billing_mode.as_ref()
@@ -14576,38 +11772,21 @@ impl UpdateTableInput {
     ) -> std::option::Option<&crate::model::ProvisionedThroughput> {
         self.provisioned_throughput.as_ref()
     }
-    /// <p>An array of one or more global secondary indexes for the table. For each index in the
-    /// array, you can request one action:</p>
+    /// <p>An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Create</code> - add a new global secondary index to the table.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Update</code> - modify the provisioned throughput settings of an existing
-    /// global secondary index.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Delete</code> - remove a global secondary index from the table.</p>
-    /// </li>
+    /// <li> <p> <code>Create</code> - add a new global secondary index to the table.</p> </li>
+    /// <li> <p> <code>Update</code> - modify the provisioned throughput settings of an existing global secondary index.</p> </li>
+    /// <li> <p> <code>Delete</code> - remove a global secondary index from the table.</p> </li>
     /// </ul>
-    /// <p>You can create or delete only one global secondary index per <code>UpdateTable</code>
-    /// operation.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global
-    /// Secondary Indexes</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>. </p>
+    /// <p>You can create or delete only one global secondary index per <code>UpdateTable</code> operation.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
     pub fn global_secondary_index_updates(
         &self,
     ) -> std::option::Option<&[crate::model::GlobalSecondaryIndexUpdate]> {
         self.global_secondary_index_updates.as_deref()
     }
-    /// <p>Represents the DynamoDB Streams configuration for the table.</p>
-    /// <note>
-    /// <p>You receive a <code>ResourceInUseException</code> if you try to enable a stream on
-    /// a table that already has a stream, or if you try to disable a stream on a table that
-    /// doesn't have a stream.</p>
+    /// <p>Represents the DynamoDB Streams configuration for the table.</p> <note>
+    /// <p>You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn't have a stream.</p>
     /// </note>
     pub fn stream_specification(&self) -> std::option::Option<&crate::model::StreamSpecification> {
         self.stream_specification.as_ref()
@@ -14616,16 +11795,13 @@ impl UpdateTableInput {
     pub fn sse_specification(&self) -> std::option::Option<&crate::model::SseSpecification> {
         self.sse_specification.as_ref()
     }
-    /// <p>A list of replica update actions (create, delete, or update) for the table.</p>
-    /// <note>
-    /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-    /// 2019.11.21</a> of global tables.</p>
+    /// <p>A list of replica update actions (create, delete, or update) for the table.</p> <note>
+    /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21</a> of global tables.</p>
     /// </note>
     pub fn replica_updates(&self) -> std::option::Option<&[crate::model::ReplicationGroupUpdate]> {
         self.replica_updates.as_deref()
     }
-    /// <p>The table class of the table to be updated. Valid values are <code>STANDARD</code> and
-    /// <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+    /// <p>The table class of the table to be updated. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
     pub fn table_class(&self) -> std::option::Option<&crate::model::TableClass> {
         self.table_class.as_ref()
     }
@@ -14655,299 +11831,108 @@ impl std::fmt::Debug for UpdateTableInput {
 pub struct UpdateItemInput {
     /// <p>The name of the table containing the item to update.</p>
     pub table_name: std::option::Option<std::string::String>,
-    /// <p>The primary key of the item to be updated. Each element consists of an attribute name
-    /// and a value for that attribute.</p>
-    /// <p>For the primary key, you must provide all of the attributes. For example, with a
-    /// simple primary key, you only need to provide a value for the partition key. For a
-    /// composite primary key, you must provide values for both the partition key and the sort
-    /// key.</p>
+    /// <p>The primary key of the item to be updated. Each element consists of an attribute name and a value for that attribute.</p>
+    /// <p>For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</p>
     pub key: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
-    /// <p>This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub attribute_updates: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValueUpdate>,
     >,
-    /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub expected: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ExpectedAttributeValue>,
     >,
-    /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub conditional_operator: std::option::Option<crate::model::ConditionalOperator>,
-    /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appear
-    /// before or after they are updated. For <code>UpdateItem</code>, the valid values
-    /// are:</p>
+    /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they are updated. For <code>UpdateItem</code>, the valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its
-    /// value is <code>NONE</code>, then nothing is returned. (This setting is the
-    /// default for <code>ReturnValues</code>.)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALL_OLD</code> - Returns all of the attributes of the item, as they
-    /// appeared before the UpdateItem operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared
-    /// before the UpdateItem operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear
-    /// after the UpdateItem operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear
-    /// after the UpdateItem operation.</p>
-    /// </li>
+    /// <li> <p> <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <code>ReturnValues</code>.)</p> </li>
+    /// <li> <p> <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem operation.</p> </li>
+    /// <li> <p> <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem operation.</p> </li>
+    /// <li> <p> <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem operation.</p> </li>
+    /// <li> <p> <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem operation.</p> </li>
     /// </ul>
-    /// <p>There is no additional cost associated with requesting a return value aside from the
-    /// small network and processing overhead of receiving a larger response. No read capacity
-    /// units are consumed.</p>
+    /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>
     /// <p>The values returned are strongly consistent.</p>
     pub return_values: std::option::Option<crate::model::ReturnValue>,
-    /// <p>Determines the level of detail about either provisioned or on-demand throughput
-    /// consumption that is returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INDEXES</code> - The response includes the aggregate
-    /// <code>ConsumedCapacity</code> for the operation, together with
-    /// <code>ConsumedCapacity</code> for each table and secondary index that was
-    /// accessed.</p>
-    /// <p>Note that some operations, such as <code>GetItem</code> and
-    /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-    /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-    /// information for table(s).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TOTAL</code> - The response includes only the aggregate
-    /// <code>ConsumedCapacity</code> for the operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-    /// response.</p>
-    /// </li>
+    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
     pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
-    /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>,
-    /// the response includes statistics about item collections, if any, that were modified
-    /// during the operation are returned in the response. If set to <code>NONE</code> (the
-    /// default), no statistics are returned.</p>
+    /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
     pub return_item_collection_metrics:
         std::option::Option<crate::model::ReturnItemCollectionMetrics>,
-    /// <p>An expression that defines one or more attributes to be updated, the action to be
-    /// performed on them, and new values for them.</p>
+    /// <p>An expression that defines one or more attributes to be updated, the action to be performed on them, and new values for them.</p>
     /// <p>The following action values are available for <code>UpdateExpression</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SET</code> - Adds one or more attributes and values to an item. If any of
-    /// these attributes already exist, they are replaced by the new values. You can
-    /// also use <code>SET</code> to add or subtract from an attribute that is of type
-    /// Number. For example: <code>SET myNum = myNum + :val</code>
-    /// </p>
-    /// <p>
-    /// <code>SET</code> supports the following functions:</p>
+    /// <li> <p> <code>SET</code> - Adds one or more attributes and values to an item. If any of these attributes already exist, they are replaced by the new values. You can also use <code>SET</code> to add or subtract from an attribute that is of type Number. For example: <code>SET myNum = myNum + :val</code> </p> <p> <code>SET</code> supports the following functions:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>if_not_exists (path, operand)</code> - if the item does not
-    /// contain an attribute at the specified path, then
-    /// <code>if_not_exists</code> evaluates to operand; otherwise, it
-    /// evaluates to path. You can use this function to avoid overwriting an
-    /// attribute that may already be present in the item.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>list_append (operand, operand)</code> - evaluates to a list with a
-    /// new element added to it. You can append the new element to the start or
-    /// the end of the list by reversing the order of the operands.</p>
-    /// </li>
-    /// </ul>
-    /// <p>These function names are case-sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>REMOVE</code> - Removes one or more attributes from an item.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ADD</code> - Adds the specified value to the item, if the attribute does
-    /// not already exist. If the attribute does exist, then the behavior of
-    /// <code>ADD</code> depends on the data type of the attribute:</p>
+    /// <li> <p> <code>if_not_exists (path, operand)</code> - if the item does not contain an attribute at the specified path, then <code>if_not_exists</code> evaluates to operand; otherwise, it evaluates to path. You can use this function to avoid overwriting an attribute that may already be present in the item.</p> </li>
+    /// <li> <p> <code>list_append (operand, operand)</code> - evaluates to a list with a new element added to it. You can append the new element to the start or the end of the list by reversing the order of the operands.</p> </li>
+    /// </ul> <p>These function names are case-sensitive.</p> </li>
+    /// <li> <p> <code>REMOVE</code> - Removes one or more attributes from an item.</p> </li>
+    /// <li> <p> <code>ADD</code> - Adds the specified value to the item, if the attribute does not already exist. If the attribute does exist, then the behavior of <code>ADD</code> depends on the data type of the attribute:</p>
     /// <ul>
-    /// <li>
-    /// <p>If the existing attribute is a number, and if <code>Value</code> is
-    /// also a number, then <code>Value</code> is mathematically added to the
-    /// existing attribute. If <code>Value</code> is a negative number, then it
-    /// is subtracted from the existing attribute.</p>
-    /// <note>
-    /// <p>If you use <code>ADD</code> to increment or decrement a number
-    /// value for an item that doesn't exist before the update, DynamoDB
-    /// uses <code>0</code> as the initial value.</p>
-    /// <p>Similarly, if you use <code>ADD</code> for an existing item to
-    /// increment or decrement an attribute value that doesn't exist before
-    /// the update, DynamoDB uses <code>0</code> as the initial value. For
-    /// example, suppose that the item you want to update doesn't have an
-    /// attribute named <code>itemcount</code>, but you decide to
-    /// <code>ADD</code> the number <code>3</code> to this attribute
-    /// anyway. DynamoDB will create the <code>itemcount</code> attribute,
-    /// set its initial value to <code>0</code>, and finally add
-    /// <code>3</code> to it. The result will be a new
-    /// <code>itemcount</code> attribute in the item, with a value of
-    /// <code>3</code>.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>If the existing data type is a set and if <code>Value</code> is also a
-    /// set, then <code>Value</code> is added to the existing set. For example,
-    /// if the attribute value is the set <code>[1,2]</code>, and the
-    /// <code>ADD</code> action specified <code>[3]</code>, then the final
-    /// attribute value is <code>[1,2,3]</code>. An error occurs if an
-    /// <code>ADD</code> action is specified for a set attribute and the
-    /// attribute type specified does not match the existing set type. </p>
-    /// <p>Both sets must have the same primitive data type. For example, if the
-    /// existing data type is a set of strings, the <code>Value</code> must also
-    /// be a set of strings.</p>
-    /// </li>
+    /// <li> <p>If the existing attribute is a number, and if <code>Value</code> is also a number, then <code>Value</code> is mathematically added to the existing attribute. If <code>Value</code> is a negative number, then it is subtracted from the existing attribute.</p> <note>
+    /// <p>If you use <code>ADD</code> to increment or decrement a number value for an item that doesn't exist before the update, DynamoDB uses <code>0</code> as the initial value.</p>
+    /// <p>Similarly, if you use <code>ADD</code> for an existing item to increment or decrement an attribute value that doesn't exist before the update, DynamoDB uses <code>0</code> as the initial value. For example, suppose that the item you want to update doesn't have an attribute named <code>itemcount</code>, but you decide to <code>ADD</code> the number <code>3</code> to this attribute anyway. DynamoDB will create the <code>itemcount</code> attribute, set its initial value to <code>0</code>, and finally add <code>3</code> to it. The result will be a new <code>itemcount</code> attribute in the item, with a value of <code>3</code>.</p>
+    /// </note> </li>
+    /// <li> <p>If the existing data type is a set and if <code>Value</code> is also a set, then <code>Value</code> is added to the existing set. For example, if the attribute value is the set <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>, then the final attribute value is <code>[1,2,3]</code>. An error occurs if an <code>ADD</code> action is specified for a set attribute and the attribute type specified does not match the existing set type. </p> <p>Both sets must have the same primitive data type. For example, if the existing data type is a set of strings, the <code>Value</code> must also be a set of strings.</p> </li>
+    /// </ul> <important>
+    /// <p>The <code>ADD</code> action only supports Number and set data types. In addition, <code>ADD</code> can only be used on top-level attributes, not nested attributes.</p>
+    /// </important> </li>
+    /// <li> <p> <code>DELETE</code> - Deletes an element from a set.</p> <p>If a set of values is specified, then those values are subtracted from the old set. For example, if the attribute value was the set <code>[a,b,c]</code> and the <code>DELETE</code> action specifies <code>[a,c]</code>, then the final attribute value is <code>[b]</code>. Specifying an empty set is an error.</p> <important>
+    /// <p>The <code>DELETE</code> action only supports set data types. In addition, <code>DELETE</code> can only be used on top-level attributes, not nested attributes.</p>
+    /// </important> </li>
     /// </ul>
-    /// <important>
-    /// <p>The <code>ADD</code> action only supports Number and set data types. In
-    /// addition, <code>ADD</code> can only be used on top-level attributes, not
-    /// nested attributes.</p>
-    /// </important>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE</code> - Deletes an element from a set.</p>
-    /// <p>If a set of values is specified, then those values are subtracted from the old
-    /// set. For example, if the attribute value was the set <code>[a,b,c]</code> and
-    /// the <code>DELETE</code> action specifies <code>[a,c]</code>, then the final
-    /// attribute value is <code>[b]</code>. Specifying an empty set is an error.</p>
-    /// <important>
-    /// <p>The <code>DELETE</code> action only supports set data types. In addition,
-    /// <code>DELETE</code> can only be used on top-level attributes, not nested
-    /// attributes.</p>
-    /// </important>
-    ///
-    /// </li>
-    /// </ul>
-    /// <p>You can have many actions in a single expression, such as the following: <code>SET
-    /// a=:value1, b=:value2 DELETE :value3, :value4, :value5</code>
-    /// </p>
-    /// <p>For more information on update expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying
-    /// Items and Attributes</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>You can have many actions in a single expression, such as the following: <code>SET a=:value1, b=:value2 DELETE :value3, :value4, :value5</code> </p>
+    /// <p>For more information on update expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying Items and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub update_expression: std::option::Option<std::string::String>,
-    /// <p>A condition that must be satisfied in order for a conditional update to
-    /// succeed.</p>
+    /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
     /// <p>An expression can contain any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type |
-    /// contains | begins_with | size</code>
-    /// </p>
-    /// <p>These function names are case-sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Comparison operators: <code>= | <> |
-    /// < | > | <= | >= |
-    /// BETWEEN | IN </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p> Logical operators: <code>AND | OR | NOT</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type | contains | begins_with | size</code> </p> <p>These function names are case-sensitive.</p> </li>
+    /// <li> <p>Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code> </p> </li>
+    /// <li> <p> Logical operators: <code>AND | OR | NOT</code> </p> </li>
     /// </ul>
-    /// <p>For more information about condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying Conditions</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>For more information about condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub condition_expression: std::option::Option<std::string::String>,
-    /// <p>One or more substitution tokens for attribute names in an expression. The following
-    /// are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+    /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
-    /// word.</p>
-    /// </li>
-    /// <li>
-    /// <p>To create a placeholder for repeating occurrences of an attribute name in an
-    /// expression.</p>
-    /// </li>
-    /// <li>
-    /// <p>To prevent special characters in an attribute name from being misinterpreted
-    /// in an expression.</p>
-    /// </li>
+    /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
+    /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
+    /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
     /// </ul>
-    /// <p>Use the <b>#</b> character in an expression to dereference
-    /// an attribute name. For example, consider the following attribute name:</p>
+    /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Percentile</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Percentile</code> </p> </li>
     /// </ul>
-    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used
-    /// directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.) To work around this, you could specify the following for
-    /// <code>ExpressionAttributeNames</code>:</p>
+    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.) To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>{"#P":"Percentile"}</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
     /// </ul>
     /// <p>You could then use this substitution in an expression, as in this example:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>#P = :val</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>Tokens that begin with the <b>:</b> character are
-    /// <i>expression attribute values</i>, which are placeholders for the
-    /// actual value at runtime.</p>
+    /// <li> <p> <code>#P = :val</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
     /// </note>
-    /// <p>For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub expression_attribute_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>One or more values that can be substituted in an expression.</p>
-    /// <p>Use the <b>:</b> (colon) character in an expression to
-    /// dereference an attribute value. For example, suppose that you wanted to check whether
-    /// the value of the <code>ProductStatus</code> attribute was one of the following: </p>
-    /// <p>
-    /// <code>Available | Backordered | Discontinued</code>
-    /// </p>
-    /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as
-    /// follows:</p>
-    /// <p>
-    /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-    /// ":disc":{"S":"Discontinued"} }</code>
-    /// </p>
+    /// <p>Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the <code>ProductStatus</code> attribute was one of the following: </p>
+    /// <p> <code>Available | Backordered | Discontinued</code> </p>
+    /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+    /// <p> <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code> </p>
     /// <p>You could then use these values in an expression, such as this:</p>
-    /// <p>
-    /// <code>ProductStatus IN (:avail, :back, :disc)</code>
-    /// </p>
-    /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p> <code>ProductStatus IN (:avail, :back, :disc)</code> </p>
+    /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub expression_attribute_values: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
@@ -14957,12 +11942,8 @@ impl UpdateItemInput {
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
-    /// <p>The primary key of the item to be updated. Each element consists of an attribute name
-    /// and a value for that attribute.</p>
-    /// <p>For the primary key, you must provide all of the attributes. For example, with a
-    /// simple primary key, you only need to provide a value for the partition key. For a
-    /// composite primary key, you must provide values for both the partition key and the sort
-    /// key.</p>
+    /// <p>The primary key of the item to be updated. Each element consists of an attribute name and a value for that attribute.</p>
+    /// <p>For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</p>
     pub fn key(
         &self,
     ) -> std::option::Option<
@@ -14970,9 +11951,7 @@ impl UpdateItemInput {
     > {
         self.key.as_ref()
     }
-    /// <p>This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn attribute_updates(
         &self,
     ) -> std::option::Option<
@@ -14980,9 +11959,7 @@ impl UpdateItemInput {
     > {
         self.attribute_updates.as_ref()
     }
-    /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn expected(
         &self,
     ) -> std::option::Option<
@@ -14990,272 +11967,100 @@ impl UpdateItemInput {
     > {
         self.expected.as_ref()
     }
-    /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn conditional_operator(&self) -> std::option::Option<&crate::model::ConditionalOperator> {
         self.conditional_operator.as_ref()
     }
-    /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appear
-    /// before or after they are updated. For <code>UpdateItem</code>, the valid values
-    /// are:</p>
+    /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they are updated. For <code>UpdateItem</code>, the valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its
-    /// value is <code>NONE</code>, then nothing is returned. (This setting is the
-    /// default for <code>ReturnValues</code>.)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALL_OLD</code> - Returns all of the attributes of the item, as they
-    /// appeared before the UpdateItem operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared
-    /// before the UpdateItem operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear
-    /// after the UpdateItem operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear
-    /// after the UpdateItem operation.</p>
-    /// </li>
+    /// <li> <p> <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <code>ReturnValues</code>.)</p> </li>
+    /// <li> <p> <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem operation.</p> </li>
+    /// <li> <p> <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem operation.</p> </li>
+    /// <li> <p> <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem operation.</p> </li>
+    /// <li> <p> <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem operation.</p> </li>
     /// </ul>
-    /// <p>There is no additional cost associated with requesting a return value aside from the
-    /// small network and processing overhead of receiving a larger response. No read capacity
-    /// units are consumed.</p>
+    /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>
     /// <p>The values returned are strongly consistent.</p>
     pub fn return_values(&self) -> std::option::Option<&crate::model::ReturnValue> {
         self.return_values.as_ref()
     }
-    /// <p>Determines the level of detail about either provisioned or on-demand throughput
-    /// consumption that is returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INDEXES</code> - The response includes the aggregate
-    /// <code>ConsumedCapacity</code> for the operation, together with
-    /// <code>ConsumedCapacity</code> for each table and secondary index that was
-    /// accessed.</p>
-    /// <p>Note that some operations, such as <code>GetItem</code> and
-    /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-    /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-    /// information for table(s).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TOTAL</code> - The response includes only the aggregate
-    /// <code>ConsumedCapacity</code> for the operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-    /// response.</p>
-    /// </li>
+    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
     pub fn return_consumed_capacity(
         &self,
     ) -> std::option::Option<&crate::model::ReturnConsumedCapacity> {
         self.return_consumed_capacity.as_ref()
     }
-    /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>,
-    /// the response includes statistics about item collections, if any, that were modified
-    /// during the operation are returned in the response. If set to <code>NONE</code> (the
-    /// default), no statistics are returned.</p>
+    /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
     pub fn return_item_collection_metrics(
         &self,
     ) -> std::option::Option<&crate::model::ReturnItemCollectionMetrics> {
         self.return_item_collection_metrics.as_ref()
     }
-    /// <p>An expression that defines one or more attributes to be updated, the action to be
-    /// performed on them, and new values for them.</p>
+    /// <p>An expression that defines one or more attributes to be updated, the action to be performed on them, and new values for them.</p>
     /// <p>The following action values are available for <code>UpdateExpression</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SET</code> - Adds one or more attributes and values to an item. If any of
-    /// these attributes already exist, they are replaced by the new values. You can
-    /// also use <code>SET</code> to add or subtract from an attribute that is of type
-    /// Number. For example: <code>SET myNum = myNum + :val</code>
-    /// </p>
-    /// <p>
-    /// <code>SET</code> supports the following functions:</p>
+    /// <li> <p> <code>SET</code> - Adds one or more attributes and values to an item. If any of these attributes already exist, they are replaced by the new values. You can also use <code>SET</code> to add or subtract from an attribute that is of type Number. For example: <code>SET myNum = myNum + :val</code> </p> <p> <code>SET</code> supports the following functions:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>if_not_exists (path, operand)</code> - if the item does not
-    /// contain an attribute at the specified path, then
-    /// <code>if_not_exists</code> evaluates to operand; otherwise, it
-    /// evaluates to path. You can use this function to avoid overwriting an
-    /// attribute that may already be present in the item.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>list_append (operand, operand)</code> - evaluates to a list with a
-    /// new element added to it. You can append the new element to the start or
-    /// the end of the list by reversing the order of the operands.</p>
-    /// </li>
-    /// </ul>
-    /// <p>These function names are case-sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>REMOVE</code> - Removes one or more attributes from an item.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ADD</code> - Adds the specified value to the item, if the attribute does
-    /// not already exist. If the attribute does exist, then the behavior of
-    /// <code>ADD</code> depends on the data type of the attribute:</p>
+    /// <li> <p> <code>if_not_exists (path, operand)</code> - if the item does not contain an attribute at the specified path, then <code>if_not_exists</code> evaluates to operand; otherwise, it evaluates to path. You can use this function to avoid overwriting an attribute that may already be present in the item.</p> </li>
+    /// <li> <p> <code>list_append (operand, operand)</code> - evaluates to a list with a new element added to it. You can append the new element to the start or the end of the list by reversing the order of the operands.</p> </li>
+    /// </ul> <p>These function names are case-sensitive.</p> </li>
+    /// <li> <p> <code>REMOVE</code> - Removes one or more attributes from an item.</p> </li>
+    /// <li> <p> <code>ADD</code> - Adds the specified value to the item, if the attribute does not already exist. If the attribute does exist, then the behavior of <code>ADD</code> depends on the data type of the attribute:</p>
     /// <ul>
-    /// <li>
-    /// <p>If the existing attribute is a number, and if <code>Value</code> is
-    /// also a number, then <code>Value</code> is mathematically added to the
-    /// existing attribute. If <code>Value</code> is a negative number, then it
-    /// is subtracted from the existing attribute.</p>
-    /// <note>
-    /// <p>If you use <code>ADD</code> to increment or decrement a number
-    /// value for an item that doesn't exist before the update, DynamoDB
-    /// uses <code>0</code> as the initial value.</p>
-    /// <p>Similarly, if you use <code>ADD</code> for an existing item to
-    /// increment or decrement an attribute value that doesn't exist before
-    /// the update, DynamoDB uses <code>0</code> as the initial value. For
-    /// example, suppose that the item you want to update doesn't have an
-    /// attribute named <code>itemcount</code>, but you decide to
-    /// <code>ADD</code> the number <code>3</code> to this attribute
-    /// anyway. DynamoDB will create the <code>itemcount</code> attribute,
-    /// set its initial value to <code>0</code>, and finally add
-    /// <code>3</code> to it. The result will be a new
-    /// <code>itemcount</code> attribute in the item, with a value of
-    /// <code>3</code>.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>If the existing data type is a set and if <code>Value</code> is also a
-    /// set, then <code>Value</code> is added to the existing set. For example,
-    /// if the attribute value is the set <code>[1,2]</code>, and the
-    /// <code>ADD</code> action specified <code>[3]</code>, then the final
-    /// attribute value is <code>[1,2,3]</code>. An error occurs if an
-    /// <code>ADD</code> action is specified for a set attribute and the
-    /// attribute type specified does not match the existing set type. </p>
-    /// <p>Both sets must have the same primitive data type. For example, if the
-    /// existing data type is a set of strings, the <code>Value</code> must also
-    /// be a set of strings.</p>
-    /// </li>
+    /// <li> <p>If the existing attribute is a number, and if <code>Value</code> is also a number, then <code>Value</code> is mathematically added to the existing attribute. If <code>Value</code> is a negative number, then it is subtracted from the existing attribute.</p> <note>
+    /// <p>If you use <code>ADD</code> to increment or decrement a number value for an item that doesn't exist before the update, DynamoDB uses <code>0</code> as the initial value.</p>
+    /// <p>Similarly, if you use <code>ADD</code> for an existing item to increment or decrement an attribute value that doesn't exist before the update, DynamoDB uses <code>0</code> as the initial value. For example, suppose that the item you want to update doesn't have an attribute named <code>itemcount</code>, but you decide to <code>ADD</code> the number <code>3</code> to this attribute anyway. DynamoDB will create the <code>itemcount</code> attribute, set its initial value to <code>0</code>, and finally add <code>3</code> to it. The result will be a new <code>itemcount</code> attribute in the item, with a value of <code>3</code>.</p>
+    /// </note> </li>
+    /// <li> <p>If the existing data type is a set and if <code>Value</code> is also a set, then <code>Value</code> is added to the existing set. For example, if the attribute value is the set <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>, then the final attribute value is <code>[1,2,3]</code>. An error occurs if an <code>ADD</code> action is specified for a set attribute and the attribute type specified does not match the existing set type. </p> <p>Both sets must have the same primitive data type. For example, if the existing data type is a set of strings, the <code>Value</code> must also be a set of strings.</p> </li>
+    /// </ul> <important>
+    /// <p>The <code>ADD</code> action only supports Number and set data types. In addition, <code>ADD</code> can only be used on top-level attributes, not nested attributes.</p>
+    /// </important> </li>
+    /// <li> <p> <code>DELETE</code> - Deletes an element from a set.</p> <p>If a set of values is specified, then those values are subtracted from the old set. For example, if the attribute value was the set <code>[a,b,c]</code> and the <code>DELETE</code> action specifies <code>[a,c]</code>, then the final attribute value is <code>[b]</code>. Specifying an empty set is an error.</p> <important>
+    /// <p>The <code>DELETE</code> action only supports set data types. In addition, <code>DELETE</code> can only be used on top-level attributes, not nested attributes.</p>
+    /// </important> </li>
     /// </ul>
-    /// <important>
-    /// <p>The <code>ADD</code> action only supports Number and set data types. In
-    /// addition, <code>ADD</code> can only be used on top-level attributes, not
-    /// nested attributes.</p>
-    /// </important>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE</code> - Deletes an element from a set.</p>
-    /// <p>If a set of values is specified, then those values are subtracted from the old
-    /// set. For example, if the attribute value was the set <code>[a,b,c]</code> and
-    /// the <code>DELETE</code> action specifies <code>[a,c]</code>, then the final
-    /// attribute value is <code>[b]</code>. Specifying an empty set is an error.</p>
-    /// <important>
-    /// <p>The <code>DELETE</code> action only supports set data types. In addition,
-    /// <code>DELETE</code> can only be used on top-level attributes, not nested
-    /// attributes.</p>
-    /// </important>
-    ///
-    /// </li>
-    /// </ul>
-    /// <p>You can have many actions in a single expression, such as the following: <code>SET
-    /// a=:value1, b=:value2 DELETE :value3, :value4, :value5</code>
-    /// </p>
-    /// <p>For more information on update expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying
-    /// Items and Attributes</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>You can have many actions in a single expression, such as the following: <code>SET a=:value1, b=:value2 DELETE :value3, :value4, :value5</code> </p>
+    /// <p>For more information on update expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying Items and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn update_expression(&self) -> std::option::Option<&str> {
         self.update_expression.as_deref()
     }
-    /// <p>A condition that must be satisfied in order for a conditional update to
-    /// succeed.</p>
+    /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
     /// <p>An expression can contain any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type |
-    /// contains | begins_with | size</code>
-    /// </p>
-    /// <p>These function names are case-sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Comparison operators: <code>= | <> |
-    /// < | > | <= | >= |
-    /// BETWEEN | IN </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p> Logical operators: <code>AND | OR | NOT</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type | contains | begins_with | size</code> </p> <p>These function names are case-sensitive.</p> </li>
+    /// <li> <p>Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code> </p> </li>
+    /// <li> <p> Logical operators: <code>AND | OR | NOT</code> </p> </li>
     /// </ul>
-    /// <p>For more information about condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying Conditions</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>For more information about condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn condition_expression(&self) -> std::option::Option<&str> {
         self.condition_expression.as_deref()
     }
-    /// <p>One or more substitution tokens for attribute names in an expression. The following
-    /// are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+    /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
-    /// word.</p>
-    /// </li>
-    /// <li>
-    /// <p>To create a placeholder for repeating occurrences of an attribute name in an
-    /// expression.</p>
-    /// </li>
-    /// <li>
-    /// <p>To prevent special characters in an attribute name from being misinterpreted
-    /// in an expression.</p>
-    /// </li>
+    /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
+    /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
+    /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
     /// </ul>
-    /// <p>Use the <b>#</b> character in an expression to dereference
-    /// an attribute name. For example, consider the following attribute name:</p>
+    /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Percentile</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Percentile</code> </p> </li>
     /// </ul>
-    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used
-    /// directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.) To work around this, you could specify the following for
-    /// <code>ExpressionAttributeNames</code>:</p>
+    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.) To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>{"#P":"Percentile"}</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
     /// </ul>
     /// <p>You could then use this substitution in an expression, as in this example:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>#P = :val</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>Tokens that begin with the <b>:</b> character are
-    /// <i>expression attribute values</i>, which are placeholders for the
-    /// actual value at runtime.</p>
+    /// <li> <p> <code>#P = :val</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
     /// </note>
-    /// <p>For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn expression_attribute_names(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -15263,24 +12068,13 @@ impl UpdateItemInput {
         self.expression_attribute_names.as_ref()
     }
     /// <p>One or more values that can be substituted in an expression.</p>
-    /// <p>Use the <b>:</b> (colon) character in an expression to
-    /// dereference an attribute value. For example, suppose that you wanted to check whether
-    /// the value of the <code>ProductStatus</code> attribute was one of the following: </p>
-    /// <p>
-    /// <code>Available | Backordered | Discontinued</code>
-    /// </p>
-    /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as
-    /// follows:</p>
-    /// <p>
-    /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-    /// ":disc":{"S":"Discontinued"} }</code>
-    /// </p>
+    /// <p>Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the <code>ProductStatus</code> attribute was one of the following: </p>
+    /// <p> <code>Available | Backordered | Discontinued</code> </p>
+    /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+    /// <p> <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code> </p>
     /// <p>You could then use these values in an expression, such as this:</p>
-    /// <p>
-    /// <code>ProductStatus IN (:avail, :back, :disc)</code>
-    /// </p>
-    /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p> <code>ProductStatus IN (:avail, :back, :disc)</code> </p>
+    /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn expression_attribute_values(
         &self,
     ) -> std::option::Option<
@@ -15323,33 +12117,18 @@ impl std::fmt::Debug for UpdateItemInput {
 pub struct UpdateGlobalTableSettingsInput {
     /// <p>The name of the global table</p>
     pub global_table_name: std::option::Option<std::string::String>,
-    /// <p>The billing mode of the global table. If <code>GlobalTableBillingMode</code> is not
-    /// specified, the global table defaults to <code>PROVISIONED</code> capacity billing
-    /// mode.</p>
+    /// <p>The billing mode of the global table. If <code>GlobalTableBillingMode</code> is not specified, the global table defaults to <code>PROVISIONED</code> capacity billing mode.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for
-    /// predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code>
-    /// for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode
-    /// to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p>
-    /// </li>
+    /// <li> <p> <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p> </li>
+    /// <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p> </li>
     /// </ul>
     pub global_table_billing_mode: std::option::Option<crate::model::BillingMode>,
-    /// <p>The maximum number of writes consumed per second before DynamoDB returns a
-    /// <code>ThrottlingException.</code>
-    /// </p>
+    /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code> </p>
     pub global_table_provisioned_write_capacity_units: std::option::Option<i64>,
-    /// <p>Auto scaling settings for managing provisioned write capacity for the global
-    /// table.</p>
+    /// <p>Auto scaling settings for managing provisioned write capacity for the global table.</p>
     pub global_table_provisioned_write_capacity_auto_scaling_settings_update:
         std::option::Option<crate::model::AutoScalingSettingsUpdate>,
-    /// <p>Represents the settings of a global secondary index for a global table that will be
-    /// modified.</p>
+    /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
     pub global_table_global_secondary_index_settings_update: std::option::Option<
         std::vec::Vec<crate::model::GlobalTableGlobalSecondaryIndexSettingsUpdate>,
     >,
@@ -15362,41 +12141,26 @@ impl UpdateGlobalTableSettingsInput {
     pub fn global_table_name(&self) -> std::option::Option<&str> {
         self.global_table_name.as_deref()
     }
-    /// <p>The billing mode of the global table. If <code>GlobalTableBillingMode</code> is not
-    /// specified, the global table defaults to <code>PROVISIONED</code> capacity billing
-    /// mode.</p>
+    /// <p>The billing mode of the global table. If <code>GlobalTableBillingMode</code> is not specified, the global table defaults to <code>PROVISIONED</code> capacity billing mode.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for
-    /// predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code>
-    /// for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode
-    /// to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p>
-    /// </li>
+    /// <li> <p> <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p> </li>
+    /// <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p> </li>
     /// </ul>
     pub fn global_table_billing_mode(&self) -> std::option::Option<&crate::model::BillingMode> {
         self.global_table_billing_mode.as_ref()
     }
-    /// <p>The maximum number of writes consumed per second before DynamoDB returns a
-    /// <code>ThrottlingException.</code>
-    /// </p>
+    /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code> </p>
     pub fn global_table_provisioned_write_capacity_units(&self) -> std::option::Option<i64> {
         self.global_table_provisioned_write_capacity_units
     }
-    /// <p>Auto scaling settings for managing provisioned write capacity for the global
-    /// table.</p>
+    /// <p>Auto scaling settings for managing provisioned write capacity for the global table.</p>
     pub fn global_table_provisioned_write_capacity_auto_scaling_settings_update(
         &self,
     ) -> std::option::Option<&crate::model::AutoScalingSettingsUpdate> {
         self.global_table_provisioned_write_capacity_auto_scaling_settings_update
             .as_ref()
     }
-    /// <p>Represents the settings of a global secondary index for a global table that will be
-    /// modified.</p>
+    /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
     pub fn global_table_global_secondary_index_settings_update(
         &self,
     ) -> std::option::Option<&[crate::model::GlobalTableGlobalSecondaryIndexSettingsUpdate]> {
@@ -15538,21 +12302,17 @@ impl std::fmt::Debug for UpdateContinuousBackupsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>The DynamoDB resource that the tags will be removed from. This value is an Amazon
-    /// Resource Name (ARN).</p>
+    /// <p>The DynamoDB resource that the tags will be removed from. This value is an Amazon Resource Name (ARN).</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A list of tag keys. Existing tags of the resource whose keys are members of this list
-    /// will be removed from the DynamoDB resource.</p>
+    /// <p>A list of tag keys. Existing tags of the resource whose keys are members of this list will be removed from the DynamoDB resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>The DynamoDB resource that the tags will be removed from. This value is an Amazon
-    /// Resource Name (ARN).</p>
+    /// <p>The DynamoDB resource that the tags will be removed from. This value is an Amazon Resource Name (ARN).</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A list of tag keys. Existing tags of the resource whose keys are members of this list
-    /// will be removed from the DynamoDB resource.</p>
+    /// <p>A list of tag keys. Existing tags of the resource whose keys are members of this list will be removed from the DynamoDB resource.</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -15570,128 +12330,50 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransactWriteItemsInput {
-    /// <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of which
-    /// contains a <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or
-    /// <code>Delete</code> object. These can operate on items in different tables, but the
-    /// tables must reside in the same Amazon Web Services account and Region, and no two of them
-    /// can operate on the same item. </p>
+    /// <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of which contains a <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or <code>Delete</code> object. These can operate on items in different tables, but the tables must reside in the same Amazon Web Services account and Region, and no two of them can operate on the same item. </p>
     pub transact_items: std::option::Option<std::vec::Vec<crate::model::TransactWriteItem>>,
-    /// <p>Determines the level of detail about either provisioned or on-demand throughput
-    /// consumption that is returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INDEXES</code> - The response includes the aggregate
-    /// <code>ConsumedCapacity</code> for the operation, together with
-    /// <code>ConsumedCapacity</code> for each table and secondary index that was
-    /// accessed.</p>
-    /// <p>Note that some operations, such as <code>GetItem</code> and
-    /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-    /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-    /// information for table(s).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TOTAL</code> - The response includes only the aggregate
-    /// <code>ConsumedCapacity</code> for the operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-    /// response.</p>
-    /// </li>
+    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
     pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
-    /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>,
-    /// the response includes statistics about item collections (if any), that were modified
-    /// during the operation and are returned in the response. If set to <code>NONE</code> (the
-    /// default), no statistics are returned. </p>
+    /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections (if any), that were modified during the operation and are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned. </p>
     pub return_item_collection_metrics:
         std::option::Option<crate::model::ReturnItemCollectionMetrics>,
-    /// <p>Providing a <code>ClientRequestToken</code> makes the call to
-    /// <code>TransactWriteItems</code> idempotent, meaning that multiple identical calls
-    /// have the same effect as one single call.</p>
-    /// <p>Although multiple identical calls using the same client request token produce the same
-    /// result on the server (no side effects), the responses to the calls might not be the
-    /// same. If the <code>ReturnConsumedCapacity></code> parameter is set, then the initial
-    /// <code>TransactWriteItems</code> call returns the amount of write capacity units
-    /// consumed in making the changes. Subsequent <code>TransactWriteItems</code> calls with
-    /// the same client token return the number of read capacity units consumed in reading the
-    /// item.</p>
-    /// <p>A client request token is valid for 10 minutes after the first request that uses it is
-    /// completed. After 10 minutes, any request with the same client token is treated as a new
-    /// request. Do not resubmit the same request with the same client token for more than 10
-    /// minutes, or the result might not be idempotent.</p>
-    /// <p>If you submit a request with the same client token but a change in other parameters
-    /// within the 10-minute idempotency window, DynamoDB returns an
-    /// <code>IdempotentParameterMismatch</code> exception.</p>
+    /// <p>Providing a <code>ClientRequestToken</code> makes the call to <code>TransactWriteItems</code> idempotent, meaning that multiple identical calls have the same effect as one single call.</p>
+    /// <p>Although multiple identical calls using the same client request token produce the same result on the server (no side effects), the responses to the calls might not be the same. If the <code>ReturnConsumedCapacity&gt;</code> parameter is set, then the initial <code>TransactWriteItems</code> call returns the amount of write capacity units consumed in making the changes. Subsequent <code>TransactWriteItems</code> calls with the same client token return the number of read capacity units consumed in reading the item.</p>
+    /// <p>A client request token is valid for 10 minutes after the first request that uses it is completed. After 10 minutes, any request with the same client token is treated as a new request. Do not resubmit the same request with the same client token for more than 10 minutes, or the result might not be idempotent.</p>
+    /// <p>If you submit a request with the same client token but a change in other parameters within the 10-minute idempotency window, DynamoDB returns an <code>IdempotentParameterMismatch</code> exception.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl TransactWriteItemsInput {
-    /// <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of which
-    /// contains a <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or
-    /// <code>Delete</code> object. These can operate on items in different tables, but the
-    /// tables must reside in the same Amazon Web Services account and Region, and no two of them
-    /// can operate on the same item. </p>
+    /// <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of which contains a <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or <code>Delete</code> object. These can operate on items in different tables, but the tables must reside in the same Amazon Web Services account and Region, and no two of them can operate on the same item. </p>
     pub fn transact_items(&self) -> std::option::Option<&[crate::model::TransactWriteItem]> {
         self.transact_items.as_deref()
     }
-    /// <p>Determines the level of detail about either provisioned or on-demand throughput
-    /// consumption that is returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INDEXES</code> - The response includes the aggregate
-    /// <code>ConsumedCapacity</code> for the operation, together with
-    /// <code>ConsumedCapacity</code> for each table and secondary index that was
-    /// accessed.</p>
-    /// <p>Note that some operations, such as <code>GetItem</code> and
-    /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-    /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-    /// information for table(s).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TOTAL</code> - The response includes only the aggregate
-    /// <code>ConsumedCapacity</code> for the operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-    /// response.</p>
-    /// </li>
+    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
     pub fn return_consumed_capacity(
         &self,
     ) -> std::option::Option<&crate::model::ReturnConsumedCapacity> {
         self.return_consumed_capacity.as_ref()
     }
-    /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>,
-    /// the response includes statistics about item collections (if any), that were modified
-    /// during the operation and are returned in the response. If set to <code>NONE</code> (the
-    /// default), no statistics are returned. </p>
+    /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections (if any), that were modified during the operation and are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned. </p>
     pub fn return_item_collection_metrics(
         &self,
     ) -> std::option::Option<&crate::model::ReturnItemCollectionMetrics> {
         self.return_item_collection_metrics.as_ref()
     }
-    /// <p>Providing a <code>ClientRequestToken</code> makes the call to
-    /// <code>TransactWriteItems</code> idempotent, meaning that multiple identical calls
-    /// have the same effect as one single call.</p>
-    /// <p>Although multiple identical calls using the same client request token produce the same
-    /// result on the server (no side effects), the responses to the calls might not be the
-    /// same. If the <code>ReturnConsumedCapacity></code> parameter is set, then the initial
-    /// <code>TransactWriteItems</code> call returns the amount of write capacity units
-    /// consumed in making the changes. Subsequent <code>TransactWriteItems</code> calls with
-    /// the same client token return the number of read capacity units consumed in reading the
-    /// item.</p>
-    /// <p>A client request token is valid for 10 minutes after the first request that uses it is
-    /// completed. After 10 minutes, any request with the same client token is treated as a new
-    /// request. Do not resubmit the same request with the same client token for more than 10
-    /// minutes, or the result might not be idempotent.</p>
-    /// <p>If you submit a request with the same client token but a change in other parameters
-    /// within the 10-minute idempotency window, DynamoDB returns an
-    /// <code>IdempotentParameterMismatch</code> exception.</p>
+    /// <p>Providing a <code>ClientRequestToken</code> makes the call to <code>TransactWriteItems</code> idempotent, meaning that multiple identical calls have the same effect as one single call.</p>
+    /// <p>Although multiple identical calls using the same client request token produce the same result on the server (no side effects), the responses to the calls might not be the same. If the <code>ReturnConsumedCapacity&gt;</code> parameter is set, then the initial <code>TransactWriteItems</code> call returns the amount of write capacity units consumed in making the changes. Subsequent <code>TransactWriteItems</code> calls with the same client token return the number of read capacity units consumed in reading the item.</p>
+    /// <p>A client request token is valid for 10 minutes after the first request that uses it is completed. After 10 minutes, any request with the same client token is treated as a new request. Do not resubmit the same request with the same client token for more than 10 minutes, or the result might not be idempotent.</p>
+    /// <p>If you submit a request with the same client token but a change in other parameters within the 10-minute idempotency window, DynamoDB returns an <code>IdempotentParameterMismatch</code> exception.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -15714,23 +12396,17 @@ impl std::fmt::Debug for TransactWriteItemsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransactGetItemsInput {
-    /// <p>An ordered array of up to 25 <code>TransactGetItem</code> objects, each of which
-    /// contains a <code>Get</code> structure.</p>
+    /// <p>An ordered array of up to 25 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure.</p>
     pub transact_items: std::option::Option<std::vec::Vec<crate::model::TransactGetItem>>,
-    /// <p>A value of <code>TOTAL</code> causes consumed capacity information to be returned, and
-    /// a value of <code>NONE</code> prevents that information from being returned. No other
-    /// value is valid.</p>
+    /// <p>A value of <code>TOTAL</code> causes consumed capacity information to be returned, and a value of <code>NONE</code> prevents that information from being returned. No other value is valid.</p>
     pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
 }
 impl TransactGetItemsInput {
-    /// <p>An ordered array of up to 25 <code>TransactGetItem</code> objects, each of which
-    /// contains a <code>Get</code> structure.</p>
+    /// <p>An ordered array of up to 25 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure.</p>
     pub fn transact_items(&self) -> std::option::Option<&[crate::model::TransactGetItem]> {
         self.transact_items.as_deref()
     }
-    /// <p>A value of <code>TOTAL</code> causes consumed capacity information to be returned, and
-    /// a value of <code>NONE</code> prevents that information from being returned. No other
-    /// value is valid.</p>
+    /// <p>A value of <code>TOTAL</code> causes consumed capacity information to be returned, and a value of <code>NONE</code> prevents that information from being returned. No other value is valid.</p>
     pub fn return_consumed_capacity(
         &self,
     ) -> std::option::Option<&crate::model::ReturnConsumedCapacity> {
@@ -15750,15 +12426,13 @@ impl std::fmt::Debug for TransactGetItemsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>Identifies the Amazon DynamoDB resource to which tags should be added. This value is
-    /// an Amazon Resource Name (ARN).</p>
+    /// <p>Identifies the Amazon DynamoDB resource to which tags should be added. This value is an Amazon Resource Name (ARN).</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to be assigned to the Amazon DynamoDB resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
-    /// <p>Identifies the Amazon DynamoDB resource to which tags should be added. This value is
-    /// an Amazon Resource Name (ARN).</p>
+    /// <p>Identifies the Amazon DynamoDB resource to which tags should be added. This value is an Amazon Resource Name (ARN).</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -15780,377 +12454,150 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScanInput {
-    /// <p>The name of the table containing the requested items; or, if you provide
-    /// <code>IndexName</code>, the name of the table to which that index belongs.</p>
+    /// <p>The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the table to which that index belongs.</p>
     pub table_name: std::option::Option<std::string::String>,
-    /// <p>The name of a secondary index to scan. This index can be any local secondary index or
-    /// global secondary index. Note that if you use the <code>IndexName</code> parameter, you
-    /// must also provide <code>TableName</code>.</p>
+    /// <p>The name of a secondary index to scan. This index can be any local secondary index or global secondary index. Note that if you use the <code>IndexName</code> parameter, you must also provide <code>TableName</code>.</p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub attributes_to_get: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of items to evaluate (not necessarily the number of matching
-    /// items). If DynamoDB processes the number of items up to the limit while processing the
-    /// results, it stops the operation and returns the matching values up to that point, and a
-    /// key in <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that you can
-    /// pick up where you left off. Also, if the processed dataset size exceeds 1 MB before
-    /// DynamoDB reaches this limit, it stops the operation and returns the matching values up
-    /// to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent
-    /// operation to continue the operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Working with Queries</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the number of items up to the limit while processing the results, it stops the operation and returns the matching values up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that you can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values up to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Working with Queries</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>The attributes to be returned in the result. You can retrieve all item attributes,
-    /// specific item attributes, the count of matching items, or in the case of an index, some
-    /// or all of the attributes projected into the index.</p>
+    /// <p>The attributes to be returned in the result. You can retrieve all item attributes, specific item attributes, the count of matching items, or in the case of an index, some or all of the attributes projected into the index.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the
-    /// specified table or index. If you query a local secondary index, then for each
-    /// matching item in the index, DynamoDB fetches the entire item from the parent
-    /// table. If the index is configured to project all item attributes, then all of
-    /// the data can be obtained from the local secondary index, and no fetching is
-    /// required.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an index.
-    /// Retrieves all attributes that have been projected into the index. If the index
-    /// is configured to project all attributes, this return value is equivalent to
-    /// specifying <code>ALL_ATTRIBUTES</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COUNT</code> - Returns the number of matching items, rather than the
-    /// matching items themselves.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
-    /// <code>AttributesToGet</code>. This return value is equivalent to specifying
-    /// <code>AttributesToGet</code> without specifying any value for
-    /// <code>Select</code>.</p>
-    /// <p>If you query or scan a local secondary index and request only attributes that
-    /// are projected into that index, the operation reads only the index and not the
-    /// table. If any of the requested attributes are not projected into the local
-    /// secondary index, DynamoDB fetches each of these attributes from the parent
-    /// table. This extra fetching incurs additional throughput cost and latency.</p>
-    /// <p>If you query or scan a global secondary index, you can only request attributes
-    /// that are projected into the index. Global secondary index queries cannot fetch
-    /// attributes from the parent table.</p>
-    /// </li>
+    /// <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If you query a local secondary index, then for each matching item in the index, DynamoDB fetches the entire item from the parent table. If the index is configured to project all item attributes, then all of the data can be obtained from the local secondary index, and no fetching is required.</p> </li>
+    /// <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an index. Retrieves all attributes that have been projected into the index. If the index is configured to project all attributes, this return value is equivalent to specifying <code>ALL_ATTRIBUTES</code>.</p> </li>
+    /// <li> <p> <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.</p> </li>
+    /// <li> <p> <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in <code>AttributesToGet</code>. This return value is equivalent to specifying <code>AttributesToGet</code> without specifying any value for <code>Select</code>.</p> <p>If you query or scan a local secondary index and request only attributes that are projected into that index, the operation reads only the index and not the table. If any of the requested attributes are not projected into the local secondary index, DynamoDB fetches each of these attributes from the parent table. This extra fetching incurs additional throughput cost and latency.</p> <p>If you query or scan a global secondary index, you can only request attributes that are projected into the index. Global secondary index queries cannot fetch attributes from the parent table.</p> </li>
     /// </ul>
-    /// <p>If neither <code>Select</code> nor <code>AttributesToGet</code> are specified,
-    /// DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a table, and
-    /// <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You cannot use both
-    /// <code>Select</code> and <code>AttributesToGet</code> together in a single request,
-    /// unless the value for <code>Select</code> is <code>SPECIFIC_ATTRIBUTES</code>. (This
-    /// usage is equivalent to specifying <code>AttributesToGet</code> without any value for
-    /// <code>Select</code>.)</p>
-    /// <note>
-    /// <p>If you use the <code>ProjectionExpression</code> parameter, then the value for
-    /// <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other
-    /// value for <code>Select</code> will return an error.</p>
+    /// <p>If neither <code>Select</code> nor <code>AttributesToGet</code> are specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You cannot use both <code>Select</code> and <code>AttributesToGet</code> together in a single request, unless the value for <code>Select</code> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying <code>AttributesToGet</code> without any value for <code>Select</code>.)</p> <note>
+    /// <p>If you use the <code>ProjectionExpression</code> parameter, then the value for <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <code>Select</code> will return an error.</p>
     /// </note>
     pub select: std::option::Option<crate::model::Select>,
-    /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html">ScanFilter</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html">ScanFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub scan_filter: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::Condition>,
     >,
-    /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub conditional_operator: std::option::Option<crate::model::ConditionalOperator>,
-    /// <p>The primary key of the first item that this operation will evaluate. Use the value
-    /// that was returned for <code>LastEvaluatedKey</code> in the previous operation.</p>
-    /// <p>The data type for <code>ExclusiveStartKey</code> must be String, Number or Binary. No
-    /// set data types are allowed.</p>
-    /// <p>In a parallel scan, a <code>Scan</code> request that includes
-    /// <code>ExclusiveStartKey</code> must specify the same segment whose previous
-    /// <code>Scan</code> returned the corresponding value of
-    /// <code>LastEvaluatedKey</code>.</p>
+    /// <p>The primary key of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedKey</code> in the previous operation.</p>
+    /// <p>The data type for <code>ExclusiveStartKey</code> must be String, Number or Binary. No set data types are allowed.</p>
+    /// <p>In a parallel scan, a <code>Scan</code> request that includes <code>ExclusiveStartKey</code> must specify the same segment whose previous <code>Scan</code> returned the corresponding value of <code>LastEvaluatedKey</code>.</p>
     pub exclusive_start_key: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
-    /// <p>Determines the level of detail about either provisioned or on-demand throughput
-    /// consumption that is returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INDEXES</code> - The response includes the aggregate
-    /// <code>ConsumedCapacity</code> for the operation, together with
-    /// <code>ConsumedCapacity</code> for each table and secondary index that was
-    /// accessed.</p>
-    /// <p>Note that some operations, such as <code>GetItem</code> and
-    /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-    /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-    /// information for table(s).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TOTAL</code> - The response includes only the aggregate
-    /// <code>ConsumedCapacity</code> for the operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-    /// response.</p>
-    /// </li>
+    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
     pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
-    /// <p>For a parallel <code>Scan</code> request, <code>TotalSegments</code> represents the
-    /// total number of segments into which the <code>Scan</code> operation will be divided. The
-    /// value of <code>TotalSegments</code> corresponds to the number of application workers
-    /// that will perform the parallel scan. For example, if you want to use four application
-    /// threads to scan a table or an index, specify a <code>TotalSegments</code> value of
-    /// 4.</p>
-    /// <p>The value for <code>TotalSegments</code> must be greater than or equal to 1, and less
-    /// than or equal to 1000000. If you specify a <code>TotalSegments</code> value of 1, the
-    /// <code>Scan</code> operation will be sequential rather than parallel.</p>
-    /// <p>If you specify <code>TotalSegments</code>, you must also specify
-    /// <code>Segment</code>.</p>
+    /// <p>For a parallel <code>Scan</code> request, <code>TotalSegments</code> represents the total number of segments into which the <code>Scan</code> operation will be divided. The value of <code>TotalSegments</code> corresponds to the number of application workers that will perform the parallel scan. For example, if you want to use four application threads to scan a table or an index, specify a <code>TotalSegments</code> value of 4.</p>
+    /// <p>The value for <code>TotalSegments</code> must be greater than or equal to 1, and less than or equal to 1000000. If you specify a <code>TotalSegments</code> value of 1, the <code>Scan</code> operation will be sequential rather than parallel.</p>
+    /// <p>If you specify <code>TotalSegments</code>, you must also specify <code>Segment</code>.</p>
     pub total_segments: std::option::Option<i32>,
-    /// <p>For a parallel <code>Scan</code> request, <code>Segment</code> identifies an
-    /// individual segment to be scanned by an application worker.</p>
-    /// <p>Segment IDs are zero-based, so the first segment is always 0. For example, if you want
-    /// to use four application threads to scan a table or an index, then the first thread
-    /// specifies a <code>Segment</code> value of 0, the second thread specifies 1, and so
-    /// on.</p>
-    /// <p>The value of <code>LastEvaluatedKey</code> returned from a parallel <code>Scan</code>
-    /// request must be used as <code>ExclusiveStartKey</code> with the same segment ID in a
-    /// subsequent <code>Scan</code> operation.</p>
-    /// <p>The value for <code>Segment</code> must be greater than or equal to 0, and less than
-    /// the value provided for <code>TotalSegments</code>.</p>
-    /// <p>If you provide <code>Segment</code>, you must also provide
-    /// <code>TotalSegments</code>.</p>
+    /// <p>For a parallel <code>Scan</code> request, <code>Segment</code> identifies an individual segment to be scanned by an application worker.</p>
+    /// <p>Segment IDs are zero-based, so the first segment is always 0. For example, if you want to use four application threads to scan a table or an index, then the first thread specifies a <code>Segment</code> value of 0, the second thread specifies 1, and so on.</p>
+    /// <p>The value of <code>LastEvaluatedKey</code> returned from a parallel <code>Scan</code> request must be used as <code>ExclusiveStartKey</code> with the same segment ID in a subsequent <code>Scan</code> operation.</p>
+    /// <p>The value for <code>Segment</code> must be greater than or equal to 0, and less than the value provided for <code>TotalSegments</code>.</p>
+    /// <p>If you provide <code>Segment</code>, you must also provide <code>TotalSegments</code>.</p>
     pub segment: std::option::Option<i32>,
-    /// <p>A string that identifies one or more attributes to retrieve from the specified table
-    /// or index. These attributes can include scalars, sets, or elements of a JSON document.
-    /// The attributes in the expression must be separated by commas.</p>
-    /// <p>If no attribute names are specified, then all attributes will be returned. If any of
-    /// the requested attributes are not found, they will not appear in the result.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>A string that identifies one or more attributes to retrieve from the specified table or index. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p>
+    /// <p>If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub projection_expression: std::option::Option<std::string::String>,
-    /// <p>A string that contains conditions that DynamoDB applies after the <code>Scan</code>
-    /// operation, but before the data is returned to you. Items that do not satisfy the
-    /// <code>FilterExpression</code> criteria are not returned.</p>
-    /// <note>
-    /// <p>A <code>FilterExpression</code> is applied after the items have already been read;
-    /// the process of filtering does not consume any additional read capacity units.</p>
+    /// <p>A string that contains conditions that DynamoDB applies after the <code>Scan</code> operation, but before the data is returned to you. Items that do not satisfy the <code>FilterExpression</code> criteria are not returned.</p> <note>
+    /// <p>A <code>FilterExpression</code> is applied after the items have already been read; the process of filtering does not consume any additional read capacity units.</p>
     /// </note>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
-    /// Expressions</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub filter_expression: std::option::Option<std::string::String>,
-    /// <p>One or more substitution tokens for attribute names in an expression. The following
-    /// are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+    /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
-    /// word.</p>
-    /// </li>
-    /// <li>
-    /// <p>To create a placeholder for repeating occurrences of an attribute name in an
-    /// expression.</p>
-    /// </li>
-    /// <li>
-    /// <p>To prevent special characters in an attribute name from being misinterpreted
-    /// in an expression.</p>
-    /// </li>
+    /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
+    /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
+    /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
     /// </ul>
-    /// <p>Use the <b>#</b> character in an expression to dereference
-    /// an attribute name. For example, consider the following attribute name:</p>
+    /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Percentile</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Percentile</code> </p> </li>
     /// </ul>
-    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used
-    /// directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>). To work around this, you could specify the following for
-    /// <code>ExpressionAttributeNames</code>:</p>
+    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>{"#P":"Percentile"}</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
     /// </ul>
     /// <p>You could then use this substitution in an expression, as in this example:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>#P = :val</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>Tokens that begin with the <b>:</b> character are
-    /// <i>expression attribute values</i>, which are placeholders for the
-    /// actual value at runtime.</p>
+    /// <li> <p> <code>#P = :val</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
     /// </note>
-    /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub expression_attribute_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>One or more values that can be substituted in an expression.</p>
-    /// <p>Use the <b>:</b> (colon) character in an expression to
-    /// dereference an attribute value. For example, suppose that you wanted to check whether
-    /// the value of the <code>ProductStatus</code> attribute was one of the following: </p>
-    /// <p>
-    /// <code>Available | Backordered | Discontinued</code>
-    /// </p>
-    /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as
-    /// follows:</p>
-    /// <p>
-    /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-    /// ":disc":{"S":"Discontinued"} }</code>
-    /// </p>
+    /// <p>Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the <code>ProductStatus</code> attribute was one of the following: </p>
+    /// <p> <code>Available | Backordered | Discontinued</code> </p>
+    /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+    /// <p> <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code> </p>
     /// <p>You could then use these values in an expression, such as this:</p>
-    /// <p>
-    /// <code>ProductStatus IN (:avail, :back, :disc)</code>
-    /// </p>
-    /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p> <code>ProductStatus IN (:avail, :back, :disc)</code> </p>
+    /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub expression_attribute_values: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
     /// <p>A Boolean value that determines the read consistency model during the scan:</p>
     /// <ul>
-    /// <li>
-    /// <p>If <code>ConsistentRead</code> is <code>false</code>, then the data returned
-    /// from <code>Scan</code> might not contain the results from other recently
-    /// completed write operations (<code>PutItem</code>, <code>UpdateItem</code>, or
-    /// <code>DeleteItem</code>).</p>
-    /// </li>
-    /// <li>
-    /// <p>If <code>ConsistentRead</code> is <code>true</code>, then all of the write
-    /// operations that completed before the <code>Scan</code> began are guaranteed to
-    /// be contained in the <code>Scan</code> response.</p>
-    /// </li>
+    /// <li> <p>If <code>ConsistentRead</code> is <code>false</code>, then the data returned from <code>Scan</code> might not contain the results from other recently completed write operations (<code>PutItem</code>, <code>UpdateItem</code>, or <code>DeleteItem</code>).</p> </li>
+    /// <li> <p>If <code>ConsistentRead</code> is <code>true</code>, then all of the write operations that completed before the <code>Scan</code> began are guaranteed to be contained in the <code>Scan</code> response.</p> </li>
     /// </ul>
     /// <p>The default setting for <code>ConsistentRead</code> is <code>false</code>.</p>
-    /// <p>The <code>ConsistentRead</code> parameter is not supported on global secondary
-    /// indexes. If you scan a global secondary index with <code>ConsistentRead</code> set to
-    /// true, you will receive a <code>ValidationException</code>.</p>
+    /// <p>The <code>ConsistentRead</code> parameter is not supported on global secondary indexes. If you scan a global secondary index with <code>ConsistentRead</code> set to true, you will receive a <code>ValidationException</code>.</p>
     pub consistent_read: std::option::Option<bool>,
 }
 impl ScanInput {
-    /// <p>The name of the table containing the requested items; or, if you provide
-    /// <code>IndexName</code>, the name of the table to which that index belongs.</p>
+    /// <p>The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the table to which that index belongs.</p>
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
-    /// <p>The name of a secondary index to scan. This index can be any local secondary index or
-    /// global secondary index. Note that if you use the <code>IndexName</code> parameter, you
-    /// must also provide <code>TableName</code>.</p>
+    /// <p>The name of a secondary index to scan. This index can be any local secondary index or global secondary index. Note that if you use the <code>IndexName</code> parameter, you must also provide <code>TableName</code>.</p>
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn attributes_to_get(&self) -> std::option::Option<&[std::string::String]> {
         self.attributes_to_get.as_deref()
     }
-    /// <p>The maximum number of items to evaluate (not necessarily the number of matching
-    /// items). If DynamoDB processes the number of items up to the limit while processing the
-    /// results, it stops the operation and returns the matching values up to that point, and a
-    /// key in <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that you can
-    /// pick up where you left off. Also, if the processed dataset size exceeds 1 MB before
-    /// DynamoDB reaches this limit, it stops the operation and returns the matching values up
-    /// to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent
-    /// operation to continue the operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Working with Queries</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the number of items up to the limit while processing the results, it stops the operation and returns the matching values up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that you can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values up to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Working with Queries</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>The attributes to be returned in the result. You can retrieve all item attributes,
-    /// specific item attributes, the count of matching items, or in the case of an index, some
-    /// or all of the attributes projected into the index.</p>
+    /// <p>The attributes to be returned in the result. You can retrieve all item attributes, specific item attributes, the count of matching items, or in the case of an index, some or all of the attributes projected into the index.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the
-    /// specified table or index. If you query a local secondary index, then for each
-    /// matching item in the index, DynamoDB fetches the entire item from the parent
-    /// table. If the index is configured to project all item attributes, then all of
-    /// the data can be obtained from the local secondary index, and no fetching is
-    /// required.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an index.
-    /// Retrieves all attributes that have been projected into the index. If the index
-    /// is configured to project all attributes, this return value is equivalent to
-    /// specifying <code>ALL_ATTRIBUTES</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COUNT</code> - Returns the number of matching items, rather than the
-    /// matching items themselves.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
-    /// <code>AttributesToGet</code>. This return value is equivalent to specifying
-    /// <code>AttributesToGet</code> without specifying any value for
-    /// <code>Select</code>.</p>
-    /// <p>If you query or scan a local secondary index and request only attributes that
-    /// are projected into that index, the operation reads only the index and not the
-    /// table. If any of the requested attributes are not projected into the local
-    /// secondary index, DynamoDB fetches each of these attributes from the parent
-    /// table. This extra fetching incurs additional throughput cost and latency.</p>
-    /// <p>If you query or scan a global secondary index, you can only request attributes
-    /// that are projected into the index. Global secondary index queries cannot fetch
-    /// attributes from the parent table.</p>
-    /// </li>
+    /// <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If you query a local secondary index, then for each matching item in the index, DynamoDB fetches the entire item from the parent table. If the index is configured to project all item attributes, then all of the data can be obtained from the local secondary index, and no fetching is required.</p> </li>
+    /// <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an index. Retrieves all attributes that have been projected into the index. If the index is configured to project all attributes, this return value is equivalent to specifying <code>ALL_ATTRIBUTES</code>.</p> </li>
+    /// <li> <p> <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.</p> </li>
+    /// <li> <p> <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in <code>AttributesToGet</code>. This return value is equivalent to specifying <code>AttributesToGet</code> without specifying any value for <code>Select</code>.</p> <p>If you query or scan a local secondary index and request only attributes that are projected into that index, the operation reads only the index and not the table. If any of the requested attributes are not projected into the local secondary index, DynamoDB fetches each of these attributes from the parent table. This extra fetching incurs additional throughput cost and latency.</p> <p>If you query or scan a global secondary index, you can only request attributes that are projected into the index. Global secondary index queries cannot fetch attributes from the parent table.</p> </li>
     /// </ul>
-    /// <p>If neither <code>Select</code> nor <code>AttributesToGet</code> are specified,
-    /// DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a table, and
-    /// <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You cannot use both
-    /// <code>Select</code> and <code>AttributesToGet</code> together in a single request,
-    /// unless the value for <code>Select</code> is <code>SPECIFIC_ATTRIBUTES</code>. (This
-    /// usage is equivalent to specifying <code>AttributesToGet</code> without any value for
-    /// <code>Select</code>.)</p>
-    /// <note>
-    /// <p>If you use the <code>ProjectionExpression</code> parameter, then the value for
-    /// <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other
-    /// value for <code>Select</code> will return an error.</p>
+    /// <p>If neither <code>Select</code> nor <code>AttributesToGet</code> are specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You cannot use both <code>Select</code> and <code>AttributesToGet</code> together in a single request, unless the value for <code>Select</code> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying <code>AttributesToGet</code> without any value for <code>Select</code>.)</p> <note>
+    /// <p>If you use the <code>ProjectionExpression</code> parameter, then the value for <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <code>Select</code> will return an error.</p>
     /// </note>
     pub fn select(&self) -> std::option::Option<&crate::model::Select> {
         self.select.as_ref()
     }
-    /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html">ScanFilter</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html">ScanFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn scan_filter(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Condition>>
     {
         self.scan_filter.as_ref()
     }
-    /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn conditional_operator(&self) -> std::option::Option<&crate::model::ConditionalOperator> {
         self.conditional_operator.as_ref()
     }
-    /// <p>The primary key of the first item that this operation will evaluate. Use the value
-    /// that was returned for <code>LastEvaluatedKey</code> in the previous operation.</p>
-    /// <p>The data type for <code>ExclusiveStartKey</code> must be String, Number or Binary. No
-    /// set data types are allowed.</p>
-    /// <p>In a parallel scan, a <code>Scan</code> request that includes
-    /// <code>ExclusiveStartKey</code> must specify the same segment whose previous
-    /// <code>Scan</code> returned the corresponding value of
-    /// <code>LastEvaluatedKey</code>.</p>
+    /// <p>The primary key of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedKey</code> in the previous operation.</p>
+    /// <p>The data type for <code>ExclusiveStartKey</code> must be String, Number or Binary. No set data types are allowed.</p>
+    /// <p>In a parallel scan, a <code>Scan</code> request that includes <code>ExclusiveStartKey</code> must specify the same segment whose previous <code>Scan</code> returned the corresponding value of <code>LastEvaluatedKey</code>.</p>
     pub fn exclusive_start_key(
         &self,
     ) -> std::option::Option<
@@ -16158,140 +12605,65 @@ impl ScanInput {
     > {
         self.exclusive_start_key.as_ref()
     }
-    /// <p>Determines the level of detail about either provisioned or on-demand throughput
-    /// consumption that is returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INDEXES</code> - The response includes the aggregate
-    /// <code>ConsumedCapacity</code> for the operation, together with
-    /// <code>ConsumedCapacity</code> for each table and secondary index that was
-    /// accessed.</p>
-    /// <p>Note that some operations, such as <code>GetItem</code> and
-    /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-    /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-    /// information for table(s).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TOTAL</code> - The response includes only the aggregate
-    /// <code>ConsumedCapacity</code> for the operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-    /// response.</p>
-    /// </li>
+    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
     pub fn return_consumed_capacity(
         &self,
     ) -> std::option::Option<&crate::model::ReturnConsumedCapacity> {
         self.return_consumed_capacity.as_ref()
     }
-    /// <p>For a parallel <code>Scan</code> request, <code>TotalSegments</code> represents the
-    /// total number of segments into which the <code>Scan</code> operation will be divided. The
-    /// value of <code>TotalSegments</code> corresponds to the number of application workers
-    /// that will perform the parallel scan. For example, if you want to use four application
-    /// threads to scan a table or an index, specify a <code>TotalSegments</code> value of
-    /// 4.</p>
-    /// <p>The value for <code>TotalSegments</code> must be greater than or equal to 1, and less
-    /// than or equal to 1000000. If you specify a <code>TotalSegments</code> value of 1, the
-    /// <code>Scan</code> operation will be sequential rather than parallel.</p>
-    /// <p>If you specify <code>TotalSegments</code>, you must also specify
-    /// <code>Segment</code>.</p>
+    /// <p>For a parallel <code>Scan</code> request, <code>TotalSegments</code> represents the total number of segments into which the <code>Scan</code> operation will be divided. The value of <code>TotalSegments</code> corresponds to the number of application workers that will perform the parallel scan. For example, if you want to use four application threads to scan a table or an index, specify a <code>TotalSegments</code> value of 4.</p>
+    /// <p>The value for <code>TotalSegments</code> must be greater than or equal to 1, and less than or equal to 1000000. If you specify a <code>TotalSegments</code> value of 1, the <code>Scan</code> operation will be sequential rather than parallel.</p>
+    /// <p>If you specify <code>TotalSegments</code>, you must also specify <code>Segment</code>.</p>
     pub fn total_segments(&self) -> std::option::Option<i32> {
         self.total_segments
     }
-    /// <p>For a parallel <code>Scan</code> request, <code>Segment</code> identifies an
-    /// individual segment to be scanned by an application worker.</p>
-    /// <p>Segment IDs are zero-based, so the first segment is always 0. For example, if you want
-    /// to use four application threads to scan a table or an index, then the first thread
-    /// specifies a <code>Segment</code> value of 0, the second thread specifies 1, and so
-    /// on.</p>
-    /// <p>The value of <code>LastEvaluatedKey</code> returned from a parallel <code>Scan</code>
-    /// request must be used as <code>ExclusiveStartKey</code> with the same segment ID in a
-    /// subsequent <code>Scan</code> operation.</p>
-    /// <p>The value for <code>Segment</code> must be greater than or equal to 0, and less than
-    /// the value provided for <code>TotalSegments</code>.</p>
-    /// <p>If you provide <code>Segment</code>, you must also provide
-    /// <code>TotalSegments</code>.</p>
+    /// <p>For a parallel <code>Scan</code> request, <code>Segment</code> identifies an individual segment to be scanned by an application worker.</p>
+    /// <p>Segment IDs are zero-based, so the first segment is always 0. For example, if you want to use four application threads to scan a table or an index, then the first thread specifies a <code>Segment</code> value of 0, the second thread specifies 1, and so on.</p>
+    /// <p>The value of <code>LastEvaluatedKey</code> returned from a parallel <code>Scan</code> request must be used as <code>ExclusiveStartKey</code> with the same segment ID in a subsequent <code>Scan</code> operation.</p>
+    /// <p>The value for <code>Segment</code> must be greater than or equal to 0, and less than the value provided for <code>TotalSegments</code>.</p>
+    /// <p>If you provide <code>Segment</code>, you must also provide <code>TotalSegments</code>.</p>
     pub fn segment(&self) -> std::option::Option<i32> {
         self.segment
     }
-    /// <p>A string that identifies one or more attributes to retrieve from the specified table
-    /// or index. These attributes can include scalars, sets, or elements of a JSON document.
-    /// The attributes in the expression must be separated by commas.</p>
-    /// <p>If no attribute names are specified, then all attributes will be returned. If any of
-    /// the requested attributes are not found, they will not appear in the result.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>A string that identifies one or more attributes to retrieve from the specified table or index. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p>
+    /// <p>If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn projection_expression(&self) -> std::option::Option<&str> {
         self.projection_expression.as_deref()
     }
-    /// <p>A string that contains conditions that DynamoDB applies after the <code>Scan</code>
-    /// operation, but before the data is returned to you. Items that do not satisfy the
-    /// <code>FilterExpression</code> criteria are not returned.</p>
-    /// <note>
-    /// <p>A <code>FilterExpression</code> is applied after the items have already been read;
-    /// the process of filtering does not consume any additional read capacity units.</p>
+    /// <p>A string that contains conditions that DynamoDB applies after the <code>Scan</code> operation, but before the data is returned to you. Items that do not satisfy the <code>FilterExpression</code> criteria are not returned.</p> <note>
+    /// <p>A <code>FilterExpression</code> is applied after the items have already been read; the process of filtering does not consume any additional read capacity units.</p>
     /// </note>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
-    /// Expressions</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn filter_expression(&self) -> std::option::Option<&str> {
         self.filter_expression.as_deref()
     }
-    /// <p>One or more substitution tokens for attribute names in an expression. The following
-    /// are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+    /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
-    /// word.</p>
-    /// </li>
-    /// <li>
-    /// <p>To create a placeholder for repeating occurrences of an attribute name in an
-    /// expression.</p>
-    /// </li>
-    /// <li>
-    /// <p>To prevent special characters in an attribute name from being misinterpreted
-    /// in an expression.</p>
-    /// </li>
+    /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
+    /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
+    /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
     /// </ul>
-    /// <p>Use the <b>#</b> character in an expression to dereference
-    /// an attribute name. For example, consider the following attribute name:</p>
+    /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Percentile</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Percentile</code> </p> </li>
     /// </ul>
-    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used
-    /// directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>). To work around this, you could specify the following for
-    /// <code>ExpressionAttributeNames</code>:</p>
+    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>{"#P":"Percentile"}</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
     /// </ul>
     /// <p>You could then use this substitution in an expression, as in this example:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>#P = :val</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>Tokens that begin with the <b>:</b> character are
-    /// <i>expression attribute values</i>, which are placeholders for the
-    /// actual value at runtime.</p>
+    /// <li> <p> <code>#P = :val</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
     /// </note>
-    /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn expression_attribute_names(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -16299,24 +12671,13 @@ impl ScanInput {
         self.expression_attribute_names.as_ref()
     }
     /// <p>One or more values that can be substituted in an expression.</p>
-    /// <p>Use the <b>:</b> (colon) character in an expression to
-    /// dereference an attribute value. For example, suppose that you wanted to check whether
-    /// the value of the <code>ProductStatus</code> attribute was one of the following: </p>
-    /// <p>
-    /// <code>Available | Backordered | Discontinued</code>
-    /// </p>
-    /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as
-    /// follows:</p>
-    /// <p>
-    /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-    /// ":disc":{"S":"Discontinued"} }</code>
-    /// </p>
+    /// <p>Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the <code>ProductStatus</code> attribute was one of the following: </p>
+    /// <p> <code>Available | Backordered | Discontinued</code> </p>
+    /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+    /// <p> <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code> </p>
     /// <p>You could then use these values in an expression, such as this:</p>
-    /// <p>
-    /// <code>ProductStatus IN (:avail, :back, :disc)</code>
-    /// </p>
-    /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p> <code>ProductStatus IN (:avail, :back, :disc)</code> </p>
+    /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn expression_attribute_values(
         &self,
     ) -> std::option::Option<
@@ -16326,22 +12687,11 @@ impl ScanInput {
     }
     /// <p>A Boolean value that determines the read consistency model during the scan:</p>
     /// <ul>
-    /// <li>
-    /// <p>If <code>ConsistentRead</code> is <code>false</code>, then the data returned
-    /// from <code>Scan</code> might not contain the results from other recently
-    /// completed write operations (<code>PutItem</code>, <code>UpdateItem</code>, or
-    /// <code>DeleteItem</code>).</p>
-    /// </li>
-    /// <li>
-    /// <p>If <code>ConsistentRead</code> is <code>true</code>, then all of the write
-    /// operations that completed before the <code>Scan</code> began are guaranteed to
-    /// be contained in the <code>Scan</code> response.</p>
-    /// </li>
+    /// <li> <p>If <code>ConsistentRead</code> is <code>false</code>, then the data returned from <code>Scan</code> might not contain the results from other recently completed write operations (<code>PutItem</code>, <code>UpdateItem</code>, or <code>DeleteItem</code>).</p> </li>
+    /// <li> <p>If <code>ConsistentRead</code> is <code>true</code>, then all of the write operations that completed before the <code>Scan</code> began are guaranteed to be contained in the <code>Scan</code> response.</p> </li>
     /// </ul>
     /// <p>The default setting for <code>ConsistentRead</code> is <code>false</code>.</p>
-    /// <p>The <code>ConsistentRead</code> parameter is not supported on global secondary
-    /// indexes. If you scan a global secondary index with <code>ConsistentRead</code> set to
-    /// true, you will receive a <code>ValidationException</code>.</p>
+    /// <p>The <code>ConsistentRead</code> parameter is not supported on global secondary indexes. If you scan a global secondary index with <code>ConsistentRead</code> set to true, you will receive a <code>ValidationException</code>.</p>
     pub fn consistent_read(&self) -> std::option::Option<bool> {
         self.consistent_read
     }
@@ -16379,28 +12729,22 @@ impl std::fmt::Debug for ScanInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreTableToPointInTimeInput {
-    /// <p>The DynamoDB table that will be restored. This value is an Amazon Resource Name
-    /// (ARN).</p>
+    /// <p>The DynamoDB table that will be restored. This value is an Amazon Resource Name (ARN).</p>
     pub source_table_arn: std::option::Option<std::string::String>,
     /// <p>Name of the source table that is being restored.</p>
     pub source_table_name: std::option::Option<std::string::String>,
     /// <p>The name of the new table to which it must be restored to.</p>
     pub target_table_name: std::option::Option<std::string::String>,
-    /// <p>Restore the table to the latest possible time. <code>LatestRestorableDateTime</code>
-    /// is typically 5 minutes before the current time. </p>
+    /// <p>Restore the table to the latest possible time. <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time. </p>
     pub use_latest_restorable_time: std::option::Option<bool>,
     /// <p>Time in the past to restore the table to.</p>
     pub restore_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The billing mode of the restored table.</p>
     pub billing_mode_override: std::option::Option<crate::model::BillingMode>,
-    /// <p>List of global secondary indexes for the restored table. The indexes provided should
-    /// match existing secondary indexes. You can choose to exclude some or all of the indexes
-    /// at the time of restore.</p>
+    /// <p>List of global secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
     pub global_secondary_index_override:
         std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
-    /// <p>List of local secondary indexes for the restored table. The indexes provided should
-    /// match existing secondary indexes. You can choose to exclude some or all of the indexes
-    /// at the time of restore.</p>
+    /// <p>List of local secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
     pub local_secondary_index_override:
         std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndex>>,
     /// <p>Provisioned throughput settings for the restored table.</p>
@@ -16409,8 +12753,7 @@ pub struct RestoreTableToPointInTimeInput {
     pub sse_specification_override: std::option::Option<crate::model::SseSpecification>,
 }
 impl RestoreTableToPointInTimeInput {
-    /// <p>The DynamoDB table that will be restored. This value is an Amazon Resource Name
-    /// (ARN).</p>
+    /// <p>The DynamoDB table that will be restored. This value is an Amazon Resource Name (ARN).</p>
     pub fn source_table_arn(&self) -> std::option::Option<&str> {
         self.source_table_arn.as_deref()
     }
@@ -16422,8 +12765,7 @@ impl RestoreTableToPointInTimeInput {
     pub fn target_table_name(&self) -> std::option::Option<&str> {
         self.target_table_name.as_deref()
     }
-    /// <p>Restore the table to the latest possible time. <code>LatestRestorableDateTime</code>
-    /// is typically 5 minutes before the current time. </p>
+    /// <p>Restore the table to the latest possible time. <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time. </p>
     pub fn use_latest_restorable_time(&self) -> std::option::Option<bool> {
         self.use_latest_restorable_time
     }
@@ -16435,17 +12777,13 @@ impl RestoreTableToPointInTimeInput {
     pub fn billing_mode_override(&self) -> std::option::Option<&crate::model::BillingMode> {
         self.billing_mode_override.as_ref()
     }
-    /// <p>List of global secondary indexes for the restored table. The indexes provided should
-    /// match existing secondary indexes. You can choose to exclude some or all of the indexes
-    /// at the time of restore.</p>
+    /// <p>List of global secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
     pub fn global_secondary_index_override(
         &self,
     ) -> std::option::Option<&[crate::model::GlobalSecondaryIndex]> {
         self.global_secondary_index_override.as_deref()
     }
-    /// <p>List of local secondary indexes for the restored table. The indexes provided should
-    /// match existing secondary indexes. You can choose to exclude some or all of the indexes
-    /// at the time of restore.</p>
+    /// <p>List of local secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
     pub fn local_secondary_index_override(
         &self,
     ) -> std::option::Option<&[crate::model::LocalSecondaryIndex]> {
@@ -16506,14 +12844,10 @@ pub struct RestoreTableFromBackupInput {
     pub backup_arn: std::option::Option<std::string::String>,
     /// <p>The billing mode of the restored table.</p>
     pub billing_mode_override: std::option::Option<crate::model::BillingMode>,
-    /// <p>List of global secondary indexes for the restored table. The indexes provided should
-    /// match existing secondary indexes. You can choose to exclude some or all of the indexes
-    /// at the time of restore.</p>
+    /// <p>List of global secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
     pub global_secondary_index_override:
         std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
-    /// <p>List of local secondary indexes for the restored table. The indexes provided should
-    /// match existing secondary indexes. You can choose to exclude some or all of the indexes
-    /// at the time of restore.</p>
+    /// <p>List of local secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
     pub local_secondary_index_override:
         std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndex>>,
     /// <p>Provisioned throughput settings for the restored table.</p>
@@ -16534,17 +12868,13 @@ impl RestoreTableFromBackupInput {
     pub fn billing_mode_override(&self) -> std::option::Option<&crate::model::BillingMode> {
         self.billing_mode_override.as_ref()
     }
-    /// <p>List of global secondary indexes for the restored table. The indexes provided should
-    /// match existing secondary indexes. You can choose to exclude some or all of the indexes
-    /// at the time of restore.</p>
+    /// <p>List of global secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
     pub fn global_secondary_index_override(
         &self,
     ) -> std::option::Option<&[crate::model::GlobalSecondaryIndex]> {
         self.global_secondary_index_override.as_deref()
     }
-    /// <p>List of local secondary indexes for the restored table. The indexes provided should
-    /// match existing secondary indexes. You can choose to exclude some or all of the indexes
-    /// at the time of restore.</p>
+    /// <p>List of local secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
     pub fn local_secondary_index_override(
         &self,
     ) -> std::option::Option<&[crate::model::LocalSecondaryIndex]> {
@@ -16595,363 +12925,122 @@ impl std::fmt::Debug for RestoreTableFromBackupInput {
 pub struct QueryInput {
     /// <p>The name of the table containing the requested items.</p>
     pub table_name: std::option::Option<std::string::String>,
-    /// <p>The name of an index to query. This index can be any local secondary index or global
-    /// secondary index on the table. Note that if you use the <code>IndexName</code> parameter,
-    /// you must also provide <code>TableName.</code>
-    /// </p>
+    /// <p>The name of an index to query. This index can be any local secondary index or global secondary index on the table. Note that if you use the <code>IndexName</code> parameter, you must also provide <code>TableName.</code> </p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>The attributes to be returned in the result. You can retrieve all item attributes,
-    /// specific item attributes, the count of matching items, or in the case of an index, some
-    /// or all of the attributes projected into the index.</p>
+    /// <p>The attributes to be returned in the result. You can retrieve all item attributes, specific item attributes, the count of matching items, or in the case of an index, some or all of the attributes projected into the index.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the
-    /// specified table or index. If you query a local secondary index, then for each
-    /// matching item in the index, DynamoDB fetches the entire item from the parent
-    /// table. If the index is configured to project all item attributes, then all of
-    /// the data can be obtained from the local secondary index, and no fetching is
-    /// required.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an index.
-    /// Retrieves all attributes that have been projected into the index. If the index
-    /// is configured to project all attributes, this return value is equivalent to
-    /// specifying <code>ALL_ATTRIBUTES</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COUNT</code> - Returns the number of matching items, rather than the
-    /// matching items themselves.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
-    /// <code>AttributesToGet</code>. This return value is equivalent to specifying
-    /// <code>AttributesToGet</code> without specifying any value for
-    /// <code>Select</code>.</p>
-    /// <p>If you query or scan a local secondary index and request only attributes that
-    /// are projected into that index, the operation will read only the index and not
-    /// the table. If any of the requested attributes are not projected into the local
-    /// secondary index, DynamoDB fetches each of these attributes from the parent
-    /// table. This extra fetching incurs additional throughput cost and latency.</p>
-    /// <p>If you query or scan a global secondary index, you can only request attributes
-    /// that are projected into the index. Global secondary index queries cannot fetch
-    /// attributes from the parent table.</p>
-    /// </li>
+    /// <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If you query a local secondary index, then for each matching item in the index, DynamoDB fetches the entire item from the parent table. If the index is configured to project all item attributes, then all of the data can be obtained from the local secondary index, and no fetching is required.</p> </li>
+    /// <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an index. Retrieves all attributes that have been projected into the index. If the index is configured to project all attributes, this return value is equivalent to specifying <code>ALL_ATTRIBUTES</code>.</p> </li>
+    /// <li> <p> <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.</p> </li>
+    /// <li> <p> <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in <code>AttributesToGet</code>. This return value is equivalent to specifying <code>AttributesToGet</code> without specifying any value for <code>Select</code>.</p> <p>If you query or scan a local secondary index and request only attributes that are projected into that index, the operation will read only the index and not the table. If any of the requested attributes are not projected into the local secondary index, DynamoDB fetches each of these attributes from the parent table. This extra fetching incurs additional throughput cost and latency.</p> <p>If you query or scan a global secondary index, you can only request attributes that are projected into the index. Global secondary index queries cannot fetch attributes from the parent table.</p> </li>
     /// </ul>
-    /// <p>If neither <code>Select</code> nor <code>AttributesToGet</code> are specified,
-    /// DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a table, and
-    /// <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You cannot use both
-    /// <code>Select</code> and <code>AttributesToGet</code> together in a single request,
-    /// unless the value for <code>Select</code> is <code>SPECIFIC_ATTRIBUTES</code>. (This
-    /// usage is equivalent to specifying <code>AttributesToGet</code> without any value for
-    /// <code>Select</code>.)</p>
-    /// <note>
-    /// <p>If you use the <code>ProjectionExpression</code> parameter, then the value for
-    /// <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other
-    /// value for <code>Select</code> will return an error.</p>
+    /// <p>If neither <code>Select</code> nor <code>AttributesToGet</code> are specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You cannot use both <code>Select</code> and <code>AttributesToGet</code> together in a single request, unless the value for <code>Select</code> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying <code>AttributesToGet</code> without any value for <code>Select</code>.)</p> <note>
+    /// <p>If you use the <code>ProjectionExpression</code> parameter, then the value for <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <code>Select</code> will return an error.</p>
     /// </note>
     pub select: std::option::Option<crate::model::Select>,
-    /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub attributes_to_get: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of items to evaluate (not necessarily the number of matching
-    /// items). If DynamoDB processes the number of items up to the limit while processing the
-    /// results, it stops the operation and returns the matching values up to that point, and a
-    /// key in <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that you can
-    /// pick up where you left off. Also, if the processed dataset size exceeds 1 MB before
-    /// DynamoDB reaches this limit, it stops the operation and returns the matching values up
-    /// to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent
-    /// operation to continue the operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and Scan</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the number of items up to the limit while processing the results, it stops the operation and returns the matching values up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that you can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values up to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>Determines the read consistency model: If set to <code>true</code>, then the operation
-    /// uses strongly consistent reads; otherwise, the operation uses eventually consistent
-    /// reads.</p>
-    /// <p>Strongly consistent reads are not supported on global secondary indexes. If you query
-    /// a global secondary index with <code>ConsistentRead</code> set to <code>true</code>, you
-    /// will receive a <code>ValidationException</code>.</p>
+    /// <p>Determines the read consistency model: If set to <code>true</code>, then the operation uses strongly consistent reads; otherwise, the operation uses eventually consistent reads.</p>
+    /// <p>Strongly consistent reads are not supported on global secondary indexes. If you query a global secondary index with <code>ConsistentRead</code> set to <code>true</code>, you will receive a <code>ValidationException</code>.</p>
     pub consistent_read: std::option::Option<bool>,
-    /// <p>This is a legacy parameter. Use <code>KeyConditionExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>KeyConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub key_conditions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::Condition>,
     >,
-    /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub query_filter: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::Condition>,
     >,
-    /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub conditional_operator: std::option::Option<crate::model::ConditionalOperator>,
-    /// <p>Specifies the order for index traversal: If <code>true</code> (default), the traversal
-    /// is performed in ascending order; if <code>false</code>, the traversal is performed in
-    /// descending order. </p>
-    /// <p>Items with the same partition key value are stored in sorted order by sort key. If the
-    /// sort key data type is Number, the results are stored in numeric order. For type String,
-    /// the results are stored in order of UTF-8 bytes. For type Binary, DynamoDB treats each
-    /// byte of the binary data as unsigned.</p>
-    /// <p>If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in
-    /// the order in which they are stored (by sort key value). This is the default behavior. If
-    /// <code>ScanIndexForward</code> is <code>false</code>, DynamoDB reads the results in
-    /// reverse order by sort key value, and then returns the results to the client.</p>
+    /// <p>Specifies the order for index traversal: If <code>true</code> (default), the traversal is performed in ascending order; if <code>false</code>, the traversal is performed in descending order. </p>
+    /// <p>Items with the same partition key value are stored in sorted order by sort key. If the sort key data type is Number, the results are stored in numeric order. For type String, the results are stored in order of UTF-8 bytes. For type Binary, DynamoDB treats each byte of the binary data as unsigned.</p>
+    /// <p>If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in the order in which they are stored (by sort key value). This is the default behavior. If <code>ScanIndexForward</code> is <code>false</code>, DynamoDB reads the results in reverse order by sort key value, and then returns the results to the client.</p>
     pub scan_index_forward: std::option::Option<bool>,
-    /// <p>The primary key of the first item that this operation will evaluate. Use the value
-    /// that was returned for <code>LastEvaluatedKey</code> in the previous operation.</p>
-    /// <p>The data type for <code>ExclusiveStartKey</code> must be String, Number, or Binary. No
-    /// set data types are allowed.</p>
+    /// <p>The primary key of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedKey</code> in the previous operation.</p>
+    /// <p>The data type for <code>ExclusiveStartKey</code> must be String, Number, or Binary. No set data types are allowed.</p>
     pub exclusive_start_key: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
-    /// <p>Determines the level of detail about either provisioned or on-demand throughput
-    /// consumption that is returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INDEXES</code> - The response includes the aggregate
-    /// <code>ConsumedCapacity</code> for the operation, together with
-    /// <code>ConsumedCapacity</code> for each table and secondary index that was
-    /// accessed.</p>
-    /// <p>Note that some operations, such as <code>GetItem</code> and
-    /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-    /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-    /// information for table(s).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TOTAL</code> - The response includes only the aggregate
-    /// <code>ConsumedCapacity</code> for the operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-    /// response.</p>
-    /// </li>
+    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
     pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
-    /// <p>A string that identifies one or more attributes to retrieve from the table. These
-    /// attributes can include scalars, sets, or elements of a JSON document. The attributes in
-    /// the expression must be separated by commas.</p>
-    /// <p>If no attribute names are specified, then all attributes will be returned. If any of
-    /// the requested attributes are not found, they will not appear in the result.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p>
+    /// <p>If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub projection_expression: std::option::Option<std::string::String>,
-    /// <p>A string that contains conditions that DynamoDB applies after the <code>Query</code>
-    /// operation, but before the data is returned to you. Items that do not satisfy the
-    /// <code>FilterExpression</code> criteria are not returned.</p>
-    /// <p>A <code>FilterExpression</code> does not allow key attributes. You cannot define a
-    /// filter expression based on a partition key or a sort key.</p>
-    /// <note>
-    /// <p>A <code>FilterExpression</code> is applied after the items have already been read;
-    /// the process of filtering does not consume any additional read capacity units.</p>
+    /// <p>A string that contains conditions that DynamoDB applies after the <code>Query</code> operation, but before the data is returned to you. Items that do not satisfy the <code>FilterExpression</code> criteria are not returned.</p>
+    /// <p>A <code>FilterExpression</code> does not allow key attributes. You cannot define a filter expression based on a partition key or a sort key.</p> <note>
+    /// <p>A <code>FilterExpression</code> is applied after the items have already been read; the process of filtering does not consume any additional read capacity units.</p>
     /// </note>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
-    /// Expressions</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub filter_expression: std::option::Option<std::string::String>,
-    /// <p>The condition that specifies the key values for items to be retrieved by the
-    /// <code>Query</code> action.</p>
-    ///
+    /// <p>The condition that specifies the key values for items to be retrieved by the <code>Query</code> action.</p>
     /// <p>The condition must perform an equality test on a single partition key value.</p>
-    /// <p>The condition can optionally perform one of several comparison tests on a single sort
-    /// key value. This allows <code>Query</code> to retrieve one item with a given partition
-    /// key value and sort key value, or several items that have the same partition key value
-    /// but different sort key values.</p>
-    ///
-    /// <p>The partition key equality test is required, and must be specified in the following
-    /// format:</p>
-    ///
-    /// <p>
-    /// <code>partitionKeyName</code>
-    /// <i>=</i>
-    /// <code>:partitionkeyval</code>
-    /// </p>
-    ///
-    /// <p>If you also want to provide a condition for the sort key, it must be combined using
-    /// <code>AND</code> with the condition for the sort key. Following is an example, using
-    /// the <b>=</b> comparison operator for the sort key:</p>
-    ///
-    /// <p>
-    /// <code>partitionKeyName</code>
-    /// <code>=</code>
-    /// <code>:partitionkeyval</code>
-    /// <code>AND</code>
-    /// <code>sortKeyName</code>
-    /// <code>=</code>
-    /// <code>:sortkeyval</code>
-    /// </p>
+    /// <p>The condition can optionally perform one of several comparison tests on a single sort key value. This allows <code>Query</code> to retrieve one item with a given partition key value and sort key value, or several items that have the same partition key value but different sort key values.</p>
+    /// <p>The partition key equality test is required, and must be specified in the following format:</p>
+    /// <p> <code>partitionKeyName</code> <i>=</i> <code>:partitionkeyval</code> </p>
+    /// <p>If you also want to provide a condition for the sort key, it must be combined using <code>AND</code> with the condition for the sort key. Following is an example, using the <b>=</b> comparison operator for the sort key:</p>
+    /// <p> <code>partitionKeyName</code> <code>=</code> <code>:partitionkeyval</code> <code>AND</code> <code>sortKeyName</code> <code>=</code> <code>:sortkeyval</code> </p>
     /// <p>Valid comparisons for the sort key condition are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>sortKeyName</code>
-    /// <code>=</code>
-    /// <code>:sortkeyval</code> - true if the sort key value is equal to
-    /// <code>:sortkeyval</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sortKeyName</code>
-    /// <code><</code>
-    /// <code>:sortkeyval</code> - true if the sort key value is less than
-    /// <code>:sortkeyval</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sortKeyName</code>
-    /// <code><=</code>
-    /// <code>:sortkeyval</code> - true if the sort key value is less than or equal to
-    /// <code>:sortkeyval</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sortKeyName</code>
-    /// <code>></code>
-    /// <code>:sortkeyval</code> - true if the sort key value is greater than
-    /// <code>:sortkeyval</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sortKeyName</code>
-    /// <code>>= </code>
-    /// <code>:sortkeyval</code> - true if the sort key value is greater than or equal
-    /// to <code>:sortkeyval</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sortKeyName</code>
-    /// <code>BETWEEN</code>
-    /// <code>:sortkeyval1</code>
-    /// <code>AND</code>
-    /// <code>:sortkeyval2</code> - true if the sort key value is greater than or equal
-    /// to <code>:sortkeyval1</code>, and less than or equal to
-    /// <code>:sortkeyval2</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>begins_with (</code>
-    /// <code>sortKeyName</code>, <code>:sortkeyval</code>
-    /// <code>)</code> - true if the sort key value begins with a particular operand.
-    /// (You cannot use this function with a sort key that is of type Number.) Note that
-    /// the function name <code>begins_with</code> is case-sensitive.</p>
-    ///
-    /// </li>
+    /// <li> <p> <code>sortKeyName</code> <code>=</code> <code>:sortkeyval</code> - true if the sort key value is equal to <code>:sortkeyval</code>.</p> </li>
+    /// <li> <p> <code>sortKeyName</code> <code>&lt;</code> <code>:sortkeyval</code> - true if the sort key value is less than <code>:sortkeyval</code>.</p> </li>
+    /// <li> <p> <code>sortKeyName</code> <code>&lt;=</code> <code>:sortkeyval</code> - true if the sort key value is less than or equal to <code>:sortkeyval</code>.</p> </li>
+    /// <li> <p> <code>sortKeyName</code> <code>&gt;</code> <code>:sortkeyval</code> - true if the sort key value is greater than <code>:sortkeyval</code>.</p> </li>
+    /// <li> <p> <code>sortKeyName</code> <code>&gt;= </code> <code>:sortkeyval</code> - true if the sort key value is greater than or equal to <code>:sortkeyval</code>.</p> </li>
+    /// <li> <p> <code>sortKeyName</code> <code>BETWEEN</code> <code>:sortkeyval1</code> <code>AND</code> <code>:sortkeyval2</code> - true if the sort key value is greater than or equal to <code>:sortkeyval1</code>, and less than or equal to <code>:sortkeyval2</code>.</p> </li>
+    /// <li> <p> <code>begins_with (</code> <code>sortKeyName</code>, <code>:sortkeyval</code> <code>)</code> - true if the sort key value begins with a particular operand. (You cannot use this function with a sort key that is of type Number.) Note that the function name <code>begins_with</code> is case-sensitive.</p> </li>
     /// </ul>
-    ///
-    /// <p>Use the <code>ExpressionAttributeValues</code> parameter to replace tokens such as
-    /// <code>:partitionval</code> and <code>:sortval</code> with actual values at
-    /// runtime.</p>
-    ///
-    /// <p>You can optionally use the <code>ExpressionAttributeNames</code> parameter to replace
-    /// the names of the partition key and sort key with placeholder tokens. This option might
-    /// be necessary if an attribute name conflicts with a DynamoDB reserved word. For example,
-    /// the following <code>KeyConditionExpression</code> parameter causes an error because
-    /// <i>Size</i> is a reserved word:</p>
+    /// <p>Use the <code>ExpressionAttributeValues</code> parameter to replace tokens such as <code>:partitionval</code> and <code>:sortval</code> with actual values at runtime.</p>
+    /// <p>You can optionally use the <code>ExpressionAttributeNames</code> parameter to replace the names of the partition key and sort key with placeholder tokens. This option might be necessary if an attribute name conflicts with a DynamoDB reserved word. For example, the following <code>KeyConditionExpression</code> parameter causes an error because <i>Size</i> is a reserved word:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Size = :myval</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Size = :myval</code> </p> </li>
     /// </ul>
-    /// <p>To work around this, define a placeholder (such a <code>#S</code>) to represent the
-    /// attribute name <i>Size</i>. <code>KeyConditionExpression</code> then is as
-    /// follows:</p>
+    /// <p>To work around this, define a placeholder (such a <code>#S</code>) to represent the attribute name <i>Size</i>. <code>KeyConditionExpression</code> then is as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>#S = :myval</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>#S = :myval</code> </p> </li>
     /// </ul>
-    /// <p>For a list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a>
-    /// in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    ///
-    /// <p>For more information on <code>ExpressionAttributeNames</code> and
-    /// <code>ExpressionAttributeValues</code>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
-    /// Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB
-    /// Developer Guide</i>.</p>
+    /// <p>For a list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>For more information on <code>ExpressionAttributeNames</code> and <code>ExpressionAttributeValues</code>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub key_condition_expression: std::option::Option<std::string::String>,
-    /// <p>One or more substitution tokens for attribute names in an expression. The following
-    /// are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+    /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
-    /// word.</p>
-    /// </li>
-    /// <li>
-    /// <p>To create a placeholder for repeating occurrences of an attribute name in an
-    /// expression.</p>
-    /// </li>
-    /// <li>
-    /// <p>To prevent special characters in an attribute name from being misinterpreted
-    /// in an expression.</p>
-    /// </li>
+    /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
+    /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
+    /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
     /// </ul>
-    /// <p>Use the <b>#</b> character in an expression to dereference
-    /// an attribute name. For example, consider the following attribute name:</p>
+    /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Percentile</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Percentile</code> </p> </li>
     /// </ul>
-    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used
-    /// directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>). To work around this, you could specify the following for
-    /// <code>ExpressionAttributeNames</code>:</p>
+    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>{"#P":"Percentile"}</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
     /// </ul>
     /// <p>You could then use this substitution in an expression, as in this example:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>#P = :val</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>Tokens that begin with the <b>:</b> character are
-    /// <i>expression attribute values</i>, which are placeholders for the
-    /// actual value at runtime.</p>
+    /// <li> <p> <code>#P = :val</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
     /// </note>
-    /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub expression_attribute_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>One or more values that can be substituted in an expression.</p>
-    /// <p>Use the <b>:</b> (colon) character in an expression to
-    /// dereference an attribute value. For example, suppose that you wanted to check whether
-    /// the value of the <i>ProductStatus</i> attribute was one of the following: </p>
-    /// <p>
-    /// <code>Available | Backordered | Discontinued</code>
-    /// </p>
-    /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as
-    /// follows:</p>
-    /// <p>
-    /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-    /// ":disc":{"S":"Discontinued"} }</code>
-    /// </p>
+    /// <p>Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the following: </p>
+    /// <p> <code>Available | Backordered | Discontinued</code> </p>
+    /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+    /// <p> <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code> </p>
     /// <p>You could then use these values in an expression, such as this:</p>
-    /// <p>
-    /// <code>ProductStatus IN (:avail, :back, :disc)</code>
-    /// </p>
-    /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying Conditions</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p> <code>ProductStatus IN (:avail, :back, :disc)</code> </p>
+    /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub expression_attribute_values: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
@@ -16961,138 +13050,62 @@ impl QueryInput {
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
-    /// <p>The name of an index to query. This index can be any local secondary index or global
-    /// secondary index on the table. Note that if you use the <code>IndexName</code> parameter,
-    /// you must also provide <code>TableName.</code>
-    /// </p>
+    /// <p>The name of an index to query. This index can be any local secondary index or global secondary index on the table. Note that if you use the <code>IndexName</code> parameter, you must also provide <code>TableName.</code> </p>
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>The attributes to be returned in the result. You can retrieve all item attributes,
-    /// specific item attributes, the count of matching items, or in the case of an index, some
-    /// or all of the attributes projected into the index.</p>
+    /// <p>The attributes to be returned in the result. You can retrieve all item attributes, specific item attributes, the count of matching items, or in the case of an index, some or all of the attributes projected into the index.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the
-    /// specified table or index. If you query a local secondary index, then for each
-    /// matching item in the index, DynamoDB fetches the entire item from the parent
-    /// table. If the index is configured to project all item attributes, then all of
-    /// the data can be obtained from the local secondary index, and no fetching is
-    /// required.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an index.
-    /// Retrieves all attributes that have been projected into the index. If the index
-    /// is configured to project all attributes, this return value is equivalent to
-    /// specifying <code>ALL_ATTRIBUTES</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COUNT</code> - Returns the number of matching items, rather than the
-    /// matching items themselves.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
-    /// <code>AttributesToGet</code>. This return value is equivalent to specifying
-    /// <code>AttributesToGet</code> without specifying any value for
-    /// <code>Select</code>.</p>
-    /// <p>If you query or scan a local secondary index and request only attributes that
-    /// are projected into that index, the operation will read only the index and not
-    /// the table. If any of the requested attributes are not projected into the local
-    /// secondary index, DynamoDB fetches each of these attributes from the parent
-    /// table. This extra fetching incurs additional throughput cost and latency.</p>
-    /// <p>If you query or scan a global secondary index, you can only request attributes
-    /// that are projected into the index. Global secondary index queries cannot fetch
-    /// attributes from the parent table.</p>
-    /// </li>
+    /// <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If you query a local secondary index, then for each matching item in the index, DynamoDB fetches the entire item from the parent table. If the index is configured to project all item attributes, then all of the data can be obtained from the local secondary index, and no fetching is required.</p> </li>
+    /// <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an index. Retrieves all attributes that have been projected into the index. If the index is configured to project all attributes, this return value is equivalent to specifying <code>ALL_ATTRIBUTES</code>.</p> </li>
+    /// <li> <p> <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.</p> </li>
+    /// <li> <p> <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in <code>AttributesToGet</code>. This return value is equivalent to specifying <code>AttributesToGet</code> without specifying any value for <code>Select</code>.</p> <p>If you query or scan a local secondary index and request only attributes that are projected into that index, the operation will read only the index and not the table. If any of the requested attributes are not projected into the local secondary index, DynamoDB fetches each of these attributes from the parent table. This extra fetching incurs additional throughput cost and latency.</p> <p>If you query or scan a global secondary index, you can only request attributes that are projected into the index. Global secondary index queries cannot fetch attributes from the parent table.</p> </li>
     /// </ul>
-    /// <p>If neither <code>Select</code> nor <code>AttributesToGet</code> are specified,
-    /// DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a table, and
-    /// <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You cannot use both
-    /// <code>Select</code> and <code>AttributesToGet</code> together in a single request,
-    /// unless the value for <code>Select</code> is <code>SPECIFIC_ATTRIBUTES</code>. (This
-    /// usage is equivalent to specifying <code>AttributesToGet</code> without any value for
-    /// <code>Select</code>.)</p>
-    /// <note>
-    /// <p>If you use the <code>ProjectionExpression</code> parameter, then the value for
-    /// <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other
-    /// value for <code>Select</code> will return an error.</p>
+    /// <p>If neither <code>Select</code> nor <code>AttributesToGet</code> are specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You cannot use both <code>Select</code> and <code>AttributesToGet</code> together in a single request, unless the value for <code>Select</code> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying <code>AttributesToGet</code> without any value for <code>Select</code>.)</p> <note>
+    /// <p>If you use the <code>ProjectionExpression</code> parameter, then the value for <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <code>Select</code> will return an error.</p>
     /// </note>
     pub fn select(&self) -> std::option::Option<&crate::model::Select> {
         self.select.as_ref()
     }
-    /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn attributes_to_get(&self) -> std::option::Option<&[std::string::String]> {
         self.attributes_to_get.as_deref()
     }
-    /// <p>The maximum number of items to evaluate (not necessarily the number of matching
-    /// items). If DynamoDB processes the number of items up to the limit while processing the
-    /// results, it stops the operation and returns the matching values up to that point, and a
-    /// key in <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that you can
-    /// pick up where you left off. Also, if the processed dataset size exceeds 1 MB before
-    /// DynamoDB reaches this limit, it stops the operation and returns the matching values up
-    /// to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent
-    /// operation to continue the operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and Scan</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the number of items up to the limit while processing the results, it stops the operation and returns the matching values up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that you can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values up to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>Determines the read consistency model: If set to <code>true</code>, then the operation
-    /// uses strongly consistent reads; otherwise, the operation uses eventually consistent
-    /// reads.</p>
-    /// <p>Strongly consistent reads are not supported on global secondary indexes. If you query
-    /// a global secondary index with <code>ConsistentRead</code> set to <code>true</code>, you
-    /// will receive a <code>ValidationException</code>.</p>
+    /// <p>Determines the read consistency model: If set to <code>true</code>, then the operation uses strongly consistent reads; otherwise, the operation uses eventually consistent reads.</p>
+    /// <p>Strongly consistent reads are not supported on global secondary indexes. If you query a global secondary index with <code>ConsistentRead</code> set to <code>true</code>, you will receive a <code>ValidationException</code>.</p>
     pub fn consistent_read(&self) -> std::option::Option<bool> {
         self.consistent_read
     }
-    /// <p>This is a legacy parameter. Use <code>KeyConditionExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>KeyConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn key_conditions(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Condition>>
     {
         self.key_conditions.as_ref()
     }
-    /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn query_filter(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Condition>>
     {
         self.query_filter.as_ref()
     }
-    /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn conditional_operator(&self) -> std::option::Option<&crate::model::ConditionalOperator> {
         self.conditional_operator.as_ref()
     }
-    /// <p>Specifies the order for index traversal: If <code>true</code> (default), the traversal
-    /// is performed in ascending order; if <code>false</code>, the traversal is performed in
-    /// descending order. </p>
-    /// <p>Items with the same partition key value are stored in sorted order by sort key. If the
-    /// sort key data type is Number, the results are stored in numeric order. For type String,
-    /// the results are stored in order of UTF-8 bytes. For type Binary, DynamoDB treats each
-    /// byte of the binary data as unsigned.</p>
-    /// <p>If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in
-    /// the order in which they are stored (by sort key value). This is the default behavior. If
-    /// <code>ScanIndexForward</code> is <code>false</code>, DynamoDB reads the results in
-    /// reverse order by sort key value, and then returns the results to the client.</p>
+    /// <p>Specifies the order for index traversal: If <code>true</code> (default), the traversal is performed in ascending order; if <code>false</code>, the traversal is performed in descending order. </p>
+    /// <p>Items with the same partition key value are stored in sorted order by sort key. If the sort key data type is Number, the results are stored in numeric order. For type String, the results are stored in order of UTF-8 bytes. For type Binary, DynamoDB treats each byte of the binary data as unsigned.</p>
+    /// <p>If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in the order in which they are stored (by sort key value). This is the default behavior. If <code>ScanIndexForward</code> is <code>false</code>, DynamoDB reads the results in reverse order by sort key value, and then returns the results to the client.</p>
     pub fn scan_index_forward(&self) -> std::option::Option<bool> {
         self.scan_index_forward
     }
-    /// <p>The primary key of the first item that this operation will evaluate. Use the value
-    /// that was returned for <code>LastEvaluatedKey</code> in the previous operation.</p>
-    /// <p>The data type for <code>ExclusiveStartKey</code> must be String, Number, or Binary. No
-    /// set data types are allowed.</p>
+    /// <p>The primary key of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedKey</code> in the previous operation.</p>
+    /// <p>The data type for <code>ExclusiveStartKey</code> must be String, Number, or Binary. No set data types are allowed.</p>
     pub fn exclusive_start_key(
         &self,
     ) -> std::option::Option<
@@ -17100,237 +13113,83 @@ impl QueryInput {
     > {
         self.exclusive_start_key.as_ref()
     }
-    /// <p>Determines the level of detail about either provisioned or on-demand throughput
-    /// consumption that is returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INDEXES</code> - The response includes the aggregate
-    /// <code>ConsumedCapacity</code> for the operation, together with
-    /// <code>ConsumedCapacity</code> for each table and secondary index that was
-    /// accessed.</p>
-    /// <p>Note that some operations, such as <code>GetItem</code> and
-    /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-    /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-    /// information for table(s).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TOTAL</code> - The response includes only the aggregate
-    /// <code>ConsumedCapacity</code> for the operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-    /// response.</p>
-    /// </li>
+    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
     pub fn return_consumed_capacity(
         &self,
     ) -> std::option::Option<&crate::model::ReturnConsumedCapacity> {
         self.return_consumed_capacity.as_ref()
     }
-    /// <p>A string that identifies one or more attributes to retrieve from the table. These
-    /// attributes can include scalars, sets, or elements of a JSON document. The attributes in
-    /// the expression must be separated by commas.</p>
-    /// <p>If no attribute names are specified, then all attributes will be returned. If any of
-    /// the requested attributes are not found, they will not appear in the result.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p>
+    /// <p>If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn projection_expression(&self) -> std::option::Option<&str> {
         self.projection_expression.as_deref()
     }
-    /// <p>A string that contains conditions that DynamoDB applies after the <code>Query</code>
-    /// operation, but before the data is returned to you. Items that do not satisfy the
-    /// <code>FilterExpression</code> criteria are not returned.</p>
-    /// <p>A <code>FilterExpression</code> does not allow key attributes. You cannot define a
-    /// filter expression based on a partition key or a sort key.</p>
-    /// <note>
-    /// <p>A <code>FilterExpression</code> is applied after the items have already been read;
-    /// the process of filtering does not consume any additional read capacity units.</p>
+    /// <p>A string that contains conditions that DynamoDB applies after the <code>Query</code> operation, but before the data is returned to you. Items that do not satisfy the <code>FilterExpression</code> criteria are not returned.</p>
+    /// <p>A <code>FilterExpression</code> does not allow key attributes. You cannot define a filter expression based on a partition key or a sort key.</p> <note>
+    /// <p>A <code>FilterExpression</code> is applied after the items have already been read; the process of filtering does not consume any additional read capacity units.</p>
     /// </note>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
-    /// Expressions</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn filter_expression(&self) -> std::option::Option<&str> {
         self.filter_expression.as_deref()
     }
-    /// <p>The condition that specifies the key values for items to be retrieved by the
-    /// <code>Query</code> action.</p>
-    ///
+    /// <p>The condition that specifies the key values for items to be retrieved by the <code>Query</code> action.</p>
     /// <p>The condition must perform an equality test on a single partition key value.</p>
-    /// <p>The condition can optionally perform one of several comparison tests on a single sort
-    /// key value. This allows <code>Query</code> to retrieve one item with a given partition
-    /// key value and sort key value, or several items that have the same partition key value
-    /// but different sort key values.</p>
-    ///
-    /// <p>The partition key equality test is required, and must be specified in the following
-    /// format:</p>
-    ///
-    /// <p>
-    /// <code>partitionKeyName</code>
-    /// <i>=</i>
-    /// <code>:partitionkeyval</code>
-    /// </p>
-    ///
-    /// <p>If you also want to provide a condition for the sort key, it must be combined using
-    /// <code>AND</code> with the condition for the sort key. Following is an example, using
-    /// the <b>=</b> comparison operator for the sort key:</p>
-    ///
-    /// <p>
-    /// <code>partitionKeyName</code>
-    /// <code>=</code>
-    /// <code>:partitionkeyval</code>
-    /// <code>AND</code>
-    /// <code>sortKeyName</code>
-    /// <code>=</code>
-    /// <code>:sortkeyval</code>
-    /// </p>
+    /// <p>The condition can optionally perform one of several comparison tests on a single sort key value. This allows <code>Query</code> to retrieve one item with a given partition key value and sort key value, or several items that have the same partition key value but different sort key values.</p>
+    /// <p>The partition key equality test is required, and must be specified in the following format:</p>
+    /// <p> <code>partitionKeyName</code> <i>=</i> <code>:partitionkeyval</code> </p>
+    /// <p>If you also want to provide a condition for the sort key, it must be combined using <code>AND</code> with the condition for the sort key. Following is an example, using the <b>=</b> comparison operator for the sort key:</p>
+    /// <p> <code>partitionKeyName</code> <code>=</code> <code>:partitionkeyval</code> <code>AND</code> <code>sortKeyName</code> <code>=</code> <code>:sortkeyval</code> </p>
     /// <p>Valid comparisons for the sort key condition are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>sortKeyName</code>
-    /// <code>=</code>
-    /// <code>:sortkeyval</code> - true if the sort key value is equal to
-    /// <code>:sortkeyval</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sortKeyName</code>
-    /// <code><</code>
-    /// <code>:sortkeyval</code> - true if the sort key value is less than
-    /// <code>:sortkeyval</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sortKeyName</code>
-    /// <code><=</code>
-    /// <code>:sortkeyval</code> - true if the sort key value is less than or equal to
-    /// <code>:sortkeyval</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sortKeyName</code>
-    /// <code>></code>
-    /// <code>:sortkeyval</code> - true if the sort key value is greater than
-    /// <code>:sortkeyval</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sortKeyName</code>
-    /// <code>>= </code>
-    /// <code>:sortkeyval</code> - true if the sort key value is greater than or equal
-    /// to <code>:sortkeyval</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sortKeyName</code>
-    /// <code>BETWEEN</code>
-    /// <code>:sortkeyval1</code>
-    /// <code>AND</code>
-    /// <code>:sortkeyval2</code> - true if the sort key value is greater than or equal
-    /// to <code>:sortkeyval1</code>, and less than or equal to
-    /// <code>:sortkeyval2</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>begins_with (</code>
-    /// <code>sortKeyName</code>, <code>:sortkeyval</code>
-    /// <code>)</code> - true if the sort key value begins with a particular operand.
-    /// (You cannot use this function with a sort key that is of type Number.) Note that
-    /// the function name <code>begins_with</code> is case-sensitive.</p>
-    ///
-    /// </li>
+    /// <li> <p> <code>sortKeyName</code> <code>=</code> <code>:sortkeyval</code> - true if the sort key value is equal to <code>:sortkeyval</code>.</p> </li>
+    /// <li> <p> <code>sortKeyName</code> <code>&lt;</code> <code>:sortkeyval</code> - true if the sort key value is less than <code>:sortkeyval</code>.</p> </li>
+    /// <li> <p> <code>sortKeyName</code> <code>&lt;=</code> <code>:sortkeyval</code> - true if the sort key value is less than or equal to <code>:sortkeyval</code>.</p> </li>
+    /// <li> <p> <code>sortKeyName</code> <code>&gt;</code> <code>:sortkeyval</code> - true if the sort key value is greater than <code>:sortkeyval</code>.</p> </li>
+    /// <li> <p> <code>sortKeyName</code> <code>&gt;= </code> <code>:sortkeyval</code> - true if the sort key value is greater than or equal to <code>:sortkeyval</code>.</p> </li>
+    /// <li> <p> <code>sortKeyName</code> <code>BETWEEN</code> <code>:sortkeyval1</code> <code>AND</code> <code>:sortkeyval2</code> - true if the sort key value is greater than or equal to <code>:sortkeyval1</code>, and less than or equal to <code>:sortkeyval2</code>.</p> </li>
+    /// <li> <p> <code>begins_with (</code> <code>sortKeyName</code>, <code>:sortkeyval</code> <code>)</code> - true if the sort key value begins with a particular operand. (You cannot use this function with a sort key that is of type Number.) Note that the function name <code>begins_with</code> is case-sensitive.</p> </li>
     /// </ul>
-    ///
-    /// <p>Use the <code>ExpressionAttributeValues</code> parameter to replace tokens such as
-    /// <code>:partitionval</code> and <code>:sortval</code> with actual values at
-    /// runtime.</p>
-    ///
-    /// <p>You can optionally use the <code>ExpressionAttributeNames</code> parameter to replace
-    /// the names of the partition key and sort key with placeholder tokens. This option might
-    /// be necessary if an attribute name conflicts with a DynamoDB reserved word. For example,
-    /// the following <code>KeyConditionExpression</code> parameter causes an error because
-    /// <i>Size</i> is a reserved word:</p>
+    /// <p>Use the <code>ExpressionAttributeValues</code> parameter to replace tokens such as <code>:partitionval</code> and <code>:sortval</code> with actual values at runtime.</p>
+    /// <p>You can optionally use the <code>ExpressionAttributeNames</code> parameter to replace the names of the partition key and sort key with placeholder tokens. This option might be necessary if an attribute name conflicts with a DynamoDB reserved word. For example, the following <code>KeyConditionExpression</code> parameter causes an error because <i>Size</i> is a reserved word:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Size = :myval</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Size = :myval</code> </p> </li>
     /// </ul>
-    /// <p>To work around this, define a placeholder (such a <code>#S</code>) to represent the
-    /// attribute name <i>Size</i>. <code>KeyConditionExpression</code> then is as
-    /// follows:</p>
+    /// <p>To work around this, define a placeholder (such a <code>#S</code>) to represent the attribute name <i>Size</i>. <code>KeyConditionExpression</code> then is as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>#S = :myval</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>#S = :myval</code> </p> </li>
     /// </ul>
-    /// <p>For a list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a>
-    /// in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    ///
-    /// <p>For more information on <code>ExpressionAttributeNames</code> and
-    /// <code>ExpressionAttributeValues</code>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
-    /// Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB
-    /// Developer Guide</i>.</p>
+    /// <p>For a list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>For more information on <code>ExpressionAttributeNames</code> and <code>ExpressionAttributeValues</code>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn key_condition_expression(&self) -> std::option::Option<&str> {
         self.key_condition_expression.as_deref()
     }
-    /// <p>One or more substitution tokens for attribute names in an expression. The following
-    /// are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+    /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
-    /// word.</p>
-    /// </li>
-    /// <li>
-    /// <p>To create a placeholder for repeating occurrences of an attribute name in an
-    /// expression.</p>
-    /// </li>
-    /// <li>
-    /// <p>To prevent special characters in an attribute name from being misinterpreted
-    /// in an expression.</p>
-    /// </li>
+    /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
+    /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
+    /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
     /// </ul>
-    /// <p>Use the <b>#</b> character in an expression to dereference
-    /// an attribute name. For example, consider the following attribute name:</p>
+    /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Percentile</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Percentile</code> </p> </li>
     /// </ul>
-    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used
-    /// directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>). To work around this, you could specify the following for
-    /// <code>ExpressionAttributeNames</code>:</p>
+    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>{"#P":"Percentile"}</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
     /// </ul>
     /// <p>You could then use this substitution in an expression, as in this example:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>#P = :val</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>Tokens that begin with the <b>:</b> character are
-    /// <i>expression attribute values</i>, which are placeholders for the
-    /// actual value at runtime.</p>
+    /// <li> <p> <code>#P = :val</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
     /// </note>
-    /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn expression_attribute_names(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -17338,24 +13197,13 @@ impl QueryInput {
         self.expression_attribute_names.as_ref()
     }
     /// <p>One or more values that can be substituted in an expression.</p>
-    /// <p>Use the <b>:</b> (colon) character in an expression to
-    /// dereference an attribute value. For example, suppose that you wanted to check whether
-    /// the value of the <i>ProductStatus</i> attribute was one of the following: </p>
-    /// <p>
-    /// <code>Available | Backordered | Discontinued</code>
-    /// </p>
-    /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as
-    /// follows:</p>
-    /// <p>
-    /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-    /// ":disc":{"S":"Discontinued"} }</code>
-    /// </p>
+    /// <p>Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the following: </p>
+    /// <p> <code>Available | Backordered | Discontinued</code> </p>
+    /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+    /// <p> <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code> </p>
     /// <p>You could then use these values in an expression, such as this:</p>
-    /// <p>
-    /// <code>ProductStatus IN (:avail, :back, :disc)</code>
-    /// </p>
-    /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying Conditions</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p> <code>ProductStatus IN (:avail, :back, :disc)</code> </p>
+    /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn expression_attribute_values(
         &self,
     ) -> std::option::Option<
@@ -17400,188 +13248,80 @@ impl std::fmt::Debug for QueryInput {
 pub struct PutItemInput {
     /// <p>The name of the table to contain the item.</p>
     pub table_name: std::option::Option<std::string::String>,
-    /// <p>A map of attribute name/value pairs, one for each attribute. Only the primary key
-    /// attributes are required; you can optionally provide other attribute name-value pairs for
-    /// the item.</p>
-    /// <p>You must provide all of the attributes for the primary key. For example, with a simple
-    /// primary key, you only need to provide a value for the partition key. For a composite
-    /// primary key, you must provide both values for both the partition key and the sort
-    /// key.</p>
-    /// <p>If you specify any attributes that are part of an index key, then the data types for
-    /// those attributes must match those of the schema in the table's attribute
-    /// definition.</p>
-    /// <p>Empty String and Binary attribute values are allowed. Attribute values of type String
-    /// and Binary must have a length greater than zero if the attribute is used as a key
-    /// attribute for a table or index.</p>
-    ///
-    /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
-    /// <p>Each element in the <code>Item</code> map is an <code>AttributeValue</code>
-    /// object.</p>
+    /// <p>A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item.</p>
+    /// <p>You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key.</p>
+    /// <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p>
+    /// <p>Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a length greater than zero if the attribute is used as a key attribute for a table or index.</p>
+    /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>Each element in the <code>Item</code> map is an <code>AttributeValue</code> object.</p>
     pub item: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
-    /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub expected: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ExpectedAttributeValue>,
     >,
-    /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appeared
-    /// before they were updated with the <code>PutItem</code> request. For
-    /// <code>PutItem</code>, the valid values are:</p>
+    /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appeared before they were updated with the <code>PutItem</code> request. For <code>PutItem</code>, the valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its
-    /// value is <code>NONE</code>, then nothing is returned. (This setting is the
-    /// default for <code>ReturnValues</code>.)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALL_OLD</code> - If <code>PutItem</code> overwrote an attribute name-value
-    /// pair, then the content of the old item is returned.</p>
-    /// </li>
+    /// <li> <p> <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <code>ReturnValues</code>.)</p> </li>
+    /// <li> <p> <code>ALL_OLD</code> - If <code>PutItem</code> overwrote an attribute name-value pair, then the content of the old item is returned.</p> </li>
     /// </ul>
-    /// <p>The values returned are strongly consistent.</p>
-    /// <note>
-    /// <p>The <code>ReturnValues</code> parameter is used by several DynamoDB operations;
-    /// however, <code>PutItem</code> does not recognize any values other than
-    /// <code>NONE</code> or <code>ALL_OLD</code>.</p>
+    /// <p>The values returned are strongly consistent.</p> <note>
+    /// <p>The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however, <code>PutItem</code> does not recognize any values other than <code>NONE</code> or <code>ALL_OLD</code>.</p>
     /// </note>
     pub return_values: std::option::Option<crate::model::ReturnValue>,
-    /// <p>Determines the level of detail about either provisioned or on-demand throughput
-    /// consumption that is returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INDEXES</code> - The response includes the aggregate
-    /// <code>ConsumedCapacity</code> for the operation, together with
-    /// <code>ConsumedCapacity</code> for each table and secondary index that was
-    /// accessed.</p>
-    /// <p>Note that some operations, such as <code>GetItem</code> and
-    /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-    /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-    /// information for table(s).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TOTAL</code> - The response includes only the aggregate
-    /// <code>ConsumedCapacity</code> for the operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-    /// response.</p>
-    /// </li>
+    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
     pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
-    /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>,
-    /// the response includes statistics about item collections, if any, that were modified
-    /// during the operation are returned in the response. If set to <code>NONE</code> (the
-    /// default), no statistics are returned.</p>
+    /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
     pub return_item_collection_metrics:
         std::option::Option<crate::model::ReturnItemCollectionMetrics>,
-    /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub conditional_operator: std::option::Option<crate::model::ConditionalOperator>,
-    /// <p>A condition that must be satisfied in order for a conditional <code>PutItem</code>
-    /// operation to succeed.</p>
+    /// <p>A condition that must be satisfied in order for a conditional <code>PutItem</code> operation to succeed.</p>
     /// <p>An expression can contain any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type |
-    /// contains | begins_with | size</code>
-    /// </p>
-    /// <p>These function names are case-sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Comparison operators: <code>= | <> |
-    /// < | > | <= | >= |
-    /// BETWEEN | IN </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p> Logical operators: <code>AND | OR | NOT</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type | contains | begins_with | size</code> </p> <p>These function names are case-sensitive.</p> </li>
+    /// <li> <p>Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code> </p> </li>
+    /// <li> <p> Logical operators: <code>AND | OR | NOT</code> </p> </li>
     /// </ul>
-    /// <p>For more information on condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>For more information on condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub condition_expression: std::option::Option<std::string::String>,
-    /// <p>One or more substitution tokens for attribute names in an expression. The following
-    /// are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+    /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
-    /// word.</p>
-    /// </li>
-    /// <li>
-    /// <p>To create a placeholder for repeating occurrences of an attribute name in an
-    /// expression.</p>
-    /// </li>
-    /// <li>
-    /// <p>To prevent special characters in an attribute name from being misinterpreted
-    /// in an expression.</p>
-    /// </li>
+    /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
+    /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
+    /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
     /// </ul>
-    /// <p>Use the <b>#</b> character in an expression to dereference
-    /// an attribute name. For example, consider the following attribute name:</p>
+    /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Percentile</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Percentile</code> </p> </li>
     /// </ul>
-    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used
-    /// directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>). To work around this, you could specify the following for
-    /// <code>ExpressionAttributeNames</code>:</p>
+    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>{"#P":"Percentile"}</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
     /// </ul>
     /// <p>You could then use this substitution in an expression, as in this example:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>#P = :val</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>Tokens that begin with the <b>:</b> character are
-    /// <i>expression attribute values</i>, which are placeholders for the
-    /// actual value at runtime.</p>
+    /// <li> <p> <code>#P = :val</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
     /// </note>
-    /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub expression_attribute_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>One or more values that can be substituted in an expression.</p>
-    /// <p>Use the <b>:</b> (colon) character in an expression to
-    /// dereference an attribute value. For example, suppose that you wanted to check whether
-    /// the value of the <i>ProductStatus</i> attribute was one of the following: </p>
-    /// <p>
-    /// <code>Available | Backordered | Discontinued</code>
-    /// </p>
-    /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as
-    /// follows:</p>
-    /// <p>
-    /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-    /// ":disc":{"S":"Discontinued"} }</code>
-    /// </p>
+    /// <p>Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the following: </p>
+    /// <p> <code>Available | Backordered | Discontinued</code> </p>
+    /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+    /// <p> <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code> </p>
     /// <p>You could then use these values in an expression, such as this:</p>
-    /// <p>
-    /// <code>ProductStatus IN (:avail, :back, :disc)</code>
-    /// </p>
-    /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p> <code>ProductStatus IN (:avail, :back, :disc)</code> </p>
+    /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub expression_attribute_values: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
@@ -17591,24 +13331,12 @@ impl PutItemInput {
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
-    /// <p>A map of attribute name/value pairs, one for each attribute. Only the primary key
-    /// attributes are required; you can optionally provide other attribute name-value pairs for
-    /// the item.</p>
-    /// <p>You must provide all of the attributes for the primary key. For example, with a simple
-    /// primary key, you only need to provide a value for the partition key. For a composite
-    /// primary key, you must provide both values for both the partition key and the sort
-    /// key.</p>
-    /// <p>If you specify any attributes that are part of an index key, then the data types for
-    /// those attributes must match those of the schema in the table's attribute
-    /// definition.</p>
-    /// <p>Empty String and Binary attribute values are allowed. Attribute values of type String
-    /// and Binary must have a length greater than zero if the attribute is used as a key
-    /// attribute for a table or index.</p>
-    ///
-    /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
-    /// <p>Each element in the <code>Item</code> map is an <code>AttributeValue</code>
-    /// object.</p>
+    /// <p>A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item.</p>
+    /// <p>You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key.</p>
+    /// <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p>
+    /// <p>Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a length greater than zero if the attribute is used as a key attribute for a table or index.</p>
+    /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>Each element in the <code>Item</code> map is an <code>AttributeValue</code> object.</p>
     pub fn item(
         &self,
     ) -> std::option::Option<
@@ -17616,9 +13344,7 @@ impl PutItemInput {
     > {
         self.item.as_ref()
     }
-    /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn expected(
         &self,
     ) -> std::option::Option<
@@ -17626,153 +13352,70 @@ impl PutItemInput {
     > {
         self.expected.as_ref()
     }
-    /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appeared
-    /// before they were updated with the <code>PutItem</code> request. For
-    /// <code>PutItem</code>, the valid values are:</p>
+    /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appeared before they were updated with the <code>PutItem</code> request. For <code>PutItem</code>, the valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its
-    /// value is <code>NONE</code>, then nothing is returned. (This setting is the
-    /// default for <code>ReturnValues</code>.)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALL_OLD</code> - If <code>PutItem</code> overwrote an attribute name-value
-    /// pair, then the content of the old item is returned.</p>
-    /// </li>
+    /// <li> <p> <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <code>ReturnValues</code>.)</p> </li>
+    /// <li> <p> <code>ALL_OLD</code> - If <code>PutItem</code> overwrote an attribute name-value pair, then the content of the old item is returned.</p> </li>
     /// </ul>
-    /// <p>The values returned are strongly consistent.</p>
-    /// <note>
-    /// <p>The <code>ReturnValues</code> parameter is used by several DynamoDB operations;
-    /// however, <code>PutItem</code> does not recognize any values other than
-    /// <code>NONE</code> or <code>ALL_OLD</code>.</p>
+    /// <p>The values returned are strongly consistent.</p> <note>
+    /// <p>The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however, <code>PutItem</code> does not recognize any values other than <code>NONE</code> or <code>ALL_OLD</code>.</p>
     /// </note>
     pub fn return_values(&self) -> std::option::Option<&crate::model::ReturnValue> {
         self.return_values.as_ref()
     }
-    /// <p>Determines the level of detail about either provisioned or on-demand throughput
-    /// consumption that is returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INDEXES</code> - The response includes the aggregate
-    /// <code>ConsumedCapacity</code> for the operation, together with
-    /// <code>ConsumedCapacity</code> for each table and secondary index that was
-    /// accessed.</p>
-    /// <p>Note that some operations, such as <code>GetItem</code> and
-    /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-    /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-    /// information for table(s).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TOTAL</code> - The response includes only the aggregate
-    /// <code>ConsumedCapacity</code> for the operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-    /// response.</p>
-    /// </li>
+    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
     pub fn return_consumed_capacity(
         &self,
     ) -> std::option::Option<&crate::model::ReturnConsumedCapacity> {
         self.return_consumed_capacity.as_ref()
     }
-    /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>,
-    /// the response includes statistics about item collections, if any, that were modified
-    /// during the operation are returned in the response. If set to <code>NONE</code> (the
-    /// default), no statistics are returned.</p>
+    /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
     pub fn return_item_collection_metrics(
         &self,
     ) -> std::option::Option<&crate::model::ReturnItemCollectionMetrics> {
         self.return_item_collection_metrics.as_ref()
     }
-    /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn conditional_operator(&self) -> std::option::Option<&crate::model::ConditionalOperator> {
         self.conditional_operator.as_ref()
     }
-    /// <p>A condition that must be satisfied in order for a conditional <code>PutItem</code>
-    /// operation to succeed.</p>
+    /// <p>A condition that must be satisfied in order for a conditional <code>PutItem</code> operation to succeed.</p>
     /// <p>An expression can contain any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type |
-    /// contains | begins_with | size</code>
-    /// </p>
-    /// <p>These function names are case-sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Comparison operators: <code>= | <> |
-    /// < | > | <= | >= |
-    /// BETWEEN | IN </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p> Logical operators: <code>AND | OR | NOT</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type | contains | begins_with | size</code> </p> <p>These function names are case-sensitive.</p> </li>
+    /// <li> <p>Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code> </p> </li>
+    /// <li> <p> Logical operators: <code>AND | OR | NOT</code> </p> </li>
     /// </ul>
-    /// <p>For more information on condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>For more information on condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn condition_expression(&self) -> std::option::Option<&str> {
         self.condition_expression.as_deref()
     }
-    /// <p>One or more substitution tokens for attribute names in an expression. The following
-    /// are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+    /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
-    /// word.</p>
-    /// </li>
-    /// <li>
-    /// <p>To create a placeholder for repeating occurrences of an attribute name in an
-    /// expression.</p>
-    /// </li>
-    /// <li>
-    /// <p>To prevent special characters in an attribute name from being misinterpreted
-    /// in an expression.</p>
-    /// </li>
+    /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
+    /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
+    /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
     /// </ul>
-    /// <p>Use the <b>#</b> character in an expression to dereference
-    /// an attribute name. For example, consider the following attribute name:</p>
+    /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Percentile</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Percentile</code> </p> </li>
     /// </ul>
-    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used
-    /// directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>). To work around this, you could specify the following for
-    /// <code>ExpressionAttributeNames</code>:</p>
+    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>{"#P":"Percentile"}</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
     /// </ul>
     /// <p>You could then use this substitution in an expression, as in this example:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>#P = :val</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>Tokens that begin with the <b>:</b> character are
-    /// <i>expression attribute values</i>, which are placeholders for the
-    /// actual value at runtime.</p>
+    /// <li> <p> <code>#P = :val</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
     /// </note>
-    /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn expression_attribute_names(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -17780,24 +13423,13 @@ impl PutItemInput {
         self.expression_attribute_names.as_ref()
     }
     /// <p>One or more values that can be substituted in an expression.</p>
-    /// <p>Use the <b>:</b> (colon) character in an expression to
-    /// dereference an attribute value. For example, suppose that you wanted to check whether
-    /// the value of the <i>ProductStatus</i> attribute was one of the following: </p>
-    /// <p>
-    /// <code>Available | Backordered | Discontinued</code>
-    /// </p>
-    /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as
-    /// follows:</p>
-    /// <p>
-    /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-    /// ":disc":{"S":"Discontinued"} }</code>
-    /// </p>
+    /// <p>Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the following: </p>
+    /// <p> <code>Available | Backordered | Discontinued</code> </p>
+    /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+    /// <p> <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code> </p>
     /// <p>You could then use these values in an expression, such as this:</p>
-    /// <p>
-    /// <code>ProductStatus IN (:avail, :back, :disc)</code>
-    /// </p>
-    /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p> <code>ProductStatus IN (:avail, :back, :disc)</code> </p>
+    /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn expression_attribute_values(
         &self,
     ) -> std::option::Option<
@@ -17836,23 +13468,17 @@ impl std::fmt::Debug for PutItemInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsOfResourceInput {
-    /// <p>The Amazon DynamoDB resource with tags to be listed. This value is an Amazon Resource
-    /// Name (ARN).</p>
+    /// <p>The Amazon DynamoDB resource with tags to be listed. This value is an Amazon Resource Name (ARN).</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>An optional string that, if supplied, must be copied from the output of a previous
-    /// call to ListTagOfResource. When provided in this manner, this API fetches the next page
-    /// of results.</p>
+    /// <p>An optional string that, if supplied, must be copied from the output of a previous call to ListTagOfResource. When provided in this manner, this API fetches the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsOfResourceInput {
-    /// <p>The Amazon DynamoDB resource with tags to be listed. This value is an Amazon Resource
-    /// Name (ARN).</p>
+    /// <p>The Amazon DynamoDB resource with tags to be listed. This value is an Amazon Resource Name (ARN).</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>An optional string that, if supplied, must be copied from the output of a previous
-    /// call to ListTagOfResource. When provided in this manner, this API fetches the next page
-    /// of results.</p>
+    /// <p>An optional string that, if supplied, must be copied from the output of a previous call to ListTagOfResource. When provided in this manner, this API fetches the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17870,23 +13496,17 @@ impl std::fmt::Debug for ListTagsOfResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTablesInput {
-    /// <p>The first table name that this operation will evaluate. Use the value that was
-    /// returned for <code>LastEvaluatedTableName</code> in a previous operation, so that you
-    /// can obtain the next page of results.</p>
+    /// <p>The first table name that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedTableName</code> in a previous operation, so that you can obtain the next page of results.</p>
     pub exclusive_start_table_name: std::option::Option<std::string::String>,
-    /// <p>A maximum number of table names to return. If this parameter is not specified, the
-    /// limit is 100.</p>
+    /// <p>A maximum number of table names to return. If this parameter is not specified, the limit is 100.</p>
     pub limit: std::option::Option<i32>,
 }
 impl ListTablesInput {
-    /// <p>The first table name that this operation will evaluate. Use the value that was
-    /// returned for <code>LastEvaluatedTableName</code> in a previous operation, so that you
-    /// can obtain the next page of results.</p>
+    /// <p>The first table name that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedTableName</code> in a previous operation, so that you can obtain the next page of results.</p>
     pub fn exclusive_start_table_name(&self) -> std::option::Option<&str> {
         self.exclusive_start_table_name.as_deref()
     }
-    /// <p>A maximum number of table names to return. If this parameter is not specified, the
-    /// limit is 100.</p>
+    /// <p>A maximum number of table names to return. If this parameter is not specified, the limit is 100.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
@@ -17909,12 +13529,8 @@ impl std::fmt::Debug for ListTablesInput {
 pub struct ListGlobalTablesInput {
     /// <p>The first global table name that this operation will evaluate.</p>
     pub exclusive_start_global_table_name: std::option::Option<std::string::String>,
-    /// <p>The maximum number of table names to return, if the parameter is not specified
-    /// DynamoDB defaults to 100.</p>
-    /// <p>If the number of global tables DynamoDB finds reaches this limit, it stops the
-    /// operation and returns the table names collected up to that point, with a table name in
-    /// the <code>LastEvaluatedGlobalTableName</code> to apply in a subsequent operation to the
-    /// <code>ExclusiveStartGlobalTableName</code> parameter.</p>
+    /// <p>The maximum number of table names to return, if the parameter is not specified DynamoDB defaults to 100.</p>
+    /// <p>If the number of global tables DynamoDB finds reaches this limit, it stops the operation and returns the table names collected up to that point, with a table name in the <code>LastEvaluatedGlobalTableName</code> to apply in a subsequent operation to the <code>ExclusiveStartGlobalTableName</code> parameter.</p>
     pub limit: std::option::Option<i32>,
     /// <p>Lists the global tables in a specific Region.</p>
     pub region_name: std::option::Option<std::string::String>,
@@ -17924,12 +13540,8 @@ impl ListGlobalTablesInput {
     pub fn exclusive_start_global_table_name(&self) -> std::option::Option<&str> {
         self.exclusive_start_global_table_name.as_deref()
     }
-    /// <p>The maximum number of table names to return, if the parameter is not specified
-    /// DynamoDB defaults to 100.</p>
-    /// <p>If the number of global tables DynamoDB finds reaches this limit, it stops the
-    /// operation and returns the table names collected up to that point, with a table name in
-    /// the <code>LastEvaluatedGlobalTableName</code> to apply in a subsequent operation to the
-    /// <code>ExclusiveStartGlobalTableName</code> parameter.</p>
+    /// <p>The maximum number of table names to return, if the parameter is not specified DynamoDB defaults to 100.</p>
+    /// <p>If the number of global tables DynamoDB finds reaches this limit, it stops the operation and returns the table names collected up to that point, with a table name in the <code>LastEvaluatedGlobalTableName</code> to apply in a subsequent operation to the <code>ExclusiveStartGlobalTableName</code> parameter.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
@@ -17959,9 +13571,7 @@ pub struct ListExportsInput {
     pub table_arn: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>An optional string that, if supplied, must be copied from the output of a previous
-    /// call to <code>ListExports</code>. When provided in this manner, the API fetches the next
-    /// page of results.</p>
+    /// <p>An optional string that, if supplied, must be copied from the output of a previous call to <code>ListExports</code>. When provided in this manner, the API fetches the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExportsInput {
@@ -17973,9 +13583,7 @@ impl ListExportsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An optional string that, if supplied, must be copied from the output of a previous
-    /// call to <code>ListExports</code>. When provided in this manner, the API fetches the next
-    /// page of results.</p>
+    /// <p>An optional string that, if supplied, must be copied from the output of a previous call to <code>ListExports</code>. When provided in this manner, the API fetches the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -18033,34 +13641,18 @@ pub struct ListBackupsInput {
     pub table_name: std::option::Option<std::string::String>,
     /// <p>Maximum number of backups to return at once.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>Only backups created after this time are listed. <code>TimeRangeLowerBound</code> is
-    /// inclusive.</p>
+    /// <p>Only backups created after this time are listed. <code>TimeRangeLowerBound</code> is inclusive.</p>
     pub time_range_lower_bound: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Only backups created before this time are listed. <code>TimeRangeUpperBound</code> is
-    /// exclusive. </p>
+    /// <p>Only backups created before this time are listed. <code>TimeRangeUpperBound</code> is exclusive. </p>
     pub time_range_upper_bound: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the backup last
-    /// evaluated when the current page of results was returned, inclusive of the current page
-    /// of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a
-    /// new <code>ListBackups</code> operation in order to fetch the next page of results.
-    /// </p>
+    /// <p> <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the backup last evaluated when the current page of results was returned, inclusive of the current page of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page of results. </p>
     pub exclusive_start_backup_arn: std::option::Option<std::string::String>,
     /// <p>The backups from the table specified by <code>BackupType</code> are listed.</p>
     /// <p>Where <code>BackupType</code> can be:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>USER</code> - On-demand backup created by you.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALL</code> - All types of on-demand backups (USER and SYSTEM).</p>
-    /// </li>
+    /// <li> <p> <code>USER</code> - On-demand backup created by you.</p> </li>
+    /// <li> <p> <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</p> </li>
+    /// <li> <p> <code>ALL</code> - All types of on-demand backups (USER and SYSTEM).</p> </li>
     /// </ul>
     pub backup_type: std::option::Option<crate::model::BackupTypeFilter>,
 }
@@ -18073,40 +13665,24 @@ impl ListBackupsInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>Only backups created after this time are listed. <code>TimeRangeLowerBound</code> is
-    /// inclusive.</p>
+    /// <p>Only backups created after this time are listed. <code>TimeRangeLowerBound</code> is inclusive.</p>
     pub fn time_range_lower_bound(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.time_range_lower_bound.as_ref()
     }
-    /// <p>Only backups created before this time are listed. <code>TimeRangeUpperBound</code> is
-    /// exclusive. </p>
+    /// <p>Only backups created before this time are listed. <code>TimeRangeUpperBound</code> is exclusive. </p>
     pub fn time_range_upper_bound(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.time_range_upper_bound.as_ref()
     }
-    /// <p>
-    /// <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the backup last
-    /// evaluated when the current page of results was returned, inclusive of the current page
-    /// of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a
-    /// new <code>ListBackups</code> operation in order to fetch the next page of results.
-    /// </p>
+    /// <p> <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the backup last evaluated when the current page of results was returned, inclusive of the current page of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page of results. </p>
     pub fn exclusive_start_backup_arn(&self) -> std::option::Option<&str> {
         self.exclusive_start_backup_arn.as_deref()
     }
     /// <p>The backups from the table specified by <code>BackupType</code> are listed.</p>
     /// <p>Where <code>BackupType</code> can be:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>USER</code> - On-demand backup created by you.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALL</code> - All types of on-demand backups (USER and SYSTEM).</p>
-    /// </li>
+    /// <li> <p> <code>USER</code> - On-demand backup created by you.</p> </li>
+    /// <li> <p> <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</p> </li>
+    /// <li> <p> <code>ALL</code> - All types of on-demand backups (USER and SYSTEM).</p> </li>
     /// </ul>
     pub fn backup_type(&self) -> std::option::Option<&crate::model::BackupTypeFilter> {
         self.backup_type.as_ref()
@@ -18134,108 +13710,47 @@ impl std::fmt::Debug for ListBackupsInput {
 pub struct GetItemInput {
     /// <p>The name of the table containing the requested item.</p>
     pub table_name: std::option::Option<std::string::String>,
-    /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the
-    /// primary key of the item to retrieve.</p>
-    /// <p>For the primary key, you must provide all of the attributes. For example, with a
-    /// simple primary key, you only need to provide a value for the partition key. For a
-    /// composite primary key, you must provide values for both the partition key and the sort
-    /// key.</p>
+    /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the primary key of the item to retrieve.</p>
+    /// <p>For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</p>
     pub key: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
-    /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub attributes_to_get: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Determines the read consistency model: If set to <code>true</code>, then the operation
-    /// uses strongly consistent reads; otherwise, the operation uses eventually consistent
-    /// reads.</p>
+    /// <p>Determines the read consistency model: If set to <code>true</code>, then the operation uses strongly consistent reads; otherwise, the operation uses eventually consistent reads.</p>
     pub consistent_read: std::option::Option<bool>,
-    /// <p>Determines the level of detail about either provisioned or on-demand throughput
-    /// consumption that is returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INDEXES</code> - The response includes the aggregate
-    /// <code>ConsumedCapacity</code> for the operation, together with
-    /// <code>ConsumedCapacity</code> for each table and secondary index that was
-    /// accessed.</p>
-    /// <p>Note that some operations, such as <code>GetItem</code> and
-    /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-    /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-    /// information for table(s).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TOTAL</code> - The response includes only the aggregate
-    /// <code>ConsumedCapacity</code> for the operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-    /// response.</p>
-    /// </li>
+    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
     pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
-    /// <p>A string that identifies one or more attributes to retrieve from the table. These
-    /// attributes can include scalars, sets, or elements of a JSON document. The attributes in
-    /// the expression must be separated by commas.</p>
-    /// <p>If no attribute names are specified, then all attributes are returned. If any of the
-    /// requested attributes are not found, they do not appear in the result.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p>
+    /// <p>If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not found, they do not appear in the result.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub projection_expression: std::option::Option<std::string::String>,
-    /// <p>One or more substitution tokens for attribute names in an expression. The following
-    /// are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+    /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
-    /// word.</p>
-    /// </li>
-    /// <li>
-    /// <p>To create a placeholder for repeating occurrences of an attribute name in an
-    /// expression.</p>
-    /// </li>
-    /// <li>
-    /// <p>To prevent special characters in an attribute name from being misinterpreted
-    /// in an expression.</p>
-    /// </li>
+    /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
+    /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
+    /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
     /// </ul>
-    /// <p>Use the <b>#</b> character in an expression to dereference
-    /// an attribute name. For example, consider the following attribute name:</p>
+    /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Percentile</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Percentile</code> </p> </li>
     /// </ul>
-    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used
-    /// directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>). To work around this, you could specify the following for
-    /// <code>ExpressionAttributeNames</code>:</p>
+    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>{"#P":"Percentile"}</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
     /// </ul>
     /// <p>You could then use this substitution in an expression, as in this example:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>#P = :val</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>Tokens that begin with the <b>:</b> character are
-    /// <i>expression attribute values</i>, which are placeholders for the
-    /// actual value at runtime.</p>
+    /// <li> <p> <code>#P = :val</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
     /// </note>
-    /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub expression_attribute_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -18244,12 +13759,8 @@ impl GetItemInput {
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
-    /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the
-    /// primary key of the item to retrieve.</p>
-    /// <p>For the primary key, you must provide all of the attributes. For example, with a
-    /// simple primary key, you only need to provide a value for the partition key. For a
-    /// composite primary key, you must provide values for both the partition key and the sort
-    /// key.</p>
+    /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the primary key of the item to retrieve.</p>
+    /// <p>For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</p>
     pub fn key(
         &self,
     ) -> std::option::Option<
@@ -18257,109 +13768,52 @@ impl GetItemInput {
     > {
         self.key.as_ref()
     }
-    /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn attributes_to_get(&self) -> std::option::Option<&[std::string::String]> {
         self.attributes_to_get.as_deref()
     }
-    /// <p>Determines the read consistency model: If set to <code>true</code>, then the operation
-    /// uses strongly consistent reads; otherwise, the operation uses eventually consistent
-    /// reads.</p>
+    /// <p>Determines the read consistency model: If set to <code>true</code>, then the operation uses strongly consistent reads; otherwise, the operation uses eventually consistent reads.</p>
     pub fn consistent_read(&self) -> std::option::Option<bool> {
         self.consistent_read
     }
-    /// <p>Determines the level of detail about either provisioned or on-demand throughput
-    /// consumption that is returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INDEXES</code> - The response includes the aggregate
-    /// <code>ConsumedCapacity</code> for the operation, together with
-    /// <code>ConsumedCapacity</code> for each table and secondary index that was
-    /// accessed.</p>
-    /// <p>Note that some operations, such as <code>GetItem</code> and
-    /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-    /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-    /// information for table(s).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TOTAL</code> - The response includes only the aggregate
-    /// <code>ConsumedCapacity</code> for the operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-    /// response.</p>
-    /// </li>
+    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
     pub fn return_consumed_capacity(
         &self,
     ) -> std::option::Option<&crate::model::ReturnConsumedCapacity> {
         self.return_consumed_capacity.as_ref()
     }
-    /// <p>A string that identifies one or more attributes to retrieve from the table. These
-    /// attributes can include scalars, sets, or elements of a JSON document. The attributes in
-    /// the expression must be separated by commas.</p>
-    /// <p>If no attribute names are specified, then all attributes are returned. If any of the
-    /// requested attributes are not found, they do not appear in the result.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p>
+    /// <p>If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not found, they do not appear in the result.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn projection_expression(&self) -> std::option::Option<&str> {
         self.projection_expression.as_deref()
     }
-    /// <p>One or more substitution tokens for attribute names in an expression. The following
-    /// are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+    /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
-    /// word.</p>
-    /// </li>
-    /// <li>
-    /// <p>To create a placeholder for repeating occurrences of an attribute name in an
-    /// expression.</p>
-    /// </li>
-    /// <li>
-    /// <p>To prevent special characters in an attribute name from being misinterpreted
-    /// in an expression.</p>
-    /// </li>
+    /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
+    /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
+    /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
     /// </ul>
-    /// <p>Use the <b>#</b> character in an expression to dereference
-    /// an attribute name. For example, consider the following attribute name:</p>
+    /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Percentile</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Percentile</code> </p> </li>
     /// </ul>
-    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used
-    /// directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>). To work around this, you could specify the following for
-    /// <code>ExpressionAttributeNames</code>:</p>
+    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>{"#P":"Percentile"}</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
     /// </ul>
     /// <p>You could then use this substitution in an expression, as in this example:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>#P = :val</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>Tokens that begin with the <b>:</b> character are
-    /// <i>expression attribute values</i>, which are placeholders for the
-    /// actual value at runtime.</p>
+    /// <li> <p> <code>#P = :val</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
     /// </note>
-    /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn expression_attribute_names(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -18390,48 +13844,27 @@ impl std::fmt::Debug for GetItemInput {
 pub struct ExportTableToPointInTimeInput {
     /// <p>The Amazon Resource Name (ARN) associated with the table to export.</p>
     pub table_arn: std::option::Option<std::string::String>,
-    /// <p>Time in the past from which to export table data. The table export will be a snapshot
-    /// of the table's state at this point in time.</p>
+    /// <p>Time in the past from which to export table data. The table export will be a snapshot of the table's state at this point in time.</p>
     pub export_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Providing a <code>ClientToken</code> makes the call to
-    /// <code>ExportTableToPointInTimeInput</code> idempotent, meaning that multiple
-    /// identical calls have the same effect as one single call.</p>
-    /// <p>A client token is valid for 8 hours after the first request that uses it is completed.
-    /// After 8 hours, any request with the same client token is treated as a new request. Do
-    /// not resubmit the same request with the same client token for more than 8 hours, or the
-    /// result might not be idempotent.</p>
-    /// <p>If you submit a request with the same client token but a change in other parameters
-    /// within the 8-hour idempotency window, DynamoDB returns an
-    /// <code>IdempotentParameterMismatch</code> exception.</p>
+    /// <p>Providing a <code>ClientToken</code> makes the call to <code>ExportTableToPointInTimeInput</code> idempotent, meaning that multiple identical calls have the same effect as one single call.</p>
+    /// <p>A client token is valid for 8 hours after the first request that uses it is completed. After 8 hours, any request with the same client token is treated as a new request. Do not resubmit the same request with the same client token for more than 8 hours, or the result might not be idempotent.</p>
+    /// <p>If you submit a request with the same client token but a change in other parameters within the 8-hour idempotency window, DynamoDB returns an <code>IdempotentParameterMismatch</code> exception.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon S3 bucket to export the snapshot to.</p>
     pub s3_bucket: std::option::Option<std::string::String>,
-    /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be
-    /// stored in.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p>
     pub s3_bucket_owner: std::option::Option<std::string::String>,
-    /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported
-    /// snapshot.</p>
+    /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported snapshot.</p>
     pub s3_prefix: std::option::Option<std::string::String>,
-    /// <p>Type of encryption used on the bucket where export data will be stored. Valid values
-    /// for <code>S3SseAlgorithm</code> are:</p>
+    /// <p>Type of encryption used on the bucket where export data will be stored. Valid values for <code>S3SseAlgorithm</code> are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AES256</code> - server-side encryption with Amazon S3 managed
-    /// keys</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KMS</code> - server-side encryption with KMS managed
-    /// keys</p>
-    /// </li>
+    /// <li> <p> <code>AES256</code> - server-side encryption with Amazon S3 managed keys</p> </li>
+    /// <li> <p> <code>KMS</code> - server-side encryption with KMS managed keys</p> </li>
     /// </ul>
     pub s3_sse_algorithm: std::option::Option<crate::model::S3SseAlgorithm>,
-    /// <p>The ID of the KMS managed key used to encrypt the S3 bucket where
-    /// export data will be stored (if applicable).</p>
+    /// <p>The ID of the KMS managed key used to encrypt the S3 bucket where export data will be stored (if applicable).</p>
     pub s3_sse_kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The format for the exported data. Valid values for <code>ExportFormat</code> are
-    /// <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
+    /// <p>The format for the exported data. Valid values for <code>ExportFormat</code> are <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
     pub export_format: std::option::Option<crate::model::ExportFormat>,
 }
 impl ExportTableToPointInTimeInput {
@@ -18439,21 +13872,13 @@ impl ExportTableToPointInTimeInput {
     pub fn table_arn(&self) -> std::option::Option<&str> {
         self.table_arn.as_deref()
     }
-    /// <p>Time in the past from which to export table data. The table export will be a snapshot
-    /// of the table's state at this point in time.</p>
+    /// <p>Time in the past from which to export table data. The table export will be a snapshot of the table's state at this point in time.</p>
     pub fn export_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.export_time.as_ref()
     }
-    /// <p>Providing a <code>ClientToken</code> makes the call to
-    /// <code>ExportTableToPointInTimeInput</code> idempotent, meaning that multiple
-    /// identical calls have the same effect as one single call.</p>
-    /// <p>A client token is valid for 8 hours after the first request that uses it is completed.
-    /// After 8 hours, any request with the same client token is treated as a new request. Do
-    /// not resubmit the same request with the same client token for more than 8 hours, or the
-    /// result might not be idempotent.</p>
-    /// <p>If you submit a request with the same client token but a change in other parameters
-    /// within the 8-hour idempotency window, DynamoDB returns an
-    /// <code>IdempotentParameterMismatch</code> exception.</p>
+    /// <p>Providing a <code>ClientToken</code> makes the call to <code>ExportTableToPointInTimeInput</code> idempotent, meaning that multiple identical calls have the same effect as one single call.</p>
+    /// <p>A client token is valid for 8 hours after the first request that uses it is completed. After 8 hours, any request with the same client token is treated as a new request. Do not resubmit the same request with the same client token for more than 8 hours, or the result might not be idempotent.</p>
+    /// <p>If you submit a request with the same client token but a change in other parameters within the 8-hour idempotency window, DynamoDB returns an <code>IdempotentParameterMismatch</code> exception.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -18461,40 +13886,27 @@ impl ExportTableToPointInTimeInput {
     pub fn s3_bucket(&self) -> std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
-    /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be
-    /// stored in.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p>
     pub fn s3_bucket_owner(&self) -> std::option::Option<&str> {
         self.s3_bucket_owner.as_deref()
     }
-    /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported
-    /// snapshot.</p>
+    /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported snapshot.</p>
     pub fn s3_prefix(&self) -> std::option::Option<&str> {
         self.s3_prefix.as_deref()
     }
-    /// <p>Type of encryption used on the bucket where export data will be stored. Valid values
-    /// for <code>S3SseAlgorithm</code> are:</p>
+    /// <p>Type of encryption used on the bucket where export data will be stored. Valid values for <code>S3SseAlgorithm</code> are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AES256</code> - server-side encryption with Amazon S3 managed
-    /// keys</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KMS</code> - server-side encryption with KMS managed
-    /// keys</p>
-    /// </li>
+    /// <li> <p> <code>AES256</code> - server-side encryption with Amazon S3 managed keys</p> </li>
+    /// <li> <p> <code>KMS</code> - server-side encryption with KMS managed keys</p> </li>
     /// </ul>
     pub fn s3_sse_algorithm(&self) -> std::option::Option<&crate::model::S3SseAlgorithm> {
         self.s3_sse_algorithm.as_ref()
     }
-    /// <p>The ID of the KMS managed key used to encrypt the S3 bucket where
-    /// export data will be stored (if applicable).</p>
+    /// <p>The ID of the KMS managed key used to encrypt the S3 bucket where export data will be stored (if applicable).</p>
     pub fn s3_sse_kms_key_id(&self) -> std::option::Option<&str> {
         self.s3_sse_kms_key_id.as_deref()
     }
-    /// <p>The format for the exported data. Valid values for <code>ExportFormat</code> are
-    /// <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
+    /// <p>The format for the exported data. Valid values for <code>ExportFormat</code> are <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
     pub fn export_format(&self) -> std::option::Option<&crate::model::ExportFormat> {
         self.export_format.as_ref()
     }
@@ -18522,11 +13934,9 @@ pub struct ExecuteTransactionInput {
     /// <p>The list of PartiQL statements representing the transaction to run.</p>
     pub transact_statements:
         std::option::Option<std::vec::Vec<crate::model::ParameterizedStatement>>,
-    /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the
-    /// statement response.</p>
+    /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the statement response.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is
-    /// returned in the response. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html">TransactGetItems</a> and <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html">TransactWriteItems</a>.</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html">TransactGetItems</a> and <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html">TransactWriteItems</a>.</p>
     pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
 }
 impl ExecuteTransactionInput {
@@ -18536,13 +13946,11 @@ impl ExecuteTransactionInput {
     ) -> std::option::Option<&[crate::model::ParameterizedStatement]> {
         self.transact_statements.as_deref()
     }
-    /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the
-    /// statement response.</p>
+    /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the statement response.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is
-    /// returned in the response. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html">TransactGetItems</a> and <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html">TransactWriteItems</a>.</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html">TransactGetItems</a> and <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html">TransactWriteItems</a>.</p>
     pub fn return_consumed_capacity(
         &self,
     ) -> std::option::Option<&crate::model::ReturnConsumedCapacity> {
@@ -18567,36 +13975,15 @@ pub struct ExecuteStatementInput {
     pub statement: std::option::Option<std::string::String>,
     /// <p>The parameters for the PartiQL statement, if any.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
-    /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly
-    /// consistent read is used; otherwise, an eventually consistent read is used.</p>
+    /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p>
     pub consistent_read: std::option::Option<bool>,
-    /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the
-    /// statement response.</p>
+    /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the statement response.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Determines the level of detail about either provisioned or on-demand throughput
-    /// consumption that is returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INDEXES</code> - The response includes the aggregate
-    /// <code>ConsumedCapacity</code> for the operation, together with
-    /// <code>ConsumedCapacity</code> for each table and secondary index that was
-    /// accessed.</p>
-    /// <p>Note that some operations, such as <code>GetItem</code> and
-    /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-    /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-    /// information for table(s).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TOTAL</code> - The response includes only the aggregate
-    /// <code>ConsumedCapacity</code> for the operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-    /// response.</p>
-    /// </li>
+    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
     pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
 }
@@ -18609,40 +13996,19 @@ impl ExecuteStatementInput {
     pub fn parameters(&self) -> std::option::Option<&[crate::model::AttributeValue]> {
         self.parameters.as_deref()
     }
-    /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly
-    /// consistent read is used; otherwise, an eventually consistent read is used.</p>
+    /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p>
     pub fn consistent_read(&self) -> std::option::Option<bool> {
         self.consistent_read
     }
-    /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the
-    /// statement response.</p>
+    /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the statement response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Determines the level of detail about either provisioned or on-demand throughput
-    /// consumption that is returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INDEXES</code> - The response includes the aggregate
-    /// <code>ConsumedCapacity</code> for the operation, together with
-    /// <code>ConsumedCapacity</code> for each table and secondary index that was
-    /// accessed.</p>
-    /// <p>Note that some operations, such as <code>GetItem</code> and
-    /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-    /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-    /// information for table(s).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TOTAL</code> - The response includes only the aggregate
-    /// <code>ConsumedCapacity</code> for the operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-    /// response.</p>
-    /// </li>
+    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
     pub fn return_consumed_capacity(
         &self,
@@ -18781,8 +14147,7 @@ impl std::fmt::Debug for DescribeTableInput {
     }
 }
 
-/// <p>Represents the input of a <code>DescribeLimits</code> operation. Has no
-/// content.</p>
+/// <p>Represents the input of a <code>DescribeLimits</code> operation. Has no content.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLimitsInput {}
@@ -18920,13 +14285,11 @@ impl std::fmt::Debug for DescribeContributorInsightsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeContinuousBackupsInput {
-    /// <p>Name of the table for which the customer wants to check the continuous backups and
-    /// point in time recovery settings.</p>
+    /// <p>Name of the table for which the customer wants to check the continuous backups and point in time recovery settings.</p>
     pub table_name: std::option::Option<std::string::String>,
 }
 impl DescribeContinuousBackupsInput {
-    /// <p>Name of the table for which the customer wants to check the continuous backups and
-    /// point in time recovery settings.</p>
+    /// <p>Name of the table for which the customer wants to check the continuous backups and point in time recovery settings.</p>
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
@@ -18987,173 +14350,75 @@ impl std::fmt::Debug for DeleteTableInput {
 pub struct DeleteItemInput {
     /// <p>The name of the table from which to delete the item.</p>
     pub table_name: std::option::Option<std::string::String>,
-    /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the
-    /// primary key of the item to delete.</p>
-    /// <p>For the primary key, you must provide all of the attributes. For example, with a
-    /// simple primary key, you only need to provide a value for the partition key. For a
-    /// composite primary key, you must provide values for both the partition key and the sort
-    /// key.</p>
+    /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the primary key of the item to delete.</p>
+    /// <p>For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</p>
     pub key: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
-    /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub expected: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ExpectedAttributeValue>,
     >,
-    /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub conditional_operator: std::option::Option<crate::model::ConditionalOperator>,
-    /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appeared
-    /// before they were deleted. For <code>DeleteItem</code>, the valid values are:</p>
+    /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appeared before they were deleted. For <code>DeleteItem</code>, the valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its
-    /// value is <code>NONE</code>, then nothing is returned. (This setting is the
-    /// default for <code>ReturnValues</code>.)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALL_OLD</code> - The content of the old item is returned.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>The <code>ReturnValues</code> parameter is used by several DynamoDB operations;
-    /// however, <code>DeleteItem</code> does not recognize any values other than
-    /// <code>NONE</code> or <code>ALL_OLD</code>.</p>
+    /// <li> <p> <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <code>ReturnValues</code>.)</p> </li>
+    /// <li> <p> <code>ALL_OLD</code> - The content of the old item is returned.</p> </li>
+    /// </ul> <note>
+    /// <p>The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however, <code>DeleteItem</code> does not recognize any values other than <code>NONE</code> or <code>ALL_OLD</code>.</p>
     /// </note>
     pub return_values: std::option::Option<crate::model::ReturnValue>,
-    /// <p>Determines the level of detail about either provisioned or on-demand throughput
-    /// consumption that is returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INDEXES</code> - The response includes the aggregate
-    /// <code>ConsumedCapacity</code> for the operation, together with
-    /// <code>ConsumedCapacity</code> for each table and secondary index that was
-    /// accessed.</p>
-    /// <p>Note that some operations, such as <code>GetItem</code> and
-    /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-    /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-    /// information for table(s).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TOTAL</code> - The response includes only the aggregate
-    /// <code>ConsumedCapacity</code> for the operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-    /// response.</p>
-    /// </li>
+    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
     pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
-    /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>,
-    /// the response includes statistics about item collections, if any, that were modified
-    /// during the operation are returned in the response. If set to <code>NONE</code> (the
-    /// default), no statistics are returned.</p>
+    /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
     pub return_item_collection_metrics:
         std::option::Option<crate::model::ReturnItemCollectionMetrics>,
-    /// <p>A condition that must be satisfied in order for a conditional <code>DeleteItem</code>
-    /// to succeed.</p>
+    /// <p>A condition that must be satisfied in order for a conditional <code>DeleteItem</code> to succeed.</p>
     /// <p>An expression can contain any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type |
-    /// contains | begins_with | size</code>
-    /// </p>
-    /// <p>These function names are case-sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Comparison operators: <code>= | <> |
-    /// < | > | <= | >= |
-    /// BETWEEN | IN </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p> Logical operators: <code>AND | OR | NOT</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type | contains | begins_with | size</code> </p> <p>These function names are case-sensitive.</p> </li>
+    /// <li> <p>Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code> </p> </li>
+    /// <li> <p> Logical operators: <code>AND | OR | NOT</code> </p> </li>
     /// </ul>
-    /// <p>For more information about condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>For more information about condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub condition_expression: std::option::Option<std::string::String>,
-    /// <p>One or more substitution tokens for attribute names in an expression. The following
-    /// are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+    /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
-    /// word.</p>
-    /// </li>
-    /// <li>
-    /// <p>To create a placeholder for repeating occurrences of an attribute name in an
-    /// expression.</p>
-    /// </li>
-    /// <li>
-    /// <p>To prevent special characters in an attribute name from being misinterpreted
-    /// in an expression.</p>
-    /// </li>
+    /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
+    /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
+    /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
     /// </ul>
-    /// <p>Use the <b>#</b> character in an expression to dereference
-    /// an attribute name. For example, consider the following attribute name:</p>
+    /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Percentile</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Percentile</code> </p> </li>
     /// </ul>
-    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used
-    /// directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>). To work around this, you could specify the following for
-    /// <code>ExpressionAttributeNames</code>:</p>
+    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>{"#P":"Percentile"}</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
     /// </ul>
     /// <p>You could then use this substitution in an expression, as in this example:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>#P = :val</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>Tokens that begin with the <b>:</b> character are
-    /// <i>expression attribute values</i>, which are placeholders for the
-    /// actual value at runtime.</p>
+    /// <li> <p> <code>#P = :val</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
     /// </note>
-    /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub expression_attribute_names:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>One or more values that can be substituted in an expression.</p>
-    /// <p>Use the <b>:</b> (colon) character in an expression to
-    /// dereference an attribute value. For example, suppose that you wanted to check whether
-    /// the value of the <i>ProductStatus</i> attribute was one of the following: </p>
-    /// <p>
-    /// <code>Available | Backordered | Discontinued</code>
-    /// </p>
-    /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as
-    /// follows:</p>
-    /// <p>
-    /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-    /// ":disc":{"S":"Discontinued"} }</code>
-    /// </p>
+    /// <p>Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the following: </p>
+    /// <p> <code>Available | Backordered | Discontinued</code> </p>
+    /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+    /// <p> <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code> </p>
     /// <p>You could then use these values in an expression, such as this:</p>
-    /// <p>
-    /// <code>ProductStatus IN (:avail, :back, :disc)</code>
-    /// </p>
-    /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p> <code>ProductStatus IN (:avail, :back, :disc)</code> </p>
+    /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub expression_attribute_values: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
     >,
@@ -19163,12 +14428,8 @@ impl DeleteItemInput {
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
-    /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the
-    /// primary key of the item to delete.</p>
-    /// <p>For the primary key, you must provide all of the attributes. For example, with a
-    /// simple primary key, you only need to provide a value for the partition key. For a
-    /// composite primary key, you must provide values for both the partition key and the sort
-    /// key.</p>
+    /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the primary key of the item to delete.</p>
+    /// <p>For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</p>
     pub fn key(
         &self,
     ) -> std::option::Option<
@@ -19176,9 +14437,7 @@ impl DeleteItemInput {
     > {
         self.key.as_ref()
     }
-    /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn expected(
         &self,
     ) -> std::option::Option<
@@ -19186,150 +14445,69 @@ impl DeleteItemInput {
     > {
         self.expected.as_ref()
     }
-    /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn conditional_operator(&self) -> std::option::Option<&crate::model::ConditionalOperator> {
         self.conditional_operator.as_ref()
     }
-    /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appeared
-    /// before they were deleted. For <code>DeleteItem</code>, the valid values are:</p>
+    /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appeared before they were deleted. For <code>DeleteItem</code>, the valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its
-    /// value is <code>NONE</code>, then nothing is returned. (This setting is the
-    /// default for <code>ReturnValues</code>.)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALL_OLD</code> - The content of the old item is returned.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>The <code>ReturnValues</code> parameter is used by several DynamoDB operations;
-    /// however, <code>DeleteItem</code> does not recognize any values other than
-    /// <code>NONE</code> or <code>ALL_OLD</code>.</p>
+    /// <li> <p> <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <code>ReturnValues</code>.)</p> </li>
+    /// <li> <p> <code>ALL_OLD</code> - The content of the old item is returned.</p> </li>
+    /// </ul> <note>
+    /// <p>The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however, <code>DeleteItem</code> does not recognize any values other than <code>NONE</code> or <code>ALL_OLD</code>.</p>
     /// </note>
     pub fn return_values(&self) -> std::option::Option<&crate::model::ReturnValue> {
         self.return_values.as_ref()
     }
-    /// <p>Determines the level of detail about either provisioned or on-demand throughput
-    /// consumption that is returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INDEXES</code> - The response includes the aggregate
-    /// <code>ConsumedCapacity</code> for the operation, together with
-    /// <code>ConsumedCapacity</code> for each table and secondary index that was
-    /// accessed.</p>
-    /// <p>Note that some operations, such as <code>GetItem</code> and
-    /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-    /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-    /// information for table(s).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TOTAL</code> - The response includes only the aggregate
-    /// <code>ConsumedCapacity</code> for the operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-    /// response.</p>
-    /// </li>
+    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
     pub fn return_consumed_capacity(
         &self,
     ) -> std::option::Option<&crate::model::ReturnConsumedCapacity> {
         self.return_consumed_capacity.as_ref()
     }
-    /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>,
-    /// the response includes statistics about item collections, if any, that were modified
-    /// during the operation are returned in the response. If set to <code>NONE</code> (the
-    /// default), no statistics are returned.</p>
+    /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
     pub fn return_item_collection_metrics(
         &self,
     ) -> std::option::Option<&crate::model::ReturnItemCollectionMetrics> {
         self.return_item_collection_metrics.as_ref()
     }
-    /// <p>A condition that must be satisfied in order for a conditional <code>DeleteItem</code>
-    /// to succeed.</p>
+    /// <p>A condition that must be satisfied in order for a conditional <code>DeleteItem</code> to succeed.</p>
     /// <p>An expression can contain any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type |
-    /// contains | begins_with | size</code>
-    /// </p>
-    /// <p>These function names are case-sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Comparison operators: <code>= | <> |
-    /// < | > | <= | >= |
-    /// BETWEEN | IN </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p> Logical operators: <code>AND | OR | NOT</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type | contains | begins_with | size</code> </p> <p>These function names are case-sensitive.</p> </li>
+    /// <li> <p>Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code> </p> </li>
+    /// <li> <p> Logical operators: <code>AND | OR | NOT</code> </p> </li>
     /// </ul>
-    /// <p>For more information about condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>For more information about condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn condition_expression(&self) -> std::option::Option<&str> {
         self.condition_expression.as_deref()
     }
-    /// <p>One or more substitution tokens for attribute names in an expression. The following
-    /// are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+    /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
-    /// word.</p>
-    /// </li>
-    /// <li>
-    /// <p>To create a placeholder for repeating occurrences of an attribute name in an
-    /// expression.</p>
-    /// </li>
-    /// <li>
-    /// <p>To prevent special characters in an attribute name from being misinterpreted
-    /// in an expression.</p>
-    /// </li>
+    /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
+    /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
+    /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
     /// </ul>
-    /// <p>Use the <b>#</b> character in an expression to dereference
-    /// an attribute name. For example, consider the following attribute name:</p>
+    /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Percentile</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Percentile</code> </p> </li>
     /// </ul>
-    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used
-    /// directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>). To work around this, you could specify the following for
-    /// <code>ExpressionAttributeNames</code>:</p>
+    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>{"#P":"Percentile"}</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
     /// </ul>
     /// <p>You could then use this substitution in an expression, as in this example:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>#P = :val</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>Tokens that begin with the <b>:</b> character are
-    /// <i>expression attribute values</i>, which are placeholders for the
-    /// actual value at runtime.</p>
+    /// <li> <p> <code>#P = :val</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
     /// </note>
-    /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn expression_attribute_names(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -19337,24 +14515,13 @@ impl DeleteItemInput {
         self.expression_attribute_names.as_ref()
     }
     /// <p>One or more values that can be substituted in an expression.</p>
-    /// <p>Use the <b>:</b> (colon) character in an expression to
-    /// dereference an attribute value. For example, suppose that you wanted to check whether
-    /// the value of the <i>ProductStatus</i> attribute was one of the following: </p>
-    /// <p>
-    /// <code>Available | Backordered | Discontinued</code>
-    /// </p>
-    /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as
-    /// follows:</p>
-    /// <p>
-    /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-    /// ":disc":{"S":"Discontinued"} }</code>
-    /// </p>
+    /// <p>Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the following: </p>
+    /// <p> <code>Available | Backordered | Discontinued</code> </p>
+    /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+    /// <p> <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code> </p>
     /// <p>You could then use these values in an expression, such as this:</p>
-    /// <p>
-    /// <code>ProductStatus IN (:avail, :back, :disc)</code>
-    /// </p>
-    /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p> <code>ProductStatus IN (:avail, :back, :disc)</code> </p>
+    /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn expression_attribute_values(
         &self,
     ) -> std::option::Option<
@@ -19419,242 +14586,86 @@ pub struct CreateTableInput {
         std::option::Option<std::vec::Vec<crate::model::AttributeDefinition>>,
     /// <p>The name of the table to create.</p>
     pub table_name: std::option::Option<std::string::String>,
-    /// <p>Specifies the attributes that make up the primary key for a table or an index. The
-    /// attributes in <code>KeySchema</code> must also be defined in the
-    /// <code>AttributeDefinitions</code> array. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
-    /// Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>Specifies the attributes that make up the primary key for a table or an index. The attributes in <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     /// <p>Each <code>KeySchemaElement</code> in the array is composed of:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AttributeName</code> - The name of this key attribute.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KeyType</code> - The role that the key attribute will assume:</p>
+    /// <li> <p> <code>AttributeName</code> - The name of this key attribute.</p> </li>
+    /// <li> <p> <code>KeyType</code> - The role that the key attribute will assume:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>HASH</code> - partition key</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RANGE</code> - sort key</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>The partition key of an item is also known as its <i>hash
-    /// attribute</i>. The term "hash attribute" derives from the DynamoDB usage
-    /// of an internal hash function to evenly distribute data items across partitions,
-    /// based on their partition key values.</p>
-    /// <p>The sort key of an item is also known as its <i>range attribute</i>.
-    /// The term "range attribute" derives from the way DynamoDB stores items with the same
-    /// partition key physically close together, in sorted order by the sort key
-    /// value.</p>
+    /// <li> <p> <code>HASH</code> - partition key</p> </li>
+    /// <li> <p> <code>RANGE</code> - sort key</p> </li>
+    /// </ul> </li>
+    /// </ul> <note>
+    /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from the DynamoDB usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
+    /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
-    ///
-    /// <p>For a simple primary key (partition key), you must provide exactly one element with a
-    /// <code>KeyType</code> of <code>HASH</code>.</p>
-    /// <p>For a composite primary key (partition key and sort key), you must provide exactly two
-    /// elements, in this order: The first element must have a <code>KeyType</code> of
-    /// <code>HASH</code>, and the second element must have a <code>KeyType</code> of
-    /// <code>RANGE</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working with Tables</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>For a simple primary key (partition key), you must provide exactly one element with a <code>KeyType</code> of <code>HASH</code>.</p>
+    /// <p>For a composite primary key (partition key and sort key), you must provide exactly two elements, in this order: The first element must have a <code>KeyType</code> of <code>HASH</code>, and the second element must have a <code>KeyType</code> of <code>RANGE</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub key_schema: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
-    /// <p>One or more local secondary indexes (the maximum is 5) to be created on the table.
-    /// Each index is scoped to a given partition key value. There is a 10 GB size limit per
-    /// partition key value; otherwise, the size of a local secondary index is
-    /// unconstrained.</p>
+    /// <p>One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a local secondary index is unconstrained.</p>
     /// <p>Each local secondary index in the array includes the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>IndexName</code> - The name of the local secondary index. Must be unique
-    /// only for this table.</p>
-    /// <p></p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KeySchema</code> - Specifies the key schema for the local secondary index.
-    /// The key schema must begin with the same partition key as the table.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Projection</code> - Specifies attributes that are copied (projected) from
-    /// the table into the index. These are in addition to the primary key attributes
-    /// and index key attributes, which are automatically projected. Each attribute
-    /// specification is composed of:</p>
+    /// <li> <p> <code>IndexName</code> - The name of the local secondary index. Must be unique only for this table.</p> <p></p> </li>
+    /// <li> <p> <code>KeySchema</code> - Specifies the key schema for the local secondary index. The key schema must begin with the same partition key as the table.</p> </li>
+    /// <li> <p> <code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ProjectionType</code> - One of the following:</p>
+    /// <li> <p> <code>ProjectionType</code> - One of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>KEYS_ONLY</code> - Only the index and primary keys are
-    /// projected into the index.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INCLUDE</code> - Only the specified table attributes are
-    /// projected into the index. The list of projected attributes is in
-    /// <code>NonKeyAttributes</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALL</code> - All of the table attributes are projected
-    /// into the index.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NonKeyAttributes</code> - A list of one or more non-key attribute
-    /// names that are projected into the secondary index. The total count of
-    /// attributes provided in <code>NonKeyAttributes</code>, summed across all
-    /// of the secondary indexes, must not exceed 100. If you project the same
-    /// attribute into two different indexes, this counts as two distinct
-    /// attributes when determining the total.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p> </li>
+    /// <li> <p> <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p> </li>
+    /// <li> <p> <code>ALL</code> - All of the table attributes are projected into the index.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub local_secondary_indexes:
         std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndex>>,
-    /// <p>One or more global secondary indexes (the maximum is 20) to be created on the table.
-    /// Each global secondary index in the array includes the following:</p>
+    /// <p>One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary index in the array includes the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>IndexName</code> - The name of the global secondary index. Must be unique
-    /// only for this table.</p>
-    /// <p></p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KeySchema</code> - Specifies the key schema for the global secondary
-    /// index.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Projection</code> - Specifies attributes that are copied (projected) from
-    /// the table into the index. These are in addition to the primary key attributes
-    /// and index key attributes, which are automatically projected. Each attribute
-    /// specification is composed of:</p>
+    /// <li> <p> <code>IndexName</code> - The name of the global secondary index. Must be unique only for this table.</p> <p></p> </li>
+    /// <li> <p> <code>KeySchema</code> - Specifies the key schema for the global secondary index.</p> </li>
+    /// <li> <p> <code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ProjectionType</code> - One of the following:</p>
+    /// <li> <p> <code>ProjectionType</code> - One of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>KEYS_ONLY</code> - Only the index and primary keys are
-    /// projected into the index.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INCLUDE</code> - Only the specified table attributes are
-    /// projected into the index. The list of projected attributes is in
-    /// <code>NonKeyAttributes</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALL</code> - All of the table attributes are projected
-    /// into the index.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NonKeyAttributes</code> - A list of one or more non-key attribute
-    /// names that are projected into the secondary index. The total count of
-    /// attributes provided in <code>NonKeyAttributes</code>, summed across all
-    /// of the secondary indexes, must not exceed 100. If you project the same
-    /// attribute into two different indexes, this counts as two distinct
-    /// attributes when determining the total.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ProvisionedThroughput</code> - The provisioned throughput settings for the
-    /// global secondary index, consisting of read and write capacity units.</p>
-    /// </li>
+    /// <li> <p> <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p> </li>
+    /// <li> <p> <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p> </li>
+    /// <li> <p> <code>ALL</code> - All of the table attributes are projected into the index.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units.</p> </li>
     /// </ul>
     pub global_secondary_indexes:
         std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
-    /// <p>Controls how you are charged for read and write throughput and how you manage
-    /// capacity. This setting can be changed later.</p>
+    /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for
-    /// predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code>
-    /// for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode
-    /// to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p>
-    /// </li>
+    /// <li> <p> <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p> </li>
+    /// <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p> </li>
     /// </ul>
     pub billing_mode: std::option::Option<crate::model::BillingMode>,
-    /// <p>Represents the provisioned throughput settings for a specified table or index. The
-    /// settings can be modified using the <code>UpdateTable</code> operation.</p>
-    /// <p> If you set BillingMode as <code>PROVISIONED</code>, you must specify this property.
-    /// If you set BillingMode as <code>PAY_PER_REQUEST</code>, you cannot specify this
-    /// property.</p>
-    /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
-    /// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p>
+    /// <p> If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>, you cannot specify this property.</p>
+    /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub provisioned_throughput: std::option::Option<crate::model::ProvisionedThroughput>,
     /// <p>The settings for DynamoDB Streams on the table. These settings consist of:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled
-    /// (true) or disabled (false).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>StreamViewType</code> - When an item in the table is modified,
-    /// <code>StreamViewType</code> determines what information is written to the
-    /// table's stream. Valid values for <code>StreamViewType</code> are:</p>
+    /// <li> <p> <code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled (true) or disabled (false).</p> </li>
+    /// <li> <p> <code>StreamViewType</code> - When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the table's stream. Valid values for <code>StreamViewType</code> are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>KEYS_ONLY</code> - Only the key attributes of the modified item
-    /// are written to the stream.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NEW_IMAGE</code> - The entire item, as it appears after it was
-    /// modified, is written to the stream.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OLD_IMAGE</code> - The entire item, as it appeared before it was
-    /// modified, is written to the stream.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images
-    /// of the item are written to the stream.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p> </li>
+    /// <li> <p> <code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written to the stream.</p> </li>
+    /// <li> <p> <code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is written to the stream.</p> </li>
+    /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub stream_specification: std::option::Option<crate::model::StreamSpecification>,
     /// <p>Represents the settings used to enable server-side encryption.</p>
     pub sse_specification: std::option::Option<crate::model::SseSpecification>,
-    /// <p>A list of key-value pairs to label the table. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging
-    /// for DynamoDB</a>.</p>
+    /// <p>A list of key-value pairs to label the table. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The table class of the new table. Valid values are <code>STANDARD</code> and
-    /// <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+    /// <p>The table class of the new table. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
     pub table_class: std::option::Option<crate::model::TableClass>,
 }
 impl CreateTableInput {
@@ -19668,207 +14679,78 @@ impl CreateTableInput {
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
-    /// <p>Specifies the attributes that make up the primary key for a table or an index. The
-    /// attributes in <code>KeySchema</code> must also be defined in the
-    /// <code>AttributeDefinitions</code> array. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
-    /// Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>Specifies the attributes that make up the primary key for a table or an index. The attributes in <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     /// <p>Each <code>KeySchemaElement</code> in the array is composed of:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AttributeName</code> - The name of this key attribute.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KeyType</code> - The role that the key attribute will assume:</p>
+    /// <li> <p> <code>AttributeName</code> - The name of this key attribute.</p> </li>
+    /// <li> <p> <code>KeyType</code> - The role that the key attribute will assume:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>HASH</code> - partition key</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RANGE</code> - sort key</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>The partition key of an item is also known as its <i>hash
-    /// attribute</i>. The term "hash attribute" derives from the DynamoDB usage
-    /// of an internal hash function to evenly distribute data items across partitions,
-    /// based on their partition key values.</p>
-    /// <p>The sort key of an item is also known as its <i>range attribute</i>.
-    /// The term "range attribute" derives from the way DynamoDB stores items with the same
-    /// partition key physically close together, in sorted order by the sort key
-    /// value.</p>
+    /// <li> <p> <code>HASH</code> - partition key</p> </li>
+    /// <li> <p> <code>RANGE</code> - sort key</p> </li>
+    /// </ul> </li>
+    /// </ul> <note>
+    /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from the DynamoDB usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
+    /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
-    ///
-    /// <p>For a simple primary key (partition key), you must provide exactly one element with a
-    /// <code>KeyType</code> of <code>HASH</code>.</p>
-    /// <p>For a composite primary key (partition key and sort key), you must provide exactly two
-    /// elements, in this order: The first element must have a <code>KeyType</code> of
-    /// <code>HASH</code>, and the second element must have a <code>KeyType</code> of
-    /// <code>RANGE</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working with Tables</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>For a simple primary key (partition key), you must provide exactly one element with a <code>KeyType</code> of <code>HASH</code>.</p>
+    /// <p>For a composite primary key (partition key and sort key), you must provide exactly two elements, in this order: The first element must have a <code>KeyType</code> of <code>HASH</code>, and the second element must have a <code>KeyType</code> of <code>RANGE</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn key_schema(&self) -> std::option::Option<&[crate::model::KeySchemaElement]> {
         self.key_schema.as_deref()
     }
-    /// <p>One or more local secondary indexes (the maximum is 5) to be created on the table.
-    /// Each index is scoped to a given partition key value. There is a 10 GB size limit per
-    /// partition key value; otherwise, the size of a local secondary index is
-    /// unconstrained.</p>
+    /// <p>One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a local secondary index is unconstrained.</p>
     /// <p>Each local secondary index in the array includes the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>IndexName</code> - The name of the local secondary index. Must be unique
-    /// only for this table.</p>
-    /// <p></p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KeySchema</code> - Specifies the key schema for the local secondary index.
-    /// The key schema must begin with the same partition key as the table.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Projection</code> - Specifies attributes that are copied (projected) from
-    /// the table into the index. These are in addition to the primary key attributes
-    /// and index key attributes, which are automatically projected. Each attribute
-    /// specification is composed of:</p>
+    /// <li> <p> <code>IndexName</code> - The name of the local secondary index. Must be unique only for this table.</p> <p></p> </li>
+    /// <li> <p> <code>KeySchema</code> - Specifies the key schema for the local secondary index. The key schema must begin with the same partition key as the table.</p> </li>
+    /// <li> <p> <code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ProjectionType</code> - One of the following:</p>
+    /// <li> <p> <code>ProjectionType</code> - One of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>KEYS_ONLY</code> - Only the index and primary keys are
-    /// projected into the index.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INCLUDE</code> - Only the specified table attributes are
-    /// projected into the index. The list of projected attributes is in
-    /// <code>NonKeyAttributes</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALL</code> - All of the table attributes are projected
-    /// into the index.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NonKeyAttributes</code> - A list of one or more non-key attribute
-    /// names that are projected into the secondary index. The total count of
-    /// attributes provided in <code>NonKeyAttributes</code>, summed across all
-    /// of the secondary indexes, must not exceed 100. If you project the same
-    /// attribute into two different indexes, this counts as two distinct
-    /// attributes when determining the total.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p> </li>
+    /// <li> <p> <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p> </li>
+    /// <li> <p> <code>ALL</code> - All of the table attributes are projected into the index.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn local_secondary_indexes(
         &self,
     ) -> std::option::Option<&[crate::model::LocalSecondaryIndex]> {
         self.local_secondary_indexes.as_deref()
     }
-    /// <p>One or more global secondary indexes (the maximum is 20) to be created on the table.
-    /// Each global secondary index in the array includes the following:</p>
+    /// <p>One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary index in the array includes the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>IndexName</code> - The name of the global secondary index. Must be unique
-    /// only for this table.</p>
-    /// <p></p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KeySchema</code> - Specifies the key schema for the global secondary
-    /// index.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Projection</code> - Specifies attributes that are copied (projected) from
-    /// the table into the index. These are in addition to the primary key attributes
-    /// and index key attributes, which are automatically projected. Each attribute
-    /// specification is composed of:</p>
+    /// <li> <p> <code>IndexName</code> - The name of the global secondary index. Must be unique only for this table.</p> <p></p> </li>
+    /// <li> <p> <code>KeySchema</code> - Specifies the key schema for the global secondary index.</p> </li>
+    /// <li> <p> <code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ProjectionType</code> - One of the following:</p>
+    /// <li> <p> <code>ProjectionType</code> - One of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>KEYS_ONLY</code> - Only the index and primary keys are
-    /// projected into the index.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INCLUDE</code> - Only the specified table attributes are
-    /// projected into the index. The list of projected attributes is in
-    /// <code>NonKeyAttributes</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALL</code> - All of the table attributes are projected
-    /// into the index.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NonKeyAttributes</code> - A list of one or more non-key attribute
-    /// names that are projected into the secondary index. The total count of
-    /// attributes provided in <code>NonKeyAttributes</code>, summed across all
-    /// of the secondary indexes, must not exceed 100. If you project the same
-    /// attribute into two different indexes, this counts as two distinct
-    /// attributes when determining the total.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ProvisionedThroughput</code> - The provisioned throughput settings for the
-    /// global secondary index, consisting of read and write capacity units.</p>
-    /// </li>
+    /// <li> <p> <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p> </li>
+    /// <li> <p> <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p> </li>
+    /// <li> <p> <code>ALL</code> - All of the table attributes are projected into the index.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units.</p> </li>
     /// </ul>
     pub fn global_secondary_indexes(
         &self,
     ) -> std::option::Option<&[crate::model::GlobalSecondaryIndex]> {
         self.global_secondary_indexes.as_deref()
     }
-    /// <p>Controls how you are charged for read and write throughput and how you manage
-    /// capacity. This setting can be changed later.</p>
+    /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for
-    /// predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code>
-    /// for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode
-    /// to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p>
-    /// </li>
+    /// <li> <p> <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p> </li>
+    /// <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p> </li>
     /// </ul>
     pub fn billing_mode(&self) -> std::option::Option<&crate::model::BillingMode> {
         self.billing_mode.as_ref()
     }
-    /// <p>Represents the provisioned throughput settings for a specified table or index. The
-    /// settings can be modified using the <code>UpdateTable</code> operation.</p>
-    /// <p> If you set BillingMode as <code>PROVISIONED</code>, you must specify this property.
-    /// If you set BillingMode as <code>PAY_PER_REQUEST</code>, you cannot specify this
-    /// property.</p>
-    /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
-    /// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>.</p>
+    /// <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p>
+    /// <p> If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>, you cannot specify this property.</p>
+    /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn provisioned_throughput(
         &self,
     ) -> std::option::Option<&crate::model::ProvisionedThroughput> {
@@ -19876,39 +14758,14 @@ impl CreateTableInput {
     }
     /// <p>The settings for DynamoDB Streams on the table. These settings consist of:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled
-    /// (true) or disabled (false).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>StreamViewType</code> - When an item in the table is modified,
-    /// <code>StreamViewType</code> determines what information is written to the
-    /// table's stream. Valid values for <code>StreamViewType</code> are:</p>
+    /// <li> <p> <code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled (true) or disabled (false).</p> </li>
+    /// <li> <p> <code>StreamViewType</code> - When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the table's stream. Valid values for <code>StreamViewType</code> are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>KEYS_ONLY</code> - Only the key attributes of the modified item
-    /// are written to the stream.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NEW_IMAGE</code> - The entire item, as it appears after it was
-    /// modified, is written to the stream.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OLD_IMAGE</code> - The entire item, as it appeared before it was
-    /// modified, is written to the stream.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images
-    /// of the item are written to the stream.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p> </li>
+    /// <li> <p> <code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written to the stream.</p> </li>
+    /// <li> <p> <code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is written to the stream.</p> </li>
+    /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn stream_specification(&self) -> std::option::Option<&crate::model::StreamSpecification> {
         self.stream_specification.as_ref()
@@ -19917,13 +14774,11 @@ impl CreateTableInput {
     pub fn sse_specification(&self) -> std::option::Option<&crate::model::SseSpecification> {
         self.sse_specification.as_ref()
     }
-    /// <p>A list of key-value pairs to label the table. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging
-    /// for DynamoDB</a>.</p>
+    /// <p>A list of key-value pairs to label the table. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The table class of the new table. Valid values are <code>STANDARD</code> and
-    /// <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+    /// <p>The table class of the new table. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
     pub fn table_class(&self) -> std::option::Option<&crate::model::TableClass> {
         self.table_class.as_ref()
     }
@@ -20006,128 +14861,42 @@ impl std::fmt::Debug for CreateBackupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchWriteItemInput {
-    /// <p>A map of one or more table names and, for each table, a list of operations to be
-    /// performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the
-    /// map consists of the following:</p>
+    /// <p>A map of one or more table names and, for each table, a list of operations to be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
-    /// specified item. The item to be deleted is identified by a <code>Key</code>
-    /// subelement:</p>
+    /// <li> <p> <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be deleted is identified by a <code>Key</code> subelement:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Key</code> - A map of primary key attribute values that uniquely
-    /// identify the item. Each entry in this map consists of an attribute name
-    /// and an attribute value. For each primary key, you must provide
-    /// <i>all</i> of the key attributes. For example, with a
-    /// simple primary key, you only need to provide a value for the partition
-    /// key. For a composite primary key, you must provide values for
-    /// <i>both</i> the partition key and the sort key.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the
-    /// specified item. The item to be put is identified by an <code>Item</code>
-    /// subelement:</p>
+    /// <li> <p> <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be put is identified by an <code>Item</code> subelement:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Item</code> - A map of attributes and their values. Each entry in
-    /// this map consists of an attribute name and an attribute value. Attribute
-    /// values must not be null; string and binary type attributes must have
-    /// lengths greater than zero; and set type attributes must not be empty.
-    /// Requests that contain empty values are rejected with a
-    /// <code>ValidationException</code> exception.</p>
-    /// <p>If you specify any attributes that are part of an index key, then the
-    /// data types for those attributes must match those of the schema in the
-    /// table's attribute definition.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values are rejected with a <code>ValidationException</code> exception.</p> <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub request_items: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::WriteRequest>>,
     >,
-    /// <p>Determines the level of detail about either provisioned or on-demand throughput
-    /// consumption that is returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INDEXES</code> - The response includes the aggregate
-    /// <code>ConsumedCapacity</code> for the operation, together with
-    /// <code>ConsumedCapacity</code> for each table and secondary index that was
-    /// accessed.</p>
-    /// <p>Note that some operations, such as <code>GetItem</code> and
-    /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-    /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-    /// information for table(s).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TOTAL</code> - The response includes only the aggregate
-    /// <code>ConsumedCapacity</code> for the operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-    /// response.</p>
-    /// </li>
+    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
     pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
-    /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>,
-    /// the response includes statistics about item collections, if any, that were modified
-    /// during the operation are returned in the response. If set to <code>NONE</code> (the
-    /// default), no statistics are returned.</p>
+    /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
     pub return_item_collection_metrics:
         std::option::Option<crate::model::ReturnItemCollectionMetrics>,
 }
 impl BatchWriteItemInput {
-    /// <p>A map of one or more table names and, for each table, a list of operations to be
-    /// performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the
-    /// map consists of the following:</p>
+    /// <p>A map of one or more table names and, for each table, a list of operations to be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
-    /// specified item. The item to be deleted is identified by a <code>Key</code>
-    /// subelement:</p>
+    /// <li> <p> <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be deleted is identified by a <code>Key</code> subelement:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Key</code> - A map of primary key attribute values that uniquely
-    /// identify the item. Each entry in this map consists of an attribute name
-    /// and an attribute value. For each primary key, you must provide
-    /// <i>all</i> of the key attributes. For example, with a
-    /// simple primary key, you only need to provide a value for the partition
-    /// key. For a composite primary key, you must provide values for
-    /// <i>both</i> the partition key and the sort key.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the
-    /// specified item. The item to be put is identified by an <code>Item</code>
-    /// subelement:</p>
+    /// <li> <p> <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to be put is identified by an <code>Item</code> subelement:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Item</code> - A map of attributes and their values. Each entry in
-    /// this map consists of an attribute name and an attribute value. Attribute
-    /// values must not be null; string and binary type attributes must have
-    /// lengths greater than zero; and set type attributes must not be empty.
-    /// Requests that contain empty values are rejected with a
-    /// <code>ValidationException</code> exception.</p>
-    /// <p>If you specify any attributes that are part of an index key, then the
-    /// data types for those attributes must match those of the schema in the
-    /// table's attribute definition.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values are rejected with a <code>ValidationException</code> exception.</p> <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn request_items(
         &self,
@@ -20136,40 +14905,18 @@ impl BatchWriteItemInput {
     > {
         self.request_items.as_ref()
     }
-    /// <p>Determines the level of detail about either provisioned or on-demand throughput
-    /// consumption that is returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INDEXES</code> - The response includes the aggregate
-    /// <code>ConsumedCapacity</code> for the operation, together with
-    /// <code>ConsumedCapacity</code> for each table and secondary index that was
-    /// accessed.</p>
-    /// <p>Note that some operations, such as <code>GetItem</code> and
-    /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-    /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-    /// information for table(s).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TOTAL</code> - The response includes only the aggregate
-    /// <code>ConsumedCapacity</code> for the operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-    /// response.</p>
-    /// </li>
+    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
     pub fn return_consumed_capacity(
         &self,
     ) -> std::option::Option<&crate::model::ReturnConsumedCapacity> {
         self.return_consumed_capacity.as_ref()
     }
-    /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>,
-    /// the response includes statistics about item collections, if any, that were modified
-    /// during the operation are returned in the response. If set to <code>NONE</code> (the
-    /// default), no statistics are returned.</p>
+    /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
     pub fn return_item_collection_metrics(
         &self,
     ) -> std::option::Option<&crate::model::ReturnItemCollectionMetrics> {
@@ -20193,236 +14940,67 @@ impl std::fmt::Debug for BatchWriteItemInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetItemInput {
-    /// <p>A map of one or more table names and, for each table, a map that describes one or more
-    /// items to retrieve from that table. Each table name can be used only once per
-    /// <code>BatchGetItem</code> request.</p>
+    /// <p>A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <code>BatchGetItem</code> request.</p>
     /// <p>Each element in the map of items to retrieve consists of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent read
-    /// is used; if <code>false</code> (the default), an eventually consistent read is
-    /// used.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ExpressionAttributeNames</code> - One or more substitution tokens for
-    /// attribute names in the <code>ProjectionExpression</code> parameter. The
-    /// following are some use cases for using
-    /// <code>ExpressionAttributeNames</code>:</p>
+    /// <li> <p> <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent read is used; if <code>false</code> (the default), an eventually consistent read is used.</p> </li>
+    /// <li> <p> <code>ExpressionAttributeNames</code> - One or more substitution tokens for attribute names in the <code>ProjectionExpression</code> parameter. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
-    /// word.</p>
-    /// </li>
-    /// <li>
-    /// <p>To create a placeholder for repeating occurrences of an attribute name
-    /// in an expression.</p>
-    /// </li>
-    /// <li>
-    /// <p>To prevent special characters in an attribute name from being
-    /// misinterpreted in an expression.</p>
-    /// </li>
-    /// </ul>
-    /// <p>Use the <b>#</b> character in an expression to
-    /// dereference an attribute name. For example, consider the following attribute
-    /// name:</p>
+    /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
+    /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
+    /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
+    /// </ul> <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Percentile</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be
-    /// used directly in an expression. (For the complete list of reserved words, see
-    /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
-    /// Words</a> in the <i>Amazon DynamoDB Developer Guide</i>).
-    /// To work around this, you could specify the following for
-    /// <code>ExpressionAttributeNames</code>:</p>
+    /// <li> <p> <code>Percentile</code> </p> </li>
+    /// </ul> <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>{"#P":"Percentile"}</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <p>You could then use this substitution in an expression, as in this
-    /// example:</p>
+    /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
+    /// </ul> <p>You could then use this substitution in an expression, as in this example:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>#P = :val</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>Tokens that begin with the <b>:</b> character
-    /// are <i>expression attribute values</i>, which are placeholders
-    /// for the actual value at runtime.</p>
-    /// </note>
-    /// <p>For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB
-    /// Developer Guide</i>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Keys</code> - An array of primary key attribute values that define
-    /// specific items in the table. For each primary key, you must provide
-    /// <i>all</i> of the key attributes. For example, with a simple
-    /// primary key, you only need to provide the partition key value. For a composite
-    /// key, you must provide <i>both</i> the partition key value and the
-    /// sort key value.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ProjectionExpression</code> - A string that identifies one or more
-    /// attributes to retrieve from the table. These attributes can include scalars,
-    /// sets, or elements of a JSON document. The attributes in the expression must be
-    /// separated by commas.</p>
-    /// <p>If no attribute names are specified, then all attributes are returned. If any
-    /// of the requested attributes are not found, they do not appear in the
-    /// result.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB
-    /// Developer Guide</i>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AttributesToGet</code> - This is a legacy parameter. Use
-    /// <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>. </p>
-    ///
-    /// </li>
+    /// <li> <p> <code>#P = :val</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
+    /// </note> <p>For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
+    /// <li> <p> <code>Keys</code> - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key value. For a composite key, you must provide <i>both</i> the partition key value and the sort key value.</p> </li>
+    /// <li> <p> <code>ProjectionExpression</code> - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p> <p>If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not found, they do not appear in the result.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
+    /// <li> <p> <code>AttributesToGet</code> - This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p> </li>
     /// </ul>
     pub request_items: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::KeysAndAttributes>,
     >,
-    /// <p>Determines the level of detail about either provisioned or on-demand throughput
-    /// consumption that is returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INDEXES</code> - The response includes the aggregate
-    /// <code>ConsumedCapacity</code> for the operation, together with
-    /// <code>ConsumedCapacity</code> for each table and secondary index that was
-    /// accessed.</p>
-    /// <p>Note that some operations, such as <code>GetItem</code> and
-    /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-    /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-    /// information for table(s).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TOTAL</code> - The response includes only the aggregate
-    /// <code>ConsumedCapacity</code> for the operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-    /// response.</p>
-    /// </li>
+    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
     pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
 }
 impl BatchGetItemInput {
-    /// <p>A map of one or more table names and, for each table, a map that describes one or more
-    /// items to retrieve from that table. Each table name can be used only once per
-    /// <code>BatchGetItem</code> request.</p>
+    /// <p>A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <code>BatchGetItem</code> request.</p>
     /// <p>Each element in the map of items to retrieve consists of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent read
-    /// is used; if <code>false</code> (the default), an eventually consistent read is
-    /// used.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ExpressionAttributeNames</code> - One or more substitution tokens for
-    /// attribute names in the <code>ProjectionExpression</code> parameter. The
-    /// following are some use cases for using
-    /// <code>ExpressionAttributeNames</code>:</p>
+    /// <li> <p> <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent read is used; if <code>false</code> (the default), an eventually consistent read is used.</p> </li>
+    /// <li> <p> <code>ExpressionAttributeNames</code> - One or more substitution tokens for attribute names in the <code>ProjectionExpression</code> parameter. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>To access an attribute whose name conflicts with a DynamoDB reserved
-    /// word.</p>
-    /// </li>
-    /// <li>
-    /// <p>To create a placeholder for repeating occurrences of an attribute name
-    /// in an expression.</p>
-    /// </li>
-    /// <li>
-    /// <p>To prevent special characters in an attribute name from being
-    /// misinterpreted in an expression.</p>
-    /// </li>
-    /// </ul>
-    /// <p>Use the <b>#</b> character in an expression to
-    /// dereference an attribute name. For example, consider the following attribute
-    /// name:</p>
+    /// <li> <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p> </li>
+    /// <li> <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p> </li>
+    /// <li> <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p> </li>
+    /// </ul> <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Percentile</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <p>The name of this attribute conflicts with a reserved word, so it cannot be
-    /// used directly in an expression. (For the complete list of reserved words, see
-    /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
-    /// Words</a> in the <i>Amazon DynamoDB Developer Guide</i>).
-    /// To work around this, you could specify the following for
-    /// <code>ExpressionAttributeNames</code>:</p>
+    /// <li> <p> <code>Percentile</code> </p> </li>
+    /// </ul> <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>{"#P":"Percentile"}</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <p>You could then use this substitution in an expression, as in this
-    /// example:</p>
+    /// <li> <p> <code>{"#P":"Percentile"}</code> </p> </li>
+    /// </ul> <p>You could then use this substitution in an expression, as in this example:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>#P = :val</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>Tokens that begin with the <b>:</b> character
-    /// are <i>expression attribute values</i>, which are placeholders
-    /// for the actual value at runtime.</p>
-    /// </note>
-    /// <p>For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB
-    /// Developer Guide</i>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Keys</code> - An array of primary key attribute values that define
-    /// specific items in the table. For each primary key, you must provide
-    /// <i>all</i> of the key attributes. For example, with a simple
-    /// primary key, you only need to provide the partition key value. For a composite
-    /// key, you must provide <i>both</i> the partition key value and the
-    /// sort key value.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ProjectionExpression</code> - A string that identifies one or more
-    /// attributes to retrieve from the table. These attributes can include scalars,
-    /// sets, or elements of a JSON document. The attributes in the expression must be
-    /// separated by commas.</p>
-    /// <p>If no attribute names are specified, then all attributes are returned. If any
-    /// of the requested attributes are not found, they do not appear in the
-    /// result.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB
-    /// Developer Guide</i>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AttributesToGet</code> - This is a legacy parameter. Use
-    /// <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer
-    /// Guide</i>. </p>
-    ///
-    /// </li>
+    /// <li> <p> <code>#P = :val</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
+    /// </note> <p>For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
+    /// <li> <p> <code>Keys</code> - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key value. For a composite key, you must provide <i>both</i> the partition key value and the sort key value.</p> </li>
+    /// <li> <p> <code>ProjectionExpression</code> - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p> <p>If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not found, they do not appear in the result.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
+    /// <li> <p> <code>AttributesToGet</code> - This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p> </li>
     /// </ul>
     pub fn request_items(
         &self,
@@ -20431,30 +15009,11 @@ impl BatchGetItemInput {
     > {
         self.request_items.as_ref()
     }
-    /// <p>Determines the level of detail about either provisioned or on-demand throughput
-    /// consumption that is returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INDEXES</code> - The response includes the aggregate
-    /// <code>ConsumedCapacity</code> for the operation, together with
-    /// <code>ConsumedCapacity</code> for each table and secondary index that was
-    /// accessed.</p>
-    /// <p>Note that some operations, such as <code>GetItem</code> and
-    /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-    /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-    /// information for table(s).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TOTAL</code> - The response includes only the aggregate
-    /// <code>ConsumedCapacity</code> for the operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-    /// response.</p>
-    /// </li>
+    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
     pub fn return_consumed_capacity(
         &self,
@@ -20477,30 +15036,11 @@ impl std::fmt::Debug for BatchGetItemInput {
 pub struct BatchExecuteStatementInput {
     /// <p>The list of PartiQL statements representing the batch to run.</p>
     pub statements: std::option::Option<std::vec::Vec<crate::model::BatchStatementRequest>>,
-    /// <p>Determines the level of detail about either provisioned or on-demand throughput
-    /// consumption that is returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INDEXES</code> - The response includes the aggregate
-    /// <code>ConsumedCapacity</code> for the operation, together with
-    /// <code>ConsumedCapacity</code> for each table and secondary index that was
-    /// accessed.</p>
-    /// <p>Note that some operations, such as <code>GetItem</code> and
-    /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-    /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-    /// information for table(s).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TOTAL</code> - The response includes only the aggregate
-    /// <code>ConsumedCapacity</code> for the operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-    /// response.</p>
-    /// </li>
+    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
     pub return_consumed_capacity: std::option::Option<crate::model::ReturnConsumedCapacity>,
 }
@@ -20509,30 +15049,11 @@ impl BatchExecuteStatementInput {
     pub fn statements(&self) -> std::option::Option<&[crate::model::BatchStatementRequest]> {
         self.statements.as_deref()
     }
-    /// <p>Determines the level of detail about either provisioned or on-demand throughput
-    /// consumption that is returned in the response:</p>
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INDEXES</code> - The response includes the aggregate
-    /// <code>ConsumedCapacity</code> for the operation, together with
-    /// <code>ConsumedCapacity</code> for each table and secondary index that was
-    /// accessed.</p>
-    /// <p>Note that some operations, such as <code>GetItem</code> and
-    /// <code>BatchGetItem</code>, do not access any indexes at all. In these cases,
-    /// specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code>
-    /// information for table(s).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TOTAL</code> - The response includes only the aggregate
-    /// <code>ConsumedCapacity</code> for the operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the
-    /// response.</p>
-    /// </li>
+    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
     pub fn return_consumed_capacity(
         &self,

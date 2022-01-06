@@ -33,7 +33,7 @@ pub mod cancel_job_input {
 #[doc(hidden)]
 pub type CancelJobInputOperationOutputAlias = crate::operation::CancelJob;
 #[doc(hidden)]
-pub type CancelJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelJobInput {
     /// Consumes the builder and constructs an Operation<[`CancelJob`](crate::operation::CancelJob)>
     #[allow(clippy::let_and_return)]
@@ -44,7 +44,7 @@ impl CancelJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -132,7 +132,7 @@ impl CancelJobInput {
                     "CancelJob",
                     "braket",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -197,7 +197,7 @@ pub mod cancel_quantum_task_input {
 #[doc(hidden)]
 pub type CancelQuantumTaskInputOperationOutputAlias = crate::operation::CancelQuantumTask;
 #[doc(hidden)]
-pub type CancelQuantumTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelQuantumTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelQuantumTaskInput {
     /// Consumes the builder and constructs an Operation<[`CancelQuantumTask`](crate::operation::CancelQuantumTask)>
     #[allow(clippy::let_and_return)]
@@ -208,7 +208,7 @@ impl CancelQuantumTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelQuantumTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -311,7 +311,7 @@ impl CancelQuantumTaskInput {
             "CancelQuantumTask",
             "braket",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -370,8 +370,7 @@ pub mod create_job_input {
             self.client_token = input;
             self
         }
-        /// <p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information
-        /// about the Python scripts used for entry and training.</p>
+        /// <p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information about the Python scripts used for entry and training.</p>
         pub fn algorithm_specification(
             mut self,
             input: crate::model::AlgorithmSpecification,
@@ -379,8 +378,7 @@ pub mod create_job_input {
             self.algorithm_specification = Some(input);
             self
         }
-        /// <p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information
-        /// about the Python scripts used for entry and training.</p>
+        /// <p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information about the Python scripts used for entry and training.</p>
         pub fn set_algorithm_specification(
             mut self,
             input: std::option::Option<crate::model::AlgorithmSpecification>,
@@ -392,19 +390,14 @@ pub mod create_job_input {
         ///
         /// To override the contents of this collection use [`set_input_data_config`](Self::set_input_data_config).
         ///
-        /// <p>A list of parameters that specify the name and type of input data and where it is
-        /// located.</p>
-        pub fn input_data_config(
-            mut self,
-            input: impl Into<crate::model::InputFileConfig>,
-        ) -> Self {
+        /// <p>A list of parameters that specify the name and type of input data and where it is located.</p>
+        pub fn input_data_config(mut self, input: crate::model::InputFileConfig) -> Self {
             let mut v = self.input_data_config.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_data_config = Some(v);
             self
         }
-        /// <p>A list of parameters that specify the name and type of input data and where it is
-        /// located.</p>
+        /// <p>A list of parameters that specify the name and type of input data and where it is located.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputFileConfig>>,
@@ -412,14 +405,12 @@ pub mod create_job_input {
             self.input_data_config = input;
             self
         }
-        /// <p>The path to the S3 location where you want to store job artifacts and the
-        /// encryption key used to store them.</p>
+        /// <p>The path to the S3 location where you want to store job artifacts and the encryption key used to store them.</p>
         pub fn output_data_config(mut self, input: crate::model::JobOutputDataConfig) -> Self {
             self.output_data_config = Some(input);
             self
         }
-        /// <p>The path to the S3 location where you want to store job artifacts and the
-        /// encryption key used to store them.</p>
+        /// <p>The path to the S3 location where you want to store job artifacts and the encryption key used to store them.</p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::JobOutputDataConfig>,
@@ -450,16 +441,12 @@ pub mod create_job_input {
             self.job_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform
-        /// tasks on behalf of a user. It can access user resources, run an Amazon Braket job container
-        /// on behalf of user, and output resources to the users' s3 buckets.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the users' s3 buckets.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform
-        /// tasks on behalf of a user. It can access user resources, run an Amazon Braket job container
-        /// on behalf of user, and output resources to the users' s3 buckets.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the users' s3 buckets.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -477,14 +464,12 @@ pub mod create_job_input {
             self.stopping_condition = input;
             self
         }
-        /// <p>Configuration of the resource instances to use while running the hybrid job on Amazon
-        /// Braket.</p>
+        /// <p>Configuration of the resource instances to use while running the hybrid job on Amazon Braket.</p>
         pub fn instance_config(mut self, input: crate::model::InstanceConfig) -> Self {
             self.instance_config = Some(input);
             self
         }
-        /// <p>Configuration of the resource instances to use while running the hybrid job on Amazon
-        /// Braket.</p>
+        /// <p>Configuration of the resource instances to use while running the hybrid job on Amazon Braket.</p>
         pub fn set_instance_config(
             mut self,
             input: std::option::Option<crate::model::InstanceConfig>,
@@ -496,9 +481,7 @@ pub mod create_job_input {
         ///
         /// To override the contents of this collection use [`set_hyper_parameters`](Self::set_hyper_parameters).
         ///
-        /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of
-        /// the training job. The values are set with a string of JSON key:value pairs, where the key is the
-        /// name of the hyperparameter and the value is the value of th hyperparameter.</p>
+        /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the training job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
         pub fn hyper_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -509,9 +492,7 @@ pub mod create_job_input {
             self.hyper_parameters = Some(hash_map);
             self
         }
-        /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of
-        /// the training job. The values are set with a string of JSON key:value pairs, where the key is the
-        /// name of the hyperparameter and the value is the value of th hyperparameter.</p>
+        /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the training job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
         pub fn set_hyper_parameters(
             mut self,
             input: std::option::Option<
@@ -584,7 +565,7 @@ pub mod create_job_input {
 #[doc(hidden)]
 pub type CreateJobInputOperationOutputAlias = crate::operation::CreateJob;
 #[doc(hidden)]
-pub type CreateJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateJob`](crate::operation::CreateJob)>
     #[allow(clippy::let_and_return)]
@@ -595,7 +576,7 @@ impl CreateJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -675,7 +656,7 @@ impl CreateJobInput {
                     "CreateJob",
                     "braket",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -855,7 +836,7 @@ pub mod create_quantum_task_input {
 #[doc(hidden)]
 pub type CreateQuantumTaskInputOperationOutputAlias = crate::operation::CreateQuantumTask;
 #[doc(hidden)]
-pub type CreateQuantumTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateQuantumTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateQuantumTaskInput {
     /// Consumes the builder and constructs an Operation<[`CreateQuantumTask`](crate::operation::CreateQuantumTask)>
     #[allow(clippy::let_and_return)]
@@ -866,7 +847,7 @@ impl CreateQuantumTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateQuantumTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -949,7 +930,7 @@ impl CreateQuantumTaskInput {
             "CreateQuantumTask",
             "braket",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1005,7 +986,7 @@ pub mod get_device_input {
 #[doc(hidden)]
 pub type GetDeviceInputOperationOutputAlias = crate::operation::GetDevice;
 #[doc(hidden)]
-pub type GetDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDeviceInput {
     /// Consumes the builder and constructs an Operation<[`GetDevice`](crate::operation::GetDevice)>
     #[allow(clippy::let_and_return)]
@@ -1016,7 +997,7 @@ impl GetDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1104,7 +1085,7 @@ impl GetDeviceInput {
                     "GetDevice",
                     "braket",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1152,7 +1133,7 @@ pub mod get_job_input {
 #[doc(hidden)]
 pub type GetJobInputOperationOutputAlias = crate::operation::GetJob;
 #[doc(hidden)]
-pub type GetJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetJobInput {
     /// Consumes the builder and constructs an Operation<[`GetJob`](crate::operation::GetJob)>
     #[allow(clippy::let_and_return)]
@@ -1163,7 +1144,7 @@ impl GetJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1249,7 +1230,7 @@ impl GetJobInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "GetJob", "braket",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1302,7 +1283,7 @@ pub mod get_quantum_task_input {
 #[doc(hidden)]
 pub type GetQuantumTaskInputOperationOutputAlias = crate::operation::GetQuantumTask;
 #[doc(hidden)]
-pub type GetQuantumTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetQuantumTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetQuantumTaskInput {
     /// Consumes the builder and constructs an Operation<[`GetQuantumTask`](crate::operation::GetQuantumTask)>
     #[allow(clippy::let_and_return)]
@@ -1313,7 +1294,7 @@ impl GetQuantumTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetQuantumTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1407,7 +1388,7 @@ impl GetQuantumTaskInput {
             "GetQuantumTask",
             "braket",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1457,7 +1438,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -1468,7 +1449,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1558,7 +1539,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "braket",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1609,9 +1590,9 @@ pub mod search_devices_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The filter values to use to search for a device.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::SearchDevicesFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::SearchDevicesFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -1641,7 +1622,7 @@ pub mod search_devices_input {
 #[doc(hidden)]
 pub type SearchDevicesInputOperationOutputAlias = crate::operation::SearchDevices;
 #[doc(hidden)]
-pub type SearchDevicesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchDevicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchDevicesInput {
     /// Consumes the builder and constructs an Operation<[`SearchDevices`](crate::operation::SearchDevices)>
     #[allow(clippy::let_and_return)]
@@ -1652,7 +1633,7 @@ impl SearchDevicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchDevices,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1731,7 +1712,7 @@ impl SearchDevicesInput {
             "SearchDevices",
             "braket",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1765,14 +1746,12 @@ pub mod search_jobs_input {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::SearchJobsFilter>>,
     }
     impl Builder {
-        /// <p>A token used for pagination of results returned in the response. Use the token returned
-        /// from the previous request to continue results where the previous request ended.</p>
+        /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token used for pagination of results returned in the response. Use the token returned
-        /// from the previous request to continue results where the previous request ended.</p>
+        /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1792,9 +1771,9 @@ pub mod search_jobs_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The filter values to use when searching for a job.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::SearchJobsFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::SearchJobsFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -1824,7 +1803,7 @@ pub mod search_jobs_input {
 #[doc(hidden)]
 pub type SearchJobsInputOperationOutputAlias = crate::operation::SearchJobs;
 #[doc(hidden)]
-pub type SearchJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchJobsInput {
     /// Consumes the builder and constructs an Operation<[`SearchJobs`](crate::operation::SearchJobs)>
     #[allow(clippy::let_and_return)]
@@ -1835,7 +1814,7 @@ impl SearchJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1914,7 +1893,7 @@ impl SearchJobsInput {
             "SearchJobs",
             "braket",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1974,9 +1953,9 @@ pub mod search_quantum_tasks_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Array of <code>SearchQuantumTasksFilter</code> objects.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::SearchQuantumTasksFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::SearchQuantumTasksFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -2006,7 +1985,7 @@ pub mod search_quantum_tasks_input {
 #[doc(hidden)]
 pub type SearchQuantumTasksInputOperationOutputAlias = crate::operation::SearchQuantumTasks;
 #[doc(hidden)]
-pub type SearchQuantumTasksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchQuantumTasksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchQuantumTasksInput {
     /// Consumes the builder and constructs an Operation<[`SearchQuantumTasks`](crate::operation::SearchQuantumTasks)>
     #[allow(clippy::let_and_return)]
@@ -2017,7 +1996,7 @@ impl SearchQuantumTasksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchQuantumTasks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2097,7 +2076,7 @@ impl SearchQuantumTasksInput {
             "SearchQuantumTasks",
             "braket",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2184,7 +2163,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -2195,7 +2174,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2290,7 +2269,7 @@ impl TagResourceInput {
             "TagResource",
             "braket",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2369,7 +2348,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -2380,7 +2359,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2483,7 +2462,7 @@ impl UntagResourceInput {
             "UntagResource",
             "braket",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2667,8 +2646,7 @@ impl std::fmt::Debug for GetQuantumTaskInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchJobsInput {
-    /// <p>A token used for pagination of results returned in the response. Use the token returned
-    /// from the previous request to continue results where the previous request ended.</p>
+    /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
@@ -2676,8 +2654,7 @@ pub struct SearchJobsInput {
     pub filters: std::option::Option<std::vec::Vec<crate::model::SearchJobsFilter>>,
 }
 impl SearchJobsInput {
-    /// <p>A token used for pagination of results returned in the response. Use the token returned
-    /// from the previous request to continue results where the previous request ended.</p>
+    /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2706,31 +2683,23 @@ impl std::fmt::Debug for SearchJobsInput {
 pub struct CreateJobInput {
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information
-    /// about the Python scripts used for entry and training.</p>
+    /// <p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information about the Python scripts used for entry and training.</p>
     pub algorithm_specification: std::option::Option<crate::model::AlgorithmSpecification>,
-    /// <p>A list of parameters that specify the name and type of input data and where it is
-    /// located.</p>
+    /// <p>A list of parameters that specify the name and type of input data and where it is located.</p>
     pub input_data_config: std::option::Option<std::vec::Vec<crate::model::InputFileConfig>>,
-    /// <p>The path to the S3 location where you want to store job artifacts and the
-    /// encryption key used to store them.</p>
+    /// <p>The path to the S3 location where you want to store job artifacts and the encryption key used to store them.</p>
     pub output_data_config: std::option::Option<crate::model::JobOutputDataConfig>,
     /// <p>Information about the output locations for job checkpoint data.</p>
     pub checkpoint_config: std::option::Option<crate::model::JobCheckpointConfig>,
     /// <p>The name of the Amazon Braket job.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform
-    /// tasks on behalf of a user. It can access user resources, run an Amazon Braket job container
-    /// on behalf of user, and output resources to the users' s3 buckets.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the users' s3 buckets.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p> The user-defined criteria that specifies when a job stops running.</p>
     pub stopping_condition: std::option::Option<crate::model::JobStoppingCondition>,
-    /// <p>Configuration of the resource instances to use while running the hybrid job on Amazon
-    /// Braket.</p>
+    /// <p>Configuration of the resource instances to use while running the hybrid job on Amazon Braket.</p>
     pub instance_config: std::option::Option<crate::model::InstanceConfig>,
-    /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of
-    /// the training job. The values are set with a string of JSON key:value pairs, where the key is the
-    /// name of the hyperparameter and the value is the value of th hyperparameter.</p>
+    /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the training job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
     pub hyper_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The quantum processing unit (QPU) or simulator used to create an Amazon Braket job.</p>
@@ -2744,20 +2713,17 @@ impl CreateJobInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information
-    /// about the Python scripts used for entry and training.</p>
+    /// <p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information about the Python scripts used for entry and training.</p>
     pub fn algorithm_specification(
         &self,
     ) -> std::option::Option<&crate::model::AlgorithmSpecification> {
         self.algorithm_specification.as_ref()
     }
-    /// <p>A list of parameters that specify the name and type of input data and where it is
-    /// located.</p>
+    /// <p>A list of parameters that specify the name and type of input data and where it is located.</p>
     pub fn input_data_config(&self) -> std::option::Option<&[crate::model::InputFileConfig]> {
         self.input_data_config.as_deref()
     }
-    /// <p>The path to the S3 location where you want to store job artifacts and the
-    /// encryption key used to store them.</p>
+    /// <p>The path to the S3 location where you want to store job artifacts and the encryption key used to store them.</p>
     pub fn output_data_config(&self) -> std::option::Option<&crate::model::JobOutputDataConfig> {
         self.output_data_config.as_ref()
     }
@@ -2769,9 +2735,7 @@ impl CreateJobInput {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform
-    /// tasks on behalf of a user. It can access user resources, run an Amazon Braket job container
-    /// on behalf of user, and output resources to the users' s3 buckets.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the users' s3 buckets.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -2779,14 +2743,11 @@ impl CreateJobInput {
     pub fn stopping_condition(&self) -> std::option::Option<&crate::model::JobStoppingCondition> {
         self.stopping_condition.as_ref()
     }
-    /// <p>Configuration of the resource instances to use while running the hybrid job on Amazon
-    /// Braket.</p>
+    /// <p>Configuration of the resource instances to use while running the hybrid job on Amazon Braket.</p>
     pub fn instance_config(&self) -> std::option::Option<&crate::model::InstanceConfig> {
         self.instance_config.as_ref()
     }
-    /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of
-    /// the training job. The values are set with a string of JSON key:value pairs, where the key is the
-    /// name of the hyperparameter and the value is the value of th hyperparameter.</p>
+    /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the training job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
     pub fn hyper_parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>

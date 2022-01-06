@@ -30,6 +30,72 @@ impl aws_smithy_http::response::ParseStrictResponse for AddTags {
     }
 }
 
+/// Operation shape for `CancelQuery`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`cancel_query`](crate::client::Client::cancel_query).
+///
+/// See [`crate::client::fluent_builders::CancelQuery`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CancelQuery {
+    _private: (),
+}
+impl CancelQuery {
+    /// Creates a new builder-style object to manufacture [`CancelQueryInput`](crate::input::CancelQueryInput)
+    pub fn builder() -> crate::input::cancel_query_input::Builder {
+        crate::input::cancel_query_input::Builder::default()
+    }
+    /// Creates a new `CancelQuery` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CancelQuery {
+    type Output =
+        std::result::Result<crate::output::CancelQueryOutput, crate::error::CancelQueryError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_cancel_query_error(response)
+        } else {
+            crate::operation_deser::parse_cancel_query_response(response)
+        }
+    }
+}
+
+/// Operation shape for `CreateEventDataStore`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_event_data_store`](crate::client::Client::create_event_data_store).
+///
+/// See [`crate::client::fluent_builders::CreateEventDataStore`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateEventDataStore {
+    _private: (),
+}
+impl CreateEventDataStore {
+    /// Creates a new builder-style object to manufacture [`CreateEventDataStoreInput`](crate::input::CreateEventDataStoreInput)
+    pub fn builder() -> crate::input::create_event_data_store_input::Builder {
+        crate::input::create_event_data_store_input::Builder::default()
+    }
+    /// Creates a new `CreateEventDataStore` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateEventDataStore {
+    type Output = std::result::Result<
+        crate::output::CreateEventDataStoreOutput,
+        crate::error::CreateEventDataStoreError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_event_data_store_error(response)
+        } else {
+            crate::operation_deser::parse_create_event_data_store_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateTrail`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -58,6 +124,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTrail {
             crate::operation_deser::parse_create_trail_error(response)
         } else {
             crate::operation_deser::parse_create_trail_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteEventDataStore`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_event_data_store`](crate::client::Client::delete_event_data_store).
+///
+/// See [`crate::client::fluent_builders::DeleteEventDataStore`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteEventDataStore {
+    _private: (),
+}
+impl DeleteEventDataStore {
+    /// Creates a new builder-style object to manufacture [`DeleteEventDataStoreInput`](crate::input::DeleteEventDataStoreInput)
+    pub fn builder() -> crate::input::delete_event_data_store_input::Builder {
+        crate::input::delete_event_data_store_input::Builder::default()
+    }
+    /// Creates a new `DeleteEventDataStore` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteEventDataStore {
+    type Output = std::result::Result<
+        crate::output::DeleteEventDataStoreOutput,
+        crate::error::DeleteEventDataStoreError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_event_data_store_error(response)
+        } else {
+            crate::operation_deser::parse_delete_event_data_store_response(response)
         }
     }
 }
@@ -94,6 +194,38 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTrail {
     }
 }
 
+/// Operation shape for `DescribeQuery`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_query`](crate::client::Client::describe_query).
+///
+/// See [`crate::client::fluent_builders::DescribeQuery`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeQuery {
+    _private: (),
+}
+impl DescribeQuery {
+    /// Creates a new builder-style object to manufacture [`DescribeQueryInput`](crate::input::DescribeQueryInput)
+    pub fn builder() -> crate::input::describe_query_input::Builder {
+        crate::input::describe_query_input::Builder::default()
+    }
+    /// Creates a new `DescribeQuery` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeQuery {
+    type Output =
+        std::result::Result<crate::output::DescribeQueryOutput, crate::error::DescribeQueryError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_query_error(response)
+        } else {
+            crate::operation_deser::parse_describe_query_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeTrails`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -122,6 +254,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTrails {
             crate::operation_deser::parse_describe_trails_error(response)
         } else {
             crate::operation_deser::parse_describe_trails_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetEventDataStore`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_event_data_store`](crate::client::Client::get_event_data_store).
+///
+/// See [`crate::client::fluent_builders::GetEventDataStore`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetEventDataStore {
+    _private: (),
+}
+impl GetEventDataStore {
+    /// Creates a new builder-style object to manufacture [`GetEventDataStoreInput`](crate::input::GetEventDataStoreInput)
+    pub fn builder() -> crate::input::get_event_data_store_input::Builder {
+        crate::input::get_event_data_store_input::Builder::default()
+    }
+    /// Creates a new `GetEventDataStore` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetEventDataStore {
+    type Output = std::result::Result<
+        crate::output::GetEventDataStoreOutput,
+        crate::error::GetEventDataStoreError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_event_data_store_error(response)
+        } else {
+            crate::operation_deser::parse_get_event_data_store_response(response)
         }
     }
 }
@@ -194,6 +360,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInsightSelectors {
     }
 }
 
+/// Operation shape for `GetQueryResults`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_query_results`](crate::client::Client::get_query_results).
+///
+/// See [`crate::client::fluent_builders::GetQueryResults`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetQueryResults {
+    _private: (),
+}
+impl GetQueryResults {
+    /// Creates a new builder-style object to manufacture [`GetQueryResultsInput`](crate::input::GetQueryResultsInput)
+    pub fn builder() -> crate::input::get_query_results_input::Builder {
+        crate::input::get_query_results_input::Builder::default()
+    }
+    /// Creates a new `GetQueryResults` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetQueryResults {
+    type Output = std::result::Result<
+        crate::output::GetQueryResultsOutput,
+        crate::error::GetQueryResultsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_query_results_error(response)
+        } else {
+            crate::operation_deser::parse_get_query_results_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetTrail`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -257,6 +457,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTrailStatus {
     }
 }
 
+/// Operation shape for `ListEventDataStores`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_event_data_stores`](crate::client::Client::list_event_data_stores).
+///
+/// See [`crate::client::fluent_builders::ListEventDataStores`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListEventDataStores {
+    _private: (),
+}
+impl ListEventDataStores {
+    /// Creates a new builder-style object to manufacture [`ListEventDataStoresInput`](crate::input::ListEventDataStoresInput)
+    pub fn builder() -> crate::input::list_event_data_stores_input::Builder {
+        crate::input::list_event_data_stores_input::Builder::default()
+    }
+    /// Creates a new `ListEventDataStores` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListEventDataStores {
+    type Output = std::result::Result<
+        crate::output::ListEventDataStoresOutput,
+        crate::error::ListEventDataStoresError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_event_data_stores_error(response)
+        } else {
+            crate::operation_deser::parse_list_event_data_stores_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListPublicKeys`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -285,6 +519,38 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPublicKeys {
             crate::operation_deser::parse_list_public_keys_error(response)
         } else {
             crate::operation_deser::parse_list_public_keys_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListQueries`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_queries`](crate::client::Client::list_queries).
+///
+/// See [`crate::client::fluent_builders::ListQueries`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListQueries {
+    _private: (),
+}
+impl ListQueries {
+    /// Creates a new builder-style object to manufacture [`ListQueriesInput`](crate::input::ListQueriesInput)
+    pub fn builder() -> crate::input::list_queries_input::Builder {
+        crate::input::list_queries_input::Builder::default()
+    }
+    /// Creates a new `ListQueries` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListQueries {
+    type Output =
+        std::result::Result<crate::output::ListQueriesOutput, crate::error::ListQueriesError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_queries_error(response)
+        } else {
+            crate::operation_deser::parse_list_queries_response(response)
         }
     }
 }
@@ -484,6 +750,40 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveTags {
     }
 }
 
+/// Operation shape for `RestoreEventDataStore`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`restore_event_data_store`](crate::client::Client::restore_event_data_store).
+///
+/// See [`crate::client::fluent_builders::RestoreEventDataStore`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct RestoreEventDataStore {
+    _private: (),
+}
+impl RestoreEventDataStore {
+    /// Creates a new builder-style object to manufacture [`RestoreEventDataStoreInput`](crate::input::RestoreEventDataStoreInput)
+    pub fn builder() -> crate::input::restore_event_data_store_input::Builder {
+        crate::input::restore_event_data_store_input::Builder::default()
+    }
+    /// Creates a new `RestoreEventDataStore` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for RestoreEventDataStore {
+    type Output = std::result::Result<
+        crate::output::RestoreEventDataStoreOutput,
+        crate::error::RestoreEventDataStoreError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_restore_event_data_store_error(response)
+        } else {
+            crate::operation_deser::parse_restore_event_data_store_response(response)
+        }
+    }
+}
+
 /// Operation shape for `StartLogging`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -516,6 +816,38 @@ impl aws_smithy_http::response::ParseStrictResponse for StartLogging {
     }
 }
 
+/// Operation shape for `StartQuery`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_query`](crate::client::Client::start_query).
+///
+/// See [`crate::client::fluent_builders::StartQuery`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StartQuery {
+    _private: (),
+}
+impl StartQuery {
+    /// Creates a new builder-style object to manufacture [`StartQueryInput`](crate::input::StartQueryInput)
+    pub fn builder() -> crate::input::start_query_input::Builder {
+        crate::input::start_query_input::Builder::default()
+    }
+    /// Creates a new `StartQuery` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartQuery {
+    type Output =
+        std::result::Result<crate::output::StartQueryOutput, crate::error::StartQueryError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_query_error(response)
+        } else {
+            crate::operation_deser::parse_start_query_response(response)
+        }
+    }
+}
+
 /// Operation shape for `StopLogging`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -544,6 +876,40 @@ impl aws_smithy_http::response::ParseStrictResponse for StopLogging {
             crate::operation_deser::parse_stop_logging_error(response)
         } else {
             crate::operation_deser::parse_stop_logging_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateEventDataStore`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_event_data_store`](crate::client::Client::update_event_data_store).
+///
+/// See [`crate::client::fluent_builders::UpdateEventDataStore`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateEventDataStore {
+    _private: (),
+}
+impl UpdateEventDataStore {
+    /// Creates a new builder-style object to manufacture [`UpdateEventDataStoreInput`](crate::input::UpdateEventDataStoreInput)
+    pub fn builder() -> crate::input::update_event_data_store_input::Builder {
+        crate::input::update_event_data_store_input::Builder::default()
+    }
+    /// Creates a new `UpdateEventDataStore` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateEventDataStore {
+    type Output = std::result::Result<
+        crate::output::UpdateEventDataStoreOutput,
+        crate::error::UpdateEventDataStoreError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_event_data_store_error(response)
+        } else {
+            crate::operation_deser::parse_update_event_data_store_response(response)
         }
     }
 }

@@ -9,14 +9,13 @@
 #![warn(missing_docs)]
 //! <p>This is the <i>Resource Access Manager API Reference</i>. This documentation provides
 //! descriptions and syntax for each of the actions and data types in RAM. RAM is a
-//! service that helps you securely share your Amazon Web Services resources across Amazon Web Services accounts and
-//! within your organization or organizational units (OUs) in Organizations. For supported
-//! resource types, you can also share resources with IAM roles and IAM users. If you have
-//! multiple Amazon Web Services accounts, you can use RAM to share those resources with other
-//! accounts.</p>
+//! service that helps you securely share your Amazon Web Services resources across Amazon Web Services accounts. If you
+//! have multiple Amazon Web Services accounts, you can use RAM to share those resources with other
+//! accounts. If you use Organizations to manage your accounts, then you share your resources
+//! with your organization or organizational units (OUs). For supported resource types, you
+//! can also share resources with individual Identity and Access Management (IAM) roles an users. </p>
 //!
 //! <p>To learn more about RAM, see the following resources:</p>
-//!
 //! <ul>
 //! <li>
 //! <p>
@@ -61,6 +60,8 @@ pub mod input;
 mod json_deser;
 mod json_errors;
 mod json_ser;
+/// Generated accessors for nested fields
+mod lens;
 pub mod middleware;
 /// Data structures used by operation inputs/outputs.
 pub mod model;
@@ -71,6 +72,8 @@ mod operation_deser;
 mod operation_ser;
 /// Output structures for operations.
 pub mod output;
+/// Paginators for the service
+pub mod paginator;
 /// Crate version number.
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
 pub use aws_smithy_http::byte_stream::ByteStream;

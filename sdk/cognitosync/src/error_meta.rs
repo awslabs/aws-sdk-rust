@@ -9,32 +9,25 @@ pub enum Error {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// An exception thrown when there is an IN_PROGRESS bulk publish operation for the given identity pool.
     DuplicateRequestException(crate::error::DuplicateRequestException),
-    /// Indicates an internal service
-    /// error.
+    /// Indicates an internal service error.
     InternalErrorException(crate::error::InternalErrorException),
     #[allow(missing_docs)] // documentation missing in model
     InvalidConfigurationException(crate::error::InvalidConfigurationException),
     /// <p>The AWS Lambda function returned invalid output or an exception.</p>
     InvalidLambdaFunctionOutputException(crate::error::InvalidLambdaFunctionOutputException),
-    /// Thrown when a request parameter does not comply
-    /// with the associated constraints.
+    /// Thrown when a request parameter does not comply with the associated constraints.
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS Lambda throttled your account, please contact AWS Support</p>
     LambdaThrottledException(crate::error::LambdaThrottledException),
-    /// Thrown when the limit on the number of objects or
-    /// operations has been exceeded.
+    /// Thrown when the limit on the number of objects or operations has been exceeded.
     LimitExceededException(crate::error::LimitExceededException),
-    /// Thrown when a user is not authorized to access the
-    /// requested resource.
+    /// Thrown when a user is not authorized to access the requested resource.
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// Thrown if an update can't be applied because
-    /// the resource was changed by another call and this would result in a conflict.
+    /// Thrown if an update can't be applied because the resource was changed by another call and this would result in a conflict.
     ResourceConflictException(crate::error::ResourceConflictException),
-    /// Thrown if the resource doesn't
-    /// exist.
+    /// Thrown if the resource doesn't exist.
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// Thrown if the request is
-    /// throttled.
+    /// Thrown if the request is throttled.
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

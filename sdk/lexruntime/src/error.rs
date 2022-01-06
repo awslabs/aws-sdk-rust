@@ -12,19 +12,15 @@ pub struct DeleteSessionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSessionErrorKind {
-    /// <p> Request validation failed, there is no usable message in the context,
-    /// or the bot build failed, is still in progress, or contains unbuilt
-    /// changes. </p>
+    /// <p> Request validation failed, there is no usable message in the context, or the bot build failed, is still in progress, or contains unbuilt changes. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p> Two clients are using the same AWS account, Amazon Lex bot, and user
-    /// ID. </p>
+    /// <p> Two clients are using the same AWS account, Amazon Lex bot, and user ID. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>Internal service error. Retry the call.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>Exceeded a limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource (such as the Amazon Lex bot or an alias) that is referred
-    /// to is not found.</p>
+    /// <p>The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -71,8 +67,6 @@ impl DeleteSessionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -146,16 +140,13 @@ pub struct GetSessionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSessionErrorKind {
-    /// <p> Request validation failed, there is no usable message in the context,
-    /// or the bot build failed, is still in progress, or contains unbuilt
-    /// changes. </p>
+    /// <p> Request validation failed, there is no usable message in the context, or the bot build failed, is still in progress, or contains unbuilt changes. </p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>Internal service error. Retry the call.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>Exceeded a limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource (such as the Amazon Lex bot or an alias) that is referred
-    /// to is not found.</p>
+    /// <p>The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -201,8 +192,6 @@ impl GetSessionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -265,32 +254,17 @@ pub struct PostContentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PostContentErrorKind {
-    /// <p>Either the Amazon Lex bot is still building, or one of the dependent
-    /// services (Amazon Polly, AWS Lambda) failed with an internal service
-    /// error.</p>
+    /// <p>Either the Amazon Lex bot is still building, or one of the dependent services (Amazon Polly, AWS Lambda) failed with an internal service error.</p>
     BadGatewayException(crate::error::BadGatewayException),
-    /// <p> Request validation failed, there is no usable message in the context,
-    /// or the bot build failed, is still in progress, or contains unbuilt
-    /// changes. </p>
+    /// <p> Request validation failed, there is no usable message in the context, or the bot build failed, is still in progress, or contains unbuilt changes. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p> Two clients are using the same AWS account, Amazon Lex bot, and user
-    /// ID. </p>
+    /// <p> Two clients are using the same AWS account, Amazon Lex bot, and user ID. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p> One of the dependencies, such as AWS Lambda or Amazon Polly, threw an
-    /// exception. For example, </p>
+    /// <p> One of the dependencies, such as AWS Lambda or Amazon Polly, threw an exception. For example, </p>
     /// <ul>
-    /// <li>
-    /// <p>If Amazon Lex does not have sufficient permissions to call a Lambda
-    /// function.</p>
-    /// </li>
-    /// <li>
-    /// <p>If a Lambda function takes longer than 30 seconds to
-    /// execute.</p>
-    /// </li>
-    /// <li>
-    /// <p>If a fulfillment Lambda function returns a <code>Delegate</code>
-    /// dialog action without removing any slot values.</p>
-    /// </li>
+    /// <li> <p>If Amazon Lex does not have sufficient permissions to call a Lambda function.</p> </li>
+    /// <li> <p>If a Lambda function takes longer than 30 seconds to execute.</p> </li>
+    /// <li> <p>If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without removing any slot values.</p> </li>
     /// </ul>
     DependencyFailedException(crate::error::DependencyFailedException),
     /// <p>Internal service error. Retry the call.</p>
@@ -301,13 +275,11 @@ pub enum PostContentErrorKind {
     LoopDetectedException(crate::error::LoopDetectedException),
     /// <p>The accept header in the request does not have a valid value.</p>
     NotAcceptableException(crate::error::NotAcceptableException),
-    /// <p>The resource (such as the Amazon Lex bot or an alias) that is referred
-    /// to is not found.</p>
+    /// <p>The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The input speech is too long.</p>
     RequestTimeoutException(crate::error::RequestTimeoutException),
-    /// <p>The Content-Type header (<code>PostContent</code> API) has an invalid
-    /// value. </p>
+    /// <p>The Content-Type header (<code>PostContent</code> API) has an invalid value. </p>
     UnsupportedMediaTypeException(crate::error::UnsupportedMediaTypeException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -360,8 +332,6 @@ impl PostContentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -468,32 +438,17 @@ pub struct PostTextError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PostTextErrorKind {
-    /// <p>Either the Amazon Lex bot is still building, or one of the dependent
-    /// services (Amazon Polly, AWS Lambda) failed with an internal service
-    /// error.</p>
+    /// <p>Either the Amazon Lex bot is still building, or one of the dependent services (Amazon Polly, AWS Lambda) failed with an internal service error.</p>
     BadGatewayException(crate::error::BadGatewayException),
-    /// <p> Request validation failed, there is no usable message in the context,
-    /// or the bot build failed, is still in progress, or contains unbuilt
-    /// changes. </p>
+    /// <p> Request validation failed, there is no usable message in the context, or the bot build failed, is still in progress, or contains unbuilt changes. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p> Two clients are using the same AWS account, Amazon Lex bot, and user
-    /// ID. </p>
+    /// <p> Two clients are using the same AWS account, Amazon Lex bot, and user ID. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p> One of the dependencies, such as AWS Lambda or Amazon Polly, threw an
-    /// exception. For example, </p>
+    /// <p> One of the dependencies, such as AWS Lambda or Amazon Polly, threw an exception. For example, </p>
     /// <ul>
-    /// <li>
-    /// <p>If Amazon Lex does not have sufficient permissions to call a Lambda
-    /// function.</p>
-    /// </li>
-    /// <li>
-    /// <p>If a Lambda function takes longer than 30 seconds to
-    /// execute.</p>
-    /// </li>
-    /// <li>
-    /// <p>If a fulfillment Lambda function returns a <code>Delegate</code>
-    /// dialog action without removing any slot values.</p>
-    /// </li>
+    /// <li> <p>If Amazon Lex does not have sufficient permissions to call a Lambda function.</p> </li>
+    /// <li> <p>If a Lambda function takes longer than 30 seconds to execute.</p> </li>
+    /// <li> <p>If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without removing any slot values.</p> </li>
     /// </ul>
     DependencyFailedException(crate::error::DependencyFailedException),
     /// <p>Internal service error. Retry the call.</p>
@@ -502,8 +457,7 @@ pub enum PostTextErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>This exception is not used.</p>
     LoopDetectedException(crate::error::LoopDetectedException),
-    /// <p>The resource (such as the Amazon Lex bot or an alias) that is referred
-    /// to is not found.</p>
+    /// <p>The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -553,8 +507,6 @@ impl PostTextError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -637,32 +589,17 @@ pub struct PutSessionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutSessionErrorKind {
-    /// <p>Either the Amazon Lex bot is still building, or one of the dependent
-    /// services (Amazon Polly, AWS Lambda) failed with an internal service
-    /// error.</p>
+    /// <p>Either the Amazon Lex bot is still building, or one of the dependent services (Amazon Polly, AWS Lambda) failed with an internal service error.</p>
     BadGatewayException(crate::error::BadGatewayException),
-    /// <p> Request validation failed, there is no usable message in the context,
-    /// or the bot build failed, is still in progress, or contains unbuilt
-    /// changes. </p>
+    /// <p> Request validation failed, there is no usable message in the context, or the bot build failed, is still in progress, or contains unbuilt changes. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p> Two clients are using the same AWS account, Amazon Lex bot, and user
-    /// ID. </p>
+    /// <p> Two clients are using the same AWS account, Amazon Lex bot, and user ID. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p> One of the dependencies, such as AWS Lambda or Amazon Polly, threw an
-    /// exception. For example, </p>
+    /// <p> One of the dependencies, such as AWS Lambda or Amazon Polly, threw an exception. For example, </p>
     /// <ul>
-    /// <li>
-    /// <p>If Amazon Lex does not have sufficient permissions to call a Lambda
-    /// function.</p>
-    /// </li>
-    /// <li>
-    /// <p>If a Lambda function takes longer than 30 seconds to
-    /// execute.</p>
-    /// </li>
-    /// <li>
-    /// <p>If a fulfillment Lambda function returns a <code>Delegate</code>
-    /// dialog action without removing any slot values.</p>
-    /// </li>
+    /// <li> <p>If Amazon Lex does not have sufficient permissions to call a Lambda function.</p> </li>
+    /// <li> <p>If a Lambda function takes longer than 30 seconds to execute.</p> </li>
+    /// <li> <p>If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without removing any slot values.</p> </li>
     /// </ul>
     DependencyFailedException(crate::error::DependencyFailedException),
     /// <p>Internal service error. Retry the call.</p>
@@ -671,8 +608,7 @@ pub enum PutSessionErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The accept header in the request does not have a valid value.</p>
     NotAcceptableException(crate::error::NotAcceptableException),
-    /// <p>The resource (such as the Amazon Lex bot or an alias) that is referred
-    /// to is not found.</p>
+    /// <p>The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -722,8 +658,6 @@ impl PutSessionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -796,8 +730,7 @@ impl std::error::Error for PutSessionError {
     }
 }
 
-/// <p>The resource (such as the Amazon Lex bot or an alias) that is referred
-/// to is not found.</p>
+/// <p>The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotFoundException {
@@ -1077,21 +1010,11 @@ impl InternalFailureException {
     }
 }
 
-/// <p> One of the dependencies, such as AWS Lambda or Amazon Polly, threw an
-/// exception. For example, </p>
+/// <p> One of the dependencies, such as AWS Lambda or Amazon Polly, threw an exception. For example, </p>
 /// <ul>
-/// <li>
-/// <p>If Amazon Lex does not have sufficient permissions to call a Lambda
-/// function.</p>
-/// </li>
-/// <li>
-/// <p>If a Lambda function takes longer than 30 seconds to
-/// execute.</p>
-/// </li>
-/// <li>
-/// <p>If a fulfillment Lambda function returns a <code>Delegate</code>
-/// dialog action without removing any slot values.</p>
-/// </li>
+/// <li> <p>If Amazon Lex does not have sufficient permissions to call a Lambda function.</p> </li>
+/// <li> <p>If a Lambda function takes longer than 30 seconds to execute.</p> </li>
+/// <li> <p>If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without removing any slot values.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1156,8 +1079,7 @@ impl DependencyFailedException {
     }
 }
 
-/// <p> Two clients are using the same AWS account, Amazon Lex bot, and user
-/// ID. </p>
+/// <p> Two clients are using the same AWS account, Amazon Lex bot, and user ID. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -1221,9 +1143,7 @@ impl ConflictException {
     }
 }
 
-/// <p> Request validation failed, there is no usable message in the context,
-/// or the bot build failed, is still in progress, or contains unbuilt
-/// changes. </p>
+/// <p> Request validation failed, there is no usable message in the context, or the bot build failed, is still in progress, or contains unbuilt changes. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BadRequestException {
@@ -1287,9 +1207,7 @@ impl BadRequestException {
     }
 }
 
-/// <p>Either the Amazon Lex bot is still building, or one of the dependent
-/// services (Amazon Polly, AWS Lambda) failed with an internal service
-/// error.</p>
+/// <p>Either the Amazon Lex bot is still building, or one of the dependent services (Amazon Polly, AWS Lambda) failed with an internal service error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BadGatewayException {
@@ -1417,8 +1335,7 @@ impl LoopDetectedException {
     }
 }
 
-/// <p>The Content-Type header (<code>PostContent</code> API) has an invalid
-/// value. </p>
+/// <p>The Content-Type header (<code>PostContent</code> API) has an invalid value. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedMediaTypeException {

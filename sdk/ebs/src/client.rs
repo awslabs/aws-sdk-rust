@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Elastic Block Store
@@ -101,6 +101,7 @@ where
     ///
     /// See [`ListChangedBlocks`](crate::client::fluent_builders::ListChangedBlocks) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChangedBlocks::into_paginator).
     pub fn list_changed_blocks(&self) -> fluent_builders::ListChangedBlocks<C, M, R> {
         fluent_builders::ListChangedBlocks::new(self.handle.clone())
     }
@@ -108,6 +109,7 @@ where
     ///
     /// See [`ListSnapshotBlocks`](crate::client::fluent_builders::ListSnapshotBlocks) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSnapshotBlocks::into_paginator).
     pub fn list_snapshot_blocks(&self) -> fluent_builders::ListSnapshotBlocks<C, M, R> {
         fluent_builders::ListSnapshotBlocks::new(self.handle.clone())
     }
@@ -136,10 +138,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CompleteSnapshot`.
     ///
-    /// <p>Seals and completes the snapshot after all of the required blocks of data have been
-    /// written to it. Completing the snapshot changes the status to <code>completed</code>. You
-    /// cannot write new blocks to a snapshot after it has been completed.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Seals and completes the snapshot after all of the required blocks of data have been written to it. Completing the snapshot changes the status to <code>completed</code>. You cannot write new blocks to a snapshot after it has been completed.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CompleteSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -184,10 +184,10 @@ pub mod fluent_builders {
                 crate::input::CompleteSnapshotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -196,8 +196,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the snapshot.</p>
-        pub fn snapshot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_id(inp);
+        pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_id(input.into());
             self
         }
         /// <p>The ID of the snapshot.</p>
@@ -206,8 +206,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of blocks that were written to the snapshot.</p>
-        pub fn changed_blocks_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.changed_blocks_count(inp);
+        pub fn changed_blocks_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.changed_blocks_count(input);
             self
         }
         /// <p>The number of blocks that were written to the snapshot.</p>
@@ -215,34 +215,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_changed_blocks_count(input);
             self
         }
-        /// <p>An aggregated Base-64 SHA256 checksum based on the checksums of each written
-        /// block.</p>
-        /// <p>To generate the aggregated checksum using the linear aggregation method, arrange the
-        /// checksums for each written block in ascending order of their block index, concatenate
-        /// them to form a single string, and then generate the checksum on the entire string using
-        /// the SHA256 algorithm.</p>
-        pub fn checksum(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.checksum(inp);
+        /// <p>An aggregated Base-64 SHA256 checksum based on the checksums of each written block.</p>
+        /// <p>To generate the aggregated checksum using the linear aggregation method, arrange the checksums for each written block in ascending order of their block index, concatenate them to form a single string, and then generate the checksum on the entire string using the SHA256 algorithm.</p>
+        pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.checksum(input.into());
             self
         }
-        /// <p>An aggregated Base-64 SHA256 checksum based on the checksums of each written
-        /// block.</p>
-        /// <p>To generate the aggregated checksum using the linear aggregation method, arrange the
-        /// checksums for each written block in ascending order of their block index, concatenate
-        /// them to form a single string, and then generate the checksum on the entire string using
-        /// the SHA256 algorithm.</p>
+        /// <p>An aggregated Base-64 SHA256 checksum based on the checksums of each written block.</p>
+        /// <p>To generate the aggregated checksum using the linear aggregation method, arrange the checksums for each written block in ascending order of their block index, concatenate them to form a single string, and then generate the checksum on the entire string using the SHA256 algorithm.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_checksum(input);
             self
         }
-        /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm
-        /// is <code>SHA256</code>.</p>
-        pub fn checksum_algorithm(mut self, inp: crate::model::ChecksumAlgorithm) -> Self {
-            self.inner = self.inner.checksum_algorithm(inp);
+        /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm is <code>SHA256</code>.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            self.inner = self.inner.checksum_algorithm(input);
             self
         }
-        /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm
-        /// is <code>SHA256</code>.</p>
+        /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm is <code>SHA256</code>.</p>
         pub fn set_checksum_algorithm(
             mut self,
             input: std::option::Option<crate::model::ChecksumAlgorithm>,
@@ -250,17 +240,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_checksum_algorithm(input);
             self
         }
-        /// <p>The aggregation method used to generate the checksum. Currently, the only supported
-        /// aggregation method is <code>LINEAR</code>.</p>
+        /// <p>The aggregation method used to generate the checksum. Currently, the only supported aggregation method is <code>LINEAR</code>.</p>
         pub fn checksum_aggregation_method(
             mut self,
-            inp: crate::model::ChecksumAggregationMethod,
+            input: crate::model::ChecksumAggregationMethod,
         ) -> Self {
-            self.inner = self.inner.checksum_aggregation_method(inp);
+            self.inner = self.inner.checksum_aggregation_method(input);
             self
         }
-        /// <p>The aggregation method used to generate the checksum. Currently, the only supported
-        /// aggregation method is <code>LINEAR</code>.</p>
+        /// <p>The aggregation method used to generate the checksum. Currently, the only supported aggregation method is <code>LINEAR</code>.</p>
         pub fn set_checksum_aggregation_method(
             mut self,
             input: std::option::Option<crate::model::ChecksumAggregationMethod>,
@@ -272,7 +260,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSnapshotBlock`.
     ///
     /// <p>Returns the data in a block in an Amazon Elastic Block Store snapshot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSnapshotBlock<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -317,10 +305,10 @@ pub mod fluent_builders {
                 crate::input::GetSnapshotBlockInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -329,8 +317,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the snapshot containing the block from which to get data.</p>
-        pub fn snapshot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_id(inp);
+        pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_id(input.into());
             self
         }
         /// <p>The ID of the snapshot containing the block from which to get data.</p>
@@ -339,37 +327,25 @@ pub mod fluent_builders {
             self
         }
         /// <p>The block index of the block from which to get data.</p>
-        ///
-        ///
-        /// <p>Obtain the <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or
-        /// <code>ListSnapshotBlocks</code> operations.</p>
-        pub fn block_index(mut self, inp: i32) -> Self {
-            self.inner = self.inner.block_index(inp);
+        /// <p>Obtain the <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
+        pub fn block_index(mut self, input: i32) -> Self {
+            self.inner = self.inner.block_index(input);
             self
         }
         /// <p>The block index of the block from which to get data.</p>
-        ///
-        ///
-        /// <p>Obtain the <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or
-        /// <code>ListSnapshotBlocks</code> operations.</p>
+        /// <p>Obtain the <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
         pub fn set_block_index(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_block_index(input);
             self
         }
         /// <p>The block token of the block from which to get data.</p>
-        ///
-        ///
-        /// <p>Obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or
-        /// <code>ListSnapshotBlocks</code> operations.</p>
-        pub fn block_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.block_token(inp);
+        /// <p>Obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
+        pub fn block_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.block_token(input.into());
             self
         }
         /// <p>The block token of the block from which to get data.</p>
-        ///
-        ///
-        /// <p>Obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or
-        /// <code>ListSnapshotBlocks</code> operations.</p>
+        /// <p>Obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
         pub fn set_block_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_block_token(input);
             self
@@ -377,9 +353,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListChangedBlocks`.
     ///
-    /// <p>Returns information about the blocks that are different between two
-    /// Amazon Elastic Block Store snapshots of the same volume/snapshot lineage.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns information about the blocks that are different between two Amazon Elastic Block Store snapshots of the same volume/snapshot lineage.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChangedBlocks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -424,10 +399,10 @@ pub mod fluent_builders {
                 crate::input::ListChangedBlocksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -435,19 +410,21 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the first snapshot to use for the comparison.</p>
-        /// <important>
-        /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a
-        /// <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListChangedBlocksPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListChangedBlocksPaginator<C, M, R> {
+            crate::paginator::ListChangedBlocksPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ID of the first snapshot to use for the comparison.</p> <important>
+        /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
         /// </important>
-        pub fn first_snapshot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.first_snapshot_id(inp);
+        pub fn first_snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.first_snapshot_id(input.into());
             self
         }
-        /// <p>The ID of the first snapshot to use for the comparison.</p>
-        /// <important>
-        /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a
-        /// <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
+        /// <p>The ID of the first snapshot to use for the comparison.</p> <important>
+        /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
         /// </important>
         pub fn set_first_snapshot_id(
             mut self,
@@ -456,19 +433,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_first_snapshot_id(input);
             self
         }
-        /// <p>The ID of the second snapshot to use for the comparison.</p>
-        /// <important>
-        /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a
-        /// <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
+        /// <p>The ID of the second snapshot to use for the comparison.</p> <important>
+        /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
         /// </important>
-        pub fn second_snapshot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.second_snapshot_id(inp);
+        pub fn second_snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.second_snapshot_id(input.into());
             self
         }
-        /// <p>The ID of the second snapshot to use for the comparison.</p>
-        /// <important>
-        /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a
-        /// <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
+        /// <p>The ID of the second snapshot to use for the comparison.</p> <important>
+        /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
         /// </important>
         pub fn set_second_snapshot_id(
             mut self,
@@ -478,8 +451,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to request the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to request the next page of results.</p>
@@ -488,8 +461,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of results to return.</p>
@@ -498,15 +471,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The block index from which the comparison should start.</p>
-        /// <p>The list in the response will start from this block index or the next valid block
-        /// index in the snapshots.</p>
-        pub fn starting_block_index(mut self, inp: i32) -> Self {
-            self.inner = self.inner.starting_block_index(inp);
+        /// <p>The list in the response will start from this block index or the next valid block index in the snapshots.</p>
+        pub fn starting_block_index(mut self, input: i32) -> Self {
+            self.inner = self.inner.starting_block_index(input);
             self
         }
         /// <p>The block index from which the comparison should start.</p>
-        /// <p>The list in the response will start from this block index or the next valid block
-        /// index in the snapshots.</p>
+        /// <p>The list in the response will start from this block index or the next valid block index in the snapshots.</p>
         pub fn set_starting_block_index(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_starting_block_index(input);
             self
@@ -515,7 +486,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSnapshotBlocks`.
     ///
     /// <p>Returns information about the blocks in an Amazon Elastic Block Store snapshot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSnapshotBlocks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -560,10 +531,10 @@ pub mod fluent_builders {
                 crate::input::ListSnapshotBlocksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -571,9 +542,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSnapshotBlocksPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSnapshotBlocksPaginator<C, M, R> {
+            crate::paginator::ListSnapshotBlocksPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the snapshot from which to get block indexes and block tokens.</p>
-        pub fn snapshot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_id(inp);
+        pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_id(input.into());
             self
         }
         /// <p>The ID of the snapshot from which to get block indexes and block tokens.</p>
@@ -582,8 +559,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to request the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to request the next page of results.</p>
@@ -592,8 +569,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of results to return.</p>
@@ -601,14 +578,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The block index from which the list should start. The list in the response will start
-        /// from this block index or the next valid block index in the snapshot.</p>
-        pub fn starting_block_index(mut self, inp: i32) -> Self {
-            self.inner = self.inner.starting_block_index(inp);
+        /// <p>The block index from which the list should start. The list in the response will start from this block index or the next valid block index in the snapshot.</p>
+        pub fn starting_block_index(mut self, input: i32) -> Self {
+            self.inner = self.inner.starting_block_index(input);
             self
         }
-        /// <p>The block index from which the list should start. The list in the response will start
-        /// from this block index or the next valid block index in the snapshot.</p>
+        /// <p>The block index from which the list should start. The list in the response will start from this block index or the next valid block index in the snapshot.</p>
         pub fn set_starting_block_index(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_starting_block_index(input);
             self
@@ -616,9 +591,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutSnapshotBlock`.
     ///
-    /// <p>Writes a block of data to a snapshot. If the specified block contains
-    /// data, the existing data is overwritten. The target snapshot must be in the
-    /// <code>pending</code> state.</p>    
+    /// <p>Writes a block of data to a snapshot. If the specified block contains data, the existing data is overwritten. The target snapshot must be in the <code>pending</code> state.</p>
     /// <p>Data written to a snapshot must be aligned with 512-KiB sectors.</p>
     #[derive(std::fmt::Debug)]
     pub struct PutSnapshotBlock<
@@ -665,10 +638,10 @@ pub mod fluent_builders {
                 crate::input::PutSnapshotBlockInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -677,8 +650,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the snapshot.</p>
-        pub fn snapshot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_id(inp);
+        pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_id(input.into());
             self
         }
         /// <p>The ID of the snapshot.</p>
@@ -686,50 +659,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_snapshot_id(input);
             self
         }
-        /// <p>The block index of the block in which to write the data. A block index is a logical
-        /// index in units of <code>512</code> KiB blocks. To identify the block index, divide
-        /// the logical offset of the data in the logical volume by the block size (logical offset of
-        /// data/<code>524288</code>). The logical offset of the data must be <code>512</code>
-        /// KiB aligned.</p>
-        pub fn block_index(mut self, inp: i32) -> Self {
-            self.inner = self.inner.block_index(inp);
+        /// <p>The block index of the block in which to write the data. A block index is a logical index in units of <code>512</code> KiB blocks. To identify the block index, divide the logical offset of the data in the logical volume by the block size (logical offset of data/<code>524288</code>). The logical offset of the data must be <code>512</code> KiB aligned.</p>
+        pub fn block_index(mut self, input: i32) -> Self {
+            self.inner = self.inner.block_index(input);
             self
         }
-        /// <p>The block index of the block in which to write the data. A block index is a logical
-        /// index in units of <code>512</code> KiB blocks. To identify the block index, divide
-        /// the logical offset of the data in the logical volume by the block size (logical offset of
-        /// data/<code>524288</code>). The logical offset of the data must be <code>512</code>
-        /// KiB aligned.</p>
+        /// <p>The block index of the block in which to write the data. A block index is a logical index in units of <code>512</code> KiB blocks. To identify the block index, divide the logical offset of the data in the logical volume by the block size (logical offset of data/<code>524288</code>). The logical offset of the data must be <code>512</code> KiB aligned.</p>
         pub fn set_block_index(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_block_index(input);
             self
         }
         /// <p>The data to write to the block.</p>
-        /// <p>The block data is not signed as part of the Signature Version 4 signing process. As a
-        /// result, you must generate and provide a Base64-encoded SHA256 checksum for the block
-        /// data using the <b>x-amz-Checksum</b> header. Also, you
-        /// must specify the checksum algorithm using the <b>x-amz-Checksum-Algorithm</b>
-        /// header. The checksum that you provide is part of the Signature Version 4 signing process.
-        /// It is validated against a checksum generated by Amazon EBS to ensure the validity and authenticity
-        /// of the data. If the checksums do not correspond, the request fails. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-checksums">
-        /// Using checksums with the EBS direct APIs</a> in the <i>Amazon Elastic Compute Cloud User
-        /// Guide</i>.</p>
-        pub fn block_data(mut self, inp: aws_smithy_http::byte_stream::ByteStream) -> Self {
-            self.inner = self.inner.block_data(inp);
+        /// <p>The block data is not signed as part of the Signature Version 4 signing process. As a result, you must generate and provide a Base64-encoded SHA256 checksum for the block data using the <b>x-amz-Checksum</b> header. Also, you must specify the checksum algorithm using the <b>x-amz-Checksum-Algorithm</b> header. The checksum that you provide is part of the Signature Version 4 signing process. It is validated against a checksum generated by Amazon EBS to ensure the validity and authenticity of the data. If the checksums do not correspond, the request fails. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-checksums"> Using checksums with the EBS direct APIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        pub fn block_data(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
+            self.inner = self.inner.block_data(input);
             self
         }
         /// <p>The data to write to the block.</p>
-        /// <p>The block data is not signed as part of the Signature Version 4 signing process. As a
-        /// result, you must generate and provide a Base64-encoded SHA256 checksum for the block
-        /// data using the <b>x-amz-Checksum</b> header. Also, you
-        /// must specify the checksum algorithm using the <b>x-amz-Checksum-Algorithm</b>
-        /// header. The checksum that you provide is part of the Signature Version 4 signing process.
-        /// It is validated against a checksum generated by Amazon EBS to ensure the validity and authenticity
-        /// of the data. If the checksums do not correspond, the request fails. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-checksums">
-        /// Using checksums with the EBS direct APIs</a> in the <i>Amazon Elastic Compute Cloud User
-        /// Guide</i>.</p>
+        /// <p>The block data is not signed as part of the Signature Version 4 signing process. As a result, you must generate and provide a Base64-encoded SHA256 checksum for the block data using the <b>x-amz-Checksum</b> header. Also, you must specify the checksum algorithm using the <b>x-amz-Checksum-Algorithm</b> header. The checksum that you provide is part of the Signature Version 4 signing process. It is validated against a checksum generated by Amazon EBS to ensure the validity and authenticity of the data. If the checksums do not correspond, the request fails. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-checksums"> Using checksums with the EBS direct APIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn set_block_data(
             mut self,
             input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
@@ -737,25 +684,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_block_data(input);
             self
         }
-        /// <p>The size of the data to write to the block, in bytes. Currently, the only supported
-        /// size is <code>524288</code> bytes.</p>
-        /// <p>Valid values: <code>524288</code>
-        /// </p>
-        pub fn data_length(mut self, inp: i32) -> Self {
-            self.inner = self.inner.data_length(inp);
+        /// <p>The size of the data to write to the block, in bytes. Currently, the only supported size is <code>524288</code> bytes.</p>
+        /// <p>Valid values: <code>524288</code> </p>
+        pub fn data_length(mut self, input: i32) -> Self {
+            self.inner = self.inner.data_length(input);
             self
         }
-        /// <p>The size of the data to write to the block, in bytes. Currently, the only supported
-        /// size is <code>524288</code> bytes.</p>
-        /// <p>Valid values: <code>524288</code>
-        /// </p>
+        /// <p>The size of the data to write to the block, in bytes. Currently, the only supported size is <code>524288</code> bytes.</p>
+        /// <p>Valid values: <code>524288</code> </p>
         pub fn set_data_length(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_data_length(input);
             self
         }
         /// <p>The progress of the write process, as a percentage.</p>
-        pub fn progress(mut self, inp: i32) -> Self {
-            self.inner = self.inner.progress(inp);
+        pub fn progress(mut self, input: i32) -> Self {
+            self.inner = self.inner.progress(input);
             self
         }
         /// <p>The progress of the write process, as a percentage.</p>
@@ -763,26 +706,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_progress(input);
             self
         }
-        /// <p>A Base64-encoded SHA256 checksum of the data. Only SHA256 checksums are
-        /// supported.</p>
-        pub fn checksum(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.checksum(inp);
+        /// <p>A Base64-encoded SHA256 checksum of the data. Only SHA256 checksums are supported.</p>
+        pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.checksum(input.into());
             self
         }
-        /// <p>A Base64-encoded SHA256 checksum of the data. Only SHA256 checksums are
-        /// supported.</p>
+        /// <p>A Base64-encoded SHA256 checksum of the data. Only SHA256 checksums are supported.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_checksum(input);
             self
         }
-        /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm
-        /// is <code>SHA256</code>.</p>
-        pub fn checksum_algorithm(mut self, inp: crate::model::ChecksumAlgorithm) -> Self {
-            self.inner = self.inner.checksum_algorithm(inp);
+        /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm is <code>SHA256</code>.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            self.inner = self.inner.checksum_algorithm(input);
             self
         }
-        /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm
-        /// is <code>SHA256</code>.</p>
+        /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm is <code>SHA256</code>.</p>
         pub fn set_checksum_algorithm(
             mut self,
             input: std::option::Option<crate::model::ChecksumAlgorithm>,
@@ -793,11 +732,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartSnapshot`.
     ///
-    /// <p>Creates a new Amazon EBS snapshot. The new snapshot enters the <code>pending</code> state
-    /// after the request completes. </p>
-    /// <p>After creating the snapshot, use <a href="https://docs.aws.amazon.com/ebs/latest/APIReference/API_PutSnapshotBlock.html"> PutSnapshotBlock</a> to
-    /// write blocks of data to the snapshot.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new Amazon EBS snapshot. The new snapshot enters the <code>pending</code> state after the request completes. </p>
+    /// <p>After creating the snapshot, use <a href="https://docs.aws.amazon.com/ebs/latest/APIReference/API_PutSnapshotBlock.html"> PutSnapshotBlock</a> to write blocks of data to the snapshot.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -842,10 +779,10 @@ pub mod fluent_builders {
                 crate::input::StartSnapshotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -853,32 +790,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The size of the volume, in GiB. The maximum size is <code>65536</code> GiB (64
-        /// TiB).</p>
-        pub fn volume_size(mut self, inp: i64) -> Self {
-            self.inner = self.inner.volume_size(inp);
+        /// <p>The size of the volume, in GiB. The maximum size is <code>65536</code> GiB (64 TiB).</p>
+        pub fn volume_size(mut self, input: i64) -> Self {
+            self.inner = self.inner.volume_size(input);
             self
         }
-        /// <p>The size of the volume, in GiB. The maximum size is <code>65536</code> GiB (64
-        /// TiB).</p>
+        /// <p>The size of the volume, in GiB. The maximum size is <code>65536</code> GiB (64 TiB).</p>
         pub fn set_volume_size(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_volume_size(input);
             self
         }
-        /// <p>The ID of the parent snapshot. If there is no parent snapshot, or if you are creating
-        /// the first snapshot for an on-premises volume, omit this parameter.</p>
-        /// <p>If your account is enabled for encryption by default, you cannot use an unencrypted
-        /// snapshot as a parent snapshot. You must first create an encrypted copy of the parent
-        /// snapshot using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html">CopySnapshot</a>.</p>
-        pub fn parent_snapshot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_snapshot_id(inp);
+        /// <p>The ID of the parent snapshot. If there is no parent snapshot, or if you are creating the first snapshot for an on-premises volume, omit this parameter.</p>
+        /// <p>If your account is enabled for encryption by default, you cannot use an unencrypted snapshot as a parent snapshot. You must first create an encrypted copy of the parent snapshot using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html">CopySnapshot</a>.</p>
+        pub fn parent_snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_snapshot_id(input.into());
             self
         }
-        /// <p>The ID of the parent snapshot. If there is no parent snapshot, or if you are creating
-        /// the first snapshot for an on-premises volume, omit this parameter.</p>
-        /// <p>If your account is enabled for encryption by default, you cannot use an unencrypted
-        /// snapshot as a parent snapshot. You must first create an encrypted copy of the parent
-        /// snapshot using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html">CopySnapshot</a>.</p>
+        /// <p>The ID of the parent snapshot. If there is no parent snapshot, or if you are creating the first snapshot for an on-premises volume, omit this parameter.</p>
+        /// <p>If your account is enabled for encryption by default, you cannot use an unencrypted snapshot as a parent snapshot. You must first create an encrypted copy of the parent snapshot using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html">CopySnapshot</a>.</p>
         pub fn set_parent_snapshot_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -891,8 +820,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to apply to the snapshot.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to apply to the snapshot.</p>
@@ -904,8 +833,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the snapshot.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the snapshot.</p>
@@ -913,116 +842,66 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully. The subsequent retries with the same
-        /// client token return the result from the original successful request and they have no additional
-        /// effect.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully. The subsequent retries with the same client token return the result from the original successful request and they have no additional effect.</p>
         /// <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services SDK.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-direct-api-idempotency.html">
-        /// Idempotency for StartSnapshot API</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-direct-api-idempotency.html"> Idempotency for StartSnapshot API</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully. The subsequent retries with the same
-        /// client token return the result from the original successful request and they have no additional
-        /// effect.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully. The subsequent retries with the same client token return the result from the original successful request and they have no additional effect.</p>
         /// <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services SDK.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-direct-api-idempotency.html">
-        /// Idempotency for StartSnapshot API</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-direct-api-idempotency.html"> Idempotency for StartSnapshot API</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>Indicates whether to encrypt the snapshot. To create an encrypted snapshot, specify
-        /// <code>true</code>. To create an unencrypted snapshot, omit this parameter.</p>
-        /// <p>If you specify a value for <b>ParentSnapshotId</b>, omit
-        /// this parameter.</p>
-        /// <p>If you specify <code>true</code>, the snapshot is encrypted using the KMS key specified
-        /// using the <b>KmsKeyArn</b> parameter. If no value is specified
-        /// for <b>KmsKeyArn</b>, the default KMS key for your account is
-        /// used. If no default KMS key has been specified for your account, the Amazon Web Services managed KMS key is used.
-        /// To set a default KMS key for your account, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyEbsDefaultKmsKeyId.html">
-        /// ModifyEbsDefaultKmsKeyId</a>.</p>
-        /// <p>If your account is enabled for encryption by default, you cannot set this parameter to
-        /// <code>false</code>. In this case, you can omit this parameter.</p>
-        ///
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-encryption">
-        /// Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-        pub fn encrypted(mut self, inp: bool) -> Self {
-            self.inner = self.inner.encrypted(inp);
+        /// <p>Indicates whether to encrypt the snapshot. To create an encrypted snapshot, specify <code>true</code>. To create an unencrypted snapshot, omit this parameter.</p>
+        /// <p>If you specify a value for <b>ParentSnapshotId</b>, omit this parameter.</p>
+        /// <p>If you specify <code>true</code>, the snapshot is encrypted using the KMS key specified using the <b>KmsKeyArn</b> parameter. If no value is specified for <b>KmsKeyArn</b>, the default KMS key for your account is used. If no default KMS key has been specified for your account, the Amazon Web Services managed KMS key is used. To set a default KMS key for your account, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyEbsDefaultKmsKeyId.html"> ModifyEbsDefaultKmsKeyId</a>.</p>
+        /// <p>If your account is enabled for encryption by default, you cannot set this parameter to <code>false</code>. In this case, you can omit this parameter.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-encryption"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        pub fn encrypted(mut self, input: bool) -> Self {
+            self.inner = self.inner.encrypted(input);
             self
         }
-        /// <p>Indicates whether to encrypt the snapshot. To create an encrypted snapshot, specify
-        /// <code>true</code>. To create an unencrypted snapshot, omit this parameter.</p>
-        /// <p>If you specify a value for <b>ParentSnapshotId</b>, omit
-        /// this parameter.</p>
-        /// <p>If you specify <code>true</code>, the snapshot is encrypted using the KMS key specified
-        /// using the <b>KmsKeyArn</b> parameter. If no value is specified
-        /// for <b>KmsKeyArn</b>, the default KMS key for your account is
-        /// used. If no default KMS key has been specified for your account, the Amazon Web Services managed KMS key is used.
-        /// To set a default KMS key for your account, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyEbsDefaultKmsKeyId.html">
-        /// ModifyEbsDefaultKmsKeyId</a>.</p>
-        /// <p>If your account is enabled for encryption by default, you cannot set this parameter to
-        /// <code>false</code>. In this case, you can omit this parameter.</p>
-        ///
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-encryption">
-        /// Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// <p>Indicates whether to encrypt the snapshot. To create an encrypted snapshot, specify <code>true</code>. To create an unencrypted snapshot, omit this parameter.</p>
+        /// <p>If you specify a value for <b>ParentSnapshotId</b>, omit this parameter.</p>
+        /// <p>If you specify <code>true</code>, the snapshot is encrypted using the KMS key specified using the <b>KmsKeyArn</b> parameter. If no value is specified for <b>KmsKeyArn</b>, the default KMS key for your account is used. If no default KMS key has been specified for your account, the Amazon Web Services managed KMS key is used. To set a default KMS key for your account, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyEbsDefaultKmsKeyId.html"> ModifyEbsDefaultKmsKeyId</a>.</p>
+        /// <p>If your account is enabled for encryption by default, you cannot set this parameter to <code>false</code>. In this case, you can omit this parameter.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-encryption"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_encrypted(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS)
-        /// key to be used to encrypt the snapshot. If you do not specify a
-        /// KMS key, the default Amazon Web Services managed KMS key is used.</p>
-        /// <p>If you specify a <b>ParentSnapshotId</b>, omit this
-        /// parameter; the snapshot will be encrypted using the same KMS key that was used to encrypt
-        /// the parent snapshot.</p>
-        /// <p>If <b>Encrypted</b> is set to <code>true</code>,
-        /// you must specify a KMS key ARN. </p>
-        pub fn kms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to be used to encrypt the snapshot. If you do not specify a KMS key, the default Amazon Web Services managed KMS key is used.</p>
+        /// <p>If you specify a <b>ParentSnapshotId</b>, omit this parameter; the snapshot will be encrypted using the same KMS key that was used to encrypt the parent snapshot.</p>
+        /// <p>If <b>Encrypted</b> is set to <code>true</code>, you must specify a KMS key ARN. </p>
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS)
-        /// key to be used to encrypt the snapshot. If you do not specify a
-        /// KMS key, the default Amazon Web Services managed KMS key is used.</p>
-        /// <p>If you specify a <b>ParentSnapshotId</b>, omit this
-        /// parameter; the snapshot will be encrypted using the same KMS key that was used to encrypt
-        /// the parent snapshot.</p>
-        /// <p>If <b>Encrypted</b> is set to <code>true</code>,
-        /// you must specify a KMS key ARN. </p>
+        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to be used to encrypt the snapshot. If you do not specify a KMS key, the default Amazon Web Services managed KMS key is used.</p>
+        /// <p>If you specify a <b>ParentSnapshotId</b>, omit this parameter; the snapshot will be encrypted using the same KMS key that was used to encrypt the parent snapshot.</p>
+        /// <p>If <b>Encrypted</b> is set to <code>true</code>, you must specify a KMS key ARN. </p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_arn(input);
             self
         }
-        /// <p>The amount of time (in minutes) after which the snapshot is automatically cancelled
-        /// if:</p>
+        /// <p>The amount of time (in minutes) after which the snapshot is automatically cancelled if:</p>
         /// <ul>
-        /// <li>
-        /// <p>No blocks are written to the snapshot.</p>
-        /// </li>
-        /// <li>
-        /// <p>The snapshot is not completed after writing the last block of data.</p>
-        /// </li>
+        /// <li> <p>No blocks are written to the snapshot.</p> </li>
+        /// <li> <p>The snapshot is not completed after writing the last block of data.</p> </li>
         /// </ul>
         /// <p>If no value is specified, the timeout defaults to <code>60</code> minutes.</p>
-        pub fn timeout(mut self, inp: i32) -> Self {
-            self.inner = self.inner.timeout(inp);
+        pub fn timeout(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout(input);
             self
         }
-        /// <p>The amount of time (in minutes) after which the snapshot is automatically cancelled
-        /// if:</p>
+        /// <p>The amount of time (in minutes) after which the snapshot is automatically cancelled if:</p>
         /// <ul>
-        /// <li>
-        /// <p>No blocks are written to the snapshot.</p>
-        /// </li>
-        /// <li>
-        /// <p>The snapshot is not completed after writing the last block of data.</p>
-        /// </li>
+        /// <li> <p>No blocks are written to the snapshot.</p> </li>
+        /// <li> <p>The snapshot is not completed after writing the last block of data.</p> </li>
         /// </ul>
         /// <p>If no value is specified, the timeout defaults to <code>60</code> minutes.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
@@ -1031,6 +910,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

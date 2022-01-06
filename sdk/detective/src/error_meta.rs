@@ -11,21 +11,13 @@ pub enum Error {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>This request cannot be completed for one of the following reasons.</p>
     /// <ul>
-    /// <li>
-    /// <p>The request would cause the number of member accounts in the behavior graph to
-    /// exceed the maximum allowed. A behavior graph cannot have more than 1000 member
-    /// accounts.</p>
-    /// </li>
-    /// <li>
-    /// <p>The request would cause the data rate for the behavior graph to exceed the maximum
-    /// allowed.</p>
-    /// </li>
-    /// <li>
-    /// <p>Detective is unable to verify the data rate for the member account. This is usually
-    /// because the member account is not enrolled in Amazon GuardDuty. </p>
-    /// </li>
+    /// <li> <p>The request would cause the number of member accounts in the behavior graph to exceed the maximum allowed. A behavior graph cannot have more than 1200 member accounts.</p> </li>
+    /// <li> <p>The request would cause the data rate for the behavior graph to exceed the maximum allowed.</p> </li>
+    /// <li> <p>Detective is unable to verify the data rate for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty.</p> </li>
     /// </ul>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>The request cannot be completed because too many other requests are occurring at the same time.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>The request parameters are invalid.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
@@ -38,6 +30,7 @@ impl std::fmt::Display for Error {
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
+            Error::TooManyRequestsException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
@@ -166,6 +159,52 @@ where
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::DescribeOrganizationConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DescribeOrganizationConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribeOrganizationConfigurationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::DescribeOrganizationConfigurationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+                crate::error::DescribeOrganizationConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::DescribeOrganizationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::DisableOrganizationAdminAccountError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DisableOrganizationAdminAccountError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DisableOrganizationAdminAccountErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::DisableOrganizationAdminAccountErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+                crate::error::DisableOrganizationAdminAccountErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::DisableOrganizationAdminAccountErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisassociateMembershipError, R>>
     for Error
 where
@@ -189,6 +228,37 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::DisassociateMembershipErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::EnableOrganizationAdminAccountError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::EnableOrganizationAdminAccountError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::EnableOrganizationAdminAccountErrorKind::InternalServerException(
+                    inner,
+                ) => Error::InternalServerException(inner),
+                crate::error::EnableOrganizationAdminAccountErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
+                crate::error::EnableOrganizationAdminAccountErrorKind::ValidationException(
+                    inner,
+                ) => Error::ValidationException(inner),
+                crate::error::EnableOrganizationAdminAccountErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -273,6 +343,33 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListMembersErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListOrganizationAdminAccountsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListOrganizationAdminAccountsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListOrganizationAdminAccountsErrorKind::InternalServerException(
+                    inner,
+                ) => Error::InternalServerException(inner),
+                crate::error::ListOrganizationAdminAccountsErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
+                crate::error::ListOrganizationAdminAccountsErrorKind::ValidationException(
+                    inner,
+                ) => Error::ValidationException(inner),
+                crate::error::ListOrganizationAdminAccountsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -406,6 +503,29 @@ where
                 }
                 crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::UpdateOrganizationConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::UpdateOrganizationConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::UpdateOrganizationConfigurationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::UpdateOrganizationConfigurationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+                crate::error::UpdateOrganizationConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::UpdateOrganizationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }

@@ -5,8 +5,7 @@
 pub struct GetProductsOutput {
     /// <p>The format version of the response. For example, aws_v1.</p>
     pub format_version: std::option::Option<std::string::String>,
-    /// <p>The list of products that match your filters. The list contains both the product metadata and
-    /// the price information.</p>
+    /// <p>The list of products that match your filters. The list contains both the product metadata and the price information.</p>
     pub price_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -16,8 +15,7 @@ impl GetProductsOutput {
     pub fn format_version(&self) -> std::option::Option<&str> {
         self.format_version.as_deref()
     }
-    /// <p>The list of products that match your filters. The list contains both the product metadata and
-    /// the price information.</p>
+    /// <p>The list of products that match your filters. The list contains both the product metadata and the price information.</p>
     pub fn price_list(&self) -> std::option::Option<&[std::string::String]> {
         self.price_list.as_deref()
     }
@@ -63,16 +61,14 @@ pub mod get_products_output {
         ///
         /// To override the contents of this collection use [`set_price_list`](Self::set_price_list).
         ///
-        /// <p>The list of products that match your filters. The list contains both the product metadata and
-        /// the price information.</p>
+        /// <p>The list of products that match your filters. The list contains both the product metadata and the price information.</p>
         pub fn price_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.price_list.unwrap_or_default();
             v.push(input.into());
             self.price_list = Some(v);
             self
         }
-        /// <p>The list of products that match your filters. The list contains both the product metadata and
-        /// the price information.</p>
+        /// <p>The list of products that match your filters. The list contains both the product metadata and the price information.</p>
         pub fn set_price_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -111,17 +107,13 @@ impl GetProductsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAttributeValuesOutput {
-    /// <p>The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and
-    /// <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code>
-    /// <code>volumeType</code>.</p>
+    /// <p>The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.</p>
     pub attribute_values: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetAttributeValuesOutput {
-    /// <p>The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and
-    /// <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code>
-    /// <code>volumeType</code>.</p>
+    /// <p>The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.</p>
     pub fn attribute_values(&self) -> std::option::Option<&[crate::model::AttributeValue]> {
         self.attribute_values.as_deref()
     }
@@ -153,18 +145,14 @@ pub mod get_attribute_values_output {
         ///
         /// To override the contents of this collection use [`set_attribute_values`](Self::set_attribute_values).
         ///
-        /// <p>The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and
-        /// <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code>
-        /// <code>volumeType</code>.</p>
-        pub fn attribute_values(mut self, input: impl Into<crate::model::AttributeValue>) -> Self {
+        /// <p>The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.</p>
+        pub fn attribute_values(mut self, input: crate::model::AttributeValue) -> Self {
             let mut v = self.attribute_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attribute_values = Some(v);
             self
         }
-        /// <p>The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and
-        /// <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code>
-        /// <code>volumeType</code>.</p>
+        /// <p>The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.</p>
         pub fn set_attribute_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
@@ -248,9 +236,9 @@ pub mod describe_services_output {
         /// To override the contents of this collection use [`set_services`](Self::set_services).
         ///
         /// <p>The service metadata for the service or services in the response.</p>
-        pub fn services(mut self, input: impl Into<crate::model::Service>) -> Self {
+        pub fn services(mut self, input: crate::model::Service) -> Self {
             let mut v = self.services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.services = Some(v);
             self
         }

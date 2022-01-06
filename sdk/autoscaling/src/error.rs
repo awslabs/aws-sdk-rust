@@ -12,8 +12,7 @@ pub struct AttachInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AttachInstancesErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
@@ -59,8 +58,6 @@ impl AttachInstancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -119,8 +116,7 @@ pub struct AttachLoadBalancersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AttachLoadBalancersErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
@@ -166,8 +162,6 @@ impl AttachLoadBalancersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -226,8 +220,7 @@ pub struct AttachLoadBalancerTargetGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AttachLoadBalancerTargetGroupsErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
@@ -280,8 +273,6 @@ impl AttachLoadBalancerTargetGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -344,8 +335,7 @@ pub struct BatchDeleteScheduledActionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDeleteScheduledActionErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -388,8 +378,6 @@ impl BatchDeleteScheduledActionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -442,13 +430,9 @@ pub struct BatchPutScheduledUpdateGroupActionError {
 pub enum BatchPutScheduledUpdateGroupActionErrorKind {
     /// <p>You already have an Auto Scaling group or launch configuration with this name.</p>
     AlreadyExistsFault(crate::error::AlreadyExistsFault),
-    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-    /// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-    /// Reference</i>.</p>
+    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -502,8 +486,6 @@ impl BatchPutScheduledUpdateGroupActionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -572,16 +554,11 @@ pub struct CancelInstanceRefreshError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelInstanceRefreshErrorKind {
-    /// <p>The request failed because an active instance refresh for the specified Auto Scaling group was
-    /// not found. </p>
+    /// <p>The request failed because an active instance refresh for the specified Auto Scaling group was not found. </p>
     ActiveInstanceRefreshNotFoundFault(crate::error::ActiveInstanceRefreshNotFoundFault),
-    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-    /// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-    /// Reference</i>.</p>
+    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -628,8 +605,6 @@ impl CancelInstanceRefreshError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -698,8 +673,7 @@ pub struct CompleteLifecycleActionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CompleteLifecycleActionErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -742,8 +716,6 @@ impl CompleteLifecycleActionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -796,13 +768,9 @@ pub struct CreateAutoScalingGroupError {
 pub enum CreateAutoScalingGroupErrorKind {
     /// <p>You already have an Auto Scaling group or launch configuration with this name.</p>
     AlreadyExistsFault(crate::error::AlreadyExistsFault),
-    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-    /// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-    /// Reference</i>.</p>
+    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
@@ -850,8 +818,6 @@ impl CreateAutoScalingGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -928,13 +894,9 @@ pub struct CreateLaunchConfigurationError {
 pub enum CreateLaunchConfigurationErrorKind {
     /// <p>You already have an Auto Scaling group or launch configuration with this name.</p>
     AlreadyExistsFault(crate::error::AlreadyExistsFault),
-    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-    /// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-    /// Reference</i>.</p>
+    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -979,8 +941,6 @@ impl CreateLaunchConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1049,13 +1009,9 @@ pub struct CreateOrUpdateTagsError {
 pub enum CreateOrUpdateTagsErrorKind {
     /// <p>You already have an Auto Scaling group or launch configuration with this name.</p>
     AlreadyExistsFault(crate::error::AlreadyExistsFault),
-    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-    /// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-    /// Reference</i>.</p>
+    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The operation can't be performed because the resource is in use.</p>
     ResourceInUseFault(crate::error::ResourceInUseFault),
@@ -1103,8 +1059,6 @@ impl CreateOrUpdateTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1179,13 +1133,11 @@ pub struct DeleteAutoScalingGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAutoScalingGroupErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The operation can't be performed because the resource is in use.</p>
     ResourceInUseFault(crate::error::ResourceInUseFault),
-    /// <p>The operation can't be performed because there are scaling activities in
-    /// progress.</p>
+    /// <p>The operation can't be performed because there are scaling activities in progress.</p>
     ScalingActivityInProgressFault(crate::error::ScalingActivityInProgressFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1232,8 +1184,6 @@ impl DeleteAutoScalingGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1300,8 +1250,7 @@ pub struct DeleteLaunchConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteLaunchConfigurationErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The operation can't be performed because the resource is in use.</p>
     ResourceInUseFault(crate::error::ResourceInUseFault),
@@ -1347,8 +1296,6 @@ impl DeleteLaunchConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1407,8 +1354,7 @@ pub struct DeleteLifecycleHookError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteLifecycleHookErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1451,8 +1397,6 @@ impl DeleteLifecycleHookError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1503,8 +1447,7 @@ pub struct DeleteNotificationConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteNotificationConfigurationErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1552,8 +1495,6 @@ impl DeleteNotificationConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1606,8 +1547,7 @@ pub struct DeletePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePolicyErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
@@ -1653,8 +1593,6 @@ impl DeletePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1713,8 +1651,7 @@ pub struct DeleteScheduledActionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteScheduledActionErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1757,8 +1694,6 @@ impl DeleteScheduledActionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1809,8 +1744,7 @@ pub struct DeleteTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTagsErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The operation can't be performed because the resource is in use.</p>
     ResourceInUseFault(crate::error::ResourceInUseFault),
@@ -1856,8 +1790,6 @@ impl DeleteTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1910,18 +1842,13 @@ pub struct DeleteWarmPoolError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteWarmPoolErrorKind {
-    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-    /// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-    /// Reference</i>.</p>
+    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The operation can't be performed because the resource is in use.</p>
     ResourceInUseFault(crate::error::ResourceInUseFault),
-    /// <p>The operation can't be performed because there are scaling activities in
-    /// progress.</p>
+    /// <p>The operation can't be performed because there are scaling activities in progress.</p>
     ScalingActivityInProgressFault(crate::error::ScalingActivityInProgressFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1967,8 +1894,6 @@ impl DeleteWarmPoolError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2037,8 +1962,7 @@ pub struct DescribeAccountLimitsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAccountLimitsErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2081,8 +2005,6 @@ impl DescribeAccountLimitsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2133,8 +2055,7 @@ pub struct DescribeAdjustmentTypesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAdjustmentTypesErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2177,8 +2098,6 @@ impl DescribeAdjustmentTypesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2231,8 +2150,7 @@ pub struct DescribeAutoScalingGroupsError {
 pub enum DescribeAutoScalingGroupsErrorKind {
     /// <p>The <code>NextToken</code> value is not valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2276,8 +2194,6 @@ impl DescribeAutoScalingGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2338,8 +2254,7 @@ pub struct DescribeAutoScalingInstancesError {
 pub enum DescribeAutoScalingInstancesErrorKind {
     /// <p>The <code>NextToken</code> value is not valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2383,8 +2298,6 @@ impl DescribeAutoScalingInstancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2443,8 +2356,7 @@ pub struct DescribeAutoScalingNotificationTypesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAutoScalingNotificationTypesErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2492,8 +2404,6 @@ impl DescribeAutoScalingNotificationTypesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2550,8 +2460,7 @@ pub struct DescribeInstanceRefreshesError {
 pub enum DescribeInstanceRefreshesErrorKind {
     /// <p>The <code>NextToken</code> value is not valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2595,8 +2504,6 @@ impl DescribeInstanceRefreshesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2657,8 +2564,7 @@ pub struct DescribeLaunchConfigurationsError {
 pub enum DescribeLaunchConfigurationsErrorKind {
     /// <p>The <code>NextToken</code> value is not valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2702,8 +2608,6 @@ impl DescribeLaunchConfigurationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2762,8 +2666,7 @@ pub struct DescribeLifecycleHooksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeLifecycleHooksErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2806,8 +2709,6 @@ impl DescribeLifecycleHooksError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2858,8 +2759,7 @@ pub struct DescribeLifecycleHookTypesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeLifecycleHookTypesErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2902,8 +2802,6 @@ impl DescribeLifecycleHookTypesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2956,8 +2854,7 @@ pub struct DescribeLoadBalancersError {
 pub enum DescribeLoadBalancersErrorKind {
     /// <p>The <code>NextToken</code> value is not valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3001,8 +2898,6 @@ impl DescribeLoadBalancersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3063,8 +2958,7 @@ pub struct DescribeLoadBalancerTargetGroupsError {
 pub enum DescribeLoadBalancerTargetGroupsErrorKind {
     /// <p>The <code>NextToken</code> value is not valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3113,8 +3007,6 @@ impl DescribeLoadBalancerTargetGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3175,8 +3067,7 @@ pub struct DescribeMetricCollectionTypesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeMetricCollectionTypesErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3224,8 +3115,6 @@ impl DescribeMetricCollectionTypesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3278,8 +3167,7 @@ pub struct DescribeNotificationConfigurationsError {
 pub enum DescribeNotificationConfigurationsErrorKind {
     /// <p>The <code>NextToken</code> value is not valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3328,8 +3216,6 @@ impl DescribeNotificationConfigurationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3392,8 +3278,7 @@ pub struct DescribePoliciesError {
 pub enum DescribePoliciesErrorKind {
     /// <p>The <code>NextToken</code> value is not valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
@@ -3440,8 +3325,6 @@ impl DescribePoliciesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3507,8 +3390,7 @@ pub struct DescribeScalingActivitiesError {
 pub enum DescribeScalingActivitiesErrorKind {
     /// <p>The <code>NextToken</code> value is not valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3552,8 +3434,6 @@ impl DescribeScalingActivitiesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3612,8 +3492,7 @@ pub struct DescribeScalingProcessTypesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeScalingProcessTypesErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3656,8 +3535,6 @@ impl DescribeScalingProcessTypesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3710,8 +3587,7 @@ pub struct DescribeScheduledActionsError {
 pub enum DescribeScheduledActionsErrorKind {
     /// <p>The <code>NextToken</code> value is not valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3755,8 +3631,6 @@ impl DescribeScheduledActionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3817,8 +3691,7 @@ pub struct DescribeTagsError {
 pub enum DescribeTagsErrorKind {
     /// <p>The <code>NextToken</code> value is not valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3862,8 +3735,6 @@ impl DescribeTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3919,8 +3790,7 @@ pub struct DescribeTerminationPolicyTypesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTerminationPolicyTypesErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3968,8 +3838,6 @@ impl DescribeTerminationPolicyTypesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4024,13 +3892,9 @@ pub struct DescribeWarmPoolError {
 pub enum DescribeWarmPoolErrorKind {
     /// <p>The <code>NextToken</code> value is not valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-    /// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-    /// Reference</i>.</p>
+    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4075,8 +3939,6 @@ impl DescribeWarmPoolError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4137,8 +3999,7 @@ pub struct DetachInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetachInstancesErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4181,8 +4042,6 @@ impl DetachInstancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4233,8 +4092,7 @@ pub struct DetachLoadBalancersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetachLoadBalancersErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4277,8 +4135,6 @@ impl DetachLoadBalancersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4329,8 +4185,7 @@ pub struct DetachLoadBalancerTargetGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetachLoadBalancerTargetGroupsErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4378,8 +4233,6 @@ impl DetachLoadBalancerTargetGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4432,8 +4285,7 @@ pub struct DisableMetricsCollectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableMetricsCollectionErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4476,8 +4328,6 @@ impl DisableMetricsCollectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4528,8 +4378,7 @@ pub struct EnableMetricsCollectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableMetricsCollectionErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4572,8 +4421,6 @@ impl EnableMetricsCollectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4624,8 +4471,7 @@ pub struct EnterStandbyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnterStandbyErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4668,8 +4514,6 @@ impl EnterStandbyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4720,11 +4564,9 @@ pub struct ExecutePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExecutePolicyErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// <p>The operation can't be performed because there are scaling activities in
-    /// progress.</p>
+    /// <p>The operation can't be performed because there are scaling activities in progress.</p>
     ScalingActivityInProgressFault(crate::error::ScalingActivityInProgressFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4768,8 +4610,6 @@ impl ExecutePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4828,8 +4668,7 @@ pub struct ExitStandbyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExitStandbyErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4872,8 +4711,6 @@ impl ExitStandbyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4921,8 +4758,7 @@ pub struct GetPredictiveScalingForecastError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPredictiveScalingForecastErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4965,8 +4801,6 @@ impl GetPredictiveScalingForecastError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5017,13 +4851,9 @@ pub struct PutLifecycleHookError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutLifecycleHookErrorKind {
-    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-    /// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-    /// Reference</i>.</p>
+    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5067,8 +4897,6 @@ impl PutLifecycleHookError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5124,13 +4952,9 @@ pub struct PutNotificationConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutNotificationConfigurationErrorKind {
-    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-    /// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-    /// Reference</i>.</p>
+    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
@@ -5179,8 +5003,6 @@ impl PutNotificationConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5247,13 +5069,9 @@ pub struct PutScalingPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutScalingPolicyErrorKind {
-    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-    /// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-    /// Reference</i>.</p>
+    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
@@ -5300,8 +5118,6 @@ impl PutScalingPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5367,13 +5183,9 @@ pub struct PutScheduledUpdateGroupActionError {
 pub enum PutScheduledUpdateGroupActionErrorKind {
     /// <p>You already have an Auto Scaling group or launch configuration with this name.</p>
     AlreadyExistsFault(crate::error::AlreadyExistsFault),
-    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-    /// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-    /// Reference</i>.</p>
+    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5423,8 +5235,6 @@ impl PutScheduledUpdateGroupActionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5491,13 +5301,9 @@ pub struct PutWarmPoolError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutWarmPoolErrorKind {
-    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-    /// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-    /// Reference</i>.</p>
+    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5541,8 +5347,6 @@ impl PutWarmPoolError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5595,8 +5399,7 @@ pub struct RecordLifecycleActionHeartbeatError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RecordLifecycleActionHeartbeatErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5644,8 +5447,6 @@ impl RecordLifecycleActionHeartbeatError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5698,8 +5499,7 @@ pub struct ResumeProcessesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResumeProcessesErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The operation can't be performed because the resource is in use.</p>
     ResourceInUseFault(crate::error::ResourceInUseFault),
@@ -5745,8 +5545,6 @@ impl ResumeProcessesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5802,11 +5600,9 @@ pub struct SetDesiredCapacityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetDesiredCapacityErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// <p>The operation can't be performed because there are scaling activities in
-    /// progress.</p>
+    /// <p>The operation can't be performed because there are scaling activities in progress.</p>
     ScalingActivityInProgressFault(crate::error::ScalingActivityInProgressFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5850,8 +5646,6 @@ impl SetDesiredCapacityError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5910,8 +5704,7 @@ pub struct SetInstanceHealthError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetInstanceHealthErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5954,8 +5747,6 @@ impl SetInstanceHealthError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6006,13 +5797,9 @@ pub struct SetInstanceProtectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetInstanceProtectionErrorKind {
-    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-    /// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-    /// Reference</i>.</p>
+    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6056,8 +5843,6 @@ impl SetInstanceProtectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6116,16 +5901,11 @@ pub struct StartInstanceRefreshError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartInstanceRefreshErrorKind {
-    /// <p>The request failed because an active instance refresh operation already exists for the
-    /// specified Auto Scaling group.</p>
+    /// <p>The request failed because an active instance refresh operation already exists for the specified Auto Scaling group.</p>
     InstanceRefreshInProgressFault(crate::error::InstanceRefreshInProgressFault),
-    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-    /// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-    /// Reference</i>.</p>
+    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6170,8 +5950,6 @@ impl StartInstanceRefreshError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6238,8 +6016,7 @@ pub struct SuspendProcessesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SuspendProcessesErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The operation can't be performed because the resource is in use.</p>
     ResourceInUseFault(crate::error::ResourceInUseFault),
@@ -6285,8 +6062,6 @@ impl SuspendProcessesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6342,11 +6117,9 @@ pub struct TerminateInstanceInAutoScalingGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TerminateInstanceInAutoScalingGroupErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// <p>The operation can't be performed because there are scaling activities in
-    /// progress.</p>
+    /// <p>The operation can't be performed because there are scaling activities in progress.</p>
     ScalingActivityInProgressFault(crate::error::ScalingActivityInProgressFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6397,8 +6170,6 @@ impl TerminateInstanceInAutoScalingGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6463,11 +6234,9 @@ pub struct UpdateAutoScalingGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAutoScalingGroupErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// <p>The operation can't be performed because there are scaling activities in
-    /// progress.</p>
+    /// <p>The operation can't be performed because there are scaling activities in progress.</p>
     ScalingActivityInProgressFault(crate::error::ScalingActivityInProgressFault),
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
@@ -6516,8 +6285,6 @@ impl UpdateAutoScalingGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6635,8 +6402,7 @@ impl ServiceLinkedRoleFailure {
     }
 }
 
-/// <p>The operation can't be performed because there are scaling activities in
-/// progress.</p>
+/// <p>The operation can't be performed because there are scaling activities in progress.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScalingActivityInProgressFault {
@@ -6700,8 +6466,7 @@ impl ScalingActivityInProgressFault {
     }
 }
 
-/// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-/// instance, or load balancer).</p>
+/// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceContentionFault {
@@ -6829,10 +6594,7 @@ impl ResourceInUseFault {
     }
 }
 
-/// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-/// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-/// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-/// Reference</i>.</p>
+/// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededFault {
@@ -6896,8 +6658,7 @@ impl LimitExceededFault {
     }
 }
 
-/// <p>The request failed because an active instance refresh operation already exists for the
-/// specified Auto Scaling group.</p>
+/// <p>The request failed because an active instance refresh operation already exists for the specified Auto Scaling group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceRefreshInProgressFault {
@@ -7089,8 +6850,7 @@ impl InvalidNextToken {
     }
 }
 
-/// <p>The request failed because an active instance refresh for the specified Auto Scaling group was
-/// not found. </p>
+/// <p>The request failed because an active instance refresh for the specified Auto Scaling group was not found. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActiveInstanceRefreshNotFoundFault {

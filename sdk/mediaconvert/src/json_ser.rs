@@ -6294,6 +6294,11 @@ pub fn serialize_structure_crate_model_noise_reducer_temporal_filter_settings(
             .key("postTemporalSharpening")
             .string(var_1014.as_str());
     }
+    if let Some(var_1015) = &input.post_temporal_sharpening_strength {
+        object
+            .key("postTemporalSharpeningStrength")
+            .string(var_1015.as_str());
+    }
     if input.speed != 0 {
         object.key("speed").number(
             #[allow(clippy::useless_conversion)]
@@ -6313,8 +6318,8 @@ pub fn serialize_structure_crate_model_nex_guard_file_marker_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::NexGuardFileMarkerSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1015) = &input.license {
-        object.key("license").string(var_1015);
+    if let Some(var_1016) = &input.license {
+        object.key("license").string(var_1016);
     }
     if input.payload != 0 {
         object.key("payload").number(
@@ -6322,11 +6327,11 @@ pub fn serialize_structure_crate_model_nex_guard_file_marker_settings(
             aws_smithy_types::Number::NegInt((input.payload).into()),
         );
     }
-    if let Some(var_1016) = &input.preset {
-        object.key("preset").string(var_1016);
+    if let Some(var_1017) = &input.preset {
+        object.key("preset").string(var_1017);
     }
-    if let Some(var_1017) = &input.strength {
-        object.key("strength").string(var_1017.as_str());
+    if let Some(var_1018) = &input.strength {
+        object.key("strength").string(var_1018.as_str());
     }
     Ok(())
 }
@@ -6354,21 +6359,21 @@ pub fn serialize_structure_crate_model_s3_destination_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3DestinationSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1018) = &input.access_control {
-        let mut object_1019 = object.key("accessControl").start_object();
+    if let Some(var_1019) = &input.access_control {
+        let mut object_1020 = object.key("accessControl").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_destination_access_control(
-            &mut object_1019,
-            var_1018,
+            &mut object_1020,
+            var_1019,
         )?;
-        object_1019.finish();
+        object_1020.finish();
     }
-    if let Some(var_1020) = &input.encryption {
-        let mut object_1021 = object.key("encryption").start_object();
+    if let Some(var_1021) = &input.encryption {
+        let mut object_1022 = object.key("encryption").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_encryption_settings(
-            &mut object_1021,
-            var_1020,
+            &mut object_1022,
+            var_1021,
         )?;
-        object_1021.finish();
+        object_1022.finish();
     }
     Ok(())
 }
@@ -6377,32 +6382,32 @@ pub fn serialize_structure_crate_model_speke_key_provider_cmaf(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SpekeKeyProviderCmaf,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1022) = &input.certificate_arn {
-        object.key("certificateArn").string(var_1022);
+    if let Some(var_1023) = &input.certificate_arn {
+        object.key("certificateArn").string(var_1023);
     }
-    if let Some(var_1023) = &input.dash_signaled_system_ids {
-        let mut array_1024 = object.key("dashSignaledSystemIds").start_array();
-        for item_1025 in var_1023 {
+    if let Some(var_1024) = &input.dash_signaled_system_ids {
+        let mut array_1025 = object.key("dashSignaledSystemIds").start_array();
+        for item_1026 in var_1024 {
             {
-                array_1024.value().string(item_1025);
+                array_1025.value().string(item_1026);
             }
         }
-        array_1024.finish();
+        array_1025.finish();
     }
-    if let Some(var_1026) = &input.hls_signaled_system_ids {
-        let mut array_1027 = object.key("hlsSignaledSystemIds").start_array();
-        for item_1028 in var_1026 {
+    if let Some(var_1027) = &input.hls_signaled_system_ids {
+        let mut array_1028 = object.key("hlsSignaledSystemIds").start_array();
+        for item_1029 in var_1027 {
             {
-                array_1027.value().string(item_1028);
+                array_1028.value().string(item_1029);
             }
         }
-        array_1027.finish();
+        array_1028.finish();
     }
-    if let Some(var_1029) = &input.resource_id {
-        object.key("resourceId").string(var_1029);
+    if let Some(var_1030) = &input.resource_id {
+        object.key("resourceId").string(var_1030);
     }
-    if let Some(var_1030) = &input.url {
-        object.key("url").string(var_1030);
+    if let Some(var_1031) = &input.url {
+        object.key("url").string(var_1031);
     }
     Ok(())
 }
@@ -6411,17 +6416,17 @@ pub fn serialize_structure_crate_model_static_key_provider(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::StaticKeyProvider,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1031) = &input.key_format {
-        object.key("keyFormat").string(var_1031);
+    if let Some(var_1032) = &input.key_format {
+        object.key("keyFormat").string(var_1032);
     }
-    if let Some(var_1032) = &input.key_format_versions {
-        object.key("keyFormatVersions").string(var_1032);
+    if let Some(var_1033) = &input.key_format_versions {
+        object.key("keyFormatVersions").string(var_1033);
     }
-    if let Some(var_1033) = &input.static_key_value {
-        object.key("staticKeyValue").string(var_1033);
+    if let Some(var_1034) = &input.static_key_value {
+        object.key("staticKeyValue").string(var_1034);
     }
-    if let Some(var_1034) = &input.url {
-        object.key("url").string(var_1034);
+    if let Some(var_1035) = &input.url {
+        object.key("url").string(var_1035);
     }
     Ok(())
 }
@@ -6430,23 +6435,23 @@ pub fn serialize_structure_crate_model_speke_key_provider(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SpekeKeyProvider,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1035) = &input.certificate_arn {
-        object.key("certificateArn").string(var_1035);
+    if let Some(var_1036) = &input.certificate_arn {
+        object.key("certificateArn").string(var_1036);
     }
-    if let Some(var_1036) = &input.resource_id {
-        object.key("resourceId").string(var_1036);
+    if let Some(var_1037) = &input.resource_id {
+        object.key("resourceId").string(var_1037);
     }
-    if let Some(var_1037) = &input.system_ids {
-        let mut array_1038 = object.key("systemIds").start_array();
-        for item_1039 in var_1037 {
+    if let Some(var_1038) = &input.system_ids {
+        let mut array_1039 = object.key("systemIds").start_array();
+        for item_1040 in var_1038 {
             {
-                array_1038.value().string(item_1039);
+                array_1039.value().string(item_1040);
             }
         }
-        array_1038.finish();
+        array_1039.finish();
     }
-    if let Some(var_1040) = &input.url {
-        object.key("url").string(var_1040);
+    if let Some(var_1041) = &input.url {
+        object.key("url").string(var_1041);
     }
     Ok(())
 }
@@ -6455,8 +6460,8 @@ pub fn serialize_structure_crate_model_s3_destination_access_control(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3DestinationAccessControl,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1041) = &input.canned_acl {
-        object.key("cannedAcl").string(var_1041.as_str());
+    if let Some(var_1042) = &input.canned_acl {
+        object.key("cannedAcl").string(var_1042.as_str());
     }
     Ok(())
 }
@@ -6465,14 +6470,14 @@ pub fn serialize_structure_crate_model_s3_encryption_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::S3EncryptionSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_1042) = &input.encryption_type {
-        object.key("encryptionType").string(var_1042.as_str());
+    if let Some(var_1043) = &input.encryption_type {
+        object.key("encryptionType").string(var_1043.as_str());
     }
-    if let Some(var_1043) = &input.kms_encryption_context {
-        object.key("kmsEncryptionContext").string(var_1043);
+    if let Some(var_1044) = &input.kms_encryption_context {
+        object.key("kmsEncryptionContext").string(var_1044);
     }
-    if let Some(var_1044) = &input.kms_key_arn {
-        object.key("kmsKeyArn").string(var_1044);
+    if let Some(var_1045) = &input.kms_key_arn {
+        object.key("kmsKeyArn").string(var_1045);
     }
     Ok(())
 }

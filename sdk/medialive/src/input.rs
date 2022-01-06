@@ -39,7 +39,7 @@ pub mod accept_input_device_transfer_input {
 pub type AcceptInputDeviceTransferInputOperationOutputAlias =
     crate::operation::AcceptInputDeviceTransfer;
 #[doc(hidden)]
-pub type AcceptInputDeviceTransferInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AcceptInputDeviceTransferInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptInputDeviceTransferInput {
     /// Consumes the builder and constructs an Operation<[`AcceptInputDeviceTransfer`](crate::operation::AcceptInputDeviceTransfer)>
     #[allow(clippy::let_and_return)]
@@ -50,7 +50,7 @@ impl AcceptInputDeviceTransferInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AcceptInputDeviceTransfer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -144,7 +144,7 @@ impl AcceptInputDeviceTransferInput {
             "AcceptInputDeviceTransfer",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -267,7 +267,7 @@ pub mod batch_delete_input {
 #[doc(hidden)]
 pub type BatchDeleteInputOperationOutputAlias = crate::operation::BatchDelete;
 #[doc(hidden)]
-pub type BatchDeleteInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchDeleteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDeleteInput {
     /// Consumes the builder and constructs an Operation<[`BatchDelete`](crate::operation::BatchDelete)>
     #[allow(clippy::let_and_return)]
@@ -278,7 +278,7 @@ impl BatchDeleteInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDelete,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -357,7 +357,7 @@ impl BatchDeleteInput {
             "BatchDelete",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -445,7 +445,7 @@ pub mod batch_start_input {
 #[doc(hidden)]
 pub type BatchStartInputOperationOutputAlias = crate::operation::BatchStart;
 #[doc(hidden)]
-pub type BatchStartInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchStartInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchStartInput {
     /// Consumes the builder and constructs an Operation<[`BatchStart`](crate::operation::BatchStart)>
     #[allow(clippy::let_and_return)]
@@ -456,7 +456,7 @@ impl BatchStartInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchStart,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -535,7 +535,7 @@ impl BatchStartInput {
             "BatchStart",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -621,7 +621,7 @@ pub mod batch_stop_input {
 #[doc(hidden)]
 pub type BatchStopInputOperationOutputAlias = crate::operation::BatchStop;
 #[doc(hidden)]
-pub type BatchStopInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchStopInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchStopInput {
     /// Consumes the builder and constructs an Operation<[`BatchStop`](crate::operation::BatchStop)>
     #[allow(clippy::let_and_return)]
@@ -632,7 +632,7 @@ impl BatchStopInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchStop,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -709,7 +709,7 @@ impl BatchStopInput {
                     "BatchStop",
                     "medialive",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -797,7 +797,7 @@ pub mod batch_update_schedule_input {
 #[doc(hidden)]
 pub type BatchUpdateScheduleInputOperationOutputAlias = crate::operation::BatchUpdateSchedule;
 #[doc(hidden)]
-pub type BatchUpdateScheduleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchUpdateScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchUpdateScheduleInput {
     /// Consumes the builder and constructs an Operation<[`BatchUpdateSchedule`](crate::operation::BatchUpdateSchedule)>
     #[allow(clippy::let_and_return)]
@@ -808,7 +808,7 @@ impl BatchUpdateScheduleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchUpdateSchedule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -908,7 +908,7 @@ impl BatchUpdateScheduleInput {
             "BatchUpdateSchedule",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -970,7 +970,7 @@ pub mod cancel_input_device_transfer_input {
 pub type CancelInputDeviceTransferInputOperationOutputAlias =
     crate::operation::CancelInputDeviceTransfer;
 #[doc(hidden)]
-pub type CancelInputDeviceTransferInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelInputDeviceTransferInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelInputDeviceTransferInput {
     /// Consumes the builder and constructs an Operation<[`CancelInputDeviceTransfer`](crate::operation::CancelInputDeviceTransfer)>
     #[allow(clippy::let_and_return)]
@@ -981,7 +981,7 @@ impl CancelInputDeviceTransferInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelInputDeviceTransfer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1075,7 +1075,7 @@ impl CancelInputDeviceTransferInput {
             "CancelInputDeviceTransfer",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1123,7 +1123,7 @@ pub mod claim_device_input {
 #[doc(hidden)]
 pub type ClaimDeviceInputOperationOutputAlias = crate::operation::ClaimDevice;
 #[doc(hidden)]
-pub type ClaimDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ClaimDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ClaimDeviceInput {
     /// Consumes the builder and constructs an Operation<[`ClaimDevice`](crate::operation::ClaimDevice)>
     #[allow(clippy::let_and_return)]
@@ -1134,7 +1134,7 @@ impl ClaimDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ClaimDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1213,7 +1213,7 @@ impl ClaimDeviceInput {
             "ClaimDevice",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1296,9 +1296,9 @@ pub mod create_channel_input {
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
         /// Placeholder documentation for __listOfOutputDestination
-        pub fn destinations(mut self, input: impl Into<crate::model::OutputDestination>) -> Self {
+        pub fn destinations(mut self, input: crate::model::OutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -1328,12 +1328,9 @@ pub mod create_channel_input {
         /// To override the contents of this collection use [`set_input_attachments`](Self::set_input_attachments).
         ///
         /// List of input attachments for channel.
-        pub fn input_attachments(
-            mut self,
-            input: impl Into<crate::model::InputAttachment>,
-        ) -> Self {
+        pub fn input_attachments(mut self, input: crate::model::InputAttachment) -> Self {
             let mut v = self.input_attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_attachments = Some(v);
             self
         }
@@ -1378,14 +1375,12 @@ pub mod create_channel_input {
             self.name = input;
             self
         }
-        /// Unique request ID to be specified. This is needed to prevent retries from
-        /// creating multiple resources.
+        /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
         }
-        /// Unique request ID to be specified. This is needed to prevent retries from
-        /// creating multiple resources.
+        /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -1476,7 +1471,7 @@ pub mod create_channel_input {
 #[doc(hidden)]
 pub type CreateChannelInputOperationOutputAlias = crate::operation::CreateChannel;
 #[doc(hidden)]
-pub type CreateChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateChannelInput {
     /// Consumes the builder and constructs an Operation<[`CreateChannel`](crate::operation::CreateChannel)>
     #[allow(clippy::let_and_return)]
@@ -1487,7 +1482,7 @@ impl CreateChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1569,7 +1564,7 @@ impl CreateChannelInput {
             "CreateChannel",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1621,12 +1616,9 @@ pub mod create_input_input {
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
         /// Destination settings for PUSH type inputs.
-        pub fn destinations(
-            mut self,
-            input: impl Into<crate::model::InputDestinationRequest>,
-        ) -> Self {
+        pub fn destinations(mut self, input: crate::model::InputDestinationRequest) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -1643,12 +1635,9 @@ pub mod create_input_input {
         /// To override the contents of this collection use [`set_input_devices`](Self::set_input_devices).
         ///
         /// Settings for the devices.
-        pub fn input_devices(
-            mut self,
-            input: impl Into<crate::model::InputDeviceSettings>,
-        ) -> Self {
+        pub fn input_devices(mut self, input: crate::model::InputDeviceSettings) -> Self {
             let mut v = self.input_devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_devices = Some(v);
             self
         }
@@ -1683,21 +1672,14 @@ pub mod create_input_input {
         ///
         /// To override the contents of this collection use [`set_media_connect_flows`](Self::set_media_connect_flows).
         ///
-        /// A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one
-        /// Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a
-        /// separate Availability Zone as this ensures your EML input is redundant to AZ issues.
-        pub fn media_connect_flows(
-            mut self,
-            input: impl Into<crate::model::MediaConnectFlowRequest>,
-        ) -> Self {
+        /// A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
+        pub fn media_connect_flows(mut self, input: crate::model::MediaConnectFlowRequest) -> Self {
             let mut v = self.media_connect_flows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_connect_flows = Some(v);
             self
         }
-        /// A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one
-        /// Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a
-        /// separate Availability Zone as this ensures your EML input is redundant to AZ issues.
+        /// A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
         pub fn set_media_connect_flows(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MediaConnectFlowRequest>>,
@@ -1715,14 +1697,12 @@ pub mod create_input_input {
             self.name = input;
             self
         }
-        /// Unique identifier of the request to ensure the request is handled
-        /// exactly once in case of retries.
+        /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
         }
-        /// Unique identifier of the request to ensure the request is handled
-        /// exactly once in case of retries.
+        /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -1741,18 +1721,14 @@ pub mod create_input_input {
         ///
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
-        /// The source URLs for a PULL-type input. Every PULL type input needs
-        /// exactly two source URLs for redundancy.
-        /// Only specify sources for PULL type Inputs. Leave Destinations empty.
-        pub fn sources(mut self, input: impl Into<crate::model::InputSourceRequest>) -> Self {
+        /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
+        pub fn sources(mut self, input: crate::model::InputSourceRequest) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
-        /// The source URLs for a PULL-type input. Every PULL type input needs
-        /// exactly two source URLs for redundancy.
-        /// Only specify sources for PULL type Inputs. Leave Destinations empty.
+        /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
         pub fn set_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputSourceRequest>>,
@@ -1795,18 +1771,12 @@ pub mod create_input_input {
             self.r#type = input;
             self
         }
-        /// Settings for a private VPC Input.
-        /// When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses.
-        /// This property requires setting the roleArn property on Input creation.
-        /// Not compatible with the inputSecurityGroups property.
+        /// Settings for a private VPC Input. When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses. This property requires setting the roleArn property on Input creation. Not compatible with the inputSecurityGroups property.
         pub fn vpc(mut self, input: crate::model::InputVpcRequest) -> Self {
             self.vpc = Some(input);
             self
         }
-        /// Settings for a private VPC Input.
-        /// When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses.
-        /// This property requires setting the roleArn property on Input creation.
-        /// Not compatible with the inputSecurityGroups property.
+        /// Settings for a private VPC Input. When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses. This property requires setting the roleArn property on Input creation. Not compatible with the inputSecurityGroups property.
         pub fn set_vpc(
             mut self,
             input: std::option::Option<crate::model::InputVpcRequest>,
@@ -1840,7 +1810,7 @@ pub mod create_input_input {
 #[doc(hidden)]
 pub type CreateInputInputOperationOutputAlias = crate::operation::CreateInput;
 #[doc(hidden)]
-pub type CreateInputInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateInputInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateInputInput {
     /// Consumes the builder and constructs an Operation<[`CreateInput`](crate::operation::CreateInput)>
     #[allow(clippy::let_and_return)]
@@ -1851,7 +1821,7 @@ impl CreateInputInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateInput,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1933,7 +1903,7 @@ impl CreateInputInput {
             "CreateInput",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1999,12 +1969,9 @@ pub mod create_input_security_group_input {
         /// To override the contents of this collection use [`set_whitelist_rules`](Self::set_whitelist_rules).
         ///
         /// List of IPv4 CIDR addresses to whitelist
-        pub fn whitelist_rules(
-            mut self,
-            input: impl Into<crate::model::InputWhitelistRuleCidr>,
-        ) -> Self {
+        pub fn whitelist_rules(mut self, input: crate::model::InputWhitelistRuleCidr) -> Self {
             let mut v = self.whitelist_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.whitelist_rules = Some(v);
             self
         }
@@ -2034,7 +2001,7 @@ pub mod create_input_security_group_input {
 pub type CreateInputSecurityGroupInputOperationOutputAlias =
     crate::operation::CreateInputSecurityGroup;
 #[doc(hidden)]
-pub type CreateInputSecurityGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateInputSecurityGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateInputSecurityGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateInputSecurityGroup`](crate::operation::CreateInputSecurityGroup)>
     #[allow(clippy::let_and_return)]
@@ -2045,7 +2012,7 @@ impl CreateInputSecurityGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateInputSecurityGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2127,7 +2094,7 @@ impl CreateInputSecurityGroupInput {
             "CreateInputSecurityGroup",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2207,14 +2174,12 @@ pub mod create_multiplex_input {
             self.name = input;
             self
         }
-        /// Unique request ID. This prevents retries from creating multiple
-        /// resources.
+        /// Unique request ID. This prevents retries from creating multiple resources.
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
         }
-        /// Unique request ID. This prevents retries from creating multiple
-        /// resources.
+        /// Unique request ID. This prevents retries from creating multiple resources.
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -2264,7 +2229,7 @@ pub mod create_multiplex_input {
 #[doc(hidden)]
 pub type CreateMultiplexInputOperationOutputAlias = crate::operation::CreateMultiplex;
 #[doc(hidden)]
-pub type CreateMultiplexInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateMultiplexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMultiplexInput {
     /// Consumes the builder and constructs an Operation<[`CreateMultiplex`](crate::operation::CreateMultiplex)>
     #[allow(clippy::let_and_return)]
@@ -2275,7 +2240,7 @@ impl CreateMultiplexInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMultiplex,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2358,7 +2323,7 @@ impl CreateMultiplexInput {
             "CreateMultiplex",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2430,14 +2395,12 @@ pub mod create_multiplex_program_input {
             self.program_name = input;
             self
         }
-        /// Unique request ID. This prevents retries from creating multiple
-        /// resources.
+        /// Unique request ID. This prevents retries from creating multiple resources.
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
         }
-        /// Unique request ID. This prevents retries from creating multiple
-        /// resources.
+        /// Unique request ID. This prevents retries from creating multiple resources.
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -2461,7 +2424,7 @@ pub mod create_multiplex_program_input {
 #[doc(hidden)]
 pub type CreateMultiplexProgramInputOperationOutputAlias = crate::operation::CreateMultiplexProgram;
 #[doc(hidden)]
-pub type CreateMultiplexProgramInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateMultiplexProgramInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMultiplexProgramInput {
     /// Consumes the builder and constructs an Operation<[`CreateMultiplexProgram`](crate::operation::CreateMultiplexProgram)>
     #[allow(clippy::let_and_return)]
@@ -2472,7 +2435,7 @@ impl CreateMultiplexProgramInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMultiplexProgram,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2577,7 +2540,7 @@ impl CreateMultiplexProgramInput {
             "CreateMultiplexProgram",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2623,14 +2586,12 @@ pub mod create_partner_input_input {
             self.input_id = input;
             self
         }
-        /// Unique identifier of the request to ensure the request is handled
-        /// exactly once in case of retries.
+        /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
         }
-        /// Unique identifier of the request to ensure the request is handled
-        /// exactly once in case of retries.
+        /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -2678,7 +2639,7 @@ pub mod create_partner_input_input {
 #[doc(hidden)]
 pub type CreatePartnerInputInputOperationOutputAlias = crate::operation::CreatePartnerInput;
 #[doc(hidden)]
-pub type CreatePartnerInputInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePartnerInputInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePartnerInputInput {
     /// Consumes the builder and constructs an Operation<[`CreatePartnerInput`](crate::operation::CreatePartnerInput)>
     #[allow(clippy::let_and_return)]
@@ -2689,7 +2650,7 @@ impl CreatePartnerInputInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePartnerInput,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2792,7 +2753,7 @@ impl CreatePartnerInputInput {
             "CreatePartnerInput",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2879,7 +2840,7 @@ pub mod create_tags_input {
 #[doc(hidden)]
 pub type CreateTagsInputOperationOutputAlias = crate::operation::CreateTags;
 #[doc(hidden)]
-pub type CreateTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTagsInput {
     /// Consumes the builder and constructs an Operation<[`CreateTags`](crate::operation::CreateTags)>
     #[allow(clippy::let_and_return)]
@@ -2890,7 +2851,7 @@ impl CreateTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2989,7 +2950,7 @@ impl CreateTagsInput {
             "CreateTags",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3047,7 +3008,7 @@ pub mod delete_channel_input {
 #[doc(hidden)]
 pub type DeleteChannelInputOperationOutputAlias = crate::operation::DeleteChannel;
 #[doc(hidden)]
-pub type DeleteChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteChannel`](crate::operation::DeleteChannel)>
     #[allow(clippy::let_and_return)]
@@ -3058,7 +3019,7 @@ impl DeleteChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3148,7 +3109,7 @@ impl DeleteChannelInput {
             "DeleteChannel",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3198,7 +3159,7 @@ pub mod delete_input_input {
 #[doc(hidden)]
 pub type DeleteInputInputOperationOutputAlias = crate::operation::DeleteInput;
 #[doc(hidden)]
-pub type DeleteInputInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteInputInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteInputInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInput`](crate::operation::DeleteInput)>
     #[allow(clippy::let_and_return)]
@@ -3209,7 +3170,7 @@ impl DeleteInputInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteInput,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3299,7 +3260,7 @@ impl DeleteInputInput {
             "DeleteInput",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3353,7 +3314,7 @@ pub mod delete_input_security_group_input {
 pub type DeleteInputSecurityGroupInputOperationOutputAlias =
     crate::operation::DeleteInputSecurityGroup;
 #[doc(hidden)]
-pub type DeleteInputSecurityGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteInputSecurityGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteInputSecurityGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInputSecurityGroup`](crate::operation::DeleteInputSecurityGroup)>
     #[allow(clippy::let_and_return)]
@@ -3364,7 +3325,7 @@ impl DeleteInputSecurityGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteInputSecurityGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3458,7 +3419,7 @@ impl DeleteInputSecurityGroupInput {
             "DeleteInputSecurityGroup",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3508,7 +3469,7 @@ pub mod delete_multiplex_input {
 #[doc(hidden)]
 pub type DeleteMultiplexInputOperationOutputAlias = crate::operation::DeleteMultiplex;
 #[doc(hidden)]
-pub type DeleteMultiplexInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteMultiplexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMultiplexInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMultiplex`](crate::operation::DeleteMultiplex)>
     #[allow(clippy::let_and_return)]
@@ -3519,7 +3480,7 @@ impl DeleteMultiplexInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMultiplex,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3613,7 +3574,7 @@ impl DeleteMultiplexInput {
             "DeleteMultiplex",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3675,7 +3636,7 @@ pub mod delete_multiplex_program_input {
 #[doc(hidden)]
 pub type DeleteMultiplexProgramInputOperationOutputAlias = crate::operation::DeleteMultiplexProgram;
 #[doc(hidden)]
-pub type DeleteMultiplexProgramInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteMultiplexProgramInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMultiplexProgramInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMultiplexProgram`](crate::operation::DeleteMultiplexProgram)>
     #[allow(clippy::let_and_return)]
@@ -3686,7 +3647,7 @@ impl DeleteMultiplexProgramInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMultiplexProgram,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3796,7 +3757,7 @@ impl DeleteMultiplexProgramInput {
             "DeleteMultiplexProgram",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3849,7 +3810,7 @@ pub mod delete_reservation_input {
 #[doc(hidden)]
 pub type DeleteReservationInputOperationOutputAlias = crate::operation::DeleteReservation;
 #[doc(hidden)]
-pub type DeleteReservationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteReservationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteReservationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReservation`](crate::operation::DeleteReservation)>
     #[allow(clippy::let_and_return)]
@@ -3860,7 +3821,7 @@ impl DeleteReservationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteReservation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3954,7 +3915,7 @@ impl DeleteReservationInput {
             "DeleteReservation",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4004,7 +3965,7 @@ pub mod delete_schedule_input {
 #[doc(hidden)]
 pub type DeleteScheduleInputOperationOutputAlias = crate::operation::DeleteSchedule;
 #[doc(hidden)]
-pub type DeleteScheduleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteScheduleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSchedule`](crate::operation::DeleteSchedule)>
     #[allow(clippy::let_and_return)]
@@ -4015,7 +3976,7 @@ impl DeleteScheduleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSchedule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4109,7 +4070,7 @@ impl DeleteScheduleInput {
             "DeleteSchedule",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4180,7 +4141,7 @@ pub mod delete_tags_input {
 #[doc(hidden)]
 pub type DeleteTagsInputOperationOutputAlias = crate::operation::DeleteTags;
 #[doc(hidden)]
-pub type DeleteTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTagsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTags`](crate::operation::DeleteTags)>
     #[allow(clippy::let_and_return)]
@@ -4191,7 +4152,7 @@ impl DeleteTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4298,7 +4259,7 @@ impl DeleteTagsInput {
             "DeleteTags",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4348,7 +4309,7 @@ pub mod describe_channel_input {
 #[doc(hidden)]
 pub type DescribeChannelInputOperationOutputAlias = crate::operation::DescribeChannel;
 #[doc(hidden)]
-pub type DescribeChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChannelInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChannel`](crate::operation::DescribeChannel)>
     #[allow(clippy::let_and_return)]
@@ -4359,7 +4320,7 @@ impl DescribeChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4449,7 +4410,7 @@ impl DescribeChannelInput {
             "DescribeChannel",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4499,7 +4460,7 @@ pub mod describe_input_input {
 #[doc(hidden)]
 pub type DescribeInputInputOperationOutputAlias = crate::operation::DescribeInput;
 #[doc(hidden)]
-pub type DescribeInputInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeInputInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeInputInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInput`](crate::operation::DescribeInput)>
     #[allow(clippy::let_and_return)]
@@ -4510,7 +4471,7 @@ impl DescribeInputInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeInput,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4600,7 +4561,7 @@ impl DescribeInputInput {
             "DescribeInput",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4653,7 +4614,7 @@ pub mod describe_input_device_input {
 #[doc(hidden)]
 pub type DescribeInputDeviceInputOperationOutputAlias = crate::operation::DescribeInputDevice;
 #[doc(hidden)]
-pub type DescribeInputDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeInputDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeInputDeviceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInputDevice`](crate::operation::DescribeInputDevice)>
     #[allow(clippy::let_and_return)]
@@ -4664,7 +4625,7 @@ impl DescribeInputDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeInputDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4758,7 +4719,7 @@ impl DescribeInputDeviceInput {
             "DescribeInputDevice",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4827,7 +4788,8 @@ pub mod describe_input_device_thumbnail_input {
 pub type DescribeInputDeviceThumbnailInputOperationOutputAlias =
     crate::operation::DescribeInputDeviceThumbnail;
 #[doc(hidden)]
-pub type DescribeInputDeviceThumbnailInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeInputDeviceThumbnailInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeInputDeviceThumbnailInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInputDeviceThumbnail`](crate::operation::DescribeInputDeviceThumbnail)>
     #[allow(clippy::let_and_return)]
@@ -4838,7 +4800,7 @@ impl DescribeInputDeviceThumbnailInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeInputDeviceThumbnail,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4956,7 +4918,7 @@ impl DescribeInputDeviceThumbnailInput {
             "DescribeInputDeviceThumbnail",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5010,7 +4972,7 @@ pub mod describe_input_security_group_input {
 pub type DescribeInputSecurityGroupInputOperationOutputAlias =
     crate::operation::DescribeInputSecurityGroup;
 #[doc(hidden)]
-pub type DescribeInputSecurityGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeInputSecurityGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeInputSecurityGroupInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInputSecurityGroup`](crate::operation::DescribeInputSecurityGroup)>
     #[allow(clippy::let_and_return)]
@@ -5021,7 +4983,7 @@ impl DescribeInputSecurityGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeInputSecurityGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5115,7 +5077,7 @@ impl DescribeInputSecurityGroupInput {
             "DescribeInputSecurityGroup",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5165,7 +5127,7 @@ pub mod describe_multiplex_input {
 #[doc(hidden)]
 pub type DescribeMultiplexInputOperationOutputAlias = crate::operation::DescribeMultiplex;
 #[doc(hidden)]
-pub type DescribeMultiplexInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeMultiplexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeMultiplexInput {
     /// Consumes the builder and constructs an Operation<[`DescribeMultiplex`](crate::operation::DescribeMultiplex)>
     #[allow(clippy::let_and_return)]
@@ -5176,7 +5138,7 @@ impl DescribeMultiplexInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeMultiplex,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5270,7 +5232,7 @@ impl DescribeMultiplexInput {
             "DescribeMultiplex",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5333,7 +5295,7 @@ pub mod describe_multiplex_program_input {
 pub type DescribeMultiplexProgramInputOperationOutputAlias =
     crate::operation::DescribeMultiplexProgram;
 #[doc(hidden)]
-pub type DescribeMultiplexProgramInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeMultiplexProgramInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeMultiplexProgramInput {
     /// Consumes the builder and constructs an Operation<[`DescribeMultiplexProgram`](crate::operation::DescribeMultiplexProgram)>
     #[allow(clippy::let_and_return)]
@@ -5344,7 +5306,7 @@ impl DescribeMultiplexProgramInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeMultiplexProgram,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5454,7 +5416,7 @@ impl DescribeMultiplexProgramInput {
             "DescribeMultiplexProgram",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5504,7 +5466,7 @@ pub mod describe_offering_input {
 #[doc(hidden)]
 pub type DescribeOfferingInputOperationOutputAlias = crate::operation::DescribeOffering;
 #[doc(hidden)]
-pub type DescribeOfferingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeOfferingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeOfferingInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOffering`](crate::operation::DescribeOffering)>
     #[allow(clippy::let_and_return)]
@@ -5515,7 +5477,7 @@ impl DescribeOfferingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeOffering,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5609,7 +5571,7 @@ impl DescribeOfferingInput {
             "DescribeOffering",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5662,7 +5624,7 @@ pub mod describe_reservation_input {
 #[doc(hidden)]
 pub type DescribeReservationInputOperationOutputAlias = crate::operation::DescribeReservation;
 #[doc(hidden)]
-pub type DescribeReservationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeReservationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReservationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReservation`](crate::operation::DescribeReservation)>
     #[allow(clippy::let_and_return)]
@@ -5673,7 +5635,7 @@ impl DescribeReservationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeReservation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5767,7 +5729,7 @@ impl DescribeReservationInput {
             "DescribeReservation",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5841,7 +5803,7 @@ pub mod describe_schedule_input {
 #[doc(hidden)]
 pub type DescribeScheduleInputOperationOutputAlias = crate::operation::DescribeSchedule;
 #[doc(hidden)]
-pub type DescribeScheduleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeScheduleInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSchedule`](crate::operation::DescribeSchedule)>
     #[allow(clippy::let_and_return)]
@@ -5852,7 +5814,7 @@ impl DescribeScheduleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSchedule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5963,7 +5925,7 @@ impl DescribeScheduleInput {
             "DescribeSchedule",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6025,7 +5987,7 @@ pub mod list_channels_input {
 #[doc(hidden)]
 pub type ListChannelsInputOperationOutputAlias = crate::operation::ListChannels;
 #[doc(hidden)]
-pub type ListChannelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListChannelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelsInput {
     /// Consumes the builder and constructs an Operation<[`ListChannels`](crate::operation::ListChannels)>
     #[allow(clippy::let_and_return)]
@@ -6036,7 +5998,7 @@ impl ListChannelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChannels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6127,7 +6089,7 @@ impl ListChannelsInput {
             "ListChannels",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6189,7 +6151,7 @@ pub mod list_input_devices_input {
 #[doc(hidden)]
 pub type ListInputDevicesInputOperationOutputAlias = crate::operation::ListInputDevices;
 #[doc(hidden)]
-pub type ListInputDevicesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListInputDevicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInputDevicesInput {
     /// Consumes the builder and constructs an Operation<[`ListInputDevices`](crate::operation::ListInputDevices)>
     #[allow(clippy::let_and_return)]
@@ -6200,7 +6162,7 @@ impl ListInputDevicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListInputDevices,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6291,7 +6253,7 @@ impl ListInputDevicesInput {
             "ListInputDevices",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6369,7 +6331,7 @@ pub mod list_input_device_transfers_input {
 pub type ListInputDeviceTransfersInputOperationOutputAlias =
     crate::operation::ListInputDeviceTransfers;
 #[doc(hidden)]
-pub type ListInputDeviceTransfersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListInputDeviceTransfersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInputDeviceTransfersInput {
     /// Consumes the builder and constructs an Operation<[`ListInputDeviceTransfers`](crate::operation::ListInputDeviceTransfers)>
     #[allow(clippy::let_and_return)]
@@ -6380,7 +6342,7 @@ impl ListInputDeviceTransfersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListInputDeviceTransfers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6477,7 +6439,7 @@ impl ListInputDeviceTransfersInput {
             "ListInputDeviceTransfers",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6539,7 +6501,7 @@ pub mod list_inputs_input {
 #[doc(hidden)]
 pub type ListInputsInputOperationOutputAlias = crate::operation::ListInputs;
 #[doc(hidden)]
-pub type ListInputsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListInputsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInputsInput {
     /// Consumes the builder and constructs an Operation<[`ListInputs`](crate::operation::ListInputs)>
     #[allow(clippy::let_and_return)]
@@ -6550,7 +6512,7 @@ impl ListInputsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListInputs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6641,7 +6603,7 @@ impl ListInputsInput {
             "ListInputs",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6704,7 +6666,7 @@ pub mod list_input_security_groups_input {
 pub type ListInputSecurityGroupsInputOperationOutputAlias =
     crate::operation::ListInputSecurityGroups;
 #[doc(hidden)]
-pub type ListInputSecurityGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListInputSecurityGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInputSecurityGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListInputSecurityGroups`](crate::operation::ListInputSecurityGroups)>
     #[allow(clippy::let_and_return)]
@@ -6715,7 +6677,7 @@ impl ListInputSecurityGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListInputSecurityGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6806,7 +6768,7 @@ impl ListInputSecurityGroupsInput {
             "ListInputSecurityGroups",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6868,7 +6830,7 @@ pub mod list_multiplexes_input {
 #[doc(hidden)]
 pub type ListMultiplexesInputOperationOutputAlias = crate::operation::ListMultiplexes;
 #[doc(hidden)]
-pub type ListMultiplexesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListMultiplexesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMultiplexesInput {
     /// Consumes the builder and constructs an Operation<[`ListMultiplexes`](crate::operation::ListMultiplexes)>
     #[allow(clippy::let_and_return)]
@@ -6879,7 +6841,7 @@ impl ListMultiplexesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMultiplexes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6970,7 +6932,7 @@ impl ListMultiplexesInput {
             "ListMultiplexes",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7044,7 +7006,7 @@ pub mod list_multiplex_programs_input {
 #[doc(hidden)]
 pub type ListMultiplexProgramsInputOperationOutputAlias = crate::operation::ListMultiplexPrograms;
 #[doc(hidden)]
-pub type ListMultiplexProgramsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListMultiplexProgramsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMultiplexProgramsInput {
     /// Consumes the builder and constructs an Operation<[`ListMultiplexPrograms`](crate::operation::ListMultiplexPrograms)>
     #[allow(clippy::let_and_return)]
@@ -7055,7 +7017,7 @@ impl ListMultiplexProgramsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMultiplexPrograms,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7166,7 +7128,7 @@ impl ListMultiplexProgramsInput {
             "ListMultiplexPrograms",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7369,7 +7331,7 @@ pub mod list_offerings_input {
 #[doc(hidden)]
 pub type ListOfferingsInputOperationOutputAlias = crate::operation::ListOfferings;
 #[doc(hidden)]
-pub type ListOfferingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListOfferingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListOfferingsInput {
     /// Consumes the builder and constructs an Operation<[`ListOfferings`](crate::operation::ListOfferings)>
     #[allow(clippy::let_and_return)]
@@ -7380,7 +7342,7 @@ impl ListOfferingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListOfferings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7522,7 +7484,7 @@ impl ListOfferingsInput {
             "ListOfferings",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7698,7 +7660,7 @@ pub mod list_reservations_input {
 #[doc(hidden)]
 pub type ListReservationsInputOperationOutputAlias = crate::operation::ListReservations;
 #[doc(hidden)]
-pub type ListReservationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListReservationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListReservationsInput {
     /// Consumes the builder and constructs an Operation<[`ListReservations`](crate::operation::ListReservations)>
     #[allow(clippy::let_and_return)]
@@ -7709,7 +7671,7 @@ impl ListReservationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListReservations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7842,7 +7804,7 @@ impl ListReservationsInput {
             "ListReservations",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7892,7 +7854,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -7903,7 +7865,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7997,7 +7959,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8124,7 +8086,7 @@ pub mod purchase_offering_input {
 #[doc(hidden)]
 pub type PurchaseOfferingInputOperationOutputAlias = crate::operation::PurchaseOffering;
 #[doc(hidden)]
-pub type PurchaseOfferingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PurchaseOfferingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PurchaseOfferingInput {
     /// Consumes the builder and constructs an Operation<[`PurchaseOffering`](crate::operation::PurchaseOffering)>
     #[allow(clippy::let_and_return)]
@@ -8135,7 +8097,7 @@ impl PurchaseOfferingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PurchaseOffering,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8238,7 +8200,7 @@ impl PurchaseOfferingInput {
             "PurchaseOffering",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8300,7 +8262,7 @@ pub mod reject_input_device_transfer_input {
 pub type RejectInputDeviceTransferInputOperationOutputAlias =
     crate::operation::RejectInputDeviceTransfer;
 #[doc(hidden)]
-pub type RejectInputDeviceTransferInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RejectInputDeviceTransferInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RejectInputDeviceTransferInput {
     /// Consumes the builder and constructs an Operation<[`RejectInputDeviceTransfer`](crate::operation::RejectInputDeviceTransfer)>
     #[allow(clippy::let_and_return)]
@@ -8311,7 +8273,7 @@ impl RejectInputDeviceTransferInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RejectInputDeviceTransfer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8405,7 +8367,7 @@ impl RejectInputDeviceTransferInput {
             "RejectInputDeviceTransfer",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8455,7 +8417,7 @@ pub mod start_channel_input {
 #[doc(hidden)]
 pub type StartChannelInputOperationOutputAlias = crate::operation::StartChannel;
 #[doc(hidden)]
-pub type StartChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartChannelInput {
     /// Consumes the builder and constructs an Operation<[`StartChannel`](crate::operation::StartChannel)>
     #[allow(clippy::let_and_return)]
@@ -8466,7 +8428,7 @@ impl StartChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8560,7 +8522,7 @@ impl StartChannelInput {
             "StartChannel",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8610,7 +8572,7 @@ pub mod start_multiplex_input {
 #[doc(hidden)]
 pub type StartMultiplexInputOperationOutputAlias = crate::operation::StartMultiplex;
 #[doc(hidden)]
-pub type StartMultiplexInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartMultiplexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartMultiplexInput {
     /// Consumes the builder and constructs an Operation<[`StartMultiplex`](crate::operation::StartMultiplex)>
     #[allow(clippy::let_and_return)]
@@ -8621,7 +8583,7 @@ impl StartMultiplexInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartMultiplex,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8715,7 +8677,7 @@ impl StartMultiplexInput {
             "StartMultiplex",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8765,7 +8727,7 @@ pub mod stop_channel_input {
 #[doc(hidden)]
 pub type StopChannelInputOperationOutputAlias = crate::operation::StopChannel;
 #[doc(hidden)]
-pub type StopChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopChannelInput {
     /// Consumes the builder and constructs an Operation<[`StopChannel`](crate::operation::StopChannel)>
     #[allow(clippy::let_and_return)]
@@ -8776,7 +8738,7 @@ impl StopChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8870,7 +8832,7 @@ impl StopChannelInput {
             "StopChannel",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8920,7 +8882,7 @@ pub mod stop_multiplex_input {
 #[doc(hidden)]
 pub type StopMultiplexInputOperationOutputAlias = crate::operation::StopMultiplex;
 #[doc(hidden)]
-pub type StopMultiplexInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopMultiplexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopMultiplexInput {
     /// Consumes the builder and constructs an Operation<[`StopMultiplex`](crate::operation::StopMultiplex)>
     #[allow(clippy::let_and_return)]
@@ -8931,7 +8893,7 @@ impl StopMultiplexInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopMultiplex,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9025,7 +8987,7 @@ impl StopMultiplexInput {
             "StopMultiplex",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9123,7 +9085,7 @@ pub mod transfer_input_device_input {
 #[doc(hidden)]
 pub type TransferInputDeviceInputOperationOutputAlias = crate::operation::TransferInputDevice;
 #[doc(hidden)]
-pub type TransferInputDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TransferInputDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TransferInputDeviceInput {
     /// Consumes the builder and constructs an Operation<[`TransferInputDevice`](crate::operation::TransferInputDevice)>
     #[allow(clippy::let_and_return)]
@@ -9134,7 +9096,7 @@ impl TransferInputDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TransferInputDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9234,7 +9196,7 @@ impl TransferInputDeviceInput {
             "TransferInputDevice",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9308,9 +9270,9 @@ pub mod update_channel_input {
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
         /// A list of output destinations for this channel.
-        pub fn destinations(mut self, input: impl Into<crate::model::OutputDestination>) -> Self {
+        pub fn destinations(mut self, input: crate::model::OutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -9340,12 +9302,9 @@ pub mod update_channel_input {
         /// To override the contents of this collection use [`set_input_attachments`](Self::set_input_attachments).
         ///
         /// Placeholder documentation for __listOfInputAttachment
-        pub fn input_attachments(
-            mut self,
-            input: impl Into<crate::model::InputAttachment>,
-        ) -> Self {
+        pub fn input_attachments(mut self, input: crate::model::InputAttachment) -> Self {
             let mut v = self.input_attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_attachments = Some(v);
             self
         }
@@ -9424,7 +9383,7 @@ pub mod update_channel_input {
 #[doc(hidden)]
 pub type UpdateChannelInputOperationOutputAlias = crate::operation::UpdateChannel;
 #[doc(hidden)]
-pub type UpdateChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateChannelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateChannel`](crate::operation::UpdateChannel)>
     #[allow(clippy::let_and_return)]
@@ -9435,7 +9394,7 @@ impl UpdateChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9530,7 +9489,7 @@ impl UpdateChannelInput {
             "UpdateChannel",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9593,9 +9552,9 @@ pub mod update_channel_class_input {
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
         /// A list of output destinations for this channel.
-        pub fn destinations(mut self, input: impl Into<crate::model::OutputDestination>) -> Self {
+        pub fn destinations(mut self, input: crate::model::OutputDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -9625,7 +9584,7 @@ pub mod update_channel_class_input {
 #[doc(hidden)]
 pub type UpdateChannelClassInputOperationOutputAlias = crate::operation::UpdateChannelClass;
 #[doc(hidden)]
-pub type UpdateChannelClassInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateChannelClassInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateChannelClassInput {
     /// Consumes the builder and constructs an Operation<[`UpdateChannelClass`](crate::operation::UpdateChannelClass)>
     #[allow(clippy::let_and_return)]
@@ -9636,7 +9595,7 @@ impl UpdateChannelClassInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateChannelClass,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9736,7 +9695,7 @@ impl UpdateChannelClassInput {
             "UpdateChannelClass",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9783,12 +9742,9 @@ pub mod update_input_input {
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
         /// Destination settings for PUSH type inputs.
-        pub fn destinations(
-            mut self,
-            input: impl Into<crate::model::InputDestinationRequest>,
-        ) -> Self {
+        pub fn destinations(mut self, input: crate::model::InputDestinationRequest) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -9805,9 +9761,9 @@ pub mod update_input_input {
         /// To override the contents of this collection use [`set_input_devices`](Self::set_input_devices).
         ///
         /// Settings for the devices.
-        pub fn input_devices(mut self, input: impl Into<crate::model::InputDeviceRequest>) -> Self {
+        pub fn input_devices(mut self, input: crate::model::InputDeviceRequest) -> Self {
             let mut v = self.input_devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_devices = Some(v);
             self
         }
@@ -9852,21 +9808,14 @@ pub mod update_input_input {
         ///
         /// To override the contents of this collection use [`set_media_connect_flows`](Self::set_media_connect_flows).
         ///
-        /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one
-        /// Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a
-        /// separate Availability Zone as this ensures your EML input is redundant to AZ issues.
-        pub fn media_connect_flows(
-            mut self,
-            input: impl Into<crate::model::MediaConnectFlowRequest>,
-        ) -> Self {
+        /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
+        pub fn media_connect_flows(mut self, input: crate::model::MediaConnectFlowRequest) -> Self {
             let mut v = self.media_connect_flows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_connect_flows = Some(v);
             self
         }
-        /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one
-        /// Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a
-        /// separate Availability Zone as this ensures your EML input is redundant to AZ issues.
+        /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
         pub fn set_media_connect_flows(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MediaConnectFlowRequest>>,
@@ -9898,18 +9847,14 @@ pub mod update_input_input {
         ///
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
-        /// The source URLs for a PULL-type input. Every PULL type input needs
-        /// exactly two source URLs for redundancy.
-        /// Only specify sources for PULL type Inputs. Leave Destinations empty.
-        pub fn sources(mut self, input: impl Into<crate::model::InputSourceRequest>) -> Self {
+        /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
+        pub fn sources(mut self, input: crate::model::InputSourceRequest) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
-        /// The source URLs for a PULL-type input. Every PULL type input needs
-        /// exactly two source URLs for redundancy.
-        /// Only specify sources for PULL type Inputs. Leave Destinations empty.
+        /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
         pub fn set_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputSourceRequest>>,
@@ -9940,7 +9885,7 @@ pub mod update_input_input {
 #[doc(hidden)]
 pub type UpdateInputInputOperationOutputAlias = crate::operation::UpdateInput;
 #[doc(hidden)]
-pub type UpdateInputInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateInputInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateInputInput {
     /// Consumes the builder and constructs an Operation<[`UpdateInput`](crate::operation::UpdateInput)>
     #[allow(clippy::let_and_return)]
@@ -9951,7 +9896,7 @@ impl UpdateInputInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateInput,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10046,7 +9991,7 @@ impl UpdateInputInput {
             "UpdateInput",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10157,7 +10102,7 @@ pub mod update_input_device_input {
 #[doc(hidden)]
 pub type UpdateInputDeviceInputOperationOutputAlias = crate::operation::UpdateInputDevice;
 #[doc(hidden)]
-pub type UpdateInputDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateInputDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateInputDeviceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateInputDevice`](crate::operation::UpdateInputDevice)>
     #[allow(clippy::let_and_return)]
@@ -10168,7 +10113,7 @@ impl UpdateInputDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateInputDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10268,7 +10213,7 @@ impl UpdateInputDeviceInput {
             "UpdateInputDevice",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10348,12 +10293,9 @@ pub mod update_input_security_group_input {
         /// To override the contents of this collection use [`set_whitelist_rules`](Self::set_whitelist_rules).
         ///
         /// List of IPv4 CIDR addresses to whitelist
-        pub fn whitelist_rules(
-            mut self,
-            input: impl Into<crate::model::InputWhitelistRuleCidr>,
-        ) -> Self {
+        pub fn whitelist_rules(mut self, input: crate::model::InputWhitelistRuleCidr) -> Self {
             let mut v = self.whitelist_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.whitelist_rules = Some(v);
             self
         }
@@ -10384,7 +10326,7 @@ pub mod update_input_security_group_input {
 pub type UpdateInputSecurityGroupInputOperationOutputAlias =
     crate::operation::UpdateInputSecurityGroup;
 #[doc(hidden)]
-pub type UpdateInputSecurityGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateInputSecurityGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateInputSecurityGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateInputSecurityGroup`](crate::operation::UpdateInputSecurityGroup)>
     #[allow(clippy::let_and_return)]
@@ -10395,7 +10337,7 @@ impl UpdateInputSecurityGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateInputSecurityGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10497,7 +10439,7 @@ impl UpdateInputSecurityGroupInput {
             "UpdateInputSecurityGroup",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10582,7 +10524,7 @@ pub mod update_multiplex_input {
 #[doc(hidden)]
 pub type UpdateMultiplexInputOperationOutputAlias = crate::operation::UpdateMultiplex;
 #[doc(hidden)]
-pub type UpdateMultiplexInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateMultiplexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateMultiplexInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMultiplex`](crate::operation::UpdateMultiplex)>
     #[allow(clippy::let_and_return)]
@@ -10593,7 +10535,7 @@ impl UpdateMultiplexInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateMultiplex,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10693,7 +10635,7 @@ impl UpdateMultiplexInput {
             "UpdateMultiplex",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10782,7 +10724,7 @@ pub mod update_multiplex_program_input {
 #[doc(hidden)]
 pub type UpdateMultiplexProgramInputOperationOutputAlias = crate::operation::UpdateMultiplexProgram;
 #[doc(hidden)]
-pub type UpdateMultiplexProgramInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateMultiplexProgramInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateMultiplexProgramInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMultiplexProgram`](crate::operation::UpdateMultiplexProgram)>
     #[allow(clippy::let_and_return)]
@@ -10793,7 +10735,7 @@ impl UpdateMultiplexProgramInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateMultiplexProgram,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10911,7 +10853,7 @@ impl UpdateMultiplexProgramInput {
             "UpdateMultiplexProgram",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10984,7 +10926,7 @@ pub mod update_reservation_input {
 #[doc(hidden)]
 pub type UpdateReservationInputOperationOutputAlias = crate::operation::UpdateReservation;
 #[doc(hidden)]
-pub type UpdateReservationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateReservationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateReservationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateReservation`](crate::operation::UpdateReservation)>
     #[allow(clippy::let_and_return)]
@@ -10995,7 +10937,7 @@ impl UpdateReservationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateReservation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11095,7 +11037,7 @@ impl UpdateReservationInput {
             "UpdateReservation",
             "medialive",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11318,18 +11260,14 @@ pub struct UpdateInputInput {
     pub input_id: std::option::Option<std::string::String>,
     /// A list of security groups referenced by IDs to attach to the input.
     pub input_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one
-    /// Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a
-    /// separate Availability Zone as this ensures your EML input is redundant to AZ issues.
+    /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
     pub media_connect_flows:
         std::option::Option<std::vec::Vec<crate::model::MediaConnectFlowRequest>>,
     /// Name of the input.
     pub name: std::option::Option<std::string::String>,
     /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
     pub role_arn: std::option::Option<std::string::String>,
-    /// The source URLs for a PULL-type input. Every PULL type input needs
-    /// exactly two source URLs for redundancy.
-    /// Only specify sources for PULL type Inputs. Leave Destinations empty.
+    /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
     pub sources: std::option::Option<std::vec::Vec<crate::model::InputSourceRequest>>,
 }
 impl UpdateInputInput {
@@ -11349,9 +11287,7 @@ impl UpdateInputInput {
     pub fn input_security_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.input_security_groups.as_deref()
     }
-    /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one
-    /// Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a
-    /// separate Availability Zone as this ensures your EML input is redundant to AZ issues.
+    /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
     pub fn media_connect_flows(
         &self,
     ) -> std::option::Option<&[crate::model::MediaConnectFlowRequest]> {
@@ -11365,9 +11301,7 @@ impl UpdateInputInput {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// The source URLs for a PULL-type input. Every PULL type input needs
-    /// exactly two source URLs for redundancy.
-    /// Only specify sources for PULL type Inputs. Leave Destinations empty.
+    /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
     pub fn sources(&self) -> std::option::Option<&[crate::model::InputSourceRequest]> {
         self.sources.as_deref()
     }
@@ -12579,8 +12513,7 @@ impl std::fmt::Debug for CreateTagsInput {
 pub struct CreatePartnerInputInput {
     /// Unique ID of the input.
     pub input_id: std::option::Option<std::string::String>,
-    /// Unique identifier of the request to ensure the request is handled
-    /// exactly once in case of retries.
+    /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
     pub request_id: std::option::Option<std::string::String>,
     /// A collection of key-value pairs.
     pub tags:
@@ -12591,8 +12524,7 @@ impl CreatePartnerInputInput {
     pub fn input_id(&self) -> std::option::Option<&str> {
         self.input_id.as_deref()
     }
-    /// Unique identifier of the request to ensure the request is handled
-    /// exactly once in case of retries.
+    /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -12624,8 +12556,7 @@ pub struct CreateMultiplexProgramInput {
     pub multiplex_program_settings: std::option::Option<crate::model::MultiplexProgramSettings>,
     /// Name of multiplex program.
     pub program_name: std::option::Option<std::string::String>,
-    /// Unique request ID. This prevents retries from creating multiple
-    /// resources.
+    /// Unique request ID. This prevents retries from creating multiple resources.
     pub request_id: std::option::Option<std::string::String>,
 }
 impl CreateMultiplexProgramInput {
@@ -12643,8 +12574,7 @@ impl CreateMultiplexProgramInput {
     pub fn program_name(&self) -> std::option::Option<&str> {
         self.program_name.as_deref()
     }
-    /// Unique request ID. This prevents retries from creating multiple
-    /// resources.
+    /// Unique request ID. This prevents retries from creating multiple resources.
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -12673,8 +12603,7 @@ pub struct CreateMultiplexInput {
     pub multiplex_settings: std::option::Option<crate::model::MultiplexSettings>,
     /// Name of multiplex.
     pub name: std::option::Option<std::string::String>,
-    /// Unique request ID. This prevents retries from creating multiple
-    /// resources.
+    /// Unique request ID. This prevents retries from creating multiple resources.
     pub request_id: std::option::Option<std::string::String>,
     /// A collection of key-value pairs.
     pub tags:
@@ -12693,8 +12622,7 @@ impl CreateMultiplexInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// Unique request ID. This prevents retries from creating multiple
-    /// resources.
+    /// Unique request ID. This prevents retries from creating multiple resources.
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -12760,31 +12688,23 @@ pub struct CreateInputInput {
     pub input_devices: std::option::Option<std::vec::Vec<crate::model::InputDeviceSettings>>,
     /// A list of security groups referenced by IDs to attach to the input.
     pub input_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one
-    /// Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a
-    /// separate Availability Zone as this ensures your EML input is redundant to AZ issues.
+    /// A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
     pub media_connect_flows:
         std::option::Option<std::vec::Vec<crate::model::MediaConnectFlowRequest>>,
     /// Name of the input.
     pub name: std::option::Option<std::string::String>,
-    /// Unique identifier of the request to ensure the request is handled
-    /// exactly once in case of retries.
+    /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
     pub request_id: std::option::Option<std::string::String>,
     /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
     pub role_arn: std::option::Option<std::string::String>,
-    /// The source URLs for a PULL-type input. Every PULL type input needs
-    /// exactly two source URLs for redundancy.
-    /// Only specify sources for PULL type Inputs. Leave Destinations empty.
+    /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
     pub sources: std::option::Option<std::vec::Vec<crate::model::InputSourceRequest>>,
     /// A collection of key-value pairs.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// The different types of inputs that AWS Elemental MediaLive supports.
     pub r#type: std::option::Option<crate::model::InputType>,
-    /// Settings for a private VPC Input.
-    /// When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses.
-    /// This property requires setting the roleArn property on Input creation.
-    /// Not compatible with the inputSecurityGroups property.
+    /// Settings for a private VPC Input. When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses. This property requires setting the roleArn property on Input creation. Not compatible with the inputSecurityGroups property.
     pub vpc: std::option::Option<crate::model::InputVpcRequest>,
 }
 impl CreateInputInput {
@@ -12800,9 +12720,7 @@ impl CreateInputInput {
     pub fn input_security_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.input_security_groups.as_deref()
     }
-    /// A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one
-    /// Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a
-    /// separate Availability Zone as this ensures your EML input is redundant to AZ issues.
+    /// A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
     pub fn media_connect_flows(
         &self,
     ) -> std::option::Option<&[crate::model::MediaConnectFlowRequest]> {
@@ -12812,8 +12730,7 @@ impl CreateInputInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// Unique identifier of the request to ensure the request is handled
-    /// exactly once in case of retries.
+    /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -12821,9 +12738,7 @@ impl CreateInputInput {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// The source URLs for a PULL-type input. Every PULL type input needs
-    /// exactly two source URLs for redundancy.
-    /// Only specify sources for PULL type Inputs. Leave Destinations empty.
+    /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
     pub fn sources(&self) -> std::option::Option<&[crate::model::InputSourceRequest]> {
         self.sources.as_deref()
     }
@@ -12838,10 +12753,7 @@ impl CreateInputInput {
     pub fn r#type(&self) -> std::option::Option<&crate::model::InputType> {
         self.r#type.as_ref()
     }
-    /// Settings for a private VPC Input.
-    /// When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses.
-    /// This property requires setting the roleArn property on Input creation.
-    /// Not compatible with the inputSecurityGroups property.
+    /// Settings for a private VPC Input. When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses. This property requires setting the roleArn property on Input creation. Not compatible with the inputSecurityGroups property.
     pub fn vpc(&self) -> std::option::Option<&crate::model::InputVpcRequest> {
         self.vpc.as_ref()
     }
@@ -12884,8 +12796,7 @@ pub struct CreateChannelInput {
     pub log_level: std::option::Option<crate::model::LogLevel>,
     /// Name of channel.
     pub name: std::option::Option<std::string::String>,
-    /// Unique request ID to be specified. This is needed to prevent retries from
-    /// creating multiple resources.
+    /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
     pub request_id: std::option::Option<std::string::String>,
     /// Deprecated field that's only usable by whitelisted customers.
     pub reserved: std::option::Option<std::string::String>,
@@ -12932,8 +12843,7 @@ impl CreateChannelInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// Unique request ID to be specified. This is needed to prevent retries from
-    /// creating multiple resources.
+    /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }

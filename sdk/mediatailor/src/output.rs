@@ -119,10 +119,10 @@ pub mod update_vod_source_output {
         /// <p>The HTTP package configurations.</p>
         pub fn http_package_configurations(
             mut self,
-            input: impl Into<crate::model::HttpPackageConfiguration>,
+            input: crate::model::HttpPackageConfiguration,
         ) -> Self {
             let mut v = self.http_package_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.http_package_configurations = Some(v);
             self
         }
@@ -631,9 +631,9 @@ pub mod update_channel_output {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>The channel's output properties.</p>
-        pub fn outputs(mut self, input: impl Into<crate::model::ResponseOutputItem>) -> Self {
+        pub fn outputs(mut self, input: crate::model::ResponseOutputItem) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -1097,10 +1097,10 @@ pub mod put_playback_configuration_output {
         pub fn configuration_aliases(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            v: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
             let mut hash_map = self.configuration_aliases.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.configuration_aliases = Some(hash_map);
             self
         }
@@ -1421,9 +1421,9 @@ pub mod list_vod_sources_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>Lists the VOD sources.</p>
-        pub fn items(mut self, input: impl Into<crate::model::VodSource>) -> Self {
+        pub fn items(mut self, input: crate::model::VodSource) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -1576,9 +1576,9 @@ pub mod list_source_locations_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>An array of source locations.</p>
-        pub fn items(mut self, input: impl Into<crate::model::SourceLocation>) -> Self {
+        pub fn items(mut self, input: crate::model::SourceLocation) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -1658,9 +1658,9 @@ pub mod list_prefetch_schedules_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>Lists the prefetch schedules. An empty Items list doesn't mean there aren't more items to fetch, just that that page was empty.</p>
-        pub fn items(mut self, input: impl Into<crate::model::PrefetchSchedule>) -> Self {
+        pub fn items(mut self, input: crate::model::PrefetchSchedule) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -1740,9 +1740,9 @@ pub mod list_playback_configurations_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>Array of playback configurations. This might be all the available configurations or a subset, depending on the settings that you provide and the total number of configurations stored.</p>
-        pub fn items(mut self, input: impl Into<crate::model::PlaybackConfiguration>) -> Self {
+        pub fn items(mut self, input: crate::model::PlaybackConfiguration) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -1822,9 +1822,9 @@ pub mod list_channels_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>An array of channels that are associated with this account.</p>
-        pub fn items(mut self, input: impl Into<crate::model::Channel>) -> Self {
+        pub fn items(mut self, input: crate::model::Channel) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -1904,9 +1904,9 @@ pub mod list_alerts_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>An array of alerts that are associated with this resource.</p>
-        pub fn items(mut self, input: impl Into<crate::model::Alert>) -> Self {
+        pub fn items(mut self, input: crate::model::Alert) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -2379,10 +2379,10 @@ pub mod get_playback_configuration_output {
         pub fn configuration_aliases(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            v: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
             let mut hash_map = self.configuration_aliases.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.configuration_aliases = Some(hash_map);
             self
         }
@@ -2673,9 +2673,9 @@ pub mod get_channel_schedule_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>An array of schedule entries for the channel.</p>
-        pub fn items(mut self, input: impl Into<crate::model::ScheduleEntry>) -> Self {
+        pub fn items(mut self, input: crate::model::ScheduleEntry) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -2887,10 +2887,10 @@ pub mod describe_vod_source_output {
         /// <p>The HTTP package configurations.</p>
         pub fn http_package_configurations(
             mut self,
-            input: impl Into<crate::model::HttpPackageConfiguration>,
+            input: crate::model::HttpPackageConfiguration,
         ) -> Self {
             let mut v = self.http_package_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.http_package_configurations = Some(v);
             self
         }
@@ -3313,9 +3313,9 @@ pub mod describe_program_output {
         /// To override the contents of this collection use [`set_ad_breaks`](Self::set_ad_breaks).
         ///
         /// <p>The ad break configuration settings.</p>
-        pub fn ad_breaks(mut self, input: impl Into<crate::model::AdBreak>) -> Self {
+        pub fn ad_breaks(mut self, input: crate::model::AdBreak) -> Self {
             let mut v = self.ad_breaks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ad_breaks = Some(v);
             self
         }
@@ -3607,9 +3607,9 @@ pub mod describe_channel_output {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>The channel's output properties.</p>
-        pub fn outputs(mut self, input: impl Into<crate::model::ResponseOutputItem>) -> Self {
+        pub fn outputs(mut self, input: crate::model::ResponseOutputItem) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -4012,10 +4012,10 @@ pub mod create_vod_source_output {
         /// <p>The HTTP package configurations.</p>
         pub fn http_package_configurations(
             mut self,
-            input: impl Into<crate::model::HttpPackageConfiguration>,
+            input: crate::model::HttpPackageConfiguration,
         ) -> Self {
             let mut v = self.http_package_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.http_package_configurations = Some(v);
             self
         }
@@ -4438,9 +4438,9 @@ pub mod create_program_output {
         /// To override the contents of this collection use [`set_ad_breaks`](Self::set_ad_breaks).
         ///
         /// <p>The ad break configuration settings.</p>
-        pub fn ad_breaks(mut self, input: impl Into<crate::model::AdBreak>) -> Self {
+        pub fn ad_breaks(mut self, input: crate::model::AdBreak) -> Self {
             let mut v = self.ad_breaks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ad_breaks = Some(v);
             self
         }
@@ -4896,9 +4896,9 @@ pub mod create_channel_output {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>The channel's output properties.</p>
-        pub fn outputs(mut self, input: impl Into<crate::model::ResponseOutputItem>) -> Self {
+        pub fn outputs(mut self, input: crate::model::ResponseOutputItem) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }

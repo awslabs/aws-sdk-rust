@@ -7,8 +7,7 @@ pub enum Error {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request conflicts with an existing resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>A limit has exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),

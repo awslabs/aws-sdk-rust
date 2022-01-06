@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Single Sign-On Admin
@@ -214,6 +214,7 @@ where
     ///
     /// See [`ListAccountAssignmentCreationStatus`](crate::client::fluent_builders::ListAccountAssignmentCreationStatus) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAccountAssignmentCreationStatus::into_paginator).
     pub fn list_account_assignment_creation_status(
         &self,
     ) -> fluent_builders::ListAccountAssignmentCreationStatus<C, M, R> {
@@ -223,6 +224,7 @@ where
     ///
     /// See [`ListAccountAssignmentDeletionStatus`](crate::client::fluent_builders::ListAccountAssignmentDeletionStatus) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAccountAssignmentDeletionStatus::into_paginator).
     pub fn list_account_assignment_deletion_status(
         &self,
     ) -> fluent_builders::ListAccountAssignmentDeletionStatus<C, M, R> {
@@ -232,6 +234,7 @@ where
     ///
     /// See [`ListAccountAssignments`](crate::client::fluent_builders::ListAccountAssignments) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAccountAssignments::into_paginator).
     pub fn list_account_assignments(&self) -> fluent_builders::ListAccountAssignments<C, M, R> {
         fluent_builders::ListAccountAssignments::new(self.handle.clone())
     }
@@ -239,6 +242,7 @@ where
     ///
     /// See [`ListAccountsForProvisionedPermissionSet`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet::into_paginator).
     pub fn list_accounts_for_provisioned_permission_set(
         &self,
     ) -> fluent_builders::ListAccountsForProvisionedPermissionSet<C, M, R> {
@@ -248,6 +252,7 @@ where
     ///
     /// See [`ListInstances`](crate::client::fluent_builders::ListInstances) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInstances::into_paginator).
     pub fn list_instances(&self) -> fluent_builders::ListInstances<C, M, R> {
         fluent_builders::ListInstances::new(self.handle.clone())
     }
@@ -255,6 +260,7 @@ where
     ///
     /// See [`ListManagedPoliciesInPermissionSet`](crate::client::fluent_builders::ListManagedPoliciesInPermissionSet) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListManagedPoliciesInPermissionSet::into_paginator).
     pub fn list_managed_policies_in_permission_set(
         &self,
     ) -> fluent_builders::ListManagedPoliciesInPermissionSet<C, M, R> {
@@ -264,6 +270,7 @@ where
     ///
     /// See [`ListPermissionSetProvisioningStatus`](crate::client::fluent_builders::ListPermissionSetProvisioningStatus) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPermissionSetProvisioningStatus::into_paginator).
     pub fn list_permission_set_provisioning_status(
         &self,
     ) -> fluent_builders::ListPermissionSetProvisioningStatus<C, M, R> {
@@ -273,6 +280,7 @@ where
     ///
     /// See [`ListPermissionSets`](crate::client::fluent_builders::ListPermissionSets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPermissionSets::into_paginator).
     pub fn list_permission_sets(&self) -> fluent_builders::ListPermissionSets<C, M, R> {
         fluent_builders::ListPermissionSets::new(self.handle.clone())
     }
@@ -280,6 +288,7 @@ where
     ///
     /// See [`ListPermissionSetsProvisionedToAccount`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount::into_paginator).
     pub fn list_permission_sets_provisioned_to_account(
         &self,
     ) -> fluent_builders::ListPermissionSetsProvisionedToAccount<C, M, R> {
@@ -289,6 +298,7 @@ where
     ///
     /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
@@ -349,16 +359,10 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AttachManagedPolicyToPermissionSet`.
     ///
-    /// <p>Attaches an IAM managed policy ARN to a permission set.</p>
-    /// <note>
-    /// <p>If the permission set is already referenced by one or more account assignments, you will
-    /// need to call <code>
-    /// <a>ProvisionPermissionSet</a>
-    /// </code> after this operation.
-    /// Calling <code>ProvisionPermissionSet</code> applies the corresponding IAM policy updates to
-    /// all assigned accounts.</p>
+    /// <p>Attaches an IAM managed policy ARN to a permission set.</p> <note>
+    /// <p>If the permission set is already referenced by one or more account assignments, you will need to call <code> <code>ProvisionPermissionSet</code> </code> after this operation. Calling <code>ProvisionPermissionSet</code> applies the corresponding IAM policy updates to all assigned accounts.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachManagedPolicyToPermissionSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -405,10 +409,10 @@ pub mod fluent_builders {
                 crate::input::AttachManagedPolicyToPermissionSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -416,26 +420,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
-        /// <p>The ARN of the <a>PermissionSet</a> that the managed policy should be attached
-        /// to.</p>
-        pub fn permission_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_set_arn(inp);
+        /// <p>The ARN of the <code>PermissionSet</code> that the managed policy should be attached to.</p>
+        pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(input.into());
             self
         }
-        /// <p>The ARN of the <a>PermissionSet</a> that the managed policy should be attached
-        /// to.</p>
+        /// <p>The ARN of the <code>PermissionSet</code> that the managed policy should be attached to.</p>
         pub fn set_permission_set_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -444,8 +444,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IAM managed policy ARN to be attached to a permission set.</p>
-        pub fn managed_policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.managed_policy_arn(inp);
+        pub fn managed_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.managed_policy_arn(input.into());
             self
         }
         /// <p>The IAM managed policy ARN to be attached to a permission set.</p>
@@ -459,22 +459,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAccountAssignment`.
     ///
-    /// <p>Assigns access to a principal for a specified Amazon Web Services account using a specified permission
-    /// set.</p>
-    /// <note>
-    /// <p>The term <i>principal</i> here refers to a user or group that is defined
-    /// in Amazon Web Services SSO.</p>
+    /// <p>Assigns access to a principal for a specified Amazon Web Services account using a specified permission set.</p> <note>
+    /// <p>The term <i>principal</i> here refers to a user or group that is defined in Amazon Web Services SSO.</p>
+    /// </note> <note>
+    /// <p>As part of a successful <code>CreateAccountAssignment</code> call, the specified permission set will automatically be provisioned to the account in the form of an IAM policy. That policy is attached to the SSO-created IAM role. If the permission set is subsequently updated, the corresponding IAM policies attached to roles in your accounts will not be updated automatically. In this case, you must call <code> <code>ProvisionPermissionSet</code> </code> to make these updates.</p>
     /// </note>
-    /// <note>
-    /// <p>As part of a successful <code>CreateAccountAssignment</code> call, the specified
-    /// permission set will automatically be provisioned to the account in the form of an IAM
-    /// policy. That policy is attached to the SSO-created IAM role. If the permission set is
-    /// subsequently updated, the corresponding IAM policies attached to roles in your accounts will
-    /// not be updated automatically. In this case, you must call <code>
-    /// <a>ProvisionPermissionSet</a>
-    /// </code> to make these updates.</p>
-    /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAccountAssignment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -519,10 +509,10 @@ pub mod fluent_builders {
                 crate::input::CreateAccountAssignmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -530,21 +520,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
         /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
-        pub fn target_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_id(inp);
+        pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_id(input.into());
             self
         }
         /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
@@ -553,8 +541,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The entity type for which the assignment will be created.</p>
-        pub fn target_type(mut self, inp: crate::model::TargetType) -> Self {
-            self.inner = self.inner.target_type(inp);
+        pub fn target_type(mut self, input: crate::model::TargetType) -> Self {
+            self.inner = self.inner.target_type(input);
             self
         }
         /// <p>The entity type for which the assignment will be created.</p>
@@ -565,14 +553,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target_type(input);
             self
         }
-        /// <p>The ARN of the permission set that the admin wants to grant the principal access
-        /// to.</p>
-        pub fn permission_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_set_arn(inp);
+        /// <p>The ARN of the permission set that the admin wants to grant the principal access to.</p>
+        pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(input.into());
             self
         }
-        /// <p>The ARN of the permission set that the admin wants to grant the principal access
-        /// to.</p>
+        /// <p>The ARN of the permission set that the admin wants to grant the principal access to.</p>
         pub fn set_permission_set_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -581,8 +567,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The entity type for which the assignment will be created.</p>
-        pub fn principal_type(mut self, inp: crate::model::PrincipalType) -> Self {
-            self.inner = self.inner.principal_type(inp);
+        pub fn principal_type(mut self, input: crate::model::PrincipalType) -> Self {
+            self.inner = self.inner.principal_type(input);
             self
         }
         /// <p>The entity type for which the assignment will be created.</p>
@@ -594,8 +580,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
-        pub fn principal_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal_id(inp);
+        pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal_id(input.into());
             self
         }
         /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
@@ -606,10 +592,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateInstanceAccessControlAttributeConfiguration`.
     ///
-    /// <p>Enables the attributes-based access control (ABAC) feature for the specified Amazon Web Services SSO
-    /// instance. You can also specify new attributes to add to your ABAC configuration during the
-    /// enabling process. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>Amazon Web Services SSO User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Enables the attributes-based access control (ABAC) feature for the specified Amazon Web Services SSO instance. You can also specify new attributes to add to your ABAC configuration during the enabling process. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>Amazon Web Services SSO User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInstanceAccessControlAttributeConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -647,10 +631,10 @@ pub mod fluent_builders {
                                     crate::error::CreateInstanceAccessControlAttributeConfigurationError,
                                     crate::input::CreateInstanceAccessControlAttributeConfigurationInputOperationRetryAlias>,
                                 {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -659,8 +643,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed.</p>
@@ -668,27 +652,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
-        /// <p>Specifies the Amazon Web Services SSO identity store attributes to add to your ABAC configuration.
-        /// When using an external identity provider as an identity source, you can pass attributes
-        /// through the SAML assertion. Doing so provides an alternative to configuring attributes from
-        /// the Amazon Web Services SSO identity store. If a SAML assertion passes any of these attributes, Amazon Web Services
-        /// SSO will replace the attribute value with the value from the Amazon Web Services SSO identity
-        /// store.</p>
+        /// <p>Specifies the Amazon Web Services SSO identity store attributes to add to your ABAC configuration. When using an external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so provides an alternative to configuring attributes from the Amazon Web Services SSO identity store. If a SAML assertion passes any of these attributes, Amazon Web Services SSO will replace the attribute value with the value from the Amazon Web Services SSO identity store.</p>
         pub fn instance_access_control_attribute_configuration(
             mut self,
-            inp: crate::model::InstanceAccessControlAttributeConfiguration,
+            input: crate::model::InstanceAccessControlAttributeConfiguration,
         ) -> Self {
             self.inner = self
                 .inner
-                .instance_access_control_attribute_configuration(inp);
+                .instance_access_control_attribute_configuration(input);
             self
         }
-        /// <p>Specifies the Amazon Web Services SSO identity store attributes to add to your ABAC configuration.
-        /// When using an external identity provider as an identity source, you can pass attributes
-        /// through the SAML assertion. Doing so provides an alternative to configuring attributes from
-        /// the Amazon Web Services SSO identity store. If a SAML assertion passes any of these attributes, Amazon Web Services
-        /// SSO will replace the attribute value with the value from the Amazon Web Services SSO identity
-        /// store.</p>
+        /// <p>Specifies the Amazon Web Services SSO identity store attributes to add to your ABAC configuration. When using an external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so provides an alternative to configuring attributes from the Amazon Web Services SSO identity store. If a SAML assertion passes any of these attributes, Amazon Web Services SSO will replace the attribute value with the value from the Amazon Web Services SSO identity store.</p>
         pub fn set_instance_access_control_attribute_configuration(
             mut self,
             input: std::option::Option<crate::model::InstanceAccessControlAttributeConfiguration>,
@@ -701,13 +675,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePermissionSet`.
     ///
-    /// <p>Creates a permission set within a specified SSO instance.</p>
-    /// <note>
-    /// <p>To grant users and groups access to Amazon Web Services account resources, use <code>
-    /// <a>CreateAccountAssignment</a>
-    /// </code>.</p>
+    /// <p>Creates a permission set within a specified SSO instance.</p> <note>
+    /// <p>To grant users and groups access to Amazon Web Services account resources, use <code> <code>CreateAccountAssignment</code> </code>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePermissionSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -752,10 +723,10 @@ pub mod fluent_builders {
                 crate::input::CreatePermissionSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -763,46 +734,42 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the <a>PermissionSet</a>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name of the <code>PermissionSet</code>.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the <a>PermissionSet</a>.</p>
+        /// <p>The name of the <code>PermissionSet</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The description of the <a>PermissionSet</a>.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        /// <p>The description of the <code>PermissionSet</code>.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The description of the <a>PermissionSet</a>.</p>
+        /// <p>The description of the <code>PermissionSet</code>.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
-        /// <p>The length of time that the application user sessions are valid in the ISO-8601
-        /// standard.</p>
-        pub fn session_duration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_duration(inp);
+        /// <p>The length of time that the application user sessions are valid in the ISO-8601 standard.</p>
+        pub fn session_duration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_duration(input.into());
             self
         }
-        /// <p>The length of time that the application user sessions are valid in the ISO-8601
-        /// standard.</p>
+        /// <p>The length of time that the application user sessions are valid in the ISO-8601 standard.</p>
         pub fn set_session_duration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -810,14 +777,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_session_duration(input);
             self
         }
-        /// <p>Used to redirect users within the application during the federation authentication
-        /// process.</p>
-        pub fn relay_state(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.relay_state(inp);
+        /// <p>Used to redirect users within the application during the federation authentication process.</p>
+        pub fn relay_state(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.relay_state(input.into());
             self
         }
-        /// <p>Used to redirect users within the application during the federation authentication
-        /// process.</p>
+        /// <p>Used to redirect users within the application during the federation authentication process.</p>
         pub fn set_relay_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_relay_state(input);
             self
@@ -826,12 +791,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to attach to the new <a>PermissionSet</a>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>The tags to attach to the new <code>PermissionSet</code>.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The tags to attach to the new <a>PermissionSet</a>.</p>
+        /// <p>The tags to attach to the new <code>PermissionSet</code>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -842,9 +807,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAccountAssignment`.
     ///
-    /// <p>Deletes a principal's access from a specified Amazon Web Services account using a specified permission
-    /// set.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a principal's access from a specified Amazon Web Services account using a specified permission set.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAccountAssignment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -889,10 +853,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAccountAssignmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -900,21 +864,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
         /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
-        pub fn target_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_id(inp);
+        pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_id(input.into());
             self
         }
         /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
@@ -923,8 +885,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The entity type for which the assignment will be deleted.</p>
-        pub fn target_type(mut self, inp: crate::model::TargetType) -> Self {
-            self.inner = self.inner.target_type(inp);
+        pub fn target_type(mut self, input: crate::model::TargetType) -> Self {
+            self.inner = self.inner.target_type(input);
             self
         }
         /// <p>The entity type for which the assignment will be deleted.</p>
@@ -936,8 +898,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the permission set that will be used to remove access.</p>
-        pub fn permission_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_set_arn(inp);
+        pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(input.into());
             self
         }
         /// <p>The ARN of the permission set that will be used to remove access.</p>
@@ -949,8 +911,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The entity type for which the assignment will be deleted.</p>
-        pub fn principal_type(mut self, inp: crate::model::PrincipalType) -> Self {
-            self.inner = self.inner.principal_type(inp);
+        pub fn principal_type(mut self, input: crate::model::PrincipalType) -> Self {
+            self.inner = self.inner.principal_type(input);
             self
         }
         /// <p>The entity type for which the assignment will be deleted.</p>
@@ -962,8 +924,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
-        pub fn principal_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal_id(inp);
+        pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal_id(input.into());
             self
         }
         /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
@@ -975,7 +937,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteInlinePolicyFromPermissionSet`.
     ///
     /// <p>Deletes the inline policy from a specified permission set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInlinePolicyFromPermissionSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1022,10 +984,10 @@ pub mod fluent_builders {
                 crate::input::DeleteInlinePolicyFromPermissionSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1033,21 +995,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
         /// <p>The ARN of the permission set that will be used to remove access.</p>
-        pub fn permission_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_set_arn(inp);
+        pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(input.into());
             self
         }
         /// <p>The ARN of the permission set that will be used to remove access.</p>
@@ -1061,11 +1021,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteInstanceAccessControlAttributeConfiguration`.
     ///
-    /// <p>Disables the attributes-based access control (ABAC) feature for the specified Amazon Web Services SSO
-    /// instance and deletes all of the attribute mappings that have been configured. Once deleted,
-    /// any attributes that are received from an identity source and any custom attributes you have
-    /// previously configured will not be passed. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>Amazon Web Services SSO User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Disables the attributes-based access control (ABAC) feature for the specified Amazon Web Services SSO instance and deletes all of the attribute mappings that have been configured. Once deleted, any attributes that are received from an identity source and any custom attributes you have previously configured will not be passed. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>Amazon Web Services SSO User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInstanceAccessControlAttributeConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1103,10 +1060,10 @@ pub mod fluent_builders {
                                     crate::error::DeleteInstanceAccessControlAttributeConfigurationError,
                                     crate::input::DeleteInstanceAccessControlAttributeConfigurationInputOperationRetryAlias>,
                                 {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1115,8 +1072,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed.</p>
@@ -1128,7 +1085,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePermissionSet`.
     ///
     /// <p>Deletes the specified permission set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePermissionSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1173,10 +1130,10 @@ pub mod fluent_builders {
                 crate::input::DeletePermissionSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1184,21 +1141,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
         /// <p>The ARN of the permission set that should be deleted.</p>
-        pub fn permission_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_set_arn(inp);
+        pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(input.into());
             self
         }
         /// <p>The ARN of the permission set that should be deleted.</p>
@@ -1213,7 +1168,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAccountAssignmentCreationStatus`.
     ///
     /// <p>Describes the status of the assignment creation request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccountAssignmentCreationStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1260,10 +1215,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAccountAssignmentCreationStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1271,14 +1226,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -1286,9 +1239,11 @@ pub mod fluent_builders {
         /// <p>The identifier that is used to track the request operation progress.</p>
         pub fn account_assignment_creation_request_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.account_assignment_creation_request_id(inp);
+            self.inner = self
+                .inner
+                .account_assignment_creation_request_id(input.into());
             self
         }
         /// <p>The identifier that is used to track the request operation progress.</p>
@@ -1303,7 +1258,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAccountAssignmentDeletionStatus`.
     ///
     /// <p>Describes the status of the assignment deletion request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccountAssignmentDeletionStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1350,10 +1305,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAccountAssignmentDeletionStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1361,14 +1316,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
@@ -1376,9 +1329,11 @@ pub mod fluent_builders {
         /// <p>The identifier that is used to track the request operation progress.</p>
         pub fn account_assignment_deletion_request_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.account_assignment_deletion_request_id(inp);
+            self.inner = self
+                .inner
+                .account_assignment_deletion_request_id(input.into());
             self
         }
         /// <p>The identifier that is used to track the request operation progress.</p>
@@ -1392,11 +1347,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeInstanceAccessControlAttributeConfiguration`.
     ///
-    /// <p>Returns the list of Amazon Web Services SSO identity store attributes that have been configured to
-    /// work with attributes-based access control (ABAC) for the specified Amazon Web Services SSO instance. This
-    /// will not return attributes configured and sent by an external identity provider.
-    /// For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>Amazon Web Services SSO User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the list of Amazon Web Services SSO identity store attributes that have been configured to work with attributes-based access control (ABAC) for the specified Amazon Web Services SSO instance. This will not return attributes configured and sent by an external identity provider. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>Amazon Web Services SSO User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstanceAccessControlAttributeConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1435,10 +1387,10 @@ pub mod fluent_builders {
                                     crate::error::DescribeInstanceAccessControlAttributeConfigurationError,
                                     crate::input::DescribeInstanceAccessControlAttributeConfigurationInputOperationRetryAlias>,
                                 {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1447,8 +1399,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed.</p>
@@ -1460,7 +1412,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePermissionSet`.
     ///
     /// <p>Gets the details of the permission set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePermissionSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1505,10 +1457,10 @@ pub mod fluent_builders {
                 crate::input::DescribePermissionSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1516,21 +1468,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
         /// <p>The ARN of the permission set.</p>
-        pub fn permission_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_set_arn(inp);
+        pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(input.into());
             self
         }
         /// <p>The ARN of the permission set.</p>
@@ -1545,7 +1495,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePermissionSetProvisioningStatus`.
     ///
     /// <p>Describes the status for the given permission set provisioning request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePermissionSetProvisioningStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1592,10 +1542,10 @@ pub mod fluent_builders {
                 crate::input::DescribePermissionSetProvisioningStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1603,29 +1553,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
-        /// <p>The identifier that is provided by the <a>ProvisionPermissionSet</a> call to
-        /// retrieve the current status of the provisioning workflow.</p>
+        /// <p>The identifier that is provided by the <code>ProvisionPermissionSet</code> call to retrieve the current status of the provisioning workflow.</p>
         pub fn provision_permission_set_request_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.provision_permission_set_request_id(inp);
+            self.inner = self.inner.provision_permission_set_request_id(input.into());
             self
         }
-        /// <p>The identifier that is provided by the <a>ProvisionPermissionSet</a> call to
-        /// retrieve the current status of the provisioning workflow.</p>
+        /// <p>The identifier that is provided by the <code>ProvisionPermissionSet</code> call to retrieve the current status of the provisioning workflow.</p>
         pub fn set_provision_permission_set_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1637,7 +1583,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DetachManagedPolicyFromPermissionSet`.
     ///
     /// <p>Detaches the attached IAM managed policy ARN from the specified permission set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachManagedPolicyFromPermissionSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1684,10 +1630,10 @@ pub mod fluent_builders {
                 crate::input::DetachManagedPolicyFromPermissionSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1695,26 +1641,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
-        /// <p>The ARN of the <a>PermissionSet</a> from which the policy should be
-        /// detached.</p>
-        pub fn permission_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_set_arn(inp);
+        /// <p>The ARN of the <code>PermissionSet</code> from which the policy should be detached.</p>
+        pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(input.into());
             self
         }
-        /// <p>The ARN of the <a>PermissionSet</a> from which the policy should be
-        /// detached.</p>
+        /// <p>The ARN of the <code>PermissionSet</code> from which the policy should be detached.</p>
         pub fn set_permission_set_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1723,8 +1665,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IAM managed policy ARN to be attached to a permission set.</p>
-        pub fn managed_policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.managed_policy_arn(inp);
+        pub fn managed_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.managed_policy_arn(input.into());
             self
         }
         /// <p>The IAM managed policy ARN to be attached to a permission set.</p>
@@ -1739,7 +1681,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetInlinePolicyForPermissionSet`.
     ///
     /// <p>Obtains the inline policy assigned to the permission set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInlinePolicyForPermissionSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1784,10 +1726,10 @@ pub mod fluent_builders {
                 crate::input::GetInlinePolicyForPermissionSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1795,21 +1737,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
         /// <p>The ARN of the permission set.</p>
-        pub fn permission_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_set_arn(inp);
+        pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(input.into());
             self
         }
         /// <p>The ARN of the permission set.</p>
@@ -1823,9 +1763,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAccountAssignmentCreationStatus`.
     ///
-    /// <p>Lists the status of the Amazon Web Services account assignment creation requests for a specified SSO
-    /// instance.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the status of the Amazon Web Services account assignment creation requests for a specified SSO instance.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccountAssignmentCreationStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1872,10 +1811,10 @@ pub mod fluent_builders {
                 crate::input::ListAccountAssignmentCreationStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1883,21 +1822,30 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAccountAssignmentCreationStatusPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListAccountAssignmentCreationStatusPaginator<C, M, R> {
+            crate::paginator::ListAccountAssignmentCreationStatusPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
@@ -1906,8 +1854,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -1916,8 +1864,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters results based on the passed attribute value.</p>
-        pub fn filter(mut self, inp: crate::model::OperationStatusFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, input: crate::model::OperationStatusFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Filters results based on the passed attribute value.</p>
@@ -1931,9 +1879,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAccountAssignmentDeletionStatus`.
     ///
-    /// <p>Lists the status of the Amazon Web Services account assignment deletion requests for a specified SSO
-    /// instance.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the status of the Amazon Web Services account assignment deletion requests for a specified SSO instance.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccountAssignmentDeletionStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1980,10 +1927,10 @@ pub mod fluent_builders {
                 crate::input::ListAccountAssignmentDeletionStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1991,21 +1938,30 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAccountAssignmentDeletionStatusPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListAccountAssignmentDeletionStatusPaginator<C, M, R> {
+            crate::paginator::ListAccountAssignmentDeletionStatusPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
@@ -2014,8 +1970,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -2024,8 +1980,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters results based on the passed attribute value.</p>
-        pub fn filter(mut self, inp: crate::model::OperationStatusFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, input: crate::model::OperationStatusFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Filters results based on the passed attribute value.</p>
@@ -2039,9 +1995,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAccountAssignments`.
     ///
-    /// <p>Lists the assignee of the specified Amazon Web Services account with the specified permission
-    /// set.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the assignee of the specified Amazon Web Services account with the specified permission set.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccountAssignments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2086,10 +2041,10 @@ pub mod fluent_builders {
                 crate::input::ListAccountAssignmentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2097,21 +2052,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAccountAssignmentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAccountAssignmentsPaginator<C, M, R> {
+            crate::paginator::ListAccountAssignmentsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
         /// <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
@@ -2120,8 +2079,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the permission set from which to list assignments.</p>
-        pub fn permission_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_set_arn(inp);
+        pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(input.into());
             self
         }
         /// <p>The ARN of the permission set from which to list assignments.</p>
@@ -2133,8 +2092,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
@@ -2143,8 +2102,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -2156,7 +2115,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAccountsForProvisionedPermissionSet`.
     ///
     /// <p>Lists all the Amazon Web Services accounts where the specified permission set is provisioned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccountsForProvisionedPermissionSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2203,10 +2162,10 @@ pub mod fluent_builders {
                 crate::input::ListAccountsForProvisionedPermissionSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2214,26 +2173,33 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAccountsForProvisionedPermissionSetPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListAccountsForProvisionedPermissionSetPaginator<C, M, R> {
+            crate::paginator::ListAccountsForProvisionedPermissionSetPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
-        /// <p>The ARN of the <a>PermissionSet</a> from which the associated Amazon Web Services accounts
-        /// will be listed.</p>
-        pub fn permission_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_set_arn(inp);
+        /// <p>The ARN of the <code>PermissionSet</code> from which the associated Amazon Web Services accounts will be listed.</p>
+        pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(input.into());
             self
         }
-        /// <p>The ARN of the <a>PermissionSet</a> from which the associated Amazon Web Services accounts
-        /// will be listed.</p>
+        /// <p>The ARN of the <code>PermissionSet</code> from which the associated Amazon Web Services accounts will be listed.</p>
         pub fn set_permission_set_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2242,8 +2208,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The permission set provisioning status for an Amazon Web Services account.</p>
-        pub fn provisioning_status(mut self, inp: crate::model::ProvisioningStatus) -> Self {
-            self.inner = self.inner.provisioning_status(inp);
+        pub fn provisioning_status(mut self, input: crate::model::ProvisioningStatus) -> Self {
+            self.inner = self.inner.provisioning_status(input);
             self
         }
         /// <p>The permission set provisioning status for an Amazon Web Services account.</p>
@@ -2254,19 +2220,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provisioning_status(input);
             self
         }
-        /// <p>The maximum number of results to display for the <a>PermissionSet</a>.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to display for the <code>PermissionSet</code>.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to display for the <a>PermissionSet</a>.</p>
+        /// <p>The maximum number of results to display for the <code>PermissionSet</code>.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -2278,7 +2244,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListInstances`.
     ///
     /// <p>Lists the SSO instances that the caller has access to.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2323,10 +2289,10 @@ pub mod fluent_builders {
                 crate::input::ListInstancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2334,9 +2300,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListInstancesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListInstancesPaginator<C, M, R> {
+            crate::paginator::ListInstancesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of results to display for the instance.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to display for the instance.</p>
@@ -2345,8 +2317,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -2358,7 +2330,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListManagedPoliciesInPermissionSet`.
     ///
     /// <p>Lists the IAM managed policy that is attached to a specified permission set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListManagedPoliciesInPermissionSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2405,10 +2377,10 @@ pub mod fluent_builders {
                 crate::input::ListManagedPoliciesInPermissionSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2416,26 +2388,33 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListManagedPoliciesInPermissionSetPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListManagedPoliciesInPermissionSetPaginator<C, M, R> {
+            crate::paginator::ListManagedPoliciesInPermissionSetPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
-        /// <p>The ARN of the <a>PermissionSet</a> whose managed policies will be
-        /// listed.</p>
-        pub fn permission_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_set_arn(inp);
+        /// <p>The ARN of the <code>PermissionSet</code> whose managed policies will be listed.</p>
+        pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(input.into());
             self
         }
-        /// <p>The ARN of the <a>PermissionSet</a> whose managed policies will be
-        /// listed.</p>
+        /// <p>The ARN of the <code>PermissionSet</code> whose managed policies will be listed.</p>
         pub fn set_permission_set_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2443,19 +2422,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_permission_set_arn(input);
             self
         }
-        /// <p>The maximum number of results to display for the <a>PermissionSet</a>.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to display for the <code>PermissionSet</code>.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to display for the <a>PermissionSet</a>.</p>
+        /// <p>The maximum number of results to display for the <code>PermissionSet</code>.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -2466,9 +2445,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPermissionSetProvisioningStatus`.
     ///
-    /// <p>Lists the status of the permission set provisioning requests for a specified SSO
-    /// instance.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the status of the permission set provisioning requests for a specified SSO instance.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPermissionSetProvisioningStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2515,10 +2493,10 @@ pub mod fluent_builders {
                 crate::input::ListPermissionSetProvisioningStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2526,21 +2504,30 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPermissionSetProvisioningStatusPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListPermissionSetProvisioningStatusPaginator<C, M, R> {
+            crate::paginator::ListPermissionSetProvisioningStatusPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
@@ -2549,8 +2536,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -2559,8 +2546,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters results based on the passed attribute value.</p>
-        pub fn filter(mut self, inp: crate::model::OperationStatusFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, input: crate::model::OperationStatusFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Filters results based on the passed attribute value.</p>
@@ -2574,8 +2561,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPermissionSets`.
     ///
-    /// <p>Lists the <a>PermissionSet</a>s in an SSO instance.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the <code>PermissionSet</code>s in an SSO instance.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPermissionSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2620,10 +2607,10 @@ pub mod fluent_builders {
                 crate::input::ListPermissionSetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2631,21 +2618,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPermissionSetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPermissionSetsPaginator<C, M, R> {
+            crate::paginator::ListPermissionSetsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -2654,8 +2645,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
@@ -2667,7 +2658,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPermissionSetsProvisionedToAccount`.
     ///
     /// <p>Lists all the permission sets that are provisioned to a specified Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPermissionSetsProvisionedToAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2714,10 +2705,10 @@ pub mod fluent_builders {
                 crate::input::ListPermissionSetsProvisionedToAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2725,21 +2716,30 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPermissionSetsProvisionedToAccountPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListPermissionSetsProvisionedToAccountPaginator<C, M, R> {
+            crate::paginator::ListPermissionSetsProvisionedToAccountPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
         /// <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
@@ -2748,8 +2748,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status object for the permission set provisioning operation.</p>
-        pub fn provisioning_status(mut self, inp: crate::model::ProvisioningStatus) -> Self {
-            self.inner = self.inner.provisioning_status(inp);
+        pub fn provisioning_status(mut self, input: crate::model::ProvisioningStatus) -> Self {
+            self.inner = self.inner.provisioning_status(input);
             self
         }
         /// <p>The status object for the permission set provisioning operation.</p>
@@ -2761,8 +2761,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to display for the assignment.</p>
@@ -2771,8 +2771,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -2784,7 +2784,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags that are attached to a specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2829,10 +2829,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2840,21 +2840,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTagsForResourcePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTagsForResourcePaginator<C, M, R> {
+            crate::paginator::ListTagsForResourcePaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
         /// <p>The ARN of the resource with the tags to be listed.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource with the tags to be listed.</p>
@@ -2863,8 +2867,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -2875,9 +2879,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ProvisionPermissionSet`.
     ///
-    /// <p>The process by which a specified permission set is provisioned to the specified
-    /// target.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>The process by which a specified permission set is provisioned to the specified target.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ProvisionPermissionSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2922,10 +2925,10 @@ pub mod fluent_builders {
                 crate::input::ProvisionPermissionSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2933,21 +2936,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
         /// <p>The ARN of the permission set.</p>
-        pub fn permission_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_set_arn(inp);
+        pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(input.into());
             self
         }
         /// <p>The ARN of the permission set.</p>
@@ -2959,8 +2960,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
-        pub fn target_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_id(inp);
+        pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_id(input.into());
             self
         }
         /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
@@ -2969,8 +2970,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The entity type for which the assignment will be created.</p>
-        pub fn target_type(mut self, inp: crate::model::ProvisionTargetType) -> Self {
-            self.inner = self.inner.target_type(inp);
+        pub fn target_type(mut self, input: crate::model::ProvisionTargetType) -> Self {
+            self.inner = self.inner.target_type(input);
             self
         }
         /// <p>The entity type for which the assignment will be created.</p>
@@ -2984,15 +2985,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutInlinePolicyToPermissionSet`.
     ///
-    /// <p>Attaches an IAM inline policy to a permission set.</p>
-    /// <note>
-    /// <p>If the permission set is already referenced by one or more account assignments, you will
-    /// need to call <code>
-    /// <a>ProvisionPermissionSet</a>
-    /// </code> after this action to
-    /// apply the corresponding IAM policy updates to all assigned accounts.</p>
+    /// <p>Attaches an IAM inline policy to a permission set.</p> <note>
+    /// <p>If the permission set is already referenced by one or more account assignments, you will need to call <code> <code>ProvisionPermissionSet</code> </code> after this action to apply the corresponding IAM policy updates to all assigned accounts.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutInlinePolicyToPermissionSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3037,10 +3033,10 @@ pub mod fluent_builders {
                 crate::input::PutInlinePolicyToPermissionSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3048,21 +3044,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
         /// <p>The ARN of the permission set.</p>
-        pub fn permission_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_set_arn(inp);
+        pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(input.into());
             self
         }
         /// <p>The ARN of the permission set.</p>
@@ -3073,12 +3067,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_permission_set_arn(input);
             self
         }
-        /// <p>The IAM inline policy to attach to a <a>PermissionSet</a>.</p>
-        pub fn inline_policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.inline_policy(inp);
+        /// <p>The IAM inline policy to attach to a <code>PermissionSet</code>.</p>
+        pub fn inline_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.inline_policy(input.into());
             self
         }
-        /// <p>The IAM inline policy to attach to a <a>PermissionSet</a>.</p>
+        /// <p>The IAM inline policy to attach to a <code>PermissionSet</code>.</p>
         pub fn set_inline_policy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3090,7 +3084,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Associates a set of tags with a specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3135,10 +3129,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3146,21 +3140,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
         /// <p>The ARN of the resource with the tags to be listed.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource with the tags to be listed.</p>
@@ -3173,8 +3165,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A set of key-value pairs that are used to manage the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A set of key-value pairs that are used to manage the resource.</p>
@@ -3189,7 +3181,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Disassociates a set of tags from a specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3234,10 +3226,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3245,21 +3237,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
         /// <p>The ARN of the resource with the tags to be listed.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource with the tags to be listed.</p>
@@ -3272,8 +3262,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The keys of tags that are attached to the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The keys of tags that are attached to the resource.</p>
@@ -3287,13 +3277,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateInstanceAccessControlAttributeConfiguration`.
     ///
-    /// <p>Updates the Amazon Web Services SSO identity store attributes that you can use with the Amazon Web Services SSO
-    /// instance for attributes-based access control (ABAC). When using an external identity provider
-    /// as an identity source, you can pass attributes through the SAML assertion as an alternative to
-    /// configuring attributes from the Amazon Web Services SSO identity store. If a SAML assertion passes any of
-    /// these attributes, Amazon Web Services SSO replaces the attribute value with the value from the Amazon Web Services SSO
-    /// identity store. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>Amazon Web Services SSO User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the Amazon Web Services SSO identity store attributes that you can use with the Amazon Web Services SSO instance for attributes-based access control (ABAC). When using an external identity provider as an identity source, you can pass attributes through the SAML assertion as an alternative to configuring attributes from the Amazon Web Services SSO identity store. If a SAML assertion passes any of these attributes, Amazon Web Services SSO replaces the attribute value with the value from the Amazon Web Services SSO identity store. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>Amazon Web Services SSO User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateInstanceAccessControlAttributeConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3331,10 +3316,10 @@ pub mod fluent_builders {
                                     crate::error::UpdateInstanceAccessControlAttributeConfigurationError,
                                     crate::input::UpdateInstanceAccessControlAttributeConfigurationInputOperationRetryAlias>,
                                 {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3343,8 +3328,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
         /// <p>The ARN of the SSO instance under which the operation will be executed.</p>
@@ -3355,11 +3340,11 @@ pub mod fluent_builders {
         /// <p>Updates the attributes for your ABAC configuration.</p>
         pub fn instance_access_control_attribute_configuration(
             mut self,
-            inp: crate::model::InstanceAccessControlAttributeConfiguration,
+            input: crate::model::InstanceAccessControlAttributeConfiguration,
         ) -> Self {
             self.inner = self
                 .inner
-                .instance_access_control_attribute_configuration(inp);
+                .instance_access_control_attribute_configuration(input);
             self
         }
         /// <p>Updates the attributes for your ABAC configuration.</p>
@@ -3376,7 +3361,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePermissionSet`.
     ///
     /// <p>Updates an existing permission set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePermissionSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3421,10 +3406,10 @@ pub mod fluent_builders {
                 crate::input::UpdatePermissionSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3432,21 +3417,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
         /// <p>The ARN of the permission set.</p>
-        pub fn permission_set_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permission_set_arn(inp);
+        pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permission_set_arn(input.into());
             self
         }
         /// <p>The ARN of the permission set.</p>
@@ -3457,24 +3440,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_permission_set_arn(input);
             self
         }
-        /// <p>The description of the <a>PermissionSet</a>.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        /// <p>The description of the <code>PermissionSet</code>.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The description of the <a>PermissionSet</a>.</p>
+        /// <p>The description of the <code>PermissionSet</code>.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The length of time that the application user sessions are valid for in the ISO-8601
-        /// standard.</p>
-        pub fn session_duration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_duration(inp);
+        /// <p>The length of time that the application user sessions are valid for in the ISO-8601 standard.</p>
+        pub fn session_duration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_duration(input.into());
             self
         }
-        /// <p>The length of time that the application user sessions are valid for in the ISO-8601
-        /// standard.</p>
+        /// <p>The length of time that the application user sessions are valid for in the ISO-8601 standard.</p>
         pub fn set_session_duration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3482,20 +3463,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_session_duration(input);
             self
         }
-        /// <p>Used to redirect users within the application during the federation authentication
-        /// process.</p>
-        pub fn relay_state(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.relay_state(inp);
+        /// <p>Used to redirect users within the application during the federation authentication process.</p>
+        pub fn relay_state(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.relay_state(input.into());
             self
         }
-        /// <p>Used to redirect users within the application during the federation authentication
-        /// process.</p>
+        /// <p>Used to redirect users within the application during the federation authentication process.</p>
         pub fn set_relay_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_relay_state(input);
             self
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

@@ -153,20 +153,12 @@ impl Tag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RotationRulesType {
     /// <p>Specifies the number of days between automatic scheduled rotations of the secret.</p>
-    /// <p>Secrets Manager schedules the next rotation when the previous
-    /// one is complete. Secrets Manager schedules the date by adding the rotation interval (number of days) to the
-    /// actual date of the last rotation. The service chooses the hour within that 24-hour date window
-    /// randomly. The minute is also chosen somewhat randomly, but weighted towards the top of the hour
-    /// and influenced by a variety of factors that help distribute load.</p>
+    /// <p>Secrets Manager schedules the next rotation when the previous one is complete. Secrets Manager schedules the date by adding the rotation interval (number of days) to the actual date of the last rotation. The service chooses the hour within that 24-hour date window randomly. The minute is also chosen somewhat randomly, but weighted towards the top of the hour and influenced by a variety of factors that help distribute load.</p>
     pub automatically_after_days: std::option::Option<i64>,
 }
 impl RotationRulesType {
     /// <p>Specifies the number of days between automatic scheduled rotations of the secret.</p>
-    /// <p>Secrets Manager schedules the next rotation when the previous
-    /// one is complete. Secrets Manager schedules the date by adding the rotation interval (number of days) to the
-    /// actual date of the last rotation. The service chooses the hour within that 24-hour date window
-    /// randomly. The minute is also chosen somewhat randomly, but weighted towards the top of the hour
-    /// and influenced by a variety of factors that help distribute load.</p>
+    /// <p>Secrets Manager schedules the next rotation when the previous one is complete. Secrets Manager schedules the date by adding the rotation interval (number of days) to the actual date of the last rotation. The service chooses the hour within that 24-hour date window randomly. The minute is also chosen somewhat randomly, but weighted towards the top of the hour and influenced by a variety of factors that help distribute load.</p>
     pub fn automatically_after_days(&self) -> std::option::Option<i64> {
         self.automatically_after_days
     }
@@ -188,21 +180,13 @@ pub mod rotation_rules_type {
     }
     impl Builder {
         /// <p>Specifies the number of days between automatic scheduled rotations of the secret.</p>
-        /// <p>Secrets Manager schedules the next rotation when the previous
-        /// one is complete. Secrets Manager schedules the date by adding the rotation interval (number of days) to the
-        /// actual date of the last rotation. The service chooses the hour within that 24-hour date window
-        /// randomly. The minute is also chosen somewhat randomly, but weighted towards the top of the hour
-        /// and influenced by a variety of factors that help distribute load.</p>
+        /// <p>Secrets Manager schedules the next rotation when the previous one is complete. Secrets Manager schedules the date by adding the rotation interval (number of days) to the actual date of the last rotation. The service chooses the hour within that 24-hour date window randomly. The minute is also chosen somewhat randomly, but weighted towards the top of the hour and influenced by a variety of factors that help distribute load.</p>
         pub fn automatically_after_days(mut self, input: i64) -> Self {
             self.automatically_after_days = Some(input);
             self
         }
         /// <p>Specifies the number of days between automatic scheduled rotations of the secret.</p>
-        /// <p>Secrets Manager schedules the next rotation when the previous
-        /// one is complete. Secrets Manager schedules the date by adding the rotation interval (number of days) to the
-        /// actual date of the last rotation. The service chooses the hour within that 24-hour date window
-        /// randomly. The minute is also chosen somewhat randomly, but weighted towards the top of the hour
-        /// and influenced by a variety of factors that help distribute load.</p>
+        /// <p>Secrets Manager schedules the next rotation when the previous one is complete. Secrets Manager schedules the date by adding the rotation interval (number of days) to the actual date of the last rotation. The service chooses the hour within that 24-hour date window randomly. The minute is also chosen somewhat randomly, but weighted towards the top of the hour and influenced by a variety of factors that help distribute load.</p>
         pub fn set_automatically_after_days(mut self, input: std::option::Option<i64>) -> Self {
             self.automatically_after_days = input;
             self
@@ -232,8 +216,7 @@ pub struct ReplicationStatusType {
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The status can be <code>InProgress</code>, <code>Failed</code>, or <code>InSync</code>.</p>
     pub status: std::option::Option<crate::model::StatusType>,
-    /// <p>Status message such as "<i>Secret with this name already exists in this
-    /// region</i>".</p>
+    /// <p>Status message such as "<i>Secret with this name already exists in this region</i>".</p>
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The date that you last accessed the secret in the Region. </p>
     pub last_accessed_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -251,8 +234,7 @@ impl ReplicationStatusType {
     pub fn status(&self) -> std::option::Option<&crate::model::StatusType> {
         self.status.as_ref()
     }
-    /// <p>Status message such as "<i>Secret with this name already exists in this
-    /// region</i>".</p>
+    /// <p>Status message such as "<i>Secret with this name already exists in this region</i>".</p>
     pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
@@ -315,14 +297,12 @@ pub mod replication_status_type {
             self.status = input;
             self
         }
-        /// <p>Status message such as "<i>Secret with this name already exists in this
-        /// region</i>".</p>
+        /// <p>Status message such as "<i>Secret with this name already exists in this region</i>".</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_message = Some(input.into());
             self
         }
-        /// <p>Status message such as "<i>Secret with this name already exists in this
-        /// region</i>".</p>
+        /// <p>Status message such as "<i>Secret with this name already exists in this region</i>".</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -421,21 +401,21 @@ impl AsRef<str> for StatusType {
     }
 }
 
-/// <p>(Optional) Custom type consisting of a <code>Region</code> (required) and the <code>KmsKeyId</code> which can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>.</p>
+/// <p>A custom type that specifies a <code>Region</code> and the <code>KmsKeyId</code> for a replica secret.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicaRegionType {
-    /// <p>Describes a single instance of Region objects.</p>
+    /// <p>A Region code. For a list of Region codes, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints">Name and code of Regions</a>.</p>
     pub region: std::option::Option<std::string::String>,
-    /// <p>Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>. </p>
+    /// <p>The ARN, key ID, or alias of the KMS key to encrypt the secret. If you don't include this field, Secrets Manager uses <code>aws/secretsmanager</code>.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl ReplicaRegionType {
-    /// <p>Describes a single instance of Region objects.</p>
+    /// <p>A Region code. For a list of Region codes, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints">Name and code of Regions</a>.</p>
     pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
     }
-    /// <p>Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>. </p>
+    /// <p>The ARN, key ID, or alias of the KMS key to encrypt the secret. If you don't include this field, Secrets Manager uses <code>aws/secretsmanager</code>.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -458,22 +438,22 @@ pub mod replica_region_type {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Describes a single instance of Region objects.</p>
+        /// <p>A Region code. For a list of Region codes, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints">Name and code of Regions</a>.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>Describes a single instance of Region objects.</p>
+        /// <p>A Region code. For a list of Region codes, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints">Name and code of Regions</a>.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
         }
-        /// <p>Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>. </p>
+        /// <p>The ARN, key ID, or alias of the KMS key to encrypt the secret. If you don't include this field, Secrets Manager uses <code>aws/secretsmanager</code>.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>. </p>
+        /// <p>The ARN, key ID, or alias of the KMS key to encrypt the secret. If you don't include this field, Secrets Manager uses <code>aws/secretsmanager</code>.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -500,11 +480,9 @@ impl ReplicaRegionType {
 pub struct SecretVersionsListEntry {
     /// <p>The unique version identifier of this version of the secret.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>An array of staging labels that are currently associated with this version of the
-    /// secret.</p>
+    /// <p>An array of staging labels that are currently associated with this version of the secret.</p>
     pub version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The date that this version of the secret was last accessed. Note that the resolution of
-    /// this field is at the date level and does not include the time.</p>
+    /// <p>The date that this version of the secret was last accessed. Note that the resolution of this field is at the date level and does not include the time.</p>
     pub last_accessed_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time this version of the secret was created.</p>
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -516,13 +494,11 @@ impl SecretVersionsListEntry {
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>An array of staging labels that are currently associated with this version of the
-    /// secret.</p>
+    /// <p>An array of staging labels that are currently associated with this version of the secret.</p>
     pub fn version_stages(&self) -> std::option::Option<&[std::string::String]> {
         self.version_stages.as_deref()
     }
-    /// <p>The date that this version of the secret was last accessed. Note that the resolution of
-    /// this field is at the date level and does not include the time.</p>
+    /// <p>The date that this version of the secret was last accessed. Note that the resolution of this field is at the date level and does not include the time.</p>
     pub fn last_accessed_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_accessed_date.as_ref()
     }
@@ -573,16 +549,14 @@ pub mod secret_versions_list_entry {
         ///
         /// To override the contents of this collection use [`set_version_stages`](Self::set_version_stages).
         ///
-        /// <p>An array of staging labels that are currently associated with this version of the
-        /// secret.</p>
+        /// <p>An array of staging labels that are currently associated with this version of the secret.</p>
         pub fn version_stages(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.version_stages.unwrap_or_default();
             v.push(input.into());
             self.version_stages = Some(v);
             self
         }
-        /// <p>An array of staging labels that are currently associated with this version of the
-        /// secret.</p>
+        /// <p>An array of staging labels that are currently associated with this version of the secret.</p>
         pub fn set_version_stages(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -590,14 +564,12 @@ pub mod secret_versions_list_entry {
             self.version_stages = input;
             self
         }
-        /// <p>The date that this version of the secret was last accessed. Note that the resolution of
-        /// this field is at the date level and does not include the time.</p>
+        /// <p>The date that this version of the secret was last accessed. Note that the resolution of this field is at the date level and does not include the time.</p>
         pub fn last_accessed_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_accessed_date = Some(input);
             self
         }
-        /// <p>The date that this version of the secret was last accessed. Note that the resolution of
-        /// this field is at the date level and does not include the time.</p>
+        /// <p>The date that this version of the secret was last accessed. Note that the resolution of this field is at the date level and does not include the time.</p>
         pub fn set_last_accessed_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -656,32 +628,21 @@ impl SecretVersionsListEntry {
     }
 }
 
-/// <p>A structure that contains the details about a secret. It does not include the encrypted
-/// <code>SecretString</code> and <code>SecretBinary</code> values. To get those values, use the
-/// <a>GetSecretValue</a> operation.</p>
+/// <p>A structure that contains the details about a secret. It does not include the encrypted <code>SecretString</code> and <code>SecretBinary</code> values. To get those values, use the <code>GetSecretValue</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecretListEntry {
     /// <p>The Amazon Resource Name (ARN) of the secret.</p>
-    /// <p>For more information about ARNs in Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy Resources</a> in the
-    /// <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The friendly name of the secret. You can use forward slashes in the name to represent a
-    /// path hierarchy. For example, <code>/prod/databases/dbserver1</code> could represent the secret
-    /// for a server named <code>dbserver1</code> in the folder <code>databases</code> in the folder
-    /// <code>prod</code>. </p>
+    /// <p>The friendly name of the secret. You can use forward slashes in the name to represent a path hierarchy. For example, <code>/prod/databases/dbserver1</code> could represent the secret for a server named <code>dbserver1</code> in the folder <code>databases</code> in the folder <code>prod</code>. </p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The user-provided description of the secret.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The ARN or alias of the Amazon Web Services KMS customer master key (CMK) used to encrypt the
-    /// <code>SecretString</code> and <code>SecretBinary</code> fields in each version of the
-    /// secret. If you don't provide a key, then Secrets Manager defaults to encrypting the secret fields with
-    /// the default KMS CMK, the key named <code>awssecretsmanager</code>, for this account.</p>
+    /// <p>The ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether automatic, scheduled rotation is enabled for this secret.</p>
     pub rotation_enabled: std::option::Option<bool>,
-    /// <p>The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the
-    /// secret either automatically per the schedule or manually by a call to <a>RotateSecret</a>.</p>
+    /// <p>The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the secret either automatically per the schedule or manually by a call to <code>RotateSecret</code>.</p>
     pub rotation_lambda_arn: std::option::Option<std::string::String>,
     /// <p>A structure that defines the rotation configuration for the secret.</p>
     pub rotation_rules: std::option::Option<crate::model::RotationRulesType>,
@@ -689,22 +650,14 @@ pub struct SecretListEntry {
     pub last_rotated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last date and time that this secret was modified in any way.</p>
     pub last_changed_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The last date that this secret was accessed. This value is truncated to midnight of the
-    /// date and therefore shows only the date, not the time.</p>
+    /// <p>The last date that this secret was accessed. This value is truncated to midnight of the date and therefore shows only the date, not the time.</p>
     pub last_accessed_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The
-    /// secret can be recovered until the number of days in the recovery window has passed, as
-    /// specified in the <code>RecoveryWindowInDays</code> parameter of the <a>DeleteSecret</a> operation.</p>
+    /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be recovered until the number of days in the recovery window has passed, as specified in the <code>RecoveryWindowInDays</code> parameter of the <code>DeleteSecret</code> operation.</p>
     pub deleted_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The list of user-defined tags associated with the secret. To add tags to a
-    /// secret, use <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.</p>
+    /// <p>The list of user-defined tags associated with the secret. To add tags to a secret, use <code>TagResource</code>. To remove tags, use <code>UntagResource</code>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>A list of all of the currently assigned <code>SecretVersionStage</code> staging labels and
-    /// the <code>SecretVersionId</code> attached to each one. Staging labels are used to keep
-    /// track of the different versions during the rotation process.</p>
-    /// <note>
-    /// <p>A version that does not have any <code>SecretVersionStage</code> is considered
-    /// deprecated and subject to deletion. Such versions are not included in this list.</p>
+    /// <p>A list of all of the currently assigned <code>SecretVersionStage</code> staging labels and the <code>SecretVersionId</code> attached to each one. Staging labels are used to keep track of the different versions during the rotation process.</p> <note>
+    /// <p>A version that does not have any <code>SecretVersionStage</code> is considered deprecated and subject to deletion. Such versions are not included in this list.</p>
     /// </note>
     pub secret_versions_to_stages: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
@@ -718,15 +671,10 @@ pub struct SecretListEntry {
 }
 impl SecretListEntry {
     /// <p>The Amazon Resource Name (ARN) of the secret.</p>
-    /// <p>For more information about ARNs in Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy Resources</a> in the
-    /// <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The friendly name of the secret. You can use forward slashes in the name to represent a
-    /// path hierarchy. For example, <code>/prod/databases/dbserver1</code> could represent the secret
-    /// for a server named <code>dbserver1</code> in the folder <code>databases</code> in the folder
-    /// <code>prod</code>. </p>
+    /// <p>The friendly name of the secret. You can use forward slashes in the name to represent a path hierarchy. For example, <code>/prod/databases/dbserver1</code> could represent the secret for a server named <code>dbserver1</code> in the folder <code>databases</code> in the folder <code>prod</code>. </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -734,10 +682,7 @@ impl SecretListEntry {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The ARN or alias of the Amazon Web Services KMS customer master key (CMK) used to encrypt the
-    /// <code>SecretString</code> and <code>SecretBinary</code> fields in each version of the
-    /// secret. If you don't provide a key, then Secrets Manager defaults to encrypting the secret fields with
-    /// the default KMS CMK, the key named <code>awssecretsmanager</code>, for this account.</p>
+    /// <p>The ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -745,8 +690,7 @@ impl SecretListEntry {
     pub fn rotation_enabled(&self) -> std::option::Option<bool> {
         self.rotation_enabled
     }
-    /// <p>The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the
-    /// secret either automatically per the schedule or manually by a call to <a>RotateSecret</a>.</p>
+    /// <p>The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the secret either automatically per the schedule or manually by a call to <code>RotateSecret</code>.</p>
     pub fn rotation_lambda_arn(&self) -> std::option::Option<&str> {
         self.rotation_lambda_arn.as_deref()
     }
@@ -762,28 +706,20 @@ impl SecretListEntry {
     pub fn last_changed_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_changed_date.as_ref()
     }
-    /// <p>The last date that this secret was accessed. This value is truncated to midnight of the
-    /// date and therefore shows only the date, not the time.</p>
+    /// <p>The last date that this secret was accessed. This value is truncated to midnight of the date and therefore shows only the date, not the time.</p>
     pub fn last_accessed_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_accessed_date.as_ref()
     }
-    /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The
-    /// secret can be recovered until the number of days in the recovery window has passed, as
-    /// specified in the <code>RecoveryWindowInDays</code> parameter of the <a>DeleteSecret</a> operation.</p>
+    /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be recovered until the number of days in the recovery window has passed, as specified in the <code>RecoveryWindowInDays</code> parameter of the <code>DeleteSecret</code> operation.</p>
     pub fn deleted_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deleted_date.as_ref()
     }
-    /// <p>The list of user-defined tags associated with the secret. To add tags to a
-    /// secret, use <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.</p>
+    /// <p>The list of user-defined tags associated with the secret. To add tags to a secret, use <code>TagResource</code>. To remove tags, use <code>UntagResource</code>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>A list of all of the currently assigned <code>SecretVersionStage</code> staging labels and
-    /// the <code>SecretVersionId</code> attached to each one. Staging labels are used to keep
-    /// track of the different versions during the rotation process.</p>
-    /// <note>
-    /// <p>A version that does not have any <code>SecretVersionStage</code> is considered
-    /// deprecated and subject to deletion. Such versions are not included in this list.</p>
+    /// <p>A list of all of the currently assigned <code>SecretVersionStage</code> staging labels and the <code>SecretVersionId</code> attached to each one. Staging labels are used to keep track of the different versions during the rotation process.</p> <note>
+    /// <p>A version that does not have any <code>SecretVersionStage</code> is considered deprecated and subject to deletion. Such versions are not included in this list.</p>
     /// </note>
     pub fn secret_versions_to_stages(
         &self,
@@ -854,31 +790,21 @@ pub mod secret_list_entry {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the secret.</p>
-        /// <p>For more information about ARNs in Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy Resources</a> in the
-        /// <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the secret.</p>
-        /// <p>For more information about ARNs in Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy Resources</a> in the
-        /// <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>The friendly name of the secret. You can use forward slashes in the name to represent a
-        /// path hierarchy. For example, <code>/prod/databases/dbserver1</code> could represent the secret
-        /// for a server named <code>dbserver1</code> in the folder <code>databases</code> in the folder
-        /// <code>prod</code>. </p>
+        /// <p>The friendly name of the secret. You can use forward slashes in the name to represent a path hierarchy. For example, <code>/prod/databases/dbserver1</code> could represent the secret for a server named <code>dbserver1</code> in the folder <code>databases</code> in the folder <code>prod</code>. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The friendly name of the secret. You can use forward slashes in the name to represent a
-        /// path hierarchy. For example, <code>/prod/databases/dbserver1</code> could represent the secret
-        /// for a server named <code>dbserver1</code> in the folder <code>databases</code> in the folder
-        /// <code>prod</code>. </p>
+        /// <p>The friendly name of the secret. You can use forward slashes in the name to represent a path hierarchy. For example, <code>/prod/databases/dbserver1</code> could represent the secret for a server named <code>dbserver1</code> in the folder <code>databases</code> in the folder <code>prod</code>. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -893,18 +819,12 @@ pub mod secret_list_entry {
             self.description = input;
             self
         }
-        /// <p>The ARN or alias of the Amazon Web Services KMS customer master key (CMK) used to encrypt the
-        /// <code>SecretString</code> and <code>SecretBinary</code> fields in each version of the
-        /// secret. If you don't provide a key, then Secrets Manager defaults to encrypting the secret fields with
-        /// the default KMS CMK, the key named <code>awssecretsmanager</code>, for this account.</p>
+        /// <p>The ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The ARN or alias of the Amazon Web Services KMS customer master key (CMK) used to encrypt the
-        /// <code>SecretString</code> and <code>SecretBinary</code> fields in each version of the
-        /// secret. If you don't provide a key, then Secrets Manager defaults to encrypting the secret fields with
-        /// the default KMS CMK, the key named <code>awssecretsmanager</code>, for this account.</p>
+        /// <p>The ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -919,14 +839,12 @@ pub mod secret_list_entry {
             self.rotation_enabled = input;
             self
         }
-        /// <p>The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the
-        /// secret either automatically per the schedule or manually by a call to <a>RotateSecret</a>.</p>
+        /// <p>The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the secret either automatically per the schedule or manually by a call to <code>RotateSecret</code>.</p>
         pub fn rotation_lambda_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.rotation_lambda_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the
-        /// secret either automatically per the schedule or manually by a call to <a>RotateSecret</a>.</p>
+        /// <p>The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the secret either automatically per the schedule or manually by a call to <code>RotateSecret</code>.</p>
         pub fn set_rotation_lambda_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -973,14 +891,12 @@ pub mod secret_list_entry {
             self.last_changed_date = input;
             self
         }
-        /// <p>The last date that this secret was accessed. This value is truncated to midnight of the
-        /// date and therefore shows only the date, not the time.</p>
+        /// <p>The last date that this secret was accessed. This value is truncated to midnight of the date and therefore shows only the date, not the time.</p>
         pub fn last_accessed_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_accessed_date = Some(input);
             self
         }
-        /// <p>The last date that this secret was accessed. This value is truncated to midnight of the
-        /// date and therefore shows only the date, not the time.</p>
+        /// <p>The last date that this secret was accessed. This value is truncated to midnight of the date and therefore shows only the date, not the time.</p>
         pub fn set_last_accessed_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -988,16 +904,12 @@ pub mod secret_list_entry {
             self.last_accessed_date = input;
             self
         }
-        /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The
-        /// secret can be recovered until the number of days in the recovery window has passed, as
-        /// specified in the <code>RecoveryWindowInDays</code> parameter of the <a>DeleteSecret</a> operation.</p>
+        /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be recovered until the number of days in the recovery window has passed, as specified in the <code>RecoveryWindowInDays</code> parameter of the <code>DeleteSecret</code> operation.</p>
         pub fn deleted_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.deleted_date = Some(input);
             self
         }
-        /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The
-        /// secret can be recovered until the number of days in the recovery window has passed, as
-        /// specified in the <code>RecoveryWindowInDays</code> parameter of the <a>DeleteSecret</a> operation.</p>
+        /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be recovered until the number of days in the recovery window has passed, as specified in the <code>RecoveryWindowInDays</code> parameter of the <code>DeleteSecret</code> operation.</p>
         pub fn set_deleted_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1009,16 +921,14 @@ pub mod secret_list_entry {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The list of user-defined tags associated with the secret. To add tags to a
-        /// secret, use <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>The list of user-defined tags associated with the secret. To add tags to a secret, use <code>TagResource</code>. To remove tags, use <code>UntagResource</code>.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>The list of user-defined tags associated with the secret. To add tags to a
-        /// secret, use <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.</p>
+        /// <p>The list of user-defined tags associated with the secret. To add tags to a secret, use <code>TagResource</code>. To remove tags, use <code>UntagResource</code>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1030,29 +940,21 @@ pub mod secret_list_entry {
         ///
         /// To override the contents of this collection use [`set_secret_versions_to_stages`](Self::set_secret_versions_to_stages).
         ///
-        /// <p>A list of all of the currently assigned <code>SecretVersionStage</code> staging labels and
-        /// the <code>SecretVersionId</code> attached to each one. Staging labels are used to keep
-        /// track of the different versions during the rotation process.</p>
-        /// <note>
-        /// <p>A version that does not have any <code>SecretVersionStage</code> is considered
-        /// deprecated and subject to deletion. Such versions are not included in this list.</p>
+        /// <p>A list of all of the currently assigned <code>SecretVersionStage</code> staging labels and the <code>SecretVersionId</code> attached to each one. Staging labels are used to keep track of the different versions during the rotation process.</p> <note>
+        /// <p>A version that does not have any <code>SecretVersionStage</code> is considered deprecated and subject to deletion. Such versions are not included in this list.</p>
         /// </note>
         pub fn secret_versions_to_stages(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.secret_versions_to_stages.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.secret_versions_to_stages = Some(hash_map);
             self
         }
-        /// <p>A list of all of the currently assigned <code>SecretVersionStage</code> staging labels and
-        /// the <code>SecretVersionId</code> attached to each one. Staging labels are used to keep
-        /// track of the different versions during the rotation process.</p>
-        /// <note>
-        /// <p>A version that does not have any <code>SecretVersionStage</code> is considered
-        /// deprecated and subject to deletion. Such versions are not included in this list.</p>
+        /// <p>A list of all of the currently assigned <code>SecretVersionStage</code> staging labels and the <code>SecretVersionId</code> attached to each one. Staging labels are used to keep track of the different versions during the rotation process.</p> <note>
+        /// <p>A version that does not have any <code>SecretVersionStage</code> is considered deprecated and subject to deletion. Such versions are not included in this list.</p>
         /// </note>
         pub fn set_secret_versions_to_stages(
             mut self,
@@ -1187,22 +1089,38 @@ impl AsRef<str> for SortOrderType {
     }
 }
 
-/// <p>Allows you to add filters when you use the search function in Secrets Manager.</p>
+/// <p>Allows you to add filters when you use the search function in Secrets Manager. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_search-secret.html">Find secrets in Secrets Manager</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
-    /// <p>Filters your list of secrets by a specific key.</p>
+    /// <p>The following are keys you can use:</p>
+    /// <ul>
+    /// <li> <p> <b>description</b>: Prefix match, not case-sensitive.</p> </li>
+    /// <li> <p> <b>name</b>: Prefix match, case-sensitive.</p> </li>
+    /// <li> <p> <b>tag-key</b>: Prefix match, case-sensitive.</p> </li>
+    /// <li> <p> <b>tag-value</b>: Prefix match, case-sensitive.</p> </li>
+    /// <li> <p> <b>primary-region</b>: Prefix match, case-sensitive.</p> </li>
+    /// <li> <p> <b>all</b>: Breaks the filter value string into words and then searches all attributes for matches. Not case-sensitive.</p> </li>
+    /// </ul>
     pub key: std::option::Option<crate::model::FilterNameStringType>,
-    /// <p>Filters your list of secrets by a specific value.</p>
+    /// <p>The keyword to filter for.</p>
     /// <p>You can prefix your search value with an exclamation mark (<code>!</code>) in order to perform negation filters. </p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Filter {
-    /// <p>Filters your list of secrets by a specific key.</p>
+    /// <p>The following are keys you can use:</p>
+    /// <ul>
+    /// <li> <p> <b>description</b>: Prefix match, not case-sensitive.</p> </li>
+    /// <li> <p> <b>name</b>: Prefix match, case-sensitive.</p> </li>
+    /// <li> <p> <b>tag-key</b>: Prefix match, case-sensitive.</p> </li>
+    /// <li> <p> <b>tag-value</b>: Prefix match, case-sensitive.</p> </li>
+    /// <li> <p> <b>primary-region</b>: Prefix match, case-sensitive.</p> </li>
+    /// <li> <p> <b>all</b>: Breaks the filter value string into words and then searches all attributes for matches. Not case-sensitive.</p> </li>
+    /// </ul>
     pub fn key(&self) -> std::option::Option<&crate::model::FilterNameStringType> {
         self.key.as_ref()
     }
-    /// <p>Filters your list of secrets by a specific value.</p>
+    /// <p>The keyword to filter for.</p>
     /// <p>You can prefix your search value with an exclamation mark (<code>!</code>) in order to perform negation filters. </p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
@@ -1226,12 +1144,28 @@ pub mod filter {
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>Filters your list of secrets by a specific key.</p>
+        /// <p>The following are keys you can use:</p>
+        /// <ul>
+        /// <li> <p> <b>description</b>: Prefix match, not case-sensitive.</p> </li>
+        /// <li> <p> <b>name</b>: Prefix match, case-sensitive.</p> </li>
+        /// <li> <p> <b>tag-key</b>: Prefix match, case-sensitive.</p> </li>
+        /// <li> <p> <b>tag-value</b>: Prefix match, case-sensitive.</p> </li>
+        /// <li> <p> <b>primary-region</b>: Prefix match, case-sensitive.</p> </li>
+        /// <li> <p> <b>all</b>: Breaks the filter value string into words and then searches all attributes for matches. Not case-sensitive.</p> </li>
+        /// </ul>
         pub fn key(mut self, input: crate::model::FilterNameStringType) -> Self {
             self.key = Some(input);
             self
         }
-        /// <p>Filters your list of secrets by a specific key.</p>
+        /// <p>The following are keys you can use:</p>
+        /// <ul>
+        /// <li> <p> <b>description</b>: Prefix match, not case-sensitive.</p> </li>
+        /// <li> <p> <b>name</b>: Prefix match, case-sensitive.</p> </li>
+        /// <li> <p> <b>tag-key</b>: Prefix match, case-sensitive.</p> </li>
+        /// <li> <p> <b>tag-value</b>: Prefix match, case-sensitive.</p> </li>
+        /// <li> <p> <b>primary-region</b>: Prefix match, case-sensitive.</p> </li>
+        /// <li> <p> <b>all</b>: Breaks the filter value string into words and then searches all attributes for matches. Not case-sensitive.</p> </li>
+        /// </ul>
         pub fn set_key(
             mut self,
             input: std::option::Option<crate::model::FilterNameStringType>,
@@ -1243,7 +1177,7 @@ pub mod filter {
         ///
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
-        /// <p>Filters your list of secrets by a specific value.</p>
+        /// <p>The keyword to filter for.</p>
         /// <p>You can prefix your search value with an exclamation mark (<code>!</code>) in order to perform negation filters. </p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
@@ -1251,7 +1185,7 @@ pub mod filter {
             self.values = Some(v);
             self
         }
-        /// <p>Filters your list of secrets by a specific value.</p>
+        /// <p>The keyword to filter for.</p>
         /// <p>You can prefix your search value with an exclamation mark (<code>!</code>) in order to perform negation filters. </p>
         pub fn set_values(
             mut self,

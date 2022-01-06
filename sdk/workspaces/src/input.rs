@@ -48,7 +48,7 @@ pub mod associate_connection_alias_input {
 pub type AssociateConnectionAliasInputOperationOutputAlias =
     crate::operation::AssociateConnectionAlias;
 #[doc(hidden)]
-pub type AssociateConnectionAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateConnectionAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateConnectionAliasInput {
     /// Consumes the builder and constructs an Operation<[`AssociateConnectionAlias`](crate::operation::AssociateConnectionAlias)>
     #[allow(clippy::let_and_return)]
@@ -59,7 +59,7 @@ impl AssociateConnectionAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateConnectionAlias,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -146,7 +146,7 @@ impl AssociateConnectionAliasInput {
             "AssociateConnectionAlias",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -225,7 +225,7 @@ pub mod associate_ip_groups_input {
 #[doc(hidden)]
 pub type AssociateIpGroupsInputOperationOutputAlias = crate::operation::AssociateIpGroups;
 #[doc(hidden)]
-pub type AssociateIpGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateIpGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateIpGroupsInput {
     /// Consumes the builder and constructs an Operation<[`AssociateIpGroups`](crate::operation::AssociateIpGroups)>
     #[allow(clippy::let_and_return)]
@@ -236,7 +236,7 @@ impl AssociateIpGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateIpGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -321,7 +321,7 @@ impl AssociateIpGroupsInput {
             "AssociateIpGroups",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -369,9 +369,9 @@ pub mod authorize_ip_rules_input {
         /// To override the contents of this collection use [`set_user_rules`](Self::set_user_rules).
         ///
         /// <p>The rules to add to the group.</p>
-        pub fn user_rules(mut self, input: impl Into<crate::model::IpRuleItem>) -> Self {
+        pub fn user_rules(mut self, input: crate::model::IpRuleItem) -> Self {
             let mut v = self.user_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_rules = Some(v);
             self
         }
@@ -400,7 +400,7 @@ pub mod authorize_ip_rules_input {
 #[doc(hidden)]
 pub type AuthorizeIpRulesInputOperationOutputAlias = crate::operation::AuthorizeIpRules;
 #[doc(hidden)]
-pub type AuthorizeIpRulesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AuthorizeIpRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AuthorizeIpRulesInput {
     /// Consumes the builder and constructs an Operation<[`AuthorizeIpRules`](crate::operation::AuthorizeIpRules)>
     #[allow(clippy::let_and_return)]
@@ -411,7 +411,7 @@ impl AuthorizeIpRulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AuthorizeIpRules,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -496,7 +496,7 @@ impl AuthorizeIpRulesInput {
             "AuthorizeIpRules",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -583,9 +583,9 @@ pub mod copy_workspace_image_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the image.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -617,7 +617,7 @@ pub mod copy_workspace_image_input {
 #[doc(hidden)]
 pub type CopyWorkspaceImageInputOperationOutputAlias = crate::operation::CopyWorkspaceImage;
 #[doc(hidden)]
-pub type CopyWorkspaceImageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CopyWorkspaceImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CopyWorkspaceImageInput {
     /// Consumes the builder and constructs an Operation<[`CopyWorkspaceImage`](crate::operation::CopyWorkspaceImage)>
     #[allow(clippy::let_and_return)]
@@ -628,7 +628,7 @@ impl CopyWorkspaceImageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CopyWorkspaceImage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -713,7 +713,7 @@ impl CopyWorkspaceImageInput {
             "CopyWorkspaceImage",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -746,23 +746,15 @@ pub mod create_connection_alias_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
-        ///
-        /// <important>
-        /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same
-        /// connection string with a different account, even if you delete all instances of it from the original account. The
-        /// connection string is globally reserved for your account.</p>
+        /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p> <important>
+        /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.</p>
         /// </important>
         pub fn connection_string(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_string = Some(input.into());
             self
         }
-        /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
-        ///
-        /// <important>
-        /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same
-        /// connection string with a different account, even if you delete all instances of it from the original account. The
-        /// connection string is globally reserved for your account.</p>
+        /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p> <important>
+        /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.</p>
         /// </important>
         pub fn set_connection_string(
             mut self,
@@ -776,9 +768,9 @@ pub mod create_connection_alias_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to associate with the connection alias.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -807,7 +799,7 @@ pub mod create_connection_alias_input {
 #[doc(hidden)]
 pub type CreateConnectionAliasInputOperationOutputAlias = crate::operation::CreateConnectionAlias;
 #[doc(hidden)]
-pub type CreateConnectionAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateConnectionAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConnectionAliasInput {
     /// Consumes the builder and constructs an Operation<[`CreateConnectionAlias`](crate::operation::CreateConnectionAlias)>
     #[allow(clippy::let_and_return)]
@@ -818,7 +810,7 @@ impl CreateConnectionAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateConnectionAlias,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -905,7 +897,7 @@ impl CreateConnectionAliasInput {
             "CreateConnectionAlias",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -965,9 +957,9 @@ pub mod create_ip_group_input {
         /// To override the contents of this collection use [`set_user_rules`](Self::set_user_rules).
         ///
         /// <p>The rules to add to the group.</p>
-        pub fn user_rules(mut self, input: impl Into<crate::model::IpRuleItem>) -> Self {
+        pub fn user_rules(mut self, input: crate::model::IpRuleItem) -> Self {
             let mut v = self.user_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_rules = Some(v);
             self
         }
@@ -984,9 +976,9 @@ pub mod create_ip_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1017,7 +1009,7 @@ pub mod create_ip_group_input {
 #[doc(hidden)]
 pub type CreateIpGroupInputOperationOutputAlias = crate::operation::CreateIpGroup;
 #[doc(hidden)]
-pub type CreateIpGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateIpGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateIpGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateIpGroup`](crate::operation::CreateIpGroup)>
     #[allow(clippy::let_and_return)]
@@ -1028,7 +1020,7 @@ impl CreateIpGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateIpGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1113,7 +1105,7 @@ impl CreateIpGroupInput {
             "CreateIpGroup",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1146,14 +1138,12 @@ pub mod create_tags_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-        /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-        /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -1163,9 +1153,9 @@ pub mod create_tags_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1194,7 +1184,7 @@ pub mod create_tags_input {
 #[doc(hidden)]
 pub type CreateTagsInputOperationOutputAlias = crate::operation::CreateTags;
 #[doc(hidden)]
-pub type CreateTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTagsInput {
     /// Consumes the builder and constructs an Operation<[`CreateTags`](crate::operation::CreateTags)>
     #[allow(clippy::let_and_return)]
@@ -1205,7 +1195,7 @@ impl CreateTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1289,7 +1279,7 @@ impl CreateTagsInput {
             "CreateTags",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1361,23 +1351,17 @@ pub mod create_updated_workspace_image_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags that you want to add to the new updated WorkSpace image.</p>
-        ///
-        /// <note>
-        /// <p>To add tags at the same time when you're creating the updated image, you must create
-        /// an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+        /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note>
+        /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>The tags that you want to add to the new updated WorkSpace image.</p>
-        ///
-        /// <note>
-        /// <p>To add tags at the same time when you're creating the updated image, you must create
-        /// an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+        /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note>
+        /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -1406,7 +1390,7 @@ pub mod create_updated_workspace_image_input {
 pub type CreateUpdatedWorkspaceImageInputOperationOutputAlias =
     crate::operation::CreateUpdatedWorkspaceImage;
 #[doc(hidden)]
-pub type CreateUpdatedWorkspaceImageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateUpdatedWorkspaceImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUpdatedWorkspaceImageInput {
     /// Consumes the builder and constructs an Operation<[`CreateUpdatedWorkspaceImage`](crate::operation::CreateUpdatedWorkspaceImage)>
     #[allow(clippy::let_and_return)]
@@ -1417,7 +1401,7 @@ impl CreateUpdatedWorkspaceImageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateUpdatedWorkspaceImage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1503,7 +1487,7 @@ impl CreateUpdatedWorkspaceImageInput {
             "CreateUpdatedWorkspaceImage",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1617,23 +1601,17 @@ pub mod create_workspace_bundle_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags associated with the bundle.</p>
-        ///
-        /// <note>
-        /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that
-        /// grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+        /// <p>The tags associated with the bundle.</p> <note>
+        /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>The tags associated with the bundle.</p>
-        ///
-        /// <note>
-        /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that
-        /// grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+        /// <p>The tags associated with the bundle.</p> <note>
+        /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -1664,7 +1642,7 @@ pub mod create_workspace_bundle_input {
 #[doc(hidden)]
 pub type CreateWorkspaceBundleInputOperationOutputAlias = crate::operation::CreateWorkspaceBundle;
 #[doc(hidden)]
-pub type CreateWorkspaceBundleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateWorkspaceBundleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWorkspaceBundleInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorkspaceBundle`](crate::operation::CreateWorkspaceBundle)>
     #[allow(clippy::let_and_return)]
@@ -1675,7 +1653,7 @@ impl CreateWorkspaceBundleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateWorkspaceBundle,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1762,7 +1740,7 @@ impl CreateWorkspaceBundleInput {
             "CreateWorkspaceBundle",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1799,9 +1777,9 @@ pub mod create_workspaces_input {
         /// To override the contents of this collection use [`set_workspaces`](Self::set_workspaces).
         ///
         /// <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>
-        pub fn workspaces(mut self, input: impl Into<crate::model::WorkspaceRequest>) -> Self {
+        pub fn workspaces(mut self, input: crate::model::WorkspaceRequest) -> Self {
             let mut v = self.workspaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.workspaces = Some(v);
             self
         }
@@ -1829,7 +1807,7 @@ pub mod create_workspaces_input {
 #[doc(hidden)]
 pub type CreateWorkspacesInputOperationOutputAlias = crate::operation::CreateWorkspaces;
 #[doc(hidden)]
-pub type CreateWorkspacesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateWorkspacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWorkspacesInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorkspaces`](crate::operation::CreateWorkspaces)>
     #[allow(clippy::let_and_return)]
@@ -1840,7 +1818,7 @@ impl CreateWorkspacesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateWorkspaces,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1925,7 +1903,7 @@ impl CreateWorkspacesInput {
             "CreateWorkspaces",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1983,7 +1961,7 @@ pub mod delete_connection_alias_input {
 #[doc(hidden)]
 pub type DeleteConnectionAliasInputOperationOutputAlias = crate::operation::DeleteConnectionAlias;
 #[doc(hidden)]
-pub type DeleteConnectionAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteConnectionAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConnectionAliasInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConnectionAlias`](crate::operation::DeleteConnectionAlias)>
     #[allow(clippy::let_and_return)]
@@ -1994,7 +1972,7 @@ impl DeleteConnectionAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteConnectionAlias,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2081,7 +2059,7 @@ impl DeleteConnectionAliasInput {
             "DeleteConnectionAlias",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2139,7 +2117,7 @@ pub mod delete_ip_group_input {
 #[doc(hidden)]
 pub type DeleteIpGroupInputOperationOutputAlias = crate::operation::DeleteIpGroup;
 #[doc(hidden)]
-pub type DeleteIpGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteIpGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteIpGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteIpGroup`](crate::operation::DeleteIpGroup)>
     #[allow(clippy::let_and_return)]
@@ -2150,7 +2128,7 @@ impl DeleteIpGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteIpGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2235,7 +2213,7 @@ impl DeleteIpGroupInput {
             "DeleteIpGroup",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2268,14 +2246,12 @@ pub mod delete_tags_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-        /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-        /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -2316,7 +2292,7 @@ pub mod delete_tags_input {
 #[doc(hidden)]
 pub type DeleteTagsInputOperationOutputAlias = crate::operation::DeleteTags;
 #[doc(hidden)]
-pub type DeleteTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTagsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTags`](crate::operation::DeleteTags)>
     #[allow(clippy::let_and_return)]
@@ -2327,7 +2303,7 @@ impl DeleteTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2411,7 +2387,7 @@ impl DeleteTagsInput {
             "DeleteTags",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2469,7 +2445,7 @@ pub mod delete_workspace_bundle_input {
 #[doc(hidden)]
 pub type DeleteWorkspaceBundleInputOperationOutputAlias = crate::operation::DeleteWorkspaceBundle;
 #[doc(hidden)]
-pub type DeleteWorkspaceBundleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteWorkspaceBundleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWorkspaceBundleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWorkspaceBundle`](crate::operation::DeleteWorkspaceBundle)>
     #[allow(clippy::let_and_return)]
@@ -2480,7 +2456,7 @@ impl DeleteWorkspaceBundleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteWorkspaceBundle,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2567,7 +2543,7 @@ impl DeleteWorkspaceBundleInput {
             "DeleteWorkspaceBundle",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2625,7 +2601,7 @@ pub mod delete_workspace_image_input {
 #[doc(hidden)]
 pub type DeleteWorkspaceImageInputOperationOutputAlias = crate::operation::DeleteWorkspaceImage;
 #[doc(hidden)]
-pub type DeleteWorkspaceImageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteWorkspaceImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWorkspaceImageInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWorkspaceImage`](crate::operation::DeleteWorkspaceImage)>
     #[allow(clippy::let_and_return)]
@@ -2636,7 +2612,7 @@ impl DeleteWorkspaceImageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteWorkspaceImage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2723,7 +2699,7 @@ impl DeleteWorkspaceImageInput {
             "DeleteWorkspaceImage",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2755,16 +2731,12 @@ pub mod deregister_workspace_directory_input {
         pub(crate) directory_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must
-        /// remove them before you deregister the directory, or you will receive an OperationNotSupportedException
-        /// error.</p>
+        /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must remove them before you deregister the directory, or you will receive an OperationNotSupportedException error.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must
-        /// remove them before you deregister the directory, or you will receive an OperationNotSupportedException
-        /// error.</p>
+        /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must remove them before you deregister the directory, or you will receive an OperationNotSupportedException error.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
@@ -2786,7 +2758,8 @@ pub mod deregister_workspace_directory_input {
 pub type DeregisterWorkspaceDirectoryInputOperationOutputAlias =
     crate::operation::DeregisterWorkspaceDirectory;
 #[doc(hidden)]
-pub type DeregisterWorkspaceDirectoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeregisterWorkspaceDirectoryInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterWorkspaceDirectoryInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterWorkspaceDirectory`](crate::operation::DeregisterWorkspaceDirectory)>
     #[allow(clippy::let_and_return)]
@@ -2797,7 +2770,7 @@ impl DeregisterWorkspaceDirectoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeregisterWorkspaceDirectory,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2883,7 +2856,7 @@ impl DeregisterWorkspaceDirectoryInput {
             "DeregisterWorkspaceDirectory",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2927,7 +2900,7 @@ pub mod describe_account_input {
 #[doc(hidden)]
 pub type DescribeAccountInputOperationOutputAlias = crate::operation::DescribeAccount;
 #[doc(hidden)]
-pub type DescribeAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAccountInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccount`](crate::operation::DescribeAccount)>
     #[allow(clippy::let_and_return)]
@@ -2938,7 +2911,7 @@ impl DescribeAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3023,7 +2996,7 @@ impl DescribeAccountInput {
             "DescribeAccount",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3047,14 +3020,12 @@ pub mod describe_account_modifications_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3076,7 +3047,8 @@ pub mod describe_account_modifications_input {
 pub type DescribeAccountModificationsInputOperationOutputAlias =
     crate::operation::DescribeAccountModifications;
 #[doc(hidden)]
-pub type DescribeAccountModificationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAccountModificationsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAccountModificationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccountModifications`](crate::operation::DescribeAccountModifications)>
     #[allow(clippy::let_and_return)]
@@ -3087,7 +3059,7 @@ impl DescribeAccountModificationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAccountModifications,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3173,7 +3145,7 @@ impl DescribeAccountModificationsInput {
             "DescribeAccountModifications",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3241,7 +3213,7 @@ pub mod describe_client_properties_input {
 pub type DescribeClientPropertiesInputOperationOutputAlias =
     crate::operation::DescribeClientProperties;
 #[doc(hidden)]
-pub type DescribeClientPropertiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeClientPropertiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeClientPropertiesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeClientProperties`](crate::operation::DescribeClientProperties)>
     #[allow(clippy::let_and_return)]
@@ -3252,7 +3224,7 @@ impl DescribeClientPropertiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeClientProperties,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3339,7 +3311,7 @@ impl DescribeClientPropertiesInput {
             "DescribeClientProperties",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3413,14 +3385,12 @@ pub mod describe_connection_aliases_input {
             self.limit = input;
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the
-        /// next set of results. </p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the
-        /// next set of results. </p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3445,7 +3415,7 @@ pub mod describe_connection_aliases_input {
 pub type DescribeConnectionAliasesInputOperationOutputAlias =
     crate::operation::DescribeConnectionAliases;
 #[doc(hidden)]
-pub type DescribeConnectionAliasesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeConnectionAliasesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConnectionAliasesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConnectionAliases`](crate::operation::DescribeConnectionAliases)>
     #[allow(clippy::let_and_return)]
@@ -3456,7 +3426,7 @@ impl DescribeConnectionAliasesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConnectionAliases,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3543,7 +3513,7 @@ impl DescribeConnectionAliasesInput {
             "DescribeConnectionAliases",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3587,14 +3557,12 @@ pub mod describe_connection_alias_permissions_input {
             self.alias_id = input;
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the
-        /// next set of results. </p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the
-        /// next set of results. </p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3628,7 +3596,8 @@ pub mod describe_connection_alias_permissions_input {
 pub type DescribeConnectionAliasPermissionsInputOperationOutputAlias =
     crate::operation::DescribeConnectionAliasPermissions;
 #[doc(hidden)]
-pub type DescribeConnectionAliasPermissionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeConnectionAliasPermissionsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConnectionAliasPermissionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConnectionAliasPermissions`](crate::operation::DescribeConnectionAliasPermissions)>
     #[allow(clippy::let_and_return)]
@@ -3639,7 +3608,7 @@ impl DescribeConnectionAliasPermissionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConnectionAliasPermissions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3725,7 +3694,7 @@ impl DescribeConnectionAliasPermissionsInput {
             "DescribeConnectionAliasPermissions",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3778,14 +3747,12 @@ pub mod describe_ip_groups_input {
             self.group_ids = input;
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3818,7 +3785,7 @@ pub mod describe_ip_groups_input {
 #[doc(hidden)]
 pub type DescribeIpGroupsInputOperationOutputAlias = crate::operation::DescribeIpGroups;
 #[doc(hidden)]
-pub type DescribeIpGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeIpGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeIpGroupsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeIpGroups`](crate::operation::DescribeIpGroups)>
     #[allow(clippy::let_and_return)]
@@ -3829,7 +3796,7 @@ impl DescribeIpGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeIpGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3914,7 +3881,7 @@ impl DescribeIpGroupsInput {
             "DescribeIpGroups",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3946,14 +3913,12 @@ pub mod describe_tags_input {
         pub(crate) resource_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-        /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-        /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -3974,7 +3939,7 @@ pub mod describe_tags_input {
 #[doc(hidden)]
 pub type DescribeTagsInputOperationOutputAlias = crate::operation::DescribeTags;
 #[doc(hidden)]
-pub type DescribeTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTagsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTags`](crate::operation::DescribeTags)>
     #[allow(clippy::let_and_return)]
@@ -3985,7 +3950,7 @@ impl DescribeTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4069,7 +4034,7 @@ impl DescribeTagsInput {
             "DescribeTags",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4123,15 +4088,13 @@ pub mod describe_workspace_bundles_input {
             self
         }
         /// <p>The owner of the bundles. You cannot combine this parameter with any other filter.</p>
-        /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>.
-        /// To describe the bundles that belong to your account, don't specify a value.</p>
+        /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>. To describe the bundles that belong to your account, don't specify a value.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner = Some(input.into());
             self
         }
         /// <p>The owner of the bundles. You cannot combine this parameter with any other filter.</p>
-        /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>.
-        /// To describe the bundles that belong to your account, don't specify a value.</p>
+        /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>. To describe the bundles that belong to your account, don't specify a value.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -4165,7 +4128,7 @@ pub mod describe_workspace_bundles_input {
 pub type DescribeWorkspaceBundlesInputOperationOutputAlias =
     crate::operation::DescribeWorkspaceBundles;
 #[doc(hidden)]
-pub type DescribeWorkspaceBundlesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeWorkspaceBundlesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkspaceBundlesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkspaceBundles`](crate::operation::DescribeWorkspaceBundles)>
     #[allow(clippy::let_and_return)]
@@ -4176,7 +4139,7 @@ impl DescribeWorkspaceBundlesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorkspaceBundles,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4263,7 +4226,7 @@ impl DescribeWorkspaceBundlesInput {
             "DescribeWorkspaceBundles",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4301,16 +4264,14 @@ pub mod describe_workspace_directories_input {
         ///
         /// To override the contents of this collection use [`set_directory_ids`](Self::set_directory_ids).
         ///
-        /// <p>The identifiers of the directories. If the value is null, all directories are
-        /// retrieved.</p>
+        /// <p>The identifiers of the directories. If the value is null, all directories are retrieved.</p>
         pub fn directory_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.directory_ids.unwrap_or_default();
             v.push(input.into());
             self.directory_ids = Some(v);
             self
         }
-        /// <p>The identifiers of the directories. If the value is null, all directories are
-        /// retrieved.</p>
+        /// <p>The identifiers of the directories. If the value is null, all directories are retrieved.</p>
         pub fn set_directory_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4328,14 +4289,12 @@ pub mod describe_workspace_directories_input {
             self.limit = input;
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4359,7 +4318,8 @@ pub mod describe_workspace_directories_input {
 pub type DescribeWorkspaceDirectoriesInputOperationOutputAlias =
     crate::operation::DescribeWorkspaceDirectories;
 #[doc(hidden)]
-pub type DescribeWorkspaceDirectoriesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeWorkspaceDirectoriesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkspaceDirectoriesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkspaceDirectories`](crate::operation::DescribeWorkspaceDirectories)>
     #[allow(clippy::let_and_return)]
@@ -4370,7 +4330,7 @@ impl DescribeWorkspaceDirectoriesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorkspaceDirectories,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4456,7 +4416,7 @@ impl DescribeWorkspaceDirectoriesInput {
             "DescribeWorkspaceDirectories",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4500,14 +4460,12 @@ pub mod describe_workspace_image_permissions_input {
             self.image_id = input;
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4541,7 +4499,8 @@ pub mod describe_workspace_image_permissions_input {
 pub type DescribeWorkspaceImagePermissionsInputOperationOutputAlias =
     crate::operation::DescribeWorkspaceImagePermissions;
 #[doc(hidden)]
-pub type DescribeWorkspaceImagePermissionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeWorkspaceImagePermissionsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkspaceImagePermissionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkspaceImagePermissions`](crate::operation::DescribeWorkspaceImagePermissions)>
     #[allow(clippy::let_and_return)]
@@ -4552,7 +4511,7 @@ impl DescribeWorkspaceImagePermissionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorkspaceImagePermissions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4638,7 +4597,7 @@ impl DescribeWorkspaceImagePermissionsInput {
             "DescribeWorkspaceImagePermissions",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4705,14 +4664,12 @@ pub mod describe_workspace_images_input {
             self.image_type = input;
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4747,7 +4704,7 @@ pub mod describe_workspace_images_input {
 pub type DescribeWorkspaceImagesInputOperationOutputAlias =
     crate::operation::DescribeWorkspaceImages;
 #[doc(hidden)]
-pub type DescribeWorkspaceImagesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeWorkspaceImagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkspaceImagesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkspaceImages`](crate::operation::DescribeWorkspaceImages)>
     #[allow(clippy::let_and_return)]
@@ -4758,7 +4715,7 @@ impl DescribeWorkspaceImagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorkspaceImages,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4845,7 +4802,7 @@ impl DescribeWorkspaceImagesInput {
             "DescribeWorkspaceImages",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4886,20 +4843,16 @@ pub mod describe_workspaces_input {
         ///
         /// To override the contents of this collection use [`set_workspace_ids`](Self::set_workspace_ids).
         ///
-        /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other
-        /// filter.</p>
-        /// <p>Because the <a>CreateWorkspaces</a> operation is asynchronous, the identifier
-        /// it returns is not immediately available. If you immediately call <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
+        /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.</p>
+        /// <p>Because the <code>CreateWorkspaces</code> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <code>DescribeWorkspaces</code> with this identifier, no information is returned.</p>
         pub fn workspace_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.workspace_ids.unwrap_or_default();
             v.push(input.into());
             self.workspace_ids = Some(v);
             self
         }
-        /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other
-        /// filter.</p>
-        /// <p>Because the <a>CreateWorkspaces</a> operation is asynchronous, the identifier
-        /// it returns is not immediately available. If you immediately call <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
+        /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.</p>
+        /// <p>Because the <code>CreateWorkspaces</code> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <code>DescribeWorkspaces</code> with this identifier, no information is returned.</p>
         pub fn set_workspace_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4907,40 +4860,32 @@ pub mod describe_workspaces_input {
             self.workspace_ids = input;
             self
         }
-        /// <p>The identifier of the directory. In addition, you can optionally specify a specific
-        /// directory user (see <code>UserName</code>). You cannot combine this parameter with any
-        /// other filter.</p>
+        /// <p>The identifier of the directory. In addition, you can optionally specify a specific directory user (see <code>UserName</code>). You cannot combine this parameter with any other filter.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the directory. In addition, you can optionally specify a specific
-        /// directory user (see <code>UserName</code>). You cannot combine this parameter with any
-        /// other filter.</p>
+        /// <p>The identifier of the directory. In addition, you can optionally specify a specific directory user (see <code>UserName</code>). You cannot combine this parameter with any other filter.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
         }
-        /// <p>The name of the directory user. You must specify this parameter with
-        /// <code>DirectoryId</code>.</p>
+        /// <p>The name of the directory user. You must specify this parameter with <code>DirectoryId</code>.</p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_name = Some(input.into());
             self
         }
-        /// <p>The name of the directory user. You must specify this parameter with
-        /// <code>DirectoryId</code>.</p>
+        /// <p>The name of the directory user. You must specify this parameter with <code>DirectoryId</code>.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
         }
-        /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are
-        /// retrieved. You cannot combine this parameter with any other filter.</p>
+        /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are retrieved. You cannot combine this parameter with any other filter.</p>
         pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bundle_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are
-        /// retrieved. You cannot combine this parameter with any other filter.</p>
+        /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are retrieved. You cannot combine this parameter with any other filter.</p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bundle_id = input;
             self
@@ -4955,14 +4900,12 @@ pub mod describe_workspaces_input {
             self.limit = input;
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4988,7 +4931,7 @@ pub mod describe_workspaces_input {
 #[doc(hidden)]
 pub type DescribeWorkspacesInputOperationOutputAlias = crate::operation::DescribeWorkspaces;
 #[doc(hidden)]
-pub type DescribeWorkspacesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeWorkspacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkspacesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkspaces`](crate::operation::DescribeWorkspaces)>
     #[allow(clippy::let_and_return)]
@@ -4999,7 +4942,7 @@ impl DescribeWorkspacesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorkspaces,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5084,7 +5027,7 @@ impl DescribeWorkspacesInput {
             "DescribeWorkspaces",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5136,14 +5079,12 @@ pub mod describe_workspaces_connection_status_input {
             self.workspace_ids = input;
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5166,7 +5107,8 @@ pub mod describe_workspaces_connection_status_input {
 pub type DescribeWorkspacesConnectionStatusInputOperationOutputAlias =
     crate::operation::DescribeWorkspacesConnectionStatus;
 #[doc(hidden)]
-pub type DescribeWorkspacesConnectionStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeWorkspacesConnectionStatusInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkspacesConnectionStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkspacesConnectionStatus`](crate::operation::DescribeWorkspacesConnectionStatus)>
     #[allow(clippy::let_and_return)]
@@ -5177,7 +5119,7 @@ impl DescribeWorkspacesConnectionStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorkspacesConnectionStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5263,7 +5205,7 @@ impl DescribeWorkspacesConnectionStatusInput {
             "DescribeWorkspacesConnectionStatus",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5322,7 +5264,7 @@ pub mod describe_workspace_snapshots_input {
 pub type DescribeWorkspaceSnapshotsInputOperationOutputAlias =
     crate::operation::DescribeWorkspaceSnapshots;
 #[doc(hidden)]
-pub type DescribeWorkspaceSnapshotsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeWorkspaceSnapshotsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkspaceSnapshotsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkspaceSnapshots`](crate::operation::DescribeWorkspaceSnapshots)>
     #[allow(clippy::let_and_return)]
@@ -5333,7 +5275,7 @@ impl DescribeWorkspaceSnapshotsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorkspaceSnapshots,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5420,7 +5362,7 @@ impl DescribeWorkspaceSnapshotsInput {
             "DescribeWorkspaceSnapshots",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5479,7 +5421,7 @@ pub mod disassociate_connection_alias_input {
 pub type DisassociateConnectionAliasInputOperationOutputAlias =
     crate::operation::DisassociateConnectionAlias;
 #[doc(hidden)]
-pub type DisassociateConnectionAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateConnectionAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateConnectionAliasInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateConnectionAlias`](crate::operation::DisassociateConnectionAlias)>
     #[allow(clippy::let_and_return)]
@@ -5490,7 +5432,7 @@ impl DisassociateConnectionAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateConnectionAlias,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5576,7 +5518,7 @@ impl DisassociateConnectionAliasInput {
             "DisassociateConnectionAlias",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5655,7 +5597,7 @@ pub mod disassociate_ip_groups_input {
 #[doc(hidden)]
 pub type DisassociateIpGroupsInputOperationOutputAlias = crate::operation::DisassociateIpGroups;
 #[doc(hidden)]
-pub type DisassociateIpGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateIpGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateIpGroupsInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateIpGroups`](crate::operation::DisassociateIpGroups)>
     #[allow(clippy::let_and_return)]
@@ -5666,7 +5608,7 @@ impl DisassociateIpGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateIpGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5753,7 +5695,7 @@ impl DisassociateIpGroupsInput {
             "DisassociateIpGroups",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5801,13 +5743,8 @@ pub mod import_workspace_image_input {
             self.ec2_image_id = input;
             self
         }
-        /// <p>The ingestion process to be used when importing the image, depending on which protocol
-        /// you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol
-        /// (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value
-        /// that does not end in <code>_WSP</code>. </p>
-        ///
-        /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
-        /// <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+        /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>
+        /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
         pub fn ingestion_process(
             mut self,
             input: crate::model::WorkspaceImageIngestionProcess,
@@ -5815,13 +5752,8 @@ pub mod import_workspace_image_input {
             self.ingestion_process = Some(input);
             self
         }
-        /// <p>The ingestion process to be used when importing the image, depending on which protocol
-        /// you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol
-        /// (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value
-        /// that does not end in <code>_WSP</code>. </p>
-        ///
-        /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
-        /// <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+        /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>
+        /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
         pub fn set_ingestion_process(
             mut self,
             input: std::option::Option<crate::model::WorkspaceImageIngestionProcess>,
@@ -5857,9 +5789,9 @@ pub mod import_workspace_image_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5875,26 +5807,16 @@ pub mod import_workspace_image_input {
         ///
         /// To override the contents of this collection use [`set_applications`](Self::set_applications).
         ///
-        /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10
-        /// BYOL images. For more information about subscribing to Office for BYOL images, see
-        /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
-        /// Bring Your Own Windows Desktop Licenses</a>.</p>
-        ///
-        /// <note>
+        /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>
         /// <p>Although this parameter is an array, only one item is allowed at this time.</p>
         /// </note>
-        pub fn applications(mut self, input: impl Into<crate::model::Application>) -> Self {
+        pub fn applications(mut self, input: crate::model::Application) -> Self {
             let mut v = self.applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.applications = Some(v);
             self
         }
-        /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10
-        /// BYOL images. For more information about subscribing to Office for BYOL images, see
-        /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
-        /// Bring Your Own Windows Desktop Licenses</a>.</p>
-        ///
-        /// <note>
+        /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>
         /// <p>Although this parameter is an array, only one item is allowed at this time.</p>
         /// </note>
         pub fn set_applications(
@@ -5925,7 +5847,7 @@ pub mod import_workspace_image_input {
 #[doc(hidden)]
 pub type ImportWorkspaceImageInputOperationOutputAlias = crate::operation::ImportWorkspaceImage;
 #[doc(hidden)]
-pub type ImportWorkspaceImageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ImportWorkspaceImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportWorkspaceImageInput {
     /// Consumes the builder and constructs an Operation<[`ImportWorkspaceImage`](crate::operation::ImportWorkspaceImage)>
     #[allow(clippy::let_and_return)]
@@ -5936,7 +5858,7 @@ impl ImportWorkspaceImageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ImportWorkspaceImage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6023,7 +5945,7 @@ impl ImportWorkspaceImageInput {
             "ImportWorkspaceImage",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6057,8 +5979,7 @@ pub mod list_available_management_cidr_ranges_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The IP address range to search. Specify an IP address range that is compatible with your
-        /// network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
+        /// <p>The IP address range to search. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
         pub fn management_cidr_range_constraint(
             mut self,
             input: impl Into<std::string::String>,
@@ -6066,8 +5987,7 @@ pub mod list_available_management_cidr_ranges_input {
             self.management_cidr_range_constraint = Some(input.into());
             self
         }
-        /// <p>The IP address range to search. Specify an IP address range that is compatible with your
-        /// network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
+        /// <p>The IP address range to search. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
         pub fn set_management_cidr_range_constraint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6085,14 +6005,12 @@ pub mod list_available_management_cidr_ranges_input {
             self.max_results = input;
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6116,7 +6034,8 @@ pub mod list_available_management_cidr_ranges_input {
 pub type ListAvailableManagementCidrRangesInputOperationOutputAlias =
     crate::operation::ListAvailableManagementCidrRanges;
 #[doc(hidden)]
-pub type ListAvailableManagementCidrRangesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAvailableManagementCidrRangesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListAvailableManagementCidrRangesInput {
     /// Consumes the builder and constructs an Operation<[`ListAvailableManagementCidrRanges`](crate::operation::ListAvailableManagementCidrRanges)>
     #[allow(clippy::let_and_return)]
@@ -6127,7 +6046,7 @@ impl ListAvailableManagementCidrRangesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAvailableManagementCidrRanges,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6213,7 +6132,7 @@ impl ListAvailableManagementCidrRangesInput {
             "ListAvailableManagementCidrRanges",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6286,7 +6205,7 @@ pub mod migrate_workspace_input {
 #[doc(hidden)]
 pub type MigrateWorkspaceInputOperationOutputAlias = crate::operation::MigrateWorkspace;
 #[doc(hidden)]
-pub type MigrateWorkspaceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type MigrateWorkspaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl MigrateWorkspaceInput {
     /// Consumes the builder and constructs an Operation<[`MigrateWorkspace`](crate::operation::MigrateWorkspace)>
     #[allow(clippy::let_and_return)]
@@ -6297,7 +6216,7 @@ impl MigrateWorkspaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::MigrateWorkspace,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6382,7 +6301,7 @@ impl MigrateWorkspaceInput {
             "MigrateWorkspace",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6433,11 +6352,7 @@ pub mod modify_account_input {
             self.dedicated_tenancy_support = input;
             self
         }
-        /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network
-        /// interface. Specify an IP address range that is compatible with your network and in CIDR
-        /// notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be
-        /// /16 (for example, 203.0.113.25/16). It must also be specified as available by the
-        /// <code>ListAvailableManagementCidrRanges</code> operation.</p>
+        /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be /16 (for example, 203.0.113.25/16). It must also be specified as available by the <code>ListAvailableManagementCidrRanges</code> operation.</p>
         pub fn dedicated_tenancy_management_cidr_range(
             mut self,
             input: impl Into<std::string::String>,
@@ -6445,11 +6360,7 @@ pub mod modify_account_input {
             self.dedicated_tenancy_management_cidr_range = Some(input.into());
             self
         }
-        /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network
-        /// interface. Specify an IP address range that is compatible with your network and in CIDR
-        /// notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be
-        /// /16 (for example, 203.0.113.25/16). It must also be specified as available by the
-        /// <code>ListAvailableManagementCidrRanges</code> operation.</p>
+        /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be /16 (for example, 203.0.113.25/16). It must also be specified as available by the <code>ListAvailableManagementCidrRanges</code> operation.</p>
         pub fn set_dedicated_tenancy_management_cidr_range(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6475,7 +6386,7 @@ pub mod modify_account_input {
 #[doc(hidden)]
 pub type ModifyAccountInputOperationOutputAlias = crate::operation::ModifyAccount;
 #[doc(hidden)]
-pub type ModifyAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyAccountInput {
     /// Consumes the builder and constructs an Operation<[`ModifyAccount`](crate::operation::ModifyAccount)>
     #[allow(clippy::let_and_return)]
@@ -6486,7 +6397,7 @@ impl ModifyAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6570,7 +6481,7 @@ impl ModifyAccountInput {
             "ModifyAccount",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6643,7 +6554,7 @@ pub mod modify_client_properties_input {
 #[doc(hidden)]
 pub type ModifyClientPropertiesInputOperationOutputAlias = crate::operation::ModifyClientProperties;
 #[doc(hidden)]
-pub type ModifyClientPropertiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyClientPropertiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyClientPropertiesInput {
     /// Consumes the builder and constructs an Operation<[`ModifyClientProperties`](crate::operation::ModifyClientProperties)>
     #[allow(clippy::let_and_return)]
@@ -6654,7 +6565,7 @@ impl ModifyClientPropertiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyClientProperties,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6741,7 +6652,7 @@ impl ModifyClientPropertiesInput {
             "ModifyClientProperties",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6819,7 +6730,8 @@ pub mod modify_selfservice_permissions_input {
 pub type ModifySelfservicePermissionsInputOperationOutputAlias =
     crate::operation::ModifySelfservicePermissions;
 #[doc(hidden)]
-pub type ModifySelfservicePermissionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifySelfservicePermissionsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ModifySelfservicePermissionsInput {
     /// Consumes the builder and constructs an Operation<[`ModifySelfservicePermissions`](crate::operation::ModifySelfservicePermissions)>
     #[allow(clippy::let_and_return)]
@@ -6830,7 +6742,7 @@ impl ModifySelfservicePermissionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifySelfservicePermissions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6916,7 +6828,7 @@ impl ModifySelfservicePermissionsInput {
             "ModifySelfservicePermissions",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6994,7 +6906,8 @@ pub mod modify_workspace_access_properties_input {
 pub type ModifyWorkspaceAccessPropertiesInputOperationOutputAlias =
     crate::operation::ModifyWorkspaceAccessProperties;
 #[doc(hidden)]
-pub type ModifyWorkspaceAccessPropertiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyWorkspaceAccessPropertiesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyWorkspaceAccessPropertiesInput {
     /// Consumes the builder and constructs an Operation<[`ModifyWorkspaceAccessProperties`](crate::operation::ModifyWorkspaceAccessProperties)>
     #[allow(clippy::let_and_return)]
@@ -7005,7 +6918,7 @@ impl ModifyWorkspaceAccessPropertiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyWorkspaceAccessProperties,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7091,7 +7004,7 @@ impl ModifyWorkspaceAccessPropertiesInput {
             "ModifyWorkspaceAccessProperties",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7169,7 +7082,8 @@ pub mod modify_workspace_creation_properties_input {
 pub type ModifyWorkspaceCreationPropertiesInputOperationOutputAlias =
     crate::operation::ModifyWorkspaceCreationProperties;
 #[doc(hidden)]
-pub type ModifyWorkspaceCreationPropertiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyWorkspaceCreationPropertiesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyWorkspaceCreationPropertiesInput {
     /// Consumes the builder and constructs an Operation<[`ModifyWorkspaceCreationProperties`](crate::operation::ModifyWorkspaceCreationProperties)>
     #[allow(clippy::let_and_return)]
@@ -7180,7 +7094,7 @@ impl ModifyWorkspaceCreationPropertiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyWorkspaceCreationProperties,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7266,7 +7180,7 @@ impl ModifyWorkspaceCreationPropertiesInput {
             "ModifyWorkspaceCreationProperties",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7340,7 +7254,7 @@ pub mod modify_workspace_properties_input {
 pub type ModifyWorkspacePropertiesInputOperationOutputAlias =
     crate::operation::ModifyWorkspaceProperties;
 #[doc(hidden)]
-pub type ModifyWorkspacePropertiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyWorkspacePropertiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyWorkspacePropertiesInput {
     /// Consumes the builder and constructs an Operation<[`ModifyWorkspaceProperties`](crate::operation::ModifyWorkspaceProperties)>
     #[allow(clippy::let_and_return)]
@@ -7351,7 +7265,7 @@ impl ModifyWorkspacePropertiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyWorkspaceProperties,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7438,7 +7352,7 @@ impl ModifyWorkspacePropertiesInput {
             "ModifyWorkspaceProperties",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7511,7 +7425,7 @@ pub mod modify_workspace_state_input {
 #[doc(hidden)]
 pub type ModifyWorkspaceStateInputOperationOutputAlias = crate::operation::ModifyWorkspaceState;
 #[doc(hidden)]
-pub type ModifyWorkspaceStateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyWorkspaceStateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyWorkspaceStateInput {
     /// Consumes the builder and constructs an Operation<[`ModifyWorkspaceState`](crate::operation::ModifyWorkspaceState)>
     #[allow(clippy::let_and_return)]
@@ -7522,7 +7436,7 @@ impl ModifyWorkspaceStateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyWorkspaceState,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7609,7 +7523,7 @@ impl ModifyWorkspaceStateInput {
             "ModifyWorkspaceState",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7647,12 +7561,9 @@ pub mod reboot_workspaces_input {
         /// To override the contents of this collection use [`set_reboot_workspace_requests`](Self::set_reboot_workspace_requests).
         ///
         /// <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
-        pub fn reboot_workspace_requests(
-            mut self,
-            input: impl Into<crate::model::RebootRequest>,
-        ) -> Self {
+        pub fn reboot_workspace_requests(mut self, input: crate::model::RebootRequest) -> Self {
             let mut v = self.reboot_workspace_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reboot_workspace_requests = Some(v);
             self
         }
@@ -7680,7 +7591,7 @@ pub mod reboot_workspaces_input {
 #[doc(hidden)]
 pub type RebootWorkspacesInputOperationOutputAlias = crate::operation::RebootWorkspaces;
 #[doc(hidden)]
-pub type RebootWorkspacesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RebootWorkspacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RebootWorkspacesInput {
     /// Consumes the builder and constructs an Operation<[`RebootWorkspaces`](crate::operation::RebootWorkspaces)>
     #[allow(clippy::let_and_return)]
@@ -7691,7 +7602,7 @@ impl RebootWorkspacesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RebootWorkspaces,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7776,7 +7687,7 @@ impl RebootWorkspacesInput {
             "RebootWorkspaces",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7814,12 +7725,9 @@ pub mod rebuild_workspaces_input {
         /// To override the contents of this collection use [`set_rebuild_workspace_requests`](Self::set_rebuild_workspace_requests).
         ///
         /// <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>
-        pub fn rebuild_workspace_requests(
-            mut self,
-            input: impl Into<crate::model::RebuildRequest>,
-        ) -> Self {
+        pub fn rebuild_workspace_requests(mut self, input: crate::model::RebuildRequest) -> Self {
             let mut v = self.rebuild_workspace_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rebuild_workspace_requests = Some(v);
             self
         }
@@ -7847,7 +7755,7 @@ pub mod rebuild_workspaces_input {
 #[doc(hidden)]
 pub type RebuildWorkspacesInputOperationOutputAlias = crate::operation::RebuildWorkspaces;
 #[doc(hidden)]
-pub type RebuildWorkspacesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RebuildWorkspacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RebuildWorkspacesInput {
     /// Consumes the builder and constructs an Operation<[`RebuildWorkspaces`](crate::operation::RebuildWorkspaces)>
     #[allow(clippy::let_and_return)]
@@ -7858,7 +7766,7 @@ impl RebuildWorkspacesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RebuildWorkspaces,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7943,7 +7851,7 @@ impl RebuildWorkspacesInput {
             "RebuildWorkspaces",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7980,20 +7888,12 @@ pub mod register_workspace_directory_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The identifier of the directory. You cannot register a directory if it does not have a status
-        /// of Active. If the directory does not have a status of Active, you will receive an
-        /// InvalidResourceStateException error. If you have already registered the maximum number of directories
-        /// that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error.
-        /// Deregister directories that you are not using for WorkSpaces, and try again.</p>
+        /// <p>The identifier of the directory. You cannot register a directory if it does not have a status of Active. If the directory does not have a status of Active, you will receive an InvalidResourceStateException error. If you have already registered the maximum number of directories that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error. Deregister directories that you are not using for WorkSpaces, and try again.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the directory. You cannot register a directory if it does not have a status
-        /// of Active. If the directory does not have a status of Active, you will receive an
-        /// InvalidResourceStateException error. If you have already registered the maximum number of directories
-        /// that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error.
-        /// Deregister directories that you are not using for WorkSpaces, and try again.</p>
+        /// <p>The identifier of the directory. You cannot register a directory if it does not have a status of Active. If the directory does not have a status of Active, you will receive an InvalidResourceStateException error. If you have already registered the maximum number of directories that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error. Deregister directories that you are not using for WorkSpaces, and try again.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
@@ -8002,18 +7902,14 @@ pub mod register_workspace_directory_input {
         ///
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
-        /// <p>The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets
-        /// are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these
-        /// conditions are not met, you will receive an OperationNotSupportedException error.</p>
+        /// <p>The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these conditions are not met, you will receive an OperationNotSupportedException error.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
-        /// <p>The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets
-        /// are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these
-        /// conditions are not met, you will receive an OperationNotSupportedException error.</p>
+        /// <p>The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these conditions are not met, you will receive an OperationNotSupportedException error.</p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8021,16 +7917,12 @@ pub mod register_workspace_directory_input {
             self.subnet_ids = input;
             self
         }
-        /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and
-        /// WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set
-        /// <code>EnableWorkDocs</code> to disabled, and try again.</p>
+        /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set <code>EnableWorkDocs</code> to disabled, and try again.</p>
         pub fn enable_work_docs(mut self, input: bool) -> Self {
             self.enable_work_docs = Some(input);
             self
         }
-        /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and
-        /// WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set
-        /// <code>EnableWorkDocs</code> to disabled, and try again.</p>
+        /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set <code>EnableWorkDocs</code> to disabled, and try again.</p>
         pub fn set_enable_work_docs(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_work_docs = input;
             self
@@ -8045,20 +7937,12 @@ pub mod register_workspace_directory_input {
             self.enable_self_service = input;
             self
         }
-        /// <p>Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own
-        /// License (BYOL) images, this value must be set to <code>DEDICATED</code> and your Amazon Web Services account must be
-        /// enabled for BYOL. If your account has not been enabled for BYOL, you will receive an
-        /// InvalidParameterValuesException error. For more information about BYOL images, see
-        /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
+        /// <p>Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own License (BYOL) images, this value must be set to <code>DEDICATED</code> and your Amazon Web Services account must be enabled for BYOL. If your account has not been enabled for BYOL, you will receive an InvalidParameterValuesException error. For more information about BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
         pub fn tenancy(mut self, input: crate::model::Tenancy) -> Self {
             self.tenancy = Some(input);
             self
         }
-        /// <p>Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own
-        /// License (BYOL) images, this value must be set to <code>DEDICATED</code> and your Amazon Web Services account must be
-        /// enabled for BYOL. If your account has not been enabled for BYOL, you will receive an
-        /// InvalidParameterValuesException error. For more information about BYOL images, see
-        /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
+        /// <p>Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own License (BYOL) images, this value must be set to <code>DEDICATED</code> and your Amazon Web Services account must be enabled for BYOL. If your account has not been enabled for BYOL, you will receive an InvalidParameterValuesException error. For more information about BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
         pub fn set_tenancy(mut self, input: std::option::Option<crate::model::Tenancy>) -> Self {
             self.tenancy = input;
             self
@@ -8068,9 +7952,9 @@ pub mod register_workspace_directory_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the directory.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8104,7 +7988,7 @@ pub mod register_workspace_directory_input {
 pub type RegisterWorkspaceDirectoryInputOperationOutputAlias =
     crate::operation::RegisterWorkspaceDirectory;
 #[doc(hidden)]
-pub type RegisterWorkspaceDirectoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterWorkspaceDirectoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterWorkspaceDirectoryInput {
     /// Consumes the builder and constructs an Operation<[`RegisterWorkspaceDirectory`](crate::operation::RegisterWorkspaceDirectory)>
     #[allow(clippy::let_and_return)]
@@ -8115,7 +7999,7 @@ impl RegisterWorkspaceDirectoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterWorkspaceDirectory,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8202,7 +8086,7 @@ impl RegisterWorkspaceDirectoryInput {
             "RegisterWorkspaceDirectory",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8260,7 +8144,7 @@ pub mod restore_workspace_input {
 #[doc(hidden)]
 pub type RestoreWorkspaceInputOperationOutputAlias = crate::operation::RestoreWorkspace;
 #[doc(hidden)]
-pub type RestoreWorkspaceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RestoreWorkspaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RestoreWorkspaceInput {
     /// Consumes the builder and constructs an Operation<[`RestoreWorkspace`](crate::operation::RestoreWorkspace)>
     #[allow(clippy::let_and_return)]
@@ -8271,7 +8155,7 @@ impl RestoreWorkspaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RestoreWorkspace,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8356,7 +8240,7 @@ impl RestoreWorkspaceInput {
             "RestoreWorkspace",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8435,7 +8319,7 @@ pub mod revoke_ip_rules_input {
 #[doc(hidden)]
 pub type RevokeIpRulesInputOperationOutputAlias = crate::operation::RevokeIpRules;
 #[doc(hidden)]
-pub type RevokeIpRulesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RevokeIpRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RevokeIpRulesInput {
     /// Consumes the builder and constructs an Operation<[`RevokeIpRules`](crate::operation::RevokeIpRules)>
     #[allow(clippy::let_and_return)]
@@ -8446,7 +8330,7 @@ impl RevokeIpRulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RevokeIpRules,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8531,7 +8415,7 @@ impl RevokeIpRulesInput {
             "RevokeIpRules",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8569,12 +8453,9 @@ pub mod start_workspaces_input {
         /// To override the contents of this collection use [`set_start_workspace_requests`](Self::set_start_workspace_requests).
         ///
         /// <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
-        pub fn start_workspace_requests(
-            mut self,
-            input: impl Into<crate::model::StartRequest>,
-        ) -> Self {
+        pub fn start_workspace_requests(mut self, input: crate::model::StartRequest) -> Self {
             let mut v = self.start_workspace_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.start_workspace_requests = Some(v);
             self
         }
@@ -8602,7 +8483,7 @@ pub mod start_workspaces_input {
 #[doc(hidden)]
 pub type StartWorkspacesInputOperationOutputAlias = crate::operation::StartWorkspaces;
 #[doc(hidden)]
-pub type StartWorkspacesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartWorkspacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartWorkspacesInput {
     /// Consumes the builder and constructs an Operation<[`StartWorkspaces`](crate::operation::StartWorkspaces)>
     #[allow(clippy::let_and_return)]
@@ -8613,7 +8494,7 @@ impl StartWorkspacesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartWorkspaces,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8698,7 +8579,7 @@ impl StartWorkspacesInput {
             "StartWorkspaces",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8736,12 +8617,9 @@ pub mod stop_workspaces_input {
         /// To override the contents of this collection use [`set_stop_workspace_requests`](Self::set_stop_workspace_requests).
         ///
         /// <p>The WorkSpaces to stop. You can specify up to 25 WorkSpaces.</p>
-        pub fn stop_workspace_requests(
-            mut self,
-            input: impl Into<crate::model::StopRequest>,
-        ) -> Self {
+        pub fn stop_workspace_requests(mut self, input: crate::model::StopRequest) -> Self {
             let mut v = self.stop_workspace_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stop_workspace_requests = Some(v);
             self
         }
@@ -8769,7 +8647,7 @@ pub mod stop_workspaces_input {
 #[doc(hidden)]
 pub type StopWorkspacesInputOperationOutputAlias = crate::operation::StopWorkspaces;
 #[doc(hidden)]
-pub type StopWorkspacesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopWorkspacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopWorkspacesInput {
     /// Consumes the builder and constructs an Operation<[`StopWorkspaces`](crate::operation::StopWorkspaces)>
     #[allow(clippy::let_and_return)]
@@ -8780,7 +8658,7 @@ impl StopWorkspacesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopWorkspaces,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8865,7 +8743,7 @@ impl StopWorkspacesInput {
             "StopWorkspaces",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8905,10 +8783,10 @@ pub mod terminate_workspaces_input {
         /// <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
         pub fn terminate_workspace_requests(
             mut self,
-            input: impl Into<crate::model::TerminateRequest>,
+            input: crate::model::TerminateRequest,
         ) -> Self {
             let mut v = self.terminate_workspace_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.terminate_workspace_requests = Some(v);
             self
         }
@@ -8936,7 +8814,7 @@ pub mod terminate_workspaces_input {
 #[doc(hidden)]
 pub type TerminateWorkspacesInputOperationOutputAlias = crate::operation::TerminateWorkspaces;
 #[doc(hidden)]
-pub type TerminateWorkspacesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TerminateWorkspacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TerminateWorkspacesInput {
     /// Consumes the builder and constructs an Operation<[`TerminateWorkspaces`](crate::operation::TerminateWorkspaces)>
     #[allow(clippy::let_and_return)]
@@ -8947,7 +8825,7 @@ impl TerminateWorkspacesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TerminateWorkspaces,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9032,7 +8910,7 @@ impl TerminateWorkspacesInput {
             "TerminateWorkspaces",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9110,7 +8988,8 @@ pub mod update_connection_alias_permission_input {
 pub type UpdateConnectionAliasPermissionInputOperationOutputAlias =
     crate::operation::UpdateConnectionAliasPermission;
 #[doc(hidden)]
-pub type UpdateConnectionAliasPermissionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateConnectionAliasPermissionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConnectionAliasPermissionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConnectionAliasPermission`](crate::operation::UpdateConnectionAliasPermission)>
     #[allow(clippy::let_and_return)]
@@ -9121,7 +9000,7 @@ impl UpdateConnectionAliasPermissionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateConnectionAliasPermission,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9207,7 +9086,7 @@ impl UpdateConnectionAliasPermissionInput {
             "UpdateConnectionAliasPermission",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9255,9 +9134,9 @@ pub mod update_rules_of_ip_group_input {
         /// To override the contents of this collection use [`set_user_rules`](Self::set_user_rules).
         ///
         /// <p>One or more rules.</p>
-        pub fn user_rules(mut self, input: impl Into<crate::model::IpRuleItem>) -> Self {
+        pub fn user_rules(mut self, input: crate::model::IpRuleItem) -> Self {
             let mut v = self.user_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_rules = Some(v);
             self
         }
@@ -9286,7 +9165,7 @@ pub mod update_rules_of_ip_group_input {
 #[doc(hidden)]
 pub type UpdateRulesOfIpGroupInputOperationOutputAlias = crate::operation::UpdateRulesOfIpGroup;
 #[doc(hidden)]
-pub type UpdateRulesOfIpGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateRulesOfIpGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRulesOfIpGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRulesOfIpGroup`](crate::operation::UpdateRulesOfIpGroup)>
     #[allow(clippy::let_and_return)]
@@ -9297,7 +9176,7 @@ impl UpdateRulesOfIpGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRulesOfIpGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9384,7 +9263,7 @@ impl UpdateRulesOfIpGroupInput {
             "UpdateRulesOfIpGroup",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9454,7 +9333,7 @@ pub mod update_workspace_bundle_input {
 #[doc(hidden)]
 pub type UpdateWorkspaceBundleInputOperationOutputAlias = crate::operation::UpdateWorkspaceBundle;
 #[doc(hidden)]
-pub type UpdateWorkspaceBundleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateWorkspaceBundleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateWorkspaceBundleInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWorkspaceBundle`](crate::operation::UpdateWorkspaceBundle)>
     #[allow(clippy::let_and_return)]
@@ -9465,7 +9344,7 @@ impl UpdateWorkspaceBundleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateWorkspaceBundle,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9552,7 +9431,7 @@ impl UpdateWorkspaceBundleInput {
             "UpdateWorkspaceBundle",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9596,30 +9475,24 @@ pub mod update_workspace_image_permission_input {
             self.image_id = input;
             self
         }
-        /// <p>The permission to copy the image. This permission can be revoked only after an image
-        /// has been shared.</p>
+        /// <p>The permission to copy the image. This permission can be revoked only after an image has been shared.</p>
         pub fn allow_copy_image(mut self, input: bool) -> Self {
             self.allow_copy_image = Some(input);
             self
         }
-        /// <p>The permission to copy the image. This permission can be revoked only after an image
-        /// has been shared.</p>
+        /// <p>The permission to copy the image. This permission can be revoked only after an image has been shared.</p>
         pub fn set_allow_copy_image(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_copy_image = input;
             self
         }
-        /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p>
-        ///
-        /// <important>
+        /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important>
         /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
         /// </important>
         pub fn shared_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.shared_account_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p>
-        ///
-        /// <important>
+        /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important>
         /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
         /// </important>
         pub fn set_shared_account_id(
@@ -9648,7 +9521,8 @@ pub mod update_workspace_image_permission_input {
 pub type UpdateWorkspaceImagePermissionInputOperationOutputAlias =
     crate::operation::UpdateWorkspaceImagePermission;
 #[doc(hidden)]
-pub type UpdateWorkspaceImagePermissionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateWorkspaceImagePermissionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateWorkspaceImagePermissionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWorkspaceImagePermission`](crate::operation::UpdateWorkspaceImagePermission)>
     #[allow(clippy::let_and_return)]
@@ -9659,7 +9533,7 @@ impl UpdateWorkspaceImagePermissionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateWorkspaceImagePermission,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9745,7 +9619,7 @@ impl UpdateWorkspaceImagePermissionInput {
             "UpdateWorkspaceImagePermission",
             "workspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9774,12 +9648,9 @@ impl UpdateWorkspaceImagePermissionInput {
 pub struct UpdateWorkspaceImagePermissionInput {
     /// <p>The identifier of the image.</p>
     pub image_id: std::option::Option<std::string::String>,
-    /// <p>The permission to copy the image. This permission can be revoked only after an image
-    /// has been shared.</p>
+    /// <p>The permission to copy the image. This permission can be revoked only after an image has been shared.</p>
     pub allow_copy_image: std::option::Option<bool>,
-    /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p>
-    ///
-    /// <important>
+    /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important>
     /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
     /// </important>
     pub shared_account_id: std::option::Option<std::string::String>,
@@ -9789,14 +9660,11 @@ impl UpdateWorkspaceImagePermissionInput {
     pub fn image_id(&self) -> std::option::Option<&str> {
         self.image_id.as_deref()
     }
-    /// <p>The permission to copy the image. This permission can be revoked only after an image
-    /// has been shared.</p>
+    /// <p>The permission to copy the image. This permission can be revoked only after an image has been shared.</p>
     pub fn allow_copy_image(&self) -> std::option::Option<bool> {
         self.allow_copy_image
     }
-    /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p>
-    ///
-    /// <important>
+    /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important>
     /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
     /// </important>
     pub fn shared_account_id(&self) -> std::option::Option<&str> {
@@ -10024,49 +9892,29 @@ impl std::fmt::Debug for RestoreWorkspaceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterWorkspaceDirectoryInput {
-    /// <p>The identifier of the directory. You cannot register a directory if it does not have a status
-    /// of Active. If the directory does not have a status of Active, you will receive an
-    /// InvalidResourceStateException error. If you have already registered the maximum number of directories
-    /// that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error.
-    /// Deregister directories that you are not using for WorkSpaces, and try again.</p>
+    /// <p>The identifier of the directory. You cannot register a directory if it does not have a status of Active. If the directory does not have a status of Active, you will receive an InvalidResourceStateException error. If you have already registered the maximum number of directories that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error. Deregister directories that you are not using for WorkSpaces, and try again.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets
-    /// are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these
-    /// conditions are not met, you will receive an OperationNotSupportedException error.</p>
+    /// <p>The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these conditions are not met, you will receive an OperationNotSupportedException error.</p>
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and
-    /// WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set
-    /// <code>EnableWorkDocs</code> to disabled, and try again.</p>
+    /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set <code>EnableWorkDocs</code> to disabled, and try again.</p>
     pub enable_work_docs: std::option::Option<bool>,
     /// <p>Indicates whether self-service capabilities are enabled or disabled.</p>
     pub enable_self_service: std::option::Option<bool>,
-    /// <p>Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own
-    /// License (BYOL) images, this value must be set to <code>DEDICATED</code> and your Amazon Web Services account must be
-    /// enabled for BYOL. If your account has not been enabled for BYOL, you will receive an
-    /// InvalidParameterValuesException error. For more information about BYOL images, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
+    /// <p>Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own License (BYOL) images, this value must be set to <code>DEDICATED</code> and your Amazon Web Services account must be enabled for BYOL. If your account has not been enabled for BYOL, you will receive an InvalidParameterValuesException error. For more information about BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
     pub tenancy: std::option::Option<crate::model::Tenancy>,
     /// <p>The tags associated with the directory.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl RegisterWorkspaceDirectoryInput {
-    /// <p>The identifier of the directory. You cannot register a directory if it does not have a status
-    /// of Active. If the directory does not have a status of Active, you will receive an
-    /// InvalidResourceStateException error. If you have already registered the maximum number of directories
-    /// that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error.
-    /// Deregister directories that you are not using for WorkSpaces, and try again.</p>
+    /// <p>The identifier of the directory. You cannot register a directory if it does not have a status of Active. If the directory does not have a status of Active, you will receive an InvalidResourceStateException error. If you have already registered the maximum number of directories that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error. Deregister directories that you are not using for WorkSpaces, and try again.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets
-    /// are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these
-    /// conditions are not met, you will receive an OperationNotSupportedException error.</p>
+    /// <p>The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these conditions are not met, you will receive an OperationNotSupportedException error.</p>
     pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
     }
-    /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and
-    /// WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set
-    /// <code>EnableWorkDocs</code> to disabled, and try again.</p>
+    /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set <code>EnableWorkDocs</code> to disabled, and try again.</p>
     pub fn enable_work_docs(&self) -> std::option::Option<bool> {
         self.enable_work_docs
     }
@@ -10074,11 +9922,7 @@ impl RegisterWorkspaceDirectoryInput {
     pub fn enable_self_service(&self) -> std::option::Option<bool> {
         self.enable_self_service
     }
-    /// <p>Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own
-    /// License (BYOL) images, this value must be set to <code>DEDICATED</code> and your Amazon Web Services account must be
-    /// enabled for BYOL. If your account has not been enabled for BYOL, you will receive an
-    /// InvalidParameterValuesException error. For more information about BYOL images, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
+    /// <p>Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own License (BYOL) images, this value must be set to <code>DEDICATED</code> and your Amazon Web Services account must be enabled for BYOL. If your account has not been enabled for BYOL, you will receive an InvalidParameterValuesException error. For more information about BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
     pub fn tenancy(&self) -> std::option::Option<&crate::model::Tenancy> {
         self.tenancy.as_ref()
     }
@@ -10335,11 +10179,7 @@ impl std::fmt::Debug for ModifyClientPropertiesInput {
 pub struct ModifyAccountInput {
     /// <p>The status of BYOL.</p>
     pub dedicated_tenancy_support: std::option::Option<crate::model::DedicatedTenancySupportEnum>,
-    /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network
-    /// interface. Specify an IP address range that is compatible with your network and in CIDR
-    /// notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be
-    /// /16 (for example, 203.0.113.25/16). It must also be specified as available by the
-    /// <code>ListAvailableManagementCidrRanges</code> operation.</p>
+    /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be /16 (for example, 203.0.113.25/16). It must also be specified as available by the <code>ListAvailableManagementCidrRanges</code> operation.</p>
     pub dedicated_tenancy_management_cidr_range: std::option::Option<std::string::String>,
 }
 impl ModifyAccountInput {
@@ -10349,11 +10189,7 @@ impl ModifyAccountInput {
     ) -> std::option::Option<&crate::model::DedicatedTenancySupportEnum> {
         self.dedicated_tenancy_support.as_ref()
     }
-    /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network
-    /// interface. Specify an IP address range that is compatible with your network and in CIDR
-    /// notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be
-    /// /16 (for example, 203.0.113.25/16). It must also be specified as available by the
-    /// <code>ListAvailableManagementCidrRanges</code> operation.</p>
+    /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be /16 (for example, 203.0.113.25/16). It must also be specified as available by the <code>ListAvailableManagementCidrRanges</code> operation.</p>
     pub fn dedicated_tenancy_management_cidr_range(&self) -> std::option::Option<&str> {
         self.dedicated_tenancy_management_cidr_range.as_deref()
     }
@@ -10402,18 +10238,15 @@ impl std::fmt::Debug for MigrateWorkspaceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAvailableManagementCidrRangesInput {
-    /// <p>The IP address range to search. Specify an IP address range that is compatible with your
-    /// network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
+    /// <p>The IP address range to search. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
     pub management_cidr_range_constraint: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAvailableManagementCidrRangesInput {
-    /// <p>The IP address range to search. Specify an IP address range that is compatible with your
-    /// network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
+    /// <p>The IP address range to search. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
     pub fn management_cidr_range_constraint(&self) -> std::option::Option<&str> {
         self.management_cidr_range_constraint.as_deref()
     }
@@ -10421,8 +10254,7 @@ impl ListAvailableManagementCidrRangesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10446,13 +10278,8 @@ impl std::fmt::Debug for ListAvailableManagementCidrRangesInput {
 pub struct ImportWorkspaceImageInput {
     /// <p>The identifier of the EC2 image.</p>
     pub ec2_image_id: std::option::Option<std::string::String>,
-    /// <p>The ingestion process to be used when importing the image, depending on which protocol
-    /// you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol
-    /// (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value
-    /// that does not end in <code>_WSP</code>. </p>
-    ///
-    /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
-    /// <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+    /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>
+    /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
     pub ingestion_process: std::option::Option<crate::model::WorkspaceImageIngestionProcess>,
     /// <p>The name of the WorkSpace image.</p>
     pub image_name: std::option::Option<std::string::String>,
@@ -10460,12 +10287,7 @@ pub struct ImportWorkspaceImageInput {
     pub image_description: std::option::Option<std::string::String>,
     /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10
-    /// BYOL images. For more information about subscribing to Office for BYOL images, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
-    /// Bring Your Own Windows Desktop Licenses</a>.</p>
-    ///
-    /// <note>
+    /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>
     /// <p>Although this parameter is an array, only one item is allowed at this time.</p>
     /// </note>
     pub applications: std::option::Option<std::vec::Vec<crate::model::Application>>,
@@ -10475,13 +10297,8 @@ impl ImportWorkspaceImageInput {
     pub fn ec2_image_id(&self) -> std::option::Option<&str> {
         self.ec2_image_id.as_deref()
     }
-    /// <p>The ingestion process to be used when importing the image, depending on which protocol
-    /// you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol
-    /// (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value
-    /// that does not end in <code>_WSP</code>. </p>
-    ///
-    /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
-    /// <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+    /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>
+    /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
     pub fn ingestion_process(
         &self,
     ) -> std::option::Option<&crate::model::WorkspaceImageIngestionProcess> {
@@ -10499,12 +10316,7 @@ impl ImportWorkspaceImageInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10
-    /// BYOL images. For more information about subscribing to Office for BYOL images, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
-    /// Bring Your Own Windows Desktop Licenses</a>.</p>
-    ///
-    /// <note>
+    /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>
     /// <p>Although this parameter is an array, only one item is allowed at this time.</p>
     /// </note>
     pub fn applications(&self) -> std::option::Option<&[crate::model::Application]> {
@@ -10600,8 +10412,7 @@ impl std::fmt::Debug for DescribeWorkspaceSnapshotsInput {
 pub struct DescribeWorkspacesConnectionStatusInput {
     /// <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
     pub workspace_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeWorkspacesConnectionStatusInput {
@@ -10609,8 +10420,7 @@ impl DescribeWorkspacesConnectionStatusInput {
     pub fn workspace_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.workspace_ids.as_deref()
     }
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10628,48 +10438,35 @@ impl std::fmt::Debug for DescribeWorkspacesConnectionStatusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkspacesInput {
-    /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other
-    /// filter.</p>
-    /// <p>Because the <a>CreateWorkspaces</a> operation is asynchronous, the identifier
-    /// it returns is not immediately available. If you immediately call <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
+    /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.</p>
+    /// <p>Because the <code>CreateWorkspaces</code> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <code>DescribeWorkspaces</code> with this identifier, no information is returned.</p>
     pub workspace_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The identifier of the directory. In addition, you can optionally specify a specific
-    /// directory user (see <code>UserName</code>). You cannot combine this parameter with any
-    /// other filter.</p>
+    /// <p>The identifier of the directory. In addition, you can optionally specify a specific directory user (see <code>UserName</code>). You cannot combine this parameter with any other filter.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>The name of the directory user. You must specify this parameter with
-    /// <code>DirectoryId</code>.</p>
+    /// <p>The name of the directory user. You must specify this parameter with <code>DirectoryId</code>.</p>
     pub user_name: std::option::Option<std::string::String>,
-    /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are
-    /// retrieved. You cannot combine this parameter with any other filter.</p>
+    /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are retrieved. You cannot combine this parameter with any other filter.</p>
     pub bundle_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeWorkspacesInput {
-    /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other
-    /// filter.</p>
-    /// <p>Because the <a>CreateWorkspaces</a> operation is asynchronous, the identifier
-    /// it returns is not immediately available. If you immediately call <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
+    /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.</p>
+    /// <p>Because the <code>CreateWorkspaces</code> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <code>DescribeWorkspaces</code> with this identifier, no information is returned.</p>
     pub fn workspace_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.workspace_ids.as_deref()
     }
-    /// <p>The identifier of the directory. In addition, you can optionally specify a specific
-    /// directory user (see <code>UserName</code>). You cannot combine this parameter with any
-    /// other filter.</p>
+    /// <p>The identifier of the directory. In addition, you can optionally specify a specific directory user (see <code>UserName</code>). You cannot combine this parameter with any other filter.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>The name of the directory user. You must specify this parameter with
-    /// <code>DirectoryId</code>.</p>
+    /// <p>The name of the directory user. You must specify this parameter with <code>DirectoryId</code>.</p>
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
-    /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are
-    /// retrieved. You cannot combine this parameter with any other filter.</p>
+    /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are retrieved. You cannot combine this parameter with any other filter.</p>
     pub fn bundle_id(&self) -> std::option::Option<&str> {
         self.bundle_id.as_deref()
     }
@@ -10677,8 +10474,7 @@ impl DescribeWorkspacesInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10704,8 +10500,7 @@ pub struct DescribeWorkspaceImagesInput {
     pub image_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type (owned or shared) of the image.</p>
     pub image_type: std::option::Option<crate::model::ImageType>,
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -10719,8 +10514,7 @@ impl DescribeWorkspaceImagesInput {
     pub fn image_type(&self) -> std::option::Option<&crate::model::ImageType> {
         self.image_type.as_ref()
     }
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10746,8 +10540,7 @@ impl std::fmt::Debug for DescribeWorkspaceImagesInput {
 pub struct DescribeWorkspaceImagePermissionsInput {
     /// <p>The identifier of the image.</p>
     pub image_id: std::option::Option<std::string::String>,
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -10757,8 +10550,7 @@ impl DescribeWorkspaceImagePermissionsInput {
     pub fn image_id(&self) -> std::option::Option<&str> {
         self.image_id.as_deref()
     }
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10781,18 +10573,15 @@ impl std::fmt::Debug for DescribeWorkspaceImagePermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkspaceDirectoriesInput {
-    /// <p>The identifiers of the directories. If the value is null, all directories are
-    /// retrieved.</p>
+    /// <p>The identifiers of the directories. If the value is null, all directories are retrieved.</p>
     pub directory_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of directories to return.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeWorkspaceDirectoriesInput {
-    /// <p>The identifiers of the directories. If the value is null, all directories are
-    /// retrieved.</p>
+    /// <p>The identifiers of the directories. If the value is null, all directories are retrieved.</p>
     pub fn directory_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.directory_ids.as_deref()
     }
@@ -10800,8 +10589,7 @@ impl DescribeWorkspaceDirectoriesInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10823,8 +10611,7 @@ pub struct DescribeWorkspaceBundlesInput {
     /// <p>The identifiers of the bundles. You cannot combine this parameter with any other filter.</p>
     pub bundle_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The owner of the bundles. You cannot combine this parameter with any other filter.</p>
-    /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>.
-    /// To describe the bundles that belong to your account, don't specify a value.</p>
+    /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>. To describe the bundles that belong to your account, don't specify a value.</p>
     pub owner: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results. (You received this token from a previous call.)</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -10835,8 +10622,7 @@ impl DescribeWorkspaceBundlesInput {
         self.bundle_ids.as_deref()
     }
     /// <p>The owner of the bundles. You cannot combine this parameter with any other filter.</p>
-    /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>.
-    /// To describe the bundles that belong to your account, don't specify a value.</p>
+    /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>. To describe the bundles that belong to your account, don't specify a value.</p>
     pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
     }
@@ -10859,13 +10645,11 @@ impl std::fmt::Debug for DescribeWorkspaceBundlesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTagsInput {
-    /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-    /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+    /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl DescribeTagsInput {
-    /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-    /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+    /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
@@ -10884,8 +10668,7 @@ impl std::fmt::Debug for DescribeTagsInput {
 pub struct DescribeIpGroupsInput {
     /// <p>The identifiers of one or more IP access control groups.</p>
     pub group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -10895,8 +10678,7 @@ impl DescribeIpGroupsInput {
     pub fn group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.group_ids.as_deref()
     }
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10921,8 +10703,7 @@ impl std::fmt::Debug for DescribeIpGroupsInput {
 pub struct DescribeConnectionAliasPermissionsInput {
     /// <p>The identifier of the connection alias.</p>
     pub alias_id: std::option::Option<std::string::String>,
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the
-    /// next set of results. </p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -10932,8 +10713,7 @@ impl DescribeConnectionAliasPermissionsInput {
     pub fn alias_id(&self) -> std::option::Option<&str> {
         self.alias_id.as_deref()
     }
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the
-    /// next set of results. </p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10962,8 +10742,7 @@ pub struct DescribeConnectionAliasesInput {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of connection aliases to return.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the
-    /// next set of results. </p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConnectionAliasesInput {
@@ -10979,8 +10758,7 @@ impl DescribeConnectionAliasesInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the
-    /// next set of results. </p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11021,13 +10799,11 @@ impl std::fmt::Debug for DescribeClientPropertiesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountModificationsInput {
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAccountModificationsInput {
-    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-    /// provide this token to receive the next set of results.</p>
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11055,15 +10831,11 @@ impl std::fmt::Debug for DescribeAccountInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterWorkspaceDirectoryInput {
-    /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must
-    /// remove them before you deregister the directory, or you will receive an OperationNotSupportedException
-    /// error.</p>
+    /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must remove them before you deregister the directory, or you will receive an OperationNotSupportedException error.</p>
     pub directory_id: std::option::Option<std::string::String>,
 }
 impl DeregisterWorkspaceDirectoryInput {
-    /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must
-    /// remove them before you deregister the directory, or you will receive an OperationNotSupportedException
-    /// error.</p>
+    /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must remove them before you deregister the directory, or you will receive an OperationNotSupportedException error.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
@@ -11122,15 +10894,13 @@ impl std::fmt::Debug for DeleteWorkspaceBundleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTagsInput {
-    /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-    /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+    /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The tag keys.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteTagsInput {
-    /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-    /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+    /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
@@ -11227,11 +10997,8 @@ pub struct CreateWorkspaceBundleInput {
     pub user_storage: std::option::Option<crate::model::UserStorage>,
     /// <p>Describes the root volume for a WorkSpace bundle.</p>
     pub root_storage: std::option::Option<crate::model::RootStorage>,
-    /// <p>The tags associated with the bundle.</p>
-    ///
-    /// <note>
-    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that
-    /// grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+    /// <p>The tags associated with the bundle.</p> <note>
+    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -11260,11 +11027,8 @@ impl CreateWorkspaceBundleInput {
     pub fn root_storage(&self) -> std::option::Option<&crate::model::RootStorage> {
         self.root_storage.as_ref()
     }
-    /// <p>The tags associated with the bundle.</p>
-    ///
-    /// <note>
-    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that
-    /// grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+    /// <p>The tags associated with the bundle.</p> <note>
+    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -11294,11 +11058,8 @@ pub struct CreateUpdatedWorkspaceImageInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The identifier of the source WorkSpace image.</p>
     pub source_image_id: std::option::Option<std::string::String>,
-    /// <p>The tags that you want to add to the new updated WorkSpace image.</p>
-    ///
-    /// <note>
-    /// <p>To add tags at the same time when you're creating the updated image, you must create
-    /// an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+    /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note>
+    /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -11315,11 +11076,8 @@ impl CreateUpdatedWorkspaceImageInput {
     pub fn source_image_id(&self) -> std::option::Option<&str> {
         self.source_image_id.as_deref()
     }
-    /// <p>The tags that you want to add to the new updated WorkSpace image.</p>
-    ///
-    /// <note>
-    /// <p>To add tags at the same time when you're creating the updated image, you must create
-    /// an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+    /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note>
+    /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -11340,15 +11098,13 @@ impl std::fmt::Debug for CreateUpdatedWorkspaceImageInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTagsInput {
-    /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-    /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+    /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateTagsInput {
-    /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-    /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+    /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
@@ -11412,24 +11168,16 @@ impl std::fmt::Debug for CreateIpGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectionAliasInput {
-    /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
-    ///
-    /// <important>
-    /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same
-    /// connection string with a different account, even if you delete all instances of it from the original account. The
-    /// connection string is globally reserved for your account.</p>
+    /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p> <important>
+    /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.</p>
     /// </important>
     pub connection_string: std::option::Option<std::string::String>,
     /// <p>The tags to associate with the connection alias.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateConnectionAliasInput {
-    /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
-    ///
-    /// <important>
-    /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same
-    /// connection string with a different account, even if you delete all instances of it from the original account. The
-    /// connection string is globally reserved for your account.</p>
+    /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p> <important>
+    /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.</p>
     /// </important>
     pub fn connection_string(&self) -> std::option::Option<&str> {
         self.connection_string.as_deref()

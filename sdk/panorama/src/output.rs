@@ -427,9 +427,9 @@ pub mod list_packages_output {
         /// To override the contents of this collection use [`set_packages`](Self::set_packages).
         ///
         /// <p>A list of packages.</p>
-        pub fn packages(mut self, input: impl Into<crate::model::PackageListItem>) -> Self {
+        pub fn packages(mut self, input: crate::model::PackageListItem) -> Self {
             let mut v = self.packages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.packages = Some(v);
             self
         }
@@ -510,12 +510,9 @@ pub mod list_package_import_jobs_output {
         /// To override the contents of this collection use [`set_package_import_jobs`](Self::set_package_import_jobs).
         ///
         /// <p>A list of package import jobs.</p>
-        pub fn package_import_jobs(
-            mut self,
-            input: impl Into<crate::model::PackageImportJob>,
-        ) -> Self {
+        pub fn package_import_jobs(mut self, input: crate::model::PackageImportJob) -> Self {
             let mut v = self.package_import_jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.package_import_jobs = Some(v);
             self
         }
@@ -595,9 +592,9 @@ pub mod list_nodes_output {
         /// To override the contents of this collection use [`set_nodes`](Self::set_nodes).
         ///
         /// <p>A list of nodes.</p>
-        pub fn nodes(mut self, input: impl Into<crate::model::Node>) -> Self {
+        pub fn nodes(mut self, input: crate::model::Node) -> Self {
             let mut v = self.nodes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.nodes = Some(v);
             self
         }
@@ -681,12 +678,9 @@ pub mod list_node_from_template_jobs_output {
         /// To override the contents of this collection use [`set_node_from_template_jobs`](Self::set_node_from_template_jobs).
         ///
         /// <p>A list of jobs.</p>
-        pub fn node_from_template_jobs(
-            mut self,
-            input: impl Into<crate::model::NodeFromTemplateJob>,
-        ) -> Self {
+        pub fn node_from_template_jobs(mut self, input: crate::model::NodeFromTemplateJob) -> Self {
             let mut v = self.node_from_template_jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.node_from_template_jobs = Some(v);
             self
         }
@@ -766,9 +760,9 @@ pub mod list_devices_jobs_output {
         /// To override the contents of this collection use [`set_device_jobs`](Self::set_device_jobs).
         ///
         /// <p>A list of jobs.</p>
-        pub fn device_jobs(mut self, input: impl Into<crate::model::DeviceJob>) -> Self {
+        pub fn device_jobs(mut self, input: crate::model::DeviceJob) -> Self {
             let mut v = self.device_jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.device_jobs = Some(v);
             self
         }
@@ -848,9 +842,9 @@ pub mod list_devices_output {
         /// To override the contents of this collection use [`set_devices`](Self::set_devices).
         ///
         /// <p>A list of devices.</p>
-        pub fn devices(mut self, input: impl Into<crate::model::Device>) -> Self {
+        pub fn devices(mut self, input: crate::model::Device) -> Self {
             let mut v = self.devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.devices = Some(v);
             self
         }
@@ -934,12 +928,9 @@ pub mod list_application_instances_output {
         /// To override the contents of this collection use [`set_application_instances`](Self::set_application_instances).
         ///
         /// <p>A list of application instances.</p>
-        pub fn application_instances(
-            mut self,
-            input: impl Into<crate::model::ApplicationInstance>,
-        ) -> Self {
+        pub fn application_instances(mut self, input: crate::model::ApplicationInstance) -> Self {
             let mut v = self.application_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.application_instances = Some(v);
             self
         }
@@ -1019,9 +1010,9 @@ pub mod list_application_instance_node_instances_output {
         /// To override the contents of this collection use [`set_node_instances`](Self::set_node_instances).
         ///
         /// <p>A list of node instances.</p>
-        pub fn node_instances(mut self, input: impl Into<crate::model::NodeInstance>) -> Self {
+        pub fn node_instances(mut self, input: crate::model::NodeInstance) -> Self {
             let mut v = self.node_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.node_instances = Some(v);
             self
         }
@@ -1101,9 +1092,9 @@ pub mod list_application_instance_dependencies_output {
         /// To override the contents of this collection use [`set_package_objects`](Self::set_package_objects).
         ///
         /// <p>A list of package objects.</p>
-        pub fn package_objects(mut self, input: impl Into<crate::model::PackageObject>) -> Self {
+        pub fn package_objects(mut self, input: crate::model::PackageObject) -> Self {
             let mut v = self.package_objects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.package_objects = Some(v);
             self
         }
@@ -1624,9 +1615,9 @@ pub mod describe_package_import_job_output {
         /// To override the contents of this collection use [`set_job_tags`](Self::set_job_tags).
         ///
         /// <p>The job's tags.</p>
-        pub fn job_tags(mut self, input: impl Into<crate::model::JobResourceTags>) -> Self {
+        pub fn job_tags(mut self, input: crate::model::JobResourceTags) -> Self {
             let mut v = self.job_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_tags = Some(v);
             self
         }
@@ -2183,9 +2174,9 @@ pub mod describe_node_from_template_job_output {
         /// To override the contents of this collection use [`set_job_tags`](Self::set_job_tags).
         ///
         /// <p>The job's tags.</p>
-        pub fn job_tags(mut self, input: impl Into<crate::model::JobResourceTags>) -> Self {
+        pub fn job_tags(mut self, input: crate::model::JobResourceTags) -> Self {
             let mut v = self.job_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_tags = Some(v);
             self
         }
@@ -4071,9 +4062,9 @@ pub mod create_job_for_devices_output {
         /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
         ///
         /// <p>A list of jobs.</p>
-        pub fn jobs(mut self, input: impl Into<crate::model::Job>) -> Self {
+        pub fn jobs(mut self, input: crate::model::Job) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.jobs = Some(v);
             self
         }

@@ -958,27 +958,17 @@ impl LambdaEndpointSummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UrlEndpointSummary {
-    /// <p> The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the
-    /// host is a domain name, the name must be resolvable over the public internet. If the scheme is
-    /// <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
+    /// <p> The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the host is a domain name, the name must be resolvable over the public internet. If the scheme is <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
     pub url: std::option::Option<std::string::String>,
-    /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the
-    /// <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint
-    /// inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the
-    /// host must be the same as the URL.</p>
+    /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the host must be the same as the URL.</p>
     pub health_url: std::option::Option<std::string::String>,
 }
 impl UrlEndpointSummary {
-    /// <p> The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the
-    /// host is a domain name, the name must be resolvable over the public internet. If the scheme is
-    /// <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
+    /// <p> The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the host is a domain name, the name must be resolvable over the public internet. If the scheme is <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
     }
-    /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the
-    /// <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint
-    /// inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the
-    /// host must be the same as the URL.</p>
+    /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the host must be the same as the URL.</p>
     pub fn health_url(&self) -> std::option::Option<&str> {
         self.health_url.as_deref()
     }
@@ -1001,32 +991,22 @@ pub mod url_endpoint_summary {
         pub(crate) health_url: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the
-        /// host is a domain name, the name must be resolvable over the public internet. If the scheme is
-        /// <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
+        /// <p> The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the host is a domain name, the name must be resolvable over the public internet. If the scheme is <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
             self.url = Some(input.into());
             self
         }
-        /// <p> The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the
-        /// host is a domain name, the name must be resolvable over the public internet. If the scheme is
-        /// <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
+        /// <p> The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the host is a domain name, the name must be resolvable over the public internet. If the scheme is <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
         }
-        /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the
-        /// <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint
-        /// inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the
-        /// host must be the same as the URL.</p>
+        /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the host must be the same as the URL.</p>
         pub fn health_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.health_url = Some(input.into());
             self
         }
-        /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the
-        /// <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint
-        /// inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the
-        /// host must be the same as the URL.</p>
+        /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the host must be the same as the URL.</p>
         pub fn set_health_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.health_url = input;
             self
@@ -1122,15 +1102,11 @@ pub struct RouteSummary {
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the environment. </p>
     pub environment_id: std::option::Option<std::string::String>,
-    /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to
-    /// the base of the application.</p>
+    /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application.</p>
     pub source_path: std::option::Option<std::string::String>,
-    /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present,
-    /// only HTTP requests using that method are forwarded to this route’s service. </p>
+    /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
     pub methods: std::option::Option<std::vec::Vec<crate::model::HttpMethod>>,
-    /// <p>Indicates whether to match all subpaths of the given source path. If this value is
-    /// <code>false</code>, requests must match the source path exactly before they are forwarded to
-    /// this route's service.</p>
+    /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service.</p>
     pub include_child_paths: std::option::Option<bool>,
     /// <p>A mapping of Amazon API Gateway path resources to resource IDs. </p>
     pub path_resource_to_id:
@@ -1180,19 +1156,15 @@ impl RouteSummary {
     pub fn environment_id(&self) -> std::option::Option<&str> {
         self.environment_id.as_deref()
     }
-    /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to
-    /// the base of the application.</p>
+    /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application.</p>
     pub fn source_path(&self) -> std::option::Option<&str> {
         self.source_path.as_deref()
     }
-    /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present,
-    /// only HTTP requests using that method are forwarded to this route’s service. </p>
+    /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
     pub fn methods(&self) -> std::option::Option<&[crate::model::HttpMethod]> {
         self.methods.as_deref()
     }
-    /// <p>Indicates whether to match all subpaths of the given source path. If this value is
-    /// <code>false</code>, requests must match the source path exactly before they are forwarded to
-    /// this route's service.</p>
+    /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service.</p>
     pub fn include_child_paths(&self) -> std::option::Option<bool> {
         self.include_child_paths
     }
@@ -1374,14 +1346,12 @@ pub mod route_summary {
             self.environment_id = input;
             self
         }
-        /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to
-        /// the base of the application.</p>
+        /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application.</p>
         pub fn source_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_path = Some(input.into());
             self
         }
-        /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to
-        /// the base of the application.</p>
+        /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application.</p>
         pub fn set_source_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_path = input;
             self
@@ -1390,16 +1360,14 @@ pub mod route_summary {
         ///
         /// To override the contents of this collection use [`set_methods`](Self::set_methods).
         ///
-        /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present,
-        /// only HTTP requests using that method are forwarded to this route’s service. </p>
-        pub fn methods(mut self, input: impl Into<crate::model::HttpMethod>) -> Self {
+        /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
+        pub fn methods(mut self, input: crate::model::HttpMethod) -> Self {
             let mut v = self.methods.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.methods = Some(v);
             self
         }
-        /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present,
-        /// only HTTP requests using that method are forwarded to this route’s service. </p>
+        /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
         pub fn set_methods(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HttpMethod>>,
@@ -1407,16 +1375,12 @@ pub mod route_summary {
             self.methods = input;
             self
         }
-        /// <p>Indicates whether to match all subpaths of the given source path. If this value is
-        /// <code>false</code>, requests must match the source path exactly before they are forwarded to
-        /// this route's service.</p>
+        /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service.</p>
         pub fn include_child_paths(mut self, input: bool) -> Self {
             self.include_child_paths = Some(input);
             self
         }
-        /// <p>Indicates whether to match all subpaths of the given source path. If this value is
-        /// <code>false</code>, requests must match the source path exactly before they are forwarded to
-        /// this route's service.</p>
+        /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service.</p>
         pub fn set_include_child_paths(mut self, input: std::option::Option<bool>) -> Self {
             self.include_child_paths = input;
             self
@@ -1754,8 +1718,7 @@ impl AsRef<str> for RouteType {
     }
 }
 
-/// <p>Provides summary information for the <code>EnvironmentVpc</code> resource as a response to
-/// <code>ListEnvironmentVpc</code>.</p>
+/// <p>Provides summary information for the <code>EnvironmentVpc</code> resource as a response to <code>ListEnvironmentVpc</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentVpc {
@@ -3417,27 +3380,17 @@ impl LambdaEndpointInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UrlEndpointInput {
-    /// <p>The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the
-    /// host is a domain name, the name must be resolvable over the public internet. If the scheme is
-    /// <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
+    /// <p>The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the host is a domain name, the name must be resolvable over the public internet. If the scheme is <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
     pub url: std::option::Option<std::string::String>,
-    /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the
-    /// <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint
-    /// inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the
-    /// host must be the same as the URL. </p>
+    /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the host must be the same as the URL. </p>
     pub health_url: std::option::Option<std::string::String>,
 }
 impl UrlEndpointInput {
-    /// <p>The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the
-    /// host is a domain name, the name must be resolvable over the public internet. If the scheme is
-    /// <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
+    /// <p>The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the host is a domain name, the name must be resolvable over the public internet. If the scheme is <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
     }
-    /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the
-    /// <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint
-    /// inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the
-    /// host must be the same as the URL. </p>
+    /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the host must be the same as the URL. </p>
     pub fn health_url(&self) -> std::option::Option<&str> {
         self.health_url.as_deref()
     }
@@ -3460,32 +3413,22 @@ pub mod url_endpoint_input {
         pub(crate) health_url: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the
-        /// host is a domain name, the name must be resolvable over the public internet. If the scheme is
-        /// <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
+        /// <p>The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the host is a domain name, the name must be resolvable over the public internet. If the scheme is <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
             self.url = Some(input.into());
             self
         }
-        /// <p>The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the
-        /// host is a domain name, the name must be resolvable over the public internet. If the scheme is
-        /// <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
+        /// <p>The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the host is a domain name, the name must be resolvable over the public internet. If the scheme is <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
         }
-        /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the
-        /// <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint
-        /// inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the
-        /// host must be the same as the URL. </p>
+        /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the host must be the same as the URL. </p>
         pub fn health_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.health_url = Some(input.into());
             self
         }
-        /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the
-        /// <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint
-        /// inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the
-        /// host must be the same as the URL. </p>
+        /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the host must be the same as the URL. </p>
         pub fn set_health_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.health_url = input;
             self
@@ -3510,22 +3453,17 @@ impl UrlEndpointInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UriPathRouteInput {
-    /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to
-    /// the base of the application.</p>
+    /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application.</p>
     pub source_path: std::option::Option<std::string::String>,
     /// <p>Indicates whether traffic is forwarded to this route’s service after the route is created. </p>
     pub activation_state: std::option::Option<crate::model::RouteActivationState>,
-    /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present,
-    /// only HTTP requests using that method are forwarded to this route’s service. </p>
+    /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
     pub methods: std::option::Option<std::vec::Vec<crate::model::HttpMethod>>,
-    /// <p>Indicates whether to match all subpaths of the given source path. If this value is
-    /// <code>false</code>, requests must match the source path exactly before they are forwarded to
-    /// this route's service. </p>
+    /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
     pub include_child_paths: std::option::Option<bool>,
 }
 impl UriPathRouteInput {
-    /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to
-    /// the base of the application.</p>
+    /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application.</p>
     pub fn source_path(&self) -> std::option::Option<&str> {
         self.source_path.as_deref()
     }
@@ -3533,14 +3471,11 @@ impl UriPathRouteInput {
     pub fn activation_state(&self) -> std::option::Option<&crate::model::RouteActivationState> {
         self.activation_state.as_ref()
     }
-    /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present,
-    /// only HTTP requests using that method are forwarded to this route’s service. </p>
+    /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
     pub fn methods(&self) -> std::option::Option<&[crate::model::HttpMethod]> {
         self.methods.as_deref()
     }
-    /// <p>Indicates whether to match all subpaths of the given source path. If this value is
-    /// <code>false</code>, requests must match the source path exactly before they are forwarded to
-    /// this route's service. </p>
+    /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
     pub fn include_child_paths(&self) -> std::option::Option<bool> {
         self.include_child_paths
     }
@@ -3567,14 +3502,12 @@ pub mod uri_path_route_input {
         pub(crate) include_child_paths: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to
-        /// the base of the application.</p>
+        /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application.</p>
         pub fn source_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_path = Some(input.into());
             self
         }
-        /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to
-        /// the base of the application.</p>
+        /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application.</p>
         pub fn set_source_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_path = input;
             self
@@ -3596,16 +3529,14 @@ pub mod uri_path_route_input {
         ///
         /// To override the contents of this collection use [`set_methods`](Self::set_methods).
         ///
-        /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present,
-        /// only HTTP requests using that method are forwarded to this route’s service. </p>
-        pub fn methods(mut self, input: impl Into<crate::model::HttpMethod>) -> Self {
+        /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
+        pub fn methods(mut self, input: crate::model::HttpMethod) -> Self {
             let mut v = self.methods.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.methods = Some(v);
             self
         }
-        /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present,
-        /// only HTTP requests using that method are forwarded to this route’s service. </p>
+        /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
         pub fn set_methods(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HttpMethod>>,
@@ -3613,16 +3544,12 @@ pub mod uri_path_route_input {
             self.methods = input;
             self
         }
-        /// <p>Indicates whether to match all subpaths of the given source path. If this value is
-        /// <code>false</code>, requests must match the source path exactly before they are forwarded to
-        /// this route's service. </p>
+        /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
         pub fn include_child_paths(mut self, input: bool) -> Self {
             self.include_child_paths = Some(input);
             self
         }
-        /// <p>Indicates whether to match all subpaths of the given source path. If this value is
-        /// <code>false</code>, requests must match the source path exactly before they are forwarded to
-        /// this route's service. </p>
+        /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
         pub fn set_include_child_paths(mut self, input: std::option::Option<bool>) -> Self {
             self.include_child_paths = input;
             self
@@ -3700,23 +3627,15 @@ impl AsRef<str> for RouteActivationState {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApiGatewayProxyInput {
-    /// <p>The type of endpoint to use for the API Gateway proxy. If no value is specified in
-    /// the request, the value is set to <code>REGIONAL</code> by default.</p>
-    /// <p>If the value is set to <code>PRIVATE</code> in the request, this creates a private API
-    /// endpoint that is isolated from the public internet. The private endpoint can only be accessed
-    /// by using Amazon Virtual Private Cloud (Amazon VPC) endpoints for Amazon API Gateway that
-    /// have been granted access. </p>
+    /// <p>The type of endpoint to use for the API Gateway proxy. If no value is specified in the request, the value is set to <code>REGIONAL</code> by default.</p>
+    /// <p>If the value is set to <code>PRIVATE</code> in the request, this creates a private API endpoint that is isolated from the public internet. The private endpoint can only be accessed by using Amazon Virtual Private Cloud (Amazon VPC) endpoints for Amazon API Gateway that have been granted access. </p>
     pub endpoint_type: std::option::Option<crate::model::ApiGatewayEndpointType>,
     /// <p>The name of the API Gateway stage. The name defaults to <code>prod</code>. </p>
     pub stage_name: std::option::Option<std::string::String>,
 }
 impl ApiGatewayProxyInput {
-    /// <p>The type of endpoint to use for the API Gateway proxy. If no value is specified in
-    /// the request, the value is set to <code>REGIONAL</code> by default.</p>
-    /// <p>If the value is set to <code>PRIVATE</code> in the request, this creates a private API
-    /// endpoint that is isolated from the public internet. The private endpoint can only be accessed
-    /// by using Amazon Virtual Private Cloud (Amazon VPC) endpoints for Amazon API Gateway that
-    /// have been granted access. </p>
+    /// <p>The type of endpoint to use for the API Gateway proxy. If no value is specified in the request, the value is set to <code>REGIONAL</code> by default.</p>
+    /// <p>If the value is set to <code>PRIVATE</code> in the request, this creates a private API endpoint that is isolated from the public internet. The private endpoint can only be accessed by using Amazon Virtual Private Cloud (Amazon VPC) endpoints for Amazon API Gateway that have been granted access. </p>
     pub fn endpoint_type(&self) -> std::option::Option<&crate::model::ApiGatewayEndpointType> {
         self.endpoint_type.as_ref()
     }
@@ -3743,22 +3662,14 @@ pub mod api_gateway_proxy_input {
         pub(crate) stage_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The type of endpoint to use for the API Gateway proxy. If no value is specified in
-        /// the request, the value is set to <code>REGIONAL</code> by default.</p>
-        /// <p>If the value is set to <code>PRIVATE</code> in the request, this creates a private API
-        /// endpoint that is isolated from the public internet. The private endpoint can only be accessed
-        /// by using Amazon Virtual Private Cloud (Amazon VPC) endpoints for Amazon API Gateway that
-        /// have been granted access. </p>
+        /// <p>The type of endpoint to use for the API Gateway proxy. If no value is specified in the request, the value is set to <code>REGIONAL</code> by default.</p>
+        /// <p>If the value is set to <code>PRIVATE</code> in the request, this creates a private API endpoint that is isolated from the public internet. The private endpoint can only be accessed by using Amazon Virtual Private Cloud (Amazon VPC) endpoints for Amazon API Gateway that have been granted access. </p>
         pub fn endpoint_type(mut self, input: crate::model::ApiGatewayEndpointType) -> Self {
             self.endpoint_type = Some(input);
             self
         }
-        /// <p>The type of endpoint to use for the API Gateway proxy. If no value is specified in
-        /// the request, the value is set to <code>REGIONAL</code> by default.</p>
-        /// <p>If the value is set to <code>PRIVATE</code> in the request, this creates a private API
-        /// endpoint that is isolated from the public internet. The private endpoint can only be accessed
-        /// by using Amazon Virtual Private Cloud (Amazon VPC) endpoints for Amazon API Gateway that
-        /// have been granted access. </p>
+        /// <p>The type of endpoint to use for the API Gateway proxy. If no value is specified in the request, the value is set to <code>REGIONAL</code> by default.</p>
+        /// <p>If the value is set to <code>PRIVATE</code> in the request, this creates a private API endpoint that is isolated from the public internet. The private endpoint can only be accessed by using Amazon Virtual Private Cloud (Amazon VPC) endpoints for Amazon API Gateway that have been granted access. </p>
         pub fn set_endpoint_type(
             mut self,
             input: std::option::Option<crate::model::ApiGatewayEndpointType>,

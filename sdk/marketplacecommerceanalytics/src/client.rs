@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Marketplace Commerce Analytics
@@ -108,15 +108,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `GenerateDataSet`.
     ///
-    /// Given a data set type and data set publication date, asynchronously publishes the requested data set to the specified
-    /// S3 bucket and notifies the specified SNS topic once the data is available. Returns a unique request identifier that
-    /// can be used to correlate requests with notifications from the SNS topic.
-    /// Data sets will be published in comma-separated values (CSV) format with the file name {data_set_type}_YYYY-MM-DD.csv.
-    /// If a file with the same name already exists (e.g. if the same data set is requested twice), the original file will
-    /// be overwritten by the new file.
-    /// Requires a Role with an attached permissions policy providing Allow permissions for the following actions:
-    /// s3:PutObject, s3:GetBucketLocation, sns:GetTopicAttributes, sns:Publish, iam:GetRolePolicy.
-    #[derive(std::fmt::Debug)]
+    /// Given a data set type and data set publication date, asynchronously publishes the requested data set to the specified S3 bucket and notifies the specified SNS topic once the data is available. Returns a unique request identifier that can be used to correlate requests with notifications from the SNS topic. Data sets will be published in comma-separated values (CSV) format with the file name {data_set_type}_YYYY-MM-DD.csv. If a file with the same name already exists (e.g. if the same data set is requested twice), the original file will be overwritten by the new file. Requires a Role with an attached permissions policy providing Allow permissions for the following actions: s3:PutObject, s3:GetBucketLocation, sns:GetTopicAttributes, sns:Publish, iam:GetRolePolicy.
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GenerateDataSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -161,10 +154,10 @@ pub mod fluent_builders {
                 crate::input::GenerateDataSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -173,219 +166,69 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The desired data set type.</p>
-        /// <p>
+        /// <p> </p>
         /// <ul>
-        /// <li>
-        /// <strong>customer_subscriber_hourly_monthly_subscriptions</strong>
-        /// <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>customer_subscriber_annual_subscriptions</strong>
-        /// <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>daily_business_usage_by_instance_type</strong>
-        /// <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>daily_business_fees</strong>
-        /// <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>daily_business_free_trial_conversions</strong>
-        /// <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>daily_business_new_instances</strong>
-        /// <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>daily_business_new_product_subscribers</strong>
-        /// <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>daily_business_canceled_product_subscribers</strong>
-        /// <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>monthly_revenue_billing_and_revenue_data</strong>
-        /// <p>From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00 UTC. Data includes metered transactions (e.g. hourly) from one month prior.</p>
-        /// </li>
-        /// <li>
-        /// <strong>monthly_revenue_annual_subscriptions</strong>
-        /// <p>From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00 UTC. Data includes up-front software charges (e.g. annual) from one month prior.</p>
-        /// </li>
-        /// <li>
-        /// <strong>monthly_revenue_field_demonstration_usage</strong>
-        /// <p>From 2018-03-15 to present: Available monthly on the 15th day of the month by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>monthly_revenue_flexible_payment_schedule</strong>
-        /// <p>From 2018-11-15 to present: Available monthly on the 15th day of the month by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>disbursed_amount_by_product</strong>
-        /// <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>disbursed_amount_by_instance_hours</strong>
-        /// <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>disbursed_amount_by_customer_geo</strong>
-        /// <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>disbursed_amount_by_age_of_uncollected_funds</strong>
-        /// <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>disbursed_amount_by_age_of_disbursed_funds</strong>
-        /// <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>disbursed_amount_by_age_of_past_due_funds</strong>
-        /// <p>From 2018-04-07 to present: Available every 30 days by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>disbursed_amount_by_uncollected_funds_breakdown</strong>
-        /// <p>From 2019-10-04 to present: Available every 30 days by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>sales_compensation_billed_revenue</strong>
-        /// <p>From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00 UTC. Data includes metered transactions (e.g. hourly) from one month prior, and up-front software charges (e.g. annual) from one month prior.</p>
-        /// </li>
-        /// <li>
-        /// <strong>us_sales_and_use_tax_records</strong>
-        /// <p>From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>disbursed_amount_by_product_with_uncollected_funds</strong>
-        /// <p>This data set is deprecated. Download related reports from AMMP instead!</p>
-        /// </li>
-        /// <li>
-        /// <strong>customer_profile_by_industry</strong>
-        /// <p>This data set is deprecated. Download related reports from AMMP instead!</p>
-        /// </li>
-        /// <li>
-        /// <strong>customer_profile_by_revenue</strong>
-        /// <p>This data set is deprecated. Download related reports from AMMP instead!</p>
-        /// </li>
-        /// <li>
-        /// <strong>customer_profile_by_geography</strong>
-        /// <p>This data set is deprecated. Download related reports from AMMP instead!</p>
-        /// </li>
+        /// <li> <strong>customer_subscriber_hourly_monthly_subscriptions</strong> <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p> </li>
+        /// <li> <strong>customer_subscriber_annual_subscriptions</strong> <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p> </li>
+        /// <li> <strong>daily_business_usage_by_instance_type</strong> <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p> </li>
+        /// <li> <strong>daily_business_fees</strong> <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p> </li>
+        /// <li> <strong>daily_business_free_trial_conversions</strong> <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p> </li>
+        /// <li> <strong>daily_business_new_instances</strong> <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p> </li>
+        /// <li> <strong>daily_business_new_product_subscribers</strong> <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p> </li>
+        /// <li> <strong>daily_business_canceled_product_subscribers</strong> <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p> </li>
+        /// <li> <strong>monthly_revenue_billing_and_revenue_data</strong> <p>From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00 UTC. Data includes metered transactions (e.g. hourly) from one month prior.</p> </li>
+        /// <li> <strong>monthly_revenue_annual_subscriptions</strong> <p>From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00 UTC. Data includes up-front software charges (e.g. annual) from one month prior.</p> </li>
+        /// <li> <strong>monthly_revenue_field_demonstration_usage</strong> <p>From 2018-03-15 to present: Available monthly on the 15th day of the month by 24:00 UTC.</p> </li>
+        /// <li> <strong>monthly_revenue_flexible_payment_schedule</strong> <p>From 2018-11-15 to present: Available monthly on the 15th day of the month by 24:00 UTC.</p> </li>
+        /// <li> <strong>disbursed_amount_by_product</strong> <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p> </li>
+        /// <li> <strong>disbursed_amount_by_instance_hours</strong> <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p> </li>
+        /// <li> <strong>disbursed_amount_by_customer_geo</strong> <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p> </li>
+        /// <li> <strong>disbursed_amount_by_age_of_uncollected_funds</strong> <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p> </li>
+        /// <li> <strong>disbursed_amount_by_age_of_disbursed_funds</strong> <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p> </li>
+        /// <li> <strong>disbursed_amount_by_age_of_past_due_funds</strong> <p>From 2018-04-07 to present: Available every 30 days by 24:00 UTC.</p> </li>
+        /// <li> <strong>disbursed_amount_by_uncollected_funds_breakdown</strong> <p>From 2019-10-04 to present: Available every 30 days by 24:00 UTC.</p> </li>
+        /// <li> <strong>sales_compensation_billed_revenue</strong> <p>From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00 UTC. Data includes metered transactions (e.g. hourly) from one month prior, and up-front software charges (e.g. annual) from one month prior.</p> </li>
+        /// <li> <strong>us_sales_and_use_tax_records</strong> <p>From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00 UTC.</p> </li>
+        /// <li> <strong>disbursed_amount_by_product_with_uncollected_funds</strong> <p>This data set is deprecated. Download related reports from AMMP instead!</p> </li>
+        /// <li> <strong>customer_profile_by_industry</strong> <p>This data set is deprecated. Download related reports from AMMP instead!</p> </li>
+        /// <li> <strong>customer_profile_by_revenue</strong> <p>This data set is deprecated. Download related reports from AMMP instead!</p> </li>
+        /// <li> <strong>customer_profile_by_geography</strong> <p>This data set is deprecated. Download related reports from AMMP instead!</p> </li>
         /// </ul>
-        /// </p>
-        pub fn data_set_type(mut self, inp: crate::model::DataSetType) -> Self {
-            self.inner = self.inner.data_set_type(inp);
+        /// <p></p>
+        pub fn data_set_type(mut self, input: crate::model::DataSetType) -> Self {
+            self.inner = self.inner.data_set_type(input);
             self
         }
         /// <p>The desired data set type.</p>
-        /// <p>
+        /// <p> </p>
         /// <ul>
-        /// <li>
-        /// <strong>customer_subscriber_hourly_monthly_subscriptions</strong>
-        /// <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>customer_subscriber_annual_subscriptions</strong>
-        /// <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>daily_business_usage_by_instance_type</strong>
-        /// <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>daily_business_fees</strong>
-        /// <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>daily_business_free_trial_conversions</strong>
-        /// <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>daily_business_new_instances</strong>
-        /// <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>daily_business_new_product_subscribers</strong>
-        /// <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>daily_business_canceled_product_subscribers</strong>
-        /// <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>monthly_revenue_billing_and_revenue_data</strong>
-        /// <p>From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00 UTC. Data includes metered transactions (e.g. hourly) from one month prior.</p>
-        /// </li>
-        /// <li>
-        /// <strong>monthly_revenue_annual_subscriptions</strong>
-        /// <p>From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00 UTC. Data includes up-front software charges (e.g. annual) from one month prior.</p>
-        /// </li>
-        /// <li>
-        /// <strong>monthly_revenue_field_demonstration_usage</strong>
-        /// <p>From 2018-03-15 to present: Available monthly on the 15th day of the month by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>monthly_revenue_flexible_payment_schedule</strong>
-        /// <p>From 2018-11-15 to present: Available monthly on the 15th day of the month by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>disbursed_amount_by_product</strong>
-        /// <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>disbursed_amount_by_instance_hours</strong>
-        /// <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>disbursed_amount_by_customer_geo</strong>
-        /// <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>disbursed_amount_by_age_of_uncollected_funds</strong>
-        /// <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>disbursed_amount_by_age_of_disbursed_funds</strong>
-        /// <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>disbursed_amount_by_age_of_past_due_funds</strong>
-        /// <p>From 2018-04-07 to present: Available every 30 days by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>disbursed_amount_by_uncollected_funds_breakdown</strong>
-        /// <p>From 2019-10-04 to present: Available every 30 days by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>sales_compensation_billed_revenue</strong>
-        /// <p>From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00 UTC. Data includes metered transactions (e.g. hourly) from one month prior, and up-front software charges (e.g. annual) from one month prior.</p>
-        /// </li>
-        /// <li>
-        /// <strong>us_sales_and_use_tax_records</strong>
-        /// <p>From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00 UTC.</p>
-        /// </li>
-        /// <li>
-        /// <strong>disbursed_amount_by_product_with_uncollected_funds</strong>
-        /// <p>This data set is deprecated. Download related reports from AMMP instead!</p>
-        /// </li>
-        /// <li>
-        /// <strong>customer_profile_by_industry</strong>
-        /// <p>This data set is deprecated. Download related reports from AMMP instead!</p>
-        /// </li>
-        /// <li>
-        /// <strong>customer_profile_by_revenue</strong>
-        /// <p>This data set is deprecated. Download related reports from AMMP instead!</p>
-        /// </li>
-        /// <li>
-        /// <strong>customer_profile_by_geography</strong>
-        /// <p>This data set is deprecated. Download related reports from AMMP instead!</p>
-        /// </li>
+        /// <li> <strong>customer_subscriber_hourly_monthly_subscriptions</strong> <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p> </li>
+        /// <li> <strong>customer_subscriber_annual_subscriptions</strong> <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p> </li>
+        /// <li> <strong>daily_business_usage_by_instance_type</strong> <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p> </li>
+        /// <li> <strong>daily_business_fees</strong> <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p> </li>
+        /// <li> <strong>daily_business_free_trial_conversions</strong> <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p> </li>
+        /// <li> <strong>daily_business_new_instances</strong> <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p> </li>
+        /// <li> <strong>daily_business_new_product_subscribers</strong> <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p> </li>
+        /// <li> <strong>daily_business_canceled_product_subscribers</strong> <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p> </li>
+        /// <li> <strong>monthly_revenue_billing_and_revenue_data</strong> <p>From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00 UTC. Data includes metered transactions (e.g. hourly) from one month prior.</p> </li>
+        /// <li> <strong>monthly_revenue_annual_subscriptions</strong> <p>From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00 UTC. Data includes up-front software charges (e.g. annual) from one month prior.</p> </li>
+        /// <li> <strong>monthly_revenue_field_demonstration_usage</strong> <p>From 2018-03-15 to present: Available monthly on the 15th day of the month by 24:00 UTC.</p> </li>
+        /// <li> <strong>monthly_revenue_flexible_payment_schedule</strong> <p>From 2018-11-15 to present: Available monthly on the 15th day of the month by 24:00 UTC.</p> </li>
+        /// <li> <strong>disbursed_amount_by_product</strong> <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p> </li>
+        /// <li> <strong>disbursed_amount_by_instance_hours</strong> <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p> </li>
+        /// <li> <strong>disbursed_amount_by_customer_geo</strong> <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p> </li>
+        /// <li> <strong>disbursed_amount_by_age_of_uncollected_funds</strong> <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p> </li>
+        /// <li> <strong>disbursed_amount_by_age_of_disbursed_funds</strong> <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p> </li>
+        /// <li> <strong>disbursed_amount_by_age_of_past_due_funds</strong> <p>From 2018-04-07 to present: Available every 30 days by 24:00 UTC.</p> </li>
+        /// <li> <strong>disbursed_amount_by_uncollected_funds_breakdown</strong> <p>From 2019-10-04 to present: Available every 30 days by 24:00 UTC.</p> </li>
+        /// <li> <strong>sales_compensation_billed_revenue</strong> <p>From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00 UTC. Data includes metered transactions (e.g. hourly) from one month prior, and up-front software charges (e.g. annual) from one month prior.</p> </li>
+        /// <li> <strong>us_sales_and_use_tax_records</strong> <p>From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00 UTC.</p> </li>
+        /// <li> <strong>disbursed_amount_by_product_with_uncollected_funds</strong> <p>This data set is deprecated. Download related reports from AMMP instead!</p> </li>
+        /// <li> <strong>customer_profile_by_industry</strong> <p>This data set is deprecated. Download related reports from AMMP instead!</p> </li>
+        /// <li> <strong>customer_profile_by_revenue</strong> <p>This data set is deprecated. Download related reports from AMMP instead!</p> </li>
+        /// <li> <strong>customer_profile_by_geography</strong> <p>This data set is deprecated. Download related reports from AMMP instead!</p> </li>
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn set_data_set_type(
             mut self,
             input: std::option::Option<crate::model::DataSetType>,
@@ -393,18 +236,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_set_type(input);
             self
         }
-        /// The date a data set was published.
-        /// For daily data sets, provide a date with day-level granularity for the desired day.
-        /// For monthly data sets except those with prefix disbursed_amount, provide a date with month-level granularity for the desired month (the day value will be ignored).
-        /// For data sets with prefix disbursed_amount, provide a date with day-level granularity for the desired day. For these data sets we will look backwards in time over the range of 31 days until the first data set is found (the latest one).
-        pub fn data_set_publication_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.data_set_publication_date(inp);
+        /// The date a data set was published. For daily data sets, provide a date with day-level granularity for the desired day. For monthly data sets except those with prefix disbursed_amount, provide a date with month-level granularity for the desired month (the day value will be ignored). For data sets with prefix disbursed_amount, provide a date with day-level granularity for the desired day. For these data sets we will look backwards in time over the range of 31 days until the first data set is found (the latest one).
+        pub fn data_set_publication_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.data_set_publication_date(input);
             self
         }
-        /// The date a data set was published.
-        /// For daily data sets, provide a date with day-level granularity for the desired day.
-        /// For monthly data sets except those with prefix disbursed_amount, provide a date with month-level granularity for the desired month (the day value will be ignored).
-        /// For data sets with prefix disbursed_amount, provide a date with day-level granularity for the desired day. For these data sets we will look backwards in time over the range of 31 days until the first data set is found (the latest one).
+        /// The date a data set was published. For daily data sets, provide a date with day-level granularity for the desired day. For monthly data sets except those with prefix disbursed_amount, provide a date with month-level granularity for the desired month (the day value will be ignored). For data sets with prefix disbursed_amount, provide a date with day-level granularity for the desired day. For these data sets we will look backwards in time over the range of 31 days until the first data set is found (the latest one).
         pub fn set_data_set_publication_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -412,14 +249,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_set_publication_date(input);
             self
         }
-        /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided
-        /// AWS services.
-        pub fn role_name_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name_arn(inp);
+        /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.
+        pub fn role_name_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name_arn(input.into());
             self
         }
-        /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided
-        /// AWS services.
+        /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.
         pub fn set_role_name_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -428,8 +263,8 @@ pub mod fluent_builders {
             self
         }
         /// The name (friendly name, not ARN) of the destination S3 bucket.
-        pub fn destination_s3_bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_s3_bucket_name(inp);
+        pub fn destination_s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_s3_bucket_name(input.into());
             self
         }
         /// The name (friendly name, not ARN) of the destination S3 bucket.
@@ -440,20 +275,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_s3_bucket_name(input);
             self
         }
-        /// (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems.
-        /// For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file
-        /// "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile".
-        /// If the prefix directory structure does not exist, it will be created.
-        /// If no prefix is provided, the data set will be published to the S3 bucket root.
-        pub fn destination_s3_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_s3_prefix(inp);
+        /// (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.
+        pub fn destination_s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_s3_prefix(input.into());
             self
         }
-        /// (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems.
-        /// For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file
-        /// "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile".
-        /// If the prefix directory structure does not exist, it will be created.
-        /// If no prefix is provided, the data set will be published to the S3 bucket root.
+        /// (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.
         pub fn set_destination_s3_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -461,14 +288,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_s3_prefix(input);
             self
         }
-        /// Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an
-        /// error has occurred.
-        pub fn sns_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_arn(inp);
+        /// Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.
+        pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_arn(input.into());
             self
         }
-        /// Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an
-        /// error has occurred.
+        /// Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -480,22 +305,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_customer_defined_values`](Self::set_customer_defined_values).
         ///
-        /// (Optional) Key-value pairs which will be returned, unmodified, in the
-        /// Amazon SNS notification message and the data set metadata file. These
-        /// key-value pairs can be used to correlated responses with tracking
-        /// information from other systems.
+        /// (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file. These key-value pairs can be used to correlated responses with tracking information from other systems.
         pub fn customer_defined_values(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.customer_defined_values(k, v);
+            self.inner = self.inner.customer_defined_values(k.into(), v.into());
             self
         }
-        /// (Optional) Key-value pairs which will be returned, unmodified, in the
-        /// Amazon SNS notification message and the data set metadata file. These
-        /// key-value pairs can be used to correlated responses with tracking
-        /// information from other systems.
+        /// (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file. These key-value pairs can be used to correlated responses with tracking information from other systems.
         pub fn set_customer_defined_values(
             mut self,
             input: std::option::Option<
@@ -508,15 +327,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartSupportDataExport`.
     ///
-    /// Given a data set type and a from date, asynchronously publishes the requested customer support data
-    /// to the specified S3 bucket and notifies the specified SNS topic once the data is available. Returns a unique request
-    /// identifier that can be used to correlate requests with notifications from the SNS topic.
-    /// Data sets will be published in comma-separated values (CSV) format with the file name {data_set_type}_YYYY-MM-DD'T'HH-mm-ss'Z'.csv.
-    /// If a file with the same name already exists (e.g. if the same data set is requested twice), the original file will
-    /// be overwritten by the new file.
-    /// Requires a Role with an attached permissions policy providing Allow permissions for the following actions:
-    /// s3:PutObject, s3:GetBucketLocation, sns:GetTopicAttributes, sns:Publish, iam:GetRolePolicy.
-    #[derive(std::fmt::Debug)]
+    /// Given a data set type and a from date, asynchronously publishes the requested customer support data to the specified S3 bucket and notifies the specified SNS topic once the data is available. Returns a unique request identifier that can be used to correlate requests with notifications from the SNS topic. Data sets will be published in comma-separated values (CSV) format with the file name {data_set_type}_YYYY-MM-DD'T'HH-mm-ss'Z'.csv. If a file with the same name already exists (e.g. if the same data set is requested twice), the original file will be overwritten by the new file. Requires a Role with an attached permissions policy providing Allow permissions for the following actions: s3:PutObject, s3:GetBucketLocation, sns:GetTopicAttributes, sns:Publish, iam:GetRolePolicy.
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartSupportDataExport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -561,10 +373,10 @@ pub mod fluent_builders {
                 crate::input::StartSupportDataExportInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -572,34 +384,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// Specifies the data set type to be written to the output csv file. The data set types customer_support_contacts_data and
-        /// test_customer_support_contacts_data both result in a csv file containing the following fields: Product Id, Product Code, Customer Guid,
-        /// Subscription Guid, Subscription Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title,
-        /// Country Code, ZIP Code, Operation Type, and Operation Time.
-        /// </p>
-        /// <p>
+        /// <p> Specifies the data set type to be written to the output csv file. The data set types customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code, Operation Type, and Operation Time. </p>
+        /// <p> </p>
         /// <ul>
         /// <li><i>customer_support_contacts_data</i> Customer support contact data. The data set will contain all changes (Creates, Updates, and Deletes) to customer support contact data from the date specified in the from_date parameter.</li>
         /// <li><i>test_customer_support_contacts_data</i> An example data set containing static test data in the same format as customer_support_contacts_data</li>
         /// </ul>
-        /// </p>
-        pub fn data_set_type(mut self, inp: crate::model::SupportDataSetType) -> Self {
-            self.inner = self.inner.data_set_type(inp);
+        /// <p></p>
+        pub fn data_set_type(mut self, input: crate::model::SupportDataSetType) -> Self {
+            self.inner = self.inner.data_set_type(input);
             self
         }
-        /// <p>
-        /// Specifies the data set type to be written to the output csv file. The data set types customer_support_contacts_data and
-        /// test_customer_support_contacts_data both result in a csv file containing the following fields: Product Id, Product Code, Customer Guid,
-        /// Subscription Guid, Subscription Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title,
-        /// Country Code, ZIP Code, Operation Type, and Operation Time.
-        /// </p>
-        /// <p>
+        /// <p> Specifies the data set type to be written to the output csv file. The data set types customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code, Operation Type, and Operation Time. </p>
+        /// <p> </p>
         /// <ul>
         /// <li><i>customer_support_contacts_data</i> Customer support contact data. The data set will contain all changes (Creates, Updates, and Deletes) to customer support contact data from the date specified in the from_date parameter.</li>
         /// <li><i>test_customer_support_contacts_data</i> An example data set containing static test data in the same format as customer_support_contacts_data</li>
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn set_data_set_type(
             mut self,
             input: std::option::Option<crate::model::SupportDataSetType>,
@@ -607,12 +409,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_set_type(input);
             self
         }
-        /// The start date from which to retrieve the data set in UTC.  This parameter only affects the customer_support_contacts_data data set type.
-        pub fn from_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.from_date(inp);
+        /// The start date from which to retrieve the data set in UTC. This parameter only affects the customer_support_contacts_data data set type.
+        pub fn from_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.from_date(input);
             self
         }
-        /// The start date from which to retrieve the data set in UTC.  This parameter only affects the customer_support_contacts_data data set type.
+        /// The start date from which to retrieve the data set in UTC. This parameter only affects the customer_support_contacts_data data set type.
         pub fn set_from_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -620,14 +422,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_from_date(input);
             self
         }
-        /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided
-        /// AWS services.
-        pub fn role_name_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name_arn(inp);
+        /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.
+        pub fn role_name_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name_arn(input.into());
             self
         }
-        /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided
-        /// AWS services.
+        /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.
         pub fn set_role_name_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -636,8 +436,8 @@ pub mod fluent_builders {
             self
         }
         /// The name (friendly name, not ARN) of the destination S3 bucket.
-        pub fn destination_s3_bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_s3_bucket_name(inp);
+        pub fn destination_s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_s3_bucket_name(input.into());
             self
         }
         /// The name (friendly name, not ARN) of the destination S3 bucket.
@@ -648,20 +448,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_s3_bucket_name(input);
             self
         }
-        /// (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems.
-        /// For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file
-        /// "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile".
-        /// If the prefix directory structure does not exist, it will be created.
-        /// If no prefix is provided, the data set will be published to the S3 bucket root.
-        pub fn destination_s3_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_s3_prefix(inp);
+        /// (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.
+        pub fn destination_s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_s3_prefix(input.into());
             self
         }
-        /// (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems.
-        /// For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file
-        /// "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile".
-        /// If the prefix directory structure does not exist, it will be created.
-        /// If no prefix is provided, the data set will be published to the S3 bucket root.
+        /// (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.
         pub fn set_destination_s3_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -669,14 +461,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_s3_prefix(input);
             self
         }
-        /// Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an
-        /// error has occurred.
-        pub fn sns_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_arn(inp);
+        /// Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.
+        pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_arn(input.into());
             self
         }
-        /// Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an
-        /// error has occurred.
+        /// Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -688,18 +478,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_customer_defined_values`](Self::set_customer_defined_values).
         ///
-        /// (Optional) Key-value pairs which will be returned, unmodified, in the
-        /// Amazon SNS notification message and the data set metadata file.
+        /// (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file.
         pub fn customer_defined_values(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.customer_defined_values(k, v);
+            self.inner = self.inner.customer_defined_values(k.into(), v.into());
             self
         }
-        /// (Optional) Key-value pairs which will be returned, unmodified, in the
-        /// Amazon SNS notification message and the data set metadata file.
+        /// (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file.
         pub fn set_customer_defined_values(
             mut self,
             input: std::option::Option<
@@ -711,6 +499,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

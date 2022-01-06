@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Recycle Bin
@@ -108,6 +108,7 @@ where
     ///
     /// See [`ListRules`](crate::client::fluent_builders::ListRules) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRules::into_paginator).
     pub fn list_rules(&self) -> fluent_builders::ListRules<C, M, R> {
         fluent_builders::ListRules::new(self.handle.clone())
     }
@@ -150,9 +151,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateRule`.
     ///
-    /// <p>Creates a Recycle Bin retention rule. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-create-rule">
-    /// Create Recycle Bin retention rules</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a Recycle Bin retention rule. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-create-rule"> Create Recycle Bin retention rules</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -197,10 +197,10 @@ pub mod fluent_builders {
                 crate::input::CreateRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -209,8 +209,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
-        pub fn retention_period(mut self, inp: crate::model::RetentionPeriod) -> Self {
-            self.inner = self.inner.retention_period(inp);
+        pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
+            self.inner = self.inner.retention_period(input);
             self
         }
         /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
@@ -222,8 +222,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A brief description for the retention rule.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A brief description for the retention rule.</p>
@@ -236,8 +236,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Information about the tags to assign to the retention rule.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Information about the tags to assign to the retention rule.</p>
@@ -248,14 +248,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are
-        /// supported.</p>
-        pub fn resource_type(mut self, inp: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are supported.</p>
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
-        /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are
-        /// supported.</p>
+        /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are supported.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -267,21 +265,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
-        /// <p>Information about the resource tags to use to identify resources that are to be retained
-        /// by the retention rule. The retention rule retains only deleted snapshots that have one or more
-        /// of the specified tag key and value pairs. If a snapshot is deleted, but it does not have
-        /// any of the specified tag key and value pairs, it is immediately deleted without being retained
-        /// by the retention rule.</p>
+        /// <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
         /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
-        pub fn resource_tags(mut self, inp: impl Into<crate::model::ResourceTag>) -> Self {
-            self.inner = self.inner.resource_tags(inp);
+        pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
+            self.inner = self.inner.resource_tags(input);
             self
         }
-        /// <p>Information about the resource tags to use to identify resources that are to be retained
-        /// by the retention rule. The retention rule retains only deleted snapshots that have one or more
-        /// of the specified tag key and value pairs. If a snapshot is deleted, but it does not have
-        /// any of the specified tag key and value pairs, it is immediately deleted without being retained
-        /// by the retention rule.</p>
+        /// <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
         /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
         pub fn set_resource_tags(
             mut self,
@@ -293,9 +283,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteRule`.
     ///
-    /// <p>Deletes a Recycle Bin retention rule. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-delete-rule">
-    /// Delete Recycle Bin retention rules</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a Recycle Bin retention rule. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-delete-rule"> Delete Recycle Bin retention rules</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -340,10 +329,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -352,8 +341,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the retention rule to delete.</p>
-        pub fn identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(inp);
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(input.into());
             self
         }
         /// <p>The unique ID of the retention rule to delete.</p>
@@ -365,7 +354,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRule`.
     ///
     /// <p>Gets information about a Recycle Bin retention rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -410,10 +399,10 @@ pub mod fluent_builders {
                 crate::input::GetRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -422,8 +411,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the retention rule.</p>
-        pub fn identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(inp);
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(input.into());
             self
         }
         /// <p>The unique ID of the retention rule.</p>
@@ -435,7 +424,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRules`.
     ///
     /// <p>Lists the Recycle Bin retention rules in the Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -480,10 +469,10 @@ pub mod fluent_builders {
                 crate::input::ListRulesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -491,9 +480,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRulesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListRulesPaginator<C, M, R> {
+            crate::paginator::ListRulesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
@@ -502,8 +497,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
@@ -511,14 +506,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type
-        /// are listed.</p>
-        pub fn resource_type(mut self, inp: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed.</p>
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
-        /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type
-        /// are listed.</p>
+        /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -531,8 +524,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
         /// <p>The tags used to identify resources that are to be retained by the retention rule.</p>
-        pub fn resource_tags(mut self, inp: impl Into<crate::model::ResourceTag>) -> Self {
-            self.inner = self.inner.resource_tags(inp);
+        pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
+            self.inner = self.inner.resource_tags(input);
             self
         }
         /// <p>The tags used to identify resources that are to be retained by the retention rule.</p>
@@ -547,7 +540,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags assigned a specific resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -592,10 +585,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -604,8 +597,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource for which to list the tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource for which to list the tags.</p>
@@ -617,7 +610,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Assigns tags to the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -662,10 +655,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -674,8 +667,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which to assign the tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which to assign the tags.</p>
@@ -688,8 +681,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Information about the tags to assign to the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Information about the tags to assign to the resource.</p>
@@ -704,7 +697,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Unassigns a tag from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -749,10 +742,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -761,8 +754,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource from which to unassign the tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource from which to unassign the tags.</p>
@@ -775,8 +768,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>Information about the tags to unassign from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>Information about the tags to unassign from the resource.</p>
@@ -790,9 +783,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateRule`.
     ///
-    /// <p>Updates an existing Recycle Bin retention rule. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-update-rule">
-    /// Update Recycle Bin retention rules</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates an existing Recycle Bin retention rule. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-update-rule"> Update Recycle Bin retention rules</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -837,10 +829,10 @@ pub mod fluent_builders {
                 crate::input::UpdateRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -849,8 +841,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the retention rule to update.</p>
-        pub fn identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(inp);
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(input.into());
             self
         }
         /// <p>The unique ID of the retention rule to update.</p>
@@ -859,8 +851,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
-        pub fn retention_period(mut self, inp: crate::model::RetentionPeriod) -> Self {
-            self.inner = self.inner.retention_period(inp);
+        pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
+            self.inner = self.inner.retention_period(input);
             self
         }
         /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
@@ -872,8 +864,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The retention rule description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The retention rule description.</p>
@@ -882,8 +874,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are supported.</p>
-        pub fn resource_type(mut self, inp: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are supported.</p>
@@ -898,21 +890,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
-        /// <p>Information about the resource tags to use to identify resources that are to be retained
-        /// by the retention rule. The retention rule retains only deleted snapshots that have one or more
-        /// of the specified tag key and value pairs. If a snapshot is deleted, but it does not have
-        /// any of the specified tag key and value pairs, it is immediately deleted without being retained
-        /// by the retention rule. </p>
+        /// <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule. </p>
         /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
-        pub fn resource_tags(mut self, inp: impl Into<crate::model::ResourceTag>) -> Self {
-            self.inner = self.inner.resource_tags(inp);
+        pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
+            self.inner = self.inner.resource_tags(input);
             self
         }
-        /// <p>Information about the resource tags to use to identify resources that are to be retained
-        /// by the retention rule. The retention rule retains only deleted snapshots that have one or more
-        /// of the specified tag key and value pairs. If a snapshot is deleted, but it does not have
-        /// any of the specified tag key and value pairs, it is immediately deleted without being retained
-        /// by the retention rule. </p>
+        /// <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule. </p>
         /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
         pub fn set_resource_tags(
             mut self,
@@ -923,6 +907,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

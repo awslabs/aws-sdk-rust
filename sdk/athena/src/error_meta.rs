@@ -3,18 +3,11 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>An exception that Athena received when it called a custom metastore.
-    /// Occurs if the error is not caused by user input (<code>InvalidRequestException</code>)
-    /// or from the Athena platform (<code>InternalServerException</code>). For
-    /// example, if a user-created Lambda function is missing permissions, the
-    /// Lambda
-    /// <code>4XX</code> exception is returned in a <code>MetadataException</code>.</p>
+    /// <p>An exception that Athena received when it called a custom metastore. Occurs if the error is not caused by user input (<code>InvalidRequestException</code>) or from the Athena platform (<code>InternalServerException</code>). For example, if a user-created Lambda function is missing permissions, the Lambda <code>4XX</code> exception is returned in a <code>MetadataException</code>.</p>
     MetadataException(crate::error::MetadataException),
     /// <p>A resource, such as a workgroup, was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),

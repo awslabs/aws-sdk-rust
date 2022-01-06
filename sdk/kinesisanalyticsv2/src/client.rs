@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Kinesis Analytics
@@ -340,7 +340,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddApplicationCloudWatchLoggingOption`.
     ///
     /// <p>Adds an Amazon CloudWatch log stream to monitor application configuration errors.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddApplicationCloudWatchLoggingOption<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -387,10 +387,10 @@ pub mod fluent_builders {
                 crate::input::AddApplicationCloudWatchLoggingOptionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -399,8 +399,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Kinesis Data Analytics application name.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The Kinesis Data Analytics application name.</p>
@@ -411,20 +411,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_name(input);
             self
         }
-        /// <p>The version ID of the Kinesis Data Analytics application. You must provide the
-        /// <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can
-        /// retrieve the application version ID using <a>DescribeApplication</a>. For better
-        /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        /// <p>The version ID of the Kinesis Data Analytics application. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
-        /// <p>The version ID of the Kinesis Data Analytics application. You must provide the
-        /// <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can
-        /// retrieve the application version ID using <a>DescribeApplication</a>. For better
-        /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>The version ID of the Kinesis Data Analytics application. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -435,9 +427,9 @@ pub mod fluent_builders {
         /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
         pub fn cloud_watch_logging_option(
             mut self,
-            inp: crate::model::CloudWatchLoggingOption,
+            input: crate::model::CloudWatchLoggingOption,
         ) -> Self {
-            self.inner = self.inner.cloud_watch_logging_option(inp);
+            self.inner = self.inner.cloud_watch_logging_option(input);
             self
         }
         /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
@@ -448,20 +440,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cloud_watch_logging_option(input);
             self
         }
-        /// <p>A value you use to implement strong concurrency for application updates. You must
-        /// provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You
-        /// get the application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
-        /// <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
-        pub fn conditional_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.conditional_token(inp);
+        /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+        pub fn conditional_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.conditional_token(input.into());
             self
         }
-        /// <p>A value you use to implement strong concurrency for application updates. You must
-        /// provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You
-        /// get the application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
-        /// <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn set_conditional_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -472,17 +456,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AddApplicationInput`.
     ///
-    /// <p>
-    /// Adds a streaming source to your SQL-based Kinesis Data Analytics application.
-    /// </p>
-    /// <p>You can add a streaming source when you create an application, or you can use this
-    /// operation to add a streaming source after you create an application. For more information, see
-    /// <a>CreateApplication</a>.</p>
-    /// <p>Any configuration update, including adding a streaming source using this operation,  
-    /// results in a new version of the application. You can use the <a>DescribeApplication</a> operation  
-    /// to find the current application version.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Adds a streaming source to your SQL-based Kinesis Data Analytics application. </p>
+    /// <p>You can add a streaming source when you create an application, or you can use this operation to add a streaming source after you create an application. For more information, see <code>CreateApplication</code>.</p>
+    /// <p>Any configuration update, including adding a streaming source using this operation, results in a new version of the application. You can use the <code>DescribeApplication</code> operation to find the current application version. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddApplicationInput<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -527,10 +504,10 @@ pub mod fluent_builders {
                 crate::input::AddApplicationInputInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -538,14 +515,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of your existing application to which you want to add the streaming
-        /// source.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        /// <p>The name of your existing application to which you want to add the streaming source.</p>
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
-        /// <p>The name of your existing application to which you want to add the streaming
-        /// source.</p>
+        /// <p>The name of your existing application to which you want to add the streaming source.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -553,14 +528,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_name(input);
             self
         }
-        /// <p>The current version of your application.
-        /// You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can use the <a>DescribeApplication</a> operation to find the current application version.</p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        /// <p>The current version of your application. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can use the <code>DescribeApplication</code> operation to find the current application version.</p>
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
-        /// <p>The current version of your application.
-        /// You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can use the <a>DescribeApplication</a> operation to find the current application version.</p>
+        /// <p>The current version of your application. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can use the <code>DescribeApplication</code> operation to find the current application version.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -568,12 +541,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_current_application_version_id(input);
             self
         }
-        /// <p>The <a>Input</a> to add.</p>
-        pub fn input(mut self, inp: crate::model::Input) -> Self {
-            self.inner = self.inner.input(inp);
+        /// <p>The <code>Input</code> to add.</p>
+        pub fn input(mut self, input: crate::model::Input) -> Self {
+            self.inner = self.inner.input(input);
             self
         }
-        /// <p>The <a>Input</a> to add.</p>
+        /// <p>The <code>Input</code> to add.</p>
         pub fn set_input(mut self, input: std::option::Option<crate::model::Input>) -> Self {
             self.inner = self.inner.set_input(input);
             self
@@ -581,10 +554,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AddApplicationInputProcessingConfiguration`.
     ///
-    /// <p>Adds an <a>InputProcessingConfiguration</a> to a SQL-based Kinesis Data Analytics application. An input processor pre-processes records
-    /// on the input stream before the
-    /// application's SQL code executes. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">Amazon Lambda</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds an <code>InputProcessingConfiguration</code> to a SQL-based Kinesis Data Analytics application. An input processor pre-processes records on the input stream before the application's SQL code executes. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">Amazon Lambda</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddApplicationInputProcessingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -631,10 +602,10 @@ pub mod fluent_builders {
                 crate::input::AddApplicationInputProcessingConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -642,14 +613,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the application to which you want to add the input processing
-        /// configuration.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        /// <p>The name of the application to which you want to add the input processing configuration.</p>
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
-        /// <p>The name of the application to which you want to add the input processing
-        /// configuration.</p>
+        /// <p>The name of the application to which you want to add the input processing configuration.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -657,18 +626,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_name(input);
             self
         }
-        /// <p>The version of the application to which you want to add the input processing
-        /// configuration. You can use the <a>DescribeApplication</a> operation to get the
-        /// current application version. If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned.</p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        /// <p>The version of the application to which you want to add the input processing configuration. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
-        /// <p>The version of the application to which you want to add the input processing
-        /// configuration. You can use the <a>DescribeApplication</a> operation to get the
-        /// current application version. If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned.</p>
+        /// <p>The version of the application to which you want to add the input processing configuration. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -676,27 +639,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_current_application_version_id(input);
             self
         }
-        /// <p>The ID of the input configuration to add the input processing configuration to. You
-        /// can get a list of the input IDs for an application using the <a>DescribeApplication</a> operation.</p>
-        pub fn input_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_id(inp);
+        /// <p>The ID of the input configuration to add the input processing configuration to. You can get a list of the input IDs for an application using the <code>DescribeApplication</code> operation.</p>
+        pub fn input_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_id(input.into());
             self
         }
-        /// <p>The ID of the input configuration to add the input processing configuration to. You
-        /// can get a list of the input IDs for an application using the <a>DescribeApplication</a> operation.</p>
+        /// <p>The ID of the input configuration to add the input processing configuration to. You can get a list of the input IDs for an application using the <code>DescribeApplication</code> operation.</p>
         pub fn set_input_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_input_id(input);
             self
         }
-        /// <p>The <a>InputProcessingConfiguration</a> to add to the application.</p>
+        /// <p>The <code>InputProcessingConfiguration</code> to add to the application.</p>
         pub fn input_processing_configuration(
             mut self,
-            inp: crate::model::InputProcessingConfiguration,
+            input: crate::model::InputProcessingConfiguration,
         ) -> Self {
-            self.inner = self.inner.input_processing_configuration(inp);
+            self.inner = self.inner.input_processing_configuration(input);
             self
         }
-        /// <p>The <a>InputProcessingConfiguration</a> to add to the application.</p>
+        /// <p>The <code>InputProcessingConfiguration</code> to add to the application.</p>
         pub fn set_input_processing_configuration(
             mut self,
             input: std::option::Option<crate::model::InputProcessingConfiguration>,
@@ -708,19 +669,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddApplicationOutput`.
     ///
     /// <p>Adds an external destination to your SQL-based Kinesis Data Analytics application.</p>
-    /// <p>If you want Kinesis Data Analytics to deliver data from an in-application stream within
-    /// your application to an external destination (such as an Kinesis data stream, a Kinesis Data
-    /// Firehose delivery stream, or an Amazon Lambda function), you add the relevant configuration to
-    /// your application using this operation. You can configure one or more outputs for your
-    /// application. Each output configuration maps an in-application stream and an external
-    /// destination.</p>
-    /// <p> You can use one of the output configurations to deliver data from your
-    /// in-application error stream to an external destination so that you can analyze the
-    /// errors.  </p>
-    /// <p> Any configuration update, including adding a streaming source using this
-    /// operation, results in a new version of the application. You can use the <a>DescribeApplication</a> operation to find the current application
-    /// version.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If you want Kinesis Data Analytics to deliver data from an in-application stream within your application to an external destination (such as an Kinesis data stream, a Kinesis Data Firehose delivery stream, or an Amazon Lambda function), you add the relevant configuration to your application using this operation. You can configure one or more outputs for your application. Each output configuration maps an in-application stream and an external destination.</p>
+    /// <p> You can use one of the output configurations to deliver data from your in-application error stream to an external destination so that you can analyze the errors. </p>
+    /// <p> Any configuration update, including adding a streaming source using this operation, results in a new version of the application. You can use the <code>DescribeApplication</code> operation to find the current application version.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddApplicationOutput<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -765,10 +717,10 @@ pub mod fluent_builders {
                 crate::input::AddApplicationOutputInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -777,8 +729,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application to which you want to add the output configuration.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of the application to which you want to add the output configuration.</p>
@@ -789,18 +741,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_name(input);
             self
         }
-        /// <p>The version of the application to which you want to add the output configuration. You can
-        /// use the <a>DescribeApplication</a> operation to get the current application
-        /// version. If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned. </p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        /// <p>The version of the application to which you want to add the output configuration. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
-        /// <p>The version of the application to which you want to add the output configuration. You can
-        /// use the <a>DescribeApplication</a> operation to get the current application
-        /// version. If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned. </p>
+        /// <p>The version of the application to which you want to add the output configuration. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -808,18 +754,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_current_application_version_id(input);
             self
         }
-        /// <p>An array of objects, each describing one output configuration. In the output
-        /// configuration, you specify the name of an in-application stream, a destination (that is, a
-        /// Kinesis data stream, a Kinesis Data Firehose delivery stream, or an Amazon Lambda function), and
-        /// record the formation to use when writing to the destination.</p>
-        pub fn output(mut self, inp: crate::model::Output) -> Self {
-            self.inner = self.inner.output(inp);
+        /// <p>An array of objects, each describing one output configuration. In the output configuration, you specify the name of an in-application stream, a destination (that is, a Kinesis data stream, a Kinesis Data Firehose delivery stream, or an Amazon Lambda function), and record the formation to use when writing to the destination.</p>
+        pub fn output(mut self, input: crate::model::Output) -> Self {
+            self.inner = self.inner.output(input);
             self
         }
-        /// <p>An array of objects, each describing one output configuration. In the output
-        /// configuration, you specify the name of an in-application stream, a destination (that is, a
-        /// Kinesis data stream, a Kinesis Data Firehose delivery stream, or an Amazon Lambda function), and
-        /// record the formation to use when writing to the destination.</p>
+        /// <p>An array of objects, each describing one output configuration. In the output configuration, you specify the name of an in-application stream, a destination (that is, a Kinesis data stream, a Kinesis Data Firehose delivery stream, or an Amazon Lambda function), and record the formation to use when writing to the destination.</p>
         pub fn set_output(mut self, input: std::option::Option<crate::model::Output>) -> Self {
             self.inner = self.inner.set_output(input);
             self
@@ -828,12 +768,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddApplicationReferenceDataSource`.
     ///
     /// <p>Adds a reference data source to an existing SQL-based Kinesis Data Analytics application.</p>
-    /// <p>Kinesis Data Analytics reads reference data (that is, an Amazon S3 object) and creates an
-    /// in-application table within your application. In the request, you provide the source (S3
-    /// bucket name and object key name), name of the in-application table to create, and the
-    /// necessary mapping information that describes how data in an Amazon S3 object maps to columns
-    /// in the resulting in-application table.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Kinesis Data Analytics reads reference data (that is, an Amazon S3 object) and creates an in-application table within your application. In the request, you provide the source (S3 bucket name and object key name), name of the in-application table to create, and the necessary mapping information that describes how data in an Amazon S3 object maps to columns in the resulting in-application table.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddApplicationReferenceDataSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -878,10 +814,10 @@ pub mod fluent_builders {
                 crate::input::AddApplicationReferenceDataSourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -890,8 +826,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of an existing application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of an existing application.</p>
@@ -902,20 +838,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_name(input);
             self
         }
-        /// <p>The version of the application for which you are adding the reference data source.
-        /// You can
-        /// use the <a>DescribeApplication</a> operation to get the current application
-        /// version. If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned.</p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        /// <p>The version of the application for which you are adding the reference data source. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
-        /// <p>The version of the application for which you are adding the reference data source.
-        /// You can
-        /// use the <a>DescribeApplication</a> operation to get the current application
-        /// version. If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned.</p>
+        /// <p>The version of the application for which you are adding the reference data source. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -923,18 +851,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_current_application_version_id(input);
             self
         }
-        /// <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data
-        /// into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting
-        /// in-application table that is
-        /// created. </p>
-        pub fn reference_data_source(mut self, inp: crate::model::ReferenceDataSource) -> Self {
-            self.inner = self.inner.reference_data_source(inp);
+        /// <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created. </p>
+        pub fn reference_data_source(mut self, input: crate::model::ReferenceDataSource) -> Self {
+            self.inner = self.inner.reference_data_source(input);
             self
         }
-        /// <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data
-        /// into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting
-        /// in-application table that is
-        /// created. </p>
+        /// <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created. </p>
         pub fn set_reference_data_source(
             mut self,
             input: std::option::Option<crate::model::ReferenceDataSource>,
@@ -945,19 +867,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AddApplicationVpcConfiguration`.
     ///
-    /// <p>Adds a Virtual Private Cloud (VPC) configuration to the application. Applications can use VPCs to store
-    /// and access resources securely.</p>
+    /// <p>Adds a Virtual Private Cloud (VPC) configuration to the application. Applications can use VPCs to store and access resources securely.</p>
     /// <p>Note the following about VPC configurations for Kinesis Data Analytics applications:</p>
     /// <ul>
-    /// <li>
-    /// <p>VPC configurations are not supported for SQL applications.</p>
-    /// </li>
-    /// <li>
-    /// <p>When a VPC is added to a Kinesis Data Analytics application, the application can no longer be accessed from the
-    /// Internet directly. To enable Internet access to the application, add an Internet gateway to your VPC.</p>
-    /// </li>
+    /// <li> <p>VPC configurations are not supported for SQL applications.</p> </li>
+    /// <li> <p>When a VPC is added to a Kinesis Data Analytics application, the application can no longer be accessed from the Internet directly. To enable Internet access to the application, add an Internet gateway to your VPC.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddApplicationVpcConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1002,10 +918,10 @@ pub mod fluent_builders {
                 crate::input::AddApplicationVpcConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1014,8 +930,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of an existing application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of an existing application.</p>
@@ -1026,24 +942,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_name(input);
             self
         }
-        /// <p>The version of the application to which you want to add the VPC configuration. You must
-        /// provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You
-        /// can use the <a>DescribeApplication</a> operation to get the current application
-        /// version. If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned. For better concurrency support,
-        /// use the <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        /// <p>The version of the application to which you want to add the VPC configuration. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
-        /// <p>The version of the application to which you want to add the VPC configuration. You must
-        /// provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You
-        /// can use the <a>DescribeApplication</a> operation to get the current application
-        /// version. If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned. For better concurrency support,
-        /// use the <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>The version of the application to which you want to add the VPC configuration. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -1052,8 +956,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Description of the VPC to add to the application.</p>
-        pub fn vpc_configuration(mut self, inp: crate::model::VpcConfiguration) -> Self {
-            self.inner = self.inner.vpc_configuration(inp);
+        pub fn vpc_configuration(mut self, input: crate::model::VpcConfiguration) -> Self {
+            self.inner = self.inner.vpc_configuration(input);
             self
         }
         /// <p>Description of the VPC to add to the application.</p>
@@ -1064,20 +968,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpc_configuration(input);
             self
         }
-        /// <p>A value you use to implement strong concurrency for application updates. You must
-        /// provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get
-        /// the application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
-        /// <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
-        pub fn conditional_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.conditional_token(inp);
+        /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+        pub fn conditional_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.conditional_token(input.into());
             self
         }
-        /// <p>A value you use to implement strong concurrency for application updates. You must
-        /// provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get
-        /// the application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
-        /// <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn set_conditional_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1088,10 +984,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateApplication`.
     ///
-    /// <p>Creates a Kinesis Data Analytics application. For information about creating a
-    /// Kinesis Data Analytics application, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/getting-started.html">Creating an
-    /// Application</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a Kinesis Data Analytics application. For information about creating a Kinesis Data Analytics application, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/getting-started.html">Creating an Application</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1136,10 +1030,10 @@ pub mod fluent_builders {
                 crate::input::CreateApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1148,8 +1042,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of your application (for example, <code>sample-app</code>).</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of your application (for example, <code>sample-app</code>).</p>
@@ -1161,8 +1055,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A summary description of the application.</p>
-        pub fn application_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_description(inp);
+        pub fn application_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_description(input.into());
             self
         }
         /// <p>A summary description of the application.</p>
@@ -1174,8 +1068,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
-        pub fn runtime_environment(mut self, inp: crate::model::RuntimeEnvironment) -> Self {
-            self.inner = self.inner.runtime_environment(inp);
+        pub fn runtime_environment(mut self, input: crate::model::RuntimeEnvironment) -> Self {
+            self.inner = self.inner.runtime_environment(input);
             self
         }
         /// <p>The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
@@ -1186,14 +1080,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_runtime_environment(input);
             self
         }
-        /// <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose
-        /// delivery streams, Amazon S3 objects, and other external resources.</p>
-        pub fn service_execution_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_execution_role(inp);
+        /// <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose delivery streams, Amazon S3 objects, and other external resources.</p>
+        pub fn service_execution_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_execution_role(input.into());
             self
         }
-        /// <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose
-        /// delivery streams, Amazon S3 objects, and other external resources.</p>
+        /// <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose delivery streams, Amazon S3 objects, and other external resources.</p>
         pub fn set_service_execution_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1204,9 +1096,9 @@ pub mod fluent_builders {
         /// <p>Use this parameter to configure the application.</p>
         pub fn application_configuration(
             mut self,
-            inp: crate::model::ApplicationConfiguration,
+            input: crate::model::ApplicationConfiguration,
         ) -> Self {
-            self.inner = self.inner.application_configuration(inp);
+            self.inner = self.inner.application_configuration(input);
             self
         }
         /// <p>Use this parameter to configure the application.</p>
@@ -1221,19 +1113,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_cloud_watch_logging_options`](Self::set_cloud_watch_logging_options).
         ///
-        /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application
-        /// configuration errors.
-        /// </p>
+        /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors. </p>
         pub fn cloud_watch_logging_options(
             mut self,
-            inp: impl Into<crate::model::CloudWatchLoggingOption>,
+            input: crate::model::CloudWatchLoggingOption,
         ) -> Self {
-            self.inner = self.inner.cloud_watch_logging_options(inp);
+            self.inner = self.inner.cloud_watch_logging_options(input);
             self
         }
-        /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application
-        /// configuration errors.
-        /// </p>
+        /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors. </p>
         pub fn set_cloud_watch_logging_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CloudWatchLoggingOption>>,
@@ -1245,20 +1133,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
-        /// application. Note that the maximum number of application tags includes system tags. The maximum number of
-        /// user-defined application tags is 50.
-        /// For more information, see
-        /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
-        /// application. Note that the maximum number of application tags includes system tags. The maximum number of
-        /// user-defined application tags is 50.
-        /// For more information, see
-        /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
+        /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1266,14 +1146,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data Analytics Studio notebook, use the
-        /// <code>INTERACTIVE</code> mode.</p>
-        pub fn application_mode(mut self, inp: crate::model::ApplicationMode) -> Self {
-            self.inner = self.inner.application_mode(inp);
+        /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
+        pub fn application_mode(mut self, input: crate::model::ApplicationMode) -> Self {
+            self.inner = self.inner.application_mode(input);
             self
         }
-        /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data Analytics Studio notebook, use the
-        /// <code>INTERACTIVE</code> mode.</p>
+        /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
         pub fn set_application_mode(
             mut self,
             input: std::option::Option<crate::model::ApplicationMode>,
@@ -1284,21 +1162,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateApplicationPresignedUrl`.
     ///
-    /// <p>Creates and returns a URL that you can use to connect to
-    /// an application's extension. Currently, the only
-    /// available extension is the Apache Flink dashboard.</p>
-    /// <p>The IAM role or user used to call this API defines the permissions to access the
-    /// extension. After the presigned URL is created, no additional permission is required to access
-    /// this URL. IAM authorization policies for this API are also enforced for every HTTP request
-    /// that attempts to connect to the extension. </p>
-    /// <p>You    control the amount of time that the URL will be valid using the <code>SessionExpirationDurationInSeconds</code>
-    /// parameter. If you do not provide this parameter, the returned URL is valid for twelve hours.</p>
-    /// <note>
-    /// <p>The URL that you get from a call to CreateApplicationPresignedUrl must be used within 3 minutes
-    /// to be valid.
-    /// If you first try to use the URL after the 3-minute limit expires, the service returns an HTTP 403 Forbidden error.</p>
+    /// <p>Creates and returns a URL that you can use to connect to an application's extension. Currently, the only available extension is the Apache Flink dashboard.</p>
+    /// <p>The IAM role or user used to call this API defines the permissions to access the extension. After the presigned URL is created, no additional permission is required to access this URL. IAM authorization policies for this API are also enforced for every HTTP request that attempts to connect to the extension. </p>
+    /// <p>You control the amount of time that the URL will be valid using the <code>SessionExpirationDurationInSeconds</code> parameter. If you do not provide this parameter, the returned URL is valid for twelve hours.</p> <note>
+    /// <p>The URL that you get from a call to CreateApplicationPresignedUrl must be used within 3 minutes to be valid. If you first try to use the URL after the 3-minute limit expires, the service returns an HTTP 403 Forbidden error.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplicationPresignedUrl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1343,10 +1212,10 @@ pub mod fluent_builders {
                 crate::input::CreateApplicationPresignedUrlInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1355,8 +1224,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of the application.</p>
@@ -1367,21 +1236,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_name(input);
             self
         }
-        /// <p>The type of the extension for which to create and return a URL. Currently, the only valid
-        /// extension URL type is <code>FLINK_DASHBOARD_URL</code>. </p>
-        pub fn url_type(mut self, inp: crate::model::UrlType) -> Self {
-            self.inner = self.inner.url_type(inp);
+        /// <p>The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is <code>FLINK_DASHBOARD_URL</code>. </p>
+        pub fn url_type(mut self, input: crate::model::UrlType) -> Self {
+            self.inner = self.inner.url_type(input);
             self
         }
-        /// <p>The type of the extension for which to create and return a URL. Currently, the only valid
-        /// extension URL type is <code>FLINK_DASHBOARD_URL</code>. </p>
+        /// <p>The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is <code>FLINK_DASHBOARD_URL</code>. </p>
         pub fn set_url_type(mut self, input: std::option::Option<crate::model::UrlType>) -> Self {
             self.inner = self.inner.set_url_type(input);
             self
         }
         /// <p>The duration in seconds for which the returned URL will be valid.</p>
-        pub fn session_expiration_duration_in_seconds(mut self, inp: i64) -> Self {
-            self.inner = self.inner.session_expiration_duration_in_seconds(inp);
+        pub fn session_expiration_duration_in_seconds(mut self, input: i64) -> Self {
+            self.inner = self.inner.session_expiration_duration_in_seconds(input);
             self
         }
         /// <p>The duration in seconds for which the returned URL will be valid.</p>
@@ -1396,7 +1263,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateApplicationSnapshot`.
     ///
     /// <p>Creates a snapshot of the application's state data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplicationSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1441,10 +1308,10 @@ pub mod fluent_builders {
                 crate::input::CreateApplicationSnapshotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1453,8 +1320,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of an existing application</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of an existing application</p>
@@ -1466,8 +1333,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An identifier for the application snapshot.</p>
-        pub fn snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_name(inp);
+        pub fn snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_name(input.into());
             self
         }
         /// <p>An identifier for the application snapshot.</p>
@@ -1482,7 +1349,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApplication`.
     ///
     /// <p>Deletes the specified application. Kinesis Data Analytics halts application execution and deletes the application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1527,10 +1394,10 @@ pub mod fluent_builders {
                 crate::input::DeleteApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1539,8 +1406,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application to delete.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of the application to delete.</p>
@@ -1552,8 +1419,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Use the <code>DescribeApplication</code> operation to get this value.</p>
-        pub fn create_timestamp(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.create_timestamp(inp);
+        pub fn create_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.create_timestamp(input);
             self
         }
         /// <p>Use the <code>DescribeApplication</code> operation to get this value.</p>
@@ -1568,7 +1435,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApplicationCloudWatchLoggingOption`.
     ///
     /// <p>Deletes an Amazon CloudWatch log stream from an Kinesis Data Analytics application. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplicationCloudWatchLoggingOption<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1615,10 +1482,10 @@ pub mod fluent_builders {
                 crate::input::DeleteApplicationCloudWatchLoggingOptionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1627,8 +1494,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application name.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The application name.</p>
@@ -1639,20 +1506,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_name(input);
             self
         }
-        /// <p>The version ID of the application. You must provide the
-        /// <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can
-        /// retrieve the application version ID using <a>DescribeApplication</a>. For better
-        /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        /// <p>The version ID of the application. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
-        /// <p>The version ID of the application. You must provide the
-        /// <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can
-        /// retrieve the application version ID using <a>DescribeApplication</a>. For better
-        /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>The version ID of the application. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -1660,17 +1519,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_current_application_version_id(input);
             self
         }
-        /// <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to
-        /// delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a>DescribeApplication</a> operation. </p>
+        /// <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <code>DescribeApplication</code> operation. </p>
         pub fn cloud_watch_logging_option_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.cloud_watch_logging_option_id(inp);
+            self.inner = self.inner.cloud_watch_logging_option_id(input.into());
             self
         }
-        /// <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to
-        /// delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a>DescribeApplication</a> operation. </p>
+        /// <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <code>DescribeApplication</code> operation. </p>
         pub fn set_cloud_watch_logging_option_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1678,18 +1535,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cloud_watch_logging_option_id(input);
             self
         }
-        /// <p>A value you use to implement strong concurrency for application updates. You must provide
-        /// the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the
-        /// application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
-        pub fn conditional_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.conditional_token(inp);
+        /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+        pub fn conditional_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.conditional_token(input.into());
             self
         }
-        /// <p>A value you use to implement strong concurrency for application updates. You must provide
-        /// the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the
-        /// application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn set_conditional_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1700,8 +1551,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteApplicationInputProcessingConfiguration`.
     ///
-    /// <p>Deletes an <a>InputProcessingConfiguration</a> from an input.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes an <code>InputProcessingConfiguration</code> from an input.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplicationInputProcessingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1739,10 +1590,10 @@ pub mod fluent_builders {
                                     crate::error::DeleteApplicationInputProcessingConfigurationError,
                                     crate::input::DeleteApplicationInputProcessingConfigurationInputOperationRetryAlias>,
                                 {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1751,8 +1602,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of the application.</p>
@@ -1763,20 +1614,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_name(input);
             self
         }
-        /// <p>The application version.
-        /// You can use the <a>DescribeApplication</a> operation to get the current application version.
-        /// If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned.
-        /// </p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        /// <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
-        /// <p>The application version.
-        /// You can use the <a>DescribeApplication</a> operation to get the current application version.
-        /// If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned.
-        /// </p>
+        /// <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -1784,14 +1627,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_current_application_version_id(input);
             self
         }
-        /// <p>The ID of the input configuration from which to delete the input processing
-        /// configuration. You can get a list of the input IDs for an application by using the <a>DescribeApplication</a> operation.</p>
-        pub fn input_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_id(inp);
+        /// <p>The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the <code>DescribeApplication</code> operation.</p>
+        pub fn input_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_id(input.into());
             self
         }
-        /// <p>The ID of the input configuration from which to delete the input processing
-        /// configuration. You can get a list of the input IDs for an application by using the <a>DescribeApplication</a> operation.</p>
+        /// <p>The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the <code>DescribeApplication</code> operation.</p>
         pub fn set_input_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_input_id(input);
             self
@@ -1799,10 +1640,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteApplicationOutput`.
     ///
-    /// <p>Deletes the output destination configuration from your SQL-based Kinesis Data Analytics application's configuration.
-    /// Kinesis Data Analytics will no longer write data from
-    /// the corresponding in-application stream to the external output destination.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the output destination configuration from your SQL-based Kinesis Data Analytics application's configuration. Kinesis Data Analytics will no longer write data from the corresponding in-application stream to the external output destination.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplicationOutput<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1847,10 +1686,10 @@ pub mod fluent_builders {
                 crate::input::DeleteApplicationOutputInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1859,8 +1698,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application name.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The application name.</p>
@@ -1871,20 +1710,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_name(input);
             self
         }
-        /// <p>The application version.
-        /// You can use the <a>DescribeApplication</a> operation to get the current application version.
-        /// If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned.
-        /// </p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        /// <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
-        /// <p>The application version.
-        /// You can use the <a>DescribeApplication</a> operation to get the current application version.
-        /// If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned.
-        /// </p>
+        /// <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -1892,20 +1723,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_current_application_version_id(input);
             self
         }
-        /// <p>The ID of the configuration to delete. Each output configuration that is added to the
-        /// application (either when the application is created or later) using the <a>AddApplicationOutput</a> operation has a unique ID. You need to provide the ID to
-        /// uniquely identify the output configuration that you want to delete from the application
-        /// configuration. You can use the <a>DescribeApplication</a> operation to get the
-        /// specific <code>OutputId</code>. </p>
-        pub fn output_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_id(inp);
+        /// <p>The ID of the configuration to delete. Each output configuration that is added to the application (either when the application is created or later) using the <code>AddApplicationOutput</code> operation has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the <code>DescribeApplication</code> operation to get the specific <code>OutputId</code>. </p>
+        pub fn output_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_id(input.into());
             self
         }
-        /// <p>The ID of the configuration to delete. Each output configuration that is added to the
-        /// application (either when the application is created or later) using the <a>AddApplicationOutput</a> operation has a unique ID. You need to provide the ID to
-        /// uniquely identify the output configuration that you want to delete from the application
-        /// configuration. You can use the <a>DescribeApplication</a> operation to get the
-        /// specific <code>OutputId</code>. </p>
+        /// <p>The ID of the configuration to delete. Each output configuration that is added to the application (either when the application is created or later) using the <code>AddApplicationOutput</code> operation has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the <code>DescribeApplication</code> operation to get the specific <code>OutputId</code>. </p>
         pub fn set_output_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_output_id(input);
             self
@@ -1914,9 +1737,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApplicationReferenceDataSource`.
     ///
     /// <p>Deletes a reference data source configuration from the specified SQL-based Kinesis Data Analytics application's configuration.</p>
-    /// <p>If the application is running, Kinesis Data Analytics immediately removes the in-application table
-    /// that you created using the <a>AddApplicationReferenceDataSource</a> operation.  </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the application is running, Kinesis Data Analytics immediately removes the in-application table that you created using the <code>AddApplicationReferenceDataSource</code> operation. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplicationReferenceDataSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1963,10 +1785,10 @@ pub mod fluent_builders {
                 crate::input::DeleteApplicationReferenceDataSourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1975,8 +1797,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of an existing application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of an existing application.</p>
@@ -1987,18 +1809,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_name(input);
             self
         }
-        /// <p>The current application version.  
-        /// You can use the <a>DescribeApplication</a> operation to get the current application version.
-        /// If the version specified
-        /// is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        /// <p>The current application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
-        /// <p>The current application version.  
-        /// You can use the <a>DescribeApplication</a> operation to get the current application version.
-        /// If the version specified
-        /// is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+        /// <p>The current application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -2006,18 +1822,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_current_application_version_id(input);
             self
         }
-        /// <p>The ID of the reference data source. When you add a reference data source to your
-        /// application using the <a>AddApplicationReferenceDataSource</a>, Kinesis Data Analytics assigns an ID.
-        /// You can use the <a>DescribeApplication</a> operation to
-        /// get the reference ID. </p>
-        pub fn reference_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reference_id(inp);
+        /// <p>The ID of the reference data source. When you add a reference data source to your application using the <code>AddApplicationReferenceDataSource</code>, Kinesis Data Analytics assigns an ID. You can use the <code>DescribeApplication</code> operation to get the reference ID. </p>
+        pub fn reference_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reference_id(input.into());
             self
         }
-        /// <p>The ID of the reference data source. When you add a reference data source to your
-        /// application using the <a>AddApplicationReferenceDataSource</a>, Kinesis Data Analytics assigns an ID.
-        /// You can use the <a>DescribeApplication</a> operation to
-        /// get the reference ID. </p>
+        /// <p>The ID of the reference data source. When you add a reference data source to your application using the <code>AddApplicationReferenceDataSource</code>, Kinesis Data Analytics assigns an ID. You can use the <code>DescribeApplication</code> operation to get the reference ID. </p>
         pub fn set_reference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_reference_id(input);
             self
@@ -2026,7 +1836,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApplicationSnapshot`.
     ///
     /// <p>Deletes a snapshot of application state.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplicationSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2071,10 +1881,10 @@ pub mod fluent_builders {
                 crate::input::DeleteApplicationSnapshotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2083,8 +1893,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of an existing application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of an existing application.</p>
@@ -2096,8 +1906,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the snapshot delete.</p>
-        pub fn snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_name(inp);
+        pub fn snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_name(input.into());
             self
         }
         /// <p>The identifier for the snapshot delete.</p>
@@ -2108,16 +1918,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_snapshot_name(input);
             self
         }
-        /// <p>The creation timestamp of the application snapshot to delete. You can retrieve this value
-        /// using
-        /// or .</p>
-        pub fn snapshot_creation_timestamp(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.snapshot_creation_timestamp(inp);
+        /// <p>The creation timestamp of the application snapshot to delete. You can retrieve this value using or .</p>
+        pub fn snapshot_creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.snapshot_creation_timestamp(input);
             self
         }
-        /// <p>The creation timestamp of the application snapshot to delete. You can retrieve this value
-        /// using
-        /// or .</p>
+        /// <p>The creation timestamp of the application snapshot to delete. You can retrieve this value using or .</p>
         pub fn set_snapshot_creation_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2129,7 +1935,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApplicationVpcConfiguration`.
     ///
     /// <p>Removes a VPC configuration from a Kinesis Data Analytics application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplicationVpcConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2174,10 +1980,10 @@ pub mod fluent_builders {
                 crate::input::DeleteApplicationVpcConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2186,8 +1992,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of an existing application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of an existing application.</p>
@@ -2198,20 +2004,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_name(input);
             self
         }
-        /// <p>The current application version ID. You must provide the
-        /// <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can
-        /// retrieve the application version ID using <a>DescribeApplication</a>. For better
-        /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        /// <p>The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
-        /// <p>The current application version ID. You must provide the
-        /// <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can
-        /// retrieve the application version ID using <a>DescribeApplication</a>. For better
-        /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -2220,8 +2018,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the VPC configuration to delete.</p>
-        pub fn vpc_configuration_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_configuration_id(inp);
+        pub fn vpc_configuration_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_configuration_id(input.into());
             self
         }
         /// <p>The ID of the VPC configuration to delete.</p>
@@ -2232,18 +2030,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpc_configuration_id(input);
             self
         }
-        /// <p>A value you use to implement strong concurrency for application updates. You must provide
-        /// the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the
-        /// application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
-        pub fn conditional_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.conditional_token(inp);
+        /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+        pub fn conditional_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.conditional_token(input.into());
             self
         }
-        /// <p>A value you use to implement strong concurrency for application updates. You must provide
-        /// the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the
-        /// application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn set_conditional_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2255,9 +2047,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeApplication`.
     ///
     /// <p>Returns information about a specific Kinesis Data Analytics application.</p>
-    /// <p>If you want to retrieve a list of all applications in your account,
-    /// use the <a>ListApplications</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If you want to retrieve a list of all applications in your account, use the <code>ListApplications</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2302,10 +2093,10 @@ pub mod fluent_builders {
                 crate::input::DescribeApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2314,8 +2105,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of the application.</p>
@@ -2327,8 +2118,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Displays verbose information about a Kinesis Data Analytics application, including the application's job plan.</p>
-        pub fn include_additional_details(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_additional_details(inp);
+        pub fn include_additional_details(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_additional_details(input);
             self
         }
         /// <p>Displays verbose information about a Kinesis Data Analytics application, including the application's job plan.</p>
@@ -2340,7 +2131,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeApplicationSnapshot`.
     ///
     /// <p>Returns information about a snapshot of application state data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeApplicationSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2385,10 +2176,10 @@ pub mod fluent_builders {
                 crate::input::DescribeApplicationSnapshotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2397,8 +2188,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of an existing application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of an existing application.</p>
@@ -2409,14 +2200,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_name(input);
             self
         }
-        /// <p>The identifier of an application snapshot. You can retrieve this value using
-        /// .</p>
-        pub fn snapshot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_name(inp);
+        /// <p>The identifier of an application snapshot. You can retrieve this value using .</p>
+        pub fn snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_name(input.into());
             self
         }
-        /// <p>The identifier of an application snapshot. You can retrieve this value using
-        /// .</p>
+        /// <p>The identifier of an application snapshot. You can retrieve this value using .</p>
         pub fn set_snapshot_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2427,11 +2216,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeApplicationVersion`.
     ///
-    /// <p>Provides a detailed description of a specified version of the application. To see a list of all the versions of an application, invoke the <a>ListApplicationVersions</a> operation.</p>
-    /// <note>
+    /// <p>Provides a detailed description of a specified version of the application. To see a list of all the versions of an application, invoke the <code>ListApplicationVersions</code> operation.</p> <note>
     /// <p>This operation is supported only for Amazon Kinesis Data Analytics for Apache Flink.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeApplicationVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2476,10 +2264,10 @@ pub mod fluent_builders {
                 crate::input::DescribeApplicationVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2488,8 +2276,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application for which you want to get the version description.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of the application for which you want to get the version description.</p>
@@ -2501,8 +2289,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the application version for which you want to get the description.</p>
-        pub fn application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.application_version_id(inp);
+        pub fn application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.application_version_id(input);
             self
         }
         /// <p>The ID of the application version for which you want to get the description.</p>
@@ -2513,14 +2301,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DiscoverInputSchema`.
     ///
-    /// <p>Infers a schema for a SQL-based Kinesis Data Analytics application by evaluating
-    /// sample records on the specified streaming source (Kinesis data stream or Kinesis Data Firehose
-    /// delivery stream) or Amazon S3 object. In the response, the operation returns the inferred
-    /// schema and also the sample records that the operation used to infer the schema.</p>
-    /// <p> You can use the inferred schema when configuring a streaming source for your application.
-    /// When you create an application using the Kinesis Data Analytics console, the console uses this
-    /// operation to infer a schema and show it in the console user interface. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Infers a schema for a SQL-based Kinesis Data Analytics application by evaluating sample records on the specified streaming source (Kinesis data stream or Kinesis Data Firehose delivery stream) or Amazon S3 object. In the response, the operation returns the inferred schema and also the sample records that the operation used to infer the schema.</p>
+    /// <p> You can use the inferred schema when configuring a streaming source for your application. When you create an application using the Kinesis Data Analytics console, the console uses this operation to infer a schema and show it in the console user interface. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DiscoverInputSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2565,10 +2348,10 @@ pub mod fluent_builders {
                 crate::input::DiscoverInputSchemaInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2577,8 +2360,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the streaming source.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the streaming source.</p>
@@ -2587,8 +2370,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the role that is used to access the streaming source.</p>
-        pub fn service_execution_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_execution_role(inp);
+        pub fn service_execution_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_execution_role(input.into());
             self
         }
         /// <p>The ARN of the role that is used to access the streaming source.</p>
@@ -2599,17 +2382,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_execution_role(input);
             self
         }
-        /// <p>The point at which you want Kinesis Data Analytics to start reading records from the
-        /// specified streaming source discovery purposes.</p>
+        /// <p>The point at which you want Kinesis Data Analytics to start reading records from the specified streaming source discovery purposes.</p>
         pub fn input_starting_position_configuration(
             mut self,
-            inp: crate::model::InputStartingPositionConfiguration,
+            input: crate::model::InputStartingPositionConfiguration,
         ) -> Self {
-            self.inner = self.inner.input_starting_position_configuration(inp);
+            self.inner = self.inner.input_starting_position_configuration(input);
             self
         }
-        /// <p>The point at which you want Kinesis Data Analytics to start reading records from the
-        /// specified streaming source discovery purposes.</p>
+        /// <p>The point at which you want Kinesis Data Analytics to start reading records from the specified streaming source discovery purposes.</p>
         pub fn set_input_starting_position_configuration(
             mut self,
             input: std::option::Option<crate::model::InputStartingPositionConfiguration>,
@@ -2617,14 +2398,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input_starting_position_configuration(input);
             self
         }
-        /// <p>Specify this parameter to discover a schema from data in an Amazon S3
-        /// object.</p>
-        pub fn s3_configuration(mut self, inp: crate::model::S3Configuration) -> Self {
-            self.inner = self.inner.s3_configuration(inp);
+        /// <p>Specify this parameter to discover a schema from data in an Amazon S3 object.</p>
+        pub fn s3_configuration(mut self, input: crate::model::S3Configuration) -> Self {
+            self.inner = self.inner.s3_configuration(input);
             self
         }
-        /// <p>Specify this parameter to discover a schema from data in an Amazon S3
-        /// object.</p>
+        /// <p>Specify this parameter to discover a schema from data in an Amazon S3 object.</p>
         pub fn set_s3_configuration(
             mut self,
             input: std::option::Option<crate::model::S3Configuration>,
@@ -2632,17 +2411,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_s3_configuration(input);
             self
         }
-        /// <p>The <a>InputProcessingConfiguration</a> to use to preprocess the records
-        /// before discovering the schema of the records.</p>
+        /// <p>The <code>InputProcessingConfiguration</code> to use to preprocess the records before discovering the schema of the records.</p>
         pub fn input_processing_configuration(
             mut self,
-            inp: crate::model::InputProcessingConfiguration,
+            input: crate::model::InputProcessingConfiguration,
         ) -> Self {
-            self.inner = self.inner.input_processing_configuration(inp);
+            self.inner = self.inner.input_processing_configuration(input);
             self
         }
-        /// <p>The <a>InputProcessingConfiguration</a> to use to preprocess the records
-        /// before discovering the schema of the records.</p>
+        /// <p>The <code>InputProcessingConfiguration</code> to use to preprocess the records before discovering the schema of the records.</p>
         pub fn set_input_processing_configuration(
             mut self,
             input: std::option::Option<crate::model::InputProcessingConfiguration>,
@@ -2653,12 +2430,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListApplications`.
     ///
-    /// <p>Returns a list of Kinesis Data Analytics applications in your account. For each
-    /// application, the response includes the application name, Amazon Resource Name (ARN), and
-    /// status. </p>
-    /// <p>If you want detailed information about a specific application, use
-    /// <a>DescribeApplication</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of Kinesis Data Analytics applications in your account. For each application, the response includes the application name, Amazon Resource Name (ARN), and status. </p>
+    /// <p>If you want detailed information about a specific application, use <code>DescribeApplication</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApplications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2703,10 +2477,10 @@ pub mod fluent_builders {
                 crate::input::ListApplicationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2715,8 +2489,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of applications to list.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of applications to list.</p>
@@ -2724,18 +2498,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>If a previous command returned a pagination token,
-        /// pass it into this value to retrieve the next set of results.
-        /// For more information about pagination, see
-        /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If a previous command returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If a previous command returned a pagination token,
-        /// pass it into this value to retrieve the next set of results.
-        /// For more information about pagination, see
-        /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+        /// <p>If a previous command returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2744,7 +2512,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListApplicationSnapshots`.
     ///
     /// <p>Lists information about the current application snapshots.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApplicationSnapshots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2789,10 +2557,10 @@ pub mod fluent_builders {
                 crate::input::ListApplicationSnapshotsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2801,8 +2569,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of an existing application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of an existing application.</p>
@@ -2814,8 +2582,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of application snapshots to list.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of application snapshots to list.</p>
@@ -2823,16 +2591,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>Use this parameter if you receive a <code>NextToken</code> response in a previous request that indicates that there is more
-        /// output available. Set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should
-        /// continue from. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>Use this parameter if you receive a <code>NextToken</code> response in a previous request that indicates that there is more output available. Set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Use this parameter if you receive a <code>NextToken</code> response in a previous request that indicates that there is more
-        /// output available. Set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should
-        /// continue from. </p>
+        /// <p>Use this parameter if you receive a <code>NextToken</code> response in a previous request that indicates that there is more output available. Set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2840,14 +2604,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListApplicationVersions`.
     ///
-    /// <p>Lists all the versions for the specified application, including versions that were rolled back. The response also includes a summary of the configuration
-    /// associated with each version.</p>
-    ///
-    /// <p>To get the complete description of a specific application version, invoke the <a>DescribeApplicationVersion</a> operation.</p>
-    /// <note>
+    /// <p>Lists all the versions for the specified application, including versions that were rolled back. The response also includes a summary of the configuration associated with each version.</p>
+    /// <p>To get the complete description of a specific application version, invoke the <code>DescribeApplicationVersion</code> operation.</p> <note>
     /// <p>This operation is supported only for Amazon Kinesis Data Analytics for Apache Flink.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApplicationVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2892,10 +2653,10 @@ pub mod fluent_builders {
                 crate::input::ListApplicationVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2904,8 +2665,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application for which you want to list all versions.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of the application for which you want to list all versions.</p>
@@ -2917,8 +2678,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of versions to list in this invocation of the operation.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of versions to list in this invocation of the operation.</p>
@@ -2926,14 +2687,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>If a previous invocation of this operation returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see
-        /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If a previous invocation of this operation returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If a previous invocation of this operation returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see
-        /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+        /// <p>If a previous invocation of this operation returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2941,9 +2700,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Retrieves the list of key-value tags assigned to the application. For more information, see
-    /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the list of key-value tags assigned to the application. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2988,10 +2746,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3000,8 +2758,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the application for which to retrieve tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the application for which to retrieve tags.</p>
@@ -3012,14 +2770,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RollbackApplication`.
     ///
-    /// <p>Reverts the application to the previous running version. You can
-    /// roll back an application if you suspect it is stuck in a transient status. </p>
-    /// <p>You can roll back an application only if it is in the <code>UPDATING</code>
-    /// or <code>AUTOSCALING</code> status.</p>
-    /// <p>When you rollback an application, it loads state data from the last successful snapshot.
-    /// If the application has no snapshots, Kinesis Data Analytics rejects the rollback request.</p>
+    /// <p>Reverts the application to the previous running version. You can roll back an application if you suspect it is stuck in a transient status. </p>
+    /// <p>You can roll back an application only if it is in the <code>UPDATING</code> or <code>AUTOSCALING</code> status.</p>
+    /// <p>When you rollback an application, it loads state data from the last successful snapshot. If the application has no snapshots, Kinesis Data Analytics rejects the rollback request.</p>
     /// <p>This action is not supported for Kinesis Data Analytics for SQL applications.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RollbackApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3064,10 +2819,10 @@ pub mod fluent_builders {
                 crate::input::RollbackApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3076,8 +2831,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of the application.</p>
@@ -3088,14 +2843,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_name(input);
             self
         }
-        /// <p>The current application version ID. You can retrieve the application version ID using
-        /// <a>DescribeApplication</a>.</p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        /// <p>The current application version ID. You can retrieve the application version ID using <code>DescribeApplication</code>.</p>
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
-        /// <p>The current application version ID. You can retrieve the application version ID using
-        /// <a>DescribeApplication</a>.</p>
+        /// <p>The current application version ID. You can retrieve the application version ID using <code>DescribeApplication</code>.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -3106,9 +2859,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartApplication`.
     ///
-    /// <p>Starts the specified Kinesis Data Analytics application. After creating an application, you must exclusively call this operation to
-    /// start your application.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Starts the specified Kinesis Data Analytics application. After creating an application, you must exclusively call this operation to start your application.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3153,10 +2905,10 @@ pub mod fluent_builders {
                 crate::input::StartApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3165,8 +2917,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of the application.</p>
@@ -3178,8 +2930,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.</p>
-        pub fn run_configuration(mut self, inp: crate::model::RunConfiguration) -> Self {
-            self.inner = self.inner.run_configuration(inp);
+        pub fn run_configuration(mut self, input: crate::model::RunConfiguration) -> Self {
+            self.inner = self.inner.run_configuration(input);
             self
         }
         /// <p>Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.</p>
@@ -3193,14 +2945,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopApplication`.
     ///
-    /// <p>Stops the application from processing data. You can stop
-    /// an application only if it is in the running status, unless you set the <code>Force</code>
-    /// parameter to <code>true</code>.</p>
-    /// <p>You can use the <a>DescribeApplication</a> operation to find the application status.
-    /// </p>
-    /// <p>Kinesis Data Analytics takes a snapshot when the application is stopped, unless <code>Force</code> is set
-    /// to <code>true</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Stops the application from processing data. You can stop an application only if it is in the running status, unless you set the <code>Force</code> parameter to <code>true</code>.</p>
+    /// <p>You can use the <code>DescribeApplication</code> operation to find the application status. </p>
+    /// <p>Kinesis Data Analytics takes a snapshot when the application is stopped, unless <code>Force</code> is set to <code>true</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3245,10 +2993,10 @@ pub mod fluent_builders {
                 crate::input::StopApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3257,8 +3005,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the running application to stop.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of the running application to stop.</p>
@@ -3269,34 +3017,20 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_name(input);
             self
         }
-        /// <p>Set to <code>true</code> to force the application to stop. If you set <code>Force</code>
-        /// to <code>true</code>, Kinesis Data Analytics stops the application without taking a snapshot.
-        /// </p>
-        /// <note>
-        /// <p>Force-stopping your application may lead to data loss or duplication.
-        /// To prevent data loss or duplicate processing of data during application restarts,
-        /// we recommend you to take frequent snapshots of your application.</p>
+        /// <p>Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to <code>true</code>, Kinesis Data Analytics stops the application without taking a snapshot. </p> <note>
+        /// <p>Force-stopping your application may lead to data loss or duplication. To prevent data loss or duplicate processing of data during application restarts, we recommend you to take frequent snapshots of your application.</p>
         /// </note>
         /// <p>You can only force stop a Flink-based Kinesis Data Analytics application. You can't force stop a SQL-based Kinesis Data Analytics application.</p>
-        /// <p>The application must be in the
-        /// <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>, <code>AUTOSCALING</code>, or
-        /// <code>RUNNING</code> status. </p>
-        pub fn force(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force(inp);
+        /// <p>The application must be in the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>, <code>AUTOSCALING</code>, or <code>RUNNING</code> status. </p>
+        pub fn force(mut self, input: bool) -> Self {
+            self.inner = self.inner.force(input);
             self
         }
-        /// <p>Set to <code>true</code> to force the application to stop. If you set <code>Force</code>
-        /// to <code>true</code>, Kinesis Data Analytics stops the application without taking a snapshot.
-        /// </p>
-        /// <note>
-        /// <p>Force-stopping your application may lead to data loss or duplication.
-        /// To prevent data loss or duplicate processing of data during application restarts,
-        /// we recommend you to take frequent snapshots of your application.</p>
+        /// <p>Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to <code>true</code>, Kinesis Data Analytics stops the application without taking a snapshot. </p> <note>
+        /// <p>Force-stopping your application may lead to data loss or duplication. To prevent data loss or duplicate processing of data during application restarts, we recommend you to take frequent snapshots of your application.</p>
         /// </note>
         /// <p>You can only force stop a Flink-based Kinesis Data Analytics application. You can't force stop a SQL-based Kinesis Data Analytics application.</p>
-        /// <p>The application must be in the
-        /// <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>, <code>AUTOSCALING</code>, or
-        /// <code>RUNNING</code> status. </p>
+        /// <p>The application must be in the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>, <code>AUTOSCALING</code>, or <code>RUNNING</code> status. </p>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_force(input);
             self
@@ -3304,10 +3038,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds one or more key-value tags to a Kinesis Data Analytics application. Note that the maximum number of application
-    /// tags includes system tags. The maximum number of user-defined application tags is 50.
-    /// For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds one or more key-value tags to a Kinesis Data Analytics application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3352,10 +3084,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3364,8 +3096,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the application to assign the tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the application to assign the tags.</p>
@@ -3378,8 +3110,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key-value tags to assign to the application.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The key-value tags to assign to the application.</p>
@@ -3393,9 +3125,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Removes one or more tags from a Kinesis Data Analytics application. For more information, see
-    /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes one or more tags from a Kinesis Data Analytics application. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3440,10 +3171,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3452,8 +3183,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the Kinesis Data Analytics application from which to remove the tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the Kinesis Data Analytics application from which to remove the tags.</p>
@@ -3466,8 +3197,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>A list of keys of tags to remove from the specified application.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A list of keys of tags to remove from the specified application.</p>
@@ -3481,16 +3212,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateApplication`.
     ///
-    /// <p>Updates an existing Kinesis Data Analytics application. Using this operation, you
-    /// can update application code, input configuration, and output configuration. </p>
-    /// <p>Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update
-    /// your application. </p>
-    /// <note>
-    /// <p>You cannot update the <code>RuntimeEnvironment</code> of an existing application. If you
-    /// need to update an application's <code>RuntimeEnvironment</code>, you must delete the application
-    /// and create it again.</p>
+    /// <p>Updates an existing Kinesis Data Analytics application. Using this operation, you can update application code, input configuration, and output configuration. </p>
+    /// <p>Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update your application. </p> <note>
+    /// <p>You cannot update the <code>RuntimeEnvironment</code> of an existing application. If you need to update an application's <code>RuntimeEnvironment</code>, you must delete the application and create it again.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3535,10 +3261,10 @@ pub mod fluent_builders {
                 crate::input::UpdateApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3547,8 +3273,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application to update.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of the application to update.</p>
@@ -3559,20 +3285,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_name(input);
             self
         }
-        /// <p>The current application version ID. You must provide the
-        /// <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can
-        /// retrieve the application version ID using <a>DescribeApplication</a>. For better
-        /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
-        pub fn current_application_version_id(mut self, inp: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(inp);
+        /// <p>The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
-        /// <p>The current application version ID. You must provide the
-        /// <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can
-        /// retrieve the application version ID using <a>DescribeApplication</a>. For better
-        /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -3583,9 +3301,9 @@ pub mod fluent_builders {
         /// <p>Describes application configuration updates.</p>
         pub fn application_configuration_update(
             mut self,
-            inp: crate::model::ApplicationConfigurationUpdate,
+            input: crate::model::ApplicationConfigurationUpdate,
         ) -> Self {
-            self.inner = self.inner.application_configuration_update(inp);
+            self.inner = self.inner.application_configuration_update(input);
             self
         }
         /// <p>Describes application configuration updates.</p>
@@ -3599,9 +3317,9 @@ pub mod fluent_builders {
         /// <p>Describes updates to the service execution role.</p>
         pub fn service_execution_role_update(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.service_execution_role_update(inp);
+            self.inner = self.inner.service_execution_role_update(input.into());
             self
         }
         /// <p>Describes updates to the service execution role.</p>
@@ -3615,9 +3333,9 @@ pub mod fluent_builders {
         /// <p>Describes updates to the application's starting parameters.</p>
         pub fn run_configuration_update(
             mut self,
-            inp: crate::model::RunConfigurationUpdate,
+            input: crate::model::RunConfigurationUpdate,
         ) -> Self {
-            self.inner = self.inner.run_configuration_update(inp);
+            self.inner = self.inner.run_configuration_update(input);
             self
         }
         /// <p>Describes updates to the application's starting parameters.</p>
@@ -3632,19 +3350,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_cloud_watch_logging_option_updates`](Self::set_cloud_watch_logging_option_updates).
         ///
-        /// <p>Describes application Amazon CloudWatch logging option updates. You can only update
-        /// existing CloudWatch logging options with this action. To add a new CloudWatch logging option,
-        /// use <a>AddApplicationCloudWatchLoggingOption</a>.</p>
+        /// <p>Describes application Amazon CloudWatch logging option updates. You can only update existing CloudWatch logging options with this action. To add a new CloudWatch logging option, use <code>AddApplicationCloudWatchLoggingOption</code>.</p>
         pub fn cloud_watch_logging_option_updates(
             mut self,
-            inp: impl Into<crate::model::CloudWatchLoggingOptionUpdate>,
+            input: crate::model::CloudWatchLoggingOptionUpdate,
         ) -> Self {
-            self.inner = self.inner.cloud_watch_logging_option_updates(inp);
+            self.inner = self.inner.cloud_watch_logging_option_updates(input);
             self
         }
-        /// <p>Describes application Amazon CloudWatch logging option updates. You can only update
-        /// existing CloudWatch logging options with this action. To add a new CloudWatch logging option,
-        /// use <a>AddApplicationCloudWatchLoggingOption</a>.</p>
+        /// <p>Describes application Amazon CloudWatch logging option updates. You can only update existing CloudWatch logging options with this action. To add a new CloudWatch logging option, use <code>AddApplicationCloudWatchLoggingOption</code>.</p>
         pub fn set_cloud_watch_logging_option_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CloudWatchLoggingOptionUpdate>>,
@@ -3652,20 +3366,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cloud_watch_logging_option_updates(input);
             self
         }
-        /// <p>A value you use to implement strong concurrency for application updates. You must
-        /// provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You
-        /// get the application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
-        /// <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
-        pub fn conditional_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.conditional_token(inp);
+        /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+        pub fn conditional_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.conditional_token(input.into());
             self
         }
-        /// <p>A value you use to implement strong concurrency for application updates. You must
-        /// provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You
-        /// get the application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
-        /// <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn set_conditional_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3677,22 +3383,12 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApplicationMaintenanceConfiguration`.
     ///
     /// <p>Updates the maintenance configuration of the Kinesis Data Analytics application. </p>
-    /// <p>You can invoke this operation on an application that is in one of the two following
-    /// states: <code>READY</code> or <code>RUNNING</code>. If you invoke it when the application is
-    /// in a state other than these two states, it throws a <code>ResourceInUseException</code>. The
-    /// service makes use of the updated configuration the next time it schedules maintenance for the
-    /// application. If you invoke this operation after the service schedules maintenance, the service
-    /// will apply the configuration update the next time it schedules maintenance for the
-    /// application. This means that you might not see the maintenance configuration update applied to
-    /// the maintenance process that follows a successful invocation of this operation, but to the
-    /// following maintenance process instead.</p>
-    /// <p>To see the current maintenance configuration of your application, invoke the
-    /// <a>DescribeApplication</a> operation.</p>
-    /// <p>For information about application maintenance, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/maintenance.html">Kinesis Data Analytics for Apache Flink Maintenance</a>.</p>
-    /// <note>
+    /// <p>You can invoke this operation on an application that is in one of the two following states: <code>READY</code> or <code>RUNNING</code>. If you invoke it when the application is in a state other than these two states, it throws a <code>ResourceInUseException</code>. The service makes use of the updated configuration the next time it schedules maintenance for the application. If you invoke this operation after the service schedules maintenance, the service will apply the configuration update the next time it schedules maintenance for the application. This means that you might not see the maintenance configuration update applied to the maintenance process that follows a successful invocation of this operation, but to the following maintenance process instead.</p>
+    /// <p>To see the current maintenance configuration of your application, invoke the <code>DescribeApplication</code> operation.</p>
+    /// <p>For information about application maintenance, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/maintenance.html">Kinesis Data Analytics for Apache Flink Maintenance</a>.</p> <note>
     /// <p>This operation is supported only for Amazon Kinesis Data Analytics for Apache Flink.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApplicationMaintenanceConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3739,10 +3435,10 @@ pub mod fluent_builders {
                 crate::input::UpdateApplicationMaintenanceConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3751,8 +3447,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application for which you want to update the maintenance configuration.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of the application for which you want to update the maintenance configuration.</p>
@@ -3766,9 +3462,11 @@ pub mod fluent_builders {
         /// <p>Describes the application maintenance configuration update.</p>
         pub fn application_maintenance_configuration_update(
             mut self,
-            inp: crate::model::ApplicationMaintenanceConfigurationUpdate,
+            input: crate::model::ApplicationMaintenanceConfigurationUpdate,
         ) -> Self {
-            self.inner = self.inner.application_maintenance_configuration_update(inp);
+            self.inner = self
+                .inner
+                .application_maintenance_configuration_update(input);
             self
         }
         /// <p>Describes the application maintenance configuration update.</p>
@@ -3783,6 +3481,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

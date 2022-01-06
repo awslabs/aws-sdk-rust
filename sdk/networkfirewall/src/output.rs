@@ -11,9 +11,7 @@ pub struct UpdateSubnetChangeProtectionOutput {
     pub firewall_arn: std::option::Option<std::string::String>,
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     pub firewall_name: std::option::Option<std::string::String>,
-    /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations.
-    /// Use this setting to protect against
-    /// accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+    /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     pub subnet_change_protection: bool,
 }
 impl UpdateSubnetChangeProtectionOutput {
@@ -31,9 +29,7 @@ impl UpdateSubnetChangeProtectionOutput {
     pub fn firewall_name(&self) -> std::option::Option<&str> {
         self.firewall_name.as_deref()
     }
-    /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations.
-    /// Use this setting to protect against
-    /// accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+    /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     pub fn subnet_change_protection(&self) -> bool {
         self.subnet_change_protection
     }
@@ -97,16 +93,12 @@ pub mod update_subnet_change_protection_output {
             self.firewall_name = input;
             self
         }
-        /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations.
-        /// Use this setting to protect against
-        /// accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+        /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
         pub fn subnet_change_protection(mut self, input: bool) -> Self {
             self.subnet_change_protection = Some(input);
             self
         }
-        /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations.
-        /// Use this setting to protect against
-        /// accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+        /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
         pub fn set_subnet_change_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.subnet_change_protection = input;
             self
@@ -136,7 +128,7 @@ pub struct UpdateRuleGroupOutput {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
     /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
     pub update_token: std::option::Option<std::string::String>,
-    /// <p>The high-level properties of a rule group. This, along with the <a>RuleGroup</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. </p>
+    /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
     pub rule_group_response: std::option::Option<crate::model::RuleGroupResponse>,
 }
 impl UpdateRuleGroupOutput {
@@ -145,7 +137,7 @@ impl UpdateRuleGroupOutput {
     pub fn update_token(&self) -> std::option::Option<&str> {
         self.update_token.as_deref()
     }
-    /// <p>The high-level properties of a rule group. This, along with the <a>RuleGroup</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. </p>
+    /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
     pub fn rule_group_response(&self) -> std::option::Option<&crate::model::RuleGroupResponse> {
         self.rule_group_response.as_ref()
     }
@@ -180,12 +172,12 @@ pub mod update_rule_group_output {
             self.update_token = input;
             self
         }
-        /// <p>The high-level properties of a rule group. This, along with the <a>RuleGroup</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. </p>
+        /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
         pub fn rule_group_response(mut self, input: crate::model::RuleGroupResponse) -> Self {
             self.rule_group_response = Some(input);
             self
         }
-        /// <p>The high-level properties of a rule group. This, along with the <a>RuleGroup</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. </p>
+        /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
         pub fn set_rule_group_response(
             mut self,
             input: std::option::Option<crate::model::RuleGroupResponse>,
@@ -217,7 +209,7 @@ pub struct UpdateLoggingConfigurationOutput {
     pub firewall_arn: std::option::Option<std::string::String>,
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     pub firewall_name: std::option::Option<std::string::String>,
-    /// <p>Defines how AWS Network Firewall performs logging for a <a>Firewall</a>. </p>
+    /// <p>Defines how AWS Network Firewall performs logging for a <code>Firewall</code>. </p>
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
 }
 impl UpdateLoggingConfigurationOutput {
@@ -229,7 +221,7 @@ impl UpdateLoggingConfigurationOutput {
     pub fn firewall_name(&self) -> std::option::Option<&str> {
         self.firewall_name.as_deref()
     }
-    /// <p>Defines how AWS Network Firewall performs logging for a <a>Firewall</a>. </p>
+    /// <p>Defines how AWS Network Firewall performs logging for a <code>Firewall</code>. </p>
     pub fn logging_configuration(
         &self,
     ) -> std::option::Option<&crate::model::LoggingConfiguration> {
@@ -279,12 +271,12 @@ pub mod update_logging_configuration_output {
             self.firewall_name = input;
             self
         }
-        /// <p>Defines how AWS Network Firewall performs logging for a <a>Firewall</a>. </p>
+        /// <p>Defines how AWS Network Firewall performs logging for a <code>Firewall</code>. </p>
         pub fn logging_configuration(mut self, input: crate::model::LoggingConfiguration) -> Self {
             self.logging_configuration = Some(input);
             self
         }
-        /// <p>Defines how AWS Network Firewall performs logging for a <a>Firewall</a>. </p>
+        /// <p>Defines how AWS Network Firewall performs logging for a <code>Firewall</code>. </p>
         pub fn set_logging_configuration(
             mut self,
             input: std::option::Option<crate::model::LoggingConfiguration>,
@@ -321,9 +313,7 @@ pub struct UpdateFirewallPolicyChangeProtectionOutput {
     pub firewall_arn: std::option::Option<std::string::String>,
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     pub firewall_name: std::option::Option<std::string::String>,
-    /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association.
-    /// Use this setting to protect against
-    /// accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+    /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     pub firewall_policy_change_protection: bool,
 }
 impl UpdateFirewallPolicyChangeProtectionOutput {
@@ -341,9 +331,7 @@ impl UpdateFirewallPolicyChangeProtectionOutput {
     pub fn firewall_name(&self) -> std::option::Option<&str> {
         self.firewall_name.as_deref()
     }
-    /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association.
-    /// Use this setting to protect against
-    /// accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+    /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     pub fn firewall_policy_change_protection(&self) -> bool {
         self.firewall_policy_change_protection
     }
@@ -410,16 +398,12 @@ pub mod update_firewall_policy_change_protection_output {
             self.firewall_name = input;
             self
         }
-        /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association.
-        /// Use this setting to protect against
-        /// accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+        /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
         pub fn firewall_policy_change_protection(mut self, input: bool) -> Self {
             self.firewall_policy_change_protection = Some(input);
             self
         }
-        /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association.
-        /// Use this setting to protect against
-        /// accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+        /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
         pub fn set_firewall_policy_change_protection(
             mut self,
             input: std::option::Option<bool>,
@@ -454,7 +438,7 @@ pub struct UpdateFirewallPolicyOutput {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
     /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token. </p>
     pub update_token: std::option::Option<std::string::String>,
-    /// <p>The high-level properties of a firewall policy. This, along with the <a>FirewallPolicy</a>, define the policy. You can retrieve all objects for a firewall policy by calling <a>DescribeFirewallPolicy</a>. </p>
+    /// <p>The high-level properties of a firewall policy. This, along with the <code>FirewallPolicy</code>, define the policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>. </p>
     pub firewall_policy_response: std::option::Option<crate::model::FirewallPolicyResponse>,
 }
 impl UpdateFirewallPolicyOutput {
@@ -463,7 +447,7 @@ impl UpdateFirewallPolicyOutput {
     pub fn update_token(&self) -> std::option::Option<&str> {
         self.update_token.as_deref()
     }
-    /// <p>The high-level properties of a firewall policy. This, along with the <a>FirewallPolicy</a>, define the policy. You can retrieve all objects for a firewall policy by calling <a>DescribeFirewallPolicy</a>. </p>
+    /// <p>The high-level properties of a firewall policy. This, along with the <code>FirewallPolicy</code>, define the policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>. </p>
     pub fn firewall_policy_response(
         &self,
     ) -> std::option::Option<&crate::model::FirewallPolicyResponse> {
@@ -501,7 +485,7 @@ pub mod update_firewall_policy_output {
             self.update_token = input;
             self
         }
-        /// <p>The high-level properties of a firewall policy. This, along with the <a>FirewallPolicy</a>, define the policy. You can retrieve all objects for a firewall policy by calling <a>DescribeFirewallPolicy</a>. </p>
+        /// <p>The high-level properties of a firewall policy. This, along with the <code>FirewallPolicy</code>, define the policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>. </p>
         pub fn firewall_policy_response(
             mut self,
             input: crate::model::FirewallPolicyResponse,
@@ -509,7 +493,7 @@ pub mod update_firewall_policy_output {
             self.firewall_policy_response = Some(input);
             self
         }
-        /// <p>The high-level properties of a firewall policy. This, along with the <a>FirewallPolicy</a>, define the policy. You can retrieve all objects for a firewall policy by calling <a>DescribeFirewallPolicy</a>. </p>
+        /// <p>The high-level properties of a firewall policy. This, along with the <code>FirewallPolicy</code>, define the policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>. </p>
         pub fn set_firewall_policy_response(
             mut self,
             input: std::option::Option<crate::model::FirewallPolicyResponse>,
@@ -663,7 +647,7 @@ pub struct UpdateFirewallDeleteProtectionOutput {
     pub firewall_arn: std::option::Option<std::string::String>,
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     pub firewall_name: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
     pub delete_protection: bool,
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
@@ -679,7 +663,7 @@ impl UpdateFirewallDeleteProtectionOutput {
     pub fn firewall_name(&self) -> std::option::Option<&str> {
         self.firewall_name.as_deref()
     }
-    /// <p></p>
+    /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
     pub fn delete_protection(&self) -> bool {
         self.delete_protection
     }
@@ -735,12 +719,12 @@ pub mod update_firewall_delete_protection_output {
             self.firewall_name = input;
             self
         }
-        /// <p></p>
+        /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
         pub fn delete_protection(mut self, input: bool) -> Self {
             self.delete_protection = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
         pub fn set_delete_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.delete_protection = input;
             self
@@ -871,17 +855,13 @@ impl PutResourcePolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
-    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-    /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The tags that are associated with the resource. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
-    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-    /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -908,16 +888,12 @@ pub mod list_tags_for_resource_output {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-        /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-        /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -927,9 +903,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags that are associated with the resource. </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -961,23 +937,17 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRuleGroupsOutput {
-    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-    /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The rule group metadata objects that you've defined. Depending on your setting for max
-    /// results and the number of rule groups, this might not be the full list. </p>
+    /// <p>The rule group metadata objects that you've defined. Depending on your setting for max results and the number of rule groups, this might not be the full list. </p>
     pub rule_groups: std::option::Option<std::vec::Vec<crate::model::RuleGroupMetadata>>,
 }
 impl ListRuleGroupsOutput {
-    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-    /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The rule group metadata objects that you've defined. Depending on your setting for max
-    /// results and the number of rule groups, this might not be the full list. </p>
+    /// <p>The rule group metadata objects that you've defined. Depending on your setting for max results and the number of rule groups, this might not be the full list. </p>
     pub fn rule_groups(&self) -> std::option::Option<&[crate::model::RuleGroupMetadata]> {
         self.rule_groups.as_deref()
     }
@@ -1000,16 +970,12 @@ pub mod list_rule_groups_output {
         pub(crate) rule_groups: std::option::Option<std::vec::Vec<crate::model::RuleGroupMetadata>>,
     }
     impl Builder {
-        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-        /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-        /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1018,16 +984,14 @@ pub mod list_rule_groups_output {
         ///
         /// To override the contents of this collection use [`set_rule_groups`](Self::set_rule_groups).
         ///
-        /// <p>The rule group metadata objects that you've defined. Depending on your setting for max
-        /// results and the number of rule groups, this might not be the full list. </p>
-        pub fn rule_groups(mut self, input: impl Into<crate::model::RuleGroupMetadata>) -> Self {
+        /// <p>The rule group metadata objects that you've defined. Depending on your setting for max results and the number of rule groups, this might not be the full list. </p>
+        pub fn rule_groups(mut self, input: crate::model::RuleGroupMetadata) -> Self {
             let mut v = self.rule_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rule_groups = Some(v);
             self
         }
-        /// <p>The rule group metadata objects that you've defined. Depending on your setting for max
-        /// results and the number of rule groups, this might not be the full list. </p>
+        /// <p>The rule group metadata objects that you've defined. Depending on your setting for max results and the number of rule groups, this might not be the full list. </p>
         pub fn set_rule_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RuleGroupMetadata>>,
@@ -1055,25 +1019,17 @@ impl ListRuleGroupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFirewallsOutput {
-    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-    /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The firewall metadata objects for the VPCs that you specified. Depending on your setting
-    /// for max results and the number of firewalls you have, a single call might not be the full
-    /// list. </p>
+    /// <p>The firewall metadata objects for the VPCs that you specified. Depending on your setting for max results and the number of firewalls you have, a single call might not be the full list. </p>
     pub firewalls: std::option::Option<std::vec::Vec<crate::model::FirewallMetadata>>,
 }
 impl ListFirewallsOutput {
-    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-    /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The firewall metadata objects for the VPCs that you specified. Depending on your setting
-    /// for max results and the number of firewalls you have, a single call might not be the full
-    /// list. </p>
+    /// <p>The firewall metadata objects for the VPCs that you specified. Depending on your setting for max results and the number of firewalls you have, a single call might not be the full list. </p>
     pub fn firewalls(&self) -> std::option::Option<&[crate::model::FirewallMetadata]> {
         self.firewalls.as_deref()
     }
@@ -1096,16 +1052,12 @@ pub mod list_firewalls_output {
         pub(crate) firewalls: std::option::Option<std::vec::Vec<crate::model::FirewallMetadata>>,
     }
     impl Builder {
-        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-        /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-        /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1114,18 +1066,14 @@ pub mod list_firewalls_output {
         ///
         /// To override the contents of this collection use [`set_firewalls`](Self::set_firewalls).
         ///
-        /// <p>The firewall metadata objects for the VPCs that you specified. Depending on your setting
-        /// for max results and the number of firewalls you have, a single call might not be the full
-        /// list. </p>
-        pub fn firewalls(mut self, input: impl Into<crate::model::FirewallMetadata>) -> Self {
+        /// <p>The firewall metadata objects for the VPCs that you specified. Depending on your setting for max results and the number of firewalls you have, a single call might not be the full list. </p>
+        pub fn firewalls(mut self, input: crate::model::FirewallMetadata) -> Self {
             let mut v = self.firewalls.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.firewalls = Some(v);
             self
         }
-        /// <p>The firewall metadata objects for the VPCs that you specified. Depending on your setting
-        /// for max results and the number of firewalls you have, a single call might not be the full
-        /// list. </p>
+        /// <p>The firewall metadata objects for the VPCs that you specified. Depending on your setting for max results and the number of firewalls you have, a single call might not be the full list. </p>
         pub fn set_firewalls(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FirewallMetadata>>,
@@ -1153,23 +1101,17 @@ impl ListFirewallsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFirewallPoliciesOutput {
-    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-    /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The metadata for the firewall policies. Depending on your setting for max results and
-    /// the number of firewall policies that you have, this might not be the full list. </p>
+    /// <p>The metadata for the firewall policies. Depending on your setting for max results and the number of firewall policies that you have, this might not be the full list. </p>
     pub firewall_policies: std::option::Option<std::vec::Vec<crate::model::FirewallPolicyMetadata>>,
 }
 impl ListFirewallPoliciesOutput {
-    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-    /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The metadata for the firewall policies. Depending on your setting for max results and
-    /// the number of firewall policies that you have, this might not be the full list. </p>
+    /// <p>The metadata for the firewall policies. Depending on your setting for max results and the number of firewall policies that you have, this might not be the full list. </p>
     pub fn firewall_policies(
         &self,
     ) -> std::option::Option<&[crate::model::FirewallPolicyMetadata]> {
@@ -1195,16 +1137,12 @@ pub mod list_firewall_policies_output {
             std::option::Option<std::vec::Vec<crate::model::FirewallPolicyMetadata>>,
     }
     impl Builder {
-        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-        /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-        /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1213,19 +1151,14 @@ pub mod list_firewall_policies_output {
         ///
         /// To override the contents of this collection use [`set_firewall_policies`](Self::set_firewall_policies).
         ///
-        /// <p>The metadata for the firewall policies. Depending on your setting for max results and
-        /// the number of firewall policies that you have, this might not be the full list. </p>
-        pub fn firewall_policies(
-            mut self,
-            input: impl Into<crate::model::FirewallPolicyMetadata>,
-        ) -> Self {
+        /// <p>The metadata for the firewall policies. Depending on your setting for max results and the number of firewall policies that you have, this might not be the full list. </p>
+        pub fn firewall_policies(mut self, input: crate::model::FirewallPolicyMetadata) -> Self {
             let mut v = self.firewall_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.firewall_policies = Some(v);
             self
         }
-        /// <p>The metadata for the firewall policies. Depending on your setting for max results and
-        /// the number of firewall policies that you have, this might not be the full list. </p>
+        /// <p>The metadata for the firewall policies. Depending on your setting for max results and the number of firewall policies that you have, this might not be the full list. </p>
         pub fn set_firewall_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FirewallPolicyMetadata>>,
@@ -1334,9 +1267,9 @@ pub mod disassociate_subnets_output {
         /// To override the contents of this collection use [`set_subnet_mappings`](Self::set_subnet_mappings).
         ///
         /// <p>The IDs of the subnets that are associated with the firewall. </p>
-        pub fn subnet_mappings(mut self, input: impl Into<crate::model::SubnetMapping>) -> Self {
+        pub fn subnet_mappings(mut self, input: crate::model::SubnetMapping) -> Self {
             let mut v = self.subnet_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subnet_mappings = Some(v);
             self
         }
@@ -1383,18 +1316,193 @@ impl DisassociateSubnetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeRuleGroupMetadataOutput {
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub rule_group_arn: std::option::Option<std::string::String>,
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub rule_group_name: std::option::Option<std::string::String>,
+    /// <p>Returns the metadata objects for the specified rule group. </p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
+    /// </note>
+    pub r#type: std::option::Option<crate::model::RuleGroupType>,
+    /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
+    /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>. </p>
+    pub capacity: std::option::Option<i32>,
+    /// <p>Additional options governing how Network Firewall handles the rule group. You can only use these for stateful rule groups.</p>
+    pub stateful_rule_options: std::option::Option<crate::model::StatefulRuleOptions>,
+}
+impl DescribeRuleGroupMetadataOutput {
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn rule_group_arn(&self) -> std::option::Option<&str> {
+        self.rule_group_arn.as_deref()
+    }
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn rule_group_name(&self) -> std::option::Option<&str> {
+        self.rule_group_name.as_deref()
+    }
+    /// <p>Returns the metadata objects for the specified rule group. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
+    /// </note>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::RuleGroupType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
+    /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>. </p>
+    pub fn capacity(&self) -> std::option::Option<i32> {
+        self.capacity
+    }
+    /// <p>Additional options governing how Network Firewall handles the rule group. You can only use these for stateful rule groups.</p>
+    pub fn stateful_rule_options(&self) -> std::option::Option<&crate::model::StatefulRuleOptions> {
+        self.stateful_rule_options.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeRuleGroupMetadataOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeRuleGroupMetadataOutput");
+        formatter.field("rule_group_arn", &self.rule_group_arn);
+        formatter.field("rule_group_name", &self.rule_group_name);
+        formatter.field("description", &self.description);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("capacity", &self.capacity);
+        formatter.field("stateful_rule_options", &self.stateful_rule_options);
+        formatter.finish()
+    }
+}
+/// See [`DescribeRuleGroupMetadataOutput`](crate::output::DescribeRuleGroupMetadataOutput)
+pub mod describe_rule_group_metadata_output {
+    /// A builder for [`DescribeRuleGroupMetadataOutput`](crate::output::DescribeRuleGroupMetadataOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) rule_group_arn: std::option::Option<std::string::String>,
+        pub(crate) rule_group_name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::RuleGroupType>,
+        pub(crate) capacity: std::option::Option<i32>,
+        pub(crate) stateful_rule_options: std::option::Option<crate::model::StatefulRuleOptions>,
+    }
+    impl Builder {
+        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
+        /// <p>You must specify the ARN or the name, and you can specify both. </p>
+        pub fn rule_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rule_group_arn = Some(input.into());
+            self
+        }
+        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
+        /// <p>You must specify the ARN or the name, and you can specify both. </p>
+        pub fn set_rule_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.rule_group_arn = input;
+            self
+        }
+        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
+        /// <p>You must specify the ARN or the name, and you can specify both. </p>
+        pub fn rule_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rule_group_name = Some(input.into());
+            self
+        }
+        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
+        /// <p>You must specify the ARN or the name, and you can specify both. </p>
+        pub fn set_rule_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.rule_group_name = input;
+            self
+        }
+        /// <p>Returns the metadata objects for the specified rule group. </p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>Returns the metadata objects for the specified rule group. </p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+        /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
+        /// </note>
+        pub fn r#type(mut self, input: crate::model::RuleGroupType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+        /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
+        /// </note>
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RuleGroupType>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
+        /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>. </p>
+        pub fn capacity(mut self, input: i32) -> Self {
+            self.capacity = Some(input);
+            self
+        }
+        /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
+        /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>. </p>
+        pub fn set_capacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.capacity = input;
+            self
+        }
+        /// <p>Additional options governing how Network Firewall handles the rule group. You can only use these for stateful rule groups.</p>
+        pub fn stateful_rule_options(mut self, input: crate::model::StatefulRuleOptions) -> Self {
+            self.stateful_rule_options = Some(input);
+            self
+        }
+        /// <p>Additional options governing how Network Firewall handles the rule group. You can only use these for stateful rule groups.</p>
+        pub fn set_stateful_rule_options(
+            mut self,
+            input: std::option::Option<crate::model::StatefulRuleOptions>,
+        ) -> Self {
+            self.stateful_rule_options = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeRuleGroupMetadataOutput`](crate::output::DescribeRuleGroupMetadataOutput)
+        pub fn build(self) -> crate::output::DescribeRuleGroupMetadataOutput {
+            crate::output::DescribeRuleGroupMetadataOutput {
+                rule_group_arn: self.rule_group_arn,
+                rule_group_name: self.rule_group_name,
+                description: self.description,
+                r#type: self.r#type,
+                capacity: self.capacity,
+                stateful_rule_options: self.stateful_rule_options,
+            }
+        }
+    }
+}
+impl DescribeRuleGroupMetadataOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeRuleGroupMetadataOutput`](crate::output::DescribeRuleGroupMetadataOutput)
+    pub fn builder() -> crate::output::describe_rule_group_metadata_output::Builder {
+        crate::output::describe_rule_group_metadata_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRuleGroupOutput {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
     /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
     pub update_token: std::option::Option<std::string::String>,
-    /// <p>The object that defines the rules in a rule group. This, along with <a>RuleGroupResponse</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. </p>
-    /// <p>AWS Network Firewall uses a rule group to inspect and control network traffic.
-    /// You define stateless rule groups to inspect individual packets and you define stateful rule groups to inspect packets in the context of their
-    /// traffic flow. </p>
-    /// <p>To use a rule group, you include it by reference in an Network Firewall firewall policy, then you use the policy in a firewall. You can reference a rule group from
-    /// more than one firewall policy, and you can use a firewall policy in more than one firewall. </p>
+    /// <p>The object that defines the rules in a rule group. This, along with <code>RuleGroupResponse</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
+    /// <p>AWS Network Firewall uses a rule group to inspect and control network traffic. You define stateless rule groups to inspect individual packets and you define stateful rule groups to inspect packets in the context of their traffic flow. </p>
+    /// <p>To use a rule group, you include it by reference in an Network Firewall firewall policy, then you use the policy in a firewall. You can reference a rule group from more than one firewall policy, and you can use a firewall policy in more than one firewall. </p>
     pub rule_group: std::option::Option<crate::model::RuleGroup>,
-    /// <p>The high-level properties of a rule group. This, along with the <a>RuleGroup</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. </p>
+    /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
     pub rule_group_response: std::option::Option<crate::model::RuleGroupResponse>,
 }
 impl DescribeRuleGroupOutput {
@@ -1403,16 +1511,13 @@ impl DescribeRuleGroupOutput {
     pub fn update_token(&self) -> std::option::Option<&str> {
         self.update_token.as_deref()
     }
-    /// <p>The object that defines the rules in a rule group. This, along with <a>RuleGroupResponse</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. </p>
-    /// <p>AWS Network Firewall uses a rule group to inspect and control network traffic.
-    /// You define stateless rule groups to inspect individual packets and you define stateful rule groups to inspect packets in the context of their
-    /// traffic flow. </p>
-    /// <p>To use a rule group, you include it by reference in an Network Firewall firewall policy, then you use the policy in a firewall. You can reference a rule group from
-    /// more than one firewall policy, and you can use a firewall policy in more than one firewall. </p>
+    /// <p>The object that defines the rules in a rule group. This, along with <code>RuleGroupResponse</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
+    /// <p>AWS Network Firewall uses a rule group to inspect and control network traffic. You define stateless rule groups to inspect individual packets and you define stateful rule groups to inspect packets in the context of their traffic flow. </p>
+    /// <p>To use a rule group, you include it by reference in an Network Firewall firewall policy, then you use the policy in a firewall. You can reference a rule group from more than one firewall policy, and you can use a firewall policy in more than one firewall. </p>
     pub fn rule_group(&self) -> std::option::Option<&crate::model::RuleGroup> {
         self.rule_group.as_ref()
     }
-    /// <p>The high-level properties of a rule group. This, along with the <a>RuleGroup</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. </p>
+    /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
     pub fn rule_group_response(&self) -> std::option::Option<&crate::model::RuleGroupResponse> {
         self.rule_group_response.as_ref()
     }
@@ -1449,22 +1554,16 @@ pub mod describe_rule_group_output {
             self.update_token = input;
             self
         }
-        /// <p>The object that defines the rules in a rule group. This, along with <a>RuleGroupResponse</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. </p>
-        /// <p>AWS Network Firewall uses a rule group to inspect and control network traffic.
-        /// You define stateless rule groups to inspect individual packets and you define stateful rule groups to inspect packets in the context of their
-        /// traffic flow. </p>
-        /// <p>To use a rule group, you include it by reference in an Network Firewall firewall policy, then you use the policy in a firewall. You can reference a rule group from
-        /// more than one firewall policy, and you can use a firewall policy in more than one firewall. </p>
+        /// <p>The object that defines the rules in a rule group. This, along with <code>RuleGroupResponse</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
+        /// <p>AWS Network Firewall uses a rule group to inspect and control network traffic. You define stateless rule groups to inspect individual packets and you define stateful rule groups to inspect packets in the context of their traffic flow. </p>
+        /// <p>To use a rule group, you include it by reference in an Network Firewall firewall policy, then you use the policy in a firewall. You can reference a rule group from more than one firewall policy, and you can use a firewall policy in more than one firewall. </p>
         pub fn rule_group(mut self, input: crate::model::RuleGroup) -> Self {
             self.rule_group = Some(input);
             self
         }
-        /// <p>The object that defines the rules in a rule group. This, along with <a>RuleGroupResponse</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. </p>
-        /// <p>AWS Network Firewall uses a rule group to inspect and control network traffic.
-        /// You define stateless rule groups to inspect individual packets and you define stateful rule groups to inspect packets in the context of their
-        /// traffic flow. </p>
-        /// <p>To use a rule group, you include it by reference in an Network Firewall firewall policy, then you use the policy in a firewall. You can reference a rule group from
-        /// more than one firewall policy, and you can use a firewall policy in more than one firewall. </p>
+        /// <p>The object that defines the rules in a rule group. This, along with <code>RuleGroupResponse</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
+        /// <p>AWS Network Firewall uses a rule group to inspect and control network traffic. You define stateless rule groups to inspect individual packets and you define stateful rule groups to inspect packets in the context of their traffic flow. </p>
+        /// <p>To use a rule group, you include it by reference in an Network Firewall firewall policy, then you use the policy in a firewall. You can reference a rule group from more than one firewall policy, and you can use a firewall policy in more than one firewall. </p>
         pub fn set_rule_group(
             mut self,
             input: std::option::Option<crate::model::RuleGroup>,
@@ -1472,12 +1571,12 @@ pub mod describe_rule_group_output {
             self.rule_group = input;
             self
         }
-        /// <p>The high-level properties of a rule group. This, along with the <a>RuleGroup</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. </p>
+        /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
         pub fn rule_group_response(mut self, input: crate::model::RuleGroupResponse) -> Self {
             self.rule_group_response = Some(input);
             self
         }
-        /// <p>The high-level properties of a rule group. This, along with the <a>RuleGroup</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. </p>
+        /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
         pub fn set_rule_group_response(
             mut self,
             input: std::option::Option<crate::model::RuleGroupResponse>,
@@ -1562,7 +1661,7 @@ impl DescribeResourcePolicyOutput {
 pub struct DescribeLoggingConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     pub firewall_arn: std::option::Option<std::string::String>,
-    /// <p>Defines how AWS Network Firewall performs logging for a <a>Firewall</a>. </p>
+    /// <p>Defines how AWS Network Firewall performs logging for a <code>Firewall</code>. </p>
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
 }
 impl DescribeLoggingConfigurationOutput {
@@ -1570,7 +1669,7 @@ impl DescribeLoggingConfigurationOutput {
     pub fn firewall_arn(&self) -> std::option::Option<&str> {
         self.firewall_arn.as_deref()
     }
-    /// <p>Defines how AWS Network Firewall performs logging for a <a>Firewall</a>. </p>
+    /// <p>Defines how AWS Network Firewall performs logging for a <code>Firewall</code>. </p>
     pub fn logging_configuration(
         &self,
     ) -> std::option::Option<&crate::model::LoggingConfiguration> {
@@ -1605,12 +1704,12 @@ pub mod describe_logging_configuration_output {
             self.firewall_arn = input;
             self
         }
-        /// <p>Defines how AWS Network Firewall performs logging for a <a>Firewall</a>. </p>
+        /// <p>Defines how AWS Network Firewall performs logging for a <code>Firewall</code>. </p>
         pub fn logging_configuration(mut self, input: crate::model::LoggingConfiguration) -> Self {
             self.logging_configuration = Some(input);
             self
         }
-        /// <p>Defines how AWS Network Firewall performs logging for a <a>Firewall</a>. </p>
+        /// <p>Defines how AWS Network Firewall performs logging for a <code>Firewall</code>. </p>
         pub fn set_logging_configuration(
             mut self,
             input: std::option::Option<crate::model::LoggingConfiguration>,
@@ -1641,7 +1740,7 @@ pub struct DescribeFirewallPolicyOutput {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
     /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token. </p>
     pub update_token: std::option::Option<std::string::String>,
-    /// <p>The high-level properties of a firewall policy. This, along with the <a>FirewallPolicy</a>, define the policy. You can retrieve all objects for a firewall policy by calling <a>DescribeFirewallPolicy</a>. </p>
+    /// <p>The high-level properties of a firewall policy. This, along with the <code>FirewallPolicy</code>, define the policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>. </p>
     pub firewall_policy_response: std::option::Option<crate::model::FirewallPolicyResponse>,
     /// <p>The policy for the specified firewall policy. </p>
     pub firewall_policy: std::option::Option<crate::model::FirewallPolicy>,
@@ -1652,7 +1751,7 @@ impl DescribeFirewallPolicyOutput {
     pub fn update_token(&self) -> std::option::Option<&str> {
         self.update_token.as_deref()
     }
-    /// <p>The high-level properties of a firewall policy. This, along with the <a>FirewallPolicy</a>, define the policy. You can retrieve all objects for a firewall policy by calling <a>DescribeFirewallPolicy</a>. </p>
+    /// <p>The high-level properties of a firewall policy. This, along with the <code>FirewallPolicy</code>, define the policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>. </p>
     pub fn firewall_policy_response(
         &self,
     ) -> std::option::Option<&crate::model::FirewallPolicyResponse> {
@@ -1696,7 +1795,7 @@ pub mod describe_firewall_policy_output {
             self.update_token = input;
             self
         }
-        /// <p>The high-level properties of a firewall policy. This, along with the <a>FirewallPolicy</a>, define the policy. You can retrieve all objects for a firewall policy by calling <a>DescribeFirewallPolicy</a>. </p>
+        /// <p>The high-level properties of a firewall policy. This, along with the <code>FirewallPolicy</code>, define the policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>. </p>
         pub fn firewall_policy_response(
             mut self,
             input: crate::model::FirewallPolicyResponse,
@@ -1704,7 +1803,7 @@ pub mod describe_firewall_policy_output {
             self.firewall_policy_response = Some(input);
             self
         }
-        /// <p>The high-level properties of a firewall policy. This, along with the <a>FirewallPolicy</a>, define the policy. You can retrieve all objects for a firewall policy by calling <a>DescribeFirewallPolicy</a>. </p>
+        /// <p>The high-level properties of a firewall policy. This, along with the <code>FirewallPolicy</code>, define the policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>. </p>
         pub fn set_firewall_policy_response(
             mut self,
             input: std::option::Option<crate::model::FirewallPolicyResponse>,
@@ -1752,7 +1851,7 @@ pub struct DescribeFirewallOutput {
     pub update_token: std::option::Option<std::string::String>,
     /// <p>The configuration settings for the firewall. These settings include the firewall policy and the subnets in your VPC to use for the firewall endpoints. </p>
     pub firewall: std::option::Option<crate::model::Firewall>,
-    /// <p>Detailed information about the current status of a <a>Firewall</a>. You can retrieve this for a firewall by calling <a>DescribeFirewall</a> and providing the firewall name and ARN.</p>
+    /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
     pub firewall_status: std::option::Option<crate::model::FirewallStatus>,
 }
 impl DescribeFirewallOutput {
@@ -1766,7 +1865,7 @@ impl DescribeFirewallOutput {
     pub fn firewall(&self) -> std::option::Option<&crate::model::Firewall> {
         self.firewall.as_ref()
     }
-    /// <p>Detailed information about the current status of a <a>Firewall</a>. You can retrieve this for a firewall by calling <a>DescribeFirewall</a> and providing the firewall name and ARN.</p>
+    /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
     pub fn firewall_status(&self) -> std::option::Option<&crate::model::FirewallStatus> {
         self.firewall_status.as_ref()
     }
@@ -1815,12 +1914,12 @@ pub mod describe_firewall_output {
             self.firewall = input;
             self
         }
-        /// <p>Detailed information about the current status of a <a>Firewall</a>. You can retrieve this for a firewall by calling <a>DescribeFirewall</a> and providing the firewall name and ARN.</p>
+        /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
         pub fn firewall_status(mut self, input: crate::model::FirewallStatus) -> Self {
             self.firewall_status = Some(input);
             self
         }
-        /// <p>Detailed information about the current status of a <a>Firewall</a>. You can retrieve this for a firewall by calling <a>DescribeFirewall</a> and providing the firewall name and ARN.</p>
+        /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
         pub fn set_firewall_status(
             mut self,
             input: std::option::Option<crate::model::FirewallStatus>,
@@ -1849,11 +1948,11 @@ impl DescribeFirewallOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRuleGroupOutput {
-    /// <p>The high-level properties of a rule group. This, along with the <a>RuleGroup</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. </p>
+    /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
     pub rule_group_response: std::option::Option<crate::model::RuleGroupResponse>,
 }
 impl DeleteRuleGroupOutput {
-    /// <p>The high-level properties of a rule group. This, along with the <a>RuleGroup</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. </p>
+    /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
     pub fn rule_group_response(&self) -> std::option::Option<&crate::model::RuleGroupResponse> {
         self.rule_group_response.as_ref()
     }
@@ -1874,12 +1973,12 @@ pub mod delete_rule_group_output {
         pub(crate) rule_group_response: std::option::Option<crate::model::RuleGroupResponse>,
     }
     impl Builder {
-        /// <p>The high-level properties of a rule group. This, along with the <a>RuleGroup</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. </p>
+        /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
         pub fn rule_group_response(mut self, input: crate::model::RuleGroupResponse) -> Self {
             self.rule_group_response = Some(input);
             self
         }
-        /// <p>The high-level properties of a rule group. This, along with the <a>RuleGroup</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. </p>
+        /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
         pub fn set_rule_group_response(
             mut self,
             input: std::option::Option<crate::model::RuleGroupResponse>,
@@ -1936,13 +2035,11 @@ impl DeleteResourcePolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFirewallPolicyOutput {
-    /// <p>The object containing the definition of the <a>FirewallPolicyResponse</a>
-    /// that you asked to delete. </p>
+    /// <p>The object containing the definition of the <code>FirewallPolicyResponse</code> that you asked to delete. </p>
     pub firewall_policy_response: std::option::Option<crate::model::FirewallPolicyResponse>,
 }
 impl DeleteFirewallPolicyOutput {
-    /// <p>The object containing the definition of the <a>FirewallPolicyResponse</a>
-    /// that you asked to delete. </p>
+    /// <p>The object containing the definition of the <code>FirewallPolicyResponse</code> that you asked to delete. </p>
     pub fn firewall_policy_response(
         &self,
     ) -> std::option::Option<&crate::model::FirewallPolicyResponse> {
@@ -1966,8 +2063,7 @@ pub mod delete_firewall_policy_output {
             std::option::Option<crate::model::FirewallPolicyResponse>,
     }
     impl Builder {
-        /// <p>The object containing the definition of the <a>FirewallPolicyResponse</a>
-        /// that you asked to delete. </p>
+        /// <p>The object containing the definition of the <code>FirewallPolicyResponse</code> that you asked to delete. </p>
         pub fn firewall_policy_response(
             mut self,
             input: crate::model::FirewallPolicyResponse,
@@ -1975,8 +2071,7 @@ pub mod delete_firewall_policy_output {
             self.firewall_policy_response = Some(input);
             self
         }
-        /// <p>The object containing the definition of the <a>FirewallPolicyResponse</a>
-        /// that you asked to delete. </p>
+        /// <p>The object containing the definition of the <code>FirewallPolicyResponse</code> that you asked to delete. </p>
         pub fn set_firewall_policy_response(
             mut self,
             input: std::option::Option<crate::model::FirewallPolicyResponse>,
@@ -2004,22 +2099,18 @@ impl DeleteFirewallPolicyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFirewallOutput {
     /// <p>The firewall defines the configuration settings for an AWS Network Firewall firewall. These settings include the firewall policy, the subnets in your VPC to use for the firewall endpoints, and any tags that are attached to the firewall AWS resource. </p>
-    /// <p>The status of the firewall, for example whether it's ready to filter network traffic,
-    /// is provided in the corresponding <a>FirewallStatus</a>. You can retrieve both
-    /// objects by calling <a>DescribeFirewall</a>.</p>
+    /// <p>The status of the firewall, for example whether it's ready to filter network traffic, is provided in the corresponding <code>FirewallStatus</code>. You can retrieve both objects by calling <code>DescribeFirewall</code>.</p>
     pub firewall: std::option::Option<crate::model::Firewall>,
-    /// <p>Detailed information about the current status of a <a>Firewall</a>. You can retrieve this for a firewall by calling <a>DescribeFirewall</a> and providing the firewall name and ARN.</p>
+    /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
     pub firewall_status: std::option::Option<crate::model::FirewallStatus>,
 }
 impl DeleteFirewallOutput {
     /// <p>The firewall defines the configuration settings for an AWS Network Firewall firewall. These settings include the firewall policy, the subnets in your VPC to use for the firewall endpoints, and any tags that are attached to the firewall AWS resource. </p>
-    /// <p>The status of the firewall, for example whether it's ready to filter network traffic,
-    /// is provided in the corresponding <a>FirewallStatus</a>. You can retrieve both
-    /// objects by calling <a>DescribeFirewall</a>.</p>
+    /// <p>The status of the firewall, for example whether it's ready to filter network traffic, is provided in the corresponding <code>FirewallStatus</code>. You can retrieve both objects by calling <code>DescribeFirewall</code>.</p>
     pub fn firewall(&self) -> std::option::Option<&crate::model::Firewall> {
         self.firewall.as_ref()
     }
-    /// <p>Detailed information about the current status of a <a>Firewall</a>. You can retrieve this for a firewall by calling <a>DescribeFirewall</a> and providing the firewall name and ARN.</p>
+    /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
     pub fn firewall_status(&self) -> std::option::Option<&crate::model::FirewallStatus> {
         self.firewall_status.as_ref()
     }
@@ -2043,27 +2134,23 @@ pub mod delete_firewall_output {
     }
     impl Builder {
         /// <p>The firewall defines the configuration settings for an AWS Network Firewall firewall. These settings include the firewall policy, the subnets in your VPC to use for the firewall endpoints, and any tags that are attached to the firewall AWS resource. </p>
-        /// <p>The status of the firewall, for example whether it's ready to filter network traffic,
-        /// is provided in the corresponding <a>FirewallStatus</a>. You can retrieve both
-        /// objects by calling <a>DescribeFirewall</a>.</p>
+        /// <p>The status of the firewall, for example whether it's ready to filter network traffic, is provided in the corresponding <code>FirewallStatus</code>. You can retrieve both objects by calling <code>DescribeFirewall</code>.</p>
         pub fn firewall(mut self, input: crate::model::Firewall) -> Self {
             self.firewall = Some(input);
             self
         }
         /// <p>The firewall defines the configuration settings for an AWS Network Firewall firewall. These settings include the firewall policy, the subnets in your VPC to use for the firewall endpoints, and any tags that are attached to the firewall AWS resource. </p>
-        /// <p>The status of the firewall, for example whether it's ready to filter network traffic,
-        /// is provided in the corresponding <a>FirewallStatus</a>. You can retrieve both
-        /// objects by calling <a>DescribeFirewall</a>.</p>
+        /// <p>The status of the firewall, for example whether it's ready to filter network traffic, is provided in the corresponding <code>FirewallStatus</code>. You can retrieve both objects by calling <code>DescribeFirewall</code>.</p>
         pub fn set_firewall(mut self, input: std::option::Option<crate::model::Firewall>) -> Self {
             self.firewall = input;
             self
         }
-        /// <p>Detailed information about the current status of a <a>Firewall</a>. You can retrieve this for a firewall by calling <a>DescribeFirewall</a> and providing the firewall name and ARN.</p>
+        /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
         pub fn firewall_status(mut self, input: crate::model::FirewallStatus) -> Self {
             self.firewall_status = Some(input);
             self
         }
-        /// <p>Detailed information about the current status of a <a>Firewall</a>. You can retrieve this for a firewall by calling <a>DescribeFirewall</a> and providing the firewall name and ARN.</p>
+        /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
         pub fn set_firewall_status(
             mut self,
             input: std::option::Option<crate::model::FirewallStatus>,
@@ -2094,7 +2181,7 @@ pub struct CreateRuleGroupOutput {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
     /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
     pub update_token: std::option::Option<std::string::String>,
-    /// <p>The high-level properties of a rule group. This, along with the <a>RuleGroup</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. </p>
+    /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
     pub rule_group_response: std::option::Option<crate::model::RuleGroupResponse>,
 }
 impl CreateRuleGroupOutput {
@@ -2103,7 +2190,7 @@ impl CreateRuleGroupOutput {
     pub fn update_token(&self) -> std::option::Option<&str> {
         self.update_token.as_deref()
     }
-    /// <p>The high-level properties of a rule group. This, along with the <a>RuleGroup</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. </p>
+    /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
     pub fn rule_group_response(&self) -> std::option::Option<&crate::model::RuleGroupResponse> {
         self.rule_group_response.as_ref()
     }
@@ -2138,12 +2225,12 @@ pub mod create_rule_group_output {
             self.update_token = input;
             self
         }
-        /// <p>The high-level properties of a rule group. This, along with the <a>RuleGroup</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. </p>
+        /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
         pub fn rule_group_response(mut self, input: crate::model::RuleGroupResponse) -> Self {
             self.rule_group_response = Some(input);
             self
         }
-        /// <p>The high-level properties of a rule group. This, along with the <a>RuleGroup</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. </p>
+        /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
         pub fn set_rule_group_response(
             mut self,
             input: std::option::Option<crate::model::RuleGroupResponse>,
@@ -2174,7 +2261,7 @@ pub struct CreateFirewallPolicyOutput {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
     /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token. </p>
     pub update_token: std::option::Option<std::string::String>,
-    /// <p>The high-level properties of a firewall policy. This, along with the <a>FirewallPolicy</a>, define the policy. You can retrieve all objects for a firewall policy by calling <a>DescribeFirewallPolicy</a>. </p>
+    /// <p>The high-level properties of a firewall policy. This, along with the <code>FirewallPolicy</code>, define the policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>. </p>
     pub firewall_policy_response: std::option::Option<crate::model::FirewallPolicyResponse>,
 }
 impl CreateFirewallPolicyOutput {
@@ -2183,7 +2270,7 @@ impl CreateFirewallPolicyOutput {
     pub fn update_token(&self) -> std::option::Option<&str> {
         self.update_token.as_deref()
     }
-    /// <p>The high-level properties of a firewall policy. This, along with the <a>FirewallPolicy</a>, define the policy. You can retrieve all objects for a firewall policy by calling <a>DescribeFirewallPolicy</a>. </p>
+    /// <p>The high-level properties of a firewall policy. This, along with the <code>FirewallPolicy</code>, define the policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>. </p>
     pub fn firewall_policy_response(
         &self,
     ) -> std::option::Option<&crate::model::FirewallPolicyResponse> {
@@ -2221,7 +2308,7 @@ pub mod create_firewall_policy_output {
             self.update_token = input;
             self
         }
-        /// <p>The high-level properties of a firewall policy. This, along with the <a>FirewallPolicy</a>, define the policy. You can retrieve all objects for a firewall policy by calling <a>DescribeFirewallPolicy</a>. </p>
+        /// <p>The high-level properties of a firewall policy. This, along with the <code>FirewallPolicy</code>, define the policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>. </p>
         pub fn firewall_policy_response(
             mut self,
             input: crate::model::FirewallPolicyResponse,
@@ -2229,7 +2316,7 @@ pub mod create_firewall_policy_output {
             self.firewall_policy_response = Some(input);
             self
         }
-        /// <p>The high-level properties of a firewall policy. This, along with the <a>FirewallPolicy</a>, define the policy. You can retrieve all objects for a firewall policy by calling <a>DescribeFirewallPolicy</a>. </p>
+        /// <p>The high-level properties of a firewall policy. This, along with the <code>FirewallPolicy</code>, define the policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>. </p>
         pub fn set_firewall_policy_response(
             mut self,
             input: std::option::Option<crate::model::FirewallPolicyResponse>,
@@ -2259,7 +2346,7 @@ impl CreateFirewallPolicyOutput {
 pub struct CreateFirewallOutput {
     /// <p>The configuration settings for the firewall. These settings include the firewall policy and the subnets in your VPC to use for the firewall endpoints. </p>
     pub firewall: std::option::Option<crate::model::Firewall>,
-    /// <p>Detailed information about the current status of a <a>Firewall</a>. You can retrieve this for a firewall by calling <a>DescribeFirewall</a> and providing the firewall name and ARN.</p>
+    /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
     pub firewall_status: std::option::Option<crate::model::FirewallStatus>,
 }
 impl CreateFirewallOutput {
@@ -2267,7 +2354,7 @@ impl CreateFirewallOutput {
     pub fn firewall(&self) -> std::option::Option<&crate::model::Firewall> {
         self.firewall.as_ref()
     }
-    /// <p>Detailed information about the current status of a <a>Firewall</a>. You can retrieve this for a firewall by calling <a>DescribeFirewall</a> and providing the firewall name and ARN.</p>
+    /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
     pub fn firewall_status(&self) -> std::option::Option<&crate::model::FirewallStatus> {
         self.firewall_status.as_ref()
     }
@@ -2300,12 +2387,12 @@ pub mod create_firewall_output {
             self.firewall = input;
             self
         }
-        /// <p>Detailed information about the current status of a <a>Firewall</a>. You can retrieve this for a firewall by calling <a>DescribeFirewall</a> and providing the firewall name and ARN.</p>
+        /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
         pub fn firewall_status(mut self, input: crate::model::FirewallStatus) -> Self {
             self.firewall_status = Some(input);
             self
         }
-        /// <p>Detailed information about the current status of a <a>Firewall</a>. You can retrieve this for a firewall by calling <a>DescribeFirewall</a> and providing the firewall name and ARN.</p>
+        /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
         pub fn set_firewall_status(
             mut self,
             input: std::option::Option<crate::model::FirewallStatus>,
@@ -2414,9 +2501,9 @@ pub mod associate_subnets_output {
         /// To override the contents of this collection use [`set_subnet_mappings`](Self::set_subnet_mappings).
         ///
         /// <p>The IDs of the subnets that are associated with the firewall. </p>
-        pub fn subnet_mappings(mut self, input: impl Into<crate::model::SubnetMapping>) -> Self {
+        pub fn subnet_mappings(mut self, input: crate::model::SubnetMapping) -> Self {
             let mut v = self.subnet_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subnet_mappings = Some(v);
             self
         }

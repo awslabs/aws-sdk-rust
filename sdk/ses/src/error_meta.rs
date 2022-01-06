@@ -4,107 +4,72 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>Indicates that email sending is disabled for your entire Amazon SES account.</p>
-    /// <p>You can enable or disable email sending for your Amazon SES account using <a>UpdateAccountSendingEnabled</a>.</p>
+    /// <p>You can enable or disable email sending for your Amazon SES account using <code>UpdateAccountSendingEnabled</code>.</p>
     AccountSendingPausedException(crate::error::AccountSendingPausedException),
     /// <p>Indicates that a resource could not be created because of a naming conflict.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
     /// <p>Indicates that the delete operation could not be completed.</p>
     CannotDeleteException(crate::error::CannotDeleteException),
-    /// <p>Indicates that the configuration set could not be created because of a naming
-    /// conflict.</p>
+    /// <p>Indicates that the configuration set could not be created because of a naming conflict.</p>
     ConfigurationSetAlreadyExistsException(crate::error::ConfigurationSetAlreadyExistsException),
     /// <p>Indicates that the configuration set does not exist.</p>
     ConfigurationSetDoesNotExistException(crate::error::ConfigurationSetDoesNotExistException),
     /// <p>Indicates that email sending is disabled for the configuration set.</p>
-    /// <p>You can enable or disable email sending for a configuration set using <a>UpdateConfigurationSetSendingEnabled</a>.</p>
+    /// <p>You can enable or disable email sending for a configuration set using <code>UpdateConfigurationSetSendingEnabled</code>.</p>
     ConfigurationSetSendingPausedException(crate::error::ConfigurationSetSendingPausedException),
     /// <p>Indicates that custom verification email template provided content is invalid.</p>
     CustomVerificationEmailInvalidContentException(
         crate::error::CustomVerificationEmailInvalidContentException,
     ),
-    /// <p>Indicates that a custom verification email template with the name you specified
-    /// already exists.</p>
+    /// <p>Indicates that a custom verification email template with the name you specified already exists.</p>
     CustomVerificationEmailTemplateAlreadyExistsException(
         crate::error::CustomVerificationEmailTemplateAlreadyExistsException,
     ),
-    /// <p>Indicates that a custom verification email template with the name you specified does
-    /// not exist.</p>
+    /// <p>Indicates that a custom verification email template with the name you specified does not exist.</p>
     CustomVerificationEmailTemplateDoesNotExistException(
         crate::error::CustomVerificationEmailTemplateDoesNotExistException,
     ),
-    /// <p>Indicates that the event destination could not be created because of a naming
-    /// conflict.</p>
+    /// <p>Indicates that the event destination could not be created because of a naming conflict.</p>
     EventDestinationAlreadyExistsException(crate::error::EventDestinationAlreadyExistsException),
     /// <p>Indicates that the event destination does not exist.</p>
     EventDestinationDoesNotExistException(crate::error::EventDestinationDoesNotExistException),
-    /// <p>Indicates that the sender address specified for a custom verification email is not
-    /// verified, and is therefore not eligible to send the custom verification email. </p>
+    /// <p>Indicates that the sender address specified for a custom verification email is not verified, and is therefore not eligible to send the custom verification email. </p>
     FromEmailAddressNotVerifiedException(crate::error::FromEmailAddressNotVerifiedException),
-    /// <p>Indicates that the Amazon CloudWatch destination is invalid. See the error message for
-    /// details.</p>
+    /// <p>Indicates that the Amazon CloudWatch destination is invalid. See the error message for details.</p>
     InvalidCloudWatchDestinationException(crate::error::InvalidCloudWatchDestinationException),
-    /// <p>Indicates that the configuration set is invalid. See the error message for
-    /// details.</p>
+    /// <p>Indicates that the configuration set is invalid. See the error message for details.</p>
     InvalidConfigurationSetException(crate::error::InvalidConfigurationSetException),
     /// <p>Indicates that provided delivery option is invalid.</p>
     InvalidDeliveryOptionsException(crate::error::InvalidDeliveryOptionsException),
-    /// <p>Indicates that the Amazon Kinesis Firehose destination is invalid. See the error
-    /// message for details.</p>
+    /// <p>Indicates that the Amazon Kinesis Firehose destination is invalid. See the error message for details.</p>
     InvalidFirehoseDestinationException(crate::error::InvalidFirehoseDestinationException),
-    /// <p>Indicates that the provided AWS Lambda function is invalid, or that Amazon SES could
-    /// not execute the provided function, possibly due to permissions issues. For information
-    /// about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES
-    /// Developer Guide</a>.</p>
+    /// <p>Indicates that the provided AWS Lambda function is invalid, or that Amazon SES could not execute the provided function, possibly due to permissions issues. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p>
     InvalidLambdaFunctionException(crate::error::InvalidLambdaFunctionException),
-    /// <p>Indicates that the provided policy is invalid. Check the error stack for more
-    /// information about what caused the error.</p>
+    /// <p>Indicates that the provided policy is invalid. Check the error stack for more information about what caused the error.</p>
     InvalidPolicyException(crate::error::InvalidPolicyException),
-    /// <p>Indicates that one or more of the replacement values you provided is invalid. This
-    /// error may occur when the TemplateData object contains invalid JSON.</p>
+    /// <p>Indicates that one or more of the replacement values you provided is invalid. This error may occur when the TemplateData object contains invalid JSON.</p>
     InvalidRenderingParameterException(crate::error::InvalidRenderingParameterException),
-    /// <p>Indicates that the provided Amazon S3 bucket or AWS KMS encryption key is invalid, or
-    /// that Amazon SES could not publish to the bucket, possibly due to permissions issues. For
-    /// information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES
-    /// Developer Guide</a>.</p>
+    /// <p>Indicates that the provided Amazon S3 bucket or AWS KMS encryption key is invalid, or that Amazon SES could not publish to the bucket, possibly due to permissions issues. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p>
     InvalidS3ConfigurationException(crate::error::InvalidS3ConfigurationException),
-    /// <p>Indicates that the Amazon Simple Notification Service (Amazon SNS) destination is
-    /// invalid. See the error message for details.</p>
+    /// <p>Indicates that the Amazon Simple Notification Service (Amazon SNS) destination is invalid. See the error message for details.</p>
     InvalidSnsDestinationException(crate::error::InvalidSnsDestinationException),
-    /// <p>Indicates that the provided Amazon SNS topic is invalid, or that Amazon SES could not
-    /// publish to the topic, possibly due to permissions issues. For information about giving
-    /// permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES
-    /// Developer Guide</a>.</p>
+    /// <p>Indicates that the provided Amazon SNS topic is invalid, or that Amazon SES could not publish to the topic, possibly due to permissions issues. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p>
     InvalidSnsTopicException(crate::error::InvalidSnsTopicException),
-    /// <p>Indicates that the template that you specified could not be rendered. This issue may
-    /// occur when a template refers to a partial that does not exist.</p>
+    /// <p>Indicates that the template that you specified could not be rendered. This issue may occur when a template refers to a partial that does not exist.</p>
     InvalidTemplateException(crate::error::InvalidTemplateException),
-    /// <p>Indicates that the custom domain to be used for open and click tracking redirects is
-    /// invalid. This error appears most often in the following situations:</p>
+    /// <p>Indicates that the custom domain to be used for open and click tracking redirects is invalid. This error appears most often in the following situations:</p>
     /// <ul>
-    /// <li>
-    /// <p>When the tracking domain you specified is not verified in Amazon SES.</p>
-    /// </li>
-    /// <li>
-    /// <p>When the tracking domain you specified is not a valid domain or
-    /// subdomain.</p>
-    /// </li>
+    /// <li> <p>When the tracking domain you specified is not verified in Amazon SES.</p> </li>
+    /// <li> <p>When the tracking domain you specified is not a valid domain or subdomain.</p> </li>
     /// </ul>
     InvalidTrackingOptionsException(crate::error::InvalidTrackingOptionsException),
-    /// <p>Indicates that a resource could not be created because of service limits. For a list
-    /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>Indicates that a resource could not be created because of service limits. For a list of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer Guide</a>.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p> Indicates that the message could not be sent because Amazon SES could not read the MX
-    /// record required to use the specified MAIL FROM domain. For information about editing the
-    /// custom MAIL FROM domain settings for an identity, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p> Indicates that the message could not be sent because Amazon SES could not read the MX record required to use the specified MAIL FROM domain. For information about editing the custom MAIL FROM domain settings for an identity, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon SES Developer Guide</a>.</p>
     MailFromDomainNotVerifiedException(crate::error::MailFromDomainNotVerifiedException),
-    /// <p>Indicates that the action failed, and the message could not be sent. Check the error
-    /// stack for more information about what caused the error.</p>
+    /// <p>Indicates that the action failed, and the message could not be sent. Check the error stack for more information about what caused the error.</p>
     MessageRejected(crate::error::MessageRejected),
-    /// <p>Indicates that one or more of the replacement values for the specified template was
-    /// not specified. Ensure that the TemplateData object contains references to all of the
-    /// replacement tags in the specified template.</p>
+    /// <p>Indicates that one or more of the replacement values for the specified template was not specified. Ensure that the TemplateData object contains references to all of the replacement tags in the specified template.</p>
     MissingRenderingAttributeException(crate::error::MissingRenderingAttributeException),
     /// <p>Indicates that the account has not been granted production access.</p>
     ProductionAccessNotGrantedException(crate::error::ProductionAccessNotGrantedException),
@@ -112,11 +77,9 @@ pub enum Error {
     RuleDoesNotExistException(crate::error::RuleDoesNotExistException),
     /// <p>Indicates that the provided receipt rule set does not exist.</p>
     RuleSetDoesNotExistException(crate::error::RuleSetDoesNotExistException),
-    /// <p>Indicates that the Template object you specified does not exist in your Amazon SES
-    /// account.</p>
+    /// <p>Indicates that the Template object you specified does not exist in your Amazon SES account.</p>
     TemplateDoesNotExistException(crate::error::TemplateDoesNotExistException),
-    /// <p>Indicates that the configuration set you specified already contains a TrackingOptions
-    /// object.</p>
+    /// <p>Indicates that the configuration set you specified already contains a TrackingOptions object.</p>
     TrackingOptionsAlreadyExistsException(crate::error::TrackingOptionsAlreadyExistsException),
     /// <p>Indicates that the TrackingOptions object you specified does not exist.</p>
     TrackingOptionsDoesNotExistException(crate::error::TrackingOptionsDoesNotExistException),

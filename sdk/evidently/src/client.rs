@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon CloudWatch Evidently
@@ -192,6 +192,7 @@ where
     ///
     /// See [`ListExperiments`](crate::client::fluent_builders::ListExperiments) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListExperiments::into_paginator).
     pub fn list_experiments(&self) -> fluent_builders::ListExperiments<C, M, R> {
         fluent_builders::ListExperiments::new(self.handle.clone())
     }
@@ -199,6 +200,7 @@ where
     ///
     /// See [`ListFeatures`](crate::client::fluent_builders::ListFeatures) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFeatures::into_paginator).
     pub fn list_features(&self) -> fluent_builders::ListFeatures<C, M, R> {
         fluent_builders::ListFeatures::new(self.handle.clone())
     }
@@ -206,6 +208,7 @@ where
     ///
     /// See [`ListLaunches`](crate::client::fluent_builders::ListLaunches) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListLaunches::into_paginator).
     pub fn list_launches(&self) -> fluent_builders::ListLaunches<C, M, R> {
         fluent_builders::ListLaunches::new(self.handle.clone())
     }
@@ -213,6 +216,7 @@ where
     ///
     /// See [`ListProjects`](crate::client::fluent_builders::ListProjects) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProjects::into_paginator).
     pub fn list_projects(&self) -> fluent_builders::ListProjects<C, M, R> {
         fluent_builders::ListProjects::new(self.handle.clone())
     }
@@ -320,22 +324,12 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `BatchEvaluateFeature`.
     ///
-    /// <p>This operation assigns feature variation to user sessions. For each user session, you pass
-    /// in an <code>entityID</code> that represents the user. Evidently then checks the evaluation
-    /// rules and assigns the variation.</p>
-    /// <p>The first rules that are evaluated are the override rules. If the user's
-    /// <code>entityID</code> matches an override rule, the user is served the variation specified
-    /// by that rule.</p>
-    /// <p>Next, if there is a launch of the feature, the user might be assigned to a variation in
-    /// the launch. The chance of this depends on the percentage of users that are allocated to that
-    /// launch. If the user is enrolled in the launch, the variation they are served depends on the
-    /// allocation of the various feature variations used for the launch.</p>
-    /// <p>If the user is not assigned to a launch, and there is an ongoing experiment for this feature,  the user might
-    /// be assigned to a variation in the experiment. The chance of this
-    /// depends on the percentage of users that are allocated to that experiment. If the user is enrolled in the experiment,
-    /// the variation they are served depends on the allocation of the various feature variations used for the experiment. </p>
+    /// <p>This operation assigns feature variation to user sessions. For each user session, you pass in an <code>entityID</code> that represents the user. Evidently then checks the evaluation rules and assigns the variation.</p>
+    /// <p>The first rules that are evaluated are the override rules. If the user's <code>entityID</code> matches an override rule, the user is served the variation specified by that rule.</p>
+    /// <p>Next, if there is a launch of the feature, the user might be assigned to a variation in the launch. The chance of this depends on the percentage of users that are allocated to that launch. If the user is enrolled in the launch, the variation they are served depends on the allocation of the various feature variations used for the launch.</p>
+    /// <p>If the user is not assigned to a launch, and there is an ongoing experiment for this feature, the user might be assigned to a variation in the experiment. The chance of this depends on the percentage of users that are allocated to that experiment. If the user is enrolled in the experiment, the variation they are served depends on the allocation of the various feature variations used for the experiment. </p>
     /// <p>If the user is not assigned to a launch or experiment, they are served the default variation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchEvaluateFeature<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -380,10 +374,10 @@ pub mod fluent_builders {
                 crate::input::BatchEvaluateFeatureInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -392,8 +386,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the feature being evaluated.</p>
-        pub fn project(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(inp);
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the feature being evaluated.</p>
@@ -406,8 +400,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_requests`](Self::set_requests).
         ///
         /// <p>An array of structures, where each structure assigns a feature variation to one user session.</p>
-        pub fn requests(mut self, inp: impl Into<crate::model::EvaluationRequest>) -> Self {
-            self.inner = self.inner.requests(inp);
+        pub fn requests(mut self, input: crate::model::EvaluationRequest) -> Self {
+            self.inner = self.inner.requests(input);
             self
         }
         /// <p>An array of structures, where each structure assigns a feature variation to one user session.</p>
@@ -421,15 +415,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateExperiment`.
     ///
-    /// <p>Creates an Evidently <i>experiment</i>. Before you create an experiment,
-    /// you must create the feature to use for the experiment.</p>
-    /// <p>An experiment helps you make feature design
-    /// decisions based on evidence and data. An experiment can test as
-    /// many as five variations at once. Evidently collects experiment data and analyzes it by statistical methods, and provides
-    /// clear recommendations about which variations perform better.</p>
-    /// <p>Don't use this operation to update an existing experiment. Instead, use
-    /// <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateExperiment.html">UpdateExperiment</a>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an Evidently <i>experiment</i>. Before you create an experiment, you must create the feature to use for the experiment.</p>
+    /// <p>An experiment helps you make feature design decisions based on evidence and data. An experiment can test as many as five variations at once. Evidently collects experiment data and analyzes it by statistical methods, and provides clear recommendations about which variations perform better.</p>
+    /// <p>Don't use this operation to update an existing experiment. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateExperiment.html">UpdateExperiment</a>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateExperiment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -474,10 +463,10 @@ pub mod fluent_builders {
                 crate::input::CreateExperimentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -486,8 +475,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that you want to create the new experiment in.</p>
-        pub fn project(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(inp);
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that you want to create the new experiment in.</p>
@@ -496,8 +485,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A name for the new experiment.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A name for the new experiment.</p>
@@ -506,8 +495,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of the experiment.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description of the experiment.</p>
@@ -520,8 +509,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_treatments`](Self::set_treatments).
         ///
         /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
-        pub fn treatments(mut self, inp: impl Into<crate::model::TreatmentConfig>) -> Self {
-            self.inner = self.inner.treatments(inp);
+        pub fn treatments(mut self, input: crate::model::TreatmentConfig) -> Self {
+            self.inner = self.inner.treatments(input);
             self
         }
         /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
@@ -536,14 +525,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_metric_goals`](Self::set_metric_goals).
         ///
-        /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher
-        /// or lower value for each metric is the goal.</p>
-        pub fn metric_goals(mut self, inp: impl Into<crate::model::MetricGoalConfig>) -> Self {
-            self.inner = self.inner.metric_goals(inp);
+        /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
+        pub fn metric_goals(mut self, input: crate::model::MetricGoalConfig) -> Self {
+            self.inner = self.inner.metric_goals(input);
             self
         }
-        /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher
-        /// or lower value for each metric is the goal.</p>
+        /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
         pub fn set_metric_goals(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricGoalConfig>>,
@@ -551,18 +538,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_metric_goals(input);
             self
         }
-        /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID
-        /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
-        /// and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses
-        /// the experiment name as the <code>randomizationSalt</code>.</p>
-        pub fn randomization_salt(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.randomization_salt(inp);
+        /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
+        pub fn randomization_salt(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.randomization_salt(input.into());
             self
         }
-        /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID
-        /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
-        /// and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses
-        /// the experiment name as the <code>randomizationSalt</code>.</p>
+        /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
         pub fn set_randomization_salt(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -570,32 +551,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_randomization_salt(input);
             self
         }
-        /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience
-        /// is the total audience minus the audience that you have allocated to overrides or current launches of
-        /// this feature.</p>
+        /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
         /// <p>This is represented in thousandths of a percent. For example, specify 10,000 to allocate 10% of the available audience.</p>
-        pub fn sampling_rate(mut self, inp: i64) -> Self {
-            self.inner = self.inner.sampling_rate(inp);
+        pub fn sampling_rate(mut self, input: i64) -> Self {
+            self.inner = self.inner.sampling_rate(input);
             self
         }
-        /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience
-        /// is the total audience minus the audience that you have allocated to overrides or current launches of
-        /// this feature.</p>
+        /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
         /// <p>This is represented in thousandths of a percent. For example, specify 10,000 to allocate 10% of the available audience.</p>
         pub fn set_sampling_rate(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_sampling_rate(input);
             self
         }
-        /// <p>A structure that contains the configuration of which variation to use as the "control"
-        /// version. tThe "control" version is used for comparison with other variations. This structure
-        /// also specifies how much experiment traffic is allocated to each variation.</p>
-        pub fn online_ab_config(mut self, inp: crate::model::OnlineAbConfig) -> Self {
-            self.inner = self.inner.online_ab_config(inp);
+        /// <p>A structure that contains the configuration of which variation to use as the "control" version. tThe "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
+        pub fn online_ab_config(mut self, input: crate::model::OnlineAbConfig) -> Self {
+            self.inner = self.inner.online_ab_config(input);
             self
         }
-        /// <p>A structure that contains the configuration of which variation to use as the "control"
-        /// version. tThe "control" version is used for comparison with other variations. This structure
-        /// also specifies how much experiment traffic is allocated to each variation.</p>
+        /// <p>A structure that contains the configuration of which variation to use as the "control" version. tThe "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
         pub fn set_online_ab_config(
             mut self,
             input: std::option::Option<crate::model::OnlineAbConfig>,
@@ -608,11 +581,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Assigns one or more tags (key-value pairs) to the experiment.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-        /// permissions by granting a user
-        /// permission to access or change only resources with certain tag values.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
         /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-        ///
         /// <p>You can associate as many as 50 tags with an experiment.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
         pub fn tags(
@@ -620,15 +590,12 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Assigns one or more tags (key-value pairs) to the experiment.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-        /// permissions by granting a user
-        /// permission to access or change only resources with certain tag values.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
         /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-        ///
         /// <p>You can associate as many as 50 tags with an experiment.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
         pub fn set_tags(
@@ -643,12 +610,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateFeature`.
     ///
-    /// <p>Creates an Evidently <i>feature</i> that you want to launch or test. You can define up to
-    /// five variations of a feature, and use these variations in your launches and experiments. A feature must be created in
-    /// a project. For information about creating a project, see <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateProject.html">CreateProject</a>.</p>
-    /// <p>Don't use this operation to update an existing feature. Instead, use
-    /// <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateFeature.html">UpdateFeature</a>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an Evidently <i>feature</i> that you want to launch or test. You can define up to five variations of a feature, and use these variations in your launches and experiments. A feature must be created in a project. For information about creating a project, see <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateProject.html">CreateProject</a>.</p>
+    /// <p>Don't use this operation to update an existing feature. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateFeature.html">UpdateFeature</a>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFeature<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -693,10 +657,10 @@ pub mod fluent_builders {
                 crate::input::CreateFeatureInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -705,8 +669,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that is to contain the new feature.</p>
-        pub fn project(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(inp);
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that is to contain the new feature.</p>
@@ -715,8 +679,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the new feature.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for the new feature.</p>
@@ -724,16 +688,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any
-        /// ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default
-        /// variation to all users instead.</p>
-        pub fn evaluation_strategy(mut self, inp: crate::model::FeatureEvaluationStrategy) -> Self {
-            self.inner = self.inner.evaluation_strategy(inp);
+        /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation to all users instead.</p>
+        pub fn evaluation_strategy(
+            mut self,
+            input: crate::model::FeatureEvaluationStrategy,
+        ) -> Self {
+            self.inner = self.inner.evaluation_strategy(input);
             self
         }
-        /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any
-        /// ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default
-        /// variation to all users instead.</p>
+        /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation to all users instead.</p>
         pub fn set_evaluation_strategy(
             mut self,
             input: std::option::Option<crate::model::FeatureEvaluationStrategy>,
@@ -742,8 +705,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of the feature.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description of the feature.</p>
@@ -756,8 +719,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_variations`](Self::set_variations).
         ///
         /// <p>An array of structures that contain the configuration of the feature's different variations.</p>
-        pub fn variations(mut self, inp: impl Into<crate::model::VariationConfig>) -> Self {
-            self.inner = self.inner.variations(inp);
+        pub fn variations(mut self, input: crate::model::VariationConfig) -> Self {
+            self.inner = self.inner.variations(input);
             self
         }
         /// <p>An array of structures that contain the configuration of the feature's different variations.</p>
@@ -768,22 +731,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_variations(input);
             self
         }
-        /// <p>The name of the variation to use as the default variation. The default
-        /// variation is served to users who are not allocated to any ongoing launches
-        /// or experiments of this feature.</p>
+        /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
         /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
-        /// <p>If you omit <code>defaultVariation</code>, the first variation listed in
-        /// the <code>variations</code> structure is used as the default variation.</p>
-        pub fn default_variation(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_variation(inp);
+        /// <p>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code> structure is used as the default variation.</p>
+        pub fn default_variation(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_variation(input.into());
             self
         }
-        /// <p>The name of the variation to use as the default variation. The default
-        /// variation is served to users who are not allocated to any ongoing launches
-        /// or experiments of this feature.</p>
+        /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
         /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
-        /// <p>If you omit <code>defaultVariation</code>, the first variation listed in
-        /// the <code>variations</code> structure is used as the default variation.</p>
+        /// <p>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code> structure is used as the default variation.</p>
         pub fn set_default_variation(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -796,11 +753,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Assigns one or more tags (key-value pairs) to the feature.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-        /// permissions by granting a user
-        /// permission to access or change only resources with certain tag values.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
         /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-        ///
         /// <p>You can associate as many as 50 tags with a feature.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
         pub fn tags(
@@ -808,15 +762,12 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Assigns one or more tags (key-value pairs) to the feature.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-        /// permissions by granting a user
-        /// permission to access or change only resources with certain tag values.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
         /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-        ///
         /// <p>You can associate as many as 50 tags with a feature.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
         pub fn set_tags(
@@ -832,22 +783,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_entity_overrides`](Self::set_entity_overrides).
         ///
-        /// <p>Specify users that should always be served a specific variation of a feature. Each user
-        /// is specified by a key-value pair . For each key, specify a user by entering their user ID,
-        /// account ID, or some other identifier. For the value, specify the name of the variation that
-        /// they are to be served.</p>
+        /// <p>Specify users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
         pub fn entity_overrides(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.entity_overrides(k, v);
+            self.inner = self.inner.entity_overrides(k.into(), v.into());
             self
         }
-        /// <p>Specify users that should always be served a specific variation of a feature. Each user
-        /// is specified by a key-value pair . For each key, specify a user by entering their user ID,
-        /// account ID, or some other identifier. For the value, specify the name of the variation that
-        /// they are to be served.</p>
+        /// <p>Specify users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
         pub fn set_entity_overrides(
             mut self,
             input: std::option::Option<
@@ -860,15 +805,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateLaunch`.
     ///
-    /// <p>Creates a <i>launch</i> of a given feature. Before you create a launch, you
-    /// must create the feature to use for the launch.</p>
-    /// <p>You can use a launch to safely validate new features by serving them to a specified
-    /// percentage of your users while you roll out the feature. You can monitor the performance of
-    /// the new feature to help you decide when to ramp up traffic to more users. This helps you
-    /// reduce risk and identify unintended consequences before you fully launch the feature.</p>
-    /// <p>Don't use this operation to update an existing launch. Instead, use
-    /// <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateLaunch.html">UpdateLaunch</a>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a <i>launch</i> of a given feature. Before you create a launch, you must create the feature to use for the launch.</p>
+    /// <p>You can use a launch to safely validate new features by serving them to a specified percentage of your users while you roll out the feature. You can monitor the performance of the new feature to help you decide when to ramp up traffic to more users. This helps you reduce risk and identify unintended consequences before you fully launch the feature.</p>
+    /// <p>Don't use this operation to update an existing launch. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateLaunch.html">UpdateLaunch</a>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLaunch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -913,10 +853,10 @@ pub mod fluent_builders {
                 crate::input::CreateLaunchInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -925,8 +865,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that you want to create the launch in.</p>
-        pub fn project(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(inp);
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that you want to create the launch in.</p>
@@ -935,8 +875,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the new launch.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for the new launch.</p>
@@ -945,8 +885,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description for the launch.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description for the launch.</p>
@@ -954,17 +894,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>An array of structures that define the traffic allocation percentages among the feature
-        /// variations during each step of the launch.</p>
+        /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
         pub fn scheduled_splits_config(
             mut self,
-            inp: crate::model::ScheduledSplitsLaunchConfig,
+            input: crate::model::ScheduledSplitsLaunchConfig,
         ) -> Self {
-            self.inner = self.inner.scheduled_splits_config(inp);
+            self.inner = self.inner.scheduled_splits_config(input);
             self
         }
-        /// <p>An array of structures that define the traffic allocation percentages among the feature
-        /// variations during each step of the launch.</p>
+        /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
         pub fn set_scheduled_splits_config(
             mut self,
             input: std::option::Option<crate::model::ScheduledSplitsLaunchConfig>,
@@ -976,17 +914,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_metric_monitors`](Self::set_metric_monitors).
         ///
-        /// <p>An array of structures that define the metrics that will be used to monitor
-        /// the launch performance.</p>
-        pub fn metric_monitors(
-            mut self,
-            inp: impl Into<crate::model::MetricMonitorConfig>,
-        ) -> Self {
-            self.inner = self.inner.metric_monitors(inp);
+        /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
+        pub fn metric_monitors(mut self, input: crate::model::MetricMonitorConfig) -> Self {
+            self.inner = self.inner.metric_monitors(input);
             self
         }
-        /// <p>An array of structures that define the metrics that will be used to monitor
-        /// the launch performance.</p>
+        /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
         pub fn set_metric_monitors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricMonitorConfig>>,
@@ -999,8 +932,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
-        pub fn groups(mut self, inp: impl Into<crate::model::LaunchGroupConfig>) -> Self {
-            self.inner = self.inner.groups(inp);
+        pub fn groups(mut self, input: crate::model::LaunchGroupConfig) -> Self {
+            self.inner = self.inner.groups(input);
             self
         }
         /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
@@ -1011,18 +944,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_groups(input);
             self
         }
-        /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID
-        /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
-        /// and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses
-        /// the launch name as the <code>randomizationsSalt</code>.</p>
-        pub fn randomization_salt(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.randomization_salt(inp);
+        /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationsSalt</code>.</p>
+        pub fn randomization_salt(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.randomization_salt(input.into());
             self
         }
-        /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID
-        /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
-        /// and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses
-        /// the launch name as the <code>randomizationsSalt</code>.</p>
+        /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationsSalt</code>.</p>
         pub fn set_randomization_salt(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1035,11 +962,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Assigns one or more tags (key-value pairs) to the launch.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-        /// permissions by granting a user
-        /// permission to access or change only resources with certain tag values.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
         /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-        ///
         /// <p>You can associate as many as 50 tags with a launch.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
         pub fn tags(
@@ -1047,15 +971,12 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Assigns one or more tags (key-value pairs) to the launch.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-        /// permissions by granting a user
-        /// permission to access or change only resources with certain tag values.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
         /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-        ///
         /// <p>You can associate as many as 50 tags with a launch.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
         pub fn set_tags(
@@ -1070,10 +991,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateProject`.
     ///
-    /// <p>Creates a project, which is the logical object in Evidently that can contain features, launches, and
-    /// experiments. Use projects to group similar features together.</p>
+    /// <p>Creates a project, which is the logical object in Evidently that can contain features, launches, and experiments. Use projects to group similar features together.</p>
     /// <p>To update an existing project, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateProject.html">UpdateProject</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1118,10 +1038,10 @@ pub mod fluent_builders {
                 crate::input::CreateProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1130,8 +1050,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the project.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for the project.</p>
@@ -1140,8 +1060,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of the project.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description of the project.</p>
@@ -1149,18 +1069,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>A structure that contains information about where Evidently is to store
-        /// evaluation events for longer term storage, if you choose to do so. If you choose
-        /// not to store these events, Evidently deletes them after using them to produce metrics and other experiment
-        /// results that you can view.</p>
-        pub fn data_delivery(mut self, inp: crate::model::ProjectDataDeliveryConfig) -> Self {
-            self.inner = self.inner.data_delivery(inp);
+        /// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage, if you choose to do so. If you choose not to store these events, Evidently deletes them after using them to produce metrics and other experiment results that you can view.</p>
+        pub fn data_delivery(mut self, input: crate::model::ProjectDataDeliveryConfig) -> Self {
+            self.inner = self.inner.data_delivery(input);
             self
         }
-        /// <p>A structure that contains information about where Evidently is to store
-        /// evaluation events for longer term storage, if you choose to do so. If you choose
-        /// not to store these events, Evidently deletes them after using them to produce metrics and other experiment
-        /// results that you can view.</p>
+        /// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage, if you choose to do so. If you choose not to store these events, Evidently deletes them after using them to produce metrics and other experiment results that you can view.</p>
         pub fn set_data_delivery(
             mut self,
             input: std::option::Option<crate::model::ProjectDataDeliveryConfig>,
@@ -1173,11 +1087,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Assigns one or more tags (key-value pairs) to the project.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-        /// permissions by granting a user
-        /// permission to access or change only resources with certain tag values.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
         /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-        ///
         /// <p>You can associate as many as 50 tags with a project.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
         pub fn tags(
@@ -1185,15 +1096,12 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Assigns one or more tags (key-value pairs) to the project.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-        /// permissions by granting a user
-        /// permission to access or change only resources with certain tag values.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
         /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-        ///
         /// <p>You can associate as many as 50 tags with a project.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
         pub fn set_tags(
@@ -1210,7 +1118,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an Evidently experiment. The feature used for the experiment is not deleted.</p>
     /// <p>To stop an experiment without deleting it, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_StopExperiment.html">StopExperiment</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteExperiment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1255,10 +1163,10 @@ pub mod fluent_builders {
                 crate::input::DeleteExperimentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1267,8 +1175,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the experiment to delete.</p>
-        pub fn project(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(inp);
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the experiment to delete.</p>
@@ -1277,8 +1185,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the experiment to delete.</p>
-        pub fn experiment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.experiment(inp);
+        pub fn experiment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.experiment(input.into());
             self
         }
         /// <p>The name of the experiment to delete.</p>
@@ -1290,7 +1198,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFeature`.
     ///
     /// <p>Deletes an Evidently feature.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFeature<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1335,10 +1243,10 @@ pub mod fluent_builders {
                 crate::input::DeleteFeatureInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1347,8 +1255,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the feature to delete.</p>
-        pub fn project(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(inp);
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the feature to delete.</p>
@@ -1357,8 +1265,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the feature to delete.</p>
-        pub fn feature(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature(inp);
+        pub fn feature(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature(input.into());
             self
         }
         /// <p>The name of the feature to delete.</p>
@@ -1371,7 +1279,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an Evidently launch. The feature used for the launch is not deleted.</p>
     /// <p>To stop a launch without deleting it, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_StopLaunch.html">StopLaunch</a>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLaunch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1416,10 +1324,10 @@ pub mod fluent_builders {
                 crate::input::DeleteLaunchInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1428,8 +1336,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the launch to delete.</p>
-        pub fn project(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(inp);
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the launch to delete.</p>
@@ -1438,8 +1346,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the launch to delete.</p>
-        pub fn launch(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch(inp);
+        pub fn launch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch(input.into());
             self
         }
         /// <p>The name of the launch to delete.</p>
@@ -1450,9 +1358,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteProject`.
     ///
-    /// <p>Deletes an Evidently project. Before you can delete a project, you must delete all the
-    /// features that the project contains. To delete a feature, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_DeleteFeature.html">DeleteFeature</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes an Evidently project. Before you can delete a project, you must delete all the features that the project contains. To delete a feature, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_DeleteFeature.html">DeleteFeature</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1497,10 +1404,10 @@ pub mod fluent_builders {
                 crate::input::DeleteProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1509,8 +1416,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project to delete.</p>
-        pub fn project(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(inp);
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project to delete.</p>
@@ -1521,22 +1428,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `EvaluateFeature`.
     ///
-    /// <p>This operation assigns a feature variation to one given user session. You pass in an
-    /// <code>entityID</code> that represents the user. Evidently then checks the evaluation rules
-    /// and assigns the variation.</p>
-    /// <p>The first rules that are evaluated are the override rules. If the user's
-    /// <code>entityID</code> matches an override rule, the user is served the variation specified
-    /// by that rule.</p>
-    /// <p>Next, if there is a launch of the feature, the user might be assigned to a variation in
-    /// the launch. The chance of this depends on the percentage of users that are allocated to that
-    /// launch. If the user is enrolled in the launch, the variation they are served depends on the
-    /// allocation of the various feature variations used for the launch.</p>
-    /// <p>If the user is not assigned to a launch, and there is an ongoing experiment for this feature,  the user might
-    /// be assigned to a variation in the experiment. The chance of this
-    /// depends on the percentage of users that are allocated to that experiment. If the user is enrolled in the experiment,
-    /// the variation they are served depends on the allocation of the various feature variations used for the experiment. </p>
+    /// <p>This operation assigns a feature variation to one given user session. You pass in an <code>entityID</code> that represents the user. Evidently then checks the evaluation rules and assigns the variation.</p>
+    /// <p>The first rules that are evaluated are the override rules. If the user's <code>entityID</code> matches an override rule, the user is served the variation specified by that rule.</p>
+    /// <p>Next, if there is a launch of the feature, the user might be assigned to a variation in the launch. The chance of this depends on the percentage of users that are allocated to that launch. If the user is enrolled in the launch, the variation they are served depends on the allocation of the various feature variations used for the launch.</p>
+    /// <p>If the user is not assigned to a launch, and there is an ongoing experiment for this feature, the user might be assigned to a variation in the experiment. The chance of this depends on the percentage of users that are allocated to that experiment. If the user is enrolled in the experiment, the variation they are served depends on the allocation of the various feature variations used for the experiment. </p>
     /// <p>If the user is not assigned to a launch or experiment, they are served the default variation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EvaluateFeature<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1581,10 +1478,10 @@ pub mod fluent_builders {
                 crate::input::EvaluateFeatureInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1593,8 +1490,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains this feature.</p>
-        pub fn project(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(inp);
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains this feature.</p>
@@ -1603,8 +1500,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the feature being evaluated.</p>
-        pub fn feature(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature(inp);
+        pub fn feature(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature(input.into());
             self
         }
         /// <p>The name of the feature being evaluated.</p>
@@ -1612,28 +1509,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_feature(input);
             self
         }
-        /// <p>An internal ID that represents a unique user of the application. This
-        /// <code>entityID</code> is checked against any override rules assigned for this
-        /// feature.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        /// <p>An internal ID that represents a unique user of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(input.into());
             self
         }
-        /// <p>An internal ID that represents a unique user of the application. This
-        /// <code>entityID</code> is checked against any override rules assigned for this
-        /// feature.</p>
+        /// <p>An internal ID that represents a unique user of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_entity_id(input);
             self
         }
-        /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included
-        /// in the evaluation events sent to Evidently from the user session. </p>
-        pub fn evaluation_context(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evaluation_context(inp);
+        /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
+        pub fn evaluation_context(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evaluation_context(input.into());
             self
         }
-        /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included
-        /// in the evaluation events sent to Evidently from the user session. </p>
+        /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
         pub fn set_evaluation_context(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1644,9 +1535,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetExperiment`.
     ///
-    /// <p>Returns the details about one experiment. You must already know the
-    /// experiment name. To retrieve a list of experiments in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListExperiments.html">ListExperiments</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the details about one experiment. You must already know the experiment name. To retrieve a list of experiments in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListExperiments.html">ListExperiments</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetExperiment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1691,10 +1581,10 @@ pub mod fluent_builders {
                 crate::input::GetExperimentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1703,8 +1593,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the experiment.</p>
-        pub fn project(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(inp);
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the experiment.</p>
@@ -1713,8 +1603,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the experiment that you want to see the details of.</p>
-        pub fn experiment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.experiment(inp);
+        pub fn experiment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.experiment(input.into());
             self
         }
         /// <p>The name of the experiment that you want to see the details of.</p>
@@ -1726,7 +1616,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetExperimentResults`.
     ///
     /// <p>Retrieves the results of a running or completed experiment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetExperimentResults<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1771,10 +1661,10 @@ pub mod fluent_builders {
                 crate::input::GetExperimentResultsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1783,8 +1673,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the experiment that you want to see the results of.</p>
-        pub fn project(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(inp);
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the experiment that you want to see the results of.</p>
@@ -1793,8 +1683,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the experiment to retrieve the results of.</p>
-        pub fn experiment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.experiment(inp);
+        pub fn experiment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.experiment(input.into());
             self
         }
         /// <p>The name of the experiment to retrieve the results of.</p>
@@ -1803,8 +1693,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time that the experiment started.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The date and time that the experiment started.</p>
@@ -1816,8 +1706,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time that the experiment ended, if it is completed.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The date and time that the experiment ended, if it is completed.</p>
@@ -1833,8 +1723,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_metric_names`](Self::set_metric_names).
         ///
         /// <p>The names of the experiment metrics that you want to see the results of.</p>
-        pub fn metric_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_names(inp);
+        pub fn metric_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_names(input.into());
             self
         }
         /// <p>The names of the experiment metrics that you want to see the results of.</p>
@@ -1850,8 +1740,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_treatment_names`](Self::set_treatment_names).
         ///
         /// <p>The names of the experiment treatments that you want to see the results for.</p>
-        pub fn treatment_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.treatment_names(inp);
+        pub fn treatment_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.treatment_names(input.into());
             self
         }
         /// <p>The names of the experiment treatments that you want to see the results for.</p>
@@ -1862,14 +1752,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_treatment_names(input);
             self
         }
-        /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>,
-        /// which uses the mean of the collected values as the statistic.</p>
-        pub fn base_stat(mut self, inp: crate::model::ExperimentBaseStat) -> Self {
-            self.inner = self.inner.base_stat(inp);
+        /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>, which uses the mean of the collected values as the statistic.</p>
+        pub fn base_stat(mut self, input: crate::model::ExperimentBaseStat) -> Self {
+            self.inner = self.inner.base_stat(input);
             self
         }
-        /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>,
-        /// which uses the mean of the collected values as the statistic.</p>
+        /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>, which uses the mean of the collected values as the statistic.</p>
         pub fn set_base_stat(
             mut self,
             input: std::option::Option<crate::model::ExperimentBaseStat>,
@@ -1883,68 +1771,21 @@ pub mod fluent_builders {
         ///
         /// <p>The statistics that you want to see in the returned results.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PValue</code> specifies to use p-values for the results. A p-value is used in hypothesis
-        /// testing to measure how often you are willing to make a mistake in rejecting the null
-        /// hypothesis. A general practice is to reject the null hypothesis and declare that the
-        /// results are statistically significant when the p-value is less than 0.05.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ConfidenceInterval</code> specifies a confidence interval for the results. The
-        /// confidence interval represents the range of values for the chosen metric that is likely to
-        /// contain the true difference between the <code>baseStat</code> of a variation and the
-        /// baseline. Evidently returns the 95% confidence interval. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TreatmentEffect</code> is the difference in the statistic specified by the
-        /// <code>baseStat</code> parameter between each variation and the default variation. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BaseStat</code> returns the statistical values collected for the metric for each
-        /// variation. The statistic uses the same statistic specified in the <code>baseStat</code>
-        /// parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean
-        /// of the values collected for each variation.</p>
-        /// </li>
+        /// <li> <p> <code>PValue</code> specifies to use p-values for the results. A p-value is used in hypothesis testing to measure how often you are willing to make a mistake in rejecting the null hypothesis. A general practice is to reject the null hypothesis and declare that the results are statistically significant when the p-value is less than 0.05.</p> </li>
+        /// <li> <p> <code>ConfidenceInterval</code> specifies a confidence interval for the results. The confidence interval represents the range of values for the chosen metric that is likely to contain the true difference between the <code>baseStat</code> of a variation and the baseline. Evidently returns the 95% confidence interval. </p> </li>
+        /// <li> <p> <code>TreatmentEffect</code> is the difference in the statistic specified by the <code>baseStat</code> parameter between each variation and the default variation. </p> </li>
+        /// <li> <p> <code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p> </li>
         /// </ul>
-        pub fn result_stats(
-            mut self,
-            inp: impl Into<crate::model::ExperimentResultRequestType>,
-        ) -> Self {
-            self.inner = self.inner.result_stats(inp);
+        pub fn result_stats(mut self, input: crate::model::ExperimentResultRequestType) -> Self {
+            self.inner = self.inner.result_stats(input);
             self
         }
         /// <p>The statistics that you want to see in the returned results.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PValue</code> specifies to use p-values for the results. A p-value is used in hypothesis
-        /// testing to measure how often you are willing to make a mistake in rejecting the null
-        /// hypothesis. A general practice is to reject the null hypothesis and declare that the
-        /// results are statistically significant when the p-value is less than 0.05.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ConfidenceInterval</code> specifies a confidence interval for the results. The
-        /// confidence interval represents the range of values for the chosen metric that is likely to
-        /// contain the true difference between the <code>baseStat</code> of a variation and the
-        /// baseline. Evidently returns the 95% confidence interval. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TreatmentEffect</code> is the difference in the statistic specified by the
-        /// <code>baseStat</code> parameter between each variation and the default variation. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BaseStat</code> returns the statistical values collected for the metric for each
-        /// variation. The statistic uses the same statistic specified in the <code>baseStat</code>
-        /// parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean
-        /// of the values collected for each variation.</p>
-        /// </li>
+        /// <li> <p> <code>PValue</code> specifies to use p-values for the results. A p-value is used in hypothesis testing to measure how often you are willing to make a mistake in rejecting the null hypothesis. A general practice is to reject the null hypothesis and declare that the results are statistically significant when the p-value is less than 0.05.</p> </li>
+        /// <li> <p> <code>ConfidenceInterval</code> specifies a confidence interval for the results. The confidence interval represents the range of values for the chosen metric that is likely to contain the true difference between the <code>baseStat</code> of a variation and the baseline. Evidently returns the 95% confidence interval. </p> </li>
+        /// <li> <p> <code>TreatmentEffect</code> is the difference in the statistic specified by the <code>baseStat</code> parameter between each variation and the default variation. </p> </li>
+        /// <li> <p> <code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p> </li>
         /// </ul>
         pub fn set_result_stats(
             mut self,
@@ -1957,14 +1798,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_report_names`](Self::set_report_names).
         ///
-        /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code>
-        /// is the only valid value.</p>
-        pub fn report_names(mut self, inp: impl Into<crate::model::ExperimentReportName>) -> Self {
-            self.inner = self.inner.report_names(inp);
+        /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code> is the only valid value.</p>
+        pub fn report_names(mut self, input: crate::model::ExperimentReportName) -> Self {
+            self.inner = self.inner.report_names(input);
             self
         }
-        /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code>
-        /// is the only valid value.</p>
+        /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code> is the only valid value.</p>
         pub fn set_report_names(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExperimentReportName>>,
@@ -1973,8 +1812,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>In seconds, the amount of time to aggregate results together. </p>
-        pub fn period(mut self, inp: i64) -> Self {
-            self.inner = self.inner.period(inp);
+        pub fn period(mut self, input: i64) -> Self {
+            self.inner = self.inner.period(input);
             self
         }
         /// <p>In seconds, the amount of time to aggregate results together. </p>
@@ -1985,9 +1824,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetFeature`.
     ///
-    /// <p>Returns the details about one feature. You must already know the feature name. To
-    /// retrieve a list of features in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListFeatures.html">ListFeatures</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the details about one feature. You must already know the feature name. To retrieve a list of features in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListFeatures.html">ListFeatures</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFeature<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2032,10 +1870,10 @@ pub mod fluent_builders {
                 crate::input::GetFeatureInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2044,8 +1882,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the feature.</p>
-        pub fn project(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(inp);
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the feature.</p>
@@ -2054,8 +1892,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the feature that you want to retrieve information for.</p>
-        pub fn feature(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature(inp);
+        pub fn feature(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature(input.into());
             self
         }
         /// <p>The name of the feature that you want to retrieve information for.</p>
@@ -2066,9 +1904,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetLaunch`.
     ///
-    /// <p>Returns the details about one launch. You must already know the
-    /// launch name. To retrieve a list of launches in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListLaunches.html">ListLaunches</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the details about one launch. You must already know the launch name. To retrieve a list of launches in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListLaunches.html">ListLaunches</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLaunch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2113,10 +1950,10 @@ pub mod fluent_builders {
                 crate::input::GetLaunchInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2125,8 +1962,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the launch.</p>
-        pub fn project(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(inp);
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the launch.</p>
@@ -2135,8 +1972,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the launch that you want to see the details of.</p>
-        pub fn launch(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch(inp);
+        pub fn launch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch(input.into());
             self
         }
         /// <p>The name of the launch that you want to see the details of.</p>
@@ -2147,9 +1984,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetProject`.
     ///
-    /// <p>Returns the details about one launch. You must already know the
-    /// project name. To retrieve a list of projects in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListProjects.html">ListProjects</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the details about one launch. You must already know the project name. To retrieve a list of projects in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListProjects.html">ListProjects</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2194,10 +2030,10 @@ pub mod fluent_builders {
                 crate::input::GetProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2206,8 +2042,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that you want to see the details of.</p>
-        pub fn project(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(inp);
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that you want to see the details of.</p>
@@ -2219,7 +2055,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListExperiments`.
     ///
     /// <p>Returns configuration details about all the experiments in the specified project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListExperiments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2264,10 +2100,10 @@ pub mod fluent_builders {
                 crate::input::ListExperimentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2275,9 +2111,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListExperimentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListExperimentsPaginator<C, M, R> {
+            crate::paginator::ListExperimentsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name or ARN of the project to return the experiment list from.</p>
-        pub fn project(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(inp);
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project to return the experiment list from.</p>
@@ -2286,8 +2128,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to include in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response.</p>
@@ -2295,14 +2137,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token to use when requesting the next set of results. You received this token from a previous
-        /// <code>ListExperiments</code> operation.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListExperiments</code> operation.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of results. You received this token from a previous
-        /// <code>ListExperiments</code> operation.</p>
+        /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListExperiments</code> operation.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2311,7 +2151,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFeatures`.
     ///
     /// <p>Returns configuration details about all the features in the specified project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFeatures<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2356,10 +2196,10 @@ pub mod fluent_builders {
                 crate::input::ListFeaturesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2367,9 +2207,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListFeaturesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListFeaturesPaginator<C, M, R> {
+            crate::paginator::ListFeaturesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name or ARN of the project to return the feature list from.</p>
-        pub fn project(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(inp);
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project to return the feature list from.</p>
@@ -2378,8 +2224,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to include in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response.</p>
@@ -2387,14 +2233,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token to use when requesting the next set of results. You received this token from a previous
-        /// <code>ListFeatures</code> operation.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListFeatures</code> operation.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of results. You received this token from a previous
-        /// <code>ListFeatures</code> operation.</p>
+        /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListFeatures</code> operation.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2403,7 +2247,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLaunches`.
     ///
     /// <p>Returns configuration details about all the launches in the specified project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLaunches<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2448,10 +2292,10 @@ pub mod fluent_builders {
                 crate::input::ListLaunchesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2459,9 +2303,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListLaunchesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListLaunchesPaginator<C, M, R> {
+            crate::paginator::ListLaunchesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name or ARN of the project to return the launch list from.</p>
-        pub fn project(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(inp);
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project to return the launch list from.</p>
@@ -2470,8 +2320,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to include in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response.</p>
@@ -2479,14 +2329,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token to use when requesting the next set of results. You received this token from a previous
-        /// <code>ListLaunches</code> operation.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListLaunches</code> operation.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of results. You received this token from a previous
-        /// <code>ListLaunches</code> operation.</p>
+        /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListLaunches</code> operation.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2494,9 +2342,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListProjects`.
     ///
-    /// <p>Returns configuration details about all the projects in the current Region in your
-    /// account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns configuration details about all the projects in the current Region in your account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProjects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2541,10 +2388,10 @@ pub mod fluent_builders {
                 crate::input::ListProjectsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2552,9 +2399,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListProjectsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListProjectsPaginator<C, M, R> {
+            crate::paginator::ListProjectsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of results to include in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response.</p>
@@ -2562,14 +2415,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token to use when requesting the next set of results. You received this token from a previous
-        /// <code>ListProjects</code> operation.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListProjects</code> operation.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token to use when requesting the next set of results. You received this token from a previous
-        /// <code>ListProjects</code> operation.</p>
+        /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListProjects</code> operation.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2578,7 +2429,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Displays the tags associated with an Evidently resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2623,10 +2474,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2635,8 +2486,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource that you want to see the tags of.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource that you want to see the tags of.</p>
@@ -2647,9 +2498,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutProjectEvents`.
     ///
-    /// <p>Sends performance events to Evidently. These events can be used to evaluate a launch or
-    /// an experiment.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Sends performance events to Evidently. These events can be used to evaluate a launch or an experiment.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutProjectEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2694,10 +2544,10 @@ pub mod fluent_builders {
                 crate::input::PutProjectEventsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2706,8 +2556,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project to write the events to.</p>
-        pub fn project(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(inp);
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project to write the events to.</p>
@@ -2719,14 +2569,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
-        /// <p>An array of event structures that contain the performance data that is being sent to
-        /// Evidently.</p>
-        pub fn events(mut self, inp: impl Into<crate::model::Event>) -> Self {
-            self.inner = self.inner.events(inp);
+        /// <p>An array of event structures that contain the performance data that is being sent to Evidently.</p>
+        pub fn events(mut self, input: crate::model::Event) -> Self {
+            self.inner = self.inner.events(input);
             self
         }
-        /// <p>An array of event structures that contain the performance data that is being sent to
-        /// Evidently.</p>
+        /// <p>An array of event structures that contain the performance data that is being sent to Evidently.</p>
         pub fn set_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Event>>,
@@ -2737,9 +2585,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartExperiment`.
     ///
-    /// <p>Starts an existing experiment. To create an experiment,
-    /// use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateExperiment.html">CreateExperiment</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Starts an existing experiment. To create an experiment, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateExperiment.html">CreateExperiment</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartExperiment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2784,10 +2631,10 @@ pub mod fluent_builders {
                 crate::input::StartExperimentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2796,8 +2643,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the experiment to start.</p>
-        pub fn project(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(inp);
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the experiment to start.</p>
@@ -2806,8 +2653,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the experiment to start.</p>
-        pub fn experiment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.experiment(inp);
+        pub fn experiment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.experiment(input.into());
             self
         }
         /// <p>The name of the experiment to start.</p>
@@ -2816,8 +2663,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time to end the experiment.</p>
-        pub fn analysis_complete_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.analysis_complete_time(inp);
+        pub fn analysis_complete_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.analysis_complete_time(input);
             self
         }
         /// <p>The date and time to end the experiment.</p>
@@ -2831,9 +2678,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartLaunch`.
     ///
-    /// <p>Starts an existing launch. To create a launch,
-    /// use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateLaunch.html">CreateLaunch</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Starts an existing launch. To create a launch, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateLaunch.html">CreateLaunch</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartLaunch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2878,10 +2724,10 @@ pub mod fluent_builders {
                 crate::input::StartLaunchInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2890,8 +2736,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the launch to start.</p>
-        pub fn project(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(inp);
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the launch to start.</p>
@@ -2900,8 +2746,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the launch to start.</p>
-        pub fn launch(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch(inp);
+        pub fn launch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch(input.into());
             self
         }
         /// <p>The name of the launch to start.</p>
@@ -2912,9 +2758,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopExperiment`.
     ///
-    /// <p>Stops an experiment that is currently running. If you stop an experiment, you can't
-    /// resume it or restart it.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Stops an experiment that is currently running. If you stop an experiment, you can't resume it or restart it.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopExperiment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2959,10 +2804,10 @@ pub mod fluent_builders {
                 crate::input::StopExperimentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2971,8 +2816,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the experiment to stop.</p>
-        pub fn project(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(inp);
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the experiment to stop.</p>
@@ -2981,8 +2826,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the experiment to stop.</p>
-        pub fn experiment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.experiment(inp);
+        pub fn experiment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.experiment(input.into());
             self
         }
         /// <p>The name of the experiment to stop.</p>
@@ -2990,14 +2835,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_experiment(input);
             self
         }
-        /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or
-        /// <code>CANCELLED</code> after it stops.</p>
-        pub fn desired_state(mut self, inp: crate::model::ExperimentStopDesiredState) -> Self {
-            self.inner = self.inner.desired_state(inp);
+        /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
+        pub fn desired_state(mut self, input: crate::model::ExperimentStopDesiredState) -> Self {
+            self.inner = self.inner.desired_state(input);
             self
         }
-        /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or
-        /// <code>CANCELLED</code> after it stops.</p>
+        /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
         pub fn set_desired_state(
             mut self,
             input: std::option::Option<crate::model::ExperimentStopDesiredState>,
@@ -3006,8 +2849,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string that describes why you are stopping the experiment.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(inp);
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
             self
         }
         /// <p>A string that describes why you are stopping the experiment.</p>
@@ -3018,12 +2861,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopLaunch`.
     ///
-    /// <p>Stops a launch that is currently running. After you stop a launch, you will not be able to resume it or restart it.
-    /// Also, it
-    /// will not be evaluated as a rule for traffic allocation, and the traffic that was allocated to the launch
-    /// will instead be available to the feature's experiment, if there is one. Otherwise, all traffic
-    /// will be served the default variation after the launch is stopped.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Stops a launch that is currently running. After you stop a launch, you will not be able to resume it or restart it. Also, it will not be evaluated as a rule for traffic allocation, and the traffic that was allocated to the launch will instead be available to the feature's experiment, if there is one. Otherwise, all traffic will be served the default variation after the launch is stopped.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopLaunch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3068,10 +2907,10 @@ pub mod fluent_builders {
                 crate::input::StopLaunchInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3080,8 +2919,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the launch that you want to stop.</p>
-        pub fn project(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(inp);
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the launch that you want to stop.</p>
@@ -3090,8 +2929,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the launch to stop.</p>
-        pub fn launch(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch(inp);
+        pub fn launch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch(input.into());
             self
         }
         /// <p>The name of the launch to stop.</p>
@@ -3099,14 +2938,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_launch(input);
             self
         }
-        /// <p>Specify whether to consider the launch as <code>COMPLETED</code> or
-        /// <code>CANCELLED</code> after it stops.</p>
-        pub fn desired_state(mut self, inp: crate::model::LaunchStopDesiredState) -> Self {
-            self.inner = self.inner.desired_state(inp);
+        /// <p>Specify whether to consider the launch as <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
+        pub fn desired_state(mut self, input: crate::model::LaunchStopDesiredState) -> Self {
+            self.inner = self.inner.desired_state(input);
             self
         }
-        /// <p>Specify whether to consider the launch as <code>COMPLETED</code> or
-        /// <code>CANCELLED</code> after it stops.</p>
+        /// <p>Specify whether to consider the launch as <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
         pub fn set_desired_state(
             mut self,
             input: std::option::Option<crate::model::LaunchStopDesiredState>,
@@ -3115,8 +2952,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string that describes why you are stopping the launch.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(inp);
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
             self
         }
         /// <p>A string that describes why you are stopping the launch.</p>
@@ -3127,20 +2964,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Assigns one or more tags (key-value pairs) to the specified CloudWatch Evidently resource. Projects,
-    /// features, launches, and experiments can be tagged.</p>
-    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-    /// permissions by granting a user
-    /// permission to access or change only resources with certain tag values.</p>
+    /// <p>Assigns one or more tags (key-value pairs) to the specified CloudWatch Evidently resource. Projects, features, launches, and experiments can be tagged.</p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-    /// <p>You can use the <code>TagResource</code> action with a resource that already has tags.
-    /// If you specify a new tag key for the resource,
-    /// this tag is appended to the list of tags associated
-    /// with the alarm. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces
-    /// the previous value for that tag.</p>
+    /// <p>You can use the <code>TagResource</code> action with a resource that already has tags. If you specify a new tag key for the resource, this tag is appended to the list of tags associated with the alarm. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag.</p>
     /// <p>You can associate as many as 50 tags with a resource.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3185,10 +3015,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3197,8 +3027,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the CloudWatch Evidently resource that you're adding tags to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the CloudWatch Evidently resource that you're adding tags to.</p>
@@ -3216,7 +3046,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The list of key-value pairs to associate with the resource.</p>
@@ -3233,7 +3063,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags from the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3278,10 +3108,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3290,8 +3120,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the CloudWatch Evidently resource that you're removing tags from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the CloudWatch Evidently resource that you're removing tags from.</p>
@@ -3304,8 +3134,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The list of tag keys to remove from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The list of tag keys to remove from the resource.</p>
@@ -3320,9 +3150,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateExperiment`.
     ///
     /// <p>Updates an Evidently experiment. </p>
-    /// <p>Don't use this operation to update an experiment's tag. Instead, use
-    /// <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Don't use this operation to update an experiment's tag. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateExperiment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3367,10 +3196,10 @@ pub mod fluent_builders {
                 crate::input::UpdateExperimentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3379,8 +3208,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the experiment that you want to update.</p>
-        pub fn project(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(inp);
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the experiment that you want to update.</p>
@@ -3389,8 +3218,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the experiment to update.</p>
-        pub fn experiment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.experiment(inp);
+        pub fn experiment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.experiment(input.into());
             self
         }
         /// <p>The name of the experiment to update.</p>
@@ -3399,8 +3228,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of the experiment.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description of the experiment.</p>
@@ -3413,8 +3242,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_treatments`](Self::set_treatments).
         ///
         /// <p>An array of structures that define the variations being tested in the experiment.</p>
-        pub fn treatments(mut self, inp: impl Into<crate::model::TreatmentConfig>) -> Self {
-            self.inner = self.inner.treatments(inp);
+        pub fn treatments(mut self, input: crate::model::TreatmentConfig) -> Self {
+            self.inner = self.inner.treatments(input);
             self
         }
         /// <p>An array of structures that define the variations being tested in the experiment.</p>
@@ -3429,14 +3258,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_metric_goals`](Self::set_metric_goals).
         ///
-        /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher
-        /// or lower value for each metric is the goal.</p>
-        pub fn metric_goals(mut self, inp: impl Into<crate::model::MetricGoalConfig>) -> Self {
-            self.inner = self.inner.metric_goals(inp);
+        /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
+        pub fn metric_goals(mut self, input: crate::model::MetricGoalConfig) -> Self {
+            self.inner = self.inner.metric_goals(input);
             self
         }
-        /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher
-        /// or lower value for each metric is the goal.</p>
+        /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
         pub fn set_metric_goals(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricGoalConfig>>,
@@ -3444,18 +3271,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_metric_goals(input);
             self
         }
-        /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID
-        /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
-        /// and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses
-        /// the experiment name as the <code>randomizationSalt</code>.</p>
-        pub fn randomization_salt(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.randomization_salt(inp);
+        /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
+        pub fn randomization_salt(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.randomization_salt(input.into());
             self
         }
-        /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID
-        /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
-        /// and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses
-        /// the experiment name as the <code>randomizationSalt</code>.</p>
+        /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
         pub fn set_randomization_salt(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3463,32 +3284,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_randomization_salt(input);
             self
         }
-        /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience
-        /// is the total audience minus the audience that you have allocated to overrides or current launches of
-        /// this feature.</p>
+        /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
         /// <p>This is represented in thousandths of a percent. For example, specify 20,000 to allocate 20% of the available audience.</p>
-        pub fn sampling_rate(mut self, inp: i64) -> Self {
-            self.inner = self.inner.sampling_rate(inp);
+        pub fn sampling_rate(mut self, input: i64) -> Self {
+            self.inner = self.inner.sampling_rate(input);
             self
         }
-        /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience
-        /// is the total audience minus the audience that you have allocated to overrides or current launches of
-        /// this feature.</p>
+        /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
         /// <p>This is represented in thousandths of a percent. For example, specify 20,000 to allocate 20% of the available audience.</p>
         pub fn set_sampling_rate(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_sampling_rate(input);
             self
         }
-        /// <p>A structure that contains the configuration of which variation o use as the "control"
-        /// version. The "control" version is used for comparison with other variations. This structure
-        /// also specifies how much experiment traffic is allocated to each variation.</p>
-        pub fn online_ab_config(mut self, inp: crate::model::OnlineAbConfig) -> Self {
-            self.inner = self.inner.online_ab_config(inp);
+        /// <p>A structure that contains the configuration of which variation o use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
+        pub fn online_ab_config(mut self, input: crate::model::OnlineAbConfig) -> Self {
+            self.inner = self.inner.online_ab_config(input);
             self
         }
-        /// <p>A structure that contains the configuration of which variation o use as the "control"
-        /// version. The "control" version is used for comparison with other variations. This structure
-        /// also specifies how much experiment traffic is allocated to each variation.</p>
+        /// <p>A structure that contains the configuration of which variation o use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
         pub fn set_online_ab_config(
             mut self,
             input: std::option::Option<crate::model::OnlineAbConfig>,
@@ -3500,9 +3313,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFeature`.
     ///
     /// <p>Updates an existing feature.</p>
-    /// <p>You can't use this operation to update the tags of an existing feature. Instead, use
-    /// <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You can't use this operation to update the tags of an existing feature. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFeature<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3547,10 +3359,10 @@ pub mod fluent_builders {
                 crate::input::UpdateFeatureInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3559,8 +3371,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the feature to be updated.</p>
-        pub fn project(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(inp);
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the feature to be updated.</p>
@@ -3569,8 +3381,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the feature to be updated.</p>
-        pub fn feature(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature(inp);
+        pub fn feature(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature(input.into());
             self
         }
         /// <p>The name of the feature to be updated.</p>
@@ -3578,16 +3390,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_feature(input);
             self
         }
-        /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing
-        /// launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation
-        /// to all users instead.</p>
-        pub fn evaluation_strategy(mut self, inp: crate::model::FeatureEvaluationStrategy) -> Self {
-            self.inner = self.inner.evaluation_strategy(inp);
+        /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation to all users instead.</p>
+        pub fn evaluation_strategy(
+            mut self,
+            input: crate::model::FeatureEvaluationStrategy,
+        ) -> Self {
+            self.inner = self.inner.evaluation_strategy(input);
             self
         }
-        /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing
-        /// launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation
-        /// to all users instead.</p>
+        /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation to all users instead.</p>
         pub fn set_evaluation_strategy(
             mut self,
             input: std::option::Option<crate::model::FeatureEvaluationStrategy>,
@@ -3596,8 +3407,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of the feature.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description of the feature.</p>
@@ -3609,21 +3420,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_add_or_update_variations`](Self::set_add_or_update_variations).
         ///
-        /// <p>To update variation configurations for this feature, or add new ones, specify this structure.
-        /// In this array, include any variations that you want to add or update. If the array includes a variation name that
-        /// already exists for this feature, it is updated. If it includes a new variation name, it is added
-        /// as a new variation.</p>
-        pub fn add_or_update_variations(
-            mut self,
-            inp: impl Into<crate::model::VariationConfig>,
-        ) -> Self {
-            self.inner = self.inner.add_or_update_variations(inp);
+        /// <p>To update variation configurations for this feature, or add new ones, specify this structure. In this array, include any variations that you want to add or update. If the array includes a variation name that already exists for this feature, it is updated. If it includes a new variation name, it is added as a new variation.</p>
+        pub fn add_or_update_variations(mut self, input: crate::model::VariationConfig) -> Self {
+            self.inner = self.inner.add_or_update_variations(input);
             self
         }
-        /// <p>To update variation configurations for this feature, or add new ones, specify this structure.
-        /// In this array, include any variations that you want to add or update. If the array includes a variation name that
-        /// already exists for this feature, it is updated. If it includes a new variation name, it is added
-        /// as a new variation.</p>
+        /// <p>To update variation configurations for this feature, or add new ones, specify this structure. In this array, include any variations that you want to add or update. If the array includes a variation name that already exists for this feature, it is updated. If it includes a new variation name, it is added as a new variation.</p>
         pub fn set_add_or_update_variations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VariationConfig>>,
@@ -3635,18 +3437,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_remove_variations`](Self::set_remove_variations).
         ///
-        /// <p>Removes a variation from the feature. If the variation you specify doesn't exist, then this
-        /// makes no change and does not report an error.</p>
-        /// <p>This operation fails if you try to remove a variation that is part of an
-        /// ongoing launch or experiment.</p>
-        pub fn remove_variations(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.remove_variations(inp);
+        /// <p>Removes a variation from the feature. If the variation you specify doesn't exist, then this makes no change and does not report an error.</p>
+        /// <p>This operation fails if you try to remove a variation that is part of an ongoing launch or experiment.</p>
+        pub fn remove_variations(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.remove_variations(input.into());
             self
         }
-        /// <p>Removes a variation from the feature. If the variation you specify doesn't exist, then this
-        /// makes no change and does not report an error.</p>
-        /// <p>This operation fails if you try to remove a variation that is part of an
-        /// ongoing launch or experiment.</p>
+        /// <p>Removes a variation from the feature. If the variation you specify doesn't exist, then this makes no change and does not report an error.</p>
+        /// <p>This operation fails if you try to remove a variation that is part of an ongoing launch or experiment.</p>
         pub fn set_remove_variations(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3654,16 +3452,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_remove_variations(input);
             self
         }
-        /// <p>The name of the variation to use as the default variation. The default
-        /// variation is served to users who are not allocated to any ongoing launches
-        /// or experiments of this feature.</p>
-        pub fn default_variation(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_variation(inp);
+        /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
+        pub fn default_variation(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_variation(input.into());
             self
         }
-        /// <p>The name of the variation to use as the default variation. The default
-        /// variation is served to users who are not allocated to any ongoing launches
-        /// or experiments of this feature.</p>
+        /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
         pub fn set_default_variation(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3675,22 +3469,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_entity_overrides`](Self::set_entity_overrides).
         ///
-        /// <p>Specified users that should always be served a specific variation of a feature. Each user
-        /// is specified by a key-value pair . For each key, specify a user by entering their user ID,
-        /// account ID, or some other identifier. For the value, specify the name of the variation that
-        /// they are to be served.</p>
+        /// <p>Specified users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
         pub fn entity_overrides(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.entity_overrides(k, v);
+            self.inner = self.inner.entity_overrides(k.into(), v.into());
             self
         }
-        /// <p>Specified users that should always be served a specific variation of a feature. Each user
-        /// is specified by a key-value pair . For each key, specify a user by entering their user ID,
-        /// account ID, or some other identifier. For the value, specify the name of the variation that
-        /// they are to be served.</p>
+        /// <p>Specified users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
         pub fn set_entity_overrides(
             mut self,
             input: std::option::Option<
@@ -3704,9 +3492,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateLaunch`.
     ///
     /// <p>Updates a launch of a given feature. </p>
-    /// <p>Don't use this operation to update the tags of an existing launch. Instead, use
-    /// <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Don't use this operation to update the tags of an existing launch. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLaunch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3751,10 +3538,10 @@ pub mod fluent_builders {
                 crate::input::UpdateLaunchInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3763,8 +3550,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the launch that you want to update.</p>
-        pub fn project(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(inp);
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the launch that you want to update.</p>
@@ -3773,8 +3560,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the launch that is to be updated.</p>
-        pub fn launch(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch(inp);
+        pub fn launch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch(input.into());
             self
         }
         /// <p>The name of the launch that is to be updated.</p>
@@ -3783,8 +3570,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description for the launch.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description for the launch.</p>
@@ -3796,14 +3583,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
-        /// <p>An array of structures that contains the feature and variations that are to be used for
-        /// the launch.</p>
-        pub fn groups(mut self, inp: impl Into<crate::model::LaunchGroupConfig>) -> Self {
-            self.inner = self.inner.groups(inp);
+        /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
+        pub fn groups(mut self, input: crate::model::LaunchGroupConfig) -> Self {
+            self.inner = self.inner.groups(input);
             self
         }
-        /// <p>An array of structures that contains the feature and variations that are to be used for
-        /// the launch.</p>
+        /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
         pub fn set_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LaunchGroupConfig>>,
@@ -3815,17 +3600,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_metric_monitors`](Self::set_metric_monitors).
         ///
-        /// <p>An array of structures that define the metrics that will be used to monitor
-        /// the launch performance.</p>
-        pub fn metric_monitors(
-            mut self,
-            inp: impl Into<crate::model::MetricMonitorConfig>,
-        ) -> Self {
-            self.inner = self.inner.metric_monitors(inp);
+        /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
+        pub fn metric_monitors(mut self, input: crate::model::MetricMonitorConfig) -> Self {
+            self.inner = self.inner.metric_monitors(input);
             self
         }
-        /// <p>An array of structures that define the metrics that will be used to monitor
-        /// the launch performance.</p>
+        /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
         pub fn set_metric_monitors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricMonitorConfig>>,
@@ -3833,18 +3613,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_metric_monitors(input);
             self
         }
-        /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID
-        /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
-        /// and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses
-        /// the launch name as the <code>randomizationSalt</code>.</p>
-        pub fn randomization_salt(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.randomization_salt(inp);
+        /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
+        pub fn randomization_salt(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.randomization_salt(input.into());
             self
         }
-        /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID
-        /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
-        /// and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses
-        /// the launch name as the <code>randomizationSalt</code>.</p>
+        /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
         pub fn set_randomization_salt(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3852,17 +3626,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_randomization_salt(input);
             self
         }
-        /// <p>An array of structures that define the traffic allocation percentages among the feature
-        /// variations during each step of the launch.</p>
+        /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
         pub fn scheduled_splits_config(
             mut self,
-            inp: crate::model::ScheduledSplitsLaunchConfig,
+            input: crate::model::ScheduledSplitsLaunchConfig,
         ) -> Self {
-            self.inner = self.inner.scheduled_splits_config(inp);
+            self.inner = self.inner.scheduled_splits_config(input);
             self
         }
-        /// <p>An array of structures that define the traffic allocation percentages among the feature
-        /// variations during each step of the launch.</p>
+        /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
         pub fn set_scheduled_splits_config(
             mut self,
             input: std::option::Option<crate::model::ScheduledSplitsLaunchConfig>,
@@ -3875,11 +3647,9 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the description of an existing project.</p>
     /// <p>To create a new project, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateProject.html">CreateProject</a>.</p>
-    /// <p>Don't use this operation to update the data storage options of a project. Instead, use
-    /// <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateProjectDataDelivery.html">UpdateProjectDataDelivery</a>. </p>
-    /// <p>Don't use this operation to update the tags of a project. Instead, use
-    /// <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Don't use this operation to update the data storage options of a project. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateProjectDataDelivery.html">UpdateProjectDataDelivery</a>. </p>
+    /// <p>Don't use this operation to update the tags of a project. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3924,10 +3694,10 @@ pub mod fluent_builders {
                 crate::input::UpdateProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3936,8 +3706,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project to update.</p>
-        pub fn project(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(inp);
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project to update.</p>
@@ -3946,8 +3716,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of the project.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description of the project.</p>
@@ -3958,12 +3728,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateProjectDataDelivery`.
     ///
-    /// <p>Updates the data storage options for this project. If you store evaluation events, you an
-    /// keep them and analyze them on your own. If you choose not to store evaluation events,
-    /// Evidently deletes them after using them to produce metrics and other experiment results that
-    /// you can view.</p>
+    /// <p>Updates the data storage options for this project. If you store evaluation events, you an keep them and analyze them on your own. If you choose not to store evaluation events, Evidently deletes them after using them to produce metrics and other experiment results that you can view.</p>
     /// <p>You can't specify both <code>cloudWatchLogs</code> and <code>s3Destination</code> in the same operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProjectDataDelivery<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4008,10 +3775,10 @@ pub mod fluent_builders {
                 crate::input::UpdateProjectDataDeliveryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4020,8 +3787,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that you want to modify the data storage options for.</p>
-        pub fn project(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(inp);
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that you want to modify the data storage options for.</p>
@@ -4030,8 +3797,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A structure containing the S3 bucket name and bucket prefix where you want to store evaluation events.</p>
-        pub fn s3_destination(mut self, inp: crate::model::S3DestinationConfig) -> Self {
-            self.inner = self.inner.s3_destination(inp);
+        pub fn s3_destination(mut self, input: crate::model::S3DestinationConfig) -> Self {
+            self.inner = self.inner.s3_destination(input);
             self
         }
         /// <p>A structure containing the S3 bucket name and bucket prefix where you want to store evaluation events.</p>
@@ -4042,17 +3809,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_s3_destination(input);
             self
         }
-        /// <p>A structure containing the CloudWatch Logs log group where you want to store evaluation
-        /// events.</p>
+        /// <p>A structure containing the CloudWatch Logs log group where you want to store evaluation events.</p>
         pub fn cloud_watch_logs(
             mut self,
-            inp: crate::model::CloudWatchLogsDestinationConfig,
+            input: crate::model::CloudWatchLogsDestinationConfig,
         ) -> Self {
-            self.inner = self.inner.cloud_watch_logs(inp);
+            self.inner = self.inner.cloud_watch_logs(input);
             self
         }
-        /// <p>A structure containing the CloudWatch Logs log group where you want to store evaluation
-        /// events.</p>
+        /// <p>A structure containing the CloudWatch Logs log group where you want to store evaluation events.</p>
         pub fn set_cloud_watch_logs(
             mut self,
             input: std::option::Option<crate::model::CloudWatchLogsDestinationConfig>,
@@ -4062,6 +3827,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

@@ -205,12 +205,9 @@ pub mod list_services_output {
         /// To override the contents of this collection use [`set_service_summary_list`](Self::set_service_summary_list).
         ///
         /// <p> The list of <code>ServiceSummary</code> objects. </p>
-        pub fn service_summary_list(
-            mut self,
-            input: impl Into<crate::model::ServiceSummary>,
-        ) -> Self {
+        pub fn service_summary_list(mut self, input: crate::model::ServiceSummary) -> Self {
             let mut v = self.service_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_summary_list = Some(v);
             self
         }
@@ -291,9 +288,9 @@ pub mod list_routes_output {
         /// To override the contents of this collection use [`set_route_summary_list`](Self::set_route_summary_list).
         ///
         /// <p>The list of <code>RouteSummary</code> objects. </p>
-        pub fn route_summary_list(mut self, input: impl Into<crate::model::RouteSummary>) -> Self {
+        pub fn route_summary_list(mut self, input: crate::model::RouteSummary) -> Self {
             let mut v = self.route_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.route_summary_list = Some(v);
             self
         }
@@ -374,12 +371,9 @@ pub mod list_environment_vpcs_output {
         /// To override the contents of this collection use [`set_environment_vpc_list`](Self::set_environment_vpc_list).
         ///
         /// <p>The list of <code>EnvironmentVpc</code> objects. </p>
-        pub fn environment_vpc_list(
-            mut self,
-            input: impl Into<crate::model::EnvironmentVpc>,
-        ) -> Self {
+        pub fn environment_vpc_list(mut self, input: crate::model::EnvironmentVpc) -> Self {
             let mut v = self.environment_vpc_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environment_vpc_list = Some(v);
             self
         }
@@ -463,12 +457,9 @@ pub mod list_environments_output {
         /// To override the contents of this collection use [`set_environment_summary_list`](Self::set_environment_summary_list).
         ///
         /// <p>The list of <code>EnvironmentSummary</code> objects. </p>
-        pub fn environment_summary_list(
-            mut self,
-            input: impl Into<crate::model::EnvironmentSummary>,
-        ) -> Self {
+        pub fn environment_summary_list(mut self, input: crate::model::EnvironmentSummary) -> Self {
             let mut v = self.environment_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environment_summary_list = Some(v);
             self
         }
@@ -552,12 +543,9 @@ pub mod list_applications_output {
         /// To override the contents of this collection use [`set_application_summary_list`](Self::set_application_summary_list).
         ///
         /// <p>The list of <code>ApplicationSummary</code> objects. </p>
-        pub fn application_summary_list(
-            mut self,
-            input: impl Into<crate::model::ApplicationSummary>,
-        ) -> Self {
+        pub fn application_summary_list(mut self, input: crate::model::ApplicationSummary) -> Self {
             let mut v = self.application_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.application_summary_list = Some(v);
             self
         }
@@ -621,8 +609,7 @@ pub struct GetServiceOutput {
     pub endpoint_type: std::option::Option<crate::model::ServiceEndpointType>,
     /// <p>The configuration for the URL endpoint type.</p>
     /// <p>The <b>Url</b> isthe URL of the endpoint type.</p>
-    /// <p>The <b>HealthUrl</b> is the health check URL of the endpoint
-    /// type. </p>
+    /// <p>The <b>HealthUrl</b> is the health check URL of the endpoint type. </p>
     pub url_endpoint: std::option::Option<crate::model::UrlEndpointConfig>,
     /// <p>The configuration for the Lambda endpoint type.</p>
     /// <p>The <b>Arn</b> is the Amazon Resource Name (ARN) of the Lambda function associated with this service. </p>
@@ -682,8 +669,7 @@ impl GetServiceOutput {
     }
     /// <p>The configuration for the URL endpoint type.</p>
     /// <p>The <b>Url</b> isthe URL of the endpoint type.</p>
-    /// <p>The <b>HealthUrl</b> is the health check URL of the endpoint
-    /// type. </p>
+    /// <p>The <b>HealthUrl</b> is the health check URL of the endpoint type. </p>
     pub fn url_endpoint(&self) -> std::option::Option<&crate::model::UrlEndpointConfig> {
         self.url_endpoint.as_ref()
     }
@@ -883,16 +869,14 @@ pub mod get_service_output {
         }
         /// <p>The configuration for the URL endpoint type.</p>
         /// <p>The <b>Url</b> isthe URL of the endpoint type.</p>
-        /// <p>The <b>HealthUrl</b> is the health check URL of the endpoint
-        /// type. </p>
+        /// <p>The <b>HealthUrl</b> is the health check URL of the endpoint type. </p>
         pub fn url_endpoint(mut self, input: crate::model::UrlEndpointConfig) -> Self {
             self.url_endpoint = Some(input);
             self
         }
         /// <p>The configuration for the URL endpoint type.</p>
         /// <p>The <b>Url</b> isthe URL of the endpoint type.</p>
-        /// <p>The <b>HealthUrl</b> is the health check URL of the endpoint
-        /// type. </p>
+        /// <p>The <b>HealthUrl</b> is the health check URL of the endpoint type. </p>
         pub fn set_url_endpoint(
             mut self,
             input: std::option::Option<crate::model::UrlEndpointConfig>,
@@ -1025,12 +1009,8 @@ impl GetServiceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRouteOutput {
     /// <p>The unique identifier of the route.</p>
-    /// <p>
-    /// <b>DEFAULT</b>: All traffic that does not match another route is
-    /// forwarded to the default route. Applications must have a default route before any other routes
-    /// can be created.</p>
-    /// <p>
-    /// <b>URI_PATH</b>: A route that is based on a URI path.</p>
+    /// <p> <b>DEFAULT</b>: All traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created.</p>
+    /// <p> <b>URI_PATH</b>: A route that is based on a URI path.</p>
     pub route_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the route.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -1046,15 +1026,11 @@ pub struct GetRouteOutput {
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Unique identifier of the environment.</p>
     pub environment_id: std::option::Option<std::string::String>,
-    /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to
-    /// the base of the application. </p>
+    /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application. </p>
     pub source_path: std::option::Option<std::string::String>,
-    /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present,
-    /// only HTTP requests using that method are forwarded to this route’s service. </p>
+    /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
     pub methods: std::option::Option<std::vec::Vec<crate::model::HttpMethod>>,
-    /// <p>Indicates whether to match all subpaths of the given source path. If this value is
-    /// <code>false</code>, requests must match the source path exactly before they are forwarded to
-    /// this route's service. </p>
+    /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
     pub include_child_paths: std::option::Option<bool>,
     /// <p>A mapping of Amazon API Gateway path resources to resource IDs. </p>
     pub path_resource_to_id:
@@ -1073,12 +1049,8 @@ pub struct GetRouteOutput {
 }
 impl GetRouteOutput {
     /// <p>The unique identifier of the route.</p>
-    /// <p>
-    /// <b>DEFAULT</b>: All traffic that does not match another route is
-    /// forwarded to the default route. Applications must have a default route before any other routes
-    /// can be created.</p>
-    /// <p>
-    /// <b>URI_PATH</b>: A route that is based on a URI path.</p>
+    /// <p> <b>DEFAULT</b>: All traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created.</p>
+    /// <p> <b>URI_PATH</b>: A route that is based on a URI path.</p>
     pub fn route_id(&self) -> std::option::Option<&str> {
         self.route_id.as_deref()
     }
@@ -1110,19 +1082,15 @@ impl GetRouteOutput {
     pub fn environment_id(&self) -> std::option::Option<&str> {
         self.environment_id.as_deref()
     }
-    /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to
-    /// the base of the application. </p>
+    /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application. </p>
     pub fn source_path(&self) -> std::option::Option<&str> {
         self.source_path.as_deref()
     }
-    /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present,
-    /// only HTTP requests using that method are forwarded to this route’s service. </p>
+    /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
     pub fn methods(&self) -> std::option::Option<&[crate::model::HttpMethod]> {
         self.methods.as_deref()
     }
-    /// <p>Indicates whether to match all subpaths of the given source path. If this value is
-    /// <code>false</code>, requests must match the source path exactly before they are forwarded to
-    /// this route's service. </p>
+    /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
     pub fn include_child_paths(&self) -> std::option::Option<bool> {
         self.include_child_paths
     }
@@ -1210,23 +1178,15 @@ pub mod get_route_output {
     }
     impl Builder {
         /// <p>The unique identifier of the route.</p>
-        /// <p>
-        /// <b>DEFAULT</b>: All traffic that does not match another route is
-        /// forwarded to the default route. Applications must have a default route before any other routes
-        /// can be created.</p>
-        /// <p>
-        /// <b>URI_PATH</b>: A route that is based on a URI path.</p>
+        /// <p> <b>DEFAULT</b>: All traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created.</p>
+        /// <p> <b>URI_PATH</b>: A route that is based on a URI path.</p>
         pub fn route_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.route_id = Some(input.into());
             self
         }
         /// <p>The unique identifier of the route.</p>
-        /// <p>
-        /// <b>DEFAULT</b>: All traffic that does not match another route is
-        /// forwarded to the default route. Applications must have a default route before any other routes
-        /// can be created.</p>
-        /// <p>
-        /// <b>URI_PATH</b>: A route that is based on a URI path.</p>
+        /// <p> <b>DEFAULT</b>: All traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created.</p>
+        /// <p> <b>URI_PATH</b>: A route that is based on a URI path.</p>
         pub fn set_route_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.route_id = input;
             self
@@ -1316,14 +1276,12 @@ pub mod get_route_output {
             self.environment_id = input;
             self
         }
-        /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to
-        /// the base of the application. </p>
+        /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application. </p>
         pub fn source_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_path = Some(input.into());
             self
         }
-        /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to
-        /// the base of the application. </p>
+        /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application. </p>
         pub fn set_source_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_path = input;
             self
@@ -1332,16 +1290,14 @@ pub mod get_route_output {
         ///
         /// To override the contents of this collection use [`set_methods`](Self::set_methods).
         ///
-        /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present,
-        /// only HTTP requests using that method are forwarded to this route’s service. </p>
-        pub fn methods(mut self, input: impl Into<crate::model::HttpMethod>) -> Self {
+        /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
+        pub fn methods(mut self, input: crate::model::HttpMethod) -> Self {
             let mut v = self.methods.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.methods = Some(v);
             self
         }
-        /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present,
-        /// only HTTP requests using that method are forwarded to this route’s service. </p>
+        /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
         pub fn set_methods(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HttpMethod>>,
@@ -1349,16 +1305,12 @@ pub mod get_route_output {
             self.methods = input;
             self
         }
-        /// <p>Indicates whether to match all subpaths of the given source path. If this value is
-        /// <code>false</code>, requests must match the source path exactly before they are forwarded to
-        /// this route's service. </p>
+        /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
         pub fn include_child_paths(mut self, input: bool) -> Self {
             self.include_child_paths = Some(input);
             self
         }
-        /// <p>Indicates whether to match all subpaths of the given source path. If this value is
-        /// <code>false</code>, requests must match the source path exactly before they are forwarded to
-        /// this route's service. </p>
+        /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
         pub fn set_include_child_paths(mut self, input: std::option::Option<bool>) -> Self {
             self.include_child_paths = input;
             self
@@ -3262,12 +3214,7 @@ impl CreateServiceOutput {
 pub struct CreateRouteOutput {
     /// <p>The unique identifier of the route.</p>
     pub route_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the route. The format for this ARN is
-    /// <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i>
-    /// </code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the route owner.</p>
     pub owner_account_id: std::option::Option<std::string::String>,
@@ -3275,8 +3222,7 @@ pub struct CreateRouteOutput {
     pub created_by_account_id: std::option::Option<std::string::String>,
     /// <p>The route type of the route.</p>
     pub route_type: std::option::Option<crate::model::RouteType>,
-    /// <p>The ID of service in which the rute iscreated. Traffic that matches this route is
-    /// forwarded to this service.</p>
+    /// <p>The ID of service in which the rute iscreated. Traffic that matches this route is forwarded to this service.</p>
     pub service_id: std::option::Option<std::string::String>,
     /// <p>The ID of the application in which the route is created.</p>
     pub application_id: std::option::Option<std::string::String>,
@@ -3297,12 +3243,7 @@ impl CreateRouteOutput {
     pub fn route_id(&self) -> std::option::Option<&str> {
         self.route_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the route. The format for this ARN is
-    /// <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i>
-    /// </code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -3318,8 +3259,7 @@ impl CreateRouteOutput {
     pub fn route_type(&self) -> std::option::Option<&crate::model::RouteType> {
         self.route_type.as_ref()
     }
-    /// <p>The ID of service in which the rute iscreated. Traffic that matches this route is
-    /// forwarded to this service.</p>
+    /// <p>The ID of service in which the rute iscreated. Traffic that matches this route is forwarded to this service.</p>
     pub fn service_id(&self) -> std::option::Option<&str> {
         self.service_id.as_deref()
     }
@@ -3401,22 +3341,12 @@ pub mod create_route_output {
             self.route_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the route. The format for this ARN is
-        /// <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i>
-        /// </code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the route. The format for this ARN is
-        /// <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i>
-        /// </code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3460,14 +3390,12 @@ pub mod create_route_output {
             self.route_type = input;
             self
         }
-        /// <p>The ID of service in which the rute iscreated. Traffic that matches this route is
-        /// forwarded to this service.</p>
+        /// <p>The ID of service in which the rute iscreated. Traffic that matches this route is forwarded to this service.</p>
         pub fn service_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_id = Some(input.into());
             self
         }
-        /// <p>The ID of service in which the rute iscreated. Traffic that matches this route is
-        /// forwarded to this service.</p>
+        /// <p>The ID of service in which the rute iscreated. Traffic that matches this route is forwarded to this service.</p>
         pub fn set_service_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_id = input;
             self
@@ -3855,12 +3783,7 @@ impl CreateEnvironmentOutput {
 pub struct CreateApplicationOutput {
     /// <p>The name of the application.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is
-    /// <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i>
-    /// </code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID of the application owner.</p>
     pub owner_account_id: std::option::Option<std::string::String>,
@@ -3874,8 +3797,7 @@ pub struct CreateApplicationOutput {
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The proxy type of the proxy created within the application. </p>
     pub proxy_type: std::option::Option<crate::model::ProxyType>,
-    /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the
-    /// proxy. </p>
+    /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
     pub api_gateway_proxy: std::option::Option<crate::model::ApiGatewayProxyInput>,
     /// <p>The current state of the application. </p>
     pub state: std::option::Option<crate::model::ApplicationState>,
@@ -3892,12 +3814,7 @@ impl CreateApplicationOutput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is
-    /// <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i>
-    /// </code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -3925,8 +3842,7 @@ impl CreateApplicationOutput {
     pub fn proxy_type(&self) -> std::option::Option<&crate::model::ProxyType> {
         self.proxy_type.as_ref()
     }
-    /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the
-    /// proxy. </p>
+    /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
     pub fn api_gateway_proxy(&self) -> std::option::Option<&crate::model::ApiGatewayProxyInput> {
         self.api_gateway_proxy.as_ref()
     }
@@ -4002,22 +3918,12 @@ pub mod create_application_output {
             self.name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is
-        /// <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i>
-        /// </code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is
-        /// <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i>
-        /// </code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -4097,14 +4003,12 @@ pub mod create_application_output {
             self.proxy_type = input;
             self
         }
-        /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the
-        /// proxy. </p>
+        /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
         pub fn api_gateway_proxy(mut self, input: crate::model::ApiGatewayProxyInput) -> Self {
             self.api_gateway_proxy = Some(input);
             self
         }
-        /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the
-        /// proxy. </p>
+        /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
         pub fn set_api_gateway_proxy(
             mut self,
             input: std::option::Option<crate::model::ApiGatewayProxyInput>,

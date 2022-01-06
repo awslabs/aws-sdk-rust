@@ -14,8 +14,7 @@ pub struct CreateLifecyclePolicyError {
 pub enum CreateLifecyclePolicyErrorKind {
     /// <p>The service failed in an unexpected way.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Bad request. The request is missing required parameters or has invalid
-    /// parameters.</p>
+    /// <p>Bad request. The request is missing required parameters or has invalid parameters.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request failed because a limit was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -62,8 +61,6 @@ impl CreateLifecyclePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -179,8 +176,6 @@ impl DeleteLifecyclePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -249,8 +244,7 @@ pub struct GetLifecyclePoliciesError {
 pub enum GetLifecyclePoliciesErrorKind {
     /// <p>The service failed in an unexpected way.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Bad request. The request is missing required parameters or has invalid
-    /// parameters.</p>
+    /// <p>Bad request. The request is missing required parameters or has invalid parameters.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request failed because a limit was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -300,8 +294,6 @@ impl GetLifecyclePoliciesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -425,8 +417,6 @@ impl GetLifecyclePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -495,8 +485,7 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// <p>The service failed in an unexpected way.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Bad request. The request is missing required parameters or has invalid
-    /// parameters.</p>
+    /// <p>Bad request. The request is missing required parameters or has invalid parameters.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -543,8 +532,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -613,8 +600,7 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>The service failed in an unexpected way.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Bad request. The request is missing required parameters or has invalid
-    /// parameters.</p>
+    /// <p>Bad request. The request is missing required parameters or has invalid parameters.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -661,8 +647,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -725,8 +709,7 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>The service failed in an unexpected way.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Bad request. The request is missing required parameters or has invalid
-    /// parameters.</p>
+    /// <p>Bad request. The request is missing required parameters or has invalid parameters.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -773,8 +756,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -843,8 +824,7 @@ pub struct UpdateLifecyclePolicyError {
 pub enum UpdateLifecyclePolicyErrorKind {
     /// <p>The service failed in an unexpected way.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Bad request. The request is missing required parameters or has invalid
-    /// parameters.</p>
+    /// <p>Bad request. The request is missing required parameters or has invalid parameters.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request failed because a limit was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -894,8 +874,6 @@ impl UpdateLifecyclePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1199,8 +1177,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>Bad request. The request is missing required parameters or has invalid
-/// parameters.</p>
+/// <p>Bad request. The request is missing required parameters or has invalid parameters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRequestException {

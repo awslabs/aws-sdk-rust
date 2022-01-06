@@ -23,8 +23,7 @@ pub enum Error {
     LockedSubscriptionException(crate::error::LockedSubscriptionException),
     /// <p>The ARN of the role that you specifed does not exist.</p>
     NoAssociatedRoleException(crate::error::NoAssociatedRoleException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource already exists. If available, this exception includes details in additional properties. </p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),

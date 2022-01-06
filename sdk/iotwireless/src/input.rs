@@ -42,9 +42,9 @@ pub mod associate_aws_account_with_partner_account_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -76,7 +76,7 @@ pub type AssociateAwsAccountWithPartnerAccountInputOperationOutputAlias =
     crate::operation::AssociateAwsAccountWithPartnerAccount;
 #[doc(hidden)]
 pub type AssociateAwsAccountWithPartnerAccountInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateAwsAccountWithPartnerAccountInput {
     /// Consumes the builder and constructs an Operation<[`AssociateAwsAccountWithPartnerAccount`](crate::operation::AssociateAwsAccountWithPartnerAccount)>
     #[allow(clippy::let_and_return)]
@@ -87,7 +87,7 @@ impl AssociateAwsAccountWithPartnerAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateAwsAccountWithPartnerAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -171,7 +171,7 @@ impl AssociateAwsAccountWithPartnerAccountInput {
             "AssociateAwsAccountWithPartnerAccount",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -246,7 +246,7 @@ pub type AssociateMulticastGroupWithFuotaTaskInputOperationOutputAlias =
     crate::operation::AssociateMulticastGroupWithFuotaTask;
 #[doc(hidden)]
 pub type AssociateMulticastGroupWithFuotaTaskInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateMulticastGroupWithFuotaTaskInput {
     /// Consumes the builder and constructs an Operation<[`AssociateMulticastGroupWithFuotaTask`](crate::operation::AssociateMulticastGroupWithFuotaTask)>
     #[allow(clippy::let_and_return)]
@@ -257,7 +257,7 @@ impl AssociateMulticastGroupWithFuotaTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateMulticastGroupWithFuotaTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -354,7 +354,7 @@ impl AssociateMulticastGroupWithFuotaTaskInput {
             "AssociateMulticastGroupWithFuotaTask",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -429,7 +429,7 @@ pub type AssociateWirelessDeviceWithFuotaTaskInputOperationOutputAlias =
     crate::operation::AssociateWirelessDeviceWithFuotaTask;
 #[doc(hidden)]
 pub type AssociateWirelessDeviceWithFuotaTaskInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateWirelessDeviceWithFuotaTaskInput {
     /// Consumes the builder and constructs an Operation<[`AssociateWirelessDeviceWithFuotaTask`](crate::operation::AssociateWirelessDeviceWithFuotaTask)>
     #[allow(clippy::let_and_return)]
@@ -440,7 +440,7 @@ impl AssociateWirelessDeviceWithFuotaTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateWirelessDeviceWithFuotaTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -537,7 +537,7 @@ impl AssociateWirelessDeviceWithFuotaTaskInput {
             "AssociateWirelessDeviceWithFuotaTask",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -614,7 +614,7 @@ pub type AssociateWirelessDeviceWithMulticastGroupInputOperationOutputAlias =
     crate::operation::AssociateWirelessDeviceWithMulticastGroup;
 #[doc(hidden)]
 pub type AssociateWirelessDeviceWithMulticastGroupInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateWirelessDeviceWithMulticastGroupInput {
     /// Consumes the builder and constructs an Operation<[`AssociateWirelessDeviceWithMulticastGroup`](crate::operation::AssociateWirelessDeviceWithMulticastGroup)>
     #[allow(clippy::let_and_return)]
@@ -625,7 +625,7 @@ impl AssociateWirelessDeviceWithMulticastGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateWirelessDeviceWithMulticastGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -722,7 +722,7 @@ impl AssociateWirelessDeviceWithMulticastGroupInput {
             "AssociateWirelessDeviceWithMulticastGroup",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -794,7 +794,8 @@ pub mod associate_wireless_device_with_thing_input {
 pub type AssociateWirelessDeviceWithThingInputOperationOutputAlias =
     crate::operation::AssociateWirelessDeviceWithThing;
 #[doc(hidden)]
-pub type AssociateWirelessDeviceWithThingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateWirelessDeviceWithThingInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateWirelessDeviceWithThingInput {
     /// Consumes the builder and constructs an Operation<[`AssociateWirelessDeviceWithThing`](crate::operation::AssociateWirelessDeviceWithThing)>
     #[allow(clippy::let_and_return)]
@@ -805,7 +806,7 @@ impl AssociateWirelessDeviceWithThingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateWirelessDeviceWithThing,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -902,7 +903,7 @@ impl AssociateWirelessDeviceWithThingInput {
             "AssociateWirelessDeviceWithThing",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -977,7 +978,7 @@ pub type AssociateWirelessGatewayWithCertificateInputOperationOutputAlias =
     crate::operation::AssociateWirelessGatewayWithCertificate;
 #[doc(hidden)]
 pub type AssociateWirelessGatewayWithCertificateInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateWirelessGatewayWithCertificateInput {
     /// Consumes the builder and constructs an Operation<[`AssociateWirelessGatewayWithCertificate`](crate::operation::AssociateWirelessGatewayWithCertificate)>
     #[allow(clippy::let_and_return)]
@@ -988,7 +989,7 @@ impl AssociateWirelessGatewayWithCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateWirelessGatewayWithCertificate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1085,7 +1086,7 @@ impl AssociateWirelessGatewayWithCertificateInput {
             "AssociateWirelessGatewayWithCertificate",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1156,7 +1157,8 @@ pub mod associate_wireless_gateway_with_thing_input {
 pub type AssociateWirelessGatewayWithThingInputOperationOutputAlias =
     crate::operation::AssociateWirelessGatewayWithThing;
 #[doc(hidden)]
-pub type AssociateWirelessGatewayWithThingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateWirelessGatewayWithThingInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateWirelessGatewayWithThingInput {
     /// Consumes the builder and constructs an Operation<[`AssociateWirelessGatewayWithThing`](crate::operation::AssociateWirelessGatewayWithThing)>
     #[allow(clippy::let_and_return)]
@@ -1167,7 +1169,7 @@ impl AssociateWirelessGatewayWithThingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateWirelessGatewayWithThing,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1264,7 +1266,7 @@ impl AssociateWirelessGatewayWithThingInput {
             "AssociateWirelessGatewayWithThing",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1321,7 +1323,7 @@ pub mod cancel_multicast_group_session_input {
 pub type CancelMulticastGroupSessionInputOperationOutputAlias =
     crate::operation::CancelMulticastGroupSession;
 #[doc(hidden)]
-pub type CancelMulticastGroupSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelMulticastGroupSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelMulticastGroupSessionInput {
     /// Consumes the builder and constructs an Operation<[`CancelMulticastGroupSession`](crate::operation::CancelMulticastGroupSession)>
     #[allow(clippy::let_and_return)]
@@ -1332,7 +1334,7 @@ impl CancelMulticastGroupSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelMulticastGroupSession,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1422,7 +1424,7 @@ impl CancelMulticastGroupSessionInput {
             "CancelMulticastGroupSession",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1510,9 +1512,9 @@ pub mod create_destination_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the new destination. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1559,7 +1561,7 @@ pub mod create_destination_input {
 #[doc(hidden)]
 pub type CreateDestinationInputOperationOutputAlias = crate::operation::CreateDestination;
 #[doc(hidden)]
-pub type CreateDestinationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDestinationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDestinationInput {
     /// Consumes the builder and constructs an Operation<[`CreateDestination`](crate::operation::CreateDestination)>
     #[allow(clippy::let_and_return)]
@@ -1570,7 +1572,7 @@ impl CreateDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDestination,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1653,7 +1655,7 @@ impl CreateDestinationInput {
             "CreateDestination",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1716,9 +1718,9 @@ pub mod create_device_profile_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the new device profile. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1762,7 +1764,7 @@ pub mod create_device_profile_input {
 #[doc(hidden)]
 pub type CreateDeviceProfileInputOperationOutputAlias = crate::operation::CreateDeviceProfile;
 #[doc(hidden)]
-pub type CreateDeviceProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDeviceProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDeviceProfileInput {
     /// Consumes the builder and constructs an Operation<[`CreateDeviceProfile`](crate::operation::CreateDeviceProfile)>
     #[allow(clippy::let_and_return)]
@@ -1773,7 +1775,7 @@ impl CreateDeviceProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDeviceProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1856,7 +1858,7 @@ impl CreateDeviceProfileInput {
             "CreateDeviceProfile",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1971,9 +1973,9 @@ pub mod create_fuota_task_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2007,7 +2009,7 @@ pub mod create_fuota_task_input {
 #[doc(hidden)]
 pub type CreateFuotaTaskInputOperationOutputAlias = crate::operation::CreateFuotaTask;
 #[doc(hidden)]
-pub type CreateFuotaTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFuotaTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFuotaTaskInput {
     /// Consumes the builder and constructs an Operation<[`CreateFuotaTask`](crate::operation::CreateFuotaTask)>
     #[allow(clippy::let_and_return)]
@@ -2018,7 +2020,7 @@ impl CreateFuotaTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFuotaTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2101,7 +2103,7 @@ impl CreateFuotaTaskInput {
             "CreateFuotaTask",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2157,16 +2159,12 @@ pub mod create_multicast_group_input {
             self.description = input;
             self
         }
-        /// <p>Each resource must have a unique client request token. If you try to create a new resource with the
-        /// same token as a resource that already exists, an exception occurs. If you omit this value,
-        /// AWS SDKs will automatically generate a unique client request. </p>
+        /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Each resource must have a unique client request token. If you try to create a new resource with the
-        /// same token as a resource that already exists, an exception occurs. If you omit this value,
-        /// AWS SDKs will automatically generate a unique client request. </p>
+        /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2192,9 +2190,9 @@ pub mod create_multicast_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2226,7 +2224,7 @@ pub mod create_multicast_group_input {
 #[doc(hidden)]
 pub type CreateMulticastGroupInputOperationOutputAlias = crate::operation::CreateMulticastGroup;
 #[doc(hidden)]
-pub type CreateMulticastGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateMulticastGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMulticastGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateMulticastGroup`](crate::operation::CreateMulticastGroup)>
     #[allow(clippy::let_and_return)]
@@ -2237,7 +2235,7 @@ impl CreateMulticastGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMulticastGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2322,7 +2320,7 @@ impl CreateMulticastGroupInput {
             "CreateMulticastGroup",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2385,9 +2383,9 @@ pub mod create_service_profile_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the new service profile. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2431,7 +2429,7 @@ pub mod create_service_profile_input {
 #[doc(hidden)]
 pub type CreateServiceProfileInputOperationOutputAlias = crate::operation::CreateServiceProfile;
 #[doc(hidden)]
-pub type CreateServiceProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateServiceProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateServiceProfileInput {
     /// Consumes the builder and constructs an Operation<[`CreateServiceProfile`](crate::operation::CreateServiceProfile)>
     #[allow(clippy::let_and_return)]
@@ -2442,7 +2440,7 @@ impl CreateServiceProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateServiceProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2527,7 +2525,7 @@ impl CreateServiceProfileInput {
             "CreateServiceProfile",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2642,9 +2640,9 @@ pub mod create_wireless_device_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2678,7 +2676,7 @@ pub mod create_wireless_device_input {
 #[doc(hidden)]
 pub type CreateWirelessDeviceInputOperationOutputAlias = crate::operation::CreateWirelessDevice;
 #[doc(hidden)]
-pub type CreateWirelessDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateWirelessDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWirelessDeviceInput {
     /// Consumes the builder and constructs an Operation<[`CreateWirelessDevice`](crate::operation::CreateWirelessDevice)>
     #[allow(clippy::let_and_return)]
@@ -2689,7 +2687,7 @@ impl CreateWirelessDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateWirelessDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2774,7 +2772,7 @@ impl CreateWirelessDeviceInput {
             "CreateWirelessDevice",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2848,9 +2846,9 @@ pub mod create_wireless_gateway_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the new wireless gateway. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2895,7 +2893,7 @@ pub mod create_wireless_gateway_input {
 #[doc(hidden)]
 pub type CreateWirelessGatewayInputOperationOutputAlias = crate::operation::CreateWirelessGateway;
 #[doc(hidden)]
-pub type CreateWirelessGatewayInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateWirelessGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWirelessGatewayInput {
     /// Consumes the builder and constructs an Operation<[`CreateWirelessGateway`](crate::operation::CreateWirelessGateway)>
     #[allow(clippy::let_and_return)]
@@ -2906,7 +2904,7 @@ impl CreateWirelessGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateWirelessGateway,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2991,7 +2989,7 @@ impl CreateWirelessGatewayInput {
             "CreateWirelessGateway",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3068,7 +3066,7 @@ pub mod create_wireless_gateway_task_input {
 pub type CreateWirelessGatewayTaskInputOperationOutputAlias =
     crate::operation::CreateWirelessGatewayTask;
 #[doc(hidden)]
-pub type CreateWirelessGatewayTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateWirelessGatewayTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWirelessGatewayTaskInput {
     /// Consumes the builder and constructs an Operation<[`CreateWirelessGatewayTask`](crate::operation::CreateWirelessGatewayTask)>
     #[allow(clippy::let_and_return)]
@@ -3079,7 +3077,7 @@ impl CreateWirelessGatewayTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateWirelessGatewayTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3177,7 +3175,7 @@ impl CreateWirelessGatewayTaskInput {
             "CreateWirelessGatewayTask",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3264,9 +3262,9 @@ pub mod create_wireless_gateway_task_definition_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3300,7 +3298,7 @@ pub type CreateWirelessGatewayTaskDefinitionInputOperationOutputAlias =
     crate::operation::CreateWirelessGatewayTaskDefinition;
 #[doc(hidden)]
 pub type CreateWirelessGatewayTaskDefinitionInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWirelessGatewayTaskDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`CreateWirelessGatewayTaskDefinition`](crate::operation::CreateWirelessGatewayTaskDefinition)>
     #[allow(clippy::let_and_return)]
@@ -3311,7 +3309,7 @@ impl CreateWirelessGatewayTaskDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateWirelessGatewayTaskDefinition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3396,7 +3394,7 @@ impl CreateWirelessGatewayTaskDefinitionInput {
             "CreateWirelessGatewayTaskDefinition",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3452,7 +3450,7 @@ pub mod delete_destination_input {
 #[doc(hidden)]
 pub type DeleteDestinationInputOperationOutputAlias = crate::operation::DeleteDestination;
 #[doc(hidden)]
-pub type DeleteDestinationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDestinationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDestinationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDestination`](crate::operation::DeleteDestination)>
     #[allow(clippy::let_and_return)]
@@ -3463,7 +3461,7 @@ impl DeleteDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDestination,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3552,7 +3550,7 @@ impl DeleteDestinationInput {
             "DeleteDestination",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3600,7 +3598,7 @@ pub mod delete_device_profile_input {
 #[doc(hidden)]
 pub type DeleteDeviceProfileInputOperationOutputAlias = crate::operation::DeleteDeviceProfile;
 #[doc(hidden)]
-pub type DeleteDeviceProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDeviceProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDeviceProfileInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDeviceProfile`](crate::operation::DeleteDeviceProfile)>
     #[allow(clippy::let_and_return)]
@@ -3611,7 +3609,7 @@ impl DeleteDeviceProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDeviceProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3700,7 +3698,7 @@ impl DeleteDeviceProfileInput {
             "DeleteDeviceProfile",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3748,7 +3746,7 @@ pub mod delete_fuota_task_input {
 #[doc(hidden)]
 pub type DeleteFuotaTaskInputOperationOutputAlias = crate::operation::DeleteFuotaTask;
 #[doc(hidden)]
-pub type DeleteFuotaTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFuotaTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFuotaTaskInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFuotaTask`](crate::operation::DeleteFuotaTask)>
     #[allow(clippy::let_and_return)]
@@ -3759,7 +3757,7 @@ impl DeleteFuotaTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFuotaTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3848,7 +3846,7 @@ impl DeleteFuotaTaskInput {
             "DeleteFuotaTask",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3896,7 +3894,7 @@ pub mod delete_multicast_group_input {
 #[doc(hidden)]
 pub type DeleteMulticastGroupInputOperationOutputAlias = crate::operation::DeleteMulticastGroup;
 #[doc(hidden)]
-pub type DeleteMulticastGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteMulticastGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMulticastGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMulticastGroup`](crate::operation::DeleteMulticastGroup)>
     #[allow(clippy::let_and_return)]
@@ -3907,7 +3905,7 @@ impl DeleteMulticastGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMulticastGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3996,7 +3994,7 @@ impl DeleteMulticastGroupInput {
             "DeleteMulticastGroup",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4044,7 +4042,7 @@ pub mod delete_service_profile_input {
 #[doc(hidden)]
 pub type DeleteServiceProfileInputOperationOutputAlias = crate::operation::DeleteServiceProfile;
 #[doc(hidden)]
-pub type DeleteServiceProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteServiceProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteServiceProfileInput {
     /// Consumes the builder and constructs an Operation<[`DeleteServiceProfile`](crate::operation::DeleteServiceProfile)>
     #[allow(clippy::let_and_return)]
@@ -4055,7 +4053,7 @@ impl DeleteServiceProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteServiceProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4144,7 +4142,7 @@ impl DeleteServiceProfileInput {
             "DeleteServiceProfile",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4192,7 +4190,7 @@ pub mod delete_wireless_device_input {
 #[doc(hidden)]
 pub type DeleteWirelessDeviceInputOperationOutputAlias = crate::operation::DeleteWirelessDevice;
 #[doc(hidden)]
-pub type DeleteWirelessDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteWirelessDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWirelessDeviceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWirelessDevice`](crate::operation::DeleteWirelessDevice)>
     #[allow(clippy::let_and_return)]
@@ -4203,7 +4201,7 @@ impl DeleteWirelessDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteWirelessDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4292,7 +4290,7 @@ impl DeleteWirelessDeviceInput {
             "DeleteWirelessDevice",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4340,7 +4338,7 @@ pub mod delete_wireless_gateway_input {
 #[doc(hidden)]
 pub type DeleteWirelessGatewayInputOperationOutputAlias = crate::operation::DeleteWirelessGateway;
 #[doc(hidden)]
-pub type DeleteWirelessGatewayInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteWirelessGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWirelessGatewayInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWirelessGateway`](crate::operation::DeleteWirelessGateway)>
     #[allow(clippy::let_and_return)]
@@ -4351,7 +4349,7 @@ impl DeleteWirelessGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteWirelessGateway,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4440,7 +4438,7 @@ impl DeleteWirelessGatewayInput {
             "DeleteWirelessGateway",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4489,7 +4487,7 @@ pub mod delete_wireless_gateway_task_input {
 pub type DeleteWirelessGatewayTaskInputOperationOutputAlias =
     crate::operation::DeleteWirelessGatewayTask;
 #[doc(hidden)]
-pub type DeleteWirelessGatewayTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteWirelessGatewayTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWirelessGatewayTaskInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWirelessGatewayTask`](crate::operation::DeleteWirelessGatewayTask)>
     #[allow(clippy::let_and_return)]
@@ -4500,7 +4498,7 @@ impl DeleteWirelessGatewayTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteWirelessGatewayTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4590,7 +4588,7 @@ impl DeleteWirelessGatewayTaskInput {
             "DeleteWirelessGatewayTask",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4640,7 +4638,7 @@ pub type DeleteWirelessGatewayTaskDefinitionInputOperationOutputAlias =
     crate::operation::DeleteWirelessGatewayTaskDefinition;
 #[doc(hidden)]
 pub type DeleteWirelessGatewayTaskDefinitionInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWirelessGatewayTaskDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWirelessGatewayTaskDefinition`](crate::operation::DeleteWirelessGatewayTaskDefinition)>
     #[allow(clippy::let_and_return)]
@@ -4651,7 +4649,7 @@ impl DeleteWirelessGatewayTaskDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteWirelessGatewayTaskDefinition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4741,7 +4739,7 @@ impl DeleteWirelessGatewayTaskDefinitionInput {
             "DeleteWirelessGatewayTaskDefinition",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4813,7 +4811,7 @@ pub type DisassociateAwsAccountFromPartnerAccountInputOperationOutputAlias =
     crate::operation::DisassociateAwsAccountFromPartnerAccount;
 #[doc(hidden)]
 pub type DisassociateAwsAccountFromPartnerAccountInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateAwsAccountFromPartnerAccountInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateAwsAccountFromPartnerAccount`](crate::operation::DisassociateAwsAccountFromPartnerAccount)>
     #[allow(clippy::let_and_return)]
@@ -4824,7 +4822,7 @@ impl DisassociateAwsAccountFromPartnerAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateAwsAccountFromPartnerAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4932,7 +4930,7 @@ impl DisassociateAwsAccountFromPartnerAccountInput {
             "DisassociateAwsAccountFromPartnerAccount",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4999,7 +4997,7 @@ pub type DisassociateMulticastGroupFromFuotaTaskInputOperationOutputAlias =
     crate::operation::DisassociateMulticastGroupFromFuotaTask;
 #[doc(hidden)]
 pub type DisassociateMulticastGroupFromFuotaTaskInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateMulticastGroupFromFuotaTaskInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateMulticastGroupFromFuotaTask`](crate::operation::DisassociateMulticastGroupFromFuotaTask)>
     #[allow(clippy::let_and_return)]
@@ -5010,7 +5008,7 @@ impl DisassociateMulticastGroupFromFuotaTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateMulticastGroupFromFuotaTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5120,7 +5118,7 @@ impl DisassociateMulticastGroupFromFuotaTaskInput {
             "DisassociateMulticastGroupFromFuotaTask",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5187,7 +5185,7 @@ pub type DisassociateWirelessDeviceFromFuotaTaskInputOperationOutputAlias =
     crate::operation::DisassociateWirelessDeviceFromFuotaTask;
 #[doc(hidden)]
 pub type DisassociateWirelessDeviceFromFuotaTaskInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateWirelessDeviceFromFuotaTaskInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateWirelessDeviceFromFuotaTask`](crate::operation::DisassociateWirelessDeviceFromFuotaTask)>
     #[allow(clippy::let_and_return)]
@@ -5198,7 +5196,7 @@ impl DisassociateWirelessDeviceFromFuotaTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateWirelessDeviceFromFuotaTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5308,7 +5306,7 @@ impl DisassociateWirelessDeviceFromFuotaTaskInput {
             "DisassociateWirelessDeviceFromFuotaTask",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5377,7 +5375,7 @@ pub type DisassociateWirelessDeviceFromMulticastGroupInputOperationOutputAlias =
     crate::operation::DisassociateWirelessDeviceFromMulticastGroup;
 #[doc(hidden)]
 pub type DisassociateWirelessDeviceFromMulticastGroupInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateWirelessDeviceFromMulticastGroupInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateWirelessDeviceFromMulticastGroup`](crate::operation::DisassociateWirelessDeviceFromMulticastGroup)>
     #[allow(clippy::let_and_return)]
@@ -5388,7 +5386,7 @@ impl DisassociateWirelessDeviceFromMulticastGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateWirelessDeviceFromMulticastGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5498,7 +5496,7 @@ impl DisassociateWirelessDeviceFromMulticastGroupInput {
             "DisassociateWirelessDeviceFromMulticastGroup",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5549,7 +5547,7 @@ pub type DisassociateWirelessDeviceFromThingInputOperationOutputAlias =
     crate::operation::DisassociateWirelessDeviceFromThing;
 #[doc(hidden)]
 pub type DisassociateWirelessDeviceFromThingInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateWirelessDeviceFromThingInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateWirelessDeviceFromThing`](crate::operation::DisassociateWirelessDeviceFromThing)>
     #[allow(clippy::let_and_return)]
@@ -5560,7 +5558,7 @@ impl DisassociateWirelessDeviceFromThingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateWirelessDeviceFromThing,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5650,7 +5648,7 @@ impl DisassociateWirelessDeviceFromThingInput {
             "DisassociateWirelessDeviceFromThing",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5700,7 +5698,7 @@ pub type DisassociateWirelessGatewayFromCertificateInputOperationOutputAlias =
     crate::operation::DisassociateWirelessGatewayFromCertificate;
 #[doc(hidden)]
 pub type DisassociateWirelessGatewayFromCertificateInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateWirelessGatewayFromCertificateInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateWirelessGatewayFromCertificate`](crate::operation::DisassociateWirelessGatewayFromCertificate)>
     #[allow(clippy::let_and_return)]
@@ -5711,7 +5709,7 @@ impl DisassociateWirelessGatewayFromCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateWirelessGatewayFromCertificate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5801,7 +5799,7 @@ impl DisassociateWirelessGatewayFromCertificateInput {
             "DisassociateWirelessGatewayFromCertificate",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5852,7 +5850,7 @@ pub type DisassociateWirelessGatewayFromThingInputOperationOutputAlias =
     crate::operation::DisassociateWirelessGatewayFromThing;
 #[doc(hidden)]
 pub type DisassociateWirelessGatewayFromThingInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateWirelessGatewayFromThingInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateWirelessGatewayFromThing`](crate::operation::DisassociateWirelessGatewayFromThing)>
     #[allow(clippy::let_and_return)]
@@ -5863,7 +5861,7 @@ impl DisassociateWirelessGatewayFromThingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateWirelessGatewayFromThing,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5953,7 +5951,7 @@ impl DisassociateWirelessGatewayFromThingInput {
             "DisassociateWirelessGatewayFromThing",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6001,7 +5999,7 @@ pub mod get_destination_input {
 #[doc(hidden)]
 pub type GetDestinationInputOperationOutputAlias = crate::operation::GetDestination;
 #[doc(hidden)]
-pub type GetDestinationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDestinationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDestinationInput {
     /// Consumes the builder and constructs an Operation<[`GetDestination`](crate::operation::GetDestination)>
     #[allow(clippy::let_and_return)]
@@ -6012,7 +6010,7 @@ impl GetDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDestination,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6101,7 +6099,7 @@ impl GetDestinationInput {
             "GetDestination",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6149,7 +6147,7 @@ pub mod get_device_profile_input {
 #[doc(hidden)]
 pub type GetDeviceProfileInputOperationOutputAlias = crate::operation::GetDeviceProfile;
 #[doc(hidden)]
-pub type GetDeviceProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDeviceProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDeviceProfileInput {
     /// Consumes the builder and constructs an Operation<[`GetDeviceProfile`](crate::operation::GetDeviceProfile)>
     #[allow(clippy::let_and_return)]
@@ -6160,7 +6158,7 @@ impl GetDeviceProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDeviceProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6249,7 +6247,7 @@ impl GetDeviceProfileInput {
             "GetDeviceProfile",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6297,7 +6295,7 @@ pub mod get_fuota_task_input {
 #[doc(hidden)]
 pub type GetFuotaTaskInputOperationOutputAlias = crate::operation::GetFuotaTask;
 #[doc(hidden)]
-pub type GetFuotaTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFuotaTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFuotaTaskInput {
     /// Consumes the builder and constructs an Operation<[`GetFuotaTask`](crate::operation::GetFuotaTask)>
     #[allow(clippy::let_and_return)]
@@ -6308,7 +6306,7 @@ impl GetFuotaTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFuotaTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6397,7 +6395,7 @@ impl GetFuotaTaskInput {
             "GetFuotaTask",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6434,7 +6432,7 @@ pub mod get_log_levels_by_resource_types_input {
 pub type GetLogLevelsByResourceTypesInputOperationOutputAlias =
     crate::operation::GetLogLevelsByResourceTypes;
 #[doc(hidden)]
-pub type GetLogLevelsByResourceTypesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLogLevelsByResourceTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLogLevelsByResourceTypesInput {
     /// Consumes the builder and constructs an Operation<[`GetLogLevelsByResourceTypes`](crate::operation::GetLogLevelsByResourceTypes)>
     #[allow(clippy::let_and_return)]
@@ -6445,7 +6443,7 @@ impl GetLogLevelsByResourceTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLogLevelsByResourceTypes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6519,7 +6517,7 @@ impl GetLogLevelsByResourceTypesInput {
             "GetLogLevelsByResourceTypes",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6567,7 +6565,7 @@ pub mod get_multicast_group_input {
 #[doc(hidden)]
 pub type GetMulticastGroupInputOperationOutputAlias = crate::operation::GetMulticastGroup;
 #[doc(hidden)]
-pub type GetMulticastGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMulticastGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMulticastGroupInput {
     /// Consumes the builder and constructs an Operation<[`GetMulticastGroup`](crate::operation::GetMulticastGroup)>
     #[allow(clippy::let_and_return)]
@@ -6578,7 +6576,7 @@ impl GetMulticastGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMulticastGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6667,7 +6665,7 @@ impl GetMulticastGroupInput {
             "GetMulticastGroup",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6716,7 +6714,7 @@ pub mod get_multicast_group_session_input {
 pub type GetMulticastGroupSessionInputOperationOutputAlias =
     crate::operation::GetMulticastGroupSession;
 #[doc(hidden)]
-pub type GetMulticastGroupSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMulticastGroupSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMulticastGroupSessionInput {
     /// Consumes the builder and constructs an Operation<[`GetMulticastGroupSession`](crate::operation::GetMulticastGroupSession)>
     #[allow(clippy::let_and_return)]
@@ -6727,7 +6725,7 @@ impl GetMulticastGroupSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMulticastGroupSession,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6817,7 +6815,7 @@ impl GetMulticastGroupSessionInput {
             "GetMulticastGroupSession",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6871,7 +6869,8 @@ pub mod get_network_analyzer_configuration_input {
 pub type GetNetworkAnalyzerConfigurationInputOperationOutputAlias =
     crate::operation::GetNetworkAnalyzerConfiguration;
 #[doc(hidden)]
-pub type GetNetworkAnalyzerConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetNetworkAnalyzerConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetNetworkAnalyzerConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetNetworkAnalyzerConfiguration`](crate::operation::GetNetworkAnalyzerConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -6882,7 +6881,7 @@ impl GetNetworkAnalyzerConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetNetworkAnalyzerConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6976,7 +6975,7 @@ impl GetNetworkAnalyzerConfigurationInput {
             "GetNetworkAnalyzerConfiguration",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7044,7 +7043,7 @@ pub mod get_partner_account_input {
 #[doc(hidden)]
 pub type GetPartnerAccountInputOperationOutputAlias = crate::operation::GetPartnerAccount;
 #[doc(hidden)]
-pub type GetPartnerAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPartnerAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPartnerAccountInput {
     /// Consumes the builder and constructs an Operation<[`GetPartnerAccount`](crate::operation::GetPartnerAccount)>
     #[allow(clippy::let_and_return)]
@@ -7055,7 +7054,7 @@ impl GetPartnerAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPartnerAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7163,7 +7162,7 @@ impl GetPartnerAccountInput {
             "GetPartnerAccount",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7244,7 +7243,8 @@ pub mod get_resource_event_configuration_input {
 pub type GetResourceEventConfigurationInputOperationOutputAlias =
     crate::operation::GetResourceEventConfiguration;
 #[doc(hidden)]
-pub type GetResourceEventConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetResourceEventConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourceEventConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetResourceEventConfiguration`](crate::operation::GetResourceEventConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -7255,7 +7255,7 @@ impl GetResourceEventConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResourceEventConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7369,7 +7369,7 @@ impl GetResourceEventConfigurationInput {
             "GetResourceEventConfiguration",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7394,14 +7394,12 @@ pub mod get_resource_log_level_input {
         pub(crate) resource_type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-        /// it is the wireless gateway ID.</p>
+        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
         pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_identifier = Some(input.into());
             self
         }
-        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-        /// it is the wireless gateway ID.</p>
+        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
         pub fn set_resource_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7439,7 +7437,7 @@ pub mod get_resource_log_level_input {
 #[doc(hidden)]
 pub type GetResourceLogLevelInputOperationOutputAlias = crate::operation::GetResourceLogLevel;
 #[doc(hidden)]
-pub type GetResourceLogLevelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetResourceLogLevelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourceLogLevelInput {
     /// Consumes the builder and constructs an Operation<[`GetResourceLogLevel`](crate::operation::GetResourceLogLevel)>
     #[allow(clippy::let_and_return)]
@@ -7450,7 +7448,7 @@ impl GetResourceLogLevelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResourceLogLevel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7558,7 +7556,7 @@ impl GetResourceLogLevelInput {
             "GetResourceLogLevel",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7611,7 +7609,7 @@ pub mod get_service_endpoint_input {
 #[doc(hidden)]
 pub type GetServiceEndpointInputOperationOutputAlias = crate::operation::GetServiceEndpoint;
 #[doc(hidden)]
-pub type GetServiceEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetServiceEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetServiceEndpointInput {
     /// Consumes the builder and constructs an Operation<[`GetServiceEndpoint`](crate::operation::GetServiceEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -7622,7 +7620,7 @@ impl GetServiceEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetServiceEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7710,7 +7708,7 @@ impl GetServiceEndpointInput {
             "GetServiceEndpoint",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7758,7 +7756,7 @@ pub mod get_service_profile_input {
 #[doc(hidden)]
 pub type GetServiceProfileInputOperationOutputAlias = crate::operation::GetServiceProfile;
 #[doc(hidden)]
-pub type GetServiceProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetServiceProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetServiceProfileInput {
     /// Consumes the builder and constructs an Operation<[`GetServiceProfile`](crate::operation::GetServiceProfile)>
     #[allow(clippy::let_and_return)]
@@ -7769,7 +7767,7 @@ impl GetServiceProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetServiceProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7858,7 +7856,7 @@ impl GetServiceProfileInput {
             "GetServiceProfile",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7923,7 +7921,7 @@ pub mod get_wireless_device_input {
 #[doc(hidden)]
 pub type GetWirelessDeviceInputOperationOutputAlias = crate::operation::GetWirelessDevice;
 #[doc(hidden)]
-pub type GetWirelessDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetWirelessDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWirelessDeviceInput {
     /// Consumes the builder and constructs an Operation<[`GetWirelessDevice`](crate::operation::GetWirelessDevice)>
     #[allow(clippy::let_and_return)]
@@ -7934,7 +7932,7 @@ impl GetWirelessDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWirelessDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8042,7 +8040,7 @@ impl GetWirelessDeviceInput {
             "GetWirelessDevice",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8096,7 +8094,7 @@ pub mod get_wireless_device_statistics_input {
 pub type GetWirelessDeviceStatisticsInputOperationOutputAlias =
     crate::operation::GetWirelessDeviceStatistics;
 #[doc(hidden)]
-pub type GetWirelessDeviceStatisticsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetWirelessDeviceStatisticsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWirelessDeviceStatisticsInput {
     /// Consumes the builder and constructs an Operation<[`GetWirelessDeviceStatistics`](crate::operation::GetWirelessDeviceStatistics)>
     #[allow(clippy::let_and_return)]
@@ -8107,7 +8105,7 @@ impl GetWirelessDeviceStatisticsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWirelessDeviceStatistics,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8201,7 +8199,7 @@ impl GetWirelessDeviceStatisticsInput {
             "GetWirelessDeviceStatistics",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8266,7 +8264,7 @@ pub mod get_wireless_gateway_input {
 #[doc(hidden)]
 pub type GetWirelessGatewayInputOperationOutputAlias = crate::operation::GetWirelessGateway;
 #[doc(hidden)]
-pub type GetWirelessGatewayInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetWirelessGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWirelessGatewayInput {
     /// Consumes the builder and constructs an Operation<[`GetWirelessGateway`](crate::operation::GetWirelessGateway)>
     #[allow(clippy::let_and_return)]
@@ -8277,7 +8275,7 @@ impl GetWirelessGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWirelessGateway,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8385,7 +8383,7 @@ impl GetWirelessGatewayInput {
             "GetWirelessGateway",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8434,7 +8432,8 @@ pub mod get_wireless_gateway_certificate_input {
 pub type GetWirelessGatewayCertificateInputOperationOutputAlias =
     crate::operation::GetWirelessGatewayCertificate;
 #[doc(hidden)]
-pub type GetWirelessGatewayCertificateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetWirelessGatewayCertificateInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetWirelessGatewayCertificateInput {
     /// Consumes the builder and constructs an Operation<[`GetWirelessGatewayCertificate`](crate::operation::GetWirelessGatewayCertificate)>
     #[allow(clippy::let_and_return)]
@@ -8445,7 +8444,7 @@ impl GetWirelessGatewayCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWirelessGatewayCertificate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8535,7 +8534,7 @@ impl GetWirelessGatewayCertificateInput {
             "GetWirelessGatewayCertificate",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8585,7 +8584,7 @@ pub type GetWirelessGatewayFirmwareInformationInputOperationOutputAlias =
     crate::operation::GetWirelessGatewayFirmwareInformation;
 #[doc(hidden)]
 pub type GetWirelessGatewayFirmwareInformationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetWirelessGatewayFirmwareInformationInput {
     /// Consumes the builder and constructs an Operation<[`GetWirelessGatewayFirmwareInformation`](crate::operation::GetWirelessGatewayFirmwareInformation)>
     #[allow(clippy::let_and_return)]
@@ -8596,7 +8595,7 @@ impl GetWirelessGatewayFirmwareInformationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWirelessGatewayFirmwareInformation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8690,7 +8689,7 @@ impl GetWirelessGatewayFirmwareInformationInput {
             "GetWirelessGatewayFirmwareInformation",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8744,7 +8743,8 @@ pub mod get_wireless_gateway_statistics_input {
 pub type GetWirelessGatewayStatisticsInputOperationOutputAlias =
     crate::operation::GetWirelessGatewayStatistics;
 #[doc(hidden)]
-pub type GetWirelessGatewayStatisticsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetWirelessGatewayStatisticsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetWirelessGatewayStatisticsInput {
     /// Consumes the builder and constructs an Operation<[`GetWirelessGatewayStatistics`](crate::operation::GetWirelessGatewayStatistics)>
     #[allow(clippy::let_and_return)]
@@ -8755,7 +8755,7 @@ impl GetWirelessGatewayStatisticsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWirelessGatewayStatistics,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8849,7 +8849,7 @@ impl GetWirelessGatewayStatisticsInput {
             "GetWirelessGatewayStatistics",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8897,7 +8897,7 @@ pub mod get_wireless_gateway_task_input {
 #[doc(hidden)]
 pub type GetWirelessGatewayTaskInputOperationOutputAlias = crate::operation::GetWirelessGatewayTask;
 #[doc(hidden)]
-pub type GetWirelessGatewayTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetWirelessGatewayTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWirelessGatewayTaskInput {
     /// Consumes the builder and constructs an Operation<[`GetWirelessGatewayTask`](crate::operation::GetWirelessGatewayTask)>
     #[allow(clippy::let_and_return)]
@@ -8908,7 +8908,7 @@ impl GetWirelessGatewayTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWirelessGatewayTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8998,7 +8998,7 @@ impl GetWirelessGatewayTaskInput {
             "GetWirelessGatewayTask",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9047,7 +9047,8 @@ pub mod get_wireless_gateway_task_definition_input {
 pub type GetWirelessGatewayTaskDefinitionInputOperationOutputAlias =
     crate::operation::GetWirelessGatewayTaskDefinition;
 #[doc(hidden)]
-pub type GetWirelessGatewayTaskDefinitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetWirelessGatewayTaskDefinitionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetWirelessGatewayTaskDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`GetWirelessGatewayTaskDefinition`](crate::operation::GetWirelessGatewayTaskDefinition)>
     #[allow(clippy::let_and_return)]
@@ -9058,7 +9059,7 @@ impl GetWirelessGatewayTaskDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWirelessGatewayTaskDefinition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9148,7 +9149,7 @@ impl GetWirelessGatewayTaskDefinitionInput {
             "GetWirelessGatewayTaskDefinition",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9210,7 +9211,7 @@ pub mod list_destinations_input {
 #[doc(hidden)]
 pub type ListDestinationsInputOperationOutputAlias = crate::operation::ListDestinations;
 #[doc(hidden)]
-pub type ListDestinationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDestinationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDestinationsInput {
     /// Consumes the builder and constructs an Operation<[`ListDestinations`](crate::operation::ListDestinations)>
     #[allow(clippy::let_and_return)]
@@ -9221,7 +9222,7 @@ impl ListDestinationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDestinations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9312,7 +9313,7 @@ impl ListDestinationsInput {
             "ListDestinations",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9374,7 +9375,7 @@ pub mod list_device_profiles_input {
 #[doc(hidden)]
 pub type ListDeviceProfilesInputOperationOutputAlias = crate::operation::ListDeviceProfiles;
 #[doc(hidden)]
-pub type ListDeviceProfilesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDeviceProfilesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDeviceProfilesInput {
     /// Consumes the builder and constructs an Operation<[`ListDeviceProfiles`](crate::operation::ListDeviceProfiles)>
     #[allow(clippy::let_and_return)]
@@ -9385,7 +9386,7 @@ impl ListDeviceProfilesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDeviceProfiles,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9476,7 +9477,7 @@ impl ListDeviceProfilesInput {
             "ListDeviceProfiles",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9538,7 +9539,7 @@ pub mod list_fuota_tasks_input {
 #[doc(hidden)]
 pub type ListFuotaTasksInputOperationOutputAlias = crate::operation::ListFuotaTasks;
 #[doc(hidden)]
-pub type ListFuotaTasksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFuotaTasksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFuotaTasksInput {
     /// Consumes the builder and constructs an Operation<[`ListFuotaTasks`](crate::operation::ListFuotaTasks)>
     #[allow(clippy::let_and_return)]
@@ -9549,7 +9550,7 @@ impl ListFuotaTasksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFuotaTasks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9640,7 +9641,7 @@ impl ListFuotaTasksInput {
             "ListFuotaTasks",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9702,7 +9703,7 @@ pub mod list_multicast_groups_input {
 #[doc(hidden)]
 pub type ListMulticastGroupsInputOperationOutputAlias = crate::operation::ListMulticastGroups;
 #[doc(hidden)]
-pub type ListMulticastGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListMulticastGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMulticastGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListMulticastGroups`](crate::operation::ListMulticastGroups)>
     #[allow(clippy::let_and_return)]
@@ -9713,7 +9714,7 @@ impl ListMulticastGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMulticastGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9804,7 +9805,7 @@ impl ListMulticastGroupsInput {
             "ListMulticastGroups",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9879,7 +9880,8 @@ pub mod list_multicast_groups_by_fuota_task_input {
 pub type ListMulticastGroupsByFuotaTaskInputOperationOutputAlias =
     crate::operation::ListMulticastGroupsByFuotaTask;
 #[doc(hidden)]
-pub type ListMulticastGroupsByFuotaTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListMulticastGroupsByFuotaTaskInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListMulticastGroupsByFuotaTaskInput {
     /// Consumes the builder and constructs an Operation<[`ListMulticastGroupsByFuotaTask`](crate::operation::ListMulticastGroupsByFuotaTask)>
     #[allow(clippy::let_and_return)]
@@ -9890,7 +9892,7 @@ impl ListMulticastGroupsByFuotaTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMulticastGroupsByFuotaTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9997,7 +9999,7 @@ impl ListMulticastGroupsByFuotaTaskInput {
             "ListMulticastGroupsByFuotaTask",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10059,7 +10061,7 @@ pub mod list_partner_accounts_input {
 #[doc(hidden)]
 pub type ListPartnerAccountsInputOperationOutputAlias = crate::operation::ListPartnerAccounts;
 #[doc(hidden)]
-pub type ListPartnerAccountsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPartnerAccountsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPartnerAccountsInput {
     /// Consumes the builder and constructs an Operation<[`ListPartnerAccounts`](crate::operation::ListPartnerAccounts)>
     #[allow(clippy::let_and_return)]
@@ -10070,7 +10072,7 @@ impl ListPartnerAccountsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPartnerAccounts,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10161,7 +10163,7 @@ impl ListPartnerAccountsInput {
             "ListPartnerAccounts",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10223,7 +10225,7 @@ pub mod list_service_profiles_input {
 #[doc(hidden)]
 pub type ListServiceProfilesInputOperationOutputAlias = crate::operation::ListServiceProfiles;
 #[doc(hidden)]
-pub type ListServiceProfilesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListServiceProfilesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListServiceProfilesInput {
     /// Consumes the builder and constructs an Operation<[`ListServiceProfiles`](crate::operation::ListServiceProfiles)>
     #[allow(clippy::let_and_return)]
@@ -10234,7 +10236,7 @@ impl ListServiceProfilesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListServiceProfiles,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10325,7 +10327,7 @@ impl ListServiceProfilesInput {
             "ListServiceProfiles",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10375,7 +10377,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -10386,7 +10388,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10474,7 +10476,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10626,7 +10628,7 @@ pub mod list_wireless_devices_input {
 #[doc(hidden)]
 pub type ListWirelessDevicesInputOperationOutputAlias = crate::operation::ListWirelessDevices;
 #[doc(hidden)]
-pub type ListWirelessDevicesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListWirelessDevicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWirelessDevicesInput {
     /// Consumes the builder and constructs an Operation<[`ListWirelessDevices`](crate::operation::ListWirelessDevices)>
     #[allow(clippy::let_and_return)]
@@ -10637,7 +10639,7 @@ impl ListWirelessDevicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWirelessDevices,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10764,7 +10766,7 @@ impl ListWirelessDevicesInput {
             "ListWirelessDevices",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10826,7 +10828,7 @@ pub mod list_wireless_gateways_input {
 #[doc(hidden)]
 pub type ListWirelessGatewaysInputOperationOutputAlias = crate::operation::ListWirelessGateways;
 #[doc(hidden)]
-pub type ListWirelessGatewaysInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListWirelessGatewaysInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWirelessGatewaysInput {
     /// Consumes the builder and constructs an Operation<[`ListWirelessGateways`](crate::operation::ListWirelessGateways)>
     #[allow(clippy::let_and_return)]
@@ -10837,7 +10839,7 @@ impl ListWirelessGatewaysInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWirelessGateways,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10928,7 +10930,7 @@ impl ListWirelessGatewaysInput {
             "ListWirelessGateways",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11010,7 +11012,8 @@ pub mod list_wireless_gateway_task_definitions_input {
 pub type ListWirelessGatewayTaskDefinitionsInputOperationOutputAlias =
     crate::operation::ListWirelessGatewayTaskDefinitions;
 #[doc(hidden)]
-pub type ListWirelessGatewayTaskDefinitionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListWirelessGatewayTaskDefinitionsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListWirelessGatewayTaskDefinitionsInput {
     /// Consumes the builder and constructs an Operation<[`ListWirelessGatewayTaskDefinitions`](crate::operation::ListWirelessGatewayTaskDefinitions)>
     #[allow(clippy::let_and_return)]
@@ -11021,7 +11024,7 @@ impl ListWirelessGatewayTaskDefinitionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWirelessGatewayTaskDefinitions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11119,7 +11122,7 @@ impl ListWirelessGatewayTaskDefinitionsInput {
             "ListWirelessGatewayTaskDefinitions",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11145,14 +11148,12 @@ pub mod put_resource_log_level_input {
         pub(crate) log_level: std::option::Option<crate::model::LogLevel>,
     }
     impl Builder {
-        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-        /// it is the wireless gateway ID.</p>
+        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
         pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_identifier = Some(input.into());
             self
         }
-        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-        /// it is the wireless gateway ID.</p>
+        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
         pub fn set_resource_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11201,7 +11202,7 @@ pub mod put_resource_log_level_input {
 #[doc(hidden)]
 pub type PutResourceLogLevelInputOperationOutputAlias = crate::operation::PutResourceLogLevel;
 #[doc(hidden)]
-pub type PutResourceLogLevelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutResourceLogLevelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutResourceLogLevelInput {
     /// Consumes the builder and constructs an Operation<[`PutResourceLogLevel`](crate::operation::PutResourceLogLevel)>
     #[allow(clippy::let_and_return)]
@@ -11212,7 +11213,7 @@ impl PutResourceLogLevelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutResourceLogLevel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11328,7 +11329,7 @@ impl PutResourceLogLevelInput {
             "PutResourceLogLevel",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11373,7 +11374,7 @@ pub mod reset_all_resource_log_levels_input {
 pub type ResetAllResourceLogLevelsInputOperationOutputAlias =
     crate::operation::ResetAllResourceLogLevels;
 #[doc(hidden)]
-pub type ResetAllResourceLogLevelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ResetAllResourceLogLevelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResetAllResourceLogLevelsInput {
     /// Consumes the builder and constructs an Operation<[`ResetAllResourceLogLevels`](crate::operation::ResetAllResourceLogLevels)>
     #[allow(clippy::let_and_return)]
@@ -11384,7 +11385,7 @@ impl ResetAllResourceLogLevelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ResetAllResourceLogLevels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11458,7 +11459,7 @@ impl ResetAllResourceLogLevelsInput {
             "ResetAllResourceLogLevels",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11483,14 +11484,12 @@ pub mod reset_resource_log_level_input {
         pub(crate) resource_type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-        /// it is the wireless gateway ID.</p>
+        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
         pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_identifier = Some(input.into());
             self
         }
-        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-        /// it is the wireless gateway ID.</p>
+        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
         pub fn set_resource_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11528,7 +11527,7 @@ pub mod reset_resource_log_level_input {
 #[doc(hidden)]
 pub type ResetResourceLogLevelInputOperationOutputAlias = crate::operation::ResetResourceLogLevel;
 #[doc(hidden)]
-pub type ResetResourceLogLevelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ResetResourceLogLevelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResetResourceLogLevelInput {
     /// Consumes the builder and constructs an Operation<[`ResetResourceLogLevel`](crate::operation::ResetResourceLogLevel)>
     #[allow(clippy::let_and_return)]
@@ -11539,7 +11538,7 @@ impl ResetResourceLogLevelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ResetResourceLogLevel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11647,7 +11646,7 @@ impl ResetResourceLogLevelInput {
             "ResetResourceLogLevel",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11725,7 +11724,7 @@ pub mod send_data_to_multicast_group_input {
 pub type SendDataToMulticastGroupInputOperationOutputAlias =
     crate::operation::SendDataToMulticastGroup;
 #[doc(hidden)]
-pub type SendDataToMulticastGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendDataToMulticastGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendDataToMulticastGroupInput {
     /// Consumes the builder and constructs an Operation<[`SendDataToMulticastGroup`](crate::operation::SendDataToMulticastGroup)>
     #[allow(clippy::let_and_return)]
@@ -11736,7 +11735,7 @@ impl SendDataToMulticastGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendDataToMulticastGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11834,7 +11833,7 @@ impl SendDataToMulticastGroupInput {
             "SendDataToMulticastGroup",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11932,7 +11931,7 @@ pub mod send_data_to_wireless_device_input {
 pub type SendDataToWirelessDeviceInputOperationOutputAlias =
     crate::operation::SendDataToWirelessDevice;
 #[doc(hidden)]
-pub type SendDataToWirelessDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendDataToWirelessDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendDataToWirelessDeviceInput {
     /// Consumes the builder and constructs an Operation<[`SendDataToWirelessDevice`](crate::operation::SendDataToWirelessDevice)>
     #[allow(clippy::let_and_return)]
@@ -11943,7 +11942,7 @@ impl SendDataToWirelessDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendDataToWirelessDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12041,7 +12040,7 @@ impl SendDataToWirelessDeviceInput {
             "SendDataToWirelessDevice",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12100,9 +12099,9 @@ pub mod start_bulk_associate_wireless_device_with_multicast_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12136,7 +12135,7 @@ pub type StartBulkAssociateWirelessDeviceWithMulticastGroupInputOperationOutputA
     crate::operation::StartBulkAssociateWirelessDeviceWithMulticastGroup;
 #[doc(hidden)]
 pub type StartBulkAssociateWirelessDeviceWithMulticastGroupInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
     /// Consumes the builder and constructs an Operation<[`StartBulkAssociateWirelessDeviceWithMulticastGroup`](crate::operation::StartBulkAssociateWirelessDeviceWithMulticastGroup)>
     #[allow(clippy::let_and_return)]
@@ -12147,7 +12146,7 @@ impl StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartBulkAssociateWirelessDeviceWithMulticastGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12244,7 +12243,7 @@ impl StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
             "StartBulkAssociateWirelessDeviceWithMulticastGroup",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12305,9 +12304,9 @@ pub mod start_bulk_disassociate_wireless_device_from_multicast_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12341,7 +12340,7 @@ pub type StartBulkDisassociateWirelessDeviceFromMulticastGroupInputOperationOutp
     crate::operation::StartBulkDisassociateWirelessDeviceFromMulticastGroup;
 #[doc(hidden)]
 pub type StartBulkDisassociateWirelessDeviceFromMulticastGroupInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl StartBulkDisassociateWirelessDeviceFromMulticastGroupInput {
     /// Consumes the builder and constructs an Operation<[`StartBulkDisassociateWirelessDeviceFromMulticastGroup`](crate::operation::StartBulkDisassociateWirelessDeviceFromMulticastGroup)>
     #[allow(clippy::let_and_return)]
@@ -12352,7 +12351,7 @@ impl StartBulkDisassociateWirelessDeviceFromMulticastGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartBulkDisassociateWirelessDeviceFromMulticastGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12449,7 +12448,7 @@ impl StartBulkDisassociateWirelessDeviceFromMulticastGroupInput {
             "StartBulkDisassociateWirelessDeviceFromMulticastGroup",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12524,7 +12523,7 @@ pub mod start_fuota_task_input {
 #[doc(hidden)]
 pub type StartFuotaTaskInputOperationOutputAlias = crate::operation::StartFuotaTask;
 #[doc(hidden)]
-pub type StartFuotaTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartFuotaTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartFuotaTaskInput {
     /// Consumes the builder and constructs an Operation<[`StartFuotaTask`](crate::operation::StartFuotaTask)>
     #[allow(clippy::let_and_return)]
@@ -12535,7 +12534,7 @@ impl StartFuotaTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartFuotaTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12630,7 +12629,7 @@ impl StartFuotaTaskInput {
             "StartFuotaTask",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12704,7 +12703,7 @@ pub mod start_multicast_group_session_input {
 pub type StartMulticastGroupSessionInputOperationOutputAlias =
     crate::operation::StartMulticastGroupSession;
 #[doc(hidden)]
-pub type StartMulticastGroupSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartMulticastGroupSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartMulticastGroupSessionInput {
     /// Consumes the builder and constructs an Operation<[`StartMulticastGroupSession`](crate::operation::StartMulticastGroupSession)>
     #[allow(clippy::let_and_return)]
@@ -12715,7 +12714,7 @@ impl StartMulticastGroupSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartMulticastGroupSession,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12812,7 +12811,7 @@ impl StartMulticastGroupSessionInput {
             "StartMulticastGroupSession",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12860,9 +12859,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Adds to or modifies the tags of the given resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12891,7 +12890,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -12902,7 +12901,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12995,7 +12994,7 @@ impl TagResourceInput {
             "TagResource",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13051,7 +13050,7 @@ pub mod test_wireless_device_input {
 #[doc(hidden)]
 pub type TestWirelessDeviceInputOperationOutputAlias = crate::operation::TestWirelessDevice;
 #[doc(hidden)]
-pub type TestWirelessDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TestWirelessDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TestWirelessDeviceInput {
     /// Consumes the builder and constructs an Operation<[`TestWirelessDevice`](crate::operation::TestWirelessDevice)>
     #[allow(clippy::let_and_return)]
@@ -13062,7 +13061,7 @@ impl TestWirelessDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TestWirelessDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13152,7 +13151,7 @@ impl TestWirelessDeviceInput {
             "TestWirelessDevice",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13223,7 +13222,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -13234,7 +13233,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13327,7 +13326,7 @@ impl UntagResourceInput {
             "UntagResource",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13428,7 +13427,7 @@ pub mod update_destination_input {
 #[doc(hidden)]
 pub type UpdateDestinationInputOperationOutputAlias = crate::operation::UpdateDestination;
 #[doc(hidden)]
-pub type UpdateDestinationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDestinationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDestinationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDestination`](crate::operation::UpdateDestination)>
     #[allow(clippy::let_and_return)]
@@ -13439,7 +13438,7 @@ impl UpdateDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDestination,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13534,7 +13533,7 @@ impl UpdateDestinationInput {
             "UpdateDestination",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13661,7 +13660,7 @@ pub mod update_fuota_task_input {
 #[doc(hidden)]
 pub type UpdateFuotaTaskInputOperationOutputAlias = crate::operation::UpdateFuotaTask;
 #[doc(hidden)]
-pub type UpdateFuotaTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFuotaTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFuotaTaskInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFuotaTask`](crate::operation::UpdateFuotaTask)>
     #[allow(clippy::let_and_return)]
@@ -13672,7 +13671,7 @@ impl UpdateFuotaTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFuotaTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13767,7 +13766,7 @@ impl UpdateFuotaTaskInput {
             "UpdateFuotaTask",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13823,10 +13822,10 @@ pub mod update_log_levels_by_resource_types_input {
         /// <p>The list of wireless device log options.</p>
         pub fn wireless_device_log_options(
             mut self,
-            input: impl Into<crate::model::WirelessDeviceLogOption>,
+            input: crate::model::WirelessDeviceLogOption,
         ) -> Self {
             let mut v = self.wireless_device_log_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.wireless_device_log_options = Some(v);
             self
         }
@@ -13845,10 +13844,10 @@ pub mod update_log_levels_by_resource_types_input {
         /// <p>The list of wireless gateway log options.</p>
         pub fn wireless_gateway_log_options(
             mut self,
-            input: impl Into<crate::model::WirelessGatewayLogOption>,
+            input: crate::model::WirelessGatewayLogOption,
         ) -> Self {
             let mut v = self.wireless_gateway_log_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.wireless_gateway_log_options = Some(v);
             self
         }
@@ -13879,7 +13878,8 @@ pub mod update_log_levels_by_resource_types_input {
 pub type UpdateLogLevelsByResourceTypesInputOperationOutputAlias =
     crate::operation::UpdateLogLevelsByResourceTypes;
 #[doc(hidden)]
-pub type UpdateLogLevelsByResourceTypesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateLogLevelsByResourceTypesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLogLevelsByResourceTypesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLogLevelsByResourceTypes`](crate::operation::UpdateLogLevelsByResourceTypes)>
     #[allow(clippy::let_and_return)]
@@ -13890,7 +13890,7 @@ impl UpdateLogLevelsByResourceTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateLogLevelsByResourceTypes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13971,7 +13971,7 @@ impl UpdateLogLevelsByResourceTypesInput {
             "UpdateLogLevelsByResourceTypes",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14068,7 +14068,7 @@ pub mod update_multicast_group_input {
 #[doc(hidden)]
 pub type UpdateMulticastGroupInputOperationOutputAlias = crate::operation::UpdateMulticastGroup;
 #[doc(hidden)]
-pub type UpdateMulticastGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateMulticastGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateMulticastGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMulticastGroup`](crate::operation::UpdateMulticastGroup)>
     #[allow(clippy::let_and_return)]
@@ -14079,7 +14079,7 @@ impl UpdateMulticastGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateMulticastGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14176,7 +14176,7 @@ impl UpdateMulticastGroupInput {
             "UpdateMulticastGroup",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14343,7 +14343,8 @@ pub mod update_network_analyzer_configuration_input {
 pub type UpdateNetworkAnalyzerConfigurationInputOperationOutputAlias =
     crate::operation::UpdateNetworkAnalyzerConfiguration;
 #[doc(hidden)]
-pub type UpdateNetworkAnalyzerConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateNetworkAnalyzerConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateNetworkAnalyzerConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateNetworkAnalyzerConfiguration`](crate::operation::UpdateNetworkAnalyzerConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -14354,7 +14355,7 @@ impl UpdateNetworkAnalyzerConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateNetworkAnalyzerConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14455,7 +14456,7 @@ impl UpdateNetworkAnalyzerConfigurationInput {
             "UpdateNetworkAnalyzerConfiguration",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14546,7 +14547,7 @@ pub mod update_partner_account_input {
 #[doc(hidden)]
 pub type UpdatePartnerAccountInputOperationOutputAlias = crate::operation::UpdatePartnerAccount;
 #[doc(hidden)]
-pub type UpdatePartnerAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdatePartnerAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePartnerAccountInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePartnerAccount`](crate::operation::UpdatePartnerAccount)>
     #[allow(clippy::let_and_return)]
@@ -14557,7 +14558,7 @@ impl UpdatePartnerAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePartnerAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14673,7 +14674,7 @@ impl UpdatePartnerAccountInput {
             "UpdatePartnerAccount",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14796,7 +14797,8 @@ pub mod update_resource_event_configuration_input {
 pub type UpdateResourceEventConfigurationInputOperationOutputAlias =
     crate::operation::UpdateResourceEventConfiguration;
 #[doc(hidden)]
-pub type UpdateResourceEventConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateResourceEventConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateResourceEventConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateResourceEventConfiguration`](crate::operation::UpdateResourceEventConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -14807,7 +14809,7 @@ impl UpdateResourceEventConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateResourceEventConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14928,7 +14930,7 @@ impl UpdateResourceEventConfigurationInput {
             "UpdateResourceEventConfiguration",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15040,7 +15042,7 @@ pub mod update_wireless_device_input {
 #[doc(hidden)]
 pub type UpdateWirelessDeviceInputOperationOutputAlias = crate::operation::UpdateWirelessDevice;
 #[doc(hidden)]
-pub type UpdateWirelessDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateWirelessDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateWirelessDeviceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWirelessDevice`](crate::operation::UpdateWirelessDevice)>
     #[allow(clippy::let_and_return)]
@@ -15051,7 +15053,7 @@ impl UpdateWirelessDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateWirelessDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15148,7 +15150,7 @@ impl UpdateWirelessDeviceInput {
             "UpdateWirelessDevice",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15220,12 +15222,9 @@ pub mod update_wireless_gateway_input {
         /// To override the contents of this collection use [`set_join_eui_filters`](Self::set_join_eui_filters).
         ///
         /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
-        pub fn join_eui_filters(
-            mut self,
-            input: impl Into<std::vec::Vec<std::string::String>>,
-        ) -> Self {
+        pub fn join_eui_filters(mut self, input: std::vec::Vec<std::string::String>) -> Self {
             let mut v = self.join_eui_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.join_eui_filters = Some(v);
             self
         }
@@ -15276,7 +15275,7 @@ pub mod update_wireless_gateway_input {
 #[doc(hidden)]
 pub type UpdateWirelessGatewayInputOperationOutputAlias = crate::operation::UpdateWirelessGateway;
 #[doc(hidden)]
-pub type UpdateWirelessGatewayInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateWirelessGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateWirelessGatewayInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWirelessGateway`](crate::operation::UpdateWirelessGateway)>
     #[allow(clippy::let_and_return)]
@@ -15287,7 +15286,7 @@ impl UpdateWirelessGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateWirelessGateway,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15384,7 +15383,7 @@ impl UpdateWirelessGatewayInput {
             "UpdateWirelessGateway",
             "iotwireless",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16136,15 +16135,13 @@ impl std::fmt::Debug for SendDataToMulticastGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetResourceLogLevelInput {
-    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-    /// it is the wireless gateway ID.</p>
+    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     pub resource_identifier: std::option::Option<std::string::String>,
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl ResetResourceLogLevelInput {
-    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-    /// it is the wireless gateway ID.</p>
+    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     pub fn resource_identifier(&self) -> std::option::Option<&str> {
         self.resource_identifier.as_deref()
     }
@@ -16177,8 +16174,7 @@ impl std::fmt::Debug for ResetAllResourceLogLevelsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourceLogLevelInput {
-    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-    /// it is the wireless gateway ID.</p>
+    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     pub resource_identifier: std::option::Option<std::string::String>,
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
     pub resource_type: std::option::Option<std::string::String>,
@@ -16186,8 +16182,7 @@ pub struct PutResourceLogLevelInput {
     pub log_level: std::option::Option<crate::model::LogLevel>,
 }
 impl PutResourceLogLevelInput {
-    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-    /// it is the wireless gateway ID.</p>
+    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     pub fn resource_identifier(&self) -> std::option::Option<&str> {
         self.resource_identifier.as_deref()
     }
@@ -16797,15 +16792,13 @@ impl std::fmt::Debug for GetServiceEndpointInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceLogLevelInput {
-    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-    /// it is the wireless gateway ID.</p>
+    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     pub resource_identifier: std::option::Option<std::string::String>,
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl GetResourceLogLevelInput {
-    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-    /// it is the wireless gateway ID.</p>
+    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     pub fn resource_identifier(&self) -> std::option::Option<&str> {
         self.resource_identifier.as_deref()
     }
@@ -17629,9 +17622,7 @@ pub struct CreateMulticastGroupInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the multicast group.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the
-    /// same token as a resource that already exists, an exception occurs. If you omit this value,
-    /// AWS SDKs will automatically generate a unique client request. </p>
+    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanMulticast>,
@@ -17647,9 +17638,7 @@ impl CreateMulticastGroupInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the
-    /// same token as a resource that already exists, an exception occurs. If you omit this value,
-    /// AWS SDKs will automatically generate a unique client request. </p>
+    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }

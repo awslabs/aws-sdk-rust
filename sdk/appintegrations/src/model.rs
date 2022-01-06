@@ -529,8 +529,7 @@ pub struct DataIntegrationAssociationSummary {
     pub data_integration_association_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN)of the DataIntegration.</p>
     pub data_integration_arn: std::option::Option<std::string::String>,
-    /// <p>The identifier for teh client that is associated with the DataIntegration
-    /// association.</p>
+    /// <p>The identifier for teh client that is associated with the DataIntegration association.</p>
     pub client_id: std::option::Option<std::string::String>,
 }
 impl DataIntegrationAssociationSummary {
@@ -542,8 +541,7 @@ impl DataIntegrationAssociationSummary {
     pub fn data_integration_arn(&self) -> std::option::Option<&str> {
         self.data_integration_arn.as_deref()
     }
-    /// <p>The identifier for teh client that is associated with the DataIntegration
-    /// association.</p>
+    /// <p>The identifier for teh client that is associated with the DataIntegration association.</p>
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
@@ -600,14 +598,12 @@ pub mod data_integration_association_summary {
             self.data_integration_arn = input;
             self
         }
-        /// <p>The identifier for teh client that is associated with the DataIntegration
-        /// association.</p>
+        /// <p>The identifier for teh client that is associated with the DataIntegration association.</p>
         pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_id = Some(input.into());
             self
         }
-        /// <p>The identifier for teh client that is associated with the DataIntegration
-        /// association.</p>
+        /// <p>The identifier for teh client that is associated with the DataIntegration association.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self

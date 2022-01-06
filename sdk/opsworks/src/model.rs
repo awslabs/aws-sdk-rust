@@ -54,38 +54,24 @@ impl AsRef<str> for RootDeviceType {
     }
 }
 
-/// <p>Contains the information required to retrieve an app or cookbook from a repository. For more
-/// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom Recipes and
-/// Cookbooks</a>.</p>
+/// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom Recipes and Cookbooks</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Source {
     /// <p>The repository type.</p>
     pub r#type: std::option::Option<crate::model::SourceType>,
-    /// <p>The source URL. The following is an example of an Amazon S3 source URL:  <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.</p>
+    /// <p>The source URL. The following is an example of an Amazon S3 source URL: <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.</p>
     pub url: std::option::Option<std::string::String>,
     /// <p>This parameter depends on the repository type.</p>
     /// <ul>
-    /// <li>
-    /// <p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key
-    /// ID.</p>
-    /// </li>
-    /// <li>
-    /// <p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code>
-    /// to the user name.</p>
-    /// </li>
+    /// <li> <p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key ID.</p> </li>
+    /// <li> <p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code> to the user name.</p> </li>
     /// </ul>
     pub username: std::option::Option<std::string::String>,
     /// <p>When included in a request, the parameter depends on the repository type.</p>
     /// <ul>
-    /// <li>
-    /// <p>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access
-    /// key.</p>
-    /// </li>
-    /// <li>
-    /// <p>For HTTP bundles and Subversion repositories, set <code>Password</code> to the
-    /// password.</p>
-    /// </li>
+    /// <li> <p>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access key.</p> </li>
+    /// <li> <p>For HTTP bundles and Subversion repositories, set <code>Password</code> to the password.</p> </li>
     /// </ul>
     /// <p>For more information on how to safely handle IAM credentials, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p>
     /// <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
@@ -101,34 +87,22 @@ impl Source {
     pub fn r#type(&self) -> std::option::Option<&crate::model::SourceType> {
         self.r#type.as_ref()
     }
-    /// <p>The source URL. The following is an example of an Amazon S3 source URL:  <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.</p>
+    /// <p>The source URL. The following is an example of an Amazon S3 source URL: <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
     }
     /// <p>This parameter depends on the repository type.</p>
     /// <ul>
-    /// <li>
-    /// <p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key
-    /// ID.</p>
-    /// </li>
-    /// <li>
-    /// <p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code>
-    /// to the user name.</p>
-    /// </li>
+    /// <li> <p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key ID.</p> </li>
+    /// <li> <p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code> to the user name.</p> </li>
     /// </ul>
     pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
     }
     /// <p>When included in a request, the parameter depends on the repository type.</p>
     /// <ul>
-    /// <li>
-    /// <p>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access
-    /// key.</p>
-    /// </li>
-    /// <li>
-    /// <p>For HTTP bundles and Subversion repositories, set <code>Password</code> to the
-    /// password.</p>
-    /// </li>
+    /// <li> <p>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access key.</p> </li>
+    /// <li> <p>For HTTP bundles and Subversion repositories, set <code>Password</code> to the password.</p> </li>
     /// </ul>
     /// <p>For more information on how to safely handle IAM credentials, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p>
     /// <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
@@ -181,26 +155,20 @@ pub mod source {
             self.r#type = input;
             self
         }
-        /// <p>The source URL. The following is an example of an Amazon S3 source URL:  <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.</p>
+        /// <p>The source URL. The following is an example of an Amazon S3 source URL: <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.</p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
             self.url = Some(input.into());
             self
         }
-        /// <p>The source URL. The following is an example of an Amazon S3 source URL:  <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.</p>
+        /// <p>The source URL. The following is an example of an Amazon S3 source URL: <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
         }
         /// <p>This parameter depends on the repository type.</p>
         /// <ul>
-        /// <li>
-        /// <p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key
-        /// ID.</p>
-        /// </li>
-        /// <li>
-        /// <p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code>
-        /// to the user name.</p>
-        /// </li>
+        /// <li> <p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key ID.</p> </li>
+        /// <li> <p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code> to the user name.</p> </li>
         /// </ul>
         pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
             self.username = Some(input.into());
@@ -208,14 +176,8 @@ pub mod source {
         }
         /// <p>This parameter depends on the repository type.</p>
         /// <ul>
-        /// <li>
-        /// <p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key
-        /// ID.</p>
-        /// </li>
-        /// <li>
-        /// <p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code>
-        /// to the user name.</p>
-        /// </li>
+        /// <li> <p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key ID.</p> </li>
+        /// <li> <p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code> to the user name.</p> </li>
         /// </ul>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
@@ -223,14 +185,8 @@ pub mod source {
         }
         /// <p>When included in a request, the parameter depends on the repository type.</p>
         /// <ul>
-        /// <li>
-        /// <p>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access
-        /// key.</p>
-        /// </li>
-        /// <li>
-        /// <p>For HTTP bundles and Subversion repositories, set <code>Password</code> to the
-        /// password.</p>
-        /// </li>
+        /// <li> <p>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access key.</p> </li>
+        /// <li> <p>For HTTP bundles and Subversion repositories, set <code>Password</code> to the password.</p> </li>
         /// </ul>
         /// <p>For more information on how to safely handle IAM credentials, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p>
         /// <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
@@ -240,14 +196,8 @@ pub mod source {
         }
         /// <p>When included in a request, the parameter depends on the repository type.</p>
         /// <ul>
-        /// <li>
-        /// <p>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access
-        /// key.</p>
-        /// </li>
-        /// <li>
-        /// <p>For HTTP bundles and Subversion repositories, set <code>Password</code> to the
-        /// password.</p>
-        /// </li>
+        /// <li> <p>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access key.</p> </li>
+        /// <li> <p>For HTTP bundles and Subversion repositories, set <code>Password</code> to the password.</p> </li>
         /// </ul>
         /// <p>For more information on how to safely handle IAM credentials, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p>
         /// <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
@@ -564,13 +514,11 @@ impl AsRef<str> for StackAttributesKeys {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecycleEventConfiguration {
-    /// <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown event
-    /// configuration.</p>
+    /// <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
     pub shutdown: std::option::Option<crate::model::ShutdownEventConfiguration>,
 }
 impl LifecycleEventConfiguration {
-    /// <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown event
-    /// configuration.</p>
+    /// <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
     pub fn shutdown(&self) -> std::option::Option<&crate::model::ShutdownEventConfiguration> {
         self.shutdown.as_ref()
     }
@@ -591,14 +539,12 @@ pub mod lifecycle_event_configuration {
         pub(crate) shutdown: std::option::Option<crate::model::ShutdownEventConfiguration>,
     }
     impl Builder {
-        /// <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown event
-        /// configuration.</p>
+        /// <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
         pub fn shutdown(mut self, input: crate::model::ShutdownEventConfiguration) -> Self {
             self.shutdown = Some(input);
             self
         }
-        /// <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown event
-        /// configuration.</p>
+        /// <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
         pub fn set_shutdown(
             mut self,
             input: std::option::Option<crate::model::ShutdownEventConfiguration>,
@@ -627,8 +573,7 @@ impl LifecycleEventConfiguration {
 pub struct ShutdownEventConfiguration {
     /// <p>The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting down an instance.</p>
     pub execution_timeout: std::option::Option<i32>,
-    /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a>
-    /// </p>
+    /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a> </p>
     pub delay_until_elb_connections_drained: std::option::Option<bool>,
 }
 impl ShutdownEventConfiguration {
@@ -636,8 +581,7 @@ impl ShutdownEventConfiguration {
     pub fn execution_timeout(&self) -> std::option::Option<i32> {
         self.execution_timeout
     }
-    /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a>
-    /// </p>
+    /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a> </p>
     pub fn delay_until_elb_connections_drained(&self) -> std::option::Option<bool> {
         self.delay_until_elb_connections_drained
     }
@@ -673,14 +617,12 @@ pub mod shutdown_event_configuration {
             self.execution_timeout = input;
             self
         }
-        /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a>
-        /// </p>
+        /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a> </p>
         pub fn delay_until_elb_connections_drained(mut self, input: bool) -> Self {
             self.delay_until_elb_connections_drained = Some(input);
             self
         }
-        /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a>
-        /// </p>
+        /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a> </p>
         pub fn set_delay_until_elb_connections_drained(
             mut self,
             input: std::option::Option<bool>,
@@ -704,14 +646,7 @@ impl ShutdownEventConfiguration {
     }
 }
 
-/// <p>AWS OpsWorks Stacks supports five
-/// lifecycle events:
-/// <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For
-/// each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. In addition, you can provide
-/// custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the
-/// standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a
-/// particular layer to be run in response to each of the five events. </p>
-///
+/// <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. In addition, you can provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events. </p>
 /// <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the .rb extension. For example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the repository's phpapp2 folder.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -899,35 +834,18 @@ pub struct VolumeConfiguration {
     pub number_of_disks: std::option::Option<i32>,
     /// <p>The volume size.</p>
     pub size: std::option::Option<i32>,
-    /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
-    /// Amazon EBS Volume Types</a>.</p>
+    /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p>
-    /// </li>
+    /// <li> <p> <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p> </li>
+    /// <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p> </li>
+    /// <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li>
+    /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
+    /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
     /// </ul>
     pub volume_type: std::option::Option<std::string::String>,
     /// <p>For PIOPS volumes, the IOPS per disk.</p>
     pub iops: std::option::Option<i32>,
-    /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
+    /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
     pub encrypted: std::option::Option<bool>,
 }
 impl VolumeConfiguration {
@@ -947,29 +865,13 @@ impl VolumeConfiguration {
     pub fn size(&self) -> std::option::Option<i32> {
         self.size
     }
-    /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
-    /// Amazon EBS Volume Types</a>.</p>
+    /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p>
-    /// </li>
+    /// <li> <p> <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p> </li>
+    /// <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p> </li>
+    /// <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li>
+    /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
+    /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
     /// </ul>
     pub fn volume_type(&self) -> std::option::Option<&str> {
         self.volume_type.as_deref()
@@ -978,8 +880,7 @@ impl VolumeConfiguration {
     pub fn iops(&self) -> std::option::Option<i32> {
         self.iops
     }
-    /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
+    /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
     }
@@ -1052,57 +953,25 @@ pub mod volume_configuration {
             self.size = input;
             self
         }
-        /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
-        /// Amazon EBS Volume Types</a>.</p>
+        /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p>
-        /// </li>
+        /// <li> <p> <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p> </li>
+        /// <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p> </li>
+        /// <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li>
+        /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
+        /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
         /// </ul>
         pub fn volume_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.volume_type = Some(input.into());
             self
         }
-        /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
-        /// Amazon EBS Volume Types</a>.</p>
+        /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p>
-        /// </li>
+        /// <li> <p> <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p> </li>
+        /// <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p> </li>
+        /// <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li>
+        /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
+        /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
         /// </ul>
         pub fn set_volume_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.volume_type = input;
@@ -1118,14 +987,12 @@ pub mod volume_configuration {
             self.iops = input;
             self
         }
-        /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
+        /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
         pub fn encrypted(mut self, input: bool) -> Self {
             self.encrypted = Some(input);
             self
         }
-        /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
+        /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.encrypted = input;
             self
@@ -1204,12 +1071,9 @@ pub mod cloud_watch_logs_configuration {
         /// To override the contents of this collection use [`set_log_streams`](Self::set_log_streams).
         ///
         /// <p>A list of configuration options for CloudWatch Logs.</p>
-        pub fn log_streams(
-            mut self,
-            input: impl Into<crate::model::CloudWatchLogsLogStream>,
-        ) -> Self {
+        pub fn log_streams(mut self, input: crate::model::CloudWatchLogsLogStream) -> Self {
             let mut v = self.log_streams.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.log_streams = Some(v);
             self
         }
@@ -1241,55 +1105,37 @@ impl CloudWatchLogsConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchLogsLogStream {
-    /// <p>Specifies the destination log group. A log group is created automatically if it doesn't already exist.
-    /// Log group names can be between 1 and 512 characters long. Allowed characters include a-z, A-Z, 0-9, '_' (underscore),
-    /// '-' (hyphen), '/' (forward slash), and '.' (period).</p>
+    /// <p>Specifies the destination log group. A log group is created automatically if it doesn't already exist. Log group names can be between 1 and 512 characters long. Allowed characters include a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash), and '.' (period).</p>
     pub log_group_name: std::option::Option<std::string::String>,
-    /// <p>Specifies how the time stamp is extracted from logs. For more information, see the
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent Reference</a>.</p>
+    /// <p>Specifies how the time stamp is extracted from logs. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent Reference</a>.</p>
     pub datetime_format: std::option::Option<std::string::String>,
     /// <p>Specifies the time zone of log event time stamps.</p>
     pub time_zone: std::option::Option<crate::model::CloudWatchLogsTimeZone>,
     /// <p>Specifies log files that you want to push to CloudWatch Logs.</p>
-    /// <p>
-    /// <code>File</code> can point to a specific file or multiple files (by using wild card characters such as <code>/var/log/system.log*</code>).
-    /// Only the latest file is pushed to CloudWatch Logs, based on file modification time. We recommend that you use wild card characters to specify a series
-    /// of files of the same type, such as <code>access_log.2014-06-01-01</code>, <code>access_log.2014-06-01-02</code>, and so on
-    /// by using a pattern like <code>access_log.*</code>. Don't use a wildcard to match multiple file types,
-    /// such as <code>access_log_80</code> and <code>access_log_443</code>. To specify multiple, different file types, add another
-    /// log stream entry to the configuration file, so that each log file type is stored in a different log group.</p>
+    /// <p> <code>File</code> can point to a specific file or multiple files (by using wild card characters such as <code>/var/log/system.log*</code>). Only the latest file is pushed to CloudWatch Logs, based on file modification time. We recommend that you use wild card characters to specify a series of files of the same type, such as <code>access_log.2014-06-01-01</code>, <code>access_log.2014-06-01-02</code>, and so on by using a pattern like <code>access_log.*</code>. Don't use a wildcard to match multiple file types, such as <code>access_log_80</code> and <code>access_log_443</code>. To specify multiple, different file types, add another log stream entry to the configuration file, so that each log file type is stored in a different log group.</p>
     /// <p>Zipped files are not supported.</p>
     pub file: std::option::Option<std::string::String>,
-    /// <p>Specifies the range of lines for identifying a file. The valid values are one number, or two dash-delimited numbers,
-    /// such as '1', '2-5'. The default value is '1', meaning the first line is used to calculate the fingerprint. Fingerprint lines are
-    /// not sent to CloudWatch Logs unless all specified lines are available.</p>
+    /// <p>Specifies the range of lines for identifying a file. The valid values are one number, or two dash-delimited numbers, such as '1', '2-5'. The default value is '1', meaning the first line is used to calculate the fingerprint. Fingerprint lines are not sent to CloudWatch Logs unless all specified lines are available.</p>
     pub file_fingerprint_lines: std::option::Option<std::string::String>,
     /// <p>Specifies the pattern for identifying the start of a log message.</p>
     pub multi_line_start_pattern: std::option::Option<std::string::String>,
-    /// <p>Specifies where to start to read data (start_of_file or end_of_file). The default is start_of_file.
-    /// This setting is only used if there is no state persisted for that log stream.</p>
+    /// <p>Specifies where to start to read data (start_of_file or end_of_file). The default is start_of_file. This setting is only used if there is no state persisted for that log stream.</p>
     pub initial_position: std::option::Option<crate::model::CloudWatchLogsInitialPosition>,
-    /// <p>Specifies the encoding of the log file so that the file can be read correctly.
-    /// The default is <code>utf_8</code>. Encodings supported by Python <code>codecs.decode()</code> can be used here.</p>
+    /// <p>Specifies the encoding of the log file so that the file can be read correctly. The default is <code>utf_8</code>. Encodings supported by Python <code>codecs.decode()</code> can be used here.</p>
     pub encoding: std::option::Option<crate::model::CloudWatchLogsEncoding>,
     /// <p>Specifies the time duration for the batching of log events. The minimum value is 5000ms and default value is 5000ms.</p>
     pub buffer_duration: std::option::Option<i32>,
     /// <p>Specifies the max number of log events in a batch, up to 10000. The default value is 1000.</p>
     pub batch_count: std::option::Option<i32>,
-    /// <p>Specifies the maximum size of log events in a batch, in bytes, up to 1048576 bytes.
-    /// The default value is 32768 bytes. This size is calculated as the sum of all event messages
-    /// in UTF-8, plus 26 bytes for each log event.</p>
+    /// <p>Specifies the maximum size of log events in a batch, in bytes, up to 1048576 bytes. The default value is 32768 bytes. This size is calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log event.</p>
     pub batch_size: std::option::Option<i32>,
 }
 impl CloudWatchLogsLogStream {
-    /// <p>Specifies the destination log group. A log group is created automatically if it doesn't already exist.
-    /// Log group names can be between 1 and 512 characters long. Allowed characters include a-z, A-Z, 0-9, '_' (underscore),
-    /// '-' (hyphen), '/' (forward slash), and '.' (period).</p>
+    /// <p>Specifies the destination log group. A log group is created automatically if it doesn't already exist. Log group names can be between 1 and 512 characters long. Allowed characters include a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash), and '.' (period).</p>
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
-    /// <p>Specifies how the time stamp is extracted from logs. For more information, see the
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent Reference</a>.</p>
+    /// <p>Specifies how the time stamp is extracted from logs. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent Reference</a>.</p>
     pub fn datetime_format(&self) -> std::option::Option<&str> {
         self.datetime_format.as_deref()
     }
@@ -1298,20 +1144,12 @@ impl CloudWatchLogsLogStream {
         self.time_zone.as_ref()
     }
     /// <p>Specifies log files that you want to push to CloudWatch Logs.</p>
-    /// <p>
-    /// <code>File</code> can point to a specific file or multiple files (by using wild card characters such as <code>/var/log/system.log*</code>).
-    /// Only the latest file is pushed to CloudWatch Logs, based on file modification time. We recommend that you use wild card characters to specify a series
-    /// of files of the same type, such as <code>access_log.2014-06-01-01</code>, <code>access_log.2014-06-01-02</code>, and so on
-    /// by using a pattern like <code>access_log.*</code>. Don't use a wildcard to match multiple file types,
-    /// such as <code>access_log_80</code> and <code>access_log_443</code>. To specify multiple, different file types, add another
-    /// log stream entry to the configuration file, so that each log file type is stored in a different log group.</p>
+    /// <p> <code>File</code> can point to a specific file or multiple files (by using wild card characters such as <code>/var/log/system.log*</code>). Only the latest file is pushed to CloudWatch Logs, based on file modification time. We recommend that you use wild card characters to specify a series of files of the same type, such as <code>access_log.2014-06-01-01</code>, <code>access_log.2014-06-01-02</code>, and so on by using a pattern like <code>access_log.*</code>. Don't use a wildcard to match multiple file types, such as <code>access_log_80</code> and <code>access_log_443</code>. To specify multiple, different file types, add another log stream entry to the configuration file, so that each log file type is stored in a different log group.</p>
     /// <p>Zipped files are not supported.</p>
     pub fn file(&self) -> std::option::Option<&str> {
         self.file.as_deref()
     }
-    /// <p>Specifies the range of lines for identifying a file. The valid values are one number, or two dash-delimited numbers,
-    /// such as '1', '2-5'. The default value is '1', meaning the first line is used to calculate the fingerprint. Fingerprint lines are
-    /// not sent to CloudWatch Logs unless all specified lines are available.</p>
+    /// <p>Specifies the range of lines for identifying a file. The valid values are one number, or two dash-delimited numbers, such as '1', '2-5'. The default value is '1', meaning the first line is used to calculate the fingerprint. Fingerprint lines are not sent to CloudWatch Logs unless all specified lines are available.</p>
     pub fn file_fingerprint_lines(&self) -> std::option::Option<&str> {
         self.file_fingerprint_lines.as_deref()
     }
@@ -1319,15 +1157,13 @@ impl CloudWatchLogsLogStream {
     pub fn multi_line_start_pattern(&self) -> std::option::Option<&str> {
         self.multi_line_start_pattern.as_deref()
     }
-    /// <p>Specifies where to start to read data (start_of_file or end_of_file). The default is start_of_file.
-    /// This setting is only used if there is no state persisted for that log stream.</p>
+    /// <p>Specifies where to start to read data (start_of_file or end_of_file). The default is start_of_file. This setting is only used if there is no state persisted for that log stream.</p>
     pub fn initial_position(
         &self,
     ) -> std::option::Option<&crate::model::CloudWatchLogsInitialPosition> {
         self.initial_position.as_ref()
     }
-    /// <p>Specifies the encoding of the log file so that the file can be read correctly.
-    /// The default is <code>utf_8</code>. Encodings supported by Python <code>codecs.decode()</code> can be used here.</p>
+    /// <p>Specifies the encoding of the log file so that the file can be read correctly. The default is <code>utf_8</code>. Encodings supported by Python <code>codecs.decode()</code> can be used here.</p>
     pub fn encoding(&self) -> std::option::Option<&crate::model::CloudWatchLogsEncoding> {
         self.encoding.as_ref()
     }
@@ -1339,9 +1175,7 @@ impl CloudWatchLogsLogStream {
     pub fn batch_count(&self) -> std::option::Option<i32> {
         self.batch_count
     }
-    /// <p>Specifies the maximum size of log events in a batch, in bytes, up to 1048576 bytes.
-    /// The default value is 32768 bytes. This size is calculated as the sum of all event messages
-    /// in UTF-8, plus 26 bytes for each log event.</p>
+    /// <p>Specifies the maximum size of log events in a batch, in bytes, up to 1048576 bytes. The default value is 32768 bytes. This size is calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log event.</p>
     pub fn batch_size(&self) -> std::option::Option<i32> {
         self.batch_size
     }
@@ -1383,16 +1217,12 @@ pub mod cloud_watch_logs_log_stream {
         pub(crate) batch_size: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Specifies the destination log group. A log group is created automatically if it doesn't already exist.
-        /// Log group names can be between 1 and 512 characters long. Allowed characters include a-z, A-Z, 0-9, '_' (underscore),
-        /// '-' (hyphen), '/' (forward slash), and '.' (period).</p>
+        /// <p>Specifies the destination log group. A log group is created automatically if it doesn't already exist. Log group names can be between 1 and 512 characters long. Allowed characters include a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash), and '.' (period).</p>
         pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_group_name = Some(input.into());
             self
         }
-        /// <p>Specifies the destination log group. A log group is created automatically if it doesn't already exist.
-        /// Log group names can be between 1 and 512 characters long. Allowed characters include a-z, A-Z, 0-9, '_' (underscore),
-        /// '-' (hyphen), '/' (forward slash), and '.' (period).</p>
+        /// <p>Specifies the destination log group. A log group is created automatically if it doesn't already exist. Log group names can be between 1 and 512 characters long. Allowed characters include a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash), and '.' (period).</p>
         pub fn set_log_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1400,14 +1230,12 @@ pub mod cloud_watch_logs_log_stream {
             self.log_group_name = input;
             self
         }
-        /// <p>Specifies how the time stamp is extracted from logs. For more information, see the
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent Reference</a>.</p>
+        /// <p>Specifies how the time stamp is extracted from logs. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent Reference</a>.</p>
         pub fn datetime_format(mut self, input: impl Into<std::string::String>) -> Self {
             self.datetime_format = Some(input.into());
             self
         }
-        /// <p>Specifies how the time stamp is extracted from logs. For more information, see the
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent Reference</a>.</p>
+        /// <p>Specifies how the time stamp is extracted from logs. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent Reference</a>.</p>
         pub fn set_datetime_format(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1429,41 +1257,25 @@ pub mod cloud_watch_logs_log_stream {
             self
         }
         /// <p>Specifies log files that you want to push to CloudWatch Logs.</p>
-        /// <p>
-        /// <code>File</code> can point to a specific file or multiple files (by using wild card characters such as <code>/var/log/system.log*</code>).
-        /// Only the latest file is pushed to CloudWatch Logs, based on file modification time. We recommend that you use wild card characters to specify a series
-        /// of files of the same type, such as <code>access_log.2014-06-01-01</code>, <code>access_log.2014-06-01-02</code>, and so on
-        /// by using a pattern like <code>access_log.*</code>. Don't use a wildcard to match multiple file types,
-        /// such as <code>access_log_80</code> and <code>access_log_443</code>. To specify multiple, different file types, add another
-        /// log stream entry to the configuration file, so that each log file type is stored in a different log group.</p>
+        /// <p> <code>File</code> can point to a specific file or multiple files (by using wild card characters such as <code>/var/log/system.log*</code>). Only the latest file is pushed to CloudWatch Logs, based on file modification time. We recommend that you use wild card characters to specify a series of files of the same type, such as <code>access_log.2014-06-01-01</code>, <code>access_log.2014-06-01-02</code>, and so on by using a pattern like <code>access_log.*</code>. Don't use a wildcard to match multiple file types, such as <code>access_log_80</code> and <code>access_log_443</code>. To specify multiple, different file types, add another log stream entry to the configuration file, so that each log file type is stored in a different log group.</p>
         /// <p>Zipped files are not supported.</p>
         pub fn file(mut self, input: impl Into<std::string::String>) -> Self {
             self.file = Some(input.into());
             self
         }
         /// <p>Specifies log files that you want to push to CloudWatch Logs.</p>
-        /// <p>
-        /// <code>File</code> can point to a specific file or multiple files (by using wild card characters such as <code>/var/log/system.log*</code>).
-        /// Only the latest file is pushed to CloudWatch Logs, based on file modification time. We recommend that you use wild card characters to specify a series
-        /// of files of the same type, such as <code>access_log.2014-06-01-01</code>, <code>access_log.2014-06-01-02</code>, and so on
-        /// by using a pattern like <code>access_log.*</code>. Don't use a wildcard to match multiple file types,
-        /// such as <code>access_log_80</code> and <code>access_log_443</code>. To specify multiple, different file types, add another
-        /// log stream entry to the configuration file, so that each log file type is stored in a different log group.</p>
+        /// <p> <code>File</code> can point to a specific file or multiple files (by using wild card characters such as <code>/var/log/system.log*</code>). Only the latest file is pushed to CloudWatch Logs, based on file modification time. We recommend that you use wild card characters to specify a series of files of the same type, such as <code>access_log.2014-06-01-01</code>, <code>access_log.2014-06-01-02</code>, and so on by using a pattern like <code>access_log.*</code>. Don't use a wildcard to match multiple file types, such as <code>access_log_80</code> and <code>access_log_443</code>. To specify multiple, different file types, add another log stream entry to the configuration file, so that each log file type is stored in a different log group.</p>
         /// <p>Zipped files are not supported.</p>
         pub fn set_file(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.file = input;
             self
         }
-        /// <p>Specifies the range of lines for identifying a file. The valid values are one number, or two dash-delimited numbers,
-        /// such as '1', '2-5'. The default value is '1', meaning the first line is used to calculate the fingerprint. Fingerprint lines are
-        /// not sent to CloudWatch Logs unless all specified lines are available.</p>
+        /// <p>Specifies the range of lines for identifying a file. The valid values are one number, or two dash-delimited numbers, such as '1', '2-5'. The default value is '1', meaning the first line is used to calculate the fingerprint. Fingerprint lines are not sent to CloudWatch Logs unless all specified lines are available.</p>
         pub fn file_fingerprint_lines(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_fingerprint_lines = Some(input.into());
             self
         }
-        /// <p>Specifies the range of lines for identifying a file. The valid values are one number, or two dash-delimited numbers,
-        /// such as '1', '2-5'. The default value is '1', meaning the first line is used to calculate the fingerprint. Fingerprint lines are
-        /// not sent to CloudWatch Logs unless all specified lines are available.</p>
+        /// <p>Specifies the range of lines for identifying a file. The valid values are one number, or two dash-delimited numbers, such as '1', '2-5'. The default value is '1', meaning the first line is used to calculate the fingerprint. Fingerprint lines are not sent to CloudWatch Logs unless all specified lines are available.</p>
         pub fn set_file_fingerprint_lines(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1484,8 +1296,7 @@ pub mod cloud_watch_logs_log_stream {
             self.multi_line_start_pattern = input;
             self
         }
-        /// <p>Specifies where to start to read data (start_of_file or end_of_file). The default is start_of_file.
-        /// This setting is only used if there is no state persisted for that log stream.</p>
+        /// <p>Specifies where to start to read data (start_of_file or end_of_file). The default is start_of_file. This setting is only used if there is no state persisted for that log stream.</p>
         pub fn initial_position(
             mut self,
             input: crate::model::CloudWatchLogsInitialPosition,
@@ -1493,8 +1304,7 @@ pub mod cloud_watch_logs_log_stream {
             self.initial_position = Some(input);
             self
         }
-        /// <p>Specifies where to start to read data (start_of_file or end_of_file). The default is start_of_file.
-        /// This setting is only used if there is no state persisted for that log stream.</p>
+        /// <p>Specifies where to start to read data (start_of_file or end_of_file). The default is start_of_file. This setting is only used if there is no state persisted for that log stream.</p>
         pub fn set_initial_position(
             mut self,
             input: std::option::Option<crate::model::CloudWatchLogsInitialPosition>,
@@ -1502,14 +1312,12 @@ pub mod cloud_watch_logs_log_stream {
             self.initial_position = input;
             self
         }
-        /// <p>Specifies the encoding of the log file so that the file can be read correctly.
-        /// The default is <code>utf_8</code>. Encodings supported by Python <code>codecs.decode()</code> can be used here.</p>
+        /// <p>Specifies the encoding of the log file so that the file can be read correctly. The default is <code>utf_8</code>. Encodings supported by Python <code>codecs.decode()</code> can be used here.</p>
         pub fn encoding(mut self, input: crate::model::CloudWatchLogsEncoding) -> Self {
             self.encoding = Some(input);
             self
         }
-        /// <p>Specifies the encoding of the log file so that the file can be read correctly.
-        /// The default is <code>utf_8</code>. Encodings supported by Python <code>codecs.decode()</code> can be used here.</p>
+        /// <p>Specifies the encoding of the log file so that the file can be read correctly. The default is <code>utf_8</code>. Encodings supported by Python <code>codecs.decode()</code> can be used here.</p>
         pub fn set_encoding(
             mut self,
             input: std::option::Option<crate::model::CloudWatchLogsEncoding>,
@@ -1537,16 +1345,12 @@ pub mod cloud_watch_logs_log_stream {
             self.batch_count = input;
             self
         }
-        /// <p>Specifies the maximum size of log events in a batch, in bytes, up to 1048576 bytes.
-        /// The default value is 32768 bytes. This size is calculated as the sum of all event messages
-        /// in UTF-8, plus 26 bytes for each log event.</p>
+        /// <p>Specifies the maximum size of log events in a batch, in bytes, up to 1048576 bytes. The default value is 32768 bytes. This size is calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log event.</p>
         pub fn batch_size(mut self, input: i32) -> Self {
             self.batch_size = Some(input);
             self
         }
-        /// <p>Specifies the maximum size of log events in a batch, in bytes, up to 1048576 bytes.
-        /// The default value is 32768 bytes. This size is calculated as the sum of all event messages
-        /// in UTF-8, plus 26 bytes for each log event.</p>
+        /// <p>Specifies the maximum size of log events in a batch, in bytes, up to 1048576 bytes. The default value is 32768 bytes. This size is calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log event.</p>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
             self.batch_size = input;
             self
@@ -2485,10 +2289,7 @@ pub struct EnvironmentVariable {
     pub key: std::option::Option<std::string::String>,
     /// <p>(Optional) The environment variable's value, which can be left empty. If you specify a value, it can contain up to 256 characters, which must all be printable.</p>
     pub value: std::option::Option<std::string::String>,
-    /// <p>(Optional) Whether the variable's value will be returned by the <a>DescribeApps</a> action.
-    /// To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>.
-    /// <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual
-    /// value. The default value for <code>Secure</code> is <code>false</code>. </p>
+    /// <p>(Optional) Whether the variable's value will be returned by the <code>DescribeApps</code> action. To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual value. The default value for <code>Secure</code> is <code>false</code>. </p>
     pub secure: std::option::Option<bool>,
 }
 impl EnvironmentVariable {
@@ -2500,10 +2301,7 @@ impl EnvironmentVariable {
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
-    /// <p>(Optional) Whether the variable's value will be returned by the <a>DescribeApps</a> action.
-    /// To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>.
-    /// <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual
-    /// value. The default value for <code>Secure</code> is <code>false</code>. </p>
+    /// <p>(Optional) Whether the variable's value will be returned by the <code>DescribeApps</code> action. To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual value. The default value for <code>Secure</code> is <code>false</code>. </p>
     pub fn secure(&self) -> std::option::Option<bool> {
         self.secure
     }
@@ -2548,18 +2346,12 @@ pub mod environment_variable {
             self.value = input;
             self
         }
-        /// <p>(Optional) Whether the variable's value will be returned by the <a>DescribeApps</a> action.
-        /// To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>.
-        /// <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual
-        /// value. The default value for <code>Secure</code> is <code>false</code>. </p>
+        /// <p>(Optional) Whether the variable's value will be returned by the <code>DescribeApps</code> action. To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual value. The default value for <code>Secure</code> is <code>false</code>. </p>
         pub fn secure(mut self, input: bool) -> Self {
             self.secure = Some(input);
             self
         }
-        /// <p>(Optional) Whether the variable's value will be returned by the <a>DescribeApps</a> action.
-        /// To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>.
-        /// <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual
-        /// value. The default value for <code>Secure</code> is <code>false</code>. </p>
+        /// <p>(Optional) Whether the variable's value will be returned by the <code>DescribeApps</code> action. To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual value. The default value for <code>Secure</code> is <code>false</code>. </p>
         pub fn set_secure(mut self, input: std::option::Option<bool>) -> Self {
             self.secure = input;
             self
@@ -2828,8 +2620,7 @@ impl AsRef<str> for AppType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSource {
-    /// <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>,
-    /// <code>OpsworksMysqlInstance</code>, <code>RdsDbInstance</code>, or <code>None</code>.</p>
+    /// <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>, <code>RdsDbInstance</code>, or <code>None</code>.</p>
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The data source's ARN.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -2837,8 +2628,7 @@ pub struct DataSource {
     pub database_name: std::option::Option<std::string::String>,
 }
 impl DataSource {
-    /// <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>,
-    /// <code>OpsworksMysqlInstance</code>, <code>RdsDbInstance</code>, or <code>None</code>.</p>
+    /// <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>, <code>RdsDbInstance</code>, or <code>None</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -2871,14 +2661,12 @@ pub mod data_source {
         pub(crate) database_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>,
-        /// <code>OpsworksMysqlInstance</code>, <code>RdsDbInstance</code>, or <code>None</code>.</p>
+        /// <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>, <code>RdsDbInstance</code>, or <code>None</code>.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>,
-        /// <code>OpsworksMysqlInstance</code>, <code>RdsDbInstance</code>, or <code>None</code>.</p>
+        /// <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>, <code>RdsDbInstance</code>, or <code>None</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -2925,18 +2713,12 @@ impl DataSource {
 
 /// <p>Describes a time-based instance's auto scaling schedule. The schedule consists of a set of key-value pairs.</p>
 /// <ul>
-/// <li>
-/// <p>The key is the time period (a UTC hour) and must be an integer from 0 - 23.</p>
-/// </li>
-/// <li>
-/// <p>The value indicates whether the instance should be online or offline for the specified period, and must be set to "on" or "off"</p>
-/// </li>
+/// <li> <p>The key is the time period (a UTC hour) and must be an integer from 0 - 23.</p> </li>
+/// <li> <p>The value indicates whether the instance should be online or offline for the specified period, and must be set to "on" or "off"</p> </li>
 /// </ul>
 /// <p>The default setting for all time periods is off, so you use the following parameters primarily to specify the online periods. You don't have to explicitly specify offline periods unless you want to change an online period to an offline period.</p>
 /// <p>The following example specifies that the instance should be online for four hours, from UTC 1200 - 1600. It will be off for the remainder of the day.</p>
-/// <p>
-/// <code> { "12":"on", "13":"on", "14":"on", "15":"on" } </code>
-/// </p>
+/// <p> <code> { "12":"on", "13":"on", "14":"on", "15":"on" } </code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WeeklyAutoScalingSchedule {
@@ -3259,12 +3041,7 @@ pub struct AutoScalingThresholds {
     pub instance_count: std::option::Option<i32>,
     /// <p>The amount of time, in minutes, that the load must exceed a threshold before more instances are added or removed.</p>
     pub thresholds_wait_time: std::option::Option<i32>,
-    /// <p>The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks Stacks should ignore metrics
-    /// and suppress additional scaling events. For example, AWS OpsWorks Stacks adds new instances following
-    /// an upscaling event but the instances won't start reducing the load until they have been booted
-    /// and configured. There is no point in raising additional scaling events during that operation,
-    /// which typically takes several minutes. <code>IgnoreMetricsTime</code> allows you to direct
-    /// AWS OpsWorks Stacks to suppress scaling events long enough to get the new instances online.</p>
+    /// <p>The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks Stacks should ignore metrics and suppress additional scaling events. For example, AWS OpsWorks Stacks adds new instances following an upscaling event but the instances won't start reducing the load until they have been booted and configured. There is no point in raising additional scaling events during that operation, which typically takes several minutes. <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks Stacks to suppress scaling events long enough to get the new instances online.</p>
     pub ignore_metrics_time: std::option::Option<i32>,
     /// <p>The CPU utilization threshold, as a percent of the available CPU. A value of -1 disables the threshold.</p>
     pub cpu_threshold: std::option::Option<f64>,
@@ -3272,13 +3049,8 @@ pub struct AutoScalingThresholds {
     pub memory_threshold: std::option::Option<f64>,
     /// <p>The load threshold. A value of -1 disables the threshold. For more information about how load is computed, see <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load (computing)</a>.</p>
     pub load_threshold: std::option::Option<f64>,
-    /// <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This parameter takes a list of up to five alarm names,
-    /// which are case sensitive and must be in the same region as the stack.</p>
-    /// <note>
-    /// <p>To use custom alarms, you must update your service role to allow
-    /// <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks Stacks update the role for
-    /// you when you first use this feature or you can edit the role manually. For more information,
-    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS OpsWorks Stacks to Act on Your Behalf</a>.</p>
+    /// <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This parameter takes a list of up to five alarm names, which are case sensitive and must be in the same region as the stack.</p> <note>
+    /// <p>To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can edit the role manually. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS OpsWorks Stacks to Act on Your Behalf</a>.</p>
     /// </note>
     pub alarms: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -3291,12 +3063,7 @@ impl AutoScalingThresholds {
     pub fn thresholds_wait_time(&self) -> std::option::Option<i32> {
         self.thresholds_wait_time
     }
-    /// <p>The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks Stacks should ignore metrics
-    /// and suppress additional scaling events. For example, AWS OpsWorks Stacks adds new instances following
-    /// an upscaling event but the instances won't start reducing the load until they have been booted
-    /// and configured. There is no point in raising additional scaling events during that operation,
-    /// which typically takes several minutes. <code>IgnoreMetricsTime</code> allows you to direct
-    /// AWS OpsWorks Stacks to suppress scaling events long enough to get the new instances online.</p>
+    /// <p>The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks Stacks should ignore metrics and suppress additional scaling events. For example, AWS OpsWorks Stacks adds new instances following an upscaling event but the instances won't start reducing the load until they have been booted and configured. There is no point in raising additional scaling events during that operation, which typically takes several minutes. <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks Stacks to suppress scaling events long enough to get the new instances online.</p>
     pub fn ignore_metrics_time(&self) -> std::option::Option<i32> {
         self.ignore_metrics_time
     }
@@ -3312,13 +3079,8 @@ impl AutoScalingThresholds {
     pub fn load_threshold(&self) -> std::option::Option<f64> {
         self.load_threshold
     }
-    /// <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This parameter takes a list of up to five alarm names,
-    /// which are case sensitive and must be in the same region as the stack.</p>
-    /// <note>
-    /// <p>To use custom alarms, you must update your service role to allow
-    /// <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks Stacks update the role for
-    /// you when you first use this feature or you can edit the role manually. For more information,
-    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS OpsWorks Stacks to Act on Your Behalf</a>.</p>
+    /// <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This parameter takes a list of up to five alarm names, which are case sensitive and must be in the same region as the stack.</p> <note>
+    /// <p>To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can edit the role manually. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS OpsWorks Stacks to Act on Your Behalf</a>.</p>
     /// </note>
     pub fn alarms(&self) -> std::option::Option<&[std::string::String]> {
         self.alarms.as_deref()
@@ -3372,22 +3134,12 @@ pub mod auto_scaling_thresholds {
             self.thresholds_wait_time = input;
             self
         }
-        /// <p>The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks Stacks should ignore metrics
-        /// and suppress additional scaling events. For example, AWS OpsWorks Stacks adds new instances following
-        /// an upscaling event but the instances won't start reducing the load until they have been booted
-        /// and configured. There is no point in raising additional scaling events during that operation,
-        /// which typically takes several minutes. <code>IgnoreMetricsTime</code> allows you to direct
-        /// AWS OpsWorks Stacks to suppress scaling events long enough to get the new instances online.</p>
+        /// <p>The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks Stacks should ignore metrics and suppress additional scaling events. For example, AWS OpsWorks Stacks adds new instances following an upscaling event but the instances won't start reducing the load until they have been booted and configured. There is no point in raising additional scaling events during that operation, which typically takes several minutes. <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks Stacks to suppress scaling events long enough to get the new instances online.</p>
         pub fn ignore_metrics_time(mut self, input: i32) -> Self {
             self.ignore_metrics_time = Some(input);
             self
         }
-        /// <p>The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks Stacks should ignore metrics
-        /// and suppress additional scaling events. For example, AWS OpsWorks Stacks adds new instances following
-        /// an upscaling event but the instances won't start reducing the load until they have been booted
-        /// and configured. There is no point in raising additional scaling events during that operation,
-        /// which typically takes several minutes. <code>IgnoreMetricsTime</code> allows you to direct
-        /// AWS OpsWorks Stacks to suppress scaling events long enough to get the new instances online.</p>
+        /// <p>The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks Stacks should ignore metrics and suppress additional scaling events. For example, AWS OpsWorks Stacks adds new instances following an upscaling event but the instances won't start reducing the load until they have been booted and configured. There is no point in raising additional scaling events during that operation, which typically takes several minutes. <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks Stacks to suppress scaling events long enough to get the new instances online.</p>
         pub fn set_ignore_metrics_time(mut self, input: std::option::Option<i32>) -> Self {
             self.ignore_metrics_time = input;
             self
@@ -3426,13 +3178,8 @@ pub mod auto_scaling_thresholds {
         ///
         /// To override the contents of this collection use [`set_alarms`](Self::set_alarms).
         ///
-        /// <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This parameter takes a list of up to five alarm names,
-        /// which are case sensitive and must be in the same region as the stack.</p>
-        /// <note>
-        /// <p>To use custom alarms, you must update your service role to allow
-        /// <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks Stacks update the role for
-        /// you when you first use this feature or you can edit the role manually. For more information,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS OpsWorks Stacks to Act on Your Behalf</a>.</p>
+        /// <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This parameter takes a list of up to five alarm names, which are case sensitive and must be in the same region as the stack.</p> <note>
+        /// <p>To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can edit the role manually. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS OpsWorks Stacks to Act on Your Behalf</a>.</p>
         /// </note>
         pub fn alarms(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.alarms.unwrap_or_default();
@@ -3440,13 +3187,8 @@ pub mod auto_scaling_thresholds {
             self.alarms = Some(v);
             self
         }
-        /// <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This parameter takes a list of up to five alarm names,
-        /// which are case sensitive and must be in the same region as the stack.</p>
-        /// <note>
-        /// <p>To use custom alarms, you must update your service role to allow
-        /// <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks Stacks update the role for
-        /// you when you first use this feature or you can edit the role manually. For more information,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS OpsWorks Stacks to Act on Your Behalf</a>.</p>
+        /// <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This parameter takes a list of up to five alarm names, which are case sensitive and must be in the same region as the stack.</p> <note>
+        /// <p>To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can edit the role manually. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS OpsWorks Stacks to Act on Your Behalf</a>.</p>
         /// </note>
         pub fn set_alarms(
             mut self,
@@ -3476,8 +3218,7 @@ impl AutoScalingThresholds {
     }
 }
 
-/// <p>Contains a description of an Amazon EC2 instance from the Amazon EC2 metadata service. For more
-/// information, see <a href="https://docs.aws.amazon.com/sdkfornet/latest/apidocs/Index.html">Instance Metadata and User Data</a>.</p>
+/// <p>Contains a description of an Amazon EC2 instance from the Amazon EC2 metadata service. For more information, see <a href="https://docs.aws.amazon.com/sdkfornet/latest/apidocs/Index.html">Instance Metadata and User Data</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceIdentity {
@@ -3687,35 +3428,18 @@ pub struct Volume {
     pub region: std::option::Option<std::string::String>,
     /// <p>The volume Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub availability_zone: std::option::Option<std::string::String>,
-    /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
-    /// Amazon EBS Volume Types</a>.</p>
+    /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p>
-    /// </li>
+    /// <li> <p> <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p> </li>
+    /// <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p> </li>
+    /// <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li>
+    /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
+    /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
     /// </ul>
     pub volume_type: std::option::Option<std::string::String>,
     /// <p>For PIOPS volumes, the IOPS per disk.</p>
     pub iops: std::option::Option<i32>,
-    /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
+    /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
     pub encrypted: std::option::Option<bool>,
 }
 impl Volume {
@@ -3763,29 +3487,13 @@ impl Volume {
     pub fn availability_zone(&self) -> std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
-    /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
-    /// Amazon EBS Volume Types</a>.</p>
+    /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p>
-    /// </li>
+    /// <li> <p> <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p> </li>
+    /// <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p> </li>
+    /// <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li>
+    /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
+    /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
     /// </ul>
     pub fn volume_type(&self) -> std::option::Option<&str> {
         self.volume_type.as_deref()
@@ -3794,8 +3502,7 @@ impl Volume {
     pub fn iops(&self) -> std::option::Option<i32> {
         self.iops
     }
-    /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
+    /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
     }
@@ -3961,57 +3668,25 @@ pub mod volume {
             self.availability_zone = input;
             self
         }
-        /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
-        /// Amazon EBS Volume Types</a>.</p>
+        /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p>
-        /// </li>
+        /// <li> <p> <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p> </li>
+        /// <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p> </li>
+        /// <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li>
+        /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
+        /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
         /// </ul>
         pub fn volume_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.volume_type = Some(input.into());
             self
         }
-        /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
-        /// Amazon EBS Volume Types</a>.</p>
+        /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p>
-        /// </li>
+        /// <li> <p> <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p> </li>
+        /// <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p> </li>
+        /// <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li>
+        /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
+        /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
         /// </ul>
         pub fn set_volume_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.volume_type = input;
@@ -4027,14 +3702,12 @@ pub mod volume {
             self.iops = input;
             self
         }
-        /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
+        /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
         pub fn encrypted(mut self, input: bool) -> Self {
             self.encrypted = Some(input);
             self
         }
-        /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
+        /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.encrypted = input;
             self
@@ -4079,9 +3752,7 @@ pub struct UserProfile {
     pub ssh_username: std::option::Option<std::string::String>,
     /// <p>The user's SSH public key.</p>
     pub ssh_public_key: std::option::Option<std::string::String>,
-    /// <p>Whether users can specify their own SSH public key through the My Settings page. For more
-    /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
-    /// Permissions</a>.</p>
+    /// <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.</p>
     pub allow_self_management: std::option::Option<bool>,
 }
 impl UserProfile {
@@ -4101,9 +3772,7 @@ impl UserProfile {
     pub fn ssh_public_key(&self) -> std::option::Option<&str> {
         self.ssh_public_key.as_deref()
     }
-    /// <p>Whether users can specify their own SSH public key through the My Settings page. For more
-    /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
-    /// Permissions</a>.</p>
+    /// <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.</p>
     pub fn allow_self_management(&self) -> std::option::Option<bool> {
         self.allow_self_management
     }
@@ -4175,16 +3844,12 @@ pub mod user_profile {
             self.ssh_public_key = input;
             self
         }
-        /// <p>Whether users can specify their own SSH public key through the My Settings page. For more
-        /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
-        /// Permissions</a>.</p>
+        /// <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.</p>
         pub fn allow_self_management(mut self, input: bool) -> Self {
             self.allow_self_management = Some(input);
             self
         }
-        /// <p>Whether users can specify their own SSH public key through the My Settings page. For more
-        /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
-        /// Permissions</a>.</p>
+        /// <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.</p>
         pub fn set_allow_self_management(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_self_management = input;
             self
@@ -4877,9 +4542,7 @@ pub struct Stack {
     >,
     /// <p>The stack AWS Identity and Access Management (IAM) role.</p>
     pub service_role_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances.
-    /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-    /// Identifiers</a>.</p>
+    /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub default_instance_profile_arn: std::option::Option<std::string::String>,
     /// <p>The stack's default operating system.</p>
     pub default_os: std::option::Option<std::string::String>,
@@ -4890,34 +4553,26 @@ pub struct Stack {
     /// <p>The default subnet ID; applicable only if the stack is running in a VPC.</p>
     pub default_subnet_id: std::option::Option<std::string::String>,
     /// <p>A JSON object that contains user-defined attributes to be added to the stack configuration and deployment attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>
-    /// <p>
-    /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-    /// </p>
-    /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-    /// Modify the Stack Configuration Attributes</a>.</p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+    /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
     pub custom_json: std::option::Option<std::string::String>,
     /// <p>The configuration manager.</p>
     pub configuration_manager: std::option::Option<crate::model::StackConfigurationManager>,
-    /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
-    /// Berkshelf version. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+    /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
     pub chef_configuration: std::option::Option<crate::model::ChefConfiguration>,
     /// <p>Whether the stack uses custom cookbooks.</p>
     pub use_custom_cookbooks: std::option::Option<bool>,
     /// <p>Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
     pub use_opsworks_security_groups: std::option::Option<bool>,
-    /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
-    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or
-    /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+    /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
     pub custom_cookbooks_source: std::option::Option<crate::model::Source>,
     /// <p>A default Amazon EC2 key pair for the stack's instances. You can override this value when you create or update an instance.</p>
     pub default_ssh_key_name: std::option::Option<std::string::String>,
     /// <p>The date when the stack was created.</p>
     pub created_at: std::option::Option<std::string::String>,
-    /// <p>The default root device type. This value is used by default for all instances in the stack,
-    /// but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    /// <p>The default root device type. This value is used by default for all instances in the stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
     pub default_root_device_type: std::option::Option<crate::model::RootDeviceType>,
-    /// <p>The agent version. This parameter is set to <code>LATEST</code> for auto-update.
-    /// or a version number for a fixed agent version.</p>
+    /// <p>The agent version. This parameter is set to <code>LATEST</code> for auto-update. or a version number for a fixed agent version.</p>
     pub agent_version: std::option::Option<std::string::String>,
 }
 impl Stack {
@@ -4953,9 +4608,7 @@ impl Stack {
     pub fn service_role_arn(&self) -> std::option::Option<&str> {
         self.service_role_arn.as_deref()
     }
-    /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances.
-    /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-    /// Identifiers</a>.</p>
+    /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn default_instance_profile_arn(&self) -> std::option::Option<&str> {
         self.default_instance_profile_arn.as_deref()
     }
@@ -4976,11 +4629,8 @@ impl Stack {
         self.default_subnet_id.as_deref()
     }
     /// <p>A JSON object that contains user-defined attributes to be added to the stack configuration and deployment attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>
-    /// <p>
-    /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-    /// </p>
-    /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-    /// Modify the Stack Configuration Attributes</a>.</p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+    /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
     pub fn custom_json(&self) -> std::option::Option<&str> {
         self.custom_json.as_deref()
     }
@@ -4990,8 +4640,7 @@ impl Stack {
     ) -> std::option::Option<&crate::model::StackConfigurationManager> {
         self.configuration_manager.as_ref()
     }
-    /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
-    /// Berkshelf version. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+    /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
     pub fn chef_configuration(&self) -> std::option::Option<&crate::model::ChefConfiguration> {
         self.chef_configuration.as_ref()
     }
@@ -5003,9 +4652,7 @@ impl Stack {
     pub fn use_opsworks_security_groups(&self) -> std::option::Option<bool> {
         self.use_opsworks_security_groups
     }
-    /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
-    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or
-    /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+    /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
     pub fn custom_cookbooks_source(&self) -> std::option::Option<&crate::model::Source> {
         self.custom_cookbooks_source.as_ref()
     }
@@ -5017,13 +4664,11 @@ impl Stack {
     pub fn created_at(&self) -> std::option::Option<&str> {
         self.created_at.as_deref()
     }
-    /// <p>The default root device type. This value is used by default for all instances in the stack,
-    /// but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    /// <p>The default root device type. This value is used by default for all instances in the stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
     pub fn default_root_device_type(&self) -> std::option::Option<&crate::model::RootDeviceType> {
         self.default_root_device_type.as_ref()
     }
-    /// <p>The agent version. This parameter is set to <code>LATEST</code> for auto-update.
-    /// or a version number for a fixed agent version.</p>
+    /// <p>The agent version. This parameter is set to <code>LATEST</code> for auto-update. or a version number for a fixed agent version.</p>
     pub fn agent_version(&self) -> std::option::Option<&str> {
         self.agent_version.as_deref()
     }
@@ -5152,11 +4797,11 @@ pub mod stack {
         /// <p>The stack's attributes.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::StackAttributesKeys>,
+            k: crate::model::StackAttributesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.attributes = Some(hash_map);
             self
         }
@@ -5183,9 +4828,7 @@ pub mod stack {
             self.service_role_arn = input;
             self
         }
-        /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances.
-        /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
+        /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn default_instance_profile_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -5193,9 +4836,7 @@ pub mod stack {
             self.default_instance_profile_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances.
-        /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
+        /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn set_default_instance_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5253,21 +4894,15 @@ pub mod stack {
             self
         }
         /// <p>A JSON object that contains user-defined attributes to be added to the stack configuration and deployment attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>
-        /// <p>
-        /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-        /// </p>
-        /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-        /// Modify the Stack Configuration Attributes</a>.</p>
+        /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+        /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
         pub fn custom_json(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_json = Some(input.into());
             self
         }
         /// <p>A JSON object that contains user-defined attributes to be added to the stack configuration and deployment attributes. You can use custom JSON to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>
-        /// <p>
-        /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-        /// </p>
-        /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-        /// Modify the Stack Configuration Attributes</a>.</p>
+        /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+        /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
         pub fn set_custom_json(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.custom_json = input;
             self
@@ -5288,14 +4923,12 @@ pub mod stack {
             self.configuration_manager = input;
             self
         }
-        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
-        /// Berkshelf version. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
         pub fn chef_configuration(mut self, input: crate::model::ChefConfiguration) -> Self {
             self.chef_configuration = Some(input);
             self
         }
-        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
-        /// Berkshelf version. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
         pub fn set_chef_configuration(
             mut self,
             input: std::option::Option<crate::model::ChefConfiguration>,
@@ -5326,16 +4959,12 @@ pub mod stack {
             self.use_opsworks_security_groups = input;
             self
         }
-        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or
-        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
         pub fn custom_cookbooks_source(mut self, input: crate::model::Source) -> Self {
             self.custom_cookbooks_source = Some(input);
             self
         }
-        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or
-        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
         pub fn set_custom_cookbooks_source(
             mut self,
             input: std::option::Option<crate::model::Source>,
@@ -5366,14 +4995,12 @@ pub mod stack {
             self.created_at = input;
             self
         }
-        /// <p>The default root device type. This value is used by default for all instances in the stack,
-        /// but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+        /// <p>The default root device type. This value is used by default for all instances in the stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
         pub fn default_root_device_type(mut self, input: crate::model::RootDeviceType) -> Self {
             self.default_root_device_type = Some(input);
             self
         }
-        /// <p>The default root device type. This value is used by default for all instances in the stack,
-        /// but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+        /// <p>The default root device type. This value is used by default for all instances in the stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
         pub fn set_default_root_device_type(
             mut self,
             input: std::option::Option<crate::model::RootDeviceType>,
@@ -5381,14 +5008,12 @@ pub mod stack {
             self.default_root_device_type = input;
             self
         }
-        /// <p>The agent version. This parameter is set to <code>LATEST</code> for auto-update.
-        /// or a version number for a fixed agent version.</p>
+        /// <p>The agent version. This parameter is set to <code>LATEST</code> for auto-update. or a version number for a fixed agent version.</p>
         pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.agent_version = Some(input.into());
             self
         }
-        /// <p>The agent version. This parameter is set to <code>LATEST</code> for auto-update.
-        /// or a version number for a fixed agent version.</p>
+        /// <p>The agent version. This parameter is set to <code>LATEST</code> for auto-update. or a version number for a fixed agent version.</p>
         pub fn set_agent_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5604,9 +5229,7 @@ pub struct RdsDbInstance {
     pub engine: std::option::Option<std::string::String>,
     /// <p>The ID of the stack with which the instance is registered.</p>
     pub stack_id: std::option::Option<std::string::String>,
-    /// <p>Set to <code>true</code> if AWS OpsWorks Stacks is unable to discover the Amazon RDS instance. AWS OpsWorks Stacks attempts
-    /// to discover the instance only once. If this value is set to <code>true</code>, you must
-    /// deregister the instance, and then register it again.</p>
+    /// <p>Set to <code>true</code> if AWS OpsWorks Stacks is unable to discover the Amazon RDS instance. AWS OpsWorks Stacks attempts to discover the instance only once. If this value is set to <code>true</code>, you must deregister the instance, and then register it again.</p>
     pub missing_on_rds: std::option::Option<bool>,
 }
 impl RdsDbInstance {
@@ -5642,9 +5265,7 @@ impl RdsDbInstance {
     pub fn stack_id(&self) -> std::option::Option<&str> {
         self.stack_id.as_deref()
     }
-    /// <p>Set to <code>true</code> if AWS OpsWorks Stacks is unable to discover the Amazon RDS instance. AWS OpsWorks Stacks attempts
-    /// to discover the instance only once. If this value is set to <code>true</code>, you must
-    /// deregister the instance, and then register it again.</p>
+    /// <p>Set to <code>true</code> if AWS OpsWorks Stacks is unable to discover the Amazon RDS instance. AWS OpsWorks Stacks attempts to discover the instance only once. If this value is set to <code>true</code>, you must deregister the instance, and then register it again.</p>
     pub fn missing_on_rds(&self) -> std::option::Option<bool> {
         self.missing_on_rds
     }
@@ -5767,16 +5388,12 @@ pub mod rds_db_instance {
             self.stack_id = input;
             self
         }
-        /// <p>Set to <code>true</code> if AWS OpsWorks Stacks is unable to discover the Amazon RDS instance. AWS OpsWorks Stacks attempts
-        /// to discover the instance only once. If this value is set to <code>true</code>, you must
-        /// deregister the instance, and then register it again.</p>
+        /// <p>Set to <code>true</code> if AWS OpsWorks Stacks is unable to discover the Amazon RDS instance. AWS OpsWorks Stacks attempts to discover the instance only once. If this value is set to <code>true</code>, you must deregister the instance, and then register it again.</p>
         pub fn missing_on_rds(mut self, input: bool) -> Self {
             self.missing_on_rds = Some(input);
             self
         }
-        /// <p>Set to <code>true</code> if AWS OpsWorks Stacks is unable to discover the Amazon RDS instance. AWS OpsWorks Stacks attempts
-        /// to discover the instance only once. If this value is set to <code>true</code>, you must
-        /// deregister the instance, and then register it again.</p>
+        /// <p>Set to <code>true</code> if AWS OpsWorks Stacks is unable to discover the Amazon RDS instance. AWS OpsWorks Stacks attempts to discover the instance only once. If this value is set to <code>true</code>, you must deregister the instance, and then register it again.</p>
         pub fn set_missing_on_rds(mut self, input: std::option::Option<bool>) -> Self {
             self.missing_on_rds = input;
             self
@@ -6098,9 +5715,7 @@ impl RaidArray {
 pub struct Permission {
     /// <p>A stack ID.</p>
     pub stack_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more
-    /// information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-    /// Identifiers</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub iam_user_arn: std::option::Option<std::string::String>,
     /// <p>Whether the user can use SSH.</p>
     pub allow_ssh: std::option::Option<bool>,
@@ -6108,34 +5723,13 @@ pub struct Permission {
     pub allow_sudo: std::option::Option<bool>,
     /// <p>The user's permission level, which must be the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>deny</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>show</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deploy</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>manage</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>iam_only</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>deny</code> </p> </li>
+    /// <li> <p> <code>show</code> </p> </li>
+    /// <li> <p> <code>deploy</code> </p> </li>
+    /// <li> <p> <code>manage</code> </p> </li>
+    /// <li> <p> <code>iam_only</code> </p> </li>
     /// </ul>
-    /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>
-    /// </p>
+    /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a> </p>
     pub level: std::option::Option<std::string::String>,
 }
 impl Permission {
@@ -6143,9 +5737,7 @@ impl Permission {
     pub fn stack_id(&self) -> std::option::Option<&str> {
         self.stack_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more
-    /// information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-    /// Identifiers</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn iam_user_arn(&self) -> std::option::Option<&str> {
         self.iam_user_arn.as_deref()
     }
@@ -6159,34 +5751,13 @@ impl Permission {
     }
     /// <p>The user's permission level, which must be the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>deny</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>show</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deploy</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>manage</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>iam_only</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>deny</code> </p> </li>
+    /// <li> <p> <code>show</code> </p> </li>
+    /// <li> <p> <code>deploy</code> </p> </li>
+    /// <li> <p> <code>manage</code> </p> </li>
+    /// <li> <p> <code>iam_only</code> </p> </li>
     /// </ul>
-    /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>
-    /// </p>
+    /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a> </p>
     pub fn level(&self) -> std::option::Option<&str> {
         self.level.as_deref()
     }
@@ -6225,16 +5796,12 @@ pub mod permission {
             self.stack_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more
-        /// information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn iam_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_user_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more
-        /// information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn set_iam_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_user_arn = input;
             self
@@ -6261,68 +5828,26 @@ pub mod permission {
         }
         /// <p>The user's permission level, which must be the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>deny</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>show</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deploy</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>manage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>iam_only</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>deny</code> </p> </li>
+        /// <li> <p> <code>show</code> </p> </li>
+        /// <li> <p> <code>deploy</code> </p> </li>
+        /// <li> <p> <code>manage</code> </p> </li>
+        /// <li> <p> <code>iam_only</code> </p> </li>
         /// </ul>
-        /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>
-        /// </p>
+        /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a> </p>
         pub fn level(mut self, input: impl Into<std::string::String>) -> Self {
             self.level = Some(input.into());
             self
         }
         /// <p>The user's permission level, which must be the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>deny</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>show</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deploy</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>manage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>iam_only</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>deny</code> </p> </li>
+        /// <li> <p> <code>show</code> </p> </li>
+        /// <li> <p> <code>deploy</code> </p> </li>
+        /// <li> <p> <code>manage</code> </p> </li>
+        /// <li> <p> <code>iam_only</code> </p> </li>
         /// </ul>
-        /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>
-        /// </p>
+        /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a> </p>
         pub fn set_level(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.level = input;
             self
@@ -6464,10 +5989,10 @@ pub mod operating_system {
         /// <p>Supported configuration manager name and versions for an AWS OpsWorks Stacks operating system.</p>
         pub fn configuration_managers(
             mut self,
-            input: impl Into<crate::model::OperatingSystemConfigurationManager>,
+            input: crate::model::OperatingSystemConfigurationManager,
         ) -> Self {
             let mut v = self.configuration_managers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configuration_managers = Some(v);
             self
         }
@@ -6733,11 +6258,9 @@ pub struct LoadBasedAutoScalingConfiguration {
     pub layer_id: std::option::Option<std::string::String>,
     /// <p>Whether load-based auto scaling is enabled for the layer.</p>
     pub enable: std::option::Option<bool>,
-    /// <p>An <code>AutoScalingThresholds</code> object that describes the upscaling configuration,
-    /// which defines how and when AWS OpsWorks Stacks increases the number of instances.</p>
+    /// <p>An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how and when AWS OpsWorks Stacks increases the number of instances.</p>
     pub up_scaling: std::option::Option<crate::model::AutoScalingThresholds>,
-    /// <p>An <code>AutoScalingThresholds</code> object that describes the downscaling configuration,
-    /// which defines how and when AWS OpsWorks Stacks reduces the number of instances.</p>
+    /// <p>An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and when AWS OpsWorks Stacks reduces the number of instances.</p>
     pub down_scaling: std::option::Option<crate::model::AutoScalingThresholds>,
 }
 impl LoadBasedAutoScalingConfiguration {
@@ -6749,13 +6272,11 @@ impl LoadBasedAutoScalingConfiguration {
     pub fn enable(&self) -> std::option::Option<bool> {
         self.enable
     }
-    /// <p>An <code>AutoScalingThresholds</code> object that describes the upscaling configuration,
-    /// which defines how and when AWS OpsWorks Stacks increases the number of instances.</p>
+    /// <p>An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how and when AWS OpsWorks Stacks increases the number of instances.</p>
     pub fn up_scaling(&self) -> std::option::Option<&crate::model::AutoScalingThresholds> {
         self.up_scaling.as_ref()
     }
-    /// <p>An <code>AutoScalingThresholds</code> object that describes the downscaling configuration,
-    /// which defines how and when AWS OpsWorks Stacks reduces the number of instances.</p>
+    /// <p>An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and when AWS OpsWorks Stacks reduces the number of instances.</p>
     pub fn down_scaling(&self) -> std::option::Option<&crate::model::AutoScalingThresholds> {
         self.down_scaling.as_ref()
     }
@@ -6802,14 +6323,12 @@ pub mod load_based_auto_scaling_configuration {
             self.enable = input;
             self
         }
-        /// <p>An <code>AutoScalingThresholds</code> object that describes the upscaling configuration,
-        /// which defines how and when AWS OpsWorks Stacks increases the number of instances.</p>
+        /// <p>An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how and when AWS OpsWorks Stacks increases the number of instances.</p>
         pub fn up_scaling(mut self, input: crate::model::AutoScalingThresholds) -> Self {
             self.up_scaling = Some(input);
             self
         }
-        /// <p>An <code>AutoScalingThresholds</code> object that describes the upscaling configuration,
-        /// which defines how and when AWS OpsWorks Stacks increases the number of instances.</p>
+        /// <p>An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how and when AWS OpsWorks Stacks increases the number of instances.</p>
         pub fn set_up_scaling(
             mut self,
             input: std::option::Option<crate::model::AutoScalingThresholds>,
@@ -6817,14 +6336,12 @@ pub mod load_based_auto_scaling_configuration {
             self.up_scaling = input;
             self
         }
-        /// <p>An <code>AutoScalingThresholds</code> object that describes the downscaling configuration,
-        /// which defines how and when AWS OpsWorks Stacks reduces the number of instances.</p>
+        /// <p>An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and when AWS OpsWorks Stacks reduces the number of instances.</p>
         pub fn down_scaling(mut self, input: crate::model::AutoScalingThresholds) -> Self {
             self.down_scaling = Some(input);
             self
         }
-        /// <p>An <code>AutoScalingThresholds</code> object that describes the downscaling configuration,
-        /// which defines how and when AWS OpsWorks Stacks reduces the number of instances.</p>
+        /// <p>An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and when AWS OpsWorks Stacks reduces the number of instances.</p>
         pub fn set_down_scaling(
             mut self,
             input: std::option::Option<crate::model::AutoScalingThresholds>,
@@ -6867,9 +6384,7 @@ pub struct Layer {
     /// <p>The layer short name.</p>
     pub shortname: std::option::Option<std::string::String>,
     /// <p>The layer attributes.</p>
-    /// <p>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and
-    /// <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code>
-    /// instead of the actual value</p>
+    /// <p>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value</p>
     /// <p>For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
     pub attributes: std::option::Option<
         std::collections::HashMap<crate::model::LayerAttributesKeys, std::string::String>,
@@ -6877,9 +6392,7 @@ pub struct Layer {
     /// <p>The Amazon CloudWatch Logs configuration settings for the layer.</p>
     pub cloud_watch_logs_configuration:
         std::option::Option<crate::model::CloudWatchLogsConfiguration>,
-    /// <p>The ARN of the default IAM profile to be used for the layer's EC2 instances. For more
-    /// information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-    /// Identifiers</a>.</p>
+    /// <p>The ARN of the default IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub custom_instance_profile_arn: std::option::Option<std::string::String>,
     /// <p>A JSON formatted string containing the layer's custom stack configuration and deployment attributes.</p>
     pub custom_json: std::option::Option<std::string::String>,
@@ -6894,42 +6407,24 @@ pub struct Layer {
         std::option::Option<std::vec::Vec<crate::model::VolumeConfiguration>>,
     /// <p>Whether auto healing is disabled for the layer.</p>
     pub enable_auto_healing: std::option::Option<bool>,
-    /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
-    /// address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-    /// a Layer</a>.</p>
+    /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
     pub auto_assign_elastic_ips: std::option::Option<bool>,
-    /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to
-    /// the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-    /// a Layer</a>.</p>
+    /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
     pub auto_assign_public_ips: std::option::Option<bool>,
-    /// <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>,
-    /// <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>.
-    /// For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. You can also provide
-    /// custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard
-    /// recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of
-    /// the five events.</p>
-    /// <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe
-    /// name, which is the recipe's file name without the <code>.rb</code> extension. For example: <code>phpapp2::dbsetup</code> specifies the
-    /// <code>dbsetup.rb</code> recipe in the repository's <code>phpapp2</code> folder.</p>
+    /// <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events.</p>
+    /// <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the <code>.rb</code> extension. For example: <code>phpapp2::dbsetup</code> specifies the <code>dbsetup.rb</code> recipe in the repository's <code>phpapp2</code> folder.</p>
     pub default_recipes: std::option::Option<crate::model::Recipes>,
     /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
     pub custom_recipes: std::option::Option<crate::model::Recipes>,
     /// <p>Date when the layer was created.</p>
     pub created_at: std::option::Option<std::string::String>,
-    /// <p>Whether to install operating system and package updates when the instance boots. The default
-    /// value is <code>true</code>. If this value is set to <code>false</code>, you must then update
-    /// your instances manually by using <a>CreateDeployment</a> to run the
-    /// <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon
-    /// Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p>
-    /// <note>
-    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your
-    /// instances have the latest security updates.</p>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
     /// </note>
     pub install_updates_on_boot: std::option::Option<bool>,
     /// <p>Whether the layer uses Amazon EBS-optimized instances.</p>
     pub use_ebs_optimized_instances: std::option::Option<bool>,
-    /// <p>A <code>LifeCycleEventConfiguration</code> object that specifies the Shutdown event
-    /// configuration.</p>
+    /// <p>A <code>LifeCycleEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
     pub lifecycle_event_configuration:
         std::option::Option<crate::model::LifecycleEventConfiguration>,
 }
@@ -6959,9 +6454,7 @@ impl Layer {
         self.shortname.as_deref()
     }
     /// <p>The layer attributes.</p>
-    /// <p>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and
-    /// <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code>
-    /// instead of the actual value</p>
+    /// <p>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value</p>
     /// <p>For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
     pub fn attributes(
         &self,
@@ -6976,9 +6469,7 @@ impl Layer {
     ) -> std::option::Option<&crate::model::CloudWatchLogsConfiguration> {
         self.cloud_watch_logs_configuration.as_ref()
     }
-    /// <p>The ARN of the default IAM profile to be used for the layer's EC2 instances. For more
-    /// information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-    /// Identifiers</a>.</p>
+    /// <p>The ARN of the default IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn custom_instance_profile_arn(&self) -> std::option::Option<&str> {
         self.custom_instance_profile_arn.as_deref()
     }
@@ -7008,27 +6499,16 @@ impl Layer {
     pub fn enable_auto_healing(&self) -> std::option::Option<bool> {
         self.enable_auto_healing
     }
-    /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
-    /// address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-    /// a Layer</a>.</p>
+    /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
     pub fn auto_assign_elastic_ips(&self) -> std::option::Option<bool> {
         self.auto_assign_elastic_ips
     }
-    /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to
-    /// the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-    /// a Layer</a>.</p>
+    /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
     pub fn auto_assign_public_ips(&self) -> std::option::Option<bool> {
         self.auto_assign_public_ips
     }
-    /// <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>,
-    /// <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>.
-    /// For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. You can also provide
-    /// custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard
-    /// recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of
-    /// the five events.</p>
-    /// <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe
-    /// name, which is the recipe's file name without the <code>.rb</code> extension. For example: <code>phpapp2::dbsetup</code> specifies the
-    /// <code>dbsetup.rb</code> recipe in the repository's <code>phpapp2</code> folder.</p>
+    /// <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events.</p>
+    /// <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the <code>.rb</code> extension. For example: <code>phpapp2::dbsetup</code> specifies the <code>dbsetup.rb</code> recipe in the repository's <code>phpapp2</code> folder.</p>
     pub fn default_recipes(&self) -> std::option::Option<&crate::model::Recipes> {
         self.default_recipes.as_ref()
     }
@@ -7040,14 +6520,8 @@ impl Layer {
     pub fn created_at(&self) -> std::option::Option<&str> {
         self.created_at.as_deref()
     }
-    /// <p>Whether to install operating system and package updates when the instance boots. The default
-    /// value is <code>true</code>. If this value is set to <code>false</code>, you must then update
-    /// your instances manually by using <a>CreateDeployment</a> to run the
-    /// <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon
-    /// Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p>
-    /// <note>
-    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your
-    /// instances have the latest security updates.</p>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
     /// </note>
     pub fn install_updates_on_boot(&self) -> std::option::Option<bool> {
         self.install_updates_on_boot
@@ -7056,8 +6530,7 @@ impl Layer {
     pub fn use_ebs_optimized_instances(&self) -> std::option::Option<bool> {
         self.use_ebs_optimized_instances
     }
-    /// <p>A <code>LifeCycleEventConfiguration</code> object that specifies the Shutdown event
-    /// configuration.</p>
+    /// <p>A <code>LifeCycleEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
     pub fn lifecycle_event_configuration(
         &self,
     ) -> std::option::Option<&crate::model::LifecycleEventConfiguration> {
@@ -7211,24 +6684,20 @@ pub mod layer {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The layer attributes.</p>
-        /// <p>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and
-        /// <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code>
-        /// instead of the actual value</p>
+        /// <p>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value</p>
         /// <p>For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::LayerAttributesKeys>,
+            k: crate::model::LayerAttributesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.attributes = Some(hash_map);
             self
         }
         /// <p>The layer attributes.</p>
-        /// <p>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and
-        /// <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code>
-        /// instead of the actual value</p>
+        /// <p>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value</p>
         /// <p>For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
         pub fn set_attributes(
             mut self,
@@ -7255,9 +6724,7 @@ pub mod layer {
             self.cloud_watch_logs_configuration = input;
             self
         }
-        /// <p>The ARN of the default IAM profile to be used for the layer's EC2 instances. For more
-        /// information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
+        /// <p>The ARN of the default IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn custom_instance_profile_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -7265,9 +6732,7 @@ pub mod layer {
             self.custom_instance_profile_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the default IAM profile to be used for the layer's EC2 instances. For more
-        /// information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
+        /// <p>The ARN of the default IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn set_custom_instance_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7350,12 +6815,9 @@ pub mod layer {
         /// To override the contents of this collection use [`set_volume_configurations`](Self::set_volume_configurations).
         ///
         /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
-        pub fn volume_configurations(
-            mut self,
-            input: impl Into<crate::model::VolumeConfiguration>,
-        ) -> Self {
+        pub fn volume_configurations(mut self, input: crate::model::VolumeConfiguration) -> Self {
             let mut v = self.volume_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.volume_configurations = Some(v);
             self
         }
@@ -7377,56 +6839,34 @@ pub mod layer {
             self.enable_auto_healing = input;
             self
         }
-        /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
-        /// address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-        /// a Layer</a>.</p>
+        /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
         pub fn auto_assign_elastic_ips(mut self, input: bool) -> Self {
             self.auto_assign_elastic_ips = Some(input);
             self
         }
-        /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
-        /// address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-        /// a Layer</a>.</p>
+        /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
         pub fn set_auto_assign_elastic_ips(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_assign_elastic_ips = input;
             self
         }
-        /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to
-        /// the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-        /// a Layer</a>.</p>
+        /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
         pub fn auto_assign_public_ips(mut self, input: bool) -> Self {
             self.auto_assign_public_ips = Some(input);
             self
         }
-        /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to
-        /// the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-        /// a Layer</a>.</p>
+        /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
         pub fn set_auto_assign_public_ips(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_assign_public_ips = input;
             self
         }
-        /// <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>,
-        /// <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>.
-        /// For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. You can also provide
-        /// custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard
-        /// recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of
-        /// the five events.</p>
-        /// <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe
-        /// name, which is the recipe's file name without the <code>.rb</code> extension. For example: <code>phpapp2::dbsetup</code> specifies the
-        /// <code>dbsetup.rb</code> recipe in the repository's <code>phpapp2</code> folder.</p>
+        /// <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events.</p>
+        /// <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the <code>.rb</code> extension. For example: <code>phpapp2::dbsetup</code> specifies the <code>dbsetup.rb</code> recipe in the repository's <code>phpapp2</code> folder.</p>
         pub fn default_recipes(mut self, input: crate::model::Recipes) -> Self {
             self.default_recipes = Some(input);
             self
         }
-        /// <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>,
-        /// <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>.
-        /// For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. You can also provide
-        /// custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard
-        /// recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of
-        /// the five events.</p>
-        /// <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe
-        /// name, which is the recipe's file name without the <code>.rb</code> extension. For example: <code>phpapp2::dbsetup</code> specifies the
-        /// <code>dbsetup.rb</code> recipe in the repository's <code>phpapp2</code> folder.</p>
+        /// <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events.</p>
+        /// <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the <code>.rb</code> extension. For example: <code>phpapp2::dbsetup</code> specifies the <code>dbsetup.rb</code> recipe in the repository's <code>phpapp2</code> folder.</p>
         pub fn set_default_recipes(
             mut self,
             input: std::option::Option<crate::model::Recipes>,
@@ -7457,27 +6897,15 @@ pub mod layer {
             self.created_at = input;
             self
         }
-        /// <p>Whether to install operating system and package updates when the instance boots. The default
-        /// value is <code>true</code>. If this value is set to <code>false</code>, you must then update
-        /// your instances manually by using <a>CreateDeployment</a> to run the
-        /// <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon
-        /// Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p>
-        /// <note>
-        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your
-        /// instances have the latest security updates.</p>
+        /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
         /// </note>
         pub fn install_updates_on_boot(mut self, input: bool) -> Self {
             self.install_updates_on_boot = Some(input);
             self
         }
-        /// <p>Whether to install operating system and package updates when the instance boots. The default
-        /// value is <code>true</code>. If this value is set to <code>false</code>, you must then update
-        /// your instances manually by using <a>CreateDeployment</a> to run the
-        /// <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon
-        /// Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p>
-        /// <note>
-        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your
-        /// instances have the latest security updates.</p>
+        /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
         /// </note>
         pub fn set_install_updates_on_boot(mut self, input: std::option::Option<bool>) -> Self {
             self.install_updates_on_boot = input;
@@ -7493,8 +6921,7 @@ pub mod layer {
             self.use_ebs_optimized_instances = input;
             self
         }
-        /// <p>A <code>LifeCycleEventConfiguration</code> object that specifies the Shutdown event
-        /// configuration.</p>
+        /// <p>A <code>LifeCycleEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
         pub fn lifecycle_event_configuration(
             mut self,
             input: crate::model::LifecycleEventConfiguration,
@@ -7502,8 +6929,7 @@ pub mod layer {
             self.lifecycle_event_configuration = Some(input);
             self
         }
-        /// <p>A <code>LifeCycleEventConfiguration</code> object that specifies the Shutdown event
-        /// configuration.</p>
+        /// <p>A <code>LifeCycleEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
         pub fn set_lifecycle_event_configuration(
             mut self,
             input: std::option::Option<crate::model::LifecycleEventConfiguration>,
@@ -7660,13 +7086,9 @@ impl AsRef<str> for LayerType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Instance {
-    /// <p>The agent version. This parameter is set to <code>INHERIT</code> if
-    /// the instance inherits the default stack setting or to a
-    /// a version number for a fixed agent version.</p>
+    /// <p>The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack setting or to a a version number for a fixed agent version.</p>
     pub agent_version: std::option::Option<std::string::String>,
-    /// <p>A custom AMI ID to be used to create the instance. For more
-    /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
-    /// </p>
+    /// <p>A custom AMI ID to be used to create the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a> </p>
     pub ami_id: std::option::Option<std::string::String>,
     /// <p>The instance architecture: "i386" or "x86_64".</p>
     pub architecture: std::option::Option<crate::model::Architecture>,
@@ -7676,8 +7098,7 @@ pub struct Instance {
     pub auto_scaling_type: std::option::Option<crate::model::AutoScalingType>,
     /// <p>The instance Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub availability_zone: std::option::Option<std::string::String>,
-    /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device
-    /// mappings.</p>
+    /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.</p>
     pub block_device_mappings: std::option::Option<std::vec::Vec<crate::model::BlockDeviceMapping>>,
     /// <p>The time that the instance was created.</p>
     pub created_at: std::option::Option<std::string::String>,
@@ -7693,29 +7114,19 @@ pub struct Instance {
     pub elastic_ip: std::option::Option<std::string::String>,
     /// <p>The instance host name.</p>
     pub hostname: std::option::Option<std::string::String>,
-    /// <p>For registered instances, the infrastructure class: <code>ec2</code> or
-    /// <code>on-premises</code>.</p>
+    /// <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.</p>
     pub infrastructure_class: std::option::Option<std::string::String>,
-    /// <p>Whether to install operating system and package updates when the instance boots. The default
-    /// value is <code>true</code>. If this value is set to <code>false</code>, you must then update
-    /// your instances manually by using <a>CreateDeployment</a> to run the
-    /// <code>update_dependencies</code> stack command or
-    /// by manually running <code>yum</code> (Amazon
-    /// Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p>
-    /// <note>
-    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your
-    /// instances have the latest security updates.</p>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
     /// </note>
     pub install_updates_on_boot: std::option::Option<bool>,
     /// <p>The instance ID.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-    /// Identifiers</a>.</p>
+    /// <p>The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub instance_profile_arn: std::option::Option<std::string::String>,
     /// <p>The instance type, such as <code>t2.micro</code>.</p>
     pub instance_type: std::option::Option<std::string::String>,
-    /// <p>The ID of the last service error. For more information, call
-    /// <a>DescribeServiceErrors</a>.</p>
+    /// <p>The ID of the last service error. For more information, call <code>DescribeServiceErrors</code>.</p>
     pub last_service_error_id: std::option::Option<std::string::String>,
     /// <p>An array containing the instance layer IDs.</p>
     pub layer_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7753,81 +7164,21 @@ pub struct Instance {
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The instance status:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>booting</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>connection_lost</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>online</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rebooting</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>running_setup</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>setup_failed</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>shutting_down</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>start_failed</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>stop_failed</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>stopped</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>stopping</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>terminated</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>terminating</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>booting</code> </p> </li>
+    /// <li> <p> <code>connection_lost</code> </p> </li>
+    /// <li> <p> <code>online</code> </p> </li>
+    /// <li> <p> <code>pending</code> </p> </li>
+    /// <li> <p> <code>rebooting</code> </p> </li>
+    /// <li> <p> <code>requested</code> </p> </li>
+    /// <li> <p> <code>running_setup</code> </p> </li>
+    /// <li> <p> <code>setup_failed</code> </p> </li>
+    /// <li> <p> <code>shutting_down</code> </p> </li>
+    /// <li> <p> <code>start_failed</code> </p> </li>
+    /// <li> <p> <code>stop_failed</code> </p> </li>
+    /// <li> <p> <code>stopped</code> </p> </li>
+    /// <li> <p> <code>stopping</code> </p> </li>
+    /// <li> <p> <code>terminated</code> </p> </li>
+    /// <li> <p> <code>terminating</code> </p> </li>
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>The instance's subnet ID; applicable only if the stack is running in a VPC.</p>
@@ -7838,15 +7189,11 @@ pub struct Instance {
     pub virtualization_type: std::option::Option<crate::model::VirtualizationType>,
 }
 impl Instance {
-    /// <p>The agent version. This parameter is set to <code>INHERIT</code> if
-    /// the instance inherits the default stack setting or to a
-    /// a version number for a fixed agent version.</p>
+    /// <p>The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack setting or to a a version number for a fixed agent version.</p>
     pub fn agent_version(&self) -> std::option::Option<&str> {
         self.agent_version.as_deref()
     }
-    /// <p>A custom AMI ID to be used to create the instance. For more
-    /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
-    /// </p>
+    /// <p>A custom AMI ID to be used to create the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a> </p>
     pub fn ami_id(&self) -> std::option::Option<&str> {
         self.ami_id.as_deref()
     }
@@ -7866,8 +7213,7 @@ impl Instance {
     pub fn availability_zone(&self) -> std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
-    /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device
-    /// mappings.</p>
+    /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.</p>
     pub fn block_device_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::BlockDeviceMapping]> {
@@ -7901,20 +7247,12 @@ impl Instance {
     pub fn hostname(&self) -> std::option::Option<&str> {
         self.hostname.as_deref()
     }
-    /// <p>For registered instances, the infrastructure class: <code>ec2</code> or
-    /// <code>on-premises</code>.</p>
+    /// <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.</p>
     pub fn infrastructure_class(&self) -> std::option::Option<&str> {
         self.infrastructure_class.as_deref()
     }
-    /// <p>Whether to install operating system and package updates when the instance boots. The default
-    /// value is <code>true</code>. If this value is set to <code>false</code>, you must then update
-    /// your instances manually by using <a>CreateDeployment</a> to run the
-    /// <code>update_dependencies</code> stack command or
-    /// by manually running <code>yum</code> (Amazon
-    /// Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p>
-    /// <note>
-    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your
-    /// instances have the latest security updates.</p>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
     /// </note>
     pub fn install_updates_on_boot(&self) -> std::option::Option<bool> {
         self.install_updates_on_boot
@@ -7923,8 +7261,7 @@ impl Instance {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-    /// Identifiers</a>.</p>
+    /// <p>The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn instance_profile_arn(&self) -> std::option::Option<&str> {
         self.instance_profile_arn.as_deref()
     }
@@ -7932,8 +7269,7 @@ impl Instance {
     pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
     }
-    /// <p>The ID of the last service error. For more information, call
-    /// <a>DescribeServiceErrors</a>.</p>
+    /// <p>The ID of the last service error. For more information, call <code>DescribeServiceErrors</code>.</p>
     pub fn last_service_error_id(&self) -> std::option::Option<&str> {
         self.last_service_error_id.as_deref()
     }
@@ -8007,81 +7343,21 @@ impl Instance {
     }
     /// <p>The instance status:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>booting</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>connection_lost</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>online</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rebooting</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>running_setup</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>setup_failed</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>shutting_down</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>start_failed</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>stop_failed</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>stopped</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>stopping</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>terminated</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>terminating</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>booting</code> </p> </li>
+    /// <li> <p> <code>connection_lost</code> </p> </li>
+    /// <li> <p> <code>online</code> </p> </li>
+    /// <li> <p> <code>pending</code> </p> </li>
+    /// <li> <p> <code>rebooting</code> </p> </li>
+    /// <li> <p> <code>requested</code> </p> </li>
+    /// <li> <p> <code>running_setup</code> </p> </li>
+    /// <li> <p> <code>setup_failed</code> </p> </li>
+    /// <li> <p> <code>shutting_down</code> </p> </li>
+    /// <li> <p> <code>start_failed</code> </p> </li>
+    /// <li> <p> <code>stop_failed</code> </p> </li>
+    /// <li> <p> <code>stopped</code> </p> </li>
+    /// <li> <p> <code>stopping</code> </p> </li>
+    /// <li> <p> <code>terminated</code> </p> </li>
+    /// <li> <p> <code>terminating</code> </p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
@@ -8205,16 +7481,12 @@ pub mod instance {
         pub(crate) virtualization_type: std::option::Option<crate::model::VirtualizationType>,
     }
     impl Builder {
-        /// <p>The agent version. This parameter is set to <code>INHERIT</code> if
-        /// the instance inherits the default stack setting or to a
-        /// a version number for a fixed agent version.</p>
+        /// <p>The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack setting or to a a version number for a fixed agent version.</p>
         pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.agent_version = Some(input.into());
             self
         }
-        /// <p>The agent version. This parameter is set to <code>INHERIT</code> if
-        /// the instance inherits the default stack setting or to a
-        /// a version number for a fixed agent version.</p>
+        /// <p>The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack setting or to a a version number for a fixed agent version.</p>
         pub fn set_agent_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8222,16 +7494,12 @@ pub mod instance {
             self.agent_version = input;
             self
         }
-        /// <p>A custom AMI ID to be used to create the instance. For more
-        /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
-        /// </p>
+        /// <p>A custom AMI ID to be used to create the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a> </p>
         pub fn ami_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ami_id = Some(input.into());
             self
         }
-        /// <p>A custom AMI ID to be used to create the instance. For more
-        /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
-        /// </p>
+        /// <p>A custom AMI ID to be used to create the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a> </p>
         pub fn set_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ami_id = input;
             self
@@ -8289,19 +7557,14 @@ pub mod instance {
         ///
         /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
         ///
-        /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device
-        /// mappings.</p>
-        pub fn block_device_mappings(
-            mut self,
-            input: impl Into<crate::model::BlockDeviceMapping>,
-        ) -> Self {
+        /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.</p>
+        pub fn block_device_mappings(mut self, input: crate::model::BlockDeviceMapping) -> Self {
             let mut v = self.block_device_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.block_device_mappings = Some(v);
             self
         }
-        /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device
-        /// mappings.</p>
+        /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.</p>
         pub fn set_block_device_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BlockDeviceMapping>>,
@@ -8388,14 +7651,12 @@ pub mod instance {
             self.hostname = input;
             self
         }
-        /// <p>For registered instances, the infrastructure class: <code>ec2</code> or
-        /// <code>on-premises</code>.</p>
+        /// <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.</p>
         pub fn infrastructure_class(mut self, input: impl Into<std::string::String>) -> Self {
             self.infrastructure_class = Some(input.into());
             self
         }
-        /// <p>For registered instances, the infrastructure class: <code>ec2</code> or
-        /// <code>on-premises</code>.</p>
+        /// <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.</p>
         pub fn set_infrastructure_class(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8403,29 +7664,15 @@ pub mod instance {
             self.infrastructure_class = input;
             self
         }
-        /// <p>Whether to install operating system and package updates when the instance boots. The default
-        /// value is <code>true</code>. If this value is set to <code>false</code>, you must then update
-        /// your instances manually by using <a>CreateDeployment</a> to run the
-        /// <code>update_dependencies</code> stack command or
-        /// by manually running <code>yum</code> (Amazon
-        /// Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p>
-        /// <note>
-        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your
-        /// instances have the latest security updates.</p>
+        /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
         /// </note>
         pub fn install_updates_on_boot(mut self, input: bool) -> Self {
             self.install_updates_on_boot = Some(input);
             self
         }
-        /// <p>Whether to install operating system and package updates when the instance boots. The default
-        /// value is <code>true</code>. If this value is set to <code>false</code>, you must then update
-        /// your instances manually by using <a>CreateDeployment</a> to run the
-        /// <code>update_dependencies</code> stack command or
-        /// by manually running <code>yum</code> (Amazon
-        /// Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p>
-        /// <note>
-        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your
-        /// instances have the latest security updates.</p>
+        /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
         /// </note>
         pub fn set_install_updates_on_boot(mut self, input: std::option::Option<bool>) -> Self {
             self.install_updates_on_boot = input;
@@ -8441,14 +7688,12 @@ pub mod instance {
             self.instance_id = input;
             self
         }
-        /// <p>The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
+        /// <p>The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn instance_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_profile_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
+        /// <p>The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn set_instance_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8469,14 +7714,12 @@ pub mod instance {
             self.instance_type = input;
             self
         }
-        /// <p>The ID of the last service error. For more information, call
-        /// <a>DescribeServiceErrors</a>.</p>
+        /// <p>The ID of the last service error. For more information, call <code>DescribeServiceErrors</code>.</p>
         pub fn last_service_error_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_service_error_id = Some(input.into());
             self
         }
-        /// <p>The ID of the last service error. For more information, call
-        /// <a>DescribeServiceErrors</a>.</p>
+        /// <p>The ID of the last service error. For more information, call <code>DescribeServiceErrors</code>.</p>
         pub fn set_last_service_error_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8701,81 +7944,21 @@ pub mod instance {
         }
         /// <p>The instance status:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>booting</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>connection_lost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>online</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rebooting</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>running_setup</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>setup_failed</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>shutting_down</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>start_failed</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>stop_failed</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>stopped</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>stopping</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>terminated</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>terminating</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>booting</code> </p> </li>
+        /// <li> <p> <code>connection_lost</code> </p> </li>
+        /// <li> <p> <code>online</code> </p> </li>
+        /// <li> <p> <code>pending</code> </p> </li>
+        /// <li> <p> <code>rebooting</code> </p> </li>
+        /// <li> <p> <code>requested</code> </p> </li>
+        /// <li> <p> <code>running_setup</code> </p> </li>
+        /// <li> <p> <code>setup_failed</code> </p> </li>
+        /// <li> <p> <code>shutting_down</code> </p> </li>
+        /// <li> <p> <code>start_failed</code> </p> </li>
+        /// <li> <p> <code>stop_failed</code> </p> </li>
+        /// <li> <p> <code>stopped</code> </p> </li>
+        /// <li> <p> <code>stopping</code> </p> </li>
+        /// <li> <p> <code>terminated</code> </p> </li>
+        /// <li> <p> <code>terminating</code> </p> </li>
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
@@ -8783,81 +7966,21 @@ pub mod instance {
         }
         /// <p>The instance status:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>booting</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>connection_lost</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>online</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rebooting</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>running_setup</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>setup_failed</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>shutting_down</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>start_failed</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>stop_failed</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>stopped</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>stopping</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>terminated</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>terminating</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>booting</code> </p> </li>
+        /// <li> <p> <code>connection_lost</code> </p> </li>
+        /// <li> <p> <code>online</code> </p> </li>
+        /// <li> <p> <code>pending</code> </p> </li>
+        /// <li> <p> <code>rebooting</code> </p> </li>
+        /// <li> <p> <code>requested</code> </p> </li>
+        /// <li> <p> <code>running_setup</code> </p> </li>
+        /// <li> <p> <code>setup_failed</code> </p> </li>
+        /// <li> <p> <code>shutting_down</code> </p> </li>
+        /// <li> <p> <code>start_failed</code> </p> </li>
+        /// <li> <p> <code>stop_failed</code> </p> </li>
+        /// <li> <p> <code>stopped</code> </p> </li>
+        /// <li> <p> <code>stopping</code> </p> </li>
+        /// <li> <p> <code>terminated</code> </p> </li>
+        /// <li> <p> <code>terminating</code> </p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
@@ -9102,22 +8225,17 @@ impl ReportedOs {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BlockDeviceMapping {
-    /// <p>The device name that is exposed to the instance, such as <code>/dev/sdh</code>. For the root
-    /// device, you can use the explicit device name or you can set this parameter to
-    /// <code>ROOT_DEVICE</code> and AWS OpsWorks Stacks will provide the correct device name.</p>
+    /// <p>The device name that is exposed to the instance, such as <code>/dev/sdh</code>. For the root device, you can use the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks Stacks will provide the correct device name.</p>
     pub device_name: std::option::Option<std::string::String>,
     /// <p>Suppresses the specified device included in the AMI's block device mapping.</p>
     pub no_device: std::option::Option<std::string::String>,
     /// <p>The virtual device name. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a>.</p>
     pub virtual_name: std::option::Option<std::string::String>,
-    /// <p>An <code>EBSBlockDevice</code> that defines how to configure an Amazon EBS volume when the
-    /// instance is launched.</p>
+    /// <p>An <code>EBSBlockDevice</code> that defines how to configure an Amazon EBS volume when the instance is launched.</p>
     pub ebs: std::option::Option<crate::model::EbsBlockDevice>,
 }
 impl BlockDeviceMapping {
-    /// <p>The device name that is exposed to the instance, such as <code>/dev/sdh</code>. For the root
-    /// device, you can use the explicit device name or you can set this parameter to
-    /// <code>ROOT_DEVICE</code> and AWS OpsWorks Stacks will provide the correct device name.</p>
+    /// <p>The device name that is exposed to the instance, such as <code>/dev/sdh</code>. For the root device, you can use the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks Stacks will provide the correct device name.</p>
     pub fn device_name(&self) -> std::option::Option<&str> {
         self.device_name.as_deref()
     }
@@ -9129,8 +8247,7 @@ impl BlockDeviceMapping {
     pub fn virtual_name(&self) -> std::option::Option<&str> {
         self.virtual_name.as_deref()
     }
-    /// <p>An <code>EBSBlockDevice</code> that defines how to configure an Amazon EBS volume when the
-    /// instance is launched.</p>
+    /// <p>An <code>EBSBlockDevice</code> that defines how to configure an Amazon EBS volume when the instance is launched.</p>
     pub fn ebs(&self) -> std::option::Option<&crate::model::EbsBlockDevice> {
         self.ebs.as_ref()
     }
@@ -9157,16 +8274,12 @@ pub mod block_device_mapping {
         pub(crate) ebs: std::option::Option<crate::model::EbsBlockDevice>,
     }
     impl Builder {
-        /// <p>The device name that is exposed to the instance, such as <code>/dev/sdh</code>. For the root
-        /// device, you can use the explicit device name or you can set this parameter to
-        /// <code>ROOT_DEVICE</code> and AWS OpsWorks Stacks will provide the correct device name.</p>
+        /// <p>The device name that is exposed to the instance, such as <code>/dev/sdh</code>. For the root device, you can use the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks Stacks will provide the correct device name.</p>
         pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.device_name = Some(input.into());
             self
         }
-        /// <p>The device name that is exposed to the instance, such as <code>/dev/sdh</code>. For the root
-        /// device, you can use the explicit device name or you can set this parameter to
-        /// <code>ROOT_DEVICE</code> and AWS OpsWorks Stacks will provide the correct device name.</p>
+        /// <p>The device name that is exposed to the instance, such as <code>/dev/sdh</code>. For the root device, you can use the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks Stacks will provide the correct device name.</p>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_name = input;
             self
@@ -9191,14 +8304,12 @@ pub mod block_device_mapping {
             self.virtual_name = input;
             self
         }
-        /// <p>An <code>EBSBlockDevice</code> that defines how to configure an Amazon EBS volume when the
-        /// instance is launched.</p>
+        /// <p>An <code>EBSBlockDevice</code> that defines how to configure an Amazon EBS volume when the instance is launched.</p>
         pub fn ebs(mut self, input: crate::model::EbsBlockDevice) -> Self {
             self.ebs = Some(input);
             self
         }
-        /// <p>An <code>EBSBlockDevice</code> that defines how to configure an Amazon EBS volume when the
-        /// instance is launched.</p>
+        /// <p>An <code>EBSBlockDevice</code> that defines how to configure an Amazon EBS volume when the instance is launched.</p>
         pub fn set_ebs(mut self, input: std::option::Option<crate::model::EbsBlockDevice>) -> Self {
             self.ebs = input;
             self
@@ -9221,23 +8332,18 @@ impl BlockDeviceMapping {
     }
 }
 
-/// <p>Describes an Amazon EBS volume. This data type maps directly to the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>
-/// data type.</p>
+/// <p>Describes an Amazon EBS volume. This data type maps directly to the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a> data type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EbsBlockDevice {
     /// <p>The snapshot ID.</p>
     pub snapshot_id: std::option::Option<std::string::String>,
-    /// <p>The number of I/O operations per second (IOPS) that the volume supports. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
+    /// <p>The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
     pub iops: std::option::Option<i32>,
     /// <p>The volume size, in GiB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
     pub volume_size: std::option::Option<i32>,
-    /// <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for
-    /// Provisioned IOPS (SSD) volumes, <code>st1</code> for Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold HDD,and <code>standard</code> for Magnetic volumes.</p>
-    /// <p>If you specify the <code>io1</code> volume type, you must also specify a value for the <code>Iops</code> attribute.
-    /// The maximum ratio of provisioned IOPS to requested volume size (in GiB) is 50:1. AWS uses the default volume size (in GiB)
-    /// specified in the AMI attributes to set IOPS to 50 x (volume size).</p>
+    /// <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, <code>st1</code> for Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold HDD,and <code>standard</code> for Magnetic volumes.</p>
+    /// <p>If you specify the <code>io1</code> volume type, you must also specify a value for the <code>Iops</code> attribute. The maximum ratio of provisioned IOPS to requested volume size (in GiB) is 50:1. AWS uses the default volume size (in GiB) specified in the AMI attributes to set IOPS to 50 x (volume size).</p>
     pub volume_type: std::option::Option<crate::model::VolumeType>,
     /// <p>Whether the volume is deleted on instance termination.</p>
     pub delete_on_termination: std::option::Option<bool>,
@@ -9247,8 +8353,7 @@ impl EbsBlockDevice {
     pub fn snapshot_id(&self) -> std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
-    /// <p>The number of I/O operations per second (IOPS) that the volume supports. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
+    /// <p>The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
     pub fn iops(&self) -> std::option::Option<i32> {
         self.iops
     }
@@ -9256,11 +8361,8 @@ impl EbsBlockDevice {
     pub fn volume_size(&self) -> std::option::Option<i32> {
         self.volume_size
     }
-    /// <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for
-    /// Provisioned IOPS (SSD) volumes, <code>st1</code> for Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold HDD,and <code>standard</code> for Magnetic volumes.</p>
-    /// <p>If you specify the <code>io1</code> volume type, you must also specify a value for the <code>Iops</code> attribute.
-    /// The maximum ratio of provisioned IOPS to requested volume size (in GiB) is 50:1. AWS uses the default volume size (in GiB)
-    /// specified in the AMI attributes to set IOPS to 50 x (volume size).</p>
+    /// <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, <code>st1</code> for Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold HDD,and <code>standard</code> for Magnetic volumes.</p>
+    /// <p>If you specify the <code>io1</code> volume type, you must also specify a value for the <code>Iops</code> attribute. The maximum ratio of provisioned IOPS to requested volume size (in GiB) is 50:1. AWS uses the default volume size (in GiB) specified in the AMI attributes to set IOPS to 50 x (volume size).</p>
     pub fn volume_type(&self) -> std::option::Option<&crate::model::VolumeType> {
         self.volume_type.as_ref()
     }
@@ -9303,14 +8405,12 @@ pub mod ebs_block_device {
             self.snapshot_id = input;
             self
         }
-        /// <p>The number of I/O operations per second (IOPS) that the volume supports. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
+        /// <p>The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
         pub fn iops(mut self, input: i32) -> Self {
             self.iops = Some(input);
             self
         }
-        /// <p>The number of I/O operations per second (IOPS) that the volume supports. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
+        /// <p>The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
         pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
             self.iops = input;
             self
@@ -9325,20 +8425,14 @@ pub mod ebs_block_device {
             self.volume_size = input;
             self
         }
-        /// <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for
-        /// Provisioned IOPS (SSD) volumes, <code>st1</code> for Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold HDD,and <code>standard</code> for Magnetic volumes.</p>
-        /// <p>If you specify the <code>io1</code> volume type, you must also specify a value for the <code>Iops</code> attribute.
-        /// The maximum ratio of provisioned IOPS to requested volume size (in GiB) is 50:1. AWS uses the default volume size (in GiB)
-        /// specified in the AMI attributes to set IOPS to 50 x (volume size).</p>
+        /// <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, <code>st1</code> for Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold HDD,and <code>standard</code> for Magnetic volumes.</p>
+        /// <p>If you specify the <code>io1</code> volume type, you must also specify a value for the <code>Iops</code> attribute. The maximum ratio of provisioned IOPS to requested volume size (in GiB) is 50:1. AWS uses the default volume size (in GiB) specified in the AMI attributes to set IOPS to 50 x (volume size).</p>
         pub fn volume_type(mut self, input: crate::model::VolumeType) -> Self {
             self.volume_type = Some(input);
             self
         }
-        /// <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for
-        /// Provisioned IOPS (SSD) volumes, <code>st1</code> for Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold HDD,and <code>standard</code> for Magnetic volumes.</p>
-        /// <p>If you specify the <code>io1</code> volume type, you must also specify a value for the <code>Iops</code> attribute.
-        /// The maximum ratio of provisioned IOPS to requested volume size (in GiB) is 50:1. AWS uses the default volume size (in GiB)
-        /// specified in the AMI attributes to set IOPS to 50 x (volume size).</p>
+        /// <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, <code>st1</code> for Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold HDD,and <code>standard</code> for Magnetic volumes.</p>
+        /// <p>If you specify the <code>io1</code> volume type, you must also specify a value for the <code>Iops</code> attribute. The maximum ratio of provisioned IOPS to requested volume size (in GiB) is 50:1. AWS uses the default volume size (in GiB) specified in the AMI attributes to set IOPS to 50 x (volume size).</p>
         pub fn set_volume_type(
             mut self,
             input: std::option::Option<crate::model::VolumeType>,
@@ -9947,23 +9041,14 @@ pub struct Deployment {
     pub command: std::option::Option<crate::model::DeploymentCommand>,
     /// <p>The deployment status:</p>
     /// <ul>
-    /// <li>
-    /// <p>running</p>
-    /// </li>
-    /// <li>
-    /// <p>successful</p>
-    /// </li>
-    /// <li>
-    /// <p>failed</p>
-    /// </li>
+    /// <li> <p>running</p> </li>
+    /// <li> <p>successful</p> </li>
+    /// <li> <p>failed</p> </li>
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>A string that contains user-defined custom JSON. It can be used to override the corresponding default stack configuration attribute values for stack or to pass data to recipes. The string should be in the following format:</p>
-    /// <p>
-    /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-    /// </p>
-    /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-    /// Modify the Stack Configuration Attributes</a>.</p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+    /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
     pub custom_json: std::option::Option<std::string::String>,
     /// <p>The IDs of the target instances.</p>
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10007,25 +9092,16 @@ impl Deployment {
     }
     /// <p>The deployment status:</p>
     /// <ul>
-    /// <li>
-    /// <p>running</p>
-    /// </li>
-    /// <li>
-    /// <p>successful</p>
-    /// </li>
-    /// <li>
-    /// <p>failed</p>
-    /// </li>
+    /// <li> <p>running</p> </li>
+    /// <li> <p>successful</p> </li>
+    /// <li> <p>failed</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>A string that contains user-defined custom JSON. It can be used to override the corresponding default stack configuration attribute values for stack or to pass data to recipes. The string should be in the following format:</p>
-    /// <p>
-    /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-    /// </p>
-    /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-    /// Modify the Stack Configuration Attributes</a>.</p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+    /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
     pub fn custom_json(&self) -> std::option::Option<&str> {
         self.custom_json.as_deref()
     }
@@ -10170,15 +9246,9 @@ pub mod deployment {
         }
         /// <p>The deployment status:</p>
         /// <ul>
-        /// <li>
-        /// <p>running</p>
-        /// </li>
-        /// <li>
-        /// <p>successful</p>
-        /// </li>
-        /// <li>
-        /// <p>failed</p>
-        /// </li>
+        /// <li> <p>running</p> </li>
+        /// <li> <p>successful</p> </li>
+        /// <li> <p>failed</p> </li>
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
@@ -10186,36 +9256,24 @@ pub mod deployment {
         }
         /// <p>The deployment status:</p>
         /// <ul>
-        /// <li>
-        /// <p>running</p>
-        /// </li>
-        /// <li>
-        /// <p>successful</p>
-        /// </li>
-        /// <li>
-        /// <p>failed</p>
-        /// </li>
+        /// <li> <p>running</p> </li>
+        /// <li> <p>successful</p> </li>
+        /// <li> <p>failed</p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
         }
         /// <p>A string that contains user-defined custom JSON. It can be used to override the corresponding default stack configuration attribute values for stack or to pass data to recipes. The string should be in the following format:</p>
-        /// <p>
-        /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-        /// </p>
-        /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-        /// Modify the Stack Configuration Attributes</a>.</p>
+        /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+        /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
         pub fn custom_json(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_json = Some(input.into());
             self
         }
         /// <p>A string that contains user-defined custom JSON. It can be used to override the corresponding default stack configuration attribute values for stack or to pass data to recipes. The string should be in the following format:</p>
-        /// <p>
-        /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-        /// </p>
-        /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-        /// Modify the Stack Configuration Attributes</a>.</p>
+        /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+        /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
         pub fn set_custom_json(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.custom_json = input;
             self
@@ -10272,86 +9330,32 @@ pub struct DeploymentCommand {
     /// <p>Specifies the operation. You can specify only one command.</p>
     /// <p>For stacks, the following commands are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an
-    /// <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be
-    /// executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to
-    /// <code>{"recipes":["phpapp::appsetup"]}</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>install_dependencies</code>: Install the stack's dependencies.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>update_custom_cookbooks</code>: Update the stack's custom cookbooks.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>update_dependencies</code>: Update the stack's dependencies.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
+    /// <li> <p> <code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":["phpapp::appsetup"]}</code>.</p> </li>
+    /// <li> <p> <code>install_dependencies</code>: Install the stack's dependencies.</p> </li>
+    /// <li> <p> <code>update_custom_cookbooks</code>: Update the stack's custom cookbooks.</p> </li>
+    /// <li> <p> <code>update_dependencies</code>: Update the stack's dependencies.</p> </li>
+    /// </ul> <note>
     /// <p>The update_dependencies and install_dependencies commands are supported only for Linux instances. You can run the commands successfully on Windows instances, but they do nothing.</p>
     /// </note>
     /// <p>For apps, the following commands are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code>
-    /// parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to
-    /// migrate the database. The default setting is {"migrate":["false"]}.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rollback</code> Roll the app back to the previous version. When you update an app,
-    /// AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this
-    /// command to roll an app back as many as four versions.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>start</code>: Start the app's web or application server.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>stop</code>: Stop the app's web or application server.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>restart</code>: Restart the app's web or application server.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>undeploy</code>: Undeploy the app.</p>
-    /// </li>
+    /// <li> <p> <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p> </li>
+    /// <li> <p> <code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p> </li>
+    /// <li> <p> <code>start</code>: Start the app's web or application server.</p> </li>
+    /// <li> <p> <code>stop</code>: Stop the app's web or application server.</p> </li>
+    /// <li> <p> <code>restart</code>: Restart the app's web or application server.</p> </li>
+    /// <li> <p> <code>undeploy</code>: Undeploy the app.</p> </li>
     /// </ul>
     pub name: std::option::Option<crate::model::DeploymentCommandName>,
     /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p>
-    /// <p>
-    /// <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...],
-    /// ...}</code>
-    /// </p>
+    /// <p> <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code> </p>
     /// <p>The <code>update_dependencies</code> command takes two arguments:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances
-    /// whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set
-    /// the <code>allow_reboot</code> argument to true.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if
-    /// necessary, after installing the updates. This argument can be set to either
-    /// <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p>
-    /// </li>
+    /// <li> <p> <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to true.</p> </li>
+    /// <li> <p> <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p> </li>
     /// </ul>
-    /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the
-    /// following.</p>
-    /// <p>
-    /// <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code>
-    /// </p>
+    /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
+    /// <p> <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code> </p>
     pub args: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
@@ -10360,88 +9364,34 @@ impl DeploymentCommand {
     /// <p>Specifies the operation. You can specify only one command.</p>
     /// <p>For stacks, the following commands are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an
-    /// <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be
-    /// executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to
-    /// <code>{"recipes":["phpapp::appsetup"]}</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>install_dependencies</code>: Install the stack's dependencies.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>update_custom_cookbooks</code>: Update the stack's custom cookbooks.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>update_dependencies</code>: Update the stack's dependencies.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
+    /// <li> <p> <code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":["phpapp::appsetup"]}</code>.</p> </li>
+    /// <li> <p> <code>install_dependencies</code>: Install the stack's dependencies.</p> </li>
+    /// <li> <p> <code>update_custom_cookbooks</code>: Update the stack's custom cookbooks.</p> </li>
+    /// <li> <p> <code>update_dependencies</code>: Update the stack's dependencies.</p> </li>
+    /// </ul> <note>
     /// <p>The update_dependencies and install_dependencies commands are supported only for Linux instances. You can run the commands successfully on Windows instances, but they do nothing.</p>
     /// </note>
     /// <p>For apps, the following commands are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code>
-    /// parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to
-    /// migrate the database. The default setting is {"migrate":["false"]}.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rollback</code> Roll the app back to the previous version. When you update an app,
-    /// AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this
-    /// command to roll an app back as many as four versions.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>start</code>: Start the app's web or application server.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>stop</code>: Stop the app's web or application server.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>restart</code>: Restart the app's web or application server.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>undeploy</code>: Undeploy the app.</p>
-    /// </li>
+    /// <li> <p> <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p> </li>
+    /// <li> <p> <code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p> </li>
+    /// <li> <p> <code>start</code>: Start the app's web or application server.</p> </li>
+    /// <li> <p> <code>stop</code>: Stop the app's web or application server.</p> </li>
+    /// <li> <p> <code>restart</code>: Restart the app's web or application server.</p> </li>
+    /// <li> <p> <code>undeploy</code>: Undeploy the app.</p> </li>
     /// </ul>
     pub fn name(&self) -> std::option::Option<&crate::model::DeploymentCommandName> {
         self.name.as_ref()
     }
     /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p>
-    /// <p>
-    /// <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...],
-    /// ...}</code>
-    /// </p>
+    /// <p> <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code> </p>
     /// <p>The <code>update_dependencies</code> command takes two arguments:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances
-    /// whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set
-    /// the <code>allow_reboot</code> argument to true.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if
-    /// necessary, after installing the updates. This argument can be set to either
-    /// <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p>
-    /// </li>
+    /// <li> <p> <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to true.</p> </li>
+    /// <li> <p> <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p> </li>
     /// </ul>
-    /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the
-    /// following.</p>
-    /// <p>
-    /// <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code>
-    /// </p>
+    /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
+    /// <p> <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code> </p>
     pub fn args(
         &self,
     ) -> std::option::Option<
@@ -10473,59 +9423,21 @@ pub mod deployment_command {
         /// <p>Specifies the operation. You can specify only one command.</p>
         /// <p>For stacks, the following commands are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an
-        /// <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be
-        /// executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to
-        /// <code>{"recipes":["phpapp::appsetup"]}</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>install_dependencies</code>: Install the stack's dependencies.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>update_custom_cookbooks</code>: Update the stack's custom cookbooks.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>update_dependencies</code>: Update the stack's dependencies.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p> <code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":["phpapp::appsetup"]}</code>.</p> </li>
+        /// <li> <p> <code>install_dependencies</code>: Install the stack's dependencies.</p> </li>
+        /// <li> <p> <code>update_custom_cookbooks</code>: Update the stack's custom cookbooks.</p> </li>
+        /// <li> <p> <code>update_dependencies</code>: Update the stack's dependencies.</p> </li>
+        /// </ul> <note>
         /// <p>The update_dependencies and install_dependencies commands are supported only for Linux instances. You can run the commands successfully on Windows instances, but they do nothing.</p>
         /// </note>
         /// <p>For apps, the following commands are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code>
-        /// parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to
-        /// migrate the database. The default setting is {"migrate":["false"]}.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rollback</code> Roll the app back to the previous version. When you update an app,
-        /// AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this
-        /// command to roll an app back as many as four versions.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>start</code>: Start the app's web or application server.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>stop</code>: Stop the app's web or application server.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>restart</code>: Restart the app's web or application server.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>undeploy</code>: Undeploy the app.</p>
-        /// </li>
+        /// <li> <p> <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p> </li>
+        /// <li> <p> <code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p> </li>
+        /// <li> <p> <code>start</code>: Start the app's web or application server.</p> </li>
+        /// <li> <p> <code>stop</code>: Stop the app's web or application server.</p> </li>
+        /// <li> <p> <code>restart</code>: Restart the app's web or application server.</p> </li>
+        /// <li> <p> <code>undeploy</code>: Undeploy the app.</p> </li>
         /// </ul>
         pub fn name(mut self, input: crate::model::DeploymentCommandName) -> Self {
             self.name = Some(input);
@@ -10534,59 +9446,21 @@ pub mod deployment_command {
         /// <p>Specifies the operation. You can specify only one command.</p>
         /// <p>For stacks, the following commands are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an
-        /// <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be
-        /// executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to
-        /// <code>{"recipes":["phpapp::appsetup"]}</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>install_dependencies</code>: Install the stack's dependencies.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>update_custom_cookbooks</code>: Update the stack's custom cookbooks.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>update_dependencies</code>: Update the stack's dependencies.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p> <code>execute_recipes</code>: Execute one or more recipes. To specify the recipes, set an <code>Args</code> parameter named <code>recipes</code> to the list of recipes to be executed. For example, to execute <code>phpapp::appsetup</code>, set <code>Args</code> to <code>{"recipes":["phpapp::appsetup"]}</code>.</p> </li>
+        /// <li> <p> <code>install_dependencies</code>: Install the stack's dependencies.</p> </li>
+        /// <li> <p> <code>update_custom_cookbooks</code>: Update the stack's custom cookbooks.</p> </li>
+        /// <li> <p> <code>update_dependencies</code>: Update the stack's dependencies.</p> </li>
+        /// </ul> <note>
         /// <p>The update_dependencies and install_dependencies commands are supported only for Linux instances. You can run the commands successfully on Windows instances, but they do nothing.</p>
         /// </note>
         /// <p>For apps, the following commands are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code>
-        /// parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to
-        /// migrate the database. The default setting is {"migrate":["false"]}.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rollback</code> Roll the app back to the previous version. When you update an app,
-        /// AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this
-        /// command to roll an app back as many as four versions.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>start</code>: Start the app's web or application server.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>stop</code>: Stop the app's web or application server.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>restart</code>: Restart the app's web or application server.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>undeploy</code>: Undeploy the app.</p>
-        /// </li>
+        /// <li> <p> <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to {"migrate":["true"]} to migrate the database. The default setting is {"migrate":["false"]}.</p> </li>
+        /// <li> <p> <code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</p> </li>
+        /// <li> <p> <code>start</code>: Start the app's web or application server.</p> </li>
+        /// <li> <p> <code>stop</code>: Stop the app's web or application server.</p> </li>
+        /// <li> <p> <code>restart</code>: Restart the app's web or application server.</p> </li>
+        /// <li> <p> <code>undeploy</code>: Undeploy the app.</p> </li>
         /// </ul>
         pub fn set_name(
             mut self,
@@ -10600,65 +9474,33 @@ pub mod deployment_command {
         /// To override the contents of this collection use [`set_args`](Self::set_args).
         ///
         /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p>
-        /// <p>
-        /// <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...],
-        /// ...}</code>
-        /// </p>
+        /// <p> <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code> </p>
         /// <p>The <code>update_dependencies</code> command takes two arguments:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances
-        /// whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set
-        /// the <code>allow_reboot</code> argument to true.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if
-        /// necessary, after installing the updates. This argument can be set to either
-        /// <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p>
-        /// </li>
+        /// <li> <p> <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to true.</p> </li>
+        /// <li> <p> <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p> </li>
         /// </ul>
-        /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the
-        /// following.</p>
-        /// <p>
-        /// <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code>
-        /// </p>
+        /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
+        /// <p> <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code> </p>
         pub fn args(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.args.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.args = Some(hash_map);
             self
         }
         /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p>
-        /// <p>
-        /// <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...],
-        /// ...}</code>
-        /// </p>
+        /// <p> <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code> </p>
         /// <p>The <code>update_dependencies</code> command takes two arguments:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances
-        /// whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set
-        /// the <code>allow_reboot</code> argument to true.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if
-        /// necessary, after installing the updates. This argument can be set to either
-        /// <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p>
-        /// </li>
+        /// <li> <p> <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to true.</p> </li>
+        /// <li> <p> <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary, after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.</p> </li>
         /// </ul>
-        /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the
-        /// following.</p>
-        /// <p>
-        /// <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code>
-        /// </p>
+        /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
+        /// <p> <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code> </p>
         pub fn set_args(
             mut self,
             input: std::option::Option<
@@ -10810,18 +9652,10 @@ pub struct Command {
     pub completed_at: std::option::Option<std::string::String>,
     /// <p>The command status:</p>
     /// <ul>
-    /// <li>
-    /// <p>failed</p>
-    /// </li>
-    /// <li>
-    /// <p>successful</p>
-    /// </li>
-    /// <li>
-    /// <p>skipped</p>
-    /// </li>
-    /// <li>
-    /// <p>pending</p>
-    /// </li>
+    /// <li> <p>failed</p> </li>
+    /// <li> <p>successful</p> </li>
+    /// <li> <p>skipped</p> </li>
+    /// <li> <p>pending</p> </li>
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>The command exit code.</p>
@@ -10830,66 +9664,18 @@ pub struct Command {
     pub log_url: std::option::Option<std::string::String>,
     /// <p>The command type:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>configure</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deploy</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>execute_recipes</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>install_dependencies</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>restart</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rollback</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>setup</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>start</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>stop</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>undeploy</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>update_custom_cookbooks</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>update_dependencies</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>configure</code> </p> </li>
+    /// <li> <p> <code>deploy</code> </p> </li>
+    /// <li> <p> <code>execute_recipes</code> </p> </li>
+    /// <li> <p> <code>install_dependencies</code> </p> </li>
+    /// <li> <p> <code>restart</code> </p> </li>
+    /// <li> <p> <code>rollback</code> </p> </li>
+    /// <li> <p> <code>setup</code> </p> </li>
+    /// <li> <p> <code>start</code> </p> </li>
+    /// <li> <p> <code>stop</code> </p> </li>
+    /// <li> <p> <code>undeploy</code> </p> </li>
+    /// <li> <p> <code>update_custom_cookbooks</code> </p> </li>
+    /// <li> <p> <code>update_dependencies</code> </p> </li>
     /// </ul>
     pub r#type: std::option::Option<std::string::String>,
 }
@@ -10920,18 +9706,10 @@ impl Command {
     }
     /// <p>The command status:</p>
     /// <ul>
-    /// <li>
-    /// <p>failed</p>
-    /// </li>
-    /// <li>
-    /// <p>successful</p>
-    /// </li>
-    /// <li>
-    /// <p>skipped</p>
-    /// </li>
-    /// <li>
-    /// <p>pending</p>
-    /// </li>
+    /// <li> <p>failed</p> </li>
+    /// <li> <p>successful</p> </li>
+    /// <li> <p>skipped</p> </li>
+    /// <li> <p>pending</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
@@ -10946,66 +9724,18 @@ impl Command {
     }
     /// <p>The command type:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>configure</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deploy</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>execute_recipes</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>install_dependencies</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>restart</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rollback</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>setup</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>start</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>stop</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>undeploy</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>update_custom_cookbooks</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>update_dependencies</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>configure</code> </p> </li>
+    /// <li> <p> <code>deploy</code> </p> </li>
+    /// <li> <p> <code>execute_recipes</code> </p> </li>
+    /// <li> <p> <code>install_dependencies</code> </p> </li>
+    /// <li> <p> <code>restart</code> </p> </li>
+    /// <li> <p> <code>rollback</code> </p> </li>
+    /// <li> <p> <code>setup</code> </p> </li>
+    /// <li> <p> <code>start</code> </p> </li>
+    /// <li> <p> <code>stop</code> </p> </li>
+    /// <li> <p> <code>undeploy</code> </p> </li>
+    /// <li> <p> <code>update_custom_cookbooks</code> </p> </li>
+    /// <li> <p> <code>update_dependencies</code> </p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
@@ -11113,18 +9843,10 @@ pub mod command {
         }
         /// <p>The command status:</p>
         /// <ul>
-        /// <li>
-        /// <p>failed</p>
-        /// </li>
-        /// <li>
-        /// <p>successful</p>
-        /// </li>
-        /// <li>
-        /// <p>skipped</p>
-        /// </li>
-        /// <li>
-        /// <p>pending</p>
-        /// </li>
+        /// <li> <p>failed</p> </li>
+        /// <li> <p>successful</p> </li>
+        /// <li> <p>skipped</p> </li>
+        /// <li> <p>pending</p> </li>
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
@@ -11132,18 +9854,10 @@ pub mod command {
         }
         /// <p>The command status:</p>
         /// <ul>
-        /// <li>
-        /// <p>failed</p>
-        /// </li>
-        /// <li>
-        /// <p>successful</p>
-        /// </li>
-        /// <li>
-        /// <p>skipped</p>
-        /// </li>
-        /// <li>
-        /// <p>pending</p>
-        /// </li>
+        /// <li> <p>failed</p> </li>
+        /// <li> <p>successful</p> </li>
+        /// <li> <p>skipped</p> </li>
+        /// <li> <p>pending</p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
@@ -11171,66 +9885,18 @@ pub mod command {
         }
         /// <p>The command type:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>configure</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deploy</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>execute_recipes</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>install_dependencies</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>restart</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rollback</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>setup</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>start</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>stop</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>undeploy</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>update_custom_cookbooks</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>update_dependencies</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>configure</code> </p> </li>
+        /// <li> <p> <code>deploy</code> </p> </li>
+        /// <li> <p> <code>execute_recipes</code> </p> </li>
+        /// <li> <p> <code>install_dependencies</code> </p> </li>
+        /// <li> <p> <code>restart</code> </p> </li>
+        /// <li> <p> <code>rollback</code> </p> </li>
+        /// <li> <p> <code>setup</code> </p> </li>
+        /// <li> <p> <code>start</code> </p> </li>
+        /// <li> <p> <code>stop</code> </p> </li>
+        /// <li> <p> <code>undeploy</code> </p> </li>
+        /// <li> <p> <code>update_custom_cookbooks</code> </p> </li>
+        /// <li> <p> <code>update_dependencies</code> </p> </li>
         /// </ul>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
@@ -11238,66 +9904,18 @@ pub mod command {
         }
         /// <p>The command type:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>configure</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deploy</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>execute_recipes</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>install_dependencies</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>restart</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rollback</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>setup</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>start</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>stop</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>undeploy</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>update_custom_cookbooks</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>update_dependencies</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>configure</code> </p> </li>
+        /// <li> <p> <code>deploy</code> </p> </li>
+        /// <li> <p> <code>execute_recipes</code> </p> </li>
+        /// <li> <p> <code>install_dependencies</code> </p> </li>
+        /// <li> <p> <code>restart</code> </p> </li>
+        /// <li> <p> <code>rollback</code> </p> </li>
+        /// <li> <p> <code>setup</code> </p> </li>
+        /// <li> <p> <code>start</code> </p> </li>
+        /// <li> <p> <code>stop</code> </p> </li>
+        /// <li> <p> <code>undeploy</code> </p> </li>
+        /// <li> <p> <code>update_custom_cookbooks</code> </p> </li>
+        /// <li> <p> <code>update_dependencies</code> </p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
@@ -11347,9 +9965,7 @@ pub struct App {
     pub r#type: std::option::Option<crate::model::AppType>,
     /// <p>A <code>Source</code> object that describes the app repository.</p>
     pub app_source: std::option::Option<crate::model::Source>,
-    /// <p>The app vhost settings with multiple domains separated by commas. For example:
-    /// <code>'www.example.com, example.com'</code>
-    /// </p>
+    /// <p>The app vhost settings with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
     pub domains: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Whether to enable SSL for the app.</p>
     pub enable_ssl: std::option::Option<bool>,
@@ -11361,10 +9977,7 @@ pub struct App {
     >,
     /// <p>When the app was created.</p>
     pub created_at: std::option::Option<std::string::String>,
-    /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be
-    /// associated with the app. After you deploy the app, these variables are defined on the
-    /// associated app server instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>. </p>
-    /// <note>
+    /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>. </p> <note>
     /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variable names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases, but if you do exceed it, you will cause an exception (API) with an "Environment: is too large (maximum is 20 KB)" message.</p>
     /// </note>
     pub environment: std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
@@ -11402,9 +10015,7 @@ impl App {
     pub fn app_source(&self) -> std::option::Option<&crate::model::Source> {
         self.app_source.as_ref()
     }
-    /// <p>The app vhost settings with multiple domains separated by commas. For example:
-    /// <code>'www.example.com, example.com'</code>
-    /// </p>
+    /// <p>The app vhost settings with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
     pub fn domains(&self) -> std::option::Option<&[std::string::String]> {
         self.domains.as_deref()
     }
@@ -11428,10 +10039,7 @@ impl App {
     pub fn created_at(&self) -> std::option::Option<&str> {
         self.created_at.as_deref()
     }
-    /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be
-    /// associated with the app. After you deploy the app, these variables are defined on the
-    /// associated app server instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>. </p>
-    /// <note>
+    /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>. </p> <note>
     /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variable names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases, but if you do exceed it, you will cause an exception (API) with an "Environment: is too large (maximum is 20 KB)" message.</p>
     /// </note>
     pub fn environment(&self) -> std::option::Option<&[crate::model::EnvironmentVariable]> {
@@ -11538,9 +10146,9 @@ pub mod app {
         /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
         ///
         /// <p>The app's data sources.</p>
-        pub fn data_sources(mut self, input: impl Into<crate::model::DataSource>) -> Self {
+        pub fn data_sources(mut self, input: crate::model::DataSource) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_sources = Some(v);
             self
         }
@@ -11576,18 +10184,14 @@ pub mod app {
         ///
         /// To override the contents of this collection use [`set_domains`](Self::set_domains).
         ///
-        /// <p>The app vhost settings with multiple domains separated by commas. For example:
-        /// <code>'www.example.com, example.com'</code>
-        /// </p>
+        /// <p>The app vhost settings with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
         pub fn domains(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.domains.unwrap_or_default();
             v.push(input.into());
             self.domains = Some(v);
             self
         }
-        /// <p>The app vhost settings with multiple domains separated by commas. For example:
-        /// <code>'www.example.com, example.com'</code>
-        /// </p>
+        /// <p>The app vhost settings with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
         pub fn set_domains(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11625,11 +10229,11 @@ pub mod app {
         /// <p>The stack attributes.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::AppAttributesKeys>,
+            k: crate::model::AppAttributesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.attributes = Some(hash_map);
             self
         }
@@ -11657,22 +10261,16 @@ pub mod app {
         ///
         /// To override the contents of this collection use [`set_environment`](Self::set_environment).
         ///
-        /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be
-        /// associated with the app. After you deploy the app, these variables are defined on the
-        /// associated app server instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>. </p>
-        /// <note>
+        /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>. </p> <note>
         /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variable names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases, but if you do exceed it, you will cause an exception (API) with an "Environment: is too large (maximum is 20 KB)" message.</p>
         /// </note>
-        pub fn environment(mut self, input: impl Into<crate::model::EnvironmentVariable>) -> Self {
+        pub fn environment(mut self, input: crate::model::EnvironmentVariable) -> Self {
             let mut v = self.environment.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environment = Some(v);
             self
         }
-        /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be
-        /// associated with the app. After you deploy the app, these variables are defined on the
-        /// associated app server instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>. </p>
-        /// <note>
+        /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>. </p> <note>
         /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variable names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases, but if you do exceed it, you will cause an exception (API) with an "Environment: is too large (maximum is 20 KB)" message.</p>
         /// </note>
         pub fn set_environment(

@@ -80,7 +80,7 @@ pub mod create_member_input {
 #[doc(hidden)]
 pub type CreateMemberInputOperationOutputAlias = crate::operation::CreateMember;
 #[doc(hidden)]
-pub type CreateMemberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateMemberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMemberInput {
     /// Consumes the builder and constructs an Operation<[`CreateMember`](crate::operation::CreateMember)>
     #[allow(clippy::let_and_return)]
@@ -91,7 +91,7 @@ impl CreateMemberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMember,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -193,7 +193,7 @@ impl CreateMemberInput {
             "CreateMember",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -295,9 +295,7 @@ pub mod create_network_input {
             self.framework_version = input;
             self
         }
-        /// <p>
-        /// Configuration properties of the blockchain framework relevant to the network configuration.
-        /// </p>
+        /// <p> Configuration properties of the blockchain framework relevant to the network configuration. </p>
         pub fn framework_configuration(
             mut self,
             input: crate::model::NetworkFrameworkConfiguration,
@@ -305,9 +303,7 @@ pub mod create_network_input {
             self.framework_configuration = Some(input);
             self
         }
-        /// <p>
-        /// Configuration properties of the blockchain framework relevant to the network configuration.
-        /// </p>
+        /// <p> Configuration properties of the blockchain framework relevant to the network configuration. </p>
         pub fn set_framework_configuration(
             mut self,
             input: std::option::Option<crate::model::NetworkFrameworkConfiguration>,
@@ -315,16 +311,12 @@ pub mod create_network_input {
             self.framework_configuration = input;
             self
         }
-        /// <p>
-        /// The voting rules used by the network to determine if a proposal is approved.
-        /// </p>
+        /// <p> The voting rules used by the network to determine if a proposal is approved. </p>
         pub fn voting_policy(mut self, input: crate::model::VotingPolicy) -> Self {
             self.voting_policy = Some(input);
             self
         }
-        /// <p>
-        /// The voting rules used by the network to determine if a proposal is approved.
-        /// </p>
+        /// <p> The voting rules used by the network to determine if a proposal is approved. </p>
         pub fn set_voting_policy(
             mut self,
             input: std::option::Option<crate::model::VotingPolicy>,
@@ -398,7 +390,7 @@ pub mod create_network_input {
 #[doc(hidden)]
 pub type CreateNetworkInputOperationOutputAlias = crate::operation::CreateNetwork;
 #[doc(hidden)]
-pub type CreateNetworkInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateNetworkInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateNetworkInput {
     /// Consumes the builder and constructs an Operation<[`CreateNetwork`](crate::operation::CreateNetwork)>
     #[allow(clippy::let_and_return)]
@@ -409,7 +401,7 @@ impl CreateNetworkInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateNetwork,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -491,7 +483,7 @@ impl CreateNetworkInput {
             "CreateNetwork",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -545,21 +537,9 @@ pub mod create_node_input {
         /// <p>The unique identifier of the network for the node.</p>
         /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-mainnet</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-rinkeby</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-ropsten</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
         /// </ul>
         pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.network_id = Some(input.into());
@@ -568,21 +548,9 @@ pub mod create_node_input {
         /// <p>The unique identifier of the network for the node.</p>
         /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-mainnet</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-rinkeby</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-ropsten</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
         /// </ul>
         pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.network_id = input;
@@ -662,7 +630,7 @@ pub mod create_node_input {
 #[doc(hidden)]
 pub type CreateNodeInputOperationOutputAlias = crate::operation::CreateNode;
 #[doc(hidden)]
-pub type CreateNodeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateNodeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateNodeInput {
     /// Consumes the builder and constructs an Operation<[`CreateNode`](crate::operation::CreateNode)>
     #[allow(clippy::let_and_return)]
@@ -673,7 +641,7 @@ impl CreateNodeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateNode,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -775,7 +743,7 @@ impl CreateNodeInput {
             "CreateNode",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -827,14 +795,12 @@ pub mod create_proposal_input {
             self.client_request_token = input;
             self
         }
-        /// <p>
-        /// The unique identifier of the network for which the proposal is made.</p>
+        /// <p> The unique identifier of the network for which the proposal is made.</p>
         pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.network_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the network for which the proposal is made.</p>
+        /// <p> The unique identifier of the network for which the proposal is made.</p>
         pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.network_id = input;
             self
@@ -922,7 +888,7 @@ pub mod create_proposal_input {
 #[doc(hidden)]
 pub type CreateProposalInputOperationOutputAlias = crate::operation::CreateProposal;
 #[doc(hidden)]
-pub type CreateProposalInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateProposalInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProposalInput {
     /// Consumes the builder and constructs an Operation<[`CreateProposal`](crate::operation::CreateProposal)>
     #[allow(clippy::let_and_return)]
@@ -933,7 +899,7 @@ impl CreateProposalInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateProposal,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1036,7 +1002,7 @@ impl CreateProposalInput {
             "CreateProposal",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1106,7 +1072,7 @@ pub mod delete_member_input {
 #[doc(hidden)]
 pub type DeleteMemberInputOperationOutputAlias = crate::operation::DeleteMember;
 #[doc(hidden)]
-pub type DeleteMemberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteMemberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMemberInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMember`](crate::operation::DeleteMember)>
     #[allow(clippy::let_and_return)]
@@ -1117,7 +1083,7 @@ impl DeleteMemberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMember,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1227,7 +1193,7 @@ impl DeleteMemberInput {
             "DeleteMember",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1256,21 +1222,9 @@ pub mod delete_node_input {
         /// <p>The unique identifier of the network that the node is on.</p>
         /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-mainnet</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-rinkeby</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-ropsten</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
         /// </ul>
         pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.network_id = Some(input.into());
@@ -1279,21 +1233,9 @@ pub mod delete_node_input {
         /// <p>The unique identifier of the network that the node is on.</p>
         /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-mainnet</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-rinkeby</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>n-ethereum-ropsten</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
+        /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
         /// </ul>
         pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.network_id = input;
@@ -1339,7 +1281,7 @@ pub mod delete_node_input {
 #[doc(hidden)]
 pub type DeleteNodeInputOperationOutputAlias = crate::operation::DeleteNode;
 #[doc(hidden)]
-pub type DeleteNodeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteNodeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteNodeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteNode`](crate::operation::DeleteNode)>
     #[allow(clippy::let_and_return)]
@@ -1350,7 +1292,7 @@ impl DeleteNodeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteNode,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1471,7 +1413,7 @@ impl DeleteNodeInput {
             "DeleteNode",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1531,7 +1473,7 @@ pub mod get_member_input {
 #[doc(hidden)]
 pub type GetMemberInputOperationOutputAlias = crate::operation::GetMember;
 #[doc(hidden)]
-pub type GetMemberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMemberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMemberInput {
     /// Consumes the builder and constructs an Operation<[`GetMember`](crate::operation::GetMember)>
     #[allow(clippy::let_and_return)]
@@ -1542,7 +1484,7 @@ impl GetMemberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMember,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1650,7 +1592,7 @@ impl GetMemberInput {
                     "GetMember",
                     "managedblockchain",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1700,7 +1642,7 @@ pub mod get_network_input {
 #[doc(hidden)]
 pub type GetNetworkInputOperationOutputAlias = crate::operation::GetNetwork;
 #[doc(hidden)]
-pub type GetNetworkInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetNetworkInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetNetworkInput {
     /// Consumes the builder and constructs an Operation<[`GetNetwork`](crate::operation::GetNetwork)>
     #[allow(clippy::let_and_return)]
@@ -1711,7 +1653,7 @@ impl GetNetworkInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetNetwork,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1801,7 +1743,7 @@ impl GetNetworkInput {
             "GetNetwork",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1875,7 +1817,7 @@ pub mod get_node_input {
 #[doc(hidden)]
 pub type GetNodeInputOperationOutputAlias = crate::operation::GetNode;
 #[doc(hidden)]
-pub type GetNodeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetNodeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetNodeInput {
     /// Consumes the builder and constructs an Operation<[`GetNode`](crate::operation::GetNode)>
     #[allow(clippy::let_and_return)]
@@ -1886,7 +1828,7 @@ impl GetNodeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetNode,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2005,7 +1947,7 @@ impl GetNodeInput {
                     "GetNode",
                     "managedblockchain",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2067,7 +2009,7 @@ pub mod get_proposal_input {
 #[doc(hidden)]
 pub type GetProposalInputOperationOutputAlias = crate::operation::GetProposal;
 #[doc(hidden)]
-pub type GetProposalInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetProposalInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetProposalInput {
     /// Consumes the builder and constructs an Operation<[`GetProposal`](crate::operation::GetProposal)>
     #[allow(clippy::let_and_return)]
@@ -2078,7 +2020,7 @@ impl GetProposalInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetProposal,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2188,7 +2130,7 @@ impl GetProposalInput {
             "GetProposal",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2250,7 +2192,7 @@ pub mod list_invitations_input {
 #[doc(hidden)]
 pub type ListInvitationsInputOperationOutputAlias = crate::operation::ListInvitations;
 #[doc(hidden)]
-pub type ListInvitationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListInvitationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInvitationsInput {
     /// Consumes the builder and constructs an Operation<[`ListInvitations`](crate::operation::ListInvitations)>
     #[allow(clippy::let_and_return)]
@@ -2261,7 +2203,7 @@ impl ListInvitationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListInvitations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2352,7 +2294,7 @@ impl ListInvitationsInput {
             "ListInvitations",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2414,16 +2356,12 @@ pub mod list_members_input {
             self.status = input;
             self
         }
-        /// <p>An optional Boolean value. If provided, the request is limited either to
-        /// members that the current AWS account owns (<code>true</code>) or that other AWS accounts
-        /// own (<code>false</code>). If omitted, all members are listed.</p>
+        /// <p>An optional Boolean value. If provided, the request is limited either to members that the current AWS account owns (<code>true</code>) or that other AWS accounts own (<code>false</code>). If omitted, all members are listed.</p>
         pub fn is_owned(mut self, input: bool) -> Self {
             self.is_owned = Some(input);
             self
         }
-        /// <p>An optional Boolean value. If provided, the request is limited either to
-        /// members that the current AWS account owns (<code>true</code>) or that other AWS accounts
-        /// own (<code>false</code>). If omitted, all members are listed.</p>
+        /// <p>An optional Boolean value. If provided, the request is limited either to members that the current AWS account owns (<code>true</code>) or that other AWS accounts own (<code>false</code>). If omitted, all members are listed.</p>
         pub fn set_is_owned(mut self, input: std::option::Option<bool>) -> Self {
             self.is_owned = input;
             self
@@ -2469,7 +2407,7 @@ pub mod list_members_input {
 #[doc(hidden)]
 pub type ListMembersInputOperationOutputAlias = crate::operation::ListMembers;
 #[doc(hidden)]
-pub type ListMembersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMembersInput {
     /// Consumes the builder and constructs an Operation<[`ListMembers`](crate::operation::ListMembers)>
     #[allow(clippy::let_and_return)]
@@ -2480,7 +2418,7 @@ impl ListMembersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMembers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2603,7 +2541,7 @@ impl ListMembersInput {
             "ListMembers",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2709,7 +2647,7 @@ pub mod list_networks_input {
 #[doc(hidden)]
 pub type ListNetworksInputOperationOutputAlias = crate::operation::ListNetworks;
 #[doc(hidden)]
-pub type ListNetworksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListNetworksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListNetworksInput {
     /// Consumes the builder and constructs an Operation<[`ListNetworks`](crate::operation::ListNetworks)>
     #[allow(clippy::let_and_return)]
@@ -2720,7 +2658,7 @@ impl ListNetworksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListNetworks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2820,7 +2758,7 @@ impl ListNetworksInput {
             "ListNetworks",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2918,7 +2856,7 @@ pub mod list_nodes_input {
 #[doc(hidden)]
 pub type ListNodesInputOperationOutputAlias = crate::operation::ListNodes;
 #[doc(hidden)]
-pub type ListNodesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListNodesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListNodesInput {
     /// Consumes the builder and constructs an Operation<[`ListNodes`](crate::operation::ListNodes)>
     #[allow(clippy::let_and_return)]
@@ -2929,7 +2867,7 @@ impl ListNodesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListNodes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3044,7 +2982,7 @@ impl ListNodesInput {
                     "ListNodes",
                     "managedblockchain",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3070,44 +3008,32 @@ pub mod list_proposals_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The unique identifier of the network.
-        /// </p>
+        /// <p> The unique identifier of the network. </p>
         pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.network_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the network.
-        /// </p>
+        /// <p> The unique identifier of the network. </p>
         pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.network_id = input;
             self
         }
-        /// <p>
-        /// The maximum number of proposals to return.
-        /// </p>
+        /// <p> The maximum number of proposals to return. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>
-        /// The maximum number of proposals to return.
-        /// </p>
+        /// <p> The maximum number of proposals to return. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>
-        /// The pagination token that indicates the next set of results to retrieve.
-        /// </p>
+        /// <p> The pagination token that indicates the next set of results to retrieve. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// The pagination token that indicates the next set of results to retrieve.
-        /// </p>
+        /// <p> The pagination token that indicates the next set of results to retrieve. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3130,7 +3056,7 @@ pub mod list_proposals_input {
 #[doc(hidden)]
 pub type ListProposalsInputOperationOutputAlias = crate::operation::ListProposals;
 #[doc(hidden)]
-pub type ListProposalsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListProposalsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProposalsInput {
     /// Consumes the builder and constructs an Operation<[`ListProposals`](crate::operation::ListProposals)>
     #[allow(clippy::let_and_return)]
@@ -3141,7 +3067,7 @@ impl ListProposalsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListProposals,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3252,7 +3178,7 @@ impl ListProposalsInput {
             "ListProposals",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3279,58 +3205,42 @@ pub mod list_proposal_votes_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The unique identifier of the network.
-        /// </p>
+        /// <p> The unique identifier of the network. </p>
         pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.network_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the network.
-        /// </p>
+        /// <p> The unique identifier of the network. </p>
         pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.network_id = input;
             self
         }
-        /// <p>
-        /// The unique identifier of the proposal.
-        /// </p>
+        /// <p> The unique identifier of the proposal. </p>
         pub fn proposal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.proposal_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the proposal.
-        /// </p>
+        /// <p> The unique identifier of the proposal. </p>
         pub fn set_proposal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.proposal_id = input;
             self
         }
-        /// <p>
-        /// The maximum number of votes to return.
-        /// </p>
+        /// <p> The maximum number of votes to return. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>
-        /// The maximum number of votes to return.
-        /// </p>
+        /// <p> The maximum number of votes to return. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>
-        /// The pagination token that indicates the next set of results to retrieve.
-        /// </p>
+        /// <p> The pagination token that indicates the next set of results to retrieve. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// The pagination token that indicates the next set of results to retrieve.
-        /// </p>
+        /// <p> The pagination token that indicates the next set of results to retrieve. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3354,7 +3264,7 @@ pub mod list_proposal_votes_input {
 #[doc(hidden)]
 pub type ListProposalVotesInputOperationOutputAlias = crate::operation::ListProposalVotes;
 #[doc(hidden)]
-pub type ListProposalVotesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListProposalVotesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProposalVotesInput {
     /// Consumes the builder and constructs an Operation<[`ListProposalVotes`](crate::operation::ListProposalVotes)>
     #[allow(clippy::let_and_return)]
@@ -3365,7 +3275,7 @@ impl ListProposalVotesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListProposalVotes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3492,7 +3402,7 @@ impl ListProposalVotesInput {
             "ListProposalVotes",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3542,7 +3452,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -3553,7 +3463,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3643,7 +3553,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3696,7 +3606,7 @@ pub mod reject_invitation_input {
 #[doc(hidden)]
 pub type RejectInvitationInputOperationOutputAlias = crate::operation::RejectInvitation;
 #[doc(hidden)]
-pub type RejectInvitationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RejectInvitationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RejectInvitationInput {
     /// Consumes the builder and constructs an Operation<[`RejectInvitation`](crate::operation::RejectInvitation)>
     #[allow(clippy::let_and_return)]
@@ -3707,7 +3617,7 @@ impl RejectInvitationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RejectInvitation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3801,7 +3711,7 @@ impl RejectInvitationInput {
             "RejectInvitation",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3880,7 +3790,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -3891,7 +3801,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3986,7 +3896,7 @@ impl TagResourceInput {
             "TagResource",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4065,7 +3975,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -4076,7 +3986,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4179,7 +4089,7 @@ impl UntagResourceInput {
             "UntagResource",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4260,7 +4170,7 @@ pub mod update_member_input {
 #[doc(hidden)]
 pub type UpdateMemberInputOperationOutputAlias = crate::operation::UpdateMember;
 #[doc(hidden)]
-pub type UpdateMemberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateMemberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateMemberInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMember`](crate::operation::UpdateMember)>
     #[allow(clippy::let_and_return)]
@@ -4271,7 +4181,7 @@ impl UpdateMemberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateMember,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4386,7 +4296,7 @@ impl UpdateMemberInput {
             "UpdateMember",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4489,7 +4399,7 @@ pub mod update_node_input {
 #[doc(hidden)]
 pub type UpdateNodeInputOperationOutputAlias = crate::operation::UpdateNode;
 #[doc(hidden)]
-pub type UpdateNodeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateNodeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateNodeInput {
     /// Consumes the builder and constructs an Operation<[`UpdateNode`](crate::operation::UpdateNode)>
     #[allow(clippy::let_and_return)]
@@ -4500,7 +4410,7 @@ impl UpdateNodeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateNode,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4615,7 +4525,7 @@ impl UpdateNodeInput {
             "UpdateNode",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4650,42 +4560,32 @@ pub mod vote_on_proposal_input {
         pub(crate) vote: std::option::Option<crate::model::VoteValue>,
     }
     impl Builder {
-        /// <p>
-        /// The unique identifier of the network.
-        /// </p>
+        /// <p> The unique identifier of the network. </p>
         pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.network_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the network.
-        /// </p>
+        /// <p> The unique identifier of the network. </p>
         pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.network_id = input;
             self
         }
-        /// <p>
-        /// The unique identifier of the proposal.
-        /// </p>
+        /// <p> The unique identifier of the proposal. </p>
         pub fn proposal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.proposal_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the proposal.
-        /// </p>
+        /// <p> The unique identifier of the proposal. </p>
         pub fn set_proposal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.proposal_id = input;
             self
         }
-        /// <p>The unique identifier of the member casting the vote.
-        /// </p>
+        /// <p>The unique identifier of the member casting the vote. </p>
         pub fn voter_member_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.voter_member_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the member casting the vote.
-        /// </p>
+        /// <p>The unique identifier of the member casting the vote. </p>
         pub fn set_voter_member_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4693,16 +4593,12 @@ pub mod vote_on_proposal_input {
             self.voter_member_id = input;
             self
         }
-        /// <p>
-        /// The value of the vote.
-        /// </p>
+        /// <p> The value of the vote. </p>
         pub fn vote(mut self, input: crate::model::VoteValue) -> Self {
             self.vote = Some(input);
             self
         }
-        /// <p>
-        /// The value of the vote.
-        /// </p>
+        /// <p> The value of the vote. </p>
         pub fn set_vote(mut self, input: std::option::Option<crate::model::VoteValue>) -> Self {
             self.vote = input;
             self
@@ -4726,7 +4622,7 @@ pub mod vote_on_proposal_input {
 #[doc(hidden)]
 pub type VoteOnProposalInputOperationOutputAlias = crate::operation::VoteOnProposal;
 #[doc(hidden)]
-pub type VoteOnProposalInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type VoteOnProposalInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl VoteOnProposalInput {
     /// Consumes the builder and constructs an Operation<[`VoteOnProposal`](crate::operation::VoteOnProposal)>
     #[allow(clippy::let_and_return)]
@@ -4737,7 +4633,7 @@ impl VoteOnProposalInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::VoteOnProposal,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4853,7 +4749,7 @@ impl VoteOnProposalInput {
             "VoteOnProposal",
             "managedblockchain",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4880,43 +4776,29 @@ impl VoteOnProposalInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VoteOnProposalInput {
-    /// <p>
-    /// The unique identifier of the network.
-    /// </p>
+    /// <p> The unique identifier of the network. </p>
     pub network_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The unique identifier of the proposal.
-    /// </p>
+    /// <p> The unique identifier of the proposal. </p>
     pub proposal_id: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of the member casting the vote.
-    /// </p>
+    /// <p>The unique identifier of the member casting the vote. </p>
     pub voter_member_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The value of the vote.
-    /// </p>
+    /// <p> The value of the vote. </p>
     pub vote: std::option::Option<crate::model::VoteValue>,
 }
 impl VoteOnProposalInput {
-    /// <p>
-    /// The unique identifier of the network.
-    /// </p>
+    /// <p> The unique identifier of the network. </p>
     pub fn network_id(&self) -> std::option::Option<&str> {
         self.network_id.as_deref()
     }
-    /// <p>
-    /// The unique identifier of the proposal.
-    /// </p>
+    /// <p> The unique identifier of the proposal. </p>
     pub fn proposal_id(&self) -> std::option::Option<&str> {
         self.proposal_id.as_deref()
     }
-    /// <p>The unique identifier of the member casting the vote.
-    /// </p>
+    /// <p>The unique identifier of the member casting the vote. </p>
     pub fn voter_member_id(&self) -> std::option::Option<&str> {
         self.voter_member_id.as_deref()
     }
-    /// <p>
-    /// The value of the vote.
-    /// </p>
+    /// <p> The value of the vote. </p>
     pub fn vote(&self) -> std::option::Option<&crate::model::VoteValue> {
         self.vote.as_ref()
     }
@@ -5129,45 +5011,29 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProposalVotesInput {
-    /// <p>
-    /// The unique identifier of the network.
-    /// </p>
+    /// <p> The unique identifier of the network. </p>
     pub network_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The unique identifier of the proposal.
-    /// </p>
+    /// <p> The unique identifier of the proposal. </p>
     pub proposal_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The maximum number of votes to return.
-    /// </p>
+    /// <p> The maximum number of votes to return. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>
-    /// The pagination token that indicates the next set of results to retrieve.
-    /// </p>
+    /// <p> The pagination token that indicates the next set of results to retrieve. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProposalVotesInput {
-    /// <p>
-    /// The unique identifier of the network.
-    /// </p>
+    /// <p> The unique identifier of the network. </p>
     pub fn network_id(&self) -> std::option::Option<&str> {
         self.network_id.as_deref()
     }
-    /// <p>
-    /// The unique identifier of the proposal.
-    /// </p>
+    /// <p> The unique identifier of the proposal. </p>
     pub fn proposal_id(&self) -> std::option::Option<&str> {
         self.proposal_id.as_deref()
     }
-    /// <p>
-    /// The maximum number of votes to return.
-    /// </p>
+    /// <p> The maximum number of votes to return. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>
-    /// The pagination token that indicates the next set of results to retrieve.
-    /// </p>
+    /// <p> The pagination token that indicates the next set of results to retrieve. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5187,35 +5053,23 @@ impl std::fmt::Debug for ListProposalVotesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProposalsInput {
-    /// <p>
-    /// The unique identifier of the network.
-    /// </p>
+    /// <p> The unique identifier of the network. </p>
     pub network_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The maximum number of proposals to return.
-    /// </p>
+    /// <p> The maximum number of proposals to return. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>
-    /// The pagination token that indicates the next set of results to retrieve.
-    /// </p>
+    /// <p> The pagination token that indicates the next set of results to retrieve. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProposalsInput {
-    /// <p>
-    /// The unique identifier of the network.
-    /// </p>
+    /// <p> The unique identifier of the network. </p>
     pub fn network_id(&self) -> std::option::Option<&str> {
         self.network_id.as_deref()
     }
-    /// <p>
-    /// The maximum number of proposals to return.
-    /// </p>
+    /// <p> The maximum number of proposals to return. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>
-    /// The pagination token that indicates the next set of results to retrieve.
-    /// </p>
+    /// <p> The pagination token that indicates the next set of results to retrieve. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5342,9 +5196,7 @@ pub struct ListMembersInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional status specifier. If provided, only members currently in this status are listed.</p>
     pub status: std::option::Option<crate::model::MemberStatus>,
-    /// <p>An optional Boolean value. If provided, the request is limited either to
-    /// members that the current AWS account owns (<code>true</code>) or that other AWS accounts
-    /// own (<code>false</code>). If omitted, all members are listed.</p>
+    /// <p>An optional Boolean value. If provided, the request is limited either to members that the current AWS account owns (<code>true</code>) or that other AWS accounts own (<code>false</code>). If omitted, all members are listed.</p>
     pub is_owned: std::option::Option<bool>,
     /// <p>The maximum number of members to return in the request.</p>
     pub max_results: std::option::Option<i32>,
@@ -5364,9 +5216,7 @@ impl ListMembersInput {
     pub fn status(&self) -> std::option::Option<&crate::model::MemberStatus> {
         self.status.as_ref()
     }
-    /// <p>An optional Boolean value. If provided, the request is limited either to
-    /// members that the current AWS account owns (<code>true</code>) or that other AWS accounts
-    /// own (<code>false</code>). If omitted, all members are listed.</p>
+    /// <p>An optional Boolean value. If provided, the request is limited either to members that the current AWS account owns (<code>true</code>) or that other AWS accounts own (<code>false</code>). If omitted, all members are listed.</p>
     pub fn is_owned(&self) -> std::option::Option<bool> {
         self.is_owned
     }
@@ -5541,21 +5391,9 @@ pub struct DeleteNodeInput {
     /// <p>The unique identifier of the network that the node is on.</p>
     /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>n-ethereum-mainnet</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>n-ethereum-rinkeby</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>n-ethereum-ropsten</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+    /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
+    /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
     /// </ul>
     pub network_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the member that owns this node.</p>
@@ -5568,21 +5406,9 @@ impl DeleteNodeInput {
     /// <p>The unique identifier of the network that the node is on.</p>
     /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>n-ethereum-mainnet</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>n-ethereum-rinkeby</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>n-ethereum-ropsten</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+    /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
+    /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
     /// </ul>
     pub fn network_id(&self) -> std::option::Option<&str> {
         self.network_id.as_deref()
@@ -5641,8 +5467,7 @@ impl std::fmt::Debug for DeleteMemberInput {
 pub struct CreateProposalInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// The unique identifier of the network for which the proposal is made.</p>
+    /// <p> The unique identifier of the network for which the proposal is made.</p>
     pub network_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the member that is creating the proposal. This identifier is especially useful for identifying the member making the proposal when multiple members exist in a single AWS account.</p>
     pub member_id: std::option::Option<std::string::String>,
@@ -5661,8 +5486,7 @@ impl CreateProposalInput {
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>
-    /// The unique identifier of the network for which the proposal is made.</p>
+    /// <p> The unique identifier of the network for which the proposal is made.</p>
     pub fn network_id(&self) -> std::option::Option<&str> {
         self.network_id.as_deref()
     }
@@ -5710,21 +5534,9 @@ pub struct CreateNodeInput {
     /// <p>The unique identifier of the network for the node.</p>
     /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>n-ethereum-mainnet</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>n-ethereum-rinkeby</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>n-ethereum-ropsten</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+    /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
+    /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
     /// </ul>
     pub network_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the member that owns this node.</p>
@@ -5746,21 +5558,9 @@ impl CreateNodeInput {
     /// <p>The unique identifier of the network for the node.</p>
     /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>n-ethereum-mainnet</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>n-ethereum-rinkeby</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>n-ethereum-ropsten</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+    /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
+    /// <li> <p> <code>n-ethereum-ropsten</code> </p> </li>
     /// </ul>
     pub fn network_id(&self) -> std::option::Option<&str> {
         self.network_id.as_deref()
@@ -5810,13 +5610,9 @@ pub struct CreateNetworkInput {
     pub framework: std::option::Option<crate::model::Framework>,
     /// <p>The version of the blockchain framework that the network uses.</p>
     pub framework_version: std::option::Option<std::string::String>,
-    /// <p>
-    /// Configuration properties of the blockchain framework relevant to the network configuration.
-    /// </p>
+    /// <p> Configuration properties of the blockchain framework relevant to the network configuration. </p>
     pub framework_configuration: std::option::Option<crate::model::NetworkFrameworkConfiguration>,
-    /// <p>
-    /// The voting rules used by the network to determine if a proposal is approved.
-    /// </p>
+    /// <p> The voting rules used by the network to determine if a proposal is approved. </p>
     pub voting_policy: std::option::Option<crate::model::VotingPolicy>,
     /// <p>Configuration properties for the first member within the network.</p>
     pub member_configuration: std::option::Option<crate::model::MemberConfiguration>,
@@ -5847,17 +5643,13 @@ impl CreateNetworkInput {
     pub fn framework_version(&self) -> std::option::Option<&str> {
         self.framework_version.as_deref()
     }
-    /// <p>
-    /// Configuration properties of the blockchain framework relevant to the network configuration.
-    /// </p>
+    /// <p> Configuration properties of the blockchain framework relevant to the network configuration. </p>
     pub fn framework_configuration(
         &self,
     ) -> std::option::Option<&crate::model::NetworkFrameworkConfiguration> {
         self.framework_configuration.as_ref()
     }
-    /// <p>
-    /// The voting rules used by the network to determine if a proposal is approved.
-    /// </p>
+    /// <p> The voting rules used by the network to determine if a proposal is approved. </p>
     pub fn voting_policy(&self) -> std::option::Option<&crate::model::VotingPolicy> {
         self.voting_policy.as_ref()
     }

@@ -65,15 +65,18 @@ impl TagResourceOutput {
 pub struct OpenTunnelOutput {
     /// <p>A unique alpha-numeric tunnel ID.</p>
     pub tunnel_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name for the tunnel. The tunnel ARN format is
-    /// <code>arn:aws:tunnel:<region>:<account-id>:tunnel/<tunnel-id></code>
-    /// </p>
+    /// <p>The Amazon Resource Name for the tunnel. The tunnel ARN format is <code>arn:aws:tunnel:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :tunnel/
+    /// <tunnel-id></tunnel-id>
+    /// </account-id>
+    /// </region></code> </p>
     pub tunnel_arn: std::option::Option<std::string::String>,
-    /// <p>The access token the source local proxy uses to connect to AWS IoT Secure
-    /// Tunneling.</p>
+    /// <p>The access token the source local proxy uses to connect to AWS IoT Secure Tunneling.</p>
     pub source_access_token: std::option::Option<std::string::String>,
-    /// <p>The access token the destination local proxy uses to connect to AWS IoT Secure
-    /// Tunneling.</p>
+    /// <p>The access token the destination local proxy uses to connect to AWS IoT Secure Tunneling.</p>
     pub destination_access_token: std::option::Option<std::string::String>,
 }
 impl OpenTunnelOutput {
@@ -81,19 +84,22 @@ impl OpenTunnelOutput {
     pub fn tunnel_id(&self) -> std::option::Option<&str> {
         self.tunnel_id.as_deref()
     }
-    /// <p>The Amazon Resource Name for the tunnel. The tunnel ARN format is
-    /// <code>arn:aws:tunnel:<region>:<account-id>:tunnel/<tunnel-id></code>
-    /// </p>
+    /// <p>The Amazon Resource Name for the tunnel. The tunnel ARN format is <code>arn:aws:tunnel:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :tunnel/
+    /// <tunnel-id></tunnel-id>
+    /// </account-id>
+    /// </region></code> </p>
     pub fn tunnel_arn(&self) -> std::option::Option<&str> {
         self.tunnel_arn.as_deref()
     }
-    /// <p>The access token the source local proxy uses to connect to AWS IoT Secure
-    /// Tunneling.</p>
+    /// <p>The access token the source local proxy uses to connect to AWS IoT Secure Tunneling.</p>
     pub fn source_access_token(&self) -> std::option::Option<&str> {
         self.source_access_token.as_deref()
     }
-    /// <p>The access token the destination local proxy uses to connect to AWS IoT Secure
-    /// Tunneling.</p>
+    /// <p>The access token the destination local proxy uses to connect to AWS IoT Secure Tunneling.</p>
     pub fn destination_access_token(&self) -> std::option::Option<&str> {
         self.destination_access_token.as_deref()
     }
@@ -133,28 +139,36 @@ pub mod open_tunnel_output {
             self.tunnel_id = input;
             self
         }
-        /// <p>The Amazon Resource Name for the tunnel. The tunnel ARN format is
-        /// <code>arn:aws:tunnel:<region>:<account-id>:tunnel/<tunnel-id></code>
-        /// </p>
+        /// <p>The Amazon Resource Name for the tunnel. The tunnel ARN format is <code>arn:aws:tunnel:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :tunnel/
+        /// <tunnel-id></tunnel-id>
+        /// </account-id>
+        /// </region></code> </p>
         pub fn tunnel_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.tunnel_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name for the tunnel. The tunnel ARN format is
-        /// <code>arn:aws:tunnel:<region>:<account-id>:tunnel/<tunnel-id></code>
-        /// </p>
+        /// <p>The Amazon Resource Name for the tunnel. The tunnel ARN format is <code>arn:aws:tunnel:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :tunnel/
+        /// <tunnel-id></tunnel-id>
+        /// </account-id>
+        /// </region></code> </p>
         pub fn set_tunnel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tunnel_arn = input;
             self
         }
-        /// <p>The access token the source local proxy uses to connect to AWS IoT Secure
-        /// Tunneling.</p>
+        /// <p>The access token the source local proxy uses to connect to AWS IoT Secure Tunneling.</p>
         pub fn source_access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_access_token = Some(input.into());
             self
         }
-        /// <p>The access token the source local proxy uses to connect to AWS IoT Secure
-        /// Tunneling.</p>
+        /// <p>The access token the source local proxy uses to connect to AWS IoT Secure Tunneling.</p>
         pub fn set_source_access_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -162,14 +176,12 @@ pub mod open_tunnel_output {
             self.source_access_token = input;
             self
         }
-        /// <p>The access token the destination local proxy uses to connect to AWS IoT Secure
-        /// Tunneling.</p>
+        /// <p>The access token the destination local proxy uses to connect to AWS IoT Secure Tunneling.</p>
         pub fn destination_access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination_access_token = Some(input.into());
             self
         }
-        /// <p>The access token the destination local proxy uses to connect to AWS IoT Secure
-        /// Tunneling.</p>
+        /// <p>The access token the destination local proxy uses to connect to AWS IoT Secure Tunneling.</p>
         pub fn set_destination_access_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -238,9 +250,9 @@ pub mod list_tunnels_output {
         /// To override the contents of this collection use [`set_tunnel_summaries`](Self::set_tunnel_summaries).
         ///
         /// <p>A short description of the tunnels in an AWS account.</p>
-        pub fn tunnel_summaries(mut self, input: impl Into<crate::model::TunnelSummary>) -> Self {
+        pub fn tunnel_summaries(mut self, input: crate::model::TunnelSummary) -> Self {
             let mut v = self.tunnel_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tunnel_summaries = Some(v);
             self
         }
@@ -312,9 +324,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the specified resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

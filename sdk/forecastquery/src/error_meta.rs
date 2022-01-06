@@ -11,8 +11,7 @@ pub enum Error {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find that resource. Check the information that you've provided and try
-    /// again.</p>
+    /// <p>We can't find that resource. Check the information that you've provided and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

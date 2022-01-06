@@ -42,9 +42,9 @@ pub mod search_quantum_tasks_output {
         /// To override the contents of this collection use [`set_quantum_tasks`](Self::set_quantum_tasks).
         ///
         /// <p>An array of <code>QuantumTaskSummary</code> objects for tasks that match the specified filters.</p>
-        pub fn quantum_tasks(mut self, input: impl Into<crate::model::QuantumTaskSummary>) -> Self {
+        pub fn quantum_tasks(mut self, input: crate::model::QuantumTaskSummary) -> Self {
             let mut v = self.quantum_tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.quantum_tasks = Some(v);
             self
         }
@@ -530,23 +530,17 @@ impl GetQuantumTaskOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchJobsOutput {
-    /// <p>An array of <code>JobSummary</code> objects for devices that match the specified filter
-    /// values.</p>
+    /// <p>An array of <code>JobSummary</code> objects for devices that match the specified filter values.</p>
     pub jobs: std::option::Option<std::vec::Vec<crate::model::JobSummary>>,
-    /// <p>A token used for pagination of results, or <code>null</code> if there are no additional results. Use
-    /// the token value in a subsequent request to continue results where the previous request
-    /// ended.</p>
+    /// <p>A token used for pagination of results, or <code>null</code> if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchJobsOutput {
-    /// <p>An array of <code>JobSummary</code> objects for devices that match the specified filter
-    /// values.</p>
+    /// <p>An array of <code>JobSummary</code> objects for devices that match the specified filter values.</p>
     pub fn jobs(&self) -> std::option::Option<&[crate::model::JobSummary]> {
         self.jobs.as_deref()
     }
-    /// <p>A token used for pagination of results, or <code>null</code> if there are no additional results. Use
-    /// the token value in a subsequent request to continue results where the previous request
-    /// ended.</p>
+    /// <p>A token used for pagination of results, or <code>null</code> if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -573,16 +567,14 @@ pub mod search_jobs_output {
         ///
         /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
         ///
-        /// <p>An array of <code>JobSummary</code> objects for devices that match the specified filter
-        /// values.</p>
-        pub fn jobs(mut self, input: impl Into<crate::model::JobSummary>) -> Self {
+        /// <p>An array of <code>JobSummary</code> objects for devices that match the specified filter values.</p>
+        pub fn jobs(mut self, input: crate::model::JobSummary) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.jobs = Some(v);
             self
         }
-        /// <p>An array of <code>JobSummary</code> objects for devices that match the specified filter
-        /// values.</p>
+        /// <p>An array of <code>JobSummary</code> objects for devices that match the specified filter values.</p>
         pub fn set_jobs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::JobSummary>>,
@@ -590,16 +582,12 @@ pub mod search_jobs_output {
             self.jobs = input;
             self
         }
-        /// <p>A token used for pagination of results, or <code>null</code> if there are no additional results. Use
-        /// the token value in a subsequent request to continue results where the previous request
-        /// ended.</p>
+        /// <p>A token used for pagination of results, or <code>null</code> if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token used for pagination of results, or <code>null</code> if there are no additional results. Use
-        /// the token value in a subsequent request to continue results where the previous request
-        /// ended.</p>
+        /// <p>A token used for pagination of results, or <code>null</code> if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -758,35 +746,26 @@ pub struct GetJobOutput {
     pub status: std::option::Option<crate::model::JobPrimaryStatus>,
     /// <p>The ARN of the Amazon Braket job.</p>
     pub job_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform
-    /// tasks on behalf of a user. It can access user resources, run an Amazon Braket job container
-    /// on behalf of user, and output resources to the s3 buckets of a user.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the s3 buckets of a user.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A description of the reason why an Amazon Braket job failed, if it failed.</p>
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon Braket job.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of
-    /// the traiing job. The values are set with a string of JSON key:value pairs, where the key is the
-    /// name of the hyperparameter and the value is the value of th hyperparameter.</p>
+    /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the traiing job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
     pub hyper_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A list of parameters that specify the name and type of input data and where it is
-    /// located.</p>
+    /// <p>A list of parameters that specify the name and type of input data and where it is located.</p>
     pub input_data_config: std::option::Option<std::vec::Vec<crate::model::InputFileConfig>>,
-    /// <p>The path to the S3 location where job artifacts are stored and the encryption
-    /// key used to store them there.</p>
+    /// <p>The path to the S3 location where job artifacts are stored and the encryption key used to store them there.</p>
     pub output_data_config: std::option::Option<crate::model::JobOutputDataConfig>,
     /// <p>The user-defined criteria that specifies when to stop a job running.</p>
     pub stopping_condition: std::option::Option<crate::model::JobStoppingCondition>,
     /// <p>Information about the output locations for job checkpoint data.</p>
     pub checkpoint_config: std::option::Option<crate::model::JobCheckpointConfig>,
-    /// <p>Definition of the Amazon Braket job created. Specifies the container image the job uses, information about
-    /// the Python scripts used for entry and training, and the user-defined metrics used to
-    /// evaluation the job.</p>
+    /// <p>Definition of the Amazon Braket job created. Specifies the container image the job uses, information about the Python scripts used for entry and training, and the user-defined metrics used to evaluation the job.</p>
     pub algorithm_specification: std::option::Option<crate::model::AlgorithmSpecification>,
-    /// <p>The resource instances to use while running the hybrid job on Amazon
-    /// Braket.</p>
+    /// <p>The resource instances to use while running the hybrid job on Amazon Braket.</p>
     pub instance_config: std::option::Option<crate::model::InstanceConfig>,
     /// <p>The date and time that the Amazon Braket job was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -813,9 +792,7 @@ impl GetJobOutput {
     pub fn job_arn(&self) -> std::option::Option<&str> {
         self.job_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform
-    /// tasks on behalf of a user. It can access user resources, run an Amazon Braket job container
-    /// on behalf of user, and output resources to the s3 buckets of a user.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the s3 buckets of a user.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -827,22 +804,18 @@ impl GetJobOutput {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of
-    /// the traiing job. The values are set with a string of JSON key:value pairs, where the key is the
-    /// name of the hyperparameter and the value is the value of th hyperparameter.</p>
+    /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the traiing job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
     pub fn hyper_parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.hyper_parameters.as_ref()
     }
-    /// <p>A list of parameters that specify the name and type of input data and where it is
-    /// located.</p>
+    /// <p>A list of parameters that specify the name and type of input data and where it is located.</p>
     pub fn input_data_config(&self) -> std::option::Option<&[crate::model::InputFileConfig]> {
         self.input_data_config.as_deref()
     }
-    /// <p>The path to the S3 location where job artifacts are stored and the encryption
-    /// key used to store them there.</p>
+    /// <p>The path to the S3 location where job artifacts are stored and the encryption key used to store them there.</p>
     pub fn output_data_config(&self) -> std::option::Option<&crate::model::JobOutputDataConfig> {
         self.output_data_config.as_ref()
     }
@@ -854,16 +827,13 @@ impl GetJobOutput {
     pub fn checkpoint_config(&self) -> std::option::Option<&crate::model::JobCheckpointConfig> {
         self.checkpoint_config.as_ref()
     }
-    /// <p>Definition of the Amazon Braket job created. Specifies the container image the job uses, information about
-    /// the Python scripts used for entry and training, and the user-defined metrics used to
-    /// evaluation the job.</p>
+    /// <p>Definition of the Amazon Braket job created. Specifies the container image the job uses, information about the Python scripts used for entry and training, and the user-defined metrics used to evaluation the job.</p>
     pub fn algorithm_specification(
         &self,
     ) -> std::option::Option<&crate::model::AlgorithmSpecification> {
         self.algorithm_specification.as_ref()
     }
-    /// <p>The resource instances to use while running the hybrid job on Amazon
-    /// Braket.</p>
+    /// <p>The resource instances to use while running the hybrid job on Amazon Braket.</p>
     pub fn instance_config(&self) -> std::option::Option<&crate::model::InstanceConfig> {
         self.instance_config.as_ref()
     }
@@ -980,16 +950,12 @@ pub mod get_job_output {
             self.job_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform
-        /// tasks on behalf of a user. It can access user resources, run an Amazon Braket job container
-        /// on behalf of user, and output resources to the s3 buckets of a user.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the s3 buckets of a user.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform
-        /// tasks on behalf of a user. It can access user resources, run an Amazon Braket job container
-        /// on behalf of user, and output resources to the s3 buckets of a user.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the s3 buckets of a user.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1021,9 +987,7 @@ pub mod get_job_output {
         ///
         /// To override the contents of this collection use [`set_hyper_parameters`](Self::set_hyper_parameters).
         ///
-        /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of
-        /// the traiing job. The values are set with a string of JSON key:value pairs, where the key is the
-        /// name of the hyperparameter and the value is the value of th hyperparameter.</p>
+        /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the traiing job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
         pub fn hyper_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -1034,9 +998,7 @@ pub mod get_job_output {
             self.hyper_parameters = Some(hash_map);
             self
         }
-        /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of
-        /// the traiing job. The values are set with a string of JSON key:value pairs, where the key is the
-        /// name of the hyperparameter and the value is the value of th hyperparameter.</p>
+        /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the traiing job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
         pub fn set_hyper_parameters(
             mut self,
             input: std::option::Option<
@@ -1050,19 +1012,14 @@ pub mod get_job_output {
         ///
         /// To override the contents of this collection use [`set_input_data_config`](Self::set_input_data_config).
         ///
-        /// <p>A list of parameters that specify the name and type of input data and where it is
-        /// located.</p>
-        pub fn input_data_config(
-            mut self,
-            input: impl Into<crate::model::InputFileConfig>,
-        ) -> Self {
+        /// <p>A list of parameters that specify the name and type of input data and where it is located.</p>
+        pub fn input_data_config(mut self, input: crate::model::InputFileConfig) -> Self {
             let mut v = self.input_data_config.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_data_config = Some(v);
             self
         }
-        /// <p>A list of parameters that specify the name and type of input data and where it is
-        /// located.</p>
+        /// <p>A list of parameters that specify the name and type of input data and where it is located.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputFileConfig>>,
@@ -1070,14 +1027,12 @@ pub mod get_job_output {
             self.input_data_config = input;
             self
         }
-        /// <p>The path to the S3 location where job artifacts are stored and the encryption
-        /// key used to store them there.</p>
+        /// <p>The path to the S3 location where job artifacts are stored and the encryption key used to store them there.</p>
         pub fn output_data_config(mut self, input: crate::model::JobOutputDataConfig) -> Self {
             self.output_data_config = Some(input);
             self
         }
-        /// <p>The path to the S3 location where job artifacts are stored and the encryption
-        /// key used to store them there.</p>
+        /// <p>The path to the S3 location where job artifacts are stored and the encryption key used to store them there.</p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::JobOutputDataConfig>,
@@ -1111,9 +1066,7 @@ pub mod get_job_output {
             self.checkpoint_config = input;
             self
         }
-        /// <p>Definition of the Amazon Braket job created. Specifies the container image the job uses, information about
-        /// the Python scripts used for entry and training, and the user-defined metrics used to
-        /// evaluation the job.</p>
+        /// <p>Definition of the Amazon Braket job created. Specifies the container image the job uses, information about the Python scripts used for entry and training, and the user-defined metrics used to evaluation the job.</p>
         pub fn algorithm_specification(
             mut self,
             input: crate::model::AlgorithmSpecification,
@@ -1121,9 +1074,7 @@ pub mod get_job_output {
             self.algorithm_specification = Some(input);
             self
         }
-        /// <p>Definition of the Amazon Braket job created. Specifies the container image the job uses, information about
-        /// the Python scripts used for entry and training, and the user-defined metrics used to
-        /// evaluation the job.</p>
+        /// <p>Definition of the Amazon Braket job created. Specifies the container image the job uses, information about the Python scripts used for entry and training, and the user-defined metrics used to evaluation the job.</p>
         pub fn set_algorithm_specification(
             mut self,
             input: std::option::Option<crate::model::AlgorithmSpecification>,
@@ -1131,14 +1082,12 @@ pub mod get_job_output {
             self.algorithm_specification = input;
             self
         }
-        /// <p>The resource instances to use while running the hybrid job on Amazon
-        /// Braket.</p>
+        /// <p>The resource instances to use while running the hybrid job on Amazon Braket.</p>
         pub fn instance_config(mut self, input: crate::model::InstanceConfig) -> Self {
             self.instance_config = Some(input);
             self
         }
-        /// <p>The resource instances to use while running the hybrid job on Amazon
-        /// Braket.</p>
+        /// <p>The resource instances to use while running the hybrid job on Amazon Braket.</p>
         pub fn set_instance_config(
             mut self,
             input: std::option::Option<crate::model::InstanceConfig>,
@@ -1213,9 +1162,9 @@ pub mod get_job_output {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>Details about the type and time events occurred related to the Amazon Braket job.</p>
-        pub fn events(mut self, input: impl Into<crate::model::JobEventDetails>) -> Self {
+        pub fn events(mut self, input: crate::model::JobEventDetails) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -1327,9 +1276,9 @@ pub mod search_devices_output {
         /// To override the contents of this collection use [`set_devices`](Self::set_devices).
         ///
         /// <p>An array of <code>DeviceSummary</code> objects for devices that match the specified filter values.</p>
-        pub fn devices(mut self, input: impl Into<crate::model::DeviceSummary>) -> Self {
+        pub fn devices(mut self, input: crate::model::DeviceSummary) -> Self {
             let mut v = self.devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.devices = Some(v);
             self
         }

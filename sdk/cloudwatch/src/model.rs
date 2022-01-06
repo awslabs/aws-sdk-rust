@@ -3,15 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
-    /// <p>A string that you can use to assign a value. The combination of tag keys and values can help you organize and categorize your
-    /// resources.</p>
+    /// <p>A string that you can use to assign a value. The combination of tag keys and values can help you organize and categorize your resources.</p>
     pub key: std::option::Option<std::string::String>,
     /// <p>The value for the specified tag key.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
-    /// <p>A string that you can use to assign a value. The combination of tag keys and values can help you organize and categorize your
-    /// resources.</p>
+    /// <p>A string that you can use to assign a value. The combination of tag keys and values can help you organize and categorize your resources.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -38,14 +36,12 @@ pub mod tag {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A string that you can use to assign a value. The combination of tag keys and values can help you organize and categorize your
-        /// resources.</p>
+        /// <p>A string that you can use to assign a value. The combination of tag keys and values can help you organize and categorize your resources.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>A string that you can use to assign a value. The combination of tag keys and values can help you organize and categorize your
-        /// resources.</p>
+        /// <p>A string that you can use to assign a value. The combination of tag keys and values can help you organize and categorize your resources.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -190,8 +186,7 @@ impl AsRef<str> for MetricStreamOutputFormat {
     }
 }
 
-/// <p>This structure contains the name of one of the metric namespaces that is listed in
-/// a filter of a metric stream.</p>
+/// <p>This structure contains the name of one of the metric namespaces that is listed in a filter of a metric stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricStreamFilter {
@@ -245,8 +240,7 @@ impl MetricStreamFilter {
     }
 }
 
-/// <p>Encapsulates the information sent to either create a metric or add new values
-/// to be aggregated into an existing metric.</p>
+/// <p>Encapsulates the information sent to either create a metric or add new values to be aggregated into an existing metric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricDatum {
@@ -257,36 +251,20 @@ pub struct MetricDatum {
     /// <p>The time the metric data was received, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The value for the metric.</p>
-    /// <p>Although the parameter accepts numbers of type Double, CloudWatch rejects values that are either too small or
-    /// too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity)
-    /// are not supported.</p>
+    /// <p>Although the parameter accepts numbers of type Double, CloudWatch rejects values that are either too small or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.</p>
     pub value: std::option::Option<f64>,
     /// <p>The statistical values for the metric.</p>
     pub statistic_values: std::option::Option<crate::model::StatisticSet>,
-    /// <p>Array of numbers representing the values for the metric during the period. Each unique value is listed just once
-    /// in this array, and the corresponding number in the <code>Counts</code> array specifies the number of times that value occurred during the period.
-    /// You can include up to 150 unique values in each <code>PutMetricData</code> action that specifies a <code>Values</code> array.</p>
-    /// <p>Although the <code>Values</code> array accepts numbers of type
-    /// <code>Double</code>, CloudWatch rejects values that are either too small
-    /// or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity,
-    /// -Infinity) are not supported.</p>
+    /// <p>Array of numbers representing the values for the metric during the period. Each unique value is listed just once in this array, and the corresponding number in the <code>Counts</code> array specifies the number of times that value occurred during the period. You can include up to 150 unique values in each <code>PutMetricData</code> action that specifies a <code>Values</code> array.</p>
+    /// <p>Although the <code>Values</code> array accepts numbers of type <code>Double</code>, CloudWatch rejects values that are either too small or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.</p>
     pub values: std::option::Option<std::vec::Vec<f64>>,
-    /// <p>Array of numbers that is used along with the <code>Values</code> array. Each number in the <code>Count</code> array
-    /// is the number of times the corresponding value in the <code>Values</code> array occurred during the period. </p>
-    /// <p>If you omit the <code>Counts</code> array, the default of 1 is used as the value for each count. If you
-    /// include a <code>Counts</code> array, it must include the same amount of values as the <code>Values</code> array.</p>
+    /// <p>Array of numbers that is used along with the <code>Values</code> array. Each number in the <code>Count</code> array is the number of times the corresponding value in the <code>Values</code> array occurred during the period. </p>
+    /// <p>If you omit the <code>Counts</code> array, the default of 1 is used as the value for each count. If you include a <code>Counts</code> array, it must include the same amount of values as the <code>Values</code> array.</p>
     pub counts: std::option::Option<std::vec::Vec<f64>>,
     /// <p>When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.</p>
-    /// <p>In
-    /// a <code>Get</code> operation, this displays the unit that is used for the metric.</p>
+    /// <p>In a <code>Get</code> operation, this displays the unit that is used for the metric.</p>
     pub unit: std::option::Option<crate::model::StandardUnit>,
-    /// <p>Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that CloudWatch stores the metric with
-    /// sub-minute resolution down to one second.
-    /// Setting this to 60 specifies this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution is available
-    /// only for custom metrics. For more information about high-resolution metrics,
-    /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">High-Resolution Metrics</a> in the
-    /// <i>Amazon CloudWatch User Guide</i>.
-    /// </p>
+    /// <p>Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that CloudWatch stores the metric with sub-minute resolution down to one second. Setting this to 60 specifies this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution is available only for custom metrics. For more information about high-resolution metrics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
     /// <p>This field is optional, if you do not specify it the default of 60 is used.</p>
     pub storage_resolution: std::option::Option<i32>,
 }
@@ -304,9 +282,7 @@ impl MetricDatum {
         self.timestamp.as_ref()
     }
     /// <p>The value for the metric.</p>
-    /// <p>Although the parameter accepts numbers of type Double, CloudWatch rejects values that are either too small or
-    /// too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity)
-    /// are not supported.</p>
+    /// <p>Although the parameter accepts numbers of type Double, CloudWatch rejects values that are either too small or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.</p>
     pub fn value(&self) -> std::option::Option<f64> {
         self.value
     }
@@ -314,36 +290,22 @@ impl MetricDatum {
     pub fn statistic_values(&self) -> std::option::Option<&crate::model::StatisticSet> {
         self.statistic_values.as_ref()
     }
-    /// <p>Array of numbers representing the values for the metric during the period. Each unique value is listed just once
-    /// in this array, and the corresponding number in the <code>Counts</code> array specifies the number of times that value occurred during the period.
-    /// You can include up to 150 unique values in each <code>PutMetricData</code> action that specifies a <code>Values</code> array.</p>
-    /// <p>Although the <code>Values</code> array accepts numbers of type
-    /// <code>Double</code>, CloudWatch rejects values that are either too small
-    /// or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity,
-    /// -Infinity) are not supported.</p>
+    /// <p>Array of numbers representing the values for the metric during the period. Each unique value is listed just once in this array, and the corresponding number in the <code>Counts</code> array specifies the number of times that value occurred during the period. You can include up to 150 unique values in each <code>PutMetricData</code> action that specifies a <code>Values</code> array.</p>
+    /// <p>Although the <code>Values</code> array accepts numbers of type <code>Double</code>, CloudWatch rejects values that are either too small or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.</p>
     pub fn values(&self) -> std::option::Option<&[f64]> {
         self.values.as_deref()
     }
-    /// <p>Array of numbers that is used along with the <code>Values</code> array. Each number in the <code>Count</code> array
-    /// is the number of times the corresponding value in the <code>Values</code> array occurred during the period. </p>
-    /// <p>If you omit the <code>Counts</code> array, the default of 1 is used as the value for each count. If you
-    /// include a <code>Counts</code> array, it must include the same amount of values as the <code>Values</code> array.</p>
+    /// <p>Array of numbers that is used along with the <code>Values</code> array. Each number in the <code>Count</code> array is the number of times the corresponding value in the <code>Values</code> array occurred during the period. </p>
+    /// <p>If you omit the <code>Counts</code> array, the default of 1 is used as the value for each count. If you include a <code>Counts</code> array, it must include the same amount of values as the <code>Values</code> array.</p>
     pub fn counts(&self) -> std::option::Option<&[f64]> {
         self.counts.as_deref()
     }
     /// <p>When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.</p>
-    /// <p>In
-    /// a <code>Get</code> operation, this displays the unit that is used for the metric.</p>
+    /// <p>In a <code>Get</code> operation, this displays the unit that is used for the metric.</p>
     pub fn unit(&self) -> std::option::Option<&crate::model::StandardUnit> {
         self.unit.as_ref()
     }
-    /// <p>Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that CloudWatch stores the metric with
-    /// sub-minute resolution down to one second.
-    /// Setting this to 60 specifies this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution is available
-    /// only for custom metrics. For more information about high-resolution metrics,
-    /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">High-Resolution Metrics</a> in the
-    /// <i>Amazon CloudWatch User Guide</i>.
-    /// </p>
+    /// <p>Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that CloudWatch stores the metric with sub-minute resolution down to one second. Setting this to 60 specifies this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution is available only for custom metrics. For more information about high-resolution metrics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
     /// <p>This field is optional, if you do not specify it the default of 60 is used.</p>
     pub fn storage_resolution(&self) -> std::option::Option<i32> {
         self.storage_resolution
@@ -396,9 +358,9 @@ pub mod metric_datum {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p>The dimensions associated with the metric.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::Dimension>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -424,17 +386,13 @@ pub mod metric_datum {
             self
         }
         /// <p>The value for the metric.</p>
-        /// <p>Although the parameter accepts numbers of type Double, CloudWatch rejects values that are either too small or
-        /// too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity)
-        /// are not supported.</p>
+        /// <p>Although the parameter accepts numbers of type Double, CloudWatch rejects values that are either too small or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.</p>
         pub fn value(mut self, input: f64) -> Self {
             self.value = Some(input);
             self
         }
         /// <p>The value for the metric.</p>
-        /// <p>Although the parameter accepts numbers of type Double, CloudWatch rejects values that are either too small or
-        /// too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity)
-        /// are not supported.</p>
+        /// <p>Although the parameter accepts numbers of type Double, CloudWatch rejects values that are either too small or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.</p>
         pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
             self.value = input;
             self
@@ -456,26 +414,16 @@ pub mod metric_datum {
         ///
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
-        /// <p>Array of numbers representing the values for the metric during the period. Each unique value is listed just once
-        /// in this array, and the corresponding number in the <code>Counts</code> array specifies the number of times that value occurred during the period.
-        /// You can include up to 150 unique values in each <code>PutMetricData</code> action that specifies a <code>Values</code> array.</p>
-        /// <p>Although the <code>Values</code> array accepts numbers of type
-        /// <code>Double</code>, CloudWatch rejects values that are either too small
-        /// or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity,
-        /// -Infinity) are not supported.</p>
-        pub fn values(mut self, input: impl Into<f64>) -> Self {
+        /// <p>Array of numbers representing the values for the metric during the period. Each unique value is listed just once in this array, and the corresponding number in the <code>Counts</code> array specifies the number of times that value occurred during the period. You can include up to 150 unique values in each <code>PutMetricData</code> action that specifies a <code>Values</code> array.</p>
+        /// <p>Although the <code>Values</code> array accepts numbers of type <code>Double</code>, CloudWatch rejects values that are either too small or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.</p>
+        pub fn values(mut self, input: f64) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.values = Some(v);
             self
         }
-        /// <p>Array of numbers representing the values for the metric during the period. Each unique value is listed just once
-        /// in this array, and the corresponding number in the <code>Counts</code> array specifies the number of times that value occurred during the period.
-        /// You can include up to 150 unique values in each <code>PutMetricData</code> action that specifies a <code>Values</code> array.</p>
-        /// <p>Although the <code>Values</code> array accepts numbers of type
-        /// <code>Double</code>, CloudWatch rejects values that are either too small
-        /// or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity,
-        /// -Infinity) are not supported.</p>
+        /// <p>Array of numbers representing the values for the metric during the period. Each unique value is listed just once in this array, and the corresponding number in the <code>Counts</code> array specifies the number of times that value occurred during the period. You can include up to 150 unique values in each <code>PutMetricData</code> action that specifies a <code>Values</code> array.</p>
+        /// <p>Although the <code>Values</code> array accepts numbers of type <code>Double</code>, CloudWatch rejects values that are either too small or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.</p>
         pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.values = input;
             self
@@ -484,57 +432,39 @@ pub mod metric_datum {
         ///
         /// To override the contents of this collection use [`set_counts`](Self::set_counts).
         ///
-        /// <p>Array of numbers that is used along with the <code>Values</code> array. Each number in the <code>Count</code> array
-        /// is the number of times the corresponding value in the <code>Values</code> array occurred during the period. </p>
-        /// <p>If you omit the <code>Counts</code> array, the default of 1 is used as the value for each count. If you
-        /// include a <code>Counts</code> array, it must include the same amount of values as the <code>Values</code> array.</p>
-        pub fn counts(mut self, input: impl Into<f64>) -> Self {
+        /// <p>Array of numbers that is used along with the <code>Values</code> array. Each number in the <code>Count</code> array is the number of times the corresponding value in the <code>Values</code> array occurred during the period. </p>
+        /// <p>If you omit the <code>Counts</code> array, the default of 1 is used as the value for each count. If you include a <code>Counts</code> array, it must include the same amount of values as the <code>Values</code> array.</p>
+        pub fn counts(mut self, input: f64) -> Self {
             let mut v = self.counts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.counts = Some(v);
             self
         }
-        /// <p>Array of numbers that is used along with the <code>Values</code> array. Each number in the <code>Count</code> array
-        /// is the number of times the corresponding value in the <code>Values</code> array occurred during the period. </p>
-        /// <p>If you omit the <code>Counts</code> array, the default of 1 is used as the value for each count. If you
-        /// include a <code>Counts</code> array, it must include the same amount of values as the <code>Values</code> array.</p>
+        /// <p>Array of numbers that is used along with the <code>Values</code> array. Each number in the <code>Count</code> array is the number of times the corresponding value in the <code>Values</code> array occurred during the period. </p>
+        /// <p>If you omit the <code>Counts</code> array, the default of 1 is used as the value for each count. If you include a <code>Counts</code> array, it must include the same amount of values as the <code>Values</code> array.</p>
         pub fn set_counts(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.counts = input;
             self
         }
         /// <p>When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.</p>
-        /// <p>In
-        /// a <code>Get</code> operation, this displays the unit that is used for the metric.</p>
+        /// <p>In a <code>Get</code> operation, this displays the unit that is used for the metric.</p>
         pub fn unit(mut self, input: crate::model::StandardUnit) -> Self {
             self.unit = Some(input);
             self
         }
         /// <p>When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.</p>
-        /// <p>In
-        /// a <code>Get</code> operation, this displays the unit that is used for the metric.</p>
+        /// <p>In a <code>Get</code> operation, this displays the unit that is used for the metric.</p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::StandardUnit>) -> Self {
             self.unit = input;
             self
         }
-        /// <p>Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that CloudWatch stores the metric with
-        /// sub-minute resolution down to one second.
-        /// Setting this to 60 specifies this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution is available
-        /// only for custom metrics. For more information about high-resolution metrics,
-        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">High-Resolution Metrics</a> in the
-        /// <i>Amazon CloudWatch User Guide</i>.
-        /// </p>
+        /// <p>Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that CloudWatch stores the metric with sub-minute resolution down to one second. Setting this to 60 specifies this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution is available only for custom metrics. For more information about high-resolution metrics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
         /// <p>This field is optional, if you do not specify it the default of 60 is used.</p>
         pub fn storage_resolution(mut self, input: i32) -> Self {
             self.storage_resolution = Some(input);
             self
         }
-        /// <p>Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that CloudWatch stores the metric with
-        /// sub-minute resolution down to one second.
-        /// Setting this to 60 specifies this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution is available
-        /// only for custom metrics. For more information about high-resolution metrics,
-        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">High-Resolution Metrics</a> in the
-        /// <i>Amazon CloudWatch User Guide</i>.
-        /// </p>
+        /// <p>Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that CloudWatch stores the metric with sub-minute resolution down to one second. Setting this to 60 specifies this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution is available only for custom metrics. For more information about high-resolution metrics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
         /// <p>This field is optional, if you do not specify it the default of 60 is used.</p>
         pub fn set_storage_resolution(mut self, input: std::option::Option<i32>) -> Self {
             self.storage_resolution = input;
@@ -857,28 +787,21 @@ impl StatisticSet {
     }
 }
 
-/// <p>A dimension is a name/value pair that is part of the identity of a metric. You
-/// can assign up to 10 dimensions to a metric. Because dimensions are part of the unique
-/// identifier for a metric, whenever you add a unique name/value pair to one of
-/// your metrics, you are creating a new variation of that metric. </p>
+/// <p>A dimension is a name/value pair that is part of the identity of a metric. You can assign up to 10 dimensions to a metric. Because dimensions are part of the unique identifier for a metric, whenever you add a unique name/value pair to one of your metrics, you are creating a new variation of that metric. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Dimension {
-    /// <p>The name of the dimension. Dimension names must contain only ASCII characters and must include
-    /// at least one non-whitespace character.</p>
+    /// <p>The name of the dimension. Dimension names must contain only ASCII characters and must include at least one non-whitespace character.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The value of the dimension. Dimension values must contain only ASCII characters and must include
-    /// at least one non-whitespace character.</p>
+    /// <p>The value of the dimension. Dimension values must contain only ASCII characters and must include at least one non-whitespace character.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl Dimension {
-    /// <p>The name of the dimension. Dimension names must contain only ASCII characters and must include
-    /// at least one non-whitespace character.</p>
+    /// <p>The name of the dimension. Dimension names must contain only ASCII characters and must include at least one non-whitespace character.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The value of the dimension. Dimension values must contain only ASCII characters and must include
-    /// at least one non-whitespace character.</p>
+    /// <p>The value of the dimension. Dimension values must contain only ASCII characters and must include at least one non-whitespace character.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -901,26 +824,22 @@ pub mod dimension {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the dimension. Dimension names must contain only ASCII characters and must include
-        /// at least one non-whitespace character.</p>
+        /// <p>The name of the dimension. Dimension names must contain only ASCII characters and must include at least one non-whitespace character.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the dimension. Dimension names must contain only ASCII characters and must include
-        /// at least one non-whitespace character.</p>
+        /// <p>The name of the dimension. Dimension names must contain only ASCII characters and must include at least one non-whitespace character.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The value of the dimension. Dimension values must contain only ASCII characters and must include
-        /// at least one non-whitespace character.</p>
+        /// <p>The value of the dimension. Dimension values must contain only ASCII characters and must include at least one non-whitespace character.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The value of the dimension. Dimension values must contain only ASCII characters and must include
-        /// at least one non-whitespace character.</p>
+        /// <p>The value of the dimension. Dimension values must contain only ASCII characters and must include at least one non-whitespace character.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -941,134 +860,65 @@ impl Dimension {
     }
 }
 
-/// <p>This structure is used in both <code>GetMetricData</code> and <code>PutMetricAlarm</code>. The supported
-/// use of this structure is different for those two operations.</p>
-/// <p>When used in <code>GetMetricData</code>, it indicates the metric data to return, and whether this call is just retrieving
-/// a batch set of data for one metric, or is performing a math expression on metric data. A
-/// single <code>GetMetricData</code> call can include up to 500 <code>MetricDataQuery</code>
-/// structures.</p>
-/// <p>When used in <code>PutMetricAlarm</code>, it enables you to create an alarm based on a
-/// metric math expression. Each <code>MetricDataQuery</code> in the array specifies either
-/// a metric to retrieve, or a math expression to be performed on retrieved metrics. A
-/// single <code>PutMetricAlarm</code> call can include up to 20
-/// <code>MetricDataQuery</code> structures in the array. The 20 structures can include
-/// as many as 10 structures that contain a <code>MetricStat</code> parameter to retrieve a
-/// metric, and as many as 10 structures that contain the <code>Expression</code> parameter
-/// to perform a math expression. Of those <code>Expression</code> structures, one must have <code>True</code>
-/// as the value for <code>ReturnData</code>. The result of this expression is the value the alarm watches.</p>
-///
-/// <p>Any expression used in a <code>PutMetricAlarm</code>
-/// operation must return a single time series. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User
-/// Guide</i>.</p>
-///
-/// <p>Some of the parameters of this structure also have different uses whether you are using this structure in a <code>GetMetricData</code>
-/// operation or a <code>PutMetricAlarm</code> operation. These differences are explained in the following parameter list.</p>
+/// <p>This structure is used in both <code>GetMetricData</code> and <code>PutMetricAlarm</code>. The supported use of this structure is different for those two operations.</p>
+/// <p>When used in <code>GetMetricData</code>, it indicates the metric data to return, and whether this call is just retrieving a batch set of data for one metric, or is performing a math expression on metric data. A single <code>GetMetricData</code> call can include up to 500 <code>MetricDataQuery</code> structures.</p>
+/// <p>When used in <code>PutMetricAlarm</code>, it enables you to create an alarm based on a metric math expression. Each <code>MetricDataQuery</code> in the array specifies either a metric to retrieve, or a math expression to be performed on retrieved metrics. A single <code>PutMetricAlarm</code> call can include up to 20 <code>MetricDataQuery</code> structures in the array. The 20 structures can include as many as 10 structures that contain a <code>MetricStat</code> parameter to retrieve a metric, and as many as 10 structures that contain the <code>Expression</code> parameter to perform a math expression. Of those <code>Expression</code> structures, one must have <code>True</code> as the value for <code>ReturnData</code>. The result of this expression is the value the alarm watches.</p>
+/// <p>Any expression used in a <code>PutMetricAlarm</code> operation must return a single time series. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+/// <p>Some of the parameters of this structure also have different uses whether you are using this structure in a <code>GetMetricData</code> operation or a <code>PutMetricAlarm</code> operation. These differences are explained in the following parameter list.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricDataQuery {
-    /// <p>A short name used to tie this object to the results in the response. This name must be
-    /// unique within a single call to <code>GetMetricData</code>. If you are performing math
-    /// expressions on this set of data, this name represents that data and can serve as a
-    /// variable in the mathematical expression. The valid characters are letters, numbers, and
-    /// underscore. The first character must be a lowercase letter.</p>
+    /// <p>A short name used to tie this object to the results in the response. This name must be unique within a single call to <code>GetMetricData</code>. If you are performing math expressions on this set of data, this name represents that data and can serve as a variable in the mathematical expression. The valid characters are letters, numbers, and underscore. The first character must be a lowercase letter.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The metric to be returned, along with statistics, period, and units. Use this parameter only if this object is retrieving a metric
-    /// and not performing a math expression on returned data.</p>
-    /// <p>Within one MetricDataQuery object, you must specify either
-    /// <code>Expression</code> or <code>MetricStat</code> but not both.</p>
+    /// <p>The metric to be returned, along with statistics, period, and units. Use this parameter only if this object is retrieving a metric and not performing a math expression on returned data.</p>
+    /// <p>Within one MetricDataQuery object, you must specify either <code>Expression</code> or <code>MetricStat</code> but not both.</p>
     pub metric_stat: std::option::Option<crate::model::MetricStat>,
-    /// <p>The math expression to be performed on the returned data, if this object is performing a math expression. This expression
-    /// can use the <code>Id</code> of the other metrics to refer to those metrics, and can also use the <code>Id</code> of other
-    /// expressions to use the result of those expressions. For more information about metric math expressions, see
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the
-    /// <i>Amazon CloudWatch User Guide</i>.</p>
-    /// <p>Within each MetricDataQuery object, you must specify either
-    /// <code>Expression</code> or <code>MetricStat</code> but not both.</p>
+    /// <p>The math expression to be performed on the returned data, if this object is performing a math expression. This expression can use the <code>Id</code> of the other metrics to refer to those metrics, and can also use the <code>Id</code> of other expressions to use the result of those expressions. For more information about metric math expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    /// <p>Within each MetricDataQuery object, you must specify either <code>Expression</code> or <code>MetricStat</code> but not both.</p>
     pub expression: std::option::Option<std::string::String>,
-    /// <p>A human-readable label for this metric or expression. This is especially useful
-    /// if this is an expression, so that you know
-    /// what the value represents. If the metric or expression is shown in a
-    /// CloudWatch dashboard widget, the label is shown. If Label is omitted, CloudWatch
-    /// generates a default.</p>
-    /// <p>You can put dynamic expressions into a label, so that it is more descriptive.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using Dynamic Labels</a>.</p>
+    /// <p>A human-readable label for this metric or expression. This is especially useful if this is an expression, so that you know what the value represents. If the metric or expression is shown in a CloudWatch dashboard widget, the label is shown. If Label is omitted, CloudWatch generates a default.</p>
+    /// <p>You can put dynamic expressions into a label, so that it is more descriptive. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using Dynamic Labels</a>.</p>
     pub label: std::option::Option<std::string::String>,
-    /// <p>When used in <code>GetMetricData</code>, this option indicates whether to return the
-    /// timestamps and raw data values of this metric. If you are performing this call just to
-    /// do math expressions and do not also need the raw data returned, you can specify
-    /// <code>False</code>. If you omit this, the default of <code>True</code> is
-    /// used.</p>
-    /// <p>When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the alarm. For all
-    /// other metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify <code>ReturnData</code> as False.</p>
+    /// <p>When used in <code>GetMetricData</code>, this option indicates whether to return the timestamps and raw data values of this metric. If you are performing this call just to do math expressions and do not also need the raw data returned, you can specify <code>False</code>. If you omit this, the default of <code>True</code> is used.</p>
+    /// <p>When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the alarm. For all other metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify <code>ReturnData</code> as False.</p>
     pub return_data: std::option::Option<bool>,
-    /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a
-    /// period can be as short as one minute (60 seconds) and must be a multiple of 60.
-    /// For high-resolution metrics that are collected at intervals of less than one minute,
-    /// the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics
-    /// stored by a <code>PutMetricData</code> operation that includes a <code>StorageResolution of 1 second</code>.</p>
+    /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics stored by a <code>PutMetricData</code> operation that includes a <code>StorageResolution of 1 second</code>.</p>
     pub period: std::option::Option<i32>,
     /// <p>The ID of the account where the metrics are located, if this is a cross-account alarm.</p>
-    /// <p>Use this field only for <code>PutMetricAlarm</code> operations. It is not used in
-    /// <code>GetMetricData</code> operations.</p>
+    /// <p>Use this field only for <code>PutMetricAlarm</code> operations. It is not used in <code>GetMetricData</code> operations.</p>
     pub account_id: std::option::Option<std::string::String>,
 }
 impl MetricDataQuery {
-    /// <p>A short name used to tie this object to the results in the response. This name must be
-    /// unique within a single call to <code>GetMetricData</code>. If you are performing math
-    /// expressions on this set of data, this name represents that data and can serve as a
-    /// variable in the mathematical expression. The valid characters are letters, numbers, and
-    /// underscore. The first character must be a lowercase letter.</p>
+    /// <p>A short name used to tie this object to the results in the response. This name must be unique within a single call to <code>GetMetricData</code>. If you are performing math expressions on this set of data, this name represents that data and can serve as a variable in the mathematical expression. The valid characters are letters, numbers, and underscore. The first character must be a lowercase letter.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The metric to be returned, along with statistics, period, and units. Use this parameter only if this object is retrieving a metric
-    /// and not performing a math expression on returned data.</p>
-    /// <p>Within one MetricDataQuery object, you must specify either
-    /// <code>Expression</code> or <code>MetricStat</code> but not both.</p>
+    /// <p>The metric to be returned, along with statistics, period, and units. Use this parameter only if this object is retrieving a metric and not performing a math expression on returned data.</p>
+    /// <p>Within one MetricDataQuery object, you must specify either <code>Expression</code> or <code>MetricStat</code> but not both.</p>
     pub fn metric_stat(&self) -> std::option::Option<&crate::model::MetricStat> {
         self.metric_stat.as_ref()
     }
-    /// <p>The math expression to be performed on the returned data, if this object is performing a math expression. This expression
-    /// can use the <code>Id</code> of the other metrics to refer to those metrics, and can also use the <code>Id</code> of other
-    /// expressions to use the result of those expressions. For more information about metric math expressions, see
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the
-    /// <i>Amazon CloudWatch User Guide</i>.</p>
-    /// <p>Within each MetricDataQuery object, you must specify either
-    /// <code>Expression</code> or <code>MetricStat</code> but not both.</p>
+    /// <p>The math expression to be performed on the returned data, if this object is performing a math expression. This expression can use the <code>Id</code> of the other metrics to refer to those metrics, and can also use the <code>Id</code> of other expressions to use the result of those expressions. For more information about metric math expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    /// <p>Within each MetricDataQuery object, you must specify either <code>Expression</code> or <code>MetricStat</code> but not both.</p>
     pub fn expression(&self) -> std::option::Option<&str> {
         self.expression.as_deref()
     }
-    /// <p>A human-readable label for this metric or expression. This is especially useful
-    /// if this is an expression, so that you know
-    /// what the value represents. If the metric or expression is shown in a
-    /// CloudWatch dashboard widget, the label is shown. If Label is omitted, CloudWatch
-    /// generates a default.</p>
-    /// <p>You can put dynamic expressions into a label, so that it is more descriptive.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using Dynamic Labels</a>.</p>
+    /// <p>A human-readable label for this metric or expression. This is especially useful if this is an expression, so that you know what the value represents. If the metric or expression is shown in a CloudWatch dashboard widget, the label is shown. If Label is omitted, CloudWatch generates a default.</p>
+    /// <p>You can put dynamic expressions into a label, so that it is more descriptive. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using Dynamic Labels</a>.</p>
     pub fn label(&self) -> std::option::Option<&str> {
         self.label.as_deref()
     }
-    /// <p>When used in <code>GetMetricData</code>, this option indicates whether to return the
-    /// timestamps and raw data values of this metric. If you are performing this call just to
-    /// do math expressions and do not also need the raw data returned, you can specify
-    /// <code>False</code>. If you omit this, the default of <code>True</code> is
-    /// used.</p>
-    /// <p>When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the alarm. For all
-    /// other metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify <code>ReturnData</code> as False.</p>
+    /// <p>When used in <code>GetMetricData</code>, this option indicates whether to return the timestamps and raw data values of this metric. If you are performing this call just to do math expressions and do not also need the raw data returned, you can specify <code>False</code>. If you omit this, the default of <code>True</code> is used.</p>
+    /// <p>When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the alarm. For all other metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify <code>ReturnData</code> as False.</p>
     pub fn return_data(&self) -> std::option::Option<bool> {
         self.return_data
     }
-    /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a
-    /// period can be as short as one minute (60 seconds) and must be a multiple of 60.
-    /// For high-resolution metrics that are collected at intervals of less than one minute,
-    /// the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics
-    /// stored by a <code>PutMetricData</code> operation that includes a <code>StorageResolution of 1 second</code>.</p>
+    /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics stored by a <code>PutMetricData</code> operation that includes a <code>StorageResolution of 1 second</code>.</p>
     pub fn period(&self) -> std::option::Option<i32> {
         self.period
     }
     /// <p>The ID of the account where the metrics are located, if this is a cross-account alarm.</p>
-    /// <p>Use this field only for <code>PutMetricAlarm</code> operations. It is not used in
-    /// <code>GetMetricData</code> operations.</p>
+    /// <p>Use this field only for <code>PutMetricAlarm</code> operations. It is not used in <code>GetMetricData</code> operations.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -1101,36 +951,24 @@ pub mod metric_data_query {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A short name used to tie this object to the results in the response. This name must be
-        /// unique within a single call to <code>GetMetricData</code>. If you are performing math
-        /// expressions on this set of data, this name represents that data and can serve as a
-        /// variable in the mathematical expression. The valid characters are letters, numbers, and
-        /// underscore. The first character must be a lowercase letter.</p>
+        /// <p>A short name used to tie this object to the results in the response. This name must be unique within a single call to <code>GetMetricData</code>. If you are performing math expressions on this set of data, this name represents that data and can serve as a variable in the mathematical expression. The valid characters are letters, numbers, and underscore. The first character must be a lowercase letter.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>A short name used to tie this object to the results in the response. This name must be
-        /// unique within a single call to <code>GetMetricData</code>. If you are performing math
-        /// expressions on this set of data, this name represents that data and can serve as a
-        /// variable in the mathematical expression. The valid characters are letters, numbers, and
-        /// underscore. The first character must be a lowercase letter.</p>
+        /// <p>A short name used to tie this object to the results in the response. This name must be unique within a single call to <code>GetMetricData</code>. If you are performing math expressions on this set of data, this name represents that data and can serve as a variable in the mathematical expression. The valid characters are letters, numbers, and underscore. The first character must be a lowercase letter.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The metric to be returned, along with statistics, period, and units. Use this parameter only if this object is retrieving a metric
-        /// and not performing a math expression on returned data.</p>
-        /// <p>Within one MetricDataQuery object, you must specify either
-        /// <code>Expression</code> or <code>MetricStat</code> but not both.</p>
+        /// <p>The metric to be returned, along with statistics, period, and units. Use this parameter only if this object is retrieving a metric and not performing a math expression on returned data.</p>
+        /// <p>Within one MetricDataQuery object, you must specify either <code>Expression</code> or <code>MetricStat</code> but not both.</p>
         pub fn metric_stat(mut self, input: crate::model::MetricStat) -> Self {
             self.metric_stat = Some(input);
             self
         }
-        /// <p>The metric to be returned, along with statistics, period, and units. Use this parameter only if this object is retrieving a metric
-        /// and not performing a math expression on returned data.</p>
-        /// <p>Within one MetricDataQuery object, you must specify either
-        /// <code>Expression</code> or <code>MetricStat</code> but not both.</p>
+        /// <p>The metric to be returned, along with statistics, period, and units. Use this parameter only if this object is retrieving a metric and not performing a math expression on returned data.</p>
+        /// <p>Within one MetricDataQuery object, you must specify either <code>Expression</code> or <code>MetricStat</code> but not both.</p>
         pub fn set_metric_stat(
             mut self,
             input: std::option::Option<crate::model::MetricStat>,
@@ -1138,100 +976,60 @@ pub mod metric_data_query {
             self.metric_stat = input;
             self
         }
-        /// <p>The math expression to be performed on the returned data, if this object is performing a math expression. This expression
-        /// can use the <code>Id</code> of the other metrics to refer to those metrics, and can also use the <code>Id</code> of other
-        /// expressions to use the result of those expressions. For more information about metric math expressions, see
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the
-        /// <i>Amazon CloudWatch User Guide</i>.</p>
-        /// <p>Within each MetricDataQuery object, you must specify either
-        /// <code>Expression</code> or <code>MetricStat</code> but not both.</p>
+        /// <p>The math expression to be performed on the returned data, if this object is performing a math expression. This expression can use the <code>Id</code> of the other metrics to refer to those metrics, and can also use the <code>Id</code> of other expressions to use the result of those expressions. For more information about metric math expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+        /// <p>Within each MetricDataQuery object, you must specify either <code>Expression</code> or <code>MetricStat</code> but not both.</p>
         pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.expression = Some(input.into());
             self
         }
-        /// <p>The math expression to be performed on the returned data, if this object is performing a math expression. This expression
-        /// can use the <code>Id</code> of the other metrics to refer to those metrics, and can also use the <code>Id</code> of other
-        /// expressions to use the result of those expressions. For more information about metric math expressions, see
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the
-        /// <i>Amazon CloudWatch User Guide</i>.</p>
-        /// <p>Within each MetricDataQuery object, you must specify either
-        /// <code>Expression</code> or <code>MetricStat</code> but not both.</p>
+        /// <p>The math expression to be performed on the returned data, if this object is performing a math expression. This expression can use the <code>Id</code> of the other metrics to refer to those metrics, and can also use the <code>Id</code> of other expressions to use the result of those expressions. For more information about metric math expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+        /// <p>Within each MetricDataQuery object, you must specify either <code>Expression</code> or <code>MetricStat</code> but not both.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expression = input;
             self
         }
-        /// <p>A human-readable label for this metric or expression. This is especially useful
-        /// if this is an expression, so that you know
-        /// what the value represents. If the metric or expression is shown in a
-        /// CloudWatch dashboard widget, the label is shown. If Label is omitted, CloudWatch
-        /// generates a default.</p>
-        /// <p>You can put dynamic expressions into a label, so that it is more descriptive.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using Dynamic Labels</a>.</p>
+        /// <p>A human-readable label for this metric or expression. This is especially useful if this is an expression, so that you know what the value represents. If the metric or expression is shown in a CloudWatch dashboard widget, the label is shown. If Label is omitted, CloudWatch generates a default.</p>
+        /// <p>You can put dynamic expressions into a label, so that it is more descriptive. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using Dynamic Labels</a>.</p>
         pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
             self.label = Some(input.into());
             self
         }
-        /// <p>A human-readable label for this metric or expression. This is especially useful
-        /// if this is an expression, so that you know
-        /// what the value represents. If the metric or expression is shown in a
-        /// CloudWatch dashboard widget, the label is shown. If Label is omitted, CloudWatch
-        /// generates a default.</p>
-        /// <p>You can put dynamic expressions into a label, so that it is more descriptive.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using Dynamic Labels</a>.</p>
+        /// <p>A human-readable label for this metric or expression. This is especially useful if this is an expression, so that you know what the value represents. If the metric or expression is shown in a CloudWatch dashboard widget, the label is shown. If Label is omitted, CloudWatch generates a default.</p>
+        /// <p>You can put dynamic expressions into a label, so that it is more descriptive. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using Dynamic Labels</a>.</p>
         pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.label = input;
             self
         }
-        /// <p>When used in <code>GetMetricData</code>, this option indicates whether to return the
-        /// timestamps and raw data values of this metric. If you are performing this call just to
-        /// do math expressions and do not also need the raw data returned, you can specify
-        /// <code>False</code>. If you omit this, the default of <code>True</code> is
-        /// used.</p>
-        /// <p>When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the alarm. For all
-        /// other metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify <code>ReturnData</code> as False.</p>
+        /// <p>When used in <code>GetMetricData</code>, this option indicates whether to return the timestamps and raw data values of this metric. If you are performing this call just to do math expressions and do not also need the raw data returned, you can specify <code>False</code>. If you omit this, the default of <code>True</code> is used.</p>
+        /// <p>When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the alarm. For all other metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify <code>ReturnData</code> as False.</p>
         pub fn return_data(mut self, input: bool) -> Self {
             self.return_data = Some(input);
             self
         }
-        /// <p>When used in <code>GetMetricData</code>, this option indicates whether to return the
-        /// timestamps and raw data values of this metric. If you are performing this call just to
-        /// do math expressions and do not also need the raw data returned, you can specify
-        /// <code>False</code>. If you omit this, the default of <code>True</code> is
-        /// used.</p>
-        /// <p>When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the alarm. For all
-        /// other metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify <code>ReturnData</code> as False.</p>
+        /// <p>When used in <code>GetMetricData</code>, this option indicates whether to return the timestamps and raw data values of this metric. If you are performing this call just to do math expressions and do not also need the raw data returned, you can specify <code>False</code>. If you omit this, the default of <code>True</code> is used.</p>
+        /// <p>When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the alarm. For all other metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify <code>ReturnData</code> as False.</p>
         pub fn set_return_data(mut self, input: std::option::Option<bool>) -> Self {
             self.return_data = input;
             self
         }
-        /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a
-        /// period can be as short as one minute (60 seconds) and must be a multiple of 60.
-        /// For high-resolution metrics that are collected at intervals of less than one minute,
-        /// the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics
-        /// stored by a <code>PutMetricData</code> operation that includes a <code>StorageResolution of 1 second</code>.</p>
+        /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics stored by a <code>PutMetricData</code> operation that includes a <code>StorageResolution of 1 second</code>.</p>
         pub fn period(mut self, input: i32) -> Self {
             self.period = Some(input);
             self
         }
-        /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a
-        /// period can be as short as one minute (60 seconds) and must be a multiple of 60.
-        /// For high-resolution metrics that are collected at intervals of less than one minute,
-        /// the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics
-        /// stored by a <code>PutMetricData</code> operation that includes a <code>StorageResolution of 1 second</code>.</p>
+        /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics stored by a <code>PutMetricData</code> operation that includes a <code>StorageResolution of 1 second</code>.</p>
         pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
             self.period = input;
             self
         }
         /// <p>The ID of the account where the metrics are located, if this is a cross-account alarm.</p>
-        /// <p>Use this field only for <code>PutMetricAlarm</code> operations. It is not used in
-        /// <code>GetMetricData</code> operations.</p>
+        /// <p>Use this field only for <code>PutMetricAlarm</code> operations. It is not used in <code>GetMetricData</code> operations.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
         /// <p>The ID of the account where the metrics are located, if this is a cross-account alarm.</p>
-        /// <p>Use this field only for <code>PutMetricAlarm</code> operations. It is not used in
-        /// <code>GetMetricData</code> operations.</p>
+        /// <p>Use this field only for <code>PutMetricAlarm</code> operations. It is not used in <code>GetMetricData</code> operations.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -1263,30 +1061,18 @@ impl MetricDataQuery {
 pub struct MetricStat {
     /// <p>The metric to return, including the metric name, namespace, and dimensions.</p>
     pub metric: std::option::Option<crate::model::Metric>,
-    /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can
-    /// be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected
-    /// at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics
-    /// are those metrics stored by a <code>PutMetricData</code> call that includes a <code>StorageResolution</code> of 1 second.</p>
-    /// <p>If the <code>StartTime</code> parameter specifies a time stamp that is greater than
-    /// 3 hours ago, you must specify the period as follows or no data points in that time range is returned:</p>
+    /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics stored by a <code>PutMetricData</code> call that includes a <code>StorageResolution</code> of 1 second.</p>
+    /// <p>If the <code>StartTime</code> parameter specifies a time stamp that is greater than 3 hours ago, you must specify the period as follows or no data points in that time range is returned:</p>
     /// <ul>
-    /// <li>
-    /// <p>Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).</p>
-    /// </li>
-    /// <li>
-    /// <p>Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p>
-    /// </li>
-    /// <li>
-    /// <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).</p>
-    /// </li>
+    /// <li> <p>Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).</p> </li>
+    /// <li> <p>Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p> </li>
+    /// <li> <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).</p> </li>
     /// </ul>
     pub period: std::option::Option<i32>,
     /// <p>The statistic to return. It can include any CloudWatch statistic or extended statistic.</p>
     pub stat: std::option::Option<std::string::String>,
     /// <p>When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.</p>
-    /// <p>In a <code>Get</code> operation, if you omit <code>Unit</code> then all data that was collected with any unit is returned, along with the corresponding units that were specified
-    /// when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified.
-    /// If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.</p>
+    /// <p>In a <code>Get</code> operation, if you omit <code>Unit</code> then all data that was collected with any unit is returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified. If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.</p>
     pub unit: std::option::Option<crate::model::StandardUnit>,
 }
 impl MetricStat {
@@ -1294,22 +1080,12 @@ impl MetricStat {
     pub fn metric(&self) -> std::option::Option<&crate::model::Metric> {
         self.metric.as_ref()
     }
-    /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can
-    /// be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected
-    /// at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics
-    /// are those metrics stored by a <code>PutMetricData</code> call that includes a <code>StorageResolution</code> of 1 second.</p>
-    /// <p>If the <code>StartTime</code> parameter specifies a time stamp that is greater than
-    /// 3 hours ago, you must specify the period as follows or no data points in that time range is returned:</p>
+    /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics stored by a <code>PutMetricData</code> call that includes a <code>StorageResolution</code> of 1 second.</p>
+    /// <p>If the <code>StartTime</code> parameter specifies a time stamp that is greater than 3 hours ago, you must specify the period as follows or no data points in that time range is returned:</p>
     /// <ul>
-    /// <li>
-    /// <p>Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).</p>
-    /// </li>
-    /// <li>
-    /// <p>Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p>
-    /// </li>
-    /// <li>
-    /// <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).</p>
-    /// </li>
+    /// <li> <p>Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).</p> </li>
+    /// <li> <p>Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p> </li>
+    /// <li> <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).</p> </li>
     /// </ul>
     pub fn period(&self) -> std::option::Option<i32> {
         self.period
@@ -1319,9 +1095,7 @@ impl MetricStat {
         self.stat.as_deref()
     }
     /// <p>When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.</p>
-    /// <p>In a <code>Get</code> operation, if you omit <code>Unit</code> then all data that was collected with any unit is returned, along with the corresponding units that were specified
-    /// when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified.
-    /// If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.</p>
+    /// <p>In a <code>Get</code> operation, if you omit <code>Unit</code> then all data that was collected with any unit is returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified. If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.</p>
     pub fn unit(&self) -> std::option::Option<&crate::model::StandardUnit> {
         self.unit.as_ref()
     }
@@ -1358,43 +1132,23 @@ pub mod metric_stat {
             self.metric = input;
             self
         }
-        /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can
-        /// be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected
-        /// at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics
-        /// are those metrics stored by a <code>PutMetricData</code> call that includes a <code>StorageResolution</code> of 1 second.</p>
-        /// <p>If the <code>StartTime</code> parameter specifies a time stamp that is greater than
-        /// 3 hours ago, you must specify the period as follows or no data points in that time range is returned:</p>
+        /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics stored by a <code>PutMetricData</code> call that includes a <code>StorageResolution</code> of 1 second.</p>
+        /// <p>If the <code>StartTime</code> parameter specifies a time stamp that is greater than 3 hours ago, you must specify the period as follows or no data points in that time range is returned:</p>
         /// <ul>
-        /// <li>
-        /// <p>Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).</p>
-        /// </li>
-        /// <li>
-        /// <p>Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p>
-        /// </li>
-        /// <li>
-        /// <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).</p>
-        /// </li>
+        /// <li> <p>Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).</p> </li>
+        /// <li> <p>Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p> </li>
+        /// <li> <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).</p> </li>
         /// </ul>
         pub fn period(mut self, input: i32) -> Self {
             self.period = Some(input);
             self
         }
-        /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can
-        /// be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected
-        /// at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics
-        /// are those metrics stored by a <code>PutMetricData</code> call that includes a <code>StorageResolution</code> of 1 second.</p>
-        /// <p>If the <code>StartTime</code> parameter specifies a time stamp that is greater than
-        /// 3 hours ago, you must specify the period as follows or no data points in that time range is returned:</p>
+        /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics stored by a <code>PutMetricData</code> call that includes a <code>StorageResolution</code> of 1 second.</p>
+        /// <p>If the <code>StartTime</code> parameter specifies a time stamp that is greater than 3 hours ago, you must specify the period as follows or no data points in that time range is returned:</p>
         /// <ul>
-        /// <li>
-        /// <p>Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).</p>
-        /// </li>
-        /// <li>
-        /// <p>Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p>
-        /// </li>
-        /// <li>
-        /// <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).</p>
-        /// </li>
+        /// <li> <p>Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).</p> </li>
+        /// <li> <p>Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p> </li>
+        /// <li> <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).</p> </li>
         /// </ul>
         pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
             self.period = input;
@@ -1411,17 +1165,13 @@ pub mod metric_stat {
             self
         }
         /// <p>When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.</p>
-        /// <p>In a <code>Get</code> operation, if you omit <code>Unit</code> then all data that was collected with any unit is returned, along with the corresponding units that were specified
-        /// when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified.
-        /// If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.</p>
+        /// <p>In a <code>Get</code> operation, if you omit <code>Unit</code> then all data that was collected with any unit is returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified. If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.</p>
         pub fn unit(mut self, input: crate::model::StandardUnit) -> Self {
             self.unit = Some(input);
             self
         }
         /// <p>When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.</p>
-        /// <p>In a <code>Get</code> operation, if you omit <code>Unit</code> then all data that was collected with any unit is returned, along with the corresponding units that were specified
-        /// when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified.
-        /// If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.</p>
+        /// <p>In a <code>Get</code> operation, if you omit <code>Unit</code> then all data that was collected with any unit is returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified. If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.</p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::StandardUnit>) -> Self {
             self.unit = input;
             self
@@ -1514,9 +1264,9 @@ pub mod metric {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p>The dimensions for the metric.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::Dimension>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -1772,39 +1522,15 @@ impl DashboardValidationMessage {
     }
 }
 
-/// <p>Indicates the CloudWatch math expression that provides the time series the anomaly detector
-/// uses as input.
-/// The designated math expression must return a single time series.</p>
+/// <p>Indicates the CloudWatch math expression that provides the time series the anomaly detector uses as input. The designated math expression must return a single time series.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricMathAnomalyDetector {
-    /// <p>An array of metric data query structures
-    /// that enables you to create an anomaly detector
-    /// based on the result of a metric math expression.
-    /// Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression.
-    /// One item in <code>MetricDataQueries</code> is the expression
-    /// that provides the time series
-    /// that the anomaly detector uses as input.
-    /// Designate the expression by setting <code>ReturnData</code> to <code>True</code>
-    /// for this object in the array.
-    /// For all other expressions and metrics, set <code>ReturnData</code> to <code>False</code>.
-    /// The designated expression must return
-    /// a single time series.</p>
+    /// <p>An array of metric data query structures that enables you to create an anomaly detector based on the result of a metric math expression. Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression. One item in <code>MetricDataQueries</code> is the expression that provides the time series that the anomaly detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>True</code> for this object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>False</code>. The designated expression must return a single time series.</p>
     pub metric_data_queries: std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
 }
 impl MetricMathAnomalyDetector {
-    /// <p>An array of metric data query structures
-    /// that enables you to create an anomaly detector
-    /// based on the result of a metric math expression.
-    /// Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression.
-    /// One item in <code>MetricDataQueries</code> is the expression
-    /// that provides the time series
-    /// that the anomaly detector uses as input.
-    /// Designate the expression by setting <code>ReturnData</code> to <code>True</code>
-    /// for this object in the array.
-    /// For all other expressions and metrics, set <code>ReturnData</code> to <code>False</code>.
-    /// The designated expression must return
-    /// a single time series.</p>
+    /// <p>An array of metric data query structures that enables you to create an anomaly detector based on the result of a metric math expression. Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression. One item in <code>MetricDataQueries</code> is the expression that provides the time series that the anomaly detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>True</code> for this object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>False</code>. The designated expression must return a single time series.</p>
     pub fn metric_data_queries(&self) -> std::option::Option<&[crate::model::MetricDataQuery]> {
         self.metric_data_queries.as_deref()
     }
@@ -1830,39 +1556,14 @@ pub mod metric_math_anomaly_detector {
         ///
         /// To override the contents of this collection use [`set_metric_data_queries`](Self::set_metric_data_queries).
         ///
-        /// <p>An array of metric data query structures
-        /// that enables you to create an anomaly detector
-        /// based on the result of a metric math expression.
-        /// Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression.
-        /// One item in <code>MetricDataQueries</code> is the expression
-        /// that provides the time series
-        /// that the anomaly detector uses as input.
-        /// Designate the expression by setting <code>ReturnData</code> to <code>True</code>
-        /// for this object in the array.
-        /// For all other expressions and metrics, set <code>ReturnData</code> to <code>False</code>.
-        /// The designated expression must return
-        /// a single time series.</p>
-        pub fn metric_data_queries(
-            mut self,
-            input: impl Into<crate::model::MetricDataQuery>,
-        ) -> Self {
+        /// <p>An array of metric data query structures that enables you to create an anomaly detector based on the result of a metric math expression. Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression. One item in <code>MetricDataQueries</code> is the expression that provides the time series that the anomaly detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>True</code> for this object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>False</code>. The designated expression must return a single time series.</p>
+        pub fn metric_data_queries(mut self, input: crate::model::MetricDataQuery) -> Self {
             let mut v = self.metric_data_queries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_data_queries = Some(v);
             self
         }
-        /// <p>An array of metric data query structures
-        /// that enables you to create an anomaly detector
-        /// based on the result of a metric math expression.
-        /// Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression.
-        /// One item in <code>MetricDataQueries</code> is the expression
-        /// that provides the time series
-        /// that the anomaly detector uses as input.
-        /// Designate the expression by setting <code>ReturnData</code> to <code>True</code>
-        /// for this object in the array.
-        /// For all other expressions and metrics, set <code>ReturnData</code> to <code>False</code>.
-        /// The designated expression must return
-        /// a single time series.</p>
+        /// <p>An array of metric data query structures that enables you to create an anomaly detector based on the result of a metric math expression. Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression. One item in <code>MetricDataQueries</code> is the expression that provides the time series that the anomaly detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>True</code> for this object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>False</code>. The designated expression must return a single time series.</p>
         pub fn set_metric_data_queries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
@@ -1885,8 +1586,7 @@ impl MetricMathAnomalyDetector {
     }
 }
 
-/// <p>Designates the CloudWatch metric and statistic that provides the time series the anomaly detector
-/// uses as input.</p>
+/// <p>Designates the CloudWatch metric and statistic that provides the time series the anomaly detector uses as input.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SingleMetricAnomalyDetector {
@@ -1964,9 +1664,9 @@ pub mod single_metric_anomaly_detector {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p>The metric dimensions to create the anomaly detection model for.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::Dimension>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -2006,35 +1706,23 @@ impl SingleMetricAnomalyDetector {
     }
 }
 
-/// <p>The configuration specifies details about how the anomaly detection model is to be trained,
-/// including time ranges to exclude from use for training the model and the time zone to
-/// use for the metric.</p>
+/// <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model and the time zone to use for the metric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnomalyDetectorConfiguration {
-    /// <p>An array of time ranges to exclude from use when the anomaly detection model is trained. Use
-    /// this to make sure that events that could cause unusual values for the metric, such as
-    /// deployments, aren't used when CloudWatch creates the model.</p>
+    /// <p>An array of time ranges to exclude from use when the anomaly detection model is trained. Use this to make sure that events that could cause unusual values for the metric, such as deployments, aren't used when CloudWatch creates the model.</p>
     pub excluded_time_ranges: std::option::Option<std::vec::Vec<crate::model::Range>>,
-    /// <p>The time zone to use for the metric. This is useful to enable the model to automatically
-    /// account for daylight savings time changes if the metric is sensitive to such time
-    /// changes.</p>
-    /// <p>To specify a time zone, use the name of the time zone as specified in the standard tz database. For more information,
-    /// see <a href="https://en.wikipedia.org/wiki/Tz_database">tz database</a>.</p>
+    /// <p>The time zone to use for the metric. This is useful to enable the model to automatically account for daylight savings time changes if the metric is sensitive to such time changes.</p>
+    /// <p>To specify a time zone, use the name of the time zone as specified in the standard tz database. For more information, see <a href="https://en.wikipedia.org/wiki/Tz_database">tz database</a>.</p>
     pub metric_timezone: std::option::Option<std::string::String>,
 }
 impl AnomalyDetectorConfiguration {
-    /// <p>An array of time ranges to exclude from use when the anomaly detection model is trained. Use
-    /// this to make sure that events that could cause unusual values for the metric, such as
-    /// deployments, aren't used when CloudWatch creates the model.</p>
+    /// <p>An array of time ranges to exclude from use when the anomaly detection model is trained. Use this to make sure that events that could cause unusual values for the metric, such as deployments, aren't used when CloudWatch creates the model.</p>
     pub fn excluded_time_ranges(&self) -> std::option::Option<&[crate::model::Range]> {
         self.excluded_time_ranges.as_deref()
     }
-    /// <p>The time zone to use for the metric. This is useful to enable the model to automatically
-    /// account for daylight savings time changes if the metric is sensitive to such time
-    /// changes.</p>
-    /// <p>To specify a time zone, use the name of the time zone as specified in the standard tz database. For more information,
-    /// see <a href="https://en.wikipedia.org/wiki/Tz_database">tz database</a>.</p>
+    /// <p>The time zone to use for the metric. This is useful to enable the model to automatically account for daylight savings time changes if the metric is sensitive to such time changes.</p>
+    /// <p>To specify a time zone, use the name of the time zone as specified in the standard tz database. For more information, see <a href="https://en.wikipedia.org/wiki/Tz_database">tz database</a>.</p>
     pub fn metric_timezone(&self) -> std::option::Option<&str> {
         self.metric_timezone.as_deref()
     }
@@ -2061,18 +1749,14 @@ pub mod anomaly_detector_configuration {
         ///
         /// To override the contents of this collection use [`set_excluded_time_ranges`](Self::set_excluded_time_ranges).
         ///
-        /// <p>An array of time ranges to exclude from use when the anomaly detection model is trained. Use
-        /// this to make sure that events that could cause unusual values for the metric, such as
-        /// deployments, aren't used when CloudWatch creates the model.</p>
-        pub fn excluded_time_ranges(mut self, input: impl Into<crate::model::Range>) -> Self {
+        /// <p>An array of time ranges to exclude from use when the anomaly detection model is trained. Use this to make sure that events that could cause unusual values for the metric, such as deployments, aren't used when CloudWatch creates the model.</p>
+        pub fn excluded_time_ranges(mut self, input: crate::model::Range) -> Self {
             let mut v = self.excluded_time_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.excluded_time_ranges = Some(v);
             self
         }
-        /// <p>An array of time ranges to exclude from use when the anomaly detection model is trained. Use
-        /// this to make sure that events that could cause unusual values for the metric, such as
-        /// deployments, aren't used when CloudWatch creates the model.</p>
+        /// <p>An array of time ranges to exclude from use when the anomaly detection model is trained. Use this to make sure that events that could cause unusual values for the metric, such as deployments, aren't used when CloudWatch creates the model.</p>
         pub fn set_excluded_time_ranges(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Range>>,
@@ -2080,20 +1764,14 @@ pub mod anomaly_detector_configuration {
             self.excluded_time_ranges = input;
             self
         }
-        /// <p>The time zone to use for the metric. This is useful to enable the model to automatically
-        /// account for daylight savings time changes if the metric is sensitive to such time
-        /// changes.</p>
-        /// <p>To specify a time zone, use the name of the time zone as specified in the standard tz database. For more information,
-        /// see <a href="https://en.wikipedia.org/wiki/Tz_database">tz database</a>.</p>
+        /// <p>The time zone to use for the metric. This is useful to enable the model to automatically account for daylight savings time changes if the metric is sensitive to such time changes.</p>
+        /// <p>To specify a time zone, use the name of the time zone as specified in the standard tz database. For more information, see <a href="https://en.wikipedia.org/wiki/Tz_database">tz database</a>.</p>
         pub fn metric_timezone(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_timezone = Some(input.into());
             self
         }
-        /// <p>The time zone to use for the metric. This is useful to enable the model to automatically
-        /// account for daylight savings time changes if the metric is sensitive to such time
-        /// changes.</p>
-        /// <p>To specify a time zone, use the name of the time zone as specified in the standard tz database. For more information,
-        /// see <a href="https://en.wikipedia.org/wiki/Tz_database">tz database</a>.</p>
+        /// <p>The time zone to use for the metric. This is useful to enable the model to automatically account for daylight savings time changes if the metric is sensitive to such time changes.</p>
+        /// <p>To specify a time zone, use the name of the time zone as specified in the standard tz database. For more information, see <a href="https://en.wikipedia.org/wiki/Tz_database">tz database</a>.</p>
         pub fn set_metric_timezone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2117,26 +1795,21 @@ impl AnomalyDetectorConfiguration {
     }
 }
 
-/// <p>Specifies one range of days or times to exclude from use for training an
-/// anomaly detection model.</p>
+/// <p>Specifies one range of days or times to exclude from use for training an anomaly detection model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Range {
-    /// <p>The start time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
-    /// <code>2019-07-01T23:59:59</code>.</p>
+    /// <p>The start time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The end time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
-    /// <code>2019-07-01T23:59:59</code>.</p>
+    /// <p>The end time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Range {
-    /// <p>The start time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
-    /// <code>2019-07-01T23:59:59</code>.</p>
+    /// <p>The start time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The end time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
-    /// <code>2019-07-01T23:59:59</code>.</p>
+    /// <p>The end time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -2159,14 +1832,12 @@ pub mod range {
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The start time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
-        /// <code>2019-07-01T23:59:59</code>.</p>
+        /// <p>The start time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The start time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
-        /// <code>2019-07-01T23:59:59</code>.</p>
+        /// <p>The start time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2174,14 +1845,12 @@ pub mod range {
             self.start_time = input;
             self
         }
-        /// <p>The end time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
-        /// <code>2019-07-01T23:59:59</code>.</p>
+        /// <p>The end time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The end time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
-        /// <code>2019-07-01T23:59:59</code>.</p>
+        /// <p>The end time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2221,9 +1890,7 @@ pub struct MetricStreamEntry {
     pub firehose_arn: std::option::Option<std::string::String>,
     /// <p>The current state of this stream. Valid values are <code>running</code> and <code>stopped</code>.</p>
     pub state: std::option::Option<std::string::String>,
-    /// <p>The output format of this metric stream. Valid values are
-    /// <code>json</code>
-    /// and <code>opentelemetry0.7</code>.</p>
+    /// <p>The output format of this metric stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>.</p>
     pub output_format: std::option::Option<crate::model::MetricStreamOutputFormat>,
 }
 impl MetricStreamEntry {
@@ -2251,9 +1918,7 @@ impl MetricStreamEntry {
     pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
-    /// <p>The output format of this metric stream. Valid values are
-    /// <code>json</code>
-    /// and <code>opentelemetry0.7</code>.</p>
+    /// <p>The output format of this metric stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>.</p>
     pub fn output_format(&self) -> std::option::Option<&crate::model::MetricStreamOutputFormat> {
         self.output_format.as_ref()
     }
@@ -2352,16 +2017,12 @@ pub mod metric_stream_entry {
             self.state = input;
             self
         }
-        /// <p>The output format of this metric stream. Valid values are
-        /// <code>json</code>
-        /// and <code>opentelemetry0.7</code>.</p>
+        /// <p>The output format of this metric stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>.</p>
         pub fn output_format(mut self, input: crate::model::MetricStreamOutputFormat) -> Self {
             self.output_format = Some(input);
             self
         }
-        /// <p>The output format of this metric stream. Valid values are
-        /// <code>json</code>
-        /// and <code>opentelemetry0.7</code>.</p>
+        /// <p>The output format of this metric stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>.</p>
         pub fn set_output_format(
             mut self,
             input: std::option::Option<crate::model::MetricStreamOutputFormat>,
@@ -2522,8 +2183,7 @@ pub struct DashboardEntry {
     pub dashboard_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
     pub dashboard_arn: std::option::Option<std::string::String>,
-    /// <p>The time stamp of when the dashboard was last modified, either by an API call or
-    /// through the console. This number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
+    /// <p>The time stamp of when the dashboard was last modified, either by an API call or through the console. This number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The size of the dashboard, in bytes.</p>
     pub size: i64,
@@ -2537,8 +2197,7 @@ impl DashboardEntry {
     pub fn dashboard_arn(&self) -> std::option::Option<&str> {
         self.dashboard_arn.as_deref()
     }
-    /// <p>The time stamp of when the dashboard was last modified, either by an API call or
-    /// through the console. This number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
+    /// <p>The time stamp of when the dashboard was last modified, either by an API call or through the console. This number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
     pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
@@ -2595,14 +2254,12 @@ pub mod dashboard_entry {
             self.dashboard_arn = input;
             self
         }
-        /// <p>The time stamp of when the dashboard was last modified, either by an API call or
-        /// through the console. This number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
+        /// <p>The time stamp of when the dashboard was last modified, either by an API call or through the console. This number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
         pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified = Some(input);
             self
         }
-        /// <p>The time stamp of when the dashboard was last modified, either by an API call or
-        /// through the console. This number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
+        /// <p>The time stamp of when the dashboard was last modified, either by an API call or through the console. This number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
         pub fn set_last_modified(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2644,8 +2301,7 @@ impl DashboardEntry {
 pub struct Datapoint {
     /// <p>The time stamp used for the data point.</p>
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The number of metric values that contributed to the aggregate value of this
-    /// data point.</p>
+    /// <p>The number of metric values that contributed to the aggregate value of this data point.</p>
     pub sample_count: std::option::Option<f64>,
     /// <p>The average of the metric values that correspond to the data point.</p>
     pub average: std::option::Option<f64>,
@@ -2666,8 +2322,7 @@ impl Datapoint {
     pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
-    /// <p>The number of metric values that contributed to the aggregate value of this
-    /// data point.</p>
+    /// <p>The number of metric values that contributed to the aggregate value of this data point.</p>
     pub fn sample_count(&self) -> std::option::Option<f64> {
         self.sample_count
     }
@@ -2742,14 +2397,12 @@ pub mod datapoint {
             self.timestamp = input;
             self
         }
-        /// <p>The number of metric values that contributed to the aggregate value of this
-        /// data point.</p>
+        /// <p>The number of metric values that contributed to the aggregate value of this data point.</p>
         pub fn sample_count(mut self, input: f64) -> Self {
             self.sample_count = Some(input);
             self
         }
-        /// <p>The number of metric values that contributed to the aggregate value of this
-        /// data point.</p>
+        /// <p>The number of metric values that contributed to the aggregate value of this data point.</p>
         pub fn set_sample_count(mut self, input: std::option::Option<f64>) -> Self {
             self.sample_count = input;
             self
@@ -2809,13 +2462,9 @@ pub mod datapoint {
         /// To override the contents of this collection use [`set_extended_statistics`](Self::set_extended_statistics).
         ///
         /// <p>The percentile statistic for the data point.</p>
-        pub fn extended_statistics(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<f64>,
-        ) -> Self {
+        pub fn extended_statistics(mut self, k: impl Into<std::string::String>, v: f64) -> Self {
             let mut hash_map = self.extended_statistics.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.extended_statistics = Some(hash_map);
             self
         }
@@ -2850,10 +2499,7 @@ impl Datapoint {
 }
 
 /// <p>A message returned by the <code>GetMetricData</code>API, including a code and a description.</p>
-/// <p>If a cross-Region <code>GetMetricData</code> operation fails with a code of <code>Forbidden</code> and a
-/// value of <code>Authentication too complex to
-/// retrieve cross region data</code>, you can correct the problem by running the <code>GetMetricData</code>
-/// operation in the same Region where the metric data is.</p>
+/// <p>If a cross-Region <code>GetMetricData</code> operation fails with a code of <code>Forbidden</code> and a value of <code>Authentication too complex to retrieve cross region data</code>, you can correct the problem by running the <code>GetMetricData</code> operation in the same Region where the metric data is.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MessageData {
@@ -2926,9 +2572,7 @@ impl MessageData {
     }
 }
 
-/// <p>A <code>GetMetricData</code> call returns an array of <code>MetricDataResult</code>
-/// structures. Each of these structures includes the data points for that metric, along
-/// with the timestamps of those data points and other identifying information.</p>
+/// <p>A <code>GetMetricData</code> call returns an array of <code>MetricDataResult</code> structures. Each of these structures includes the data points for that metric, along with the timestamps of those data points and other identifying information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricDataResult {
@@ -2936,19 +2580,11 @@ pub struct MetricDataResult {
     pub id: std::option::Option<std::string::String>,
     /// <p>The human-readable label associated with the data.</p>
     pub label: std::option::Option<std::string::String>,
-    /// <p>The timestamps for the data points, formatted in Unix timestamp format. The number of
-    /// timestamps always matches the number of values and the value for Timestamps[x] is
-    /// Values[x].</p>
+    /// <p>The timestamps for the data points, formatted in Unix timestamp format. The number of timestamps always matches the number of values and the value for Timestamps[x] is Values[x].</p>
     pub timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
-    /// <p>The data points for the metric corresponding to <code>Timestamps</code>. The number of
-    /// values always matches the number of timestamps and the timestamp for Values[x] is
-    /// Timestamps[x].</p>
+    /// <p>The data points for the metric corresponding to <code>Timestamps</code>. The number of values always matches the number of timestamps and the timestamp for Values[x] is Timestamps[x].</p>
     pub values: std::option::Option<std::vec::Vec<f64>>,
-    /// <p>The status of the returned data. <code>Complete</code> indicates that all data points in the requested time range were returned.
-    /// <code>PartialData</code> means that an incomplete set of data points were returned.
-    /// You can use the <code>NextToken</code> value that was returned and repeat your request to get more data points.
-    /// <code>NextToken</code> is not returned if you are performing a math expression. <code>InternalError</code>  
-    /// indicates that an error occurred. Retry your request using <code>NextToken</code>, if present.</p>
+    /// <p>The status of the returned data. <code>Complete</code> indicates that all data points in the requested time range were returned. <code>PartialData</code> means that an incomplete set of data points were returned. You can use the <code>NextToken</code> value that was returned and repeat your request to get more data points. <code>NextToken</code> is not returned if you are performing a math expression. <code>InternalError</code> indicates that an error occurred. Retry your request using <code>NextToken</code>, if present.</p>
     pub status_code: std::option::Option<crate::model::StatusCode>,
     /// <p>A list of messages with additional information about the data returned.</p>
     pub messages: std::option::Option<std::vec::Vec<crate::model::MessageData>>,
@@ -2962,23 +2598,15 @@ impl MetricDataResult {
     pub fn label(&self) -> std::option::Option<&str> {
         self.label.as_deref()
     }
-    /// <p>The timestamps for the data points, formatted in Unix timestamp format. The number of
-    /// timestamps always matches the number of values and the value for Timestamps[x] is
-    /// Values[x].</p>
+    /// <p>The timestamps for the data points, formatted in Unix timestamp format. The number of timestamps always matches the number of values and the value for Timestamps[x] is Values[x].</p>
     pub fn timestamps(&self) -> std::option::Option<&[aws_smithy_types::DateTime]> {
         self.timestamps.as_deref()
     }
-    /// <p>The data points for the metric corresponding to <code>Timestamps</code>. The number of
-    /// values always matches the number of timestamps and the timestamp for Values[x] is
-    /// Timestamps[x].</p>
+    /// <p>The data points for the metric corresponding to <code>Timestamps</code>. The number of values always matches the number of timestamps and the timestamp for Values[x] is Timestamps[x].</p>
     pub fn values(&self) -> std::option::Option<&[f64]> {
         self.values.as_deref()
     }
-    /// <p>The status of the returned data. <code>Complete</code> indicates that all data points in the requested time range were returned.
-    /// <code>PartialData</code> means that an incomplete set of data points were returned.
-    /// You can use the <code>NextToken</code> value that was returned and repeat your request to get more data points.
-    /// <code>NextToken</code> is not returned if you are performing a math expression. <code>InternalError</code>  
-    /// indicates that an error occurred. Retry your request using <code>NextToken</code>, if present.</p>
+    /// <p>The status of the returned data. <code>Complete</code> indicates that all data points in the requested time range were returned. <code>PartialData</code> means that an incomplete set of data points were returned. You can use the <code>NextToken</code> value that was returned and repeat your request to get more data points. <code>NextToken</code> is not returned if you are performing a math expression. <code>InternalError</code> indicates that an error occurred. Retry your request using <code>NextToken</code>, if present.</p>
     pub fn status_code(&self) -> std::option::Option<&crate::model::StatusCode> {
         self.status_code.as_ref()
     }
@@ -3037,18 +2665,14 @@ pub mod metric_data_result {
         ///
         /// To override the contents of this collection use [`set_timestamps`](Self::set_timestamps).
         ///
-        /// <p>The timestamps for the data points, formatted in Unix timestamp format. The number of
-        /// timestamps always matches the number of values and the value for Timestamps[x] is
-        /// Values[x].</p>
-        pub fn timestamps(mut self, input: impl Into<aws_smithy_types::DateTime>) -> Self {
+        /// <p>The timestamps for the data points, formatted in Unix timestamp format. The number of timestamps always matches the number of values and the value for Timestamps[x] is Values[x].</p>
+        pub fn timestamps(mut self, input: aws_smithy_types::DateTime) -> Self {
             let mut v = self.timestamps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.timestamps = Some(v);
             self
         }
-        /// <p>The timestamps for the data points, formatted in Unix timestamp format. The number of
-        /// timestamps always matches the number of values and the value for Timestamps[x] is
-        /// Values[x].</p>
+        /// <p>The timestamps for the data points, formatted in Unix timestamp format. The number of timestamps always matches the number of values and the value for Timestamps[x] is Values[x].</p>
         pub fn set_timestamps(
             mut self,
             input: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
@@ -3060,36 +2684,24 @@ pub mod metric_data_result {
         ///
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
-        /// <p>The data points for the metric corresponding to <code>Timestamps</code>. The number of
-        /// values always matches the number of timestamps and the timestamp for Values[x] is
-        /// Timestamps[x].</p>
-        pub fn values(mut self, input: impl Into<f64>) -> Self {
+        /// <p>The data points for the metric corresponding to <code>Timestamps</code>. The number of values always matches the number of timestamps and the timestamp for Values[x] is Timestamps[x].</p>
+        pub fn values(mut self, input: f64) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.values = Some(v);
             self
         }
-        /// <p>The data points for the metric corresponding to <code>Timestamps</code>. The number of
-        /// values always matches the number of timestamps and the timestamp for Values[x] is
-        /// Timestamps[x].</p>
+        /// <p>The data points for the metric corresponding to <code>Timestamps</code>. The number of values always matches the number of timestamps and the timestamp for Values[x] is Timestamps[x].</p>
         pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.values = input;
             self
         }
-        /// <p>The status of the returned data. <code>Complete</code> indicates that all data points in the requested time range were returned.
-        /// <code>PartialData</code> means that an incomplete set of data points were returned.
-        /// You can use the <code>NextToken</code> value that was returned and repeat your request to get more data points.
-        /// <code>NextToken</code> is not returned if you are performing a math expression. <code>InternalError</code>  
-        /// indicates that an error occurred. Retry your request using <code>NextToken</code>, if present.</p>
+        /// <p>The status of the returned data. <code>Complete</code> indicates that all data points in the requested time range were returned. <code>PartialData</code> means that an incomplete set of data points were returned. You can use the <code>NextToken</code> value that was returned and repeat your request to get more data points. <code>NextToken</code> is not returned if you are performing a math expression. <code>InternalError</code> indicates that an error occurred. Retry your request using <code>NextToken</code>, if present.</p>
         pub fn status_code(mut self, input: crate::model::StatusCode) -> Self {
             self.status_code = Some(input);
             self
         }
-        /// <p>The status of the returned data. <code>Complete</code> indicates that all data points in the requested time range were returned.
-        /// <code>PartialData</code> means that an incomplete set of data points were returned.
-        /// You can use the <code>NextToken</code> value that was returned and repeat your request to get more data points.
-        /// <code>NextToken</code> is not returned if you are performing a math expression. <code>InternalError</code>  
-        /// indicates that an error occurred. Retry your request using <code>NextToken</code>, if present.</p>
+        /// <p>The status of the returned data. <code>Complete</code> indicates that all data points in the requested time range were returned. <code>PartialData</code> means that an incomplete set of data points were returned. You can use the <code>NextToken</code> value that was returned and repeat your request to get more data points. <code>NextToken</code> is not returned if you are performing a math expression. <code>InternalError</code> indicates that an error occurred. Retry your request using <code>NextToken</code>, if present.</p>
         pub fn set_status_code(
             mut self,
             input: std::option::Option<crate::model::StatusCode>,
@@ -3102,9 +2714,9 @@ pub mod metric_data_result {
         /// To override the contents of this collection use [`set_messages`](Self::set_messages).
         ///
         /// <p>A list of messages with additional information about the data returned.</p>
-        pub fn messages(mut self, input: impl Into<crate::model::MessageData>) -> Self {
+        pub fn messages(mut self, input: crate::model::MessageData) -> Self {
             let mut v = self.messages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.messages = Some(v);
             self
         }
@@ -3195,29 +2807,16 @@ impl AsRef<str> for StatusCode {
     }
 }
 
-/// <p>This structure includes the <code>Timezone</code> parameter, which you can use
-/// to specify your time zone so that the labels that are associated with returned metrics display the
-/// correct time
-/// for your time zone. </p>
-/// <p>The <code>Timezone</code> value affects a label only if you have a time-based
-/// dynamic expression in the label. For more information about dynamic expressions in labels,
-/// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using Dynamic Labels</a>.</p>
+/// <p>This structure includes the <code>Timezone</code> parameter, which you can use to specify your time zone so that the labels that are associated with returned metrics display the correct time for your time zone. </p>
+/// <p>The <code>Timezone</code> value affects a label only if you have a time-based dynamic expression in the label. For more information about dynamic expressions in labels, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using Dynamic Labels</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LabelOptions {
-    /// <p>The time zone to use for metric data return in this operation.
-    /// The format is <code>+</code> or <code>-</code> followed by four digits.
-    /// The first two digits indicate the number of hours ahead or behind of UTC, and
-    /// the final two digits are the number of minutes. For example, +0130 indicates a time zone that is 1 hour
-    /// and 30 minutes ahead of UTC. The default is +0000. </p>
+    /// <p>The time zone to use for metric data return in this operation. The format is <code>+</code> or <code>-</code> followed by four digits. The first two digits indicate the number of hours ahead or behind of UTC, and the final two digits are the number of minutes. For example, +0130 indicates a time zone that is 1 hour and 30 minutes ahead of UTC. The default is +0000. </p>
     pub timezone: std::option::Option<std::string::String>,
 }
 impl LabelOptions {
-    /// <p>The time zone to use for metric data return in this operation.
-    /// The format is <code>+</code> or <code>-</code> followed by four digits.
-    /// The first two digits indicate the number of hours ahead or behind of UTC, and
-    /// the final two digits are the number of minutes. For example, +0130 indicates a time zone that is 1 hour
-    /// and 30 minutes ahead of UTC. The default is +0000. </p>
+    /// <p>The time zone to use for metric data return in this operation. The format is <code>+</code> or <code>-</code> followed by four digits. The first two digits indicate the number of hours ahead or behind of UTC, and the final two digits are the number of minutes. For example, +0130 indicates a time zone that is 1 hour and 30 minutes ahead of UTC. The default is +0000. </p>
     pub fn timezone(&self) -> std::option::Option<&str> {
         self.timezone.as_deref()
     }
@@ -3238,20 +2837,12 @@ pub mod label_options {
         pub(crate) timezone: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The time zone to use for metric data return in this operation.
-        /// The format is <code>+</code> or <code>-</code> followed by four digits.
-        /// The first two digits indicate the number of hours ahead or behind of UTC, and
-        /// the final two digits are the number of minutes. For example, +0130 indicates a time zone that is 1 hour
-        /// and 30 minutes ahead of UTC. The default is +0000. </p>
+        /// <p>The time zone to use for metric data return in this operation. The format is <code>+</code> or <code>-</code> followed by four digits. The first two digits indicate the number of hours ahead or behind of UTC, and the final two digits are the number of minutes. For example, +0130 indicates a time zone that is 1 hour and 30 minutes ahead of UTC. The default is +0000. </p>
         pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
             self.timezone = Some(input.into());
             self
         }
-        /// <p>The time zone to use for metric data return in this operation.
-        /// The format is <code>+</code> or <code>-</code> followed by four digits.
-        /// The first two digits indicate the number of hours ahead or behind of UTC, and
-        /// the final two digits are the number of minutes. For example, +0130 indicates a time zone that is 1 hour
-        /// and 30 minutes ahead of UTC. The default is +0000. </p>
+        /// <p>The time zone to use for metric data return in this operation. The format is <code>+</code> or <code>-</code> followed by four digits. The first two digits indicate the number of hours ahead or behind of UTC, and the final two digits are the number of minutes. For example, +0130 indicates a time zone that is 1 hour and 30 minutes ahead of UTC. The default is +0000. </p>
         pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timezone = input;
             self
@@ -3336,9 +2927,7 @@ pub struct InsightRuleMetricDatapoint {
     /// <p>The number of unique contributors who published data during this timestamp.</p>
     /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
     pub unique_contributors: std::option::Option<f64>,
-    /// <p>The maximum value provided by one contributor during this timestamp. Each timestamp is evaluated separately,
-    /// so the identity of the max contributor
-    /// could be different for each timestamp.</p>
+    /// <p>The maximum value provided by one contributor during this timestamp. Each timestamp is evaluated separately, so the identity of the max contributor could be different for each timestamp.</p>
     /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
     pub max_contributor_value: std::option::Option<f64>,
     /// <p>The number of occurrences that matched the rule during this data point.</p>
@@ -3367,9 +2956,7 @@ impl InsightRuleMetricDatapoint {
     pub fn unique_contributors(&self) -> std::option::Option<f64> {
         self.unique_contributors
     }
-    /// <p>The maximum value provided by one contributor during this timestamp. Each timestamp is evaluated separately,
-    /// so the identity of the max contributor
-    /// could be different for each timestamp.</p>
+    /// <p>The maximum value provided by one contributor during this timestamp. Each timestamp is evaluated separately, so the identity of the max contributor could be different for each timestamp.</p>
     /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
     pub fn max_contributor_value(&self) -> std::option::Option<f64> {
         self.max_contributor_value
@@ -3455,17 +3042,13 @@ pub mod insight_rule_metric_datapoint {
             self.unique_contributors = input;
             self
         }
-        /// <p>The maximum value provided by one contributor during this timestamp. Each timestamp is evaluated separately,
-        /// so the identity of the max contributor
-        /// could be different for each timestamp.</p>
+        /// <p>The maximum value provided by one contributor during this timestamp. Each timestamp is evaluated separately, so the identity of the max contributor could be different for each timestamp.</p>
         /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
         pub fn max_contributor_value(mut self, input: f64) -> Self {
             self.max_contributor_value = Some(input);
             self
         }
-        /// <p>The maximum value provided by one contributor during this timestamp. Each timestamp is evaluated separately,
-        /// so the identity of the max contributor
-        /// could be different for each timestamp.</p>
+        /// <p>The maximum value provided by one contributor during this timestamp. Each timestamp is evaluated separately, so the identity of the max contributor could be different for each timestamp.</p>
         /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
         pub fn set_max_contributor_value(mut self, input: std::option::Option<f64>) -> Self {
             self.max_contributor_value = input;
@@ -3553,8 +3136,7 @@ impl InsightRuleMetricDatapoint {
     }
 }
 
-/// <p>One of the unique contributors found by a Contributor Insights rule. If the rule contains multiple keys, then
-/// a unique contributor is a unique combination of values from all the keys in the rule.</p>
+/// <p>One of the unique contributors found by a Contributor Insights rule. If the rule contains multiple keys, then a unique contributor is a unique combination of values from all the keys in the rule.</p>
 /// <p>If the rule contains a single key, then each unique contributor is each unique value for this key.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html">GetInsightRuleReport</a>.</p>
 #[non_exhaustive]
@@ -3642,12 +3224,9 @@ pub mod insight_rule_contributor {
         /// To override the contents of this collection use [`set_datapoints`](Self::set_datapoints).
         ///
         /// <p>An array of the data points where this contributor is present. Only the data points when this contributor appeared are included in the array.</p>
-        pub fn datapoints(
-            mut self,
-            input: impl Into<crate::model::InsightRuleContributorDatapoint>,
-        ) -> Self {
+        pub fn datapoints(mut self, input: crate::model::InsightRuleContributorDatapoint) -> Self {
             let mut v = self.datapoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.datapoints = Some(v);
             self
         }
@@ -3679,8 +3258,7 @@ impl InsightRuleContributor {
 }
 
 /// <p>One data point related to one contributor.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html">GetInsightRuleReport</a> and
-/// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_InsightRuleContributor.html">InsightRuleContributor</a>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html">GetInsightRuleReport</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_InsightRuleContributor.html">InsightRuleContributor</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsightRuleContributorDatapoint {
@@ -3756,8 +3334,7 @@ impl InsightRuleContributorDatapoint {
     }
 }
 
-/// <p>This array is empty if the API operation was successful for all the rules specified in the request. If the operation could
-/// not process one of the rules, the following data is returned for each of those rules.</p>
+/// <p>This array is empty if the API operation was successful for all the rules specified in the request. If the operation could not process one of the rules, the following data is returned for each of those rules.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PartialFailure {
@@ -3877,12 +3454,7 @@ impl PartialFailure {
     }
 }
 
-/// <p>This structure contains the definition
-/// for a Contributor Insights rule.
-/// For more information about this rule,
-/// see<a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">
-/// Using Constributor Insights to analyze high-cardinality data</a>
-/// in the <i>Amazon CloudWatch User Guide</i>.</p>
+/// <p>This structure contains the definition for a Contributor Insights rule. For more information about this rule, see<a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html"> Using Constributor Insights to analyze high-cardinality data</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsightRule {
@@ -3890,14 +3462,9 @@ pub struct InsightRule {
     pub name: std::option::Option<std::string::String>,
     /// <p>Indicates whether the rule is enabled or disabled.</p>
     pub state: std::option::Option<std::string::String>,
-    /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For managed rules,
-    /// this is <code>{"Name": "ServiceLogRule", "Version": 1}</code>
-    /// </p>
+    /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For managed rules, this is <code>{"Name": "ServiceLogRule", "Version": 1}</code> </p>
     pub schema: std::option::Option<std::string::String>,
-    /// <p>The definition of the rule, as a JSON object. The definition contains the keywords used to define contributors,
-    /// the value to aggregate on if this rule returns a sum instead of a count, and the filters. For details on the valid syntax, see
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights
-    /// Rule Syntax</a>.</p>
+    /// <p>The definition of the rule, as a JSON object. The definition contains the keywords used to define contributors, the value to aggregate on if this rule returns a sum instead of a count, and the filters. For details on the valid syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights Rule Syntax</a>.</p>
     pub definition: std::option::Option<std::string::String>,
 }
 impl InsightRule {
@@ -3909,16 +3476,11 @@ impl InsightRule {
     pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
-    /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For managed rules,
-    /// this is <code>{"Name": "ServiceLogRule", "Version": 1}</code>
-    /// </p>
+    /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For managed rules, this is <code>{"Name": "ServiceLogRule", "Version": 1}</code> </p>
     pub fn schema(&self) -> std::option::Option<&str> {
         self.schema.as_deref()
     }
-    /// <p>The definition of the rule, as a JSON object. The definition contains the keywords used to define contributors,
-    /// the value to aggregate on if this rule returns a sum instead of a count, and the filters. For details on the valid syntax, see
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights
-    /// Rule Syntax</a>.</p>
+    /// <p>The definition of the rule, as a JSON object. The definition contains the keywords used to define contributors, the value to aggregate on if this rule returns a sum instead of a count, and the filters. For details on the valid syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights Rule Syntax</a>.</p>
     pub fn definition(&self) -> std::option::Option<&str> {
         self.definition.as_deref()
     }
@@ -3965,32 +3527,22 @@ pub mod insight_rule {
             self.state = input;
             self
         }
-        /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For managed rules,
-        /// this is <code>{"Name": "ServiceLogRule", "Version": 1}</code>
-        /// </p>
+        /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For managed rules, this is <code>{"Name": "ServiceLogRule", "Version": 1}</code> </p>
         pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema = Some(input.into());
             self
         }
-        /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For managed rules,
-        /// this is <code>{"Name": "ServiceLogRule", "Version": 1}</code>
-        /// </p>
+        /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For managed rules, this is <code>{"Name": "ServiceLogRule", "Version": 1}</code> </p>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema = input;
             self
         }
-        /// <p>The definition of the rule, as a JSON object. The definition contains the keywords used to define contributors,
-        /// the value to aggregate on if this rule returns a sum instead of a count, and the filters. For details on the valid syntax, see
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights
-        /// Rule Syntax</a>.</p>
+        /// <p>The definition of the rule, as a JSON object. The definition contains the keywords used to define contributors, the value to aggregate on if this rule returns a sum instead of a count, and the filters. For details on the valid syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights Rule Syntax</a>.</p>
         pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
             self.definition = Some(input.into());
             self
         }
-        /// <p>The definition of the rule, as a JSON object. The definition contains the keywords used to define contributors,
-        /// the value to aggregate on if this rule returns a sum instead of a count, and the filters. For details on the valid syntax, see
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights
-        /// Rule Syntax</a>.</p>
+        /// <p>The definition of the rule, as a JSON object. The definition contains the keywords used to define contributors, the value to aggregate on if this rule returns a sum instead of a count, and the filters. For details on the valid syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights Rule Syntax</a>.</p>
         pub fn set_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.definition = input;
             self
@@ -4013,9 +3565,7 @@ impl InsightRule {
     }
 }
 
-/// <p>An anomaly detection model associated with a particular CloudWatch metric, statistic, or metric math expression.
-/// You can use the model to display a band of expected, normal values
-/// when the metric is graphed.</p>
+/// <p>An anomaly detection model associated with a particular CloudWatch metric, statistic, or metric math expression. You can use the model to display a band of expected, normal values when the metric is graphed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnomalyDetector {
@@ -4027,13 +3577,9 @@ pub struct AnomalyDetector {
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
     /// <p>The statistic associated with the anomaly detection model.</p>
     pub stat: std::option::Option<std::string::String>,
-    /// <p>The configuration specifies details about how the
-    /// anomaly detection model is to be trained, including time ranges to
-    /// exclude from use for training the model, and the time zone to use for
-    /// the metric.</p>
+    /// <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model, and the time zone to use for the metric.</p>
     pub configuration: std::option::Option<crate::model::AnomalyDetectorConfiguration>,
-    /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code>
-    /// </p>
+    /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>
     pub state_value: std::option::Option<crate::model::AnomalyDetectorStateValue>,
     /// <p>The CloudWatch metric and statistic for this anomaly detector.</p>
     pub single_metric_anomaly_detector:
@@ -4058,17 +3604,13 @@ impl AnomalyDetector {
     pub fn stat(&self) -> std::option::Option<&str> {
         self.stat.as_deref()
     }
-    /// <p>The configuration specifies details about how the
-    /// anomaly detection model is to be trained, including time ranges to
-    /// exclude from use for training the model, and the time zone to use for
-    /// the metric.</p>
+    /// <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model, and the time zone to use for the metric.</p>
     pub fn configuration(
         &self,
     ) -> std::option::Option<&crate::model::AnomalyDetectorConfiguration> {
         self.configuration.as_ref()
     }
-    /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code>
-    /// </p>
+    /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>
     pub fn state_value(&self) -> std::option::Option<&crate::model::AnomalyDetectorStateValue> {
         self.state_value.as_ref()
     }
@@ -4148,9 +3690,9 @@ pub mod anomaly_detector {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p>The metric dimensions associated with the anomaly detection model.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::Dimension>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -4172,18 +3714,12 @@ pub mod anomaly_detector {
             self.stat = input;
             self
         }
-        /// <p>The configuration specifies details about how the
-        /// anomaly detection model is to be trained, including time ranges to
-        /// exclude from use for training the model, and the time zone to use for
-        /// the metric.</p>
+        /// <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model, and the time zone to use for the metric.</p>
         pub fn configuration(mut self, input: crate::model::AnomalyDetectorConfiguration) -> Self {
             self.configuration = Some(input);
             self
         }
-        /// <p>The configuration specifies details about how the
-        /// anomaly detection model is to be trained, including time ranges to
-        /// exclude from use for training the model, and the time zone to use for
-        /// the metric.</p>
+        /// <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model, and the time zone to use for the metric.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::AnomalyDetectorConfiguration>,
@@ -4191,14 +3727,12 @@ pub mod anomaly_detector {
             self.configuration = input;
             self
         }
-        /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code>
-        /// </p>
+        /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>
         pub fn state_value(mut self, input: crate::model::AnomalyDetectorStateValue) -> Self {
             self.state_value = Some(input);
             self
         }
-        /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code>
-        /// </p>
+        /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>
         pub fn set_state_value(
             mut self,
             input: std::option::Option<crate::model::AnomalyDetectorStateValue>,
@@ -4388,14 +3922,11 @@ pub struct MetricAlarm {
     pub alarm_configuration_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates whether actions should be executed during any changes to the alarm state.</p>
     pub actions_enabled: std::option::Option<bool>,
-    /// <p>The actions to execute when this alarm transitions to the <code>OK</code> state
-    /// from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+    /// <p>The actions to execute when this alarm transitions to the <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
     pub ok_actions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state
-    /// from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+    /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
     pub alarm_actions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state
-    /// from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+    /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
     pub insufficient_data_actions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The state value for the alarm.</p>
     pub state_value: std::option::Option<crate::model::StateValue>,
@@ -4405,16 +3936,13 @@ pub struct MetricAlarm {
     pub state_reason_data: std::option::Option<std::string::String>,
     /// <p>The time stamp of the last update to the alarm state.</p>
     pub state_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The name of the metric associated with the alarm, if this is an alarm
-    /// based on a single metric.</p>
+    /// <p>The name of the metric associated with the alarm, if this is an alarm based on a single metric.</p>
     pub metric_name: std::option::Option<std::string::String>,
     /// <p>The namespace of the metric associated with the alarm.</p>
     pub namespace: std::option::Option<std::string::String>,
-    /// <p>The statistic for the metric associated with the alarm, other than percentile.
-    /// For percentile statistics, use <code>ExtendedStatistic</code>.</p>
+    /// <p>The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p>
     pub statistic: std::option::Option<crate::model::Statistic>,
-    /// <p>The percentile statistic for the metric associated with the alarm. Specify a value between
-    /// p0.0 and p100.</p>
+    /// <p>The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100.</p>
     pub extended_statistic: std::option::Option<std::string::String>,
     /// <p>The dimensions for the metric associated with the alarm.</p>
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
@@ -4428,27 +3956,15 @@ pub struct MetricAlarm {
     pub datapoints_to_alarm: std::option::Option<i32>,
     /// <p>The value to compare with the specified statistic.</p>
     pub threshold: std::option::Option<f64>,
-    /// <p>The arithmetic operation to use when comparing the specified
-    /// statistic and threshold. The specified statistic value is used as the first operand.</p>
+    /// <p>The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.</p>
     pub comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
     /// <p>Sets how this alarm is to handle missing data points. If this parameter is omitted, the default behavior of <code>missing</code> is used.</p>
     pub treat_missing_data: std::option::Option<std::string::String>,
-    /// <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change
-    /// during periods with too few data points to be statistically significant. If <code>evaluate</code> or this
-    /// parameter is not used, the alarm is always evaluated and possibly changes state no matter
-    /// how many data points are available.</p>
+    /// <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data points are available.</p>
     pub evaluate_low_sample_count_percentile: std::option::Option<std::string::String>,
-    /// <p>An array of MetricDataQuery structures, used in an alarm based on a
-    /// metric math expression. Each structure either retrieves a
-    /// metric or performs a math expression.
-    ///
-    /// One item in the Metrics array is the math expression that the alarm watches.
-    /// This expression by designated by having <code>ReturnData</code> set to
-    /// true.</p>
+    /// <p>An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure either retrieves a metric or performs a math expression. One item in the Metrics array is the math expression that the alarm watches. This expression by designated by having <code>ReturnData</code> set to true.</p>
     pub metrics: std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
-    /// <p>In an alarm based on an anomaly detection model, this is the ID of the
-    /// <code>ANOMALY_DETECTION_BAND</code> function
-    /// used as the threshold for the alarm.</p>
+    /// <p>In an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code> function used as the threshold for the alarm.</p>
     pub threshold_metric_id: std::option::Option<std::string::String>,
 }
 impl MetricAlarm {
@@ -4474,18 +3990,15 @@ impl MetricAlarm {
     pub fn actions_enabled(&self) -> std::option::Option<bool> {
         self.actions_enabled
     }
-    /// <p>The actions to execute when this alarm transitions to the <code>OK</code> state
-    /// from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+    /// <p>The actions to execute when this alarm transitions to the <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
     pub fn ok_actions(&self) -> std::option::Option<&[std::string::String]> {
         self.ok_actions.as_deref()
     }
-    /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state
-    /// from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+    /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
     pub fn alarm_actions(&self) -> std::option::Option<&[std::string::String]> {
         self.alarm_actions.as_deref()
     }
-    /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state
-    /// from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+    /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
     pub fn insufficient_data_actions(&self) -> std::option::Option<&[std::string::String]> {
         self.insufficient_data_actions.as_deref()
     }
@@ -4505,8 +4018,7 @@ impl MetricAlarm {
     pub fn state_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.state_updated_timestamp.as_ref()
     }
-    /// <p>The name of the metric associated with the alarm, if this is an alarm
-    /// based on a single metric.</p>
+    /// <p>The name of the metric associated with the alarm, if this is an alarm based on a single metric.</p>
     pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
@@ -4514,13 +4026,11 @@ impl MetricAlarm {
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>The statistic for the metric associated with the alarm, other than percentile.
-    /// For percentile statistics, use <code>ExtendedStatistic</code>.</p>
+    /// <p>The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p>
     pub fn statistic(&self) -> std::option::Option<&crate::model::Statistic> {
         self.statistic.as_ref()
     }
-    /// <p>The percentile statistic for the metric associated with the alarm. Specify a value between
-    /// p0.0 and p100.</p>
+    /// <p>The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100.</p>
     pub fn extended_statistic(&self) -> std::option::Option<&str> {
         self.extended_statistic.as_deref()
     }
@@ -4548,8 +4058,7 @@ impl MetricAlarm {
     pub fn threshold(&self) -> std::option::Option<f64> {
         self.threshold
     }
-    /// <p>The arithmetic operation to use when comparing the specified
-    /// statistic and threshold. The specified statistic value is used as the first operand.</p>
+    /// <p>The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.</p>
     pub fn comparison_operator(&self) -> std::option::Option<&crate::model::ComparisonOperator> {
         self.comparison_operator.as_ref()
     }
@@ -4557,26 +4066,15 @@ impl MetricAlarm {
     pub fn treat_missing_data(&self) -> std::option::Option<&str> {
         self.treat_missing_data.as_deref()
     }
-    /// <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change
-    /// during periods with too few data points to be statistically significant. If <code>evaluate</code> or this
-    /// parameter is not used, the alarm is always evaluated and possibly changes state no matter
-    /// how many data points are available.</p>
+    /// <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data points are available.</p>
     pub fn evaluate_low_sample_count_percentile(&self) -> std::option::Option<&str> {
         self.evaluate_low_sample_count_percentile.as_deref()
     }
-    /// <p>An array of MetricDataQuery structures, used in an alarm based on a
-    /// metric math expression. Each structure either retrieves a
-    /// metric or performs a math expression.
-    ///
-    /// One item in the Metrics array is the math expression that the alarm watches.
-    /// This expression by designated by having <code>ReturnData</code> set to
-    /// true.</p>
+    /// <p>An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure either retrieves a metric or performs a math expression. One item in the Metrics array is the math expression that the alarm watches. This expression by designated by having <code>ReturnData</code> set to true.</p>
     pub fn metrics(&self) -> std::option::Option<&[crate::model::MetricDataQuery]> {
         self.metrics.as_deref()
     }
-    /// <p>In an alarm based on an anomaly detection model, this is the ID of the
-    /// <code>ANOMALY_DETECTION_BAND</code> function
-    /// used as the threshold for the alarm.</p>
+    /// <p>In an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code> function used as the threshold for the alarm.</p>
     pub fn threshold_metric_id(&self) -> std::option::Option<&str> {
         self.threshold_metric_id.as_deref()
     }
@@ -4720,16 +4218,14 @@ pub mod metric_alarm {
         ///
         /// To override the contents of this collection use [`set_ok_actions`](Self::set_ok_actions).
         ///
-        /// <p>The actions to execute when this alarm transitions to the <code>OK</code> state
-        /// from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+        /// <p>The actions to execute when this alarm transitions to the <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
         pub fn ok_actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ok_actions.unwrap_or_default();
             v.push(input.into());
             self.ok_actions = Some(v);
             self
         }
-        /// <p>The actions to execute when this alarm transitions to the <code>OK</code> state
-        /// from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+        /// <p>The actions to execute when this alarm transitions to the <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
         pub fn set_ok_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4741,16 +4237,14 @@ pub mod metric_alarm {
         ///
         /// To override the contents of this collection use [`set_alarm_actions`](Self::set_alarm_actions).
         ///
-        /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state
-        /// from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+        /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
         pub fn alarm_actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.alarm_actions.unwrap_or_default();
             v.push(input.into());
             self.alarm_actions = Some(v);
             self
         }
-        /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state
-        /// from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+        /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
         pub fn set_alarm_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4762,16 +4256,14 @@ pub mod metric_alarm {
         ///
         /// To override the contents of this collection use [`set_insufficient_data_actions`](Self::set_insufficient_data_actions).
         ///
-        /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state
-        /// from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+        /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
         pub fn insufficient_data_actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.insufficient_data_actions.unwrap_or_default();
             v.push(input.into());
             self.insufficient_data_actions = Some(v);
             self
         }
-        /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state
-        /// from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+        /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
         pub fn set_insufficient_data_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4828,14 +4320,12 @@ pub mod metric_alarm {
             self.state_updated_timestamp = input;
             self
         }
-        /// <p>The name of the metric associated with the alarm, if this is an alarm
-        /// based on a single metric.</p>
+        /// <p>The name of the metric associated with the alarm, if this is an alarm based on a single metric.</p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_name = Some(input.into());
             self
         }
-        /// <p>The name of the metric associated with the alarm, if this is an alarm
-        /// based on a single metric.</p>
+        /// <p>The name of the metric associated with the alarm, if this is an alarm based on a single metric.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
@@ -4850,14 +4340,12 @@ pub mod metric_alarm {
             self.namespace = input;
             self
         }
-        /// <p>The statistic for the metric associated with the alarm, other than percentile.
-        /// For percentile statistics, use <code>ExtendedStatistic</code>.</p>
+        /// <p>The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p>
         pub fn statistic(mut self, input: crate::model::Statistic) -> Self {
             self.statistic = Some(input);
             self
         }
-        /// <p>The statistic for the metric associated with the alarm, other than percentile.
-        /// For percentile statistics, use <code>ExtendedStatistic</code>.</p>
+        /// <p>The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p>
         pub fn set_statistic(
             mut self,
             input: std::option::Option<crate::model::Statistic>,
@@ -4865,14 +4353,12 @@ pub mod metric_alarm {
             self.statistic = input;
             self
         }
-        /// <p>The percentile statistic for the metric associated with the alarm. Specify a value between
-        /// p0.0 and p100.</p>
+        /// <p>The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100.</p>
         pub fn extended_statistic(mut self, input: impl Into<std::string::String>) -> Self {
             self.extended_statistic = Some(input.into());
             self
         }
-        /// <p>The percentile statistic for the metric associated with the alarm. Specify a value between
-        /// p0.0 and p100.</p>
+        /// <p>The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100.</p>
         pub fn set_extended_statistic(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4885,9 +4371,9 @@ pub mod metric_alarm {
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
         /// <p>The dimensions for the metric associated with the alarm.</p>
-        pub fn dimensions(mut self, input: impl Into<crate::model::Dimension>) -> Self {
+        pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimensions = Some(v);
             self
         }
@@ -4949,14 +4435,12 @@ pub mod metric_alarm {
             self.threshold = input;
             self
         }
-        /// <p>The arithmetic operation to use when comparing the specified
-        /// statistic and threshold. The specified statistic value is used as the first operand.</p>
+        /// <p>The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.</p>
         pub fn comparison_operator(mut self, input: crate::model::ComparisonOperator) -> Self {
             self.comparison_operator = Some(input);
             self
         }
-        /// <p>The arithmetic operation to use when comparing the specified
-        /// statistic and threshold. The specified statistic value is used as the first operand.</p>
+        /// <p>The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.</p>
         pub fn set_comparison_operator(
             mut self,
             input: std::option::Option<crate::model::ComparisonOperator>,
@@ -4977,10 +4461,7 @@ pub mod metric_alarm {
             self.treat_missing_data = input;
             self
         }
-        /// <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change
-        /// during periods with too few data points to be statistically significant. If <code>evaluate</code> or this
-        /// parameter is not used, the alarm is always evaluated and possibly changes state no matter
-        /// how many data points are available.</p>
+        /// <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data points are available.</p>
         pub fn evaluate_low_sample_count_percentile(
             mut self,
             input: impl Into<std::string::String>,
@@ -4988,10 +4469,7 @@ pub mod metric_alarm {
             self.evaluate_low_sample_count_percentile = Some(input.into());
             self
         }
-        /// <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change
-        /// during periods with too few data points to be statistically significant. If <code>evaluate</code> or this
-        /// parameter is not used, the alarm is always evaluated and possibly changes state no matter
-        /// how many data points are available.</p>
+        /// <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data points are available.</p>
         pub fn set_evaluate_low_sample_count_percentile(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5003,26 +4481,14 @@ pub mod metric_alarm {
         ///
         /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
         ///
-        /// <p>An array of MetricDataQuery structures, used in an alarm based on a
-        /// metric math expression. Each structure either retrieves a
-        /// metric or performs a math expression.
-        ///
-        /// One item in the Metrics array is the math expression that the alarm watches.
-        /// This expression by designated by having <code>ReturnData</code> set to
-        /// true.</p>
-        pub fn metrics(mut self, input: impl Into<crate::model::MetricDataQuery>) -> Self {
+        /// <p>An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure either retrieves a metric or performs a math expression. One item in the Metrics array is the math expression that the alarm watches. This expression by designated by having <code>ReturnData</code> set to true.</p>
+        pub fn metrics(mut self, input: crate::model::MetricDataQuery) -> Self {
             let mut v = self.metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metrics = Some(v);
             self
         }
-        /// <p>An array of MetricDataQuery structures, used in an alarm based on a
-        /// metric math expression. Each structure either retrieves a
-        /// metric or performs a math expression.
-        ///
-        /// One item in the Metrics array is the math expression that the alarm watches.
-        /// This expression by designated by having <code>ReturnData</code> set to
-        /// true.</p>
+        /// <p>An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure either retrieves a metric or performs a math expression. One item in the Metrics array is the math expression that the alarm watches. This expression by designated by having <code>ReturnData</code> set to true.</p>
         pub fn set_metrics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
@@ -5030,16 +4496,12 @@ pub mod metric_alarm {
             self.metrics = input;
             self
         }
-        /// <p>In an alarm based on an anomaly detection model, this is the ID of the
-        /// <code>ANOMALY_DETECTION_BAND</code> function
-        /// used as the threshold for the alarm.</p>
+        /// <p>In an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code> function used as the threshold for the alarm.</p>
         pub fn threshold_metric_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.threshold_metric_id = Some(input.into());
             self
         }
-        /// <p>In an alarm based on an anomaly detection model, this is the ID of the
-        /// <code>ANOMALY_DETECTION_BAND</code> function
-        /// used as the threshold for the alarm.</p>
+        /// <p>In an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code> function used as the threshold for the alarm.</p>
         pub fn set_threshold_metric_id(
             mut self,
             input: std::option::Option<std::string::String>,

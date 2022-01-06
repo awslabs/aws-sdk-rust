@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS IoT Events
@@ -284,10 +284,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateAlarmModel`.
     ///
-    /// <p>Creates an alarm model to monitor an AWS IoT Events input attribute. You can use the alarm to get
-    /// notified when the value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/create-alarms.html">Create an
-    /// alarm model</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an alarm model to monitor an AWS IoT Events input attribute. You can use the alarm to get notified when the value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/create-alarms.html">Create an alarm model</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAlarmModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -332,10 +330,10 @@ pub mod fluent_builders {
                 crate::input::CreateAlarmModelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -343,14 +341,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique name that helps you identify the alarm model. You can't change this name after
-        /// you create the alarm model.</p>
-        pub fn alarm_model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_model_name(inp);
+        /// <p>A unique name that helps you identify the alarm model. You can't change this name after you create the alarm model.</p>
+        pub fn alarm_model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_model_name(input.into());
             self
         }
-        /// <p>A unique name that helps you identify the alarm model. You can't change this name after
-        /// you create the alarm model.</p>
+        /// <p>A unique name that helps you identify the alarm model. You can't change this name after you create the alarm model.</p>
         pub fn set_alarm_model_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -359,8 +355,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description that tells you what the alarm model detects.</p>
-        pub fn alarm_model_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_model_description(inp);
+        pub fn alarm_model_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_model_description(input.into());
             self
         }
         /// <p>A description that tells you what the alarm model detects.</p>
@@ -372,8 +368,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -385,17 +381,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you
-        /// manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events
-        /// resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
         /// <p>You can create up to 50 tags for one alarm model.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you
-        /// manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events
-        /// resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
         /// <p>You can create up to 50 tags for one alarm model.</p>
         pub fn set_tags(
             mut self,
@@ -404,23 +396,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>An input attribute used as a key to create an alarm.
-        /// AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a>
-        /// associated with this key to the alarm.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        /// <p>An input attribute used as a key to create an alarm. AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a> associated with this key to the alarm.</p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(input.into());
             self
         }
-        /// <p>An input attribute used as a key to create an alarm.
-        /// AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a>
-        /// associated with this key to the alarm.</p>
+        /// <p>An input attribute used as a key to create an alarm. AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a> associated with this key to the alarm.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_key(input);
             self
         }
         /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
-        pub fn severity(mut self, inp: i32) -> Self {
-            self.inner = self.inner.severity(inp);
+        pub fn severity(mut self, input: i32) -> Self {
+            self.inner = self.inner.severity(input);
             self
         }
         /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
@@ -429,8 +417,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Defines when your alarm is invoked.</p>
-        pub fn alarm_rule(mut self, inp: crate::model::AlarmRule) -> Self {
-            self.inner = self.inner.alarm_rule(inp);
+        pub fn alarm_rule(mut self, input: crate::model::AlarmRule) -> Self {
+            self.inner = self.inner.alarm_rule(input);
             self
         }
         /// <p>Defines when your alarm is invoked.</p>
@@ -442,8 +430,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Contains information about one or more notification actions.</p>
-        pub fn alarm_notification(mut self, inp: crate::model::AlarmNotification) -> Self {
-            self.inner = self.inner.alarm_notification(inp);
+        pub fn alarm_notification(mut self, input: crate::model::AlarmNotification) -> Self {
+            self.inner = self.inner.alarm_notification(input);
             self
         }
         /// <p>Contains information about one or more notification actions.</p>
@@ -455,8 +443,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Contains information about one or more alarm actions.</p>
-        pub fn alarm_event_actions(mut self, inp: crate::model::AlarmEventActions) -> Self {
-            self.inner = self.inner.alarm_event_actions(inp);
+        pub fn alarm_event_actions(mut self, input: crate::model::AlarmEventActions) -> Self {
+            self.inner = self.inner.alarm_event_actions(input);
             self
         }
         /// <p>Contains information about one or more alarm actions.</p>
@@ -468,8 +456,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Contains the configuration information of alarm state changes.</p>
-        pub fn alarm_capabilities(mut self, inp: crate::model::AlarmCapabilities) -> Self {
-            self.inner = self.inner.alarm_capabilities(inp);
+        pub fn alarm_capabilities(mut self, input: crate::model::AlarmCapabilities) -> Self {
+            self.inner = self.inner.alarm_capabilities(input);
             self
         }
         /// <p>Contains the configuration information of alarm state changes.</p>
@@ -484,7 +472,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDetectorModel`.
     ///
     /// <p>Creates a detector model.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDetectorModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -529,10 +517,10 @@ pub mod fluent_builders {
                 crate::input::CreateDetectorModelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -541,8 +529,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the detector model.</p>
-        pub fn detector_model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_model_name(inp);
+        pub fn detector_model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_model_name(input.into());
             self
         }
         /// <p>The name of the detector model.</p>
@@ -556,9 +544,9 @@ pub mod fluent_builders {
         /// <p>Information that defines how the detectors operate.</p>
         pub fn detector_model_definition(
             mut self,
-            inp: crate::model::DetectorModelDefinition,
+            input: crate::model::DetectorModelDefinition,
         ) -> Self {
-            self.inner = self.inner.detector_model_definition(inp);
+            self.inner = self.inner.detector_model_definition(input);
             self
         }
         /// <p>Information that defines how the detectors operate.</p>
@@ -570,8 +558,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A brief description of the detector model.</p>
-        pub fn detector_model_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_model_description(inp);
+        pub fn detector_model_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_model_description(input.into());
             self
         }
         /// <p>A brief description of the detector model.</p>
@@ -582,27 +570,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_detector_model_description(input);
             self
         }
-        /// <p>The input attribute key used to identify a device or system to create a detector (an
-        /// instance of the detector model) and then to route each input received to the appropriate
-        /// detector (instance). This parameter uses a JSON-path expression in the message payload of each
-        /// input to specify the attribute-value pair that is used to identify the device associated with
-        /// the input.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        /// <p>The input attribute key used to identify a device or system to create a detector (an instance of the detector model) and then to route each input received to the appropriate detector (instance). This parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to identify the device associated with the input.</p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(input.into());
             self
         }
-        /// <p>The input attribute key used to identify a device or system to create a detector (an
-        /// instance of the detector model) and then to route each input received to the appropriate
-        /// detector (instance). This parameter uses a JSON-path expression in the message payload of each
-        /// input to specify the attribute-value pair that is used to identify the device associated with
-        /// the input.</p>
+        /// <p>The input attribute key used to identify a device or system to create a detector (an instance of the detector model) and then to route each input received to the appropriate detector (instance). This parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to identify the device associated with the input.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_key(input);
             self
         }
         /// <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
@@ -615,8 +595,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata that can be used to manage the detector model.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Metadata that can be used to manage the detector model.</p>
@@ -627,14 +607,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Information about the order in which events are evaluated and how actions are executed.
-        /// </p>
-        pub fn evaluation_method(mut self, inp: crate::model::EvaluationMethod) -> Self {
-            self.inner = self.inner.evaluation_method(inp);
+        /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
+        pub fn evaluation_method(mut self, input: crate::model::EvaluationMethod) -> Self {
+            self.inner = self.inner.evaluation_method(input);
             self
         }
-        /// <p>Information about the order in which events are evaluated and how actions are executed.
-        /// </p>
+        /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
         pub fn set_evaluation_method(
             mut self,
             input: std::option::Option<crate::model::EvaluationMethod>,
@@ -646,7 +624,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateInput`.
     ///
     /// <p>Creates an input.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInput<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -691,10 +669,10 @@ pub mod fluent_builders {
                 crate::input::CreateInputInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -703,8 +681,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name you want to give to the input.</p>
-        pub fn input_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_name(inp);
+        pub fn input_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_name(input.into());
             self
         }
         /// <p>The name you want to give to the input.</p>
@@ -713,8 +691,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A brief description of the input.</p>
-        pub fn input_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_description(inp);
+        pub fn input_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_description(input.into());
             self
         }
         /// <p>A brief description of the input.</p>
@@ -726,8 +704,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The definition of the input.</p>
-        pub fn input_definition(mut self, inp: crate::model::InputDefinition) -> Self {
-            self.inner = self.inner.input_definition(inp);
+        pub fn input_definition(mut self, input: crate::model::InputDefinition) -> Self {
+            self.inner = self.inner.input_definition(input);
             self
         }
         /// <p>The definition of the input.</p>
@@ -743,8 +721,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata that can be used to manage the input.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Metadata that can be used to manage the input.</p>
@@ -758,9 +736,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAlarmModel`.
     ///
-    /// <p>Deletes an alarm model. Any alarm instances that were created based on this alarm model
-    /// are also deleted. This action can't be undone.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes an alarm model. Any alarm instances that were created based on this alarm model are also deleted. This action can't be undone.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAlarmModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -805,10 +782,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAlarmModelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -817,8 +794,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the alarm model.</p>
-        pub fn alarm_model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_model_name(inp);
+        pub fn alarm_model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_model_name(input.into());
             self
         }
         /// <p>The name of the alarm model.</p>
@@ -832,9 +809,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDetectorModel`.
     ///
-    /// <p>Deletes a detector model. Any active instances of the detector model are also
-    /// deleted.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a detector model. Any active instances of the detector model are also deleted.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDetectorModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -879,10 +855,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDetectorModelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -891,8 +867,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the detector model to be deleted.</p>
-        pub fn detector_model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_model_name(inp);
+        pub fn detector_model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_model_name(input.into());
             self
         }
         /// <p>The name of the detector model to be deleted.</p>
@@ -907,7 +883,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteInput`.
     ///
     /// <p>Deletes an input.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInput<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -952,10 +928,10 @@ pub mod fluent_builders {
                 crate::input::DeleteInputInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -964,8 +940,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the input to delete.</p>
-        pub fn input_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_name(inp);
+        pub fn input_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_name(input.into());
             self
         }
         /// <p>The name of the input to delete.</p>
@@ -976,9 +952,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAlarmModel`.
     ///
-    /// <p>Retrieves information about an alarm model. If you don't specify a value for the
-    /// <code>alarmModelVersion</code> parameter, the latest version is returned.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves information about an alarm model. If you don't specify a value for the <code>alarmModelVersion</code> parameter, the latest version is returned.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAlarmModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1023,10 +998,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAlarmModelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1035,8 +1010,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the alarm model.</p>
-        pub fn alarm_model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_model_name(inp);
+        pub fn alarm_model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_model_name(input.into());
             self
         }
         /// <p>The name of the alarm model.</p>
@@ -1048,8 +1023,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the alarm model.</p>
-        pub fn alarm_model_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_model_version(inp);
+        pub fn alarm_model_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_model_version(input.into());
             self
         }
         /// <p>The version of the alarm model.</p>
@@ -1063,9 +1038,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDetectorModel`.
     ///
-    /// <p>Describes a detector model. If the <code>version</code> parameter is not specified,
-    /// information about the latest version is returned.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes a detector model. If the <code>version</code> parameter is not specified, information about the latest version is returned.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDetectorModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1110,10 +1084,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDetectorModelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1122,8 +1096,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the detector model.</p>
-        pub fn detector_model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_model_name(inp);
+        pub fn detector_model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_model_name(input.into());
             self
         }
         /// <p>The name of the detector model.</p>
@@ -1135,8 +1109,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the detector model.</p>
-        pub fn detector_model_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_model_version(inp);
+        pub fn detector_model_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_model_version(input.into());
             self
         }
         /// <p>The version of the detector model.</p>
@@ -1150,11 +1124,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDetectorModelAnalysis`.
     ///
-    /// <p>Retrieves runtime information about a detector model analysis.</p>
-    /// <note>
+    /// <p>Retrieves runtime information about a detector model analysis.</p> <note>
     /// <p>After AWS IoT Events starts analyzing your detector model, you have up to 24 hours to retrieve the analysis results.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDetectorModelAnalysis<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1199,10 +1172,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDetectorModelAnalysisInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1211,8 +1184,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the analysis result that you want to retrieve.</p>
-        pub fn analysis_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analysis_id(inp);
+        pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analysis_id(input.into());
             self
         }
         /// <p>The ID of the analysis result that you want to retrieve.</p>
@@ -1224,7 +1197,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeInput`.
     ///
     /// <p>Describes an input.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInput<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1269,10 +1242,10 @@ pub mod fluent_builders {
                 crate::input::DescribeInputInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1281,8 +1254,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the input.</p>
-        pub fn input_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_name(inp);
+        pub fn input_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_name(input.into());
             self
         }
         /// <p>The name of the input.</p>
@@ -1294,7 +1267,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLoggingOptions`.
     ///
     /// <p>Retrieves the current settings of the AWS IoT Events logging options.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLoggingOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1339,10 +1312,10 @@ pub mod fluent_builders {
                 crate::input::DescribeLoggingOptionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1353,11 +1326,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDetectorModelAnalysisResults`.
     ///
-    /// <p>Retrieves one or more analysis results of the detector model.</p>
-    /// <note>
+    /// <p>Retrieves one or more analysis results of the detector model.</p> <note>
     /// <p>After AWS IoT Events starts analyzing your detector model, you have up to 24 hours to retrieve the analysis results.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDetectorModelAnalysisResults<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1402,10 +1374,10 @@ pub mod fluent_builders {
                 crate::input::GetDetectorModelAnalysisResultsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1414,8 +1386,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the analysis result that you want to retrieve.</p>
-        pub fn analysis_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analysis_id(inp);
+        pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analysis_id(input.into());
             self
         }
         /// <p>The ID of the analysis result that you want to retrieve.</p>
@@ -1424,8 +1396,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that you can use to return the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that you can use to return the next set of results.</p>
@@ -1434,8 +1406,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
@@ -1446,9 +1418,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAlarmModels`.
     ///
-    /// <p>Lists the alarm models that you created. The operation returns only the metadata
-    /// associated with each alarm model.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the alarm models that you created. The operation returns only the metadata associated with each alarm model.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAlarmModels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1493,10 +1464,10 @@ pub mod fluent_builders {
                 crate::input::ListAlarmModelsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1505,8 +1476,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token that you can use to return the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that you can use to return the next set of results.</p>
@@ -1515,8 +1486,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
@@ -1527,9 +1498,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAlarmModelVersions`.
     ///
-    /// <p>Lists all the versions of an alarm model. The operation returns only the metadata
-    /// associated with each alarm model version.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists all the versions of an alarm model. The operation returns only the metadata associated with each alarm model version.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAlarmModelVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1574,10 +1544,10 @@ pub mod fluent_builders {
                 crate::input::ListAlarmModelVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1586,8 +1556,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the alarm model.</p>
-        pub fn alarm_model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_model_name(inp);
+        pub fn alarm_model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_model_name(input.into());
             self
         }
         /// <p>The name of the alarm model.</p>
@@ -1599,8 +1569,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that you can use to return the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that you can use to return the next set of results.</p>
@@ -1609,8 +1579,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
@@ -1621,9 +1591,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDetectorModels`.
     ///
-    /// <p>Lists the detector models you have created. Only the metadata associated with each
-    /// detector model is returned.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the detector models you have created. Only the metadata associated with each detector model is returned.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDetectorModels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1668,10 +1637,10 @@ pub mod fluent_builders {
                 crate::input::ListDetectorModelsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1680,8 +1649,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token that you can use to return the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that you can use to return the next set of results.</p>
@@ -1690,8 +1659,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
@@ -1702,9 +1671,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDetectorModelVersions`.
     ///
-    /// <p>Lists all the versions of a detector model. Only the metadata associated with each
-    /// detector model version is returned.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists all the versions of a detector model. Only the metadata associated with each detector model version is returned.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDetectorModelVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1749,10 +1717,10 @@ pub mod fluent_builders {
                 crate::input::ListDetectorModelVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1761,8 +1729,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the detector model whose versions are returned.</p>
-        pub fn detector_model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_model_name(inp);
+        pub fn detector_model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_model_name(input.into());
             self
         }
         /// <p>The name of the detector model whose versions are returned.</p>
@@ -1774,8 +1742,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that you can use to return the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that you can use to return the next set of results.</p>
@@ -1784,8 +1752,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
@@ -1796,10 +1764,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListInputRoutings`.
     ///
-    /// <p>
-    /// Lists one or more input routings.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Lists one or more input routings. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInputRoutings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1844,10 +1810,10 @@ pub mod fluent_builders {
                 crate::input::ListInputRoutingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1855,16 +1821,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The identifer of the routed input.
-        /// </p>
-        pub fn input_identifier(mut self, inp: crate::model::InputIdentifier) -> Self {
-            self.inner = self.inner.input_identifier(inp);
+        /// <p> The identifer of the routed input. </p>
+        pub fn input_identifier(mut self, input: crate::model::InputIdentifier) -> Self {
+            self.inner = self.inner.input_identifier(input);
             self
         }
-        /// <p>
-        /// The identifer of the routed input.
-        /// </p>
+        /// <p> The identifer of the routed input. </p>
         pub fn set_input_identifier(
             mut self,
             input: std::option::Option<crate::model::InputIdentifier>,
@@ -1872,30 +1834,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input_identifier(input);
             self
         }
-        /// <p>
-        /// The maximum number of results to be returned per request.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p> The maximum number of results to be returned per request. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// The maximum number of results to be returned per request.
-        /// </p>
+        /// <p> The maximum number of results to be returned per request. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// The token that you can use to return the next set of results.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> The token that you can use to return the next set of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// The token that you can use to return the next set of results.
-        /// </p>
+        /// <p> The token that you can use to return the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1904,7 +1858,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListInputs`.
     ///
     /// <p>Lists the inputs you have created.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInputs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1949,10 +1903,10 @@ pub mod fluent_builders {
                 crate::input::ListInputsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1961,8 +1915,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token that you can use to return the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that you can use to return the next set of results.</p>
@@ -1971,8 +1925,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
@@ -1984,7 +1938,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags (metadata) you have assigned to the resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2029,10 +1983,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2041,8 +1995,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -2054,11 +2008,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutLoggingOptions`.
     ///
     /// <p>Sets or updates the AWS IoT Events logging options.</p>
-    /// <p>If you update the value of any <code>loggingOptions</code> field, it takes up to one
-    /// minute for the change to take effect. If you change the policy attached to the role you
-    /// specified in the <code>roleArn</code> field (for example, to correct an invalid policy), it
-    /// takes up to five minutes for that change to take effect.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If you update the value of any <code>loggingOptions</code> field, it takes up to one minute for the change to take effect. If you change the policy attached to the role you specified in the <code>roleArn</code> field (for example, to correct an invalid policy), it takes up to five minutes for that change to take effect.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutLoggingOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2103,10 +2054,10 @@ pub mod fluent_builders {
                 crate::input::PutLoggingOptionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2115,8 +2066,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The new values of the AWS IoT Events logging options.</p>
-        pub fn logging_options(mut self, inp: crate::model::LoggingOptions) -> Self {
-            self.inner = self.inner.logging_options(inp);
+        pub fn logging_options(mut self, input: crate::model::LoggingOptions) -> Self {
+            self.inner = self.inner.logging_options(input);
             self
         }
         /// <p>The new values of the AWS IoT Events logging options.</p>
@@ -2130,10 +2081,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartDetectorModelAnalysis`.
     ///
-    /// <p>Performs an analysis of your detector model. For more information,
-    /// see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Troubleshooting a detector model</a>
-    /// in the <i>AWS IoT Events Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Performs an analysis of your detector model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Troubleshooting a detector model</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartDetectorModelAnalysis<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2178,10 +2127,10 @@ pub mod fluent_builders {
                 crate::input::StartDetectorModelAnalysisInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2192,9 +2141,9 @@ pub mod fluent_builders {
         /// <p>Information that defines how a detector operates.</p>
         pub fn detector_model_definition(
             mut self,
-            inp: crate::model::DetectorModelDefinition,
+            input: crate::model::DetectorModelDefinition,
         ) -> Self {
-            self.inner = self.inner.detector_model_definition(inp);
+            self.inner = self.inner.detector_model_definition(input);
             self
         }
         /// <p>Information that defines how a detector operates.</p>
@@ -2208,9 +2157,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds to or modifies the tags of the given resource. Tags are metadata that can be used to
-    /// manage a resource.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2255,10 +2203,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2267,8 +2215,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -2281,8 +2229,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The new or modified tags for the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The new or modified tags for the resource.</p>
@@ -2297,7 +2245,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes the given tags (metadata) from the resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2342,10 +2290,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2354,8 +2302,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -2368,8 +2316,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>A list of the keys of the tags to be removed from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A list of the keys of the tags to be removed from the resource.</p>
@@ -2383,9 +2331,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateAlarmModel`.
     ///
-    /// <p>Updates an alarm model. Any alarms that were created based on the previous version are
-    /// deleted and then created again as new data arrives.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates an alarm model. Any alarms that were created based on the previous version are deleted and then created again as new data arrives.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAlarmModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2430,10 +2377,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAlarmModelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2442,8 +2389,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the alarm model.</p>
-        pub fn alarm_model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_model_name(inp);
+        pub fn alarm_model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_model_name(input.into());
             self
         }
         /// <p>The name of the alarm model.</p>
@@ -2455,8 +2402,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the alarm model.</p>
-        pub fn alarm_model_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alarm_model_description(inp);
+        pub fn alarm_model_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alarm_model_description(input.into());
             self
         }
         /// <p>The description of the alarm model.</p>
@@ -2468,8 +2415,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -2478,8 +2425,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
-        pub fn severity(mut self, inp: i32) -> Self {
-            self.inner = self.inner.severity(inp);
+        pub fn severity(mut self, input: i32) -> Self {
+            self.inner = self.inner.severity(input);
             self
         }
         /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
@@ -2488,8 +2435,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Defines when your alarm is invoked.</p>
-        pub fn alarm_rule(mut self, inp: crate::model::AlarmRule) -> Self {
-            self.inner = self.inner.alarm_rule(inp);
+        pub fn alarm_rule(mut self, input: crate::model::AlarmRule) -> Self {
+            self.inner = self.inner.alarm_rule(input);
             self
         }
         /// <p>Defines when your alarm is invoked.</p>
@@ -2501,8 +2448,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Contains information about one or more notification actions.</p>
-        pub fn alarm_notification(mut self, inp: crate::model::AlarmNotification) -> Self {
-            self.inner = self.inner.alarm_notification(inp);
+        pub fn alarm_notification(mut self, input: crate::model::AlarmNotification) -> Self {
+            self.inner = self.inner.alarm_notification(input);
             self
         }
         /// <p>Contains information about one or more notification actions.</p>
@@ -2514,8 +2461,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Contains information about one or more alarm actions.</p>
-        pub fn alarm_event_actions(mut self, inp: crate::model::AlarmEventActions) -> Self {
-            self.inner = self.inner.alarm_event_actions(inp);
+        pub fn alarm_event_actions(mut self, input: crate::model::AlarmEventActions) -> Self {
+            self.inner = self.inner.alarm_event_actions(input);
             self
         }
         /// <p>Contains information about one or more alarm actions.</p>
@@ -2527,8 +2474,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Contains the configuration information of alarm state changes.</p>
-        pub fn alarm_capabilities(mut self, inp: crate::model::AlarmCapabilities) -> Self {
-            self.inner = self.inner.alarm_capabilities(inp);
+        pub fn alarm_capabilities(mut self, input: crate::model::AlarmCapabilities) -> Self {
+            self.inner = self.inner.alarm_capabilities(input);
             self
         }
         /// <p>Contains the configuration information of alarm state changes.</p>
@@ -2542,9 +2489,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDetectorModel`.
     ///
-    /// <p>Updates a detector model. Detectors (instances) spawned by the previous version are
-    /// deleted and then re-created as new inputs arrive.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates a detector model. Detectors (instances) spawned by the previous version are deleted and then re-created as new inputs arrive.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDetectorModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2589,10 +2535,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDetectorModelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2601,8 +2547,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the detector model that is updated.</p>
-        pub fn detector_model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_model_name(inp);
+        pub fn detector_model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_model_name(input.into());
             self
         }
         /// <p>The name of the detector model that is updated.</p>
@@ -2616,9 +2562,9 @@ pub mod fluent_builders {
         /// <p>Information that defines how a detector operates.</p>
         pub fn detector_model_definition(
             mut self,
-            inp: crate::model::DetectorModelDefinition,
+            input: crate::model::DetectorModelDefinition,
         ) -> Self {
-            self.inner = self.inner.detector_model_definition(inp);
+            self.inner = self.inner.detector_model_definition(input);
             self
         }
         /// <p>Information that defines how a detector operates.</p>
@@ -2630,8 +2576,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A brief description of the detector model.</p>
-        pub fn detector_model_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_model_description(inp);
+        pub fn detector_model_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_model_description(input.into());
             self
         }
         /// <p>A brief description of the detector model.</p>
@@ -2643,8 +2589,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
@@ -2652,14 +2598,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>Information about the order in which events are evaluated and how actions are executed.
-        /// </p>
-        pub fn evaluation_method(mut self, inp: crate::model::EvaluationMethod) -> Self {
-            self.inner = self.inner.evaluation_method(inp);
+        /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
+        pub fn evaluation_method(mut self, input: crate::model::EvaluationMethod) -> Self {
+            self.inner = self.inner.evaluation_method(input);
             self
         }
-        /// <p>Information about the order in which events are evaluated and how actions are executed.
-        /// </p>
+        /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
         pub fn set_evaluation_method(
             mut self,
             input: std::option::Option<crate::model::EvaluationMethod>,
@@ -2671,7 +2615,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateInput`.
     ///
     /// <p>Updates an input.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateInput<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2716,10 +2660,10 @@ pub mod fluent_builders {
                 crate::input::UpdateInputInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2728,8 +2672,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the input you want to update.</p>
-        pub fn input_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_name(inp);
+        pub fn input_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_name(input.into());
             self
         }
         /// <p>The name of the input you want to update.</p>
@@ -2738,8 +2682,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A brief description of the input.</p>
-        pub fn input_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_description(inp);
+        pub fn input_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_description(input.into());
             self
         }
         /// <p>A brief description of the input.</p>
@@ -2751,8 +2695,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The definition of the input.</p>
-        pub fn input_definition(mut self, inp: crate::model::InputDefinition) -> Self {
-            self.inner = self.inner.input_definition(inp);
+        pub fn input_definition(mut self, input: crate::model::InputDefinition) -> Self {
+            self.inner = self.inner.input_definition(input);
             self
         }
         /// <p>The definition of the input.</p>
@@ -2765,6 +2709,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

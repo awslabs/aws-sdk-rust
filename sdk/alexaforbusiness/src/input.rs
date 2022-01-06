@@ -35,7 +35,7 @@ pub mod approve_skill_input {
 #[doc(hidden)]
 pub type ApproveSkillInputOperationOutputAlias = crate::operation::ApproveSkill;
 #[doc(hidden)]
-pub type ApproveSkillInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ApproveSkillInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ApproveSkillInput {
     /// Consumes the builder and constructs an Operation<[`ApproveSkill`](crate::operation::ApproveSkill)>
     #[allow(clippy::let_and_return)]
@@ -46,7 +46,7 @@ impl ApproveSkillInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ApproveSkill,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -130,7 +130,7 @@ impl ApproveSkillInput {
             "ApproveSkill",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -204,7 +204,8 @@ pub mod associate_contact_with_address_book_input {
 pub type AssociateContactWithAddressBookInputOperationOutputAlias =
     crate::operation::AssociateContactWithAddressBook;
 #[doc(hidden)]
-pub type AssociateContactWithAddressBookInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateContactWithAddressBookInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateContactWithAddressBookInput {
     /// Consumes the builder and constructs an Operation<[`AssociateContactWithAddressBook`](crate::operation::AssociateContactWithAddressBook)>
     #[allow(clippy::let_and_return)]
@@ -215,7 +216,7 @@ impl AssociateContactWithAddressBookInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateContactWithAddressBook,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -301,7 +302,7 @@ impl AssociateContactWithAddressBookInput {
             "AssociateContactWithAddressBook",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -375,7 +376,8 @@ pub mod associate_device_with_network_profile_input {
 pub type AssociateDeviceWithNetworkProfileInputOperationOutputAlias =
     crate::operation::AssociateDeviceWithNetworkProfile;
 #[doc(hidden)]
-pub type AssociateDeviceWithNetworkProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateDeviceWithNetworkProfileInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateDeviceWithNetworkProfileInput {
     /// Consumes the builder and constructs an Operation<[`AssociateDeviceWithNetworkProfile`](crate::operation::AssociateDeviceWithNetworkProfile)>
     #[allow(clippy::let_and_return)]
@@ -386,7 +388,7 @@ impl AssociateDeviceWithNetworkProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateDeviceWithNetworkProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -472,7 +474,7 @@ impl AssociateDeviceWithNetworkProfileInput {
             "AssociateDeviceWithNetworkProfile",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -543,7 +545,7 @@ pub mod associate_device_with_room_input {
 pub type AssociateDeviceWithRoomInputOperationOutputAlias =
     crate::operation::AssociateDeviceWithRoom;
 #[doc(hidden)]
-pub type AssociateDeviceWithRoomInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateDeviceWithRoomInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateDeviceWithRoomInput {
     /// Consumes the builder and constructs an Operation<[`AssociateDeviceWithRoom`](crate::operation::AssociateDeviceWithRoom)>
     #[allow(clippy::let_and_return)]
@@ -554,7 +556,7 @@ impl AssociateDeviceWithRoomInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateDeviceWithRoom,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -641,7 +643,7 @@ impl AssociateDeviceWithRoomInput {
             "AssociateDeviceWithRoom",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -715,7 +717,7 @@ pub mod associate_skill_group_with_room_input {
 pub type AssociateSkillGroupWithRoomInputOperationOutputAlias =
     crate::operation::AssociateSkillGroupWithRoom;
 #[doc(hidden)]
-pub type AssociateSkillGroupWithRoomInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateSkillGroupWithRoomInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateSkillGroupWithRoomInput {
     /// Consumes the builder and constructs an Operation<[`AssociateSkillGroupWithRoom`](crate::operation::AssociateSkillGroupWithRoom)>
     #[allow(clippy::let_and_return)]
@@ -726,7 +728,7 @@ impl AssociateSkillGroupWithRoomInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateSkillGroupWithRoom,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -812,7 +814,7 @@ impl AssociateSkillGroupWithRoomInput {
             "AssociateSkillGroupWithRoom",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -886,7 +888,8 @@ pub mod associate_skill_with_skill_group_input {
 pub type AssociateSkillWithSkillGroupInputOperationOutputAlias =
     crate::operation::AssociateSkillWithSkillGroup;
 #[doc(hidden)]
-pub type AssociateSkillWithSkillGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateSkillWithSkillGroupInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateSkillWithSkillGroupInput {
     /// Consumes the builder and constructs an Operation<[`AssociateSkillWithSkillGroup`](crate::operation::AssociateSkillWithSkillGroup)>
     #[allow(clippy::let_and_return)]
@@ -897,7 +900,7 @@ impl AssociateSkillWithSkillGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateSkillWithSkillGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -983,7 +986,7 @@ impl AssociateSkillWithSkillGroupInput {
             "AssociateSkillWithSkillGroup",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1042,7 +1045,7 @@ pub mod associate_skill_with_users_input {
 pub type AssociateSkillWithUsersInputOperationOutputAlias =
     crate::operation::AssociateSkillWithUsers;
 #[doc(hidden)]
-pub type AssociateSkillWithUsersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateSkillWithUsersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateSkillWithUsersInput {
     /// Consumes the builder and constructs an Operation<[`AssociateSkillWithUsers`](crate::operation::AssociateSkillWithUsers)>
     #[allow(clippy::let_and_return)]
@@ -1053,7 +1056,7 @@ impl AssociateSkillWithUsersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateSkillWithUsers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1140,7 +1143,7 @@ impl AssociateSkillWithUsersInput {
             "AssociateSkillWithUsers",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1195,14 +1198,12 @@ pub mod create_address_book_input {
             self.description = input;
             self
         }
-        /// <p>A unique, user-specified identifier for the request that ensures
-        /// idempotency.</p>
+        /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique, user-specified identifier for the request that ensures
-        /// idempotency.</p>
+        /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1215,9 +1216,9 @@ pub mod create_address_book_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1248,7 +1249,7 @@ pub mod create_address_book_input {
 #[doc(hidden)]
 pub type CreateAddressBookInputOperationOutputAlias = crate::operation::CreateAddressBook;
 #[doc(hidden)]
-pub type CreateAddressBookInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAddressBookInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAddressBookInput {
     /// Consumes the builder and constructs an Operation<[`CreateAddressBook`](crate::operation::CreateAddressBook)>
     #[allow(clippy::let_and_return)]
@@ -1259,7 +1260,7 @@ impl CreateAddressBookInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAddressBook,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1347,7 +1348,7 @@ impl CreateAddressBookInput {
             "CreateAddressBook",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1399,14 +1400,12 @@ pub mod create_business_report_schedule_input {
             self.schedule_name = input;
             self
         }
-        /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be
-        /// retrieved from a download link by calling ListBusinessReportSchedule. </p>
+        /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
         pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_bucket_name = Some(input.into());
             self
         }
-        /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be
-        /// retrieved from a download link by calling ListBusinessReportSchedule. </p>
+        /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
         pub fn set_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1427,14 +1426,12 @@ pub mod create_business_report_schedule_input {
             self.s3_key_prefix = input;
             self
         }
-        /// <p>The format of the generated report (individual CSV files or zipped files of
-        /// individual files).</p>
+        /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
         pub fn format(mut self, input: crate::model::BusinessReportFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p>The format of the generated report (individual CSV files or zipped files of
-        /// individual files).</p>
+        /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::BusinessReportFormat>,
@@ -1455,14 +1452,12 @@ pub mod create_business_report_schedule_input {
             self.content_range = input;
             self
         }
-        /// <p>The recurrence of the reports. If this isn't specified, the report will only be
-        /// delivered one time when the API is called. </p>
+        /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
         pub fn recurrence(mut self, input: crate::model::BusinessReportRecurrence) -> Self {
             self.recurrence = Some(input);
             self
         }
-        /// <p>The recurrence of the reports. If this isn't specified, the report will only be
-        /// delivered one time when the API is called. </p>
+        /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
         pub fn set_recurrence(
             mut self,
             input: std::option::Option<crate::model::BusinessReportRecurrence>,
@@ -1488,9 +1483,9 @@ pub mod create_business_report_schedule_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the business report schedule.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1526,7 +1521,8 @@ pub mod create_business_report_schedule_input {
 pub type CreateBusinessReportScheduleInputOperationOutputAlias =
     crate::operation::CreateBusinessReportSchedule;
 #[doc(hidden)]
-pub type CreateBusinessReportScheduleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateBusinessReportScheduleInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBusinessReportScheduleInput {
     /// Consumes the builder and constructs an Operation<[`CreateBusinessReportSchedule`](crate::operation::CreateBusinessReportSchedule)>
     #[allow(clippy::let_and_return)]
@@ -1537,7 +1533,7 @@ impl CreateBusinessReportScheduleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBusinessReportSchedule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1626,7 +1622,7 @@ impl CreateBusinessReportScheduleInput {
             "CreateBusinessReportSchedule",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1751,9 +1747,9 @@ pub mod create_conference_provider_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1788,7 +1784,7 @@ pub mod create_conference_provider_input {
 pub type CreateConferenceProviderInputOperationOutputAlias =
     crate::operation::CreateConferenceProvider;
 #[doc(hidden)]
-pub type CreateConferenceProviderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateConferenceProviderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConferenceProviderInput {
     /// Consumes the builder and constructs an Operation<[`CreateConferenceProvider`](crate::operation::CreateConferenceProvider)>
     #[allow(clippy::let_and_return)]
@@ -1799,7 +1795,7 @@ impl CreateConferenceProviderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateConferenceProvider,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1889,7 +1885,7 @@ impl CreateConferenceProviderInput {
             "CreateConferenceProvider",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1938,40 +1934,32 @@ pub mod create_contact_input {
             self.display_name = input;
             self
         }
-        /// <p>The first name of the contact that is used to call the contact on the
-        /// device.</p>
+        /// <p>The first name of the contact that is used to call the contact on the device.</p>
         pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.first_name = Some(input.into());
             self
         }
-        /// <p>The first name of the contact that is used to call the contact on the
-        /// device.</p>
+        /// <p>The first name of the contact that is used to call the contact on the device.</p>
         pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.first_name = input;
             self
         }
-        /// <p>The last name of the contact that is used to call the contact on the
-        /// device.</p>
+        /// <p>The last name of the contact that is used to call the contact on the device.</p>
         pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_name = Some(input.into());
             self
         }
-        /// <p>The last name of the contact that is used to call the contact on the
-        /// device.</p>
+        /// <p>The last name of the contact that is used to call the contact on the device.</p>
         pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.last_name = input;
             self
         }
-        /// <p>The phone number of the contact in E.164 format. The phone number type defaults to
-        /// WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers,
-        /// which lets you specify the phone number type and multiple numbers.</p>
+        /// <p>The phone number of the contact in E.164 format. The phone number type defaults to WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
         pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.phone_number = Some(input.into());
             self
         }
-        /// <p>The phone number of the contact in E.164 format. The phone number type defaults to
-        /// WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers,
-        /// which lets you specify the phone number type and multiple numbers.</p>
+        /// <p>The phone number of the contact in E.164 format. The phone number type defaults to WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
@@ -1981,9 +1969,9 @@ pub mod create_contact_input {
         /// To override the contents of this collection use [`set_phone_numbers`](Self::set_phone_numbers).
         ///
         /// <p>The list of phone numbers for the contact.</p>
-        pub fn phone_numbers(mut self, input: impl Into<crate::model::PhoneNumber>) -> Self {
+        pub fn phone_numbers(mut self, input: crate::model::PhoneNumber) -> Self {
             let mut v = self.phone_numbers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.phone_numbers = Some(v);
             self
         }
@@ -2000,9 +1988,9 @@ pub mod create_contact_input {
         /// To override the contents of this collection use [`set_sip_addresses`](Self::set_sip_addresses).
         ///
         /// <p>The list of SIP addresses for the contact.</p>
-        pub fn sip_addresses(mut self, input: impl Into<crate::model::SipAddress>) -> Self {
+        pub fn sip_addresses(mut self, input: crate::model::SipAddress) -> Self {
             let mut v = self.sip_addresses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sip_addresses = Some(v);
             self
         }
@@ -2014,14 +2002,12 @@ pub mod create_contact_input {
             self.sip_addresses = input;
             self
         }
-        /// <p>A unique, user-specified identifier for this request that ensures
-        /// idempotency.</p>
+        /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique, user-specified identifier for this request that ensures
-        /// idempotency.</p>
+        /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2034,9 +2020,9 @@ pub mod create_contact_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2071,7 +2057,7 @@ pub mod create_contact_input {
 #[doc(hidden)]
 pub type CreateContactInputOperationOutputAlias = crate::operation::CreateContact;
 #[doc(hidden)]
-pub type CreateContactInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateContactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateContactInput {
     /// Consumes the builder and constructs an Operation<[`CreateContact`](crate::operation::CreateContact)>
     #[allow(clippy::let_and_return)]
@@ -2082,7 +2068,7 @@ impl CreateContactInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateContact,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2169,7 +2155,7 @@ impl CreateContactInput {
             "CreateContact",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2242,9 +2228,9 @@ pub mod create_gateway_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2275,7 +2261,7 @@ pub mod create_gateway_group_input {
 #[doc(hidden)]
 pub type CreateGatewayGroupInputOperationOutputAlias = crate::operation::CreateGatewayGroup;
 #[doc(hidden)]
-pub type CreateGatewayGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateGatewayGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGatewayGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateGatewayGroup`](crate::operation::CreateGatewayGroup)>
     #[allow(clippy::let_and_return)]
@@ -2286,7 +2272,7 @@ impl CreateGatewayGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateGatewayGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2374,7 +2360,7 @@ impl CreateGatewayGroupInput {
             "CreateGatewayGroup",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2449,14 +2435,12 @@ pub mod create_network_profile_input {
             self.ssid = input;
             self
         }
-        /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK,
-        /// WEP, or OPEN.</p>
+        /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
         pub fn security_type(mut self, input: crate::model::NetworkSecurityType) -> Self {
             self.security_type = Some(input);
             self
         }
-        /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK,
-        /// WEP, or OPEN.</p>
+        /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
         pub fn set_security_type(
             mut self,
             input: std::option::Option<crate::model::NetworkSecurityType>,
@@ -2464,14 +2448,12 @@ pub mod create_network_profile_input {
             self.security_type = input;
             self
         }
-        /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is
-        /// supported.</p>
+        /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
         pub fn eap_method(mut self, input: crate::model::NetworkEapMethod) -> Self {
             self.eap_method = Some(input);
             self
         }
-        /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is
-        /// supported.</p>
+        /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
         pub fn set_eap_method(
             mut self,
             input: std::option::Option<crate::model::NetworkEapMethod>,
@@ -2492,16 +2474,12 @@ pub mod create_network_profile_input {
             self.current_password = input;
             self
         }
-        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
-        /// transmitted to the device and is used when the password of the network changes to
-        /// NextPassword. </p>
+        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
         pub fn next_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_password = Some(input.into());
             self
         }
-        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
-        /// transmitted to the device and is used when the password of the network changes to
-        /// NextPassword. </p>
+        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
         pub fn set_next_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2509,14 +2487,12 @@ pub mod create_network_profile_input {
             self.next_password = input;
             self
         }
-        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
-        /// (ACM). This is used to issue certificates to the devices. </p>
+        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
-        /// (ACM). This is used to issue certificates to the devices. </p>
+        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2528,16 +2504,14 @@ pub mod create_network_profile_input {
         ///
         /// To override the contents of this collection use [`set_trust_anchors`](Self::set_trust_anchors).
         ///
-        /// <p>The root certificates of your authentication server that is installed on your devices
-        /// and used to trust your authentication server during EAP negotiation. </p>
+        /// <p>The root certificates of your authentication server that is installed on your devices and used to trust your authentication server during EAP negotiation. </p>
         pub fn trust_anchors(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.trust_anchors.unwrap_or_default();
             v.push(input.into());
             self.trust_anchors = Some(v);
             self
         }
-        /// <p>The root certificates of your authentication server that is installed on your devices
-        /// and used to trust your authentication server during EAP negotiation. </p>
+        /// <p>The root certificates of your authentication server that is installed on your devices and used to trust your authentication server during EAP negotiation. </p>
         pub fn set_trust_anchors(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2563,9 +2537,9 @@ pub mod create_network_profile_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be added to the specified resource. Do not provide system tags. </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2603,7 +2577,7 @@ pub mod create_network_profile_input {
 #[doc(hidden)]
 pub type CreateNetworkProfileInputOperationOutputAlias = crate::operation::CreateNetworkProfile;
 #[doc(hidden)]
-pub type CreateNetworkProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateNetworkProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateNetworkProfileInput {
     /// Consumes the builder and constructs an Operation<[`CreateNetworkProfile`](crate::operation::CreateNetworkProfile)>
     #[allow(clippy::let_and_return)]
@@ -2614,7 +2588,7 @@ impl CreateNetworkProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateNetworkProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2704,7 +2678,7 @@ impl CreateNetworkProfileInput {
             "CreateNetworkProfile",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2900,9 +2874,9 @@ pub mod create_profile_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the profile.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2943,7 +2917,7 @@ pub mod create_profile_input {
 #[doc(hidden)]
 pub type CreateProfileInputOperationOutputAlias = crate::operation::CreateProfile;
 #[doc(hidden)]
-pub type CreateProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProfileInput {
     /// Consumes the builder and constructs an Operation<[`CreateProfile`](crate::operation::CreateProfile)>
     #[allow(clippy::let_and_return)]
@@ -2954,7 +2928,7 @@ impl CreateProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3041,7 +3015,7 @@ impl CreateProfileInput {
             "CreateProfile",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3121,14 +3095,12 @@ pub mod create_room_input {
             self.provider_calendar_id = input;
             self
         }
-        /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-        /// </p>
+        /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-        /// </p>
+        /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3141,9 +3113,9 @@ pub mod create_room_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the room.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3176,7 +3148,7 @@ pub mod create_room_input {
 #[doc(hidden)]
 pub type CreateRoomInputOperationOutputAlias = crate::operation::CreateRoom;
 #[doc(hidden)]
-pub type CreateRoomInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateRoomInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRoomInput {
     /// Consumes the builder and constructs an Operation<[`CreateRoom`](crate::operation::CreateRoom)>
     #[allow(clippy::let_and_return)]
@@ -3187,7 +3159,7 @@ impl CreateRoomInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRoom,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3274,7 +3246,7 @@ impl CreateRoomInput {
             "CreateRoom",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3332,14 +3304,12 @@ pub mod create_skill_group_input {
             self.description = input;
             self
         }
-        /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-        /// </p>
+        /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-        /// </p>
+        /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3352,9 +3322,9 @@ pub mod create_skill_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the skill group.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3385,7 +3355,7 @@ pub mod create_skill_group_input {
 #[doc(hidden)]
 pub type CreateSkillGroupInputOperationOutputAlias = crate::operation::CreateSkillGroup;
 #[doc(hidden)]
-pub type CreateSkillGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSkillGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSkillGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateSkillGroup`](crate::operation::CreateSkillGroup)>
     #[allow(clippy::let_and_return)]
@@ -3396,7 +3366,7 @@ impl CreateSkillGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSkillGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3484,7 +3454,7 @@ impl CreateSkillGroupInput {
             "CreateSkillGroup",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3561,14 +3531,12 @@ pub mod create_user_input {
             self.email = input;
             self
         }
-        /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-        /// </p>
+        /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-        /// </p>
+        /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3581,9 +3549,9 @@ pub mod create_user_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the user.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3616,7 +3584,7 @@ pub mod create_user_input {
 #[doc(hidden)]
 pub type CreateUserInputOperationOutputAlias = crate::operation::CreateUser;
 #[doc(hidden)]
-pub type CreateUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUserInput {
     /// Consumes the builder and constructs an Operation<[`CreateUser`](crate::operation::CreateUser)>
     #[allow(clippy::let_and_return)]
@@ -3627,7 +3595,7 @@ impl CreateUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3714,7 +3682,7 @@ impl CreateUserInput {
             "CreateUser",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3775,7 +3743,7 @@ pub mod delete_address_book_input {
 #[doc(hidden)]
 pub type DeleteAddressBookInputOperationOutputAlias = crate::operation::DeleteAddressBook;
 #[doc(hidden)]
-pub type DeleteAddressBookInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAddressBookInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAddressBookInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAddressBook`](crate::operation::DeleteAddressBook)>
     #[allow(clippy::let_and_return)]
@@ -3786,7 +3754,7 @@ impl DeleteAddressBookInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAddressBook,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3871,7 +3839,7 @@ impl DeleteAddressBookInput {
             "DeleteAddressBook",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3930,7 +3898,8 @@ pub mod delete_business_report_schedule_input {
 pub type DeleteBusinessReportScheduleInputOperationOutputAlias =
     crate::operation::DeleteBusinessReportSchedule;
 #[doc(hidden)]
-pub type DeleteBusinessReportScheduleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteBusinessReportScheduleInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBusinessReportScheduleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBusinessReportSchedule`](crate::operation::DeleteBusinessReportSchedule)>
     #[allow(clippy::let_and_return)]
@@ -3941,7 +3910,7 @@ impl DeleteBusinessReportScheduleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBusinessReportSchedule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4027,7 +3996,7 @@ impl DeleteBusinessReportScheduleInput {
             "DeleteBusinessReportSchedule",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4089,7 +4058,7 @@ pub mod delete_conference_provider_input {
 pub type DeleteConferenceProviderInputOperationOutputAlias =
     crate::operation::DeleteConferenceProvider;
 #[doc(hidden)]
-pub type DeleteConferenceProviderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteConferenceProviderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConferenceProviderInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConferenceProvider`](crate::operation::DeleteConferenceProvider)>
     #[allow(clippy::let_and_return)]
@@ -4100,7 +4069,7 @@ impl DeleteConferenceProviderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteConferenceProvider,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4187,7 +4156,7 @@ impl DeleteConferenceProviderInput {
             "DeleteConferenceProvider",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4245,7 +4214,7 @@ pub mod delete_contact_input {
 #[doc(hidden)]
 pub type DeleteContactInputOperationOutputAlias = crate::operation::DeleteContact;
 #[doc(hidden)]
-pub type DeleteContactInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteContactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteContactInput {
     /// Consumes the builder and constructs an Operation<[`DeleteContact`](crate::operation::DeleteContact)>
     #[allow(clippy::let_and_return)]
@@ -4256,7 +4225,7 @@ impl DeleteContactInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteContact,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4340,7 +4309,7 @@ impl DeleteContactInput {
             "DeleteContact",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4398,7 +4367,7 @@ pub mod delete_device_input {
 #[doc(hidden)]
 pub type DeleteDeviceInputOperationOutputAlias = crate::operation::DeleteDevice;
 #[doc(hidden)]
-pub type DeleteDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDeviceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDevice`](crate::operation::DeleteDevice)>
     #[allow(clippy::let_and_return)]
@@ -4409,7 +4378,7 @@ impl DeleteDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4493,7 +4462,7 @@ impl DeleteDeviceInput {
             "DeleteDevice",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4566,7 +4535,7 @@ pub mod delete_device_usage_data_input {
 #[doc(hidden)]
 pub type DeleteDeviceUsageDataInputOperationOutputAlias = crate::operation::DeleteDeviceUsageData;
 #[doc(hidden)]
-pub type DeleteDeviceUsageDataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDeviceUsageDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDeviceUsageDataInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDeviceUsageData`](crate::operation::DeleteDeviceUsageData)>
     #[allow(clippy::let_and_return)]
@@ -4577,7 +4546,7 @@ impl DeleteDeviceUsageDataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDeviceUsageData,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4664,7 +4633,7 @@ impl DeleteDeviceUsageDataInput {
             "DeleteDeviceUsageData",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4725,7 +4694,7 @@ pub mod delete_gateway_group_input {
 #[doc(hidden)]
 pub type DeleteGatewayGroupInputOperationOutputAlias = crate::operation::DeleteGatewayGroup;
 #[doc(hidden)]
-pub type DeleteGatewayGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteGatewayGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteGatewayGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGatewayGroup`](crate::operation::DeleteGatewayGroup)>
     #[allow(clippy::let_and_return)]
@@ -4736,7 +4705,7 @@ impl DeleteGatewayGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteGatewayGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4821,7 +4790,7 @@ impl DeleteGatewayGroupInput {
             "DeleteGatewayGroup",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4882,7 +4851,7 @@ pub mod delete_network_profile_input {
 #[doc(hidden)]
 pub type DeleteNetworkProfileInputOperationOutputAlias = crate::operation::DeleteNetworkProfile;
 #[doc(hidden)]
-pub type DeleteNetworkProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteNetworkProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteNetworkProfileInput {
     /// Consumes the builder and constructs an Operation<[`DeleteNetworkProfile`](crate::operation::DeleteNetworkProfile)>
     #[allow(clippy::let_and_return)]
@@ -4893,7 +4862,7 @@ impl DeleteNetworkProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteNetworkProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4980,7 +4949,7 @@ impl DeleteNetworkProfileInput {
             "DeleteNetworkProfile",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5038,7 +5007,7 @@ pub mod delete_profile_input {
 #[doc(hidden)]
 pub type DeleteProfileInputOperationOutputAlias = crate::operation::DeleteProfile;
 #[doc(hidden)]
-pub type DeleteProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProfileInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProfile`](crate::operation::DeleteProfile)>
     #[allow(clippy::let_and_return)]
@@ -5049,7 +5018,7 @@ impl DeleteProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5133,7 +5102,7 @@ impl DeleteProfileInput {
             "DeleteProfile",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5191,7 +5160,7 @@ pub mod delete_room_input {
 #[doc(hidden)]
 pub type DeleteRoomInputOperationOutputAlias = crate::operation::DeleteRoom;
 #[doc(hidden)]
-pub type DeleteRoomInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRoomInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRoomInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRoom`](crate::operation::DeleteRoom)>
     #[allow(clippy::let_and_return)]
@@ -5202,7 +5171,7 @@ impl DeleteRoomInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRoom,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5286,7 +5255,7 @@ impl DeleteRoomInput {
             "DeleteRoom",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5372,7 +5341,7 @@ pub mod delete_room_skill_parameter_input {
 pub type DeleteRoomSkillParameterInputOperationOutputAlias =
     crate::operation::DeleteRoomSkillParameter;
 #[doc(hidden)]
-pub type DeleteRoomSkillParameterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRoomSkillParameterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRoomSkillParameterInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRoomSkillParameter`](crate::operation::DeleteRoomSkillParameter)>
     #[allow(clippy::let_and_return)]
@@ -5383,7 +5352,7 @@ impl DeleteRoomSkillParameterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRoomSkillParameter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5470,7 +5439,7 @@ impl DeleteRoomSkillParameterInput {
             "DeleteRoomSkillParameter",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5541,7 +5510,7 @@ pub mod delete_skill_authorization_input {
 pub type DeleteSkillAuthorizationInputOperationOutputAlias =
     crate::operation::DeleteSkillAuthorization;
 #[doc(hidden)]
-pub type DeleteSkillAuthorizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSkillAuthorizationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSkillAuthorizationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSkillAuthorization`](crate::operation::DeleteSkillAuthorization)>
     #[allow(clippy::let_and_return)]
@@ -5552,7 +5521,7 @@ impl DeleteSkillAuthorizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSkillAuthorization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5639,7 +5608,7 @@ impl DeleteSkillAuthorizationInput {
             "DeleteSkillAuthorization",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5700,7 +5669,7 @@ pub mod delete_skill_group_input {
 #[doc(hidden)]
 pub type DeleteSkillGroupInputOperationOutputAlias = crate::operation::DeleteSkillGroup;
 #[doc(hidden)]
-pub type DeleteSkillGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSkillGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSkillGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSkillGroup`](crate::operation::DeleteSkillGroup)>
     #[allow(clippy::let_and_return)]
@@ -5711,7 +5680,7 @@ impl DeleteSkillGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSkillGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5796,7 +5765,7 @@ impl DeleteSkillGroupInput {
             "DeleteSkillGroup",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5869,7 +5838,7 @@ pub mod delete_user_input {
 #[doc(hidden)]
 pub type DeleteUserInputOperationOutputAlias = crate::operation::DeleteUser;
 #[doc(hidden)]
-pub type DeleteUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteUserInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUser`](crate::operation::DeleteUser)>
     #[allow(clippy::let_and_return)]
@@ -5880,7 +5849,7 @@ impl DeleteUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5964,7 +5933,7 @@ impl DeleteUserInput {
             "DeleteUser",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6038,7 +6007,8 @@ pub mod disassociate_contact_from_address_book_input {
 pub type DisassociateContactFromAddressBookInputOperationOutputAlias =
     crate::operation::DisassociateContactFromAddressBook;
 #[doc(hidden)]
-pub type DisassociateContactFromAddressBookInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateContactFromAddressBookInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateContactFromAddressBookInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateContactFromAddressBook`](crate::operation::DisassociateContactFromAddressBook)>
     #[allow(clippy::let_and_return)]
@@ -6049,7 +6019,7 @@ impl DisassociateContactFromAddressBookInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateContactFromAddressBook,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6135,7 +6105,7 @@ impl DisassociateContactFromAddressBookInput {
             "DisassociateContactFromAddressBook",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6194,7 +6164,7 @@ pub mod disassociate_device_from_room_input {
 pub type DisassociateDeviceFromRoomInputOperationOutputAlias =
     crate::operation::DisassociateDeviceFromRoom;
 #[doc(hidden)]
-pub type DisassociateDeviceFromRoomInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateDeviceFromRoomInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateDeviceFromRoomInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateDeviceFromRoom`](crate::operation::DisassociateDeviceFromRoom)>
     #[allow(clippy::let_and_return)]
@@ -6205,7 +6175,7 @@ impl DisassociateDeviceFromRoomInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateDeviceFromRoom,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6291,7 +6261,7 @@ impl DisassociateDeviceFromRoomInput {
             "DisassociateDeviceFromRoom",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6365,7 +6335,8 @@ pub mod disassociate_skill_from_skill_group_input {
 pub type DisassociateSkillFromSkillGroupInputOperationOutputAlias =
     crate::operation::DisassociateSkillFromSkillGroup;
 #[doc(hidden)]
-pub type DisassociateSkillFromSkillGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateSkillFromSkillGroupInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateSkillFromSkillGroupInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateSkillFromSkillGroup`](crate::operation::DisassociateSkillFromSkillGroup)>
     #[allow(clippy::let_and_return)]
@@ -6376,7 +6347,7 @@ impl DisassociateSkillFromSkillGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateSkillFromSkillGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6462,7 +6433,7 @@ impl DisassociateSkillFromSkillGroupInput {
             "DisassociateSkillFromSkillGroup",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6521,7 +6492,7 @@ pub mod disassociate_skill_from_users_input {
 pub type DisassociateSkillFromUsersInputOperationOutputAlias =
     crate::operation::DisassociateSkillFromUsers;
 #[doc(hidden)]
-pub type DisassociateSkillFromUsersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateSkillFromUsersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateSkillFromUsersInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateSkillFromUsers`](crate::operation::DisassociateSkillFromUsers)>
     #[allow(clippy::let_and_return)]
@@ -6532,7 +6503,7 @@ impl DisassociateSkillFromUsersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateSkillFromUsers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6618,7 +6589,7 @@ impl DisassociateSkillFromUsersInput {
             "DisassociateSkillFromUsers",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6664,14 +6635,12 @@ pub mod disassociate_skill_group_from_room_input {
             self.skill_group_arn = input;
             self
         }
-        /// <p>The ARN of the room from which the skill group is to be disassociated.
-        /// Required.</p>
+        /// <p>The ARN of the room from which the skill group is to be disassociated. Required.</p>
         pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.room_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the room from which the skill group is to be disassociated.
-        /// Required.</p>
+        /// <p>The ARN of the room from which the skill group is to be disassociated. Required.</p>
         pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.room_arn = input;
             self
@@ -6694,7 +6663,8 @@ pub mod disassociate_skill_group_from_room_input {
 pub type DisassociateSkillGroupFromRoomInputOperationOutputAlias =
     crate::operation::DisassociateSkillGroupFromRoom;
 #[doc(hidden)]
-pub type DisassociateSkillGroupFromRoomInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateSkillGroupFromRoomInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateSkillGroupFromRoomInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateSkillGroupFromRoom`](crate::operation::DisassociateSkillGroupFromRoom)>
     #[allow(clippy::let_and_return)]
@@ -6705,7 +6675,7 @@ impl DisassociateSkillGroupFromRoomInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateSkillGroupFromRoom,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6791,7 +6761,7 @@ impl DisassociateSkillGroupFromRoomInput {
             "DisassociateSkillGroupFromRoom",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6850,7 +6820,7 @@ pub mod forget_smart_home_appliances_input {
 pub type ForgetSmartHomeAppliancesInputOperationOutputAlias =
     crate::operation::ForgetSmartHomeAppliances;
 #[doc(hidden)]
-pub type ForgetSmartHomeAppliancesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ForgetSmartHomeAppliancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ForgetSmartHomeAppliancesInput {
     /// Consumes the builder and constructs an Operation<[`ForgetSmartHomeAppliances`](crate::operation::ForgetSmartHomeAppliances)>
     #[allow(clippy::let_and_return)]
@@ -6861,7 +6831,7 @@ impl ForgetSmartHomeAppliancesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ForgetSmartHomeAppliances,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6948,7 +6918,7 @@ impl ForgetSmartHomeAppliancesInput {
             "ForgetSmartHomeAppliances",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7009,7 +6979,7 @@ pub mod get_address_book_input {
 #[doc(hidden)]
 pub type GetAddressBookInputOperationOutputAlias = crate::operation::GetAddressBook;
 #[doc(hidden)]
-pub type GetAddressBookInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAddressBookInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAddressBookInput {
     /// Consumes the builder and constructs an Operation<[`GetAddressBook`](crate::operation::GetAddressBook)>
     #[allow(clippy::let_and_return)]
@@ -7020,7 +6990,7 @@ impl GetAddressBookInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAddressBook,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7105,7 +7075,7 @@ impl GetAddressBookInput {
             "GetAddressBook",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7150,7 +7120,7 @@ pub mod get_conference_preference_input {
 pub type GetConferencePreferenceInputOperationOutputAlias =
     crate::operation::GetConferencePreference;
 #[doc(hidden)]
-pub type GetConferencePreferenceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetConferencePreferenceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetConferencePreferenceInput {
     /// Consumes the builder and constructs an Operation<[`GetConferencePreference`](crate::operation::GetConferencePreference)>
     #[allow(clippy::let_and_return)]
@@ -7161,7 +7131,7 @@ impl GetConferencePreferenceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetConferencePreference,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7248,7 +7218,7 @@ impl GetConferencePreferenceInput {
             "GetConferencePreference",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7301,7 +7271,7 @@ pub mod get_conference_provider_input {
 #[doc(hidden)]
 pub type GetConferenceProviderInputOperationOutputAlias = crate::operation::GetConferenceProvider;
 #[doc(hidden)]
-pub type GetConferenceProviderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetConferenceProviderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetConferenceProviderInput {
     /// Consumes the builder and constructs an Operation<[`GetConferenceProvider`](crate::operation::GetConferenceProvider)>
     #[allow(clippy::let_and_return)]
@@ -7312,7 +7282,7 @@ impl GetConferenceProviderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetConferenceProvider,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7399,7 +7369,7 @@ impl GetConferenceProviderInput {
             "GetConferenceProvider",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7457,7 +7427,7 @@ pub mod get_contact_input {
 #[doc(hidden)]
 pub type GetContactInputOperationOutputAlias = crate::operation::GetContact;
 #[doc(hidden)]
-pub type GetContactInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetContactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetContactInput {
     /// Consumes the builder and constructs an Operation<[`GetContact`](crate::operation::GetContact)>
     #[allow(clippy::let_and_return)]
@@ -7468,7 +7438,7 @@ impl GetContactInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetContact,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7552,7 +7522,7 @@ impl GetContactInput {
             "GetContact",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7608,7 +7578,7 @@ pub mod get_device_input {
 #[doc(hidden)]
 pub type GetDeviceInputOperationOutputAlias = crate::operation::GetDevice;
 #[doc(hidden)]
-pub type GetDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDeviceInput {
     /// Consumes the builder and constructs an Operation<[`GetDevice`](crate::operation::GetDevice)>
     #[allow(clippy::let_and_return)]
@@ -7619,7 +7589,7 @@ impl GetDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7701,7 +7671,7 @@ impl GetDeviceInput {
                     "GetDevice",
                     "alexaforbusiness",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7759,7 +7729,7 @@ pub mod get_gateway_input {
 #[doc(hidden)]
 pub type GetGatewayInputOperationOutputAlias = crate::operation::GetGateway;
 #[doc(hidden)]
-pub type GetGatewayInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetGatewayInput {
     /// Consumes the builder and constructs an Operation<[`GetGateway`](crate::operation::GetGateway)>
     #[allow(clippy::let_and_return)]
@@ -7770,7 +7740,7 @@ impl GetGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetGateway,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7854,7 +7824,7 @@ impl GetGatewayInput {
             "GetGateway",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7915,7 +7885,7 @@ pub mod get_gateway_group_input {
 #[doc(hidden)]
 pub type GetGatewayGroupInputOperationOutputAlias = crate::operation::GetGatewayGroup;
 #[doc(hidden)]
-pub type GetGatewayGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetGatewayGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetGatewayGroupInput {
     /// Consumes the builder and constructs an Operation<[`GetGatewayGroup`](crate::operation::GetGatewayGroup)>
     #[allow(clippy::let_and_return)]
@@ -7926,7 +7896,7 @@ impl GetGatewayGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetGatewayGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8011,7 +7981,7 @@ impl GetGatewayGroupInput {
             "GetGatewayGroup",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8056,7 +8026,7 @@ pub mod get_invitation_configuration_input {
 pub type GetInvitationConfigurationInputOperationOutputAlias =
     crate::operation::GetInvitationConfiguration;
 #[doc(hidden)]
-pub type GetInvitationConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetInvitationConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetInvitationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetInvitationConfiguration`](crate::operation::GetInvitationConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -8067,7 +8037,7 @@ impl GetInvitationConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetInvitationConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8154,7 +8124,7 @@ impl GetInvitationConfigurationInput {
             "GetInvitationConfiguration",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8207,7 +8177,7 @@ pub mod get_network_profile_input {
 #[doc(hidden)]
 pub type GetNetworkProfileInputOperationOutputAlias = crate::operation::GetNetworkProfile;
 #[doc(hidden)]
-pub type GetNetworkProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetNetworkProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetNetworkProfileInput {
     /// Consumes the builder and constructs an Operation<[`GetNetworkProfile`](crate::operation::GetNetworkProfile)>
     #[allow(clippy::let_and_return)]
@@ -8218,7 +8188,7 @@ impl GetNetworkProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetNetworkProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8303,7 +8273,7 @@ impl GetNetworkProfileInput {
             "GetNetworkProfile",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8361,7 +8331,7 @@ pub mod get_profile_input {
 #[doc(hidden)]
 pub type GetProfileInputOperationOutputAlias = crate::operation::GetProfile;
 #[doc(hidden)]
-pub type GetProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetProfileInput {
     /// Consumes the builder and constructs an Operation<[`GetProfile`](crate::operation::GetProfile)>
     #[allow(clippy::let_and_return)]
@@ -8372,7 +8342,7 @@ impl GetProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8456,7 +8426,7 @@ impl GetProfileInput {
             "GetProfile",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8512,7 +8482,7 @@ pub mod get_room_input {
 #[doc(hidden)]
 pub type GetRoomInputOperationOutputAlias = crate::operation::GetRoom;
 #[doc(hidden)]
-pub type GetRoomInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRoomInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRoomInput {
     /// Consumes the builder and constructs an Operation<[`GetRoom`](crate::operation::GetRoom)>
     #[allow(clippy::let_and_return)]
@@ -8523,7 +8493,7 @@ impl GetRoomInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRoom,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8605,7 +8575,7 @@ impl GetRoomInput {
                     "GetRoom",
                     "alexaforbusiness",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8649,14 +8619,12 @@ pub mod get_room_skill_parameter_input {
             self.room_arn = input;
             self
         }
-        /// <p>The ARN of the skill from which to get the room skill parameter details.
-        /// Required.</p>
+        /// <p>The ARN of the skill from which to get the room skill parameter details. Required.</p>
         pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.skill_id = Some(input.into());
             self
         }
-        /// <p>The ARN of the skill from which to get the room skill parameter details.
-        /// Required.</p>
+        /// <p>The ARN of the skill from which to get the room skill parameter details. Required.</p>
         pub fn set_skill_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.skill_id = input;
             self
@@ -8692,7 +8660,7 @@ pub mod get_room_skill_parameter_input {
 #[doc(hidden)]
 pub type GetRoomSkillParameterInputOperationOutputAlias = crate::operation::GetRoomSkillParameter;
 #[doc(hidden)]
-pub type GetRoomSkillParameterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRoomSkillParameterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRoomSkillParameterInput {
     /// Consumes the builder and constructs an Operation<[`GetRoomSkillParameter`](crate::operation::GetRoomSkillParameter)>
     #[allow(clippy::let_and_return)]
@@ -8703,7 +8671,7 @@ impl GetRoomSkillParameterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRoomSkillParameter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8790,7 +8758,7 @@ impl GetRoomSkillParameterInput {
             "GetRoomSkillParameter",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8851,7 +8819,7 @@ pub mod get_skill_group_input {
 #[doc(hidden)]
 pub type GetSkillGroupInputOperationOutputAlias = crate::operation::GetSkillGroup;
 #[doc(hidden)]
-pub type GetSkillGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSkillGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSkillGroupInput {
     /// Consumes the builder and constructs an Operation<[`GetSkillGroup`](crate::operation::GetSkillGroup)>
     #[allow(clippy::let_and_return)]
@@ -8862,7 +8830,7 @@ impl GetSkillGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSkillGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8947,7 +8915,7 @@ impl GetSkillGroupInput {
             "GetSkillGroup",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9018,7 +8986,7 @@ pub mod list_business_report_schedules_input {
 pub type ListBusinessReportSchedulesInputOperationOutputAlias =
     crate::operation::ListBusinessReportSchedules;
 #[doc(hidden)]
-pub type ListBusinessReportSchedulesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListBusinessReportSchedulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBusinessReportSchedulesInput {
     /// Consumes the builder and constructs an Operation<[`ListBusinessReportSchedules`](crate::operation::ListBusinessReportSchedules)>
     #[allow(clippy::let_and_return)]
@@ -9029,7 +8997,7 @@ impl ListBusinessReportSchedulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBusinessReportSchedules,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9115,7 +9083,7 @@ impl ListBusinessReportSchedulesInput {
             "ListBusinessReportSchedules",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9158,14 +9126,12 @@ pub mod list_conference_providers_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of conference providers to be returned, per paginated
-        /// calls.</p>
+        /// <p>The maximum number of conference providers to be returned, per paginated calls.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of conference providers to be returned, per paginated
-        /// calls.</p>
+        /// <p>The maximum number of conference providers to be returned, per paginated calls.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -9188,7 +9154,7 @@ pub mod list_conference_providers_input {
 pub type ListConferenceProvidersInputOperationOutputAlias =
     crate::operation::ListConferenceProviders;
 #[doc(hidden)]
-pub type ListConferenceProvidersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListConferenceProvidersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListConferenceProvidersInput {
     /// Consumes the builder and constructs an Operation<[`ListConferenceProviders`](crate::operation::ListConferenceProviders)>
     #[allow(clippy::let_and_return)]
@@ -9199,7 +9165,7 @@ impl ListConferenceProvidersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListConferenceProviders,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9286,7 +9252,7 @@ impl ListConferenceProvidersInput {
             "ListConferenceProviders",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9331,18 +9297,12 @@ pub mod list_device_events_input {
             self.device_arn = input;
             self
         }
-        /// <p>The event type to filter device events. If EventType isn't specified, this returns a
-        /// list of all device events in reverse chronological order. If EventType is specified, this
-        /// returns a list of device events for that EventType in reverse chronological order.
-        /// </p>
+        /// <p>The event type to filter device events. If EventType isn't specified, this returns a list of all device events in reverse chronological order. If EventType is specified, this returns a list of device events for that EventType in reverse chronological order. </p>
         pub fn event_type(mut self, input: crate::model::DeviceEventType) -> Self {
             self.event_type = Some(input);
             self
         }
-        /// <p>The event type to filter device events. If EventType isn't specified, this returns a
-        /// list of all device events in reverse chronological order. If EventType is specified, this
-        /// returns a list of device events for that EventType in reverse chronological order.
-        /// </p>
+        /// <p>The event type to filter device events. If EventType isn't specified, this returns a list of all device events in reverse chronological order. If EventType is specified, this returns a list of device events for that EventType in reverse chronological order. </p>
         pub fn set_event_type(
             mut self,
             input: std::option::Option<crate::model::DeviceEventType>,
@@ -9350,32 +9310,22 @@ pub mod list_device_events_input {
             self.event_type = input;
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response only includes
-        /// results beyond the token, up to the value specified by MaxResults. When the end of results
-        /// is reached, the response has a value of null.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults. When the end of results is reached, the response has a value of null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response only includes
-        /// results beyond the token, up to the value specified by MaxResults. When the end of results
-        /// is reached, the response has a value of null.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults. When the end of results is reached, the response has a value of null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. The default value is 50. If
-        /// more results exist than the specified MaxResults value, a token is included in the response
-        /// so that the remaining results can be retrieved. </p>
+        /// <p>The maximum number of results to include in the response. The default value is 50. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. The default value is 50. If
-        /// more results exist than the specified MaxResults value, a token is included in the response
-        /// so that the remaining results can be retrieved. </p>
+        /// <p>The maximum number of results to include in the response. The default value is 50. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -9399,7 +9349,7 @@ pub mod list_device_events_input {
 #[doc(hidden)]
 pub type ListDeviceEventsInputOperationOutputAlias = crate::operation::ListDeviceEvents;
 #[doc(hidden)]
-pub type ListDeviceEventsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDeviceEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDeviceEventsInput {
     /// Consumes the builder and constructs an Operation<[`ListDeviceEvents`](crate::operation::ListDeviceEvents)>
     #[allow(clippy::let_and_return)]
@@ -9410,7 +9360,7 @@ impl ListDeviceEventsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDeviceEvents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9495,7 +9445,7 @@ impl ListDeviceEventsInput {
             "ListDeviceEvents",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9565,7 +9515,7 @@ pub mod list_gateway_groups_input {
 #[doc(hidden)]
 pub type ListGatewayGroupsInputOperationOutputAlias = crate::operation::ListGatewayGroups;
 #[doc(hidden)]
-pub type ListGatewayGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListGatewayGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGatewayGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListGatewayGroups`](crate::operation::ListGatewayGroups)>
     #[allow(clippy::let_and_return)]
@@ -9576,7 +9526,7 @@ impl ListGatewayGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListGatewayGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9661,7 +9611,7 @@ impl ListGatewayGroupsInput {
             "ListGatewayGroups",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9746,7 +9696,7 @@ pub mod list_gateways_input {
 #[doc(hidden)]
 pub type ListGatewaysInputOperationOutputAlias = crate::operation::ListGateways;
 #[doc(hidden)]
-pub type ListGatewaysInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListGatewaysInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGatewaysInput {
     /// Consumes the builder and constructs an Operation<[`ListGateways`](crate::operation::ListGateways)>
     #[allow(clippy::let_and_return)]
@@ -9757,7 +9707,7 @@ impl ListGatewaysInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListGateways,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9841,7 +9791,7 @@ impl ListGatewaysInput {
             "ListGateways",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9916,30 +9866,22 @@ pub mod list_skills_input {
             self.skill_type = input;
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -9964,7 +9906,7 @@ pub mod list_skills_input {
 #[doc(hidden)]
 pub type ListSkillsInputOperationOutputAlias = crate::operation::ListSkills;
 #[doc(hidden)]
-pub type ListSkillsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSkillsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSkillsInput {
     /// Consumes the builder and constructs an Operation<[`ListSkills`](crate::operation::ListSkills)>
     #[allow(clippy::let_and_return)]
@@ -9975,7 +9917,7 @@ impl ListSkillsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSkills,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10059,7 +10001,7 @@ impl ListSkillsInput {
             "ListSkills",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10130,7 +10072,7 @@ pub mod list_skills_store_categories_input {
 pub type ListSkillsStoreCategoriesInputOperationOutputAlias =
     crate::operation::ListSkillsStoreCategories;
 #[doc(hidden)]
-pub type ListSkillsStoreCategoriesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSkillsStoreCategoriesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSkillsStoreCategoriesInput {
     /// Consumes the builder and constructs an Operation<[`ListSkillsStoreCategories`](crate::operation::ListSkillsStoreCategories)>
     #[allow(clippy::let_and_return)]
@@ -10141,7 +10083,7 @@ impl ListSkillsStoreCategoriesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSkillsStoreCategories,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10228,7 +10170,7 @@ impl ListSkillsStoreCategoriesInput {
             "ListSkillsStoreCategories",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10262,14 +10204,12 @@ pub mod list_skills_store_skills_by_category_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The category ID for which the skills are being retrieved from the skill
-        /// store.</p>
+        /// <p>The category ID for which the skills are being retrieved from the skill store.</p>
         pub fn category_id(mut self, input: i64) -> Self {
             self.category_id = Some(input);
             self
         }
-        /// <p>The category ID for which the skills are being retrieved from the skill
-        /// store.</p>
+        /// <p>The category ID for which the skills are being retrieved from the skill store.</p>
         pub fn set_category_id(mut self, input: std::option::Option<i64>) -> Self {
             self.category_id = input;
             self
@@ -10313,7 +10253,8 @@ pub mod list_skills_store_skills_by_category_input {
 pub type ListSkillsStoreSkillsByCategoryInputOperationOutputAlias =
     crate::operation::ListSkillsStoreSkillsByCategory;
 #[doc(hidden)]
-pub type ListSkillsStoreSkillsByCategoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSkillsStoreSkillsByCategoryInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListSkillsStoreSkillsByCategoryInput {
     /// Consumes the builder and constructs an Operation<[`ListSkillsStoreSkillsByCategory`](crate::operation::ListSkillsStoreSkillsByCategory)>
     #[allow(clippy::let_and_return)]
@@ -10324,7 +10265,7 @@ impl ListSkillsStoreSkillsByCategoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSkillsStoreSkillsByCategory,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10410,7 +10351,7 @@ impl ListSkillsStoreSkillsByCategoryInput {
             "ListSkillsStoreSkillsByCategory",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10493,7 +10434,7 @@ pub mod list_smart_home_appliances_input {
 pub type ListSmartHomeAppliancesInputOperationOutputAlias =
     crate::operation::ListSmartHomeAppliances;
 #[doc(hidden)]
-pub type ListSmartHomeAppliancesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSmartHomeAppliancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSmartHomeAppliancesInput {
     /// Consumes the builder and constructs an Operation<[`ListSmartHomeAppliances`](crate::operation::ListSmartHomeAppliances)>
     #[allow(clippy::let_and_return)]
@@ -10504,7 +10445,7 @@ impl ListSmartHomeAppliancesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSmartHomeAppliances,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10591,7 +10532,7 @@ impl ListSmartHomeAppliancesInput {
             "ListSmartHomeAppliances",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10635,30 +10576,22 @@ pub mod list_tags_input {
             self.arn = input;
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>. </p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>. </p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -10679,7 +10612,7 @@ pub mod list_tags_input {
 #[doc(hidden)]
 pub type ListTagsInputOperationOutputAlias = crate::operation::ListTags;
 #[doc(hidden)]
-pub type ListTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsInput {
     /// Consumes the builder and constructs an Operation<[`ListTags`](crate::operation::ListTags)>
     #[allow(clippy::let_and_return)]
@@ -10690,7 +10623,7 @@ impl ListTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10772,7 +10705,7 @@ impl ListTagsInput {
                     "ListTags",
                     "alexaforbusiness",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10834,7 +10767,7 @@ pub mod put_conference_preference_input {
 pub type PutConferencePreferenceInputOperationOutputAlias =
     crate::operation::PutConferencePreference;
 #[doc(hidden)]
-pub type PutConferencePreferenceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutConferencePreferenceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutConferencePreferenceInput {
     /// Consumes the builder and constructs an Operation<[`PutConferencePreference`](crate::operation::PutConferencePreference)>
     #[allow(clippy::let_and_return)]
@@ -10845,7 +10778,7 @@ impl PutConferencePreferenceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutConferencePreference,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10932,7 +10865,7 @@ impl PutConferencePreferenceInput {
             "PutConferencePreference",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10979,14 +10912,12 @@ pub mod put_invitation_configuration_input {
             self.organization_name = input;
             self
         }
-        /// <p>The email ID of the organization or individual contact that the enrolled user can use.
-        /// </p>
+        /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
         pub fn contact_email(mut self, input: impl Into<std::string::String>) -> Self {
             self.contact_email = Some(input.into());
             self
         }
-        /// <p>The email ID of the organization or individual contact that the enrolled user can use.
-        /// </p>
+        /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
         pub fn set_contact_email(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10998,16 +10929,14 @@ pub mod put_invitation_configuration_input {
         ///
         /// To override the contents of this collection use [`set_private_skill_ids`](Self::set_private_skill_ids).
         ///
-        /// <p>The list of private skill IDs that you want to recommend to the user to enable in the
-        /// invitation.</p>
+        /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
         pub fn private_skill_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.private_skill_ids.unwrap_or_default();
             v.push(input.into());
             self.private_skill_ids = Some(v);
             self
         }
-        /// <p>The list of private skill IDs that you want to recommend to the user to enable in the
-        /// invitation.</p>
+        /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
         pub fn set_private_skill_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11034,7 +10963,7 @@ pub mod put_invitation_configuration_input {
 pub type PutInvitationConfigurationInputOperationOutputAlias =
     crate::operation::PutInvitationConfiguration;
 #[doc(hidden)]
-pub type PutInvitationConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutInvitationConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutInvitationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutInvitationConfiguration`](crate::operation::PutInvitationConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -11045,7 +10974,7 @@ impl PutInvitationConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutInvitationConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11132,7 +11061,7 @@ impl PutInvitationConfigurationInput {
             "PutInvitationConfiguration",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11217,7 +11146,7 @@ pub mod put_room_skill_parameter_input {
 #[doc(hidden)]
 pub type PutRoomSkillParameterInputOperationOutputAlias = crate::operation::PutRoomSkillParameter;
 #[doc(hidden)]
-pub type PutRoomSkillParameterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutRoomSkillParameterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutRoomSkillParameterInput {
     /// Consumes the builder and constructs an Operation<[`PutRoomSkillParameter`](crate::operation::PutRoomSkillParameter)>
     #[allow(clippy::let_and_return)]
@@ -11228,7 +11157,7 @@ impl PutRoomSkillParameterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutRoomSkillParameter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11315,7 +11244,7 @@ impl PutRoomSkillParameterInput {
             "PutRoomSkillParameter",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11355,8 +11284,7 @@ pub mod put_skill_authorization_input {
         ///
         /// To override the contents of this collection use [`set_authorization_result`](Self::set_authorization_result).
         ///
-        /// <p>The authorization result specific to OAUTH code grant output. "Code” must be
-        /// populated in the AuthorizationResult map to establish the authorization.</p>
+        /// <p>The authorization result specific to OAUTH code grant output. "Code” must be populated in the AuthorizationResult map to establish the authorization.</p>
         pub fn authorization_result(
             mut self,
             k: impl Into<std::string::String>,
@@ -11367,8 +11295,7 @@ pub mod put_skill_authorization_input {
             self.authorization_result = Some(hash_map);
             self
         }
-        /// <p>The authorization result specific to OAUTH code grant output. "Code” must be
-        /// populated in the AuthorizationResult map to establish the authorization.</p>
+        /// <p>The authorization result specific to OAUTH code grant output. "Code” must be populated in the AuthorizationResult map to establish the authorization.</p>
         pub fn set_authorization_result(
             mut self,
             input: std::option::Option<
@@ -11416,7 +11343,7 @@ pub mod put_skill_authorization_input {
 #[doc(hidden)]
 pub type PutSkillAuthorizationInputOperationOutputAlias = crate::operation::PutSkillAuthorization;
 #[doc(hidden)]
-pub type PutSkillAuthorizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutSkillAuthorizationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutSkillAuthorizationInput {
     /// Consumes the builder and constructs an Operation<[`PutSkillAuthorization`](crate::operation::PutSkillAuthorization)>
     #[allow(clippy::let_and_return)]
@@ -11427,7 +11354,7 @@ impl PutSkillAuthorizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutSkillAuthorization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11514,7 +11441,7 @@ impl PutSkillAuthorizationInput {
             "PutSkillAuthorization",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11552,28 +11479,22 @@ pub mod register_avs_device_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The client ID of the OEM used for code-based linking authorization on an AVS
-        /// device.</p>
+        /// <p>The client ID of the OEM used for code-based linking authorization on an AVS device.</p>
         pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_id = Some(input.into());
             self
         }
-        /// <p>The client ID of the OEM used for code-based linking authorization on an AVS
-        /// device.</p>
+        /// <p>The client ID of the OEM used for code-based linking authorization on an AVS device.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
         }
-        /// <p>The code that is obtained after your AVS device has made a POST request to LWA as a
-        /// part of the Device Authorization Request component of the OAuth code-based linking
-        /// specification.</p>
+        /// <p>The code that is obtained after your AVS device has made a POST request to LWA as a part of the Device Authorization Request component of the OAuth code-based linking specification.</p>
         pub fn user_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_code = Some(input.into());
             self
         }
-        /// <p>The code that is obtained after your AVS device has made a POST request to LWA as a
-        /// part of the Device Authorization Request component of the OAuth code-based linking
-        /// specification.</p>
+        /// <p>The code that is obtained after your AVS device has made a POST request to LWA as a part of the Device Authorization Request component of the OAuth code-based linking specification.</p>
         pub fn set_user_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_code = input;
             self
@@ -11588,14 +11509,12 @@ pub mod register_avs_device_input {
             self.product_id = input;
             self
         }
-        /// <p>The key generated by the OEM that uniquely identifies a specified instance of your
-        /// AVS device.</p>
+        /// <p>The key generated by the OEM that uniquely identifies a specified instance of your AVS device.</p>
         pub fn device_serial_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.device_serial_number = Some(input.into());
             self
         }
-        /// <p>The key generated by the OEM that uniquely identifies a specified instance of your
-        /// AVS device.</p>
+        /// <p>The key generated by the OEM that uniquely identifies a specified instance of your AVS device.</p>
         pub fn set_device_serial_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11603,14 +11522,12 @@ pub mod register_avs_device_input {
             self.device_serial_number = input;
             self
         }
-        /// <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new
-        /// product on Amazon's Developer Console.</p>
+        /// <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new product on Amazon's Developer Console.</p>
         pub fn amazon_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.amazon_id = Some(input.into());
             self
         }
-        /// <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new
-        /// product on Amazon's Developer Console.</p>
+        /// <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new product on Amazon's Developer Console.</p>
         pub fn set_amazon_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.amazon_id = input;
             self
@@ -11630,9 +11547,9 @@ pub mod register_avs_device_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -11666,7 +11583,7 @@ pub mod register_avs_device_input {
 #[doc(hidden)]
 pub type RegisterAvsDeviceInputOperationOutputAlias = crate::operation::RegisterAVSDevice;
 #[doc(hidden)]
-pub type RegisterAvsDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterAvsDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterAvsDeviceInput {
     /// Consumes the builder and constructs an Operation<[`RegisterAVSDevice`](crate::operation::RegisterAVSDevice)>
     #[allow(clippy::let_and_return)]
@@ -11677,7 +11594,7 @@ impl RegisterAvsDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterAVSDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11762,7 +11679,7 @@ impl RegisterAvsDeviceInput {
             "RegisterAVSDevice",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11820,7 +11737,7 @@ pub mod reject_skill_input {
 #[doc(hidden)]
 pub type RejectSkillInputOperationOutputAlias = crate::operation::RejectSkill;
 #[doc(hidden)]
-pub type RejectSkillInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RejectSkillInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RejectSkillInput {
     /// Consumes the builder and constructs an Operation<[`RejectSkill`](crate::operation::RejectSkill)>
     #[allow(clippy::let_and_return)]
@@ -11831,7 +11748,7 @@ impl RejectSkillInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RejectSkill,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11915,7 +11832,7 @@ impl RejectSkillInput {
             "RejectSkill",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11985,7 +11902,7 @@ pub mod resolve_room_input {
 #[doc(hidden)]
 pub type ResolveRoomInputOperationOutputAlias = crate::operation::ResolveRoom;
 #[doc(hidden)]
-pub type ResolveRoomInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ResolveRoomInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResolveRoomInput {
     /// Consumes the builder and constructs an Operation<[`ResolveRoom`](crate::operation::ResolveRoom)>
     #[allow(clippy::let_and_return)]
@@ -11996,7 +11913,7 @@ impl ResolveRoomInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ResolveRoom,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12080,7 +11997,7 @@ impl ResolveRoomInput {
             "ResolveRoom",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12153,7 +12070,7 @@ pub mod revoke_invitation_input {
 #[doc(hidden)]
 pub type RevokeInvitationInputOperationOutputAlias = crate::operation::RevokeInvitation;
 #[doc(hidden)]
-pub type RevokeInvitationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RevokeInvitationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RevokeInvitationInput {
     /// Consumes the builder and constructs an Operation<[`RevokeInvitation`](crate::operation::RevokeInvitation)>
     #[allow(clippy::let_and_return)]
@@ -12164,7 +12081,7 @@ impl RevokeInvitationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RevokeInvitation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12249,7 +12166,7 @@ impl RevokeInvitationInput {
             "RevokeInvitation",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12288,16 +12205,14 @@ pub mod search_address_books_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filters to use to list a specified set of address books. The supported filter key
-        /// is AddressBookName.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p>The filters to use to list a specified set of address books. The supported filter key is AddressBookName.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>The filters to use to list a specified set of address books. The supported filter key
-        /// is AddressBookName.</p>
+        /// <p>The filters to use to list a specified set of address books. The supported filter key is AddressBookName.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -12309,16 +12224,14 @@ pub mod search_address_books_input {
         ///
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
-        /// <p>The sort order to use in listing the specified set of address books. The supported
-        /// sort key is AddressBookName.</p>
-        pub fn sort_criteria(mut self, input: impl Into<crate::model::Sort>) -> Self {
+        /// <p>The sort order to use in listing the specified set of address books. The supported sort key is AddressBookName.</p>
+        pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             let mut v = self.sort_criteria.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sort_criteria = Some(v);
             self
         }
-        /// <p>The sort order to use in listing the specified set of address books. The supported
-        /// sort key is AddressBookName.</p>
+        /// <p>The sort order to use in listing the specified set of address books. The supported sort key is AddressBookName.</p>
         pub fn set_sort_criteria(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Sort>>,
@@ -12326,30 +12239,22 @@ pub mod search_address_books_input {
             self.sort_criteria = input;
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response only includes
-        /// results beyond the token, up to the value specified by MaxResults.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response only includes
-        /// results beyond the token, up to the value specified by MaxResults.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified MaxResults value, a token is included in the response so that the remaining
-        /// results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified MaxResults value, a token is included in the response so that the remaining
-        /// results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -12373,7 +12278,7 @@ pub mod search_address_books_input {
 #[doc(hidden)]
 pub type SearchAddressBooksInputOperationOutputAlias = crate::operation::SearchAddressBooks;
 #[doc(hidden)]
-pub type SearchAddressBooksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchAddressBooksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchAddressBooksInput {
     /// Consumes the builder and constructs an Operation<[`SearchAddressBooks`](crate::operation::SearchAddressBooks)>
     #[allow(clippy::let_and_return)]
@@ -12384,7 +12289,7 @@ impl SearchAddressBooksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchAddressBooks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12469,7 +12374,7 @@ impl SearchAddressBooksInput {
             "SearchAddressBooks",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12508,16 +12413,14 @@ pub mod search_contacts_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filters to use to list a specified set of address books. The supported filter
-        /// keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p>The filters to use to list a specified set of address books. The supported filter keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>The filters to use to list a specified set of address books. The supported filter
-        /// keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
+        /// <p>The filters to use to list a specified set of address books. The supported filter keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -12529,16 +12432,14 @@ pub mod search_contacts_input {
         ///
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
-        /// <p>The sort order to use in listing the specified set of contacts. The supported sort
-        /// keys are DisplayName, FirstName, and LastName.</p>
-        pub fn sort_criteria(mut self, input: impl Into<crate::model::Sort>) -> Self {
+        /// <p>The sort order to use in listing the specified set of contacts. The supported sort keys are DisplayName, FirstName, and LastName.</p>
+        pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             let mut v = self.sort_criteria.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sort_criteria = Some(v);
             self
         }
-        /// <p>The sort order to use in listing the specified set of contacts. The supported sort
-        /// keys are DisplayName, FirstName, and LastName.</p>
+        /// <p>The sort order to use in listing the specified set of contacts. The supported sort keys are DisplayName, FirstName, and LastName.</p>
         pub fn set_sort_criteria(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Sort>>,
@@ -12546,30 +12447,22 @@ pub mod search_contacts_input {
             self.sort_criteria = input;
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response only includes
-        /// results beyond the token, up to the value specified by MaxResults.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response only includes
-        /// results beyond the token, up to the value specified by MaxResults.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified MaxResults value, a token is included in the response so that the remaining
-        /// results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified MaxResults value, a token is included in the response so that the remaining
-        /// results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -12593,7 +12486,7 @@ pub mod search_contacts_input {
 #[doc(hidden)]
 pub type SearchContactsInputOperationOutputAlias = crate::operation::SearchContacts;
 #[doc(hidden)]
-pub type SearchContactsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchContactsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchContactsInput {
     /// Consumes the builder and constructs an Operation<[`SearchContacts`](crate::operation::SearchContacts)>
     #[allow(clippy::let_and_return)]
@@ -12604,7 +12497,7 @@ impl SearchContactsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchContacts,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12689,7 +12582,7 @@ impl SearchContactsInput {
             "SearchContacts",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12724,30 +12617,22 @@ pub mod search_devices_input {
         pub(crate) sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
     }
     impl Builder {
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -12756,20 +12641,14 @@ pub mod search_devices_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filters to use to list a specified set of devices. Supported filter keys are
-        /// DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber,
-        /// UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName,
-        /// NetworkProfileArn, Feature, and FailureCode.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p>The filters to use to list a specified set of devices. Supported filter keys are DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>The filters to use to list a specified set of devices. Supported filter keys are
-        /// DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber,
-        /// UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName,
-        /// NetworkProfileArn, Feature, and FailureCode.</p>
+        /// <p>The filters to use to list a specified set of devices. Supported filter keys are DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -12781,18 +12660,14 @@ pub mod search_devices_input {
         ///
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
-        /// <p>The sort order to use in listing the specified set of devices. Supported sort keys
-        /// are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus,
-        /// NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
-        pub fn sort_criteria(mut self, input: impl Into<crate::model::Sort>) -> Self {
+        /// <p>The sort order to use in listing the specified set of devices. Supported sort keys are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus, NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
+        pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             let mut v = self.sort_criteria.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sort_criteria = Some(v);
             self
         }
-        /// <p>The sort order to use in listing the specified set of devices. Supported sort keys
-        /// are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus,
-        /// NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
+        /// <p>The sort order to use in listing the specified set of devices. Supported sort keys are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus, NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
         pub fn set_sort_criteria(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Sort>>,
@@ -12819,7 +12694,7 @@ pub mod search_devices_input {
 #[doc(hidden)]
 pub type SearchDevicesInputOperationOutputAlias = crate::operation::SearchDevices;
 #[doc(hidden)]
-pub type SearchDevicesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchDevicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchDevicesInput {
     /// Consumes the builder and constructs an Operation<[`SearchDevices`](crate::operation::SearchDevices)>
     #[allow(clippy::let_and_return)]
@@ -12830,7 +12705,7 @@ impl SearchDevicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchDevices,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12914,7 +12789,7 @@ impl SearchDevicesInput {
             "SearchDevices",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12949,30 +12824,22 @@ pub mod search_network_profiles_input {
         pub(crate) sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
     }
     impl Builder {
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by MaxResults. </p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by MaxResults. </p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the
-        /// specified MaxResults value, a token is included in the response so that the remaining
-        /// results can be retrieved. </p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the
-        /// specified MaxResults value, a token is included in the response so that the remaining
-        /// results can be retrieved. </p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -12981,16 +12848,14 @@ pub mod search_network_profiles_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filters to use to list a specified set of network profiles. Valid filters are
-        /// NetworkProfileName, Ssid, and SecurityType.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p>The filters to use to list a specified set of network profiles. Valid filters are NetworkProfileName, Ssid, and SecurityType.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>The filters to use to list a specified set of network profiles. Valid filters are
-        /// NetworkProfileName, Ssid, and SecurityType.</p>
+        /// <p>The filters to use to list a specified set of network profiles. Valid filters are NetworkProfileName, Ssid, and SecurityType.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -13002,16 +12867,14 @@ pub mod search_network_profiles_input {
         ///
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
-        /// <p>The sort order to use to list the specified set of network profiles. Valid sort criteria
-        /// includes NetworkProfileName, Ssid, and SecurityType.</p>
-        pub fn sort_criteria(mut self, input: impl Into<crate::model::Sort>) -> Self {
+        /// <p>The sort order to use to list the specified set of network profiles. Valid sort criteria includes NetworkProfileName, Ssid, and SecurityType.</p>
+        pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             let mut v = self.sort_criteria.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sort_criteria = Some(v);
             self
         }
-        /// <p>The sort order to use to list the specified set of network profiles. Valid sort criteria
-        /// includes NetworkProfileName, Ssid, and SecurityType.</p>
+        /// <p>The sort order to use to list the specified set of network profiles. Valid sort criteria includes NetworkProfileName, Ssid, and SecurityType.</p>
         pub fn set_sort_criteria(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Sort>>,
@@ -13038,7 +12901,7 @@ pub mod search_network_profiles_input {
 #[doc(hidden)]
 pub type SearchNetworkProfilesInputOperationOutputAlias = crate::operation::SearchNetworkProfiles;
 #[doc(hidden)]
-pub type SearchNetworkProfilesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchNetworkProfilesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchNetworkProfilesInput {
     /// Consumes the builder and constructs an Operation<[`SearchNetworkProfiles`](crate::operation::SearchNetworkProfiles)>
     #[allow(clippy::let_and_return)]
@@ -13049,7 +12912,7 @@ impl SearchNetworkProfilesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchNetworkProfiles,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13136,7 +12999,7 @@ impl SearchNetworkProfilesInput {
             "SearchNetworkProfiles",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13171,30 +13034,22 @@ pub mod search_profiles_input {
         pub(crate) sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
     }
     impl Builder {
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -13203,16 +13058,14 @@ pub mod search_profiles_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filters to use to list a specified set of room profiles. Supported filter keys
-        /// are ProfileName and Address. Required. </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p>The filters to use to list a specified set of room profiles. Supported filter keys are ProfileName and Address. Required. </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>The filters to use to list a specified set of room profiles. Supported filter keys
-        /// are ProfileName and Address. Required. </p>
+        /// <p>The filters to use to list a specified set of room profiles. Supported filter keys are ProfileName and Address. Required. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -13224,16 +13077,14 @@ pub mod search_profiles_input {
         ///
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
-        /// <p>The sort order to use in listing the specified set of room profiles. Supported sort
-        /// keys are ProfileName and Address.</p>
-        pub fn sort_criteria(mut self, input: impl Into<crate::model::Sort>) -> Self {
+        /// <p>The sort order to use in listing the specified set of room profiles. Supported sort keys are ProfileName and Address.</p>
+        pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             let mut v = self.sort_criteria.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sort_criteria = Some(v);
             self
         }
-        /// <p>The sort order to use in listing the specified set of room profiles. Supported sort
-        /// keys are ProfileName and Address.</p>
+        /// <p>The sort order to use in listing the specified set of room profiles. Supported sort keys are ProfileName and Address.</p>
         pub fn set_sort_criteria(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Sort>>,
@@ -13260,7 +13111,7 @@ pub mod search_profiles_input {
 #[doc(hidden)]
 pub type SearchProfilesInputOperationOutputAlias = crate::operation::SearchProfiles;
 #[doc(hidden)]
-pub type SearchProfilesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchProfilesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchProfilesInput {
     /// Consumes the builder and constructs an Operation<[`SearchProfiles`](crate::operation::SearchProfiles)>
     #[allow(clippy::let_and_return)]
@@ -13271,7 +13122,7 @@ impl SearchProfilesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchProfiles,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13356,7 +13207,7 @@ impl SearchProfilesInput {
             "SearchProfiles",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13391,30 +13242,22 @@ pub mod search_rooms_input {
         pub(crate) sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
     }
     impl Builder {
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved. </p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved. </p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -13423,16 +13266,14 @@ pub mod search_rooms_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filters to use to list a specified set of rooms. The supported filter keys are
-        /// RoomName and ProfileName.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p>The filters to use to list a specified set of rooms. The supported filter keys are RoomName and ProfileName.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>The filters to use to list a specified set of rooms. The supported filter keys are
-        /// RoomName and ProfileName.</p>
+        /// <p>The filters to use to list a specified set of rooms. The supported filter keys are RoomName and ProfileName.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -13444,16 +13285,14 @@ pub mod search_rooms_input {
         ///
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
-        /// <p>The sort order to use in listing the specified set of rooms. The supported sort keys
-        /// are RoomName and ProfileName.</p>
-        pub fn sort_criteria(mut self, input: impl Into<crate::model::Sort>) -> Self {
+        /// <p>The sort order to use in listing the specified set of rooms. The supported sort keys are RoomName and ProfileName.</p>
+        pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             let mut v = self.sort_criteria.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sort_criteria = Some(v);
             self
         }
-        /// <p>The sort order to use in listing the specified set of rooms. The supported sort keys
-        /// are RoomName and ProfileName.</p>
+        /// <p>The sort order to use in listing the specified set of rooms. The supported sort keys are RoomName and ProfileName.</p>
         pub fn set_sort_criteria(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Sort>>,
@@ -13480,7 +13319,7 @@ pub mod search_rooms_input {
 #[doc(hidden)]
 pub type SearchRoomsInputOperationOutputAlias = crate::operation::SearchRooms;
 #[doc(hidden)]
-pub type SearchRoomsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchRoomsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchRoomsInput {
     /// Consumes the builder and constructs an Operation<[`SearchRooms`](crate::operation::SearchRooms)>
     #[allow(clippy::let_and_return)]
@@ -13491,7 +13330,7 @@ impl SearchRoomsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchRooms,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13575,7 +13414,7 @@ impl SearchRoomsInput {
             "SearchRooms",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13610,32 +13449,22 @@ pub mod search_skill_groups_input {
         pub(crate) sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
     }
     impl Builder {
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.
-        /// Required.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.
-        /// Required.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved. </p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved. </p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -13644,16 +13473,14 @@ pub mod search_skill_groups_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filters to use to list a specified set of skill groups. The supported filter key
-        /// is SkillGroupName. </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p>The filters to use to list a specified set of skill groups. The supported filter key is SkillGroupName. </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>The filters to use to list a specified set of skill groups. The supported filter key
-        /// is SkillGroupName. </p>
+        /// <p>The filters to use to list a specified set of skill groups. The supported filter key is SkillGroupName. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -13665,16 +13492,14 @@ pub mod search_skill_groups_input {
         ///
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
-        /// <p>The sort order to use in listing the specified set of skill groups. The supported
-        /// sort key is SkillGroupName. </p>
-        pub fn sort_criteria(mut self, input: impl Into<crate::model::Sort>) -> Self {
+        /// <p>The sort order to use in listing the specified set of skill groups. The supported sort key is SkillGroupName. </p>
+        pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             let mut v = self.sort_criteria.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sort_criteria = Some(v);
             self
         }
-        /// <p>The sort order to use in listing the specified set of skill groups. The supported
-        /// sort key is SkillGroupName. </p>
+        /// <p>The sort order to use in listing the specified set of skill groups. The supported sort key is SkillGroupName. </p>
         pub fn set_sort_criteria(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Sort>>,
@@ -13701,7 +13526,7 @@ pub mod search_skill_groups_input {
 #[doc(hidden)]
 pub type SearchSkillGroupsInputOperationOutputAlias = crate::operation::SearchSkillGroups;
 #[doc(hidden)]
-pub type SearchSkillGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchSkillGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchSkillGroupsInput {
     /// Consumes the builder and constructs an Operation<[`SearchSkillGroups`](crate::operation::SearchSkillGroups)>
     #[allow(clippy::let_and_return)]
@@ -13712,7 +13537,7 @@ impl SearchSkillGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchSkillGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13797,7 +13622,7 @@ impl SearchSkillGroupsInput {
             "SearchSkillGroups",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13832,32 +13657,22 @@ pub mod search_users_input {
         pub(crate) sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
     }
     impl Builder {
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.
-        /// Required.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.
-        /// Required.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved. Required.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved. Required.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -13866,16 +13681,14 @@ pub mod search_users_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filters to use for listing a specific set of users. Required. Supported filter
-        /// keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p>The filters to use for listing a specific set of users. Required. Supported filter keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>The filters to use for listing a specific set of users. Required. Supported filter
-        /// keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
+        /// <p>The filters to use for listing a specific set of users. Required. Supported filter keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -13887,16 +13700,14 @@ pub mod search_users_input {
         ///
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
-        /// <p>The sort order to use in listing the filtered set of users. Required. Supported sort
-        /// keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
-        pub fn sort_criteria(mut self, input: impl Into<crate::model::Sort>) -> Self {
+        /// <p>The sort order to use in listing the filtered set of users. Required. Supported sort keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
+        pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             let mut v = self.sort_criteria.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sort_criteria = Some(v);
             self
         }
-        /// <p>The sort order to use in listing the filtered set of users. Required. Supported sort
-        /// keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
+        /// <p>The sort order to use in listing the filtered set of users. Required. Supported sort keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
         pub fn set_sort_criteria(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Sort>>,
@@ -13923,7 +13734,7 @@ pub mod search_users_input {
 #[doc(hidden)]
 pub type SearchUsersInputOperationOutputAlias = crate::operation::SearchUsers;
 #[doc(hidden)]
-pub type SearchUsersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchUsersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchUsersInput {
     /// Consumes the builder and constructs an Operation<[`SearchUsers`](crate::operation::SearchUsers)>
     #[allow(clippy::let_and_return)]
@@ -13934,7 +13745,7 @@ impl SearchUsersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchUsers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14018,7 +13829,7 @@ impl SearchUsersInput {
             "SearchUsers",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14058,9 +13869,9 @@ pub mod send_announcement_input {
         /// To override the contents of this collection use [`set_room_filters`](Self::set_room_filters).
         ///
         /// <p>The filters to use to send an announcement to a specified list of rooms. The supported filter keys are RoomName, ProfileName, RoomArn, and ProfileArn. To send to all rooms, specify an empty RoomFilters list.</p>
-        pub fn room_filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn room_filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.room_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.room_filters = Some(v);
             self
         }
@@ -14082,14 +13893,12 @@ pub mod send_announcement_input {
             self.content = input;
             self
         }
-        /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the
-        /// announcement is not delivered.</p>
+        /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>
         pub fn time_to_live_in_seconds(mut self, input: i32) -> Self {
             self.time_to_live_in_seconds = Some(input);
             self
         }
-        /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the
-        /// announcement is not delivered.</p>
+        /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>
         pub fn set_time_to_live_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.time_to_live_in_seconds = input;
             self
@@ -14126,7 +13935,7 @@ pub mod send_announcement_input {
 #[doc(hidden)]
 pub type SendAnnouncementInputOperationOutputAlias = crate::operation::SendAnnouncement;
 #[doc(hidden)]
-pub type SendAnnouncementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendAnnouncementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendAnnouncementInput {
     /// Consumes the builder and constructs an Operation<[`SendAnnouncement`](crate::operation::SendAnnouncement)>
     #[allow(clippy::let_and_return)]
@@ -14137,7 +13946,7 @@ impl SendAnnouncementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendAnnouncement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14225,7 +14034,7 @@ impl SendAnnouncementInput {
             "SendAnnouncement",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14283,7 +14092,7 @@ pub mod send_invitation_input {
 #[doc(hidden)]
 pub type SendInvitationInputOperationOutputAlias = crate::operation::SendInvitation;
 #[doc(hidden)]
-pub type SendInvitationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendInvitationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendInvitationInput {
     /// Consumes the builder and constructs an Operation<[`SendInvitation`](crate::operation::SendInvitation)>
     #[allow(clippy::let_and_return)]
@@ -14294,7 +14103,7 @@ impl SendInvitationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendInvitation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14379,7 +14188,7 @@ impl SendInvitationInput {
             "SendInvitation",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14438,9 +14247,9 @@ pub mod start_device_sync_input {
         /// To override the contents of this collection use [`set_features`](Self::set_features).
         ///
         /// <p>Request structure to start the device sync. Required.</p>
-        pub fn features(mut self, input: impl Into<crate::model::Feature>) -> Self {
+        pub fn features(mut self, input: crate::model::Feature) -> Self {
             let mut v = self.features.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.features = Some(v);
             self
         }
@@ -14470,7 +14279,7 @@ pub mod start_device_sync_input {
 #[doc(hidden)]
 pub type StartDeviceSyncInputOperationOutputAlias = crate::operation::StartDeviceSync;
 #[doc(hidden)]
-pub type StartDeviceSyncInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartDeviceSyncInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartDeviceSyncInput {
     /// Consumes the builder and constructs an Operation<[`StartDeviceSync`](crate::operation::StartDeviceSync)>
     #[allow(clippy::let_and_return)]
@@ -14481,7 +14290,7 @@ impl StartDeviceSyncInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartDeviceSync,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14566,7 +14375,7 @@ impl StartDeviceSyncInput {
             "StartDeviceSync",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14625,7 +14434,8 @@ pub mod start_smart_home_appliance_discovery_input {
 pub type StartSmartHomeApplianceDiscoveryInputOperationOutputAlias =
     crate::operation::StartSmartHomeApplianceDiscovery;
 #[doc(hidden)]
-pub type StartSmartHomeApplianceDiscoveryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartSmartHomeApplianceDiscoveryInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl StartSmartHomeApplianceDiscoveryInput {
     /// Consumes the builder and constructs an Operation<[`StartSmartHomeApplianceDiscovery`](crate::operation::StartSmartHomeApplianceDiscovery)>
     #[allow(clippy::let_and_return)]
@@ -14636,7 +14446,7 @@ impl StartSmartHomeApplianceDiscoveryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartSmartHomeApplianceDiscovery,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14722,7 +14532,7 @@ impl StartSmartHomeApplianceDiscoveryInput {
             "StartSmartHomeApplianceDiscovery",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14769,16 +14579,14 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to be added to the specified resource. Do not provide system tags. Required.
-        /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>The tags to be added to the specified resource. Do not provide system tags. Required. </p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>The tags to be added to the specified resource. Do not provide system tags. Required.
-        /// </p>
+        /// <p>The tags to be added to the specified resource. Do not provide system tags. Required. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -14803,7 +14611,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -14814,7 +14622,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14898,7 +14706,7 @@ impl TagResourceInput {
             "TagResource",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14945,16 +14753,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>The tags to be removed from the specified resource. Do not provide system tags.
-        /// Required. </p>
+        /// <p>The tags to be removed from the specified resource. Do not provide system tags. Required. </p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>The tags to be removed from the specified resource. Do not provide system tags.
-        /// Required. </p>
+        /// <p>The tags to be removed from the specified resource. Do not provide system tags. Required. </p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -14979,7 +14785,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -14990,7 +14796,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15074,7 +14880,7 @@ impl UntagResourceInput {
             "UntagResource",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15159,7 +14965,7 @@ pub mod update_address_book_input {
 #[doc(hidden)]
 pub type UpdateAddressBookInputOperationOutputAlias = crate::operation::UpdateAddressBook;
 #[doc(hidden)]
-pub type UpdateAddressBookInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAddressBookInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAddressBookInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAddressBook`](crate::operation::UpdateAddressBook)>
     #[allow(clippy::let_and_return)]
@@ -15170,7 +14976,7 @@ impl UpdateAddressBookInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAddressBook,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15255,7 +15061,7 @@ impl UpdateAddressBookInput {
             "UpdateAddressBook",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15328,14 +15134,12 @@ pub mod update_business_report_schedule_input {
             self.s3_key_prefix = input;
             self
         }
-        /// <p>The format of the generated report (individual CSV files or zipped files of
-        /// individual files).</p>
+        /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
         pub fn format(mut self, input: crate::model::BusinessReportFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p>The format of the generated report (individual CSV files or zipped files of
-        /// individual files).</p>
+        /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::BusinessReportFormat>,
@@ -15391,7 +15195,8 @@ pub mod update_business_report_schedule_input {
 pub type UpdateBusinessReportScheduleInputOperationOutputAlias =
     crate::operation::UpdateBusinessReportSchedule;
 #[doc(hidden)]
-pub type UpdateBusinessReportScheduleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateBusinessReportScheduleInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBusinessReportScheduleInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBusinessReportSchedule`](crate::operation::UpdateBusinessReportSchedule)>
     #[allow(clippy::let_and_return)]
@@ -15402,7 +15207,7 @@ impl UpdateBusinessReportScheduleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateBusinessReportSchedule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15488,7 +15293,7 @@ impl UpdateBusinessReportScheduleInput {
             "UpdateBusinessReportSchedule",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15614,7 +15419,7 @@ pub mod update_conference_provider_input {
 pub type UpdateConferenceProviderInputOperationOutputAlias =
     crate::operation::UpdateConferenceProvider;
 #[doc(hidden)]
-pub type UpdateConferenceProviderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateConferenceProviderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConferenceProviderInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConferenceProvider`](crate::operation::UpdateConferenceProvider)>
     #[allow(clippy::let_and_return)]
@@ -15625,7 +15430,7 @@ impl UpdateConferenceProviderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateConferenceProvider,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15712,7 +15517,7 @@ impl UpdateConferenceProviderInput {
             "UpdateConferenceProvider",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15790,16 +15595,12 @@ pub mod update_contact_input {
             self.last_name = input;
             self
         }
-        /// <p>The updated phone number of the contact. The phone number type defaults to WORK. You
-        /// can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers,
-        /// which lets you specify the phone number type and multiple numbers.</p>
+        /// <p>The updated phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
         pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.phone_number = Some(input.into());
             self
         }
-        /// <p>The updated phone number of the contact. The phone number type defaults to WORK. You
-        /// can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers,
-        /// which lets you specify the phone number type and multiple numbers.</p>
+        /// <p>The updated phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
@@ -15809,9 +15610,9 @@ pub mod update_contact_input {
         /// To override the contents of this collection use [`set_phone_numbers`](Self::set_phone_numbers).
         ///
         /// <p>The list of phone numbers for the contact.</p>
-        pub fn phone_numbers(mut self, input: impl Into<crate::model::PhoneNumber>) -> Self {
+        pub fn phone_numbers(mut self, input: crate::model::PhoneNumber) -> Self {
             let mut v = self.phone_numbers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.phone_numbers = Some(v);
             self
         }
@@ -15828,9 +15629,9 @@ pub mod update_contact_input {
         /// To override the contents of this collection use [`set_sip_addresses`](Self::set_sip_addresses).
         ///
         /// <p>The list of SIP addresses for the contact.</p>
-        pub fn sip_addresses(mut self, input: impl Into<crate::model::SipAddress>) -> Self {
+        pub fn sip_addresses(mut self, input: crate::model::SipAddress) -> Self {
             let mut v = self.sip_addresses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sip_addresses = Some(v);
             self
         }
@@ -15864,7 +15665,7 @@ pub mod update_contact_input {
 #[doc(hidden)]
 pub type UpdateContactInputOperationOutputAlias = crate::operation::UpdateContact;
 #[doc(hidden)]
-pub type UpdateContactInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateContactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateContactInput {
     /// Consumes the builder and constructs an Operation<[`UpdateContact`](crate::operation::UpdateContact)>
     #[allow(clippy::let_and_return)]
@@ -15875,7 +15676,7 @@ impl UpdateContactInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateContact,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15959,7 +15760,7 @@ impl UpdateContactInput {
             "UpdateContact",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16029,7 +15830,7 @@ pub mod update_device_input {
 #[doc(hidden)]
 pub type UpdateDeviceInputOperationOutputAlias = crate::operation::UpdateDevice;
 #[doc(hidden)]
-pub type UpdateDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDeviceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDevice`](crate::operation::UpdateDevice)>
     #[allow(clippy::let_and_return)]
@@ -16040,7 +15841,7 @@ impl UpdateDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16124,7 +15925,7 @@ impl UpdateDeviceInput {
             "UpdateDevice",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16189,14 +15990,12 @@ pub mod update_gateway_input {
             self.description = input;
             self
         }
-        /// <p>The updated software version of the gateway. The gateway automatically updates its
-        /// software version during normal operation.</p>
+        /// <p>The updated software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
         pub fn software_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.software_version = Some(input.into());
             self
         }
-        /// <p>The updated software version of the gateway. The gateway automatically updates its
-        /// software version during normal operation.</p>
+        /// <p>The updated software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
         pub fn set_software_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16223,7 +16022,7 @@ pub mod update_gateway_input {
 #[doc(hidden)]
 pub type UpdateGatewayInputOperationOutputAlias = crate::operation::UpdateGateway;
 #[doc(hidden)]
-pub type UpdateGatewayInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGatewayInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGateway`](crate::operation::UpdateGateway)>
     #[allow(clippy::let_and_return)]
@@ -16234,7 +16033,7 @@ impl UpdateGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateGateway,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16318,7 +16117,7 @@ impl UpdateGatewayInput {
             "UpdateGateway",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16403,7 +16202,7 @@ pub mod update_gateway_group_input {
 #[doc(hidden)]
 pub type UpdateGatewayGroupInputOperationOutputAlias = crate::operation::UpdateGatewayGroup;
 #[doc(hidden)]
-pub type UpdateGatewayGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateGatewayGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGatewayGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGatewayGroup`](crate::operation::UpdateGatewayGroup)>
     #[allow(clippy::let_and_return)]
@@ -16414,7 +16213,7 @@ impl UpdateGatewayGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateGatewayGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16499,7 +16298,7 @@ impl UpdateGatewayGroupInput {
             "UpdateGatewayGroup",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16586,16 +16385,12 @@ pub mod update_network_profile_input {
             self.current_password = input;
             self
         }
-        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
-        /// transmitted to the device and is used when the password of the network changes to
-        /// NextPassword. </p>
+        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
         pub fn next_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_password = Some(input.into());
             self
         }
-        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
-        /// transmitted to the device and is used when the password of the network changes to
-        /// NextPassword. </p>
+        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
         pub fn set_next_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16603,14 +16398,12 @@ pub mod update_network_profile_input {
             self.next_password = input;
             self
         }
-        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
-        /// (ACM). This is used to issue certificates to the devices. </p>
+        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
-        /// (ACM). This is used to issue certificates to the devices. </p>
+        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16622,16 +16415,14 @@ pub mod update_network_profile_input {
         ///
         /// To override the contents of this collection use [`set_trust_anchors`](Self::set_trust_anchors).
         ///
-        /// <p>The root certificate(s) of your authentication server that will be installed on your
-        /// devices and used to trust your authentication server during EAP negotiation. </p>
+        /// <p>The root certificate(s) of your authentication server that will be installed on your devices and used to trust your authentication server during EAP negotiation. </p>
         pub fn trust_anchors(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.trust_anchors.unwrap_or_default();
             v.push(input.into());
             self.trust_anchors = Some(v);
             self
         }
-        /// <p>The root certificate(s) of your authentication server that will be installed on your
-        /// devices and used to trust your authentication server during EAP negotiation. </p>
+        /// <p>The root certificate(s) of your authentication server that will be installed on your devices and used to trust your authentication server during EAP negotiation. </p>
         pub fn set_trust_anchors(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16661,7 +16452,7 @@ pub mod update_network_profile_input {
 #[doc(hidden)]
 pub type UpdateNetworkProfileInputOperationOutputAlias = crate::operation::UpdateNetworkProfile;
 #[doc(hidden)]
-pub type UpdateNetworkProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateNetworkProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateNetworkProfileInput {
     /// Consumes the builder and constructs an Operation<[`UpdateNetworkProfile`](crate::operation::UpdateNetworkProfile)>
     #[allow(clippy::let_and_return)]
@@ -16672,7 +16463,7 @@ impl UpdateNetworkProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateNetworkProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16759,7 +16550,7 @@ impl UpdateNetworkProfileInput {
             "UpdateNetworkProfile",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16825,14 +16616,12 @@ pub mod update_profile_input {
             self.profile_name = input;
             self
         }
-        /// <p>Sets the profile as default if selected. If this is missing, no update is done to the
-        /// default status.</p>
+        /// <p>Sets the profile as default if selected. If this is missing, no update is done to the default status.</p>
         pub fn is_default(mut self, input: bool) -> Self {
             self.is_default = Some(input);
             self
         }
-        /// <p>Sets the profile as default if selected. If this is missing, no update is done to the
-        /// default status.</p>
+        /// <p>Sets the profile as default if selected. If this is missing, no update is done to the default status.</p>
         pub fn set_is_default(mut self, input: std::option::Option<bool>) -> Self {
             self.is_default = input;
             self
@@ -16988,7 +16777,7 @@ pub mod update_profile_input {
 #[doc(hidden)]
 pub type UpdateProfileInputOperationOutputAlias = crate::operation::UpdateProfile;
 #[doc(hidden)]
-pub type UpdateProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateProfileInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProfile`](crate::operation::UpdateProfile)>
     #[allow(clippy::let_and_return)]
@@ -16999,7 +16788,7 @@ impl UpdateProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17083,7 +16872,7 @@ impl UpdateProfileInput {
             "UpdateProfile",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -17192,7 +16981,7 @@ pub mod update_room_input {
 #[doc(hidden)]
 pub type UpdateRoomInputOperationOutputAlias = crate::operation::UpdateRoom;
 #[doc(hidden)]
-pub type UpdateRoomInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateRoomInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRoomInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRoom`](crate::operation::UpdateRoom)>
     #[allow(clippy::let_and_return)]
@@ -17203,7 +16992,7 @@ impl UpdateRoomInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRoom,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17287,7 +17076,7 @@ impl UpdateRoomInput {
             "UpdateRoom",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -17375,7 +17164,7 @@ pub mod update_skill_group_input {
 #[doc(hidden)]
 pub type UpdateSkillGroupInputOperationOutputAlias = crate::operation::UpdateSkillGroup;
 #[doc(hidden)]
-pub type UpdateSkillGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateSkillGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSkillGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSkillGroup`](crate::operation::UpdateSkillGroup)>
     #[allow(clippy::let_and_return)]
@@ -17386,7 +17175,7 @@ impl UpdateSkillGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSkillGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17471,7 +17260,7 @@ impl UpdateSkillGroupInput {
             "UpdateSkillGroup",
             "alexaforbusiness",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -17586,8 +17375,7 @@ pub struct UpdateProfileInput {
     pub profile_arn: std::option::Option<std::string::String>,
     /// <p>The updated name for the room profile.</p>
     pub profile_name: std::option::Option<std::string::String>,
-    /// <p>Sets the profile as default if selected. If this is missing, no update is done to the
-    /// default status.</p>
+    /// <p>Sets the profile as default if selected. If this is missing, no update is done to the default status.</p>
     pub is_default: std::option::Option<bool>,
     /// <p>The updated timezone for the room profile.</p>
     pub timezone: std::option::Option<std::string::String>,
@@ -17622,8 +17410,7 @@ impl UpdateProfileInput {
     pub fn profile_name(&self) -> std::option::Option<&str> {
         self.profile_name.as_deref()
     }
-    /// <p>Sets the profile as default if selected. If this is missing, no update is done to the
-    /// default status.</p>
+    /// <p>Sets the profile as default if selected. If this is missing, no update is done to the default status.</p>
     pub fn is_default(&self) -> std::option::Option<bool> {
         self.is_default
     }
@@ -17710,15 +17497,11 @@ pub struct UpdateNetworkProfileInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The current password of the Wi-Fi network.</p>
     pub current_password: std::option::Option<std::string::String>,
-    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
-    /// transmitted to the device and is used when the password of the network changes to
-    /// NextPassword. </p>
+    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
     pub next_password: std::option::Option<std::string::String>,
-    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
-    /// (ACM). This is used to issue certificates to the devices. </p>
+    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
     pub certificate_authority_arn: std::option::Option<std::string::String>,
-    /// <p>The root certificate(s) of your authentication server that will be installed on your
-    /// devices and used to trust your authentication server during EAP negotiation. </p>
+    /// <p>The root certificate(s) of your authentication server that will be installed on your devices and used to trust your authentication server during EAP negotiation. </p>
     pub trust_anchors: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateNetworkProfileInput {
@@ -17738,19 +17521,15 @@ impl UpdateNetworkProfileInput {
     pub fn current_password(&self) -> std::option::Option<&str> {
         self.current_password.as_deref()
     }
-    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
-    /// transmitted to the device and is used when the password of the network changes to
-    /// NextPassword. </p>
+    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
     pub fn next_password(&self) -> std::option::Option<&str> {
         self.next_password.as_deref()
     }
-    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
-    /// (ACM). This is used to issue certificates to the devices. </p>
+    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
     pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
-    /// <p>The root certificate(s) of your authentication server that will be installed on your
-    /// devices and used to trust your authentication server during EAP negotiation. </p>
+    /// <p>The root certificate(s) of your authentication server that will be installed on your devices and used to trust your authentication server during EAP negotiation. </p>
     pub fn trust_anchors(&self) -> std::option::Option<&[std::string::String]> {
         self.trust_anchors.as_deref()
     }
@@ -17814,8 +17593,7 @@ pub struct UpdateGatewayInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The updated description of the gateway.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The updated software version of the gateway. The gateway automatically updates its
-    /// software version during normal operation.</p>
+    /// <p>The updated software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
     pub software_version: std::option::Option<std::string::String>,
 }
 impl UpdateGatewayInput {
@@ -17831,8 +17609,7 @@ impl UpdateGatewayInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The updated software version of the gateway. The gateway automatically updates its
-    /// software version during normal operation.</p>
+    /// <p>The updated software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
     pub fn software_version(&self) -> std::option::Option<&str> {
         self.software_version.as_deref()
     }
@@ -17888,9 +17665,7 @@ pub struct UpdateContactInput {
     pub first_name: std::option::Option<std::string::String>,
     /// <p>The updated last name of the contact.</p>
     pub last_name: std::option::Option<std::string::String>,
-    /// <p>The updated phone number of the contact. The phone number type defaults to WORK. You
-    /// can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers,
-    /// which lets you specify the phone number type and multiple numbers.</p>
+    /// <p>The updated phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The list of phone numbers for the contact.</p>
     pub phone_numbers: std::option::Option<std::vec::Vec<crate::model::PhoneNumber>>,
@@ -17914,9 +17689,7 @@ impl UpdateContactInput {
     pub fn last_name(&self) -> std::option::Option<&str> {
         self.last_name.as_deref()
     }
-    /// <p>The updated phone number of the contact. The phone number type defaults to WORK. You
-    /// can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers,
-    /// which lets you specify the phone number type and multiple numbers.</p>
+    /// <p>The updated phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
     pub fn phone_number(&self) -> std::option::Option<&str> {
         self.phone_number.as_deref()
     }
@@ -18004,8 +17777,7 @@ pub struct UpdateBusinessReportScheduleInput {
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The S3 key where the report is delivered.</p>
     pub s3_key_prefix: std::option::Option<std::string::String>,
-    /// <p>The format of the generated report (individual CSV files or zipped files of
-    /// individual files).</p>
+    /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
     pub format: std::option::Option<crate::model::BusinessReportFormat>,
     /// <p>The name identifier of the schedule.</p>
     pub schedule_name: std::option::Option<std::string::String>,
@@ -18025,8 +17797,7 @@ impl UpdateBusinessReportScheduleInput {
     pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
-    /// <p>The format of the generated report (individual CSV files or zipped files of
-    /// individual files).</p>
+    /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
     pub fn format(&self) -> std::option::Option<&crate::model::BusinessReportFormat> {
         self.format.as_ref()
     }
@@ -18093,8 +17864,7 @@ impl std::fmt::Debug for UpdateAddressBookInput {
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource from which to remove metadata tags. Required. </p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The tags to be removed from the specified resource. Do not provide system tags.
-    /// Required. </p>
+    /// <p>The tags to be removed from the specified resource. Do not provide system tags. Required. </p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -18102,8 +17872,7 @@ impl UntagResourceInput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The tags to be removed from the specified resource. Do not provide system tags.
-    /// Required. </p>
+    /// <p>The tags to be removed from the specified resource. Do not provide system tags. Required. </p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -18123,8 +17892,7 @@ impl std::fmt::Debug for UntagResourceInput {
 pub struct TagResourceInput {
     /// <p>The ARN of the resource to which to add metadata tags. Required. </p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The tags to be added to the specified resource. Do not provide system tags. Required.
-    /// </p>
+    /// <p>The tags to be added to the specified resource. Do not provide system tags. Required. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -18132,8 +17900,7 @@ impl TagResourceInput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The tags to be added to the specified resource. Do not provide system tags. Required.
-    /// </p>
+    /// <p>The tags to be added to the specified resource. Do not provide system tags. Required. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -18232,8 +17999,7 @@ pub struct SendAnnouncementInput {
     pub room_filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The announcement content. This can contain only one of the three possible announcement types (text, SSML or audio).</p>
     pub content: std::option::Option<crate::model::Content>,
-    /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the
-    /// announcement is not delivered.</p>
+    /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>
     pub time_to_live_in_seconds: std::option::Option<i32>,
     /// <p>The unique, user-specified identifier for the request that ensures idempotency.</p>
     pub client_request_token: std::option::Option<std::string::String>,
@@ -18247,8 +18013,7 @@ impl SendAnnouncementInput {
     pub fn content(&self) -> std::option::Option<&crate::model::Content> {
         self.content.as_ref()
     }
-    /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the
-    /// announcement is not delivered.</p>
+    /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>
     pub fn time_to_live_in_seconds(&self) -> std::option::Option<i32> {
         self.time_to_live_in_seconds
     }
@@ -18272,43 +18037,29 @@ impl std::fmt::Debug for SendAnnouncementInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchUsersInput {
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by <code>MaxResults</code>.
-    /// Required.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified <code>MaxResults</code> value, a token is included in the response so that
-    /// the remaining results can be retrieved. Required.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The filters to use for listing a specific set of users. Required. Supported filter
-    /// keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
+    /// <p>The filters to use for listing a specific set of users. Required. Supported filter keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>The sort order to use in listing the filtered set of users. Required. Supported sort
-    /// keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
+    /// <p>The sort order to use in listing the filtered set of users. Required. Supported sort keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
 }
 impl SearchUsersInput {
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by <code>MaxResults</code>.
-    /// Required.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified <code>MaxResults</code> value, a token is included in the response so that
-    /// the remaining results can be retrieved. Required.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The filters to use for listing a specific set of users. Required. Supported filter
-    /// keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
+    /// <p>The filters to use for listing a specific set of users. Required. Supported filter keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>The sort order to use in listing the filtered set of users. Required. Supported sort
-    /// keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
+    /// <p>The sort order to use in listing the filtered set of users. Required. Supported sort keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
     pub fn sort_criteria(&self) -> std::option::Option<&[crate::model::Sort]> {
         self.sort_criteria.as_deref()
     }
@@ -18328,43 +18079,29 @@ impl std::fmt::Debug for SearchUsersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchSkillGroupsInput {
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by <code>MaxResults</code>.
-    /// Required.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified <code>MaxResults</code> value, a token is included in the response so that
-    /// the remaining results can be retrieved. </p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The filters to use to list a specified set of skill groups. The supported filter key
-    /// is SkillGroupName. </p>
+    /// <p>The filters to use to list a specified set of skill groups. The supported filter key is SkillGroupName. </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>The sort order to use in listing the specified set of skill groups. The supported
-    /// sort key is SkillGroupName. </p>
+    /// <p>The sort order to use in listing the specified set of skill groups. The supported sort key is SkillGroupName. </p>
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
 }
 impl SearchSkillGroupsInput {
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by <code>MaxResults</code>.
-    /// Required.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified <code>MaxResults</code> value, a token is included in the response so that
-    /// the remaining results can be retrieved. </p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The filters to use to list a specified set of skill groups. The supported filter key
-    /// is SkillGroupName. </p>
+    /// <p>The filters to use to list a specified set of skill groups. The supported filter key is SkillGroupName. </p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>The sort order to use in listing the specified set of skill groups. The supported
-    /// sort key is SkillGroupName. </p>
+    /// <p>The sort order to use in listing the specified set of skill groups. The supported sort key is SkillGroupName. </p>
     pub fn sort_criteria(&self) -> std::option::Option<&[crate::model::Sort]> {
         self.sort_criteria.as_deref()
     }
@@ -18384,41 +18121,29 @@ impl std::fmt::Debug for SearchSkillGroupsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchRoomsInput {
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified <code>MaxResults</code> value, a token is included in the response so that
-    /// the remaining results can be retrieved. </p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The filters to use to list a specified set of rooms. The supported filter keys are
-    /// RoomName and ProfileName.</p>
+    /// <p>The filters to use to list a specified set of rooms. The supported filter keys are RoomName and ProfileName.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>The sort order to use in listing the specified set of rooms. The supported sort keys
-    /// are RoomName and ProfileName.</p>
+    /// <p>The sort order to use in listing the specified set of rooms. The supported sort keys are RoomName and ProfileName.</p>
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
 }
 impl SearchRoomsInput {
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified <code>MaxResults</code> value, a token is included in the response so that
-    /// the remaining results can be retrieved. </p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The filters to use to list a specified set of rooms. The supported filter keys are
-    /// RoomName and ProfileName.</p>
+    /// <p>The filters to use to list a specified set of rooms. The supported filter keys are RoomName and ProfileName.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>The sort order to use in listing the specified set of rooms. The supported sort keys
-    /// are RoomName and ProfileName.</p>
+    /// <p>The sort order to use in listing the specified set of rooms. The supported sort keys are RoomName and ProfileName.</p>
     pub fn sort_criteria(&self) -> std::option::Option<&[crate::model::Sort]> {
         self.sort_criteria.as_deref()
     }
@@ -18438,41 +18163,29 @@ impl std::fmt::Debug for SearchRoomsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchProfilesInput {
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified <code>MaxResults</code> value, a token is included in the response so that
-    /// the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The filters to use to list a specified set of room profiles. Supported filter keys
-    /// are ProfileName and Address. Required. </p>
+    /// <p>The filters to use to list a specified set of room profiles. Supported filter keys are ProfileName and Address. Required. </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>The sort order to use in listing the specified set of room profiles. Supported sort
-    /// keys are ProfileName and Address.</p>
+    /// <p>The sort order to use in listing the specified set of room profiles. Supported sort keys are ProfileName and Address.</p>
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
 }
 impl SearchProfilesInput {
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified <code>MaxResults</code> value, a token is included in the response so that
-    /// the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The filters to use to list a specified set of room profiles. Supported filter keys
-    /// are ProfileName and Address. Required. </p>
+    /// <p>The filters to use to list a specified set of room profiles. Supported filter keys are ProfileName and Address. Required. </p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>The sort order to use in listing the specified set of room profiles. Supported sort
-    /// keys are ProfileName and Address.</p>
+    /// <p>The sort order to use in listing the specified set of room profiles. Supported sort keys are ProfileName and Address.</p>
     pub fn sort_criteria(&self) -> std::option::Option<&[crate::model::Sort]> {
         self.sort_criteria.as_deref()
     }
@@ -18492,41 +18205,29 @@ impl std::fmt::Debug for SearchProfilesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchNetworkProfilesInput {
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by MaxResults. </p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than the
-    /// specified MaxResults value, a token is included in the response so that the remaining
-    /// results can be retrieved. </p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The filters to use to list a specified set of network profiles. Valid filters are
-    /// NetworkProfileName, Ssid, and SecurityType.</p>
+    /// <p>The filters to use to list a specified set of network profiles. Valid filters are NetworkProfileName, Ssid, and SecurityType.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>The sort order to use to list the specified set of network profiles. Valid sort criteria
-    /// includes NetworkProfileName, Ssid, and SecurityType.</p>
+    /// <p>The sort order to use to list the specified set of network profiles. Valid sort criteria includes NetworkProfileName, Ssid, and SecurityType.</p>
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
 }
 impl SearchNetworkProfilesInput {
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by MaxResults. </p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than the
-    /// specified MaxResults value, a token is included in the response so that the remaining
-    /// results can be retrieved. </p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The filters to use to list a specified set of network profiles. Valid filters are
-    /// NetworkProfileName, Ssid, and SecurityType.</p>
+    /// <p>The filters to use to list a specified set of network profiles. Valid filters are NetworkProfileName, Ssid, and SecurityType.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>The sort order to use to list the specified set of network profiles. Valid sort criteria
-    /// includes NetworkProfileName, Ssid, and SecurityType.</p>
+    /// <p>The sort order to use to list the specified set of network profiles. Valid sort criteria includes NetworkProfileName, Ssid, and SecurityType.</p>
     pub fn sort_criteria(&self) -> std::option::Option<&[crate::model::Sort]> {
         self.sort_criteria.as_deref()
     }
@@ -18546,47 +18247,29 @@ impl std::fmt::Debug for SearchNetworkProfilesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchDevicesInput {
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified <code>MaxResults</code> value, a token is included in the response so that
-    /// the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The filters to use to list a specified set of devices. Supported filter keys are
-    /// DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber,
-    /// UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName,
-    /// NetworkProfileArn, Feature, and FailureCode.</p>
+    /// <p>The filters to use to list a specified set of devices. Supported filter keys are DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>The sort order to use in listing the specified set of devices. Supported sort keys
-    /// are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus,
-    /// NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
+    /// <p>The sort order to use in listing the specified set of devices. Supported sort keys are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus, NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
 }
 impl SearchDevicesInput {
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified <code>MaxResults</code> value, a token is included in the response so that
-    /// the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The filters to use to list a specified set of devices. Supported filter keys are
-    /// DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber,
-    /// UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName,
-    /// NetworkProfileArn, Feature, and FailureCode.</p>
+    /// <p>The filters to use to list a specified set of devices. Supported filter keys are DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>The sort order to use in listing the specified set of devices. Supported sort keys
-    /// are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus,
-    /// NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
+    /// <p>The sort order to use in listing the specified set of devices. Supported sort keys are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus, NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
     pub fn sort_criteria(&self) -> std::option::Option<&[crate::model::Sort]> {
         self.sort_criteria.as_deref()
     }
@@ -18606,41 +18289,29 @@ impl std::fmt::Debug for SearchDevicesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchContactsInput {
-    /// <p>The filters to use to list a specified set of address books. The supported filter
-    /// keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
+    /// <p>The filters to use to list a specified set of address books. The supported filter keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>The sort order to use in listing the specified set of contacts. The supported sort
-    /// keys are DisplayName, FirstName, and LastName.</p>
+    /// <p>The sort order to use in listing the specified set of contacts. The supported sort keys are DisplayName, FirstName, and LastName.</p>
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response only includes
-    /// results beyond the token, up to the value specified by MaxResults.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified MaxResults value, a token is included in the response so that the remaining
-    /// results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl SearchContactsInput {
-    /// <p>The filters to use to list a specified set of address books. The supported filter
-    /// keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
+    /// <p>The filters to use to list a specified set of address books. The supported filter keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>The sort order to use in listing the specified set of contacts. The supported sort
-    /// keys are DisplayName, FirstName, and LastName.</p>
+    /// <p>The sort order to use in listing the specified set of contacts. The supported sort keys are DisplayName, FirstName, and LastName.</p>
     pub fn sort_criteria(&self) -> std::option::Option<&[crate::model::Sort]> {
         self.sort_criteria.as_deref()
     }
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response only includes
-    /// results beyond the token, up to the value specified by MaxResults.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified MaxResults value, a token is included in the response so that the remaining
-    /// results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -18660,41 +18331,29 @@ impl std::fmt::Debug for SearchContactsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchAddressBooksInput {
-    /// <p>The filters to use to list a specified set of address books. The supported filter key
-    /// is AddressBookName.</p>
+    /// <p>The filters to use to list a specified set of address books. The supported filter key is AddressBookName.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>The sort order to use in listing the specified set of address books. The supported
-    /// sort key is AddressBookName.</p>
+    /// <p>The sort order to use in listing the specified set of address books. The supported sort key is AddressBookName.</p>
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::Sort>>,
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response only includes
-    /// results beyond the token, up to the value specified by MaxResults.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified MaxResults value, a token is included in the response so that the remaining
-    /// results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl SearchAddressBooksInput {
-    /// <p>The filters to use to list a specified set of address books. The supported filter key
-    /// is AddressBookName.</p>
+    /// <p>The filters to use to list a specified set of address books. The supported filter key is AddressBookName.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>The sort order to use in listing the specified set of address books. The supported
-    /// sort key is AddressBookName.</p>
+    /// <p>The sort order to use in listing the specified set of address books. The supported sort key is AddressBookName.</p>
     pub fn sort_criteria(&self) -> std::option::Option<&[crate::model::Sort]> {
         self.sort_criteria.as_deref()
     }
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response only includes
-    /// results beyond the token, up to the value specified by MaxResults.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified MaxResults value, a token is included in the response so that the remaining
-    /// results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -18791,20 +18450,15 @@ impl std::fmt::Debug for RejectSkillInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterAvsDeviceInput {
-    /// <p>The client ID of the OEM used for code-based linking authorization on an AVS
-    /// device.</p>
+    /// <p>The client ID of the OEM used for code-based linking authorization on an AVS device.</p>
     pub client_id: std::option::Option<std::string::String>,
-    /// <p>The code that is obtained after your AVS device has made a POST request to LWA as a
-    /// part of the Device Authorization Request component of the OAuth code-based linking
-    /// specification.</p>
+    /// <p>The code that is obtained after your AVS device has made a POST request to LWA as a part of the Device Authorization Request component of the OAuth code-based linking specification.</p>
     pub user_code: std::option::Option<std::string::String>,
     /// <p>The product ID used to identify your AVS device during authorization.</p>
     pub product_id: std::option::Option<std::string::String>,
-    /// <p>The key generated by the OEM that uniquely identifies a specified instance of your
-    /// AVS device.</p>
+    /// <p>The key generated by the OEM that uniquely identifies a specified instance of your AVS device.</p>
     pub device_serial_number: std::option::Option<std::string::String>,
-    /// <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new
-    /// product on Amazon's Developer Console.</p>
+    /// <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new product on Amazon's Developer Console.</p>
     pub amazon_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the room with which to associate your AVS device.</p>
     pub room_arn: std::option::Option<std::string::String>,
@@ -18812,14 +18466,11 @@ pub struct RegisterAvsDeviceInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl RegisterAvsDeviceInput {
-    /// <p>The client ID of the OEM used for code-based linking authorization on an AVS
-    /// device.</p>
+    /// <p>The client ID of the OEM used for code-based linking authorization on an AVS device.</p>
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p>The code that is obtained after your AVS device has made a POST request to LWA as a
-    /// part of the Device Authorization Request component of the OAuth code-based linking
-    /// specification.</p>
+    /// <p>The code that is obtained after your AVS device has made a POST request to LWA as a part of the Device Authorization Request component of the OAuth code-based linking specification.</p>
     pub fn user_code(&self) -> std::option::Option<&str> {
         self.user_code.as_deref()
     }
@@ -18827,13 +18478,11 @@ impl RegisterAvsDeviceInput {
     pub fn product_id(&self) -> std::option::Option<&str> {
         self.product_id.as_deref()
     }
-    /// <p>The key generated by the OEM that uniquely identifies a specified instance of your
-    /// AVS device.</p>
+    /// <p>The key generated by the OEM that uniquely identifies a specified instance of your AVS device.</p>
     pub fn device_serial_number(&self) -> std::option::Option<&str> {
         self.device_serial_number.as_deref()
     }
-    /// <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new
-    /// product on Amazon's Developer Console.</p>
+    /// <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new product on Amazon's Developer Console.</p>
     pub fn amazon_id(&self) -> std::option::Option<&str> {
         self.amazon_id.as_deref()
     }
@@ -18864,8 +18513,7 @@ impl std::fmt::Debug for RegisterAvsDeviceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutSkillAuthorizationInput {
-    /// <p>The authorization result specific to OAUTH code grant output. "Code” must be
-    /// populated in the AuthorizationResult map to establish the authorization.</p>
+    /// <p>The authorization result specific to OAUTH code grant output. "Code” must be populated in the AuthorizationResult map to establish the authorization.</p>
     pub authorization_result:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The unique identifier of a skill.</p>
@@ -18874,8 +18522,7 @@ pub struct PutSkillAuthorizationInput {
     pub room_arn: std::option::Option<std::string::String>,
 }
 impl PutSkillAuthorizationInput {
-    /// <p>The authorization result specific to OAUTH code grant output. "Code” must be
-    /// populated in the AuthorizationResult map to establish the authorization.</p>
+    /// <p>The authorization result specific to OAUTH code grant output. "Code” must be populated in the AuthorizationResult map to establish the authorization.</p>
     pub fn authorization_result(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -18942,11 +18589,9 @@ impl std::fmt::Debug for PutRoomSkillParameterInput {
 pub struct PutInvitationConfigurationInput {
     /// <p>The name of the organization sending the enrollment invite to a user.</p>
     pub organization_name: std::option::Option<std::string::String>,
-    /// <p>The email ID of the organization or individual contact that the enrolled user can use.
-    /// </p>
+    /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
     pub contact_email: std::option::Option<std::string::String>,
-    /// <p>The list of private skill IDs that you want to recommend to the user to enable in the
-    /// invitation.</p>
+    /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
     pub private_skill_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PutInvitationConfigurationInput {
@@ -18954,13 +18599,11 @@ impl PutInvitationConfigurationInput {
     pub fn organization_name(&self) -> std::option::Option<&str> {
         self.organization_name.as_deref()
     }
-    /// <p>The email ID of the organization or individual contact that the enrolled user can use.
-    /// </p>
+    /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
     pub fn contact_email(&self) -> std::option::Option<&str> {
         self.contact_email.as_deref()
     }
-    /// <p>The list of private skill IDs that you want to recommend to the user to enable in the
-    /// invitation.</p>
+    /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
     pub fn private_skill_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.private_skill_ids.as_deref()
     }
@@ -19004,13 +18647,9 @@ impl std::fmt::Debug for PutConferencePreferenceInput {
 pub struct ListTagsInput {
     /// <p>The ARN of the specified resource for which to list tags.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by <code>MaxResults</code>. </p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified <code>MaxResults</code> value, a token is included in the response so that
-    /// the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListTagsInput {
@@ -19018,15 +18657,11 @@ impl ListTagsInput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by <code>MaxResults</code>. </p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified <code>MaxResults</code> value, a token is included in the response so that
-    /// the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -19080,8 +18715,7 @@ impl std::fmt::Debug for ListSmartHomeAppliancesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSkillsStoreSkillsByCategoryInput {
-    /// <p>The category ID for which the skills are being retrieved from the skill
-    /// store.</p>
+    /// <p>The category ID for which the skills are being retrieved from the skill store.</p>
     pub category_id: std::option::Option<i64>,
     /// <p>The tokens used for pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -19089,8 +18723,7 @@ pub struct ListSkillsStoreSkillsByCategoryInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListSkillsStoreSkillsByCategoryInput {
-    /// <p>The category ID for which the skills are being retrieved from the skill
-    /// store.</p>
+    /// <p>The category ID for which the skills are being retrieved from the skill store.</p>
     pub fn category_id(&self) -> std::option::Option<i64> {
         self.category_id
     }
@@ -19151,13 +18784,9 @@ pub struct ListSkillsInput {
     pub enablement_type: std::option::Option<crate::model::EnablementTypeFilter>,
     /// <p>Whether the skill is publicly available or is a private skill.</p>
     pub skill_type: std::option::Option<crate::model::SkillTypeFilter>,
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified <code>MaxResults</code> value, a token is included in the response so that
-    /// the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListSkillsInput {
@@ -19173,15 +18802,11 @@ impl ListSkillsInput {
     pub fn skill_type(&self) -> std::option::Option<&crate::model::SkillTypeFilter> {
         self.skill_type.as_ref()
     }
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response includes only
-    /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than
-    /// the specified <code>MaxResults</code> value, a token is included in the response so that
-    /// the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -19267,19 +18892,11 @@ impl std::fmt::Debug for ListGatewayGroupsInput {
 pub struct ListDeviceEventsInput {
     /// <p>The ARN of a device.</p>
     pub device_arn: std::option::Option<std::string::String>,
-    /// <p>The event type to filter device events. If EventType isn't specified, this returns a
-    /// list of all device events in reverse chronological order. If EventType is specified, this
-    /// returns a list of device events for that EventType in reverse chronological order.
-    /// </p>
+    /// <p>The event type to filter device events. If EventType isn't specified, this returns a list of all device events in reverse chronological order. If EventType is specified, this returns a list of device events for that EventType in reverse chronological order. </p>
     pub event_type: std::option::Option<crate::model::DeviceEventType>,
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response only includes
-    /// results beyond the token, up to the value specified by MaxResults. When the end of results
-    /// is reached, the response has a value of null.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults. When the end of results is reached, the response has a value of null.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in the response. The default value is 50. If
-    /// more results exist than the specified MaxResults value, a token is included in the response
-    /// so that the remaining results can be retrieved. </p>
+    /// <p>The maximum number of results to include in the response. The default value is 50. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListDeviceEventsInput {
@@ -19287,23 +18904,15 @@ impl ListDeviceEventsInput {
     pub fn device_arn(&self) -> std::option::Option<&str> {
         self.device_arn.as_deref()
     }
-    /// <p>The event type to filter device events. If EventType isn't specified, this returns a
-    /// list of all device events in reverse chronological order. If EventType is specified, this
-    /// returns a list of device events for that EventType in reverse chronological order.
-    /// </p>
+    /// <p>The event type to filter device events. If EventType isn't specified, this returns a list of all device events in reverse chronological order. If EventType is specified, this returns a list of device events for that EventType in reverse chronological order. </p>
     pub fn event_type(&self) -> std::option::Option<&crate::model::DeviceEventType> {
         self.event_type.as_ref()
     }
-    /// <p>An optional token returned from a prior request. Use this token for pagination of
-    /// results from this action. If this parameter is specified, the response only includes
-    /// results beyond the token, up to the value specified by MaxResults. When the end of results
-    /// is reached, the response has a value of null.</p>
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults. When the end of results is reached, the response has a value of null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. The default value is 50. If
-    /// more results exist than the specified MaxResults value, a token is included in the response
-    /// so that the remaining results can be retrieved. </p>
+    /// <p>The maximum number of results to include in the response. The default value is 50. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -19325,8 +18934,7 @@ impl std::fmt::Debug for ListDeviceEventsInput {
 pub struct ListConferenceProvidersInput {
     /// <p>The tokens used for pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of conference providers to be returned, per paginated
-    /// calls.</p>
+    /// <p>The maximum number of conference providers to be returned, per paginated calls.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListConferenceProvidersInput {
@@ -19334,8 +18942,7 @@ impl ListConferenceProvidersInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of conference providers to be returned, per paginated
-    /// calls.</p>
+    /// <p>The maximum number of conference providers to be returned, per paginated calls.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -19404,8 +19011,7 @@ impl std::fmt::Debug for GetSkillGroupInput {
 pub struct GetRoomSkillParameterInput {
     /// <p>The ARN of the room from which to get the room skill parameter details. </p>
     pub room_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the skill from which to get the room skill parameter details.
-    /// Required.</p>
+    /// <p>The ARN of the skill from which to get the room skill parameter details. Required.</p>
     pub skill_id: std::option::Option<std::string::String>,
     /// <p>The room skill parameter key for which to get details. Required.</p>
     pub parameter_key: std::option::Option<std::string::String>,
@@ -19415,8 +19021,7 @@ impl GetRoomSkillParameterInput {
     pub fn room_arn(&self) -> std::option::Option<&str> {
         self.room_arn.as_deref()
     }
-    /// <p>The ARN of the skill from which to get the room skill parameter details.
-    /// Required.</p>
+    /// <p>The ARN of the skill from which to get the room skill parameter details. Required.</p>
     pub fn skill_id(&self) -> std::option::Option<&str> {
         self.skill_id.as_deref()
     }
@@ -19673,8 +19278,7 @@ impl std::fmt::Debug for ForgetSmartHomeAppliancesInput {
 pub struct DisassociateSkillGroupFromRoomInput {
     /// <p>The ARN of the skill group to disassociate from a room. Required.</p>
     pub skill_group_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the room from which the skill group is to be disassociated.
-    /// Required.</p>
+    /// <p>The ARN of the room from which the skill group is to be disassociated. Required.</p>
     pub room_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateSkillGroupFromRoomInput {
@@ -19682,8 +19286,7 @@ impl DisassociateSkillGroupFromRoomInput {
     pub fn skill_group_arn(&self) -> std::option::Option<&str> {
         self.skill_group_arn.as_deref()
     }
-    /// <p>The ARN of the room from which the skill group is to be disassociated.
-    /// Required.</p>
+    /// <p>The ARN of the room from which the skill group is to be disassociated. Required.</p>
     pub fn room_arn(&self) -> std::option::Option<&str> {
         self.room_arn.as_deref()
     }
@@ -20136,8 +19739,7 @@ pub struct CreateUserInput {
     pub last_name: std::option::Option<std::string::String>,
     /// <p>The email address for the user.</p>
     pub email: std::option::Option<std::string::String>,
-    /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-    /// </p>
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags for the user.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -20159,8 +19761,7 @@ impl CreateUserInput {
     pub fn email(&self) -> std::option::Option<&str> {
         self.email.as_deref()
     }
-    /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-    /// </p>
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -20190,8 +19791,7 @@ pub struct CreateSkillGroupInput {
     pub skill_group_name: std::option::Option<std::string::String>,
     /// <p>The description for the skill group.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-    /// </p>
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags for the skill group.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -20205,8 +19805,7 @@ impl CreateSkillGroupInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-    /// </p>
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -20238,8 +19837,7 @@ pub struct CreateRoomInput {
     pub profile_arn: std::option::Option<std::string::String>,
     /// <p>The calendar ARN for the room.</p>
     pub provider_calendar_id: std::option::Option<std::string::String>,
-    /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-    /// </p>
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags for the room.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -20261,8 +19859,7 @@ impl CreateRoomInput {
     pub fn provider_calendar_id(&self) -> std::option::Option<&str> {
         self.provider_calendar_id.as_deref()
     }
-    /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-    /// </p>
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -20412,23 +20009,17 @@ pub struct CreateNetworkProfileInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The SSID of the Wi-Fi network.</p>
     pub ssid: std::option::Option<std::string::String>,
-    /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK,
-    /// WEP, or OPEN.</p>
+    /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
     pub security_type: std::option::Option<crate::model::NetworkSecurityType>,
-    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is
-    /// supported.</p>
+    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
     pub eap_method: std::option::Option<crate::model::NetworkEapMethod>,
     /// <p>The current password of the Wi-Fi network.</p>
     pub current_password: std::option::Option<std::string::String>,
-    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
-    /// transmitted to the device and is used when the password of the network changes to
-    /// NextPassword. </p>
+    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
     pub next_password: std::option::Option<std::string::String>,
-    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
-    /// (ACM). This is used to issue certificates to the devices. </p>
+    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
     pub certificate_authority_arn: std::option::Option<std::string::String>,
-    /// <p>The root certificates of your authentication server that is installed on your devices
-    /// and used to trust your authentication server during EAP negotiation. </p>
+    /// <p>The root certificates of your authentication server that is installed on your devices and used to trust your authentication server during EAP negotiation. </p>
     pub trust_anchors: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
     pub client_request_token: std::option::Option<std::string::String>,
@@ -20448,13 +20039,11 @@ impl CreateNetworkProfileInput {
     pub fn ssid(&self) -> std::option::Option<&str> {
         self.ssid.as_deref()
     }
-    /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK,
-    /// WEP, or OPEN.</p>
+    /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
     pub fn security_type(&self) -> std::option::Option<&crate::model::NetworkSecurityType> {
         self.security_type.as_ref()
     }
-    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is
-    /// supported.</p>
+    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
     pub fn eap_method(&self) -> std::option::Option<&crate::model::NetworkEapMethod> {
         self.eap_method.as_ref()
     }
@@ -20462,19 +20051,15 @@ impl CreateNetworkProfileInput {
     pub fn current_password(&self) -> std::option::Option<&str> {
         self.current_password.as_deref()
     }
-    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
-    /// transmitted to the device and is used when the password of the network changes to
-    /// NextPassword. </p>
+    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
     pub fn next_password(&self) -> std::option::Option<&str> {
         self.next_password.as_deref()
     }
-    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
-    /// (ACM). This is used to issue certificates to the devices. </p>
+    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
     pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
-    /// <p>The root certificates of your authentication server that is installed on your devices
-    /// and used to trust your authentication server during EAP negotiation. </p>
+    /// <p>The root certificates of your authentication server that is installed on your devices and used to trust your authentication server during EAP negotiation. </p>
     pub fn trust_anchors(&self) -> std::option::Option<&[std::string::String]> {
         self.trust_anchors.as_deref()
     }
@@ -20553,22 +20138,17 @@ impl std::fmt::Debug for CreateGatewayGroupInput {
 pub struct CreateContactInput {
     /// <p>The name of the contact to display on the console.</p>
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>The first name of the contact that is used to call the contact on the
-    /// device.</p>
+    /// <p>The first name of the contact that is used to call the contact on the device.</p>
     pub first_name: std::option::Option<std::string::String>,
-    /// <p>The last name of the contact that is used to call the contact on the
-    /// device.</p>
+    /// <p>The last name of the contact that is used to call the contact on the device.</p>
     pub last_name: std::option::Option<std::string::String>,
-    /// <p>The phone number of the contact in E.164 format. The phone number type defaults to
-    /// WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers,
-    /// which lets you specify the phone number type and multiple numbers.</p>
+    /// <p>The phone number of the contact in E.164 format. The phone number type defaults to WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The list of phone numbers for the contact.</p>
     pub phone_numbers: std::option::Option<std::vec::Vec<crate::model::PhoneNumber>>,
     /// <p>The list of SIP addresses for the contact.</p>
     pub sip_addresses: std::option::Option<std::vec::Vec<crate::model::SipAddress>>,
-    /// <p>A unique, user-specified identifier for this request that ensures
-    /// idempotency.</p>
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -20578,19 +20158,15 @@ impl CreateContactInput {
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The first name of the contact that is used to call the contact on the
-    /// device.</p>
+    /// <p>The first name of the contact that is used to call the contact on the device.</p>
     pub fn first_name(&self) -> std::option::Option<&str> {
         self.first_name.as_deref()
     }
-    /// <p>The last name of the contact that is used to call the contact on the
-    /// device.</p>
+    /// <p>The last name of the contact that is used to call the contact on the device.</p>
     pub fn last_name(&self) -> std::option::Option<&str> {
         self.last_name.as_deref()
     }
-    /// <p>The phone number of the contact in E.164 format. The phone number type defaults to
-    /// WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers,
-    /// which lets you specify the phone number type and multiple numbers.</p>
+    /// <p>The phone number of the contact in E.164 format. The phone number type defaults to WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
     pub fn phone_number(&self) -> std::option::Option<&str> {
         self.phone_number.as_deref()
     }
@@ -20602,8 +20178,7 @@ impl CreateContactInput {
     pub fn sip_addresses(&self) -> std::option::Option<&[crate::model::SipAddress]> {
         self.sip_addresses.as_deref()
     }
-    /// <p>A unique, user-specified identifier for this request that ensures
-    /// idempotency.</p>
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -20698,18 +20273,15 @@ impl std::fmt::Debug for CreateConferenceProviderInput {
 pub struct CreateBusinessReportScheduleInput {
     /// <p>The name identifier of the schedule.</p>
     pub schedule_name: std::option::Option<std::string::String>,
-    /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be
-    /// retrieved from a download link by calling ListBusinessReportSchedule. </p>
+    /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The S3 key where the report is delivered.</p>
     pub s3_key_prefix: std::option::Option<std::string::String>,
-    /// <p>The format of the generated report (individual CSV files or zipped files of
-    /// individual files).</p>
+    /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
     pub format: std::option::Option<crate::model::BusinessReportFormat>,
     /// <p>The content range of the reports.</p>
     pub content_range: std::option::Option<crate::model::BusinessReportContentRange>,
-    /// <p>The recurrence of the reports. If this isn't specified, the report will only be
-    /// delivered one time when the API is called. </p>
+    /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
     pub recurrence: std::option::Option<crate::model::BusinessReportRecurrence>,
     /// <p>The client request token.</p>
     pub client_request_token: std::option::Option<std::string::String>,
@@ -20721,8 +20293,7 @@ impl CreateBusinessReportScheduleInput {
     pub fn schedule_name(&self) -> std::option::Option<&str> {
         self.schedule_name.as_deref()
     }
-    /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be
-    /// retrieved from a download link by calling ListBusinessReportSchedule. </p>
+    /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
     pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
@@ -20730,8 +20301,7 @@ impl CreateBusinessReportScheduleInput {
     pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
-    /// <p>The format of the generated report (individual CSV files or zipped files of
-    /// individual files).</p>
+    /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
     pub fn format(&self) -> std::option::Option<&crate::model::BusinessReportFormat> {
         self.format.as_ref()
     }
@@ -20739,8 +20309,7 @@ impl CreateBusinessReportScheduleInput {
     pub fn content_range(&self) -> std::option::Option<&crate::model::BusinessReportContentRange> {
         self.content_range.as_ref()
     }
-    /// <p>The recurrence of the reports. If this isn't specified, the report will only be
-    /// delivered one time when the API is called. </p>
+    /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
     pub fn recurrence(&self) -> std::option::Option<&crate::model::BusinessReportRecurrence> {
         self.recurrence.as_ref()
     }
@@ -20776,8 +20345,7 @@ pub struct CreateAddressBookInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the address book.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A unique, user-specified identifier for the request that ensures
-    /// idempotency.</p>
+    /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -20791,8 +20359,7 @@ impl CreateAddressBookInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A unique, user-specified identifier for the request that ensures
-    /// idempotency.</p>
+    /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }

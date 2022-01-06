@@ -14,14 +14,11 @@ pub struct AcceptAdministratorInvitationError {
 pub enum AcceptAdministratorInvitationErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -75,8 +72,6 @@ impl AcceptAdministratorInvitationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -163,14 +158,11 @@ pub struct AcceptInvitationError {
 pub enum AcceptInvitationErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -219,8 +211,6 @@ impl AcceptInvitationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -302,14 +292,11 @@ pub struct BatchDisableStandardsError {
 pub enum BatchDisableStandardsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -355,8 +342,6 @@ impl BatchDisableStandardsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -433,14 +418,11 @@ pub struct BatchEnableStandardsError {
 pub enum BatchEnableStandardsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -486,8 +468,6 @@ impl BatchEnableStandardsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -564,14 +544,11 @@ pub struct BatchImportFindingsError {
 pub enum BatchImportFindingsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -617,8 +594,6 @@ impl BatchImportFindingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -695,14 +670,11 @@ pub struct BatchUpdateFindingsError {
 pub enum BatchUpdateFindingsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -748,8 +720,6 @@ impl BatchUpdateFindingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -826,14 +796,11 @@ pub struct CreateActionTargetError {
 pub enum CreateActionTargetErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource specified in the request conflicts with an existing resource.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
@@ -882,8 +849,6 @@ impl CreateActionTargetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -970,14 +935,11 @@ pub enum CreateFindingAggregatorErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1024,8 +986,6 @@ impl CreateFindingAggregatorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1110,14 +1070,11 @@ pub struct CreateInsightError {
 pub enum CreateInsightErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource specified in the request conflicts with an existing resource.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
@@ -1166,8 +1123,6 @@ impl CreateInsightError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1246,14 +1201,11 @@ pub struct CreateMembersError {
 pub enum CreateMembersErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource specified in the request conflicts with an existing resource.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
@@ -1302,8 +1254,6 @@ impl CreateMembersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1382,11 +1332,9 @@ pub struct DeclineInvitationsError {
 pub enum DeclineInvitationsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1434,8 +1382,6 @@ impl DeclineInvitationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1512,11 +1458,9 @@ pub struct DeleteActionTargetError {
 pub enum DeleteActionTargetErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1564,8 +1508,6 @@ impl DeleteActionTargetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1644,14 +1586,11 @@ pub enum DeleteFindingAggregatorErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1701,8 +1640,6 @@ impl DeleteFindingAggregatorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1795,14 +1732,11 @@ pub struct DeleteInsightError {
 pub enum DeleteInsightErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1851,8 +1785,6 @@ impl DeleteInsightError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1931,14 +1863,11 @@ pub struct DeleteInvitationsError {
 pub enum DeleteInvitationsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1987,8 +1916,6 @@ impl DeleteInvitationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2070,14 +1997,11 @@ pub struct DeleteMembersError {
 pub enum DeleteMembersErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2126,8 +2050,6 @@ impl DeleteMembersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2206,11 +2128,9 @@ pub struct DescribeActionTargetsError {
 pub enum DescribeActionTargetsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2258,8 +2178,6 @@ impl DescribeActionTargetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2336,14 +2254,11 @@ pub struct DescribeHubError {
 pub enum DescribeHubErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2392,8 +2307,6 @@ impl DescribeHubError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2466,14 +2379,11 @@ pub struct DescribeOrganizationConfigurationError {
 pub enum DescribeOrganizationConfigurationErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2528,8 +2438,6 @@ impl DescribeOrganizationConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2612,14 +2520,11 @@ pub struct DescribeProductsError {
 pub enum DescribeProductsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2665,8 +2570,6 @@ impl DescribeProductsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2740,11 +2643,9 @@ pub struct DescribeStandardsError {
 pub enum DescribeStandardsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2789,8 +2690,6 @@ impl DescribeStandardsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2856,11 +2755,9 @@ pub struct DescribeStandardsControlsError {
 pub enum DescribeStandardsControlsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2908,8 +2805,6 @@ impl DescribeStandardsControlsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2986,14 +2881,11 @@ pub struct DisableImportFindingsForProductError {
 pub enum DisableImportFindingsForProductErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3053,8 +2945,6 @@ impl DisableImportFindingsForProductError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3145,14 +3035,11 @@ pub struct DisableOrganizationAdminAccountError {
 pub enum DisableOrganizationAdminAccountErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3207,8 +3094,6 @@ impl DisableOrganizationAdminAccountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3289,11 +3174,9 @@ pub struct DisableSecurityHubError {
 pub enum DisableSecurityHubErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3341,8 +3224,6 @@ impl DisableSecurityHubError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3419,14 +3300,11 @@ pub struct DisassociateFromAdministratorAccountError {
 pub enum DisassociateFromAdministratorAccountErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3488,8 +3366,6 @@ impl DisassociateFromAdministratorAccountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3586,14 +3462,11 @@ pub struct DisassociateFromMasterAccountError {
 pub enum DisassociateFromMasterAccountErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3647,8 +3520,6 @@ impl DisassociateFromMasterAccountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3735,14 +3606,11 @@ pub struct DisassociateMembersError {
 pub enum DisassociateMembersErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3791,8 +3659,6 @@ impl DisassociateMembersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3877,14 +3743,11 @@ pub struct EnableImportFindingsForProductError {
 pub enum EnableImportFindingsForProductErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource specified in the request conflicts with an existing resource.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
@@ -3942,8 +3805,6 @@ impl EnableImportFindingsForProductError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4030,14 +3891,11 @@ pub struct EnableOrganizationAdminAccountError {
 pub enum EnableOrganizationAdminAccountErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4090,8 +3948,6 @@ impl EnableOrganizationAdminAccountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4170,11 +4026,9 @@ pub enum EnableSecurityHubErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource specified in the request conflicts with an existing resource.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
@@ -4223,8 +4077,6 @@ impl EnableSecurityHubError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4306,14 +4158,11 @@ pub struct GetAdministratorAccountError {
 pub enum GetAdministratorAccountErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4362,8 +4211,6 @@ impl GetAdministratorAccountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4448,14 +4295,11 @@ pub struct GetEnabledStandardsError {
 pub enum GetEnabledStandardsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4501,8 +4345,6 @@ impl GetEnabledStandardsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4581,14 +4423,11 @@ pub enum GetFindingAggregatorErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4638,8 +4477,6 @@ impl GetFindingAggregatorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4732,14 +4569,11 @@ pub struct GetFindingsError {
 pub enum GetFindingsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4785,8 +4619,6 @@ impl GetFindingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4851,14 +4683,11 @@ pub struct GetInsightResultsError {
 pub enum GetInsightResultsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4907,8 +4736,6 @@ impl GetInsightResultsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4990,14 +4817,11 @@ pub struct GetInsightsError {
 pub enum GetInsightsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5046,8 +4870,6 @@ impl GetInsightsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5120,14 +4942,11 @@ pub struct GetInvitationsCountError {
 pub enum GetInvitationsCountErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5173,8 +4992,6 @@ impl GetInvitationsCountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5251,14 +5068,11 @@ pub struct GetMasterAccountError {
 pub enum GetMasterAccountErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5307,8 +5121,6 @@ impl GetMasterAccountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5390,14 +5202,11 @@ pub struct GetMembersError {
 pub enum GetMembersErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5446,8 +5255,6 @@ impl GetMembersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5520,14 +5327,11 @@ pub struct InviteMembersError {
 pub enum InviteMembersErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5576,8 +5380,6 @@ impl InviteMembersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5656,11 +5458,9 @@ pub struct ListEnabledProductsForImportError {
 pub enum ListEnabledProductsForImportErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5705,8 +5505,6 @@ impl ListEnabledProductsForImportError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5777,14 +5575,11 @@ pub enum ListFindingAggregatorsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5831,8 +5626,6 @@ impl ListFindingAggregatorsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5917,14 +5710,11 @@ pub struct ListInvitationsError {
 pub enum ListInvitationsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5970,8 +5760,6 @@ impl ListInvitationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6045,14 +5833,11 @@ pub struct ListMembersError {
 pub enum ListMembersErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6098,8 +5883,6 @@ impl ListMembersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6164,14 +5947,11 @@ pub struct ListOrganizationAdminAccountsError {
 pub enum ListOrganizationAdminAccountsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6220,8 +6000,6 @@ impl ListOrganizationAdminAccountsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6298,8 +6076,7 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6346,8 +6123,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6416,8 +6191,7 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6464,8 +6238,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6528,8 +6300,7 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6576,8 +6347,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6640,11 +6409,9 @@ pub struct UpdateActionTargetError {
 pub enum UpdateActionTargetErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6692,8 +6459,6 @@ impl UpdateActionTargetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6772,14 +6537,11 @@ pub enum UpdateFindingAggregatorErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6829,8 +6591,6 @@ impl UpdateFindingAggregatorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6923,14 +6683,11 @@ pub struct UpdateFindingsError {
 pub enum UpdateFindingsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6979,8 +6736,6 @@ impl UpdateFindingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7062,14 +6817,11 @@ pub struct UpdateInsightError {
 pub enum UpdateInsightErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7118,8 +6870,6 @@ impl UpdateInsightError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7198,14 +6948,11 @@ pub struct UpdateOrganizationConfigurationError {
 pub enum UpdateOrganizationConfigurationErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7260,8 +7007,6 @@ impl UpdateOrganizationConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7342,14 +7087,11 @@ pub struct UpdateSecurityHubConfigurationError {
 pub enum UpdateSecurityHubConfigurationErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7407,8 +7149,6 @@ impl UpdateSecurityHubConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7495,11 +7235,9 @@ pub struct UpdateStandardsControlError {
 pub enum UpdateStandardsControlErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7547,8 +7285,6 @@ impl UpdateStandardsControlError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7695,8 +7431,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-/// input parameter.</p>
+/// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInputException {
@@ -7781,8 +7516,7 @@ impl InvalidInputException {
     }
 }
 
-/// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-/// for the account, or the account does not have permission to perform this action.</p>
+/// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAccessException {
@@ -7952,8 +7686,7 @@ impl InternalException {
     }
 }
 
-/// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-/// account or throttling limits. The error code describes the limit exceeded.</p>
+/// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {

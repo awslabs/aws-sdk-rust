@@ -3,8 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>Your request was throttled because you have exceeded the limit of allowed client
-    /// calls. Try making the call later.</p>
+    /// <p>Your request was throttled because you have exceeded the limit of allowed client calls. Try making the call later.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -14,9 +13,7 @@ pub enum Error {
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>The specified resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>If the client session is expired. Once the client is connected, the session is valid
-    /// for 45 minutes. Client should reconnect to the channel to continue sending/receiving
-    /// messages.</p>
+    /// <p>If the client session is expired. Once the client is connected, the session is valid for 45 minutes. Client should reconnect to the channel to continue sending/receiving messages.</p>
     SessionExpiredException(crate::error::SessionExpiredException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

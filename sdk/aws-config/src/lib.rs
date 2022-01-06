@@ -14,6 +14,7 @@
 //! an AWS service client.
 //!
 //! # Examples
+//!
 //! Load default SDK configuration:
 //! ```no_run
 //! # mod aws_sdk_dynamodb {
@@ -30,7 +31,6 @@
 //!
 //! Load SDK configuration with a region override:
 //! ```no_run
-//! use aws_config::meta::region::RegionProviderChain;
 //! # mod aws_sdk_dynamodb {
 //! #   pub struct Client;
 //! #   impl Client {
@@ -38,6 +38,7 @@
 //! #   }
 //! # }
 //! # async fn docs() {
+//! # use aws_config::meta::region::RegionProviderChain;
 //! let region_provider = RegionProviderChain::default_provider().or_else("us-east-1");
 //! let config = aws_config::from_env().region(region_provider).load().await;
 //! let client = aws_sdk_dynamodb::Client::new(&config);
@@ -48,44 +49,33 @@
 const PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
 
 /// Providers that implement the default AWS provider chain
-#[cfg(feature = "default-provider")]
 pub mod default_provider;
 
-#[cfg(feature = "environment")]
 /// Providers that load configuration from environment variables
 pub mod environment;
 
 /// Meta-providers that augment existing providers with new behavior
-#[cfg(feature = "meta")]
 pub mod meta;
 
-#[cfg(feature = "profile")]
 pub mod profile;
 
-#[cfg(feature = "sts")]
 pub mod sts;
 
 #[cfg(test)]
 mod test_case;
 
-#[cfg(feature = "web-identity-token")]
 pub mod web_identity_token;
 
-#[cfg(feature = "http-provider")]
 pub mod ecs;
 
 pub mod provider_config;
 
-#[cfg(any(feature = "meta", feature = "default-provider"))]
 mod cache;
 
-#[cfg(feature = "imds")]
 pub mod imds;
 
-#[cfg(any(feature = "http-provider", feature = "imds"))]
 mod json_credentials;
 
-#[cfg(feature = "http-provider")]
 mod http_provider;
 
 // Re-export types from smithy-types
@@ -105,7 +95,6 @@ pub use aws_types::config::Config;
 /// let config = aws_config::from_env().region("us-east-1").load().await;
 /// # }
 /// ```
-#[cfg(feature = "default-provider")]
 pub fn from_env() -> ConfigLoader {
     ConfigLoader::default()
 }
@@ -113,16 +102,13 @@ pub fn from_env() -> ConfigLoader {
 /// Load a default configuration from the environment
 ///
 /// Convenience wrapper equivalent to `aws_config::from_env().load().await`
-#[cfg(feature = "default-provider")]
 pub async fn load_from_env() -> aws_types::config::Config {
     from_env().load().await
 }
 
-#[cfg(feature = "default-provider")]
 /// Load default sources for all configuration with override support
 pub use loader::ConfigLoader;
 
-#[cfg(feature = "default-provider")]
 mod loader {
     use std::sync::Arc;
 
@@ -135,6 +121,7 @@ mod loader {
 
     use crate::default_provider::{app_name, credentials, region, retry_config, timeout_config};
     use crate::meta::region::ProvideRegion;
+    use crate::provider_config::ProviderConfig;
 
     /// Load a cross-service [`Config`](aws_types::config::Config) from the environment
     ///
@@ -150,6 +137,7 @@ mod loader {
         retry_config: Option<RetryConfig>,
         sleep: Option<Arc<dyn AsyncSleep>>,
         timeout_config: Option<TimeoutConfig>,
+        provider_config: Option<ProviderConfig>,
     }
 
     impl ConfigLoader {
@@ -239,6 +227,29 @@ mod loader {
             self
         }
 
+        /// Set configuration for all sub-loaders (credentials, region etc.)
+        ///
+        /// Update the `ProviderConfig` used for all nested loaders. This can be used to override
+        /// the HTTPs` connector used or to stub in an in memory `Env` or `Fs` for testing.
+        ///
+        /// # Examples
+        /// ```no_run
+        /// # async fn docs() {
+        /// use aws_config::provider_config::ProviderConfig;
+        /// let custom_https_connector = hyper_rustls::HttpsConnectorBuilder::new().
+        ///     with_webpki_roots()
+        ///     .https_only()
+        ///     .enable_http1()
+        ///     .build();
+        /// let provider_config = ProviderConfig::default().with_tcp_connector(custom_https_connector);
+        /// let shared_config = aws_config::from_env().configure(provider_config).load().await;
+        /// # }
+        /// ```
+        pub fn configure(mut self, provider_config: ProviderConfig) -> Self {
+            self.provider_config = Some(provider_config);
+            self
+        }
+
         /// Load the default configuration chain
         ///
         /// If fields have been overridden during builder construction, the override values will be used.
@@ -249,28 +260,42 @@ mod loader {
         /// This means that if you provide a region provider that does not return a region, no region will
         /// be set in the resulting [`Config`](aws_types::config::Config)
         pub async fn load(self) -> aws_types::config::Config {
+            let conf = self.provider_config.unwrap_or_default();
             let region = if let Some(provider) = self.region {
                 provider.region().await
             } else {
-                region::default_provider().region().await
+                region::Builder::default()
+                    .configure(&conf)
+                    .build()
+                    .region()
+                    .await
             };
 
             let retry_config = if let Some(retry_config) = self.retry_config {
                 retry_config
             } else {
-                retry_config::default_provider().retry_config().await
+                retry_config::default_provider()
+                    .configure(&conf)
+                    .retry_config()
+                    .await
             };
 
             let app_name = if self.app_name.is_some() {
                 self.app_name
             } else {
-                app_name::default_provider().app_name().await
+                app_name::default_provider()
+                    .configure(&conf)
+                    .app_name()
+                    .await
             };
 
             let timeout_config = if let Some(timeout_config) = self.timeout_config {
                 timeout_config
             } else {
-                timeout_config::default_provider().timeout_config().await
+                timeout_config::default_provider()
+                    .configure(&conf)
+                    .timeout_config()
+                    .await
             };
 
             let sleep_impl = if self.sleep.is_none() {
@@ -291,7 +316,7 @@ mod loader {
             let credentials_provider = if let Some(provider) = self.credentials_provider {
                 provider
             } else {
-                let mut builder = credentials::DefaultCredentialsChain::builder();
+                let mut builder = credentials::DefaultCredentialsChain::builder().configure(conf);
                 builder.set_region(region.clone());
                 SharedCredentialsProvider::new(builder.build().await)
             };
@@ -305,6 +330,46 @@ mod loader {
             builder.set_app_name(app_name);
             builder.set_sleep_impl(sleep_impl);
             builder.build()
+        }
+    }
+
+    #[cfg(test)]
+    mod test {
+        use crate::from_env;
+        use crate::provider_config::ProviderConfig;
+        use aws_smithy_client::erase::DynConnector;
+        use aws_smithy_client::never::NeverConnector;
+        use aws_types::credentials::ProvideCredentials;
+        use aws_types::os_shim_internal::Env;
+
+        #[tokio::test]
+        async fn provider_config_used() {
+            let env = Env::from_slice(&[
+                ("AWS_MAX_ATTEMPTS", "10"),
+                ("AWS_REGION", "us-west-4"),
+                ("AWS_ACCESS_KEY_ID", "akid"),
+                ("AWS_SECRET_ACCESS_KEY", "secret"),
+            ]);
+            let loader = from_env()
+                .configure(
+                    ProviderConfig::empty()
+                        .with_env(env)
+                        .with_http_connector(DynConnector::new(NeverConnector::new())),
+                )
+                .load()
+                .await;
+            assert_eq!(loader.retry_config().unwrap().max_attempts(), 10);
+            assert_eq!(loader.region().unwrap().as_ref(), "us-west-4");
+            assert_eq!(
+                loader
+                    .credentials_provider()
+                    .unwrap()
+                    .provide_credentials()
+                    .await
+                    .unwrap()
+                    .access_key_id(),
+                "akid"
+            );
         }
     }
 }

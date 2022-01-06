@@ -14,17 +14,13 @@ pub struct CreateHomeRegionControlError {
 pub enum CreateHomeRegionControlErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Exception raised to indicate that authorization of an action was successful, when the
-    /// <code>DryRun</code> flag is set to true.</p>
+    /// <p>Exception raised to indicate that authorization of an action was successful, when the <code>DryRun</code> flag is set to true.</p>
     DryRunOperation(crate::error::DryRunOperation),
-    /// <p>Exception raised when an internal, configuration, or dependency error is
-    /// encountered.</p>
+    /// <p>Exception raised when an internal, configuration, or dependency error is encountered.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Exception raised when the provided input violates a policy constraint or is entered in the
-    /// wrong format or data type.</p>
+    /// <p>Exception raised when the provided input violates a policy constraint or is entered in the wrong format or data type.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>Exception raised when a request fails due to temporary unavailability of the
-    /// service.</p>
+    /// <p>Exception raised when a request fails due to temporary unavailability of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -74,8 +70,6 @@ impl CreateHomeRegionControlError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -168,14 +162,11 @@ pub struct DescribeHomeRegionControlsError {
 pub enum DescribeHomeRegionControlsErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Exception raised when an internal, configuration, or dependency error is
-    /// encountered.</p>
+    /// <p>Exception raised when an internal, configuration, or dependency error is encountered.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Exception raised when the provided input violates a policy constraint or is entered in the
-    /// wrong format or data type.</p>
+    /// <p>Exception raised when the provided input violates a policy constraint or is entered in the wrong format or data type.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>Exception raised when a request fails due to temporary unavailability of the
-    /// service.</p>
+    /// <p>Exception raised when a request fails due to temporary unavailability of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -226,8 +217,6 @@ impl DescribeHomeRegionControlsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -314,14 +303,11 @@ pub struct GetHomeRegionError {
 pub enum GetHomeRegionErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Exception raised when an internal, configuration, or dependency error is
-    /// encountered.</p>
+    /// <p>Exception raised when an internal, configuration, or dependency error is encountered.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Exception raised when the provided input violates a policy constraint or is entered in the
-    /// wrong format or data type.</p>
+    /// <p>Exception raised when the provided input violates a policy constraint or is entered in the wrong format or data type.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>Exception raised when a request fails due to temporary unavailability of the
-    /// service.</p>
+    /// <p>Exception raised when a request fails due to temporary unavailability of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -370,8 +356,6 @@ impl GetHomeRegionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -514,8 +498,7 @@ impl ThrottlingException {
     }
 }
 
-/// <p>Exception raised when a request fails due to temporary unavailability of the
-/// service.</p>
+/// <p>Exception raised when a request fails due to temporary unavailability of the service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUnavailableException {
@@ -579,8 +562,7 @@ impl ServiceUnavailableException {
     }
 }
 
-/// <p>Exception raised when the provided input violates a policy constraint or is entered in the
-/// wrong format or data type.</p>
+/// <p>Exception raised when the provided input violates a policy constraint or is entered in the wrong format or data type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInputException {
@@ -644,8 +626,7 @@ impl InvalidInputException {
     }
 }
 
-/// <p>Exception raised when an internal, configuration, or dependency error is
-/// encountered.</p>
+/// <p>Exception raised when an internal, configuration, or dependency error is encountered.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerError {
@@ -773,8 +754,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>Exception raised to indicate that authorization of an action was successful, when the
-/// <code>DryRun</code> flag is set to true.</p>
+/// <p>Exception raised to indicate that authorization of an action was successful, when the <code>DryRun</code> flag is set to true.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DryRunOperation {

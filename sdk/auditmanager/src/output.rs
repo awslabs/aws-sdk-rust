@@ -7,8 +7,7 @@ pub struct ValidateAssessmentReportIntegrityOutput {
     pub signature_valid: std::option::Option<bool>,
     /// <p> The signature algorithm that's used to code sign the assessment report file. </p>
     pub signature_algorithm: std::option::Option<std::string::String>,
-    /// <p> The date and time signature that specifies when the assessment report was created.
-    /// </p>
+    /// <p> The date and time signature that specifies when the assessment report was created. </p>
     pub signature_date_time: std::option::Option<std::string::String>,
     /// <p> The unique identifier for the validation signature key. </p>
     pub signature_key_id: std::option::Option<std::string::String>,
@@ -24,8 +23,7 @@ impl ValidateAssessmentReportIntegrityOutput {
     pub fn signature_algorithm(&self) -> std::option::Option<&str> {
         self.signature_algorithm.as_deref()
     }
-    /// <p> The date and time signature that specifies when the assessment report was created.
-    /// </p>
+    /// <p> The date and time signature that specifies when the assessment report was created. </p>
     pub fn signature_date_time(&self) -> std::option::Option<&str> {
         self.signature_date_time.as_deref()
     }
@@ -85,14 +83,12 @@ pub mod validate_assessment_report_integrity_output {
             self.signature_algorithm = input;
             self
         }
-        /// <p> The date and time signature that specifies when the assessment report was created.
-        /// </p>
+        /// <p> The date and time signature that specifies when the assessment report was created. </p>
         pub fn signature_date_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.signature_date_time = Some(input.into());
             self
         }
-        /// <p> The date and time signature that specifies when the assessment report was created.
-        /// </p>
+        /// <p> The date and time signature that specifies when the assessment report was created. </p>
         pub fn set_signature_date_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -209,13 +205,11 @@ impl UpdateSettingsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateControlOutput {
-    /// <p> The name of the updated control set that the <code>UpdateControl</code> API returned.
-    /// </p>
+    /// <p> The name of the updated control set that the <code>UpdateControl</code> API returned. </p>
     pub control: std::option::Option<crate::model::Control>,
 }
 impl UpdateControlOutput {
-    /// <p> The name of the updated control set that the <code>UpdateControl</code> API returned.
-    /// </p>
+    /// <p> The name of the updated control set that the <code>UpdateControl</code> API returned. </p>
     pub fn control(&self) -> std::option::Option<&crate::model::Control> {
         self.control.as_ref()
     }
@@ -236,14 +230,12 @@ pub mod update_control_output {
         pub(crate) control: std::option::Option<crate::model::Control>,
     }
     impl Builder {
-        /// <p> The name of the updated control set that the <code>UpdateControl</code> API returned.
-        /// </p>
+        /// <p> The name of the updated control set that the <code>UpdateControl</code> API returned. </p>
         pub fn control(mut self, input: crate::model::Control) -> Self {
             self.control = Some(input);
             self
         }
-        /// <p> The name of the updated control set that the <code>UpdateControl</code> API returned.
-        /// </p>
+        /// <p> The name of the updated control set that the <code>UpdateControl</code> API returned. </p>
         pub fn set_control(mut self, input: std::option::Option<crate::model::Control>) -> Self {
             self.control = input;
             self
@@ -267,13 +259,11 @@ impl UpdateControlOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssessmentStatusOutput {
-    /// <p> The name of the updated assessment that the <code>UpdateAssessmentStatus</code> API
-    /// returned. </p>
+    /// <p> The name of the updated assessment that the <code>UpdateAssessmentStatus</code> API returned. </p>
     pub assessment: std::option::Option<crate::model::Assessment>,
 }
 impl UpdateAssessmentStatusOutput {
-    /// <p> The name of the updated assessment that the <code>UpdateAssessmentStatus</code> API
-    /// returned. </p>
+    /// <p> The name of the updated assessment that the <code>UpdateAssessmentStatus</code> API returned. </p>
     pub fn assessment(&self) -> std::option::Option<&crate::model::Assessment> {
         self.assessment.as_ref()
     }
@@ -294,14 +284,12 @@ pub mod update_assessment_status_output {
         pub(crate) assessment: std::option::Option<crate::model::Assessment>,
     }
     impl Builder {
-        /// <p> The name of the updated assessment that the <code>UpdateAssessmentStatus</code> API
-        /// returned. </p>
+        /// <p> The name of the updated assessment that the <code>UpdateAssessmentStatus</code> API returned. </p>
         pub fn assessment(mut self, input: crate::model::Assessment) -> Self {
             self.assessment = Some(input);
             self
         }
-        /// <p> The name of the updated assessment that the <code>UpdateAssessmentStatus</code> API
-        /// returned. </p>
+        /// <p> The name of the updated assessment that the <code>UpdateAssessmentStatus</code> API returned. </p>
         pub fn set_assessment(
             mut self,
             input: std::option::Option<crate::model::Assessment>,
@@ -328,14 +316,12 @@ impl UpdateAssessmentStatusOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssessmentFrameworkShareOutput {
-    /// <p> The updated share request that's returned by the
-    /// <code>UpdateAssessmentFrameworkShare</code> operation. </p>
+    /// <p> The updated share request that's returned by the <code>UpdateAssessmentFrameworkShare</code> operation. </p>
     pub assessment_framework_share_request:
         std::option::Option<crate::model::AssessmentFrameworkShareRequest>,
 }
 impl UpdateAssessmentFrameworkShareOutput {
-    /// <p> The updated share request that's returned by the
-    /// <code>UpdateAssessmentFrameworkShare</code> operation. </p>
+    /// <p> The updated share request that's returned by the <code>UpdateAssessmentFrameworkShare</code> operation. </p>
     pub fn assessment_framework_share_request(
         &self,
     ) -> std::option::Option<&crate::model::AssessmentFrameworkShareRequest> {
@@ -362,8 +348,7 @@ pub mod update_assessment_framework_share_output {
             std::option::Option<crate::model::AssessmentFrameworkShareRequest>,
     }
     impl Builder {
-        /// <p> The updated share request that's returned by the
-        /// <code>UpdateAssessmentFrameworkShare</code> operation. </p>
+        /// <p> The updated share request that's returned by the <code>UpdateAssessmentFrameworkShare</code> operation. </p>
         pub fn assessment_framework_share_request(
             mut self,
             input: crate::model::AssessmentFrameworkShareRequest,
@@ -371,8 +356,7 @@ pub mod update_assessment_framework_share_output {
             self.assessment_framework_share_request = Some(input);
             self
         }
-        /// <p> The updated share request that's returned by the
-        /// <code>UpdateAssessmentFrameworkShare</code> operation. </p>
+        /// <p> The updated share request that's returned by the <code>UpdateAssessmentFrameworkShare</code> operation. </p>
         pub fn set_assessment_framework_share_request(
             mut self,
             input: std::option::Option<crate::model::AssessmentFrameworkShareRequest>,
@@ -456,13 +440,11 @@ impl UpdateAssessmentFrameworkOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssessmentControlSetStatusOutput {
-    /// <p> The name of the updated control set that the
-    /// <code>UpdateAssessmentControlSetStatus</code> API returned. </p>
+    /// <p> The name of the updated control set that the <code>UpdateAssessmentControlSetStatus</code> API returned. </p>
     pub control_set: std::option::Option<crate::model::AssessmentControlSet>,
 }
 impl UpdateAssessmentControlSetStatusOutput {
-    /// <p> The name of the updated control set that the
-    /// <code>UpdateAssessmentControlSetStatus</code> API returned. </p>
+    /// <p> The name of the updated control set that the <code>UpdateAssessmentControlSetStatus</code> API returned. </p>
     pub fn control_set(&self) -> std::option::Option<&crate::model::AssessmentControlSet> {
         self.control_set.as_ref()
     }
@@ -483,14 +465,12 @@ pub mod update_assessment_control_set_status_output {
         pub(crate) control_set: std::option::Option<crate::model::AssessmentControlSet>,
     }
     impl Builder {
-        /// <p> The name of the updated control set that the
-        /// <code>UpdateAssessmentControlSetStatus</code> API returned. </p>
+        /// <p> The name of the updated control set that the <code>UpdateAssessmentControlSetStatus</code> API returned. </p>
         pub fn control_set(mut self, input: crate::model::AssessmentControlSet) -> Self {
             self.control_set = Some(input);
             self
         }
-        /// <p> The name of the updated control set that the
-        /// <code>UpdateAssessmentControlSetStatus</code> API returned. </p>
+        /// <p> The name of the updated control set that the <code>UpdateAssessmentControlSetStatus</code> API returned. </p>
         pub fn set_control_set(
             mut self,
             input: std::option::Option<crate::model::AssessmentControlSet>,
@@ -517,13 +497,11 @@ impl UpdateAssessmentControlSetStatusOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssessmentControlOutput {
-    /// <p> The name of the updated control set that the <code>UpdateAssessmentControl</code> API
-    /// returned. </p>
+    /// <p> The name of the updated control set that the <code>UpdateAssessmentControl</code> API returned. </p>
     pub control: std::option::Option<crate::model::AssessmentControl>,
 }
 impl UpdateAssessmentControlOutput {
-    /// <p> The name of the updated control set that the <code>UpdateAssessmentControl</code> API
-    /// returned. </p>
+    /// <p> The name of the updated control set that the <code>UpdateAssessmentControl</code> API returned. </p>
     pub fn control(&self) -> std::option::Option<&crate::model::AssessmentControl> {
         self.control.as_ref()
     }
@@ -544,14 +522,12 @@ pub mod update_assessment_control_output {
         pub(crate) control: std::option::Option<crate::model::AssessmentControl>,
     }
     impl Builder {
-        /// <p> The name of the updated control set that the <code>UpdateAssessmentControl</code> API
-        /// returned. </p>
+        /// <p> The name of the updated control set that the <code>UpdateAssessmentControl</code> API returned. </p>
         pub fn control(mut self, input: crate::model::AssessmentControl) -> Self {
             self.control = Some(input);
             self
         }
-        /// <p> The name of the updated control set that the <code>UpdateAssessmentControl</code> API
-        /// returned. </p>
+        /// <p> The name of the updated control set that the <code>UpdateAssessmentControl</code> API returned. </p>
         pub fn set_control(
             mut self,
             input: std::option::Option<crate::model::AssessmentControl>,
@@ -578,13 +554,11 @@ impl UpdateAssessmentControlOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssessmentOutput {
-    /// <p> The response object for the <code>UpdateAssessmentRequest</code> API. This is the name
-    /// of the updated assessment.</p>
+    /// <p> The response object for the <code>UpdateAssessmentRequest</code> API. This is the name of the updated assessment.</p>
     pub assessment: std::option::Option<crate::model::Assessment>,
 }
 impl UpdateAssessmentOutput {
-    /// <p> The response object for the <code>UpdateAssessmentRequest</code> API. This is the name
-    /// of the updated assessment.</p>
+    /// <p> The response object for the <code>UpdateAssessmentRequest</code> API. This is the name of the updated assessment.</p>
     pub fn assessment(&self) -> std::option::Option<&crate::model::Assessment> {
         self.assessment.as_ref()
     }
@@ -605,14 +579,12 @@ pub mod update_assessment_output {
         pub(crate) assessment: std::option::Option<crate::model::Assessment>,
     }
     impl Builder {
-        /// <p> The response object for the <code>UpdateAssessmentRequest</code> API. This is the name
-        /// of the updated assessment.</p>
+        /// <p> The response object for the <code>UpdateAssessmentRequest</code> API. This is the name of the updated assessment.</p>
         pub fn assessment(mut self, input: crate::model::Assessment) -> Self {
             self.assessment = Some(input);
             self
         }
-        /// <p> The response object for the <code>UpdateAssessmentRequest</code> API. This is the name
-        /// of the updated assessment.</p>
+        /// <p> The response object for the <code>UpdateAssessmentRequest</code> API. This is the name of the updated assessment.</p>
         pub fn set_assessment(
             mut self,
             input: std::option::Option<crate::model::Assessment>,
@@ -699,14 +671,12 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartAssessmentFrameworkShareOutput {
-    /// <p> The share request that's created by the <code>StartAssessmentFrameworkShare</code> API.
-    /// </p>
+    /// <p> The share request that's created by the <code>StartAssessmentFrameworkShare</code> API. </p>
     pub assessment_framework_share_request:
         std::option::Option<crate::model::AssessmentFrameworkShareRequest>,
 }
 impl StartAssessmentFrameworkShareOutput {
-    /// <p> The share request that's created by the <code>StartAssessmentFrameworkShare</code> API.
-    /// </p>
+    /// <p> The share request that's created by the <code>StartAssessmentFrameworkShare</code> API. </p>
     pub fn assessment_framework_share_request(
         &self,
     ) -> std::option::Option<&crate::model::AssessmentFrameworkShareRequest> {
@@ -733,8 +703,7 @@ pub mod start_assessment_framework_share_output {
             std::option::Option<crate::model::AssessmentFrameworkShareRequest>,
     }
     impl Builder {
-        /// <p> The share request that's created by the <code>StartAssessmentFrameworkShare</code> API.
-        /// </p>
+        /// <p> The share request that's created by the <code>StartAssessmentFrameworkShare</code> API. </p>
         pub fn assessment_framework_share_request(
             mut self,
             input: crate::model::AssessmentFrameworkShareRequest,
@@ -742,8 +711,7 @@ pub mod start_assessment_framework_share_output {
             self.assessment_framework_share_request = Some(input);
             self
         }
-        /// <p> The share request that's created by the <code>StartAssessmentFrameworkShare</code> API.
-        /// </p>
+        /// <p> The share request that's created by the <code>StartAssessmentFrameworkShare</code> API. </p>
         pub fn set_assessment_framework_share_request(
             mut self,
             input: std::option::Option<crate::model::AssessmentFrameworkShareRequest>,
@@ -1017,9 +985,9 @@ pub mod list_notifications_output {
         /// To override the contents of this collection use [`set_notifications`](Self::set_notifications).
         ///
         /// <p> The returned list of notifications. </p>
-        pub fn notifications(mut self, input: impl Into<crate::model::Notification>) -> Self {
+        pub fn notifications(mut self, input: crate::model::Notification) -> Self {
             let mut v = self.notifications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.notifications = Some(v);
             self
         }
@@ -1143,15 +1111,13 @@ impl ListKeywordsForDataSourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListControlsOutput {
-    /// <p> The list of control metadata objects that the <code>ListControls</code> API returned.
-    /// </p>
+    /// <p> The list of control metadata objects that the <code>ListControls</code> API returned. </p>
     pub control_metadata_list: std::option::Option<std::vec::Vec<crate::model::ControlMetadata>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListControlsOutput {
-    /// <p> The list of control metadata objects that the <code>ListControls</code> API returned.
-    /// </p>
+    /// <p> The list of control metadata objects that the <code>ListControls</code> API returned. </p>
     pub fn control_metadata_list(&self) -> std::option::Option<&[crate::model::ControlMetadata]> {
         self.control_metadata_list.as_deref()
     }
@@ -1183,19 +1149,14 @@ pub mod list_controls_output {
         ///
         /// To override the contents of this collection use [`set_control_metadata_list`](Self::set_control_metadata_list).
         ///
-        /// <p> The list of control metadata objects that the <code>ListControls</code> API returned.
-        /// </p>
-        pub fn control_metadata_list(
-            mut self,
-            input: impl Into<crate::model::ControlMetadata>,
-        ) -> Self {
+        /// <p> The list of control metadata objects that the <code>ListControls</code> API returned. </p>
+        pub fn control_metadata_list(mut self, input: crate::model::ControlMetadata) -> Self {
             let mut v = self.control_metadata_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.control_metadata_list = Some(v);
             self
         }
-        /// <p> The list of control metadata objects that the <code>ListControls</code> API returned.
-        /// </p>
+        /// <p> The list of control metadata objects that the <code>ListControls</code> API returned. </p>
         pub fn set_control_metadata_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ControlMetadata>>,
@@ -1233,16 +1194,14 @@ impl ListControlsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListControlInsightsByControlDomainOutput {
-    /// <p>The control analytics data that the <code>ListControlInsightsByControlDomain</code> API
-    /// returned. </p>
+    /// <p>The control analytics data that the <code>ListControlInsightsByControlDomain</code> API returned. </p>
     pub control_insights_metadata:
         std::option::Option<std::vec::Vec<crate::model::ControlInsightsMetadataItem>>,
     /// <p>The pagination token that's used to fetch the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListControlInsightsByControlDomainOutput {
-    /// <p>The control analytics data that the <code>ListControlInsightsByControlDomain</code> API
-    /// returned. </p>
+    /// <p>The control analytics data that the <code>ListControlInsightsByControlDomain</code> API returned. </p>
     pub fn control_insights_metadata(
         &self,
     ) -> std::option::Option<&[crate::model::ControlInsightsMetadataItem]> {
@@ -1276,19 +1235,17 @@ pub mod list_control_insights_by_control_domain_output {
         ///
         /// To override the contents of this collection use [`set_control_insights_metadata`](Self::set_control_insights_metadata).
         ///
-        /// <p>The control analytics data that the <code>ListControlInsightsByControlDomain</code> API
-        /// returned. </p>
+        /// <p>The control analytics data that the <code>ListControlInsightsByControlDomain</code> API returned. </p>
         pub fn control_insights_metadata(
             mut self,
-            input: impl Into<crate::model::ControlInsightsMetadataItem>,
+            input: crate::model::ControlInsightsMetadataItem,
         ) -> Self {
             let mut v = self.control_insights_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.control_insights_metadata = Some(v);
             self
         }
-        /// <p>The control analytics data that the <code>ListControlInsightsByControlDomain</code> API
-        /// returned. </p>
+        /// <p>The control analytics data that the <code>ListControlInsightsByControlDomain</code> API returned. </p>
         pub fn set_control_insights_metadata(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ControlInsightsMetadataItem>>,
@@ -1326,16 +1283,14 @@ impl ListControlInsightsByControlDomainOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListControlDomainInsightsByAssessmentOutput {
-    /// <p>The control domain analytics data that the
-    /// <code>ListControlDomainInsightsByAssessment</code> API returned. </p>
+    /// <p>The control domain analytics data that the <code>ListControlDomainInsightsByAssessment</code> API returned. </p>
     pub control_domain_insights:
         std::option::Option<std::vec::Vec<crate::model::ControlDomainInsights>>,
     /// <p>The pagination token that's used to fetch the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListControlDomainInsightsByAssessmentOutput {
-    /// <p>The control domain analytics data that the
-    /// <code>ListControlDomainInsightsByAssessment</code> API returned. </p>
+    /// <p>The control domain analytics data that the <code>ListControlDomainInsightsByAssessment</code> API returned. </p>
     pub fn control_domain_insights(
         &self,
     ) -> std::option::Option<&[crate::model::ControlDomainInsights]> {
@@ -1369,19 +1324,17 @@ pub mod list_control_domain_insights_by_assessment_output {
         ///
         /// To override the contents of this collection use [`set_control_domain_insights`](Self::set_control_domain_insights).
         ///
-        /// <p>The control domain analytics data that the
-        /// <code>ListControlDomainInsightsByAssessment</code> API returned. </p>
+        /// <p>The control domain analytics data that the <code>ListControlDomainInsightsByAssessment</code> API returned. </p>
         pub fn control_domain_insights(
             mut self,
-            input: impl Into<crate::model::ControlDomainInsights>,
+            input: crate::model::ControlDomainInsights,
         ) -> Self {
             let mut v = self.control_domain_insights.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.control_domain_insights = Some(v);
             self
         }
-        /// <p>The control domain analytics data that the
-        /// <code>ListControlDomainInsightsByAssessment</code> API returned. </p>
+        /// <p>The control domain analytics data that the <code>ListControlDomainInsightsByAssessment</code> API returned. </p>
         pub fn set_control_domain_insights(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ControlDomainInsights>>,
@@ -1419,16 +1372,14 @@ impl ListControlDomainInsightsByAssessmentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListControlDomainInsightsOutput {
-    /// <p>The control domain analytics data that the <code>ListControlDomainInsights</code> API
-    /// returned. </p>
+    /// <p>The control domain analytics data that the <code>ListControlDomainInsights</code> API returned. </p>
     pub control_domain_insights:
         std::option::Option<std::vec::Vec<crate::model::ControlDomainInsights>>,
     /// <p>The pagination token that's used to fetch the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListControlDomainInsightsOutput {
-    /// <p>The control domain analytics data that the <code>ListControlDomainInsights</code> API
-    /// returned. </p>
+    /// <p>The control domain analytics data that the <code>ListControlDomainInsights</code> API returned. </p>
     pub fn control_domain_insights(
         &self,
     ) -> std::option::Option<&[crate::model::ControlDomainInsights]> {
@@ -1462,19 +1413,17 @@ pub mod list_control_domain_insights_output {
         ///
         /// To override the contents of this collection use [`set_control_domain_insights`](Self::set_control_domain_insights).
         ///
-        /// <p>The control domain analytics data that the <code>ListControlDomainInsights</code> API
-        /// returned. </p>
+        /// <p>The control domain analytics data that the <code>ListControlDomainInsights</code> API returned. </p>
         pub fn control_domain_insights(
             mut self,
-            input: impl Into<crate::model::ControlDomainInsights>,
+            input: crate::model::ControlDomainInsights,
         ) -> Self {
             let mut v = self.control_domain_insights.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.control_domain_insights = Some(v);
             self
         }
-        /// <p>The control domain analytics data that the <code>ListControlDomainInsights</code> API
-        /// returned. </p>
+        /// <p>The control domain analytics data that the <code>ListControlDomainInsights</code> API returned. </p>
         pub fn set_control_domain_insights(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ControlDomainInsights>>,
@@ -1554,12 +1503,9 @@ pub mod list_assessments_output {
         /// To override the contents of this collection use [`set_assessment_metadata`](Self::set_assessment_metadata).
         ///
         /// <p> The metadata that's associated with the assessment. </p>
-        pub fn assessment_metadata(
-            mut self,
-            input: impl Into<crate::model::AssessmentMetadataItem>,
-        ) -> Self {
+        pub fn assessment_metadata(mut self, input: crate::model::AssessmentMetadataItem) -> Self {
             let mut v = self.assessment_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.assessment_metadata = Some(v);
             self
         }
@@ -1601,16 +1547,14 @@ impl ListAssessmentsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssessmentReportsOutput {
-    /// <p> The list of assessment reports that the <code>ListAssessmentReports</code> API
-    /// returned. </p>
+    /// <p> The list of assessment reports that the <code>ListAssessmentReports</code> API returned. </p>
     pub assessment_reports:
         std::option::Option<std::vec::Vec<crate::model::AssessmentReportMetadata>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssessmentReportsOutput {
-    /// <p> The list of assessment reports that the <code>ListAssessmentReports</code> API
-    /// returned. </p>
+    /// <p> The list of assessment reports that the <code>ListAssessmentReports</code> API returned. </p>
     pub fn assessment_reports(
         &self,
     ) -> std::option::Option<&[crate::model::AssessmentReportMetadata]> {
@@ -1644,19 +1588,14 @@ pub mod list_assessment_reports_output {
         ///
         /// To override the contents of this collection use [`set_assessment_reports`](Self::set_assessment_reports).
         ///
-        /// <p> The list of assessment reports that the <code>ListAssessmentReports</code> API
-        /// returned. </p>
-        pub fn assessment_reports(
-            mut self,
-            input: impl Into<crate::model::AssessmentReportMetadata>,
-        ) -> Self {
+        /// <p> The list of assessment reports that the <code>ListAssessmentReports</code> API returned. </p>
+        pub fn assessment_reports(mut self, input: crate::model::AssessmentReportMetadata) -> Self {
             let mut v = self.assessment_reports.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.assessment_reports = Some(v);
             self
         }
-        /// <p> The list of assessment reports that the <code>ListAssessmentReports</code> API
-        /// returned. </p>
+        /// <p> The list of assessment reports that the <code>ListAssessmentReports</code> API returned. </p>
         pub fn set_assessment_reports(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AssessmentReportMetadata>>,
@@ -1694,16 +1633,14 @@ impl ListAssessmentReportsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssessmentFrameworkShareRequestsOutput {
-    /// <p> The list of share requests that the <code>ListAssessmentFrameworkShareRequests</code>
-    /// API returned. </p>
+    /// <p> The list of share requests that the <code>ListAssessmentFrameworkShareRequests</code> API returned. </p>
     pub assessment_framework_share_requests:
         std::option::Option<std::vec::Vec<crate::model::AssessmentFrameworkShareRequest>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssessmentFrameworkShareRequestsOutput {
-    /// <p> The list of share requests that the <code>ListAssessmentFrameworkShareRequests</code>
-    /// API returned. </p>
+    /// <p> The list of share requests that the <code>ListAssessmentFrameworkShareRequests</code> API returned. </p>
     pub fn assessment_framework_share_requests(
         &self,
     ) -> std::option::Option<&[crate::model::AssessmentFrameworkShareRequest]> {
@@ -1740,19 +1677,17 @@ pub mod list_assessment_framework_share_requests_output {
         ///
         /// To override the contents of this collection use [`set_assessment_framework_share_requests`](Self::set_assessment_framework_share_requests).
         ///
-        /// <p> The list of share requests that the <code>ListAssessmentFrameworkShareRequests</code>
-        /// API returned. </p>
+        /// <p> The list of share requests that the <code>ListAssessmentFrameworkShareRequests</code> API returned. </p>
         pub fn assessment_framework_share_requests(
             mut self,
-            input: impl Into<crate::model::AssessmentFrameworkShareRequest>,
+            input: crate::model::AssessmentFrameworkShareRequest,
         ) -> Self {
             let mut v = self.assessment_framework_share_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.assessment_framework_share_requests = Some(v);
             self
         }
-        /// <p> The list of share requests that the <code>ListAssessmentFrameworkShareRequests</code>
-        /// API returned. </p>
+        /// <p> The list of share requests that the <code>ListAssessmentFrameworkShareRequests</code> API returned. </p>
         pub fn set_assessment_framework_share_requests(
             mut self,
             input: std::option::Option<
@@ -1836,10 +1771,10 @@ pub mod list_assessment_frameworks_output {
         /// <p> The list of metadata objects for the framework. </p>
         pub fn framework_metadata_list(
             mut self,
-            input: impl Into<crate::model::AssessmentFrameworkMetadata>,
+            input: crate::model::AssessmentFrameworkMetadata,
         ) -> Self {
             let mut v = self.framework_metadata_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.framework_metadata_list = Some(v);
             self
         }
@@ -1881,16 +1816,14 @@ impl ListAssessmentFrameworksOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssessmentControlInsightsByControlDomainOutput {
-    /// <p>The assessment control analytics data that the
-    /// <code>ListAssessmentControlInsightsByControlDomain</code> API returned. </p>
+    /// <p>The assessment control analytics data that the <code>ListAssessmentControlInsightsByControlDomain</code> API returned. </p>
     pub control_insights_by_assessment:
         std::option::Option<std::vec::Vec<crate::model::ControlInsightsMetadataByAssessmentItem>>,
     /// <p>The pagination token that's used to fetch the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssessmentControlInsightsByControlDomainOutput {
-    /// <p>The assessment control analytics data that the
-    /// <code>ListAssessmentControlInsightsByControlDomain</code> API returned. </p>
+    /// <p>The assessment control analytics data that the <code>ListAssessmentControlInsightsByControlDomain</code> API returned. </p>
     pub fn control_insights_by_assessment(
         &self,
     ) -> std::option::Option<&[crate::model::ControlInsightsMetadataByAssessmentItem]> {
@@ -1928,19 +1861,17 @@ pub mod list_assessment_control_insights_by_control_domain_output {
         ///
         /// To override the contents of this collection use [`set_control_insights_by_assessment`](Self::set_control_insights_by_assessment).
         ///
-        /// <p>The assessment control analytics data that the
-        /// <code>ListAssessmentControlInsightsByControlDomain</code> API returned. </p>
+        /// <p>The assessment control analytics data that the <code>ListAssessmentControlInsightsByControlDomain</code> API returned. </p>
         pub fn control_insights_by_assessment(
             mut self,
-            input: impl Into<crate::model::ControlInsightsMetadataByAssessmentItem>,
+            input: crate::model::ControlInsightsMetadataByAssessmentItem,
         ) -> Self {
             let mut v = self.control_insights_by_assessment.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.control_insights_by_assessment = Some(v);
             self
         }
-        /// <p>The assessment control analytics data that the
-        /// <code>ListAssessmentControlInsightsByControlDomain</code> API returned. </p>
+        /// <p>The assessment control analytics data that the <code>ListAssessmentControlInsightsByControlDomain</code> API returned. </p>
         pub fn set_control_insights_by_assessment(
             mut self,
             input: std::option::Option<
@@ -2066,9 +1997,9 @@ pub mod get_services_in_scope_output {
         /// To override the contents of this collection use [`set_service_metadata`](Self::set_service_metadata).
         ///
         /// <p> The metadata that's associated with the Amazon Web Service. </p>
-        pub fn service_metadata(mut self, input: impl Into<crate::model::ServiceMetadata>) -> Self {
+        pub fn service_metadata(mut self, input: crate::model::ServiceMetadata) -> Self {
             let mut v = self.service_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_metadata = Some(v);
             self
         }
@@ -2178,13 +2109,11 @@ impl GetOrganizationAdminAccountOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInsightsByAssessmentOutput {
-    /// <p> The assessment analytics data that the <code>GetInsightsByAssessment</code> API
-    /// returned. </p>
+    /// <p> The assessment analytics data that the <code>GetInsightsByAssessment</code> API returned. </p>
     pub insights: std::option::Option<crate::model::InsightsByAssessment>,
 }
 impl GetInsightsByAssessmentOutput {
-    /// <p> The assessment analytics data that the <code>GetInsightsByAssessment</code> API
-    /// returned. </p>
+    /// <p> The assessment analytics data that the <code>GetInsightsByAssessment</code> API returned. </p>
     pub fn insights(&self) -> std::option::Option<&crate::model::InsightsByAssessment> {
         self.insights.as_ref()
     }
@@ -2205,14 +2134,12 @@ pub mod get_insights_by_assessment_output {
         pub(crate) insights: std::option::Option<crate::model::InsightsByAssessment>,
     }
     impl Builder {
-        /// <p> The assessment analytics data that the <code>GetInsightsByAssessment</code> API
-        /// returned. </p>
+        /// <p> The assessment analytics data that the <code>GetInsightsByAssessment</code> API returned. </p>
         pub fn insights(mut self, input: crate::model::InsightsByAssessment) -> Self {
             self.insights = Some(input);
             self
         }
-        /// <p> The assessment analytics data that the <code>GetInsightsByAssessment</code> API
-        /// returned. </p>
+        /// <p> The assessment analytics data that the <code>GetInsightsByAssessment</code> API returned. </p>
         pub fn set_insights(
             mut self,
             input: std::option::Option<crate::model::InsightsByAssessment>,
@@ -2293,16 +2220,14 @@ impl GetInsightsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEvidenceFoldersByAssessmentControlOutput {
-    /// <p> The list of evidence folders that the
-    /// <code>GetEvidenceFoldersByAssessmentControl</code> API returned. </p>
+    /// <p> The list of evidence folders that the <code>GetEvidenceFoldersByAssessmentControl</code> API returned. </p>
     pub evidence_folders:
         std::option::Option<std::vec::Vec<crate::model::AssessmentEvidenceFolder>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetEvidenceFoldersByAssessmentControlOutput {
-    /// <p> The list of evidence folders that the
-    /// <code>GetEvidenceFoldersByAssessmentControl</code> API returned. </p>
+    /// <p> The list of evidence folders that the <code>GetEvidenceFoldersByAssessmentControl</code> API returned. </p>
     pub fn evidence_folders(
         &self,
     ) -> std::option::Option<&[crate::model::AssessmentEvidenceFolder]> {
@@ -2336,19 +2261,14 @@ pub mod get_evidence_folders_by_assessment_control_output {
         ///
         /// To override the contents of this collection use [`set_evidence_folders`](Self::set_evidence_folders).
         ///
-        /// <p> The list of evidence folders that the
-        /// <code>GetEvidenceFoldersByAssessmentControl</code> API returned. </p>
-        pub fn evidence_folders(
-            mut self,
-            input: impl Into<crate::model::AssessmentEvidenceFolder>,
-        ) -> Self {
+        /// <p> The list of evidence folders that the <code>GetEvidenceFoldersByAssessmentControl</code> API returned. </p>
+        pub fn evidence_folders(mut self, input: crate::model::AssessmentEvidenceFolder) -> Self {
             let mut v = self.evidence_folders.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.evidence_folders = Some(v);
             self
         }
-        /// <p> The list of evidence folders that the
-        /// <code>GetEvidenceFoldersByAssessmentControl</code> API returned. </p>
+        /// <p> The list of evidence folders that the <code>GetEvidenceFoldersByAssessmentControl</code> API returned. </p>
         pub fn set_evidence_folders(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AssessmentEvidenceFolder>>,
@@ -2386,16 +2306,14 @@ impl GetEvidenceFoldersByAssessmentControlOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEvidenceFoldersByAssessmentOutput {
-    /// <p> The list of evidence folders that the <code>GetEvidenceFoldersByAssessment</code> API
-    /// returned. </p>
+    /// <p> The list of evidence folders that the <code>GetEvidenceFoldersByAssessment</code> API returned. </p>
     pub evidence_folders:
         std::option::Option<std::vec::Vec<crate::model::AssessmentEvidenceFolder>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetEvidenceFoldersByAssessmentOutput {
-    /// <p> The list of evidence folders that the <code>GetEvidenceFoldersByAssessment</code> API
-    /// returned. </p>
+    /// <p> The list of evidence folders that the <code>GetEvidenceFoldersByAssessment</code> API returned. </p>
     pub fn evidence_folders(
         &self,
     ) -> std::option::Option<&[crate::model::AssessmentEvidenceFolder]> {
@@ -2429,19 +2347,14 @@ pub mod get_evidence_folders_by_assessment_output {
         ///
         /// To override the contents of this collection use [`set_evidence_folders`](Self::set_evidence_folders).
         ///
-        /// <p> The list of evidence folders that the <code>GetEvidenceFoldersByAssessment</code> API
-        /// returned. </p>
-        pub fn evidence_folders(
-            mut self,
-            input: impl Into<crate::model::AssessmentEvidenceFolder>,
-        ) -> Self {
+        /// <p> The list of evidence folders that the <code>GetEvidenceFoldersByAssessment</code> API returned. </p>
+        pub fn evidence_folders(mut self, input: crate::model::AssessmentEvidenceFolder) -> Self {
             let mut v = self.evidence_folders.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.evidence_folders = Some(v);
             self
         }
-        /// <p> The list of evidence folders that the <code>GetEvidenceFoldersByAssessment</code> API
-        /// returned. </p>
+        /// <p> The list of evidence folders that the <code>GetEvidenceFoldersByAssessment</code> API returned. </p>
         pub fn set_evidence_folders(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AssessmentEvidenceFolder>>,
@@ -2536,15 +2449,13 @@ impl GetEvidenceFolderOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEvidenceByEvidenceFolderOutput {
-    /// <p> The list of evidence that the <code>GetEvidenceByEvidenceFolder</code> API returned.
-    /// </p>
+    /// <p> The list of evidence that the <code>GetEvidenceByEvidenceFolder</code> API returned. </p>
     pub evidence: std::option::Option<std::vec::Vec<crate::model::Evidence>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetEvidenceByEvidenceFolderOutput {
-    /// <p> The list of evidence that the <code>GetEvidenceByEvidenceFolder</code> API returned.
-    /// </p>
+    /// <p> The list of evidence that the <code>GetEvidenceByEvidenceFolder</code> API returned. </p>
     pub fn evidence(&self) -> std::option::Option<&[crate::model::Evidence]> {
         self.evidence.as_deref()
     }
@@ -2575,16 +2486,14 @@ pub mod get_evidence_by_evidence_folder_output {
         ///
         /// To override the contents of this collection use [`set_evidence`](Self::set_evidence).
         ///
-        /// <p> The list of evidence that the <code>GetEvidenceByEvidenceFolder</code> API returned.
-        /// </p>
-        pub fn evidence(mut self, input: impl Into<crate::model::Evidence>) -> Self {
+        /// <p> The list of evidence that the <code>GetEvidenceByEvidenceFolder</code> API returned. </p>
+        pub fn evidence(mut self, input: crate::model::Evidence) -> Self {
             let mut v = self.evidence.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.evidence = Some(v);
             self
         }
-        /// <p> The list of evidence that the <code>GetEvidenceByEvidenceFolder</code> API returned.
-        /// </p>
+        /// <p> The list of evidence that the <code>GetEvidenceByEvidenceFolder</code> API returned. </p>
         pub fn set_evidence(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Evidence>>,
@@ -2715,9 +2624,9 @@ pub mod get_delegations_output {
         /// To override the contents of this collection use [`set_delegations`](Self::set_delegations).
         ///
         /// <p> The list of delegations that the <code>GetDelegations</code> API returned. </p>
-        pub fn delegations(mut self, input: impl Into<crate::model::DelegationMetadata>) -> Self {
+        pub fn delegations(mut self, input: crate::model::DelegationMetadata) -> Self {
             let mut v = self.delegations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.delegations = Some(v);
             self
         }
@@ -2851,9 +2760,9 @@ pub mod get_change_logs_output {
         /// To override the contents of this collection use [`set_change_logs`](Self::set_change_logs).
         ///
         /// <p>The list of user activity for the control. </p>
-        pub fn change_logs(mut self, input: impl Into<crate::model::ChangeLog>) -> Self {
+        pub fn change_logs(mut self, input: crate::model::ChangeLog) -> Self {
             let mut v = self.change_logs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.change_logs = Some(v);
             self
         }
@@ -2895,13 +2804,11 @@ impl GetChangeLogsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssessmentReportUrlOutput {
-    /// <p> Short for uniform resource locator. A URL is used as a unique identifier to locate a
-    /// resource on the internet. </p>
+    /// <p> Short for uniform resource locator. A URL is used as a unique identifier to locate a resource on the internet. </p>
     pub pre_signed_url: std::option::Option<crate::model::Url>,
 }
 impl GetAssessmentReportUrlOutput {
-    /// <p> Short for uniform resource locator. A URL is used as a unique identifier to locate a
-    /// resource on the internet. </p>
+    /// <p> Short for uniform resource locator. A URL is used as a unique identifier to locate a resource on the internet. </p>
     pub fn pre_signed_url(&self) -> std::option::Option<&crate::model::Url> {
         self.pre_signed_url.as_ref()
     }
@@ -2922,14 +2829,12 @@ pub mod get_assessment_report_url_output {
         pub(crate) pre_signed_url: std::option::Option<crate::model::Url>,
     }
     impl Builder {
-        /// <p> Short for uniform resource locator. A URL is used as a unique identifier to locate a
-        /// resource on the internet. </p>
+        /// <p> Short for uniform resource locator. A URL is used as a unique identifier to locate a resource on the internet. </p>
         pub fn pre_signed_url(mut self, input: crate::model::Url) -> Self {
             self.pre_signed_url = Some(input);
             self
         }
-        /// <p> Short for uniform resource locator. A URL is used as a unique identifier to locate a
-        /// resource on the internet. </p>
+        /// <p> Short for uniform resource locator. A URL is used as a unique identifier to locate a resource on the internet. </p>
         pub fn set_pre_signed_url(mut self, input: std::option::Option<crate::model::Url>) -> Self {
             self.pre_signed_url = input;
             self
@@ -3010,25 +2915,17 @@ impl GetAssessmentFrameworkOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssessmentOutput {
-    /// <p> An entity that defines the scope of audit evidence collected by Audit Manager.
-    /// An Audit Manager assessment is an implementation of an Audit Manager
-    /// framework. </p>
+    /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
     pub assessment: std::option::Option<crate::model::Assessment>,
-    /// <p> The wrapper that contains the Audit Manager role information of the current
-    /// user. This includes the role type and IAM Amazon Resource Name (ARN).
-    /// </p>
+    /// <p> The wrapper that contains the Audit Manager role information of the current user. This includes the role type and IAM Amazon Resource Name (ARN). </p>
     pub user_role: std::option::Option<crate::model::Role>,
 }
 impl GetAssessmentOutput {
-    /// <p> An entity that defines the scope of audit evidence collected by Audit Manager.
-    /// An Audit Manager assessment is an implementation of an Audit Manager
-    /// framework. </p>
+    /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
     pub fn assessment(&self) -> std::option::Option<&crate::model::Assessment> {
         self.assessment.as_ref()
     }
-    /// <p> The wrapper that contains the Audit Manager role information of the current
-    /// user. This includes the role type and IAM Amazon Resource Name (ARN).
-    /// </p>
+    /// <p> The wrapper that contains the Audit Manager role information of the current user. This includes the role type and IAM Amazon Resource Name (ARN). </p>
     pub fn user_role(&self) -> std::option::Option<&crate::model::Role> {
         self.user_role.as_ref()
     }
@@ -3051,16 +2948,12 @@ pub mod get_assessment_output {
         pub(crate) user_role: std::option::Option<crate::model::Role>,
     }
     impl Builder {
-        /// <p> An entity that defines the scope of audit evidence collected by Audit Manager.
-        /// An Audit Manager assessment is an implementation of an Audit Manager
-        /// framework. </p>
+        /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
         pub fn assessment(mut self, input: crate::model::Assessment) -> Self {
             self.assessment = Some(input);
             self
         }
-        /// <p> An entity that defines the scope of audit evidence collected by Audit Manager.
-        /// An Audit Manager assessment is an implementation of an Audit Manager
-        /// framework. </p>
+        /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
         pub fn set_assessment(
             mut self,
             input: std::option::Option<crate::model::Assessment>,
@@ -3068,16 +2961,12 @@ pub mod get_assessment_output {
             self.assessment = input;
             self
         }
-        /// <p> The wrapper that contains the Audit Manager role information of the current
-        /// user. This includes the role type and IAM Amazon Resource Name (ARN).
-        /// </p>
+        /// <p> The wrapper that contains the Audit Manager role information of the current user. This includes the role type and IAM Amazon Resource Name (ARN). </p>
         pub fn user_role(mut self, input: crate::model::Role) -> Self {
             self.user_role = Some(input);
             self
         }
-        /// <p> The wrapper that contains the Audit Manager role information of the current
-        /// user. This includes the role type and IAM Amazon Resource Name (ARN).
-        /// </p>
+        /// <p> The wrapper that contains the Audit Manager role information of the current user. This includes the role type and IAM Amazon Resource Name (ARN). </p>
         pub fn set_user_role(mut self, input: std::option::Option<crate::model::Role>) -> Self {
             self.user_role = input;
             self
@@ -3481,13 +3370,11 @@ impl CreateControlOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssessmentReportOutput {
-    /// <p> The new assessment report that the <code>CreateAssessmentReport</code> API returned.
-    /// </p>
+    /// <p> The new assessment report that the <code>CreateAssessmentReport</code> API returned. </p>
     pub assessment_report: std::option::Option<crate::model::AssessmentReport>,
 }
 impl CreateAssessmentReportOutput {
-    /// <p> The new assessment report that the <code>CreateAssessmentReport</code> API returned.
-    /// </p>
+    /// <p> The new assessment report that the <code>CreateAssessmentReport</code> API returned. </p>
     pub fn assessment_report(&self) -> std::option::Option<&crate::model::AssessmentReport> {
         self.assessment_report.as_ref()
     }
@@ -3508,14 +3395,12 @@ pub mod create_assessment_report_output {
         pub(crate) assessment_report: std::option::Option<crate::model::AssessmentReport>,
     }
     impl Builder {
-        /// <p> The new assessment report that the <code>CreateAssessmentReport</code> API returned.
-        /// </p>
+        /// <p> The new assessment report that the <code>CreateAssessmentReport</code> API returned. </p>
         pub fn assessment_report(mut self, input: crate::model::AssessmentReport) -> Self {
             self.assessment_report = Some(input);
             self
         }
-        /// <p> The new assessment report that the <code>CreateAssessmentReport</code> API returned.
-        /// </p>
+        /// <p> The new assessment report that the <code>CreateAssessmentReport</code> API returned. </p>
         pub fn set_assessment_report(
             mut self,
             input: std::option::Option<crate::model::AssessmentReport>,
@@ -3542,13 +3427,11 @@ impl CreateAssessmentReportOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssessmentFrameworkOutput {
-    /// <p> The name of the new framework that the <code>CreateAssessmentFramework</code> API
-    /// returned. </p>
+    /// <p> The name of the new framework that the <code>CreateAssessmentFramework</code> API returned. </p>
     pub framework: std::option::Option<crate::model::Framework>,
 }
 impl CreateAssessmentFrameworkOutput {
-    /// <p> The name of the new framework that the <code>CreateAssessmentFramework</code> API
-    /// returned. </p>
+    /// <p> The name of the new framework that the <code>CreateAssessmentFramework</code> API returned. </p>
     pub fn framework(&self) -> std::option::Option<&crate::model::Framework> {
         self.framework.as_ref()
     }
@@ -3569,14 +3452,12 @@ pub mod create_assessment_framework_output {
         pub(crate) framework: std::option::Option<crate::model::Framework>,
     }
     impl Builder {
-        /// <p> The name of the new framework that the <code>CreateAssessmentFramework</code> API
-        /// returned. </p>
+        /// <p> The name of the new framework that the <code>CreateAssessmentFramework</code> API returned. </p>
         pub fn framework(mut self, input: crate::model::Framework) -> Self {
             self.framework = Some(input);
             self
         }
-        /// <p> The name of the new framework that the <code>CreateAssessmentFramework</code> API
-        /// returned. </p>
+        /// <p> The name of the new framework that the <code>CreateAssessmentFramework</code> API returned. </p>
         pub fn set_framework(
             mut self,
             input: std::option::Option<crate::model::Framework>,
@@ -3603,15 +3484,11 @@ impl CreateAssessmentFrameworkOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssessmentOutput {
-    /// <p> An entity that defines the scope of audit evidence collected by Audit Manager.
-    /// An Audit Manager assessment is an implementation of an Audit Manager
-    /// framework. </p>
+    /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
     pub assessment: std::option::Option<crate::model::Assessment>,
 }
 impl CreateAssessmentOutput {
-    /// <p> An entity that defines the scope of audit evidence collected by Audit Manager.
-    /// An Audit Manager assessment is an implementation of an Audit Manager
-    /// framework. </p>
+    /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
     pub fn assessment(&self) -> std::option::Option<&crate::model::Assessment> {
         self.assessment.as_ref()
     }
@@ -3632,16 +3509,12 @@ pub mod create_assessment_output {
         pub(crate) assessment: std::option::Option<crate::model::Assessment>,
     }
     impl Builder {
-        /// <p> An entity that defines the scope of audit evidence collected by Audit Manager.
-        /// An Audit Manager assessment is an implementation of an Audit Manager
-        /// framework. </p>
+        /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
         pub fn assessment(mut self, input: crate::model::Assessment) -> Self {
             self.assessment = Some(input);
             self
         }
-        /// <p> An entity that defines the scope of audit evidence collected by Audit Manager.
-        /// An Audit Manager assessment is an implementation of an Audit Manager
-        /// framework. </p>
+        /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
         pub fn set_assessment(
             mut self,
             input: std::option::Option<crate::model::Assessment>,
@@ -3668,15 +3541,13 @@ impl CreateAssessmentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchImportEvidenceToAssessmentControlOutput {
-    /// <p> A list of errors that the <code>BatchImportEvidenceToAssessmentControl</code> API
-    /// returned. </p>
+    /// <p> A list of errors that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
     pub errors: std::option::Option<
         std::vec::Vec<crate::model::BatchImportEvidenceToAssessmentControlError>,
     >,
 }
 impl BatchImportEvidenceToAssessmentControlOutput {
-    /// <p> A list of errors that the <code>BatchImportEvidenceToAssessmentControl</code> API
-    /// returned. </p>
+    /// <p> A list of errors that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
     pub fn errors(
         &self,
     ) -> std::option::Option<&[crate::model::BatchImportEvidenceToAssessmentControlError]> {
@@ -3705,19 +3576,17 @@ pub mod batch_import_evidence_to_assessment_control_output {
         ///
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
-        /// <p> A list of errors that the <code>BatchImportEvidenceToAssessmentControl</code> API
-        /// returned. </p>
+        /// <p> A list of errors that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
         pub fn errors(
             mut self,
-            input: impl Into<crate::model::BatchImportEvidenceToAssessmentControlError>,
+            input: crate::model::BatchImportEvidenceToAssessmentControlError,
         ) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
-        /// <p> A list of errors that the <code>BatchImportEvidenceToAssessmentControl</code> API
-        /// returned. </p>
+        /// <p> A list of errors that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<
@@ -3748,8 +3617,7 @@ impl BatchImportEvidenceToAssessmentControlOutput {
 pub struct BatchDisassociateAssessmentReportEvidenceOutput {
     /// <p> The identifier for the evidence. </p>
     pub evidence_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> A list of errors that the <code>BatchDisassociateAssessmentReportEvidence</code> API
-    /// returned. </p>
+    /// <p> A list of errors that the <code>BatchDisassociateAssessmentReportEvidence</code> API returned. </p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::AssessmentReportEvidenceError>>,
 }
 impl BatchDisassociateAssessmentReportEvidenceOutput {
@@ -3757,8 +3625,7 @@ impl BatchDisassociateAssessmentReportEvidenceOutput {
     pub fn evidence_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.evidence_ids.as_deref()
     }
-    /// <p> A list of errors that the <code>BatchDisassociateAssessmentReportEvidence</code> API
-    /// returned. </p>
+    /// <p> A list of errors that the <code>BatchDisassociateAssessmentReportEvidence</code> API returned. </p>
     pub fn errors(&self) -> std::option::Option<&[crate::model::AssessmentReportEvidenceError]> {
         self.errors.as_deref()
     }
@@ -3805,19 +3672,14 @@ pub mod batch_disassociate_assessment_report_evidence_output {
         ///
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
-        /// <p> A list of errors that the <code>BatchDisassociateAssessmentReportEvidence</code> API
-        /// returned. </p>
-        pub fn errors(
-            mut self,
-            input: impl Into<crate::model::AssessmentReportEvidenceError>,
-        ) -> Self {
+        /// <p> A list of errors that the <code>BatchDisassociateAssessmentReportEvidence</code> API returned. </p>
+        pub fn errors(mut self, input: crate::model::AssessmentReportEvidenceError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
-        /// <p> A list of errors that the <code>BatchDisassociateAssessmentReportEvidence</code> API
-        /// returned. </p>
+        /// <p> A list of errors that the <code>BatchDisassociateAssessmentReportEvidence</code> API returned. </p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AssessmentReportEvidenceError>>,
@@ -3846,14 +3708,12 @@ impl BatchDisassociateAssessmentReportEvidenceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteDelegationByAssessmentOutput {
-    /// <p> A list of errors that the <code>BatchDeleteDelegationByAssessment</code> API returned.
-    /// </p>
+    /// <p> A list of errors that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
     pub errors:
         std::option::Option<std::vec::Vec<crate::model::BatchDeleteDelegationByAssessmentError>>,
 }
 impl BatchDeleteDelegationByAssessmentOutput {
-    /// <p> A list of errors that the <code>BatchDeleteDelegationByAssessment</code> API returned.
-    /// </p>
+    /// <p> A list of errors that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
     pub fn errors(
         &self,
     ) -> std::option::Option<&[crate::model::BatchDeleteDelegationByAssessmentError]> {
@@ -3882,19 +3742,17 @@ pub mod batch_delete_delegation_by_assessment_output {
         ///
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
-        /// <p> A list of errors that the <code>BatchDeleteDelegationByAssessment</code> API returned.
-        /// </p>
+        /// <p> A list of errors that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
         pub fn errors(
             mut self,
-            input: impl Into<crate::model::BatchDeleteDelegationByAssessmentError>,
+            input: crate::model::BatchDeleteDelegationByAssessmentError,
         ) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
-        /// <p> A list of errors that the <code>BatchDeleteDelegationByAssessment</code> API returned.
-        /// </p>
+        /// <p> A list of errors that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<
@@ -3925,8 +3783,7 @@ impl BatchDeleteDelegationByAssessmentOutput {
 pub struct BatchCreateDelegationByAssessmentOutput {
     /// <p> The delegations that are associated with the assessment. </p>
     pub delegations: std::option::Option<std::vec::Vec<crate::model::Delegation>>,
-    /// <p> A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned.
-    /// </p>
+    /// <p> A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
     pub errors:
         std::option::Option<std::vec::Vec<crate::model::BatchCreateDelegationByAssessmentError>>,
 }
@@ -3935,8 +3792,7 @@ impl BatchCreateDelegationByAssessmentOutput {
     pub fn delegations(&self) -> std::option::Option<&[crate::model::Delegation]> {
         self.delegations.as_deref()
     }
-    /// <p> A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned.
-    /// </p>
+    /// <p> A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
     pub fn errors(
         &self,
     ) -> std::option::Option<&[crate::model::BatchCreateDelegationByAssessmentError]> {
@@ -3968,9 +3824,9 @@ pub mod batch_create_delegation_by_assessment_output {
         /// To override the contents of this collection use [`set_delegations`](Self::set_delegations).
         ///
         /// <p> The delegations that are associated with the assessment. </p>
-        pub fn delegations(mut self, input: impl Into<crate::model::Delegation>) -> Self {
+        pub fn delegations(mut self, input: crate::model::Delegation) -> Self {
             let mut v = self.delegations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.delegations = Some(v);
             self
         }
@@ -3986,19 +3842,17 @@ pub mod batch_create_delegation_by_assessment_output {
         ///
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
-        /// <p> A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned.
-        /// </p>
+        /// <p> A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
         pub fn errors(
             mut self,
-            input: impl Into<crate::model::BatchCreateDelegationByAssessmentError>,
+            input: crate::model::BatchCreateDelegationByAssessmentError,
         ) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
-        /// <p> A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned.
-        /// </p>
+        /// <p> A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<
@@ -4030,8 +3884,7 @@ impl BatchCreateDelegationByAssessmentOutput {
 pub struct BatchAssociateAssessmentReportEvidenceOutput {
     /// <p> The list of evidence identifiers. </p>
     pub evidence_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> A list of errors that the <code>BatchAssociateAssessmentReportEvidence</code> API
-    /// returned. </p>
+    /// <p> A list of errors that the <code>BatchAssociateAssessmentReportEvidence</code> API returned. </p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::AssessmentReportEvidenceError>>,
 }
 impl BatchAssociateAssessmentReportEvidenceOutput {
@@ -4039,8 +3892,7 @@ impl BatchAssociateAssessmentReportEvidenceOutput {
     pub fn evidence_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.evidence_ids.as_deref()
     }
-    /// <p> A list of errors that the <code>BatchAssociateAssessmentReportEvidence</code> API
-    /// returned. </p>
+    /// <p> A list of errors that the <code>BatchAssociateAssessmentReportEvidence</code> API returned. </p>
     pub fn errors(&self) -> std::option::Option<&[crate::model::AssessmentReportEvidenceError]> {
         self.errors.as_deref()
     }
@@ -4087,19 +3939,14 @@ pub mod batch_associate_assessment_report_evidence_output {
         ///
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
-        /// <p> A list of errors that the <code>BatchAssociateAssessmentReportEvidence</code> API
-        /// returned. </p>
-        pub fn errors(
-            mut self,
-            input: impl Into<crate::model::AssessmentReportEvidenceError>,
-        ) -> Self {
+        /// <p> A list of errors that the <code>BatchAssociateAssessmentReportEvidence</code> API returned. </p>
+        pub fn errors(mut self, input: crate::model::AssessmentReportEvidenceError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
-        /// <p> A list of errors that the <code>BatchAssociateAssessmentReportEvidence</code> API
-        /// returned. </p>
+        /// <p> A list of errors that the <code>BatchAssociateAssessmentReportEvidence</code> API returned. </p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AssessmentReportEvidenceError>>,

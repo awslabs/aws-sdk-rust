@@ -95,8 +95,6 @@ impl AssociatePhoneNumbersWithVoiceConnectorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -308,8 +306,6 @@ impl AssociatePhoneNumbersWithVoiceConnectorGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -504,8 +500,6 @@ impl AssociatePhoneNumberWithUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -694,8 +688,6 @@ impl AssociateSigninDelegateGroupsWithAccountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -874,8 +866,6 @@ impl BatchCreateAttendeeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1046,8 +1036,6 @@ impl BatchCreateChannelMembershipError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1207,8 +1195,6 @@ impl BatchCreateRoomMembershipError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1368,8 +1354,6 @@ impl BatchDeletePhoneNumberError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1529,8 +1513,6 @@ impl BatchSuspendUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1684,8 +1666,6 @@ impl BatchUnsuspendUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1845,8 +1825,6 @@ impl BatchUpdatePhoneNumberError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2006,8 +1984,6 @@ impl BatchUpdateUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2158,8 +2134,6 @@ impl CreateAccountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2251,8 +2225,7 @@ pub struct CreateAppInstanceError {
 pub enum CreateAppInstanceErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -2314,8 +2287,6 @@ impl CreateAppInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2421,8 +2392,7 @@ pub struct CreateAppInstanceAdminError {
 pub enum CreateAppInstanceAdminErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -2486,8 +2456,6 @@ impl CreateAppInstanceAdminError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2596,8 +2564,7 @@ pub struct CreateAppInstanceUserError {
 pub enum CreateAppInstanceUserErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -2659,8 +2626,6 @@ impl CreateAppInstanceUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2831,8 +2796,6 @@ impl CreateAttendeeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2994,8 +2957,6 @@ impl CreateBotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3089,8 +3050,7 @@ pub struct CreateChannelError {
 pub enum CreateChannelErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -3152,8 +3112,6 @@ impl CreateChannelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3253,8 +3211,7 @@ pub struct CreateChannelBanError {
 pub enum CreateChannelBanErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -3316,8 +3273,6 @@ impl CreateChannelBanError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3420,8 +3375,7 @@ pub struct CreateChannelMembershipError {
 pub enum CreateChannelMembershipErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -3485,8 +3439,6 @@ impl CreateChannelMembershipError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3597,8 +3549,7 @@ pub struct CreateChannelModeratorError {
 pub enum CreateChannelModeratorErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -3662,8 +3613,6 @@ impl CreateChannelModeratorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3837,8 +3786,6 @@ impl CreateMediaCapturePipelineError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4004,8 +3951,6 @@ impl CreateMeetingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4159,8 +4104,6 @@ impl CreateMeetingDialOutError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4326,8 +4269,6 @@ impl CreateMeetingWithAttendeesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4498,8 +4439,6 @@ impl CreatePhoneNumberOrderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4667,8 +4606,6 @@ impl CreateProxySessionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4831,8 +4768,6 @@ impl CreateRoomError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4926,8 +4861,7 @@ pub struct CreateRoomMembershipError {
 pub enum CreateRoomMembershipErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -4992,8 +4926,6 @@ impl CreateRoomMembershipError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5112,8 +5044,7 @@ pub enum CreateSipMediaApplicationErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -5182,8 +5113,6 @@ impl CreateSipMediaApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5377,8 +5306,6 @@ impl CreateSipMediaApplicationCallError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5497,8 +5424,7 @@ pub enum CreateSipRuleErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -5561,8 +5487,6 @@ impl CreateSipRuleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5667,8 +5591,7 @@ pub struct CreateUserError {
 pub enum CreateUserErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -5730,8 +5653,6 @@ impl CreateUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5884,8 +5805,6 @@ impl CreateVoiceConnectorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6062,8 +5981,6 @@ impl CreateVoiceConnectorGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6236,8 +6153,6 @@ impl DeleteAccountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6393,8 +6308,6 @@ impl DeleteAppInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6487,8 +6400,7 @@ pub struct DeleteAppInstanceAdminError {
 pub enum DeleteAppInstanceAdminErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -6547,8 +6459,6 @@ impl DeleteAppInstanceAdminError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6725,8 +6635,6 @@ impl DeleteAppInstanceStreamingConfigurationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6899,8 +6807,6 @@ impl DeleteAppInstanceUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7052,8 +6958,6 @@ impl DeleteAttendeeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7201,8 +7105,6 @@ impl DeleteChannelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7345,8 +7247,6 @@ impl DeleteChannelBanError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7436,8 +7336,7 @@ pub struct DeleteChannelMembershipError {
 pub enum DeleteChannelMembershipErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -7496,8 +7395,6 @@ impl DeleteChannelMembershipError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7654,8 +7551,6 @@ impl DeleteChannelMessageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7804,8 +7699,6 @@ impl DeleteChannelModeratorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7960,8 +7853,6 @@ impl DeleteEventsConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8119,8 +8010,6 @@ impl DeleteMediaCapturePipelineError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8284,8 +8173,6 @@ impl DeleteMeetingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8436,8 +8323,6 @@ impl DeletePhoneNumberError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8594,8 +8479,6 @@ impl DeleteProxySessionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8755,8 +8638,6 @@ impl DeleteRoomError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8901,8 +8782,6 @@ impl DeleteRoomMembershipError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9003,8 +8882,7 @@ pub struct DeleteSipMediaApplicationError {
 pub enum DeleteSipMediaApplicationErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -9070,8 +8948,6 @@ impl DeleteSipMediaApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9180,8 +9056,7 @@ pub struct DeleteSipRuleError {
 pub enum DeleteSipRuleErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -9243,8 +9118,6 @@ impl DeleteSipRuleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9341,8 +9214,7 @@ pub struct DeleteVoiceConnectorError {
 pub enum DeleteVoiceConnectorErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -9404,8 +9276,6 @@ impl DeleteVoiceConnectorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9594,8 +9464,6 @@ impl DeleteVoiceConnectorEmergencyCallingConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9716,8 +9584,7 @@ pub struct DeleteVoiceConnectorGroupError {
 pub enum DeleteVoiceConnectorGroupErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -9783,8 +9650,6 @@ impl DeleteVoiceConnectorGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9963,8 +9828,6 @@ impl DeleteVoiceConnectorOriginationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10136,8 +9999,6 @@ impl DeleteVoiceConnectorProxyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10314,8 +10175,6 @@ impl DeleteVoiceConnectorStreamingConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10502,8 +10361,6 @@ impl DeleteVoiceConnectorTerminationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10688,8 +10545,6 @@ impl DeleteVoiceConnectorTerminationCredentialsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10862,8 +10717,6 @@ impl DescribeAppInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11012,8 +10865,6 @@ impl DescribeAppInstanceAdminError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11162,8 +11013,6 @@ impl DescribeAppInstanceUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11312,8 +11161,6 @@ impl DescribeChannelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11459,8 +11306,6 @@ impl DescribeChannelBanError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11624,8 +11469,6 @@ impl DescribeChannelMembershipError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11801,8 +11644,6 @@ impl DescribeChannelMembershipForAppInstanceUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11980,8 +11821,6 @@ impl DescribeChannelModeratedByAppInstanceUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12147,8 +11986,6 @@ impl DescribeChannelModeratorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12319,8 +12156,6 @@ impl DisassociatePhoneNumberFromUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12505,8 +12340,6 @@ impl DisassociatePhoneNumbersFromVoiceConnectorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12703,8 +12536,6 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12905,8 +12736,6 @@ impl DisassociateSigninDelegateGroupsFromAccountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13082,8 +12911,6 @@ impl GetAccountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13228,8 +13055,6 @@ impl GetAccountSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13400,8 +13225,6 @@ impl GetAppInstanceRetentionSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13586,8 +13409,6 @@ impl GetAppInstanceStreamingConfigurationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13763,8 +13584,6 @@ impl GetAttendeeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13912,8 +13731,6 @@ impl GetBotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14052,8 +13869,6 @@ impl GetChannelMessageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14212,8 +14027,6 @@ impl GetEventsConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14370,8 +14183,6 @@ impl GetGlobalSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14523,8 +14334,6 @@ impl GetMediaCapturePipelineError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14684,8 +14493,6 @@ impl GetMeetingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14828,8 +14635,6 @@ impl GetMessagingSessionEndpointError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14977,8 +14782,6 @@ impl GetPhoneNumberError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15129,8 +14932,6 @@ impl GetPhoneNumberOrderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15287,8 +15088,6 @@ impl GetPhoneNumberSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15440,8 +15239,6 @@ impl GetProxySessionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15592,8 +15389,6 @@ impl GetRetentionSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15753,8 +15548,6 @@ impl GetRoomError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15893,8 +15686,6 @@ impl GetSipMediaApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16071,8 +15862,6 @@ impl GetSipMediaApplicationLoggingConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16248,8 +16037,6 @@ impl GetSipRuleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16394,8 +16181,6 @@ impl GetUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16534,8 +16319,6 @@ impl GetUserSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16686,8 +16469,6 @@ impl GetVoiceConnectorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16865,8 +16646,6 @@ impl GetVoiceConnectorEmergencyCallingConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17042,8 +16821,6 @@ impl GetVoiceConnectorGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17220,8 +16997,6 @@ impl GetVoiceConnectorLoggingConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17403,8 +17178,6 @@ impl GetVoiceConnectorOriginationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17568,8 +17341,6 @@ impl GetVoiceConnectorProxyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17746,8 +17517,6 @@ impl GetVoiceConnectorStreamingConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17929,8 +17698,6 @@ impl GetVoiceConnectorTerminationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18109,8 +17876,6 @@ impl GetVoiceConnectorTerminationHealthError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18280,8 +18045,6 @@ impl InviteUsersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18429,8 +18192,6 @@ impl ListAccountsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18578,8 +18339,6 @@ impl ListAppInstanceAdminsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18728,8 +18487,6 @@ impl ListAppInstancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18875,8 +18632,6 @@ impl ListAppInstanceUsersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19028,8 +18783,6 @@ impl ListAttendeesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19180,8 +18933,6 @@ impl ListAttendeeTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19335,8 +19086,6 @@ impl ListBotsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19478,8 +19227,6 @@ impl ListChannelBansError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19622,8 +19369,6 @@ impl ListChannelMembershipsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19787,8 +19532,6 @@ impl ListChannelMembershipsForAppInstanceUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19951,8 +19694,6 @@ impl ListChannelMessagesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -20101,8 +19842,6 @@ impl ListChannelModeratorsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -20251,8 +19990,6 @@ impl ListChannelsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -20410,8 +20147,6 @@ impl ListChannelsModeratedByAppInstanceUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -20578,8 +20313,6 @@ impl ListMediaCapturePipelinesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -20728,8 +20461,6 @@ impl ListMeetingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -20875,8 +20606,6 @@ impl ListMeetingTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -21024,8 +20753,6 @@ impl ListPhoneNumberOrdersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -21177,8 +20904,6 @@ impl ListPhoneNumbersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -21332,8 +21057,6 @@ impl ListProxySessionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -21490,8 +21213,6 @@ impl ListRoomMembershipsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -21651,8 +21372,6 @@ impl ListRoomsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -21794,8 +21513,6 @@ impl ListSipMediaApplicationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -21944,8 +21661,6 @@ impl ListSipRulesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -22106,8 +21821,6 @@ impl ListSupportedPhoneNumberCountriesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -22274,8 +21987,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -22427,8 +22138,6 @@ impl ListUsersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -22570,8 +22279,6 @@ impl ListVoiceConnectorGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -22720,8 +22427,6 @@ impl ListVoiceConnectorsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -22890,8 +22595,6 @@ impl ListVoiceConnectorTerminationCredentialsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -23067,8 +22770,6 @@ impl LogoutUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -23154,8 +22855,7 @@ pub struct PutAppInstanceRetentionSettingsError {
 pub enum PutAppInstanceRetentionSettingsErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -23228,8 +22928,6 @@ impl PutAppInstanceRetentionSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -23422,8 +23120,6 @@ impl PutAppInstanceStreamingConfigurationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -23601,8 +23297,6 @@ impl PutEventsConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -23703,8 +23397,7 @@ pub struct PutRetentionSettingsError {
 pub enum PutRetentionSettingsErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -23766,8 +23459,6 @@ impl PutRetentionSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -23952,8 +23643,6 @@ impl PutSipMediaApplicationLoggingConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -24150,8 +23839,6 @@ impl PutVoiceConnectorEmergencyCallingConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -24344,8 +24031,6 @@ impl PutVoiceConnectorLoggingConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -24527,8 +24212,6 @@ impl PutVoiceConnectorOriginationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -24695,8 +24378,6 @@ impl PutVoiceConnectorProxyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -24881,8 +24562,6 @@ impl PutVoiceConnectorStreamingConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -25067,8 +24746,6 @@ impl PutVoiceConnectorTerminationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -25257,8 +24934,6 @@ impl PutVoiceConnectorTerminationCredentialsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -25431,8 +25106,6 @@ impl RedactChannelMessageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -25588,8 +25261,6 @@ impl RedactConversationMessageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -25749,8 +25420,6 @@ impl RedactRoomMessageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -25907,8 +25576,6 @@ impl RegenerateSecurityTokenError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -26068,8 +25735,6 @@ impl ResetPersonalPINError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -26226,8 +25891,6 @@ impl RestorePhoneNumberError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -26399,8 +26062,6 @@ impl SearchAvailablePhoneNumbersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -26505,8 +26166,7 @@ pub struct SendChannelMessageError {
 pub enum SendChannelMessageErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -26565,8 +26225,6 @@ impl SendChannelMessageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -26740,8 +26398,6 @@ impl StartMeetingTranscriptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -26926,8 +26582,6 @@ impl StopMeetingTranscriptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -27098,8 +26752,6 @@ impl TagAttendeeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -27258,8 +26910,6 @@ impl TagMeetingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -27409,8 +27059,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -27550,8 +27198,6 @@ impl UntagAttendeeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -27702,8 +27348,6 @@ impl UntagMeetingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -27851,8 +27495,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -27995,8 +27637,6 @@ impl UpdateAccountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -28088,8 +27728,7 @@ pub struct UpdateAccountSettingsError {
 pub enum UpdateAccountSettingsErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -28151,8 +27790,6 @@ impl UpdateAccountSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -28261,8 +27898,7 @@ pub struct UpdateAppInstanceError {
 pub enum UpdateAppInstanceErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -28321,8 +27957,6 @@ impl UpdateAppInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -28420,8 +28054,7 @@ pub struct UpdateAppInstanceUserError {
 pub enum UpdateAppInstanceUserErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -28480,8 +28113,6 @@ impl UpdateAppInstanceUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -28641,8 +28272,6 @@ impl UpdateBotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -28728,8 +28357,7 @@ pub struct UpdateChannelError {
 pub enum UpdateChannelErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -28788,8 +28416,6 @@ impl UpdateChannelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -28881,8 +28507,7 @@ pub struct UpdateChannelMessageError {
 pub enum UpdateChannelMessageErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -28941,8 +28566,6 @@ impl UpdateChannelMessageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -29043,8 +28666,7 @@ pub struct UpdateChannelReadMarkerError {
 pub enum UpdateChannelReadMarkerErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -29103,8 +28725,6 @@ impl UpdateChannelReadMarkerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -29261,8 +28881,6 @@ impl UpdateGlobalSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -29355,8 +28973,7 @@ pub struct UpdatePhoneNumberError {
 pub enum UpdatePhoneNumberErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -29418,8 +29035,6 @@ impl UpdatePhoneNumberError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -29582,8 +29197,6 @@ impl UpdatePhoneNumberSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -29735,8 +29348,6 @@ impl UpdateProxySessionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -29896,8 +29507,6 @@ impl UpdateRoomError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -30042,8 +29651,6 @@ impl UpdateRoomMembershipError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -30144,8 +29751,7 @@ pub struct UpdateSipMediaApplicationError {
 pub enum UpdateSipMediaApplicationErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -30211,8 +29817,6 @@ impl UpdateSipMediaApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -30396,8 +30000,6 @@ impl UpdateSipMediaApplicationCallError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -30514,8 +30116,7 @@ pub struct UpdateSipRuleError {
 pub enum UpdateSipRuleErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -30580,8 +30181,6 @@ impl UpdateSipRuleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -30745,8 +30344,6 @@ impl UpdateUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -30891,8 +30488,6 @@ impl UpdateUserSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -31052,8 +30647,6 @@ impl UpdateVoiceConnectorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -31154,8 +30747,7 @@ pub struct UpdateVoiceConnectorGroupError {
 pub enum UpdateVoiceConnectorGroupErrorKind {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),
@@ -31221,8 +30813,6 @@ impl UpdateVoiceConnectorGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -31826,8 +31416,7 @@ impl ForbiddenException {
     }
 }
 
-/// <p>The request could not be processed because of conflict in the current state of the
-/// resource.</p>
+/// <p>The request could not be processed because of conflict in the current state of the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {

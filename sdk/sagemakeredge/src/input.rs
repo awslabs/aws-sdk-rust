@@ -50,7 +50,7 @@ pub mod get_device_registration_input {
 #[doc(hidden)]
 pub type GetDeviceRegistrationInputOperationOutputAlias = crate::operation::GetDeviceRegistration;
 #[doc(hidden)]
-pub type GetDeviceRegistrationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDeviceRegistrationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDeviceRegistrationInput {
     /// Consumes the builder and constructs an Operation<[`GetDeviceRegistration`](crate::operation::GetDeviceRegistration)>
     #[allow(clippy::let_and_return)]
@@ -61,7 +61,7 @@ impl GetDeviceRegistrationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDeviceRegistration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -143,7 +143,7 @@ impl GetDeviceRegistrationInput {
             "GetDeviceRegistration",
             "sagemakeredge",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -184,9 +184,9 @@ pub mod send_heartbeat_input {
         /// To override the contents of this collection use [`set_agent_metrics`](Self::set_agent_metrics).
         ///
         /// <p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>
-        pub fn agent_metrics(mut self, input: impl Into<crate::model::EdgeMetric>) -> Self {
+        pub fn agent_metrics(mut self, input: crate::model::EdgeMetric) -> Self {
             let mut v = self.agent_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.agent_metrics = Some(v);
             self
         }
@@ -203,9 +203,9 @@ pub mod send_heartbeat_input {
         /// To override the contents of this collection use [`set_models`](Self::set_models).
         ///
         /// <p>Returns a list of models deployed on the the device.</p>
-        pub fn models(mut self, input: impl Into<crate::model::Model>) -> Self {
+        pub fn models(mut self, input: crate::model::Model) -> Self {
             let mut v = self.models.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.models = Some(v);
             self
         }
@@ -273,7 +273,7 @@ pub mod send_heartbeat_input {
 #[doc(hidden)]
 pub type SendHeartbeatInputOperationOutputAlias = crate::operation::SendHeartbeat;
 #[doc(hidden)]
-pub type SendHeartbeatInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendHeartbeatInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendHeartbeatInput {
     /// Consumes the builder and constructs an Operation<[`SendHeartbeat`](crate::operation::SendHeartbeat)>
     #[allow(clippy::let_and_return)]
@@ -284,7 +284,7 @@ impl SendHeartbeatInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendHeartbeat,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -363,7 +363,7 @@ impl SendHeartbeatInput {
             "SendHeartbeat",
             "sagemakeredge",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

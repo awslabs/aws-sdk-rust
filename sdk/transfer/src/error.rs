@@ -18,8 +18,7 @@ pub enum CreateAccessErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource does not exist.</p>
     ResourceExistsException(crate::error::ResourceExistsException),
-    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family
-    /// service.</p>
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -68,8 +67,6 @@ impl CreateAccessError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -157,13 +154,11 @@ pub enum CreateServerErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource does not exist.</p>
     ResourceExistsException(crate::error::ResourceExistsException),
-    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family
-    /// service.</p>
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
-    ///
     /// <p> HTTP Status Code: 400</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -213,8 +208,6 @@ impl CreateServerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -310,8 +303,7 @@ pub enum CreateUserErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource does not exist.</p>
     ResourceExistsException(crate::error::ResourceExistsException),
-    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family
-    /// service.</p>
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -360,8 +352,6 @@ impl CreateUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -446,7 +436,6 @@ pub enum CreateWorkflowErrorKind {
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
-    ///
     /// <p> HTTP Status Code: 400</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -495,8 +484,6 @@ impl CreateWorkflowError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -585,8 +572,7 @@ pub enum DeleteAccessErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family
-    /// service.</p>
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -634,8 +620,6 @@ impl DeleteAccessError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -713,8 +697,7 @@ pub enum DeleteServerErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family
-    /// service.</p>
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -763,8 +746,6 @@ impl DeleteServerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -845,13 +826,11 @@ pub enum DeleteSshPublicKeyErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family
-    /// service.</p>
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
-    ///
     /// <p> HTTP Status Code: 400</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -899,8 +878,6 @@ impl DeleteSshPublicKeyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -987,8 +964,7 @@ pub enum DeleteUserErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family
-    /// service.</p>
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -1036,8 +1012,6 @@ impl DeleteUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1112,8 +1086,7 @@ pub enum DeleteWorkflowErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family
-    /// service.</p>
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -1162,8 +1135,6 @@ impl DeleteWorkflowError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1247,8 +1218,7 @@ pub enum DescribeAccessErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family
-    /// service.</p>
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -1296,8 +1266,6 @@ impl DescribeAccessError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1373,8 +1341,7 @@ pub enum DescribeExecutionErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family
-    /// service.</p>
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -1422,8 +1389,6 @@ impl DescribeExecutionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1502,8 +1467,7 @@ pub enum DescribeSecurityPolicyErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family
-    /// service.</p>
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -1551,8 +1515,6 @@ impl DescribeSecurityPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1631,8 +1593,7 @@ pub enum DescribeServerErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family
-    /// service.</p>
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -1680,8 +1641,6 @@ impl DescribeServerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1757,8 +1716,7 @@ pub enum DescribeUserErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family
-    /// service.</p>
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -1806,8 +1764,6 @@ impl DescribeUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1883,8 +1839,7 @@ pub enum DescribeWorkflowErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family
-    /// service.</p>
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -1932,8 +1887,6 @@ impl DescribeWorkflowError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2014,13 +1967,11 @@ pub enum ImportSshPublicKeyErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource does not exist.</p>
     ResourceExistsException(crate::error::ResourceExistsException),
-    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family
-    /// service.</p>
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
-    ///
     /// <p> HTTP Status Code: 400</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -2069,8 +2020,6 @@ impl ImportSshPublicKeyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2167,8 +2116,7 @@ pub enum ListAccessesErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family
-    /// service.</p>
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -2217,8 +2165,6 @@ impl ListAccessesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2304,8 +2250,7 @@ pub enum ListExecutionsErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family
-    /// service.</p>
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -2354,8 +2299,6 @@ impl ListExecutionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2487,8 +2430,6 @@ impl ListSecurityPoliciesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2615,8 +2556,6 @@ impl ListServersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2737,8 +2676,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2819,8 +2756,7 @@ pub enum ListUsersErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family
-    /// service.</p>
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -2869,8 +2805,6 @@ impl ListUsersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2993,8 +2927,6 @@ impl ListWorkflowsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3072,13 +3004,11 @@ pub enum SendWorkflowStepStateErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family
-    /// service.</p>
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
-    ///
     /// <p> HTTP Status Code: 400</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -3127,8 +3057,6 @@ impl SendWorkflowStepStateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3223,13 +3151,11 @@ pub enum StartServerErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family
-    /// service.</p>
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
-    ///
     /// <p> HTTP Status Code: 400</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -3277,8 +3203,6 @@ impl StartServerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3356,13 +3280,11 @@ pub enum StopServerErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family
-    /// service.</p>
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
-    ///
     /// <p> HTTP Status Code: 400</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -3410,8 +3332,6 @@ impl StopServerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3489,8 +3409,7 @@ pub enum TagResourceErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family
-    /// service.</p>
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -3538,8 +3457,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3612,8 +3529,7 @@ pub enum TestIdentityProviderErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family
-    /// service.</p>
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -3661,8 +3577,6 @@ impl TestIdentityProviderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3741,8 +3655,7 @@ pub enum UntagResourceErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family
-    /// service.</p>
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -3790,8 +3703,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3869,8 +3780,7 @@ pub enum UpdateAccessErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource does not exist.</p>
     ResourceExistsException(crate::error::ResourceExistsException),
-    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family
-    /// service.</p>
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -3919,8 +3829,6 @@ impl UpdateAccessError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4002,9 +3910,7 @@ pub struct UpdateServerError {
 pub enum UpdateServerErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception is thrown when the <code>UpdateServer</code> is called for a file transfer
-    /// protocol-enabled server that has VPC as the endpoint type and the server's
-    /// <code>VpcEndpointID</code> is not in the available state.</p>
+    /// <p>This exception is thrown when the <code>UpdateServer</code> is called for a file transfer protocol-enabled server that has VPC as the endpoint type and the server's <code>VpcEndpointID</code> is not in the available state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
     InternalServiceError(crate::error::InternalServiceError),
@@ -4012,13 +3918,11 @@ pub enum UpdateServerErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource does not exist.</p>
     ResourceExistsException(crate::error::ResourceExistsException),
-    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family
-    /// service.</p>
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
-    ///
     /// <p> HTTP Status Code: 400</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -4069,8 +3973,6 @@ impl UpdateServerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4169,13 +4071,11 @@ pub enum UpdateUserErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family
-    /// service.</p>
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
-    ///
     /// <p> HTTP Status Code: 400</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -4223,8 +4123,6 @@ impl UpdateUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4286,7 +4184,6 @@ impl std::error::Error for UpdateUserError {
 }
 
 /// <p>The request was denied due to request throttling.</p>
-///
 /// <p> HTTP Status Code: 400</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4439,8 +4336,7 @@ impl ServiceUnavailableException {
     }
 }
 
-/// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family
-/// service.</p>
+/// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -4782,9 +4678,7 @@ impl ResourceExistsException {
     }
 }
 
-/// <p>This exception is thrown when the <code>UpdateServer</code> is called for a file transfer
-/// protocol-enabled server that has VPC as the endpoint type and the server's
-/// <code>VpcEndpointID</code> is not in the available state.</p>
+/// <p>This exception is thrown when the <code>UpdateServer</code> is called for a file transfer protocol-enabled server that has VPC as the endpoint type and the server's <code>VpcEndpointID</code> is not in the available state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {

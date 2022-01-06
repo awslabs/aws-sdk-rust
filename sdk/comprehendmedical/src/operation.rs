@@ -135,6 +135,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRxNormInferenceJ
     }
 }
 
+/// Operation shape for `DescribeSNOMEDCTInferenceJob`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_snomedct_inference_job`](crate::client::Client::describe_snomedct_inference_job).
+///
+/// See [`crate::client::fluent_builders::DescribeSNOMEDCTInferenceJob`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeSNOMEDCTInferenceJob {
+    _private: (),
+}
+impl DescribeSNOMEDCTInferenceJob {
+    /// Creates a new builder-style object to manufacture [`DescribeSnomedctInferenceJobInput`](crate::input::DescribeSnomedctInferenceJobInput)
+    pub fn builder() -> crate::input::describe_snomedct_inference_job_input::Builder {
+        crate::input::describe_snomedct_inference_job_input::Builder::default()
+    }
+    /// Creates a new `DescribeSNOMEDCTInferenceJob` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeSNOMEDCTInferenceJob {
+    type Output = std::result::Result<
+        crate::output::DescribeSnomedctInferenceJobOutput,
+        crate::error::DescribeSNOMEDCTInferenceJobError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_snomedct_inference_job_error(response)
+        } else {
+            crate::operation_deser::parse_describe_snomedct_inference_job_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DetectEntities`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -296,6 +330,38 @@ impl aws_smithy_http::response::ParseStrictResponse for InferRxNorm {
     }
 }
 
+/// Operation shape for `InferSNOMEDCT`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`infer_snomedct`](crate::client::Client::infer_snomedct).
+///
+/// See [`crate::client::fluent_builders::InferSNOMEDCT`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct InferSNOMEDCT {
+    _private: (),
+}
+impl InferSNOMEDCT {
+    /// Creates a new builder-style object to manufacture [`InferSnomedctInput`](crate::input::InferSnomedctInput)
+    pub fn builder() -> crate::input::infer_snomedct_input::Builder {
+        crate::input::infer_snomedct_input::Builder::default()
+    }
+    /// Creates a new `InferSNOMEDCT` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for InferSNOMEDCT {
+    type Output =
+        std::result::Result<crate::output::InferSnomedctOutput, crate::error::InferSNOMEDCTError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_infer_snomedct_error(response)
+        } else {
+            crate::operation_deser::parse_infer_snomedct_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListEntitiesDetectionV2Jobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -428,6 +494,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRxNormInferenceJobs 
             crate::operation_deser::parse_list_rx_norm_inference_jobs_error(response)
         } else {
             crate::operation_deser::parse_list_rx_norm_inference_jobs_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListSNOMEDCTInferenceJobs`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_snomedct_inference_jobs`](crate::client::Client::list_snomedct_inference_jobs).
+///
+/// See [`crate::client::fluent_builders::ListSNOMEDCTInferenceJobs`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListSNOMEDCTInferenceJobs {
+    _private: (),
+}
+impl ListSNOMEDCTInferenceJobs {
+    /// Creates a new builder-style object to manufacture [`ListSnomedctInferenceJobsInput`](crate::input::ListSnomedctInferenceJobsInput)
+    pub fn builder() -> crate::input::list_snomedct_inference_jobs_input::Builder {
+        crate::input::list_snomedct_inference_jobs_input::Builder::default()
+    }
+    /// Creates a new `ListSNOMEDCTInferenceJobs` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListSNOMEDCTInferenceJobs {
+    type Output = std::result::Result<
+        crate::output::ListSnomedctInferenceJobsOutput,
+        crate::error::ListSNOMEDCTInferenceJobsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_snomedct_inference_jobs_error(response)
+        } else {
+            crate::operation_deser::parse_list_snomedct_inference_jobs_response(response)
         }
     }
 }
@@ -568,6 +668,40 @@ impl aws_smithy_http::response::ParseStrictResponse for StartRxNormInferenceJob 
     }
 }
 
+/// Operation shape for `StartSNOMEDCTInferenceJob`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_snomedct_inference_job`](crate::client::Client::start_snomedct_inference_job).
+///
+/// See [`crate::client::fluent_builders::StartSNOMEDCTInferenceJob`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StartSNOMEDCTInferenceJob {
+    _private: (),
+}
+impl StartSNOMEDCTInferenceJob {
+    /// Creates a new builder-style object to manufacture [`StartSnomedctInferenceJobInput`](crate::input::StartSnomedctInferenceJobInput)
+    pub fn builder() -> crate::input::start_snomedct_inference_job_input::Builder {
+        crate::input::start_snomedct_inference_job_input::Builder::default()
+    }
+    /// Creates a new `StartSNOMEDCTInferenceJob` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartSNOMEDCTInferenceJob {
+    type Output = std::result::Result<
+        crate::output::StartSnomedctInferenceJobOutput,
+        crate::error::StartSNOMEDCTInferenceJobError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_snomedct_inference_job_error(response)
+        } else {
+            crate::operation_deser::parse_start_snomedct_inference_job_response(response)
+        }
+    }
+}
+
 /// Operation shape for `StopEntitiesDetectionV2Job`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -700,6 +834,40 @@ impl aws_smithy_http::response::ParseStrictResponse for StopRxNormInferenceJob {
             crate::operation_deser::parse_stop_rx_norm_inference_job_error(response)
         } else {
             crate::operation_deser::parse_stop_rx_norm_inference_job_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StopSNOMEDCTInferenceJob`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`stop_snomedct_inference_job`](crate::client::Client::stop_snomedct_inference_job).
+///
+/// See [`crate::client::fluent_builders::StopSNOMEDCTInferenceJob`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StopSNOMEDCTInferenceJob {
+    _private: (),
+}
+impl StopSNOMEDCTInferenceJob {
+    /// Creates a new builder-style object to manufacture [`StopSnomedctInferenceJobInput`](crate::input::StopSnomedctInferenceJobInput)
+    pub fn builder() -> crate::input::stop_snomedct_inference_job_input::Builder {
+        crate::input::stop_snomedct_inference_job_input::Builder::default()
+    }
+    /// Creates a new `StopSNOMEDCTInferenceJob` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StopSNOMEDCTInferenceJob {
+    type Output = std::result::Result<
+        crate::output::StopSnomedctInferenceJobOutput,
+        crate::error::StopSNOMEDCTInferenceJobError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_stop_snomedct_inference_job_error(response)
+        } else {
+            crate::operation_deser::parse_stop_snomedct_inference_job_response(response)
         }
     }
 }

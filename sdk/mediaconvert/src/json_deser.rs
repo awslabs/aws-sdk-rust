@@ -15780,6 +15780,15 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "postTemporalSharpeningStrength" => {
+                                builder = builder.set_post_temporal_sharpening_strength(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
+                                        s.to_unescaped().map(|u|
+                                            crate::model::NoiseFilterPostTemporalSharpeningStrength::from(u.as_ref())
+                                        )
+                                    ).transpose()?
+                                );
+                            }
                             "speed" => {
                                 builder = builder.set_speed(
                                     aws_smithy_json::deserialize::token::expect_number_or_null(

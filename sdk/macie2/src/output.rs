@@ -349,12 +349,9 @@ pub mod search_resources_output {
         /// To override the contents of this collection use [`set_matching_resources`](Self::set_matching_resources).
         ///
         /// <p>An array of objects, one for each resource that meets the filter criteria specified in the request.</p>
-        pub fn matching_resources(
-            mut self,
-            input: impl Into<crate::model::MatchingResource>,
-        ) -> Self {
+        pub fn matching_resources(mut self, input: crate::model::MatchingResource) -> Self {
             let mut v = self.matching_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.matching_resources = Some(v);
             self
         }
@@ -600,9 +597,9 @@ pub mod list_organization_admin_accounts_output {
         /// To override the contents of this collection use [`set_admin_accounts`](Self::set_admin_accounts).
         ///
         /// <p>An array of objects, one for each delegated Amazon Macie administrator account for the organization. Only one of these accounts can have a status of ENABLED.</p>
-        pub fn admin_accounts(mut self, input: impl Into<crate::model::AdminAccount>) -> Self {
+        pub fn admin_accounts(mut self, input: crate::model::AdminAccount) -> Self {
             let mut v = self.admin_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.admin_accounts = Some(v);
             self
         }
@@ -682,9 +679,9 @@ pub mod list_members_output {
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
         /// <p>An array of objects, one for each account that's associated with the administrator account and meets the criteria specified in the request.</p>
-        pub fn members(mut self, input: impl Into<crate::model::Member>) -> Self {
+        pub fn members(mut self, input: crate::model::Member) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.members = Some(v);
             self
         }
@@ -765,12 +762,9 @@ pub mod list_managed_data_identifiers_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>An array of objects, one for each managed data identifier.</p>
-        pub fn items(
-            mut self,
-            input: impl Into<crate::model::ManagedDataIdentifierSummary>,
-        ) -> Self {
+        pub fn items(mut self, input: crate::model::ManagedDataIdentifierSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -850,9 +844,9 @@ pub mod list_invitations_output {
         /// To override the contents of this collection use [`set_invitations`](Self::set_invitations).
         ///
         /// <p>An array of objects, one for each invitation that was received by the account.</p>
-        pub fn invitations(mut self, input: impl Into<crate::model::Invitation>) -> Self {
+        pub fn invitations(mut self, input: crate::model::Invitation) -> Self {
             let mut v = self.invitations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.invitations = Some(v);
             self
         }
@@ -941,10 +935,10 @@ pub mod list_findings_filters_output {
         /// <p>An array of objects, one for each filter that's associated with the account.</p>
         pub fn findings_filter_list_items(
             mut self,
-            input: impl Into<crate::model::FindingsFilterListItem>,
+            input: crate::model::FindingsFilterListItem,
         ) -> Self {
             let mut v = self.findings_filter_list_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.findings_filter_list_items = Some(v);
             self
         }
@@ -1107,12 +1101,9 @@ pub mod list_custom_data_identifiers_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>An array of objects, one for each custom data identifier.</p>
-        pub fn items(
-            mut self,
-            input: impl Into<crate::model::CustomDataIdentifierSummary>,
-        ) -> Self {
+        pub fn items(mut self, input: crate::model::CustomDataIdentifierSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -1192,9 +1183,9 @@ pub mod list_classification_jobs_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>An array of objects, one for each job that meets the filter criteria specified in the request.</p>
-        pub fn items(mut self, input: impl Into<crate::model::JobSummary>) -> Self {
+        pub fn items(mut self, input: crate::model::JobSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -1287,9 +1278,9 @@ pub mod get_usage_totals_output {
         /// To override the contents of this collection use [`set_usage_totals`](Self::set_usage_totals).
         ///
         /// <p>An array of objects that contains the results of the query. Each object contains the data for a specific usage metric.</p>
-        pub fn usage_totals(mut self, input: impl Into<crate::model::UsageTotal>) -> Self {
+        pub fn usage_totals(mut self, input: crate::model::UsageTotal) -> Self {
             let mut v = self.usage_totals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.usage_totals = Some(v);
             self
         }
@@ -1377,9 +1368,9 @@ pub mod get_usage_statistics_output {
         /// To override the contents of this collection use [`set_records`](Self::set_records).
         ///
         /// <p>An array of objects that contains the results of the query. Each object contains the data for an account that meets the filter criteria specified in the request.</p>
-        pub fn records(mut self, input: impl Into<crate::model::UsageRecord>) -> Self {
+        pub fn records(mut self, input: crate::model::UsageRecord) -> Self {
             let mut v = self.records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.records = Some(v);
             self
         }
@@ -1953,9 +1944,9 @@ pub mod get_finding_statistics_output {
         /// To override the contents of this collection use [`set_counts_by_group`](Self::set_counts_by_group).
         ///
         /// <p>An array of objects, one for each group of findings that meet the filter criteria specified in the request.</p>
-        pub fn counts_by_group(mut self, input: impl Into<crate::model::GroupCount>) -> Self {
+        pub fn counts_by_group(mut self, input: crate::model::GroupCount) -> Self {
             let mut v = self.counts_by_group.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.counts_by_group = Some(v);
             self
         }
@@ -2296,9 +2287,9 @@ pub mod get_findings_output {
         /// To override the contents of this collection use [`set_findings`](Self::set_findings).
         ///
         /// <p>An array of objects, one for each finding that meets the criteria specified in the request.</p>
-        pub fn findings(mut self, input: impl Into<crate::model::Finding>) -> Self {
+        pub fn findings(mut self, input: crate::model::Finding) -> Self {
             let mut v = self.findings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.findings = Some(v);
             self
         }
@@ -2574,9 +2565,9 @@ pub mod get_custom_data_identifier_output {
         /// To override the contents of this collection use [`set_severity_levels`](Self::set_severity_levels).
         ///
         /// <p>Specifies the severity that's assigned to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. By default, Amazon Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
-        pub fn severity_levels(mut self, input: impl Into<crate::model::SeverityLevel>) -> Self {
+        pub fn severity_levels(mut self, input: crate::model::SeverityLevel) -> Self {
             let mut v = self.severity_levels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.severity_levels = Some(v);
             self
         }
@@ -2722,15 +2713,18 @@ pub struct GetBucketStatisticsOutput {
         std::option::Option<crate::model::BucketCountBySharedAccessType>,
     /// <p>The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     pub classifiable_object_count: i64,
-    /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p> <p>If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
+    /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
+    /// <p>If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
     pub classifiable_size_in_bytes: i64,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and object metadata from Amazon S3 for the buckets.</p>
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The total number of objects in the buckets.</p>
     pub object_count: i64,
-    /// <p>The total storage size, in bytes, of the buckets.</p> <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each object in those buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
+    /// <p>The total storage size, in bytes, of the buckets.</p>
+    /// <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each object in those buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
     pub size_in_bytes: i64,
-    /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p> <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
+    /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p>
+    /// <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
     pub size_in_bytes_compressed: i64,
     /// <p>The total number of objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
     pub unclassifiable_object_count: std::option::Option<crate::model::ObjectLevelStatistics>,
@@ -2771,7 +2765,8 @@ impl GetBucketStatisticsOutput {
     pub fn classifiable_object_count(&self) -> i64 {
         self.classifiable_object_count
     }
-    /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p> <p>If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
+    /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
+    /// <p>If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
     pub fn classifiable_size_in_bytes(&self) -> i64 {
         self.classifiable_size_in_bytes
     }
@@ -2783,11 +2778,13 @@ impl GetBucketStatisticsOutput {
     pub fn object_count(&self) -> i64 {
         self.object_count
     }
-    /// <p>The total storage size, in bytes, of the buckets.</p> <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each object in those buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
+    /// <p>The total storage size, in bytes, of the buckets.</p>
+    /// <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each object in those buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
     pub fn size_in_bytes(&self) -> i64 {
         self.size_in_bytes
     }
-    /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p> <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
+    /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p>
+    /// <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
     pub fn size_in_bytes_compressed(&self) -> i64 {
         self.size_in_bytes_compressed
     }
@@ -2957,12 +2954,14 @@ pub mod get_bucket_statistics_output {
             self.classifiable_object_count = input;
             self
         }
-        /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p> <p>If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
+        /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
+        /// <p>If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
         pub fn classifiable_size_in_bytes(mut self, input: i64) -> Self {
             self.classifiable_size_in_bytes = Some(input);
             self
         }
-        /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p> <p>If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
+        /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
+        /// <p>If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
         pub fn set_classifiable_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.classifiable_size_in_bytes = input;
             self
@@ -2990,22 +2989,26 @@ pub mod get_bucket_statistics_output {
             self.object_count = input;
             self
         }
-        /// <p>The total storage size, in bytes, of the buckets.</p> <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each object in those buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
+        /// <p>The total storage size, in bytes, of the buckets.</p>
+        /// <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each object in those buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
         pub fn size_in_bytes(mut self, input: i64) -> Self {
             self.size_in_bytes = Some(input);
             self
         }
-        /// <p>The total storage size, in bytes, of the buckets.</p> <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each object in those buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
+        /// <p>The total storage size, in bytes, of the buckets.</p>
+        /// <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each object in those buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
         pub fn set_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.size_in_bytes = input;
             self
         }
-        /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p> <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
+        /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p>
+        /// <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
         pub fn size_in_bytes_compressed(mut self, input: i64) -> Self {
             self.size_in_bytes_compressed = Some(input);
             self
         }
-        /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p> <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
+        /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p>
+        /// <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
         pub fn set_size_in_bytes_compressed(mut self, input: std::option::Option<i64>) -> Self {
             self.size_in_bytes_compressed = input;
             self
@@ -3428,9 +3431,21 @@ pub struct DescribeClassificationJobOutput {
     pub job_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the job.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li> <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li> <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li></ul>
+    /// <p>The current status of the job. Possible values are:</p>
+    /// <ul>
+    /// <li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li>
+    /// <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li>
+    /// <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li>
+    /// <li><p>PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li>
+    /// <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li>
+    /// <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li>
+    /// </ul>
     pub job_status: std::option::Option<crate::model::JobStatus>,
-    /// <p>The schedule for running the job. Possible values are:</p> <ul><li><p>ONE_TIME - The job runs only once.</p></li> <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The scheduleFrequency property indicates the recurrence pattern for the job.</p></li></ul>
+    /// <p>The schedule for running the job. Possible values are:</p>
+    /// <ul>
+    /// <li><p>ONE_TIME - The job runs only once.</p></li>
+    /// <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The scheduleFrequency property indicates the recurrence pattern for the job.</p></li>
+    /// </ul>
     pub job_type: std::option::Option<crate::model::JobType>,
     /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run.</p>
     pub last_run_error_status: std::option::Option<crate::model::LastRunErrorStatus>,
@@ -3438,7 +3453,14 @@ pub struct DescribeClassificationJobOutput {
     pub last_run_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An array of unique identifiers, one for each managed data identifier that the job is explicitly configured to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type specified for the job (managedDataIdentifierSelector). This value is null if the job's managed data identifier selection type is ALL or the job uses only custom data identifiers (customDataIdentifierIds) to analyze data.</p>
     pub managed_data_identifier_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The selection type that determines which managed data identifiers the job uses to analyze data. Possible values are:</p> <ul><li><p>ALL - Use all the managed data identifiers that Amazon Macie provides.</p></li> <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't use any managed data identifiers.</p></li></ul> <p>If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
+    /// <p>The selection type that determines which managed data identifiers the job uses to analyze data. Possible values are:</p>
+    /// <ul>
+    /// <li><p>ALL - Use all the managed data identifiers that Amazon Macie provides.</p></li>
+    /// <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+    /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+    /// <li><p>NONE - Don't use any managed data identifiers.</p></li>
+    /// </ul>
+    /// <p>If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
     pub managed_data_identifier_selector:
         std::option::Option<crate::model::ManagedDataIdentifierSelector>,
     /// <p>The custom name of the job.</p>
@@ -3486,11 +3508,23 @@ impl DescribeClassificationJobOutput {
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li> <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li> <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li></ul>
+    /// <p>The current status of the job. Possible values are:</p>
+    /// <ul>
+    /// <li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li>
+    /// <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li>
+    /// <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li>
+    /// <li><p>PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li>
+    /// <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li>
+    /// <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li>
+    /// </ul>
     pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
         self.job_status.as_ref()
     }
-    /// <p>The schedule for running the job. Possible values are:</p> <ul><li><p>ONE_TIME - The job runs only once.</p></li> <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The scheduleFrequency property indicates the recurrence pattern for the job.</p></li></ul>
+    /// <p>The schedule for running the job. Possible values are:</p>
+    /// <ul>
+    /// <li><p>ONE_TIME - The job runs only once.</p></li>
+    /// <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The scheduleFrequency property indicates the recurrence pattern for the job.</p></li>
+    /// </ul>
     pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
         self.job_type.as_ref()
     }
@@ -3506,7 +3540,14 @@ impl DescribeClassificationJobOutput {
     pub fn managed_data_identifier_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.managed_data_identifier_ids.as_deref()
     }
-    /// <p>The selection type that determines which managed data identifiers the job uses to analyze data. Possible values are:</p> <ul><li><p>ALL - Use all the managed data identifiers that Amazon Macie provides.</p></li> <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't use any managed data identifiers.</p></li></ul> <p>If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
+    /// <p>The selection type that determines which managed data identifiers the job uses to analyze data. Possible values are:</p>
+    /// <ul>
+    /// <li><p>ALL - Use all the managed data identifiers that Amazon Macie provides.</p></li>
+    /// <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+    /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+    /// <li><p>NONE - Don't use any managed data identifiers.</p></li>
+    /// </ul>
+    /// <p>If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
     pub fn managed_data_identifier_selector(
         &self,
     ) -> std::option::Option<&crate::model::ManagedDataIdentifierSelector> {
@@ -3694,12 +3735,28 @@ pub mod describe_classification_job_output {
             self.job_id = input;
             self
         }
-        /// <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li> <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li> <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li></ul>
+        /// <p>The current status of the job. Possible values are:</p>
+        /// <ul>
+        /// <li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li>
+        /// <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li>
+        /// <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li>
+        /// <li><p>PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li>
+        /// <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li>
+        /// <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li>
+        /// </ul>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
             self.job_status = Some(input);
             self
         }
-        /// <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li> <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li> <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li></ul>
+        /// <p>The current status of the job. Possible values are:</p>
+        /// <ul>
+        /// <li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li>
+        /// <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li>
+        /// <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li>
+        /// <li><p>PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li>
+        /// <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li>
+        /// <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li>
+        /// </ul>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -3707,12 +3764,20 @@ pub mod describe_classification_job_output {
             self.job_status = input;
             self
         }
-        /// <p>The schedule for running the job. Possible values are:</p> <ul><li><p>ONE_TIME - The job runs only once.</p></li> <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The scheduleFrequency property indicates the recurrence pattern for the job.</p></li></ul>
+        /// <p>The schedule for running the job. Possible values are:</p>
+        /// <ul>
+        /// <li><p>ONE_TIME - The job runs only once.</p></li>
+        /// <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The scheduleFrequency property indicates the recurrence pattern for the job.</p></li>
+        /// </ul>
         pub fn job_type(mut self, input: crate::model::JobType) -> Self {
             self.job_type = Some(input);
             self
         }
-        /// <p>The schedule for running the job. Possible values are:</p> <ul><li><p>ONE_TIME - The job runs only once.</p></li> <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The scheduleFrequency property indicates the recurrence pattern for the job.</p></li></ul>
+        /// <p>The schedule for running the job. Possible values are:</p>
+        /// <ul>
+        /// <li><p>ONE_TIME - The job runs only once.</p></li>
+        /// <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The scheduleFrequency property indicates the recurrence pattern for the job.</p></li>
+        /// </ul>
         pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
             self.job_type = input;
             self
@@ -3765,7 +3830,14 @@ pub mod describe_classification_job_output {
             self.managed_data_identifier_ids = input;
             self
         }
-        /// <p>The selection type that determines which managed data identifiers the job uses to analyze data. Possible values are:</p> <ul><li><p>ALL - Use all the managed data identifiers that Amazon Macie provides.</p></li> <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't use any managed data identifiers.</p></li></ul> <p>If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
+        /// <p>The selection type that determines which managed data identifiers the job uses to analyze data. Possible values are:</p>
+        /// <ul>
+        /// <li><p>ALL - Use all the managed data identifiers that Amazon Macie provides.</p></li>
+        /// <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+        /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+        /// <li><p>NONE - Don't use any managed data identifiers.</p></li>
+        /// </ul>
+        /// <p>If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
         pub fn managed_data_identifier_selector(
             mut self,
             input: crate::model::ManagedDataIdentifierSelector,
@@ -3773,7 +3845,14 @@ pub mod describe_classification_job_output {
             self.managed_data_identifier_selector = Some(input);
             self
         }
-        /// <p>The selection type that determines which managed data identifiers the job uses to analyze data. Possible values are:</p> <ul><li><p>ALL - Use all the managed data identifiers that Amazon Macie provides.</p></li> <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't use any managed data identifiers.</p></li></ul> <p>If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
+        /// <p>The selection type that determines which managed data identifiers the job uses to analyze data. Possible values are:</p>
+        /// <ul>
+        /// <li><p>ALL - Use all the managed data identifiers that Amazon Macie provides.</p></li>
+        /// <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+        /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+        /// <li><p>NONE - Don't use any managed data identifiers.</p></li>
+        /// </ul>
+        /// <p>If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
         pub fn set_managed_data_identifier_selector(
             mut self,
             input: std::option::Option<crate::model::ManagedDataIdentifierSelector>,
@@ -3954,9 +4033,9 @@ pub mod describe_buckets_output {
         /// To override the contents of this collection use [`set_buckets`](Self::set_buckets).
         ///
         /// <p>An array of objects, one for each bucket that meets the filter criteria specified in the request.</p>
-        pub fn buckets(mut self, input: impl Into<crate::model::BucketMetadata>) -> Self {
+        pub fn buckets(mut self, input: crate::model::BucketMetadata) -> Self {
             let mut v = self.buckets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.buckets = Some(v);
             self
         }
@@ -4059,12 +4138,9 @@ pub mod delete_invitations_output {
         /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
         ///
         /// <p>An array of objects, one for each account whose invitation hasn't been deleted. Each object identifies the account and explains why the request hasn't been processed for that account.</p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
@@ -4186,12 +4262,9 @@ pub mod decline_invitations_output {
         /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
         ///
         /// <p>An array of objects, one for each account whose invitation hasn't been declined. Each object identifies the account and explains why the request hasn't been processed for that account.</p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
@@ -4335,12 +4408,9 @@ pub mod create_invitations_output {
         /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
         ///
         /// <p>An array of objects, one for each account whose invitation hasn't been processed. Each object identifies the account and explains why the invitation hasn't been processed for the account.</p>
-        pub fn unprocessed_accounts(
-            mut self,
-            input: impl Into<crate::model::UnprocessedAccount>,
-        ) -> Self {
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
             let mut v = self.unprocessed_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_accounts = Some(v);
             self
         }
@@ -4619,10 +4689,10 @@ pub mod batch_get_custom_data_identifiers_output {
         /// <p>An array of objects, one for each custom data identifier that meets the criteria specified in the request.</p>
         pub fn custom_data_identifiers(
             mut self,
-            input: impl Into<crate::model::BatchGetCustomDataIdentifierSummary>,
+            input: crate::model::BatchGetCustomDataIdentifierSummary,
         ) -> Self {
             let mut v = self.custom_data_identifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.custom_data_identifiers = Some(v);
             self
         }

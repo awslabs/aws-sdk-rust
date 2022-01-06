@@ -12,14 +12,11 @@ pub struct AssociateNodeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateNodeErrorKind {
-    /// <p>The resource is in a state that does not allow you to perform a specified action.
-    /// </p>
+    /// <p>The resource is in a state that does not allow you to perform a specified action. </p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>The requested resource does not exist, or access was denied.
-    /// </p>
+    /// <p>The requested resource does not exist, or access was denied. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>One or more of the provided request parameters are not valid.
-    /// </p>
+    /// <p>One or more of the provided request parameters are not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -64,8 +61,6 @@ impl AssociateNodeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -126,17 +121,13 @@ pub struct CreateBackupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateBackupErrorKind {
-    /// <p>The resource is in a state that does not allow you to perform a specified action.
-    /// </p>
+    /// <p>The resource is in a state that does not allow you to perform a specified action. </p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>The limit of servers or backups has been reached.
-    /// </p>
+    /// <p>The limit of servers or backups has been reached. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The requested resource does not exist, or access was denied.
-    /// </p>
+    /// <p>The requested resource does not exist, or access was denied. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>One or more of the provided request parameters are not valid.
-    /// </p>
+    /// <p>One or more of the provided request parameters are not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -182,8 +173,6 @@ impl CreateBackupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -249,17 +238,13 @@ pub struct CreateServerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateServerErrorKind {
-    /// <p>The limit of servers or backups has been reached.
-    /// </p>
+    /// <p>The limit of servers or backups has been reached. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The requested resource cannot be created because it already exists.
-    /// </p>
+    /// <p>The requested resource cannot be created because it already exists. </p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
-    /// <p>The requested resource does not exist, or access was denied.
-    /// </p>
+    /// <p>The requested resource does not exist, or access was denied. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>One or more of the provided request parameters are not valid.
-    /// </p>
+    /// <p>One or more of the provided request parameters are not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -305,8 +290,6 @@ impl CreateServerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -375,14 +358,11 @@ pub struct DeleteBackupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBackupErrorKind {
-    /// <p>The resource is in a state that does not allow you to perform a specified action.
-    /// </p>
+    /// <p>The resource is in a state that does not allow you to perform a specified action. </p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>The requested resource does not exist, or access was denied.
-    /// </p>
+    /// <p>The requested resource does not exist, or access was denied. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>One or more of the provided request parameters are not valid.
-    /// </p>
+    /// <p>One or more of the provided request parameters are not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -427,8 +407,6 @@ impl DeleteBackupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -489,14 +467,11 @@ pub struct DeleteServerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteServerErrorKind {
-    /// <p>The resource is in a state that does not allow you to perform a specified action.
-    /// </p>
+    /// <p>The resource is in a state that does not allow you to perform a specified action. </p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>The requested resource does not exist, or access was denied.
-    /// </p>
+    /// <p>The requested resource does not exist, or access was denied. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>One or more of the provided request parameters are not valid.
-    /// </p>
+    /// <p>One or more of the provided request parameters are not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -541,8 +516,6 @@ impl DeleteServerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -643,8 +616,6 @@ impl DescribeAccountAttributesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -687,14 +658,11 @@ pub struct DescribeBackupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeBackupsErrorKind {
-    /// <p>This occurs when the provided nextToken is not valid.
-    /// </p>
+    /// <p>This occurs when the provided nextToken is not valid. </p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>The requested resource does not exist, or access was denied.
-    /// </p>
+    /// <p>The requested resource does not exist, or access was denied. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>One or more of the provided request parameters are not valid.
-    /// </p>
+    /// <p>One or more of the provided request parameters are not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -739,8 +707,6 @@ impl DescribeBackupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -804,14 +770,11 @@ pub struct DescribeEventsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEventsErrorKind {
-    /// <p>This occurs when the provided nextToken is not valid.
-    /// </p>
+    /// <p>This occurs when the provided nextToken is not valid. </p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>The requested resource does not exist, or access was denied.
-    /// </p>
+    /// <p>The requested resource does not exist, or access was denied. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>One or more of the provided request parameters are not valid.
-    /// </p>
+    /// <p>One or more of the provided request parameters are not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -856,8 +819,6 @@ impl DescribeEventsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -921,11 +882,9 @@ pub struct DescribeNodeAssociationStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeNodeAssociationStatusErrorKind {
-    /// <p>The requested resource does not exist, or access was denied.
-    /// </p>
+    /// <p>The requested resource does not exist, or access was denied. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>One or more of the provided request parameters are not valid.
-    /// </p>
+    /// <p>One or more of the provided request parameters are not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -974,8 +933,6 @@ impl DescribeNodeAssociationStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1036,14 +993,11 @@ pub struct DescribeServersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeServersErrorKind {
-    /// <p>This occurs when the provided nextToken is not valid.
-    /// </p>
+    /// <p>This occurs when the provided nextToken is not valid. </p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>The requested resource does not exist, or access was denied.
-    /// </p>
+    /// <p>The requested resource does not exist, or access was denied. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>One or more of the provided request parameters are not valid.
-    /// </p>
+    /// <p>One or more of the provided request parameters are not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1088,8 +1042,6 @@ impl DescribeServersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1153,14 +1105,11 @@ pub struct DisassociateNodeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateNodeErrorKind {
-    /// <p>The resource is in a state that does not allow you to perform a specified action.
-    /// </p>
+    /// <p>The resource is in a state that does not allow you to perform a specified action. </p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>The requested resource does not exist, or access was denied.
-    /// </p>
+    /// <p>The requested resource does not exist, or access was denied. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>One or more of the provided request parameters are not valid.
-    /// </p>
+    /// <p>One or more of the provided request parameters are not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1205,8 +1154,6 @@ impl DisassociateNodeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1273,14 +1220,11 @@ pub struct ExportServerEngineAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExportServerEngineAttributeErrorKind {
-    /// <p>The resource is in a state that does not allow you to perform a specified action.
-    /// </p>
+    /// <p>The resource is in a state that does not allow you to perform a specified action. </p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>The requested resource does not exist, or access was denied.
-    /// </p>
+    /// <p>The requested resource does not exist, or access was denied. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>One or more of the provided request parameters are not valid.
-    /// </p>
+    /// <p>One or more of the provided request parameters are not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1327,8 +1271,6 @@ impl ExportServerEngineAttributeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1395,11 +1337,9 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>The requested resource does not exist, or access was denied.
-    /// </p>
+    /// <p>The requested resource does not exist, or access was denied. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>One or more of the provided request parameters are not valid.
-    /// </p>
+    /// <p>One or more of the provided request parameters are not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1443,8 +1383,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1503,14 +1441,11 @@ pub struct RestoreServerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RestoreServerErrorKind {
-    /// <p>The resource is in a state that does not allow you to perform a specified action.
-    /// </p>
+    /// <p>The resource is in a state that does not allow you to perform a specified action. </p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>The requested resource does not exist, or access was denied.
-    /// </p>
+    /// <p>The requested resource does not exist, or access was denied. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>One or more of the provided request parameters are not valid.
-    /// </p>
+    /// <p>One or more of the provided request parameters are not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1555,8 +1490,6 @@ impl RestoreServerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1617,14 +1550,11 @@ pub struct StartMaintenanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartMaintenanceErrorKind {
-    /// <p>The resource is in a state that does not allow you to perform a specified action.
-    /// </p>
+    /// <p>The resource is in a state that does not allow you to perform a specified action. </p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>The requested resource does not exist, or access was denied.
-    /// </p>
+    /// <p>The requested resource does not exist, or access was denied. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>One or more of the provided request parameters are not valid.
-    /// </p>
+    /// <p>One or more of the provided request parameters are not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1669,8 +1599,6 @@ impl StartMaintenanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1737,14 +1665,11 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>The resource is in a state that does not allow you to perform a specified action.
-    /// </p>
+    /// <p>The resource is in a state that does not allow you to perform a specified action. </p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>The requested resource does not exist, or access was denied.
-    /// </p>
+    /// <p>The requested resource does not exist, or access was denied. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>One or more of the provided request parameters are not valid.
-    /// </p>
+    /// <p>One or more of the provided request parameters are not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1789,8 +1714,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1851,14 +1774,11 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>The resource is in a state that does not allow you to perform a specified action.
-    /// </p>
+    /// <p>The resource is in a state that does not allow you to perform a specified action. </p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>The requested resource does not exist, or access was denied.
-    /// </p>
+    /// <p>The requested resource does not exist, or access was denied. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>One or more of the provided request parameters are not valid.
-    /// </p>
+    /// <p>One or more of the provided request parameters are not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1903,8 +1823,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1965,14 +1883,11 @@ pub struct UpdateServerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateServerErrorKind {
-    /// <p>The resource is in a state that does not allow you to perform a specified action.
-    /// </p>
+    /// <p>The resource is in a state that does not allow you to perform a specified action. </p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>The requested resource does not exist, or access was denied.
-    /// </p>
+    /// <p>The requested resource does not exist, or access was denied. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>One or more of the provided request parameters are not valid.
-    /// </p>
+    /// <p>One or more of the provided request parameters are not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2017,8 +1932,6 @@ impl UpdateServerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2079,14 +1992,11 @@ pub struct UpdateServerEngineAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateServerEngineAttributesErrorKind {
-    /// <p>The resource is in a state that does not allow you to perform a specified action.
-    /// </p>
+    /// <p>The resource is in a state that does not allow you to perform a specified action. </p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>The requested resource does not exist, or access was denied.
-    /// </p>
+    /// <p>The requested resource does not exist, or access was denied. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>One or more of the provided request parameters are not valid.
-    /// </p>
+    /// <p>One or more of the provided request parameters are not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2133,8 +2043,6 @@ impl UpdateServerEngineAttributesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2190,13 +2098,11 @@ impl std::error::Error for UpdateServerEngineAttributesError {
     }
 }
 
-/// <p>One or more of the provided request parameters are not valid.
-/// </p>
+/// <p>One or more of the provided request parameters are not valid. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
-    /// <p>Error or informational message that can contain more detail about a validation failure.
-    /// </p>
+    /// <p>Error or informational message that can contain more detail about a validation failure. </p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ValidationException {
@@ -2231,14 +2137,12 @@ pub mod validation_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Error or informational message that can contain more detail about a validation failure.
-        /// </p>
+        /// <p>Error or informational message that can contain more detail about a validation failure. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>Error or informational message that can contain more detail about a validation failure.
-        /// </p>
+        /// <p>Error or informational message that can contain more detail about a validation failure. </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2258,13 +2162,11 @@ impl ValidationException {
     }
 }
 
-/// <p>The requested resource does not exist, or access was denied.
-/// </p>
+/// <p>The requested resource does not exist, or access was denied. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
-    /// <p>Error or informational message that can contain more detail about problems locating or accessing a resource.
-    /// </p>
+    /// <p>Error or informational message that can contain more detail about problems locating or accessing a resource. </p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
@@ -2299,14 +2201,12 @@ pub mod resource_not_found_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Error or informational message that can contain more detail about problems locating or accessing a resource.
-        /// </p>
+        /// <p>Error or informational message that can contain more detail about problems locating or accessing a resource. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>Error or informational message that can contain more detail about problems locating or accessing a resource.
-        /// </p>
+        /// <p>Error or informational message that can contain more detail about problems locating or accessing a resource. </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2326,14 +2226,11 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>The resource is in a state that does not allow you to perform a specified action.
-/// </p>
+/// <p>The resource is in a state that does not allow you to perform a specified action. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidStateException {
-    /// <p>Error or informational message that provides more detail if a resource is
-    /// in a state that is not valid for performing a specified action.
-    /// </p>
+    /// <p>Error or informational message that provides more detail if a resource is in a state that is not valid for performing a specified action. </p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidStateException {
@@ -2368,16 +2265,12 @@ pub mod invalid_state_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Error or informational message that provides more detail if a resource is
-        /// in a state that is not valid for performing a specified action.
-        /// </p>
+        /// <p>Error or informational message that provides more detail if a resource is in a state that is not valid for performing a specified action. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>Error or informational message that provides more detail if a resource is
-        /// in a state that is not valid for performing a specified action.
-        /// </p>
+        /// <p>Error or informational message that provides more detail if a resource is in a state that is not valid for performing a specified action. </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2397,13 +2290,11 @@ impl InvalidStateException {
     }
 }
 
-/// <p>This occurs when the provided nextToken is not valid.
-/// </p>
+/// <p>This occurs when the provided nextToken is not valid. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNextTokenException {
-    /// <p>Error or informational message that can contain more detail about a nextToken failure.
-    /// </p>
+    /// <p>Error or informational message that can contain more detail about a nextToken failure. </p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidNextTokenException {
@@ -2438,14 +2329,12 @@ pub mod invalid_next_token_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Error or informational message that can contain more detail about a nextToken failure.
-        /// </p>
+        /// <p>Error or informational message that can contain more detail about a nextToken failure. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>Error or informational message that can contain more detail about a nextToken failure.
-        /// </p>
+        /// <p>Error or informational message that can contain more detail about a nextToken failure. </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2465,13 +2354,11 @@ impl InvalidNextTokenException {
     }
 }
 
-/// <p>The requested resource cannot be created because it already exists.
-/// </p>
+/// <p>The requested resource cannot be created because it already exists. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceAlreadyExistsException {
-    /// <p>Error or informational message in response to a CreateServer request that a resource cannot be created because it already exists.
-    /// </p>
+    /// <p>Error or informational message in response to a CreateServer request that a resource cannot be created because it already exists. </p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceAlreadyExistsException {
@@ -2506,14 +2393,12 @@ pub mod resource_already_exists_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Error or informational message in response to a CreateServer request that a resource cannot be created because it already exists.
-        /// </p>
+        /// <p>Error or informational message in response to a CreateServer request that a resource cannot be created because it already exists. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>Error or informational message in response to a CreateServer request that a resource cannot be created because it already exists.
-        /// </p>
+        /// <p>Error or informational message in response to a CreateServer request that a resource cannot be created because it already exists. </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2533,13 +2418,11 @@ impl ResourceAlreadyExistsException {
     }
 }
 
-/// <p>The limit of servers or backups has been reached.
-/// </p>
+/// <p>The limit of servers or backups has been reached. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
-    /// <p>Error or informational message that the maximum allowed number of servers or backups has been exceeded.
-    /// </p>
+    /// <p>Error or informational message that the maximum allowed number of servers or backups has been exceeded. </p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LimitExceededException {
@@ -2574,14 +2457,12 @@ pub mod limit_exceeded_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Error or informational message that the maximum allowed number of servers or backups has been exceeded.
-        /// </p>
+        /// <p>Error or informational message that the maximum allowed number of servers or backups has been exceeded. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>Error or informational message that the maximum allowed number of servers or backups has been exceeded.
-        /// </p>
+        /// <p>Error or informational message that the maximum allowed number of servers or backups has been exceeded. </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self

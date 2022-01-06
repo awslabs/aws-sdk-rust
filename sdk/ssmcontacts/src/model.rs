@@ -144,34 +144,20 @@ impl AsRef<str> for ValidationExceptionReason {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContactChannelAddress {
-    /// <p>The format is dependent on the type of the contact channel. The following are the
-    /// expected formats:</p>
+    /// <p>The format is dependent on the type of the contact channel. The following are the expected formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>SMS - '+' followed by the country code and phone number</p>
-    /// </li>
-    /// <li>
-    /// <p>VOICE - '+' followed by the country code and phone number</p>
-    /// </li>
-    /// <li>
-    /// <p>EMAIL - any standard email format</p>
-    /// </li>
+    /// <li> <p>SMS - '+' followed by the country code and phone number</p> </li>
+    /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
+    /// <li> <p>EMAIL - any standard email format</p> </li>
     /// </ul>
     pub simple_address: std::option::Option<std::string::String>,
 }
 impl ContactChannelAddress {
-    /// <p>The format is dependent on the type of the contact channel. The following are the
-    /// expected formats:</p>
+    /// <p>The format is dependent on the type of the contact channel. The following are the expected formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>SMS - '+' followed by the country code and phone number</p>
-    /// </li>
-    /// <li>
-    /// <p>VOICE - '+' followed by the country code and phone number</p>
-    /// </li>
-    /// <li>
-    /// <p>EMAIL - any standard email format</p>
-    /// </li>
+    /// <li> <p>SMS - '+' followed by the country code and phone number</p> </li>
+    /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
+    /// <li> <p>EMAIL - any standard email format</p> </li>
     /// </ul>
     pub fn simple_address(&self) -> std::option::Option<&str> {
         self.simple_address.as_deref()
@@ -193,35 +179,21 @@ pub mod contact_channel_address {
         pub(crate) simple_address: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The format is dependent on the type of the contact channel. The following are the
-        /// expected formats:</p>
+        /// <p>The format is dependent on the type of the contact channel. The following are the expected formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>SMS - '+' followed by the country code and phone number</p>
-        /// </li>
-        /// <li>
-        /// <p>VOICE - '+' followed by the country code and phone number</p>
-        /// </li>
-        /// <li>
-        /// <p>EMAIL - any standard email format</p>
-        /// </li>
+        /// <li> <p>SMS - '+' followed by the country code and phone number</p> </li>
+        /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
+        /// <li> <p>EMAIL - any standard email format</p> </li>
         /// </ul>
         pub fn simple_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.simple_address = Some(input.into());
             self
         }
-        /// <p>The format is dependent on the type of the contact channel. The following are the
-        /// expected formats:</p>
+        /// <p>The format is dependent on the type of the contact channel. The following are the expected formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>SMS - '+' followed by the country code and phone number</p>
-        /// </li>
-        /// <li>
-        /// <p>VOICE - '+' followed by the country code and phone number</p>
-        /// </li>
-        /// <li>
-        /// <p>EMAIL - any standard email format</p>
-        /// </li>
+        /// <li> <p>SMS - '+' followed by the country code and phone number</p> </li>
+        /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
+        /// <li> <p>EMAIL - any standard email format</p> </li>
         /// </ul>
         pub fn set_simple_address(
             mut self,
@@ -245,18 +217,15 @@ impl ContactChannelAddress {
     }
 }
 
-/// <p>The stages that an escalation plan or engagement plan engages contacts and contact
-/// methods in.</p>
+/// <p>The stages that an escalation plan or engagement plan engages contacts and contact methods in.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Plan {
-    /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and
-    /// contact methods.</p>
+    /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and contact methods.</p>
     pub stages: std::option::Option<std::vec::Vec<crate::model::Stage>>,
 }
 impl Plan {
-    /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and
-    /// contact methods.</p>
+    /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and contact methods.</p>
     pub fn stages(&self) -> std::option::Option<&[crate::model::Stage]> {
         self.stages.as_deref()
     }
@@ -281,16 +250,14 @@ pub mod plan {
         ///
         /// To override the contents of this collection use [`set_stages`](Self::set_stages).
         ///
-        /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and
-        /// contact methods.</p>
-        pub fn stages(mut self, input: impl Into<crate::model::Stage>) -> Self {
+        /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and contact methods.</p>
+        pub fn stages(mut self, input: crate::model::Stage) -> Self {
             let mut v = self.stages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stages = Some(v);
             self
         }
-        /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and
-        /// contact methods.</p>
+        /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and contact methods.</p>
         pub fn set_stages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Stage>>,
@@ -313,26 +280,21 @@ impl Plan {
     }
 }
 
-/// <p>A set amount of time that an escalation plan or engagement plan engages the specified
-/// contacts or contact methods.</p>
+/// <p>A set amount of time that an escalation plan or engagement plan engages the specified contacts or contact methods.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Stage {
-    /// <p>The time to wait until beginning the next stage. The duration can only be set to 0 if a
-    /// target is specified.</p>
+    /// <p>The time to wait until beginning the next stage. The duration can only be set to 0 if a target is specified.</p>
     pub duration_in_minutes: std::option::Option<i32>,
-    /// <p>The contacts or contact methods that the escalation plan or engagement plan is
-    /// engaging.</p>
+    /// <p>The contacts or contact methods that the escalation plan or engagement plan is engaging.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
 }
 impl Stage {
-    /// <p>The time to wait until beginning the next stage. The duration can only be set to 0 if a
-    /// target is specified.</p>
+    /// <p>The time to wait until beginning the next stage. The duration can only be set to 0 if a target is specified.</p>
     pub fn duration_in_minutes(&self) -> std::option::Option<i32> {
         self.duration_in_minutes
     }
-    /// <p>The contacts or contact methods that the escalation plan or engagement plan is
-    /// engaging.</p>
+    /// <p>The contacts or contact methods that the escalation plan or engagement plan is engaging.</p>
     pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
         self.targets.as_deref()
     }
@@ -355,14 +317,12 @@ pub mod stage {
         pub(crate) targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     }
     impl Builder {
-        /// <p>The time to wait until beginning the next stage. The duration can only be set to 0 if a
-        /// target is specified.</p>
+        /// <p>The time to wait until beginning the next stage. The duration can only be set to 0 if a target is specified.</p>
         pub fn duration_in_minutes(mut self, input: i32) -> Self {
             self.duration_in_minutes = Some(input);
             self
         }
-        /// <p>The time to wait until beginning the next stage. The duration can only be set to 0 if a
-        /// target is specified.</p>
+        /// <p>The time to wait until beginning the next stage. The duration can only be set to 0 if a target is specified.</p>
         pub fn set_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.duration_in_minutes = input;
             self
@@ -371,16 +331,14 @@ pub mod stage {
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
-        /// <p>The contacts or contact methods that the escalation plan or engagement plan is
-        /// engaging.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        /// <p>The contacts or contact methods that the escalation plan or engagement plan is engaging.</p>
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
-        /// <p>The contacts or contact methods that the escalation plan or engagement plan is
-        /// engaging.</p>
+        /// <p>The contacts or contact methods that the escalation plan or engagement plan is engaging.</p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Target>>,
@@ -489,8 +447,7 @@ impl Target {
 pub struct ContactTargetInfo {
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
     pub contact_id: std::option::Option<std::string::String>,
-    /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of
-    /// stages in the plan.</p>
+    /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
     pub is_essential: std::option::Option<bool>,
 }
 impl ContactTargetInfo {
@@ -498,8 +455,7 @@ impl ContactTargetInfo {
     pub fn contact_id(&self) -> std::option::Option<&str> {
         self.contact_id.as_deref()
     }
-    /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of
-    /// stages in the plan.</p>
+    /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
     pub fn is_essential(&self) -> std::option::Option<bool> {
         self.is_essential
     }
@@ -532,14 +488,12 @@ pub mod contact_target_info {
             self.contact_id = input;
             self
         }
-        /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of
-        /// stages in the plan.</p>
+        /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
         pub fn is_essential(mut self, input: bool) -> Self {
             self.is_essential = Some(input);
             self
         }
-        /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of
-        /// stages in the plan.</p>
+        /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
         pub fn set_is_essential(mut self, input: std::option::Option<bool>) -> Self {
             self.is_essential = input;
             self
@@ -560,15 +514,13 @@ impl ContactTargetInfo {
     }
 }
 
-/// <p>Information about the contact channel that Incident Manager uses to engage the
-/// contact.</p>
+/// <p>Information about the contact channel that Incident Manager uses to engage the contact.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelTargetInfo {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
     pub contact_channel_id: std::option::Option<std::string::String>,
-    /// <p>The number of minutes to wait to retry sending engagement in the case the engagement
-    /// initially fails.</p>
+    /// <p>The number of minutes to wait to retry sending engagement in the case the engagement initially fails.</p>
     pub retry_interval_in_minutes: std::option::Option<i32>,
 }
 impl ChannelTargetInfo {
@@ -576,8 +528,7 @@ impl ChannelTargetInfo {
     pub fn contact_channel_id(&self) -> std::option::Option<&str> {
         self.contact_channel_id.as_deref()
     }
-    /// <p>The number of minutes to wait to retry sending engagement in the case the engagement
-    /// initially fails.</p>
+    /// <p>The number of minutes to wait to retry sending engagement in the case the engagement initially fails.</p>
     pub fn retry_interval_in_minutes(&self) -> std::option::Option<i32> {
         self.retry_interval_in_minutes
     }
@@ -613,14 +564,12 @@ pub mod channel_target_info {
             self.contact_channel_id = input;
             self
         }
-        /// <p>The number of minutes to wait to retry sending engagement in the case the engagement
-        /// initially fails.</p>
+        /// <p>The number of minutes to wait to retry sending engagement in the case the engagement initially fails.</p>
         pub fn retry_interval_in_minutes(mut self, input: i32) -> Self {
             self.retry_interval_in_minutes = Some(input);
             self
         }
-        /// <p>The number of minutes to wait to retry sending engagement in the case the engagement
-        /// initially fails.</p>
+        /// <p>The number of minutes to wait to retry sending engagement in the case the engagement initially fails.</p>
         pub fn set_retry_interval_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.retry_interval_in_minutes = input;
             self
@@ -645,17 +594,13 @@ impl ChannelTargetInfo {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
-    /// <p>Name of the
-    /// object
-    /// key.</p>
+    /// <p>Name of the object key.</p>
     pub key: std::option::Option<std::string::String>,
     /// <p>Value of the tag.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
-    /// <p>Name of the
-    /// object
-    /// key.</p>
+    /// <p>Name of the object key.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -682,16 +627,12 @@ pub mod tag {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Name of the
-        /// object
-        /// key.</p>
+        /// <p>Name of the object key.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>Name of the
-        /// object
-        /// key.</p>
+        /// <p>Name of the object key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -927,13 +868,11 @@ impl Page {
 pub struct Receipt {
     /// <p>The Amazon Resource Name (ARN) of the contact channel Incident Manager engaged.</p>
     pub contact_channel_arn: std::option::Option<std::string::String>,
-    /// <p>The type follows the engagement cycle, <code>SENT</code>, <code>DELIVERED</code>, and
-    /// <code>READ</code>.</p>
+    /// <p>The type follows the engagement cycle, <code>SENT</code>, <code>DELIVERED</code>, and <code>READ</code>.</p>
     pub receipt_type: std::option::Option<crate::model::ReceiptType>,
     /// <p>Information provided during the page acknowledgement.</p>
     pub receipt_info: std::option::Option<std::string::String>,
-    /// <p>The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or
-    /// <code>READ</code>.</p>
+    /// <p>The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or <code>READ</code>.</p>
     pub receipt_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Receipt {
@@ -941,8 +880,7 @@ impl Receipt {
     pub fn contact_channel_arn(&self) -> std::option::Option<&str> {
         self.contact_channel_arn.as_deref()
     }
-    /// <p>The type follows the engagement cycle, <code>SENT</code>, <code>DELIVERED</code>, and
-    /// <code>READ</code>.</p>
+    /// <p>The type follows the engagement cycle, <code>SENT</code>, <code>DELIVERED</code>, and <code>READ</code>.</p>
     pub fn receipt_type(&self) -> std::option::Option<&crate::model::ReceiptType> {
         self.receipt_type.as_ref()
     }
@@ -950,8 +888,7 @@ impl Receipt {
     pub fn receipt_info(&self) -> std::option::Option<&str> {
         self.receipt_info.as_deref()
     }
-    /// <p>The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or
-    /// <code>READ</code>.</p>
+    /// <p>The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or <code>READ</code>.</p>
     pub fn receipt_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.receipt_time.as_ref()
     }
@@ -991,14 +928,12 @@ pub mod receipt {
             self.contact_channel_arn = input;
             self
         }
-        /// <p>The type follows the engagement cycle, <code>SENT</code>, <code>DELIVERED</code>, and
-        /// <code>READ</code>.</p>
+        /// <p>The type follows the engagement cycle, <code>SENT</code>, <code>DELIVERED</code>, and <code>READ</code>.</p>
         pub fn receipt_type(mut self, input: crate::model::ReceiptType) -> Self {
             self.receipt_type = Some(input);
             self
         }
-        /// <p>The type follows the engagement cycle, <code>SENT</code>, <code>DELIVERED</code>, and
-        /// <code>READ</code>.</p>
+        /// <p>The type follows the engagement cycle, <code>SENT</code>, <code>DELIVERED</code>, and <code>READ</code>.</p>
         pub fn set_receipt_type(
             mut self,
             input: std::option::Option<crate::model::ReceiptType>,
@@ -1016,14 +951,12 @@ pub mod receipt {
             self.receipt_info = input;
             self
         }
-        /// <p>The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or
-        /// <code>READ</code>.</p>
+        /// <p>The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or <code>READ</code>.</p>
         pub fn receipt_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.receipt_time = Some(input);
             self
         }
-        /// <p>The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or
-        /// <code>READ</code>.</p>
+        /// <p>The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or <code>READ</code>.</p>
         pub fn set_receipt_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1116,8 +1049,7 @@ impl AsRef<str> for ReceiptType {
     }
 }
 
-/// <p>Incident Manager reaching out to a contact or escalation plan to engage contact during an
-/// incident.</p>
+/// <p>Incident Manager reaching out to a contact or escalation plan to engage contact during an incident.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Engagement {
@@ -1354,8 +1286,7 @@ impl TimeRange {
     }
 }
 
-/// <p>A personal contact or escalation plan that Incident Manager engages during an
-/// incident.</p>
+/// <p>A personal contact or escalation plan that Incident Manager engages during an incident.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Contact {
@@ -1365,8 +1296,7 @@ pub struct Contact {
     pub alias: std::option::Option<std::string::String>,
     /// <p>The full name of the contact or escalation plan.</p>
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an
-    /// escalation plan is type <code>ESCALATION</code>.</p>
+    /// <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
     pub r#type: std::option::Option<crate::model::ContactType>,
 }
 impl Contact {
@@ -1382,8 +1312,7 @@ impl Contact {
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an
-    /// escalation plan is type <code>ESCALATION</code>.</p>
+    /// <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ContactType> {
         self.r#type.as_ref()
     }
@@ -1440,14 +1369,12 @@ pub mod contact {
             self.display_name = input;
             self
         }
-        /// <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an
-        /// escalation plan is type <code>ESCALATION</code>.</p>
+        /// <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
         pub fn r#type(mut self, input: crate::model::ContactType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an
-        /// escalation plan is type <code>ESCALATION</code>.</p>
+        /// <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ContactType>) -> Self {
             self.r#type = input;
             self
@@ -1537,21 +1464,14 @@ pub struct ContactChannel {
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p>
     /// <ul>
-    /// <li>
-    /// <p>SMS</p>
-    /// </li>
-    /// <li>
-    /// <p>VOICE</p>
-    /// </li>
-    /// <li>
-    /// <p>EMAIL</p>
-    /// </li>
+    /// <li> <p>SMS</p> </li>
+    /// <li> <p>VOICE</p> </li>
+    /// <li> <p>EMAIL</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::ChannelType>,
     /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
     pub delivery_address: std::option::Option<crate::model::ContactChannelAddress>,
-    /// <p>A Boolean value describing if the contact channel has been activated or not. If the
-    /// contact channel isn't activated, Incident Manager can't engage the contact through it. </p>
+    /// <p>A Boolean value describing if the contact channel has been activated or not. If the contact channel isn't activated, Incident Manager can't engage the contact through it. </p>
     pub activation_status: std::option::Option<crate::model::ActivationStatus>,
 }
 impl ContactChannel {
@@ -1569,15 +1489,9 @@ impl ContactChannel {
     }
     /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p>
     /// <ul>
-    /// <li>
-    /// <p>SMS</p>
-    /// </li>
-    /// <li>
-    /// <p>VOICE</p>
-    /// </li>
-    /// <li>
-    /// <p>EMAIL</p>
-    /// </li>
+    /// <li> <p>SMS</p> </li>
+    /// <li> <p>VOICE</p> </li>
+    /// <li> <p>EMAIL</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelType> {
         self.r#type.as_ref()
@@ -1586,8 +1500,7 @@ impl ContactChannel {
     pub fn delivery_address(&self) -> std::option::Option<&crate::model::ContactChannelAddress> {
         self.delivery_address.as_ref()
     }
-    /// <p>A Boolean value describing if the contact channel has been activated or not. If the
-    /// contact channel isn't activated, Incident Manager can't engage the contact through it. </p>
+    /// <p>A Boolean value describing if the contact channel has been activated or not. If the contact channel isn't activated, Incident Manager can't engage the contact through it. </p>
     pub fn activation_status(&self) -> std::option::Option<&crate::model::ActivationStatus> {
         self.activation_status.as_ref()
     }
@@ -1653,15 +1566,9 @@ pub mod contact_channel {
         }
         /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p>
         /// <ul>
-        /// <li>
-        /// <p>SMS</p>
-        /// </li>
-        /// <li>
-        /// <p>VOICE</p>
-        /// </li>
-        /// <li>
-        /// <p>EMAIL</p>
-        /// </li>
+        /// <li> <p>SMS</p> </li>
+        /// <li> <p>VOICE</p> </li>
+        /// <li> <p>EMAIL</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ChannelType) -> Self {
             self.r#type = Some(input);
@@ -1669,15 +1576,9 @@ pub mod contact_channel {
         }
         /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p>
         /// <ul>
-        /// <li>
-        /// <p>SMS</p>
-        /// </li>
-        /// <li>
-        /// <p>VOICE</p>
-        /// </li>
-        /// <li>
-        /// <p>EMAIL</p>
-        /// </li>
+        /// <li> <p>SMS</p> </li>
+        /// <li> <p>VOICE</p> </li>
+        /// <li> <p>EMAIL</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ChannelType>) -> Self {
             self.r#type = input;
@@ -1696,14 +1597,12 @@ pub mod contact_channel {
             self.delivery_address = input;
             self
         }
-        /// <p>A Boolean value describing if the contact channel has been activated or not. If the
-        /// contact channel isn't activated, Incident Manager can't engage the contact through it. </p>
+        /// <p>A Boolean value describing if the contact channel has been activated or not. If the contact channel isn't activated, Incident Manager can't engage the contact through it. </p>
         pub fn activation_status(mut self, input: crate::model::ActivationStatus) -> Self {
             self.activation_status = Some(input);
             self
         }
-        /// <p>A Boolean value describing if the contact channel has been activated or not. If the
-        /// contact channel isn't activated, Incident Manager can't engage the contact through it. </p>
+        /// <p>A Boolean value describing if the contact channel has been activated or not. If the contact channel isn't activated, Incident Manager can't engage the contact through it. </p>
         pub fn set_activation_status(
             mut self,
             input: std::option::Option<crate::model::ActivationStatus>,

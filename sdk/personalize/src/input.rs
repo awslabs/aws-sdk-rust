@@ -27,14 +27,12 @@ pub mod create_batch_inference_job_input {
             self.job_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the
-        /// batch inference recommendations.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the batch inference recommendations.</p>
         pub fn solution_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.solution_version_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the
-        /// batch inference recommendations.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the batch inference recommendations.</p>
         pub fn set_solution_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -42,16 +40,12 @@ pub mod create_batch_inference_job_input {
             self.solution_version_arn = input;
             self
         }
-        /// <p>The ARN of the filter to apply to the batch inference job. For more information on using
-        /// filters, see
-        /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..</p>
+        /// <p>The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..</p>
         pub fn filter_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.filter_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the filter to apply to the batch inference job. For more information on using
-        /// filters, see
-        /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..</p>
+        /// <p>The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..</p>
         pub fn set_filter_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.filter_arn = input;
             self
@@ -66,14 +60,12 @@ pub mod create_batch_inference_job_input {
             self.num_results = input;
             self
         }
-        /// <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input
-        /// material must be in JSON format.</p>
+        /// <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input material must be in JSON format.</p>
         pub fn job_input(mut self, input: crate::model::BatchInferenceJobInput) -> Self {
             self.job_input = Some(input);
             self
         }
-        /// <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input
-        /// material must be in JSON format.</p>
+        /// <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input material must be in JSON format.</p>
         pub fn set_job_input(
             mut self,
             input: std::option::Option<crate::model::BatchInferenceJobInput>,
@@ -94,14 +86,12 @@ pub mod create_batch_inference_job_input {
             self.job_output = input;
             self
         }
-        /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output
-        /// Amazon S3 buckets respectively.</p>
+        /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output
-        /// Amazon S3 buckets respectively.</p>
+        /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -146,7 +136,7 @@ pub mod create_batch_inference_job_input {
 pub type CreateBatchInferenceJobInputOperationOutputAlias =
     crate::operation::CreateBatchInferenceJob;
 #[doc(hidden)]
-pub type CreateBatchInferenceJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateBatchInferenceJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBatchInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateBatchInferenceJob`](crate::operation::CreateBatchInferenceJob)>
     #[allow(clippy::let_and_return)]
@@ -157,7 +147,7 @@ impl CreateBatchInferenceJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBatchInferenceJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -244,7 +234,7 @@ impl CreateBatchInferenceJobInput {
             "CreateBatchInferenceJob",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -292,14 +282,12 @@ pub mod create_batch_segment_job_input {
             self.job_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate
-        /// batch segments.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate batch segments.</p>
         pub fn solution_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.solution_version_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate
-        /// batch segments.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate batch segments.</p>
         pub fn set_solution_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -307,14 +295,12 @@ pub mod create_batch_segment_job_input {
             self.solution_version_arn = input;
             self
         }
-        /// <p>The ARN of the filter to apply to the batch segment job. For more information on using
-        /// filters, see <a>filter-batch</a>.</p>
+        /// <p>The ARN of the filter to apply to the batch segment job. For more information on using filters, see <code>filter-batch</code>.</p>
         pub fn filter_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.filter_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the filter to apply to the batch segment job. For more information on using
-        /// filters, see <a>filter-batch</a>.</p>
+        /// <p>The ARN of the filter to apply to the batch segment job. For more information on using filters, see <code>filter-batch</code>.</p>
         pub fn set_filter_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.filter_arn = input;
             self
@@ -355,14 +341,12 @@ pub mod create_batch_segment_job_input {
             self.job_output = input;
             self
         }
-        /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output
-        /// Amazon S3 buckets respectively.</p>
+        /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output
-        /// Amazon S3 buckets respectively.</p>
+        /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -389,7 +373,7 @@ pub mod create_batch_segment_job_input {
 #[doc(hidden)]
 pub type CreateBatchSegmentJobInputOperationOutputAlias = crate::operation::CreateBatchSegmentJob;
 #[doc(hidden)]
-pub type CreateBatchSegmentJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateBatchSegmentJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBatchSegmentJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateBatchSegmentJob`](crate::operation::CreateBatchSegmentJob)>
     #[allow(clippy::let_and_return)]
@@ -400,7 +384,7 @@ impl CreateBatchSegmentJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBatchSegmentJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -487,7 +471,7 @@ impl CreateBatchSegmentJobInput {
             "CreateBatchSegmentJob",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -545,14 +529,12 @@ pub mod create_campaign_input {
             self.solution_version_arn = input;
             self
         }
-        /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that
-        /// Amazon Personalize will support.</p>
+        /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
         pub fn min_provisioned_tps(mut self, input: i32) -> Self {
             self.min_provisioned_tps = Some(input);
             self
         }
-        /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that
-        /// Amazon Personalize will support.</p>
+        /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
         pub fn set_min_provisioned_tps(mut self, input: std::option::Option<i32>) -> Self {
             self.min_provisioned_tps = input;
             self
@@ -589,7 +571,7 @@ pub mod create_campaign_input {
 #[doc(hidden)]
 pub type CreateCampaignInputOperationOutputAlias = crate::operation::CreateCampaign;
 #[doc(hidden)]
-pub type CreateCampaignInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateCampaignInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCampaignInput {
     /// Consumes the builder and constructs an Operation<[`CreateCampaign`](crate::operation::CreateCampaign)>
     #[allow(clippy::let_and_return)]
@@ -600,7 +582,7 @@ impl CreateCampaignInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCampaign,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -685,7 +667,7 @@ impl CreateCampaignInput {
             "CreateCampaign",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -730,14 +712,12 @@ pub mod create_dataset_input {
             self.name = input;
             self
         }
-        /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset
-        /// fields.</p>
+        /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset fields.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset
-        /// fields.</p>
+        /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset fields.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema_arn = input;
             self
@@ -758,15 +738,9 @@ pub mod create_dataset_input {
         /// <p>The type of dataset.</p>
         /// <p>One of the following (case insensitive) values:</p>
         /// <ul>
-        /// <li>
-        /// <p>Interactions</p>
-        /// </li>
-        /// <li>
-        /// <p>Items</p>
-        /// </li>
-        /// <li>
-        /// <p>Users</p>
-        /// </li>
+        /// <li> <p>Interactions</p> </li>
+        /// <li> <p>Items</p> </li>
+        /// <li> <p>Users</p> </li>
         /// </ul>
         pub fn dataset_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_type = Some(input.into());
@@ -775,15 +749,9 @@ pub mod create_dataset_input {
         /// <p>The type of dataset.</p>
         /// <p>One of the following (case insensitive) values:</p>
         /// <ul>
-        /// <li>
-        /// <p>Interactions</p>
-        /// </li>
-        /// <li>
-        /// <p>Items</p>
-        /// </li>
-        /// <li>
-        /// <p>Users</p>
-        /// </li>
+        /// <li> <p>Interactions</p> </li>
+        /// <li> <p>Items</p> </li>
+        /// <li> <p>Users</p> </li>
         /// </ul>
         pub fn set_dataset_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_type = input;
@@ -808,7 +776,7 @@ pub mod create_dataset_input {
 #[doc(hidden)]
 pub type CreateDatasetInputOperationOutputAlias = crate::operation::CreateDataset;
 #[doc(hidden)]
-pub type CreateDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDatasetInput {
     /// Consumes the builder and constructs an Operation<[`CreateDataset`](crate::operation::CreateDataset)>
     #[allow(clippy::let_and_return)]
@@ -819,7 +787,7 @@ impl CreateDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -903,7 +871,7 @@ impl CreateDatasetInput {
             "CreateDataset",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -959,18 +927,12 @@ pub mod create_dataset_export_job_input {
             self.dataset_arn = input;
             self
         }
-        /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job,
-        /// only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code>
-        /// for both types. The default value is <code>PUT</code>.
-        /// </p>
+        /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
         pub fn ingestion_mode(mut self, input: crate::model::IngestionMode) -> Self {
             self.ingestion_mode = Some(input);
             self
         }
-        /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job,
-        /// only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code>
-        /// for both types. The default value is <code>PUT</code>.
-        /// </p>
+        /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
         pub fn set_ingestion_mode(
             mut self,
             input: std::option::Option<crate::model::IngestionMode>,
@@ -978,14 +940,12 @@ pub mod create_dataset_export_job_input {
             self.ingestion_mode = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your
-        /// output Amazon S3 bucket.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your
-        /// output Amazon S3 bucket.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1023,7 +983,7 @@ pub mod create_dataset_export_job_input {
 #[doc(hidden)]
 pub type CreateDatasetExportJobInputOperationOutputAlias = crate::operation::CreateDatasetExportJob;
 #[doc(hidden)]
-pub type CreateDatasetExportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDatasetExportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDatasetExportJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateDatasetExportJob`](crate::operation::CreateDatasetExportJob)>
     #[allow(clippy::let_and_return)]
@@ -1034,7 +994,7 @@ impl CreateDatasetExportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDatasetExportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1121,7 +1081,7 @@ impl CreateDatasetExportJobInput {
             "CreateDatasetExportJob",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1166,14 +1126,12 @@ pub mod create_dataset_group_input {
             self.name = input;
             self
         }
-        /// <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM
-        /// role is only valid when also specifying a KMS key.</p>
+        /// <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM role is only valid when also specifying a KMS key.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM
-        /// role is only valid when also specifying a KMS key.</p>
+        /// <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM role is only valid when also specifying a KMS key.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1188,18 +1146,12 @@ pub mod create_dataset_group_input {
             self.kms_key_arn = input;
             self
         }
-        /// <p>The domain of the dataset group. Specify a domain to create a Domain dataset group. The domain you specify
-        /// determines the default schemas for datasets and the use cases available for recommenders. If you don't specify a domain,
-        /// you create a Custom dataset group with solution versions that you deploy with a campaign.
-        /// </p>
+        /// <p>The domain of the dataset group. Specify a domain to create a Domain dataset group. The domain you specify determines the default schemas for datasets and the use cases available for recommenders. If you don't specify a domain, you create a Custom dataset group with solution versions that you deploy with a campaign. </p>
         pub fn domain(mut self, input: crate::model::Domain) -> Self {
             self.domain = Some(input);
             self
         }
-        /// <p>The domain of the dataset group. Specify a domain to create a Domain dataset group. The domain you specify
-        /// determines the default schemas for datasets and the use cases available for recommenders. If you don't specify a domain,
-        /// you create a Custom dataset group with solution versions that you deploy with a campaign.
-        /// </p>
+        /// <p>The domain of the dataset group. Specify a domain to create a Domain dataset group. The domain you specify determines the default schemas for datasets and the use cases available for recommenders. If you don't specify a domain, you create a Custom dataset group with solution versions that you deploy with a campaign. </p>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
             self.domain = input;
             self
@@ -1223,7 +1175,7 @@ pub mod create_dataset_group_input {
 #[doc(hidden)]
 pub type CreateDatasetGroupInputOperationOutputAlias = crate::operation::CreateDatasetGroup;
 #[doc(hidden)]
-pub type CreateDatasetGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDatasetGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDatasetGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateDatasetGroup`](crate::operation::CreateDatasetGroup)>
     #[allow(clippy::let_and_return)]
@@ -1234,7 +1186,7 @@ impl CreateDatasetGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDatasetGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1319,7 +1271,7 @@ impl CreateDatasetGroupInput {
             "CreateDatasetGroup",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1416,7 +1368,7 @@ pub mod create_dataset_import_job_input {
 #[doc(hidden)]
 pub type CreateDatasetImportJobInputOperationOutputAlias = crate::operation::CreateDatasetImportJob;
 #[doc(hidden)]
-pub type CreateDatasetImportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDatasetImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDatasetImportJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateDatasetImportJob`](crate::operation::CreateDatasetImportJob)>
     #[allow(clippy::let_and_return)]
@@ -1427,7 +1379,7 @@ impl CreateDatasetImportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDatasetImportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1514,7 +1466,7 @@ impl CreateDatasetImportJobInput {
             "CreateDatasetImportJob",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1587,7 +1539,7 @@ pub mod create_event_tracker_input {
 #[doc(hidden)]
 pub type CreateEventTrackerInputOperationOutputAlias = crate::operation::CreateEventTracker;
 #[doc(hidden)]
-pub type CreateEventTrackerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateEventTrackerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEventTrackerInput {
     /// Consumes the builder and constructs an Operation<[`CreateEventTracker`](crate::operation::CreateEventTracker)>
     #[allow(clippy::let_and_return)]
@@ -1598,7 +1550,7 @@ impl CreateEventTrackerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateEventTracker,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1683,7 +1635,7 @@ impl CreateEventTrackerInput {
             "CreateEventTracker",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1740,16 +1692,12 @@ pub mod create_filter_input {
             self.dataset_group_arn = input;
             self
         }
-        /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules.
-        /// For information about filter expression structure and syntax, see
-        /// <a>filter-expressions</a>.</p>
+        /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see <code>filter-expressions</code>.</p>
         pub fn filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.filter_expression = Some(input.into());
             self
         }
-        /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules.
-        /// For information about filter expression structure and syntax, see
-        /// <a>filter-expressions</a>.</p>
+        /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see <code>filter-expressions</code>.</p>
         pub fn set_filter_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1775,7 +1723,7 @@ pub mod create_filter_input {
 #[doc(hidden)]
 pub type CreateFilterInputOperationOutputAlias = crate::operation::CreateFilter;
 #[doc(hidden)]
-pub type CreateFilterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFilterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFilterInput {
     /// Consumes the builder and constructs an Operation<[`CreateFilter`](crate::operation::CreateFilter)>
     #[allow(clippy::let_and_return)]
@@ -1786,7 +1734,7 @@ impl CreateFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFilter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1870,7 +1818,7 @@ impl CreateFilterInput {
             "CreateFilter",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1928,16 +1876,12 @@ pub mod create_recommender_input {
             self.dataset_group_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group
-        /// use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>. </p>
         pub fn recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.recipe_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group
-        /// use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>. </p>
         pub fn set_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.recipe_arn = input;
             self
@@ -1974,7 +1918,7 @@ pub mod create_recommender_input {
 #[doc(hidden)]
 pub type CreateRecommenderInputOperationOutputAlias = crate::operation::CreateRecommender;
 #[doc(hidden)]
-pub type CreateRecommenderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateRecommenderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRecommenderInput {
     /// Consumes the builder and constructs an Operation<[`CreateRecommender`](crate::operation::CreateRecommender)>
     #[allow(clippy::let_and_return)]
@@ -1985,7 +1929,7 @@ impl CreateRecommenderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRecommender,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2070,7 +2014,7 @@ impl CreateRecommenderInput {
             "CreateRecommender",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2124,14 +2068,12 @@ pub mod create_schema_input {
             self.schema = input;
             self
         }
-        /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify
-        /// the domain you chose when you created the Domain dataset group.</p>
+        /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify the domain you chose when you created the Domain dataset group.</p>
         pub fn domain(mut self, input: crate::model::Domain) -> Self {
             self.domain = Some(input);
             self
         }
-        /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify
-        /// the domain you chose when you created the Domain dataset group.</p>
+        /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify the domain you chose when you created the Domain dataset group.</p>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
             self.domain = input;
             self
@@ -2154,7 +2096,7 @@ pub mod create_schema_input {
 #[doc(hidden)]
 pub type CreateSchemaInputOperationOutputAlias = crate::operation::CreateSchema;
 #[doc(hidden)]
-pub type CreateSchemaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSchemaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSchemaInput {
     /// Consumes the builder and constructs an Operation<[`CreateSchema`](crate::operation::CreateSchema)>
     #[allow(clippy::let_and_return)]
@@ -2165,7 +2107,7 @@ impl CreateSchemaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSchema,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2249,7 +2191,7 @@ impl CreateSchemaInput {
             "CreateSchema",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2297,52 +2239,36 @@ pub mod create_solution_input {
             self.name = input;
             self
         }
-        /// <p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe.
-        /// The default is <code>false</code>.</p>
-        /// <p>When performing AutoML, this parameter is always <code>true</code> and you
-        /// should not set it to <code>false</code>.</p>
+        /// <p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe. The default is <code>false</code>.</p>
+        /// <p>When performing AutoML, this parameter is always <code>true</code> and you should not set it to <code>false</code>.</p>
         pub fn perform_hpo(mut self, input: bool) -> Self {
             self.perform_hpo = Some(input);
             self
         }
-        /// <p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe.
-        /// The default is <code>false</code>.</p>
-        /// <p>When performing AutoML, this parameter is always <code>true</code> and you
-        /// should not set it to <code>false</code>.</p>
+        /// <p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe. The default is <code>false</code>.</p>
+        /// <p>When performing AutoML, this parameter is always <code>true</code> and you should not set it to <code>false</code>.</p>
         pub fn set_perform_hpo(mut self, input: std::option::Option<bool>) -> Self {
             self.perform_hpo = input;
             self
         }
-        /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>.
-        /// For this case, you must specify <code>recipeArn</code>.</p>
-        /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects
-        /// the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit
-        /// <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with
-        /// different values for the hyperparameters.
-        /// AutoML lengthens the training process as compared to selecting a specific recipe.</p>
+        /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>. For this case, you must specify <code>recipeArn</code>.</p>
+        /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with different values for the hyperparameters. AutoML lengthens the training process as compared to selecting a specific recipe.</p>
         pub fn perform_auto_ml(mut self, input: bool) -> Self {
             self.perform_auto_ml = Some(input);
             self
         }
-        /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>.
-        /// For this case, you must specify <code>recipeArn</code>.</p>
-        /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects
-        /// the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit
-        /// <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with
-        /// different values for the hyperparameters.
-        /// AutoML lengthens the training process as compared to selecting a specific recipe.</p>
+        /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>. For this case, you must specify <code>recipeArn</code>.</p>
+        /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with different values for the hyperparameters. AutoML lengthens the training process as compared to selecting a specific recipe.</p>
         pub fn set_perform_auto_ml(mut self, input: std::option::Option<bool>) -> Self {
             self.perform_auto_ml = input;
             self
         }
-        /// <p>The ARN of the recipe to use for model training. Only specified when
-        /// <code>performAutoML</code> is false.</p>
+        /// <p>The ARN of the recipe to use for model training. Only specified when <code>performAutoML</code> is false.</p>
         pub fn recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.recipe_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the recipe to use for model training. Only specified when
-        /// <code>performAutoML</code> is false.</p>
+        /// <p>The ARN of the recipe to use for model training. Only specified when <code>performAutoML</code> is false.</p>
         pub fn set_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.recipe_arn = input;
             self
@@ -2360,41 +2286,27 @@ pub mod create_solution_input {
             self.dataset_group_arn = input;
             self
         }
-        /// <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field),
-        /// this parameter specifies which event type (for example, 'click' or 'like') is used for
-        /// training the model.</p>
-        /// <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with
-        /// equal weight regardless of type.</p>
+        /// <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field), this parameter specifies which event type (for example, 'click' or 'like') is used for training the model.</p>
+        /// <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with equal weight regardless of type.</p>
         pub fn event_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_type = Some(input.into());
             self
         }
-        /// <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field),
-        /// this parameter specifies which event type (for example, 'click' or 'like') is used for
-        /// training the model.</p>
-        /// <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with
-        /// equal weight regardless of type.</p>
+        /// <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field), this parameter specifies which event type (for example, 'click' or 'like') is used for training the model.</p>
+        /// <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with equal weight regardless of type.</p>
         pub fn set_event_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_type = input;
             self
         }
-        /// <p>The configuration to use with the solution. When <code>performAutoML</code> is set to
-        /// true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section
-        /// of the solution configuration.</p>
-        /// <note>
-        /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code>
-        /// at this time.</p>
+        /// <p>The configuration to use with the solution. When <code>performAutoML</code> is set to true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section of the solution configuration.</p> <note>
+        /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
         /// </note>
         pub fn solution_config(mut self, input: crate::model::SolutionConfig) -> Self {
             self.solution_config = Some(input);
             self
         }
-        /// <p>The configuration to use with the solution. When <code>performAutoML</code> is set to
-        /// true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section
-        /// of the solution configuration.</p>
-        /// <note>
-        /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code>
-        /// at this time.</p>
+        /// <p>The configuration to use with the solution. When <code>performAutoML</code> is set to true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section of the solution configuration.</p> <note>
+        /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
         /// </note>
         pub fn set_solution_config(
             mut self,
@@ -2425,7 +2337,7 @@ pub mod create_solution_input {
 #[doc(hidden)]
 pub type CreateSolutionInputOperationOutputAlias = crate::operation::CreateSolution;
 #[doc(hidden)]
-pub type CreateSolutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSolutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSolutionInput {
     /// Consumes the builder and constructs an Operation<[`CreateSolution`](crate::operation::CreateSolution)>
     #[allow(clippy::let_and_return)]
@@ -2436,7 +2348,7 @@ impl CreateSolutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSolution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2521,7 +2433,7 @@ impl CreateSolutionInput {
             "CreateSolution",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2554,47 +2466,25 @@ pub mod create_solution_version_input {
         pub(crate) training_mode: std::option::Option<crate::model::TrainingMode>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration
-        /// information.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration information.</p>
         pub fn solution_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.solution_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration
-        /// information.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration information.</p>
         pub fn set_solution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.solution_arn = input;
             self
         }
-        /// <p>The scope of training to be performed when creating the solution version. The
-        /// <code>FULL</code> option trains the solution version based on the entirety of the input
-        /// solution's training data, while the <code>UPDATE</code> option processes only the data that
-        /// has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to
-        /// incrementally update your solution version instead of creating an entirely new one.</p>
-        /// <important>
-        /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution
-        /// version created from the input solution using the <code>FULL</code> option and the input
-        /// solution was trained with the
-        /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
-        /// recipe or the
-        /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
+        /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
+        /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
         /// </important>
         pub fn training_mode(mut self, input: crate::model::TrainingMode) -> Self {
             self.training_mode = Some(input);
             self
         }
-        /// <p>The scope of training to be performed when creating the solution version. The
-        /// <code>FULL</code> option trains the solution version based on the entirety of the input
-        /// solution's training data, while the <code>UPDATE</code> option processes only the data that
-        /// has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to
-        /// incrementally update your solution version instead of creating an entirely new one.</p>
-        /// <important>
-        /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution
-        /// version created from the input solution using the <code>FULL</code> option and the input
-        /// solution was trained with the
-        /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
-        /// recipe or the
-        /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
+        /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
+        /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
         /// </important>
         pub fn set_training_mode(
             mut self,
@@ -2620,7 +2510,7 @@ pub mod create_solution_version_input {
 #[doc(hidden)]
 pub type CreateSolutionVersionInputOperationOutputAlias = crate::operation::CreateSolutionVersion;
 #[doc(hidden)]
-pub type CreateSolutionVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSolutionVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSolutionVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateSolutionVersion`](crate::operation::CreateSolutionVersion)>
     #[allow(clippy::let_and_return)]
@@ -2631,7 +2521,7 @@ impl CreateSolutionVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSolutionVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2718,7 +2608,7 @@ impl CreateSolutionVersionInput {
             "CreateSolutionVersion",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2776,7 +2666,7 @@ pub mod delete_campaign_input {
 #[doc(hidden)]
 pub type DeleteCampaignInputOperationOutputAlias = crate::operation::DeleteCampaign;
 #[doc(hidden)]
-pub type DeleteCampaignInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteCampaignInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCampaignInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCampaign`](crate::operation::DeleteCampaign)>
     #[allow(clippy::let_and_return)]
@@ -2787,7 +2677,7 @@ impl DeleteCampaignInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCampaign,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2872,7 +2762,7 @@ impl DeleteCampaignInput {
             "DeleteCampaign",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2930,7 +2820,7 @@ pub mod delete_dataset_input {
 #[doc(hidden)]
 pub type DeleteDatasetInputOperationOutputAlias = crate::operation::DeleteDataset;
 #[doc(hidden)]
-pub type DeleteDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDataset`](crate::operation::DeleteDataset)>
     #[allow(clippy::let_and_return)]
@@ -2941,7 +2831,7 @@ impl DeleteDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3025,7 +2915,7 @@ impl DeleteDatasetInput {
             "DeleteDataset",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3086,7 +2976,7 @@ pub mod delete_dataset_group_input {
 #[doc(hidden)]
 pub type DeleteDatasetGroupInputOperationOutputAlias = crate::operation::DeleteDatasetGroup;
 #[doc(hidden)]
-pub type DeleteDatasetGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDatasetGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDatasetGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDatasetGroup`](crate::operation::DeleteDatasetGroup)>
     #[allow(clippy::let_and_return)]
@@ -3097,7 +2987,7 @@ impl DeleteDatasetGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDatasetGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3182,7 +3072,7 @@ impl DeleteDatasetGroupInput {
             "DeleteDatasetGroup",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3243,7 +3133,7 @@ pub mod delete_event_tracker_input {
 #[doc(hidden)]
 pub type DeleteEventTrackerInputOperationOutputAlias = crate::operation::DeleteEventTracker;
 #[doc(hidden)]
-pub type DeleteEventTrackerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteEventTrackerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEventTrackerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEventTracker`](crate::operation::DeleteEventTracker)>
     #[allow(clippy::let_and_return)]
@@ -3254,7 +3144,7 @@ impl DeleteEventTrackerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEventTracker,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3339,7 +3229,7 @@ impl DeleteEventTrackerInput {
             "DeleteEventTracker",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3397,7 +3287,7 @@ pub mod delete_filter_input {
 #[doc(hidden)]
 pub type DeleteFilterInputOperationOutputAlias = crate::operation::DeleteFilter;
 #[doc(hidden)]
-pub type DeleteFilterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFilterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFilterInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFilter`](crate::operation::DeleteFilter)>
     #[allow(clippy::let_and_return)]
@@ -3408,7 +3298,7 @@ impl DeleteFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFilter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3492,7 +3382,7 @@ impl DeleteFilterInput {
             "DeleteFilter",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3553,7 +3443,7 @@ pub mod delete_recommender_input {
 #[doc(hidden)]
 pub type DeleteRecommenderInputOperationOutputAlias = crate::operation::DeleteRecommender;
 #[doc(hidden)]
-pub type DeleteRecommenderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRecommenderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRecommenderInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRecommender`](crate::operation::DeleteRecommender)>
     #[allow(clippy::let_and_return)]
@@ -3564,7 +3454,7 @@ impl DeleteRecommenderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRecommender,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3649,7 +3539,7 @@ impl DeleteRecommenderInput {
             "DeleteRecommender",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3707,7 +3597,7 @@ pub mod delete_schema_input {
 #[doc(hidden)]
 pub type DeleteSchemaInputOperationOutputAlias = crate::operation::DeleteSchema;
 #[doc(hidden)]
-pub type DeleteSchemaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSchemaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSchemaInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSchema`](crate::operation::DeleteSchema)>
     #[allow(clippy::let_and_return)]
@@ -3718,7 +3608,7 @@ impl DeleteSchemaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSchema,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3802,7 +3692,7 @@ impl DeleteSchemaInput {
             "DeleteSchema",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3860,7 +3750,7 @@ pub mod delete_solution_input {
 #[doc(hidden)]
 pub type DeleteSolutionInputOperationOutputAlias = crate::operation::DeleteSolution;
 #[doc(hidden)]
-pub type DeleteSolutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSolutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSolutionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSolution`](crate::operation::DeleteSolution)>
     #[allow(clippy::let_and_return)]
@@ -3871,7 +3761,7 @@ impl DeleteSolutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSolution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3956,7 +3846,7 @@ impl DeleteSolutionInput {
             "DeleteSolution",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4017,7 +3907,7 @@ pub mod describe_algorithm_input {
 #[doc(hidden)]
 pub type DescribeAlgorithmInputOperationOutputAlias = crate::operation::DescribeAlgorithm;
 #[doc(hidden)]
-pub type DescribeAlgorithmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAlgorithmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAlgorithmInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAlgorithm`](crate::operation::DescribeAlgorithm)>
     #[allow(clippy::let_and_return)]
@@ -4028,7 +3918,7 @@ impl DescribeAlgorithmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAlgorithm,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4113,7 +4003,7 @@ impl DescribeAlgorithmInput {
             "DescribeAlgorithm",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4175,7 +4065,7 @@ pub mod describe_batch_inference_job_input {
 pub type DescribeBatchInferenceJobInputOperationOutputAlias =
     crate::operation::DescribeBatchInferenceJob;
 #[doc(hidden)]
-pub type DescribeBatchInferenceJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeBatchInferenceJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBatchInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBatchInferenceJob`](crate::operation::DescribeBatchInferenceJob)>
     #[allow(clippy::let_and_return)]
@@ -4186,7 +4076,7 @@ impl DescribeBatchInferenceJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBatchInferenceJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4273,7 +4163,7 @@ impl DescribeBatchInferenceJobInput {
             "DescribeBatchInferenceJob",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4335,7 +4225,7 @@ pub mod describe_batch_segment_job_input {
 pub type DescribeBatchSegmentJobInputOperationOutputAlias =
     crate::operation::DescribeBatchSegmentJob;
 #[doc(hidden)]
-pub type DescribeBatchSegmentJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeBatchSegmentJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBatchSegmentJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBatchSegmentJob`](crate::operation::DescribeBatchSegmentJob)>
     #[allow(clippy::let_and_return)]
@@ -4346,7 +4236,7 @@ impl DescribeBatchSegmentJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBatchSegmentJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4433,7 +4323,7 @@ impl DescribeBatchSegmentJobInput {
             "DescribeBatchSegmentJob",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4491,7 +4381,7 @@ pub mod describe_campaign_input {
 #[doc(hidden)]
 pub type DescribeCampaignInputOperationOutputAlias = crate::operation::DescribeCampaign;
 #[doc(hidden)]
-pub type DescribeCampaignInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeCampaignInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCampaignInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCampaign`](crate::operation::DescribeCampaign)>
     #[allow(clippy::let_and_return)]
@@ -4502,7 +4392,7 @@ impl DescribeCampaignInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCampaign,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4587,7 +4477,7 @@ impl DescribeCampaignInput {
             "DescribeCampaign",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4645,7 +4535,7 @@ pub mod describe_dataset_input {
 #[doc(hidden)]
 pub type DescribeDatasetInputOperationOutputAlias = crate::operation::DescribeDataset;
 #[doc(hidden)]
-pub type DescribeDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDataset`](crate::operation::DescribeDataset)>
     #[allow(clippy::let_and_return)]
@@ -4656,7 +4546,7 @@ impl DescribeDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4741,7 +4631,7 @@ impl DescribeDatasetInput {
             "DescribeDataset",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4803,7 +4693,7 @@ pub mod describe_dataset_export_job_input {
 pub type DescribeDatasetExportJobInputOperationOutputAlias =
     crate::operation::DescribeDatasetExportJob;
 #[doc(hidden)]
-pub type DescribeDatasetExportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDatasetExportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDatasetExportJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDatasetExportJob`](crate::operation::DescribeDatasetExportJob)>
     #[allow(clippy::let_and_return)]
@@ -4814,7 +4704,7 @@ impl DescribeDatasetExportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDatasetExportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4901,7 +4791,7 @@ impl DescribeDatasetExportJobInput {
             "DescribeDatasetExportJob",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4962,7 +4852,7 @@ pub mod describe_dataset_group_input {
 #[doc(hidden)]
 pub type DescribeDatasetGroupInputOperationOutputAlias = crate::operation::DescribeDatasetGroup;
 #[doc(hidden)]
-pub type DescribeDatasetGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDatasetGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDatasetGroupInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDatasetGroup`](crate::operation::DescribeDatasetGroup)>
     #[allow(clippy::let_and_return)]
@@ -4973,7 +4863,7 @@ impl DescribeDatasetGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDatasetGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5060,7 +4950,7 @@ impl DescribeDatasetGroupInput {
             "DescribeDatasetGroup",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5122,7 +5012,7 @@ pub mod describe_dataset_import_job_input {
 pub type DescribeDatasetImportJobInputOperationOutputAlias =
     crate::operation::DescribeDatasetImportJob;
 #[doc(hidden)]
-pub type DescribeDatasetImportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDatasetImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDatasetImportJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDatasetImportJob`](crate::operation::DescribeDatasetImportJob)>
     #[allow(clippy::let_and_return)]
@@ -5133,7 +5023,7 @@ impl DescribeDatasetImportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDatasetImportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5220,7 +5110,7 @@ impl DescribeDatasetImportJobInput {
             "DescribeDatasetImportJob",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5281,7 +5171,7 @@ pub mod describe_event_tracker_input {
 #[doc(hidden)]
 pub type DescribeEventTrackerInputOperationOutputAlias = crate::operation::DescribeEventTracker;
 #[doc(hidden)]
-pub type DescribeEventTrackerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEventTrackerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEventTrackerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEventTracker`](crate::operation::DescribeEventTracker)>
     #[allow(clippy::let_and_return)]
@@ -5292,7 +5182,7 @@ impl DescribeEventTrackerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEventTracker,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5379,7 +5269,7 @@ impl DescribeEventTrackerInput {
             "DescribeEventTracker",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5441,7 +5331,8 @@ pub mod describe_feature_transformation_input {
 pub type DescribeFeatureTransformationInputOperationOutputAlias =
     crate::operation::DescribeFeatureTransformation;
 #[doc(hidden)]
-pub type DescribeFeatureTransformationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFeatureTransformationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFeatureTransformationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFeatureTransformation`](crate::operation::DescribeFeatureTransformation)>
     #[allow(clippy::let_and_return)]
@@ -5452,7 +5343,7 @@ impl DescribeFeatureTransformationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFeatureTransformation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5538,7 +5429,7 @@ impl DescribeFeatureTransformationInput {
             "DescribeFeatureTransformation",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5596,7 +5487,7 @@ pub mod describe_filter_input {
 #[doc(hidden)]
 pub type DescribeFilterInputOperationOutputAlias = crate::operation::DescribeFilter;
 #[doc(hidden)]
-pub type DescribeFilterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFilterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFilterInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFilter`](crate::operation::DescribeFilter)>
     #[allow(clippy::let_and_return)]
@@ -5607,7 +5498,7 @@ impl DescribeFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFilter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5692,7 +5583,7 @@ impl DescribeFilterInput {
             "DescribeFilter",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5750,7 +5641,7 @@ pub mod describe_recipe_input {
 #[doc(hidden)]
 pub type DescribeRecipeInputOperationOutputAlias = crate::operation::DescribeRecipe;
 #[doc(hidden)]
-pub type DescribeRecipeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRecipeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRecipeInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRecipe`](crate::operation::DescribeRecipe)>
     #[allow(clippy::let_and_return)]
@@ -5761,7 +5652,7 @@ impl DescribeRecipeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRecipe,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5846,7 +5737,7 @@ impl DescribeRecipeInput {
             "DescribeRecipe",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5907,7 +5798,7 @@ pub mod describe_recommender_input {
 #[doc(hidden)]
 pub type DescribeRecommenderInputOperationOutputAlias = crate::operation::DescribeRecommender;
 #[doc(hidden)]
-pub type DescribeRecommenderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRecommenderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRecommenderInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRecommender`](crate::operation::DescribeRecommender)>
     #[allow(clippy::let_and_return)]
@@ -5918,7 +5809,7 @@ impl DescribeRecommenderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRecommender,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6003,7 +5894,7 @@ impl DescribeRecommenderInput {
             "DescribeRecommender",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6061,7 +5952,7 @@ pub mod describe_schema_input {
 #[doc(hidden)]
 pub type DescribeSchemaInputOperationOutputAlias = crate::operation::DescribeSchema;
 #[doc(hidden)]
-pub type DescribeSchemaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSchemaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSchemaInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSchema`](crate::operation::DescribeSchema)>
     #[allow(clippy::let_and_return)]
@@ -6072,7 +5963,7 @@ impl DescribeSchemaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSchema,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6157,7 +6048,7 @@ impl DescribeSchemaInput {
             "DescribeSchema",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6215,7 +6106,7 @@ pub mod describe_solution_input {
 #[doc(hidden)]
 pub type DescribeSolutionInputOperationOutputAlias = crate::operation::DescribeSolution;
 #[doc(hidden)]
-pub type DescribeSolutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSolutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSolutionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSolution`](crate::operation::DescribeSolution)>
     #[allow(clippy::let_and_return)]
@@ -6226,7 +6117,7 @@ impl DescribeSolutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSolution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6311,7 +6202,7 @@ impl DescribeSolutionInput {
             "DescribeSolution",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6373,7 +6264,7 @@ pub mod describe_solution_version_input {
 pub type DescribeSolutionVersionInputOperationOutputAlias =
     crate::operation::DescribeSolutionVersion;
 #[doc(hidden)]
-pub type DescribeSolutionVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSolutionVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSolutionVersionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSolutionVersion`](crate::operation::DescribeSolutionVersion)>
     #[allow(clippy::let_and_return)]
@@ -6384,7 +6275,7 @@ impl DescribeSolutionVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSolutionVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6471,7 +6362,7 @@ impl DescribeSolutionVersionInput {
             "DescribeSolutionVersion",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6532,7 +6423,7 @@ pub mod get_solution_metrics_input {
 #[doc(hidden)]
 pub type GetSolutionMetricsInputOperationOutputAlias = crate::operation::GetSolutionMetrics;
 #[doc(hidden)]
-pub type GetSolutionMetricsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSolutionMetricsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSolutionMetricsInput {
     /// Consumes the builder and constructs an Operation<[`GetSolutionMetrics`](crate::operation::GetSolutionMetrics)>
     #[allow(clippy::let_and_return)]
@@ -6543,7 +6434,7 @@ impl GetSolutionMetricsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSolutionMetrics,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6628,7 +6519,7 @@ impl GetSolutionMetricsInput {
             "GetSolutionMetrics",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6662,14 +6553,12 @@ pub mod list_batch_inference_jobs_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs
-        /// were created.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs were created.</p>
         pub fn solution_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.solution_version_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs
-        /// were created.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs were created.</p>
         pub fn set_solution_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6687,14 +6576,12 @@ pub mod list_batch_inference_jobs_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of batch inference job results to return in each page. The default
-        /// value is 100.</p>
+        /// <p>The maximum number of batch inference job results to return in each page. The default value is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of batch inference job results to return in each page. The default
-        /// value is 100.</p>
+        /// <p>The maximum number of batch inference job results to return in each page. The default value is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6717,7 +6604,7 @@ pub mod list_batch_inference_jobs_input {
 #[doc(hidden)]
 pub type ListBatchInferenceJobsInputOperationOutputAlias = crate::operation::ListBatchInferenceJobs;
 #[doc(hidden)]
-pub type ListBatchInferenceJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListBatchInferenceJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBatchInferenceJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListBatchInferenceJobs`](crate::operation::ListBatchInferenceJobs)>
     #[allow(clippy::let_and_return)]
@@ -6728,7 +6615,7 @@ impl ListBatchInferenceJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBatchInferenceJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6815,7 +6702,7 @@ impl ListBatchInferenceJobsInput {
             "ListBatchInferenceJobs",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6872,14 +6759,12 @@ pub mod list_batch_segment_jobs_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of batch segment job results to return in each page. The default
-        /// value is 100.</p>
+        /// <p>The maximum number of batch segment job results to return in each page. The default value is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of batch segment job results to return in each page. The default
-        /// value is 100.</p>
+        /// <p>The maximum number of batch segment job results to return in each page. The default value is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6902,7 +6787,7 @@ pub mod list_batch_segment_jobs_input {
 #[doc(hidden)]
 pub type ListBatchSegmentJobsInputOperationOutputAlias = crate::operation::ListBatchSegmentJobs;
 #[doc(hidden)]
-pub type ListBatchSegmentJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListBatchSegmentJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBatchSegmentJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListBatchSegmentJobs`](crate::operation::ListBatchSegmentJobs)>
     #[allow(clippy::let_and_return)]
@@ -6913,7 +6798,7 @@ impl ListBatchSegmentJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBatchSegmentJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7000,7 +6885,7 @@ impl ListBatchSegmentJobsInput {
             "ListBatchSegmentJobs",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7034,26 +6919,22 @@ pub mod list_campaigns_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When
-        /// a solution is not specified, all the campaigns associated with the account are listed.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When a solution is not specified, all the campaigns associated with the account are listed.</p>
         pub fn solution_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.solution_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When
-        /// a solution is not specified, all the campaigns associated with the account are listed.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When a solution is not specified, all the campaigns associated with the account are listed.</p>
         pub fn set_solution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.solution_arn = input;
             self
         }
-        /// <p>A token returned from the previous call to <code>ListCampaigns</code> for getting
-        /// the next set of campaigns (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListCampaigns</code> for getting the next set of campaigns (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListCampaigns</code> for getting
-        /// the next set of campaigns (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListCampaigns</code> for getting the next set of campaigns (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7086,7 +6967,7 @@ pub mod list_campaigns_input {
 #[doc(hidden)]
 pub type ListCampaignsInputOperationOutputAlias = crate::operation::ListCampaigns;
 #[doc(hidden)]
-pub type ListCampaignsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListCampaignsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCampaignsInput {
     /// Consumes the builder and constructs an Operation<[`ListCampaigns`](crate::operation::ListCampaigns)>
     #[allow(clippy::let_and_return)]
@@ -7097,7 +6978,7 @@ impl ListCampaignsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCampaigns,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7181,7 +7062,7 @@ impl ListCampaignsInput {
             "ListCampaigns",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7225,14 +7106,12 @@ pub mod list_dataset_export_jobs_input {
             self.dataset_arn = input;
             self
         }
-        /// <p>A token returned from the previous call to <code>ListDatasetExportJobs</code> for getting
-        /// the next set of dataset export jobs (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListDatasetExportJobs</code> for getting the next set of dataset export jobs (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListDatasetExportJobs</code> for getting
-        /// the next set of dataset export jobs (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListDatasetExportJobs</code> for getting the next set of dataset export jobs (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7265,7 +7144,7 @@ pub mod list_dataset_export_jobs_input {
 #[doc(hidden)]
 pub type ListDatasetExportJobsInputOperationOutputAlias = crate::operation::ListDatasetExportJobs;
 #[doc(hidden)]
-pub type ListDatasetExportJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDatasetExportJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDatasetExportJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListDatasetExportJobs`](crate::operation::ListDatasetExportJobs)>
     #[allow(clippy::let_and_return)]
@@ -7276,7 +7155,7 @@ impl ListDatasetExportJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDatasetExportJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7363,7 +7242,7 @@ impl ListDatasetExportJobsInput {
             "ListDatasetExportJobs",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7396,14 +7275,12 @@ pub mod list_dataset_groups_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A token returned from the previous call to <code>ListDatasetGroups</code> for getting the
-        /// next set of dataset groups (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListDatasetGroups</code> for getting the next set of dataset groups (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListDatasetGroups</code> for getting the
-        /// next set of dataset groups (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListDatasetGroups</code> for getting the next set of dataset groups (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7435,7 +7312,7 @@ pub mod list_dataset_groups_input {
 #[doc(hidden)]
 pub type ListDatasetGroupsInputOperationOutputAlias = crate::operation::ListDatasetGroups;
 #[doc(hidden)]
-pub type ListDatasetGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDatasetGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDatasetGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListDatasetGroups`](crate::operation::ListDatasetGroups)>
     #[allow(clippy::let_and_return)]
@@ -7446,7 +7323,7 @@ impl ListDatasetGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDatasetGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7531,7 +7408,7 @@ impl ListDatasetGroupsInput {
             "ListDatasetGroups",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7575,14 +7452,12 @@ pub mod list_dataset_import_jobs_input {
             self.dataset_arn = input;
             self
         }
-        /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting
-        /// the next set of dataset import jobs (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting
-        /// the next set of dataset import jobs (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7615,7 +7490,7 @@ pub mod list_dataset_import_jobs_input {
 #[doc(hidden)]
 pub type ListDatasetImportJobsInputOperationOutputAlias = crate::operation::ListDatasetImportJobs;
 #[doc(hidden)]
-pub type ListDatasetImportJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDatasetImportJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDatasetImportJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListDatasetImportJobs`](crate::operation::ListDatasetImportJobs)>
     #[allow(clippy::let_and_return)]
@@ -7626,7 +7501,7 @@ impl ListDatasetImportJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDatasetImportJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7713,7 +7588,7 @@ impl ListDatasetImportJobsInput {
             "ListDatasetImportJobs",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7747,14 +7622,12 @@ pub mod list_datasets_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to
-        /// list.</p>
+        /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to list.</p>
         pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_group_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to
-        /// list.</p>
+        /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to list.</p>
         pub fn set_dataset_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7762,14 +7635,12 @@ pub mod list_datasets_input {
             self.dataset_group_arn = input;
             self
         }
-        /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting
-        /// the next set of dataset import jobs (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting
-        /// the next set of dataset import jobs (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7802,7 +7673,7 @@ pub mod list_datasets_input {
 #[doc(hidden)]
 pub type ListDatasetsInputOperationOutputAlias = crate::operation::ListDatasets;
 #[doc(hidden)]
-pub type ListDatasetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDatasetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDatasetsInput {
     /// Consumes the builder and constructs an Operation<[`ListDatasets`](crate::operation::ListDatasets)>
     #[allow(clippy::let_and_return)]
@@ -7813,7 +7684,7 @@ impl ListDatasetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDatasets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7897,7 +7768,7 @@ impl ListDatasetsInput {
             "ListDatasets",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7944,14 +7815,12 @@ pub mod list_event_trackers_input {
             self.dataset_group_arn = input;
             self
         }
-        /// <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting
-        /// the next set of event trackers (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting the next set of event trackers (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting
-        /// the next set of event trackers (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting the next set of event trackers (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7984,7 +7853,7 @@ pub mod list_event_trackers_input {
 #[doc(hidden)]
 pub type ListEventTrackersInputOperationOutputAlias = crate::operation::ListEventTrackers;
 #[doc(hidden)]
-pub type ListEventTrackersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEventTrackersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEventTrackersInput {
     /// Consumes the builder and constructs an Operation<[`ListEventTrackers`](crate::operation::ListEventTrackers)>
     #[allow(clippy::let_and_return)]
@@ -7995,7 +7864,7 @@ impl ListEventTrackersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEventTrackers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8080,7 +7949,7 @@ impl ListEventTrackersInput {
             "ListEventTrackers",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8127,14 +7996,12 @@ pub mod list_filters_input {
             self.dataset_group_arn = input;
             self
         }
-        /// <p>A token returned from the previous call to <code>ListFilters</code> for getting the
-        /// next set of filters (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListFilters</code> for getting the next set of filters (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListFilters</code> for getting the
-        /// next set of filters (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListFilters</code> for getting the next set of filters (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8167,7 +8034,7 @@ pub mod list_filters_input {
 #[doc(hidden)]
 pub type ListFiltersInputOperationOutputAlias = crate::operation::ListFilters;
 #[doc(hidden)]
-pub type ListFiltersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFiltersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFiltersInput {
     /// Consumes the builder and constructs an Operation<[`ListFilters`](crate::operation::ListFilters)>
     #[allow(clippy::let_and_return)]
@@ -8178,7 +8045,7 @@ impl ListFiltersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFilters,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8262,7 +8129,7 @@ impl ListFiltersInput {
             "ListFilters",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8310,14 +8177,12 @@ pub mod list_recipes_input {
             self.recipe_provider = input;
             self
         }
-        /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting
-        /// the next set of recipes (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting the next set of recipes (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting
-        /// the next set of recipes (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting the next set of recipes (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8332,18 +8197,12 @@ pub mod list_recipes_input {
             self.max_results = input;
             self
         }
-        /// <p>
-        /// Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases)
-        /// for this domain are included in the response. If you don't specify a domain, only non-domain recipes are returned.
-        /// </p>
+        /// <p> Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, only non-domain recipes are returned. </p>
         pub fn domain(mut self, input: crate::model::Domain) -> Self {
             self.domain = Some(input);
             self
         }
-        /// <p>
-        /// Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases)
-        /// for this domain are included in the response. If you don't specify a domain, only non-domain recipes are returned.
-        /// </p>
+        /// <p> Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, only non-domain recipes are returned. </p>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
             self.domain = input;
             self
@@ -8367,7 +8226,7 @@ pub mod list_recipes_input {
 #[doc(hidden)]
 pub type ListRecipesInputOperationOutputAlias = crate::operation::ListRecipes;
 #[doc(hidden)]
-pub type ListRecipesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRecipesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRecipesInput {
     /// Consumes the builder and constructs an Operation<[`ListRecipes`](crate::operation::ListRecipes)>
     #[allow(clippy::let_and_return)]
@@ -8378,7 +8237,7 @@ impl ListRecipesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRecipes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8462,7 +8321,7 @@ impl ListRecipesInput {
             "ListRecipes",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8496,14 +8355,12 @@ pub mod list_recommenders_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When
-        /// a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
         pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_group_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When
-        /// a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
         pub fn set_dataset_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8511,14 +8368,12 @@ pub mod list_recommenders_input {
             self.dataset_group_arn = input;
             self
         }
-        /// <p>A token returned from the previous call to <code>ListRecommenders</code> for getting
-        /// the next set of recommenders (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListRecommenders</code> for getting the next set of recommenders (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListRecommenders</code> for getting
-        /// the next set of recommenders (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListRecommenders</code> for getting the next set of recommenders (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8551,7 +8406,7 @@ pub mod list_recommenders_input {
 #[doc(hidden)]
 pub type ListRecommendersInputOperationOutputAlias = crate::operation::ListRecommenders;
 #[doc(hidden)]
-pub type ListRecommendersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRecommendersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRecommendersInput {
     /// Consumes the builder and constructs an Operation<[`ListRecommenders`](crate::operation::ListRecommenders)>
     #[allow(clippy::let_and_return)]
@@ -8562,7 +8417,7 @@ impl ListRecommendersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRecommenders,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8647,7 +8502,7 @@ impl ListRecommendersInput {
             "ListRecommenders",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8680,14 +8535,12 @@ pub mod list_schemas_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A token returned from the previous call to <code>ListSchemas</code> for getting
-        /// the next set of schemas (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListSchemas</code> for getting the next set of schemas (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListSchemas</code> for getting
-        /// the next set of schemas (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListSchemas</code> for getting the next set of schemas (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8719,7 +8572,7 @@ pub mod list_schemas_input {
 #[doc(hidden)]
 pub type ListSchemasInputOperationOutputAlias = crate::operation::ListSchemas;
 #[doc(hidden)]
-pub type ListSchemasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSchemasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSchemasInput {
     /// Consumes the builder and constructs an Operation<[`ListSchemas`](crate::operation::ListSchemas)>
     #[allow(clippy::let_and_return)]
@@ -8730,7 +8583,7 @@ impl ListSchemasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSchemas,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8814,7 +8667,7 @@ impl ListSchemasInput {
             "ListSchemas",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8861,14 +8714,12 @@ pub mod list_solutions_input {
             self.dataset_group_arn = input;
             self
         }
-        /// <p>A token returned from the previous call to <code>ListSolutions</code> for getting
-        /// the next set of solutions (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListSolutions</code> for getting the next set of solutions (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListSolutions</code> for getting
-        /// the next set of solutions (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListSolutions</code> for getting the next set of solutions (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8901,7 +8752,7 @@ pub mod list_solutions_input {
 #[doc(hidden)]
 pub type ListSolutionsInputOperationOutputAlias = crate::operation::ListSolutions;
 #[doc(hidden)]
-pub type ListSolutionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSolutionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSolutionsInput {
     /// Consumes the builder and constructs an Operation<[`ListSolutions`](crate::operation::ListSolutions)>
     #[allow(clippy::let_and_return)]
@@ -8912,7 +8763,7 @@ impl ListSolutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSolutions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8996,7 +8847,7 @@ impl ListSolutionsInput {
             "ListSolutions",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9040,14 +8891,12 @@ pub mod list_solution_versions_input {
             self.solution_arn = input;
             self
         }
-        /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting
-        /// the next set of solution versions (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting the next set of solution versions (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting
-        /// the next set of solution versions (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting the next set of solution versions (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9080,7 +8929,7 @@ pub mod list_solution_versions_input {
 #[doc(hidden)]
 pub type ListSolutionVersionsInputOperationOutputAlias = crate::operation::ListSolutionVersions;
 #[doc(hidden)]
-pub type ListSolutionVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSolutionVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSolutionVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListSolutionVersions`](crate::operation::ListSolutionVersions)>
     #[allow(clippy::let_and_return)]
@@ -9091,7 +8940,7 @@ impl ListSolutionVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSolutionVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9178,7 +9027,7 @@ impl ListSolutionVersionsInput {
             "ListSolutionVersions",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9240,7 +9089,7 @@ pub mod stop_solution_version_creation_input {
 pub type StopSolutionVersionCreationInputOperationOutputAlias =
     crate::operation::StopSolutionVersionCreation;
 #[doc(hidden)]
-pub type StopSolutionVersionCreationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopSolutionVersionCreationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopSolutionVersionCreationInput {
     /// Consumes the builder and constructs an Operation<[`StopSolutionVersionCreation`](crate::operation::StopSolutionVersionCreation)>
     #[allow(clippy::let_and_return)]
@@ -9251,7 +9100,7 @@ impl StopSolutionVersionCreationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopSolutionVersionCreation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9337,7 +9186,7 @@ impl StopSolutionVersionCreationInput {
             "StopSolutionVersionCreation",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9395,14 +9244,12 @@ pub mod update_campaign_input {
             self.solution_version_arn = input;
             self
         }
-        /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that
-        /// Amazon Personalize will support.</p>
+        /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
         pub fn min_provisioned_tps(mut self, input: i32) -> Self {
             self.min_provisioned_tps = Some(input);
             self
         }
-        /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that
-        /// Amazon Personalize will support.</p>
+        /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
         pub fn set_min_provisioned_tps(mut self, input: std::option::Option<i32>) -> Self {
             self.min_provisioned_tps = input;
             self
@@ -9439,7 +9286,7 @@ pub mod update_campaign_input {
 #[doc(hidden)]
 pub type UpdateCampaignInputOperationOutputAlias = crate::operation::UpdateCampaign;
 #[doc(hidden)]
-pub type UpdateCampaignInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateCampaignInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCampaignInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCampaign`](crate::operation::UpdateCampaign)>
     #[allow(clippy::let_and_return)]
@@ -9450,7 +9297,7 @@ impl UpdateCampaignInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCampaign,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9535,7 +9382,7 @@ impl UpdateCampaignInput {
             "UpdateCampaign",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9611,7 +9458,7 @@ pub mod update_recommender_input {
 #[doc(hidden)]
 pub type UpdateRecommenderInputOperationOutputAlias = crate::operation::UpdateRecommender;
 #[doc(hidden)]
-pub type UpdateRecommenderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateRecommenderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRecommenderInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRecommender`](crate::operation::UpdateRecommender)>
     #[allow(clippy::let_and_return)]
@@ -9622,7 +9469,7 @@ impl UpdateRecommenderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRecommender,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9707,7 +9554,7 @@ impl UpdateRecommenderInput {
             "UpdateRecommender",
             "personalize",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9766,8 +9613,7 @@ pub struct UpdateCampaignInput {
     pub campaign_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of a new solution version to deploy.</p>
     pub solution_version_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that
-    /// Amazon Personalize will support.</p>
+    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
     pub min_provisioned_tps: std::option::Option<i32>,
     /// <p>The configuration details of a campaign.</p>
     pub campaign_config: std::option::Option<crate::model::CampaignConfig>,
@@ -9781,8 +9627,7 @@ impl UpdateCampaignInput {
     pub fn solution_version_arn(&self) -> std::option::Option<&str> {
         self.solution_version_arn.as_deref()
     }
-    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that
-    /// Amazon Personalize will support.</p>
+    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
     pub fn min_provisioned_tps(&self) -> std::option::Option<i32> {
         self.min_provisioned_tps
     }
@@ -9829,8 +9674,7 @@ impl std::fmt::Debug for StopSolutionVersionCreationInput {
 pub struct ListSolutionVersionsInput {
     /// <p>The Amazon Resource Name (ARN) of the solution.</p>
     pub solution_arn: std::option::Option<std::string::String>,
-    /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting
-    /// the next set of solution versions (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting the next set of solution versions (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of solution versions to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -9840,8 +9684,7 @@ impl ListSolutionVersionsInput {
     pub fn solution_arn(&self) -> std::option::Option<&str> {
         self.solution_arn.as_deref()
     }
-    /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting
-    /// the next set of solution versions (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting the next set of solution versions (if they exist).</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -9866,8 +9709,7 @@ impl std::fmt::Debug for ListSolutionVersionsInput {
 pub struct ListSolutionsInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
-    /// <p>A token returned from the previous call to <code>ListSolutions</code> for getting
-    /// the next set of solutions (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListSolutions</code> for getting the next set of solutions (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of solutions to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -9877,8 +9719,7 @@ impl ListSolutionsInput {
     pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
-    /// <p>A token returned from the previous call to <code>ListSolutions</code> for getting
-    /// the next set of solutions (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListSolutions</code> for getting the next set of solutions (if they exist).</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -9901,15 +9742,13 @@ impl std::fmt::Debug for ListSolutionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSchemasInput {
-    /// <p>A token returned from the previous call to <code>ListSchemas</code> for getting
-    /// the next set of schemas (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListSchemas</code> for getting the next set of schemas (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of schemas to return.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListSchemasInput {
-    /// <p>A token returned from the previous call to <code>ListSchemas</code> for getting
-    /// the next set of schemas (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListSchemas</code> for getting the next set of schemas (if they exist).</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -9931,23 +9770,19 @@ impl std::fmt::Debug for ListSchemasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecommendersInput {
-    /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When
-    /// a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
-    /// <p>A token returned from the previous call to <code>ListRecommenders</code> for getting
-    /// the next set of recommenders (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListRecommenders</code> for getting the next set of recommenders (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of recommenders to return.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListRecommendersInput {
-    /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When
-    /// a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
     pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
-    /// <p>A token returned from the previous call to <code>ListRecommenders</code> for getting
-    /// the next set of recommenders (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListRecommenders</code> for getting the next set of recommenders (if they exist).</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -9972,15 +9807,11 @@ impl std::fmt::Debug for ListRecommendersInput {
 pub struct ListRecipesInput {
     /// <p>The default is <code>SERVICE</code>.</p>
     pub recipe_provider: std::option::Option<crate::model::RecipeProvider>,
-    /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting
-    /// the next set of recipes (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting the next set of recipes (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of recipes to return.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>
-    /// Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases)
-    /// for this domain are included in the response. If you don't specify a domain, only non-domain recipes are returned.
-    /// </p>
+    /// <p> Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, only non-domain recipes are returned. </p>
     pub domain: std::option::Option<crate::model::Domain>,
 }
 impl ListRecipesInput {
@@ -9988,8 +9819,7 @@ impl ListRecipesInput {
     pub fn recipe_provider(&self) -> std::option::Option<&crate::model::RecipeProvider> {
         self.recipe_provider.as_ref()
     }
-    /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting
-    /// the next set of recipes (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting the next set of recipes (if they exist).</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -9997,10 +9827,7 @@ impl ListRecipesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>
-    /// Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases)
-    /// for this domain are included in the response. If you don't specify a domain, only non-domain recipes are returned.
-    /// </p>
+    /// <p> Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, only non-domain recipes are returned. </p>
     pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
         self.domain.as_ref()
     }
@@ -10022,8 +9849,7 @@ impl std::fmt::Debug for ListRecipesInput {
 pub struct ListFiltersInput {
     /// <p>The ARN of the dataset group that contains the filters.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
-    /// <p>A token returned from the previous call to <code>ListFilters</code> for getting the
-    /// next set of filters (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListFilters</code> for getting the next set of filters (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of filters to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -10033,8 +9859,7 @@ impl ListFiltersInput {
     pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
-    /// <p>A token returned from the previous call to <code>ListFilters</code> for getting the
-    /// next set of filters (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListFilters</code> for getting the next set of filters (if they exist).</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10059,8 +9884,7 @@ impl std::fmt::Debug for ListFiltersInput {
 pub struct ListEventTrackersInput {
     /// <p>The ARN of a dataset group used to filter the response.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
-    /// <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting
-    /// the next set of event trackers (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting the next set of event trackers (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of event trackers to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -10070,8 +9894,7 @@ impl ListEventTrackersInput {
     pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
-    /// <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting
-    /// the next set of event trackers (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting the next set of event trackers (if they exist).</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10094,23 +9917,19 @@ impl std::fmt::Debug for ListEventTrackersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetsInput {
-    /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to
-    /// list.</p>
+    /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to list.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
-    /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting
-    /// the next set of dataset import jobs (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of datasets to return.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListDatasetsInput {
-    /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to
-    /// list.</p>
+    /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to list.</p>
     pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
-    /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting
-    /// the next set of dataset import jobs (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10135,8 +9954,7 @@ impl std::fmt::Debug for ListDatasetsInput {
 pub struct ListDatasetImportJobsInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset to list the dataset import jobs for.</p>
     pub dataset_arn: std::option::Option<std::string::String>,
-    /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting
-    /// the next set of dataset import jobs (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of dataset import jobs to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -10146,8 +9964,7 @@ impl ListDatasetImportJobsInput {
     pub fn dataset_arn(&self) -> std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
-    /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting
-    /// the next set of dataset import jobs (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10170,15 +9987,13 @@ impl std::fmt::Debug for ListDatasetImportJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetGroupsInput {
-    /// <p>A token returned from the previous call to <code>ListDatasetGroups</code> for getting the
-    /// next set of dataset groups (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListDatasetGroups</code> for getting the next set of dataset groups (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of dataset groups to return.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListDatasetGroupsInput {
-    /// <p>A token returned from the previous call to <code>ListDatasetGroups</code> for getting the
-    /// next set of dataset groups (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListDatasetGroups</code> for getting the next set of dataset groups (if they exist).</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10202,8 +10017,7 @@ impl std::fmt::Debug for ListDatasetGroupsInput {
 pub struct ListDatasetExportJobsInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset to list the dataset export jobs for.</p>
     pub dataset_arn: std::option::Option<std::string::String>,
-    /// <p>A token returned from the previous call to <code>ListDatasetExportJobs</code> for getting
-    /// the next set of dataset export jobs (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListDatasetExportJobs</code> for getting the next set of dataset export jobs (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of dataset export jobs to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -10213,8 +10027,7 @@ impl ListDatasetExportJobsInput {
     pub fn dataset_arn(&self) -> std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
-    /// <p>A token returned from the previous call to <code>ListDatasetExportJobs</code> for getting
-    /// the next set of dataset export jobs (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListDatasetExportJobs</code> for getting the next set of dataset export jobs (if they exist).</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10237,23 +10050,19 @@ impl std::fmt::Debug for ListDatasetExportJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCampaignsInput {
-    /// <p>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When
-    /// a solution is not specified, all the campaigns associated with the account are listed.</p>
+    /// <p>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When a solution is not specified, all the campaigns associated with the account are listed.</p>
     pub solution_arn: std::option::Option<std::string::String>,
-    /// <p>A token returned from the previous call to <code>ListCampaigns</code> for getting
-    /// the next set of campaigns (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListCampaigns</code> for getting the next set of campaigns (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of campaigns to return.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListCampaignsInput {
-    /// <p>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When
-    /// a solution is not specified, all the campaigns associated with the account are listed.</p>
+    /// <p>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When a solution is not specified, all the campaigns associated with the account are listed.</p>
     pub fn solution_arn(&self) -> std::option::Option<&str> {
         self.solution_arn.as_deref()
     }
-    /// <p>A token returned from the previous call to <code>ListCampaigns</code> for getting
-    /// the next set of campaigns (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListCampaigns</code> for getting the next set of campaigns (if they exist).</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10280,8 +10089,7 @@ pub struct ListBatchSegmentJobsInput {
     pub solution_version_arn: std::option::Option<std::string::String>,
     /// <p>The token to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of batch segment job results to return in each page. The default
-    /// value is 100.</p>
+    /// <p>The maximum number of batch segment job results to return in each page. The default value is 100.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListBatchSegmentJobsInput {
@@ -10293,8 +10101,7 @@ impl ListBatchSegmentJobsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of batch segment job results to return in each page. The default
-    /// value is 100.</p>
+    /// <p>The maximum number of batch segment job results to return in each page. The default value is 100.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -10313,18 +10120,15 @@ impl std::fmt::Debug for ListBatchSegmentJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBatchInferenceJobsInput {
-    /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs
-    /// were created.</p>
+    /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs were created.</p>
     pub solution_version_arn: std::option::Option<std::string::String>,
     /// <p>The token to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of batch inference job results to return in each page. The default
-    /// value is 100.</p>
+    /// <p>The maximum number of batch inference job results to return in each page. The default value is 100.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListBatchInferenceJobsInput {
-    /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs
-    /// were created.</p>
+    /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs were created.</p>
     pub fn solution_version_arn(&self) -> std::option::Option<&str> {
         self.solution_version_arn.as_deref()
     }
@@ -10332,8 +10136,7 @@ impl ListBatchInferenceJobsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of batch inference job results to return in each page. The default
-    /// value is 100.</p>
+    /// <p>The maximum number of batch inference job results to return in each page. The default value is 100.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -10880,42 +10683,20 @@ impl std::fmt::Debug for DeleteCampaignInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSolutionVersionInput {
-    /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration
-    /// information.</p>
+    /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration information.</p>
     pub solution_arn: std::option::Option<std::string::String>,
-    /// <p>The scope of training to be performed when creating the solution version. The
-    /// <code>FULL</code> option trains the solution version based on the entirety of the input
-    /// solution's training data, while the <code>UPDATE</code> option processes only the data that
-    /// has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to
-    /// incrementally update your solution version instead of creating an entirely new one.</p>
-    /// <important>
-    /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution
-    /// version created from the input solution using the <code>FULL</code> option and the input
-    /// solution was trained with the
-    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
-    /// recipe or the
-    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
+    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
+    /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
     /// </important>
     pub training_mode: std::option::Option<crate::model::TrainingMode>,
 }
 impl CreateSolutionVersionInput {
-    /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration
-    /// information.</p>
+    /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration information.</p>
     pub fn solution_arn(&self) -> std::option::Option<&str> {
         self.solution_arn.as_deref()
     }
-    /// <p>The scope of training to be performed when creating the solution version. The
-    /// <code>FULL</code> option trains the solution version based on the entirety of the input
-    /// solution's training data, while the <code>UPDATE</code> option processes only the data that
-    /// has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to
-    /// incrementally update your solution version instead of creating an entirely new one.</p>
-    /// <important>
-    /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution
-    /// version created from the input solution using the <code>FULL</code> option and the input
-    /// solution was trained with the
-    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
-    /// recipe or the
-    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
+    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
+    /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
     /// </important>
     pub fn training_mode(&self) -> std::option::Option<&crate::model::TrainingMode> {
         self.training_mode.as_ref()
@@ -10936,36 +10717,21 @@ impl std::fmt::Debug for CreateSolutionVersionInput {
 pub struct CreateSolutionInput {
     /// <p>The name for the solution.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe.
-    /// The default is <code>false</code>.</p>
-    /// <p>When performing AutoML, this parameter is always <code>true</code> and you
-    /// should not set it to <code>false</code>.</p>
+    /// <p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe. The default is <code>false</code>.</p>
+    /// <p>When performing AutoML, this parameter is always <code>true</code> and you should not set it to <code>false</code>.</p>
     pub perform_hpo: std::option::Option<bool>,
-    /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>.
-    /// For this case, you must specify <code>recipeArn</code>.</p>
-    /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects
-    /// the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit
-    /// <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with
-    /// different values for the hyperparameters.
-    /// AutoML lengthens the training process as compared to selecting a specific recipe.</p>
+    /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>. For this case, you must specify <code>recipeArn</code>.</p>
+    /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with different values for the hyperparameters. AutoML lengthens the training process as compared to selecting a specific recipe.</p>
     pub perform_auto_ml: bool,
-    /// <p>The ARN of the recipe to use for model training. Only specified when
-    /// <code>performAutoML</code> is false.</p>
+    /// <p>The ARN of the recipe to use for model training. Only specified when <code>performAutoML</code> is false.</p>
     pub recipe_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
-    /// <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field),
-    /// this parameter specifies which event type (for example, 'click' or 'like') is used for
-    /// training the model.</p>
-    /// <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with
-    /// equal weight regardless of type.</p>
+    /// <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field), this parameter specifies which event type (for example, 'click' or 'like') is used for training the model.</p>
+    /// <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with equal weight regardless of type.</p>
     pub event_type: std::option::Option<std::string::String>,
-    /// <p>The configuration to use with the solution. When <code>performAutoML</code> is set to
-    /// true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section
-    /// of the solution configuration.</p>
-    /// <note>
-    /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code>
-    /// at this time.</p>
+    /// <p>The configuration to use with the solution. When <code>performAutoML</code> is set to true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section of the solution configuration.</p> <note>
+    /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
     /// </note>
     pub solution_config: std::option::Option<crate::model::SolutionConfig>,
 }
@@ -10974,25 +10740,17 @@ impl CreateSolutionInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe.
-    /// The default is <code>false</code>.</p>
-    /// <p>When performing AutoML, this parameter is always <code>true</code> and you
-    /// should not set it to <code>false</code>.</p>
+    /// <p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe. The default is <code>false</code>.</p>
+    /// <p>When performing AutoML, this parameter is always <code>true</code> and you should not set it to <code>false</code>.</p>
     pub fn perform_hpo(&self) -> std::option::Option<bool> {
         self.perform_hpo
     }
-    /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>.
-    /// For this case, you must specify <code>recipeArn</code>.</p>
-    /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects
-    /// the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit
-    /// <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with
-    /// different values for the hyperparameters.
-    /// AutoML lengthens the training process as compared to selecting a specific recipe.</p>
+    /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>. For this case, you must specify <code>recipeArn</code>.</p>
+    /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with different values for the hyperparameters. AutoML lengthens the training process as compared to selecting a specific recipe.</p>
     pub fn perform_auto_ml(&self) -> bool {
         self.perform_auto_ml
     }
-    /// <p>The ARN of the recipe to use for model training. Only specified when
-    /// <code>performAutoML</code> is false.</p>
+    /// <p>The ARN of the recipe to use for model training. Only specified when <code>performAutoML</code> is false.</p>
     pub fn recipe_arn(&self) -> std::option::Option<&str> {
         self.recipe_arn.as_deref()
     }
@@ -11000,20 +10758,13 @@ impl CreateSolutionInput {
     pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
-    /// <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field),
-    /// this parameter specifies which event type (for example, 'click' or 'like') is used for
-    /// training the model.</p>
-    /// <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with
-    /// equal weight regardless of type.</p>
+    /// <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field), this parameter specifies which event type (for example, 'click' or 'like') is used for training the model.</p>
+    /// <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with equal weight regardless of type.</p>
     pub fn event_type(&self) -> std::option::Option<&str> {
         self.event_type.as_deref()
     }
-    /// <p>The configuration to use with the solution. When <code>performAutoML</code> is set to
-    /// true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section
-    /// of the solution configuration.</p>
-    /// <note>
-    /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code>
-    /// at this time.</p>
+    /// <p>The configuration to use with the solution. When <code>performAutoML</code> is set to true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section of the solution configuration.</p> <note>
+    /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
     /// </note>
     pub fn solution_config(&self) -> std::option::Option<&crate::model::SolutionConfig> {
         self.solution_config.as_ref()
@@ -11041,8 +10792,7 @@ pub struct CreateSchemaInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>A schema in Avro JSON format.</p>
     pub schema: std::option::Option<std::string::String>,
-    /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify
-    /// the domain you chose when you created the Domain dataset group.</p>
+    /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify the domain you chose when you created the Domain dataset group.</p>
     pub domain: std::option::Option<crate::model::Domain>,
 }
 impl CreateSchemaInput {
@@ -11054,8 +10804,7 @@ impl CreateSchemaInput {
     pub fn schema(&self) -> std::option::Option<&str> {
         self.schema.as_deref()
     }
-    /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify
-    /// the domain you chose when you created the Domain dataset group.</p>
+    /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify the domain you chose when you created the Domain dataset group.</p>
     pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
         self.domain.as_ref()
     }
@@ -11078,9 +10827,7 @@ pub struct CreateRecommenderInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the destination domain dataset group for the recommender.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group
-    /// use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>. </p>
     pub recipe_arn: std::option::Option<std::string::String>,
     /// <p>The configuration details of the recommender.</p>
     pub recommender_config: std::option::Option<crate::model::RecommenderConfig>,
@@ -11094,9 +10841,7 @@ impl CreateRecommenderInput {
     pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group
-    /// use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>. </p>
     pub fn recipe_arn(&self) -> std::option::Option<&str> {
         self.recipe_arn.as_deref()
     }
@@ -11124,9 +10869,7 @@ pub struct CreateFilterInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the dataset group that the filter will belong to.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
-    /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules.
-    /// For information about filter expression structure and syntax, see
-    /// <a>filter-expressions</a>.</p>
+    /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see <code>filter-expressions</code>.</p>
     pub filter_expression: std::option::Option<std::string::String>,
 }
 impl CreateFilterInput {
@@ -11138,9 +10881,7 @@ impl CreateFilterInput {
     pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
-    /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules.
-    /// For information about filter expression structure and syntax, see
-    /// <a>filter-expressions</a>.</p>
+    /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see <code>filter-expressions</code>.</p>
     pub fn filter_expression(&self) -> std::option::Option<&str> {
         self.filter_expression.as_deref()
     }
@@ -11231,15 +10972,11 @@ impl std::fmt::Debug for CreateDatasetImportJobInput {
 pub struct CreateDatasetGroupInput {
     /// <p>The name for the new dataset group.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM
-    /// role is only valid when also specifying a KMS key.</p>
+    /// <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM role is only valid when also specifying a KMS key.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a Key Management Service (KMS) key used to encrypt the datasets.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
-    /// <p>The domain of the dataset group. Specify a domain to create a Domain dataset group. The domain you specify
-    /// determines the default schemas for datasets and the use cases available for recommenders. If you don't specify a domain,
-    /// you create a Custom dataset group with solution versions that you deploy with a campaign.
-    /// </p>
+    /// <p>The domain of the dataset group. Specify a domain to create a Domain dataset group. The domain you specify determines the default schemas for datasets and the use cases available for recommenders. If you don't specify a domain, you create a Custom dataset group with solution versions that you deploy with a campaign. </p>
     pub domain: std::option::Option<crate::model::Domain>,
 }
 impl CreateDatasetGroupInput {
@@ -11247,8 +10984,7 @@ impl CreateDatasetGroupInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM
-    /// role is only valid when also specifying a KMS key.</p>
+    /// <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM role is only valid when also specifying a KMS key.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -11256,10 +10992,7 @@ impl CreateDatasetGroupInput {
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
-    /// <p>The domain of the dataset group. Specify a domain to create a Domain dataset group. The domain you specify
-    /// determines the default schemas for datasets and the use cases available for recommenders. If you don't specify a domain,
-    /// you create a Custom dataset group with solution versions that you deploy with a campaign.
-    /// </p>
+    /// <p>The domain of the dataset group. Specify a domain to create a Domain dataset group. The domain you specify determines the default schemas for datasets and the use cases available for recommenders. If you don't specify a domain, you create a Custom dataset group with solution versions that you deploy with a campaign. </p>
     pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
         self.domain.as_ref()
     }
@@ -11283,13 +11016,9 @@ pub struct CreateDatasetExportJobInput {
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset that contains the data to export.</p>
     pub dataset_arn: std::option::Option<std::string::String>,
-    /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job,
-    /// only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code>
-    /// for both types. The default value is <code>PUT</code>.
-    /// </p>
+    /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
     pub ingestion_mode: std::option::Option<crate::model::IngestionMode>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your
-    /// output Amazon S3 bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The path to the Amazon S3 bucket where the job's output is stored.</p>
     pub job_output: std::option::Option<crate::model::DatasetExportJobOutput>,
@@ -11303,15 +11032,11 @@ impl CreateDatasetExportJobInput {
     pub fn dataset_arn(&self) -> std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
-    /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job,
-    /// only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code>
-    /// for both types. The default value is <code>PUT</code>.
-    /// </p>
+    /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
     pub fn ingestion_mode(&self) -> std::option::Option<&crate::model::IngestionMode> {
         self.ingestion_mode.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your
-    /// output Amazon S3 bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -11338,23 +11063,16 @@ impl std::fmt::Debug for CreateDatasetExportJobInput {
 pub struct CreateDatasetInput {
     /// <p>The name for the dataset.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset
-    /// fields.</p>
+    /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset fields.</p>
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group to add the dataset to.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>The type of dataset.</p>
     /// <p>One of the following (case insensitive) values:</p>
     /// <ul>
-    /// <li>
-    /// <p>Interactions</p>
-    /// </li>
-    /// <li>
-    /// <p>Items</p>
-    /// </li>
-    /// <li>
-    /// <p>Users</p>
-    /// </li>
+    /// <li> <p>Interactions</p> </li>
+    /// <li> <p>Items</p> </li>
+    /// <li> <p>Users</p> </li>
     /// </ul>
     pub dataset_type: std::option::Option<std::string::String>,
 }
@@ -11363,8 +11081,7 @@ impl CreateDatasetInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset
-    /// fields.</p>
+    /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset fields.</p>
     pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
@@ -11375,15 +11092,9 @@ impl CreateDatasetInput {
     /// <p>The type of dataset.</p>
     /// <p>One of the following (case insensitive) values:</p>
     /// <ul>
-    /// <li>
-    /// <p>Interactions</p>
-    /// </li>
-    /// <li>
-    /// <p>Items</p>
-    /// </li>
-    /// <li>
-    /// <p>Users</p>
-    /// </li>
+    /// <li> <p>Interactions</p> </li>
+    /// <li> <p>Items</p> </li>
+    /// <li> <p>Users</p> </li>
     /// </ul>
     pub fn dataset_type(&self) -> std::option::Option<&str> {
         self.dataset_type.as_deref()
@@ -11408,8 +11119,7 @@ pub struct CreateCampaignInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
     pub solution_version_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that
-    /// Amazon Personalize will support.</p>
+    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
     pub min_provisioned_tps: std::option::Option<i32>,
     /// <p>The configuration details of a campaign.</p>
     pub campaign_config: std::option::Option<crate::model::CampaignConfig>,
@@ -11423,8 +11133,7 @@ impl CreateCampaignInput {
     pub fn solution_version_arn(&self) -> std::option::Option<&str> {
         self.solution_version_arn.as_deref()
     }
-    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that
-    /// Amazon Personalize will support.</p>
+    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
     pub fn min_provisioned_tps(&self) -> std::option::Option<i32> {
         self.min_provisioned_tps
     }
@@ -11450,11 +11159,9 @@ impl std::fmt::Debug for CreateCampaignInput {
 pub struct CreateBatchSegmentJobInput {
     /// <p>The name of the batch segment job to create.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate
-    /// batch segments.</p>
+    /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate batch segments.</p>
     pub solution_version_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the filter to apply to the batch segment job. For more information on using
-    /// filters, see <a>filter-batch</a>.</p>
+    /// <p>The ARN of the filter to apply to the batch segment job. For more information on using filters, see <code>filter-batch</code>.</p>
     pub filter_arn: std::option::Option<std::string::String>,
     /// <p>The number of predicted users generated by the batch segment job for each line of input data.</p>
     pub num_results: std::option::Option<i32>,
@@ -11462,8 +11169,7 @@ pub struct CreateBatchSegmentJobInput {
     pub job_input: std::option::Option<crate::model::BatchSegmentJobInput>,
     /// <p>The Amazon S3 path for the bucket where the job's output will be stored.</p>
     pub job_output: std::option::Option<crate::model::BatchSegmentJobOutput>,
-    /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output
-    /// Amazon S3 buckets respectively.</p>
+    /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl CreateBatchSegmentJobInput {
@@ -11471,13 +11177,11 @@ impl CreateBatchSegmentJobInput {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate
-    /// batch segments.</p>
+    /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate batch segments.</p>
     pub fn solution_version_arn(&self) -> std::option::Option<&str> {
         self.solution_version_arn.as_deref()
     }
-    /// <p>The ARN of the filter to apply to the batch segment job. For more information on using
-    /// filters, see <a>filter-batch</a>.</p>
+    /// <p>The ARN of the filter to apply to the batch segment job. For more information on using filters, see <code>filter-batch</code>.</p>
     pub fn filter_arn(&self) -> std::option::Option<&str> {
         self.filter_arn.as_deref()
     }
@@ -11493,8 +11197,7 @@ impl CreateBatchSegmentJobInput {
     pub fn job_output(&self) -> std::option::Option<&crate::model::BatchSegmentJobOutput> {
         self.job_output.as_ref()
     }
-    /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output
-    /// Amazon S3 buckets respectively.</p>
+    /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -11519,22 +11222,17 @@ impl std::fmt::Debug for CreateBatchSegmentJobInput {
 pub struct CreateBatchInferenceJobInput {
     /// <p>The name of the batch inference job to create.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the
-    /// batch inference recommendations.</p>
+    /// <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the batch inference recommendations.</p>
     pub solution_version_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the filter to apply to the batch inference job. For more information on using
-    /// filters, see
-    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..</p>
+    /// <p>The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..</p>
     pub filter_arn: std::option::Option<std::string::String>,
     /// <p>The number of recommendations to retreive.</p>
     pub num_results: std::option::Option<i32>,
-    /// <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input
-    /// material must be in JSON format.</p>
+    /// <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input material must be in JSON format.</p>
     pub job_input: std::option::Option<crate::model::BatchInferenceJobInput>,
     /// <p>The path to the Amazon S3 bucket where the job's output will be stored.</p>
     pub job_output: std::option::Option<crate::model::BatchInferenceJobOutput>,
-    /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output
-    /// Amazon S3 buckets respectively.</p>
+    /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The configuration details of a batch inference job.</p>
     pub batch_inference_job_config: std::option::Option<crate::model::BatchInferenceJobConfig>,
@@ -11544,14 +11242,11 @@ impl CreateBatchInferenceJobInput {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the
-    /// batch inference recommendations.</p>
+    /// <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the batch inference recommendations.</p>
     pub fn solution_version_arn(&self) -> std::option::Option<&str> {
         self.solution_version_arn.as_deref()
     }
-    /// <p>The ARN of the filter to apply to the batch inference job. For more information on using
-    /// filters, see
-    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..</p>
+    /// <p>The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..</p>
     pub fn filter_arn(&self) -> std::option::Option<&str> {
         self.filter_arn.as_deref()
     }
@@ -11559,8 +11254,7 @@ impl CreateBatchInferenceJobInput {
     pub fn num_results(&self) -> std::option::Option<i32> {
         self.num_results
     }
-    /// <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input
-    /// material must be in JSON format.</p>
+    /// <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input material must be in JSON format.</p>
     pub fn job_input(&self) -> std::option::Option<&crate::model::BatchInferenceJobInput> {
         self.job_input.as_ref()
     }
@@ -11568,8 +11262,7 @@ impl CreateBatchInferenceJobInput {
     pub fn job_output(&self) -> std::option::Option<&crate::model::BatchInferenceJobOutput> {
         self.job_output.as_ref()
     }
-    /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output
-    /// Amazon S3 buckets respectively.</p>
+    /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }

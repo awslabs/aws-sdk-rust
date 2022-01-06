@@ -101,9 +101,9 @@ pub mod list_attendees_output {
         /// To override the contents of this collection use [`set_attendees`](Self::set_attendees).
         ///
         /// <p>The Amazon Chime SDK attendee information.</p>
-        pub fn attendees(mut self, input: impl Into<crate::model::Attendee>) -> Self {
+        pub fn attendees(mut self, input: crate::model::Attendee) -> Self {
             let mut v = self.attendees.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attendees = Some(v);
             self
         }
@@ -313,8 +313,7 @@ impl DeleteAttendeeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMeetingWithAttendeesOutput {
-    /// <p>The meeting information, including the meeting ID and
-    /// <code>MediaPlacement</code>.</p>
+    /// <p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>
     pub meeting: std::option::Option<crate::model::Meeting>,
     /// <p>The attendee information, including attendees' IDs and join tokens.</p>
     pub attendees: std::option::Option<std::vec::Vec<crate::model::Attendee>>,
@@ -322,8 +321,7 @@ pub struct CreateMeetingWithAttendeesOutput {
     pub errors: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeError>>,
 }
 impl CreateMeetingWithAttendeesOutput {
-    /// <p>The meeting information, including the meeting ID and
-    /// <code>MediaPlacement</code>.</p>
+    /// <p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>
     pub fn meeting(&self) -> std::option::Option<&crate::model::Meeting> {
         self.meeting.as_ref()
     }
@@ -356,14 +354,12 @@ pub mod create_meeting_with_attendees_output {
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::CreateAttendeeError>>,
     }
     impl Builder {
-        /// <p>The meeting information, including the meeting ID and
-        /// <code>MediaPlacement</code>.</p>
+        /// <p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>
         pub fn meeting(mut self, input: crate::model::Meeting) -> Self {
             self.meeting = Some(input);
             self
         }
-        /// <p>The meeting information, including the meeting ID and
-        /// <code>MediaPlacement</code>.</p>
+        /// <p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>
         pub fn set_meeting(mut self, input: std::option::Option<crate::model::Meeting>) -> Self {
             self.meeting = input;
             self
@@ -373,9 +369,9 @@ pub mod create_meeting_with_attendees_output {
         /// To override the contents of this collection use [`set_attendees`](Self::set_attendees).
         ///
         /// <p>The attendee information, including attendees' IDs and join tokens.</p>
-        pub fn attendees(mut self, input: impl Into<crate::model::Attendee>) -> Self {
+        pub fn attendees(mut self, input: crate::model::Attendee) -> Self {
             let mut v = self.attendees.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attendees = Some(v);
             self
         }
@@ -392,9 +388,9 @@ pub mod create_meeting_with_attendees_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::CreateAttendeeError>) -> Self {
+        pub fn errors(mut self, input: crate::model::CreateAttendeeError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -427,13 +423,11 @@ impl CreateMeetingWithAttendeesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMeetingOutput {
-    /// <p>The meeting information, including the meeting ID and
-    /// <code>MediaPlacement</code>.</p>
+    /// <p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>
     pub meeting: std::option::Option<crate::model::Meeting>,
 }
 impl CreateMeetingOutput {
-    /// <p>The meeting information, including the meeting ID and
-    /// <code>MediaPlacement</code>.</p>
+    /// <p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>
     pub fn meeting(&self) -> std::option::Option<&crate::model::Meeting> {
         self.meeting.as_ref()
     }
@@ -454,14 +448,12 @@ pub mod create_meeting_output {
         pub(crate) meeting: std::option::Option<crate::model::Meeting>,
     }
     impl Builder {
-        /// <p>The meeting information, including the meeting ID and
-        /// <code>MediaPlacement</code>.</p>
+        /// <p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>
         pub fn meeting(mut self, input: crate::model::Meeting) -> Self {
             self.meeting = Some(input);
             self
         }
-        /// <p>The meeting information, including the meeting ID and
-        /// <code>MediaPlacement</code>.</p>
+        /// <p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>
         pub fn set_meeting(mut self, input: std::option::Option<crate::model::Meeting>) -> Self {
             self.meeting = input;
             self
@@ -577,9 +569,9 @@ pub mod batch_create_attendee_output {
         /// To override the contents of this collection use [`set_attendees`](Self::set_attendees).
         ///
         /// <p>The attendee information, including attendees' IDs and join tokens.</p>
-        pub fn attendees(mut self, input: impl Into<crate::model::Attendee>) -> Self {
+        pub fn attendees(mut self, input: crate::model::Attendee) -> Self {
             let mut v = self.attendees.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attendees = Some(v);
             self
         }
@@ -596,9 +588,9 @@ pub mod batch_create_attendee_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::CreateAttendeeError>) -> Self {
+        pub fn errors(mut self, input: crate::model::CreateAttendeeError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }

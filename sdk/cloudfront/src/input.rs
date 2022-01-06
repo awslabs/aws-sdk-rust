@@ -50,7 +50,7 @@ pub mod associate_alias_input {
 #[doc(hidden)]
 pub type AssociateAliasInputOperationOutputAlias = crate::operation::AssociateAlias;
 #[doc(hidden)]
-pub type AssociateAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateAliasInput {
     /// Consumes the builder and constructs an Operation<[`AssociateAlias`](crate::operation::AssociateAlias)>
     #[allow(clippy::let_and_return)]
@@ -61,7 +61,7 @@ impl AssociateAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateAlias,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -166,7 +166,7 @@ impl AssociateAliasInput {
             "AssociateAlias",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -219,7 +219,7 @@ pub mod create_cache_policy_input {
 #[doc(hidden)]
 pub type CreateCachePolicyInputOperationOutputAlias = crate::operation::CreateCachePolicy;
 #[doc(hidden)]
-pub type CreateCachePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateCachePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCachePolicyInput {
     /// Consumes the builder and constructs an Operation<[`CreateCachePolicy`](crate::operation::CreateCachePolicy)>
     #[allow(clippy::let_and_return)]
@@ -230,7 +230,7 @@ impl CreateCachePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCachePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -310,7 +310,7 @@ impl CreateCachePolicyInput {
             "CreateCachePolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -378,7 +378,7 @@ pub type CreateCloudFrontOriginAccessIdentityInputOperationOutputAlias =
     crate::operation::CreateCloudFrontOriginAccessIdentity;
 #[doc(hidden)]
 pub type CreateCloudFrontOriginAccessIdentityInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCloudFrontOriginAccessIdentityInput {
     /// Consumes the builder and constructs an Operation<[`CreateCloudFrontOriginAccessIdentity`](crate::operation::CreateCloudFrontOriginAccessIdentity)>
     #[allow(clippy::let_and_return)]
@@ -389,7 +389,7 @@ impl CreateCloudFrontOriginAccessIdentityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCloudFrontOriginAccessIdentity,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -472,7 +472,7 @@ impl CreateCloudFrontOriginAccessIdentityInput {
             "CreateCloudFrontOriginAccessIdentity",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -533,7 +533,7 @@ pub mod create_distribution_input {
 #[doc(hidden)]
 pub type CreateDistributionInputOperationOutputAlias = crate::operation::CreateDistribution;
 #[doc(hidden)]
-pub type CreateDistributionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDistributionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDistributionInput {
     /// Consumes the builder and constructs an Operation<[`CreateDistribution`](crate::operation::CreateDistribution)>
     #[allow(clippy::let_and_return)]
@@ -544,7 +544,7 @@ impl CreateDistributionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDistribution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -624,7 +624,7 @@ impl CreateDistributionInput {
             "CreateDistribution",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -690,7 +690,7 @@ pub mod create_distribution_with_tags_input {
 pub type CreateDistributionWithTagsInputOperationOutputAlias =
     crate::operation::CreateDistributionWithTags;
 #[doc(hidden)]
-pub type CreateDistributionWithTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDistributionWithTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDistributionWithTagsInput {
     /// Consumes the builder and constructs an Operation<[`CreateDistributionWithTags`](crate::operation::CreateDistributionWithTags)>
     #[allow(clippy::let_and_return)]
@@ -701,7 +701,7 @@ impl CreateDistributionWithTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDistributionWithTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -791,7 +791,7 @@ impl CreateDistributionWithTagsInput {
             "CreateDistributionWithTags",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -857,7 +857,8 @@ pub mod create_field_level_encryption_config_input {
 pub type CreateFieldLevelEncryptionConfigInputOperationOutputAlias =
     crate::operation::CreateFieldLevelEncryptionConfig;
 #[doc(hidden)]
-pub type CreateFieldLevelEncryptionConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFieldLevelEncryptionConfigInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFieldLevelEncryptionConfigInput {
     /// Consumes the builder and constructs an Operation<[`CreateFieldLevelEncryptionConfig`](crate::operation::CreateFieldLevelEncryptionConfig)>
     #[allow(clippy::let_and_return)]
@@ -868,7 +869,7 @@ impl CreateFieldLevelEncryptionConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFieldLevelEncryptionConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -950,7 +951,7 @@ impl CreateFieldLevelEncryptionConfigInput {
             "CreateFieldLevelEncryptionConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1016,7 +1017,8 @@ pub mod create_field_level_encryption_profile_input {
 pub type CreateFieldLevelEncryptionProfileInputOperationOutputAlias =
     crate::operation::CreateFieldLevelEncryptionProfile;
 #[doc(hidden)]
-pub type CreateFieldLevelEncryptionProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFieldLevelEncryptionProfileInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFieldLevelEncryptionProfileInput {
     /// Consumes the builder and constructs an Operation<[`CreateFieldLevelEncryptionProfile`](crate::operation::CreateFieldLevelEncryptionProfile)>
     #[allow(clippy::let_and_return)]
@@ -1027,7 +1029,7 @@ impl CreateFieldLevelEncryptionProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFieldLevelEncryptionProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1109,7 +1111,7 @@ impl CreateFieldLevelEncryptionProfileInput {
             "CreateFieldLevelEncryptionProfile",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1153,14 +1155,12 @@ pub mod create_function_input {
             self.name = input;
             self
         }
-        /// <p>Configuration information about the function, including an optional comment and the
-        /// function’s runtime.</p>
+        /// <p>Configuration information about the function, including an optional comment and the function’s runtime.</p>
         pub fn function_config(mut self, input: crate::model::FunctionConfig) -> Self {
             self.function_config = Some(input);
             self
         }
-        /// <p>Configuration information about the function, including an optional comment and the
-        /// function’s runtime.</p>
+        /// <p>Configuration information about the function, including an optional comment and the function’s runtime.</p>
         pub fn set_function_config(
             mut self,
             input: std::option::Option<crate::model::FunctionConfig>,
@@ -1168,14 +1168,12 @@ pub mod create_function_input {
             self.function_config = input;
             self
         }
-        /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function
-        /// code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn function_code(mut self, input: aws_smithy_types::Blob) -> Self {
             self.function_code = Some(input);
             self
         }
-        /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function
-        /// code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_function_code(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,
@@ -1201,7 +1199,7 @@ pub mod create_function_input {
 #[doc(hidden)]
 pub type CreateFunctionInputOperationOutputAlias = crate::operation::CreateFunction;
 #[doc(hidden)]
-pub type CreateFunctionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFunctionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFunctionInput {
     /// Consumes the builder and constructs an Operation<[`CreateFunction`](crate::operation::CreateFunction)>
     #[allow(clippy::let_and_return)]
@@ -1212,7 +1210,7 @@ impl CreateFunctionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFunction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1292,7 +1290,7 @@ impl CreateFunctionInput {
             "CreateFunction",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1368,7 +1366,7 @@ pub mod create_invalidation_input {
 #[doc(hidden)]
 pub type CreateInvalidationInputOperationOutputAlias = crate::operation::CreateInvalidation;
 #[doc(hidden)]
-pub type CreateInvalidationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateInvalidationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateInvalidationInput {
     /// Consumes the builder and constructs an Operation<[`CreateInvalidation`](crate::operation::CreateInvalidation)>
     #[allow(clippy::let_and_return)]
@@ -1379,7 +1377,7 @@ impl CreateInvalidationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateInvalidation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1479,7 +1477,7 @@ impl CreateInvalidationInput {
             "CreateInvalidation",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1540,7 +1538,7 @@ pub mod create_key_group_input {
 #[doc(hidden)]
 pub type CreateKeyGroupInputOperationOutputAlias = crate::operation::CreateKeyGroup;
 #[doc(hidden)]
-pub type CreateKeyGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateKeyGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateKeyGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateKeyGroup`](crate::operation::CreateKeyGroup)>
     #[allow(clippy::let_and_return)]
@@ -1551,7 +1549,7 @@ impl CreateKeyGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateKeyGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1631,7 +1629,7 @@ impl CreateKeyGroupInput {
             "CreateKeyGroup",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1678,8 +1676,7 @@ pub mod create_monitoring_subscription_input {
             self.distribution_id = input;
             self
         }
-        /// <p>A monitoring subscription. This structure contains information about whether additional
-        /// CloudWatch metrics are enabled for a given CloudFront distribution.</p>
+        /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
         pub fn monitoring_subscription(
             mut self,
             input: crate::model::MonitoringSubscription,
@@ -1687,8 +1684,7 @@ pub mod create_monitoring_subscription_input {
             self.monitoring_subscription = Some(input);
             self
         }
-        /// <p>A monitoring subscription. This structure contains information about whether additional
-        /// CloudWatch metrics are enabled for a given CloudFront distribution.</p>
+        /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
         pub fn set_monitoring_subscription(
             mut self,
             input: std::option::Option<crate::model::MonitoringSubscription>,
@@ -1714,7 +1710,8 @@ pub mod create_monitoring_subscription_input {
 pub type CreateMonitoringSubscriptionInputOperationOutputAlias =
     crate::operation::CreateMonitoringSubscription;
 #[doc(hidden)]
-pub type CreateMonitoringSubscriptionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateMonitoringSubscriptionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMonitoringSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`CreateMonitoringSubscription`](crate::operation::CreateMonitoringSubscription)>
     #[allow(clippy::let_and_return)]
@@ -1725,7 +1722,7 @@ impl CreateMonitoringSubscriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMonitoringSubscription,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1826,7 +1823,7 @@ impl CreateMonitoringSubscriptionInput {
             "CreateMonitoringSubscription",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1892,7 +1889,7 @@ pub mod create_origin_request_policy_input {
 pub type CreateOriginRequestPolicyInputOperationOutputAlias =
     crate::operation::CreateOriginRequestPolicy;
 #[doc(hidden)]
-pub type CreateOriginRequestPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateOriginRequestPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateOriginRequestPolicyInput {
     /// Consumes the builder and constructs an Operation<[`CreateOriginRequestPolicy`](crate::operation::CreateOriginRequestPolicy)>
     #[allow(clippy::let_and_return)]
@@ -1903,7 +1900,7 @@ impl CreateOriginRequestPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateOriginRequestPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1984,7 +1981,7 @@ impl CreateOriginRequestPolicyInput {
             "CreateOriginRequestPolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2045,7 +2042,7 @@ pub mod create_public_key_input {
 #[doc(hidden)]
 pub type CreatePublicKeyInputOperationOutputAlias = crate::operation::CreatePublicKey;
 #[doc(hidden)]
-pub type CreatePublicKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePublicKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePublicKeyInput {
     /// Consumes the builder and constructs an Operation<[`CreatePublicKey`](crate::operation::CreatePublicKey)>
     #[allow(clippy::let_and_return)]
@@ -2056,7 +2053,7 @@ impl CreatePublicKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePublicKey,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2136,7 +2133,7 @@ impl CreatePublicKeyInput {
             "CreatePublicKey",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2175,16 +2172,14 @@ pub mod create_realtime_log_config_input {
         ///
         /// To override the contents of this collection use [`set_end_points`](Self::set_end_points).
         ///
-        /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time
-        /// log data.</p>
-        pub fn end_points(mut self, input: impl Into<crate::model::EndPoint>) -> Self {
+        /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
+        pub fn end_points(mut self, input: crate::model::EndPoint) -> Self {
             let mut v = self.end_points.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.end_points = Some(v);
             self
         }
-        /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time
-        /// log data.</p>
+        /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
         pub fn set_end_points(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EndPoint>>,
@@ -2197,8 +2192,7 @@ pub mod create_realtime_log_config_input {
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
         ///
         /// <p>A list of fields to include in each real-time log record.</p>
-        /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the
-        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn fields(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.fields.unwrap_or_default();
             v.push(input.into());
@@ -2206,8 +2200,7 @@ pub mod create_realtime_log_config_input {
             self
         }
         /// <p>A list of fields to include in each real-time log record.</p>
-        /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the
-        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_fields(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2225,16 +2218,12 @@ pub mod create_realtime_log_config_input {
             self.name = input;
             self
         }
-        /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the
-        /// percentage of viewer requests that are represented in the real-time log data. You must
-        /// provide an integer between 1 and 100, inclusive.</p>
+        /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
         pub fn sampling_rate(mut self, input: i64) -> Self {
             self.sampling_rate = Some(input);
             self
         }
-        /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the
-        /// percentage of viewer requests that are represented in the real-time log data. You must
-        /// provide an integer between 1 and 100, inclusive.</p>
+        /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
         pub fn set_sampling_rate(mut self, input: std::option::Option<i64>) -> Self {
             self.sampling_rate = input;
             self
@@ -2259,7 +2248,7 @@ pub mod create_realtime_log_config_input {
 pub type CreateRealtimeLogConfigInputOperationOutputAlias =
     crate::operation::CreateRealtimeLogConfig;
 #[doc(hidden)]
-pub type CreateRealtimeLogConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateRealtimeLogConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRealtimeLogConfigInput {
     /// Consumes the builder and constructs an Operation<[`CreateRealtimeLogConfig`](crate::operation::CreateRealtimeLogConfig)>
     #[allow(clippy::let_and_return)]
@@ -2270,7 +2259,7 @@ impl CreateRealtimeLogConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRealtimeLogConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2352,7 +2341,7 @@ impl CreateRealtimeLogConfigInput {
             "CreateRealtimeLogConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2385,8 +2374,7 @@ pub mod create_response_headers_policy_input {
             std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
     }
     impl Builder {
-        /// <p>Contains metadata about the response headers policy, and a set of configurations that
-        /// specify the response headers.</p>
+        /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the response headers.</p>
         pub fn response_headers_policy_config(
             mut self,
             input: crate::model::ResponseHeadersPolicyConfig,
@@ -2394,8 +2382,7 @@ pub mod create_response_headers_policy_input {
             self.response_headers_policy_config = Some(input);
             self
         }
-        /// <p>Contains metadata about the response headers policy, and a set of configurations that
-        /// specify the response headers.</p>
+        /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the response headers.</p>
         pub fn set_response_headers_policy_config(
             mut self,
             input: std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
@@ -2420,7 +2407,7 @@ pub mod create_response_headers_policy_input {
 pub type CreateResponseHeadersPolicyInputOperationOutputAlias =
     crate::operation::CreateResponseHeadersPolicy;
 #[doc(hidden)]
-pub type CreateResponseHeadersPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateResponseHeadersPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateResponseHeadersPolicyInput {
     /// Consumes the builder and constructs an Operation<[`CreateResponseHeadersPolicy`](crate::operation::CreateResponseHeadersPolicy)>
     #[allow(clippy::let_and_return)]
@@ -2431,7 +2418,7 @@ impl CreateResponseHeadersPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateResponseHeadersPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2513,7 +2500,7 @@ impl CreateResponseHeadersPolicyInput {
             "CreateResponseHeadersPolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2579,7 +2566,7 @@ pub mod create_streaming_distribution_input {
 pub type CreateStreamingDistributionInputOperationOutputAlias =
     crate::operation::CreateStreamingDistribution;
 #[doc(hidden)]
-pub type CreateStreamingDistributionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateStreamingDistributionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStreamingDistributionInput {
     /// Consumes the builder and constructs an Operation<[`CreateStreamingDistribution`](crate::operation::CreateStreamingDistribution)>
     #[allow(clippy::let_and_return)]
@@ -2590,7 +2577,7 @@ impl CreateStreamingDistributionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateStreamingDistribution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2672,7 +2659,7 @@ impl CreateStreamingDistributionInput {
             "CreateStreamingDistribution",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2740,7 +2727,7 @@ pub type CreateStreamingDistributionWithTagsInputOperationOutputAlias =
     crate::operation::CreateStreamingDistributionWithTags;
 #[doc(hidden)]
 pub type CreateStreamingDistributionWithTagsInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStreamingDistributionWithTagsInput {
     /// Consumes the builder and constructs an Operation<[`CreateStreamingDistributionWithTags`](crate::operation::CreateStreamingDistributionWithTags)>
     #[allow(clippy::let_and_return)]
@@ -2751,7 +2738,7 @@ impl CreateStreamingDistributionWithTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateStreamingDistributionWithTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2842,7 +2829,7 @@ impl CreateStreamingDistributionWithTagsInput {
             "CreateStreamingDistributionWithTags",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2875,30 +2862,22 @@ pub mod delete_cache_policy_input {
         pub(crate) if_match: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier for the cache policy that you are deleting. To get the
-        /// identifier, you can use <code>ListCachePolicies</code>.</p>
+        /// <p>The unique identifier for the cache policy that you are deleting. To get the identifier, you can use <code>ListCachePolicies</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the cache policy that you are deleting. To get the
-        /// identifier, you can use <code>ListCachePolicies</code>.</p>
+        /// <p>The unique identifier for the cache policy that you are deleting. To get the identifier, you can use <code>ListCachePolicies</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The version of the cache policy that you are deleting. The version is the cache
-        /// policy’s <code>ETag</code> value, which you can get using
-        /// <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or
-        /// <code>GetCachePolicyConfig</code>.</p>
+        /// <p>The version of the cache policy that you are deleting. The version is the cache policy’s <code>ETag</code> value, which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or <code>GetCachePolicyConfig</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>The version of the cache policy that you are deleting. The version is the cache
-        /// policy’s <code>ETag</code> value, which you can get using
-        /// <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or
-        /// <code>GetCachePolicyConfig</code>.</p>
+        /// <p>The version of the cache policy that you are deleting. The version is the cache policy’s <code>ETag</code> value, which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or <code>GetCachePolicyConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -2920,7 +2899,7 @@ pub mod delete_cache_policy_input {
 #[doc(hidden)]
 pub type DeleteCachePolicyInputOperationOutputAlias = crate::operation::DeleteCachePolicy;
 #[doc(hidden)]
-pub type DeleteCachePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteCachePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCachePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCachePolicy`](crate::operation::DeleteCachePolicy)>
     #[allow(clippy::let_and_return)]
@@ -2931,7 +2910,7 @@ impl DeleteCachePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCachePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3045,7 +3024,7 @@ impl DeleteCachePolicyInput {
             "DeleteCachePolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3080,14 +3059,12 @@ pub mod delete_cloud_front_origin_access_identity_input {
             self.id = input;
             self
         }
-        /// <p>The value of the <code>ETag</code> header you received from a previous <code>GET</code>
-        /// or <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header you received from a previous <code>GET</code> or <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>The value of the <code>ETag</code> header you received from a previous <code>GET</code>
-        /// or <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header you received from a previous <code>GET</code> or <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -3111,7 +3088,7 @@ pub type DeleteCloudFrontOriginAccessIdentityInputOperationOutputAlias =
     crate::operation::DeleteCloudFrontOriginAccessIdentity;
 #[doc(hidden)]
 pub type DeleteCloudFrontOriginAccessIdentityInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCloudFrontOriginAccessIdentityInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCloudFrontOriginAccessIdentity`](crate::operation::DeleteCloudFrontOriginAccessIdentity)>
     #[allow(clippy::let_and_return)]
@@ -3122,7 +3099,7 @@ impl DeleteCloudFrontOriginAccessIdentityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCloudFrontOriginAccessIdentity,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3240,7 +3217,7 @@ impl DeleteCloudFrontOriginAccessIdentityInput {
             "DeleteCloudFrontOriginAccessIdentity",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3275,14 +3252,12 @@ pub mod delete_distribution_input {
             self.id = input;
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when you disabled the
-        /// distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
+        /// <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when you disabled the
-        /// distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
+        /// <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -3304,7 +3279,7 @@ pub mod delete_distribution_input {
 #[doc(hidden)]
 pub type DeleteDistributionInputOperationOutputAlias = crate::operation::DeleteDistribution;
 #[doc(hidden)]
-pub type DeleteDistributionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDistributionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDistributionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDistribution`](crate::operation::DeleteDistribution)>
     #[allow(clippy::let_and_return)]
@@ -3315,7 +3290,7 @@ impl DeleteDistributionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDistribution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3429,7 +3404,7 @@ impl DeleteDistributionInput {
             "DeleteDistribution",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3464,14 +3439,12 @@ pub mod delete_field_level_encryption_config_input {
             self.id = input;
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-        /// configuration identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-        /// configuration identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -3494,7 +3467,8 @@ pub mod delete_field_level_encryption_config_input {
 pub type DeleteFieldLevelEncryptionConfigInputOperationOutputAlias =
     crate::operation::DeleteFieldLevelEncryptionConfig;
 #[doc(hidden)]
-pub type DeleteFieldLevelEncryptionConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFieldLevelEncryptionConfigInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFieldLevelEncryptionConfigInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFieldLevelEncryptionConfig`](crate::operation::DeleteFieldLevelEncryptionConfig)>
     #[allow(clippy::let_and_return)]
@@ -3505,7 +3479,7 @@ impl DeleteFieldLevelEncryptionConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFieldLevelEncryptionConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3619,7 +3593,7 @@ impl DeleteFieldLevelEncryptionConfigInput {
             "DeleteFieldLevelEncryptionConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3654,14 +3628,12 @@ pub mod delete_field_level_encryption_profile_input {
             self.id = input;
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-        /// profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-        /// profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -3684,7 +3656,8 @@ pub mod delete_field_level_encryption_profile_input {
 pub type DeleteFieldLevelEncryptionProfileInputOperationOutputAlias =
     crate::operation::DeleteFieldLevelEncryptionProfile;
 #[doc(hidden)]
-pub type DeleteFieldLevelEncryptionProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFieldLevelEncryptionProfileInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFieldLevelEncryptionProfileInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFieldLevelEncryptionProfile`](crate::operation::DeleteFieldLevelEncryptionProfile)>
     #[allow(clippy::let_and_return)]
@@ -3695,7 +3668,7 @@ impl DeleteFieldLevelEncryptionProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFieldLevelEncryptionProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3813,7 +3786,7 @@ impl DeleteFieldLevelEncryptionProfileInput {
             "DeleteFieldLevelEncryptionProfile",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3848,14 +3821,12 @@ pub mod delete_function_input {
             self.name = input;
             self
         }
-        /// <p>The current version (<code>ETag</code> value) of the function that you are deleting, which
-        /// you can get using <code>DescribeFunction</code>.</p>
+        /// <p>The current version (<code>ETag</code> value) of the function that you are deleting, which you can get using <code>DescribeFunction</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>The current version (<code>ETag</code> value) of the function that you are deleting, which
-        /// you can get using <code>DescribeFunction</code>.</p>
+        /// <p>The current version (<code>ETag</code> value) of the function that you are deleting, which you can get using <code>DescribeFunction</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -3877,7 +3848,7 @@ pub mod delete_function_input {
 #[doc(hidden)]
 pub type DeleteFunctionInputOperationOutputAlias = crate::operation::DeleteFunction;
 #[doc(hidden)]
-pub type DeleteFunctionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFunctionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFunctionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFunction`](crate::operation::DeleteFunction)>
     #[allow(clippy::let_and_return)]
@@ -3888,7 +3859,7 @@ impl DeleteFunctionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFunction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4002,7 +3973,7 @@ impl DeleteFunctionInput {
             "DeleteFunction",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4027,28 +3998,22 @@ pub mod delete_key_group_input {
         pub(crate) if_match: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the key group that you are deleting. To get the identifier, use
-        /// <code>ListKeyGroups</code>.</p>
+        /// <p>The identifier of the key group that you are deleting. To get the identifier, use <code>ListKeyGroups</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of the key group that you are deleting. To get the identifier, use
-        /// <code>ListKeyGroups</code>.</p>
+        /// <p>The identifier of the key group that you are deleting. To get the identifier, use <code>ListKeyGroups</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The version of the key group that you are deleting. The version is the key group’s
-        /// <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or
-        /// <code>GetKeyGroupConfig</code>.</p>
+        /// <p>The version of the key group that you are deleting. The version is the key group’s <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>The version of the key group that you are deleting. The version is the key group’s
-        /// <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or
-        /// <code>GetKeyGroupConfig</code>.</p>
+        /// <p>The version of the key group that you are deleting. The version is the key group’s <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -4070,7 +4035,7 @@ pub mod delete_key_group_input {
 #[doc(hidden)]
 pub type DeleteKeyGroupInputOperationOutputAlias = crate::operation::DeleteKeyGroup;
 #[doc(hidden)]
-pub type DeleteKeyGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteKeyGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteKeyGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteKeyGroup`](crate::operation::DeleteKeyGroup)>
     #[allow(clippy::let_and_return)]
@@ -4081,7 +4046,7 @@ impl DeleteKeyGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteKeyGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4195,7 +4160,7 @@ impl DeleteKeyGroupInput {
             "DeleteKeyGroup",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4249,7 +4214,8 @@ pub mod delete_monitoring_subscription_input {
 pub type DeleteMonitoringSubscriptionInputOperationOutputAlias =
     crate::operation::DeleteMonitoringSubscription;
 #[doc(hidden)]
-pub type DeleteMonitoringSubscriptionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteMonitoringSubscriptionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMonitoringSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMonitoringSubscription`](crate::operation::DeleteMonitoringSubscription)>
     #[allow(clippy::let_and_return)]
@@ -4260,7 +4226,7 @@ impl DeleteMonitoringSubscriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMonitoringSubscription,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4354,7 +4320,7 @@ impl DeleteMonitoringSubscriptionInput {
             "DeleteMonitoringSubscription",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4379,30 +4345,22 @@ pub mod delete_origin_request_policy_input {
         pub(crate) if_match: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier for the origin request policy that you are deleting. To get the
-        /// identifier, you can use <code>ListOriginRequestPolicies</code>.</p>
+        /// <p>The unique identifier for the origin request policy that you are deleting. To get the identifier, you can use <code>ListOriginRequestPolicies</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the origin request policy that you are deleting. To get the
-        /// identifier, you can use <code>ListOriginRequestPolicies</code>.</p>
+        /// <p>The unique identifier for the origin request policy that you are deleting. To get the identifier, you can use <code>ListOriginRequestPolicies</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The version of the origin request policy that you are deleting. The version is the origin
-        /// request policy’s <code>ETag</code> value, which you can get using
-        /// <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or
-        /// <code>GetOriginRequestPolicyConfig</code>.</p>
+        /// <p>The version of the origin request policy that you are deleting. The version is the origin request policy’s <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>The version of the origin request policy that you are deleting. The version is the origin
-        /// request policy’s <code>ETag</code> value, which you can get using
-        /// <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or
-        /// <code>GetOriginRequestPolicyConfig</code>.</p>
+        /// <p>The version of the origin request policy that you are deleting. The version is the origin request policy’s <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -4425,7 +4383,7 @@ pub mod delete_origin_request_policy_input {
 pub type DeleteOriginRequestPolicyInputOperationOutputAlias =
     crate::operation::DeleteOriginRequestPolicy;
 #[doc(hidden)]
-pub type DeleteOriginRequestPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteOriginRequestPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteOriginRequestPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteOriginRequestPolicy`](crate::operation::DeleteOriginRequestPolicy)>
     #[allow(clippy::let_and_return)]
@@ -4436,7 +4394,7 @@ impl DeleteOriginRequestPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteOriginRequestPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4550,7 +4508,7 @@ impl DeleteOriginRequestPolicyInput {
             "DeleteOriginRequestPolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4585,14 +4543,12 @@ pub mod delete_public_key_input {
             self.id = input;
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-        /// public key identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-        /// public key identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -4614,7 +4570,7 @@ pub mod delete_public_key_input {
 #[doc(hidden)]
 pub type DeletePublicKeyInputOperationOutputAlias = crate::operation::DeletePublicKey;
 #[doc(hidden)]
-pub type DeletePublicKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePublicKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePublicKeyInput {
     /// Consumes the builder and constructs an Operation<[`DeletePublicKey`](crate::operation::DeletePublicKey)>
     #[allow(clippy::let_and_return)]
@@ -4625,7 +4581,7 @@ impl DeletePublicKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePublicKey,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4739,7 +4695,7 @@ impl DeletePublicKeyInput {
             "DeletePublicKey",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4802,7 +4758,7 @@ pub mod delete_realtime_log_config_input {
 pub type DeleteRealtimeLogConfigInputOperationOutputAlias =
     crate::operation::DeleteRealtimeLogConfig;
 #[doc(hidden)]
-pub type DeleteRealtimeLogConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRealtimeLogConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRealtimeLogConfigInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRealtimeLogConfig`](crate::operation::DeleteRealtimeLogConfig)>
     #[allow(clippy::let_and_return)]
@@ -4813,7 +4769,7 @@ impl DeleteRealtimeLogConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRealtimeLogConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4896,7 +4852,7 @@ impl DeleteRealtimeLogConfigInput {
             "DeleteRealtimeLogConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4942,19 +4898,13 @@ pub mod delete_response_headers_policy_input {
             self
         }
         /// <p>The version of the response headers policy that you are deleting.</p>
-        /// <p>The version is the response headers policy’s <code>ETag</code> value, which you can
-        /// get using <code>ListResponseHeadersPolicies</code>,
-        /// <code>GetResponseHeadersPolicy</code>, or
-        /// <code>GetResponseHeadersPolicyConfig</code>.</p>
+        /// <p>The version is the response headers policy’s <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
         /// <p>The version of the response headers policy that you are deleting.</p>
-        /// <p>The version is the response headers policy’s <code>ETag</code> value, which you can
-        /// get using <code>ListResponseHeadersPolicies</code>,
-        /// <code>GetResponseHeadersPolicy</code>, or
-        /// <code>GetResponseHeadersPolicyConfig</code>.</p>
+        /// <p>The version is the response headers policy’s <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -4977,7 +4927,7 @@ pub mod delete_response_headers_policy_input {
 pub type DeleteResponseHeadersPolicyInputOperationOutputAlias =
     crate::operation::DeleteResponseHeadersPolicy;
 #[doc(hidden)]
-pub type DeleteResponseHeadersPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteResponseHeadersPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResponseHeadersPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResponseHeadersPolicy`](crate::operation::DeleteResponseHeadersPolicy)>
     #[allow(clippy::let_and_return)]
@@ -4988,7 +4938,7 @@ impl DeleteResponseHeadersPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteResponseHeadersPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5102,7 +5052,7 @@ impl DeleteResponseHeadersPolicyInput {
             "DeleteResponseHeadersPolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5137,14 +5087,12 @@ pub mod delete_streaming_distribution_input {
             self.id = input;
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when you disabled the
-        /// streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when you disabled the streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when you disabled the
-        /// streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when you disabled the streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -5167,7 +5115,7 @@ pub mod delete_streaming_distribution_input {
 pub type DeleteStreamingDistributionInputOperationOutputAlias =
     crate::operation::DeleteStreamingDistribution;
 #[doc(hidden)]
-pub type DeleteStreamingDistributionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteStreamingDistributionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStreamingDistributionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStreamingDistribution`](crate::operation::DeleteStreamingDistribution)>
     #[allow(clippy::let_and_return)]
@@ -5178,7 +5126,7 @@ impl DeleteStreamingDistributionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteStreamingDistribution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5292,7 +5240,7 @@ impl DeleteStreamingDistributionInput {
             "DeleteStreamingDistribution",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5357,7 +5305,7 @@ pub mod describe_function_input {
 #[doc(hidden)]
 pub type DescribeFunctionInputOperationOutputAlias = crate::operation::DescribeFunction;
 #[doc(hidden)]
-pub type DescribeFunctionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFunctionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFunctionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFunction`](crate::operation::DescribeFunction)>
     #[allow(clippy::let_and_return)]
@@ -5368,7 +5316,7 @@ impl DescribeFunctionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFunction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5469,7 +5417,7 @@ impl DescribeFunctionInput {
             "DescribeFunction",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5493,20 +5441,12 @@ pub mod get_cache_policy_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a
-        /// distribution’s cache behavior, you can get the policy’s identifier using
-        /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is
-        /// not attached to a cache behavior, you can get the identifier using
-        /// <code>ListCachePolicies</code>.</p>
+        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a
-        /// distribution’s cache behavior, you can get the policy’s identifier using
-        /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is
-        /// not attached to a cache behavior, you can get the identifier using
-        /// <code>ListCachePolicies</code>.</p>
+        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -5525,7 +5465,7 @@ pub mod get_cache_policy_input {
 #[doc(hidden)]
 pub type GetCachePolicyInputOperationOutputAlias = crate::operation::GetCachePolicy;
 #[doc(hidden)]
-pub type GetCachePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCachePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCachePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetCachePolicy`](crate::operation::GetCachePolicy)>
     #[allow(clippy::let_and_return)]
@@ -5536,7 +5476,7 @@ impl GetCachePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCachePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5626,7 +5566,7 @@ impl GetCachePolicyInput {
             "GetCachePolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5650,20 +5590,12 @@ pub mod get_cache_policy_config_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a
-        /// distribution’s cache behavior, you can get the policy’s identifier using
-        /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is
-        /// not attached to a cache behavior, you can get the identifier using
-        /// <code>ListCachePolicies</code>.</p>
+        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a
-        /// distribution’s cache behavior, you can get the policy’s identifier using
-        /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is
-        /// not attached to a cache behavior, you can get the identifier using
-        /// <code>ListCachePolicies</code>.</p>
+        /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -5682,7 +5614,7 @@ pub mod get_cache_policy_config_input {
 #[doc(hidden)]
 pub type GetCachePolicyConfigInputOperationOutputAlias = crate::operation::GetCachePolicyConfig;
 #[doc(hidden)]
-pub type GetCachePolicyConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCachePolicyConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCachePolicyConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetCachePolicyConfig`](crate::operation::GetCachePolicyConfig)>
     #[allow(clippy::let_and_return)]
@@ -5693,7 +5625,7 @@ impl GetCachePolicyConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCachePolicyConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5783,7 +5715,7 @@ impl GetCachePolicyConfigInput {
             "GetCachePolicyConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5832,7 +5764,8 @@ pub mod get_cloud_front_origin_access_identity_input {
 pub type GetCloudFrontOriginAccessIdentityInputOperationOutputAlias =
     crate::operation::GetCloudFrontOriginAccessIdentity;
 #[doc(hidden)]
-pub type GetCloudFrontOriginAccessIdentityInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCloudFrontOriginAccessIdentityInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetCloudFrontOriginAccessIdentityInput {
     /// Consumes the builder and constructs an Operation<[`GetCloudFrontOriginAccessIdentity`](crate::operation::GetCloudFrontOriginAccessIdentity)>
     #[allow(clippy::let_and_return)]
@@ -5843,7 +5776,7 @@ impl GetCloudFrontOriginAccessIdentityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCloudFrontOriginAccessIdentity,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5937,7 +5870,7 @@ impl GetCloudFrontOriginAccessIdentityInput {
             "GetCloudFrontOriginAccessIdentity",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5987,7 +5920,7 @@ pub type GetCloudFrontOriginAccessIdentityConfigInputOperationOutputAlias =
     crate::operation::GetCloudFrontOriginAccessIdentityConfig;
 #[doc(hidden)]
 pub type GetCloudFrontOriginAccessIdentityConfigInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetCloudFrontOriginAccessIdentityConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetCloudFrontOriginAccessIdentityConfig`](crate::operation::GetCloudFrontOriginAccessIdentityConfig)>
     #[allow(clippy::let_and_return)]
@@ -5998,7 +5931,7 @@ impl GetCloudFrontOriginAccessIdentityConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCloudFrontOriginAccessIdentityConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6092,7 +6025,7 @@ impl GetCloudFrontOriginAccessIdentityConfigInput {
             "GetCloudFrontOriginAccessIdentityConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6140,7 +6073,7 @@ pub mod get_distribution_input {
 #[doc(hidden)]
 pub type GetDistributionInputOperationOutputAlias = crate::operation::GetDistribution;
 #[doc(hidden)]
-pub type GetDistributionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDistributionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDistributionInput {
     /// Consumes the builder and constructs an Operation<[`GetDistribution`](crate::operation::GetDistribution)>
     #[allow(clippy::let_and_return)]
@@ -6151,7 +6084,7 @@ impl GetDistributionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDistribution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6241,7 +6174,7 @@ impl GetDistributionInput {
             "GetDistribution",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6289,7 +6222,7 @@ pub mod get_distribution_config_input {
 #[doc(hidden)]
 pub type GetDistributionConfigInputOperationOutputAlias = crate::operation::GetDistributionConfig;
 #[doc(hidden)]
-pub type GetDistributionConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDistributionConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDistributionConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetDistributionConfig`](crate::operation::GetDistributionConfig)>
     #[allow(clippy::let_and_return)]
@@ -6300,7 +6233,7 @@ impl GetDistributionConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDistributionConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6390,7 +6323,7 @@ impl GetDistributionConfigInput {
             "GetDistributionConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6439,7 +6372,7 @@ pub mod get_field_level_encryption_input {
 pub type GetFieldLevelEncryptionInputOperationOutputAlias =
     crate::operation::GetFieldLevelEncryption;
 #[doc(hidden)]
-pub type GetFieldLevelEncryptionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFieldLevelEncryptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFieldLevelEncryptionInput {
     /// Consumes the builder and constructs an Operation<[`GetFieldLevelEncryption`](crate::operation::GetFieldLevelEncryption)>
     #[allow(clippy::let_and_return)]
@@ -6450,7 +6383,7 @@ impl GetFieldLevelEncryptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFieldLevelEncryption,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6540,7 +6473,7 @@ impl GetFieldLevelEncryptionInput {
             "GetFieldLevelEncryption",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6589,7 +6522,8 @@ pub mod get_field_level_encryption_config_input {
 pub type GetFieldLevelEncryptionConfigInputOperationOutputAlias =
     crate::operation::GetFieldLevelEncryptionConfig;
 #[doc(hidden)]
-pub type GetFieldLevelEncryptionConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFieldLevelEncryptionConfigInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetFieldLevelEncryptionConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetFieldLevelEncryptionConfig`](crate::operation::GetFieldLevelEncryptionConfig)>
     #[allow(clippy::let_and_return)]
@@ -6600,7 +6534,7 @@ impl GetFieldLevelEncryptionConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFieldLevelEncryptionConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6694,7 +6628,7 @@ impl GetFieldLevelEncryptionConfigInput {
             "GetFieldLevelEncryptionConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6743,7 +6677,8 @@ pub mod get_field_level_encryption_profile_input {
 pub type GetFieldLevelEncryptionProfileInputOperationOutputAlias =
     crate::operation::GetFieldLevelEncryptionProfile;
 #[doc(hidden)]
-pub type GetFieldLevelEncryptionProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFieldLevelEncryptionProfileInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetFieldLevelEncryptionProfileInput {
     /// Consumes the builder and constructs an Operation<[`GetFieldLevelEncryptionProfile`](crate::operation::GetFieldLevelEncryptionProfile)>
     #[allow(clippy::let_and_return)]
@@ -6754,7 +6689,7 @@ impl GetFieldLevelEncryptionProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFieldLevelEncryptionProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6848,7 +6783,7 @@ impl GetFieldLevelEncryptionProfileInput {
             "GetFieldLevelEncryptionProfile",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6898,7 +6833,7 @@ pub type GetFieldLevelEncryptionProfileConfigInputOperationOutputAlias =
     crate::operation::GetFieldLevelEncryptionProfileConfig;
 #[doc(hidden)]
 pub type GetFieldLevelEncryptionProfileConfigInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetFieldLevelEncryptionProfileConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetFieldLevelEncryptionProfileConfig`](crate::operation::GetFieldLevelEncryptionProfileConfig)>
     #[allow(clippy::let_and_return)]
@@ -6909,7 +6844,7 @@ impl GetFieldLevelEncryptionProfileConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFieldLevelEncryptionProfileConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7003,7 +6938,7 @@ impl GetFieldLevelEncryptionProfileConfigInput {
             "GetFieldLevelEncryptionProfileConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7068,7 +7003,7 @@ pub mod get_function_input {
 #[doc(hidden)]
 pub type GetFunctionInputOperationOutputAlias = crate::operation::GetFunction;
 #[doc(hidden)]
-pub type GetFunctionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFunctionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFunctionInput {
     /// Consumes the builder and constructs an Operation<[`GetFunction`](crate::operation::GetFunction)>
     #[allow(clippy::let_and_return)]
@@ -7079,7 +7014,7 @@ impl GetFunctionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFunction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7180,7 +7115,7 @@ impl GetFunctionInput {
             "GetFunction",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7218,14 +7153,12 @@ pub mod get_invalidation_input {
             self.distribution_id = input;
             self
         }
-        /// <p>The identifier for the invalidation request, for example,
-        /// <code>IDFDVBD632BHDS5</code>.</p>
+        /// <p>The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier for the invalidation request, for example,
-        /// <code>IDFDVBD632BHDS5</code>.</p>
+        /// <p>The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -7247,7 +7180,7 @@ pub mod get_invalidation_input {
 #[doc(hidden)]
 pub type GetInvalidationInputOperationOutputAlias = crate::operation::GetInvalidation;
 #[doc(hidden)]
-pub type GetInvalidationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetInvalidationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetInvalidationInput {
     /// Consumes the builder and constructs an Operation<[`GetInvalidation`](crate::operation::GetInvalidation)>
     #[allow(clippy::let_and_return)]
@@ -7258,7 +7191,7 @@ impl GetInvalidationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetInvalidation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7368,7 +7301,7 @@ impl GetInvalidationInput {
             "GetInvalidation",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7392,14 +7325,12 @@ pub mod get_key_group_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the key group that you are getting. To get the identifier, use
-        /// <code>ListKeyGroups</code>.</p>
+        /// <p>The identifier of the key group that you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of the key group that you are getting. To get the identifier, use
-        /// <code>ListKeyGroups</code>.</p>
+        /// <p>The identifier of the key group that you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -7418,7 +7349,7 @@ pub mod get_key_group_input {
 #[doc(hidden)]
 pub type GetKeyGroupInputOperationOutputAlias = crate::operation::GetKeyGroup;
 #[doc(hidden)]
-pub type GetKeyGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetKeyGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetKeyGroupInput {
     /// Consumes the builder and constructs an Operation<[`GetKeyGroup`](crate::operation::GetKeyGroup)>
     #[allow(clippy::let_and_return)]
@@ -7429,7 +7360,7 @@ impl GetKeyGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetKeyGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7519,7 +7450,7 @@ impl GetKeyGroupInput {
             "GetKeyGroup",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7543,14 +7474,12 @@ pub mod get_key_group_config_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the key group whose configuration you are getting. To get the
-        /// identifier, use <code>ListKeyGroups</code>.</p>
+        /// <p>The identifier of the key group whose configuration you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of the key group whose configuration you are getting. To get the
-        /// identifier, use <code>ListKeyGroups</code>.</p>
+        /// <p>The identifier of the key group whose configuration you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -7569,7 +7498,7 @@ pub mod get_key_group_config_input {
 #[doc(hidden)]
 pub type GetKeyGroupConfigInputOperationOutputAlias = crate::operation::GetKeyGroupConfig;
 #[doc(hidden)]
-pub type GetKeyGroupConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetKeyGroupConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetKeyGroupConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetKeyGroupConfig`](crate::operation::GetKeyGroupConfig)>
     #[allow(clippy::let_and_return)]
@@ -7580,7 +7509,7 @@ impl GetKeyGroupConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetKeyGroupConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7670,7 +7599,7 @@ impl GetKeyGroupConfigInput {
             "GetKeyGroupConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7724,7 +7653,7 @@ pub mod get_monitoring_subscription_input {
 pub type GetMonitoringSubscriptionInputOperationOutputAlias =
     crate::operation::GetMonitoringSubscription;
 #[doc(hidden)]
-pub type GetMonitoringSubscriptionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMonitoringSubscriptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMonitoringSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`GetMonitoringSubscription`](crate::operation::GetMonitoringSubscription)>
     #[allow(clippy::let_and_return)]
@@ -7735,7 +7664,7 @@ impl GetMonitoringSubscriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMonitoringSubscription,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7829,7 +7758,7 @@ impl GetMonitoringSubscriptionInput {
             "GetMonitoringSubscription",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7853,20 +7782,12 @@ pub mod get_origin_request_policy_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier for the origin request policy. If the origin request policy is
-        /// attached to a distribution’s cache behavior, you can get the policy’s identifier using
-        /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request
-        /// policy is not attached to a cache behavior, you can get the identifier using
-        /// <code>ListOriginRequestPolicies</code>.</p>
+        /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the origin request policy. If the origin request policy is
-        /// attached to a distribution’s cache behavior, you can get the policy’s identifier using
-        /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request
-        /// policy is not attached to a cache behavior, you can get the identifier using
-        /// <code>ListOriginRequestPolicies</code>.</p>
+        /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -7885,7 +7806,7 @@ pub mod get_origin_request_policy_input {
 #[doc(hidden)]
 pub type GetOriginRequestPolicyInputOperationOutputAlias = crate::operation::GetOriginRequestPolicy;
 #[doc(hidden)]
-pub type GetOriginRequestPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetOriginRequestPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetOriginRequestPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetOriginRequestPolicy`](crate::operation::GetOriginRequestPolicy)>
     #[allow(clippy::let_and_return)]
@@ -7896,7 +7817,7 @@ impl GetOriginRequestPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetOriginRequestPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7986,7 +7907,7 @@ impl GetOriginRequestPolicyInput {
             "GetOriginRequestPolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8010,20 +7931,12 @@ pub mod get_origin_request_policy_config_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier for the origin request policy. If the origin request policy is
-        /// attached to a distribution’s cache behavior, you can get the policy’s identifier using
-        /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request
-        /// policy is not attached to a cache behavior, you can get the identifier using
-        /// <code>ListOriginRequestPolicies</code>.</p>
+        /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the origin request policy. If the origin request policy is
-        /// attached to a distribution’s cache behavior, you can get the policy’s identifier using
-        /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request
-        /// policy is not attached to a cache behavior, you can get the identifier using
-        /// <code>ListOriginRequestPolicies</code>.</p>
+        /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -8043,7 +7956,8 @@ pub mod get_origin_request_policy_config_input {
 pub type GetOriginRequestPolicyConfigInputOperationOutputAlias =
     crate::operation::GetOriginRequestPolicyConfig;
 #[doc(hidden)]
-pub type GetOriginRequestPolicyConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetOriginRequestPolicyConfigInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetOriginRequestPolicyConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetOriginRequestPolicyConfig`](crate::operation::GetOriginRequestPolicyConfig)>
     #[allow(clippy::let_and_return)]
@@ -8054,7 +7968,7 @@ impl GetOriginRequestPolicyConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetOriginRequestPolicyConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8148,7 +8062,7 @@ impl GetOriginRequestPolicyConfigInput {
             "GetOriginRequestPolicyConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8196,7 +8110,7 @@ pub mod get_public_key_input {
 #[doc(hidden)]
 pub type GetPublicKeyInputOperationOutputAlias = crate::operation::GetPublicKey;
 #[doc(hidden)]
-pub type GetPublicKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPublicKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPublicKeyInput {
     /// Consumes the builder and constructs an Operation<[`GetPublicKey`](crate::operation::GetPublicKey)>
     #[allow(clippy::let_and_return)]
@@ -8207,7 +8121,7 @@ impl GetPublicKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPublicKey,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8297,7 +8211,7 @@ impl GetPublicKeyInput {
             "GetPublicKey",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8345,7 +8259,7 @@ pub mod get_public_key_config_input {
 #[doc(hidden)]
 pub type GetPublicKeyConfigInputOperationOutputAlias = crate::operation::GetPublicKeyConfig;
 #[doc(hidden)]
-pub type GetPublicKeyConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPublicKeyConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPublicKeyConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetPublicKeyConfig`](crate::operation::GetPublicKeyConfig)>
     #[allow(clippy::let_and_return)]
@@ -8356,7 +8270,7 @@ impl GetPublicKeyConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPublicKeyConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8446,7 +8360,7 @@ impl GetPublicKeyConfigInput {
             "GetPublicKeyConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8508,7 +8422,7 @@ pub mod get_realtime_log_config_input {
 #[doc(hidden)]
 pub type GetRealtimeLogConfigInputOperationOutputAlias = crate::operation::GetRealtimeLogConfig;
 #[doc(hidden)]
-pub type GetRealtimeLogConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRealtimeLogConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRealtimeLogConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetRealtimeLogConfig`](crate::operation::GetRealtimeLogConfig)>
     #[allow(clippy::let_and_return)]
@@ -8519,7 +8433,7 @@ impl GetRealtimeLogConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRealtimeLogConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8602,7 +8516,7 @@ impl GetRealtimeLogConfigInput {
             "GetRealtimeLogConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8635,21 +8549,13 @@ pub mod get_response_headers_policy_input {
     }
     impl Builder {
         /// <p>The identifier for the response headers policy.</p>
-        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can
-        /// get the policy’s identifier using <code>ListDistributions</code> or
-        /// <code>GetDistribution</code>. If the response headers policy is not attached to a
-        /// cache behavior, you can get the identifier using
-        /// <code>ListResponseHeadersPolicies</code>.</p>
+        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The identifier for the response headers policy.</p>
-        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can
-        /// get the policy’s identifier using <code>ListDistributions</code> or
-        /// <code>GetDistribution</code>. If the response headers policy is not attached to a
-        /// cache behavior, you can get the identifier using
-        /// <code>ListResponseHeadersPolicies</code>.</p>
+        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -8669,7 +8575,7 @@ pub mod get_response_headers_policy_input {
 pub type GetResponseHeadersPolicyInputOperationOutputAlias =
     crate::operation::GetResponseHeadersPolicy;
 #[doc(hidden)]
-pub type GetResponseHeadersPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetResponseHeadersPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResponseHeadersPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetResponseHeadersPolicy`](crate::operation::GetResponseHeadersPolicy)>
     #[allow(clippy::let_and_return)]
@@ -8680,7 +8586,7 @@ impl GetResponseHeadersPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResponseHeadersPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8770,7 +8676,7 @@ impl GetResponseHeadersPolicyInput {
             "GetResponseHeadersPolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8795,21 +8701,13 @@ pub mod get_response_headers_policy_config_input {
     }
     impl Builder {
         /// <p>The identifier for the response headers policy.</p>
-        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can
-        /// get the policy’s identifier using <code>ListDistributions</code> or
-        /// <code>GetDistribution</code>. If the response headers policy is not attached to a
-        /// cache behavior, you can get the identifier using
-        /// <code>ListResponseHeadersPolicies</code>.</p>
+        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The identifier for the response headers policy.</p>
-        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can
-        /// get the policy’s identifier using <code>ListDistributions</code> or
-        /// <code>GetDistribution</code>. If the response headers policy is not attached to a
-        /// cache behavior, you can get the identifier using
-        /// <code>ListResponseHeadersPolicies</code>.</p>
+        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -8829,7 +8727,8 @@ pub mod get_response_headers_policy_config_input {
 pub type GetResponseHeadersPolicyConfigInputOperationOutputAlias =
     crate::operation::GetResponseHeadersPolicyConfig;
 #[doc(hidden)]
-pub type GetResponseHeadersPolicyConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetResponseHeadersPolicyConfigInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetResponseHeadersPolicyConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetResponseHeadersPolicyConfig`](crate::operation::GetResponseHeadersPolicyConfig)>
     #[allow(clippy::let_and_return)]
@@ -8840,7 +8739,7 @@ impl GetResponseHeadersPolicyConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResponseHeadersPolicyConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8934,7 +8833,7 @@ impl GetResponseHeadersPolicyConfigInput {
             "GetResponseHeadersPolicyConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8983,7 +8882,7 @@ pub mod get_streaming_distribution_input {
 pub type GetStreamingDistributionInputOperationOutputAlias =
     crate::operation::GetStreamingDistribution;
 #[doc(hidden)]
-pub type GetStreamingDistributionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetStreamingDistributionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetStreamingDistributionInput {
     /// Consumes the builder and constructs an Operation<[`GetStreamingDistribution`](crate::operation::GetStreamingDistribution)>
     #[allow(clippy::let_and_return)]
@@ -8994,7 +8893,7 @@ impl GetStreamingDistributionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetStreamingDistribution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9084,7 +8983,7 @@ impl GetStreamingDistributionInput {
             "GetStreamingDistribution",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9133,7 +9032,8 @@ pub mod get_streaming_distribution_config_input {
 pub type GetStreamingDistributionConfigInputOperationOutputAlias =
     crate::operation::GetStreamingDistributionConfig;
 #[doc(hidden)]
-pub type GetStreamingDistributionConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetStreamingDistributionConfigInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetStreamingDistributionConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetStreamingDistributionConfig`](crate::operation::GetStreamingDistributionConfig)>
     #[allow(clippy::let_and_return)]
@@ -9144,7 +9044,7 @@ impl GetStreamingDistributionConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetStreamingDistributionConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9238,7 +9138,7 @@ impl GetStreamingDistributionConfigInput {
             "GetStreamingDistributionConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9264,33 +9164,19 @@ pub mod list_cache_policies_input {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A filter to return only the specified kinds of cache policies. Valid values
-        /// are:</p>
+        /// <p>A filter to return only the specified kinds of cache policies. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p>
-        /// </li>
+        /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li>
+        /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::CachePolicyType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>A filter to return only the specified kinds of cache policies. Valid values
-        /// are:</p>
+        /// <p>A filter to return only the specified kinds of cache policies. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p>
-        /// </li>
+        /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li>
+        /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -9299,18 +9185,12 @@ pub mod list_cache_policies_input {
             self.r#type = input;
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// cache policies. The response includes cache policies in the list that occur after the
-        /// marker. To get the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of cache policies. The response includes cache policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// cache policies. The response includes cache policies in the list that occur after the
-        /// marker. To get the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of cache policies. The response includes cache policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -9343,7 +9223,7 @@ pub mod list_cache_policies_input {
 #[doc(hidden)]
 pub type ListCachePoliciesInputOperationOutputAlias = crate::operation::ListCachePolicies;
 #[doc(hidden)]
-pub type ListCachePoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListCachePoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCachePoliciesInput {
     /// Consumes the builder and constructs an Operation<[`ListCachePolicies`](crate::operation::ListCachePolicies)>
     #[allow(clippy::let_and_return)]
@@ -9354,7 +9234,7 @@ impl ListCachePoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCachePolicies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9448,7 +9328,7 @@ impl ListCachePoliciesInput {
             "ListCachePolicies",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9473,32 +9353,22 @@ pub mod list_cloud_front_origin_access_identities_input {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Use this when paginating results to indicate where to begin in your list of origin
-        /// access identities. The results include identities in the list that occur after the marker. To
-        /// get the next page of results, set the <code>Marker</code> to the value of the
-        /// <code>NextMarker</code> from the current page's response (which is also the ID of the last
-        /// identity on that page).</p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last identity on that page).</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this when paginating results to indicate where to begin in your list of origin
-        /// access identities. The results include identities in the list that occur after the marker. To
-        /// get the next page of results, set the <code>Marker</code> to the value of the
-        /// <code>NextMarker</code> from the current page's response (which is also the ID of the last
-        /// identity on that page).</p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last identity on that page).</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
         }
-        /// <p>The maximum number of origin access identities you want in the response body.
-        /// </p>
+        /// <p>The maximum number of origin access identities you want in the response body. </p>
         pub fn max_items(mut self, input: i32) -> Self {
             self.max_items = Some(input);
             self
         }
-        /// <p>The maximum number of origin access identities you want in the response body.
-        /// </p>
+        /// <p>The maximum number of origin access identities you want in the response body. </p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -9522,7 +9392,7 @@ pub type ListCloudFrontOriginAccessIdentitiesInputOperationOutputAlias =
     crate::operation::ListCloudFrontOriginAccessIdentities;
 #[doc(hidden)]
 pub type ListCloudFrontOriginAccessIdentitiesInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListCloudFrontOriginAccessIdentitiesInput {
     /// Consumes the builder and constructs an Operation<[`ListCloudFrontOriginAccessIdentities`](crate::operation::ListCloudFrontOriginAccessIdentities)>
     #[allow(clippy::let_and_return)]
@@ -9533,7 +9403,7 @@ impl ListCloudFrontOriginAccessIdentitiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCloudFrontOriginAccessIdentities,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9625,7 +9495,7 @@ impl ListCloudFrontOriginAccessIdentitiesInput {
             "ListCloudFrontOriginAccessIdentities",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9652,14 +9522,12 @@ pub mod list_conflicting_aliases_input {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that
-        /// includes the provided alias.</p>
+        /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that includes the provided alias.</p>
         pub fn distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.distribution_id = Some(input.into());
             self
         }
-        /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that
-        /// includes the provided alias.</p>
+        /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that includes the provided alias.</p>
         pub fn set_distribution_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9677,18 +9545,12 @@ pub mod list_conflicting_aliases_input {
             self.alias = input;
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in the list of
-        /// conflicting aliases. The response includes conflicting aliases in the list that occur
-        /// after the marker. To get the next page of the list, set this field’s value to the value
-        /// of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in the list of
-        /// conflicting aliases. The response includes conflicting aliases in the list that occur
-        /// after the marker. To get the next page of the list, set this field’s value to the value
-        /// of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -9722,7 +9584,7 @@ pub mod list_conflicting_aliases_input {
 #[doc(hidden)]
 pub type ListConflictingAliasesInputOperationOutputAlias = crate::operation::ListConflictingAliases;
 #[doc(hidden)]
-pub type ListConflictingAliasesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListConflictingAliasesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListConflictingAliasesInput {
     /// Consumes the builder and constructs an Operation<[`ListConflictingAliases`](crate::operation::ListConflictingAliases)>
     #[allow(clippy::let_and_return)]
@@ -9733,7 +9595,7 @@ impl ListConflictingAliasesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListConflictingAliases,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9833,7 +9695,7 @@ impl ListConflictingAliasesInput {
             "ListConflictingAliases",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9858,20 +9720,12 @@ pub mod list_distributions_input {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Use this when paginating results to indicate where to begin in your list of
-        /// distributions. The results include distributions in the list that occur after the marker. To
-        /// get the next page of results, set the <code>Marker</code> to the value of the
-        /// <code>NextMarker</code> from the current page's response (which is also the ID of the last
-        /// distribution on that page).</p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of distributions. The results include distributions in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last distribution on that page).</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this when paginating results to indicate where to begin in your list of
-        /// distributions. The results include distributions in the list that occur after the marker. To
-        /// get the next page of results, set the <code>Marker</code> to the value of the
-        /// <code>NextMarker</code> from the current page's response (which is also the ID of the last
-        /// distribution on that page).</p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of distributions. The results include distributions in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last distribution on that page).</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -9903,7 +9757,7 @@ pub mod list_distributions_input {
 #[doc(hidden)]
 pub type ListDistributionsInputOperationOutputAlias = crate::operation::ListDistributions;
 #[doc(hidden)]
-pub type ListDistributionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDistributionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDistributionsInput {
     /// Consumes the builder and constructs an Operation<[`ListDistributions`](crate::operation::ListDistributions)>
     #[allow(clippy::let_and_return)]
@@ -9914,7 +9768,7 @@ impl ListDistributionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDistributions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10005,7 +9859,7 @@ impl ListDistributionsInput {
             "ListDistributions",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10031,18 +9885,12 @@ pub mod list_distributions_by_cache_policy_id_input {
         pub(crate) cache_policy_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// distribution IDs. The response includes distribution IDs in the list that occur after
-        /// the marker. To get the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// distribution IDs. The response includes distribution IDs in the list that occur after
-        /// the marker. To get the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -10089,7 +9937,8 @@ pub mod list_distributions_by_cache_policy_id_input {
 pub type ListDistributionsByCachePolicyIdInputOperationOutputAlias =
     crate::operation::ListDistributionsByCachePolicyId;
 #[doc(hidden)]
-pub type ListDistributionsByCachePolicyIdInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDistributionsByCachePolicyIdInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListDistributionsByCachePolicyIdInput {
     /// Consumes the builder and constructs an Operation<[`ListDistributionsByCachePolicyId`](crate::operation::ListDistributionsByCachePolicyId)>
     #[allow(clippy::let_and_return)]
@@ -10100,7 +9949,7 @@ impl ListDistributionsByCachePolicyIdInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDistributionsByCachePolicyId,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10211,7 +10060,7 @@ impl ListDistributionsByCachePolicyIdInput {
             "ListDistributionsByCachePolicyId",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10237,18 +10086,12 @@ pub mod list_distributions_by_key_group_input {
         pub(crate) key_group_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// distribution IDs. The response includes distribution IDs in the list that occur after
-        /// the marker. To get the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// distribution IDs. The response includes distribution IDs in the list that occur after
-        /// the marker. To get the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -10292,7 +10135,7 @@ pub mod list_distributions_by_key_group_input {
 pub type ListDistributionsByKeyGroupInputOperationOutputAlias =
     crate::operation::ListDistributionsByKeyGroup;
 #[doc(hidden)]
-pub type ListDistributionsByKeyGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDistributionsByKeyGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDistributionsByKeyGroupInput {
     /// Consumes the builder and constructs an Operation<[`ListDistributionsByKeyGroup`](crate::operation::ListDistributionsByKeyGroup)>
     #[allow(clippy::let_and_return)]
@@ -10303,7 +10146,7 @@ impl ListDistributionsByKeyGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDistributionsByKeyGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10414,7 +10257,7 @@ impl ListDistributionsByKeyGroupInput {
             "ListDistributionsByKeyGroup",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10440,18 +10283,12 @@ pub mod list_distributions_by_origin_request_policy_id_input {
         pub(crate) origin_request_policy_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// distribution IDs. The response includes distribution IDs in the list that occur after
-        /// the marker. To get the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// distribution IDs. The response includes distribution IDs in the list that occur after
-        /// the marker. To get the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -10466,14 +10303,12 @@ pub mod list_distributions_by_origin_request_policy_id_input {
             self.max_items = input;
             self
         }
-        /// <p>The ID of the origin request policy whose associated distribution IDs you want to
-        /// list.</p>
+        /// <p>The ID of the origin request policy whose associated distribution IDs you want to list.</p>
         pub fn origin_request_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.origin_request_policy_id = Some(input.into());
             self
         }
-        /// <p>The ID of the origin request policy whose associated distribution IDs you want to
-        /// list.</p>
+        /// <p>The ID of the origin request policy whose associated distribution IDs you want to list.</p>
         pub fn set_origin_request_policy_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10503,7 +10338,7 @@ pub type ListDistributionsByOriginRequestPolicyIdInputOperationOutputAlias =
     crate::operation::ListDistributionsByOriginRequestPolicyId;
 #[doc(hidden)]
 pub type ListDistributionsByOriginRequestPolicyIdInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListDistributionsByOriginRequestPolicyIdInput {
     /// Consumes the builder and constructs an Operation<[`ListDistributionsByOriginRequestPolicyId`](crate::operation::ListDistributionsByOriginRequestPolicyId)>
     #[allow(clippy::let_and_return)]
@@ -10514,7 +10349,7 @@ impl ListDistributionsByOriginRequestPolicyIdInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDistributionsByOriginRequestPolicyId,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10625,7 +10460,7 @@ impl ListDistributionsByOriginRequestPolicyIdInput {
             "ListDistributionsByOriginRequestPolicyId",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10653,18 +10488,12 @@ pub mod list_distributions_by_realtime_log_config_input {
         pub(crate) realtime_log_config_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// distributions. The response includes distributions in the list that occur after the
-        /// marker. To get the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// distributions. The response includes distributions in the list that occur after the
-        /// marker. To get the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -10679,14 +10508,12 @@ pub mod list_distributions_by_realtime_log_config_input {
             self.max_items = input;
             self
         }
-        /// <p>The name of the real-time log configuration whose associated distributions you want to
-        /// list.</p>
+        /// <p>The name of the real-time log configuration whose associated distributions you want to list.</p>
         pub fn realtime_log_config_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.realtime_log_config_name = Some(input.into());
             self
         }
-        /// <p>The name of the real-time log configuration whose associated distributions you want to
-        /// list.</p>
+        /// <p>The name of the real-time log configuration whose associated distributions you want to list.</p>
         pub fn set_realtime_log_config_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10694,14 +10521,12 @@ pub mod list_distributions_by_realtime_log_config_input {
             self.realtime_log_config_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated
-        /// distributions you want to list.</p>
+        /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated distributions you want to list.</p>
         pub fn realtime_log_config_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.realtime_log_config_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated
-        /// distributions you want to list.</p>
+        /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated distributions you want to list.</p>
         pub fn set_realtime_log_config_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10730,7 +10555,7 @@ pub type ListDistributionsByRealtimeLogConfigInputOperationOutputAlias =
     crate::operation::ListDistributionsByRealtimeLogConfig;
 #[doc(hidden)]
 pub type ListDistributionsByRealtimeLogConfigInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListDistributionsByRealtimeLogConfigInput {
     /// Consumes the builder and constructs an Operation<[`ListDistributionsByRealtimeLogConfig`](crate::operation::ListDistributionsByRealtimeLogConfig)>
     #[allow(clippy::let_and_return)]
@@ -10741,7 +10566,7 @@ impl ListDistributionsByRealtimeLogConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDistributionsByRealtimeLogConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10823,7 +10648,7 @@ impl ListDistributionsByRealtimeLogConfigInput {
             "ListDistributionsByRealtimeLogConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10857,18 +10682,12 @@ pub mod list_distributions_by_response_headers_policy_id_input {
         pub(crate) response_headers_policy_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// distribution IDs. The response includes distribution IDs in the list that occur after
-        /// the marker. To get the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// distribution IDs. The response includes distribution IDs in the list that occur after
-        /// the marker. To get the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -10883,14 +10702,12 @@ pub mod list_distributions_by_response_headers_policy_id_input {
             self.max_items = input;
             self
         }
-        /// <p>The ID of the response headers policy whose associated distribution IDs you want to
-        /// list.</p>
+        /// <p>The ID of the response headers policy whose associated distribution IDs you want to list.</p>
         pub fn response_headers_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.response_headers_policy_id = Some(input.into());
             self
         }
-        /// <p>The ID of the response headers policy whose associated distribution IDs you want to
-        /// list.</p>
+        /// <p>The ID of the response headers policy whose associated distribution IDs you want to list.</p>
         pub fn set_response_headers_policy_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10920,7 +10737,7 @@ pub type ListDistributionsByResponseHeadersPolicyIdInputOperationOutputAlias =
     crate::operation::ListDistributionsByResponseHeadersPolicyId;
 #[doc(hidden)]
 pub type ListDistributionsByResponseHeadersPolicyIdInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListDistributionsByResponseHeadersPolicyIdInput {
     /// Consumes the builder and constructs an Operation<[`ListDistributionsByResponseHeadersPolicyId`](crate::operation::ListDistributionsByResponseHeadersPolicyId)>
     #[allow(clippy::let_and_return)]
@@ -10931,7 +10748,7 @@ impl ListDistributionsByResponseHeadersPolicyIdInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDistributionsByResponseHeadersPolicyId,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11042,7 +10859,7 @@ impl ListDistributionsByResponseHeadersPolicyIdInput {
             "ListDistributionsByResponseHeadersPolicyId",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11069,46 +10886,32 @@ pub mod list_distributions_by_web_acl_id_input {
         pub(crate) web_acl_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If
-        /// you have more than <code>MaxItems</code> distributions that satisfy the request, the response
-        /// includes a <code>NextMarker</code> element. To get the next page of results, submit another
-        /// request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code>
-        /// from the last response. (For the first request, omit <code>Marker</code>.) </p>
+        /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.) </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If
-        /// you have more than <code>MaxItems</code> distributions that satisfy the request, the response
-        /// includes a <code>NextMarker</code> element. To get the next page of results, submit another
-        /// request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code>
-        /// from the last response. (For the first request, omit <code>Marker</code>.) </p>
+        /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.) </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
         }
-        /// <p>The maximum number of distributions that you want CloudFront to return in the response body.
-        /// The maximum and default values are both 100.</p>
+        /// <p>The maximum number of distributions that you want CloudFront to return in the response body. The maximum and default values are both 100.</p>
         pub fn max_items(mut self, input: i32) -> Self {
             self.max_items = Some(input);
             self
         }
-        /// <p>The maximum number of distributions that you want CloudFront to return in the response body.
-        /// The maximum and default values are both 100.</p>
+        /// <p>The maximum number of distributions that you want CloudFront to return in the response body. The maximum and default values are both 100.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
         }
-        /// <p>The ID of the WAF web ACL that you want to list the associated distributions.
-        /// If you specify "null" for the ID, the request returns a list of the distributions that aren't
-        /// associated with a web ACL.</p>
+        /// <p>The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for the ID, the request returns a list of the distributions that aren't associated with a web ACL.</p>
         pub fn web_acl_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.web_acl_id = Some(input.into());
             self
         }
-        /// <p>The ID of the WAF web ACL that you want to list the associated distributions.
-        /// If you specify "null" for the ID, the request returns a list of the distributions that aren't
-        /// associated with a web ACL.</p>
+        /// <p>The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for the ID, the request returns a list of the distributions that aren't associated with a web ACL.</p>
         pub fn set_web_acl_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.web_acl_id = input;
             self
@@ -11132,7 +10935,7 @@ pub mod list_distributions_by_web_acl_id_input {
 pub type ListDistributionsByWebAclIdInputOperationOutputAlias =
     crate::operation::ListDistributionsByWebACLId;
 #[doc(hidden)]
-pub type ListDistributionsByWebAclIdInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDistributionsByWebAclIdInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDistributionsByWebAclIdInput {
     /// Consumes the builder and constructs an Operation<[`ListDistributionsByWebACLId`](crate::operation::ListDistributionsByWebACLId)>
     #[allow(clippy::let_and_return)]
@@ -11143,7 +10946,7 @@ impl ListDistributionsByWebAclIdInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDistributionsByWebACLId,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11254,7 +11057,7 @@ impl ListDistributionsByWebAclIdInput {
             "ListDistributionsByWebACLId",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11279,16 +11082,12 @@ pub mod list_field_level_encryption_configs_input {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that
-        /// occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the
-        /// <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page). </p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page). </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that
-        /// occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the
-        /// <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page). </p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page). </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -11321,7 +11120,8 @@ pub mod list_field_level_encryption_configs_input {
 pub type ListFieldLevelEncryptionConfigsInputOperationOutputAlias =
     crate::operation::ListFieldLevelEncryptionConfigs;
 #[doc(hidden)]
-pub type ListFieldLevelEncryptionConfigsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFieldLevelEncryptionConfigsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListFieldLevelEncryptionConfigsInput {
     /// Consumes the builder and constructs an Operation<[`ListFieldLevelEncryptionConfigs`](crate::operation::ListFieldLevelEncryptionConfigs)>
     #[allow(clippy::let_and_return)]
@@ -11332,7 +11132,7 @@ impl ListFieldLevelEncryptionConfigsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFieldLevelEncryptionConfigs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11424,7 +11224,7 @@ impl ListFieldLevelEncryptionConfigsInput {
             "ListFieldLevelEncryptionConfigs",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11449,16 +11249,12 @@ pub mod list_field_level_encryption_profiles_input {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that
-        /// occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the
-        /// <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page). </p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page). </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that
-        /// occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the
-        /// <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page). </p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page). </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -11491,7 +11287,8 @@ pub mod list_field_level_encryption_profiles_input {
 pub type ListFieldLevelEncryptionProfilesInputOperationOutputAlias =
     crate::operation::ListFieldLevelEncryptionProfiles;
 #[doc(hidden)]
-pub type ListFieldLevelEncryptionProfilesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFieldLevelEncryptionProfilesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListFieldLevelEncryptionProfilesInput {
     /// Consumes the builder and constructs an Operation<[`ListFieldLevelEncryptionProfiles`](crate::operation::ListFieldLevelEncryptionProfiles)>
     #[allow(clippy::let_and_return)]
@@ -11502,7 +11299,7 @@ impl ListFieldLevelEncryptionProfilesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFieldLevelEncryptionProfiles,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11594,7 +11391,7 @@ impl ListFieldLevelEncryptionProfilesInput {
             "ListFieldLevelEncryptionProfiles",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11620,18 +11417,12 @@ pub mod list_functions_input {
         pub(crate) stage: std::option::Option<crate::model::FunctionStage>,
     }
     impl Builder {
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// functions. The response includes functions in the list that occur after the marker. To
-        /// get the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of functions. The response includes functions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// functions. The response includes functions in the list that occur after the marker. To
-        /// get the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of functions. The response includes functions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -11646,14 +11437,12 @@ pub mod list_functions_input {
             self.max_items = input;
             self
         }
-        /// <p>An optional filter to return only the functions that are in the specified stage,
-        /// either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+        /// <p>An optional filter to return only the functions that are in the specified stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
         pub fn stage(mut self, input: crate::model::FunctionStage) -> Self {
             self.stage = Some(input);
             self
         }
-        /// <p>An optional filter to return only the functions that are in the specified stage,
-        /// either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+        /// <p>An optional filter to return only the functions that are in the specified stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
         pub fn set_stage(
             mut self,
             input: std::option::Option<crate::model::FunctionStage>,
@@ -11679,7 +11468,7 @@ pub mod list_functions_input {
 #[doc(hidden)]
 pub type ListFunctionsInputOperationOutputAlias = crate::operation::ListFunctions;
 #[doc(hidden)]
-pub type ListFunctionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFunctionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFunctionsInput {
     /// Consumes the builder and constructs an Operation<[`ListFunctions`](crate::operation::ListFunctions)>
     #[allow(clippy::let_and_return)]
@@ -11690,7 +11479,7 @@ impl ListFunctionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFunctions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11784,7 +11573,7 @@ impl ListFunctionsInput {
             "ListFunctions",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11823,34 +11612,22 @@ pub mod list_invalidations_input {
             self.distribution_id = input;
             self
         }
-        /// <p>Use this parameter when paginating results to indicate where to begin in your list of
-        /// invalidation batches. Because the results are returned in decreasing order from most recent to
-        /// oldest, the most recent results are on the first page, the second page will contain earlier
-        /// results, and so on. To get the next page of results, set <code>Marker</code> to the value of
-        /// the <code>NextMarker</code> from the current page's response. This value is the same as the ID
-        /// of the last invalidation batch on that page. </p>
+        /// <p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this parameter when paginating results to indicate where to begin in your list of
-        /// invalidation batches. Because the results are returned in decreasing order from most recent to
-        /// oldest, the most recent results are on the first page, the second page will contain earlier
-        /// results, and so on. To get the next page of results, set <code>Marker</code> to the value of
-        /// the <code>NextMarker</code> from the current page's response. This value is the same as the ID
-        /// of the last invalidation batch on that page. </p>
+        /// <p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
         }
-        /// <p>The maximum number of invalidation batches that you want in the response
-        /// body.</p>
+        /// <p>The maximum number of invalidation batches that you want in the response body.</p>
         pub fn max_items(mut self, input: i32) -> Self {
             self.max_items = Some(input);
             self
         }
-        /// <p>The maximum number of invalidation batches that you want in the response
-        /// body.</p>
+        /// <p>The maximum number of invalidation batches that you want in the response body.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -11873,7 +11650,7 @@ pub mod list_invalidations_input {
 #[doc(hidden)]
 pub type ListInvalidationsInputOperationOutputAlias = crate::operation::ListInvalidations;
 #[doc(hidden)]
-pub type ListInvalidationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListInvalidationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInvalidationsInput {
     /// Consumes the builder and constructs an Operation<[`ListInvalidations`](crate::operation::ListInvalidations)>
     #[allow(clippy::let_and_return)]
@@ -11884,7 +11661,7 @@ impl ListInvalidationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListInvalidations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11995,7 +11772,7 @@ impl ListInvalidationsInput {
             "ListInvalidations",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12020,18 +11797,12 @@ pub mod list_key_groups_input {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Use this field when paginating results to indicate where to begin in your list of key
-        /// groups. The response includes key groups in the list that occur after the marker. To get
-        /// the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of key
-        /// groups. The response includes key groups in the list that occur after the marker. To get
-        /// the next page of the list, set this field’s value to the value of
-        /// <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -12063,7 +11834,7 @@ pub mod list_key_groups_input {
 #[doc(hidden)]
 pub type ListKeyGroupsInputOperationOutputAlias = crate::operation::ListKeyGroups;
 #[doc(hidden)]
-pub type ListKeyGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListKeyGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListKeyGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListKeyGroups`](crate::operation::ListKeyGroups)>
     #[allow(clippy::let_and_return)]
@@ -12074,7 +11845,7 @@ impl ListKeyGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListKeyGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12165,7 +11936,7 @@ impl ListKeyGroupsInput {
             "ListKeyGroups",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12191,33 +11962,19 @@ pub mod list_origin_request_policies_input {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A filter to return only the specified kinds of origin request policies. Valid values
-        /// are:</p>
+        /// <p>A filter to return only the specified kinds of origin request policies. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p>
-        /// </li>
+        /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li>
+        /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::OriginRequestPolicyType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>A filter to return only the specified kinds of origin request policies. Valid values
-        /// are:</p>
+        /// <p>A filter to return only the specified kinds of origin request policies. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p>
-        /// </li>
+        /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li>
+        /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -12226,18 +11983,12 @@ pub mod list_origin_request_policies_input {
             self.r#type = input;
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// origin request policies. The response includes origin request policies in the list that
-        /// occur after the marker. To get the next page of the list, set this field’s value to the
-        /// value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of
-        /// origin request policies. The response includes origin request policies in the list that
-        /// occur after the marker. To get the next page of the list, set this field’s value to the
-        /// value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -12271,7 +12022,7 @@ pub mod list_origin_request_policies_input {
 pub type ListOriginRequestPoliciesInputOperationOutputAlias =
     crate::operation::ListOriginRequestPolicies;
 #[doc(hidden)]
-pub type ListOriginRequestPoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListOriginRequestPoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListOriginRequestPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`ListOriginRequestPolicies`](crate::operation::ListOriginRequestPolicies)>
     #[allow(clippy::let_and_return)]
@@ -12282,7 +12033,7 @@ impl ListOriginRequestPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListOriginRequestPolicies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12376,7 +12127,7 @@ impl ListOriginRequestPoliciesInput {
             "ListOriginRequestPolicies",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12401,16 +12152,12 @@ pub mod list_public_keys_input {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that
-        /// occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the
-        /// <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page). </p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page). </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that
-        /// occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the
-        /// <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page). </p>
+        /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page). </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -12442,7 +12189,7 @@ pub mod list_public_keys_input {
 #[doc(hidden)]
 pub type ListPublicKeysInputOperationOutputAlias = crate::operation::ListPublicKeys;
 #[doc(hidden)]
-pub type ListPublicKeysInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPublicKeysInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPublicKeysInput {
     /// Consumes the builder and constructs an Operation<[`ListPublicKeys`](crate::operation::ListPublicKeys)>
     #[allow(clippy::let_and_return)]
@@ -12453,7 +12200,7 @@ impl ListPublicKeysInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPublicKeys,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12544,7 +12291,7 @@ impl ListPublicKeysInput {
             "ListPublicKeys",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12579,18 +12326,12 @@ pub mod list_realtime_log_configs_input {
             self.max_items = input;
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of real-time
-        /// log configurations. The response includes real-time log configurations in the list that
-        /// occur after the marker. To get the next page of the list, set this field’s value to the
-        /// value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of real-time
-        /// log configurations. The response includes real-time log configurations in the list that
-        /// occur after the marker. To get the next page of the list, set this field’s value to the
-        /// value of <code>NextMarker</code> from the current page’s response.</p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -12612,7 +12353,7 @@ pub mod list_realtime_log_configs_input {
 #[doc(hidden)]
 pub type ListRealtimeLogConfigsInputOperationOutputAlias = crate::operation::ListRealtimeLogConfigs;
 #[doc(hidden)]
-pub type ListRealtimeLogConfigsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRealtimeLogConfigsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRealtimeLogConfigsInput {
     /// Consumes the builder and constructs an Operation<[`ListRealtimeLogConfigs`](crate::operation::ListRealtimeLogConfigs)>
     #[allow(clippy::let_and_return)]
@@ -12623,7 +12364,7 @@ impl ListRealtimeLogConfigsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRealtimeLogConfigs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12714,7 +12455,7 @@ impl ListRealtimeLogConfigsInput {
             "ListRealtimeLogConfigs",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12740,35 +12481,19 @@ pub mod list_response_headers_policies_input {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A filter to get only the specified kind of response headers policies. Valid values
-        /// are:</p>
+        /// <p>A filter to get only the specified kind of response headers policies. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>custom</code> – Gets only the custom policies created in your
-        /// Amazon Web Services account.</p>
-        /// </li>
+        /// <li> <p> <code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p> </li>
+        /// <li> <p> <code>custom</code> – Gets only the custom policies created in your Amazon Web Services account.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ResponseHeadersPolicyType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>A filter to get only the specified kind of response headers policies. Valid values
-        /// are:</p>
+        /// <p>A filter to get only the specified kind of response headers policies. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>custom</code> – Gets only the custom policies created in your
-        /// Amazon Web Services account.</p>
-        /// </li>
+        /// <li> <p> <code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p> </li>
+        /// <li> <p> <code>custom</code> – Gets only the custom policies created in your Amazon Web Services account.</p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -12777,18 +12502,12 @@ pub mod list_response_headers_policies_input {
             self.r#type = input;
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of response
-        /// headers policies. The response includes response headers policies in the list that occur
-        /// after the marker. To get the next page of the list, set this field’s value to the value
-        /// of <code>NextMarker</code> from the current page’s response. </p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of response headers policies. The response includes response headers policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Use this field when paginating results to indicate where to begin in your list of response
-        /// headers policies. The response includes response headers policies in the list that occur
-        /// after the marker. To get the next page of the list, set this field’s value to the value
-        /// of <code>NextMarker</code> from the current page’s response. </p>
+        /// <p>Use this field when paginating results to indicate where to begin in your list of response headers policies. The response includes response headers policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -12822,7 +12541,7 @@ pub mod list_response_headers_policies_input {
 pub type ListResponseHeadersPoliciesInputOperationOutputAlias =
     crate::operation::ListResponseHeadersPolicies;
 #[doc(hidden)]
-pub type ListResponseHeadersPoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListResponseHeadersPoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListResponseHeadersPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`ListResponseHeadersPolicies`](crate::operation::ListResponseHeadersPolicies)>
     #[allow(clippy::let_and_return)]
@@ -12833,7 +12552,7 @@ impl ListResponseHeadersPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListResponseHeadersPolicies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12928,7 +12647,7 @@ impl ListResponseHeadersPoliciesInput {
             "ListResponseHeadersPolicies",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12991,7 +12710,7 @@ pub mod list_streaming_distributions_input {
 pub type ListStreamingDistributionsInputOperationOutputAlias =
     crate::operation::ListStreamingDistributions;
 #[doc(hidden)]
-pub type ListStreamingDistributionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListStreamingDistributionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStreamingDistributionsInput {
     /// Consumes the builder and constructs an Operation<[`ListStreamingDistributions`](crate::operation::ListStreamingDistributions)>
     #[allow(clippy::let_and_return)]
@@ -13002,7 +12721,7 @@ impl ListStreamingDistributionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListStreamingDistributions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13094,7 +12813,7 @@ impl ListStreamingDistributionsInput {
             "ListStreamingDistributions",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13144,7 +12863,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -13155,7 +12874,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13240,7 +12959,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13275,14 +12994,12 @@ pub mod publish_function_input {
             self.name = input;
             self
         }
-        /// <p>The current version (<code>ETag</code> value) of the function that you are publishing, which
-        /// you can get using <code>DescribeFunction</code>.</p>
+        /// <p>The current version (<code>ETag</code> value) of the function that you are publishing, which you can get using <code>DescribeFunction</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>The current version (<code>ETag</code> value) of the function that you are publishing, which
-        /// you can get using <code>DescribeFunction</code>.</p>
+        /// <p>The current version (<code>ETag</code> value) of the function that you are publishing, which you can get using <code>DescribeFunction</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -13304,7 +13021,7 @@ pub mod publish_function_input {
 #[doc(hidden)]
 pub type PublishFunctionInputOperationOutputAlias = crate::operation::PublishFunction;
 #[doc(hidden)]
-pub type PublishFunctionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PublishFunctionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PublishFunctionInput {
     /// Consumes the builder and constructs an Operation<[`PublishFunction`](crate::operation::PublishFunction)>
     #[allow(clippy::let_and_return)]
@@ -13315,7 +13032,7 @@ impl PublishFunctionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PublishFunction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13429,7 +13146,7 @@ impl PublishFunctionInput {
             "PublishFunction",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13491,7 +13208,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -13502,7 +13219,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13593,7 +13310,7 @@ impl TagResourceInput {
             "TagResource",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13638,26 +13355,22 @@ pub mod test_function_input {
             self.name = input;
             self
         }
-        /// <p>The current version (<code>ETag</code> value) of the function that you are testing, which
-        /// you can get using <code>DescribeFunction</code>.</p>
+        /// <p>The current version (<code>ETag</code> value) of the function that you are testing, which you can get using <code>DescribeFunction</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>The current version (<code>ETag</code> value) of the function that you are testing, which
-        /// you can get using <code>DescribeFunction</code>.</p>
+        /// <p>The current version (<code>ETag</code> value) of the function that you are testing, which you can get using <code>DescribeFunction</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
         }
-        /// <p>The stage of the function that you are testing, either <code>DEVELOPMENT</code> or
-        /// <code>LIVE</code>.</p>
+        /// <p>The stage of the function that you are testing, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
         pub fn stage(mut self, input: crate::model::FunctionStage) -> Self {
             self.stage = Some(input);
             self
         }
-        /// <p>The stage of the function that you are testing, either <code>DEVELOPMENT</code> or
-        /// <code>LIVE</code>.</p>
+        /// <p>The stage of the function that you are testing, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
         pub fn set_stage(
             mut self,
             input: std::option::Option<crate::model::FunctionStage>,
@@ -13665,14 +13378,12 @@ pub mod test_function_input {
             self.stage = input;
             self
         }
-        /// <p>The event object to test the function with. For more information about the structure of the
-        /// event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>The event object to test the function with. For more information about the structure of the event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn event_object(mut self, input: aws_smithy_types::Blob) -> Self {
             self.event_object = Some(input);
             self
         }
-        /// <p>The event object to test the function with. For more information about the structure of the
-        /// event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>The event object to test the function with. For more information about the structure of the event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_event_object(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,
@@ -13699,7 +13410,7 @@ pub mod test_function_input {
 #[doc(hidden)]
 pub type TestFunctionInputOperationOutputAlias = crate::operation::TestFunction;
 #[doc(hidden)]
-pub type TestFunctionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TestFunctionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TestFunctionInput {
     /// Consumes the builder and constructs an Operation<[`TestFunction`](crate::operation::TestFunction)>
     #[allow(clippy::let_and_return)]
@@ -13710,7 +13421,7 @@ impl TestFunctionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TestFunction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13829,7 +13540,7 @@ impl TestFunctionInput {
             "TestFunction",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13899,7 +13610,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -13910,7 +13621,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14001,7 +13712,7 @@ impl UntagResourceInput {
             "UntagResource",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14048,30 +13759,22 @@ pub mod update_cache_policy_input {
             self.cache_policy_config = input;
             self
         }
-        /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned
-        /// in a cache behavior’s <code>CachePolicyId</code> field in the response to
-        /// <code>GetDistributionConfig</code>.</p>
+        /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior’s <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned
-        /// in a cache behavior’s <code>CachePolicyId</code> field in the response to
-        /// <code>GetDistributionConfig</code>.</p>
+        /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior’s <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The version of the cache policy that you are updating. The version is returned in the cache
-        /// policy’s <code>ETag</code> field in the response to
-        /// <code>GetCachePolicyConfig</code>.</p>
+        /// <p>The version of the cache policy that you are updating. The version is returned in the cache policy’s <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>The version of the cache policy that you are updating. The version is returned in the cache
-        /// policy’s <code>ETag</code> field in the response to
-        /// <code>GetCachePolicyConfig</code>.</p>
+        /// <p>The version of the cache policy that you are updating. The version is returned in the cache policy’s <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -14094,7 +13797,7 @@ pub mod update_cache_policy_input {
 #[doc(hidden)]
 pub type UpdateCachePolicyInputOperationOutputAlias = crate::operation::UpdateCachePolicy;
 #[doc(hidden)]
-pub type UpdateCachePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateCachePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCachePolicyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCachePolicy`](crate::operation::UpdateCachePolicy)>
     #[allow(clippy::let_and_return)]
@@ -14105,7 +13808,7 @@ impl UpdateCachePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCachePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14225,7 +13928,7 @@ impl UpdateCachePolicyInput {
             "UpdateCachePolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14286,14 +13989,12 @@ pub mod update_cloud_front_origin_access_identity_input {
             self.id = input;
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-        /// identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-        /// identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -14319,7 +14020,7 @@ pub type UpdateCloudFrontOriginAccessIdentityInputOperationOutputAlias =
     crate::operation::UpdateCloudFrontOriginAccessIdentity;
 #[doc(hidden)]
 pub type UpdateCloudFrontOriginAccessIdentityInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCloudFrontOriginAccessIdentityInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCloudFrontOriginAccessIdentity`](crate::operation::UpdateCloudFrontOriginAccessIdentity)>
     #[allow(clippy::let_and_return)]
@@ -14330,7 +14031,7 @@ impl UpdateCloudFrontOriginAccessIdentityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCloudFrontOriginAccessIdentity,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14456,7 +14157,7 @@ impl UpdateCloudFrontOriginAccessIdentityInput {
             "UpdateCloudFrontOriginAccessIdentity",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14513,14 +14214,12 @@ pub mod update_distribution_input {
             self.id = input;
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-        /// distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-        /// distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -14543,7 +14242,7 @@ pub mod update_distribution_input {
 #[doc(hidden)]
 pub type UpdateDistributionInputOperationOutputAlias = crate::operation::UpdateDistribution;
 #[doc(hidden)]
-pub type UpdateDistributionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDistributionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDistributionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDistribution`](crate::operation::UpdateDistribution)>
     #[allow(clippy::let_and_return)]
@@ -14554,7 +14253,7 @@ impl UpdateDistributionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDistribution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14674,7 +14373,7 @@ impl UpdateDistributionInput {
             "UpdateDistribution",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14735,14 +14434,12 @@ pub mod update_field_level_encryption_config_input {
             self.id = input;
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update.
-        /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update.
-        /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -14766,7 +14463,8 @@ pub mod update_field_level_encryption_config_input {
 pub type UpdateFieldLevelEncryptionConfigInputOperationOutputAlias =
     crate::operation::UpdateFieldLevelEncryptionConfig;
 #[doc(hidden)]
-pub type UpdateFieldLevelEncryptionConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFieldLevelEncryptionConfigInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFieldLevelEncryptionConfigInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFieldLevelEncryptionConfig`](crate::operation::UpdateFieldLevelEncryptionConfig)>
     #[allow(clippy::let_and_return)]
@@ -14777,7 +14475,7 @@ impl UpdateFieldLevelEncryptionConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFieldLevelEncryptionConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14902,7 +14600,7 @@ impl UpdateFieldLevelEncryptionConfigInput {
             "UpdateFieldLevelEncryptionConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14963,14 +14661,12 @@ pub mod update_field_level_encryption_profile_input {
             self.id = input;
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile identity to update.
-        /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile identity to update.
-        /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -14994,7 +14690,8 @@ pub mod update_field_level_encryption_profile_input {
 pub type UpdateFieldLevelEncryptionProfileInputOperationOutputAlias =
     crate::operation::UpdateFieldLevelEncryptionProfile;
 #[doc(hidden)]
-pub type UpdateFieldLevelEncryptionProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFieldLevelEncryptionProfileInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFieldLevelEncryptionProfileInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFieldLevelEncryptionProfile`](crate::operation::UpdateFieldLevelEncryptionProfile)>
     #[allow(clippy::let_and_return)]
@@ -15005,7 +14702,7 @@ impl UpdateFieldLevelEncryptionProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFieldLevelEncryptionProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15130,7 +14827,7 @@ impl UpdateFieldLevelEncryptionProfileInput {
             "UpdateFieldLevelEncryptionProfile",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15175,14 +14872,12 @@ pub mod update_function_input {
             self.name = input;
             self
         }
-        /// <p>The current version (<code>ETag</code> value) of the function that you are updating, which
-        /// you can get using <code>DescribeFunction</code>.</p>
+        /// <p>The current version (<code>ETag</code> value) of the function that you are updating, which you can get using <code>DescribeFunction</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>The current version (<code>ETag</code> value) of the function that you are updating, which
-        /// you can get using <code>DescribeFunction</code>.</p>
+        /// <p>The current version (<code>ETag</code> value) of the function that you are updating, which you can get using <code>DescribeFunction</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -15200,14 +14895,12 @@ pub mod update_function_input {
             self.function_config = input;
             self
         }
-        /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function
-        /// code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn function_code(mut self, input: aws_smithy_types::Blob) -> Self {
             self.function_code = Some(input);
             self
         }
-        /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function
-        /// code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_function_code(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,
@@ -15234,7 +14927,7 @@ pub mod update_function_input {
 #[doc(hidden)]
 pub type UpdateFunctionInputOperationOutputAlias = crate::operation::UpdateFunction;
 #[doc(hidden)]
-pub type UpdateFunctionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFunctionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFunctionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFunction`](crate::operation::UpdateFunction)>
     #[allow(clippy::let_and_return)]
@@ -15245,7 +14938,7 @@ impl UpdateFunctionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFunction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15365,7 +15058,7 @@ impl UpdateFunctionInput {
             "UpdateFunction",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15422,14 +15115,12 @@ pub mod update_key_group_input {
             self.id = input;
             self
         }
-        /// <p>The version of the key group that you are updating. The version is the key group’s
-        /// <code>ETag</code> value.</p>
+        /// <p>The version of the key group that you are updating. The version is the key group’s <code>ETag</code> value.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>The version of the key group that you are updating. The version is the key group’s
-        /// <code>ETag</code> value.</p>
+        /// <p>The version of the key group that you are updating. The version is the key group’s <code>ETag</code> value.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -15452,7 +15143,7 @@ pub mod update_key_group_input {
 #[doc(hidden)]
 pub type UpdateKeyGroupInputOperationOutputAlias = crate::operation::UpdateKeyGroup;
 #[doc(hidden)]
-pub type UpdateKeyGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateKeyGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateKeyGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateKeyGroup`](crate::operation::UpdateKeyGroup)>
     #[allow(clippy::let_and_return)]
@@ -15463,7 +15154,7 @@ impl UpdateKeyGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateKeyGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15583,7 +15274,7 @@ impl UpdateKeyGroupInput {
             "UpdateKeyGroup",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15634,30 +15325,22 @@ pub mod update_origin_request_policy_input {
             self.origin_request_policy_config = input;
             self
         }
-        /// <p>The unique identifier for the origin request policy that you are updating. The identifier is
-        /// returned in a cache behavior’s <code>OriginRequestPolicyId</code> field in the response
-        /// to <code>GetDistributionConfig</code>.</p>
+        /// <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior’s <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the origin request policy that you are updating. The identifier is
-        /// returned in a cache behavior’s <code>OriginRequestPolicyId</code> field in the response
-        /// to <code>GetDistributionConfig</code>.</p>
+        /// <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior’s <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The version of the origin request policy that you are updating. The version is returned in
-        /// the origin request policy’s <code>ETag</code> field in the response to
-        /// <code>GetOriginRequestPolicyConfig</code>.</p>
+        /// <p>The version of the origin request policy that you are updating. The version is returned in the origin request policy’s <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>The version of the origin request policy that you are updating. The version is returned in
-        /// the origin request policy’s <code>ETag</code> field in the response to
-        /// <code>GetOriginRequestPolicyConfig</code>.</p>
+        /// <p>The version of the origin request policy that you are updating. The version is returned in the origin request policy’s <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -15681,7 +15364,7 @@ pub mod update_origin_request_policy_input {
 pub type UpdateOriginRequestPolicyInputOperationOutputAlias =
     crate::operation::UpdateOriginRequestPolicy;
 #[doc(hidden)]
-pub type UpdateOriginRequestPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateOriginRequestPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateOriginRequestPolicyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateOriginRequestPolicy`](crate::operation::UpdateOriginRequestPolicy)>
     #[allow(clippy::let_and_return)]
@@ -15692,7 +15375,7 @@ impl UpdateOriginRequestPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateOriginRequestPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15813,7 +15496,7 @@ impl UpdateOriginRequestPolicyInput {
             "UpdateOriginRequestPolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15870,14 +15553,12 @@ pub mod update_public_key_input {
             self.id = input;
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key to update.
-        /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key to update.
-        /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -15900,7 +15581,7 @@ pub mod update_public_key_input {
 #[doc(hidden)]
 pub type UpdatePublicKeyInputOperationOutputAlias = crate::operation::UpdatePublicKey;
 #[doc(hidden)]
-pub type UpdatePublicKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdatePublicKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePublicKeyInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePublicKey`](crate::operation::UpdatePublicKey)>
     #[allow(clippy::let_and_return)]
@@ -15911,7 +15592,7 @@ impl UpdatePublicKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePublicKey,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16031,7 +15712,7 @@ impl UpdatePublicKeyInput {
             "UpdatePublicKey",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16071,16 +15752,14 @@ pub mod update_realtime_log_config_input {
         ///
         /// To override the contents of this collection use [`set_end_points`](Self::set_end_points).
         ///
-        /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time
-        /// log data.</p>
-        pub fn end_points(mut self, input: impl Into<crate::model::EndPoint>) -> Self {
+        /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
+        pub fn end_points(mut self, input: crate::model::EndPoint) -> Self {
             let mut v = self.end_points.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.end_points = Some(v);
             self
         }
-        /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time
-        /// log data.</p>
+        /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
         pub fn set_end_points(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EndPoint>>,
@@ -16093,8 +15772,7 @@ pub mod update_realtime_log_config_input {
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
         ///
         /// <p>A list of fields to include in each real-time log record.</p>
-        /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the
-        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn fields(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.fields.unwrap_or_default();
             v.push(input.into());
@@ -16102,8 +15780,7 @@ pub mod update_realtime_log_config_input {
             self
         }
         /// <p>A list of fields to include in each real-time log record.</p>
-        /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the
-        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_fields(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16131,16 +15808,12 @@ pub mod update_realtime_log_config_input {
             self.arn = input;
             self
         }
-        /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the
-        /// percentage of viewer requests that are represented in the real-time log data. You must
-        /// provide an integer between 1 and 100, inclusive.</p>
+        /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
         pub fn sampling_rate(mut self, input: i64) -> Self {
             self.sampling_rate = Some(input);
             self
         }
-        /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the
-        /// percentage of viewer requests that are represented in the real-time log data. You must
-        /// provide an integer between 1 and 100, inclusive.</p>
+        /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
         pub fn set_sampling_rate(mut self, input: std::option::Option<i64>) -> Self {
             self.sampling_rate = input;
             self
@@ -16166,7 +15839,7 @@ pub mod update_realtime_log_config_input {
 pub type UpdateRealtimeLogConfigInputOperationOutputAlias =
     crate::operation::UpdateRealtimeLogConfig;
 #[doc(hidden)]
-pub type UpdateRealtimeLogConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateRealtimeLogConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRealtimeLogConfigInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRealtimeLogConfig`](crate::operation::UpdateRealtimeLogConfig)>
     #[allow(clippy::let_and_return)]
@@ -16177,7 +15850,7 @@ impl UpdateRealtimeLogConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRealtimeLogConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16259,7 +15932,7 @@ impl UpdateRealtimeLogConfigInput {
             "UpdateRealtimeLogConfig",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16321,15 +15994,13 @@ pub mod update_response_headers_policy_input {
             self
         }
         /// <p>The version of the response headers policy that you are updating.</p>
-        /// <p>The version is returned in the cache policy’s <code>ETag</code> field in the response
-        /// to <code>GetResponseHeadersPolicyConfig</code>.</p>
+        /// <p>The version is returned in the cache policy’s <code>ETag</code> field in the response to <code>GetResponseHeadersPolicyConfig</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
         /// <p>The version of the response headers policy that you are updating.</p>
-        /// <p>The version is returned in the cache policy’s <code>ETag</code> field in the response
-        /// to <code>GetResponseHeadersPolicyConfig</code>.</p>
+        /// <p>The version is returned in the cache policy’s <code>ETag</code> field in the response to <code>GetResponseHeadersPolicyConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -16353,7 +16024,7 @@ pub mod update_response_headers_policy_input {
 pub type UpdateResponseHeadersPolicyInputOperationOutputAlias =
     crate::operation::UpdateResponseHeadersPolicy;
 #[doc(hidden)]
-pub type UpdateResponseHeadersPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateResponseHeadersPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateResponseHeadersPolicyInput {
     /// Consumes the builder and constructs an Operation<[`UpdateResponseHeadersPolicy`](crate::operation::UpdateResponseHeadersPolicy)>
     #[allow(clippy::let_and_return)]
@@ -16364,7 +16035,7 @@ impl UpdateResponseHeadersPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateResponseHeadersPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16485,7 +16156,7 @@ impl UpdateResponseHeadersPolicyInput {
             "UpdateResponseHeadersPolicy",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16546,14 +16217,12 @@ pub mod update_streaming_distribution_input {
             self.id = input;
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-        /// streaming distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the streaming distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-        /// streaming distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+        /// <p>The value of the <code>ETag</code> header that you received when retrieving the streaming distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
@@ -16577,7 +16246,7 @@ pub mod update_streaming_distribution_input {
 pub type UpdateStreamingDistributionInputOperationOutputAlias =
     crate::operation::UpdateStreamingDistribution;
 #[doc(hidden)]
-pub type UpdateStreamingDistributionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateStreamingDistributionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateStreamingDistributionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateStreamingDistribution`](crate::operation::UpdateStreamingDistribution)>
     #[allow(clippy::let_and_return)]
@@ -16588,7 +16257,7 @@ impl UpdateStreamingDistributionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateStreamingDistribution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16713,7 +16382,7 @@ impl UpdateStreamingDistributionInput {
             "UpdateStreamingDistribution",
             "cloudfront",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16745,8 +16414,7 @@ pub struct UpdateStreamingDistributionInput {
         std::option::Option<crate::model::StreamingDistributionConfig>,
     /// <p>The streaming distribution's id.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-    /// streaming distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the streaming distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
 impl UpdateStreamingDistributionInput {
@@ -16760,8 +16428,7 @@ impl UpdateStreamingDistributionInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-    /// streaming distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the streaming distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -16789,8 +16456,7 @@ pub struct UpdateResponseHeadersPolicyInput {
     /// <p>The identifier for the response headers policy that you are updating.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The version of the response headers policy that you are updating.</p>
-    /// <p>The version is returned in the cache policy’s <code>ETag</code> field in the response
-    /// to <code>GetResponseHeadersPolicyConfig</code>.</p>
+    /// <p>The version is returned in the cache policy’s <code>ETag</code> field in the response to <code>GetResponseHeadersPolicyConfig</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
 impl UpdateResponseHeadersPolicyInput {
@@ -16805,8 +16471,7 @@ impl UpdateResponseHeadersPolicyInput {
         self.id.as_deref()
     }
     /// <p>The version of the response headers policy that you are updating.</p>
-    /// <p>The version is returned in the cache policy’s <code>ETag</code> field in the response
-    /// to <code>GetResponseHeadersPolicyConfig</code>.</p>
+    /// <p>The version is returned in the cache policy’s <code>ETag</code> field in the response to <code>GetResponseHeadersPolicyConfig</code>.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -16828,31 +16493,25 @@ impl std::fmt::Debug for UpdateResponseHeadersPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRealtimeLogConfigInput {
-    /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time
-    /// log data.</p>
+    /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
     pub end_points: std::option::Option<std::vec::Vec<crate::model::EndPoint>>,
     /// <p>A list of fields to include in each real-time log record.</p>
-    /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fields: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name for this real-time log configuration.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for this real-time log configuration.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the
-    /// percentage of viewer requests that are represented in the real-time log data. You must
-    /// provide an integer between 1 and 100, inclusive.</p>
+    /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
     pub sampling_rate: std::option::Option<i64>,
 }
 impl UpdateRealtimeLogConfigInput {
-    /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time
-    /// log data.</p>
+    /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
     pub fn end_points(&self) -> std::option::Option<&[crate::model::EndPoint]> {
         self.end_points.as_deref()
     }
     /// <p>A list of fields to include in each real-time log record.</p>
-    /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn fields(&self) -> std::option::Option<&[std::string::String]> {
         self.fields.as_deref()
     }
@@ -16864,9 +16523,7 @@ impl UpdateRealtimeLogConfigInput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the
-    /// percentage of viewer requests that are represented in the real-time log data. You must
-    /// provide an integer between 1 and 100, inclusive.</p>
+    /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
     pub fn sampling_rate(&self) -> std::option::Option<i64> {
         self.sampling_rate
     }
@@ -16891,8 +16548,7 @@ pub struct UpdatePublicKeyInput {
     pub public_key_config: std::option::Option<crate::model::PublicKeyConfig>,
     /// <p>The identifier of the public key that you are updating.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key to update.
-    /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
 impl UpdatePublicKeyInput {
@@ -16904,8 +16560,7 @@ impl UpdatePublicKeyInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key to update.
-    /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -16926,13 +16581,9 @@ impl std::fmt::Debug for UpdatePublicKeyInput {
 pub struct UpdateOriginRequestPolicyInput {
     /// <p>An origin request policy configuration.</p>
     pub origin_request_policy_config: std::option::Option<crate::model::OriginRequestPolicyConfig>,
-    /// <p>The unique identifier for the origin request policy that you are updating. The identifier is
-    /// returned in a cache behavior’s <code>OriginRequestPolicyId</code> field in the response
-    /// to <code>GetDistributionConfig</code>.</p>
+    /// <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior’s <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The version of the origin request policy that you are updating. The version is returned in
-    /// the origin request policy’s <code>ETag</code> field in the response to
-    /// <code>GetOriginRequestPolicyConfig</code>.</p>
+    /// <p>The version of the origin request policy that you are updating. The version is returned in the origin request policy’s <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
 impl UpdateOriginRequestPolicyInput {
@@ -16942,15 +16593,11 @@ impl UpdateOriginRequestPolicyInput {
     ) -> std::option::Option<&crate::model::OriginRequestPolicyConfig> {
         self.origin_request_policy_config.as_ref()
     }
-    /// <p>The unique identifier for the origin request policy that you are updating. The identifier is
-    /// returned in a cache behavior’s <code>OriginRequestPolicyId</code> field in the response
-    /// to <code>GetDistributionConfig</code>.</p>
+    /// <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior’s <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The version of the origin request policy that you are updating. The version is returned in
-    /// the origin request policy’s <code>ETag</code> field in the response to
-    /// <code>GetOriginRequestPolicyConfig</code>.</p>
+    /// <p>The version of the origin request policy that you are updating. The version is returned in the origin request policy’s <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -16976,8 +16623,7 @@ pub struct UpdateKeyGroupInput {
     pub key_group_config: std::option::Option<crate::model::KeyGroupConfig>,
     /// <p>The identifier of the key group that you are updating.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The version of the key group that you are updating. The version is the key group’s
-    /// <code>ETag</code> value.</p>
+    /// <p>The version of the key group that you are updating. The version is the key group’s <code>ETag</code> value.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
 impl UpdateKeyGroupInput {
@@ -16989,8 +16635,7 @@ impl UpdateKeyGroupInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The version of the key group that you are updating. The version is the key group’s
-    /// <code>ETag</code> value.</p>
+    /// <p>The version of the key group that you are updating. The version is the key group’s <code>ETag</code> value.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -17011,13 +16656,11 @@ impl std::fmt::Debug for UpdateKeyGroupInput {
 pub struct UpdateFunctionInput {
     /// <p>The name of the function that you are updating.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The current version (<code>ETag</code> value) of the function that you are updating, which
-    /// you can get using <code>DescribeFunction</code>.</p>
+    /// <p>The current version (<code>ETag</code> value) of the function that you are updating, which you can get using <code>DescribeFunction</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
     /// <p>Configuration information about the function.</p>
     pub function_config: std::option::Option<crate::model::FunctionConfig>,
-    /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function
-    /// code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub function_code: std::option::Option<aws_smithy_types::Blob>,
 }
 impl UpdateFunctionInput {
@@ -17025,8 +16668,7 @@ impl UpdateFunctionInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The current version (<code>ETag</code> value) of the function that you are updating, which
-    /// you can get using <code>DescribeFunction</code>.</p>
+    /// <p>The current version (<code>ETag</code> value) of the function that you are updating, which you can get using <code>DescribeFunction</code>.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -17034,8 +16676,7 @@ impl UpdateFunctionInput {
     pub fn function_config(&self) -> std::option::Option<&crate::model::FunctionConfig> {
         self.function_config.as_ref()
     }
-    /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function
-    /// code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn function_code(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.function_code.as_ref()
     }
@@ -17060,8 +16701,7 @@ pub struct UpdateFieldLevelEncryptionProfileInput {
         std::option::Option<crate::model::FieldLevelEncryptionProfileConfig>,
     /// <p>The ID of the field-level encryption profile request. </p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile identity to update.
-    /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
 impl UpdateFieldLevelEncryptionProfileInput {
@@ -17075,8 +16715,7 @@ impl UpdateFieldLevelEncryptionProfileInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile identity to update.
-    /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -17103,8 +16742,7 @@ pub struct UpdateFieldLevelEncryptionConfigInput {
         std::option::Option<crate::model::FieldLevelEncryptionConfig>,
     /// <p>The ID of the configuration you want to update.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update.
-    /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
 impl UpdateFieldLevelEncryptionConfigInput {
@@ -17118,8 +16756,7 @@ impl UpdateFieldLevelEncryptionConfigInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update.
-    /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -17145,8 +16782,7 @@ pub struct UpdateDistributionInput {
     pub distribution_config: std::option::Option<crate::model::DistributionConfig>,
     /// <p>The distribution's id.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-    /// distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
 impl UpdateDistributionInput {
@@ -17158,8 +16794,7 @@ impl UpdateDistributionInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-    /// distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -17183,8 +16818,7 @@ pub struct UpdateCloudFrontOriginAccessIdentityInput {
         std::option::Option<crate::model::CloudFrontOriginAccessIdentityConfig>,
     /// <p>The identity's id.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-    /// identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
 impl UpdateCloudFrontOriginAccessIdentityInput {
@@ -17198,8 +16832,7 @@ impl UpdateCloudFrontOriginAccessIdentityInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-    /// identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -17223,13 +16856,9 @@ impl std::fmt::Debug for UpdateCloudFrontOriginAccessIdentityInput {
 pub struct UpdateCachePolicyInput {
     /// <p>A cache policy configuration.</p>
     pub cache_policy_config: std::option::Option<crate::model::CachePolicyConfig>,
-    /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned
-    /// in a cache behavior’s <code>CachePolicyId</code> field in the response to
-    /// <code>GetDistributionConfig</code>.</p>
+    /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior’s <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The version of the cache policy that you are updating. The version is returned in the cache
-    /// policy’s <code>ETag</code> field in the response to
-    /// <code>GetCachePolicyConfig</code>.</p>
+    /// <p>The version of the cache policy that you are updating. The version is returned in the cache policy’s <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
 impl UpdateCachePolicyInput {
@@ -17237,15 +16866,11 @@ impl UpdateCachePolicyInput {
     pub fn cache_policy_config(&self) -> std::option::Option<&crate::model::CachePolicyConfig> {
         self.cache_policy_config.as_ref()
     }
-    /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned
-    /// in a cache behavior’s <code>CachePolicyId</code> field in the response to
-    /// <code>GetDistributionConfig</code>.</p>
+    /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior’s <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The version of the cache policy that you are updating. The version is returned in the cache
-    /// policy’s <code>ETag</code> field in the response to
-    /// <code>GetCachePolicyConfig</code>.</p>
+    /// <p>The version of the cache policy that you are updating. The version is returned in the cache policy’s <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -17294,14 +16919,11 @@ impl std::fmt::Debug for UntagResourceInput {
 pub struct TestFunctionInput {
     /// <p>The name of the function that you are testing.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The current version (<code>ETag</code> value) of the function that you are testing, which
-    /// you can get using <code>DescribeFunction</code>.</p>
+    /// <p>The current version (<code>ETag</code> value) of the function that you are testing, which you can get using <code>DescribeFunction</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
-    /// <p>The stage of the function that you are testing, either <code>DEVELOPMENT</code> or
-    /// <code>LIVE</code>.</p>
+    /// <p>The stage of the function that you are testing, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     pub stage: std::option::Option<crate::model::FunctionStage>,
-    /// <p>The event object to test the function with. For more information about the structure of the
-    /// event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>The event object to test the function with. For more information about the structure of the event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub event_object: std::option::Option<aws_smithy_types::Blob>,
 }
 impl TestFunctionInput {
@@ -17309,18 +16931,15 @@ impl TestFunctionInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The current version (<code>ETag</code> value) of the function that you are testing, which
-    /// you can get using <code>DescribeFunction</code>.</p>
+    /// <p>The current version (<code>ETag</code> value) of the function that you are testing, which you can get using <code>DescribeFunction</code>.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
-    /// <p>The stage of the function that you are testing, either <code>DEVELOPMENT</code> or
-    /// <code>LIVE</code>.</p>
+    /// <p>The stage of the function that you are testing, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     pub fn stage(&self) -> std::option::Option<&crate::model::FunctionStage> {
         self.stage.as_ref()
     }
-    /// <p>The event object to test the function with. For more information about the structure of the
-    /// event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>The event object to test the function with. For more information about the structure of the event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn event_object(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.event_object.as_ref()
     }
@@ -17370,8 +16989,7 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct PublishFunctionInput {
     /// <p>The name of the function that you are publishing.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The current version (<code>ETag</code> value) of the function that you are publishing, which
-    /// you can get using <code>DescribeFunction</code>.</p>
+    /// <p>The current version (<code>ETag</code> value) of the function that you are publishing, which you can get using <code>DescribeFunction</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
 impl PublishFunctionInput {
@@ -17379,8 +16997,7 @@ impl PublishFunctionInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The current version (<code>ETag</code> value) of the function that you are publishing, which
-    /// you can get using <code>DescribeFunction</code>.</p>
+    /// <p>The current version (<code>ETag</code> value) of the function that you are publishing, which you can get using <code>DescribeFunction</code>.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -17447,49 +17064,27 @@ impl std::fmt::Debug for ListStreamingDistributionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResponseHeadersPoliciesInput {
-    /// <p>A filter to get only the specified kind of response headers policies. Valid values
-    /// are:</p>
+    /// <p>A filter to get only the specified kind of response headers policies. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>custom</code> – Gets only the custom policies created in your
-    /// Amazon Web Services account.</p>
-    /// </li>
+    /// <li> <p> <code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p> </li>
+    /// <li> <p> <code>custom</code> – Gets only the custom policies created in your Amazon Web Services account.</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::ResponseHeadersPolicyType>,
-    /// <p>Use this field when paginating results to indicate where to begin in your list of response
-    /// headers policies. The response includes response headers policies in the list that occur
-    /// after the marker. To get the next page of the list, set this field’s value to the value
-    /// of <code>NextMarker</code> from the current page’s response. </p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of response headers policies. The response includes response headers policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response. </p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of response headers policies that you want to get in the response.</p>
     pub max_items: std::option::Option<i32>,
 }
 impl ListResponseHeadersPoliciesInput {
-    /// <p>A filter to get only the specified kind of response headers policies. Valid values
-    /// are:</p>
+    /// <p>A filter to get only the specified kind of response headers policies. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>custom</code> – Gets only the custom policies created in your
-    /// Amazon Web Services account.</p>
-    /// </li>
+    /// <li> <p> <code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p> </li>
+    /// <li> <p> <code>custom</code> – Gets only the custom policies created in your Amazon Web Services account.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ResponseHeadersPolicyType> {
         self.r#type.as_ref()
     }
-    /// <p>Use this field when paginating results to indicate where to begin in your list of response
-    /// headers policies. The response includes response headers policies in the list that occur
-    /// after the marker. To get the next page of the list, set this field’s value to the value
-    /// of <code>NextMarker</code> from the current page’s response. </p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of response headers policies. The response includes response headers policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -17514,10 +17109,7 @@ impl std::fmt::Debug for ListResponseHeadersPoliciesInput {
 pub struct ListRealtimeLogConfigsInput {
     /// <p>The maximum number of real-time log configurations that you want in the response.</p>
     pub max_items: std::option::Option<i32>,
-    /// <p>Use this field when paginating results to indicate where to begin in your list of real-time
-    /// log configurations. The response includes real-time log configurations in the list that
-    /// occur after the marker. To get the next page of the list, set this field’s value to the
-    /// value of <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl ListRealtimeLogConfigsInput {
@@ -17525,10 +17117,7 @@ impl ListRealtimeLogConfigsInput {
     pub fn max_items(&self) -> std::option::Option<i32> {
         self.max_items
     }
-    /// <p>Use this field when paginating results to indicate where to begin in your list of real-time
-    /// log configurations. The response includes real-time log configurations in the list that
-    /// occur after the marker. To get the next page of the list, set this field’s value to the
-    /// value of <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -17546,17 +17135,13 @@ impl std::fmt::Debug for ListRealtimeLogConfigsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPublicKeysInput {
-    /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that
-    /// occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the
-    /// <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page). </p>
+    /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page). </p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of public keys you want in the response body. </p>
     pub max_items: std::option::Option<i32>,
 }
 impl ListPublicKeysInput {
-    /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that
-    /// occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the
-    /// <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page). </p>
+    /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page). </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -17578,47 +17163,27 @@ impl std::fmt::Debug for ListPublicKeysInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOriginRequestPoliciesInput {
-    /// <p>A filter to return only the specified kinds of origin request policies. Valid values
-    /// are:</p>
+    /// <p>A filter to return only the specified kinds of origin request policies. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p>
-    /// </li>
+    /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li>
+    /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::OriginRequestPolicyType>,
-    /// <p>Use this field when paginating results to indicate where to begin in your list of
-    /// origin request policies. The response includes origin request policies in the list that
-    /// occur after the marker. To get the next page of the list, set this field’s value to the
-    /// value of <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of origin request policies that you want in the response.</p>
     pub max_items: std::option::Option<i32>,
 }
 impl ListOriginRequestPoliciesInput {
-    /// <p>A filter to return only the specified kinds of origin request policies. Valid values
-    /// are:</p>
+    /// <p>A filter to return only the specified kinds of origin request policies. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p>
-    /// </li>
+    /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li>
+    /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::OriginRequestPolicyType> {
         self.r#type.as_ref()
     }
-    /// <p>Use this field when paginating results to indicate where to begin in your list of
-    /// origin request policies. The response includes origin request policies in the list that
-    /// occur after the marker. To get the next page of the list, set this field’s value to the
-    /// value of <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -17641,19 +17206,13 @@ impl std::fmt::Debug for ListOriginRequestPoliciesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListKeyGroupsInput {
-    /// <p>Use this field when paginating results to indicate where to begin in your list of key
-    /// groups. The response includes key groups in the list that occur after the marker. To get
-    /// the next page of the list, set this field’s value to the value of
-    /// <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of key groups that you want in the response.</p>
     pub max_items: std::option::Option<i32>,
 }
 impl ListKeyGroupsInput {
-    /// <p>Use this field when paginating results to indicate where to begin in your list of key
-    /// groups. The response includes key groups in the list that occur after the marker. To get
-    /// the next page of the list, set this field’s value to the value of
-    /// <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -17677,15 +17236,9 @@ impl std::fmt::Debug for ListKeyGroupsInput {
 pub struct ListInvalidationsInput {
     /// <p>The distribution's ID.</p>
     pub distribution_id: std::option::Option<std::string::String>,
-    /// <p>Use this parameter when paginating results to indicate where to begin in your list of
-    /// invalidation batches. Because the results are returned in decreasing order from most recent to
-    /// oldest, the most recent results are on the first page, the second page will contain earlier
-    /// results, and so on. To get the next page of results, set <code>Marker</code> to the value of
-    /// the <code>NextMarker</code> from the current page's response. This value is the same as the ID
-    /// of the last invalidation batch on that page. </p>
+    /// <p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page. </p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>The maximum number of invalidation batches that you want in the response
-    /// body.</p>
+    /// <p>The maximum number of invalidation batches that you want in the response body.</p>
     pub max_items: std::option::Option<i32>,
 }
 impl ListInvalidationsInput {
@@ -17693,17 +17246,11 @@ impl ListInvalidationsInput {
     pub fn distribution_id(&self) -> std::option::Option<&str> {
         self.distribution_id.as_deref()
     }
-    /// <p>Use this parameter when paginating results to indicate where to begin in your list of
-    /// invalidation batches. Because the results are returned in decreasing order from most recent to
-    /// oldest, the most recent results are on the first page, the second page will contain earlier
-    /// results, and so on. To get the next page of results, set <code>Marker</code> to the value of
-    /// the <code>NextMarker</code> from the current page's response. This value is the same as the ID
-    /// of the last invalidation batch on that page. </p>
+    /// <p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>The maximum number of invalidation batches that you want in the response
-    /// body.</p>
+    /// <p>The maximum number of invalidation batches that you want in the response body.</p>
     pub fn max_items(&self) -> std::option::Option<i32> {
         self.max_items
     }
@@ -17722,22 +17269,15 @@ impl std::fmt::Debug for ListInvalidationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFunctionsInput {
-    /// <p>Use this field when paginating results to indicate where to begin in your list of
-    /// functions. The response includes functions in the list that occur after the marker. To
-    /// get the next page of the list, set this field’s value to the value of
-    /// <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of functions. The response includes functions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of functions that you want in the response.</p>
     pub max_items: std::option::Option<i32>,
-    /// <p>An optional filter to return only the functions that are in the specified stage,
-    /// either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+    /// <p>An optional filter to return only the functions that are in the specified stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     pub stage: std::option::Option<crate::model::FunctionStage>,
 }
 impl ListFunctionsInput {
-    /// <p>Use this field when paginating results to indicate where to begin in your list of
-    /// functions. The response includes functions in the list that occur after the marker. To
-    /// get the next page of the list, set this field’s value to the value of
-    /// <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of functions. The response includes functions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -17745,8 +17285,7 @@ impl ListFunctionsInput {
     pub fn max_items(&self) -> std::option::Option<i32> {
         self.max_items
     }
-    /// <p>An optional filter to return only the functions that are in the specified stage,
-    /// either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+    /// <p>An optional filter to return only the functions that are in the specified stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     pub fn stage(&self) -> std::option::Option<&crate::model::FunctionStage> {
         self.stage.as_ref()
     }
@@ -17765,17 +17304,13 @@ impl std::fmt::Debug for ListFunctionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFieldLevelEncryptionProfilesInput {
-    /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that
-    /// occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the
-    /// <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page). </p>
+    /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page). </p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of field-level encryption profiles you want in the response body. </p>
     pub max_items: std::option::Option<i32>,
 }
 impl ListFieldLevelEncryptionProfilesInput {
-    /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that
-    /// occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the
-    /// <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page). </p>
+    /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page). </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -17797,17 +17332,13 @@ impl std::fmt::Debug for ListFieldLevelEncryptionProfilesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFieldLevelEncryptionConfigsInput {
-    /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that
-    /// occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the
-    /// <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page). </p>
+    /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page). </p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of field-level encryption configurations you want in the response body. </p>
     pub max_items: std::option::Option<i32>,
 }
 impl ListFieldLevelEncryptionConfigsInput {
-    /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that
-    /// occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the
-    /// <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page). </p>
+    /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page). </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -17825,42 +17356,27 @@ impl std::fmt::Debug for ListFieldLevelEncryptionConfigsInput {
     }
 }
 
-/// <p>The request to list distributions that are associated with a specified WAF web
-/// ACL.</p>
+/// <p>The request to list distributions that are associated with a specified WAF web ACL.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionsByWebAclIdInput {
-    /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If
-    /// you have more than <code>MaxItems</code> distributions that satisfy the request, the response
-    /// includes a <code>NextMarker</code> element. To get the next page of results, submit another
-    /// request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code>
-    /// from the last response. (For the first request, omit <code>Marker</code>.) </p>
+    /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.) </p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>The maximum number of distributions that you want CloudFront to return in the response body.
-    /// The maximum and default values are both 100.</p>
+    /// <p>The maximum number of distributions that you want CloudFront to return in the response body. The maximum and default values are both 100.</p>
     pub max_items: std::option::Option<i32>,
-    /// <p>The ID of the WAF web ACL that you want to list the associated distributions.
-    /// If you specify "null" for the ID, the request returns a list of the distributions that aren't
-    /// associated with a web ACL.</p>
+    /// <p>The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for the ID, the request returns a list of the distributions that aren't associated with a web ACL.</p>
     pub web_acl_id: std::option::Option<std::string::String>,
 }
 impl ListDistributionsByWebAclIdInput {
-    /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If
-    /// you have more than <code>MaxItems</code> distributions that satisfy the request, the response
-    /// includes a <code>NextMarker</code> element. To get the next page of results, submit another
-    /// request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code>
-    /// from the last response. (For the first request, omit <code>Marker</code>.) </p>
+    /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.) </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>The maximum number of distributions that you want CloudFront to return in the response body.
-    /// The maximum and default values are both 100.</p>
+    /// <p>The maximum number of distributions that you want CloudFront to return in the response body. The maximum and default values are both 100.</p>
     pub fn max_items(&self) -> std::option::Option<i32> {
         self.max_items
     }
-    /// <p>The ID of the WAF web ACL that you want to list the associated distributions.
-    /// If you specify "null" for the ID, the request returns a list of the distributions that aren't
-    /// associated with a web ACL.</p>
+    /// <p>The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for the ID, the request returns a list of the distributions that aren't associated with a web ACL.</p>
     pub fn web_acl_id(&self) -> std::option::Option<&str> {
         self.web_acl_id.as_deref()
     }
@@ -17879,22 +17395,15 @@ impl std::fmt::Debug for ListDistributionsByWebAclIdInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionsByResponseHeadersPolicyIdInput {
-    /// <p>Use this field when paginating results to indicate where to begin in your list of
-    /// distribution IDs. The response includes distribution IDs in the list that occur after
-    /// the marker. To get the next page of the list, set this field’s value to the value of
-    /// <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of distribution IDs that you want to get in the response.</p>
     pub max_items: std::option::Option<i32>,
-    /// <p>The ID of the response headers policy whose associated distribution IDs you want to
-    /// list.</p>
+    /// <p>The ID of the response headers policy whose associated distribution IDs you want to list.</p>
     pub response_headers_policy_id: std::option::Option<std::string::String>,
 }
 impl ListDistributionsByResponseHeadersPolicyIdInput {
-    /// <p>Use this field when paginating results to indicate where to begin in your list of
-    /// distribution IDs. The response includes distribution IDs in the list that occur after
-    /// the marker. To get the next page of the list, set this field’s value to the value of
-    /// <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -17902,8 +17411,7 @@ impl ListDistributionsByResponseHeadersPolicyIdInput {
     pub fn max_items(&self) -> std::option::Option<i32> {
         self.max_items
     }
-    /// <p>The ID of the response headers policy whose associated distribution IDs you want to
-    /// list.</p>
+    /// <p>The ID of the response headers policy whose associated distribution IDs you want to list.</p>
     pub fn response_headers_policy_id(&self) -> std::option::Option<&str> {
         self.response_headers_policy_id.as_deref()
     }
@@ -17925,25 +17433,17 @@ impl std::fmt::Debug for ListDistributionsByResponseHeadersPolicyIdInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionsByRealtimeLogConfigInput {
-    /// <p>Use this field when paginating results to indicate where to begin in your list of
-    /// distributions. The response includes distributions in the list that occur after the
-    /// marker. To get the next page of the list, set this field’s value to the value of
-    /// <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of distributions that you want in the response.</p>
     pub max_items: std::option::Option<i32>,
-    /// <p>The name of the real-time log configuration whose associated distributions you want to
-    /// list.</p>
+    /// <p>The name of the real-time log configuration whose associated distributions you want to list.</p>
     pub realtime_log_config_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated
-    /// distributions you want to list.</p>
+    /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated distributions you want to list.</p>
     pub realtime_log_config_arn: std::option::Option<std::string::String>,
 }
 impl ListDistributionsByRealtimeLogConfigInput {
-    /// <p>Use this field when paginating results to indicate where to begin in your list of
-    /// distributions. The response includes distributions in the list that occur after the
-    /// marker. To get the next page of the list, set this field’s value to the value of
-    /// <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -17951,13 +17451,11 @@ impl ListDistributionsByRealtimeLogConfigInput {
     pub fn max_items(&self) -> std::option::Option<i32> {
         self.max_items
     }
-    /// <p>The name of the real-time log configuration whose associated distributions you want to
-    /// list.</p>
+    /// <p>The name of the real-time log configuration whose associated distributions you want to list.</p>
     pub fn realtime_log_config_name(&self) -> std::option::Option<&str> {
         self.realtime_log_config_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated
-    /// distributions you want to list.</p>
+    /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated distributions you want to list.</p>
     pub fn realtime_log_config_arn(&self) -> std::option::Option<&str> {
         self.realtime_log_config_arn.as_deref()
     }
@@ -17977,22 +17475,15 @@ impl std::fmt::Debug for ListDistributionsByRealtimeLogConfigInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionsByOriginRequestPolicyIdInput {
-    /// <p>Use this field when paginating results to indicate where to begin in your list of
-    /// distribution IDs. The response includes distribution IDs in the list that occur after
-    /// the marker. To get the next page of the list, set this field’s value to the value of
-    /// <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of distribution IDs that you want in the response.</p>
     pub max_items: std::option::Option<i32>,
-    /// <p>The ID of the origin request policy whose associated distribution IDs you want to
-    /// list.</p>
+    /// <p>The ID of the origin request policy whose associated distribution IDs you want to list.</p>
     pub origin_request_policy_id: std::option::Option<std::string::String>,
 }
 impl ListDistributionsByOriginRequestPolicyIdInput {
-    /// <p>Use this field when paginating results to indicate where to begin in your list of
-    /// distribution IDs. The response includes distribution IDs in the list that occur after
-    /// the marker. To get the next page of the list, set this field’s value to the value of
-    /// <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -18000,8 +17491,7 @@ impl ListDistributionsByOriginRequestPolicyIdInput {
     pub fn max_items(&self) -> std::option::Option<i32> {
         self.max_items
     }
-    /// <p>The ID of the origin request policy whose associated distribution IDs you want to
-    /// list.</p>
+    /// <p>The ID of the origin request policy whose associated distribution IDs you want to list.</p>
     pub fn origin_request_policy_id(&self) -> std::option::Option<&str> {
         self.origin_request_policy_id.as_deref()
     }
@@ -18020,10 +17510,7 @@ impl std::fmt::Debug for ListDistributionsByOriginRequestPolicyIdInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionsByKeyGroupInput {
-    /// <p>Use this field when paginating results to indicate where to begin in your list of
-    /// distribution IDs. The response includes distribution IDs in the list that occur after
-    /// the marker. To get the next page of the list, set this field’s value to the value of
-    /// <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of distribution IDs that you want in the response.</p>
     pub max_items: std::option::Option<i32>,
@@ -18031,10 +17518,7 @@ pub struct ListDistributionsByKeyGroupInput {
     pub key_group_id: std::option::Option<std::string::String>,
 }
 impl ListDistributionsByKeyGroupInput {
-    /// <p>Use this field when paginating results to indicate where to begin in your list of
-    /// distribution IDs. The response includes distribution IDs in the list that occur after
-    /// the marker. To get the next page of the list, set this field’s value to the value of
-    /// <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -18061,10 +17545,7 @@ impl std::fmt::Debug for ListDistributionsByKeyGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionsByCachePolicyIdInput {
-    /// <p>Use this field when paginating results to indicate where to begin in your list of
-    /// distribution IDs. The response includes distribution IDs in the list that occur after
-    /// the marker. To get the next page of the list, set this field’s value to the value of
-    /// <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of distribution IDs that you want in the response.</p>
     pub max_items: std::option::Option<i32>,
@@ -18072,10 +17553,7 @@ pub struct ListDistributionsByCachePolicyIdInput {
     pub cache_policy_id: std::option::Option<std::string::String>,
 }
 impl ListDistributionsByCachePolicyIdInput {
-    /// <p>Use this field when paginating results to indicate where to begin in your list of
-    /// distribution IDs. The response includes distribution IDs in the list that occur after
-    /// the marker. To get the next page of the list, set this field’s value to the value of
-    /// <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -18102,21 +17580,13 @@ impl std::fmt::Debug for ListDistributionsByCachePolicyIdInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionsInput {
-    /// <p>Use this when paginating results to indicate where to begin in your list of
-    /// distributions. The results include distributions in the list that occur after the marker. To
-    /// get the next page of results, set the <code>Marker</code> to the value of the
-    /// <code>NextMarker</code> from the current page's response (which is also the ID of the last
-    /// distribution on that page).</p>
+    /// <p>Use this when paginating results to indicate where to begin in your list of distributions. The results include distributions in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last distribution on that page).</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of distributions you want in the response body.</p>
     pub max_items: std::option::Option<i32>,
 }
 impl ListDistributionsInput {
-    /// <p>Use this when paginating results to indicate where to begin in your list of
-    /// distributions. The results include distributions in the list that occur after the marker. To
-    /// get the next page of results, set the <code>Marker</code> to the value of the
-    /// <code>NextMarker</code> from the current page's response (which is also the ID of the last
-    /// distribution on that page).</p>
+    /// <p>Use this when paginating results to indicate where to begin in your list of distributions. The results include distributions in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last distribution on that page).</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -18138,22 +17608,17 @@ impl std::fmt::Debug for ListDistributionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConflictingAliasesInput {
-    /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that
-    /// includes the provided alias.</p>
+    /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that includes the provided alias.</p>
     pub distribution_id: std::option::Option<std::string::String>,
     /// <p>The alias (also called a CNAME) to search for conflicting aliases.</p>
     pub alias: std::option::Option<std::string::String>,
-    /// <p>Use this field when paginating results to indicate where to begin in the list of
-    /// conflicting aliases. The response includes conflicting aliases in the list that occur
-    /// after the marker. To get the next page of the list, set this field’s value to the value
-    /// of <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of conflicting aliases that you want in the response.</p>
     pub max_items: std::option::Option<i32>,
 }
 impl ListConflictingAliasesInput {
-    /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that
-    /// includes the provided alias.</p>
+    /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that includes the provided alias.</p>
     pub fn distribution_id(&self) -> std::option::Option<&str> {
         self.distribution_id.as_deref()
     }
@@ -18161,10 +17626,7 @@ impl ListConflictingAliasesInput {
     pub fn alias(&self) -> std::option::Option<&str> {
         self.alias.as_deref()
     }
-    /// <p>Use this field when paginating results to indicate where to begin in the list of
-    /// conflicting aliases. The response includes conflicting aliases in the list that occur
-    /// after the marker. To get the next page of the list, set this field’s value to the value
-    /// of <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -18188,27 +17650,17 @@ impl std::fmt::Debug for ListConflictingAliasesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCloudFrontOriginAccessIdentitiesInput {
-    /// <p>Use this when paginating results to indicate where to begin in your list of origin
-    /// access identities. The results include identities in the list that occur after the marker. To
-    /// get the next page of results, set the <code>Marker</code> to the value of the
-    /// <code>NextMarker</code> from the current page's response (which is also the ID of the last
-    /// identity on that page).</p>
+    /// <p>Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last identity on that page).</p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>The maximum number of origin access identities you want in the response body.
-    /// </p>
+    /// <p>The maximum number of origin access identities you want in the response body. </p>
     pub max_items: std::option::Option<i32>,
 }
 impl ListCloudFrontOriginAccessIdentitiesInput {
-    /// <p>Use this when paginating results to indicate where to begin in your list of origin
-    /// access identities. The results include identities in the list that occur after the marker. To
-    /// get the next page of results, set the <code>Marker</code> to the value of the
-    /// <code>NextMarker</code> from the current page's response (which is also the ID of the last
-    /// identity on that page).</p>
+    /// <p>Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last identity on that page).</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>The maximum number of origin access identities you want in the response body.
-    /// </p>
+    /// <p>The maximum number of origin access identities you want in the response body. </p>
     pub fn max_items(&self) -> std::option::Option<i32> {
         self.max_items
     }
@@ -18226,47 +17678,27 @@ impl std::fmt::Debug for ListCloudFrontOriginAccessIdentitiesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCachePoliciesInput {
-    /// <p>A filter to return only the specified kinds of cache policies. Valid values
-    /// are:</p>
+    /// <p>A filter to return only the specified kinds of cache policies. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p>
-    /// </li>
+    /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li>
+    /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::CachePolicyType>,
-    /// <p>Use this field when paginating results to indicate where to begin in your list of
-    /// cache policies. The response includes cache policies in the list that occur after the
-    /// marker. To get the next page of the list, set this field’s value to the value of
-    /// <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of cache policies. The response includes cache policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of cache policies that you want in the response.</p>
     pub max_items: std::option::Option<i32>,
 }
 impl ListCachePoliciesInput {
-    /// <p>A filter to return only the specified kinds of cache policies. Valid values
-    /// are:</p>
+    /// <p>A filter to return only the specified kinds of cache policies. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p>
-    /// </li>
+    /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li>
+    /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::CachePolicyType> {
         self.r#type.as_ref()
     }
-    /// <p>Use this field when paginating results to indicate where to begin in your list of
-    /// cache policies. The response includes cache policies in the list that occur after the
-    /// marker. To get the next page of the list, set this field’s value to the value of
-    /// <code>NextMarker</code> from the current page’s response.</p>
+    /// <p>Use this field when paginating results to indicate where to begin in your list of cache policies. The response includes cache policies in the list that occur after the marker. To get the next page of the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -18332,20 +17764,12 @@ impl std::fmt::Debug for GetStreamingDistributionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResponseHeadersPolicyConfigInput {
     /// <p>The identifier for the response headers policy.</p>
-    /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can
-    /// get the policy’s identifier using <code>ListDistributions</code> or
-    /// <code>GetDistribution</code>. If the response headers policy is not attached to a
-    /// cache behavior, you can get the identifier using
-    /// <code>ListResponseHeadersPolicies</code>.</p>
+    /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
     pub id: std::option::Option<std::string::String>,
 }
 impl GetResponseHeadersPolicyConfigInput {
     /// <p>The identifier for the response headers policy.</p>
-    /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can
-    /// get the policy’s identifier using <code>ListDistributions</code> or
-    /// <code>GetDistribution</code>. If the response headers policy is not attached to a
-    /// cache behavior, you can get the identifier using
-    /// <code>ListResponseHeadersPolicies</code>.</p>
+    /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -18363,20 +17787,12 @@ impl std::fmt::Debug for GetResponseHeadersPolicyConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResponseHeadersPolicyInput {
     /// <p>The identifier for the response headers policy.</p>
-    /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can
-    /// get the policy’s identifier using <code>ListDistributions</code> or
-    /// <code>GetDistribution</code>. If the response headers policy is not attached to a
-    /// cache behavior, you can get the identifier using
-    /// <code>ListResponseHeadersPolicies</code>.</p>
+    /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
     pub id: std::option::Option<std::string::String>,
 }
 impl GetResponseHeadersPolicyInput {
     /// <p>The identifier for the response headers policy.</p>
-    /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can
-    /// get the policy’s identifier using <code>ListDistributions</code> or
-    /// <code>GetDistribution</code>. If the response headers policy is not attached to a
-    /// cache behavior, you can get the identifier using
-    /// <code>ListResponseHeadersPolicies</code>.</p>
+    /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -18463,19 +17879,11 @@ impl std::fmt::Debug for GetPublicKeyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOriginRequestPolicyConfigInput {
-    /// <p>The unique identifier for the origin request policy. If the origin request policy is
-    /// attached to a distribution’s cache behavior, you can get the policy’s identifier using
-    /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request
-    /// policy is not attached to a cache behavior, you can get the identifier using
-    /// <code>ListOriginRequestPolicies</code>.</p>
+    /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
     pub id: std::option::Option<std::string::String>,
 }
 impl GetOriginRequestPolicyConfigInput {
-    /// <p>The unique identifier for the origin request policy. If the origin request policy is
-    /// attached to a distribution’s cache behavior, you can get the policy’s identifier using
-    /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request
-    /// policy is not attached to a cache behavior, you can get the identifier using
-    /// <code>ListOriginRequestPolicies</code>.</p>
+    /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -18492,19 +17900,11 @@ impl std::fmt::Debug for GetOriginRequestPolicyConfigInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOriginRequestPolicyInput {
-    /// <p>The unique identifier for the origin request policy. If the origin request policy is
-    /// attached to a distribution’s cache behavior, you can get the policy’s identifier using
-    /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request
-    /// policy is not attached to a cache behavior, you can get the identifier using
-    /// <code>ListOriginRequestPolicies</code>.</p>
+    /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
     pub id: std::option::Option<std::string::String>,
 }
 impl GetOriginRequestPolicyInput {
-    /// <p>The unique identifier for the origin request policy. If the origin request policy is
-    /// attached to a distribution’s cache behavior, you can get the policy’s identifier using
-    /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request
-    /// policy is not attached to a cache behavior, you can get the identifier using
-    /// <code>ListOriginRequestPolicies</code>.</p>
+    /// <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -18542,13 +17942,11 @@ impl std::fmt::Debug for GetMonitoringSubscriptionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetKeyGroupConfigInput {
-    /// <p>The identifier of the key group whose configuration you are getting. To get the
-    /// identifier, use <code>ListKeyGroups</code>.</p>
+    /// <p>The identifier of the key group whose configuration you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
     pub id: std::option::Option<std::string::String>,
 }
 impl GetKeyGroupConfigInput {
-    /// <p>The identifier of the key group whose configuration you are getting. To get the
-    /// identifier, use <code>ListKeyGroups</code>.</p>
+    /// <p>The identifier of the key group whose configuration you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -18565,13 +17963,11 @@ impl std::fmt::Debug for GetKeyGroupConfigInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetKeyGroupInput {
-    /// <p>The identifier of the key group that you are getting. To get the identifier, use
-    /// <code>ListKeyGroups</code>.</p>
+    /// <p>The identifier of the key group that you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
     pub id: std::option::Option<std::string::String>,
 }
 impl GetKeyGroupInput {
-    /// <p>The identifier of the key group that you are getting. To get the identifier, use
-    /// <code>ListKeyGroups</code>.</p>
+    /// <p>The identifier of the key group that you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -18590,8 +17986,7 @@ impl std::fmt::Debug for GetKeyGroupInput {
 pub struct GetInvalidationInput {
     /// <p>The distribution's ID.</p>
     pub distribution_id: std::option::Option<std::string::String>,
-    /// <p>The identifier for the invalidation request, for example,
-    /// <code>IDFDVBD632BHDS5</code>.</p>
+    /// <p>The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.</p>
     pub id: std::option::Option<std::string::String>,
 }
 impl GetInvalidationInput {
@@ -18599,8 +17994,7 @@ impl GetInvalidationInput {
     pub fn distribution_id(&self) -> std::option::Option<&str> {
         self.distribution_id.as_deref()
     }
-    /// <p>The identifier for the invalidation request, for example,
-    /// <code>IDFDVBD632BHDS5</code>.</p>
+    /// <p>The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -18768,8 +18162,7 @@ impl std::fmt::Debug for GetDistributionInput {
     }
 }
 
-/// <p>The origin access identity's configuration information. For more information, see
-/// <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CloudFrontOriginAccessIdentityConfig.html">CloudFrontOriginAccessIdentityConfig</a>.</p>
+/// <p>The origin access identity's configuration information. For more information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CloudFrontOriginAccessIdentityConfig.html">CloudFrontOriginAccessIdentityConfig</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCloudFrontOriginAccessIdentityConfigInput {
@@ -18815,19 +18208,11 @@ impl std::fmt::Debug for GetCloudFrontOriginAccessIdentityInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCachePolicyConfigInput {
-    /// <p>The unique identifier for the cache policy. If the cache policy is attached to a
-    /// distribution’s cache behavior, you can get the policy’s identifier using
-    /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is
-    /// not attached to a cache behavior, you can get the identifier using
-    /// <code>ListCachePolicies</code>.</p>
+    /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
     pub id: std::option::Option<std::string::String>,
 }
 impl GetCachePolicyConfigInput {
-    /// <p>The unique identifier for the cache policy. If the cache policy is attached to a
-    /// distribution’s cache behavior, you can get the policy’s identifier using
-    /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is
-    /// not attached to a cache behavior, you can get the identifier using
-    /// <code>ListCachePolicies</code>.</p>
+    /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -18844,19 +18229,11 @@ impl std::fmt::Debug for GetCachePolicyConfigInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCachePolicyInput {
-    /// <p>The unique identifier for the cache policy. If the cache policy is attached to a
-    /// distribution’s cache behavior, you can get the policy’s identifier using
-    /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is
-    /// not attached to a cache behavior, you can get the identifier using
-    /// <code>ListCachePolicies</code>.</p>
+    /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
     pub id: std::option::Option<std::string::String>,
 }
 impl GetCachePolicyInput {
-    /// <p>The unique identifier for the cache policy. If the cache policy is attached to a
-    /// distribution’s cache behavior, you can get the policy’s identifier using
-    /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is
-    /// not attached to a cache behavior, you can get the identifier using
-    /// <code>ListCachePolicies</code>.</p>
+    /// <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -18903,8 +18280,7 @@ impl std::fmt::Debug for DescribeFunctionInput {
 pub struct DeleteStreamingDistributionInput {
     /// <p>The distribution ID. </p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The value of the <code>ETag</code> header that you received when you disabled the
-    /// streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The value of the <code>ETag</code> header that you received when you disabled the streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
 impl DeleteStreamingDistributionInput {
@@ -18912,8 +18288,7 @@ impl DeleteStreamingDistributionInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The value of the <code>ETag</code> header that you received when you disabled the
-    /// streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The value of the <code>ETag</code> header that you received when you disabled the streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -18935,10 +18310,7 @@ pub struct DeleteResponseHeadersPolicyInput {
     /// <p>To get the identifier, you can use <code>ListResponseHeadersPolicies</code>.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The version of the response headers policy that you are deleting.</p>
-    /// <p>The version is the response headers policy’s <code>ETag</code> value, which you can
-    /// get using <code>ListResponseHeadersPolicies</code>,
-    /// <code>GetResponseHeadersPolicy</code>, or
-    /// <code>GetResponseHeadersPolicyConfig</code>.</p>
+    /// <p>The version is the response headers policy’s <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
 impl DeleteResponseHeadersPolicyInput {
@@ -18948,10 +18320,7 @@ impl DeleteResponseHeadersPolicyInput {
         self.id.as_deref()
     }
     /// <p>The version of the response headers policy that you are deleting.</p>
-    /// <p>The version is the response headers policy’s <code>ETag</code> value, which you can
-    /// get using <code>ListResponseHeadersPolicies</code>,
-    /// <code>GetResponseHeadersPolicy</code>, or
-    /// <code>GetResponseHeadersPolicyConfig</code>.</p>
+    /// <p>The version is the response headers policy’s <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -18999,8 +18368,7 @@ impl std::fmt::Debug for DeleteRealtimeLogConfigInput {
 pub struct DeletePublicKeyInput {
     /// <p>The ID of the public key you want to remove from CloudFront.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-    /// public key identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
 impl DeletePublicKeyInput {
@@ -19008,8 +18376,7 @@ impl DeletePublicKeyInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-    /// public key identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -19027,25 +18394,17 @@ impl std::fmt::Debug for DeletePublicKeyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteOriginRequestPolicyInput {
-    /// <p>The unique identifier for the origin request policy that you are deleting. To get the
-    /// identifier, you can use <code>ListOriginRequestPolicies</code>.</p>
+    /// <p>The unique identifier for the origin request policy that you are deleting. To get the identifier, you can use <code>ListOriginRequestPolicies</code>.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The version of the origin request policy that you are deleting. The version is the origin
-    /// request policy’s <code>ETag</code> value, which you can get using
-    /// <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or
-    /// <code>GetOriginRequestPolicyConfig</code>.</p>
+    /// <p>The version of the origin request policy that you are deleting. The version is the origin request policy’s <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
 impl DeleteOriginRequestPolicyInput {
-    /// <p>The unique identifier for the origin request policy that you are deleting. To get the
-    /// identifier, you can use <code>ListOriginRequestPolicies</code>.</p>
+    /// <p>The unique identifier for the origin request policy that you are deleting. To get the identifier, you can use <code>ListOriginRequestPolicies</code>.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The version of the origin request policy that you are deleting. The version is the origin
-    /// request policy’s <code>ETag</code> value, which you can get using
-    /// <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or
-    /// <code>GetOriginRequestPolicyConfig</code>.</p>
+    /// <p>The version of the origin request policy that you are deleting. The version is the origin request policy’s <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -19084,23 +18443,17 @@ impl std::fmt::Debug for DeleteMonitoringSubscriptionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteKeyGroupInput {
-    /// <p>The identifier of the key group that you are deleting. To get the identifier, use
-    /// <code>ListKeyGroups</code>.</p>
+    /// <p>The identifier of the key group that you are deleting. To get the identifier, use <code>ListKeyGroups</code>.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The version of the key group that you are deleting. The version is the key group’s
-    /// <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or
-    /// <code>GetKeyGroupConfig</code>.</p>
+    /// <p>The version of the key group that you are deleting. The version is the key group’s <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
 impl DeleteKeyGroupInput {
-    /// <p>The identifier of the key group that you are deleting. To get the identifier, use
-    /// <code>ListKeyGroups</code>.</p>
+    /// <p>The identifier of the key group that you are deleting. To get the identifier, use <code>ListKeyGroups</code>.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The version of the key group that you are deleting. The version is the key group’s
-    /// <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or
-    /// <code>GetKeyGroupConfig</code>.</p>
+    /// <p>The version of the key group that you are deleting. The version is the key group’s <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -19120,8 +18473,7 @@ impl std::fmt::Debug for DeleteKeyGroupInput {
 pub struct DeleteFunctionInput {
     /// <p>The name of the function that you are deleting.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The current version (<code>ETag</code> value) of the function that you are deleting, which
-    /// you can get using <code>DescribeFunction</code>.</p>
+    /// <p>The current version (<code>ETag</code> value) of the function that you are deleting, which you can get using <code>DescribeFunction</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
 impl DeleteFunctionInput {
@@ -19129,8 +18481,7 @@ impl DeleteFunctionInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The current version (<code>ETag</code> value) of the function that you are deleting, which
-    /// you can get using <code>DescribeFunction</code>.</p>
+    /// <p>The current version (<code>ETag</code> value) of the function that you are deleting, which you can get using <code>DescribeFunction</code>.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -19150,8 +18501,7 @@ impl std::fmt::Debug for DeleteFunctionInput {
 pub struct DeleteFieldLevelEncryptionProfileInput {
     /// <p>Request the ID of the profile you want to delete from CloudFront.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-    /// profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
 impl DeleteFieldLevelEncryptionProfileInput {
@@ -19159,8 +18509,7 @@ impl DeleteFieldLevelEncryptionProfileInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-    /// profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -19180,8 +18529,7 @@ impl std::fmt::Debug for DeleteFieldLevelEncryptionProfileInput {
 pub struct DeleteFieldLevelEncryptionConfigInput {
     /// <p>The ID of the configuration you want to delete from CloudFront.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-    /// configuration identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
 impl DeleteFieldLevelEncryptionConfigInput {
@@ -19189,8 +18537,7 @@ impl DeleteFieldLevelEncryptionConfigInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The value of the <code>ETag</code> header that you received when retrieving the
-    /// configuration identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -19204,60 +18551,25 @@ impl std::fmt::Debug for DeleteFieldLevelEncryptionConfigInput {
     }
 }
 
-/// <p>This action deletes a web distribution. To delete a web distribution using the CloudFront
-/// API, perform the following steps.</p>
-/// <p>
-/// <b>To delete a web distribution using the CloudFront API:</b>
-/// </p>
+/// <p>This action deletes a web distribution. To delete a web distribution using the CloudFront API, perform the following steps.</p>
+/// <p> <b>To delete a web distribution using the CloudFront API:</b> </p>
 /// <ol>
-/// <li>
-/// <p>Disable the web distribution </p>
-/// </li>
-/// <li>
-/// <p>Submit a <code>GET Distribution Config</code> request to get the current
-/// configuration and the <code>Etag</code> header for the distribution.</p>
-/// </li>
-/// <li>
-/// <p>Update the XML document that was returned in the response to your <code>GET
-/// Distribution Config</code> request to change the value of <code>Enabled</code> to
-/// <code>false</code>.</p>
-/// </li>
-/// <li>
-/// <p>Submit a <code>PUT Distribution Config</code> request to update the configuration
-/// for your distribution. In the request body, include the XML document that you updated in
-/// Step 3. Set the value of the HTTP <code>If-Match</code> header to the value of the
-/// <code>ETag</code> header that CloudFront returned when you submitted the <code>GET
-/// Distribution Config</code> request in Step 2.</p>
-/// </li>
-/// <li>
-/// <p>Review the response to the <code>PUT Distribution Config</code> request to confirm
-/// that the distribution was successfully disabled.</p>
-/// </li>
-/// <li>
-/// <p>Submit a <code>GET Distribution</code> request to confirm that your changes have
-/// propagated. When propagation is complete, the value of <code>Status</code> is
-/// <code>Deployed</code>.</p>
-/// </li>
-/// <li>
-/// <p>Submit a <code>DELETE Distribution</code> request. Set the value of the HTTP
-/// <code>If-Match</code> header to the value of the <code>ETag</code> header that CloudFront
-/// returned when you submitted the <code>GET Distribution Config</code> request in Step
-/// 6.</p>
-/// </li>
-/// <li>
-/// <p>Review the response to your <code>DELETE Distribution</code> request to confirm
-/// that the distribution was successfully deleted.</p>
-/// </li>
+/// <li> <p>Disable the web distribution </p> </li>
+/// <li> <p>Submit a <code>GET Distribution Config</code> request to get the current configuration and the <code>Etag</code> header for the distribution.</p> </li>
+/// <li> <p>Update the XML document that was returned in the response to your <code>GET Distribution Config</code> request to change the value of <code>Enabled</code> to <code>false</code>.</p> </li>
+/// <li> <p>Submit a <code>PUT Distribution Config</code> request to update the configuration for your distribution. In the request body, include the XML document that you updated in Step 3. Set the value of the HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header that CloudFront returned when you submitted the <code>GET Distribution Config</code> request in Step 2.</p> </li>
+/// <li> <p>Review the response to the <code>PUT Distribution Config</code> request to confirm that the distribution was successfully disabled.</p> </li>
+/// <li> <p>Submit a <code>GET Distribution</code> request to confirm that your changes have propagated. When propagation is complete, the value of <code>Status</code> is <code>Deployed</code>.</p> </li>
+/// <li> <p>Submit a <code>DELETE Distribution</code> request. Set the value of the HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header that CloudFront returned when you submitted the <code>GET Distribution Config</code> request in Step 6.</p> </li>
+/// <li> <p>Review the response to your <code>DELETE Distribution</code> request to confirm that the distribution was successfully deleted.</p> </li>
 /// </ol>
-/// <p>For information about deleting a distribution using the CloudFront console, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html">Deleting a Distribution</a> in the
-/// <i>Amazon CloudFront Developer Guide</i>.</p>
+/// <p>For information about deleting a distribution using the CloudFront console, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html">Deleting a Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDistributionInput {
     /// <p>The distribution ID. </p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The value of the <code>ETag</code> header that you received when you disabled the
-    /// distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
+    /// <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
     pub if_match: std::option::Option<std::string::String>,
 }
 impl DeleteDistributionInput {
@@ -19265,8 +18577,7 @@ impl DeleteDistributionInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The value of the <code>ETag</code> header that you received when you disabled the
-    /// distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
+    /// <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -19286,8 +18597,7 @@ impl std::fmt::Debug for DeleteDistributionInput {
 pub struct DeleteCloudFrontOriginAccessIdentityInput {
     /// <p>The origin access identity's ID.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The value of the <code>ETag</code> header you received from a previous <code>GET</code>
-    /// or <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The value of the <code>ETag</code> header you received from a previous <code>GET</code> or <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
 impl DeleteCloudFrontOriginAccessIdentityInput {
@@ -19295,8 +18605,7 @@ impl DeleteCloudFrontOriginAccessIdentityInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The value of the <code>ETag</code> header you received from a previous <code>GET</code>
-    /// or <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    /// <p>The value of the <code>ETag</code> header you received from a previous <code>GET</code> or <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -19314,25 +18623,17 @@ impl std::fmt::Debug for DeleteCloudFrontOriginAccessIdentityInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCachePolicyInput {
-    /// <p>The unique identifier for the cache policy that you are deleting. To get the
-    /// identifier, you can use <code>ListCachePolicies</code>.</p>
+    /// <p>The unique identifier for the cache policy that you are deleting. To get the identifier, you can use <code>ListCachePolicies</code>.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The version of the cache policy that you are deleting. The version is the cache
-    /// policy’s <code>ETag</code> value, which you can get using
-    /// <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or
-    /// <code>GetCachePolicyConfig</code>.</p>
+    /// <p>The version of the cache policy that you are deleting. The version is the cache policy’s <code>ETag</code> value, which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or <code>GetCachePolicyConfig</code>.</p>
     pub if_match: std::option::Option<std::string::String>,
 }
 impl DeleteCachePolicyInput {
-    /// <p>The unique identifier for the cache policy that you are deleting. To get the
-    /// identifier, you can use <code>ListCachePolicies</code>.</p>
+    /// <p>The unique identifier for the cache policy that you are deleting. To get the identifier, you can use <code>ListCachePolicies</code>.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The version of the cache policy that you are deleting. The version is the cache
-    /// policy’s <code>ETag</code> value, which you can get using
-    /// <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or
-    /// <code>GetCachePolicyConfig</code>.</p>
+    /// <p>The version of the cache policy that you are deleting. The version is the cache policy’s <code>ETag</code> value, which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or <code>GetCachePolicyConfig</code>.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -19404,14 +18705,12 @@ impl std::fmt::Debug for CreateStreamingDistributionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResponseHeadersPolicyInput {
-    /// <p>Contains metadata about the response headers policy, and a set of configurations that
-    /// specify the response headers.</p>
+    /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the response headers.</p>
     pub response_headers_policy_config:
         std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
 }
 impl CreateResponseHeadersPolicyInput {
-    /// <p>Contains metadata about the response headers policy, and a set of configurations that
-    /// specify the response headers.</p>
+    /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the response headers.</p>
     pub fn response_headers_policy_config(
         &self,
     ) -> std::option::Option<&crate::model::ResponseHeadersPolicyConfig> {
@@ -19433,29 +18732,23 @@ impl std::fmt::Debug for CreateResponseHeadersPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRealtimeLogConfigInput {
-    /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time
-    /// log data.</p>
+    /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
     pub end_points: std::option::Option<std::vec::Vec<crate::model::EndPoint>>,
     /// <p>A list of fields to include in each real-time log record.</p>
-    /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fields: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A unique name to identify this real-time log configuration.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the
-    /// percentage of viewer requests that are represented in the real-time log data. You must
-    /// provide an integer between 1 and 100, inclusive.</p>
+    /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
     pub sampling_rate: std::option::Option<i64>,
 }
 impl CreateRealtimeLogConfigInput {
-    /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time
-    /// log data.</p>
+    /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
     pub fn end_points(&self) -> std::option::Option<&[crate::model::EndPoint]> {
         self.end_points.as_deref()
     }
     /// <p>A list of fields to include in each real-time log record.</p>
-    /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the
-    /// <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn fields(&self) -> std::option::Option<&[std::string::String]> {
         self.fields.as_deref()
     }
@@ -19463,9 +18756,7 @@ impl CreateRealtimeLogConfigInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the
-    /// percentage of viewer requests that are represented in the real-time log data. You must
-    /// provide an integer between 1 and 100, inclusive.</p>
+    /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
     pub fn sampling_rate(&self) -> std::option::Option<i64> {
         self.sampling_rate
     }
@@ -19534,8 +18825,7 @@ impl std::fmt::Debug for CreateOriginRequestPolicyInput {
 pub struct CreateMonitoringSubscriptionInput {
     /// <p>The ID of the distribution that you are enabling metrics for.</p>
     pub distribution_id: std::option::Option<std::string::String>,
-    /// <p>A monitoring subscription. This structure contains information about whether additional
-    /// CloudWatch metrics are enabled for a given CloudFront distribution.</p>
+    /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
     pub monitoring_subscription: std::option::Option<crate::model::MonitoringSubscription>,
 }
 impl CreateMonitoringSubscriptionInput {
@@ -19543,8 +18833,7 @@ impl CreateMonitoringSubscriptionInput {
     pub fn distribution_id(&self) -> std::option::Option<&str> {
         self.distribution_id.as_deref()
     }
-    /// <p>A monitoring subscription. This structure contains information about whether additional
-    /// CloudWatch metrics are enabled for a given CloudFront distribution.</p>
+    /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
     pub fn monitoring_subscription(
         &self,
     ) -> std::option::Option<&crate::model::MonitoringSubscription> {
@@ -19615,11 +18904,9 @@ impl std::fmt::Debug for CreateInvalidationInput {
 pub struct CreateFunctionInput {
     /// <p>A name to identify the function.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Configuration information about the function, including an optional comment and the
-    /// function’s runtime.</p>
+    /// <p>Configuration information about the function, including an optional comment and the function’s runtime.</p>
     pub function_config: std::option::Option<crate::model::FunctionConfig>,
-    /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function
-    /// code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub function_code: std::option::Option<aws_smithy_types::Blob>,
 }
 impl CreateFunctionInput {
@@ -19627,13 +18914,11 @@ impl CreateFunctionInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Configuration information about the function, including an optional comment and the
-    /// function’s runtime.</p>
+    /// <p>Configuration information about the function, including an optional comment and the function’s runtime.</p>
     pub fn function_config(&self) -> std::option::Option<&crate::model::FunctionConfig> {
         self.function_config.as_ref()
     }
-    /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function
-    /// code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn function_code(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.function_code.as_ref()
     }
@@ -19750,11 +19035,7 @@ impl std::fmt::Debug for CreateDistributionInput {
     }
 }
 
-/// <p>The request to create a new origin access identity (OAI). An origin access identity is a
-/// special CloudFront user that you can associate with Amazon S3 origins, so that you can secure all or
-/// just some of your Amazon S3 content. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">
-/// Restricting Access to Amazon S3 Content by Using an Origin Access Identity</a> in the
-/// <i>Amazon CloudFront Developer Guide</i>. </p>
+/// <p>The request to create a new origin access identity (OAI). An origin access identity is a special CloudFront user that you can associate with Amazon S3 origins, so that you can secure all or just some of your Amazon S3 content. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"> Restricting Access to Amazon S3 Content by Using an Origin Access Identity</a> in the <i>Amazon CloudFront Developer Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCloudFrontOriginAccessIdentityInput {

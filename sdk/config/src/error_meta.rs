@@ -7,35 +7,21 @@ pub enum Error {
     ConformancePackTemplateValidationException(
         crate::error::ConformancePackTemplateValidationException,
     ),
-    /// <p>Your Amazon S3 bucket policy does not permit Config to
-    /// write to it.</p>
+    /// <p>Your Amazon S3 bucket policy does not permit Config to write to it.</p>
     InsufficientDeliveryPolicyException(crate::error::InsufficientDeliveryPolicyException),
     /// <p>Indicates one of the following errors:</p>
     /// <ul>
-    /// <li>
-    /// <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p>
-    /// </li>
-    /// <li>
-    /// <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p>
-    /// </li>
-    /// <li>
-    /// <p>For PutOrganizationConfigRule, organization config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p>
-    /// </li>
-    /// <li>
-    /// <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have permissions: </p>
+    /// <li> <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p> </li>
+    /// <li> <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p> </li>
+    /// <li> <p>For PutOrganizationConfigRule, organization config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have permissions: </p>
     /// <ul>
-    /// <li>
-    /// <p>To call IAM <code>GetRole</code> action or create a service linked role.</p>
-    /// </li>
-    /// <li>
-    /// <p>To read Amazon S3 bucket.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>To call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>To read Amazon S3 bucket.</p> </li>
+    /// </ul> </li>
     /// </ul>
     InsufficientPermissionsException(crate::error::InsufficientPermissionsException),
-    /// <p>You have provided a configuration recorder name that is not
-    /// valid.</p>
+    /// <p>You have provided a configuration recorder name that is not valid.</p>
     InvalidConfigurationRecorderNameException(
         crate::error::InvalidConfigurationRecorderNameException,
     ),
@@ -45,12 +31,9 @@ pub enum Error {
     InvalidExpressionException(crate::error::InvalidExpressionException),
     /// <p>The specified limit is outside the allowable range.</p>
     InvalidLimitException(crate::error::InvalidLimitException),
-    /// <p>The specified next token is invalid. Specify the
-    /// <code>nextToken</code> string that was returned in the previous
-    /// response to get the next page of results.</p>
+    /// <p>The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>One or more of the specified parameters are invalid. Verify
-    /// that your parameters are valid and try again.</p>
+    /// <p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>Config throws an exception if the recording group does not contain a valid list of resource types. Invalid values might also be incorrectly formatted.</p>
     InvalidRecordingGroupException(crate::error::InvalidRecordingGroupException),
@@ -64,30 +47,20 @@ pub enum Error {
     InvalidS3KmsKeyArnException(crate::error::InvalidS3KmsKeyArnException),
     /// <p>The specified Amazon SNS topic does not exist.</p>
     InvalidSnsTopicArnException(crate::error::InvalidSnsTopicArnException),
-    /// <p>The specified time range is not valid. The earlier time is not
-    /// chronologically before the later time.</p>
+    /// <p>The specified time range is not valid. The earlier time is not chronologically before the later time.</p>
     InvalidTimeRangeException(crate::error::InvalidTimeRangeException),
-    /// <p>You cannot delete the delivery channel you specified because
-    /// the configuration recorder is running.</p>
+    /// <p>You cannot delete the delivery channel you specified because the configuration recorder is running.</p>
     LastDeliveryChannelDeleteFailedException(
         crate::error::LastDeliveryChannelDeleteFailedException,
     ),
-    /// <p>For <code>StartConfigRulesEvaluation</code> API, this exception
-    /// is thrown if an evaluation is in progress or if you call the <a>StartConfigRulesEvaluation</a> API more than once per
-    /// minute.</p>
-    /// <p>For <code>PutConfigurationAggregator</code> API, this exception
-    /// is thrown if the number of accounts and aggregators exceeds the
-    /// limit.</p>
+    /// <p>For <code>StartConfigRulesEvaluation</code> API, this exception is thrown if an evaluation is in progress or if you call the <code>StartConfigRulesEvaluation</code> API more than once per minute.</p>
+    /// <p>For <code>PutConfigurationAggregator</code> API, this exception is thrown if the number of accounts and aggregators exceeds the limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>You have reached the limit (100,000) of active custom resource types in your account.
-    /// Delete unused resources using <code>DeleteResourceConfig</code>.</p>
+    /// <p>You have reached the limit (100,000) of active custom resource types in your account. Delete unused resources using <code>DeleteResourceConfig</code>.</p>
     MaxActiveResourcesExceededException(crate::error::MaxActiveResourcesExceededException),
-    /// <p>Failed to add the Config rule because the account already
-    /// contains the maximum number of 150 rules. Consider deleting any
-    /// deactivated rules before you add new rules.</p>
+    /// <p>Failed to add the Config rule because the account already contains the maximum number of 150 rules. Consider deleting any deactivated rules before you add new rules.</p>
     MaxNumberOfConfigRulesExceededException(crate::error::MaxNumberOfConfigRulesExceededException),
-    /// <p>You have reached the limit of the number of recorders you can
-    /// create.</p>
+    /// <p>You have reached the limit of the number of recorders you can create.</p>
     MaxNumberOfConfigurationRecordersExceededException(
         crate::error::MaxNumberOfConfigurationRecordersExceededException,
     ),
@@ -95,8 +68,7 @@ pub enum Error {
     MaxNumberOfConformancePacksExceededException(
         crate::error::MaxNumberOfConformancePacksExceededException,
     ),
-    /// <p>You have reached the limit of the number of delivery channels
-    /// you can create.</p>
+    /// <p>You have reached the limit of the number of delivery channels you can create.</p>
     MaxNumberOfDeliveryChannelsExceededException(
         crate::error::MaxNumberOfDeliveryChannelsExceededException,
     ),
@@ -112,14 +84,11 @@ pub enum Error {
     MaxNumberOfRetentionConfigurationsExceededException(
         crate::error::MaxNumberOfRetentionConfigurationsExceededException,
     ),
-    /// <p>There are no configuration recorders available to provide the
-    /// role needed to describe your resources. Create a configuration
-    /// recorder.</p>
+    /// <p>There are no configuration recorders available to provide the role needed to describe your resources. Create a configuration recorder.</p>
     NoAvailableConfigurationRecorderException(
         crate::error::NoAvailableConfigurationRecorderException,
     ),
-    /// <p>There is no delivery channel available to record
-    /// configurations.</p>
+    /// <p>There is no delivery channel available to record configurations.</p>
     NoAvailableDeliveryChannelException(crate::error::NoAvailableDeliveryChannelException),
     /// <p>Organization is no longer available.</p>
     NoAvailableOrganizationException(crate::error::NoAvailableOrganizationException),
@@ -127,8 +96,7 @@ pub enum Error {
     NoRunningConfigurationRecorderException(crate::error::NoRunningConfigurationRecorderException),
     /// <p>The specified Amazon S3 bucket does not exist.</p>
     NoSuchBucketException(crate::error::NoSuchBucketException),
-    /// <p>One or more Config rules in the request are invalid. Verify
-    /// that the rule names are correct and try again.</p>
+    /// <p>One or more Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>
     NoSuchConfigRuleException(crate::error::NoSuchConfigRuleException),
     /// <p>Config rule that you passed in the filter does not exist.</p>
     NoSuchConfigRuleInConformancePackException(
@@ -136,13 +104,11 @@ pub enum Error {
     ),
     /// <p>You have specified a configuration aggregator that does not exist.</p>
     NoSuchConfigurationAggregatorException(crate::error::NoSuchConfigurationAggregatorException),
-    /// <p>You have specified a configuration recorder that does not
-    /// exist.</p>
+    /// <p>You have specified a configuration recorder that does not exist.</p>
     NoSuchConfigurationRecorderException(crate::error::NoSuchConfigurationRecorderException),
     /// <p>You specified one or more conformance packs that do not exist.</p>
     NoSuchConformancePackException(crate::error::NoSuchConformancePackException),
-    /// <p>You have specified a delivery channel that does not
-    /// exist.</p>
+    /// <p>You have specified a delivery channel that does not exist.</p>
     NoSuchDeliveryChannelException(crate::error::NoSuchDeliveryChannelException),
     /// <p>You specified one or more organization config rules that do not exist.</p>
     NoSuchOrganizationConfigRuleException(crate::error::NoSuchOrganizationConfigRuleException),
@@ -159,22 +125,11 @@ pub enum Error {
     NoSuchRetentionConfigurationException(crate::error::NoSuchRetentionConfigurationException),
     /// <p>For <code>PutConfigurationAggregator</code> API, you can see this exception for the following reasons:</p>
     /// <ul>
-    /// <li>
-    /// <p>No permission to call <code>EnableAWSServiceAccess</code> API</p>
-    /// </li>
-    /// <li>
-    /// <p>The configuration aggregator cannot be updated because your Amazon Web Services Organization management account or the delegated administrator role changed.
-    /// Delete this aggregator and create a new one with the current Amazon Web Services Organization.</p>
-    /// </li>
-    /// <li>
-    /// <p>The configuration aggregator is associated with a previous Amazon Web Services Organization and Config cannot aggregate data with current Amazon Web Services Organization.
-    /// Delete this aggregator and create a new one with the current Amazon Web Services Organization.</p>
-    /// </li>
-    /// <li>
-    /// <p>You are not a registered delegated administrator for Config with permissions to call <code>ListDelegatedAdministrators</code> API.
-    /// Ensure that the management account registers delagated administrator for Config service principle name before the delegated administrator creates an aggregator.</p>
-    /// </li>
-    /// </ul>  
+    /// <li> <p>No permission to call <code>EnableAWSServiceAccess</code> API</p> </li>
+    /// <li> <p>The configuration aggregator cannot be updated because your Amazon Web Services Organization management account or the delegated administrator role changed. Delete this aggregator and create a new one with the current Amazon Web Services Organization.</p> </li>
+    /// <li> <p>The configuration aggregator is associated with a previous Amazon Web Services Organization and Config cannot aggregate data with current Amazon Web Services Organization. Delete this aggregator and create a new one with the current Amazon Web Services Organization.</p> </li>
+    /// <li> <p>You are not a registered delegated administrator for Config with permissions to call <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated administrator for Config service principle name before the delegated administrator creates an aggregator.</p> </li>
+    /// </ul>
     /// <p>For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, Config throws an exception if APIs are called from member accounts. All APIs must be called from organization master account.</p>
     OrganizationAccessDeniedException(crate::error::OrganizationAccessDeniedException),
     /// <p>Config resource cannot be created because your organization does not have all features enabled.</p>
@@ -193,31 +148,16 @@ pub enum Error {
     ResourceConcurrentModificationException(crate::error::ResourceConcurrentModificationException),
     /// <p>You see this exception in the following cases: </p>
     /// <ul>
-    /// <li>
-    /// <p>For DeleteConfigRule, Config is deleting this rule. Try your request again later.</p>
-    /// </li>
-    /// <li>
-    /// <p>For DeleteConfigRule, the rule is deleting your evaluation results. Try your request again later.</p>
-    /// </li>
-    /// <li>
-    /// <p>For DeleteConfigRule, a remediation action is associated with the rule and Config cannot delete this rule. Delete the remediation action associated with the rule before deleting the rule and try your request again later.</p>
-    /// </li>
-    /// <li>
-    /// <p>For PutConfigOrganizationRule, organization config rule deletion is in progress. Try your request again later.</p>
-    /// </li>
-    /// <li>
-    /// <p>For DeleteOrganizationConfigRule, organization config rule creation is in progress. Try your request again later.</p>
-    /// </li>
-    /// <li>
-    /// <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p>
-    /// </li>
-    /// <li>
-    /// <p>For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p>
-    /// </li>
+    /// <li> <p>For DeleteConfigRule, Config is deleting this rule. Try your request again later.</p> </li>
+    /// <li> <p>For DeleteConfigRule, the rule is deleting your evaluation results. Try your request again later.</p> </li>
+    /// <li> <p>For DeleteConfigRule, a remediation action is associated with the rule and Config cannot delete this rule. Delete the remediation action associated with the rule before deleting the rule and try your request again later.</p> </li>
+    /// <li> <p>For PutConfigOrganizationRule, organization config rule deletion is in progress. Try your request again later.</p> </li>
+    /// <li> <p>For DeleteOrganizationConfigRule, organization config rule creation is in progress. Try your request again later.</p> </li>
+    /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
+    /// <li> <p>For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
     /// </ul>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>You have specified a resource that is either unknown or has not
-    /// been discovered.</p>
+    /// <p>You have specified a resource that is either unknown or has not been discovered.</p>
     ResourceNotDiscoveredException(crate::error::ResourceNotDiscoveredException),
     /// <p>You have specified a resource that does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),

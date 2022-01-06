@@ -3,13 +3,11 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServerEngineAttributesOutput {
-    /// <p>Contains the response to an <code>UpdateServerEngineAttributes</code> request.
-    /// </p>
+    /// <p>Contains the response to an <code>UpdateServerEngineAttributes</code> request. </p>
     pub server: std::option::Option<crate::model::Server>,
 }
 impl UpdateServerEngineAttributesOutput {
-    /// <p>Contains the response to an <code>UpdateServerEngineAttributes</code> request.
-    /// </p>
+    /// <p>Contains the response to an <code>UpdateServerEngineAttributes</code> request. </p>
     pub fn server(&self) -> std::option::Option<&crate::model::Server> {
         self.server.as_ref()
     }
@@ -30,14 +28,12 @@ pub mod update_server_engine_attributes_output {
         pub(crate) server: std::option::Option<crate::model::Server>,
     }
     impl Builder {
-        /// <p>Contains the response to an <code>UpdateServerEngineAttributes</code> request.
-        /// </p>
+        /// <p>Contains the response to an <code>UpdateServerEngineAttributes</code> request. </p>
         pub fn server(mut self, input: crate::model::Server) -> Self {
             self.server = Some(input);
             self
         }
-        /// <p>Contains the response to an <code>UpdateServerEngineAttributes</code> request.
-        /// </p>
+        /// <p>Contains the response to an <code>UpdateServerEngineAttributes</code> request. </p>
         pub fn set_server(mut self, input: std::option::Option<crate::model::Server>) -> Self {
             self.server = input;
             self
@@ -61,13 +57,11 @@ impl UpdateServerEngineAttributesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServerOutput {
-    /// <p>Contains the response to a <code>UpdateServer</code> request.
-    /// </p>
+    /// <p>Contains the response to a <code>UpdateServer</code> request. </p>
     pub server: std::option::Option<crate::model::Server>,
 }
 impl UpdateServerOutput {
-    /// <p>Contains the response to a <code>UpdateServer</code> request.
-    /// </p>
+    /// <p>Contains the response to a <code>UpdateServer</code> request. </p>
     pub fn server(&self) -> std::option::Option<&crate::model::Server> {
         self.server.as_ref()
     }
@@ -88,14 +82,12 @@ pub mod update_server_output {
         pub(crate) server: std::option::Option<crate::model::Server>,
     }
     impl Builder {
-        /// <p>Contains the response to a <code>UpdateServer</code> request.
-        /// </p>
+        /// <p>Contains the response to a <code>UpdateServer</code> request. </p>
         pub fn server(mut self, input: crate::model::Server) -> Self {
             self.server = Some(input);
             self
         }
-        /// <p>Contains the response to a <code>UpdateServer</code> request.
-        /// </p>
+        /// <p>Contains the response to a <code>UpdateServer</code> request. </p>
         pub fn set_server(mut self, input: std::option::Option<crate::model::Server>) -> Self {
             self.server = input;
             self
@@ -179,13 +171,11 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMaintenanceOutput {
-    /// <p>Contains the response to a <code>StartMaintenance</code> request.
-    /// </p>
+    /// <p>Contains the response to a <code>StartMaintenance</code> request. </p>
     pub server: std::option::Option<crate::model::Server>,
 }
 impl StartMaintenanceOutput {
-    /// <p>Contains the response to a <code>StartMaintenance</code> request.
-    /// </p>
+    /// <p>Contains the response to a <code>StartMaintenance</code> request. </p>
     pub fn server(&self) -> std::option::Option<&crate::model::Server> {
         self.server.as_ref()
     }
@@ -206,14 +196,12 @@ pub mod start_maintenance_output {
         pub(crate) server: std::option::Option<crate::model::Server>,
     }
     impl Builder {
-        /// <p>Contains the response to a <code>StartMaintenance</code> request.
-        /// </p>
+        /// <p>Contains the response to a <code>StartMaintenance</code> request. </p>
         pub fn server(mut self, input: crate::model::Server) -> Self {
             self.server = Some(input);
             self
         }
-        /// <p>Contains the response to a <code>StartMaintenance</code> request.
-        /// </p>
+        /// <p>Contains the response to a <code>StartMaintenance</code> request. </p>
         pub fn set_server(mut self, input: std::option::Option<crate::model::Server>) -> Self {
             self.server = input;
             self
@@ -237,13 +225,11 @@ impl StartMaintenanceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreServerOutput {
-    /// <p>Describes a configuration management server.
-    /// </p>
+    /// <p>Describes a configuration management server. </p>
     pub server: std::option::Option<crate::model::Server>,
 }
 impl RestoreServerOutput {
-    /// <p>Describes a configuration management server.
-    /// </p>
+    /// <p>Describes a configuration management server. </p>
     pub fn server(&self) -> std::option::Option<&crate::model::Server> {
         self.server.as_ref()
     }
@@ -264,14 +250,12 @@ pub mod restore_server_output {
         pub(crate) server: std::option::Option<crate::model::Server>,
     }
     impl Builder {
-        /// <p>Describes a configuration management server.
-        /// </p>
+        /// <p>Describes a configuration management server. </p>
         pub fn server(mut self, input: crate::model::Server) -> Self {
             self.server = Some(input);
             self
         }
-        /// <p>Describes a configuration management server.
-        /// </p>
+        /// <p>Describes a configuration management server. </p>
         pub fn set_server(mut self, input: std::option::Option<crate::model::Server>) -> Self {
             self.server = input;
             self
@@ -333,9 +317,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags that have been applied to the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -453,17 +437,11 @@ impl ExportServerEngineAttributeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateNodeOutput {
-    /// <p>Contains a token which can be passed to the
-    /// <code>DescribeNodeAssociationStatus</code> API call to get the status of
-    /// the disassociation request.
-    /// </p>
+    /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the disassociation request. </p>
     pub node_association_status_token: std::option::Option<std::string::String>,
 }
 impl DisassociateNodeOutput {
-    /// <p>Contains a token which can be passed to the
-    /// <code>DescribeNodeAssociationStatus</code> API call to get the status of
-    /// the disassociation request.
-    /// </p>
+    /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the disassociation request. </p>
     pub fn node_association_status_token(&self) -> std::option::Option<&str> {
         self.node_association_status_token.as_deref()
     }
@@ -487,10 +465,7 @@ pub mod disassociate_node_output {
         pub(crate) node_association_status_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Contains a token which can be passed to the
-        /// <code>DescribeNodeAssociationStatus</code> API call to get the status of
-        /// the disassociation request.
-        /// </p>
+        /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the disassociation request. </p>
         pub fn node_association_status_token(
             mut self,
             input: impl Into<std::string::String>,
@@ -498,10 +473,7 @@ pub mod disassociate_node_output {
             self.node_association_status_token = Some(input.into());
             self
         }
-        /// <p>Contains a token which can be passed to the
-        /// <code>DescribeNodeAssociationStatus</code> API call to get the status of
-        /// the disassociation request.
-        /// </p>
+        /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the disassociation request. </p>
         pub fn set_node_association_status_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -529,60 +501,28 @@ impl DisassociateNodeOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServersOutput {
     /// <p>Contains the response to a <code>DescribeServers</code> request.</p>
-    /// <p>
-    /// <i>For Chef Automate servers:</i>  If <code>DescribeServersResponse$Servers$EngineAttributes</code> includes
-    /// CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef Automate 2. To be eligible for upgrade, a server running
-    /// Chef Automate 1 must have had at least one successful maintenance run after November 1, 2019.</p>
-    /// <p>
-    /// <i>For Puppet servers:</i>  
-    /// <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
-    /// the following two responses:</p>
+    /// <p> <i>For Chef Automate servers:</i> If <code>DescribeServersResponse$Servers$EngineAttributes</code> includes CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must have had at least one successful maintenance run after November 1, 2019.</p>
+    /// <p> <i>For Puppet servers:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the following two responses:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the Puppet API over TCP port number 8140.
-    /// The CA certificate is also used to sign node certificates.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for internal
-    /// maintenance purposes only. For more information about the Puppet certificate revocation list, see
-    /// <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p>
-    /// </li>
+    /// <li> <p> <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the Puppet API over TCP port number 8140. The CA certificate is also used to sign node certificates.</p> </li>
+    /// <li> <p> <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for internal maintenance purposes only. For more information about the Puppet certificate revocation list, see <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p> </li>
     /// </ul>
     pub servers: std::option::Option<std::vec::Vec<crate::model::Server>>,
-    /// <p>This is not currently implemented for <code>DescribeServers</code> requests.
-    /// </p>
+    /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeServersOutput {
     /// <p>Contains the response to a <code>DescribeServers</code> request.</p>
-    /// <p>
-    /// <i>For Chef Automate servers:</i>  If <code>DescribeServersResponse$Servers$EngineAttributes</code> includes
-    /// CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef Automate 2. To be eligible for upgrade, a server running
-    /// Chef Automate 1 must have had at least one successful maintenance run after November 1, 2019.</p>
-    /// <p>
-    /// <i>For Puppet servers:</i>  
-    /// <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
-    /// the following two responses:</p>
+    /// <p> <i>For Chef Automate servers:</i> If <code>DescribeServersResponse$Servers$EngineAttributes</code> includes CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must have had at least one successful maintenance run after November 1, 2019.</p>
+    /// <p> <i>For Puppet servers:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the following two responses:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the Puppet API over TCP port number 8140.
-    /// The CA certificate is also used to sign node certificates.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for internal
-    /// maintenance purposes only. For more information about the Puppet certificate revocation list, see
-    /// <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p>
-    /// </li>
+    /// <li> <p> <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the Puppet API over TCP port number 8140. The CA certificate is also used to sign node certificates.</p> </li>
+    /// <li> <p> <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for internal maintenance purposes only. For more information about the Puppet certificate revocation list, see <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p> </li>
     /// </ul>
     pub fn servers(&self) -> std::option::Option<&[crate::model::Server]> {
         self.servers.as_deref()
     }
-    /// <p>This is not currently implemented for <code>DescribeServers</code> requests.
-    /// </p>
+    /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -610,54 +550,24 @@ pub mod describe_servers_output {
         /// To override the contents of this collection use [`set_servers`](Self::set_servers).
         ///
         /// <p>Contains the response to a <code>DescribeServers</code> request.</p>
-        /// <p>
-        /// <i>For Chef Automate servers:</i>  If <code>DescribeServersResponse$Servers$EngineAttributes</code> includes
-        /// CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef Automate 2. To be eligible for upgrade, a server running
-        /// Chef Automate 1 must have had at least one successful maintenance run after November 1, 2019.</p>
-        /// <p>
-        /// <i>For Puppet servers:</i>  
-        /// <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
-        /// the following two responses:</p>
+        /// <p> <i>For Chef Automate servers:</i> If <code>DescribeServersResponse$Servers$EngineAttributes</code> includes CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must have had at least one successful maintenance run after November 1, 2019.</p>
+        /// <p> <i>For Puppet servers:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the following two responses:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the Puppet API over TCP port number 8140.
-        /// The CA certificate is also used to sign node certificates.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for internal
-        /// maintenance purposes only. For more information about the Puppet certificate revocation list, see
-        /// <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p>
-        /// </li>
+        /// <li> <p> <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the Puppet API over TCP port number 8140. The CA certificate is also used to sign node certificates.</p> </li>
+        /// <li> <p> <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for internal maintenance purposes only. For more information about the Puppet certificate revocation list, see <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p> </li>
         /// </ul>
-        pub fn servers(mut self, input: impl Into<crate::model::Server>) -> Self {
+        pub fn servers(mut self, input: crate::model::Server) -> Self {
             let mut v = self.servers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.servers = Some(v);
             self
         }
         /// <p>Contains the response to a <code>DescribeServers</code> request.</p>
-        /// <p>
-        /// <i>For Chef Automate servers:</i>  If <code>DescribeServersResponse$Servers$EngineAttributes</code> includes
-        /// CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef Automate 2. To be eligible for upgrade, a server running
-        /// Chef Automate 1 must have had at least one successful maintenance run after November 1, 2019.</p>
-        /// <p>
-        /// <i>For Puppet servers:</i>  
-        /// <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
-        /// the following two responses:</p>
+        /// <p> <i>For Chef Automate servers:</i> If <code>DescribeServersResponse$Servers$EngineAttributes</code> includes CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must have had at least one successful maintenance run after November 1, 2019.</p>
+        /// <p> <i>For Puppet servers:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the following two responses:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the Puppet API over TCP port number 8140.
-        /// The CA certificate is also used to sign node certificates.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for internal
-        /// maintenance purposes only. For more information about the Puppet certificate revocation list, see
-        /// <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p>
-        /// </li>
+        /// <li> <p> <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the Puppet API over TCP port number 8140. The CA certificate is also used to sign node certificates.</p> </li>
+        /// <li> <p> <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for internal maintenance purposes only. For more information about the Puppet certificate revocation list, see <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p> </li>
         /// </ul>
         pub fn set_servers(
             mut self,
@@ -666,14 +576,12 @@ pub mod describe_servers_output {
             self.servers = input;
             self
         }
-        /// <p>This is not currently implemented for <code>DescribeServers</code> requests.
-        /// </p>
+        /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>This is not currently implemented for <code>DescribeServers</code> requests.
-        /// </p>
+        /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -698,65 +606,31 @@ impl DescribeServersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNodeAssociationStatusOutput {
-    /// <p>The status of the association or disassociation request.
-    /// </p>
-    /// <p class="title">
-    /// <b>Possible values:</b>
-    /// </p>
+    /// <p>The status of the association or disassociation request. </p>
+    /// <p class="title"> <b>Possible values:</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SUCCESS</code>: The association or disassociation succeeded.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code>: The association or disassociation failed.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_PROGRESS</code>: The association or disassociation is still in progress.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>SUCCESS</code>: The association or disassociation succeeded. </p> </li>
+    /// <li> <p> <code>FAILED</code>: The association or disassociation failed. </p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code>: The association or disassociation is still in progress. </p> </li>
     /// </ul>
     pub node_association_status: std::option::Option<crate::model::NodeAssociationStatus>,
-    /// <p>Attributes specific to the node association.
-    /// In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR).
-    /// </p>
+    /// <p>Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR). </p>
     pub engine_attributes: std::option::Option<std::vec::Vec<crate::model::EngineAttribute>>,
 }
 impl DescribeNodeAssociationStatusOutput {
-    /// <p>The status of the association or disassociation request.
-    /// </p>
-    /// <p class="title">
-    /// <b>Possible values:</b>
-    /// </p>
+    /// <p>The status of the association or disassociation request. </p>
+    /// <p class="title"> <b>Possible values:</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SUCCESS</code>: The association or disassociation succeeded.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code>: The association or disassociation failed.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_PROGRESS</code>: The association or disassociation is still in progress.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>SUCCESS</code>: The association or disassociation succeeded. </p> </li>
+    /// <li> <p> <code>FAILED</code>: The association or disassociation failed. </p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code>: The association or disassociation is still in progress. </p> </li>
     /// </ul>
     pub fn node_association_status(
         &self,
     ) -> std::option::Option<&crate::model::NodeAssociationStatus> {
         self.node_association_status.as_ref()
     }
-    /// <p>Attributes specific to the node association.
-    /// In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR).
-    /// </p>
+    /// <p>Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR). </p>
     pub fn engine_attributes(&self) -> std::option::Option<&[crate::model::EngineAttribute]> {
         self.engine_attributes.as_deref()
     }
@@ -781,27 +655,12 @@ pub mod describe_node_association_status_output {
             std::option::Option<std::vec::Vec<crate::model::EngineAttribute>>,
     }
     impl Builder {
-        /// <p>The status of the association or disassociation request.
-        /// </p>
-        /// <p class="title">
-        /// <b>Possible values:</b>
-        /// </p>
+        /// <p>The status of the association or disassociation request. </p>
+        /// <p class="title"> <b>Possible values:</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SUCCESS</code>: The association or disassociation succeeded.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code>: The association or disassociation failed.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_PROGRESS</code>: The association or disassociation is still in progress.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>SUCCESS</code>: The association or disassociation succeeded. </p> </li>
+        /// <li> <p> <code>FAILED</code>: The association or disassociation failed. </p> </li>
+        /// <li> <p> <code>IN_PROGRESS</code>: The association or disassociation is still in progress. </p> </li>
         /// </ul>
         pub fn node_association_status(
             mut self,
@@ -810,27 +669,12 @@ pub mod describe_node_association_status_output {
             self.node_association_status = Some(input);
             self
         }
-        /// <p>The status of the association or disassociation request.
-        /// </p>
-        /// <p class="title">
-        /// <b>Possible values:</b>
-        /// </p>
+        /// <p>The status of the association or disassociation request. </p>
+        /// <p class="title"> <b>Possible values:</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SUCCESS</code>: The association or disassociation succeeded.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code>: The association or disassociation failed.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_PROGRESS</code>: The association or disassociation is still in progress.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>SUCCESS</code>: The association or disassociation succeeded. </p> </li>
+        /// <li> <p> <code>FAILED</code>: The association or disassociation failed. </p> </li>
+        /// <li> <p> <code>IN_PROGRESS</code>: The association or disassociation is still in progress. </p> </li>
         /// </ul>
         pub fn set_node_association_status(
             mut self,
@@ -843,21 +687,14 @@ pub mod describe_node_association_status_output {
         ///
         /// To override the contents of this collection use [`set_engine_attributes`](Self::set_engine_attributes).
         ///
-        /// <p>Attributes specific to the node association.
-        /// In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR).
-        /// </p>
-        pub fn engine_attributes(
-            mut self,
-            input: impl Into<crate::model::EngineAttribute>,
-        ) -> Self {
+        /// <p>Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR). </p>
+        pub fn engine_attributes(mut self, input: crate::model::EngineAttribute) -> Self {
             let mut v = self.engine_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.engine_attributes = Some(v);
             self
         }
-        /// <p>Attributes specific to the node association.
-        /// In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR).
-        /// </p>
+        /// <p>Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR). </p>
         pub fn set_engine_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EngineAttribute>>,
@@ -885,33 +722,17 @@ impl DescribeNodeAssociationStatusOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventsOutput {
-    /// <p>Contains the response to a <code>DescribeEvents</code> request.
-    /// </p>
+    /// <p>Contains the response to a <code>DescribeEvents</code> request. </p>
     pub server_events: std::option::Option<std::vec::Vec<crate::model::ServerEvent>>,
-    /// <p>NextToken is a string that is returned in some command responses. It indicates that
-    /// not all entries have been returned, and that you must run at least one more request to get remaining
-    /// items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous
-    /// results as the value of the <code>nextToken</code> parameter. If there are no more results,
-    /// the response object's <code>nextToken</code> parameter value is <code>null</code>.
-    /// Setting a <code>nextToken</code> value that was not returned in
-    /// your previous results causes an <code>InvalidNextTokenException</code> to occur.
-    /// </p>
+    /// <p>NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEventsOutput {
-    /// <p>Contains the response to a <code>DescribeEvents</code> request.
-    /// </p>
+    /// <p>Contains the response to a <code>DescribeEvents</code> request. </p>
     pub fn server_events(&self) -> std::option::Option<&[crate::model::ServerEvent]> {
         self.server_events.as_deref()
     }
-    /// <p>NextToken is a string that is returned in some command responses. It indicates that
-    /// not all entries have been returned, and that you must run at least one more request to get remaining
-    /// items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous
-    /// results as the value of the <code>nextToken</code> parameter. If there are no more results,
-    /// the response object's <code>nextToken</code> parameter value is <code>null</code>.
-    /// Setting a <code>nextToken</code> value that was not returned in
-    /// your previous results causes an <code>InvalidNextTokenException</code> to occur.
-    /// </p>
+    /// <p>NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -938,16 +759,14 @@ pub mod describe_events_output {
         ///
         /// To override the contents of this collection use [`set_server_events`](Self::set_server_events).
         ///
-        /// <p>Contains the response to a <code>DescribeEvents</code> request.
-        /// </p>
-        pub fn server_events(mut self, input: impl Into<crate::model::ServerEvent>) -> Self {
+        /// <p>Contains the response to a <code>DescribeEvents</code> request. </p>
+        pub fn server_events(mut self, input: crate::model::ServerEvent) -> Self {
             let mut v = self.server_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_events = Some(v);
             self
         }
-        /// <p>Contains the response to a <code>DescribeEvents</code> request.
-        /// </p>
+        /// <p>Contains the response to a <code>DescribeEvents</code> request. </p>
         pub fn set_server_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ServerEvent>>,
@@ -955,26 +774,12 @@ pub mod describe_events_output {
             self.server_events = input;
             self
         }
-        /// <p>NextToken is a string that is returned in some command responses. It indicates that
-        /// not all entries have been returned, and that you must run at least one more request to get remaining
-        /// items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous
-        /// results as the value of the <code>nextToken</code> parameter. If there are no more results,
-        /// the response object's <code>nextToken</code> parameter value is <code>null</code>.
-        /// Setting a <code>nextToken</code> value that was not returned in
-        /// your previous results causes an <code>InvalidNextTokenException</code> to occur.
-        /// </p>
+        /// <p>NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>NextToken is a string that is returned in some command responses. It indicates that
-        /// not all entries have been returned, and that you must run at least one more request to get remaining
-        /// items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous
-        /// results as the value of the <code>nextToken</code> parameter. If there are no more results,
-        /// the response object's <code>nextToken</code> parameter value is <code>null</code>.
-        /// Setting a <code>nextToken</code> value that was not returned in
-        /// your previous results causes an <code>InvalidNextTokenException</code> to occur.
-        /// </p>
+        /// <p>NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -999,15 +804,13 @@ impl DescribeEventsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBackupsOutput {
-    /// <p>Contains the response to a <code>DescribeBackups</code> request.
-    /// </p>
+    /// <p>Contains the response to a <code>DescribeBackups</code> request. </p>
     pub backups: std::option::Option<std::vec::Vec<crate::model::Backup>>,
     /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeBackupsOutput {
-    /// <p>Contains the response to a <code>DescribeBackups</code> request.
-    /// </p>
+    /// <p>Contains the response to a <code>DescribeBackups</code> request. </p>
     pub fn backups(&self) -> std::option::Option<&[crate::model::Backup]> {
         self.backups.as_deref()
     }
@@ -1038,16 +841,14 @@ pub mod describe_backups_output {
         ///
         /// To override the contents of this collection use [`set_backups`](Self::set_backups).
         ///
-        /// <p>Contains the response to a <code>DescribeBackups</code> request.
-        /// </p>
-        pub fn backups(mut self, input: impl Into<crate::model::Backup>) -> Self {
+        /// <p>Contains the response to a <code>DescribeBackups</code> request. </p>
+        pub fn backups(mut self, input: crate::model::Backup) -> Self {
             let mut v = self.backups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.backups = Some(v);
             self
         }
-        /// <p>Contains the response to a <code>DescribeBackups</code> request.
-        /// </p>
+        /// <p>Contains the response to a <code>DescribeBackups</code> request. </p>
         pub fn set_backups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Backup>>,
@@ -1085,15 +886,11 @@ impl DescribeBackupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountAttributesOutput {
-    /// <p>
-    /// The attributes that are currently set for the account.
-    /// </p>
+    /// <p> The attributes that are currently set for the account. </p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AccountAttribute>>,
 }
 impl DescribeAccountAttributesOutput {
-    /// <p>
-    /// The attributes that are currently set for the account.
-    /// </p>
+    /// <p> The attributes that are currently set for the account. </p>
     pub fn attributes(&self) -> std::option::Option<&[crate::model::AccountAttribute]> {
         self.attributes.as_deref()
     }
@@ -1118,18 +915,14 @@ pub mod describe_account_attributes_output {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>
-        /// The attributes that are currently set for the account.
-        /// </p>
-        pub fn attributes(mut self, input: impl Into<crate::model::AccountAttribute>) -> Self {
+        /// <p> The attributes that are currently set for the account. </p>
+        pub fn attributes(mut self, input: crate::model::AccountAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
-        /// <p>
-        /// The attributes that are currently set for the account.
-        /// </p>
+        /// <p> The attributes that are currently set for the account. </p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AccountAttribute>>,
@@ -1216,13 +1009,11 @@ impl DeleteBackupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServerOutput {
-    /// <p>The server that is created by the request.
-    /// </p>
+    /// <p>The server that is created by the request. </p>
     pub server: std::option::Option<crate::model::Server>,
 }
 impl CreateServerOutput {
-    /// <p>The server that is created by the request.
-    /// </p>
+    /// <p>The server that is created by the request. </p>
     pub fn server(&self) -> std::option::Option<&crate::model::Server> {
         self.server.as_ref()
     }
@@ -1243,14 +1034,12 @@ pub mod create_server_output {
         pub(crate) server: std::option::Option<crate::model::Server>,
     }
     impl Builder {
-        /// <p>The server that is created by the request.
-        /// </p>
+        /// <p>The server that is created by the request. </p>
         pub fn server(mut self, input: crate::model::Server) -> Self {
             self.server = Some(input);
             self
         }
-        /// <p>The server that is created by the request.
-        /// </p>
+        /// <p>The server that is created by the request. </p>
         pub fn set_server(mut self, input: std::option::Option<crate::model::Server>) -> Self {
             self.server = input;
             self
@@ -1328,13 +1117,11 @@ impl CreateBackupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateNodeOutput {
-    /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the association request.
-    /// </p>
+    /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the association request. </p>
     pub node_association_status_token: std::option::Option<std::string::String>,
 }
 impl AssociateNodeOutput {
-    /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the association request.
-    /// </p>
+    /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the association request. </p>
     pub fn node_association_status_token(&self) -> std::option::Option<&str> {
         self.node_association_status_token.as_deref()
     }
@@ -1358,8 +1145,7 @@ pub mod associate_node_output {
         pub(crate) node_association_status_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the association request.
-        /// </p>
+        /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the association request. </p>
         pub fn node_association_status_token(
             mut self,
             input: impl Into<std::string::String>,
@@ -1367,8 +1153,7 @@ pub mod associate_node_output {
             self.node_association_status_token = Some(input.into());
             self
         }
-        /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the association request.
-        /// </p>
+        /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the association request. </p>
         pub fn set_node_association_status_token(
             mut self,
             input: std::option::Option<std::string::String>,

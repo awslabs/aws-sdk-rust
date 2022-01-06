@@ -15206,6 +15206,47 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyVpcEndpointService
     }
 }
 
+/// Operation shape for `ModifyVpcEndpointServicePayerResponsibility`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`modify_vpc_endpoint_service_payer_responsibility`](crate::client::Client::modify_vpc_endpoint_service_payer_responsibility).
+///
+/// See [`crate::client::fluent_builders::ModifyVpcEndpointServicePayerResponsibility`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ModifyVpcEndpointServicePayerResponsibility {
+    _private: (),
+}
+impl ModifyVpcEndpointServicePayerResponsibility {
+    /// Creates a new builder-style object to manufacture [`ModifyVpcEndpointServicePayerResponsibilityInput`](crate::input::ModifyVpcEndpointServicePayerResponsibilityInput)
+    pub fn builder() -> crate::input::modify_vpc_endpoint_service_payer_responsibility_input::Builder
+    {
+        crate::input::modify_vpc_endpoint_service_payer_responsibility_input::Builder::default()
+    }
+    /// Creates a new `ModifyVpcEndpointServicePayerResponsibility` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse
+    for ModifyVpcEndpointServicePayerResponsibility
+{
+    type Output = std::result::Result<
+        crate::output::ModifyVpcEndpointServicePayerResponsibilityOutput,
+        crate::error::ModifyVpcEndpointServicePayerResponsibilityError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_modify_vpc_endpoint_service_payer_responsibility_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_modify_vpc_endpoint_service_payer_responsibility_response(
+                response,
+            )
+        }
+    }
+}
+
 /// Operation shape for `ModifyVpcEndpointServicePermissions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

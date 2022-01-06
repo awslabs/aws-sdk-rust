@@ -78,8 +78,7 @@ impl RealtimeContactAnalysisSegment {
     }
 }
 
-/// <p>Provides the category rules that are used to automatically categorize contacts based on
-/// uttered keywords and phrases.</p>
+/// <p>Provides the category rules that are used to automatically categorize contacts based on uttered keywords and phrases.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Categories {
@@ -151,10 +150,10 @@ pub mod categories {
         pub fn matched_details(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::CategoryDetails>,
+            v: crate::model::CategoryDetails,
         ) -> Self {
             let mut hash_map = self.matched_details.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.matched_details = Some(hash_map);
             self
         }
@@ -219,12 +218,9 @@ pub mod category_details {
         /// To override the contents of this collection use [`set_points_of_interest`](Self::set_points_of_interest).
         ///
         /// <p>The section of audio where the category rule was detected.</p>
-        pub fn points_of_interest(
-            mut self,
-            input: impl Into<crate::model::PointOfInterest>,
-        ) -> Self {
+        pub fn points_of_interest(mut self, input: crate::model::PointOfInterest) -> Self {
             let mut v = self.points_of_interest.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.points_of_interest = Some(v);
             self
         }
@@ -493,9 +489,9 @@ pub mod transcript {
         /// To override the contents of this collection use [`set_issues_detected`](Self::set_issues_detected).
         ///
         /// <p>List of positions where issues were detected on the transcript.</p>
-        pub fn issues_detected(mut self, input: impl Into<crate::model::IssueDetected>) -> Self {
+        pub fn issues_detected(mut self, input: crate::model::IssueDetected) -> Self {
             let mut v = self.issues_detected.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.issues_detected = Some(v);
             self
         }
@@ -529,8 +525,7 @@ impl Transcript {
     }
 }
 
-/// <p>Potential issues that are detected based on an artificial intelligence analysis of each
-/// turn in the conversation.</p>
+/// <p>Potential issues that are detected based on an artificial intelligence analysis of each turn in the conversation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IssueDetected {

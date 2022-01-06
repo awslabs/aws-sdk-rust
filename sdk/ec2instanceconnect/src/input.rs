@@ -33,16 +33,12 @@ pub mod send_serial_console_ssh_public_key_input {
             self.serial_port = input;
             self
         }
-        /// <p>The public key material. To use the public key, you must have the matching private
-        /// key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User
-        /// Guide</i>.</p>
+        /// <p>The public key material. To use the public key, you must have the matching private key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User Guide</i>.</p>
         pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssh_public_key = Some(input.into());
             self
         }
-        /// <p>The public key material. To use the public key, you must have the matching private
-        /// key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User
-        /// Guide</i>.</p>
+        /// <p>The public key material. To use the public key, you must have the matching private key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User Guide</i>.</p>
         pub fn set_ssh_public_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -69,7 +65,8 @@ pub mod send_serial_console_ssh_public_key_input {
 pub type SendSerialConsoleSshPublicKeyInputOperationOutputAlias =
     crate::operation::SendSerialConsoleSSHPublicKey;
 #[doc(hidden)]
-pub type SendSerialConsoleSshPublicKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendSerialConsoleSshPublicKeyInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl SendSerialConsoleSshPublicKeyInput {
     /// Consumes the builder and constructs an Operation<[`SendSerialConsoleSSHPublicKey`](crate::operation::SendSerialConsoleSSHPublicKey)>
     #[allow(clippy::let_and_return)]
@@ -80,7 +77,7 @@ impl SendSerialConsoleSshPublicKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendSerialConsoleSSHPublicKey,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -166,7 +163,7 @@ impl SendSerialConsoleSshPublicKeyInput {
             "SendSerialConsoleSSHPublicKey",
             "ec2instanceconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -269,7 +266,7 @@ pub mod send_ssh_public_key_input {
 #[doc(hidden)]
 pub type SendSshPublicKeyInputOperationOutputAlias = crate::operation::SendSSHPublicKey;
 #[doc(hidden)]
-pub type SendSshPublicKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendSshPublicKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendSshPublicKeyInput {
     /// Consumes the builder and constructs an Operation<[`SendSSHPublicKey`](crate::operation::SendSSHPublicKey)>
     #[allow(clippy::let_and_return)]
@@ -280,7 +277,7 @@ impl SendSshPublicKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendSSHPublicKey,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -365,7 +362,7 @@ impl SendSshPublicKeyInput {
             "SendSSHPublicKey",
             "ec2instanceconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -439,9 +436,7 @@ pub struct SendSerialConsoleSshPublicKeyInput {
     /// <p>The serial port of the EC2 instance. Currently only port 0 is supported.</p>
     /// <p>Default: 0</p>
     pub serial_port: i32,
-    /// <p>The public key material. To use the public key, you must have the matching private
-    /// key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User
-    /// Guide</i>.</p>
+    /// <p>The public key material. To use the public key, you must have the matching private key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub ssh_public_key: std::option::Option<std::string::String>,
 }
 impl SendSerialConsoleSshPublicKeyInput {
@@ -454,9 +449,7 @@ impl SendSerialConsoleSshPublicKeyInput {
     pub fn serial_port(&self) -> i32 {
         self.serial_port
     }
-    /// <p>The public key material. To use the public key, you must have the matching private
-    /// key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User
-    /// Guide</i>.</p>
+    /// <p>The public key material. To use the public key, you must have the matching private key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn ssh_public_key(&self) -> std::option::Option<&str> {
         self.ssh_public_key.as_deref()
     }

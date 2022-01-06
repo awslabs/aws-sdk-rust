@@ -58,8 +58,6 @@ impl CreateApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -167,8 +165,6 @@ impl CreateConfigurationProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -281,8 +277,6 @@ impl CreateDeploymentStrategyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -390,8 +384,6 @@ impl CreateEnvironmentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -460,8 +452,7 @@ pub struct CreateHostedConfigurationVersionError {
 pub enum CreateHostedConfigurationVersionErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -469,8 +460,7 @@ pub enum CreateHostedConfigurationVersionErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The number of hosted configuration versions exceeds the limit for the AppConfig hosted
-    /// configuration store. Delete one or more versions and try again.</p>
+    /// <p>The number of hosted configuration versions exceeds the limit for the AppConfig hosted configuration store. Delete one or more versions and try again.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -529,8 +519,6 @@ impl CreateHostedConfigurationVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -678,8 +666,6 @@ impl DeleteApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -748,8 +734,7 @@ pub struct DeleteConfigurationProfileError {
 pub enum DeleteConfigurationProfileErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -799,8 +784,6 @@ impl DeleteConfigurationProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -924,8 +907,6 @@ impl DeleteDeploymentStrategyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -994,8 +975,7 @@ pub struct DeleteEnvironmentError {
 pub enum DeleteEnvironmentErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1045,8 +1025,6 @@ impl DeleteEnvironmentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1174,8 +1152,6 @@ impl DeleteHostedConfigurationVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1295,8 +1271,6 @@ impl GetApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1409,8 +1383,6 @@ impl GetConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1526,8 +1498,6 @@ impl GetConfigurationProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1643,8 +1613,6 @@ impl GetDeploymentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1757,8 +1725,6 @@ impl GetDeploymentStrategyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1874,8 +1840,6 @@ impl GetEnvironmentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1995,8 +1959,6 @@ impl GetHostedConfigurationVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2111,8 +2073,6 @@ impl ListApplicationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2220,8 +2180,6 @@ impl ListConfigurationProfilesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2337,8 +2295,6 @@ impl ListDeploymentsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2448,8 +2404,6 @@ impl ListDeploymentStrategiesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2557,8 +2511,6 @@ impl ListEnvironmentsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2681,8 +2633,6 @@ impl ListHostedConfigurationVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2802,8 +2752,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2872,8 +2820,7 @@ pub struct StartDeploymentError {
 pub enum StartDeploymentErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2923,8 +2870,6 @@ impl StartDeploymentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3042,8 +2987,6 @@ impl StopDeploymentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3156,8 +3099,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3267,8 +3208,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3381,8 +3320,6 @@ impl UpdateApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3498,8 +3435,6 @@ impl UpdateConfigurationProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3615,8 +3550,6 @@ impl UpdateDeploymentStrategyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3732,8 +3665,6 @@ impl UpdateEnvironmentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3849,8 +3780,6 @@ impl ValidateConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4166,8 +4095,7 @@ impl BadRequestException {
     }
 }
 
-/// <p>The request could not be processed because of conflict in the current state of the
-/// resource.</p>
+/// <p>The request could not be processed because of conflict in the current state of the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -4231,8 +4159,7 @@ impl ConflictException {
     }
 }
 
-/// <p>The number of hosted configuration versions exceeds the limit for the AppConfig hosted
-/// configuration store. Delete one or more versions and try again.</p>
+/// <p>The number of hosted configuration versions exceeds the limit for the AppConfig hosted configuration store. Delete one or more versions and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {

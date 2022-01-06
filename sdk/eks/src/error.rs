@@ -12,22 +12,15 @@ pub struct AssociateEncryptionConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateEncryptionConfigErrorKind {
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster
-    /// and the associated operations.</p>
+    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster and the associated operations.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The specified resource could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. You can view your available managed node groups with
-    /// <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-    /// Region-specific.</p>
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -77,8 +70,6 @@ impl AssociateEncryptionConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -169,22 +160,15 @@ pub struct AssociateIdentityProviderConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateIdentityProviderConfigErrorKind {
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster
-    /// and the associated operations.</p>
+    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster and the associated operations.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The specified resource could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. You can view your available managed node groups with
-    /// <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-    /// Region-specific.</p>
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -245,8 +229,6 @@ impl AssociateIdentityProviderConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -345,22 +327,15 @@ pub struct CreateAddonError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAddonErrorKind {
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster
-    /// and the associated operations.</p>
+    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster and the associated operations.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The specified resource could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. You can view your available managed node groups with
-    /// <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-    /// Region-specific.</p>
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -410,8 +385,6 @@ impl CreateAddonError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -490,12 +463,9 @@ pub struct CreateClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateClusterErrorKind {
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
@@ -505,9 +475,7 @@ pub enum CreateClusterErrorKind {
     ServerException(crate::error::ServerException),
     /// <p>The service is unavailable. Back off and retry the operation.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>At least one of your specified cluster subnets is in an Availability Zone that does
-    /// not support Amazon EKS. The exception output specifies the supported Availability Zones for
-    /// your account, from which you can choose subnets for your cluster.</p>
+    /// <p>At least one of your specified cluster subnets is in an Availability Zone that does not support Amazon EKS. The exception output specifies the supported Availability Zones for your account, from which you can choose subnets for your cluster.</p>
     UnsupportedAvailabilityZoneException(crate::error::UnsupportedAvailabilityZoneException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -556,8 +524,6 @@ impl CreateClusterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -650,23 +616,17 @@ pub struct CreateFargateProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateFargateProfileErrorKind {
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster
-    /// and the associated operations.</p>
+    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster and the associated operations.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>You have encountered a service limit on the specified resource.</p>
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// <p>At least one of your specified cluster subnets is in an Availability Zone that does
-    /// not support Amazon EKS. The exception output specifies the supported Availability Zones for
-    /// your account, from which you can choose subnets for your cluster.</p>
+    /// <p>At least one of your specified cluster subnets is in an Availability Zone that does not support Amazon EKS. The exception output specifies the supported Availability Zones for your account, from which you can choose subnets for your cluster.</p>
     UnsupportedAvailabilityZoneException(crate::error::UnsupportedAvailabilityZoneException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -716,8 +676,6 @@ impl CreateFargateProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -810,15 +768,11 @@ pub struct CreateNodegroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateNodegroupErrorKind {
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster
-    /// and the associated operations.</p>
+    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster and the associated operations.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
@@ -875,8 +829,6 @@ impl CreateNodegroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -969,20 +921,13 @@ pub struct DeleteAddonError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAddonErrorKind {
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster
-    /// and the associated operations.</p>
+    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster and the associated operations.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The specified resource could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. You can view your available managed node groups with
-    /// <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-    /// Region-specific.</p>
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -1031,8 +976,6 @@ impl DeleteAddonError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1106,16 +1049,11 @@ pub struct DeleteClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteClusterErrorKind {
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The specified resource could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. You can view your available managed node groups with
-    /// <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-    /// Region-specific.</p>
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -1166,8 +1104,6 @@ impl DeleteClusterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1244,17 +1180,11 @@ pub struct DeleteFargateProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteFargateProfileErrorKind {
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified resource could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. You can view your available managed node groups with
-    /// <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-    /// Region-specific.</p>
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -1302,8 +1232,6 @@ impl DeleteFargateProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1378,19 +1306,13 @@ pub struct DeleteNodegroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteNodegroupErrorKind {
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The specified resource could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. You can view your available managed node groups with
-    /// <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-    /// Region-specific.</p>
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -1442,8 +1364,6 @@ impl DeleteNodegroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1528,21 +1448,13 @@ pub struct DeregisterClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterClusterErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that
-    /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
-    /// Management</a> in the <i>IAM User Guide</i>. </p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The specified resource could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. You can view your available managed node groups with
-    /// <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-    /// Region-specific.</p>
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -1594,8 +1506,6 @@ impl DeregisterClusterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1680,20 +1590,13 @@ pub struct DescribeAddonError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAddonErrorKind {
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster
-    /// and the associated operations.</p>
+    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster and the associated operations.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The specified resource could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. You can view your available managed node groups with
-    /// <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-    /// Region-specific.</p>
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -1742,8 +1645,6 @@ impl DescribeAddonError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1820,13 +1721,9 @@ pub struct DescribeAddonVersionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAddonVersionsErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified resource could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. You can view your available managed node groups with
-    /// <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-    /// Region-specific.</p>
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -1873,8 +1770,6 @@ impl DescribeAddonVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1941,14 +1836,9 @@ pub struct DescribeClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeClusterErrorKind {
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified resource could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. You can view your available managed node groups with
-    /// <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-    /// Region-specific.</p>
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -1998,8 +1888,6 @@ impl DescribeClusterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2068,17 +1956,11 @@ pub struct DescribeFargateProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFargateProfileErrorKind {
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified resource could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. You can view your available managed node groups with
-    /// <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-    /// Region-specific.</p>
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -2126,8 +2008,6 @@ impl DescribeFargateProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2202,17 +2082,11 @@ pub struct DescribeIdentityProviderConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeIdentityProviderConfigErrorKind {
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified resource could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. You can view your available managed node groups with
-    /// <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-    /// Region-specific.</p>
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -2272,8 +2146,6 @@ impl DescribeIdentityProviderConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2362,17 +2234,11 @@ pub struct DescribeNodegroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeNodegroupErrorKind {
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified resource could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. You can view your available managed node groups with
-    /// <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-    /// Region-specific.</p>
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -2423,8 +2289,6 @@ impl DescribeNodegroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2501,17 +2365,11 @@ pub struct DescribeUpdateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeUpdateErrorKind {
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified resource could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. You can view your available managed node groups with
-    /// <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-    /// Region-specific.</p>
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -2559,8 +2417,6 @@ impl DescribeUpdateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2629,22 +2485,15 @@ pub struct DisassociateIdentityProviderConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateIdentityProviderConfigErrorKind {
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster
-    /// and the associated operations.</p>
+    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster and the associated operations.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The specified resource could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. You can view your available managed node groups with
-    /// <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-    /// Region-specific.</p>
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -2705,8 +2554,6 @@ impl DisassociateIdentityProviderConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2805,20 +2652,13 @@ pub struct ListAddonsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAddonsErrorKind {
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster
-    /// and the associated operations.</p>
+    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster and the associated operations.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The specified resource could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. You can view your available managed node groups with
-    /// <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-    /// Region-specific.</p>
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -2867,8 +2707,6 @@ impl ListAddonsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2942,12 +2780,9 @@ pub struct ListClustersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListClustersErrorKind {
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -2997,8 +2832,6 @@ impl ListClustersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3067,17 +2900,11 @@ pub struct ListFargateProfilesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListFargateProfilesErrorKind {
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified resource could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. You can view your available managed node groups with
-    /// <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-    /// Region-specific.</p>
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -3125,8 +2952,6 @@ impl ListFargateProfilesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3195,17 +3020,11 @@ pub struct ListIdentityProviderConfigsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListIdentityProviderConfigsErrorKind {
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified resource could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. You can view your available managed node groups with
-    /// <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-    /// Region-specific.</p>
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -3262,8 +3081,6 @@ impl ListIdentityProviderConfigsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3348,17 +3165,11 @@ pub struct ListNodegroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListNodegroupsErrorKind {
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified resource could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. You can view your available managed node groups with
-    /// <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-    /// Region-specific.</p>
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -3409,8 +3220,6 @@ impl ListNodegroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3487,11 +3296,9 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>This exception is thrown if the request contains a semantic error. The precise meaning
-    /// will depend on the API, and will be documented in the error message.</p>
+    /// <p>This exception is thrown if the request contains a semantic error. The precise meaning will depend on the API, and will be documented in the error message.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not
-    /// retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3535,8 +3342,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3595,17 +3400,11 @@ pub struct ListUpdatesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListUpdatesErrorKind {
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified resource could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. You can view your available managed node groups with
-    /// <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-    /// Region-specific.</p>
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -3653,8 +3452,6 @@ impl ListUpdatesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3723,17 +3520,11 @@ pub struct RegisterClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterClusterErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that
-    /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
-    /// Management</a> in the <i>IAM User Guide</i>. </p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
@@ -3793,8 +3584,6 @@ impl RegisterClusterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3895,11 +3684,9 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>This exception is thrown if the request contains a semantic error. The precise meaning
-    /// will depend on the API, and will be documented in the error message.</p>
+    /// <p>This exception is thrown if the request contains a semantic error. The precise meaning will depend on the API, and will be documented in the error message.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not
-    /// retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3943,8 +3730,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3997,11 +3782,9 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>This exception is thrown if the request contains a semantic error. The precise meaning
-    /// will depend on the API, and will be documented in the error message.</p>
+    /// <p>This exception is thrown if the request contains a semantic error. The precise meaning will depend on the API, and will be documented in the error message.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not
-    /// retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4045,8 +3828,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4099,22 +3880,15 @@ pub struct UpdateAddonError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAddonErrorKind {
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster
-    /// and the associated operations.</p>
+    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster and the associated operations.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The specified resource could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. You can view your available managed node groups with
-    /// <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-    /// Region-specific.</p>
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -4164,8 +3938,6 @@ impl UpdateAddonError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4244,22 +4016,15 @@ pub struct UpdateClusterConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateClusterConfigErrorKind {
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster
-    /// and the associated operations.</p>
+    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster and the associated operations.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The specified resource could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. You can view your available managed node groups with
-    /// <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-    /// Region-specific.</p>
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -4309,8 +4074,6 @@ impl UpdateClusterConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4395,22 +4158,15 @@ pub struct UpdateClusterVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateClusterVersionErrorKind {
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster
-    /// and the associated operations.</p>
+    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster and the associated operations.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The specified resource could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. You can view your available managed node groups with
-    /// <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-    /// Region-specific.</p>
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -4460,8 +4216,6 @@ impl UpdateClusterVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4552,22 +4306,15 @@ pub struct UpdateNodegroupConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateNodegroupConfigErrorKind {
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster
-    /// and the associated operations.</p>
+    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster and the associated operations.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The specified resource could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. You can view your available managed node groups with
-    /// <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-    /// Region-specific.</p>
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -4617,8 +4364,6 @@ impl UpdateNodegroupConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4709,22 +4454,15 @@ pub struct UpdateNodegroupVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateNodegroupVersionErrorKind {
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster
-    /// and the associated operations.</p>
+    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster and the associated operations.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The specified resource could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. You can view your available managed node groups with
-    /// <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-    /// Region-specific.</p>
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -4774,8 +4512,6 @@ impl UpdateNodegroupVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4979,10 +4715,7 @@ impl ServerException {
     }
 }
 
-/// <p>The specified resource could not be found. You can view your available clusters with
-/// <a>ListClusters</a>. You can view your available managed node groups with
-/// <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-/// Region-specific.</p>
+/// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -5256,8 +4989,7 @@ impl ResourceInUseException {
     }
 }
 
-/// <p>The request is invalid given the state of the cluster. Check the state of the cluster
-/// and the associated operations.</p>
+/// <p>The request is invalid given the state of the cluster. Check the state of the cluster and the associated operations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRequestException {
@@ -5383,8 +5115,7 @@ impl InvalidRequestException {
     }
 }
 
-/// <p>The specified parameter is invalid. Review the available parameters for the API
-/// request.</p>
+/// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterException {
@@ -5532,9 +5263,7 @@ impl InvalidParameterException {
     }
 }
 
-/// <p>These errors are usually caused by a client action. Actions can include using an
-/// action or resource on behalf of a user that doesn't have permissions to use the action
-/// or resource or specifying an identifier that is not valid.</p>
+/// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClientException {
@@ -5660,8 +5389,7 @@ impl ClientException {
     }
 }
 
-/// <p>A service resource associated with the request could not be found. Clients should not
-/// retry such requests.</p>
+/// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotFoundException {
@@ -5725,8 +5453,7 @@ impl NotFoundException {
     }
 }
 
-/// <p>This exception is thrown if the request contains a semantic error. The precise meaning
-/// will depend on the API, and will be documented in the error message.</p>
+/// <p>This exception is thrown if the request contains a semantic error. The precise meaning will depend on the API, and will be documented in the error message.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BadRequestException {
@@ -6025,10 +5752,7 @@ impl ResourceLimitExceededException {
     }
 }
 
-/// <p>You don't have permissions to perform the requested operation. The user or role that
-/// is making the request must have at least one IAM permissions policy attached that
-/// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
-/// Management</a> in the <i>IAM User Guide</i>. </p>
+/// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
@@ -6092,9 +5816,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>At least one of your specified cluster subnets is in an Availability Zone that does
-/// not support Amazon EKS. The exception output specifies the supported Availability Zones for
-/// your account, from which you can choose subnets for your cluster.</p>
+/// <p>At least one of your specified cluster subnets is in an Availability Zone that does not support Amazon EKS. The exception output specifies the supported Availability Zones for your account, from which you can choose subnets for your cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedAvailabilityZoneException {
@@ -6104,8 +5826,7 @@ pub struct UnsupportedAvailabilityZoneException {
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The Amazon EKS managed node group associated with the exception.</p>
     pub nodegroup_name: std::option::Option<std::string::String>,
-    /// <p>The supported Availability Zones for your account. Choose subnets in these
-    /// Availability Zones for your cluster.</p>
+    /// <p>The supported Availability Zones for your account. Choose subnets in these Availability Zones for your cluster.</p>
     pub valid_zones: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UnsupportedAvailabilityZoneException {
@@ -6117,8 +5838,7 @@ impl UnsupportedAvailabilityZoneException {
     pub fn nodegroup_name(&self) -> std::option::Option<&str> {
         self.nodegroup_name.as_deref()
     }
-    /// <p>The supported Availability Zones for your account. Choose subnets in these
-    /// Availability Zones for your cluster.</p>
+    /// <p>The supported Availability Zones for your account. Choose subnets in these Availability Zones for your cluster.</p>
     pub fn valid_zones(&self) -> std::option::Option<&[std::string::String]> {
         self.valid_zones.as_deref()
     }
@@ -6198,16 +5918,14 @@ pub mod unsupported_availability_zone_exception {
         ///
         /// To override the contents of this collection use [`set_valid_zones`](Self::set_valid_zones).
         ///
-        /// <p>The supported Availability Zones for your account. Choose subnets in these
-        /// Availability Zones for your cluster.</p>
+        /// <p>The supported Availability Zones for your account. Choose subnets in these Availability Zones for your cluster.</p>
         pub fn valid_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.valid_zones.unwrap_or_default();
             v.push(input.into());
             self.valid_zones = Some(v);
             self
         }
-        /// <p>The supported Availability Zones for your account. Choose subnets in these
-        /// Availability Zones for your cluster.</p>
+        /// <p>The supported Availability Zones for your account. Choose subnets in these Availability Zones for your cluster.</p>
         pub fn set_valid_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

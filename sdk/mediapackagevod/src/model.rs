@@ -597,9 +597,9 @@ pub mod mss_package {
         /// To override the contents of this collection use [`set_mss_manifests`](Self::set_mss_manifests).
         ///
         /// A list of MSS manifest configurations.
-        pub fn mss_manifests(mut self, input: impl Into<crate::model::MssManifest>) -> Self {
+        pub fn mss_manifests(mut self, input: crate::model::MssManifest) -> Self {
             let mut v = self.mss_manifests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mss_manifests = Some(v);
             self
         }
@@ -936,8 +936,7 @@ impl MssEncryption {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SpekeKeyProvider {
-    /// An Amazon Resource Name (ARN) of an IAM role that AWS Elemental
-    /// MediaPackage will assume when accessing the key provider service.
+    /// An Amazon Resource Name (ARN) of an IAM role that AWS Elemental MediaPackage will assume when accessing the key provider service.
     pub role_arn: std::option::Option<std::string::String>,
     /// The system IDs to include in key requests.
     pub system_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -945,8 +944,7 @@ pub struct SpekeKeyProvider {
     pub url: std::option::Option<std::string::String>,
 }
 impl SpekeKeyProvider {
-    /// An Amazon Resource Name (ARN) of an IAM role that AWS Elemental
-    /// MediaPackage will assume when accessing the key provider service.
+    /// An Amazon Resource Name (ARN) of an IAM role that AWS Elemental MediaPackage will assume when accessing the key provider service.
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -979,14 +977,12 @@ pub mod speke_key_provider {
         pub(crate) url: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// An Amazon Resource Name (ARN) of an IAM role that AWS Elemental
-        /// MediaPackage will assume when accessing the key provider service.
+        /// An Amazon Resource Name (ARN) of an IAM role that AWS Elemental MediaPackage will assume when accessing the key provider service.
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// An Amazon Resource Name (ARN) of an IAM role that AWS Elemental
-        /// MediaPackage will assume when accessing the key provider service.
+        /// An Amazon Resource Name (ARN) of an IAM role that AWS Elemental MediaPackage will assume when accessing the key provider service.
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1047,8 +1043,7 @@ pub struct HlsPackage {
     pub hls_manifests: std::option::Option<std::vec::Vec<crate::model::HlsManifest>>,
     /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
     pub include_dvb_subtitles: bool,
-    /// Duration (in seconds) of each fragment. Actual fragments will be
-    /// rounded to the nearest multiple of the source fragment duration.
+    /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
     pub segment_duration_seconds: i32,
     /// When enabled, audio streams will be placed in rendition groups in the output.
     pub use_audio_rendition_group: bool,
@@ -1066,8 +1061,7 @@ impl HlsPackage {
     pub fn include_dvb_subtitles(&self) -> bool {
         self.include_dvb_subtitles
     }
-    /// Duration (in seconds) of each fragment. Actual fragments will be
-    /// rounded to the nearest multiple of the source fragment duration.
+    /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
     pub fn segment_duration_seconds(&self) -> i32 {
         self.segment_duration_seconds
     }
@@ -1118,9 +1112,9 @@ pub mod hls_package {
         /// To override the contents of this collection use [`set_hls_manifests`](Self::set_hls_manifests).
         ///
         /// A list of HLS manifest configurations.
-        pub fn hls_manifests(mut self, input: impl Into<crate::model::HlsManifest>) -> Self {
+        pub fn hls_manifests(mut self, input: crate::model::HlsManifest) -> Self {
             let mut v = self.hls_manifests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hls_manifests = Some(v);
             self
         }
@@ -1142,14 +1136,12 @@ pub mod hls_package {
             self.include_dvb_subtitles = input;
             self
         }
-        /// Duration (in seconds) of each fragment. Actual fragments will be
-        /// rounded to the nearest multiple of the source fragment duration.
+        /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
         pub fn segment_duration_seconds(mut self, input: i32) -> Self {
             self.segment_duration_seconds = Some(input);
             self
         }
-        /// Duration (in seconds) of each fragment. Actual fragments will be
-        /// rounded to the nearest multiple of the source fragment duration.
+        /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
         pub fn set_segment_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.segment_duration_seconds = input;
             self
@@ -1187,26 +1179,13 @@ impl HlsPackage {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HlsManifest {
-    /// This setting controls how ad markers are included in the packaged OriginEndpoint.
-    /// "NONE" will omit all SCTE-35 ad markers from the output.
-    /// "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad
-    /// markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest.
-    /// "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35
-    /// messages in the input source.
+    /// This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all SCTE-35 ad markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35 messages in the input source.
     pub ad_markers: std::option::Option<crate::model::AdMarkers>,
     /// When enabled, an I-Frame only stream will be included in the output.
     pub include_iframe_only_stream: bool,
     /// An optional string to include in the name of the manifest.
     pub manifest_name: std::option::Option<std::string::String>,
-    /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag
-    /// inserted into manifests. Additionally, when an interval is specified
-    /// ID3Timed Metadata messages will be generated every 5 seconds using the
-    /// ingest time of the content.
-    /// If the interval is not specified, or set to 0, then
-    /// no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no
-    /// ID3Timed Metadata messages will be generated. Note that irrespective
-    /// of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,
-    /// it will be passed through to HLS output.
+    /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag inserted into manifests. Additionally, when an interval is specified ID3Timed Metadata messages will be generated every 5 seconds using the ingest time of the content. If the interval is not specified, or set to 0, then no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no ID3Timed Metadata messages will be generated. Note that irrespective of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input, it will be passed through to HLS output.
     pub program_date_time_interval_seconds: i32,
     /// When enabled, the EXT-X-KEY tag will be repeated in output manifests.
     pub repeat_ext_x_key: bool,
@@ -1214,12 +1193,7 @@ pub struct HlsManifest {
     pub stream_selection: std::option::Option<crate::model::StreamSelection>,
 }
 impl HlsManifest {
-    /// This setting controls how ad markers are included in the packaged OriginEndpoint.
-    /// "NONE" will omit all SCTE-35 ad markers from the output.
-    /// "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad
-    /// markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest.
-    /// "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35
-    /// messages in the input source.
+    /// This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all SCTE-35 ad markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35 messages in the input source.
     pub fn ad_markers(&self) -> std::option::Option<&crate::model::AdMarkers> {
         self.ad_markers.as_ref()
     }
@@ -1231,15 +1205,7 @@ impl HlsManifest {
     pub fn manifest_name(&self) -> std::option::Option<&str> {
         self.manifest_name.as_deref()
     }
-    /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag
-    /// inserted into manifests. Additionally, when an interval is specified
-    /// ID3Timed Metadata messages will be generated every 5 seconds using the
-    /// ingest time of the content.
-    /// If the interval is not specified, or set to 0, then
-    /// no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no
-    /// ID3Timed Metadata messages will be generated. Note that irrespective
-    /// of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,
-    /// it will be passed through to HLS output.
+    /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag inserted into manifests. Additionally, when an interval is specified ID3Timed Metadata messages will be generated every 5 seconds using the ingest time of the content. If the interval is not specified, or set to 0, then no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no ID3Timed Metadata messages will be generated. Note that irrespective of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input, it will be passed through to HLS output.
     pub fn program_date_time_interval_seconds(&self) -> i32 {
         self.program_date_time_interval_seconds
     }
@@ -1284,22 +1250,12 @@ pub mod hls_manifest {
         pub(crate) stream_selection: std::option::Option<crate::model::StreamSelection>,
     }
     impl Builder {
-        /// This setting controls how ad markers are included in the packaged OriginEndpoint.
-        /// "NONE" will omit all SCTE-35 ad markers from the output.
-        /// "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad
-        /// markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest.
-        /// "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35
-        /// messages in the input source.
+        /// This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all SCTE-35 ad markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35 messages in the input source.
         pub fn ad_markers(mut self, input: crate::model::AdMarkers) -> Self {
             self.ad_markers = Some(input);
             self
         }
-        /// This setting controls how ad markers are included in the packaged OriginEndpoint.
-        /// "NONE" will omit all SCTE-35 ad markers from the output.
-        /// "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad
-        /// markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest.
-        /// "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35
-        /// messages in the input source.
+        /// This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all SCTE-35 ad markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35 messages in the input source.
         pub fn set_ad_markers(
             mut self,
             input: std::option::Option<crate::model::AdMarkers>,
@@ -1330,28 +1286,12 @@ pub mod hls_manifest {
             self.manifest_name = input;
             self
         }
-        /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag
-        /// inserted into manifests. Additionally, when an interval is specified
-        /// ID3Timed Metadata messages will be generated every 5 seconds using the
-        /// ingest time of the content.
-        /// If the interval is not specified, or set to 0, then
-        /// no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no
-        /// ID3Timed Metadata messages will be generated. Note that irrespective
-        /// of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,
-        /// it will be passed through to HLS output.
+        /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag inserted into manifests. Additionally, when an interval is specified ID3Timed Metadata messages will be generated every 5 seconds using the ingest time of the content. If the interval is not specified, or set to 0, then no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no ID3Timed Metadata messages will be generated. Note that irrespective of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input, it will be passed through to HLS output.
         pub fn program_date_time_interval_seconds(mut self, input: i32) -> Self {
             self.program_date_time_interval_seconds = Some(input);
             self
         }
-        /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag
-        /// inserted into manifests. Additionally, when an interval is specified
-        /// ID3Timed Metadata messages will be generated every 5 seconds using the
-        /// ingest time of the content.
-        /// If the interval is not specified, or set to 0, then
-        /// no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no
-        /// ID3Timed Metadata messages will be generated. Note that irrespective
-        /// of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,
-        /// it will be passed through to HLS output.
+        /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag inserted into manifests. Additionally, when an interval is specified ID3Timed Metadata messages will be generated every 5 seconds using the ingest time of the content. If the interval is not specified, or set to 0, then no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no ID3Timed Metadata messages will be generated. Note that irrespective of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input, it will be passed through to HLS output.
         pub fn set_program_date_time_interval_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -1467,8 +1407,7 @@ impl AsRef<str> for AdMarkers {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HlsEncryption {
-    /// A constant initialization vector for encryption (optional).
-    /// When not specified the initialization vector will be periodically rotated.
+    /// A constant initialization vector for encryption (optional). When not specified the initialization vector will be periodically rotated.
     pub constant_initialization_vector: std::option::Option<std::string::String>,
     /// The encryption method to use.
     pub encryption_method: std::option::Option<crate::model::EncryptionMethod>,
@@ -1476,8 +1415,7 @@ pub struct HlsEncryption {
     pub speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
 }
 impl HlsEncryption {
-    /// A constant initialization vector for encryption (optional).
-    /// When not specified the initialization vector will be periodically rotated.
+    /// A constant initialization vector for encryption (optional). When not specified the initialization vector will be periodically rotated.
     pub fn constant_initialization_vector(&self) -> std::option::Option<&str> {
         self.constant_initialization_vector.as_deref()
     }
@@ -1513,8 +1451,7 @@ pub mod hls_encryption {
         pub(crate) speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
     }
     impl Builder {
-        /// A constant initialization vector for encryption (optional).
-        /// When not specified the initialization vector will be periodically rotated.
+        /// A constant initialization vector for encryption (optional). When not specified the initialization vector will be periodically rotated.
         pub fn constant_initialization_vector(
             mut self,
             input: impl Into<std::string::String>,
@@ -1522,8 +1459,7 @@ pub mod hls_encryption {
             self.constant_initialization_vector = Some(input.into());
             self
         }
-        /// A constant initialization vector for encryption (optional).
-        /// When not specified the initialization vector will be periodically rotated.
+        /// A constant initialization vector for encryption (optional). When not specified the initialization vector will be periodically rotated.
         pub fn set_constant_initialization_vector(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1639,15 +1575,11 @@ pub struct DashPackage {
     pub encryption: std::option::Option<crate::model::DashEncryption>,
     /// When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
     pub include_encoder_configuration_in_segments: bool,
-    /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH)
-    /// Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not
-    /// be partitioned into more than one period. If the list contains "ADS", new periods will be created where
-    /// the Asset contains SCTE-35 ad markers.
+    /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into more than one period. If the list contains "ADS", new periods will be created where the Asset contains SCTE-35 ad markers.
     pub period_triggers: std::option::Option<std::vec::Vec<crate::model::PeriodTriggersElement>>,
-    /// Duration (in seconds) of each segment. Actual segments will be
-    /// rounded to the nearest multiple of the source segment duration.
+    /// Duration (in seconds) of each segment. Actual segments will be rounded to the nearest multiple of the source segment duration.
     pub segment_duration_seconds: i32,
-    /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs.  When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
+    /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
     pub segment_template_format: std::option::Option<crate::model::SegmentTemplateFormat>,
 }
 impl DashPackage {
@@ -1663,19 +1595,15 @@ impl DashPackage {
     pub fn include_encoder_configuration_in_segments(&self) -> bool {
         self.include_encoder_configuration_in_segments
     }
-    /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH)
-    /// Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not
-    /// be partitioned into more than one period. If the list contains "ADS", new periods will be created where
-    /// the Asset contains SCTE-35 ad markers.
+    /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into more than one period. If the list contains "ADS", new periods will be created where the Asset contains SCTE-35 ad markers.
     pub fn period_triggers(&self) -> std::option::Option<&[crate::model::PeriodTriggersElement]> {
         self.period_triggers.as_deref()
     }
-    /// Duration (in seconds) of each segment. Actual segments will be
-    /// rounded to the nearest multiple of the source segment duration.
+    /// Duration (in seconds) of each segment. Actual segments will be rounded to the nearest multiple of the source segment duration.
     pub fn segment_duration_seconds(&self) -> i32 {
         self.segment_duration_seconds
     }
-    /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs.  When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
+    /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
     pub fn segment_template_format(
         &self,
     ) -> std::option::Option<&crate::model::SegmentTemplateFormat> {
@@ -1718,9 +1646,9 @@ pub mod dash_package {
         /// To override the contents of this collection use [`set_dash_manifests`](Self::set_dash_manifests).
         ///
         /// A list of DASH manifest configurations.
-        pub fn dash_manifests(mut self, input: impl Into<crate::model::DashManifest>) -> Self {
+        pub fn dash_manifests(mut self, input: crate::model::DashManifest) -> Self {
             let mut v = self.dash_manifests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dash_manifests = Some(v);
             self
         }
@@ -1762,23 +1690,14 @@ pub mod dash_package {
         ///
         /// To override the contents of this collection use [`set_period_triggers`](Self::set_period_triggers).
         ///
-        /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH)
-        /// Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not
-        /// be partitioned into more than one period. If the list contains "ADS", new periods will be created where
-        /// the Asset contains SCTE-35 ad markers.
-        pub fn period_triggers(
-            mut self,
-            input: impl Into<crate::model::PeriodTriggersElement>,
-        ) -> Self {
+        /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into more than one period. If the list contains "ADS", new periods will be created where the Asset contains SCTE-35 ad markers.
+        pub fn period_triggers(mut self, input: crate::model::PeriodTriggersElement) -> Self {
             let mut v = self.period_triggers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.period_triggers = Some(v);
             self
         }
-        /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH)
-        /// Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not
-        /// be partitioned into more than one period. If the list contains "ADS", new periods will be created where
-        /// the Asset contains SCTE-35 ad markers.
+        /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into more than one period. If the list contains "ADS", new periods will be created where the Asset contains SCTE-35 ad markers.
         pub fn set_period_triggers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PeriodTriggersElement>>,
@@ -1786,19 +1705,17 @@ pub mod dash_package {
             self.period_triggers = input;
             self
         }
-        /// Duration (in seconds) of each segment. Actual segments will be
-        /// rounded to the nearest multiple of the source segment duration.
+        /// Duration (in seconds) of each segment. Actual segments will be rounded to the nearest multiple of the source segment duration.
         pub fn segment_duration_seconds(mut self, input: i32) -> Self {
             self.segment_duration_seconds = Some(input);
             self
         }
-        /// Duration (in seconds) of each segment. Actual segments will be
-        /// rounded to the nearest multiple of the source segment duration.
+        /// Duration (in seconds) of each segment. Actual segments will be rounded to the nearest multiple of the source segment duration.
         pub fn set_segment_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.segment_duration_seconds = input;
             self
         }
-        /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs.  When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
+        /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
         pub fn segment_template_format(
             mut self,
             input: crate::model::SegmentTemplateFormat,
@@ -1806,7 +1723,7 @@ pub mod dash_package {
             self.segment_template_format = Some(input);
             self
         }
-        /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs.  When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
+        /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
         pub fn set_segment_template_format(
             mut self,
             input: std::option::Option<crate::model::SegmentTemplateFormat>,
@@ -2011,19 +1928,19 @@ impl DashEncryption {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DashManifest {
-    /// Determines the position of some tags in the Media Presentation Description (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation.  When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
+    /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
     pub manifest_layout: std::option::Option<crate::model::ManifestLayout>,
     /// An optional string to include in the name of the manifest.
     pub manifest_name: std::option::Option<std::string::String>,
     /// Minimum duration (in seconds) that a player will buffer media before starting the presentation.
     pub min_buffer_time_seconds: i32,
-    /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type.  When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
+    /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
     pub profile: std::option::Option<crate::model::Profile>,
     /// A StreamSelection configuration.
     pub stream_selection: std::option::Option<crate::model::StreamSelection>,
 }
 impl DashManifest {
-    /// Determines the position of some tags in the Media Presentation Description (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation.  When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
+    /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
     pub fn manifest_layout(&self) -> std::option::Option<&crate::model::ManifestLayout> {
         self.manifest_layout.as_ref()
     }
@@ -2035,7 +1952,7 @@ impl DashManifest {
     pub fn min_buffer_time_seconds(&self) -> i32 {
         self.min_buffer_time_seconds
     }
-    /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type.  When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
+    /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
     pub fn profile(&self) -> std::option::Option<&crate::model::Profile> {
         self.profile.as_ref()
     }
@@ -2068,12 +1985,12 @@ pub mod dash_manifest {
         pub(crate) stream_selection: std::option::Option<crate::model::StreamSelection>,
     }
     impl Builder {
-        /// Determines the position of some tags in the Media Presentation Description (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation.  When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
+        /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
         pub fn manifest_layout(mut self, input: crate::model::ManifestLayout) -> Self {
             self.manifest_layout = Some(input);
             self
         }
-        /// Determines the position of some tags in the Media Presentation Description (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation.  When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
+        /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
         pub fn set_manifest_layout(
             mut self,
             input: std::option::Option<crate::model::ManifestLayout>,
@@ -2104,12 +2021,12 @@ pub mod dash_manifest {
             self.min_buffer_time_seconds = input;
             self
         }
-        /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type.  When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
+        /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
         pub fn profile(mut self, input: crate::model::Profile) -> Self {
             self.profile = Some(input);
             self
         }
-        /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type.  When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
+        /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
         pub fn set_profile(mut self, input: std::option::Option<crate::model::Profile>) -> Self {
             self.profile = input;
             self
@@ -2266,8 +2183,7 @@ pub struct CmafPackage {
     pub hls_manifests: std::option::Option<std::vec::Vec<crate::model::HlsManifest>>,
     /// When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
     pub include_encoder_configuration_in_segments: bool,
-    /// Duration (in seconds) of each fragment. Actual fragments will be
-    /// rounded to the nearest multiple of the source fragment duration.
+    /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
     pub segment_duration_seconds: i32,
 }
 impl CmafPackage {
@@ -2283,8 +2199,7 @@ impl CmafPackage {
     pub fn include_encoder_configuration_in_segments(&self) -> bool {
         self.include_encoder_configuration_in_segments
     }
-    /// Duration (in seconds) of each fragment. Actual fragments will be
-    /// rounded to the nearest multiple of the source fragment duration.
+    /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
     pub fn segment_duration_seconds(&self) -> i32 {
         self.segment_duration_seconds
     }
@@ -2332,9 +2247,9 @@ pub mod cmaf_package {
         /// To override the contents of this collection use [`set_hls_manifests`](Self::set_hls_manifests).
         ///
         /// A list of HLS manifest configurations.
-        pub fn hls_manifests(mut self, input: impl Into<crate::model::HlsManifest>) -> Self {
+        pub fn hls_manifests(mut self, input: crate::model::HlsManifest) -> Self {
             let mut v = self.hls_manifests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hls_manifests = Some(v);
             self
         }
@@ -2359,14 +2274,12 @@ pub mod cmaf_package {
             self.include_encoder_configuration_in_segments = input;
             self
         }
-        /// Duration (in seconds) of each fragment. Actual fragments will be
-        /// rounded to the nearest multiple of the source fragment duration.
+        /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
         pub fn segment_duration_seconds(mut self, input: i32) -> Self {
             self.segment_duration_seconds = Some(input);
             self
         }
-        /// Duration (in seconds) of each fragment. Actual fragments will be
-        /// rounded to the nearest multiple of the source fragment duration.
+        /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
         pub fn set_segment_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.segment_duration_seconds = input;
             self

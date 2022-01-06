@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 use aws_config::meta::region::RegionProviderChain;
-use polly::input::SynthesizeSpeechInput;
-use polly::model::{OutputFormat, VoiceId};
-use polly::presigning::config::PresigningConfig;
-use polly::{Client, Config, Region, PKG_VERSION};
+use aws_sdk_polly::input::SynthesizeSpeechInput;
+use aws_sdk_polly::model::{OutputFormat, VoiceId};
+use aws_sdk_polly::presigning::config::PresigningConfig;
+use aws_sdk_polly::{Client, Config, Region, PKG_VERSION};
 use std::error::Error;
 use std::fs;
 use std::time::Duration;

@@ -10,60 +10,30 @@ pub mod create_activity_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For more information,
-        /// see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-        /// Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+        /// <p>The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
         /// <p>A name must <i>not</i> contain:</p>
         /// <ul>
-        /// <li>
-        /// <p>white space</p>
-        /// </li>
-        /// <li>
-        /// <p>brackets <code>< > { } [ ]</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>wildcard characters <code>? *</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-        /// </li>
+        /// <li> <p>white space</p> </li>
+        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+        /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
         /// </ul>
-        /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+        /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For more information,
-        /// see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-        /// Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+        /// <p>The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
         /// <p>A name must <i>not</i> contain:</p>
         /// <ul>
-        /// <li>
-        /// <p>white space</p>
-        /// </li>
-        /// <li>
-        /// <p>brackets <code>< > { } [ ]</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>wildcard characters <code>? *</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-        /// </li>
+        /// <li> <p>white space</p> </li>
+        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+        /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
         /// </ul>
-        /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+        /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -73,22 +43,16 @@ pub mod create_activity_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags to add to a resource.</p>
-        /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-        /// Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
-        /// Tags</a>.</p>
+        /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
         /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
         /// <p>The list of tags to add to a resource.</p>
-        /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-        /// Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
-        /// Tags</a>.</p>
+        /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
         /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
         pub fn set_tags(
             mut self,
@@ -114,7 +78,7 @@ pub mod create_activity_input {
 #[doc(hidden)]
 pub type CreateActivityInputOperationOutputAlias = crate::operation::CreateActivity;
 #[doc(hidden)]
-pub type CreateActivityInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateActivityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateActivityInput {
     /// Consumes the builder and constructs an Operation<[`CreateActivity`](crate::operation::CreateActivity)>
     #[allow(clippy::let_and_return)]
@@ -125,7 +89,7 @@ impl CreateActivityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateActivity,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -210,7 +174,7 @@ impl CreateActivityInput {
             "CreateActivity",
             "sfn",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -251,26 +215,13 @@ pub mod create_state_machine_input {
         /// <p>The name of the state machine. </p>
         /// <p>A name must <i>not</i> contain:</p>
         /// <ul>
-        /// <li>
-        /// <p>white space</p>
-        /// </li>
-        /// <li>
-        /// <p>brackets <code>< > { } [ ]</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>wildcard characters <code>? *</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-        /// </li>
+        /// <li> <p>white space</p> </li>
+        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+        /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
         /// </ul>
-        /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+        /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -278,26 +229,13 @@ pub mod create_state_machine_input {
         /// <p>The name of the state machine. </p>
         /// <p>A name must <i>not</i> contain:</p>
         /// <ul>
-        /// <li>
-        /// <p>white space</p>
-        /// </li>
-        /// <li>
-        /// <p>brackets <code>< > { } [ ]</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>wildcard characters <code>? *</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-        /// </li>
+        /// <li> <p>white space</p> </li>
+        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+        /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
         /// </ul>
-        /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+        /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -322,16 +260,12 @@ pub mod create_state_machine_input {
             self.role_arn = input;
             self
         }
-        /// <p>Determines whether a Standard or Express state machine is created. The default is
-        /// <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it
-        /// has been created.</p>
+        /// <p>Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it has been created.</p>
         pub fn r#type(mut self, input: crate::model::StateMachineType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Determines whether a Standard or Express state machine is created. The default is
-        /// <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it
-        /// has been created.</p>
+        /// <p>Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it has been created.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::StateMachineType>,
@@ -339,21 +273,15 @@ pub mod create_state_machine_input {
             self.r#type = input;
             self
         }
-        /// <p>Defines what execution history events are logged and where they are logged.</p>
-        /// <note>
-        /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see
-        /// <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log
-        /// Levels</a> in the AWS Step Functions User Guide.</p>
+        /// <p>Defines what execution history events are logged and where they are logged.</p> <note>
+        /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the AWS Step Functions User Guide.</p>
         /// </note>
         pub fn logging_configuration(mut self, input: crate::model::LoggingConfiguration) -> Self {
             self.logging_configuration = Some(input);
             self
         }
-        /// <p>Defines what execution history events are logged and where they are logged.</p>
-        /// <note>
-        /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see
-        /// <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log
-        /// Levels</a> in the AWS Step Functions User Guide.</p>
+        /// <p>Defines what execution history events are logged and where they are logged.</p> <note>
+        /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the AWS Step Functions User Guide.</p>
         /// </note>
         pub fn set_logging_configuration(
             mut self,
@@ -367,22 +295,16 @@ pub mod create_state_machine_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags to be added when creating a state machine.</p>
-        /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-        /// Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
-        /// Tags</a>.</p>
+        /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
         /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
         /// <p>Tags to be added when creating a state machine.</p>
-        /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-        /// Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
-        /// Tags</a>.</p>
+        /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
         /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
         pub fn set_tags(
             mut self,
@@ -426,7 +348,7 @@ pub mod create_state_machine_input {
 #[doc(hidden)]
 pub type CreateStateMachineInputOperationOutputAlias = crate::operation::CreateStateMachine;
 #[doc(hidden)]
-pub type CreateStateMachineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateStateMachineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStateMachineInput {
     /// Consumes the builder and constructs an Operation<[`CreateStateMachine`](crate::operation::CreateStateMachine)>
     #[allow(clippy::let_and_return)]
@@ -437,7 +359,7 @@ impl CreateStateMachineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateStateMachine,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -522,7 +444,7 @@ impl CreateStateMachineInput {
             "CreateStateMachine",
             "sfn",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -580,7 +502,7 @@ pub mod delete_activity_input {
 #[doc(hidden)]
 pub type DeleteActivityInputOperationOutputAlias = crate::operation::DeleteActivity;
 #[doc(hidden)]
-pub type DeleteActivityInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteActivityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteActivityInput {
     /// Consumes the builder and constructs an Operation<[`DeleteActivity`](crate::operation::DeleteActivity)>
     #[allow(clippy::let_and_return)]
@@ -591,7 +513,7 @@ impl DeleteActivityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteActivity,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -676,7 +598,7 @@ impl DeleteActivityInput {
             "DeleteActivity",
             "sfn",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -737,7 +659,7 @@ pub mod delete_state_machine_input {
 #[doc(hidden)]
 pub type DeleteStateMachineInputOperationOutputAlias = crate::operation::DeleteStateMachine;
 #[doc(hidden)]
-pub type DeleteStateMachineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteStateMachineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStateMachineInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStateMachine`](crate::operation::DeleteStateMachine)>
     #[allow(clippy::let_and_return)]
@@ -748,7 +670,7 @@ impl DeleteStateMachineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteStateMachine,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -833,7 +755,7 @@ impl DeleteStateMachineInput {
             "DeleteStateMachine",
             "sfn",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -891,7 +813,7 @@ pub mod describe_activity_input {
 #[doc(hidden)]
 pub type DescribeActivityInputOperationOutputAlias = crate::operation::DescribeActivity;
 #[doc(hidden)]
-pub type DescribeActivityInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeActivityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeActivityInput {
     /// Consumes the builder and constructs an Operation<[`DescribeActivity`](crate::operation::DescribeActivity)>
     #[allow(clippy::let_and_return)]
@@ -902,7 +824,7 @@ impl DescribeActivityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeActivity,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -987,7 +909,7 @@ impl DescribeActivityInput {
             "DescribeActivity",
             "sfn",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1048,7 +970,7 @@ pub mod describe_execution_input {
 #[doc(hidden)]
 pub type DescribeExecutionInputOperationOutputAlias = crate::operation::DescribeExecution;
 #[doc(hidden)]
-pub type DescribeExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeExecutionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeExecution`](crate::operation::DescribeExecution)>
     #[allow(clippy::let_and_return)]
@@ -1059,7 +981,7 @@ impl DescribeExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1144,7 +1066,7 @@ impl DescribeExecutionInput {
             "DescribeExecution",
             "sfn",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1205,7 +1127,7 @@ pub mod describe_state_machine_input {
 #[doc(hidden)]
 pub type DescribeStateMachineInputOperationOutputAlias = crate::operation::DescribeStateMachine;
 #[doc(hidden)]
-pub type DescribeStateMachineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeStateMachineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeStateMachineInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStateMachine`](crate::operation::DescribeStateMachine)>
     #[allow(clippy::let_and_return)]
@@ -1216,7 +1138,7 @@ impl DescribeStateMachineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeStateMachine,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1303,7 +1225,7 @@ impl DescribeStateMachineInput {
             "DescribeStateMachine",
             "sfn",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1365,7 +1287,8 @@ pub mod describe_state_machine_for_execution_input {
 pub type DescribeStateMachineForExecutionInputOperationOutputAlias =
     crate::operation::DescribeStateMachineForExecution;
 #[doc(hidden)]
-pub type DescribeStateMachineForExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeStateMachineForExecutionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeStateMachineForExecutionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStateMachineForExecution`](crate::operation::DescribeStateMachineForExecution)>
     #[allow(clippy::let_and_return)]
@@ -1376,7 +1299,7 @@ impl DescribeStateMachineForExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeStateMachineForExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1462,7 +1385,7 @@ impl DescribeStateMachineForExecutionInput {
             "DescribeStateMachineForExecution",
             "sfn",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1495,26 +1418,22 @@ pub mod get_activity_task_input {
         pub(crate) worker_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task
-        /// using <a>CreateActivity</a>.)</p>
+        /// <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task using <code>CreateActivity</code>.)</p>
         pub fn activity_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.activity_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task
-        /// using <a>CreateActivity</a>.)</p>
+        /// <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task using <code>CreateActivity</code>.)</p>
         pub fn set_activity_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.activity_arn = input;
             self
         }
-        /// <p>You can provide an arbitrary name in order to identify the worker that the task is
-        /// assigned to. This name is used when it is logged in the execution history.</p>
+        /// <p>You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name is used when it is logged in the execution history.</p>
         pub fn worker_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.worker_name = Some(input.into());
             self
         }
-        /// <p>You can provide an arbitrary name in order to identify the worker that the task is
-        /// assigned to. This name is used when it is logged in the execution history.</p>
+        /// <p>You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name is used when it is logged in the execution history.</p>
         pub fn set_worker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.worker_name = input;
             self
@@ -1536,7 +1455,7 @@ pub mod get_activity_task_input {
 #[doc(hidden)]
 pub type GetActivityTaskInputOperationOutputAlias = crate::operation::GetActivityTask;
 #[doc(hidden)]
-pub type GetActivityTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetActivityTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetActivityTaskInput {
     /// Consumes the builder and constructs an Operation<[`GetActivityTask`](crate::operation::GetActivityTask)>
     #[allow(clippy::let_and_return)]
@@ -1547,7 +1466,7 @@ impl GetActivityTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetActivityTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1632,7 +1551,7 @@ impl GetActivityTaskInput {
             "GetActivityTask",
             "sfn",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1681,15 +1600,13 @@ pub mod get_execution_history_input {
             self.execution_arn = input;
             self
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
-        /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
         /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
-        /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
         /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
@@ -1705,26 +1622,22 @@ pub mod get_execution_history_input {
             self.reverse_order = input;
             self
         }
-        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>You can select whether execution data (input or output of a history event) is returned.
-        /// The default is <code>true</code>.</p>
+        /// <p>You can select whether execution data (input or output of a history event) is returned. The default is <code>true</code>.</p>
         pub fn include_execution_data(mut self, input: bool) -> Self {
             self.include_execution_data = Some(input);
             self
         }
-        /// <p>You can select whether execution data (input or output of a history event) is returned.
-        /// The default is <code>true</code>.</p>
+        /// <p>You can select whether execution data (input or output of a history event) is returned. The default is <code>true</code>.</p>
         pub fn set_include_execution_data(mut self, input: std::option::Option<bool>) -> Self {
             self.include_execution_data = input;
             self
@@ -1749,7 +1662,7 @@ pub mod get_execution_history_input {
 #[doc(hidden)]
 pub type GetExecutionHistoryInputOperationOutputAlias = crate::operation::GetExecutionHistory;
 #[doc(hidden)]
-pub type GetExecutionHistoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetExecutionHistoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetExecutionHistoryInput {
     /// Consumes the builder and constructs an Operation<[`GetExecutionHistory`](crate::operation::GetExecutionHistory)>
     #[allow(clippy::let_and_return)]
@@ -1760,7 +1673,7 @@ impl GetExecutionHistoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetExecutionHistory,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1845,7 +1758,7 @@ impl GetExecutionHistoryInput {
             "GetExecutionHistory",
             "sfn",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1878,28 +1791,24 @@ pub mod list_activities_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
-        /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
         /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
-        /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
         /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1921,7 +1830,7 @@ pub mod list_activities_input {
 #[doc(hidden)]
 pub type ListActivitiesInputOperationOutputAlias = crate::operation::ListActivities;
 #[doc(hidden)]
-pub type ListActivitiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListActivitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListActivitiesInput {
     /// Consumes the builder and constructs an Operation<[`ListActivities`](crate::operation::ListActivities)>
     #[allow(clippy::let_and_return)]
@@ -1932,7 +1841,7 @@ impl ListActivitiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListActivities,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2017,7 +1926,7 @@ impl ListActivitiesInput {
             "ListActivities",
             "sfn",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2065,14 +1974,12 @@ pub mod list_executions_input {
             self.state_machine_arn = input;
             self
         }
-        /// <p>If specified, only list the executions whose current execution status matches the given
-        /// filter.</p>
+        /// <p>If specified, only list the executions whose current execution status matches the given filter.</p>
         pub fn status_filter(mut self, input: crate::model::ExecutionStatus) -> Self {
             self.status_filter = Some(input);
             self
         }
-        /// <p>If specified, only list the executions whose current execution status matches the given
-        /// filter.</p>
+        /// <p>If specified, only list the executions whose current execution status matches the given filter.</p>
         pub fn set_status_filter(
             mut self,
             input: std::option::Option<crate::model::ExecutionStatus>,
@@ -2080,28 +1987,24 @@ pub mod list_executions_input {
             self.status_filter = input;
             self
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
-        /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
         /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
-        /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
         /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2125,7 +2028,7 @@ pub mod list_executions_input {
 #[doc(hidden)]
 pub type ListExecutionsInputOperationOutputAlias = crate::operation::ListExecutions;
 #[doc(hidden)]
-pub type ListExecutionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListExecutionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`ListExecutions`](crate::operation::ListExecutions)>
     #[allow(clippy::let_and_return)]
@@ -2136,7 +2039,7 @@ impl ListExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListExecutions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2221,7 +2124,7 @@ impl ListExecutionsInput {
             "ListExecutions",
             "sfn",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2254,28 +2157,24 @@ pub mod list_state_machines_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
-        /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
         /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
-        /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
         /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2297,7 +2196,7 @@ pub mod list_state_machines_input {
 #[doc(hidden)]
 pub type ListStateMachinesInputOperationOutputAlias = crate::operation::ListStateMachines;
 #[doc(hidden)]
-pub type ListStateMachinesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListStateMachinesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStateMachinesInput {
     /// Consumes the builder and constructs an Operation<[`ListStateMachines`](crate::operation::ListStateMachines)>
     #[allow(clippy::let_and_return)]
@@ -2308,7 +2207,7 @@ impl ListStateMachinesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListStateMachines,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2393,7 +2292,7 @@ impl ListStateMachinesInput {
             "ListStateMachines",
             "sfn",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2451,7 +2350,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -2462,7 +2361,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2549,7 +2448,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "sfn",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2583,16 +2482,12 @@ pub mod send_task_failure_input {
         pub(crate) cause: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The token that represents this task. Task tokens are generated by Step Functions when
-        /// tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a
-        /// workflow enters a task state. See <a>GetActivityTaskOutput$taskToken</a>.</p>
+        /// <p>The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a workflow enters a task state. See <code>GetActivityTaskOutput$taskToken</code>.</p>
         pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_token = Some(input.into());
             self
         }
-        /// <p>The token that represents this task. Task tokens are generated by Step Functions when
-        /// tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a
-        /// workflow enters a task state. See <a>GetActivityTaskOutput$taskToken</a>.</p>
+        /// <p>The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a workflow enters a task state. See <code>GetActivityTaskOutput$taskToken</code>.</p>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_token = input;
             self
@@ -2635,7 +2530,7 @@ pub mod send_task_failure_input {
 #[doc(hidden)]
 pub type SendTaskFailureInputOperationOutputAlias = crate::operation::SendTaskFailure;
 #[doc(hidden)]
-pub type SendTaskFailureInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendTaskFailureInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendTaskFailureInput {
     /// Consumes the builder and constructs an Operation<[`SendTaskFailure`](crate::operation::SendTaskFailure)>
     #[allow(clippy::let_and_return)]
@@ -2646,7 +2541,7 @@ impl SendTaskFailureInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendTaskFailure,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2731,7 +2626,7 @@ impl SendTaskFailureInput {
             "SendTaskFailure",
             "sfn",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2763,16 +2658,12 @@ pub mod send_task_heartbeat_input {
         pub(crate) task_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The token that represents this task. Task tokens are generated by Step Functions when
-        /// tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a
-        /// workflow enters a task state. See <a>GetActivityTaskOutput$taskToken</a>.</p>
+        /// <p>The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a workflow enters a task state. See <code>GetActivityTaskOutput$taskToken</code>.</p>
         pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_token = Some(input.into());
             self
         }
-        /// <p>The token that represents this task. Task tokens are generated by Step Functions when
-        /// tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a
-        /// workflow enters a task state. See <a>GetActivityTaskOutput$taskToken</a>.</p>
+        /// <p>The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a workflow enters a task state. See <code>GetActivityTaskOutput$taskToken</code>.</p>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_token = input;
             self
@@ -2793,7 +2684,7 @@ pub mod send_task_heartbeat_input {
 #[doc(hidden)]
 pub type SendTaskHeartbeatInputOperationOutputAlias = crate::operation::SendTaskHeartbeat;
 #[doc(hidden)]
-pub type SendTaskHeartbeatInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendTaskHeartbeatInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendTaskHeartbeatInput {
     /// Consumes the builder and constructs an Operation<[`SendTaskHeartbeat`](crate::operation::SendTaskHeartbeat)>
     #[allow(clippy::let_and_return)]
@@ -2804,7 +2695,7 @@ impl SendTaskHeartbeatInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendTaskHeartbeat,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2889,7 +2780,7 @@ impl SendTaskHeartbeatInput {
             "SendTaskHeartbeat",
             "sfn",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2922,16 +2813,12 @@ pub mod send_task_success_input {
         pub(crate) output: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The token that represents this task. Task tokens are generated by Step Functions when
-        /// tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a
-        /// workflow enters a task state. See <a>GetActivityTaskOutput$taskToken</a>.</p>
+        /// <p>The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a workflow enters a task state. See <code>GetActivityTaskOutput$taskToken</code>.</p>
         pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_token = Some(input.into());
             self
         }
-        /// <p>The token that represents this task. Task tokens are generated by Step Functions when
-        /// tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a
-        /// workflow enters a task state. See <a>GetActivityTaskOutput$taskToken</a>.</p>
+        /// <p>The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a workflow enters a task state. See <code>GetActivityTaskOutput$taskToken</code>.</p>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_token = input;
             self
@@ -2963,7 +2850,7 @@ pub mod send_task_success_input {
 #[doc(hidden)]
 pub type SendTaskSuccessInputOperationOutputAlias = crate::operation::SendTaskSuccess;
 #[doc(hidden)]
-pub type SendTaskSuccessInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendTaskSuccessInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendTaskSuccessInput {
     /// Consumes the builder and constructs an Operation<[`SendTaskSuccess`](crate::operation::SendTaskSuccess)>
     #[allow(clippy::let_and_return)]
@@ -2974,7 +2861,7 @@ impl SendTaskSuccessInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendTaskSuccess,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3059,7 +2946,7 @@ impl SendTaskSuccessInput {
             "SendTaskSuccess",
             "sfn",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3107,72 +2994,37 @@ pub mod start_execution_input {
             self.state_machine_arn = input;
             self
         }
-        /// <p>The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days. For more information,
-        /// see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-        /// Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+        /// <p>The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
         /// <p>A name must <i>not</i> contain:</p>
         /// <ul>
-        /// <li>
-        /// <p>white space</p>
-        /// </li>
-        /// <li>
-        /// <p>brackets <code>< > { } [ ]</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>wildcard characters <code>? *</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-        /// </li>
+        /// <li> <p>white space</p> </li>
+        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+        /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
         /// </ul>
-        /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+        /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days. For more information,
-        /// see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-        /// Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+        /// <p>The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
         /// <p>A name must <i>not</i> contain:</p>
         /// <ul>
-        /// <li>
-        /// <p>white space</p>
-        /// </li>
-        /// <li>
-        /// <p>brackets <code>< > { } [ ]</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>wildcard characters <code>? *</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-        /// </li>
+        /// <li> <p>white space</p> </li>
+        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+        /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
         /// </ul>
-        /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+        /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
         /// <p>The string that contains the JSON input data for the execution, for example:</p>
-        /// <p>
-        /// <code>"input": "{\"first_name\" : \"test\"}"</code>
-        /// </p>
-        /// <note>
-        /// <p>If you don't include any JSON input data, you still must include the two braces, for
-        /// example: <code>"input": "{}"</code>
-        /// </p>
+        /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+        /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
         /// </note>
         /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
         pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3180,13 +3032,8 @@ pub mod start_execution_input {
             self
         }
         /// <p>The string that contains the JSON input data for the execution, for example:</p>
-        /// <p>
-        /// <code>"input": "{\"first_name\" : \"test\"}"</code>
-        /// </p>
-        /// <note>
-        /// <p>If you don't include any JSON input data, you still must include the two braces, for
-        /// example: <code>"input": "{}"</code>
-        /// </p>
+        /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+        /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
         /// </note>
         /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -3222,7 +3069,7 @@ pub mod start_execution_input {
 #[doc(hidden)]
 pub type StartExecutionInputOperationOutputAlias = crate::operation::StartExecution;
 #[doc(hidden)]
-pub type StartExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StartExecution`](crate::operation::StartExecution)>
     #[allow(clippy::let_and_return)]
@@ -3233,7 +3080,7 @@ impl StartExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3318,7 +3165,7 @@ impl StartExecutionInput {
             "StartExecution",
             "sfn",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3377,13 +3224,8 @@ pub mod start_sync_execution_input {
             self
         }
         /// <p>The string that contains the JSON input data for the execution, for example:</p>
-        /// <p>
-        /// <code>"input": "{\"first_name\" : \"test\"}"</code>
-        /// </p>
-        /// <note>
-        /// <p>If you don't include any JSON input data, you still must include the two braces, for
-        /// example: <code>"input": "{}"</code>
-        /// </p>
+        /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+        /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
         /// </note>
         /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
         pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3391,13 +3233,8 @@ pub mod start_sync_execution_input {
             self
         }
         /// <p>The string that contains the JSON input data for the execution, for example:</p>
-        /// <p>
-        /// <code>"input": "{\"first_name\" : \"test\"}"</code>
-        /// </p>
-        /// <note>
-        /// <p>If you don't include any JSON input data, you still must include the two braces, for
-        /// example: <code>"input": "{}"</code>
-        /// </p>
+        /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+        /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
         /// </note>
         /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -3433,7 +3270,7 @@ pub mod start_sync_execution_input {
 #[doc(hidden)]
 pub type StartSyncExecutionInputOperationOutputAlias = crate::operation::StartSyncExecution;
 #[doc(hidden)]
-pub type StartSyncExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartSyncExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartSyncExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StartSyncExecution`](crate::operation::StartSyncExecution)>
     #[allow(clippy::let_and_return)]
@@ -3444,7 +3281,7 @@ impl StartSyncExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartSyncExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3531,7 +3368,7 @@ impl StartSyncExecutionInput {
             "StartSyncExecution",
             "sfn",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3616,7 +3453,7 @@ pub mod stop_execution_input {
 #[doc(hidden)]
 pub type StopExecutionInputOperationOutputAlias = crate::operation::StopExecution;
 #[doc(hidden)]
-pub type StopExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StopExecution`](crate::operation::StopExecution)>
     #[allow(clippy::let_and_return)]
@@ -3627,7 +3464,7 @@ impl StopExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3711,7 +3548,7 @@ impl StopExecutionInput {
             "StopExecution",
             "sfn",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3760,9 +3597,9 @@ pub mod tag_resource_input {
         ///
         /// <p>The list of tags to add to a resource.</p>
         /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3792,7 +3629,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -3803,7 +3640,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3887,7 +3724,7 @@ impl TagResourceInput {
             "TagResource",
             "sfn",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3966,7 +3803,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -3977,7 +3814,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4061,7 +3898,7 @@ impl UntagResourceInput {
             "UntagResource",
             "sfn",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4130,14 +3967,12 @@ pub mod update_state_machine_input {
             self.role_arn = input;
             self
         }
-        /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs
-        /// options.</p>
+        /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
         pub fn logging_configuration(mut self, input: crate::model::LoggingConfiguration) -> Self {
             self.logging_configuration = Some(input);
             self
         }
-        /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs
-        /// options.</p>
+        /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
         pub fn set_logging_configuration(
             mut self,
             input: std::option::Option<crate::model::LoggingConfiguration>,
@@ -4178,7 +4013,7 @@ pub mod update_state_machine_input {
 #[doc(hidden)]
 pub type UpdateStateMachineInputOperationOutputAlias = crate::operation::UpdateStateMachine;
 #[doc(hidden)]
-pub type UpdateStateMachineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateStateMachineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateStateMachineInput {
     /// Consumes the builder and constructs an Operation<[`UpdateStateMachine`](crate::operation::UpdateStateMachine)>
     #[allow(clippy::let_and_return)]
@@ -4189,7 +4024,7 @@ impl UpdateStateMachineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateStateMachine,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4274,7 +4109,7 @@ impl UpdateStateMachineInput {
             "UpdateStateMachine",
             "sfn",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4307,8 +4142,7 @@ pub struct UpdateStateMachineInput {
     pub definition: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role of the state machine.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs
-    /// options.</p>
+    /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
     /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
     pub tracing_configuration: std::option::Option<crate::model::TracingConfiguration>,
@@ -4326,8 +4160,7 @@ impl UpdateStateMachineInput {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs
-    /// options.</p>
+    /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
     pub fn logging_configuration(
         &self,
     ) -> std::option::Option<&crate::model::LoggingConfiguration> {
@@ -4454,13 +4287,8 @@ pub struct StartSyncExecutionInput {
     /// <p>The name of the execution.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The string that contains the JSON input data for the execution, for example:</p>
-    /// <p>
-    /// <code>"input": "{\"first_name\" : \"test\"}"</code>
-    /// </p>
-    /// <note>
-    /// <p>If you don't include any JSON input data, you still must include the two braces, for
-    /// example: <code>"input": "{}"</code>
-    /// </p>
+    /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
     /// </note>
     /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub input: std::option::Option<std::string::String>,
@@ -4477,13 +4305,8 @@ impl StartSyncExecutionInput {
         self.name.as_deref()
     }
     /// <p>The string that contains the JSON input data for the execution, for example:</p>
-    /// <p>
-    /// <code>"input": "{\"first_name\" : \"test\"}"</code>
-    /// </p>
-    /// <note>
-    /// <p>If you don't include any JSON input data, you still must include the two braces, for
-    /// example: <code>"input": "{}"</code>
-    /// </p>
+    /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
     /// </note>
     /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn input(&self) -> std::option::Option<&str> {
@@ -4511,40 +4334,20 @@ impl std::fmt::Debug for StartSyncExecutionInput {
 pub struct StartExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
     pub state_machine_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days. For more information,
-    /// see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-    /// Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+    /// <p>The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li>
-    /// <p>white space</p>
-    /// </li>
-    /// <li>
-    /// <p>brackets <code>< > { } [ ]</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>wildcard characters <code>? *</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-    /// </li>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
-    /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+    /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The string that contains the JSON input data for the execution, for example:</p>
-    /// <p>
-    /// <code>"input": "{\"first_name\" : \"test\"}"</code>
-    /// </p>
-    /// <note>
-    /// <p>If you don't include any JSON input data, you still must include the two braces, for
-    /// example: <code>"input": "{}"</code>
-    /// </p>
+    /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
     /// </note>
     /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub input: std::option::Option<std::string::String>,
@@ -4556,42 +4359,22 @@ impl StartExecutionInput {
     pub fn state_machine_arn(&self) -> std::option::Option<&str> {
         self.state_machine_arn.as_deref()
     }
-    /// <p>The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days. For more information,
-    /// see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-    /// Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+    /// <p>The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li>
-    /// <p>white space</p>
-    /// </li>
-    /// <li>
-    /// <p>brackets <code>< > { } [ ]</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>wildcard characters <code>? *</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-    /// </li>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
-    /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+    /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The string that contains the JSON input data for the execution, for example:</p>
-    /// <p>
-    /// <code>"input": "{\"first_name\" : \"test\"}"</code>
-    /// </p>
-    /// <note>
-    /// <p>If you don't include any JSON input data, you still must include the two braces, for
-    /// example: <code>"input": "{}"</code>
-    /// </p>
+    /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
     /// </note>
     /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn input(&self) -> std::option::Option<&str> {
@@ -4617,17 +4400,13 @@ impl std::fmt::Debug for StartExecutionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendTaskSuccessInput {
-    /// <p>The token that represents this task. Task tokens are generated by Step Functions when
-    /// tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a
-    /// workflow enters a task state. See <a>GetActivityTaskOutput$taskToken</a>.</p>
+    /// <p>The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a workflow enters a task state. See <code>GetActivityTaskOutput$taskToken</code>.</p>
     pub task_token: std::option::Option<std::string::String>,
     /// <p>The JSON output of the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub output: std::option::Option<std::string::String>,
 }
 impl SendTaskSuccessInput {
-    /// <p>The token that represents this task. Task tokens are generated by Step Functions when
-    /// tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a
-    /// workflow enters a task state. See <a>GetActivityTaskOutput$taskToken</a>.</p>
+    /// <p>The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a workflow enters a task state. See <code>GetActivityTaskOutput$taskToken</code>.</p>
     pub fn task_token(&self) -> std::option::Option<&str> {
         self.task_token.as_deref()
     }
@@ -4649,15 +4428,11 @@ impl std::fmt::Debug for SendTaskSuccessInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendTaskHeartbeatInput {
-    /// <p>The token that represents this task. Task tokens are generated by Step Functions when
-    /// tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a
-    /// workflow enters a task state. See <a>GetActivityTaskOutput$taskToken</a>.</p>
+    /// <p>The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a workflow enters a task state. See <code>GetActivityTaskOutput$taskToken</code>.</p>
     pub task_token: std::option::Option<std::string::String>,
 }
 impl SendTaskHeartbeatInput {
-    /// <p>The token that represents this task. Task tokens are generated by Step Functions when
-    /// tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a
-    /// workflow enters a task state. See <a>GetActivityTaskOutput$taskToken</a>.</p>
+    /// <p>The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a workflow enters a task state. See <code>GetActivityTaskOutput$taskToken</code>.</p>
     pub fn task_token(&self) -> std::option::Option<&str> {
         self.task_token.as_deref()
     }
@@ -4674,9 +4449,7 @@ impl std::fmt::Debug for SendTaskHeartbeatInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendTaskFailureInput {
-    /// <p>The token that represents this task. Task tokens are generated by Step Functions when
-    /// tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a
-    /// workflow enters a task state. See <a>GetActivityTaskOutput$taskToken</a>.</p>
+    /// <p>The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a workflow enters a task state. See <code>GetActivityTaskOutput$taskToken</code>.</p>
     pub task_token: std::option::Option<std::string::String>,
     /// <p>The error code of the failure.</p>
     pub error: std::option::Option<std::string::String>,
@@ -4684,9 +4457,7 @@ pub struct SendTaskFailureInput {
     pub cause: std::option::Option<std::string::String>,
 }
 impl SendTaskFailureInput {
-    /// <p>The token that represents this task. Task tokens are generated by Step Functions when
-    /// tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a
-    /// workflow enters a task state. See <a>GetActivityTaskOutput$taskToken</a>.</p>
+    /// <p>The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a workflow enters a task state. See <code>GetActivityTaskOutput$taskToken</code>.</p>
     pub fn task_token(&self) -> std::option::Option<&str> {
         self.task_token.as_deref()
     }
@@ -4734,23 +4505,19 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStateMachinesInput {
-    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
-    /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
     /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
     pub max_results: i32,
-    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStateMachinesInput {
-    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
-    /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
     /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4770,15 +4537,12 @@ impl std::fmt::Debug for ListStateMachinesInput {
 pub struct ListExecutionsInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
     pub state_machine_arn: std::option::Option<std::string::String>,
-    /// <p>If specified, only list the executions whose current execution status matches the given
-    /// filter.</p>
+    /// <p>If specified, only list the executions whose current execution status matches the given filter.</p>
     pub status_filter: std::option::Option<crate::model::ExecutionStatus>,
-    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
-    /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
     /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
     pub max_results: i32,
-    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExecutionsInput {
@@ -4786,19 +4550,16 @@ impl ListExecutionsInput {
     pub fn state_machine_arn(&self) -> std::option::Option<&str> {
         self.state_machine_arn.as_deref()
     }
-    /// <p>If specified, only list the executions whose current execution status matches the given
-    /// filter.</p>
+    /// <p>If specified, only list the executions whose current execution status matches the given filter.</p>
     pub fn status_filter(&self) -> std::option::Option<&crate::model::ExecutionStatus> {
         self.status_filter.as_ref()
     }
-    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
-    /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
     /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4818,23 +4579,19 @@ impl std::fmt::Debug for ListExecutionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListActivitiesInput {
-    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
-    /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
     /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
     pub max_results: i32,
-    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListActivitiesInput {
-    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
-    /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
     /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4854,17 +4611,14 @@ impl std::fmt::Debug for ListActivitiesInput {
 pub struct GetExecutionHistoryInput {
     /// <p>The Amazon Resource Name (ARN) of the execution.</p>
     pub execution_arn: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
-    /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
     /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
     pub max_results: i32,
     /// <p>Lists events in descending order of their <code>timeStamp</code>.</p>
     pub reverse_order: bool,
-    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>You can select whether execution data (input or output of a history event) is returned.
-    /// The default is <code>true</code>.</p>
+    /// <p>You can select whether execution data (input or output of a history event) is returned. The default is <code>true</code>.</p>
     pub include_execution_data: std::option::Option<bool>,
 }
 impl GetExecutionHistoryInput {
@@ -4872,8 +4626,7 @@ impl GetExecutionHistoryInput {
     pub fn execution_arn(&self) -> std::option::Option<&str> {
         self.execution_arn.as_deref()
     }
-    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
-    /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
     /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
@@ -4882,13 +4635,11 @@ impl GetExecutionHistoryInput {
     pub fn reverse_order(&self) -> bool {
         self.reverse_order
     }
-    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>You can select whether execution data (input or output of a history event) is returned.
-    /// The default is <code>true</code>.</p>
+    /// <p>You can select whether execution data (input or output of a history event) is returned. The default is <code>true</code>.</p>
     pub fn include_execution_data(&self) -> std::option::Option<bool> {
         self.include_execution_data
     }
@@ -4909,21 +4660,17 @@ impl std::fmt::Debug for GetExecutionHistoryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetActivityTaskInput {
-    /// <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task
-    /// using <a>CreateActivity</a>.)</p>
+    /// <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task using <code>CreateActivity</code>.)</p>
     pub activity_arn: std::option::Option<std::string::String>,
-    /// <p>You can provide an arbitrary name in order to identify the worker that the task is
-    /// assigned to. This name is used when it is logged in the execution history.</p>
+    /// <p>You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name is used when it is logged in the execution history.</p>
     pub worker_name: std::option::Option<std::string::String>,
 }
 impl GetActivityTaskInput {
-    /// <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task
-    /// using <a>CreateActivity</a>.)</p>
+    /// <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task using <code>CreateActivity</code>.)</p>
     pub fn activity_arn(&self) -> std::option::Option<&str> {
         self.activity_arn.as_deref()
     }
-    /// <p>You can provide an arbitrary name in order to identify the worker that the task is
-    /// assigned to. This name is used when it is logged in the execution history.</p>
+    /// <p>You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name is used when it is logged in the execution history.</p>
     pub fn worker_name(&self) -> std::option::Option<&str> {
         self.worker_name.as_deref()
     }
@@ -5070,47 +4817,26 @@ pub struct CreateStateMachineInput {
     /// <p>The name of the state machine. </p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li>
-    /// <p>white space</p>
-    /// </li>
-    /// <li>
-    /// <p>brackets <code>< > { } [ ]</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>wildcard characters <code>? *</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-    /// </li>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
-    /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+    /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
     pub definition: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to use for this state machine.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>Determines whether a Standard or Express state machine is created. The default is
-    /// <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it
-    /// has been created.</p>
+    /// <p>Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it has been created.</p>
     pub r#type: std::option::Option<crate::model::StateMachineType>,
-    /// <p>Defines what execution history events are logged and where they are logged.</p>
-    /// <note>
-    /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see
-    /// <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log
-    /// Levels</a> in the AWS Step Functions User Guide.</p>
+    /// <p>Defines what execution history events are logged and where they are logged.</p> <note>
+    /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the AWS Step Functions User Guide.</p>
     /// </note>
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
     /// <p>Tags to be added when creating a state machine.</p>
-    /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-    /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-    /// Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
-    /// Tags</a>.</p>
+    /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
@@ -5120,26 +4846,13 @@ impl CreateStateMachineInput {
     /// <p>The name of the state machine. </p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li>
-    /// <p>white space</p>
-    /// </li>
-    /// <li>
-    /// <p>brackets <code>< > { } [ ]</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>wildcard characters <code>? *</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-    /// </li>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
-    /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+    /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -5151,17 +4864,12 @@ impl CreateStateMachineInput {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>Determines whether a Standard or Express state machine is created. The default is
-    /// <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it
-    /// has been created.</p>
+    /// <p>Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it has been created.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::StateMachineType> {
         self.r#type.as_ref()
     }
-    /// <p>Defines what execution history events are logged and where they are logged.</p>
-    /// <note>
-    /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see
-    /// <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log
-    /// Levels</a> in the AWS Step Functions User Guide.</p>
+    /// <p>Defines what execution history events are logged and where they are logged.</p> <note>
+    /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the AWS Step Functions User Guide.</p>
     /// </note>
     pub fn logging_configuration(
         &self,
@@ -5169,10 +4877,7 @@ impl CreateStateMachineInput {
         self.logging_configuration.as_ref()
     }
     /// <p>Tags to be added when creating a state machine.</p>
-    /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-    /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-    /// Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
-    /// Tags</a>.</p>
+    /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -5202,74 +4907,38 @@ impl std::fmt::Debug for CreateStateMachineInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateActivityInput {
-    /// <p>The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For more information,
-    /// see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-    /// Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+    /// <p>The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li>
-    /// <p>white space</p>
-    /// </li>
-    /// <li>
-    /// <p>brackets <code>< > { } [ ]</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>wildcard characters <code>? *</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-    /// </li>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
-    /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+    /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The list of tags to add to a resource.</p>
-    /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-    /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-    /// Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
-    /// Tags</a>.</p>
+    /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateActivityInput {
-    /// <p>The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For more information,
-    /// see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-    /// Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+    /// <p>The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li>
-    /// <p>white space</p>
-    /// </li>
-    /// <li>
-    /// <p>brackets <code>< > { } [ ]</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>wildcard characters <code>? *</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-    /// </li>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
-    /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+    /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The list of tags to add to a resource.</p>
-    /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-    /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-    /// Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
-    /// Tags</a>.</p>
+    /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()

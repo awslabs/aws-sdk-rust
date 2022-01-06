@@ -12,8 +12,7 @@ pub struct AddInstanceFleetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddInstanceFleetErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -59,8 +58,6 @@ impl AddInstanceFleetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -119,8 +116,7 @@ pub struct AddInstanceGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddInstanceGroupsErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -163,8 +159,6 @@ impl AddInstanceGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -215,8 +209,7 @@ pub struct AddJobFlowStepsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddJobFlowStepsErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -259,8 +252,6 @@ impl AddJobFlowStepsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -308,8 +299,7 @@ pub struct AddTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddTagsErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -355,8 +345,6 @@ impl AddTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -409,8 +397,7 @@ pub struct CancelStepsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelStepsErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -456,8 +443,6 @@ impl CancelStepsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -510,8 +495,7 @@ pub struct CreateSecurityConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSecurityConfigurationErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -557,8 +541,6 @@ impl CreateSecurityConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -617,8 +599,7 @@ pub struct CreateStudioError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateStudioErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -664,8 +645,6 @@ impl CreateStudioError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -724,8 +703,7 @@ pub struct CreateStudioSessionMappingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateStudioSessionMappingErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -771,8 +749,6 @@ impl CreateStudioSessionMappingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -831,8 +807,7 @@ pub struct DeleteSecurityConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSecurityConfigurationErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -878,8 +853,6 @@ impl DeleteSecurityConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -938,8 +911,7 @@ pub struct DeleteStudioError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteStudioErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -985,8 +957,6 @@ impl DeleteStudioError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1045,8 +1015,7 @@ pub struct DeleteStudioSessionMappingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteStudioSessionMappingErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -1092,8 +1061,6 @@ impl DeleteStudioSessionMappingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1152,8 +1119,7 @@ pub struct DescribeClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeClusterErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -1199,8 +1165,6 @@ impl DescribeClusterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1259,8 +1223,7 @@ pub struct DescribeJobFlowsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeJobFlowsErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1303,8 +1266,6 @@ impl DescribeJobFlowsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1355,8 +1316,7 @@ pub struct DescribeNotebookExecutionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeNotebookExecutionErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -1402,8 +1362,6 @@ impl DescribeNotebookExecutionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1462,8 +1420,7 @@ pub struct DescribeReleaseLabelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeReleaseLabelErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -1509,8 +1466,6 @@ impl DescribeReleaseLabelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1569,8 +1524,7 @@ pub struct DescribeSecurityConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSecurityConfigurationErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -1623,8 +1577,6 @@ impl DescribeSecurityConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1683,8 +1635,7 @@ pub struct DescribeStepError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeStepErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -1730,8 +1681,6 @@ impl DescribeStepError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1790,8 +1739,7 @@ pub struct DescribeStudioError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeStudioErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -1837,8 +1785,6 @@ impl DescribeStudioError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1937,8 +1883,6 @@ impl GetAutoTerminationPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1981,8 +1925,7 @@ pub struct GetBlockPublicAccessConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBlockPublicAccessConfigurationErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -2035,8 +1978,6 @@ impl GetBlockPublicAccessConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2139,8 +2080,6 @@ impl GetManagedScalingPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2183,8 +2122,7 @@ pub struct GetStudioSessionMappingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetStudioSessionMappingErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -2230,8 +2168,6 @@ impl GetStudioSessionMappingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2290,8 +2226,7 @@ pub struct ListBootstrapActionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBootstrapActionsErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -2337,8 +2272,6 @@ impl ListBootstrapActionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2397,8 +2330,7 @@ pub struct ListClustersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListClustersErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -2444,8 +2376,6 @@ impl ListClustersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2504,8 +2434,7 @@ pub struct ListInstanceFleetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListInstanceFleetsErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -2551,8 +2480,6 @@ impl ListInstanceFleetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2611,8 +2538,7 @@ pub struct ListInstanceGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListInstanceGroupsErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -2658,8 +2584,6 @@ impl ListInstanceGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2718,8 +2642,7 @@ pub struct ListInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListInstancesErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -2765,8 +2688,6 @@ impl ListInstancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2825,8 +2746,7 @@ pub struct ListNotebookExecutionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListNotebookExecutionsErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -2872,8 +2792,6 @@ impl ListNotebookExecutionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2932,8 +2850,7 @@ pub struct ListReleaseLabelsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListReleaseLabelsErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -2979,8 +2896,6 @@ impl ListReleaseLabelsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3039,8 +2954,7 @@ pub struct ListSecurityConfigurationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSecurityConfigurationsErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -3086,8 +3000,6 @@ impl ListSecurityConfigurationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3146,8 +3058,7 @@ pub struct ListStepsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStepsErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -3193,8 +3104,6 @@ impl ListStepsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3247,8 +3156,7 @@ pub struct ListStudiosError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStudiosErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -3294,8 +3202,6 @@ impl ListStudiosError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3348,8 +3254,7 @@ pub struct ListStudioSessionMappingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStudioSessionMappingsErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -3395,8 +3300,6 @@ impl ListStudioSessionMappingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3455,8 +3358,7 @@ pub struct ModifyClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyClusterErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -3502,8 +3404,6 @@ impl ModifyClusterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3559,8 +3459,7 @@ pub struct ModifyInstanceFleetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyInstanceFleetErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -3606,8 +3505,6 @@ impl ModifyInstanceFleetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3666,8 +3563,7 @@ pub struct ModifyInstanceGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyInstanceGroupsErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3710,8 +3606,6 @@ impl ModifyInstanceGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3802,8 +3696,6 @@ impl PutAutoScalingPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3886,8 +3778,6 @@ impl PutAutoTerminationPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3930,8 +3820,7 @@ pub struct PutBlockPublicAccessConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutBlockPublicAccessConfigurationErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -3984,8 +3873,6 @@ impl PutBlockPublicAccessConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4088,8 +3975,6 @@ impl PutManagedScalingPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4172,8 +4057,6 @@ impl RemoveAutoScalingPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4256,8 +4139,6 @@ impl RemoveAutoTerminationPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4340,8 +4221,6 @@ impl RemoveManagedScalingPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4384,8 +4263,7 @@ pub struct RemoveTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveTagsErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -4431,8 +4309,6 @@ impl RemoveTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4485,8 +4361,7 @@ pub struct RunJobFlowError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RunJobFlowErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4529,8 +4404,6 @@ impl RunJobFlowError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4578,8 +4451,7 @@ pub struct SetTerminationProtectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetTerminationProtectionErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4622,8 +4494,6 @@ impl SetTerminationProtectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4674,8 +4544,7 @@ pub struct SetVisibleToAllUsersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetVisibleToAllUsersErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4718,8 +4587,6 @@ impl SetVisibleToAllUsersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4770,8 +4637,7 @@ pub struct StartNotebookExecutionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartNotebookExecutionErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -4817,8 +4683,6 @@ impl StartNotebookExecutionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4877,8 +4741,7 @@ pub struct StopNotebookExecutionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopNotebookExecutionErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -4924,8 +4787,6 @@ impl StopNotebookExecutionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4984,8 +4845,7 @@ pub struct TerminateJobFlowsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TerminateJobFlowsErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5028,8 +4888,6 @@ impl TerminateJobFlowsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5080,8 +4938,7 @@ pub struct UpdateStudioError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateStudioErrorKind {
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -5127,8 +4984,6 @@ impl UpdateStudioError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5187,8 +5042,7 @@ pub struct UpdateStudioSessionMappingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateStudioSessionMappingErrorKind {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -5234,8 +5088,6 @@ impl UpdateStudioSessionMappingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5366,8 +5218,7 @@ impl InvalidRequestException {
     }
 }
 
-/// <p>Indicates that an error occurred while processing the request and that the request was
-/// not completed.</p>
+/// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerError {
@@ -5431,8 +5282,7 @@ impl InternalServerError {
     }
 }
 
-/// <p>This exception occurs when there is an internal failure in the Amazon EMR
-/// service.</p>
+/// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {

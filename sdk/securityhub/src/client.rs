@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS SecurityHub
@@ -201,6 +201,7 @@ where
     ///
     /// See [`DescribeActionTargets`](crate::client::fluent_builders::DescribeActionTargets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeActionTargets::into_paginator).
     pub fn describe_action_targets(&self) -> fluent_builders::DescribeActionTargets<C, M, R> {
         fluent_builders::DescribeActionTargets::new(self.handle.clone())
     }
@@ -224,6 +225,7 @@ where
     ///
     /// See [`DescribeProducts`](crate::client::fluent_builders::DescribeProducts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeProducts::into_paginator).
     pub fn describe_products(&self) -> fluent_builders::DescribeProducts<C, M, R> {
         fluent_builders::DescribeProducts::new(self.handle.clone())
     }
@@ -231,6 +233,7 @@ where
     ///
     /// See [`DescribeStandards`](crate::client::fluent_builders::DescribeStandards) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeStandards::into_paginator).
     pub fn describe_standards(&self) -> fluent_builders::DescribeStandards<C, M, R> {
         fluent_builders::DescribeStandards::new(self.handle.clone())
     }
@@ -238,6 +241,7 @@ where
     ///
     /// See [`DescribeStandardsControls`](crate::client::fluent_builders::DescribeStandardsControls) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeStandardsControls::into_paginator).
     pub fn describe_standards_controls(
         &self,
     ) -> fluent_builders::DescribeStandardsControls<C, M, R> {
@@ -329,6 +333,7 @@ where
     ///
     /// See [`GetEnabledStandards`](crate::client::fluent_builders::GetEnabledStandards) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetEnabledStandards::into_paginator).
     pub fn get_enabled_standards(&self) -> fluent_builders::GetEnabledStandards<C, M, R> {
         fluent_builders::GetEnabledStandards::new(self.handle.clone())
     }
@@ -343,6 +348,7 @@ where
     ///
     /// See [`GetFindings`](crate::client::fluent_builders::GetFindings) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetFindings::into_paginator).
     pub fn get_findings(&self) -> fluent_builders::GetFindings<C, M, R> {
         fluent_builders::GetFindings::new(self.handle.clone())
     }
@@ -357,6 +363,7 @@ where
     ///
     /// See [`GetInsights`](crate::client::fluent_builders::GetInsights) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetInsights::into_paginator).
     pub fn get_insights(&self) -> fluent_builders::GetInsights<C, M, R> {
         fluent_builders::GetInsights::new(self.handle.clone())
     }
@@ -392,6 +399,7 @@ where
     ///
     /// See [`ListEnabledProductsForImport`](crate::client::fluent_builders::ListEnabledProductsForImport) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEnabledProductsForImport::into_paginator).
     pub fn list_enabled_products_for_import(
         &self,
     ) -> fluent_builders::ListEnabledProductsForImport<C, M, R> {
@@ -401,6 +409,7 @@ where
     ///
     /// See [`ListFindingAggregators`](crate::client::fluent_builders::ListFindingAggregators) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFindingAggregators::into_paginator).
     pub fn list_finding_aggregators(&self) -> fluent_builders::ListFindingAggregators<C, M, R> {
         fluent_builders::ListFindingAggregators::new(self.handle.clone())
     }
@@ -408,6 +417,7 @@ where
     ///
     /// See [`ListInvitations`](crate::client::fluent_builders::ListInvitations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInvitations::into_paginator).
     pub fn list_invitations(&self) -> fluent_builders::ListInvitations<C, M, R> {
         fluent_builders::ListInvitations::new(self.handle.clone())
     }
@@ -415,6 +425,7 @@ where
     ///
     /// See [`ListMembers`](crate::client::fluent_builders::ListMembers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMembers::into_paginator).
     pub fn list_members(&self) -> fluent_builders::ListMembers<C, M, R> {
         fluent_builders::ListMembers::new(self.handle.clone())
     }
@@ -422,6 +433,7 @@ where
     ///
     /// See [`ListOrganizationAdminAccounts`](crate::client::fluent_builders::ListOrganizationAdminAccounts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOrganizationAdminAccounts::into_paginator).
     pub fn list_organization_admin_accounts(
         &self,
     ) -> fluent_builders::ListOrganizationAdminAccounts<C, M, R> {
@@ -512,13 +524,10 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AcceptAdministratorInvitation`.
     ///
-    /// <p>Accepts the invitation to be a member account and be monitored by the Security Hub administrator
-    /// account that the invitation was sent from.</p>
-    /// <p>This operation is only used by member accounts that are not added through
-    /// Organizations.</p>
-    /// <p>When the member account accepts the invitation, permission is granted to the administrator
-    /// account to view findings generated in the member account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Accepts the invitation to be a member account and be monitored by the Security Hub administrator account that the invitation was sent from.</p>
+    /// <p>This operation is only used by member accounts that are not added through Organizations.</p>
+    /// <p>When the member account accepts the invitation, permission is granted to the administrator account to view findings generated in the member account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptAdministratorInvitation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -563,10 +572,10 @@ pub mod fluent_builders {
                 crate::input::AcceptAdministratorInvitationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -575,8 +584,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
-        pub fn administrator_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.administrator_id(inp);
+        pub fn administrator_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.administrator_id(input.into());
             self
         }
         /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
@@ -588,8 +597,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
-        pub fn invitation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.invitation_id(inp);
+        pub fn invitation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.invitation_id(input.into());
             self
         }
         /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
@@ -605,13 +614,10 @@ pub mod fluent_builders {
     ///
     /// <p>This method is deprecated. Instead, use <code>AcceptAdministratorInvitation</code>.</p>
     /// <p>The Security Hub console continues to use <code>AcceptInvitation</code>. It will eventually change to use <code>AcceptAdministratorInvitation</code>. Any IAM policies that specifically control access to this function must continue to use <code>AcceptInvitation</code>. You should also add <code>AcceptAdministratorInvitation</code> to your policies to ensure that the correct permissions are in place after the console begins to use <code>AcceptAdministratorInvitation</code>.</p>
-    /// <p>Accepts the invitation to be a member account and be monitored by the Security Hub administrator
-    /// account that the invitation was sent from.</p>
-    /// <p>This operation is only used by member accounts that are not added through
-    /// Organizations.</p>
-    /// <p>When the member account accepts the invitation, permission is granted to the administrator
-    /// account to view findings generated in the member account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Accepts the invitation to be a member account and be monitored by the Security Hub administrator account that the invitation was sent from.</p>
+    /// <p>This operation is only used by member accounts that are not added through Organizations.</p>
+    /// <p>When the member account accepts the invitation, permission is granted to the administrator account to view findings generated in the member account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptInvitation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -656,10 +662,10 @@ pub mod fluent_builders {
                 crate::input::AcceptInvitationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -668,8 +674,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
-        pub fn master_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_id(inp);
+        pub fn master_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_id(input.into());
             self
         }
         /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
@@ -678,8 +684,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
-        pub fn invitation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.invitation_id(inp);
+        pub fn invitation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.invitation_id(input.into());
             self
         }
         /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
@@ -693,11 +699,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchDisableStandards`.
     ///
-    /// <p>Disables the standards specified by the provided
-    /// <code>StandardsSubscriptionArns</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security Standards</a> section of the <i>Security Hub User
-    /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Disables the standards specified by the provided <code>StandardsSubscriptionArns</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security Standards</a> section of the <i>Security Hub User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDisableStandards<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -742,10 +746,10 @@ pub mod fluent_builders {
                 crate::input::BatchDisableStandardsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -758,8 +762,11 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_standards_subscription_arns`](Self::set_standards_subscription_arns).
         ///
         /// <p>The ARNs of the standards subscriptions to disable.</p>
-        pub fn standards_subscription_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.standards_subscription_arns(inp);
+        pub fn standards_subscription_arns(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.standards_subscription_arns(input.into());
             self
         }
         /// <p>The ARNs of the standards subscriptions to disable.</p>
@@ -773,12 +780,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchEnableStandards`.
     ///
-    /// <p>Enables the standards specified by the provided <code>StandardsArn</code>. To obtain the
-    /// ARN for a standard, use the <code>DescribeStandards</code>
-    /// operation.</p>
-    /// <p>For more information, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security Standards</a>
-    /// section of the <i>Security Hub User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Enables the standards specified by the provided <code>StandardsArn</code>. To obtain the ARN for a standard, use the <code>DescribeStandards</code> operation.</p>
+    /// <p>For more information, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security Standards</a> section of the <i>Security Hub User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchEnableStandards<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -823,10 +827,10 @@ pub mod fluent_builders {
                 crate::input::BatchEnableStandardsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -841,9 +845,9 @@ pub mod fluent_builders {
         /// <p>The list of standards checks to enable.</p>
         pub fn standards_subscription_requests(
             mut self,
-            inp: impl Into<crate::model::StandardsSubscriptionRequest>,
+            input: crate::model::StandardsSubscriptionRequest,
         ) -> Self {
-            self.inner = self.inner.standards_subscription_requests(inp);
+            self.inner = self.inner.standards_subscription_requests(input);
             self
         }
         /// <p>The list of standards checks to enable.</p>
@@ -857,66 +861,30 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchImportFindings`.
     ///
-    /// <p>Imports security findings generated from an integrated product into Security Hub.
-    /// This action is requested by the integrated product to import its findings into
-    /// Security Hub.</p>
-    /// <p>The maximum allowed size for a finding is 240 Kb. An error is returned for any finding
-    /// larger than 240 Kb.</p>
-    /// <p>After a finding is created, <code>BatchImportFindings</code> cannot be used to update
-    /// the following finding fields and objects, which Security Hub customers use to manage their
-    /// investigation workflow.</p>
+    /// <p>Imports security findings generated by a finding provider into Security Hub. This action is requested by the finding provider to import its findings into Security Hub.</p>
+    /// <p> <code>BatchImportFindings</code> must be called by one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Note</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UserDefinedFields</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>VerificationState</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Workflow</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>The account that is associated with the findings. The identifier of the associated account is the value of the <code>AwsAccountId</code> attribute for the finding.</p> </li>
+    /// <li> <p>An account that is allow-listed for an official Security Hub partner integration.</p> </li>
+    /// </ul>
+    /// <p>The maximum allowed size for a finding is 240 Kb. An error is returned for any finding larger than 240 Kb.</p>
+    /// <p>After a finding is created, <code>BatchImportFindings</code> cannot be used to update the following finding fields and objects, which Security Hub customers use to manage their investigation workflow.</p>
+    /// <ul>
+    /// <li> <p> <code>Note</code> </p> </li>
+    /// <li> <p> <code>UserDefinedFields</code> </p> </li>
+    /// <li> <p> <code>VerificationState</code> </p> </li>
+    /// <li> <p> <code>Workflow</code> </p> </li>
     /// </ul>
     /// <p>Finding providers also should not use <code>BatchImportFindings</code> to update the following attributes.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Confidence</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Criticality</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RelatedFindings</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Severity</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Types</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Confidence</code> </p> </li>
+    /// <li> <p> <code>Criticality</code> </p> </li>
+    /// <li> <p> <code>RelatedFindings</code> </p> </li>
+    /// <li> <p> <code>Severity</code> </p> </li>
+    /// <li> <p> <code>Types</code> </p> </li>
     /// </ul>
     /// <p>Instead, finding providers use <code>FindingProviderFields</code> to provide values for these attributes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchImportFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -961,10 +929,10 @@ pub mod fluent_builders {
                 crate::input::BatchImportFindingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -976,14 +944,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_findings`](Self::set_findings).
         ///
-        /// <p>A list of findings to import. To successfully import a finding, it must follow the
-        /// <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
-        pub fn findings(mut self, inp: impl Into<crate::model::AwsSecurityFinding>) -> Self {
-            self.inner = self.inner.findings(inp);
+        /// <p>A list of findings to import. To successfully import a finding, it must follow the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
+        pub fn findings(mut self, input: crate::model::AwsSecurityFinding) -> Self {
+            self.inner = self.inner.findings(input);
             self
         }
-        /// <p>A list of findings to import. To successfully import a finding, it must follow the
-        /// <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
+        /// <p>A list of findings to import. To successfully import a finding, it must follow the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
         pub fn set_findings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AwsSecurityFinding>>,
@@ -994,66 +960,22 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchUpdateFindings`.
     ///
-    /// <p>Used by Security Hub customers to update information about their investigation into a finding.
-    /// Requested by administrator accounts or member accounts. Administrator accounts can update findings for
-    /// their account and their member accounts. Member accounts can update findings for their
-    /// account.</p>
-    /// <p>Updates from <code>BatchUpdateFindings</code> do not affect the value of
-    /// <code>UpdatedAt</code> for a finding.</p>
-    /// <p>Administrator and member accounts can use <code>BatchUpdateFindings</code> to update the
-    /// following finding fields and objects.</p>
+    /// <p>Used by Security Hub customers to update information about their investigation into a finding. Requested by administrator accounts or member accounts. Administrator accounts can update findings for their account and their member accounts. Member accounts can update findings for their account.</p>
+    /// <p>Updates from <code>BatchUpdateFindings</code> do not affect the value of <code>UpdatedAt</code> for a finding.</p>
+    /// <p>Administrator and member accounts can use <code>BatchUpdateFindings</code> to update the following finding fields and objects.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Confidence</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Criticality</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Note</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RelatedFindings</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Severity</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Types</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UserDefinedFields</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>VerificationState</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Workflow</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Confidence</code> </p> </li>
+    /// <li> <p> <code>Criticality</code> </p> </li>
+    /// <li> <p> <code>Note</code> </p> </li>
+    /// <li> <p> <code>RelatedFindings</code> </p> </li>
+    /// <li> <p> <code>Severity</code> </p> </li>
+    /// <li> <p> <code>Types</code> </p> </li>
+    /// <li> <p> <code>UserDefinedFields</code> </p> </li>
+    /// <li> <p> <code>VerificationState</code> </p> </li>
+    /// <li> <p> <code>Workflow</code> </p> </li>
     /// </ul>
-    /// <p>You can configure IAM policies to restrict access to fields and field values. For
-    /// example, you might not want member accounts to be able to suppress findings or change the
-    /// finding severity. See <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access">Configuring access to BatchUpdateFindings</a> in the
-    /// <i>Security Hub User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You can configure IAM policies to restrict access to fields and field values. For example, you might not want member accounts to be able to suppress findings or change the finding severity. See <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access">Configuring access to BatchUpdateFindings</a> in the <i>Security Hub User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchUpdateFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1098,10 +1020,10 @@ pub mod fluent_builders {
                 crate::input::BatchUpdateFindingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1113,21 +1035,17 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_finding_identifiers`](Self::set_finding_identifiers).
         ///
-        /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update
-        /// up to 100 findings at a time.</p>
-        /// <p>For each finding, the list provides the finding identifier and the ARN of the finding
-        /// provider.</p>
+        /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update up to 100 findings at a time.</p>
+        /// <p>For each finding, the list provides the finding identifier and the ARN of the finding provider.</p>
         pub fn finding_identifiers(
             mut self,
-            inp: impl Into<crate::model::AwsSecurityFindingIdentifier>,
+            input: crate::model::AwsSecurityFindingIdentifier,
         ) -> Self {
-            self.inner = self.inner.finding_identifiers(inp);
+            self.inner = self.inner.finding_identifiers(input);
             self
         }
-        /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update
-        /// up to 100 findings at a time.</p>
-        /// <p>For each finding, the list provides the finding identifier and the ARN of the finding
-        /// provider.</p>
+        /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update up to 100 findings at a time.</p>
+        /// <p>For each finding, the list provides the finding identifier and the ARN of the finding provider.</p>
         pub fn set_finding_identifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AwsSecurityFindingIdentifier>>,
@@ -1136,8 +1054,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated note.</p>
-        pub fn note(mut self, inp: crate::model::NoteUpdate) -> Self {
-            self.inner = self.inner.note(inp);
+        pub fn note(mut self, input: crate::model::NoteUpdate) -> Self {
+            self.inner = self.inner.note(input);
             self
         }
         /// <p>The updated note.</p>
@@ -1146,8 +1064,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Used to update the finding severity.</p>
-        pub fn severity(mut self, inp: crate::model::SeverityUpdate) -> Self {
-            self.inner = self.inner.severity(inp);
+        pub fn severity(mut self, input: crate::model::SeverityUpdate) -> Self {
+            self.inner = self.inner.severity(input);
             self
         }
         /// <p>Used to update the finding severity.</p>
@@ -1159,52 +1077,24 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates the veracity of a finding.</p>
-        /// <p>The available values for <code>VerificationState</code> are  as follows.</p>
+        /// <p>The available values for <code>VerificationState</code> are as follows.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>UNKNOWN</code> – The default disposition of a security finding</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TRUE_POSITIVE</code> – The security finding is confirmed</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FALSE_POSITIVE</code> – The security finding was determined to be a false
-        /// alarm</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where
-        /// the finding doesn't pose any threat, is expected, or both</p>
-        /// </li>
+        /// <li> <p> <code>UNKNOWN</code> – The default disposition of a security finding</p> </li>
+        /// <li> <p> <code>TRUE_POSITIVE</code> – The security finding is confirmed</p> </li>
+        /// <li> <p> <code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm</p> </li>
+        /// <li> <p> <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is expected, or both</p> </li>
         /// </ul>
-        pub fn verification_state(mut self, inp: crate::model::VerificationState) -> Self {
-            self.inner = self.inner.verification_state(inp);
+        pub fn verification_state(mut self, input: crate::model::VerificationState) -> Self {
+            self.inner = self.inner.verification_state(input);
             self
         }
         /// <p>Indicates the veracity of a finding.</p>
-        /// <p>The available values for <code>VerificationState</code> are  as follows.</p>
+        /// <p>The available values for <code>VerificationState</code> are as follows.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>UNKNOWN</code> – The default disposition of a security finding</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TRUE_POSITIVE</code> – The security finding is confirmed</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FALSE_POSITIVE</code> – The security finding was determined to be a false
-        /// alarm</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where
-        /// the finding doesn't pose any threat, is expected, or both</p>
-        /// </li>
+        /// <li> <p> <code>UNKNOWN</code> – The default disposition of a security finding</p> </li>
+        /// <li> <p> <code>TRUE_POSITIVE</code> – The security finding is confirmed</p> </li>
+        /// <li> <p> <code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm</p> </li>
+        /// <li> <p> <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is expected, or both</p> </li>
         /// </ul>
         pub fn set_verification_state(
             mut self,
@@ -1213,36 +1103,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_verification_state(input);
             self
         }
-        /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood
-        /// that a finding accurately identifies the behavior or issue that it was intended to
-        /// identify.</p>
-        /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent
-        /// confidence and 100 means 100 percent confidence.</p>
-        pub fn confidence(mut self, inp: i32) -> Self {
-            self.inner = self.inner.confidence(inp);
+        /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
+        /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
+        pub fn confidence(mut self, input: i32) -> Self {
+            self.inner = self.inner.confidence(input);
             self
         }
-        /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood
-        /// that a finding accurately identifies the behavior or issue that it was intended to
-        /// identify.</p>
-        /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent
-        /// confidence and 100 means 100 percent confidence.</p>
+        /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
+        /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
         pub fn set_confidence(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_confidence(input);
             self
         }
-        /// <p>The updated value for the level of importance assigned to the resources associated with
-        /// the findings.</p>
-        /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100
-        /// is reserved for the most critical resources. </p>
-        pub fn criticality(mut self, inp: i32) -> Self {
-            self.inner = self.inner.criticality(inp);
+        /// <p>The updated value for the level of importance assigned to the resources associated with the findings.</p>
+        /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources. </p>
+        pub fn criticality(mut self, input: i32) -> Self {
+            self.inner = self.inner.criticality(input);
             self
         }
-        /// <p>The updated value for the level of importance assigned to the resources associated with
-        /// the findings.</p>
-        /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100
-        /// is reserved for the most critical resources. </p>
+        /// <p>The updated value for the level of importance assigned to the resources associated with the findings.</p>
+        /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources. </p>
         pub fn set_criticality(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_criticality(input);
             self
@@ -1251,49 +1131,27 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_types`](Self::set_types).
         ///
-        /// <p>One or more finding types in the format of namespace/category/classifier that classify a
-        /// finding.</p>
+        /// <p>One or more finding types in the format of namespace/category/classifier that classify a finding.</p>
         /// <p>Valid namespace values are as follows.</p>
         /// <ul>
-        /// <li>
-        /// <p>Software and Configuration Checks</p>
-        /// </li>
-        /// <li>
-        /// <p>TTPs</p>
-        /// </li>
-        /// <li>
-        /// <p>Effects</p>
-        /// </li>
-        /// <li>
-        /// <p>Unusual Behaviors</p>
-        /// </li>
-        /// <li>
-        /// <p>Sensitive Data Identifications </p>
-        /// </li>
+        /// <li> <p>Software and Configuration Checks</p> </li>
+        /// <li> <p>TTPs</p> </li>
+        /// <li> <p>Effects</p> </li>
+        /// <li> <p>Unusual Behaviors</p> </li>
+        /// <li> <p>Sensitive Data Identifications </p> </li>
         /// </ul>
-        pub fn types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.types(inp);
+        pub fn types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.types(input.into());
             self
         }
-        /// <p>One or more finding types in the format of namespace/category/classifier that classify a
-        /// finding.</p>
+        /// <p>One or more finding types in the format of namespace/category/classifier that classify a finding.</p>
         /// <p>Valid namespace values are as follows.</p>
         /// <ul>
-        /// <li>
-        /// <p>Software and Configuration Checks</p>
-        /// </li>
-        /// <li>
-        /// <p>TTPs</p>
-        /// </li>
-        /// <li>
-        /// <p>Effects</p>
-        /// </li>
-        /// <li>
-        /// <p>Unusual Behaviors</p>
-        /// </li>
-        /// <li>
-        /// <p>Sensitive Data Identifications </p>
-        /// </li>
+        /// <li> <p>Software and Configuration Checks</p> </li>
+        /// <li> <p>TTPs</p> </li>
+        /// <li> <p>Effects</p> </li>
+        /// <li> <p>Unusual Behaviors</p> </li>
+        /// <li> <p>Sensitive Data Identifications </p> </li>
         /// </ul>
         pub fn set_types(
             mut self,
@@ -1306,18 +1164,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_user_defined_fields`](Self::set_user_defined_fields).
         ///
-        /// <p>A list of name/value string pairs associated with the finding. These are custom,
-        /// user-defined fields added to a finding.</p>
+        /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
         pub fn user_defined_fields(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.user_defined_fields(k, v);
+            self.inner = self.inner.user_defined_fields(k.into(), v.into());
             self
         }
-        /// <p>A list of name/value string pairs associated with the finding. These are custom,
-        /// user-defined fields added to a finding.</p>
+        /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
         pub fn set_user_defined_fields(
             mut self,
             input: std::option::Option<
@@ -1329,8 +1185,8 @@ pub mod fluent_builders {
         }
         /// <p>Used to update the workflow status of a finding.</p>
         /// <p>The workflow status indicates the progress of the investigation into the finding. </p>
-        pub fn workflow(mut self, inp: crate::model::WorkflowUpdate) -> Self {
-            self.inner = self.inner.workflow(inp);
+        pub fn workflow(mut self, input: crate::model::WorkflowUpdate) -> Self {
+            self.inner = self.inner.workflow(input);
             self
         }
         /// <p>Used to update the workflow status of a finding.</p>
@@ -1347,8 +1203,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_related_findings`](Self::set_related_findings).
         ///
         /// <p>A list of findings that are related to the updated findings.</p>
-        pub fn related_findings(mut self, inp: impl Into<crate::model::RelatedFinding>) -> Self {
-            self.inner = self.inner.related_findings(inp);
+        pub fn related_findings(mut self, input: crate::model::RelatedFinding) -> Self {
+            self.inner = self.inner.related_findings(input);
             self
         }
         /// <p>A list of findings that are related to the updated findings.</p>
@@ -1363,9 +1219,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateActionTarget`.
     ///
     /// <p>Creates a custom action target in Security Hub.</p>
-    /// <p>You can use custom actions on findings and insights in Security Hub to trigger target actions
-    /// in Amazon CloudWatch Events.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You can use custom actions on findings and insights in Security Hub to trigger target actions in Amazon CloudWatch Events.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateActionTarget<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1410,10 +1265,10 @@ pub mod fluent_builders {
                 crate::input::CreateActionTargetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1422,8 +1277,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the custom action target. Can contain up to 20 characters.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the custom action target. Can contain up to 20 characters.</p>
@@ -1432,8 +1287,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the custom action target.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description for the custom action target.</p>
@@ -1442,8 +1297,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the custom action target. Can contain up to 20 alphanumeric characters.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID for the custom action target. Can contain up to 20 alphanumeric characters.</p>
@@ -1455,9 +1310,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFindingAggregator`.
     ///
     /// <p>Used to enable finding aggregation. Must be called from the aggregation Region.</p>
-    /// <p>For more details about cross-Region replication, see <a href="securityhub/latest/userguide/finding-aggregation.html">Configuring finding aggregation</a> in the <i>Security Hub User Guide</i>.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For more details about cross-Region replication, see <a href="securityhub/latest/userguide/finding-aggregation.html">Configuring finding aggregation</a> in the <i>Security Hub User Guide</i>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFindingAggregator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1502,10 +1356,10 @@ pub mod fluent_builders {
                 crate::input::CreateFindingAggregatorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1517,45 +1371,21 @@ pub mod fluent_builders {
         /// <p>The selected option also determines how to use the Regions provided in the Regions list.</p>
         /// <p>The options are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+        /// <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+        /// <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>
         /// </ul>
-        pub fn region_linking_mode(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.region_linking_mode(inp);
+        pub fn region_linking_mode(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.region_linking_mode(input.into());
             self
         }
         /// <p>Indicates whether to aggregate findings from all of the available Regions in the current partition. Also determines whether to automatically aggregate findings from new Regions as Security Hub supports them and you opt into them.</p>
         /// <p>The selected option also determines how to use the Regions provided in the Regions list.</p>
         /// <p>The options are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+        /// <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+        /// <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>
         /// </ul>
         pub fn set_region_linking_mode(
             mut self,
@@ -1569,15 +1399,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_regions`](Self::set_regions).
         ///
         /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
-        /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region.
-        /// </p>
-        pub fn regions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.regions(inp);
+        /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region. </p>
+        pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.regions(input.into());
             self
         }
         /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
-        /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region.
-        /// </p>
+        /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region. </p>
         pub fn set_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1588,11 +1416,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateInsight`.
     ///
-    /// <p>Creates a custom insight in Security Hub. An insight is a consolidation of findings that relate
-    /// to a security issue that requires attention or remediation.</p>
-    /// <p>To group the related findings in the insight, use the
-    /// <code>GroupByAttribute</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a custom insight in Security Hub. An insight is a consolidation of findings that relate to a security issue that requires attention or remediation.</p>
+    /// <p>To group the related findings in the insight, use the <code>GroupByAttribute</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInsight<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1637,10 +1463,10 @@ pub mod fluent_builders {
                 crate::input::CreateInsightInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1649,8 +1475,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the custom insight to create.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the custom insight to create.</p>
@@ -1658,14 +1484,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>One or more attributes used to filter the findings included in the insight. The insight
-        /// only includes findings that match the criteria defined in the filters.</p>
-        pub fn filters(mut self, inp: crate::model::AwsSecurityFindingFilters) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.</p>
+        pub fn filters(mut self, input: crate::model::AwsSecurityFindingFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>One or more attributes used to filter the findings included in the insight. The insight
-        /// only includes findings that match the criteria defined in the filters.</p>
+        /// <p>One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::AwsSecurityFindingFilters>,
@@ -1673,18 +1497,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The attribute used to group the findings for the insight. The grouping attribute
-        /// identifies the type of item that the insight applies to. For example, if an insight is
-        /// grouped by resource identifier, then the insight produces a list of resource
-        /// identifiers.</p>
-        pub fn group_by_attribute(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_by_attribute(inp);
+        /// <p>The attribute used to group the findings for the insight. The grouping attribute identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.</p>
+        pub fn group_by_attribute(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_by_attribute(input.into());
             self
         }
-        /// <p>The attribute used to group the findings for the insight. The grouping attribute
-        /// identifies the type of item that the insight applies to. For example, if an insight is
-        /// grouped by resource identifier, then the insight produces a list of resource
-        /// identifiers.</p>
+        /// <p>The attribute used to group the findings for the insight. The grouping attribute identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.</p>
         pub fn set_group_by_attribute(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1695,43 +1513,23 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateMembers`.
     ///
-    /// <p>Creates a member association in Security Hub between the specified accounts and the account
-    /// used to make the request, which is the administrator account. If you are integrated with
-    /// Organizations, then the administrator account is designated by the organization management account.</p>
-    /// <p>
-    /// <code>CreateMembers</code> is always used to add accounts that are not organization
-    /// members.</p>
-    /// <p>For accounts that are managed using Organizations, <code>CreateMembers</code> is only used
-    /// in the following cases:</p>
+    /// <p>Creates a member association in Security Hub between the specified accounts and the account used to make the request, which is the administrator account. If you are integrated with Organizations, then the administrator account is designated by the organization management account.</p>
+    /// <p> <code>CreateMembers</code> is always used to add accounts that are not organization members.</p>
+    /// <p>For accounts that are managed using Organizations, <code>CreateMembers</code> is only used in the following cases:</p>
     /// <ul>
-    /// <li>
-    /// <p>Security Hub is not configured to automatically add new organization accounts.</p>
-    /// </li>
-    /// <li>
-    /// <p>The account was disassociated or deleted in Security Hub.</p>
-    /// </li>
+    /// <li> <p>Security Hub is not configured to automatically add new organization accounts.</p> </li>
+    /// <li> <p>The account was disassociated or deleted in Security Hub.</p> </li>
     /// </ul>
-    /// <p>This action can only be used by an account that has Security Hub enabled. To enable Security Hub, you
-    /// can use the <code>EnableSecurityHub</code> operation.</p>
-    /// <p>For accounts that are not organization members, you create the account association and
-    /// then send an invitation to the member account. To send the invitation, you use the
-    /// <code>InviteMembers</code> operation. If the account owner accepts
-    /// the invitation, the account becomes a member account in Security Hub.</p>
-    /// <p>Accounts that are managed using Organizations do not receive an invitation. They
-    /// automatically become a member account in Security Hub.</p>
+    /// <p>This action can only be used by an account that has Security Hub enabled. To enable Security Hub, you can use the <code>EnableSecurityHub</code> operation.</p>
+    /// <p>For accounts that are not organization members, you create the account association and then send an invitation to the member account. To send the invitation, you use the <code>InviteMembers</code> operation. If the account owner accepts the invitation, the account becomes a member account in Security Hub.</p>
+    /// <p>Accounts that are managed using Organizations do not receive an invitation. They automatically become a member account in Security Hub.</p>
     /// <ul>
-    /// <li>
-    /// <p>If the organization account does not have Security Hub enabled, then Security Hub and the default standards are automatically enabled. Note that Security Hub cannot be enabled automatically for the organization management account. The organization management account must enable Security Hub before the administrator account enables it as a member account.</p>
-    /// </li>
-    /// <li>
-    /// <p>For organization accounts that already have Security Hub enabled, Security Hub does not make any other changes to those accounts. It does not change their enabled standards or controls.</p>
-    /// </li>
+    /// <li> <p>If the organization account does not have Security Hub enabled, then Security Hub and the default standards are automatically enabled. Note that Security Hub cannot be enabled automatically for the organization management account. The organization management account must enable Security Hub before the administrator account enables it as a member account.</p> </li>
+    /// <li> <p>For organization accounts that already have Security Hub enabled, Security Hub does not make any other changes to those accounts. It does not change their enabled standards or controls.</p> </li>
     /// </ul>
-    ///
-    /// <p>A permissions policy is added that permits the administrator account to view the findings
-    /// generated in the member account.</p>
+    /// <p>A permissions policy is added that permits the administrator account to view the findings generated in the member account.</p>
     /// <p>To remove the association between the administrator and member accounts, use the <code>DisassociateFromMasterAccount</code> or <code>DisassociateMembers</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1776,10 +1574,10 @@ pub mod fluent_builders {
                 crate::input::CreateMembersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1791,14 +1589,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_account_details`](Self::set_account_details).
         ///
-        /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the
-        /// list includes the account ID and optionally the email address.</p>
-        pub fn account_details(mut self, inp: impl Into<crate::model::AccountDetails>) -> Self {
-            self.inner = self.inner.account_details(inp);
+        /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the list includes the account ID and optionally the email address.</p>
+        pub fn account_details(mut self, input: crate::model::AccountDetails) -> Self {
+            self.inner = self.inner.account_details(input);
             self
         }
-        /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the
-        /// list includes the account ID and optionally the email address.</p>
+        /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the list includes the account ID and optionally the email address.</p>
         pub fn set_account_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AccountDetails>>,
@@ -1810,9 +1606,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeclineInvitations`.
     ///
     /// <p>Declines invitations to become a member account.</p>
-    /// <p>This operation is only used by accounts that are not part of an organization.
-    /// Organization accounts do not receive invitations.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This operation is only used by accounts that are not part of an organization. Organization accounts do not receive invitations.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeclineInvitations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1857,10 +1652,10 @@ pub mod fluent_builders {
                 crate::input::DeclineInvitationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1872,14 +1667,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>The list of account IDs for the accounts from which to decline the invitations to
-        /// Security Hub.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        /// <p>The list of account IDs for the accounts from which to decline the invitations to Security Hub.</p>
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
-        /// <p>The list of account IDs for the accounts from which to decline the invitations to
-        /// Security Hub.</p>
+        /// <p>The list of account IDs for the accounts from which to decline the invitations to Security Hub.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1891,9 +1684,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteActionTarget`.
     ///
     /// <p>Deletes a custom action target from Security Hub.</p>
-    /// <p>Deleting a custom action target does not affect any findings or insights that were
-    /// already sent to Amazon CloudWatch Events using the custom action.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deleting a custom action target does not affect any findings or insights that were already sent to Amazon CloudWatch Events using the custom action.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteActionTarget<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1938,10 +1730,10 @@ pub mod fluent_builders {
                 crate::input::DeleteActionTargetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1950,8 +1742,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the custom action target to delete.</p>
-        pub fn action_target_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_target_arn(inp);
+        pub fn action_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_target_arn(input.into());
             self
         }
         /// <p>The ARN of the custom action target to delete.</p>
@@ -1966,9 +1758,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFindingAggregator`.
     ///
     /// <p>Deletes a finding aggregator. When you delete the finding aggregator, you stop finding aggregation.</p>
-    /// <p>When you stop finding aggregation, findings that were already aggregated to the aggregation Region are still visible from the aggregation Region. New findings and finding updates are not aggregated.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>When you stop finding aggregation, findings that were already aggregated to the aggregation Region are still visible from the aggregation Region. New findings and finding updates are not aggregated. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFindingAggregator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2013,10 +1804,10 @@ pub mod fluent_builders {
                 crate::input::DeleteFindingAggregatorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2025,8 +1816,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the finding aggregator to delete. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
-        pub fn finding_aggregator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.finding_aggregator_arn(inp);
+        pub fn finding_aggregator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.finding_aggregator_arn(input.into());
             self
         }
         /// <p>The ARN of the finding aggregator to delete. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
@@ -2041,7 +1832,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteInsight`.
     ///
     /// <p>Deletes the insight specified by the <code>InsightArn</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInsight<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2086,10 +1877,10 @@ pub mod fluent_builders {
                 crate::input::DeleteInsightInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2098,8 +1889,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the insight to delete.</p>
-        pub fn insight_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.insight_arn(inp);
+        pub fn insight_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.insight_arn(input.into());
             self
         }
         /// <p>The ARN of the insight to delete.</p>
@@ -2111,9 +1902,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteInvitations`.
     ///
     /// <p>Deletes invitations received by the Amazon Web Services account to become a member account.</p>
-    /// <p>This operation is only used by accounts that are not part of an organization.
-    /// Organization accounts do not receive invitations.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This operation is only used by accounts that are not part of an organization. Organization accounts do not receive invitations.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInvitations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2158,10 +1948,10 @@ pub mod fluent_builders {
                 crate::input::DeleteInvitationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2174,8 +1964,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>The list of the account IDs that sent the invitations to delete.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The list of the account IDs that sent the invitations to delete.</p>
@@ -2190,9 +1980,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteMembers`.
     ///
     /// <p>Deletes the specified member accounts from Security Hub.</p>
-    /// <p>Can be used to delete member accounts that belong to an organization as well as member
-    /// accounts that were invited manually.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Can be used to delete member accounts that belong to an organization as well as member accounts that were invited manually.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2237,10 +2026,10 @@ pub mod fluent_builders {
                 crate::input::DeleteMembersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2253,8 +2042,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>The list of account IDs for the member accounts to delete.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The list of account IDs for the member accounts to delete.</p>
@@ -2269,7 +2058,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeActionTargets`.
     ///
     /// <p>Returns a list of the custom action targets in Security Hub in your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeActionTargets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2314,10 +2103,10 @@ pub mod fluent_builders {
                 crate::input::DescribeActionTargetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2325,13 +2114,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeActionTargetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeActionTargetsPaginator<C, M, R> {
+            crate::paginator::DescribeActionTargetsPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `ActionTargetArns`.
         ///
         /// To override the contents of this collection use [`set_action_target_arns`](Self::set_action_target_arns).
         ///
         /// <p>A list of custom action target ARNs for the custom action targets to retrieve.</p>
-        pub fn action_target_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_target_arns(inp);
+        pub fn action_target_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_target_arns(input.into());
             self
         }
         /// <p>A list of custom action target ARNs for the custom action targets to retrieve.</p>
@@ -2342,27 +2137,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action_target_arns(input);
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>DescribeActionTargets</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token that is required for pagination. On your first call to the <code>DescribeActionTargets</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>DescribeActionTargets</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>DescribeActionTargets</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -2373,9 +2162,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeHub`.
     ///
-    /// <p>Returns details about the Hub resource in your account, including the
-    /// <code>HubArn</code> and the time when you enabled Security Hub.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns details about the Hub resource in your account, including the <code>HubArn</code> and the time when you enabled Security Hub.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeHub<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2420,10 +2208,10 @@ pub mod fluent_builders {
                 crate::input::DescribeHubInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2432,8 +2220,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the Hub resource to retrieve.</p>
-        pub fn hub_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hub_arn(inp);
+        pub fn hub_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hub_arn(input.into());
             self
         }
         /// <p>The ARN of the Hub resource to retrieve.</p>
@@ -2444,9 +2232,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeOrganizationConfiguration`.
     ///
-    /// <p>Returns information about the Organizations configuration for Security Hub. Can only be
-    /// called from a Security Hub administrator account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns information about the Organizations configuration for Security Hub. Can only be called from a Security Hub administrator account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2491,10 +2278,10 @@ pub mod fluent_builders {
                 crate::input::DescribeOrganizationConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2506,11 +2293,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeProducts`.
     ///
     /// <p>Returns information about product integrations in Security Hub.</p>
-    /// <p>You can optionally provide an integration ARN. If you provide an integration ARN, then
-    /// the results only include that integration.</p>
-    /// <p>If you do not provide an integration ARN, then the results include all of the available
-    /// product integrations. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You can optionally provide an integration ARN. If you provide an integration ARN, then the results only include that integration.</p>
+    /// <p>If you do not provide an integration ARN, then the results include all of the available product integrations. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProducts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2555,10 +2340,10 @@ pub mod fluent_builders {
                 crate::input::DescribeProductsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2566,27 +2351,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>DescribeProducts</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeProductsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeProductsPaginator<C, M, R> {
+            crate::paginator::DescribeProductsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The token that is required for pagination. On your first call to the <code>DescribeProducts</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>DescribeProducts</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>DescribeProducts</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -2595,8 +2380,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the integration to return.</p>
-        pub fn product_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_arn(inp);
+        pub fn product_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_arn(input.into());
             self
         }
         /// <p>The ARN of the integration to return.</p>
@@ -2609,7 +2394,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of the available standards in Security Hub.</p>
     /// <p>For each standard, the results include the standard ARN, the name, and a description. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStandards<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2654,10 +2439,10 @@ pub mod fluent_builders {
                 crate::input::DescribeStandardsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2665,27 +2450,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>DescribeStandards</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeStandardsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeStandardsPaginator<C, M, R> {
+            crate::paginator::DescribeStandardsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The token that is required for pagination. On your first call to the <code>DescribeStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>DescribeStandards</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>DescribeStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of standards to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of standards to return.</p>
@@ -2697,9 +2482,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeStandardsControls`.
     ///
     /// <p>Returns a list of security standards controls.</p>
-    /// <p>For each control, the results include information about whether it is currently enabled,
-    /// the severity, and a link to remediation information.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For each control, the results include information about whether it is currently enabled, the severity, and a link to remediation information.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStandardsControls<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2744,10 +2528,10 @@ pub mod fluent_builders {
                 crate::input::DescribeStandardsControlsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2755,14 +2539,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of a resource that represents your subscription to a supported standard. To get
-        /// the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
-        pub fn standards_subscription_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.standards_subscription_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeStandardsControlsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeStandardsControlsPaginator<C, M, R> {
+            crate::paginator::DescribeStandardsControlsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
+        pub fn standards_subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.standards_subscription_arn(input.into());
             self
         }
-        /// <p>The ARN of a resource that represents your subscription to a supported standard. To get
-        /// the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
+        /// <p>The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
         pub fn set_standards_subscription_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2770,27 +2560,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_standards_subscription_arn(input);
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>DescribeStandardsControls</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token that is required for pagination. On your first call to the <code>DescribeStandardsControls</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>DescribeStandardsControls</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>DescribeStandardsControls</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of security standard controls to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of security standard controls to return.</p>
@@ -2801,9 +2585,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisableImportFindingsForProduct`.
     ///
-    /// <p>Disables the integration of the specified product with Security Hub. After the integration is
-    /// disabled, findings from that product are no longer sent to Security Hub.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Disables the integration of the specified product with Security Hub. After the integration is disabled, findings from that product are no longer sent to Security Hub.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableImportFindingsForProduct<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2848,10 +2631,10 @@ pub mod fluent_builders {
                 crate::input::DisableImportFindingsForProductInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2860,8 +2643,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the integrated product to disable the integration for.</p>
-        pub fn product_subscription_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_subscription_arn(inp);
+        pub fn product_subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_subscription_arn(input.into());
             self
         }
         /// <p>The ARN of the integrated product to disable the integration for.</p>
@@ -2875,9 +2658,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisableOrganizationAdminAccount`.
     ///
-    /// <p>Disables a Security Hub administrator account. Can only be called by the organization
-    /// management account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Disables a Security Hub administrator account. Can only be called by the organization management account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableOrganizationAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2922,10 +2704,10 @@ pub mod fluent_builders {
                 crate::input::DisableOrganizationAdminAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2934,8 +2716,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account identifier of the Security Hub administrator account.</p>
-        pub fn admin_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.admin_account_id(inp);
+        pub fn admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.admin_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account identifier of the Security Hub administrator account.</p>
@@ -2949,16 +2731,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisableSecurityHub`.
     ///
-    /// <p>Disables Security Hub in your account only in the current Region. To disable Security Hub in all
-    /// Regions, you must submit one request per Region where you have enabled Security Hub.</p>
-    /// <p>When you disable Security Hub for an administrator account, it doesn't disable Security Hub for any associated
-    /// member accounts.</p>
-    /// <p>When you disable Security Hub, your existing findings and insights and any Security Hub configuration
-    /// settings are deleted after 90 days and cannot be recovered. Any standards that were enabled
-    /// are disabled, and your administrator and member account associations are removed.</p>
-    /// <p>If you want to save your existing findings, you must export them before you disable
-    /// Security Hub.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Disables Security Hub in your account only in the current Region. To disable Security Hub in all Regions, you must submit one request per Region where you have enabled Security Hub.</p>
+    /// <p>When you disable Security Hub for an administrator account, it doesn't disable Security Hub for any associated member accounts.</p>
+    /// <p>When you disable Security Hub, your existing findings and insights and any Security Hub configuration settings are deleted after 90 days and cannot be recovered. Any standards that were enabled are disabled, and your administrator and member account associations are removed.</p>
+    /// <p>If you want to save your existing findings, you must export them before you disable Security Hub.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableSecurityHub<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3003,10 +2780,10 @@ pub mod fluent_builders {
                 crate::input::DisableSecurityHubInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3017,12 +2794,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateFromAdministratorAccount`.
     ///
-    /// <p>Disassociates the current Security Hub member account from the associated administrator
-    /// account.</p>
-    /// <p>This operation is only used by accounts that are not part of an organization. For
-    /// organization accounts, only the administrator account can
-    /// disassociate a member account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Disassociates the current Security Hub member account from the associated administrator account.</p>
+    /// <p>This operation is only used by accounts that are not part of an organization. For organization accounts, only the administrator account can disassociate a member account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateFromAdministratorAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3069,10 +2843,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateFromAdministratorAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3085,12 +2859,9 @@ pub mod fluent_builders {
     ///
     /// <p>This method is deprecated. Instead, use <code>DisassociateFromAdministratorAccount</code>.</p>
     /// <p>The Security Hub console continues to use <code>DisassociateFromMasterAccount</code>. It will eventually change to use <code>DisassociateFromAdministratorAccount</code>. Any IAM policies that specifically control access to this function must continue to use <code>DisassociateFromMasterAccount</code>. You should also add <code>DisassociateFromAdministratorAccount</code> to your policies to ensure that the correct permissions are in place after the console begins to use <code>DisassociateFromAdministratorAccount</code>.</p>
-    /// <p>Disassociates the current Security Hub member account from the associated administrator
-    /// account.</p>
-    /// <p>This operation is only used by accounts that are not part of an organization. For
-    /// organization accounts, only the administrator account can
-    /// disassociate a member account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Disassociates the current Security Hub member account from the associated administrator account.</p>
+    /// <p>This operation is only used by accounts that are not part of an organization. For organization accounts, only the administrator account can disassociate a member account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateFromMasterAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3135,10 +2906,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateFromMasterAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3150,9 +2921,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateMembers`.
     ///
     /// <p>Disassociates the specified member accounts from the associated administrator account.</p>
-    /// <p>Can be used to disassociate both accounts that are managed using Organizations and accounts that
-    /// were invited manually.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Can be used to disassociate both accounts that are managed using Organizations and accounts that were invited manually.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3197,10 +2967,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateMembersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3213,8 +2983,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>The account IDs of the member accounts to disassociate from the administrator account.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The account IDs of the member accounts to disassociate from the administrator account.</p>
@@ -3228,11 +2998,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `EnableImportFindingsForProduct`.
     ///
-    /// <p>Enables the integration of a partner product with Security Hub. Integrated products send
-    /// findings to Security Hub.</p>
-    /// <p>When you enable a product integration, a permissions policy that grants permission for
-    /// the product to send findings to Security Hub is applied.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Enables the integration of a partner product with Security Hub. Integrated products send findings to Security Hub.</p>
+    /// <p>When you enable a product integration, a permissions policy that grants permission for the product to send findings to Security Hub is applied.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableImportFindingsForProduct<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3277,10 +3045,10 @@ pub mod fluent_builders {
                 crate::input::EnableImportFindingsForProductInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3289,8 +3057,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the product to enable the integration for.</p>
-        pub fn product_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_arn(inp);
+        pub fn product_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_arn(input.into());
             self
         }
         /// <p>The ARN of the product to enable the integration for.</p>
@@ -3301,9 +3069,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `EnableOrganizationAdminAccount`.
     ///
-    /// <p>Designates the Security Hub administrator account for an organization. Can only be called by
-    /// the organization management account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Designates the Security Hub administrator account for an organization. Can only be called by the organization management account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableOrganizationAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3348,10 +3115,10 @@ pub mod fluent_builders {
                 crate::input::EnableOrganizationAdminAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3359,14 +3126,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator
-        /// account.</p>
-        pub fn admin_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.admin_account_id(inp);
+        /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator account.</p>
+        pub fn admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.admin_account_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator
-        /// account.</p>
+        /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator account.</p>
         pub fn set_admin_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3377,27 +3142,18 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `EnableSecurityHub`.
     ///
-    /// <p>Enables Security Hub for your account in the current Region or the Region you specify in the
-    /// request.</p>
-    /// <p>When you enable Security Hub, you grant to Security Hub the permissions necessary to gather findings
-    /// from other services that are integrated with Security Hub.</p>
-    /// <p>When you use the <code>EnableSecurityHub</code> operation to enable Security Hub, you also
-    /// automatically enable the following standards.</p>
+    /// <p>Enables Security Hub for your account in the current Region or the Region you specify in the request.</p>
+    /// <p>When you enable Security Hub, you grant to Security Hub the permissions necessary to gather findings from other services that are integrated with Security Hub.</p>
+    /// <p>When you use the <code>EnableSecurityHub</code> operation to enable Security Hub, you also automatically enable the following standards.</p>
     /// <ul>
-    /// <li>
-    /// <p>CIS Amazon Web Services Foundations</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Web Services Foundational Security Best Practices</p>
-    /// </li>
+    /// <li> <p>CIS Amazon Web Services Foundations</p> </li>
+    /// <li> <p>Amazon Web Services Foundational Security Best Practices</p> </li>
     /// </ul>
     /// <p>You do not enable the Payment Card Industry Data Security Standard (PCI DSS) standard. </p>
-    /// <p>To not enable the automatically enabled standards, set
-    /// <code>EnableDefaultStandards</code> to <code>false</code>.</p>
-    /// <p>After you enable Security Hub, to enable a standard, use the <code>BatchEnableStandards</code> operation. To disable a standard, use the
-    /// <code>BatchDisableStandards</code> operation.</p>
+    /// <p>To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
+    /// <p>After you enable Security Hub, to enable a standard, use the <code>BatchEnableStandards</code> operation. To disable a standard, use the <code>BatchDisableStandards</code> operation.</p>
     /// <p>To learn more, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">setup information</a> in the <i>Security Hub User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableSecurityHub<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3442,10 +3198,10 @@ pub mod fluent_builders {
                 crate::input::EnableSecurityHubInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3463,7 +3219,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to add to the hub resource when you enable Security Hub.</p>
@@ -3476,18 +3232,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Whether to enable the security standards that Security Hub has designated as automatically
-        /// enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set
-        /// to <code>true</code>. To not enable the automatically enabled standards, set
-        /// <code>EnableDefaultStandards</code> to <code>false</code>.</p>
-        pub fn enable_default_standards(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_default_standards(inp);
+        /// <p>Whether to enable the security standards that Security Hub has designated as automatically enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
+        pub fn enable_default_standards(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_default_standards(input);
             self
         }
-        /// <p>Whether to enable the security standards that Security Hub has designated as automatically
-        /// enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set
-        /// to <code>true</code>. To not enable the automatically enabled standards, set
-        /// <code>EnableDefaultStandards</code> to <code>false</code>.</p>
+        /// <p>Whether to enable the security standards that Security Hub has designated as automatically enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
         pub fn set_enable_default_standards(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_default_standards(input);
             self
@@ -3496,9 +3246,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAdministratorAccount`.
     ///
     /// <p>Provides the details for the Security Hub administrator account for the current member account.</p>
-    /// <p>Can be used by both member accounts that are managed using Organizations and accounts that were
-    /// invited manually.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Can be used by both member accounts that are managed using Organizations and accounts that were invited manually.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAdministratorAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3543,10 +3292,10 @@ pub mod fluent_builders {
                 crate::input::GetAdministratorAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3558,7 +3307,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEnabledStandards`.
     ///
     /// <p>Returns a list of the standards that are currently enabled.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEnabledStandards<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3603,10 +3352,10 @@ pub mod fluent_builders {
                 crate::input::GetEnabledStandardsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3614,13 +3363,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetEnabledStandardsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetEnabledStandardsPaginator<C, M, R> {
+            crate::paginator::GetEnabledStandardsPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `StandardsSubscriptionArns`.
         ///
         /// To override the contents of this collection use [`set_standards_subscription_arns`](Self::set_standards_subscription_arns).
         ///
         /// <p>The list of the standards subscription ARNs for the standards to retrieve.</p>
-        pub fn standards_subscription_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.standards_subscription_arns(inp);
+        pub fn standards_subscription_arns(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.standards_subscription_arns(input.into());
             self
         }
         /// <p>The list of the standards subscription ARNs for the standards to retrieve.</p>
@@ -3631,27 +3389,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_standards_subscription_arns(input);
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>GetEnabledStandards</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token that is required for pagination. On your first call to the <code>GetEnabledStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>GetEnabledStandards</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>GetEnabledStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -3663,7 +3415,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFindingAggregator`.
     ///
     /// <p>Returns the current finding aggregation configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFindingAggregator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3708,10 +3460,10 @@ pub mod fluent_builders {
                 crate::input::GetFindingAggregatorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3720,8 +3472,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the finding aggregator to return details for. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
-        pub fn finding_aggregator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.finding_aggregator_arn(inp);
+        pub fn finding_aggregator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.finding_aggregator_arn(input.into());
             self
         }
         /// <p>The ARN of the finding aggregator to return details for. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
@@ -3737,7 +3489,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of findings that match the specified criteria.</p>
     /// <p>If finding aggregation is enabled, then when you call <code>GetFindings</code> from the aggregation Region, the results include all of the matching findings from both the aggregation Region and the linked Regions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3782,10 +3534,10 @@ pub mod fluent_builders {
                 crate::input::GetFindingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3793,22 +3545,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The finding attributes used to define a condition to filter the returned
-        /// findings.</p>
-        /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to
-        /// 20 filter values.</p>
-        /// <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To
-        /// search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
-        pub fn filters(mut self, inp: crate::model::AwsSecurityFindingFilters) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetFindingsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetFindingsPaginator<C, M, R> {
+            crate::paginator::GetFindingsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The finding attributes used to define a condition to filter the returned findings.</p>
+        /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to 20 filter values.</p>
+        /// <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
+        pub fn filters(mut self, input: crate::model::AwsSecurityFindingFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>The finding attributes used to define a condition to filter the returned
-        /// findings.</p>
-        /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to
-        /// 20 filter values.</p>
-        /// <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To
-        /// search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
+        /// <p>The finding attributes used to define a condition to filter the returned findings.</p>
+        /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to 20 filter values.</p>
+        /// <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::AwsSecurityFindingFilters>,
@@ -3821,8 +3573,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
         /// <p>The finding attributes used to sort the list of returned findings.</p>
-        pub fn sort_criteria(mut self, inp: impl Into<crate::model::SortCriterion>) -> Self {
-            self.inner = self.inner.sort_criteria(inp);
+        pub fn sort_criteria(mut self, input: crate::model::SortCriterion) -> Self {
+            self.inner = self.inner.sort_criteria(input);
             self
         }
         /// <p>The finding attributes used to sort the list of returned findings.</p>
@@ -3833,27 +3585,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_criteria(input);
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>GetFindings</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token that is required for pagination. On your first call to the <code>GetFindings</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>GetFindings</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>GetFindings</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of findings to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of findings to return.</p>
@@ -3865,7 +3611,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetInsightResults`.
     ///
     /// <p>Lists the results of the Security Hub insight specified by the insight ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInsightResults<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3910,10 +3656,10 @@ pub mod fluent_builders {
                 crate::input::GetInsightResultsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3922,8 +3668,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the insight for which to return results.</p>
-        pub fn insight_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.insight_arn(inp);
+        pub fn insight_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.insight_arn(input.into());
             self
         }
         /// <p>The ARN of the insight for which to return results.</p>
@@ -3935,7 +3681,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetInsights`.
     ///
     /// <p>Lists and describes insights for the specified insight ARNs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInsights<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3980,10 +3726,10 @@ pub mod fluent_builders {
                 crate::input::GetInsightsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3991,20 +3737,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetInsightsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetInsightsPaginator<C, M, R> {
+            crate::paginator::GetInsightsPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `InsightArns`.
         ///
         /// To override the contents of this collection use [`set_insight_arns`](Self::set_insight_arns).
         ///
-        /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then
-        /// <code>GetInsights</code> returns all of your custom insights. It does not return any
-        /// managed insights.</p>
-        pub fn insight_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.insight_arns(inp);
+        /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.</p>
+        pub fn insight_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.insight_arns(input.into());
             self
         }
-        /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then
-        /// <code>GetInsights</code> returns all of your custom insights. It does not return any
-        /// managed insights.</p>
+        /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.</p>
         pub fn set_insight_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4012,27 +3760,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_insight_arns(input);
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>GetInsights</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token that is required for pagination. On your first call to the <code>GetInsights</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>GetInsights</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>GetInsights</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of items to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return in the response.</p>
@@ -4043,9 +3785,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetInvitationsCount`.
     ///
-    /// <p>Returns the count of all Security Hub membership invitations that were sent to the
-    /// current member account, not including the currently accepted invitation. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the count of all Security Hub membership invitations that were sent to the current member account, not including the currently accepted invitation. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInvitationsCount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4090,10 +3831,10 @@ pub mod fluent_builders {
                 crate::input::GetInvitationsCountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4107,9 +3848,8 @@ pub mod fluent_builders {
     /// <p>This method is deprecated. Instead, use <code>GetAdministratorAccount</code>.</p>
     /// <p>The Security Hub console continues to use <code>GetMasterAccount</code>. It will eventually change to use <code>GetAdministratorAccount</code>. Any IAM policies that specifically control access to this function must continue to use <code>GetMasterAccount</code>. You should also add <code>GetAdministratorAccount</code> to your policies to ensure that the correct permissions are in place after the console begins to use <code>GetAdministratorAccount</code>.</p>
     /// <p>Provides the details for the Security Hub administrator account for the current member account.</p>
-    /// <p>Can be used by both member accounts that are managed using Organizations and accounts that were
-    /// invited manually.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Can be used by both member accounts that are managed using Organizations and accounts that were invited manually.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMasterAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4154,10 +3894,10 @@ pub mod fluent_builders {
                 crate::input::GetMasterAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4169,11 +3909,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMembers`.
     ///
     /// <p>Returns the details for the Security Hub member accounts for the specified account IDs.</p>
-    /// <p>An administrator account can be either the delegated Security Hub administrator account for an
-    /// organization or an administrator account that enabled Security Hub manually.</p>
-    /// <p>The results include both member accounts that are managed using Organizations and accounts that
-    /// were invited manually.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>An administrator account can be either the delegated Security Hub administrator account for an organization or an administrator account that enabled Security Hub manually.</p>
+    /// <p>The results include both member accounts that are managed using Organizations and accounts that were invited manually.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4218,10 +3956,10 @@ pub mod fluent_builders {
                 crate::input::GetMembersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4234,8 +3972,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>The list of account IDs for the Security Hub member accounts to return the details for. </p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The list of account IDs for the Security Hub member accounts to return the details for. </p>
@@ -4249,14 +3987,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `InviteMembers`.
     ///
-    /// <p>Invites other Amazon Web Services accounts to become member accounts for the Security Hub administrator account that
-    /// the invitation is sent from.</p>
-    /// <p>This operation is only used to invite accounts that do not belong to an organization.
-    /// Organization accounts do not receive invitations.</p>
+    /// <p>Invites other Amazon Web Services accounts to become member accounts for the Security Hub administrator account that the invitation is sent from.</p>
+    /// <p>This operation is only used to invite accounts that do not belong to an organization. Organization accounts do not receive invitations.</p>
     /// <p>Before you can use this action to invite a member, you must first use the <code>CreateMembers</code> action to create the member account in Security Hub.</p>
-    /// <p>When the account owner enables Security Hub and accepts the invitation to become a member
-    /// account, the administrator account can view the findings generated from the member account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>When the account owner enables Security Hub and accepts the invitation to become a member account, the administrator account can view the findings generated from the member account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InviteMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4301,10 +4036,10 @@ pub mod fluent_builders {
                 crate::input::InviteMembersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4317,8 +4052,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>The list of account IDs of the Amazon Web Services accounts to invite to Security Hub as members. </p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The list of account IDs of the Amazon Web Services accounts to invite to Security Hub as members. </p>
@@ -4332,9 +4067,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListEnabledProductsForImport`.
     ///
-    /// <p>Lists all findings-generating solutions (products) that you are subscribed to receive
-    /// findings from in Security Hub.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists all findings-generating solutions (products) that you are subscribed to receive findings from in Security Hub.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEnabledProductsForImport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4379,10 +4113,10 @@ pub mod fluent_builders {
                 crate::input::ListEnabledProductsForImportInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4390,27 +4124,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>ListEnabledProductsForImport</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEnabledProductsForImportPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListEnabledProductsForImportPaginator<C, M, R> {
+            crate::paginator::ListEnabledProductsForImportPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The token that is required for pagination. On your first call to the <code>ListEnabledProductsForImport</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>ListEnabledProductsForImport</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>ListEnabledProductsForImport</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of items to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return in the response.</p>
@@ -4422,7 +4158,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFindingAggregators`.
     ///
     /// <p>If finding aggregation is enabled, then <code>ListFindingAggregators</code> returns the ARN of the finding aggregator. You can run this operation from any Region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFindingAggregators<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4467,10 +4203,10 @@ pub mod fluent_builders {
                 crate::input::ListFindingAggregatorsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4478,9 +4214,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListFindingAggregatorsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListFindingAggregatorsPaginator<C, M, R> {
+            crate::paginator::ListFindingAggregatorsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The token returned with the previous set of results. Identifies the next set of results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token returned with the previous set of results. Identifies the next set of results to return.</p>
@@ -4489,8 +4231,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return. This operation currently only returns a single result.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return. This operation currently only returns a single result.</p>
@@ -4502,9 +4244,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListInvitations`.
     ///
     /// <p>Lists all Security Hub membership invitations that were sent to the current Amazon Web Services account.</p>
-    /// <p>This operation is only used by accounts that are managed by invitation.
-    /// Accounts that are managed using the integration with Organizations do not receive invitations.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This operation is only used by accounts that are managed by invitation. Accounts that are managed using the integration with Organizations do not receive invitations.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInvitations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4549,10 +4290,10 @@ pub mod fluent_builders {
                 crate::input::ListInvitationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4560,9 +4301,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListInvitationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListInvitationsPaginator<C, M, R> {
+            crate::paginator::ListInvitationsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of items to return in the response. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return in the response. </p>
@@ -4570,20 +4317,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>ListInvitations</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token that is required for pagination. On your first call to the <code>ListInvitations</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>ListInvitations</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>ListInvitations</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4591,11 +4332,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListMembers`.
     ///
-    /// <p>Lists details about all member accounts for the current Security Hub administrator
-    /// account.</p>
-    /// <p>The results include both member accounts that belong to an organization and member
-    /// accounts that were invited manually.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists details about all member accounts for the current Security Hub administrator account.</p>
+    /// <p>The results include both member accounts that belong to an organization and member accounts that were invited manually.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4640,10 +4379,10 @@ pub mod fluent_builders {
                 crate::input::ListMembersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4651,29 +4390,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies which member accounts to include in the response based on their relationship
-        /// status with the administrator account. The default value is <code>TRUE</code>.</p>
-        /// <p>If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member
-        /// accounts whose relationship status with the administrator account is set to <code>ENABLED</code>.</p>
-        /// <p>If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all
-        /// existing member accounts. </p>
-        pub fn only_associated(mut self, inp: bool) -> Self {
-            self.inner = self.inner.only_associated(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMembersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListMembersPaginator<C, M, R> {
+            crate::paginator::ListMembersPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Specifies which member accounts to include in the response based on their relationship status with the administrator account. The default value is <code>TRUE</code>.</p>
+        /// <p>If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose relationship status with the administrator account is set to <code>ENABLED</code>.</p>
+        /// <p>If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member accounts. </p>
+        pub fn only_associated(mut self, input: bool) -> Self {
+            self.inner = self.inner.only_associated(input);
             self
         }
-        /// <p>Specifies which member accounts to include in the response based on their relationship
-        /// status with the administrator account. The default value is <code>TRUE</code>.</p>
-        /// <p>If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member
-        /// accounts whose relationship status with the administrator account is set to <code>ENABLED</code>.</p>
-        /// <p>If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all
-        /// existing member accounts. </p>
+        /// <p>Specifies which member accounts to include in the response based on their relationship status with the administrator account. The default value is <code>TRUE</code>.</p>
+        /// <p>If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose relationship status with the administrator account is set to <code>ENABLED</code>.</p>
+        /// <p>If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member accounts. </p>
         pub fn set_only_associated(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_only_associated(input);
             self
         }
         /// <p>The maximum number of items to return in the response. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return in the response. </p>
@@ -4681,20 +4420,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>ListMembers</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token that is required for pagination. On your first call to the <code>ListMembers</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>ListMembers</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>ListMembers</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4702,9 +4435,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListOrganizationAdminAccounts`.
     ///
-    /// <p>Lists the Security Hub administrator accounts. Can only be called by the organization
-    /// management account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the Security Hub administrator accounts. Can only be called by the organization management account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOrganizationAdminAccounts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4749,10 +4481,10 @@ pub mod fluent_builders {
                 crate::input::ListOrganizationAdminAccountsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4760,9 +4492,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListOrganizationAdminAccountsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListOrganizationAdminAccountsPaginator<C, M, R> {
+            crate::paginator::ListOrganizationAdminAccountsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of items to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return in the response.</p>
@@ -4770,18 +4510,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to
-        /// <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set
-        /// the value of this parameter to the value returned from the previous response. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token that is required for pagination. On your first call to the <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to
-        /// <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set
-        /// the value of this parameter to the value returned from the previous response. </p>
+        /// <p>The token that is required for pagination. On your first call to the <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4790,7 +4524,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Returns a list of tags associated with a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4835,10 +4569,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4847,8 +4581,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource to retrieve tags for.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource to retrieve tags for.</p>
@@ -4860,7 +4594,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds one or more tags to a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4905,10 +4639,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4917,8 +4651,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource to apply the tags to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource to apply the tags to.</p>
@@ -4936,7 +4670,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to add to the resource. You can add up to 50 tags at a time. The tag keys can be no longer than 128 characters. The tag values can be no longer than 256 characters.</p>
@@ -4953,7 +4687,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4998,10 +4732,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5010,8 +4744,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource to remove the tags from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource to remove the tags from.</p>
@@ -5024,8 +4758,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys associated with the tags to remove from the resource. You can remove up to 50 tags at a time.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys associated with the tags to remove from the resource. You can remove up to 50 tags at a time.</p>
@@ -5040,7 +4774,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateActionTarget`.
     ///
     /// <p>Updates the name and description of a custom action target in Security Hub.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateActionTarget<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5085,10 +4819,10 @@ pub mod fluent_builders {
                 crate::input::UpdateActionTargetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5097,8 +4831,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the custom action target to update.</p>
-        pub fn action_target_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_target_arn(inp);
+        pub fn action_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_target_arn(input.into());
             self
         }
         /// <p>The ARN of the custom action target to update.</p>
@@ -5110,8 +4844,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated name of the custom action target.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The updated name of the custom action target.</p>
@@ -5120,8 +4854,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated description for the custom action target.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The updated description for the custom action target.</p>
@@ -5133,9 +4867,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFindingAggregator`.
     ///
     /// <p>Updates the finding aggregation configuration. Used to update the Region linking mode and the list of included or excluded Regions. You cannot use <code>UpdateFindingAggregator</code> to change the aggregation Region.</p>
-    /// <p>You must run <code>UpdateFindingAggregator</code> from the current aggregation Region.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You must run <code>UpdateFindingAggregator</code> from the current aggregation Region. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFindingAggregator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5180,10 +4913,10 @@ pub mod fluent_builders {
                 crate::input::UpdateFindingAggregatorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5192,8 +4925,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the finding aggregator. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
-        pub fn finding_aggregator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.finding_aggregator_arn(inp);
+        pub fn finding_aggregator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.finding_aggregator_arn(input.into());
             self
         }
         /// <p>The ARN of the finding aggregator. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
@@ -5208,45 +4941,21 @@ pub mod fluent_builders {
         /// <p>The selected option also determines how to use the Regions provided in the Regions list.</p>
         /// <p>The options are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+        /// <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+        /// <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>
         /// </ul>
-        pub fn region_linking_mode(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.region_linking_mode(inp);
+        pub fn region_linking_mode(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.region_linking_mode(input.into());
             self
         }
         /// <p>Indicates whether to aggregate findings from all of the available Regions in the current partition. Also determines whether to automatically aggregate findings from new Regions as Security Hub supports them and you opt into them.</p>
         /// <p>The selected option also determines how to use the Regions provided in the Regions list.</p>
         /// <p>The options are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+        /// <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+        /// <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>
         /// </ul>
         pub fn set_region_linking_mode(
             mut self,
@@ -5261,8 +4970,8 @@ pub mod fluent_builders {
         ///
         /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
         /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region.</p>
-        pub fn regions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.regions(inp);
+        pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.regions(input.into());
             self
         }
         /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
@@ -5277,13 +4986,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateFindings`.
     ///
-    /// <p>
-    /// <code>UpdateFindings</code> is deprecated. Instead of <code>UpdateFindings</code>, use
-    /// <code>BatchUpdateFindings</code>.</p>
-    /// <p>Updates the <code>Note</code> and <code>RecordState</code> of the Security Hub-aggregated
-    /// findings that the filter attributes specify. Any member account that can view the finding
-    /// also sees the update to the finding.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <code>UpdateFindings</code> is deprecated. Instead of <code>UpdateFindings</code>, use <code>BatchUpdateFindings</code>.</p>
+    /// <p>Updates the <code>Note</code> and <code>RecordState</code> of the Security Hub-aggregated findings that the filter attributes specify. Any member account that can view the finding also sees the update to the finding.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5328,10 +5033,10 @@ pub mod fluent_builders {
                 crate::input::UpdateFindingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5340,8 +5045,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A collection of attributes that specify which findings you want to update.</p>
-        pub fn filters(mut self, inp: crate::model::AwsSecurityFindingFilters) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::AwsSecurityFindingFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A collection of attributes that specify which findings you want to update.</p>
@@ -5353,8 +5058,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated note for the finding.</p>
-        pub fn note(mut self, inp: crate::model::NoteUpdate) -> Self {
-            self.inner = self.inner.note(inp);
+        pub fn note(mut self, input: crate::model::NoteUpdate) -> Self {
+            self.inner = self.inner.note(input);
             self
         }
         /// <p>The updated note for the finding.</p>
@@ -5363,8 +5068,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated record state for the finding.</p>
-        pub fn record_state(mut self, inp: crate::model::RecordState) -> Self {
-            self.inner = self.inner.record_state(inp);
+        pub fn record_state(mut self, input: crate::model::RecordState) -> Self {
+            self.inner = self.inner.record_state(input);
             self
         }
         /// <p>The updated record state for the finding.</p>
@@ -5379,7 +5084,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateInsight`.
     ///
     /// <p>Updates the Security Hub insight identified by the specified insight ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateInsight<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5424,10 +5129,10 @@ pub mod fluent_builders {
                 crate::input::UpdateInsightInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5436,8 +5141,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the insight that you want to update.</p>
-        pub fn insight_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.insight_arn(inp);
+        pub fn insight_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.insight_arn(input.into());
             self
         }
         /// <p>The ARN of the insight that you want to update.</p>
@@ -5446,8 +5151,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated name for the insight.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The updated name for the insight.</p>
@@ -5456,8 +5161,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated filters that define this insight.</p>
-        pub fn filters(mut self, inp: crate::model::AwsSecurityFindingFilters) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::AwsSecurityFindingFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>The updated filters that define this insight.</p>
@@ -5469,8 +5174,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated <code>GroupBy</code> attribute that defines this insight.</p>
-        pub fn group_by_attribute(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_by_attribute(inp);
+        pub fn group_by_attribute(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_by_attribute(input.into());
             self
         }
         /// <p>The updated <code>GroupBy</code> attribute that defines this insight.</p>
@@ -5484,9 +5189,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateOrganizationConfiguration`.
     ///
-    /// <p>Used to update the configuration related to Organizations. Can only be called from a
-    /// Security Hub administrator account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Used to update the configuration related to Organizations. Can only be called from a Security Hub administrator account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateOrganizationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5531,10 +5235,10 @@ pub mod fluent_builders {
                 crate::input::UpdateOrganizationConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5543,16 +5247,14 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
-        /// <p>By default, this is <code>false</code>, and new accounts are not added
-        /// automatically.</p>
+        /// <p>By default, this is <code>false</code>, and new accounts are not added automatically.</p>
         /// <p>To automatically enable Security Hub for new accounts, set this to <code>true</code>.</p>
-        pub fn auto_enable(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_enable(inp);
+        pub fn auto_enable(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_enable(input);
             self
         }
         /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
-        /// <p>By default, this is <code>false</code>, and new accounts are not added
-        /// automatically.</p>
+        /// <p>By default, this is <code>false</code>, and new accounts are not added automatically.</p>
         /// <p>To automatically enable Security Hub for new accounts, set this to <code>true</code>.</p>
         pub fn set_auto_enable(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_enable(input);
@@ -5562,7 +5264,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSecurityHubConfiguration`.
     ///
     /// <p>Updates configuration options for Security Hub.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSecurityHubConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5607,10 +5309,10 @@ pub mod fluent_builders {
                 crate::input::UpdateSecurityHubConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5618,20 +5320,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Whether to automatically enable new controls when they are added to standards that are
-        /// enabled.</p>
-        /// <p>By default, this is set to <code>true</code>, and new controls are enabled
-        /// automatically. To not automatically enable new controls, set this to <code>false</code>.
-        /// </p>
-        pub fn auto_enable_controls(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_enable_controls(inp);
+        /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
+        /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>. </p>
+        pub fn auto_enable_controls(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_enable_controls(input);
             self
         }
-        /// <p>Whether to automatically enable new controls when they are added to standards that are
-        /// enabled.</p>
-        /// <p>By default, this is set to <code>true</code>, and new controls are enabled
-        /// automatically. To not automatically enable new controls, set this to <code>false</code>.
-        /// </p>
+        /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
+        /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>. </p>
         pub fn set_auto_enable_controls(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_enable_controls(input);
             self
@@ -5639,9 +5335,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateStandardsControl`.
     ///
-    /// <p>Used to control whether an individual security standard control is enabled or
-    /// disabled.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Used to control whether an individual security standard control is enabled or disabled.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateStandardsControl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5686,10 +5381,10 @@ pub mod fluent_builders {
                 crate::input::UpdateStandardsControlInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5698,8 +5393,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the security standard control to enable or disable.</p>
-        pub fn standards_control_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.standards_control_arn(inp);
+        pub fn standards_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.standards_control_arn(input.into());
             self
         }
         /// <p>The ARN of the security standard control to enable or disable.</p>
@@ -5711,8 +5406,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated status of the security standard control.</p>
-        pub fn control_status(mut self, inp: crate::model::ControlStatus) -> Self {
-            self.inner = self.inner.control_status(inp);
+        pub fn control_status(mut self, input: crate::model::ControlStatus) -> Self {
+            self.inner = self.inner.control_status(input);
             self
         }
         /// <p>The updated status of the security standard control.</p>
@@ -5723,14 +5418,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_control_status(input);
             self
         }
-        /// <p>A description of the reason why you are disabling a security standard control. If you
-        /// are disabling a control, then this is required.</p>
-        pub fn disabled_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.disabled_reason(inp);
+        /// <p>A description of the reason why you are disabling a security standard control. If you are disabling a control, then this is required.</p>
+        pub fn disabled_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.disabled_reason(input.into());
             self
         }
-        /// <p>A description of the reason why you are disabling a security standard control. If you
-        /// are disabling a control, then this is required.</p>
+        /// <p>A description of the reason why you are disabling a security standard control. If you are disabling a control, then this is required.</p>
         pub fn set_disabled_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5740,6 +5433,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

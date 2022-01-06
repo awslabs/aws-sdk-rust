@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Honeycode
@@ -138,6 +138,7 @@ where
     ///
     /// See [`ListTableColumns`](crate::client::fluent_builders::ListTableColumns) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTableColumns::into_paginator).
     pub fn list_table_columns(&self) -> fluent_builders::ListTableColumns<C, M, R> {
         fluent_builders::ListTableColumns::new(self.handle.clone())
     }
@@ -145,6 +146,7 @@ where
     ///
     /// See [`ListTableRows`](crate::client::fluent_builders::ListTableRows) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTableRows::into_paginator).
     pub fn list_table_rows(&self) -> fluent_builders::ListTableRows<C, M, R> {
         fluent_builders::ListTableRows::new(self.handle.clone())
     }
@@ -152,6 +154,7 @@ where
     ///
     /// See [`ListTables`](crate::client::fluent_builders::ListTables) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTables::into_paginator).
     pub fn list_tables(&self) -> fluent_builders::ListTables<C, M, R> {
         fluent_builders::ListTables::new(self.handle.clone())
     }
@@ -159,6 +162,7 @@ where
     ///
     /// See [`QueryTableRows`](crate::client::fluent_builders::QueryTableRows) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::QueryTableRows::into_paginator).
     pub fn query_table_rows(&self) -> fluent_builders::QueryTableRows<C, M, R> {
         fluent_builders::QueryTableRows::new(self.handle.clone())
     }
@@ -180,17 +184,9 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `BatchCreateTableRows`.
     ///
-    /// <p>
-    /// The BatchCreateTableRows API allows you to create one or more rows at the end of a table in a workbook.
-    /// The API allows you to specify the values to set in some or all of the columns in the new rows.
-    /// </p>
-    /// <p>
-    /// If a column is not explicitly set in a specific row, then the column level formula specified in the table
-    /// will be applied to the new row. If there is no column level formula but the last row of the table has a
-    /// formula, then that formula will be copied down to the new row. If there is no column level formula and
-    /// no formula in the last row of the table, then that column will be left blank for the new rows.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The BatchCreateTableRows API allows you to create one or more rows at the end of a table in a workbook. The API allows you to specify the values to set in some or all of the columns in the new rows. </p>
+    /// <p> If a column is not explicitly set in a specific row, then the column level formula specified in the table will be applied to the new row. If there is no column level formula but the last row of the table has a formula, then that formula will be copied down to the new row. If there is no column level formula and no formula in the last row of the table, then that column will be left blank for the new rows. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchCreateTableRows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -235,10 +231,10 @@ pub mod fluent_builders {
                 crate::input::BatchCreateTableRowsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -247,33 +243,25 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workbook where the new rows are being added.</p>
-        /// <p>
-        /// If a workbook with the specified ID could not be found, this API throws ResourceNotFoundException.
-        /// </p>
-        pub fn workbook_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workbook_id(inp);
+        /// <p> If a workbook with the specified ID could not be found, this API throws ResourceNotFoundException. </p>
+        pub fn workbook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workbook_id(input.into());
             self
         }
         /// <p>The ID of the workbook where the new rows are being added.</p>
-        /// <p>
-        /// If a workbook with the specified ID could not be found, this API throws ResourceNotFoundException.
-        /// </p>
+        /// <p> If a workbook with the specified ID could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_workbook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workbook_id(input);
             self
         }
         /// <p>The ID of the table where the new rows are being added.</p>
-        /// <p>
-        /// If a table with the specified ID could not be found, this API throws ResourceNotFoundException.
-        /// </p>
-        pub fn table_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_id(inp);
+        /// <p> If a table with the specified ID could not be found, this API throws ResourceNotFoundException. </p>
+        pub fn table_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_id(input.into());
             self
         }
         /// <p>The ID of the table where the new rows are being added.</p>
-        /// <p>
-        /// If a table with the specified ID could not be found, this API throws ResourceNotFoundException.
-        /// </p>
+        /// <p> If a table with the specified ID could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_table_id(input);
             self
@@ -282,28 +270,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_rows_to_create`](Self::set_rows_to_create).
         ///
-        /// <p>
-        /// The list of rows to create at the end of the table. Each item in this list needs to have a batch item id
-        /// to uniquely identify the element in the request and the cells to create for that row.
-        /// You need to specify at least one item in this list.
-        /// </p>
-        /// <p>
-        /// Note that if one of the column ids in any of the rows in the request does not exist in the table, then the
-        /// request fails and no updates are made to the table.
-        /// </p>
-        pub fn rows_to_create(mut self, inp: impl Into<crate::model::CreateRowData>) -> Self {
-            self.inner = self.inner.rows_to_create(inp);
+        /// <p> The list of rows to create at the end of the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request and the cells to create for that row. You need to specify at least one item in this list. </p>
+        /// <p> Note that if one of the column ids in any of the rows in the request does not exist in the table, then the request fails and no updates are made to the table. </p>
+        pub fn rows_to_create(mut self, input: crate::model::CreateRowData) -> Self {
+            self.inner = self.inner.rows_to_create(input);
             self
         }
-        /// <p>
-        /// The list of rows to create at the end of the table. Each item in this list needs to have a batch item id
-        /// to uniquely identify the element in the request and the cells to create for that row.
-        /// You need to specify at least one item in this list.
-        /// </p>
-        /// <p>
-        /// Note that if one of the column ids in any of the rows in the request does not exist in the table, then the
-        /// request fails and no updates are made to the table.
-        /// </p>
+        /// <p> The list of rows to create at the end of the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request and the cells to create for that row. You need to specify at least one item in this list. </p>
+        /// <p> Note that if one of the column ids in any of the rows in the request does not exist in the table, then the request fails and no updates are made to the table. </p>
         pub fn set_rows_to_create(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CreateRowData>>,
@@ -311,32 +285,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rows_to_create(input);
             self
         }
-        /// <p>
-        /// The request token for performing the batch create operation.
-        /// Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error
-        /// like a failed network connection, you can retry the call with the same request token. The service ensures
-        /// that if the first call using that request token is successfully performed, the second call will not perform
-        /// the operation again.
-        /// </p>
-        /// <p>
-        /// Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests
-        /// spanning hours or days.
-        /// </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p> The request token for performing the batch create operation. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the operation again. </p>
+        /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>
-        /// The request token for performing the batch create operation.
-        /// Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error
-        /// like a failed network connection, you can retry the call with the same request token. The service ensures
-        /// that if the first call using that request token is successfully performed, the second call will not perform
-        /// the operation again.
-        /// </p>
-        /// <p>
-        /// Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests
-        /// spanning hours or days.
-        /// </p>
+        /// <p> The request token for performing the batch create operation. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the operation again. </p>
+        /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -347,11 +303,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchDeleteTableRows`.
     ///
-    /// <p>
-    /// The BatchDeleteTableRows API allows you to delete one or more rows from a table in a workbook.
-    /// You need to specify the ids of the rows that you want to delete from the table.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The BatchDeleteTableRows API allows you to delete one or more rows from a table in a workbook. You need to specify the ids of the rows that you want to delete from the table. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeleteTableRows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -396,10 +349,10 @@ pub mod fluent_builders {
                 crate::input::BatchDeleteTableRowsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -408,33 +361,25 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workbook where the rows are being deleted.</p>
-        /// <p>
-        /// If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
-        pub fn workbook_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workbook_id(inp);
+        /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+        pub fn workbook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workbook_id(input.into());
             self
         }
         /// <p>The ID of the workbook where the rows are being deleted.</p>
-        /// <p>
-        /// If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
+        /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_workbook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workbook_id(input);
             self
         }
         /// <p>The ID of the table where the rows are being deleted.</p>
-        /// <p>
-        /// If a table with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
-        pub fn table_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_id(inp);
+        /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+        pub fn table_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_id(input.into());
             self
         }
         /// <p>The ID of the table where the rows are being deleted.</p>
-        /// <p>
-        /// If a table with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
+        /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_table_id(input);
             self
@@ -443,24 +388,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_row_ids`](Self::set_row_ids).
         ///
-        /// <p>
-        /// The list of row ids to delete from the table. You need to specify at least one row id in this list.
-        /// </p>
-        /// <p>
-        /// Note that if one of the row ids provided in the request does not exist in the table, then the request fails
-        /// and no rows are deleted from the table.
-        /// </p>
-        pub fn row_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.row_ids(inp);
+        /// <p> The list of row ids to delete from the table. You need to specify at least one row id in this list. </p>
+        /// <p> Note that if one of the row ids provided in the request does not exist in the table, then the request fails and no rows are deleted from the table. </p>
+        pub fn row_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.row_ids(input.into());
             self
         }
-        /// <p>
-        /// The list of row ids to delete from the table. You need to specify at least one row id in this list.
-        /// </p>
-        /// <p>
-        /// Note that if one of the row ids provided in the request does not exist in the table, then the request fails
-        /// and no rows are deleted from the table.
-        /// </p>
+        /// <p> The list of row ids to delete from the table. You need to specify at least one row id in this list. </p>
+        /// <p> Note that if one of the row ids provided in the request does not exist in the table, then the request fails and no rows are deleted from the table. </p>
         pub fn set_row_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -468,32 +403,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_row_ids(input);
             self
         }
-        /// <p>
-        /// The request token for performing the delete action.
-        /// Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error
-        /// like a failed network connection, you can retry the call with the same request token. The service ensures
-        /// that if the first call using that request token is successfully performed, the second call will not perform
-        /// the action again.
-        /// </p>
-        /// <p>
-        /// Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests
-        /// spanning hours or days.
-        /// </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p> The request token for performing the delete action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
+        /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>
-        /// The request token for performing the delete action.
-        /// Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error
-        /// like a failed network connection, you can retry the call with the same request token. The service ensures
-        /// that if the first call using that request token is successfully performed, the second call will not perform
-        /// the action again.
-        /// </p>
-        /// <p>
-        /// Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests
-        /// spanning hours or days.
-        /// </p>
+        /// <p> The request token for performing the delete action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
+        /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -504,17 +421,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchUpdateTableRows`.
     ///
-    /// <p>
-    /// The BatchUpdateTableRows API allows you to update one or more rows in a table in a workbook.
-    /// </p>
-    /// <p>
-    /// You can specify the values to set in some or all of the columns in the table for the specified
-    /// rows.
-    /// If a column is not explicitly specified in a particular row, then that column will not be updated
-    /// for that row. To clear out the data in a specific cell, you need to set the value as an empty string
-    /// ("").
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The BatchUpdateTableRows API allows you to update one or more rows in a table in a workbook. </p>
+    /// <p> You can specify the values to set in some or all of the columns in the table for the specified rows. If a column is not explicitly specified in a particular row, then that column will not be updated for that row. To clear out the data in a specific cell, you need to set the value as an empty string (""). </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchUpdateTableRows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -559,10 +468,10 @@ pub mod fluent_builders {
                 crate::input::BatchUpdateTableRowsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -571,33 +480,25 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workbook where the rows are being updated.</p>
-        /// <p>
-        /// If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
-        pub fn workbook_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workbook_id(inp);
+        /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+        pub fn workbook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workbook_id(input.into());
             self
         }
         /// <p>The ID of the workbook where the rows are being updated.</p>
-        /// <p>
-        /// If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
+        /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_workbook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workbook_id(input);
             self
         }
         /// <p>The ID of the table where the rows are being updated.</p>
-        /// <p>
-        /// If a table with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
-        pub fn table_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_id(inp);
+        /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+        pub fn table_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_id(input.into());
             self
         }
         /// <p>The ID of the table where the rows are being updated.</p>
-        /// <p>
-        /// If a table with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
+        /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_table_id(input);
             self
@@ -606,30 +507,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_rows_to_update`](Self::set_rows_to_update).
         ///
-        /// <p>
-        /// The list of rows to update in the table. Each item in this list needs to contain the row id to update
-        /// along with the map of column id to cell values for each column in that row that needs to be updated.
-        /// You need to specify at least one row in this list, and for each row, you need to specify at least one
-        /// column to update.
-        /// </p>
-        /// <p>
-        /// Note that if one of the row or column ids in the request does not exist in the table, then the request fails
-        /// and no updates are made to the table.
-        /// </p>
-        pub fn rows_to_update(mut self, inp: impl Into<crate::model::UpdateRowData>) -> Self {
-            self.inner = self.inner.rows_to_update(inp);
+        /// <p> The list of rows to update in the table. Each item in this list needs to contain the row id to update along with the map of column id to cell values for each column in that row that needs to be updated. You need to specify at least one row in this list, and for each row, you need to specify at least one column to update. </p>
+        /// <p> Note that if one of the row or column ids in the request does not exist in the table, then the request fails and no updates are made to the table. </p>
+        pub fn rows_to_update(mut self, input: crate::model::UpdateRowData) -> Self {
+            self.inner = self.inner.rows_to_update(input);
             self
         }
-        /// <p>
-        /// The list of rows to update in the table. Each item in this list needs to contain the row id to update
-        /// along with the map of column id to cell values for each column in that row that needs to be updated.
-        /// You need to specify at least one row in this list, and for each row, you need to specify at least one
-        /// column to update.
-        /// </p>
-        /// <p>
-        /// Note that if one of the row or column ids in the request does not exist in the table, then the request fails
-        /// and no updates are made to the table.
-        /// </p>
+        /// <p> The list of rows to update in the table. Each item in this list needs to contain the row id to update along with the map of column id to cell values for each column in that row that needs to be updated. You need to specify at least one row in this list, and for each row, you need to specify at least one column to update. </p>
+        /// <p> Note that if one of the row or column ids in the request does not exist in the table, then the request fails and no updates are made to the table. </p>
         pub fn set_rows_to_update(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UpdateRowData>>,
@@ -637,32 +522,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rows_to_update(input);
             self
         }
-        /// <p>
-        /// The request token for performing the update action.
-        /// Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error
-        /// like a failed network connection, you can retry the call with the same request token. The service ensures
-        /// that if the first call using that request token is successfully performed, the second call will not perform
-        /// the action again.
-        /// </p>
-        /// <p>
-        /// Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests
-        /// spanning hours or days.
-        /// </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
+        /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>
-        /// The request token for performing the update action.
-        /// Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error
-        /// like a failed network connection, you can retry the call with the same request token. The service ensures
-        /// that if the first call using that request token is successfully performed, the second call will not perform
-        /// the action again.
-        /// </p>
-        /// <p>
-        /// Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests
-        /// spanning hours or days.
-        /// </p>
+        /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
+        /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -673,20 +540,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchUpsertTableRows`.
     ///
-    /// <p>
-    /// The BatchUpsertTableRows API allows you to upsert one or more rows in a table. The upsert
-    /// operation takes a filter expression as input and evaluates it to find matching rows on the destination
-    /// table. If matching rows are found, it will update the cells in the matching rows to new values specified
-    /// in the request. If no matching rows are found, a new row is added at the end of the table and the cells in
-    /// that row are set to the new values specified in the request.
-    /// </p>
-    /// <p>
-    /// You can specify the values to set in some or all of the columns in the table for the
-    /// matching or newly appended rows. If a column is not explicitly specified for a particular row, then that
-    /// column will not be updated for that row. To clear out the data in a specific cell, you need to set the value
-    /// as an empty string ("").
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The BatchUpsertTableRows API allows you to upsert one or more rows in a table. The upsert operation takes a filter expression as input and evaluates it to find matching rows on the destination table. If matching rows are found, it will update the cells in the matching rows to new values specified in the request. If no matching rows are found, a new row is added at the end of the table and the cells in that row are set to the new values specified in the request. </p>
+    /// <p> You can specify the values to set in some or all of the columns in the table for the matching or newly appended rows. If a column is not explicitly specified for a particular row, then that column will not be updated for that row. To clear out the data in a specific cell, you need to set the value as an empty string (""). </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchUpsertTableRows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -731,10 +587,10 @@ pub mod fluent_builders {
                 crate::input::BatchUpsertTableRowsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -743,33 +599,25 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workbook where the rows are being upserted.</p>
-        /// <p>
-        /// If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
-        pub fn workbook_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workbook_id(inp);
+        /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+        pub fn workbook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workbook_id(input.into());
             self
         }
         /// <p>The ID of the workbook where the rows are being upserted.</p>
-        /// <p>
-        /// If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
+        /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_workbook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workbook_id(input);
             self
         }
         /// <p>The ID of the table where the rows are being upserted.</p>
-        /// <p>
-        /// If a table with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
-        pub fn table_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_id(inp);
+        /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+        pub fn table_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_id(input.into());
             self
         }
         /// <p>The ID of the table where the rows are being upserted.</p>
-        /// <p>
-        /// If a table with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
+        /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_table_id(input);
             self
@@ -778,32 +626,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_rows_to_upsert`](Self::set_rows_to_upsert).
         ///
-        /// <p>
-        /// The list of rows to upsert in the table. Each item in this list needs to have a batch item id to uniquely
-        /// identify the element in the request, a filter expression to find the rows to update for that element
-        /// and the cell values to set for each column in the upserted rows. You need to specify
-        /// at least one item in this list.
-        /// </p>
-        /// <p>
-        /// Note that if one of the filter formulas in the request fails to evaluate because of an error or one of the
-        /// column ids in any of the rows does not exist in the table, then the request fails
-        /// and no updates are made to the table.
-        /// </p>
-        pub fn rows_to_upsert(mut self, inp: impl Into<crate::model::UpsertRowData>) -> Self {
-            self.inner = self.inner.rows_to_upsert(inp);
+        /// <p> The list of rows to upsert in the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request, a filter expression to find the rows to update for that element and the cell values to set for each column in the upserted rows. You need to specify at least one item in this list. </p>
+        /// <p> Note that if one of the filter formulas in the request fails to evaluate because of an error or one of the column ids in any of the rows does not exist in the table, then the request fails and no updates are made to the table. </p>
+        pub fn rows_to_upsert(mut self, input: crate::model::UpsertRowData) -> Self {
+            self.inner = self.inner.rows_to_upsert(input);
             self
         }
-        /// <p>
-        /// The list of rows to upsert in the table. Each item in this list needs to have a batch item id to uniquely
-        /// identify the element in the request, a filter expression to find the rows to update for that element
-        /// and the cell values to set for each column in the upserted rows. You need to specify
-        /// at least one item in this list.
-        /// </p>
-        /// <p>
-        /// Note that if one of the filter formulas in the request fails to evaluate because of an error or one of the
-        /// column ids in any of the rows does not exist in the table, then the request fails
-        /// and no updates are made to the table.
-        /// </p>
+        /// <p> The list of rows to upsert in the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request, a filter expression to find the rows to update for that element and the cell values to set for each column in the upserted rows. You need to specify at least one item in this list. </p>
+        /// <p> Note that if one of the filter formulas in the request fails to evaluate because of an error or one of the column ids in any of the rows does not exist in the table, then the request fails and no updates are made to the table. </p>
         pub fn set_rows_to_upsert(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UpsertRowData>>,
@@ -811,32 +641,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rows_to_upsert(input);
             self
         }
-        /// <p>
-        /// The request token for performing the update action.
-        /// Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error
-        /// like a failed network connection, you can retry the call with the same request token. The service ensures
-        /// that if the first call using that request token is successfully performed, the second call will not perform
-        /// the action again.
-        /// </p>
-        /// <p>
-        /// Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests
-        /// spanning hours or days.
-        /// </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
+        /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>
-        /// The request token for performing the update action.
-        /// Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error
-        /// like a failed network connection, you can retry the call with the same request token. The service ensures
-        /// that if the first call using that request token is successfully performed, the second call will not perform
-        /// the action again.
-        /// </p>
-        /// <p>
-        /// Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests
-        /// spanning hours or days.
-        /// </p>
+        /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
+        /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -847,10 +659,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeTableDataImportJob`.
     ///
-    /// <p>
-    /// The DescribeTableDataImportJob API allows you to retrieve the status and details of a table data import job.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The DescribeTableDataImportJob API allows you to retrieve the status and details of a table data import job. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTableDataImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -895,10 +705,10 @@ pub mod fluent_builders {
                 crate::input::DescribeTableDataImportJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -907,49 +717,37 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workbook into which data was imported.</p>
-        /// <p>
-        /// If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
-        pub fn workbook_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workbook_id(inp);
+        /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+        pub fn workbook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workbook_id(input.into());
             self
         }
         /// <p>The ID of the workbook into which data was imported.</p>
-        /// <p>
-        /// If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
+        /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_workbook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workbook_id(input);
             self
         }
         /// <p>The ID of the table into which data was imported.</p>
-        /// <p>
-        /// If a table with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
-        pub fn table_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_id(inp);
+        /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+        pub fn table_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_id(input.into());
             self
         }
         /// <p>The ID of the table into which data was imported.</p>
-        /// <p>
-        /// If a table with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
+        /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_table_id(input);
             self
         }
         /// <p>The ID of the job that was returned by the StartTableDataImportJob request.</p>
-        /// <p>
-        /// If a job with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        /// <p> If a job with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The ID of the job that was returned by the StartTableDataImportJob request.</p>
-        /// <p>
-        /// If a job with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
+        /// <p> If a job with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
@@ -957,12 +755,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetScreenData`.
     ///
-    /// <p>
-    /// The GetScreenData API allows retrieval of data from a screen in a Honeycode app.
-    /// The API allows setting local variables in the screen to filter, sort or otherwise affect what will be
-    /// displayed on the screen.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The GetScreenData API allows retrieval of data from a screen in a Honeycode app. The API allows setting local variables in the screen to filter, sort or otherwise affect what will be displayed on the screen. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetScreenData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1007,10 +801,10 @@ pub mod fluent_builders {
                 crate::input::GetScreenDataInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1019,8 +813,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workbook that contains the screen.</p>
-        pub fn workbook_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workbook_id(inp);
+        pub fn workbook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workbook_id(input.into());
             self
         }
         /// <p>The ID of the workbook that contains the screen.</p>
@@ -1029,8 +823,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the app that contains the screem.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The ID of the app that contains the screem.</p>
@@ -1039,8 +833,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the screen.</p>
-        pub fn screen_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.screen_id(inp);
+        pub fn screen_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.screen_id(input.into());
             self
         }
         /// <p>The ID of the screen.</p>
@@ -1052,26 +846,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_variables`](Self::set_variables).
         ///
-        /// <p>
-        /// Variables are optional and are needed only if the screen requires them to render correctly. Variables are
-        /// specified as a map where the key is the name of the variable as defined on the screen. The value is an
-        /// object which currently has only one property, rawValue, which holds the value of the variable to be passed
-        /// to the screen.
-        /// </p>
+        /// <p> Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. </p>
         pub fn variables(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::VariableValue>,
+            v: crate::model::VariableValue,
         ) -> Self {
-            self.inner = self.inner.variables(k, v);
+            self.inner = self.inner.variables(k.into(), v);
             self
         }
-        /// <p>
-        /// Variables are optional and are needed only if the screen requires them to render correctly. Variables are
-        /// specified as a map where the key is the name of the variable as defined on the screen. The value is an
-        /// object which currently has only one property, rawValue, which holds the value of the variable to be passed
-        /// to the screen.
-        /// </p>
+        /// <p> Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. </p>
         pub fn set_variables(
             mut self,
             input: std::option::Option<
@@ -1081,46 +865,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_variables(input);
             self
         }
-        /// <p>
-        /// The number of results to be returned on a single page.
-        /// Specify a number between 1 and 100. The maximum value is 100.
-        /// </p>
-        /// <p>
-        /// This parameter is optional. If you don't specify this parameter, the default page size is 100.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p> The number of results to be returned on a single page. Specify a number between 1 and 100. The maximum value is 100. </p>
+        /// <p> This parameter is optional. If you don't specify this parameter, the default page size is 100. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// The number of results to be returned on a single page.
-        /// Specify a number between 1 and 100. The maximum value is 100.
-        /// </p>
-        /// <p>
-        /// This parameter is optional. If you don't specify this parameter, the default page size is 100.
-        /// </p>
+        /// <p> The number of results to be returned on a single page. Specify a number between 1 and 100. The maximum value is 100. </p>
+        /// <p> This parameter is optional. If you don't specify this parameter, the default page size is 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// This parameter is optional. If a nextToken is not specified, the API returns the first page of data.
-        /// </p>
-        /// <p>
-        /// Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API
-        /// will throw ValidationException.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
+        /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// This parameter is optional. If a nextToken is not specified, the API returns the first page of data.
-        /// </p>
-        /// <p>
-        /// Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API
-        /// will throw ValidationException.
-        /// </p>
+        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
+        /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1128,12 +892,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `InvokeScreenAutomation`.
     ///
-    /// <p>
-    /// The InvokeScreenAutomation API allows invoking an action defined in a screen in a Honeycode app.
-    /// The API allows setting local variables, which can then be used in the automation being invoked.
-    /// This allows automating the Honeycode app interactions to write, update or delete data in the workbook.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The InvokeScreenAutomation API allows invoking an action defined in a screen in a Honeycode app. The API allows setting local variables, which can then be used in the automation being invoked. This allows automating the Honeycode app interactions to write, update or delete data in the workbook. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InvokeScreenAutomation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1178,10 +938,10 @@ pub mod fluent_builders {
                 crate::input::InvokeScreenAutomationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1190,8 +950,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workbook that contains the screen automation.</p>
-        pub fn workbook_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workbook_id(inp);
+        pub fn workbook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workbook_id(input.into());
             self
         }
         /// <p>The ID of the workbook that contains the screen automation.</p>
@@ -1200,8 +960,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the app that contains the screen automation.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The ID of the app that contains the screen automation.</p>
@@ -1210,8 +970,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the screen that contains the screen automation.</p>
-        pub fn screen_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.screen_id(inp);
+        pub fn screen_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.screen_id(input.into());
             self
         }
         /// <p>The ID of the screen that contains the screen automation.</p>
@@ -1220,8 +980,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the automation action to be performed.</p>
-        pub fn screen_automation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.screen_automation_id(inp);
+        pub fn screen_automation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.screen_automation_id(input.into());
             self
         }
         /// <p>The ID of the automation action to be performed.</p>
@@ -1236,24 +996,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_variables`](Self::set_variables).
         ///
-        /// <p>
-        /// Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an
-        /// object which currently has only one property, rawValue, which holds the value of the variable to be passed
-        /// to the screen. Any variables defined in a screen are required to be passed in the call.
-        /// </p>
+        /// <p> Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call. </p>
         pub fn variables(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::VariableValue>,
+            v: crate::model::VariableValue,
         ) -> Self {
-            self.inner = self.inner.variables(k, v);
+            self.inner = self.inner.variables(k.into(), v);
             self
         }
-        /// <p>
-        /// Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an
-        /// object which currently has only one property, rawValue, which holds the value of the variable to be passed
-        /// to the screen. Any variables defined in a screen are required to be passed in the call.
-        /// </p>
+        /// <p> Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call. </p>
         pub fn set_variables(
             mut self,
             input: std::option::Option<
@@ -1263,46 +1015,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_variables(input);
             self
         }
-        /// <p>
-        /// The row ID for the automation if the automation is defined inside a block with source or list.
-        /// </p>
-        pub fn row_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.row_id(inp);
+        /// <p> The row ID for the automation if the automation is defined inside a block with source or list. </p>
+        pub fn row_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.row_id(input.into());
             self
         }
-        /// <p>
-        /// The row ID for the automation if the automation is defined inside a block with source or list.
-        /// </p>
+        /// <p> The row ID for the automation if the automation is defined inside a block with source or list. </p>
         pub fn set_row_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_row_id(input);
             self
         }
-        /// <p>
-        /// The request token for performing the automation action.
-        /// Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error
-        /// like a failed network connection, you can retry the call with the same request token. The service ensures
-        /// that if the first call using that request token is successfully performed, the second call will return the
-        /// response of the previous call rather than performing the action again.
-        /// </p>
-        /// <p>
-        /// Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests
-        /// spanning hours or days.
-        /// </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p> The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again. </p>
+        /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>
-        /// The request token for performing the automation action.
-        /// Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error
-        /// like a failed network connection, you can retry the call with the same request token. The service ensures
-        /// that if the first call using that request token is successfully performed, the second call will return the
-        /// response of the previous call rather than performing the action again.
-        /// </p>
-        /// <p>
-        /// Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests
-        /// spanning hours or days.
-        /// </p>
+        /// <p> The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again. </p>
+        /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1313,10 +1043,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTableColumns`.
     ///
-    /// <p>
-    /// The ListTableColumns API allows you to retrieve a list of all the columns in a table in a workbook.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The ListTableColumns API allows you to retrieve a list of all the columns in a table in a workbook. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTableColumns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1361,10 +1089,10 @@ pub mod fluent_builders {
                 crate::input::ListTableColumnsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1372,56 +1100,44 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTableColumnsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTableColumnsPaginator<C, M, R> {
+            crate::paginator::ListTableColumnsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the workbook that contains the table whose columns are being retrieved.</p>
-        /// <p>
-        /// If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
-        pub fn workbook_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workbook_id(inp);
+        /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+        pub fn workbook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workbook_id(input.into());
             self
         }
         /// <p>The ID of the workbook that contains the table whose columns are being retrieved.</p>
-        /// <p>
-        /// If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
+        /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_workbook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workbook_id(input);
             self
         }
         /// <p>The ID of the table whose columns are being retrieved.</p>
-        /// <p>
-        /// If a table with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
-        pub fn table_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_id(inp);
+        /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+        pub fn table_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_id(input.into());
             self
         }
         /// <p>The ID of the table whose columns are being retrieved.</p>
-        /// <p>
-        /// If a table with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
+        /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_table_id(input);
             self
         }
-        /// <p>
-        /// This parameter is optional. If a nextToken is not specified, the API returns the first page of data.
-        /// </p>
-        /// <p>
-        /// Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API
-        /// will throw ValidationException.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
+        /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// This parameter is optional. If a nextToken is not specified, the API returns the first page of data.
-        /// </p>
-        /// <p>
-        /// Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API
-        /// will throw ValidationException.
-        /// </p>
+        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
+        /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1429,10 +1145,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTableRows`.
     ///
-    /// <p>
-    /// The ListTableRows API allows you to retrieve a list of all the rows in a table in a workbook.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The ListTableRows API allows you to retrieve a list of all the rows in a table in a workbook. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTableRows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1477,10 +1191,10 @@ pub mod fluent_builders {
                 crate::input::ListTableRowsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1488,34 +1202,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTableRowsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTableRowsPaginator<C, M, R> {
+            crate::paginator::ListTableRowsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the workbook that contains the table whose rows are being retrieved.</p>
-        /// <p>
-        /// If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
-        pub fn workbook_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workbook_id(inp);
+        /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+        pub fn workbook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workbook_id(input.into());
             self
         }
         /// <p>The ID of the workbook that contains the table whose rows are being retrieved.</p>
-        /// <p>
-        /// If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
+        /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_workbook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workbook_id(input);
             self
         }
         /// <p>The ID of the table whose rows are being retrieved.</p>
-        /// <p>
-        /// If a table with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
-        pub fn table_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_id(inp);
+        /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+        pub fn table_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_id(input.into());
             self
         }
         /// <p>The ID of the table whose rows are being retrieved.</p>
-        /// <p>
-        /// If a table with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
+        /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_table_id(input);
             self
@@ -1524,20 +1236,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_row_ids`](Self::set_row_ids).
         ///
-        /// <p>
-        /// This parameter is optional. If one or more row ids are specified in this list, then only the specified
-        /// row ids are returned in the result. If no row ids are specified here, then all the rows in the table are
-        /// returned.
-        /// </p>
-        pub fn row_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.row_ids(inp);
+        /// <p> This parameter is optional. If one or more row ids are specified in this list, then only the specified row ids are returned in the result. If no row ids are specified here, then all the rows in the table are returned. </p>
+        pub fn row_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.row_ids(input.into());
             self
         }
-        /// <p>
-        /// This parameter is optional. If one or more row ids are specified in this list, then only the specified
-        /// row ids are returned in the result. If no row ids are specified here, then all the rows in the table are
-        /// returned.
-        /// </p>
+        /// <p> This parameter is optional. If one or more row ids are specified in this list, then only the specified row ids are returned in the result. If no row ids are specified here, then all the rows in the table are returned. </p>
         pub fn set_row_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1546,8 +1250,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of rows to return in each page of the results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of rows to return in each page of the results.</p>
@@ -1555,24 +1259,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// This parameter is optional. If a nextToken is not specified, the API returns the first page of data.
-        /// </p>
-        /// <p>
-        /// Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API
-        /// will throw ValidationException.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
+        /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// This parameter is optional. If a nextToken is not specified, the API returns the first page of data.
-        /// </p>
-        /// <p>
-        /// Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API
-        /// will throw ValidationException.
-        /// </p>
+        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
+        /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1580,10 +1274,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTables`.
     ///
-    /// <p>
-    /// The ListTables API allows you to retrieve a list of all the tables in a workbook.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The ListTables API allows you to retrieve a list of all the tables in a workbook. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTables<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1628,10 +1320,10 @@ pub mod fluent_builders {
                 crate::input::ListTablesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1639,25 +1331,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTablesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTablesPaginator<C, M, R> {
+            crate::paginator::ListTablesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the workbook whose tables are being retrieved.</p>
-        /// <p>
-        /// If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
-        pub fn workbook_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workbook_id(inp);
+        /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+        pub fn workbook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workbook_id(input.into());
             self
         }
         /// <p>The ID of the workbook whose tables are being retrieved.</p>
-        /// <p>
-        /// If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
+        /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_workbook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workbook_id(input);
             self
         }
         /// <p>The maximum number of tables to return in each page of the results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of tables to return in each page of the results.</p>
@@ -1665,24 +1359,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// This parameter is optional. If a nextToken is not specified, the API returns the first page of data.
-        /// </p>
-        /// <p>
-        /// Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API
-        /// will throw ValidationException.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
+        /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// This parameter is optional. If a nextToken is not specified, the API returns the first page of data.
-        /// </p>
-        /// <p>
-        /// Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API
-        /// will throw ValidationException.
-        /// </p>
+        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
+        /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1690,10 +1374,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `QueryTableRows`.
     ///
-    /// <p>
-    /// The QueryTableRows API allows you to use a filter formula to query for specific rows in a table.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The QueryTableRows API allows you to use a filter formula to query for specific rows in a table. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct QueryTableRows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1738,10 +1420,10 @@ pub mod fluent_builders {
                 crate::input::QueryTableRowsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1749,46 +1431,42 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::QueryTableRowsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::QueryTableRowsPaginator<C, M, R> {
+            crate::paginator::QueryTableRowsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the workbook whose table rows are being queried.</p>
-        /// <p>
-        /// If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
-        pub fn workbook_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workbook_id(inp);
+        /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+        pub fn workbook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workbook_id(input.into());
             self
         }
         /// <p>The ID of the workbook whose table rows are being queried.</p>
-        /// <p>
-        /// If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
+        /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_workbook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workbook_id(input);
             self
         }
         /// <p>The ID of the table whose rows are being queried.</p>
-        /// <p>
-        /// If a table with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
-        pub fn table_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_id(inp);
+        /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+        pub fn table_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_id(input.into());
             self
         }
         /// <p>The ID of the table whose rows are being queried.</p>
-        /// <p>
-        /// If a table with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
+        /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_table_id(input);
             self
         }
-        /// <p>An object that represents a filter formula along with the id of the context row under which the filter
-        /// function needs to evaluate.</p>
-        pub fn filter_formula(mut self, inp: crate::model::Filter) -> Self {
-            self.inner = self.inner.filter_formula(inp);
+        /// <p>An object that represents a filter formula along with the id of the context row under which the filter function needs to evaluate.</p>
+        pub fn filter_formula(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filter_formula(input);
             self
         }
-        /// <p>An object that represents a filter formula along with the id of the context row under which the filter
-        /// function needs to evaluate.</p>
+        /// <p>An object that represents a filter formula along with the id of the context row under which the filter function needs to evaluate.</p>
         pub fn set_filter_formula(
             mut self,
             input: std::option::Option<crate::model::Filter>,
@@ -1797,8 +1475,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of rows to return in each page of the results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of rows to return in each page of the results.</p>
@@ -1806,24 +1484,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// This parameter is optional. If a nextToken is not specified, the API returns the first page of data.
-        /// </p>
-        /// <p>
-        /// Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API
-        /// will throw ValidationException.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
+        /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// This parameter is optional. If a nextToken is not specified, the API returns the first page of data.
-        /// </p>
-        /// <p>
-        /// Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API
-        /// will throw ValidationException.
-        /// </p>
+        /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
+        /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1831,12 +1499,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartTableDataImportJob`.
     ///
-    /// <p>
-    /// The StartTableDataImportJob API allows you to start an import job on a table. This API will only return
-    /// the id of the job that was started. To find out the status of the import request, you need to call the
-    /// DescribeTableDataImportJob API.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> The StartTableDataImportJob API allows you to start an import job on a table. This API will only return the id of the job that was started. To find out the status of the import request, you need to call the DescribeTableDataImportJob API. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartTableDataImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1881,10 +1545,10 @@ pub mod fluent_builders {
                 crate::input::StartTableDataImportJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1893,33 +1557,23 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workbook where the rows are being imported.</p>
-        /// <p>
-        /// If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
-        pub fn workbook_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workbook_id(inp);
+        /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+        pub fn workbook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workbook_id(input.into());
             self
         }
         /// <p>The ID of the workbook where the rows are being imported.</p>
-        /// <p>
-        /// If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
+        /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_workbook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workbook_id(input);
             self
         }
-        /// <p>
-        /// The source of the data that is being imported. The size of source must be no larger than 100 MB.
-        /// Source must have no more than 100,000 cells and no more than 1,000 rows.
-        /// </p>
-        pub fn data_source(mut self, inp: crate::model::ImportDataSource) -> Self {
-            self.inner = self.inner.data_source(inp);
+        /// <p> The source of the data that is being imported. The size of source must be no larger than 100 MB. Source must have no more than 100,000 cells and no more than 1,000 rows. </p>
+        pub fn data_source(mut self, input: crate::model::ImportDataSource) -> Self {
+            self.inner = self.inner.data_source(input);
             self
         }
-        /// <p>
-        /// The source of the data that is being imported. The size of source must be no larger than 100 MB.
-        /// Source must have no more than 100,000 cells and no more than 1,000 rows.
-        /// </p>
+        /// <p> The source of the data that is being imported. The size of source must be no larger than 100 MB. Source must have no more than 100,000 cells and no more than 1,000 rows. </p>
         pub fn set_data_source(
             mut self,
             input: std::option::Option<crate::model::ImportDataSource>,
@@ -1927,16 +1581,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_source(input);
             self
         }
-        /// <p>
-        /// The format of the data that is being imported. Currently the only option supported is "DELIMITED_TEXT".
-        /// </p>
-        pub fn data_format(mut self, inp: crate::model::ImportSourceDataFormat) -> Self {
-            self.inner = self.inner.data_format(inp);
+        /// <p> The format of the data that is being imported. Currently the only option supported is "DELIMITED_TEXT". </p>
+        pub fn data_format(mut self, input: crate::model::ImportSourceDataFormat) -> Self {
+            self.inner = self.inner.data_format(input);
             self
         }
-        /// <p>
-        /// The format of the data that is being imported. Currently the only option supported is "DELIMITED_TEXT".
-        /// </p>
+        /// <p> The format of the data that is being imported. Currently the only option supported is "DELIMITED_TEXT". </p>
         pub fn set_data_format(
             mut self,
             input: std::option::Option<crate::model::ImportSourceDataFormat>,
@@ -1945,17 +1595,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the table where the rows are being imported.</p>
-        /// <p>
-        /// If a table with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
-        pub fn destination_table_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_table_id(inp);
+        /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+        pub fn destination_table_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_table_id(input.into());
             self
         }
         /// <p>The ID of the table where the rows are being imported.</p>
-        /// <p>
-        /// If a table with the specified id could not be found, this API throws ResourceNotFoundException.
-        /// </p>
+        /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
         pub fn set_destination_table_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1963,16 +1609,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_table_id(input);
             self
         }
-        /// <p>
-        /// The options for customizing this import request.
-        /// </p>
-        pub fn import_options(mut self, inp: crate::model::ImportOptions) -> Self {
-            self.inner = self.inner.import_options(inp);
+        /// <p> The options for customizing this import request. </p>
+        pub fn import_options(mut self, input: crate::model::ImportOptions) -> Self {
+            self.inner = self.inner.import_options(input);
             self
         }
-        /// <p>
-        /// The options for customizing this import request.
-        /// </p>
+        /// <p> The options for customizing this import request. </p>
         pub fn set_import_options(
             mut self,
             input: std::option::Option<crate::model::ImportOptions>,
@@ -1980,32 +1622,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_import_options(input);
             self
         }
-        /// <p>
-        /// The request token for performing the update action.
-        /// Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error
-        /// like a failed network connection, you can retry the call with the same request token. The service ensures
-        /// that if the first call using that request token is successfully performed, the second call will not perform
-        /// the action again.
-        /// </p>
-        /// <p>
-        /// Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests
-        /// spanning hours or days.
-        /// </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
+        /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>
-        /// The request token for performing the update action.
-        /// Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error
-        /// like a failed network connection, you can retry the call with the same request token. The service ensures
-        /// that if the first call using that request token is successfully performed, the second call will not perform
-        /// the action again.
-        /// </p>
-        /// <p>
-        /// Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests
-        /// spanning hours or days.
-        /// </p>
+        /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
+        /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2015,6 +1639,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

@@ -10,22 +10,12 @@ pub mod describe_accelerator_offerings_input {
         pub(crate) accelerator_types: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>
-        /// The location type that you want to describe accelerator type offerings for. It can assume the following values:
-        /// region: will return the accelerator type offering at the regional level.
-        /// availability-zone: will return the accelerator type offering at the availability zone level.
-        /// availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id.
-        /// </p>
+        /// <p> The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id. </p>
         pub fn location_type(mut self, input: crate::model::LocationType) -> Self {
             self.location_type = Some(input);
             self
         }
-        /// <p>
-        /// The location type that you want to describe accelerator type offerings for. It can assume the following values:
-        /// region: will return the accelerator type offering at the regional level.
-        /// availability-zone: will return the accelerator type offering at the availability zone level.
-        /// availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id.
-        /// </p>
+        /// <p> The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id. </p>
         pub fn set_location_type(
             mut self,
             input: std::option::Option<crate::model::LocationType>,
@@ -37,18 +27,14 @@ pub mod describe_accelerator_offerings_input {
         ///
         /// To override the contents of this collection use [`set_accelerator_types`](Self::set_accelerator_types).
         ///
-        /// <p>
-        /// The list of accelerator types to describe.
-        /// </p>
+        /// <p> The list of accelerator types to describe. </p>
         pub fn accelerator_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.accelerator_types.unwrap_or_default();
             v.push(input.into());
             self.accelerator_types = Some(v);
             self
         }
-        /// <p>
-        /// The list of accelerator types to describe.
-        /// </p>
+        /// <p> The list of accelerator types to describe. </p>
         pub fn set_accelerator_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -74,7 +60,8 @@ pub mod describe_accelerator_offerings_input {
 pub type DescribeAcceleratorOfferingsInputOperationOutputAlias =
     crate::operation::DescribeAcceleratorOfferings;
 #[doc(hidden)]
-pub type DescribeAcceleratorOfferingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAcceleratorOfferingsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAcceleratorOfferingsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAcceleratorOfferings`](crate::operation::DescribeAcceleratorOfferings)>
     #[allow(clippy::let_and_return)]
@@ -85,7 +72,7 @@ impl DescribeAcceleratorOfferingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAcceleratorOfferings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -166,7 +153,7 @@ impl DescribeAcceleratorOfferingsInput {
             "DescribeAcceleratorOfferings",
             "elasticinference",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -205,18 +192,14 @@ pub mod describe_accelerators_input {
         ///
         /// To override the contents of this collection use [`set_accelerator_ids`](Self::set_accelerator_ids).
         ///
-        /// <p>
-        /// The IDs of the accelerators to describe.
-        /// </p>
+        /// <p> The IDs of the accelerators to describe. </p>
         pub fn accelerator_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.accelerator_ids.unwrap_or_default();
             v.push(input.into());
             self.accelerator_ids = Some(v);
             self
         }
-        /// <p>
-        /// The IDs of the accelerators to describe.
-        /// </p>
+        /// <p> The IDs of the accelerators to describe. </p>
         pub fn set_accelerator_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -228,22 +211,14 @@ pub mod describe_accelerators_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>
-        /// One or more filters. Filter names and values are case-sensitive. Valid filter names are:
-        /// accelerator-types: can provide a list of accelerator type names to filter for.
-        /// instance-id: can provide a list of EC2 instance ids to filter for.
-        /// </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p> One or more filters. Filter names and values are case-sensitive. Valid filter names are: accelerator-types: can provide a list of accelerator type names to filter for. instance-id: can provide a list of EC2 instance ids to filter for. </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>
-        /// One or more filters. Filter names and values are case-sensitive. Valid filter names are:
-        /// accelerator-types: can provide a list of accelerator type names to filter for.
-        /// instance-id: can provide a list of EC2 instance ids to filter for.
-        /// </p>
+        /// <p> One or more filters. Filter names and values are case-sensitive. Valid filter names are: accelerator-types: can provide a list of accelerator type names to filter for. instance-id: can provide a list of EC2 instance ids to filter for. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -251,34 +226,22 @@ pub mod describe_accelerators_input {
             self.filters = input;
             self
         }
-        /// <p>
-        /// The total number of items to return in the command's output. If the total number of items available is more than the value specified, a NextToken is provided in the command's output.
-        /// To resume pagination, provide the NextToken value in the starting-token argument of a subsequent command.
-        /// Do not use the NextToken response element directly outside of the AWS CLI.
-        /// </p>
+        /// <p> The total number of items to return in the command's output. If the total number of items available is more than the value specified, a NextToken is provided in the command's output. To resume pagination, provide the NextToken value in the starting-token argument of a subsequent command. Do not use the NextToken response element directly outside of the AWS CLI. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>
-        /// The total number of items to return in the command's output. If the total number of items available is more than the value specified, a NextToken is provided in the command's output.
-        /// To resume pagination, provide the NextToken value in the starting-token argument of a subsequent command.
-        /// Do not use the NextToken response element directly outside of the AWS CLI.
-        /// </p>
+        /// <p> The total number of items to return in the command's output. If the total number of items available is more than the value specified, a NextToken is provided in the command's output. To resume pagination, provide the NextToken value in the starting-token argument of a subsequent command. Do not use the NextToken response element directly outside of the AWS CLI. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>
-        /// A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-        /// </p>
+        /// <p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-        /// </p>
+        /// <p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -302,7 +265,7 @@ pub mod describe_accelerators_input {
 #[doc(hidden)]
 pub type DescribeAcceleratorsInputOperationOutputAlias = crate::operation::DescribeAccelerators;
 #[doc(hidden)]
-pub type DescribeAcceleratorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAcceleratorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAcceleratorsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccelerators`](crate::operation::DescribeAccelerators)>
     #[allow(clippy::let_and_return)]
@@ -313,7 +276,7 @@ impl DescribeAcceleratorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAccelerators,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -393,7 +356,7 @@ impl DescribeAcceleratorsInput {
             "DescribeAccelerators",
             "elasticinference",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -438,7 +401,7 @@ pub mod describe_accelerator_types_input {
 pub type DescribeAcceleratorTypesInputOperationOutputAlias =
     crate::operation::DescribeAcceleratorTypes;
 #[doc(hidden)]
-pub type DescribeAcceleratorTypesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAcceleratorTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAcceleratorTypesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAcceleratorTypes`](crate::operation::DescribeAcceleratorTypes)>
     #[allow(clippy::let_and_return)]
@@ -449,7 +412,7 @@ impl DescribeAcceleratorTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAcceleratorTypes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -523,7 +486,7 @@ impl DescribeAcceleratorTypesInput {
             "DescribeAcceleratorTypes",
             "elasticinference",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -547,16 +510,12 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The ARN of the Elastic Inference Accelerator to list the tags for.
-        /// </p>
+        /// <p> The ARN of the Elastic Inference Accelerator to list the tags for. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The ARN of the Elastic Inference Accelerator to list the tags for.
-        /// </p>
+        /// <p> The ARN of the Elastic Inference Accelerator to list the tags for. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -577,7 +536,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -588,7 +547,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -678,7 +637,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "elasticinference",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -705,16 +664,12 @@ pub mod tag_resource_input {
         >,
     }
     impl Builder {
-        /// <p>
-        /// The ARN of the Elastic Inference Accelerator to tag.
-        /// </p>
+        /// <p> The ARN of the Elastic Inference Accelerator to tag. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The ARN of the Elastic Inference Accelerator to tag.
-        /// </p>
+        /// <p> The ARN of the Elastic Inference Accelerator to tag. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -723,9 +678,7 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// The tags to add to the Elastic Inference Accelerator.
-        /// </p>
+        /// <p> The tags to add to the Elastic Inference Accelerator. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -736,9 +689,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>
-        /// The tags to add to the Elastic Inference Accelerator.
-        /// </p>
+        /// <p> The tags to add to the Elastic Inference Accelerator. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -765,7 +716,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -776,7 +727,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -871,7 +822,7 @@ impl TagResourceInput {
             "TagResource",
             "elasticinference",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -904,16 +855,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>
-        /// The ARN of the Elastic Inference Accelerator to untag.
-        /// </p>
+        /// <p> The ARN of the Elastic Inference Accelerator to untag. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The ARN of the Elastic Inference Accelerator to untag.
-        /// </p>
+        /// <p> The ARN of the Elastic Inference Accelerator to untag. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -922,18 +869,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>
-        /// The list of tags to remove from the Elastic Inference Accelerator.
-        /// </p>
+        /// <p> The list of tags to remove from the Elastic Inference Accelerator. </p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>
-        /// The list of tags to remove from the Elastic Inference Accelerator.
-        /// </p>
+        /// <p> The list of tags to remove from the Elastic Inference Accelerator. </p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -958,7 +901,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -969,7 +912,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1072,7 +1015,7 @@ impl UntagResourceInput {
             "UntagResource",
             "elasticinference",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1091,25 +1034,17 @@ impl UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>
-    /// The ARN of the Elastic Inference Accelerator to untag.
-    /// </p>
+    /// <p> The ARN of the Elastic Inference Accelerator to untag. </p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The list of tags to remove from the Elastic Inference Accelerator.
-    /// </p>
+    /// <p> The list of tags to remove from the Elastic Inference Accelerator. </p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>
-    /// The ARN of the Elastic Inference Accelerator to untag.
-    /// </p>
+    /// <p> The ARN of the Elastic Inference Accelerator to untag. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>
-    /// The list of tags to remove from the Elastic Inference Accelerator.
-    /// </p>
+    /// <p> The list of tags to remove from the Elastic Inference Accelerator. </p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -1127,26 +1062,18 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>
-    /// The ARN of the Elastic Inference Accelerator to tag.
-    /// </p>
+    /// <p> The ARN of the Elastic Inference Accelerator to tag. </p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The tags to add to the Elastic Inference Accelerator.
-    /// </p>
+    /// <p> The tags to add to the Elastic Inference Accelerator. </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
-    /// <p>
-    /// The ARN of the Elastic Inference Accelerator to tag.
-    /// </p>
+    /// <p> The ARN of the Elastic Inference Accelerator to tag. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>
-    /// The tags to add to the Elastic Inference Accelerator.
-    /// </p>
+    /// <p> The tags to add to the Elastic Inference Accelerator. </p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1167,15 +1094,11 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>
-    /// The ARN of the Elastic Inference Accelerator to list the tags for.
-    /// </p>
+    /// <p> The ARN of the Elastic Inference Accelerator to list the tags for. </p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>
-    /// The ARN of the Elastic Inference Accelerator to list the tags for.
-    /// </p>
+    /// <p> The ARN of the Elastic Inference Accelerator to list the tags for. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -1203,53 +1126,29 @@ impl std::fmt::Debug for DescribeAcceleratorTypesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAcceleratorsInput {
-    /// <p>
-    /// The IDs of the accelerators to describe.
-    /// </p>
+    /// <p> The IDs of the accelerators to describe. </p>
     pub accelerator_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>
-    /// One or more filters. Filter names and values are case-sensitive. Valid filter names are:
-    /// accelerator-types: can provide a list of accelerator type names to filter for.
-    /// instance-id: can provide a list of EC2 instance ids to filter for.
-    /// </p>
+    /// <p> One or more filters. Filter names and values are case-sensitive. Valid filter names are: accelerator-types: can provide a list of accelerator type names to filter for. instance-id: can provide a list of EC2 instance ids to filter for. </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>
-    /// The total number of items to return in the command's output. If the total number of items available is more than the value specified, a NextToken is provided in the command's output.
-    /// To resume pagination, provide the NextToken value in the starting-token argument of a subsequent command.
-    /// Do not use the NextToken response element directly outside of the AWS CLI.
-    /// </p>
+    /// <p> The total number of items to return in the command's output. If the total number of items available is more than the value specified, a NextToken is provided in the command's output. To resume pagination, provide the NextToken value in the starting-token argument of a subsequent command. Do not use the NextToken response element directly outside of the AWS CLI. </p>
     pub max_results: i32,
-    /// <p>
-    /// A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-    /// </p>
+    /// <p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAcceleratorsInput {
-    /// <p>
-    /// The IDs of the accelerators to describe.
-    /// </p>
+    /// <p> The IDs of the accelerators to describe. </p>
     pub fn accelerator_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.accelerator_ids.as_deref()
     }
-    /// <p>
-    /// One or more filters. Filter names and values are case-sensitive. Valid filter names are:
-    /// accelerator-types: can provide a list of accelerator type names to filter for.
-    /// instance-id: can provide a list of EC2 instance ids to filter for.
-    /// </p>
+    /// <p> One or more filters. Filter names and values are case-sensitive. Valid filter names are: accelerator-types: can provide a list of accelerator type names to filter for. instance-id: can provide a list of EC2 instance ids to filter for. </p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>
-    /// The total number of items to return in the command's output. If the total number of items available is more than the value specified, a NextToken is provided in the command's output.
-    /// To resume pagination, provide the NextToken value in the starting-token argument of a subsequent command.
-    /// Do not use the NextToken response element directly outside of the AWS CLI.
-    /// </p>
+    /// <p> The total number of items to return in the command's output. If the total number of items available is more than the value specified, a NextToken is provided in the command's output. To resume pagination, provide the NextToken value in the starting-token argument of a subsequent command. Do not use the NextToken response element directly outside of the AWS CLI. </p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>
-    /// A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-    /// </p>
+    /// <p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1269,31 +1168,17 @@ impl std::fmt::Debug for DescribeAcceleratorsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAcceleratorOfferingsInput {
-    /// <p>
-    /// The location type that you want to describe accelerator type offerings for. It can assume the following values:
-    /// region: will return the accelerator type offering at the regional level.
-    /// availability-zone: will return the accelerator type offering at the availability zone level.
-    /// availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id.
-    /// </p>
+    /// <p> The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id. </p>
     pub location_type: std::option::Option<crate::model::LocationType>,
-    /// <p>
-    /// The list of accelerator types to describe.
-    /// </p>
+    /// <p> The list of accelerator types to describe. </p>
     pub accelerator_types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeAcceleratorOfferingsInput {
-    /// <p>
-    /// The location type that you want to describe accelerator type offerings for. It can assume the following values:
-    /// region: will return the accelerator type offering at the regional level.
-    /// availability-zone: will return the accelerator type offering at the availability zone level.
-    /// availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id.
-    /// </p>
+    /// <p> The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id. </p>
     pub fn location_type(&self) -> std::option::Option<&crate::model::LocationType> {
         self.location_type.as_ref()
     }
-    /// <p>
-    /// The list of accelerator types to describe.
-    /// </p>
+    /// <p> The list of accelerator types to describe. </p>
     pub fn accelerator_types(&self) -> std::option::Option<&[std::string::String]> {
         self.accelerator_types.as_deref()
     }

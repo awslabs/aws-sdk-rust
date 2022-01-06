@@ -14,15 +14,13 @@ pub struct CreateHttpNamespaceError {
 pub enum CreateHttpNamespaceErrorKind {
     /// <p>The operation is already in progress.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
-    /// be outside the allowed range, or a string value might exceed length constraints.</p>
+    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The namespace that you're trying to create already exists.</p>
     NamespaceAlreadyExists(crate::error::NamespaceAlreadyExists),
     /// <p>The resource can't be created because you've reached the quota on the number of resources.</p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// <p>The list of tags on the resource is over the quota. The maximum number of tags that can be applied to a resource
-    /// is 50.</p>
+    /// <p>The list of tags on the resource is over the quota. The maximum number of tags that can be applied to a resource is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -69,8 +67,6 @@ impl CreateHttpNamespaceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -152,15 +148,13 @@ pub struct CreatePrivateDnsNamespaceError {
 pub enum CreatePrivateDnsNamespaceErrorKind {
     /// <p>The operation is already in progress.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
-    /// be outside the allowed range, or a string value might exceed length constraints.</p>
+    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The namespace that you're trying to create already exists.</p>
     NamespaceAlreadyExists(crate::error::NamespaceAlreadyExists),
     /// <p>The resource can't be created because you've reached the quota on the number of resources.</p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// <p>The list of tags on the resource is over the quota. The maximum number of tags that can be applied to a resource
-    /// is 50.</p>
+    /// <p>The list of tags on the resource is over the quota. The maximum number of tags that can be applied to a resource is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -207,8 +201,6 @@ impl CreatePrivateDnsNamespaceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -293,15 +285,13 @@ pub struct CreatePublicDnsNamespaceError {
 pub enum CreatePublicDnsNamespaceErrorKind {
     /// <p>The operation is already in progress.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
-    /// be outside the allowed range, or a string value might exceed length constraints.</p>
+    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The namespace that you're trying to create already exists.</p>
     NamespaceAlreadyExists(crate::error::NamespaceAlreadyExists),
     /// <p>The resource can't be created because you've reached the quota on the number of resources.</p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
-    /// <p>The list of tags on the resource is over the quota. The maximum number of tags that can be applied to a resource
-    /// is 50.</p>
+    /// <p>The list of tags on the resource is over the quota. The maximum number of tags that can be applied to a resource is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -348,8 +338,6 @@ impl CreatePublicDnsNamespaceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -432,8 +420,7 @@ pub struct CreateServiceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateServiceErrorKind {
-    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
-    /// be outside the allowed range, or a string value might exceed length constraints.</p>
+    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>No namespace exists with the specified ID.</p>
     NamespaceNotFound(crate::error::NamespaceNotFound),
@@ -441,8 +428,7 @@ pub enum CreateServiceErrorKind {
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// <p>The service can't be created because a service with the same name already exists.</p>
     ServiceAlreadyExists(crate::error::ServiceAlreadyExists),
-    /// <p>The list of tags on the resource is over the quota. The maximum number of tags that can be applied to a resource
-    /// is 50.</p>
+    /// <p>The list of tags on the resource is over the quota. The maximum number of tags that can be applied to a resource is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -489,8 +475,6 @@ impl CreateServiceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -560,13 +544,11 @@ pub struct DeleteNamespaceError {
 pub enum DeleteNamespaceErrorKind {
     /// <p>The operation is already in progress.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
-    /// be outside the allowed range, or a string value might exceed length constraints.</p>
+    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>No namespace exists with the specified ID.</p>
     NamespaceNotFound(crate::error::NamespaceNotFound),
-    /// <p>The specified resource can't be deleted because it contains other resources. For example, you can't delete a
-    /// service that contains any instances.</p>
+    /// <p>The specified resource can't be deleted because it contains other resources. For example, you can't delete a service that contains any instances.</p>
     ResourceInUse(crate::error::ResourceInUse),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -612,8 +594,6 @@ impl DeleteNamespaceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -676,11 +656,9 @@ pub struct DeleteServiceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteServiceErrorKind {
-    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
-    /// be outside the allowed range, or a string value might exceed length constraints.</p>
+    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
-    /// <p>The specified resource can't be deleted because it contains other resources. For example, you can't delete a
-    /// service that contains any instances.</p>
+    /// <p>The specified resource can't be deleted because it contains other resources. For example, you can't delete a service that contains any instances.</p>
     ResourceInUse(crate::error::ResourceInUse),
     /// <p>No service exists with the specified ID.</p>
     ServiceNotFound(crate::error::ServiceNotFound),
@@ -727,8 +705,6 @@ impl DeleteServiceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -788,14 +764,11 @@ pub struct DeregisterInstanceError {
 pub enum DeregisterInstanceErrorKind {
     /// <p>The operation is already in progress.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>No instance exists with the specified ID, or the instance was recently registered, and information about the
-    /// instance hasn't propagated yet.</p>
+    /// <p>No instance exists with the specified ID, or the instance was recently registered, and information about the instance hasn't propagated yet.</p>
     InstanceNotFound(crate::error::InstanceNotFound),
-    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
-    /// be outside the allowed range, or a string value might exceed length constraints.</p>
+    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
-    /// <p>The specified resource can't be deleted because it contains other resources. For example, you can't delete a
-    /// service that contains any instances.</p>
+    /// <p>The specified resource can't be deleted because it contains other resources. For example, you can't delete a service that contains any instances.</p>
     ResourceInUse(crate::error::ResourceInUse),
     /// <p>No service exists with the specified ID.</p>
     ServiceNotFound(crate::error::ServiceNotFound),
@@ -844,8 +817,6 @@ impl DeregisterInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -913,14 +884,11 @@ pub struct DiscoverInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DiscoverInstancesErrorKind {
-    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
-    /// be outside the allowed range, or a string value might exceed length constraints.</p>
+    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>No namespace exists with the specified ID.</p>
     NamespaceNotFound(crate::error::NamespaceNotFound),
-    /// <p>The operation can't be completed because you've reached the quota for the number of requests. For more
-    /// information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud Map API request throttling
-    /// quota</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    /// <p>The operation can't be completed because you've reached the quota for the number of requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.</p>
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
     /// <p>No service exists with the specified ID.</p>
     ServiceNotFound(crate::error::ServiceNotFound),
@@ -968,8 +936,6 @@ impl DiscoverInstancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1035,11 +1001,9 @@ pub struct GetInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetInstanceErrorKind {
-    /// <p>No instance exists with the specified ID, or the instance was recently registered, and information about the
-    /// instance hasn't propagated yet.</p>
+    /// <p>No instance exists with the specified ID, or the instance was recently registered, and information about the instance hasn't propagated yet.</p>
     InstanceNotFound(crate::error::InstanceNotFound),
-    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
-    /// be outside the allowed range, or a string value might exceed length constraints.</p>
+    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>No service exists with the specified ID.</p>
     ServiceNotFound(crate::error::ServiceNotFound),
@@ -1086,8 +1050,6 @@ impl GetInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1145,11 +1107,9 @@ pub struct GetInstancesHealthStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetInstancesHealthStatusErrorKind {
-    /// <p>No instance exists with the specified ID, or the instance was recently registered, and information about the
-    /// instance hasn't propagated yet.</p>
+    /// <p>No instance exists with the specified ID, or the instance was recently registered, and information about the instance hasn't propagated yet.</p>
     InstanceNotFound(crate::error::InstanceNotFound),
-    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
-    /// be outside the allowed range, or a string value might exceed length constraints.</p>
+    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>No service exists with the specified ID.</p>
     ServiceNotFound(crate::error::ServiceNotFound),
@@ -1196,8 +1156,6 @@ impl GetInstancesHealthStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1264,8 +1222,7 @@ pub struct GetNamespaceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetNamespaceErrorKind {
-    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
-    /// be outside the allowed range, or a string value might exceed length constraints.</p>
+    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>No namespace exists with the specified ID.</p>
     NamespaceNotFound(crate::error::NamespaceNotFound),
@@ -1311,8 +1268,6 @@ impl GetNamespaceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1365,8 +1320,7 @@ pub struct GetOperationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetOperationErrorKind {
-    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
-    /// be outside the allowed range, or a string value might exceed length constraints.</p>
+    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>No operation exists with the specified ID.</p>
     OperationNotFound(crate::error::OperationNotFound),
@@ -1412,8 +1366,6 @@ impl GetOperationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1466,8 +1418,7 @@ pub struct GetServiceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetServiceErrorKind {
-    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
-    /// be outside the allowed range, or a string value might exceed length constraints.</p>
+    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>No service exists with the specified ID.</p>
     ServiceNotFound(crate::error::ServiceNotFound),
@@ -1513,8 +1464,6 @@ impl GetServiceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1567,8 +1516,7 @@ pub struct ListInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListInstancesErrorKind {
-    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
-    /// be outside the allowed range, or a string value might exceed length constraints.</p>
+    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>No service exists with the specified ID.</p>
     ServiceNotFound(crate::error::ServiceNotFound),
@@ -1614,8 +1562,6 @@ impl ListInstancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1668,8 +1614,7 @@ pub struct ListNamespacesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListNamespacesErrorKind {
-    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
-    /// be outside the allowed range, or a string value might exceed length constraints.</p>
+    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1712,8 +1657,6 @@ impl ListNamespacesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1761,8 +1704,7 @@ pub struct ListOperationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListOperationsErrorKind {
-    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
-    /// be outside the allowed range, or a string value might exceed length constraints.</p>
+    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1805,8 +1747,6 @@ impl ListOperationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1854,8 +1794,7 @@ pub struct ListServicesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListServicesErrorKind {
-    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
-    /// be outside the allowed range, or a string value might exceed length constraints.</p>
+    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1898,8 +1837,6 @@ impl ListServicesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1947,8 +1884,7 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
-    /// be outside the allowed range, or a string value might exceed length constraints.</p>
+    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The operation can't be completed because the resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1994,8 +1930,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2053,11 +1987,9 @@ pub struct RegisterInstanceError {
 pub enum RegisterInstanceErrorKind {
     /// <p>The operation is already in progress.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
-    /// be outside the allowed range, or a string value might exceed length constraints.</p>
+    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
-    /// <p>The specified resource can't be deleted because it contains other resources. For example, you can't delete a
-    /// service that contains any instances.</p>
+    /// <p>The specified resource can't be deleted because it contains other resources. For example, you can't delete a service that contains any instances.</p>
     ResourceInUse(crate::error::ResourceInUse),
     /// <p>The resource can't be created because you've reached the quota on the number of resources.</p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
@@ -2108,8 +2040,6 @@ impl RegisterInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2180,13 +2110,11 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
-    /// be outside the allowed range, or a string value might exceed length constraints.</p>
+    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The operation can't be completed because the resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The list of tags on the resource is over the quota. The maximum number of tags that can be applied to a resource
-    /// is 50.</p>
+    /// <p>The list of tags on the resource is over the quota. The maximum number of tags that can be applied to a resource is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2231,8 +2159,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2293,8 +2219,7 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
-    /// be outside the allowed range, or a string value might exceed length constraints.</p>
+    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The operation can't be completed because the resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2340,8 +2265,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2399,13 +2322,11 @@ pub struct UpdateHttpNamespaceError {
 pub enum UpdateHttpNamespaceErrorKind {
     /// <p>The operation is already in progress.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
-    /// be outside the allowed range, or a string value might exceed length constraints.</p>
+    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>No namespace exists with the specified ID.</p>
     NamespaceNotFound(crate::error::NamespaceNotFound),
-    /// <p>The specified resource can't be deleted because it contains other resources. For example, you can't delete a
-    /// service that contains any instances.</p>
+    /// <p>The specified resource can't be deleted because it contains other resources. For example, you can't delete a service that contains any instances.</p>
     ResourceInUse(crate::error::ResourceInUse),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2451,8 +2372,6 @@ impl UpdateHttpNamespaceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2521,14 +2440,11 @@ pub struct UpdateInstanceCustomHealthStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateInstanceCustomHealthStatusErrorKind {
-    /// <p>The health check for the instance that's specified by <code>ServiceId</code> and <code>InstanceId</code> isn't a
-    /// custom health check. </p>
+    /// <p>The health check for the instance that's specified by <code>ServiceId</code> and <code>InstanceId</code> isn't a custom health check. </p>
     CustomHealthNotFound(crate::error::CustomHealthNotFound),
-    /// <p>No instance exists with the specified ID, or the instance was recently registered, and information about the
-    /// instance hasn't propagated yet.</p>
+    /// <p>No instance exists with the specified ID, or the instance was recently registered, and information about the instance hasn't propagated yet.</p>
     InstanceNotFound(crate::error::InstanceNotFound),
-    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
-    /// be outside the allowed range, or a string value might exceed length constraints.</p>
+    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>No service exists with the specified ID.</p>
     ServiceNotFound(crate::error::ServiceNotFound),
@@ -2581,8 +2497,6 @@ impl UpdateInstanceCustomHealthStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2659,13 +2573,11 @@ pub struct UpdatePrivateDnsNamespaceError {
 pub enum UpdatePrivateDnsNamespaceErrorKind {
     /// <p>The operation is already in progress.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
-    /// be outside the allowed range, or a string value might exceed length constraints.</p>
+    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>No namespace exists with the specified ID.</p>
     NamespaceNotFound(crate::error::NamespaceNotFound),
-    /// <p>The specified resource can't be deleted because it contains other resources. For example, you can't delete a
-    /// service that contains any instances.</p>
+    /// <p>The specified resource can't be deleted because it contains other resources. For example, you can't delete a service that contains any instances.</p>
     ResourceInUse(crate::error::ResourceInUse),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2711,8 +2623,6 @@ impl UpdatePrivateDnsNamespaceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2789,13 +2699,11 @@ pub struct UpdatePublicDnsNamespaceError {
 pub enum UpdatePublicDnsNamespaceErrorKind {
     /// <p>The operation is already in progress.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
-    /// be outside the allowed range, or a string value might exceed length constraints.</p>
+    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>No namespace exists with the specified ID.</p>
     NamespaceNotFound(crate::error::NamespaceNotFound),
-    /// <p>The specified resource can't be deleted because it contains other resources. For example, you can't delete a
-    /// service that contains any instances.</p>
+    /// <p>The specified resource can't be deleted because it contains other resources. For example, you can't delete a service that contains any instances.</p>
     ResourceInUse(crate::error::ResourceInUse),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2841,8 +2749,6 @@ impl UpdatePublicDnsNamespaceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2919,8 +2825,7 @@ pub struct UpdateServiceError {
 pub enum UpdateServiceErrorKind {
     /// <p>The operation is already in progress.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
-    /// be outside the allowed range, or a string value might exceed length constraints.</p>
+    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>No service exists with the specified ID.</p>
     ServiceNotFound(crate::error::ServiceNotFound),
@@ -2967,8 +2872,6 @@ impl UpdateServiceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3077,8 +2980,7 @@ impl ServiceNotFound {
     }
 }
 
-/// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
-/// be outside the allowed range, or a string value might exceed length constraints.</p>
+/// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInput {
@@ -3230,8 +3132,7 @@ impl DuplicateRequest {
     }
 }
 
-/// <p>The specified resource can't be deleted because it contains other resources. For example, you can't delete a
-/// service that contains any instances.</p>
+/// <p>The specified resource can't be deleted because it contains other resources. For example, you can't delete a service that contains any instances.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUse {
@@ -3359,8 +3260,7 @@ impl NamespaceNotFound {
     }
 }
 
-/// <p>No instance exists with the specified ID, or the instance was recently registered, and information about the
-/// instance hasn't propagated yet.</p>
+/// <p>No instance exists with the specified ID, or the instance was recently registered, and information about the instance hasn't propagated yet.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceNotFound {
@@ -3424,8 +3324,7 @@ impl InstanceNotFound {
     }
 }
 
-/// <p>The health check for the instance that's specified by <code>ServiceId</code> and <code>InstanceId</code> isn't a
-/// custom health check. </p>
+/// <p>The health check for the instance that's specified by <code>ServiceId</code> and <code>InstanceId</code> isn't a custom health check. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomHealthNotFound {
@@ -3553,8 +3452,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>The list of tags on the resource is over the quota. The maximum number of tags that can be applied to a resource
-/// is 50.</p>
+/// <p>The list of tags on the resource is over the quota. The maximum number of tags that can be applied to a resource is 50.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {
@@ -3770,9 +3668,7 @@ impl OperationNotFound {
     }
 }
 
-/// <p>The operation can't be completed because you've reached the quota for the number of requests. For more
-/// information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud Map API request throttling
-/// quota</a> in the <i>Cloud Map Developer Guide</i>.</p>
+/// <p>The operation can't be completed because you've reached the quota for the number of requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestLimitExceeded {

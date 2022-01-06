@@ -305,9 +305,9 @@ pub mod untag_resource_output {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>The list of tags removed</p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -368,9 +368,9 @@ pub mod tag_resource_output {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>A list of tags as key-value pairs.</p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -488,9 +488,9 @@ pub mod list_tags_output {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>A list of tags as key-value pairs.</p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -704,9 +704,9 @@ pub mod describe_users_output {
         /// To override the contents of this collection use [`set_users`](Self::set_users).
         ///
         /// <p>A list of users.</p>
-        pub fn users(mut self, input: impl Into<crate::model::User>) -> Self {
+        pub fn users(mut self, input: crate::model::User) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.users = Some(v);
             self
         }
@@ -796,9 +796,9 @@ pub mod describe_subnet_groups_output {
         /// To override the contents of this collection use [`set_subnet_groups`](Self::set_subnet_groups).
         ///
         /// <p>A list of subnet groups. Each element in the list contains detailed information about one group.</p>
-        pub fn subnet_groups(mut self, input: impl Into<crate::model::SubnetGroup>) -> Self {
+        pub fn subnet_groups(mut self, input: crate::model::SubnetGroup) -> Self {
             let mut v = self.subnet_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subnet_groups = Some(v);
             self
         }
@@ -878,9 +878,9 @@ pub mod describe_snapshots_output {
         /// To override the contents of this collection use [`set_snapshots`](Self::set_snapshots).
         ///
         /// <p>A list of snapshots. Each item in the list contains detailed information about one snapshot.</p>
-        pub fn snapshots(mut self, input: impl Into<crate::model::Snapshot>) -> Self {
+        pub fn snapshots(mut self, input: crate::model::Snapshot) -> Self {
             let mut v = self.snapshots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.snapshots = Some(v);
             self
         }
@@ -960,9 +960,9 @@ pub mod describe_service_updates_output {
         /// To override the contents of this collection use [`set_service_updates`](Self::set_service_updates).
         ///
         /// <p>A list of service updates</p>
-        pub fn service_updates(mut self, input: impl Into<crate::model::ServiceUpdate>) -> Self {
+        pub fn service_updates(mut self, input: crate::model::ServiceUpdate) -> Self {
             let mut v = self.service_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_updates = Some(v);
             self
         }
@@ -1042,9 +1042,9 @@ pub mod describe_parameters_output {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>A list of parameters specific to a particular parameter group. Each element in the list contains detailed information about one parameter.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -1125,9 +1125,9 @@ pub mod describe_parameter_groups_output {
         /// To override the contents of this collection use [`set_parameter_groups`](Self::set_parameter_groups).
         ///
         /// <p>A list of parameter groups. Each element in the list contains detailed information about one parameter group.</p>
-        pub fn parameter_groups(mut self, input: impl Into<crate::model::ParameterGroup>) -> Self {
+        pub fn parameter_groups(mut self, input: crate::model::ParameterGroup) -> Self {
             let mut v = self.parameter_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameter_groups = Some(v);
             self
         }
@@ -1207,9 +1207,9 @@ pub mod describe_events_output {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>A list of events. Each element in the list contains detailed information about one event.</p>
-        pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
+        pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -1290,12 +1290,9 @@ pub mod describe_engine_versions_output {
         /// To override the contents of this collection use [`set_engine_versions`](Self::set_engine_versions).
         ///
         /// <p>A list of engine version details. Each element in the list contains detailed information about one engine version.</p>
-        pub fn engine_versions(
-            mut self,
-            input: impl Into<crate::model::EngineVersionInfo>,
-        ) -> Self {
+        pub fn engine_versions(mut self, input: crate::model::EngineVersionInfo) -> Self {
             let mut v = self.engine_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.engine_versions = Some(v);
             self
         }
@@ -1375,9 +1372,9 @@ pub mod describe_clusters_output {
         /// To override the contents of this collection use [`set_clusters`](Self::set_clusters).
         ///
         /// <p>A list of clusters</p>
-        pub fn clusters(mut self, input: impl Into<crate::model::Cluster>) -> Self {
+        pub fn clusters(mut self, input: crate::model::Cluster) -> Self {
             let mut v = self.clusters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.clusters = Some(v);
             self
         }
@@ -1447,9 +1444,9 @@ pub mod describe_ac_ls_output {
         /// To override the contents of this collection use [`set_ac_ls`](Self::set_ac_ls).
         ///
         /// <p>The list of ACLs</p>
-        pub fn ac_ls(mut self, input: impl Into<crate::model::Acl>) -> Self {
+        pub fn ac_ls(mut self, input: crate::model::Acl) -> Self {
             let mut v = self.ac_ls.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ac_ls = Some(v);
             self
         }
@@ -2236,9 +2233,9 @@ pub mod batch_update_cluster_output {
         /// To override the contents of this collection use [`set_processed_clusters`](Self::set_processed_clusters).
         ///
         /// <p>The list of clusters that have been updated.</p>
-        pub fn processed_clusters(mut self, input: impl Into<crate::model::Cluster>) -> Self {
+        pub fn processed_clusters(mut self, input: crate::model::Cluster) -> Self {
             let mut v = self.processed_clusters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.processed_clusters = Some(v);
             self
         }
@@ -2255,12 +2252,9 @@ pub mod batch_update_cluster_output {
         /// To override the contents of this collection use [`set_unprocessed_clusters`](Self::set_unprocessed_clusters).
         ///
         /// <p>The list of clusters where updates have not been applied.</p>
-        pub fn unprocessed_clusters(
-            mut self,
-            input: impl Into<crate::model::UnprocessedCluster>,
-        ) -> Self {
+        pub fn unprocessed_clusters(mut self, input: crate::model::UnprocessedCluster) -> Self {
             let mut v = self.unprocessed_clusters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_clusters = Some(v);
             self
         }

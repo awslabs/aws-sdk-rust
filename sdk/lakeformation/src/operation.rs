@@ -704,6 +704,76 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTableObjects {
     }
 }
 
+/// Operation shape for `GetTemporaryGluePartitionCredentials`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_temporary_glue_partition_credentials`](crate::client::Client::get_temporary_glue_partition_credentials).
+///
+/// See [`crate::client::fluent_builders::GetTemporaryGluePartitionCredentials`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetTemporaryGluePartitionCredentials {
+    _private: (),
+}
+impl GetTemporaryGluePartitionCredentials {
+    /// Creates a new builder-style object to manufacture [`GetTemporaryGluePartitionCredentialsInput`](crate::input::GetTemporaryGluePartitionCredentialsInput)
+    pub fn builder() -> crate::input::get_temporary_glue_partition_credentials_input::Builder {
+        crate::input::get_temporary_glue_partition_credentials_input::Builder::default()
+    }
+    /// Creates a new `GetTemporaryGluePartitionCredentials` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetTemporaryGluePartitionCredentials {
+    type Output = std::result::Result<
+        crate::output::GetTemporaryGluePartitionCredentialsOutput,
+        crate::error::GetTemporaryGluePartitionCredentialsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_temporary_glue_partition_credentials_error(response)
+        } else {
+            crate::operation_deser::parse_get_temporary_glue_partition_credentials_response(
+                response,
+            )
+        }
+    }
+}
+
+/// Operation shape for `GetTemporaryGlueTableCredentials`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_temporary_glue_table_credentials`](crate::client::Client::get_temporary_glue_table_credentials).
+///
+/// See [`crate::client::fluent_builders::GetTemporaryGlueTableCredentials`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetTemporaryGlueTableCredentials {
+    _private: (),
+}
+impl GetTemporaryGlueTableCredentials {
+    /// Creates a new builder-style object to manufacture [`GetTemporaryGlueTableCredentialsInput`](crate::input::GetTemporaryGlueTableCredentialsInput)
+    pub fn builder() -> crate::input::get_temporary_glue_table_credentials_input::Builder {
+        crate::input::get_temporary_glue_table_credentials_input::Builder::default()
+    }
+    /// Creates a new `GetTemporaryGlueTableCredentials` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetTemporaryGlueTableCredentials {
+    type Output = std::result::Result<
+        crate::output::GetTemporaryGlueTableCredentialsOutput,
+        crate::error::GetTemporaryGlueTableCredentialsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_temporary_glue_table_credentials_error(response)
+        } else {
+            crate::operation_deser::parse_get_temporary_glue_table_credentials_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetWorkUnitResults`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

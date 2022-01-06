@@ -5,41 +5,32 @@
 pub enum Error {
     /// <p>Secrets Manager can't decrypt the protected secret text using the provided KMS key. </p>
     DecryptionFailure(crate::error::DecryptionFailure),
-    /// <p>Secrets Manager can't encrypt the protected secret text using the provided KMS key. Check that the
-    /// customer master key (CMK) is available, enabled, and not in an invalid state. For more
-    /// information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
-    /// Customer Master Key</a>.</p>
+    /// <p>Secrets Manager can't encrypt the protected secret text using the provided KMS key. Check that the KMS key is available, enabled, and not in an invalid state. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a>.</p>
     EncryptionFailure(crate::error::EncryptionFailure),
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>You provided an invalid <code>NextToken</code> value.</p>
+    /// <p>The <code>NextToken</code> value is invalid.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>You provided an invalid value for a parameter.</p>
+    /// <p>The parameter name is invalid value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>The secret is scheduled for deletion.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The request failed because it would exceed one of the Secrets Manager internal limits.</p>
+    /// <p>The request failed because it would exceed one of the Secrets Manager quotas.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>You provided a resource-based policy with syntax errors.</p>
+    /// <p>The resource policy has syntax errors.</p>
     MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
     /// <p>The request failed because you did not complete all the prerequisite steps.</p>
     PreconditionNotMetException(crate::error::PreconditionNotMetException),
-    /// <p>The BlockPublicPolicy parameter is set to true and the resource policy did not prevent broad access to the secret.</p>
+    /// <p>The <code>BlockPublicPolicy</code> parameter is set to true, and the resource policy did not prevent broad access to the secret.</p>
     PublicPolicyException(crate::error::PublicPolicyException),
     /// <p>A resource with the ID you requested already exists.</p>
     ResourceExistsException(crate::error::ResourceExistsException),
-    /// <p>We can't find the resource that you asked for.</p>
+    /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

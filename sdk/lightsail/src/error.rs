@@ -12,18 +12,12 @@ pub struct AllocateStaticIpError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AllocateStaticIpErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -81,8 +75,6 @@ impl AllocateStaticIpError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -175,15 +167,10 @@ pub struct AttachCertificateToDistributionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AttachCertificateToDistributionErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -251,8 +238,6 @@ impl AttachCertificateToDistributionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -347,18 +332,12 @@ pub struct AttachDiskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AttachDiskErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -416,8 +395,6 @@ impl AttachDiskError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -501,18 +478,12 @@ pub struct AttachInstancesToLoadBalancerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AttachInstancesToLoadBalancerErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -579,8 +550,6 @@ impl AttachInstancesToLoadBalancerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -685,18 +654,12 @@ pub struct AttachLoadBalancerTlsCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AttachLoadBalancerTlsCertificateErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -767,8 +730,6 @@ impl AttachLoadBalancerTlsCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -877,18 +838,12 @@ pub struct AttachStaticIpError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AttachStaticIpErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -946,8 +901,6 @@ impl AttachStaticIpError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1040,18 +993,12 @@ pub struct CloseInstancePublicPortsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CloseInstancePublicPortsErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -1111,8 +1058,6 @@ impl CloseInstancePublicPortsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1213,18 +1158,12 @@ pub struct CopySnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CopySnapshotErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -1282,8 +1221,6 @@ impl CopySnapshotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1370,15 +1307,10 @@ pub struct CreateBucketError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateBucketErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>A general service exception.</p>
@@ -1429,8 +1361,6 @@ impl CreateBucketError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1496,15 +1426,10 @@ pub struct CreateBucketAccessKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateBucketAccessKeyErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -1558,8 +1483,6 @@ impl CreateBucketAccessKeyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1642,15 +1565,10 @@ pub struct CreateCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateCertificateErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -1704,8 +1622,6 @@ impl CreateCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1782,18 +1698,12 @@ pub struct CreateCloudFormationStackError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateCloudFormationStackErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -1853,8 +1763,6 @@ impl CreateCloudFormationStackError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1955,15 +1863,10 @@ pub struct CreateContactMethodError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateContactMethodErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -2020,8 +1923,6 @@ impl CreateContactMethodError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2112,15 +2013,10 @@ pub struct CreateContainerServiceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateContainerServiceErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -2174,8 +2070,6 @@ impl CreateContainerServiceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2258,15 +2152,10 @@ pub struct CreateContainerServiceDeploymentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateContainerServiceDeploymentErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -2329,8 +2218,6 @@ impl CreateContainerServiceDeploymentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2419,15 +2306,10 @@ pub struct CreateContainerServiceRegistryLoginError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateContainerServiceRegistryLoginErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -2492,8 +2374,6 @@ impl CreateContainerServiceRegistryLoginError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2584,18 +2464,12 @@ pub struct CreateDiskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDiskErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -2653,8 +2527,6 @@ impl CreateDiskError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2738,18 +2610,12 @@ pub struct CreateDiskFromSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDiskFromSnapshotErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -2809,8 +2675,6 @@ impl CreateDiskFromSnapshotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2911,18 +2775,12 @@ pub struct CreateDiskSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDiskSnapshotErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -2980,8 +2838,6 @@ impl CreateDiskSnapshotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3077,15 +2933,10 @@ pub struct CreateDistributionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDistributionErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -3142,8 +2993,6 @@ impl CreateDistributionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3231,18 +3080,12 @@ pub struct CreateDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDomainErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -3300,8 +3143,6 @@ impl CreateDomainError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3388,18 +3229,12 @@ pub struct CreateDomainEntryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDomainEntryErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -3457,8 +3292,6 @@ impl CreateDomainEntryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3551,18 +3384,12 @@ pub struct CreateInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateInstancesErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -3620,8 +3447,6 @@ impl CreateInstancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3714,18 +3539,12 @@ pub struct CreateInstancesFromSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateInstancesFromSnapshotErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -3787,8 +3606,6 @@ impl CreateInstancesFromSnapshotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3889,18 +3706,12 @@ pub struct CreateInstanceSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateInstanceSnapshotErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -3960,8 +3771,6 @@ impl CreateInstanceSnapshotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4062,18 +3871,12 @@ pub struct CreateKeyPairError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateKeyPairErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -4131,8 +3934,6 @@ impl CreateKeyPairError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4219,18 +4020,12 @@ pub struct CreateLoadBalancerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateLoadBalancerErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -4288,8 +4083,6 @@ impl CreateLoadBalancerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4385,18 +4178,12 @@ pub struct CreateLoadBalancerTlsCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateLoadBalancerTlsCertificateErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -4467,8 +4254,6 @@ impl CreateLoadBalancerTlsCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4577,18 +4362,12 @@ pub struct CreateRelationalDatabaseError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateRelationalDatabaseErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -4648,8 +4427,6 @@ impl CreateRelationalDatabaseError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4750,18 +4527,12 @@ pub struct CreateRelationalDatabaseFromSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateRelationalDatabaseFromSnapshotErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -4836,8 +4607,6 @@ impl CreateRelationalDatabaseFromSnapshotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4950,18 +4719,12 @@ pub struct CreateRelationalDatabaseSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateRelationalDatabaseSnapshotErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -5032,8 +4795,6 @@ impl CreateRelationalDatabaseSnapshotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5142,15 +4903,10 @@ pub struct DeleteAlarmError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAlarmErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -5207,8 +4963,6 @@ impl DeleteAlarmError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5287,15 +5041,10 @@ pub struct DeleteAutoSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAutoSnapshotErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -5352,8 +5101,6 @@ impl DeleteAutoSnapshotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5441,15 +5188,10 @@ pub struct DeleteBucketError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBucketErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -5503,8 +5245,6 @@ impl DeleteBucketError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5575,15 +5315,10 @@ pub struct DeleteBucketAccessKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBucketAccessKeyErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -5637,8 +5372,6 @@ impl DeleteBucketAccessKeyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5721,15 +5454,10 @@ pub struct DeleteCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteCertificateErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -5783,8 +5511,6 @@ impl DeleteCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5861,15 +5587,10 @@ pub struct DeleteContactMethodError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteContactMethodErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -5926,8 +5647,6 @@ impl DeleteContactMethodError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6018,15 +5737,10 @@ pub struct DeleteContainerImageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteContainerImageErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -6080,8 +5794,6 @@ impl DeleteContainerImageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6164,15 +5876,10 @@ pub struct DeleteContainerServiceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteContainerServiceErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -6226,8 +5933,6 @@ impl DeleteContainerServiceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6310,18 +6015,12 @@ pub struct DeleteDiskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDiskErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -6379,8 +6078,6 @@ impl DeleteDiskError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6464,18 +6161,12 @@ pub struct DeleteDiskSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDiskSnapshotErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -6533,8 +6224,6 @@ impl DeleteDiskSnapshotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6630,15 +6319,10 @@ pub struct DeleteDistributionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDistributionErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -6695,8 +6379,6 @@ impl DeleteDistributionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6784,18 +6466,12 @@ pub struct DeleteDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDomainErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -6853,8 +6529,6 @@ impl DeleteDomainError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6941,18 +6615,12 @@ pub struct DeleteDomainEntryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDomainEntryErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -7010,8 +6678,6 @@ impl DeleteDomainEntryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7104,18 +6770,12 @@ pub struct DeleteInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteInstanceErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -7173,8 +6833,6 @@ impl DeleteInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7267,18 +6925,12 @@ pub struct DeleteInstanceSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteInstanceSnapshotErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -7338,8 +6990,6 @@ impl DeleteInstanceSnapshotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7440,18 +7090,12 @@ pub struct DeleteKeyPairError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteKeyPairErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -7509,8 +7153,6 @@ impl DeleteKeyPairError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7597,18 +7239,12 @@ pub struct DeleteKnownHostKeysError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteKnownHostKeysErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -7666,8 +7302,6 @@ impl DeleteKnownHostKeysError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7766,18 +7400,12 @@ pub struct DeleteLoadBalancerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteLoadBalancerErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -7835,8 +7463,6 @@ impl DeleteLoadBalancerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7932,18 +7558,12 @@ pub struct DeleteLoadBalancerTlsCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteLoadBalancerTlsCertificateErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -8014,8 +7634,6 @@ impl DeleteLoadBalancerTlsCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8124,18 +7742,12 @@ pub struct DeleteRelationalDatabaseError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRelationalDatabaseErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -8195,8 +7807,6 @@ impl DeleteRelationalDatabaseError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8297,18 +7907,12 @@ pub struct DeleteRelationalDatabaseSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRelationalDatabaseSnapshotErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -8379,8 +7983,6 @@ impl DeleteRelationalDatabaseSnapshotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8489,15 +8091,10 @@ pub struct DetachCertificateFromDistributionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetachCertificateFromDistributionErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -8565,8 +8162,6 @@ impl DetachCertificateFromDistributionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8665,18 +8260,12 @@ pub struct DetachDiskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetachDiskErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -8734,8 +8323,6 @@ impl DetachDiskError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8819,18 +8406,12 @@ pub struct DetachInstancesFromLoadBalancerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetachInstancesFromLoadBalancerErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -8901,8 +8482,6 @@ impl DetachInstancesFromLoadBalancerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9007,18 +8586,12 @@ pub struct DetachStaticIpError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetachStaticIpErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -9076,8 +8649,6 @@ impl DetachStaticIpError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9170,15 +8741,10 @@ pub struct DisableAddOnError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableAddOnErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -9235,8 +8801,6 @@ impl DisableAddOnError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9315,18 +8879,12 @@ pub struct DownloadDefaultKeyPairError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DownloadDefaultKeyPairErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -9386,8 +8944,6 @@ impl DownloadDefaultKeyPairError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9488,15 +9044,10 @@ pub struct EnableAddOnError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableAddOnErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -9553,8 +9104,6 @@ impl EnableAddOnError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9633,18 +9182,12 @@ pub struct ExportSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExportSnapshotErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -9702,8 +9245,6 @@ impl ExportSnapshotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9796,18 +9337,12 @@ pub struct GetActiveNamesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetActiveNamesErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -9865,8 +9400,6 @@ impl GetActiveNamesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9959,15 +9492,10 @@ pub struct GetAlarmsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAlarmsErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -10024,8 +9552,6 @@ impl GetAlarmsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10098,15 +9624,10 @@ pub struct GetAutoSnapshotsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAutoSnapshotsErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -10163,8 +9684,6 @@ impl GetAutoSnapshotsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10249,18 +9768,12 @@ pub struct GetBlueprintsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBlueprintsErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -10318,8 +9831,6 @@ impl GetBlueprintsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10406,15 +9917,10 @@ pub struct GetBucketAccessKeysError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBucketAccessKeysErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -10468,8 +9974,6 @@ impl GetBucketAccessKeysError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10552,15 +10056,10 @@ pub struct GetBucketBundlesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBucketBundlesErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>A general service exception.</p>
@@ -10611,8 +10110,6 @@ impl GetBucketBundlesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10684,15 +10181,10 @@ pub struct GetBucketMetricDataError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBucketMetricDataErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -10746,8 +10238,6 @@ impl GetBucketMetricDataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10830,15 +10320,10 @@ pub struct GetBucketsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBucketsErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -10892,8 +10377,6 @@ impl GetBucketsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10961,18 +10444,12 @@ pub struct GetBundlesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBundlesErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -11030,8 +10507,6 @@ impl GetBundlesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11115,15 +10590,10 @@ pub struct GetCertificatesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetCertificatesErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -11177,8 +10647,6 @@ impl GetCertificatesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11255,18 +10723,12 @@ pub struct GetCloudFormationStackRecordsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetCloudFormationStackRecordsErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -11333,8 +10795,6 @@ impl GetCloudFormationStackRecordsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11439,15 +10899,10 @@ pub struct GetContactMethodsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetContactMethodsErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -11504,8 +10959,6 @@ impl GetContactMethodsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11590,8 +11043,7 @@ pub struct GetContainerAPIMetadataError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetContainerAPIMetadataErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>A general service exception.</p>
     ServiceException(crate::error::ServiceException),
@@ -11640,8 +11092,6 @@ impl GetContainerAPIMetadataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11708,15 +11158,10 @@ pub struct GetContainerImagesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetContainerImagesErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -11770,8 +11215,6 @@ impl GetContainerImagesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11851,15 +11294,10 @@ pub struct GetContainerLogError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetContainerLogErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -11913,8 +11351,6 @@ impl GetContainerLogError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11991,15 +11427,10 @@ pub struct GetContainerServiceDeploymentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetContainerServiceDeploymentsErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -12058,8 +11489,6 @@ impl GetContainerServiceDeploymentsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12144,15 +11573,10 @@ pub struct GetContainerServiceMetricDataError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetContainerServiceMetricDataErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -12211,8 +11635,6 @@ impl GetContainerServiceMetricDataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12297,15 +11719,10 @@ pub struct GetContainerServicePowersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetContainerServicePowersErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -12359,8 +11776,6 @@ impl GetContainerServicePowersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12443,15 +11858,10 @@ pub struct GetContainerServicesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetContainerServicesErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -12505,8 +11915,6 @@ impl GetContainerServicesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12589,18 +11997,12 @@ pub struct GetDiskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDiskErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -12658,8 +12060,6 @@ impl GetDiskError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12740,18 +12140,12 @@ pub struct GetDisksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDisksErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -12809,8 +12203,6 @@ impl GetDisksError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12891,18 +12283,12 @@ pub struct GetDiskSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDiskSnapshotErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -12960,8 +12346,6 @@ impl GetDiskSnapshotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13054,18 +12438,12 @@ pub struct GetDiskSnapshotsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDiskSnapshotsErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -13123,8 +12501,6 @@ impl GetDiskSnapshotsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13217,15 +12593,10 @@ pub struct GetDistributionBundlesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDistributionBundlesErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -13282,8 +12653,6 @@ impl GetDistributionBundlesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13374,15 +12743,10 @@ pub struct GetDistributionLatestCacheResetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDistributionLatestCacheResetErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -13450,8 +12814,6 @@ impl GetDistributionLatestCacheResetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13546,15 +12908,10 @@ pub struct GetDistributionMetricDataError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDistributionMetricDataErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -13611,8 +12968,6 @@ impl GetDistributionMetricDataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13703,15 +13058,10 @@ pub struct GetDistributionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDistributionsErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -13768,8 +13118,6 @@ impl GetDistributionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13854,18 +13202,12 @@ pub struct GetDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDomainErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -13923,8 +13265,6 @@ impl GetDomainError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14005,18 +13345,12 @@ pub struct GetDomainsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDomainsErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -14074,8 +13408,6 @@ impl GetDomainsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14159,18 +13491,12 @@ pub struct GetExportSnapshotRecordsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetExportSnapshotRecordsErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -14230,8 +13556,6 @@ impl GetExportSnapshotRecordsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14332,18 +13656,12 @@ pub struct GetInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetInstanceErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -14401,8 +13719,6 @@ impl GetInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14489,18 +13805,12 @@ pub struct GetInstanceAccessDetailsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetInstanceAccessDetailsErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -14560,8 +13870,6 @@ impl GetInstanceAccessDetailsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14662,18 +13970,12 @@ pub struct GetInstanceMetricDataError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetInstanceMetricDataErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -14733,8 +14035,6 @@ impl GetInstanceMetricDataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14833,18 +14133,12 @@ pub struct GetInstancePortStatesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetInstancePortStatesErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -14904,8 +14198,6 @@ impl GetInstancePortStatesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15004,18 +14296,12 @@ pub struct GetInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetInstancesErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -15073,8 +14359,6 @@ impl GetInstancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15161,18 +14445,12 @@ pub struct GetInstanceSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetInstanceSnapshotErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -15230,8 +14508,6 @@ impl GetInstanceSnapshotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15330,18 +14606,12 @@ pub struct GetInstanceSnapshotsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetInstanceSnapshotsErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -15399,8 +14669,6 @@ impl GetInstanceSnapshotsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15499,18 +14767,12 @@ pub struct GetInstanceStateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetInstanceStateErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -15568,8 +14830,6 @@ impl GetInstanceStateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15662,18 +14922,12 @@ pub struct GetKeyPairError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetKeyPairErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -15731,8 +14985,6 @@ impl GetKeyPairError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15816,18 +15068,12 @@ pub struct GetKeyPairsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetKeyPairsErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -15885,8 +15131,6 @@ impl GetKeyPairsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15973,18 +15217,12 @@ pub struct GetLoadBalancerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetLoadBalancerErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -16042,8 +15280,6 @@ impl GetLoadBalancerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16136,18 +15372,12 @@ pub struct GetLoadBalancerMetricDataError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetLoadBalancerMetricDataErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -16207,8 +15437,6 @@ impl GetLoadBalancerMetricDataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16309,18 +15537,12 @@ pub struct GetLoadBalancersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetLoadBalancersErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -16378,8 +15600,6 @@ impl GetLoadBalancersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16472,18 +15692,12 @@ pub struct GetLoadBalancerTlsCertificatesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetLoadBalancerTlsCertificatesErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -16550,8 +15764,6 @@ impl GetLoadBalancerTlsCertificatesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16656,18 +15868,12 @@ pub struct GetOperationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetOperationErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -16725,8 +15931,6 @@ impl GetOperationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16813,18 +16017,12 @@ pub struct GetOperationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetOperationsErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -16882,8 +16080,6 @@ impl GetOperationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16970,18 +16166,12 @@ pub struct GetOperationsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetOperationsForResourceErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -17041,8 +16231,6 @@ impl GetOperationsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17143,18 +16331,12 @@ pub struct GetRegionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRegionsErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -17212,8 +16394,6 @@ impl GetRegionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17297,18 +16477,12 @@ pub struct GetRelationalDatabaseError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRelationalDatabaseErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -17368,8 +16542,6 @@ impl GetRelationalDatabaseError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17468,18 +16640,12 @@ pub struct GetRelationalDatabaseBlueprintsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRelationalDatabaseBlueprintsErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -17550,8 +16716,6 @@ impl GetRelationalDatabaseBlueprintsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17656,18 +16820,12 @@ pub struct GetRelationalDatabaseBundlesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRelationalDatabaseBundlesErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -17731,8 +16889,6 @@ impl GetRelationalDatabaseBundlesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17835,18 +16991,12 @@ pub struct GetRelationalDatabaseEventsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRelationalDatabaseEventsErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -17908,8 +17058,6 @@ impl GetRelationalDatabaseEventsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18010,18 +17158,12 @@ pub struct GetRelationalDatabaseLogEventsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRelationalDatabaseLogEventsErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -18088,8 +17230,6 @@ impl GetRelationalDatabaseLogEventsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18194,18 +17334,12 @@ pub struct GetRelationalDatabaseLogStreamsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRelationalDatabaseLogStreamsErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -18276,8 +17410,6 @@ impl GetRelationalDatabaseLogStreamsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18382,18 +17514,12 @@ pub struct GetRelationalDatabaseMasterUserPasswordError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRelationalDatabaseMasterUserPasswordErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -18468,8 +17594,6 @@ impl GetRelationalDatabaseMasterUserPasswordError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18584,18 +17708,12 @@ pub struct GetRelationalDatabaseMetricDataError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRelationalDatabaseMetricDataErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -18666,8 +17784,6 @@ impl GetRelationalDatabaseMetricDataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18772,18 +17888,12 @@ pub struct GetRelationalDatabaseParametersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRelationalDatabaseParametersErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -18854,8 +17964,6 @@ impl GetRelationalDatabaseParametersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18960,18 +18068,12 @@ pub struct GetRelationalDatabasesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRelationalDatabasesErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -19031,8 +18133,6 @@ impl GetRelationalDatabasesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19133,18 +18233,12 @@ pub struct GetRelationalDatabaseSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRelationalDatabaseSnapshotErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -19211,8 +18305,6 @@ impl GetRelationalDatabaseSnapshotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19317,18 +18409,12 @@ pub struct GetRelationalDatabaseSnapshotsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRelationalDatabaseSnapshotsErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -19395,8 +18481,6 @@ impl GetRelationalDatabaseSnapshotsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19501,18 +18585,12 @@ pub struct GetStaticIpError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetStaticIpErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -19570,8 +18648,6 @@ impl GetStaticIpError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19658,18 +18734,12 @@ pub struct GetStaticIpsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetStaticIpsErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -19727,8 +18797,6 @@ impl GetStaticIpsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19815,18 +18883,12 @@ pub struct ImportKeyPairError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ImportKeyPairErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -19884,8 +18946,6 @@ impl ImportKeyPairError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19972,18 +19032,12 @@ pub struct IsVpcPeeredError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum IsVpcPeeredErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -20041,8 +19095,6 @@ impl IsVpcPeeredError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -20129,18 +19181,12 @@ pub struct OpenInstancePublicPortsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum OpenInstancePublicPortsErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -20200,8 +19246,6 @@ impl OpenInstancePublicPortsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -20302,18 +19346,12 @@ pub struct PeerVpcError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PeerVpcErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -20371,8 +19409,6 @@ impl PeerVpcError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -20453,15 +19489,10 @@ pub struct PutAlarmError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutAlarmErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -20518,8 +19549,6 @@ impl PutAlarmError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -20592,18 +19621,12 @@ pub struct PutInstancePublicPortsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutInstancePublicPortsErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -20663,8 +19686,6 @@ impl PutInstancePublicPortsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -20765,18 +19786,12 @@ pub struct RebootInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RebootInstanceErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -20834,8 +19849,6 @@ impl RebootInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -20928,18 +19941,12 @@ pub struct RebootRelationalDatabaseError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RebootRelationalDatabaseErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -20999,8 +20006,6 @@ impl RebootRelationalDatabaseError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -21101,15 +20106,10 @@ pub struct RegisterContainerImageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterContainerImageErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -21163,8 +20163,6 @@ impl RegisterContainerImageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -21247,18 +20245,12 @@ pub struct ReleaseStaticIpError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ReleaseStaticIpErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -21316,8 +20308,6 @@ impl ReleaseStaticIpError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -21410,15 +20400,10 @@ pub struct ResetDistributionCacheError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResetDistributionCacheErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -21475,8 +20460,6 @@ impl ResetDistributionCacheError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -21567,15 +20550,10 @@ pub struct SendContactMethodVerificationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SendContactMethodVerificationErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -21639,8 +20617,6 @@ impl SendContactMethodVerificationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -21735,18 +20711,12 @@ pub struct SetIpAddressTypeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetIpAddressTypeErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -21804,8 +20774,6 @@ impl SetIpAddressTypeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -21898,15 +20866,10 @@ pub struct SetResourceAccessForBucketError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetResourceAccessForBucketErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -21960,8 +20923,6 @@ impl SetResourceAccessForBucketError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -22044,18 +21005,12 @@ pub struct StartInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartInstanceErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -22113,8 +21068,6 @@ impl StartInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -22201,18 +21154,12 @@ pub struct StartRelationalDatabaseError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartRelationalDatabaseErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -22272,8 +21219,6 @@ impl StartRelationalDatabaseError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -22374,18 +21319,12 @@ pub struct StopInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopInstanceErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -22443,8 +21382,6 @@ impl StopInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -22531,18 +21468,12 @@ pub struct StopRelationalDatabaseError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopRelationalDatabaseErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -22602,8 +21533,6 @@ impl StopRelationalDatabaseError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -22704,18 +21633,12 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -22773,8 +21696,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -22861,15 +21782,10 @@ pub struct TestAlarmError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TestAlarmErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -22926,8 +21842,6 @@ impl TestAlarmError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -23000,18 +21914,12 @@ pub struct UnpeerVpcError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UnpeerVpcErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -23069,8 +21977,6 @@ impl UnpeerVpcError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -23151,18 +22057,12 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -23220,8 +22120,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -23308,15 +22206,10 @@ pub struct UpdateBucketError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateBucketErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -23370,8 +22263,6 @@ impl UpdateBucketError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -23442,15 +22333,10 @@ pub struct UpdateBucketBundleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateBucketBundleErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -23504,8 +22390,6 @@ impl UpdateBucketBundleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -23585,15 +22469,10 @@ pub struct UpdateContainerServiceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateContainerServiceErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -23647,8 +22526,6 @@ impl UpdateContainerServiceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -23731,15 +22608,10 @@ pub struct UpdateDistributionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateDistributionErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -23796,8 +22668,6 @@ impl UpdateDistributionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -23885,15 +22755,10 @@ pub struct UpdateDistributionBundleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateDistributionBundleErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -23950,8 +22815,6 @@ impl UpdateDistributionBundleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -24042,18 +22905,12 @@ pub struct UpdateDomainEntryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateDomainEntryErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -24111,8 +22968,6 @@ impl UpdateDomainEntryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -24205,18 +23060,12 @@ pub struct UpdateLoadBalancerAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateLoadBalancerAttributeErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -24278,8 +23127,6 @@ impl UpdateLoadBalancerAttributeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -24380,18 +23227,12 @@ pub struct UpdateRelationalDatabaseError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateRelationalDatabaseErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -24451,8 +23292,6 @@ impl UpdateRelationalDatabaseError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -24553,18 +23392,12 @@ pub struct UpdateRelationalDatabaseParametersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateRelationalDatabaseParametersErrorKind {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>
@@ -24635,8 +23468,6 @@ impl UpdateRelationalDatabaseParametersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -25224,12 +24055,8 @@ impl NotFoundException {
     }
 }
 
-/// <p>Lightsail throws this exception when user input does not conform to the validation rules
-/// of an input field.</p>
-/// <note>
-/// <p>Domain and distribution APIs are only available in the N. Virginia
-/// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-/// <code>us-east-1</code> to create, view, or edit these resources.</p>
+/// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+/// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -25353,8 +24180,7 @@ impl InvalidInputException {
     }
 }
 
-/// <p>Lightsail throws this exception when an account is still in the setup in progress
-/// state.</p>
+/// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountSetupInProgressException {
@@ -25477,8 +24303,7 @@ impl AccountSetupInProgressException {
     }
 }
 
-/// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-/// credentials to access a resource.</p>
+/// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {

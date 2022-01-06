@@ -12,21 +12,13 @@ pub struct AssociateAdminAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateAdminAccountErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The parameters of the request were invalid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of
-    /// <code>policy</code> objects that you can create for an Amazon Web Services account. For more information,
-    /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
-    /// Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -75,8 +67,6 @@ impl AssociateAdminAccountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -159,14 +149,9 @@ pub struct DeleteAppsListError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAppsListErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -213,8 +198,6 @@ impl DeleteAppsListError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -281,14 +264,9 @@ pub struct DeleteNotificationChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteNotificationChannelErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -335,8 +313,6 @@ impl DeleteNotificationChannelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -403,21 +379,13 @@ pub struct DeletePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePolicyErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The parameters of the request were invalid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of
-    /// <code>policy</code> objects that you can create for an Amazon Web Services account. For more information,
-    /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
-    /// Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -466,8 +434,6 @@ impl DeletePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -541,14 +507,9 @@ pub struct DeleteProtocolsListError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteProtocolsListErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -595,8 +556,6 @@ impl DeleteProtocolsListError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -663,14 +622,9 @@ pub struct DisassociateAdminAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateAdminAccountErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -717,8 +671,6 @@ impl DisassociateAdminAccountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -785,14 +737,9 @@ pub struct GetAdminAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAdminAccountErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -839,8 +786,6 @@ impl GetAdminAccountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -907,14 +852,9 @@ pub struct GetAppsListError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAppsListErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -961,8 +901,6 @@ impl GetAppsListError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1026,16 +964,11 @@ pub struct GetComplianceDetailError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetComplianceDetailErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The parameters of the request were invalid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1083,8 +1016,6 @@ impl GetComplianceDetailError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1159,14 +1090,9 @@ pub struct GetNotificationChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetNotificationChannelErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1213,8 +1139,6 @@ impl GetNotificationChannelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1281,14 +1205,9 @@ pub struct GetPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPolicyErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The value of the <code>Type</code> parameter is invalid.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
@@ -1338,8 +1257,6 @@ impl GetPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1402,8 +1319,7 @@ pub struct GetProtectionStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetProtectionStatusErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The parameters of the request were invalid.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -1452,8 +1368,6 @@ impl GetProtectionStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1520,14 +1434,9 @@ pub struct GetProtocolsListError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetProtocolsListErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1574,8 +1483,6 @@ impl GetProtocolsListError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1642,8 +1549,7 @@ pub struct GetViolationDetailsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetViolationDetailsErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The parameters of the request were invalid.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -1692,8 +1598,6 @@ impl GetViolationDetailsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1760,19 +1664,11 @@ pub struct ListAppsListsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAppsListsErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of
-    /// <code>policy</code> objects that you can create for an Amazon Web Services account. For more information,
-    /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
-    /// Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1820,8 +1716,6 @@ impl ListAppsListsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1896,8 +1790,7 @@ pub struct ListComplianceStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListComplianceStatusErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1943,8 +1836,6 @@ impl ListComplianceStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2003,8 +1894,7 @@ pub struct ListMemberAccountsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListMemberAccountsErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2050,8 +1940,6 @@ impl ListMemberAccountsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2110,19 +1998,11 @@ pub struct ListPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPoliciesErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of
-    /// <code>policy</code> objects that you can create for an Amazon Web Services account. For more information,
-    /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
-    /// Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2170,8 +2050,6 @@ impl ListPoliciesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2240,14 +2118,9 @@ pub struct ListProtocolsListsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListProtocolsListsErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2294,8 +2167,6 @@ impl ListProtocolsListsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2362,16 +2233,11 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The parameters of the request were invalid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2419,8 +2285,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2495,21 +2359,13 @@ pub struct PutAppsListError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutAppsListErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The parameters of the request were invalid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of
-    /// <code>policy</code> objects that you can create for an Amazon Web Services account. For more information,
-    /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
-    /// Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2558,8 +2414,6 @@ impl PutAppsListError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2633,14 +2487,9 @@ pub struct PutNotificationChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutNotificationChannelErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2687,8 +2536,6 @@ impl PutNotificationChannelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2755,23 +2602,15 @@ pub struct PutPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutPolicyErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The parameters of the request were invalid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The value of the <code>Type</code> parameter is invalid.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of
-    /// <code>policy</code> objects that you can create for an Amazon Web Services account. For more information,
-    /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
-    /// Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2821,8 +2660,6 @@ impl PutPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2895,21 +2732,13 @@ pub struct PutProtocolsListError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutProtocolsListErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The parameters of the request were invalid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of
-    /// <code>policy</code> objects that you can create for an Amazon Web Services account. For more information,
-    /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
-    /// Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2958,8 +2787,6 @@ impl PutProtocolsListError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3042,21 +2869,13 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The parameters of the request were invalid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of
-    /// <code>policy</code> objects that you can create for an Amazon Web Services account. For more information,
-    /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
-    /// Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3105,8 +2924,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3180,16 +2997,11 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The parameters of the request were invalid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3237,8 +3049,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3361,11 +3171,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-/// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-/// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-/// that's disabled by default, and that you need to enable for the Firewall Manager         
-/// administrator account and for Organizations before you can access it.</p>
+/// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOperationException {
@@ -3493,8 +3299,7 @@ impl InvalidInputException {
     }
 }
 
-/// <p>The operation failed because of a system problem, even though the request was valid. Retry
-/// your request.</p>
+/// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalErrorException {
@@ -3558,10 +3363,7 @@ impl InternalErrorException {
     }
 }
 
-/// <p>The operation exceeds a resource limit, for example, the maximum number of
-/// <code>policy</code> objects that you can create for an Amazon Web Services account. For more information,
-/// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
-/// Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
+/// <p>The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {

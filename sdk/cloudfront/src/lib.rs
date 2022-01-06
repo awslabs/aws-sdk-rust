@@ -40,6 +40,8 @@ mod error_meta;
 mod http_serde;
 /// Input structures for operations.
 pub mod input;
+/// Generated accessors for nested fields
+mod lens;
 pub mod middleware;
 /// Data structures used by operation inputs/outputs.
 pub mod model;
@@ -50,6 +52,8 @@ mod operation_deser;
 mod operation_ser;
 /// Output structures for operations.
 pub mod output;
+/// Paginators for the service
+pub mod paginator;
 mod rest_xml_wrapped_errors;
 mod xml_deser;
 mod xml_ser;

@@ -7,8 +7,7 @@ pub enum Error {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::error::ForbiddenException),

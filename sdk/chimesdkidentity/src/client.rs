@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Chime SDK Identity
@@ -179,6 +179,7 @@ where
     ///
     /// See [`ListAppInstanceAdmins`](crate::client::fluent_builders::ListAppInstanceAdmins) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAppInstanceAdmins::into_paginator).
     pub fn list_app_instance_admins(&self) -> fluent_builders::ListAppInstanceAdmins<C, M, R> {
         fluent_builders::ListAppInstanceAdmins::new(self.handle.clone())
     }
@@ -186,6 +187,7 @@ where
     ///
     /// See [`ListAppInstances`](crate::client::fluent_builders::ListAppInstances) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAppInstances::into_paginator).
     pub fn list_app_instances(&self) -> fluent_builders::ListAppInstances<C, M, R> {
         fluent_builders::ListAppInstances::new(self.handle.clone())
     }
@@ -193,6 +195,7 @@ where
     ///
     /// See [`ListAppInstanceUserEndpoints`](crate::client::fluent_builders::ListAppInstanceUserEndpoints) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAppInstanceUserEndpoints::into_paginator).
     pub fn list_app_instance_user_endpoints(
         &self,
     ) -> fluent_builders::ListAppInstanceUserEndpoints<C, M, R> {
@@ -202,6 +205,7 @@ where
     ///
     /// See [`ListAppInstanceUsers`](crate::client::fluent_builders::ListAppInstanceUsers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAppInstanceUsers::into_paginator).
     pub fn list_app_instance_users(&self) -> fluent_builders::ListAppInstanceUsers<C, M, R> {
         fluent_builders::ListAppInstanceUsers::new(self.handle.clone())
     }
@@ -278,11 +282,9 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateAppInstance`.
     ///
-    /// <p>Creates an Amazon Chime SDK messaging <code>AppInstance</code> under an AWS account.
-    /// Only SDK messaging customers use this API. <code>CreateAppInstance</code> supports
-    /// idempotency behavior as described in the AWS API Standard.</p>
+    /// <p>Creates an Amazon Chime SDK messaging <code>AppInstance</code> under an AWS account. Only SDK messaging customers use this API. <code>CreateAppInstance</code> supports idempotency behavior as described in the AWS API Standard.</p>
     /// <p>identity</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAppInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -327,10 +329,10 @@ pub mod fluent_builders {
                 crate::input::CreateAppInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -339,8 +341,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the <code>AppInstance</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the <code>AppInstance</code>.</p>
@@ -349,8 +351,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.</p>
-        pub fn metadata(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metadata(inp);
+        pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metadata(input.into());
             self
         }
         /// <p>The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.</p>
@@ -359,8 +361,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
@@ -376,8 +378,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
@@ -391,24 +393,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAppInstanceAdmin`.
     ///
-    /// <p>Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>. The
-    /// promoted user can perform the following actions. </p>
-    ///
+    /// <p>Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>. The promoted user can perform the following actions. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ChannelModerator</code> actions across all channels in the
-    /// <code>AppInstance</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DeleteChannelMessage</code> actions.</p>
-    /// </li>
+    /// <li> <p> <code>ChannelModerator</code> actions across all channels in the <code>AppInstance</code>.</p> </li>
+    /// <li> <p> <code>DeleteChannelMessage</code> actions.</p> </li>
     /// </ul>
-    ///
-    /// <p>Only an <code>AppInstanceUser</code> can be promoted to an <code>AppInstanceAdmin</code>
-    /// role.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Only an <code>AppInstanceUser</code> can be promoted to an <code>AppInstanceAdmin</code> role.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAppInstanceAdmin<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -453,10 +444,10 @@ pub mod fluent_builders {
                 crate::input::CreateAppInstanceAdminInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -465,8 +456,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
-        pub fn app_instance_admin_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_admin_arn(inp);
+        pub fn app_instance_admin_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_admin_arn(input.into());
             self
         }
         /// <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
@@ -478,8 +469,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(inp);
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -493,9 +484,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAppInstanceUser`.
     ///
-    /// <p>Creates a user under an Amazon Chime <code>AppInstance</code>. The request consists of a
-    /// unique <code>appInstanceUserId</code> and <code>Name</code> for that user.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a user under an Amazon Chime <code>AppInstance</code>. The request consists of a unique <code>appInstanceUserId</code> and <code>Name</code> for that user.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAppInstanceUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -540,10 +530,10 @@ pub mod fluent_builders {
                 crate::input::CreateAppInstanceUserInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -552,8 +542,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code> request.</p>
-        pub fn app_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(inp);
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code> request.</p>
@@ -565,8 +555,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user ID of the <code>AppInstance</code>.</p>
-        pub fn app_instance_user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_id(inp);
+        pub fn app_instance_user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_id(input.into());
             self
         }
         /// <p>The user ID of the <code>AppInstance</code>.</p>
@@ -578,8 +568,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user's name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The user's name.</p>
@@ -588,8 +578,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The request's metadata. Limited to a 1KB string in UTF-8.</p>
-        pub fn metadata(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metadata(inp);
+        pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metadata(input.into());
             self
         }
         /// <p>The request's metadata. Limited to a 1KB string in UTF-8.</p>
@@ -598,8 +588,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
@@ -615,8 +605,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
@@ -631,7 +621,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAppInstance`.
     ///
     /// <p>Deletes an <code>AppInstance</code> and all associated data asynchronously.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAppInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -676,10 +666,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAppInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -688,8 +678,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(inp);
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -703,9 +693,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAppInstanceAdmin`.
     ///
-    /// <p>Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>. This action
-    /// does not delete the user.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>. This action does not delete the user.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAppInstanceAdmin<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -750,10 +739,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAppInstanceAdminInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -762,8 +751,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>'s administrator.</p>
-        pub fn app_instance_admin_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_admin_arn(inp);
+        pub fn app_instance_admin_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_admin_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>'s administrator.</p>
@@ -775,8 +764,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(inp);
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -791,7 +780,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAppInstanceUser`.
     ///
     /// <p>Deletes an <code>AppInstanceUser</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAppInstanceUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -836,10 +825,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAppInstanceUserInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -848,8 +837,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the user request being deleted.</p>
-        pub fn app_instance_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(inp);
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(input.into());
             self
         }
         /// <p>The ARN of the user request being deleted.</p>
@@ -864,7 +853,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeregisterAppInstanceUserEndpoint`.
     ///
     /// <p>Deregisters an <code>AppInstanceUserEndpoint</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterAppInstanceUserEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -909,10 +898,10 @@ pub mod fluent_builders {
                 crate::input::DeregisterAppInstanceUserEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -921,8 +910,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-        pub fn app_instance_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(inp);
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
@@ -934,8 +923,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
-        pub fn endpoint_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_id(inp);
+        pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_id(input.into());
             self
         }
         /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
@@ -947,7 +936,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAppInstance`.
     ///
     /// <p>Returns the full details of an <code>AppInstance</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAppInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -992,10 +981,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAppInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1004,8 +993,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(inp);
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -1020,7 +1009,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAppInstanceAdmin`.
     ///
     /// <p>Returns the full details of an <code>AppInstanceAdmin</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAppInstanceAdmin<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1065,10 +1054,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAppInstanceAdminInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1077,8 +1066,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstanceAdmin</code>.</p>
-        pub fn app_instance_admin_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_admin_arn(inp);
+        pub fn app_instance_admin_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_admin_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstanceAdmin</code>.</p>
@@ -1090,8 +1079,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(inp);
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -1106,7 +1095,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAppInstanceUser`.
     ///
     /// <p>Returns the full details of an <code>AppInstanceUser</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAppInstanceUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1151,10 +1140,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAppInstanceUserInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1163,8 +1152,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-        pub fn app_instance_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(inp);
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
@@ -1179,7 +1168,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAppInstanceUserEndpoint`.
     ///
     /// <p>Returns the full details of an <code>AppInstanceUserEndpoint</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAppInstanceUserEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1224,10 +1213,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAppInstanceUserEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1236,8 +1225,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-        pub fn app_instance_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(inp);
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
@@ -1249,8 +1238,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
-        pub fn endpoint_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_id(inp);
+        pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_id(input.into());
             self
         }
         /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
@@ -1262,7 +1251,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAppInstanceRetentionSettings`.
     ///
     /// <p>Gets the retention settings for an <code>AppInstance</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAppInstanceRetentionSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1307,10 +1296,10 @@ pub mod fluent_builders {
                 crate::input::GetAppInstanceRetentionSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1319,8 +1308,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(inp);
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -1335,7 +1324,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAppInstanceAdmins`.
     ///
     /// <p>Returns a list of the administrators in the <code>AppInstance</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppInstanceAdmins<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1380,10 +1369,10 @@ pub mod fluent_builders {
                 crate::input::ListAppInstanceAdminsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1391,9 +1380,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAppInstanceAdminsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAppInstanceAdminsPaginator<C, M, R> {
+            crate::paginator::ListAppInstanceAdminsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(inp);
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -1405,8 +1400,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of administrators that you want to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of administrators that you want to return.</p>
@@ -1414,14 +1409,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token returned from previous API requests until the number of administrators is
-        /// reached.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token returned from previous API requests until the number of administrators is
-        /// reached.</p>
+        /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1429,9 +1422,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAppInstances`.
     ///
-    /// <p>Lists all Amazon Chime <code>AppInstance</code>s created under a single AWS
-    /// account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists all Amazon Chime <code>AppInstance</code>s created under a single AWS account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1476,10 +1468,10 @@ pub mod fluent_builders {
                 crate::input::ListAppInstancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1487,9 +1479,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAppInstancesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAppInstancesPaginator<C, M, R> {
+            crate::paginator::ListAppInstancesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of <code>AppInstance</code>s that you want to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of <code>AppInstance</code>s that you want to return.</p>
@@ -1497,14 +1495,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token passed by previous API requests until you reach the maximum number of
-        /// <code>AppInstances</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token passed by previous API requests until you reach the maximum number of <code>AppInstances</code>.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token passed by previous API requests until you reach the maximum number of
-        /// <code>AppInstances</code>.</p>
+        /// <p>The token passed by previous API requests until you reach the maximum number of <code>AppInstances</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1513,7 +1509,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAppInstanceUserEndpoints`.
     ///
     /// <p>Lists all the <code>AppInstanceUserEndpoints</code> created under a single <code>AppInstanceUser</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppInstanceUserEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1558,10 +1554,10 @@ pub mod fluent_builders {
                 crate::input::ListAppInstanceUserEndpointsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1569,9 +1565,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAppInstanceUserEndpointsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListAppInstanceUserEndpointsPaginator<C, M, R> {
+            crate::paginator::ListAppInstanceUserEndpointsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-        pub fn app_instance_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(inp);
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
@@ -1583,8 +1587,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of endpoints that you want to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of endpoints that you want to return.</p>
@@ -1593,8 +1597,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
@@ -1605,9 +1609,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAppInstanceUsers`.
     ///
-    /// <p>List all <code>AppInstanceUsers</code> created under a single
-    /// <code>AppInstance</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>List all <code>AppInstanceUsers</code> created under a single <code>AppInstance</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppInstanceUsers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1652,10 +1655,10 @@ pub mod fluent_builders {
                 crate::input::ListAppInstanceUsersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1663,9 +1666,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAppInstanceUsersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAppInstanceUsersPaginator<C, M, R> {
+            crate::paginator::ListAppInstanceUsersPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(inp);
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -1677,8 +1686,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of requests that you want returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of requests that you want returned.</p>
@@ -1687,8 +1696,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token passed by previous API calls until all requested users are returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token passed by previous API calls until all requested users are returned.</p>
@@ -1700,7 +1709,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags applied to an Amazon Chime SDK identity resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1745,10 +1754,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1757,8 +1766,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -1769,9 +1778,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutAppInstanceRetentionSettings`.
     ///
-    /// <p>Sets the amount of time in days that a given <code>AppInstance</code> retains
-    /// data.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Sets the amount of time in days that a given <code>AppInstance</code> retains data.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAppInstanceRetentionSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1816,10 +1824,10 @@ pub mod fluent_builders {
                 crate::input::PutAppInstanceRetentionSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1828,8 +1836,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(inp);
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -1843,9 +1851,9 @@ pub mod fluent_builders {
         /// <p>The time in days to retain data. Data type: number.</p>
         pub fn app_instance_retention_settings(
             mut self,
-            inp: crate::model::AppInstanceRetentionSettings,
+            input: crate::model::AppInstanceRetentionSettings,
         ) -> Self {
-            self.inner = self.inner.app_instance_retention_settings(inp);
+            self.inner = self.inner.app_instance_retention_settings(input);
             self
         }
         /// <p>The time in days to retain data. Data type: number.</p>
@@ -1860,7 +1868,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RegisterAppInstanceUserEndpoint`.
     ///
     /// <p>Registers an endpoint under an Amazon Chime <code>AppInstanceUser</code>. The endpoint receives messages for a user. For push notifications, the endpoint is a mobile device used to receive mobile push notifications for a user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterAppInstanceUserEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1905,10 +1913,10 @@ pub mod fluent_builders {
                 crate::input::RegisterAppInstanceUserEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1917,8 +1925,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-        pub fn app_instance_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(inp);
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
@@ -1930,8 +1938,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
@@ -1941,38 +1949,20 @@ pub mod fluent_builders {
         }
         /// <p>The type of the <code>AppInstanceUserEndpoint</code>. Supported types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>APNS</code>: The mobile notification service for an Apple device.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GCM</code>: The mobile notification service for an Android device.</p>
-        /// </li>
+        /// <li> <p> <code>APNS</code>: The mobile notification service for an Apple device.</p> </li>
+        /// <li> <p> <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p> </li>
+        /// <li> <p> <code>GCM</code>: The mobile notification service for an Android device.</p> </li>
         /// </ul>
         /// <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::AppInstanceUserEndpointType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::AppInstanceUserEndpointType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of the <code>AppInstanceUserEndpoint</code>. Supported types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>APNS</code>: The mobile notification service for an Apple device.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GCM</code>: The mobile notification service for an Android device.</p>
-        /// </li>
+        /// <li> <p> <code>APNS</code>: The mobile notification service for an Apple device.</p> </li>
+        /// <li> <p> <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p> </li>
+        /// <li> <p> <code>GCM</code>: The mobile notification service for an Android device.</p> </li>
         /// </ul>
         /// <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
         pub fn set_type(
@@ -1983,8 +1973,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the resource to which the endpoint belongs.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource to which the endpoint belongs.</p>
@@ -1993,8 +1983,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The attributes of an <code>Endpoint</code>.</p>
-        pub fn endpoint_attributes(mut self, inp: crate::model::EndpointAttributes) -> Self {
-            self.inner = self.inner.endpoint_attributes(inp);
+        pub fn endpoint_attributes(mut self, input: crate::model::EndpointAttributes) -> Self {
+            self.inner = self.inner.endpoint_attributes(input);
             self
         }
         /// <p>The attributes of an <code>Endpoint</code>.</p>
@@ -2006,8 +1996,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token for each client request. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>The idempotency token for each client request. </p>
@@ -2018,14 +2008,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages.
-        /// <code>NONE</code> indicates the endpoint receives no messages.</p>
-        pub fn allow_messages(mut self, inp: crate::model::AllowMessages) -> Self {
-            self.inner = self.inner.allow_messages(inp);
+        /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages. <code>NONE</code> indicates the endpoint receives no messages.</p>
+        pub fn allow_messages(mut self, input: crate::model::AllowMessages) -> Self {
+            self.inner = self.inner.allow_messages(input);
             self
         }
-        /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages.
-        /// <code>NONE</code> indicates the endpoint receives no messages.</p>
+        /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages. <code>NONE</code> indicates the endpoint receives no messages.</p>
         pub fn set_allow_messages(
             mut self,
             input: std::option::Option<crate::model::AllowMessages>,
@@ -2037,7 +2025,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Applies the specified tags to the specified Amazon Chime SDK identity resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2082,10 +2070,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2094,8 +2082,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource ARN.</p>
@@ -2108,8 +2096,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag key-value pairs.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag key-value pairs.</p>
@@ -2124,7 +2112,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes the specified tags from the specified Amazon Chime SDK identity resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2169,10 +2157,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2181,8 +2169,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource ARN.</p>
@@ -2195,8 +2183,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys.</p>
@@ -2211,7 +2199,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAppInstance`.
     ///
     /// <p>Updates <code>AppInstance</code> metadata.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAppInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2256,10 +2244,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAppInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2268,8 +2256,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(inp);
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -2281,8 +2269,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name that you want to change.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name that you want to change.</p>
@@ -2291,8 +2279,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metadata that you want to change.</p>
-        pub fn metadata(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metadata(inp);
+        pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metadata(input.into());
             self
         }
         /// <p>The metadata that you want to change.</p>
@@ -2303,9 +2291,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateAppInstanceUser`.
     ///
-    /// <p>Updates the details of an <code>AppInstanceUser</code>. You can update names and
-    /// metadata.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the details of an <code>AppInstanceUser</code>. You can update names and metadata.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAppInstanceUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2350,10 +2337,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAppInstanceUserInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2362,8 +2349,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-        pub fn app_instance_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(inp);
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
@@ -2375,8 +2362,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the <code>AppInstanceUser</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the <code>AppInstanceUser</code>.</p>
@@ -2385,8 +2372,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
-        pub fn metadata(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metadata(inp);
+        pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metadata(input.into());
             self
         }
         /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
@@ -2398,7 +2385,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAppInstanceUserEndpoint`.
     ///
     /// <p>Updates the details of an <code>AppInstanceUserEndpoint</code>. You can update the name and <code>AllowMessage</code> values.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAppInstanceUserEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2443,10 +2430,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAppInstanceUserEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2455,8 +2442,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-        pub fn app_instance_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(inp);
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
@@ -2468,8 +2455,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
-        pub fn endpoint_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_id(inp);
+        pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_id(input.into());
             self
         }
         /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
@@ -2478,8 +2465,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
@@ -2487,14 +2474,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages.
-        /// <code>NONE</code> indicates the endpoint will receive no messages.</p>
-        pub fn allow_messages(mut self, inp: crate::model::AllowMessages) -> Self {
-            self.inner = self.inner.allow_messages(inp);
+        /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
+        pub fn allow_messages(mut self, input: crate::model::AllowMessages) -> Self {
+            self.inner = self.inner.allow_messages(input);
             self
         }
-        /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages.
-        /// <code>NONE</code> indicates the endpoint will receive no messages.</p>
+        /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
         pub fn set_allow_messages(
             mut self,
             input: std::option::Option<crate::model::AllowMessages>,
@@ -2504,6 +2489,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

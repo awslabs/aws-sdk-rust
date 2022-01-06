@@ -44,7 +44,7 @@ pub mod batch_delete_worlds_input {
 #[doc(hidden)]
 pub type BatchDeleteWorldsInputOperationOutputAlias = crate::operation::BatchDeleteWorlds;
 #[doc(hidden)]
-pub type BatchDeleteWorldsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchDeleteWorldsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDeleteWorldsInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeleteWorlds`](crate::operation::BatchDeleteWorlds)>
     #[allow(clippy::let_and_return)]
@@ -55,7 +55,7 @@ impl BatchDeleteWorldsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDeleteWorlds,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -135,7 +135,7 @@ impl BatchDeleteWorldsInput {
             "BatchDeleteWorlds",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -201,7 +201,7 @@ pub mod batch_describe_simulation_job_input {
 pub type BatchDescribeSimulationJobInputOperationOutputAlias =
     crate::operation::BatchDescribeSimulationJob;
 #[doc(hidden)]
-pub type BatchDescribeSimulationJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchDescribeSimulationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDescribeSimulationJobInput {
     /// Consumes the builder and constructs an Operation<[`BatchDescribeSimulationJob`](crate::operation::BatchDescribeSimulationJob)>
     #[allow(clippy::let_and_return)]
@@ -212,7 +212,7 @@ impl BatchDescribeSimulationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDescribeSimulationJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -293,7 +293,7 @@ impl BatchDescribeSimulationJobInput {
             "BatchDescribeSimulationJob",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -349,7 +349,7 @@ pub mod cancel_deployment_job_input {
 #[doc(hidden)]
 pub type CancelDeploymentJobInputOperationOutputAlias = crate::operation::CancelDeploymentJob;
 #[doc(hidden)]
-pub type CancelDeploymentJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelDeploymentJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelDeploymentJobInput {
     /// Consumes the builder and constructs an Operation<[`CancelDeploymentJob`](crate::operation::CancelDeploymentJob)>
     #[allow(clippy::let_and_return)]
@@ -360,7 +360,7 @@ impl CancelDeploymentJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelDeploymentJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -440,7 +440,7 @@ impl CancelDeploymentJobInput {
             "CancelDeploymentJob",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -496,7 +496,7 @@ pub mod cancel_simulation_job_input {
 #[doc(hidden)]
 pub type CancelSimulationJobInputOperationOutputAlias = crate::operation::CancelSimulationJob;
 #[doc(hidden)]
-pub type CancelSimulationJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelSimulationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelSimulationJobInput {
     /// Consumes the builder and constructs an Operation<[`CancelSimulationJob`](crate::operation::CancelSimulationJob)>
     #[allow(clippy::let_and_return)]
@@ -507,7 +507,7 @@ impl CancelSimulationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelSimulationJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -587,7 +587,7 @@ impl CancelSimulationJobInput {
             "CancelSimulationJob",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -644,7 +644,7 @@ pub mod cancel_simulation_job_batch_input {
 pub type CancelSimulationJobBatchInputOperationOutputAlias =
     crate::operation::CancelSimulationJobBatch;
 #[doc(hidden)]
-pub type CancelSimulationJobBatchInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelSimulationJobBatchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelSimulationJobBatchInput {
     /// Consumes the builder and constructs an Operation<[`CancelSimulationJobBatch`](crate::operation::CancelSimulationJobBatch)>
     #[allow(clippy::let_and_return)]
@@ -655,7 +655,7 @@ impl CancelSimulationJobBatchInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelSimulationJobBatch,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -737,7 +737,7 @@ impl CancelSimulationJobBatchInput {
             "CancelSimulationJobBatch",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -793,7 +793,7 @@ pub mod cancel_world_export_job_input {
 #[doc(hidden)]
 pub type CancelWorldExportJobInputOperationOutputAlias = crate::operation::CancelWorldExportJob;
 #[doc(hidden)]
-pub type CancelWorldExportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelWorldExportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelWorldExportJobInput {
     /// Consumes the builder and constructs an Operation<[`CancelWorldExportJob`](crate::operation::CancelWorldExportJob)>
     #[allow(clippy::let_and_return)]
@@ -804,7 +804,7 @@ impl CancelWorldExportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelWorldExportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -886,7 +886,7 @@ impl CancelWorldExportJobInput {
             "CancelWorldExportJob",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -943,7 +943,7 @@ pub mod cancel_world_generation_job_input {
 pub type CancelWorldGenerationJobInputOperationOutputAlias =
     crate::operation::CancelWorldGenerationJob;
 #[doc(hidden)]
-pub type CancelWorldGenerationJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelWorldGenerationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelWorldGenerationJobInput {
     /// Consumes the builder and constructs an Operation<[`CancelWorldGenerationJob`](crate::operation::CancelWorldGenerationJob)>
     #[allow(clippy::let_and_return)]
@@ -954,7 +954,7 @@ impl CancelWorldGenerationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelWorldGenerationJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1036,7 +1036,7 @@ impl CancelWorldGenerationJobInput {
             "CancelWorldGenerationJob",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1088,14 +1088,12 @@ pub mod create_deployment_job_input {
             self.deployment_config = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1120,10 +1118,10 @@ pub mod create_deployment_job_input {
         /// <p>The deployment application configuration.</p>
         pub fn deployment_application_configs(
             mut self,
-            input: impl Into<crate::model::DeploymentApplicationConfig>,
+            input: crate::model::DeploymentApplicationConfig,
         ) -> Self {
             let mut v = self.deployment_application_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deployment_application_configs = Some(v);
             self
         }
@@ -1139,8 +1137,7 @@ pub mod create_deployment_job_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the deployment
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the deployment job.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1151,8 +1148,7 @@ pub mod create_deployment_job_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the deployment
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the deployment job.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1182,7 +1178,7 @@ pub mod create_deployment_job_input {
 #[doc(hidden)]
 pub type CreateDeploymentJobInputOperationOutputAlias = crate::operation::CreateDeploymentJob;
 #[doc(hidden)]
-pub type CreateDeploymentJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDeploymentJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDeploymentJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateDeploymentJob`](crate::operation::CreateDeploymentJob)>
     #[allow(clippy::let_and_return)]
@@ -1193,7 +1189,7 @@ impl CreateDeploymentJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDeploymentJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1276,7 +1272,7 @@ impl CreateDeploymentJobInput {
             "CreateDeploymentJob",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1363,7 +1359,7 @@ pub mod create_fleet_input {
 #[doc(hidden)]
 pub type CreateFleetInputOperationOutputAlias = crate::operation::CreateFleet;
 #[doc(hidden)]
-pub type CreateFleetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFleetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFleetInput {
     /// Consumes the builder and constructs an Operation<[`CreateFleet`](crate::operation::CreateFleet)>
     #[allow(clippy::let_and_return)]
@@ -1374,7 +1370,7 @@ impl CreateFleetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFleet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1453,7 +1449,7 @@ impl CreateFleetInput {
             "CreateFleet",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1570,7 +1566,7 @@ pub mod create_robot_input {
 #[doc(hidden)]
 pub type CreateRobotInputOperationOutputAlias = crate::operation::CreateRobot;
 #[doc(hidden)]
-pub type CreateRobotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateRobotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRobotInput {
     /// Consumes the builder and constructs an Operation<[`CreateRobot`](crate::operation::CreateRobot)>
     #[allow(clippy::let_and_return)]
@@ -1581,7 +1577,7 @@ impl CreateRobotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRobot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1660,7 +1656,7 @@ impl CreateRobotInput {
             "CreateRobot",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1713,9 +1709,9 @@ pub mod create_robot_application_input {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// <p>The sources of the robot application.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::SourceConfig>) -> Self {
+        pub fn sources(mut self, input: crate::model::SourceConfig) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -1744,8 +1740,7 @@ pub mod create_robot_application_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the robot
-        /// application.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the robot application.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1756,8 +1751,7 @@ pub mod create_robot_application_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the robot
-        /// application.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the robot application.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1767,14 +1761,12 @@ pub mod create_robot_application_input {
             self.tags = input;
             self
         }
-        /// <p>The object that contains that URI of the Docker image that you use for your robot
-        /// application.</p>
+        /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
         pub fn environment(mut self, input: crate::model::Environment) -> Self {
             self.environment = Some(input);
             self
         }
-        /// <p>The object that contains that URI of the Docker image that you use for your robot
-        /// application.</p>
+        /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
         pub fn set_environment(
             mut self,
             input: std::option::Option<crate::model::Environment>,
@@ -1802,7 +1794,7 @@ pub mod create_robot_application_input {
 #[doc(hidden)]
 pub type CreateRobotApplicationInputOperationOutputAlias = crate::operation::CreateRobotApplication;
 #[doc(hidden)]
-pub type CreateRobotApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateRobotApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRobotApplicationInput {
     /// Consumes the builder and constructs an Operation<[`CreateRobotApplication`](crate::operation::CreateRobotApplication)>
     #[allow(clippy::let_and_return)]
@@ -1813,7 +1805,7 @@ impl CreateRobotApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRobotApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1895,7 +1887,7 @@ impl CreateRobotApplicationInput {
             "CreateRobotApplication",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1940,14 +1932,12 @@ pub mod create_robot_application_version_input {
             self.application = input;
             self
         }
-        /// <p>The current revision id for the robot application. If you provide a value and it matches
-        /// the latest revision ID, a new version will be created.</p>
+        /// <p>The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
         pub fn current_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.current_revision_id = Some(input.into());
             self
         }
-        /// <p>The current revision id for the robot application. If you provide a value and it matches
-        /// the latest revision ID, a new version will be created.</p>
+        /// <p>The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
         pub fn set_current_revision_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1959,16 +1949,14 @@ pub mod create_robot_application_version_input {
         ///
         /// To override the contents of this collection use [`set_s3_etags`](Self::set_s3_etags).
         ///
-        /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot
-        /// application.</p>
+        /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot application.</p>
         pub fn s3_etags(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.s3_etags.unwrap_or_default();
             v.push(input.into());
             self.s3_etags = Some(v);
             self
         }
-        /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot
-        /// application.</p>
+        /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot application.</p>
         pub fn set_s3_etags(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2006,7 +1994,8 @@ pub mod create_robot_application_version_input {
 pub type CreateRobotApplicationVersionInputOperationOutputAlias =
     crate::operation::CreateRobotApplicationVersion;
 #[doc(hidden)]
-pub type CreateRobotApplicationVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateRobotApplicationVersionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRobotApplicationVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateRobotApplicationVersion`](crate::operation::CreateRobotApplicationVersion)>
     #[allow(clippy::let_and_return)]
@@ -2017,7 +2006,7 @@ impl CreateRobotApplicationVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRobotApplicationVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2098,7 +2087,7 @@ impl CreateRobotApplicationVersionInput {
             "CreateRobotApplicationVersion",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2154,9 +2143,9 @@ pub mod create_simulation_application_input {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// <p>The sources of the simulation application.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::SourceConfig>) -> Self {
+        pub fn sources(mut self, input: crate::model::SourceConfig) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -2214,8 +2203,7 @@ pub mod create_simulation_application_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the simulation
-        /// application.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the simulation application.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2226,8 +2214,7 @@ pub mod create_simulation_application_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the simulation
-        /// application.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the simulation application.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2237,14 +2224,12 @@ pub mod create_simulation_application_input {
             self.tags = input;
             self
         }
-        /// <p>The object that contains the Docker image URI used to create your simulation
-        /// application.</p>
+        /// <p>The object that contains the Docker image URI used to create your simulation application.</p>
         pub fn environment(mut self, input: crate::model::Environment) -> Self {
             self.environment = Some(input);
             self
         }
-        /// <p>The object that contains the Docker image URI used to create your simulation
-        /// application.</p>
+        /// <p>The object that contains the Docker image URI used to create your simulation application.</p>
         pub fn set_environment(
             mut self,
             input: std::option::Option<crate::model::Environment>,
@@ -2275,7 +2260,7 @@ pub mod create_simulation_application_input {
 pub type CreateSimulationApplicationInputOperationOutputAlias =
     crate::operation::CreateSimulationApplication;
 #[doc(hidden)]
-pub type CreateSimulationApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSimulationApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSimulationApplicationInput {
     /// Consumes the builder and constructs an Operation<[`CreateSimulationApplication`](crate::operation::CreateSimulationApplication)>
     #[allow(clippy::let_and_return)]
@@ -2286,7 +2271,7 @@ impl CreateSimulationApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSimulationApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2367,7 +2352,7 @@ impl CreateSimulationApplicationInput {
             "CreateSimulationApplication",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2412,14 +2397,12 @@ pub mod create_simulation_application_version_input {
             self.application = input;
             self
         }
-        /// <p>The current revision id for the simulation application. If you provide a value and it
-        /// matches the latest revision ID, a new version will be created.</p>
+        /// <p>The current revision id for the simulation application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
         pub fn current_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.current_revision_id = Some(input.into());
             self
         }
-        /// <p>The current revision id for the simulation application. If you provide a value and it
-        /// matches the latest revision ID, a new version will be created.</p>
+        /// <p>The current revision id for the simulation application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
         pub fn set_current_revision_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2431,16 +2414,14 @@ pub mod create_simulation_application_version_input {
         ///
         /// To override the contents of this collection use [`set_s3_etags`](Self::set_s3_etags).
         ///
-        /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the
-        /// simulation application.</p>
+        /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the simulation application.</p>
         pub fn s3_etags(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.s3_etags.unwrap_or_default();
             v.push(input.into());
             self.s3_etags = Some(v);
             self
         }
-        /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the
-        /// simulation application.</p>
+        /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the simulation application.</p>
         pub fn set_s3_etags(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2448,14 +2429,12 @@ pub mod create_simulation_application_version_input {
             self.s3_etags = input;
             self
         }
-        /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation
-        /// application.</p>
+        /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation application.</p>
         pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
             self.image_digest = Some(input.into());
             self
         }
-        /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation
-        /// application.</p>
+        /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation application.</p>
         pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_digest = input;
             self
@@ -2480,7 +2459,8 @@ pub mod create_simulation_application_version_input {
 pub type CreateSimulationApplicationVersionInputOperationOutputAlias =
     crate::operation::CreateSimulationApplicationVersion;
 #[doc(hidden)]
-pub type CreateSimulationApplicationVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSimulationApplicationVersionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSimulationApplicationVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateSimulationApplicationVersion`](crate::operation::CreateSimulationApplicationVersion)>
     #[allow(clippy::let_and_return)]
@@ -2491,7 +2471,7 @@ impl CreateSimulationApplicationVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSimulationApplicationVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2573,7 +2553,7 @@ impl CreateSimulationApplicationVersionInput {
             "CreateSimulationApplicationVersion",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2620,14 +2600,12 @@ pub mod create_simulation_job_input {
         pub(crate) compute: std::option::Option<crate::model::Compute>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2661,42 +2639,37 @@ pub mod create_simulation_job_input {
             self.logging_config = input;
             self
         }
-        /// <p>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When
-        /// <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will
-        /// transition to <code>Completed</code>.</p>
+        /// <p>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will transition to <code>Completed</code>.</p>
         pub fn max_job_duration_in_seconds(mut self, input: i64) -> Self {
             self.max_job_duration_in_seconds = Some(input);
             self
         }
-        /// <p>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When
-        /// <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will
-        /// transition to <code>Completed</code>.</p>
+        /// <p>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will transition to <code>Completed</code>.</p>
         pub fn set_max_job_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.max_job_duration_in_seconds = input;
             self
         }
-        /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are
-        /// specified in its associated policies on your behalf. This is how credentials are passed in
-        /// to your simulation job. </p>
+        /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
         pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role = Some(input.into());
             self
         }
-        /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are
-        /// specified in its associated policies on your behalf. This is how credentials are passed in
-        /// to your simulation job. </p>
+        /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
         pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role = input;
             self
         }
         /// <p>The failure behavior the simulation job.</p>
         /// <dl>
-        /// <dt>Continue</dt>
+        /// <dt>
+        /// Continue
+        /// </dt>
         /// <dd>
-        /// <p>Leaves the instance running for its maximum timeout duration after a
-        /// <code>4XX</code> error code.</p>
+        /// <p>Leaves the instance running for its maximum timeout duration after a <code>4XX</code> error code.</p>
         /// </dd>
-        /// <dt>Fail</dt>
+        /// <dt>
+        /// Fail
+        /// </dt>
         /// <dd>
         /// <p>Stop the simulation job and terminate the instance.</p>
         /// </dd>
@@ -2707,12 +2680,15 @@ pub mod create_simulation_job_input {
         }
         /// <p>The failure behavior the simulation job.</p>
         /// <dl>
-        /// <dt>Continue</dt>
+        /// <dt>
+        /// Continue
+        /// </dt>
         /// <dd>
-        /// <p>Leaves the instance running for its maximum timeout duration after a
-        /// <code>4XX</code> error code.</p>
+        /// <p>Leaves the instance running for its maximum timeout duration after a <code>4XX</code> error code.</p>
         /// </dd>
-        /// <dt>Fail</dt>
+        /// <dt>
+        /// Fail
+        /// </dt>
         /// <dd>
         /// <p>Stop the simulation job and terminate the instance.</p>
         /// </dd>
@@ -2729,12 +2705,9 @@ pub mod create_simulation_job_input {
         /// To override the contents of this collection use [`set_robot_applications`](Self::set_robot_applications).
         ///
         /// <p>The robot application to use in the simulation job.</p>
-        pub fn robot_applications(
-            mut self,
-            input: impl Into<crate::model::RobotApplicationConfig>,
-        ) -> Self {
+        pub fn robot_applications(mut self, input: crate::model::RobotApplicationConfig) -> Self {
             let mut v = self.robot_applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.robot_applications = Some(v);
             self
         }
@@ -2753,10 +2726,10 @@ pub mod create_simulation_job_input {
         /// <p>The simulation application to use in the simulation job.</p>
         pub fn simulation_applications(
             mut self,
-            input: impl Into<crate::model::SimulationApplicationConfig>,
+            input: crate::model::SimulationApplicationConfig,
         ) -> Self {
             let mut v = self.simulation_applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.simulation_applications = Some(v);
             self
         }
@@ -2772,23 +2745,17 @@ pub mod create_simulation_job_input {
         ///
         /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
         ///
-        /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files
-        /// are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p>
-        /// <note>
-        /// <p>There is a limit of 100 files and a combined size of 25GB for all
-        /// <code>DataSourceConfig</code> objects. </p>
+        /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
+        /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
         /// </note>
-        pub fn data_sources(mut self, input: impl Into<crate::model::DataSourceConfig>) -> Self {
+        pub fn data_sources(mut self, input: crate::model::DataSourceConfig) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_sources = Some(v);
             self
         }
-        /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files
-        /// are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p>
-        /// <note>
-        /// <p>There is a limit of 100 files and a combined size of 25GB for all
-        /// <code>DataSourceConfig</code> objects. </p>
+        /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
+        /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
         /// </note>
         pub fn set_data_sources(
             mut self,
@@ -2801,8 +2768,7 @@ pub mod create_simulation_job_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the simulation
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the simulation job.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2813,8 +2779,7 @@ pub mod create_simulation_job_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the simulation
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the simulation job.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2824,16 +2789,12 @@ pub mod create_simulation_job_input {
             self.tags = input;
             self
         }
-        /// <p>If your simulation job accesses resources in a VPC, you provide this parameter
-        /// identifying the list of security group IDs and subnet IDs. These must belong to the same
-        /// VPC. You must provide at least one security group and one subnet ID. </p>
+        /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and one subnet ID. </p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
             self.vpc_config = Some(input);
             self
         }
-        /// <p>If your simulation job accesses resources in a VPC, you provide this parameter
-        /// identifying the list of security group IDs and subnet IDs. These must belong to the same
-        /// VPC. You must provide at least one security group and one subnet ID. </p>
+        /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and one subnet ID. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -2878,7 +2839,7 @@ pub mod create_simulation_job_input {
 #[doc(hidden)]
 pub type CreateSimulationJobInputOperationOutputAlias = crate::operation::CreateSimulationJob;
 #[doc(hidden)]
-pub type CreateSimulationJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSimulationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSimulationJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateSimulationJob`](crate::operation::CreateSimulationJob)>
     #[allow(clippy::let_and_return)]
@@ -2889,7 +2850,7 @@ impl CreateSimulationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSimulationJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2972,7 +2933,7 @@ impl CreateSimulationJobInput {
             "CreateSimulationJob",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3010,14 +2971,12 @@ pub mod create_world_export_job_input {
         >,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3057,14 +3016,12 @@ pub mod create_world_export_job_input {
             self.output_location = input;
             self
         }
-        /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put
-        /// the export.</p>
+        /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
         pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role = Some(input.into());
             self
         }
-        /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put
-        /// the export.</p>
+        /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
         pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role = input;
             self
@@ -3073,8 +3030,7 @@ pub mod create_world_export_job_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the world export
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3085,8 +3041,7 @@ pub mod create_world_export_job_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the world export
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3116,7 +3071,7 @@ pub mod create_world_export_job_input {
 #[doc(hidden)]
 pub type CreateWorldExportJobInputOperationOutputAlias = crate::operation::CreateWorldExportJob;
 #[doc(hidden)]
-pub type CreateWorldExportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateWorldExportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWorldExportJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorldExportJob`](crate::operation::CreateWorldExportJob)>
     #[allow(clippy::let_and_return)]
@@ -3127,7 +3082,7 @@ impl CreateWorldExportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateWorldExportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3212,7 +3167,7 @@ impl CreateWorldExportJobInput {
             "CreateWorldExportJob",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3252,14 +3207,12 @@ pub mod create_world_generation_job_input {
         >,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3267,14 +3220,12 @@ pub mod create_world_generation_job_input {
             self.client_request_token = input;
             self
         }
-        /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to
-        /// create.</p>
+        /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to create.</p>
         pub fn template(mut self, input: impl Into<std::string::String>) -> Self {
             self.template = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to
-        /// create.</p>
+        /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to create.</p>
         pub fn set_template(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template = input;
             self
@@ -3296,8 +3247,7 @@ pub mod create_world_generation_job_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the world generator
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3308,8 +3258,7 @@ pub mod create_world_generation_job_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the world generator
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3323,8 +3272,7 @@ pub mod create_world_generation_job_input {
         ///
         /// To override the contents of this collection use [`set_world_tags`](Self::set_world_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the generated
-        /// worlds.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
         pub fn world_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3335,8 +3283,7 @@ pub mod create_world_generation_job_input {
             self.world_tags = Some(hash_map);
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the generated
-        /// worlds.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
         pub fn set_world_tags(
             mut self,
             input: std::option::Option<
@@ -3367,7 +3314,7 @@ pub mod create_world_generation_job_input {
 pub type CreateWorldGenerationJobInputOperationOutputAlias =
     crate::operation::CreateWorldGenerationJob;
 #[doc(hidden)]
-pub type CreateWorldGenerationJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateWorldGenerationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWorldGenerationJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorldGenerationJob`](crate::operation::CreateWorldGenerationJob)>
     #[allow(clippy::let_and_return)]
@@ -3378,7 +3325,7 @@ impl CreateWorldGenerationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateWorldGenerationJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3463,7 +3410,7 @@ impl CreateWorldGenerationJobInput {
             "CreateWorldGenerationJob",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3501,14 +3448,12 @@ pub mod create_world_template_input {
         >,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3556,8 +3501,7 @@ pub mod create_world_template_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the world
-        /// template.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3568,8 +3512,7 @@ pub mod create_world_template_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the world
-        /// template.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3599,7 +3542,7 @@ pub mod create_world_template_input {
 #[doc(hidden)]
 pub type CreateWorldTemplateInputOperationOutputAlias = crate::operation::CreateWorldTemplate;
 #[doc(hidden)]
-pub type CreateWorldTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateWorldTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWorldTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorldTemplate`](crate::operation::CreateWorldTemplate)>
     #[allow(clippy::let_and_return)]
@@ -3610,7 +3553,7 @@ impl CreateWorldTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateWorldTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3690,7 +3633,7 @@ impl CreateWorldTemplateInput {
             "CreateWorldTemplate",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3746,7 +3689,7 @@ pub mod delete_fleet_input {
 #[doc(hidden)]
 pub type DeleteFleetInputOperationOutputAlias = crate::operation::DeleteFleet;
 #[doc(hidden)]
-pub type DeleteFleetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFleetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFleetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFleet`](crate::operation::DeleteFleet)>
     #[allow(clippy::let_and_return)]
@@ -3757,7 +3700,7 @@ impl DeleteFleetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFleet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3836,7 +3779,7 @@ impl DeleteFleetInput {
             "DeleteFleet",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3892,7 +3835,7 @@ pub mod delete_robot_input {
 #[doc(hidden)]
 pub type DeleteRobotInputOperationOutputAlias = crate::operation::DeleteRobot;
 #[doc(hidden)]
-pub type DeleteRobotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRobotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRobotInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRobot`](crate::operation::DeleteRobot)>
     #[allow(clippy::let_and_return)]
@@ -3903,7 +3846,7 @@ impl DeleteRobotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRobot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3982,7 +3925,7 @@ impl DeleteRobotInput {
             "DeleteRobot",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4055,7 +3998,7 @@ pub mod delete_robot_application_input {
 #[doc(hidden)]
 pub type DeleteRobotApplicationInputOperationOutputAlias = crate::operation::DeleteRobotApplication;
 #[doc(hidden)]
-pub type DeleteRobotApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRobotApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRobotApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRobotApplication`](crate::operation::DeleteRobotApplication)>
     #[allow(clippy::let_and_return)]
@@ -4066,7 +4009,7 @@ impl DeleteRobotApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRobotApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4148,7 +4091,7 @@ impl DeleteRobotApplicationInput {
             "DeleteRobotApplication",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4222,7 +4165,7 @@ pub mod delete_simulation_application_input {
 pub type DeleteSimulationApplicationInputOperationOutputAlias =
     crate::operation::DeleteSimulationApplication;
 #[doc(hidden)]
-pub type DeleteSimulationApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSimulationApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSimulationApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSimulationApplication`](crate::operation::DeleteSimulationApplication)>
     #[allow(clippy::let_and_return)]
@@ -4233,7 +4176,7 @@ impl DeleteSimulationApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSimulationApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4314,7 +4257,7 @@ impl DeleteSimulationApplicationInput {
             "DeleteSimulationApplication",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4372,7 +4315,7 @@ pub mod delete_world_template_input {
 #[doc(hidden)]
 pub type DeleteWorldTemplateInputOperationOutputAlias = crate::operation::DeleteWorldTemplate;
 #[doc(hidden)]
-pub type DeleteWorldTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteWorldTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWorldTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWorldTemplate`](crate::operation::DeleteWorldTemplate)>
     #[allow(clippy::let_and_return)]
@@ -4383,7 +4326,7 @@ impl DeleteWorldTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteWorldTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4463,7 +4406,7 @@ impl DeleteWorldTemplateInput {
             "DeleteWorldTemplate",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4533,7 +4476,7 @@ pub mod deregister_robot_input {
 #[doc(hidden)]
 pub type DeregisterRobotInputOperationOutputAlias = crate::operation::DeregisterRobot;
 #[doc(hidden)]
-pub type DeregisterRobotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeregisterRobotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterRobotInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterRobot`](crate::operation::DeregisterRobot)>
     #[allow(clippy::let_and_return)]
@@ -4544,7 +4487,7 @@ impl DeregisterRobotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeregisterRobot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4624,7 +4567,7 @@ impl DeregisterRobotInput {
             "DeregisterRobot",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4680,7 +4623,7 @@ pub mod describe_deployment_job_input {
 #[doc(hidden)]
 pub type DescribeDeploymentJobInputOperationOutputAlias = crate::operation::DescribeDeploymentJob;
 #[doc(hidden)]
-pub type DescribeDeploymentJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDeploymentJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDeploymentJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDeploymentJob`](crate::operation::DescribeDeploymentJob)>
     #[allow(clippy::let_and_return)]
@@ -4691,7 +4634,7 @@ impl DescribeDeploymentJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDeploymentJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4773,7 +4716,7 @@ impl DescribeDeploymentJobInput {
             "DescribeDeploymentJob",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4829,7 +4772,7 @@ pub mod describe_fleet_input {
 #[doc(hidden)]
 pub type DescribeFleetInputOperationOutputAlias = crate::operation::DescribeFleet;
 #[doc(hidden)]
-pub type DescribeFleetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFleetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFleetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFleet`](crate::operation::DescribeFleet)>
     #[allow(clippy::let_and_return)]
@@ -4840,7 +4783,7 @@ impl DescribeFleetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFleet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4919,7 +4862,7 @@ impl DescribeFleetInput {
             "DescribeFleet",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4975,7 +4918,7 @@ pub mod describe_robot_input {
 #[doc(hidden)]
 pub type DescribeRobotInputOperationOutputAlias = crate::operation::DescribeRobot;
 #[doc(hidden)]
-pub type DescribeRobotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRobotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRobotInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRobot`](crate::operation::DescribeRobot)>
     #[allow(clippy::let_and_return)]
@@ -4986,7 +4929,7 @@ impl DescribeRobotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRobot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5065,7 +5008,7 @@ impl DescribeRobotInput {
             "DescribeRobot",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5139,7 +5082,7 @@ pub mod describe_robot_application_input {
 pub type DescribeRobotApplicationInputOperationOutputAlias =
     crate::operation::DescribeRobotApplication;
 #[doc(hidden)]
-pub type DescribeRobotApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRobotApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRobotApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRobotApplication`](crate::operation::DescribeRobotApplication)>
     #[allow(clippy::let_and_return)]
@@ -5150,7 +5093,7 @@ impl DescribeRobotApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRobotApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5232,7 +5175,7 @@ impl DescribeRobotApplicationInput {
             "DescribeRobotApplication",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5306,7 +5249,8 @@ pub mod describe_simulation_application_input {
 pub type DescribeSimulationApplicationInputOperationOutputAlias =
     crate::operation::DescribeSimulationApplication;
 #[doc(hidden)]
-pub type DescribeSimulationApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSimulationApplicationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSimulationApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSimulationApplication`](crate::operation::DescribeSimulationApplication)>
     #[allow(clippy::let_and_return)]
@@ -5317,7 +5261,7 @@ impl DescribeSimulationApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSimulationApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5398,7 +5342,7 @@ impl DescribeSimulationApplicationInput {
             "DescribeSimulationApplication",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5454,7 +5398,7 @@ pub mod describe_simulation_job_input {
 #[doc(hidden)]
 pub type DescribeSimulationJobInputOperationOutputAlias = crate::operation::DescribeSimulationJob;
 #[doc(hidden)]
-pub type DescribeSimulationJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSimulationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSimulationJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSimulationJob`](crate::operation::DescribeSimulationJob)>
     #[allow(clippy::let_and_return)]
@@ -5465,7 +5409,7 @@ impl DescribeSimulationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSimulationJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5547,7 +5491,7 @@ impl DescribeSimulationJobInput {
             "DescribeSimulationJob",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5604,7 +5548,7 @@ pub mod describe_simulation_job_batch_input {
 pub type DescribeSimulationJobBatchInputOperationOutputAlias =
     crate::operation::DescribeSimulationJobBatch;
 #[doc(hidden)]
-pub type DescribeSimulationJobBatchInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSimulationJobBatchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSimulationJobBatchInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSimulationJobBatch`](crate::operation::DescribeSimulationJobBatch)>
     #[allow(clippy::let_and_return)]
@@ -5615,7 +5559,7 @@ impl DescribeSimulationJobBatchInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSimulationJobBatch,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5696,7 +5640,7 @@ impl DescribeSimulationJobBatchInput {
             "DescribeSimulationJobBatch",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5752,7 +5696,7 @@ pub mod describe_world_input {
 #[doc(hidden)]
 pub type DescribeWorldInputOperationOutputAlias = crate::operation::DescribeWorld;
 #[doc(hidden)]
-pub type DescribeWorldInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeWorldInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorldInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorld`](crate::operation::DescribeWorld)>
     #[allow(clippy::let_and_return)]
@@ -5763,7 +5707,7 @@ impl DescribeWorldInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorld,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5842,7 +5786,7 @@ impl DescribeWorldInput {
             "DescribeWorld",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5898,7 +5842,7 @@ pub mod describe_world_export_job_input {
 #[doc(hidden)]
 pub type DescribeWorldExportJobInputOperationOutputAlias = crate::operation::DescribeWorldExportJob;
 #[doc(hidden)]
-pub type DescribeWorldExportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeWorldExportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorldExportJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorldExportJob`](crate::operation::DescribeWorldExportJob)>
     #[allow(clippy::let_and_return)]
@@ -5909,7 +5853,7 @@ impl DescribeWorldExportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorldExportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5991,7 +5935,7 @@ impl DescribeWorldExportJobInput {
             "DescribeWorldExportJob",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6048,7 +5992,7 @@ pub mod describe_world_generation_job_input {
 pub type DescribeWorldGenerationJobInputOperationOutputAlias =
     crate::operation::DescribeWorldGenerationJob;
 #[doc(hidden)]
-pub type DescribeWorldGenerationJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeWorldGenerationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorldGenerationJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorldGenerationJob`](crate::operation::DescribeWorldGenerationJob)>
     #[allow(clippy::let_and_return)]
@@ -6059,7 +6003,7 @@ impl DescribeWorldGenerationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorldGenerationJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6140,7 +6084,7 @@ impl DescribeWorldGenerationJobInput {
             "DescribeWorldGenerationJob",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6198,7 +6142,7 @@ pub mod describe_world_template_input {
 #[doc(hidden)]
 pub type DescribeWorldTemplateInputOperationOutputAlias = crate::operation::DescribeWorldTemplate;
 #[doc(hidden)]
-pub type DescribeWorldTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeWorldTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorldTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorldTemplate`](crate::operation::DescribeWorldTemplate)>
     #[allow(clippy::let_and_return)]
@@ -6209,7 +6153,7 @@ impl DescribeWorldTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorldTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6291,7 +6235,7 @@ impl DescribeWorldTemplateInput {
             "DescribeWorldTemplate",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6364,7 +6308,7 @@ pub mod get_world_template_body_input {
 #[doc(hidden)]
 pub type GetWorldTemplateBodyInputOperationOutputAlias = crate::operation::GetWorldTemplateBody;
 #[doc(hidden)]
-pub type GetWorldTemplateBodyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetWorldTemplateBodyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWorldTemplateBodyInput {
     /// Consumes the builder and constructs an Operation<[`GetWorldTemplateBody`](crate::operation::GetWorldTemplateBody)>
     #[allow(clippy::let_and_return)]
@@ -6375,7 +6319,7 @@ impl GetWorldTemplateBodyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWorldTemplateBody,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6457,7 +6401,7 @@ impl GetWorldTemplateBodyInput {
             "GetWorldTemplateBody",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6496,21 +6440,15 @@ pub mod list_deployment_jobs_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When
-        /// filtering, you must use the complete value of the filtered item. You can use up to three
-        /// filters, but they must be for the same named item. For example, if you are looking for
-        /// items with the status <code>InProgress</code> or the status <code>Pending</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>InProgress</code> or the status <code>Pending</code>.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When
-        /// filtering, you must use the complete value of the filtered item. You can use up to three
-        /// filters, but they must be for the same named item. For example, if you are looking for
-        /// items with the status <code>InProgress</code> or the status <code>Pending</code>.</p>
+        /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>InProgress</code> or the status <code>Pending</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -6518,42 +6456,22 @@ pub mod list_deployment_jobs_input {
             self.filters = input;
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListDeploymentJobs</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListDeploymentJobs</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>When this parameter is used, <code>ListDeploymentJobs</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 200. If this parameter is not used, then
-        /// <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code>
-        /// value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListDeploymentJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListDeploymentJobs</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 200. If this parameter is not used, then
-        /// <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code>
-        /// value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListDeploymentJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6576,7 +6494,7 @@ pub mod list_deployment_jobs_input {
 #[doc(hidden)]
 pub type ListDeploymentJobsInputOperationOutputAlias = crate::operation::ListDeploymentJobs;
 #[doc(hidden)]
-pub type ListDeploymentJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDeploymentJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDeploymentJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListDeploymentJobs`](crate::operation::ListDeploymentJobs)>
     #[allow(clippy::let_and_return)]
@@ -6587,7 +6505,7 @@ impl ListDeploymentJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDeploymentJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6667,7 +6585,7 @@ impl ListDeploymentJobsInput {
             "ListDeploymentJobs",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6701,50 +6619,26 @@ pub mod list_fleets_input {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     }
     impl Builder {
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListFleets</code> again and assign that token to the
-        /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-        /// previous response object's NextToken parameter is set to null. </p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-        /// the next items in a list and not for other programmatic purposes.</p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListFleets</code> again and assign that token to the
-        /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-        /// previous response object's NextToken parameter is set to null. </p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-        /// the next items in a list and not for other programmatic purposes.</p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>When this parameter is used, <code>ListFleets</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListFleets</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 200. If this parameter is not used, then
-        /// <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if
-        /// applicable. </p>
+        /// <p>When this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListFleets</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListFleets</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 200. If this parameter is not used, then
-        /// <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if
-        /// applicable. </p>
+        /// <p>When this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6754,17 +6648,15 @@ pub mod list_fleets_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
-        /// complete value of the filtered item. You can use up to three filters.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
-        /// complete value of the filtered item. You can use up to three filters.</p>
+        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -6790,7 +6682,7 @@ pub mod list_fleets_input {
 #[doc(hidden)]
 pub type ListFleetsInputOperationOutputAlias = crate::operation::ListFleets;
 #[doc(hidden)]
-pub type ListFleetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFleetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFleetsInput {
     /// Consumes the builder and constructs an Operation<[`ListFleets`](crate::operation::ListFleets)>
     #[allow(clippy::let_and_return)]
@@ -6801,7 +6693,7 @@ impl ListFleetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFleets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6880,7 +6772,7 @@ impl ListFleetsInput {
             "ListFleets",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6928,42 +6820,22 @@ pub mod list_robot_applications_input {
             self.version_qualifier = input;
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListRobotApplications</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListRobotApplications</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>When this parameter is used, <code>ListRobotApplications</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListRobotApplications</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter is not used, then
-        /// <code>ListRobotApplications</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListRobotApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobotApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListRobotApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListRobotApplications</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListRobotApplications</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter is not used, then
-        /// <code>ListRobotApplications</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListRobotApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobotApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListRobotApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6973,17 +6845,15 @@ pub mod list_robot_applications_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
-        /// complete value of the filtered item. You can use up to three filters.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
-        /// complete value of the filtered item. You can use up to three filters.</p>
+        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -7010,7 +6880,7 @@ pub mod list_robot_applications_input {
 #[doc(hidden)]
 pub type ListRobotApplicationsInputOperationOutputAlias = crate::operation::ListRobotApplications;
 #[doc(hidden)]
-pub type ListRobotApplicationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRobotApplicationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRobotApplicationsInput {
     /// Consumes the builder and constructs an Operation<[`ListRobotApplications`](crate::operation::ListRobotApplications)>
     #[allow(clippy::let_and_return)]
@@ -7021,7 +6891,7 @@ impl ListRobotApplicationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRobotApplications,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7103,7 +6973,7 @@ impl ListRobotApplicationsInput {
             "ListRobotApplications",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7137,42 +7007,22 @@ pub mod list_robots_input {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     }
     impl Builder {
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListRobots</code> again and assign that token to the
-        /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-        /// previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListRobots</code> again and assign that token to the
-        /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-        /// previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>When this parameter is used, <code>ListRobots</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListRobots</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 200. If this parameter is not used, then
-        /// <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if
-        /// applicable. </p>
+        /// <p>When this parameter is used, <code>ListRobots</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobots</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListRobots</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListRobots</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 200. If this parameter is not used, then
-        /// <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if
-        /// applicable. </p>
+        /// <p>When this parameter is used, <code>ListRobots</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobots</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7182,21 +7032,15 @@ pub mod list_robots_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When
-        /// filtering, you must use the complete value of the filtered item. You can use up to three
-        /// filters, but they must be for the same named item. For example, if you are looking for
-        /// items with the status <code>Registered</code> or the status <code>Available</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Registered</code> or the status <code>Available</code>.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When
-        /// filtering, you must use the complete value of the filtered item. You can use up to three
-        /// filters, but they must be for the same named item. For example, if you are looking for
-        /// items with the status <code>Registered</code> or the status <code>Available</code>.</p>
+        /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Registered</code> or the status <code>Available</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -7222,7 +7066,7 @@ pub mod list_robots_input {
 #[doc(hidden)]
 pub type ListRobotsInputOperationOutputAlias = crate::operation::ListRobots;
 #[doc(hidden)]
-pub type ListRobotsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRobotsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRobotsInput {
     /// Consumes the builder and constructs an Operation<[`ListRobots`](crate::operation::ListRobots)>
     #[allow(clippy::let_and_return)]
@@ -7233,7 +7077,7 @@ impl ListRobotsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRobots,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7312,7 +7156,7 @@ impl ListRobotsInput {
             "ListRobots",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7360,42 +7204,22 @@ pub mod list_simulation_applications_input {
             self.version_qualifier = input;
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListSimulationApplications</code> again and assign that
-        /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
-        /// results, the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListSimulationApplications</code> again and assign that
-        /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
-        /// results, the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>When this parameter is used, <code>ListSimulationApplications</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListSimulationApplications</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is
-        /// not used, then <code>ListSimulationApplications</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListSimulationApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListSimulationApplications</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListSimulationApplications</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is
-        /// not used, then <code>ListSimulationApplications</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListSimulationApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7405,17 +7229,15 @@ pub mod list_simulation_applications_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Optional list of filters to limit results.</p>
-        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
-        /// complete value of the filtered item. You can use up to three filters.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
         /// <p>Optional list of filters to limit results.</p>
-        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
-        /// complete value of the filtered item. You can use up to three filters.</p>
+        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -7443,7 +7265,7 @@ pub mod list_simulation_applications_input {
 pub type ListSimulationApplicationsInputOperationOutputAlias =
     crate::operation::ListSimulationApplications;
 #[doc(hidden)]
-pub type ListSimulationApplicationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSimulationApplicationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSimulationApplicationsInput {
     /// Consumes the builder and constructs an Operation<[`ListSimulationApplications`](crate::operation::ListSimulationApplications)>
     #[allow(clippy::let_and_return)]
@@ -7454,7 +7276,7 @@ impl ListSimulationApplicationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSimulationApplications,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7536,7 +7358,7 @@ impl ListSimulationApplicationsInput {
             "ListSimulationApplications",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7570,38 +7392,22 @@ pub mod list_simulation_job_batches_input {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     }
     impl Builder {
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListSimulationJobBatches</code> again and assign that token
-        /// to the request object's <code>nextToken</code> parameter. If there are no remaining
-        /// results, the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListSimulationJobBatches</code> again and assign that token
-        /// to the request object's <code>nextToken</code> parameter. If there are no remaining
-        /// results, the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>When this parameter is used, <code>ListSimulationJobBatches</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListSimulationJobBatches</code> request with the returned
-        /// <code>nextToken</code> value. </p>
+        /// <p>When this parameter is used, <code>ListSimulationJobBatches</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobBatches</code> request with the returned <code>nextToken</code> value. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListSimulationJobBatches</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListSimulationJobBatches</code> request with the returned
-        /// <code>nextToken</code> value. </p>
+        /// <p>When this parameter is used, <code>ListSimulationJobBatches</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobBatches</code> request with the returned <code>nextToken</code> value. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7611,9 +7417,9 @@ pub mod list_simulation_job_batches_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Optional filters to limit results.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -7644,7 +7450,7 @@ pub mod list_simulation_job_batches_input {
 pub type ListSimulationJobBatchesInputOperationOutputAlias =
     crate::operation::ListSimulationJobBatches;
 #[doc(hidden)]
-pub type ListSimulationJobBatchesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSimulationJobBatchesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSimulationJobBatchesInput {
     /// Consumes the builder and constructs an Operation<[`ListSimulationJobBatches`](crate::operation::ListSimulationJobBatches)>
     #[allow(clippy::let_and_return)]
@@ -7655,7 +7461,7 @@ impl ListSimulationJobBatchesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSimulationJobBatches,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7737,7 +7543,7 @@ impl ListSimulationJobBatchesInput {
             "ListSimulationJobBatches",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7771,42 +7577,22 @@ pub mod list_simulation_jobs_input {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     }
     impl Builder {
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListSimulationJobs</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListSimulationJobs</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>When this parameter is used, <code>ListSimulationJobs</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 1000. If this parameter is not used, then
-        /// <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code>
-        /// value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListSimulationJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListSimulationJobs</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 1000. If this parameter is not used, then
-        /// <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code>
-        /// value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListSimulationJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7816,23 +7602,15 @@ pub mod list_simulation_jobs_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter names <code>status</code> and <code>simulationApplicationName</code> and
-        /// <code>robotApplicationName</code> are supported. When filtering, you must use the
-        /// complete value of the filtered item. You can use up to three filters, but they must be for
-        /// the same named item. For example, if you are looking for items with the status
-        /// <code>Preparing</code> or the status <code>Running</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p>The filter names <code>status</code> and <code>simulationApplicationName</code> and <code>robotApplicationName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Preparing</code> or the status <code>Running</code>.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter names <code>status</code> and <code>simulationApplicationName</code> and
-        /// <code>robotApplicationName</code> are supported. When filtering, you must use the
-        /// complete value of the filtered item. You can use up to three filters, but they must be for
-        /// the same named item. For example, if you are looking for items with the status
-        /// <code>Preparing</code> or the status <code>Running</code>.</p>
+        /// <p>The filter names <code>status</code> and <code>simulationApplicationName</code> and <code>robotApplicationName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Preparing</code> or the status <code>Running</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -7858,7 +7636,7 @@ pub mod list_simulation_jobs_input {
 #[doc(hidden)]
 pub type ListSimulationJobsInputOperationOutputAlias = crate::operation::ListSimulationJobs;
 #[doc(hidden)]
-pub type ListSimulationJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSimulationJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSimulationJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListSimulationJobs`](crate::operation::ListSimulationJobs)>
     #[allow(clippy::let_and_return)]
@@ -7869,7 +7647,7 @@ impl ListSimulationJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSimulationJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7949,7 +7727,7 @@ impl ListSimulationJobsInput {
             "ListSimulationJobs",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8007,7 +7785,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -8018,7 +7796,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8108,7 +7886,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8134,42 +7912,22 @@ pub mod list_world_export_jobs_input {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     }
     impl Builder {
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorldExportJobs</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorldExportJobs</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>When this parameter is used, <code>ListWorldExportJobs</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListWorldExportJobs</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter is not used, then
-        /// <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code>
-        /// value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListWorldExportJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldExportJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListWorldExportJobs</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListWorldExportJobs</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter is not used, then
-        /// <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code>
-        /// value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListWorldExportJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldExportJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -8178,16 +7936,14 @@ pub mod list_world_export_jobs_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Optional filters to limit results. You can use <code>generationJobId</code> and
-        /// <code>templateId</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p>Optional filters to limit results. You can use <code>generationJobId</code> and <code>templateId</code>.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>Optional filters to limit results. You can use <code>generationJobId</code> and
-        /// <code>templateId</code>.</p>
+        /// <p>Optional filters to limit results. You can use <code>generationJobId</code> and <code>templateId</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -8213,7 +7969,7 @@ pub mod list_world_export_jobs_input {
 #[doc(hidden)]
 pub type ListWorldExportJobsInputOperationOutputAlias = crate::operation::ListWorldExportJobs;
 #[doc(hidden)]
-pub type ListWorldExportJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListWorldExportJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorldExportJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListWorldExportJobs`](crate::operation::ListWorldExportJobs)>
     #[allow(clippy::let_and_return)]
@@ -8224,7 +7980,7 @@ impl ListWorldExportJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWorldExportJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8306,7 +8062,7 @@ impl ListWorldExportJobsInput {
             "ListWorldExportJobs",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8340,42 +8096,22 @@ pub mod list_world_generation_jobs_input {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     }
     impl Builder {
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that
-        /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
-        /// results, the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that
-        /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
-        /// results, the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListWorldGeneratorJobs</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is
-        /// not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldGeneratorJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListWorldGeneratorJobs</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is
-        /// not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldGeneratorJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -8384,16 +8120,14 @@ pub mod list_world_generation_jobs_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Optional filters to limit results. You can use <code>status</code> and
-        /// <code>templateId</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p>Optional filters to limit results. You can use <code>status</code> and <code>templateId</code>.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>Optional filters to limit results. You can use <code>status</code> and
-        /// <code>templateId</code>.</p>
+        /// <p>Optional filters to limit results. You can use <code>status</code> and <code>templateId</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -8420,7 +8154,7 @@ pub mod list_world_generation_jobs_input {
 pub type ListWorldGenerationJobsInputOperationOutputAlias =
     crate::operation::ListWorldGenerationJobs;
 #[doc(hidden)]
-pub type ListWorldGenerationJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListWorldGenerationJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorldGenerationJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListWorldGenerationJobs`](crate::operation::ListWorldGenerationJobs)>
     #[allow(clippy::let_and_return)]
@@ -8431,7 +8165,7 @@ impl ListWorldGenerationJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWorldGenerationJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8513,7 +8247,7 @@ impl ListWorldGenerationJobsInput {
             "ListWorldGenerationJobs",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8547,42 +8281,22 @@ pub mod list_worlds_input {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     }
     impl Builder {
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorlds</code> again and assign that token to the
-        /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-        /// previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorlds</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorlds</code> again and assign that token to the
-        /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-        /// previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorlds</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>When this parameter is used, <code>ListWorlds</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListWorlds</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If this parameter is not used, then
-        /// <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if
-        /// applicable. </p>
+        /// <p>When this parameter is used, <code>ListWorlds</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorlds</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListWorlds</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListWorlds</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If this parameter is not used, then
-        /// <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if
-        /// applicable. </p>
+        /// <p>When this parameter is used, <code>ListWorlds</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorlds</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -8592,9 +8306,9 @@ pub mod list_worlds_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Optional filters to limit results. You can use <code>status</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -8624,7 +8338,7 @@ pub mod list_worlds_input {
 #[doc(hidden)]
 pub type ListWorldsInputOperationOutputAlias = crate::operation::ListWorlds;
 #[doc(hidden)]
-pub type ListWorldsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListWorldsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorldsInput {
     /// Consumes the builder and constructs an Operation<[`ListWorlds`](crate::operation::ListWorlds)>
     #[allow(clippy::let_and_return)]
@@ -8635,7 +8349,7 @@ impl ListWorldsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWorlds,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8714,7 +8428,7 @@ impl ListWorldsInput {
             "ListWorlds",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8747,42 +8461,22 @@ pub mod list_world_templates_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorldTemplates</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorldTemplates</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>When this parameter is used, <code>ListWorldTemplates</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListWorldTemplates</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter is not used, then
-        /// <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code>
-        /// value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListWorldTemplates</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldTemplates</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListWorldTemplates</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListWorldTemplates</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter is not used, then
-        /// <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code>
-        /// value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListWorldTemplates</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldTemplates</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -8804,7 +8498,7 @@ pub mod list_world_templates_input {
 #[doc(hidden)]
 pub type ListWorldTemplatesInputOperationOutputAlias = crate::operation::ListWorldTemplates;
 #[doc(hidden)]
-pub type ListWorldTemplatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListWorldTemplatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorldTemplatesInput {
     /// Consumes the builder and constructs an Operation<[`ListWorldTemplates`](crate::operation::ListWorldTemplates)>
     #[allow(clippy::let_and_return)]
@@ -8815,7 +8509,7 @@ impl ListWorldTemplatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWorldTemplates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8895,7 +8589,7 @@ impl ListWorldTemplatesInput {
             "ListWorldTemplates",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8965,7 +8659,7 @@ pub mod register_robot_input {
 #[doc(hidden)]
 pub type RegisterRobotInputOperationOutputAlias = crate::operation::RegisterRobot;
 #[doc(hidden)]
-pub type RegisterRobotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterRobotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterRobotInput {
     /// Consumes the builder and constructs an Operation<[`RegisterRobot`](crate::operation::RegisterRobot)>
     #[allow(clippy::let_and_return)]
@@ -8976,7 +8670,7 @@ impl RegisterRobotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterRobot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9055,7 +8749,7 @@ impl RegisterRobotInput {
             "RegisterRobot",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9111,7 +8805,7 @@ pub mod restart_simulation_job_input {
 #[doc(hidden)]
 pub type RestartSimulationJobInputOperationOutputAlias = crate::operation::RestartSimulationJob;
 #[doc(hidden)]
-pub type RestartSimulationJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RestartSimulationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RestartSimulationJobInput {
     /// Consumes the builder and constructs an Operation<[`RestartSimulationJob`](crate::operation::RestartSimulationJob)>
     #[allow(clippy::let_and_return)]
@@ -9122,7 +8816,7 @@ impl RestartSimulationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RestartSimulationJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9204,7 +8898,7 @@ impl RestartSimulationJobInput {
             "RestartSimulationJob",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9242,14 +8936,12 @@ pub mod start_simulation_job_batch_input {
         >,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9277,10 +8969,10 @@ pub mod start_simulation_job_batch_input {
         /// <p>A list of simulation job requests to create in the batch.</p>
         pub fn create_simulation_job_requests(
             mut self,
-            input: impl Into<crate::model::SimulationJobRequest>,
+            input: crate::model::SimulationJobRequest,
         ) -> Self {
             let mut v = self.create_simulation_job_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.create_simulation_job_requests = Some(v);
             self
         }
@@ -9296,8 +8988,7 @@ pub mod start_simulation_job_batch_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the deployment job
-        /// batch.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -9308,8 +8999,7 @@ pub mod start_simulation_job_batch_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the deployment job
-        /// batch.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -9339,7 +9029,7 @@ pub mod start_simulation_job_batch_input {
 pub type StartSimulationJobBatchInputOperationOutputAlias =
     crate::operation::StartSimulationJobBatch;
 #[doc(hidden)]
-pub type StartSimulationJobBatchInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartSimulationJobBatchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartSimulationJobBatchInput {
     /// Consumes the builder and constructs an Operation<[`StartSimulationJobBatch`](crate::operation::StartSimulationJobBatch)>
     #[allow(clippy::let_and_return)]
@@ -9350,7 +9040,7 @@ impl StartSimulationJobBatchInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartSimulationJobBatch,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9435,7 +9125,7 @@ impl StartSimulationJobBatchInput {
             "StartSimulationJobBatch",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9468,14 +9158,12 @@ pub mod sync_deployment_job_input {
         pub(crate) fleet: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9510,7 +9198,7 @@ pub mod sync_deployment_job_input {
 #[doc(hidden)]
 pub type SyncDeploymentJobInputOperationOutputAlias = crate::operation::SyncDeploymentJob;
 #[doc(hidden)]
-pub type SyncDeploymentJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SyncDeploymentJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SyncDeploymentJobInput {
     /// Consumes the builder and constructs an Operation<[`SyncDeploymentJob`](crate::operation::SyncDeploymentJob)>
     #[allow(clippy::let_and_return)]
@@ -9521,7 +9209,7 @@ impl SyncDeploymentJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SyncDeploymentJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9604,7 +9292,7 @@ impl SyncDeploymentJobInput {
             "SyncDeploymentJob",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9691,7 +9379,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -9702,7 +9390,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9797,7 +9485,7 @@ impl TagResourceInput {
             "TagResource",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9830,14 +9518,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing
-        /// tags.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing tags.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing
-        /// tags.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing tags.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -9846,16 +9532,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>A map that contains tag keys and tag values that will be unattached from the
-        /// resource.</p>
+        /// <p>A map that contains tag keys and tag values that will be unattached from the resource.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>A map that contains tag keys and tag values that will be unattached from the
-        /// resource.</p>
+        /// <p>A map that contains tag keys and tag values that will be unattached from the resource.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9880,7 +9564,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -9891,7 +9575,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9994,7 +9678,7 @@ impl UntagResourceInput {
             "UntagResource",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10037,9 +9721,9 @@ pub mod update_robot_application_input {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// <p>The sources of the robot application.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::SourceConfig>) -> Self {
+        pub fn sources(mut self, input: crate::model::SourceConfig) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -10110,7 +9794,7 @@ pub mod update_robot_application_input {
 #[doc(hidden)]
 pub type UpdateRobotApplicationInputOperationOutputAlias = crate::operation::UpdateRobotApplication;
 #[doc(hidden)]
-pub type UpdateRobotApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateRobotApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRobotApplicationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRobotApplication`](crate::operation::UpdateRobotApplication)>
     #[allow(clippy::let_and_return)]
@@ -10121,7 +9805,7 @@ impl UpdateRobotApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRobotApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10203,7 +9887,7 @@ impl UpdateRobotApplicationInput {
             "UpdateRobotApplication",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10257,9 +9941,9 @@ pub mod update_simulation_application_input {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// <p>The sources of the simulation application.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::SourceConfig>) -> Self {
+        pub fn sources(mut self, input: crate::model::SourceConfig) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -10362,7 +10046,7 @@ pub mod update_simulation_application_input {
 pub type UpdateSimulationApplicationInputOperationOutputAlias =
     crate::operation::UpdateSimulationApplication;
 #[doc(hidden)]
-pub type UpdateSimulationApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateSimulationApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSimulationApplicationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSimulationApplication`](crate::operation::UpdateSimulationApplication)>
     #[allow(clippy::let_and_return)]
@@ -10373,7 +10057,7 @@ impl UpdateSimulationApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSimulationApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10454,7 +10138,7 @@ impl UpdateSimulationApplicationInput {
             "UpdateSimulationApplication",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10554,7 +10238,7 @@ pub mod update_world_template_input {
 #[doc(hidden)]
 pub type UpdateWorldTemplateInputOperationOutputAlias = crate::operation::UpdateWorldTemplate;
 #[doc(hidden)]
-pub type UpdateWorldTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateWorldTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateWorldTemplateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWorldTemplate`](crate::operation::UpdateWorldTemplate)>
     #[allow(clippy::let_and_return)]
@@ -10565,7 +10249,7 @@ impl UpdateWorldTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateWorldTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10645,7 +10329,7 @@ impl UpdateWorldTemplateInput {
             "UpdateWorldTemplate",
             "robomaker",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10828,21 +10512,17 @@ impl std::fmt::Debug for UpdateRobotApplicationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing
-    /// tags.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing tags.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A map that contains tag keys and tag values that will be unattached from the
-    /// resource.</p>
+    /// <p>A map that contains tag keys and tag values that will be unattached from the resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing
-    /// tags.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing tags.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A map that contains tag keys and tag values that will be unattached from the
-    /// resource.</p>
+    /// <p>A map that contains tag keys and tag values that will be unattached from the resource.</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -10892,15 +10572,13 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SyncDeploymentJobInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The target fleet for the synchronization.</p>
     pub fleet: std::option::Option<std::string::String>,
 }
 impl SyncDeploymentJobInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -10922,22 +10600,19 @@ impl std::fmt::Debug for SyncDeploymentJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSimulationJobBatchInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The batch policy.</p>
     pub batch_policy: std::option::Option<crate::model::BatchPolicy>,
     /// <p>A list of simulation job requests to create in the batch.</p>
     pub create_simulation_job_requests:
         std::option::Option<std::vec::Vec<crate::model::SimulationJobRequest>>,
-    /// <p>A map that contains tag keys and tag values that are attached to the deployment job
-    /// batch.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl StartSimulationJobBatchInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -10951,8 +10626,7 @@ impl StartSimulationJobBatchInput {
     ) -> std::option::Option<&[crate::model::SimulationJobRequest]> {
         self.create_simulation_job_requests.as_deref()
     }
-    /// <p>A map that contains tag keys and tag values that are attached to the deployment job
-    /// batch.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -11027,37 +10701,17 @@ impl std::fmt::Debug for RegisterRobotInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorldTemplatesInput {
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListWorldTemplates</code> again and assign that token to
-    /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-    /// the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>When this parameter is used, <code>ListWorldTemplates</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>ListWorldTemplates</code> request with the returned <code>nextToken</code>
-    /// value. This value can be between 1 and 100. If this parameter is not used, then
-    /// <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code>
-    /// value if applicable. </p>
+    /// <p>When this parameter is used, <code>ListWorldTemplates</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldTemplates</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListWorldTemplatesInput {
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListWorldTemplates</code> again and assign that token to
-    /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-    /// the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>When this parameter is used, <code>ListWorldTemplates</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>ListWorldTemplates</code> request with the returned <code>nextToken</code>
-    /// value. This value can be between 1 and 100. If this parameter is not used, then
-    /// <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code>
-    /// value if applicable. </p>
+    /// <p>When this parameter is used, <code>ListWorldTemplates</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldTemplates</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -11075,39 +10729,19 @@ impl std::fmt::Debug for ListWorldTemplatesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorldsInput {
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListWorlds</code> again and assign that token to the
-    /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-    /// previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorlds</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>When this parameter is used, <code>ListWorlds</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>ListWorlds</code> request with the returned <code>nextToken</code> value.
-    /// This value can be between 1 and 100. If this parameter is not used, then
-    /// <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if
-    /// applicable. </p>
+    /// <p>When this parameter is used, <code>ListWorlds</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorlds</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
     pub max_results: std::option::Option<i32>,
     /// <p>Optional filters to limit results. You can use <code>status</code>.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListWorldsInput {
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListWorlds</code> again and assign that token to the
-    /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-    /// previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorlds</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>When this parameter is used, <code>ListWorlds</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>ListWorlds</code> request with the returned <code>nextToken</code> value.
-    /// This value can be between 1 and 100. If this parameter is not used, then
-    /// <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if
-    /// applicable. </p>
+    /// <p>When this parameter is used, <code>ListWorlds</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorlds</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -11130,45 +10764,23 @@ impl std::fmt::Debug for ListWorldsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorldGenerationJobsInput {
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that
-    /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
-    /// results, the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>ListWorldGeneratorJobs</code> request with the returned
-    /// <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is
-    /// not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a
-    /// <code>nextToken</code> value if applicable. </p>
+    /// <p>When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldGeneratorJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>Optional filters to limit results. You can use <code>status</code> and
-    /// <code>templateId</code>.</p>
+    /// <p>Optional filters to limit results. You can use <code>status</code> and <code>templateId</code>.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListWorldGenerationJobsInput {
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that
-    /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
-    /// results, the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>ListWorldGeneratorJobs</code> request with the returned
-    /// <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is
-    /// not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a
-    /// <code>nextToken</code> value if applicable. </p>
+    /// <p>When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldGeneratorJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Optional filters to limit results. You can use <code>status</code> and
-    /// <code>templateId</code>.</p>
+    /// <p>Optional filters to limit results. You can use <code>status</code> and <code>templateId</code>.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
@@ -11187,45 +10799,23 @@ impl std::fmt::Debug for ListWorldGenerationJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorldExportJobsInput {
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListWorldExportJobs</code> again and assign that token to
-    /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-    /// the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>When this parameter is used, <code>ListWorldExportJobs</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>ListWorldExportJobs</code> request with the returned <code>nextToken</code>
-    /// value. This value can be between 1 and 100. If this parameter is not used, then
-    /// <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code>
-    /// value if applicable. </p>
+    /// <p>When this parameter is used, <code>ListWorldExportJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldExportJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>Optional filters to limit results. You can use <code>generationJobId</code> and
-    /// <code>templateId</code>.</p>
+    /// <p>Optional filters to limit results. You can use <code>generationJobId</code> and <code>templateId</code>.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListWorldExportJobsInput {
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListWorldExportJobs</code> again and assign that token to
-    /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-    /// the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>When this parameter is used, <code>ListWorldExportJobs</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>ListWorldExportJobs</code> request with the returned <code>nextToken</code>
-    /// value. This value can be between 1 and 100. If this parameter is not used, then
-    /// <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code>
-    /// value if applicable. </p>
+    /// <p>When this parameter is used, <code>ListWorldExportJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldExportJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Optional filters to limit results. You can use <code>generationJobId</code> and
-    /// <code>templateId</code>.</p>
+    /// <p>Optional filters to limit results. You can use <code>generationJobId</code> and <code>templateId</code>.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
@@ -11265,53 +10855,25 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSimulationJobsInput {
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListSimulationJobs</code> again and assign that token to
-    /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-    /// the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>When this parameter is used, <code>ListSimulationJobs</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code>
-    /// value. This value can be between 1 and 1000. If this parameter is not used, then
-    /// <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code>
-    /// value if applicable. </p>
+    /// <p>When this parameter is used, <code>ListSimulationJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code> value if applicable. </p>
     pub max_results: std::option::Option<i32>,
     /// <p>Optional filters to limit results.</p>
-    /// <p>The filter names <code>status</code> and <code>simulationApplicationName</code> and
-    /// <code>robotApplicationName</code> are supported. When filtering, you must use the
-    /// complete value of the filtered item. You can use up to three filters, but they must be for
-    /// the same named item. For example, if you are looking for items with the status
-    /// <code>Preparing</code> or the status <code>Running</code>.</p>
+    /// <p>The filter names <code>status</code> and <code>simulationApplicationName</code> and <code>robotApplicationName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Preparing</code> or the status <code>Running</code>.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListSimulationJobsInput {
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListSimulationJobs</code> again and assign that token to
-    /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-    /// the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>When this parameter is used, <code>ListSimulationJobs</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code>
-    /// value. This value can be between 1 and 1000. If this parameter is not used, then
-    /// <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code>
-    /// value if applicable. </p>
+    /// <p>When this parameter is used, <code>ListSimulationJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code> value if applicable. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>Optional filters to limit results.</p>
-    /// <p>The filter names <code>status</code> and <code>simulationApplicationName</code> and
-    /// <code>robotApplicationName</code> are supported. When filtering, you must use the
-    /// complete value of the filtered item. You can use up to three filters, but they must be for
-    /// the same named item. For example, if you are looking for items with the status
-    /// <code>Preparing</code> or the status <code>Running</code>.</p>
+    /// <p>The filter names <code>status</code> and <code>simulationApplicationName</code> and <code>robotApplicationName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Preparing</code> or the status <code>Running</code>.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
@@ -11330,35 +10892,19 @@ impl std::fmt::Debug for ListSimulationJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSimulationJobBatchesInput {
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListSimulationJobBatches</code> again and assign that token
-    /// to the request object's <code>nextToken</code> parameter. If there are no remaining
-    /// results, the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>When this parameter is used, <code>ListSimulationJobBatches</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>ListSimulationJobBatches</code> request with the returned
-    /// <code>nextToken</code> value. </p>
+    /// <p>When this parameter is used, <code>ListSimulationJobBatches</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobBatches</code> request with the returned <code>nextToken</code> value. </p>
     pub max_results: std::option::Option<i32>,
     /// <p>Optional filters to limit results.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListSimulationJobBatchesInput {
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListSimulationJobBatches</code> again and assign that token
-    /// to the request object's <code>nextToken</code> parameter. If there are no remaining
-    /// results, the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>When this parameter is used, <code>ListSimulationJobBatches</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>ListSimulationJobBatches</code> request with the returned
-    /// <code>nextToken</code> value. </p>
+    /// <p>When this parameter is used, <code>ListSimulationJobBatches</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobBatches</code> request with the returned <code>nextToken</code> value. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -11383,23 +10929,12 @@ impl std::fmt::Debug for ListSimulationJobBatchesInput {
 pub struct ListSimulationApplicationsInput {
     /// <p>The version qualifier of the simulation application.</p>
     pub version_qualifier: std::option::Option<std::string::String>,
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListSimulationApplications</code> again and assign that
-    /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
-    /// results, the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>When this parameter is used, <code>ListSimulationApplications</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>ListSimulationApplications</code> request with the returned
-    /// <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is
-    /// not used, then <code>ListSimulationApplications</code> returns up to 100 results and a
-    /// <code>nextToken</code> value if applicable. </p>
+    /// <p>When this parameter is used, <code>ListSimulationApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
     pub max_results: std::option::Option<i32>,
     /// <p>Optional list of filters to limit results.</p>
-    /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
-    /// complete value of the filtered item. You can use up to three filters.</p>
+    /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListSimulationApplicationsInput {
@@ -11407,27 +10942,16 @@ impl ListSimulationApplicationsInput {
     pub fn version_qualifier(&self) -> std::option::Option<&str> {
         self.version_qualifier.as_deref()
     }
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListSimulationApplications</code> again and assign that
-    /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
-    /// results, the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>When this parameter is used, <code>ListSimulationApplications</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>ListSimulationApplications</code> request with the returned
-    /// <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is
-    /// not used, then <code>ListSimulationApplications</code> returns up to 100 results and a
-    /// <code>nextToken</code> value if applicable. </p>
+    /// <p>When this parameter is used, <code>ListSimulationApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>Optional list of filters to limit results.</p>
-    /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
-    /// complete value of the filtered item. You can use up to three filters.</p>
+    /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
@@ -11447,51 +10971,25 @@ impl std::fmt::Debug for ListSimulationApplicationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRobotsInput {
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListRobots</code> again and assign that token to the
-    /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-    /// previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>When this parameter is used, <code>ListRobots</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>ListRobots</code> request with the returned <code>nextToken</code> value.
-    /// This value can be between 1 and 200. If this parameter is not used, then
-    /// <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if
-    /// applicable. </p>
+    /// <p>When this parameter is used, <code>ListRobots</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobots</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
     pub max_results: std::option::Option<i32>,
     /// <p>Optional filters to limit results.</p>
-    /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When
-    /// filtering, you must use the complete value of the filtered item. You can use up to three
-    /// filters, but they must be for the same named item. For example, if you are looking for
-    /// items with the status <code>Registered</code> or the status <code>Available</code>.</p>
+    /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Registered</code> or the status <code>Available</code>.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListRobotsInput {
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListRobots</code> again and assign that token to the
-    /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-    /// previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>When this parameter is used, <code>ListRobots</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>ListRobots</code> request with the returned <code>nextToken</code> value.
-    /// This value can be between 1 and 200. If this parameter is not used, then
-    /// <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if
-    /// applicable. </p>
+    /// <p>When this parameter is used, <code>ListRobots</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobots</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>Optional filters to limit results.</p>
-    /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When
-    /// filtering, you must use the complete value of the filtered item. You can use up to three
-    /// filters, but they must be for the same named item. For example, if you are looking for
-    /// items with the status <code>Registered</code> or the status <code>Available</code>.</p>
+    /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Registered</code> or the status <code>Available</code>.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
@@ -11512,23 +11010,12 @@ impl std::fmt::Debug for ListRobotsInput {
 pub struct ListRobotApplicationsInput {
     /// <p>The version qualifier of the robot application.</p>
     pub version_qualifier: std::option::Option<std::string::String>,
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListRobotApplications</code> again and assign that token to
-    /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-    /// the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>When this parameter is used, <code>ListRobotApplications</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>ListRobotApplications</code> request with the returned <code>nextToken</code>
-    /// value. This value can be between 1 and 100. If this parameter is not used, then
-    /// <code>ListRobotApplications</code> returns up to 100 results and a
-    /// <code>nextToken</code> value if applicable. </p>
+    /// <p>When this parameter is used, <code>ListRobotApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobotApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListRobotApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
     pub max_results: std::option::Option<i32>,
     /// <p>Optional filters to limit results.</p>
-    /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
-    /// complete value of the filtered item. You can use up to three filters.</p>
+    /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListRobotApplicationsInput {
@@ -11536,27 +11023,16 @@ impl ListRobotApplicationsInput {
     pub fn version_qualifier(&self) -> std::option::Option<&str> {
         self.version_qualifier.as_deref()
     }
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListRobotApplications</code> again and assign that token to
-    /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-    /// the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>When this parameter is used, <code>ListRobotApplications</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>ListRobotApplications</code> request with the returned <code>nextToken</code>
-    /// value. This value can be between 1 and 100. If this parameter is not used, then
-    /// <code>ListRobotApplications</code> returns up to 100 results and a
-    /// <code>nextToken</code> value if applicable. </p>
+    /// <p>When this parameter is used, <code>ListRobotApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobotApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListRobotApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>Optional filters to limit results.</p>
-    /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
-    /// complete value of the filtered item. You can use up to three filters.</p>
+    /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
@@ -11576,55 +11052,29 @@ impl std::fmt::Debug for ListRobotApplicationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFleetsInput {
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListFleets</code> again and assign that token to the
-    /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-    /// previous response object's NextToken parameter is set to null. </p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-    /// the next items in a list and not for other programmatic purposes.</p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p> <note>
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>When this parameter is used, <code>ListFleets</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>ListFleets</code> request with the returned <code>nextToken</code> value.
-    /// This value can be between 1 and 200. If this parameter is not used, then
-    /// <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if
-    /// applicable. </p>
+    /// <p>When this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
     pub max_results: std::option::Option<i32>,
     /// <p>Optional filters to limit results.</p>
-    /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
-    /// complete value of the filtered item. You can use up to three filters.</p>
+    /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListFleetsInput {
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListFleets</code> again and assign that token to the
-    /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-    /// previous response object's NextToken parameter is set to null. </p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-    /// the next items in a list and not for other programmatic purposes.</p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p> <note>
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>When this parameter is used, <code>ListFleets</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>ListFleets</code> request with the returned <code>nextToken</code> value.
-    /// This value can be between 1 and 200. If this parameter is not used, then
-    /// <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if
-    /// applicable. </p>
+    /// <p>When this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>Optional filters to limit results.</p>
-    /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
-    /// complete value of the filtered item. You can use up to three filters.</p>
+    /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
@@ -11644,50 +11094,24 @@ impl std::fmt::Debug for ListFleetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeploymentJobsInput {
     /// <p>Optional filters to limit results.</p>
-    /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When
-    /// filtering, you must use the complete value of the filtered item. You can use up to three
-    /// filters, but they must be for the same named item. For example, if you are looking for
-    /// items with the status <code>InProgress</code> or the status <code>Pending</code>.</p>
+    /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>InProgress</code> or the status <code>Pending</code>.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListDeploymentJobs</code> again and assign that token to
-    /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-    /// the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>When this parameter is used, <code>ListDeploymentJobs</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code>
-    /// value. This value can be between 1 and 200. If this parameter is not used, then
-    /// <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code>
-    /// value if applicable. </p>
+    /// <p>When this parameter is used, <code>ListDeploymentJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListDeploymentJobsInput {
     /// <p>Optional filters to limit results.</p>
-    /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When
-    /// filtering, you must use the complete value of the filtered item. You can use up to three
-    /// filters, but they must be for the same named item. For example, if you are looking for
-    /// items with the status <code>InProgress</code> or the status <code>Pending</code>.</p>
+    /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>InProgress</code> or the status <code>Pending</code>.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListDeploymentJobs</code> again and assign that token to
-    /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-    /// the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>When this parameter is used, <code>ListDeploymentJobs</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code>
-    /// value. This value can be between 1 and 200. If this parameter is not used, then
-    /// <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code>
-    /// value if applicable. </p>
+    /// <p>When this parameter is used, <code>ListDeploymentJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -12126,8 +11550,7 @@ impl std::fmt::Debug for DeleteFleetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorldTemplateInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The name of the world template.</p>
     pub name: std::option::Option<std::string::String>,
@@ -12135,14 +11558,12 @@ pub struct CreateWorldTemplateInput {
     pub template_body: std::option::Option<std::string::String>,
     /// <p>The location of the world template.</p>
     pub template_location: std::option::Option<crate::model::TemplateLocation>,
-    /// <p>A map that contains tag keys and tag values that are attached to the world
-    /// template.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateWorldTemplateInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -12158,8 +11579,7 @@ impl CreateWorldTemplateInput {
     pub fn template_location(&self) -> std::option::Option<&crate::model::TemplateLocation> {
         self.template_location.as_ref()
     }
-    /// <p>A map that contains tag keys and tag values that are attached to the world
-    /// template.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -12183,31 +11603,25 @@ impl std::fmt::Debug for CreateWorldTemplateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorldGenerationJobInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to
-    /// create.</p>
+    /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to create.</p>
     pub template: std::option::Option<std::string::String>,
     /// <p>Information about the world count.</p>
     pub world_count: std::option::Option<crate::model::WorldCount>,
-    /// <p>A map that contains tag keys and tag values that are attached to the world generator
-    /// job.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A map that contains tag keys and tag values that are attached to the generated
-    /// worlds.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
     pub world_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateWorldGenerationJobInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to
-    /// create.</p>
+    /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to create.</p>
     pub fn template(&self) -> std::option::Option<&str> {
         self.template.as_deref()
     }
@@ -12215,16 +11629,14 @@ impl CreateWorldGenerationJobInput {
     pub fn world_count(&self) -> std::option::Option<&crate::model::WorldCount> {
         self.world_count.as_ref()
     }
-    /// <p>A map that contains tag keys and tag values that are attached to the world generator
-    /// job.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>A map that contains tag keys and tag values that are attached to the generated
-    /// worlds.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
     pub fn world_tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -12248,24 +11660,20 @@ impl std::fmt::Debug for CreateWorldGenerationJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorldExportJobInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to export.</p>
     pub worlds: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The output location.</p>
     pub output_location: std::option::Option<crate::model::OutputLocation>,
-    /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put
-    /// the export.</p>
+    /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
     pub iam_role: std::option::Option<std::string::String>,
-    /// <p>A map that contains tag keys and tag values that are attached to the world export
-    /// job.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateWorldExportJobInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -12277,13 +11685,11 @@ impl CreateWorldExportJobInput {
     pub fn output_location(&self) -> std::option::Option<&crate::model::OutputLocation> {
         self.output_location.as_ref()
     }
-    /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put
-    /// the export.</p>
+    /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
     pub fn iam_role(&self) -> std::option::Option<&str> {
         self.iam_role.as_deref()
     }
-    /// <p>A map that contains tag keys and tag values that are attached to the world export
-    /// job.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -12307,29 +11713,27 @@ impl std::fmt::Debug for CreateWorldExportJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSimulationJobInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Location for output files generated by the simulation job.</p>
     pub output_location: std::option::Option<crate::model::OutputLocation>,
     /// <p>The logging configuration.</p>
     pub logging_config: std::option::Option<crate::model::LoggingConfig>,
-    /// <p>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When
-    /// <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will
-    /// transition to <code>Completed</code>.</p>
+    /// <p>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will transition to <code>Completed</code>.</p>
     pub max_job_duration_in_seconds: i64,
-    /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are
-    /// specified in its associated policies on your behalf. This is how credentials are passed in
-    /// to your simulation job. </p>
+    /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
     pub iam_role: std::option::Option<std::string::String>,
     /// <p>The failure behavior the simulation job.</p>
     /// <dl>
-    /// <dt>Continue</dt>
+    /// <dt>
+    /// Continue
+    /// </dt>
     /// <dd>
-    /// <p>Leaves the instance running for its maximum timeout duration after a
-    /// <code>4XX</code> error code.</p>
+    /// <p>Leaves the instance running for its maximum timeout duration after a <code>4XX</code> error code.</p>
     /// </dd>
-    /// <dt>Fail</dt>
+    /// <dt>
+    /// Fail
+    /// </dt>
     /// <dd>
     /// <p>Stop the simulation job and terminate the instance.</p>
     /// </dd>
@@ -12341,27 +11745,20 @@ pub struct CreateSimulationJobInput {
     /// <p>The simulation application to use in the simulation job.</p>
     pub simulation_applications:
         std::option::Option<std::vec::Vec<crate::model::SimulationApplicationConfig>>,
-    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files
-    /// are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p>
-    /// <note>
-    /// <p>There is a limit of 100 files and a combined size of 25GB for all
-    /// <code>DataSourceConfig</code> objects. </p>
+    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
+    /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
     /// </note>
     pub data_sources: std::option::Option<std::vec::Vec<crate::model::DataSourceConfig>>,
-    /// <p>A map that contains tag keys and tag values that are attached to the simulation
-    /// job.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the simulation job.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>If your simulation job accesses resources in a VPC, you provide this parameter
-    /// identifying the list of security group IDs and subnet IDs. These must belong to the same
-    /// VPC. You must provide at least one security group and one subnet ID. </p>
+    /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and one subnet ID. </p>
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
     /// <p>Compute information for the simulation job.</p>
     pub compute: std::option::Option<crate::model::Compute>,
 }
 impl CreateSimulationJobInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -12373,26 +11770,25 @@ impl CreateSimulationJobInput {
     pub fn logging_config(&self) -> std::option::Option<&crate::model::LoggingConfig> {
         self.logging_config.as_ref()
     }
-    /// <p>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When
-    /// <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will
-    /// transition to <code>Completed</code>.</p>
+    /// <p>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will transition to <code>Completed</code>.</p>
     pub fn max_job_duration_in_seconds(&self) -> i64 {
         self.max_job_duration_in_seconds
     }
-    /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are
-    /// specified in its associated policies on your behalf. This is how credentials are passed in
-    /// to your simulation job. </p>
+    /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
     pub fn iam_role(&self) -> std::option::Option<&str> {
         self.iam_role.as_deref()
     }
     /// <p>The failure behavior the simulation job.</p>
     /// <dl>
-    /// <dt>Continue</dt>
+    /// <dt>
+    /// Continue
+    /// </dt>
     /// <dd>
-    /// <p>Leaves the instance running for its maximum timeout duration after a
-    /// <code>4XX</code> error code.</p>
+    /// <p>Leaves the instance running for its maximum timeout duration after a <code>4XX</code> error code.</p>
     /// </dd>
-    /// <dt>Fail</dt>
+    /// <dt>
+    /// Fail
+    /// </dt>
     /// <dd>
     /// <p>Stop the simulation job and terminate the instance.</p>
     /// </dd>
@@ -12412,26 +11808,20 @@ impl CreateSimulationJobInput {
     ) -> std::option::Option<&[crate::model::SimulationApplicationConfig]> {
         self.simulation_applications.as_deref()
     }
-    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files
-    /// are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p>
-    /// <note>
-    /// <p>There is a limit of 100 files and a combined size of 25GB for all
-    /// <code>DataSourceConfig</code> objects. </p>
+    /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
+    /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
     /// </note>
     pub fn data_sources(&self) -> std::option::Option<&[crate::model::DataSourceConfig]> {
         self.data_sources.as_deref()
     }
-    /// <p>A map that contains tag keys and tag values that are attached to the simulation
-    /// job.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the simulation job.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>If your simulation job accesses resources in a VPC, you provide this parameter
-    /// identifying the list of security group IDs and subnet IDs. These must belong to the same
-    /// VPC. You must provide at least one security group and one subnet ID. </p>
+    /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and one subnet ID. </p>
     pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
         self.vpc_config.as_ref()
     }
@@ -12468,14 +11858,11 @@ impl std::fmt::Debug for CreateSimulationJobInput {
 pub struct CreateSimulationApplicationVersionInput {
     /// <p>The application information for the simulation application.</p>
     pub application: std::option::Option<std::string::String>,
-    /// <p>The current revision id for the simulation application. If you provide a value and it
-    /// matches the latest revision ID, a new version will be created.</p>
+    /// <p>The current revision id for the simulation application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
     pub current_revision_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the
-    /// simulation application.</p>
+    /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the simulation application.</p>
     pub s3_etags: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation
-    /// application.</p>
+    /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation application.</p>
     pub image_digest: std::option::Option<std::string::String>,
 }
 impl CreateSimulationApplicationVersionInput {
@@ -12483,18 +11870,15 @@ impl CreateSimulationApplicationVersionInput {
     pub fn application(&self) -> std::option::Option<&str> {
         self.application.as_deref()
     }
-    /// <p>The current revision id for the simulation application. If you provide a value and it
-    /// matches the latest revision ID, a new version will be created.</p>
+    /// <p>The current revision id for the simulation application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
     pub fn current_revision_id(&self) -> std::option::Option<&str> {
         self.current_revision_id.as_deref()
     }
-    /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the
-    /// simulation application.</p>
+    /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the simulation application.</p>
     pub fn s3_etags(&self) -> std::option::Option<&[std::string::String]> {
         self.s3_etags.as_deref()
     }
-    /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation
-    /// application.</p>
+    /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation application.</p>
     pub fn image_digest(&self) -> std::option::Option<&str> {
         self.image_digest.as_deref()
     }
@@ -12524,12 +11908,10 @@ pub struct CreateSimulationApplicationInput {
     pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
     /// <p>The rendering engine for the simulation application.</p>
     pub rendering_engine: std::option::Option<crate::model::RenderingEngine>,
-    /// <p>A map that contains tag keys and tag values that are attached to the simulation
-    /// application.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the simulation application.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The object that contains the Docker image URI used to create your simulation
-    /// application.</p>
+    /// <p>The object that contains the Docker image URI used to create your simulation application.</p>
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl CreateSimulationApplicationInput {
@@ -12555,16 +11937,14 @@ impl CreateSimulationApplicationInput {
     pub fn rendering_engine(&self) -> std::option::Option<&crate::model::RenderingEngine> {
         self.rendering_engine.as_ref()
     }
-    /// <p>A map that contains tag keys and tag values that are attached to the simulation
-    /// application.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the simulation application.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>The object that contains the Docker image URI used to create your simulation
-    /// application.</p>
+    /// <p>The object that contains the Docker image URI used to create your simulation application.</p>
     pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
         self.environment.as_ref()
     }
@@ -12589,11 +11969,9 @@ impl std::fmt::Debug for CreateSimulationApplicationInput {
 pub struct CreateRobotApplicationVersionInput {
     /// <p>The application information for the robot application.</p>
     pub application: std::option::Option<std::string::String>,
-    /// <p>The current revision id for the robot application. If you provide a value and it matches
-    /// the latest revision ID, a new version will be created.</p>
+    /// <p>The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
     pub current_revision_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot
-    /// application.</p>
+    /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot application.</p>
     pub s3_etags: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
     pub image_digest: std::option::Option<std::string::String>,
@@ -12603,13 +11981,11 @@ impl CreateRobotApplicationVersionInput {
     pub fn application(&self) -> std::option::Option<&str> {
         self.application.as_deref()
     }
-    /// <p>The current revision id for the robot application. If you provide a value and it matches
-    /// the latest revision ID, a new version will be created.</p>
+    /// <p>The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
     pub fn current_revision_id(&self) -> std::option::Option<&str> {
         self.current_revision_id.as_deref()
     }
-    /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot
-    /// application.</p>
+    /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot application.</p>
     pub fn s3_etags(&self) -> std::option::Option<&[std::string::String]> {
         self.s3_etags.as_deref()
     }
@@ -12639,12 +12015,10 @@ pub struct CreateRobotApplicationInput {
     pub sources: std::option::Option<std::vec::Vec<crate::model::SourceConfig>>,
     /// <p>The robot software suite (ROS distribuition) used by the robot application.</p>
     pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
-    /// <p>A map that contains tag keys and tag values that are attached to the robot
-    /// application.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the robot application.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The object that contains that URI of the Docker image that you use for your robot
-    /// application.</p>
+    /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl CreateRobotApplicationInput {
@@ -12660,16 +12034,14 @@ impl CreateRobotApplicationInput {
     pub fn robot_software_suite(&self) -> std::option::Option<&crate::model::RobotSoftwareSuite> {
         self.robot_software_suite.as_ref()
     }
-    /// <p>A map that contains tag keys and tag values that are attached to the robot
-    /// application.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the robot application.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>The object that contains that URI of the Docker image that you use for your robot
-    /// application.</p>
+    /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
     pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
         self.environment.as_ref()
     }
@@ -12770,16 +12142,14 @@ impl std::fmt::Debug for CreateFleetInput {
 pub struct CreateDeploymentJobInput {
     /// <p>The requested deployment configuration.</p>
     pub deployment_config: std::option::Option<crate::model::DeploymentConfig>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the fleet to deploy.</p>
     pub fleet: std::option::Option<std::string::String>,
     /// <p>The deployment application configuration.</p>
     pub deployment_application_configs:
         std::option::Option<std::vec::Vec<crate::model::DeploymentApplicationConfig>>,
-    /// <p>A map that contains tag keys and tag values that are attached to the deployment
-    /// job.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the deployment job.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -12788,8 +12158,7 @@ impl CreateDeploymentJobInput {
     pub fn deployment_config(&self) -> std::option::Option<&crate::model::DeploymentConfig> {
         self.deployment_config.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -12803,8 +12172,7 @@ impl CreateDeploymentJobInput {
     ) -> std::option::Option<&[crate::model::DeploymentApplicationConfig]> {
         self.deployment_application_configs.as_deref()
     }
-    /// <p>A map that contains tag keys and tag values that are attached to the deployment
-    /// job.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the deployment job.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>

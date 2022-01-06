@@ -1494,6 +1494,13 @@ pub fn deser_operation_crate_operation_get_device_position(
             Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
+                    "Accuracy" => {
+                        builder = builder.set_accuracy(
+                            crate::json_deser::deser_structure_crate_model_positional_accuracy(
+                                tokens,
+                            )?,
+                        );
+                    }
                     "DeviceId" => {
                         builder = builder.set_device_id(
                             aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -1506,6 +1513,13 @@ pub fn deser_operation_crate_operation_get_device_position(
                     "Position" => {
                         builder = builder.set_position(
                             crate::json_deser::deser_list_com_amazonaws_location_position(tokens)?,
+                        );
+                    }
+                    "PositionProperties" => {
+                        builder = builder.set_position_properties(
+                            crate::json_deser::deser_map_com_amazonaws_location_property_map(
+                                tokens,
+                            )?,
                         );
                     }
                     "ReceivedTime" => {
@@ -2178,6 +2192,52 @@ pub fn deser_operation_crate_operation_search_place_index_for_position(
                     "Summary" => {
                         builder = builder.set_summary(
                             crate::json_deser::deser_structure_crate_model_search_place_index_for_position_summary(tokens)?
+                        );
+                    }
+                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(aws_smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_search_place_index_for_suggestions(
+    value: &[u8],
+    mut builder: crate::output::search_place_index_for_suggestions_output::Builder,
+) -> Result<
+    crate::output::search_place_index_for_suggestions_output::Builder,
+    aws_smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        aws_smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(value))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "Results" => {
+                        builder = builder.set_results(
+                            crate::json_deser::deser_list_com_amazonaws_location_search_for_suggestions_result_list(tokens)?
+                        );
+                    }
+                    "Summary" => {
+                        builder = builder.set_summary(
+                            crate::json_deser::deser_structure_crate_model_search_place_index_for_suggestions_summary(tokens)?
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -3166,6 +3226,51 @@ where
     }
 }
 
+pub fn deser_structure_crate_model_positional_accuracy<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::PositionalAccuracy>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::PositionalAccuracy::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Horizontal" => {
+                                builder = builder.set_horizontal(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_f64()),
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
 #[allow(clippy::type_complexity, non_snake_case)]
 pub fn deser_list_com_amazonaws_location_position<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
@@ -3200,6 +3305,52 @@ where
         }
         _ => Err(aws_smithy_json::deserialize::Error::custom(
             "expected start array or null",
+        )),
+    }
+}
+
+#[allow(clippy::type_complexity, non_snake_case)]
+pub fn deser_map_com_amazonaws_location_property_map<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            let mut map = std::collections::HashMap::new();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        let key = key.to_unescaped().map(|u| u.into_owned())?;
+                        let value = aws_smithy_json::deserialize::token::expect_string_or_null(
+                            tokens.next(),
+                        )?
+                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                        .transpose()?;
+                        if let Some(value) = value {
+                            map.insert(key, value);
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(map))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
         )),
     }
 }
@@ -3679,6 +3830,138 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
+pub fn deser_list_com_amazonaws_location_search_for_suggestions_result_list<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<std::vec::Vec<crate::model::SearchForSuggestionsResult>>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartArray { .. }) => {
+            let mut items = Vec::new();
+            loop {
+                match tokens.peek() {
+                    Some(Ok(aws_smithy_json::deserialize::Token::EndArray { .. })) => {
+                        tokens.next().transpose().unwrap();
+                        break;
+                    }
+                    _ => {
+                        let value =
+                            crate::json_deser::deser_structure_crate_model_search_for_suggestions_result(tokens)?
+                        ;
+                        if let Some(value) = value {
+                            items.push(value);
+                        }
+                    }
+                }
+            }
+            Ok(Some(items))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start array or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_search_place_index_for_suggestions_summary<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::SearchPlaceIndexForSuggestionsSummary>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::SearchPlaceIndexForSuggestionsSummary::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Text" => {
+                                builder = builder.set_text(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "BiasPosition" => {
+                                builder = builder.set_bias_position(
+                                    crate::json_deser::deser_list_com_amazonaws_location_position(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            "FilterBBox" => {
+                                builder = builder.set_filter_b_box(
+                                    crate::json_deser::deser_list_com_amazonaws_location_bounding_box(tokens)?
+                                );
+                            }
+                            "FilterCountries" => {
+                                builder = builder.set_filter_countries(
+                                    crate::json_deser::deser_list_com_amazonaws_location_country_code_list(tokens)?
+                                );
+                            }
+                            "MaxResults" => {
+                                builder = builder.set_max_results(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "DataSource" => {
+                                builder = builder.set_data_source(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "Language" => {
+                                builder = builder.set_language(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+#[allow(clippy::type_complexity, non_snake_case)]
 pub fn deser_list_com_amazonaws_location_search_for_text_result_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
@@ -4080,6 +4363,16 @@ where
                                     crate::json_deser::deser_list_com_amazonaws_location_position(
                                         tokens,
                                     )?,
+                                );
+                            }
+                            "Accuracy" => {
+                                builder = builder.set_accuracy(
+                                    crate::json_deser::deser_structure_crate_model_positional_accuracy(tokens)?
+                                );
+                            }
+                            "PositionProperties" => {
+                                builder = builder.set_position_properties(
+                                    crate::json_deser::deser_map_com_amazonaws_location_property_map(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -4527,6 +4820,16 @@ where
                                     crate::json_deser::deser_list_com_amazonaws_location_position(
                                         tokens,
                                     )?,
+                                );
+                            }
+                            "Accuracy" => {
+                                builder = builder.set_accuracy(
+                                    crate::json_deser::deser_structure_crate_model_positional_accuracy(tokens)?
+                                );
+                            }
+                            "PositionProperties" => {
+                                builder = builder.set_position_properties(
+                                    crate::json_deser::deser_map_com_amazonaws_location_property_map(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -5140,9 +5443,9 @@ where
     }
 }
 
-pub fn deser_structure_crate_model_search_for_text_result<'a, I>(
+pub fn deser_structure_crate_model_search_for_suggestions_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
-) -> Result<Option<crate::model::SearchForTextResult>, aws_smithy_json::deserialize::Error>
+) -> Result<Option<crate::model::SearchForSuggestionsResult>, aws_smithy_json::deserialize::Error>
 where
     I: Iterator<
         Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
@@ -5152,31 +5455,19 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::SearchForTextResult::builder();
+            let mut builder = crate::model::SearchForSuggestionsResult::builder();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         match key.to_unescaped()?.as_ref() {
-                            "Place" => {
-                                builder = builder.set_place(
-                                    crate::json_deser::deser_structure_crate_model_place(tokens)?,
-                                );
-                            }
-                            "Distance" => {
-                                builder = builder.set_distance(
-                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                            "Text" => {
+                                builder = builder.set_text(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
-                                    .map(|v| v.to_f64()),
-                                );
-                            }
-                            "Relevance" => {
-                                builder = builder.set_relevance(
-                                    aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|v| v.to_f64()),
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -5233,6 +5524,64 @@ where
         }
         _ => Err(aws_smithy_json::deserialize::Error::custom(
             "expected start array or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_search_for_text_result<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::SearchForTextResult>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::SearchForTextResult::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Place" => {
+                                builder = builder.set_place(
+                                    crate::json_deser::deser_structure_crate_model_place(tokens)?,
+                                );
+                            }
+                            "Distance" => {
+                                builder = builder.set_distance(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_f64()),
+                                );
+                            }
+                            "Relevance" => {
+                                builder = builder.set_relevance(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_f64()),
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
         )),
     }
 }

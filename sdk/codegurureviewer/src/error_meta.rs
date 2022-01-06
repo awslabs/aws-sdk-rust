@@ -5,16 +5,13 @@
 pub enum Error {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this request. </p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource specified in the request was not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The resource specified in the request was not found.
-    /// </p>
+    /// <p> The resource specified in the request was not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),

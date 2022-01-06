@@ -12,8 +12,7 @@ pub struct CancelJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelJobErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
-    /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
@@ -59,8 +58,6 @@ impl CancelJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -113,8 +110,7 @@ pub struct CreateComputeEnvironmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateComputeEnvironmentErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
-    /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
@@ -160,8 +156,6 @@ impl CreateComputeEnvironmentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -220,8 +214,7 @@ pub struct CreateJobQueueError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateJobQueueErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
-    /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
@@ -267,8 +260,6 @@ impl CreateJobQueueError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -321,8 +312,7 @@ pub struct CreateSchedulingPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSchedulingPolicyErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
-    /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
@@ -368,8 +358,6 @@ impl CreateSchedulingPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -428,8 +416,7 @@ pub struct DeleteComputeEnvironmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteComputeEnvironmentErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
-    /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
@@ -475,8 +462,6 @@ impl DeleteComputeEnvironmentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -535,8 +520,7 @@ pub struct DeleteJobQueueError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteJobQueueErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
-    /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
@@ -582,8 +566,6 @@ impl DeleteJobQueueError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -636,8 +618,7 @@ pub struct DeleteSchedulingPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSchedulingPolicyErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
-    /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
@@ -683,8 +664,6 @@ impl DeleteSchedulingPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -743,8 +722,7 @@ pub struct DeregisterJobDefinitionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterJobDefinitionErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
-    /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
@@ -790,8 +768,6 @@ impl DeregisterJobDefinitionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -850,8 +826,7 @@ pub struct DescribeComputeEnvironmentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeComputeEnvironmentsErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
-    /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
@@ -897,8 +872,6 @@ impl DescribeComputeEnvironmentsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -957,8 +930,7 @@ pub struct DescribeJobDefinitionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeJobDefinitionsErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
-    /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
@@ -1004,8 +976,6 @@ impl DescribeJobDefinitionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1064,8 +1034,7 @@ pub struct DescribeJobQueuesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeJobQueuesErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
-    /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
@@ -1111,8 +1080,6 @@ impl DescribeJobQueuesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1165,8 +1132,7 @@ pub struct DescribeJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeJobsErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
-    /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
@@ -1212,8 +1178,6 @@ impl DescribeJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1266,8 +1230,7 @@ pub struct DescribeSchedulingPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSchedulingPoliciesErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
-    /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
@@ -1313,8 +1276,6 @@ impl DescribeSchedulingPoliciesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1373,8 +1334,7 @@ pub struct ListJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListJobsErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
-    /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
@@ -1420,8 +1380,6 @@ impl ListJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1474,8 +1432,7 @@ pub struct ListSchedulingPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSchedulingPoliciesErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
-    /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
@@ -1521,8 +1478,6 @@ impl ListSchedulingPoliciesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1581,8 +1536,7 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
-    /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
@@ -1628,8 +1582,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1682,8 +1634,7 @@ pub struct RegisterJobDefinitionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterJobDefinitionErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
-    /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
@@ -1729,8 +1680,6 @@ impl RegisterJobDefinitionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1789,8 +1738,7 @@ pub struct SubmitJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SubmitJobErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
-    /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
@@ -1836,8 +1784,6 @@ impl SubmitJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1890,8 +1836,7 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
-    /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
@@ -1937,8 +1882,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1991,8 +1934,7 @@ pub struct TerminateJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TerminateJobErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
-    /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
@@ -2038,8 +1980,6 @@ impl TerminateJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2092,8 +2032,7 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
-    /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
@@ -2139,8 +2078,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2193,8 +2130,7 @@ pub struct UpdateComputeEnvironmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateComputeEnvironmentErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
-    /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
@@ -2240,8 +2176,6 @@ impl UpdateComputeEnvironmentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2300,8 +2234,7 @@ pub struct UpdateJobQueueError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateJobQueueErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
-    /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
@@ -2347,8 +2280,6 @@ impl UpdateJobQueueError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2401,8 +2332,7 @@ pub struct UpdateSchedulingPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSchedulingPolicyErrorKind {
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
-    /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
@@ -2448,8 +2378,6 @@ impl UpdateSchedulingPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2559,8 +2487,7 @@ impl ServerException {
     }
 }
 
-/// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
-/// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
+/// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClientException {

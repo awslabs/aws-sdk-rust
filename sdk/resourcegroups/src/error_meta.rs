@@ -13,11 +13,9 @@ pub enum Error {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>One or more of the specified resources don't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The request was rejected because it doesn't have valid credentials for the target
-    /// resource.</p>
+    /// <p>The request was rejected because it doesn't have valid credentials for the target resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

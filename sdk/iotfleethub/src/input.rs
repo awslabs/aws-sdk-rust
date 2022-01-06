@@ -41,31 +41,25 @@ pub mod create_application_input {
             self.application_description = input;
             self
         }
-        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-        /// Don't reuse this client token if a new idempotent request is required.</p>
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-        /// Don't reuse this client token if a new idempotent request is required.</p>
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
-        /// <note>
-        /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i>
-        /// </code>.</p>
+        /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p> <note>
+        /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p>
         /// </note>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
-        /// <note>
-        /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i>
-        /// </code>.</p>
+        /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p> <note>
+        /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p>
         /// </note>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
@@ -116,7 +110,7 @@ pub mod create_application_input {
 #[doc(hidden)]
 pub type CreateApplicationInputOperationOutputAlias = crate::operation::CreateApplication;
 #[doc(hidden)]
-pub type CreateApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateApplicationInput {
     /// Consumes the builder and constructs an Operation<[`CreateApplication`](crate::operation::CreateApplication)>
     #[allow(clippy::let_and_return)]
@@ -127,7 +121,7 @@ impl CreateApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -210,7 +204,7 @@ impl CreateApplicationInput {
             "CreateApplication",
             "iotfleethub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -256,14 +250,12 @@ pub mod delete_application_input {
             self.application_id = input;
             self
         }
-        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-        /// Don't reuse this client token if a new idempotent request is required.</p>
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-        /// Don't reuse this client token if a new idempotent request is required.</p>
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -285,7 +277,7 @@ pub mod delete_application_input {
 #[doc(hidden)]
 pub type DeleteApplicationInputOperationOutputAlias = crate::operation::DeleteApplication;
 #[doc(hidden)]
-pub type DeleteApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApplication`](crate::operation::DeleteApplication)>
     #[allow(clippy::let_and_return)]
@@ -296,7 +288,7 @@ impl DeleteApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -404,7 +396,7 @@ impl DeleteApplicationInput {
             "DeleteApplication",
             "iotfleethub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -457,7 +449,7 @@ pub mod describe_application_input {
 #[doc(hidden)]
 pub type DescribeApplicationInputOperationOutputAlias = crate::operation::DescribeApplication;
 #[doc(hidden)]
-pub type DescribeApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeApplication`](crate::operation::DescribeApplication)>
     #[allow(clippy::let_and_return)]
@@ -468,7 +460,7 @@ impl DescribeApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -562,7 +554,7 @@ impl DescribeApplicationInput {
             "DescribeApplication",
             "iotfleethub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -612,7 +604,7 @@ pub mod list_applications_input {
 #[doc(hidden)]
 pub type ListApplicationsInputOperationOutputAlias = crate::operation::ListApplications;
 #[doc(hidden)]
-pub type ListApplicationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListApplicationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListApplicationsInput {
     /// Consumes the builder and constructs an Operation<[`ListApplications`](crate::operation::ListApplications)>
     #[allow(clippy::let_and_return)]
@@ -623,7 +615,7 @@ impl ListApplicationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListApplications,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -708,7 +700,7 @@ impl ListApplicationsInput {
             "ListApplications",
             "iotfleethub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -758,7 +750,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -769,7 +761,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -859,7 +851,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "iotfleethub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -938,7 +930,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -949,7 +941,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1044,7 +1036,7 @@ impl TagResourceInput {
             "TagResource",
             "iotfleethub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1123,7 +1115,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -1134,7 +1126,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1237,7 +1229,7 @@ impl UntagResourceInput {
             "UntagResource",
             "iotfleethub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1303,14 +1295,12 @@ pub mod update_application_input {
             self.application_description = input;
             self
         }
-        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-        /// Don't reuse this client token if a new idempotent request is required.</p>
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-        /// Don't reuse this client token if a new idempotent request is required.</p>
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1334,7 +1324,7 @@ pub mod update_application_input {
 #[doc(hidden)]
 pub type UpdateApplicationInputOperationOutputAlias = crate::operation::UpdateApplication;
 #[doc(hidden)]
-pub type UpdateApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateApplicationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApplication`](crate::operation::UpdateApplication)>
     #[allow(clippy::let_and_return)]
@@ -1345,7 +1335,7 @@ impl UpdateApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1448,7 +1438,7 @@ impl UpdateApplicationInput {
             "UpdateApplication",
             "iotfleethub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1481,8 +1471,7 @@ pub struct UpdateApplicationInput {
     pub application_name: std::option::Option<std::string::String>,
     /// <p>An optional description of the web application.</p>
     pub application_description: std::option::Option<std::string::String>,
-    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-    /// Don't reuse this client token if a new idempotent request is required.</p>
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateApplicationInput {
@@ -1498,8 +1487,7 @@ impl UpdateApplicationInput {
     pub fn application_description(&self) -> std::option::Option<&str> {
         self.application_description.as_deref()
     }
-    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-    /// Don't reuse this client token if a new idempotent request is required.</p>
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -1644,8 +1632,7 @@ impl std::fmt::Debug for DescribeApplicationInput {
 pub struct DeleteApplicationInput {
     /// <p>The unique Id of the web application.</p>
     pub application_id: std::option::Option<std::string::String>,
-    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-    /// Don't reuse this client token if a new idempotent request is required.</p>
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DeleteApplicationInput {
@@ -1653,8 +1640,7 @@ impl DeleteApplicationInput {
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-    /// Don't reuse this client token if a new idempotent request is required.</p>
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -1676,13 +1662,10 @@ pub struct CreateApplicationInput {
     pub application_name: std::option::Option<std::string::String>,
     /// <p>An optional description of the web application.</p>
     pub application_description: std::option::Option<std::string::String>,
-    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-    /// Don't reuse this client token if a new idempotent request is required.</p>
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
-    /// <note>
-    /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i>
-    /// </code>.</p>
+    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p> <note>
+    /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p>
     /// </note>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
@@ -1698,15 +1681,12 @@ impl CreateApplicationInput {
     pub fn application_description(&self) -> std::option::Option<&str> {
         self.application_description.as_deref()
     }
-    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-    /// Don't reuse this client token if a new idempotent request is required.</p>
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
-    /// <note>
-    /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i>
-    /// </code>.</p>
+    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p> <note>
+    /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p>
     /// </note>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()

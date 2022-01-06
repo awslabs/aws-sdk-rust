@@ -55,8 +55,6 @@ impl AddTagsToResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -153,8 +151,6 @@ impl ApplyPendingMaintenanceActionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -205,8 +201,7 @@ pub struct CancelReplicationTaskAssessmentRunError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelReplicationTaskAssessmentRunErrorKind {
-    /// <p>DMS was denied access to the endpoint. Check that the
-    /// role is correctly configured.</p>
+    /// <p>DMS was denied access to the endpoint. Check that the role is correctly configured.</p>
     AccessDeniedFault(crate::error::AccessDeniedFault),
     /// <p>The resource is in a state that prevents it from being used for database migration.</p>
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
@@ -262,8 +257,6 @@ impl CancelReplicationTaskAssessmentRunError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -334,8 +327,7 @@ pub struct CreateEndpointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateEndpointErrorKind {
-    /// <p>DMS was denied access to the endpoint. Check that the
-    /// role is correctly configured.</p>
+    /// <p>DMS was denied access to the endpoint. Check that the role is correctly configured.</p>
     AccessDeniedFault(crate::error::AccessDeniedFault),
     /// <p>The resource is in a state that prevents it from being used for database migration.</p>
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
@@ -396,8 +388,6 @@ impl CreateEndpointError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -560,8 +550,6 @@ impl CreateEventSubscriptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -684,8 +672,7 @@ pub struct CreateReplicationInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateReplicationInstanceErrorKind {
-    /// <p>DMS was denied access to the endpoint. Check that the
-    /// role is correctly configured.</p>
+    /// <p>DMS was denied access to the endpoint. Check that the role is correctly configured.</p>
     AccessDeniedFault(crate::error::AccessDeniedFault),
     /// <p>There are not enough resources allocated to the database migration.</p>
     InsufficientResourceCapacityFault(crate::error::InsufficientResourceCapacityFault),
@@ -761,8 +748,6 @@ impl CreateReplicationInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -889,8 +874,7 @@ pub struct CreateReplicationSubnetGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateReplicationSubnetGroupErrorKind {
-    /// <p>DMS was denied access to the endpoint. Check that the
-    /// role is correctly configured.</p>
+    /// <p>DMS was denied access to the endpoint. Check that the role is correctly configured.</p>
     AccessDeniedFault(crate::error::AccessDeniedFault),
     /// <p>The subnet provided is invalid.</p>
     InvalidSubnet(crate::error::InvalidSubnet),
@@ -956,8 +940,6 @@ impl CreateReplicationSubnetGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1054,8 +1036,7 @@ pub struct CreateReplicationTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateReplicationTaskErrorKind {
-    /// <p>DMS was denied access to the endpoint. Check that the
-    /// role is correctly configured.</p>
+    /// <p>DMS was denied access to the endpoint. Check that the role is correctly configured.</p>
     AccessDeniedFault(crate::error::AccessDeniedFault),
     /// <p>The resource is in a state that prevents it from being used for database migration.</p>
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
@@ -1113,8 +1094,6 @@ impl CreateReplicationTaskError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1251,8 +1230,6 @@ impl DeleteCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1311,8 +1288,7 @@ pub struct DeleteConnectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteConnectionErrorKind {
-    /// <p>DMS was denied access to the endpoint. Check that the
-    /// role is correctly configured.</p>
+    /// <p>DMS was denied access to the endpoint. Check that the role is correctly configured.</p>
     AccessDeniedFault(crate::error::AccessDeniedFault),
     /// <p>The resource is in a state that prevents it from being used for database migration.</p>
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
@@ -1361,8 +1337,6 @@ impl DeleteConnectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1472,8 +1446,6 @@ impl DeleteEndpointError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1578,8 +1550,6 @@ impl DeleteEventSubscriptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1684,8 +1654,6 @@ impl DeleteReplicationInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1792,8 +1760,6 @@ impl DeleteReplicationSubnetGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1900,8 +1866,6 @@ impl DeleteReplicationTaskError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1960,8 +1924,7 @@ pub struct DeleteReplicationTaskAssessmentRunError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteReplicationTaskAssessmentRunErrorKind {
-    /// <p>DMS was denied access to the endpoint. Check that the
-    /// role is correctly configured.</p>
+    /// <p>DMS was denied access to the endpoint. Check that the role is correctly configured.</p>
     AccessDeniedFault(crate::error::AccessDeniedFault),
     /// <p>The resource is in a state that prevents it from being used for database migration.</p>
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
@@ -2017,8 +1980,6 @@ impl DeleteReplicationTaskAssessmentRunError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2129,8 +2090,6 @@ impl DescribeAccountAttributesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2173,8 +2132,7 @@ pub struct DescribeApplicableIndividualAssessmentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeApplicableIndividualAssessmentsErrorKind {
-    /// <p>DMS was denied access to the endpoint. Check that the
-    /// role is correctly configured.</p>
+    /// <p>DMS was denied access to the endpoint. Check that the role is correctly configured.</p>
     AccessDeniedFault(crate::error::AccessDeniedFault),
     /// <p>The resource is in a state that prevents it from being used for database migration.</p>
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
@@ -2232,8 +2190,6 @@ impl DescribeApplicableIndividualAssessmentsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2351,8 +2307,6 @@ impl DescribeCertificatesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2446,8 +2400,6 @@ impl DescribeConnectionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2541,8 +2493,6 @@ impl DescribeEndpointsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2633,8 +2583,6 @@ impl DescribeEndpointSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2717,8 +2665,6 @@ impl DescribeEndpointTypesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2801,8 +2747,6 @@ impl DescribeEventCategoriesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2885,8 +2829,6 @@ impl DescribeEventsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2972,8 +2914,6 @@ impl DescribeEventSubscriptionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3067,8 +3007,6 @@ impl DescribeOrderableReplicationInstancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3161,8 +3099,6 @@ impl DescribePendingMaintenanceActionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3263,8 +3199,6 @@ impl DescribeRefreshSchemasStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3368,8 +3302,6 @@ impl DescribeReplicationInstancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3473,8 +3405,6 @@ impl DescribeReplicationInstanceTaskLogsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3587,8 +3517,6 @@ impl DescribeReplicationSubnetGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3687,8 +3615,6 @@ impl DescribeReplicationTaskAssessmentResultsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3791,8 +3717,6 @@ impl DescribeReplicationTaskAssessmentRunsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3899,8 +3823,6 @@ impl DescribeReplicationTaskIndividualAssessmentsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3998,8 +3920,6 @@ impl DescribeReplicationTasksError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4096,8 +4016,6 @@ impl DescribeSchemasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4202,8 +4120,6 @@ impl DescribeTableStatisticsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4311,8 +4227,6 @@ impl ImportCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4422,8 +4336,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4474,8 +4386,7 @@ pub struct ModifyEndpointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyEndpointErrorKind {
-    /// <p>DMS was denied access to the endpoint. Check that the
-    /// role is correctly configured.</p>
+    /// <p>DMS was denied access to the endpoint. Check that the role is correctly configured.</p>
     AccessDeniedFault(crate::error::AccessDeniedFault),
     /// <p>The resource is in a state that prevents it from being used for database migration.</p>
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
@@ -4530,8 +4441,6 @@ impl ModifyEndpointError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4678,8 +4587,6 @@ impl ModifyEventSubscriptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4794,8 +4701,7 @@ pub struct ModifyReplicationInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyReplicationInstanceErrorKind {
-    /// <p>DMS was denied access to the endpoint. Check that the
-    /// role is correctly configured.</p>
+    /// <p>DMS was denied access to the endpoint. Check that the role is correctly configured.</p>
     AccessDeniedFault(crate::error::AccessDeniedFault),
     /// <p>There are not enough resources allocated to the database migration.</p>
     InsufficientResourceCapacityFault(crate::error::InsufficientResourceCapacityFault),
@@ -4860,8 +4766,6 @@ impl ModifyReplicationInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4964,8 +4868,7 @@ pub struct ModifyReplicationSubnetGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyReplicationSubnetGroupErrorKind {
-    /// <p>DMS was denied access to the endpoint. Check that the
-    /// role is correctly configured.</p>
+    /// <p>DMS was denied access to the endpoint. Check that the role is correctly configured.</p>
     AccessDeniedFault(crate::error::AccessDeniedFault),
     /// <p>The subnet provided is invalid.</p>
     InvalidSubnet(crate::error::InvalidSubnet),
@@ -5029,8 +4932,6 @@ impl ModifyReplicationSubnetGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5177,8 +5078,6 @@ impl ModifyReplicationTaskError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5253,8 +5152,7 @@ pub struct MoveReplicationTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum MoveReplicationTaskErrorKind {
-    /// <p>DMS was denied access to the endpoint. Check that the
-    /// role is correctly configured.</p>
+    /// <p>DMS was denied access to the endpoint. Check that the role is correctly configured.</p>
     AccessDeniedFault(crate::error::AccessDeniedFault),
     /// <p>The resource is in a state that prevents it from being used for database migration.</p>
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
@@ -5309,8 +5207,6 @@ impl MoveReplicationTaskError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5439,8 +5335,6 @@ impl RebootReplicationInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5551,8 +5445,6 @@ impl RefreshSchemasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5673,8 +5565,6 @@ impl ReloadTablesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5773,8 +5663,6 @@ impl RemoveTagsFromResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5825,8 +5713,7 @@ pub struct StartReplicationTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartReplicationTaskErrorKind {
-    /// <p>DMS was denied access to the endpoint. Check that the
-    /// role is correctly configured.</p>
+    /// <p>DMS was denied access to the endpoint. Check that the role is correctly configured.</p>
     AccessDeniedFault(crate::error::AccessDeniedFault),
     /// <p>The resource is in a state that prevents it from being used for database migration.</p>
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
@@ -5875,8 +5762,6 @@ impl StartReplicationTaskError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5994,8 +5879,6 @@ impl StartReplicationTaskAssessmentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6056,8 +5939,7 @@ pub struct StartReplicationTaskAssessmentRunError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartReplicationTaskAssessmentRunErrorKind {
-    /// <p>DMS was denied access to the endpoint. Check that the
-    /// role is correctly configured.</p>
+    /// <p>DMS was denied access to the endpoint. Check that the role is correctly configured.</p>
     AccessDeniedFault(crate::error::AccessDeniedFault),
     /// <p>The resource is in a state that prevents it from being used for database migration.</p>
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
@@ -6079,8 +5961,7 @@ pub enum StartReplicationTaskAssessmentRunErrorKind {
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
     /// <p>Insufficient privileges are preventing access to an Amazon S3 object.</p>
     S3AccessDeniedFault(crate::error::S3AccessDeniedFault),
-    /// <p>A specified Amazon S3 bucket, bucket folder, or other object can't be
-    /// found.</p>
+    /// <p>A specified Amazon S3 bucket, bucket folder, or other object can't be found.</p>
     S3ResourceNotFoundFault(crate::error::S3ResourceNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6153,8 +6034,6 @@ impl StartReplicationTaskAssessmentRunError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6353,8 +6232,6 @@ impl StopReplicationTaskError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6413,8 +6290,7 @@ pub struct TestConnectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TestConnectionErrorKind {
-    /// <p>DMS was denied access to the endpoint. Check that the
-    /// role is correctly configured.</p>
+    /// <p>DMS was denied access to the endpoint. Check that the role is correctly configured.</p>
     AccessDeniedFault(crate::error::AccessDeniedFault),
     /// <p>The resource is in a state that prevents it from being used for database migration.</p>
     InvalidResourceStateFault(crate::error::InvalidResourceStateFault),
@@ -6469,8 +6345,6 @@ impl TestConnectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6793,8 +6667,7 @@ impl InvalidResourceStateFault {
     }
 }
 
-/// <p>DMS was denied access to the endpoint. Check that the
-/// role is correctly configured.</p>
+/// <p>DMS was denied access to the endpoint. Check that the role is correctly configured.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedFault {
@@ -6858,8 +6731,7 @@ impl AccessDeniedFault {
     }
 }
 
-/// <p>A specified Amazon S3 bucket, bucket folder, or other object can't be
-/// found.</p>
+/// <p>A specified Amazon S3 bucket, bucket folder, or other object can't be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3ResourceNotFoundFault {

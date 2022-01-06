@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS IoT Wireless
@@ -514,6 +514,7 @@ where
     ///
     /// See [`ListDestinations`](crate::client::fluent_builders::ListDestinations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDestinations::into_paginator).
     pub fn list_destinations(&self) -> fluent_builders::ListDestinations<C, M, R> {
         fluent_builders::ListDestinations::new(self.handle.clone())
     }
@@ -521,6 +522,7 @@ where
     ///
     /// See [`ListDeviceProfiles`](crate::client::fluent_builders::ListDeviceProfiles) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDeviceProfiles::into_paginator).
     pub fn list_device_profiles(&self) -> fluent_builders::ListDeviceProfiles<C, M, R> {
         fluent_builders::ListDeviceProfiles::new(self.handle.clone())
     }
@@ -528,6 +530,7 @@ where
     ///
     /// See [`ListFuotaTasks`](crate::client::fluent_builders::ListFuotaTasks) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFuotaTasks::into_paginator).
     pub fn list_fuota_tasks(&self) -> fluent_builders::ListFuotaTasks<C, M, R> {
         fluent_builders::ListFuotaTasks::new(self.handle.clone())
     }
@@ -535,6 +538,7 @@ where
     ///
     /// See [`ListMulticastGroups`](crate::client::fluent_builders::ListMulticastGroups) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMulticastGroups::into_paginator).
     pub fn list_multicast_groups(&self) -> fluent_builders::ListMulticastGroups<C, M, R> {
         fluent_builders::ListMulticastGroups::new(self.handle.clone())
     }
@@ -542,6 +546,7 @@ where
     ///
     /// See [`ListMulticastGroupsByFuotaTask`](crate::client::fluent_builders::ListMulticastGroupsByFuotaTask) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMulticastGroupsByFuotaTask::into_paginator).
     pub fn list_multicast_groups_by_fuota_task(
         &self,
     ) -> fluent_builders::ListMulticastGroupsByFuotaTask<C, M, R> {
@@ -558,6 +563,7 @@ where
     ///
     /// See [`ListServiceProfiles`](crate::client::fluent_builders::ListServiceProfiles) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServiceProfiles::into_paginator).
     pub fn list_service_profiles(&self) -> fluent_builders::ListServiceProfiles<C, M, R> {
         fluent_builders::ListServiceProfiles::new(self.handle.clone())
     }
@@ -572,6 +578,7 @@ where
     ///
     /// See [`ListWirelessDevices`](crate::client::fluent_builders::ListWirelessDevices) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWirelessDevices::into_paginator).
     pub fn list_wireless_devices(&self) -> fluent_builders::ListWirelessDevices<C, M, R> {
         fluent_builders::ListWirelessDevices::new(self.handle.clone())
     }
@@ -579,6 +586,7 @@ where
     ///
     /// See [`ListWirelessGateways`](crate::client::fluent_builders::ListWirelessGateways) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWirelessGateways::into_paginator).
     pub fn list_wireless_gateways(&self) -> fluent_builders::ListWirelessGateways<C, M, R> {
         fluent_builders::ListWirelessGateways::new(self.handle.clone())
     }
@@ -772,7 +780,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateAwsAccountWithPartnerAccount`.
     ///
     /// <p>Associates a partner account with your AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateAwsAccountWithPartnerAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -819,10 +827,10 @@ pub mod fluent_builders {
                 crate::input::AssociateAwsAccountWithPartnerAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -831,8 +839,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Sidewalk account credentials.</p>
-        pub fn sidewalk(mut self, inp: crate::model::SidewalkAccountInfo) -> Self {
-            self.inner = self.inner.sidewalk(inp);
+        pub fn sidewalk(mut self, input: crate::model::SidewalkAccountInfo) -> Self {
+            self.inner = self.inner.sidewalk(input);
             self
         }
         /// <p>The Sidewalk account credentials.</p>
@@ -844,8 +852,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
@@ -861,8 +869,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
@@ -877,7 +885,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateMulticastGroupWithFuotaTask`.
     ///
     /// <p>Associate a multicast group with a FUOTA task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateMulticastGroupWithFuotaTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -924,10 +932,10 @@ pub mod fluent_builders {
                 crate::input::AssociateMulticastGroupWithFuotaTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -936,8 +944,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of a FUOTA task.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of a FUOTA task.</p>
@@ -946,8 +954,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the multicast group.</p>
-        pub fn multicast_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multicast_group_id(inp);
+        pub fn multicast_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multicast_group_id(input.into());
             self
         }
         /// <p>The ID of the multicast group.</p>
@@ -962,7 +970,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateWirelessDeviceWithFuotaTask`.
     ///
     /// <p>Associate a wireless device with a FUOTA task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateWirelessDeviceWithFuotaTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1009,10 +1017,10 @@ pub mod fluent_builders {
                 crate::input::AssociateWirelessDeviceWithFuotaTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1021,8 +1029,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of a FUOTA task.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of a FUOTA task.</p>
@@ -1031,8 +1039,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the wireless device.</p>
-        pub fn wireless_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.wireless_device_id(inp);
+        pub fn wireless_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wireless_device_id(input.into());
             self
         }
         /// <p>The ID of the wireless device.</p>
@@ -1047,7 +1055,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateWirelessDeviceWithMulticastGroup`.
     ///
     /// <p>Associates a wireless device with a multicast group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateWirelessDeviceWithMulticastGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1094,10 +1102,10 @@ pub mod fluent_builders {
                 crate::input::AssociateWirelessDeviceWithMulticastGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1106,8 +1114,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the multicast group.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the multicast group.</p>
@@ -1116,8 +1124,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the wireless device.</p>
-        pub fn wireless_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.wireless_device_id(inp);
+        pub fn wireless_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wireless_device_id(input.into());
             self
         }
         /// <p>The ID of the wireless device.</p>
@@ -1132,7 +1140,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateWirelessDeviceWithThing`.
     ///
     /// <p>Associates a wireless device with a thing.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateWirelessDeviceWithThing<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1177,10 +1185,10 @@ pub mod fluent_builders {
                 crate::input::AssociateWirelessDeviceWithThingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1189,8 +1197,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to update.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the resource to update.</p>
@@ -1199,8 +1207,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the thing to associate with the wireless device.</p>
-        pub fn thing_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_arn(inp);
+        pub fn thing_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_arn(input.into());
             self
         }
         /// <p>The ARN of the thing to associate with the wireless device.</p>
@@ -1212,7 +1220,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateWirelessGatewayWithCertificate`.
     ///
     /// <p>Associates a wireless gateway with a certificate.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateWirelessGatewayWithCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1259,10 +1267,10 @@ pub mod fluent_builders {
                 crate::input::AssociateWirelessGatewayWithCertificateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1271,8 +1279,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to update.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the resource to update.</p>
@@ -1281,8 +1289,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the certificate to associate with the wireless gateway.</p>
-        pub fn iot_certificate_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iot_certificate_id(inp);
+        pub fn iot_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iot_certificate_id(input.into());
             self
         }
         /// <p>The ID of the certificate to associate with the wireless gateway.</p>
@@ -1297,7 +1305,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateWirelessGatewayWithThing`.
     ///
     /// <p>Associates a wireless gateway with a thing.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateWirelessGatewayWithThing<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1342,10 +1350,10 @@ pub mod fluent_builders {
                 crate::input::AssociateWirelessGatewayWithThingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1354,8 +1362,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to update.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the resource to update.</p>
@@ -1364,8 +1372,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the thing to associate with the wireless gateway.</p>
-        pub fn thing_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_arn(inp);
+        pub fn thing_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_arn(input.into());
             self
         }
         /// <p>The ARN of the thing to associate with the wireless gateway.</p>
@@ -1377,7 +1385,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelMulticastGroupSession`.
     ///
     /// <p>Cancels an existing multicast group session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelMulticastGroupSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1422,10 +1430,10 @@ pub mod fluent_builders {
                 crate::input::CancelMulticastGroupSessionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1434,8 +1442,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the multicast group.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the multicast group.</p>
@@ -1447,7 +1455,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDestination`.
     ///
     /// <p>Creates a new destination that maps a device message to an AWS IoT rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1492,10 +1500,10 @@ pub mod fluent_builders {
                 crate::input::CreateDestinationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1504,8 +1512,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the new resource.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the new resource.</p>
@@ -1514,8 +1522,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of value in <code>Expression</code>.</p>
-        pub fn expression_type(mut self, inp: crate::model::ExpressionType) -> Self {
-            self.inner = self.inner.expression_type(inp);
+        pub fn expression_type(mut self, input: crate::model::ExpressionType) -> Self {
+            self.inner = self.inner.expression_type(input);
             self
         }
         /// <p>The type of value in <code>Expression</code>.</p>
@@ -1527,8 +1535,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The rule name or topic rule to send messages to.</p>
-        pub fn expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expression(inp);
+        pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expression(input.into());
             self
         }
         /// <p>The rule name or topic rule to send messages to.</p>
@@ -1537,8 +1545,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the new resource.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the new resource.</p>
@@ -1547,8 +1555,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the IAM Role that authorizes the destination.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The ARN of the IAM Role that authorizes the destination.</p>
@@ -1561,8 +1569,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the new destination. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to attach to the new destination. Tags are metadata that you can use to manage a resource.</p>
@@ -1574,8 +1582,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
@@ -1590,7 +1598,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDeviceProfile`.
     ///
     /// <p>Creates a new device profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeviceProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1635,10 +1643,10 @@ pub mod fluent_builders {
                 crate::input::CreateDeviceProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1647,8 +1655,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the new resource.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the new resource.</p>
@@ -1657,8 +1665,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The device profile information to use to create the device profile.</p>
-        pub fn lo_ra_wan(mut self, inp: crate::model::LoRaWanDeviceProfile) -> Self {
-            self.inner = self.inner.lo_ra_wan(inp);
+        pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanDeviceProfile) -> Self {
+            self.inner = self.inner.lo_ra_wan(input);
             self
         }
         /// <p>The device profile information to use to create the device profile.</p>
@@ -1674,8 +1682,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the new device profile. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to attach to the new device profile. Tags are metadata that you can use to manage a resource.</p>
@@ -1687,8 +1695,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
@@ -1703,7 +1711,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFuotaTask`.
     ///
     /// <p>Creates a FUOTA task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFuotaTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1748,10 +1756,10 @@ pub mod fluent_builders {
                 crate::input::CreateFuotaTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1760,8 +1768,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of a FUOTA task.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of a FUOTA task.</p>
@@ -1770,8 +1778,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the new resource.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the new resource.</p>
@@ -1780,8 +1788,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
@@ -1793,8 +1801,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The LoRaWAN information used with a FUOTA task.</p>
-        pub fn lo_ra_wan(mut self, inp: crate::model::LoRaWanFuotaTask) -> Self {
-            self.inner = self.inner.lo_ra_wan(inp);
+        pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanFuotaTask) -> Self {
+            self.inner = self.inner.lo_ra_wan(input);
             self
         }
         /// <p>The LoRaWAN information used with a FUOTA task.</p>
@@ -1806,8 +1814,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
-        pub fn firmware_update_image(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firmware_update_image(inp);
+        pub fn firmware_update_image(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firmware_update_image(input.into());
             self
         }
         /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
@@ -1819,8 +1827,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The firmware update role that is to be used with a FUOTA task.</p>
-        pub fn firmware_update_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firmware_update_role(inp);
+        pub fn firmware_update_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firmware_update_role(input.into());
             self
         }
         /// <p>The firmware update role that is to be used with a FUOTA task.</p>
@@ -1836,8 +1844,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
@@ -1852,7 +1860,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateMulticastGroup`.
     ///
     /// <p>Creates a multicast group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMulticastGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1897,10 +1905,10 @@ pub mod fluent_builders {
                 crate::input::CreateMulticastGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1909,8 +1917,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the multicast group.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the multicast group.</p>
@@ -1919,8 +1927,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the multicast group.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the multicast group.</p>
@@ -1928,16 +1936,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>Each resource must have a unique client request token. If you try to create a new resource with the
-        /// same token as a resource that already exists, an exception occurs. If you omit this value,
-        /// AWS SDKs will automatically generate a unique client request. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>Each resource must have a unique client request token. If you try to create a new resource with the
-        /// same token as a resource that already exists, an exception occurs. If you omit this value,
-        /// AWS SDKs will automatically generate a unique client request. </p>
+        /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1946,8 +1950,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
-        pub fn lo_ra_wan(mut self, inp: crate::model::LoRaWanMulticast) -> Self {
-            self.inner = self.inner.lo_ra_wan(inp);
+        pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanMulticast) -> Self {
+            self.inner = self.inner.lo_ra_wan(input);
             self
         }
         /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
@@ -1963,8 +1967,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
@@ -1979,7 +1983,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateServiceProfile`.
     ///
     /// <p>Creates a new service profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateServiceProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2024,10 +2028,10 @@ pub mod fluent_builders {
                 crate::input::CreateServiceProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2036,8 +2040,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the new resource.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the new resource.</p>
@@ -2046,8 +2050,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The service profile information to use to create the service profile.</p>
-        pub fn lo_ra_wan(mut self, inp: crate::model::LoRaWanServiceProfile) -> Self {
-            self.inner = self.inner.lo_ra_wan(inp);
+        pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanServiceProfile) -> Self {
+            self.inner = self.inner.lo_ra_wan(input);
             self
         }
         /// <p>The service profile information to use to create the service profile.</p>
@@ -2063,8 +2067,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the new service profile. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to attach to the new service profile. Tags are metadata that you can use to manage a resource.</p>
@@ -2076,8 +2080,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
@@ -2092,7 +2096,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWirelessDevice`.
     ///
     /// <p>Provisions a wireless device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWirelessDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2137,10 +2141,10 @@ pub mod fluent_builders {
                 crate::input::CreateWirelessDeviceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2149,8 +2153,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The wireless device type.</p>
-        pub fn r#type(mut self, inp: crate::model::WirelessDeviceType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::WirelessDeviceType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The wireless device type.</p>
@@ -2162,8 +2166,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the new resource.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the new resource.</p>
@@ -2172,8 +2176,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the new resource.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the new resource.</p>
@@ -2182,8 +2186,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the destination to assign to the new wireless device.</p>
-        pub fn destination_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_name(inp);
+        pub fn destination_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_name(input.into());
             self
         }
         /// <p>The name of the destination to assign to the new wireless device.</p>
@@ -2195,8 +2199,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
@@ -2208,8 +2212,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The device configuration information to use to create the wireless device.</p>
-        pub fn lo_ra_wan(mut self, inp: crate::model::LoRaWanDevice) -> Self {
-            self.inner = self.inner.lo_ra_wan(inp);
+        pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanDevice) -> Self {
+            self.inner = self.inner.lo_ra_wan(input);
             self
         }
         /// <p>The device configuration information to use to create the wireless device.</p>
@@ -2225,8 +2229,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.</p>
@@ -2241,7 +2245,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWirelessGateway`.
     ///
     /// <p>Provisions a wireless gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWirelessGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2286,10 +2290,10 @@ pub mod fluent_builders {
                 crate::input::CreateWirelessGatewayInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2298,8 +2302,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the new resource.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the new resource.</p>
@@ -2308,8 +2312,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the new resource.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the new resource.</p>
@@ -2318,8 +2322,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The gateway configuration information to use to create the wireless gateway.</p>
-        pub fn lo_ra_wan(mut self, inp: crate::model::LoRaWanGateway) -> Self {
-            self.inner = self.inner.lo_ra_wan(inp);
+        pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanGateway) -> Self {
+            self.inner = self.inner.lo_ra_wan(input);
             self
         }
         /// <p>The gateway configuration information to use to create the wireless gateway.</p>
@@ -2335,8 +2339,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the new wireless gateway. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to attach to the new wireless gateway. Tags are metadata that you can use to manage a resource.</p>
@@ -2348,8 +2352,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
@@ -2364,7 +2368,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWirelessGatewayTask`.
     ///
     /// <p>Creates a task for a wireless gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWirelessGatewayTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2409,10 +2413,10 @@ pub mod fluent_builders {
                 crate::input::CreateWirelessGatewayTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2421,8 +2425,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to update.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the resource to update.</p>
@@ -2433,9 +2437,9 @@ pub mod fluent_builders {
         /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
         pub fn wireless_gateway_task_definition_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.wireless_gateway_task_definition_id(inp);
+            self.inner = self.inner.wireless_gateway_task_definition_id(input.into());
             self
         }
         /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
@@ -2450,7 +2454,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWirelessGatewayTaskDefinition`.
     ///
     /// <p>Creates a gateway task definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWirelessGatewayTaskDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2497,10 +2501,10 @@ pub mod fluent_builders {
                 crate::input::CreateWirelessGatewayTaskDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2509,8 +2513,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Whether to automatically create tasks using this task definition for all gateways with the specified current version. If <code>false</code>, the task must me created by calling <code>CreateWirelessGatewayTask</code>.</p>
-        pub fn auto_create_tasks(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_create_tasks(inp);
+        pub fn auto_create_tasks(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_create_tasks(input);
             self
         }
         /// <p>Whether to automatically create tasks using this task definition for all gateways with the specified current version. If <code>false</code>, the task must me created by calling <code>CreateWirelessGatewayTask</code>.</p>
@@ -2519,8 +2523,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the new resource.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the new resource.</p>
@@ -2529,8 +2533,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the gateways to update.</p>
-        pub fn update(mut self, inp: crate::model::UpdateWirelessGatewayTaskCreate) -> Self {
-            self.inner = self.inner.update(inp);
+        pub fn update(mut self, input: crate::model::UpdateWirelessGatewayTaskCreate) -> Self {
+            self.inner = self.inner.update(input);
             self
         }
         /// <p>Information about the gateways to update.</p>
@@ -2542,8 +2546,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
@@ -2559,8 +2563,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
@@ -2575,7 +2579,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDestination`.
     ///
     /// <p>Deletes a destination.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2620,10 +2624,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDestinationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2632,8 +2636,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource to delete.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the resource to delete.</p>
@@ -2645,7 +2649,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDeviceProfile`.
     ///
     /// <p>Deletes a device profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDeviceProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2690,10 +2694,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDeviceProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2702,8 +2706,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the resource to delete.</p>
@@ -2715,7 +2719,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFuotaTask`.
     ///
     /// <p>Deletes a FUOTA task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFuotaTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2760,10 +2764,10 @@ pub mod fluent_builders {
                 crate::input::DeleteFuotaTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2772,8 +2776,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of a FUOTA task.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of a FUOTA task.</p>
@@ -2785,7 +2789,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteMulticastGroup`.
     ///
     /// <p>Deletes a multicast group if it is not in use by a fuota task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMulticastGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2830,10 +2834,10 @@ pub mod fluent_builders {
                 crate::input::DeleteMulticastGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2842,8 +2846,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the multicast group.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the multicast group.</p>
@@ -2855,7 +2859,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteServiceProfile`.
     ///
     /// <p>Deletes a service profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteServiceProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2900,10 +2904,10 @@ pub mod fluent_builders {
                 crate::input::DeleteServiceProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2912,8 +2916,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the resource to delete.</p>
@@ -2925,7 +2929,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteWirelessDevice`.
     ///
     /// <p>Deletes a wireless device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWirelessDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2970,10 +2974,10 @@ pub mod fluent_builders {
                 crate::input::DeleteWirelessDeviceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2982,8 +2986,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the resource to delete.</p>
@@ -2995,7 +2999,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteWirelessGateway`.
     ///
     /// <p>Deletes a wireless gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWirelessGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3040,10 +3044,10 @@ pub mod fluent_builders {
                 crate::input::DeleteWirelessGatewayInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3052,8 +3056,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the resource to delete.</p>
@@ -3065,7 +3069,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteWirelessGatewayTask`.
     ///
     /// <p>Deletes a wireless gateway task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWirelessGatewayTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3110,10 +3114,10 @@ pub mod fluent_builders {
                 crate::input::DeleteWirelessGatewayTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3122,8 +3126,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the resource to delete.</p>
@@ -3135,7 +3139,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteWirelessGatewayTaskDefinition`.
     ///
     /// <p>Deletes a wireless gateway task definition. Deleting this task definition does not affect tasks that are currently in progress.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWirelessGatewayTaskDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3182,10 +3186,10 @@ pub mod fluent_builders {
                 crate::input::DeleteWirelessGatewayTaskDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3194,8 +3198,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the resource to delete.</p>
@@ -3207,7 +3211,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateAwsAccountFromPartnerAccount`.
     ///
     /// <p>Disassociates your AWS account from a partner account. If <code>PartnerAccountId</code> and <code>PartnerType</code> are <code>null</code>, disassociates your AWS account from all partner accounts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateAwsAccountFromPartnerAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3254,10 +3258,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateAwsAccountFromPartnerAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3266,8 +3270,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The partner account ID to disassociate from the AWS account.</p>
-        pub fn partner_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.partner_account_id(inp);
+        pub fn partner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.partner_account_id(input.into());
             self
         }
         /// <p>The partner account ID to disassociate from the AWS account.</p>
@@ -3279,8 +3283,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The partner type.</p>
-        pub fn partner_type(mut self, inp: crate::model::PartnerType) -> Self {
-            self.inner = self.inner.partner_type(inp);
+        pub fn partner_type(mut self, input: crate::model::PartnerType) -> Self {
+            self.inner = self.inner.partner_type(input);
             self
         }
         /// <p>The partner type.</p>
@@ -3295,7 +3299,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateMulticastGroupFromFuotaTask`.
     ///
     /// <p>Disassociates a multicast group from a fuota task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateMulticastGroupFromFuotaTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3342,10 +3346,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateMulticastGroupFromFuotaTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3354,8 +3358,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of a FUOTA task.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of a FUOTA task.</p>
@@ -3364,8 +3368,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the multicast group.</p>
-        pub fn multicast_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multicast_group_id(inp);
+        pub fn multicast_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multicast_group_id(input.into());
             self
         }
         /// <p>The ID of the multicast group.</p>
@@ -3380,7 +3384,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateWirelessDeviceFromFuotaTask`.
     ///
     /// <p>Disassociates a wireless device from a FUOTA task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateWirelessDeviceFromFuotaTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3427,10 +3431,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateWirelessDeviceFromFuotaTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3439,8 +3443,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of a FUOTA task.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of a FUOTA task.</p>
@@ -3449,8 +3453,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the wireless device.</p>
-        pub fn wireless_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.wireless_device_id(inp);
+        pub fn wireless_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wireless_device_id(input.into());
             self
         }
         /// <p>The ID of the wireless device.</p>
@@ -3465,7 +3469,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateWirelessDeviceFromMulticastGroup`.
     ///
     /// <p>Disassociates a wireless device from a multicast group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateWirelessDeviceFromMulticastGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3512,10 +3516,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateWirelessDeviceFromMulticastGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3524,8 +3528,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the multicast group.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the multicast group.</p>
@@ -3534,8 +3538,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the wireless device.</p>
-        pub fn wireless_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.wireless_device_id(inp);
+        pub fn wireless_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wireless_device_id(input.into());
             self
         }
         /// <p>The ID of the wireless device.</p>
@@ -3550,7 +3554,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateWirelessDeviceFromThing`.
     ///
     /// <p>Disassociates a wireless device from its currently associated thing.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateWirelessDeviceFromThing<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3597,10 +3601,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateWirelessDeviceFromThingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3609,8 +3613,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to update.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the resource to update.</p>
@@ -3622,7 +3626,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateWirelessGatewayFromCertificate`.
     ///
     /// <p>Disassociates a wireless gateway from its currently associated certificate.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateWirelessGatewayFromCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3669,10 +3673,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateWirelessGatewayFromCertificateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3681,8 +3685,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to update.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the resource to update.</p>
@@ -3694,7 +3698,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateWirelessGatewayFromThing`.
     ///
     /// <p>Disassociates a wireless gateway from its currently associated thing.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateWirelessGatewayFromThing<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3741,10 +3745,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateWirelessGatewayFromThingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3753,8 +3757,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to update.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the resource to update.</p>
@@ -3766,7 +3770,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDestination`.
     ///
     /// <p>Gets information about a destination.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3811,10 +3815,10 @@ pub mod fluent_builders {
                 crate::input::GetDestinationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3823,8 +3827,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource to get.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the resource to get.</p>
@@ -3836,7 +3840,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeviceProfile`.
     ///
     /// <p>Gets information about a device profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeviceProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3881,10 +3885,10 @@ pub mod fluent_builders {
                 crate::input::GetDeviceProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3893,8 +3897,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to get.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the resource to get.</p>
@@ -3906,7 +3910,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFuotaTask`.
     ///
     /// <p>Gets information about a FUOTA task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFuotaTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3951,10 +3955,10 @@ pub mod fluent_builders {
                 crate::input::GetFuotaTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3963,8 +3967,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of a FUOTA task.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of a FUOTA task.</p>
@@ -3975,9 +3979,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetLogLevelsByResourceTypes`.
     ///
-    /// <p>Returns current default log levels or log levels by resource types. Based on resource types, log levels can be
-    /// for wireless device log options or wireless gateway log options.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns current default log levels or log levels by resource types. Based on resource types, log levels can be for wireless device log options or wireless gateway log options.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLogLevelsByResourceTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4022,10 +4025,10 @@ pub mod fluent_builders {
                 crate::input::GetLogLevelsByResourceTypesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4037,7 +4040,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMulticastGroup`.
     ///
     /// <p>Gets information about a multicast group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMulticastGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4082,10 +4085,10 @@ pub mod fluent_builders {
                 crate::input::GetMulticastGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4094,8 +4097,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the multicast group.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the multicast group.</p>
@@ -4107,7 +4110,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMulticastGroupSession`.
     ///
     /// <p>Gets information about a multicast group session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMulticastGroupSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4152,10 +4155,10 @@ pub mod fluent_builders {
                 crate::input::GetMulticastGroupSessionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4164,8 +4167,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the multicast group.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the multicast group.</p>
@@ -4177,7 +4180,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetNetworkAnalyzerConfiguration`.
     ///
     /// <p>Get NetworkAnalyzer configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNetworkAnalyzerConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4222,10 +4225,10 @@ pub mod fluent_builders {
                 crate::input::GetNetworkAnalyzerConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4234,8 +4237,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>NetworkAnalyzer configuration name.</p>
-        pub fn configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_name(inp);
+        pub fn configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_name(input.into());
             self
         }
         /// <p>NetworkAnalyzer configuration name.</p>
@@ -4250,7 +4253,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPartnerAccount`.
     ///
     /// <p>Gets information about a partner account. If <code>PartnerAccountId</code> and <code>PartnerType</code> are <code>null</code>, returns all partner accounts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPartnerAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4295,10 +4298,10 @@ pub mod fluent_builders {
                 crate::input::GetPartnerAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4307,8 +4310,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The partner account ID to disassociate from the AWS account.</p>
-        pub fn partner_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.partner_account_id(inp);
+        pub fn partner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.partner_account_id(input.into());
             self
         }
         /// <p>The partner account ID to disassociate from the AWS account.</p>
@@ -4320,8 +4323,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The partner type.</p>
-        pub fn partner_type(mut self, inp: crate::model::PartnerType) -> Self {
-            self.inner = self.inner.partner_type(inp);
+        pub fn partner_type(mut self, input: crate::model::PartnerType) -> Self {
+            self.inner = self.inner.partner_type(input);
             self
         }
         /// <p>The partner type.</p>
@@ -4336,7 +4339,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetResourceEventConfiguration`.
     ///
     /// <p>Get the event configuration for a particular resource identifier.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourceEventConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4381,10 +4384,10 @@ pub mod fluent_builders {
                 crate::input::GetResourceEventConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4393,8 +4396,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Resource identifier to opt in for event messaging.</p>
-        pub fn identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(inp);
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(input.into());
             self
         }
         /// <p>Resource identifier to opt in for event messaging.</p>
@@ -4403,8 +4406,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifier type of the particular resource identifier for event configuration.</p>
-        pub fn identifier_type(mut self, inp: crate::model::IdentifierType) -> Self {
-            self.inner = self.inner.identifier_type(inp);
+        pub fn identifier_type(mut self, input: crate::model::IdentifierType) -> Self {
+            self.inner = self.inner.identifier_type(input);
             self
         }
         /// <p>Identifier type of the particular resource identifier for event configuration.</p>
@@ -4416,8 +4419,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
-        pub fn partner_type(mut self, inp: crate::model::EventNotificationPartnerType) -> Self {
-            self.inner = self.inner.partner_type(inp);
+        pub fn partner_type(mut self, input: crate::model::EventNotificationPartnerType) -> Self {
+            self.inner = self.inner.partner_type(input);
             self
         }
         /// <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
@@ -4431,9 +4434,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetResourceLogLevel`.
     ///
-    /// <p>Fetches the log-level override, if any, for a given resource-ID and resource-type. It can be used for
-    /// a wireless device or a wireless gateway.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Fetches the log-level override, if any, for a given resource-ID and resource-type. It can be used for a wireless device or a wireless gateway.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourceLogLevel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4478,10 +4480,10 @@ pub mod fluent_builders {
                 crate::input::GetResourceLogLevelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4489,14 +4491,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-        /// it is the wireless gateway ID.</p>
-        pub fn resource_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_identifier(inp);
+        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
+        pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_identifier(input.into());
             self
         }
-        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-        /// it is the wireless gateway ID.</p>
+        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
         pub fn set_resource_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4505,8 +4505,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
         /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
@@ -4521,7 +4521,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetServiceEndpoint`.
     ///
     /// <p>Gets the account-specific endpoint for Configuration and Update Server (CUPS) protocol or LoRaWAN Network Server (LNS) connections.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServiceEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4566,10 +4566,10 @@ pub mod fluent_builders {
                 crate::input::GetServiceEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4578,8 +4578,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint.</p>
-        pub fn service_type(mut self, inp: crate::model::WirelessGatewayServiceType) -> Self {
-            self.inner = self.inner.service_type(inp);
+        pub fn service_type(mut self, input: crate::model::WirelessGatewayServiceType) -> Self {
+            self.inner = self.inner.service_type(input);
             self
         }
         /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint.</p>
@@ -4594,7 +4594,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetServiceProfile`.
     ///
     /// <p>Gets information about a service profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServiceProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4639,10 +4639,10 @@ pub mod fluent_builders {
                 crate::input::GetServiceProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4651,8 +4651,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to get.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the resource to get.</p>
@@ -4664,7 +4664,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWirelessDevice`.
     ///
     /// <p>Gets information about a wireless device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWirelessDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4709,10 +4709,10 @@ pub mod fluent_builders {
                 crate::input::GetWirelessDeviceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4721,8 +4721,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the wireless device to get.</p>
-        pub fn identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(inp);
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(input.into());
             self
         }
         /// <p>The identifier of the wireless device to get.</p>
@@ -4731,8 +4731,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of identifier used in <code>identifier</code>.</p>
-        pub fn identifier_type(mut self, inp: crate::model::WirelessDeviceIdType) -> Self {
-            self.inner = self.inner.identifier_type(inp);
+        pub fn identifier_type(mut self, input: crate::model::WirelessDeviceIdType) -> Self {
+            self.inner = self.inner.identifier_type(input);
             self
         }
         /// <p>The type of identifier used in <code>identifier</code>.</p>
@@ -4747,7 +4747,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWirelessDeviceStatistics`.
     ///
     /// <p>Gets operating information about a wireless device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWirelessDeviceStatistics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4792,10 +4792,10 @@ pub mod fluent_builders {
                 crate::input::GetWirelessDeviceStatisticsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4804,8 +4804,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the wireless device for which to get the data.</p>
-        pub fn wireless_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.wireless_device_id(inp);
+        pub fn wireless_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wireless_device_id(input.into());
             self
         }
         /// <p>The ID of the wireless device for which to get the data.</p>
@@ -4820,7 +4820,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWirelessGateway`.
     ///
     /// <p>Gets information about a wireless gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWirelessGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4865,10 +4865,10 @@ pub mod fluent_builders {
                 crate::input::GetWirelessGatewayInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4877,8 +4877,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the wireless gateway to get.</p>
-        pub fn identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(inp);
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(input.into());
             self
         }
         /// <p>The identifier of the wireless gateway to get.</p>
@@ -4887,8 +4887,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of identifier used in <code>identifier</code>.</p>
-        pub fn identifier_type(mut self, inp: crate::model::WirelessGatewayIdType) -> Self {
-            self.inner = self.inner.identifier_type(inp);
+        pub fn identifier_type(mut self, input: crate::model::WirelessGatewayIdType) -> Self {
+            self.inner = self.inner.identifier_type(input);
             self
         }
         /// <p>The type of identifier used in <code>identifier</code>.</p>
@@ -4903,7 +4903,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWirelessGatewayCertificate`.
     ///
     /// <p>Gets the ID of the certificate that is currently associated with a wireless gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWirelessGatewayCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4948,10 +4948,10 @@ pub mod fluent_builders {
                 crate::input::GetWirelessGatewayCertificateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4960,8 +4960,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to get.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the resource to get.</p>
@@ -4973,7 +4973,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWirelessGatewayFirmwareInformation`.
     ///
     /// <p>Gets the firmware version and other information about a wireless gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWirelessGatewayFirmwareInformation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5020,10 +5020,10 @@ pub mod fluent_builders {
                 crate::input::GetWirelessGatewayFirmwareInformationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5032,8 +5032,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to get.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the resource to get.</p>
@@ -5045,7 +5045,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWirelessGatewayStatistics`.
     ///
     /// <p>Gets operating information about a wireless gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWirelessGatewayStatistics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5090,10 +5090,10 @@ pub mod fluent_builders {
                 crate::input::GetWirelessGatewayStatisticsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5102,8 +5102,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the wireless gateway for which to get the data.</p>
-        pub fn wireless_gateway_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.wireless_gateway_id(inp);
+        pub fn wireless_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wireless_gateway_id(input.into());
             self
         }
         /// <p>The ID of the wireless gateway for which to get the data.</p>
@@ -5118,7 +5118,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWirelessGatewayTask`.
     ///
     /// <p>Gets information about a wireless gateway task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWirelessGatewayTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5163,10 +5163,10 @@ pub mod fluent_builders {
                 crate::input::GetWirelessGatewayTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5175,8 +5175,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to get.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the resource to get.</p>
@@ -5188,7 +5188,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWirelessGatewayTaskDefinition`.
     ///
     /// <p>Gets information about a wireless gateway task definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWirelessGatewayTaskDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5233,10 +5233,10 @@ pub mod fluent_builders {
                 crate::input::GetWirelessGatewayTaskDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5245,8 +5245,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to get.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the resource to get.</p>
@@ -5258,7 +5258,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDestinations`.
     ///
     /// <p>Lists the destinations registered to your AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDestinations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5303,10 +5303,10 @@ pub mod fluent_builders {
                 crate::input::ListDestinationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5314,9 +5314,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDestinationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDestinationsPaginator<C, M, R> {
+            crate::paginator::ListDestinationsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of results to return in this operation.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
@@ -5325,8 +5331,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -5338,7 +5344,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDeviceProfiles`.
     ///
     /// <p>Lists the device profiles registered to your AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeviceProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5383,10 +5389,10 @@ pub mod fluent_builders {
                 crate::input::ListDeviceProfilesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5394,9 +5400,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDeviceProfilesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDeviceProfilesPaginator<C, M, R> {
+            crate::paginator::ListDeviceProfilesPaginator::new(self.handle, self.inner)
+        }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -5405,8 +5417,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
@@ -5418,7 +5430,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFuotaTasks`.
     ///
     /// <p>Lists the FUOTA tasks registered to your AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFuotaTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5463,10 +5475,10 @@ pub mod fluent_builders {
                 crate::input::ListFuotaTasksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5474,9 +5486,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListFuotaTasksPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListFuotaTasksPaginator<C, M, R> {
+            crate::paginator::ListFuotaTasksPaginator::new(self.handle, self.inner)
+        }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -5485,8 +5503,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
@@ -5498,7 +5516,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMulticastGroups`.
     ///
     /// <p>Lists the multicast groups registered to your AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMulticastGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5543,10 +5561,10 @@ pub mod fluent_builders {
                 crate::input::ListMulticastGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5554,9 +5572,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMulticastGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListMulticastGroupsPaginator<C, M, R> {
+            crate::paginator::ListMulticastGroupsPaginator::new(self.handle, self.inner)
+        }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -5565,8 +5589,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
@@ -5578,7 +5602,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMulticastGroupsByFuotaTask`.
     ///
     /// <p>List all multicast groups associated with a fuota task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMulticastGroupsByFuotaTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5623,10 +5647,10 @@ pub mod fluent_builders {
                 crate::input::ListMulticastGroupsByFuotaTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5634,9 +5658,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMulticastGroupsByFuotaTaskPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListMulticastGroupsByFuotaTaskPaginator<C, M, R> {
+            crate::paginator::ListMulticastGroupsByFuotaTaskPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of a FUOTA task.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of a FUOTA task.</p>
@@ -5645,8 +5677,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -5655,8 +5687,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
@@ -5668,7 +5700,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPartnerAccounts`.
     ///
     /// <p>Lists the partner accounts associated with your AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPartnerAccounts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5713,10 +5745,10 @@ pub mod fluent_builders {
                 crate::input::ListPartnerAccountsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5725,8 +5757,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -5735,8 +5767,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
@@ -5748,7 +5780,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServiceProfiles`.
     ///
     /// <p>Lists the service profiles registered to your AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServiceProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5793,10 +5825,10 @@ pub mod fluent_builders {
                 crate::input::ListServiceProfilesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5804,9 +5836,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListServiceProfilesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListServiceProfilesPaginator<C, M, R> {
+            crate::paginator::ListServiceProfilesPaginator::new(self.handle, self.inner)
+        }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -5815,8 +5853,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
@@ -5828,7 +5866,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags (metadata) you have assigned to the resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5873,10 +5911,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5885,8 +5923,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource for which you want to list tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource for which you want to list tags.</p>
@@ -5898,7 +5936,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWirelessDevices`.
     ///
     /// <p>Lists the wireless devices registered to your AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWirelessDevices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5943,10 +5981,10 @@ pub mod fluent_builders {
                 crate::input::ListWirelessDevicesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5954,9 +5992,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListWirelessDevicesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListWirelessDevicesPaginator<C, M, R> {
+            crate::paginator::ListWirelessDevicesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of results to return in this operation.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
@@ -5965,8 +6009,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -5975,8 +6019,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter to list only the wireless devices that use this destination.</p>
-        pub fn destination_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_name(inp);
+        pub fn destination_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_name(input.into());
             self
         }
         /// <p>A filter to list only the wireless devices that use this destination.</p>
@@ -5988,8 +6032,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter to list only the wireless devices that use this device profile.</p>
-        pub fn device_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_profile_id(inp);
+        pub fn device_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_profile_id(input.into());
             self
         }
         /// <p>A filter to list only the wireless devices that use this device profile.</p>
@@ -6001,8 +6045,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter to list only the wireless devices that use this service profile.</p>
-        pub fn service_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_profile_id(inp);
+        pub fn service_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_profile_id(input.into());
             self
         }
         /// <p>A filter to list only the wireless devices that use this service profile.</p>
@@ -6014,8 +6058,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter to list only the wireless devices that use this wireless device type.</p>
-        pub fn wireless_device_type(mut self, inp: crate::model::WirelessDeviceType) -> Self {
-            self.inner = self.inner.wireless_device_type(inp);
+        pub fn wireless_device_type(mut self, input: crate::model::WirelessDeviceType) -> Self {
+            self.inner = self.inner.wireless_device_type(input);
             self
         }
         /// <p>A filter to list only the wireless devices that use this wireless device type.</p>
@@ -6027,8 +6071,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of a FUOTA task.</p>
-        pub fn fuota_task_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fuota_task_id(inp);
+        pub fn fuota_task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fuota_task_id(input.into());
             self
         }
         /// <p>The ID of a FUOTA task.</p>
@@ -6040,8 +6084,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the multicast group.</p>
-        pub fn multicast_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multicast_group_id(inp);
+        pub fn multicast_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multicast_group_id(input.into());
             self
         }
         /// <p>The ID of the multicast group.</p>
@@ -6056,7 +6100,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWirelessGateways`.
     ///
     /// <p>Lists the wireless gateways registered to your AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWirelessGateways<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6101,10 +6145,10 @@ pub mod fluent_builders {
                 crate::input::ListWirelessGatewaysInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6112,9 +6156,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListWirelessGatewaysPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListWirelessGatewaysPaginator<C, M, R> {
+            crate::paginator::ListWirelessGatewaysPaginator::new(self.handle, self.inner)
+        }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -6123,8 +6173,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
@@ -6136,7 +6186,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWirelessGatewayTaskDefinitions`.
     ///
     /// <p>List the wireless gateway tasks definitions registered to your AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWirelessGatewayTaskDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6183,10 +6233,10 @@ pub mod fluent_builders {
                 crate::input::ListWirelessGatewayTaskDefinitionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6195,8 +6245,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of results to return in this operation.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in this operation.</p>
@@ -6205,8 +6255,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
@@ -6217,9 +6267,9 @@ pub mod fluent_builders {
         /// <p>A filter to list only the wireless gateway task definitions that use this task definition type.</p>
         pub fn task_definition_type(
             mut self,
-            inp: crate::model::WirelessGatewayTaskDefinitionType,
+            input: crate::model::WirelessGatewayTaskDefinitionType,
         ) -> Self {
-            self.inner = self.inner.task_definition_type(inp);
+            self.inner = self.inner.task_definition_type(input);
             self
         }
         /// <p>A filter to list only the wireless gateway task definitions that use this task definition type.</p>
@@ -6233,9 +6283,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutResourceLogLevel`.
     ///
-    /// <p>Sets the log-level override for a resource-ID and resource-type. This option can be specified for a wireless gateway
-    /// or a wireless device. A limit of 200 log level override can be set per account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Sets the log-level override for a resource-ID and resource-type. This option can be specified for a wireless gateway or a wireless device. A limit of 200 log level override can be set per account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutResourceLogLevel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6280,10 +6329,10 @@ pub mod fluent_builders {
                 crate::input::PutResourceLogLevelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6291,14 +6340,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-        /// it is the wireless gateway ID.</p>
-        pub fn resource_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_identifier(inp);
+        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
+        pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_identifier(input.into());
             self
         }
-        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-        /// it is the wireless gateway ID.</p>
+        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
         pub fn set_resource_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6307,8 +6354,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
         /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
@@ -6320,8 +6367,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The log level for a log message.</p>
-        pub fn log_level(mut self, inp: crate::model::LogLevel) -> Self {
-            self.inner = self.inner.log_level(inp);
+        pub fn log_level(mut self, input: crate::model::LogLevel) -> Self {
+            self.inner = self.inner.log_level(input);
             self
         }
         /// <p>The log level for a log message.</p>
@@ -6333,7 +6380,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ResetAllResourceLogLevels`.
     ///
     /// <p>Removes the log-level overrides for all resources; both wireless devices and wireless gateways.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetAllResourceLogLevels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6378,10 +6425,10 @@ pub mod fluent_builders {
                 crate::input::ResetAllResourceLogLevelsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6392,9 +6439,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ResetResourceLogLevel`.
     ///
-    /// <p>Removes the log-level override, if any, for a specific resource-ID and resource-type. It can be used for
-    /// a wireless device or a wireless gateway.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes the log-level override, if any, for a specific resource-ID and resource-type. It can be used for a wireless device or a wireless gateway.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetResourceLogLevel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6439,10 +6485,10 @@ pub mod fluent_builders {
                 crate::input::ResetResourceLogLevelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6450,14 +6496,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-        /// it is the wireless gateway ID.</p>
-        pub fn resource_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_identifier(inp);
+        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
+        pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_identifier(input.into());
             self
         }
-        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-        /// it is the wireless gateway ID.</p>
+        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
         pub fn set_resource_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6466,8 +6510,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
         /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
@@ -6482,7 +6526,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SendDataToMulticastGroup`.
     ///
     /// <p>Sends the specified data to a multicast group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendDataToMulticastGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6527,10 +6571,10 @@ pub mod fluent_builders {
                 crate::input::SendDataToMulticastGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6539,8 +6583,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the multicast group.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the multicast group.</p>
@@ -6549,8 +6593,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The binary to be sent to the end device, encoded in base64.</p>
-        pub fn payload_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.payload_data(inp);
+        pub fn payload_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.payload_data(input.into());
             self
         }
         /// <p>The binary to be sent to the end device, encoded in base64.</p>
@@ -6559,8 +6603,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Wireless metadata that is to be sent to multicast group.</p>
-        pub fn wireless_metadata(mut self, inp: crate::model::MulticastWirelessMetadata) -> Self {
-            self.inner = self.inner.wireless_metadata(inp);
+        pub fn wireless_metadata(mut self, input: crate::model::MulticastWirelessMetadata) -> Self {
+            self.inner = self.inner.wireless_metadata(input);
             self
         }
         /// <p>Wireless metadata that is to be sent to multicast group.</p>
@@ -6575,7 +6619,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SendDataToWirelessDevice`.
     ///
     /// <p>Sends a decrypted application data frame to a device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendDataToWirelessDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6620,10 +6664,10 @@ pub mod fluent_builders {
                 crate::input::SendDataToWirelessDeviceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6632,8 +6676,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the wireless device to receive the data.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the wireless device to receive the data.</p>
@@ -6642,8 +6686,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
-        pub fn transmit_mode(mut self, inp: i32) -> Self {
-            self.inner = self.inner.transmit_mode(inp);
+        pub fn transmit_mode(mut self, input: i32) -> Self {
+            self.inner = self.inner.transmit_mode(input);
             self
         }
         /// <p>The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
@@ -6652,8 +6696,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The binary to be sent to the end device, encoded in base64.</p>
-        pub fn payload_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.payload_data(inp);
+        pub fn payload_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.payload_data(input.into());
             self
         }
         /// <p>The binary to be sent to the end device, encoded in base64.</p>
@@ -6662,8 +6706,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Metadata about the message request.</p>
-        pub fn wireless_metadata(mut self, inp: crate::model::WirelessMetadata) -> Self {
-            self.inner = self.inner.wireless_metadata(inp);
+        pub fn wireless_metadata(mut self, input: crate::model::WirelessMetadata) -> Self {
+            self.inner = self.inner.wireless_metadata(input);
             self
         }
         /// <p>Metadata about the message request.</p>
@@ -6678,7 +6722,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartBulkAssociateWirelessDeviceWithMulticastGroup`.
     ///
     /// <p>Starts a bulk association of all qualifying wireless devices with a multicast group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartBulkAssociateWirelessDeviceWithMulticastGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6717,10 +6761,10 @@ pub mod fluent_builders {
                                     crate::error::StartBulkAssociateWirelessDeviceWithMulticastGroupError,
                                     crate::input::StartBulkAssociateWirelessDeviceWithMulticastGroupInputOperationRetryAlias>,
                                 {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6729,8 +6773,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the multicast group.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the multicast group.</p>
@@ -6739,8 +6783,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
-        pub fn query_string(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_string(inp);
+        pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_string(input.into());
             self
         }
         /// <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
@@ -6753,8 +6797,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
@@ -6769,7 +6813,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartBulkDisassociateWirelessDeviceFromMulticastGroup`.
     ///
     /// <p>Starts a bulk disassociatin of all qualifying wireless devices from a multicast group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartBulkDisassociateWirelessDeviceFromMulticastGroup<C = aws_smithy_client::erase::DynConnector, M= crate::middleware::DefaultMiddleware, R= aws_smithy_client::retry::Standard> {
                             handle: std::sync::Arc<super::Handle<C, M, R>>,
                             inner: crate::input::start_bulk_disassociate_wireless_device_from_multicast_group_input::Builder
@@ -6803,10 +6847,10 @@ pub mod fluent_builders {
                                     crate::error::StartBulkDisassociateWirelessDeviceFromMulticastGroupError,
                                     crate::input::StartBulkDisassociateWirelessDeviceFromMulticastGroupInputOperationRetryAlias>,
                                 {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6815,8 +6859,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the multicast group.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the multicast group.</p>
@@ -6825,8 +6869,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
-        pub fn query_string(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_string(inp);
+        pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_string(input.into());
             self
         }
         /// <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
@@ -6839,8 +6883,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
@@ -6855,7 +6899,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartFuotaTask`.
     ///
     /// <p>Starts a FUOTA task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartFuotaTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6900,10 +6944,10 @@ pub mod fluent_builders {
                 crate::input::StartFuotaTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6912,8 +6956,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of a FUOTA task.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of a FUOTA task.</p>
@@ -6922,8 +6966,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The LoRaWAN information used to start a FUOTA task.</p>
-        pub fn lo_ra_wan(mut self, inp: crate::model::LoRaWanStartFuotaTask) -> Self {
-            self.inner = self.inner.lo_ra_wan(inp);
+        pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanStartFuotaTask) -> Self {
+            self.inner = self.inner.lo_ra_wan(input);
             self
         }
         /// <p>The LoRaWAN information used to start a FUOTA task.</p>
@@ -6938,7 +6982,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartMulticastGroupSession`.
     ///
     /// <p>Starts a multicast group session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMulticastGroupSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6983,10 +7027,10 @@ pub mod fluent_builders {
                 crate::input::StartMulticastGroupSessionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6995,8 +7039,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the multicast group.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the multicast group.</p>
@@ -7005,8 +7049,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The LoRaWAN information used with the multicast session.</p>
-        pub fn lo_ra_wan(mut self, inp: crate::model::LoRaWanMulticastSession) -> Self {
-            self.inner = self.inner.lo_ra_wan(inp);
+        pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanMulticastSession) -> Self {
+            self.inner = self.inner.lo_ra_wan(input);
             self
         }
         /// <p>The LoRaWAN information used with the multicast session.</p>
@@ -7021,7 +7065,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds a tag to a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7066,10 +7110,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7078,8 +7122,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource to add tags to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource to add tags to.</p>
@@ -7092,8 +7136,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Adds to or modifies the tags of the given resource. Tags are metadata that you can use to manage a resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Adds to or modifies the tags of the given resource. Tags are metadata that you can use to manage a resource.</p>
@@ -7108,7 +7152,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TestWirelessDevice`.
     ///
     /// <p>Simulates a provisioned device by sending an uplink data payload of <code>Hello</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TestWirelessDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7153,10 +7197,10 @@ pub mod fluent_builders {
                 crate::input::TestWirelessDeviceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7165,8 +7209,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the wireless device to test.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the wireless device to test.</p>
@@ -7178,7 +7222,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7223,10 +7267,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7235,8 +7279,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource to remove tags from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource to remove tags from.</p>
@@ -7249,8 +7293,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>A list of the keys of the tags to remove from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A list of the keys of the tags to remove from the resource.</p>
@@ -7265,7 +7309,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDestination`.
     ///
     /// <p>Updates properties of a destination.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7310,10 +7354,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDestinationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7322,8 +7366,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The new name of the resource.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The new name of the resource.</p>
@@ -7332,8 +7376,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of value in <code>Expression</code>.</p>
-        pub fn expression_type(mut self, inp: crate::model::ExpressionType) -> Self {
-            self.inner = self.inner.expression_type(inp);
+        pub fn expression_type(mut self, input: crate::model::ExpressionType) -> Self {
+            self.inner = self.inner.expression_type(input);
             self
         }
         /// <p>The type of value in <code>Expression</code>.</p>
@@ -7345,8 +7389,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new rule name or topic rule to send messages to.</p>
-        pub fn expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expression(inp);
+        pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expression(input.into());
             self
         }
         /// <p>The new rule name or topic rule to send messages to.</p>
@@ -7355,8 +7399,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new description of the resource.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A new description of the resource.</p>
@@ -7365,8 +7409,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the IAM Role that authorizes the destination.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The ARN of the IAM Role that authorizes the destination.</p>
@@ -7378,7 +7422,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFuotaTask`.
     ///
     /// <p>Updates properties of a FUOTA task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFuotaTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7423,10 +7467,10 @@ pub mod fluent_builders {
                 crate::input::UpdateFuotaTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7435,8 +7479,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of a FUOTA task.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of a FUOTA task.</p>
@@ -7445,8 +7489,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of a FUOTA task.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of a FUOTA task.</p>
@@ -7455,8 +7499,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the new resource.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the new resource.</p>
@@ -7465,8 +7509,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The LoRaWAN information used with a FUOTA task.</p>
-        pub fn lo_ra_wan(mut self, inp: crate::model::LoRaWanFuotaTask) -> Self {
-            self.inner = self.inner.lo_ra_wan(inp);
+        pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanFuotaTask) -> Self {
+            self.inner = self.inner.lo_ra_wan(input);
             self
         }
         /// <p>The LoRaWAN information used with a FUOTA task.</p>
@@ -7478,8 +7522,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
-        pub fn firmware_update_image(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firmware_update_image(inp);
+        pub fn firmware_update_image(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firmware_update_image(input.into());
             self
         }
         /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
@@ -7491,8 +7535,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The firmware update role that is to be used with a FUOTA task.</p>
-        pub fn firmware_update_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firmware_update_role(inp);
+        pub fn firmware_update_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firmware_update_role(input.into());
             self
         }
         /// <p>The firmware update role that is to be used with a FUOTA task.</p>
@@ -7506,9 +7550,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateLogLevelsByResourceTypes`.
     ///
-    /// <p>Set default log level, or log levels by resource types. This can be for wireless device log options or
-    /// wireless gateways log options and is used to control the log messages that'll be displayed in CloudWatch.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Set default log level, or log levels by resource types. This can be for wireless device log options or wireless gateways log options and is used to control the log messages that'll be displayed in CloudWatch.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLogLevelsByResourceTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7553,10 +7596,10 @@ pub mod fluent_builders {
                 crate::input::UpdateLogLevelsByResourceTypesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7565,8 +7608,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The log level for a log message.</p>
-        pub fn default_log_level(mut self, inp: crate::model::LogLevel) -> Self {
-            self.inner = self.inner.default_log_level(inp);
+        pub fn default_log_level(mut self, input: crate::model::LogLevel) -> Self {
+            self.inner = self.inner.default_log_level(input);
             self
         }
         /// <p>The log level for a log message.</p>
@@ -7584,9 +7627,9 @@ pub mod fluent_builders {
         /// <p>The list of wireless device log options.</p>
         pub fn wireless_device_log_options(
             mut self,
-            inp: impl Into<crate::model::WirelessDeviceLogOption>,
+            input: crate::model::WirelessDeviceLogOption,
         ) -> Self {
-            self.inner = self.inner.wireless_device_log_options(inp);
+            self.inner = self.inner.wireless_device_log_options(input);
             self
         }
         /// <p>The list of wireless device log options.</p>
@@ -7604,9 +7647,9 @@ pub mod fluent_builders {
         /// <p>The list of wireless gateway log options.</p>
         pub fn wireless_gateway_log_options(
             mut self,
-            inp: impl Into<crate::model::WirelessGatewayLogOption>,
+            input: crate::model::WirelessGatewayLogOption,
         ) -> Self {
-            self.inner = self.inner.wireless_gateway_log_options(inp);
+            self.inner = self.inner.wireless_gateway_log_options(input);
             self
         }
         /// <p>The list of wireless gateway log options.</p>
@@ -7621,7 +7664,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateMulticastGroup`.
     ///
     /// <p>Updates properties of a multicast group session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMulticastGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7666,10 +7709,10 @@ pub mod fluent_builders {
                 crate::input::UpdateMulticastGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7678,8 +7721,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the multicast group.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the multicast group.</p>
@@ -7688,8 +7731,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the multicast group.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the multicast group.</p>
@@ -7698,8 +7741,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the new resource.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the new resource.</p>
@@ -7708,8 +7751,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
-        pub fn lo_ra_wan(mut self, inp: crate::model::LoRaWanMulticast) -> Self {
-            self.inner = self.inner.lo_ra_wan(inp);
+        pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanMulticast) -> Self {
+            self.inner = self.inner.lo_ra_wan(input);
             self
         }
         /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
@@ -7724,7 +7767,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateNetworkAnalyzerConfiguration`.
     ///
     /// <p>Update NetworkAnalyzer configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateNetworkAnalyzerConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7771,10 +7814,10 @@ pub mod fluent_builders {
                 crate::input::UpdateNetworkAnalyzerConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7783,8 +7826,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>NetworkAnalyzer configuration name.</p>
-        pub fn configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_name(inp);
+        pub fn configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_name(input.into());
             self
         }
         /// <p>NetworkAnalyzer configuration name.</p>
@@ -7796,8 +7839,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Trace Content for resources.</p>
-        pub fn trace_content(mut self, inp: crate::model::TraceContent) -> Self {
-            self.inner = self.inner.trace_content(inp);
+        pub fn trace_content(mut self, input: crate::model::TraceContent) -> Self {
+            self.inner = self.inner.trace_content(input);
             self
         }
         /// <p>Trace Content for resources.</p>
@@ -7813,8 +7856,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_wireless_devices_to_add`](Self::set_wireless_devices_to_add).
         ///
         /// <p>WirelessDevices to add into NetworkAnalyzerConfiguration.</p>
-        pub fn wireless_devices_to_add(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.wireless_devices_to_add(inp);
+        pub fn wireless_devices_to_add(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wireless_devices_to_add(input.into());
             self
         }
         /// <p>WirelessDevices to add into NetworkAnalyzerConfiguration.</p>
@@ -7830,8 +7873,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_wireless_devices_to_remove`](Self::set_wireless_devices_to_remove).
         ///
         /// <p>WirelessDevices to remove from NetworkAnalyzerConfiguration.</p>
-        pub fn wireless_devices_to_remove(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.wireless_devices_to_remove(inp);
+        pub fn wireless_devices_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wireless_devices_to_remove(input.into());
             self
         }
         /// <p>WirelessDevices to remove from NetworkAnalyzerConfiguration.</p>
@@ -7847,8 +7890,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_wireless_gateways_to_add`](Self::set_wireless_gateways_to_add).
         ///
         /// <p>WirelessGateways to add into NetworkAnalyzerConfiguration.</p>
-        pub fn wireless_gateways_to_add(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.wireless_gateways_to_add(inp);
+        pub fn wireless_gateways_to_add(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.wireless_gateways_to_add(input.into());
             self
         }
         /// <p>WirelessGateways to add into NetworkAnalyzerConfiguration.</p>
@@ -7864,8 +7907,11 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_wireless_gateways_to_remove`](Self::set_wireless_gateways_to_remove).
         ///
         /// <p>WirelessGateways to remove from NetworkAnalyzerConfiguration.</p>
-        pub fn wireless_gateways_to_remove(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.wireless_gateways_to_remove(inp);
+        pub fn wireless_gateways_to_remove(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.wireless_gateways_to_remove(input.into());
             self
         }
         /// <p>WirelessGateways to remove from NetworkAnalyzerConfiguration.</p>
@@ -7880,7 +7926,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePartnerAccount`.
     ///
     /// <p>Updates properties of a partner account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePartnerAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7925,10 +7971,10 @@ pub mod fluent_builders {
                 crate::input::UpdatePartnerAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7937,8 +7983,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Sidewalk account credentials.</p>
-        pub fn sidewalk(mut self, inp: crate::model::SidewalkUpdateAccount) -> Self {
-            self.inner = self.inner.sidewalk(inp);
+        pub fn sidewalk(mut self, input: crate::model::SidewalkUpdateAccount) -> Self {
+            self.inner = self.inner.sidewalk(input);
             self
         }
         /// <p>The Sidewalk account credentials.</p>
@@ -7950,8 +7996,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the partner account to update.</p>
-        pub fn partner_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.partner_account_id(inp);
+        pub fn partner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.partner_account_id(input.into());
             self
         }
         /// <p>The ID of the partner account to update.</p>
@@ -7963,8 +8009,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The partner type.</p>
-        pub fn partner_type(mut self, inp: crate::model::PartnerType) -> Self {
-            self.inner = self.inner.partner_type(inp);
+        pub fn partner_type(mut self, input: crate::model::PartnerType) -> Self {
+            self.inner = self.inner.partner_type(input);
             self
         }
         /// <p>The partner type.</p>
@@ -7979,7 +8025,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateResourceEventConfiguration`.
     ///
     /// <p>Update the event configuration for a particular resource identifier.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResourceEventConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8024,10 +8070,10 @@ pub mod fluent_builders {
                 crate::input::UpdateResourceEventConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8036,8 +8082,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Resource identifier to opt in for event messaging.</p>
-        pub fn identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(inp);
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(input.into());
             self
         }
         /// <p>Resource identifier to opt in for event messaging.</p>
@@ -8046,8 +8092,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifier type of the particular resource identifier for event configuration.</p>
-        pub fn identifier_type(mut self, inp: crate::model::IdentifierType) -> Self {
-            self.inner = self.inner.identifier_type(inp);
+        pub fn identifier_type(mut self, input: crate::model::IdentifierType) -> Self {
+            self.inner = self.inner.identifier_type(input);
             self
         }
         /// <p>Identifier type of the particular resource identifier for event configuration.</p>
@@ -8059,8 +8105,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Partner type of the resource if the identifier type is PartnerAccountId</p>
-        pub fn partner_type(mut self, inp: crate::model::EventNotificationPartnerType) -> Self {
-            self.inner = self.inner.partner_type(inp);
+        pub fn partner_type(mut self, input: crate::model::EventNotificationPartnerType) -> Self {
+            self.inner = self.inner.partner_type(input);
             self
         }
         /// <p>Partner type of the resource if the identifier type is PartnerAccountId</p>
@@ -8074,9 +8120,9 @@ pub mod fluent_builders {
         /// <p>Event configuration for the device registration state event</p>
         pub fn device_registration_state(
             mut self,
-            inp: crate::model::DeviceRegistrationStateEventConfiguration,
+            input: crate::model::DeviceRegistrationStateEventConfiguration,
         ) -> Self {
-            self.inner = self.inner.device_registration_state(inp);
+            self.inner = self.inner.device_registration_state(input);
             self
         }
         /// <p>Event configuration for the device registration state event</p>
@@ -8088,8 +8134,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Event configuration for the Proximity event</p>
-        pub fn proximity(mut self, inp: crate::model::ProximityEventConfiguration) -> Self {
-            self.inner = self.inner.proximity(inp);
+        pub fn proximity(mut self, input: crate::model::ProximityEventConfiguration) -> Self {
+            self.inner = self.inner.proximity(input);
             self
         }
         /// <p>Event configuration for the Proximity event</p>
@@ -8104,7 +8150,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateWirelessDevice`.
     ///
     /// <p>Updates properties of a wireless device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWirelessDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8149,10 +8195,10 @@ pub mod fluent_builders {
                 crate::input::UpdateWirelessDeviceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8161,8 +8207,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to update.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the resource to update.</p>
@@ -8171,8 +8217,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the new destination for the device.</p>
-        pub fn destination_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_name(inp);
+        pub fn destination_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_name(input.into());
             self
         }
         /// <p>The name of the new destination for the device.</p>
@@ -8184,8 +8230,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name of the resource.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The new name of the resource.</p>
@@ -8194,8 +8240,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new description of the resource.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A new description of the resource.</p>
@@ -8204,8 +8250,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated wireless device's configuration.</p>
-        pub fn lo_ra_wan(mut self, inp: crate::model::LoRaWanUpdateDevice) -> Self {
-            self.inner = self.inner.lo_ra_wan(inp);
+        pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanUpdateDevice) -> Self {
+            self.inner = self.inner.lo_ra_wan(input);
             self
         }
         /// <p>The updated wireless device's configuration.</p>
@@ -8220,7 +8266,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateWirelessGateway`.
     ///
     /// <p>Updates properties of a wireless gateway.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWirelessGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8265,10 +8311,10 @@ pub mod fluent_builders {
                 crate::input::UpdateWirelessGatewayInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8277,8 +8323,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to update.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the resource to update.</p>
@@ -8287,8 +8333,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name of the resource.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The new name of the resource.</p>
@@ -8297,8 +8343,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new description of the resource.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A new description of the resource.</p>
@@ -8311,11 +8357,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_join_eui_filters`](Self::set_join_eui_filters).
         ///
         /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
-        pub fn join_eui_filters(
-            mut self,
-            inp: impl Into<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.inner = self.inner.join_eui_filters(inp);
+        pub fn join_eui_filters(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+            self.inner = self.inner.join_eui_filters(input);
             self
         }
         /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
@@ -8331,8 +8374,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_net_id_filters`](Self::set_net_id_filters).
         ///
         /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
-        pub fn net_id_filters(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.net_id_filters(inp);
+        pub fn net_id_filters(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.net_id_filters(input.into());
             self
         }
         /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
@@ -8345,6 +8388,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

@@ -441,12 +441,9 @@ pub mod list_user_settings_output {
         /// To override the contents of this collection use [`set_user_settings`](Self::set_user_settings).
         ///
         /// <p>The user settings.</p>
-        pub fn user_settings(
-            mut self,
-            input: impl Into<crate::model::UserSettingsSummary>,
-        ) -> Self {
+        pub fn user_settings(mut self, input: crate::model::UserSettingsSummary) -> Self {
             let mut v = self.user_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_settings = Some(v);
             self
         }
@@ -527,9 +524,9 @@ pub mod list_trust_stores_output {
         /// To override the contents of this collection use [`set_trust_stores`](Self::set_trust_stores).
         ///
         /// <p>The trust stores.</p>
-        pub fn trust_stores(mut self, input: impl Into<crate::model::TrustStoreSummary>) -> Self {
+        pub fn trust_stores(mut self, input: crate::model::TrustStoreSummary) -> Self {
             let mut v = self.trust_stores.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.trust_stores = Some(v);
             self
         }
@@ -618,12 +615,9 @@ pub mod list_trust_store_certificates_output {
         /// To override the contents of this collection use [`set_certificate_list`](Self::set_certificate_list).
         ///
         /// <p>The certificate list.</p>
-        pub fn certificate_list(
-            mut self,
-            input: impl Into<crate::model::CertificateSummary>,
-        ) -> Self {
+        pub fn certificate_list(mut self, input: crate::model::CertificateSummary) -> Self {
             let mut v = self.certificate_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificate_list = Some(v);
             self
         }
@@ -709,9 +703,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags of the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -778,9 +772,9 @@ pub mod list_portals_output {
         /// To override the contents of this collection use [`set_portals`](Self::set_portals).
         ///
         /// <p>The portals in the list.</p>
-        pub fn portals(mut self, input: impl Into<crate::model::PortalSummary>) -> Self {
+        pub fn portals(mut self, input: crate::model::PortalSummary) -> Self {
             let mut v = self.portals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.portals = Some(v);
             self
         }
@@ -861,12 +855,9 @@ pub mod list_network_settings_output {
         /// To override the contents of this collection use [`set_network_settings`](Self::set_network_settings).
         ///
         /// <p>The network settings.</p>
-        pub fn network_settings(
-            mut self,
-            input: impl Into<crate::model::NetworkSettingsSummary>,
-        ) -> Self {
+        pub fn network_settings(mut self, input: crate::model::NetworkSettingsSummary) -> Self {
             let mut v = self.network_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_settings = Some(v);
             self
         }
@@ -960,12 +951,9 @@ pub mod list_identity_providers_output {
         /// To override the contents of this collection use [`set_identity_providers`](Self::set_identity_providers).
         ///
         /// <p>The identity providers.</p>
-        pub fn identity_providers(
-            mut self,
-            input: impl Into<crate::model::IdentityProviderSummary>,
-        ) -> Self {
+        pub fn identity_providers(mut self, input: crate::model::IdentityProviderSummary) -> Self {
             let mut v = self.identity_providers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.identity_providers = Some(v);
             self
         }
@@ -1036,12 +1024,9 @@ pub mod list_browser_settings_output {
         /// To override the contents of this collection use [`set_browser_settings`](Self::set_browser_settings).
         ///
         /// <p>The browser settings.</p>
-        pub fn browser_settings(
-            mut self,
-            input: impl Into<crate::model::BrowserSettingsSummary>,
-        ) -> Self {
+        pub fn browser_settings(mut self, input: crate::model::BrowserSettingsSummary) -> Self {
             let mut v = self.browser_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.browser_settings = Some(v);
             self
         }

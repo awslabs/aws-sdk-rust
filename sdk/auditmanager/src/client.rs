@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Audit Manager
@@ -263,6 +263,7 @@ where
     ///
     /// See [`GetChangeLogs`](crate::client::fluent_builders::GetChangeLogs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetChangeLogs::into_paginator).
     pub fn get_change_logs(&self) -> fluent_builders::GetChangeLogs<C, M, R> {
         fluent_builders::GetChangeLogs::new(self.handle.clone())
     }
@@ -277,6 +278,7 @@ where
     ///
     /// See [`GetDelegations`](crate::client::fluent_builders::GetDelegations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetDelegations::into_paginator).
     pub fn get_delegations(&self) -> fluent_builders::GetDelegations<C, M, R> {
         fluent_builders::GetDelegations::new(self.handle.clone())
     }
@@ -291,6 +293,7 @@ where
     ///
     /// See [`GetEvidenceByEvidenceFolder`](crate::client::fluent_builders::GetEvidenceByEvidenceFolder) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetEvidenceByEvidenceFolder::into_paginator).
     pub fn get_evidence_by_evidence_folder(
         &self,
     ) -> fluent_builders::GetEvidenceByEvidenceFolder<C, M, R> {
@@ -307,6 +310,7 @@ where
     ///
     /// See [`GetEvidenceFoldersByAssessment`](crate::client::fluent_builders::GetEvidenceFoldersByAssessment) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetEvidenceFoldersByAssessment::into_paginator).
     pub fn get_evidence_folders_by_assessment(
         &self,
     ) -> fluent_builders::GetEvidenceFoldersByAssessment<C, M, R> {
@@ -316,6 +320,7 @@ where
     ///
     /// See [`GetEvidenceFoldersByAssessmentControl`](crate::client::fluent_builders::GetEvidenceFoldersByAssessmentControl) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetEvidenceFoldersByAssessmentControl::into_paginator).
     pub fn get_evidence_folders_by_assessment_control(
         &self,
     ) -> fluent_builders::GetEvidenceFoldersByAssessmentControl<C, M, R> {
@@ -362,6 +367,7 @@ where
     ///
     /// See [`ListAssessmentControlInsightsByControlDomain`](crate::client::fluent_builders::ListAssessmentControlInsightsByControlDomain) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssessmentControlInsightsByControlDomain::into_paginator).
     pub fn list_assessment_control_insights_by_control_domain(
         &self,
     ) -> fluent_builders::ListAssessmentControlInsightsByControlDomain<C, M, R> {
@@ -371,6 +377,7 @@ where
     ///
     /// See [`ListAssessmentFrameworks`](crate::client::fluent_builders::ListAssessmentFrameworks) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssessmentFrameworks::into_paginator).
     pub fn list_assessment_frameworks(&self) -> fluent_builders::ListAssessmentFrameworks<C, M, R> {
         fluent_builders::ListAssessmentFrameworks::new(self.handle.clone())
     }
@@ -378,6 +385,7 @@ where
     ///
     /// See [`ListAssessmentFrameworkShareRequests`](crate::client::fluent_builders::ListAssessmentFrameworkShareRequests) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssessmentFrameworkShareRequests::into_paginator).
     pub fn list_assessment_framework_share_requests(
         &self,
     ) -> fluent_builders::ListAssessmentFrameworkShareRequests<C, M, R> {
@@ -387,6 +395,7 @@ where
     ///
     /// See [`ListAssessmentReports`](crate::client::fluent_builders::ListAssessmentReports) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssessmentReports::into_paginator).
     pub fn list_assessment_reports(&self) -> fluent_builders::ListAssessmentReports<C, M, R> {
         fluent_builders::ListAssessmentReports::new(self.handle.clone())
     }
@@ -394,6 +403,7 @@ where
     ///
     /// See [`ListAssessments`](crate::client::fluent_builders::ListAssessments) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssessments::into_paginator).
     pub fn list_assessments(&self) -> fluent_builders::ListAssessments<C, M, R> {
         fluent_builders::ListAssessments::new(self.handle.clone())
     }
@@ -401,6 +411,7 @@ where
     ///
     /// See [`ListControlDomainInsights`](crate::client::fluent_builders::ListControlDomainInsights) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListControlDomainInsights::into_paginator).
     pub fn list_control_domain_insights(
         &self,
     ) -> fluent_builders::ListControlDomainInsights<C, M, R> {
@@ -410,6 +421,7 @@ where
     ///
     /// See [`ListControlDomainInsightsByAssessment`](crate::client::fluent_builders::ListControlDomainInsightsByAssessment) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListControlDomainInsightsByAssessment::into_paginator).
     pub fn list_control_domain_insights_by_assessment(
         &self,
     ) -> fluent_builders::ListControlDomainInsightsByAssessment<C, M, R> {
@@ -419,6 +431,7 @@ where
     ///
     /// See [`ListControlInsightsByControlDomain`](crate::client::fluent_builders::ListControlInsightsByControlDomain) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListControlInsightsByControlDomain::into_paginator).
     pub fn list_control_insights_by_control_domain(
         &self,
     ) -> fluent_builders::ListControlInsightsByControlDomain<C, M, R> {
@@ -428,6 +441,7 @@ where
     ///
     /// See [`ListControls`](crate::client::fluent_builders::ListControls) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListControls::into_paginator).
     pub fn list_controls(&self) -> fluent_builders::ListControls<C, M, R> {
         fluent_builders::ListControls::new(self.handle.clone())
     }
@@ -435,6 +449,7 @@ where
     ///
     /// See [`ListKeywordsForDataSource`](crate::client::fluent_builders::ListKeywordsForDataSource) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListKeywordsForDataSource::into_paginator).
     pub fn list_keywords_for_data_source(
         &self,
     ) -> fluent_builders::ListKeywordsForDataSource<C, M, R> {
@@ -444,6 +459,7 @@ where
     ///
     /// See [`ListNotifications`](crate::client::fluent_builders::ListNotifications) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListNotifications::into_paginator).
     pub fn list_notifications(&self) -> fluent_builders::ListNotifications<C, M, R> {
         fluent_builders::ListNotifications::new(self.handle.clone())
     }
@@ -575,9 +591,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AssociateAssessmentReportEvidenceFolder`.
     ///
-    /// <p> Associates an evidence folder to an assessment report in a Audit Manager
-    /// assessment. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Associates an evidence folder to an assessment report in a Audit Manager assessment. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateAssessmentReportEvidenceFolder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -624,10 +639,10 @@ pub mod fluent_builders {
                 crate::input::AssociateAssessmentReportEvidenceFolderInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -636,8 +651,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The identifier for the assessment. </p>
-        pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(inp);
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The identifier for the assessment. </p>
@@ -649,8 +664,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The identifier for the folder that the evidence is stored in. </p>
-        pub fn evidence_folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evidence_folder_id(inp);
+        pub fn evidence_folder_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evidence_folder_id(input.into());
             self
         }
         /// <p> The identifier for the folder that the evidence is stored in. </p>
@@ -664,9 +679,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchAssociateAssessmentReportEvidence`.
     ///
-    /// <p> Associates a list of evidence to an assessment report in an Audit Manager
-    /// assessment. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Associates a list of evidence to an assessment report in an Audit Manager assessment. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchAssociateAssessmentReportEvidence<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -713,10 +727,10 @@ pub mod fluent_builders {
                 crate::input::BatchAssociateAssessmentReportEvidenceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -725,8 +739,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The identifier for the assessment. </p>
-        pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(inp);
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The identifier for the assessment. </p>
@@ -738,8 +752,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The identifier for the folder that the evidence is stored in. </p>
-        pub fn evidence_folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evidence_folder_id(inp);
+        pub fn evidence_folder_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evidence_folder_id(input.into());
             self
         }
         /// <p> The identifier for the folder that the evidence is stored in. </p>
@@ -755,8 +769,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_evidence_ids`](Self::set_evidence_ids).
         ///
         /// <p> The list of evidence identifiers. </p>
-        pub fn evidence_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evidence_ids(inp);
+        pub fn evidence_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evidence_ids(input.into());
             self
         }
         /// <p> The list of evidence identifiers. </p>
@@ -771,7 +785,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchCreateDelegationByAssessment`.
     ///
     /// <p> Creates a batch of delegations for an assessment in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchCreateDelegationByAssessment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -816,10 +830,10 @@ pub mod fluent_builders {
                 crate::input::BatchCreateDelegationByAssessmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -834,9 +848,9 @@ pub mod fluent_builders {
         /// <p> The API request to batch create delegations in Audit Manager. </p>
         pub fn create_delegation_requests(
             mut self,
-            inp: impl Into<crate::model::CreateDelegationRequest>,
+            input: crate::model::CreateDelegationRequest,
         ) -> Self {
-            self.inner = self.inner.create_delegation_requests(inp);
+            self.inner = self.inner.create_delegation_requests(input);
             self
         }
         /// <p> The API request to batch create delegations in Audit Manager. </p>
@@ -848,8 +862,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The identifier for the assessment. </p>
-        pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(inp);
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The identifier for the assessment. </p>
@@ -864,7 +878,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDeleteDelegationByAssessment`.
     ///
     /// <p> Deletes a batch of delegations for an assessment in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeleteDelegationByAssessment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -909,10 +923,10 @@ pub mod fluent_builders {
                 crate::input::BatchDeleteDelegationByAssessmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -925,8 +939,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_delegation_ids`](Self::set_delegation_ids).
         ///
         /// <p> The identifiers for the delegations. </p>
-        pub fn delegation_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delegation_ids(inp);
+        pub fn delegation_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delegation_ids(input.into());
             self
         }
         /// <p> The identifiers for the delegations. </p>
@@ -938,8 +952,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The identifier for the assessment. </p>
-        pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(inp);
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The identifier for the assessment. </p>
@@ -953,9 +967,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchDisassociateAssessmentReportEvidence`.
     ///
-    /// <p> Disassociates a list of evidence from an assessment report in Audit Manager.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Disassociates a list of evidence from an assessment report in Audit Manager. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDisassociateAssessmentReportEvidence<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1002,10 +1015,10 @@ pub mod fluent_builders {
                 crate::input::BatchDisassociateAssessmentReportEvidenceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1014,8 +1027,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The identifier for the assessment. </p>
-        pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(inp);
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The identifier for the assessment. </p>
@@ -1027,8 +1040,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The identifier for the folder that the evidence is stored in. </p>
-        pub fn evidence_folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evidence_folder_id(inp);
+        pub fn evidence_folder_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evidence_folder_id(input.into());
             self
         }
         /// <p> The identifier for the folder that the evidence is stored in. </p>
@@ -1044,8 +1057,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_evidence_ids`](Self::set_evidence_ids).
         ///
         /// <p> The list of evidence identifiers. </p>
-        pub fn evidence_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evidence_ids(inp);
+        pub fn evidence_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evidence_ids(input.into());
             self
         }
         /// <p> The list of evidence identifiers. </p>
@@ -1059,9 +1072,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchImportEvidenceToAssessmentControl`.
     ///
-    /// <p> Uploads one or more pieces of evidence to a control in an Audit Manager
-    /// assessment. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Uploads one or more pieces of evidence to a control in an Audit Manager assessment. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchImportEvidenceToAssessmentControl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1108,10 +1120,10 @@ pub mod fluent_builders {
                 crate::input::BatchImportEvidenceToAssessmentControlInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1120,8 +1132,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The identifier for the assessment. </p>
-        pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(inp);
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The identifier for the assessment. </p>
@@ -1133,8 +1145,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The identifier for the control set. </p>
-        pub fn control_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_set_id(inp);
+        pub fn control_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_set_id(input.into());
             self
         }
         /// <p> The identifier for the control set. </p>
@@ -1146,8 +1158,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The identifier for the control. </p>
-        pub fn control_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_id(inp);
+        pub fn control_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_id(input.into());
             self
         }
         /// <p> The identifier for the control. </p>
@@ -1160,8 +1172,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_manual_evidence`](Self::set_manual_evidence).
         ///
         /// <p> The list of manual evidence objects. </p>
-        pub fn manual_evidence(mut self, inp: impl Into<crate::model::ManualEvidence>) -> Self {
-            self.inner = self.inner.manual_evidence(inp);
+        pub fn manual_evidence(mut self, input: crate::model::ManualEvidence) -> Self {
+            self.inner = self.inner.manual_evidence(input);
             self
         }
         /// <p> The list of manual evidence objects. </p>
@@ -1176,7 +1188,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAssessment`.
     ///
     /// <p> Creates an assessment in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAssessment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1221,10 +1233,10 @@ pub mod fluent_builders {
                 crate::input::CreateAssessmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1233,8 +1245,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The name of the assessment to be created. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p> The name of the assessment to be created. </p>
@@ -1243,8 +1255,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The optional description of the assessment to be created. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p> The optional description of the assessment to be created. </p>
@@ -1255,9 +1267,9 @@ pub mod fluent_builders {
         /// <p> The assessment report storage destination for the assessment that's being created. </p>
         pub fn assessment_reports_destination(
             mut self,
-            inp: crate::model::AssessmentReportsDestination,
+            input: crate::model::AssessmentReportsDestination,
         ) -> Self {
-            self.inner = self.inner.assessment_reports_destination(inp);
+            self.inner = self.inner.assessment_reports_destination(input);
             self
         }
         /// <p> The assessment report storage destination for the assessment that's being created. </p>
@@ -1268,14 +1280,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_reports_destination(input);
             self
         }
-        /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in
-        /// scope for the assessment. </p>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment. </p>
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in
-        /// scope for the assessment. </p>
+        /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment. </p>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
@@ -1285,8 +1295,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_roles`](Self::set_roles).
         ///
         /// <p> The list of roles for the assessment. </p>
-        pub fn roles(mut self, inp: impl Into<crate::model::Role>) -> Self {
-            self.inner = self.inner.roles(inp);
+        pub fn roles(mut self, input: crate::model::Role) -> Self {
+            self.inner = self.inner.roles(input);
             self
         }
         /// <p> The list of roles for the assessment. </p>
@@ -1298,8 +1308,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The identifier for the framework that the assessment will be created from. </p>
-        pub fn framework_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.framework_id(inp);
+        pub fn framework_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.framework_id(input.into());
             self
         }
         /// <p> The identifier for the framework that the assessment will be created from. </p>
@@ -1317,7 +1327,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p> The tags that are associated with the assessment. </p>
@@ -1334,7 +1344,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAssessmentFramework`.
     ///
     /// <p> Creates a custom framework in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAssessmentFramework<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1379,10 +1389,10 @@ pub mod fluent_builders {
                 crate::input::CreateAssessmentFrameworkInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1391,8 +1401,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The name of the new custom framework. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p> The name of the new custom framework. </p>
@@ -1401,8 +1411,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> An optional description for the new custom framework. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p> An optional description for the new custom framework. </p>
@@ -1410,14 +1420,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
-        /// </p>
-        pub fn compliance_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.compliance_type(inp);
+        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
+        pub fn compliance_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.compliance_type(input.into());
             self
         }
-        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
-        /// </p>
+        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
         pub fn set_compliance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1432,9 +1440,9 @@ pub mod fluent_builders {
         /// <p> The control sets that are associated with the framework. </p>
         pub fn control_sets(
             mut self,
-            inp: impl Into<crate::model::CreateAssessmentFrameworkControlSet>,
+            input: crate::model::CreateAssessmentFrameworkControlSet,
         ) -> Self {
-            self.inner = self.inner.control_sets(inp);
+            self.inner = self.inner.control_sets(input);
             self
         }
         /// <p> The control sets that are associated with the framework. </p>
@@ -1457,7 +1465,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p> The tags that are associated with the framework. </p>
@@ -1474,7 +1482,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAssessmentReport`.
     ///
     /// <p> Creates an assessment report for the specified assessment. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAssessmentReport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1519,10 +1527,10 @@ pub mod fluent_builders {
                 crate::input::CreateAssessmentReportInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1531,8 +1539,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The name of the new assessment report. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p> The name of the new assessment report. </p>
@@ -1541,8 +1549,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The description of the assessment report. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p> The description of the assessment report. </p>
@@ -1551,8 +1559,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The identifier for the assessment. </p>
-        pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(inp);
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The identifier for the assessment. </p>
@@ -1567,7 +1575,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateControl`.
     ///
     /// <p> Creates a new custom control in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateControl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1612,10 +1620,10 @@ pub mod fluent_builders {
                 crate::input::CreateControlInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1624,8 +1632,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The name of the control. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p> The name of the control. </p>
@@ -1634,8 +1642,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The description of the control. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p> The description of the control. </p>
@@ -1644,8 +1652,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The steps to follow to determine if the control is satisfied. </p>
-        pub fn testing_information(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.testing_information(inp);
+        pub fn testing_information(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.testing_information(input.into());
             self
         }
         /// <p> The steps to follow to determine if the control is satisfied. </p>
@@ -1657,8 +1665,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The title of the action plan for remediating the control. </p>
-        pub fn action_plan_title(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_plan_title(inp);
+        pub fn action_plan_title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_plan_title(input.into());
             self
         }
         /// <p> The title of the action plan for remediating the control. </p>
@@ -1670,8 +1678,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
-        pub fn action_plan_instructions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_plan_instructions(inp);
+        pub fn action_plan_instructions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_plan_instructions(input.into());
             self
         }
         /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
@@ -1689,9 +1697,9 @@ pub mod fluent_builders {
         /// <p> The data mapping sources for the control. </p>
         pub fn control_mapping_sources(
             mut self,
-            inp: impl Into<crate::model::CreateControlMappingSource>,
+            input: crate::model::CreateControlMappingSource,
         ) -> Self {
-            self.inner = self.inner.control_mapping_sources(inp);
+            self.inner = self.inner.control_mapping_sources(input);
             self
         }
         /// <p> The data mapping sources for the control. </p>
@@ -1712,7 +1720,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p> The tags that are associated with the control. </p>
@@ -1729,7 +1737,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAssessment`.
     ///
     /// <p> Deletes an assessment in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAssessment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1774,10 +1782,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAssessmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1786,8 +1794,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The identifier for the assessment. </p>
-        pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(inp);
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The identifier for the assessment. </p>
@@ -1802,7 +1810,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAssessmentFramework`.
     ///
     /// <p> Deletes a custom framework in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAssessmentFramework<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1847,10 +1855,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAssessmentFrameworkInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1859,8 +1867,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The identifier for the custom framework. </p>
-        pub fn framework_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.framework_id(inp);
+        pub fn framework_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.framework_id(input.into());
             self
         }
         /// <p> The identifier for the custom framework. </p>
@@ -1871,10 +1879,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAssessmentFrameworkShare`.
     ///
-    /// <p>
-    /// Deletes a share request for a custom framework in Audit Manager.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Deletes a share request for a custom framework in Audit Manager. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAssessmentFrameworkShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1919,10 +1925,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAssessmentFrameworkShareInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1931,8 +1937,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the share request to be deleted.</p>
-        pub fn request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_id(inp);
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_id(input.into());
             self
         }
         /// <p>The unique identifier for the share request to be deleted.</p>
@@ -1941,8 +1947,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the share request is a sent request or a received request.</p>
-        pub fn request_type(mut self, inp: crate::model::ShareRequestType) -> Self {
-            self.inner = self.inner.request_type(inp);
+        pub fn request_type(mut self, input: crate::model::ShareRequestType) -> Self {
+            self.inner = self.inner.request_type(input);
             self
         }
         /// <p>Specifies whether the share request is a sent request or a received request.</p>
@@ -1957,7 +1963,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAssessmentReport`.
     ///
     /// <p> Deletes an assessment report from an assessment in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAssessmentReport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2002,10 +2008,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAssessmentReportInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2014,8 +2020,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique identifier for the assessment. </p>
-        pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(inp);
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The unique identifier for the assessment. </p>
@@ -2027,8 +2033,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique identifier for the assessment report. </p>
-        pub fn assessment_report_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_report_id(inp);
+        pub fn assessment_report_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_report_id(input.into());
             self
         }
         /// <p> The unique identifier for the assessment report. </p>
@@ -2043,7 +2049,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteControl`.
     ///
     /// <p> Deletes a custom control in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteControl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2088,10 +2094,10 @@ pub mod fluent_builders {
                 crate::input::DeleteControlInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2100,8 +2106,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique identifier for the control. </p>
-        pub fn control_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_id(inp);
+        pub fn control_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_id(input.into());
             self
         }
         /// <p> The unique identifier for the control. </p>
@@ -2113,7 +2119,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeregisterAccount`.
     ///
     /// <p> Deregisters an account in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2158,10 +2164,10 @@ pub mod fluent_builders {
                 crate::input::DeregisterAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2172,16 +2178,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeregisterOrganizationAdminAccount`.
     ///
-    /// <p>Removes the specified member Amazon Web Services account as a delegated administrator for
-    /// Audit Manager. </p>
-    /// <important>
-    /// <p>When you remove a delegated administrator from your Audit Manager settings, you
-    /// continue to have access to the evidence that you previously collected under that
-    /// account. This is also the case when you deregister a delegated administrator from
-    /// Audit Manager. However, Audit Manager will stop collecting and attaching
-    /// evidence to that delegated administrator account moving forward.</p>
+    /// <p>Removes the specified member Amazon Web Services account as a delegated administrator for Audit Manager. </p> <important>
+    /// <p>When you remove a delegated administrator from your Audit Manager settings, you continue to have access to the evidence that you previously collected under that account. This is also the case when you deregister a delegated administrator from Audit Manager. However, Audit Manager will stop collecting and attaching evidence to that delegated administrator account moving forward.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterOrganizationAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2228,10 +2228,10 @@ pub mod fluent_builders {
                 crate::input::DeregisterOrganizationAdminAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2240,8 +2240,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The identifier for the administrator account. </p>
-        pub fn admin_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.admin_account_id(inp);
+        pub fn admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.admin_account_id(input.into());
             self
         }
         /// <p> The identifier for the administrator account. </p>
@@ -2256,7 +2256,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateAssessmentReportEvidenceFolder`.
     ///
     /// <p> Disassociates an evidence folder from the specified assessment report in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateAssessmentReportEvidenceFolder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2303,10 +2303,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateAssessmentReportEvidenceFolderInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2315,8 +2315,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique identifier for the assessment. </p>
-        pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(inp);
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The unique identifier for the assessment. </p>
@@ -2328,8 +2328,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique identifier for the folder that the evidence is stored in. </p>
-        pub fn evidence_folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evidence_folder_id(inp);
+        pub fn evidence_folder_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evidence_folder_id(input.into());
             self
         }
         /// <p> The unique identifier for the folder that the evidence is stored in. </p>
@@ -2344,7 +2344,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAccountStatus`.
     ///
     /// <p> Returns the registration status of an account in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccountStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2389,10 +2389,10 @@ pub mod fluent_builders {
                 crate::input::GetAccountStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2404,7 +2404,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAssessment`.
     ///
     /// <p>Returns an assessment from Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssessment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2449,10 +2449,10 @@ pub mod fluent_builders {
                 crate::input::GetAssessmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2461,8 +2461,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the assessment. </p>
-        pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(inp);
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p>The unique identifier for the assessment. </p>
@@ -2477,7 +2477,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAssessmentFramework`.
     ///
     /// <p>Returns a framework from Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssessmentFramework<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2522,10 +2522,10 @@ pub mod fluent_builders {
                 crate::input::GetAssessmentFrameworkInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2534,8 +2534,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The identifier for the framework. </p>
-        pub fn framework_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.framework_id(inp);
+        pub fn framework_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.framework_id(input.into());
             self
         }
         /// <p> The identifier for the framework. </p>
@@ -2547,7 +2547,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAssessmentReportUrl`.
     ///
     /// <p> Returns the URL of an assessment report in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssessmentReportUrl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2592,10 +2592,10 @@ pub mod fluent_builders {
                 crate::input::GetAssessmentReportUrlInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2604,8 +2604,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique identifier for the assessment report. </p>
-        pub fn assessment_report_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_report_id(inp);
+        pub fn assessment_report_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_report_id(input.into());
             self
         }
         /// <p> The unique identifier for the assessment report. </p>
@@ -2617,8 +2617,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique identifier for the assessment. </p>
-        pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(inp);
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The unique identifier for the assessment. </p>
@@ -2633,7 +2633,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetChangeLogs`.
     ///
     /// <p> Returns a list of changelogs from Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetChangeLogs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2678,10 +2678,10 @@ pub mod fluent_builders {
                 crate::input::GetChangeLogsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2689,9 +2689,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetChangeLogsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetChangeLogsPaginator<C, M, R> {
+            crate::paginator::GetChangeLogsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The unique identifier for the assessment. </p>
-        pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(inp);
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p>The unique identifier for the assessment. </p>
@@ -2703,8 +2709,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique identifier for the control set. </p>
-        pub fn control_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_set_id(inp);
+        pub fn control_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_set_id(input.into());
             self
         }
         /// <p> The unique identifier for the control set. </p>
@@ -2716,8 +2722,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique identifier for the control. </p>
-        pub fn control_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_id(inp);
+        pub fn control_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_id(input.into());
             self
         }
         /// <p> The unique identifier for the control. </p>
@@ -2726,8 +2732,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -2736,8 +2742,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Represents the maximum number of results on a page or for an API request call. </p>
@@ -2749,7 +2755,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetControl`.
     ///
     /// <p> Returns a control from Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetControl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2794,10 +2800,10 @@ pub mod fluent_builders {
                 crate::input::GetControlInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2806,8 +2812,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The identifier for the control. </p>
-        pub fn control_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_id(inp);
+        pub fn control_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_id(input.into());
             self
         }
         /// <p> The identifier for the control. </p>
@@ -2819,7 +2825,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDelegations`.
     ///
     /// <p> Returns a list of delegations from an audit owner to a delegate. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDelegations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2864,10 +2870,10 @@ pub mod fluent_builders {
                 crate::input::GetDelegationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2875,9 +2881,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetDelegationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetDelegationsPaginator<C, M, R> {
+            crate::paginator::GetDelegationsPaginator::new(self.handle, self.inner)
+        }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -2886,8 +2898,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
@@ -2899,7 +2911,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEvidence`.
     ///
     /// <p> Returns evidence from Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEvidence<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2944,10 +2956,10 @@ pub mod fluent_builders {
                 crate::input::GetEvidenceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2956,8 +2968,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique identifier for the assessment. </p>
-        pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(inp);
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The unique identifier for the assessment. </p>
@@ -2969,8 +2981,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique identifier for the control set. </p>
-        pub fn control_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_set_id(inp);
+        pub fn control_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_set_id(input.into());
             self
         }
         /// <p> The unique identifier for the control set. </p>
@@ -2982,8 +2994,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique identifier for the folder that the evidence is stored in. </p>
-        pub fn evidence_folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evidence_folder_id(inp);
+        pub fn evidence_folder_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evidence_folder_id(input.into());
             self
         }
         /// <p> The unique identifier for the folder that the evidence is stored in. </p>
@@ -2995,8 +3007,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique identifier for the evidence. </p>
-        pub fn evidence_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evidence_id(inp);
+        pub fn evidence_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evidence_id(input.into());
             self
         }
         /// <p> The unique identifier for the evidence. </p>
@@ -3008,7 +3020,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEvidenceByEvidenceFolder`.
     ///
     /// <p> Returns all evidence from a specified evidence folder in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEvidenceByEvidenceFolder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3053,10 +3065,10 @@ pub mod fluent_builders {
                 crate::input::GetEvidenceByEvidenceFolderInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3064,9 +3076,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetEvidenceByEvidenceFolderPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetEvidenceByEvidenceFolderPaginator<C, M, R> {
+            crate::paginator::GetEvidenceByEvidenceFolderPaginator::new(self.handle, self.inner)
+        }
         /// <p> The identifier for the assessment. </p>
-        pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(inp);
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The identifier for the assessment. </p>
@@ -3078,8 +3098,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The identifier for the control set. </p>
-        pub fn control_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_set_id(inp);
+        pub fn control_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_set_id(input.into());
             self
         }
         /// <p> The identifier for the control set. </p>
@@ -3091,8 +3111,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique identifier for the folder that the evidence is stored in. </p>
-        pub fn evidence_folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evidence_folder_id(inp);
+        pub fn evidence_folder_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evidence_folder_id(input.into());
             self
         }
         /// <p> The unique identifier for the folder that the evidence is stored in. </p>
@@ -3104,8 +3124,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -3114,8 +3134,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
@@ -3126,9 +3146,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEvidenceFolder`.
     ///
-    /// <p> Returns an evidence folder from the specified assessment in Audit Manager.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns an evidence folder from the specified assessment in Audit Manager. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEvidenceFolder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3173,10 +3192,10 @@ pub mod fluent_builders {
                 crate::input::GetEvidenceFolderInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3185,8 +3204,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique identifier for the assessment. </p>
-        pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(inp);
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The unique identifier for the assessment. </p>
@@ -3198,8 +3217,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique identifier for the control set. </p>
-        pub fn control_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_set_id(inp);
+        pub fn control_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_set_id(input.into());
             self
         }
         /// <p> The unique identifier for the control set. </p>
@@ -3211,8 +3230,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique identifier for the folder that the evidence is stored in. </p>
-        pub fn evidence_folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evidence_folder_id(inp);
+        pub fn evidence_folder_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evidence_folder_id(input.into());
             self
         }
         /// <p> The unique identifier for the folder that the evidence is stored in. </p>
@@ -3226,9 +3245,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEvidenceFoldersByAssessment`.
     ///
-    /// <p> Returns the evidence folders from a specified assessment in Audit Manager.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns the evidence folders from a specified assessment in Audit Manager. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEvidenceFoldersByAssessment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3273,10 +3291,10 @@ pub mod fluent_builders {
                 crate::input::GetEvidenceFoldersByAssessmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3284,9 +3302,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetEvidenceFoldersByAssessmentPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetEvidenceFoldersByAssessmentPaginator<C, M, R> {
+            crate::paginator::GetEvidenceFoldersByAssessmentPaginator::new(self.handle, self.inner)
+        }
         /// <p> The unique identifier for the assessment. </p>
-        pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(inp);
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The unique identifier for the assessment. </p>
@@ -3298,8 +3324,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -3308,8 +3334,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
@@ -3320,9 +3346,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEvidenceFoldersByAssessmentControl`.
     ///
-    /// <p> Returns a list of evidence folders that are associated with a specified control of an
-    /// assessment in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns a list of evidence folders that are associated with a specified control of an assessment in Audit Manager. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEvidenceFoldersByAssessmentControl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3369,10 +3394,10 @@ pub mod fluent_builders {
                 crate::input::GetEvidenceFoldersByAssessmentControlInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3380,9 +3405,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetEvidenceFoldersByAssessmentControlPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetEvidenceFoldersByAssessmentControlPaginator<C, M, R> {
+            crate::paginator::GetEvidenceFoldersByAssessmentControlPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p> The identifier for the assessment. </p>
-        pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(inp);
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The identifier for the assessment. </p>
@@ -3394,8 +3430,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The identifier for the control set. </p>
-        pub fn control_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_set_id(inp);
+        pub fn control_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_set_id(input.into());
             self
         }
         /// <p> The identifier for the control set. </p>
@@ -3407,8 +3443,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The identifier for the control. </p>
-        pub fn control_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_id(inp);
+        pub fn control_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_id(input.into());
             self
         }
         /// <p> The identifier for the control. </p>
@@ -3417,8 +3453,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -3427,8 +3463,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
@@ -3440,7 +3476,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetInsights`.
     ///
     /// <p>Gets the latest analytics data for all your current active assessments. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInsights<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3485,10 +3521,10 @@ pub mod fluent_builders {
                 crate::input::GetInsightsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3500,7 +3536,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetInsightsByAssessment`.
     ///
     /// <p>Gets the latest analytics data for a specific active assessment. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInsightsByAssessment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3545,10 +3581,10 @@ pub mod fluent_builders {
                 crate::input::GetInsightsByAssessmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3557,8 +3593,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the assessment. </p>
-        pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(inp);
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p>The unique identifier for the assessment. </p>
@@ -3572,9 +3608,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetOrganizationAdminAccount`.
     ///
-    /// <p> Returns the name of the delegated Amazon Web Services administrator account for the
-    /// organization. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns the name of the delegated Amazon Web Services administrator account for the organization. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOrganizationAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3619,10 +3654,10 @@ pub mod fluent_builders {
                 crate::input::GetOrganizationAdminAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3633,9 +3668,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetServicesInScope`.
     ///
-    /// <p> Returns a list of the in-scope Amazon Web Services services for the specified
-    /// assessment. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns a list of the in-scope Amazon Web Services services for the specified assessment. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServicesInScope<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3680,10 +3714,10 @@ pub mod fluent_builders {
                 crate::input::GetServicesInScopeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3695,7 +3729,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSettings`.
     ///
     /// <p> Returns the settings for the specified Amazon Web Services account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3740,10 +3774,10 @@ pub mod fluent_builders {
                 crate::input::GetSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3752,8 +3786,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The list of <code>SettingAttribute</code> enum values. </p>
-        pub fn attribute(mut self, inp: crate::model::SettingAttribute) -> Self {
-            self.inner = self.inner.attribute(inp);
+        pub fn attribute(mut self, input: crate::model::SettingAttribute) -> Self {
+            self.inner = self.inner.attribute(input);
             self
         }
         /// <p> The list of <code>SettingAttribute</code> enum values. </p>
@@ -3767,15 +3801,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAssessmentControlInsightsByControlDomain`.
     ///
-    /// <p>Lists the latest analytics data for controls within a specific control domain and a
-    /// specific active assessment.</p>
-    /// <note>
-    /// <p>Control insights are listed only if the control belongs to the control domain and assessment
-    /// that was specified. Moreover, the control must have collected evidence on the
-    /// <code>lastUpdated</code> date of <code>controlInsightsByAssessment</code>. If neither
-    /// of these conditions are met, no data is listed for that control. </p>
+    /// <p>Lists the latest analytics data for controls within a specific control domain and a specific active assessment.</p> <note>
+    /// <p>Control insights are listed only if the control belongs to the control domain and assessment that was specified. Moreover, the control must have collected evidence on the <code>lastUpdated</code> date of <code>controlInsightsByAssessment</code>. If neither of these conditions are met, no data is listed for that control. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssessmentControlInsightsByControlDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3822,10 +3851,10 @@ pub mod fluent_builders {
                 crate::input::ListAssessmentControlInsightsByControlDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3833,9 +3862,21 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAssessmentControlInsightsByControlDomainPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListAssessmentControlInsightsByControlDomainPaginator<C, M, R>
+        {
+            crate::paginator::ListAssessmentControlInsightsByControlDomainPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The unique identifier for the control domain. </p>
-        pub fn control_domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_domain_id(inp);
+        pub fn control_domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_domain_id(input.into());
             self
         }
         /// <p>The unique identifier for the control domain. </p>
@@ -3847,8 +3888,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the active assessment. </p>
-        pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(inp);
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p>The unique identifier for the active assessment. </p>
@@ -3860,8 +3901,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token that's used to fetch the next set of results. </p>
@@ -3870,8 +3911,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Represents the maximum number of results on a page or for an API request call. </p>
@@ -3882,9 +3923,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAssessmentFrameworks`.
     ///
-    /// <p> Returns a list of the frameworks that are available in the Audit Manager
-    /// framework library. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns a list of the frameworks that are available in the Audit Manager framework library. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssessmentFrameworks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3929,10 +3969,10 @@ pub mod fluent_builders {
                 crate::input::ListAssessmentFrameworksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3940,9 +3980,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAssessmentFrameworksPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListAssessmentFrameworksPaginator<C, M, R> {
+            crate::paginator::ListAssessmentFrameworksPaginator::new(self.handle, self.inner)
+        }
         /// <p> The type of framework, such as a standard framework or a custom framework. </p>
-        pub fn framework_type(mut self, inp: crate::model::FrameworkType) -> Self {
-            self.inner = self.inner.framework_type(inp);
+        pub fn framework_type(mut self, input: crate::model::FrameworkType) -> Self {
+            self.inner = self.inner.framework_type(input);
             self
         }
         /// <p> The type of framework, such as a standard framework or a custom framework. </p>
@@ -3954,8 +4002,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -3964,8 +4012,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
@@ -3977,7 +4025,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAssessmentFrameworkShareRequests`.
     ///
     /// <p> Returns a list of sent or received share requests for custom frameworks in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssessmentFrameworkShareRequests<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4024,10 +4072,10 @@ pub mod fluent_builders {
                 crate::input::ListAssessmentFrameworkShareRequestsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4035,9 +4083,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAssessmentFrameworkShareRequestsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListAssessmentFrameworkShareRequestsPaginator<C, M, R> {
+            crate::paginator::ListAssessmentFrameworkShareRequestsPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p> Specifies whether the share request is a sent request or a received request.</p>
-        pub fn request_type(mut self, inp: crate::model::ShareRequestType) -> Self {
-            self.inner = self.inner.request_type(inp);
+        pub fn request_type(mut self, input: crate::model::ShareRequestType) -> Self {
+            self.inner = self.inner.request_type(input);
             self
         }
         /// <p> Specifies whether the share request is a sent request or a received request.</p>
@@ -4049,8 +4108,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -4059,8 +4118,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
@@ -4072,7 +4131,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAssessmentReports`.
     ///
     /// <p> Returns a list of assessment reports created in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssessmentReports<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4117,10 +4176,10 @@ pub mod fluent_builders {
                 crate::input::ListAssessmentReportsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4128,9 +4187,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAssessmentReportsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAssessmentReportsPaginator<C, M, R> {
+            crate::paginator::ListAssessmentReportsPaginator::new(self.handle, self.inner)
+        }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -4139,8 +4204,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
@@ -4152,7 +4217,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAssessments`.
     ///
     /// <p> Returns a list of current and past assessments from Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssessments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4197,10 +4262,10 @@ pub mod fluent_builders {
                 crate::input::ListAssessmentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4208,9 +4273,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAssessmentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAssessmentsPaginator<C, M, R> {
+            crate::paginator::ListAssessmentsPaginator::new(self.handle, self.inner)
+        }
         /// <p> The current status of the assessment.</p>
-        pub fn status(mut self, inp: crate::model::AssessmentStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::AssessmentStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p> The current status of the assessment.</p>
@@ -4222,8 +4293,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -4232,8 +4303,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
@@ -4244,14 +4315,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListControlDomainInsights`.
     ///
-    /// <p>Lists the latest analytics data for control domains across all of your active
-    /// assessments. </p>
-    /// <note>
-    /// <p>A control domain is listed only if at least one of the controls within that domain collected
-    /// evidence on the <code>lastUpdated</code> date of <code>controlDomainInsights</code>. If
-    /// this condition isn’t met, no data is listed for that control domain.</p>
+    /// <p>Lists the latest analytics data for control domains across all of your active assessments. </p> <note>
+    /// <p>A control domain is listed only if at least one of the controls within that domain collected evidence on the <code>lastUpdated</code> date of <code>controlDomainInsights</code>. If this condition isn’t met, no data is listed for that control domain.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListControlDomainInsights<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4296,10 +4363,10 @@ pub mod fluent_builders {
                 crate::input::ListControlDomainInsightsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4307,9 +4374,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListControlDomainInsightsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListControlDomainInsightsPaginator<C, M, R> {
+            crate::paginator::ListControlDomainInsightsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token that's used to fetch the next set of results. </p>
@@ -4318,8 +4393,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Represents the maximum number of results on a page or for an API request call. </p>
@@ -4330,13 +4405,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListControlDomainInsightsByAssessment`.
     ///
-    /// <p>Lists analytics data for control domains within a specified active assessment.</p>
-    /// <note>
-    /// <p>A control domain is listed only if at least one of the controls within that domain collected
-    /// evidence on the <code>lastUpdated</code> date of <code>controlDomainInsights</code>. If
-    /// this condition isn’t met, no data is listed for that domain.</p>
+    /// <p>Lists analytics data for control domains within a specified active assessment.</p> <note>
+    /// <p>A control domain is listed only if at least one of the controls within that domain collected evidence on the <code>lastUpdated</code> date of <code>controlDomainInsights</code>. If this condition isn’t met, no data is listed for that domain.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListControlDomainInsightsByAssessment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4383,10 +4455,10 @@ pub mod fluent_builders {
                 crate::input::ListControlDomainInsightsByAssessmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4394,9 +4466,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListControlDomainInsightsByAssessmentPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListControlDomainInsightsByAssessmentPaginator<C, M, R> {
+            crate::paginator::ListControlDomainInsightsByAssessmentPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The unique identifier for the active assessment. </p>
-        pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(inp);
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p>The unique identifier for the active assessment. </p>
@@ -4408,8 +4491,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token that's used to fetch the next set of results. </p>
@@ -4418,8 +4501,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Represents the maximum number of results on a page or for an API request call. </p>
@@ -4430,15 +4513,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListControlInsightsByControlDomain`.
     ///
-    /// <p>Lists the latest analytics data for controls within a specific control domain across all
-    /// active assessments.</p>
-    /// <note>
-    /// <p>Control insights are listed only if the control belongs to the control domain that was
-    /// specified and the control collected evidence on the <code>lastUpdated</code> date of
-    /// <code>controlInsightsMetadata</code>. If neither of these conditions are met, no data
-    /// is listed for that control. </p>
+    /// <p>Lists the latest analytics data for controls within a specific control domain across all active assessments.</p> <note>
+    /// <p>Control insights are listed only if the control belongs to the control domain that was specified and the control collected evidence on the <code>lastUpdated</code> date of <code>controlInsightsMetadata</code>. If neither of these conditions are met, no data is listed for that control. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListControlInsightsByControlDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4485,10 +4563,10 @@ pub mod fluent_builders {
                 crate::input::ListControlInsightsByControlDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4496,9 +4574,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListControlInsightsByControlDomainPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListControlInsightsByControlDomainPaginator<C, M, R> {
+            crate::paginator::ListControlInsightsByControlDomainPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The unique identifier for the control domain. </p>
-        pub fn control_domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_domain_id(inp);
+        pub fn control_domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_domain_id(input.into());
             self
         }
         /// <p>The unique identifier for the control domain. </p>
@@ -4510,8 +4599,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token that's used to fetch the next set of results. </p>
@@ -4520,8 +4609,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Represents the maximum number of results on a page or for an API request call. </p>
@@ -4533,7 +4622,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListControls`.
     ///
     /// <p> Returns a list of controls from Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListControls<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4578,10 +4667,10 @@ pub mod fluent_builders {
                 crate::input::ListControlsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4589,9 +4678,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListControlsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListControlsPaginator<C, M, R> {
+            crate::paginator::ListControlsPaginator::new(self.handle, self.inner)
+        }
         /// <p> The type of control, such as a standard control or a custom control. </p>
-        pub fn control_type(mut self, inp: crate::model::ControlType) -> Self {
-            self.inner = self.inner.control_type(inp);
+        pub fn control_type(mut self, input: crate::model::ControlType) -> Self {
+            self.inner = self.inner.control_type(input);
             self
         }
         /// <p> The type of control, such as a standard control or a custom control. </p>
@@ -4603,8 +4698,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -4613,8 +4708,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
@@ -4626,7 +4721,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListKeywordsForDataSource`.
     ///
     /// <p> Returns a list of keywords that are pre-mapped to the specified control data source. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListKeywordsForDataSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4671,10 +4766,10 @@ pub mod fluent_builders {
                 crate::input::ListKeywordsForDataSourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4682,9 +4777,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListKeywordsForDataSourcePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListKeywordsForDataSourcePaginator<C, M, R> {
+            crate::paginator::ListKeywordsForDataSourcePaginator::new(self.handle, self.inner)
+        }
         /// <p> The control mapping data source that the keywords apply to. </p>
-        pub fn source(mut self, inp: crate::model::SourceType) -> Self {
-            self.inner = self.inner.source(inp);
+        pub fn source(mut self, input: crate::model::SourceType) -> Self {
+            self.inner = self.inner.source(input);
             self
         }
         /// <p> The control mapping data source that the keywords apply to. </p>
@@ -4693,8 +4796,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -4703,8 +4806,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
@@ -4716,7 +4819,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListNotifications`.
     ///
     /// <p> Returns a list of all Audit Manager notifications. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNotifications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4761,10 +4864,10 @@ pub mod fluent_builders {
                 crate::input::ListNotificationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4772,9 +4875,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListNotificationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListNotificationsPaginator<C, M, R> {
+            crate::paginator::ListNotificationsPaginator::new(self.handle, self.inner)
+        }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -4783,8 +4892,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
@@ -4796,7 +4905,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p> Returns a list of tags for the specified resource in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4841,10 +4950,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4853,8 +4962,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The Amazon Resource Name (ARN) of the resource. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the resource. </p>
@@ -4866,7 +4975,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RegisterAccount`.
     ///
     /// <p> Enables Audit Manager for the specified Amazon Web Services account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4911,10 +5020,10 @@ pub mod fluent_builders {
                 crate::input::RegisterAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4923,8 +5032,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The KMS key details. </p>
-        pub fn kms_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key(inp);
+        pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key(input.into());
             self
         }
         /// <p> The KMS key details. </p>
@@ -4933,8 +5042,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The delegated administrator account for Audit Manager. </p>
-        pub fn delegated_admin_account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delegated_admin_account(inp);
+        pub fn delegated_admin_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delegated_admin_account(input.into());
             self
         }
         /// <p> The delegated administrator account for Audit Manager. </p>
@@ -4948,9 +5057,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterOrganizationAdminAccount`.
     ///
-    /// <p> Enables an Amazon Web Services account within the organization as the delegated
-    /// administrator for Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Enables an Amazon Web Services account within the organization as the delegated administrator for Audit Manager. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterOrganizationAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4995,10 +5103,10 @@ pub mod fluent_builders {
                 crate::input::RegisterOrganizationAdminAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5007,8 +5115,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The identifier for the delegated administrator account. </p>
-        pub fn admin_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.admin_account_id(inp);
+        pub fn admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.admin_account_id(input.into());
             self
         }
         /// <p> The identifier for the delegated administrator account. </p>
@@ -5023,17 +5131,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartAssessmentFrameworkShare`.
     ///
     /// <p> Creates a share request for a custom framework in Audit Manager. </p>
-    /// <p>The share request specifies a recipient and notifies them that a custom framework is available. Recipients have 120 days to accept or decline the request. If no action is taken, the share request expires.</p>
-    /// <important>
-    /// <p>When you invoke the <code>StartAssessmentFrameworkShare</code> API, you are about to
-    /// share a custom framework with another Amazon Web Services account. You may not share a
-    /// custom framework that is derived from a standard framework if the standard framework is
-    /// designated as not eligible for sharing by Amazon Web Services, unless you have obtained
-    /// permission to do so from the owner of the standard framework. To learn more about which
-    /// standard frameworks are eligible for sharing, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/share-custom-framework-concepts-and-terminology.html#eligibility">Framework sharing eligibility</a> in the <i>Audit Manager User
-    /// Guide</i>.</p>
+    /// <p>The share request specifies a recipient and notifies them that a custom framework is available. Recipients have 120 days to accept or decline the request. If no action is taken, the share request expires.</p> <important>
+    /// <p>When you invoke the <code>StartAssessmentFrameworkShare</code> API, you are about to share a custom framework with another Amazon Web Services account. You may not share a custom framework that is derived from a standard framework if the standard framework is designated as not eligible for sharing by Amazon Web Services, unless you have obtained permission to do so from the owner of the standard framework. To learn more about which standard frameworks are eligible for sharing, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/share-custom-framework-concepts-and-terminology.html#eligibility">Framework sharing eligibility</a> in the <i>Audit Manager User Guide</i>.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartAssessmentFrameworkShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5078,10 +5179,10 @@ pub mod fluent_builders {
                 crate::input::StartAssessmentFrameworkShareInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5090,8 +5191,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique identifier for the custom framework to be shared. </p>
-        pub fn framework_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.framework_id(inp);
+        pub fn framework_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.framework_id(input.into());
             self
         }
         /// <p> The unique identifier for the custom framework to be shared. </p>
@@ -5100,8 +5201,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The Amazon Web Services account of the recipient. </p>
-        pub fn destination_account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_account(inp);
+        pub fn destination_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_account(input.into());
             self
         }
         /// <p> The Amazon Web Services account of the recipient. </p>
@@ -5113,8 +5214,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The Amazon Web Services Region of the recipient. </p>
-        pub fn destination_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_region(inp);
+        pub fn destination_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_region(input.into());
             self
         }
         /// <p> The Amazon Web Services Region of the recipient. </p>
@@ -5126,8 +5227,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> An optional comment from the sender about the share request. </p>
-        pub fn comment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment(inp);
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment(input.into());
             self
         }
         /// <p> An optional comment from the sender about the share request. </p>
@@ -5139,7 +5240,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p> Tags the specified resource in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5184,10 +5285,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5196,8 +5297,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The Amazon Resource Name (ARN) of the resource. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the resource. </p>
@@ -5215,7 +5316,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p> The tags that are associated with the resource. </p>
@@ -5232,7 +5333,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p> Removes a tag from a resource in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5277,10 +5378,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5289,8 +5390,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The Amazon Resource Name (ARN) of the specified resource. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the specified resource. </p>
@@ -5303,8 +5404,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p> The name or key of the tag. </p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p> The name or key of the tag. </p>
@@ -5319,7 +5420,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAssessment`.
     ///
     /// <p> Edits an Audit Manager assessment. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAssessment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5364,10 +5465,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAssessmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5376,8 +5477,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique identifier for the assessment. </p>
-        pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(inp);
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The unique identifier for the assessment. </p>
@@ -5389,8 +5490,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name of the assessment to be updated. </p>
-        pub fn assessment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_name(inp);
+        pub fn assessment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_name(input.into());
             self
         }
         /// <p> The name of the assessment to be updated. </p>
@@ -5402,8 +5503,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The description of the assessment. </p>
-        pub fn assessment_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_description(inp);
+        pub fn assessment_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_description(input.into());
             self
         }
         /// <p> The description of the assessment. </p>
@@ -5415,8 +5516,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The scope of the assessment. </p>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
         /// <p> The scope of the assessment. </p>
@@ -5424,17 +5525,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_scope(input);
             self
         }
-        /// <p> The assessment report storage destination for the assessment that's being updated.
-        /// </p>
+        /// <p> The assessment report storage destination for the assessment that's being updated. </p>
         pub fn assessment_reports_destination(
             mut self,
-            inp: crate::model::AssessmentReportsDestination,
+            input: crate::model::AssessmentReportsDestination,
         ) -> Self {
-            self.inner = self.inner.assessment_reports_destination(inp);
+            self.inner = self.inner.assessment_reports_destination(input);
             self
         }
-        /// <p> The assessment report storage destination for the assessment that's being updated.
-        /// </p>
+        /// <p> The assessment report storage destination for the assessment that's being updated. </p>
         pub fn set_assessment_reports_destination(
             mut self,
             input: std::option::Option<crate::model::AssessmentReportsDestination>,
@@ -5447,8 +5546,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_roles`](Self::set_roles).
         ///
         /// <p> The list of roles for the assessment. </p>
-        pub fn roles(mut self, inp: impl Into<crate::model::Role>) -> Self {
-            self.inner = self.inner.roles(inp);
+        pub fn roles(mut self, input: crate::model::Role) -> Self {
+            self.inner = self.inner.roles(input);
             self
         }
         /// <p> The list of roles for the assessment. </p>
@@ -5463,7 +5562,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAssessmentControl`.
     ///
     /// <p> Updates a control within an assessment in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAssessmentControl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5508,10 +5607,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAssessmentControlInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5520,8 +5619,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique identifier for the assessment. </p>
-        pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(inp);
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The unique identifier for the assessment. </p>
@@ -5533,8 +5632,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique identifier for the control set. </p>
-        pub fn control_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_set_id(inp);
+        pub fn control_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_set_id(input.into());
             self
         }
         /// <p> The unique identifier for the control set. </p>
@@ -5546,8 +5645,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique identifier for the control. </p>
-        pub fn control_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_id(inp);
+        pub fn control_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_id(input.into());
             self
         }
         /// <p> The unique identifier for the control. </p>
@@ -5556,8 +5655,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The status of the control. </p>
-        pub fn control_status(mut self, inp: crate::model::ControlStatus) -> Self {
-            self.inner = self.inner.control_status(inp);
+        pub fn control_status(mut self, input: crate::model::ControlStatus) -> Self {
+            self.inner = self.inner.control_status(input);
             self
         }
         /// <p> The status of the control. </p>
@@ -5569,8 +5668,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The comment body text for the control. </p>
-        pub fn comment_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment_body(inp);
+        pub fn comment_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment_body(input.into());
             self
         }
         /// <p> The comment body text for the control. </p>
@@ -5582,7 +5681,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAssessmentControlSetStatus`.
     ///
     /// <p> Updates the status of a control set in an Audit Manager assessment. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAssessmentControlSetStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5627,10 +5726,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAssessmentControlSetStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5639,8 +5738,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique identifier for the assessment. </p>
-        pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(inp);
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The unique identifier for the assessment. </p>
@@ -5652,8 +5751,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique identifier for the control set. </p>
-        pub fn control_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_set_id(inp);
+        pub fn control_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_set_id(input.into());
             self
         }
         /// <p> The unique identifier for the control set. </p>
@@ -5665,8 +5764,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The status of the control set that's being updated. </p>
-        pub fn status(mut self, inp: crate::model::ControlSetStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::ControlSetStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p> The status of the control set that's being updated. </p>
@@ -5678,8 +5777,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The comment that's related to the status update. </p>
-        pub fn comment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment(inp);
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment(input.into());
             self
         }
         /// <p> The comment that's related to the status update. </p>
@@ -5691,7 +5790,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAssessmentFramework`.
     ///
     /// <p> Updates a custom framework in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAssessmentFramework<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5736,10 +5835,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAssessmentFrameworkInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5748,8 +5847,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique identifier for the framework. </p>
-        pub fn framework_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.framework_id(inp);
+        pub fn framework_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.framework_id(input.into());
             self
         }
         /// <p> The unique identifier for the framework. </p>
@@ -5758,8 +5857,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name of the framework to be updated. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p> The name of the framework to be updated. </p>
@@ -5768,8 +5867,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The description of the updated framework. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p> The description of the updated framework. </p>
@@ -5777,14 +5876,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
-        /// </p>
-        pub fn compliance_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.compliance_type(inp);
+        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
+        pub fn compliance_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.compliance_type(input.into());
             self
         }
-        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
-        /// </p>
+        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
         pub fn set_compliance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5799,9 +5896,9 @@ pub mod fluent_builders {
         /// <p> The control sets that are associated with the framework. </p>
         pub fn control_sets(
             mut self,
-            inp: impl Into<crate::model::UpdateAssessmentFrameworkControlSet>,
+            input: crate::model::UpdateAssessmentFrameworkControlSet,
         ) -> Self {
-            self.inner = self.inner.control_sets(inp);
+            self.inner = self.inner.control_sets(input);
             self
         }
         /// <p> The control sets that are associated with the framework. </p>
@@ -5818,7 +5915,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAssessmentFrameworkShare`.
     ///
     /// <p> Updates a share request for a custom framework in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAssessmentFrameworkShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5863,10 +5960,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAssessmentFrameworkShareInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5875,8 +5972,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique identifier for the share request. </p>
-        pub fn request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_id(inp);
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_id(input.into());
             self
         }
         /// <p> The unique identifier for the share request. </p>
@@ -5885,8 +5982,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the share request is a sent request or a received request.</p>
-        pub fn request_type(mut self, inp: crate::model::ShareRequestType) -> Self {
-            self.inner = self.inner.request_type(inp);
+        pub fn request_type(mut self, input: crate::model::ShareRequestType) -> Self {
+            self.inner = self.inner.request_type(input);
             self
         }
         /// <p>Specifies whether the share request is a sent request or a received request.</p>
@@ -5898,8 +5995,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the update action for the share request.</p>
-        pub fn action(mut self, inp: crate::model::ShareRequestAction) -> Self {
-            self.inner = self.inner.action(inp);
+        pub fn action(mut self, input: crate::model::ShareRequestAction) -> Self {
+            self.inner = self.inner.action(input);
             self
         }
         /// <p>Specifies the update action for the share request.</p>
@@ -5914,7 +6011,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAssessmentStatus`.
     ///
     /// <p> Updates the status of an assessment in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAssessmentStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5959,10 +6056,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAssessmentStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5971,8 +6068,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique identifier for the assessment. </p>
-        pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(inp);
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The unique identifier for the assessment. </p>
@@ -5984,8 +6081,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The current status of the assessment. </p>
-        pub fn status(mut self, inp: crate::model::AssessmentStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::AssessmentStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p> The current status of the assessment. </p>
@@ -6000,7 +6097,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateControl`.
     ///
     /// <p> Updates a custom control in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateControl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6045,10 +6142,10 @@ pub mod fluent_builders {
                 crate::input::UpdateControlInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6057,8 +6154,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The identifier for the control. </p>
-        pub fn control_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_id(inp);
+        pub fn control_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_id(input.into());
             self
         }
         /// <p> The identifier for the control. </p>
@@ -6067,8 +6164,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name of the updated control. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p> The name of the updated control. </p>
@@ -6077,8 +6174,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The optional description of the control. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p> The optional description of the control. </p>
@@ -6087,8 +6184,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The steps that you should follow to determine if the control is met. </p>
-        pub fn testing_information(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.testing_information(inp);
+        pub fn testing_information(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.testing_information(input.into());
             self
         }
         /// <p> The steps that you should follow to determine if the control is met. </p>
@@ -6100,8 +6197,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The title of the action plan for remediating the control. </p>
-        pub fn action_plan_title(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_plan_title(inp);
+        pub fn action_plan_title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_plan_title(input.into());
             self
         }
         /// <p> The title of the action plan for remediating the control. </p>
@@ -6113,8 +6210,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
-        pub fn action_plan_instructions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_plan_instructions(inp);
+        pub fn action_plan_instructions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_plan_instructions(input.into());
             self
         }
         /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
@@ -6132,9 +6229,9 @@ pub mod fluent_builders {
         /// <p> The data mapping sources for the control. </p>
         pub fn control_mapping_sources(
             mut self,
-            inp: impl Into<crate::model::ControlMappingSource>,
+            input: crate::model::ControlMappingSource,
         ) -> Self {
-            self.inner = self.inner.control_mapping_sources(inp);
+            self.inner = self.inner.control_mapping_sources(input);
             self
         }
         /// <p> The data mapping sources for the control. </p>
@@ -6149,7 +6246,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSettings`.
     ///
     /// <p> Updates Audit Manager settings for the current user account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6194,10 +6291,10 @@ pub mod fluent_builders {
                 crate::input::UpdateSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6205,14 +6302,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends
-        /// notifications to. </p>
-        pub fn sns_topic(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic(inp);
+        /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to. </p>
+        pub fn sns_topic(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic(input.into());
             self
         }
-        /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends
-        /// notifications to. </p>
+        /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to. </p>
         pub fn set_sns_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_sns_topic(input);
             self
@@ -6220,9 +6315,9 @@ pub mod fluent_builders {
         /// <p> The default storage destination for assessment reports. </p>
         pub fn default_assessment_reports_destination(
             mut self,
-            inp: crate::model::AssessmentReportsDestination,
+            input: crate::model::AssessmentReportsDestination,
         ) -> Self {
-            self.inner = self.inner.default_assessment_reports_destination(inp);
+            self.inner = self.inner.default_assessment_reports_destination(input);
             self
         }
         /// <p> The default storage destination for assessment reports. </p>
@@ -6238,8 +6333,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_default_process_owners`](Self::set_default_process_owners).
         ///
         /// <p> A list of the default audit owners. </p>
-        pub fn default_process_owners(mut self, inp: impl Into<crate::model::Role>) -> Self {
-            self.inner = self.inner.default_process_owners(inp);
+        pub fn default_process_owners(mut self, input: crate::model::Role) -> Self {
+            self.inner = self.inner.default_process_owners(input);
             self
         }
         /// <p> A list of the default audit owners. </p>
@@ -6251,8 +6346,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The KMS key details. </p>
-        pub fn kms_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key(inp);
+        pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key(input.into());
             self
         }
         /// <p> The KMS key details. </p>
@@ -6264,7 +6359,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ValidateAssessmentReportIntegrity`.
     ///
     /// <p> Validates the integrity of an assessment report in Audit Manager. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ValidateAssessmentReportIntegrity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6309,10 +6404,10 @@ pub mod fluent_builders {
                 crate::input::ValidateAssessmentReportIntegrityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6320,14 +6415,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The relative path of the Amazon S3 bucket that the assessment report is stored
-        /// in. </p>
-        pub fn s3_relative_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_relative_path(inp);
+        /// <p> The relative path of the Amazon S3 bucket that the assessment report is stored in. </p>
+        pub fn s3_relative_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_relative_path(input.into());
             self
         }
-        /// <p> The relative path of the Amazon S3 bucket that the assessment report is stored
-        /// in. </p>
+        /// <p> The relative path of the Amazon S3 bucket that the assessment report is stored in. </p>
         pub fn set_s3_relative_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6337,6 +6430,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

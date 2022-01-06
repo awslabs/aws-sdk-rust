@@ -3,8 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UploadMetadata {
-    /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response
-    /// to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
+    /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
     pub url: std::option::Option<std::string::String>,
     /// <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub url_expiry: std::option::Option<std::string::String>,
@@ -13,8 +12,7 @@ pub struct UploadMetadata {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UploadMetadata {
-    /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response
-    /// to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
+    /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
     }
@@ -52,14 +50,12 @@ pub mod upload_metadata {
         >,
     }
     impl Builder {
-        /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response
-        /// to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
+        /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
             self.url = Some(input.into());
             self
         }
-        /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response
-        /// to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
+        /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -121,8 +117,7 @@ impl UploadMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Item {
     /// <p>The time when the message or event was sent.</p>
-    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-    /// 2019-11-08T02:41:28.172Z.</p>
+    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub absolute_time: std::option::Option<std::string::String>,
     /// <p>The content of the message or event.</p>
     pub content: std::option::Option<std::string::String>,
@@ -143,8 +138,7 @@ pub struct Item {
 }
 impl Item {
     /// <p>The time when the message or event was sent.</p>
-    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-    /// 2019-11-08T02:41:28.172Z.</p>
+    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub fn absolute_time(&self) -> std::option::Option<&str> {
         self.absolute_time.as_deref()
     }
@@ -214,15 +208,13 @@ pub mod item {
     }
     impl Builder {
         /// <p>The time when the message or event was sent.</p>
-        /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-        /// 2019-11-08T02:41:28.172Z.</p>
+        /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
         pub fn absolute_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.absolute_time = Some(input.into());
             self
         }
         /// <p>The time when the message or event was sent.</p>
-        /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-        /// 2019-11-08T02:41:28.172Z.</p>
+        /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
         pub fn set_absolute_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -311,9 +303,9 @@ pub mod item {
         /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
         ///
         /// <p>Provides information about the attachments.</p>
-        pub fn attachments(mut self, input: impl Into<crate::model::AttachmentItem>) -> Self {
+        pub fn attachments(mut self, input: crate::model::AttachmentItem) -> Self {
             let mut v = self.attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attachments = Some(v);
             self
         }
@@ -348,8 +340,7 @@ impl Item {
     }
 }
 
-/// <p>The case-insensitive input to indicate standard MIME type that describes the format of the file
-/// that will be uploaded.</p>
+/// <p>The case-insensitive input to indicate standard MIME type that describes the format of the file that will be uploaded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachmentItem {
@@ -685,16 +676,14 @@ impl AsRef<str> for ChatItemType {
     }
 }
 
-/// <p>A filtering option for where to start. For example, if you sent 100 messages, start
-/// with message 50. </p>
+/// <p>A filtering option for where to start. For example, if you sent 100 messages, start with message 50. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartPosition {
     /// <p>The ID of the message or event where to start. </p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The time in ISO format where to start.</p>
-    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-    /// 2019-11-08T02:41:28.172Z.</p>
+    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub absolute_time: std::option::Option<std::string::String>,
     /// <p>The start position of the most recent message where you want to start. </p>
     pub most_recent: i32,
@@ -705,8 +694,7 @@ impl StartPosition {
         self.id.as_deref()
     }
     /// <p>The time in ISO format where to start.</p>
-    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-    /// 2019-11-08T02:41:28.172Z.</p>
+    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub fn absolute_time(&self) -> std::option::Option<&str> {
         self.absolute_time.as_deref()
     }
@@ -746,15 +734,13 @@ pub mod start_position {
             self
         }
         /// <p>The time in ISO format where to start.</p>
-        /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-        /// 2019-11-08T02:41:28.172Z.</p>
+        /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
         pub fn absolute_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.absolute_time = Some(input.into());
             self
         }
         /// <p>The time in ISO format where to start.</p>
-        /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-        /// 2019-11-08T02:41:28.172Z.</p>
+        /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
         pub fn set_absolute_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -906,8 +892,7 @@ pub struct ConnectionCredentials {
     /// <p>The connection token.</p>
     pub connection_token: std::option::Option<std::string::String>,
     /// <p>The expiration of the token.</p>
-    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-    /// 2019-11-08T02:41:28.172Z.</p>
+    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub expiry: std::option::Option<std::string::String>,
 }
 impl ConnectionCredentials {
@@ -916,8 +901,7 @@ impl ConnectionCredentials {
         self.connection_token.as_deref()
     }
     /// <p>The expiration of the token.</p>
-    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-    /// 2019-11-08T02:41:28.172Z.</p>
+    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub fn expiry(&self) -> std::option::Option<&str> {
         self.expiry.as_deref()
     }
@@ -954,15 +938,13 @@ pub mod connection_credentials {
             self
         }
         /// <p>The expiration of the token.</p>
-        /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-        /// 2019-11-08T02:41:28.172Z.</p>
+        /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
         pub fn expiry(mut self, input: impl Into<std::string::String>) -> Self {
             self.expiry = Some(input.into());
             self
         }
         /// <p>The expiration of the token.</p>
-        /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-        /// 2019-11-08T02:41:28.172Z.</p>
+        /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
         pub fn set_expiry(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expiry = input;
             self
@@ -990,8 +972,7 @@ pub struct Websocket {
     /// <p>The URL of the websocket.</p>
     pub url: std::option::Option<std::string::String>,
     /// <p>The URL expiration timestamp in ISO date format.</p>
-    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-    /// 2019-11-08T02:41:28.172Z.</p>
+    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub connection_expiry: std::option::Option<std::string::String>,
 }
 impl Websocket {
@@ -1000,8 +981,7 @@ impl Websocket {
         self.url.as_deref()
     }
     /// <p>The URL expiration timestamp in ISO date format.</p>
-    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-    /// 2019-11-08T02:41:28.172Z.</p>
+    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub fn connection_expiry(&self) -> std::option::Option<&str> {
         self.connection_expiry.as_deref()
     }
@@ -1035,15 +1015,13 @@ pub mod websocket {
             self
         }
         /// <p>The URL expiration timestamp in ISO date format.</p>
-        /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-        /// 2019-11-08T02:41:28.172Z.</p>
+        /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
         pub fn connection_expiry(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_expiry = Some(input.into());
             self
         }
         /// <p>The URL expiration timestamp in ISO date format.</p>
-        /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-        /// 2019-11-08T02:41:28.172Z.</p>
+        /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
         pub fn set_connection_expiry(
             mut self,
             input: std::option::Option<std::string::String>,

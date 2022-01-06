@@ -19,8 +19,7 @@ pub enum Error {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>A target group with the specified name already exists.</p>
     DuplicateTargetGroupNameException(crate::error::DuplicateTargetGroupNameException),
-    /// <p>The health of the specified targets could not be retrieved due to an internal
-    /// error.</p>
+    /// <p>The health of the specified targets could not be retrieved due to an internal error.</p>
     HealthUnavailableException(crate::error::HealthUnavailableException),
     /// <p>The specified configuration is not valid with this protocol.</p>
     IncompatibleProtocolsException(crate::error::IncompatibleProtocolsException),
@@ -34,8 +33,7 @@ pub enum Error {
     InvalidSecurityGroupException(crate::error::InvalidSecurityGroupException),
     /// <p>The specified subnet is out of available addresses.</p>
     InvalidSubnetException(crate::error::InvalidSubnetException),
-    /// <p>The specified target does not exist, is not in the same VPC as the target group, or has an
-    /// unsupported instance type.</p>
+    /// <p>The specified target does not exist, is not in the same VPC as the target group, or has an unsupported instance type.</p>
     InvalidTargetException(crate::error::InvalidTargetException),
     /// <p>The specified listener does not exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
@@ -63,11 +61,9 @@ pub enum Error {
     TooManyCertificatesException(crate::error::TooManyCertificatesException),
     /// <p>You've reached the limit on the number of listeners per load balancer.</p>
     TooManyListenersException(crate::error::TooManyListenersException),
-    /// <p>You've reached the limit on the number of load balancers for your Amazon Web Services
-    /// account.</p>
+    /// <p>You've reached the limit on the number of load balancers for your Amazon Web Services account.</p>
     TooManyLoadBalancersException(crate::error::TooManyLoadBalancersException),
-    /// <p>You've reached the limit on the number of times a target can be registered with a load
-    /// balancer.</p>
+    /// <p>You've reached the limit on the number of times a target can be registered with a load balancer.</p>
     TooManyRegistrationsForTargetIdException(
         crate::error::TooManyRegistrationsForTargetIdException,
     ),
@@ -75,14 +71,11 @@ pub enum Error {
     TooManyRulesException(crate::error::TooManyRulesException),
     /// <p>You've reached the limit on the number of tags per load balancer.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// <p>You've reached the limit on the number of target groups for your Amazon Web Services
-    /// account.</p>
+    /// <p>You've reached the limit on the number of target groups for your Amazon Web Services account.</p>
     TooManyTargetGroupsException(crate::error::TooManyTargetGroupsException),
     /// <p>You've reached the limit on the number of targets.</p>
     TooManyTargetsException(crate::error::TooManyTargetsException),
-    /// <p>You've reached the limit on the number of unique target groups per load balancer across
-    /// all listeners. If a target group is used by multiple actions for a load balancer, it is
-    /// counted as only one use.</p>
+    /// <p>You've reached the limit on the number of unique target groups per load balancer across all listeners. If a target group is used by multiple actions for a load balancer, it is counted as only one use.</p>
     TooManyUniqueTargetGroupsPerLoadBalancerException(
         crate::error::TooManyUniqueTargetGroupsPerLoadBalancerException,
     ),

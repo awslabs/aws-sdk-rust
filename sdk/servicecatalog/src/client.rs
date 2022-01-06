@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Service Catalog
@@ -311,6 +311,7 @@ where
     ///
     /// See [`DescribePortfolioShares`](crate::client::fluent_builders::DescribePortfolioShares) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribePortfolioShares::into_paginator).
     pub fn describe_portfolio_shares(&self) -> fluent_builders::DescribePortfolioShares<C, M, R> {
         fluent_builders::DescribePortfolioShares::new(self.handle.clone())
     }
@@ -504,6 +505,7 @@ where
     ///
     /// See [`GetProvisionedProductOutputs`](crate::client::fluent_builders::GetProvisionedProductOutputs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetProvisionedProductOutputs::into_paginator).
     pub fn get_provisioned_product_outputs(
         &self,
     ) -> fluent_builders::GetProvisionedProductOutputs<C, M, R> {
@@ -522,6 +524,7 @@ where
     ///
     /// See [`ListAcceptedPortfolioShares`](crate::client::fluent_builders::ListAcceptedPortfolioShares) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAcceptedPortfolioShares::into_paginator).
     pub fn list_accepted_portfolio_shares(
         &self,
     ) -> fluent_builders::ListAcceptedPortfolioShares<C, M, R> {
@@ -531,6 +534,7 @@ where
     ///
     /// See [`ListBudgetsForResource`](crate::client::fluent_builders::ListBudgetsForResource) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBudgetsForResource::into_paginator).
     pub fn list_budgets_for_resource(&self) -> fluent_builders::ListBudgetsForResource<C, M, R> {
         fluent_builders::ListBudgetsForResource::new(self.handle.clone())
     }
@@ -538,6 +542,7 @@ where
     ///
     /// See [`ListConstraintsForPortfolio`](crate::client::fluent_builders::ListConstraintsForPortfolio) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListConstraintsForPortfolio::into_paginator).
     pub fn list_constraints_for_portfolio(
         &self,
     ) -> fluent_builders::ListConstraintsForPortfolio<C, M, R> {
@@ -547,6 +552,7 @@ where
     ///
     /// See [`ListLaunchPaths`](crate::client::fluent_builders::ListLaunchPaths) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListLaunchPaths::into_paginator).
     pub fn list_launch_paths(&self) -> fluent_builders::ListLaunchPaths<C, M, R> {
         fluent_builders::ListLaunchPaths::new(self.handle.clone())
     }
@@ -554,6 +560,7 @@ where
     ///
     /// See [`ListOrganizationPortfolioAccess`](crate::client::fluent_builders::ListOrganizationPortfolioAccess) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOrganizationPortfolioAccess::into_paginator).
     pub fn list_organization_portfolio_access(
         &self,
     ) -> fluent_builders::ListOrganizationPortfolioAccess<C, M, R> {
@@ -563,6 +570,7 @@ where
     ///
     /// See [`ListPortfolioAccess`](crate::client::fluent_builders::ListPortfolioAccess) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPortfolioAccess::into_paginator).
     pub fn list_portfolio_access(&self) -> fluent_builders::ListPortfolioAccess<C, M, R> {
         fluent_builders::ListPortfolioAccess::new(self.handle.clone())
     }
@@ -570,6 +578,7 @@ where
     ///
     /// See [`ListPortfolios`](crate::client::fluent_builders::ListPortfolios) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPortfolios::into_paginator).
     pub fn list_portfolios(&self) -> fluent_builders::ListPortfolios<C, M, R> {
         fluent_builders::ListPortfolios::new(self.handle.clone())
     }
@@ -577,6 +586,7 @@ where
     ///
     /// See [`ListPortfoliosForProduct`](crate::client::fluent_builders::ListPortfoliosForProduct) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPortfoliosForProduct::into_paginator).
     pub fn list_portfolios_for_product(
         &self,
     ) -> fluent_builders::ListPortfoliosForProduct<C, M, R> {
@@ -586,6 +596,7 @@ where
     ///
     /// See [`ListPrincipalsForPortfolio`](crate::client::fluent_builders::ListPrincipalsForPortfolio) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPrincipalsForPortfolio::into_paginator).
     pub fn list_principals_for_portfolio(
         &self,
     ) -> fluent_builders::ListPrincipalsForPortfolio<C, M, R> {
@@ -613,6 +624,7 @@ where
     ///
     /// See [`ListProvisioningArtifactsForServiceAction`](crate::client::fluent_builders::ListProvisioningArtifactsForServiceAction) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProvisioningArtifactsForServiceAction::into_paginator).
     pub fn list_provisioning_artifacts_for_service_action(
         &self,
     ) -> fluent_builders::ListProvisioningArtifactsForServiceAction<C, M, R> {
@@ -629,6 +641,7 @@ where
     ///
     /// See [`ListResourcesForTagOption`](crate::client::fluent_builders::ListResourcesForTagOption) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListResourcesForTagOption::into_paginator).
     pub fn list_resources_for_tag_option(
         &self,
     ) -> fluent_builders::ListResourcesForTagOption<C, M, R> {
@@ -638,6 +651,7 @@ where
     ///
     /// See [`ListServiceActions`](crate::client::fluent_builders::ListServiceActions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServiceActions::into_paginator).
     pub fn list_service_actions(&self) -> fluent_builders::ListServiceActions<C, M, R> {
         fluent_builders::ListServiceActions::new(self.handle.clone())
     }
@@ -645,6 +659,7 @@ where
     ///
     /// See [`ListServiceActionsForProvisioningArtifact`](crate::client::fluent_builders::ListServiceActionsForProvisioningArtifact) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServiceActionsForProvisioningArtifact::into_paginator).
     pub fn list_service_actions_for_provisioning_artifact(
         &self,
     ) -> fluent_builders::ListServiceActionsForProvisioningArtifact<C, M, R> {
@@ -663,6 +678,7 @@ where
     ///
     /// See [`ListTagOptions`](crate::client::fluent_builders::ListTagOptions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTagOptions::into_paginator).
     pub fn list_tag_options(&self) -> fluent_builders::ListTagOptions<C, M, R> {
         fluent_builders::ListTagOptions::new(self.handle.clone())
     }
@@ -691,6 +707,7 @@ where
     ///
     /// See [`SearchProducts`](crate::client::fluent_builders::SearchProducts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchProducts::into_paginator).
     pub fn search_products(&self) -> fluent_builders::SearchProducts<C, M, R> {
         fluent_builders::SearchProducts::new(self.handle.clone())
     }
@@ -698,6 +715,7 @@ where
     ///
     /// See [`SearchProductsAsAdmin`](crate::client::fluent_builders::SearchProductsAsAdmin) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchProductsAsAdmin::into_paginator).
     pub fn search_products_as_admin(&self) -> fluent_builders::SearchProductsAsAdmin<C, M, R> {
         fluent_builders::SearchProductsAsAdmin::new(self.handle.clone())
     }
@@ -705,6 +723,7 @@ where
     ///
     /// See [`SearchProvisionedProducts`](crate::client::fluent_builders::SearchProvisionedProducts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchProvisionedProducts::into_paginator).
     pub fn search_provisioned_products(
         &self,
     ) -> fluent_builders::SearchProvisionedProducts<C, M, R> {
@@ -798,7 +817,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AcceptPortfolioShare`.
     ///
     /// <p>Accepts an offer to share the specified portfolio.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptPortfolioShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -843,10 +862,10 @@ pub mod fluent_builders {
                 crate::input::AcceptPortfolioShareInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -856,37 +875,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -896,8 +897,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(input.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -907,44 +908,22 @@ pub mod fluent_builders {
         }
         /// <p>The type of shared portfolios to accept. The default is to accept imported portfolios.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your
-        /// organization.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IMPORTED</code> - Accept imported portfolios.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p>
-        /// </li>
+        /// <li> <p> <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your organization.</p> </li>
+        /// <li> <p> <code>IMPORTED</code> - Accept imported portfolios.</p> </li>
+        /// <li> <p> <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p> </li>
         /// </ul>
-        /// <p>For example, <code>aws servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
-        /// </p>
-        pub fn portfolio_share_type(mut self, inp: crate::model::PortfolioShareType) -> Self {
-            self.inner = self.inner.portfolio_share_type(inp);
+        /// <p>For example, <code>aws servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
+        pub fn portfolio_share_type(mut self, input: crate::model::PortfolioShareType) -> Self {
+            self.inner = self.inner.portfolio_share_type(input);
             self
         }
         /// <p>The type of shared portfolios to accept. The default is to accept imported portfolios.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your
-        /// organization.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IMPORTED</code> - Accept imported portfolios.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p>
-        /// </li>
+        /// <li> <p> <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your organization.</p> </li>
+        /// <li> <p> <code>IMPORTED</code> - Accept imported portfolios.</p> </li>
+        /// <li> <p> <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p> </li>
         /// </ul>
-        /// <p>For example, <code>aws servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
-        /// </p>
+        /// <p>For example, <code>aws servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
         pub fn set_portfolio_share_type(
             mut self,
             input: std::option::Option<crate::model::PortfolioShareType>,
@@ -956,7 +935,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateBudgetWithResource`.
     ///
     /// <p>Associates the specified budget with the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateBudgetWithResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1001,10 +980,10 @@ pub mod fluent_builders {
                 crate::input::AssociateBudgetWithResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1013,8 +992,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the budget you want to associate.</p>
-        pub fn budget_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(inp);
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p>The name of the budget you want to associate.</p>
@@ -1023,8 +1002,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The resource identifier. Either a portfolio-id or a product-id.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p> The resource identifier. Either a portfolio-id or a product-id.</p>
@@ -1036,7 +1015,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociatePrincipalWithPortfolio`.
     ///
     /// <p>Associates the specified principal ARN with the specified portfolio.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociatePrincipalWithPortfolio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1081,10 +1060,10 @@ pub mod fluent_builders {
                 crate::input::AssociatePrincipalWithPortfolioInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1094,37 +1073,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -1134,8 +1095,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(input.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -1144,8 +1105,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the principal (IAM user, role, or group).</p>
-        pub fn principal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal_arn(inp);
+        pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal_arn(input.into());
             self
         }
         /// <p>The ARN of the principal (IAM user, role, or group).</p>
@@ -1157,8 +1118,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The principal type. The supported value is <code>IAM</code>.</p>
-        pub fn principal_type(mut self, inp: crate::model::PrincipalType) -> Self {
-            self.inner = self.inner.principal_type(inp);
+        pub fn principal_type(mut self, input: crate::model::PrincipalType) -> Self {
+            self.inner = self.inner.principal_type(input);
             self
         }
         /// <p>The principal type. The supported value is <code>IAM</code>.</p>
@@ -1174,7 +1135,7 @@ pub mod fluent_builders {
     ///
     /// <p>Associates the specified product with the specified portfolio.</p>
     /// <p>A delegated admin is authorized to invoke this command.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateProductWithPortfolio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1219,10 +1180,10 @@ pub mod fluent_builders {
                 crate::input::AssociateProductWithPortfolioInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1232,37 +1193,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -1272,8 +1215,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(input.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -1282,8 +1225,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(input.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -1292,8 +1235,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the source portfolio.</p>
-        pub fn source_portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_portfolio_id(inp);
+        pub fn source_portfolio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_portfolio_id(input.into());
             self
         }
         /// <p>The identifier of the source portfolio.</p>
@@ -1308,7 +1251,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateServiceActionWithProvisioningArtifact`.
     ///
     /// <p>Associates a self-service action with a provisioning artifact.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateServiceActionWithProvisioningArtifact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1346,10 +1289,10 @@ pub mod fluent_builders {
                                     crate::error::AssociateServiceActionWithProvisioningArtifactError,
                                     crate::input::AssociateServiceActionWithProvisioningArtifactInputOperationRetryAlias>,
                                 {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1358,8 +1301,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(input.into());
             self
         }
         /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
@@ -1368,8 +1311,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
-        pub fn provisioning_artifact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_id(inp);
+        pub fn provisioning_artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioning_artifact_id(input.into());
             self
         }
         /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
@@ -1381,8 +1324,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-        pub fn service_action_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_action_id(inp);
+        pub fn service_action_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_action_id(input.into());
             self
         }
         /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
@@ -1395,37 +1338,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -1438,7 +1363,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateTagOptionWithResource`.
     ///
     /// <p>Associate the specified TagOption with the specified portfolio or product.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateTagOptionWithResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1483,10 +1408,10 @@ pub mod fluent_builders {
                 crate::input::AssociateTagOptionWithResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1495,8 +1420,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource identifier.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The resource identifier.</p>
@@ -1505,8 +1430,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The TagOption identifier.</p>
-        pub fn tag_option_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_option_id(inp);
+        pub fn tag_option_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_option_id(input.into());
             self
         }
         /// <p>The TagOption identifier.</p>
@@ -1521,7 +1446,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchAssociateServiceActionWithProvisioningArtifact`.
     ///
     /// <p>Associates multiple self-service actions with provisioning artifacts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchAssociateServiceActionWithProvisioningArtifact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1560,10 +1485,10 @@ pub mod fluent_builders {
                                     crate::error::BatchAssociateServiceActionWithProvisioningArtifactError,
                                     crate::input::BatchAssociateServiceActionWithProvisioningArtifactInputOperationRetryAlias>,
                                 {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1578,9 +1503,9 @@ pub mod fluent_builders {
         /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
         pub fn service_action_associations(
             mut self,
-            inp: impl Into<crate::model::ServiceActionAssociation>,
+            input: crate::model::ServiceActionAssociation,
         ) -> Self {
-            self.inner = self.inner.service_action_associations(inp);
+            self.inner = self.inner.service_action_associations(input);
             self
         }
         /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
@@ -1593,37 +1518,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -1636,7 +1543,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDisassociateServiceActionFromProvisioningArtifact`.
     ///
     /// <p>Disassociates a batch of self-service actions from the specified provisioning artifact.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDisassociateServiceActionFromProvisioningArtifact<C = aws_smithy_client::erase::DynConnector, M= crate::middleware::DefaultMiddleware, R= aws_smithy_client::retry::Standard> {
                             handle: std::sync::Arc<super::Handle<C, M, R>>,
                             inner: crate::input::batch_disassociate_service_action_from_provisioning_artifact_input::Builder
@@ -1670,10 +1577,10 @@ pub mod fluent_builders {
                                     crate::error::BatchDisassociateServiceActionFromProvisioningArtifactError,
                                     crate::input::BatchDisassociateServiceActionFromProvisioningArtifactInputOperationRetryAlias>,
                                 {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1688,9 +1595,9 @@ pub mod fluent_builders {
         /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
         pub fn service_action_associations(
             mut self,
-            inp: impl Into<crate::model::ServiceActionAssociation>,
+            input: crate::model::ServiceActionAssociation,
         ) -> Self {
-            self.inner = self.inner.service_action_associations(inp);
+            self.inner = self.inner.service_action_associations(input);
             self
         }
         /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
@@ -1703,37 +1610,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -1746,11 +1635,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CopyProduct`.
     ///
     /// <p>Copies the specified source product to the specified target product or a new product.</p>
-    /// <p>You can copy a product to the same account or another account.
-    /// You can copy a product to the same region or another region.</p>
-    /// <p>This operation is performed asynchronously. To track the progress of the
-    /// operation, use <a>DescribeCopyProductStatus</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You can copy a product to the same account or another account. You can copy a product to the same region or another region.</p>
+    /// <p>This operation is performed asynchronously. To track the progress of the operation, use <code>DescribeCopyProductStatus</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CopyProduct<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1795,10 +1682,10 @@ pub mod fluent_builders {
                 crate::input::CopyProductInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1808,37 +1695,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -1848,8 +1717,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the source product.</p>
-        pub fn source_product_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_product_arn(inp);
+        pub fn source_product_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_product_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the source product.</p>
@@ -1861,8 +1730,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the target product. By default, a new product is created.</p>
-        pub fn target_product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_product_id(inp);
+        pub fn target_product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_product_id(input.into());
             self
         }
         /// <p>The identifier of the target product. By default, a new product is created.</p>
@@ -1874,8 +1743,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A name for the target product. The default is the name of the source product.</p>
-        pub fn target_product_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_product_name(inp);
+        pub fn target_product_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_product_name(input.into());
             self
         }
         /// <p>A name for the target product. The default is the name of the source product.</p>
@@ -1890,22 +1759,18 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_source_provisioning_artifact_identifiers`](Self::set_source_provisioning_artifact_identifiers).
         ///
-        /// <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy.
-        /// By default, all provisioning artifacts are copied.</p>
+        /// <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy. By default, all provisioning artifacts are copied.</p>
         pub fn source_provisioning_artifact_identifiers(
             mut self,
-            inp: impl Into<
-                std::collections::HashMap<
-                    crate::model::ProvisioningArtifactPropertyName,
-                    std::string::String,
-                >,
+            input: std::collections::HashMap<
+                crate::model::ProvisioningArtifactPropertyName,
+                std::string::String,
             >,
         ) -> Self {
-            self.inner = self.inner.source_provisioning_artifact_identifiers(inp);
+            self.inner = self.inner.source_provisioning_artifact_identifiers(input);
             self
         }
-        /// <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy.
-        /// By default, all provisioning artifacts are copied.</p>
+        /// <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy. By default, all provisioning artifacts are copied.</p>
         pub fn set_source_provisioning_artifact_identifiers(
             mut self,
             input: std::option::Option<
@@ -1926,14 +1791,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_copy_options`](Self::set_copy_options).
         ///
-        /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source
-        /// product are copied to the target product.</p>
-        pub fn copy_options(mut self, inp: impl Into<crate::model::CopyOption>) -> Self {
-            self.inner = self.inner.copy_options(inp);
+        /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source product are copied to the target product.</p>
+        pub fn copy_options(mut self, input: crate::model::CopyOption) -> Self {
+            self.inner = self.inner.copy_options(input);
             self
         }
-        /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source
-        /// product are copied to the target product.</p>
+        /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source product are copied to the target product.</p>
         pub fn set_copy_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CopyOption>>,
@@ -1941,14 +1804,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_copy_options(input);
             self
         }
-        /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request. </p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request. </p>
+        pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request. </p>
+        /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request. </p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1961,7 +1822,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a constraint.</p>
     /// <p>A delegated admin is authorized to invoke this command.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConstraint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2006,10 +1867,10 @@ pub mod fluent_builders {
                 crate::input::CreateConstraintInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2019,37 +1880,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -2059,8 +1902,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(input.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -2069,8 +1912,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(input.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -2080,110 +1923,104 @@ pub mod fluent_builders {
         }
         /// <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
         /// <dl>
-        /// <dt>LAUNCH</dt>
+        /// <dt>
+        /// LAUNCH
+        /// </dt>
         /// <dd>
         /// <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>
         /// <p>Specify the <code>RoleArn</code> property as follows:</p>
-        /// <p>
-        /// <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
-        /// </p>
+        /// <p> <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p>
         /// <p>Specify the <code>LocalRoleName</code> property as follows:</p>
-        /// <p>
-        /// <code>{"LocalRoleName": "SCBasicLaunchRole"}</code>
-        /// </p>
-        /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be
-        /// account-agnostic so the administrator can create fewer resources per shared account.</p>
-        /// <note>
+        /// <p> <code>{"LocalRoleName": "SCBasicLaunchRole"}</code> </p>
+        /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>
         /// <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>
         /// </note>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.</p>
         /// </dd>
-        /// <dt>NOTIFICATION</dt>
+        /// <dt>
+        /// NOTIFICATION
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>NotificationArns</code> property as follows:</p>
-        /// <p>
-        /// <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
-        /// </p>
+        /// <p> <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code> </p>
         /// </dd>
-        /// <dt>RESOURCE_UPDATE</dt>
+        /// <dt>
+        /// RESOURCE_UPDATE
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>
-        /// <p>
-        /// <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
-        /// </p>
+        /// <p> <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code> </p>
         /// <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>
         /// </dd>
-        /// <dt>STACKSET</dt>
+        /// <dt>
+        /// STACKSET
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>Parameters</code> property as follows:</p>
-        /// <p>
-        /// <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code>
-        /// </p>
+        /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
         /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
         /// </dd>
-        /// <dt>TEMPLATE</dt>
+        /// <dt>
+        /// TEMPLATE
+        /// </dt>
         /// <dd>
-        /// <p>Specify the <code>Rules</code> property. For more information, see
-        /// <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
+        /// <p>Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
         /// </dd>
         /// </dl>
-        pub fn parameters(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameters(inp);
+        pub fn parameters(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameters(input.into());
             self
         }
         /// <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
         /// <dl>
-        /// <dt>LAUNCH</dt>
+        /// <dt>
+        /// LAUNCH
+        /// </dt>
         /// <dd>
         /// <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>
         /// <p>Specify the <code>RoleArn</code> property as follows:</p>
-        /// <p>
-        /// <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
-        /// </p>
+        /// <p> <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p>
         /// <p>Specify the <code>LocalRoleName</code> property as follows:</p>
-        /// <p>
-        /// <code>{"LocalRoleName": "SCBasicLaunchRole"}</code>
-        /// </p>
-        /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be
-        /// account-agnostic so the administrator can create fewer resources per shared account.</p>
-        /// <note>
+        /// <p> <code>{"LocalRoleName": "SCBasicLaunchRole"}</code> </p>
+        /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>
         /// <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>
         /// </note>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.</p>
         /// </dd>
-        /// <dt>NOTIFICATION</dt>
+        /// <dt>
+        /// NOTIFICATION
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>NotificationArns</code> property as follows:</p>
-        /// <p>
-        /// <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
-        /// </p>
+        /// <p> <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code> </p>
         /// </dd>
-        /// <dt>RESOURCE_UPDATE</dt>
+        /// <dt>
+        /// RESOURCE_UPDATE
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>
-        /// <p>
-        /// <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
-        /// </p>
+        /// <p> <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code> </p>
         /// <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>
         /// </dd>
-        /// <dt>STACKSET</dt>
+        /// <dt>
+        /// STACKSET
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>Parameters</code> property as follows:</p>
-        /// <p>
-        /// <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code>
-        /// </p>
+        /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
         /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
         /// </dd>
-        /// <dt>TEMPLATE</dt>
+        /// <dt>
+        /// TEMPLATE
+        /// </dt>
         /// <dd>
-        /// <p>Specify the <code>Rules</code> property. For more information, see
-        /// <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
+        /// <p>Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
         /// </dd>
         /// </dl>
         pub fn set_parameters(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -2192,71 +2029,31 @@ pub mod fluent_builders {
         }
         /// <p>The type of constraint.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LAUNCH</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOTIFICATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RESOURCE_UPDATE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STACKSET</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TEMPLATE</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>LAUNCH</code> </p> </li>
+        /// <li> <p> <code>NOTIFICATION</code> </p> </li>
+        /// <li> <p> <code>RESOURCE_UPDATE</code> </p> </li>
+        /// <li> <p> <code>STACKSET</code> </p> </li>
+        /// <li> <p> <code>TEMPLATE</code> </p> </li>
         /// </ul>
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.r#type(input.into());
             self
         }
         /// <p>The type of constraint.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LAUNCH</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOTIFICATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RESOURCE_UPDATE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STACKSET</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TEMPLATE</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>LAUNCH</code> </p> </li>
+        /// <li> <p> <code>NOTIFICATION</code> </p> </li>
+        /// <li> <p> <code>RESOURCE_UPDATE</code> </p> </li>
+        /// <li> <p> <code>STACKSET</code> </p> </li>
+        /// <li> <p> <code>TEMPLATE</code> </p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_type(input);
             self
         }
         /// <p>The description of the constraint.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the constraint.</p>
@@ -2264,14 +2061,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+        pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2284,7 +2079,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a portfolio.</p>
     /// <p>A delegated admin is authorized to invoke this command.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePortfolio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2329,10 +2124,10 @@ pub mod fluent_builders {
                 crate::input::CreatePortfolioInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2342,37 +2137,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -2382,8 +2159,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name to use for display purposes.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The name to use for display purposes.</p>
@@ -2392,8 +2169,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the portfolio.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the portfolio.</p>
@@ -2402,8 +2179,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the portfolio provider.</p>
-        pub fn provider_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider_name(inp);
+        pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider_name(input.into());
             self
         }
         /// <p>The name of the portfolio provider.</p>
@@ -2419,8 +2196,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tags.</p>
@@ -2431,14 +2208,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+        pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2449,16 +2224,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePortfolioShare`.
     ///
-    /// <p>Shares the specified portfolio with the specified account or organization node.
-    /// Shares to an organization node can only be created by the management account of an
-    /// organization or by a delegated administrator. You can share portfolios to an organization,
-    /// an organizational unit, or a specific account.</p>
+    /// <p>Shares the specified portfolio with the specified account or organization node. Shares to an organization node can only be created by the management account of an organization or by a delegated administrator. You can share portfolios to an organization, an organizational unit, or a specific account.</p>
     /// <p>Note that if a delegated admin is de-registered, they can no longer create portfolio shares.</p>
-    /// <p>
-    /// <code>AWSOrganizationsAccess</code> must be enabled in order to create a portfolio share to an organization node.</p>
+    /// <p> <code>AWSOrganizationsAccess</code> must be enabled in order to create a portfolio share to an organization node.</p>
     /// <p>You can't share a shared resource, including portfolios that contain a shared product.</p>
     /// <p>If the portfolio share with the specified account or organization node already exists, this action will have no effect and will not return an error. To update an existing share, you must use the <code> UpdatePortfolioShare</code> API instead.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePortfolioShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2503,10 +2274,10 @@ pub mod fluent_builders {
                 crate::input::CreatePortfolioShareInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2516,37 +2287,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -2556,8 +2309,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(input.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -2566,8 +2319,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS account ID. For example, <code>123456789012</code>.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The AWS account ID. For example, <code>123456789012</code>.</p>
@@ -2575,22 +2328,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_account_id(input);
             self
         }
-        /// <p>The organization node to whom you are going to share. If <code>OrganizationNode</code>
-        /// is passed in, <code>PortfolioShare</code> will be created for the node an
-        /// ListOrganizationPortfolioAccessd its children (when applies), and a
-        /// <code>PortfolioShareToken</code> will be returned in the output in order for the
-        /// administrator to monitor the status of the <code>PortfolioShare</code> creation
-        /// process.</p>
-        pub fn organization_node(mut self, inp: crate::model::OrganizationNode) -> Self {
-            self.inner = self.inner.organization_node(inp);
+        /// <p>The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in, <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children (when applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>
+        pub fn organization_node(mut self, input: crate::model::OrganizationNode) -> Self {
+            self.inner = self.inner.organization_node(input);
             self
         }
-        /// <p>The organization node to whom you are going to share. If <code>OrganizationNode</code>
-        /// is passed in, <code>PortfolioShare</code> will be created for the node an
-        /// ListOrganizationPortfolioAccessd its children (when applies), and a
-        /// <code>PortfolioShareToken</code> will be returned in the output in order for the
-        /// administrator to monitor the status of the <code>PortfolioShare</code> creation
-        /// process.</p>
+        /// <p>The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in, <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children (when applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>
         pub fn set_organization_node(
             mut self,
             input: std::option::Option<crate::model::OrganizationNode>,
@@ -2599,8 +2342,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not provided, TagOptions sharing is disabled.</p>
-        pub fn share_tag_options(mut self, inp: bool) -> Self {
-            self.inner = self.inner.share_tag_options(inp);
+        pub fn share_tag_options(mut self, input: bool) -> Self {
+            self.inner = self.inner.share_tag_options(input);
             self
         }
         /// <p>Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not provided, TagOptions sharing is disabled.</p>
@@ -2613,12 +2356,8 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a product.</p>
     /// <p>A delegated admin is authorized to invoke this command.</p>
-    ///
-    /// <p>The user or role that performs this operation must have the
-    /// <code>cloudformation:GetTemplate</code> IAM policy permission. This policy permission is
-    /// required when using the <code>ImportFromPhysicalId</code> template source in the
-    /// information data section.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code> IAM policy permission. This policy permission is required when using the <code>ImportFromPhysicalId</code> template source in the information data section.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProduct<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2663,10 +2402,10 @@ pub mod fluent_builders {
                 crate::input::CreateProductInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2676,37 +2415,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -2716,8 +2437,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the product.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the product.</p>
@@ -2726,8 +2447,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The owner of the product.</p>
-        pub fn owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.owner(inp);
+        pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owner(input.into());
             self
         }
         /// <p>The owner of the product.</p>
@@ -2736,8 +2457,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the product.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the product.</p>
@@ -2746,8 +2467,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The distributor of the product.</p>
-        pub fn distributor(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.distributor(inp);
+        pub fn distributor(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.distributor(input.into());
             self
         }
         /// <p>The distributor of the product.</p>
@@ -2756,8 +2477,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The support information about the product.</p>
-        pub fn support_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.support_description(inp);
+        pub fn support_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.support_description(input.into());
             self
         }
         /// <p>The support information about the product.</p>
@@ -2769,8 +2490,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The contact email for product support.</p>
-        pub fn support_email(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.support_email(inp);
+        pub fn support_email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.support_email(input.into());
             self
         }
         /// <p>The contact email for product support.</p>
@@ -2782,22 +2503,20 @@ pub mod fluent_builders {
             self
         }
         /// <p>The contact URL for product support.</p>
-        /// <p>
-        /// <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
-        pub fn support_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.support_url(inp);
+        /// <p> <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
+        pub fn support_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.support_url(input.into());
             self
         }
         /// <p>The contact URL for product support.</p>
-        /// <p>
-        /// <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
+        /// <p> <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
         pub fn set_support_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_support_url(input);
             self
         }
         /// <p>The type of product.</p>
-        pub fn product_type(mut self, inp: crate::model::ProductType) -> Self {
-            self.inner = self.inner.product_type(inp);
+        pub fn product_type(mut self, input: crate::model::ProductType) -> Self {
+            self.inner = self.inner.product_type(input);
             self
         }
         /// <p>The type of product.</p>
@@ -2813,8 +2532,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tags.</p>
@@ -2828,9 +2547,9 @@ pub mod fluent_builders {
         /// <p>The configuration of the provisioning artifact. </p>
         pub fn provisioning_artifact_parameters(
             mut self,
-            inp: crate::model::ProvisioningArtifactProperties,
+            input: crate::model::ProvisioningArtifactProperties,
         ) -> Self {
-            self.inner = self.inner.provisioning_artifact_parameters(inp);
+            self.inner = self.inner.provisioning_artifact_parameters(input);
             self
         }
         /// <p>The configuration of the provisioning artifact. </p>
@@ -2841,14 +2560,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provisioning_artifact_parameters(input);
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+        pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2859,14 +2576,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateProvisionedProductPlan`.
     ///
-    /// <p>Creates a plan. A plan includes the list of resources to be  
-    /// created (when provisioning a new product) or modified (when updating a provisioned product)
-    /// when the plan is executed.</p>
-    /// <p>You can create one plan per provisioned product. To create a plan for an existing
-    /// provisioned product, the product status must be AVAILBLE or TAINTED.</p>
-    /// <p>To view the resource changes in the change set, use <a>DescribeProvisionedProductPlan</a>.
-    /// To create or modify the provisioned product, use <a>ExecuteProvisionedProductPlan</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a plan. A plan includes the list of resources to be created (when provisioning a new product) or modified (when updating a provisioned product) when the plan is executed.</p>
+    /// <p>You can create one plan per provisioned product. To create a plan for an existing provisioned product, the product status must be AVAILBLE or TAINTED.</p>
+    /// <p>To view the resource changes in the change set, use <code>DescribeProvisionedProductPlan</code>. To create or modify the provisioned product, use <code>ExecuteProvisionedProductPlan</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProvisionedProductPlan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2911,10 +2624,10 @@ pub mod fluent_builders {
                 crate::input::CreateProvisionedProductPlanInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2924,37 +2637,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -2964,8 +2659,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the plan.</p>
-        pub fn plan_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.plan_name(inp);
+        pub fn plan_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.plan_name(input.into());
             self
         }
         /// <p>The name of the plan.</p>
@@ -2974,8 +2669,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The plan type.</p>
-        pub fn plan_type(mut self, inp: crate::model::ProvisionedProductPlanType) -> Self {
-            self.inner = self.inner.plan_type(inp);
+        pub fn plan_type(mut self, input: crate::model::ProvisionedProductPlanType) -> Self {
+            self.inner = self.inner.plan_type(input);
             self
         }
         /// <p>The plan type.</p>
@@ -2990,14 +2685,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_notification_arns`](Self::set_notification_arns).
         ///
-        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
-        /// events.</p>
-        pub fn notification_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notification_arns(inp);
+        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
+        pub fn notification_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notification_arns(input.into());
             self
         }
-        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
-        /// events.</p>
+        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
         pub fn set_notification_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3005,23 +2698,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification_arns(input);
             self
         }
-        /// <p>The path identifier of the product. This value is optional if the product
-        /// has a default path, and required if the product has more than one path.
-        /// To list the paths for a product, use <a>ListLaunchPaths</a>.</p>
-        pub fn path_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_id(inp);
+        /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
+        pub fn path_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_id(input.into());
             self
         }
-        /// <p>The path identifier of the product. This value is optional if the product
-        /// has a default path, and required if the product has more than one path.
-        /// To list the paths for a product, use <a>ListLaunchPaths</a>.</p>
+        /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
         pub fn set_path_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_path_id(input);
             self
         }
         /// <p>The product identifier.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(input.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -3029,14 +2718,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_product_id(input);
             self
         }
-        /// <p>A user-friendly name for the provisioned product. This value must be
-        /// unique for the AWS account and cannot be updated after the product is provisioned.</p>
-        pub fn provisioned_product_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioned_product_name(inp);
+        /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
+        pub fn provisioned_product_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioned_product_name(input.into());
             self
         }
-        /// <p>A user-friendly name for the provisioned product. This value must be
-        /// unique for the AWS account and cannot be updated after the product is provisioned.</p>
+        /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
         pub fn set_provisioned_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3045,8 +2732,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioning artifact.</p>
-        pub fn provisioning_artifact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_id(inp);
+        pub fn provisioning_artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioning_artifact_id(input.into());
             self
         }
         /// <p>The identifier of the provisioning artifact.</p>
@@ -3061,17 +2748,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_provisioning_parameters`](Self::set_provisioning_parameters).
         ///
-        /// <p>Parameters specified by the administrator that are required for provisioning the
-        /// product.</p>
+        /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
         pub fn provisioning_parameters(
             mut self,
-            inp: impl Into<crate::model::UpdateProvisioningParameter>,
+            input: crate::model::UpdateProvisioningParameter,
         ) -> Self {
-            self.inner = self.inner.provisioning_parameters(inp);
+            self.inner = self.inner.provisioning_parameters(input);
             self
         }
-        /// <p>Parameters specified by the administrator that are required for provisioning the
-        /// product.</p>
+        /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
         pub fn set_provisioning_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UpdateProvisioningParameter>>,
@@ -3079,14 +2764,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provisioning_parameters(input);
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+        pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3100,8 +2783,8 @@ pub mod fluent_builders {
         ///
         /// <p>One or more tags.</p>
         /// <p>If the plan is for an existing provisioned product, the product must have a <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tags.</p>
@@ -3118,11 +2801,8 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a provisioning artifact (also known as a version) for the specified product.</p>
     /// <p>You cannot create a provisioning artifact for a product that was shared with you.</p>
-    ///
-    /// <p>The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code>
-    /// IAM policy permission. This policy permission is required when using the
-    /// <code>ImportFromPhysicalId</code> template source in the information data section.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code> IAM policy permission. This policy permission is required when using the <code>ImportFromPhysicalId</code> template source in the information data section.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProvisioningArtifact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3167,10 +2847,10 @@ pub mod fluent_builders {
                 crate::input::CreateProvisioningArtifactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3180,37 +2860,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -3220,8 +2882,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(input.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -3230,8 +2892,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration for the provisioning artifact.</p>
-        pub fn parameters(mut self, inp: crate::model::ProvisioningArtifactProperties) -> Self {
-            self.inner = self.inner.parameters(inp);
+        pub fn parameters(mut self, input: crate::model::ProvisioningArtifactProperties) -> Self {
+            self.inner = self.inner.parameters(input);
             self
         }
         /// <p>The configuration for the provisioning artifact.</p>
@@ -3242,14 +2904,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_parameters(input);
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+        pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3261,7 +2921,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateServiceAction`.
     ///
     /// <p>Creates a self-service action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateServiceAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3306,10 +2966,10 @@ pub mod fluent_builders {
                 crate::input::CreateServiceActionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3318,8 +2978,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The self-service action name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The self-service action name.</p>
@@ -3328,8 +2988,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
-        pub fn definition_type(mut self, inp: crate::model::ServiceActionDefinitionType) -> Self {
-            self.inner = self.inner.definition_type(inp);
+        pub fn definition_type(mut self, input: crate::model::ServiceActionDefinitionType) -> Self {
+            self.inner = self.inner.definition_type(input);
             self
         }
         /// <p>The service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
@@ -3346,22 +3006,29 @@ pub mod fluent_builders {
         ///
         /// <p>The self-service action definition. Can be one of the following:</p>
         /// <dl>
-        /// <dt>Name</dt>
+        /// <dt>
+        /// Name
+        /// </dt>
         /// <dd>
         /// <p>The name of the AWS Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.</p>
         /// <p>If you are using a shared SSM document, you must provide the ARN instead of the name.</p>
         /// </dd>
-        /// <dt>Version</dt>
+        /// <dt>
+        /// Version
+        /// </dt>
         /// <dd>
-        /// <p>The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code>
-        /// </p>
+        /// <p>The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code> </p>
         /// </dd>
-        /// <dt>AssumeRole</dt>
+        /// <dt>
+        /// AssumeRole
+        /// </dt>
         /// <dd>
         /// <p>The Amazon Resource Name (ARN) of the role that performs the self-service actions on your behalf. For example, <code>"AssumeRole": "arn:aws:iam::12345678910:role/ActionRole"</code>.</p>
         /// <p>To reuse the provisioned product launch role, set to <code>"AssumeRole": "LAUNCH_ROLE"</code>.</p>
         /// </dd>
-        /// <dt>Parameters</dt>
+        /// <dt>
+        /// Parameters
+        /// </dt>
         /// <dd>
         /// <p>The list of parameters in JSON format.</p>
         /// <p>For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p>
@@ -3369,30 +3036,37 @@ pub mod fluent_builders {
         /// </dl>
         pub fn definition(
             mut self,
-            k: impl Into<crate::model::ServiceActionDefinitionKey>,
+            k: crate::model::ServiceActionDefinitionKey,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.definition(k, v);
+            self.inner = self.inner.definition(k, v.into());
             self
         }
         /// <p>The self-service action definition. Can be one of the following:</p>
         /// <dl>
-        /// <dt>Name</dt>
+        /// <dt>
+        /// Name
+        /// </dt>
         /// <dd>
         /// <p>The name of the AWS Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.</p>
         /// <p>If you are using a shared SSM document, you must provide the ARN instead of the name.</p>
         /// </dd>
-        /// <dt>Version</dt>
+        /// <dt>
+        /// Version
+        /// </dt>
         /// <dd>
-        /// <p>The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code>
-        /// </p>
+        /// <p>The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code> </p>
         /// </dd>
-        /// <dt>AssumeRole</dt>
+        /// <dt>
+        /// AssumeRole
+        /// </dt>
         /// <dd>
         /// <p>The Amazon Resource Name (ARN) of the role that performs the self-service actions on your behalf. For example, <code>"AssumeRole": "arn:aws:iam::12345678910:role/ActionRole"</code>.</p>
         /// <p>To reuse the provisioned product launch role, set to <code>"AssumeRole": "LAUNCH_ROLE"</code>.</p>
         /// </dd>
-        /// <dt>Parameters</dt>
+        /// <dt>
+        /// Parameters
+        /// </dt>
         /// <dd>
         /// <p>The list of parameters in JSON format.</p>
         /// <p>For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p>
@@ -3411,8 +3085,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The self-service action description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The self-service action description.</p>
@@ -3422,37 +3096,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -3461,14 +3117,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_accept_language(input);
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+        pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3480,7 +3134,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateTagOption`.
     ///
     /// <p>Creates a TagOption.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTagOption<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3525,10 +3179,10 @@ pub mod fluent_builders {
                 crate::input::CreateTagOptionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3537,8 +3191,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The TagOption key.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(input.into());
             self
         }
         /// <p>The TagOption key.</p>
@@ -3547,8 +3201,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The TagOption value.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.value(inp);
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.value(input.into());
             self
         }
         /// <p>The TagOption value.</p>
@@ -3561,7 +3215,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified constraint.</p>
     /// <p>A delegated admin is authorized to invoke this command.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConstraint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3606,10 +3260,10 @@ pub mod fluent_builders {
                 crate::input::DeleteConstraintInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3619,37 +3273,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -3659,8 +3295,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the constraint.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of the constraint.</p>
@@ -3672,10 +3308,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePortfolio`.
     ///
     /// <p>Deletes the specified portfolio.</p>
-    /// <p>You cannot delete a portfolio if it was shared with you or if it has associated
-    /// products, users, constraints, or shared accounts.</p>
+    /// <p>You cannot delete a portfolio if it was shared with you or if it has associated products, users, constraints, or shared accounts.</p>
     /// <p>A delegated admin is authorized to invoke this command.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePortfolio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3720,10 +3355,10 @@ pub mod fluent_builders {
                 crate::input::DeletePortfolioInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3733,37 +3368,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -3773,8 +3390,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -3785,11 +3402,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeletePortfolioShare`.
     ///
-    /// <p>Stops sharing the specified portfolio with the specified account or organization
-    /// node. Shares to an organization node can only be deleted by the management account of an
-    /// organization or by a delegated administrator.</p>
+    /// <p>Stops sharing the specified portfolio with the specified account or organization node. Shares to an organization node can only be deleted by the management account of an organization or by a delegated administrator.</p>
     /// <p>Note that if a delegated admin is de-registered, portfolio shares created from that account are removed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePortfolioShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3834,10 +3449,10 @@ pub mod fluent_builders {
                 crate::input::DeletePortfolioShareInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3847,37 +3462,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -3887,8 +3484,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(input.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -3897,8 +3494,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS account ID.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The AWS account ID.</p>
@@ -3907,8 +3504,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The organization node to whom you are going to stop sharing.</p>
-        pub fn organization_node(mut self, inp: crate::model::OrganizationNode) -> Self {
-            self.inner = self.inner.organization_node(inp);
+        pub fn organization_node(mut self, input: crate::model::OrganizationNode) -> Self {
+            self.inner = self.inner.organization_node(input);
             self
         }
         /// <p>The organization node to whom you are going to stop sharing.</p>
@@ -3925,7 +3522,7 @@ pub mod fluent_builders {
     /// <p>Deletes the specified product.</p>
     /// <p>You cannot delete a product if it was shared with you or is associated with a portfolio.</p>
     /// <p>A delegated admin is authorized to invoke this command.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProduct<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3970,10 +3567,10 @@ pub mod fluent_builders {
                 crate::input::DeleteProductInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3983,37 +3580,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -4023,8 +3602,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -4036,7 +3615,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteProvisionedProductPlan`.
     ///
     /// <p>Deletes the specified plan.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProvisionedProductPlan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4081,10 +3660,10 @@ pub mod fluent_builders {
                 crate::input::DeleteProvisionedProductPlanInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4094,37 +3673,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -4134,8 +3695,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The plan identifier.</p>
-        pub fn plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.plan_id(inp);
+        pub fn plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.plan_id(input.into());
             self
         }
         /// <p>The plan identifier.</p>
@@ -4143,14 +3704,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_plan_id(input);
             self
         }
-        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even
-        /// if it cannot delete the underlying resources.</p>
-        pub fn ignore_errors(mut self, inp: bool) -> Self {
-            self.inner = self.inner.ignore_errors(inp);
+        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
+        pub fn ignore_errors(mut self, input: bool) -> Self {
+            self.inner = self.inner.ignore_errors(input);
             self
         }
-        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even
-        /// if it cannot delete the underlying resources.</p>
+        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
         pub fn set_ignore_errors(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_ignore_errors(input);
             self
@@ -4159,10 +3718,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteProvisioningArtifact`.
     ///
     /// <p>Deletes the specified provisioning artifact (also known as a version) for the specified product.</p>
-    /// <p>You cannot delete a provisioning artifact associated with a product that was shared with you.
-    /// You cannot delete the last provisioning artifact for a product, because a product must have at
-    /// least one provisioning artifact.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You cannot delete a provisioning artifact associated with a product that was shared with you. You cannot delete the last provisioning artifact for a product, because a product must have at least one provisioning artifact.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProvisioningArtifact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4207,10 +3764,10 @@ pub mod fluent_builders {
                 crate::input::DeleteProvisioningArtifactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4220,37 +3777,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -4260,8 +3799,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(input.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -4270,8 +3809,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioning artifact.</p>
-        pub fn provisioning_artifact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_id(inp);
+        pub fn provisioning_artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioning_artifact_id(input.into());
             self
         }
         /// <p>The identifier of the provisioning artifact.</p>
@@ -4286,7 +3825,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteServiceAction`.
     ///
     /// <p>Deletes a self-service action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteServiceAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4331,10 +3870,10 @@ pub mod fluent_builders {
                 crate::input::DeleteServiceActionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4343,8 +3882,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
@@ -4354,37 +3893,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -4398,7 +3919,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified TagOption.</p>
     /// <p>You cannot delete a TagOption if it is associated with a product or portfolio.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTagOption<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4443,10 +3964,10 @@ pub mod fluent_builders {
                 crate::input::DeleteTagOptionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4455,8 +3976,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The TagOption identifier.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The TagOption identifier.</p>
@@ -4468,7 +3989,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeConstraint`.
     ///
     /// <p>Gets information about the specified constraint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConstraint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4513,10 +4034,10 @@ pub mod fluent_builders {
                 crate::input::DescribeConstraintInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4526,37 +4047,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -4566,8 +4069,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the constraint.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of the constraint.</p>
@@ -4579,7 +4082,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCopyProductStatus`.
     ///
     /// <p>Gets the status of the specified copy product operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCopyProductStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4624,10 +4127,10 @@ pub mod fluent_builders {
                 crate::input::DescribeCopyProductStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4637,37 +4140,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -4676,12 +4161,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_accept_language(input);
             self
         }
-        /// <p>The token for the copy product operation. This token is returned by <a>CopyProduct</a>.</p>
-        pub fn copy_product_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.copy_product_token(inp);
+        /// <p>The token for the copy product operation. This token is returned by <code>CopyProduct</code>.</p>
+        pub fn copy_product_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.copy_product_token(input.into());
             self
         }
-        /// <p>The token for the copy product operation. This token is returned by <a>CopyProduct</a>.</p>
+        /// <p>The token for the copy product operation. This token is returned by <code>CopyProduct</code>.</p>
         pub fn set_copy_product_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4694,7 +4179,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets information about the specified portfolio.</p>
     /// <p>A delegated admin is authorized to invoke this command.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePortfolio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4739,10 +4224,10 @@ pub mod fluent_builders {
                 crate::input::DescribePortfolioInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4752,37 +4237,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -4792,8 +4259,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -4805,11 +4272,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePortfolioShares`.
     ///
     /// <p>Returns a summary of each of the portfolio shares that were created for the specified portfolio.</p>
-    /// <p>You can use this API to determine which accounts or organizational nodes this
-    /// portfolio have been shared, whether the recipient entity has imported the share, and
-    /// whether TagOptions are included with the share.</p>
+    /// <p>You can use this API to determine which accounts or organizational nodes this portfolio have been shared, whether the recipient entity has imported the share, and whether TagOptions are included with the share.</p>
     /// <p>The <code>PortfolioId</code> and <code>Type</code> parameters are both required.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePortfolioShares<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4854,10 +4319,10 @@ pub mod fluent_builders {
                 crate::input::DescribePortfolioSharesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4865,9 +4330,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribePortfolioSharesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribePortfolioSharesPaginator<C, M, R> {
+            crate::paginator::DescribePortfolioSharesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The unique identifier of the portfolio for which shares will be retrieved.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(input.into());
             self
         }
         /// <p>The unique identifier of the portfolio for which shares will be retrieved.</p>
@@ -4880,8 +4351,8 @@ pub mod fluent_builders {
         /// <p>2. <code>ORGANIZATION</code> - Represents a share to an organization. This share is available to every account in the organization.</p>
         /// <p>3. <code>ORGANIZATIONAL_UNIT</code> - Represents a share to an organizational unit.</p>
         /// <p>4. <code>ORGANIZATION_MEMBER_ACCOUNT</code> - Represents a share to an account in the organization.</p>
-        pub fn r#type(mut self, inp: crate::model::DescribePortfolioShareType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::DescribePortfolioShareType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of portfolio share to summarize. This field acts as a filter on the type of portfolio share, which can be one of the following:</p>
@@ -4897,8 +4368,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -4907,8 +4378,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -4919,9 +4390,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribePortfolioShareStatus`.
     ///
-    /// <p>Gets the status of the specified portfolio share operation. This API can only be called
-    /// by the management account in the organization or by a delegated admin.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets the status of the specified portfolio share operation. This API can only be called by the management account in the organization or by a delegated admin.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePortfolioShareStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4966,10 +4436,10 @@ pub mod fluent_builders {
                 crate::input::DescribePortfolioShareStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4978,8 +4448,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token for the portfolio share operation. This token is returned either by CreatePortfolioShare or by DeletePortfolioShare.</p>
-        pub fn portfolio_share_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_share_token(inp);
+        pub fn portfolio_share_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_share_token(input.into());
             self
         }
         /// <p>The token for the portfolio share operation. This token is returned either by CreatePortfolioShare or by DeletePortfolioShare.</p>
@@ -4994,7 +4464,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeProduct`.
     ///
     /// <p>Gets information about the specified product.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProduct<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5039,10 +4509,10 @@ pub mod fluent_builders {
                 crate::input::DescribeProductInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5052,37 +4522,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -5092,8 +4544,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -5102,8 +4554,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The product name.</p>
@@ -5115,7 +4567,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeProductAsAdmin`.
     ///
     /// <p>Gets information about the specified product. This operation is run with administrator access.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProductAsAdmin<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5160,10 +4612,10 @@ pub mod fluent_builders {
                 crate::input::DescribeProductAsAdminInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5173,37 +4625,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -5213,8 +4647,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -5223,8 +4657,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The product name.</p>
@@ -5232,22 +4666,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The unique identifier of the shared portfolio that the specified product is associated
-        /// with.</p>
-        /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the
-        /// product. If this parameter is provided and if TagOptions sharing is enabled in the
-        /// portfolio share, the API returns both local and shared TagOptions associated with the
-        /// product. Otherwise only local TagOptions will be returned. </p>
-        pub fn source_portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_portfolio_id(inp);
+        /// <p>The unique identifier of the shared portfolio that the specified product is associated with.</p>
+        /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared TagOptions associated with the product. Otherwise only local TagOptions will be returned. </p>
+        pub fn source_portfolio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_portfolio_id(input.into());
             self
         }
-        /// <p>The unique identifier of the shared portfolio that the specified product is associated
-        /// with.</p>
-        /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the
-        /// product. If this parameter is provided and if TagOptions sharing is enabled in the
-        /// portfolio share, the API returns both local and shared TagOptions associated with the
-        /// product. Otherwise only local TagOptions will be returned. </p>
+        /// <p>The unique identifier of the shared portfolio that the specified product is associated with.</p>
+        /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared TagOptions associated with the product. Otherwise only local TagOptions will be returned. </p>
         pub fn set_source_portfolio_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5259,7 +4685,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeProductView`.
     ///
     /// <p>Gets information about the specified product.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProductView<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5304,10 +4730,10 @@ pub mod fluent_builders {
                 crate::input::DescribeProductViewInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5317,37 +4743,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -5357,8 +4765,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product view identifier.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The product view identifier.</p>
@@ -5370,7 +4778,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeProvisionedProduct`.
     ///
     /// <p>Gets information about the specified provisioned product.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProvisionedProduct<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5415,10 +4823,10 @@ pub mod fluent_builders {
                 crate::input::DescribeProvisionedProductInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5428,37 +4836,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -5469,8 +4859,8 @@ pub mod fluent_builders {
         }
         /// <p>The provisioned product identifier. You must provide the name or ID, but not both.</p>
         /// <p>If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code> will occur.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The provisioned product identifier. You must provide the name or ID, but not both.</p>
@@ -5481,8 +4871,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the provisioned product. You must provide the name or ID, but not both.</p>
         /// <p>If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code> will occur.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the provisioned product. You must provide the name or ID, but not both.</p>
@@ -5495,7 +4885,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeProvisionedProductPlan`.
     ///
     /// <p>Gets information about the resource changes for the specified plan.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProvisionedProductPlan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5540,10 +4930,10 @@ pub mod fluent_builders {
                 crate::input::DescribeProvisionedProductPlanInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5553,37 +4943,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -5593,8 +4965,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The plan identifier.</p>
-        pub fn plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.plan_id(inp);
+        pub fn plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.plan_id(input.into());
             self
         }
         /// <p>The plan identifier.</p>
@@ -5603,8 +4975,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -5613,8 +4985,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -5626,7 +4998,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeProvisioningArtifact`.
     ///
     /// <p>Gets information about the specified provisioning artifact (also known as a version) for the specified product.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProvisioningArtifact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5671,10 +5043,10 @@ pub mod fluent_builders {
                 crate::input::DescribeProvisioningArtifactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5684,37 +5056,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -5724,8 +5078,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioning artifact.</p>
-        pub fn provisioning_artifact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_id(inp);
+        pub fn provisioning_artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioning_artifact_id(input.into());
             self
         }
         /// <p>The identifier of the provisioning artifact.</p>
@@ -5737,8 +5091,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(input.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -5747,8 +5101,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The provisioning artifact name.</p>
-        pub fn provisioning_artifact_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_name(inp);
+        pub fn provisioning_artifact_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioning_artifact_name(input.into());
             self
         }
         /// <p>The provisioning artifact name.</p>
@@ -5760,8 +5114,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product name.</p>
-        pub fn product_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_name(inp);
+        pub fn product_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_name(input.into());
             self
         }
         /// <p>The product name.</p>
@@ -5770,8 +5124,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether a verbose level of detail is enabled.</p>
-        pub fn verbose(mut self, inp: bool) -> Self {
-            self.inner = self.inner.verbose(inp);
+        pub fn verbose(mut self, input: bool) -> Self {
+            self.inner = self.inner.verbose(input);
             self
         }
         /// <p>Indicates whether a verbose level of detail is enabled.</p>
@@ -5782,15 +5136,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeProvisioningParameters`.
     ///
-    /// <p>Gets information about the configuration required to provision the specified product using
-    /// the specified provisioning artifact.</p>
-    /// <p>If the output contains a TagOption key with an empty list of values, there is a
-    /// TagOption conflict for that key. The end user cannot take action to fix the conflict, and
-    /// launch is not blocked. In subsequent calls to <a>ProvisionProduct</a>,
-    /// do not include conflicted TagOption keys as tags, or this causes the error
-    /// "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".
-    /// Tag the provisioned product with the value <code>sc-tagoption-conflict-portfolioId-productId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets information about the configuration required to provision the specified product using the specified provisioning artifact.</p>
+    /// <p>If the output contains a TagOption key with an empty list of values, there is a TagOption conflict for that key. The end user cannot take action to fix the conflict, and launch is not blocked. In subsequent calls to <code>ProvisionProduct</code>, do not include conflicted TagOption keys as tags, or this causes the error "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>". Tag the provisioned product with the value <code>sc-tagoption-conflict-portfolioId-productId</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProvisioningParameters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5835,10 +5183,10 @@ pub mod fluent_builders {
                 crate::input::DescribeProvisioningParametersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5848,37 +5196,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -5888,8 +5218,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier. You must provide the product name or ID, but not both.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(input.into());
             self
         }
         /// <p>The product identifier. You must provide the product name or ID, but not both.</p>
@@ -5898,8 +5228,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the product. You must provide the name or ID, but not both.</p>
-        pub fn product_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_name(inp);
+        pub fn product_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_name(input.into());
             self
         }
         /// <p>The name of the product. You must provide the name or ID, but not both.</p>
@@ -5908,8 +5238,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
-        pub fn provisioning_artifact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_id(inp);
+        pub fn provisioning_artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioning_artifact_id(input.into());
             self
         }
         /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
@@ -5921,8 +5251,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
-        pub fn provisioning_artifact_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_name(inp);
+        pub fn provisioning_artifact_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioning_artifact_name(input.into());
             self
         }
         /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
@@ -5933,23 +5263,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provisioning_artifact_name(input);
             self
         }
-        /// <p>The path identifier of the product. This value is optional if the product
-        /// has a default path, and required if the product has more than one path.
-        /// To list the paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or ID, but not both.</p>
-        pub fn path_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_id(inp);
+        /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
+        pub fn path_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_id(input.into());
             self
         }
-        /// <p>The path identifier of the product. This value is optional if the product
-        /// has a default path, and required if the product has more than one path.
-        /// To list the paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or ID, but not both.</p>
+        /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
         pub fn set_path_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_path_id(input);
             self
         }
         /// <p>The name of the path. You must provide the name or ID, but not both.</p>
-        pub fn path_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_name(inp);
+        pub fn path_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_name(input.into());
             self
         }
         /// <p>The name of the path. You must provide the name or ID, but not both.</p>
@@ -5961,15 +5287,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRecord`.
     ///
     /// <p>Gets information about the specified request operation.</p>
-    /// <p>Use this operation after calling a request operation (for example, <a>ProvisionProduct</a>,
-    /// <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>).
-    /// </p>
-    /// <note>
-    /// <p>If a provisioned product was transferred to a new owner using <a>UpdateProvisionedProductProperties</a>, the new owner
-    /// will be able to describe all past records for that product. The previous owner will no longer be able to describe the records, but will be able to
-    /// use <a>ListRecordHistory</a> to see the product's history from when he was the owner.</p>
+    /// <p>Use this operation after calling a request operation (for example, <code>ProvisionProduct</code>, <code>TerminateProvisionedProduct</code>, or <code>UpdateProvisionedProduct</code>). </p> <note>
+    /// <p>If a provisioned product was transferred to a new owner using <code>UpdateProvisionedProductProperties</code>, the new owner will be able to describe all past records for that product. The previous owner will no longer be able to describe the records, but will be able to use <code>ListRecordHistory</code> to see the product's history from when he was the owner.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRecord<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6014,10 +5335,10 @@ pub mod fluent_builders {
                 crate::input::DescribeRecordInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6027,37 +5348,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -6066,21 +5369,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_accept_language(input);
             self
         }
-        /// <p>The record identifier of the provisioned product. This identifier is returned by the
-        /// request operation.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        /// <p>The record identifier of the provisioned product. This identifier is returned by the request operation.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
-        /// <p>The record identifier of the provisioned product. This identifier is returned by the
-        /// request operation.</p>
+        /// <p>The record identifier of the provisioned product. This identifier is returned by the request operation.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -6089,8 +5390,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -6102,7 +5403,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeServiceAction`.
     ///
     /// <p>Describes a self-service action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeServiceAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6147,10 +5448,10 @@ pub mod fluent_builders {
                 crate::input::DescribeServiceActionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6159,8 +5460,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The self-service action identifier.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The self-service action identifier.</p>
@@ -6170,37 +5471,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -6213,7 +5496,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeServiceActionExecutionParameters`.
     ///
     /// <p>Finds the default parameters for a specific self-service action on a specific provisioned product and returns a map of the results to the user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeServiceActionExecutionParameters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6260,10 +5543,10 @@ pub mod fluent_builders {
                 crate::input::DescribeServiceActionExecutionParametersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6272,8 +5555,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the provisioned product.</p>
-        pub fn provisioned_product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioned_product_id(inp);
+        pub fn provisioned_product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioned_product_id(input.into());
             self
         }
         /// <p>The identifier of the provisioned product.</p>
@@ -6285,8 +5568,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The self-service action identifier.</p>
-        pub fn service_action_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_action_id(inp);
+        pub fn service_action_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_action_id(input.into());
             self
         }
         /// <p>The self-service action identifier.</p>
@@ -6299,37 +5582,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -6342,7 +5607,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTagOption`.
     ///
     /// <p>Gets information about the specified TagOption.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTagOption<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6387,10 +5652,10 @@ pub mod fluent_builders {
                 crate::input::DescribeTagOptionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6399,8 +5664,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The TagOption identifier.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The TagOption identifier.</p>
@@ -6411,14 +5676,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisableAWSOrganizationsAccess`.
     ///
-    /// <p>Disable portfolio sharing through AWS Organizations feature. This feature will not
-    /// delete your current shares but it will prevent you from creating new shares throughout your
-    /// organization. Current shares will not be in sync with your organization structure if it
-    /// changes after calling this API. This API can only be called by the management  account in
-    /// the organization.</p>
+    /// <p>Disable portfolio sharing through AWS Organizations feature. This feature will not delete your current shares but it will prevent you from creating new shares throughout your organization. Current shares will not be in sync with your organization structure if it changes after calling this API. This API can only be called by the management account in the organization.</p>
     /// <p>This API can't be invoked if there are active delegated administrators in the organization.</p>
     /// <p>Note that a delegated administrator is not authorized to invoke <code>DisableAWSOrganizationsAccess</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableAWSOrganizationsAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6463,10 +5724,10 @@ pub mod fluent_builders {
                 crate::input::DisableAwsOrganizationsAccessInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6478,7 +5739,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateBudgetFromResource`.
     ///
     /// <p>Disassociates the specified budget from the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateBudgetFromResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6523,10 +5784,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateBudgetFromResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6535,8 +5796,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the budget you want to disassociate.</p>
-        pub fn budget_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(inp);
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p>The name of the budget you want to disassociate.</p>
@@ -6545,8 +5806,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resource identifier you want to disassociate from. Either a portfolio-id or a product-id.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The resource identifier you want to disassociate from. Either a portfolio-id or a product-id.</p>
@@ -6557,9 +5818,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociatePrincipalFromPortfolio`.
     ///
-    /// <p>Disassociates a previously associated principal ARN from a specified
-    /// portfolio.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Disassociates a previously associated principal ARN from a specified portfolio.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociatePrincipalFromPortfolio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6606,10 +5866,10 @@ pub mod fluent_builders {
                 crate::input::DisassociatePrincipalFromPortfolioInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6619,37 +5879,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -6659,8 +5901,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(input.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -6669,8 +5911,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the principal (IAM user, role, or group).</p>
-        pub fn principal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal_arn(inp);
+        pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal_arn(input.into());
             self
         }
         /// <p>The ARN of the principal (IAM user, role, or group).</p>
@@ -6686,7 +5928,7 @@ pub mod fluent_builders {
     ///
     /// <p>Disassociates the specified product from the specified portfolio. </p>
     /// <p>A delegated admin is authorized to invoke this command.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateProductFromPortfolio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6731,10 +5973,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateProductFromPortfolioInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6744,37 +5986,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -6784,8 +6008,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(input.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -6794,8 +6018,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(input.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -6807,7 +6031,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateServiceActionFromProvisioningArtifact`.
     ///
     /// <p>Disassociates the specified self-service action association from the specified provisioning artifact.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateServiceActionFromProvisioningArtifact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6845,10 +6069,10 @@ pub mod fluent_builders {
                                     crate::error::DisassociateServiceActionFromProvisioningArtifactError,
                                     crate::input::DisassociateServiceActionFromProvisioningArtifactInputOperationRetryAlias>,
                                 {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6857,8 +6081,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(input.into());
             self
         }
         /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
@@ -6867,8 +6091,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
-        pub fn provisioning_artifact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_id(inp);
+        pub fn provisioning_artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioning_artifact_id(input.into());
             self
         }
         /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
@@ -6880,8 +6104,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-        pub fn service_action_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_action_id(inp);
+        pub fn service_action_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_action_id(input.into());
             self
         }
         /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
@@ -6894,37 +6118,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -6937,7 +6143,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateTagOptionFromResource`.
     ///
     /// <p>Disassociates the specified TagOption from the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateTagOptionFromResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6982,10 +6188,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateTagOptionFromResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6994,8 +6200,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource identifier.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The resource identifier.</p>
@@ -7004,8 +6210,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The TagOption identifier.</p>
-        pub fn tag_option_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_option_id(inp);
+        pub fn tag_option_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_option_id(input.into());
             self
         }
         /// <p>The TagOption identifier.</p>
@@ -7019,13 +6225,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `EnableAWSOrganizationsAccess`.
     ///
-    /// <p>Enable portfolio sharing feature through AWS Organizations. This API will allow Service
-    /// Catalog to receive updates on your organization in order to sync your shares with the
-    /// current structure. This API can only be called by the management  account in the
-    /// organization.</p>
+    /// <p>Enable portfolio sharing feature through AWS Organizations. This API will allow Service Catalog to receive updates on your organization in order to sync your shares with the current structure. This API can only be called by the management account in the organization.</p>
     /// <p>By calling this API Service Catalog will make a call to organizations:EnableAWSServiceAccess on your behalf so that your shares can be in sync with any changes in your AWS Organizations structure.</p>
     /// <p>Note that a delegated administrator is not authorized to invoke <code>EnableAWSOrganizationsAccess</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableAWSOrganizationsAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7070,10 +6273,10 @@ pub mod fluent_builders {
                 crate::input::EnableAwsOrganizationsAccessInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7085,7 +6288,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ExecuteProvisionedProductPlan`.
     ///
     /// <p>Provisions or modifies a product based on the resource changes for the specified plan.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExecuteProvisionedProductPlan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7130,10 +6333,10 @@ pub mod fluent_builders {
                 crate::input::ExecuteProvisionedProductPlanInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7143,37 +6346,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -7183,8 +6368,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The plan identifier.</p>
-        pub fn plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.plan_id(inp);
+        pub fn plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.plan_id(input.into());
             self
         }
         /// <p>The plan identifier.</p>
@@ -7192,14 +6377,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_plan_id(input);
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+        pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7211,7 +6394,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ExecuteProvisionedProductServiceAction`.
     ///
     /// <p>Executes a self-service action against a provisioned product.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExecuteProvisionedProductServiceAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7258,10 +6441,10 @@ pub mod fluent_builders {
                 crate::input::ExecuteProvisionedProductServiceActionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7270,8 +6453,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the provisioned product.</p>
-        pub fn provisioned_product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioned_product_id(inp);
+        pub fn provisioned_product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioned_product_id(input.into());
             self
         }
         /// <p>The identifier of the provisioned product.</p>
@@ -7283,8 +6466,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-        pub fn service_action_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_action_id(inp);
+        pub fn service_action_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_action_id(input.into());
             self
         }
         /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
@@ -7296,8 +6479,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An idempotency token that uniquely identifies the execute request.</p>
-        pub fn execute_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execute_token(inp);
+        pub fn execute_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execute_token(input.into());
             self
         }
         /// <p>An idempotency token that uniquely identifies the execute request.</p>
@@ -7310,37 +6493,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -7353,20 +6518,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will
-        /// override the default value generated by AWS Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for
-        /// any special parameters such as <code>TARGET</code>.</p>
+        /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will override the default value generated by AWS Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for any special parameters such as <code>TARGET</code>.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.parameters(k, v);
+            self.inner = self.inner.parameters(k.into(), v);
             self
         }
-        /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will
-        /// override the default value generated by AWS Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for
-        /// any special parameters such as <code>TARGET</code>.</p>
+        /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will override the default value generated by AWS Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for any special parameters such as <code>TARGET</code>.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -7379,9 +6540,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAWSOrganizationsAccessStatus`.
     ///
-    /// <p>Get the Access Status for AWS Organization portfolio share feature. This API can only be
-    /// called by the management account in the organization or by a delegated admin.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Get the Access Status for AWS Organization portfolio share feature. This API can only be called by the management account in the organization or by a delegated admin.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAWSOrganizationsAccessStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7426,10 +6586,10 @@ pub mod fluent_builders {
                 crate::input::GetAwsOrganizationsAccessStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7441,7 +6601,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetProvisionedProductOutputs`.
     ///
     /// <p>This API takes either a <code>ProvisonedProductId</code> or a <code>ProvisionedProductName</code>, along with a list of one or more output keys, and responds with the key/value pairs of those outputs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetProvisionedProductOutputs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7486,10 +6646,10 @@ pub mod fluent_builders {
                 crate::input::GetProvisionedProductOutputsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7497,39 +6657,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetProvisionedProductOutputsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetProvisionedProductOutputsPaginator<C, M, R> {
+            crate::paginator::GetProvisionedProductOutputsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -7539,8 +6689,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioned product that you want the outputs from.</p>
-        pub fn provisioned_product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioned_product_id(inp);
+        pub fn provisioned_product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioned_product_id(input.into());
             self
         }
         /// <p>The identifier of the provisioned product that you want the outputs from.</p>
@@ -7552,8 +6702,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the provisioned product that you want the outputs from.</p>
-        pub fn provisioned_product_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioned_product_name(inp);
+        pub fn provisioned_product_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioned_product_name(input.into());
             self
         }
         /// <p>The name of the provisioned product that you want the outputs from.</p>
@@ -7569,8 +6719,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_output_keys`](Self::set_output_keys).
         ///
         /// <p>The list of keys that the API should return with their values. If none are provided, the API will return all outputs of the provisioned product.</p>
-        pub fn output_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_keys(inp);
+        pub fn output_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_keys(input.into());
             self
         }
         /// <p>The list of keys that the API should return with their values. If none are provided, the API will return all outputs of the provisioned product.</p>
@@ -7582,8 +6732,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -7592,8 +6742,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -7604,21 +6754,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ImportAsProvisionedProduct`.
     ///
-    /// <p>Requests the import of a resource as a Service Catalog provisioned product that is
-    /// associated to a Service Catalog product and provisioning artifact. Once imported, all
-    /// supported Service Catalog governance actions are supported on the provisioned
-    /// product.</p>
-    /// <p>Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets and
-    /// non-root nested stacks are not supported.</p>
-    /// <p>The CloudFormation stack must have one of the following statuses to be imported:
-    /// <code>CREATE_COMPLETE</code>, <code>UPDATE_COMPLETE</code>, <code>UPDATE_ROLLBACK_COMPLETE</code>, <code>IMPORT_COMPLETE</code>,
-    /// <code>IMPORT_ROLLBACK_COMPLETE</code>.</p>
-    /// <p>Import of the resource requires that the CloudFormation stack template matches the
-    /// associated Service Catalog product provisioning artifact. </p>
-    ///
-    /// <p>The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code>
-    /// and <code>cloudformation:DescribeStacks</code> IAM policy permissions. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Requests the import of a resource as a Service Catalog provisioned product that is associated to a Service Catalog product and provisioning artifact. Once imported, all supported Service Catalog governance actions are supported on the provisioned product.</p>
+    /// <p>Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets and non-root nested stacks are not supported.</p>
+    /// <p>The CloudFormation stack must have one of the following statuses to be imported: <code>CREATE_COMPLETE</code>, <code>UPDATE_COMPLETE</code>, <code>UPDATE_ROLLBACK_COMPLETE</code>, <code>IMPORT_COMPLETE</code>, <code>IMPORT_ROLLBACK_COMPLETE</code>.</p>
+    /// <p>Import of the resource requires that the CloudFormation stack template matches the associated Service Catalog product provisioning artifact. </p>
+    /// <p>The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code> and <code>cloudformation:DescribeStacks</code> IAM policy permissions. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportAsProvisionedProduct<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7663,10 +6804,10 @@ pub mod fluent_builders {
                 crate::input::ImportAsProvisionedProductInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7676,37 +6817,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -7716,8 +6839,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(input.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -7726,8 +6849,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioning artifact.</p>
-        pub fn provisioning_artifact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_id(inp);
+        pub fn provisioning_artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioning_artifact_id(input.into());
             self
         }
         /// <p>The identifier of the provisioning artifact.</p>
@@ -7738,14 +6861,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provisioning_artifact_id(input);
             self
         }
-        /// <p>The user-friendly name of the provisioned product. The value must be unique for the AWS
-        /// account. The name cannot be updated after the product is provisioned. </p>
-        pub fn provisioned_product_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioned_product_name(inp);
+        /// <p>The user-friendly name of the provisioned product. The value must be unique for the AWS account. The name cannot be updated after the product is provisioned. </p>
+        pub fn provisioned_product_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioned_product_name(input.into());
             self
         }
-        /// <p>The user-friendly name of the provisioned product. The value must be unique for the AWS
-        /// account. The name cannot be updated after the product is provisioned. </p>
+        /// <p>The user-friendly name of the provisioned product. The value must be unique for the AWS account. The name cannot be updated after the product is provisioned. </p>
         pub fn set_provisioned_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7753,26 +6874,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provisioned_product_name(input);
             self
         }
-        /// <p>The unique identifier of the resource to be imported. It only currently supports
-        /// CloudFormation stack IDs.</p>
-        pub fn physical_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.physical_id(inp);
+        /// <p>The unique identifier of the resource to be imported. It only currently supports CloudFormation stack IDs.</p>
+        pub fn physical_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.physical_id(input.into());
             self
         }
-        /// <p>The unique identifier of the resource to be imported. It only currently supports
-        /// CloudFormation stack IDs.</p>
+        /// <p>The unique identifier of the resource to be imported. It only currently supports CloudFormation stack IDs.</p>
         pub fn set_physical_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_physical_id(input);
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+        pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
-        /// the same response is returned for each repeated request.</p>
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7784,7 +6901,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAcceptedPortfolioShares`.
     ///
     /// <p>Lists all portfolios for which sharing was accepted by this account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAcceptedPortfolioShares<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7829,10 +6946,10 @@ pub mod fluent_builders {
                 crate::input::ListAcceptedPortfolioSharesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7840,39 +6957,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAcceptedPortfolioSharesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListAcceptedPortfolioSharesPaginator<C, M, R> {
+            crate::paginator::ListAcceptedPortfolioSharesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -7882,8 +6989,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -7892,8 +6999,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -7903,39 +7010,19 @@ pub mod fluent_builders {
         }
         /// <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management
-        /// account of your organization</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS_SERVICECATALOG</code> - List default portfolios</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IMPORTED</code> - List imported portfolios</p>
-        /// </li>
+        /// <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management account of your organization</p> </li>
+        /// <li> <p> <code>AWS_SERVICECATALOG</code> - List default portfolios</p> </li>
+        /// <li> <p> <code>IMPORTED</code> - List imported portfolios</p> </li>
         /// </ul>
-        pub fn portfolio_share_type(mut self, inp: crate::model::PortfolioShareType) -> Self {
-            self.inner = self.inner.portfolio_share_type(inp);
+        pub fn portfolio_share_type(mut self, input: crate::model::PortfolioShareType) -> Self {
+            self.inner = self.inner.portfolio_share_type(input);
             self
         }
         /// <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management
-        /// account of your organization</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS_SERVICECATALOG</code> - List default portfolios</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IMPORTED</code> - List imported portfolios</p>
-        /// </li>
+        /// <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management account of your organization</p> </li>
+        /// <li> <p> <code>AWS_SERVICECATALOG</code> - List default portfolios</p> </li>
+        /// <li> <p> <code>IMPORTED</code> - List imported portfolios</p> </li>
         /// </ul>
         pub fn set_portfolio_share_type(
             mut self,
@@ -7948,7 +7035,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBudgetsForResource`.
     ///
     /// <p>Lists all the budgets associated to the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBudgetsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7993,10 +7080,10 @@ pub mod fluent_builders {
                 crate::input::ListBudgetsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8004,39 +7091,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListBudgetsForResourcePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListBudgetsForResourcePaginator<C, M, R> {
+            crate::paginator::ListBudgetsForResourcePaginator::new(self.handle, self.inner)
+        }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -8046,8 +7121,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resource identifier.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The resource identifier.</p>
@@ -8056,8 +7131,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -8066,8 +7141,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -8079,7 +7154,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListConstraintsForPortfolio`.
     ///
     /// <p>Lists the constraints for the specified portfolio and product.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConstraintsForPortfolio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8124,10 +7199,10 @@ pub mod fluent_builders {
                 crate::input::ListConstraintsForPortfolioInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8135,39 +7210,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListConstraintsForPortfolioPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListConstraintsForPortfolioPaginator<C, M, R> {
+            crate::paginator::ListConstraintsForPortfolioPaginator::new(self.handle, self.inner)
+        }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -8177,8 +7242,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(input.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -8187,8 +7252,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(input.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -8197,8 +7262,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -8207,8 +7272,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -8219,10 +7284,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListLaunchPaths`.
     ///
-    /// <p>Lists the paths to the specified product. A path is how the user
-    /// has access to a specified product, and is necessary when provisioning a product. A path
-    /// also determines the constraints put on the product.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the paths to the specified product. A path is how the user has access to a specified product, and is necessary when provisioning a product. A path also determines the constraints put on the product.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLaunchPaths<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8267,10 +7330,10 @@ pub mod fluent_builders {
                 crate::input::ListLaunchPathsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8278,39 +7341,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListLaunchPathsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListLaunchPathsPaginator<C, M, R> {
+            crate::paginator::ListLaunchPathsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -8320,8 +7371,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(input.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -8330,8 +7381,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -8340,8 +7391,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -8352,11 +7403,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListOrganizationPortfolioAccess`.
     ///
-    /// <p>Lists the organization nodes that have access to the specified portfolio. This API can
-    /// only be called by the management account in the organization or by a delegated
-    /// admin.</p>
+    /// <p>Lists the organization nodes that have access to the specified portfolio. This API can only be called by the management account in the organization or by a delegated admin.</p>
     /// <p>If a delegated admin is de-registered, they can no longer perform this operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOrganizationPortfolioAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8401,10 +7450,10 @@ pub mod fluent_builders {
                 crate::input::ListOrganizationPortfolioAccessInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8412,39 +7461,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListOrganizationPortfolioAccessPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListOrganizationPortfolioAccessPaginator<C, M, R> {
+            crate::paginator::ListOrganizationPortfolioAccessPaginator::new(self.handle, self.inner)
+        }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -8454,8 +7493,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier. For example, <code>port-2abcdext3y5fk</code>.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(input.into());
             self
         }
         /// <p>The portfolio identifier. For example, <code>port-2abcdext3y5fk</code>.</p>
@@ -8465,37 +7504,19 @@ pub mod fluent_builders {
         }
         /// <p>The organization node type that will be returned in the output.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ORGANIZATION</code> - Organization that has access to the portfolio. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p>
-        /// </li>
+        /// <li> <p> <code>ORGANIZATION</code> - Organization that has access to the portfolio. </p> </li>
+        /// <li> <p> <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p> </li>
+        /// <li> <p> <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p> </li>
         /// </ul>
-        pub fn organization_node_type(mut self, inp: crate::model::OrganizationNodeType) -> Self {
-            self.inner = self.inner.organization_node_type(inp);
+        pub fn organization_node_type(mut self, input: crate::model::OrganizationNodeType) -> Self {
+            self.inner = self.inner.organization_node_type(input);
             self
         }
         /// <p>The organization node type that will be returned in the output.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ORGANIZATION</code> - Organization that has access to the portfolio. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p>
-        /// </li>
+        /// <li> <p> <code>ORGANIZATION</code> - Organization that has access to the portfolio. </p> </li>
+        /// <li> <p> <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p> </li>
+        /// <li> <p> <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p> </li>
         /// </ul>
         pub fn set_organization_node_type(
             mut self,
@@ -8505,8 +7526,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -8515,8 +7536,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -8529,7 +7550,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the account IDs that have access to the specified portfolio.</p>
     /// <p>A delegated admin can list the accounts that have access to the shared portfolio. Note that if a delegated admin is de-registered, they can no longer perform this operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPortfolioAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8574,10 +7595,10 @@ pub mod fluent_builders {
                 crate::input::ListPortfolioAccessInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8585,39 +7606,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPortfolioAccessPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPortfolioAccessPaginator<C, M, R> {
+            crate::paginator::ListPortfolioAccessPaginator::new(self.handle, self.inner)
+        }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -8627,8 +7636,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(input.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -8637,8 +7646,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of an organization node the portfolio is shared with. All children of this node with an inherited portfolio share will be returned.</p>
-        pub fn organization_parent_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_parent_id(inp);
+        pub fn organization_parent_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_parent_id(input.into());
             self
         }
         /// <p>The ID of an organization node the portfolio is shared with. All children of this node with an inherited portfolio share will be returned.</p>
@@ -8650,8 +7659,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -8660,8 +7669,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -8673,7 +7682,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPortfolios`.
     ///
     /// <p>Lists all portfolios in the catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPortfolios<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8718,10 +7727,10 @@ pub mod fluent_builders {
                 crate::input::ListPortfoliosInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8729,39 +7738,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPortfoliosPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPortfoliosPaginator<C, M, R> {
+            crate::paginator::ListPortfoliosPaginator::new(self.handle, self.inner)
+        }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -8771,8 +7768,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -8781,8 +7778,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -8794,7 +7791,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPortfoliosForProduct`.
     ///
     /// <p>Lists all portfolios that the specified product is associated with.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPortfoliosForProduct<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8839,10 +7836,10 @@ pub mod fluent_builders {
                 crate::input::ListPortfoliosForProductInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8850,39 +7847,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPortfoliosForProductPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListPortfoliosForProductPaginator<C, M, R> {
+            crate::paginator::ListPortfoliosForProductPaginator::new(self.handle, self.inner)
+        }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -8892,8 +7879,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(input.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -8902,8 +7889,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -8912,8 +7899,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -8925,7 +7912,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPrincipalsForPortfolio`.
     ///
     /// <p>Lists all principal ARNs associated with the specified portfolio.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPrincipalsForPortfolio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8970,10 +7957,10 @@ pub mod fluent_builders {
                 crate::input::ListPrincipalsForPortfolioInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8981,39 +7968,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPrincipalsForPortfolioPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListPrincipalsForPortfolioPaginator<C, M, R> {
+            crate::paginator::ListPrincipalsForPortfolioPaginator::new(self.handle, self.inner)
+        }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -9023,8 +8000,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(input.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -9033,8 +8010,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -9043,8 +8020,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -9056,7 +8033,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProvisionedProductPlans`.
     ///
     /// <p>Lists the plans for the specified provisioned product or all plans to which the user has access.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProvisionedProductPlans<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9101,10 +8078,10 @@ pub mod fluent_builders {
                 crate::input::ListProvisionedProductPlansInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9114,37 +8091,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -9154,8 +8113,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn provision_product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provision_product_id(inp);
+        pub fn provision_product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provision_product_id(input.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -9167,8 +8126,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -9177,8 +8136,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -9187,8 +8146,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
-        pub fn access_level_filter(mut self, inp: crate::model::AccessLevelFilter) -> Self {
-            self.inner = self.inner.access_level_filter(inp);
+        pub fn access_level_filter(mut self, input: crate::model::AccessLevelFilter) -> Self {
+            self.inner = self.inner.access_level_filter(input);
             self
         }
         /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
@@ -9203,7 +8162,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProvisioningArtifacts`.
     ///
     /// <p>Lists all provisioning artifacts (also known as versions) for the specified product.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProvisioningArtifacts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9248,10 +8207,10 @@ pub mod fluent_builders {
                 crate::input::ListProvisioningArtifactsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9261,37 +8220,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -9301,8 +8242,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(input.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -9314,7 +8255,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProvisioningArtifactsForServiceAction`.
     ///
     /// <p>Lists all provisioning artifacts (also known as versions) for the specified self-service action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProvisioningArtifactsForServiceAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9361,10 +8302,10 @@ pub mod fluent_builders {
                 crate::input::ListProvisioningArtifactsForServiceActionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9372,9 +8313,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListProvisioningArtifactsForServiceActionPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListProvisioningArtifactsForServiceActionPaginator<C, M, R> {
+            crate::paginator::ListProvisioningArtifactsForServiceActionPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-        pub fn service_action_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_action_id(inp);
+        pub fn service_action_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_action_id(input.into());
             self
         }
         /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
@@ -9386,8 +8338,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -9396,8 +8348,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -9407,37 +8359,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -9450,7 +8384,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRecordHistory`.
     ///
     /// <p>Lists the specified requests or all performed requests.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRecordHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9495,10 +8429,10 @@ pub mod fluent_builders {
                 crate::input::ListRecordHistoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9508,37 +8442,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -9548,8 +8464,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
-        pub fn access_level_filter(mut self, inp: crate::model::AccessLevelFilter) -> Self {
-            self.inner = self.inner.access_level_filter(inp);
+        pub fn access_level_filter(mut self, input: crate::model::AccessLevelFilter) -> Self {
+            self.inner = self.inner.access_level_filter(input);
             self
         }
         /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
@@ -9561,8 +8477,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The search filter to scope the results.</p>
-        pub fn search_filter(mut self, inp: crate::model::ListRecordHistorySearchFilter) -> Self {
-            self.inner = self.inner.search_filter(inp);
+        pub fn search_filter(mut self, input: crate::model::ListRecordHistorySearchFilter) -> Self {
+            self.inner = self.inner.search_filter(input);
             self
         }
         /// <p>The search filter to scope the results.</p>
@@ -9574,8 +8490,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -9584,8 +8500,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -9597,7 +8513,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListResourcesForTagOption`.
     ///
     /// <p>Lists the resources associated with the specified TagOption.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResourcesForTagOption<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9642,10 +8558,10 @@ pub mod fluent_builders {
                 crate::input::ListResourcesForTagOptionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9653,9 +8569,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListResourcesForTagOptionPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListResourcesForTagOptionPaginator<C, M, R> {
+            crate::paginator::ListResourcesForTagOptionPaginator::new(self.handle, self.inner)
+        }
         /// <p>The TagOption identifier.</p>
-        pub fn tag_option_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_option_id(inp);
+        pub fn tag_option_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_option_id(input.into());
             self
         }
         /// <p>The TagOption identifier.</p>
@@ -9668,33 +8592,17 @@ pub mod fluent_builders {
         }
         /// <p>The resource type.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Portfolio</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Product</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Portfolio</code> </p> </li>
+        /// <li> <p> <code>Product</code> </p> </li>
         /// </ul>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
         /// <p>The resource type.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Portfolio</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Product</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Portfolio</code> </p> </li>
+        /// <li> <p> <code>Product</code> </p> </li>
         /// </ul>
         pub fn set_resource_type(
             mut self,
@@ -9704,8 +8612,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -9714,8 +8622,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -9727,7 +8635,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServiceActions`.
     ///
     /// <p>Lists all self-service actions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServiceActions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9772,10 +8680,10 @@ pub mod fluent_builders {
                 crate::input::ListServiceActionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9783,39 +8691,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListServiceActionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListServiceActionsPaginator<C, M, R> {
+            crate::paginator::ListServiceActionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -9825,8 +8721,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -9835,8 +8731,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -9848,7 +8744,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServiceActionsForProvisioningArtifact`.
     ///
     /// <p>Returns a paginated list of self-service actions associated with the specified Product ID and Provisioning Artifact ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServiceActionsForProvisioningArtifact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9895,10 +8791,10 @@ pub mod fluent_builders {
                 crate::input::ListServiceActionsForProvisioningArtifactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9906,9 +8802,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListServiceActionsForProvisioningArtifactPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListServiceActionsForProvisioningArtifactPaginator<C, M, R> {
+            crate::paginator::ListServiceActionsForProvisioningArtifactPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(input.into());
             self
         }
         /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
@@ -9917,8 +8824,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
-        pub fn provisioning_artifact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_id(inp);
+        pub fn provisioning_artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioning_artifact_id(input.into());
             self
         }
         /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
@@ -9930,8 +8837,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -9940,8 +8847,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -9951,37 +8858,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -9994,7 +8883,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListStackInstancesForProvisionedProduct`.
     ///
     /// <p>Returns summary information about stack instances that are associated with the specified <code>CFN_STACKSET</code> type provisioned product. You can filter for stack instances that are associated with a specific AWS account name or region. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStackInstancesForProvisionedProduct<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10041,10 +8930,10 @@ pub mod fluent_builders {
                 crate::input::ListStackInstancesForProvisionedProductInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10054,37 +8943,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -10094,8 +8965,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioned product.</p>
-        pub fn provisioned_product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioned_product_id(inp);
+        pub fn provisioned_product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioned_product_id(input.into());
             self
         }
         /// <p>The identifier of the provisioned product.</p>
@@ -10107,8 +8978,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -10117,8 +8988,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -10130,7 +9001,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagOptions`.
     ///
     /// <p>Lists the specified TagOptions or all TagOptions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10175,10 +9046,10 @@ pub mod fluent_builders {
                 crate::input::ListTagOptionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10186,9 +9057,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTagOptionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTagOptionsPaginator<C, M, R> {
+            crate::paginator::ListTagOptionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The search filters. If no search filters are specified, the output includes all TagOptions.</p>
-        pub fn filters(mut self, inp: crate::model::ListTagOptionsFilters) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::ListTagOptionsFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>The search filters. If no search filters are specified, the output includes all TagOptions.</p>
@@ -10200,8 +9077,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -10210,8 +9087,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -10223,15 +9100,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ProvisionProduct`.
     ///
     /// <p>Provisions the specified product.</p>
-    /// <p>A provisioned product is a resourced instance of a product.
-    /// For example, provisioning a product based on a CloudFormation template launches a
-    /// CloudFormation stack and its underlying resources.
-    /// You can check the status of this request using <a>DescribeRecord</a>.</p>
-    /// <p>If the request contains a tag key with an empty list of values, there is a
-    /// tag conflict for that key. Do not include conflicted keys as tags, or this causes
-    /// the error "Parameter validation failed: Missing required parameter in
-    /// Tags[<i>N</i>]:<i>Value</i>".</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>A provisioned product is a resourced instance of a product. For example, provisioning a product based on a CloudFormation template launches a CloudFormation stack and its underlying resources. You can check the status of this request using <code>DescribeRecord</code>.</p>
+    /// <p>If the request contains a tag key with an empty list of values, there is a tag conflict for that key. Do not include conflicted keys as tags, or this causes the error "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ProvisionProduct<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10276,10 +9147,10 @@ pub mod fluent_builders {
                 crate::input::ProvisionProductInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10289,37 +9160,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -10329,8 +9182,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier. You must provide the name or ID, but not both.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(input.into());
             self
         }
         /// <p>The product identifier. You must provide the name or ID, but not both.</p>
@@ -10339,8 +9192,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the product. You must provide the name or ID, but not both.</p>
-        pub fn product_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_name(inp);
+        pub fn product_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_name(input.into());
             self
         }
         /// <p>The name of the product. You must provide the name or ID, but not both.</p>
@@ -10349,8 +9202,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
-        pub fn provisioning_artifact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_id(inp);
+        pub fn provisioning_artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioning_artifact_id(input.into());
             self
         }
         /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
@@ -10362,8 +9215,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
-        pub fn provisioning_artifact_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_name(inp);
+        pub fn provisioning_artifact_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioning_artifact_name(input.into());
             self
         }
         /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
@@ -10374,23 +9227,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provisioning_artifact_name(input);
             self
         }
-        /// <p>The path identifier of the product. This value is optional if the product
-        /// has a default path, and required if the product has more than one path.
-        /// To list the paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or ID, but not both.</p>
-        pub fn path_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_id(inp);
+        /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
+        pub fn path_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_id(input.into());
             self
         }
-        /// <p>The path identifier of the product. This value is optional if the product
-        /// has a default path, and required if the product has more than one path.
-        /// To list the paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or ID, but not both.</p>
+        /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
         pub fn set_path_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_path_id(input);
             self
         }
         /// <p>The name of the path. You must provide the name or ID, but not both.</p>
-        pub fn path_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_name(inp);
+        pub fn path_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_name(input.into());
             self
         }
         /// <p>The name of the path. You must provide the name or ID, but not both.</p>
@@ -10398,14 +9247,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_path_name(input);
             self
         }
-        /// <p>A user-friendly name for the provisioned product. This value must be
-        /// unique for the AWS account and cannot be updated after the product is provisioned.</p>
-        pub fn provisioned_product_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioned_product_name(inp);
+        /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
+        pub fn provisioned_product_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioned_product_name(input.into());
             self
         }
-        /// <p>A user-friendly name for the provisioned product. This value must be
-        /// unique for the AWS account and cannot be updated after the product is provisioned.</p>
+        /// <p>A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be updated after the product is provisioned.</p>
         pub fn set_provisioned_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10417,17 +9264,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_provisioning_parameters`](Self::set_provisioning_parameters).
         ///
-        /// <p>Parameters specified by the administrator that are required for provisioning the
-        /// product.</p>
+        /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
         pub fn provisioning_parameters(
             mut self,
-            inp: impl Into<crate::model::ProvisioningParameter>,
+            input: crate::model::ProvisioningParameter,
         ) -> Self {
-            self.inner = self.inner.provisioning_parameters(inp);
+            self.inner = self.inner.provisioning_parameters(input);
             self
         }
-        /// <p>Parameters specified by the administrator that are required for provisioning the
-        /// product.</p>
+        /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
         pub fn set_provisioning_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProvisioningParameter>>,
@@ -10438,9 +9283,9 @@ pub mod fluent_builders {
         /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
         pub fn provisioning_preferences(
             mut self,
-            inp: crate::model::ProvisioningPreferences,
+            input: crate::model::ProvisioningPreferences,
         ) -> Self {
-            self.inner = self.inner.provisioning_preferences(inp);
+            self.inner = self.inner.provisioning_preferences(input);
             self
         }
         /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
@@ -10456,8 +9301,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tags.</p>
@@ -10472,14 +9317,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_notification_arns`](Self::set_notification_arns).
         ///
-        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
-        /// events.</p>
-        pub fn notification_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notification_arns(inp);
+        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
+        pub fn notification_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notification_arns(input.into());
             self
         }
-        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
-        /// events.</p>
+        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
         pub fn set_notification_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10488,8 +9331,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An idempotency token that uniquely identifies the provisioning request.</p>
-        pub fn provision_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provision_token(inp);
+        pub fn provision_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provision_token(input.into());
             self
         }
         /// <p>An idempotency token that uniquely identifies the provisioning request.</p>
@@ -10504,7 +9347,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RejectPortfolioShare`.
     ///
     /// <p>Rejects an offer to share the specified portfolio.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectPortfolioShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10549,10 +9392,10 @@ pub mod fluent_builders {
                 crate::input::RejectPortfolioShareInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10562,37 +9405,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -10602,8 +9427,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(input.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -10613,44 +9438,22 @@ pub mod fluent_builders {
         }
         /// <p>The type of shared portfolios to reject. The default is to reject imported portfolios.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the management account of your
-        /// organization.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IMPORTED</code> - Reject imported portfolios.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p>
-        /// </li>
+        /// <li> <p> <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the management account of your organization.</p> </li>
+        /// <li> <p> <code>IMPORTED</code> - Reject imported portfolios.</p> </li>
+        /// <li> <p> <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p> </li>
         /// </ul>
-        /// <p>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
-        /// </p>
-        pub fn portfolio_share_type(mut self, inp: crate::model::PortfolioShareType) -> Self {
-            self.inner = self.inner.portfolio_share_type(inp);
+        /// <p>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
+        pub fn portfolio_share_type(mut self, input: crate::model::PortfolioShareType) -> Self {
+            self.inner = self.inner.portfolio_share_type(input);
             self
         }
         /// <p>The type of shared portfolios to reject. The default is to reject imported portfolios.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the management account of your
-        /// organization.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IMPORTED</code> - Reject imported portfolios.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p>
-        /// </li>
+        /// <li> <p> <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the management account of your organization.</p> </li>
+        /// <li> <p> <code>IMPORTED</code> - Reject imported portfolios.</p> </li>
+        /// <li> <p> <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p> </li>
         /// </ul>
-        /// <p>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
-        /// </p>
+        /// <p>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
         pub fn set_portfolio_share_type(
             mut self,
             input: std::option::Option<crate::model::PortfolioShareType>,
@@ -10662,8 +9465,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ScanProvisionedProducts`.
     ///
     /// <p>Lists the provisioned products that are available (not terminated).</p>
-    /// <p>To use additional filtering, see <a>SearchProvisionedProducts</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>To use additional filtering, see <code>SearchProvisionedProducts</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ScanProvisionedProducts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10708,10 +9511,10 @@ pub mod fluent_builders {
                 crate::input::ScanProvisionedProductsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10721,37 +9524,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -10761,8 +9546,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
-        pub fn access_level_filter(mut self, inp: crate::model::AccessLevelFilter) -> Self {
-            self.inner = self.inner.access_level_filter(inp);
+        pub fn access_level_filter(mut self, input: crate::model::AccessLevelFilter) -> Self {
+            self.inner = self.inner.access_level_filter(input);
             self
         }
         /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
@@ -10774,8 +9559,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -10784,8 +9569,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -10797,7 +9582,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchProducts`.
     ///
     /// <p>Gets information about the products to which the caller has access.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchProducts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10842,10 +9627,10 @@ pub mod fluent_builders {
                 crate::input::SearchProductsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10853,39 +9638,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchProductsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::SearchProductsPaginator<C, M, R> {
+            crate::paginator::SearchProductsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -10898,18 +9671,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The search filters. If no search filters are specified, the output includes
-        /// all products to which the caller has access.</p>
+        /// <p>The search filters. If no search filters are specified, the output includes all products to which the caller has access.</p>
         pub fn filters(
             mut self,
-            k: impl Into<crate::model::ProductViewFilterBy>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            k: crate::model::ProductViewFilterBy,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             self.inner = self.inner.filters(k, v);
             self
         }
-        /// <p>The search filters. If no search filters are specified, the output includes
-        /// all products to which the caller has access.</p>
+        /// <p>The search filters. If no search filters are specified, the output includes all products to which the caller has access.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<
@@ -10923,8 +9694,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -10933,8 +9704,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort field. If no value is specified, the results are not sorted.</p>
-        pub fn sort_by(mut self, inp: crate::model::ProductViewSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::ProductViewSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The sort field. If no value is specified, the results are not sorted.</p>
@@ -10946,8 +9717,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order. If no value is specified, the results are not sorted.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order. If no value is specified, the results are not sorted.</p>
@@ -10959,8 +9730,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -10972,7 +9743,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchProductsAsAdmin`.
     ///
     /// <p>Gets information about the products for the specified portfolio or all products.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchProductsAsAdmin<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11017,10 +9788,10 @@ pub mod fluent_builders {
                 crate::input::SearchProductsAsAdminInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11028,39 +9799,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchProductsAsAdminPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::SearchProductsAsAdminPaginator<C, M, R> {
+            crate::paginator::SearchProductsAsAdminPaginator::new(self.handle, self.inner)
+        }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -11070,8 +9829,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(input.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -11083,18 +9842,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The search filters. If no search filters are specified, the output includes all products
-        /// to which the administrator has access.</p>
+        /// <p>The search filters. If no search filters are specified, the output includes all products to which the administrator has access.</p>
         pub fn filters(
             mut self,
-            k: impl Into<crate::model::ProductViewFilterBy>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            k: crate::model::ProductViewFilterBy,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             self.inner = self.inner.filters(k, v);
             self
         }
-        /// <p>The search filters. If no search filters are specified, the output includes all products
-        /// to which the administrator has access.</p>
+        /// <p>The search filters. If no search filters are specified, the output includes all products to which the administrator has access.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<
@@ -11108,8 +9865,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort field. If no value is specified, the results are not sorted.</p>
-        pub fn sort_by(mut self, inp: crate::model::ProductViewSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::ProductViewSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The sort field. If no value is specified, the results are not sorted.</p>
@@ -11121,8 +9878,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order. If no value is specified, the results are not sorted.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order. If no value is specified, the results are not sorted.</p>
@@ -11134,8 +9891,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -11144,8 +9901,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -11154,8 +9911,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Access level of the source of the product.</p>
-        pub fn product_source(mut self, inp: crate::model::ProductSource) -> Self {
-            self.inner = self.inner.product_source(inp);
+        pub fn product_source(mut self, input: crate::model::ProductSource) -> Self {
+            self.inner = self.inner.product_source(input);
             self
         }
         /// <p>Access level of the source of the product.</p>
@@ -11170,7 +9927,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchProvisionedProducts`.
     ///
     /// <p>Gets information about the provisioned products that meet the specified criteria.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchProvisionedProducts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11215,10 +9972,10 @@ pub mod fluent_builders {
                 crate::input::SearchProvisionedProductsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11226,39 +9983,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchProvisionedProductsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::SearchProvisionedProductsPaginator<C, M, R> {
+            crate::paginator::SearchProvisionedProductsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -11268,8 +10015,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
-        pub fn access_level_filter(mut self, inp: crate::model::AccessLevelFilter) -> Self {
-            self.inner = self.inner.access_level_filter(inp);
+        pub fn access_level_filter(mut self, input: crate::model::AccessLevelFilter) -> Self {
+            self.inner = self.inner.access_level_filter(input);
             self
         }
         /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
@@ -11285,31 +10032,19 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The search filters.</p>
-        /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>,
-        /// <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>,
-        /// <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>,
-        /// <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
-        /// <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>,
-        /// <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
-        /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code>
-        /// </p>
+        /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
+        /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
         pub fn filters(
             mut self,
-            k: impl Into<crate::model::ProvisionedProductViewFilterBy>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            k: crate::model::ProvisionedProductViewFilterBy,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             self.inner = self.inner.filters(k, v);
             self
         }
         /// <p>The search filters.</p>
-        /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>,
-        /// <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>,
-        /// <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>,
-        /// <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
-        /// <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>,
-        /// <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
-        /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code>
-        /// </p>
+        /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
+        /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<
@@ -11322,21 +10057,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>,
-        /// and <code>lastRecordId</code>.</p>
-        pub fn sort_by(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>, and <code>lastRecordId</code>.</p>
+        pub fn sort_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sort_by(input.into());
             self
         }
-        /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>,
-        /// and <code>lastRecordId</code>.</p>
+        /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>, and <code>lastRecordId</code>.</p>
         pub fn set_sort_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_sort_by(input);
             self
         }
         /// <p>The sort order. If no value is specified, the results are not sorted.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order. If no value is specified, the results are not sorted.</p>
@@ -11348,8 +10081,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of items to return with this call.</p>
@@ -11358,8 +10091,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
             self
         }
         /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
@@ -11372,8 +10105,8 @@ pub mod fluent_builders {
     ///
     /// <p>Terminates the specified provisioned product.</p>
     /// <p>This operation does not delete any records associated with the provisioned product.</p>
-    /// <p>You can check the status of this request using <a>DescribeRecord</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You can check the status of this request using <code>DescribeRecord</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TerminateProvisionedProduct<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11418,10 +10151,10 @@ pub mod fluent_builders {
                 crate::input::TerminateProvisionedProductInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11429,14 +10162,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the provisioned product. You cannot specify both
-        /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
-        pub fn provisioned_product_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioned_product_name(inp);
+        /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+        pub fn provisioned_product_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioned_product_name(input.into());
             self
         }
-        /// <p>The name of the provisioned product. You cannot specify both
-        /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+        /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
         pub fn set_provisioned_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11444,14 +10175,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provisioned_product_name(input);
             self
         }
-        /// <p>The identifier of the provisioned product. You cannot specify both
-        /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
-        pub fn provisioned_product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioned_product_id(inp);
+        /// <p>The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+        pub fn provisioned_product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioned_product_id(input.into());
             self
         }
-        /// <p>The identifier of the provisioned product. You cannot specify both
-        /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+        /// <p>The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
         pub fn set_provisioned_product_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11459,18 +10188,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provisioned_product_id(input);
             self
         }
-        /// <p>An idempotency token that uniquely identifies the termination request. This token is
-        /// only valid during the termination process. After the provisioned product is terminated,
-        /// subsequent requests to terminate the same provisioned product always return
-        /// <b>ResourceNotFound</b>.</p>
-        pub fn terminate_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.terminate_token(inp);
+        /// <p>An idempotency token that uniquely identifies the termination request. This token is only valid during the termination process. After the provisioned product is terminated, subsequent requests to terminate the same provisioned product always return <b>ResourceNotFound</b>.</p>
+        pub fn terminate_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.terminate_token(input.into());
             self
         }
-        /// <p>An idempotency token that uniquely identifies the termination request. This token is
-        /// only valid during the termination process. After the provisioned product is terminated,
-        /// subsequent requests to terminate the same provisioned product always return
-        /// <b>ResourceNotFound</b>.</p>
+        /// <p>An idempotency token that uniquely identifies the termination request. This token is only valid during the termination process. After the provisioned product is terminated, subsequent requests to terminate the same provisioned product always return <b>ResourceNotFound</b>.</p>
         pub fn set_terminate_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11478,51 +10201,31 @@ pub mod fluent_builders {
             self.inner = self.inner.set_terminate_token(input);
             self
         }
-        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even
-        /// if it cannot delete the underlying resources.</p>
-        pub fn ignore_errors(mut self, inp: bool) -> Self {
-            self.inner = self.inner.ignore_errors(inp);
+        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
+        pub fn ignore_errors(mut self, input: bool) -> Self {
+            self.inner = self.inner.ignore_errors(input);
             self
         }
-        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even
-        /// if it cannot delete the underlying resources.</p>
+        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
         pub fn set_ignore_errors(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_ignore_errors(input);
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -11531,18 +10234,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_accept_language(input);
             self
         }
-        /// <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes
-        /// the Service Catalog provisioned product. However, it does not remove the CloudFormation
-        /// stack, stack set, or the underlying resources of the deleted provisioned product. The
-        /// default value is false.</p>
-        pub fn retain_physical_resources(mut self, inp: bool) -> Self {
-            self.inner = self.inner.retain_physical_resources(inp);
+        /// <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the Service Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying resources of the deleted provisioned product. The default value is false.</p>
+        pub fn retain_physical_resources(mut self, input: bool) -> Self {
+            self.inner = self.inner.retain_physical_resources(input);
             self
         }
-        /// <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes
-        /// the Service Catalog provisioned product. However, it does not remove the CloudFormation
-        /// stack, stack set, or the underlying resources of the deleted provisioned product. The
-        /// default value is false.</p>
+        /// <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the Service Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying resources of the deleted provisioned product. The default value is false.</p>
         pub fn set_retain_physical_resources(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_retain_physical_resources(input);
             self
@@ -11551,7 +10248,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateConstraint`.
     ///
     /// <p>Updates the specified constraint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConstraint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11596,10 +10293,10 @@ pub mod fluent_builders {
                 crate::input::UpdateConstraintInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11609,37 +10306,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -11649,8 +10328,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the constraint.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of the constraint.</p>
@@ -11659,8 +10338,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated description of the constraint.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The updated description of the constraint.</p>
@@ -11670,110 +10349,104 @@ pub mod fluent_builders {
         }
         /// <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
         /// <dl>
-        /// <dt>LAUNCH</dt>
+        /// <dt>
+        /// LAUNCH
+        /// </dt>
         /// <dd>
         /// <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>
         /// <p>Specify the <code>RoleArn</code> property as follows:</p>
-        /// <p>
-        /// <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
-        /// </p>
+        /// <p> <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p>
         /// <p>Specify the <code>LocalRoleName</code> property as follows:</p>
-        /// <p>
-        /// <code>{"LocalRoleName": "SCBasicLaunchRole"}</code>
-        /// </p>
-        /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be
-        /// account-agnostic so the administrator can create fewer resources per shared account.</p>
-        /// <note>
+        /// <p> <code>{"LocalRoleName": "SCBasicLaunchRole"}</code> </p>
+        /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>
         /// <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>
         /// </note>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.</p>
         /// </dd>
-        /// <dt>NOTIFICATION</dt>
+        /// <dt>
+        /// NOTIFICATION
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>NotificationArns</code> property as follows:</p>
-        /// <p>
-        /// <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
-        /// </p>
+        /// <p> <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code> </p>
         /// </dd>
-        /// <dt>RESOURCE_UPDATE</dt>
+        /// <dt>
+        /// RESOURCE_UPDATE
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>
-        /// <p>
-        /// <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
-        /// </p>
+        /// <p> <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code> </p>
         /// <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>
         /// </dd>
-        /// <dt>STACKSET</dt>
+        /// <dt>
+        /// STACKSET
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>Parameters</code> property as follows:</p>
-        /// <p>
-        /// <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code>
-        /// </p>
+        /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
         /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
         /// </dd>
-        /// <dt>TEMPLATE</dt>
+        /// <dt>
+        /// TEMPLATE
+        /// </dt>
         /// <dd>
-        /// <p>Specify the <code>Rules</code> property. For more information, see
-        /// <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
+        /// <p>Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
         /// </dd>
         /// </dl>
-        pub fn parameters(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameters(inp);
+        pub fn parameters(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameters(input.into());
             self
         }
         /// <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
         /// <dl>
-        /// <dt>LAUNCH</dt>
+        /// <dt>
+        /// LAUNCH
+        /// </dt>
         /// <dd>
         /// <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>
         /// <p>Specify the <code>RoleArn</code> property as follows:</p>
-        /// <p>
-        /// <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
-        /// </p>
+        /// <p> <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p>
         /// <p>Specify the <code>LocalRoleName</code> property as follows:</p>
-        /// <p>
-        /// <code>{"LocalRoleName": "SCBasicLaunchRole"}</code>
-        /// </p>
-        /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be
-        /// account-agnostic so the administrator can create fewer resources per shared account.</p>
-        /// <note>
+        /// <p> <code>{"LocalRoleName": "SCBasicLaunchRole"}</code> </p>
+        /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>
         /// <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>
         /// </note>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.</p>
         /// </dd>
-        /// <dt>NOTIFICATION</dt>
+        /// <dt>
+        /// NOTIFICATION
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>NotificationArns</code> property as follows:</p>
-        /// <p>
-        /// <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
-        /// </p>
+        /// <p> <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code> </p>
         /// </dd>
-        /// <dt>RESOURCE_UPDATE</dt>
+        /// <dt>
+        /// RESOURCE_UPDATE
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>
-        /// <p>
-        /// <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
-        /// </p>
+        /// <p> <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code> </p>
         /// <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>
         /// </dd>
-        /// <dt>STACKSET</dt>
+        /// <dt>
+        /// STACKSET
+        /// </dt>
         /// <dd>
         /// <p>Specify the <code>Parameters</code> property as follows:</p>
-        /// <p>
-        /// <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code>
-        /// </p>
+        /// <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>
         /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
         /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
         /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
         /// </dd>
-        /// <dt>TEMPLATE</dt>
+        /// <dt>
+        /// TEMPLATE
+        /// </dt>
         /// <dd>
-        /// <p>Specify the <code>Rules</code> property. For more information, see
-        /// <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
+        /// <p>Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
         /// </dd>
         /// </dl>
         pub fn set_parameters(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -11785,7 +10458,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the specified portfolio.</p>
     /// <p>You cannot update a product that was shared with you.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePortfolio<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11830,10 +10503,10 @@ pub mod fluent_builders {
                 crate::input::UpdatePortfolioInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11843,37 +10516,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -11883,8 +10538,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The portfolio identifier.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The portfolio identifier.</p>
@@ -11893,8 +10548,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name to use for display purposes.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The name to use for display purposes.</p>
@@ -11903,8 +10558,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated description of the portfolio.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The updated description of the portfolio.</p>
@@ -11913,8 +10568,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated name of the portfolio provider.</p>
-        pub fn provider_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider_name(inp);
+        pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider_name(input.into());
             self
         }
         /// <p>The updated name of the portfolio provider.</p>
@@ -11930,8 +10585,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_add_tags`](Self::set_add_tags).
         ///
         /// <p>The tags to add.</p>
-        pub fn add_tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.add_tags(inp);
+        pub fn add_tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.add_tags(input);
             self
         }
         /// <p>The tags to add.</p>
@@ -11947,8 +10602,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_remove_tags`](Self::set_remove_tags).
         ///
         /// <p>The tags to remove.</p>
-        pub fn remove_tags(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.remove_tags(inp);
+        pub fn remove_tags(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.remove_tags(input.into());
             self
         }
         /// <p>The tags to remove.</p>
@@ -11963,15 +10618,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePortfolioShare`.
     ///
     /// <p>Updates the specified portfolio share. You can use this API to enable or disable TagOptions sharing for an existing portfolio share. </p>
-    ///
     /// <p>The portfolio share cannot be updated if the <code> CreatePortfolioShare</code> operation is <code>IN_PROGRESS</code>, as the share is not available to recipient entities. In this case, you must wait for the portfolio share to be COMPLETED.</p>
-    ///
     /// <p>You must provide the <code>accountId</code> or organization node in the input, but not both.</p>
-    ///
     /// <p>If the portfolio is shared to both an external account and an organization node, and both shares need to be updated, you must invoke <code>UpdatePortfolioShare</code> separately for each share type. </p>
-    ///
     /// <p>This API cannot be used for removing the portfolio share. You must use <code>DeletePortfolioShare</code> API for that action. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePortfolioShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12016,10 +10667,10 @@ pub mod fluent_builders {
                 crate::input::UpdatePortfolioShareInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12029,37 +10680,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -12069,8 +10702,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the portfolio for which the share will be updated.</p>
-        pub fn portfolio_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portfolio_id(inp);
+        pub fn portfolio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portfolio_id(input.into());
             self
         }
         /// <p>The unique identifier of the portfolio for which the share will be updated.</p>
@@ -12079,8 +10712,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS Account Id of the recipient account. This field is required when updating an external account to account type share.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The AWS Account Id of the recipient account. This field is required when updating an external account to account type share.</p>
@@ -12089,8 +10722,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the organization node.</p>
-        pub fn organization_node(mut self, inp: crate::model::OrganizationNode) -> Self {
-            self.inner = self.inner.organization_node(inp);
+        pub fn organization_node(mut self, input: crate::model::OrganizationNode) -> Self {
+            self.inner = self.inner.organization_node(input);
             self
         }
         /// <p>Information about the organization node.</p>
@@ -12102,8 +10735,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A flag to enable or disable TagOptions sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>
-        pub fn share_tag_options(mut self, inp: bool) -> Self {
-            self.inner = self.inner.share_tag_options(inp);
+        pub fn share_tag_options(mut self, input: bool) -> Self {
+            self.inner = self.inner.share_tag_options(input);
             self
         }
         /// <p>A flag to enable or disable TagOptions sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>
@@ -12115,7 +10748,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateProduct`.
     ///
     /// <p>Updates the specified product.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProduct<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12160,10 +10793,10 @@ pub mod fluent_builders {
                 crate::input::UpdateProductInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12173,37 +10806,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -12213,8 +10828,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -12223,8 +10838,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated product name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The updated product name.</p>
@@ -12233,8 +10848,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated owner of the product.</p>
-        pub fn owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.owner(inp);
+        pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owner(input.into());
             self
         }
         /// <p>The updated owner of the product.</p>
@@ -12243,8 +10858,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated description of the product.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The updated description of the product.</p>
@@ -12253,8 +10868,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated distributor of the product.</p>
-        pub fn distributor(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.distributor(inp);
+        pub fn distributor(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.distributor(input.into());
             self
         }
         /// <p>The updated distributor of the product.</p>
@@ -12263,8 +10878,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated support description for the product.</p>
-        pub fn support_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.support_description(inp);
+        pub fn support_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.support_description(input.into());
             self
         }
         /// <p>The updated support description for the product.</p>
@@ -12276,8 +10891,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated support email for the product.</p>
-        pub fn support_email(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.support_email(inp);
+        pub fn support_email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.support_email(input.into());
             self
         }
         /// <p>The updated support email for the product.</p>
@@ -12289,8 +10904,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated support URL for the product.</p>
-        pub fn support_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.support_url(inp);
+        pub fn support_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.support_url(input.into());
             self
         }
         /// <p>The updated support URL for the product.</p>
@@ -12303,8 +10918,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_add_tags`](Self::set_add_tags).
         ///
         /// <p>The tags to add to the product.</p>
-        pub fn add_tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.add_tags(inp);
+        pub fn add_tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.add_tags(input);
             self
         }
         /// <p>The tags to add to the product.</p>
@@ -12320,8 +10935,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_remove_tags`](Self::set_remove_tags).
         ///
         /// <p>The tags to remove from the product.</p>
-        pub fn remove_tags(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.remove_tags(inp);
+        pub fn remove_tags(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.remove_tags(input.into());
             self
         }
         /// <p>The tags to remove from the product.</p>
@@ -12336,11 +10951,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateProvisionedProduct`.
     ///
     /// <p>Requests updates to the configuration of the specified provisioned product.</p>
-    /// <p>If there are tags associated with the object, they cannot be updated or added.
-    /// Depending on the specific updates requested, this operation can update with no
-    /// interruption, with some interruption, or replace the provisioned product entirely.</p>
-    /// <p>You can check the status of this request using <a>DescribeRecord</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If there are tags associated with the object, they cannot be updated or added. Depending on the specific updates requested, this operation can update with no interruption, with some interruption, or replace the provisioned product entirely.</p>
+    /// <p>You can check the status of this request using <code>DescribeRecord</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProvisionedProduct<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12385,10 +10998,10 @@ pub mod fluent_builders {
                 crate::input::UpdateProvisionedProductInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12398,37 +11011,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -12437,14 +11032,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_accept_language(input);
             self
         }
-        /// <p>The name of the provisioned product. You cannot specify both
-        /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
-        pub fn provisioned_product_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioned_product_name(inp);
+        /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+        pub fn provisioned_product_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioned_product_name(input.into());
             self
         }
-        /// <p>The name of the provisioned product. You cannot specify both
-        /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+        /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
         pub fn set_provisioned_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12453,8 +11046,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioned product. You must provide the name or ID, but not both.</p>
-        pub fn provisioned_product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioned_product_id(inp);
+        pub fn provisioned_product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioned_product_id(input.into());
             self
         }
         /// <p>The identifier of the provisioned product. You must provide the name or ID, but not both.</p>
@@ -12466,8 +11059,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the product. You must provide the name or ID, but not both.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(input.into());
             self
         }
         /// <p>The identifier of the product. You must provide the name or ID, but not both.</p>
@@ -12476,8 +11069,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the product. You must provide the name or ID, but not both.</p>
-        pub fn product_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_name(inp);
+        pub fn product_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_name(input.into());
             self
         }
         /// <p>The name of the product. You must provide the name or ID, but not both.</p>
@@ -12486,8 +11079,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioning artifact.</p>
-        pub fn provisioning_artifact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_id(inp);
+        pub fn provisioning_artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioning_artifact_id(input.into());
             self
         }
         /// <p>The identifier of the provisioning artifact.</p>
@@ -12499,8 +11092,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
-        pub fn provisioning_artifact_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_name(inp);
+        pub fn provisioning_artifact_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioning_artifact_name(input.into());
             self
         }
         /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
@@ -12511,21 +11104,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provisioning_artifact_name(input);
             self
         }
-        /// <p>The path identifier. This value is optional if the product
-        /// has a default path, and required if the product has more than one path. You must provide the name or ID, but not both.</p>
-        pub fn path_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_id(inp);
+        /// <p>The path identifier. This value is optional if the product has a default path, and required if the product has more than one path. You must provide the name or ID, but not both.</p>
+        pub fn path_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_id(input.into());
             self
         }
-        /// <p>The path identifier. This value is optional if the product
-        /// has a default path, and required if the product has more than one path. You must provide the name or ID, but not both.</p>
+        /// <p>The path identifier. This value is optional if the product has a default path, and required if the product has more than one path. You must provide the name or ID, but not both.</p>
         pub fn set_path_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_path_id(input);
             self
         }
         /// <p>The name of the path. You must provide the name or ID, but not both.</p>
-        pub fn path_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_name(inp);
+        pub fn path_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_name(input.into());
             self
         }
         /// <p>The name of the path. You must provide the name or ID, but not both.</p>
@@ -12540,9 +11131,9 @@ pub mod fluent_builders {
         /// <p>The new parameters.</p>
         pub fn provisioning_parameters(
             mut self,
-            inp: impl Into<crate::model::UpdateProvisioningParameter>,
+            input: crate::model::UpdateProvisioningParameter,
         ) -> Self {
-            self.inner = self.inner.provisioning_parameters(inp);
+            self.inner = self.inner.provisioning_parameters(input);
             self
         }
         /// <p>The new parameters.</p>
@@ -12556,9 +11147,9 @@ pub mod fluent_builders {
         /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
         pub fn provisioning_preferences(
             mut self,
-            inp: crate::model::UpdateProvisioningPreferences,
+            input: crate::model::UpdateProvisioningPreferences,
         ) -> Self {
-            self.inner = self.inner.provisioning_preferences(inp);
+            self.inner = self.inner.provisioning_preferences(input);
             self
         }
         /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
@@ -12574,8 +11165,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
@@ -12587,8 +11178,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token that uniquely identifies the provisioning update request.</p>
-        pub fn update_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.update_token(inp);
+        pub fn update_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.update_token(input.into());
             self
         }
         /// <p>The idempotency token that uniquely identifies the provisioning update request.</p>
@@ -12600,7 +11191,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateProvisionedProductProperties`.
     ///
     /// <p>Requests updates to the properties of the specified provisioned product.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProvisionedProductProperties<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12647,10 +11238,10 @@ pub mod fluent_builders {
                 crate::input::UpdateProvisionedProductPropertiesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12660,37 +11251,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -12700,8 +11273,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioned product.</p>
-        pub fn provisioned_product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioned_product_id(inp);
+        pub fn provisioned_product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioned_product_id(input.into());
             self
         }
         /// <p>The identifier of the provisioned product.</p>
@@ -12717,51 +11290,23 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_provisioned_product_properties`](Self::set_provisioned_product_properties).
         ///
         /// <p>A map that contains the provisioned product properties to be updated.</p>
-        /// <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an
-        /// administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch
-        /// role that is associated with a provisioned product. This role is used when an end user
-        /// calls a provisioning operation such as <code>UpdateProvisionedProduct</code>,
-        /// <code>TerminateProvisionedProduct</code>, or
-        /// <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>
-        ///
-        /// <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user
-        /// that has permission to see, update, terminate, and execute service actions in the
-        /// provisioned product.</p>
-        /// <p>The administrator can change the owner of a provisioned product to another IAM user within the same account. Both end user owners and
-        /// administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can
-        /// describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>,
-        /// but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
-        /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or
-        /// Service Catalog console such as update, terminate, and execute service actions.
-        /// If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through
-        /// API or the Service Catalog console on that provisioned product.</p>
+        /// <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch role that is associated with a provisioned product. This role is used when an end user calls a provisioning operation such as <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>, or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>
+        /// <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to see, update, terminate, and execute service actions in the provisioned product.</p>
+        /// <p>The administrator can change the owner of a provisioned product to another IAM user within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
+        /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or Service Catalog console such as update, terminate, and execute service actions. If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through API or the Service Catalog console on that provisioned product.</p>
         pub fn provisioned_product_properties(
             mut self,
-            k: impl Into<crate::model::PropertyKey>,
+            k: crate::model::PropertyKey,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.provisioned_product_properties(k, v);
+            self.inner = self.inner.provisioned_product_properties(k, v.into());
             self
         }
         /// <p>A map that contains the provisioned product properties to be updated.</p>
-        /// <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an
-        /// administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch
-        /// role that is associated with a provisioned product. This role is used when an end user
-        /// calls a provisioning operation such as <code>UpdateProvisionedProduct</code>,
-        /// <code>TerminateProvisionedProduct</code>, or
-        /// <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>
-        ///
-        /// <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user
-        /// that has permission to see, update, terminate, and execute service actions in the
-        /// provisioned product.</p>
-        /// <p>The administrator can change the owner of a provisioned product to another IAM user within the same account. Both end user owners and
-        /// administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can
-        /// describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>,
-        /// but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
-        /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or
-        /// Service Catalog console such as update, terminate, and execute service actions.
-        /// If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through
-        /// API or the Service Catalog console on that provisioned product.</p>
+        /// <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch role that is associated with a provisioned product. This role is used when an end user calls a provisioning operation such as <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>, or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>
+        /// <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user that has permission to see, update, terminate, and execute service actions in the provisioned product.</p>
+        /// <p>The administrator can change the owner of a provisioned product to another IAM user within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
+        /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or Service Catalog console such as update, terminate, and execute service actions. If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through API or the Service Catalog console on that provisioned product.</p>
         pub fn set_provisioned_product_properties(
             mut self,
             input: std::option::Option<
@@ -12772,8 +11317,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token that uniquely identifies the provisioning product update request.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(input.into());
             self
         }
         /// <p>The idempotency token that uniquely identifies the provisioning product update request.</p>
@@ -12789,7 +11334,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates the specified provisioning artifact (also known as a version) for the specified product.</p>
     /// <p>You cannot update a provisioning artifact for a product that was shared with you.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProvisioningArtifact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12834,10 +11379,10 @@ pub mod fluent_builders {
                 crate::input::UpdateProvisioningArtifactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12847,37 +11392,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -12887,8 +11414,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product identifier.</p>
-        pub fn product_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(inp);
+        pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(input.into());
             self
         }
         /// <p>The product identifier.</p>
@@ -12897,8 +11424,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the provisioning artifact.</p>
-        pub fn provisioning_artifact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provisioning_artifact_id(inp);
+        pub fn provisioning_artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provisioning_artifact_id(input.into());
             self
         }
         /// <p>The identifier of the provisioning artifact.</p>
@@ -12910,8 +11437,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated name of the provisioning artifact.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The updated name of the provisioning artifact.</p>
@@ -12920,8 +11447,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated description of the provisioning artifact.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The updated description of the provisioning artifact.</p>
@@ -12931,8 +11458,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether the product version is active.</p>
         /// <p>Inactive provisioning artifacts are invisible to end users. End users cannot launch or update a provisioned product from an inactive provisioning artifact.</p>
-        pub fn active(mut self, inp: bool) -> Self {
-            self.inner = self.inner.active(inp);
+        pub fn active(mut self, input: bool) -> Self {
+            self.inner = self.inner.active(input);
             self
         }
         /// <p>Indicates whether the product version is active.</p>
@@ -12943,18 +11470,14 @@ pub mod fluent_builders {
         }
         /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
         /// <p>The <code>DEFAULT</code> value indicates that the product version is active.</p>
-        /// <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform
-        /// users that the product version is deprecated. Users are able to make updates to a provisioned product
-        /// of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
-        pub fn guidance(mut self, inp: crate::model::ProvisioningArtifactGuidance) -> Self {
-            self.inner = self.inner.guidance(inp);
+        /// <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product version is deprecated. Users are able to make updates to a provisioned product of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
+        pub fn guidance(mut self, input: crate::model::ProvisioningArtifactGuidance) -> Self {
+            self.inner = self.inner.guidance(input);
             self
         }
         /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
         /// <p>The <code>DEFAULT</code> value indicates that the product version is active.</p>
-        /// <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform
-        /// users that the product version is deprecated. Users are able to make updates to a provisioned product
-        /// of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
+        /// <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product version is deprecated. Users are able to make updates to a provisioned product of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
         pub fn set_guidance(
             mut self,
             input: std::option::Option<crate::model::ProvisioningArtifactGuidance>,
@@ -12966,7 +11489,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateServiceAction`.
     ///
     /// <p>Updates a self-service action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateServiceAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13011,10 +11534,10 @@ pub mod fluent_builders {
                 crate::input::UpdateServiceActionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13023,8 +11546,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The self-service action identifier.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The self-service action identifier.</p>
@@ -13033,8 +11556,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The self-service action name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The self-service action name.</p>
@@ -13049,10 +11572,10 @@ pub mod fluent_builders {
         /// <p>A map that defines the self-service action.</p>
         pub fn definition(
             mut self,
-            k: impl Into<crate::model::ServiceActionDefinitionKey>,
+            k: crate::model::ServiceActionDefinitionKey,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.definition(k, v);
+            self.inner = self.inner.definition(k, v.into());
             self
         }
         /// <p>A map that defines the self-service action.</p>
@@ -13069,8 +11592,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The self-service action description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The self-service action description.</p>
@@ -13080,37 +11603,19 @@ pub mod fluent_builders {
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
-        pub fn accept_language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_language(inp);
+        pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_language(input.into());
             self
         }
         /// <p>The language code.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>en</code> - English (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jp</code> - Japanese</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh</code> - Chinese</p>
-        /// </li>
+        /// <li> <p> <code>en</code> - English (default)</p> </li>
+        /// <li> <p> <code>jp</code> - Japanese</p> </li>
+        /// <li> <p> <code>zh</code> - Chinese</p> </li>
         /// </ul>
         pub fn set_accept_language(
             mut self,
@@ -13123,7 +11628,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateTagOption`.
     ///
     /// <p>Updates the specified TagOption.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTagOption<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13168,10 +11673,10 @@ pub mod fluent_builders {
                 crate::input::UpdateTagOptionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13180,8 +11685,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The TagOption identifier.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The TagOption identifier.</p>
@@ -13190,8 +11695,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated value.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.value(inp);
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.value(input.into());
             self
         }
         /// <p>The updated value.</p>
@@ -13200,8 +11705,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated active state.</p>
-        pub fn active(mut self, inp: bool) -> Self {
-            self.inner = self.inner.active(inp);
+        pub fn active(mut self, input: bool) -> Self {
+            self.inner = self.inner.active(input);
             self
         }
         /// <p>The updated active state.</p>
@@ -13211,6 +11716,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

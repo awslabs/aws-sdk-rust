@@ -38,7 +38,7 @@ pub mod delete_connection_input {
 #[doc(hidden)]
 pub type DeleteConnectionInputOperationOutputAlias = crate::operation::DeleteConnection;
 #[doc(hidden)]
-pub type DeleteConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConnectionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConnection`](crate::operation::DeleteConnection)>
     #[allow(clippy::let_and_return)]
@@ -49,7 +49,7 @@ impl DeleteConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -143,7 +143,7 @@ impl DeleteConnectionInput {
             "DeleteConnection",
             "apigatewaymanagementapi",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -196,7 +196,7 @@ pub mod get_connection_input {
 #[doc(hidden)]
 pub type GetConnectionInputOperationOutputAlias = crate::operation::GetConnection;
 #[doc(hidden)]
-pub type GetConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetConnectionInput {
     /// Consumes the builder and constructs an Operation<[`GetConnection`](crate::operation::GetConnection)>
     #[allow(clippy::let_and_return)]
@@ -207,7 +207,7 @@ impl GetConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -301,7 +301,7 @@ impl GetConnectionInput {
             "GetConnection",
             "apigatewaymanagementapi",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -366,7 +366,7 @@ pub mod post_to_connection_input {
 #[doc(hidden)]
 pub type PostToConnectionInputOperationOutputAlias = crate::operation::PostToConnection;
 #[doc(hidden)]
-pub type PostToConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PostToConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PostToConnectionInput {
     /// Consumes the builder and constructs an Operation<[`PostToConnection`](crate::operation::PostToConnection)>
     #[allow(clippy::let_and_return)]
@@ -377,7 +377,7 @@ impl PostToConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PostToConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -476,7 +476,7 @@ impl PostToConnectionInput {
             "PostToConnection",
             "apigatewaymanagementapi",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

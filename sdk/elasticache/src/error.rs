@@ -88,8 +88,6 @@ impl AddTagsToResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -290,8 +288,6 @@ impl AuthorizeCacheSecurityGroupIngressError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -432,8 +428,6 @@ impl BatchApplyUpdateActionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -538,8 +532,6 @@ impl BatchStopUpdateActionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -649,8 +641,6 @@ impl CompleteMigrationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -780,8 +770,6 @@ impl CopySnapshotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -887,8 +875,7 @@ pub enum CreateCacheClusterErrorKind {
     CacheSubnetGroupNotFoundFault(crate::error::CacheSubnetGroupNotFoundFault),
     /// <p>The request cannot be processed because it would exceed the allowed number of clusters per customer.</p>
     ClusterQuotaForCustomerExceededFault(crate::error::ClusterQuotaForCustomerExceededFault),
-    /// <p>The requested cache node type is not available in the specified Availability Zone.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
+    /// <p>The requested cache node type is not available in the specified Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
     InsufficientCacheClusterCapacityFault(crate::error::InsufficientCacheClusterCapacityFault),
     /// <p>Two or more incompatible parameters were specified.</p>
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
@@ -966,8 +953,6 @@ impl CreateCacheClusterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1198,8 +1183,6 @@ impl CreateCacheParameterGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1363,8 +1346,6 @@ impl CreateCacheSecurityGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1463,8 +1444,7 @@ pub enum CreateCacheSubnetGroupErrorKind {
     CacheSubnetQuotaExceededFault(crate::error::CacheSubnetQuotaExceededFault),
     /// <p>An invalid subnet identifier was specified.</p>
     InvalidSubnet(crate::error::InvalidSubnet),
-    /// <p>At least one subnet ID does not match the other subnet IDs. This mismatch typically occurs when a
-    /// user sets one subnet ID to a regional Availability Zone and a different one to an outpost. Or when a user sets the subnet ID to an Outpost when not subscribed on this service.</p>
+    /// <p>At least one subnet ID does not match the other subnet IDs. This mismatch typically occurs when a user sets one subnet ID to a regional Availability Zone and a different one to an outpost. Or when a user sets the subnet ID to an Outpost when not subscribed on this service.</p>
     SubnetNotAllowedFault(crate::error::SubnetNotAllowedFault),
     /// <p>The request cannot be processed because it would cause the resource to have more than the allowed number of tags. The maximum number of tags permitted on a resource is 50.</p>
     TagQuotaPerResourceExceeded(crate::error::TagQuotaPerResourceExceeded),
@@ -1518,8 +1498,6 @@ impl CreateCacheSubnetGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1681,8 +1659,6 @@ impl CreateGlobalReplicationGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1787,8 +1763,7 @@ pub enum CreateReplicationGroupErrorKind {
     ClusterQuotaForCustomerExceededFault(crate::error::ClusterQuotaForCustomerExceededFault),
     /// <p>The Global datastore does not exist</p>
     GlobalReplicationGroupNotFoundFault(crate::error::GlobalReplicationGroupNotFoundFault),
-    /// <p>The requested cache node type is not available in the specified Availability Zone.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
+    /// <p>The requested cache node type is not available in the specified Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
     InsufficientCacheClusterCapacityFault(crate::error::InsufficientCacheClusterCapacityFault),
     /// <p>The requested cluster is not in the <code>available</code> state.</p>
     InvalidCacheClusterStateFault(crate::error::InvalidCacheClusterStateFault),
@@ -1802,8 +1777,7 @@ pub enum CreateReplicationGroupErrorKind {
     InvalidUserGroupStateFault(crate::error::InvalidUserGroupStateFault),
     /// <p>The VPC network is in an invalid state.</p>
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
-    /// <p>The request cannot be processed because it would exceed the maximum allowed number
-    /// of node groups (shards) in a single replication group. The default maximum is 90</p>
+    /// <p>The request cannot be processed because it would exceed the maximum allowed number of node groups (shards) in a single replication group. The default maximum is 90</p>
     NodeGroupsPerReplicationGroupQuotaExceededFault(
         crate::error::NodeGroupsPerReplicationGroupQuotaExceededFault,
     ),
@@ -1900,8 +1874,6 @@ impl CreateReplicationGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2134,13 +2106,8 @@ pub enum CreateSnapshotErrorKind {
     SnapshotAlreadyExistsFault(crate::error::SnapshotAlreadyExistsFault),
     /// <p>You attempted one of the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p>Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache
-    /// node.</p>
-    /// </li>
-    /// <li>
-    /// <p>Creating a snapshot of a cluster that is running Memcached rather than Redis.</p>
-    /// </li>
+    /// <li> <p>Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache node.</p> </li>
+    /// <li> <p>Creating a snapshot of a cluster that is running Memcached rather than Redis.</p> </li>
     /// </ul>
     /// <p>Neither of these are supported by ElastiCache.</p>
     SnapshotFeatureNotSupportedFault(crate::error::SnapshotFeatureNotSupportedFault),
@@ -2198,8 +2165,6 @@ impl CreateSnapshotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2383,8 +2348,6 @@ impl CreateUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2538,8 +2501,6 @@ impl CreateUserGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2705,8 +2666,6 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2784,8 +2743,7 @@ pub struct DecreaseReplicaCountError {
 pub enum DecreaseReplicaCountErrorKind {
     /// <p>The request cannot be processed because it would exceed the allowed number of clusters per customer.</p>
     ClusterQuotaForCustomerExceededFault(crate::error::ClusterQuotaForCustomerExceededFault),
-    /// <p>The requested cache node type is not available in the specified Availability Zone.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
+    /// <p>The requested cache node type is not available in the specified Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
     InsufficientCacheClusterCapacityFault(crate::error::InsufficientCacheClusterCapacityFault),
     /// <p>The requested cluster is not in the <code>available</code> state.</p>
     InvalidCacheClusterStateFault(crate::error::InvalidCacheClusterStateFault),
@@ -2797,8 +2755,7 @@ pub enum DecreaseReplicaCountErrorKind {
     InvalidReplicationGroupStateFault(crate::error::InvalidReplicationGroupStateFault),
     /// <p>The VPC network is in an invalid state.</p>
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
-    /// <p>The request cannot be processed because it would exceed the maximum allowed number
-    /// of node groups (shards) in a single replication group. The default maximum is 90</p>
+    /// <p>The request cannot be processed because it would exceed the maximum allowed number of node groups (shards) in a single replication group. The default maximum is 90</p>
     NodeGroupsPerReplicationGroupQuotaExceededFault(
         crate::error::NodeGroupsPerReplicationGroupQuotaExceededFault,
     ),
@@ -2874,8 +2831,6 @@ impl DecreaseReplicaCountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3038,13 +2993,8 @@ pub enum DeleteCacheClusterErrorKind {
     SnapshotAlreadyExistsFault(crate::error::SnapshotAlreadyExistsFault),
     /// <p>You attempted one of the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p>Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache
-    /// node.</p>
-    /// </li>
-    /// <li>
-    /// <p>Creating a snapshot of a cluster that is running Memcached rather than Redis.</p>
-    /// </li>
+    /// <li> <p>Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache node.</p> </li>
+    /// <li> <p>Creating a snapshot of a cluster that is running Memcached rather than Redis.</p> </li>
     /// </ul>
     /// <p>Neither of these are supported by ElastiCache.</p>
     SnapshotFeatureNotSupportedFault(crate::error::SnapshotFeatureNotSupportedFault),
@@ -3099,8 +3049,6 @@ impl DeleteCacheClusterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3261,8 +3209,6 @@ impl DeleteCacheParameterGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3405,8 +3351,6 @@ impl DeleteCacheSecurityGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3535,8 +3479,6 @@ impl DeleteCacheSubnetGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3650,8 +3592,6 @@ impl DeleteGlobalReplicationGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3736,13 +3676,8 @@ pub enum DeleteReplicationGroupErrorKind {
     SnapshotAlreadyExistsFault(crate::error::SnapshotAlreadyExistsFault),
     /// <p>You attempted one of the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p>Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache
-    /// node.</p>
-    /// </li>
-    /// <li>
-    /// <p>Creating a snapshot of a cluster that is running Memcached rather than Redis.</p>
-    /// </li>
+    /// <li> <p>Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache node.</p> </li>
+    /// <li> <p>Creating a snapshot of a cluster that is running Memcached rather than Redis.</p> </li>
     /// </ul>
     /// <p>Neither of these are supported by ElastiCache.</p>
     SnapshotFeatureNotSupportedFault(crate::error::SnapshotFeatureNotSupportedFault),
@@ -3803,8 +3738,6 @@ impl DeleteReplicationGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3961,8 +3894,6 @@ impl DeleteSnapshotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4092,8 +4023,6 @@ impl DeleteUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4222,8 +4151,6 @@ impl DeleteUserGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4349,8 +4276,6 @@ impl DescribeCacheClustersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4459,8 +4384,6 @@ impl DescribeCacheEngineVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4558,8 +4481,6 @@ impl DescribeCacheParameterGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4687,8 +4608,6 @@ impl DescribeCacheParametersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4816,8 +4735,6 @@ impl DescribeCacheSecurityGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4935,8 +4852,6 @@ impl DescribeCacheSubnetGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5042,8 +4957,6 @@ impl DescribeEngineDefaultParametersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5152,8 +5065,6 @@ impl DescribeEventsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5270,8 +5181,6 @@ impl DescribeGlobalReplicationGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5399,8 +5308,6 @@ impl DescribeReplicationGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5528,8 +5435,6 @@ impl DescribeReservedCacheNodesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5662,8 +5567,6 @@ impl DescribeReservedCacheNodesOfferingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5793,8 +5696,6 @@ impl DescribeServiceUpdatesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5917,8 +5818,6 @@ impl DescribeSnapshotsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6043,8 +5942,6 @@ impl DescribeUpdateActionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6156,8 +6053,6 @@ impl DescribeUserGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6275,8 +6170,6 @@ impl DescribeUsersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6405,8 +6298,6 @@ impl DisassociateGlobalReplicationGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6554,8 +6445,6 @@ impl FailoverGlobalReplicationGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6698,8 +6587,6 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6770,8 +6657,7 @@ pub struct IncreaseReplicaCountError {
 pub enum IncreaseReplicaCountErrorKind {
     /// <p>The request cannot be processed because it would exceed the allowed number of clusters per customer.</p>
     ClusterQuotaForCustomerExceededFault(crate::error::ClusterQuotaForCustomerExceededFault),
-    /// <p>The requested cache node type is not available in the specified Availability Zone.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
+    /// <p>The requested cache node type is not available in the specified Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
     InsufficientCacheClusterCapacityFault(crate::error::InsufficientCacheClusterCapacityFault),
     /// <p>The requested cluster is not in the <code>available</code> state.</p>
     InvalidCacheClusterStateFault(crate::error::InvalidCacheClusterStateFault),
@@ -6785,8 +6671,7 @@ pub enum IncreaseReplicaCountErrorKind {
     InvalidReplicationGroupStateFault(crate::error::InvalidReplicationGroupStateFault),
     /// <p>The VPC network is in an invalid state.</p>
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
-    /// <p>The request cannot be processed because it would exceed the maximum allowed number
-    /// of node groups (shards) in a single replication group. The default maximum is 90</p>
+    /// <p>The request cannot be processed because it would exceed the maximum allowed number of node groups (shards) in a single replication group. The default maximum is 90</p>
     NodeGroupsPerReplicationGroupQuotaExceededFault(
         crate::error::NodeGroupsPerReplicationGroupQuotaExceededFault,
     ),
@@ -6860,8 +6745,6 @@ impl IncreaseReplicaCountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7075,8 +6958,6 @@ impl ListAllowedNodeTypeModificationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7234,8 +7115,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7369,8 +7248,7 @@ pub enum ModifyCacheClusterErrorKind {
     CacheParameterGroupNotFoundFault(crate::error::CacheParameterGroupNotFoundFault),
     /// <p>The requested cache security group name does not refer to an existing cache security group.</p>
     CacheSecurityGroupNotFoundFault(crate::error::CacheSecurityGroupNotFoundFault),
-    /// <p>The requested cache node type is not available in the specified Availability Zone.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
+    /// <p>The requested cache node type is not available in the specified Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
     InsufficientCacheClusterCapacityFault(crate::error::InsufficientCacheClusterCapacityFault),
     /// <p>The requested cluster is not in the <code>available</code> state.</p>
     InvalidCacheClusterStateFault(crate::error::InvalidCacheClusterStateFault),
@@ -7443,8 +7321,6 @@ impl ModifyCacheClusterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7646,8 +7522,6 @@ impl ModifyCacheParameterGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7748,8 +7622,7 @@ pub enum ModifyCacheSubnetGroupErrorKind {
     InvalidSubnet(crate::error::InvalidSubnet),
     /// <p>The requested subnet is being used by another cache subnet group.</p>
     SubnetInUse(crate::error::SubnetInUse),
-    /// <p>At least one subnet ID does not match the other subnet IDs. This mismatch typically occurs when a
-    /// user sets one subnet ID to a regional Availability Zone and a different one to an outpost. Or when a user sets the subnet ID to an Outpost when not subscribed on this service.</p>
+    /// <p>At least one subnet ID does not match the other subnet IDs. This mismatch typically occurs when a user sets one subnet ID to a regional Availability Zone and a different one to an outpost. Or when a user sets the subnet ID to an Outpost when not subscribed on this service.</p>
     SubnetNotAllowedFault(crate::error::SubnetNotAllowedFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7796,8 +7669,6 @@ impl ModifyCacheSubnetGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7932,8 +7803,6 @@ impl ModifyGlobalReplicationGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8012,8 +7881,7 @@ pub enum ModifyReplicationGroupErrorKind {
     CacheParameterGroupNotFoundFault(crate::error::CacheParameterGroupNotFoundFault),
     /// <p>The requested cache security group name does not refer to an existing cache security group.</p>
     CacheSecurityGroupNotFoundFault(crate::error::CacheSecurityGroupNotFoundFault),
-    /// <p>The requested cache node type is not available in the specified Availability Zone.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
+    /// <p>The requested cache node type is not available in the specified Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
     InsufficientCacheClusterCapacityFault(crate::error::InsufficientCacheClusterCapacityFault),
     /// <p>The requested cluster is not in the <code>available</code> state.</p>
     InvalidCacheClusterStateFault(crate::error::InvalidCacheClusterStateFault),
@@ -8113,8 +7981,6 @@ impl ModifyReplicationGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8301,8 +8167,7 @@ pub struct ModifyReplicationGroupShardConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyReplicationGroupShardConfigurationErrorKind {
-    /// <p>The requested cache node type is not available in the specified Availability Zone.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
+    /// <p>The requested cache node type is not available in the specified Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
     InsufficientCacheClusterCapacityFault(crate::error::InsufficientCacheClusterCapacityFault),
     /// <p>The requested cluster is not in the <code>available</code> state.</p>
     InvalidCacheClusterStateFault(crate::error::InvalidCacheClusterStateFault),
@@ -8316,8 +8181,7 @@ pub enum ModifyReplicationGroupShardConfigurationErrorKind {
     InvalidReplicationGroupStateFault(crate::error::InvalidReplicationGroupStateFault),
     /// <p>The VPC network is in an invalid state.</p>
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
-    /// <p>The request cannot be processed because it would exceed the maximum allowed number
-    /// of node groups (shards) in a single replication group. The default maximum is 90</p>
+    /// <p>The request cannot be processed because it would exceed the maximum allowed number of node groups (shards) in a single replication group. The default maximum is 90</p>
     NodeGroupsPerReplicationGroupQuotaExceededFault(
         crate::error::NodeGroupsPerReplicationGroupQuotaExceededFault,
     ),
@@ -8400,8 +8264,6 @@ impl ModifyReplicationGroupShardConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8597,8 +8459,6 @@ impl ModifyUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8739,8 +8599,6 @@ impl ModifyUserGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8916,8 +8774,6 @@ impl PurchaseReservedCacheNodesOfferingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9082,8 +8938,6 @@ impl RebalanceSlotsInGlobalReplicationGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9201,8 +9055,6 @@ impl RebootCacheClusterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9345,8 +9197,6 @@ impl RemoveTagsFromResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9556,8 +9406,6 @@ impl ResetCacheParameterGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9718,8 +9566,6 @@ impl RevokeCacheSecurityGroupIngressError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9868,8 +9714,6 @@ impl StartMigrationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9958,8 +9802,7 @@ pub enum TestFailoverErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The requested replication group is not in the <code>available</code> state.</p>
     InvalidReplicationGroupStateFault(crate::error::InvalidReplicationGroupStateFault),
-    /// <p>The node group specified by the <code>NodeGroupId</code> parameter could not be found.
-    /// Please verify that the node group exists and that you spelled the <code>NodeGroupId</code> value correctly.</p>
+    /// <p>The node group specified by the <code>NodeGroupId</code> parameter could not be found. Please verify that the node group exists and that you spelled the <code>NodeGroupId</code> value correctly.</p>
     NodeGroupNotFoundFault(crate::error::NodeGroupNotFoundFault),
     /// <p>The specified replication group does not exist.</p>
     ReplicationGroupNotFoundFault(crate::error::ReplicationGroupNotFoundFault),
@@ -10014,8 +9857,6 @@ impl TestFailoverError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10239,8 +10080,7 @@ impl ReplicationGroupNotFoundFault {
     }
 }
 
-/// <p>The node group specified by the <code>NodeGroupId</code> parameter could not be found.
-/// Please verify that the node group exists and that you spelled the <code>NodeGroupId</code> value correctly.</p>
+/// <p>The node group specified by the <code>NodeGroupId</code> parameter could not be found. Please verify that the node group exists and that you spelled the <code>NodeGroupId</code> value correctly.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeGroupNotFoundFault {
@@ -12355,8 +12195,7 @@ impl NodeQuotaForCustomerExceededFault {
     }
 }
 
-/// <p>The request cannot be processed because it would exceed the maximum allowed number
-/// of node groups (shards) in a single replication group. The default maximum is 90</p>
+/// <p>The request cannot be processed because it would exceed the maximum allowed number of node groups (shards) in a single replication group. The default maximum is 90</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeGroupsPerReplicationGroupQuotaExceededFault {
@@ -12488,8 +12327,7 @@ impl InvalidVpcNetworkStateFault {
     }
 }
 
-/// <p>The requested cache node type is not available in the specified Availability Zone.
-/// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
+/// <p>The requested cache node type is not available in the specified Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientCacheClusterCapacityFault {
@@ -12617,8 +12455,7 @@ impl NodeQuotaForClusterExceededFault {
     }
 }
 
-/// <p>At least one subnet ID does not match the other subnet IDs. This mismatch typically occurs when a
-/// user sets one subnet ID to a regional Availability Zone and a different one to an outpost. Or when a user sets the subnet ID to an Outpost when not subscribed on this service.</p>
+/// <p>At least one subnet ID does not match the other subnet IDs. This mismatch typically occurs when a user sets one subnet ID to a regional Availability Zone and a different one to an outpost. Or when a user sets the subnet ID to an Outpost when not subscribed on this service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubnetNotAllowedFault {
@@ -13260,13 +13097,8 @@ impl SnapshotQuotaExceededFault {
 
 /// <p>You attempted one of the following operations:</p>
 /// <ul>
-/// <li>
-/// <p>Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache
-/// node.</p>
-/// </li>
-/// <li>
-/// <p>Creating a snapshot of a cluster that is running Memcached rather than Redis.</p>
-/// </li>
+/// <li> <p>Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache node.</p> </li>
+/// <li> <p>Creating a snapshot of a cluster that is running Memcached rather than Redis.</p> </li>
 /// </ul>
 /// <p>Neither of these are supported by ElastiCache.</p>
 #[non_exhaustive]

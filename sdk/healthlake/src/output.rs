@@ -253,15 +253,11 @@ impl StartFhirExportJobOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
-    /// <p>
-    /// Returns a list of tags associated with a Data Store.
-    /// </p>
+    /// <p> Returns a list of tags associated with a Data Store. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
-    /// <p>
-    /// Returns a list of tags associated with a Data Store.
-    /// </p>
+    /// <p> Returns a list of tags associated with a Data Store. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -286,18 +282,14 @@ pub mod list_tags_for_resource_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// Returns a list of tags associated with a Data Store.
-        /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p> Returns a list of tags associated with a Data Store. </p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>
-        /// Returns a list of tags associated with a Data Store.
-        /// </p>
+        /// <p> Returns a list of tags associated with a Data Store. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -322,28 +314,20 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFhirImportJobsOutput {
-    /// <p>
-    /// The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job.
-    /// </p>
+    /// <p> The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job. </p>
     pub import_job_properties_list:
         std::option::Option<std::vec::Vec<crate::model::ImportJobProperties>>,
-    /// <p>
-    /// A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query.
-    /// </p>
+    /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFhirImportJobsOutput {
-    /// <p>
-    /// The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job.
-    /// </p>
+    /// <p> The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job. </p>
     pub fn import_job_properties_list(
         &self,
     ) -> std::option::Option<&[crate::model::ImportJobProperties]> {
         self.import_job_properties_list.as_deref()
     }
-    /// <p>
-    /// A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query.
-    /// </p>
+    /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -374,21 +358,17 @@ pub mod list_fhir_import_jobs_output {
         ///
         /// To override the contents of this collection use [`set_import_job_properties_list`](Self::set_import_job_properties_list).
         ///
-        /// <p>
-        /// The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job.
-        /// </p>
+        /// <p> The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job. </p>
         pub fn import_job_properties_list(
             mut self,
-            input: impl Into<crate::model::ImportJobProperties>,
+            input: crate::model::ImportJobProperties,
         ) -> Self {
             let mut v = self.import_job_properties_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.import_job_properties_list = Some(v);
             self
         }
-        /// <p>
-        /// The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job.
-        /// </p>
+        /// <p> The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job. </p>
         pub fn set_import_job_properties_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ImportJobProperties>>,
@@ -396,16 +376,12 @@ pub mod list_fhir_import_jobs_output {
             self.import_job_properties_list = input;
             self
         }
-        /// <p>
-        /// A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query.
-        /// </p>
+        /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query.
-        /// </p>
+        /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -430,28 +406,20 @@ impl ListFhirImportJobsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFhirExportJobsOutput {
-    /// <p>
-    /// The properties of listed FHIR export jobs, including the ID, ARN, name, and the status of the job.
-    /// </p>
+    /// <p> The properties of listed FHIR export jobs, including the ID, ARN, name, and the status of the job. </p>
     pub export_job_properties_list:
         std::option::Option<std::vec::Vec<crate::model::ExportJobProperties>>,
-    /// <p>
-    /// A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query.
-    /// </p>
+    /// <p> A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFhirExportJobsOutput {
-    /// <p>
-    /// The properties of listed FHIR export jobs, including the ID, ARN, name, and the status of the job.
-    /// </p>
+    /// <p> The properties of listed FHIR export jobs, including the ID, ARN, name, and the status of the job. </p>
     pub fn export_job_properties_list(
         &self,
     ) -> std::option::Option<&[crate::model::ExportJobProperties]> {
         self.export_job_properties_list.as_deref()
     }
-    /// <p>
-    /// A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query.
-    /// </p>
+    /// <p> A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -482,21 +450,17 @@ pub mod list_fhir_export_jobs_output {
         ///
         /// To override the contents of this collection use [`set_export_job_properties_list`](Self::set_export_job_properties_list).
         ///
-        /// <p>
-        /// The properties of listed FHIR export jobs, including the ID, ARN, name, and the status of the job.
-        /// </p>
+        /// <p> The properties of listed FHIR export jobs, including the ID, ARN, name, and the status of the job. </p>
         pub fn export_job_properties_list(
             mut self,
-            input: impl Into<crate::model::ExportJobProperties>,
+            input: crate::model::ExportJobProperties,
         ) -> Self {
             let mut v = self.export_job_properties_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.export_job_properties_list = Some(v);
             self
         }
-        /// <p>
-        /// The properties of listed FHIR export jobs, including the ID, ARN, name, and the status of the job.
-        /// </p>
+        /// <p> The properties of listed FHIR export jobs, including the ID, ARN, name, and the status of the job. </p>
         pub fn set_export_job_properties_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExportJobProperties>>,
@@ -504,16 +468,12 @@ pub mod list_fhir_export_jobs_output {
             self.export_job_properties_list = input;
             self
         }
-        /// <p>
-        /// A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query.
-        /// </p>
+        /// <p> A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query.
-        /// </p>
+        /// <p> A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -582,10 +542,10 @@ pub mod list_fhir_datastores_output {
         /// <p>All properties associated with the listed Data Stores.</p>
         pub fn datastore_properties_list(
             mut self,
-            input: impl Into<crate::model::DatastoreProperties>,
+            input: crate::model::DatastoreProperties,
         ) -> Self {
             let mut v = self.datastore_properties_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.datastore_properties_list = Some(v);
             self
         }
@@ -741,15 +701,11 @@ impl DescribeFhirExportJobOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFhirDatastoreOutput {
-    /// <p>All properties associated with a Data Store, including the Data Store ID, Data Store ARN,
-    /// Data Store name, Data Store status, created at, Data Store type version, and Data Store
-    /// endpoint.</p>
+    /// <p>All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name, Data Store status, created at, Data Store type version, and Data Store endpoint.</p>
     pub datastore_properties: std::option::Option<crate::model::DatastoreProperties>,
 }
 impl DescribeFhirDatastoreOutput {
-    /// <p>All properties associated with a Data Store, including the Data Store ID, Data Store ARN,
-    /// Data Store name, Data Store status, created at, Data Store type version, and Data Store
-    /// endpoint.</p>
+    /// <p>All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name, Data Store status, created at, Data Store type version, and Data Store endpoint.</p>
     pub fn datastore_properties(&self) -> std::option::Option<&crate::model::DatastoreProperties> {
         self.datastore_properties.as_ref()
     }
@@ -770,16 +726,12 @@ pub mod describe_fhir_datastore_output {
         pub(crate) datastore_properties: std::option::Option<crate::model::DatastoreProperties>,
     }
     impl Builder {
-        /// <p>All properties associated with a Data Store, including the Data Store ID, Data Store ARN,
-        /// Data Store name, Data Store status, created at, Data Store type version, and Data Store
-        /// endpoint.</p>
+        /// <p>All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name, Data Store status, created at, Data Store type version, and Data Store endpoint.</p>
         pub fn datastore_properties(mut self, input: crate::model::DatastoreProperties) -> Self {
             self.datastore_properties = Some(input);
             self
         }
-        /// <p>All properties associated with a Data Store, including the Data Store ID, Data Store ARN,
-        /// Data Store name, Data Store status, created at, Data Store type version, and Data Store
-        /// endpoint.</p>
+        /// <p>All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name, Data Store status, created at, Data Store type version, and Data Store endpoint.</p>
         pub fn set_datastore_properties(
             mut self,
             input: std::option::Option<crate::model::DatastoreProperties>,
@@ -810,8 +762,7 @@ pub struct DeleteFhirDatastoreOutput {
     pub datastore_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.</p>
     pub datastore_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the Data Store that the user has requested to be deleted.
-    /// </p>
+    /// <p>The status of the Data Store that the user has requested to be deleted. </p>
     pub datastore_status: std::option::Option<crate::model::DatastoreStatus>,
     /// <p>The AWS endpoint for the Data Store the user has requested to be deleted.</p>
     pub datastore_endpoint: std::option::Option<std::string::String>,
@@ -825,8 +776,7 @@ impl DeleteFhirDatastoreOutput {
     pub fn datastore_arn(&self) -> std::option::Option<&str> {
         self.datastore_arn.as_deref()
     }
-    /// <p>The status of the Data Store that the user has requested to be deleted.
-    /// </p>
+    /// <p>The status of the Data Store that the user has requested to be deleted. </p>
     pub fn datastore_status(&self) -> std::option::Option<&crate::model::DatastoreStatus> {
         self.datastore_status.as_ref()
     }
@@ -880,14 +830,12 @@ pub mod delete_fhir_datastore_output {
             self.datastore_arn = input;
             self
         }
-        /// <p>The status of the Data Store that the user has requested to be deleted.
-        /// </p>
+        /// <p>The status of the Data Store that the user has requested to be deleted. </p>
         pub fn datastore_status(mut self, input: crate::model::DatastoreStatus) -> Self {
             self.datastore_status = Some(input);
             self
         }
-        /// <p>The status of the Data Store that the user has requested to be deleted.
-        /// </p>
+        /// <p>The status of the Data Store that the user has requested to be deleted. </p>
         pub fn set_datastore_status(
             mut self,
             input: std::option::Option<crate::model::DatastoreStatus>,
@@ -930,37 +878,29 @@ impl DeleteFhirDatastoreOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFhirDatastoreOutput {
-    /// <p>The AWS-generated Data Store id. This id is in the output from the initial Data Store
-    /// creation call.</p>
+    /// <p>The AWS-generated Data Store id. This id is in the output from the initial Data Store creation call.</p>
     pub datastore_id: std::option::Option<std::string::String>,
-    /// <p>The datastore ARN is generated during the creation of the Data Store and can be found in
-    /// the output from the initial Data Store creation call.</p>
+    /// <p>The datastore ARN is generated during the creation of the Data Store and can be found in the output from the initial Data Store creation call.</p>
     pub datastore_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’,
-    /// ‘DELETED’.</p>
+    /// <p>The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’, ‘DELETED’.</p>
     pub datastore_status: std::option::Option<crate::model::DatastoreStatus>,
-    /// <p>The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are
-    /// supported.</p>
+    /// <p>The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are supported.</p>
     pub datastore_endpoint: std::option::Option<std::string::String>,
 }
 impl CreateFhirDatastoreOutput {
-    /// <p>The AWS-generated Data Store id. This id is in the output from the initial Data Store
-    /// creation call.</p>
+    /// <p>The AWS-generated Data Store id. This id is in the output from the initial Data Store creation call.</p>
     pub fn datastore_id(&self) -> std::option::Option<&str> {
         self.datastore_id.as_deref()
     }
-    /// <p>The datastore ARN is generated during the creation of the Data Store and can be found in
-    /// the output from the initial Data Store creation call.</p>
+    /// <p>The datastore ARN is generated during the creation of the Data Store and can be found in the output from the initial Data Store creation call.</p>
     pub fn datastore_arn(&self) -> std::option::Option<&str> {
         self.datastore_arn.as_deref()
     }
-    /// <p>The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’,
-    /// ‘DELETED’.</p>
+    /// <p>The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’, ‘DELETED’.</p>
     pub fn datastore_status(&self) -> std::option::Option<&crate::model::DatastoreStatus> {
         self.datastore_status.as_ref()
     }
-    /// <p>The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are
-    /// supported.</p>
+    /// <p>The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are supported.</p>
     pub fn datastore_endpoint(&self) -> std::option::Option<&str> {
         self.datastore_endpoint.as_deref()
     }
@@ -987,26 +927,22 @@ pub mod create_fhir_datastore_output {
         pub(crate) datastore_endpoint: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS-generated Data Store id. This id is in the output from the initial Data Store
-        /// creation call.</p>
+        /// <p>The AWS-generated Data Store id. This id is in the output from the initial Data Store creation call.</p>
         pub fn datastore_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.datastore_id = Some(input.into());
             self
         }
-        /// <p>The AWS-generated Data Store id. This id is in the output from the initial Data Store
-        /// creation call.</p>
+        /// <p>The AWS-generated Data Store id. This id is in the output from the initial Data Store creation call.</p>
         pub fn set_datastore_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.datastore_id = input;
             self
         }
-        /// <p>The datastore ARN is generated during the creation of the Data Store and can be found in
-        /// the output from the initial Data Store creation call.</p>
+        /// <p>The datastore ARN is generated during the creation of the Data Store and can be found in the output from the initial Data Store creation call.</p>
         pub fn datastore_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.datastore_arn = Some(input.into());
             self
         }
-        /// <p>The datastore ARN is generated during the creation of the Data Store and can be found in
-        /// the output from the initial Data Store creation call.</p>
+        /// <p>The datastore ARN is generated during the creation of the Data Store and can be found in the output from the initial Data Store creation call.</p>
         pub fn set_datastore_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1014,14 +950,12 @@ pub mod create_fhir_datastore_output {
             self.datastore_arn = input;
             self
         }
-        /// <p>The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’,
-        /// ‘DELETED’.</p>
+        /// <p>The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’, ‘DELETED’.</p>
         pub fn datastore_status(mut self, input: crate::model::DatastoreStatus) -> Self {
             self.datastore_status = Some(input);
             self
         }
-        /// <p>The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’,
-        /// ‘DELETED’.</p>
+        /// <p>The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’, ‘DELETED’.</p>
         pub fn set_datastore_status(
             mut self,
             input: std::option::Option<crate::model::DatastoreStatus>,
@@ -1029,14 +963,12 @@ pub mod create_fhir_datastore_output {
             self.datastore_status = input;
             self
         }
-        /// <p>The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are
-        /// supported.</p>
+        /// <p>The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are supported.</p>
         pub fn datastore_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
             self.datastore_endpoint = Some(input.into());
             self
         }
-        /// <p>The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are
-        /// supported.</p>
+        /// <p>The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are supported.</p>
         pub fn set_datastore_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,

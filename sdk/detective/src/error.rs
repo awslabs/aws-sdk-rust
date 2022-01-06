@@ -64,8 +64,6 @@ impl AcceptInvitationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -143,19 +141,9 @@ pub enum CreateGraphErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>This request cannot be completed for one of the following reasons.</p>
     /// <ul>
-    /// <li>
-    /// <p>The request would cause the number of member accounts in the behavior graph to
-    /// exceed the maximum allowed. A behavior graph cannot have more than 1000 member
-    /// accounts.</p>
-    /// </li>
-    /// <li>
-    /// <p>The request would cause the data rate for the behavior graph to exceed the maximum
-    /// allowed.</p>
-    /// </li>
-    /// <li>
-    /// <p>Detective is unable to verify the data rate for the member account. This is usually
-    /// because the member account is not enrolled in Amazon GuardDuty. </p>
-    /// </li>
+    /// <li> <p>The request would cause the number of member accounts in the behavior graph to exceed the maximum allowed. A behavior graph cannot have more than 1200 member accounts.</p> </li>
+    /// <li> <p>The request would cause the data rate for the behavior graph to exceed the maximum allowed.</p> </li>
+    /// <li> <p>Detective is unable to verify the data rate for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty.</p> </li>
     /// </ul>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -201,8 +189,6 @@ impl CreateGraphError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -269,19 +255,9 @@ pub enum CreateMembersErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>This request cannot be completed for one of the following reasons.</p>
     /// <ul>
-    /// <li>
-    /// <p>The request would cause the number of member accounts in the behavior graph to
-    /// exceed the maximum allowed. A behavior graph cannot have more than 1000 member
-    /// accounts.</p>
-    /// </li>
-    /// <li>
-    /// <p>The request would cause the data rate for the behavior graph to exceed the maximum
-    /// allowed.</p>
-    /// </li>
-    /// <li>
-    /// <p>Detective is unable to verify the data rate for the member account. This is usually
-    /// because the member account is not enrolled in Amazon GuardDuty. </p>
-    /// </li>
+    /// <li> <p>The request would cause the number of member accounts in the behavior graph to exceed the maximum allowed. A behavior graph cannot have more than 1200 member accounts.</p> </li>
+    /// <li> <p>The request would cause the data rate for the behavior graph to exceed the maximum allowed.</p> </li>
+    /// <li> <p>Detective is unable to verify the data rate for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty.</p> </li>
     /// </ul>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request parameters are invalid.</p>
@@ -330,8 +306,6 @@ impl CreateMembersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -452,8 +426,6 @@ impl DeleteGraphError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -566,8 +538,6 @@ impl DeleteMembersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -619,6 +589,260 @@ impl std::error::Error for DeleteMembersError {
             DeleteMembersErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteMembersErrorKind::ValidationException(_inner) => Some(_inner),
             DeleteMembersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeOrganizationConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeOrganizationConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: DescribeOrganizationConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeOrganizationConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeOrganizationConfigurationErrorKind {
+    /// <p>The request was valid but failed because of a problem with the service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request cannot be completed because too many other requests are occurring at the same time.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// <p>The request parameters are invalid.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeOrganizationConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeOrganizationConfigurationErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeOrganizationConfigurationErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeOrganizationConfigurationErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeOrganizationConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeOrganizationConfigurationError {
+    fn code(&self) -> Option<&str> {
+        DescribeOrganizationConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeOrganizationConfigurationError {
+    /// Creates a new `DescribeOrganizationConfigurationError`.
+    pub fn new(
+        kind: DescribeOrganizationConfigurationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeOrganizationConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeOrganizationConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeOrganizationConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeOrganizationConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeOrganizationConfigurationErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeOrganizationConfigurationErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeOrganizationConfigurationErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeOrganizationConfigurationErrorKind::TooManyRequestsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeOrganizationConfigurationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeOrganizationConfigurationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeOrganizationConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeOrganizationConfigurationErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            DescribeOrganizationConfigurationErrorKind::TooManyRequestsException(_inner) => {
+                Some(_inner)
+            }
+            DescribeOrganizationConfigurationErrorKind::ValidationException(_inner) => Some(_inner),
+            DescribeOrganizationConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DisableOrganizationAdminAccount` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DisableOrganizationAdminAccountError {
+    /// Kind of error that occurred.
+    pub kind: DisableOrganizationAdminAccountErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DisableOrganizationAdminAccount` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DisableOrganizationAdminAccountErrorKind {
+    /// <p>The request was valid but failed because of a problem with the service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request cannot be completed because too many other requests are occurring at the same time.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// <p>The request parameters are invalid.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DisableOrganizationAdminAccountError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DisableOrganizationAdminAccountErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisableOrganizationAdminAccountErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
+            DisableOrganizationAdminAccountErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DisableOrganizationAdminAccountErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DisableOrganizationAdminAccountError {
+    fn code(&self) -> Option<&str> {
+        DisableOrganizationAdminAccountError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DisableOrganizationAdminAccountError {
+    /// Creates a new `DisableOrganizationAdminAccountError`.
+    pub fn new(
+        kind: DisableOrganizationAdminAccountErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DisableOrganizationAdminAccountError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DisableOrganizationAdminAccountErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DisableOrganizationAdminAccountError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DisableOrganizationAdminAccountErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DisableOrganizationAdminAccountErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableOrganizationAdminAccountErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisableOrganizationAdminAccountErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableOrganizationAdminAccountErrorKind::TooManyRequestsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DisableOrganizationAdminAccountErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableOrganizationAdminAccountErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DisableOrganizationAdminAccountError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DisableOrganizationAdminAccountErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            DisableOrganizationAdminAccountErrorKind::TooManyRequestsException(_inner) => {
+                Some(_inner)
+            }
+            DisableOrganizationAdminAccountErrorKind::ValidationException(_inner) => Some(_inner),
+            DisableOrganizationAdminAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -688,8 +912,6 @@ impl DisassociateMembershipError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -747,6 +969,132 @@ impl std::error::Error for DisassociateMembershipError {
             DisassociateMembershipErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DisassociateMembershipErrorKind::ValidationException(_inner) => Some(_inner),
             DisassociateMembershipErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `EnableOrganizationAdminAccount` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct EnableOrganizationAdminAccountError {
+    /// Kind of error that occurred.
+    pub kind: EnableOrganizationAdminAccountErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `EnableOrganizationAdminAccount` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum EnableOrganizationAdminAccountErrorKind {
+    /// <p>The request was valid but failed because of a problem with the service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request cannot be completed because too many other requests are occurring at the same time.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// <p>The request parameters are invalid.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for EnableOrganizationAdminAccountError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            EnableOrganizationAdminAccountErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            EnableOrganizationAdminAccountErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
+            EnableOrganizationAdminAccountErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            EnableOrganizationAdminAccountErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for EnableOrganizationAdminAccountError {
+    fn code(&self) -> Option<&str> {
+        EnableOrganizationAdminAccountError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl EnableOrganizationAdminAccountError {
+    /// Creates a new `EnableOrganizationAdminAccountError`.
+    pub fn new(
+        kind: EnableOrganizationAdminAccountErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `EnableOrganizationAdminAccountError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: EnableOrganizationAdminAccountErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `EnableOrganizationAdminAccountError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: EnableOrganizationAdminAccountErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `EnableOrganizationAdminAccountErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableOrganizationAdminAccountErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `EnableOrganizationAdminAccountErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableOrganizationAdminAccountErrorKind::TooManyRequestsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `EnableOrganizationAdminAccountErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableOrganizationAdminAccountErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for EnableOrganizationAdminAccountError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            EnableOrganizationAdminAccountErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            EnableOrganizationAdminAccountErrorKind::TooManyRequestsException(_inner) => {
+                Some(_inner)
+            }
+            EnableOrganizationAdminAccountErrorKind::ValidationException(_inner) => Some(_inner),
+            EnableOrganizationAdminAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -813,8 +1161,6 @@ impl GetMembersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -921,8 +1267,6 @@ impl ListGraphsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1021,8 +1365,6 @@ impl ListInvitationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1127,8 +1469,6 @@ impl ListMembersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1172,6 +1512,130 @@ impl std::error::Error for ListMembersError {
             ListMembersErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListMembersErrorKind::ValidationException(_inner) => Some(_inner),
             ListMembersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListOrganizationAdminAccounts` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListOrganizationAdminAccountsError {
+    /// Kind of error that occurred.
+    pub kind: ListOrganizationAdminAccountsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListOrganizationAdminAccounts` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListOrganizationAdminAccountsErrorKind {
+    /// <p>The request was valid but failed because of a problem with the service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request cannot be completed because too many other requests are occurring at the same time.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// <p>The request parameters are invalid.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListOrganizationAdminAccountsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListOrganizationAdminAccountsErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListOrganizationAdminAccountsErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListOrganizationAdminAccountsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListOrganizationAdminAccountsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListOrganizationAdminAccountsError {
+    fn code(&self) -> Option<&str> {
+        ListOrganizationAdminAccountsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListOrganizationAdminAccountsError {
+    /// Creates a new `ListOrganizationAdminAccountsError`.
+    pub fn new(
+        kind: ListOrganizationAdminAccountsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListOrganizationAdminAccountsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListOrganizationAdminAccountsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListOrganizationAdminAccountsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListOrganizationAdminAccountsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListOrganizationAdminAccountsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOrganizationAdminAccountsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListOrganizationAdminAccountsErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOrganizationAdminAccountsErrorKind::TooManyRequestsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListOrganizationAdminAccountsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOrganizationAdminAccountsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListOrganizationAdminAccountsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListOrganizationAdminAccountsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListOrganizationAdminAccountsErrorKind::TooManyRequestsException(_inner) => {
+                Some(_inner)
+            }
+            ListOrganizationAdminAccountsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListOrganizationAdminAccountsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1238,8 +1702,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1358,8 +1820,6 @@ impl RejectInvitationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1439,19 +1899,9 @@ pub enum StartMonitoringMemberErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>This request cannot be completed for one of the following reasons.</p>
     /// <ul>
-    /// <li>
-    /// <p>The request would cause the number of member accounts in the behavior graph to
-    /// exceed the maximum allowed. A behavior graph cannot have more than 1000 member
-    /// accounts.</p>
-    /// </li>
-    /// <li>
-    /// <p>The request would cause the data rate for the behavior graph to exceed the maximum
-    /// allowed.</p>
-    /// </li>
-    /// <li>
-    /// <p>Detective is unable to verify the data rate for the member account. This is usually
-    /// because the member account is not enrolled in Amazon GuardDuty. </p>
-    /// </li>
+    /// <li> <p>The request would cause the number of member accounts in the behavior graph to exceed the maximum allowed. A behavior graph cannot have more than 1200 member accounts.</p> </li>
+    /// <li> <p>The request would cause the data rate for the behavior graph to exceed the maximum allowed.</p> </li>
+    /// <li> <p>Detective is unable to verify the data rate for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty.</p> </li>
     /// </ul>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request parameters are invalid.</p>
@@ -1501,8 +1951,6 @@ impl StartMonitoringMemberError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1634,8 +2082,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1745,8 +2191,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1793,6 +2237,132 @@ impl std::error::Error for UntagResourceError {
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::ValidationException(_inner) => Some(_inner),
             UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateOrganizationConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateOrganizationConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: UpdateOrganizationConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateOrganizationConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateOrganizationConfigurationErrorKind {
+    /// <p>The request was valid but failed because of a problem with the service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request cannot be completed because too many other requests are occurring at the same time.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// <p>The request parameters are invalid.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateOrganizationConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateOrganizationConfigurationErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateOrganizationConfigurationErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateOrganizationConfigurationErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateOrganizationConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateOrganizationConfigurationError {
+    fn code(&self) -> Option<&str> {
+        UpdateOrganizationConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateOrganizationConfigurationError {
+    /// Creates a new `UpdateOrganizationConfigurationError`.
+    pub fn new(
+        kind: UpdateOrganizationConfigurationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateOrganizationConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateOrganizationConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateOrganizationConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateOrganizationConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateOrganizationConfigurationErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateOrganizationConfigurationErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateOrganizationConfigurationErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateOrganizationConfigurationErrorKind::TooManyRequestsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateOrganizationConfigurationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateOrganizationConfigurationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateOrganizationConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateOrganizationConfigurationErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            UpdateOrganizationConfigurationErrorKind::TooManyRequestsException(_inner) => {
+                Some(_inner)
+            }
+            UpdateOrganizationConfigurationErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateOrganizationConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1861,39 +2431,39 @@ impl ValidationException {
     }
 }
 
-/// <p>The request refers to a nonexistent resource.</p>
+/// <p>The request cannot be completed because too many other requests are occurring at the same time.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResourceNotFoundException {
+pub struct TooManyRequestsException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ResourceNotFoundException {
+impl std::fmt::Debug for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
+        let mut formatter = f.debug_struct("TooManyRequestsException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ResourceNotFoundException {
+impl TooManyRequestsException {
     /// Returns the error message.
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ResourceNotFoundException {
+impl std::fmt::Display for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ResourceNotFoundException")?;
+        write!(f, "TooManyRequestsException")?;
         if let Some(inner_2) = &self.message {
             write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ResourceNotFoundException {}
-/// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
-pub mod resource_not_found_exception {
-    /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+impl std::error::Error for TooManyRequestsException {}
+/// See [`TooManyRequestsException`](crate::error::TooManyRequestsException)
+pub mod too_many_requests_exception {
+    /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1910,18 +2480,18 @@ pub mod resource_not_found_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
-        pub fn build(self) -> crate::error::ResourceNotFoundException {
-            crate::error::ResourceNotFoundException {
+        /// Consumes the builder and constructs a [`TooManyRequestsException`](crate::error::TooManyRequestsException)
+        pub fn build(self) -> crate::error::TooManyRequestsException {
+            crate::error::TooManyRequestsException {
                 message: self.message,
             }
         }
     }
 }
-impl ResourceNotFoundException {
-    /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
-    pub fn builder() -> crate::error::resource_not_found_exception::Builder {
-        crate::error::resource_not_found_exception::Builder::default()
+impl TooManyRequestsException {
+    /// Creates a new builder-style object to manufacture [`TooManyRequestsException`](crate::error::TooManyRequestsException)
+    pub fn builder() -> crate::error::too_many_requests_exception::Builder {
+        crate::error::too_many_requests_exception::Builder::default()
     }
 }
 
@@ -1989,21 +2559,75 @@ impl InternalServerException {
     }
 }
 
+/// <p>The request refers to a nonexistent resource.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceNotFoundException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ResourceNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResourceNotFoundException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ResourceNotFoundException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ResourceNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ResourceNotFoundException")?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ResourceNotFoundException {}
+/// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+pub mod resource_not_found_exception {
+    /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+        pub fn build(self) -> crate::error::ResourceNotFoundException {
+            crate::error::ResourceNotFoundException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ResourceNotFoundException {
+    /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+    pub fn builder() -> crate::error::resource_not_found_exception::Builder {
+        crate::error::resource_not_found_exception::Builder::default()
+    }
+}
+
 /// <p>This request cannot be completed for one of the following reasons.</p>
 /// <ul>
-/// <li>
-/// <p>The request would cause the number of member accounts in the behavior graph to
-/// exceed the maximum allowed. A behavior graph cannot have more than 1000 member
-/// accounts.</p>
-/// </li>
-/// <li>
-/// <p>The request would cause the data rate for the behavior graph to exceed the maximum
-/// allowed.</p>
-/// </li>
-/// <li>
-/// <p>Detective is unable to verify the data rate for the member account. This is usually
-/// because the member account is not enrolled in Amazon GuardDuty. </p>
-/// </li>
+/// <li> <p>The request would cause the number of member accounts in the behavior graph to exceed the maximum allowed. A behavior graph cannot have more than 1200 member accounts.</p> </li>
+/// <li> <p>The request would cause the data rate for the behavior graph to exceed the maximum allowed.</p> </li>
+/// <li> <p>Detective is unable to verify the data rate for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2027,8 +2651,8 @@ impl ServiceQuotaExceededException {
 impl std::fmt::Display for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceQuotaExceededException")?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
@@ -2091,8 +2715,8 @@ impl ConflictException {
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }

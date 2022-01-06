@@ -59,7 +59,7 @@ pub mod apply_archive_rule_input {
 #[doc(hidden)]
 pub type ApplyArchiveRuleInputOperationOutputAlias = crate::operation::ApplyArchiveRule;
 #[doc(hidden)]
-pub type ApplyArchiveRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ApplyArchiveRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ApplyArchiveRuleInput {
     /// Consumes the builder and constructs an Operation<[`ApplyArchiveRule`](crate::operation::ApplyArchiveRule)>
     #[allow(clippy::let_and_return)]
@@ -70,7 +70,7 @@ impl ApplyArchiveRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ApplyArchiveRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -153,7 +153,7 @@ impl ApplyArchiveRuleInput {
             "ApplyArchiveRule",
             "accessanalyzer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -185,18 +185,12 @@ pub mod cancel_policy_generation_input {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
-        /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
-        /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
-        /// the policy generation request.</p>
+        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
-        /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
-        /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
-        /// the policy generation request.</p>
+        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -217,7 +211,7 @@ pub mod cancel_policy_generation_input {
 #[doc(hidden)]
 pub type CancelPolicyGenerationInputOperationOutputAlias = crate::operation::CancelPolicyGeneration;
 #[doc(hidden)]
-pub type CancelPolicyGenerationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelPolicyGenerationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelPolicyGenerationInput {
     /// Consumes the builder and constructs an Operation<[`CancelPolicyGeneration`](crate::operation::CancelPolicyGeneration)>
     #[allow(clippy::let_and_return)]
@@ -228,7 +222,7 @@ impl CancelPolicyGenerationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelPolicyGeneration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -318,7 +312,7 @@ impl CancelPolicyGenerationInput {
             "CancelPolicyGeneration",
             "accessanalyzer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -346,18 +340,12 @@ pub mod create_access_preview_input {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the account analyzer</a> used to generate the access preview. You can only create an
-        /// access preview for analyzers with an <code>Account</code> type and <code>Active</code>
-        /// status.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the account analyzer</a> used to generate the access preview. You can only create an access preview for analyzers with an <code>Account</code> type and <code>Active</code> status.</p>
         pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.analyzer_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the account analyzer</a> used to generate the access preview. You can only create an
-        /// access preview for analyzers with an <code>Account</code> type and <code>Active</code>
-        /// status.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the account analyzer</a> used to generate the access preview. You can only create an access preview for analyzers with an <code>Account</code> type and <code>Active</code> status.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.analyzer_arn = input;
             self
@@ -366,24 +354,18 @@ pub mod create_access_preview_input {
         ///
         /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
         ///
-        /// <p>Access control configuration for your resource that is used to generate the access
-        /// preview. The access preview includes findings for external access allowed to the resource
-        /// with the proposed access control configuration. The configuration must contain exactly one
-        /// element.</p>
+        /// <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
         pub fn configurations(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Configuration>,
+            v: crate::model::Configuration,
         ) -> Self {
             let mut hash_map = self.configurations.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.configurations = Some(hash_map);
             self
         }
-        /// <p>Access control configuration for your resource that is used to generate the access
-        /// preview. The access preview includes findings for external access allowed to the resource
-        /// with the proposed access control configuration. The configuration must contain exactly one
-        /// element.</p>
+        /// <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
         pub fn set_configurations(
             mut self,
             input: std::option::Option<
@@ -421,7 +403,7 @@ pub mod create_access_preview_input {
 #[doc(hidden)]
 pub type CreateAccessPreviewInputOperationOutputAlias = crate::operation::CreateAccessPreview;
 #[doc(hidden)]
-pub type CreateAccessPreviewInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAccessPreviewInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAccessPreviewInput {
     /// Consumes the builder and constructs an Operation<[`CreateAccessPreview`](crate::operation::CreateAccessPreview)>
     #[allow(clippy::let_and_return)]
@@ -432,7 +414,7 @@ impl CreateAccessPreviewInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAccessPreview,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -515,7 +497,7 @@ impl CreateAccessPreviewInput {
             "CreateAccessPreview",
             "accessanalyzer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -567,16 +549,12 @@ pub mod create_analyzer_input {
             self.analyzer_name = input;
             self
         }
-        /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported.
-        /// You can create only one analyzer per account per Region. You can create up to 5 analyzers
-        /// per organization per Region.</p>
+        /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
         pub fn r#type(mut self, input: crate::model::Type) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported.
-        /// You can create only one analyzer per account per Region. You can create up to 5 analyzers
-        /// per organization per Region.</p>
+        /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::Type>) -> Self {
             self.r#type = input;
             self
@@ -585,16 +563,14 @@ pub mod create_analyzer_input {
         ///
         /// To override the contents of this collection use [`set_archive_rules`](Self::set_archive_rules).
         ///
-        /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive
-        /// findings that meet the criteria you define for the rule.</p>
-        pub fn archive_rules(mut self, input: impl Into<crate::model::InlineArchiveRule>) -> Self {
+        /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>
+        pub fn archive_rules(mut self, input: crate::model::InlineArchiveRule) -> Self {
             let mut v = self.archive_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.archive_rules = Some(v);
             self
         }
-        /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive
-        /// findings that meet the criteria you define for the rule.</p>
+        /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>
         pub fn set_archive_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InlineArchiveRule>>,
@@ -657,7 +633,7 @@ pub mod create_analyzer_input {
 #[doc(hidden)]
 pub type CreateAnalyzerInputOperationOutputAlias = crate::operation::CreateAnalyzer;
 #[doc(hidden)]
-pub type CreateAnalyzerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAnalyzerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAnalyzerInput {
     /// Consumes the builder and constructs an Operation<[`CreateAnalyzer`](crate::operation::CreateAnalyzer)>
     #[allow(clippy::let_and_return)]
@@ -668,7 +644,7 @@ impl CreateAnalyzerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAnalyzer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -751,7 +727,7 @@ impl CreateAnalyzerInput {
             "CreateAnalyzer",
             "accessanalyzer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -819,10 +795,10 @@ pub mod create_archive_rule_input {
         pub fn filter(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Criterion>,
+            v: crate::model::Criterion,
         ) -> Self {
             let mut hash_map = self.filter.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.filter = Some(hash_map);
             self
         }
@@ -865,7 +841,7 @@ pub mod create_archive_rule_input {
 #[doc(hidden)]
 pub type CreateArchiveRuleInputOperationOutputAlias = crate::operation::CreateArchiveRule;
 #[doc(hidden)]
-pub type CreateArchiveRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateArchiveRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateArchiveRuleInput {
     /// Consumes the builder and constructs an Operation<[`CreateArchiveRule`](crate::operation::CreateArchiveRule)>
     #[allow(clippy::let_and_return)]
@@ -876,7 +852,7 @@ impl CreateArchiveRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateArchiveRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -979,7 +955,7 @@ impl CreateArchiveRuleInput {
             "CreateArchiveRule",
             "accessanalyzer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1052,7 +1028,7 @@ pub mod delete_analyzer_input {
 #[doc(hidden)]
 pub type DeleteAnalyzerInputOperationOutputAlias = crate::operation::DeleteAnalyzer;
 #[doc(hidden)]
-pub type DeleteAnalyzerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAnalyzerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAnalyzerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAnalyzer`](crate::operation::DeleteAnalyzer)>
     #[allow(clippy::let_and_return)]
@@ -1063,7 +1039,7 @@ impl DeleteAnalyzerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAnalyzer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1171,7 +1147,7 @@ impl DeleteAnalyzerInput {
             "DeleteAnalyzer",
             "accessanalyzer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1248,7 +1224,7 @@ pub mod delete_archive_rule_input {
 #[doc(hidden)]
 pub type DeleteArchiveRuleInputOperationOutputAlias = crate::operation::DeleteArchiveRule;
 #[doc(hidden)]
-pub type DeleteArchiveRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteArchiveRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteArchiveRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteArchiveRule`](crate::operation::DeleteArchiveRule)>
     #[allow(clippy::let_and_return)]
@@ -1259,7 +1235,7 @@ impl DeleteArchiveRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteArchiveRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1383,7 +1359,7 @@ impl DeleteArchiveRuleInput {
             "DeleteArchiveRule",
             "accessanalyzer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1421,14 +1397,12 @@ pub mod get_access_preview_input {
             self.access_preview_id = input;
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> used to generate the access preview.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
         pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.analyzer_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> used to generate the access preview.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.analyzer_arn = input;
             self
@@ -1450,7 +1424,7 @@ pub mod get_access_preview_input {
 #[doc(hidden)]
 pub type GetAccessPreviewInputOperationOutputAlias = crate::operation::GetAccessPreview;
 #[doc(hidden)]
-pub type GetAccessPreviewInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAccessPreviewInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAccessPreviewInput {
     /// Consumes the builder and constructs an Operation<[`GetAccessPreview`](crate::operation::GetAccessPreview)>
     #[allow(clippy::let_and_return)]
@@ -1461,7 +1435,7 @@ impl GetAccessPreviewInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAccessPreview,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1566,7 +1540,7 @@ impl GetAccessPreviewInput {
             "GetAccessPreview",
             "accessanalyzer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1591,14 +1565,12 @@ pub mod get_analyzed_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> to retrieve information from.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve information from.</p>
         pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.analyzer_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> to retrieve information from.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve information from.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.analyzer_arn = input;
             self
@@ -1630,7 +1602,7 @@ pub mod get_analyzed_resource_input {
 #[doc(hidden)]
 pub type GetAnalyzedResourceInputOperationOutputAlias = crate::operation::GetAnalyzedResource;
 #[doc(hidden)]
-pub type GetAnalyzedResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAnalyzedResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAnalyzedResourceInput {
     /// Consumes the builder and constructs an Operation<[`GetAnalyzedResource`](crate::operation::GetAnalyzedResource)>
     #[allow(clippy::let_and_return)]
@@ -1641,7 +1613,7 @@ impl GetAnalyzedResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAnalyzedResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1735,7 +1707,7 @@ impl GetAnalyzedResourceInput {
             "GetAnalyzedResource",
             "accessanalyzer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1788,7 +1760,7 @@ pub mod get_analyzer_input {
 #[doc(hidden)]
 pub type GetAnalyzerInputOperationOutputAlias = crate::operation::GetAnalyzer;
 #[doc(hidden)]
-pub type GetAnalyzerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAnalyzerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAnalyzerInput {
     /// Consumes the builder and constructs an Operation<[`GetAnalyzer`](crate::operation::GetAnalyzer)>
     #[allow(clippy::let_and_return)]
@@ -1799,7 +1771,7 @@ impl GetAnalyzerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAnalyzer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1893,7 +1865,7 @@ impl GetAnalyzerInput {
             "GetAnalyzer",
             "accessanalyzer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1958,7 +1930,7 @@ pub mod get_archive_rule_input {
 #[doc(hidden)]
 pub type GetArchiveRuleInputOperationOutputAlias = crate::operation::GetArchiveRule;
 #[doc(hidden)]
-pub type GetArchiveRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetArchiveRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetArchiveRuleInput {
     /// Consumes the builder and constructs an Operation<[`GetArchiveRule`](crate::operation::GetArchiveRule)>
     #[allow(clippy::let_and_return)]
@@ -1969,7 +1941,7 @@ impl GetArchiveRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetArchiveRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2079,7 +2051,7 @@ impl GetArchiveRuleInput {
             "GetArchiveRule",
             "accessanalyzer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2104,14 +2076,12 @@ pub mod get_finding_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> that generated the finding.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the finding.</p>
         pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.analyzer_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> that generated the finding.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the finding.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.analyzer_arn = input;
             self
@@ -2143,7 +2113,7 @@ pub mod get_finding_input {
 #[doc(hidden)]
 pub type GetFindingInputOperationOutputAlias = crate::operation::GetFinding;
 #[doc(hidden)]
-pub type GetFindingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFindingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFindingInput {
     /// Consumes the builder and constructs an Operation<[`GetFinding`](crate::operation::GetFinding)>
     #[allow(clippy::let_and_return)]
@@ -2154,7 +2124,7 @@ impl GetFindingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFinding,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2257,7 +2227,7 @@ impl GetFindingInput {
             "GetFinding",
             "accessanalyzer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2283,36 +2253,24 @@ pub mod get_generated_policy_input {
         pub(crate) include_service_level_template: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
-        /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
-        /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
-        /// the policy generation request.</p>
+        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
-        /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
-        /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
-        /// the policy generation request.</p>
+        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
         }
-        /// <p>The level of detail that you want to generate. You can specify whether to generate
-        /// policies with placeholders for resource ARNs for actions that support resource level
-        /// granularity in policies.</p>
-        /// <p>For example, in the resource section of a policy, you can receive a placeholder such as
-        /// <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of <code>"*"</code>.</p>
+        /// <p>The level of detail that you want to generate. You can specify whether to generate policies with placeholders for resource ARNs for actions that support resource level granularity in policies.</p>
+        /// <p>For example, in the resource section of a policy, you can receive a placeholder such as <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of <code>"*"</code>.</p>
         pub fn include_resource_placeholders(mut self, input: bool) -> Self {
             self.include_resource_placeholders = Some(input);
             self
         }
-        /// <p>The level of detail that you want to generate. You can specify whether to generate
-        /// policies with placeholders for resource ARNs for actions that support resource level
-        /// granularity in policies.</p>
-        /// <p>For example, in the resource section of a policy, you can receive a placeholder such as
-        /// <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of <code>"*"</code>.</p>
+        /// <p>The level of detail that you want to generate. You can specify whether to generate policies with placeholders for resource ARNs for actions that support resource level granularity in policies.</p>
+        /// <p>For example, in the resource section of a policy, you can receive a placeholder such as <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of <code>"*"</code>.</p>
         pub fn set_include_resource_placeholders(
             mut self,
             input: std::option::Option<bool>,
@@ -2320,18 +2278,14 @@ pub mod get_generated_policy_input {
             self.include_resource_placeholders = input;
             self
         }
-        /// <p>The level of detail that you want to generate. You can specify whether to generate
-        /// service-level policies. </p>
-        /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have
-        /// been used recently to create this service-level template.</p>
+        /// <p>The level of detail that you want to generate. You can specify whether to generate service-level policies. </p>
+        /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have been used recently to create this service-level template.</p>
         pub fn include_service_level_template(mut self, input: bool) -> Self {
             self.include_service_level_template = Some(input);
             self
         }
-        /// <p>The level of detail that you want to generate. You can specify whether to generate
-        /// service-level policies. </p>
-        /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have
-        /// been used recently to create this service-level template.</p>
+        /// <p>The level of detail that you want to generate. You can specify whether to generate service-level policies. </p>
+        /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have been used recently to create this service-level template.</p>
         pub fn set_include_service_level_template(
             mut self,
             input: std::option::Option<bool>,
@@ -2357,7 +2311,7 @@ pub mod get_generated_policy_input {
 #[doc(hidden)]
 pub type GetGeneratedPolicyInputOperationOutputAlias = crate::operation::GetGeneratedPolicy;
 #[doc(hidden)]
-pub type GetGeneratedPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetGeneratedPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetGeneratedPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetGeneratedPolicy`](crate::operation::GetGeneratedPolicy)>
     #[allow(clippy::let_and_return)]
@@ -2368,7 +2322,7 @@ impl GetGeneratedPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetGeneratedPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2478,7 +2432,7 @@ impl GetGeneratedPolicyInput {
             "GetGeneratedPolicy",
             "accessanalyzer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2521,14 +2475,12 @@ pub mod list_access_preview_findings_input {
             self.access_preview_id = input;
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> used to generate the access.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access.</p>
         pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.analyzer_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> used to generate the access.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.analyzer_arn = input;
             self
@@ -2541,10 +2493,10 @@ pub mod list_access_preview_findings_input {
         pub fn filter(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Criterion>,
+            v: crate::model::Criterion,
         ) -> Self {
             let mut hash_map = self.filter.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.filter = Some(hash_map);
             self
         }
@@ -2599,7 +2551,7 @@ pub mod list_access_preview_findings_input {
 pub type ListAccessPreviewFindingsInputOperationOutputAlias =
     crate::operation::ListAccessPreviewFindings;
 #[doc(hidden)]
-pub type ListAccessPreviewFindingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAccessPreviewFindingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAccessPreviewFindingsInput {
     /// Consumes the builder and constructs an Operation<[`ListAccessPreviewFindings`](crate::operation::ListAccessPreviewFindings)>
     #[allow(clippy::let_and_return)]
@@ -2610,7 +2562,7 @@ impl ListAccessPreviewFindingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAccessPreviewFindings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2712,7 +2664,7 @@ impl ListAccessPreviewFindingsInput {
             "ListAccessPreviewFindings",
             "accessanalyzer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2746,14 +2698,12 @@ pub mod list_access_previews_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> used to generate the access preview.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
         pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.analyzer_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> used to generate the access preview.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.analyzer_arn = input;
             self
@@ -2796,7 +2746,7 @@ pub mod list_access_previews_input {
 #[doc(hidden)]
 pub type ListAccessPreviewsInputOperationOutputAlias = crate::operation::ListAccessPreviews;
 #[doc(hidden)]
-pub type ListAccessPreviewsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAccessPreviewsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAccessPreviewsInput {
     /// Consumes the builder and constructs an Operation<[`ListAccessPreviews`](crate::operation::ListAccessPreviews)>
     #[allow(clippy::let_and_return)]
@@ -2807,7 +2757,7 @@ impl ListAccessPreviewsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAccessPreviews,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2904,7 +2854,7 @@ impl ListAccessPreviewsInput {
             "ListAccessPreviews",
             "accessanalyzer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2931,14 +2881,12 @@ pub mod list_analyzed_resources_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> to retrieve a list of analyzed resources from.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve a list of analyzed resources from.</p>
         pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.analyzer_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> to retrieve a list of analyzed resources from.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve a list of analyzed resources from.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.analyzer_arn = input;
             self
@@ -2995,7 +2943,7 @@ pub mod list_analyzed_resources_input {
 #[doc(hidden)]
 pub type ListAnalyzedResourcesInputOperationOutputAlias = crate::operation::ListAnalyzedResources;
 #[doc(hidden)]
-pub type ListAnalyzedResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAnalyzedResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAnalyzedResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListAnalyzedResources`](crate::operation::ListAnalyzedResources)>
     #[allow(clippy::let_and_return)]
@@ -3006,7 +2954,7 @@ impl ListAnalyzedResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAnalyzedResources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3088,7 +3036,7 @@ impl ListAnalyzedResourcesInput {
             "ListAnalyzedResources",
             "accessanalyzer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3170,7 +3118,7 @@ pub mod list_analyzers_input {
 #[doc(hidden)]
 pub type ListAnalyzersInputOperationOutputAlias = crate::operation::ListAnalyzers;
 #[doc(hidden)]
-pub type ListAnalyzersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAnalyzersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAnalyzersInput {
     /// Consumes the builder and constructs an Operation<[`ListAnalyzers`](crate::operation::ListAnalyzers)>
     #[allow(clippy::let_and_return)]
@@ -3181,7 +3129,7 @@ impl ListAnalyzersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAnalyzers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3275,7 +3223,7 @@ impl ListAnalyzersInput {
             "ListAnalyzers",
             "accessanalyzer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3352,7 +3300,7 @@ pub mod list_archive_rules_input {
 #[doc(hidden)]
 pub type ListArchiveRulesInputOperationOutputAlias = crate::operation::ListArchiveRules;
 #[doc(hidden)]
-pub type ListArchiveRulesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListArchiveRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListArchiveRulesInput {
     /// Consumes the builder and constructs an Operation<[`ListArchiveRules`](crate::operation::ListArchiveRules)>
     #[allow(clippy::let_and_return)]
@@ -3363,7 +3311,7 @@ impl ListArchiveRulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListArchiveRules,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3474,7 +3422,7 @@ impl ListArchiveRulesInput {
             "ListArchiveRules",
             "accessanalyzer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3504,14 +3452,12 @@ pub mod list_findings_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> to retrieve findings from.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve findings from.</p>
         pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.analyzer_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> to retrieve findings from.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve findings from.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.analyzer_arn = input;
             self
@@ -3524,10 +3470,10 @@ pub mod list_findings_input {
         pub fn filter(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Criterion>,
+            v: crate::model::Criterion,
         ) -> Self {
             let mut hash_map = self.filter.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.filter = Some(hash_map);
             self
         }
@@ -3591,7 +3537,7 @@ pub mod list_findings_input {
 #[doc(hidden)]
 pub type ListFindingsInputOperationOutputAlias = crate::operation::ListFindings;
 #[doc(hidden)]
-pub type ListFindingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFindingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFindingsInput {
     /// Consumes the builder and constructs an Operation<[`ListFindings`](crate::operation::ListFindings)>
     #[allow(clippy::let_and_return)]
@@ -3602,7 +3548,7 @@ impl ListFindingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFindings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3681,7 +3627,7 @@ impl ListFindingsInput {
             "ListFindings",
             "accessanalyzer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3715,16 +3661,12 @@ pub mod list_policy_generations_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use
-        /// this with <code>ListGeneratedPolicies</code> to filter the results to only include results
-        /// for a specific principal.</p>
+        /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.</p>
         pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use
-        /// this with <code>ListGeneratedPolicies</code> to filter the results to only include results
-        /// for a specific principal.</p>
+        /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.</p>
         pub fn set_principal_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3770,7 +3712,7 @@ pub mod list_policy_generations_input {
 #[doc(hidden)]
 pub type ListPolicyGenerationsInputOperationOutputAlias = crate::operation::ListPolicyGenerations;
 #[doc(hidden)]
-pub type ListPolicyGenerationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPolicyGenerationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPolicyGenerationsInput {
     /// Consumes the builder and constructs an Operation<[`ListPolicyGenerations`](crate::operation::ListPolicyGenerations)>
     #[allow(clippy::let_and_return)]
@@ -3781,7 +3723,7 @@ impl ListPolicyGenerationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPolicyGenerations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3878,7 +3820,7 @@ impl ListPolicyGenerationsInput {
             "ListPolicyGenerations",
             "accessanalyzer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3928,7 +3870,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -3939,7 +3881,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4029,7 +3971,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "accessanalyzer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4056,8 +3998,7 @@ pub mod start_policy_generation_input {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Contains the ARN of the IAM entity (user or role) for which you are generating a
-        /// policy.</p>
+        /// <p>Contains the ARN of the IAM entity (user or role) for which you are generating a policy.</p>
         pub fn policy_generation_details(
             mut self,
             input: crate::model::PolicyGenerationDetails,
@@ -4065,8 +4006,7 @@ pub mod start_policy_generation_input {
             self.policy_generation_details = Some(input);
             self
         }
-        /// <p>Contains the ARN of the IAM entity (user or role) for which you are generating a
-        /// policy.</p>
+        /// <p>Contains the ARN of the IAM entity (user or role) for which you are generating a policy.</p>
         pub fn set_policy_generation_details(
             mut self,
             input: std::option::Option<crate::model::PolicyGenerationDetails>,
@@ -4074,14 +4014,12 @@ pub mod start_policy_generation_input {
             self.policy_generation_details = input;
             self
         }
-        /// <p>A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code>
-        /// that you want to analyze to generate policies.</p>
+        /// <p>A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to analyze to generate policies.</p>
         pub fn cloud_trail_details(mut self, input: crate::model::CloudTrailDetails) -> Self {
             self.cloud_trail_details = Some(input);
             self
         }
-        /// <p>A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code>
-        /// that you want to analyze to generate policies.</p>
+        /// <p>A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to analyze to generate policies.</p>
         pub fn set_cloud_trail_details(
             mut self,
             input: std::option::Option<crate::model::CloudTrailDetails>,
@@ -4089,24 +4027,14 @@ pub mod start_policy_generation_input {
             self.cloud_trail_details = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, the subsequent retries with the
-        /// same client token return the result from the original successful request and they have no
-        /// additional effect.</p>
-        /// <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries with the same client token return the result from the original successful request and they have no additional effect.</p>
+        /// <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services SDK.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, the subsequent retries with the
-        /// same client token return the result from the original successful request and they have no
-        /// additional effect.</p>
-        /// <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries with the same client token return the result from the original successful request and they have no additional effect.</p>
+        /// <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -4129,7 +4057,7 @@ pub mod start_policy_generation_input {
 #[doc(hidden)]
 pub type StartPolicyGenerationInputOperationOutputAlias = crate::operation::StartPolicyGeneration;
 #[doc(hidden)]
-pub type StartPolicyGenerationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartPolicyGenerationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartPolicyGenerationInput {
     /// Consumes the builder and constructs an Operation<[`StartPolicyGeneration`](crate::operation::StartPolicyGeneration)>
     #[allow(clippy::let_and_return)]
@@ -4140,7 +4068,7 @@ impl StartPolicyGenerationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartPolicyGeneration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4225,7 +4153,7 @@ impl StartPolicyGenerationInput {
             "StartPolicyGeneration",
             "accessanalyzer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4258,16 +4186,12 @@ pub mod start_resource_scan_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> to use to scan the policies applied to the specified
-        /// resource.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to use to scan the policies applied to the specified resource.</p>
         pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.analyzer_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> to use to scan the policies applied to the specified
-        /// resource.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to use to scan the policies applied to the specified resource.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.analyzer_arn = input;
             self
@@ -4299,7 +4223,7 @@ pub mod start_resource_scan_input {
 #[doc(hidden)]
 pub type StartResourceScanInputOperationOutputAlias = crate::operation::StartResourceScan;
 #[doc(hidden)]
-pub type StartResourceScanInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartResourceScanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartResourceScanInput {
     /// Consumes the builder and constructs an Operation<[`StartResourceScan`](crate::operation::StartResourceScan)>
     #[allow(clippy::let_and_return)]
@@ -4310,7 +4234,7 @@ impl StartResourceScanInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartResourceScan,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4390,7 +4314,7 @@ impl StartResourceScanInput {
             "StartResourceScan",
             "accessanalyzer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4477,7 +4401,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -4488,7 +4412,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4583,7 +4507,7 @@ impl TagResourceInput {
             "TagResource",
             "accessanalyzer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4662,7 +4586,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -4673,7 +4597,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4776,7 +4700,7 @@ impl UntagResourceInput {
             "UntagResource",
             "accessanalyzer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4832,20 +4756,18 @@ pub mod update_archive_rule_input {
         ///
         /// To override the contents of this collection use [`set_filter`](Self::set_filter).
         ///
-        /// <p>A filter to match for the rules to update. Only rules that match the filter are
-        /// updated.</p>
+        /// <p>A filter to match for the rules to update. Only rules that match the filter are updated.</p>
         pub fn filter(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Criterion>,
+            v: crate::model::Criterion,
         ) -> Self {
             let mut hash_map = self.filter.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.filter = Some(hash_map);
             self
         }
-        /// <p>A filter to match for the rules to update. Only rules that match the filter are
-        /// updated.</p>
+        /// <p>A filter to match for the rules to update. Only rules that match the filter are updated.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<
@@ -4884,7 +4806,7 @@ pub mod update_archive_rule_input {
 #[doc(hidden)]
 pub type UpdateArchiveRuleInputOperationOutputAlias = crate::operation::UpdateArchiveRule;
 #[doc(hidden)]
-pub type UpdateArchiveRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateArchiveRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateArchiveRuleInput {
     /// Consumes the builder and constructs an Operation<[`UpdateArchiveRule`](crate::operation::UpdateArchiveRule)>
     #[allow(clippy::let_and_return)]
@@ -4895,7 +4817,7 @@ impl UpdateArchiveRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateArchiveRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5014,7 +4936,7 @@ impl UpdateArchiveRuleInput {
             "UpdateArchiveRule",
             "accessanalyzer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5050,28 +4972,22 @@ pub mod update_findings_input {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> that generated the findings to update.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the findings to update.</p>
         pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.analyzer_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> that generated the findings to update.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the findings to update.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.analyzer_arn = input;
             self
         }
-        /// <p>The state represents the action to take to update the finding Status. Use
-        /// <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use
-        /// <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
+        /// <p>The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
         pub fn status(mut self, input: crate::model::FindingStatusUpdate) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The state represents the action to take to update the finding Status. Use
-        /// <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use
-        /// <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
+        /// <p>The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::FindingStatusUpdate>,
@@ -5138,7 +5054,7 @@ pub mod update_findings_input {
 #[doc(hidden)]
 pub type UpdateFindingsInputOperationOutputAlias = crate::operation::UpdateFindings;
 #[doc(hidden)]
-pub type UpdateFindingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFindingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFindingsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFindings`](crate::operation::UpdateFindings)>
     #[allow(clippy::let_and_return)]
@@ -5149,7 +5065,7 @@ impl UpdateFindingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFindings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5232,7 +5148,7 @@ impl UpdateFindingsInput {
             "UpdateFindings",
             "accessanalyzer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5313,26 +5229,14 @@ pub mod validate_policy_input {
             self.policy_document = input;
             self
         }
-        /// <p>The type of policy to validate. Identity policies grant permissions to IAM principals.
-        /// Identity policies include managed and inline policies for IAM roles, users, and groups.
-        /// They also include service-control policies (SCPs) that are attached to an Amazon Web Services
-        /// organization, organizational unit (OU), or an account.</p>
-        /// <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust
-        /// policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic
-        /// input such as identity policy or resource policy or a specific input such as managed policy
-        /// or Amazon S3 bucket policy. </p>
+        /// <p>The type of policy to validate. Identity policies grant permissions to IAM principals. Identity policies include managed and inline policies for IAM roles, users, and groups. They also include service-control policies (SCPs) that are attached to an Amazon Web Services organization, organizational unit (OU), or an account.</p>
+        /// <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as identity policy or resource policy or a specific input such as managed policy or Amazon S3 bucket policy. </p>
         pub fn policy_type(mut self, input: crate::model::PolicyType) -> Self {
             self.policy_type = Some(input);
             self
         }
-        /// <p>The type of policy to validate. Identity policies grant permissions to IAM principals.
-        /// Identity policies include managed and inline policies for IAM roles, users, and groups.
-        /// They also include service-control policies (SCPs) that are attached to an Amazon Web Services
-        /// organization, organizational unit (OU), or an account.</p>
-        /// <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust
-        /// policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic
-        /// input such as identity policy or resource policy or a specific input such as managed policy
-        /// or Amazon S3 bucket policy. </p>
+        /// <p>The type of policy to validate. Identity policies grant permissions to IAM principals. Identity policies include managed and inline policies for IAM roles, users, and groups. They also include service-control policies (SCPs) that are attached to an Amazon Web Services organization, organizational unit (OU), or an account.</p>
+        /// <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as identity policy or resource policy or a specific input such as managed policy or Amazon S3 bucket policy. </p>
         pub fn set_policy_type(
             mut self,
             input: std::option::Option<crate::model::PolicyType>,
@@ -5340,14 +5244,8 @@ pub mod validate_policy_input {
             self.policy_type = input;
             self
         }
-        /// <p>The type of resource to attach to your resource policy. Specify a value for the policy
-        /// validation resource type only if the policy type is <code>RESOURCE_POLICY</code>. For
-        /// example, to validate a resource policy to attach to an Amazon S3 bucket, you can choose
-        /// <code>AWS::S3::Bucket</code> for the policy validation resource type.</p>
-        /// <p>For resource types not supported as valid values, IAM Access Analyzer runs policy checks that
-        /// apply to all resource policies. For example, to validate a resource policy to attach to a
-        /// KMS key, do not specify a value for the policy validation resource type and IAM Access Analyzer
-        /// will run policy checks that apply to all resource policies.</p>
+        /// <p>The type of resource to attach to your resource policy. Specify a value for the policy validation resource type only if the policy type is <code>RESOURCE_POLICY</code>. For example, to validate a resource policy to attach to an Amazon S3 bucket, you can choose <code>AWS::S3::Bucket</code> for the policy validation resource type.</p>
+        /// <p>For resource types not supported as valid values, IAM Access Analyzer runs policy checks that apply to all resource policies. For example, to validate a resource policy to attach to a KMS key, do not specify a value for the policy validation resource type and IAM Access Analyzer will run policy checks that apply to all resource policies.</p>
         pub fn validate_policy_resource_type(
             mut self,
             input: crate::model::ValidatePolicyResourceType,
@@ -5355,14 +5253,8 @@ pub mod validate_policy_input {
             self.validate_policy_resource_type = Some(input);
             self
         }
-        /// <p>The type of resource to attach to your resource policy. Specify a value for the policy
-        /// validation resource type only if the policy type is <code>RESOURCE_POLICY</code>. For
-        /// example, to validate a resource policy to attach to an Amazon S3 bucket, you can choose
-        /// <code>AWS::S3::Bucket</code> for the policy validation resource type.</p>
-        /// <p>For resource types not supported as valid values, IAM Access Analyzer runs policy checks that
-        /// apply to all resource policies. For example, to validate a resource policy to attach to a
-        /// KMS key, do not specify a value for the policy validation resource type and IAM Access Analyzer
-        /// will run policy checks that apply to all resource policies.</p>
+        /// <p>The type of resource to attach to your resource policy. Specify a value for the policy validation resource type only if the policy type is <code>RESOURCE_POLICY</code>. For example, to validate a resource policy to attach to an Amazon S3 bucket, you can choose <code>AWS::S3::Bucket</code> for the policy validation resource type.</p>
+        /// <p>For resource types not supported as valid values, IAM Access Analyzer runs policy checks that apply to all resource policies. For example, to validate a resource policy to attach to a KMS key, do not specify a value for the policy validation resource type and IAM Access Analyzer will run policy checks that apply to all resource policies.</p>
         pub fn set_validate_policy_resource_type(
             mut self,
             input: std::option::Option<crate::model::ValidatePolicyResourceType>,
@@ -5391,7 +5283,7 @@ pub mod validate_policy_input {
 #[doc(hidden)]
 pub type ValidatePolicyInputOperationOutputAlias = crate::operation::ValidatePolicy;
 #[doc(hidden)]
-pub type ValidatePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ValidatePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ValidatePolicyInput {
     /// Consumes the builder and constructs an Operation<[`ValidatePolicy`](crate::operation::ValidatePolicy)>
     #[allow(clippy::let_and_return)]
@@ -5402,7 +5294,7 @@ impl ValidatePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ValidatePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5499,7 +5391,7 @@ impl ValidatePolicyInput {
             "ValidatePolicy",
             "accessanalyzer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5563,12 +5455,9 @@ impl std::fmt::Debug for ListAnalyzersInput {
 pub struct CreateAnalyzerInput {
     /// <p>The name of the analyzer to create.</p>
     pub analyzer_name: std::option::Option<std::string::String>,
-    /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported.
-    /// You can create only one analyzer per account per Region. You can create up to 5 analyzers
-    /// per organization per Region.</p>
+    /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
     pub r#type: std::option::Option<crate::model::Type>,
-    /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive
-    /// findings that meet the criteria you define for the rule.</p>
+    /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>
     pub archive_rules: std::option::Option<std::vec::Vec<crate::model::InlineArchiveRule>>,
     /// <p>The tags to apply to the analyzer.</p>
     pub tags:
@@ -5581,14 +5470,11 @@ impl CreateAnalyzerInput {
     pub fn analyzer_name(&self) -> std::option::Option<&str> {
         self.analyzer_name.as_deref()
     }
-    /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported.
-    /// You can create only one analyzer per account per Region. You can create up to 5 analyzers
-    /// per organization per Region.</p>
+    /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
         self.r#type.as_ref()
     }
-    /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive
-    /// findings that meet the criteria you define for the rule.</p>
+    /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>
     pub fn archive_rules(&self) -> std::option::Option<&[crate::model::InlineArchiveRule]> {
         self.archive_rules.as_deref()
     }
@@ -5790,8 +5676,7 @@ pub struct UpdateArchiveRuleInput {
     pub analyzer_name: std::option::Option<std::string::String>,
     /// <p>The name of the rule to update.</p>
     pub rule_name: std::option::Option<std::string::String>,
-    /// <p>A filter to match for the rules to update. Only rules that match the filter are
-    /// updated.</p>
+    /// <p>A filter to match for the rules to update. Only rules that match the filter are updated.</p>
     pub filter: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::Criterion>,
     >,
@@ -5807,8 +5692,7 @@ impl UpdateArchiveRuleInput {
     pub fn rule_name(&self) -> std::option::Option<&str> {
         self.rule_name.as_deref()
     }
-    /// <p>A filter to match for the rules to update. Only rules that match the filter are
-    /// updated.</p>
+    /// <p>A filter to match for the rules to update. Only rules that match the filter are updated.</p>
     pub fn filter(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Criterion>>
@@ -5871,23 +5755,11 @@ pub struct ValidatePolicyInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The JSON policy document to use as the content for the policy.</p>
     pub policy_document: std::option::Option<std::string::String>,
-    /// <p>The type of policy to validate. Identity policies grant permissions to IAM principals.
-    /// Identity policies include managed and inline policies for IAM roles, users, and groups.
-    /// They also include service-control policies (SCPs) that are attached to an Amazon Web Services
-    /// organization, organizational unit (OU), or an account.</p>
-    /// <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust
-    /// policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic
-    /// input such as identity policy or resource policy or a specific input such as managed policy
-    /// or Amazon S3 bucket policy. </p>
+    /// <p>The type of policy to validate. Identity policies grant permissions to IAM principals. Identity policies include managed and inline policies for IAM roles, users, and groups. They also include service-control policies (SCPs) that are attached to an Amazon Web Services organization, organizational unit (OU), or an account.</p>
+    /// <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as identity policy or resource policy or a specific input such as managed policy or Amazon S3 bucket policy. </p>
     pub policy_type: std::option::Option<crate::model::PolicyType>,
-    /// <p>The type of resource to attach to your resource policy. Specify a value for the policy
-    /// validation resource type only if the policy type is <code>RESOURCE_POLICY</code>. For
-    /// example, to validate a resource policy to attach to an Amazon S3 bucket, you can choose
-    /// <code>AWS::S3::Bucket</code> for the policy validation resource type.</p>
-    /// <p>For resource types not supported as valid values, IAM Access Analyzer runs policy checks that
-    /// apply to all resource policies. For example, to validate a resource policy to attach to a
-    /// KMS key, do not specify a value for the policy validation resource type and IAM Access Analyzer
-    /// will run policy checks that apply to all resource policies.</p>
+    /// <p>The type of resource to attach to your resource policy. Specify a value for the policy validation resource type only if the policy type is <code>RESOURCE_POLICY</code>. For example, to validate a resource policy to attach to an Amazon S3 bucket, you can choose <code>AWS::S3::Bucket</code> for the policy validation resource type.</p>
+    /// <p>For resource types not supported as valid values, IAM Access Analyzer runs policy checks that apply to all resource policies. For example, to validate a resource policy to attach to a KMS key, do not specify a value for the policy validation resource type and IAM Access Analyzer will run policy checks that apply to all resource policies.</p>
     pub validate_policy_resource_type:
         std::option::Option<crate::model::ValidatePolicyResourceType>,
 }
@@ -5908,25 +5780,13 @@ impl ValidatePolicyInput {
     pub fn policy_document(&self) -> std::option::Option<&str> {
         self.policy_document.as_deref()
     }
-    /// <p>The type of policy to validate. Identity policies grant permissions to IAM principals.
-    /// Identity policies include managed and inline policies for IAM roles, users, and groups.
-    /// They also include service-control policies (SCPs) that are attached to an Amazon Web Services
-    /// organization, organizational unit (OU), or an account.</p>
-    /// <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust
-    /// policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic
-    /// input such as identity policy or resource policy or a specific input such as managed policy
-    /// or Amazon S3 bucket policy. </p>
+    /// <p>The type of policy to validate. Identity policies grant permissions to IAM principals. Identity policies include managed and inline policies for IAM roles, users, and groups. They also include service-control policies (SCPs) that are attached to an Amazon Web Services organization, organizational unit (OU), or an account.</p>
+    /// <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as identity policy or resource policy or a specific input such as managed policy or Amazon S3 bucket policy. </p>
     pub fn policy_type(&self) -> std::option::Option<&crate::model::PolicyType> {
         self.policy_type.as_ref()
     }
-    /// <p>The type of resource to attach to your resource policy. Specify a value for the policy
-    /// validation resource type only if the policy type is <code>RESOURCE_POLICY</code>. For
-    /// example, to validate a resource policy to attach to an Amazon S3 bucket, you can choose
-    /// <code>AWS::S3::Bucket</code> for the policy validation resource type.</p>
-    /// <p>For resource types not supported as valid values, IAM Access Analyzer runs policy checks that
-    /// apply to all resource policies. For example, to validate a resource policy to attach to a
-    /// KMS key, do not specify a value for the policy validation resource type and IAM Access Analyzer
-    /// will run policy checks that apply to all resource policies.</p>
+    /// <p>The type of resource to attach to your resource policy. Specify a value for the policy validation resource type only if the policy type is <code>RESOURCE_POLICY</code>. For example, to validate a resource policy to attach to an Amazon S3 bucket, you can choose <code>AWS::S3::Bucket</code> for the policy validation resource type.</p>
+    /// <p>For resource types not supported as valid values, IAM Access Analyzer runs policy checks that apply to all resource policies. For example, to validate a resource policy to attach to a KMS key, do not specify a value for the policy validation resource type and IAM Access Analyzer will run policy checks that apply to all resource policies.</p>
     pub fn validate_policy_resource_type(
         &self,
     ) -> std::option::Option<&crate::model::ValidatePolicyResourceType> {
@@ -5953,12 +5813,9 @@ impl std::fmt::Debug for ValidatePolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFindingsInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-    /// the analyzer</a> that generated the findings to update.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the findings to update.</p>
     pub analyzer_arn: std::option::Option<std::string::String>,
-    /// <p>The state represents the action to take to update the finding Status. Use
-    /// <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use
-    /// <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
+    /// <p>The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
     pub status: std::option::Option<crate::model::FindingStatusUpdate>,
     /// <p>The IDs of the findings to update.</p>
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5968,14 +5825,11 @@ pub struct UpdateFindingsInput {
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateFindingsInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-    /// the analyzer</a> that generated the findings to update.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the findings to update.</p>
     pub fn analyzer_arn(&self) -> std::option::Option<&str> {
         self.analyzer_arn.as_deref()
     }
-    /// <p>The state represents the action to take to update the finding Status. Use
-    /// <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use
-    /// <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
+    /// <p>The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::FindingStatusUpdate> {
         self.status.as_ref()
     }
@@ -6068,17 +5922,13 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartResourceScanInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-    /// the analyzer</a> to use to scan the policies applied to the specified
-    /// resource.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to use to scan the policies applied to the specified resource.</p>
     pub analyzer_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the resource to scan.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl StartResourceScanInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-    /// the analyzer</a> to use to scan the policies applied to the specified
-    /// resource.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to use to scan the policies applied to the specified resource.</p>
     pub fn analyzer_arn(&self) -> std::option::Option<&str> {
         self.analyzer_arn.as_deref()
     }
@@ -6100,41 +5950,27 @@ impl std::fmt::Debug for StartResourceScanInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartPolicyGenerationInput {
-    /// <p>Contains the ARN of the IAM entity (user or role) for which you are generating a
-    /// policy.</p>
+    /// <p>Contains the ARN of the IAM entity (user or role) for which you are generating a policy.</p>
     pub policy_generation_details: std::option::Option<crate::model::PolicyGenerationDetails>,
-    /// <p>A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code>
-    /// that you want to analyze to generate policies.</p>
+    /// <p>A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to analyze to generate policies.</p>
     pub cloud_trail_details: std::option::Option<crate::model::CloudTrailDetails>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Idempotency ensures that an API request completes only once. With an idempotent
-    /// request, if the original request completes successfully, the subsequent retries with the
-    /// same client token return the result from the original successful request and they have no
-    /// additional effect.</p>
-    /// <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services
-    /// SDK.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries with the same client token return the result from the original successful request and they have no additional effect.</p>
+    /// <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services SDK.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl StartPolicyGenerationInput {
-    /// <p>Contains the ARN of the IAM entity (user or role) for which you are generating a
-    /// policy.</p>
+    /// <p>Contains the ARN of the IAM entity (user or role) for which you are generating a policy.</p>
     pub fn policy_generation_details(
         &self,
     ) -> std::option::Option<&crate::model::PolicyGenerationDetails> {
         self.policy_generation_details.as_ref()
     }
-    /// <p>A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code>
-    /// that you want to analyze to generate policies.</p>
+    /// <p>A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to analyze to generate policies.</p>
     pub fn cloud_trail_details(&self) -> std::option::Option<&crate::model::CloudTrailDetails> {
         self.cloud_trail_details.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Idempotency ensures that an API request completes only once. With an idempotent
-    /// request, if the original request completes successfully, the subsequent retries with the
-    /// same client token return the result from the original successful request and they have no
-    /// additional effect.</p>
-    /// <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services
-    /// SDK.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries with the same client token return the result from the original successful request and they have no additional effect.</p>
+    /// <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services SDK.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -6174,9 +6010,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPolicyGenerationsInput {
-    /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use
-    /// this with <code>ListGeneratedPolicies</code> to filter the results to only include results
-    /// for a specific principal.</p>
+    /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.</p>
     pub principal_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: std::option::Option<i32>,
@@ -6184,9 +6018,7 @@ pub struct ListPolicyGenerationsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPolicyGenerationsInput {
-    /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use
-    /// this with <code>ListGeneratedPolicies</code> to filter the results to only include results
-    /// for a specific principal.</p>
+    /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.</p>
     pub fn principal_arn(&self) -> std::option::Option<&str> {
         self.principal_arn.as_deref()
     }
@@ -6213,8 +6045,7 @@ impl std::fmt::Debug for ListPolicyGenerationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFindingsInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-    /// the analyzer</a> to retrieve findings from.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve findings from.</p>
     pub analyzer_arn: std::option::Option<std::string::String>,
     /// <p>A filter to match for the findings to return.</p>
     pub filter: std::option::Option<
@@ -6228,8 +6059,7 @@ pub struct ListFindingsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListFindingsInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-    /// the analyzer</a> to retrieve findings from.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve findings from.</p>
     pub fn analyzer_arn(&self) -> std::option::Option<&str> {
         self.analyzer_arn.as_deref()
     }
@@ -6269,8 +6099,7 @@ impl std::fmt::Debug for ListFindingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAnalyzedResourcesInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-    /// the analyzer</a> to retrieve a list of analyzed resources from.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve a list of analyzed resources from.</p>
     pub analyzer_arn: std::option::Option<std::string::String>,
     /// <p>The type of resource.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
@@ -6280,8 +6109,7 @@ pub struct ListAnalyzedResourcesInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListAnalyzedResourcesInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-    /// the analyzer</a> to retrieve a list of analyzed resources from.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve a list of analyzed resources from.</p>
     pub fn analyzer_arn(&self) -> std::option::Option<&str> {
         self.analyzer_arn.as_deref()
     }
@@ -6313,8 +6141,7 @@ impl std::fmt::Debug for ListAnalyzedResourcesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccessPreviewsInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-    /// the analyzer</a> used to generate the access preview.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
     pub analyzer_arn: std::option::Option<std::string::String>,
     /// <p>A token used for pagination of results returned.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -6322,8 +6149,7 @@ pub struct ListAccessPreviewsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListAccessPreviewsInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-    /// the analyzer</a> used to generate the access preview.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
     pub fn analyzer_arn(&self) -> std::option::Option<&str> {
         self.analyzer_arn.as_deref()
     }
@@ -6352,8 +6178,7 @@ impl std::fmt::Debug for ListAccessPreviewsInput {
 pub struct ListAccessPreviewFindingsInput {
     /// <p>The unique ID for the access preview.</p>
     pub access_preview_id: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-    /// the analyzer</a> used to generate the access.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access.</p>
     pub analyzer_arn: std::option::Option<std::string::String>,
     /// <p>Criteria to filter the returned findings.</p>
     pub filter: std::option::Option<
@@ -6369,8 +6194,7 @@ impl ListAccessPreviewFindingsInput {
     pub fn access_preview_id(&self) -> std::option::Option<&str> {
         self.access_preview_id.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-    /// the analyzer</a> used to generate the access.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access.</p>
     pub fn analyzer_arn(&self) -> std::option::Option<&str> {
         self.analyzer_arn.as_deref()
     }
@@ -6406,43 +6230,27 @@ impl std::fmt::Debug for ListAccessPreviewFindingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGeneratedPolicyInput {
-    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
-    /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
-    /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
-    /// the policy generation request.</p>
+    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The level of detail that you want to generate. You can specify whether to generate
-    /// policies with placeholders for resource ARNs for actions that support resource level
-    /// granularity in policies.</p>
-    /// <p>For example, in the resource section of a policy, you can receive a placeholder such as
-    /// <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of <code>"*"</code>.</p>
+    /// <p>The level of detail that you want to generate. You can specify whether to generate policies with placeholders for resource ARNs for actions that support resource level granularity in policies.</p>
+    /// <p>For example, in the resource section of a policy, you can receive a placeholder such as <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of <code>"*"</code>.</p>
     pub include_resource_placeholders: std::option::Option<bool>,
-    /// <p>The level of detail that you want to generate. You can specify whether to generate
-    /// service-level policies. </p>
-    /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have
-    /// been used recently to create this service-level template.</p>
+    /// <p>The level of detail that you want to generate. You can specify whether to generate service-level policies. </p>
+    /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have been used recently to create this service-level template.</p>
     pub include_service_level_template: std::option::Option<bool>,
 }
 impl GetGeneratedPolicyInput {
-    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
-    /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
-    /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
-    /// the policy generation request.</p>
+    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>The level of detail that you want to generate. You can specify whether to generate
-    /// policies with placeholders for resource ARNs for actions that support resource level
-    /// granularity in policies.</p>
-    /// <p>For example, in the resource section of a policy, you can receive a placeholder such as
-    /// <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of <code>"*"</code>.</p>
+    /// <p>The level of detail that you want to generate. You can specify whether to generate policies with placeholders for resource ARNs for actions that support resource level granularity in policies.</p>
+    /// <p>For example, in the resource section of a policy, you can receive a placeholder such as <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of <code>"*"</code>.</p>
     pub fn include_resource_placeholders(&self) -> std::option::Option<bool> {
         self.include_resource_placeholders
     }
-    /// <p>The level of detail that you want to generate. You can specify whether to generate
-    /// service-level policies. </p>
-    /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have
-    /// been used recently to create this service-level template.</p>
+    /// <p>The level of detail that you want to generate. You can specify whether to generate service-level policies. </p>
+    /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have been used recently to create this service-level template.</p>
     pub fn include_service_level_template(&self) -> std::option::Option<bool> {
         self.include_service_level_template
     }
@@ -6467,15 +6275,13 @@ impl std::fmt::Debug for GetGeneratedPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFindingInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-    /// the analyzer</a> that generated the finding.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the finding.</p>
     pub analyzer_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the finding to retrieve.</p>
     pub id: std::option::Option<std::string::String>,
 }
 impl GetFindingInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-    /// the analyzer</a> that generated the finding.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the finding.</p>
     pub fn analyzer_arn(&self) -> std::option::Option<&str> {
         self.analyzer_arn.as_deref()
     }
@@ -6497,15 +6303,13 @@ impl std::fmt::Debug for GetFindingInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAnalyzedResourceInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-    /// the analyzer</a> to retrieve information from.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve information from.</p>
     pub analyzer_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the resource to retrieve information about.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl GetAnalyzedResourceInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-    /// the analyzer</a> to retrieve information from.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve information from.</p>
     pub fn analyzer_arn(&self) -> std::option::Option<&str> {
         self.analyzer_arn.as_deref()
     }
@@ -6529,8 +6333,7 @@ impl std::fmt::Debug for GetAnalyzedResourceInput {
 pub struct GetAccessPreviewInput {
     /// <p>The unique ID for the access preview.</p>
     pub access_preview_id: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-    /// the analyzer</a> used to generate the access preview.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
     pub analyzer_arn: std::option::Option<std::string::String>,
 }
 impl GetAccessPreviewInput {
@@ -6538,8 +6341,7 @@ impl GetAccessPreviewInput {
     pub fn access_preview_id(&self) -> std::option::Option<&str> {
         self.access_preview_id.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-    /// the analyzer</a> used to generate the access preview.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
     pub fn analyzer_arn(&self) -> std::option::Option<&str> {
         self.analyzer_arn.as_deref()
     }
@@ -6557,15 +6359,9 @@ impl std::fmt::Debug for GetAccessPreviewInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccessPreviewInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-    /// the account analyzer</a> used to generate the access preview. You can only create an
-    /// access preview for analyzers with an <code>Account</code> type and <code>Active</code>
-    /// status.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the account analyzer</a> used to generate the access preview. You can only create an access preview for analyzers with an <code>Account</code> type and <code>Active</code> status.</p>
     pub analyzer_arn: std::option::Option<std::string::String>,
-    /// <p>Access control configuration for your resource that is used to generate the access
-    /// preview. The access preview includes findings for external access allowed to the resource
-    /// with the proposed access control configuration. The configuration must contain exactly one
-    /// element.</p>
+    /// <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
     pub configurations: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::Configuration>,
     >,
@@ -6573,17 +6369,11 @@ pub struct CreateAccessPreviewInput {
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateAccessPreviewInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-    /// the account analyzer</a> used to generate the access preview. You can only create an
-    /// access preview for analyzers with an <code>Account</code> type and <code>Active</code>
-    /// status.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the account analyzer</a> used to generate the access preview. You can only create an access preview for analyzers with an <code>Account</code> type and <code>Active</code> status.</p>
     pub fn analyzer_arn(&self) -> std::option::Option<&str> {
         self.analyzer_arn.as_deref()
     }
-    /// <p>Access control configuration for your resource that is used to generate the access
-    /// preview. The access preview includes findings for external access allowed to the resource
-    /// with the proposed access control configuration. The configuration must contain exactly one
-    /// element.</p>
+    /// <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
     pub fn configurations(
         &self,
     ) -> std::option::Option<
@@ -6610,17 +6400,11 @@ impl std::fmt::Debug for CreateAccessPreviewInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelPolicyGenerationInput {
-    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
-    /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
-    /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
-    /// the policy generation request.</p>
+    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl CancelPolicyGenerationInput {
-    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
-    /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
-    /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
-    /// the policy generation request.</p>
+    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }

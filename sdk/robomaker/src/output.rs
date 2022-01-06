@@ -9,8 +9,7 @@ pub struct UpdateWorldTemplateOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the world template was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The time, in milliseconds since the epoch, when the world template was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the world template was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateWorldTemplateOutput {
@@ -26,8 +25,7 @@ impl UpdateWorldTemplateOutput {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The time, in milliseconds since the epoch, when the world template was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the world template was last updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
@@ -87,14 +85,12 @@ pub mod update_world_template_output {
             self.created_at = input;
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the world template was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the world template was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the world template was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the world template was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -138,13 +134,11 @@ pub struct UpdateSimulationApplicationOutput {
     pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
     /// <p>The rendering engine for the simulation application.</p>
     pub rendering_engine: std::option::Option<crate::model::RenderingEngine>,
-    /// <p>The time, in milliseconds since the epoch, when the simulation application was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The revision id of the simulation application.</p>
     pub revision_id: std::option::Option<std::string::String>,
-    /// <p>The object that contains the Docker image URI used for your simulation
-    /// application.</p>
+    /// <p>The object that contains the Docker image URI used for your simulation application.</p>
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl UpdateSimulationApplicationOutput {
@@ -178,8 +172,7 @@ impl UpdateSimulationApplicationOutput {
     pub fn rendering_engine(&self) -> std::option::Option<&crate::model::RenderingEngine> {
         self.rendering_engine.as_ref()
     }
-    /// <p>The time, in milliseconds since the epoch, when the simulation application was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
@@ -187,8 +180,7 @@ impl UpdateSimulationApplicationOutput {
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
-    /// <p>The object that contains the Docker image URI used for your simulation
-    /// application.</p>
+    /// <p>The object that contains the Docker image URI used for your simulation application.</p>
     pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
         self.environment.as_ref()
     }
@@ -263,9 +255,9 @@ pub mod update_simulation_application_output {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// <p>The sources of the simulation application.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::Source>) -> Self {
+        pub fn sources(mut self, input: crate::model::Source) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -319,14 +311,12 @@ pub mod update_simulation_application_output {
             self.rendering_engine = input;
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation application was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation application was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -344,14 +334,12 @@ pub mod update_simulation_application_output {
             self.revision_id = input;
             self
         }
-        /// <p>The object that contains the Docker image URI used for your simulation
-        /// application.</p>
+        /// <p>The object that contains the Docker image URI used for your simulation application.</p>
         pub fn environment(mut self, input: crate::model::Environment) -> Self {
             self.environment = Some(input);
             self
         }
-        /// <p>The object that contains the Docker image URI used for your simulation
-        /// application.</p>
+        /// <p>The object that contains the Docker image URI used for your simulation application.</p>
         pub fn set_environment(
             mut self,
             input: std::option::Option<crate::model::Environment>,
@@ -397,8 +385,7 @@ pub struct UpdateRobotApplicationOutput {
     pub sources: std::option::Option<std::vec::Vec<crate::model::Source>>,
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
     pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
-    /// <p>The time, in milliseconds since the epoch, when the robot application was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The revision id of the robot application.</p>
     pub revision_id: std::option::Option<std::string::String>,
@@ -426,8 +413,7 @@ impl UpdateRobotApplicationOutput {
     pub fn robot_software_suite(&self) -> std::option::Option<&crate::model::RobotSoftwareSuite> {
         self.robot_software_suite.as_ref()
     }
-    /// <p>The time, in milliseconds since the epoch, when the robot application was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
@@ -505,9 +491,9 @@ pub mod update_robot_application_output {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// <p>The sources of the robot application.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::Source>) -> Self {
+        pub fn sources(mut self, input: crate::model::Source) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -532,14 +518,12 @@ pub mod update_robot_application_output {
             self.robot_software_suite = input;
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the robot application was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the robot application was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -671,64 +655,89 @@ pub struct SyncDeploymentJobOutput {
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The failure code if the job fails:</p>
     /// <dl>
-    /// <dt>InternalServiceError</dt>
+    /// <dt>
+    /// InternalServiceError
+    /// </dt>
     /// <dd>
     /// <p>Internal service error.</p>
     /// </dd>
-    /// <dt>RobotApplicationCrash</dt>
+    /// <dt>
+    /// RobotApplicationCrash
+    /// </dt>
     /// <dd>
     /// <p>Robot application exited abnormally.</p>
     /// </dd>
-    /// <dt>SimulationApplicationCrash</dt>
+    /// <dt>
+    /// SimulationApplicationCrash
+    /// </dt>
     /// <dd>
     /// <p> Simulation application exited abnormally.</p>
     /// </dd>
-    /// <dt>BadPermissionsRobotApplication</dt>
+    /// <dt>
+    /// BadPermissionsRobotApplication
+    /// </dt>
     /// <dd>
     /// <p>Robot application bundle could not be downloaded.</p>
     /// </dd>
-    /// <dt>BadPermissionsSimulationApplication</dt>
+    /// <dt>
+    /// BadPermissionsSimulationApplication
+    /// </dt>
     /// <dd>
     /// <p>Simulation application bundle could not be downloaded.</p>
     /// </dd>
-    /// <dt>BadPermissionsS3Output</dt>
+    /// <dt>
+    /// BadPermissionsS3Output
+    /// </dt>
     /// <dd>
     /// <p>Unable to publish outputs to customer-provided S3 bucket.</p>
     /// </dd>
-    /// <dt>BadPermissionsCloudwatchLogs</dt>
+    /// <dt>
+    /// BadPermissionsCloudwatchLogs
+    /// </dt>
     /// <dd>
     /// <p>Unable to publish logs to customer-provided CloudWatch Logs resource.</p>
     /// </dd>
-    /// <dt>SubnetIpLimitExceeded</dt>
+    /// <dt>
+    /// SubnetIpLimitExceeded
+    /// </dt>
     /// <dd>
     /// <p>Subnet IP limit exceeded.</p>
     /// </dd>
-    /// <dt>ENILimitExceeded</dt>
+    /// <dt>
+    /// ENILimitExceeded
+    /// </dt>
     /// <dd>
     /// <p>ENI limit exceeded.</p>
     /// </dd>
-    /// <dt>BadPermissionsUserCredentials</dt>
+    /// <dt>
+    /// BadPermissionsUserCredentials
+    /// </dt>
     /// <dd>
     /// <p>Unable to use the Role provided.</p>
     /// </dd>
-    /// <dt>InvalidBundleRobotApplication</dt>
+    /// <dt>
+    /// InvalidBundleRobotApplication
+    /// </dt>
     /// <dd>
-    /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other
-    /// issue).</p>
+    /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
     /// </dd>
-    /// <dt>InvalidBundleSimulationApplication</dt>
+    /// <dt>
+    /// InvalidBundleSimulationApplication
+    /// </dt>
     /// <dd>
-    /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other
-    /// issue).</p>
+    /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
     /// </dd>
-    /// <dt>RobotApplicationVersionMismatchedEtag</dt>
+    /// <dt>
+    /// RobotApplicationVersionMismatchedEtag
+    /// </dt>
     /// <dd>
     /// <p>Etag for RobotApplication does not match value during version creation.</p>
     /// </dd>
-    /// <dt>SimulationApplicationVersionMismatchedEtag</dt>
+    /// <dt>
+    /// SimulationApplicationVersionMismatchedEtag
+    /// </dt>
     /// <dd>
-    /// <p>Etag for SimulationApplication does not match value during version
-    /// creation.</p>
+    /// <p>Etag for SimulationApplication does not match value during version creation.</p>
     /// </dd>
     /// </dl>
     pub failure_code: std::option::Option<crate::model::DeploymentJobErrorCode>,
@@ -764,64 +773,89 @@ impl SyncDeploymentJobOutput {
     }
     /// <p>The failure code if the job fails:</p>
     /// <dl>
-    /// <dt>InternalServiceError</dt>
+    /// <dt>
+    /// InternalServiceError
+    /// </dt>
     /// <dd>
     /// <p>Internal service error.</p>
     /// </dd>
-    /// <dt>RobotApplicationCrash</dt>
+    /// <dt>
+    /// RobotApplicationCrash
+    /// </dt>
     /// <dd>
     /// <p>Robot application exited abnormally.</p>
     /// </dd>
-    /// <dt>SimulationApplicationCrash</dt>
+    /// <dt>
+    /// SimulationApplicationCrash
+    /// </dt>
     /// <dd>
     /// <p> Simulation application exited abnormally.</p>
     /// </dd>
-    /// <dt>BadPermissionsRobotApplication</dt>
+    /// <dt>
+    /// BadPermissionsRobotApplication
+    /// </dt>
     /// <dd>
     /// <p>Robot application bundle could not be downloaded.</p>
     /// </dd>
-    /// <dt>BadPermissionsSimulationApplication</dt>
+    /// <dt>
+    /// BadPermissionsSimulationApplication
+    /// </dt>
     /// <dd>
     /// <p>Simulation application bundle could not be downloaded.</p>
     /// </dd>
-    /// <dt>BadPermissionsS3Output</dt>
+    /// <dt>
+    /// BadPermissionsS3Output
+    /// </dt>
     /// <dd>
     /// <p>Unable to publish outputs to customer-provided S3 bucket.</p>
     /// </dd>
-    /// <dt>BadPermissionsCloudwatchLogs</dt>
+    /// <dt>
+    /// BadPermissionsCloudwatchLogs
+    /// </dt>
     /// <dd>
     /// <p>Unable to publish logs to customer-provided CloudWatch Logs resource.</p>
     /// </dd>
-    /// <dt>SubnetIpLimitExceeded</dt>
+    /// <dt>
+    /// SubnetIpLimitExceeded
+    /// </dt>
     /// <dd>
     /// <p>Subnet IP limit exceeded.</p>
     /// </dd>
-    /// <dt>ENILimitExceeded</dt>
+    /// <dt>
+    /// ENILimitExceeded
+    /// </dt>
     /// <dd>
     /// <p>ENI limit exceeded.</p>
     /// </dd>
-    /// <dt>BadPermissionsUserCredentials</dt>
+    /// <dt>
+    /// BadPermissionsUserCredentials
+    /// </dt>
     /// <dd>
     /// <p>Unable to use the Role provided.</p>
     /// </dd>
-    /// <dt>InvalidBundleRobotApplication</dt>
+    /// <dt>
+    /// InvalidBundleRobotApplication
+    /// </dt>
     /// <dd>
-    /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other
-    /// issue).</p>
+    /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
     /// </dd>
-    /// <dt>InvalidBundleSimulationApplication</dt>
+    /// <dt>
+    /// InvalidBundleSimulationApplication
+    /// </dt>
     /// <dd>
-    /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other
-    /// issue).</p>
+    /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
     /// </dd>
-    /// <dt>RobotApplicationVersionMismatchedEtag</dt>
+    /// <dt>
+    /// RobotApplicationVersionMismatchedEtag
+    /// </dt>
     /// <dd>
     /// <p>Etag for RobotApplication does not match value during version creation.</p>
     /// </dd>
-    /// <dt>SimulationApplicationVersionMismatchedEtag</dt>
+    /// <dt>
+    /// SimulationApplicationVersionMismatchedEtag
+    /// </dt>
     /// <dd>
-    /// <p>Etag for SimulationApplication does not match value during version
-    /// creation.</p>
+    /// <p>Etag for SimulationApplication does not match value during version creation.</p>
     /// </dd>
     /// </dl>
     pub fn failure_code(&self) -> std::option::Option<&crate::model::DeploymentJobErrorCode> {
@@ -919,10 +953,10 @@ pub mod sync_deployment_job_output {
         /// <p>Information about the deployment application configurations.</p>
         pub fn deployment_application_configs(
             mut self,
-            input: impl Into<crate::model::DeploymentApplicationConfig>,
+            input: crate::model::DeploymentApplicationConfig,
         ) -> Self {
             let mut v = self.deployment_application_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deployment_application_configs = Some(v);
             self
         }
@@ -949,64 +983,89 @@ pub mod sync_deployment_job_output {
         }
         /// <p>The failure code if the job fails:</p>
         /// <dl>
-        /// <dt>InternalServiceError</dt>
+        /// <dt>
+        /// InternalServiceError
+        /// </dt>
         /// <dd>
         /// <p>Internal service error.</p>
         /// </dd>
-        /// <dt>RobotApplicationCrash</dt>
+        /// <dt>
+        /// RobotApplicationCrash
+        /// </dt>
         /// <dd>
         /// <p>Robot application exited abnormally.</p>
         /// </dd>
-        /// <dt>SimulationApplicationCrash</dt>
+        /// <dt>
+        /// SimulationApplicationCrash
+        /// </dt>
         /// <dd>
         /// <p> Simulation application exited abnormally.</p>
         /// </dd>
-        /// <dt>BadPermissionsRobotApplication</dt>
+        /// <dt>
+        /// BadPermissionsRobotApplication
+        /// </dt>
         /// <dd>
         /// <p>Robot application bundle could not be downloaded.</p>
         /// </dd>
-        /// <dt>BadPermissionsSimulationApplication</dt>
+        /// <dt>
+        /// BadPermissionsSimulationApplication
+        /// </dt>
         /// <dd>
         /// <p>Simulation application bundle could not be downloaded.</p>
         /// </dd>
-        /// <dt>BadPermissionsS3Output</dt>
+        /// <dt>
+        /// BadPermissionsS3Output
+        /// </dt>
         /// <dd>
         /// <p>Unable to publish outputs to customer-provided S3 bucket.</p>
         /// </dd>
-        /// <dt>BadPermissionsCloudwatchLogs</dt>
+        /// <dt>
+        /// BadPermissionsCloudwatchLogs
+        /// </dt>
         /// <dd>
         /// <p>Unable to publish logs to customer-provided CloudWatch Logs resource.</p>
         /// </dd>
-        /// <dt>SubnetIpLimitExceeded</dt>
+        /// <dt>
+        /// SubnetIpLimitExceeded
+        /// </dt>
         /// <dd>
         /// <p>Subnet IP limit exceeded.</p>
         /// </dd>
-        /// <dt>ENILimitExceeded</dt>
+        /// <dt>
+        /// ENILimitExceeded
+        /// </dt>
         /// <dd>
         /// <p>ENI limit exceeded.</p>
         /// </dd>
-        /// <dt>BadPermissionsUserCredentials</dt>
+        /// <dt>
+        /// BadPermissionsUserCredentials
+        /// </dt>
         /// <dd>
         /// <p>Unable to use the Role provided.</p>
         /// </dd>
-        /// <dt>InvalidBundleRobotApplication</dt>
+        /// <dt>
+        /// InvalidBundleRobotApplication
+        /// </dt>
         /// <dd>
-        /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other
-        /// issue).</p>
+        /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
         /// </dd>
-        /// <dt>InvalidBundleSimulationApplication</dt>
+        /// <dt>
+        /// InvalidBundleSimulationApplication
+        /// </dt>
         /// <dd>
-        /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other
-        /// issue).</p>
+        /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
         /// </dd>
-        /// <dt>RobotApplicationVersionMismatchedEtag</dt>
+        /// <dt>
+        /// RobotApplicationVersionMismatchedEtag
+        /// </dt>
         /// <dd>
         /// <p>Etag for RobotApplication does not match value during version creation.</p>
         /// </dd>
-        /// <dt>SimulationApplicationVersionMismatchedEtag</dt>
+        /// <dt>
+        /// SimulationApplicationVersionMismatchedEtag
+        /// </dt>
         /// <dd>
-        /// <p>Etag for SimulationApplication does not match value during version
-        /// creation.</p>
+        /// <p>Etag for SimulationApplication does not match value during version creation.</p>
         /// </dd>
         /// </dl>
         pub fn failure_code(mut self, input: crate::model::DeploymentJobErrorCode) -> Self {
@@ -1015,64 +1074,89 @@ pub mod sync_deployment_job_output {
         }
         /// <p>The failure code if the job fails:</p>
         /// <dl>
-        /// <dt>InternalServiceError</dt>
+        /// <dt>
+        /// InternalServiceError
+        /// </dt>
         /// <dd>
         /// <p>Internal service error.</p>
         /// </dd>
-        /// <dt>RobotApplicationCrash</dt>
+        /// <dt>
+        /// RobotApplicationCrash
+        /// </dt>
         /// <dd>
         /// <p>Robot application exited abnormally.</p>
         /// </dd>
-        /// <dt>SimulationApplicationCrash</dt>
+        /// <dt>
+        /// SimulationApplicationCrash
+        /// </dt>
         /// <dd>
         /// <p> Simulation application exited abnormally.</p>
         /// </dd>
-        /// <dt>BadPermissionsRobotApplication</dt>
+        /// <dt>
+        /// BadPermissionsRobotApplication
+        /// </dt>
         /// <dd>
         /// <p>Robot application bundle could not be downloaded.</p>
         /// </dd>
-        /// <dt>BadPermissionsSimulationApplication</dt>
+        /// <dt>
+        /// BadPermissionsSimulationApplication
+        /// </dt>
         /// <dd>
         /// <p>Simulation application bundle could not be downloaded.</p>
         /// </dd>
-        /// <dt>BadPermissionsS3Output</dt>
+        /// <dt>
+        /// BadPermissionsS3Output
+        /// </dt>
         /// <dd>
         /// <p>Unable to publish outputs to customer-provided S3 bucket.</p>
         /// </dd>
-        /// <dt>BadPermissionsCloudwatchLogs</dt>
+        /// <dt>
+        /// BadPermissionsCloudwatchLogs
+        /// </dt>
         /// <dd>
         /// <p>Unable to publish logs to customer-provided CloudWatch Logs resource.</p>
         /// </dd>
-        /// <dt>SubnetIpLimitExceeded</dt>
+        /// <dt>
+        /// SubnetIpLimitExceeded
+        /// </dt>
         /// <dd>
         /// <p>Subnet IP limit exceeded.</p>
         /// </dd>
-        /// <dt>ENILimitExceeded</dt>
+        /// <dt>
+        /// ENILimitExceeded
+        /// </dt>
         /// <dd>
         /// <p>ENI limit exceeded.</p>
         /// </dd>
-        /// <dt>BadPermissionsUserCredentials</dt>
+        /// <dt>
+        /// BadPermissionsUserCredentials
+        /// </dt>
         /// <dd>
         /// <p>Unable to use the Role provided.</p>
         /// </dd>
-        /// <dt>InvalidBundleRobotApplication</dt>
+        /// <dt>
+        /// InvalidBundleRobotApplication
+        /// </dt>
         /// <dd>
-        /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other
-        /// issue).</p>
+        /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
         /// </dd>
-        /// <dt>InvalidBundleSimulationApplication</dt>
+        /// <dt>
+        /// InvalidBundleSimulationApplication
+        /// </dt>
         /// <dd>
-        /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other
-        /// issue).</p>
+        /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
         /// </dd>
-        /// <dt>RobotApplicationVersionMismatchedEtag</dt>
+        /// <dt>
+        /// RobotApplicationVersionMismatchedEtag
+        /// </dt>
         /// <dd>
         /// <p>Etag for RobotApplication does not match value during version creation.</p>
         /// </dd>
-        /// <dt>SimulationApplicationVersionMismatchedEtag</dt>
+        /// <dt>
+        /// SimulationApplicationVersionMismatchedEtag
+        /// </dt>
         /// <dd>
-        /// <p>Etag for SimulationApplication does not match value during version
-        /// creation.</p>
+        /// <p>Etag for SimulationApplication does not match value during version creation.</p>
         /// </dd>
         /// </dl>
         pub fn set_failure_code(
@@ -1125,60 +1209,66 @@ pub struct StartSimulationJobBatchOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of the simulation job batch.</p>
     /// <dl>
-    /// <dt>Pending</dt>
+    /// <dt>
+    /// Pending
+    /// </dt>
     /// <dd>
     /// <p>The simulation job batch request is pending.</p>
     /// </dd>
-    /// <dt>InProgress</dt>
+    /// <dt>
+    /// InProgress
+    /// </dt>
     /// <dd>
     /// <p>The simulation job batch is in progress. </p>
     /// </dd>
-    /// <dt>Failed</dt>
+    /// <dt>
+    /// Failed
+    /// </dt>
     /// <dd>
-    /// <p>The simulation job batch failed. One or more simulation job requests could not
-    /// be completed due to an internal failure (like <code>InternalServiceError</code>).
-    /// See <code>failureCode</code> and <code>failureReason</code> for more
-    /// information.</p>
+    /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p>
     /// </dd>
-    /// <dt>Completed</dt>
+    /// <dt>
+    /// Completed
+    /// </dt>
     /// <dd>
-    /// <p>The simulation batch job completed. A batch is complete when (1) there are no
-    /// pending simulation job requests in the batch and none of the failed simulation job
-    /// requests are due to <code>InternalServiceError</code> and (2) when all created
-    /// simulation jobs have reached a terminal state (for example, <code>Completed</code>
-    /// or <code>Failed</code>). </p>
+    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
     /// </dd>
-    /// <dt>Canceled</dt>
+    /// <dt>
+    /// Canceled
+    /// </dt>
     /// <dd>
     /// <p>The simulation batch job was cancelled.</p>
     /// </dd>
-    /// <dt>Canceling</dt>
+    /// <dt>
+    /// Canceling
+    /// </dt>
     /// <dd>
     /// <p>The simulation batch job is being cancelled.</p>
     /// </dd>
-    /// <dt>Completing</dt>
+    /// <dt>
+    /// Completing
+    /// </dt>
     /// <dd>
     /// <p>The simulation batch job is completing.</p>
     /// </dd>
-    /// <dt>TimingOut</dt>
+    /// <dt>
+    /// TimingOut
+    /// </dt>
     /// <dd>
     /// <p>The simulation job batch is timing out.</p>
-    /// <p>If a batch timing out, and there are pending requests that were failing due to
-    /// an internal failure (like <code>InternalServiceError</code>), the batch status
-    /// will be <code>Failed</code>. If there are no such failing request, the batch
-    /// status will be <code>TimedOut</code>. </p>
+    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
     /// </dd>
-    /// <dt>TimedOut</dt>
+    /// <dt>
+    /// TimedOut
+    /// </dt>
     /// <dd>
     /// <p>The simulation batch job timed out.</p>
     /// </dd>
     /// </dl>
     pub status: std::option::Option<crate::model::SimulationJobBatchStatus>,
-    /// <p>The time, in milliseconds since the epoch, when the simulation job batch was
-    /// created.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The batch policy.</p>
     pub batch_policy: std::option::Option<crate::model::BatchPolicy>,
@@ -1186,17 +1276,14 @@ pub struct StartSimulationJobBatchOutput {
     pub failure_code: std::option::Option<crate::model::SimulationJobBatchErrorCode>,
     /// <p>The reason the simulation job batch failed.</p>
     pub failure_reason: std::option::Option<std::string::String>,
-    /// <p>A list of failed simulation job requests. The request failed to be created into a
-    /// simulation job. Failed requests do not have a simulation job ID. </p>
+    /// <p>A list of failed simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID. </p>
     pub failed_requests:
         std::option::Option<std::vec::Vec<crate::model::FailedCreateSimulationJobRequest>>,
-    /// <p>A list of pending simulation job requests. These requests have not yet been created into
-    /// simulation jobs.</p>
+    /// <p>A list of pending simulation job requests. These requests have not yet been created into simulation jobs.</p>
     pub pending_requests: std::option::Option<std::vec::Vec<crate::model::SimulationJobRequest>>,
     /// <p>A list of created simulation job request summaries.</p>
     pub created_requests: std::option::Option<std::vec::Vec<crate::model::SimulationJobSummary>>,
-    /// <p>A map that contains tag keys and tag values that are attached to the deployment job
-    /// batch.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1207,50 +1294,58 @@ impl StartSimulationJobBatchOutput {
     }
     /// <p>The status of the simulation job batch.</p>
     /// <dl>
-    /// <dt>Pending</dt>
+    /// <dt>
+    /// Pending
+    /// </dt>
     /// <dd>
     /// <p>The simulation job batch request is pending.</p>
     /// </dd>
-    /// <dt>InProgress</dt>
+    /// <dt>
+    /// InProgress
+    /// </dt>
     /// <dd>
     /// <p>The simulation job batch is in progress. </p>
     /// </dd>
-    /// <dt>Failed</dt>
+    /// <dt>
+    /// Failed
+    /// </dt>
     /// <dd>
-    /// <p>The simulation job batch failed. One or more simulation job requests could not
-    /// be completed due to an internal failure (like <code>InternalServiceError</code>).
-    /// See <code>failureCode</code> and <code>failureReason</code> for more
-    /// information.</p>
+    /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p>
     /// </dd>
-    /// <dt>Completed</dt>
+    /// <dt>
+    /// Completed
+    /// </dt>
     /// <dd>
-    /// <p>The simulation batch job completed. A batch is complete when (1) there are no
-    /// pending simulation job requests in the batch and none of the failed simulation job
-    /// requests are due to <code>InternalServiceError</code> and (2) when all created
-    /// simulation jobs have reached a terminal state (for example, <code>Completed</code>
-    /// or <code>Failed</code>). </p>
+    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
     /// </dd>
-    /// <dt>Canceled</dt>
+    /// <dt>
+    /// Canceled
+    /// </dt>
     /// <dd>
     /// <p>The simulation batch job was cancelled.</p>
     /// </dd>
-    /// <dt>Canceling</dt>
+    /// <dt>
+    /// Canceling
+    /// </dt>
     /// <dd>
     /// <p>The simulation batch job is being cancelled.</p>
     /// </dd>
-    /// <dt>Completing</dt>
+    /// <dt>
+    /// Completing
+    /// </dt>
     /// <dd>
     /// <p>The simulation batch job is completing.</p>
     /// </dd>
-    /// <dt>TimingOut</dt>
+    /// <dt>
+    /// TimingOut
+    /// </dt>
     /// <dd>
     /// <p>The simulation job batch is timing out.</p>
-    /// <p>If a batch timing out, and there are pending requests that were failing due to
-    /// an internal failure (like <code>InternalServiceError</code>), the batch status
-    /// will be <code>Failed</code>. If there are no such failing request, the batch
-    /// status will be <code>TimedOut</code>. </p>
+    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
     /// </dd>
-    /// <dt>TimedOut</dt>
+    /// <dt>
+    /// TimedOut
+    /// </dt>
     /// <dd>
     /// <p>The simulation batch job timed out.</p>
     /// </dd>
@@ -1258,13 +1353,11 @@ impl StartSimulationJobBatchOutput {
     pub fn status(&self) -> std::option::Option<&crate::model::SimulationJobBatchStatus> {
         self.status.as_ref()
     }
-    /// <p>The time, in milliseconds since the epoch, when the simulation job batch was
-    /// created.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -1280,15 +1373,13 @@ impl StartSimulationJobBatchOutput {
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>A list of failed simulation job requests. The request failed to be created into a
-    /// simulation job. Failed requests do not have a simulation job ID. </p>
+    /// <p>A list of failed simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID. </p>
     pub fn failed_requests(
         &self,
     ) -> std::option::Option<&[crate::model::FailedCreateSimulationJobRequest]> {
         self.failed_requests.as_deref()
     }
-    /// <p>A list of pending simulation job requests. These requests have not yet been created into
-    /// simulation jobs.</p>
+    /// <p>A list of pending simulation job requests. These requests have not yet been created into simulation jobs.</p>
     pub fn pending_requests(&self) -> std::option::Option<&[crate::model::SimulationJobRequest]> {
         self.pending_requests.as_deref()
     }
@@ -1296,8 +1387,7 @@ impl StartSimulationJobBatchOutput {
     pub fn created_requests(&self) -> std::option::Option<&[crate::model::SimulationJobSummary]> {
         self.created_requests.as_deref()
     }
-    /// <p>A map that contains tag keys and tag values that are attached to the deployment job
-    /// batch.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1358,50 +1448,58 @@ pub mod start_simulation_job_batch_output {
         }
         /// <p>The status of the simulation job batch.</p>
         /// <dl>
-        /// <dt>Pending</dt>
+        /// <dt>
+        /// Pending
+        /// </dt>
         /// <dd>
         /// <p>The simulation job batch request is pending.</p>
         /// </dd>
-        /// <dt>InProgress</dt>
+        /// <dt>
+        /// InProgress
+        /// </dt>
         /// <dd>
         /// <p>The simulation job batch is in progress. </p>
         /// </dd>
-        /// <dt>Failed</dt>
+        /// <dt>
+        /// Failed
+        /// </dt>
         /// <dd>
-        /// <p>The simulation job batch failed. One or more simulation job requests could not
-        /// be completed due to an internal failure (like <code>InternalServiceError</code>).
-        /// See <code>failureCode</code> and <code>failureReason</code> for more
-        /// information.</p>
+        /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p>
         /// </dd>
-        /// <dt>Completed</dt>
+        /// <dt>
+        /// Completed
+        /// </dt>
         /// <dd>
-        /// <p>The simulation batch job completed. A batch is complete when (1) there are no
-        /// pending simulation job requests in the batch and none of the failed simulation job
-        /// requests are due to <code>InternalServiceError</code> and (2) when all created
-        /// simulation jobs have reached a terminal state (for example, <code>Completed</code>
-        /// or <code>Failed</code>). </p>
+        /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
         /// </dd>
-        /// <dt>Canceled</dt>
+        /// <dt>
+        /// Canceled
+        /// </dt>
         /// <dd>
         /// <p>The simulation batch job was cancelled.</p>
         /// </dd>
-        /// <dt>Canceling</dt>
+        /// <dt>
+        /// Canceling
+        /// </dt>
         /// <dd>
         /// <p>The simulation batch job is being cancelled.</p>
         /// </dd>
-        /// <dt>Completing</dt>
+        /// <dt>
+        /// Completing
+        /// </dt>
         /// <dd>
         /// <p>The simulation batch job is completing.</p>
         /// </dd>
-        /// <dt>TimingOut</dt>
+        /// <dt>
+        /// TimingOut
+        /// </dt>
         /// <dd>
         /// <p>The simulation job batch is timing out.</p>
-        /// <p>If a batch timing out, and there are pending requests that were failing due to
-        /// an internal failure (like <code>InternalServiceError</code>), the batch status
-        /// will be <code>Failed</code>. If there are no such failing request, the batch
-        /// status will be <code>TimedOut</code>. </p>
+        /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
         /// </dd>
-        /// <dt>TimedOut</dt>
+        /// <dt>
+        /// TimedOut
+        /// </dt>
         /// <dd>
         /// <p>The simulation batch job timed out.</p>
         /// </dd>
@@ -1412,50 +1510,58 @@ pub mod start_simulation_job_batch_output {
         }
         /// <p>The status of the simulation job batch.</p>
         /// <dl>
-        /// <dt>Pending</dt>
+        /// <dt>
+        /// Pending
+        /// </dt>
         /// <dd>
         /// <p>The simulation job batch request is pending.</p>
         /// </dd>
-        /// <dt>InProgress</dt>
+        /// <dt>
+        /// InProgress
+        /// </dt>
         /// <dd>
         /// <p>The simulation job batch is in progress. </p>
         /// </dd>
-        /// <dt>Failed</dt>
+        /// <dt>
+        /// Failed
+        /// </dt>
         /// <dd>
-        /// <p>The simulation job batch failed. One or more simulation job requests could not
-        /// be completed due to an internal failure (like <code>InternalServiceError</code>).
-        /// See <code>failureCode</code> and <code>failureReason</code> for more
-        /// information.</p>
+        /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p>
         /// </dd>
-        /// <dt>Completed</dt>
+        /// <dt>
+        /// Completed
+        /// </dt>
         /// <dd>
-        /// <p>The simulation batch job completed. A batch is complete when (1) there are no
-        /// pending simulation job requests in the batch and none of the failed simulation job
-        /// requests are due to <code>InternalServiceError</code> and (2) when all created
-        /// simulation jobs have reached a terminal state (for example, <code>Completed</code>
-        /// or <code>Failed</code>). </p>
+        /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
         /// </dd>
-        /// <dt>Canceled</dt>
+        /// <dt>
+        /// Canceled
+        /// </dt>
         /// <dd>
         /// <p>The simulation batch job was cancelled.</p>
         /// </dd>
-        /// <dt>Canceling</dt>
+        /// <dt>
+        /// Canceling
+        /// </dt>
         /// <dd>
         /// <p>The simulation batch job is being cancelled.</p>
         /// </dd>
-        /// <dt>Completing</dt>
+        /// <dt>
+        /// Completing
+        /// </dt>
         /// <dd>
         /// <p>The simulation batch job is completing.</p>
         /// </dd>
-        /// <dt>TimingOut</dt>
+        /// <dt>
+        /// TimingOut
+        /// </dt>
         /// <dd>
         /// <p>The simulation job batch is timing out.</p>
-        /// <p>If a batch timing out, and there are pending requests that were failing due to
-        /// an internal failure (like <code>InternalServiceError</code>), the batch status
-        /// will be <code>Failed</code>. If there are no such failing request, the batch
-        /// status will be <code>TimedOut</code>. </p>
+        /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
         /// </dd>
-        /// <dt>TimedOut</dt>
+        /// <dt>
+        /// TimedOut
+        /// </dt>
         /// <dd>
         /// <p>The simulation batch job timed out.</p>
         /// </dd>
@@ -1467,14 +1573,12 @@ pub mod start_simulation_job_batch_output {
             self.status = input;
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation job batch was
-        /// created.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation job batch was
-        /// created.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
         pub fn set_created_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1482,14 +1586,12 @@ pub mod start_simulation_job_batch_output {
             self.created_at = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1540,19 +1642,17 @@ pub mod start_simulation_job_batch_output {
         ///
         /// To override the contents of this collection use [`set_failed_requests`](Self::set_failed_requests).
         ///
-        /// <p>A list of failed simulation job requests. The request failed to be created into a
-        /// simulation job. Failed requests do not have a simulation job ID. </p>
+        /// <p>A list of failed simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID. </p>
         pub fn failed_requests(
             mut self,
-            input: impl Into<crate::model::FailedCreateSimulationJobRequest>,
+            input: crate::model::FailedCreateSimulationJobRequest,
         ) -> Self {
             let mut v = self.failed_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_requests = Some(v);
             self
         }
-        /// <p>A list of failed simulation job requests. The request failed to be created into a
-        /// simulation job. Failed requests do not have a simulation job ID. </p>
+        /// <p>A list of failed simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID. </p>
         pub fn set_failed_requests(
             mut self,
             input: std::option::Option<
@@ -1566,19 +1666,14 @@ pub mod start_simulation_job_batch_output {
         ///
         /// To override the contents of this collection use [`set_pending_requests`](Self::set_pending_requests).
         ///
-        /// <p>A list of pending simulation job requests. These requests have not yet been created into
-        /// simulation jobs.</p>
-        pub fn pending_requests(
-            mut self,
-            input: impl Into<crate::model::SimulationJobRequest>,
-        ) -> Self {
+        /// <p>A list of pending simulation job requests. These requests have not yet been created into simulation jobs.</p>
+        pub fn pending_requests(mut self, input: crate::model::SimulationJobRequest) -> Self {
             let mut v = self.pending_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pending_requests = Some(v);
             self
         }
-        /// <p>A list of pending simulation job requests. These requests have not yet been created into
-        /// simulation jobs.</p>
+        /// <p>A list of pending simulation job requests. These requests have not yet been created into simulation jobs.</p>
         pub fn set_pending_requests(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SimulationJobRequest>>,
@@ -1591,12 +1686,9 @@ pub mod start_simulation_job_batch_output {
         /// To override the contents of this collection use [`set_created_requests`](Self::set_created_requests).
         ///
         /// <p>A list of created simulation job request summaries.</p>
-        pub fn created_requests(
-            mut self,
-            input: impl Into<crate::model::SimulationJobSummary>,
-        ) -> Self {
+        pub fn created_requests(mut self, input: crate::model::SimulationJobSummary) -> Self {
             let mut v = self.created_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.created_requests = Some(v);
             self
         }
@@ -1612,8 +1704,7 @@ pub mod start_simulation_job_batch_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the deployment job
-        /// batch.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1624,8 +1715,7 @@ pub mod start_simulation_job_batch_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the deployment job
-        /// batch.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1769,11 +1859,7 @@ impl RegisterRobotOutput {
 pub struct ListWorldTemplatesOutput {
     /// <p>Summary information for templates.</p>
     pub template_summaries: std::option::Option<std::vec::Vec<crate::model::TemplateSummary>>,
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListWorldTemplates</code> again and assign that token to
-    /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-    /// the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWorldTemplatesOutput {
@@ -1781,11 +1867,7 @@ impl ListWorldTemplatesOutput {
     pub fn template_summaries(&self) -> std::option::Option<&[crate::model::TemplateSummary]> {
         self.template_summaries.as_deref()
     }
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListWorldTemplates</code> again and assign that token to
-    /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-    /// the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1814,12 +1896,9 @@ pub mod list_world_templates_output {
         /// To override the contents of this collection use [`set_template_summaries`](Self::set_template_summaries).
         ///
         /// <p>Summary information for templates.</p>
-        pub fn template_summaries(
-            mut self,
-            input: impl Into<crate::model::TemplateSummary>,
-        ) -> Self {
+        pub fn template_summaries(mut self, input: crate::model::TemplateSummary) -> Self {
             let mut v = self.template_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.template_summaries = Some(v);
             self
         }
@@ -1831,20 +1910,12 @@ pub mod list_world_templates_output {
             self.template_summaries = input;
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorldTemplates</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorldTemplates</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1871,11 +1942,7 @@ impl ListWorldTemplatesOutput {
 pub struct ListWorldsOutput {
     /// <p>Summary information for worlds.</p>
     pub world_summaries: std::option::Option<std::vec::Vec<crate::model::WorldSummary>>,
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListWorlds</code> again and assign that token to the
-    /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-    /// previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorlds</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWorldsOutput {
@@ -1883,11 +1950,7 @@ impl ListWorldsOutput {
     pub fn world_summaries(&self) -> std::option::Option<&[crate::model::WorldSummary]> {
         self.world_summaries.as_deref()
     }
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListWorlds</code> again and assign that token to the
-    /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-    /// previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorlds</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1915,9 +1978,9 @@ pub mod list_worlds_output {
         /// To override the contents of this collection use [`set_world_summaries`](Self::set_world_summaries).
         ///
         /// <p>Summary information for worlds.</p>
-        pub fn world_summaries(mut self, input: impl Into<crate::model::WorldSummary>) -> Self {
+        pub fn world_summaries(mut self, input: crate::model::WorldSummary) -> Self {
             let mut v = self.world_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.world_summaries = Some(v);
             self
         }
@@ -1929,20 +1992,12 @@ pub mod list_worlds_output {
             self.world_summaries = input;
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorlds</code> again and assign that token to the
-        /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-        /// previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorlds</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorlds</code> again and assign that token to the
-        /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-        /// previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorlds</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1970,11 +2025,7 @@ pub struct ListWorldGenerationJobsOutput {
     /// <p>Summary information for world generator jobs.</p>
     pub world_generation_job_summaries:
         std::option::Option<std::vec::Vec<crate::model::WorldGenerationJobSummary>>,
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListWorldGeneratorJobsRequest</code> again and assign that
-    /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
-    /// results, the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGeneratorJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWorldGenerationJobsOutput {
@@ -1984,11 +2035,7 @@ impl ListWorldGenerationJobsOutput {
     ) -> std::option::Option<&[crate::model::WorldGenerationJobSummary]> {
         self.world_generation_job_summaries.as_deref()
     }
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListWorldGeneratorJobsRequest</code> again and assign that
-    /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
-    /// results, the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGeneratorJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2022,10 +2069,10 @@ pub mod list_world_generation_jobs_output {
         /// <p>Summary information for world generator jobs.</p>
         pub fn world_generation_job_summaries(
             mut self,
-            input: impl Into<crate::model::WorldGenerationJobSummary>,
+            input: crate::model::WorldGenerationJobSummary,
         ) -> Self {
             let mut v = self.world_generation_job_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.world_generation_job_summaries = Some(v);
             self
         }
@@ -2037,20 +2084,12 @@ pub mod list_world_generation_jobs_output {
             self.world_generation_job_summaries = input;
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorldGeneratorJobsRequest</code> again and assign that
-        /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
-        /// results, the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGeneratorJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorldGeneratorJobsRequest</code> again and assign that
-        /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
-        /// results, the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGeneratorJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2078,11 +2117,7 @@ pub struct ListWorldExportJobsOutput {
     /// <p>Summary information for world export jobs.</p>
     pub world_export_job_summaries:
         std::option::Option<std::vec::Vec<crate::model::WorldExportJobSummary>>,
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListWorldExportJobsRequest</code> again and assign that
-    /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
-    /// results, the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWorldExportJobsOutput {
@@ -2092,11 +2127,7 @@ impl ListWorldExportJobsOutput {
     ) -> std::option::Option<&[crate::model::WorldExportJobSummary]> {
         self.world_export_job_summaries.as_deref()
     }
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListWorldExportJobsRequest</code> again and assign that
-    /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
-    /// results, the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2130,10 +2161,10 @@ pub mod list_world_export_jobs_output {
         /// <p>Summary information for world export jobs.</p>
         pub fn world_export_job_summaries(
             mut self,
-            input: impl Into<crate::model::WorldExportJobSummary>,
+            input: crate::model::WorldExportJobSummary,
         ) -> Self {
             let mut v = self.world_export_job_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.world_export_job_summaries = Some(v);
             self
         }
@@ -2145,20 +2176,12 @@ pub mod list_world_export_jobs_output {
             self.world_export_job_summaries = input;
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorldExportJobsRequest</code> again and assign that
-        /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
-        /// results, the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorldExportJobsRequest</code> again and assign that
-        /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
-        /// results, the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2259,11 +2282,7 @@ pub struct ListSimulationJobsOutput {
     /// <p>A list of simulation job summaries that meet the criteria of the request.</p>
     pub simulation_job_summaries:
         std::option::Option<std::vec::Vec<crate::model::SimulationJobSummary>>,
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListSimulationJobs</code> again and assign that token to
-    /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-    /// the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSimulationJobsOutput {
@@ -2273,11 +2292,7 @@ impl ListSimulationJobsOutput {
     ) -> std::option::Option<&[crate::model::SimulationJobSummary]> {
         self.simulation_job_summaries.as_deref()
     }
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListSimulationJobs</code> again and assign that token to
-    /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-    /// the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2308,10 +2323,10 @@ pub mod list_simulation_jobs_output {
         /// <p>A list of simulation job summaries that meet the criteria of the request.</p>
         pub fn simulation_job_summaries(
             mut self,
-            input: impl Into<crate::model::SimulationJobSummary>,
+            input: crate::model::SimulationJobSummary,
         ) -> Self {
             let mut v = self.simulation_job_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.simulation_job_summaries = Some(v);
             self
         }
@@ -2323,20 +2338,12 @@ pub mod list_simulation_jobs_output {
             self.simulation_job_summaries = input;
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListSimulationJobs</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListSimulationJobs</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2364,11 +2371,7 @@ pub struct ListSimulationJobBatchesOutput {
     /// <p>A list of simulation job batch summaries.</p>
     pub simulation_job_batch_summaries:
         std::option::Option<std::vec::Vec<crate::model::SimulationJobBatchSummary>>,
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListSimulationJobBatches</code> again and assign that token
-    /// to the request object's <code>nextToken</code> parameter. If there are no remaining
-    /// results, the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSimulationJobBatchesOutput {
@@ -2378,11 +2381,7 @@ impl ListSimulationJobBatchesOutput {
     ) -> std::option::Option<&[crate::model::SimulationJobBatchSummary]> {
         self.simulation_job_batch_summaries.as_deref()
     }
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListSimulationJobBatches</code> again and assign that token
-    /// to the request object's <code>nextToken</code> parameter. If there are no remaining
-    /// results, the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2416,10 +2415,10 @@ pub mod list_simulation_job_batches_output {
         /// <p>A list of simulation job batch summaries.</p>
         pub fn simulation_job_batch_summaries(
             mut self,
-            input: impl Into<crate::model::SimulationJobBatchSummary>,
+            input: crate::model::SimulationJobBatchSummary,
         ) -> Self {
             let mut v = self.simulation_job_batch_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.simulation_job_batch_summaries = Some(v);
             self
         }
@@ -2431,20 +2430,12 @@ pub mod list_simulation_job_batches_output {
             self.simulation_job_batch_summaries = input;
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListSimulationJobBatches</code> again and assign that token
-        /// to the request object's <code>nextToken</code> parameter. If there are no remaining
-        /// results, the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListSimulationJobBatches</code> again and assign that token
-        /// to the request object's <code>nextToken</code> parameter. If there are no remaining
-        /// results, the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2472,11 +2463,7 @@ pub struct ListSimulationApplicationsOutput {
     /// <p>A list of simulation application summaries that meet the criteria of the request.</p>
     pub simulation_application_summaries:
         std::option::Option<std::vec::Vec<crate::model::SimulationApplicationSummary>>,
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListSimulationApplications</code> again and assign that
-    /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
-    /// results, the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSimulationApplicationsOutput {
@@ -2486,11 +2473,7 @@ impl ListSimulationApplicationsOutput {
     ) -> std::option::Option<&[crate::model::SimulationApplicationSummary]> {
         self.simulation_application_summaries.as_deref()
     }
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListSimulationApplications</code> again and assign that
-    /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
-    /// results, the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2524,10 +2507,10 @@ pub mod list_simulation_applications_output {
         /// <p>A list of simulation application summaries that meet the criteria of the request.</p>
         pub fn simulation_application_summaries(
             mut self,
-            input: impl Into<crate::model::SimulationApplicationSummary>,
+            input: crate::model::SimulationApplicationSummary,
         ) -> Self {
             let mut v = self.simulation_application_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.simulation_application_summaries = Some(v);
             self
         }
@@ -2539,20 +2522,12 @@ pub mod list_simulation_applications_output {
             self.simulation_application_summaries = input;
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListSimulationApplications</code> again and assign that
-        /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
-        /// results, the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListSimulationApplications</code> again and assign that
-        /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
-        /// results, the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2579,11 +2554,7 @@ impl ListSimulationApplicationsOutput {
 pub struct ListRobotsOutput {
     /// <p>A list of robots that meet the criteria of the request.</p>
     pub robots: std::option::Option<std::vec::Vec<crate::model::Robot>>,
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListRobots</code> again and assign that token to the
-    /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-    /// previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRobotsOutput {
@@ -2591,11 +2562,7 @@ impl ListRobotsOutput {
     pub fn robots(&self) -> std::option::Option<&[crate::model::Robot]> {
         self.robots.as_deref()
     }
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListRobots</code> again and assign that token to the
-    /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-    /// previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2623,9 +2590,9 @@ pub mod list_robots_output {
         /// To override the contents of this collection use [`set_robots`](Self::set_robots).
         ///
         /// <p>A list of robots that meet the criteria of the request.</p>
-        pub fn robots(mut self, input: impl Into<crate::model::Robot>) -> Self {
+        pub fn robots(mut self, input: crate::model::Robot) -> Self {
             let mut v = self.robots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.robots = Some(v);
             self
         }
@@ -2637,20 +2604,12 @@ pub mod list_robots_output {
             self.robots = input;
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListRobots</code> again and assign that token to the
-        /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-        /// previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListRobots</code> again and assign that token to the
-        /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-        /// previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2678,11 +2637,7 @@ pub struct ListRobotApplicationsOutput {
     /// <p>A list of robot application summaries that meet the criteria of the request.</p>
     pub robot_application_summaries:
         std::option::Option<std::vec::Vec<crate::model::RobotApplicationSummary>>,
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListRobotApplications</code> again and assign that token to
-    /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-    /// the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRobotApplicationsOutput {
@@ -2692,11 +2647,7 @@ impl ListRobotApplicationsOutput {
     ) -> std::option::Option<&[crate::model::RobotApplicationSummary]> {
         self.robot_application_summaries.as_deref()
     }
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListRobotApplications</code> again and assign that token to
-    /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-    /// the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2730,10 +2681,10 @@ pub mod list_robot_applications_output {
         /// <p>A list of robot application summaries that meet the criteria of the request.</p>
         pub fn robot_application_summaries(
             mut self,
-            input: impl Into<crate::model::RobotApplicationSummary>,
+            input: crate::model::RobotApplicationSummary,
         ) -> Self {
             let mut v = self.robot_application_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.robot_application_summaries = Some(v);
             self
         }
@@ -2745,20 +2696,12 @@ pub mod list_robot_applications_output {
             self.robot_application_summaries = input;
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListRobotApplications</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListRobotApplications</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2785,11 +2728,7 @@ impl ListRobotApplicationsOutput {
 pub struct ListFleetsOutput {
     /// <p>A list of fleet details meeting the request criteria.</p>
     pub fleet_details: std::option::Option<std::vec::Vec<crate::model::Fleet>>,
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListFleets</code> again and assign that token to the
-    /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-    /// previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFleetsOutput {
@@ -2797,11 +2736,7 @@ impl ListFleetsOutput {
     pub fn fleet_details(&self) -> std::option::Option<&[crate::model::Fleet]> {
         self.fleet_details.as_deref()
     }
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListFleets</code> again and assign that token to the
-    /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-    /// previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2829,9 +2764,9 @@ pub mod list_fleets_output {
         /// To override the contents of this collection use [`set_fleet_details`](Self::set_fleet_details).
         ///
         /// <p>A list of fleet details meeting the request criteria.</p>
-        pub fn fleet_details(mut self, input: impl Into<crate::model::Fleet>) -> Self {
+        pub fn fleet_details(mut self, input: crate::model::Fleet) -> Self {
             let mut v = self.fleet_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fleet_details = Some(v);
             self
         }
@@ -2843,20 +2778,12 @@ pub mod list_fleets_output {
             self.fleet_details = input;
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListFleets</code> again and assign that token to the
-        /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-        /// previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListFleets</code> again and assign that token to the
-        /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-        /// previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2883,11 +2810,7 @@ impl ListFleetsOutput {
 pub struct ListDeploymentJobsOutput {
     /// <p>A list of deployment jobs that meet the criteria of the request.</p>
     pub deployment_jobs: std::option::Option<std::vec::Vec<crate::model::DeploymentJob>>,
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListDeploymentJobs</code> again and assign that token to
-    /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-    /// the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeploymentJobsOutput {
@@ -2895,11 +2818,7 @@ impl ListDeploymentJobsOutput {
     pub fn deployment_jobs(&self) -> std::option::Option<&[crate::model::DeploymentJob]> {
         self.deployment_jobs.as_deref()
     }
-    /// <p>If the previous paginated request did not return all of the remaining results, the
-    /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-    /// next set of results, call <code>ListDeploymentJobs</code> again and assign that token to
-    /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-    /// the previous response object's NextToken parameter is set to null. </p>
+    /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2927,9 +2846,9 @@ pub mod list_deployment_jobs_output {
         /// To override the contents of this collection use [`set_deployment_jobs`](Self::set_deployment_jobs).
         ///
         /// <p>A list of deployment jobs that meet the criteria of the request.</p>
-        pub fn deployment_jobs(mut self, input: impl Into<crate::model::DeploymentJob>) -> Self {
+        pub fn deployment_jobs(mut self, input: crate::model::DeploymentJob) -> Self {
             let mut v = self.deployment_jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deployment_jobs = Some(v);
             self
         }
@@ -2941,20 +2860,12 @@ pub mod list_deployment_jobs_output {
             self.deployment_jobs = input;
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListDeploymentJobs</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListDeploymentJobs</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3038,18 +2949,15 @@ impl GetWorldTemplateBodyOutput {
 pub struct DescribeWorldTemplateOutput {
     /// <p>The Amazon Resource Name (ARN) of the world template.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The name of the world template.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the world template was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The time, in milliseconds since the epoch, when the world template was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the world template was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A map that contains tag keys and tag values that are attached to the world
-    /// template.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The version of the world template that you're using.</p>
@@ -3060,8 +2968,7 @@ impl DescribeWorldTemplateOutput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -3073,13 +2980,11 @@ impl DescribeWorldTemplateOutput {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The time, in milliseconds since the epoch, when the world template was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the world template was last updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
-    /// <p>A map that contains tag keys and tag values that are attached to the world
-    /// template.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -3131,14 +3036,12 @@ pub mod describe_world_template_output {
             self.arn = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3169,14 +3072,12 @@ pub mod describe_world_template_output {
             self.created_at = input;
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the world template was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the world template was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the world template was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the world template was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3188,8 +3089,7 @@ pub mod describe_world_template_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the world
-        /// template.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3200,8 +3100,7 @@ pub mod describe_world_template_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the world
-        /// template.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3250,60 +3149,81 @@ pub struct DescribeWorldGenerationJobOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of the world generation job:</p>
     /// <dl>
-    /// <dt>Pending</dt>
+    /// <dt>
+    /// Pending
+    /// </dt>
     /// <dd>
     /// <p>The world generation job request is pending.</p>
     /// </dd>
-    /// <dt>Running</dt>
+    /// <dt>
+    /// Running
+    /// </dt>
     /// <dd>
     /// <p>The world generation job is running. </p>
     /// </dd>
-    /// <dt>Completed</dt>
+    /// <dt>
+    /// Completed
+    /// </dt>
     /// <dd>
     /// <p>The world generation job completed. </p>
     /// </dd>
-    /// <dt>Failed</dt>
+    /// <dt>
+    /// Failed
+    /// </dt>
     /// <dd>
-    /// <p>The world generation job failed. See <code>failureCode</code> for more
-    /// information. </p>
+    /// <p>The world generation job failed. See <code>failureCode</code> for more information. </p>
     /// </dd>
-    /// <dt>PartialFailed</dt>
+    /// <dt>
+    /// PartialFailed
+    /// </dt>
     /// <dd>
     /// <p>Some worlds did not generate.</p>
     /// </dd>
-    /// <dt>Canceled</dt>
+    /// <dt>
+    /// Canceled
+    /// </dt>
     /// <dd>
     /// <p>The world generation job was cancelled.</p>
     /// </dd>
-    /// <dt>Canceling</dt>
+    /// <dt>
+    /// Canceling
+    /// </dt>
     /// <dd>
     /// <p>The world generation job is being cancelled.</p>
     /// </dd>
     /// </dl>
     pub status: std::option::Option<crate::model::WorldGenerationJobStatus>,
-    /// <p>The time, in milliseconds since the epoch, when the world generation job was
-    /// created.</p>
+    /// <p>The time, in milliseconds since the epoch, when the world generation job was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The failure code of the world generation job if it failed:</p>
     /// <dl>
-    /// <dt>InternalServiceError</dt>
+    /// <dt>
+    /// InternalServiceError
+    /// </dt>
     /// <dd>
     /// <p>Internal service error.</p>
     /// </dd>
-    /// <dt>LimitExceeded</dt>
+    /// <dt>
+    /// LimitExceeded
+    /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     /// </dd>
-    /// <dt>ResourceNotFound</dt>
+    /// <dt>
+    /// ResourceNotFound
+    /// </dt>
     /// <dd>
     /// <p>The specified resource could not be found. </p>
     /// </dd>
-    /// <dt>RequestThrottled</dt>
+    /// <dt>
+    /// RequestThrottled
+    /// </dt>
     /// <dd>
     /// <p>The request was throttled.</p>
     /// </dd>
-    /// <dt>InvalidInput</dt>
+    /// <dt>
+    /// InvalidInput
+    /// </dt>
     /// <dd>
     /// <p>An input parameter in the request is not valid.</p>
     /// </dd>
@@ -3311,8 +3231,7 @@ pub struct DescribeWorldGenerationJobOutput {
     pub failure_code: std::option::Option<crate::model::WorldGenerationJobErrorCode>,
     /// <p>The reason why the world generation job failed.</p>
     pub failure_reason: std::option::Option<std::string::String>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
     pub template: std::option::Option<std::string::String>,
@@ -3320,12 +3239,10 @@ pub struct DescribeWorldGenerationJobOutput {
     pub world_count: std::option::Option<crate::model::WorldCount>,
     /// <p>Summary information about finished worlds.</p>
     pub finished_worlds_summary: std::option::Option<crate::model::FinishedWorldsSummary>,
-    /// <p>A map that contains tag keys and tag values that are attached to the world generation
-    /// job.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the world generation job.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A map that contains tag keys and tag values that are attached to the generated
-    /// worlds.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
     pub world_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3336,32 +3253,45 @@ impl DescribeWorldGenerationJobOutput {
     }
     /// <p>The status of the world generation job:</p>
     /// <dl>
-    /// <dt>Pending</dt>
+    /// <dt>
+    /// Pending
+    /// </dt>
     /// <dd>
     /// <p>The world generation job request is pending.</p>
     /// </dd>
-    /// <dt>Running</dt>
+    /// <dt>
+    /// Running
+    /// </dt>
     /// <dd>
     /// <p>The world generation job is running. </p>
     /// </dd>
-    /// <dt>Completed</dt>
+    /// <dt>
+    /// Completed
+    /// </dt>
     /// <dd>
     /// <p>The world generation job completed. </p>
     /// </dd>
-    /// <dt>Failed</dt>
+    /// <dt>
+    /// Failed
+    /// </dt>
     /// <dd>
-    /// <p>The world generation job failed. See <code>failureCode</code> for more
-    /// information. </p>
+    /// <p>The world generation job failed. See <code>failureCode</code> for more information. </p>
     /// </dd>
-    /// <dt>PartialFailed</dt>
+    /// <dt>
+    /// PartialFailed
+    /// </dt>
     /// <dd>
     /// <p>Some worlds did not generate.</p>
     /// </dd>
-    /// <dt>Canceled</dt>
+    /// <dt>
+    /// Canceled
+    /// </dt>
     /// <dd>
     /// <p>The world generation job was cancelled.</p>
     /// </dd>
-    /// <dt>Canceling</dt>
+    /// <dt>
+    /// Canceling
+    /// </dt>
     /// <dd>
     /// <p>The world generation job is being cancelled.</p>
     /// </dd>
@@ -3369,31 +3299,39 @@ impl DescribeWorldGenerationJobOutput {
     pub fn status(&self) -> std::option::Option<&crate::model::WorldGenerationJobStatus> {
         self.status.as_ref()
     }
-    /// <p>The time, in milliseconds since the epoch, when the world generation job was
-    /// created.</p>
+    /// <p>The time, in milliseconds since the epoch, when the world generation job was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The failure code of the world generation job if it failed:</p>
     /// <dl>
-    /// <dt>InternalServiceError</dt>
+    /// <dt>
+    /// InternalServiceError
+    /// </dt>
     /// <dd>
     /// <p>Internal service error.</p>
     /// </dd>
-    /// <dt>LimitExceeded</dt>
+    /// <dt>
+    /// LimitExceeded
+    /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     /// </dd>
-    /// <dt>ResourceNotFound</dt>
+    /// <dt>
+    /// ResourceNotFound
+    /// </dt>
     /// <dd>
     /// <p>The specified resource could not be found. </p>
     /// </dd>
-    /// <dt>RequestThrottled</dt>
+    /// <dt>
+    /// RequestThrottled
+    /// </dt>
     /// <dd>
     /// <p>The request was throttled.</p>
     /// </dd>
-    /// <dt>InvalidInput</dt>
+    /// <dt>
+    /// InvalidInput
+    /// </dt>
     /// <dd>
     /// <p>An input parameter in the request is not valid.</p>
     /// </dd>
@@ -3405,8 +3343,7 @@ impl DescribeWorldGenerationJobOutput {
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -3424,16 +3361,14 @@ impl DescribeWorldGenerationJobOutput {
     ) -> std::option::Option<&crate::model::FinishedWorldsSummary> {
         self.finished_worlds_summary.as_ref()
     }
-    /// <p>A map that contains tag keys and tag values that are attached to the world generation
-    /// job.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the world generation job.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>A map that contains tag keys and tag values that are attached to the generated
-    /// worlds.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
     pub fn world_tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -3494,32 +3429,45 @@ pub mod describe_world_generation_job_output {
         }
         /// <p>The status of the world generation job:</p>
         /// <dl>
-        /// <dt>Pending</dt>
+        /// <dt>
+        /// Pending
+        /// </dt>
         /// <dd>
         /// <p>The world generation job request is pending.</p>
         /// </dd>
-        /// <dt>Running</dt>
+        /// <dt>
+        /// Running
+        /// </dt>
         /// <dd>
         /// <p>The world generation job is running. </p>
         /// </dd>
-        /// <dt>Completed</dt>
+        /// <dt>
+        /// Completed
+        /// </dt>
         /// <dd>
         /// <p>The world generation job completed. </p>
         /// </dd>
-        /// <dt>Failed</dt>
+        /// <dt>
+        /// Failed
+        /// </dt>
         /// <dd>
-        /// <p>The world generation job failed. See <code>failureCode</code> for more
-        /// information. </p>
+        /// <p>The world generation job failed. See <code>failureCode</code> for more information. </p>
         /// </dd>
-        /// <dt>PartialFailed</dt>
+        /// <dt>
+        /// PartialFailed
+        /// </dt>
         /// <dd>
         /// <p>Some worlds did not generate.</p>
         /// </dd>
-        /// <dt>Canceled</dt>
+        /// <dt>
+        /// Canceled
+        /// </dt>
         /// <dd>
         /// <p>The world generation job was cancelled.</p>
         /// </dd>
-        /// <dt>Canceling</dt>
+        /// <dt>
+        /// Canceling
+        /// </dt>
         /// <dd>
         /// <p>The world generation job is being cancelled.</p>
         /// </dd>
@@ -3530,32 +3478,45 @@ pub mod describe_world_generation_job_output {
         }
         /// <p>The status of the world generation job:</p>
         /// <dl>
-        /// <dt>Pending</dt>
+        /// <dt>
+        /// Pending
+        /// </dt>
         /// <dd>
         /// <p>The world generation job request is pending.</p>
         /// </dd>
-        /// <dt>Running</dt>
+        /// <dt>
+        /// Running
+        /// </dt>
         /// <dd>
         /// <p>The world generation job is running. </p>
         /// </dd>
-        /// <dt>Completed</dt>
+        /// <dt>
+        /// Completed
+        /// </dt>
         /// <dd>
         /// <p>The world generation job completed. </p>
         /// </dd>
-        /// <dt>Failed</dt>
+        /// <dt>
+        /// Failed
+        /// </dt>
         /// <dd>
-        /// <p>The world generation job failed. See <code>failureCode</code> for more
-        /// information. </p>
+        /// <p>The world generation job failed. See <code>failureCode</code> for more information. </p>
         /// </dd>
-        /// <dt>PartialFailed</dt>
+        /// <dt>
+        /// PartialFailed
+        /// </dt>
         /// <dd>
         /// <p>Some worlds did not generate.</p>
         /// </dd>
-        /// <dt>Canceled</dt>
+        /// <dt>
+        /// Canceled
+        /// </dt>
         /// <dd>
         /// <p>The world generation job was cancelled.</p>
         /// </dd>
-        /// <dt>Canceling</dt>
+        /// <dt>
+        /// Canceling
+        /// </dt>
         /// <dd>
         /// <p>The world generation job is being cancelled.</p>
         /// </dd>
@@ -3567,14 +3528,12 @@ pub mod describe_world_generation_job_output {
             self.status = input;
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the world generation job was
-        /// created.</p>
+        /// <p>The time, in milliseconds since the epoch, when the world generation job was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the world generation job was
-        /// created.</p>
+        /// <p>The time, in milliseconds since the epoch, when the world generation job was created.</p>
         pub fn set_created_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3584,24 +3543,33 @@ pub mod describe_world_generation_job_output {
         }
         /// <p>The failure code of the world generation job if it failed:</p>
         /// <dl>
-        /// <dt>InternalServiceError</dt>
+        /// <dt>
+        /// InternalServiceError
+        /// </dt>
         /// <dd>
         /// <p>Internal service error.</p>
         /// </dd>
-        /// <dt>LimitExceeded</dt>
+        /// <dt>
+        /// LimitExceeded
+        /// </dt>
         /// <dd>
-        /// <p>The requested resource exceeds the maximum number allowed, or the number of
-        /// concurrent stream requests exceeds the maximum number allowed. </p>
+        /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
         /// </dd>
-        /// <dt>ResourceNotFound</dt>
+        /// <dt>
+        /// ResourceNotFound
+        /// </dt>
         /// <dd>
         /// <p>The specified resource could not be found. </p>
         /// </dd>
-        /// <dt>RequestThrottled</dt>
+        /// <dt>
+        /// RequestThrottled
+        /// </dt>
         /// <dd>
         /// <p>The request was throttled.</p>
         /// </dd>
-        /// <dt>InvalidInput</dt>
+        /// <dt>
+        /// InvalidInput
+        /// </dt>
         /// <dd>
         /// <p>An input parameter in the request is not valid.</p>
         /// </dd>
@@ -3612,24 +3580,33 @@ pub mod describe_world_generation_job_output {
         }
         /// <p>The failure code of the world generation job if it failed:</p>
         /// <dl>
-        /// <dt>InternalServiceError</dt>
+        /// <dt>
+        /// InternalServiceError
+        /// </dt>
         /// <dd>
         /// <p>Internal service error.</p>
         /// </dd>
-        /// <dt>LimitExceeded</dt>
+        /// <dt>
+        /// LimitExceeded
+        /// </dt>
         /// <dd>
-        /// <p>The requested resource exceeds the maximum number allowed, or the number of
-        /// concurrent stream requests exceeds the maximum number allowed. </p>
+        /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
         /// </dd>
-        /// <dt>ResourceNotFound</dt>
+        /// <dt>
+        /// ResourceNotFound
+        /// </dt>
         /// <dd>
         /// <p>The specified resource could not be found. </p>
         /// </dd>
-        /// <dt>RequestThrottled</dt>
+        /// <dt>
+        /// RequestThrottled
+        /// </dt>
         /// <dd>
         /// <p>The request was throttled.</p>
         /// </dd>
-        /// <dt>InvalidInput</dt>
+        /// <dt>
+        /// InvalidInput
+        /// </dt>
         /// <dd>
         /// <p>An input parameter in the request is not valid.</p>
         /// </dd>
@@ -3654,14 +3631,12 @@ pub mod describe_world_generation_job_output {
             self.failure_reason = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3712,8 +3687,7 @@ pub mod describe_world_generation_job_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the world generation
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world generation job.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3724,8 +3698,7 @@ pub mod describe_world_generation_job_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the world generation
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world generation job.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3739,8 +3712,7 @@ pub mod describe_world_generation_job_output {
         ///
         /// To override the contents of this collection use [`set_world_tags`](Self::set_world_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the generated
-        /// worlds.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
         pub fn world_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3751,8 +3723,7 @@ pub mod describe_world_generation_job_output {
             self.world_tags = Some(hash_map);
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the generated
-        /// worlds.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
         pub fn set_world_tags(
             mut self,
             input: std::option::Option<
@@ -3795,28 +3766,39 @@ pub struct DescribeWorldExportJobOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of the world export job.</p>
     /// <dl>
-    /// <dt>Pending</dt>
+    /// <dt>
+    /// Pending
+    /// </dt>
     /// <dd>
     /// <p>The world export job request is pending.</p>
     /// </dd>
-    /// <dt>Running</dt>
+    /// <dt>
+    /// Running
+    /// </dt>
     /// <dd>
     /// <p>The world export job is running. </p>
     /// </dd>
-    /// <dt>Completed</dt>
+    /// <dt>
+    /// Completed
+    /// </dt>
     /// <dd>
     /// <p>The world export job completed. </p>
     /// </dd>
-    /// <dt>Failed</dt>
+    /// <dt>
+    /// Failed
+    /// </dt>
     /// <dd>
-    /// <p>The world export job failed. See <code>failureCode</code> and
-    /// <code>failureReason</code> for more information. </p>
+    /// <p>The world export job failed. See <code>failureCode</code> and <code>failureReason</code> for more information. </p>
     /// </dd>
-    /// <dt>Canceled</dt>
+    /// <dt>
+    /// Canceled
+    /// </dt>
     /// <dd>
     /// <p>The world export job was cancelled.</p>
     /// </dd>
-    /// <dt>Canceling</dt>
+    /// <dt>
+    /// Canceling
+    /// </dt>
     /// <dd>
     /// <p>The world export job is being cancelled.</p>
     /// </dd>
@@ -3826,24 +3808,33 @@ pub struct DescribeWorldExportJobOutput {
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The failure code of the world export job if it failed:</p>
     /// <dl>
-    /// <dt>InternalServiceError</dt>
+    /// <dt>
+    /// InternalServiceError
+    /// </dt>
     /// <dd>
     /// <p>Internal service error.</p>
     /// </dd>
-    /// <dt>LimitExceeded</dt>
+    /// <dt>
+    /// LimitExceeded
+    /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     /// </dd>
-    /// <dt>ResourceNotFound</dt>
+    /// <dt>
+    /// ResourceNotFound
+    /// </dt>
     /// <dd>
     /// <p>The specified resource could not be found. </p>
     /// </dd>
-    /// <dt>RequestThrottled</dt>
+    /// <dt>
+    /// RequestThrottled
+    /// </dt>
     /// <dd>
     /// <p>The request was throttled.</p>
     /// </dd>
-    /// <dt>InvalidInput</dt>
+    /// <dt>
+    /// InvalidInput
+    /// </dt>
     /// <dd>
     /// <p>An input parameter in the request is not valid.</p>
     /// </dd>
@@ -3851,18 +3842,15 @@ pub struct DescribeWorldExportJobOutput {
     pub failure_code: std::option::Option<crate::model::WorldExportJobErrorCode>,
     /// <p>The reason why the world export job failed.</p>
     pub failure_reason: std::option::Option<std::string::String>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to be exported.</p>
     pub worlds: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The output location.</p>
     pub output_location: std::option::Option<crate::model::OutputLocation>,
-    /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put
-    /// the export.</p>
+    /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
     pub iam_role: std::option::Option<std::string::String>,
-    /// <p>A map that contains tag keys and tag values that are attached to the world export
-    /// job.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3873,28 +3861,39 @@ impl DescribeWorldExportJobOutput {
     }
     /// <p>The status of the world export job.</p>
     /// <dl>
-    /// <dt>Pending</dt>
+    /// <dt>
+    /// Pending
+    /// </dt>
     /// <dd>
     /// <p>The world export job request is pending.</p>
     /// </dd>
-    /// <dt>Running</dt>
+    /// <dt>
+    /// Running
+    /// </dt>
     /// <dd>
     /// <p>The world export job is running. </p>
     /// </dd>
-    /// <dt>Completed</dt>
+    /// <dt>
+    /// Completed
+    /// </dt>
     /// <dd>
     /// <p>The world export job completed. </p>
     /// </dd>
-    /// <dt>Failed</dt>
+    /// <dt>
+    /// Failed
+    /// </dt>
     /// <dd>
-    /// <p>The world export job failed. See <code>failureCode</code> and
-    /// <code>failureReason</code> for more information. </p>
+    /// <p>The world export job failed. See <code>failureCode</code> and <code>failureReason</code> for more information. </p>
     /// </dd>
-    /// <dt>Canceled</dt>
+    /// <dt>
+    /// Canceled
+    /// </dt>
     /// <dd>
     /// <p>The world export job was cancelled.</p>
     /// </dd>
-    /// <dt>Canceling</dt>
+    /// <dt>
+    /// Canceling
+    /// </dt>
     /// <dd>
     /// <p>The world export job is being cancelled.</p>
     /// </dd>
@@ -3908,24 +3907,33 @@ impl DescribeWorldExportJobOutput {
     }
     /// <p>The failure code of the world export job if it failed:</p>
     /// <dl>
-    /// <dt>InternalServiceError</dt>
+    /// <dt>
+    /// InternalServiceError
+    /// </dt>
     /// <dd>
     /// <p>Internal service error.</p>
     /// </dd>
-    /// <dt>LimitExceeded</dt>
+    /// <dt>
+    /// LimitExceeded
+    /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     /// </dd>
-    /// <dt>ResourceNotFound</dt>
+    /// <dt>
+    /// ResourceNotFound
+    /// </dt>
     /// <dd>
     /// <p>The specified resource could not be found. </p>
     /// </dd>
-    /// <dt>RequestThrottled</dt>
+    /// <dt>
+    /// RequestThrottled
+    /// </dt>
     /// <dd>
     /// <p>The request was throttled.</p>
     /// </dd>
-    /// <dt>InvalidInput</dt>
+    /// <dt>
+    /// InvalidInput
+    /// </dt>
     /// <dd>
     /// <p>An input parameter in the request is not valid.</p>
     /// </dd>
@@ -3937,8 +3945,7 @@ impl DescribeWorldExportJobOutput {
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -3950,13 +3957,11 @@ impl DescribeWorldExportJobOutput {
     pub fn output_location(&self) -> std::option::Option<&crate::model::OutputLocation> {
         self.output_location.as_ref()
     }
-    /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put
-    /// the export.</p>
+    /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
     pub fn iam_role(&self) -> std::option::Option<&str> {
         self.iam_role.as_deref()
     }
-    /// <p>A map that contains tag keys and tag values that are attached to the world export
-    /// job.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -4012,28 +4017,39 @@ pub mod describe_world_export_job_output {
         }
         /// <p>The status of the world export job.</p>
         /// <dl>
-        /// <dt>Pending</dt>
+        /// <dt>
+        /// Pending
+        /// </dt>
         /// <dd>
         /// <p>The world export job request is pending.</p>
         /// </dd>
-        /// <dt>Running</dt>
+        /// <dt>
+        /// Running
+        /// </dt>
         /// <dd>
         /// <p>The world export job is running. </p>
         /// </dd>
-        /// <dt>Completed</dt>
+        /// <dt>
+        /// Completed
+        /// </dt>
         /// <dd>
         /// <p>The world export job completed. </p>
         /// </dd>
-        /// <dt>Failed</dt>
+        /// <dt>
+        /// Failed
+        /// </dt>
         /// <dd>
-        /// <p>The world export job failed. See <code>failureCode</code> and
-        /// <code>failureReason</code> for more information. </p>
+        /// <p>The world export job failed. See <code>failureCode</code> and <code>failureReason</code> for more information. </p>
         /// </dd>
-        /// <dt>Canceled</dt>
+        /// <dt>
+        /// Canceled
+        /// </dt>
         /// <dd>
         /// <p>The world export job was cancelled.</p>
         /// </dd>
-        /// <dt>Canceling</dt>
+        /// <dt>
+        /// Canceling
+        /// </dt>
         /// <dd>
         /// <p>The world export job is being cancelled.</p>
         /// </dd>
@@ -4044,28 +4060,39 @@ pub mod describe_world_export_job_output {
         }
         /// <p>The status of the world export job.</p>
         /// <dl>
-        /// <dt>Pending</dt>
+        /// <dt>
+        /// Pending
+        /// </dt>
         /// <dd>
         /// <p>The world export job request is pending.</p>
         /// </dd>
-        /// <dt>Running</dt>
+        /// <dt>
+        /// Running
+        /// </dt>
         /// <dd>
         /// <p>The world export job is running. </p>
         /// </dd>
-        /// <dt>Completed</dt>
+        /// <dt>
+        /// Completed
+        /// </dt>
         /// <dd>
         /// <p>The world export job completed. </p>
         /// </dd>
-        /// <dt>Failed</dt>
+        /// <dt>
+        /// Failed
+        /// </dt>
         /// <dd>
-        /// <p>The world export job failed. See <code>failureCode</code> and
-        /// <code>failureReason</code> for more information. </p>
+        /// <p>The world export job failed. See <code>failureCode</code> and <code>failureReason</code> for more information. </p>
         /// </dd>
-        /// <dt>Canceled</dt>
+        /// <dt>
+        /// Canceled
+        /// </dt>
         /// <dd>
         /// <p>The world export job was cancelled.</p>
         /// </dd>
-        /// <dt>Canceling</dt>
+        /// <dt>
+        /// Canceling
+        /// </dt>
         /// <dd>
         /// <p>The world export job is being cancelled.</p>
         /// </dd>
@@ -4092,24 +4119,33 @@ pub mod describe_world_export_job_output {
         }
         /// <p>The failure code of the world export job if it failed:</p>
         /// <dl>
-        /// <dt>InternalServiceError</dt>
+        /// <dt>
+        /// InternalServiceError
+        /// </dt>
         /// <dd>
         /// <p>Internal service error.</p>
         /// </dd>
-        /// <dt>LimitExceeded</dt>
+        /// <dt>
+        /// LimitExceeded
+        /// </dt>
         /// <dd>
-        /// <p>The requested resource exceeds the maximum number allowed, or the number of
-        /// concurrent stream requests exceeds the maximum number allowed. </p>
+        /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
         /// </dd>
-        /// <dt>ResourceNotFound</dt>
+        /// <dt>
+        /// ResourceNotFound
+        /// </dt>
         /// <dd>
         /// <p>The specified resource could not be found. </p>
         /// </dd>
-        /// <dt>RequestThrottled</dt>
+        /// <dt>
+        /// RequestThrottled
+        /// </dt>
         /// <dd>
         /// <p>The request was throttled.</p>
         /// </dd>
-        /// <dt>InvalidInput</dt>
+        /// <dt>
+        /// InvalidInput
+        /// </dt>
         /// <dd>
         /// <p>An input parameter in the request is not valid.</p>
         /// </dd>
@@ -4120,24 +4156,33 @@ pub mod describe_world_export_job_output {
         }
         /// <p>The failure code of the world export job if it failed:</p>
         /// <dl>
-        /// <dt>InternalServiceError</dt>
+        /// <dt>
+        /// InternalServiceError
+        /// </dt>
         /// <dd>
         /// <p>Internal service error.</p>
         /// </dd>
-        /// <dt>LimitExceeded</dt>
+        /// <dt>
+        /// LimitExceeded
+        /// </dt>
         /// <dd>
-        /// <p>The requested resource exceeds the maximum number allowed, or the number of
-        /// concurrent stream requests exceeds the maximum number allowed. </p>
+        /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
         /// </dd>
-        /// <dt>ResourceNotFound</dt>
+        /// <dt>
+        /// ResourceNotFound
+        /// </dt>
         /// <dd>
         /// <p>The specified resource could not be found. </p>
         /// </dd>
-        /// <dt>RequestThrottled</dt>
+        /// <dt>
+        /// RequestThrottled
+        /// </dt>
         /// <dd>
         /// <p>The request was throttled.</p>
         /// </dd>
-        /// <dt>InvalidInput</dt>
+        /// <dt>
+        /// InvalidInput
+        /// </dt>
         /// <dd>
         /// <p>An input parameter in the request is not valid.</p>
         /// </dd>
@@ -4162,14 +4207,12 @@ pub mod describe_world_export_job_output {
             self.failure_reason = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4209,14 +4252,12 @@ pub mod describe_world_export_job_output {
             self.output_location = input;
             self
         }
-        /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put
-        /// the export.</p>
+        /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
         pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role = Some(input.into());
             self
         }
-        /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put
-        /// the export.</p>
+        /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
         pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role = input;
             self
@@ -4225,8 +4266,7 @@ pub mod describe_world_export_job_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the world export
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4237,8 +4277,7 @@ pub mod describe_world_export_job_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the world export
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4278,8 +4317,7 @@ impl DescribeWorldExportJobOutput {
 pub struct DescribeWorldOutput {
     /// <p>The Amazon Resource Name (arn) of the world.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (arn) of the world generation job that generated the
-    /// world.</p>
+    /// <p>The Amazon Resource Name (arn) of the world generation job that generated the world.</p>
     pub generation_job: std::option::Option<std::string::String>,
     /// <p>The world template.</p>
     pub template: std::option::Option<std::string::String>,
@@ -4296,8 +4334,7 @@ impl DescribeWorldOutput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (arn) of the world generation job that generated the
-    /// world.</p>
+    /// <p>The Amazon Resource Name (arn) of the world generation job that generated the world.</p>
     pub fn generation_job(&self) -> std::option::Option<&str> {
         self.generation_job.as_deref()
     }
@@ -4359,14 +4396,12 @@ pub mod describe_world_output {
             self.arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (arn) of the world generation job that generated the
-        /// world.</p>
+        /// <p>The Amazon Resource Name (arn) of the world generation job that generated the world.</p>
         pub fn generation_job(mut self, input: impl Into<std::string::String>) -> Self {
             self.generation_job = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (arn) of the world generation job that generated the
-        /// world.</p>
+        /// <p>The Amazon Resource Name (arn) of the world generation job that generated the world.</p>
         pub fn set_generation_job(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4463,63 +4498,68 @@ pub struct DescribeSimulationJobBatchOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of the batch.</p>
     /// <dl>
-    /// <dt>Pending</dt>
+    /// <dt>
+    /// Pending
+    /// </dt>
     /// <dd>
     /// <p>The simulation job batch request is pending.</p>
     /// </dd>
-    /// <dt>InProgress</dt>
+    /// <dt>
+    /// InProgress
+    /// </dt>
     /// <dd>
     /// <p>The simulation job batch is in progress. </p>
     /// </dd>
-    /// <dt>Failed</dt>
+    /// <dt>
+    /// Failed
+    /// </dt>
     /// <dd>
-    /// <p>The simulation job batch failed. One or more simulation job requests could not
-    /// be completed due to an internal failure (like <code>InternalServiceError</code>).
-    /// See <code>failureCode</code> and <code>failureReason</code> for more
-    /// information.</p>
+    /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p>
     /// </dd>
-    /// <dt>Completed</dt>
+    /// <dt>
+    /// Completed
+    /// </dt>
     /// <dd>
-    /// <p>The simulation batch job completed. A batch is complete when (1) there are no
-    /// pending simulation job requests in the batch and none of the failed simulation job
-    /// requests are due to <code>InternalServiceError</code> and (2) when all created
-    /// simulation jobs have reached a terminal state (for example, <code>Completed</code>
-    /// or <code>Failed</code>). </p>
+    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
     /// </dd>
-    /// <dt>Canceled</dt>
+    /// <dt>
+    /// Canceled
+    /// </dt>
     /// <dd>
     /// <p>The simulation batch job was cancelled.</p>
     /// </dd>
-    /// <dt>Canceling</dt>
+    /// <dt>
+    /// Canceling
+    /// </dt>
     /// <dd>
     /// <p>The simulation batch job is being cancelled.</p>
     /// </dd>
-    /// <dt>Completing</dt>
+    /// <dt>
+    /// Completing
+    /// </dt>
     /// <dd>
     /// <p>The simulation batch job is completing.</p>
     /// </dd>
-    /// <dt>TimingOut</dt>
+    /// <dt>
+    /// TimingOut
+    /// </dt>
     /// <dd>
     /// <p>The simulation job batch is timing out.</p>
-    /// <p>If a batch timing out, and there are pending requests that were failing due to
-    /// an internal failure (like <code>InternalServiceError</code>), the batch status
-    /// will be <code>Failed</code>. If there are no such failing request, the batch
-    /// status will be <code>TimedOut</code>. </p>
+    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
     /// </dd>
-    /// <dt>TimedOut</dt>
+    /// <dt>
+    /// TimedOut
+    /// </dt>
     /// <dd>
     /// <p>The simulation batch job timed out.</p>
     /// </dd>
     /// </dl>
     pub status: std::option::Option<crate::model::SimulationJobBatchStatus>,
-    /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The time, in milliseconds since the epoch, when the simulation job batch was
-    /// created.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The batch policy.</p>
     pub batch_policy: std::option::Option<crate::model::BatchPolicy>,
@@ -4527,17 +4567,14 @@ pub struct DescribeSimulationJobBatchOutput {
     pub failure_code: std::option::Option<crate::model::SimulationJobBatchErrorCode>,
     /// <p>The reason the simulation job batch failed.</p>
     pub failure_reason: std::option::Option<std::string::String>,
-    /// <p>A list of failed create simulation job requests. The request failed to be created into a
-    /// simulation job. Failed requests do not have a simulation job ID. </p>
+    /// <p>A list of failed create simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID. </p>
     pub failed_requests:
         std::option::Option<std::vec::Vec<crate::model::FailedCreateSimulationJobRequest>>,
-    /// <p>A list of pending simulation job requests. These requests have not yet been created into
-    /// simulation jobs.</p>
+    /// <p>A list of pending simulation job requests. These requests have not yet been created into simulation jobs.</p>
     pub pending_requests: std::option::Option<std::vec::Vec<crate::model::SimulationJobRequest>>,
     /// <p>A list of created simulation job summaries.</p>
     pub created_requests: std::option::Option<std::vec::Vec<crate::model::SimulationJobSummary>>,
-    /// <p>A map that contains tag keys and tag values that are attached to the simulation job
-    /// batch.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the simulation job batch.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4548,50 +4585,58 @@ impl DescribeSimulationJobBatchOutput {
     }
     /// <p>The status of the batch.</p>
     /// <dl>
-    /// <dt>Pending</dt>
+    /// <dt>
+    /// Pending
+    /// </dt>
     /// <dd>
     /// <p>The simulation job batch request is pending.</p>
     /// </dd>
-    /// <dt>InProgress</dt>
+    /// <dt>
+    /// InProgress
+    /// </dt>
     /// <dd>
     /// <p>The simulation job batch is in progress. </p>
     /// </dd>
-    /// <dt>Failed</dt>
+    /// <dt>
+    /// Failed
+    /// </dt>
     /// <dd>
-    /// <p>The simulation job batch failed. One or more simulation job requests could not
-    /// be completed due to an internal failure (like <code>InternalServiceError</code>).
-    /// See <code>failureCode</code> and <code>failureReason</code> for more
-    /// information.</p>
+    /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p>
     /// </dd>
-    /// <dt>Completed</dt>
+    /// <dt>
+    /// Completed
+    /// </dt>
     /// <dd>
-    /// <p>The simulation batch job completed. A batch is complete when (1) there are no
-    /// pending simulation job requests in the batch and none of the failed simulation job
-    /// requests are due to <code>InternalServiceError</code> and (2) when all created
-    /// simulation jobs have reached a terminal state (for example, <code>Completed</code>
-    /// or <code>Failed</code>). </p>
+    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
     /// </dd>
-    /// <dt>Canceled</dt>
+    /// <dt>
+    /// Canceled
+    /// </dt>
     /// <dd>
     /// <p>The simulation batch job was cancelled.</p>
     /// </dd>
-    /// <dt>Canceling</dt>
+    /// <dt>
+    /// Canceling
+    /// </dt>
     /// <dd>
     /// <p>The simulation batch job is being cancelled.</p>
     /// </dd>
-    /// <dt>Completing</dt>
+    /// <dt>
+    /// Completing
+    /// </dt>
     /// <dd>
     /// <p>The simulation batch job is completing.</p>
     /// </dd>
-    /// <dt>TimingOut</dt>
+    /// <dt>
+    /// TimingOut
+    /// </dt>
     /// <dd>
     /// <p>The simulation job batch is timing out.</p>
-    /// <p>If a batch timing out, and there are pending requests that were failing due to
-    /// an internal failure (like <code>InternalServiceError</code>), the batch status
-    /// will be <code>Failed</code>. If there are no such failing request, the batch
-    /// status will be <code>TimedOut</code>. </p>
+    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
     /// </dd>
-    /// <dt>TimedOut</dt>
+    /// <dt>
+    /// TimedOut
+    /// </dt>
     /// <dd>
     /// <p>The simulation batch job timed out.</p>
     /// </dd>
@@ -4599,18 +4644,15 @@ impl DescribeSimulationJobBatchOutput {
     pub fn status(&self) -> std::option::Option<&crate::model::SimulationJobBatchStatus> {
         self.status.as_ref()
     }
-    /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
-    /// <p>The time, in milliseconds since the epoch, when the simulation job batch was
-    /// created.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -4626,15 +4668,13 @@ impl DescribeSimulationJobBatchOutput {
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>A list of failed create simulation job requests. The request failed to be created into a
-    /// simulation job. Failed requests do not have a simulation job ID. </p>
+    /// <p>A list of failed create simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID. </p>
     pub fn failed_requests(
         &self,
     ) -> std::option::Option<&[crate::model::FailedCreateSimulationJobRequest]> {
         self.failed_requests.as_deref()
     }
-    /// <p>A list of pending simulation job requests. These requests have not yet been created into
-    /// simulation jobs.</p>
+    /// <p>A list of pending simulation job requests. These requests have not yet been created into simulation jobs.</p>
     pub fn pending_requests(&self) -> std::option::Option<&[crate::model::SimulationJobRequest]> {
         self.pending_requests.as_deref()
     }
@@ -4642,8 +4682,7 @@ impl DescribeSimulationJobBatchOutput {
     pub fn created_requests(&self) -> std::option::Option<&[crate::model::SimulationJobSummary]> {
         self.created_requests.as_deref()
     }
-    /// <p>A map that contains tag keys and tag values that are attached to the simulation job
-    /// batch.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the simulation job batch.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -4706,50 +4745,58 @@ pub mod describe_simulation_job_batch_output {
         }
         /// <p>The status of the batch.</p>
         /// <dl>
-        /// <dt>Pending</dt>
+        /// <dt>
+        /// Pending
+        /// </dt>
         /// <dd>
         /// <p>The simulation job batch request is pending.</p>
         /// </dd>
-        /// <dt>InProgress</dt>
+        /// <dt>
+        /// InProgress
+        /// </dt>
         /// <dd>
         /// <p>The simulation job batch is in progress. </p>
         /// </dd>
-        /// <dt>Failed</dt>
+        /// <dt>
+        /// Failed
+        /// </dt>
         /// <dd>
-        /// <p>The simulation job batch failed. One or more simulation job requests could not
-        /// be completed due to an internal failure (like <code>InternalServiceError</code>).
-        /// See <code>failureCode</code> and <code>failureReason</code> for more
-        /// information.</p>
+        /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p>
         /// </dd>
-        /// <dt>Completed</dt>
+        /// <dt>
+        /// Completed
+        /// </dt>
         /// <dd>
-        /// <p>The simulation batch job completed. A batch is complete when (1) there are no
-        /// pending simulation job requests in the batch and none of the failed simulation job
-        /// requests are due to <code>InternalServiceError</code> and (2) when all created
-        /// simulation jobs have reached a terminal state (for example, <code>Completed</code>
-        /// or <code>Failed</code>). </p>
+        /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
         /// </dd>
-        /// <dt>Canceled</dt>
+        /// <dt>
+        /// Canceled
+        /// </dt>
         /// <dd>
         /// <p>The simulation batch job was cancelled.</p>
         /// </dd>
-        /// <dt>Canceling</dt>
+        /// <dt>
+        /// Canceling
+        /// </dt>
         /// <dd>
         /// <p>The simulation batch job is being cancelled.</p>
         /// </dd>
-        /// <dt>Completing</dt>
+        /// <dt>
+        /// Completing
+        /// </dt>
         /// <dd>
         /// <p>The simulation batch job is completing.</p>
         /// </dd>
-        /// <dt>TimingOut</dt>
+        /// <dt>
+        /// TimingOut
+        /// </dt>
         /// <dd>
         /// <p>The simulation job batch is timing out.</p>
-        /// <p>If a batch timing out, and there are pending requests that were failing due to
-        /// an internal failure (like <code>InternalServiceError</code>), the batch status
-        /// will be <code>Failed</code>. If there are no such failing request, the batch
-        /// status will be <code>TimedOut</code>. </p>
+        /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
         /// </dd>
-        /// <dt>TimedOut</dt>
+        /// <dt>
+        /// TimedOut
+        /// </dt>
         /// <dd>
         /// <p>The simulation batch job timed out.</p>
         /// </dd>
@@ -4760,50 +4807,58 @@ pub mod describe_simulation_job_batch_output {
         }
         /// <p>The status of the batch.</p>
         /// <dl>
-        /// <dt>Pending</dt>
+        /// <dt>
+        /// Pending
+        /// </dt>
         /// <dd>
         /// <p>The simulation job batch request is pending.</p>
         /// </dd>
-        /// <dt>InProgress</dt>
+        /// <dt>
+        /// InProgress
+        /// </dt>
         /// <dd>
         /// <p>The simulation job batch is in progress. </p>
         /// </dd>
-        /// <dt>Failed</dt>
+        /// <dt>
+        /// Failed
+        /// </dt>
         /// <dd>
-        /// <p>The simulation job batch failed. One or more simulation job requests could not
-        /// be completed due to an internal failure (like <code>InternalServiceError</code>).
-        /// See <code>failureCode</code> and <code>failureReason</code> for more
-        /// information.</p>
+        /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p>
         /// </dd>
-        /// <dt>Completed</dt>
+        /// <dt>
+        /// Completed
+        /// </dt>
         /// <dd>
-        /// <p>The simulation batch job completed. A batch is complete when (1) there are no
-        /// pending simulation job requests in the batch and none of the failed simulation job
-        /// requests are due to <code>InternalServiceError</code> and (2) when all created
-        /// simulation jobs have reached a terminal state (for example, <code>Completed</code>
-        /// or <code>Failed</code>). </p>
+        /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
         /// </dd>
-        /// <dt>Canceled</dt>
+        /// <dt>
+        /// Canceled
+        /// </dt>
         /// <dd>
         /// <p>The simulation batch job was cancelled.</p>
         /// </dd>
-        /// <dt>Canceling</dt>
+        /// <dt>
+        /// Canceling
+        /// </dt>
         /// <dd>
         /// <p>The simulation batch job is being cancelled.</p>
         /// </dd>
-        /// <dt>Completing</dt>
+        /// <dt>
+        /// Completing
+        /// </dt>
         /// <dd>
         /// <p>The simulation batch job is completing.</p>
         /// </dd>
-        /// <dt>TimingOut</dt>
+        /// <dt>
+        /// TimingOut
+        /// </dt>
         /// <dd>
         /// <p>The simulation job batch is timing out.</p>
-        /// <p>If a batch timing out, and there are pending requests that were failing due to
-        /// an internal failure (like <code>InternalServiceError</code>), the batch status
-        /// will be <code>Failed</code>. If there are no such failing request, the batch
-        /// status will be <code>TimedOut</code>. </p>
+        /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
         /// </dd>
-        /// <dt>TimedOut</dt>
+        /// <dt>
+        /// TimedOut
+        /// </dt>
         /// <dd>
         /// <p>The simulation batch job timed out.</p>
         /// </dd>
@@ -4815,14 +4870,12 @@ pub mod describe_simulation_job_batch_output {
             self.status = input;
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4830,14 +4883,12 @@ pub mod describe_simulation_job_batch_output {
             self.last_updated_at = input;
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation job batch was
-        /// created.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation job batch was
-        /// created.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
         pub fn set_created_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4845,14 +4896,12 @@ pub mod describe_simulation_job_batch_output {
             self.created_at = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4903,19 +4952,17 @@ pub mod describe_simulation_job_batch_output {
         ///
         /// To override the contents of this collection use [`set_failed_requests`](Self::set_failed_requests).
         ///
-        /// <p>A list of failed create simulation job requests. The request failed to be created into a
-        /// simulation job. Failed requests do not have a simulation job ID. </p>
+        /// <p>A list of failed create simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID. </p>
         pub fn failed_requests(
             mut self,
-            input: impl Into<crate::model::FailedCreateSimulationJobRequest>,
+            input: crate::model::FailedCreateSimulationJobRequest,
         ) -> Self {
             let mut v = self.failed_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_requests = Some(v);
             self
         }
-        /// <p>A list of failed create simulation job requests. The request failed to be created into a
-        /// simulation job. Failed requests do not have a simulation job ID. </p>
+        /// <p>A list of failed create simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID. </p>
         pub fn set_failed_requests(
             mut self,
             input: std::option::Option<
@@ -4929,19 +4976,14 @@ pub mod describe_simulation_job_batch_output {
         ///
         /// To override the contents of this collection use [`set_pending_requests`](Self::set_pending_requests).
         ///
-        /// <p>A list of pending simulation job requests. These requests have not yet been created into
-        /// simulation jobs.</p>
-        pub fn pending_requests(
-            mut self,
-            input: impl Into<crate::model::SimulationJobRequest>,
-        ) -> Self {
+        /// <p>A list of pending simulation job requests. These requests have not yet been created into simulation jobs.</p>
+        pub fn pending_requests(mut self, input: crate::model::SimulationJobRequest) -> Self {
             let mut v = self.pending_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pending_requests = Some(v);
             self
         }
-        /// <p>A list of pending simulation job requests. These requests have not yet been created into
-        /// simulation jobs.</p>
+        /// <p>A list of pending simulation job requests. These requests have not yet been created into simulation jobs.</p>
         pub fn set_pending_requests(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SimulationJobRequest>>,
@@ -4954,12 +4996,9 @@ pub mod describe_simulation_job_batch_output {
         /// To override the contents of this collection use [`set_created_requests`](Self::set_created_requests).
         ///
         /// <p>A list of created simulation job summaries.</p>
-        pub fn created_requests(
-            mut self,
-            input: impl Into<crate::model::SimulationJobSummary>,
-        ) -> Self {
+        pub fn created_requests(mut self, input: crate::model::SimulationJobSummary) -> Self {
             let mut v = self.created_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.created_requests = Some(v);
             self
         }
@@ -4975,8 +5014,7 @@ pub mod describe_simulation_job_batch_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the simulation job
-        /// batch.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the simulation job batch.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4987,8 +5025,7 @@ pub mod describe_simulation_job_batch_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the simulation job
-        /// batch.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the simulation job batch.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -5034,94 +5071,113 @@ pub struct DescribeSimulationJobOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the simulation job.</p>
     pub status: std::option::Option<crate::model::SimulationJobStatus>,
-    /// <p>The time, in milliseconds since the epoch, when the simulation job was last
-    /// started.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation job was last started.</p>
     pub last_started_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The time, in milliseconds since the epoch, when the simulation job was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The failure behavior for the simulation job.</p>
     pub failure_behavior: std::option::Option<crate::model::FailureBehavior>,
     /// <p>The failure code of the simulation job if it failed:</p>
     /// <dl>
-    /// <dt>InternalServiceError</dt>
+    /// <dt>
+    /// InternalServiceError
+    /// </dt>
     /// <dd>
     /// <p>Internal service error.</p>
     /// </dd>
-    /// <dt>RobotApplicationCrash</dt>
+    /// <dt>
+    /// RobotApplicationCrash
+    /// </dt>
     /// <dd>
     /// <p>Robot application exited abnormally.</p>
     /// </dd>
-    /// <dt>SimulationApplicationCrash</dt>
+    /// <dt>
+    /// SimulationApplicationCrash
+    /// </dt>
     /// <dd>
     /// <p> Simulation application exited abnormally.</p>
     /// </dd>
-    /// <dt>BadPermissionsRobotApplication</dt>
+    /// <dt>
+    /// BadPermissionsRobotApplication
+    /// </dt>
     /// <dd>
     /// <p>Robot application bundle could not be downloaded.</p>
     /// </dd>
-    /// <dt>BadPermissionsSimulationApplication</dt>
+    /// <dt>
+    /// BadPermissionsSimulationApplication
+    /// </dt>
     /// <dd>
     /// <p>Simulation application bundle could not be downloaded.</p>
     /// </dd>
-    /// <dt>BadPermissionsS3Output</dt>
+    /// <dt>
+    /// BadPermissionsS3Output
+    /// </dt>
     /// <dd>
     /// <p>Unable to publish outputs to customer-provided S3 bucket.</p>
     /// </dd>
-    /// <dt>BadPermissionsCloudwatchLogs</dt>
+    /// <dt>
+    /// BadPermissionsCloudwatchLogs
+    /// </dt>
     /// <dd>
     /// <p>Unable to publish logs to customer-provided CloudWatch Logs resource.</p>
     /// </dd>
-    /// <dt>SubnetIpLimitExceeded</dt>
+    /// <dt>
+    /// SubnetIpLimitExceeded
+    /// </dt>
     /// <dd>
     /// <p>Subnet IP limit exceeded.</p>
     /// </dd>
-    /// <dt>ENILimitExceeded</dt>
+    /// <dt>
+    /// ENILimitExceeded
+    /// </dt>
     /// <dd>
     /// <p>ENI limit exceeded.</p>
     /// </dd>
-    /// <dt>BadPermissionsUserCredentials</dt>
+    /// <dt>
+    /// BadPermissionsUserCredentials
+    /// </dt>
     /// <dd>
     /// <p>Unable to use the Role provided.</p>
     /// </dd>
-    /// <dt>InvalidBundleRobotApplication</dt>
+    /// <dt>
+    /// InvalidBundleRobotApplication
+    /// </dt>
     /// <dd>
-    /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other
-    /// issue).</p>
+    /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
     /// </dd>
-    /// <dt>InvalidBundleSimulationApplication</dt>
+    /// <dt>
+    /// InvalidBundleSimulationApplication
+    /// </dt>
     /// <dd>
-    /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other
-    /// issue).</p>
+    /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
     /// </dd>
-    /// <dt>RobotApplicationVersionMismatchedEtag</dt>
+    /// <dt>
+    /// RobotApplicationVersionMismatchedEtag
+    /// </dt>
     /// <dd>
     /// <p>Etag for RobotApplication does not match value during version creation.</p>
     /// </dd>
-    /// <dt>SimulationApplicationVersionMismatchedEtag</dt>
+    /// <dt>
+    /// SimulationApplicationVersionMismatchedEtag
+    /// </dt>
     /// <dd>
-    /// <p>Etag for SimulationApplication does not match value during version
-    /// creation.</p>
+    /// <p>Etag for SimulationApplication does not match value during version creation.</p>
     /// </dd>
     /// </dl>
     pub failure_code: std::option::Option<crate::model::SimulationJobErrorCode>,
-    /// <p>Details about why the simulation job failed. For more information about troubleshooting,
-    /// see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting.html">Troubleshooting</a>.</p>
+    /// <p>Details about why the simulation job failed. For more information about troubleshooting, see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting.html">Troubleshooting</a>.</p>
     pub failure_reason: std::option::Option<std::string::String>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Location for output files generated by the simulation job.</p>
     pub output_location: std::option::Option<crate::model::OutputLocation>,
     /// <p>The logging configuration.</p>
     pub logging_config: std::option::Option<crate::model::LoggingConfig>,
-    /// <p>The maximum job duration in seconds. The value must be 8 days (691,200 seconds) or
-    /// less.</p>
+    /// <p>The maximum job duration in seconds. The value must be 8 days (691,200 seconds) or less.</p>
     pub max_job_duration_in_seconds: i64,
     /// <p>The simulation job execution duration in milliseconds.</p>
     pub simulation_time_millis: i64,
-    /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified
-    /// in its associated policies on your behalf.</p>
+    /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf.</p>
     pub iam_role: std::option::Option<std::string::String>,
     /// <p>A list of robot applications.</p>
     pub robot_applications:
@@ -5154,13 +5210,11 @@ impl DescribeSimulationJobOutput {
     pub fn status(&self) -> std::option::Option<&crate::model::SimulationJobStatus> {
         self.status.as_ref()
     }
-    /// <p>The time, in milliseconds since the epoch, when the simulation job was last
-    /// started.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation job was last started.</p>
     pub fn last_started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_started_at.as_ref()
     }
-    /// <p>The time, in milliseconds since the epoch, when the simulation job was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
@@ -5170,76 +5224,99 @@ impl DescribeSimulationJobOutput {
     }
     /// <p>The failure code of the simulation job if it failed:</p>
     /// <dl>
-    /// <dt>InternalServiceError</dt>
+    /// <dt>
+    /// InternalServiceError
+    /// </dt>
     /// <dd>
     /// <p>Internal service error.</p>
     /// </dd>
-    /// <dt>RobotApplicationCrash</dt>
+    /// <dt>
+    /// RobotApplicationCrash
+    /// </dt>
     /// <dd>
     /// <p>Robot application exited abnormally.</p>
     /// </dd>
-    /// <dt>SimulationApplicationCrash</dt>
+    /// <dt>
+    /// SimulationApplicationCrash
+    /// </dt>
     /// <dd>
     /// <p> Simulation application exited abnormally.</p>
     /// </dd>
-    /// <dt>BadPermissionsRobotApplication</dt>
+    /// <dt>
+    /// BadPermissionsRobotApplication
+    /// </dt>
     /// <dd>
     /// <p>Robot application bundle could not be downloaded.</p>
     /// </dd>
-    /// <dt>BadPermissionsSimulationApplication</dt>
+    /// <dt>
+    /// BadPermissionsSimulationApplication
+    /// </dt>
     /// <dd>
     /// <p>Simulation application bundle could not be downloaded.</p>
     /// </dd>
-    /// <dt>BadPermissionsS3Output</dt>
+    /// <dt>
+    /// BadPermissionsS3Output
+    /// </dt>
     /// <dd>
     /// <p>Unable to publish outputs to customer-provided S3 bucket.</p>
     /// </dd>
-    /// <dt>BadPermissionsCloudwatchLogs</dt>
+    /// <dt>
+    /// BadPermissionsCloudwatchLogs
+    /// </dt>
     /// <dd>
     /// <p>Unable to publish logs to customer-provided CloudWatch Logs resource.</p>
     /// </dd>
-    /// <dt>SubnetIpLimitExceeded</dt>
+    /// <dt>
+    /// SubnetIpLimitExceeded
+    /// </dt>
     /// <dd>
     /// <p>Subnet IP limit exceeded.</p>
     /// </dd>
-    /// <dt>ENILimitExceeded</dt>
+    /// <dt>
+    /// ENILimitExceeded
+    /// </dt>
     /// <dd>
     /// <p>ENI limit exceeded.</p>
     /// </dd>
-    /// <dt>BadPermissionsUserCredentials</dt>
+    /// <dt>
+    /// BadPermissionsUserCredentials
+    /// </dt>
     /// <dd>
     /// <p>Unable to use the Role provided.</p>
     /// </dd>
-    /// <dt>InvalidBundleRobotApplication</dt>
+    /// <dt>
+    /// InvalidBundleRobotApplication
+    /// </dt>
     /// <dd>
-    /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other
-    /// issue).</p>
+    /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
     /// </dd>
-    /// <dt>InvalidBundleSimulationApplication</dt>
+    /// <dt>
+    /// InvalidBundleSimulationApplication
+    /// </dt>
     /// <dd>
-    /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other
-    /// issue).</p>
+    /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
     /// </dd>
-    /// <dt>RobotApplicationVersionMismatchedEtag</dt>
+    /// <dt>
+    /// RobotApplicationVersionMismatchedEtag
+    /// </dt>
     /// <dd>
     /// <p>Etag for RobotApplication does not match value during version creation.</p>
     /// </dd>
-    /// <dt>SimulationApplicationVersionMismatchedEtag</dt>
+    /// <dt>
+    /// SimulationApplicationVersionMismatchedEtag
+    /// </dt>
     /// <dd>
-    /// <p>Etag for SimulationApplication does not match value during version
-    /// creation.</p>
+    /// <p>Etag for SimulationApplication does not match value during version creation.</p>
     /// </dd>
     /// </dl>
     pub fn failure_code(&self) -> std::option::Option<&crate::model::SimulationJobErrorCode> {
         self.failure_code.as_ref()
     }
-    /// <p>Details about why the simulation job failed. For more information about troubleshooting,
-    /// see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting.html">Troubleshooting</a>.</p>
+    /// <p>Details about why the simulation job failed. For more information about troubleshooting, see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting.html">Troubleshooting</a>.</p>
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -5251,8 +5328,7 @@ impl DescribeSimulationJobOutput {
     pub fn logging_config(&self) -> std::option::Option<&crate::model::LoggingConfig> {
         self.logging_config.as_ref()
     }
-    /// <p>The maximum job duration in seconds. The value must be 8 days (691,200 seconds) or
-    /// less.</p>
+    /// <p>The maximum job duration in seconds. The value must be 8 days (691,200 seconds) or less.</p>
     pub fn max_job_duration_in_seconds(&self) -> i64 {
         self.max_job_duration_in_seconds
     }
@@ -5260,8 +5336,7 @@ impl DescribeSimulationJobOutput {
     pub fn simulation_time_millis(&self) -> i64 {
         self.simulation_time_millis
     }
-    /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified
-    /// in its associated policies on your behalf.</p>
+    /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf.</p>
     pub fn iam_role(&self) -> std::option::Option<&str> {
         self.iam_role.as_deref()
     }
@@ -5397,14 +5472,12 @@ pub mod describe_simulation_job_output {
             self.status = input;
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation job was last
-        /// started.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation job was last started.</p>
         pub fn last_started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_started_at = Some(input);
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation job was last
-        /// started.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation job was last started.</p>
         pub fn set_last_started_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5412,14 +5485,12 @@ pub mod describe_simulation_job_output {
             self.last_started_at = input;
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation job was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation job was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5442,64 +5513,89 @@ pub mod describe_simulation_job_output {
         }
         /// <p>The failure code of the simulation job if it failed:</p>
         /// <dl>
-        /// <dt>InternalServiceError</dt>
+        /// <dt>
+        /// InternalServiceError
+        /// </dt>
         /// <dd>
         /// <p>Internal service error.</p>
         /// </dd>
-        /// <dt>RobotApplicationCrash</dt>
+        /// <dt>
+        /// RobotApplicationCrash
+        /// </dt>
         /// <dd>
         /// <p>Robot application exited abnormally.</p>
         /// </dd>
-        /// <dt>SimulationApplicationCrash</dt>
+        /// <dt>
+        /// SimulationApplicationCrash
+        /// </dt>
         /// <dd>
         /// <p> Simulation application exited abnormally.</p>
         /// </dd>
-        /// <dt>BadPermissionsRobotApplication</dt>
+        /// <dt>
+        /// BadPermissionsRobotApplication
+        /// </dt>
         /// <dd>
         /// <p>Robot application bundle could not be downloaded.</p>
         /// </dd>
-        /// <dt>BadPermissionsSimulationApplication</dt>
+        /// <dt>
+        /// BadPermissionsSimulationApplication
+        /// </dt>
         /// <dd>
         /// <p>Simulation application bundle could not be downloaded.</p>
         /// </dd>
-        /// <dt>BadPermissionsS3Output</dt>
+        /// <dt>
+        /// BadPermissionsS3Output
+        /// </dt>
         /// <dd>
         /// <p>Unable to publish outputs to customer-provided S3 bucket.</p>
         /// </dd>
-        /// <dt>BadPermissionsCloudwatchLogs</dt>
+        /// <dt>
+        /// BadPermissionsCloudwatchLogs
+        /// </dt>
         /// <dd>
         /// <p>Unable to publish logs to customer-provided CloudWatch Logs resource.</p>
         /// </dd>
-        /// <dt>SubnetIpLimitExceeded</dt>
+        /// <dt>
+        /// SubnetIpLimitExceeded
+        /// </dt>
         /// <dd>
         /// <p>Subnet IP limit exceeded.</p>
         /// </dd>
-        /// <dt>ENILimitExceeded</dt>
+        /// <dt>
+        /// ENILimitExceeded
+        /// </dt>
         /// <dd>
         /// <p>ENI limit exceeded.</p>
         /// </dd>
-        /// <dt>BadPermissionsUserCredentials</dt>
+        /// <dt>
+        /// BadPermissionsUserCredentials
+        /// </dt>
         /// <dd>
         /// <p>Unable to use the Role provided.</p>
         /// </dd>
-        /// <dt>InvalidBundleRobotApplication</dt>
+        /// <dt>
+        /// InvalidBundleRobotApplication
+        /// </dt>
         /// <dd>
-        /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other
-        /// issue).</p>
+        /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
         /// </dd>
-        /// <dt>InvalidBundleSimulationApplication</dt>
+        /// <dt>
+        /// InvalidBundleSimulationApplication
+        /// </dt>
         /// <dd>
-        /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other
-        /// issue).</p>
+        /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
         /// </dd>
-        /// <dt>RobotApplicationVersionMismatchedEtag</dt>
+        /// <dt>
+        /// RobotApplicationVersionMismatchedEtag
+        /// </dt>
         /// <dd>
         /// <p>Etag for RobotApplication does not match value during version creation.</p>
         /// </dd>
-        /// <dt>SimulationApplicationVersionMismatchedEtag</dt>
+        /// <dt>
+        /// SimulationApplicationVersionMismatchedEtag
+        /// </dt>
         /// <dd>
-        /// <p>Etag for SimulationApplication does not match value during version
-        /// creation.</p>
+        /// <p>Etag for SimulationApplication does not match value during version creation.</p>
         /// </dd>
         /// </dl>
         pub fn failure_code(mut self, input: crate::model::SimulationJobErrorCode) -> Self {
@@ -5508,64 +5604,89 @@ pub mod describe_simulation_job_output {
         }
         /// <p>The failure code of the simulation job if it failed:</p>
         /// <dl>
-        /// <dt>InternalServiceError</dt>
+        /// <dt>
+        /// InternalServiceError
+        /// </dt>
         /// <dd>
         /// <p>Internal service error.</p>
         /// </dd>
-        /// <dt>RobotApplicationCrash</dt>
+        /// <dt>
+        /// RobotApplicationCrash
+        /// </dt>
         /// <dd>
         /// <p>Robot application exited abnormally.</p>
         /// </dd>
-        /// <dt>SimulationApplicationCrash</dt>
+        /// <dt>
+        /// SimulationApplicationCrash
+        /// </dt>
         /// <dd>
         /// <p> Simulation application exited abnormally.</p>
         /// </dd>
-        /// <dt>BadPermissionsRobotApplication</dt>
+        /// <dt>
+        /// BadPermissionsRobotApplication
+        /// </dt>
         /// <dd>
         /// <p>Robot application bundle could not be downloaded.</p>
         /// </dd>
-        /// <dt>BadPermissionsSimulationApplication</dt>
+        /// <dt>
+        /// BadPermissionsSimulationApplication
+        /// </dt>
         /// <dd>
         /// <p>Simulation application bundle could not be downloaded.</p>
         /// </dd>
-        /// <dt>BadPermissionsS3Output</dt>
+        /// <dt>
+        /// BadPermissionsS3Output
+        /// </dt>
         /// <dd>
         /// <p>Unable to publish outputs to customer-provided S3 bucket.</p>
         /// </dd>
-        /// <dt>BadPermissionsCloudwatchLogs</dt>
+        /// <dt>
+        /// BadPermissionsCloudwatchLogs
+        /// </dt>
         /// <dd>
         /// <p>Unable to publish logs to customer-provided CloudWatch Logs resource.</p>
         /// </dd>
-        /// <dt>SubnetIpLimitExceeded</dt>
+        /// <dt>
+        /// SubnetIpLimitExceeded
+        /// </dt>
         /// <dd>
         /// <p>Subnet IP limit exceeded.</p>
         /// </dd>
-        /// <dt>ENILimitExceeded</dt>
+        /// <dt>
+        /// ENILimitExceeded
+        /// </dt>
         /// <dd>
         /// <p>ENI limit exceeded.</p>
         /// </dd>
-        /// <dt>BadPermissionsUserCredentials</dt>
+        /// <dt>
+        /// BadPermissionsUserCredentials
+        /// </dt>
         /// <dd>
         /// <p>Unable to use the Role provided.</p>
         /// </dd>
-        /// <dt>InvalidBundleRobotApplication</dt>
+        /// <dt>
+        /// InvalidBundleRobotApplication
+        /// </dt>
         /// <dd>
-        /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other
-        /// issue).</p>
+        /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
         /// </dd>
-        /// <dt>InvalidBundleSimulationApplication</dt>
+        /// <dt>
+        /// InvalidBundleSimulationApplication
+        /// </dt>
         /// <dd>
-        /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other
-        /// issue).</p>
+        /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
         /// </dd>
-        /// <dt>RobotApplicationVersionMismatchedEtag</dt>
+        /// <dt>
+        /// RobotApplicationVersionMismatchedEtag
+        /// </dt>
         /// <dd>
         /// <p>Etag for RobotApplication does not match value during version creation.</p>
         /// </dd>
-        /// <dt>SimulationApplicationVersionMismatchedEtag</dt>
+        /// <dt>
+        /// SimulationApplicationVersionMismatchedEtag
+        /// </dt>
         /// <dd>
-        /// <p>Etag for SimulationApplication does not match value during version
-        /// creation.</p>
+        /// <p>Etag for SimulationApplication does not match value during version creation.</p>
         /// </dd>
         /// </dl>
         pub fn set_failure_code(
@@ -5575,14 +5696,12 @@ pub mod describe_simulation_job_output {
             self.failure_code = input;
             self
         }
-        /// <p>Details about why the simulation job failed. For more information about troubleshooting,
-        /// see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting.html">Troubleshooting</a>.</p>
+        /// <p>Details about why the simulation job failed. For more information about troubleshooting, see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting.html">Troubleshooting</a>.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.failure_reason = Some(input.into());
             self
         }
-        /// <p>Details about why the simulation job failed. For more information about troubleshooting,
-        /// see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting.html">Troubleshooting</a>.</p>
+        /// <p>Details about why the simulation job failed. For more information about troubleshooting, see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting.html">Troubleshooting</a>.</p>
         pub fn set_failure_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5590,14 +5709,12 @@ pub mod describe_simulation_job_output {
             self.failure_reason = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5631,14 +5748,12 @@ pub mod describe_simulation_job_output {
             self.logging_config = input;
             self
         }
-        /// <p>The maximum job duration in seconds. The value must be 8 days (691,200 seconds) or
-        /// less.</p>
+        /// <p>The maximum job duration in seconds. The value must be 8 days (691,200 seconds) or less.</p>
         pub fn max_job_duration_in_seconds(mut self, input: i64) -> Self {
             self.max_job_duration_in_seconds = Some(input);
             self
         }
-        /// <p>The maximum job duration in seconds. The value must be 8 days (691,200 seconds) or
-        /// less.</p>
+        /// <p>The maximum job duration in seconds. The value must be 8 days (691,200 seconds) or less.</p>
         pub fn set_max_job_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.max_job_duration_in_seconds = input;
             self
@@ -5653,14 +5768,12 @@ pub mod describe_simulation_job_output {
             self.simulation_time_millis = input;
             self
         }
-        /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified
-        /// in its associated policies on your behalf.</p>
+        /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf.</p>
         pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role = Some(input.into());
             self
         }
-        /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified
-        /// in its associated policies on your behalf.</p>
+        /// <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf.</p>
         pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role = input;
             self
@@ -5670,12 +5783,9 @@ pub mod describe_simulation_job_output {
         /// To override the contents of this collection use [`set_robot_applications`](Self::set_robot_applications).
         ///
         /// <p>A list of robot applications.</p>
-        pub fn robot_applications(
-            mut self,
-            input: impl Into<crate::model::RobotApplicationConfig>,
-        ) -> Self {
+        pub fn robot_applications(mut self, input: crate::model::RobotApplicationConfig) -> Self {
             let mut v = self.robot_applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.robot_applications = Some(v);
             self
         }
@@ -5694,10 +5804,10 @@ pub mod describe_simulation_job_output {
         /// <p>A list of simulation applications.</p>
         pub fn simulation_applications(
             mut self,
-            input: impl Into<crate::model::SimulationApplicationConfig>,
+            input: crate::model::SimulationApplicationConfig,
         ) -> Self {
             let mut v = self.simulation_applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.simulation_applications = Some(v);
             self
         }
@@ -5714,9 +5824,9 @@ pub mod describe_simulation_job_output {
         /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
         ///
         /// <p>The data sources for the simulation job.</p>
-        pub fn data_sources(mut self, input: impl Into<crate::model::DataSource>) -> Self {
+        pub fn data_sources(mut self, input: crate::model::DataSource) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_sources = Some(v);
             self
         }
@@ -5847,17 +5957,14 @@ pub struct DescribeSimulationApplicationOutput {
     pub rendering_engine: std::option::Option<crate::model::RenderingEngine>,
     /// <p>The revision id of the simulation application.</p>
     pub revision_id: std::option::Option<std::string::String>,
-    /// <p>The time, in milliseconds since the epoch, when the simulation application was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of all tags added to the specified simulation application.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The object that contains the Docker image URI used to create the simulation
-    /// application.</p>
+    /// <p>The object that contains the Docker image URI used to create the simulation application.</p>
     pub environment: std::option::Option<crate::model::Environment>,
-    /// <p>A SHA256 identifier for the Docker image that you use for your simulation
-    /// application.</p>
+    /// <p>A SHA256 identifier for the Docker image that you use for your simulation application.</p>
     pub image_digest: std::option::Option<std::string::String>,
 }
 impl DescribeSimulationApplicationOutput {
@@ -5895,8 +6002,7 @@ impl DescribeSimulationApplicationOutput {
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
-    /// <p>The time, in milliseconds since the epoch, when the simulation application was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
@@ -5907,13 +6013,11 @@ impl DescribeSimulationApplicationOutput {
     {
         self.tags.as_ref()
     }
-    /// <p>The object that contains the Docker image URI used to create the simulation
-    /// application.</p>
+    /// <p>The object that contains the Docker image URI used to create the simulation application.</p>
     pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
         self.environment.as_ref()
     }
-    /// <p>A SHA256 identifier for the Docker image that you use for your simulation
-    /// application.</p>
+    /// <p>A SHA256 identifier for the Docker image that you use for your simulation application.</p>
     pub fn image_digest(&self) -> std::option::Option<&str> {
         self.image_digest.as_deref()
     }
@@ -5994,9 +6098,9 @@ pub mod describe_simulation_application_output {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// <p>The sources of the simulation application.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::Source>) -> Self {
+        pub fn sources(mut self, input: crate::model::Source) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -6060,14 +6164,12 @@ pub mod describe_simulation_application_output {
             self.revision_id = input;
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation application was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation application was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6100,14 +6202,12 @@ pub mod describe_simulation_application_output {
             self.tags = input;
             self
         }
-        /// <p>The object that contains the Docker image URI used to create the simulation
-        /// application.</p>
+        /// <p>The object that contains the Docker image URI used to create the simulation application.</p>
         pub fn environment(mut self, input: crate::model::Environment) -> Self {
             self.environment = Some(input);
             self
         }
-        /// <p>The object that contains the Docker image URI used to create the simulation
-        /// application.</p>
+        /// <p>The object that contains the Docker image URI used to create the simulation application.</p>
         pub fn set_environment(
             mut self,
             input: std::option::Option<crate::model::Environment>,
@@ -6115,14 +6215,12 @@ pub mod describe_simulation_application_output {
             self.environment = input;
             self
         }
-        /// <p>A SHA256 identifier for the Docker image that you use for your simulation
-        /// application.</p>
+        /// <p>A SHA256 identifier for the Docker image that you use for your simulation application.</p>
         pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
             self.image_digest = Some(input.into());
             self
         }
-        /// <p>A SHA256 identifier for the Docker image that you use for your simulation
-        /// application.</p>
+        /// <p>A SHA256 identifier for the Docker image that you use for your simulation application.</p>
         pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_digest = input;
             self
@@ -6169,14 +6267,12 @@ pub struct DescribeRobotApplicationOutput {
     pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
     /// <p>The revision id of the robot application.</p>
     pub revision_id: std::option::Option<std::string::String>,
-    /// <p>The time, in milliseconds since the epoch, when the robot application was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of all tags added to the specified robot application.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The object that contains the Docker image URI used to create the robot
-    /// application.</p>
+    /// <p>The object that contains the Docker image URI used to create the robot application.</p>
     pub environment: std::option::Option<crate::model::Environment>,
     /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
     pub image_digest: std::option::Option<std::string::String>,
@@ -6206,8 +6302,7 @@ impl DescribeRobotApplicationOutput {
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
-    /// <p>The time, in milliseconds since the epoch, when the robot application was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
@@ -6218,8 +6313,7 @@ impl DescribeRobotApplicationOutput {
     {
         self.tags.as_ref()
     }
-    /// <p>The object that contains the Docker image URI used to create the robot
-    /// application.</p>
+    /// <p>The object that contains the Docker image URI used to create the robot application.</p>
     pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
         self.environment.as_ref()
     }
@@ -6299,9 +6393,9 @@ pub mod describe_robot_application_output {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// <p>The sources of the robot application.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::Source>) -> Self {
+        pub fn sources(mut self, input: crate::model::Source) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -6336,14 +6430,12 @@ pub mod describe_robot_application_output {
             self.revision_id = input;
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the robot application was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the robot application was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6376,14 +6468,12 @@ pub mod describe_robot_application_output {
             self.tags = input;
             self
         }
-        /// <p>The object that contains the Docker image URI used to create the robot
-        /// application.</p>
+        /// <p>The object that contains the Docker image URI used to create the robot application.</p>
         pub fn environment(mut self, input: crate::model::Environment) -> Self {
             self.environment = Some(input);
             self
         }
-        /// <p>The object that contains the Docker image URI used to create the robot
-        /// application.</p>
+        /// <p>The object that contains the Docker image URI used to create the robot application.</p>
         pub fn set_environment(
             mut self,
             input: std::option::Option<crate::model::Environment>,
@@ -6802,9 +6892,9 @@ pub mod describe_fleet_output {
         /// To override the contents of this collection use [`set_robots`](Self::set_robots).
         ///
         /// <p>A list of robots.</p>
-        pub fn robots(mut self, input: impl Into<crate::model::Robot>) -> Self {
+        pub fn robots(mut self, input: crate::model::Robot) -> Self {
             let mut v = self.robots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.robots = Some(v);
             self
         }
@@ -7085,10 +7175,10 @@ pub mod describe_deployment_job_output {
         /// <p>The deployment application configuration.</p>
         pub fn deployment_application_configs(
             mut self,
-            input: impl Into<crate::model::DeploymentApplicationConfig>,
+            input: crate::model::DeploymentApplicationConfig,
         ) -> Self {
             let mut v = self.deployment_application_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deployment_application_configs = Some(v);
             self
         }
@@ -7144,12 +7234,9 @@ pub mod describe_deployment_job_output {
         /// To override the contents of this collection use [`set_robot_deployment_summary`](Self::set_robot_deployment_summary).
         ///
         /// <p>A list of robot deployment summaries.</p>
-        pub fn robot_deployment_summary(
-            mut self,
-            input: impl Into<crate::model::RobotDeployment>,
-        ) -> Self {
+        pub fn robot_deployment_summary(mut self, input: crate::model::RobotDeployment) -> Self {
             let mut v = self.robot_deployment_summary.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.robot_deployment_summary = Some(v);
             self
         }
@@ -7439,15 +7526,13 @@ impl DeleteFleetOutput {
 pub struct CreateWorldTemplateOutput {
     /// <p>The Amazon Resource Name (ARN) of the world template.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the world template was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the world template.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A map that contains tag keys and tag values that are attached to the world
-    /// template.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7456,8 +7541,7 @@ impl CreateWorldTemplateOutput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -7469,8 +7553,7 @@ impl CreateWorldTemplateOutput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A map that contains tag keys and tag values that are attached to the world
-    /// template.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -7514,14 +7597,12 @@ pub mod create_world_template_output {
             self.arn = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7556,8 +7637,7 @@ pub mod create_world_template_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the world
-        /// template.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -7568,8 +7648,7 @@ pub mod create_world_template_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the world
-        /// template.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -7606,78 +7685,96 @@ pub struct CreateWorldGenerationJobOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of the world generator job.</p>
     /// <dl>
-    /// <dt>Pending</dt>
+    /// <dt>
+    /// Pending
+    /// </dt>
     /// <dd>
     /// <p>The world generator job request is pending.</p>
     /// </dd>
-    /// <dt>Running</dt>
+    /// <dt>
+    /// Running
+    /// </dt>
     /// <dd>
     /// <p>The world generator job is running. </p>
     /// </dd>
-    /// <dt>Completed</dt>
+    /// <dt>
+    /// Completed
+    /// </dt>
     /// <dd>
     /// <p>The world generator job completed. </p>
     /// </dd>
-    /// <dt>Failed</dt>
+    /// <dt>
+    /// Failed
+    /// </dt>
     /// <dd>
-    /// <p>The world generator job failed. See <code>failureCode</code> for more
-    /// information. </p>
+    /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p>
     /// </dd>
-    /// <dt>PartialFailed</dt>
+    /// <dt>
+    /// PartialFailed
+    /// </dt>
     /// <dd>
     /// <p>Some worlds did not generate.</p>
     /// </dd>
-    /// <dt>Canceled</dt>
+    /// <dt>
+    /// Canceled
+    /// </dt>
     /// <dd>
     /// <p>The world generator job was cancelled.</p>
     /// </dd>
-    /// <dt>Canceling</dt>
+    /// <dt>
+    /// Canceling
+    /// </dt>
     /// <dd>
     /// <p>The world generator job is being cancelled.</p>
     /// </dd>
     /// </dl>
     pub status: std::option::Option<crate::model::WorldGenerationJobStatus>,
-    /// <p>The time, in milliseconds since the epoch, when the world generator job was
-    /// created.</p>
+    /// <p>The time, in milliseconds since the epoch, when the world generator job was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The failure code of the world generator job if it failed:</p>
     /// <dl>
-    /// <dt>InternalServiceError</dt>
+    /// <dt>
+    /// InternalServiceError
+    /// </dt>
     /// <dd>
     /// <p>Internal service error.</p>
     /// </dd>
-    /// <dt>LimitExceeded</dt>
+    /// <dt>
+    /// LimitExceeded
+    /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     /// </dd>
-    /// <dt>ResourceNotFound</dt>
+    /// <dt>
+    /// ResourceNotFound
+    /// </dt>
     /// <dd>
     /// <p>The specified resource could not be found. </p>
     /// </dd>
-    /// <dt>RequestThrottled</dt>
+    /// <dt>
+    /// RequestThrottled
+    /// </dt>
     /// <dd>
     /// <p>The request was throttled.</p>
     /// </dd>
-    /// <dt>InvalidInput</dt>
+    /// <dt>
+    /// InvalidInput
+    /// </dt>
     /// <dd>
     /// <p>An input parameter in the request is not valid.</p>
     /// </dd>
     /// </dl>
     pub failure_code: std::option::Option<crate::model::WorldGenerationJobErrorCode>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
     pub template: std::option::Option<std::string::String>,
     /// <p>Information about the world count. </p>
     pub world_count: std::option::Option<crate::model::WorldCount>,
-    /// <p>A map that contains tag keys and tag values that are attached to the world generator
-    /// job.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A map that contains tag keys and tag values that are attached to the generated
-    /// worlds.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
     pub world_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7688,32 +7785,45 @@ impl CreateWorldGenerationJobOutput {
     }
     /// <p>The status of the world generator job.</p>
     /// <dl>
-    /// <dt>Pending</dt>
+    /// <dt>
+    /// Pending
+    /// </dt>
     /// <dd>
     /// <p>The world generator job request is pending.</p>
     /// </dd>
-    /// <dt>Running</dt>
+    /// <dt>
+    /// Running
+    /// </dt>
     /// <dd>
     /// <p>The world generator job is running. </p>
     /// </dd>
-    /// <dt>Completed</dt>
+    /// <dt>
+    /// Completed
+    /// </dt>
     /// <dd>
     /// <p>The world generator job completed. </p>
     /// </dd>
-    /// <dt>Failed</dt>
+    /// <dt>
+    /// Failed
+    /// </dt>
     /// <dd>
-    /// <p>The world generator job failed. See <code>failureCode</code> for more
-    /// information. </p>
+    /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p>
     /// </dd>
-    /// <dt>PartialFailed</dt>
+    /// <dt>
+    /// PartialFailed
+    /// </dt>
     /// <dd>
     /// <p>Some worlds did not generate.</p>
     /// </dd>
-    /// <dt>Canceled</dt>
+    /// <dt>
+    /// Canceled
+    /// </dt>
     /// <dd>
     /// <p>The world generator job was cancelled.</p>
     /// </dd>
-    /// <dt>Canceling</dt>
+    /// <dt>
+    /// Canceling
+    /// </dt>
     /// <dd>
     /// <p>The world generator job is being cancelled.</p>
     /// </dd>
@@ -7721,31 +7831,39 @@ impl CreateWorldGenerationJobOutput {
     pub fn status(&self) -> std::option::Option<&crate::model::WorldGenerationJobStatus> {
         self.status.as_ref()
     }
-    /// <p>The time, in milliseconds since the epoch, when the world generator job was
-    /// created.</p>
+    /// <p>The time, in milliseconds since the epoch, when the world generator job was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The failure code of the world generator job if it failed:</p>
     /// <dl>
-    /// <dt>InternalServiceError</dt>
+    /// <dt>
+    /// InternalServiceError
+    /// </dt>
     /// <dd>
     /// <p>Internal service error.</p>
     /// </dd>
-    /// <dt>LimitExceeded</dt>
+    /// <dt>
+    /// LimitExceeded
+    /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     /// </dd>
-    /// <dt>ResourceNotFound</dt>
+    /// <dt>
+    /// ResourceNotFound
+    /// </dt>
     /// <dd>
     /// <p>The specified resource could not be found. </p>
     /// </dd>
-    /// <dt>RequestThrottled</dt>
+    /// <dt>
+    /// RequestThrottled
+    /// </dt>
     /// <dd>
     /// <p>The request was throttled.</p>
     /// </dd>
-    /// <dt>InvalidInput</dt>
+    /// <dt>
+    /// InvalidInput
+    /// </dt>
     /// <dd>
     /// <p>An input parameter in the request is not valid.</p>
     /// </dd>
@@ -7753,8 +7871,7 @@ impl CreateWorldGenerationJobOutput {
     pub fn failure_code(&self) -> std::option::Option<&crate::model::WorldGenerationJobErrorCode> {
         self.failure_code.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -7766,16 +7883,14 @@ impl CreateWorldGenerationJobOutput {
     pub fn world_count(&self) -> std::option::Option<&crate::model::WorldCount> {
         self.world_count.as_ref()
     }
-    /// <p>A map that contains tag keys and tag values that are attached to the world generator
-    /// job.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>A map that contains tag keys and tag values that are attached to the generated
-    /// worlds.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
     pub fn world_tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -7831,32 +7946,45 @@ pub mod create_world_generation_job_output {
         }
         /// <p>The status of the world generator job.</p>
         /// <dl>
-        /// <dt>Pending</dt>
+        /// <dt>
+        /// Pending
+        /// </dt>
         /// <dd>
         /// <p>The world generator job request is pending.</p>
         /// </dd>
-        /// <dt>Running</dt>
+        /// <dt>
+        /// Running
+        /// </dt>
         /// <dd>
         /// <p>The world generator job is running. </p>
         /// </dd>
-        /// <dt>Completed</dt>
+        /// <dt>
+        /// Completed
+        /// </dt>
         /// <dd>
         /// <p>The world generator job completed. </p>
         /// </dd>
-        /// <dt>Failed</dt>
+        /// <dt>
+        /// Failed
+        /// </dt>
         /// <dd>
-        /// <p>The world generator job failed. See <code>failureCode</code> for more
-        /// information. </p>
+        /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p>
         /// </dd>
-        /// <dt>PartialFailed</dt>
+        /// <dt>
+        /// PartialFailed
+        /// </dt>
         /// <dd>
         /// <p>Some worlds did not generate.</p>
         /// </dd>
-        /// <dt>Canceled</dt>
+        /// <dt>
+        /// Canceled
+        /// </dt>
         /// <dd>
         /// <p>The world generator job was cancelled.</p>
         /// </dd>
-        /// <dt>Canceling</dt>
+        /// <dt>
+        /// Canceling
+        /// </dt>
         /// <dd>
         /// <p>The world generator job is being cancelled.</p>
         /// </dd>
@@ -7867,32 +7995,45 @@ pub mod create_world_generation_job_output {
         }
         /// <p>The status of the world generator job.</p>
         /// <dl>
-        /// <dt>Pending</dt>
+        /// <dt>
+        /// Pending
+        /// </dt>
         /// <dd>
         /// <p>The world generator job request is pending.</p>
         /// </dd>
-        /// <dt>Running</dt>
+        /// <dt>
+        /// Running
+        /// </dt>
         /// <dd>
         /// <p>The world generator job is running. </p>
         /// </dd>
-        /// <dt>Completed</dt>
+        /// <dt>
+        /// Completed
+        /// </dt>
         /// <dd>
         /// <p>The world generator job completed. </p>
         /// </dd>
-        /// <dt>Failed</dt>
+        /// <dt>
+        /// Failed
+        /// </dt>
         /// <dd>
-        /// <p>The world generator job failed. See <code>failureCode</code> for more
-        /// information. </p>
+        /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p>
         /// </dd>
-        /// <dt>PartialFailed</dt>
+        /// <dt>
+        /// PartialFailed
+        /// </dt>
         /// <dd>
         /// <p>Some worlds did not generate.</p>
         /// </dd>
-        /// <dt>Canceled</dt>
+        /// <dt>
+        /// Canceled
+        /// </dt>
         /// <dd>
         /// <p>The world generator job was cancelled.</p>
         /// </dd>
-        /// <dt>Canceling</dt>
+        /// <dt>
+        /// Canceling
+        /// </dt>
         /// <dd>
         /// <p>The world generator job is being cancelled.</p>
         /// </dd>
@@ -7904,14 +8045,12 @@ pub mod create_world_generation_job_output {
             self.status = input;
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the world generator job was
-        /// created.</p>
+        /// <p>The time, in milliseconds since the epoch, when the world generator job was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the world generator job was
-        /// created.</p>
+        /// <p>The time, in milliseconds since the epoch, when the world generator job was created.</p>
         pub fn set_created_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -7921,24 +8060,33 @@ pub mod create_world_generation_job_output {
         }
         /// <p>The failure code of the world generator job if it failed:</p>
         /// <dl>
-        /// <dt>InternalServiceError</dt>
+        /// <dt>
+        /// InternalServiceError
+        /// </dt>
         /// <dd>
         /// <p>Internal service error.</p>
         /// </dd>
-        /// <dt>LimitExceeded</dt>
+        /// <dt>
+        /// LimitExceeded
+        /// </dt>
         /// <dd>
-        /// <p>The requested resource exceeds the maximum number allowed, or the number of
-        /// concurrent stream requests exceeds the maximum number allowed. </p>
+        /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
         /// </dd>
-        /// <dt>ResourceNotFound</dt>
+        /// <dt>
+        /// ResourceNotFound
+        /// </dt>
         /// <dd>
         /// <p>The specified resource could not be found. </p>
         /// </dd>
-        /// <dt>RequestThrottled</dt>
+        /// <dt>
+        /// RequestThrottled
+        /// </dt>
         /// <dd>
         /// <p>The request was throttled.</p>
         /// </dd>
-        /// <dt>InvalidInput</dt>
+        /// <dt>
+        /// InvalidInput
+        /// </dt>
         /// <dd>
         /// <p>An input parameter in the request is not valid.</p>
         /// </dd>
@@ -7949,24 +8097,33 @@ pub mod create_world_generation_job_output {
         }
         /// <p>The failure code of the world generator job if it failed:</p>
         /// <dl>
-        /// <dt>InternalServiceError</dt>
+        /// <dt>
+        /// InternalServiceError
+        /// </dt>
         /// <dd>
         /// <p>Internal service error.</p>
         /// </dd>
-        /// <dt>LimitExceeded</dt>
+        /// <dt>
+        /// LimitExceeded
+        /// </dt>
         /// <dd>
-        /// <p>The requested resource exceeds the maximum number allowed, or the number of
-        /// concurrent stream requests exceeds the maximum number allowed. </p>
+        /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
         /// </dd>
-        /// <dt>ResourceNotFound</dt>
+        /// <dt>
+        /// ResourceNotFound
+        /// </dt>
         /// <dd>
         /// <p>The specified resource could not be found. </p>
         /// </dd>
-        /// <dt>RequestThrottled</dt>
+        /// <dt>
+        /// RequestThrottled
+        /// </dt>
         /// <dd>
         /// <p>The request was throttled.</p>
         /// </dd>
-        /// <dt>InvalidInput</dt>
+        /// <dt>
+        /// InvalidInput
+        /// </dt>
         /// <dd>
         /// <p>An input parameter in the request is not valid.</p>
         /// </dd>
@@ -7978,14 +8135,12 @@ pub mod create_world_generation_job_output {
             self.failure_code = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8020,8 +8175,7 @@ pub mod create_world_generation_job_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the world generator
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -8032,8 +8186,7 @@ pub mod create_world_generation_job_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the world generator
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -8047,8 +8200,7 @@ pub mod create_world_generation_job_output {
         ///
         /// To override the contents of this collection use [`set_world_tags`](Self::set_world_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the generated
-        /// worlds.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
         pub fn world_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -8059,8 +8211,7 @@ pub mod create_world_generation_job_output {
             self.world_tags = Some(hash_map);
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the generated
-        /// worlds.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
         pub fn set_world_tags(
             mut self,
             input: std::option::Option<
@@ -8101,28 +8252,39 @@ pub struct CreateWorldExportJobOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of the world export job.</p>
     /// <dl>
-    /// <dt>Pending</dt>
+    /// <dt>
+    /// Pending
+    /// </dt>
     /// <dd>
     /// <p>The world export job request is pending.</p>
     /// </dd>
-    /// <dt>Running</dt>
+    /// <dt>
+    /// Running
+    /// </dt>
     /// <dd>
     /// <p>The world export job is running. </p>
     /// </dd>
-    /// <dt>Completed</dt>
+    /// <dt>
+    /// Completed
+    /// </dt>
     /// <dd>
     /// <p>The world export job completed. </p>
     /// </dd>
-    /// <dt>Failed</dt>
+    /// <dt>
+    /// Failed
+    /// </dt>
     /// <dd>
-    /// <p>The world export job failed. See <code>failureCode</code> for more information.
-    /// </p>
+    /// <p>The world export job failed. See <code>failureCode</code> for more information. </p>
     /// </dd>
-    /// <dt>Canceled</dt>
+    /// <dt>
+    /// Canceled
+    /// </dt>
     /// <dd>
     /// <p>The world export job was cancelled.</p>
     /// </dd>
-    /// <dt>Canceling</dt>
+    /// <dt>
+    /// Canceling
+    /// </dt>
     /// <dd>
     /// <p>The world export job is being cancelled.</p>
     /// </dd>
@@ -8132,45 +8294,52 @@ pub struct CreateWorldExportJobOutput {
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The failure code of the world export job if it failed:</p>
     /// <dl>
-    /// <dt>InternalServiceError</dt>
+    /// <dt>
+    /// InternalServiceError
+    /// </dt>
     /// <dd>
     /// <p>Internal service error.</p>
     /// </dd>
-    /// <dt>LimitExceeded</dt>
+    /// <dt>
+    /// LimitExceeded
+    /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     /// </dd>
-    /// <dt>ResourceNotFound</dt>
+    /// <dt>
+    /// ResourceNotFound
+    /// </dt>
     /// <dd>
     /// <p>The specified resource could not be found. </p>
     /// </dd>
-    /// <dt>RequestThrottled</dt>
+    /// <dt>
+    /// RequestThrottled
+    /// </dt>
     /// <dd>
     /// <p>The request was throttled.</p>
     /// </dd>
-    /// <dt>InvalidInput</dt>
+    /// <dt>
+    /// InvalidInput
+    /// </dt>
     /// <dd>
     /// <p>An input parameter in the request is not valid.</p>
     /// </dd>
-    /// <dt>AllWorldGenerationFailed</dt>
+    /// <dt>
+    /// AllWorldGenerationFailed
+    /// </dt>
     /// <dd>
-    /// <p>All of the worlds in the world generation job failed. This can happen if your
-    /// <code>worldCount</code> is greater than 50 or less than 1. </p>
+    /// <p>All of the worlds in the world generation job failed. This can happen if your <code>worldCount</code> is greater than 50 or less than 1. </p>
     /// </dd>
     /// </dl>
     /// <p>For more information about troubleshooting WorldForge, see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting Simulation WorldForge</a>. </p>
     pub failure_code: std::option::Option<crate::model::WorldExportJobErrorCode>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The output location.</p>
     pub output_location: std::option::Option<crate::model::OutputLocation>,
-    /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put
-    /// the export. </p>
+    /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export. </p>
     pub iam_role: std::option::Option<std::string::String>,
-    /// <p>A map that contains tag keys and tag values that are attached to the world export
-    /// job.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8181,28 +8350,39 @@ impl CreateWorldExportJobOutput {
     }
     /// <p>The status of the world export job.</p>
     /// <dl>
-    /// <dt>Pending</dt>
+    /// <dt>
+    /// Pending
+    /// </dt>
     /// <dd>
     /// <p>The world export job request is pending.</p>
     /// </dd>
-    /// <dt>Running</dt>
+    /// <dt>
+    /// Running
+    /// </dt>
     /// <dd>
     /// <p>The world export job is running. </p>
     /// </dd>
-    /// <dt>Completed</dt>
+    /// <dt>
+    /// Completed
+    /// </dt>
     /// <dd>
     /// <p>The world export job completed. </p>
     /// </dd>
-    /// <dt>Failed</dt>
+    /// <dt>
+    /// Failed
+    /// </dt>
     /// <dd>
-    /// <p>The world export job failed. See <code>failureCode</code> for more information.
-    /// </p>
+    /// <p>The world export job failed. See <code>failureCode</code> for more information. </p>
     /// </dd>
-    /// <dt>Canceled</dt>
+    /// <dt>
+    /// Canceled
+    /// </dt>
     /// <dd>
     /// <p>The world export job was cancelled.</p>
     /// </dd>
-    /// <dt>Canceling</dt>
+    /// <dt>
+    /// Canceling
+    /// </dt>
     /// <dd>
     /// <p>The world export job is being cancelled.</p>
     /// </dd>
@@ -8216,39 +8396,48 @@ impl CreateWorldExportJobOutput {
     }
     /// <p>The failure code of the world export job if it failed:</p>
     /// <dl>
-    /// <dt>InternalServiceError</dt>
+    /// <dt>
+    /// InternalServiceError
+    /// </dt>
     /// <dd>
     /// <p>Internal service error.</p>
     /// </dd>
-    /// <dt>LimitExceeded</dt>
+    /// <dt>
+    /// LimitExceeded
+    /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of
-    /// concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     /// </dd>
-    /// <dt>ResourceNotFound</dt>
+    /// <dt>
+    /// ResourceNotFound
+    /// </dt>
     /// <dd>
     /// <p>The specified resource could not be found. </p>
     /// </dd>
-    /// <dt>RequestThrottled</dt>
+    /// <dt>
+    /// RequestThrottled
+    /// </dt>
     /// <dd>
     /// <p>The request was throttled.</p>
     /// </dd>
-    /// <dt>InvalidInput</dt>
+    /// <dt>
+    /// InvalidInput
+    /// </dt>
     /// <dd>
     /// <p>An input parameter in the request is not valid.</p>
     /// </dd>
-    /// <dt>AllWorldGenerationFailed</dt>
+    /// <dt>
+    /// AllWorldGenerationFailed
+    /// </dt>
     /// <dd>
-    /// <p>All of the worlds in the world generation job failed. This can happen if your
-    /// <code>worldCount</code> is greater than 50 or less than 1. </p>
+    /// <p>All of the worlds in the world generation job failed. This can happen if your <code>worldCount</code> is greater than 50 or less than 1. </p>
     /// </dd>
     /// </dl>
     /// <p>For more information about troubleshooting WorldForge, see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting Simulation WorldForge</a>. </p>
     pub fn failure_code(&self) -> std::option::Option<&crate::model::WorldExportJobErrorCode> {
         self.failure_code.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -8256,13 +8445,11 @@ impl CreateWorldExportJobOutput {
     pub fn output_location(&self) -> std::option::Option<&crate::model::OutputLocation> {
         self.output_location.as_ref()
     }
-    /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put
-    /// the export. </p>
+    /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export. </p>
     pub fn iam_role(&self) -> std::option::Option<&str> {
         self.iam_role.as_deref()
     }
-    /// <p>A map that contains tag keys and tag values that are attached to the world export
-    /// job.</p>
+    /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -8314,28 +8501,39 @@ pub mod create_world_export_job_output {
         }
         /// <p>The status of the world export job.</p>
         /// <dl>
-        /// <dt>Pending</dt>
+        /// <dt>
+        /// Pending
+        /// </dt>
         /// <dd>
         /// <p>The world export job request is pending.</p>
         /// </dd>
-        /// <dt>Running</dt>
+        /// <dt>
+        /// Running
+        /// </dt>
         /// <dd>
         /// <p>The world export job is running. </p>
         /// </dd>
-        /// <dt>Completed</dt>
+        /// <dt>
+        /// Completed
+        /// </dt>
         /// <dd>
         /// <p>The world export job completed. </p>
         /// </dd>
-        /// <dt>Failed</dt>
+        /// <dt>
+        /// Failed
+        /// </dt>
         /// <dd>
-        /// <p>The world export job failed. See <code>failureCode</code> for more information.
-        /// </p>
+        /// <p>The world export job failed. See <code>failureCode</code> for more information. </p>
         /// </dd>
-        /// <dt>Canceled</dt>
+        /// <dt>
+        /// Canceled
+        /// </dt>
         /// <dd>
         /// <p>The world export job was cancelled.</p>
         /// </dd>
-        /// <dt>Canceling</dt>
+        /// <dt>
+        /// Canceling
+        /// </dt>
         /// <dd>
         /// <p>The world export job is being cancelled.</p>
         /// </dd>
@@ -8346,28 +8544,39 @@ pub mod create_world_export_job_output {
         }
         /// <p>The status of the world export job.</p>
         /// <dl>
-        /// <dt>Pending</dt>
+        /// <dt>
+        /// Pending
+        /// </dt>
         /// <dd>
         /// <p>The world export job request is pending.</p>
         /// </dd>
-        /// <dt>Running</dt>
+        /// <dt>
+        /// Running
+        /// </dt>
         /// <dd>
         /// <p>The world export job is running. </p>
         /// </dd>
-        /// <dt>Completed</dt>
+        /// <dt>
+        /// Completed
+        /// </dt>
         /// <dd>
         /// <p>The world export job completed. </p>
         /// </dd>
-        /// <dt>Failed</dt>
+        /// <dt>
+        /// Failed
+        /// </dt>
         /// <dd>
-        /// <p>The world export job failed. See <code>failureCode</code> for more information.
-        /// </p>
+        /// <p>The world export job failed. See <code>failureCode</code> for more information. </p>
         /// </dd>
-        /// <dt>Canceled</dt>
+        /// <dt>
+        /// Canceled
+        /// </dt>
         /// <dd>
         /// <p>The world export job was cancelled.</p>
         /// </dd>
-        /// <dt>Canceling</dt>
+        /// <dt>
+        /// Canceling
+        /// </dt>
         /// <dd>
         /// <p>The world export job is being cancelled.</p>
         /// </dd>
@@ -8394,31 +8603,41 @@ pub mod create_world_export_job_output {
         }
         /// <p>The failure code of the world export job if it failed:</p>
         /// <dl>
-        /// <dt>InternalServiceError</dt>
+        /// <dt>
+        /// InternalServiceError
+        /// </dt>
         /// <dd>
         /// <p>Internal service error.</p>
         /// </dd>
-        /// <dt>LimitExceeded</dt>
+        /// <dt>
+        /// LimitExceeded
+        /// </dt>
         /// <dd>
-        /// <p>The requested resource exceeds the maximum number allowed, or the number of
-        /// concurrent stream requests exceeds the maximum number allowed. </p>
+        /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
         /// </dd>
-        /// <dt>ResourceNotFound</dt>
+        /// <dt>
+        /// ResourceNotFound
+        /// </dt>
         /// <dd>
         /// <p>The specified resource could not be found. </p>
         /// </dd>
-        /// <dt>RequestThrottled</dt>
+        /// <dt>
+        /// RequestThrottled
+        /// </dt>
         /// <dd>
         /// <p>The request was throttled.</p>
         /// </dd>
-        /// <dt>InvalidInput</dt>
+        /// <dt>
+        /// InvalidInput
+        /// </dt>
         /// <dd>
         /// <p>An input parameter in the request is not valid.</p>
         /// </dd>
-        /// <dt>AllWorldGenerationFailed</dt>
+        /// <dt>
+        /// AllWorldGenerationFailed
+        /// </dt>
         /// <dd>
-        /// <p>All of the worlds in the world generation job failed. This can happen if your
-        /// <code>worldCount</code> is greater than 50 or less than 1. </p>
+        /// <p>All of the worlds in the world generation job failed. This can happen if your <code>worldCount</code> is greater than 50 or less than 1. </p>
         /// </dd>
         /// </dl>
         /// <p>For more information about troubleshooting WorldForge, see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting Simulation WorldForge</a>. </p>
@@ -8428,31 +8647,41 @@ pub mod create_world_export_job_output {
         }
         /// <p>The failure code of the world export job if it failed:</p>
         /// <dl>
-        /// <dt>InternalServiceError</dt>
+        /// <dt>
+        /// InternalServiceError
+        /// </dt>
         /// <dd>
         /// <p>Internal service error.</p>
         /// </dd>
-        /// <dt>LimitExceeded</dt>
+        /// <dt>
+        /// LimitExceeded
+        /// </dt>
         /// <dd>
-        /// <p>The requested resource exceeds the maximum number allowed, or the number of
-        /// concurrent stream requests exceeds the maximum number allowed. </p>
+        /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
         /// </dd>
-        /// <dt>ResourceNotFound</dt>
+        /// <dt>
+        /// ResourceNotFound
+        /// </dt>
         /// <dd>
         /// <p>The specified resource could not be found. </p>
         /// </dd>
-        /// <dt>RequestThrottled</dt>
+        /// <dt>
+        /// RequestThrottled
+        /// </dt>
         /// <dd>
         /// <p>The request was throttled.</p>
         /// </dd>
-        /// <dt>InvalidInput</dt>
+        /// <dt>
+        /// InvalidInput
+        /// </dt>
         /// <dd>
         /// <p>An input parameter in the request is not valid.</p>
         /// </dd>
-        /// <dt>AllWorldGenerationFailed</dt>
+        /// <dt>
+        /// AllWorldGenerationFailed
+        /// </dt>
         /// <dd>
-        /// <p>All of the worlds in the world generation job failed. This can happen if your
-        /// <code>worldCount</code> is greater than 50 or less than 1. </p>
+        /// <p>All of the worlds in the world generation job failed. This can happen if your <code>worldCount</code> is greater than 50 or less than 1. </p>
         /// </dd>
         /// </dl>
         /// <p>For more information about troubleshooting WorldForge, see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting Simulation WorldForge</a>. </p>
@@ -8463,14 +8692,12 @@ pub mod create_world_export_job_output {
             self.failure_code = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8491,14 +8718,12 @@ pub mod create_world_export_job_output {
             self.output_location = input;
             self
         }
-        /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put
-        /// the export. </p>
+        /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export. </p>
         pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role = Some(input.into());
             self
         }
-        /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put
-        /// the export. </p>
+        /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export. </p>
         pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role = input;
             self
@@ -8507,8 +8732,7 @@ pub mod create_world_export_job_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the world export
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -8519,8 +8743,7 @@ pub mod create_world_export_job_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the world export
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -8560,79 +8783,101 @@ pub struct CreateSimulationJobOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of the simulation job.</p>
     pub status: std::option::Option<crate::model::SimulationJobStatus>,
-    /// <p>The time, in milliseconds since the epoch, when the simulation job was last
-    /// started.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation job was last started.</p>
     pub last_started_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The time, in milliseconds since the epoch, when the simulation job was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>the failure behavior for the simulation job.</p>
     pub failure_behavior: std::option::Option<crate::model::FailureBehavior>,
     /// <p>The failure code of the simulation job if it failed:</p>
     /// <dl>
-    /// <dt>InternalServiceError</dt>
+    /// <dt>
+    /// InternalServiceError
+    /// </dt>
     /// <dd>
     /// <p>Internal service error.</p>
     /// </dd>
-    /// <dt>RobotApplicationCrash</dt>
+    /// <dt>
+    /// RobotApplicationCrash
+    /// </dt>
     /// <dd>
     /// <p>Robot application exited abnormally.</p>
     /// </dd>
-    /// <dt>SimulationApplicationCrash</dt>
+    /// <dt>
+    /// SimulationApplicationCrash
+    /// </dt>
     /// <dd>
     /// <p> Simulation application exited abnormally.</p>
     /// </dd>
-    /// <dt>BadPermissionsRobotApplication</dt>
+    /// <dt>
+    /// BadPermissionsRobotApplication
+    /// </dt>
     /// <dd>
     /// <p>Robot application bundle could not be downloaded.</p>
     /// </dd>
-    /// <dt>BadPermissionsSimulationApplication</dt>
+    /// <dt>
+    /// BadPermissionsSimulationApplication
+    /// </dt>
     /// <dd>
     /// <p>Simulation application bundle could not be downloaded.</p>
     /// </dd>
-    /// <dt>BadPermissionsS3Output</dt>
+    /// <dt>
+    /// BadPermissionsS3Output
+    /// </dt>
     /// <dd>
     /// <p>Unable to publish outputs to customer-provided S3 bucket.</p>
     /// </dd>
-    /// <dt>BadPermissionsCloudwatchLogs</dt>
+    /// <dt>
+    /// BadPermissionsCloudwatchLogs
+    /// </dt>
     /// <dd>
     /// <p>Unable to publish logs to customer-provided CloudWatch Logs resource.</p>
     /// </dd>
-    /// <dt>SubnetIpLimitExceeded</dt>
+    /// <dt>
+    /// SubnetIpLimitExceeded
+    /// </dt>
     /// <dd>
     /// <p>Subnet IP limit exceeded.</p>
     /// </dd>
-    /// <dt>ENILimitExceeded</dt>
+    /// <dt>
+    /// ENILimitExceeded
+    /// </dt>
     /// <dd>
     /// <p>ENI limit exceeded.</p>
     /// </dd>
-    /// <dt>BadPermissionsUserCredentials</dt>
+    /// <dt>
+    /// BadPermissionsUserCredentials
+    /// </dt>
     /// <dd>
     /// <p>Unable to use the Role provided.</p>
     /// </dd>
-    /// <dt>InvalidBundleRobotApplication</dt>
+    /// <dt>
+    /// InvalidBundleRobotApplication
+    /// </dt>
     /// <dd>
-    /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other
-    /// issue).</p>
+    /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
     /// </dd>
-    /// <dt>InvalidBundleSimulationApplication</dt>
+    /// <dt>
+    /// InvalidBundleSimulationApplication
+    /// </dt>
     /// <dd>
-    /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other
-    /// issue).</p>
+    /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
     /// </dd>
-    /// <dt>RobotApplicationVersionMismatchedEtag</dt>
+    /// <dt>
+    /// RobotApplicationVersionMismatchedEtag
+    /// </dt>
     /// <dd>
     /// <p>Etag for RobotApplication does not match value during version creation.</p>
     /// </dd>
-    /// <dt>SimulationApplicationVersionMismatchedEtag</dt>
+    /// <dt>
+    /// SimulationApplicationVersionMismatchedEtag
+    /// </dt>
     /// <dd>
-    /// <p>Etag for SimulationApplication does not match value during version
-    /// creation.</p>
+    /// <p>Etag for SimulationApplication does not match value during version creation.</p>
     /// </dd>
     /// </dl>
     pub failure_code: std::option::Option<crate::model::SimulationJobErrorCode>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Simulation job output files location.</p>
     pub output_location: std::option::Option<crate::model::OutputLocation>,
@@ -8642,8 +8887,7 @@ pub struct CreateSimulationJobOutput {
     pub max_job_duration_in_seconds: i64,
     /// <p>The simulation job execution duration in milliseconds.</p>
     pub simulation_time_millis: i64,
-    /// <p>The IAM role that allows the simulation job to call the AWS APIs that are specified in
-    /// its associated policies on your behalf.</p>
+    /// <p>The IAM role that allows the simulation job to call the AWS APIs that are specified in its associated policies on your behalf.</p>
     pub iam_role: std::option::Option<std::string::String>,
     /// <p>The robot application used by the simulation job.</p>
     pub robot_applications:
@@ -8670,13 +8914,11 @@ impl CreateSimulationJobOutput {
     pub fn status(&self) -> std::option::Option<&crate::model::SimulationJobStatus> {
         self.status.as_ref()
     }
-    /// <p>The time, in milliseconds since the epoch, when the simulation job was last
-    /// started.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation job was last started.</p>
     pub fn last_started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_started_at.as_ref()
     }
-    /// <p>The time, in milliseconds since the epoch, when the simulation job was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
@@ -8686,71 +8928,95 @@ impl CreateSimulationJobOutput {
     }
     /// <p>The failure code of the simulation job if it failed:</p>
     /// <dl>
-    /// <dt>InternalServiceError</dt>
+    /// <dt>
+    /// InternalServiceError
+    /// </dt>
     /// <dd>
     /// <p>Internal service error.</p>
     /// </dd>
-    /// <dt>RobotApplicationCrash</dt>
+    /// <dt>
+    /// RobotApplicationCrash
+    /// </dt>
     /// <dd>
     /// <p>Robot application exited abnormally.</p>
     /// </dd>
-    /// <dt>SimulationApplicationCrash</dt>
+    /// <dt>
+    /// SimulationApplicationCrash
+    /// </dt>
     /// <dd>
     /// <p> Simulation application exited abnormally.</p>
     /// </dd>
-    /// <dt>BadPermissionsRobotApplication</dt>
+    /// <dt>
+    /// BadPermissionsRobotApplication
+    /// </dt>
     /// <dd>
     /// <p>Robot application bundle could not be downloaded.</p>
     /// </dd>
-    /// <dt>BadPermissionsSimulationApplication</dt>
+    /// <dt>
+    /// BadPermissionsSimulationApplication
+    /// </dt>
     /// <dd>
     /// <p>Simulation application bundle could not be downloaded.</p>
     /// </dd>
-    /// <dt>BadPermissionsS3Output</dt>
+    /// <dt>
+    /// BadPermissionsS3Output
+    /// </dt>
     /// <dd>
     /// <p>Unable to publish outputs to customer-provided S3 bucket.</p>
     /// </dd>
-    /// <dt>BadPermissionsCloudwatchLogs</dt>
+    /// <dt>
+    /// BadPermissionsCloudwatchLogs
+    /// </dt>
     /// <dd>
     /// <p>Unable to publish logs to customer-provided CloudWatch Logs resource.</p>
     /// </dd>
-    /// <dt>SubnetIpLimitExceeded</dt>
+    /// <dt>
+    /// SubnetIpLimitExceeded
+    /// </dt>
     /// <dd>
     /// <p>Subnet IP limit exceeded.</p>
     /// </dd>
-    /// <dt>ENILimitExceeded</dt>
+    /// <dt>
+    /// ENILimitExceeded
+    /// </dt>
     /// <dd>
     /// <p>ENI limit exceeded.</p>
     /// </dd>
-    /// <dt>BadPermissionsUserCredentials</dt>
+    /// <dt>
+    /// BadPermissionsUserCredentials
+    /// </dt>
     /// <dd>
     /// <p>Unable to use the Role provided.</p>
     /// </dd>
-    /// <dt>InvalidBundleRobotApplication</dt>
+    /// <dt>
+    /// InvalidBundleRobotApplication
+    /// </dt>
     /// <dd>
-    /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other
-    /// issue).</p>
+    /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
     /// </dd>
-    /// <dt>InvalidBundleSimulationApplication</dt>
+    /// <dt>
+    /// InvalidBundleSimulationApplication
+    /// </dt>
     /// <dd>
-    /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other
-    /// issue).</p>
+    /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
     /// </dd>
-    /// <dt>RobotApplicationVersionMismatchedEtag</dt>
+    /// <dt>
+    /// RobotApplicationVersionMismatchedEtag
+    /// </dt>
     /// <dd>
     /// <p>Etag for RobotApplication does not match value during version creation.</p>
     /// </dd>
-    /// <dt>SimulationApplicationVersionMismatchedEtag</dt>
+    /// <dt>
+    /// SimulationApplicationVersionMismatchedEtag
+    /// </dt>
     /// <dd>
-    /// <p>Etag for SimulationApplication does not match value during version
-    /// creation.</p>
+    /// <p>Etag for SimulationApplication does not match value during version creation.</p>
     /// </dd>
     /// </dl>
     pub fn failure_code(&self) -> std::option::Option<&crate::model::SimulationJobErrorCode> {
         self.failure_code.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -8770,8 +9036,7 @@ impl CreateSimulationJobOutput {
     pub fn simulation_time_millis(&self) -> i64 {
         self.simulation_time_millis
     }
-    /// <p>The IAM role that allows the simulation job to call the AWS APIs that are specified in
-    /// its associated policies on your behalf.</p>
+    /// <p>The IAM role that allows the simulation job to call the AWS APIs that are specified in its associated policies on your behalf.</p>
     pub fn iam_role(&self) -> std::option::Option<&str> {
         self.iam_role.as_deref()
     }
@@ -8887,14 +9152,12 @@ pub mod create_simulation_job_output {
             self.status = input;
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation job was last
-        /// started.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation job was last started.</p>
         pub fn last_started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_started_at = Some(input);
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation job was last
-        /// started.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation job was last started.</p>
         pub fn set_last_started_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -8902,14 +9165,12 @@ pub mod create_simulation_job_output {
             self.last_started_at = input;
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation job was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation job was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -8932,64 +9193,89 @@ pub mod create_simulation_job_output {
         }
         /// <p>The failure code of the simulation job if it failed:</p>
         /// <dl>
-        /// <dt>InternalServiceError</dt>
+        /// <dt>
+        /// InternalServiceError
+        /// </dt>
         /// <dd>
         /// <p>Internal service error.</p>
         /// </dd>
-        /// <dt>RobotApplicationCrash</dt>
+        /// <dt>
+        /// RobotApplicationCrash
+        /// </dt>
         /// <dd>
         /// <p>Robot application exited abnormally.</p>
         /// </dd>
-        /// <dt>SimulationApplicationCrash</dt>
+        /// <dt>
+        /// SimulationApplicationCrash
+        /// </dt>
         /// <dd>
         /// <p> Simulation application exited abnormally.</p>
         /// </dd>
-        /// <dt>BadPermissionsRobotApplication</dt>
+        /// <dt>
+        /// BadPermissionsRobotApplication
+        /// </dt>
         /// <dd>
         /// <p>Robot application bundle could not be downloaded.</p>
         /// </dd>
-        /// <dt>BadPermissionsSimulationApplication</dt>
+        /// <dt>
+        /// BadPermissionsSimulationApplication
+        /// </dt>
         /// <dd>
         /// <p>Simulation application bundle could not be downloaded.</p>
         /// </dd>
-        /// <dt>BadPermissionsS3Output</dt>
+        /// <dt>
+        /// BadPermissionsS3Output
+        /// </dt>
         /// <dd>
         /// <p>Unable to publish outputs to customer-provided S3 bucket.</p>
         /// </dd>
-        /// <dt>BadPermissionsCloudwatchLogs</dt>
+        /// <dt>
+        /// BadPermissionsCloudwatchLogs
+        /// </dt>
         /// <dd>
         /// <p>Unable to publish logs to customer-provided CloudWatch Logs resource.</p>
         /// </dd>
-        /// <dt>SubnetIpLimitExceeded</dt>
+        /// <dt>
+        /// SubnetIpLimitExceeded
+        /// </dt>
         /// <dd>
         /// <p>Subnet IP limit exceeded.</p>
         /// </dd>
-        /// <dt>ENILimitExceeded</dt>
+        /// <dt>
+        /// ENILimitExceeded
+        /// </dt>
         /// <dd>
         /// <p>ENI limit exceeded.</p>
         /// </dd>
-        /// <dt>BadPermissionsUserCredentials</dt>
+        /// <dt>
+        /// BadPermissionsUserCredentials
+        /// </dt>
         /// <dd>
         /// <p>Unable to use the Role provided.</p>
         /// </dd>
-        /// <dt>InvalidBundleRobotApplication</dt>
+        /// <dt>
+        /// InvalidBundleRobotApplication
+        /// </dt>
         /// <dd>
-        /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other
-        /// issue).</p>
+        /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
         /// </dd>
-        /// <dt>InvalidBundleSimulationApplication</dt>
+        /// <dt>
+        /// InvalidBundleSimulationApplication
+        /// </dt>
         /// <dd>
-        /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other
-        /// issue).</p>
+        /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
         /// </dd>
-        /// <dt>RobotApplicationVersionMismatchedEtag</dt>
+        /// <dt>
+        /// RobotApplicationVersionMismatchedEtag
+        /// </dt>
         /// <dd>
         /// <p>Etag for RobotApplication does not match value during version creation.</p>
         /// </dd>
-        /// <dt>SimulationApplicationVersionMismatchedEtag</dt>
+        /// <dt>
+        /// SimulationApplicationVersionMismatchedEtag
+        /// </dt>
         /// <dd>
-        /// <p>Etag for SimulationApplication does not match value during version
-        /// creation.</p>
+        /// <p>Etag for SimulationApplication does not match value during version creation.</p>
         /// </dd>
         /// </dl>
         pub fn failure_code(mut self, input: crate::model::SimulationJobErrorCode) -> Self {
@@ -8998,64 +9284,89 @@ pub mod create_simulation_job_output {
         }
         /// <p>The failure code of the simulation job if it failed:</p>
         /// <dl>
-        /// <dt>InternalServiceError</dt>
+        /// <dt>
+        /// InternalServiceError
+        /// </dt>
         /// <dd>
         /// <p>Internal service error.</p>
         /// </dd>
-        /// <dt>RobotApplicationCrash</dt>
+        /// <dt>
+        /// RobotApplicationCrash
+        /// </dt>
         /// <dd>
         /// <p>Robot application exited abnormally.</p>
         /// </dd>
-        /// <dt>SimulationApplicationCrash</dt>
+        /// <dt>
+        /// SimulationApplicationCrash
+        /// </dt>
         /// <dd>
         /// <p> Simulation application exited abnormally.</p>
         /// </dd>
-        /// <dt>BadPermissionsRobotApplication</dt>
+        /// <dt>
+        /// BadPermissionsRobotApplication
+        /// </dt>
         /// <dd>
         /// <p>Robot application bundle could not be downloaded.</p>
         /// </dd>
-        /// <dt>BadPermissionsSimulationApplication</dt>
+        /// <dt>
+        /// BadPermissionsSimulationApplication
+        /// </dt>
         /// <dd>
         /// <p>Simulation application bundle could not be downloaded.</p>
         /// </dd>
-        /// <dt>BadPermissionsS3Output</dt>
+        /// <dt>
+        /// BadPermissionsS3Output
+        /// </dt>
         /// <dd>
         /// <p>Unable to publish outputs to customer-provided S3 bucket.</p>
         /// </dd>
-        /// <dt>BadPermissionsCloudwatchLogs</dt>
+        /// <dt>
+        /// BadPermissionsCloudwatchLogs
+        /// </dt>
         /// <dd>
         /// <p>Unable to publish logs to customer-provided CloudWatch Logs resource.</p>
         /// </dd>
-        /// <dt>SubnetIpLimitExceeded</dt>
+        /// <dt>
+        /// SubnetIpLimitExceeded
+        /// </dt>
         /// <dd>
         /// <p>Subnet IP limit exceeded.</p>
         /// </dd>
-        /// <dt>ENILimitExceeded</dt>
+        /// <dt>
+        /// ENILimitExceeded
+        /// </dt>
         /// <dd>
         /// <p>ENI limit exceeded.</p>
         /// </dd>
-        /// <dt>BadPermissionsUserCredentials</dt>
+        /// <dt>
+        /// BadPermissionsUserCredentials
+        /// </dt>
         /// <dd>
         /// <p>Unable to use the Role provided.</p>
         /// </dd>
-        /// <dt>InvalidBundleRobotApplication</dt>
+        /// <dt>
+        /// InvalidBundleRobotApplication
+        /// </dt>
         /// <dd>
-        /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other
-        /// issue).</p>
+        /// <p>Robot bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
         /// </dd>
-        /// <dt>InvalidBundleSimulationApplication</dt>
+        /// <dt>
+        /// InvalidBundleSimulationApplication
+        /// </dt>
         /// <dd>
-        /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other
-        /// issue).</p>
+        /// <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).</p>
         /// </dd>
-        /// <dt>RobotApplicationVersionMismatchedEtag</dt>
+        /// <dt>
+        /// RobotApplicationVersionMismatchedEtag
+        /// </dt>
         /// <dd>
         /// <p>Etag for RobotApplication does not match value during version creation.</p>
         /// </dd>
-        /// <dt>SimulationApplicationVersionMismatchedEtag</dt>
+        /// <dt>
+        /// SimulationApplicationVersionMismatchedEtag
+        /// </dt>
         /// <dd>
-        /// <p>Etag for SimulationApplication does not match value during version
-        /// creation.</p>
+        /// <p>Etag for SimulationApplication does not match value during version creation.</p>
         /// </dd>
         /// </dl>
         pub fn set_failure_code(
@@ -9065,14 +9376,12 @@ pub mod create_simulation_job_output {
             self.failure_code = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9126,14 +9435,12 @@ pub mod create_simulation_job_output {
             self.simulation_time_millis = input;
             self
         }
-        /// <p>The IAM role that allows the simulation job to call the AWS APIs that are specified in
-        /// its associated policies on your behalf.</p>
+        /// <p>The IAM role that allows the simulation job to call the AWS APIs that are specified in its associated policies on your behalf.</p>
         pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role = Some(input.into());
             self
         }
-        /// <p>The IAM role that allows the simulation job to call the AWS APIs that are specified in
-        /// its associated policies on your behalf.</p>
+        /// <p>The IAM role that allows the simulation job to call the AWS APIs that are specified in its associated policies on your behalf.</p>
         pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role = input;
             self
@@ -9143,12 +9450,9 @@ pub mod create_simulation_job_output {
         /// To override the contents of this collection use [`set_robot_applications`](Self::set_robot_applications).
         ///
         /// <p>The robot application used by the simulation job.</p>
-        pub fn robot_applications(
-            mut self,
-            input: impl Into<crate::model::RobotApplicationConfig>,
-        ) -> Self {
+        pub fn robot_applications(mut self, input: crate::model::RobotApplicationConfig) -> Self {
             let mut v = self.robot_applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.robot_applications = Some(v);
             self
         }
@@ -9167,10 +9471,10 @@ pub mod create_simulation_job_output {
         /// <p>The simulation application used by the simulation job.</p>
         pub fn simulation_applications(
             mut self,
-            input: impl Into<crate::model::SimulationApplicationConfig>,
+            input: crate::model::SimulationApplicationConfig,
         ) -> Self {
             let mut v = self.simulation_applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.simulation_applications = Some(v);
             self
         }
@@ -9187,9 +9491,9 @@ pub mod create_simulation_job_output {
         /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
         ///
         /// <p>The data sources for the simulation job.</p>
-        pub fn data_sources(mut self, input: impl Into<crate::model::DataSource>) -> Self {
+        pub fn data_sources(mut self, input: crate::model::DataSource) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_sources = Some(v);
             self
         }
@@ -9302,13 +9606,11 @@ pub struct CreateSimulationApplicationVersionOutput {
     pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
     /// <p>The rendering engine for the simulation application.</p>
     pub rendering_engine: std::option::Option<crate::model::RenderingEngine>,
-    /// <p>The time, in milliseconds since the epoch, when the simulation application was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The revision ID of the simulation application.</p>
     pub revision_id: std::option::Option<std::string::String>,
-    /// <p>The object that contains the Docker image URI used to create the simulation
-    /// application.</p>
+    /// <p>The object that contains the Docker image URI used to create the simulation application.</p>
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl CreateSimulationApplicationVersionOutput {
@@ -9342,8 +9644,7 @@ impl CreateSimulationApplicationVersionOutput {
     pub fn rendering_engine(&self) -> std::option::Option<&crate::model::RenderingEngine> {
         self.rendering_engine.as_ref()
     }
-    /// <p>The time, in milliseconds since the epoch, when the simulation application was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
@@ -9351,8 +9652,7 @@ impl CreateSimulationApplicationVersionOutput {
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
-    /// <p>The object that contains the Docker image URI used to create the simulation
-    /// application.</p>
+    /// <p>The object that contains the Docker image URI used to create the simulation application.</p>
     pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
         self.environment.as_ref()
     }
@@ -9427,9 +9727,9 @@ pub mod create_simulation_application_version_output {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// <p>The sources of the simulation application.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::Source>) -> Self {
+        pub fn sources(mut self, input: crate::model::Source) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -9483,14 +9783,12 @@ pub mod create_simulation_application_version_output {
             self.rendering_engine = input;
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation application was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation application was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -9508,14 +9806,12 @@ pub mod create_simulation_application_version_output {
             self.revision_id = input;
             self
         }
-        /// <p>The object that contains the Docker image URI used to create the simulation
-        /// application.</p>
+        /// <p>The object that contains the Docker image URI used to create the simulation application.</p>
         pub fn environment(mut self, input: crate::model::Environment) -> Self {
             self.environment = Some(input);
             self
         }
-        /// <p>The object that contains the Docker image URI used to create the simulation
-        /// application.</p>
+        /// <p>The object that contains the Docker image URI used to create the simulation application.</p>
         pub fn set_environment(
             mut self,
             input: std::option::Option<crate::model::Environment>,
@@ -9565,16 +9861,14 @@ pub struct CreateSimulationApplicationOutput {
     pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
     /// <p>The rendering engine for the simulation application.</p>
     pub rendering_engine: std::option::Option<crate::model::RenderingEngine>,
-    /// <p>The time, in milliseconds since the epoch, when the simulation application was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The revision id of the simulation application.</p>
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The list of all tags added to the simulation application.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The object that contains the Docker image URI that you used to create your simulation
-    /// application.</p>
+    /// <p>The object that contains the Docker image URI that you used to create your simulation application.</p>
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl CreateSimulationApplicationOutput {
@@ -9608,8 +9902,7 @@ impl CreateSimulationApplicationOutput {
     pub fn rendering_engine(&self) -> std::option::Option<&crate::model::RenderingEngine> {
         self.rendering_engine.as_ref()
     }
-    /// <p>The time, in milliseconds since the epoch, when the simulation application was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
@@ -9624,8 +9917,7 @@ impl CreateSimulationApplicationOutput {
     {
         self.tags.as_ref()
     }
-    /// <p>The object that contains the Docker image URI that you used to create your simulation
-    /// application.</p>
+    /// <p>The object that contains the Docker image URI that you used to create your simulation application.</p>
     pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
         self.environment.as_ref()
     }
@@ -9704,9 +9996,9 @@ pub mod create_simulation_application_output {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// <p>The sources of the simulation application.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::Source>) -> Self {
+        pub fn sources(mut self, input: crate::model::Source) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -9760,14 +10052,12 @@ pub mod create_simulation_application_output {
             self.rendering_engine = input;
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation application was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the simulation application was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -9810,14 +10100,12 @@ pub mod create_simulation_application_output {
             self.tags = input;
             self
         }
-        /// <p>The object that contains the Docker image URI that you used to create your simulation
-        /// application.</p>
+        /// <p>The object that contains the Docker image URI that you used to create your simulation application.</p>
         pub fn environment(mut self, input: crate::model::Environment) -> Self {
             self.environment = Some(input);
             self
         }
-        /// <p>The object that contains the Docker image URI that you used to create your simulation
-        /// application.</p>
+        /// <p>The object that contains the Docker image URI that you used to create your simulation application.</p>
         pub fn set_environment(
             mut self,
             input: std::option::Option<crate::model::Environment>,
@@ -9864,13 +10152,11 @@ pub struct CreateRobotApplicationVersionOutput {
     pub sources: std::option::Option<std::vec::Vec<crate::model::Source>>,
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
     pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
-    /// <p>The time, in milliseconds since the epoch, when the robot application was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The revision id of the robot application.</p>
     pub revision_id: std::option::Option<std::string::String>,
-    /// <p>The object that contains the Docker image URI used to create your robot
-    /// application.</p>
+    /// <p>The object that contains the Docker image URI used to create your robot application.</p>
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl CreateRobotApplicationVersionOutput {
@@ -9894,8 +10180,7 @@ impl CreateRobotApplicationVersionOutput {
     pub fn robot_software_suite(&self) -> std::option::Option<&crate::model::RobotSoftwareSuite> {
         self.robot_software_suite.as_ref()
     }
-    /// <p>The time, in milliseconds since the epoch, when the robot application was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
@@ -9903,8 +10188,7 @@ impl CreateRobotApplicationVersionOutput {
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
-    /// <p>The object that contains the Docker image URI used to create your robot
-    /// application.</p>
+    /// <p>The object that contains the Docker image URI used to create your robot application.</p>
     pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
         self.environment.as_ref()
     }
@@ -9974,9 +10258,9 @@ pub mod create_robot_application_version_output {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// <p>The sources of the robot application.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::Source>) -> Self {
+        pub fn sources(mut self, input: crate::model::Source) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -10001,14 +10285,12 @@ pub mod create_robot_application_version_output {
             self.robot_software_suite = input;
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the robot application was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the robot application was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -10026,14 +10308,12 @@ pub mod create_robot_application_version_output {
             self.revision_id = input;
             self
         }
-        /// <p>The object that contains the Docker image URI used to create your robot
-        /// application.</p>
+        /// <p>The object that contains the Docker image URI used to create your robot application.</p>
         pub fn environment(mut self, input: crate::model::Environment) -> Self {
             self.environment = Some(input);
             self
         }
-        /// <p>The object that contains the Docker image URI used to create your robot
-        /// application.</p>
+        /// <p>The object that contains the Docker image URI used to create your robot application.</p>
         pub fn set_environment(
             mut self,
             input: std::option::Option<crate::model::Environment>,
@@ -10077,16 +10357,14 @@ pub struct CreateRobotApplicationOutput {
     pub sources: std::option::Option<std::vec::Vec<crate::model::Source>>,
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
     pub robot_software_suite: std::option::Option<crate::model::RobotSoftwareSuite>,
-    /// <p>The time, in milliseconds since the epoch, when the robot application was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The revision id of the robot application.</p>
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The list of all tags added to the robot application.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>An object that contains the Docker image URI used to a create your robot
-    /// application.</p>
+    /// <p>An object that contains the Docker image URI used to a create your robot application.</p>
     pub environment: std::option::Option<crate::model::Environment>,
 }
 impl CreateRobotApplicationOutput {
@@ -10110,8 +10388,7 @@ impl CreateRobotApplicationOutput {
     pub fn robot_software_suite(&self) -> std::option::Option<&crate::model::RobotSoftwareSuite> {
         self.robot_software_suite.as_ref()
     }
-    /// <p>The time, in milliseconds since the epoch, when the robot application was last
-    /// updated.</p>
+    /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
@@ -10126,8 +10403,7 @@ impl CreateRobotApplicationOutput {
     {
         self.tags.as_ref()
     }
-    /// <p>An object that contains the Docker image URI used to a create your robot
-    /// application.</p>
+    /// <p>An object that contains the Docker image URI used to a create your robot application.</p>
     pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
         self.environment.as_ref()
     }
@@ -10201,9 +10477,9 @@ pub mod create_robot_application_output {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// <p>The sources of the robot application.</p>
-        pub fn sources(mut self, input: impl Into<crate::model::Source>) -> Self {
+        pub fn sources(mut self, input: crate::model::Source) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -10228,14 +10504,12 @@ pub mod create_robot_application_output {
             self.robot_software_suite = input;
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the robot application was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
-        /// <p>The time, in milliseconds since the epoch, when the robot application was last
-        /// updated.</p>
+        /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -10278,14 +10552,12 @@ pub mod create_robot_application_output {
             self.tags = input;
             self
         }
-        /// <p>An object that contains the Docker image URI used to a create your robot
-        /// application.</p>
+        /// <p>An object that contains the Docker image URI used to a create your robot application.</p>
         pub fn environment(mut self, input: crate::model::Environment) -> Self {
             self.environment = Some(input);
             self
         }
-        /// <p>An object that contains the Docker image URI used to a create your robot
-        /// application.</p>
+        /// <p>An object that contains the Docker image URI used to a create your robot application.</p>
         pub fn set_environment(
             mut self,
             input: std::option::Option<crate::model::Environment>,
@@ -10647,63 +10919,77 @@ pub struct CreateDeploymentJobOutput {
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The failure code of the simulation job if it failed:</p>
     /// <dl>
-    /// <dt>BadPermissionError</dt>
+    /// <dt>
+    /// BadPermissionError
+    /// </dt>
     /// <dd>
-    /// <p>AWS Greengrass requires a service-level role permission to access other
-    /// services. The role must include the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor">
-    /// <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>.
-    /// </p>
+    /// <p>AWS Greengrass requires a service-level role permission to access other services. The role must include the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor"> <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>. </p>
     /// </dd>
-    /// <dt>ExtractingBundleFailure</dt>
+    /// <dt>
+    /// ExtractingBundleFailure
+    /// </dt>
     /// <dd>
     /// <p>The robot application could not be extracted from the bundle.</p>
     /// </dd>
-    /// <dt>FailureThresholdBreached</dt>
+    /// <dt>
+    /// FailureThresholdBreached
+    /// </dt>
     /// <dd>
-    /// <p>The percentage of robots that could not be updated exceeded the percentage set
-    /// for the deployment.</p>
+    /// <p>The percentage of robots that could not be updated exceeded the percentage set for the deployment.</p>
     /// </dd>
-    /// <dt>GreengrassDeploymentFailed</dt>
+    /// <dt>
+    /// GreengrassDeploymentFailed
+    /// </dt>
     /// <dd>
     /// <p>The robot application could not be deployed to the robot.</p>
     /// </dd>
-    /// <dt>GreengrassGroupVersionDoesNotExist</dt>
+    /// <dt>
+    /// GreengrassGroupVersionDoesNotExist
+    /// </dt>
     /// <dd>
     /// <p>The AWS Greengrass group or version associated with a robot is missing.</p>
     /// </dd>
-    /// <dt>InternalServerError</dt>
+    /// <dt>
+    /// InternalServerError
+    /// </dt>
     /// <dd>
-    /// <p>An internal error has occurred. Retry your request, but if the problem
-    /// persists, contact us with details.</p>
+    /// <p>An internal error has occurred. Retry your request, but if the problem persists, contact us with details.</p>
     /// </dd>
-    /// <dt>MissingRobotApplicationArchitecture</dt>
+    /// <dt>
+    /// MissingRobotApplicationArchitecture
+    /// </dt>
     /// <dd>
-    /// <p>The robot application does not have a source that matches the architecture of
-    /// the robot.</p>
+    /// <p>The robot application does not have a source that matches the architecture of the robot.</p>
     /// </dd>
-    /// <dt>MissingRobotDeploymentResource</dt>
+    /// <dt>
+    /// MissingRobotDeploymentResource
+    /// </dt>
     /// <dd>
-    /// <p>One or more of the resources specified for the robot application are missing.
-    /// For example, does the robot application have the correct launch package and launch
-    /// file?</p>
+    /// <p>One or more of the resources specified for the robot application are missing. For example, does the robot application have the correct launch package and launch file?</p>
     /// </dd>
-    /// <dt>PostLaunchFileFailure</dt>
+    /// <dt>
+    /// PostLaunchFileFailure
+    /// </dt>
     /// <dd>
     /// <p>The post-launch script failed.</p>
     /// </dd>
-    /// <dt>PreLaunchFileFailure</dt>
+    /// <dt>
+    /// PreLaunchFileFailure
+    /// </dt>
     /// <dd>
     /// <p>The pre-launch script failed.</p>
     /// </dd>
-    /// <dt>ResourceNotFound</dt>
+    /// <dt>
+    /// ResourceNotFound
+    /// </dt>
     /// <dd>
-    /// <p>One or more deployment resources are missing. For example, do robot application
-    /// source bundles still exist? </p>
+    /// <p>One or more deployment resources are missing. For example, do robot application source bundles still exist? </p>
     /// </dd>
-    /// <dt>RobotDeploymentNoResponse</dt>
+    /// <dt>
+    /// RobotDeploymentNoResponse
+    /// </dt>
     /// <dd>
-    /// <p>There is no response from the robot. It might not be powered on or connected to
-    /// the internet.</p>
+    /// <p>There is no response from the robot. It might not be powered on or connected to the internet.</p>
     /// </dd>
     /// </dl>
     pub failure_code: std::option::Option<crate::model::DeploymentJobErrorCode>,
@@ -10740,63 +11026,77 @@ impl CreateDeploymentJobOutput {
     }
     /// <p>The failure code of the simulation job if it failed:</p>
     /// <dl>
-    /// <dt>BadPermissionError</dt>
+    /// <dt>
+    /// BadPermissionError
+    /// </dt>
     /// <dd>
-    /// <p>AWS Greengrass requires a service-level role permission to access other
-    /// services. The role must include the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor">
-    /// <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>.
-    /// </p>
+    /// <p>AWS Greengrass requires a service-level role permission to access other services. The role must include the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor"> <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>. </p>
     /// </dd>
-    /// <dt>ExtractingBundleFailure</dt>
+    /// <dt>
+    /// ExtractingBundleFailure
+    /// </dt>
     /// <dd>
     /// <p>The robot application could not be extracted from the bundle.</p>
     /// </dd>
-    /// <dt>FailureThresholdBreached</dt>
+    /// <dt>
+    /// FailureThresholdBreached
+    /// </dt>
     /// <dd>
-    /// <p>The percentage of robots that could not be updated exceeded the percentage set
-    /// for the deployment.</p>
+    /// <p>The percentage of robots that could not be updated exceeded the percentage set for the deployment.</p>
     /// </dd>
-    /// <dt>GreengrassDeploymentFailed</dt>
+    /// <dt>
+    /// GreengrassDeploymentFailed
+    /// </dt>
     /// <dd>
     /// <p>The robot application could not be deployed to the robot.</p>
     /// </dd>
-    /// <dt>GreengrassGroupVersionDoesNotExist</dt>
+    /// <dt>
+    /// GreengrassGroupVersionDoesNotExist
+    /// </dt>
     /// <dd>
     /// <p>The AWS Greengrass group or version associated with a robot is missing.</p>
     /// </dd>
-    /// <dt>InternalServerError</dt>
+    /// <dt>
+    /// InternalServerError
+    /// </dt>
     /// <dd>
-    /// <p>An internal error has occurred. Retry your request, but if the problem
-    /// persists, contact us with details.</p>
+    /// <p>An internal error has occurred. Retry your request, but if the problem persists, contact us with details.</p>
     /// </dd>
-    /// <dt>MissingRobotApplicationArchitecture</dt>
+    /// <dt>
+    /// MissingRobotApplicationArchitecture
+    /// </dt>
     /// <dd>
-    /// <p>The robot application does not have a source that matches the architecture of
-    /// the robot.</p>
+    /// <p>The robot application does not have a source that matches the architecture of the robot.</p>
     /// </dd>
-    /// <dt>MissingRobotDeploymentResource</dt>
+    /// <dt>
+    /// MissingRobotDeploymentResource
+    /// </dt>
     /// <dd>
-    /// <p>One or more of the resources specified for the robot application are missing.
-    /// For example, does the robot application have the correct launch package and launch
-    /// file?</p>
+    /// <p>One or more of the resources specified for the robot application are missing. For example, does the robot application have the correct launch package and launch file?</p>
     /// </dd>
-    /// <dt>PostLaunchFileFailure</dt>
+    /// <dt>
+    /// PostLaunchFileFailure
+    /// </dt>
     /// <dd>
     /// <p>The post-launch script failed.</p>
     /// </dd>
-    /// <dt>PreLaunchFileFailure</dt>
+    /// <dt>
+    /// PreLaunchFileFailure
+    /// </dt>
     /// <dd>
     /// <p>The pre-launch script failed.</p>
     /// </dd>
-    /// <dt>ResourceNotFound</dt>
+    /// <dt>
+    /// ResourceNotFound
+    /// </dt>
     /// <dd>
-    /// <p>One or more deployment resources are missing. For example, do robot application
-    /// source bundles still exist? </p>
+    /// <p>One or more deployment resources are missing. For example, do robot application source bundles still exist? </p>
     /// </dd>
-    /// <dt>RobotDeploymentNoResponse</dt>
+    /// <dt>
+    /// RobotDeploymentNoResponse
+    /// </dt>
     /// <dd>
-    /// <p>There is no response from the robot. It might not be powered on or connected to
-    /// the internet.</p>
+    /// <p>There is no response from the robot. It might not be powered on or connected to the internet.</p>
     /// </dd>
     /// </dl>
     pub fn failure_code(&self) -> std::option::Option<&crate::model::DeploymentJobErrorCode> {
@@ -10896,10 +11196,10 @@ pub mod create_deployment_job_output {
         /// <p>The deployment application configuration.</p>
         pub fn deployment_application_configs(
             mut self,
-            input: impl Into<crate::model::DeploymentApplicationConfig>,
+            input: crate::model::DeploymentApplicationConfig,
         ) -> Self {
             let mut v = self.deployment_application_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deployment_application_configs = Some(v);
             self
         }
@@ -10926,63 +11226,77 @@ pub mod create_deployment_job_output {
         }
         /// <p>The failure code of the simulation job if it failed:</p>
         /// <dl>
-        /// <dt>BadPermissionError</dt>
+        /// <dt>
+        /// BadPermissionError
+        /// </dt>
         /// <dd>
-        /// <p>AWS Greengrass requires a service-level role permission to access other
-        /// services. The role must include the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor">
-        /// <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>.
-        /// </p>
+        /// <p>AWS Greengrass requires a service-level role permission to access other services. The role must include the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor"> <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>. </p>
         /// </dd>
-        /// <dt>ExtractingBundleFailure</dt>
+        /// <dt>
+        /// ExtractingBundleFailure
+        /// </dt>
         /// <dd>
         /// <p>The robot application could not be extracted from the bundle.</p>
         /// </dd>
-        /// <dt>FailureThresholdBreached</dt>
+        /// <dt>
+        /// FailureThresholdBreached
+        /// </dt>
         /// <dd>
-        /// <p>The percentage of robots that could not be updated exceeded the percentage set
-        /// for the deployment.</p>
+        /// <p>The percentage of robots that could not be updated exceeded the percentage set for the deployment.</p>
         /// </dd>
-        /// <dt>GreengrassDeploymentFailed</dt>
+        /// <dt>
+        /// GreengrassDeploymentFailed
+        /// </dt>
         /// <dd>
         /// <p>The robot application could not be deployed to the robot.</p>
         /// </dd>
-        /// <dt>GreengrassGroupVersionDoesNotExist</dt>
+        /// <dt>
+        /// GreengrassGroupVersionDoesNotExist
+        /// </dt>
         /// <dd>
         /// <p>The AWS Greengrass group or version associated with a robot is missing.</p>
         /// </dd>
-        /// <dt>InternalServerError</dt>
+        /// <dt>
+        /// InternalServerError
+        /// </dt>
         /// <dd>
-        /// <p>An internal error has occurred. Retry your request, but if the problem
-        /// persists, contact us with details.</p>
+        /// <p>An internal error has occurred. Retry your request, but if the problem persists, contact us with details.</p>
         /// </dd>
-        /// <dt>MissingRobotApplicationArchitecture</dt>
+        /// <dt>
+        /// MissingRobotApplicationArchitecture
+        /// </dt>
         /// <dd>
-        /// <p>The robot application does not have a source that matches the architecture of
-        /// the robot.</p>
+        /// <p>The robot application does not have a source that matches the architecture of the robot.</p>
         /// </dd>
-        /// <dt>MissingRobotDeploymentResource</dt>
+        /// <dt>
+        /// MissingRobotDeploymentResource
+        /// </dt>
         /// <dd>
-        /// <p>One or more of the resources specified for the robot application are missing.
-        /// For example, does the robot application have the correct launch package and launch
-        /// file?</p>
+        /// <p>One or more of the resources specified for the robot application are missing. For example, does the robot application have the correct launch package and launch file?</p>
         /// </dd>
-        /// <dt>PostLaunchFileFailure</dt>
+        /// <dt>
+        /// PostLaunchFileFailure
+        /// </dt>
         /// <dd>
         /// <p>The post-launch script failed.</p>
         /// </dd>
-        /// <dt>PreLaunchFileFailure</dt>
+        /// <dt>
+        /// PreLaunchFileFailure
+        /// </dt>
         /// <dd>
         /// <p>The pre-launch script failed.</p>
         /// </dd>
-        /// <dt>ResourceNotFound</dt>
+        /// <dt>
+        /// ResourceNotFound
+        /// </dt>
         /// <dd>
-        /// <p>One or more deployment resources are missing. For example, do robot application
-        /// source bundles still exist? </p>
+        /// <p>One or more deployment resources are missing. For example, do robot application source bundles still exist? </p>
         /// </dd>
-        /// <dt>RobotDeploymentNoResponse</dt>
+        /// <dt>
+        /// RobotDeploymentNoResponse
+        /// </dt>
         /// <dd>
-        /// <p>There is no response from the robot. It might not be powered on or connected to
-        /// the internet.</p>
+        /// <p>There is no response from the robot. It might not be powered on or connected to the internet.</p>
         /// </dd>
         /// </dl>
         pub fn failure_code(mut self, input: crate::model::DeploymentJobErrorCode) -> Self {
@@ -10991,63 +11305,77 @@ pub mod create_deployment_job_output {
         }
         /// <p>The failure code of the simulation job if it failed:</p>
         /// <dl>
-        /// <dt>BadPermissionError</dt>
+        /// <dt>
+        /// BadPermissionError
+        /// </dt>
         /// <dd>
-        /// <p>AWS Greengrass requires a service-level role permission to access other
-        /// services. The role must include the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor">
-        /// <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>.
-        /// </p>
+        /// <p>AWS Greengrass requires a service-level role permission to access other services. The role must include the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor"> <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>. </p>
         /// </dd>
-        /// <dt>ExtractingBundleFailure</dt>
+        /// <dt>
+        /// ExtractingBundleFailure
+        /// </dt>
         /// <dd>
         /// <p>The robot application could not be extracted from the bundle.</p>
         /// </dd>
-        /// <dt>FailureThresholdBreached</dt>
+        /// <dt>
+        /// FailureThresholdBreached
+        /// </dt>
         /// <dd>
-        /// <p>The percentage of robots that could not be updated exceeded the percentage set
-        /// for the deployment.</p>
+        /// <p>The percentage of robots that could not be updated exceeded the percentage set for the deployment.</p>
         /// </dd>
-        /// <dt>GreengrassDeploymentFailed</dt>
+        /// <dt>
+        /// GreengrassDeploymentFailed
+        /// </dt>
         /// <dd>
         /// <p>The robot application could not be deployed to the robot.</p>
         /// </dd>
-        /// <dt>GreengrassGroupVersionDoesNotExist</dt>
+        /// <dt>
+        /// GreengrassGroupVersionDoesNotExist
+        /// </dt>
         /// <dd>
         /// <p>The AWS Greengrass group or version associated with a robot is missing.</p>
         /// </dd>
-        /// <dt>InternalServerError</dt>
+        /// <dt>
+        /// InternalServerError
+        /// </dt>
         /// <dd>
-        /// <p>An internal error has occurred. Retry your request, but if the problem
-        /// persists, contact us with details.</p>
+        /// <p>An internal error has occurred. Retry your request, but if the problem persists, contact us with details.</p>
         /// </dd>
-        /// <dt>MissingRobotApplicationArchitecture</dt>
+        /// <dt>
+        /// MissingRobotApplicationArchitecture
+        /// </dt>
         /// <dd>
-        /// <p>The robot application does not have a source that matches the architecture of
-        /// the robot.</p>
+        /// <p>The robot application does not have a source that matches the architecture of the robot.</p>
         /// </dd>
-        /// <dt>MissingRobotDeploymentResource</dt>
+        /// <dt>
+        /// MissingRobotDeploymentResource
+        /// </dt>
         /// <dd>
-        /// <p>One or more of the resources specified for the robot application are missing.
-        /// For example, does the robot application have the correct launch package and launch
-        /// file?</p>
+        /// <p>One or more of the resources specified for the robot application are missing. For example, does the robot application have the correct launch package and launch file?</p>
         /// </dd>
-        /// <dt>PostLaunchFileFailure</dt>
+        /// <dt>
+        /// PostLaunchFileFailure
+        /// </dt>
         /// <dd>
         /// <p>The post-launch script failed.</p>
         /// </dd>
-        /// <dt>PreLaunchFileFailure</dt>
+        /// <dt>
+        /// PreLaunchFileFailure
+        /// </dt>
         /// <dd>
         /// <p>The pre-launch script failed.</p>
         /// </dd>
-        /// <dt>ResourceNotFound</dt>
+        /// <dt>
+        /// ResourceNotFound
+        /// </dt>
         /// <dd>
-        /// <p>One or more deployment resources are missing. For example, do robot application
-        /// source bundles still exist? </p>
+        /// <p>One or more deployment resources are missing. For example, do robot application source bundles still exist? </p>
         /// </dd>
-        /// <dt>RobotDeploymentNoResponse</dt>
+        /// <dt>
+        /// RobotDeploymentNoResponse
+        /// </dt>
         /// <dd>
-        /// <p>There is no response from the robot. It might not be powered on or connected to
-        /// the internet.</p>
+        /// <p>There is no response from the robot. It might not be powered on or connected to the internet.</p>
         /// </dd>
         /// </dl>
         pub fn set_failure_code(
@@ -11323,9 +11651,9 @@ pub mod batch_describe_simulation_job_output {
         /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
         ///
         /// <p>A list of simulation jobs.</p>
-        pub fn jobs(mut self, input: impl Into<crate::model::SimulationJob>) -> Self {
+        pub fn jobs(mut self, input: crate::model::SimulationJob) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.jobs = Some(v);
             self
         }
@@ -11376,13 +11704,11 @@ impl BatchDescribeSimulationJobOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteWorldsOutput {
-    /// <p>A list of unprocessed worlds associated with the call. These worlds were not
-    /// deleted.</p>
+    /// <p>A list of unprocessed worlds associated with the call. These worlds were not deleted.</p>
     pub unprocessed_worlds: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDeleteWorldsOutput {
-    /// <p>A list of unprocessed worlds associated with the call. These worlds were not
-    /// deleted.</p>
+    /// <p>A list of unprocessed worlds associated with the call. These worlds were not deleted.</p>
     pub fn unprocessed_worlds(&self) -> std::option::Option<&[std::string::String]> {
         self.unprocessed_worlds.as_deref()
     }
@@ -11407,16 +11733,14 @@ pub mod batch_delete_worlds_output {
         ///
         /// To override the contents of this collection use [`set_unprocessed_worlds`](Self::set_unprocessed_worlds).
         ///
-        /// <p>A list of unprocessed worlds associated with the call. These worlds were not
-        /// deleted.</p>
+        /// <p>A list of unprocessed worlds associated with the call. These worlds were not deleted.</p>
         pub fn unprocessed_worlds(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.unprocessed_worlds.unwrap_or_default();
             v.push(input.into());
             self.unprocessed_worlds = Some(v);
             self
         }
-        /// <p>A list of unprocessed worlds associated with the call. These worlds were not
-        /// deleted.</p>
+        /// <p>A list of unprocessed worlds associated with the call. These worlds were not deleted.</p>
         pub fn set_unprocessed_worlds(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

@@ -2,6 +2,79 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateConnectivityInfoOutput {
+    /// <p>The new version of the connectivity information for the core device.</p>
+    pub version: std::option::Option<std::string::String>,
+    /// <p>A message about the connectivity information update request.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl UpdateConnectivityInfoOutput {
+    /// <p>The new version of the connectivity information for the core device.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>A message about the connectivity information update request.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateConnectivityInfoOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateConnectivityInfoOutput");
+        formatter.field("version", &self.version);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+/// See [`UpdateConnectivityInfoOutput`](crate::output::UpdateConnectivityInfoOutput)
+pub mod update_connectivity_info_output {
+    /// A builder for [`UpdateConnectivityInfoOutput`](crate::output::UpdateConnectivityInfoOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) version: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The new version of the connectivity information for the core device.</p>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
+            self
+        }
+        /// <p>The new version of the connectivity information for the core device.</p>
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
+            self
+        }
+        /// <p>A message about the connectivity information update request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message about the connectivity information update request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateConnectivityInfoOutput`](crate::output::UpdateConnectivityInfoOutput)
+        pub fn build(self) -> crate::output::UpdateConnectivityInfoOutput {
+            crate::output::UpdateConnectivityInfoOutput {
+                version: self.version,
+                message: self.message,
+            }
+        }
+    }
+}
+impl UpdateConnectivityInfoOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateConnectivityInfoOutput`](crate::output::UpdateConnectivityInfoOutput)
+    pub fn builder() -> crate::output::update_connectivity_info_output::Builder {
+        crate::output::update_connectivity_info_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {}
 impl std::fmt::Debug for UntagResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -63,14 +136,12 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResolveComponentCandidatesOutput {
-    /// <p>A list of components that meet the requirements that you specify in the request. This list
-    /// includes each component's recipe that you can use to install the component.</p>
+    /// <p>A list of components that meet the requirements that you specify in the request. This list includes each component's recipe that you can use to install the component.</p>
     pub resolved_component_versions:
         std::option::Option<std::vec::Vec<crate::model::ResolvedComponentVersion>>,
 }
 impl ResolveComponentCandidatesOutput {
-    /// <p>A list of components that meet the requirements that you specify in the request. This list
-    /// includes each component's recipe that you can use to install the component.</p>
+    /// <p>A list of components that meet the requirements that you specify in the request. This list includes each component's recipe that you can use to install the component.</p>
     pub fn resolved_component_versions(
         &self,
     ) -> std::option::Option<&[crate::model::ResolvedComponentVersion]> {
@@ -101,19 +172,17 @@ pub mod resolve_component_candidates_output {
         ///
         /// To override the contents of this collection use [`set_resolved_component_versions`](Self::set_resolved_component_versions).
         ///
-        /// <p>A list of components that meet the requirements that you specify in the request. This list
-        /// includes each component's recipe that you can use to install the component.</p>
+        /// <p>A list of components that meet the requirements that you specify in the request. This list includes each component's recipe that you can use to install the component.</p>
         pub fn resolved_component_versions(
             mut self,
-            input: impl Into<crate::model::ResolvedComponentVersion>,
+            input: crate::model::ResolvedComponentVersion,
         ) -> Self {
             let mut v = self.resolved_component_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resolved_component_versions = Some(v);
             self
         }
-        /// <p>A list of components that meet the requirements that you specify in the request. This list
-        /// includes each component's recipe that you can use to install the component.</p>
+        /// <p>A list of components that meet the requirements that you specify in the request. This list includes each component's recipe that you can use to install the component.</p>
         pub fn set_resolved_component_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResolvedComponentVersion>>,
@@ -140,16 +209,12 @@ impl ResolveComponentCandidatesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
-    /// <p>A list of key-value pairs that contain metadata for the resource. For more
-    /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-    /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
-    /// <p>A list of key-value pairs that contain metadata for the resource. For more
-    /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-    /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -179,9 +244,7 @@ pub mod list_tags_for_resource_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the resource. For more
-        /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-        /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -192,9 +255,7 @@ pub mod list_tags_for_resource_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the resource. For more
-        /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-        /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -260,12 +321,9 @@ pub mod list_installed_components_output {
         /// To override the contents of this collection use [`set_installed_components`](Self::set_installed_components).
         ///
         /// <p>A list that summarizes each component on the core device.</p>
-        pub fn installed_components(
-            mut self,
-            input: impl Into<crate::model::InstalledComponent>,
-        ) -> Self {
+        pub fn installed_components(mut self, input: crate::model::InstalledComponent) -> Self {
             let mut v = self.installed_components.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.installed_components = Some(v);
             self
         }
@@ -349,12 +407,9 @@ pub mod list_effective_deployments_output {
         /// To override the contents of this collection use [`set_effective_deployments`](Self::set_effective_deployments).
         ///
         /// <p>A list that summarizes each deployment on the core device.</p>
-        pub fn effective_deployments(
-            mut self,
-            input: impl Into<crate::model::EffectiveDeployment>,
-        ) -> Self {
+        pub fn effective_deployments(mut self, input: crate::model::EffectiveDeployment) -> Self {
             let mut v = self.effective_deployments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.effective_deployments = Some(v);
             self
         }
@@ -434,9 +489,9 @@ pub mod list_deployments_output {
         /// To override the contents of this collection use [`set_deployments`](Self::set_deployments).
         ///
         /// <p>A list that summarizes each deployment.</p>
-        pub fn deployments(mut self, input: impl Into<crate::model::Deployment>) -> Self {
+        pub fn deployments(mut self, input: crate::model::Deployment) -> Self {
             let mut v = self.deployments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deployments = Some(v);
             self
         }
@@ -516,9 +571,9 @@ pub mod list_core_devices_output {
         /// To override the contents of this collection use [`set_core_devices`](Self::set_core_devices).
         ///
         /// <p>A list that summarizes each core device.</p>
-        pub fn core_devices(mut self, input: impl Into<crate::model::CoreDevice>) -> Self {
+        pub fn core_devices(mut self, input: crate::model::CoreDevice) -> Self {
             let mut v = self.core_devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.core_devices = Some(v);
             self
         }
@@ -602,12 +657,9 @@ pub mod list_component_versions_output {
         /// To override the contents of this collection use [`set_component_versions`](Self::set_component_versions).
         ///
         /// <p>A list of versions that exist for the component.</p>
-        pub fn component_versions(
-            mut self,
-            input: impl Into<crate::model::ComponentVersionListItem>,
-        ) -> Self {
+        pub fn component_versions(mut self, input: crate::model::ComponentVersionListItem) -> Self {
             let mut v = self.component_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.component_versions = Some(v);
             self
         }
@@ -687,9 +739,9 @@ pub mod list_components_output {
         /// To override the contents of this collection use [`set_components`](Self::set_components).
         ///
         /// <p>A list that summarizes each component.</p>
-        pub fn components(mut self, input: impl Into<crate::model::Component>) -> Self {
+        pub fn components(mut self, input: crate::model::Component) -> Self {
             let mut v = self.components.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.components = Some(v);
             self
         }
@@ -775,10 +827,10 @@ pub mod list_client_devices_associated_with_core_device_output {
         /// <p>A list that describes the client devices that are associated with the core device.</p>
         pub fn associated_client_devices(
             mut self,
-            input: impl Into<crate::model::AssociatedClientDevice>,
+            input: crate::model::AssociatedClientDevice,
         ) -> Self {
             let mut v = self.associated_client_devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.associated_client_devices = Some(v);
             self
         }
@@ -820,6 +872,82 @@ impl ListClientDevicesAssociatedWithCoreDeviceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetServiceRoleForAccountOutput {
+    /// <p>The time when the service role was associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
+    pub associated_at: std::option::Option<std::string::String>,
+    /// <p>The ARN of the service role that is associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+}
+impl GetServiceRoleForAccountOutput {
+    /// <p>The time when the service role was associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
+    pub fn associated_at(&self) -> std::option::Option<&str> {
+        self.associated_at.as_deref()
+    }
+    /// <p>The ARN of the service role that is associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for GetServiceRoleForAccountOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetServiceRoleForAccountOutput");
+        formatter.field("associated_at", &self.associated_at);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.finish()
+    }
+}
+/// See [`GetServiceRoleForAccountOutput`](crate::output::GetServiceRoleForAccountOutput)
+pub mod get_service_role_for_account_output {
+    /// A builder for [`GetServiceRoleForAccountOutput`](crate::output::GetServiceRoleForAccountOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) associated_at: std::option::Option<std::string::String>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The time when the service role was associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
+        pub fn associated_at(mut self, input: impl Into<std::string::String>) -> Self {
+            self.associated_at = Some(input.into());
+            self
+        }
+        /// <p>The time when the service role was associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
+        pub fn set_associated_at(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.associated_at = input;
+            self
+        }
+        /// <p>The ARN of the service role that is associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the service role that is associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetServiceRoleForAccountOutput`](crate::output::GetServiceRoleForAccountOutput)
+        pub fn build(self) -> crate::output::GetServiceRoleForAccountOutput {
+            crate::output::GetServiceRoleForAccountOutput {
+                associated_at: self.associated_at,
+                role_arn: self.role_arn,
+            }
+        }
+    }
+}
+impl GetServiceRoleForAccountOutput {
+    /// Creates a new builder-style object to manufacture [`GetServiceRoleForAccountOutput`](crate::output::GetServiceRoleForAccountOutput)
+    pub fn builder() -> crate::output::get_service_role_for_account_output::Builder {
+        crate::output::get_service_role_for_account_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentOutput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
     pub target_arn: std::option::Option<std::string::String>,
@@ -835,27 +963,22 @@ pub struct GetDeploymentOutput {
     pub iot_job_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT job that applies the deployment to target devices.</p>
     pub iot_job_arn: std::option::Option<std::string::String>,
-    /// <p>The components to deploy. This is a dictionary, where each key is the name of a component,
-    /// and each key's value is the version and configuration to deploy for that component.</p>
+    /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
     pub components: std::option::Option<
         std::collections::HashMap<
             std::string::String,
             crate::model::ComponentDeploymentSpecification,
         >,
     >,
-    /// <p>The deployment policies for the deployment. These policies define how the deployment
-    /// updates components and handles failure.</p>
+    /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
     pub deployment_policies: std::option::Option<crate::model::DeploymentPolicies>,
-    /// <p>The job configuration for the deployment configuration. The job configuration specifies
-    /// the rollout, timeout, and stop configurations for the deployment configuration.</p>
+    /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
     pub iot_job_configuration: std::option::Option<crate::model::DeploymentIoTJobConfiguration>,
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Whether or not the deployment is the latest revision for its target.</p>
     pub is_latest_for_target: bool,
-    /// <p>A list of key-value pairs that contain metadata for the resource. For more
-    /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-    /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -888,8 +1011,7 @@ impl GetDeploymentOutput {
     pub fn iot_job_arn(&self) -> std::option::Option<&str> {
         self.iot_job_arn.as_deref()
     }
-    /// <p>The components to deploy. This is a dictionary, where each key is the name of a component,
-    /// and each key's value is the version and configuration to deploy for that component.</p>
+    /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
     pub fn components(
         &self,
     ) -> std::option::Option<
@@ -900,13 +1022,11 @@ impl GetDeploymentOutput {
     > {
         self.components.as_ref()
     }
-    /// <p>The deployment policies for the deployment. These policies define how the deployment
-    /// updates components and handles failure.</p>
+    /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
     pub fn deployment_policies(&self) -> std::option::Option<&crate::model::DeploymentPolicies> {
         self.deployment_policies.as_ref()
     }
-    /// <p>The job configuration for the deployment configuration. The job configuration specifies
-    /// the rollout, timeout, and stop configurations for the deployment configuration.</p>
+    /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
     pub fn iot_job_configuration(
         &self,
     ) -> std::option::Option<&crate::model::DeploymentIoTJobConfiguration> {
@@ -920,9 +1040,7 @@ impl GetDeploymentOutput {
     pub fn is_latest_for_target(&self) -> bool {
         self.is_latest_for_target
     }
-    /// <p>A list of key-value pairs that contain metadata for the resource. For more
-    /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-    /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1061,20 +1179,18 @@ pub mod get_deployment_output {
         ///
         /// To override the contents of this collection use [`set_components`](Self::set_components).
         ///
-        /// <p>The components to deploy. This is a dictionary, where each key is the name of a component,
-        /// and each key's value is the version and configuration to deploy for that component.</p>
+        /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
         pub fn components(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ComponentDeploymentSpecification>,
+            v: crate::model::ComponentDeploymentSpecification,
         ) -> Self {
             let mut hash_map = self.components.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.components = Some(hash_map);
             self
         }
-        /// <p>The components to deploy. This is a dictionary, where each key is the name of a component,
-        /// and each key's value is the version and configuration to deploy for that component.</p>
+        /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
         pub fn set_components(
             mut self,
             input: std::option::Option<
@@ -1087,14 +1203,12 @@ pub mod get_deployment_output {
             self.components = input;
             self
         }
-        /// <p>The deployment policies for the deployment. These policies define how the deployment
-        /// updates components and handles failure.</p>
+        /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
         pub fn deployment_policies(mut self, input: crate::model::DeploymentPolicies) -> Self {
             self.deployment_policies = Some(input);
             self
         }
-        /// <p>The deployment policies for the deployment. These policies define how the deployment
-        /// updates components and handles failure.</p>
+        /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
         pub fn set_deployment_policies(
             mut self,
             input: std::option::Option<crate::model::DeploymentPolicies>,
@@ -1102,8 +1216,7 @@ pub mod get_deployment_output {
             self.deployment_policies = input;
             self
         }
-        /// <p>The job configuration for the deployment configuration. The job configuration specifies
-        /// the rollout, timeout, and stop configurations for the deployment configuration.</p>
+        /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
         pub fn iot_job_configuration(
             mut self,
             input: crate::model::DeploymentIoTJobConfiguration,
@@ -1111,8 +1224,7 @@ pub mod get_deployment_output {
             self.iot_job_configuration = Some(input);
             self
         }
-        /// <p>The job configuration for the deployment configuration. The job configuration specifies
-        /// the rollout, timeout, and stop configurations for the deployment configuration.</p>
+        /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
         pub fn set_iot_job_configuration(
             mut self,
             input: std::option::Option<crate::model::DeploymentIoTJobConfiguration>,
@@ -1147,9 +1259,7 @@ pub mod get_deployment_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the resource. For more
-        /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-        /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1160,9 +1270,7 @@ pub mod get_deployment_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the resource. For more
-        /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-        /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1205,10 +1313,7 @@ impl GetDeploymentOutput {
 pub struct GetCoreDeviceOutput {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     pub core_device_thing_name: std::option::Option<std::string::String>,
-    /// <p>The version of the IoT Greengrass Core software that the core device runs. This version is equivalent to
-    /// the version of the Greengrass nucleus component that runs on the core device. For more information,
-    /// see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus
-    /// component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// <p>The version of the IoT Greengrass Core software that the core device runs. This version is equivalent to the version of the Greengrass nucleus component that runs on the core device. For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub core_version: std::option::Option<std::string::String>,
     /// <p>The operating system platform that the core device runs.</p>
     pub platform: std::option::Option<std::string::String>,
@@ -1216,23 +1321,13 @@ pub struct GetCoreDeviceOutput {
     pub architecture: std::option::Option<std::string::String>,
     /// <p>The status of the core device. The core device status can be:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state
-    /// on the core device.</p>
-    /// </li>
+    /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
+    /// <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::CoreDeviceStatus>,
-    /// <p>The time at which the core device's status last updated, expressed in ISO 8601
-    /// format.</p>
+    /// <p>The time at which the core device's status last updated, expressed in ISO 8601 format.</p>
     pub last_status_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A list of key-value pairs that contain metadata for the resource. For more
-    /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-    /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1241,10 +1336,7 @@ impl GetCoreDeviceOutput {
     pub fn core_device_thing_name(&self) -> std::option::Option<&str> {
         self.core_device_thing_name.as_deref()
     }
-    /// <p>The version of the IoT Greengrass Core software that the core device runs. This version is equivalent to
-    /// the version of the Greengrass nucleus component that runs on the core device. For more information,
-    /// see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus
-    /// component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// <p>The version of the IoT Greengrass Core software that the core device runs. This version is equivalent to the version of the Greengrass nucleus component that runs on the core device. For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn core_version(&self) -> std::option::Option<&str> {
         self.core_version.as_deref()
     }
@@ -1258,27 +1350,17 @@ impl GetCoreDeviceOutput {
     }
     /// <p>The status of the core device. The core device status can be:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state
-    /// on the core device.</p>
-    /// </li>
+    /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
+    /// <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::CoreDeviceStatus> {
         self.status.as_ref()
     }
-    /// <p>The time at which the core device's status last updated, expressed in ISO 8601
-    /// format.</p>
+    /// <p>The time at which the core device's status last updated, expressed in ISO 8601 format.</p>
     pub fn last_status_update_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_status_update_timestamp.as_ref()
     }
-    /// <p>A list of key-value pairs that contain metadata for the resource. For more
-    /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-    /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1332,18 +1414,12 @@ pub mod get_core_device_output {
             self.core_device_thing_name = input;
             self
         }
-        /// <p>The version of the IoT Greengrass Core software that the core device runs. This version is equivalent to
-        /// the version of the Greengrass nucleus component that runs on the core device. For more information,
-        /// see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus
-        /// component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>The version of the IoT Greengrass Core software that the core device runs. This version is equivalent to the version of the Greengrass nucleus component that runs on the core device. For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn core_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.core_version = Some(input.into());
             self
         }
-        /// <p>The version of the IoT Greengrass Core software that the core device runs. This version is equivalent to
-        /// the version of the Greengrass nucleus component that runs on the core device. For more information,
-        /// see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus
-        /// component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>The version of the IoT Greengrass Core software that the core device runs. This version is equivalent to the version of the Greengrass nucleus component that runs on the core device. For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn set_core_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.core_version = input;
             self
@@ -1370,15 +1446,8 @@ pub mod get_core_device_output {
         }
         /// <p>The status of the core device. The core device status can be:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state
-        /// on the core device.</p>
-        /// </li>
+        /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
+        /// <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::CoreDeviceStatus) -> Self {
             self.status = Some(input);
@@ -1386,15 +1455,8 @@ pub mod get_core_device_output {
         }
         /// <p>The status of the core device. The core device status can be:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state
-        /// on the core device.</p>
-        /// </li>
+        /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
+        /// <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -1403,14 +1465,12 @@ pub mod get_core_device_output {
             self.status = input;
             self
         }
-        /// <p>The time at which the core device's status last updated, expressed in ISO 8601
-        /// format.</p>
+        /// <p>The time at which the core device's status last updated, expressed in ISO 8601 format.</p>
         pub fn last_status_update_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_status_update_timestamp = Some(input);
             self
         }
-        /// <p>The time at which the core device's status last updated, expressed in ISO 8601
-        /// format.</p>
+        /// <p>The time at which the core device's status last updated, expressed in ISO 8601 format.</p>
         pub fn set_last_status_update_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1422,9 +1482,7 @@ pub mod get_core_device_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the resource. For more
-        /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-        /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1435,9 +1493,7 @@ pub mod get_core_device_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the resource. For more
-        /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-        /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1465,6 +1521,89 @@ impl GetCoreDeviceOutput {
     /// Creates a new builder-style object to manufacture [`GetCoreDeviceOutput`](crate::output::GetCoreDeviceOutput)
     pub fn builder() -> crate::output::get_core_device_output::Builder {
         crate::output::get_core_device_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetConnectivityInfoOutput {
+    /// <p>The connectivity information for the core device.</p>
+    pub connectivity_info: std::option::Option<std::vec::Vec<crate::model::ConnectivityInfo>>,
+    /// <p>A message about the connectivity information request.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl GetConnectivityInfoOutput {
+    /// <p>The connectivity information for the core device.</p>
+    pub fn connectivity_info(&self) -> std::option::Option<&[crate::model::ConnectivityInfo]> {
+        self.connectivity_info.as_deref()
+    }
+    /// <p>A message about the connectivity information request.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Debug for GetConnectivityInfoOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetConnectivityInfoOutput");
+        formatter.field("connectivity_info", &self.connectivity_info);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+/// See [`GetConnectivityInfoOutput`](crate::output::GetConnectivityInfoOutput)
+pub mod get_connectivity_info_output {
+    /// A builder for [`GetConnectivityInfoOutput`](crate::output::GetConnectivityInfoOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) connectivity_info:
+            std::option::Option<std::vec::Vec<crate::model::ConnectivityInfo>>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `connectivity_info`.
+        ///
+        /// To override the contents of this collection use [`set_connectivity_info`](Self::set_connectivity_info).
+        ///
+        /// <p>The connectivity information for the core device.</p>
+        pub fn connectivity_info(mut self, input: crate::model::ConnectivityInfo) -> Self {
+            let mut v = self.connectivity_info.unwrap_or_default();
+            v.push(input);
+            self.connectivity_info = Some(v);
+            self
+        }
+        /// <p>The connectivity information for the core device.</p>
+        pub fn set_connectivity_info(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ConnectivityInfo>>,
+        ) -> Self {
+            self.connectivity_info = input;
+            self
+        }
+        /// <p>A message about the connectivity information request.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message about the connectivity information request.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetConnectivityInfoOutput`](crate::output::GetConnectivityInfoOutput)
+        pub fn build(self) -> crate::output::GetConnectivityInfoOutput {
+            crate::output::GetConnectivityInfoOutput {
+                connectivity_info: self.connectivity_info,
+                message: self.message,
+            }
+        }
+    }
+}
+impl GetConnectivityInfoOutput {
+    /// Creates a new builder-style object to manufacture [`GetConnectivityInfoOutput`](crate::output::GetConnectivityInfoOutput)
+    pub fn builder() -> crate::output::get_connectivity_info_output::Builder {
+        crate::output::get_connectivity_info_output::Builder::default()
     }
 }
 
@@ -1533,9 +1672,7 @@ pub struct GetComponentOutput {
     pub recipe_output_format: std::option::Option<crate::model::RecipeOutputFormat>,
     /// <p>The recipe of the component version.</p>
     pub recipe: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>A list of key-value pairs that contain metadata for the resource. For more
-    /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-    /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1548,9 +1685,7 @@ impl GetComponentOutput {
     pub fn recipe(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.recipe.as_ref()
     }
-    /// <p>A list of key-value pairs that contain metadata for the resource. For more
-    /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-    /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1607,9 +1742,7 @@ pub mod get_component_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the resource. For more
-        /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-        /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1620,9 +1753,7 @@ pub mod get_component_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the resource. For more
-        /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-        /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1652,6 +1783,63 @@ impl GetComponentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisassociateServiceRoleFromAccountOutput {
+    /// <p>The time when the service role was disassociated from IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
+    pub disassociated_at: std::option::Option<std::string::String>,
+}
+impl DisassociateServiceRoleFromAccountOutput {
+    /// <p>The time when the service role was disassociated from IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
+    pub fn disassociated_at(&self) -> std::option::Option<&str> {
+        self.disassociated_at.as_deref()
+    }
+}
+impl std::fmt::Debug for DisassociateServiceRoleFromAccountOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisassociateServiceRoleFromAccountOutput");
+        formatter.field("disassociated_at", &self.disassociated_at);
+        formatter.finish()
+    }
+}
+/// See [`DisassociateServiceRoleFromAccountOutput`](crate::output::DisassociateServiceRoleFromAccountOutput)
+pub mod disassociate_service_role_from_account_output {
+    /// A builder for [`DisassociateServiceRoleFromAccountOutput`](crate::output::DisassociateServiceRoleFromAccountOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) disassociated_at: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The time when the service role was disassociated from IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
+        pub fn disassociated_at(mut self, input: impl Into<std::string::String>) -> Self {
+            self.disassociated_at = Some(input.into());
+            self
+        }
+        /// <p>The time when the service role was disassociated from IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
+        pub fn set_disassociated_at(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.disassociated_at = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DisassociateServiceRoleFromAccountOutput`](crate::output::DisassociateServiceRoleFromAccountOutput)
+        pub fn build(self) -> crate::output::DisassociateServiceRoleFromAccountOutput {
+            crate::output::DisassociateServiceRoleFromAccountOutput {
+                disassociated_at: self.disassociated_at,
+            }
+        }
+    }
+}
+impl DisassociateServiceRoleFromAccountOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateServiceRoleFromAccountOutput`](crate::output::DisassociateServiceRoleFromAccountOutput)
+    pub fn builder() -> crate::output::disassociate_service_role_from_account_output::Builder {
+        crate::output::disassociate_service_role_from_account_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeComponentOutput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -1665,14 +1853,11 @@ pub struct DescribeComponentOutput {
     pub publisher: std::option::Option<std::string::String>,
     /// <p>The description of the component version.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The status of the component version in IoT Greengrass V2. This status
-    /// is different from the status of the component on a core device.</p>
+    /// <p>The status of the component version in IoT Greengrass V2. This status is different from the status of the component on a core device.</p>
     pub status: std::option::Option<crate::model::CloudComponentStatus>,
     /// <p>The platforms that the component version supports.</p>
     pub platforms: std::option::Option<std::vec::Vec<crate::model::ComponentPlatform>>,
-    /// <p>A list of key-value pairs that contain metadata for the resource. For more
-    /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-    /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1701,8 +1886,7 @@ impl DescribeComponentOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The status of the component version in IoT Greengrass V2. This status
-    /// is different from the status of the component on a core device.</p>
+    /// <p>The status of the component version in IoT Greengrass V2. This status is different from the status of the component on a core device.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::CloudComponentStatus> {
         self.status.as_ref()
     }
@@ -1710,9 +1894,7 @@ impl DescribeComponentOutput {
     pub fn platforms(&self) -> std::option::Option<&[crate::model::ComponentPlatform]> {
         self.platforms.as_deref()
     }
-    /// <p>A list of key-value pairs that contain metadata for the resource. For more
-    /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-    /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1823,14 +2005,12 @@ pub mod describe_component_output {
             self.description = input;
             self
         }
-        /// <p>The status of the component version in IoT Greengrass V2. This status
-        /// is different from the status of the component on a core device.</p>
+        /// <p>The status of the component version in IoT Greengrass V2. This status is different from the status of the component on a core device.</p>
         pub fn status(mut self, input: crate::model::CloudComponentStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the component version in IoT Greengrass V2. This status
-        /// is different from the status of the component on a core device.</p>
+        /// <p>The status of the component version in IoT Greengrass V2. This status is different from the status of the component on a core device.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::CloudComponentStatus>,
@@ -1843,9 +2023,9 @@ pub mod describe_component_output {
         /// To override the contents of this collection use [`set_platforms`](Self::set_platforms).
         ///
         /// <p>The platforms that the component version supports.</p>
-        pub fn platforms(mut self, input: impl Into<crate::model::ComponentPlatform>) -> Self {
+        pub fn platforms(mut self, input: crate::model::ComponentPlatform) -> Self {
             let mut v = self.platforms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.platforms = Some(v);
             self
         }
@@ -1861,9 +2041,7 @@ pub mod describe_component_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the resource. For more
-        /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-        /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1874,9 +2052,7 @@ pub mod describe_component_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the resource. For more
-        /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-        /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2076,8 +2252,7 @@ pub struct CreateComponentVersionOutput {
     pub component_version: std::option::Option<std::string::String>,
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The status of the component version in IoT Greengrass V2. This status
-    /// is different from the status of the component on a core device.</p>
+    /// <p>The status of the component version in IoT Greengrass V2. This status is different from the status of the component on a core device.</p>
     pub status: std::option::Option<crate::model::CloudComponentStatus>,
 }
 impl CreateComponentVersionOutput {
@@ -2097,8 +2272,7 @@ impl CreateComponentVersionOutput {
     pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
-    /// <p>The status of the component version in IoT Greengrass V2. This status
-    /// is different from the status of the component on a core device.</p>
+    /// <p>The status of the component version in IoT Greengrass V2. This status is different from the status of the component on a core device.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::CloudComponentStatus> {
         self.status.as_ref()
     }
@@ -2176,14 +2350,12 @@ pub mod create_component_version_output {
             self.creation_timestamp = input;
             self
         }
-        /// <p>The status of the component version in IoT Greengrass V2. This status
-        /// is different from the status of the component on a core device.</p>
+        /// <p>The status of the component version in IoT Greengrass V2. This status is different from the status of the component on a core device.</p>
         pub fn status(mut self, input: crate::model::CloudComponentStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the component version in IoT Greengrass V2. This status
-        /// is different from the status of the component on a core device.</p>
+        /// <p>The status of the component version in IoT Greengrass V2. This status is different from the status of the component on a core device.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::CloudComponentStatus>,
@@ -2268,15 +2440,13 @@ impl CancelDeploymentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDisassociateClientDeviceFromCoreDeviceOutput {
-    /// <p>The list of errors (if any) for the entries in the request. Each error entry contains the
-    /// name of the IoT thing that failed to disassociate.</p>
+    /// <p>The list of any errors for the entries in the request. Each error entry contains the name of the IoT thing that failed to disassociate.</p>
     pub error_entries: std::option::Option<
         std::vec::Vec<crate::model::DisassociateClientDeviceFromCoreDeviceErrorEntry>,
     >,
 }
 impl BatchDisassociateClientDeviceFromCoreDeviceOutput {
-    /// <p>The list of errors (if any) for the entries in the request. Each error entry contains the
-    /// name of the IoT thing that failed to disassociate.</p>
+    /// <p>The list of any errors for the entries in the request. Each error entry contains the name of the IoT thing that failed to disassociate.</p>
     pub fn error_entries(
         &self,
     ) -> std::option::Option<&[crate::model::DisassociateClientDeviceFromCoreDeviceErrorEntry]>
@@ -2306,19 +2476,17 @@ pub mod batch_disassociate_client_device_from_core_device_output {
         ///
         /// To override the contents of this collection use [`set_error_entries`](Self::set_error_entries).
         ///
-        /// <p>The list of errors (if any) for the entries in the request. Each error entry contains the
-        /// name of the IoT thing that failed to disassociate.</p>
+        /// <p>The list of any errors for the entries in the request. Each error entry contains the name of the IoT thing that failed to disassociate.</p>
         pub fn error_entries(
             mut self,
-            input: impl Into<crate::model::DisassociateClientDeviceFromCoreDeviceErrorEntry>,
+            input: crate::model::DisassociateClientDeviceFromCoreDeviceErrorEntry,
         ) -> Self {
             let mut v = self.error_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.error_entries = Some(v);
             self
         }
-        /// <p>The list of errors (if any) for the entries in the request. Each error entry contains the
-        /// name of the IoT thing that failed to disassociate.</p>
+        /// <p>The list of any errors for the entries in the request. Each error entry contains the name of the IoT thing that failed to disassociate.</p>
         pub fn set_error_entries(
             mut self,
             input: std::option::Option<
@@ -2348,15 +2516,13 @@ impl BatchDisassociateClientDeviceFromCoreDeviceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAssociateClientDeviceWithCoreDeviceOutput {
-    /// <p>The list of any errors for the entries in the request. Each error entry contains the name
-    /// of the IoT thing that failed to associate.</p>
+    /// <p>The list of any errors for the entries in the request. Each error entry contains the name of the IoT thing that failed to associate.</p>
     pub error_entries: std::option::Option<
         std::vec::Vec<crate::model::AssociateClientDeviceWithCoreDeviceErrorEntry>,
     >,
 }
 impl BatchAssociateClientDeviceWithCoreDeviceOutput {
-    /// <p>The list of any errors for the entries in the request. Each error entry contains the name
-    /// of the IoT thing that failed to associate.</p>
+    /// <p>The list of any errors for the entries in the request. Each error entry contains the name of the IoT thing that failed to associate.</p>
     pub fn error_entries(
         &self,
     ) -> std::option::Option<&[crate::model::AssociateClientDeviceWithCoreDeviceErrorEntry]> {
@@ -2385,19 +2551,17 @@ pub mod batch_associate_client_device_with_core_device_output {
         ///
         /// To override the contents of this collection use [`set_error_entries`](Self::set_error_entries).
         ///
-        /// <p>The list of any errors for the entries in the request. Each error entry contains the name
-        /// of the IoT thing that failed to associate.</p>
+        /// <p>The list of any errors for the entries in the request. Each error entry contains the name of the IoT thing that failed to associate.</p>
         pub fn error_entries(
             mut self,
-            input: impl Into<crate::model::AssociateClientDeviceWithCoreDeviceErrorEntry>,
+            input: crate::model::AssociateClientDeviceWithCoreDeviceErrorEntry,
         ) -> Self {
             let mut v = self.error_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.error_entries = Some(v);
             self
         }
-        /// <p>The list of any errors for the entries in the request. Each error entry contains the name
-        /// of the IoT thing that failed to associate.</p>
+        /// <p>The list of any errors for the entries in the request. Each error entry contains the name of the IoT thing that failed to associate.</p>
         pub fn set_error_entries(
             mut self,
             input: std::option::Option<
@@ -2420,5 +2584,62 @@ impl BatchAssociateClientDeviceWithCoreDeviceOutput {
     pub fn builder() -> crate::output::batch_associate_client_device_with_core_device_output::Builder
     {
         crate::output::batch_associate_client_device_with_core_device_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociateServiceRoleToAccountOutput {
+    /// <p>The time when the service role was associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
+    pub associated_at: std::option::Option<std::string::String>,
+}
+impl AssociateServiceRoleToAccountOutput {
+    /// <p>The time when the service role was associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
+    pub fn associated_at(&self) -> std::option::Option<&str> {
+        self.associated_at.as_deref()
+    }
+}
+impl std::fmt::Debug for AssociateServiceRoleToAccountOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociateServiceRoleToAccountOutput");
+        formatter.field("associated_at", &self.associated_at);
+        formatter.finish()
+    }
+}
+/// See [`AssociateServiceRoleToAccountOutput`](crate::output::AssociateServiceRoleToAccountOutput)
+pub mod associate_service_role_to_account_output {
+    /// A builder for [`AssociateServiceRoleToAccountOutput`](crate::output::AssociateServiceRoleToAccountOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) associated_at: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The time when the service role was associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
+        pub fn associated_at(mut self, input: impl Into<std::string::String>) -> Self {
+            self.associated_at = Some(input.into());
+            self
+        }
+        /// <p>The time when the service role was associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
+        pub fn set_associated_at(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.associated_at = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssociateServiceRoleToAccountOutput`](crate::output::AssociateServiceRoleToAccountOutput)
+        pub fn build(self) -> crate::output::AssociateServiceRoleToAccountOutput {
+            crate::output::AssociateServiceRoleToAccountOutput {
+                associated_at: self.associated_at,
+            }
+        }
+    }
+}
+impl AssociateServiceRoleToAccountOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateServiceRoleToAccountOutput`](crate::output::AssociateServiceRoleToAccountOutput)
+    pub fn builder() -> crate::output::associate_service_role_to_account_output::Builder {
+        crate::output::associate_service_role_to_account_output::Builder::default()
     }
 }

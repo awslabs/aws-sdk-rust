@@ -9,18 +9,12 @@ pub mod associate_admin_account_input {
         pub(crate) admin_account: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager
-        /// administrator account. This must be an Organizations member account.
-        /// For more information about Organizations, see
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>.  </p>
+        /// <p>The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager administrator account. This must be an Organizations member account. For more information about Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>. </p>
         pub fn admin_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.admin_account = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager
-        /// administrator account. This must be an Organizations member account.
-        /// For more information about Organizations, see
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>.  </p>
+        /// <p>The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager administrator account. This must be an Organizations member account. For more information about Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>. </p>
         pub fn set_admin_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -44,7 +38,7 @@ pub mod associate_admin_account_input {
 #[doc(hidden)]
 pub type AssociateAdminAccountInputOperationOutputAlias = crate::operation::AssociateAdminAccount;
 #[doc(hidden)]
-pub type AssociateAdminAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateAdminAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateAdminAccountInput {
     /// Consumes the builder and constructs an Operation<[`AssociateAdminAccount`](crate::operation::AssociateAdminAccount)>
     #[allow(clippy::let_and_return)]
@@ -55,7 +49,7 @@ impl AssociateAdminAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateAdminAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -142,7 +136,7 @@ impl AssociateAdminAccountInput {
             "AssociateAdminAccount",
             "fms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -174,14 +168,12 @@ pub mod delete_apps_list_input {
         pub(crate) list_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the applications list that you want to delete. You can retrieve this ID from
-        /// <code>PutAppsList</code>, <code>ListAppsLists</code>, and <code>GetAppsList</code>.</p>
+        /// <p>The ID of the applications list that you want to delete. You can retrieve this ID from <code>PutAppsList</code>, <code>ListAppsLists</code>, and <code>GetAppsList</code>.</p>
         pub fn list_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.list_id = Some(input.into());
             self
         }
-        /// <p>The ID of the applications list that you want to delete. You can retrieve this ID from
-        /// <code>PutAppsList</code>, <code>ListAppsLists</code>, and <code>GetAppsList</code>.</p>
+        /// <p>The ID of the applications list that you want to delete. You can retrieve this ID from <code>PutAppsList</code>, <code>ListAppsLists</code>, and <code>GetAppsList</code>.</p>
         pub fn set_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.list_id = input;
             self
@@ -202,7 +194,7 @@ pub mod delete_apps_list_input {
 #[doc(hidden)]
 pub type DeleteAppsListInputOperationOutputAlias = crate::operation::DeleteAppsList;
 #[doc(hidden)]
-pub type DeleteAppsListInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAppsListInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAppsListInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAppsList`](crate::operation::DeleteAppsList)>
     #[allow(clippy::let_and_return)]
@@ -213,7 +205,7 @@ impl DeleteAppsListInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAppsList,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -298,7 +290,7 @@ impl DeleteAppsListInput {
             "DeleteAppsList",
             "fms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -343,7 +335,7 @@ pub mod delete_notification_channel_input {
 pub type DeleteNotificationChannelInputOperationOutputAlias =
     crate::operation::DeleteNotificationChannel;
 #[doc(hidden)]
-pub type DeleteNotificationChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteNotificationChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteNotificationChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteNotificationChannel`](crate::operation::DeleteNotificationChannel)>
     #[allow(clippy::let_and_return)]
@@ -354,7 +346,7 @@ impl DeleteNotificationChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteNotificationChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -441,7 +433,7 @@ impl DeleteNotificationChannelInput {
             "DeleteNotificationChannel",
             "fms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -466,14 +458,12 @@ pub mod delete_policy_input {
         pub(crate) delete_all_policy_resources: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The ID of the policy that you want to delete. You can retrieve this ID from
-        /// <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
+        /// <p>The ID of the policy that you want to delete. You can retrieve this ID from <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
         pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_id = Some(input.into());
             self
         }
-        /// <p>The ID of the policy that you want to delete. You can retrieve this ID from
-        /// <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
+        /// <p>The ID of the policy that you want to delete. You can retrieve this ID from <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
         pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_id = input;
             self
@@ -481,33 +471,16 @@ pub mod delete_policy_input {
         /// <p>If <code>True</code>, the request performs cleanup according to the policy type. </p>
         /// <p>For WAF and Shield Advanced policies, the cleanup does the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Deletes rule groups created by Firewall Manager</p>
-        /// </li>
-        /// <li>
-        /// <p>Removes web ACLs from in-scope resources</p>
-        /// </li>
-        /// <li>
-        /// <p>Deletes web ACLs that contain no rules or rule groups</p>
-        /// </li>
+        /// <li> <p>Deletes rule groups created by Firewall Manager</p> </li>
+        /// <li> <p>Removes web ACLs from in-scope resources</p> </li>
+        /// <li> <p>Deletes web ACLs that contain no rules or rule groups</p> </li>
         /// </ul>
-        /// <p>For security group policies, the cleanup does the following for each security group in
-        /// the policy:</p>
+        /// <p>For security group policies, the cleanup does the following for each security group in the policy:</p>
         /// <ul>
-        /// <li>
-        /// <p>Disassociates the security group from in-scope resources </p>
-        /// </li>
-        /// <li>
-        /// <p>Deletes the security group if it was created through Firewall Manager and if it's
-        /// no longer associated with any resources through another policy</p>
-        /// </li>
+        /// <li> <p>Disassociates the security group from in-scope resources </p> </li>
+        /// <li> <p>Deletes the security group if it was created through Firewall Manager and if it's no longer associated with any resources through another policy</p> </li>
         /// </ul>
-        /// <p>After the cleanup, in-scope resources are no longer protected by web ACLs in this policy.
-        /// Protection of out-of-scope resources remains unchanged. Scope is determined by tags that you
-        /// create and accounts that you associate with the policy. When creating the policy, if you
-        /// specify that only resources in specific accounts or with specific tags are in scope of the
-        /// policy, those accounts and resources are handled by the policy. All others are out of scope.
-        /// If you don't specify tags or accounts, all resources are in scope. </p>
+        /// <p>After the cleanup, in-scope resources are no longer protected by web ACLs in this policy. Protection of out-of-scope resources remains unchanged. Scope is determined by tags that you create and accounts that you associate with the policy. When creating the policy, if you specify that only resources in specific accounts or with specific tags are in scope of the policy, those accounts and resources are handled by the policy. All others are out of scope. If you don't specify tags or accounts, all resources are in scope. </p>
         pub fn delete_all_policy_resources(mut self, input: bool) -> Self {
             self.delete_all_policy_resources = Some(input);
             self
@@ -515,33 +488,16 @@ pub mod delete_policy_input {
         /// <p>If <code>True</code>, the request performs cleanup according to the policy type. </p>
         /// <p>For WAF and Shield Advanced policies, the cleanup does the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Deletes rule groups created by Firewall Manager</p>
-        /// </li>
-        /// <li>
-        /// <p>Removes web ACLs from in-scope resources</p>
-        /// </li>
-        /// <li>
-        /// <p>Deletes web ACLs that contain no rules or rule groups</p>
-        /// </li>
+        /// <li> <p>Deletes rule groups created by Firewall Manager</p> </li>
+        /// <li> <p>Removes web ACLs from in-scope resources</p> </li>
+        /// <li> <p>Deletes web ACLs that contain no rules or rule groups</p> </li>
         /// </ul>
-        /// <p>For security group policies, the cleanup does the following for each security group in
-        /// the policy:</p>
+        /// <p>For security group policies, the cleanup does the following for each security group in the policy:</p>
         /// <ul>
-        /// <li>
-        /// <p>Disassociates the security group from in-scope resources </p>
-        /// </li>
-        /// <li>
-        /// <p>Deletes the security group if it was created through Firewall Manager and if it's
-        /// no longer associated with any resources through another policy</p>
-        /// </li>
+        /// <li> <p>Disassociates the security group from in-scope resources </p> </li>
+        /// <li> <p>Deletes the security group if it was created through Firewall Manager and if it's no longer associated with any resources through another policy</p> </li>
         /// </ul>
-        /// <p>After the cleanup, in-scope resources are no longer protected by web ACLs in this policy.
-        /// Protection of out-of-scope resources remains unchanged. Scope is determined by tags that you
-        /// create and accounts that you associate with the policy. When creating the policy, if you
-        /// specify that only resources in specific accounts or with specific tags are in scope of the
-        /// policy, those accounts and resources are handled by the policy. All others are out of scope.
-        /// If you don't specify tags or accounts, all resources are in scope. </p>
+        /// <p>After the cleanup, in-scope resources are no longer protected by web ACLs in this policy. Protection of out-of-scope resources remains unchanged. Scope is determined by tags that you create and accounts that you associate with the policy. When creating the policy, if you specify that only resources in specific accounts or with specific tags are in scope of the policy, those accounts and resources are handled by the policy. All others are out of scope. If you don't specify tags or accounts, all resources are in scope. </p>
         pub fn set_delete_all_policy_resources(mut self, input: std::option::Option<bool>) -> Self {
             self.delete_all_policy_resources = input;
             self
@@ -563,7 +519,7 @@ pub mod delete_policy_input {
 #[doc(hidden)]
 pub type DeletePolicyInputOperationOutputAlias = crate::operation::DeletePolicy;
 #[doc(hidden)]
-pub type DeletePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeletePolicy`](crate::operation::DeletePolicy)>
     #[allow(clippy::let_and_return)]
@@ -574,7 +530,7 @@ impl DeletePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -658,7 +614,7 @@ impl DeletePolicyInput {
             "DeletePolicy",
             "fms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -690,14 +646,12 @@ pub mod delete_protocols_list_input {
         pub(crate) list_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the protocols list that you want to delete. You can retrieve this ID from
-        /// <code>PutProtocolsList</code>, <code>ListProtocolsLists</code>, and <code>GetProtocolsLost</code>.</p>
+        /// <p>The ID of the protocols list that you want to delete. You can retrieve this ID from <code>PutProtocolsList</code>, <code>ListProtocolsLists</code>, and <code>GetProtocolsLost</code>.</p>
         pub fn list_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.list_id = Some(input.into());
             self
         }
-        /// <p>The ID of the protocols list that you want to delete. You can retrieve this ID from
-        /// <code>PutProtocolsList</code>, <code>ListProtocolsLists</code>, and <code>GetProtocolsLost</code>.</p>
+        /// <p>The ID of the protocols list that you want to delete. You can retrieve this ID from <code>PutProtocolsList</code>, <code>ListProtocolsLists</code>, and <code>GetProtocolsLost</code>.</p>
         pub fn set_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.list_id = input;
             self
@@ -718,7 +672,7 @@ pub mod delete_protocols_list_input {
 #[doc(hidden)]
 pub type DeleteProtocolsListInputOperationOutputAlias = crate::operation::DeleteProtocolsList;
 #[doc(hidden)]
-pub type DeleteProtocolsListInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteProtocolsListInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProtocolsListInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProtocolsList`](crate::operation::DeleteProtocolsList)>
     #[allow(clippy::let_and_return)]
@@ -729,7 +683,7 @@ impl DeleteProtocolsListInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteProtocolsList,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -814,7 +768,7 @@ impl DeleteProtocolsListInput {
             "DeleteProtocolsList",
             "fms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -859,7 +813,7 @@ pub mod disassociate_admin_account_input {
 pub type DisassociateAdminAccountInputOperationOutputAlias =
     crate::operation::DisassociateAdminAccount;
 #[doc(hidden)]
-pub type DisassociateAdminAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateAdminAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateAdminAccountInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateAdminAccount`](crate::operation::DisassociateAdminAccount)>
     #[allow(clippy::let_and_return)]
@@ -870,7 +824,7 @@ impl DisassociateAdminAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateAdminAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -957,7 +911,7 @@ impl DisassociateAdminAccountInput {
             "DisassociateAdminAccount",
             "fms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -993,7 +947,7 @@ pub mod get_admin_account_input {
 #[doc(hidden)]
 pub type GetAdminAccountInputOperationOutputAlias = crate::operation::GetAdminAccount;
 #[doc(hidden)]
-pub type GetAdminAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAdminAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAdminAccountInput {
     /// Consumes the builder and constructs an Operation<[`GetAdminAccount`](crate::operation::GetAdminAccount)>
     #[allow(clippy::let_and_return)]
@@ -1004,7 +958,7 @@ impl GetAdminAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAdminAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1089,7 +1043,7 @@ impl GetAdminAccountInput {
             "GetAdminAccount",
             "fms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1151,7 +1105,7 @@ pub mod get_apps_list_input {
 #[doc(hidden)]
 pub type GetAppsListInputOperationOutputAlias = crate::operation::GetAppsList;
 #[doc(hidden)]
-pub type GetAppsListInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAppsListInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAppsListInput {
     /// Consumes the builder and constructs an Operation<[`GetAppsList`](crate::operation::GetAppsList)>
     #[allow(clippy::let_and_return)]
@@ -1162,7 +1116,7 @@ impl GetAppsListInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAppsList,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1246,7 +1200,7 @@ impl GetAppsListInput {
             "GetAppsList",
             "fms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1279,14 +1233,12 @@ pub mod get_compliance_detail_input {
         pub(crate) member_account: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the policy that you want to get the details for. <code>PolicyId</code> is
-        /// returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
+        /// <p>The ID of the policy that you want to get the details for. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
         pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_id = Some(input.into());
             self
         }
-        /// <p>The ID of the policy that you want to get the details for. <code>PolicyId</code> is
-        /// returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
+        /// <p>The ID of the policy that you want to get the details for. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
         pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_id = input;
             self
@@ -1321,7 +1273,7 @@ pub mod get_compliance_detail_input {
 #[doc(hidden)]
 pub type GetComplianceDetailInputOperationOutputAlias = crate::operation::GetComplianceDetail;
 #[doc(hidden)]
-pub type GetComplianceDetailInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetComplianceDetailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetComplianceDetailInput {
     /// Consumes the builder and constructs an Operation<[`GetComplianceDetail`](crate::operation::GetComplianceDetail)>
     #[allow(clippy::let_and_return)]
@@ -1332,7 +1284,7 @@ impl GetComplianceDetailInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetComplianceDetail,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1417,7 +1369,7 @@ impl GetComplianceDetailInput {
             "GetComplianceDetail",
             "fms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1461,7 +1413,7 @@ pub mod get_notification_channel_input {
 #[doc(hidden)]
 pub type GetNotificationChannelInputOperationOutputAlias = crate::operation::GetNotificationChannel;
 #[doc(hidden)]
-pub type GetNotificationChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetNotificationChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetNotificationChannelInput {
     /// Consumes the builder and constructs an Operation<[`GetNotificationChannel`](crate::operation::GetNotificationChannel)>
     #[allow(clippy::let_and_return)]
@@ -1472,7 +1424,7 @@ impl GetNotificationChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetNotificationChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1559,7 +1511,7 @@ impl GetNotificationChannelInput {
             "GetNotificationChannel",
             "fms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1607,7 +1559,7 @@ pub mod get_policy_input {
 #[doc(hidden)]
 pub type GetPolicyInputOperationOutputAlias = crate::operation::GetPolicy;
 #[doc(hidden)]
-pub type GetPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetPolicy`](crate::operation::GetPolicy)>
     #[allow(clippy::let_and_return)]
@@ -1618,7 +1570,7 @@ impl GetPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1700,7 +1652,7 @@ impl GetPolicyInput {
                     "GetPolicy",
                     "fms",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1747,14 +1699,12 @@ pub mod get_protection_status_input {
             self.policy_id = input;
             self
         }
-        /// <p>The Amazon Web Services account that is in scope of the policy that you want to get the details
-        /// for.</p>
+        /// <p>The Amazon Web Services account that is in scope of the policy that you want to get the details for.</p>
         pub fn member_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.member_account_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account that is in scope of the policy that you want to get the details
-        /// for.</p>
+        /// <p>The Amazon Web Services account that is in scope of the policy that you want to get the details for.</p>
         pub fn set_member_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1762,16 +1712,12 @@ pub mod get_protection_status_input {
             self.member_account_id = input;
             self
         }
-        /// <p>The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The
-        /// request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is
-        /// allowed.</p>
+        /// <p>The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is allowed.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The
-        /// request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is
-        /// allowed.</p>
+        /// <p>The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is allowed.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1779,16 +1725,12 @@ pub mod get_protection_status_input {
             self.start_time = input;
             self
         }
-        /// <p>The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The
-        /// request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is
-        /// allowed.</p>
+        /// <p>The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is allowed.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The
-        /// request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is
-        /// allowed.</p>
+        /// <p>The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is allowed.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1796,32 +1738,22 @@ pub mod get_protection_status_input {
             self.end_time = input;
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> and you have more objects than the number that you specify
-        /// for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response, which you can use to retrieve another group of
-        /// objects. For the second and subsequent <code>GetProtectionStatus</code> requests, specify the value of <code>NextToken</code>
-        /// from the previous response to get information about another batch of objects.</p>
+        /// <p>If you specify a value for <code>MaxResults</code> and you have more objects than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response, which you can use to retrieve another group of objects. For the second and subsequent <code>GetProtectionStatus</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of objects.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> and you have more objects than the number that you specify
-        /// for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response, which you can use to retrieve another group of
-        /// objects. For the second and subsequent <code>GetProtectionStatus</code> requests, specify the value of <code>NextToken</code>
-        /// from the previous response to get information about another batch of objects.</p>
+        /// <p>If you specify a value for <code>MaxResults</code> and you have more objects than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response, which you can use to retrieve another group of objects. For the second and subsequent <code>GetProtectionStatus</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of objects.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>Specifies the number of objects that you want Firewall Manager to return for this request. If you have more
-        /// objects than the number that you specify for <code>MaxResults</code>, the response includes a
-        /// <code>NextToken</code> value that you can use to get another batch of objects.</p>
+        /// <p>Specifies the number of objects that you want Firewall Manager to return for this request. If you have more objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of objects.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Specifies the number of objects that you want Firewall Manager to return for this request. If you have more
-        /// objects than the number that you specify for <code>MaxResults</code>, the response includes a
-        /// <code>NextToken</code> value that you can use to get another batch of objects.</p>
+        /// <p>Specifies the number of objects that you want Firewall Manager to return for this request. If you have more objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of objects.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1847,7 +1779,7 @@ pub mod get_protection_status_input {
 #[doc(hidden)]
 pub type GetProtectionStatusInputOperationOutputAlias = crate::operation::GetProtectionStatus;
 #[doc(hidden)]
-pub type GetProtectionStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetProtectionStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetProtectionStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetProtectionStatus`](crate::operation::GetProtectionStatus)>
     #[allow(clippy::let_and_return)]
@@ -1858,7 +1790,7 @@ impl GetProtectionStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetProtectionStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1943,7 +1875,7 @@ impl GetProtectionStatusInput {
             "GetProtectionStatus",
             "fms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2013,7 +1945,7 @@ pub mod get_protocols_list_input {
 #[doc(hidden)]
 pub type GetProtocolsListInputOperationOutputAlias = crate::operation::GetProtocolsList;
 #[doc(hidden)]
-pub type GetProtocolsListInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetProtocolsListInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetProtocolsListInput {
     /// Consumes the builder and constructs an Operation<[`GetProtocolsList`](crate::operation::GetProtocolsList)>
     #[allow(clippy::let_and_return)]
@@ -2024,7 +1956,7 @@ impl GetProtocolsListInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetProtocolsList,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2109,7 +2041,7 @@ impl GetProtocolsListInput {
             "GetProtocolsList",
             "fms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2177,26 +2109,12 @@ pub mod get_violation_details_input {
             self.resource_id = input;
             self
         }
-        /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>.
-        /// Supported resource types are:
-        /// <code>AWS::EC2::Instance</code>,
-        /// <code>AWS::EC2::NetworkInterface</code>,
-        /// <code>AWS::EC2::SecurityGroup</code>,
-        /// <code>AWS::NetworkFirewall::FirewallPolicy</code>, and
-        /// <code>AWS::EC2::Subnet</code>.
-        /// </p>
+        /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>. </p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>.
-        /// Supported resource types are:
-        /// <code>AWS::EC2::Instance</code>,
-        /// <code>AWS::EC2::NetworkInterface</code>,
-        /// <code>AWS::EC2::SecurityGroup</code>,
-        /// <code>AWS::NetworkFirewall::FirewallPolicy</code>, and
-        /// <code>AWS::EC2::Subnet</code>.
-        /// </p>
+        /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>. </p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2223,7 +2141,7 @@ pub mod get_violation_details_input {
 #[doc(hidden)]
 pub type GetViolationDetailsInputOperationOutputAlias = crate::operation::GetViolationDetails;
 #[doc(hidden)]
-pub type GetViolationDetailsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetViolationDetailsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetViolationDetailsInput {
     /// Consumes the builder and constructs an Operation<[`GetViolationDetails`](crate::operation::GetViolationDetails)>
     #[allow(clippy::let_and_return)]
@@ -2234,7 +2152,7 @@ impl GetViolationDetailsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetViolationDetails,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2319,7 +2237,7 @@ impl GetViolationDetailsInput {
             "GetViolationDetails",
             "fms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2363,31 +2281,23 @@ pub mod list_apps_lists_input {
             self.default_lists = input;
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-        /// Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request
-        /// in the request parameters, to retrieve the next batch of objects.</p>
+        /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request in the request parameters, to retrieve the next batch of objects.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-        /// Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request
-        /// in the request parameters, to retrieve the next batch of objects.</p>
+        /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request in the request parameters, to retrieve the next batch of objects.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more
-        /// objects are available, in the response, Firewall Manager provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         /// <p>If you don't specify this, Firewall Manager returns all available objects.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more
-        /// objects are available, in the response, Firewall Manager provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         /// <p>If you don't specify this, Firewall Manager returns all available objects.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
@@ -2411,7 +2321,7 @@ pub mod list_apps_lists_input {
 #[doc(hidden)]
 pub type ListAppsListsInputOperationOutputAlias = crate::operation::ListAppsLists;
 #[doc(hidden)]
-pub type ListAppsListsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAppsListsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAppsListsInput {
     /// Consumes the builder and constructs an Operation<[`ListAppsLists`](crate::operation::ListAppsLists)>
     #[allow(clippy::let_and_return)]
@@ -2422,7 +2332,7 @@ impl ListAppsListsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAppsLists,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2507,7 +2417,7 @@ impl ListAppsListsInput {
             "ListAppsLists",
             "fms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2551,42 +2461,22 @@ pub mod list_compliance_status_input {
             self.policy_id = input;
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> and you have more
-        /// <code>PolicyComplianceStatus</code> objects than the number that you specify for
-        /// <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the
-        /// response that allows you to list another group of <code>PolicyComplianceStatus</code> objects.
-        /// For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of
-        /// <code>NextToken</code> from the previous response to get information about another batch of
-        /// <code>PolicyComplianceStatus</code> objects.</p>
+        /// <p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicyComplianceStatus</code> objects. For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicyComplianceStatus</code> objects.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> and you have more
-        /// <code>PolicyComplianceStatus</code> objects than the number that you specify for
-        /// <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the
-        /// response that allows you to list another group of <code>PolicyComplianceStatus</code> objects.
-        /// For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of
-        /// <code>NextToken</code> from the previous response to get information about another batch of
-        /// <code>PolicyComplianceStatus</code> objects.</p>
+        /// <p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicyComplianceStatus</code> objects. For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicyComplianceStatus</code> objects.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want
-        /// Firewall Manager to return for this request. If you have more
-        /// <code>PolicyComplianceStatus</code> objects than the number that you specify for
-        /// <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can
-        /// use to get another batch of <code>PolicyComplianceStatus</code> objects.</p>
+        /// <p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want Firewall Manager to return for this request. If you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicyComplianceStatus</code> objects.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want
-        /// Firewall Manager to return for this request. If you have more
-        /// <code>PolicyComplianceStatus</code> objects than the number that you specify for
-        /// <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can
-        /// use to get another batch of <code>PolicyComplianceStatus</code> objects.</p>
+        /// <p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want Firewall Manager to return for this request. If you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicyComplianceStatus</code> objects.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2609,7 +2499,7 @@ pub mod list_compliance_status_input {
 #[doc(hidden)]
 pub type ListComplianceStatusInputOperationOutputAlias = crate::operation::ListComplianceStatus;
 #[doc(hidden)]
-pub type ListComplianceStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListComplianceStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListComplianceStatusInput {
     /// Consumes the builder and constructs an Operation<[`ListComplianceStatus`](crate::operation::ListComplianceStatus)>
     #[allow(clippy::let_and_return)]
@@ -2620,7 +2510,7 @@ impl ListComplianceStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListComplianceStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2707,7 +2597,7 @@ impl ListComplianceStatusInput {
             "ListComplianceStatus",
             "fms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2740,38 +2630,22 @@ pub mod list_member_accounts_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>If you specify a value for <code>MaxResults</code> and you have more account IDs than the
-        /// number that you specify for <code>MaxResults</code>, Firewall Manager returns a
-        /// <code>NextToken</code> value in the response that allows you to list another group of IDs.
-        /// For the second and subsequent <code>ListMemberAccountsRequest</code> requests, specify the
-        /// value of <code>NextToken</code> from the previous response to get information about another
-        /// batch of member account IDs.</p>
+        /// <p>If you specify a value for <code>MaxResults</code> and you have more account IDs than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of IDs. For the second and subsequent <code>ListMemberAccountsRequest</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of member account IDs.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> and you have more account IDs than the
-        /// number that you specify for <code>MaxResults</code>, Firewall Manager returns a
-        /// <code>NextToken</code> value in the response that allows you to list another group of IDs.
-        /// For the second and subsequent <code>ListMemberAccountsRequest</code> requests, specify the
-        /// value of <code>NextToken</code> from the previous response to get information about another
-        /// batch of member account IDs.</p>
+        /// <p>If you specify a value for <code>MaxResults</code> and you have more account IDs than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of IDs. For the second and subsequent <code>ListMemberAccountsRequest</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of member account IDs.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>Specifies the number of member account IDs that you want Firewall Manager to return
-        /// for this request. If you have more IDs than the number that you specify for
-        /// <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can
-        /// use to get another batch of member account IDs.</p>
+        /// <p>Specifies the number of member account IDs that you want Firewall Manager to return for this request. If you have more IDs than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of member account IDs.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Specifies the number of member account IDs that you want Firewall Manager to return
-        /// for this request. If you have more IDs than the number that you specify for
-        /// <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can
-        /// use to get another batch of member account IDs.</p>
+        /// <p>Specifies the number of member account IDs that you want Firewall Manager to return for this request. If you have more IDs than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of member account IDs.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2793,7 +2667,7 @@ pub mod list_member_accounts_input {
 #[doc(hidden)]
 pub type ListMemberAccountsInputOperationOutputAlias = crate::operation::ListMemberAccounts;
 #[doc(hidden)]
-pub type ListMemberAccountsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListMemberAccountsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMemberAccountsInput {
     /// Consumes the builder and constructs an Operation<[`ListMemberAccounts`](crate::operation::ListMemberAccounts)>
     #[allow(clippy::let_and_return)]
@@ -2804,7 +2678,7 @@ impl ListMemberAccountsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMemberAccounts,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2889,7 +2763,7 @@ impl ListMemberAccountsInput {
             "ListMemberAccounts",
             "fms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2922,40 +2796,22 @@ pub mod list_policies_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>If you specify a value for <code>MaxResults</code> and you have more
-        /// <code>PolicySummary</code> objects than the number that you specify for
-        /// <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the
-        /// response that allows you to list another group of <code>PolicySummary</code> objects. For the
-        /// second and subsequent <code>ListPolicies</code> requests, specify the value of
-        /// <code>NextToken</code> from the previous response to get information about another batch of
-        /// <code>PolicySummary</code> objects.</p>
+        /// <p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicySummary</code> objects. For the second and subsequent <code>ListPolicies</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicySummary</code> objects.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> and you have more
-        /// <code>PolicySummary</code> objects than the number that you specify for
-        /// <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the
-        /// response that allows you to list another group of <code>PolicySummary</code> objects. For the
-        /// second and subsequent <code>ListPolicies</code> requests, specify the value of
-        /// <code>NextToken</code> from the previous response to get information about another batch of
-        /// <code>PolicySummary</code> objects.</p>
+        /// <p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicySummary</code> objects. For the second and subsequent <code>ListPolicies</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicySummary</code> objects.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>Specifies the number of <code>PolicySummary</code> objects that you want Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than
-        /// the number that you specify for <code>MaxResults</code>, the response includes a
-        /// <code>NextToken</code> value that you can use to get another batch of
-        /// <code>PolicySummary</code> objects.</p>
+        /// <p>Specifies the number of <code>PolicySummary</code> objects that you want Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicySummary</code> objects.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Specifies the number of <code>PolicySummary</code> objects that you want Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than
-        /// the number that you specify for <code>MaxResults</code>, the response includes a
-        /// <code>NextToken</code> value that you can use to get another batch of
-        /// <code>PolicySummary</code> objects.</p>
+        /// <p>Specifies the number of <code>PolicySummary</code> objects that you want Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicySummary</code> objects.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2977,7 +2833,7 @@ pub mod list_policies_input {
 #[doc(hidden)]
 pub type ListPoliciesInputOperationOutputAlias = crate::operation::ListPolicies;
 #[doc(hidden)]
-pub type ListPoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`ListPolicies`](crate::operation::ListPolicies)>
     #[allow(clippy::let_and_return)]
@@ -2988,7 +2844,7 @@ impl ListPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPolicies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3072,7 +2928,7 @@ impl ListPoliciesInput {
             "ListPolicies",
             "fms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3116,31 +2972,23 @@ pub mod list_protocols_lists_input {
             self.default_lists = input;
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-        /// Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request
-        /// in the request parameters, to retrieve the next batch of objects.</p>
+        /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request in the request parameters, to retrieve the next batch of objects.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-        /// Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request
-        /// in the request parameters, to retrieve the next batch of objects.</p>
+        /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request in the request parameters, to retrieve the next batch of objects.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more
-        /// objects are available, in the response, Firewall Manager provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         /// <p>If you don't specify this, Firewall Manager returns all available objects.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more
-        /// objects are available, in the response, Firewall Manager provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         /// <p>If you don't specify this, Firewall Manager returns all available objects.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
@@ -3164,7 +3012,7 @@ pub mod list_protocols_lists_input {
 #[doc(hidden)]
 pub type ListProtocolsListsInputOperationOutputAlias = crate::operation::ListProtocolsLists;
 #[doc(hidden)]
-pub type ListProtocolsListsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListProtocolsListsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProtocolsListsInput {
     /// Consumes the builder and constructs an Operation<[`ListProtocolsLists`](crate::operation::ListProtocolsLists)>
     #[allow(clippy::let_and_return)]
@@ -3175,7 +3023,7 @@ impl ListProtocolsListsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListProtocolsLists,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3260,7 +3108,7 @@ impl ListProtocolsListsInput {
             "ListProtocolsLists",
             "fms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3318,7 +3166,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -3329,7 +3177,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3416,7 +3264,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "fms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3467,9 +3315,9 @@ pub mod put_apps_list_input {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>The tags associated with the resource.</p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -3498,7 +3346,7 @@ pub mod put_apps_list_input {
 #[doc(hidden)]
 pub type PutAppsListInputOperationOutputAlias = crate::operation::PutAppsList;
 #[doc(hidden)]
-pub type PutAppsListInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutAppsListInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutAppsListInput {
     /// Consumes the builder and constructs an Operation<[`PutAppsList`](crate::operation::PutAppsList)>
     #[allow(clippy::let_and_return)]
@@ -3509,7 +3357,7 @@ impl PutAppsListInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutAppsList,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3593,7 +3441,7 @@ impl PutAppsListInput {
             "PutAppsList",
             "fms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3626,14 +3474,12 @@ pub mod put_notification_channel_input {
         pub(crate) sns_role_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from
-        /// Firewall Manager.</p>
+        /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from Firewall Manager.</p>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_topic_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from
-        /// Firewall Manager.</p>
+        /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from Firewall Manager.</p>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3641,14 +3487,12 @@ pub mod put_notification_channel_input {
             self.sns_topic_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record
-        /// Firewall Manager activity. </p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record Firewall Manager activity. </p>
         pub fn sns_role_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_role_name = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record
-        /// Firewall Manager activity. </p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record Firewall Manager activity. </p>
         pub fn set_sns_role_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3673,7 +3517,7 @@ pub mod put_notification_channel_input {
 #[doc(hidden)]
 pub type PutNotificationChannelInputOperationOutputAlias = crate::operation::PutNotificationChannel;
 #[doc(hidden)]
-pub type PutNotificationChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutNotificationChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutNotificationChannelInput {
     /// Consumes the builder and constructs an Operation<[`PutNotificationChannel`](crate::operation::PutNotificationChannel)>
     #[allow(clippy::let_and_return)]
@@ -3684,7 +3528,7 @@ impl PutNotificationChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutNotificationChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3771,7 +3615,7 @@ impl PutNotificationChannelInput {
             "PutNotificationChannel",
             "fms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3819,9 +3663,9 @@ pub mod put_policy_input {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>The tags to add to the Amazon Web Services resource.</p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -3848,7 +3692,7 @@ pub mod put_policy_input {
 #[doc(hidden)]
 pub type PutPolicyInputOperationOutputAlias = crate::operation::PutPolicy;
 #[doc(hidden)]
-pub type PutPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutPolicy`](crate::operation::PutPolicy)>
     #[allow(clippy::let_and_return)]
@@ -3859,7 +3703,7 @@ impl PutPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3941,7 +3785,7 @@ impl PutPolicyInput {
                     "PutPolicy",
                     "fms",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3992,9 +3836,9 @@ pub mod put_protocols_list_input {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>The tags associated with the resource.</p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -4023,7 +3867,7 @@ pub mod put_protocols_list_input {
 #[doc(hidden)]
 pub type PutProtocolsListInputOperationOutputAlias = crate::operation::PutProtocolsList;
 #[doc(hidden)]
-pub type PutProtocolsListInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutProtocolsListInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutProtocolsListInput {
     /// Consumes the builder and constructs an Operation<[`PutProtocolsList`](crate::operation::PutProtocolsList)>
     #[allow(clippy::let_and_return)]
@@ -4034,7 +3878,7 @@ impl PutProtocolsListInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutProtocolsList,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4119,7 +3963,7 @@ impl PutProtocolsListInput {
             "PutProtocolsList",
             "fms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4167,9 +4011,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>The tags to add to the resource.</p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -4198,7 +4042,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -4209,7 +4053,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4293,7 +4137,7 @@ impl TagResourceInput {
             "TagResource",
             "fms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4372,7 +4216,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -4383,7 +4227,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4467,7 +4311,7 @@ impl UntagResourceInput {
             "UntagResource",
             "fms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4606,21 +4450,17 @@ impl std::fmt::Debug for PutPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutNotificationChannelInput {
-    /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from
-    /// Firewall Manager.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from Firewall Manager.</p>
     pub sns_topic_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record
-    /// Firewall Manager activity. </p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record Firewall Manager activity. </p>
     pub sns_role_name: std::option::Option<std::string::String>,
 }
 impl PutNotificationChannelInput {
-    /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from
-    /// Firewall Manager.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from Firewall Manager.</p>
     pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record
-    /// Firewall Manager activity. </p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record Firewall Manager activity. </p>
     pub fn sns_role_name(&self) -> std::option::Option<&str> {
         self.sns_role_name.as_deref()
     }
@@ -4689,13 +4529,9 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListProtocolsListsInput {
     /// <p>Specifies whether the lists to retrieve are default lists owned by Firewall Manager.</p>
     pub default_lists: bool,
-    /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-    /// Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request
-    /// in the request parameters, to retrieve the next batch of objects.</p>
+    /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request in the request parameters, to retrieve the next batch of objects.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more
-    /// objects are available, in the response, Firewall Manager provides a
-    /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// <p>If you don't specify this, Firewall Manager returns all available objects.</p>
     pub max_results: std::option::Option<i32>,
 }
@@ -4704,15 +4540,11 @@ impl ListProtocolsListsInput {
     pub fn default_lists(&self) -> bool {
         self.default_lists
     }
-    /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-    /// Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request
-    /// in the request parameters, to retrieve the next batch of objects.</p>
+    /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request in the request parameters, to retrieve the next batch of objects.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more
-    /// objects are available, in the response, Firewall Manager provides a
-    /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// <p>If you don't specify this, Firewall Manager returns all available objects.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
@@ -4732,35 +4564,17 @@ impl std::fmt::Debug for ListProtocolsListsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPoliciesInput {
-    /// <p>If you specify a value for <code>MaxResults</code> and you have more
-    /// <code>PolicySummary</code> objects than the number that you specify for
-    /// <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the
-    /// response that allows you to list another group of <code>PolicySummary</code> objects. For the
-    /// second and subsequent <code>ListPolicies</code> requests, specify the value of
-    /// <code>NextToken</code> from the previous response to get information about another batch of
-    /// <code>PolicySummary</code> objects.</p>
+    /// <p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicySummary</code> objects. For the second and subsequent <code>ListPolicies</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicySummary</code> objects.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Specifies the number of <code>PolicySummary</code> objects that you want Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than
-    /// the number that you specify for <code>MaxResults</code>, the response includes a
-    /// <code>NextToken</code> value that you can use to get another batch of
-    /// <code>PolicySummary</code> objects.</p>
+    /// <p>Specifies the number of <code>PolicySummary</code> objects that you want Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicySummary</code> objects.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListPoliciesInput {
-    /// <p>If you specify a value for <code>MaxResults</code> and you have more
-    /// <code>PolicySummary</code> objects than the number that you specify for
-    /// <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the
-    /// response that allows you to list another group of <code>PolicySummary</code> objects. For the
-    /// second and subsequent <code>ListPolicies</code> requests, specify the value of
-    /// <code>NextToken</code> from the previous response to get information about another batch of
-    /// <code>PolicySummary</code> objects.</p>
+    /// <p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicySummary</code> objects. For the second and subsequent <code>ListPolicies</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicySummary</code> objects.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Specifies the number of <code>PolicySummary</code> objects that you want Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than
-    /// the number that you specify for <code>MaxResults</code>, the response includes a
-    /// <code>NextToken</code> value that you can use to get another batch of
-    /// <code>PolicySummary</code> objects.</p>
+    /// <p>Specifies the number of <code>PolicySummary</code> objects that you want Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicySummary</code> objects.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -4778,33 +4592,17 @@ impl std::fmt::Debug for ListPoliciesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMemberAccountsInput {
-    /// <p>If you specify a value for <code>MaxResults</code> and you have more account IDs than the
-    /// number that you specify for <code>MaxResults</code>, Firewall Manager returns a
-    /// <code>NextToken</code> value in the response that allows you to list another group of IDs.
-    /// For the second and subsequent <code>ListMemberAccountsRequest</code> requests, specify the
-    /// value of <code>NextToken</code> from the previous response to get information about another
-    /// batch of member account IDs.</p>
+    /// <p>If you specify a value for <code>MaxResults</code> and you have more account IDs than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of IDs. For the second and subsequent <code>ListMemberAccountsRequest</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of member account IDs.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Specifies the number of member account IDs that you want Firewall Manager to return
-    /// for this request. If you have more IDs than the number that you specify for
-    /// <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can
-    /// use to get another batch of member account IDs.</p>
+    /// <p>Specifies the number of member account IDs that you want Firewall Manager to return for this request. If you have more IDs than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of member account IDs.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListMemberAccountsInput {
-    /// <p>If you specify a value for <code>MaxResults</code> and you have more account IDs than the
-    /// number that you specify for <code>MaxResults</code>, Firewall Manager returns a
-    /// <code>NextToken</code> value in the response that allows you to list another group of IDs.
-    /// For the second and subsequent <code>ListMemberAccountsRequest</code> requests, specify the
-    /// value of <code>NextToken</code> from the previous response to get information about another
-    /// batch of member account IDs.</p>
+    /// <p>If you specify a value for <code>MaxResults</code> and you have more account IDs than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of IDs. For the second and subsequent <code>ListMemberAccountsRequest</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of member account IDs.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Specifies the number of member account IDs that you want Firewall Manager to return
-    /// for this request. If you have more IDs than the number that you specify for
-    /// <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can
-    /// use to get another batch of member account IDs.</p>
+    /// <p>Specifies the number of member account IDs that you want Firewall Manager to return for this request. If you have more IDs than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of member account IDs.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -4824,19 +4622,9 @@ impl std::fmt::Debug for ListMemberAccountsInput {
 pub struct ListComplianceStatusInput {
     /// <p>The ID of the Firewall Manager policy that you want the details for.</p>
     pub policy_id: std::option::Option<std::string::String>,
-    /// <p>If you specify a value for <code>MaxResults</code> and you have more
-    /// <code>PolicyComplianceStatus</code> objects than the number that you specify for
-    /// <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the
-    /// response that allows you to list another group of <code>PolicyComplianceStatus</code> objects.
-    /// For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of
-    /// <code>NextToken</code> from the previous response to get information about another batch of
-    /// <code>PolicyComplianceStatus</code> objects.</p>
+    /// <p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicyComplianceStatus</code> objects. For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicyComplianceStatus</code> objects.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want
-    /// Firewall Manager to return for this request. If you have more
-    /// <code>PolicyComplianceStatus</code> objects than the number that you specify for
-    /// <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can
-    /// use to get another batch of <code>PolicyComplianceStatus</code> objects.</p>
+    /// <p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want Firewall Manager to return for this request. If you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicyComplianceStatus</code> objects.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListComplianceStatusInput {
@@ -4844,21 +4632,11 @@ impl ListComplianceStatusInput {
     pub fn policy_id(&self) -> std::option::Option<&str> {
         self.policy_id.as_deref()
     }
-    /// <p>If you specify a value for <code>MaxResults</code> and you have more
-    /// <code>PolicyComplianceStatus</code> objects than the number that you specify for
-    /// <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the
-    /// response that allows you to list another group of <code>PolicyComplianceStatus</code> objects.
-    /// For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of
-    /// <code>NextToken</code> from the previous response to get information about another batch of
-    /// <code>PolicyComplianceStatus</code> objects.</p>
+    /// <p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicyComplianceStatus</code> objects. For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicyComplianceStatus</code> objects.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want
-    /// Firewall Manager to return for this request. If you have more
-    /// <code>PolicyComplianceStatus</code> objects than the number that you specify for
-    /// <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can
-    /// use to get another batch of <code>PolicyComplianceStatus</code> objects.</p>
+    /// <p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want Firewall Manager to return for this request. If you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicyComplianceStatus</code> objects.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -4879,13 +4657,9 @@ impl std::fmt::Debug for ListComplianceStatusInput {
 pub struct ListAppsListsInput {
     /// <p>Specifies whether the lists to retrieve are default lists owned by Firewall Manager.</p>
     pub default_lists: bool,
-    /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-    /// Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request
-    /// in the request parameters, to retrieve the next batch of objects.</p>
+    /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request in the request parameters, to retrieve the next batch of objects.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more
-    /// objects are available, in the response, Firewall Manager provides a
-    /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// <p>If you don't specify this, Firewall Manager returns all available objects.</p>
     pub max_results: std::option::Option<i32>,
 }
@@ -4894,15 +4668,11 @@ impl ListAppsListsInput {
     pub fn default_lists(&self) -> bool {
         self.default_lists
     }
-    /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-    /// Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request
-    /// in the request parameters, to retrieve the next batch of objects.</p>
+    /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request in the request parameters, to retrieve the next batch of objects.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more
-    /// objects are available, in the response, Firewall Manager provides a
-    /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// <p>If you don't specify this, Firewall Manager returns all available objects.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
@@ -4928,14 +4698,7 @@ pub struct GetViolationDetailsInput {
     pub member_account: std::option::Option<std::string::String>,
     /// <p>The ID of the resource that has violations.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>.
-    /// Supported resource types are:
-    /// <code>AWS::EC2::Instance</code>,
-    /// <code>AWS::EC2::NetworkInterface</code>,
-    /// <code>AWS::EC2::SecurityGroup</code>,
-    /// <code>AWS::NetworkFirewall::FirewallPolicy</code>, and
-    /// <code>AWS::EC2::Subnet</code>.
-    /// </p>
+    /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>. </p>
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl GetViolationDetailsInput {
@@ -4951,14 +4714,7 @@ impl GetViolationDetailsInput {
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>.
-    /// Supported resource types are:
-    /// <code>AWS::EC2::Instance</code>,
-    /// <code>AWS::EC2::NetworkInterface</code>,
-    /// <code>AWS::EC2::SecurityGroup</code>,
-    /// <code>AWS::NetworkFirewall::FirewallPolicy</code>, and
-    /// <code>AWS::EC2::Subnet</code>.
-    /// </p>
+    /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>. </p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
@@ -5008,25 +4764,15 @@ impl std::fmt::Debug for GetProtocolsListInput {
 pub struct GetProtectionStatusInput {
     /// <p>The ID of the policy for which you want to get the attack information.</p>
     pub policy_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services account that is in scope of the policy that you want to get the details
-    /// for.</p>
+    /// <p>The Amazon Web Services account that is in scope of the policy that you want to get the details for.</p>
     pub member_account_id: std::option::Option<std::string::String>,
-    /// <p>The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The
-    /// request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is
-    /// allowed.</p>
+    /// <p>The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is allowed.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The
-    /// request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is
-    /// allowed.</p>
+    /// <p>The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is allowed.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>If you specify a value for <code>MaxResults</code> and you have more objects than the number that you specify
-    /// for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response, which you can use to retrieve another group of
-    /// objects. For the second and subsequent <code>GetProtectionStatus</code> requests, specify the value of <code>NextToken</code>
-    /// from the previous response to get information about another batch of objects.</p>
+    /// <p>If you specify a value for <code>MaxResults</code> and you have more objects than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response, which you can use to retrieve another group of objects. For the second and subsequent <code>GetProtectionStatus</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of objects.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Specifies the number of objects that you want Firewall Manager to return for this request. If you have more
-    /// objects than the number that you specify for <code>MaxResults</code>, the response includes a
-    /// <code>NextToken</code> value that you can use to get another batch of objects.</p>
+    /// <p>Specifies the number of objects that you want Firewall Manager to return for this request. If you have more objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of objects.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl GetProtectionStatusInput {
@@ -5034,33 +4780,23 @@ impl GetProtectionStatusInput {
     pub fn policy_id(&self) -> std::option::Option<&str> {
         self.policy_id.as_deref()
     }
-    /// <p>The Amazon Web Services account that is in scope of the policy that you want to get the details
-    /// for.</p>
+    /// <p>The Amazon Web Services account that is in scope of the policy that you want to get the details for.</p>
     pub fn member_account_id(&self) -> std::option::Option<&str> {
         self.member_account_id.as_deref()
     }
-    /// <p>The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The
-    /// request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is
-    /// allowed.</p>
+    /// <p>The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is allowed.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The
-    /// request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is
-    /// allowed.</p>
+    /// <p>The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is allowed.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>If you specify a value for <code>MaxResults</code> and you have more objects than the number that you specify
-    /// for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response, which you can use to retrieve another group of
-    /// objects. For the second and subsequent <code>GetProtectionStatus</code> requests, specify the value of <code>NextToken</code>
-    /// from the previous response to get information about another batch of objects.</p>
+    /// <p>If you specify a value for <code>MaxResults</code> and you have more objects than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response, which you can use to retrieve another group of objects. For the second and subsequent <code>GetProtectionStatus</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of objects.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Specifies the number of objects that you want Firewall Manager to return for this request. If you have more
-    /// objects than the number that you specify for <code>MaxResults</code>, the response includes a
-    /// <code>NextToken</code> value that you can use to get another batch of objects.</p>
+    /// <p>Specifies the number of objects that you want Firewall Manager to return for this request. If you have more objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of objects.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5114,15 +4850,13 @@ impl std::fmt::Debug for GetNotificationChannelInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComplianceDetailInput {
-    /// <p>The ID of the policy that you want to get the details for. <code>PolicyId</code> is
-    /// returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
+    /// <p>The ID of the policy that you want to get the details for. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
     pub policy_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account that owns the resources that you want to get the details for.</p>
     pub member_account: std::option::Option<std::string::String>,
 }
 impl GetComplianceDetailInput {
-    /// <p>The ID of the policy that you want to get the details for. <code>PolicyId</code> is
-    /// returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
+    /// <p>The ID of the policy that you want to get the details for. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
     pub fn policy_id(&self) -> std::option::Option<&str> {
         self.policy_id.as_deref()
     }
@@ -5194,13 +4928,11 @@ impl std::fmt::Debug for DisassociateAdminAccountInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProtocolsListInput {
-    /// <p>The ID of the protocols list that you want to delete. You can retrieve this ID from
-    /// <code>PutProtocolsList</code>, <code>ListProtocolsLists</code>, and <code>GetProtocolsLost</code>.</p>
+    /// <p>The ID of the protocols list that you want to delete. You can retrieve this ID from <code>PutProtocolsList</code>, <code>ListProtocolsLists</code>, and <code>GetProtocolsLost</code>.</p>
     pub list_id: std::option::Option<std::string::String>,
 }
 impl DeleteProtocolsListInput {
-    /// <p>The ID of the protocols list that you want to delete. You can retrieve this ID from
-    /// <code>PutProtocolsList</code>, <code>ListProtocolsLists</code>, and <code>GetProtocolsLost</code>.</p>
+    /// <p>The ID of the protocols list that you want to delete. You can retrieve this ID from <code>PutProtocolsList</code>, <code>ListProtocolsLists</code>, and <code>GetProtocolsLost</code>.</p>
     pub fn list_id(&self) -> std::option::Option<&str> {
         self.list_id.as_deref()
     }
@@ -5217,77 +4949,41 @@ impl std::fmt::Debug for DeleteProtocolsListInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePolicyInput {
-    /// <p>The ID of the policy that you want to delete. You can retrieve this ID from
-    /// <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
+    /// <p>The ID of the policy that you want to delete. You can retrieve this ID from <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
     pub policy_id: std::option::Option<std::string::String>,
     /// <p>If <code>True</code>, the request performs cleanup according to the policy type. </p>
     /// <p>For WAF and Shield Advanced policies, the cleanup does the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Deletes rule groups created by Firewall Manager</p>
-    /// </li>
-    /// <li>
-    /// <p>Removes web ACLs from in-scope resources</p>
-    /// </li>
-    /// <li>
-    /// <p>Deletes web ACLs that contain no rules or rule groups</p>
-    /// </li>
+    /// <li> <p>Deletes rule groups created by Firewall Manager</p> </li>
+    /// <li> <p>Removes web ACLs from in-scope resources</p> </li>
+    /// <li> <p>Deletes web ACLs that contain no rules or rule groups</p> </li>
     /// </ul>
-    /// <p>For security group policies, the cleanup does the following for each security group in
-    /// the policy:</p>
+    /// <p>For security group policies, the cleanup does the following for each security group in the policy:</p>
     /// <ul>
-    /// <li>
-    /// <p>Disassociates the security group from in-scope resources </p>
-    /// </li>
-    /// <li>
-    /// <p>Deletes the security group if it was created through Firewall Manager and if it's
-    /// no longer associated with any resources through another policy</p>
-    /// </li>
+    /// <li> <p>Disassociates the security group from in-scope resources </p> </li>
+    /// <li> <p>Deletes the security group if it was created through Firewall Manager and if it's no longer associated with any resources through another policy</p> </li>
     /// </ul>
-    /// <p>After the cleanup, in-scope resources are no longer protected by web ACLs in this policy.
-    /// Protection of out-of-scope resources remains unchanged. Scope is determined by tags that you
-    /// create and accounts that you associate with the policy. When creating the policy, if you
-    /// specify that only resources in specific accounts or with specific tags are in scope of the
-    /// policy, those accounts and resources are handled by the policy. All others are out of scope.
-    /// If you don't specify tags or accounts, all resources are in scope. </p>
+    /// <p>After the cleanup, in-scope resources are no longer protected by web ACLs in this policy. Protection of out-of-scope resources remains unchanged. Scope is determined by tags that you create and accounts that you associate with the policy. When creating the policy, if you specify that only resources in specific accounts or with specific tags are in scope of the policy, those accounts and resources are handled by the policy. All others are out of scope. If you don't specify tags or accounts, all resources are in scope. </p>
     pub delete_all_policy_resources: bool,
 }
 impl DeletePolicyInput {
-    /// <p>The ID of the policy that you want to delete. You can retrieve this ID from
-    /// <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
+    /// <p>The ID of the policy that you want to delete. You can retrieve this ID from <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
     pub fn policy_id(&self) -> std::option::Option<&str> {
         self.policy_id.as_deref()
     }
     /// <p>If <code>True</code>, the request performs cleanup according to the policy type. </p>
     /// <p>For WAF and Shield Advanced policies, the cleanup does the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Deletes rule groups created by Firewall Manager</p>
-    /// </li>
-    /// <li>
-    /// <p>Removes web ACLs from in-scope resources</p>
-    /// </li>
-    /// <li>
-    /// <p>Deletes web ACLs that contain no rules or rule groups</p>
-    /// </li>
+    /// <li> <p>Deletes rule groups created by Firewall Manager</p> </li>
+    /// <li> <p>Removes web ACLs from in-scope resources</p> </li>
+    /// <li> <p>Deletes web ACLs that contain no rules or rule groups</p> </li>
     /// </ul>
-    /// <p>For security group policies, the cleanup does the following for each security group in
-    /// the policy:</p>
+    /// <p>For security group policies, the cleanup does the following for each security group in the policy:</p>
     /// <ul>
-    /// <li>
-    /// <p>Disassociates the security group from in-scope resources </p>
-    /// </li>
-    /// <li>
-    /// <p>Deletes the security group if it was created through Firewall Manager and if it's
-    /// no longer associated with any resources through another policy</p>
-    /// </li>
+    /// <li> <p>Disassociates the security group from in-scope resources </p> </li>
+    /// <li> <p>Deletes the security group if it was created through Firewall Manager and if it's no longer associated with any resources through another policy</p> </li>
     /// </ul>
-    /// <p>After the cleanup, in-scope resources are no longer protected by web ACLs in this policy.
-    /// Protection of out-of-scope resources remains unchanged. Scope is determined by tags that you
-    /// create and accounts that you associate with the policy. When creating the policy, if you
-    /// specify that only resources in specific accounts or with specific tags are in scope of the
-    /// policy, those accounts and resources are handled by the policy. All others are out of scope.
-    /// If you don't specify tags or accounts, all resources are in scope. </p>
+    /// <p>After the cleanup, in-scope resources are no longer protected by web ACLs in this policy. Protection of out-of-scope resources remains unchanged. Scope is determined by tags that you create and accounts that you associate with the policy. When creating the policy, if you specify that only resources in specific accounts or with specific tags are in scope of the policy, those accounts and resources are handled by the policy. All others are out of scope. If you don't specify tags or accounts, all resources are in scope. </p>
     pub fn delete_all_policy_resources(&self) -> bool {
         self.delete_all_policy_resources
     }
@@ -5319,13 +5015,11 @@ impl std::fmt::Debug for DeleteNotificationChannelInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAppsListInput {
-    /// <p>The ID of the applications list that you want to delete. You can retrieve this ID from
-    /// <code>PutAppsList</code>, <code>ListAppsLists</code>, and <code>GetAppsList</code>.</p>
+    /// <p>The ID of the applications list that you want to delete. You can retrieve this ID from <code>PutAppsList</code>, <code>ListAppsLists</code>, and <code>GetAppsList</code>.</p>
     pub list_id: std::option::Option<std::string::String>,
 }
 impl DeleteAppsListInput {
-    /// <p>The ID of the applications list that you want to delete. You can retrieve this ID from
-    /// <code>PutAppsList</code>, <code>ListAppsLists</code>, and <code>GetAppsList</code>.</p>
+    /// <p>The ID of the applications list that you want to delete. You can retrieve this ID from <code>PutAppsList</code>, <code>ListAppsLists</code>, and <code>GetAppsList</code>.</p>
     pub fn list_id(&self) -> std::option::Option<&str> {
         self.list_id.as_deref()
     }
@@ -5342,17 +5036,11 @@ impl std::fmt::Debug for DeleteAppsListInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateAdminAccountInput {
-    /// <p>The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager
-    /// administrator account. This must be an Organizations member account.
-    /// For more information about Organizations, see
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>.  </p>
+    /// <p>The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager administrator account. This must be an Organizations member account. For more information about Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>. </p>
     pub admin_account: std::option::Option<std::string::String>,
 }
 impl AssociateAdminAccountInput {
-    /// <p>The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager
-    /// administrator account. This must be an Organizations member account.
-    /// For more information about Organizations, see
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>.  </p>
+    /// <p>The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager administrator account. This must be an Organizations member account. For more information about Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>. </p>
     pub fn admin_account(&self) -> std::option::Option<&str> {
         self.admin_account.as_deref()
     }

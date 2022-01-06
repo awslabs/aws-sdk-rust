@@ -15,6 +15,7 @@ fn generate_build_vars(output_path: &Path) {
         .expect("Could not create build environment");
     f.write_all(format!("const RUST_VERSION: &str = \"{}\";", rust_version).as_bytes())
         .expect("Unable to write rust version");
+    f.flush().expect("failed to flush");
 }
 
 fn main() {

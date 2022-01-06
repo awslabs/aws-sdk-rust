@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for FinSpace Public API
@@ -152,6 +152,7 @@ where
     ///
     /// See [`ListChangesets`](crate::client::fluent_builders::ListChangesets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChangesets::into_paginator).
     pub fn list_changesets(&self) -> fluent_builders::ListChangesets<C, M, R> {
         fluent_builders::ListChangesets::new(self.handle.clone())
     }
@@ -159,6 +160,7 @@ where
     ///
     /// See [`ListDatasets`](crate::client::fluent_builders::ListDatasets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatasets::into_paginator).
     pub fn list_datasets(&self) -> fluent_builders::ListDatasets<C, M, R> {
         fluent_builders::ListDatasets::new(self.handle.clone())
     }
@@ -166,6 +168,7 @@ where
     ///
     /// See [`ListDataViews`](crate::client::fluent_builders::ListDataViews) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDataViews::into_paginator).
     pub fn list_data_views(&self) -> fluent_builders::ListDataViews<C, M, R> {
         fluent_builders::ListDataViews::new(self.handle.clone())
     }
@@ -195,7 +198,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateChangeset`.
     ///
     /// <p>Creates a new Changeset in a FinSpace Dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChangeset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -240,10 +243,10 @@ pub mod fluent_builders {
                 crate::input::CreateChangesetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -252,8 +255,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A token used to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A token used to ensure idempotency.</p>
@@ -261,55 +264,31 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The unique identifier for the FinSpace Dataset where the Changeset will be created.
-        /// </p>
-        pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_id(inp);
+        /// <p>The unique identifier for the FinSpace Dataset where the Changeset will be created. </p>
+        pub fn dataset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(input.into());
             self
         }
-        /// <p>The unique identifier for the FinSpace Dataset where the Changeset will be created.
-        /// </p>
+        /// <p>The unique identifier for the FinSpace Dataset where the Changeset will be created. </p>
         pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_dataset_id(input);
             self
         }
         /// <p>Option to indicate how a Changeset will be applied to a Dataset.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>REPLACE</code> - Changeset will be considered as a replacement to all prior
-        /// loaded Changesets.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>APPEND</code> - Changeset will be considered as an addition to the end of all
-        /// prior loaded Changesets.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p>
-        /// </li>
+        /// <li> <p> <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded Changesets.</p> </li>
+        /// <li> <p> <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded Changesets.</p> </li>
+        /// <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
         /// </ul>
-        pub fn change_type(mut self, inp: crate::model::ChangeType) -> Self {
-            self.inner = self.inner.change_type(inp);
+        pub fn change_type(mut self, input: crate::model::ChangeType) -> Self {
+            self.inner = self.inner.change_type(input);
             self
         }
         /// <p>Option to indicate how a Changeset will be applied to a Dataset.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>REPLACE</code> - Changeset will be considered as a replacement to all prior
-        /// loaded Changesets.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>APPEND</code> - Changeset will be considered as an addition to the end of all
-        /// prior loaded Changesets.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p>
-        /// </li>
+        /// <li> <p> <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded Changesets.</p> </li>
+        /// <li> <p> <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded Changesets.</p> </li>
+        /// <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
         /// </ul>
         pub fn set_change_type(
             mut self,
@@ -328,7 +307,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.source_params(k, v);
+            self.inner = self.inner.source_params(k.into(), v.into());
             self
         }
         /// <p>Options that define the location of the data being ingested.</p>
@@ -345,90 +324,32 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_format_params`](Self::set_format_params).
         ///
-        /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>).
-        /// </p>
-        /// <p>
-        /// <code>formatType</code> is a required attribute and can have the following values:
-        /// </p>
+        /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
+        /// <p> <code>formatType</code> is a required attribute and can have the following values: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PARQUET</code> - Parquet source file format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CSV</code> - CSV source file format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>JSON</code> - JSON source file format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>XML</code> - XML source file format.</p>
-        /// </li>
+        /// <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>
+        /// <li> <p> <code>CSV</code> - CSV source file format.</p> </li>
+        /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
+        /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
         /// </ul>
-        ///
-        /// <p>
-        ///
-        /// For example, you could specify the following for <code>formatParams</code>:
-        ///
-        /// <code>
-        /// "formatParams":
-        /// {
-        /// "formatType": "CSV",
-        /// "withHeader": "true",
-        /// "separator": ",",
-        /// "compression":"None"
-        /// }
-        /// </code>
-        /// </p>
+        /// <p> For example, you could specify the following for <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
         pub fn format_params(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.format_params(k, v);
+            self.inner = self.inner.format_params(k.into(), v.into());
             self
         }
-        /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>).
-        /// </p>
-        /// <p>
-        /// <code>formatType</code> is a required attribute and can have the following values:
-        /// </p>
+        /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
+        /// <p> <code>formatType</code> is a required attribute and can have the following values: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PARQUET</code> - Parquet source file format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CSV</code> - CSV source file format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>JSON</code> - JSON source file format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>XML</code> - XML source file format.</p>
-        /// </li>
+        /// <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>
+        /// <li> <p> <code>CSV</code> - CSV source file format.</p> </li>
+        /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
+        /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
         /// </ul>
-        ///
-        /// <p>
-        ///
-        /// For example, you could specify the following for <code>formatParams</code>:
-        ///
-        /// <code>
-        /// "formatParams":
-        /// {
-        /// "formatType": "CSV",
-        /// "withHeader": "true",
-        /// "separator": ",",
-        /// "compression":"None"
-        /// }
-        /// </code>
-        /// </p>
+        /// <p> For example, you could specify the following for <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
         pub fn set_format_params(
             mut self,
             input: std::option::Option<
@@ -442,7 +363,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDataset`.
     ///
     /// <p>Creates a new FinSpace Dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -487,10 +408,10 @@ pub mod fluent_builders {
                 crate::input::CreateDatasetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -499,8 +420,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A token used to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A token used to ensure idempotency.</p>
@@ -509,8 +430,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Display title for a FinSpace Dataset.</p>
-        pub fn dataset_title(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_title(inp);
+        pub fn dataset_title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_title(input.into());
             self
         }
         /// <p>Display title for a FinSpace Dataset.</p>
@@ -523,37 +444,25 @@ pub mod fluent_builders {
         }
         /// <p>The format in which Dataset data is structured.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
-        /// </li>
+        /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
+        /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
         /// </ul>
-        pub fn kind(mut self, inp: crate::model::DatasetKind) -> Self {
-            self.inner = self.inner.kind(inp);
+        pub fn kind(mut self, input: crate::model::DatasetKind) -> Self {
+            self.inner = self.inner.kind(input);
             self
         }
         /// <p>The format in which Dataset data is structured.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
-        /// </li>
+        /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
+        /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
         /// </ul>
         pub fn set_kind(mut self, input: std::option::Option<crate::model::DatasetKind>) -> Self {
             self.inner = self.inner.set_kind(input);
             self
         }
         /// <p>Description of a Dataset.</p>
-        pub fn dataset_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_description(inp);
+        pub fn dataset_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_description(input.into());
             self
         }
         /// <p>Description of a Dataset.</p>
@@ -565,8 +474,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Contact information for a Dataset owner.</p>
-        pub fn owner_info(mut self, inp: crate::model::DatasetOwnerInfo) -> Self {
-            self.inner = self.inner.owner_info(inp);
+        pub fn owner_info(mut self, input: crate::model::DatasetOwnerInfo) -> Self {
+            self.inner = self.inner.owner_info(input);
             self
         }
         /// <p>Contact information for a Dataset owner.</p>
@@ -578,8 +487,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Permission group parameters for Dataset permissions.</p>
-        pub fn permission_group_params(mut self, inp: crate::model::PermissionGroupParams) -> Self {
-            self.inner = self.inner.permission_group_params(inp);
+        pub fn permission_group_params(
+            mut self,
+            input: crate::model::PermissionGroupParams,
+        ) -> Self {
+            self.inner = self.inner.permission_group_params(input);
             self
         }
         /// <p>Permission group parameters for Dataset permissions.</p>
@@ -591,8 +503,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique resource identifier for a Dataset.</p>
-        pub fn alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(inp);
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(input.into());
             self
         }
         /// <p>The unique resource identifier for a Dataset.</p>
@@ -601,8 +513,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Definition for a schema on a tabular Dataset.</p>
-        pub fn schema_definition(mut self, inp: crate::model::SchemaUnion) -> Self {
-            self.inner = self.inner.schema_definition(inp);
+        pub fn schema_definition(mut self, input: crate::model::SchemaUnion) -> Self {
+            self.inner = self.inner.schema_definition(input);
             self
         }
         /// <p>Definition for a schema on a tabular Dataset.</p>
@@ -617,7 +529,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDataView`.
     ///
     /// <p>Creates a Dataview for a Dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataView<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -662,10 +574,10 @@ pub mod fluent_builders {
                 crate::input::CreateDataViewInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -674,8 +586,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A token used to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A token used to ensure idempotency.</p>
@@ -684,8 +596,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique Dataset identifier that is used to create a Dataview.</p>
-        pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_id(inp);
+        pub fn dataset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(input.into());
             self
         }
         /// <p>The unique Dataset identifier that is used to create a Dataview.</p>
@@ -694,8 +606,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Flag to indicate Dataview should be updated automatically.</p>
-        pub fn auto_update(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_update(inp);
+        pub fn auto_update(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_update(input);
             self
         }
         /// <p>Flag to indicate Dataview should be updated automatically.</p>
@@ -708,8 +620,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_sort_columns`](Self::set_sort_columns).
         ///
         /// <p>Columns to be used for sorting the data.</p>
-        pub fn sort_columns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sort_columns(inp);
+        pub fn sort_columns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sort_columns(input.into());
             self
         }
         /// <p>Columns to be used for sorting the data.</p>
@@ -725,8 +637,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_partition_columns`](Self::set_partition_columns).
         ///
         /// <p>Ordered set of column names used to partition data.</p>
-        pub fn partition_columns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.partition_columns(inp);
+        pub fn partition_columns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.partition_columns(input.into());
             self
         }
         /// <p>Ordered set of column names used to partition data.</p>
@@ -738,8 +650,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Beginning time to use for the Dataview. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-        pub fn as_of_timestamp(mut self, inp: i64) -> Self {
-            self.inner = self.inner.as_of_timestamp(inp);
+        pub fn as_of_timestamp(mut self, input: i64) -> Self {
+            self.inner = self.inner.as_of_timestamp(input);
             self
         }
         /// <p>Beginning time to use for the Dataview. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
@@ -750,9 +662,9 @@ pub mod fluent_builders {
         /// <p>Options that define the destination type for the Dataview.</p>
         pub fn destination_type_params(
             mut self,
-            inp: crate::model::DataViewDestinationTypeParams,
+            input: crate::model::DataViewDestinationTypeParams,
         ) -> Self {
-            self.inner = self.inner.destination_type_params(inp);
+            self.inner = self.inner.destination_type_params(input);
             self
         }
         /// <p>Options that define the destination type for the Dataview.</p>
@@ -767,7 +679,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDataset`.
     ///
     /// <p>Deletes a FinSpace Dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -812,10 +724,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDatasetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -824,8 +736,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A token used to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A token used to ensure idempotency.</p>
@@ -834,8 +746,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the Dataset to be deleted.</p>
-        pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_id(inp);
+        pub fn dataset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(input.into());
             self
         }
         /// <p>The unique identifier of the Dataset to be deleted.</p>
@@ -847,7 +759,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetChangeset`.
     ///
     /// <p>Get information about a Changeset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetChangeset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -892,10 +804,10 @@ pub mod fluent_builders {
                 crate::input::GetChangesetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -904,8 +816,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
-        pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_id(inp);
+        pub fn dataset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(input.into());
             self
         }
         /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
@@ -914,8 +826,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the Changeset for which to get data.</p>
-        pub fn changeset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.changeset_id(inp);
+        pub fn changeset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.changeset_id(input.into());
             self
         }
         /// <p>The unique identifier of the Changeset for which to get data.</p>
@@ -927,7 +839,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDataset`.
     ///
     /// <p>Returns information about a Dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -972,10 +884,10 @@ pub mod fluent_builders {
                 crate::input::GetDatasetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -984,8 +896,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for a Dataset.</p>
-        pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_id(inp);
+        pub fn dataset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(input.into());
             self
         }
         /// <p>The unique identifier for a Dataset.</p>
@@ -997,7 +909,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDataView`.
     ///
     /// <p>Gets information about a Dataview.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDataView<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1042,10 +954,10 @@ pub mod fluent_builders {
                 crate::input::GetDataViewInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1054,8 +966,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the Dataview.</p>
-        pub fn data_view_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_view_id(inp);
+        pub fn data_view_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_view_id(input.into());
             self
         }
         /// <p>The unique identifier for the Dataview.</p>
@@ -1064,8 +976,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the Dataset used in the Dataview.</p>
-        pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_id(inp);
+        pub fn dataset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(input.into());
             self
         }
         /// <p>The unique identifier for the Dataset used in the Dataview.</p>
@@ -1077,7 +989,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetProgrammaticAccessCredentials`.
     ///
     /// <p>Request programmatic credentials to use with FinSpace SDK.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetProgrammaticAccessCredentials<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1122,10 +1034,10 @@ pub mod fluent_builders {
                 crate::input::GetProgrammaticAccessCredentialsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1134,8 +1046,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The time duration in which the credentials remain valid. </p>
-        pub fn duration_in_minutes(mut self, inp: i64) -> Self {
-            self.inner = self.inner.duration_in_minutes(inp);
+        pub fn duration_in_minutes(mut self, input: i64) -> Self {
+            self.inner = self.inner.duration_in_minutes(input);
             self
         }
         /// <p>The time duration in which the credentials remain valid. </p>
@@ -1144,8 +1056,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The FinSpace environment identifier.</p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(input.into());
             self
         }
         /// <p>The FinSpace environment identifier.</p>
@@ -1159,9 +1071,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetWorkingLocation`.
     ///
-    /// <p>A temporary Amazon S3 location, where you can copy your files from a source location to stage or use
-    /// as a scratch space in FinSpace notebook.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>A temporary Amazon S3 location, where you can copy your files from a source location to stage or use as a scratch space in FinSpace notebook.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWorkingLocation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1206,10 +1117,10 @@ pub mod fluent_builders {
                 crate::input::GetWorkingLocationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1219,33 +1130,17 @@ pub mod fluent_builders {
         }
         /// <p>Specify the type of the working location.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store data content when
-        /// working with FinSpace Notebooks that run on SageMaker studio.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your
-        /// data content and then use the location with the Changeset creation operation.</p>
-        /// </li>
+        /// <li> <p> <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li>
+        /// <li> <p> <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li>
         /// </ul>
-        pub fn location_type(mut self, inp: crate::model::LocationType) -> Self {
-            self.inner = self.inner.location_type(inp);
+        pub fn location_type(mut self, input: crate::model::LocationType) -> Self {
+            self.inner = self.inner.location_type(input);
             self
         }
         /// <p>Specify the type of the working location.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store data content when
-        /// working with FinSpace Notebooks that run on SageMaker studio.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your
-        /// data content and then use the location with the Changeset creation operation.</p>
-        /// </li>
+        /// <li> <p> <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li>
+        /// <li> <p> <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li>
         /// </ul>
         pub fn set_location_type(
             mut self,
@@ -1258,7 +1153,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListChangesets`.
     ///
     /// <p>Lists the FinSpace Changesets for a Dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChangesets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1303,10 +1198,10 @@ pub mod fluent_builders {
                 crate::input::ListChangesetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1314,9 +1209,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListChangesetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListChangesetsPaginator<C, M, R> {
+            crate::paginator::ListChangesetsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The unique identifier for the FinSpace Dataset to which the Changeset belongs.</p>
-        pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_id(inp);
+        pub fn dataset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(input.into());
             self
         }
         /// <p>The unique identifier for the FinSpace Dataset to which the Changeset belongs.</p>
@@ -1325,8 +1226,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results per page.</p>
@@ -1335,8 +1236,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token indicating where a results page should begin.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token indicating where a results page should begin.</p>
@@ -1348,7 +1249,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDatasets`.
     ///
     /// <p>Lists all of the active Datasets that a user has access to.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1393,10 +1294,10 @@ pub mod fluent_builders {
                 crate::input::ListDatasetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1404,9 +1305,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDatasetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDatasetsPaginator<C, M, R> {
+            crate::paginator::ListDatasetsPaginator::new(self.handle, self.inner)
+        }
         /// <p>A token indicating where a results page should begin.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token indicating where a results page should begin.</p>
@@ -1415,8 +1322,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results per page.</p>
@@ -1428,7 +1335,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDataViews`.
     ///
     /// <p>Lists all available Dataviews for a Dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDataViews<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1473,10 +1380,10 @@ pub mod fluent_builders {
                 crate::input::ListDataViewsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1484,9 +1391,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDataViewsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDataViewsPaginator<C, M, R> {
+            crate::paginator::ListDataViewsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The unique identifier of the Dataset for which to retrieve Dataviews.</p>
-        pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_id(inp);
+        pub fn dataset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(input.into());
             self
         }
         /// <p>The unique identifier of the Dataset for which to retrieve Dataviews.</p>
@@ -1495,8 +1408,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token indicating where a results page should begin.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token indicating where a results page should begin.</p>
@@ -1505,8 +1418,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results per page.</p>
@@ -1518,7 +1431,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateChangeset`.
     ///
     /// <p>Updates a FinSpace Changeset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChangeset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1563,10 +1476,10 @@ pub mod fluent_builders {
                 crate::input::UpdateChangesetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1575,8 +1488,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A token used to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A token used to ensure idempotency.</p>
@@ -1585,8 +1498,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
-        pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_id(inp);
+        pub fn dataset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(input.into());
             self
         }
         /// <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
@@ -1595,8 +1508,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the Changeset to update.</p>
-        pub fn changeset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.changeset_id(inp);
+        pub fn changeset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.changeset_id(input.into());
             self
         }
         /// <p>The unique identifier for the Changeset to update.</p>
@@ -1614,7 +1527,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.source_params(k, v);
+            self.inner = self.inner.source_params(k.into(), v.into());
             self
         }
         /// <p>Options that define the location of the data being ingested.</p>
@@ -1637,7 +1550,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.format_params(k, v);
+            self.inner = self.inner.format_params(k.into(), v.into());
             self
         }
         /// <p>Options that define the structure of the source file(s).</p>
@@ -1654,7 +1567,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDataset`.
     ///
     /// <p>Updates a FinSpace Dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1699,10 +1612,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDatasetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1711,8 +1624,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A token used to ensure idempotency.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A token used to ensure idempotency.</p>
@@ -1721,8 +1634,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the Dataset to update.</p>
-        pub fn dataset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_id(inp);
+        pub fn dataset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_id(input.into());
             self
         }
         /// <p>The unique identifier for the Dataset to update.</p>
@@ -1731,8 +1644,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A display title for the Dataset.</p>
-        pub fn dataset_title(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_title(inp);
+        pub fn dataset_title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_title(input.into());
             self
         }
         /// <p>A display title for the Dataset.</p>
@@ -1745,37 +1658,25 @@ pub mod fluent_builders {
         }
         /// <p>The format in which the Dataset data is structured.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
-        /// </li>
+        /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
+        /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
         /// </ul>
-        pub fn kind(mut self, inp: crate::model::DatasetKind) -> Self {
-            self.inner = self.inner.kind(inp);
+        pub fn kind(mut self, input: crate::model::DatasetKind) -> Self {
+            self.inner = self.inner.kind(input);
             self
         }
         /// <p>The format in which the Dataset data is structured.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
-        /// </li>
+        /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
+        /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
         /// </ul>
         pub fn set_kind(mut self, input: std::option::Option<crate::model::DatasetKind>) -> Self {
             self.inner = self.inner.set_kind(input);
             self
         }
         /// <p>A description for the Dataset.</p>
-        pub fn dataset_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_description(inp);
+        pub fn dataset_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_description(input.into());
             self
         }
         /// <p>A description for the Dataset.</p>
@@ -1787,8 +1688,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique resource identifier for a Dataset.</p>
-        pub fn alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(inp);
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(input.into());
             self
         }
         /// <p>The unique resource identifier for a Dataset.</p>
@@ -1797,8 +1698,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Definition for a schema on a tabular Dataset.</p>
-        pub fn schema_definition(mut self, inp: crate::model::SchemaUnion) -> Self {
-            self.inner = self.inner.schema_definition(inp);
+        pub fn schema_definition(mut self, input: crate::model::SchemaUnion) -> Self {
+            self.inner = self.inner.schema_definition(input);
             self
         }
         /// <p>Definition for a schema on a tabular Dataset.</p>
@@ -1811,6 +1712,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

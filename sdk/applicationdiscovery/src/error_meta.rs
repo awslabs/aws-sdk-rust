@@ -3,8 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p></p>
     ConflictErrorException(crate::error::ConflictErrorException),
@@ -12,19 +11,13 @@ pub enum Error {
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
     /// <p>One or more parameters are not valid. Verify the parameters and try again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The value of one or more parameters are either invalid or out of range. Verify the
-    /// parameter values and try again.</p>
+    /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>This operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>This issue occurs when the same <code>clientRequestToken</code> is used with the
-    /// <code>StartImportTask</code> action, but with different parameters. For example, you use the
-    /// same request token but have two different import URLs, you can encounter this issue. If the
-    /// import tasks are meant to be different, use a different <code>clientRequestToken</code>, and
-    /// try again.</p>
+    /// <p>This issue occurs when the same <code>clientRequestToken</code> is used with the <code>StartImportTask</code> action, but with different parameters. For example, you use the same request token but have two different import URLs, you can encounter this issue. If the import tasks are meant to be different, use a different <code>clientRequestToken</code>, and try again.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The specified configuration ID was not located. Verify the configuration ID and try
-    /// again.</p>
+    /// <p>The specified configuration ID was not located. Verify the configuration ID and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),

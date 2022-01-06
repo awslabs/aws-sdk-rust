@@ -8,20 +8,11 @@ pub struct Stream {
     /// <p>The DynamoDB table with which the stream is associated.</p>
     pub table_name: std::option::Option<std::string::String>,
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
-    /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is
-    /// possible that a stream from another table might have the same timestamp. However, the
-    /// combination of the following three elements is guaranteed to be unique:</p>
+    /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
     /// <ul>
-    /// <li>
-    /// <p>the AWS customer ID.</p>
-    /// </li>
-    /// <li>
-    /// <p>the table name</p>
-    /// </li>
-    /// <li>
-    /// <p>the <code>StreamLabel</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>the AWS customer ID.</p> </li>
+    /// <li> <p>the table name</p> </li>
+    /// <li> <p>the <code>StreamLabel</code> </p> </li>
     /// </ul>
     pub stream_label: std::option::Option<std::string::String>,
 }
@@ -35,20 +26,11 @@ impl Stream {
         self.table_name.as_deref()
     }
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
-    /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is
-    /// possible that a stream from another table might have the same timestamp. However, the
-    /// combination of the following three elements is guaranteed to be unique:</p>
+    /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
     /// <ul>
-    /// <li>
-    /// <p>the AWS customer ID.</p>
-    /// </li>
-    /// <li>
-    /// <p>the table name</p>
-    /// </li>
-    /// <li>
-    /// <p>the <code>StreamLabel</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>the AWS customer ID.</p> </li>
+    /// <li> <p>the table name</p> </li>
+    /// <li> <p>the <code>StreamLabel</code> </p> </li>
     /// </ul>
     pub fn stream_label(&self) -> std::option::Option<&str> {
         self.stream_label.as_deref()
@@ -95,40 +77,22 @@ pub mod stream {
             self
         }
         /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
-        /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is
-        /// possible that a stream from another table might have the same timestamp. However, the
-        /// combination of the following three elements is guaranteed to be unique:</p>
+        /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
         /// <ul>
-        /// <li>
-        /// <p>the AWS customer ID.</p>
-        /// </li>
-        /// <li>
-        /// <p>the table name</p>
-        /// </li>
-        /// <li>
-        /// <p>the <code>StreamLabel</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>the AWS customer ID.</p> </li>
+        /// <li> <p>the table name</p> </li>
+        /// <li> <p>the <code>StreamLabel</code> </p> </li>
         /// </ul>
         pub fn stream_label(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_label = Some(input.into());
             self
         }
         /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
-        /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is
-        /// possible that a stream from another table might have the same timestamp. However, the
-        /// combination of the following three elements is guaranteed to be unique:</p>
+        /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
         /// <ul>
-        /// <li>
-        /// <p>the AWS customer ID.</p>
-        /// </li>
-        /// <li>
-        /// <p>the table name</p>
-        /// </li>
-        /// <li>
-        /// <p>the <code>StreamLabel</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>the AWS customer ID.</p> </li>
+        /// <li> <p>the table name</p> </li>
+        /// <li> <p>the <code>StreamLabel</code> </p> </li>
         /// </ul>
         pub fn set_stream_label(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_label = input;
@@ -227,26 +191,15 @@ pub struct Record {
     pub event_id: std::option::Option<std::string::String>,
     /// <p>The type of data modification that was performed on the DynamoDB table:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INSERT</code> - a new item was added to the table.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MODIFY</code> - one or more of an existing item's attributes were modified.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>REMOVE</code> - the item was deleted from the table</p>
-    /// </li>
+    /// <li> <p> <code>INSERT</code> - a new item was added to the table.</p> </li>
+    /// <li> <p> <code>MODIFY</code> - one or more of an existing item's attributes were modified.</p> </li>
+    /// <li> <p> <code>REMOVE</code> - the item was deleted from the table</p> </li>
     /// </ul>
     pub event_name: std::option::Option<crate::model::OperationType>,
-    /// <p>The version number of the stream record format.  This number is updated whenever the structure of <code>Record</code> is modified.</p>
-    /// <p>Client applications must not assume that <code>eventVersion</code> will remain at a particular
-    /// value, as this number is subject to change at any time. In general, <code>eventVersion</code> will
-    /// only increase as the low-level DynamoDB Streams API evolves.</p>
+    /// <p>The version number of the stream record format. This number is updated whenever the structure of <code>Record</code> is modified.</p>
+    /// <p>Client applications must not assume that <code>eventVersion</code> will remain at a particular value, as this number is subject to change at any time. In general, <code>eventVersion</code> will only increase as the low-level DynamoDB Streams API evolves.</p>
     pub event_version: std::option::Option<std::string::String>,
-    /// <p>The AWS service from which the stream record originated.  For DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
+    /// <p>The AWS service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
     pub event_source: std::option::Option<std::string::String>,
     /// <p>The region in which the <code>GetRecords</code> request was received.</p>
     pub aws_region: std::option::Option<std::string::String>,
@@ -254,14 +207,8 @@ pub struct Record {
     pub dynamodb: std::option::Option<crate::model::StreamRecord>,
     /// <p>Items that are deleted by the Time to Live process after expiration have the following fields: </p>
     /// <ul>
-    /// <li>
-    /// <p>Records[].userIdentity.type</p>
-    /// <p>"Service"</p>
-    /// </li>
-    /// <li>
-    /// <p>Records[].userIdentity.principalId</p>
-    /// <p>"dynamodb.amazonaws.com"</p>
-    /// </li>
+    /// <li> <p>Records[].userIdentity.type</p> <p>"Service"</p> </li>
+    /// <li> <p>Records[].userIdentity.principalId</p> <p>"dynamodb.amazonaws.com"</p> </li>
     /// </ul>
     pub user_identity: std::option::Option<crate::model::Identity>,
 }
@@ -272,30 +219,19 @@ impl Record {
     }
     /// <p>The type of data modification that was performed on the DynamoDB table:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INSERT</code> - a new item was added to the table.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MODIFY</code> - one or more of an existing item's attributes were modified.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>REMOVE</code> - the item was deleted from the table</p>
-    /// </li>
+    /// <li> <p> <code>INSERT</code> - a new item was added to the table.</p> </li>
+    /// <li> <p> <code>MODIFY</code> - one or more of an existing item's attributes were modified.</p> </li>
+    /// <li> <p> <code>REMOVE</code> - the item was deleted from the table</p> </li>
     /// </ul>
     pub fn event_name(&self) -> std::option::Option<&crate::model::OperationType> {
         self.event_name.as_ref()
     }
-    /// <p>The version number of the stream record format.  This number is updated whenever the structure of <code>Record</code> is modified.</p>
-    /// <p>Client applications must not assume that <code>eventVersion</code> will remain at a particular
-    /// value, as this number is subject to change at any time. In general, <code>eventVersion</code> will
-    /// only increase as the low-level DynamoDB Streams API evolves.</p>
+    /// <p>The version number of the stream record format. This number is updated whenever the structure of <code>Record</code> is modified.</p>
+    /// <p>Client applications must not assume that <code>eventVersion</code> will remain at a particular value, as this number is subject to change at any time. In general, <code>eventVersion</code> will only increase as the low-level DynamoDB Streams API evolves.</p>
     pub fn event_version(&self) -> std::option::Option<&str> {
         self.event_version.as_deref()
     }
-    /// <p>The AWS service from which the stream record originated.  For DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
+    /// <p>The AWS service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
     pub fn event_source(&self) -> std::option::Option<&str> {
         self.event_source.as_deref()
     }
@@ -309,14 +245,8 @@ impl Record {
     }
     /// <p>Items that are deleted by the Time to Live process after expiration have the following fields: </p>
     /// <ul>
-    /// <li>
-    /// <p>Records[].userIdentity.type</p>
-    /// <p>"Service"</p>
-    /// </li>
-    /// <li>
-    /// <p>Records[].userIdentity.principalId</p>
-    /// <p>"dynamodb.amazonaws.com"</p>
-    /// </li>
+    /// <li> <p>Records[].userIdentity.type</p> <p>"Service"</p> </li>
+    /// <li> <p>Records[].userIdentity.principalId</p> <p>"dynamodb.amazonaws.com"</p> </li>
     /// </ul>
     pub fn user_identity(&self) -> std::option::Option<&crate::model::Identity> {
         self.user_identity.as_ref()
@@ -362,18 +292,9 @@ pub mod record {
         }
         /// <p>The type of data modification that was performed on the DynamoDB table:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INSERT</code> - a new item was added to the table.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MODIFY</code> - one or more of an existing item's attributes were modified.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REMOVE</code> - the item was deleted from the table</p>
-        /// </li>
+        /// <li> <p> <code>INSERT</code> - a new item was added to the table.</p> </li>
+        /// <li> <p> <code>MODIFY</code> - one or more of an existing item's attributes were modified.</p> </li>
+        /// <li> <p> <code>REMOVE</code> - the item was deleted from the table</p> </li>
         /// </ul>
         pub fn event_name(mut self, input: crate::model::OperationType) -> Self {
             self.event_name = Some(input);
@@ -381,18 +302,9 @@ pub mod record {
         }
         /// <p>The type of data modification that was performed on the DynamoDB table:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INSERT</code> - a new item was added to the table.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MODIFY</code> - one or more of an existing item's attributes were modified.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REMOVE</code> - the item was deleted from the table</p>
-        /// </li>
+        /// <li> <p> <code>INSERT</code> - a new item was added to the table.</p> </li>
+        /// <li> <p> <code>MODIFY</code> - one or more of an existing item's attributes were modified.</p> </li>
+        /// <li> <p> <code>REMOVE</code> - the item was deleted from the table</p> </li>
         /// </ul>
         pub fn set_event_name(
             mut self,
@@ -401,18 +313,14 @@ pub mod record {
             self.event_name = input;
             self
         }
-        /// <p>The version number of the stream record format.  This number is updated whenever the structure of <code>Record</code> is modified.</p>
-        /// <p>Client applications must not assume that <code>eventVersion</code> will remain at a particular
-        /// value, as this number is subject to change at any time. In general, <code>eventVersion</code> will
-        /// only increase as the low-level DynamoDB Streams API evolves.</p>
+        /// <p>The version number of the stream record format. This number is updated whenever the structure of <code>Record</code> is modified.</p>
+        /// <p>Client applications must not assume that <code>eventVersion</code> will remain at a particular value, as this number is subject to change at any time. In general, <code>eventVersion</code> will only increase as the low-level DynamoDB Streams API evolves.</p>
         pub fn event_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_version = Some(input.into());
             self
         }
-        /// <p>The version number of the stream record format.  This number is updated whenever the structure of <code>Record</code> is modified.</p>
-        /// <p>Client applications must not assume that <code>eventVersion</code> will remain at a particular
-        /// value, as this number is subject to change at any time. In general, <code>eventVersion</code> will
-        /// only increase as the low-level DynamoDB Streams API evolves.</p>
+        /// <p>The version number of the stream record format. This number is updated whenever the structure of <code>Record</code> is modified.</p>
+        /// <p>Client applications must not assume that <code>eventVersion</code> will remain at a particular value, as this number is subject to change at any time. In general, <code>eventVersion</code> will only increase as the low-level DynamoDB Streams API evolves.</p>
         pub fn set_event_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -420,12 +328,12 @@ pub mod record {
             self.event_version = input;
             self
         }
-        /// <p>The AWS service from which the stream record originated.  For DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
+        /// <p>The AWS service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
         pub fn event_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_source = Some(input.into());
             self
         }
-        /// <p>The AWS service from which the stream record originated.  For DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
+        /// <p>The AWS service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
         pub fn set_event_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_source = input;
             self
@@ -455,14 +363,8 @@ pub mod record {
         }
         /// <p>Items that are deleted by the Time to Live process after expiration have the following fields: </p>
         /// <ul>
-        /// <li>
-        /// <p>Records[].userIdentity.type</p>
-        /// <p>"Service"</p>
-        /// </li>
-        /// <li>
-        /// <p>Records[].userIdentity.principalId</p>
-        /// <p>"dynamodb.amazonaws.com"</p>
-        /// </li>
+        /// <li> <p>Records[].userIdentity.type</p> <p>"Service"</p> </li>
+        /// <li> <p>Records[].userIdentity.principalId</p> <p>"dynamodb.amazonaws.com"</p> </li>
         /// </ul>
         pub fn user_identity(mut self, input: crate::model::Identity) -> Self {
             self.user_identity = Some(input);
@@ -470,14 +372,8 @@ pub mod record {
         }
         /// <p>Items that are deleted by the Time to Live process after expiration have the following fields: </p>
         /// <ul>
-        /// <li>
-        /// <p>Records[].userIdentity.type</p>
-        /// <p>"Service"</p>
-        /// </li>
-        /// <li>
-        /// <p>Records[].userIdentity.principalId</p>
-        /// <p>"dynamodb.amazonaws.com"</p>
-        /// </li>
+        /// <li> <p>Records[].userIdentity.type</p> <p>"Service"</p> </li>
+        /// <li> <p>Records[].userIdentity.principalId</p> <p>"dynamodb.amazonaws.com"</p> </li>
         /// </ul>
         pub fn set_user_identity(
             mut self,
@@ -511,15 +407,13 @@ impl Record {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Identity {
-    /// <p>A unique identifier for the entity that made the call. For Time To Live, the
-    /// principalId is "dynamodb.amazonaws.com".</p>
+    /// <p>A unique identifier for the entity that made the call. For Time To Live, the principalId is "dynamodb.amazonaws.com".</p>
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The type of the identity. For Time To Live, the type is "Service".</p>
     pub r#type: std::option::Option<std::string::String>,
 }
 impl Identity {
-    /// <p>A unique identifier for the entity that made the call. For Time To Live, the
-    /// principalId is "dynamodb.amazonaws.com".</p>
+    /// <p>A unique identifier for the entity that made the call. For Time To Live, the principalId is "dynamodb.amazonaws.com".</p>
     pub fn principal_id(&self) -> std::option::Option<&str> {
         self.principal_id.as_deref()
     }
@@ -546,14 +440,12 @@ pub mod identity {
         pub(crate) r#type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the entity that made the call. For Time To Live, the
-        /// principalId is "dynamodb.amazonaws.com".</p>
+        /// <p>A unique identifier for the entity that made the call. For Time To Live, the principalId is "dynamodb.amazonaws.com".</p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the entity that made the call. For Time To Live, the
-        /// principalId is "dynamodb.amazonaws.com".</p>
+        /// <p>A unique identifier for the entity that made the call. For Time To Live, the principalId is "dynamodb.amazonaws.com".</p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
@@ -608,22 +500,10 @@ pub struct StreamRecord {
     pub size_bytes: std::option::Option<i64>,
     /// <p>The type of data from the modified DynamoDB item that was captured in this stream record:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>KEYS_ONLY</code> - only the key attributes of the modified item.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p>
-    /// </li>
+    /// <li> <p> <code>KEYS_ONLY</code> - only the key attributes of the modified item.</p> </li>
+    /// <li> <p> <code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p> </li>
+    /// <li> <p> <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p> </li>
+    /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p> </li>
     /// </ul>
     pub stream_view_type: std::option::Option<crate::model::StreamViewType>,
 }
@@ -668,22 +548,10 @@ impl StreamRecord {
     }
     /// <p>The type of data from the modified DynamoDB item that was captured in this stream record:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>KEYS_ONLY</code> - only the key attributes of the modified item.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p>
-    /// </li>
+    /// <li> <p> <code>KEYS_ONLY</code> - only the key attributes of the modified item.</p> </li>
+    /// <li> <p> <code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p> </li>
+    /// <li> <p> <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p> </li>
+    /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p> </li>
     /// </ul>
     pub fn stream_view_type(&self) -> std::option::Option<&crate::model::StreamViewType> {
         self.stream_view_type.as_ref()
@@ -747,10 +615,10 @@ pub mod stream_record {
         pub fn keys(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.keys.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.keys = Some(hash_map);
             self
         }
@@ -772,10 +640,10 @@ pub mod stream_record {
         pub fn new_image(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.new_image.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.new_image = Some(hash_map);
             self
         }
@@ -797,10 +665,10 @@ pub mod stream_record {
         pub fn old_image(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AttributeValue>,
+            v: crate::model::AttributeValue,
         ) -> Self {
             let mut hash_map = self.old_image.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.old_image = Some(hash_map);
             self
         }
@@ -839,22 +707,10 @@ pub mod stream_record {
         }
         /// <p>The type of data from the modified DynamoDB item that was captured in this stream record:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>KEYS_ONLY</code> - only the key attributes of the modified item.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p>
-        /// </li>
+        /// <li> <p> <code>KEYS_ONLY</code> - only the key attributes of the modified item.</p> </li>
+        /// <li> <p> <code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p> </li>
+        /// <li> <p> <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p> </li>
+        /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p> </li>
         /// </ul>
         pub fn stream_view_type(mut self, input: crate::model::StreamViewType) -> Self {
             self.stream_view_type = Some(input);
@@ -862,22 +718,10 @@ pub mod stream_record {
         }
         /// <p>The type of data from the modified DynamoDB item that was captured in this stream record:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>KEYS_ONLY</code> - only the key attributes of the modified item.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p>
-        /// </li>
+        /// <li> <p> <code>KEYS_ONLY</code> - only the key attributes of the modified item.</p> </li>
+        /// <li> <p> <code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p> </li>
+        /// <li> <p> <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p> </li>
+        /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p> </li>
         /// </ul>
         pub fn set_stream_view_type(
             mut self,
@@ -971,63 +815,42 @@ impl AsRef<str> for StreamViewType {
 }
 
 /// <p>Represents the data for an attribute.</p>
-/// <p>Each attribute value is described as a name-value pair.  The name is the data type, and the value is the data itself.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the
-/// <i>Amazon DynamoDB Developer Guide</i>.</p>
+/// <p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum AttributeValue {
-    /// <p>An attribute of type Binary.  For example:</p>
-    /// <p>
-    /// <code>"B": "dGhpcyB0ZXh0IGlzIGJhc2U2NC1lbmNvZGVk"</code>
-    /// </p>
+    /// <p>An attribute of type Binary. For example:</p>
+    /// <p> <code>"B": "dGhpcyB0ZXh0IGlzIGJhc2U2NC1lbmNvZGVk"</code> </p>
     B(aws_smithy_types::Blob),
-    /// <p>An attribute of type Boolean.  For example:</p>
-    /// <p>
-    /// <code>"BOOL": true</code>
-    /// </p>
+    /// <p>An attribute of type Boolean. For example:</p>
+    /// <p> <code>"BOOL": true</code> </p>
     Bool(bool),
-    /// <p>An attribute of type Binary Set.  For example:</p>
-    /// <p>
-    /// <code>"BS": ["U3Vubnk=", "UmFpbnk=", "U25vd3k="]</code>
-    /// </p>
+    /// <p>An attribute of type Binary Set. For example:</p>
+    /// <p> <code>"BS": ["U3Vubnk=", "UmFpbnk=", "U25vd3k="]</code> </p>
     Bs(std::vec::Vec<aws_smithy_types::Blob>),
-    /// <p>An attribute of type List.  For example:</p>
-    /// <p>
-    /// <code>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N", "3.14159"}]</code>
-    /// </p>
+    /// <p>An attribute of type List. For example:</p>
+    /// <p> <code>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N", "3.14159"}]</code> </p>
     L(std::vec::Vec<crate::model::AttributeValue>),
-    /// <p>An attribute of type Map.  For example:</p>
-    /// <p>
-    /// <code>"M": {"Name": {"S": "Joe"}, "Age": {"N": "35"}}</code>
-    /// </p>
+    /// <p>An attribute of type Map. For example:</p>
+    /// <p> <code>"M": {"Name": {"S": "Joe"}, "Age": {"N": "35"}}</code> </p>
     M(std::collections::HashMap<std::string::String, crate::model::AttributeValue>),
     /// <p>An attribute of type Number. For example:</p>
-    /// <p>
-    /// <code>"N": "123.45"</code>
-    /// </p>
+    /// <p> <code>"N": "123.45"</code> </p>
     /// <p>Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.</p>
     N(std::string::String),
-    /// <p>An attribute of type Number Set.  For example:</p>
-    /// <p>
-    /// <code>"NS": ["42.2", "-19", "7.5", "3.14"]</code>
-    /// </p>
+    /// <p>An attribute of type Number Set. For example:</p>
+    /// <p> <code>"NS": ["42.2", "-19", "7.5", "3.14"]</code> </p>
     /// <p>Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.</p>
     Ns(std::vec::Vec<std::string::String>),
-    /// <p>An attribute of type Null.  For example:</p>
-    /// <p>
-    /// <code>"NULL": true</code>
-    /// </p>
+    /// <p>An attribute of type Null. For example:</p>
+    /// <p> <code>"NULL": true</code> </p>
     Null(bool),
-    /// <p>An attribute of type  String. For example:</p>
-    /// <p>
-    /// <code>"S": "Hello"</code>
-    /// </p>
+    /// <p>An attribute of type String. For example:</p>
+    /// <p> <code>"S": "Hello"</code> </p>
     S(std::string::String),
-    /// <p>An attribute of type String Set.  For example:</p>
-    /// <p>
-    /// <code>"SS": ["Giraffe", "Hippo" ,"Zebra"]</code>
-    /// </p>
+    /// <p>An attribute of type String Set. For example:</p>
+    /// <p> <code>"SS": ["Giraffe", "Hippo" ,"Zebra"]</code> </p>
     Ss(std::vec::Vec<std::string::String>),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -1247,60 +1070,27 @@ pub struct StreamDescription {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
-    /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is
-    /// possible that a stream from another table might have the same timestamp. However, the
-    /// combination of the following three elements is guaranteed to be unique:</p>
+    /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
     /// <ul>
-    /// <li>
-    /// <p>the AWS customer ID.</p>
-    /// </li>
-    /// <li>
-    /// <p>the table name</p>
-    /// </li>
-    /// <li>
-    /// <p>the <code>StreamLabel</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>the AWS customer ID.</p> </li>
+    /// <li> <p>the table name</p> </li>
+    /// <li> <p>the <code>StreamLabel</code> </p> </li>
     /// </ul>
     pub stream_label: std::option::Option<std::string::String>,
     /// <p>Indicates the current status of the stream:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ENABLED</code> - the stream is enabled.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DISABLED</code> - the stream is disabled.</p>
-    /// </li>
+    /// <li> <p> <code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p> </li>
+    /// <li> <p> <code>ENABLED</code> - the stream is enabled.</p> </li>
+    /// <li> <p> <code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - the stream is disabled.</p> </li>
     /// </ul>
     pub stream_status: std::option::Option<crate::model::StreamStatus>,
     /// <p>Indicates the format of the records within this stream:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NEW_IMAGE</code> - entire items from the table, as they appeared after they were modified.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p>
-    /// </li>
+    /// <li> <p> <code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p> </li>
+    /// <li> <p> <code>NEW_IMAGE</code> - entire items from the table, as they appeared after they were modified.</p> </li>
+    /// <li> <p> <code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p> </li>
+    /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p> </li>
     /// </ul>
     pub stream_view_type: std::option::Option<crate::model::StreamViewType>,
     /// <p>The date and time when the request to create this stream was issued.</p>
@@ -1312,11 +1102,8 @@ pub struct StreamDescription {
     /// <p>The shards that comprise the stream.</p>
     pub shards: std::option::Option<std::vec::Vec<crate::model::Shard>>,
     /// <p>The shard ID of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
-    /// <p>If <code>LastEvaluatedShardId</code> is empty, then the "last page" of results has been
-    /// processed and there is currently no more data to be retrieved.</p>
-    /// <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is
-    /// more data in the result set. The only way to know when you have reached the end of the result
-    /// set is when <code>LastEvaluatedShardId</code> is empty.</p>
+    /// <p>If <code>LastEvaluatedShardId</code> is empty, then the "last page" of results has been processed and there is currently no more data to be retrieved.</p>
+    /// <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedShardId</code> is empty.</p>
     pub last_evaluated_shard_id: std::option::Option<std::string::String>,
 }
 impl StreamDescription {
@@ -1325,64 +1112,31 @@ impl StreamDescription {
         self.stream_arn.as_deref()
     }
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
-    /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is
-    /// possible that a stream from another table might have the same timestamp. However, the
-    /// combination of the following three elements is guaranteed to be unique:</p>
+    /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
     /// <ul>
-    /// <li>
-    /// <p>the AWS customer ID.</p>
-    /// </li>
-    /// <li>
-    /// <p>the table name</p>
-    /// </li>
-    /// <li>
-    /// <p>the <code>StreamLabel</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>the AWS customer ID.</p> </li>
+    /// <li> <p>the table name</p> </li>
+    /// <li> <p>the <code>StreamLabel</code> </p> </li>
     /// </ul>
     pub fn stream_label(&self) -> std::option::Option<&str> {
         self.stream_label.as_deref()
     }
     /// <p>Indicates the current status of the stream:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ENABLED</code> - the stream is enabled.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DISABLED</code> - the stream is disabled.</p>
-    /// </li>
+    /// <li> <p> <code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p> </li>
+    /// <li> <p> <code>ENABLED</code> - the stream is enabled.</p> </li>
+    /// <li> <p> <code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - the stream is disabled.</p> </li>
     /// </ul>
     pub fn stream_status(&self) -> std::option::Option<&crate::model::StreamStatus> {
         self.stream_status.as_ref()
     }
     /// <p>Indicates the format of the records within this stream:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NEW_IMAGE</code> - entire items from the table, as they appeared after they were modified.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p>
-    /// </li>
+    /// <li> <p> <code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p> </li>
+    /// <li> <p> <code>NEW_IMAGE</code> - entire items from the table, as they appeared after they were modified.</p> </li>
+    /// <li> <p> <code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p> </li>
+    /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p> </li>
     /// </ul>
     pub fn stream_view_type(&self) -> std::option::Option<&crate::model::StreamViewType> {
         self.stream_view_type.as_ref()
@@ -1404,11 +1158,8 @@ impl StreamDescription {
         self.shards.as_deref()
     }
     /// <p>The shard ID of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
-    /// <p>If <code>LastEvaluatedShardId</code> is empty, then the "last page" of results has been
-    /// processed and there is currently no more data to be retrieved.</p>
-    /// <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is
-    /// more data in the result set. The only way to know when you have reached the end of the result
-    /// set is when <code>LastEvaluatedShardId</code> is empty.</p>
+    /// <p>If <code>LastEvaluatedShardId</code> is empty, then the "last page" of results has been processed and there is currently no more data to be retrieved.</p>
+    /// <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedShardId</code> is empty.</p>
     pub fn last_evaluated_shard_id(&self) -> std::option::Option<&str> {
         self.last_evaluated_shard_id.as_deref()
     }
@@ -1459,40 +1210,22 @@ pub mod stream_description {
             self
         }
         /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
-        /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is
-        /// possible that a stream from another table might have the same timestamp. However, the
-        /// combination of the following three elements is guaranteed to be unique:</p>
+        /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
         /// <ul>
-        /// <li>
-        /// <p>the AWS customer ID.</p>
-        /// </li>
-        /// <li>
-        /// <p>the table name</p>
-        /// </li>
-        /// <li>
-        /// <p>the <code>StreamLabel</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>the AWS customer ID.</p> </li>
+        /// <li> <p>the table name</p> </li>
+        /// <li> <p>the <code>StreamLabel</code> </p> </li>
         /// </ul>
         pub fn stream_label(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_label = Some(input.into());
             self
         }
         /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
-        /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is
-        /// possible that a stream from another table might have the same timestamp. However, the
-        /// combination of the following three elements is guaranteed to be unique:</p>
+        /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
         /// <ul>
-        /// <li>
-        /// <p>the AWS customer ID.</p>
-        /// </li>
-        /// <li>
-        /// <p>the table name</p>
-        /// </li>
-        /// <li>
-        /// <p>the <code>StreamLabel</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>the AWS customer ID.</p> </li>
+        /// <li> <p>the table name</p> </li>
+        /// <li> <p>the <code>StreamLabel</code> </p> </li>
         /// </ul>
         pub fn set_stream_label(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_label = input;
@@ -1500,22 +1233,10 @@ pub mod stream_description {
         }
         /// <p>Indicates the current status of the stream:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED</code> - the stream is enabled.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED</code> - the stream is disabled.</p>
-        /// </li>
+        /// <li> <p> <code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p> </li>
+        /// <li> <p> <code>ENABLED</code> - the stream is enabled.</p> </li>
+        /// <li> <p> <code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p> </li>
+        /// <li> <p> <code>DISABLED</code> - the stream is disabled.</p> </li>
         /// </ul>
         pub fn stream_status(mut self, input: crate::model::StreamStatus) -> Self {
             self.stream_status = Some(input);
@@ -1523,22 +1244,10 @@ pub mod stream_description {
         }
         /// <p>Indicates the current status of the stream:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED</code> - the stream is enabled.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED</code> - the stream is disabled.</p>
-        /// </li>
+        /// <li> <p> <code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p> </li>
+        /// <li> <p> <code>ENABLED</code> - the stream is enabled.</p> </li>
+        /// <li> <p> <code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p> </li>
+        /// <li> <p> <code>DISABLED</code> - the stream is disabled.</p> </li>
         /// </ul>
         pub fn set_stream_status(
             mut self,
@@ -1549,22 +1258,10 @@ pub mod stream_description {
         }
         /// <p>Indicates the format of the records within this stream:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NEW_IMAGE</code> - entire items from the table, as they appeared after they were modified.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p>
-        /// </li>
+        /// <li> <p> <code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p> </li>
+        /// <li> <p> <code>NEW_IMAGE</code> - entire items from the table, as they appeared after they were modified.</p> </li>
+        /// <li> <p> <code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p> </li>
+        /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p> </li>
         /// </ul>
         pub fn stream_view_type(mut self, input: crate::model::StreamViewType) -> Self {
             self.stream_view_type = Some(input);
@@ -1572,22 +1269,10 @@ pub mod stream_description {
         }
         /// <p>Indicates the format of the records within this stream:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NEW_IMAGE</code> - entire items from the table, as they appeared after they were modified.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p>
-        /// </li>
+        /// <li> <p> <code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p> </li>
+        /// <li> <p> <code>NEW_IMAGE</code> - entire items from the table, as they appeared after they were modified.</p> </li>
+        /// <li> <p> <code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p> </li>
+        /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p> </li>
         /// </ul>
         pub fn set_stream_view_type(
             mut self,
@@ -1624,9 +1309,9 @@ pub mod stream_description {
         /// To override the contents of this collection use [`set_key_schema`](Self::set_key_schema).
         ///
         /// <p>The key attribute(s) of the stream's DynamoDB table.</p>
-        pub fn key_schema(mut self, input: impl Into<crate::model::KeySchemaElement>) -> Self {
+        pub fn key_schema(mut self, input: crate::model::KeySchemaElement) -> Self {
             let mut v = self.key_schema.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.key_schema = Some(v);
             self
         }
@@ -1643,9 +1328,9 @@ pub mod stream_description {
         /// To override the contents of this collection use [`set_shards`](Self::set_shards).
         ///
         /// <p>The shards that comprise the stream.</p>
-        pub fn shards(mut self, input: impl Into<crate::model::Shard>) -> Self {
+        pub fn shards(mut self, input: crate::model::Shard) -> Self {
             let mut v = self.shards.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.shards = Some(v);
             self
         }
@@ -1658,21 +1343,15 @@ pub mod stream_description {
             self
         }
         /// <p>The shard ID of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
-        /// <p>If <code>LastEvaluatedShardId</code> is empty, then the "last page" of results has been
-        /// processed and there is currently no more data to be retrieved.</p>
-        /// <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is
-        /// more data in the result set. The only way to know when you have reached the end of the result
-        /// set is when <code>LastEvaluatedShardId</code> is empty.</p>
+        /// <p>If <code>LastEvaluatedShardId</code> is empty, then the "last page" of results has been processed and there is currently no more data to be retrieved.</p>
+        /// <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedShardId</code> is empty.</p>
         pub fn last_evaluated_shard_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_evaluated_shard_id = Some(input.into());
             self
         }
         /// <p>The shard ID of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
-        /// <p>If <code>LastEvaluatedShardId</code> is empty, then the "last page" of results has been
-        /// processed and there is currently no more data to be retrieved.</p>
-        /// <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is
-        /// more data in the result set. The only way to know when you have reached the end of the result
-        /// set is when <code>LastEvaluatedShardId</code> is empty.</p>
+        /// <p>If <code>LastEvaluatedShardId</code> is empty, then the "last page" of results has been processed and there is currently no more data to be retrieved.</p>
+        /// <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedShardId</code> is empty.</p>
         pub fn set_last_evaluated_shard_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1880,17 +1559,9 @@ impl SequenceNumberRange {
     }
 }
 
-/// <p>Represents <i>a single element</i> of a key schema. A key schema specifies
-/// the attributes that make up the primary key of a table, or the key attributes of an
-/// index.</p>
-/// <p>A <code>KeySchemaElement</code> represents exactly one attribute of the primary key. For
-/// example, a simple primary key would be represented by one <code>KeySchemaElement</code>
-/// (for the partition key). A composite primary key would require one
-/// <code>KeySchemaElement</code> for the partition key, and another
-/// <code>KeySchemaElement</code> for the sort key.</p>
-/// <p>A <code>KeySchemaElement</code> must be a scalar, top-level attribute (not a nested
-/// attribute). The data type must be one of String, Number, or Binary. The attribute cannot
-/// be nested within a List or a Map.</p>
+/// <p>Represents <i>a single element</i> of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of an index.</p>
+/// <p>A <code>KeySchemaElement</code> represents exactly one attribute of the primary key. For example, a simple primary key would be represented by one <code>KeySchemaElement</code> (for the partition key). A composite primary key would require one <code>KeySchemaElement</code> for the partition key, and another <code>KeySchemaElement</code> for the sort key.</p>
+/// <p>A <code>KeySchemaElement</code> must be a scalar, top-level attribute (not a nested attribute). The data type must be one of String, Number, or Binary. The attribute cannot be nested within a List or a Map.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeySchemaElement {
@@ -1898,24 +1569,11 @@ pub struct KeySchemaElement {
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The role that this key attribute will assume:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>HASH</code> - partition key</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RANGE</code> - sort key</p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>The partition key of an item is also known as its <i>hash
-    /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of
-    /// an internal hash function to evenly distribute data items across partitions, based
-    /// on their partition key values.</p>
-    /// <p>The sort key of an item is also known as its <i>range
-    /// attribute</i>. The term "range attribute" derives from the way DynamoDB
-    /// stores items with the same partition key physically close together, in sorted order
-    /// by the sort key value.</p>
+    /// <li> <p> <code>HASH</code> - partition key</p> </li>
+    /// <li> <p> <code>RANGE</code> - sort key</p> </li>
+    /// </ul> <note>
+    /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
+    /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
     pub key_type: std::option::Option<crate::model::KeyType>,
 }
@@ -1926,24 +1584,11 @@ impl KeySchemaElement {
     }
     /// <p>The role that this key attribute will assume:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>HASH</code> - partition key</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RANGE</code> - sort key</p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>The partition key of an item is also known as its <i>hash
-    /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of
-    /// an internal hash function to evenly distribute data items across partitions, based
-    /// on their partition key values.</p>
-    /// <p>The sort key of an item is also known as its <i>range
-    /// attribute</i>. The term "range attribute" derives from the way DynamoDB
-    /// stores items with the same partition key physically close together, in sorted order
-    /// by the sort key value.</p>
+    /// <li> <p> <code>HASH</code> - partition key</p> </li>
+    /// <li> <p> <code>RANGE</code> - sort key</p> </li>
+    /// </ul> <note>
+    /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
+    /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
     pub fn key_type(&self) -> std::option::Option<&crate::model::KeyType> {
         self.key_type.as_ref()
@@ -1982,24 +1627,11 @@ pub mod key_schema_element {
         }
         /// <p>The role that this key attribute will assume:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>HASH</code> - partition key</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RANGE</code> - sort key</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>The partition key of an item is also known as its <i>hash
-        /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of
-        /// an internal hash function to evenly distribute data items across partitions, based
-        /// on their partition key values.</p>
-        /// <p>The sort key of an item is also known as its <i>range
-        /// attribute</i>. The term "range attribute" derives from the way DynamoDB
-        /// stores items with the same partition key physically close together, in sorted order
-        /// by the sort key value.</p>
+        /// <li> <p> <code>HASH</code> - partition key</p> </li>
+        /// <li> <p> <code>RANGE</code> - sort key</p> </li>
+        /// </ul> <note>
+        /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
+        /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
         /// </note>
         pub fn key_type(mut self, input: crate::model::KeyType) -> Self {
             self.key_type = Some(input);
@@ -2007,24 +1639,11 @@ pub mod key_schema_element {
         }
         /// <p>The role that this key attribute will assume:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>HASH</code> - partition key</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RANGE</code> - sort key</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>The partition key of an item is also known as its <i>hash
-        /// attribute</i>. The term "hash attribute" derives from DynamoDB's usage of
-        /// an internal hash function to evenly distribute data items across partitions, based
-        /// on their partition key values.</p>
-        /// <p>The sort key of an item is also known as its <i>range
-        /// attribute</i>. The term "range attribute" derives from the way DynamoDB
-        /// stores items with the same partition key physically close together, in sorted order
-        /// by the sort key value.</p>
+        /// <li> <p> <code>HASH</code> - partition key</p> </li>
+        /// <li> <p> <code>RANGE</code> - sort key</p> </li>
+        /// </ul> <note>
+        /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
+        /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
         /// </note>
         pub fn set_key_type(mut self, input: std::option::Option<crate::model::KeyType>) -> Self {
             self.key_type = input;

@@ -25,7 +25,7 @@ pub mod associate_lenses_input {
         /// To override the contents of this collection use [`set_lens_aliases`](Self::set_lens_aliases).
         ///
         /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
-        /// <p>Identify a lens using its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_aliases(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.lens_aliases.unwrap_or_default();
             v.push(input.into());
@@ -33,7 +33,7 @@ pub mod associate_lenses_input {
             self
         }
         /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
-        /// <p>Identify a lens using its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_aliases(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -58,7 +58,7 @@ pub mod associate_lenses_input {
 #[doc(hidden)]
 pub type AssociateLensesInputOperationOutputAlias = crate::operation::AssociateLenses;
 #[doc(hidden)]
-pub type AssociateLensesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateLensesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateLensesInput {
     /// Consumes the builder and constructs an Operation<[`AssociateLenses`](crate::operation::AssociateLenses)>
     #[allow(clippy::let_and_return)]
@@ -69,7 +69,7 @@ impl AssociateLensesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateLenses,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -169,7 +169,7 @@ impl AssociateLensesInput {
             "AssociateLenses",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -204,13 +204,13 @@ pub mod create_lens_share_input {
     }
     impl Builder {
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -225,29 +225,17 @@ pub mod create_lens_share_input {
             self.shared_with = input;
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -274,7 +262,7 @@ pub mod create_lens_share_input {
 #[doc(hidden)]
 pub type CreateLensShareInputOperationOutputAlias = crate::operation::CreateLensShare;
 #[doc(hidden)]
-pub type CreateLensShareInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateLensShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLensShareInput {
     /// Consumes the builder and constructs an Operation<[`CreateLensShare`](crate::operation::CreateLensShare)>
     #[allow(clippy::let_and_return)]
@@ -285,7 +273,7 @@ impl CreateLensShareInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLensShare,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -384,7 +372,7 @@ impl CreateLensShareInput {
             "CreateLensShare",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -420,13 +408,13 @@ pub mod create_lens_version_input {
     }
     impl Builder {
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -451,29 +439,17 @@ pub mod create_lens_version_input {
             self.is_major_version = input;
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -501,7 +477,7 @@ pub mod create_lens_version_input {
 #[doc(hidden)]
 pub type CreateLensVersionInputOperationOutputAlias = crate::operation::CreateLensVersion;
 #[doc(hidden)]
-pub type CreateLensVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateLensVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLensVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateLensVersion`](crate::operation::CreateLensVersion)>
     #[allow(clippy::let_and_return)]
@@ -512,7 +488,7 @@ impl CreateLensVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLensVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -615,7 +591,7 @@ impl CreateLensVersionInput {
             "CreateLensVersion",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -674,29 +650,17 @@ pub mod create_milestone_input {
             self.milestone_name = input;
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -723,7 +687,7 @@ pub mod create_milestone_input {
 #[doc(hidden)]
 pub type CreateMilestoneInputOperationOutputAlias = crate::operation::CreateMilestone;
 #[doc(hidden)]
-pub type CreateMilestoneInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateMilestoneInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMilestoneInput {
     /// Consumes the builder and constructs an Operation<[`CreateMilestone`](crate::operation::CreateMilestone)>
     #[allow(clippy::let_and_return)]
@@ -734,7 +698,7 @@ impl CreateMilestoneInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMilestone,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -837,7 +801,7 @@ impl CreateMilestoneInput {
             "CreateMilestone",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -886,15 +850,13 @@ pub mod create_workload_input {
     }
     impl Builder {
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-        /// are ignored when checking for uniqueness.</p>
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
         pub fn workload_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_name = Some(input.into());
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-        /// are ignored when checking for uniqueness.</p>
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
         pub fn set_workload_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -948,16 +910,14 @@ pub mod create_workload_input {
         ///
         /// To override the contents of this collection use [`set_aws_regions`](Self::set_aws_regions).
         ///
-        /// <p>The list of Amazon Web Services Regions associated with the workload, for example,
-        /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
+        /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
         pub fn aws_regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.aws_regions.unwrap_or_default();
             v.push(input.into());
             self.aws_regions = Some(v);
             self
         }
-        /// <p>The list of Amazon Web Services Regions associated with the workload, for example,
-        /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
+        /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
         pub fn set_aws_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -988,16 +948,14 @@ pub mod create_workload_input {
         ///
         /// To override the contents of this collection use [`set_pillar_priorities`](Self::set_pillar_priorities).
         ///
-        /// <p>The priorities of the pillars, which are used to order items in the improvement plan.
-        /// Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn pillar_priorities(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.pillar_priorities.unwrap_or_default();
             v.push(input.into());
             self.pillar_priorities = Some(v);
             self
         }
-        /// <p>The priorities of the pillars, which are used to order items in the improvement plan.
-        /// Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn set_pillar_priorities(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1018,299 +976,81 @@ pub mod create_workload_input {
             self.architectural_design = input;
             self
         }
-        /// <p>The review owner of the workload. The name, email address, or identifier for the
-        /// primary group or individual that owns the workload review process.</p>
+        /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
         pub fn review_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.review_owner = Some(input.into());
             self
         }
-        /// <p>The review owner of the workload. The name, email address, or identifier for the
-        /// primary group or individual that owns the workload review process.</p>
+        /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
         pub fn set_review_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.review_owner = input;
             self
         }
         /// <p>The industry type for the workload.</p>
-        /// <p>If specified, must be one of the following:</p>  
+        /// <p>If specified, must be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Agriculture</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Automobile</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Defense</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Design and Engineering</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Digital Advertising</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Education</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Environmental Protection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Financial Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Gaming</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>General Public Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Healthcare</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Hospitality</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>InfoTech</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Justice and Public Safety</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Life Sciences</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Manufacturing</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Media & Entertainment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Mining & Resources</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Oil & Gas</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Power & Utilities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Professional Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Real Estate & Construction</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Retail & Wholesale</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Social Protection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Telecommunications</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Travel, Transportation & Logistics</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Other</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Agriculture</code> </p> </li>
+        /// <li> <p> <code>Automobile</code> </p> </li>
+        /// <li> <p> <code>Defense</code> </p> </li>
+        /// <li> <p> <code>Design and Engineering</code> </p> </li>
+        /// <li> <p> <code>Digital Advertising</code> </p> </li>
+        /// <li> <p> <code>Education</code> </p> </li>
+        /// <li> <p> <code>Environmental Protection</code> </p> </li>
+        /// <li> <p> <code>Financial Services</code> </p> </li>
+        /// <li> <p> <code>Gaming</code> </p> </li>
+        /// <li> <p> <code>General Public Services</code> </p> </li>
+        /// <li> <p> <code>Healthcare</code> </p> </li>
+        /// <li> <p> <code>Hospitality</code> </p> </li>
+        /// <li> <p> <code>InfoTech</code> </p> </li>
+        /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+        /// <li> <p> <code>Life Sciences</code> </p> </li>
+        /// <li> <p> <code>Manufacturing</code> </p> </li>
+        /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+        /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+        /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+        /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+        /// <li> <p> <code>Professional Services</code> </p> </li>
+        /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+        /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+        /// <li> <p> <code>Social Protection</code> </p> </li>
+        /// <li> <p> <code>Telecommunications</code> </p> </li>
+        /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+        /// <li> <p> <code>Other</code> </p> </li>
         /// </ul>
         pub fn industry_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.industry_type = Some(input.into());
             self
         }
         /// <p>The industry type for the workload.</p>
-        /// <p>If specified, must be one of the following:</p>  
+        /// <p>If specified, must be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Agriculture</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Automobile</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Defense</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Design and Engineering</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Digital Advertising</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Education</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Environmental Protection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Financial Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Gaming</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>General Public Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Healthcare</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Hospitality</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>InfoTech</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Justice and Public Safety</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Life Sciences</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Manufacturing</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Media & Entertainment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Mining & Resources</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Oil & Gas</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Power & Utilities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Professional Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Real Estate & Construction</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Retail & Wholesale</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Social Protection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Telecommunications</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Travel, Transportation & Logistics</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Other</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Agriculture</code> </p> </li>
+        /// <li> <p> <code>Automobile</code> </p> </li>
+        /// <li> <p> <code>Defense</code> </p> </li>
+        /// <li> <p> <code>Design and Engineering</code> </p> </li>
+        /// <li> <p> <code>Digital Advertising</code> </p> </li>
+        /// <li> <p> <code>Education</code> </p> </li>
+        /// <li> <p> <code>Environmental Protection</code> </p> </li>
+        /// <li> <p> <code>Financial Services</code> </p> </li>
+        /// <li> <p> <code>Gaming</code> </p> </li>
+        /// <li> <p> <code>General Public Services</code> </p> </li>
+        /// <li> <p> <code>Healthcare</code> </p> </li>
+        /// <li> <p> <code>Hospitality</code> </p> </li>
+        /// <li> <p> <code>InfoTech</code> </p> </li>
+        /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+        /// <li> <p> <code>Life Sciences</code> </p> </li>
+        /// <li> <p> <code>Manufacturing</code> </p> </li>
+        /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+        /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+        /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+        /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+        /// <li> <p> <code>Professional Services</code> </p> </li>
+        /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+        /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+        /// <li> <p> <code>Social Protection</code> </p> </li>
+        /// <li> <p> <code>Telecommunications</code> </p> </li>
+        /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+        /// <li> <p> <code>Other</code> </p> </li>
         /// </ul>
         pub fn set_industry_type(
             mut self,
@@ -1333,14 +1073,14 @@ pub mod create_workload_input {
         ///
         /// To override the contents of this collection use [`set_lenses`](Self::set_lenses).
         ///
-        /// <p>The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lenses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.lenses.unwrap_or_default();
             v.push(input.into());
             self.lenses = Some(v);
             self
         }
-        /// <p>The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lenses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1358,29 +1098,17 @@ pub mod create_workload_input {
             self.notes = input;
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -1444,7 +1172,7 @@ pub mod create_workload_input {
 #[doc(hidden)]
 pub type CreateWorkloadInputOperationOutputAlias = crate::operation::CreateWorkload;
 #[doc(hidden)]
-pub type CreateWorkloadInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateWorkloadInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWorkloadInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorkload`](crate::operation::CreateWorkload)>
     #[allow(clippy::let_and_return)]
@@ -1455,7 +1183,7 @@ impl CreateWorkloadInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateWorkload,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1538,7 +1266,7 @@ impl CreateWorkloadInput {
             "CreateWorkload",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1606,29 +1334,17 @@ pub mod create_workload_share_input {
             self.permission_type = input;
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -1656,7 +1372,7 @@ pub mod create_workload_share_input {
 #[doc(hidden)]
 pub type CreateWorkloadShareInputOperationOutputAlias = crate::operation::CreateWorkloadShare;
 #[doc(hidden)]
-pub type CreateWorkloadShareInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateWorkloadShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWorkloadShareInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorkloadShare`](crate::operation::CreateWorkloadShare)>
     #[allow(clippy::let_and_return)]
@@ -1667,7 +1383,7 @@ impl CreateWorkloadShareInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateWorkloadShare,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1770,7 +1486,7 @@ impl CreateWorkloadShareInput {
             "CreateWorkloadShare",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1805,40 +1521,28 @@ pub mod delete_lens_input {
     }
     impl Builder {
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -1878,7 +1582,7 @@ pub mod delete_lens_input {
 #[doc(hidden)]
 pub type DeleteLensInputOperationOutputAlias = crate::operation::DeleteLens;
 #[doc(hidden)]
-pub type DeleteLensInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteLensInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLensInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLens`](crate::operation::DeleteLens)>
     #[allow(clippy::let_and_return)]
@@ -1889,7 +1593,7 @@ impl DeleteLensInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLens,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1999,7 +1703,7 @@ impl DeleteLensInput {
             "DeleteLens",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2036,40 +1740,28 @@ pub mod delete_lens_share_input {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -2096,7 +1788,7 @@ pub mod delete_lens_share_input {
 #[doc(hidden)]
 pub type DeleteLensShareInputOperationOutputAlias = crate::operation::DeleteLensShare;
 #[doc(hidden)]
-pub type DeleteLensShareInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteLensShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLensShareInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLensShare`](crate::operation::DeleteLensShare)>
     #[allow(clippy::let_and_return)]
@@ -2107,7 +1799,7 @@ impl DeleteLensShareInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLensShare,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2234,7 +1926,7 @@ impl DeleteLensShareInput {
             "DeleteLensShare",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2269,29 +1961,17 @@ pub mod delete_workload_input {
             self.workload_id = input;
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -2317,7 +1997,7 @@ pub mod delete_workload_input {
 #[doc(hidden)]
 pub type DeleteWorkloadInputOperationOutputAlias = crate::operation::DeleteWorkload;
 #[doc(hidden)]
-pub type DeleteWorkloadInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteWorkloadInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWorkloadInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWorkload`](crate::operation::DeleteWorkload)>
     #[allow(clippy::let_and_return)]
@@ -2328,7 +2008,7 @@ impl DeleteWorkloadInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteWorkload,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2435,7 +2115,7 @@ impl DeleteWorkloadInput {
             "DeleteWorkload",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2481,29 +2161,17 @@ pub mod delete_workload_share_input {
             self.workload_id = input;
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -2530,7 +2198,7 @@ pub mod delete_workload_share_input {
 #[doc(hidden)]
 pub type DeleteWorkloadShareInputOperationOutputAlias = crate::operation::DeleteWorkloadShare;
 #[doc(hidden)]
-pub type DeleteWorkloadShareInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteWorkloadShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWorkloadShareInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWorkloadShare`](crate::operation::DeleteWorkloadShare)>
     #[allow(clippy::let_and_return)]
@@ -2541,7 +2209,7 @@ impl DeleteWorkloadShareInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteWorkloadShare,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2668,7 +2336,7 @@ impl DeleteWorkloadShareInput {
             "DeleteWorkloadShare",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2708,7 +2376,7 @@ pub mod disassociate_lenses_input {
         /// To override the contents of this collection use [`set_lens_aliases`](Self::set_lens_aliases).
         ///
         /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
-        /// <p>Identify a lens using its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_aliases(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.lens_aliases.unwrap_or_default();
             v.push(input.into());
@@ -2716,7 +2384,7 @@ pub mod disassociate_lenses_input {
             self
         }
         /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
-        /// <p>Identify a lens using its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_aliases(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2741,7 +2409,7 @@ pub mod disassociate_lenses_input {
 #[doc(hidden)]
 pub type DisassociateLensesInputOperationOutputAlias = crate::operation::DisassociateLenses;
 #[doc(hidden)]
-pub type DisassociateLensesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateLensesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateLensesInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateLenses`](crate::operation::DisassociateLenses)>
     #[allow(clippy::let_and_return)]
@@ -2752,7 +2420,7 @@ impl DisassociateLensesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateLenses,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2852,7 +2520,7 @@ impl DisassociateLensesInput {
             "DisassociateLenses",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2886,13 +2554,13 @@ pub mod export_lens_input {
     }
     impl Builder {
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -2924,7 +2592,7 @@ pub mod export_lens_input {
 #[doc(hidden)]
 pub type ExportLensInputOperationOutputAlias = crate::operation::ExportLens;
 #[doc(hidden)]
-pub type ExportLensInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ExportLensInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExportLensInput {
     /// Consumes the builder and constructs an Operation<[`ExportLens`](crate::operation::ExportLens)>
     #[allow(clippy::let_and_return)]
@@ -2935,7 +2603,7 @@ impl ExportLensInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExportLens,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3039,7 +2707,7 @@ impl ExportLensInput {
             "ExportLens",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3077,13 +2745,13 @@ pub mod get_answer_input {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -3127,7 +2795,7 @@ pub mod get_answer_input {
 #[doc(hidden)]
 pub type GetAnswerInputOperationOutputAlias = crate::operation::GetAnswer;
 #[doc(hidden)]
-pub type GetAnswerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAnswerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAnswerInput {
     /// Consumes the builder and constructs an Operation<[`GetAnswer`](crate::operation::GetAnswer)>
     #[allow(clippy::let_and_return)]
@@ -3138,7 +2806,7 @@ impl GetAnswerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAnswer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3276,7 +2944,7 @@ impl GetAnswerInput {
                     "GetAnswer",
                     "wellarchitected",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3302,13 +2970,13 @@ pub mod get_lens_input {
     }
     impl Builder {
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -3338,7 +3006,7 @@ pub mod get_lens_input {
 #[doc(hidden)]
 pub type GetLensInputOperationOutputAlias = crate::operation::GetLens;
 #[doc(hidden)]
-pub type GetLensInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLensInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLensInput {
     /// Consumes the builder and constructs an Operation<[`GetLens`](crate::operation::GetLens)>
     #[allow(clippy::let_and_return)]
@@ -3349,7 +3017,7 @@ impl GetLensInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLens,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3451,7 +3119,7 @@ impl GetLensInput {
                     "GetLens",
                     "wellarchitected",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3488,13 +3156,13 @@ pub mod get_lens_review_input {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -3529,7 +3197,7 @@ pub mod get_lens_review_input {
 #[doc(hidden)]
 pub type GetLensReviewInputOperationOutputAlias = crate::operation::GetLensReview;
 #[doc(hidden)]
-pub type GetLensReviewInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLensReviewInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLensReviewInput {
     /// Consumes the builder and constructs an Operation<[`GetLensReview`](crate::operation::GetLensReview)>
     #[allow(clippy::let_and_return)]
@@ -3540,7 +3208,7 @@ impl GetLensReviewInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLensReview,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3664,7 +3332,7 @@ impl GetLensReviewInput {
             "GetLensReview",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3701,13 +3369,13 @@ pub mod get_lens_review_report_input {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -3742,7 +3410,7 @@ pub mod get_lens_review_report_input {
 #[doc(hidden)]
 pub type GetLensReviewReportInputOperationOutputAlias = crate::operation::GetLensReviewReport;
 #[doc(hidden)]
-pub type GetLensReviewReportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLensReviewReportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLensReviewReportInput {
     /// Consumes the builder and constructs an Operation<[`GetLensReviewReport`](crate::operation::GetLensReviewReport)>
     #[allow(clippy::let_and_return)]
@@ -3753,7 +3421,7 @@ impl GetLensReviewReportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLensReviewReport,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3877,7 +3545,7 @@ impl GetLensReviewReportInput {
             "GetLensReviewReport",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3904,13 +3572,13 @@ pub mod get_lens_version_difference_input {
     }
     impl Builder {
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -3960,7 +3628,7 @@ pub mod get_lens_version_difference_input {
 pub type GetLensVersionDifferenceInputOperationOutputAlias =
     crate::operation::GetLensVersionDifference;
 #[doc(hidden)]
-pub type GetLensVersionDifferenceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLensVersionDifferenceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLensVersionDifferenceInput {
     /// Consumes the builder and constructs an Operation<[`GetLensVersionDifference`](crate::operation::GetLensVersionDifference)>
     #[allow(clippy::let_and_return)]
@@ -3971,7 +3639,7 @@ impl GetLensVersionDifferenceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLensVersionDifference,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4085,7 +3753,7 @@ impl GetLensVersionDifferenceInput {
             "GetLensVersionDifference",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4149,7 +3817,7 @@ pub mod get_milestone_input {
 #[doc(hidden)]
 pub type GetMilestoneInputOperationOutputAlias = crate::operation::GetMilestone;
 #[doc(hidden)]
-pub type GetMilestoneInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMilestoneInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMilestoneInput {
     /// Consumes the builder and constructs an Operation<[`GetMilestone`](crate::operation::GetMilestone)>
     #[allow(clippy::let_and_return)]
@@ -4160,7 +3828,7 @@ impl GetMilestoneInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMilestone,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4265,7 +3933,7 @@ impl GetMilestoneInput {
             "GetMilestone",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4315,7 +3983,7 @@ pub mod get_workload_input {
 #[doc(hidden)]
 pub type GetWorkloadInputOperationOutputAlias = crate::operation::GetWorkload;
 #[doc(hidden)]
-pub type GetWorkloadInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetWorkloadInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWorkloadInput {
     /// Consumes the builder and constructs an Operation<[`GetWorkload`](crate::operation::GetWorkload)>
     #[allow(clippy::let_and_return)]
@@ -4326,7 +3994,7 @@ impl GetWorkloadInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWorkload,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4416,7 +4084,7 @@ impl GetWorkloadInput {
             "GetWorkload",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4446,13 +4114,13 @@ pub mod import_lens_input {
     }
     impl Builder {
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -4467,29 +4135,17 @@ pub mod import_lens_input {
             self.json_string = input;
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -4542,7 +4198,7 @@ pub mod import_lens_input {
 #[doc(hidden)]
 pub type ImportLensInputOperationOutputAlias = crate::operation::ImportLens;
 #[doc(hidden)]
-pub type ImportLensInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ImportLensInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportLensInput {
     /// Consumes the builder and constructs an Operation<[`ImportLens`](crate::operation::ImportLens)>
     #[allow(clippy::let_and_return)]
@@ -4553,7 +4209,7 @@ impl ImportLensInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ImportLens,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4635,7 +4291,7 @@ impl ImportLensInput {
             "ImportLens",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4683,25 +4339,25 @@ pub mod list_answers_input {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
         }
         /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-        /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn pillar_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.pillar_id = Some(input.into());
             self
         }
         /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-        /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn set_pillar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pillar_id = input;
             self
@@ -4759,7 +4415,7 @@ pub mod list_answers_input {
 #[doc(hidden)]
 pub type ListAnswersInputOperationOutputAlias = crate::operation::ListAnswers;
 #[doc(hidden)]
-pub type ListAnswersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAnswersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAnswersInput {
     /// Consumes the builder and constructs an Operation<[`ListAnswers`](crate::operation::ListAnswers)>
     #[allow(clippy::let_and_return)]
@@ -4770,7 +4426,7 @@ impl ListAnswersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAnswers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4906,7 +4562,7 @@ impl ListAnswersInput {
             "ListAnswers",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5007,7 +4663,7 @@ pub mod list_lenses_input {
 #[doc(hidden)]
 pub type ListLensesInputOperationOutputAlias = crate::operation::ListLenses;
 #[doc(hidden)]
-pub type ListLensesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListLensesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLensesInput {
     /// Consumes the builder and constructs an Operation<[`ListLenses`](crate::operation::ListLenses)>
     #[allow(clippy::let_and_return)]
@@ -5018,7 +4674,7 @@ impl ListLensesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLenses,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5118,7 +4774,7 @@ impl ListLensesInput {
             "ListLenses",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5158,25 +4814,25 @@ pub mod list_lens_review_improvements_input {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
         }
         /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-        /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn pillar_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.pillar_id = Some(input.into());
             self
         }
         /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-        /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn set_pillar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pillar_id = input;
             self
@@ -5235,7 +4891,7 @@ pub mod list_lens_review_improvements_input {
 pub type ListLensReviewImprovementsInputOperationOutputAlias =
     crate::operation::ListLensReviewImprovements;
 #[doc(hidden)]
-pub type ListLensReviewImprovementsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListLensReviewImprovementsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLensReviewImprovementsInput {
     /// Consumes the builder and constructs an Operation<[`ListLensReviewImprovements`](crate::operation::ListLensReviewImprovements)>
     #[allow(clippy::let_and_return)]
@@ -5246,7 +4902,7 @@ impl ListLensReviewImprovementsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLensReviewImprovements,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5382,7 +5038,7 @@ impl ListLensReviewImprovementsInput {
             "ListLensReviewImprovements",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5470,7 +5126,7 @@ pub mod list_lens_reviews_input {
 #[doc(hidden)]
 pub type ListLensReviewsInputOperationOutputAlias = crate::operation::ListLensReviews;
 #[doc(hidden)]
-pub type ListLensReviewsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListLensReviewsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLensReviewsInput {
     /// Consumes the builder and constructs an Operation<[`ListLensReviews`](crate::operation::ListLensReviews)>
     #[allow(clippy::let_and_return)]
@@ -5481,7 +5137,7 @@ impl ListLensReviewsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLensReviews,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5598,7 +5254,7 @@ impl ListLensReviewsInput {
             "ListLensReviews",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5626,13 +5282,13 @@ pub mod list_lens_shares_input {
     }
     impl Builder {
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -5689,7 +5345,7 @@ pub mod list_lens_shares_input {
 #[doc(hidden)]
 pub type ListLensSharesInputOperationOutputAlias = crate::operation::ListLensShares;
 #[doc(hidden)]
-pub type ListLensSharesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListLensSharesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLensSharesInput {
     /// Consumes the builder and constructs an Operation<[`ListLensShares`](crate::operation::ListLensShares)>
     #[allow(clippy::let_and_return)]
@@ -5700,7 +5356,7 @@ impl ListLensSharesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLensShares,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5813,7 +5469,7 @@ impl ListLensSharesInput {
             "ListLensShares",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5887,7 +5543,7 @@ pub mod list_milestones_input {
 #[doc(hidden)]
 pub type ListMilestonesInputOperationOutputAlias = crate::operation::ListMilestones;
 #[doc(hidden)]
-pub type ListMilestonesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListMilestonesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMilestonesInput {
     /// Consumes the builder and constructs an Operation<[`ListMilestones`](crate::operation::ListMilestones)>
     #[allow(clippy::let_and_return)]
@@ -5898,7 +5554,7 @@ impl ListMilestonesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMilestones,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5998,7 +5654,7 @@ impl ListMilestonesInput {
             "ListMilestones",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6080,7 +5736,7 @@ pub mod list_notifications_input {
 #[doc(hidden)]
 pub type ListNotificationsInputOperationOutputAlias = crate::operation::ListNotifications;
 #[doc(hidden)]
-pub type ListNotificationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListNotificationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListNotificationsInput {
     /// Consumes the builder and constructs an Operation<[`ListNotifications`](crate::operation::ListNotifications)>
     #[allow(clippy::let_and_return)]
@@ -6091,7 +5747,7 @@ impl ListNotificationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListNotifications,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6171,7 +5827,7 @@ impl ListNotificationsInput {
             "ListNotifications",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6207,14 +5863,12 @@ pub mod list_share_invitations_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>An optional string added to the beginning of each workload name returned in the
-        /// results.</p>
+        /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
         pub fn workload_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_name_prefix = Some(input.into());
             self
         }
-        /// <p>An optional string added to the beginning of each workload name returned in the
-        /// results.</p>
+        /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
         pub fn set_workload_name_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6288,7 +5942,7 @@ pub mod list_share_invitations_input {
 #[doc(hidden)]
 pub type ListShareInvitationsInputOperationOutputAlias = crate::operation::ListShareInvitations;
 #[doc(hidden)]
-pub type ListShareInvitationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListShareInvitationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListShareInvitationsInput {
     /// Consumes the builder and constructs an Operation<[`ListShareInvitations`](crate::operation::ListShareInvitations)>
     #[allow(clippy::let_and_return)]
@@ -6299,7 +5953,7 @@ impl ListShareInvitationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListShareInvitations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6408,7 +6062,7 @@ impl ListShareInvitationsInput {
             "ListShareInvitations",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6458,7 +6112,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -6469,7 +6123,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6559,7 +6213,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6585,14 +6239,12 @@ pub mod list_workloads_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>An optional string added to the beginning of each workload name returned in the
-        /// results.</p>
+        /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
         pub fn workload_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_name_prefix = Some(input.into());
             self
         }
-        /// <p>An optional string added to the beginning of each workload name returned in the
-        /// results.</p>
+        /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
         pub fn set_workload_name_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6638,7 +6290,7 @@ pub mod list_workloads_input {
 #[doc(hidden)]
 pub type ListWorkloadsInputOperationOutputAlias = crate::operation::ListWorkloads;
 #[doc(hidden)]
-pub type ListWorkloadsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListWorkloadsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorkloadsInput {
     /// Consumes the builder and constructs an Operation<[`ListWorkloads`](crate::operation::ListWorkloads)>
     #[allow(clippy::let_and_return)]
@@ -6649,7 +6301,7 @@ impl ListWorkloadsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWorkloads,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6728,7 +6380,7 @@ impl ListWorkloadsInput {
             "ListWorkloads",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6825,7 +6477,7 @@ pub mod list_workload_shares_input {
 #[doc(hidden)]
 pub type ListWorkloadSharesInputOperationOutputAlias = crate::operation::ListWorkloadShares;
 #[doc(hidden)]
-pub type ListWorkloadSharesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListWorkloadSharesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorkloadSharesInput {
     /// Consumes the builder and constructs an Operation<[`ListWorkloadShares`](crate::operation::ListWorkloadShares)>
     #[allow(clippy::let_and_return)]
@@ -6836,7 +6488,7 @@ impl ListWorkloadSharesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWorkloadShares,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6953,7 +6605,7 @@ impl ListWorkloadSharesInput {
             "ListWorkloadShares",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7032,7 +6684,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -7043,7 +6695,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7138,7 +6790,7 @@ impl TagResourceInput {
             "TagResource",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7185,16 +6837,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>A list of tag keys. Existing tags of the resource
-        /// whose keys are members of this list are removed from the resource.</p>
+        /// <p>A list of tag keys. Existing tags of the resource whose keys are members of this list are removed from the resource.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>A list of tag keys. Existing tags of the resource
-        /// whose keys are members of this list are removed from the resource.</p>
+        /// <p>A list of tag keys. Existing tags of the resource whose keys are members of this list are removed from the resource.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7219,7 +6869,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -7230,7 +6880,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7333,7 +6983,7 @@ impl UntagResourceInput {
             "UntagResource",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7377,13 +7027,13 @@ pub mod update_answer_input {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -7423,20 +7073,18 @@ pub mod update_answer_input {
         ///
         /// To override the contents of this collection use [`set_choice_updates`](Self::set_choice_updates).
         ///
-        /// <p>A list of choices to update on a question in your workload.  The String key
-        /// corresponds to the choice ID to be updated.</p>
+        /// <p>A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be updated.</p>
         pub fn choice_updates(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ChoiceUpdate>,
+            v: crate::model::ChoiceUpdate,
         ) -> Self {
             let mut hash_map = self.choice_updates.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.choice_updates = Some(hash_map);
             self
         }
-        /// <p>A list of choices to update on a question in your workload.  The String key
-        /// corresponds to the choice ID to be updated.</p>
+        /// <p>A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be updated.</p>
         pub fn set_choice_updates(
             mut self,
             input: std::option::Option<
@@ -7502,7 +7150,7 @@ pub mod update_answer_input {
 #[doc(hidden)]
 pub type UpdateAnswerInputOperationOutputAlias = crate::operation::UpdateAnswer;
 #[doc(hidden)]
-pub type UpdateAnswerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAnswerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAnswerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAnswer`](crate::operation::UpdateAnswer)>
     #[allow(clippy::let_and_return)]
@@ -7513,7 +7161,7 @@ impl UpdateAnswerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAnswer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7644,7 +7292,7 @@ impl UpdateAnswerInput {
             "UpdateAnswer",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7692,13 +7340,13 @@ pub mod update_lens_review_input {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -7757,7 +7405,7 @@ pub mod update_lens_review_input {
 #[doc(hidden)]
 pub type UpdateLensReviewInputOperationOutputAlias = crate::operation::UpdateLensReview;
 #[doc(hidden)]
-pub type UpdateLensReviewInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateLensReviewInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLensReviewInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLensReview`](crate::operation::UpdateLensReview)>
     #[allow(clippy::let_and_return)]
@@ -7768,7 +7416,7 @@ impl UpdateLensReviewInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateLensReview,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7884,7 +7532,7 @@ impl UpdateLensReviewInput {
             "UpdateLensReview",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7964,7 +7612,7 @@ pub mod update_share_invitation_input {
 #[doc(hidden)]
 pub type UpdateShareInvitationInputOperationOutputAlias = crate::operation::UpdateShareInvitation;
 #[doc(hidden)]
-pub type UpdateShareInvitationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateShareInvitationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateShareInvitationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateShareInvitation`](crate::operation::UpdateShareInvitation)>
     #[allow(clippy::let_and_return)]
@@ -7975,7 +7623,7 @@ impl UpdateShareInvitationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateShareInvitation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8077,7 +7725,7 @@ impl UpdateShareInvitationInput {
             "UpdateShareInvitation",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8134,15 +7782,13 @@ pub mod update_workload_input {
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-        /// are ignored when checking for uniqueness.</p>
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
         pub fn workload_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_name = Some(input.into());
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-        /// are ignored when checking for uniqueness.</p>
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
         pub fn set_workload_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8196,16 +7842,14 @@ pub mod update_workload_input {
         ///
         /// To override the contents of this collection use [`set_aws_regions`](Self::set_aws_regions).
         ///
-        /// <p>The list of Amazon Web Services Regions associated with the workload, for example,
-        /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
+        /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
         pub fn aws_regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.aws_regions.unwrap_or_default();
             v.push(input.into());
             self.aws_regions = Some(v);
             self
         }
-        /// <p>The list of Amazon Web Services Regions associated with the workload, for example,
-        /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
+        /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
         pub fn set_aws_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8236,16 +7880,14 @@ pub mod update_workload_input {
         ///
         /// To override the contents of this collection use [`set_pillar_priorities`](Self::set_pillar_priorities).
         ///
-        /// <p>The priorities of the pillars, which are used to order items in the improvement plan.
-        /// Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn pillar_priorities(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.pillar_priorities.unwrap_or_default();
             v.push(input.into());
             self.pillar_priorities = Some(v);
             self
         }
-        /// <p>The priorities of the pillars, which are used to order items in the improvement plan.
-        /// Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn set_pillar_priorities(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8266,32 +7908,24 @@ pub mod update_workload_input {
             self.architectural_design = input;
             self
         }
-        /// <p>The review owner of the workload. The name, email address, or identifier for the
-        /// primary group or individual that owns the workload review process.</p>
+        /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
         pub fn review_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.review_owner = Some(input.into());
             self
         }
-        /// <p>The review owner of the workload. The name, email address, or identifier for the
-        /// primary group or individual that owns the workload review process.</p>
+        /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
         pub fn set_review_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.review_owner = input;
             self
         }
-        /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review
-        /// owner</i> field is required.</p>
-        /// <p>If a <b>Review owner</b> is not added to the workload within
-        /// 60 days of acknowledgement, access to the workload is restricted until an owner is
-        /// added.</p>
+        /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p>
+        /// <p>If a <b>Review owner</b> is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.</p>
         pub fn is_review_owner_update_acknowledged(mut self, input: bool) -> Self {
             self.is_review_owner_update_acknowledged = Some(input);
             self
         }
-        /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review
-        /// owner</i> field is required.</p>
-        /// <p>If a <b>Review owner</b> is not added to the workload within
-        /// 60 days of acknowledgement, access to the workload is restricted until an owner is
-        /// added.</p>
+        /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p>
+        /// <p>If a <b>Review owner</b> is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.</p>
         pub fn set_is_review_owner_update_acknowledged(
             mut self,
             input: std::option::Option<bool>,
@@ -8300,286 +7934,70 @@ pub mod update_workload_input {
             self
         }
         /// <p>The industry type for the workload.</p>
-        /// <p>If specified, must be one of the following:</p>  
+        /// <p>If specified, must be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Agriculture</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Automobile</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Defense</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Design and Engineering</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Digital Advertising</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Education</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Environmental Protection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Financial Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Gaming</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>General Public Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Healthcare</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Hospitality</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>InfoTech</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Justice and Public Safety</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Life Sciences</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Manufacturing</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Media & Entertainment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Mining & Resources</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Oil & Gas</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Power & Utilities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Professional Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Real Estate & Construction</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Retail & Wholesale</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Social Protection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Telecommunications</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Travel, Transportation & Logistics</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Other</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Agriculture</code> </p> </li>
+        /// <li> <p> <code>Automobile</code> </p> </li>
+        /// <li> <p> <code>Defense</code> </p> </li>
+        /// <li> <p> <code>Design and Engineering</code> </p> </li>
+        /// <li> <p> <code>Digital Advertising</code> </p> </li>
+        /// <li> <p> <code>Education</code> </p> </li>
+        /// <li> <p> <code>Environmental Protection</code> </p> </li>
+        /// <li> <p> <code>Financial Services</code> </p> </li>
+        /// <li> <p> <code>Gaming</code> </p> </li>
+        /// <li> <p> <code>General Public Services</code> </p> </li>
+        /// <li> <p> <code>Healthcare</code> </p> </li>
+        /// <li> <p> <code>Hospitality</code> </p> </li>
+        /// <li> <p> <code>InfoTech</code> </p> </li>
+        /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+        /// <li> <p> <code>Life Sciences</code> </p> </li>
+        /// <li> <p> <code>Manufacturing</code> </p> </li>
+        /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+        /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+        /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+        /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+        /// <li> <p> <code>Professional Services</code> </p> </li>
+        /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+        /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+        /// <li> <p> <code>Social Protection</code> </p> </li>
+        /// <li> <p> <code>Telecommunications</code> </p> </li>
+        /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+        /// <li> <p> <code>Other</code> </p> </li>
         /// </ul>
         pub fn industry_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.industry_type = Some(input.into());
             self
         }
         /// <p>The industry type for the workload.</p>
-        /// <p>If specified, must be one of the following:</p>  
+        /// <p>If specified, must be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Agriculture</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Automobile</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Defense</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Design and Engineering</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Digital Advertising</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Education</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Environmental Protection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Financial Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Gaming</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>General Public Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Healthcare</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Hospitality</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>InfoTech</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Justice and Public Safety</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Life Sciences</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Manufacturing</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Media & Entertainment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Mining & Resources</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Oil & Gas</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Power & Utilities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Professional Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Real Estate & Construction</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Retail & Wholesale</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Social Protection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Telecommunications</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Travel, Transportation & Logistics</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Other</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Agriculture</code> </p> </li>
+        /// <li> <p> <code>Automobile</code> </p> </li>
+        /// <li> <p> <code>Defense</code> </p> </li>
+        /// <li> <p> <code>Design and Engineering</code> </p> </li>
+        /// <li> <p> <code>Digital Advertising</code> </p> </li>
+        /// <li> <p> <code>Education</code> </p> </li>
+        /// <li> <p> <code>Environmental Protection</code> </p> </li>
+        /// <li> <p> <code>Financial Services</code> </p> </li>
+        /// <li> <p> <code>Gaming</code> </p> </li>
+        /// <li> <p> <code>General Public Services</code> </p> </li>
+        /// <li> <p> <code>Healthcare</code> </p> </li>
+        /// <li> <p> <code>Hospitality</code> </p> </li>
+        /// <li> <p> <code>InfoTech</code> </p> </li>
+        /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+        /// <li> <p> <code>Life Sciences</code> </p> </li>
+        /// <li> <p> <code>Manufacturing</code> </p> </li>
+        /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+        /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+        /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+        /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+        /// <li> <p> <code>Professional Services</code> </p> </li>
+        /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+        /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+        /// <li> <p> <code>Social Protection</code> </p> </li>
+        /// <li> <p> <code>Telecommunications</code> </p> </li>
+        /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+        /// <li> <p> <code>Other</code> </p> </li>
         /// </ul>
         pub fn set_industry_type(
             mut self,
@@ -8656,7 +8074,7 @@ pub mod update_workload_input {
 #[doc(hidden)]
 pub type UpdateWorkloadInputOperationOutputAlias = crate::operation::UpdateWorkload;
 #[doc(hidden)]
-pub type UpdateWorkloadInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateWorkloadInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateWorkloadInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWorkload`](crate::operation::UpdateWorkload)>
     #[allow(clippy::let_and_return)]
@@ -8667,7 +8085,7 @@ impl UpdateWorkloadInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateWorkload,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8763,7 +8181,7 @@ impl UpdateWorkloadInput {
             "UpdateWorkload",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8848,7 +8266,7 @@ pub mod update_workload_share_input {
 #[doc(hidden)]
 pub type UpdateWorkloadShareInputOperationOutputAlias = crate::operation::UpdateWorkloadShare;
 #[doc(hidden)]
-pub type UpdateWorkloadShareInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateWorkloadShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateWorkloadShareInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWorkloadShare`](crate::operation::UpdateWorkloadShare)>
     #[allow(clippy::let_and_return)]
@@ -8859,7 +8277,7 @@ impl UpdateWorkloadShareInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateWorkloadShare,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8975,7 +8393,7 @@ impl UpdateWorkloadShareInput {
             "UpdateWorkloadShare",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9021,13 +8439,13 @@ pub mod upgrade_lens_review_input {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -9047,29 +8465,17 @@ pub mod upgrade_lens_review_input {
             self.milestone_name = input;
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -9097,7 +8503,7 @@ pub mod upgrade_lens_review_input {
 #[doc(hidden)]
 pub type UpgradeLensReviewInputOperationOutputAlias = crate::operation::UpgradeLensReview;
 #[doc(hidden)]
-pub type UpgradeLensReviewInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpgradeLensReviewInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpgradeLensReviewInput {
     /// Consumes the builder and constructs an Operation<[`UpgradeLensReview`](crate::operation::UpgradeLensReview)>
     #[allow(clippy::let_and_return)]
@@ -9108,7 +8514,7 @@ impl UpgradeLensReviewInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpgradeLensReview,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9224,7 +8630,7 @@ impl UpgradeLensReviewInput {
             "UpgradeLensReview",
             "wellarchitected",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9254,20 +8660,14 @@ pub struct UpgradeLensReviewInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The name of the milestone in a workload.</p>
     /// <p>Milestone names must be unique within a workload.</p>
     pub milestone_name: std::option::Option<std::string::String>,
-    /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-    /// (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with
-    /// the same client request token and the same parameters after it has completed
-    /// successfully, the result of the original request is returned. </p>
-    /// <important>
-    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-    /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-    /// you must provide this token or the request will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub client_request_token: std::option::Option<std::string::String>,
 }
@@ -9277,7 +8677,7 @@ impl UpgradeLensReviewInput {
         self.workload_id.as_deref()
     }
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
@@ -9286,15 +8686,9 @@ impl UpgradeLensReviewInput {
     pub fn milestone_name(&self) -> std::option::Option<&str> {
         self.milestone_name.as_deref()
     }
-    /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-    /// (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with
-    /// the same client request token and the same parameters after it has completed
-    /// successfully, the result of the original request is returned. </p>
-    /// <important>
-    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-    /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-    /// you must provide this token or the request will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
@@ -9353,8 +8747,7 @@ pub struct UpdateWorkloadInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The name of the workload.</p>
-    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-    /// are ignored when checking for uniqueness.</p>
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     pub workload_name: std::option::Option<std::string::String>,
     /// <p>The description for the workload.</p>
     pub description: std::option::Option<std::string::String>,
@@ -9362,163 +8755,49 @@ pub struct UpdateWorkloadInput {
     pub environment: std::option::Option<crate::model::WorkloadEnvironment>,
     /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The list of Amazon Web Services Regions associated with the workload, for example,
-    /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
+    /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
     pub aws_regions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
     pub non_aws_regions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The priorities of the pillars, which are used to order items in the improvement plan.
-    /// Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>
+    /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub pillar_priorities: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The URL of the architectural design for the workload.</p>
     pub architectural_design: std::option::Option<std::string::String>,
-    /// <p>The review owner of the workload. The name, email address, or identifier for the
-    /// primary group or individual that owns the workload review process.</p>
+    /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
     pub review_owner: std::option::Option<std::string::String>,
-    /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review
-    /// owner</i> field is required.</p>
-    /// <p>If a <b>Review owner</b> is not added to the workload within
-    /// 60 days of acknowledgement, access to the workload is restricted until an owner is
-    /// added.</p>
+    /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p>
+    /// <p>If a <b>Review owner</b> is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.</p>
     pub is_review_owner_update_acknowledged: bool,
     /// <p>The industry type for the workload.</p>
-    /// <p>If specified, must be one of the following:</p>  
+    /// <p>If specified, must be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Agriculture</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Automobile</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Defense</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Design and Engineering</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Digital Advertising</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Education</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Environmental Protection</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Financial Services</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Gaming</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>General Public Services</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Healthcare</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Hospitality</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>InfoTech</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Justice and Public Safety</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Life Sciences</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Manufacturing</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Media & Entertainment</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Mining & Resources</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Oil & Gas</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Power & Utilities</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Professional Services</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Real Estate & Construction</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Retail & Wholesale</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Social Protection</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Telecommunications</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Travel, Transportation & Logistics</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Other</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Agriculture</code> </p> </li>
+    /// <li> <p> <code>Automobile</code> </p> </li>
+    /// <li> <p> <code>Defense</code> </p> </li>
+    /// <li> <p> <code>Design and Engineering</code> </p> </li>
+    /// <li> <p> <code>Digital Advertising</code> </p> </li>
+    /// <li> <p> <code>Education</code> </p> </li>
+    /// <li> <p> <code>Environmental Protection</code> </p> </li>
+    /// <li> <p> <code>Financial Services</code> </p> </li>
+    /// <li> <p> <code>Gaming</code> </p> </li>
+    /// <li> <p> <code>General Public Services</code> </p> </li>
+    /// <li> <p> <code>Healthcare</code> </p> </li>
+    /// <li> <p> <code>Hospitality</code> </p> </li>
+    /// <li> <p> <code>InfoTech</code> </p> </li>
+    /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+    /// <li> <p> <code>Life Sciences</code> </p> </li>
+    /// <li> <p> <code>Manufacturing</code> </p> </li>
+    /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+    /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+    /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+    /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+    /// <li> <p> <code>Professional Services</code> </p> </li>
+    /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+    /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+    /// <li> <p> <code>Social Protection</code> </p> </li>
+    /// <li> <p> <code>Telecommunications</code> </p> </li>
+    /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+    /// <li> <p> <code>Other</code> </p> </li>
     /// </ul>
     pub industry_type: std::option::Option<std::string::String>,
     /// <p>The industry for the workload.</p>
@@ -9534,8 +8813,7 @@ impl UpdateWorkloadInput {
         self.workload_id.as_deref()
     }
     /// <p>The name of the workload.</p>
-    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-    /// are ignored when checking for uniqueness.</p>
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     pub fn workload_name(&self) -> std::option::Option<&str> {
         self.workload_name.as_deref()
     }
@@ -9551,8 +8829,7 @@ impl UpdateWorkloadInput {
     pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
-    /// <p>The list of Amazon Web Services Regions associated with the workload, for example,
-    /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
+    /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
     pub fn aws_regions(&self) -> std::option::Option<&[std::string::String]> {
         self.aws_regions.as_deref()
     }
@@ -9560,8 +8837,7 @@ impl UpdateWorkloadInput {
     pub fn non_aws_regions(&self) -> std::option::Option<&[std::string::String]> {
         self.non_aws_regions.as_deref()
     }
-    /// <p>The priorities of the pillars, which are used to order items in the improvement plan.
-    /// Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>
+    /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub fn pillar_priorities(&self) -> std::option::Option<&[std::string::String]> {
         self.pillar_priorities.as_deref()
     }
@@ -9569,157 +8845,45 @@ impl UpdateWorkloadInput {
     pub fn architectural_design(&self) -> std::option::Option<&str> {
         self.architectural_design.as_deref()
     }
-    /// <p>The review owner of the workload. The name, email address, or identifier for the
-    /// primary group or individual that owns the workload review process.</p>
+    /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
     pub fn review_owner(&self) -> std::option::Option<&str> {
         self.review_owner.as_deref()
     }
-    /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review
-    /// owner</i> field is required.</p>
-    /// <p>If a <b>Review owner</b> is not added to the workload within
-    /// 60 days of acknowledgement, access to the workload is restricted until an owner is
-    /// added.</p>
+    /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p>
+    /// <p>If a <b>Review owner</b> is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.</p>
     pub fn is_review_owner_update_acknowledged(&self) -> bool {
         self.is_review_owner_update_acknowledged
     }
     /// <p>The industry type for the workload.</p>
-    /// <p>If specified, must be one of the following:</p>  
+    /// <p>If specified, must be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Agriculture</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Automobile</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Defense</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Design and Engineering</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Digital Advertising</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Education</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Environmental Protection</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Financial Services</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Gaming</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>General Public Services</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Healthcare</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Hospitality</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>InfoTech</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Justice and Public Safety</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Life Sciences</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Manufacturing</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Media & Entertainment</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Mining & Resources</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Oil & Gas</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Power & Utilities</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Professional Services</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Real Estate & Construction</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Retail & Wholesale</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Social Protection</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Telecommunications</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Travel, Transportation & Logistics</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Other</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Agriculture</code> </p> </li>
+    /// <li> <p> <code>Automobile</code> </p> </li>
+    /// <li> <p> <code>Defense</code> </p> </li>
+    /// <li> <p> <code>Design and Engineering</code> </p> </li>
+    /// <li> <p> <code>Digital Advertising</code> </p> </li>
+    /// <li> <p> <code>Education</code> </p> </li>
+    /// <li> <p> <code>Environmental Protection</code> </p> </li>
+    /// <li> <p> <code>Financial Services</code> </p> </li>
+    /// <li> <p> <code>Gaming</code> </p> </li>
+    /// <li> <p> <code>General Public Services</code> </p> </li>
+    /// <li> <p> <code>Healthcare</code> </p> </li>
+    /// <li> <p> <code>Hospitality</code> </p> </li>
+    /// <li> <p> <code>InfoTech</code> </p> </li>
+    /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+    /// <li> <p> <code>Life Sciences</code> </p> </li>
+    /// <li> <p> <code>Manufacturing</code> </p> </li>
+    /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+    /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+    /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+    /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+    /// <li> <p> <code>Professional Services</code> </p> </li>
+    /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+    /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+    /// <li> <p> <code>Social Protection</code> </p> </li>
+    /// <li> <p> <code>Telecommunications</code> </p> </li>
+    /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+    /// <li> <p> <code>Other</code> </p> </li>
     /// </ul>
     pub fn industry_type(&self) -> std::option::Option<&str> {
         self.industry_type.as_deref()
@@ -9801,7 +8965,7 @@ pub struct UpdateLensReviewInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The notes associated with the workload.</p>
     pub lens_notes: std::option::Option<std::string::String>,
@@ -9815,7 +8979,7 @@ impl UpdateLensReviewInput {
         self.workload_id.as_deref()
     }
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
@@ -9849,15 +9013,14 @@ pub struct UpdateAnswerInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ID of the question.</p>
     pub question_id: std::option::Option<std::string::String>,
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
     pub selected_choices: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of choices to update on a question in your workload.  The String key
-    /// corresponds to the choice ID to be updated.</p>
+    /// <p>A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be updated.</p>
     pub choice_updates: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ChoiceUpdate>,
     >,
@@ -9874,7 +9037,7 @@ impl UpdateAnswerInput {
         self.workload_id.as_deref()
     }
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
@@ -9887,8 +9050,7 @@ impl UpdateAnswerInput {
     pub fn selected_choices(&self) -> std::option::Option<&[std::string::String]> {
         self.selected_choices.as_deref()
     }
-    /// <p>A list of choices to update on a question in your workload.  The String key
-    /// corresponds to the choice ID to be updated.</p>
+    /// <p>A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be updated.</p>
     pub fn choice_updates(
         &self,
     ) -> std::option::Option<
@@ -9930,8 +9092,7 @@ impl std::fmt::Debug for UpdateAnswerInput {
 pub struct UntagResourceInput {
     /// <p>The ARN for the workload.</p>
     pub workload_arn: std::option::Option<std::string::String>,
-    /// <p>A list of tag keys. Existing tags of the resource
-    /// whose keys are members of this list are removed from the resource.</p>
+    /// <p>A list of tag keys. Existing tags of the resource whose keys are members of this list are removed from the resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -9939,8 +9100,7 @@ impl UntagResourceInput {
     pub fn workload_arn(&self) -> std::option::Option<&str> {
         self.workload_arn.as_deref()
     }
-    /// <p>A list of tag keys. Existing tags of the resource
-    /// whose keys are members of this list are removed from the resource.</p>
+    /// <p>A list of tag keys. Existing tags of the resource whose keys are members of this list are removed from the resource.</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -10032,8 +9192,7 @@ impl std::fmt::Debug for ListWorkloadSharesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkloadsInput {
-    /// <p>An optional string added to the beginning of each workload name returned in the
-    /// results.</p>
+    /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
     pub workload_name_prefix: std::option::Option<std::string::String>,
     /// <p>The token to use to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -10041,8 +9200,7 @@ pub struct ListWorkloadsInput {
     pub max_results: i32,
 }
 impl ListWorkloadsInput {
-    /// <p>An optional string added to the beginning of each workload name returned in the
-    /// results.</p>
+    /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
     pub fn workload_name_prefix(&self) -> std::option::Option<&str> {
         self.workload_name_prefix.as_deref()
     }
@@ -10090,8 +9248,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListShareInvitationsInput {
-    /// <p>An optional string added to the beginning of each workload name returned in the
-    /// results.</p>
+    /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
     pub workload_name_prefix: std::option::Option<std::string::String>,
     /// <p>An optional string added to the beginning of each lens name returned in the results.</p>
     pub lens_name_prefix: std::option::Option<std::string::String>,
@@ -10103,8 +9260,7 @@ pub struct ListShareInvitationsInput {
     pub max_results: i32,
 }
 impl ListShareInvitationsInput {
-    /// <p>An optional string added to the beginning of each workload name returned in the
-    /// results.</p>
+    /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
     pub fn workload_name_prefix(&self) -> std::option::Option<&str> {
         self.workload_name_prefix.as_deref()
     }
@@ -10212,7 +9368,7 @@ impl std::fmt::Debug for ListMilestonesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLensSharesInput {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID or IAM role with which the lens is shared.</p>
     pub shared_with_prefix: std::option::Option<std::string::String>,
@@ -10223,7 +9379,7 @@ pub struct ListLensSharesInput {
 }
 impl ListLensSharesInput {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
@@ -10302,10 +9458,10 @@ pub struct ListLensReviewImprovementsInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-    /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub pillar_id: std::option::Option<std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
@@ -10321,12 +9477,12 @@ impl ListLensReviewImprovementsInput {
         self.workload_id.as_deref()
     }
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-    /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub fn pillar_id(&self) -> std::option::Option<&str> {
         self.pillar_id.as_deref()
     }
@@ -10413,10 +9569,10 @@ pub struct ListAnswersInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-    /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub pillar_id: std::option::Option<std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
@@ -10432,12 +9588,12 @@ impl ListAnswersInput {
         self.workload_id.as_deref()
     }
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-    /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub fn pillar_id(&self) -> std::option::Option<&str> {
         self.pillar_id.as_deref()
     }
@@ -10473,19 +9629,13 @@ impl std::fmt::Debug for ListAnswersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportLensInput {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The JSON representation of a lens.</p>
     pub json_string: std::option::Option<std::string::String>,
-    /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-    /// (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with
-    /// the same client request token and the same parameters after it has completed
-    /// successfully, the result of the original request is returned. </p>
-    /// <important>
-    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-    /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-    /// you must provide this token or the request will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Tags to associate to a lens.</p>
@@ -10494,7 +9644,7 @@ pub struct ImportLensInput {
 }
 impl ImportLensInput {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
@@ -10502,15 +9652,9 @@ impl ImportLensInput {
     pub fn json_string(&self) -> std::option::Option<&str> {
         self.json_string.as_deref()
     }
-    /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-    /// (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with
-    /// the same client request token and the same parameters after it has completed
-    /// successfully, the result of the original request is returned. </p>
-    /// <important>
-    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-    /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-    /// you must provide this token or the request will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
@@ -10590,7 +9734,7 @@ impl std::fmt::Debug for GetMilestoneInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLensVersionDifferenceInput {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The base version of the lens.</p>
     pub base_lens_version: std::option::Option<std::string::String>,
@@ -10599,7 +9743,7 @@ pub struct GetLensVersionDifferenceInput {
 }
 impl GetLensVersionDifferenceInput {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
@@ -10629,7 +9773,7 @@ pub struct GetLensReviewReportInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
@@ -10641,7 +9785,7 @@ impl GetLensReviewReportInput {
         self.workload_id.as_deref()
     }
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
@@ -10668,7 +9812,7 @@ pub struct GetLensReviewInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
@@ -10680,7 +9824,7 @@ impl GetLensReviewInput {
         self.workload_id.as_deref()
     }
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
@@ -10705,14 +9849,14 @@ impl std::fmt::Debug for GetLensReviewInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLensInput {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The lens version to be retrieved.</p>
     pub lens_version: std::option::Option<std::string::String>,
 }
 impl GetLensInput {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
@@ -10737,7 +9881,7 @@ pub struct GetAnswerInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ID of the question.</p>
     pub question_id: std::option::Option<std::string::String>,
@@ -10751,7 +9895,7 @@ impl GetAnswerInput {
         self.workload_id.as_deref()
     }
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
@@ -10781,14 +9925,14 @@ impl std::fmt::Debug for GetAnswerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportLensInput {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The lens version to be exported.</p>
     pub lens_version: std::option::Option<std::string::String>,
 }
 impl ExportLensInput {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
@@ -10813,7 +9957,7 @@ pub struct DisassociateLensesInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
-    /// <p>Identify a lens using its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
     pub lens_aliases: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DisassociateLensesInput {
@@ -10822,7 +9966,7 @@ impl DisassociateLensesInput {
         self.workload_id.as_deref()
     }
     /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
-    /// <p>Identify a lens using its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_aliases(&self) -> std::option::Option<&[std::string::String]> {
         self.lens_aliases.as_deref()
     }
@@ -10844,15 +9988,9 @@ pub struct DeleteWorkloadShareInput {
     pub share_id: std::option::Option<std::string::String>,
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
-    /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-    /// (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with
-    /// the same client request token and the same parameters after it has completed
-    /// successfully, the result of the original request is returned. </p>
-    /// <important>
-    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-    /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-    /// you must provide this token or the request will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub client_request_token: std::option::Option<std::string::String>,
 }
@@ -10865,15 +10003,9 @@ impl DeleteWorkloadShareInput {
     pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
     }
-    /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-    /// (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with
-    /// the same client request token and the same parameters after it has completed
-    /// successfully, the result of the original request is returned. </p>
-    /// <important>
-    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-    /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-    /// you must provide this token or the request will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
@@ -10895,15 +10027,9 @@ impl std::fmt::Debug for DeleteWorkloadShareInput {
 pub struct DeleteWorkloadInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
-    /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-    /// (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with
-    /// the same client request token and the same parameters after it has completed
-    /// successfully, the result of the original request is returned. </p>
-    /// <important>
-    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-    /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-    /// you must provide this token or the request will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub client_request_token: std::option::Option<std::string::String>,
 }
@@ -10912,15 +10038,9 @@ impl DeleteWorkloadInput {
     pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
     }
-    /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-    /// (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with
-    /// the same client request token and the same parameters after it has completed
-    /// successfully, the result of the original request is returned. </p>
-    /// <important>
-    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-    /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-    /// you must provide this token or the request will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
@@ -10942,17 +10062,11 @@ pub struct DeleteLensShareInput {
     /// <p>The ID associated with the workload share.</p>
     pub share_id: std::option::Option<std::string::String>,
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
-    /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-    /// (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with
-    /// the same client request token and the same parameters after it has completed
-    /// successfully, the result of the original request is returned. </p>
-    /// <important>
-    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-    /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-    /// you must provide this token or the request will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub client_request_token: std::option::Option<std::string::String>,
 }
@@ -10962,19 +10076,13 @@ impl DeleteLensShareInput {
         self.share_id.as_deref()
     }
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
-    /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-    /// (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with
-    /// the same client request token and the same parameters after it has completed
-    /// successfully, the result of the original request is returned. </p>
-    /// <important>
-    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-    /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-    /// you must provide this token or the request will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
@@ -10995,17 +10103,11 @@ impl std::fmt::Debug for DeleteLensShareInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLensInput {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
-    /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-    /// (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with
-    /// the same client request token and the same parameters after it has completed
-    /// successfully, the result of the original request is returned. </p>
-    /// <important>
-    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-    /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-    /// you must provide this token or the request will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The status of the lens to be deleted.</p>
@@ -11013,19 +10115,13 @@ pub struct DeleteLensInput {
 }
 impl DeleteLensInput {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
-    /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-    /// (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with
-    /// the same client request token and the same parameters after it has completed
-    /// successfully, the result of the original request is returned. </p>
-    /// <important>
-    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-    /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-    /// you must provide this token or the request will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
@@ -11055,15 +10151,9 @@ pub struct CreateWorkloadShareInput {
     pub shared_with: std::option::Option<std::string::String>,
     /// <p>Permission granted on a workload share.</p>
     pub permission_type: std::option::Option<crate::model::PermissionType>,
-    /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-    /// (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with
-    /// the same client request token and the same parameters after it has completed
-    /// successfully, the result of the original request is returned. </p>
-    /// <important>
-    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-    /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-    /// you must provide this token or the request will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub client_request_token: std::option::Option<std::string::String>,
 }
@@ -11080,15 +10170,9 @@ impl CreateWorkloadShareInput {
     pub fn permission_type(&self) -> std::option::Option<&crate::model::PermissionType> {
         self.permission_type.as_ref()
     }
-    /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-    /// (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with
-    /// the same client request token and the same parameters after it has completed
-    /// successfully, the result of the original request is returned. </p>
-    /// <important>
-    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-    /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-    /// you must provide this token or the request will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
@@ -11110,8 +10194,7 @@ impl std::fmt::Debug for CreateWorkloadShareInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkloadInput {
     /// <p>The name of the workload.</p>
-    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-    /// are ignored when checking for uniqueness.</p>
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     pub workload_name: std::option::Option<std::string::String>,
     /// <p>The description for the workload.</p>
     pub description: std::option::Option<std::string::String>,
@@ -11119,174 +10202,57 @@ pub struct CreateWorkloadInput {
     pub environment: std::option::Option<crate::model::WorkloadEnvironment>,
     /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The list of Amazon Web Services Regions associated with the workload, for example,
-    /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
+    /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
     pub aws_regions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
     pub non_aws_regions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The priorities of the pillars, which are used to order items in the improvement plan.
-    /// Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>
+    /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub pillar_priorities: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The URL of the architectural design for the workload.</p>
     pub architectural_design: std::option::Option<std::string::String>,
-    /// <p>The review owner of the workload. The name, email address, or identifier for the
-    /// primary group or individual that owns the workload review process.</p>
+    /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
     pub review_owner: std::option::Option<std::string::String>,
     /// <p>The industry type for the workload.</p>
-    /// <p>If specified, must be one of the following:</p>  
+    /// <p>If specified, must be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Agriculture</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Automobile</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Defense</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Design and Engineering</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Digital Advertising</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Education</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Environmental Protection</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Financial Services</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Gaming</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>General Public Services</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Healthcare</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Hospitality</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>InfoTech</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Justice and Public Safety</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Life Sciences</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Manufacturing</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Media & Entertainment</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Mining & Resources</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Oil & Gas</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Power & Utilities</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Professional Services</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Real Estate & Construction</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Retail & Wholesale</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Social Protection</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Telecommunications</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Travel, Transportation & Logistics</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Other</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Agriculture</code> </p> </li>
+    /// <li> <p> <code>Automobile</code> </p> </li>
+    /// <li> <p> <code>Defense</code> </p> </li>
+    /// <li> <p> <code>Design and Engineering</code> </p> </li>
+    /// <li> <p> <code>Digital Advertising</code> </p> </li>
+    /// <li> <p> <code>Education</code> </p> </li>
+    /// <li> <p> <code>Environmental Protection</code> </p> </li>
+    /// <li> <p> <code>Financial Services</code> </p> </li>
+    /// <li> <p> <code>Gaming</code> </p> </li>
+    /// <li> <p> <code>General Public Services</code> </p> </li>
+    /// <li> <p> <code>Healthcare</code> </p> </li>
+    /// <li> <p> <code>Hospitality</code> </p> </li>
+    /// <li> <p> <code>InfoTech</code> </p> </li>
+    /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+    /// <li> <p> <code>Life Sciences</code> </p> </li>
+    /// <li> <p> <code>Manufacturing</code> </p> </li>
+    /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+    /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+    /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+    /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+    /// <li> <p> <code>Professional Services</code> </p> </li>
+    /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+    /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+    /// <li> <p> <code>Social Protection</code> </p> </li>
+    /// <li> <p> <code>Telecommunications</code> </p> </li>
+    /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+    /// <li> <p> <code>Other</code> </p> </li>
     /// </ul>
     pub industry_type: std::option::Option<std::string::String>,
     /// <p>The industry for the workload.</p>
     pub industry: std::option::Option<std::string::String>,
-    /// <p>The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lenses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The notes associated with the workload.</p>
     pub notes: std::option::Option<std::string::String>,
-    /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-    /// (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with
-    /// the same client request token and the same parameters after it has completed
-    /// successfully, the result of the original request is returned. </p>
-    /// <important>
-    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-    /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-    /// you must provide this token or the request will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The tags to be associated with the workload.</p>
@@ -11295,8 +10261,7 @@ pub struct CreateWorkloadInput {
 }
 impl CreateWorkloadInput {
     /// <p>The name of the workload.</p>
-    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-    /// are ignored when checking for uniqueness.</p>
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     pub fn workload_name(&self) -> std::option::Option<&str> {
         self.workload_name.as_deref()
     }
@@ -11312,8 +10277,7 @@ impl CreateWorkloadInput {
     pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
-    /// <p>The list of Amazon Web Services Regions associated with the workload, for example,
-    /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
+    /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
     pub fn aws_regions(&self) -> std::option::Option<&[std::string::String]> {
         self.aws_regions.as_deref()
     }
@@ -11321,8 +10285,7 @@ impl CreateWorkloadInput {
     pub fn non_aws_regions(&self) -> std::option::Option<&[std::string::String]> {
         self.non_aws_regions.as_deref()
     }
-    /// <p>The priorities of the pillars, which are used to order items in the improvement plan.
-    /// Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>
+    /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub fn pillar_priorities(&self) -> std::option::Option<&[std::string::String]> {
         self.pillar_priorities.as_deref()
     }
@@ -11330,149 +10293,40 @@ impl CreateWorkloadInput {
     pub fn architectural_design(&self) -> std::option::Option<&str> {
         self.architectural_design.as_deref()
     }
-    /// <p>The review owner of the workload. The name, email address, or identifier for the
-    /// primary group or individual that owns the workload review process.</p>
+    /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
     pub fn review_owner(&self) -> std::option::Option<&str> {
         self.review_owner.as_deref()
     }
     /// <p>The industry type for the workload.</p>
-    /// <p>If specified, must be one of the following:</p>  
+    /// <p>If specified, must be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Agriculture</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Automobile</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Defense</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Design and Engineering</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Digital Advertising</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Education</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Environmental Protection</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Financial Services</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Gaming</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>General Public Services</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Healthcare</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Hospitality</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>InfoTech</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Justice and Public Safety</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Life Sciences</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Manufacturing</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Media & Entertainment</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Mining & Resources</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Oil & Gas</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Power & Utilities</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Professional Services</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Real Estate & Construction</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Retail & Wholesale</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Social Protection</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Telecommunications</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Travel, Transportation & Logistics</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Other</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Agriculture</code> </p> </li>
+    /// <li> <p> <code>Automobile</code> </p> </li>
+    /// <li> <p> <code>Defense</code> </p> </li>
+    /// <li> <p> <code>Design and Engineering</code> </p> </li>
+    /// <li> <p> <code>Digital Advertising</code> </p> </li>
+    /// <li> <p> <code>Education</code> </p> </li>
+    /// <li> <p> <code>Environmental Protection</code> </p> </li>
+    /// <li> <p> <code>Financial Services</code> </p> </li>
+    /// <li> <p> <code>Gaming</code> </p> </li>
+    /// <li> <p> <code>General Public Services</code> </p> </li>
+    /// <li> <p> <code>Healthcare</code> </p> </li>
+    /// <li> <p> <code>Hospitality</code> </p> </li>
+    /// <li> <p> <code>InfoTech</code> </p> </li>
+    /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+    /// <li> <p> <code>Life Sciences</code> </p> </li>
+    /// <li> <p> <code>Manufacturing</code> </p> </li>
+    /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+    /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+    /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+    /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+    /// <li> <p> <code>Professional Services</code> </p> </li>
+    /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+    /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+    /// <li> <p> <code>Social Protection</code> </p> </li>
+    /// <li> <p> <code>Telecommunications</code> </p> </li>
+    /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+    /// <li> <p> <code>Other</code> </p> </li>
     /// </ul>
     pub fn industry_type(&self) -> std::option::Option<&str> {
         self.industry_type.as_deref()
@@ -11481,7 +10335,7 @@ impl CreateWorkloadInput {
     pub fn industry(&self) -> std::option::Option<&str> {
         self.industry.as_deref()
     }
-    /// <p>The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lenses(&self) -> std::option::Option<&[std::string::String]> {
         self.lenses.as_deref()
     }
@@ -11489,15 +10343,9 @@ impl CreateWorkloadInput {
     pub fn notes(&self) -> std::option::Option<&str> {
         self.notes.as_deref()
     }
-    /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-    /// (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with
-    /// the same client request token and the same parameters after it has completed
-    /// successfully, the result of the original request is returned. </p>
-    /// <important>
-    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-    /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-    /// you must provide this token or the request will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
@@ -11541,15 +10389,9 @@ pub struct CreateMilestoneInput {
     /// <p>The name of the milestone in a workload.</p>
     /// <p>Milestone names must be unique within a workload.</p>
     pub milestone_name: std::option::Option<std::string::String>,
-    /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-    /// (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with
-    /// the same client request token and the same parameters after it has completed
-    /// successfully, the result of the original request is returned. </p>
-    /// <important>
-    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-    /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-    /// you must provide this token or the request will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub client_request_token: std::option::Option<std::string::String>,
 }
@@ -11563,15 +10405,9 @@ impl CreateMilestoneInput {
     pub fn milestone_name(&self) -> std::option::Option<&str> {
         self.milestone_name.as_deref()
     }
-    /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-    /// (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with
-    /// the same client request token and the same parameters after it has completed
-    /// successfully, the result of the original request is returned. </p>
-    /// <important>
-    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-    /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-    /// you must provide this token or the request will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
@@ -11592,27 +10428,21 @@ impl std::fmt::Debug for CreateMilestoneInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLensVersionInput {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The version of the lens being created.</p>
     pub lens_version: std::option::Option<std::string::String>,
     /// <p>Set to true if this new major lens version.</p>
     pub is_major_version: bool,
-    /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-    /// (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with
-    /// the same client request token and the same parameters after it has completed
-    /// successfully, the result of the original request is returned. </p>
-    /// <important>
-    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-    /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-    /// you must provide this token or the request will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl CreateLensVersionInput {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
@@ -11624,15 +10454,9 @@ impl CreateLensVersionInput {
     pub fn is_major_version(&self) -> bool {
         self.is_major_version
     }
-    /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-    /// (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with
-    /// the same client request token and the same parameters after it has completed
-    /// successfully, the result of the original request is returned. </p>
-    /// <important>
-    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-    /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-    /// you must provide this token or the request will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
@@ -11654,25 +10478,19 @@ impl std::fmt::Debug for CreateLensVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLensShareInput {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
     pub shared_with: std::option::Option<std::string::String>,
-    /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-    /// (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with
-    /// the same client request token and the same parameters after it has completed
-    /// successfully, the result of the original request is returned. </p>
-    /// <important>
-    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-    /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-    /// you must provide this token or the request will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl CreateLensShareInput {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
@@ -11680,15 +10498,9 @@ impl CreateLensShareInput {
     pub fn shared_with(&self) -> std::option::Option<&str> {
         self.shared_with.as_deref()
     }
-    /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-    /// (executes only once).</p>
-    /// <p>You should not reuse the same token for other requests. If you retry a request with
-    /// the same client request token and the same parameters after it has completed
-    /// successfully, the result of the original request is returned. </p>
-    /// <important>
-    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-    /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-    /// you must provide this token or the request will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
@@ -11711,7 +10523,7 @@ pub struct AssociateLensesInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
-    /// <p>Identify a lens using its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
     pub lens_aliases: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AssociateLensesInput {
@@ -11720,7 +10532,7 @@ impl AssociateLensesInput {
         self.workload_id.as_deref()
     }
     /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
-    /// <p>Identify a lens using its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_aliases(&self) -> std::option::Option<&[std::string::String]> {
         self.lens_aliases.as_deref()
     }

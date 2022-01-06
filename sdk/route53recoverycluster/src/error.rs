@@ -72,8 +72,6 @@ impl GetRoutingControlStateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -229,8 +227,6 @@ impl UpdateRoutingControlStateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -394,8 +390,6 @@ impl UpdateRoutingControlStatesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -569,9 +563,9 @@ pub mod validation_exception {
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
         ///
         /// The fields that caused the error, if applicable
-        pub fn fields(mut self, input: impl Into<crate::model::ValidationExceptionField>) -> Self {
+        pub fn fields(mut self, input: crate::model::ValidationExceptionField) -> Self {
             let mut v = self.fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fields = Some(v);
             self
         }

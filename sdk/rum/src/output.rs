@@ -5,8 +5,7 @@
 pub struct GetAppMonitorDataOutput {
     /// <p>The events that RUM collected that match your request.</p>
     pub events: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A token that you can use in a subsequent operation to retrieve the next set of
-    /// results.</p>
+    /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetAppMonitorDataOutput {
@@ -14,8 +13,7 @@ impl GetAppMonitorDataOutput {
     pub fn events(&self) -> std::option::Option<&[std::string::String]> {
         self.events.as_deref()
     }
-    /// <p>A token that you can use in a subsequent operation to retrieve the next set of
-    /// results.</p>
+    /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -57,14 +55,12 @@ pub mod get_app_monitor_data_output {
             self.events = input;
             self
         }
-        /// <p>A token that you can use in a subsequent operation to retrieve the next set of
-        /// results.</p>
+        /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that you can use in a subsequent operation to retrieve the next set of
-        /// results.</p>
+        /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -141,15 +137,13 @@ impl CreateAppMonitorOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppMonitorsOutput {
-    /// <p>A token that you can use in a subsequent operation to retrieve the next set of
-    /// results.</p>
+    /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of structures that contain information about the returned app monitors.</p>
     pub app_monitor_summaries: std::option::Option<std::vec::Vec<crate::model::AppMonitorSummary>>,
 }
 impl ListAppMonitorsOutput {
-    /// <p>A token that you can use in a subsequent operation to retrieve the next set of
-    /// results.</p>
+    /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -177,14 +171,12 @@ pub mod list_app_monitors_output {
             std::option::Option<std::vec::Vec<crate::model::AppMonitorSummary>>,
     }
     impl Builder {
-        /// <p>A token that you can use in a subsequent operation to retrieve the next set of
-        /// results.</p>
+        /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that you can use in a subsequent operation to retrieve the next set of
-        /// results.</p>
+        /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -194,12 +186,9 @@ pub mod list_app_monitors_output {
         /// To override the contents of this collection use [`set_app_monitor_summaries`](Self::set_app_monitor_summaries).
         ///
         /// <p>An array of structures that contain information about the returned app monitors.</p>
-        pub fn app_monitor_summaries(
-            mut self,
-            input: impl Into<crate::model::AppMonitorSummary>,
-        ) -> Self {
+        pub fn app_monitor_summaries(mut self, input: crate::model::AppMonitorSummary) -> Self {
             let mut v = self.app_monitor_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.app_monitor_summaries = Some(v);
             self
         }

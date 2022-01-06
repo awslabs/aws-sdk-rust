@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWSServerlessApplicationRepository
@@ -149,6 +149,7 @@ where
     ///
     /// See [`ListApplicationDependencies`](crate::client::fluent_builders::ListApplicationDependencies) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListApplicationDependencies::into_paginator).
     pub fn list_application_dependencies(
         &self,
     ) -> fluent_builders::ListApplicationDependencies<C, M, R> {
@@ -158,6 +159,7 @@ where
     ///
     /// See [`ListApplications`](crate::client::fluent_builders::ListApplications) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListApplications::into_paginator).
     pub fn list_applications(&self) -> fluent_builders::ListApplications<C, M, R> {
         fluent_builders::ListApplications::new(self.handle.clone())
     }
@@ -165,6 +167,7 @@ where
     ///
     /// See [`ListApplicationVersions`](crate::client::fluent_builders::ListApplicationVersions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListApplicationVersions::into_paginator).
     pub fn list_application_versions(&self) -> fluent_builders::ListApplicationVersions<C, M, R> {
         fluent_builders::ListApplicationVersions::new(self.handle.clone())
     }
@@ -201,7 +204,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateApplication`.
     ///
     /// <p>Creates an application, optionally including an AWS SAM file to create the first application version in the same call.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -246,10 +249,10 @@ pub mod fluent_builders {
                 crate::input::CreateApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -257,29 +260,35 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
-        pub fn author(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.author(inp);
+        /// <p>The name of the author publishing the app.</p>
+        /// <p>Minimum length=1. Maximum length=127.</p>
+        /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+        pub fn author(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.author(input.into());
             self
         }
-        /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+        /// <p>The name of the author publishing the app.</p>
+        /// <p>Minimum length=1. Maximum length=127.</p>
+        /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
         pub fn set_author(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_author(input);
             self
         }
-        /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        /// <p>The description of the application.</p>
+        /// <p>Minimum length=1. Maximum length=256</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
+        /// <p>The description of the application.</p>
+        /// <p>Minimum length=1. Maximum length=256</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
         /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
-        pub fn home_page_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.home_page_url(inp);
+        pub fn home_page_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.home_page_url(input.into());
             self
         }
         /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
@@ -294,12 +303,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_labels`](Self::set_labels).
         ///
-        /// <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-        pub fn labels(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.labels(inp);
+        /// <p>Labels to improve discovery of apps in search results.</p>
+        /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
+        /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+        pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.labels(input.into());
             self
         }
-        /// <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+        /// <p>Labels to improve discovery of apps in search results.</p>
+        /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
+        /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
         pub fn set_labels(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -307,70 +320,84 @@ pub mod fluent_builders {
             self.inner = self.inner.set_labels(input);
             self
         }
-        /// <p>A local text file that contains the license of the app that matches the spdxLicenseID value of your application.
-        /// The file has the format file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
-        pub fn license_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_body(inp);
+        /// <p>A local text file that contains the license of the app that matches the spdxLicenseID value of your application. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
+        /// <p>Maximum size 5 MB</p>
+        /// <p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
+        pub fn license_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_body(input.into());
             self
         }
-        /// <p>A local text file that contains the license of the app that matches the spdxLicenseID value of your application.
-        /// The file has the format file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
+        /// <p>A local text file that contains the license of the app that matches the spdxLicenseID value of your application. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
+        /// <p>Maximum size 5 MB</p>
+        /// <p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
         pub fn set_license_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_license_body(input);
             self
         }
-        /// <p>A link to the S3 object that contains the license of the app that matches the spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
-        pub fn license_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_url(inp);
+        /// <p>A link to the S3 object that contains the license of the app that matches the spdxLicenseID value of your application.</p>
+        /// <p>Maximum size 5 MB</p>
+        /// <p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
+        pub fn license_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_url(input.into());
             self
         }
-        /// <p>A link to the S3 object that contains the license of the app that matches the spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
+        /// <p>A link to the S3 object that contains the license of the app that matches the spdxLicenseID value of your application.</p>
+        /// <p>Maximum size 5 MB</p>
+        /// <p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
         pub fn set_license_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_license_url(input);
             self
         }
-        /// <p>The name of the application that you want to publish.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name of the application that you want to publish.</p>
+        /// <p>Minimum length=1. Maximum length=140</p>
+        /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the application that you want to publish.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+        /// <p>The name of the application that you want to publish.</p>
+        /// <p>Minimum length=1. Maximum length=140</p>
+        /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>A local text readme file in Markdown language that contains a more detailed description of the application and how it works.
-        /// The file has the format file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
-        pub fn readme_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.readme_body(inp);
+        /// <p>A local text readme file in Markdown language that contains a more detailed description of the application and how it works. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
+        /// <p>Maximum size 5 MB</p>
+        /// <p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
+        pub fn readme_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.readme_body(input.into());
             self
         }
-        /// <p>A local text readme file in Markdown language that contains a more detailed description of the application and how it works.
-        /// The file has the format file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
+        /// <p>A local text readme file in Markdown language that contains a more detailed description of the application and how it works. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
+        /// <p>Maximum size 5 MB</p>
+        /// <p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
         pub fn set_readme_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_readme_body(input);
             self
         }
-        /// <p>A link to the S3 object in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
-        pub fn readme_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.readme_url(inp);
+        /// <p>A link to the S3 object in Markdown language that contains a more detailed description of the application and how it works.</p>
+        /// <p>Maximum size 5 MB</p>
+        /// <p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
+        pub fn readme_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.readme_url(input.into());
             self
         }
-        /// <p>A link to the S3 object in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
+        /// <p>A link to the S3 object in Markdown language that contains a more detailed description of the application and how it works.</p>
+        /// <p>Maximum size 5 MB</p>
+        /// <p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
         pub fn set_readme_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_readme_url(input);
             self
         }
-        /// <p>The semantic version of the application:</p><p>
-        /// <a href="https://semver.org/">https://semver.org/</a>
-        /// </p>
-        pub fn semantic_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.semantic_version(inp);
+        /// <p>The semantic version of the application:</p>
+        /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+        pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.semantic_version(input.into());
             self
         }
-        /// <p>The semantic version of the application:</p><p>
-        /// <a href="https://semver.org/">https://semver.org/</a>
-        /// </p>
+        /// <p>The semantic version of the application:</p>
+        /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
         pub fn set_semantic_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -378,12 +405,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_semantic_version(input);
             self
         }
-        /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p><p>Maximum size 50 MB</p>
-        pub fn source_code_archive_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_code_archive_url(inp);
+        /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
+        /// <p>Maximum size 50 MB</p>
+        pub fn source_code_archive_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_code_archive_url(input.into());
             self
         }
-        /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p><p>Maximum size 50 MB</p>
+        /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
+        /// <p>Maximum size 50 MB</p>
         pub fn set_source_code_archive_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -392,8 +421,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
-        pub fn source_code_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_code_url(inp);
+        pub fn source_code_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_code_url(input.into());
             self
         }
         /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
@@ -405,8 +434,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
-        pub fn spdx_license_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.spdx_license_id(inp);
+        pub fn spdx_license_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.spdx_license_id(input.into());
             self
         }
         /// <p>A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
@@ -417,14 +446,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_spdx_license_id(input);
             self
         }
-        /// <p>The local raw packaged AWS SAM template file of your application.
-        /// The file has the format file://&lt;path>/&lt;filename>.</p><p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
-        pub fn template_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_body(inp);
+        /// <p>The local raw packaged AWS SAM template file of your application. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
+        /// <p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_body(input.into());
             self
         }
-        /// <p>The local raw packaged AWS SAM template file of your application.
-        /// The file has the format file://&lt;path>/&lt;filename>.</p><p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
+        /// <p>The local raw packaged AWS SAM template file of your application. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
+        /// <p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
         pub fn set_template_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -432,12 +461,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_body(input);
             self
         }
-        /// <p>A link to the S3 object containing the packaged AWS SAM template of your application.</p><p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
-        pub fn template_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_url(inp);
+        /// <p>A link to the S3 object containing the packaged AWS SAM template of your application.</p>
+        /// <p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
+        pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_url(input.into());
             self
         }
-        /// <p>A link to the S3 object containing the packaged AWS SAM template of your application.</p><p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
+        /// <p>A link to the S3 object containing the packaged AWS SAM template of your application.</p>
+        /// <p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
         pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_template_url(input);
             self
@@ -446,7 +477,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateApplicationVersion`.
     ///
     /// <p>Creates an application version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplicationVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -491,10 +522,10 @@ pub mod fluent_builders {
                 crate::input::CreateApplicationVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -503,8 +534,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -516,8 +547,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The semantic version of the new version.</p>
-        pub fn semantic_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.semantic_version(inp);
+        pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.semantic_version(input.into());
             self
         }
         /// <p>The semantic version of the new version.</p>
@@ -528,12 +559,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_semantic_version(input);
             self
         }
-        /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p><p>Maximum size 50 MB</p>
-        pub fn source_code_archive_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_code_archive_url(inp);
+        /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
+        /// <p>Maximum size 50 MB</p>
+        pub fn source_code_archive_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_code_archive_url(input.into());
             self
         }
-        /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p><p>Maximum size 50 MB</p>
+        /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
+        /// <p>Maximum size 50 MB</p>
         pub fn set_source_code_archive_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -542,8 +575,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
-        pub fn source_code_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_code_url(inp);
+        pub fn source_code_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_code_url(input.into());
             self
         }
         /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
@@ -555,8 +588,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The raw packaged AWS SAM template of your application.</p>
-        pub fn template_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_body(inp);
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_body(input.into());
             self
         }
         /// <p>The raw packaged AWS SAM template of your application.</p>
@@ -568,8 +601,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A link to the packaged AWS SAM template of your application.</p>
-        pub fn template_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_url(inp);
+        pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_url(input.into());
             self
         }
         /// <p>A link to the packaged AWS SAM template of your application.</p>
@@ -581,7 +614,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateCloudFormationChangeSet`.
     ///
     /// <p>Creates an AWS CloudFormation change set for the given application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCloudFormationChangeSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -626,10 +659,10 @@ pub mod fluent_builders {
                 crate::input::CreateCloudFormationChangeSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -638,8 +671,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -654,56 +687,22 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
         ///
-        /// <p>A list of values that you must specify before you can deploy certain applications.
-        /// Some applications might include resources that can affect permissions in your AWS
-        /// account, for example, by creating new AWS Identity and Access Management (IAM) users.
-        /// For those applications, you must explicitly acknowledge their capabilities by
-        /// specifying this parameter.</p><p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM,
-        /// CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p><p>The following resources require you to specify CAPABILITY_IAM or
-        /// CAPABILITY_NAMED_IAM:
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
-        /// If the application contains IAM resources, you can specify either CAPABILITY_IAM
-        /// or CAPABILITY_NAMED_IAM. If the application contains IAM resources
-        /// with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY:
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS:TopicPolicy</a>.</p><p>Applications that contain one or more nested applications require you to specify
-        /// CAPABILITY_AUTO_EXPAND.</p><p>If your application template contains any of the above resources, we recommend that you review
-        /// all permissions associated with the application before deploying. If you don't specify
-        /// this parameter for an application that requires capabilities, the call will fail.</p>
-        pub fn capabilities(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.capabilities(inp);
+        /// <p>A list of values that you must specify before you can deploy certain applications. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter.</p>
+        /// <p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p>
+        /// <p>The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>. If the application contains IAM resources, you can specify either CAPABILITY_IAM or CAPABILITY_NAMED_IAM. If the application contains IAM resources with custom names, you must specify CAPABILITY_NAMED_IAM.</p>
+        /// <p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS:TopicPolicy</a>.</p>
+        /// <p>Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.</p>
+        /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
+        pub fn capabilities(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.capabilities(input.into());
             self
         }
-        /// <p>A list of values that you must specify before you can deploy certain applications.
-        /// Some applications might include resources that can affect permissions in your AWS
-        /// account, for example, by creating new AWS Identity and Access Management (IAM) users.
-        /// For those applications, you must explicitly acknowledge their capabilities by
-        /// specifying this parameter.</p><p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM,
-        /// CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p><p>The following resources require you to specify CAPABILITY_IAM or
-        /// CAPABILITY_NAMED_IAM:
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
-        /// If the application contains IAM resources, you can specify either CAPABILITY_IAM
-        /// or CAPABILITY_NAMED_IAM. If the application contains IAM resources
-        /// with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY:
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS:TopicPolicy</a>.</p><p>Applications that contain one or more nested applications require you to specify
-        /// CAPABILITY_AUTO_EXPAND.</p><p>If your application template contains any of the above resources, we recommend that you review
-        /// all permissions associated with the application before deploying. If you don't specify
-        /// this parameter for an application that requires capabilities, the call will fail.</p>
+        /// <p>A list of values that you must specify before you can deploy certain applications. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter.</p>
+        /// <p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p>
+        /// <p>The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>. If the application contains IAM resources, you can specify either CAPABILITY_IAM or CAPABILITY_NAMED_IAM. If the application contains IAM resources with custom names, you must specify CAPABILITY_NAMED_IAM.</p>
+        /// <p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS:TopicPolicy</a>.</p>
+        /// <p>Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.</p>
+        /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
         pub fn set_capabilities(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -711,14 +710,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_capabilities(input);
             self
         }
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
-        pub fn change_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_set_name(inp);
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
+        pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_set_name(input.into());
             self
         }
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
         pub fn set_change_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -726,26 +723,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_change_set_name(input);
             self
         }
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -754,14 +747,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_notification_arns`](Self::set_notification_arns).
         ///
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
-        pub fn notification_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notification_arns(inp);
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
+        pub fn notification_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notification_arns(input.into());
             self
         }
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
         pub fn set_notification_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -774,8 +765,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_parameter_overrides`](Self::set_parameter_overrides).
         ///
         /// <p>A list of parameter values for the parameters of the application.</p>
-        pub fn parameter_overrides(mut self, inp: impl Into<crate::model::ParameterValue>) -> Self {
-            self.inner = self.inner.parameter_overrides(inp);
+        pub fn parameter_overrides(mut self, input: crate::model::ParameterValue) -> Self {
+            self.inner = self.inner.parameter_overrides(input);
             self
         }
         /// <p>A list of parameter values for the parameters of the application.</p>
@@ -790,14 +781,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
         ///
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
-        pub fn resource_types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_types(inp);
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
+        pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_types(input.into());
             self
         }
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
         pub fn set_resource_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -805,14 +794,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_types(input);
             self
         }
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
-        pub fn rollback_configuration(mut self, inp: crate::model::RollbackConfiguration) -> Self {
-            self.inner = self.inner.rollback_configuration(inp);
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
+        pub fn rollback_configuration(
+            mut self,
+            input: crate::model::RollbackConfiguration,
+        ) -> Self {
+            self.inner = self.inner.rollback_configuration(input);
             self
         }
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
         pub fn set_rollback_configuration(
             mut self,
             input: std::option::Option<crate::model::RollbackConfiguration>,
@@ -820,16 +810,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rollback_configuration(input);
             self
         }
-        /// <p>The semantic version of the application:</p><p>
-        /// <a href="https://semver.org/">https://semver.org/</a>
-        /// </p>
-        pub fn semantic_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.semantic_version(inp);
+        /// <p>The semantic version of the application:</p>
+        /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+        pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.semantic_version(input.into());
             self
         }
-        /// <p>The semantic version of the application:</p><p>
-        /// <a href="https://semver.org/">https://semver.org/</a>
-        /// </p>
+        /// <p>The semantic version of the application:</p>
+        /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
         pub fn set_semantic_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -837,14 +825,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_semantic_version(input);
             self
         }
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input.into());
             self
         }
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stack_name(input);
             self
@@ -853,14 +839,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
-        /// </i> API.</p>
+        /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -868,12 +852,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
-        pub fn template_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_id(inp);
+        /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
+        /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+        pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_id(input.into());
             self
         }
-        /// <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+        /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
+        /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_template_id(input);
             self
@@ -882,7 +868,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateCloudFormationTemplate`.
     ///
     /// <p>Creates an AWS CloudFormation template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCloudFormationTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -927,10 +913,10 @@ pub mod fluent_builders {
                 crate::input::CreateCloudFormationTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -939,8 +925,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -951,16 +937,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_id(input);
             self
         }
-        /// <p>The semantic version of the application:</p><p>
-        /// <a href="https://semver.org/">https://semver.org/</a>
-        /// </p>
-        pub fn semantic_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.semantic_version(inp);
+        /// <p>The semantic version of the application:</p>
+        /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+        pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.semantic_version(input.into());
             self
         }
-        /// <p>The semantic version of the application:</p><p>
-        /// <a href="https://semver.org/">https://semver.org/</a>
-        /// </p>
+        /// <p>The semantic version of the application:</p>
+        /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
         pub fn set_semantic_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -972,7 +956,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApplication`.
     ///
     /// <p>Deletes the specified application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1017,10 +1001,10 @@ pub mod fluent_builders {
                 crate::input::DeleteApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1029,8 +1013,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -1045,7 +1029,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApplication`.
     ///
     /// <p>Gets the specified application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1090,10 +1074,10 @@ pub mod fluent_builders {
                 crate::input::GetApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1102,8 +1086,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -1115,8 +1099,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The semantic version of the application to get.</p>
-        pub fn semantic_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.semantic_version(inp);
+        pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.semantic_version(input.into());
             self
         }
         /// <p>The semantic version of the application to get.</p>
@@ -1131,7 +1115,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApplicationPolicy`.
     ///
     /// <p>Retrieves the policy for the application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApplicationPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1176,10 +1160,10 @@ pub mod fluent_builders {
                 crate::input::GetApplicationPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1188,8 +1172,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -1204,7 +1188,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCloudFormationTemplate`.
     ///
     /// <p>Gets the specified AWS CloudFormation template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCloudFormationTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1249,10 +1233,10 @@ pub mod fluent_builders {
                 crate::input::GetCloudFormationTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1261,8 +1245,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -1273,12 +1257,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_id(input);
             self
         }
-        /// <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
-        pub fn template_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_id(inp);
+        /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
+        /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+        pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_id(input.into());
             self
         }
-        /// <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+        /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
+        /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_template_id(input);
             self
@@ -1287,7 +1273,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListApplicationDependencies`.
     ///
     /// <p>Retrieves the list of applications nested in the containing application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApplicationDependencies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1332,10 +1318,10 @@ pub mod fluent_builders {
                 crate::input::ListApplicationDependenciesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1343,9 +1329,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListApplicationDependenciesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListApplicationDependenciesPaginator<C, M, R> {
+            crate::paginator::ListApplicationDependenciesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -1357,8 +1351,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The total number of items to return.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>The total number of items to return.</p>
@@ -1367,8 +1361,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to specify where to start paginating.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to specify where to start paginating.</p>
@@ -1377,8 +1371,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The semantic version of the application to get.</p>
-        pub fn semantic_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.semantic_version(inp);
+        pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.semantic_version(input.into());
             self
         }
         /// <p>The semantic version of the application to get.</p>
@@ -1393,7 +1387,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListApplications`.
     ///
     /// <p>Lists applications owned by the requester.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApplications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1438,10 +1432,10 @@ pub mod fluent_builders {
                 crate::input::ListApplicationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1449,9 +1443,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListApplicationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListApplicationsPaginator<C, M, R> {
+            crate::paginator::ListApplicationsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The total number of items to return.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>The total number of items to return.</p>
@@ -1460,8 +1460,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to specify where to start paginating.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to specify where to start paginating.</p>
@@ -1473,7 +1473,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListApplicationVersions`.
     ///
     /// <p>Lists versions for the specified application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApplicationVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1518,10 +1518,10 @@ pub mod fluent_builders {
                 crate::input::ListApplicationVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1529,9 +1529,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListApplicationVersionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListApplicationVersionsPaginator<C, M, R> {
+            crate::paginator::ListApplicationVersionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -1543,8 +1549,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The total number of items to return.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_items(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>The total number of items to return.</p>
@@ -1553,8 +1559,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to specify where to start paginating.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to specify where to start paginating.</p>
@@ -1565,11 +1571,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutApplicationPolicy`.
     ///
-    /// <p>Sets the permission policy for an application. For the list of actions supported for this operation, see
-    /// <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
-    /// Permissions</a>
-    /// .</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Sets the permission policy for an application. For the list of actions supported for this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application Permissions</a> .</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutApplicationPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1614,10 +1617,10 @@ pub mod fluent_builders {
                 crate::input::PutApplicationPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1626,8 +1629,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -1643,11 +1646,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_statements`](Self::set_statements).
         ///
         /// <p>An array of policy statements applied to the application.</p>
-        pub fn statements(
-            mut self,
-            inp: impl Into<crate::model::ApplicationPolicyStatement>,
-        ) -> Self {
-            self.inner = self.inner.statements(inp);
+        pub fn statements(mut self, input: crate::model::ApplicationPolicyStatement) -> Self {
+            self.inner = self.inner.statements(input);
             self
         }
         /// <p>An array of policy statements applied to the application.</p>
@@ -1661,8 +1661,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UnshareApplication`.
     ///
-    /// <p>Unshares an application from an AWS Organization.</p><p>This operation can be called only from the organization's master account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Unshares an application from an AWS Organization.</p>
+    /// <p>This operation can be called only from the organization's master account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UnshareApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1707,10 +1708,10 @@ pub mod fluent_builders {
                 crate::input::UnshareApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1719,8 +1720,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -1732,8 +1733,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS Organization ID to unshare the application from.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The AWS Organization ID to unshare the application from.</p>
@@ -1748,7 +1749,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApplication`.
     ///
     /// <p>Updates the specified application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1793,10 +1794,10 @@ pub mod fluent_builders {
                 crate::input::UpdateApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1805,8 +1806,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -1817,29 +1818,35 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_id(input);
             self
         }
-        /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
-        pub fn author(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.author(inp);
+        /// <p>The name of the author publishing the app.</p>
+        /// <p>Minimum length=1. Maximum length=127.</p>
+        /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+        pub fn author(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.author(input.into());
             self
         }
-        /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+        /// <p>The name of the author publishing the app.</p>
+        /// <p>Minimum length=1. Maximum length=127.</p>
+        /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
         pub fn set_author(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_author(input);
             self
         }
-        /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        /// <p>The description of the application.</p>
+        /// <p>Minimum length=1. Maximum length=256</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
+        /// <p>The description of the application.</p>
+        /// <p>Minimum length=1. Maximum length=256</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
         /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
-        pub fn home_page_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.home_page_url(inp);
+        pub fn home_page_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.home_page_url(input.into());
             self
         }
         /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
@@ -1854,12 +1861,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_labels`](Self::set_labels).
         ///
-        /// <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-        pub fn labels(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.labels(inp);
+        /// <p>Labels to improve discovery of apps in search results.</p>
+        /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
+        /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+        pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.labels(input.into());
             self
         }
-        /// <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+        /// <p>Labels to improve discovery of apps in search results.</p>
+        /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
+        /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
         pub fn set_labels(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1867,28 +1878,33 @@ pub mod fluent_builders {
             self.inner = self.inner.set_labels(input);
             self
         }
-        /// <p>A text readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>
-        pub fn readme_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.readme_body(inp);
+        /// <p>A text readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
+        /// <p>Maximum size 5 MB</p>
+        pub fn readme_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.readme_body(input.into());
             self
         }
-        /// <p>A text readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>
+        /// <p>A text readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
+        /// <p>Maximum size 5 MB</p>
         pub fn set_readme_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_readme_body(input);
             self
         }
-        /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>
-        pub fn readme_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.readme_url(inp);
+        /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
+        /// <p>Maximum size 5 MB</p>
+        pub fn readme_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.readme_url(input.into());
             self
         }
-        /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>
+        /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
+        /// <p>Maximum size 5 MB</p>
         pub fn set_readme_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_readme_url(input);
             self
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

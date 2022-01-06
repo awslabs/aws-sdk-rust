@@ -363,6 +363,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAlias {
     }
 }
 
+/// Operation shape for `DeleteEmailMonitoringConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_email_monitoring_configuration`](crate::client::Client::delete_email_monitoring_configuration).
+///
+/// See [`crate::client::fluent_builders::DeleteEmailMonitoringConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteEmailMonitoringConfiguration {
+    _private: (),
+}
+impl DeleteEmailMonitoringConfiguration {
+    /// Creates a new builder-style object to manufacture [`DeleteEmailMonitoringConfigurationInput`](crate::input::DeleteEmailMonitoringConfigurationInput)
+    pub fn builder() -> crate::input::delete_email_monitoring_configuration_input::Builder {
+        crate::input::delete_email_monitoring_configuration_input::Builder::default()
+    }
+    /// Creates a new `DeleteEmailMonitoringConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteEmailMonitoringConfiguration {
+    type Output = std::result::Result<
+        crate::output::DeleteEmailMonitoringConfigurationOutput,
+        crate::error::DeleteEmailMonitoringConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_email_monitoring_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_delete_email_monitoring_configuration_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -693,6 +727,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterMailDomain {
             crate::operation_deser::parse_deregister_mail_domain_error(response)
         } else {
             crate::operation_deser::parse_deregister_mail_domain_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeEmailMonitoringConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_email_monitoring_configuration`](crate::client::Client::describe_email_monitoring_configuration).
+///
+/// See [`crate::client::fluent_builders::DescribeEmailMonitoringConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeEmailMonitoringConfiguration {
+    _private: (),
+}
+impl DescribeEmailMonitoringConfiguration {
+    /// Creates a new builder-style object to manufacture [`DescribeEmailMonitoringConfigurationInput`](crate::input::DescribeEmailMonitoringConfigurationInput)
+    pub fn builder() -> crate::input::describe_email_monitoring_configuration_input::Builder {
+        crate::input::describe_email_monitoring_configuration_input::Builder::default()
+    }
+    /// Creates a new `DescribeEmailMonitoringConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeEmailMonitoringConfiguration {
+    type Output = std::result::Result<
+        crate::output::DescribeEmailMonitoringConfigurationOutput,
+        crate::error::DescribeEmailMonitoringConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_email_monitoring_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_describe_email_monitoring_configuration_response(response)
         }
     }
 }
@@ -1664,6 +1732,40 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAccessControlRule {
             crate::operation_deser::parse_put_access_control_rule_error(response)
         } else {
             crate::operation_deser::parse_put_access_control_rule_response(response)
+        }
+    }
+}
+
+/// Operation shape for `PutEmailMonitoringConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`put_email_monitoring_configuration`](crate::client::Client::put_email_monitoring_configuration).
+///
+/// See [`crate::client::fluent_builders::PutEmailMonitoringConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct PutEmailMonitoringConfiguration {
+    _private: (),
+}
+impl PutEmailMonitoringConfiguration {
+    /// Creates a new builder-style object to manufacture [`PutEmailMonitoringConfigurationInput`](crate::input::PutEmailMonitoringConfigurationInput)
+    pub fn builder() -> crate::input::put_email_monitoring_configuration_input::Builder {
+        crate::input::put_email_monitoring_configuration_input::Builder::default()
+    }
+    /// Creates a new `PutEmailMonitoringConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for PutEmailMonitoringConfiguration {
+    type Output = std::result::Result<
+        crate::output::PutEmailMonitoringConfigurationOutput,
+        crate::error::PutEmailMonitoringConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_put_email_monitoring_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_put_email_monitoring_configuration_response(response)
         }
     }
 }

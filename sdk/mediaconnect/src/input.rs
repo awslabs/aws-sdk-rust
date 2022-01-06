@@ -26,12 +26,9 @@ pub mod add_flow_media_streams_input {
         /// To override the contents of this collection use [`set_media_streams`](Self::set_media_streams).
         ///
         /// The media streams that you want to add to the flow.
-        pub fn media_streams(
-            mut self,
-            input: impl Into<crate::model::AddMediaStreamRequest>,
-        ) -> Self {
+        pub fn media_streams(mut self, input: crate::model::AddMediaStreamRequest) -> Self {
             let mut v = self.media_streams.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_streams = Some(v);
             self
         }
@@ -60,7 +57,7 @@ pub mod add_flow_media_streams_input {
 #[doc(hidden)]
 pub type AddFlowMediaStreamsInputOperationOutputAlias = crate::operation::AddFlowMediaStreams;
 #[doc(hidden)]
-pub type AddFlowMediaStreamsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddFlowMediaStreamsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddFlowMediaStreamsInput {
     /// Consumes the builder and constructs an Operation<[`AddFlowMediaStreams`](crate::operation::AddFlowMediaStreams)>
     #[allow(clippy::let_and_return)]
@@ -71,7 +68,7 @@ impl AddFlowMediaStreamsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddFlowMediaStreams,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -173,7 +170,7 @@ impl AddFlowMediaStreamsInput {
             "AddFlowMediaStreams",
             "mediaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -221,9 +218,9 @@ pub mod add_flow_outputs_input {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// A list of outputs that you want to add.
-        pub fn outputs(mut self, input: impl Into<crate::model::AddOutputRequest>) -> Self {
+        pub fn outputs(mut self, input: crate::model::AddOutputRequest) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -252,7 +249,7 @@ pub mod add_flow_outputs_input {
 #[doc(hidden)]
 pub type AddFlowOutputsInputOperationOutputAlias = crate::operation::AddFlowOutputs;
 #[doc(hidden)]
-pub type AddFlowOutputsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddFlowOutputsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddFlowOutputsInput {
     /// Consumes the builder and constructs an Operation<[`AddFlowOutputs`](crate::operation::AddFlowOutputs)>
     #[allow(clippy::let_and_return)]
@@ -263,7 +260,7 @@ impl AddFlowOutputsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddFlowOutputs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -359,7 +356,7 @@ impl AddFlowOutputsInput {
             "AddFlowOutputs",
             "mediaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -407,9 +404,9 @@ pub mod add_flow_sources_input {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// A list of sources that you want to add.
-        pub fn sources(mut self, input: impl Into<crate::model::SetSourceRequest>) -> Self {
+        pub fn sources(mut self, input: crate::model::SetSourceRequest) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -438,7 +435,7 @@ pub mod add_flow_sources_input {
 #[doc(hidden)]
 pub type AddFlowSourcesInputOperationOutputAlias = crate::operation::AddFlowSources;
 #[doc(hidden)]
-pub type AddFlowSourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddFlowSourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddFlowSourcesInput {
     /// Consumes the builder and constructs an Operation<[`AddFlowSources`](crate::operation::AddFlowSources)>
     #[allow(clippy::let_and_return)]
@@ -449,7 +446,7 @@ impl AddFlowSourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddFlowSources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -545,7 +542,7 @@ impl AddFlowSourcesInput {
             "AddFlowSources",
             "mediaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -594,12 +591,9 @@ pub mod add_flow_vpc_interfaces_input {
         /// To override the contents of this collection use [`set_vpc_interfaces`](Self::set_vpc_interfaces).
         ///
         /// A list of VPC interfaces that you want to add.
-        pub fn vpc_interfaces(
-            mut self,
-            input: impl Into<crate::model::VpcInterfaceRequest>,
-        ) -> Self {
+        pub fn vpc_interfaces(mut self, input: crate::model::VpcInterfaceRequest) -> Self {
             let mut v = self.vpc_interfaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_interfaces = Some(v);
             self
         }
@@ -628,7 +622,7 @@ pub mod add_flow_vpc_interfaces_input {
 #[doc(hidden)]
 pub type AddFlowVpcInterfacesInputOperationOutputAlias = crate::operation::AddFlowVpcInterfaces;
 #[doc(hidden)]
-pub type AddFlowVpcInterfacesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddFlowVpcInterfacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddFlowVpcInterfacesInput {
     /// Consumes the builder and constructs an Operation<[`AddFlowVpcInterfaces`](crate::operation::AddFlowVpcInterfaces)>
     #[allow(clippy::let_and_return)]
@@ -639,7 +633,7 @@ impl AddFlowVpcInterfacesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddFlowVpcInterfaces,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -741,7 +735,7 @@ impl AddFlowVpcInterfacesInput {
             "AddFlowVpcInterfaces",
             "mediaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -802,12 +796,9 @@ pub mod create_flow_input {
         /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
         ///
         /// The entitlements that you want to grant on a flow.
-        pub fn entitlements(
-            mut self,
-            input: impl Into<crate::model::GrantEntitlementRequest>,
-        ) -> Self {
+        pub fn entitlements(mut self, input: crate::model::GrantEntitlementRequest) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entitlements = Some(v);
             self
         }
@@ -824,12 +815,9 @@ pub mod create_flow_input {
         /// To override the contents of this collection use [`set_media_streams`](Self::set_media_streams).
         ///
         /// The media streams that you want to add to the flow. You can associate these media streams with sources and outputs on the flow.
-        pub fn media_streams(
-            mut self,
-            input: impl Into<crate::model::AddMediaStreamRequest>,
-        ) -> Self {
+        pub fn media_streams(mut self, input: crate::model::AddMediaStreamRequest) -> Self {
             let mut v = self.media_streams.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_streams = Some(v);
             self
         }
@@ -856,9 +844,9 @@ pub mod create_flow_input {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// The outputs that you want to add to this flow.
-        pub fn outputs(mut self, input: impl Into<crate::model::AddOutputRequest>) -> Self {
+        pub fn outputs(mut self, input: crate::model::AddOutputRequest) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -883,12 +871,12 @@ pub mod create_flow_input {
             self.source = input;
             self
         }
-        /// The settings for source failover
+        /// The settings for source failover.
         pub fn source_failover_config(mut self, input: crate::model::FailoverConfig) -> Self {
             self.source_failover_config = Some(input);
             self
         }
-        /// The settings for source failover
+        /// The settings for source failover.
         pub fn set_source_failover_config(
             mut self,
             input: std::option::Option<crate::model::FailoverConfig>,
@@ -900,9 +888,9 @@ pub mod create_flow_input {
         ///
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
-        pub fn sources(mut self, input: impl Into<crate::model::SetSourceRequest>) -> Self {
+        pub fn sources(mut self, input: crate::model::SetSourceRequest) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sources = Some(v);
             self
         }
@@ -919,12 +907,9 @@ pub mod create_flow_input {
         /// To override the contents of this collection use [`set_vpc_interfaces`](Self::set_vpc_interfaces).
         ///
         /// The VPC interfaces you want on the flow.
-        pub fn vpc_interfaces(
-            mut self,
-            input: impl Into<crate::model::VpcInterfaceRequest>,
-        ) -> Self {
+        pub fn vpc_interfaces(mut self, input: crate::model::VpcInterfaceRequest) -> Self {
             let mut v = self.vpc_interfaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpc_interfaces = Some(v);
             self
         }
@@ -960,7 +945,7 @@ pub mod create_flow_input {
 #[doc(hidden)]
 pub type CreateFlowInputOperationOutputAlias = crate::operation::CreateFlow;
 #[doc(hidden)]
-pub type CreateFlowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFlowInput {
     /// Consumes the builder and constructs an Operation<[`CreateFlow`](crate::operation::CreateFlow)>
     #[allow(clippy::let_and_return)]
@@ -971,7 +956,7 @@ impl CreateFlowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFlow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1050,7 +1035,7 @@ impl CreateFlowInput {
             "CreateFlow",
             "mediaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1108,7 +1093,7 @@ pub mod delete_flow_input {
 #[doc(hidden)]
 pub type DeleteFlowInputOperationOutputAlias = crate::operation::DeleteFlow;
 #[doc(hidden)]
-pub type DeleteFlowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFlowInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFlow`](crate::operation::DeleteFlow)>
     #[allow(clippy::let_and_return)]
@@ -1119,7 +1104,7 @@ impl DeleteFlowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFlow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1209,7 +1194,7 @@ impl DeleteFlowInput {
             "DeleteFlow",
             "mediaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1259,7 +1244,7 @@ pub mod describe_flow_input {
 #[doc(hidden)]
 pub type DescribeFlowInputOperationOutputAlias = crate::operation::DescribeFlow;
 #[doc(hidden)]
-pub type DescribeFlowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFlowInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFlow`](crate::operation::DescribeFlow)>
     #[allow(clippy::let_and_return)]
@@ -1270,7 +1255,7 @@ impl DescribeFlowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFlow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1360,7 +1345,7 @@ impl DescribeFlowInput {
             "DescribeFlow",
             "mediaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1410,7 +1395,7 @@ pub mod describe_offering_input {
 #[doc(hidden)]
 pub type DescribeOfferingInputOperationOutputAlias = crate::operation::DescribeOffering;
 #[doc(hidden)]
-pub type DescribeOfferingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeOfferingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeOfferingInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOffering`](crate::operation::DescribeOffering)>
     #[allow(clippy::let_and_return)]
@@ -1421,7 +1406,7 @@ impl DescribeOfferingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeOffering,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1515,7 +1500,7 @@ impl DescribeOfferingInput {
             "DescribeOffering",
             "mediaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1568,7 +1553,7 @@ pub mod describe_reservation_input {
 #[doc(hidden)]
 pub type DescribeReservationInputOperationOutputAlias = crate::operation::DescribeReservation;
 #[doc(hidden)]
-pub type DescribeReservationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeReservationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReservationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReservation`](crate::operation::DescribeReservation)>
     #[allow(clippy::let_and_return)]
@@ -1579,7 +1564,7 @@ impl DescribeReservationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeReservation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1673,7 +1658,7 @@ impl DescribeReservationInput {
             "DescribeReservation",
             "mediaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1704,12 +1689,9 @@ pub mod grant_flow_entitlements_input {
         /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
         ///
         /// The list of entitlements that you want to grant.
-        pub fn entitlements(
-            mut self,
-            input: impl Into<crate::model::GrantEntitlementRequest>,
-        ) -> Self {
+        pub fn entitlements(mut self, input: crate::model::GrantEntitlementRequest) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entitlements = Some(v);
             self
         }
@@ -1748,7 +1730,7 @@ pub mod grant_flow_entitlements_input {
 #[doc(hidden)]
 pub type GrantFlowEntitlementsInputOperationOutputAlias = crate::operation::GrantFlowEntitlements;
 #[doc(hidden)]
-pub type GrantFlowEntitlementsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GrantFlowEntitlementsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GrantFlowEntitlementsInput {
     /// Consumes the builder and constructs an Operation<[`GrantFlowEntitlements`](crate::operation::GrantFlowEntitlements)>
     #[allow(clippy::let_and_return)]
@@ -1759,7 +1741,7 @@ impl GrantFlowEntitlementsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GrantFlowEntitlements,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1861,7 +1843,7 @@ impl GrantFlowEntitlementsInput {
             "GrantFlowEntitlements",
             "mediaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1931,7 +1913,7 @@ pub mod list_entitlements_input {
 #[doc(hidden)]
 pub type ListEntitlementsInputOperationOutputAlias = crate::operation::ListEntitlements;
 #[doc(hidden)]
-pub type ListEntitlementsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEntitlementsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEntitlementsInput {
     /// Consumes the builder and constructs an Operation<[`ListEntitlements`](crate::operation::ListEntitlements)>
     #[allow(clippy::let_and_return)]
@@ -1942,7 +1924,7 @@ impl ListEntitlementsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEntitlements,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2033,7 +2015,7 @@ impl ListEntitlementsInput {
             "ListEntitlements",
             "mediaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2093,7 +2075,7 @@ pub mod list_flows_input {
 #[doc(hidden)]
 pub type ListFlowsInputOperationOutputAlias = crate::operation::ListFlows;
 #[doc(hidden)]
-pub type ListFlowsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFlowsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFlowsInput {
     /// Consumes the builder and constructs an Operation<[`ListFlows`](crate::operation::ListFlows)>
     #[allow(clippy::let_and_return)]
@@ -2104,7 +2086,7 @@ impl ListFlowsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFlows,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2193,7 +2175,7 @@ impl ListFlowsInput {
                     "ListFlows",
                     "mediaconnect",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2255,7 +2237,7 @@ pub mod list_offerings_input {
 #[doc(hidden)]
 pub type ListOfferingsInputOperationOutputAlias = crate::operation::ListOfferings;
 #[doc(hidden)]
-pub type ListOfferingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListOfferingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListOfferingsInput {
     /// Consumes the builder and constructs an Operation<[`ListOfferings`](crate::operation::ListOfferings)>
     #[allow(clippy::let_and_return)]
@@ -2266,7 +2248,7 @@ impl ListOfferingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListOfferings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2357,7 +2339,7 @@ impl ListOfferingsInput {
             "ListOfferings",
             "mediaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2419,7 +2401,7 @@ pub mod list_reservations_input {
 #[doc(hidden)]
 pub type ListReservationsInputOperationOutputAlias = crate::operation::ListReservations;
 #[doc(hidden)]
-pub type ListReservationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListReservationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListReservationsInput {
     /// Consumes the builder and constructs an Operation<[`ListReservations`](crate::operation::ListReservations)>
     #[allow(clippy::let_and_return)]
@@ -2430,7 +2412,7 @@ impl ListReservationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListReservations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2521,7 +2503,7 @@ impl ListReservationsInput {
             "ListReservations",
             "mediaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2571,7 +2553,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -2582,7 +2564,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2672,7 +2654,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "mediaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2749,7 +2731,7 @@ pub mod purchase_offering_input {
 #[doc(hidden)]
 pub type PurchaseOfferingInputOperationOutputAlias = crate::operation::PurchaseOffering;
 #[doc(hidden)]
-pub type PurchaseOfferingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PurchaseOfferingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PurchaseOfferingInput {
     /// Consumes the builder and constructs an Operation<[`PurchaseOffering`](crate::operation::PurchaseOffering)>
     #[allow(clippy::let_and_return)]
@@ -2760,7 +2742,7 @@ impl PurchaseOfferingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PurchaseOffering,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2860,7 +2842,7 @@ impl PurchaseOfferingInput {
             "PurchaseOffering",
             "mediaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2933,7 +2915,7 @@ pub mod remove_flow_media_stream_input {
 #[doc(hidden)]
 pub type RemoveFlowMediaStreamInputOperationOutputAlias = crate::operation::RemoveFlowMediaStream;
 #[doc(hidden)]
-pub type RemoveFlowMediaStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveFlowMediaStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveFlowMediaStreamInput {
     /// Consumes the builder and constructs an Operation<[`RemoveFlowMediaStream`](crate::operation::RemoveFlowMediaStream)>
     #[allow(clippy::let_and_return)]
@@ -2944,7 +2926,7 @@ impl RemoveFlowMediaStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveFlowMediaStream,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3054,7 +3036,7 @@ impl RemoveFlowMediaStreamInput {
             "RemoveFlowMediaStream",
             "mediaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3116,7 +3098,7 @@ pub mod remove_flow_output_input {
 #[doc(hidden)]
 pub type RemoveFlowOutputInputOperationOutputAlias = crate::operation::RemoveFlowOutput;
 #[doc(hidden)]
-pub type RemoveFlowOutputInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveFlowOutputInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveFlowOutputInput {
     /// Consumes the builder and constructs an Operation<[`RemoveFlowOutput`](crate::operation::RemoveFlowOutput)>
     #[allow(clippy::let_and_return)]
@@ -3127,7 +3109,7 @@ impl RemoveFlowOutputInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveFlowOutput,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3237,7 +3219,7 @@ impl RemoveFlowOutputInput {
             "RemoveFlowOutput",
             "mediaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3299,7 +3281,7 @@ pub mod remove_flow_source_input {
 #[doc(hidden)]
 pub type RemoveFlowSourceInputOperationOutputAlias = crate::operation::RemoveFlowSource;
 #[doc(hidden)]
-pub type RemoveFlowSourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveFlowSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveFlowSourceInput {
     /// Consumes the builder and constructs an Operation<[`RemoveFlowSource`](crate::operation::RemoveFlowSource)>
     #[allow(clippy::let_and_return)]
@@ -3310,7 +3292,7 @@ impl RemoveFlowSourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveFlowSource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3420,7 +3402,7 @@ impl RemoveFlowSourceInput {
             "RemoveFlowSource",
             "mediaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3485,7 +3467,7 @@ pub mod remove_flow_vpc_interface_input {
 #[doc(hidden)]
 pub type RemoveFlowVpcInterfaceInputOperationOutputAlias = crate::operation::RemoveFlowVpcInterface;
 #[doc(hidden)]
-pub type RemoveFlowVpcInterfaceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveFlowVpcInterfaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveFlowVpcInterfaceInput {
     /// Consumes the builder and constructs an Operation<[`RemoveFlowVpcInterface`](crate::operation::RemoveFlowVpcInterface)>
     #[allow(clippy::let_and_return)]
@@ -3496,7 +3478,7 @@ impl RemoveFlowVpcInterfaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveFlowVpcInterface,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3606,7 +3588,7 @@ impl RemoveFlowVpcInterfaceInput {
             "RemoveFlowVpcInterface",
             "mediaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3671,7 +3653,7 @@ pub mod revoke_flow_entitlement_input {
 #[doc(hidden)]
 pub type RevokeFlowEntitlementInputOperationOutputAlias = crate::operation::RevokeFlowEntitlement;
 #[doc(hidden)]
-pub type RevokeFlowEntitlementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RevokeFlowEntitlementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RevokeFlowEntitlementInput {
     /// Consumes the builder and constructs an Operation<[`RevokeFlowEntitlement`](crate::operation::RevokeFlowEntitlement)>
     #[allow(clippy::let_and_return)]
@@ -3682,7 +3664,7 @@ impl RevokeFlowEntitlementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RevokeFlowEntitlement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3792,7 +3774,7 @@ impl RevokeFlowEntitlementInput {
             "RevokeFlowEntitlement",
             "mediaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3840,7 +3822,7 @@ pub mod start_flow_input {
 #[doc(hidden)]
 pub type StartFlowInputOperationOutputAlias = crate::operation::StartFlow;
 #[doc(hidden)]
-pub type StartFlowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartFlowInput {
     /// Consumes the builder and constructs an Operation<[`StartFlow`](crate::operation::StartFlow)>
     #[allow(clippy::let_and_return)]
@@ -3851,7 +3833,7 @@ impl StartFlowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartFlow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3939,7 +3921,7 @@ impl StartFlowInput {
                     "StartFlow",
                     "mediaconnect",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3987,7 +3969,7 @@ pub mod stop_flow_input {
 #[doc(hidden)]
 pub type StopFlowInputOperationOutputAlias = crate::operation::StopFlow;
 #[doc(hidden)]
-pub type StopFlowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopFlowInput {
     /// Consumes the builder and constructs an Operation<[`StopFlow`](crate::operation::StopFlow)>
     #[allow(clippy::let_and_return)]
@@ -3998,7 +3980,7 @@ impl StopFlowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopFlow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4086,7 +4068,7 @@ impl StopFlowInput {
                     "StopFlow",
                     "mediaconnect",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4165,7 +4147,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -4176,7 +4158,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4271,7 +4253,7 @@ impl TagResourceInput {
             "TagResource",
             "mediaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4350,7 +4332,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -4361,7 +4343,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4464,7 +4446,7 @@ impl UntagResourceInput {
             "UntagResource",
             "mediaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4499,12 +4481,12 @@ pub mod update_flow_input {
             self.flow_arn = input;
             self
         }
-        /// The settings for source failover
+        /// The settings for source failover.
         pub fn source_failover_config(mut self, input: crate::model::UpdateFailoverConfig) -> Self {
             self.source_failover_config = Some(input);
             self
         }
-        /// The settings for source failover
+        /// The settings for source failover.
         pub fn set_source_failover_config(
             mut self,
             input: std::option::Option<crate::model::UpdateFailoverConfig>,
@@ -4529,7 +4511,7 @@ pub mod update_flow_input {
 #[doc(hidden)]
 pub type UpdateFlowInputOperationOutputAlias = crate::operation::UpdateFlow;
 #[doc(hidden)]
-pub type UpdateFlowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFlowInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFlow`](crate::operation::UpdateFlow)>
     #[allow(clippy::let_and_return)]
@@ -4540,7 +4522,7 @@ impl UpdateFlowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFlow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4635,7 +4617,7 @@ impl UpdateFlowInput {
             "UpdateFlow",
             "mediaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4771,7 +4753,7 @@ pub mod update_flow_entitlement_input {
 #[doc(hidden)]
 pub type UpdateFlowEntitlementInputOperationOutputAlias = crate::operation::UpdateFlowEntitlement;
 #[doc(hidden)]
-pub type UpdateFlowEntitlementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFlowEntitlementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFlowEntitlementInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFlowEntitlement`](crate::operation::UpdateFlowEntitlement)>
     #[allow(clippy::let_and_return)]
@@ -4782,7 +4764,7 @@ impl UpdateFlowEntitlementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFlowEntitlement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4900,7 +4882,7 @@ impl UpdateFlowEntitlementInput {
             "UpdateFlowEntitlement",
             "mediaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5039,7 +5021,7 @@ pub mod update_flow_media_stream_input {
 #[doc(hidden)]
 pub type UpdateFlowMediaStreamInputOperationOutputAlias = crate::operation::UpdateFlowMediaStream;
 #[doc(hidden)]
-pub type UpdateFlowMediaStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFlowMediaStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFlowMediaStreamInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFlowMediaStream`](crate::operation::UpdateFlowMediaStream)>
     #[allow(clippy::let_and_return)]
@@ -5050,7 +5032,7 @@ impl UpdateFlowMediaStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFlowMediaStream,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5168,7 +5150,7 @@ impl UpdateFlowMediaStreamInput {
             "UpdateFlowMediaStream",
             "mediaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5210,6 +5192,8 @@ pub mod update_flow_output_input {
         pub(crate) port: std::option::Option<i32>,
         pub(crate) protocol: std::option::Option<crate::model::Protocol>,
         pub(crate) remote_id: std::option::Option<std::string::String>,
+        pub(crate) sender_control_port: std::option::Option<i32>,
+        pub(crate) sender_ip_address: std::option::Option<std::string::String>,
         pub(crate) smoothing_latency: std::option::Option<i32>,
         pub(crate) stream_id: std::option::Option<std::string::String>,
         pub(crate) vpc_interface_attachment:
@@ -5278,12 +5262,12 @@ pub mod update_flow_output_input {
             self.flow_arn = input;
             self
         }
-        /// The maximum latency in milliseconds for Zixi-based streams.
+        /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
         pub fn max_latency(mut self, input: i32) -> Self {
             self.max_latency = Some(input);
             self
         }
-        /// The maximum latency in milliseconds for Zixi-based streams.
+        /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
         pub fn set_max_latency(mut self, input: std::option::Option<i32>) -> Self {
             self.max_latency = input;
             self
@@ -5295,10 +5279,10 @@ pub mod update_flow_output_input {
         /// The media streams that are associated with the output, and the parameters for those associations.
         pub fn media_stream_output_configurations(
             mut self,
-            input: impl Into<crate::model::MediaStreamOutputConfigurationRequest>,
+            input: crate::model::MediaStreamOutputConfigurationRequest,
         ) -> Self {
             let mut v = self.media_stream_output_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_stream_output_configurations = Some(v);
             self
         }
@@ -5362,6 +5346,29 @@ pub mod update_flow_output_input {
             self.remote_id = input;
             self
         }
+        /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+        pub fn sender_control_port(mut self, input: i32) -> Self {
+            self.sender_control_port = Some(input);
+            self
+        }
+        /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+        pub fn set_sender_control_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.sender_control_port = input;
+            self
+        }
+        /// The IP address that the flow communicates with to initiate connection with the sender.
+        pub fn sender_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sender_ip_address = Some(input.into());
+            self
+        }
+        /// The IP address that the flow communicates with to initiate connection with the sender.
+        pub fn set_sender_ip_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sender_ip_address = input;
+            self
+        }
         /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
         pub fn smoothing_latency(mut self, input: i32) -> Self {
             self.smoothing_latency = Some(input);
@@ -5418,6 +5425,8 @@ pub mod update_flow_output_input {
                 port: self.port.unwrap_or_default(),
                 protocol: self.protocol,
                 remote_id: self.remote_id,
+                sender_control_port: self.sender_control_port.unwrap_or_default(),
+                sender_ip_address: self.sender_ip_address,
                 smoothing_latency: self.smoothing_latency.unwrap_or_default(),
                 stream_id: self.stream_id,
                 vpc_interface_attachment: self.vpc_interface_attachment,
@@ -5428,7 +5437,7 @@ pub mod update_flow_output_input {
 #[doc(hidden)]
 pub type UpdateFlowOutputInputOperationOutputAlias = crate::operation::UpdateFlowOutput;
 #[doc(hidden)]
-pub type UpdateFlowOutputInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFlowOutputInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFlowOutputInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFlowOutput`](crate::operation::UpdateFlowOutput)>
     #[allow(clippy::let_and_return)]
@@ -5439,7 +5448,7 @@ impl UpdateFlowOutputInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFlowOutput,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5555,7 +5564,7 @@ impl UpdateFlowOutputInput {
             "UpdateFlowOutput",
             "mediaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5596,6 +5605,8 @@ pub mod update_flow_source_input {
             std::option::Option<std::vec::Vec<crate::model::MediaStreamSourceConfigurationRequest>>,
         pub(crate) min_latency: std::option::Option<i32>,
         pub(crate) protocol: std::option::Option<crate::model::Protocol>,
+        pub(crate) sender_control_port: std::option::Option<i32>,
+        pub(crate) sender_ip_address: std::option::Option<std::string::String>,
         pub(crate) source_arn: std::option::Option<std::string::String>,
         pub(crate) stream_id: std::option::Option<std::string::String>,
         pub(crate) vpc_interface_name: std::option::Option<std::string::String>,
@@ -5668,12 +5679,12 @@ pub mod update_flow_source_input {
             self.max_bitrate = input;
             self
         }
-        /// The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.
+        /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
         pub fn max_latency(mut self, input: i32) -> Self {
             self.max_latency = Some(input);
             self
         }
-        /// The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.
+        /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
         pub fn set_max_latency(mut self, input: std::option::Option<i32>) -> Self {
             self.max_latency = input;
             self
@@ -5695,10 +5706,10 @@ pub mod update_flow_source_input {
         /// The media streams that are associated with the source, and the parameters for those associations.
         pub fn media_stream_source_configurations(
             mut self,
-            input: impl Into<crate::model::MediaStreamSourceConfigurationRequest>,
+            input: crate::model::MediaStreamSourceConfigurationRequest,
         ) -> Self {
             let mut v = self.media_stream_source_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_stream_source_configurations = Some(v);
             self
         }
@@ -5730,6 +5741,29 @@ pub mod update_flow_source_input {
         /// The protocol that is used by the source.
         pub fn set_protocol(mut self, input: std::option::Option<crate::model::Protocol>) -> Self {
             self.protocol = input;
+            self
+        }
+        /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+        pub fn sender_control_port(mut self, input: i32) -> Self {
+            self.sender_control_port = Some(input);
+            self
+        }
+        /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+        pub fn set_sender_control_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.sender_control_port = input;
+            self
+        }
+        /// The IP address that the flow communicates with to initiate connection with the sender.
+        pub fn sender_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sender_ip_address = Some(input.into());
+            self
+        }
+        /// The IP address that the flow communicates with to initiate connection with the sender.
+        pub fn set_sender_ip_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sender_ip_address = input;
             self
         }
         /// The ARN of the source that you want to update.
@@ -5797,6 +5831,8 @@ pub mod update_flow_source_input {
                 media_stream_source_configurations: self.media_stream_source_configurations,
                 min_latency: self.min_latency.unwrap_or_default(),
                 protocol: self.protocol,
+                sender_control_port: self.sender_control_port.unwrap_or_default(),
+                sender_ip_address: self.sender_ip_address,
                 source_arn: self.source_arn,
                 stream_id: self.stream_id,
                 vpc_interface_name: self.vpc_interface_name,
@@ -5808,7 +5844,7 @@ pub mod update_flow_source_input {
 #[doc(hidden)]
 pub type UpdateFlowSourceInputOperationOutputAlias = crate::operation::UpdateFlowSource;
 #[doc(hidden)]
-pub type UpdateFlowSourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFlowSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFlowSourceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFlowSource`](crate::operation::UpdateFlowSource)>
     #[allow(clippy::let_and_return)]
@@ -5819,7 +5855,7 @@ impl UpdateFlowSourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFlowSource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5935,7 +5971,7 @@ impl UpdateFlowSourceInput {
             "UpdateFlowSource",
             "mediaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5974,7 +6010,7 @@ pub struct UpdateFlowSourceInput {
     pub ingest_port: i32,
     /// The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
     pub max_bitrate: i32,
-    /// The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.
+    /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
     pub max_latency: i32,
     /// The size of the buffer (in milliseconds) to use to sync incoming source data.
     pub max_sync_buffer: i32,
@@ -5985,6 +6021,10 @@ pub struct UpdateFlowSourceInput {
     pub min_latency: i32,
     /// The protocol that is used by the source.
     pub protocol: std::option::Option<crate::model::Protocol>,
+    /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+    pub sender_control_port: i32,
+    /// The IP address that the flow communicates with to initiate connection with the sender.
+    pub sender_ip_address: std::option::Option<std::string::String>,
     /// The ARN of the source that you want to update.
     pub source_arn: std::option::Option<std::string::String>,
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
@@ -6019,7 +6059,7 @@ impl UpdateFlowSourceInput {
     pub fn max_bitrate(&self) -> i32 {
         self.max_bitrate
     }
-    /// The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.
+    /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
     pub fn max_latency(&self) -> i32 {
         self.max_latency
     }
@@ -6040,6 +6080,14 @@ impl UpdateFlowSourceInput {
     /// The protocol that is used by the source.
     pub fn protocol(&self) -> std::option::Option<&crate::model::Protocol> {
         self.protocol.as_ref()
+    }
+    /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+    pub fn sender_control_port(&self) -> i32 {
+        self.sender_control_port
+    }
+    /// The IP address that the flow communicates with to initiate connection with the sender.
+    pub fn sender_ip_address(&self) -> std::option::Option<&str> {
+        self.sender_ip_address.as_deref()
     }
     /// The ARN of the source that you want to update.
     pub fn source_arn(&self) -> std::option::Option<&str> {
@@ -6075,6 +6123,8 @@ impl std::fmt::Debug for UpdateFlowSourceInput {
         );
         formatter.field("min_latency", &self.min_latency);
         formatter.field("protocol", &self.protocol);
+        formatter.field("sender_control_port", &self.sender_control_port);
+        formatter.field("sender_ip_address", &self.sender_ip_address);
         formatter.field("source_arn", &self.source_arn);
         formatter.field("stream_id", &self.stream_id);
         formatter.field("vpc_interface_name", &self.vpc_interface_name);
@@ -6097,7 +6147,7 @@ pub struct UpdateFlowOutputInput {
     pub encryption: std::option::Option<crate::model::UpdateEncryption>,
     /// The flow that is associated with the output that you want to update.
     pub flow_arn: std::option::Option<std::string::String>,
-    /// The maximum latency in milliseconds for Zixi-based streams.
+    /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
     pub max_latency: i32,
     /// The media streams that are associated with the output, and the parameters for those associations.
     pub media_stream_output_configurations:
@@ -6112,6 +6162,10 @@ pub struct UpdateFlowOutputInput {
     pub protocol: std::option::Option<crate::model::Protocol>,
     /// The remote ID for the Zixi-pull stream.
     pub remote_id: std::option::Option<std::string::String>,
+    /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+    pub sender_control_port: i32,
+    /// The IP address that the flow communicates with to initiate connection with the sender.
+    pub sender_ip_address: std::option::Option<std::string::String>,
     /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
     pub smoothing_latency: i32,
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
@@ -6140,7 +6194,7 @@ impl UpdateFlowOutputInput {
     pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
-    /// The maximum latency in milliseconds for Zixi-based streams.
+    /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
     pub fn max_latency(&self) -> i32 {
         self.max_latency
     }
@@ -6169,6 +6223,14 @@ impl UpdateFlowOutputInput {
     /// The remote ID for the Zixi-pull stream.
     pub fn remote_id(&self) -> std::option::Option<&str> {
         self.remote_id.as_deref()
+    }
+    /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+    pub fn sender_control_port(&self) -> i32 {
+        self.sender_control_port
+    }
+    /// The IP address that the flow communicates with to initiate connection with the sender.
+    pub fn sender_ip_address(&self) -> std::option::Option<&str> {
+        self.sender_ip_address.as_deref()
     }
     /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
     pub fn smoothing_latency(&self) -> i32 {
@@ -6203,6 +6265,8 @@ impl std::fmt::Debug for UpdateFlowOutputInput {
         formatter.field("port", &self.port);
         formatter.field("protocol", &self.protocol);
         formatter.field("remote_id", &self.remote_id);
+        formatter.field("sender_control_port", &self.sender_control_port);
+        formatter.field("sender_ip_address", &self.sender_ip_address);
         formatter.field("smoothing_latency", &self.smoothing_latency);
         formatter.field("stream_id", &self.stream_id);
         formatter.field("vpc_interface_attachment", &self.vpc_interface_attachment);
@@ -6335,7 +6399,7 @@ impl std::fmt::Debug for UpdateFlowEntitlementInput {
 pub struct UpdateFlowInput {
     /// The flow that you want to update.
     pub flow_arn: std::option::Option<std::string::String>,
-    /// The settings for source failover
+    /// The settings for source failover.
     pub source_failover_config: std::option::Option<crate::model::UpdateFailoverConfig>,
 }
 impl UpdateFlowInput {
@@ -6343,7 +6407,7 @@ impl UpdateFlowInput {
     pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
-    /// The settings for source failover
+    /// The settings for source failover.
     pub fn source_failover_config(
         &self,
     ) -> std::option::Option<&crate::model::UpdateFailoverConfig> {
@@ -6897,7 +6961,7 @@ pub struct CreateFlowInput {
     pub outputs: std::option::Option<std::vec::Vec<crate::model::AddOutputRequest>>,
     /// The settings for the source of the flow.
     pub source: std::option::Option<crate::model::SetSourceRequest>,
-    /// The settings for source failover
+    /// The settings for source failover.
     pub source_failover_config: std::option::Option<crate::model::FailoverConfig>,
     #[allow(missing_docs)] // documentation missing in model
     pub sources: std::option::Option<std::vec::Vec<crate::model::SetSourceRequest>>,
@@ -6929,7 +6993,7 @@ impl CreateFlowInput {
     pub fn source(&self) -> std::option::Option<&crate::model::SetSourceRequest> {
         self.source.as_ref()
     }
-    /// The settings for source failover
+    /// The settings for source failover.
     pub fn source_failover_config(&self) -> std::option::Option<&crate::model::FailoverConfig> {
         self.source_failover_config.as_ref()
     }

@@ -33,7 +33,7 @@ pub mod create_cli_token_input {
 #[doc(hidden)]
 pub type CreateCliTokenInputOperationOutputAlias = crate::operation::CreateCliToken;
 #[doc(hidden)]
-pub type CreateCliTokenInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateCliTokenInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCliTokenInput {
     /// Consumes the builder and constructs an Operation<[`CreateCliToken`](crate::operation::CreateCliToken)>
     #[allow(clippy::let_and_return)]
@@ -44,7 +44,7 @@ impl CreateCliTokenInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCliToken,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -135,7 +135,7 @@ impl CreateCliTokenInput {
             "CreateCliToken",
             "mwaa",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -386,9 +386,7 @@ pub mod create_environment_input {
         }
         /// <p>The day and time of the week to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only. Supported input includes the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p>
-        /// </li>
+        /// <li> <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p> </li>
         /// </ul>
         pub fn weekly_maintenance_window_start(
             mut self,
@@ -399,9 +397,7 @@ pub mod create_environment_input {
         }
         /// <p>The day and time of the week to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only. Supported input includes the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p>
-        /// </li>
+        /// <li> <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p> </li>
         /// </ul>
         pub fn set_weekly_maintenance_window_start(
             mut self,
@@ -503,7 +499,7 @@ pub mod create_environment_input {
 #[doc(hidden)]
 pub type CreateEnvironmentInputOperationOutputAlias = crate::operation::CreateEnvironment;
 #[doc(hidden)]
-pub type CreateEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateEnvironmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`CreateEnvironment`](crate::operation::CreateEnvironment)>
     #[allow(clippy::let_and_return)]
@@ -514,7 +510,7 @@ impl CreateEnvironmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateEnvironment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -611,7 +607,7 @@ impl CreateEnvironmentInput {
             "CreateEnvironment",
             "mwaa",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -667,7 +663,7 @@ pub mod create_web_login_token_input {
 #[doc(hidden)]
 pub type CreateWebLoginTokenInputOperationOutputAlias = crate::operation::CreateWebLoginToken;
 #[doc(hidden)]
-pub type CreateWebLoginTokenInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateWebLoginTokenInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWebLoginTokenInput {
     /// Consumes the builder and constructs an Operation<[`CreateWebLoginToken`](crate::operation::CreateWebLoginToken)>
     #[allow(clippy::let_and_return)]
@@ -678,7 +674,7 @@ impl CreateWebLoginTokenInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateWebLoginToken,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -769,7 +765,7 @@ impl CreateWebLoginTokenInput {
             "CreateWebLoginToken",
             "mwaa",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -817,7 +813,7 @@ pub mod delete_environment_input {
 #[doc(hidden)]
 pub type DeleteEnvironmentInputOperationOutputAlias = crate::operation::DeleteEnvironment;
 #[doc(hidden)]
-pub type DeleteEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteEnvironmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEnvironment`](crate::operation::DeleteEnvironment)>
     #[allow(clippy::let_and_return)]
@@ -828,7 +824,7 @@ impl DeleteEnvironmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEnvironment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -919,7 +915,7 @@ impl DeleteEnvironmentInput {
             "DeleteEnvironment",
             "mwaa",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -967,7 +963,7 @@ pub mod get_environment_input {
 #[doc(hidden)]
 pub type GetEnvironmentInputOperationOutputAlias = crate::operation::GetEnvironment;
 #[doc(hidden)]
-pub type GetEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetEnvironmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`GetEnvironment`](crate::operation::GetEnvironment)>
     #[allow(clippy::let_and_return)]
@@ -978,7 +974,7 @@ impl GetEnvironmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEnvironment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1069,7 +1065,7 @@ impl GetEnvironmentInput {
             "GetEnvironment",
             "mwaa",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1131,7 +1127,7 @@ pub mod list_environments_input {
 #[doc(hidden)]
 pub type ListEnvironmentsInputOperationOutputAlias = crate::operation::ListEnvironments;
 #[doc(hidden)]
-pub type ListEnvironmentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEnvironmentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEnvironmentsInput {
     /// Consumes the builder and constructs an Operation<[`ListEnvironments`](crate::operation::ListEnvironments)>
     #[allow(clippy::let_and_return)]
@@ -1142,7 +1138,7 @@ impl ListEnvironmentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEnvironments,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1235,7 +1231,7 @@ impl ListEnvironmentsInput {
             "ListEnvironments",
             "mwaa",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1285,7 +1281,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -1296,7 +1292,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1388,7 +1384,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "mwaa",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1431,9 +1427,9 @@ pub mod publish_metrics_input {
         /// To override the contents of this collection use [`set_metric_data`](Self::set_metric_data).
         ///
         /// <p>Publishes metric data points to Amazon CloudWatch. CloudWatch associates the data points with the specified metrica.</p>
-        pub fn metric_data(mut self, input: impl Into<crate::model::MetricDatum>) -> Self {
+        pub fn metric_data(mut self, input: crate::model::MetricDatum) -> Self {
             let mut v = self.metric_data.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_data = Some(v);
             self
         }
@@ -1462,7 +1458,7 @@ pub mod publish_metrics_input {
 #[doc(hidden)]
 pub type PublishMetricsInputOperationOutputAlias = crate::operation::PublishMetrics;
 #[doc(hidden)]
-pub type PublishMetricsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PublishMetricsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PublishMetricsInput {
     /// Consumes the builder and constructs an Operation<[`PublishMetrics`](crate::operation::PublishMetrics)>
     #[allow(clippy::let_and_return)]
@@ -1473,7 +1469,7 @@ impl PublishMetricsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PublishMetrics,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1575,7 +1571,7 @@ impl PublishMetricsInput {
             "PublishMetrics",
             "mwaa",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1662,7 +1658,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -1673,7 +1669,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1770,7 +1766,7 @@ impl TagResourceInput {
             "TagResource",
             "mwaa",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1849,7 +1845,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -1860,7 +1856,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1965,7 +1961,7 @@ impl UntagResourceInput {
             "UntagResource",
             "mwaa",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2206,9 +2202,7 @@ pub mod update_environment_input {
         }
         /// <p>The day and time of the week to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only. Supported input includes the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p>
-        /// </li>
+        /// <li> <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p> </li>
         /// </ul>
         pub fn weekly_maintenance_window_start(
             mut self,
@@ -2219,9 +2213,7 @@ pub mod update_environment_input {
         }
         /// <p>The day and time of the week to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only. Supported input includes the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p>
-        /// </li>
+        /// <li> <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p> </li>
         /// </ul>
         pub fn set_weekly_maintenance_window_start(
             mut self,
@@ -2296,7 +2288,7 @@ pub mod update_environment_input {
 #[doc(hidden)]
 pub type UpdateEnvironmentInputOperationOutputAlias = crate::operation::UpdateEnvironment;
 #[doc(hidden)]
-pub type UpdateEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateEnvironmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEnvironment`](crate::operation::UpdateEnvironment)>
     #[allow(clippy::let_and_return)]
@@ -2307,7 +2299,7 @@ impl UpdateEnvironmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateEnvironment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2404,7 +2396,7 @@ impl UpdateEnvironmentInput {
             "UpdateEnvironment",
             "mwaa",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2462,9 +2454,7 @@ pub struct UpdateEnvironmentInput {
     pub logging_configuration: std::option::Option<crate::model::LoggingConfigurationInput>,
     /// <p>The day and time of the week to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only. Supported input includes the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p>
-    /// </li>
+    /// <li> <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p> </li>
     /// </ul>
     pub weekly_maintenance_window_start: std::option::Option<std::string::String>,
     /// <p>The Apache Airflow <i>Web server</i> access mode. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
@@ -2540,9 +2530,7 @@ impl UpdateEnvironmentInput {
     }
     /// <p>The day and time of the week to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only. Supported input includes the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p>
-    /// </li>
+    /// <li> <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p> </li>
     /// </ul>
     pub fn weekly_maintenance_window_start(&self) -> std::option::Option<&str> {
         self.weekly_maintenance_window_start.as_deref()
@@ -2831,9 +2819,7 @@ pub struct CreateEnvironmentInput {
     pub logging_configuration: std::option::Option<crate::model::LoggingConfigurationInput>,
     /// <p>The day and time of the week to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only. Supported input includes the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p>
-    /// </li>
+    /// <li> <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p> </li>
     /// </ul>
     pub weekly_maintenance_window_start: std::option::Option<std::string::String>,
     /// <p>The key-value tag pairs you want to associate to your environment. For example, <code>"Environment": "Staging"</code>. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.</p>
@@ -2916,9 +2902,7 @@ impl CreateEnvironmentInput {
     }
     /// <p>The day and time of the week to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only. Supported input includes the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p>
-    /// </li>
+    /// <li> <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p> </li>
     /// </ul>
     pub fn weekly_maintenance_window_start(&self) -> std::option::Option<&str> {
         self.weekly_maintenance_window_start.as_deref()

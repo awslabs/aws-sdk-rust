@@ -242,8 +242,7 @@ impl SubscribeOutput {
 pub struct ListTargetsOutput {
     /// <p>The list of notification rule targets. </p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::TargetSummary>>,
-    /// <p>An enumeration token that can be used in a request to return the next batch of
-    /// results.</p>
+    /// <p>An enumeration token that can be used in a request to return the next batch of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTargetsOutput {
@@ -251,8 +250,7 @@ impl ListTargetsOutput {
     pub fn targets(&self) -> std::option::Option<&[crate::model::TargetSummary]> {
         self.targets.as_deref()
     }
-    /// <p>An enumeration token that can be used in a request to return the next batch of
-    /// results.</p>
+    /// <p>An enumeration token that can be used in a request to return the next batch of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -280,9 +278,9 @@ pub mod list_targets_output {
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The list of notification rule targets. </p>
-        pub fn targets(mut self, input: impl Into<crate::model::TargetSummary>) -> Self {
+        pub fn targets(mut self, input: crate::model::TargetSummary) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -294,14 +292,12 @@ pub mod list_targets_output {
             self.targets = input;
             self
         }
-        /// <p>An enumeration token that can be used in a request to return the next batch of
-        /// results.</p>
+        /// <p>An enumeration token that can be used in a request to return the next batch of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An enumeration token that can be used in a request to return the next batch of
-        /// results.</p>
+        /// <p>An enumeration token that can be used in a request to return the next batch of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -451,12 +447,9 @@ pub mod list_notification_rules_output {
         /// To override the contents of this collection use [`set_notification_rules`](Self::set_notification_rules).
         ///
         /// <p>The list of notification rules for the AWS account, by Amazon Resource Name (ARN) and ID. </p>
-        pub fn notification_rules(
-            mut self,
-            input: impl Into<crate::model::NotificationRuleSummary>,
-        ) -> Self {
+        pub fn notification_rules(mut self, input: crate::model::NotificationRuleSummary) -> Self {
             let mut v = self.notification_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.notification_rules = Some(v);
             self
         }
@@ -488,15 +481,13 @@ impl ListNotificationRulesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventTypesOutput {
-    /// <p>Information about each event, including service name, resource type, event ID, and event
-    /// name.</p>
+    /// <p>Information about each event, including service name, resource type, event ID, and event name.</p>
     pub event_types: std::option::Option<std::vec::Vec<crate::model::EventTypeSummary>>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEventTypesOutput {
-    /// <p>Information about each event, including service name, resource type, event ID, and event
-    /// name.</p>
+    /// <p>Information about each event, including service name, resource type, event ID, and event name.</p>
     pub fn event_types(&self) -> std::option::Option<&[crate::model::EventTypeSummary]> {
         self.event_types.as_deref()
     }
@@ -527,16 +518,14 @@ pub mod list_event_types_output {
         ///
         /// To override the contents of this collection use [`set_event_types`](Self::set_event_types).
         ///
-        /// <p>Information about each event, including service name, resource type, event ID, and event
-        /// name.</p>
-        pub fn event_types(mut self, input: impl Into<crate::model::EventTypeSummary>) -> Self {
+        /// <p>Information about each event, including service name, resource type, event ID, and event name.</p>
+        pub fn event_types(mut self, input: crate::model::EventTypeSummary) -> Self {
             let mut v = self.event_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_types = Some(v);
             self
         }
-        /// <p>Information about each event, including service name, resource type, event ID, and event
-        /// name.</p>
+        /// <p>Information about each event, including service name, resource type, event ID, and event name.</p>
         pub fn set_event_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventTypeSummary>>,
@@ -580,24 +569,19 @@ pub struct DescribeNotificationRuleOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of the event types associated with the notification rule.</p>
     pub event_types: std::option::Option<std::vec::Vec<crate::model::EventTypeSummary>>,
-    /// <p>The Amazon Resource Name (ARN) of the resource associated with the notification
-    /// rule.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource associated with the notification rule.</p>
     pub resource: std::option::Option<std::string::String>,
     /// <p>A list of the SNS topics associated with the notification rule.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::TargetSummary>>,
-    /// <p>The level of detail included in the notifications for this resource. BASIC will include only the
-    /// contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information
-    /// provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+    /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     pub detail_type: std::option::Option<crate::model::DetailType>,
     /// <p>The name or email alias of the person who created the notification rule.</p>
     pub created_by: std::option::Option<std::string::String>,
-    /// <p>The status of the notification rule. Valid statuses are on (sending notifications) or off
-    /// (not sending notifications).</p>
+    /// <p>The status of the notification rule. Valid statuses are on (sending notifications) or off (not sending notifications).</p>
     pub status: std::option::Option<crate::model::NotificationRuleStatus>,
     /// <p>The date and time the notification rule was created, in timestamp format.</p>
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date and time the notification rule was most recently updated, in timestamp
-    /// format.</p>
+    /// <p>The date and time the notification rule was most recently updated, in timestamp format.</p>
     pub last_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags associated with the notification rule.</p>
     pub tags:
@@ -616,8 +600,7 @@ impl DescribeNotificationRuleOutput {
     pub fn event_types(&self) -> std::option::Option<&[crate::model::EventTypeSummary]> {
         self.event_types.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the resource associated with the notification
-    /// rule.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource associated with the notification rule.</p>
     pub fn resource(&self) -> std::option::Option<&str> {
         self.resource.as_deref()
     }
@@ -625,9 +608,7 @@ impl DescribeNotificationRuleOutput {
     pub fn targets(&self) -> std::option::Option<&[crate::model::TargetSummary]> {
         self.targets.as_deref()
     }
-    /// <p>The level of detail included in the notifications for this resource. BASIC will include only the
-    /// contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information
-    /// provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+    /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     pub fn detail_type(&self) -> std::option::Option<&crate::model::DetailType> {
         self.detail_type.as_ref()
     }
@@ -635,8 +616,7 @@ impl DescribeNotificationRuleOutput {
     pub fn created_by(&self) -> std::option::Option<&str> {
         self.created_by.as_deref()
     }
-    /// <p>The status of the notification rule. Valid statuses are on (sending notifications) or off
-    /// (not sending notifications).</p>
+    /// <p>The status of the notification rule. Valid statuses are on (sending notifications) or off (not sending notifications).</p>
     pub fn status(&self) -> std::option::Option<&crate::model::NotificationRuleStatus> {
         self.status.as_ref()
     }
@@ -644,8 +624,7 @@ impl DescribeNotificationRuleOutput {
     pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
-    /// <p>The date and time the notification rule was most recently updated, in timestamp
-    /// format.</p>
+    /// <p>The date and time the notification rule was most recently updated, in timestamp format.</p>
     pub fn last_modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_timestamp.as_ref()
     }
@@ -720,9 +699,9 @@ pub mod describe_notification_rule_output {
         /// To override the contents of this collection use [`set_event_types`](Self::set_event_types).
         ///
         /// <p>A list of the event types associated with the notification rule.</p>
-        pub fn event_types(mut self, input: impl Into<crate::model::EventTypeSummary>) -> Self {
+        pub fn event_types(mut self, input: crate::model::EventTypeSummary) -> Self {
             let mut v = self.event_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_types = Some(v);
             self
         }
@@ -734,14 +713,12 @@ pub mod describe_notification_rule_output {
             self.event_types = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource associated with the notification
-        /// rule.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource associated with the notification rule.</p>
         pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource associated with the notification
-        /// rule.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource associated with the notification rule.</p>
         pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource = input;
             self
@@ -751,9 +728,9 @@ pub mod describe_notification_rule_output {
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>A list of the SNS topics associated with the notification rule.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::TargetSummary>) -> Self {
+        pub fn targets(mut self, input: crate::model::TargetSummary) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -765,16 +742,12 @@ pub mod describe_notification_rule_output {
             self.targets = input;
             self
         }
-        /// <p>The level of detail included in the notifications for this resource. BASIC will include only the
-        /// contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information
-        /// provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+        /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
         pub fn detail_type(mut self, input: crate::model::DetailType) -> Self {
             self.detail_type = Some(input);
             self
         }
-        /// <p>The level of detail included in the notifications for this resource. BASIC will include only the
-        /// contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information
-        /// provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+        /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
         pub fn set_detail_type(
             mut self,
             input: std::option::Option<crate::model::DetailType>,
@@ -792,14 +765,12 @@ pub mod describe_notification_rule_output {
             self.created_by = input;
             self
         }
-        /// <p>The status of the notification rule. Valid statuses are on (sending notifications) or off
-        /// (not sending notifications).</p>
+        /// <p>The status of the notification rule. Valid statuses are on (sending notifications) or off (not sending notifications).</p>
         pub fn status(mut self, input: crate::model::NotificationRuleStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the notification rule. Valid statuses are on (sending notifications) or off
-        /// (not sending notifications).</p>
+        /// <p>The status of the notification rule. Valid statuses are on (sending notifications) or off (not sending notifications).</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::NotificationRuleStatus>,
@@ -820,14 +791,12 @@ pub mod describe_notification_rule_output {
             self.created_timestamp = input;
             self
         }
-        /// <p>The date and time the notification rule was most recently updated, in timestamp
-        /// format.</p>
+        /// <p>The date and time the notification rule was most recently updated, in timestamp format.</p>
         pub fn last_modified_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_timestamp = Some(input);
             self
         }
-        /// <p>The date and time the notification rule was most recently updated, in timestamp
-        /// format.</p>
+        /// <p>The date and time the notification rule was most recently updated, in timestamp format.</p>
         pub fn set_last_modified_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,

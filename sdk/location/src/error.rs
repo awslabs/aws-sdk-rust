@@ -12,8 +12,7 @@ pub struct AssociateTrackerConsumerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateTrackerConsumerErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was unsuccessful because of a conflict.</p>
     ConflictException(crate::error::ConflictException),
@@ -21,8 +20,7 @@ pub enum AssociateTrackerConsumerErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource that you've entered was not found in your AWS account.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a>
-    /// set for Amazon Location Service.</p>
+    /// <p>The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a> set for Amazon Location Service.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied because of request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -85,8 +83,6 @@ impl AssociateTrackerConsumerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -187,8 +183,7 @@ pub struct BatchDeleteDevicePositionHistoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDeleteDevicePositionHistoryErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -260,8 +255,6 @@ impl BatchDeleteDevicePositionHistoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -350,8 +343,7 @@ pub struct BatchDeleteGeofenceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDeleteGeofenceErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -414,8 +406,6 @@ impl BatchDeleteGeofenceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -498,8 +488,7 @@ pub struct BatchEvaluateGeofencesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchEvaluateGeofencesErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -562,8 +551,6 @@ impl BatchEvaluateGeofencesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -646,8 +633,7 @@ pub struct BatchGetDevicePositionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchGetDevicePositionErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -710,8 +696,6 @@ impl BatchGetDevicePositionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -794,8 +778,7 @@ pub struct BatchPutGeofenceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchPutGeofenceErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -858,8 +841,6 @@ impl BatchPutGeofenceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -942,8 +923,7 @@ pub struct BatchUpdateDevicePositionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchUpdateDevicePositionErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1006,8 +986,6 @@ impl BatchUpdateDevicePositionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1090,8 +1068,7 @@ pub struct CalculateRouteError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CalculateRouteErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1154,8 +1131,6 @@ impl CalculateRouteError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1232,8 +1207,7 @@ pub struct CreateGeofenceCollectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateGeofenceCollectionErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was unsuccessful because of a conflict.</p>
     ConflictException(crate::error::ConflictException),
@@ -1296,8 +1270,6 @@ impl CreateGeofenceCollectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1380,8 +1352,7 @@ pub struct CreateMapError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateMapErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was unsuccessful because of a conflict.</p>
     ConflictException(crate::error::ConflictException),
@@ -1442,8 +1413,6 @@ impl CreateMapError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1511,8 +1480,7 @@ pub struct CreatePlaceIndexError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreatePlaceIndexErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was unsuccessful because of a conflict.</p>
     ConflictException(crate::error::ConflictException),
@@ -1575,8 +1543,6 @@ impl CreatePlaceIndexError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1656,8 +1622,7 @@ pub struct CreateRouteCalculatorError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateRouteCalculatorErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was unsuccessful because of a conflict.</p>
     ConflictException(crate::error::ConflictException),
@@ -1720,8 +1685,6 @@ impl CreateRouteCalculatorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1804,8 +1767,7 @@ pub struct CreateTrackerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTrackerErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was unsuccessful because of a conflict.</p>
     ConflictException(crate::error::ConflictException),
@@ -1868,8 +1830,6 @@ impl CreateTrackerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1940,8 +1900,7 @@ pub struct DeleteGeofenceCollectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteGeofenceCollectionErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2004,8 +1963,6 @@ impl DeleteGeofenceCollectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2088,8 +2045,7 @@ pub struct DeleteMapError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteMapErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2150,8 +2106,6 @@ impl DeleteMapError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2219,8 +2173,7 @@ pub struct DeletePlaceIndexError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePlaceIndexErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2283,8 +2236,6 @@ impl DeletePlaceIndexError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2367,8 +2318,7 @@ pub struct DeleteRouteCalculatorError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRouteCalculatorErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2431,8 +2381,6 @@ impl DeleteRouteCalculatorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2515,8 +2463,7 @@ pub struct DeleteTrackerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTrackerErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2579,8 +2526,6 @@ impl DeleteTrackerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2654,8 +2599,7 @@ pub struct DescribeGeofenceCollectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeGeofenceCollectionErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2718,8 +2662,6 @@ impl DescribeGeofenceCollectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2802,8 +2744,7 @@ pub struct DescribeMapError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeMapErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2864,8 +2805,6 @@ impl DescribeMapError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2936,8 +2875,7 @@ pub struct DescribePlaceIndexError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribePlaceIndexErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -3000,8 +2938,6 @@ impl DescribePlaceIndexError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3084,8 +3020,7 @@ pub struct DescribeRouteCalculatorError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeRouteCalculatorErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -3148,8 +3083,6 @@ impl DescribeRouteCalculatorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3232,8 +3165,7 @@ pub struct DescribeTrackerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTrackerErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -3296,8 +3228,6 @@ impl DescribeTrackerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3374,8 +3304,7 @@ pub struct DisassociateTrackerConsumerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateTrackerConsumerErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -3440,8 +3369,6 @@ impl DisassociateTrackerConsumerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3524,8 +3451,7 @@ pub struct GetDevicePositionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDevicePositionErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -3588,8 +3514,6 @@ impl GetDevicePositionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3672,8 +3596,7 @@ pub struct GetDevicePositionHistoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDevicePositionHistoryErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -3736,8 +3659,6 @@ impl GetDevicePositionHistoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3820,8 +3741,7 @@ pub struct GetGeofenceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetGeofenceErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -3882,8 +3802,6 @@ impl GetGeofenceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3954,8 +3872,7 @@ pub struct GetMapGlyphsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMapGlyphsErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -4016,8 +3933,6 @@ impl GetMapGlyphsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4091,8 +4006,7 @@ pub struct GetMapSpritesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMapSpritesErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -4155,8 +4069,6 @@ impl GetMapSpritesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4230,8 +4142,7 @@ pub struct GetMapStyleDescriptorError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMapStyleDescriptorErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -4294,8 +4205,6 @@ impl GetMapStyleDescriptorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4378,8 +4287,7 @@ pub struct GetMapTileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMapTileErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -4440,8 +4348,6 @@ impl GetMapTileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4512,8 +4418,7 @@ pub struct ListDevicePositionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDevicePositionsErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -4573,8 +4478,6 @@ impl ListDevicePositionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4649,8 +4552,7 @@ pub struct ListGeofenceCollectionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGeofenceCollectionsErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -4710,8 +4612,6 @@ impl ListGeofenceCollectionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4786,8 +4686,7 @@ pub struct ListGeofencesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGeofencesErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -4850,8 +4749,6 @@ impl ListGeofencesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4925,8 +4822,7 @@ pub struct ListMapsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListMapsErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -4982,8 +4878,6 @@ impl ListMapsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5046,8 +4940,7 @@ pub struct ListPlaceIndexesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPlaceIndexesErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -5107,8 +5000,6 @@ impl ListPlaceIndexesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5183,8 +5074,7 @@ pub struct ListRouteCalculatorsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRouteCalculatorsErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -5244,8 +5134,6 @@ impl ListRouteCalculatorsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5320,8 +5208,7 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -5384,8 +5271,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5468,8 +5353,7 @@ pub struct ListTrackerConsumersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTrackerConsumersErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -5532,8 +5416,6 @@ impl ListTrackerConsumersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5616,8 +5498,7 @@ pub struct ListTrackersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTrackersErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -5675,8 +5556,6 @@ impl ListTrackersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5742,8 +5621,7 @@ pub struct PutGeofenceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutGeofenceErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was unsuccessful because of a conflict.</p>
     ConflictException(crate::error::ConflictException),
@@ -5807,8 +5685,6 @@ impl PutGeofenceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5884,8 +5760,7 @@ pub struct SearchPlaceIndexForPositionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchPlaceIndexForPositionErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -5950,8 +5825,6 @@ impl SearchPlaceIndexForPositionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6021,6 +5894,162 @@ impl std::error::Error for SearchPlaceIndexForPositionError {
     }
 }
 
+/// Error type for the `SearchPlaceIndexForSuggestions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct SearchPlaceIndexForSuggestionsError {
+    /// Kind of error that occurred.
+    pub kind: SearchPlaceIndexForSuggestionsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `SearchPlaceIndexForSuggestions` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum SearchPlaceIndexForSuggestionsErrorKind {
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The resource that you've entered was not found in your AWS account.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was denied because of request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>The input failed to meet the constraints specified by the AWS service. </p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for SearchPlaceIndexForSuggestionsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            SearchPlaceIndexForSuggestionsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            SearchPlaceIndexForSuggestionsErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            SearchPlaceIndexForSuggestionsErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            SearchPlaceIndexForSuggestionsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            SearchPlaceIndexForSuggestionsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            SearchPlaceIndexForSuggestionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for SearchPlaceIndexForSuggestionsError {
+    fn code(&self) -> Option<&str> {
+        SearchPlaceIndexForSuggestionsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            SearchPlaceIndexForSuggestionsErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            SearchPlaceIndexForSuggestionsErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl SearchPlaceIndexForSuggestionsError {
+    /// Creates a new `SearchPlaceIndexForSuggestionsError`.
+    pub fn new(
+        kind: SearchPlaceIndexForSuggestionsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `SearchPlaceIndexForSuggestionsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: SearchPlaceIndexForSuggestionsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `SearchPlaceIndexForSuggestionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: SearchPlaceIndexForSuggestionsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `SearchPlaceIndexForSuggestionsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchPlaceIndexForSuggestionsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchPlaceIndexForSuggestionsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchPlaceIndexForSuggestionsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchPlaceIndexForSuggestionsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchPlaceIndexForSuggestionsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchPlaceIndexForSuggestionsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchPlaceIndexForSuggestionsErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchPlaceIndexForSuggestionsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchPlaceIndexForSuggestionsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for SearchPlaceIndexForSuggestionsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            SearchPlaceIndexForSuggestionsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            SearchPlaceIndexForSuggestionsErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            SearchPlaceIndexForSuggestionsErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            SearchPlaceIndexForSuggestionsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            SearchPlaceIndexForSuggestionsErrorKind::ValidationException(_inner) => Some(_inner),
+            SearchPlaceIndexForSuggestionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `SearchPlaceIndexForText` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6034,8 +6063,7 @@ pub struct SearchPlaceIndexForTextError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchPlaceIndexForTextErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -6098,8 +6126,6 @@ impl SearchPlaceIndexForTextError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6182,8 +6208,7 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -6244,8 +6269,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6316,8 +6339,7 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -6380,8 +6402,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6455,8 +6475,7 @@ pub struct UpdateGeofenceCollectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateGeofenceCollectionErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -6519,8 +6538,6 @@ impl UpdateGeofenceCollectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6603,8 +6620,7 @@ pub struct UpdateMapError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateMapErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -6665,8 +6681,6 @@ impl UpdateMapError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6734,8 +6748,7 @@ pub struct UpdatePlaceIndexError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdatePlaceIndexErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -6798,8 +6811,6 @@ impl UpdatePlaceIndexError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6882,8 +6893,7 @@ pub struct UpdateRouteCalculatorError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateRouteCalculatorErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -6946,8 +6956,6 @@ impl UpdateRouteCalculatorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7030,8 +7038,7 @@ pub struct UpdateTrackerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateTrackerErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -7094,8 +7101,6 @@ impl UpdateTrackerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7242,12 +7247,9 @@ pub mod validation_exception {
         /// To override the contents of this collection use [`set_field_list`](Self::set_field_list).
         ///
         /// <p>The field where the invalid entry was detected.</p>
-        pub fn field_list(
-            mut self,
-            input: impl Into<crate::model::ValidationExceptionField>,
-        ) -> Self {
+        pub fn field_list(mut self, input: crate::model::ValidationExceptionField) -> Self {
             let mut v = self.field_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.field_list = Some(v);
             self
         }
@@ -7476,8 +7478,7 @@ impl InternalServerException {
     }
 }
 
-/// <p>The request was denied because of insufficient access or permissions. Check with an
-/// administrator to verify your permissions.</p>
+/// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
@@ -7541,8 +7542,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a>
-/// set for Amazon Location Service.</p>
+/// <p>The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a> set for Amazon Location Service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {

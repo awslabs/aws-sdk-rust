@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Budgets
@@ -157,6 +157,7 @@ where
     ///
     /// See [`DescribeBudgetActionHistories`](crate::client::fluent_builders::DescribeBudgetActionHistories) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeBudgetActionHistories::into_paginator).
     pub fn describe_budget_action_histories(
         &self,
     ) -> fluent_builders::DescribeBudgetActionHistories<C, M, R> {
@@ -166,6 +167,7 @@ where
     ///
     /// See [`DescribeBudgetActionsForAccount`](crate::client::fluent_builders::DescribeBudgetActionsForAccount) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeBudgetActionsForAccount::into_paginator).
     pub fn describe_budget_actions_for_account(
         &self,
     ) -> fluent_builders::DescribeBudgetActionsForAccount<C, M, R> {
@@ -175,6 +177,7 @@ where
     ///
     /// See [`DescribeBudgetActionsForBudget`](crate::client::fluent_builders::DescribeBudgetActionsForBudget) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeBudgetActionsForBudget::into_paginator).
     pub fn describe_budget_actions_for_budget(
         &self,
     ) -> fluent_builders::DescribeBudgetActionsForBudget<C, M, R> {
@@ -184,6 +187,7 @@ where
     ///
     /// See [`DescribeBudgetPerformanceHistory`](crate::client::fluent_builders::DescribeBudgetPerformanceHistory) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeBudgetPerformanceHistory::into_paginator).
     pub fn describe_budget_performance_history(
         &self,
     ) -> fluent_builders::DescribeBudgetPerformanceHistory<C, M, R> {
@@ -193,6 +197,7 @@ where
     ///
     /// See [`DescribeBudgets`](crate::client::fluent_builders::DescribeBudgets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeBudgets::into_paginator).
     pub fn describe_budgets(&self) -> fluent_builders::DescribeBudgets<C, M, R> {
         fluent_builders::DescribeBudgets::new(self.handle.clone())
     }
@@ -200,6 +205,7 @@ where
     ///
     /// See [`DescribeNotificationsForBudget`](crate::client::fluent_builders::DescribeNotificationsForBudget) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeNotificationsForBudget::into_paginator).
     pub fn describe_notifications_for_budget(
         &self,
     ) -> fluent_builders::DescribeNotificationsForBudget<C, M, R> {
@@ -209,6 +215,7 @@ where
     ///
     /// See [`DescribeSubscribersForNotification`](crate::client::fluent_builders::DescribeSubscribersForNotification) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeSubscribersForNotification::into_paginator).
     pub fn describe_subscribers_for_notification(
         &self,
     ) -> fluent_builders::DescribeSubscribersForNotification<C, M, R> {
@@ -260,11 +267,10 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateBudget`.
     ///
-    /// <p>Creates a budget and, if included, notifications and subscribers. </p>
-    /// <important>
+    /// <p>Creates a budget and, if included, notifications and subscribers. </p> <important>
     /// <p>Only one of <code>BudgetLimit</code> or <code>PlannedBudgetLimits</code> can be present in the syntax at one time. Use the syntax that matches your case. The Request Syntax section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_CreateBudget.html#API_CreateBudget_Examples">Examples</a> section. </p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBudget<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -309,10 +315,10 @@ pub mod fluent_builders {
                 crate::input::CreateBudgetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -321,8 +327,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>accountId</code> that is associated with the budget.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The <code>accountId</code> that is associated with the budget.</p>
@@ -331,8 +337,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The budget object that you want to create.</p>
-        pub fn budget(mut self, inp: crate::model::Budget) -> Self {
-            self.inner = self.inner.budget(inp);
+        pub fn budget(mut self, input: crate::model::Budget) -> Self {
+            self.inner = self.inner.budget(input);
             self
         }
         /// <p>The budget object that you want to create.</p>
@@ -347,9 +353,9 @@ pub mod fluent_builders {
         /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.</p>
         pub fn notifications_with_subscribers(
             mut self,
-            inp: impl Into<crate::model::NotificationWithSubscribers>,
+            input: crate::model::NotificationWithSubscribers,
         ) -> Self {
-            self.inner = self.inner.notifications_with_subscribers(inp);
+            self.inner = self.inner.notifications_with_subscribers(input);
             self
         }
         /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.</p>
@@ -363,10 +369,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateBudgetAction`.
     ///
-    /// <p>
-    /// Creates a budget action.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Creates a budget action. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBudgetAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -411,10 +415,10 @@ pub mod fluent_builders {
                 crate::input::CreateBudgetActionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -423,8 +427,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
@@ -433,8 +437,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-        pub fn budget_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(inp);
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
@@ -443,8 +447,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
-        pub fn notification_type(mut self, inp: crate::model::NotificationType) -> Self {
-            self.inner = self.inner.notification_type(inp);
+        pub fn notification_type(mut self, input: crate::model::NotificationType) -> Self {
+            self.inner = self.inner.notification_type(input);
             self
         }
         /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
@@ -455,16 +459,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification_type(input);
             self
         }
-        /// <p>
-        /// The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition.
-        /// </p>
-        pub fn action_type(mut self, inp: crate::model::ActionType) -> Self {
-            self.inner = self.inner.action_type(inp);
+        /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
+        pub fn action_type(mut self, input: crate::model::ActionType) -> Self {
+            self.inner = self.inner.action_type(input);
             self
         }
-        /// <p>
-        /// The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition.
-        /// </p>
+        /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
         pub fn set_action_type(
             mut self,
             input: std::option::Option<crate::model::ActionType>,
@@ -472,16 +472,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action_type(input);
             self
         }
-        /// <p>
-        /// The trigger threshold of the action.
-        /// </p>
-        pub fn action_threshold(mut self, inp: crate::model::ActionThreshold) -> Self {
-            self.inner = self.inner.action_threshold(inp);
+        /// <p> The trigger threshold of the action. </p>
+        pub fn action_threshold(mut self, input: crate::model::ActionThreshold) -> Self {
+            self.inner = self.inner.action_threshold(input);
             self
         }
-        /// <p>
-        /// The trigger threshold of the action.
-        /// </p>
+        /// <p> The trigger threshold of the action. </p>
         pub fn set_action_threshold(
             mut self,
             input: std::option::Option<crate::model::ActionThreshold>,
@@ -489,16 +485,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action_threshold(input);
             self
         }
-        /// <p>
-        /// Specifies all of the type-specific parameters.
-        /// </p>
-        pub fn definition(mut self, inp: crate::model::Definition) -> Self {
-            self.inner = self.inner.definition(inp);
+        /// <p> Specifies all of the type-specific parameters. </p>
+        pub fn definition(mut self, input: crate::model::Definition) -> Self {
+            self.inner = self.inner.definition(input);
             self
         }
-        /// <p>
-        /// Specifies all of the type-specific parameters.
-        /// </p>
+        /// <p> Specifies all of the type-specific parameters. </p>
         pub fn set_definition(
             mut self,
             input: std::option::Option<crate::model::Definition>,
@@ -506,16 +498,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_definition(input);
             self
         }
-        /// <p>
-        /// The role passed for action execution and reversion. Roles and actions must be in the same account.
-        /// </p>
-        pub fn execution_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_role_arn(inp);
+        /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
+        pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_role_arn(input.into());
             self
         }
-        /// <p>
-        /// The role passed for action execution and reversion. Roles and actions must be in the same account.
-        /// </p>
+        /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -523,16 +511,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_execution_role_arn(input);
             self
         }
-        /// <p>
-        /// This specifies if the action needs manual or automatic approval.
-        /// </p>
-        pub fn approval_model(mut self, inp: crate::model::ApprovalModel) -> Self {
-            self.inner = self.inner.approval_model(inp);
+        /// <p> This specifies if the action needs manual or automatic approval. </p>
+        pub fn approval_model(mut self, input: crate::model::ApprovalModel) -> Self {
+            self.inner = self.inner.approval_model(input);
             self
         }
-        /// <p>
-        /// This specifies if the action needs manual or automatic approval.
-        /// </p>
+        /// <p> This specifies if the action needs manual or automatic approval. </p>
         pub fn set_approval_model(
             mut self,
             input: std::option::Option<crate::model::ApprovalModel>,
@@ -545,8 +529,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
         ///
         /// <p> A list of subscribers.</p>
-        pub fn subscribers(mut self, inp: impl Into<crate::model::Subscriber>) -> Self {
-            self.inner = self.inner.subscribers(inp);
+        pub fn subscribers(mut self, input: crate::model::Subscriber) -> Self {
+            self.inner = self.inner.subscribers(input);
             self
         }
         /// <p> A list of subscribers.</p>
@@ -561,7 +545,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateNotification`.
     ///
     /// <p>Creates a notification. You must create the budget before you create the associated notification.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNotification<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -606,10 +590,10 @@ pub mod fluent_builders {
                 crate::input::CreateNotificationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -618,8 +602,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>accountId</code> that is associated with the budget that you want to create a notification for.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The <code>accountId</code> that is associated with the budget that you want to create a notification for.</p>
@@ -628,8 +612,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the budget that you want AWS to notify you about. Budget names must be unique within an account.</p>
-        pub fn budget_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(inp);
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p>The name of the budget that you want AWS to notify you about. Budget names must be unique within an account.</p>
@@ -638,8 +622,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The notification that you want to create.</p>
-        pub fn notification(mut self, inp: crate::model::Notification) -> Self {
-            self.inner = self.inner.notification(inp);
+        pub fn notification(mut self, input: crate::model::Notification) -> Self {
+            self.inner = self.inner.notification(input);
             self
         }
         /// <p>The notification that you want to create.</p>
@@ -655,8 +639,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
         ///
         /// <p>A list of subscribers that you want to associate with the notification. Each notification can have one SNS subscriber and up to 10 email subscribers.</p>
-        pub fn subscribers(mut self, inp: impl Into<crate::model::Subscriber>) -> Self {
-            self.inner = self.inner.subscribers(inp);
+        pub fn subscribers(mut self, input: crate::model::Subscriber) -> Self {
+            self.inner = self.inner.subscribers(input);
             self
         }
         /// <p>A list of subscribers that you want to associate with the notification. Each notification can have one SNS subscriber and up to 10 email subscribers.</p>
@@ -671,7 +655,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSubscriber`.
     ///
     /// <p>Creates a subscriber. You must create the associated budget and notification before you create the subscriber.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSubscriber<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -716,10 +700,10 @@ pub mod fluent_builders {
                 crate::input::CreateSubscriberInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -728,8 +712,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.</p>
@@ -738,8 +722,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the budget that you want to subscribe to. Budget names must be unique within an account.</p>
-        pub fn budget_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(inp);
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p>The name of the budget that you want to subscribe to. Budget names must be unique within an account.</p>
@@ -748,8 +732,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The notification that you want to create a subscriber for.</p>
-        pub fn notification(mut self, inp: crate::model::Notification) -> Self {
-            self.inner = self.inner.notification(inp);
+        pub fn notification(mut self, input: crate::model::Notification) -> Self {
+            self.inner = self.inner.notification(input);
             self
         }
         /// <p>The notification that you want to create a subscriber for.</p>
@@ -761,8 +745,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The subscriber that you want to associate with a budget notification.</p>
-        pub fn subscriber(mut self, inp: crate::model::Subscriber) -> Self {
-            self.inner = self.inner.subscriber(inp);
+        pub fn subscriber(mut self, input: crate::model::Subscriber) -> Self {
+            self.inner = self.inner.subscriber(input);
             self
         }
         /// <p>The subscriber that you want to associate with a budget notification.</p>
@@ -776,11 +760,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteBudget`.
     ///
-    /// <p>Deletes a budget. You can delete your budget at any time.</p>
-    /// <important>
+    /// <p>Deletes a budget. You can delete your budget at any time.</p> <important>
     /// <p>Deleting a budget also deletes the notifications and subscribers that are associated with that budget.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBudget<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -825,10 +808,10 @@ pub mod fluent_builders {
                 crate::input::DeleteBudgetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -837,8 +820,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>accountId</code> that is associated with the budget that you want to delete.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The <code>accountId</code> that is associated with the budget that you want to delete.</p>
@@ -847,8 +830,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the budget that you want to delete.</p>
-        pub fn budget_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(inp);
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p>The name of the budget that you want to delete.</p>
@@ -859,10 +842,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteBudgetAction`.
     ///
-    /// <p>
-    /// Deletes a budget action.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Deletes a budget action. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBudgetAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -907,10 +888,10 @@ pub mod fluent_builders {
                 crate::input::DeleteBudgetActionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -919,8 +900,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
@@ -929,8 +910,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-        pub fn budget_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(inp);
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
@@ -938,16 +919,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_budget_name(input);
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
-        pub fn action_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_id(inp);
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+        pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_id(input.into());
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_action_id(input);
             self
@@ -955,11 +932,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteNotification`.
     ///
-    /// <p>Deletes a notification.</p>
-    /// <important>
+    /// <p>Deletes a notification.</p> <important>
     /// <p>Deleting a notification also deletes the subscribers that are associated with the notification.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNotification<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1004,10 +980,10 @@ pub mod fluent_builders {
                 crate::input::DeleteNotificationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1016,8 +992,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to delete.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to delete.</p>
@@ -1026,8 +1002,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the budget whose notification you want to delete.</p>
-        pub fn budget_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(inp);
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p>The name of the budget whose notification you want to delete.</p>
@@ -1036,8 +1012,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The notification that you want to delete.</p>
-        pub fn notification(mut self, inp: crate::model::Notification) -> Self {
-            self.inner = self.inner.notification(inp);
+        pub fn notification(mut self, input: crate::model::Notification) -> Self {
+            self.inner = self.inner.notification(input);
             self
         }
         /// <p>The notification that you want to delete.</p>
@@ -1051,11 +1027,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteSubscriber`.
     ///
-    /// <p>Deletes a subscriber.</p>
-    /// <important>
+    /// <p>Deletes a subscriber.</p> <important>
     /// <p>Deleting the last subscriber to a notification also deletes the notification.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSubscriber<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1100,10 +1075,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSubscriberInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1112,8 +1087,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to delete.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to delete.</p>
@@ -1122,8 +1097,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the budget whose subscriber you want to delete.</p>
-        pub fn budget_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(inp);
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p>The name of the budget whose subscriber you want to delete.</p>
@@ -1132,8 +1107,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The notification whose subscriber you want to delete.</p>
-        pub fn notification(mut self, inp: crate::model::Notification) -> Self {
-            self.inner = self.inner.notification(inp);
+        pub fn notification(mut self, input: crate::model::Notification) -> Self {
+            self.inner = self.inner.notification(input);
             self
         }
         /// <p>The notification whose subscriber you want to delete.</p>
@@ -1145,8 +1120,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The subscriber that you want to delete.</p>
-        pub fn subscriber(mut self, inp: crate::model::Subscriber) -> Self {
-            self.inner = self.inner.subscriber(inp);
+        pub fn subscriber(mut self, input: crate::model::Subscriber) -> Self {
+            self.inner = self.inner.subscriber(input);
             self
         }
         /// <p>The subscriber that you want to delete.</p>
@@ -1160,11 +1135,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeBudget`.
     ///
-    /// <p>Describes a budget.</p>
-    /// <important>
+    /// <p>Describes a budget.</p> <important>
     /// <p>The Request Syntax section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudget.html#API_DescribeBudget_Examples">Examples</a> section. </p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBudget<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1209,10 +1183,10 @@ pub mod fluent_builders {
                 crate::input::DescribeBudgetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1221,8 +1195,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>accountId</code> that is associated with the budget that you want a description of.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The <code>accountId</code> that is associated with the budget that you want a description of.</p>
@@ -1231,8 +1205,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the budget that you want a description of.</p>
-        pub fn budget_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(inp);
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p>The name of the budget that you want a description of.</p>
@@ -1243,10 +1217,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeBudgetAction`.
     ///
-    /// <p>
-    /// Describes a budget action detail.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Describes a budget action detail. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBudgetAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1291,10 +1263,10 @@ pub mod fluent_builders {
                 crate::input::DescribeBudgetActionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1303,8 +1275,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
@@ -1313,8 +1285,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-        pub fn budget_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(inp);
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
@@ -1322,16 +1294,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_budget_name(input);
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
-        pub fn action_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_id(inp);
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+        pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_id(input.into());
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_action_id(input);
             self
@@ -1339,10 +1307,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeBudgetActionHistories`.
     ///
-    /// <p>
-    /// Describes a budget action history detail.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Describes a budget action history detail. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBudgetActionHistories<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1387,10 +1353,10 @@ pub mod fluent_builders {
                 crate::input::DescribeBudgetActionHistoriesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1398,9 +1364,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeBudgetActionHistoriesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeBudgetActionHistoriesPaginator<C, M, R> {
+            crate::paginator::DescribeBudgetActionHistoriesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
@@ -1409,8 +1383,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-        pub fn budget_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(inp);
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
@@ -1418,23 +1392,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_budget_name(input);
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
-        pub fn action_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_id(inp);
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+        pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_id(input.into());
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_action_id(input);
             self
         }
         /// <p>The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
-        pub fn time_period(mut self, inp: crate::model::TimePeriod) -> Self {
-            self.inner = self.inner.time_period(inp);
+        pub fn time_period(mut self, input: crate::model::TimePeriod) -> Self {
+            self.inner = self.inner.time_period(input);
             self
         }
         /// <p>The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
@@ -1446,8 +1416,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
@@ -1456,8 +1426,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A generic string.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> A generic string.</p>
@@ -1468,10 +1438,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeBudgetActionsForAccount`.
     ///
-    /// <p>
-    /// Describes all of the budget actions for an account.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Describes all of the budget actions for an account. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBudgetActionsForAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1516,10 +1484,10 @@ pub mod fluent_builders {
                 crate::input::DescribeBudgetActionsForAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1527,9 +1495,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeBudgetActionsForAccountPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeBudgetActionsForAccountPaginator<C, M, R> {
+            crate::paginator::DescribeBudgetActionsForAccountPaginator::new(self.handle, self.inner)
+        }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
@@ -1538,8 +1514,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
@@ -1548,8 +1524,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A generic string.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> A generic string.</p>
@@ -1560,10 +1536,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeBudgetActionsForBudget`.
     ///
-    /// <p>
-    /// Describes all of the budget actions for a budget.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Describes all of the budget actions for a budget. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBudgetActionsForBudget<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1608,10 +1582,10 @@ pub mod fluent_builders {
                 crate::input::DescribeBudgetActionsForBudgetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1619,9 +1593,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeBudgetActionsForBudgetPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeBudgetActionsForBudgetPaginator<C, M, R> {
+            crate::paginator::DescribeBudgetActionsForBudgetPaginator::new(self.handle, self.inner)
+        }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
@@ -1630,8 +1612,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-        pub fn budget_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(inp);
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
@@ -1640,8 +1622,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
@@ -1650,8 +1632,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A generic string.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> A generic string.</p>
@@ -1663,7 +1645,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeBudgetPerformanceHistory`.
     ///
     /// <p>Describes the history for <code>DAILY</code>, <code>MONTHLY</code>, and <code>QUARTERLY</code> budgets. Budget history isn't available for <code>ANNUAL</code> budgets.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBudgetPerformanceHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1708,10 +1690,10 @@ pub mod fluent_builders {
                 crate::input::DescribeBudgetPerformanceHistoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1719,9 +1701,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeBudgetPerformanceHistoryPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeBudgetPerformanceHistoryPaginator<C, M, R> {
+            crate::paginator::DescribeBudgetPerformanceHistoryPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
@@ -1730,8 +1723,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-        pub fn budget_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(inp);
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
@@ -1740,8 +1733,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Retrieves how often the budget went into an <code>ALARM</code> state for the specified time period.</p>
-        pub fn time_period(mut self, inp: crate::model::TimePeriod) -> Self {
-            self.inner = self.inner.time_period(inp);
+        pub fn time_period(mut self, input: crate::model::TimePeriod) -> Self {
+            self.inner = self.inner.time_period(input);
             self
         }
         /// <p>Retrieves how often the budget went into an <code>ALARM</code> state for the specified time period.</p>
@@ -1753,8 +1746,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
@@ -1763,8 +1756,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A generic string.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> A generic string.</p>
@@ -1775,11 +1768,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeBudgets`.
     ///
-    /// <p>Lists the budgets that are associated with an account.</p>
-    /// <important>
+    /// <p>Lists the budgets that are associated with an account.</p> <important>
     /// <p>The Request Syntax section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudgets.html#API_DescribeBudgets_Examples">Examples</a> section. </p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBudgets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1824,10 +1816,10 @@ pub mod fluent_builders {
                 crate::input::DescribeBudgetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1835,9 +1827,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeBudgetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeBudgetsPaginator<C, M, R> {
+            crate::paginator::DescribeBudgetsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The <code>accountId</code> that is associated with the budgets that you want descriptions of.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The <code>accountId</code> that is associated with the budgets that you want descriptions of.</p>
@@ -1846,8 +1844,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
@@ -1856,8 +1854,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
@@ -1869,7 +1867,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeNotificationsForBudget`.
     ///
     /// <p>Lists the notifications that are associated with a budget.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeNotificationsForBudget<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1914,10 +1912,10 @@ pub mod fluent_builders {
                 crate::input::DescribeNotificationsForBudgetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1925,9 +1923,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeNotificationsForBudgetPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeNotificationsForBudgetPaginator<C, M, R> {
+            crate::paginator::DescribeNotificationsForBudgetPaginator::new(self.handle, self.inner)
+        }
         /// <p>The <code>accountId</code> that is associated with the budget whose notifications you want descriptions of.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The <code>accountId</code> that is associated with the budget whose notifications you want descriptions of.</p>
@@ -1936,8 +1942,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the budget whose notifications you want descriptions of.</p>
-        pub fn budget_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(inp);
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p>The name of the budget whose notifications you want descriptions of.</p>
@@ -1946,8 +1952,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
@@ -1956,8 +1962,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
@@ -1969,7 +1975,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSubscribersForNotification`.
     ///
     /// <p>Lists the subscribers that are associated with a notification.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSubscribersForNotification<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2016,10 +2022,10 @@ pub mod fluent_builders {
                 crate::input::DescribeSubscribersForNotificationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2027,9 +2033,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeSubscribersForNotificationPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeSubscribersForNotificationPaginator<C, M, R> {
+            crate::paginator::DescribeSubscribersForNotificationPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.</p>
@@ -2038,8 +2055,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the budget whose subscribers you want descriptions of.</p>
-        pub fn budget_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(inp);
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p>The name of the budget whose subscribers you want descriptions of.</p>
@@ -2048,8 +2065,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The notification whose subscribers you want to list.</p>
-        pub fn notification(mut self, inp: crate::model::Notification) -> Self {
-            self.inner = self.inner.notification(inp);
+        pub fn notification(mut self, input: crate::model::Notification) -> Self {
+            self.inner = self.inner.notification(input);
             self
         }
         /// <p>The notification whose subscribers you want to list.</p>
@@ -2061,8 +2078,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
@@ -2071,8 +2088,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
@@ -2083,10 +2100,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ExecuteBudgetAction`.
     ///
-    /// <p>
-    /// Executes a budget action.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Executes a budget action. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExecuteBudgetAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2131,10 +2146,10 @@ pub mod fluent_builders {
                 crate::input::ExecuteBudgetActionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2143,8 +2158,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
@@ -2153,8 +2168,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-        pub fn budget_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(inp);
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
@@ -2162,30 +2177,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_budget_name(input);
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
-        pub fn action_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_id(inp);
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+        pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_id(input.into());
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_action_id(input);
             self
         }
-        /// <p>
-        /// The type of execution.
-        /// </p>
-        pub fn execution_type(mut self, inp: crate::model::ExecutionType) -> Self {
-            self.inner = self.inner.execution_type(inp);
+        /// <p> The type of execution. </p>
+        pub fn execution_type(mut self, input: crate::model::ExecutionType) -> Self {
+            self.inner = self.inner.execution_type(input);
             self
         }
-        /// <p>
-        /// The type of execution.
-        /// </p>
+        /// <p> The type of execution. </p>
         pub fn set_execution_type(
             mut self,
             input: std::option::Option<crate::model::ExecutionType>,
@@ -2196,11 +2203,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateBudget`.
     ///
-    /// <p>Updates a budget. You can change every part of a budget except for the <code>budgetName</code> and the <code>calculatedSpend</code>. When you modify a budget, the <code>calculatedSpend</code> drops to zero until AWS has new usage data to use for forecasting.</p>
-    /// <important>
+    /// <p>Updates a budget. You can change every part of a budget except for the <code>budgetName</code> and the <code>calculatedSpend</code>. When you modify a budget, the <code>calculatedSpend</code> drops to zero until AWS has new usage data to use for forecasting.</p> <important>
     /// <p>Only one of <code>BudgetLimit</code> or <code>PlannedBudgetLimits</code> can be present in the syntax at one time. Use the syntax that matches your case. The Request Syntax section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_UpdateBudget.html#API_UpdateBudget_Examples">Examples</a> section. </p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBudget<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2245,10 +2251,10 @@ pub mod fluent_builders {
                 crate::input::UpdateBudgetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2257,8 +2263,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>accountId</code> that is associated with the budget that you want to update.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The <code>accountId</code> that is associated with the budget that you want to update.</p>
@@ -2267,8 +2273,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The budget that you want to update your budget to.</p>
-        pub fn new_budget(mut self, inp: crate::model::Budget) -> Self {
-            self.inner = self.inner.new_budget(inp);
+        pub fn new_budget(mut self, input: crate::model::Budget) -> Self {
+            self.inner = self.inner.new_budget(input);
             self
         }
         /// <p>The budget that you want to update your budget to.</p>
@@ -2279,10 +2285,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateBudgetAction`.
     ///
-    /// <p>
-    /// Updates a budget action.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Updates a budget action. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBudgetAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2327,10 +2331,10 @@ pub mod fluent_builders {
                 crate::input::UpdateBudgetActionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2339,8 +2343,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
@@ -2349,8 +2353,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-        pub fn budget_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(inp);
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
@@ -2358,23 +2362,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_budget_name(input);
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
-        pub fn action_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_id(inp);
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+        pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_id(input.into());
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_action_id(input);
             self
         }
         /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
-        pub fn notification_type(mut self, inp: crate::model::NotificationType) -> Self {
-            self.inner = self.inner.notification_type(inp);
+        pub fn notification_type(mut self, input: crate::model::NotificationType) -> Self {
+            self.inner = self.inner.notification_type(input);
             self
         }
         /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
@@ -2385,16 +2385,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification_type(input);
             self
         }
-        /// <p>
-        /// The trigger threshold of the action.
-        /// </p>
-        pub fn action_threshold(mut self, inp: crate::model::ActionThreshold) -> Self {
-            self.inner = self.inner.action_threshold(inp);
+        /// <p> The trigger threshold of the action. </p>
+        pub fn action_threshold(mut self, input: crate::model::ActionThreshold) -> Self {
+            self.inner = self.inner.action_threshold(input);
             self
         }
-        /// <p>
-        /// The trigger threshold of the action.
-        /// </p>
+        /// <p> The trigger threshold of the action. </p>
         pub fn set_action_threshold(
             mut self,
             input: std::option::Option<crate::model::ActionThreshold>,
@@ -2402,16 +2398,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action_threshold(input);
             self
         }
-        /// <p>
-        /// Specifies all of the type-specific parameters.
-        /// </p>
-        pub fn definition(mut self, inp: crate::model::Definition) -> Self {
-            self.inner = self.inner.definition(inp);
+        /// <p> Specifies all of the type-specific parameters. </p>
+        pub fn definition(mut self, input: crate::model::Definition) -> Self {
+            self.inner = self.inner.definition(input);
             self
         }
-        /// <p>
-        /// Specifies all of the type-specific parameters.
-        /// </p>
+        /// <p> Specifies all of the type-specific parameters. </p>
         pub fn set_definition(
             mut self,
             input: std::option::Option<crate::model::Definition>,
@@ -2419,16 +2411,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_definition(input);
             self
         }
-        /// <p>
-        /// The role passed for action execution and reversion. Roles and actions must be in the same account.
-        /// </p>
-        pub fn execution_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_role_arn(inp);
+        /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
+        pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_role_arn(input.into());
             self
         }
-        /// <p>
-        /// The role passed for action execution and reversion. Roles and actions must be in the same account.
-        /// </p>
+        /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2436,16 +2424,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_execution_role_arn(input);
             self
         }
-        /// <p>
-        /// This specifies if the action needs manual or automatic approval.
-        /// </p>
-        pub fn approval_model(mut self, inp: crate::model::ApprovalModel) -> Self {
-            self.inner = self.inner.approval_model(inp);
+        /// <p> This specifies if the action needs manual or automatic approval. </p>
+        pub fn approval_model(mut self, input: crate::model::ApprovalModel) -> Self {
+            self.inner = self.inner.approval_model(input);
             self
         }
-        /// <p>
-        /// This specifies if the action needs manual or automatic approval.
-        /// </p>
+        /// <p> This specifies if the action needs manual or automatic approval. </p>
         pub fn set_approval_model(
             mut self,
             input: std::option::Option<crate::model::ApprovalModel>,
@@ -2458,8 +2442,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
         ///
         /// <p> A list of subscribers.</p>
-        pub fn subscribers(mut self, inp: impl Into<crate::model::Subscriber>) -> Self {
-            self.inner = self.inner.subscribers(inp);
+        pub fn subscribers(mut self, input: crate::model::Subscriber) -> Self {
+            self.inner = self.inner.subscribers(input);
             self
         }
         /// <p> A list of subscribers.</p>
@@ -2474,7 +2458,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateNotification`.
     ///
     /// <p>Updates a notification.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateNotification<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2519,10 +2503,10 @@ pub mod fluent_builders {
                 crate::input::UpdateNotificationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2531,8 +2515,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to update.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to update.</p>
@@ -2541,8 +2525,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the budget whose notification you want to update.</p>
-        pub fn budget_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(inp);
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p>The name of the budget whose notification you want to update.</p>
@@ -2551,8 +2535,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The previous notification that is associated with a budget.</p>
-        pub fn old_notification(mut self, inp: crate::model::Notification) -> Self {
-            self.inner = self.inner.old_notification(inp);
+        pub fn old_notification(mut self, input: crate::model::Notification) -> Self {
+            self.inner = self.inner.old_notification(input);
             self
         }
         /// <p>The previous notification that is associated with a budget.</p>
@@ -2564,8 +2548,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated notification to be associated with a budget.</p>
-        pub fn new_notification(mut self, inp: crate::model::Notification) -> Self {
-            self.inner = self.inner.new_notification(inp);
+        pub fn new_notification(mut self, input: crate::model::Notification) -> Self {
+            self.inner = self.inner.new_notification(input);
             self
         }
         /// <p>The updated notification to be associated with a budget.</p>
@@ -2580,7 +2564,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSubscriber`.
     ///
     /// <p>Updates a subscriber.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSubscriber<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2625,10 +2609,10 @@ pub mod fluent_builders {
                 crate::input::UpdateSubscriberInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2637,8 +2621,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to update.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to update.</p>
@@ -2647,8 +2631,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the budget whose subscriber you want to update.</p>
-        pub fn budget_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(inp);
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p>The name of the budget whose subscriber you want to update.</p>
@@ -2657,8 +2641,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The notification whose subscriber you want to update.</p>
-        pub fn notification(mut self, inp: crate::model::Notification) -> Self {
-            self.inner = self.inner.notification(inp);
+        pub fn notification(mut self, input: crate::model::Notification) -> Self {
+            self.inner = self.inner.notification(input);
             self
         }
         /// <p>The notification whose subscriber you want to update.</p>
@@ -2670,8 +2654,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The previous subscriber that is associated with a budget notification.</p>
-        pub fn old_subscriber(mut self, inp: crate::model::Subscriber) -> Self {
-            self.inner = self.inner.old_subscriber(inp);
+        pub fn old_subscriber(mut self, input: crate::model::Subscriber) -> Self {
+            self.inner = self.inner.old_subscriber(input);
             self
         }
         /// <p>The previous subscriber that is associated with a budget notification.</p>
@@ -2683,8 +2667,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated subscriber that is associated with a budget notification.</p>
-        pub fn new_subscriber(mut self, inp: crate::model::Subscriber) -> Self {
-            self.inner = self.inner.new_subscriber(inp);
+        pub fn new_subscriber(mut self, input: crate::model::Subscriber) -> Self {
+            self.inner = self.inner.new_subscriber(input);
             self
         }
         /// <p>The updated subscriber that is associated with a budget notification.</p>
@@ -2697,6 +2681,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

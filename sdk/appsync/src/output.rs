@@ -229,6 +229,63 @@ impl UpdateFunctionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateDomainNameOutput {
+    /// <p>The configuration for the <code>DomainName</code>.</p>
+    pub domain_name_config: std::option::Option<crate::model::DomainNameConfig>,
+}
+impl UpdateDomainNameOutput {
+    /// <p>The configuration for the <code>DomainName</code>.</p>
+    pub fn domain_name_config(&self) -> std::option::Option<&crate::model::DomainNameConfig> {
+        self.domain_name_config.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateDomainNameOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateDomainNameOutput");
+        formatter.field("domain_name_config", &self.domain_name_config);
+        formatter.finish()
+    }
+}
+/// See [`UpdateDomainNameOutput`](crate::output::UpdateDomainNameOutput)
+pub mod update_domain_name_output {
+    /// A builder for [`UpdateDomainNameOutput`](crate::output::UpdateDomainNameOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_name_config: std::option::Option<crate::model::DomainNameConfig>,
+    }
+    impl Builder {
+        /// <p>The configuration for the <code>DomainName</code>.</p>
+        pub fn domain_name_config(mut self, input: crate::model::DomainNameConfig) -> Self {
+            self.domain_name_config = Some(input);
+            self
+        }
+        /// <p>The configuration for the <code>DomainName</code>.</p>
+        pub fn set_domain_name_config(
+            mut self,
+            input: std::option::Option<crate::model::DomainNameConfig>,
+        ) -> Self {
+            self.domain_name_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateDomainNameOutput`](crate::output::UpdateDomainNameOutput)
+        pub fn build(self) -> crate::output::UpdateDomainNameOutput {
+            crate::output::UpdateDomainNameOutput {
+                domain_name_config: self.domain_name_config,
+            }
+        }
+    }
+}
+impl UpdateDomainNameOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDomainNameOutput`](crate::output::UpdateDomainNameOutput)
+    pub fn builder() -> crate::output::update_domain_name_output::Builder {
+        crate::output::update_domain_name_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataSourceOutput {
     /// <p>The updated <code>DataSource</code> object.</p>
     pub data_source: std::option::Option<crate::model::DataSource>,
@@ -455,13 +512,11 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSchemaCreationOutput {
-    /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When
-    /// the schema is in the ACTIVE state, you can add data.</p>
+    /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
     pub status: std::option::Option<crate::model::SchemaStatus>,
 }
 impl StartSchemaCreationOutput {
-    /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When
-    /// the schema is in the ACTIVE state, you can add data.</p>
+    /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::SchemaStatus> {
         self.status.as_ref()
     }
@@ -482,14 +537,12 @@ pub mod start_schema_creation_output {
         pub(crate) status: std::option::Option<crate::model::SchemaStatus>,
     }
     impl Builder {
-        /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When
-        /// the schema is in the ACTIVE state, you can add data.</p>
+        /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
         pub fn status(mut self, input: crate::model::SchemaStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When
-        /// the schema is in the ACTIVE state, you can add data.</p>
+        /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::SchemaStatus>,
@@ -518,8 +571,7 @@ impl StartSchemaCreationOutput {
 pub struct ListTypesOutput {
     /// <p>The <code>Type</code> objects.</p>
     pub types: std::option::Option<std::vec::Vec<crate::model::Type>>,
-    /// <p>An identifier to be passed in the next request to this operation to return the next set
-    /// of items in the list.</p>
+    /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTypesOutput {
@@ -527,8 +579,7 @@ impl ListTypesOutput {
     pub fn types(&self) -> std::option::Option<&[crate::model::Type]> {
         self.types.as_deref()
     }
-    /// <p>An identifier to be passed in the next request to this operation to return the next set
-    /// of items in the list.</p>
+    /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -556,9 +607,9 @@ pub mod list_types_output {
         /// To override the contents of this collection use [`set_types`](Self::set_types).
         ///
         /// <p>The <code>Type</code> objects.</p>
-        pub fn types(mut self, input: impl Into<crate::model::Type>) -> Self {
+        pub fn types(mut self, input: crate::model::Type) -> Self {
             let mut v = self.types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.types = Some(v);
             self
         }
@@ -570,14 +621,12 @@ pub mod list_types_output {
             self.types = input;
             self
         }
-        /// <p>An identifier to be passed in the next request to this operation to return the next set
-        /// of items in the list.</p>
+        /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier to be passed in the next request to this operation to return the next set
-        /// of items in the list.</p>
+        /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -677,7 +726,7 @@ impl ListTagsForResourceOutput {
 pub struct ListResolversByFunctionOutput {
     /// <p>The list of resolvers.</p>
     pub resolvers: std::option::Option<std::vec::Vec<crate::model::Resolver>>,
-    /// <p>An identifier that can be used to return the next set of items in the list.</p>
+    /// <p>An identifier that you can use to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResolversByFunctionOutput {
@@ -685,7 +734,7 @@ impl ListResolversByFunctionOutput {
     pub fn resolvers(&self) -> std::option::Option<&[crate::model::Resolver]> {
         self.resolvers.as_deref()
     }
-    /// <p>An identifier that can be used to return the next set of items in the list.</p>
+    /// <p>An identifier that you can use to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -713,9 +762,9 @@ pub mod list_resolvers_by_function_output {
         /// To override the contents of this collection use [`set_resolvers`](Self::set_resolvers).
         ///
         /// <p>The list of resolvers.</p>
-        pub fn resolvers(mut self, input: impl Into<crate::model::Resolver>) -> Self {
+        pub fn resolvers(mut self, input: crate::model::Resolver) -> Self {
             let mut v = self.resolvers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resolvers = Some(v);
             self
         }
@@ -727,12 +776,12 @@ pub mod list_resolvers_by_function_output {
             self.resolvers = input;
             self
         }
-        /// <p>An identifier that can be used to return the next set of items in the list.</p>
+        /// <p>An identifier that you can use to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that can be used to return the next set of items in the list.</p>
+        /// <p>An identifier that you can use to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -759,8 +808,7 @@ impl ListResolversByFunctionOutput {
 pub struct ListResolversOutput {
     /// <p>The <code>Resolver</code> objects.</p>
     pub resolvers: std::option::Option<std::vec::Vec<crate::model::Resolver>>,
-    /// <p>An identifier to be passed in the next request to this operation to return the next set
-    /// of items in the list.</p>
+    /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResolversOutput {
@@ -768,8 +816,7 @@ impl ListResolversOutput {
     pub fn resolvers(&self) -> std::option::Option<&[crate::model::Resolver]> {
         self.resolvers.as_deref()
     }
-    /// <p>An identifier to be passed in the next request to this operation to return the next set
-    /// of items in the list.</p>
+    /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -797,9 +844,9 @@ pub mod list_resolvers_output {
         /// To override the contents of this collection use [`set_resolvers`](Self::set_resolvers).
         ///
         /// <p>The <code>Resolver</code> objects.</p>
-        pub fn resolvers(mut self, input: impl Into<crate::model::Resolver>) -> Self {
+        pub fn resolvers(mut self, input: crate::model::Resolver) -> Self {
             let mut v = self.resolvers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resolvers = Some(v);
             self
         }
@@ -811,14 +858,12 @@ pub mod list_resolvers_output {
             self.resolvers = input;
             self
         }
-        /// <p>An identifier to be passed in the next request to this operation to return the next set
-        /// of items in the list.</p>
+        /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier to be passed in the next request to this operation to return the next set
-        /// of items in the list.</p>
+        /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -845,8 +890,7 @@ impl ListResolversOutput {
 pub struct ListGraphqlApisOutput {
     /// <p>The <code>GraphqlApi</code> objects.</p>
     pub graphql_apis: std::option::Option<std::vec::Vec<crate::model::GraphqlApi>>,
-    /// <p>An identifier to be passed in the next request to this operation to return the next set
-    /// of items in the list.</p>
+    /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGraphqlApisOutput {
@@ -854,8 +898,7 @@ impl ListGraphqlApisOutput {
     pub fn graphql_apis(&self) -> std::option::Option<&[crate::model::GraphqlApi]> {
         self.graphql_apis.as_deref()
     }
-    /// <p>An identifier to be passed in the next request to this operation to return the next set
-    /// of items in the list.</p>
+    /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -883,9 +926,9 @@ pub mod list_graphql_apis_output {
         /// To override the contents of this collection use [`set_graphql_apis`](Self::set_graphql_apis).
         ///
         /// <p>The <code>GraphqlApi</code> objects.</p>
-        pub fn graphql_apis(mut self, input: impl Into<crate::model::GraphqlApi>) -> Self {
+        pub fn graphql_apis(mut self, input: crate::model::GraphqlApi) -> Self {
             let mut v = self.graphql_apis.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.graphql_apis = Some(v);
             self
         }
@@ -897,14 +940,12 @@ pub mod list_graphql_apis_output {
             self.graphql_apis = input;
             self
         }
-        /// <p>An identifier to be passed in the next request to this operation to return the next set
-        /// of items in the list.</p>
+        /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier to be passed in the next request to this operation to return the next set
-        /// of items in the list.</p>
+        /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -931,8 +972,7 @@ impl ListGraphqlApisOutput {
 pub struct ListFunctionsOutput {
     /// <p>A list of <code>Function</code> objects.</p>
     pub functions: std::option::Option<std::vec::Vec<crate::model::FunctionConfiguration>>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFunctionsOutput {
@@ -940,8 +980,7 @@ impl ListFunctionsOutput {
     pub fn functions(&self) -> std::option::Option<&[crate::model::FunctionConfiguration]> {
         self.functions.as_deref()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -970,9 +1009,9 @@ pub mod list_functions_output {
         /// To override the contents of this collection use [`set_functions`](Self::set_functions).
         ///
         /// <p>A list of <code>Function</code> objects.</p>
-        pub fn functions(mut self, input: impl Into<crate::model::FunctionConfiguration>) -> Self {
+        pub fn functions(mut self, input: crate::model::FunctionConfiguration) -> Self {
             let mut v = self.functions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.functions = Some(v);
             self
         }
@@ -984,14 +1023,12 @@ pub mod list_functions_output {
             self.functions = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1015,11 +1052,93 @@ impl ListFunctionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListDomainNamesOutput {
+    /// <p>Lists configurations for multiple domain names.</p>
+    pub domain_name_configs: std::option::Option<std::vec::Vec<crate::model::DomainNameConfig>>,
+    /// <p>The API token.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDomainNamesOutput {
+    /// <p>Lists configurations for multiple domain names.</p>
+    pub fn domain_name_configs(&self) -> std::option::Option<&[crate::model::DomainNameConfig]> {
+        self.domain_name_configs.as_deref()
+    }
+    /// <p>The API token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListDomainNamesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListDomainNamesOutput");
+        formatter.field("domain_name_configs", &self.domain_name_configs);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput)
+pub mod list_domain_names_output {
+    /// A builder for [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_name_configs:
+            std::option::Option<std::vec::Vec<crate::model::DomainNameConfig>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `domain_name_configs`.
+        ///
+        /// To override the contents of this collection use [`set_domain_name_configs`](Self::set_domain_name_configs).
+        ///
+        /// <p>Lists configurations for multiple domain names.</p>
+        pub fn domain_name_configs(mut self, input: crate::model::DomainNameConfig) -> Self {
+            let mut v = self.domain_name_configs.unwrap_or_default();
+            v.push(input);
+            self.domain_name_configs = Some(v);
+            self
+        }
+        /// <p>Lists configurations for multiple domain names.</p>
+        pub fn set_domain_name_configs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DomainNameConfig>>,
+        ) -> Self {
+            self.domain_name_configs = input;
+            self
+        }
+        /// <p>The API token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The API token.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput)
+        pub fn build(self) -> crate::output::ListDomainNamesOutput {
+            crate::output::ListDomainNamesOutput {
+                domain_name_configs: self.domain_name_configs,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListDomainNamesOutput {
+    /// Creates a new builder-style object to manufacture [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput)
+    pub fn builder() -> crate::output::list_domain_names_output::Builder {
+        crate::output::list_domain_names_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataSourcesOutput {
     /// <p>The <code>DataSource</code> objects.</p>
     pub data_sources: std::option::Option<std::vec::Vec<crate::model::DataSource>>,
-    /// <p>An identifier to be passed in the next request to this operation to return the next set
-    /// of items in the list.</p>
+    /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDataSourcesOutput {
@@ -1027,8 +1146,7 @@ impl ListDataSourcesOutput {
     pub fn data_sources(&self) -> std::option::Option<&[crate::model::DataSource]> {
         self.data_sources.as_deref()
     }
-    /// <p>An identifier to be passed in the next request to this operation to return the next set
-    /// of items in the list.</p>
+    /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1056,9 +1174,9 @@ pub mod list_data_sources_output {
         /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
         ///
         /// <p>The <code>DataSource</code> objects.</p>
-        pub fn data_sources(mut self, input: impl Into<crate::model::DataSource>) -> Self {
+        pub fn data_sources(mut self, input: crate::model::DataSource) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_sources = Some(v);
             self
         }
@@ -1070,14 +1188,12 @@ pub mod list_data_sources_output {
             self.data_sources = input;
             self
         }
-        /// <p>An identifier to be passed in the next request to this operation to return the next set
-        /// of items in the list.</p>
+        /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier to be passed in the next request to this operation to return the next set
-        /// of items in the list.</p>
+        /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1104,8 +1220,7 @@ impl ListDataSourcesOutput {
 pub struct ListApiKeysOutput {
     /// <p>The <code>ApiKey</code> objects.</p>
     pub api_keys: std::option::Option<std::vec::Vec<crate::model::ApiKey>>,
-    /// <p>An identifier to be passed in the next request to this operation to return the next set
-    /// of items in the list.</p>
+    /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApiKeysOutput {
@@ -1113,8 +1228,7 @@ impl ListApiKeysOutput {
     pub fn api_keys(&self) -> std::option::Option<&[crate::model::ApiKey]> {
         self.api_keys.as_deref()
     }
-    /// <p>An identifier to be passed in the next request to this operation to return the next set
-    /// of items in the list.</p>
+    /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1142,9 +1256,9 @@ pub mod list_api_keys_output {
         /// To override the contents of this collection use [`set_api_keys`](Self::set_api_keys).
         ///
         /// <p>The <code>ApiKey</code> objects.</p>
-        pub fn api_keys(mut self, input: impl Into<crate::model::ApiKey>) -> Self {
+        pub fn api_keys(mut self, input: crate::model::ApiKey) -> Self {
             let mut v = self.api_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.api_keys = Some(v);
             self
         }
@@ -1156,14 +1270,12 @@ pub mod list_api_keys_output {
             self.api_keys = input;
             self
         }
-        /// <p>An identifier to be passed in the next request to this operation to return the next set
-        /// of items in the list.</p>
+        /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier to be passed in the next request to this operation to return the next set
-        /// of items in the list.</p>
+        /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1242,15 +1354,13 @@ impl GetTypeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSchemaCreationStatusOutput {
-    /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When
-    /// the schema is in the ACTIVE state, you can add data.</p>
+    /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
     pub status: std::option::Option<crate::model::SchemaStatus>,
     /// <p>Detailed information about the status of the schema creation operation.</p>
     pub details: std::option::Option<std::string::String>,
 }
 impl GetSchemaCreationStatusOutput {
-    /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When
-    /// the schema is in the ACTIVE state, you can add data.</p>
+    /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::SchemaStatus> {
         self.status.as_ref()
     }
@@ -1277,14 +1387,12 @@ pub mod get_schema_creation_status_output {
         pub(crate) details: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When
-        /// the schema is in the ACTIVE state, you can add data.</p>
+        /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
         pub fn status(mut self, input: crate::model::SchemaStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When
-        /// the schema is in the ACTIVE state, you can add data.</p>
+        /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::SchemaStatus>,
@@ -1377,14 +1485,12 @@ impl GetResolverOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIntrospectionSchemaOutput {
     /// <p>The schema, in GraphQL Schema Definition Language (SDL) format.</p>
-    /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL
-    /// documentation</a>.</p>
+    /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
     pub schema: std::option::Option<aws_smithy_types::Blob>,
 }
 impl GetIntrospectionSchemaOutput {
     /// <p>The schema, in GraphQL Schema Definition Language (SDL) format.</p>
-    /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL
-    /// documentation</a>.</p>
+    /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
     pub fn schema(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.schema.as_ref()
     }
@@ -1406,15 +1512,13 @@ pub mod get_introspection_schema_output {
     }
     impl Builder {
         /// <p>The schema, in GraphQL Schema Definition Language (SDL) format.</p>
-        /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL
-        /// documentation</a>.</p>
+        /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
         pub fn schema(mut self, input: aws_smithy_types::Blob) -> Self {
             self.schema = Some(input);
             self
         }
         /// <p>The schema, in GraphQL Schema Definition Language (SDL) format.</p>
-        /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL
-        /// documentation</a>.</p>
+        /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
         pub fn set_schema(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.schema = input;
             self
@@ -1556,6 +1660,63 @@ impl GetFunctionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetDomainNameOutput {
+    /// <p>The configuration for the <code>DomainName</code>.</p>
+    pub domain_name_config: std::option::Option<crate::model::DomainNameConfig>,
+}
+impl GetDomainNameOutput {
+    /// <p>The configuration for the <code>DomainName</code>.</p>
+    pub fn domain_name_config(&self) -> std::option::Option<&crate::model::DomainNameConfig> {
+        self.domain_name_config.as_ref()
+    }
+}
+impl std::fmt::Debug for GetDomainNameOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetDomainNameOutput");
+        formatter.field("domain_name_config", &self.domain_name_config);
+        formatter.finish()
+    }
+}
+/// See [`GetDomainNameOutput`](crate::output::GetDomainNameOutput)
+pub mod get_domain_name_output {
+    /// A builder for [`GetDomainNameOutput`](crate::output::GetDomainNameOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_name_config: std::option::Option<crate::model::DomainNameConfig>,
+    }
+    impl Builder {
+        /// <p>The configuration for the <code>DomainName</code>.</p>
+        pub fn domain_name_config(mut self, input: crate::model::DomainNameConfig) -> Self {
+            self.domain_name_config = Some(input);
+            self
+        }
+        /// <p>The configuration for the <code>DomainName</code>.</p>
+        pub fn set_domain_name_config(
+            mut self,
+            input: std::option::Option<crate::model::DomainNameConfig>,
+        ) -> Self {
+            self.domain_name_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetDomainNameOutput`](crate::output::GetDomainNameOutput)
+        pub fn build(self) -> crate::output::GetDomainNameOutput {
+            crate::output::GetDomainNameOutput {
+                domain_name_config: self.domain_name_config,
+            }
+        }
+    }
+}
+impl GetDomainNameOutput {
+    /// Creates a new builder-style object to manufacture [`GetDomainNameOutput`](crate::output::GetDomainNameOutput)
+    pub fn builder() -> crate::output::get_domain_name_output::Builder {
+        crate::output::get_domain_name_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataSourceOutput {
     /// <p>The <code>DataSource</code> object.</p>
     pub data_source: std::option::Option<crate::model::DataSource>,
@@ -1664,6 +1825,63 @@ impl GetApiCacheOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetApiAssociationOutput {
+    /// <p>The <code>ApiAssociation</code> object.</p>
+    pub api_association: std::option::Option<crate::model::ApiAssociation>,
+}
+impl GetApiAssociationOutput {
+    /// <p>The <code>ApiAssociation</code> object.</p>
+    pub fn api_association(&self) -> std::option::Option<&crate::model::ApiAssociation> {
+        self.api_association.as_ref()
+    }
+}
+impl std::fmt::Debug for GetApiAssociationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetApiAssociationOutput");
+        formatter.field("api_association", &self.api_association);
+        formatter.finish()
+    }
+}
+/// See [`GetApiAssociationOutput`](crate::output::GetApiAssociationOutput)
+pub mod get_api_association_output {
+    /// A builder for [`GetApiAssociationOutput`](crate::output::GetApiAssociationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) api_association: std::option::Option<crate::model::ApiAssociation>,
+    }
+    impl Builder {
+        /// <p>The <code>ApiAssociation</code> object.</p>
+        pub fn api_association(mut self, input: crate::model::ApiAssociation) -> Self {
+            self.api_association = Some(input);
+            self
+        }
+        /// <p>The <code>ApiAssociation</code> object.</p>
+        pub fn set_api_association(
+            mut self,
+            input: std::option::Option<crate::model::ApiAssociation>,
+        ) -> Self {
+            self.api_association = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetApiAssociationOutput`](crate::output::GetApiAssociationOutput)
+        pub fn build(self) -> crate::output::GetApiAssociationOutput {
+            crate::output::GetApiAssociationOutput {
+                api_association: self.api_association,
+            }
+        }
+    }
+}
+impl GetApiAssociationOutput {
+    /// Creates a new builder-style object to manufacture [`GetApiAssociationOutput`](crate::output::GetApiAssociationOutput)
+    pub fn builder() -> crate::output::get_api_association_output::Builder {
+        crate::output::get_api_association_output::Builder::default()
+    }
+}
+
 /// <p>Represents the output of a <code>FlushApiCache</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1691,6 +1909,36 @@ impl FlushApiCacheOutput {
     /// Creates a new builder-style object to manufacture [`FlushApiCacheOutput`](crate::output::FlushApiCacheOutput)
     pub fn builder() -> crate::output::flush_api_cache_output::Builder {
         crate::output::flush_api_cache_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisassociateApiOutput {}
+impl std::fmt::Debug for DisassociateApiOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisassociateApiOutput");
+        formatter.finish()
+    }
+}
+/// See [`DisassociateApiOutput`](crate::output::DisassociateApiOutput)
+pub mod disassociate_api_output {
+    /// A builder for [`DisassociateApiOutput`](crate::output::DisassociateApiOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DisassociateApiOutput`](crate::output::DisassociateApiOutput)
+        pub fn build(self) -> crate::output::DisassociateApiOutput {
+            crate::output::DisassociateApiOutput {}
+        }
+    }
+}
+impl DisassociateApiOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateApiOutput`](crate::output::DisassociateApiOutput)
+    pub fn builder() -> crate::output::disassociate_api_output::Builder {
+        crate::output::disassociate_api_output::Builder::default()
     }
 }
 
@@ -1811,6 +2059,36 @@ impl DeleteFunctionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFunctionOutput`](crate::output::DeleteFunctionOutput)
     pub fn builder() -> crate::output::delete_function_output::Builder {
         crate::output::delete_function_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteDomainNameOutput {}
+impl std::fmt::Debug for DeleteDomainNameOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteDomainNameOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteDomainNameOutput`](crate::output::DeleteDomainNameOutput)
+pub mod delete_domain_name_output {
+    /// A builder for [`DeleteDomainNameOutput`](crate::output::DeleteDomainNameOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteDomainNameOutput`](crate::output::DeleteDomainNameOutput)
+        pub fn build(self) -> crate::output::DeleteDomainNameOutput {
+            crate::output::DeleteDomainNameOutput {}
+        }
+    }
+}
+impl DeleteDomainNameOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDomainNameOutput`](crate::output::DeleteDomainNameOutput)
+    pub fn builder() -> crate::output::delete_domain_name_output::Builder {
+        crate::output::delete_domain_name_output::Builder::default()
     }
 }
 
@@ -2134,6 +2412,63 @@ impl CreateFunctionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateDomainNameOutput {
+    /// <p>The configuration for the <code>DomainName</code>.</p>
+    pub domain_name_config: std::option::Option<crate::model::DomainNameConfig>,
+}
+impl CreateDomainNameOutput {
+    /// <p>The configuration for the <code>DomainName</code>.</p>
+    pub fn domain_name_config(&self) -> std::option::Option<&crate::model::DomainNameConfig> {
+        self.domain_name_config.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateDomainNameOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateDomainNameOutput");
+        formatter.field("domain_name_config", &self.domain_name_config);
+        formatter.finish()
+    }
+}
+/// See [`CreateDomainNameOutput`](crate::output::CreateDomainNameOutput)
+pub mod create_domain_name_output {
+    /// A builder for [`CreateDomainNameOutput`](crate::output::CreateDomainNameOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) domain_name_config: std::option::Option<crate::model::DomainNameConfig>,
+    }
+    impl Builder {
+        /// <p>The configuration for the <code>DomainName</code>.</p>
+        pub fn domain_name_config(mut self, input: crate::model::DomainNameConfig) -> Self {
+            self.domain_name_config = Some(input);
+            self
+        }
+        /// <p>The configuration for the <code>DomainName</code>.</p>
+        pub fn set_domain_name_config(
+            mut self,
+            input: std::option::Option<crate::model::DomainNameConfig>,
+        ) -> Self {
+            self.domain_name_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateDomainNameOutput`](crate::output::CreateDomainNameOutput)
+        pub fn build(self) -> crate::output::CreateDomainNameOutput {
+            crate::output::CreateDomainNameOutput {
+                domain_name_config: self.domain_name_config,
+            }
+        }
+    }
+}
+impl CreateDomainNameOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDomainNameOutput`](crate::output::CreateDomainNameOutput)
+    pub fn builder() -> crate::output::create_domain_name_output::Builder {
+        crate::output::create_domain_name_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataSourceOutput {
     /// <p>The <code>DataSource</code> object.</p>
     pub data_source: std::option::Option<crate::model::DataSource>,
@@ -2293,5 +2628,62 @@ impl CreateApiCacheOutput {
     /// Creates a new builder-style object to manufacture [`CreateApiCacheOutput`](crate::output::CreateApiCacheOutput)
     pub fn builder() -> crate::output::create_api_cache_output::Builder {
         crate::output::create_api_cache_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociateApiOutput {
+    /// <p>The <code>ApiAssociation</code> object.</p>
+    pub api_association: std::option::Option<crate::model::ApiAssociation>,
+}
+impl AssociateApiOutput {
+    /// <p>The <code>ApiAssociation</code> object.</p>
+    pub fn api_association(&self) -> std::option::Option<&crate::model::ApiAssociation> {
+        self.api_association.as_ref()
+    }
+}
+impl std::fmt::Debug for AssociateApiOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociateApiOutput");
+        formatter.field("api_association", &self.api_association);
+        formatter.finish()
+    }
+}
+/// See [`AssociateApiOutput`](crate::output::AssociateApiOutput)
+pub mod associate_api_output {
+    /// A builder for [`AssociateApiOutput`](crate::output::AssociateApiOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) api_association: std::option::Option<crate::model::ApiAssociation>,
+    }
+    impl Builder {
+        /// <p>The <code>ApiAssociation</code> object.</p>
+        pub fn api_association(mut self, input: crate::model::ApiAssociation) -> Self {
+            self.api_association = Some(input);
+            self
+        }
+        /// <p>The <code>ApiAssociation</code> object.</p>
+        pub fn set_api_association(
+            mut self,
+            input: std::option::Option<crate::model::ApiAssociation>,
+        ) -> Self {
+            self.api_association = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssociateApiOutput`](crate::output::AssociateApiOutput)
+        pub fn build(self) -> crate::output::AssociateApiOutput {
+            crate::output::AssociateApiOutput {
+                api_association: self.api_association,
+            }
+        }
+    }
+}
+impl AssociateApiOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateApiOutput`](crate::output::AssociateApiOutput)
+    pub fn builder() -> crate::output::associate_api_output::Builder {
+        crate::output::associate_api_output::Builder::default()
     }
 }

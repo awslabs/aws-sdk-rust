@@ -11446,6 +11446,409 @@ pub fn parse_get_triggers_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_unfiltered_partition_metadata_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetUnfilteredPartitionMetadataOutput,
+    crate::error::GetUnfilteredPartitionMetadataError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetUnfilteredPartitionMetadataError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetUnfilteredPartitionMetadataError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "EntityNotFoundException" => crate::error::GetUnfilteredPartitionMetadataError { meta: generic, kind: crate::error::GetUnfilteredPartitionMetadataErrorKind::EntityNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::entity_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_entity_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUnfilteredPartitionMetadataError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "GlueEncryptionException" => crate::error::GetUnfilteredPartitionMetadataError { meta: generic, kind: crate::error::GetUnfilteredPartitionMetadataErrorKind::GlueEncryptionException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::glue_encryption_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_glue_encryption_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUnfilteredPartitionMetadataError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InternalServiceException" => crate::error::GetUnfilteredPartitionMetadataError { meta: generic, kind: crate::error::GetUnfilteredPartitionMetadataErrorKind::InternalServiceException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_service_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUnfilteredPartitionMetadataError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidInputException" => crate::error::GetUnfilteredPartitionMetadataError { meta: generic, kind: crate::error::GetUnfilteredPartitionMetadataErrorKind::InvalidInputException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUnfilteredPartitionMetadataError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OperationTimeoutException" => crate::error::GetUnfilteredPartitionMetadataError { meta: generic, kind: crate::error::GetUnfilteredPartitionMetadataErrorKind::OperationTimeoutException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::operation_timeout_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUnfilteredPartitionMetadataError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "PermissionTypeMismatchException" => crate::error::GetUnfilteredPartitionMetadataError { meta: generic, kind: crate::error::GetUnfilteredPartitionMetadataErrorKind::PermissionTypeMismatchException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::permission_type_mismatch_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_permission_type_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUnfilteredPartitionMetadataError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::GetUnfilteredPartitionMetadataError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_unfiltered_partition_metadata_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetUnfilteredPartitionMetadataOutput,
+    crate::error::GetUnfilteredPartitionMetadataError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::get_unfiltered_partition_metadata_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_get_unfiltered_partition_metadata(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::GetUnfilteredPartitionMetadataError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_unfiltered_partitions_metadata_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetUnfilteredPartitionsMetadataOutput,
+    crate::error::GetUnfilteredPartitionsMetadataError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetUnfilteredPartitionsMetadataError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetUnfilteredPartitionsMetadataError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "EntityNotFoundException" => crate::error::GetUnfilteredPartitionsMetadataError { meta: generic, kind: crate::error::GetUnfilteredPartitionsMetadataErrorKind::EntityNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::entity_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_entity_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUnfilteredPartitionsMetadataError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "GlueEncryptionException" => crate::error::GetUnfilteredPartitionsMetadataError { meta: generic, kind: crate::error::GetUnfilteredPartitionsMetadataErrorKind::GlueEncryptionException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::glue_encryption_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_glue_encryption_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUnfilteredPartitionsMetadataError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InternalServiceException" => crate::error::GetUnfilteredPartitionsMetadataError { meta: generic, kind: crate::error::GetUnfilteredPartitionsMetadataErrorKind::InternalServiceException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_service_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUnfilteredPartitionsMetadataError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidInputException" => crate::error::GetUnfilteredPartitionsMetadataError { meta: generic, kind: crate::error::GetUnfilteredPartitionsMetadataErrorKind::InvalidInputException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUnfilteredPartitionsMetadataError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OperationTimeoutException" => crate::error::GetUnfilteredPartitionsMetadataError { meta: generic, kind: crate::error::GetUnfilteredPartitionsMetadataErrorKind::OperationTimeoutException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::operation_timeout_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUnfilteredPartitionsMetadataError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "PermissionTypeMismatchException" => crate::error::GetUnfilteredPartitionsMetadataError { meta: generic, kind: crate::error::GetUnfilteredPartitionsMetadataErrorKind::PermissionTypeMismatchException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::permission_type_mismatch_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_permission_type_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUnfilteredPartitionsMetadataError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::GetUnfilteredPartitionsMetadataError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_unfiltered_partitions_metadata_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetUnfilteredPartitionsMetadataOutput,
+    crate::error::GetUnfilteredPartitionsMetadataError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::get_unfiltered_partitions_metadata_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_get_unfiltered_partitions_metadata(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::GetUnfilteredPartitionsMetadataError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_unfiltered_table_metadata_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetUnfilteredTableMetadataOutput,
+    crate::error::GetUnfilteredTableMetadataError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetUnfilteredTableMetadataError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::GetUnfilteredTableMetadataError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "EntityNotFoundException" => crate::error::GetUnfilteredTableMetadataError {
+            meta: generic,
+            kind: crate::error::GetUnfilteredTableMetadataErrorKind::EntityNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::entity_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_entity_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUnfilteredTableMetadataError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "GlueEncryptionException" => crate::error::GetUnfilteredTableMetadataError {
+            meta: generic,
+            kind: crate::error::GetUnfilteredTableMetadataErrorKind::GlueEncryptionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::glue_encryption_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_glue_encryption_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUnfilteredTableMetadataError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServiceException" => crate::error::GetUnfilteredTableMetadataError {
+            meta: generic,
+            kind: crate::error::GetUnfilteredTableMetadataErrorKind::InternalServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUnfilteredTableMetadataError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidInputException" => crate::error::GetUnfilteredTableMetadataError {
+            meta: generic,
+            kind: crate::error::GetUnfilteredTableMetadataErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUnfilteredTableMetadataError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "OperationTimeoutException" => crate::error::GetUnfilteredTableMetadataError {
+            meta: generic,
+            kind: crate::error::GetUnfilteredTableMetadataErrorKind::OperationTimeoutException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::operation_timeout_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_operation_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUnfilteredTableMetadataError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "PermissionTypeMismatchException" => crate::error::GetUnfilteredTableMetadataError {
+            meta: generic,
+            kind:
+                crate::error::GetUnfilteredTableMetadataErrorKind::PermissionTypeMismatchException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::permission_type_mismatch_exception::Builder::default(
+                                );
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_permission_type_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUnfilteredTableMetadataError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        _ => crate::error::GetUnfilteredTableMetadataError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_unfiltered_table_metadata_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetUnfilteredTableMetadataOutput,
+    crate::error::GetUnfilteredTableMetadataError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_unfiltered_table_metadata_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_get_unfiltered_table_metadata(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetUnfilteredTableMetadataError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_user_defined_function_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<

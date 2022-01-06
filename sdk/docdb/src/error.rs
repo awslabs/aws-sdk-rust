@@ -65,8 +65,6 @@ impl AddSourceIdentifierToSubscriptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -127,14 +125,11 @@ pub struct AddTagsToResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddTagsToResourceErrorKind {
-    /// <p>
-    /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
-    /// <p>
-    /// <code>DBInstanceIdentifier</code> doesn't refer to an existing instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing instance. </p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
-    /// <p>
-    /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing snapshot. </p>
+    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing snapshot. </p>
     DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -179,8 +174,6 @@ impl AddTagsToResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -249,8 +242,7 @@ pub struct ApplyPendingMaintenanceActionError {
 pub enum ApplyPendingMaintenanceActionErrorKind {
     /// <p>The cluster isn't in a valid state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
-    /// <p> The specified instance isn't in the <i>available</i> state.
-    /// </p>
+    /// <p> The specified instance isn't in the <i>available</i> state. </p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     /// <p>The specified resource ID was not found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
@@ -304,8 +296,6 @@ impl ApplyPendingMaintenanceActionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -378,8 +368,7 @@ pub struct CopyDBClusterParameterGroupError {
 pub enum CopyDBClusterParameterGroupErrorKind {
     /// <p>A parameter group with the same name already exists.</p>
     DbParameterGroupAlreadyExistsFault(crate::error::DbParameterGroupAlreadyExistsFault),
-    /// <p>
-    /// <code>DBParameterGroupName</code> doesn't refer to an existing parameter group. </p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing parameter group. </p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// <p>This request would cause you to exceed the allowed number of parameter groups.</p>
     DbParameterGroupQuotaExceededFault(crate::error::DbParameterGroupQuotaExceededFault),
@@ -432,8 +421,6 @@ impl CopyDBClusterParameterGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -508,8 +495,7 @@ pub struct CopyDBClusterSnapshotError {
 pub enum CopyDBClusterSnapshotErrorKind {
     /// <p>You already have a cluster snapshot with the given identifier.</p>
     DbClusterSnapshotAlreadyExistsFault(crate::error::DbClusterSnapshotAlreadyExistsFault),
-    /// <p>
-    /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot. </p>
+    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot. </p>
     DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
     /// <p>The provided value isn't a valid cluster snapshot state.</p>
     InvalidDbClusterSnapshotStateFault(crate::error::InvalidDbClusterSnapshotStateFault),
@@ -569,8 +555,6 @@ impl CopyDBClusterSnapshotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -667,21 +651,17 @@ pub struct CreateDBClusterError {
 pub enum CreateDBClusterErrorKind {
     /// <p>You already have a cluster with the given identifier.</p>
     DbClusterAlreadyExistsFault(crate::error::DbClusterAlreadyExistsFault),
-    /// <p>
-    /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
-    /// <p>
-    /// <code>DBClusterParameterGroupName</code> doesn't refer to an existing cluster parameter group. </p>
+    /// <p> <code>DBClusterParameterGroupName</code> doesn't refer to an existing cluster parameter group. </p>
     DbClusterParameterGroupNotFoundFault(crate::error::DbClusterParameterGroupNotFoundFault),
     /// <p>The cluster can't be created because you have reached the maximum allowed quota of clusters.</p>
     DbClusterQuotaExceededFault(crate::error::DbClusterQuotaExceededFault),
-    /// <p>
-    /// <code>DBInstanceIdentifier</code> doesn't refer to an existing instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing instance. </p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// <p>Subnets in the subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
     DbSubnetGroupDoesNotCoverEnoughAZs(crate::error::DbSubnetGroupDoesNotCoverEnoughAZs),
-    /// <p>
-    /// <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group. </p>
+    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group. </p>
     DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
     /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global cluster.</p>
     GlobalClusterNotFoundFault(crate::error::GlobalClusterNotFoundFault),
@@ -689,23 +669,19 @@ pub enum CreateDBClusterErrorKind {
     InsufficientStorageClusterCapacityFault(crate::error::InsufficientStorageClusterCapacityFault),
     /// <p>The cluster isn't in a valid state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
-    /// <p> The specified instance isn't in the <i>available</i> state.
-    /// </p>
+    /// <p> The specified instance isn't in the <i>available</i> state. </p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     /// <p>The subnet group can't be deleted because it's in use.</p>
     InvalidDbSubnetGroupStateFault(crate::error::InvalidDbSubnetGroupStateFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidGlobalClusterStateFault(crate::error::InvalidGlobalClusterStateFault),
-    /// <p>The requested subnet is not valid, or multiple subnets were requested that are not all
-    /// in a common virtual private cloud (VPC).</p>
+    /// <p>The requested subnet is not valid, or multiple subnets were requested that are not all in a common virtual private cloud (VPC).</p>
     InvalidSubnet(crate::error::InvalidSubnet),
-    /// <p>The subnet group doesn't cover all Availability Zones after it is created
-    /// because of changes that were made.</p>
+    /// <p>The subnet group doesn't cover all Availability Zones after it is created because of changes that were made.</p>
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
     /// <p>An error occurred when accessing an KMS key.</p>
     KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
-    /// <p>The request would cause you to exceed the allowed amount of storage available across
-    /// all instances.</p>
+    /// <p>The request would cause you to exceed the allowed amount of storage available across all instances.</p>
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -766,8 +742,6 @@ impl CreateDBClusterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -998,8 +972,6 @@ impl CreateDBClusterParameterGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1062,8 +1034,7 @@ pub struct CreateDBClusterSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDBClusterSnapshotErrorKind {
-    /// <p>
-    /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p>You already have a cluster snapshot with the given identifier.</p>
     DbClusterSnapshotAlreadyExistsFault(crate::error::DbClusterSnapshotAlreadyExistsFault),
@@ -1122,8 +1093,6 @@ impl CreateDBClusterSnapshotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1213,21 +1182,17 @@ pub enum CreateDBInstanceErrorKind {
     /// <p>The specified CIDR IP or Amazon EC2 security group isn't authorized for the specified security group.</p>
     /// <p>Amazon DocumentDB also might not be authorized to perform necessary actions on your behalf using IAM.</p>
     AuthorizationNotFoundFault(crate::error::AuthorizationNotFoundFault),
-    /// <p>
-    /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p>You already have a instance with the given identifier.</p>
     DbInstanceAlreadyExistsFault(crate::error::DbInstanceAlreadyExistsFault),
-    /// <p>
-    /// <code>DBParameterGroupName</code> doesn't refer to an existing parameter group. </p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing parameter group. </p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
-    /// <p>
-    /// <code>DBSecurityGroupName</code> doesn't refer to an existing security group. </p>
+    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing security group. </p>
     DbSecurityGroupNotFoundFault(crate::error::DbSecurityGroupNotFoundFault),
     /// <p>Subnets in the subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
     DbSubnetGroupDoesNotCoverEnoughAZs(crate::error::DbSubnetGroupDoesNotCoverEnoughAZs),
-    /// <p>
-    /// <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group. </p>
+    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group. </p>
     DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
     /// <p>The request would cause you to exceed the allowed number of instances.</p>
     InstanceQuotaExceededFault(crate::error::InstanceQuotaExceededFault),
@@ -1235,19 +1200,15 @@ pub enum CreateDBInstanceErrorKind {
     InsufficientDbInstanceCapacityFault(crate::error::InsufficientDbInstanceCapacityFault),
     /// <p>The cluster isn't in a valid state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
-    /// <p>The requested subnet is not valid, or multiple subnets were requested that are not all
-    /// in a common virtual private cloud (VPC).</p>
+    /// <p>The requested subnet is not valid, or multiple subnets were requested that are not all in a common virtual private cloud (VPC).</p>
     InvalidSubnet(crate::error::InvalidSubnet),
-    /// <p>The subnet group doesn't cover all Availability Zones after it is created
-    /// because of changes that were made.</p>
+    /// <p>The subnet group doesn't cover all Availability Zones after it is created because of changes that were made.</p>
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
     /// <p>An error occurred when accessing an KMS key.</p>
     KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
-    /// <p>The request would cause you to exceed the allowed amount of storage available across
-    /// all instances.</p>
+    /// <p>The request would cause you to exceed the allowed amount of storage available across all instances.</p>
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
-    /// <p>Storage of the specified <code>StorageType</code> can't be associated with the DB
-    /// instance. </p>
+    /// <p>Storage of the specified <code>StorageType</code> can't be associated with the DB instance. </p>
     StorageTypeNotSupportedFault(crate::error::StorageTypeNotSupportedFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1304,8 +1265,6 @@ impl CreateDBInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1465,8 +1424,7 @@ pub struct CreateDBSubnetGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDBSubnetGroupErrorKind {
-    /// <p>
-    /// <code>DBSubnetGroupName</code> is already being used by an existing subnet group. </p>
+    /// <p> <code>DBSubnetGroupName</code> is already being used by an existing subnet group. </p>
     DbSubnetGroupAlreadyExistsFault(crate::error::DbSubnetGroupAlreadyExistsFault),
     /// <p>Subnets in the subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
     DbSubnetGroupDoesNotCoverEnoughAZs(crate::error::DbSubnetGroupDoesNotCoverEnoughAZs),
@@ -1474,8 +1432,7 @@ pub enum CreateDBSubnetGroupErrorKind {
     DbSubnetGroupQuotaExceededFault(crate::error::DbSubnetGroupQuotaExceededFault),
     /// <p>The request would cause you to exceed the allowed number of subnets in a subnet group.</p>
     DbSubnetQuotaExceededFault(crate::error::DbSubnetQuotaExceededFault),
-    /// <p>The requested subnet is not valid, or multiple subnets were requested that are not all
-    /// in a common virtual private cloud (VPC).</p>
+    /// <p>The requested subnet is not valid, or multiple subnets were requested that are not all in a common virtual private cloud (VPC).</p>
     InvalidSubnet(crate::error::InvalidSubnet),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1524,8 +1481,6 @@ impl CreateDBSubnetGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1674,8 +1629,6 @@ impl CreateEventSubscriptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1778,12 +1731,11 @@ pub struct CreateGlobalClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateGlobalClusterErrorKind {
-    /// <p>
-    /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p>The <code>GlobalClusterIdentifier</code> already exists. Choose a new global cluster identifier (unique name) to create a new global cluster. </p>
     GlobalClusterAlreadyExistsFault(crate::error::GlobalClusterAlreadyExistsFault),
-    /// <p>The number of global  clusters for this account is already at the maximum allowed.</p>
+    /// <p>The number of global clusters for this account is already at the maximum allowed.</p>
     GlobalClusterQuotaExceededFault(crate::error::GlobalClusterQuotaExceededFault),
     /// <p>The cluster isn't in a valid state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
@@ -1831,8 +1783,6 @@ impl CreateGlobalClusterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1907,8 +1857,7 @@ pub struct DeleteDBClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDBClusterErrorKind {
-    /// <p>
-    /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p>You already have a cluster snapshot with the given identifier.</p>
     DbClusterSnapshotAlreadyExistsFault(crate::error::DbClusterSnapshotAlreadyExistsFault),
@@ -1963,8 +1912,6 @@ impl DeleteDBClusterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2047,8 +1994,7 @@ pub struct DeleteDBClusterParameterGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDBClusterParameterGroupErrorKind {
-    /// <p>
-    /// <code>DBParameterGroupName</code> doesn't refer to an existing parameter group. </p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing parameter group. </p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// <p>The parameter group is in use, or it is in a state that is not valid. If you are trying to delete the parameter group, you can't delete it when the parameter group is in this state.</p>
     InvalidDbParameterGroupStateFault(crate::error::InvalidDbParameterGroupStateFault),
@@ -2101,8 +2047,6 @@ impl DeleteDBClusterParameterGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2165,8 +2109,7 @@ pub struct DeleteDBClusterSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDBClusterSnapshotErrorKind {
-    /// <p>
-    /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot. </p>
+    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot. </p>
     DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
     /// <p>The provided value isn't a valid cluster snapshot state.</p>
     InvalidDbClusterSnapshotStateFault(crate::error::InvalidDbClusterSnapshotStateFault),
@@ -2216,8 +2159,6 @@ impl DeleteDBClusterSnapshotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2280,16 +2221,13 @@ pub struct DeleteDBInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDBInstanceErrorKind {
-    /// <p>
-    /// <code>DBInstanceIdentifier</code> doesn't refer to an existing instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing instance. </p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
-    /// <p>
-    /// <code>DBSnapshotIdentifier</code> is already being used by an existing snapshot. </p>
+    /// <p> <code>DBSnapshotIdentifier</code> is already being used by an existing snapshot. </p>
     DbSnapshotAlreadyExistsFault(crate::error::DbSnapshotAlreadyExistsFault),
     /// <p>The cluster isn't in a valid state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
-    /// <p> The specified instance isn't in the <i>available</i> state.
-    /// </p>
+    /// <p> The specified instance isn't in the <i>available</i> state. </p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     /// <p>The request would cause you to exceed the allowed number of snapshots.</p>
     SnapshotQuotaExceededFault(crate::error::SnapshotQuotaExceededFault),
@@ -2338,8 +2276,6 @@ impl DeleteDBInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2422,8 +2358,7 @@ pub struct DeleteDBSubnetGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDBSubnetGroupErrorKind {
-    /// <p>
-    /// <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group. </p>
+    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group. </p>
     DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
     /// <p>The subnet group can't be deleted because it's in use.</p>
     InvalidDbSubnetGroupStateFault(crate::error::InvalidDbSubnetGroupStateFault),
@@ -2472,8 +2407,6 @@ impl DeleteDBSubnetGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2540,8 +2473,7 @@ pub struct DeleteEventSubscriptionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteEventSubscriptionErrorKind {
-    /// <p>Someone else might be modifying a subscription. Wait a few seconds, and try
-    /// again.</p>
+    /// <p>Someone else might be modifying a subscription. Wait a few seconds, and try again.</p>
     InvalidEventSubscriptionStateFault(crate::error::InvalidEventSubscriptionStateFault),
     /// <p>The subscription name does not exist. </p>
     SubscriptionNotFoundFault(crate::error::SubscriptionNotFoundFault),
@@ -2589,8 +2521,6 @@ impl DeleteEventSubscriptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2697,8 +2627,6 @@ impl DeleteGlobalClusterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2757,8 +2685,7 @@ pub struct DescribeCertificatesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeCertificatesErrorKind {
-    /// <p>
-    /// <code>CertificateIdentifier</code> doesn't refer to an existing certificate. </p>
+    /// <p> <code>CertificateIdentifier</code> doesn't refer to an existing certificate. </p>
     CertificateNotFoundFault(crate::error::CertificateNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2801,8 +2728,6 @@ impl DescribeCertificatesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2853,8 +2778,7 @@ pub struct DescribeDBClusterParameterGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBClusterParameterGroupsErrorKind {
-    /// <p>
-    /// <code>DBParameterGroupName</code> doesn't refer to an existing parameter group. </p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing parameter group. </p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2902,8 +2826,6 @@ impl DescribeDBClusterParameterGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2956,8 +2878,7 @@ pub struct DescribeDBClusterParametersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBClusterParametersErrorKind {
-    /// <p>
-    /// <code>DBParameterGroupName</code> doesn't refer to an existing parameter group. </p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing parameter group. </p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3002,8 +2923,6 @@ impl DescribeDBClusterParametersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3056,8 +2975,7 @@ pub struct DescribeDBClustersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBClustersErrorKind {
-    /// <p>
-    /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3100,8 +3018,6 @@ impl DescribeDBClustersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3152,8 +3068,7 @@ pub struct DescribeDBClusterSnapshotAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBClusterSnapshotAttributesErrorKind {
-    /// <p>
-    /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot. </p>
+    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot. </p>
     DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3201,8 +3116,6 @@ impl DescribeDBClusterSnapshotAttributesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3257,8 +3170,7 @@ pub struct DescribeDBClusterSnapshotsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBClusterSnapshotsErrorKind {
-    /// <p>
-    /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot. </p>
+    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot. </p>
     DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3303,8 +3215,6 @@ impl DescribeDBClusterSnapshotsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3397,8 +3307,6 @@ impl DescribeDBEngineVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3441,8 +3349,7 @@ pub struct DescribeDBInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBInstancesErrorKind {
-    /// <p>
-    /// <code>DBInstanceIdentifier</code> doesn't refer to an existing instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing instance. </p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3485,8 +3392,6 @@ impl DescribeDBInstancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3537,8 +3442,7 @@ pub struct DescribeDBSubnetGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBSubnetGroupsErrorKind {
-    /// <p>
-    /// <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group. </p>
+    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group. </p>
     DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3581,8 +3485,6 @@ impl DescribeDBSubnetGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3676,8 +3578,6 @@ impl DescribeEngineDefaultClusterParametersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3762,8 +3662,6 @@ impl DescribeEventCategoriesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3846,8 +3744,6 @@ impl DescribeEventsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3933,8 +3829,6 @@ impl DescribeEventSubscriptionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4028,8 +3922,6 @@ impl DescribeGlobalClustersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4123,8 +4015,6 @@ impl DescribeOrderableDBInstanceOptionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4215,8 +4105,6 @@ impl DescribePendingMaintenanceActionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4269,13 +4157,11 @@ pub struct FailoverDBClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum FailoverDBClusterErrorKind {
-    /// <p>
-    /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p>The cluster isn't in a valid state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
-    /// <p> The specified instance isn't in the <i>available</i> state.
-    /// </p>
+    /// <p> The specified instance isn't in the <i>available</i> state. </p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4320,8 +4206,6 @@ impl FailoverDBClusterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4388,14 +4272,11 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>
-    /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
-    /// <p>
-    /// <code>DBInstanceIdentifier</code> doesn't refer to an existing instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing instance. </p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
-    /// <p>
-    /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing snapshot. </p>
+    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing snapshot. </p>
     DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4440,8 +4321,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4510,32 +4389,25 @@ pub struct ModifyDBClusterError {
 pub enum ModifyDBClusterErrorKind {
     /// <p>You already have a cluster with the given identifier.</p>
     DbClusterAlreadyExistsFault(crate::error::DbClusterAlreadyExistsFault),
-    /// <p>
-    /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
-    /// <p>
-    /// <code>DBClusterParameterGroupName</code> doesn't refer to an existing cluster parameter group. </p>
+    /// <p> <code>DBClusterParameterGroupName</code> doesn't refer to an existing cluster parameter group. </p>
     DbClusterParameterGroupNotFoundFault(crate::error::DbClusterParameterGroupNotFoundFault),
-    /// <p>
-    /// <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group. </p>
+    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group. </p>
     DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
     /// <p>The cluster isn't in a valid state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
-    /// <p> The specified instance isn't in the <i>available</i> state.
-    /// </p>
+    /// <p> The specified instance isn't in the <i>available</i> state. </p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     /// <p>The state of the security group doesn't allow deletion.</p>
     InvalidDbSecurityGroupStateFault(crate::error::InvalidDbSecurityGroupStateFault),
     /// <p>The subnet group can't be deleted because it's in use.</p>
     InvalidDbSubnetGroupStateFault(crate::error::InvalidDbSubnetGroupStateFault),
-    /// <p>The requested subnet is not valid, or multiple subnets were requested that are not all
-    /// in a common virtual private cloud (VPC).</p>
+    /// <p>The requested subnet is not valid, or multiple subnets were requested that are not all in a common virtual private cloud (VPC).</p>
     InvalidSubnet(crate::error::InvalidSubnet),
-    /// <p>The subnet group doesn't cover all Availability Zones after it is created
-    /// because of changes that were made.</p>
+    /// <p>The subnet group doesn't cover all Availability Zones after it is created because of changes that were made.</p>
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
-    /// <p>The request would cause you to exceed the allowed amount of storage available across
-    /// all instances.</p>
+    /// <p>The request would cause you to exceed the allowed amount of storage available across all instances.</p>
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4588,8 +4460,6 @@ impl ModifyDBClusterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4717,8 +4587,7 @@ pub struct ModifyDBClusterParameterGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyDBClusterParameterGroupErrorKind {
-    /// <p>
-    /// <code>DBParameterGroupName</code> doesn't refer to an existing parameter group. </p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing parameter group. </p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// <p>The parameter group is in use, or it is in a state that is not valid. If you are trying to delete the parameter group, you can't delete it when the parameter group is in this state.</p>
     InvalidDbParameterGroupStateFault(crate::error::InvalidDbParameterGroupStateFault),
@@ -4771,8 +4640,6 @@ impl ModifyDBClusterParameterGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4835,13 +4702,11 @@ pub struct ModifyDBClusterSnapshotAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyDBClusterSnapshotAttributeErrorKind {
-    /// <p>
-    /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot. </p>
+    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot. </p>
     DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
     /// <p>The provided value isn't a valid cluster snapshot state.</p>
     InvalidDbClusterSnapshotStateFault(crate::error::InvalidDbClusterSnapshotStateFault),
-    /// <p>You have exceeded the maximum number of accounts that you can share a manual DB
-    /// snapshot with. </p>
+    /// <p>You have exceeded the maximum number of accounts that you can share a manual DB snapshot with. </p>
     SharedSnapshotQuotaExceededFault(crate::error::SharedSnapshotQuotaExceededFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4895,8 +4760,6 @@ impl ModifyDBClusterSnapshotAttributeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4972,38 +4835,29 @@ pub enum ModifyDBInstanceErrorKind {
     /// <p>The specified CIDR IP or Amazon EC2 security group isn't authorized for the specified security group.</p>
     /// <p>Amazon DocumentDB also might not be authorized to perform necessary actions on your behalf using IAM.</p>
     AuthorizationNotFoundFault(crate::error::AuthorizationNotFoundFault),
-    /// <p>
-    /// <code>CertificateIdentifier</code> doesn't refer to an existing certificate. </p>
+    /// <p> <code>CertificateIdentifier</code> doesn't refer to an existing certificate. </p>
     CertificateNotFoundFault(crate::error::CertificateNotFoundFault),
     /// <p>You already have a instance with the given identifier.</p>
     DbInstanceAlreadyExistsFault(crate::error::DbInstanceAlreadyExistsFault),
-    /// <p>
-    /// <code>DBInstanceIdentifier</code> doesn't refer to an existing instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing instance. </p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
-    /// <p>
-    /// <code>DBParameterGroupName</code> doesn't refer to an existing parameter group. </p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing parameter group. </p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
-    /// <p>
-    /// <code>DBSecurityGroupName</code> doesn't refer to an existing security group. </p>
+    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing security group. </p>
     DbSecurityGroupNotFoundFault(crate::error::DbSecurityGroupNotFoundFault),
-    /// <p>The upgrade failed because a resource that the depends on can't be
-    /// modified.</p>
+    /// <p>The upgrade failed because a resource that the depends on can't be modified.</p>
     DbUpgradeDependencyFailureFault(crate::error::DbUpgradeDependencyFailureFault),
     /// <p>The specified instance class isn't available in the specified Availability Zone.</p>
     InsufficientDbInstanceCapacityFault(crate::error::InsufficientDbInstanceCapacityFault),
-    /// <p> The specified instance isn't in the <i>available</i> state.
-    /// </p>
+    /// <p> The specified instance isn't in the <i>available</i> state. </p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     /// <p>The state of the security group doesn't allow deletion.</p>
     InvalidDbSecurityGroupStateFault(crate::error::InvalidDbSecurityGroupStateFault),
-    /// <p>The subnet group doesn't cover all Availability Zones after it is created
-    /// because of changes that were made.</p>
+    /// <p>The subnet group doesn't cover all Availability Zones after it is created because of changes that were made.</p>
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
-    /// <p>The request would cause you to exceed the allowed amount of storage available across
-    /// all instances.</p>
+    /// <p>The request would cause you to exceed the allowed amount of storage available across all instances.</p>
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
-    /// <p>Storage of the specified <code>StorageType</code> can't be associated with the DB
-    /// instance. </p>
+    /// <p>Storage of the specified <code>StorageType</code> can't be associated with the DB instance. </p>
     StorageTypeNotSupportedFault(crate::error::StorageTypeNotSupportedFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5058,8 +4912,6 @@ impl ModifyDBInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5208,13 +5060,11 @@ pub struct ModifyDBSubnetGroupError {
 pub enum ModifyDBSubnetGroupErrorKind {
     /// <p>Subnets in the subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
     DbSubnetGroupDoesNotCoverEnoughAZs(crate::error::DbSubnetGroupDoesNotCoverEnoughAZs),
-    /// <p>
-    /// <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group. </p>
+    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group. </p>
     DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
     /// <p>The request would cause you to exceed the allowed number of subnets in a subnet group.</p>
     DbSubnetQuotaExceededFault(crate::error::DbSubnetQuotaExceededFault),
-    /// <p>The requested subnet is not valid, or multiple subnets were requested that are not all
-    /// in a common virtual private cloud (VPC).</p>
+    /// <p>The requested subnet is not valid, or multiple subnets were requested that are not all in a common virtual private cloud (VPC).</p>
     InvalidSubnet(crate::error::InvalidSubnet),
     /// <p>The subnet is already in use in the Availability Zone.</p>
     SubnetAlreadyInUse(crate::error::SubnetAlreadyInUse),
@@ -5265,8 +5115,6 @@ impl ModifyDBSubnetGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5410,8 +5258,6 @@ impl ModifyEventSubscriptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5552,8 +5398,6 @@ impl ModifyGlobalClusterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5612,11 +5456,9 @@ pub struct RebootDBInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RebootDBInstanceErrorKind {
-    /// <p>
-    /// <code>DBInstanceIdentifier</code> doesn't refer to an existing instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing instance. </p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
-    /// <p> The specified instance isn't in the <i>available</i> state.
-    /// </p>
+    /// <p> The specified instance isn't in the <i>available</i> state. </p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5660,8 +5502,6 @@ impl RebootDBInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5720,8 +5560,7 @@ pub struct RemoveFromGlobalClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveFromGlobalClusterErrorKind {
-    /// <p>
-    /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global cluster.</p>
     GlobalClusterNotFoundFault(crate::error::GlobalClusterNotFoundFault),
@@ -5772,8 +5611,6 @@ impl RemoveFromGlobalClusterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5895,8 +5732,6 @@ impl RemoveSourceIdentifierFromSubscriptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5961,14 +5796,11 @@ pub struct RemoveTagsFromResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveTagsFromResourceErrorKind {
-    /// <p>
-    /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
-    /// <p>
-    /// <code>DBInstanceIdentifier</code> doesn't refer to an existing instance. </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing instance. </p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
-    /// <p>
-    /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing snapshot. </p>
+    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing snapshot. </p>
     DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6013,8 +5845,6 @@ impl RemoveTagsFromResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6081,8 +5911,7 @@ pub struct ResetDBClusterParameterGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResetDBClusterParameterGroupErrorKind {
-    /// <p>
-    /// <code>DBParameterGroupName</code> doesn't refer to an existing parameter group. </p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing parameter group. </p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// <p>The parameter group is in use, or it is in a state that is not valid. If you are trying to delete the parameter group, you can't delete it when the parameter group is in this state.</p>
     InvalidDbParameterGroupStateFault(crate::error::InvalidDbParameterGroupStateFault),
@@ -6132,8 +5961,6 @@ impl ResetDBClusterParameterGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6200,14 +6027,11 @@ pub enum RestoreDBClusterFromSnapshotErrorKind {
     DbClusterAlreadyExistsFault(crate::error::DbClusterAlreadyExistsFault),
     /// <p>The cluster can't be created because you have reached the maximum allowed quota of clusters.</p>
     DbClusterQuotaExceededFault(crate::error::DbClusterQuotaExceededFault),
-    /// <p>
-    /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot. </p>
+    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot. </p>
     DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
-    /// <p>
-    /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing snapshot. </p>
+    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing snapshot. </p>
     DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
-    /// <p>
-    /// <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group. </p>
+    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group. </p>
     DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
     /// <p>The cluster doesn't have enough capacity for the current operation.</p>
     InsufficientDbClusterCapacityFault(crate::error::InsufficientDbClusterCapacityFault),
@@ -6217,19 +6041,15 @@ pub enum RestoreDBClusterFromSnapshotErrorKind {
     InvalidDbClusterSnapshotStateFault(crate::error::InvalidDbClusterSnapshotStateFault),
     /// <p>The state of the snapshot doesn't allow deletion.</p>
     InvalidDbSnapshotStateFault(crate::error::InvalidDbSnapshotStateFault),
-    /// <p>You cannot restore from a virtual private cloud (VPC) backup to a non-VPC DB
-    /// instance.</p>
+    /// <p>You cannot restore from a virtual private cloud (VPC) backup to a non-VPC DB instance.</p>
     InvalidRestoreFault(crate::error::InvalidRestoreFault),
-    /// <p>The requested subnet is not valid, or multiple subnets were requested that are not all
-    /// in a common virtual private cloud (VPC).</p>
+    /// <p>The requested subnet is not valid, or multiple subnets were requested that are not all in a common virtual private cloud (VPC).</p>
     InvalidSubnet(crate::error::InvalidSubnet),
-    /// <p>The subnet group doesn't cover all Availability Zones after it is created
-    /// because of changes that were made.</p>
+    /// <p>The subnet group doesn't cover all Availability Zones after it is created because of changes that were made.</p>
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
     /// <p>An error occurred when accessing an KMS key.</p>
     KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
-    /// <p>The request would cause you to exceed the allowed amount of storage available across
-    /// all instances.</p>
+    /// <p>The request would cause you to exceed the allowed amount of storage available across all instances.</p>
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6307,8 +6127,6 @@ impl RestoreDBClusterFromSnapshotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6485,16 +6303,13 @@ pub struct RestoreDBClusterToPointInTimeError {
 pub enum RestoreDBClusterToPointInTimeErrorKind {
     /// <p>You already have a cluster with the given identifier.</p>
     DbClusterAlreadyExistsFault(crate::error::DbClusterAlreadyExistsFault),
-    /// <p>
-    /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p>The cluster can't be created because you have reached the maximum allowed quota of clusters.</p>
     DbClusterQuotaExceededFault(crate::error::DbClusterQuotaExceededFault),
-    /// <p>
-    /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot. </p>
+    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot. </p>
     DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
-    /// <p>
-    /// <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group. </p>
+    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group. </p>
     DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
     /// <p>The cluster doesn't have enough capacity for the current operation.</p>
     InsufficientDbClusterCapacityFault(crate::error::InsufficientDbClusterCapacityFault),
@@ -6506,19 +6321,15 @@ pub enum RestoreDBClusterToPointInTimeErrorKind {
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
     /// <p>The state of the snapshot doesn't allow deletion.</p>
     InvalidDbSnapshotStateFault(crate::error::InvalidDbSnapshotStateFault),
-    /// <p>You cannot restore from a virtual private cloud (VPC) backup to a non-VPC DB
-    /// instance.</p>
+    /// <p>You cannot restore from a virtual private cloud (VPC) backup to a non-VPC DB instance.</p>
     InvalidRestoreFault(crate::error::InvalidRestoreFault),
-    /// <p>The requested subnet is not valid, or multiple subnets were requested that are not all
-    /// in a common virtual private cloud (VPC).</p>
+    /// <p>The requested subnet is not valid, or multiple subnets were requested that are not all in a common virtual private cloud (VPC).</p>
     InvalidSubnet(crate::error::InvalidSubnet),
-    /// <p>The subnet group doesn't cover all Availability Zones after it is created
-    /// because of changes that were made.</p>
+    /// <p>The subnet group doesn't cover all Availability Zones after it is created because of changes that were made.</p>
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
     /// <p>An error occurred when accessing an KMS key.</p>
     KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
-    /// <p>The request would cause you to exceed the allowed amount of storage available across
-    /// all instances.</p>
+    /// <p>The request would cause you to exceed the allowed amount of storage available across all instances.</p>
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6602,8 +6413,6 @@ impl RestoreDBClusterToPointInTimeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6790,13 +6599,11 @@ pub struct StartDBClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartDBClusterErrorKind {
-    /// <p>
-    /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p>The cluster isn't in a valid state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
-    /// <p> The specified instance isn't in the <i>available</i> state.
-    /// </p>
+    /// <p> The specified instance isn't in the <i>available</i> state. </p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6841,8 +6648,6 @@ impl StartDBClusterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6909,13 +6714,11 @@ pub struct StopDBClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopDBClusterErrorKind {
-    /// <p>
-    /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// <p>The cluster isn't in a valid state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
-    /// <p> The specified instance isn't in the <i>available</i> state.
-    /// </p>
+    /// <p> The specified instance isn't in the <i>available</i> state. </p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6960,8 +6763,6 @@ impl StopDBClusterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7015,8 +6816,7 @@ impl std::error::Error for StopDBClusterError {
     }
 }
 
-/// <p> The specified instance isn't in the <i>available</i> state.
-/// </p>
+/// <p> The specified instance isn't in the <i>available</i> state. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDbInstanceStateFault {
@@ -7147,8 +6947,7 @@ impl InvalidDbClusterStateFault {
     }
 }
 
-/// <p>
-/// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
+/// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterNotFoundFault {
@@ -7212,8 +7011,7 @@ impl DbClusterNotFoundFault {
     }
 }
 
-/// <p>The request would cause you to exceed the allowed amount of storage available across
-/// all instances.</p>
+/// <p>The request would cause you to exceed the allowed amount of storage available across all instances.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageQuotaExceededFault {
@@ -7341,8 +7139,7 @@ impl KmsKeyNotAccessibleFault {
     }
 }
 
-/// <p>The subnet group doesn't cover all Availability Zones after it is created
-/// because of changes that were made.</p>
+/// <p>The subnet group doesn't cover all Availability Zones after it is created because of changes that were made.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidVpcNetworkStateFault {
@@ -7409,8 +7206,7 @@ impl InvalidVpcNetworkStateFault {
     }
 }
 
-/// <p>The requested subnet is not valid, or multiple subnets were requested that are not all
-/// in a common virtual private cloud (VPC).</p>
+/// <p>The requested subnet is not valid, or multiple subnets were requested that are not all in a common virtual private cloud (VPC).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSubnet {
@@ -7474,8 +7270,7 @@ impl InvalidSubnet {
     }
 }
 
-/// <p>You cannot restore from a virtual private cloud (VPC) backup to a non-VPC DB
-/// instance.</p>
+/// <p>You cannot restore from a virtual private cloud (VPC) backup to a non-VPC DB instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRestoreFault {
@@ -7804,8 +7599,7 @@ impl InsufficientDbClusterCapacityFault {
     }
 }
 
-/// <p>
-/// <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group. </p>
+/// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSubnetGroupNotFoundFault {
@@ -7869,8 +7663,7 @@ impl DbSubnetGroupNotFoundFault {
     }
 }
 
-/// <p>
-/// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot. </p>
+/// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterSnapshotNotFoundFault {
@@ -8071,8 +7864,7 @@ impl DbClusterAlreadyExistsFault {
     }
 }
 
-/// <p>
-/// <code>DBSnapshotIdentifier</code> doesn't refer to an existing snapshot. </p>
+/// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing snapshot. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSnapshotNotFoundFault {
@@ -8203,8 +7995,7 @@ impl InvalidDbParameterGroupStateFault {
     }
 }
 
-/// <p>
-/// <code>DBParameterGroupName</code> doesn't refer to an existing parameter group. </p>
+/// <p> <code>DBParameterGroupName</code> doesn't refer to an existing parameter group. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbParameterGroupNotFoundFault {
@@ -8271,8 +8062,7 @@ impl DbParameterGroupNotFoundFault {
     }
 }
 
-/// <p>
-/// <code>DBInstanceIdentifier</code> doesn't refer to an existing instance. </p>
+/// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing instance. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbInstanceNotFoundFault {
@@ -9107,8 +8897,7 @@ impl DbSubnetGroupDoesNotCoverEnoughAZs {
     }
 }
 
-/// <p>Storage of the specified <code>StorageType</code> can't be associated with the DB
-/// instance. </p>
+/// <p>Storage of the specified <code>StorageType</code> can't be associated with the DB instance. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageTypeNotSupportedFault {
@@ -9306,8 +9095,7 @@ impl InsufficientDbInstanceCapacityFault {
     }
 }
 
-/// <p>The upgrade failed because a resource that the depends on can't be
-/// modified.</p>
+/// <p>The upgrade failed because a resource that the depends on can't be modified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbUpgradeDependencyFailureFault {
@@ -9374,8 +9162,7 @@ impl DbUpgradeDependencyFailureFault {
     }
 }
 
-/// <p>
-/// <code>DBSecurityGroupName</code> doesn't refer to an existing security group. </p>
+/// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing security group. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSecurityGroupNotFoundFault {
@@ -9509,8 +9296,7 @@ impl DbInstanceAlreadyExistsFault {
     }
 }
 
-/// <p>
-/// <code>CertificateIdentifier</code> doesn't refer to an existing certificate. </p>
+/// <p> <code>CertificateIdentifier</code> doesn't refer to an existing certificate. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateNotFoundFault {
@@ -9639,8 +9425,7 @@ impl AuthorizationNotFoundFault {
     }
 }
 
-/// <p>You have exceeded the maximum number of accounts that you can share a manual DB
-/// snapshot with. </p>
+/// <p>You have exceeded the maximum number of accounts that you can share a manual DB snapshot with. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SharedSnapshotQuotaExceededFault {
@@ -9771,8 +9556,7 @@ impl InvalidDbSubnetGroupStateFault {
     }
 }
 
-/// <p>
-/// <code>DBClusterParameterGroupName</code> doesn't refer to an existing cluster parameter group. </p>
+/// <p> <code>DBClusterParameterGroupName</code> doesn't refer to an existing cluster parameter group. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterParameterGroupNotFoundFault {
@@ -9903,8 +9687,7 @@ impl ResourceNotFoundFault {
     }
 }
 
-/// <p>Someone else might be modifying a subscription. Wait a few seconds, and try
-/// again.</p>
+/// <p>Someone else might be modifying a subscription. Wait a few seconds, and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidEventSubscriptionStateFault {
@@ -10096,8 +9879,7 @@ impl SnapshotQuotaExceededFault {
     }
 }
 
-/// <p>
-/// <code>DBSnapshotIdentifier</code> is already being used by an existing snapshot. </p>
+/// <p> <code>DBSnapshotIdentifier</code> is already being used by an existing snapshot. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSnapshotAlreadyExistsFault {
@@ -10231,7 +10013,7 @@ impl DbClusterSnapshotAlreadyExistsFault {
     }
 }
 
-/// <p>The number of global  clusters for this account is already at the maximum allowed.</p>
+/// <p>The number of global clusters for this account is already at the maximum allowed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalClusterQuotaExceededFault {
@@ -10490,8 +10272,7 @@ impl DbSubnetGroupQuotaExceededFault {
     }
 }
 
-/// <p>
-/// <code>DBSubnetGroupName</code> is already being used by an existing subnet group. </p>
+/// <p> <code>DBSubnetGroupName</code> is already being used by an existing subnet group. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSubnetGroupAlreadyExistsFault {

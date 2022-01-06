@@ -73,7 +73,7 @@ pub type BoxError = Box<dyn Error + Send + Sync + 'static>;
 /// may use endpoint discovery. The list of supported regions for a given service
 /// will be codegenerated from `endpoints.json`.
 pub trait ResolveAwsEndpoint: Send + Sync {
-    // TODO: consider if we want modeled error variants here
+    // TODO(https://github.com/awslabs/smithy-rs/issues/866): Create `ResolveEndpointError`
     fn resolve_endpoint(&self, region: &Region) -> Result<AwsEndpoint, BoxError>;
 }
 

@@ -3,32 +3,22 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>The specified CIDR IP range or Amazon EC2 security group is already authorized for
-    /// the specified DB security group.</p>
+    /// <p>The specified CIDR IP range or Amazon EC2 security group is already authorized for the specified DB security group.</p>
     AuthorizationAlreadyExistsFault(crate::error::AuthorizationAlreadyExistsFault),
-    /// <p>The specified CIDR IP range or Amazon EC2 security group might not be authorized
-    /// for the specified DB security group.</p>
-    /// <p>Or, RDS might not be authorized to perform necessary actions using IAM on your
-    /// behalf.</p>
+    /// <p>The specified CIDR IP range or Amazon EC2 security group might not be authorized for the specified DB security group.</p>
+    /// <p>Or, RDS might not be authorized to perform necessary actions using IAM on your behalf.</p>
     AuthorizationNotFoundFault(crate::error::AuthorizationNotFoundFault),
     /// <p>The DB security group authorization quota has been reached.</p>
     AuthorizationQuotaExceededFault(crate::error::AuthorizationQuotaExceededFault),
     #[allow(missing_docs)] // documentation missing in model
     BackupPolicyNotFoundFault(crate::error::BackupPolicyNotFoundFault),
-    /// <p>
-    /// <code>CertificateIdentifier</code> doesn't refer to an
-    /// existing certificate.
-    /// </p>
+    /// <p> <code>CertificateIdentifier</code> doesn't refer to an existing certificate. </p>
     CertificateNotFoundFault(crate::error::CertificateNotFoundFault),
-    /// <p>
-    /// <code>CustomAvailabilityZoneName</code> is already used by an existing custom
-    /// Availability Zone.</p>
+    /// <p> <code>CustomAvailabilityZoneName</code> is already used by an existing custom Availability Zone.</p>
     CustomAvailabilityZoneAlreadyExistsFault(
         crate::error::CustomAvailabilityZoneAlreadyExistsFault,
     ),
-    /// <p>
-    /// <code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom
-    /// Availability Zone identifier.</p>
+    /// <p> <code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom Availability Zone identifier.</p>
     CustomAvailabilityZoneNotFoundFault(crate::error::CustomAvailabilityZoneNotFoundFault),
     /// <p>You have exceeded the maximum number of custom Availability Zones.</p>
     CustomAvailabilityZoneQuotaExceededFault(
@@ -42,8 +32,7 @@ pub enum Error {
     CustomDbEngineVersionQuotaExceededFault(crate::error::CustomDbEngineVersionQuotaExceededFault),
     /// <p>The user already has a DB cluster with the given identifier.</p>
     DbClusterAlreadyExistsFault(crate::error::DbClusterAlreadyExistsFault),
-    /// <p>
-    /// <code>BacktrackIdentifier</code> doesn't refer to an existing backtrack. </p>
+    /// <p> <code>BacktrackIdentifier</code> doesn't refer to an existing backtrack. </p>
     DbClusterBacktrackNotFoundFault(crate::error::DbClusterBacktrackNotFoundFault),
     /// <p>The specified custom endpoint can't be created because it already exists.</p>
     DbClusterEndpointAlreadyExistsFault(crate::error::DbClusterEndpointAlreadyExistsFault),
@@ -51,16 +40,11 @@ pub enum Error {
     DbClusterEndpointNotFoundFault(crate::error::DbClusterEndpointNotFoundFault),
     /// <p>The cluster already has the maximum number of custom endpoints.</p>
     DbClusterEndpointQuotaExceededFault(crate::error::DbClusterEndpointQuotaExceededFault),
-    /// <p>
-    /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
-    /// </p>
+    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster. </p>
     DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
-    /// <p>
-    /// <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB
-    /// cluster parameter group. </p>
+    /// <p> <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group. </p>
     DbClusterParameterGroupNotFoundFault(crate::error::DbClusterParameterGroupNotFoundFault),
-    /// <p>The user attempted to create a new DB cluster and the user has already reached the
-    /// maximum allowed DB cluster quota.</p>
+    /// <p>The user attempted to create a new DB cluster and the user has already reached the maximum allowed DB cluster quota.</p>
     DbClusterQuotaExceededFault(crate::error::DbClusterQuotaExceededFault),
     /// <p>The specified IAM role Amazon Resource Name (ARN) is already associated with the specified DB cluster.</p>
     DbClusterRoleAlreadyExistsFault(crate::error::DbClusterRoleAlreadyExistsFault),
@@ -70,43 +54,31 @@ pub enum Error {
     DbClusterRoleQuotaExceededFault(crate::error::DbClusterRoleQuotaExceededFault),
     /// <p>The user already has a DB cluster snapshot with the given identifier.</p>
     DbClusterSnapshotAlreadyExistsFault(crate::error::DbClusterSnapshotAlreadyExistsFault),
-    /// <p>
-    /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.
-    /// </p>
+    /// <p> <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot. </p>
     DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
     /// <p>The user already has a DB instance with the given identifier.</p>
     DbInstanceAlreadyExistsFault(crate::error::DbInstanceAlreadyExistsFault),
     /// <p>No automated backup for this DB instance was found.</p>
     DbInstanceAutomatedBackupNotFoundFault(crate::error::DbInstanceAutomatedBackupNotFoundFault),
-    /// <p>The quota for retained automated backups was exceeded. This prevents you
-    /// from retaining any additional automated backups. The retained automated backups
-    /// quota is the same as your DB Instance quota.</p>
+    /// <p>The quota for retained automated backups was exceeded. This prevents you from retaining any additional automated backups. The retained automated backups quota is the same as your DB Instance quota.</p>
     DbInstanceAutomatedBackupQuotaExceededFault(
         crate::error::DbInstanceAutomatedBackupQuotaExceededFault,
     ),
-    /// <p>
-    /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
-    /// </p>
+    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance. </p>
     DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// <p>The specified <code>RoleArn</code> or <code>FeatureName</code> value is already associated with the DB instance.</p>
     DbInstanceRoleAlreadyExistsFault(crate::error::DbInstanceRoleAlreadyExistsFault),
-    /// <p>The specified <code>RoleArn</code> value doesn't match the specified feature for
-    /// the DB instance.</p>
+    /// <p>The specified <code>RoleArn</code> value doesn't match the specified feature for the DB instance.</p>
     DbInstanceRoleNotFoundFault(crate::error::DbInstanceRoleNotFoundFault),
     /// <p>You can't associate any more Amazon Web Services Identity and Access Management (IAM) roles with the DB instance because the quota has been reached.</p>
     DbInstanceRoleQuotaExceededFault(crate::error::DbInstanceRoleQuotaExceededFault),
-    /// <p>
-    /// <code>LogFileName</code> doesn't refer to an existing DB log file.</p>
+    /// <p> <code>LogFileName</code> doesn't refer to an existing DB log file.</p>
     DbLogFileNotFoundFault(crate::error::DbLogFileNotFoundFault),
     /// <p>A DB parameter group with the same name exists.</p>
     DbParameterGroupAlreadyExistsFault(crate::error::DbParameterGroupAlreadyExistsFault),
-    /// <p>
-    /// <code>DBParameterGroupName</code> doesn't refer to an
-    /// existing DB parameter group.
-    /// </p>
+    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group. </p>
     DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
-    /// <p>The request would result in the user exceeding the allowed number of DB parameter
-    /// groups.</p>
+    /// <p>The request would result in the user exceeding the allowed number of DB parameter groups.</p>
     DbParameterGroupQuotaExceededFault(crate::error::DbParameterGroupQuotaExceededFault),
     /// <p>The specified proxy name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
     DbProxyAlreadyExistsFault(crate::error::DbProxyAlreadyExistsFault),
@@ -126,53 +98,33 @@ pub enum Error {
     DbProxyTargetGroupNotFoundFault(crate::error::DbProxyTargetGroupNotFoundFault),
     /// <p>The specified RDS DB instance or Aurora DB cluster isn't available for a proxy owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
     DbProxyTargetNotFoundFault(crate::error::DbProxyTargetNotFoundFault),
-    /// <p>
-    /// A DB security group with the name specified in
-    /// <code>DBSecurityGroupName</code> already exists.
-    /// </p>
+    /// <p> A DB security group with the name specified in <code>DBSecurityGroupName</code> already exists. </p>
     DbSecurityGroupAlreadyExistsFault(crate::error::DbSecurityGroupAlreadyExistsFault),
-    /// <p>
-    /// <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.
-    /// </p>
+    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group. </p>
     DbSecurityGroupNotFoundFault(crate::error::DbSecurityGroupNotFoundFault),
     /// <p>A DB security group isn't allowed for this action.</p>
     DbSecurityGroupNotSupportedFault(crate::error::DbSecurityGroupNotSupportedFault),
-    /// <p>The request would result in the user exceeding the allowed number of DB security
-    /// groups.</p>
+    /// <p>The request would result in the user exceeding the allowed number of DB security groups.</p>
     DbSecurityGroupQuotaExceededFault(crate::error::DbSecurityGroupQuotaExceededFault),
-    /// <p>
-    /// <code>DBSnapshotIdentifier</code> is already used by an existing snapshot.
-    /// </p>
+    /// <p> <code>DBSnapshotIdentifier</code> is already used by an existing snapshot. </p>
     DbSnapshotAlreadyExistsFault(crate::error::DbSnapshotAlreadyExistsFault),
-    /// <p>
-    /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
-    /// </p>
+    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot. </p>
     DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
-    /// <p>
-    /// <code>DBSubnetGroupName</code> is already used by an existing DB subnet group.
-    /// </p>
+    /// <p> <code>DBSubnetGroupName</code> is already used by an existing DB subnet group. </p>
     DbSubnetGroupAlreadyExistsFault(crate::error::DbSubnetGroupAlreadyExistsFault),
     /// <p>Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
     DbSubnetGroupDoesNotCoverEnoughAZs(crate::error::DbSubnetGroupDoesNotCoverEnoughAZs),
-    /// <p>The DBSubnetGroup shouldn't be specified while creating read replicas that lie
-    /// in the same region as the source instance.</p>
+    /// <p>The DBSubnetGroup shouldn't be specified while creating read replicas that lie in the same region as the source instance.</p>
     DbSubnetGroupNotAllowedFault(crate::error::DbSubnetGroupNotAllowedFault),
-    /// <p>
-    /// <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
-    /// </p>
+    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group. </p>
     DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
-    /// <p>The request would result in the user exceeding the allowed number of DB subnet
-    /// groups.</p>
+    /// <p>The request would result in the user exceeding the allowed number of DB subnet groups.</p>
     DbSubnetGroupQuotaExceededFault(crate::error::DbSubnetGroupQuotaExceededFault),
-    /// <p>The request would result in the user exceeding the allowed number of subnets in a
-    /// DB subnet groups.</p>
+    /// <p>The request would result in the user exceeding the allowed number of subnets in a DB subnet groups.</p>
     DbSubnetQuotaExceededFault(crate::error::DbSubnetQuotaExceededFault),
-    /// <p>The DB upgrade failed because a resource the DB depends on can't be
-    /// modified.</p>
+    /// <p>The DB upgrade failed because a resource the DB depends on can't be modified.</p>
     DbUpgradeDependencyFailureFault(crate::error::DbUpgradeDependencyFailureFault),
-    /// <p>
-    /// <code>Domain</code> doesn't refer to an existing Active Directory domain.
-    /// </p>
+    /// <p> <code>Domain</code> doesn't refer to an existing Active Directory domain. </p>
     DomainNotFoundFault(crate::error::DomainNotFoundFault),
     /// <p>You have reached the maximum number of event subscriptions.</p>
     EventSubscriptionQuotaExceededFault(crate::error::EventSubscriptionQuotaExceededFault),
@@ -192,31 +144,21 @@ pub enum Error {
     IamRoleNotFoundFault(crate::error::IamRoleNotFoundFault),
     /// <p>The specified installation medium has already been imported.</p>
     InstallationMediaAlreadyExistsFault(crate::error::InstallationMediaAlreadyExistsFault),
-    /// <p>
-    /// <code>InstallationMediaID</code> doesn't refer to an existing installation medium.</p>
+    /// <p> <code>InstallationMediaID</code> doesn't refer to an existing installation medium.</p>
     InstallationMediaNotFoundFault(crate::error::InstallationMediaNotFoundFault),
-    /// <p>The request would result in the user exceeding the allowed number of DB
-    /// instances.</p>
+    /// <p>The request would result in the user exceeding the allowed number of DB instances.</p>
     InstanceQuotaExceededFault(crate::error::InstanceQuotaExceededFault),
-    /// <p>The requested operation can't be performed because there aren't enough available IP addresses
-    /// in the proxy's subnets. Add more CIDR blocks to the VPC or remove IP address that aren't required
-    /// from the subnets.</p>
+    /// <p>The requested operation can't be performed because there aren't enough available IP addresses in the proxy's subnets. Add more CIDR blocks to the VPC or remove IP address that aren't required from the subnets.</p>
     InsufficientAvailableIPsInSubnetFault(crate::error::InsufficientAvailableIPsInSubnetFault),
     /// <p>The DB cluster doesn't have enough capacity for the current operation.</p>
     InsufficientDbClusterCapacityFault(crate::error::InsufficientDbClusterCapacityFault),
-    /// <p>The specified DB instance class isn't available in the specified Availability
-    /// Zone.</p>
+    /// <p>The specified DB instance class isn't available in the specified Availability Zone.</p>
     InsufficientDbInstanceCapacityFault(crate::error::InsufficientDbInstanceCapacityFault),
-    /// <p>There is insufficient storage available for the current action. You might be able to
-    /// resolve this error by updating your subnet group to use different Availability Zones
-    /// that have more storage available.</p>
+    /// <p>There is insufficient storage available for the current action. You might be able to resolve this error by updating your subnet group to use different Availability Zones that have more storage available.</p>
     InsufficientStorageClusterCapacityFault(crate::error::InsufficientStorageClusterCapacityFault),
     /// <p>You can't delete the CEV.</p>
     InvalidCustomDbEngineVersionStateFault(crate::error::InvalidCustomDbEngineVersionStateFault),
-    /// <p>
-    /// <code>Capacity</code> isn't a valid Aurora Serverless DB cluster
-    /// capacity. Valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
-    /// <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p>
+    /// <p> <code>Capacity</code> isn't a valid Aurora Serverless DB cluster capacity. Valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p>
     InvalidDbClusterCapacityFault(crate::error::InvalidDbClusterCapacityFault),
     /// <p>The requested operation can't be performed on the endpoint while the endpoint is in this state.</p>
     InvalidDbClusterEndpointStateFault(crate::error::InvalidDbClusterEndpointStateFault),
@@ -224,16 +166,13 @@ pub enum Error {
     InvalidDbClusterSnapshotStateFault(crate::error::InvalidDbClusterSnapshotStateFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
-    /// <p>The automated backup is in an invalid state.
-    /// For example, this automated backup is associated with an active instance. </p>
+    /// <p>The automated backup is in an invalid state. For example, this automated backup is associated with an active instance. </p>
     InvalidDbInstanceAutomatedBackupStateFault(
         crate::error::InvalidDbInstanceAutomatedBackupStateFault,
     ),
     /// <p>The DB instance isn't in a valid state.</p>
     InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
-    /// <p>The DB parameter group is in use or is in an invalid state. If you are attempting
-    /// to delete the parameter group, you can't delete it when the parameter group is in
-    /// this state.</p>
+    /// <p>The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter group, you can't delete it when the parameter group is in this state.</p>
     InvalidDbParameterGroupStateFault(crate::error::InvalidDbParameterGroupStateFault),
     /// <p>You can't perform this operation while the DB proxy endpoint is in a particular state.</p>
     InvalidDbProxyEndpointStateFault(crate::error::InvalidDbProxyEndpointStateFault),
@@ -243,14 +182,11 @@ pub enum Error {
     InvalidDbSecurityGroupStateFault(crate::error::InvalidDbSecurityGroupStateFault),
     /// <p>The state of the DB snapshot doesn't allow deletion.</p>
     InvalidDbSnapshotStateFault(crate::error::InvalidDbSnapshotStateFault),
-    /// <p>The DBSubnetGroup doesn't belong to the same VPC as that of an existing
-    /// cross-region read replica of the same source instance.</p>
+    /// <p>The DBSubnetGroup doesn't belong to the same VPC as that of an existing cross-region read replica of the same source instance.</p>
     InvalidDbSubnetGroupFault(crate::error::InvalidDbSubnetGroupFault),
     /// <p>The DB subnet group cannot be deleted because it's in use.</p>
     InvalidDbSubnetGroupStateFault(crate::error::InvalidDbSubnetGroupStateFault),
-    /// <p>
-    /// The DB subnet isn't in the <i>available</i> state.
-    /// </p>
+    /// <p> The DB subnet isn't in the <i>available</i> state. </p>
     InvalidDbSubnetStateFault(crate::error::InvalidDbSubnetStateFault),
     /// <p>This error can occur if someone else is modifying a subscription. You should retry the action.</p>
     InvalidEventSubscriptionStateFault(crate::error::InvalidEventSubscriptionStateFault),
@@ -262,19 +198,15 @@ pub enum Error {
     InvalidExportTaskStateFault(crate::error::InvalidExportTaskStateFault),
     /// <p>The global cluster is in an invalid state and can't perform the requested operation. </p>
     InvalidGlobalClusterStateFault(crate::error::InvalidGlobalClusterStateFault),
-    /// <p>
-    /// The option group isn't in the <i>available</i> state.
-    /// </p>
+    /// <p> The option group isn't in the <i>available</i> state. </p>
     InvalidOptionGroupStateFault(crate::error::InvalidOptionGroupStateFault),
     /// <p>Cannot restore from VPC backup to non-VPC DB instance.</p>
     InvalidRestoreFault(crate::error::InvalidRestoreFault),
-    /// <p>The specified Amazon S3 bucket name can't be found or Amazon RDS isn't
-    /// authorized to access the specified Amazon S3 bucket. Verify the <b>SourceS3BucketName</b> and <b>S3IngestionRoleArn</b> values and try again.</p>
+    /// <p>The specified Amazon S3 bucket name can't be found or Amazon RDS isn't authorized to access the specified Amazon S3 bucket. Verify the <b>SourceS3BucketName</b> and <b>S3IngestionRoleArn</b> values and try again.</p>
     InvalidS3BucketFault(crate::error::InvalidS3BucketFault),
     /// <p>The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.</p>
     InvalidSubnet(crate::error::InvalidSubnet),
-    /// <p>The DB subnet group doesn't cover all Availability Zones after it's
-    /// created because of users' change.</p>
+    /// <p>The DB subnet group doesn't cover all Availability Zones after it's created because of users' change.</p>
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
     /// <p>An error occurred accessing an Amazon Web Services KMS key.</p>
     KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
@@ -284,11 +216,7 @@ pub enum Error {
     OptionGroupNotFoundFault(crate::error::OptionGroupNotFoundFault),
     /// <p>The quota of 20 option groups was exceeded for this Amazon Web Services account.</p>
     OptionGroupQuotaExceededFault(crate::error::OptionGroupQuotaExceededFault),
-    /// <p>
-    /// <code>SourceDBInstanceIdentifier</code>
-    /// refers to a DB instance with
-    /// <code>BackupRetentionPeriod</code> equal to 0.
-    /// </p>
+    /// <p> <code>SourceDBInstanceIdentifier</code> refers to a DB instance with <code>BackupRetentionPeriod</code> equal to 0. </p>
     PointInTimeRestoreNotEnabledFault(crate::error::PointInTimeRestoreNotEnabledFault),
     /// <p>Provisioned IOPS not available in the specified Availability Zone.</p>
     ProvisionedIopsNotAvailableInAzFault(crate::error::ProvisionedIopsNotAvailableInAzFault),
@@ -312,16 +240,13 @@ pub enum Error {
     SnsTopicArnNotFoundFault(crate::error::SnsTopicArnNotFoundFault),
     /// <p>You have exceeded the maximum number of accounts that you can share a manual DB snapshot with.</p>
     SharedSnapshotQuotaExceededFault(crate::error::SharedSnapshotQuotaExceededFault),
-    /// <p>The request would result in the user exceeding the allowed number of DB
-    /// snapshots.</p>
+    /// <p>The request would result in the user exceeding the allowed number of DB snapshots.</p>
     SnapshotQuotaExceededFault(crate::error::SnapshotQuotaExceededFault),
     /// <p>The requested source could not be found.</p>
     SourceNotFoundFault(crate::error::SourceNotFoundFault),
-    /// <p>The request would result in the user exceeding the allowed amount of storage
-    /// available across all DB instances.</p>
+    /// <p>The request would result in the user exceeding the allowed amount of storage available across all DB instances.</p>
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
-    /// <p>Storage of the <code>StorageType</code> specified can't be associated
-    /// with the DB instance. </p>
+    /// <p>Storage of the <code>StorageType</code> specified can't be associated with the DB instance. </p>
     StorageTypeNotSupportedFault(crate::error::StorageTypeNotSupportedFault),
     /// <p>The DB subnet is already in use in the Availability Zone.</p>
     SubnetAlreadyInUse(crate::error::SubnetAlreadyInUse),

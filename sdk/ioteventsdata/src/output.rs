@@ -5,8 +5,7 @@
 pub struct ListDetectorsOutput {
     /// <p>A list of summary information about the detectors (instances).</p>
     pub detector_summaries: std::option::Option<std::vec::Vec<crate::model::DetectorSummary>>,
-    /// <p>The token that you can use to return the next set of results,
-    /// or <code>null</code> if there are no more results.</p>
+    /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDetectorsOutput {
@@ -14,8 +13,7 @@ impl ListDetectorsOutput {
     pub fn detector_summaries(&self) -> std::option::Option<&[crate::model::DetectorSummary]> {
         self.detector_summaries.as_deref()
     }
-    /// <p>The token that you can use to return the next set of results,
-    /// or <code>null</code> if there are no more results.</p>
+    /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -44,12 +42,9 @@ pub mod list_detectors_output {
         /// To override the contents of this collection use [`set_detector_summaries`](Self::set_detector_summaries).
         ///
         /// <p>A list of summary information about the detectors (instances).</p>
-        pub fn detector_summaries(
-            mut self,
-            input: impl Into<crate::model::DetectorSummary>,
-        ) -> Self {
+        pub fn detector_summaries(mut self, input: crate::model::DetectorSummary) -> Self {
             let mut v = self.detector_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.detector_summaries = Some(v);
             self
         }
@@ -61,14 +56,12 @@ pub mod list_detectors_output {
             self.detector_summaries = input;
             self
         }
-        /// <p>The token that you can use to return the next set of results,
-        /// or <code>null</code> if there are no more results.</p>
+        /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that you can use to return the next set of results,
-        /// or <code>null</code> if there are no more results.</p>
+        /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -95,8 +88,7 @@ impl ListDetectorsOutput {
 pub struct ListAlarmsOutput {
     /// <p>A list that summarizes each alarm.</p>
     pub alarm_summaries: std::option::Option<std::vec::Vec<crate::model::AlarmSummary>>,
-    /// <p>The token that you can use to return the next set of results,
-    /// or <code>null</code> if there are no more results.</p>
+    /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAlarmsOutput {
@@ -104,8 +96,7 @@ impl ListAlarmsOutput {
     pub fn alarm_summaries(&self) -> std::option::Option<&[crate::model::AlarmSummary]> {
         self.alarm_summaries.as_deref()
     }
-    /// <p>The token that you can use to return the next set of results,
-    /// or <code>null</code> if there are no more results.</p>
+    /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -133,9 +124,9 @@ pub mod list_alarms_output {
         /// To override the contents of this collection use [`set_alarm_summaries`](Self::set_alarm_summaries).
         ///
         /// <p>A list that summarizes each alarm.</p>
-        pub fn alarm_summaries(mut self, input: impl Into<crate::model::AlarmSummary>) -> Self {
+        pub fn alarm_summaries(mut self, input: crate::model::AlarmSummary) -> Self {
             let mut v = self.alarm_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alarm_summaries = Some(v);
             self
         }
@@ -147,14 +138,12 @@ pub mod list_alarms_output {
             self.alarm_summaries = input;
             self
         }
-        /// <p>The token that you can use to return the next set of results,
-        /// or <code>null</code> if there are no more results.</p>
+        /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that you can use to return the next set of results,
-        /// or <code>null</code> if there are no more results.</p>
+        /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -285,14 +274,12 @@ impl DescribeAlarmOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdateDetectorOutput {
-    /// <p>A list of those detector updates that resulted in errors. (If an error is listed here, the
-    /// specific update did not occur.)</p>
+    /// <p>A list of those detector updates that resulted in errors. (If an error is listed here, the specific update did not occur.)</p>
     pub batch_update_detector_error_entries:
         std::option::Option<std::vec::Vec<crate::model::BatchUpdateDetectorErrorEntry>>,
 }
 impl BatchUpdateDetectorOutput {
-    /// <p>A list of those detector updates that resulted in errors. (If an error is listed here, the
-    /// specific update did not occur.)</p>
+    /// <p>A list of those detector updates that resulted in errors. (If an error is listed here, the specific update did not occur.)</p>
     pub fn batch_update_detector_error_entries(
         &self,
     ) -> std::option::Option<&[crate::model::BatchUpdateDetectorErrorEntry]> {
@@ -323,19 +310,17 @@ pub mod batch_update_detector_output {
         ///
         /// To override the contents of this collection use [`set_batch_update_detector_error_entries`](Self::set_batch_update_detector_error_entries).
         ///
-        /// <p>A list of those detector updates that resulted in errors. (If an error is listed here, the
-        /// specific update did not occur.)</p>
+        /// <p>A list of those detector updates that resulted in errors. (If an error is listed here, the specific update did not occur.)</p>
         pub fn batch_update_detector_error_entries(
             mut self,
-            input: impl Into<crate::model::BatchUpdateDetectorErrorEntry>,
+            input: crate::model::BatchUpdateDetectorErrorEntry,
         ) -> Self {
             let mut v = self.batch_update_detector_error_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.batch_update_detector_error_entries = Some(v);
             self
         }
-        /// <p>A list of those detector updates that resulted in errors. (If an error is listed here, the
-        /// specific update did not occur.)</p>
+        /// <p>A list of those detector updates that resulted in errors. (If an error is listed here, the specific update did not occur.)</p>
         pub fn set_batch_update_detector_error_entries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchUpdateDetectorErrorEntry>>,
@@ -362,13 +347,11 @@ impl BatchUpdateDetectorOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchSnoozeAlarmOutput {
-    /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors.
-    /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+    /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
     pub error_entries: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
 }
 impl BatchSnoozeAlarmOutput {
-    /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors.
-    /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+    /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
     pub fn error_entries(
         &self,
     ) -> std::option::Option<&[crate::model::BatchAlarmActionErrorEntry]> {
@@ -396,19 +379,14 @@ pub mod batch_snooze_alarm_output {
         ///
         /// To override the contents of this collection use [`set_error_entries`](Self::set_error_entries).
         ///
-        /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors.
-        /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
-        pub fn error_entries(
-            mut self,
-            input: impl Into<crate::model::BatchAlarmActionErrorEntry>,
-        ) -> Self {
+        /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+        pub fn error_entries(mut self, input: crate::model::BatchAlarmActionErrorEntry) -> Self {
             let mut v = self.error_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.error_entries = Some(v);
             self
         }
-        /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors.
-        /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+        /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
         pub fn set_error_entries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
@@ -435,13 +413,11 @@ impl BatchSnoozeAlarmOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchResetAlarmOutput {
-    /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors.
-    /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+    /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
     pub error_entries: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
 }
 impl BatchResetAlarmOutput {
-    /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors.
-    /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+    /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
     pub fn error_entries(
         &self,
     ) -> std::option::Option<&[crate::model::BatchAlarmActionErrorEntry]> {
@@ -469,19 +445,14 @@ pub mod batch_reset_alarm_output {
         ///
         /// To override the contents of this collection use [`set_error_entries`](Self::set_error_entries).
         ///
-        /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors.
-        /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
-        pub fn error_entries(
-            mut self,
-            input: impl Into<crate::model::BatchAlarmActionErrorEntry>,
-        ) -> Self {
+        /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+        pub fn error_entries(mut self, input: crate::model::BatchAlarmActionErrorEntry) -> Self {
             let mut v = self.error_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.error_entries = Some(v);
             self
         }
-        /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors.
-        /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+        /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
         pub fn set_error_entries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
@@ -547,10 +518,10 @@ pub mod batch_put_message_output {
         /// <p>A list of any errors encountered when sending the messages.</p>
         pub fn batch_put_message_error_entries(
             mut self,
-            input: impl Into<crate::model::BatchPutMessageErrorEntry>,
+            input: crate::model::BatchPutMessageErrorEntry,
         ) -> Self {
             let mut v = self.batch_put_message_error_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.batch_put_message_error_entries = Some(v);
             self
         }
@@ -581,13 +552,11 @@ impl BatchPutMessageOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchEnableAlarmOutput {
-    /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors.
-    /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+    /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
     pub error_entries: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
 }
 impl BatchEnableAlarmOutput {
-    /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors.
-    /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+    /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
     pub fn error_entries(
         &self,
     ) -> std::option::Option<&[crate::model::BatchAlarmActionErrorEntry]> {
@@ -615,19 +584,14 @@ pub mod batch_enable_alarm_output {
         ///
         /// To override the contents of this collection use [`set_error_entries`](Self::set_error_entries).
         ///
-        /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors.
-        /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
-        pub fn error_entries(
-            mut self,
-            input: impl Into<crate::model::BatchAlarmActionErrorEntry>,
-        ) -> Self {
+        /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+        pub fn error_entries(mut self, input: crate::model::BatchAlarmActionErrorEntry) -> Self {
             let mut v = self.error_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.error_entries = Some(v);
             self
         }
-        /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors.
-        /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+        /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
         pub fn set_error_entries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
@@ -654,13 +618,11 @@ impl BatchEnableAlarmOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDisableAlarmOutput {
-    /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors.
-    /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+    /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
     pub error_entries: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
 }
 impl BatchDisableAlarmOutput {
-    /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors.
-    /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+    /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
     pub fn error_entries(
         &self,
     ) -> std::option::Option<&[crate::model::BatchAlarmActionErrorEntry]> {
@@ -688,19 +650,14 @@ pub mod batch_disable_alarm_output {
         ///
         /// To override the contents of this collection use [`set_error_entries`](Self::set_error_entries).
         ///
-        /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors.
-        /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
-        pub fn error_entries(
-            mut self,
-            input: impl Into<crate::model::BatchAlarmActionErrorEntry>,
-        ) -> Self {
+        /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+        pub fn error_entries(mut self, input: crate::model::BatchAlarmActionErrorEntry) -> Self {
             let mut v = self.error_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.error_entries = Some(v);
             self
         }
-        /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors.
-        /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+        /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
         pub fn set_error_entries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
@@ -727,13 +684,11 @@ impl BatchDisableAlarmOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAcknowledgeAlarmOutput {
-    /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors.
-    /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+    /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
     pub error_entries: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,
 }
 impl BatchAcknowledgeAlarmOutput {
-    /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors.
-    /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+    /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
     pub fn error_entries(
         &self,
     ) -> std::option::Option<&[crate::model::BatchAlarmActionErrorEntry]> {
@@ -761,19 +716,14 @@ pub mod batch_acknowledge_alarm_output {
         ///
         /// To override the contents of this collection use [`set_error_entries`](Self::set_error_entries).
         ///
-        /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors.
-        /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
-        pub fn error_entries(
-            mut self,
-            input: impl Into<crate::model::BatchAlarmActionErrorEntry>,
-        ) -> Self {
+        /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+        pub fn error_entries(mut self, input: crate::model::BatchAlarmActionErrorEntry) -> Self {
             let mut v = self.error_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.error_entries = Some(v);
             self
         }
-        /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors.
-        /// Each error entry contains an entry ID that helps you identify the entry that failed.</p>
+        /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
         pub fn set_error_entries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchAlarmActionErrorEntry>>,

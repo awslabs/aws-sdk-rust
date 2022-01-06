@@ -441,9 +441,7 @@ impl AsRef<str> for PackageType {
     }
 }
 
-/// <p>The Amazon S3 location for importing the package specified as <code>S3BucketName</code> and
-/// <code>S3Key</code>
-/// </p>
+/// <p>The Amazon S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackageSource {
@@ -523,19 +521,13 @@ impl PackageSource {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DryRunResults {
-    /// <p>
-    /// Specifies the way in which Amazon OpenSearch Service applies the update.
-    /// Possible responses are <code>Blue/Green</code> (the update requires a blue/green deployment), <code>DynamicUpdate</code> (no blue/green required), <code>Undetermined</code> (the domain is undergoing an update and can't predict the deployment type; try again after the update is complete), and <code>None</code> (the request doesn't include any configuration changes).
-    /// </p>
+    /// <p> Specifies the way in which Amazon OpenSearch Service applies the update. Possible responses are <code>Blue/Green</code> (the update requires a blue/green deployment), <code>DynamicUpdate</code> (no blue/green required), <code>Undetermined</code> (the domain is undergoing an update and can't predict the deployment type; try again after the update is complete), and <code>None</code> (the request doesn't include any configuration changes). </p>
     pub deployment_type: std::option::Option<std::string::String>,
     /// <p>Contains an optional message associated with the DryRunResults.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl DryRunResults {
-    /// <p>
-    /// Specifies the way in which Amazon OpenSearch Service applies the update.
-    /// Possible responses are <code>Blue/Green</code> (the update requires a blue/green deployment), <code>DynamicUpdate</code> (no blue/green required), <code>Undetermined</code> (the domain is undergoing an update and can't predict the deployment type; try again after the update is complete), and <code>None</code> (the request doesn't include any configuration changes).
-    /// </p>
+    /// <p> Specifies the way in which Amazon OpenSearch Service applies the update. Possible responses are <code>Blue/Green</code> (the update requires a blue/green deployment), <code>DynamicUpdate</code> (no blue/green required), <code>Undetermined</code> (the domain is undergoing an update and can't predict the deployment type; try again after the update is complete), and <code>None</code> (the request doesn't include any configuration changes). </p>
     pub fn deployment_type(&self) -> std::option::Option<&str> {
         self.deployment_type.as_deref()
     }
@@ -562,18 +554,12 @@ pub mod dry_run_results {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// Specifies the way in which Amazon OpenSearch Service applies the update.
-        /// Possible responses are <code>Blue/Green</code> (the update requires a blue/green deployment), <code>DynamicUpdate</code> (no blue/green required), <code>Undetermined</code> (the domain is undergoing an update and can't predict the deployment type; try again after the update is complete), and <code>None</code> (the request doesn't include any configuration changes).
-        /// </p>
+        /// <p> Specifies the way in which Amazon OpenSearch Service applies the update. Possible responses are <code>Blue/Green</code> (the update requires a blue/green deployment), <code>DynamicUpdate</code> (no blue/green required), <code>Undetermined</code> (the domain is undergoing an update and can't predict the deployment type; try again after the update is complete), and <code>None</code> (the request doesn't include any configuration changes). </p>
         pub fn deployment_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.deployment_type = Some(input.into());
             self
         }
-        /// <p>
-        /// Specifies the way in which Amazon OpenSearch Service applies the update.
-        /// Possible responses are <code>Blue/Green</code> (the update requires a blue/green deployment), <code>DynamicUpdate</code> (no blue/green required), <code>Undetermined</code> (the domain is undergoing an update and can't predict the deployment type; try again after the update is complete), and <code>None</code> (the request doesn't include any configuration changes).
-        /// </p>
+        /// <p> Specifies the way in which Amazon OpenSearch Service applies the update. Possible responses are <code>Blue/Green</code> (the update requires a blue/green deployment), <code>DynamicUpdate</code> (no blue/green required), <code>Undetermined</code> (the domain is undergoing an update and can't predict the deployment type; try again after the update is complete), and <code>None</code> (the request doesn't include any configuration changes). </p>
         pub fn set_deployment_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -613,46 +599,33 @@ impl DryRunResults {
 pub struct DomainConfig {
     /// <p>String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the OpenSearch or Elasticsearch domain.</p>
     pub engine_version: std::option::Option<crate::model::VersionStatus>,
-    /// <p>The <code>ClusterConfig</code> for the domain.
-    /// </p>
+    /// <p>The <code>ClusterConfig</code> for the domain. </p>
     pub cluster_config: std::option::Option<crate::model::ClusterConfigStatus>,
-    /// <p>The <code>EBSOptions</code> for the domain.
-    /// </p>
+    /// <p>The <code>EBSOptions</code> for the domain. </p>
     pub ebs_options: std::option::Option<crate::model::EbsOptionsStatus>,
     /// <p>IAM access policy as a JSON-formatted string.</p>
     pub access_policies: std::option::Option<crate::model::AccessPoliciesStatus>,
-    /// <p>The <code>SnapshotOptions</code> for the domain.
-    /// </p>
+    /// <p>The <code>SnapshotOptions</code> for the domain. </p>
     pub snapshot_options: std::option::Option<crate::model::SnapshotOptionsStatus>,
-    /// <p>The <code>VPCOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">
-    /// Launching your Amazon OpenSearch Service domains using a VPC</a>.
-    /// </p>
+    /// <p>The <code>VPCOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank"> Launching your Amazon OpenSearch Service domains using a VPC</a>. </p>
     pub vpc_options: std::option::Option<crate::model::VpcDerivedInfoStatus>,
-    /// <p>The <code>CognitoOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
-    /// </p>
+    /// <p>The <code>CognitoOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>. </p>
     pub cognito_options: std::option::Option<crate::model::CognitoOptionsStatus>,
-    /// <p>The <code>EncryptionAtRestOptions</code> for the domain.
-    /// </p>
+    /// <p>The <code>EncryptionAtRestOptions</code> for the domain. </p>
     pub encryption_at_rest_options:
         std::option::Option<crate::model::EncryptionAtRestOptionsStatus>,
-    /// <p>The <code>NodeToNodeEncryptionOptions</code> for the domain.
-    /// </p>
+    /// <p>The <code>NodeToNodeEncryptionOptions</code> for the domain. </p>
     pub node_to_node_encryption_options:
         std::option::Option<crate::model::NodeToNodeEncryptionOptionsStatus>,
-    /// <p>The <code>AdvancedOptions</code> for the domain. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced options
-    /// </a> for more information.
-    /// </p>
+    /// <p>The <code>AdvancedOptions</code> for the domain. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced options </a> for more information. </p>
     pub advanced_options: std::option::Option<crate::model::AdvancedOptionsStatus>,
     /// <p>Log publishing options for the given domain.</p>
     pub log_publishing_options: std::option::Option<crate::model::LogPublishingOptionsStatus>,
-    /// <p>The <code>DomainEndpointOptions</code> for the domain.
-    /// </p>
+    /// <p>The <code>DomainEndpointOptions</code> for the domain. </p>
     pub domain_endpoint_options: std::option::Option<crate::model::DomainEndpointOptionsStatus>,
-    /// <p>Specifies <code>AdvancedSecurityOptions</code> for the domain.
-    /// </p>
+    /// <p>Specifies <code>AdvancedSecurityOptions</code> for the domain. </p>
     pub advanced_security_options: std::option::Option<crate::model::AdvancedSecurityOptionsStatus>,
-    /// <p>Specifies <code>AutoTuneOptions</code> for the domain.
-    /// </p>
+    /// <p>Specifies <code>AutoTuneOptions</code> for the domain. </p>
     pub auto_tune_options: std::option::Option<crate::model::AutoTuneOptionsStatus>,
 }
 impl DomainConfig {
@@ -660,13 +633,11 @@ impl DomainConfig {
     pub fn engine_version(&self) -> std::option::Option<&crate::model::VersionStatus> {
         self.engine_version.as_ref()
     }
-    /// <p>The <code>ClusterConfig</code> for the domain.
-    /// </p>
+    /// <p>The <code>ClusterConfig</code> for the domain. </p>
     pub fn cluster_config(&self) -> std::option::Option<&crate::model::ClusterConfigStatus> {
         self.cluster_config.as_ref()
     }
-    /// <p>The <code>EBSOptions</code> for the domain.
-    /// </p>
+    /// <p>The <code>EBSOptions</code> for the domain. </p>
     pub fn ebs_options(&self) -> std::option::Option<&crate::model::EbsOptionsStatus> {
         self.ebs_options.as_ref()
     }
@@ -674,39 +645,31 @@ impl DomainConfig {
     pub fn access_policies(&self) -> std::option::Option<&crate::model::AccessPoliciesStatus> {
         self.access_policies.as_ref()
     }
-    /// <p>The <code>SnapshotOptions</code> for the domain.
-    /// </p>
+    /// <p>The <code>SnapshotOptions</code> for the domain. </p>
     pub fn snapshot_options(&self) -> std::option::Option<&crate::model::SnapshotOptionsStatus> {
         self.snapshot_options.as_ref()
     }
-    /// <p>The <code>VPCOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">
-    /// Launching your Amazon OpenSearch Service domains using a VPC</a>.
-    /// </p>
+    /// <p>The <code>VPCOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank"> Launching your Amazon OpenSearch Service domains using a VPC</a>. </p>
     pub fn vpc_options(&self) -> std::option::Option<&crate::model::VpcDerivedInfoStatus> {
         self.vpc_options.as_ref()
     }
-    /// <p>The <code>CognitoOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
-    /// </p>
+    /// <p>The <code>CognitoOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>. </p>
     pub fn cognito_options(&self) -> std::option::Option<&crate::model::CognitoOptionsStatus> {
         self.cognito_options.as_ref()
     }
-    /// <p>The <code>EncryptionAtRestOptions</code> for the domain.
-    /// </p>
+    /// <p>The <code>EncryptionAtRestOptions</code> for the domain. </p>
     pub fn encryption_at_rest_options(
         &self,
     ) -> std::option::Option<&crate::model::EncryptionAtRestOptionsStatus> {
         self.encryption_at_rest_options.as_ref()
     }
-    /// <p>The <code>NodeToNodeEncryptionOptions</code> for the domain.
-    /// </p>
+    /// <p>The <code>NodeToNodeEncryptionOptions</code> for the domain. </p>
     pub fn node_to_node_encryption_options(
         &self,
     ) -> std::option::Option<&crate::model::NodeToNodeEncryptionOptionsStatus> {
         self.node_to_node_encryption_options.as_ref()
     }
-    /// <p>The <code>AdvancedOptions</code> for the domain. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced options
-    /// </a> for more information.
-    /// </p>
+    /// <p>The <code>AdvancedOptions</code> for the domain. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced options </a> for more information. </p>
     pub fn advanced_options(&self) -> std::option::Option<&crate::model::AdvancedOptionsStatus> {
         self.advanced_options.as_ref()
     }
@@ -716,22 +679,19 @@ impl DomainConfig {
     ) -> std::option::Option<&crate::model::LogPublishingOptionsStatus> {
         self.log_publishing_options.as_ref()
     }
-    /// <p>The <code>DomainEndpointOptions</code> for the domain.
-    /// </p>
+    /// <p>The <code>DomainEndpointOptions</code> for the domain. </p>
     pub fn domain_endpoint_options(
         &self,
     ) -> std::option::Option<&crate::model::DomainEndpointOptionsStatus> {
         self.domain_endpoint_options.as_ref()
     }
-    /// <p>Specifies <code>AdvancedSecurityOptions</code> for the domain.
-    /// </p>
+    /// <p>Specifies <code>AdvancedSecurityOptions</code> for the domain. </p>
     pub fn advanced_security_options(
         &self,
     ) -> std::option::Option<&crate::model::AdvancedSecurityOptionsStatus> {
         self.advanced_security_options.as_ref()
     }
-    /// <p>Specifies <code>AutoTuneOptions</code> for the domain.
-    /// </p>
+    /// <p>Specifies <code>AutoTuneOptions</code> for the domain. </p>
     pub fn auto_tune_options(&self) -> std::option::Option<&crate::model::AutoTuneOptionsStatus> {
         self.auto_tune_options.as_ref()
     }
@@ -802,14 +762,12 @@ pub mod domain_config {
             self.engine_version = input;
             self
         }
-        /// <p>The <code>ClusterConfig</code> for the domain.
-        /// </p>
+        /// <p>The <code>ClusterConfig</code> for the domain. </p>
         pub fn cluster_config(mut self, input: crate::model::ClusterConfigStatus) -> Self {
             self.cluster_config = Some(input);
             self
         }
-        /// <p>The <code>ClusterConfig</code> for the domain.
-        /// </p>
+        /// <p>The <code>ClusterConfig</code> for the domain. </p>
         pub fn set_cluster_config(
             mut self,
             input: std::option::Option<crate::model::ClusterConfigStatus>,
@@ -817,14 +775,12 @@ pub mod domain_config {
             self.cluster_config = input;
             self
         }
-        /// <p>The <code>EBSOptions</code> for the domain.
-        /// </p>
+        /// <p>The <code>EBSOptions</code> for the domain. </p>
         pub fn ebs_options(mut self, input: crate::model::EbsOptionsStatus) -> Self {
             self.ebs_options = Some(input);
             self
         }
-        /// <p>The <code>EBSOptions</code> for the domain.
-        /// </p>
+        /// <p>The <code>EBSOptions</code> for the domain. </p>
         pub fn set_ebs_options(
             mut self,
             input: std::option::Option<crate::model::EbsOptionsStatus>,
@@ -845,14 +801,12 @@ pub mod domain_config {
             self.access_policies = input;
             self
         }
-        /// <p>The <code>SnapshotOptions</code> for the domain.
-        /// </p>
+        /// <p>The <code>SnapshotOptions</code> for the domain. </p>
         pub fn snapshot_options(mut self, input: crate::model::SnapshotOptionsStatus) -> Self {
             self.snapshot_options = Some(input);
             self
         }
-        /// <p>The <code>SnapshotOptions</code> for the domain.
-        /// </p>
+        /// <p>The <code>SnapshotOptions</code> for the domain. </p>
         pub fn set_snapshot_options(
             mut self,
             input: std::option::Option<crate::model::SnapshotOptionsStatus>,
@@ -860,16 +814,12 @@ pub mod domain_config {
             self.snapshot_options = input;
             self
         }
-        /// <p>The <code>VPCOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">
-        /// Launching your Amazon OpenSearch Service domains using a VPC</a>.
-        /// </p>
+        /// <p>The <code>VPCOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank"> Launching your Amazon OpenSearch Service domains using a VPC</a>. </p>
         pub fn vpc_options(mut self, input: crate::model::VpcDerivedInfoStatus) -> Self {
             self.vpc_options = Some(input);
             self
         }
-        /// <p>The <code>VPCOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">
-        /// Launching your Amazon OpenSearch Service domains using a VPC</a>.
-        /// </p>
+        /// <p>The <code>VPCOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank"> Launching your Amazon OpenSearch Service domains using a VPC</a>. </p>
         pub fn set_vpc_options(
             mut self,
             input: std::option::Option<crate::model::VpcDerivedInfoStatus>,
@@ -877,14 +827,12 @@ pub mod domain_config {
             self.vpc_options = input;
             self
         }
-        /// <p>The <code>CognitoOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
-        /// </p>
+        /// <p>The <code>CognitoOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>. </p>
         pub fn cognito_options(mut self, input: crate::model::CognitoOptionsStatus) -> Self {
             self.cognito_options = Some(input);
             self
         }
-        /// <p>The <code>CognitoOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
-        /// </p>
+        /// <p>The <code>CognitoOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>. </p>
         pub fn set_cognito_options(
             mut self,
             input: std::option::Option<crate::model::CognitoOptionsStatus>,
@@ -892,8 +840,7 @@ pub mod domain_config {
             self.cognito_options = input;
             self
         }
-        /// <p>The <code>EncryptionAtRestOptions</code> for the domain.
-        /// </p>
+        /// <p>The <code>EncryptionAtRestOptions</code> for the domain. </p>
         pub fn encryption_at_rest_options(
             mut self,
             input: crate::model::EncryptionAtRestOptionsStatus,
@@ -901,8 +848,7 @@ pub mod domain_config {
             self.encryption_at_rest_options = Some(input);
             self
         }
-        /// <p>The <code>EncryptionAtRestOptions</code> for the domain.
-        /// </p>
+        /// <p>The <code>EncryptionAtRestOptions</code> for the domain. </p>
         pub fn set_encryption_at_rest_options(
             mut self,
             input: std::option::Option<crate::model::EncryptionAtRestOptionsStatus>,
@@ -910,8 +856,7 @@ pub mod domain_config {
             self.encryption_at_rest_options = input;
             self
         }
-        /// <p>The <code>NodeToNodeEncryptionOptions</code> for the domain.
-        /// </p>
+        /// <p>The <code>NodeToNodeEncryptionOptions</code> for the domain. </p>
         pub fn node_to_node_encryption_options(
             mut self,
             input: crate::model::NodeToNodeEncryptionOptionsStatus,
@@ -919,8 +864,7 @@ pub mod domain_config {
             self.node_to_node_encryption_options = Some(input);
             self
         }
-        /// <p>The <code>NodeToNodeEncryptionOptions</code> for the domain.
-        /// </p>
+        /// <p>The <code>NodeToNodeEncryptionOptions</code> for the domain. </p>
         pub fn set_node_to_node_encryption_options(
             mut self,
             input: std::option::Option<crate::model::NodeToNodeEncryptionOptionsStatus>,
@@ -928,16 +872,12 @@ pub mod domain_config {
             self.node_to_node_encryption_options = input;
             self
         }
-        /// <p>The <code>AdvancedOptions</code> for the domain. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced options
-        /// </a> for more information.
-        /// </p>
+        /// <p>The <code>AdvancedOptions</code> for the domain. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced options </a> for more information. </p>
         pub fn advanced_options(mut self, input: crate::model::AdvancedOptionsStatus) -> Self {
             self.advanced_options = Some(input);
             self
         }
-        /// <p>The <code>AdvancedOptions</code> for the domain. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced options
-        /// </a> for more information.
-        /// </p>
+        /// <p>The <code>AdvancedOptions</code> for the domain. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced options </a> for more information. </p>
         pub fn set_advanced_options(
             mut self,
             input: std::option::Option<crate::model::AdvancedOptionsStatus>,
@@ -961,8 +901,7 @@ pub mod domain_config {
             self.log_publishing_options = input;
             self
         }
-        /// <p>The <code>DomainEndpointOptions</code> for the domain.
-        /// </p>
+        /// <p>The <code>DomainEndpointOptions</code> for the domain. </p>
         pub fn domain_endpoint_options(
             mut self,
             input: crate::model::DomainEndpointOptionsStatus,
@@ -970,8 +909,7 @@ pub mod domain_config {
             self.domain_endpoint_options = Some(input);
             self
         }
-        /// <p>The <code>DomainEndpointOptions</code> for the domain.
-        /// </p>
+        /// <p>The <code>DomainEndpointOptions</code> for the domain. </p>
         pub fn set_domain_endpoint_options(
             mut self,
             input: std::option::Option<crate::model::DomainEndpointOptionsStatus>,
@@ -979,8 +917,7 @@ pub mod domain_config {
             self.domain_endpoint_options = input;
             self
         }
-        /// <p>Specifies <code>AdvancedSecurityOptions</code> for the domain.
-        /// </p>
+        /// <p>Specifies <code>AdvancedSecurityOptions</code> for the domain. </p>
         pub fn advanced_security_options(
             mut self,
             input: crate::model::AdvancedSecurityOptionsStatus,
@@ -988,8 +925,7 @@ pub mod domain_config {
             self.advanced_security_options = Some(input);
             self
         }
-        /// <p>Specifies <code>AdvancedSecurityOptions</code> for the domain.
-        /// </p>
+        /// <p>Specifies <code>AdvancedSecurityOptions</code> for the domain. </p>
         pub fn set_advanced_security_options(
             mut self,
             input: std::option::Option<crate::model::AdvancedSecurityOptionsStatus>,
@@ -997,14 +933,12 @@ pub mod domain_config {
             self.advanced_security_options = input;
             self
         }
-        /// <p>Specifies <code>AutoTuneOptions</code> for the domain.
-        /// </p>
+        /// <p>Specifies <code>AutoTuneOptions</code> for the domain. </p>
         pub fn auto_tune_options(mut self, input: crate::model::AutoTuneOptionsStatus) -> Self {
             self.auto_tune_options = Some(input);
             self
         }
-        /// <p>Specifies <code>AutoTuneOptions</code> for the domain.
-        /// </p>
+        /// <p>Specifies <code>AutoTuneOptions</code> for the domain. </p>
         pub fn set_auto_tune_options(
             mut self,
             input: std::option::Option<crate::model::AutoTuneOptionsStatus>,
@@ -1129,8 +1063,7 @@ pub struct AutoTuneStatus {
     pub update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The latest version of the Auto-Tune options.</p>
     pub update_version: i32,
-    /// <p>The <code>AutoTuneState</code> for the domain.
-    /// </p>
+    /// <p>The <code>AutoTuneState</code> for the domain. </p>
     pub state: std::option::Option<crate::model::AutoTuneState>,
     /// <p>The error message while enabling or disabling Auto-Tune.</p>
     pub error_message: std::option::Option<std::string::String>,
@@ -1150,8 +1083,7 @@ impl AutoTuneStatus {
     pub fn update_version(&self) -> i32 {
         self.update_version
     }
-    /// <p>The <code>AutoTuneState</code> for the domain.
-    /// </p>
+    /// <p>The <code>AutoTuneState</code> for the domain. </p>
     pub fn state(&self) -> std::option::Option<&crate::model::AutoTuneState> {
         self.state.as_ref()
     }
@@ -1226,14 +1158,12 @@ pub mod auto_tune_status {
             self.update_version = input;
             self
         }
-        /// <p>The <code>AutoTuneState</code> for the domain.
-        /// </p>
+        /// <p>The <code>AutoTuneState</code> for the domain. </p>
         pub fn state(mut self, input: crate::model::AutoTuneState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The <code>AutoTuneState</code> for the domain.
-        /// </p>
+        /// <p>The <code>AutoTuneState</code> for the domain. </p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::AutoTuneState>,
@@ -1379,21 +1309,15 @@ impl AsRef<str> for AutoTuneState {
     }
 }
 
-/// <p>The Auto-Tune options: the Auto-Tune desired state for the domain, rollback state when disabling
-/// Auto-Tune options and list of maintenance schedules.
-/// </p>
+/// <p>The Auto-Tune options: the Auto-Tune desired state for the domain, rollback state when disabling Auto-Tune options and list of maintenance schedules. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoTuneOptions {
     /// <p>The Auto-Tune desired state. Valid values are ENABLED and DISABLED.</p>
     pub desired_state: std::option::Option<crate::model::AutoTuneDesiredState>,
-    /// <p>The rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK and DEFAULT_ROLLBACK.
-    /// </p>
+    /// <p>The rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK and DEFAULT_ROLLBACK. </p>
     pub rollback_on_disable: std::option::Option<crate::model::RollbackOnDisable>,
-    /// <p>A list of maintenance schedules. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-    /// Auto-Tune for Amazon OpenSearch Service
-    /// </a> for more information.
-    /// </p>
+    /// <p>A list of maintenance schedules. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
     pub maintenance_schedules:
         std::option::Option<std::vec::Vec<crate::model::AutoTuneMaintenanceSchedule>>,
 }
@@ -1402,15 +1326,11 @@ impl AutoTuneOptions {
     pub fn desired_state(&self) -> std::option::Option<&crate::model::AutoTuneDesiredState> {
         self.desired_state.as_ref()
     }
-    /// <p>The rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK and DEFAULT_ROLLBACK.
-    /// </p>
+    /// <p>The rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK and DEFAULT_ROLLBACK. </p>
     pub fn rollback_on_disable(&self) -> std::option::Option<&crate::model::RollbackOnDisable> {
         self.rollback_on_disable.as_ref()
     }
-    /// <p>A list of maintenance schedules. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-    /// Auto-Tune for Amazon OpenSearch Service
-    /// </a> for more information.
-    /// </p>
+    /// <p>A list of maintenance schedules. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
     pub fn maintenance_schedules(
         &self,
     ) -> std::option::Option<&[crate::model::AutoTuneMaintenanceSchedule]> {
@@ -1451,14 +1371,12 @@ pub mod auto_tune_options {
             self.desired_state = input;
             self
         }
-        /// <p>The rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK and DEFAULT_ROLLBACK.
-        /// </p>
+        /// <p>The rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK and DEFAULT_ROLLBACK. </p>
         pub fn rollback_on_disable(mut self, input: crate::model::RollbackOnDisable) -> Self {
             self.rollback_on_disable = Some(input);
             self
         }
-        /// <p>The rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK and DEFAULT_ROLLBACK.
-        /// </p>
+        /// <p>The rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK and DEFAULT_ROLLBACK. </p>
         pub fn set_rollback_on_disable(
             mut self,
             input: std::option::Option<crate::model::RollbackOnDisable>,
@@ -1470,23 +1388,17 @@ pub mod auto_tune_options {
         ///
         /// To override the contents of this collection use [`set_maintenance_schedules`](Self::set_maintenance_schedules).
         ///
-        /// <p>A list of maintenance schedules. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-        /// Auto-Tune for Amazon OpenSearch Service
-        /// </a> for more information.
-        /// </p>
+        /// <p>A list of maintenance schedules. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
         pub fn maintenance_schedules(
             mut self,
-            input: impl Into<crate::model::AutoTuneMaintenanceSchedule>,
+            input: crate::model::AutoTuneMaintenanceSchedule,
         ) -> Self {
             let mut v = self.maintenance_schedules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.maintenance_schedules = Some(v);
             self
         }
-        /// <p>A list of maintenance schedules. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-        /// Auto-Tune for Amazon OpenSearch Service
-        /// </a> for more information.
-        /// </p>
+        /// <p>A list of maintenance schedules. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
         pub fn set_maintenance_schedules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AutoTuneMaintenanceSchedule>>,
@@ -1511,24 +1423,15 @@ impl AutoTuneOptions {
     }
 }
 
-/// <p>Specifies the Auto-Tune maintenance schedule. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-/// Auto-Tune for Amazon OpenSearch Service
-/// </a> for more information.
-/// </p>
+/// <p>Specifies the Auto-Tune maintenance schedule. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoTuneMaintenanceSchedule {
     /// <p>The timestamp at which the Auto-Tune maintenance schedule starts.</p>
     pub start_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Specifies maintenance schedule duration: duration value and duration unit. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-    /// Auto-Tune for Amazon OpenSearch Service
-    /// </a> for more information.
-    /// </p>
+    /// <p>Specifies maintenance schedule duration: duration value and duration unit. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
     pub duration: std::option::Option<crate::model::Duration>,
-    /// <p>A cron expression for a recurring maintenance schedule. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-    /// Auto-Tune for Amazon OpenSearch Service
-    /// </a> for more information.
-    /// </p>
+    /// <p>A cron expression for a recurring maintenance schedule. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
     pub cron_expression_for_recurrence: std::option::Option<std::string::String>,
 }
 impl AutoTuneMaintenanceSchedule {
@@ -1536,17 +1439,11 @@ impl AutoTuneMaintenanceSchedule {
     pub fn start_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_at.as_ref()
     }
-    /// <p>Specifies maintenance schedule duration: duration value and duration unit. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-    /// Auto-Tune for Amazon OpenSearch Service
-    /// </a> for more information.
-    /// </p>
+    /// <p>Specifies maintenance schedule duration: duration value and duration unit. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
     pub fn duration(&self) -> std::option::Option<&crate::model::Duration> {
         self.duration.as_ref()
     }
-    /// <p>A cron expression for a recurring maintenance schedule. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-    /// Auto-Tune for Amazon OpenSearch Service
-    /// </a> for more information.
-    /// </p>
+    /// <p>A cron expression for a recurring maintenance schedule. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
     pub fn cron_expression_for_recurrence(&self) -> std::option::Option<&str> {
         self.cron_expression_for_recurrence.as_deref()
     }
@@ -1587,26 +1484,17 @@ pub mod auto_tune_maintenance_schedule {
             self.start_at = input;
             self
         }
-        /// <p>Specifies maintenance schedule duration: duration value and duration unit. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-        /// Auto-Tune for Amazon OpenSearch Service
-        /// </a> for more information.
-        /// </p>
+        /// <p>Specifies maintenance schedule duration: duration value and duration unit. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
         pub fn duration(mut self, input: crate::model::Duration) -> Self {
             self.duration = Some(input);
             self
         }
-        /// <p>Specifies maintenance schedule duration: duration value and duration unit. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-        /// Auto-Tune for Amazon OpenSearch Service
-        /// </a> for more information.
-        /// </p>
+        /// <p>Specifies maintenance schedule duration: duration value and duration unit. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
         pub fn set_duration(mut self, input: std::option::Option<crate::model::Duration>) -> Self {
             self.duration = input;
             self
         }
-        /// <p>A cron expression for a recurring maintenance schedule. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-        /// Auto-Tune for Amazon OpenSearch Service
-        /// </a> for more information.
-        /// </p>
+        /// <p>A cron expression for a recurring maintenance schedule. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
         pub fn cron_expression_for_recurrence(
             mut self,
             input: impl Into<std::string::String>,
@@ -1614,10 +1502,7 @@ pub mod auto_tune_maintenance_schedule {
             self.cron_expression_for_recurrence = Some(input.into());
             self
         }
-        /// <p>A cron expression for a recurring maintenance schedule. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-        /// Auto-Tune for Amazon OpenSearch Service
-        /// </a> for more information.
-        /// </p>
+        /// <p>A cron expression for a recurring maintenance schedule. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
         pub fn set_cron_expression_for_recurrence(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1642,36 +1527,21 @@ impl AutoTuneMaintenanceSchedule {
     }
 }
 
-/// <p>The maintenance schedule duration: duration value and duration unit. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-/// Auto-Tune for Amazon OpenSearch Service
-/// </a> for more information.
-/// </p>
+/// <p>The maintenance schedule duration: duration value and duration unit. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Duration {
-    /// <p>Integer to specify the value of a maintenance schedule duration. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-    /// Auto-Tune for Amazon OpenSearch Service
-    /// </a> for more information.
-    /// </p>
+    /// <p>Integer to specify the value of a maintenance schedule duration. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
     pub value: i64,
-    /// <p>The unit of a maintenance schedule duration. Valid value is HOURS. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-    /// Auto-Tune for Amazon OpenSearch Service
-    /// </a> for more information.
-    /// </p>
+    /// <p>The unit of a maintenance schedule duration. Valid value is HOURS. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
     pub unit: std::option::Option<crate::model::TimeUnit>,
 }
 impl Duration {
-    /// <p>Integer to specify the value of a maintenance schedule duration. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-    /// Auto-Tune for Amazon OpenSearch Service
-    /// </a> for more information.
-    /// </p>
+    /// <p>Integer to specify the value of a maintenance schedule duration. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
     pub fn value(&self) -> i64 {
         self.value
     }
-    /// <p>The unit of a maintenance schedule duration. Valid value is HOURS. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-    /// Auto-Tune for Amazon OpenSearch Service
-    /// </a> for more information.
-    /// </p>
+    /// <p>The unit of a maintenance schedule duration. Valid value is HOURS. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
     pub fn unit(&self) -> std::option::Option<&crate::model::TimeUnit> {
         self.unit.as_ref()
     }
@@ -1694,34 +1564,22 @@ pub mod duration {
         pub(crate) unit: std::option::Option<crate::model::TimeUnit>,
     }
     impl Builder {
-        /// <p>Integer to specify the value of a maintenance schedule duration. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-        /// Auto-Tune for Amazon OpenSearch Service
-        /// </a> for more information.
-        /// </p>
+        /// <p>Integer to specify the value of a maintenance schedule duration. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
         pub fn value(mut self, input: i64) -> Self {
             self.value = Some(input);
             self
         }
-        /// <p>Integer to specify the value of a maintenance schedule duration. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-        /// Auto-Tune for Amazon OpenSearch Service
-        /// </a> for more information.
-        /// </p>
+        /// <p>Integer to specify the value of a maintenance schedule duration. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
         pub fn set_value(mut self, input: std::option::Option<i64>) -> Self {
             self.value = input;
             self
         }
-        /// <p>The unit of a maintenance schedule duration. Valid value is HOURS. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-        /// Auto-Tune for Amazon OpenSearch Service
-        /// </a> for more information.
-        /// </p>
+        /// <p>The unit of a maintenance schedule duration. Valid value is HOURS. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
         pub fn unit(mut self, input: crate::model::TimeUnit) -> Self {
             self.unit = Some(input);
             self
         }
-        /// <p>The unit of a maintenance schedule duration. Valid value is HOURS. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-        /// Auto-Tune for Amazon OpenSearch Service
-        /// </a> for more information.
-        /// </p>
+        /// <p>The unit of a maintenance schedule duration. Valid value is HOURS. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::TimeUnit>) -> Self {
             self.unit = input;
             self
@@ -1996,8 +1854,7 @@ pub struct OptionStatus {
     pub update_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The latest version of the entity.</p>
     pub update_version: i32,
-    /// <p>Provides the <code>OptionState</code> for the domain.
-    /// </p>
+    /// <p>Provides the <code>OptionState</code> for the domain. </p>
     pub state: std::option::Option<crate::model::OptionState>,
     /// <p>Indicates whether the domain is being deleted.</p>
     pub pending_deletion: std::option::Option<bool>,
@@ -2015,8 +1872,7 @@ impl OptionStatus {
     pub fn update_version(&self) -> i32 {
         self.update_version
     }
-    /// <p>Provides the <code>OptionState</code> for the domain.
-    /// </p>
+    /// <p>Provides the <code>OptionState</code> for the domain. </p>
     pub fn state(&self) -> std::option::Option<&crate::model::OptionState> {
         self.state.as_ref()
     }
@@ -2085,14 +1941,12 @@ pub mod option_status {
             self.update_version = input;
             self
         }
-        /// <p>Provides the <code>OptionState</code> for the domain.
-        /// </p>
+        /// <p>Provides the <code>OptionState</code> for the domain. </p>
         pub fn state(mut self, input: crate::model::OptionState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>Provides the <code>OptionState</code> for the domain.
-        /// </p>
+        /// <p>Provides the <code>OptionState</code> for the domain. </p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::OptionState>) -> Self {
             self.state = input;
             self
@@ -2189,9 +2043,7 @@ impl AsRef<str> for OptionState {
     }
 }
 
-/// <p>The advanced security configuration: whether advanced security is enabled, whether the internal
-/// database option is enabled.
-/// </p>
+/// <p>The advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdvancedSecurityOptions {
@@ -2504,9 +2356,7 @@ impl SamlIdp {
 pub struct DomainEndpointOptionsStatus {
     /// <p>Options to configure the endpoint for the domain.</p>
     pub options: std::option::Option<crate::model::DomainEndpointOptions>,
-    /// <p>The status of the endpoint options for the domain. See <code>OptionStatus</code> for the status
-    /// information that's included.
-    /// </p>
+    /// <p>The status of the endpoint options for the domain. See <code>OptionStatus</code> for the status information that's included. </p>
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
 impl DomainEndpointOptionsStatus {
@@ -2514,9 +2364,7 @@ impl DomainEndpointOptionsStatus {
     pub fn options(&self) -> std::option::Option<&crate::model::DomainEndpointOptions> {
         self.options.as_ref()
     }
-    /// <p>The status of the endpoint options for the domain. See <code>OptionStatus</code> for the status
-    /// information that's included.
-    /// </p>
+    /// <p>The status of the endpoint options for the domain. See <code>OptionStatus</code> for the status information that's included. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
         self.status.as_ref()
     }
@@ -2552,16 +2400,12 @@ pub mod domain_endpoint_options_status {
             self.options = input;
             self
         }
-        /// <p>The status of the endpoint options for the domain. See <code>OptionStatus</code> for the status
-        /// information that's included.
-        /// </p>
+        /// <p>The status of the endpoint options for the domain. See <code>OptionStatus</code> for the status information that's included. </p>
         pub fn status(mut self, input: crate::model::OptionStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the endpoint options for the domain. See <code>OptionStatus</code> for the status
-        /// information that's included.
-        /// </p>
+        /// <p>The status of the endpoint options for the domain. See <code>OptionStatus</code> for the status information that's included. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::OptionStatus>,
@@ -2591,20 +2435,12 @@ impl DomainEndpointOptionsStatus {
 pub struct DomainEndpointOptions {
     /// <p>Whether only HTTPS endpoint should be enabled for the domain.</p>
     pub enforce_https: std::option::Option<bool>,
-    /// <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain.
-    /// <br></br>
-    /// Can be one of the following values:
+    /// <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain. <br><br> Can be one of the following values: </p>
     /// <ul>
-    /// <li>
-    /// <b>Policy-Min-TLS-1-0-2019-07:</b>
-    /// TLS security policy which supports TLSv1.0 and higher.
-    /// </li>
-    /// <li>
-    /// <b>Policy-Min-TLS-1-2-2019-07:</b>
-    /// TLS security policy which supports only TLSv1.2
-    /// </li>
+    /// <li> <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLSv1.0 and higher. </li>
+    /// <li> <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLSv1.2 </li>
     /// </ul>
-    /// </p>
+    /// <p></p>
     pub tls_security_policy: std::option::Option<crate::model::TlsSecurityPolicy>,
     /// <p>Whether to enable a custom endpoint for the domain.</p>
     pub custom_endpoint_enabled: std::option::Option<bool>,
@@ -2618,20 +2454,12 @@ impl DomainEndpointOptions {
     pub fn enforce_https(&self) -> std::option::Option<bool> {
         self.enforce_https
     }
-    /// <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain.
-    /// <br></br>
-    /// Can be one of the following values:
+    /// <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain. <br><br> Can be one of the following values: </p>
     /// <ul>
-    /// <li>
-    /// <b>Policy-Min-TLS-1-0-2019-07:</b>
-    /// TLS security policy which supports TLSv1.0 and higher.
-    /// </li>
-    /// <li>
-    /// <b>Policy-Min-TLS-1-2-2019-07:</b>
-    /// TLS security policy which supports only TLSv1.2
-    /// </li>
+    /// <li> <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLSv1.0 and higher. </li>
+    /// <li> <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLSv1.2 </li>
     /// </ul>
-    /// </p>
+    /// <p></p>
     pub fn tls_security_policy(&self) -> std::option::Option<&crate::model::TlsSecurityPolicy> {
         self.tls_security_policy.as_ref()
     }
@@ -2685,38 +2513,22 @@ pub mod domain_endpoint_options {
             self.enforce_https = input;
             self
         }
-        /// <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain.
-        /// <br></br>
-        /// Can be one of the following values:
+        /// <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain. <br><br> Can be one of the following values: </p>
         /// <ul>
-        /// <li>
-        /// <b>Policy-Min-TLS-1-0-2019-07:</b>
-        /// TLS security policy which supports TLSv1.0 and higher.
-        /// </li>
-        /// <li>
-        /// <b>Policy-Min-TLS-1-2-2019-07:</b>
-        /// TLS security policy which supports only TLSv1.2
-        /// </li>
+        /// <li> <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLSv1.0 and higher. </li>
+        /// <li> <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLSv1.2 </li>
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn tls_security_policy(mut self, input: crate::model::TlsSecurityPolicy) -> Self {
             self.tls_security_policy = Some(input);
             self
         }
-        /// <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain.
-        /// <br></br>
-        /// Can be one of the following values:
+        /// <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain. <br><br> Can be one of the following values: </p>
         /// <ul>
-        /// <li>
-        /// <b>Policy-Min-TLS-1-0-2019-07:</b>
-        /// TLS security policy which supports TLSv1.0 and higher.
-        /// </li>
-        /// <li>
-        /// <b>Policy-Min-TLS-1-2-2019-07:</b>
-        /// TLS security policy which supports only TLSv1.2
-        /// </li>
+        /// <li> <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLSv1.0 and higher. </li>
+        /// <li> <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLSv1.2 </li>
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn set_tls_security_policy(
             mut self,
             input: std::option::Option<crate::model::TlsSecurityPolicy>,
@@ -2845,9 +2657,7 @@ pub struct LogPublishingOptionsStatus {
     pub options: std::option::Option<
         std::collections::HashMap<crate::model::LogType, crate::model::LogPublishingOption>,
     >,
-    /// <p>The status of the log publishing options for the domain. See <code>OptionStatus</code> for the
-    /// status information that's included.
-    /// </p>
+    /// <p>The status of the log publishing options for the domain. See <code>OptionStatus</code> for the status information that's included. </p>
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
 impl LogPublishingOptionsStatus {
@@ -2859,9 +2669,7 @@ impl LogPublishingOptionsStatus {
     > {
         self.options.as_ref()
     }
-    /// <p>The status of the log publishing options for the domain. See <code>OptionStatus</code> for the
-    /// status information that's included.
-    /// </p>
+    /// <p>The status of the log publishing options for the domain. See <code>OptionStatus</code> for the status information that's included. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
         self.status.as_ref()
     }
@@ -2893,11 +2701,11 @@ pub mod log_publishing_options_status {
         /// <p>The log publishing options configured for the domain.</p>
         pub fn options(
             mut self,
-            k: impl Into<crate::model::LogType>,
-            v: impl Into<crate::model::LogPublishingOption>,
+            k: crate::model::LogType,
+            v: crate::model::LogPublishingOption,
         ) -> Self {
             let mut hash_map = self.options.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.options = Some(hash_map);
             self
         }
@@ -2911,16 +2719,12 @@ pub mod log_publishing_options_status {
             self.options = input;
             self
         }
-        /// <p>The status of the log publishing options for the domain. See <code>OptionStatus</code> for the
-        /// status information that's included.
-        /// </p>
+        /// <p>The status of the log publishing options for the domain. See <code>OptionStatus</code> for the status information that's included. </p>
         pub fn status(mut self, input: crate::model::OptionStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the log publishing options for the domain. See <code>OptionStatus</code> for the
-        /// status information that's included.
-        /// </p>
+        /// <p>The status of the log publishing options for the domain. See <code>OptionStatus</code> for the status information that's included. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::OptionStatus>,
@@ -2944,13 +2748,12 @@ impl LogPublishingOptionsStatus {
     }
 }
 
-/// <p>Log Publishing option that is set for a given domain.
-/// <br></br>Attributes and their details:
+/// <p>Log Publishing option that is set for a given domain. <br><br>Attributes and their details: </p>
 /// <ul>
 /// <li>CloudWatchLogsLogGroupArn: ARN of the Cloudwatch log group to publish logs to.</li>
 /// <li>Enabled: Whether the log publishing for a given log type is enabled or not.</li>
 /// </ul>
-/// </p>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogPublishingOption {
@@ -3113,30 +2916,19 @@ impl AsRef<str> for LogType {
     }
 }
 
-/// <p>Status of the advanced options for the specified domain. Currently, the following advanced options
-/// are available:
-/// </p>
+/// <p>Status of the advanced options for the specified domain. Currently, the following advanced options are available: </p>
 /// <ul>
-/// <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring
-/// access to individual sub-resources. By default, the value is <code>true</code>.
-/// See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced cluster parameters
-/// </a> for more information.
-/// </li>
-/// <li>Option to specify the percentage of heap space allocated to field data. By default, this setting is
-/// unbounded.
-/// </li>
+/// <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced cluster parameters </a> for more information. </li>
+/// <li>Option to specify the percentage of heap space allocated to field data. By default, this setting is unbounded. </li>
 /// </ul>
-/// <p>For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">
-/// Advanced cluster parameters</a>.
-/// </p>
+/// <p>For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"> Advanced cluster parameters</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdvancedOptionsStatus {
     /// <p>The status of advanced options for the specified domain.</p>
     pub options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The <code>OptionStatus</code> for advanced options for the specified domain.
-    /// </p>
+    /// <p>The <code>OptionStatus</code> for advanced options for the specified domain. </p>
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
 impl AdvancedOptionsStatus {
@@ -3147,8 +2939,7 @@ impl AdvancedOptionsStatus {
     {
         self.options.as_ref()
     }
-    /// <p>The <code>OptionStatus</code> for advanced options for the specified domain.
-    /// </p>
+    /// <p>The <code>OptionStatus</code> for advanced options for the specified domain. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
         self.status.as_ref()
     }
@@ -3198,14 +2989,12 @@ pub mod advanced_options_status {
             self.options = input;
             self
         }
-        /// <p>The <code>OptionStatus</code> for advanced options for the specified domain.
-        /// </p>
+        /// <p>The <code>OptionStatus</code> for advanced options for the specified domain. </p>
         pub fn status(mut self, input: crate::model::OptionStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The <code>OptionStatus</code> for advanced options for the specified domain.
-        /// </p>
+        /// <p>The <code>OptionStatus</code> for advanced options for the specified domain. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::OptionStatus>,
@@ -3593,8 +3382,7 @@ impl CognitoOptionsStatus {
     }
 }
 
-/// <p>Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
-/// </p>
+/// <p>Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CognitoOptions {
@@ -3787,9 +3575,7 @@ impl VpcDerivedInfoStatus {
     }
 }
 
-/// <p>Options to specify the subnets and security groups for the VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">
-/// Launching your Amazon OpenSearch Service domains using a VPC</a>.
-/// </p>
+/// <p>Options to specify the subnets and security groups for the VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank"> Launching your Amazon OpenSearch Service domains using a VPC</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcDerivedInfo {
@@ -4006,21 +3792,15 @@ impl SnapshotOptionsStatus {
     }
 }
 
-/// <p>The time, in UTC format, when the service takes a daily automated snapshot of the specified
-/// domain. Default is <code>0</code> hours.
-/// </p>
+/// <p>The time, in UTC format, when the service takes a daily automated snapshot of the specified domain. Default is <code>0</code> hours. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnapshotOptions {
-    /// <p>The time, in UTC format, when the service takes a daily automated snapshot of the specified
-    /// domain. Default is <code>0</code> hours.
-    /// </p>
+    /// <p>The time, in UTC format, when the service takes a daily automated snapshot of the specified domain. Default is <code>0</code> hours. </p>
     pub automated_snapshot_start_hour: std::option::Option<i32>,
 }
 impl SnapshotOptions {
-    /// <p>The time, in UTC format, when the service takes a daily automated snapshot of the specified
-    /// domain. Default is <code>0</code> hours.
-    /// </p>
+    /// <p>The time, in UTC format, when the service takes a daily automated snapshot of the specified domain. Default is <code>0</code> hours. </p>
     pub fn automated_snapshot_start_hour(&self) -> std::option::Option<i32> {
         self.automated_snapshot_start_hour
     }
@@ -4044,16 +3824,12 @@ pub mod snapshot_options {
         pub(crate) automated_snapshot_start_hour: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The time, in UTC format, when the service takes a daily automated snapshot of the specified
-        /// domain. Default is <code>0</code> hours.
-        /// </p>
+        /// <p>The time, in UTC format, when the service takes a daily automated snapshot of the specified domain. Default is <code>0</code> hours. </p>
         pub fn automated_snapshot_start_hour(mut self, input: i32) -> Self {
             self.automated_snapshot_start_hour = Some(input);
             self
         }
-        /// <p>The time, in UTC format, when the service takes a daily automated snapshot of the specified
-        /// domain. Default is <code>0</code> hours.
-        /// </p>
+        /// <p>The time, in UTC format, when the service takes a daily automated snapshot of the specified domain. Default is <code>0</code> hours. </p>
         pub fn set_automated_snapshot_start_hour(
             mut self,
             input: std::option::Option<i32>,
@@ -4076,33 +3852,21 @@ impl SnapshotOptions {
     }
 }
 
-/// <p>The configured access rules for the domain's document and search endpoints, and the current status of those
-/// rules.
-/// </p>
+/// <p>The configured access rules for the domain's document and search endpoints, and the current status of those rules. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessPoliciesStatus {
-    /// <p>The access policy configured for the domain. Access policies can be resource-based, IP-based, or
-    /// IAM-based. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies" target="_blank">
-    /// Configuring access policies</a>for more information.
-    /// </p>
+    /// <p>The access policy configured for the domain. Access policies can be resource-based, IP-based, or IAM-based. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies" target="_blank"> Configuring access policies</a>for more information. </p>
     pub options: std::option::Option<std::string::String>,
-    /// <p>The status of the access policy for the domain. See <code>OptionStatus</code> for the status
-    /// information that's included.
-    /// </p>
+    /// <p>The status of the access policy for the domain. See <code>OptionStatus</code> for the status information that's included. </p>
     pub status: std::option::Option<crate::model::OptionStatus>,
 }
 impl AccessPoliciesStatus {
-    /// <p>The access policy configured for the domain. Access policies can be resource-based, IP-based, or
-    /// IAM-based. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies" target="_blank">
-    /// Configuring access policies</a>for more information.
-    /// </p>
+    /// <p>The access policy configured for the domain. Access policies can be resource-based, IP-based, or IAM-based. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies" target="_blank"> Configuring access policies</a>for more information. </p>
     pub fn options(&self) -> std::option::Option<&str> {
         self.options.as_deref()
     }
-    /// <p>The status of the access policy for the domain. See <code>OptionStatus</code> for the status
-    /// information that's included.
-    /// </p>
+    /// <p>The status of the access policy for the domain. See <code>OptionStatus</code> for the status information that's included. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::OptionStatus> {
         self.status.as_ref()
     }
@@ -4125,32 +3889,22 @@ pub mod access_policies_status {
         pub(crate) status: std::option::Option<crate::model::OptionStatus>,
     }
     impl Builder {
-        /// <p>The access policy configured for the domain. Access policies can be resource-based, IP-based, or
-        /// IAM-based. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies" target="_blank">
-        /// Configuring access policies</a>for more information.
-        /// </p>
+        /// <p>The access policy configured for the domain. Access policies can be resource-based, IP-based, or IAM-based. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies" target="_blank"> Configuring access policies</a>for more information. </p>
         pub fn options(mut self, input: impl Into<std::string::String>) -> Self {
             self.options = Some(input.into());
             self
         }
-        /// <p>The access policy configured for the domain. Access policies can be resource-based, IP-based, or
-        /// IAM-based. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies" target="_blank">
-        /// Configuring access policies</a>for more information.
-        /// </p>
+        /// <p>The access policy configured for the domain. Access policies can be resource-based, IP-based, or IAM-based. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies" target="_blank"> Configuring access policies</a>for more information. </p>
         pub fn set_options(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.options = input;
             self
         }
-        /// <p>The status of the access policy for the domain. See <code>OptionStatus</code> for the status
-        /// information that's included.
-        /// </p>
+        /// <p>The status of the access policy for the domain. See <code>OptionStatus</code> for the status information that's included. </p>
         pub fn status(mut self, input: crate::model::OptionStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the access policy for the domain. See <code>OptionStatus</code> for the status
-        /// information that's included.
-        /// </p>
+        /// <p>The status of the access policy for the domain. See <code>OptionStatus</code> for the status information that's included. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::OptionStatus>,
@@ -4507,18 +4261,13 @@ impl ClusterConfigStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterConfig {
-    /// <p>The instance type for an OpenSearch cluster. UltraWarm instance types are not supported for data instances.
-    /// </p>
+    /// <p>The instance type for an OpenSearch cluster. UltraWarm instance types are not supported for data instances. </p>
     pub instance_type: std::option::Option<crate::model::OpenSearchPartitionInstanceType>,
     /// <p>The number of instances in the specified domain cluster.</p>
     pub instance_count: std::option::Option<i32>,
-    /// <p>A boolean value to indicate whether a dedicated master node is enabled. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-dedicatedmasternodes" target="_blank">Dedicated master nodes in Amazon OpenSearch Service
-    /// </a> for more information.
-    /// </p>
+    /// <p>A boolean value to indicate whether a dedicated master node is enabled. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-dedicatedmasternodes" target="_blank">Dedicated master nodes in Amazon OpenSearch Service </a> for more information. </p>
     pub dedicated_master_enabled: std::option::Option<bool>,
-    /// <p>A boolean value to indicate whether zone awareness is enabled. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html" target="_blank">Configuring a multi-AZ domain in Amazon OpenSearch Service
-    /// </a> for more information.
-    /// </p>
+    /// <p>A boolean value to indicate whether zone awareness is enabled. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html" target="_blank">Configuring a multi-AZ domain in Amazon OpenSearch Service </a> for more information. </p>
     pub zone_awareness_enabled: std::option::Option<bool>,
     /// <p>The zone awareness configuration for a domain when zone awareness is enabled.</p>
     pub zone_awareness_config: std::option::Option<crate::model::ZoneAwarenessConfig>,
@@ -4536,8 +4285,7 @@ pub struct ClusterConfig {
     pub cold_storage_options: std::option::Option<crate::model::ColdStorageOptions>,
 }
 impl ClusterConfig {
-    /// <p>The instance type for an OpenSearch cluster. UltraWarm instance types are not supported for data instances.
-    /// </p>
+    /// <p>The instance type for an OpenSearch cluster. UltraWarm instance types are not supported for data instances. </p>
     pub fn instance_type(
         &self,
     ) -> std::option::Option<&crate::model::OpenSearchPartitionInstanceType> {
@@ -4547,15 +4295,11 @@ impl ClusterConfig {
     pub fn instance_count(&self) -> std::option::Option<i32> {
         self.instance_count
     }
-    /// <p>A boolean value to indicate whether a dedicated master node is enabled. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-dedicatedmasternodes" target="_blank">Dedicated master nodes in Amazon OpenSearch Service
-    /// </a> for more information.
-    /// </p>
+    /// <p>A boolean value to indicate whether a dedicated master node is enabled. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-dedicatedmasternodes" target="_blank">Dedicated master nodes in Amazon OpenSearch Service </a> for more information. </p>
     pub fn dedicated_master_enabled(&self) -> std::option::Option<bool> {
         self.dedicated_master_enabled
     }
-    /// <p>A boolean value to indicate whether zone awareness is enabled. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html" target="_blank">Configuring a multi-AZ domain in Amazon OpenSearch Service
-    /// </a> for more information.
-    /// </p>
+    /// <p>A boolean value to indicate whether zone awareness is enabled. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html" target="_blank">Configuring a multi-AZ domain in Amazon OpenSearch Service </a> for more information. </p>
     pub fn zone_awareness_enabled(&self) -> std::option::Option<bool> {
         self.zone_awareness_enabled
     }
@@ -4631,8 +4375,7 @@ pub mod cluster_config {
         pub(crate) cold_storage_options: std::option::Option<crate::model::ColdStorageOptions>,
     }
     impl Builder {
-        /// <p>The instance type for an OpenSearch cluster. UltraWarm instance types are not supported for data instances.
-        /// </p>
+        /// <p>The instance type for an OpenSearch cluster. UltraWarm instance types are not supported for data instances. </p>
         pub fn instance_type(
             mut self,
             input: crate::model::OpenSearchPartitionInstanceType,
@@ -4640,8 +4383,7 @@ pub mod cluster_config {
             self.instance_type = Some(input);
             self
         }
-        /// <p>The instance type for an OpenSearch cluster. UltraWarm instance types are not supported for data instances.
-        /// </p>
+        /// <p>The instance type for an OpenSearch cluster. UltraWarm instance types are not supported for data instances. </p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<crate::model::OpenSearchPartitionInstanceType>,
@@ -4659,30 +4401,22 @@ pub mod cluster_config {
             self.instance_count = input;
             self
         }
-        /// <p>A boolean value to indicate whether a dedicated master node is enabled. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-dedicatedmasternodes" target="_blank">Dedicated master nodes in Amazon OpenSearch Service
-        /// </a> for more information.
-        /// </p>
+        /// <p>A boolean value to indicate whether a dedicated master node is enabled. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-dedicatedmasternodes" target="_blank">Dedicated master nodes in Amazon OpenSearch Service </a> for more information. </p>
         pub fn dedicated_master_enabled(mut self, input: bool) -> Self {
             self.dedicated_master_enabled = Some(input);
             self
         }
-        /// <p>A boolean value to indicate whether a dedicated master node is enabled. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-dedicatedmasternodes" target="_blank">Dedicated master nodes in Amazon OpenSearch Service
-        /// </a> for more information.
-        /// </p>
+        /// <p>A boolean value to indicate whether a dedicated master node is enabled. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-dedicatedmasternodes" target="_blank">Dedicated master nodes in Amazon OpenSearch Service </a> for more information. </p>
         pub fn set_dedicated_master_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.dedicated_master_enabled = input;
             self
         }
-        /// <p>A boolean value to indicate whether zone awareness is enabled. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html" target="_blank">Configuring a multi-AZ domain in Amazon OpenSearch Service
-        /// </a> for more information.
-        /// </p>
+        /// <p>A boolean value to indicate whether zone awareness is enabled. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html" target="_blank">Configuring a multi-AZ domain in Amazon OpenSearch Service </a> for more information. </p>
         pub fn zone_awareness_enabled(mut self, input: bool) -> Self {
             self.zone_awareness_enabled = Some(input);
             self
         }
-        /// <p>A boolean value to indicate whether zone awareness is enabled. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html" target="_blank">Configuring a multi-AZ domain in Amazon OpenSearch Service
-        /// </a> for more information.
-        /// </p>
+        /// <p>A boolean value to indicate whether zone awareness is enabled. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html" target="_blank">Configuring a multi-AZ domain in Amazon OpenSearch Service </a> for more information. </p>
         pub fn set_zone_awareness_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.zone_awareness_enabled = input;
             self
@@ -5452,15 +5186,11 @@ impl AsRef<str> for OpenSearchPartitionInstanceType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ZoneAwarenessConfig {
-    /// <p>An integer value to indicate the number of availability zones for a domain when zone awareness is enabled. This
-    /// should be equal to number of subnets if VPC endpoints is enabled.
-    /// </p>
+    /// <p>An integer value to indicate the number of availability zones for a domain when zone awareness is enabled. This should be equal to number of subnets if VPC endpoints is enabled. </p>
     pub availability_zone_count: std::option::Option<i32>,
 }
 impl ZoneAwarenessConfig {
-    /// <p>An integer value to indicate the number of availability zones for a domain when zone awareness is enabled. This
-    /// should be equal to number of subnets if VPC endpoints is enabled.
-    /// </p>
+    /// <p>An integer value to indicate the number of availability zones for a domain when zone awareness is enabled. This should be equal to number of subnets if VPC endpoints is enabled. </p>
     pub fn availability_zone_count(&self) -> std::option::Option<i32> {
         self.availability_zone_count
     }
@@ -5481,16 +5211,12 @@ pub mod zone_awareness_config {
         pub(crate) availability_zone_count: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>An integer value to indicate the number of availability zones for a domain when zone awareness is enabled. This
-        /// should be equal to number of subnets if VPC endpoints is enabled.
-        /// </p>
+        /// <p>An integer value to indicate the number of availability zones for a domain when zone awareness is enabled. This should be equal to number of subnets if VPC endpoints is enabled. </p>
         pub fn availability_zone_count(mut self, input: i32) -> Self {
             self.availability_zone_count = Some(input);
             self
         }
-        /// <p>An integer value to indicate the number of availability zones for a domain when zone awareness is enabled. This
-        /// should be equal to number of subnets if VPC endpoints is enabled.
-        /// </p>
+        /// <p>An integer value to indicate the number of availability zones for a domain when zone awareness is enabled. This should be equal to number of subnets if VPC endpoints is enabled. </p>
         pub fn set_availability_zone_count(mut self, input: std::option::Option<i32>) -> Self {
             self.availability_zone_count = input;
             self
@@ -5586,10 +5312,7 @@ impl VersionStatus {
     }
 }
 
-/// <p>The advanced security configuration: whether advanced security is enabled, whether the internal
-/// database option is enabled, master username and password (if internal database is enabled), and master user ARN
-/// (if IAM is enabled).
-/// </p>
+/// <p>The advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled, master username and password (if internal database is enabled), and master user ARN (if IAM is enabled). </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdvancedSecurityOptionsInput {
@@ -5728,9 +5451,7 @@ pub struct SamlOptionsInput {
     pub subject_key: std::option::Option<std::string::String>,
     /// <p>Element of the SAML assertion to use for backend roles. Default is roles.</p>
     pub roles_key: std::option::Option<std::string::String>,
-    /// <p>The duration, in minutes, after which a user session becomes inactive. Acceptable values are between 1 and 1440,
-    /// and the default value is 60.
-    /// </p>
+    /// <p>The duration, in minutes, after which a user session becomes inactive. Acceptable values are between 1 and 1440, and the default value is 60. </p>
     pub session_timeout_minutes: std::option::Option<i32>,
 }
 impl SamlOptionsInput {
@@ -5758,9 +5479,7 @@ impl SamlOptionsInput {
     pub fn roles_key(&self) -> std::option::Option<&str> {
         self.roles_key.as_deref()
     }
-    /// <p>The duration, in minutes, after which a user session becomes inactive. Acceptable values are between 1 and 1440,
-    /// and the default value is 60.
-    /// </p>
+    /// <p>The duration, in minutes, after which a user session becomes inactive. Acceptable values are between 1 and 1440, and the default value is 60. </p>
     pub fn session_timeout_minutes(&self) -> std::option::Option<i32> {
         self.session_timeout_minutes
     }
@@ -5859,16 +5578,12 @@ pub mod saml_options_input {
             self.roles_key = input;
             self
         }
-        /// <p>The duration, in minutes, after which a user session becomes inactive. Acceptable values are between 1 and 1440,
-        /// and the default value is 60.
-        /// </p>
+        /// <p>The duration, in minutes, after which a user session becomes inactive. Acceptable values are between 1 and 1440, and the default value is 60. </p>
         pub fn session_timeout_minutes(mut self, input: i32) -> Self {
             self.session_timeout_minutes = Some(input);
             self
         }
-        /// <p>The duration, in minutes, after which a user session becomes inactive. Acceptable values are between 1 and 1440,
-        /// and the default value is 60.
-        /// </p>
+        /// <p>The duration, in minutes, after which a user session becomes inactive. Acceptable values are between 1 and 1440, and the default value is 60. </p>
         pub fn set_session_timeout_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.session_timeout_minutes = input;
             self
@@ -5995,9 +5710,7 @@ impl MasterUserOptions {
     }
 }
 
-/// <p>Options to specify the subnets and security groups for the VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">
-/// Launching your Amazon OpenSearch Service domains using a VPC</a>.
-/// </p>
+/// <p>Options to specify the subnets and security groups for the VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank"> Launching your Amazon OpenSearch Service domains using a VPC</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcOptions {
@@ -6096,35 +5809,17 @@ pub struct ServiceSoftwareOptions {
     pub current_version: std::option::Option<std::string::String>,
     /// <p>The new service software version if one is available.</p>
     pub new_version: std::option::Option<std::string::String>,
-    /// <p>
-    /// <code>True</code>
-    /// if you're able to update your service software version. <code>False</code> if you can't update your
-    /// service software version.
-    /// </p>
+    /// <p> <code>True</code> if you're able to update your service software version. <code>False</code> if you can't update your service software version. </p>
     pub update_available: std::option::Option<bool>,
-    /// <p>
-    /// <code>True</code>
-    /// if you're able to cancel your service software version update. <code>False</code> if you can't cancel
-    /// your service software update.
-    /// </p>
+    /// <p> <code>True</code> if you're able to cancel your service software version update. <code>False</code> if you can't cancel your service software update. </p>
     pub cancellable: std::option::Option<bool>,
-    /// <p>The status of your service software update. This field can take the following values: <code>
-    /// ELIGIBLE</code>, <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code>
-    /// NOT_ELIGIBLE</code>.
-    /// </p>
+    /// <p>The status of your service software update. This field can take the following values: <code> ELIGIBLE</code>, <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code> NOT_ELIGIBLE</code>. </p>
     pub update_status: std::option::Option<crate::model::DeploymentStatus>,
-    /// <p>The description of the <code>UpdateStatus</code>.
-    /// </p>
+    /// <p>The description of the <code>UpdateStatus</code>. </p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The timestamp, in Epoch time, until which you can manually request a service software update. After this date, we
-    /// automatically update your service software.
-    /// </p>
+    /// <p>The timestamp, in Epoch time, until which you can manually request a service software update. After this date, we automatically update your service software. </p>
     pub automated_update_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// <code>True</code>
-    /// if a service software is never automatically updated. <code>False</code> if a service software is automatically
-    /// updated after <code>AutomatedUpdateDate</code>.
-    /// </p>
+    /// <p> <code>True</code> if a service software is never automatically updated. <code>False</code> if a service software is automatically updated after <code>AutomatedUpdateDate</code>. </p>
     pub optional_deployment: std::option::Option<bool>,
 }
 impl ServiceSoftwareOptions {
@@ -6136,45 +5831,27 @@ impl ServiceSoftwareOptions {
     pub fn new_version(&self) -> std::option::Option<&str> {
         self.new_version.as_deref()
     }
-    /// <p>
-    /// <code>True</code>
-    /// if you're able to update your service software version. <code>False</code> if you can't update your
-    /// service software version.
-    /// </p>
+    /// <p> <code>True</code> if you're able to update your service software version. <code>False</code> if you can't update your service software version. </p>
     pub fn update_available(&self) -> std::option::Option<bool> {
         self.update_available
     }
-    /// <p>
-    /// <code>True</code>
-    /// if you're able to cancel your service software version update. <code>False</code> if you can't cancel
-    /// your service software update.
-    /// </p>
+    /// <p> <code>True</code> if you're able to cancel your service software version update. <code>False</code> if you can't cancel your service software update. </p>
     pub fn cancellable(&self) -> std::option::Option<bool> {
         self.cancellable
     }
-    /// <p>The status of your service software update. This field can take the following values: <code>
-    /// ELIGIBLE</code>, <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code>
-    /// NOT_ELIGIBLE</code>.
-    /// </p>
+    /// <p>The status of your service software update. This field can take the following values: <code> ELIGIBLE</code>, <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code> NOT_ELIGIBLE</code>. </p>
     pub fn update_status(&self) -> std::option::Option<&crate::model::DeploymentStatus> {
         self.update_status.as_ref()
     }
-    /// <p>The description of the <code>UpdateStatus</code>.
-    /// </p>
+    /// <p>The description of the <code>UpdateStatus</code>. </p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The timestamp, in Epoch time, until which you can manually request a service software update. After this date, we
-    /// automatically update your service software.
-    /// </p>
+    /// <p>The timestamp, in Epoch time, until which you can manually request a service software update. After this date, we automatically update your service software. </p>
     pub fn automated_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.automated_update_date.as_ref()
     }
-    /// <p>
-    /// <code>True</code>
-    /// if a service software is never automatically updated. <code>False</code> if a service software is automatically
-    /// updated after <code>AutomatedUpdateDate</code>.
-    /// </p>
+    /// <p> <code>True</code> if a service software is never automatically updated. <code>False</code> if a service software is automatically updated after <code>AutomatedUpdateDate</code>. </p>
     pub fn optional_deployment(&self) -> std::option::Option<bool> {
         self.optional_deployment
     }
@@ -6232,54 +5909,32 @@ pub mod service_software_options {
             self.new_version = input;
             self
         }
-        /// <p>
-        /// <code>True</code>
-        /// if you're able to update your service software version. <code>False</code> if you can't update your
-        /// service software version.
-        /// </p>
+        /// <p> <code>True</code> if you're able to update your service software version. <code>False</code> if you can't update your service software version. </p>
         pub fn update_available(mut self, input: bool) -> Self {
             self.update_available = Some(input);
             self
         }
-        /// <p>
-        /// <code>True</code>
-        /// if you're able to update your service software version. <code>False</code> if you can't update your
-        /// service software version.
-        /// </p>
+        /// <p> <code>True</code> if you're able to update your service software version. <code>False</code> if you can't update your service software version. </p>
         pub fn set_update_available(mut self, input: std::option::Option<bool>) -> Self {
             self.update_available = input;
             self
         }
-        /// <p>
-        /// <code>True</code>
-        /// if you're able to cancel your service software version update. <code>False</code> if you can't cancel
-        /// your service software update.
-        /// </p>
+        /// <p> <code>True</code> if you're able to cancel your service software version update. <code>False</code> if you can't cancel your service software update. </p>
         pub fn cancellable(mut self, input: bool) -> Self {
             self.cancellable = Some(input);
             self
         }
-        /// <p>
-        /// <code>True</code>
-        /// if you're able to cancel your service software version update. <code>False</code> if you can't cancel
-        /// your service software update.
-        /// </p>
+        /// <p> <code>True</code> if you're able to cancel your service software version update. <code>False</code> if you can't cancel your service software update. </p>
         pub fn set_cancellable(mut self, input: std::option::Option<bool>) -> Self {
             self.cancellable = input;
             self
         }
-        /// <p>The status of your service software update. This field can take the following values: <code>
-        /// ELIGIBLE</code>, <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code>
-        /// NOT_ELIGIBLE</code>.
-        /// </p>
+        /// <p>The status of your service software update. This field can take the following values: <code> ELIGIBLE</code>, <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code> NOT_ELIGIBLE</code>. </p>
         pub fn update_status(mut self, input: crate::model::DeploymentStatus) -> Self {
             self.update_status = Some(input);
             self
         }
-        /// <p>The status of your service software update. This field can take the following values: <code>
-        /// ELIGIBLE</code>, <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code>
-        /// NOT_ELIGIBLE</code>.
-        /// </p>
+        /// <p>The status of your service software update. This field can take the following values: <code> ELIGIBLE</code>, <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code> NOT_ELIGIBLE</code>. </p>
         pub fn set_update_status(
             mut self,
             input: std::option::Option<crate::model::DeploymentStatus>,
@@ -6287,28 +5942,22 @@ pub mod service_software_options {
             self.update_status = input;
             self
         }
-        /// <p>The description of the <code>UpdateStatus</code>.
-        /// </p>
+        /// <p>The description of the <code>UpdateStatus</code>. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of the <code>UpdateStatus</code>.
-        /// </p>
+        /// <p>The description of the <code>UpdateStatus</code>. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>The timestamp, in Epoch time, until which you can manually request a service software update. After this date, we
-        /// automatically update your service software.
-        /// </p>
+        /// <p>The timestamp, in Epoch time, until which you can manually request a service software update. After this date, we automatically update your service software. </p>
         pub fn automated_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.automated_update_date = Some(input);
             self
         }
-        /// <p>The timestamp, in Epoch time, until which you can manually request a service software update. After this date, we
-        /// automatically update your service software.
-        /// </p>
+        /// <p>The timestamp, in Epoch time, until which you can manually request a service software update. After this date, we automatically update your service software. </p>
         pub fn set_automated_update_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6316,20 +5965,12 @@ pub mod service_software_options {
             self.automated_update_date = input;
             self
         }
-        /// <p>
-        /// <code>True</code>
-        /// if a service software is never automatically updated. <code>False</code> if a service software is automatically
-        /// updated after <code>AutomatedUpdateDate</code>.
-        /// </p>
+        /// <p> <code>True</code> if a service software is never automatically updated. <code>False</code> if a service software is automatically updated after <code>AutomatedUpdateDate</code>. </p>
         pub fn optional_deployment(mut self, input: bool) -> Self {
             self.optional_deployment = Some(input);
             self
         }
-        /// <p>
-        /// <code>True</code>
-        /// if a service software is never automatically updated. <code>False</code> if a service software is automatically
-        /// updated after <code>AutomatedUpdateDate</code>.
-        /// </p>
+        /// <p> <code>True</code> if a service software is never automatically updated. <code>False</code> if a service software is automatically updated after <code>AutomatedUpdateDate</code>. </p>
         pub fn set_optional_deployment(mut self, input: std::option::Option<bool>) -> Self {
             self.optional_deployment = input;
             self
@@ -6433,48 +6074,23 @@ impl AsRef<str> for DeploymentStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InboundConnection {
-    /// <p>The
-    /// <code>
-    /// <a>AWSDomainInformation</a>
-    /// </code>
-    /// for the local OpenSearch domain.
-    /// </p>
+    /// <p>The <code> <code>AWSDomainInformation</code> </code> for the local OpenSearch domain. </p>
     pub local_domain_info: std::option::Option<crate::model::DomainInformationContainer>,
-    /// <p>The
-    /// <code>
-    /// <a>AWSDomainInformation</a>
-    /// </code>
-    /// for the remote OpenSearch domain.
-    /// </p>
+    /// <p>The <code> <code>AWSDomainInformation</code> </code> for the remote OpenSearch domain. </p>
     pub remote_domain_info: std::option::Option<crate::model::DomainInformationContainer>,
     /// <p>The connection ID for the inbound cross-cluster connection.</p>
     pub connection_id: std::option::Option<std::string::String>,
-    /// <p>The
-    /// <code>
-    /// <a>InboundConnectionStatus</a>
-    /// </code>
-    /// for the outbound connection.
-    /// </p>
+    /// <p>The <code> <code>InboundConnectionStatus</code> </code> for the outbound connection. </p>
     pub connection_status: std::option::Option<crate::model::InboundConnectionStatus>,
 }
 impl InboundConnection {
-    /// <p>The
-    /// <code>
-    /// <a>AWSDomainInformation</a>
-    /// </code>
-    /// for the local OpenSearch domain.
-    /// </p>
+    /// <p>The <code> <code>AWSDomainInformation</code> </code> for the local OpenSearch domain. </p>
     pub fn local_domain_info(
         &self,
     ) -> std::option::Option<&crate::model::DomainInformationContainer> {
         self.local_domain_info.as_ref()
     }
-    /// <p>The
-    /// <code>
-    /// <a>AWSDomainInformation</a>
-    /// </code>
-    /// for the remote OpenSearch domain.
-    /// </p>
+    /// <p>The <code> <code>AWSDomainInformation</code> </code> for the remote OpenSearch domain. </p>
     pub fn remote_domain_info(
         &self,
     ) -> std::option::Option<&crate::model::DomainInformationContainer> {
@@ -6484,12 +6100,7 @@ impl InboundConnection {
     pub fn connection_id(&self) -> std::option::Option<&str> {
         self.connection_id.as_deref()
     }
-    /// <p>The
-    /// <code>
-    /// <a>InboundConnectionStatus</a>
-    /// </code>
-    /// for the outbound connection.
-    /// </p>
+    /// <p>The <code> <code>InboundConnectionStatus</code> </code> for the outbound connection. </p>
     pub fn connection_status(&self) -> std::option::Option<&crate::model::InboundConnectionStatus> {
         self.connection_status.as_ref()
     }
@@ -6517,12 +6128,7 @@ pub mod inbound_connection {
         pub(crate) connection_status: std::option::Option<crate::model::InboundConnectionStatus>,
     }
     impl Builder {
-        /// <p>The
-        /// <code>
-        /// <a>AWSDomainInformation</a>
-        /// </code>
-        /// for the local OpenSearch domain.
-        /// </p>
+        /// <p>The <code> <code>AWSDomainInformation</code> </code> for the local OpenSearch domain. </p>
         pub fn local_domain_info(
             mut self,
             input: crate::model::DomainInformationContainer,
@@ -6530,12 +6136,7 @@ pub mod inbound_connection {
             self.local_domain_info = Some(input);
             self
         }
-        /// <p>The
-        /// <code>
-        /// <a>AWSDomainInformation</a>
-        /// </code>
-        /// for the local OpenSearch domain.
-        /// </p>
+        /// <p>The <code> <code>AWSDomainInformation</code> </code> for the local OpenSearch domain. </p>
         pub fn set_local_domain_info(
             mut self,
             input: std::option::Option<crate::model::DomainInformationContainer>,
@@ -6543,12 +6144,7 @@ pub mod inbound_connection {
             self.local_domain_info = input;
             self
         }
-        /// <p>The
-        /// <code>
-        /// <a>AWSDomainInformation</a>
-        /// </code>
-        /// for the remote OpenSearch domain.
-        /// </p>
+        /// <p>The <code> <code>AWSDomainInformation</code> </code> for the remote OpenSearch domain. </p>
         pub fn remote_domain_info(
             mut self,
             input: crate::model::DomainInformationContainer,
@@ -6556,12 +6152,7 @@ pub mod inbound_connection {
             self.remote_domain_info = Some(input);
             self
         }
-        /// <p>The
-        /// <code>
-        /// <a>AWSDomainInformation</a>
-        /// </code>
-        /// for the remote OpenSearch domain.
-        /// </p>
+        /// <p>The <code> <code>AWSDomainInformation</code> </code> for the remote OpenSearch domain. </p>
         pub fn set_remote_domain_info(
             mut self,
             input: std::option::Option<crate::model::DomainInformationContainer>,
@@ -6582,22 +6173,12 @@ pub mod inbound_connection {
             self.connection_id = input;
             self
         }
-        /// <p>The
-        /// <code>
-        /// <a>InboundConnectionStatus</a>
-        /// </code>
-        /// for the outbound connection.
-        /// </p>
+        /// <p>The <code> <code>InboundConnectionStatus</code> </code> for the outbound connection. </p>
         pub fn connection_status(mut self, input: crate::model::InboundConnectionStatus) -> Self {
             self.connection_status = Some(input);
             self
         }
-        /// <p>The
-        /// <code>
-        /// <a>InboundConnectionStatus</a>
-        /// </code>
-        /// for the outbound connection.
-        /// </p>
+        /// <p>The <code> <code>InboundConnectionStatus</code> </code> for the outbound connection. </p>
         pub fn set_connection_status(
             mut self,
             input: std::option::Option<crate::model::InboundConnectionStatus>,
@@ -6892,10 +6473,7 @@ impl DomainInformationContainer {
 pub struct AwsDomainInformation {
     #[allow(missing_docs)] // documentation missing in model
     pub owner_id: std::option::Option<std::string::String>,
-    /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS
-    /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
-    /// and - (hyphen).
-    /// </p>
+    /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
     pub domain_name: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub region: std::option::Option<std::string::String>,
@@ -6905,10 +6483,7 @@ impl AwsDomainInformation {
     pub fn owner_id(&self) -> std::option::Option<&str> {
         self.owner_id.as_deref()
     }
-    /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS
-    /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
-    /// and - (hyphen).
-    /// </p>
+    /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
@@ -6947,18 +6522,12 @@ pub mod aws_domain_information {
             self.owner_id = input;
             self
         }
-        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS
-        /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
-        /// and - (hyphen).
-        /// </p>
+        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS
-        /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
-        /// and - (hyphen).
-        /// </p>
+        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -6994,29 +6563,17 @@ impl AwsDomainInformation {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
-    /// <p>The <code>TagKey</code>, the name of the tag. Tag keys must be unique for the domain to
-    /// which they are attached.
-    /// </p>
+    /// <p>The <code>TagKey</code>, the name of the tag. Tag keys must be unique for the domain to which they are attached. </p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>The <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and
-    /// don't have to be unique in a tag set. For example, you can have a key value
-    /// pair in a tag set of <code>project : Trinity</code> and
-    /// <code>cost-center : Trinity</code>
-    /// </p>
+    /// <p>The <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and don't have to be unique in a tag set. For example, you can have a key value pair in a tag set of <code>project : Trinity</code> and <code>cost-center : Trinity</code> </p>
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
-    /// <p>The <code>TagKey</code>, the name of the tag. Tag keys must be unique for the domain to
-    /// which they are attached.
-    /// </p>
+    /// <p>The <code>TagKey</code>, the name of the tag. Tag keys must be unique for the domain to which they are attached. </p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>The <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and
-    /// don't have to be unique in a tag set. For example, you can have a key value
-    /// pair in a tag set of <code>project : Trinity</code> and
-    /// <code>cost-center : Trinity</code>
-    /// </p>
+    /// <p>The <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and don't have to be unique in a tag set. For example, you can have a key value pair in a tag set of <code>project : Trinity</code> and <code>cost-center : Trinity</code> </p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -7039,34 +6596,22 @@ pub mod tag {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>TagKey</code>, the name of the tag. Tag keys must be unique for the domain to
-        /// which they are attached.
-        /// </p>
+        /// <p>The <code>TagKey</code>, the name of the tag. Tag keys must be unique for the domain to which they are attached. </p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>The <code>TagKey</code>, the name of the tag. Tag keys must be unique for the domain to
-        /// which they are attached.
-        /// </p>
+        /// <p>The <code>TagKey</code>, the name of the tag. Tag keys must be unique for the domain to which they are attached. </p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
-        /// <p>The <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and
-        /// don't have to be unique in a tag set. For example, you can have a key value
-        /// pair in a tag set of <code>project : Trinity</code> and
-        /// <code>cost-center : Trinity</code>
-        /// </p>
+        /// <p>The <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and don't have to be unique in a tag set. For example, you can have a key value pair in a tag set of <code>project : Trinity</code> and <code>cost-center : Trinity</code> </p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and
-        /// don't have to be unique in a tag set. For example, you can have a key value
-        /// pair in a tag set of <code>project : Trinity</code> and
-        /// <code>cost-center : Trinity</code>
-        /// </p>
+        /// <p>The <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and don't have to be unique in a tag set. For example, you can have a key value pair in a tag set of <code>project : Trinity</code> and <code>cost-center : Trinity</code> </p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -7573,15 +7118,13 @@ impl InstanceTypeDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainInfo {
-    /// <p>The <code>DomainName</code>.
-    /// </p>
+    /// <p>The <code>DomainName</code>. </p>
     pub domain_name: std::option::Option<std::string::String>,
     /// <p> Specifies the <code>EngineType</code> of the domain.</p>
     pub engine_type: std::option::Option<crate::model::EngineType>,
 }
 impl DomainInfo {
-    /// <p>The <code>DomainName</code>.
-    /// </p>
+    /// <p>The <code>DomainName</code>. </p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
@@ -7608,14 +7151,12 @@ pub mod domain_info {
         pub(crate) engine_type: std::option::Option<crate::model::EngineType>,
     }
     impl Builder {
-        /// <p>The <code>DomainName</code>.
-        /// </p>
+        /// <p>The <code>DomainName</code>. </p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p>The <code>DomainName</code>.
-        /// </p>
+        /// <p>The <code>DomainName</code>. </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -7839,23 +7380,16 @@ pub struct UpgradeHistory {
     pub upgrade_name: std::option::Option<std::string::String>,
     /// <p>UTC timestamp at which the upgrade API call was made in "yyyy-MM-ddTHH:mm:ssZ" format.</p>
     pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The current status of the upgrade. The status can take one of the following values:
+    /// <p> The current status of the upgrade. The status can take one of the following values: </p>
     /// <ul>
     /// <li>In Progress</li>
     /// <li>Succeeded</li>
     /// <li>Succeeded with Issues</li>
     /// <li>Failed</li>
     /// </ul>
-    /// </p>
+    /// <p></p>
     pub upgrade_status: std::option::Option<crate::model::UpgradeStatus>,
-    /// <p>
-    /// A list of
-    /// <code>
-    /// <a>UpgradeStepItem</a>
-    /// </code>
-    /// s representing information about each step performed as part of a specific upgrade or upgrade eligibility check.
-    /// </p>
+    /// <p> A list of <code> <code>UpgradeStepItem</code> </code> s representing information about each step performed as part of a specific upgrade or upgrade eligibility check. </p>
     pub steps_list: std::option::Option<std::vec::Vec<crate::model::UpgradeStepItem>>,
 }
 impl UpgradeHistory {
@@ -7867,25 +7401,18 @@ impl UpgradeHistory {
     pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_timestamp.as_ref()
     }
-    /// <p>
-    /// The current status of the upgrade. The status can take one of the following values:
+    /// <p> The current status of the upgrade. The status can take one of the following values: </p>
     /// <ul>
     /// <li>In Progress</li>
     /// <li>Succeeded</li>
     /// <li>Succeeded with Issues</li>
     /// <li>Failed</li>
     /// </ul>
-    /// </p>
+    /// <p></p>
     pub fn upgrade_status(&self) -> std::option::Option<&crate::model::UpgradeStatus> {
         self.upgrade_status.as_ref()
     }
-    /// <p>
-    /// A list of
-    /// <code>
-    /// <a>UpgradeStepItem</a>
-    /// </code>
-    /// s representing information about each step performed as part of a specific upgrade or upgrade eligibility check.
-    /// </p>
+    /// <p> A list of <code> <code>UpgradeStepItem</code> </code> s representing information about each step performed as part of a specific upgrade or upgrade eligibility check. </p>
     pub fn steps_list(&self) -> std::option::Option<&[crate::model::UpgradeStepItem]> {
         self.steps_list.as_deref()
     }
@@ -7935,28 +7462,26 @@ pub mod upgrade_history {
             self.start_timestamp = input;
             self
         }
-        /// <p>
-        /// The current status of the upgrade. The status can take one of the following values:
+        /// <p> The current status of the upgrade. The status can take one of the following values: </p>
         /// <ul>
         /// <li>In Progress</li>
         /// <li>Succeeded</li>
         /// <li>Succeeded with Issues</li>
         /// <li>Failed</li>
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn upgrade_status(mut self, input: crate::model::UpgradeStatus) -> Self {
             self.upgrade_status = Some(input);
             self
         }
-        /// <p>
-        /// The current status of the upgrade. The status can take one of the following values:
+        /// <p> The current status of the upgrade. The status can take one of the following values: </p>
         /// <ul>
         /// <li>In Progress</li>
         /// <li>Succeeded</li>
         /// <li>Succeeded with Issues</li>
         /// <li>Failed</li>
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn set_upgrade_status(
             mut self,
             input: std::option::Option<crate::model::UpgradeStatus>,
@@ -7968,26 +7493,14 @@ pub mod upgrade_history {
         ///
         /// To override the contents of this collection use [`set_steps_list`](Self::set_steps_list).
         ///
-        /// <p>
-        /// A list of
-        /// <code>
-        /// <a>UpgradeStepItem</a>
-        /// </code>
-        /// s representing information about each step performed as part of a specific upgrade or upgrade eligibility check.
-        /// </p>
-        pub fn steps_list(mut self, input: impl Into<crate::model::UpgradeStepItem>) -> Self {
+        /// <p> A list of <code> <code>UpgradeStepItem</code> </code> s representing information about each step performed as part of a specific upgrade or upgrade eligibility check. </p>
+        pub fn steps_list(mut self, input: crate::model::UpgradeStepItem) -> Self {
             let mut v = self.steps_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.steps_list = Some(v);
             self
         }
-        /// <p>
-        /// A list of
-        /// <code>
-        /// <a>UpgradeStepItem</a>
-        /// </code>
-        /// s representing information about each step performed as part of a specific upgrade or upgrade eligibility check.
-        /// </p>
+        /// <p> A list of <code> <code>UpgradeStepItem</code> </code> s representing information about each step performed as part of a specific upgrade or upgrade eligibility check. </p>
         pub fn set_steps_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UpgradeStepItem>>,
@@ -8017,24 +7530,22 @@ impl UpgradeHistory {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpgradeStepItem {
-    /// <p>
-    /// One of three steps an upgrade or upgrade eligibility check goes through:
+    /// <p> One of three steps an upgrade or upgrade eligibility check goes through: </p>
     /// <ul>
     /// <li>PreUpgradeCheck</li>
     /// <li>Snapshot</li>
     /// <li>Upgrade</li>
     /// </ul>
-    /// </p>
+    /// <p></p>
     pub upgrade_step: std::option::Option<crate::model::UpgradeStep>,
-    /// <p>
-    /// The current status of the upgrade. The status can take one of the following values:
+    /// <p> The current status of the upgrade. The status can take one of the following values: </p>
     /// <ul>
     /// <li>In Progress</li>
     /// <li>Succeeded</li>
     /// <li>Succeeded with Issues</li>
     /// <li>Failed</li>
     /// </ul>
-    /// </p>
+    /// <p></p>
     pub upgrade_step_status: std::option::Option<crate::model::UpgradeStatus>,
     /// <p>A list of strings containing detailed information about the errors encountered in a particular step.</p>
     pub issues: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8042,26 +7553,24 @@ pub struct UpgradeStepItem {
     pub progress_percent: std::option::Option<f64>,
 }
 impl UpgradeStepItem {
-    /// <p>
-    /// One of three steps an upgrade or upgrade eligibility check goes through:
+    /// <p> One of three steps an upgrade or upgrade eligibility check goes through: </p>
     /// <ul>
     /// <li>PreUpgradeCheck</li>
     /// <li>Snapshot</li>
     /// <li>Upgrade</li>
     /// </ul>
-    /// </p>
+    /// <p></p>
     pub fn upgrade_step(&self) -> std::option::Option<&crate::model::UpgradeStep> {
         self.upgrade_step.as_ref()
     }
-    /// <p>
-    /// The current status of the upgrade. The status can take one of the following values:
+    /// <p> The current status of the upgrade. The status can take one of the following values: </p>
     /// <ul>
     /// <li>In Progress</li>
     /// <li>Succeeded</li>
     /// <li>Succeeded with Issues</li>
     /// <li>Failed</li>
     /// </ul>
-    /// </p>
+    /// <p></p>
     pub fn upgrade_step_status(&self) -> std::option::Option<&crate::model::UpgradeStatus> {
         self.upgrade_step_status.as_ref()
     }
@@ -8096,26 +7605,24 @@ pub mod upgrade_step_item {
         pub(crate) progress_percent: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>
-        /// One of three steps an upgrade or upgrade eligibility check goes through:
+        /// <p> One of three steps an upgrade or upgrade eligibility check goes through: </p>
         /// <ul>
         /// <li>PreUpgradeCheck</li>
         /// <li>Snapshot</li>
         /// <li>Upgrade</li>
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn upgrade_step(mut self, input: crate::model::UpgradeStep) -> Self {
             self.upgrade_step = Some(input);
             self
         }
-        /// <p>
-        /// One of three steps an upgrade or upgrade eligibility check goes through:
+        /// <p> One of three steps an upgrade or upgrade eligibility check goes through: </p>
         /// <ul>
         /// <li>PreUpgradeCheck</li>
         /// <li>Snapshot</li>
         /// <li>Upgrade</li>
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn set_upgrade_step(
             mut self,
             input: std::option::Option<crate::model::UpgradeStep>,
@@ -8123,28 +7630,26 @@ pub mod upgrade_step_item {
             self.upgrade_step = input;
             self
         }
-        /// <p>
-        /// The current status of the upgrade. The status can take one of the following values:
+        /// <p> The current status of the upgrade. The status can take one of the following values: </p>
         /// <ul>
         /// <li>In Progress</li>
         /// <li>Succeeded</li>
         /// <li>Succeeded with Issues</li>
         /// <li>Failed</li>
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn upgrade_step_status(mut self, input: crate::model::UpgradeStatus) -> Self {
             self.upgrade_step_status = Some(input);
             self
         }
-        /// <p>
-        /// The current status of the upgrade. The status can take one of the following values:
+        /// <p> The current status of the upgrade. The status can take one of the following values: </p>
         /// <ul>
         /// <li>In Progress</li>
         /// <li>Succeeded</li>
         /// <li>Succeeded with Issues</li>
         /// <li>Failed</li>
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn set_upgrade_step_status(
             mut self,
             input: std::option::Option<crate::model::UpgradeStatus>,
@@ -8300,24 +7805,13 @@ impl PackageVersionHistory {
     }
 }
 
-/// <p>
-/// A map from an
-/// <code>
-/// <a>EngineVersion</a>
-/// </code>
-/// to a list of compatible
-/// <code>
-/// <a>EngineVersion</a>
-/// </code>
-/// s to which the domain can be upgraded.
-/// </p>
+/// <p> A map from an <code> <code>EngineVersion</code> </code> to a list of compatible <code> <code>EngineVersion</code> </code> s to which the domain can be upgraded. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompatibleVersionsMap {
     /// <p>The current version of OpenSearch a domain is on.</p>
     pub source_version: std::option::Option<std::string::String>,
-    /// <p>List of supported OpenSearch versions.
-    /// </p>
+    /// <p>List of supported OpenSearch versions. </p>
     pub target_versions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CompatibleVersionsMap {
@@ -8325,8 +7819,7 @@ impl CompatibleVersionsMap {
     pub fn source_version(&self) -> std::option::Option<&str> {
         self.source_version.as_deref()
     }
-    /// <p>List of supported OpenSearch versions.
-    /// </p>
+    /// <p>List of supported OpenSearch versions. </p>
     pub fn target_versions(&self) -> std::option::Option<&[std::string::String]> {
         self.target_versions.as_deref()
     }
@@ -8366,16 +7859,14 @@ pub mod compatible_versions_map {
         ///
         /// To override the contents of this collection use [`set_target_versions`](Self::set_target_versions).
         ///
-        /// <p>List of supported OpenSearch versions.
-        /// </p>
+        /// <p>List of supported OpenSearch versions. </p>
         pub fn target_versions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_versions.unwrap_or_default();
             v.push(input.into());
             self.target_versions = Some(v);
             self
         }
-        /// <p>List of supported OpenSearch versions.
-        /// </p>
+        /// <p>List of supported OpenSearch versions. </p>
         pub fn set_target_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8706,12 +8197,9 @@ pub mod reserved_instance {
         /// To override the contents of this collection use [`set_recurring_charges`](Self::set_recurring_charges).
         ///
         /// <p>The charge to your account regardless of whether you are creating any domains using the instance offering.</p>
-        pub fn recurring_charges(
-            mut self,
-            input: impl Into<crate::model::RecurringCharge>,
-        ) -> Self {
+        pub fn recurring_charges(mut self, input: crate::model::RecurringCharge) -> Self {
             let mut v = self.recurring_charges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recurring_charges = Some(v);
             self
         }
@@ -8751,9 +8239,7 @@ impl ReservedInstance {
     }
 }
 
-/// <p>Contains the specific price and frequency of a recurring charges for a reserved OpenSearch instance, or for a
-/// reserved OpenSearch instance offering.
-/// </p>
+/// <p>Contains the specific price and frequency of a recurring charges for a reserved OpenSearch instance, or for a reserved OpenSearch instance offering. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecurringCharge {
@@ -9081,12 +8567,9 @@ pub mod reserved_instance_offering {
         /// To override the contents of this collection use [`set_recurring_charges`](Self::set_recurring_charges).
         ///
         /// <p>The charge to your account regardless of whether you are creating any domains using the instance offering.</p>
-        pub fn recurring_charges(
-            mut self,
-            input: impl Into<crate::model::RecurringCharge>,
-        ) -> Self {
+        pub fn recurring_charges(mut self, input: crate::model::RecurringCharge) -> Self {
             let mut v = self.recurring_charges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recurring_charges = Some(v);
             self
         }
@@ -9120,20 +8603,17 @@ impl ReservedInstanceOffering {
     }
 }
 
-/// <p>A filter to apply to the <code>DescribePackage</code> response.
-/// </p>
+/// <p>A filter to apply to the <code>DescribePackage</code> response. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePackagesFilter {
-    /// <p>Any field from <code>PackageDetails</code>.
-    /// </p>
+    /// <p>Any field from <code>PackageDetails</code>. </p>
     pub name: std::option::Option<crate::model::DescribePackagesFilterName>,
     /// <p>A list of values for the specified field.</p>
     pub value: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribePackagesFilter {
-    /// <p>Any field from <code>PackageDetails</code>.
-    /// </p>
+    /// <p>Any field from <code>PackageDetails</code>. </p>
     pub fn name(&self) -> std::option::Option<&crate::model::DescribePackagesFilterName> {
         self.name.as_ref()
     }
@@ -9160,14 +8640,12 @@ pub mod describe_packages_filter {
         pub(crate) value: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>Any field from <code>PackageDetails</code>.
-        /// </p>
+        /// <p>Any field from <code>PackageDetails</code>. </p>
         pub fn name(mut self, input: crate::model::DescribePackagesFilterName) -> Self {
             self.name = Some(input);
             self
         }
-        /// <p>Any field from <code>PackageDetails</code>.
-        /// </p>
+        /// <p>Any field from <code>PackageDetails</code>. </p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::DescribePackagesFilterName>,
@@ -9273,50 +8751,25 @@ impl AsRef<str> for DescribePackagesFilterName {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutboundConnection {
-    /// <p>The
-    /// <code>
-    /// <a>DomainInformation</a>
-    /// </code>
-    /// for the local OpenSearch domain.
-    /// </p>
+    /// <p>The <code> <code>DomainInformation</code> </code> for the local OpenSearch domain. </p>
     pub local_domain_info: std::option::Option<crate::model::DomainInformationContainer>,
-    /// <p>The
-    /// <code>
-    /// <a>DomainInformation</a>
-    /// </code>
-    /// for the remote OpenSearch domain.
-    /// </p>
+    /// <p>The <code> <code>DomainInformation</code> </code> for the remote OpenSearch domain. </p>
     pub remote_domain_info: std::option::Option<crate::model::DomainInformationContainer>,
     /// <p>The connection ID for the outbound cross-cluster connection.</p>
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The connection alias for the outbound cross-cluster connection.</p>
     pub connection_alias: std::option::Option<std::string::String>,
-    /// <p>The
-    /// <code>
-    /// <a>OutboundConnectionStatus</a>
-    /// </code>
-    /// for the outbound connection.
-    /// </p>
+    /// <p>The <code> <code>OutboundConnectionStatus</code> </code> for the outbound connection. </p>
     pub connection_status: std::option::Option<crate::model::OutboundConnectionStatus>,
 }
 impl OutboundConnection {
-    /// <p>The
-    /// <code>
-    /// <a>DomainInformation</a>
-    /// </code>
-    /// for the local OpenSearch domain.
-    /// </p>
+    /// <p>The <code> <code>DomainInformation</code> </code> for the local OpenSearch domain. </p>
     pub fn local_domain_info(
         &self,
     ) -> std::option::Option<&crate::model::DomainInformationContainer> {
         self.local_domain_info.as_ref()
     }
-    /// <p>The
-    /// <code>
-    /// <a>DomainInformation</a>
-    /// </code>
-    /// for the remote OpenSearch domain.
-    /// </p>
+    /// <p>The <code> <code>DomainInformation</code> </code> for the remote OpenSearch domain. </p>
     pub fn remote_domain_info(
         &self,
     ) -> std::option::Option<&crate::model::DomainInformationContainer> {
@@ -9330,12 +8783,7 @@ impl OutboundConnection {
     pub fn connection_alias(&self) -> std::option::Option<&str> {
         self.connection_alias.as_deref()
     }
-    /// <p>The
-    /// <code>
-    /// <a>OutboundConnectionStatus</a>
-    /// </code>
-    /// for the outbound connection.
-    /// </p>
+    /// <p>The <code> <code>OutboundConnectionStatus</code> </code> for the outbound connection. </p>
     pub fn connection_status(
         &self,
     ) -> std::option::Option<&crate::model::OutboundConnectionStatus> {
@@ -9367,12 +8815,7 @@ pub mod outbound_connection {
         pub(crate) connection_status: std::option::Option<crate::model::OutboundConnectionStatus>,
     }
     impl Builder {
-        /// <p>The
-        /// <code>
-        /// <a>DomainInformation</a>
-        /// </code>
-        /// for the local OpenSearch domain.
-        /// </p>
+        /// <p>The <code> <code>DomainInformation</code> </code> for the local OpenSearch domain. </p>
         pub fn local_domain_info(
             mut self,
             input: crate::model::DomainInformationContainer,
@@ -9380,12 +8823,7 @@ pub mod outbound_connection {
             self.local_domain_info = Some(input);
             self
         }
-        /// <p>The
-        /// <code>
-        /// <a>DomainInformation</a>
-        /// </code>
-        /// for the local OpenSearch domain.
-        /// </p>
+        /// <p>The <code> <code>DomainInformation</code> </code> for the local OpenSearch domain. </p>
         pub fn set_local_domain_info(
             mut self,
             input: std::option::Option<crate::model::DomainInformationContainer>,
@@ -9393,12 +8831,7 @@ pub mod outbound_connection {
             self.local_domain_info = input;
             self
         }
-        /// <p>The
-        /// <code>
-        /// <a>DomainInformation</a>
-        /// </code>
-        /// for the remote OpenSearch domain.
-        /// </p>
+        /// <p>The <code> <code>DomainInformation</code> </code> for the remote OpenSearch domain. </p>
         pub fn remote_domain_info(
             mut self,
             input: crate::model::DomainInformationContainer,
@@ -9406,12 +8839,7 @@ pub mod outbound_connection {
             self.remote_domain_info = Some(input);
             self
         }
-        /// <p>The
-        /// <code>
-        /// <a>DomainInformation</a>
-        /// </code>
-        /// for the remote OpenSearch domain.
-        /// </p>
+        /// <p>The <code> <code>DomainInformation</code> </code> for the remote OpenSearch domain. </p>
         pub fn set_remote_domain_info(
             mut self,
             input: std::option::Option<crate::model::DomainInformationContainer>,
@@ -9445,22 +8873,12 @@ pub mod outbound_connection {
             self.connection_alias = input;
             self
         }
-        /// <p>The
-        /// <code>
-        /// <a>OutboundConnectionStatus</a>
-        /// </code>
-        /// for the outbound connection.
-        /// </p>
+        /// <p>The <code> <code>OutboundConnectionStatus</code> </code> for the outbound connection. </p>
         pub fn connection_status(mut self, input: crate::model::OutboundConnectionStatus) -> Self {
             self.connection_status = Some(input);
             self
         }
-        /// <p>The
-        /// <code>
-        /// <a>OutboundConnectionStatus</a>
-        /// </code>
-        /// for the outbound connection.
-        /// </p>
+        /// <p>The <code> <code>OutboundConnectionStatus</code> </code> for the outbound connection. </p>
         pub fn set_connection_status(
             mut self,
             input: std::option::Option<crate::model::OutboundConnectionStatus>,
@@ -9495,9 +8913,7 @@ pub struct OutboundConnectionStatus {
     /// <ul>
     /// <li>VALIDATING: The outbound connection request is being validated.</li>
     /// <li>VALIDATION_FAILED: Validation failed for the connection request.</li>
-    /// <li>PENDING_ACCEPTANCE: Outbound connection request is validated and is not yet accepted by the remote domain
-    /// owner.
-    /// </li>
+    /// <li>PENDING_ACCEPTANCE: Outbound connection request is validated and is not yet accepted by the remote domain owner. </li>
     /// <li>APPROVED: Outbound connection has been approved by the remote domain owner for getting provisioned.</li>
     /// <li>PROVISIONING: Outbound connection request is in process.</li>
     /// <li>ACTIVE: Outbound connection is active and ready to use.</li>
@@ -9515,9 +8931,7 @@ impl OutboundConnectionStatus {
     /// <ul>
     /// <li>VALIDATING: The outbound connection request is being validated.</li>
     /// <li>VALIDATION_FAILED: Validation failed for the connection request.</li>
-    /// <li>PENDING_ACCEPTANCE: Outbound connection request is validated and is not yet accepted by the remote domain
-    /// owner.
-    /// </li>
+    /// <li>PENDING_ACCEPTANCE: Outbound connection request is validated and is not yet accepted by the remote domain owner. </li>
     /// <li>APPROVED: Outbound connection has been approved by the remote domain owner for getting provisioned.</li>
     /// <li>PROVISIONING: Outbound connection request is in process.</li>
     /// <li>ACTIVE: Outbound connection is active and ready to use.</li>
@@ -9556,9 +8970,7 @@ pub mod outbound_connection_status {
         /// <ul>
         /// <li>VALIDATING: The outbound connection request is being validated.</li>
         /// <li>VALIDATION_FAILED: Validation failed for the connection request.</li>
-        /// <li>PENDING_ACCEPTANCE: Outbound connection request is validated and is not yet accepted by the remote domain
-        /// owner.
-        /// </li>
+        /// <li>PENDING_ACCEPTANCE: Outbound connection request is validated and is not yet accepted by the remote domain owner. </li>
         /// <li>APPROVED: Outbound connection has been approved by the remote domain owner for getting provisioned.</li>
         /// <li>PROVISIONING: Outbound connection request is in process.</li>
         /// <li>ACTIVE: Outbound connection is active and ready to use.</li>
@@ -9575,9 +8987,7 @@ pub mod outbound_connection_status {
         /// <ul>
         /// <li>VALIDATING: The outbound connection request is being validated.</li>
         /// <li>VALIDATION_FAILED: Validation failed for the connection request.</li>
-        /// <li>PENDING_ACCEPTANCE: Outbound connection request is validated and is not yet accepted by the remote domain
-        /// owner.
-        /// </li>
+        /// <li>PENDING_ACCEPTANCE: Outbound connection request is validated and is not yet accepted by the remote domain owner. </li>
         /// <li>APPROVED: Outbound connection has been approved by the remote domain owner for getting provisioned.</li>
         /// <li>PROVISIONING: Outbound connection request is in process.</li>
         /// <li>ACTIVE: Outbound connection is active and ready to use.</li>
@@ -9717,34 +9127,21 @@ impl AsRef<str> for OutboundConnectionStatusCode {
     }
 }
 
-/// <p>
-/// A filter used to limit results when describing inbound or outbound cross-cluster connections.
-/// Multiple values can be specified per filter.
-/// A cross-cluster connection must match at least one of the specified values for it to be
-/// returned from an operation.
-/// </p>
+/// <p> A filter used to limit results when describing inbound or outbound cross-cluster connections. Multiple values can be specified per filter. A cross-cluster connection must match at least one of the specified values for it to be returned from an operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
-    /// <p>
-    /// The name of the filter.
-    /// </p>
+    /// <p> The name of the filter. </p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>
-    /// Contains one or more values for the filter.
-    /// </p>
+    /// <p> Contains one or more values for the filter. </p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Filter {
-    /// <p>
-    /// The name of the filter.
-    /// </p>
+    /// <p> The name of the filter. </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>
-    /// Contains one or more values for the filter.
-    /// </p>
+    /// <p> Contains one or more values for the filter. </p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
@@ -9767,16 +9164,12 @@ pub mod filter {
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>
-        /// The name of the filter.
-        /// </p>
+        /// <p> The name of the filter. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the filter.
-        /// </p>
+        /// <p> The name of the filter. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -9785,18 +9178,14 @@ pub mod filter {
         ///
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
-        /// <p>
-        /// Contains one or more values for the filter.
-        /// </p>
+        /// <p> Contains one or more values for the filter. </p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
-        /// <p>
-        /// Contains one or more values for the filter.
-        /// </p>
+        /// <p> Contains one or more values for the filter. </p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9820,59 +9209,27 @@ impl Filter {
     }
 }
 
-/// <p>
-/// Limits for a given InstanceType and for each of its roles.
-/// <br></br>
-/// Limits contains the following:
-/// <code>
-/// <a>StorageTypes</a>
-/// </code>,
-/// <code>
-/// <a>InstanceLimits</a>
-/// </code>,
-/// and
-/// <code>
-/// <a>AdditionalLimits</a>
-/// </code>
-/// </p>
+/// <p> Limits for a given InstanceType and for each of its roles. <br><br> Limits contains the following: <code> <code>StorageTypes</code> </code>, <code> <code>InstanceLimits</code> </code>, and <code> <code>AdditionalLimits</code> </code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Limits {
-    /// <p>Storage-related types and attributes
-    /// that are available for a given InstanceType.
-    /// </p>
+    /// <p>Storage-related types and attributes that are available for a given InstanceType. </p>
     pub storage_types: std::option::Option<std::vec::Vec<crate::model::StorageType>>,
-    /// <p>InstanceLimits represents the list of instance-related attributes that are available for a given InstanceType.
-    /// </p>
+    /// <p>InstanceLimits represents the list of instance-related attributes that are available for a given InstanceType. </p>
     pub instance_limits: std::option::Option<crate::model::InstanceLimits>,
-    /// <p>
-    /// List of additional limits that are specific to a given InstanceType and for each of its
-    /// <code>
-    /// <a>InstanceRole</a>
-    /// </code>
-    /// .
-    /// </p>
+    /// <p> List of additional limits that are specific to a given InstanceType and for each of its <code> <code>InstanceRole</code> </code> . </p>
     pub additional_limits: std::option::Option<std::vec::Vec<crate::model::AdditionalLimit>>,
 }
 impl Limits {
-    /// <p>Storage-related types and attributes
-    /// that are available for a given InstanceType.
-    /// </p>
+    /// <p>Storage-related types and attributes that are available for a given InstanceType. </p>
     pub fn storage_types(&self) -> std::option::Option<&[crate::model::StorageType]> {
         self.storage_types.as_deref()
     }
-    /// <p>InstanceLimits represents the list of instance-related attributes that are available for a given InstanceType.
-    /// </p>
+    /// <p>InstanceLimits represents the list of instance-related attributes that are available for a given InstanceType. </p>
     pub fn instance_limits(&self) -> std::option::Option<&crate::model::InstanceLimits> {
         self.instance_limits.as_ref()
     }
-    /// <p>
-    /// List of additional limits that are specific to a given InstanceType and for each of its
-    /// <code>
-    /// <a>InstanceRole</a>
-    /// </code>
-    /// .
-    /// </p>
+    /// <p> List of additional limits that are specific to a given InstanceType and for each of its <code> <code>InstanceRole</code> </code> . </p>
     pub fn additional_limits(&self) -> std::option::Option<&[crate::model::AdditionalLimit]> {
         self.additional_limits.as_deref()
     }
@@ -9902,18 +9259,14 @@ pub mod limits {
         ///
         /// To override the contents of this collection use [`set_storage_types`](Self::set_storage_types).
         ///
-        /// <p>Storage-related types and attributes
-        /// that are available for a given InstanceType.
-        /// </p>
-        pub fn storage_types(mut self, input: impl Into<crate::model::StorageType>) -> Self {
+        /// <p>Storage-related types and attributes that are available for a given InstanceType. </p>
+        pub fn storage_types(mut self, input: crate::model::StorageType) -> Self {
             let mut v = self.storage_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.storage_types = Some(v);
             self
         }
-        /// <p>Storage-related types and attributes
-        /// that are available for a given InstanceType.
-        /// </p>
+        /// <p>Storage-related types and attributes that are available for a given InstanceType. </p>
         pub fn set_storage_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StorageType>>,
@@ -9921,14 +9274,12 @@ pub mod limits {
             self.storage_types = input;
             self
         }
-        /// <p>InstanceLimits represents the list of instance-related attributes that are available for a given InstanceType.
-        /// </p>
+        /// <p>InstanceLimits represents the list of instance-related attributes that are available for a given InstanceType. </p>
         pub fn instance_limits(mut self, input: crate::model::InstanceLimits) -> Self {
             self.instance_limits = Some(input);
             self
         }
-        /// <p>InstanceLimits represents the list of instance-related attributes that are available for a given InstanceType.
-        /// </p>
+        /// <p>InstanceLimits represents the list of instance-related attributes that are available for a given InstanceType. </p>
         pub fn set_instance_limits(
             mut self,
             input: std::option::Option<crate::model::InstanceLimits>,
@@ -9940,29 +9291,14 @@ pub mod limits {
         ///
         /// To override the contents of this collection use [`set_additional_limits`](Self::set_additional_limits).
         ///
-        /// <p>
-        /// List of additional limits that are specific to a given InstanceType and for each of its
-        /// <code>
-        /// <a>InstanceRole</a>
-        /// </code>
-        /// .
-        /// </p>
-        pub fn additional_limits(
-            mut self,
-            input: impl Into<crate::model::AdditionalLimit>,
-        ) -> Self {
+        /// <p> List of additional limits that are specific to a given InstanceType and for each of its <code> <code>InstanceRole</code> </code> . </p>
+        pub fn additional_limits(mut self, input: crate::model::AdditionalLimit) -> Self {
             let mut v = self.additional_limits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_limits = Some(v);
             self
         }
-        /// <p>
-        /// List of additional limits that are specific to a given InstanceType and for each of its
-        /// <code>
-        /// <a>InstanceRole</a>
-        /// </code>
-        /// .
-        /// </p>
+        /// <p> List of additional limits that are specific to a given InstanceType and for each of its <code> <code>InstanceRole</code> </code> . </p>
         pub fn set_additional_limits(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AdditionalLimit>>,
@@ -9987,89 +9323,31 @@ impl Limits {
     }
 }
 
-/// <p>
-/// List of limits that are specific to a given InstanceType and for each of its
-/// <code>
-/// <a>InstanceRole</a>
-/// </code>
-/// .
-/// </p>
+/// <p> List of limits that are specific to a given InstanceType and for each of its <code> <code>InstanceRole</code> </code> . </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdditionalLimit {
-    /// <p>
-    /// Additional limit is specific to a given InstanceType and for each of its
-    /// <code>
-    /// <a>InstanceRole</a>
-    /// </code>
-    /// etc.
-    /// <br></br>
-    /// Attributes and their details:
-    /// <br></br>
+    /// <p> Additional limit is specific to a given InstanceType and for each of its <code> <code>InstanceRole</code> </code> etc. <br><br> Attributes and their details: <br><br> </p>
     /// <ul>
-    /// <li>MaximumNumberOfDataNodesSupported</li>
-    /// This attribute is present on the master node only to specify how
-    /// much data nodes up to which given
-    /// <code>
-    /// <a>ESPartitionInstanceType</a>
-    /// </code>
-    /// can support as master node.
-    /// <li>MaximumNumberOfDataNodesWithoutMasterNode</li>
-    /// This attribute is present on data node only to specify how much
-    /// data nodes of given
-    /// <code>
-    /// <a>ESPartitionInstanceType</a>
-    /// </code>
-    /// up to which you don't need any master nodes to govern them.
+    /// <li>MaximumNumberOfDataNodesSupported</li> This attribute is present on the master node only to specify how much data nodes up to which given <code> <code>ESPartitionInstanceType</code> </code> can support as master node.
+    /// <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute is present on data node only to specify how much data nodes of given <code> <code>ESPartitionInstanceType</code> </code> up to which you don't need any master nodes to govern them.
     /// </ul>
-    /// </p>
+    /// <p></p>
     pub limit_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// Value for a given
-    /// <code>
-    /// <a>AdditionalLimit$LimitName</a>
-    /// </code>
-    /// .
-    /// </p>
+    /// <p> Value for a given <code> <code>AdditionalLimit$LimitName</code> </code> . </p>
     pub limit_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AdditionalLimit {
-    /// <p>
-    /// Additional limit is specific to a given InstanceType and for each of its
-    /// <code>
-    /// <a>InstanceRole</a>
-    /// </code>
-    /// etc.
-    /// <br></br>
-    /// Attributes and their details:
-    /// <br></br>
+    /// <p> Additional limit is specific to a given InstanceType and for each of its <code> <code>InstanceRole</code> </code> etc. <br><br> Attributes and their details: <br><br> </p>
     /// <ul>
-    /// <li>MaximumNumberOfDataNodesSupported</li>
-    /// This attribute is present on the master node only to specify how
-    /// much data nodes up to which given
-    /// <code>
-    /// <a>ESPartitionInstanceType</a>
-    /// </code>
-    /// can support as master node.
-    /// <li>MaximumNumberOfDataNodesWithoutMasterNode</li>
-    /// This attribute is present on data node only to specify how much
-    /// data nodes of given
-    /// <code>
-    /// <a>ESPartitionInstanceType</a>
-    /// </code>
-    /// up to which you don't need any master nodes to govern them.
+    /// <li>MaximumNumberOfDataNodesSupported</li> This attribute is present on the master node only to specify how much data nodes up to which given <code> <code>ESPartitionInstanceType</code> </code> can support as master node.
+    /// <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute is present on data node only to specify how much data nodes of given <code> <code>ESPartitionInstanceType</code> </code> up to which you don't need any master nodes to govern them.
     /// </ul>
-    /// </p>
+    /// <p></p>
     pub fn limit_name(&self) -> std::option::Option<&str> {
         self.limit_name.as_deref()
     }
-    /// <p>
-    /// Value for a given
-    /// <code>
-    /// <a>AdditionalLimit$LimitName</a>
-    /// </code>
-    /// .
-    /// </p>
+    /// <p> Value for a given <code> <code>AdditionalLimit$LimitName</code> </code> . </p>
     pub fn limit_values(&self) -> std::option::Option<&[std::string::String]> {
         self.limit_values.as_deref()
     }
@@ -10092,62 +9370,22 @@ pub mod additional_limit {
         pub(crate) limit_values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>
-        /// Additional limit is specific to a given InstanceType and for each of its
-        /// <code>
-        /// <a>InstanceRole</a>
-        /// </code>
-        /// etc.
-        /// <br></br>
-        /// Attributes and their details:
-        /// <br></br>
+        /// <p> Additional limit is specific to a given InstanceType and for each of its <code> <code>InstanceRole</code> </code> etc. <br><br> Attributes and their details: <br><br> </p>
         /// <ul>
-        /// <li>MaximumNumberOfDataNodesSupported</li>
-        /// This attribute is present on the master node only to specify how
-        /// much data nodes up to which given
-        /// <code>
-        /// <a>ESPartitionInstanceType</a>
-        /// </code>
-        /// can support as master node.
-        /// <li>MaximumNumberOfDataNodesWithoutMasterNode</li>
-        /// This attribute is present on data node only to specify how much
-        /// data nodes of given
-        /// <code>
-        /// <a>ESPartitionInstanceType</a>
-        /// </code>
-        /// up to which you don't need any master nodes to govern them.
+        /// <li>MaximumNumberOfDataNodesSupported</li> This attribute is present on the master node only to specify how much data nodes up to which given <code> <code>ESPartitionInstanceType</code> </code> can support as master node.
+        /// <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute is present on data node only to specify how much data nodes of given <code> <code>ESPartitionInstanceType</code> </code> up to which you don't need any master nodes to govern them.
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn limit_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.limit_name = Some(input.into());
             self
         }
-        /// <p>
-        /// Additional limit is specific to a given InstanceType and for each of its
-        /// <code>
-        /// <a>InstanceRole</a>
-        /// </code>
-        /// etc.
-        /// <br></br>
-        /// Attributes and their details:
-        /// <br></br>
+        /// <p> Additional limit is specific to a given InstanceType and for each of its <code> <code>InstanceRole</code> </code> etc. <br><br> Attributes and their details: <br><br> </p>
         /// <ul>
-        /// <li>MaximumNumberOfDataNodesSupported</li>
-        /// This attribute is present on the master node only to specify how
-        /// much data nodes up to which given
-        /// <code>
-        /// <a>ESPartitionInstanceType</a>
-        /// </code>
-        /// can support as master node.
-        /// <li>MaximumNumberOfDataNodesWithoutMasterNode</li>
-        /// This attribute is present on data node only to specify how much
-        /// data nodes of given
-        /// <code>
-        /// <a>ESPartitionInstanceType</a>
-        /// </code>
-        /// up to which you don't need any master nodes to govern them.
+        /// <li>MaximumNumberOfDataNodesSupported</li> This attribute is present on the master node only to specify how much data nodes up to which given <code> <code>ESPartitionInstanceType</code> </code> can support as master node.
+        /// <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute is present on data node only to specify how much data nodes of given <code> <code>ESPartitionInstanceType</code> </code> up to which you don't need any master nodes to govern them.
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn set_limit_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.limit_name = input;
             self
@@ -10156,26 +9394,14 @@ pub mod additional_limit {
         ///
         /// To override the contents of this collection use [`set_limit_values`](Self::set_limit_values).
         ///
-        /// <p>
-        /// Value for a given
-        /// <code>
-        /// <a>AdditionalLimit$LimitName</a>
-        /// </code>
-        /// .
-        /// </p>
+        /// <p> Value for a given <code> <code>AdditionalLimit$LimitName</code> </code> . </p>
         pub fn limit_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.limit_values.unwrap_or_default();
             v.push(input.into());
             self.limit_values = Some(v);
             self
         }
-        /// <p>
-        /// Value for a given
-        /// <code>
-        /// <a>AdditionalLimit$LimitName</a>
-        /// </code>
-        /// .
-        /// </p>
+        /// <p> Value for a given <code> <code>AdditionalLimit$LimitName</code> </code> . </p>
         pub fn set_limit_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10199,22 +9425,15 @@ impl AdditionalLimit {
     }
 }
 
-/// <p>InstanceLimits represents the list of instance-related attributes that are available for a given InstanceType.
-/// </p>
+/// <p>InstanceLimits represents the list of instance-related attributes that are available for a given InstanceType. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceLimits {
-    /// <p>
-    /// InstanceCountLimits represents the limits on the number of instances that can be created in Amazon OpenSearch Service for
-    /// a given InstanceType.
-    /// </p>
+    /// <p> InstanceCountLimits represents the limits on the number of instances that can be created in Amazon OpenSearch Service for a given InstanceType. </p>
     pub instance_count_limits: std::option::Option<crate::model::InstanceCountLimits>,
 }
 impl InstanceLimits {
-    /// <p>
-    /// InstanceCountLimits represents the limits on the number of instances that can be created in Amazon OpenSearch Service for
-    /// a given InstanceType.
-    /// </p>
+    /// <p> InstanceCountLimits represents the limits on the number of instances that can be created in Amazon OpenSearch Service for a given InstanceType. </p>
     pub fn instance_count_limits(&self) -> std::option::Option<&crate::model::InstanceCountLimits> {
         self.instance_count_limits.as_ref()
     }
@@ -10235,18 +9454,12 @@ pub mod instance_limits {
         pub(crate) instance_count_limits: std::option::Option<crate::model::InstanceCountLimits>,
     }
     impl Builder {
-        /// <p>
-        /// InstanceCountLimits represents the limits on the number of instances that can be created in Amazon OpenSearch Service for
-        /// a given InstanceType.
-        /// </p>
+        /// <p> InstanceCountLimits represents the limits on the number of instances that can be created in Amazon OpenSearch Service for a given InstanceType. </p>
         pub fn instance_count_limits(mut self, input: crate::model::InstanceCountLimits) -> Self {
             self.instance_count_limits = Some(input);
             self
         }
-        /// <p>
-        /// InstanceCountLimits represents the limits on the number of instances that can be created in Amazon OpenSearch Service for
-        /// a given InstanceType.
-        /// </p>
+        /// <p> InstanceCountLimits represents the limits on the number of instances that can be created in Amazon OpenSearch Service for a given InstanceType. </p>
         pub fn set_instance_count_limits(
             mut self,
             input: std::option::Option<crate::model::InstanceCountLimits>,
@@ -10269,32 +9482,21 @@ impl InstanceLimits {
     }
 }
 
-/// <p>
-/// InstanceCountLimits represents the limits on the number of instances that can be created in Amazon OpenSearch Service for
-/// a given InstanceType.
-/// </p>
+/// <p> InstanceCountLimits represents the limits on the number of instances that can be created in Amazon OpenSearch Service for a given InstanceType. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceCountLimits {
-    /// <p>
-    /// Minimum number of instances that can be instantiated for a given InstanceType.
-    /// </p>
+    /// <p> Minimum number of instances that can be instantiated for a given InstanceType. </p>
     pub minimum_instance_count: i32,
-    /// <p>
-    /// Maximum number of instances that can be instantiated for a given InstanceType.
-    /// </p>
+    /// <p> Maximum number of instances that can be instantiated for a given InstanceType. </p>
     pub maximum_instance_count: i32,
 }
 impl InstanceCountLimits {
-    /// <p>
-    /// Minimum number of instances that can be instantiated for a given InstanceType.
-    /// </p>
+    /// <p> Minimum number of instances that can be instantiated for a given InstanceType. </p>
     pub fn minimum_instance_count(&self) -> i32 {
         self.minimum_instance_count
     }
-    /// <p>
-    /// Maximum number of instances that can be instantiated for a given InstanceType.
-    /// </p>
+    /// <p> Maximum number of instances that can be instantiated for a given InstanceType. </p>
     pub fn maximum_instance_count(&self) -> i32 {
         self.maximum_instance_count
     }
@@ -10317,30 +9519,22 @@ pub mod instance_count_limits {
         pub(crate) maximum_instance_count: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>
-        /// Minimum number of instances that can be instantiated for a given InstanceType.
-        /// </p>
+        /// <p> Minimum number of instances that can be instantiated for a given InstanceType. </p>
         pub fn minimum_instance_count(mut self, input: i32) -> Self {
             self.minimum_instance_count = Some(input);
             self
         }
-        /// <p>
-        /// Minimum number of instances that can be instantiated for a given InstanceType.
-        /// </p>
+        /// <p> Minimum number of instances that can be instantiated for a given InstanceType. </p>
         pub fn set_minimum_instance_count(mut self, input: std::option::Option<i32>) -> Self {
             self.minimum_instance_count = input;
             self
         }
-        /// <p>
-        /// Maximum number of instances that can be instantiated for a given InstanceType.
-        /// </p>
+        /// <p> Maximum number of instances that can be instantiated for a given InstanceType. </p>
         pub fn maximum_instance_count(mut self, input: i32) -> Self {
             self.maximum_instance_count = Some(input);
             self
         }
-        /// <p>
-        /// Maximum number of instances that can be instantiated for a given InstanceType.
-        /// </p>
+        /// <p> Maximum number of instances that can be instantiated for a given InstanceType. </p>
         pub fn set_maximum_instance_count(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_instance_count = input;
             self
@@ -10361,79 +9555,49 @@ impl InstanceCountLimits {
     }
 }
 
-/// <p>StorageTypes represents the list of storage-related types and their attributes
-/// that are available for a given InstanceType.
-/// </p>
+/// <p>StorageTypes represents the list of storage-related types and their attributes that are available for a given InstanceType. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageType {
-    /// <p>
-    /// Type of storage.
-    /// List of available storage options:
+    /// <p> Type of storage. List of available storage options: </p>
     /// <ol>
-    /// <li>instance</li>
-    /// Built-in storage available for the instance
-    /// <li>ebs</li>
-    /// Elastic block storage attached to the instance
+    /// <li>instance</li> Built-in storage available for the instance
+    /// <li>ebs</li> Elastic block storage attached to the instance
     /// </ol>
-    /// </p>
+    /// <p></p>
     pub storage_type_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// Sub-type of the given storage type.
-    /// List of available sub-storage options:
-    /// "instance" storageType has no storageSubType.
-    /// "ebs" storageType has the following valid storageSubTypes:
+    /// <p> Sub-type of the given storage type. List of available sub-storage options: "instance" storageType has no storageSubType. "ebs" storageType has the following valid storageSubTypes: </p>
     /// <ol>
     /// <li>standard</li>
     /// <li>gp2</li>
     /// <li>io1</li>
-    /// </ol>
-    /// See
-    /// <code>
-    /// <a>VolumeType</a>
-    /// </code>
-    /// for more information regarding each EBS storage option.
-    /// </p>
+    /// </ol> See <code> <code>VolumeType</code> </code> for more information regarding each EBS storage option.
+    /// <p></p>
     pub storage_sub_type_name: std::option::Option<std::string::String>,
-    /// <p>Limits that are applicable for the given storage type.
-    /// </p>
+    /// <p>Limits that are applicable for the given storage type. </p>
     pub storage_type_limits: std::option::Option<std::vec::Vec<crate::model::StorageTypeLimit>>,
 }
 impl StorageType {
-    /// <p>
-    /// Type of storage.
-    /// List of available storage options:
+    /// <p> Type of storage. List of available storage options: </p>
     /// <ol>
-    /// <li>instance</li>
-    /// Built-in storage available for the instance
-    /// <li>ebs</li>
-    /// Elastic block storage attached to the instance
+    /// <li>instance</li> Built-in storage available for the instance
+    /// <li>ebs</li> Elastic block storage attached to the instance
     /// </ol>
-    /// </p>
+    /// <p></p>
     pub fn storage_type_name(&self) -> std::option::Option<&str> {
         self.storage_type_name.as_deref()
     }
-    /// <p>
-    /// Sub-type of the given storage type.
-    /// List of available sub-storage options:
-    /// "instance" storageType has no storageSubType.
-    /// "ebs" storageType has the following valid storageSubTypes:
+    /// <p> Sub-type of the given storage type. List of available sub-storage options: "instance" storageType has no storageSubType. "ebs" storageType has the following valid storageSubTypes: </p>
     /// <ol>
     /// <li>standard</li>
     /// <li>gp2</li>
     /// <li>io1</li>
-    /// </ol>
-    /// See
-    /// <code>
-    /// <a>VolumeType</a>
-    /// </code>
-    /// for more information regarding each EBS storage option.
-    /// </p>
+    /// </ol> See <code> <code>VolumeType</code> </code> for more information regarding each EBS storage option.
+    /// <p></p>
     pub fn storage_sub_type_name(&self) -> std::option::Option<&str> {
         self.storage_sub_type_name.as_deref()
     }
-    /// <p>Limits that are applicable for the given storage type.
-    /// </p>
+    /// <p>Limits that are applicable for the given storage type. </p>
     pub fn storage_type_limits(&self) -> std::option::Option<&[crate::model::StorageTypeLimit]> {
         self.storage_type_limits.as_deref()
     }
@@ -10459,30 +9623,22 @@ pub mod storage_type {
             std::option::Option<std::vec::Vec<crate::model::StorageTypeLimit>>,
     }
     impl Builder {
-        /// <p>
-        /// Type of storage.
-        /// List of available storage options:
+        /// <p> Type of storage. List of available storage options: </p>
         /// <ol>
-        /// <li>instance</li>
-        /// Built-in storage available for the instance
-        /// <li>ebs</li>
-        /// Elastic block storage attached to the instance
+        /// <li>instance</li> Built-in storage available for the instance
+        /// <li>ebs</li> Elastic block storage attached to the instance
         /// </ol>
-        /// </p>
+        /// <p></p>
         pub fn storage_type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.storage_type_name = Some(input.into());
             self
         }
-        /// <p>
-        /// Type of storage.
-        /// List of available storage options:
+        /// <p> Type of storage. List of available storage options: </p>
         /// <ol>
-        /// <li>instance</li>
-        /// Built-in storage available for the instance
-        /// <li>ebs</li>
-        /// Elastic block storage attached to the instance
+        /// <li>instance</li> Built-in storage available for the instance
+        /// <li>ebs</li> Elastic block storage attached to the instance
         /// </ol>
-        /// </p>
+        /// <p></p>
         pub fn set_storage_type_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10490,42 +9646,24 @@ pub mod storage_type {
             self.storage_type_name = input;
             self
         }
-        /// <p>
-        /// Sub-type of the given storage type.
-        /// List of available sub-storage options:
-        /// "instance" storageType has no storageSubType.
-        /// "ebs" storageType has the following valid storageSubTypes:
+        /// <p> Sub-type of the given storage type. List of available sub-storage options: "instance" storageType has no storageSubType. "ebs" storageType has the following valid storageSubTypes: </p>
         /// <ol>
         /// <li>standard</li>
         /// <li>gp2</li>
         /// <li>io1</li>
-        /// </ol>
-        /// See
-        /// <code>
-        /// <a>VolumeType</a>
-        /// </code>
-        /// for more information regarding each EBS storage option.
-        /// </p>
+        /// </ol> See <code> <code>VolumeType</code> </code> for more information regarding each EBS storage option.
+        /// <p></p>
         pub fn storage_sub_type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.storage_sub_type_name = Some(input.into());
             self
         }
-        /// <p>
-        /// Sub-type of the given storage type.
-        /// List of available sub-storage options:
-        /// "instance" storageType has no storageSubType.
-        /// "ebs" storageType has the following valid storageSubTypes:
+        /// <p> Sub-type of the given storage type. List of available sub-storage options: "instance" storageType has no storageSubType. "ebs" storageType has the following valid storageSubTypes: </p>
         /// <ol>
         /// <li>standard</li>
         /// <li>gp2</li>
         /// <li>io1</li>
-        /// </ol>
-        /// See
-        /// <code>
-        /// <a>VolumeType</a>
-        /// </code>
-        /// for more information regarding each EBS storage option.
-        /// </p>
+        /// </ol> See <code> <code>VolumeType</code> </code> for more information regarding each EBS storage option.
+        /// <p></p>
         pub fn set_storage_sub_type_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10537,19 +9675,14 @@ pub mod storage_type {
         ///
         /// To override the contents of this collection use [`set_storage_type_limits`](Self::set_storage_type_limits).
         ///
-        /// <p>Limits that are applicable for the given storage type.
-        /// </p>
-        pub fn storage_type_limits(
-            mut self,
-            input: impl Into<crate::model::StorageTypeLimit>,
-        ) -> Self {
+        /// <p>Limits that are applicable for the given storage type. </p>
+        pub fn storage_type_limits(mut self, input: crate::model::StorageTypeLimit) -> Self {
             let mut v = self.storage_type_limits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.storage_type_limits = Some(v);
             self
         }
-        /// <p>Limits that are applicable for the given storage type.
-        /// </p>
+        /// <p>Limits that are applicable for the given storage type. </p>
         pub fn set_storage_type_limits(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StorageTypeLimit>>,
@@ -10574,68 +9707,35 @@ impl StorageType {
     }
 }
 
-/// <p>Limits that are applicable for the given storage type.
-/// </p>
+/// <p>Limits that are applicable for the given storage type. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageTypeLimit {
-    /// <p>
-    /// Name of storage limits that are applicable for the given storage type.
-    /// If
-    /// <code>
-    /// <a>StorageType</a>
-    /// </code>
-    /// is "ebs", the following storage options are applicable:
+    /// <p> Name of storage limits that are applicable for the given storage type. If <code> <code>StorageType</code> </code> is "ebs", the following storage options are applicable: </p>
     /// <ol>
-    /// <li>MinimumVolumeSize</li>
-    /// Minimum amount of volume size that is applicable for the given storage type. Can be empty if not applicable.
-    /// <li>MaximumVolumeSize</li>
-    /// Maximum amount of volume size that is applicable for the given storage type. Can be empty if not applicable.
-    /// <li>MaximumIops</li>
-    /// Maximum amount of Iops that is applicable for given the storage type. Can be empty if not applicable.
-    /// <li>MinimumIops</li>
-    /// Minimum amount of Iops that is applicable for given the storage type. Can be empty if not applicable.
+    /// <li>MinimumVolumeSize</li> Minimum amount of volume size that is applicable for the given storage type. Can be empty if not applicable.
+    /// <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for the given storage type. Can be empty if not applicable.
+    /// <li>MaximumIops</li> Maximum amount of Iops that is applicable for given the storage type. Can be empty if not applicable.
+    /// <li>MinimumIops</li> Minimum amount of Iops that is applicable for given the storage type. Can be empty if not applicable.
     /// </ol>
-    /// </p>
+    /// <p></p>
     pub limit_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// Values for the
-    /// <code>
-    /// <a>StorageTypeLimit$LimitName</a>
-    /// </code>
-    /// .
-    /// </p>
+    /// <p> Values for the <code> <code>StorageTypeLimit$LimitName</code> </code> . </p>
     pub limit_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StorageTypeLimit {
-    /// <p>
-    /// Name of storage limits that are applicable for the given storage type.
-    /// If
-    /// <code>
-    /// <a>StorageType</a>
-    /// </code>
-    /// is "ebs", the following storage options are applicable:
+    /// <p> Name of storage limits that are applicable for the given storage type. If <code> <code>StorageType</code> </code> is "ebs", the following storage options are applicable: </p>
     /// <ol>
-    /// <li>MinimumVolumeSize</li>
-    /// Minimum amount of volume size that is applicable for the given storage type. Can be empty if not applicable.
-    /// <li>MaximumVolumeSize</li>
-    /// Maximum amount of volume size that is applicable for the given storage type. Can be empty if not applicable.
-    /// <li>MaximumIops</li>
-    /// Maximum amount of Iops that is applicable for given the storage type. Can be empty if not applicable.
-    /// <li>MinimumIops</li>
-    /// Minimum amount of Iops that is applicable for given the storage type. Can be empty if not applicable.
+    /// <li>MinimumVolumeSize</li> Minimum amount of volume size that is applicable for the given storage type. Can be empty if not applicable.
+    /// <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for the given storage type. Can be empty if not applicable.
+    /// <li>MaximumIops</li> Maximum amount of Iops that is applicable for given the storage type. Can be empty if not applicable.
+    /// <li>MinimumIops</li> Minimum amount of Iops that is applicable for given the storage type. Can be empty if not applicable.
     /// </ol>
-    /// </p>
+    /// <p></p>
     pub fn limit_name(&self) -> std::option::Option<&str> {
         self.limit_name.as_deref()
     }
-    /// <p>
-    /// Values for the
-    /// <code>
-    /// <a>StorageTypeLimit$LimitName</a>
-    /// </code>
-    /// .
-    /// </p>
+    /// <p> Values for the <code> <code>StorageTypeLimit$LimitName</code> </code> . </p>
     pub fn limit_values(&self) -> std::option::Option<&[std::string::String]> {
         self.limit_values.as_deref()
     }
@@ -10658,46 +9758,26 @@ pub mod storage_type_limit {
         pub(crate) limit_values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>
-        /// Name of storage limits that are applicable for the given storage type.
-        /// If
-        /// <code>
-        /// <a>StorageType</a>
-        /// </code>
-        /// is "ebs", the following storage options are applicable:
+        /// <p> Name of storage limits that are applicable for the given storage type. If <code> <code>StorageType</code> </code> is "ebs", the following storage options are applicable: </p>
         /// <ol>
-        /// <li>MinimumVolumeSize</li>
-        /// Minimum amount of volume size that is applicable for the given storage type. Can be empty if not applicable.
-        /// <li>MaximumVolumeSize</li>
-        /// Maximum amount of volume size that is applicable for the given storage type. Can be empty if not applicable.
-        /// <li>MaximumIops</li>
-        /// Maximum amount of Iops that is applicable for given the storage type. Can be empty if not applicable.
-        /// <li>MinimumIops</li>
-        /// Minimum amount of Iops that is applicable for given the storage type. Can be empty if not applicable.
+        /// <li>MinimumVolumeSize</li> Minimum amount of volume size that is applicable for the given storage type. Can be empty if not applicable.
+        /// <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for the given storage type. Can be empty if not applicable.
+        /// <li>MaximumIops</li> Maximum amount of Iops that is applicable for given the storage type. Can be empty if not applicable.
+        /// <li>MinimumIops</li> Minimum amount of Iops that is applicable for given the storage type. Can be empty if not applicable.
         /// </ol>
-        /// </p>
+        /// <p></p>
         pub fn limit_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.limit_name = Some(input.into());
             self
         }
-        /// <p>
-        /// Name of storage limits that are applicable for the given storage type.
-        /// If
-        /// <code>
-        /// <a>StorageType</a>
-        /// </code>
-        /// is "ebs", the following storage options are applicable:
+        /// <p> Name of storage limits that are applicable for the given storage type. If <code> <code>StorageType</code> </code> is "ebs", the following storage options are applicable: </p>
         /// <ol>
-        /// <li>MinimumVolumeSize</li>
-        /// Minimum amount of volume size that is applicable for the given storage type. Can be empty if not applicable.
-        /// <li>MaximumVolumeSize</li>
-        /// Maximum amount of volume size that is applicable for the given storage type. Can be empty if not applicable.
-        /// <li>MaximumIops</li>
-        /// Maximum amount of Iops that is applicable for given the storage type. Can be empty if not applicable.
-        /// <li>MinimumIops</li>
-        /// Minimum amount of Iops that is applicable for given the storage type. Can be empty if not applicable.
+        /// <li>MinimumVolumeSize</li> Minimum amount of volume size that is applicable for the given storage type. Can be empty if not applicable.
+        /// <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for the given storage type. Can be empty if not applicable.
+        /// <li>MaximumIops</li> Maximum amount of Iops that is applicable for given the storage type. Can be empty if not applicable.
+        /// <li>MinimumIops</li> Minimum amount of Iops that is applicable for given the storage type. Can be empty if not applicable.
         /// </ol>
-        /// </p>
+        /// <p></p>
         pub fn set_limit_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.limit_name = input;
             self
@@ -10706,26 +9786,14 @@ pub mod storage_type_limit {
         ///
         /// To override the contents of this collection use [`set_limit_values`](Self::set_limit_values).
         ///
-        /// <p>
-        /// Values for the
-        /// <code>
-        /// <a>StorageTypeLimit$LimitName</a>
-        /// </code>
-        /// .
-        /// </p>
+        /// <p> Values for the <code> <code>StorageTypeLimit$LimitName</code> </code> . </p>
         pub fn limit_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.limit_values.unwrap_or_default();
             v.push(input.into());
             self.limit_values = Some(v);
             self
         }
-        /// <p>
-        /// Values for the
-        /// <code>
-        /// <a>StorageTypeLimit$LimitName</a>
-        /// </code>
-        /// .
-        /// </p>
+        /// <p> Values for the <code> <code>StorageTypeLimit$LimitName</code> </code> . </p>
         pub fn set_limit_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10755,70 +9823,43 @@ impl StorageTypeLimit {
 pub struct DomainStatus {
     /// <p>The unique identifier for the specified domain.</p>
     pub domain_id: std::option::Option<std::string::String>,
-    /// <p>The name of a domain. Domain names are unique across the domains owned by an account within an AWS
-    /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
-    /// and - (hyphen).
-    /// </p>
+    /// <p>The name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of a domain. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html" target="_blank">IAM identifiers
-    /// </a> in the <i>AWS Identity and Access Management User Guide</i> for more information.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of a domain. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html" target="_blank">IAM identifiers </a> in the <i>AWS Identity and Access Management User Guide</i> for more information. </p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The domain creation status. <code>True</code> if the creation of a domain is complete. <code>
-    /// False
-    /// </code> if domain creation is still in progress.
-    /// </p>
+    /// <p>The domain creation status. <code>True</code> if the creation of a domain is complete. <code> False </code> if domain creation is still in progress. </p>
     pub created: std::option::Option<bool>,
-    /// <p>The domain deletion status. <code>True</code> if a delete request has been received for the domain but resource
-    /// cleanup is still in progress. <code>False</code> if the domain has not been deleted. Once domain deletion is
-    /// complete, the status of the domain is no longer returned.
-    /// </p>
+    /// <p>The domain deletion status. <code>True</code> if a delete request has been received for the domain but resource cleanup is still in progress. <code>False</code> if the domain has not been deleted. Once domain deletion is complete, the status of the domain is no longer returned. </p>
     pub deleted: std::option::Option<bool>,
     /// <p>The domain endpoint that you use to submit index and search requests.</p>
     pub endpoint: std::option::Option<std::string::String>,
-    /// <p>Map containing the domain endpoints used to submit index and search requests. Example <code>key,
-    /// value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.
-    /// </p>
+    /// <p>Map containing the domain endpoints used to submit index and search requests. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>. </p>
     pub endpoints:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The status of the domain configuration. <code>True</code> if Amazon OpenSearch Service is
-    /// processing configuration changes. <code>False</code> if the configuration is active.
-    /// </p>
+    /// <p>The status of the domain configuration. <code>True</code> if Amazon OpenSearch Service is processing configuration changes. <code>False</code> if the configuration is active. </p>
     pub processing: std::option::Option<bool>,
-    /// <p>The status of a domain version upgrade. <code>True</code> if Amazon OpenSearch Service is
-    /// undergoing a version upgrade. <code>False</code> if the configuration is active.
-    /// </p>
+    /// <p>The status of a domain version upgrade. <code>True</code> if Amazon OpenSearch Service is undergoing a version upgrade. <code>False</code> if the configuration is active. </p>
     pub upgrade_processing: std::option::Option<bool>,
     #[allow(missing_docs)] // documentation missing in model
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The type and number of instances in the domain.</p>
     pub cluster_config: std::option::Option<crate::model::ClusterConfig>,
-    /// <p>The <code>EBSOptions</code> for the specified domain.
-    /// </p>
+    /// <p>The <code>EBSOptions</code> for the specified domain. </p>
     pub ebs_options: std::option::Option<crate::model::EbsOptions>,
     /// <p>IAM access policy as a JSON-formatted string.</p>
     pub access_policies: std::option::Option<std::string::String>,
-    /// <p>The status of the
-    /// <code>SnapshotOptions</code>.
-    /// </p>
+    /// <p>The status of the <code>SnapshotOptions</code>. </p>
     pub snapshot_options: std::option::Option<crate::model::SnapshotOptions>,
-    /// <p>The <code>VPCOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">
-    /// Launching your Amazon OpenSearch Service domains using a VPC</a>.
-    /// </p>
+    /// <p>The <code>VPCOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank"> Launching your Amazon OpenSearch Service domains using a VPC</a>. </p>
     pub vpc_options: std::option::Option<crate::model::VpcDerivedInfo>,
-    /// <p>The <code>CognitoOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
-    /// </p>
+    /// <p>The <code>CognitoOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>. </p>
     pub cognito_options: std::option::Option<crate::model::CognitoOptions>,
-    /// <p>The status of the <code>EncryptionAtRestOptions</code>.
-    /// </p>
+    /// <p>The status of the <code>EncryptionAtRestOptions</code>. </p>
     pub encryption_at_rest_options: std::option::Option<crate::model::EncryptionAtRestOptions>,
-    /// <p>The status of the <code>NodeToNodeEncryptionOptions</code>.
-    /// </p>
+    /// <p>The status of the <code>NodeToNodeEncryptionOptions</code>. </p>
     pub node_to_node_encryption_options:
         std::option::Option<crate::model::NodeToNodeEncryptionOptions>,
-    /// <p>The status of the
-    /// <code>AdvancedOptions</code>.
-    /// </p>
+    /// <p>The status of the <code>AdvancedOptions</code>. </p>
     pub advanced_options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Log publishing options for the given domain.</p>
@@ -10839,30 +9880,19 @@ impl DomainStatus {
     pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
-    /// <p>The name of a domain. Domain names are unique across the domains owned by an account within an AWS
-    /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
-    /// and - (hyphen).
-    /// </p>
+    /// <p>The name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a domain. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html" target="_blank">IAM identifiers
-    /// </a> in the <i>AWS Identity and Access Management User Guide</i> for more information.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of a domain. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html" target="_blank">IAM identifiers </a> in the <i>AWS Identity and Access Management User Guide</i> for more information. </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The domain creation status. <code>True</code> if the creation of a domain is complete. <code>
-    /// False
-    /// </code> if domain creation is still in progress.
-    /// </p>
+    /// <p>The domain creation status. <code>True</code> if the creation of a domain is complete. <code> False </code> if domain creation is still in progress. </p>
     pub fn created(&self) -> std::option::Option<bool> {
         self.created
     }
-    /// <p>The domain deletion status. <code>True</code> if a delete request has been received for the domain but resource
-    /// cleanup is still in progress. <code>False</code> if the domain has not been deleted. Once domain deletion is
-    /// complete, the status of the domain is no longer returned.
-    /// </p>
+    /// <p>The domain deletion status. <code>True</code> if a delete request has been received for the domain but resource cleanup is still in progress. <code>False</code> if the domain has not been deleted. Once domain deletion is complete, the status of the domain is no longer returned. </p>
     pub fn deleted(&self) -> std::option::Option<bool> {
         self.deleted
     }
@@ -10870,24 +9900,18 @@ impl DomainStatus {
     pub fn endpoint(&self) -> std::option::Option<&str> {
         self.endpoint.as_deref()
     }
-    /// <p>Map containing the domain endpoints used to submit index and search requests. Example <code>key,
-    /// value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.
-    /// </p>
+    /// <p>Map containing the domain endpoints used to submit index and search requests. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>. </p>
     pub fn endpoints(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.endpoints.as_ref()
     }
-    /// <p>The status of the domain configuration. <code>True</code> if Amazon OpenSearch Service is
-    /// processing configuration changes. <code>False</code> if the configuration is active.
-    /// </p>
+    /// <p>The status of the domain configuration. <code>True</code> if Amazon OpenSearch Service is processing configuration changes. <code>False</code> if the configuration is active. </p>
     pub fn processing(&self) -> std::option::Option<bool> {
         self.processing
     }
-    /// <p>The status of a domain version upgrade. <code>True</code> if Amazon OpenSearch Service is
-    /// undergoing a version upgrade. <code>False</code> if the configuration is active.
-    /// </p>
+    /// <p>The status of a domain version upgrade. <code>True</code> if Amazon OpenSearch Service is undergoing a version upgrade. <code>False</code> if the configuration is active. </p>
     pub fn upgrade_processing(&self) -> std::option::Option<bool> {
         self.upgrade_processing
     }
@@ -10899,8 +9923,7 @@ impl DomainStatus {
     pub fn cluster_config(&self) -> std::option::Option<&crate::model::ClusterConfig> {
         self.cluster_config.as_ref()
     }
-    /// <p>The <code>EBSOptions</code> for the specified domain.
-    /// </p>
+    /// <p>The <code>EBSOptions</code> for the specified domain. </p>
     pub fn ebs_options(&self) -> std::option::Option<&crate::model::EbsOptions> {
         self.ebs_options.as_ref()
     }
@@ -10908,40 +9931,31 @@ impl DomainStatus {
     pub fn access_policies(&self) -> std::option::Option<&str> {
         self.access_policies.as_deref()
     }
-    /// <p>The status of the
-    /// <code>SnapshotOptions</code>.
-    /// </p>
+    /// <p>The status of the <code>SnapshotOptions</code>. </p>
     pub fn snapshot_options(&self) -> std::option::Option<&crate::model::SnapshotOptions> {
         self.snapshot_options.as_ref()
     }
-    /// <p>The <code>VPCOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">
-    /// Launching your Amazon OpenSearch Service domains using a VPC</a>.
-    /// </p>
+    /// <p>The <code>VPCOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank"> Launching your Amazon OpenSearch Service domains using a VPC</a>. </p>
     pub fn vpc_options(&self) -> std::option::Option<&crate::model::VpcDerivedInfo> {
         self.vpc_options.as_ref()
     }
-    /// <p>The <code>CognitoOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
-    /// </p>
+    /// <p>The <code>CognitoOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>. </p>
     pub fn cognito_options(&self) -> std::option::Option<&crate::model::CognitoOptions> {
         self.cognito_options.as_ref()
     }
-    /// <p>The status of the <code>EncryptionAtRestOptions</code>.
-    /// </p>
+    /// <p>The status of the <code>EncryptionAtRestOptions</code>. </p>
     pub fn encryption_at_rest_options(
         &self,
     ) -> std::option::Option<&crate::model::EncryptionAtRestOptions> {
         self.encryption_at_rest_options.as_ref()
     }
-    /// <p>The status of the <code>NodeToNodeEncryptionOptions</code>.
-    /// </p>
+    /// <p>The status of the <code>NodeToNodeEncryptionOptions</code>. </p>
     pub fn node_to_node_encryption_options(
         &self,
     ) -> std::option::Option<&crate::model::NodeToNodeEncryptionOptions> {
         self.node_to_node_encryption_options.as_ref()
     }
-    /// <p>The status of the
-    /// <code>AdvancedOptions</code>.
-    /// </p>
+    /// <p>The status of the <code>AdvancedOptions</code>. </p>
     pub fn advanced_options(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -11068,64 +10082,42 @@ pub mod domain_status {
             self.domain_id = input;
             self
         }
-        /// <p>The name of a domain. Domain names are unique across the domains owned by an account within an AWS
-        /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
-        /// and - (hyphen).
-        /// </p>
+        /// <p>The name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p>The name of a domain. Domain names are unique across the domains owned by an account within an AWS
-        /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
-        /// and - (hyphen).
-        /// </p>
+        /// <p>The name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a domain. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html" target="_blank">IAM identifiers
-        /// </a> in the <i>AWS Identity and Access Management User Guide</i> for more information.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of a domain. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html" target="_blank">IAM identifiers </a> in the <i>AWS Identity and Access Management User Guide</i> for more information. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a domain. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html" target="_blank">IAM identifiers
-        /// </a> in the <i>AWS Identity and Access Management User Guide</i> for more information.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of a domain. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html" target="_blank">IAM identifiers </a> in the <i>AWS Identity and Access Management User Guide</i> for more information. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>The domain creation status. <code>True</code> if the creation of a domain is complete. <code>
-        /// False
-        /// </code> if domain creation is still in progress.
-        /// </p>
+        /// <p>The domain creation status. <code>True</code> if the creation of a domain is complete. <code> False </code> if domain creation is still in progress. </p>
         pub fn created(mut self, input: bool) -> Self {
             self.created = Some(input);
             self
         }
-        /// <p>The domain creation status. <code>True</code> if the creation of a domain is complete. <code>
-        /// False
-        /// </code> if domain creation is still in progress.
-        /// </p>
+        /// <p>The domain creation status. <code>True</code> if the creation of a domain is complete. <code> False </code> if domain creation is still in progress. </p>
         pub fn set_created(mut self, input: std::option::Option<bool>) -> Self {
             self.created = input;
             self
         }
-        /// <p>The domain deletion status. <code>True</code> if a delete request has been received for the domain but resource
-        /// cleanup is still in progress. <code>False</code> if the domain has not been deleted. Once domain deletion is
-        /// complete, the status of the domain is no longer returned.
-        /// </p>
+        /// <p>The domain deletion status. <code>True</code> if a delete request has been received for the domain but resource cleanup is still in progress. <code>False</code> if the domain has not been deleted. Once domain deletion is complete, the status of the domain is no longer returned. </p>
         pub fn deleted(mut self, input: bool) -> Self {
             self.deleted = Some(input);
             self
         }
-        /// <p>The domain deletion status. <code>True</code> if a delete request has been received for the domain but resource
-        /// cleanup is still in progress. <code>False</code> if the domain has not been deleted. Once domain deletion is
-        /// complete, the status of the domain is no longer returned.
-        /// </p>
+        /// <p>The domain deletion status. <code>True</code> if a delete request has been received for the domain but resource cleanup is still in progress. <code>False</code> if the domain has not been deleted. Once domain deletion is complete, the status of the domain is no longer returned. </p>
         pub fn set_deleted(mut self, input: std::option::Option<bool>) -> Self {
             self.deleted = input;
             self
@@ -11144,9 +10136,7 @@ pub mod domain_status {
         ///
         /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
         ///
-        /// <p>Map containing the domain endpoints used to submit index and search requests. Example <code>key,
-        /// value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.
-        /// </p>
+        /// <p>Map containing the domain endpoints used to submit index and search requests. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>. </p>
         pub fn endpoints(
             mut self,
             k: impl Into<std::string::String>,
@@ -11157,9 +10147,7 @@ pub mod domain_status {
             self.endpoints = Some(hash_map);
             self
         }
-        /// <p>Map containing the domain endpoints used to submit index and search requests. Example <code>key,
-        /// value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.
-        /// </p>
+        /// <p>Map containing the domain endpoints used to submit index and search requests. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>. </p>
         pub fn set_endpoints(
             mut self,
             input: std::option::Option<
@@ -11169,30 +10157,22 @@ pub mod domain_status {
             self.endpoints = input;
             self
         }
-        /// <p>The status of the domain configuration. <code>True</code> if Amazon OpenSearch Service is
-        /// processing configuration changes. <code>False</code> if the configuration is active.
-        /// </p>
+        /// <p>The status of the domain configuration. <code>True</code> if Amazon OpenSearch Service is processing configuration changes. <code>False</code> if the configuration is active. </p>
         pub fn processing(mut self, input: bool) -> Self {
             self.processing = Some(input);
             self
         }
-        /// <p>The status of the domain configuration. <code>True</code> if Amazon OpenSearch Service is
-        /// processing configuration changes. <code>False</code> if the configuration is active.
-        /// </p>
+        /// <p>The status of the domain configuration. <code>True</code> if Amazon OpenSearch Service is processing configuration changes. <code>False</code> if the configuration is active. </p>
         pub fn set_processing(mut self, input: std::option::Option<bool>) -> Self {
             self.processing = input;
             self
         }
-        /// <p>The status of a domain version upgrade. <code>True</code> if Amazon OpenSearch Service is
-        /// undergoing a version upgrade. <code>False</code> if the configuration is active.
-        /// </p>
+        /// <p>The status of a domain version upgrade. <code>True</code> if Amazon OpenSearch Service is undergoing a version upgrade. <code>False</code> if the configuration is active. </p>
         pub fn upgrade_processing(mut self, input: bool) -> Self {
             self.upgrade_processing = Some(input);
             self
         }
-        /// <p>The status of a domain version upgrade. <code>True</code> if Amazon OpenSearch Service is
-        /// undergoing a version upgrade. <code>False</code> if the configuration is active.
-        /// </p>
+        /// <p>The status of a domain version upgrade. <code>True</code> if Amazon OpenSearch Service is undergoing a version upgrade. <code>False</code> if the configuration is active. </p>
         pub fn set_upgrade_processing(mut self, input: std::option::Option<bool>) -> Self {
             self.upgrade_processing = input;
             self
@@ -11223,14 +10203,12 @@ pub mod domain_status {
             self.cluster_config = input;
             self
         }
-        /// <p>The <code>EBSOptions</code> for the specified domain.
-        /// </p>
+        /// <p>The <code>EBSOptions</code> for the specified domain. </p>
         pub fn ebs_options(mut self, input: crate::model::EbsOptions) -> Self {
             self.ebs_options = Some(input);
             self
         }
-        /// <p>The <code>EBSOptions</code> for the specified domain.
-        /// </p>
+        /// <p>The <code>EBSOptions</code> for the specified domain. </p>
         pub fn set_ebs_options(
             mut self,
             input: std::option::Option<crate::model::EbsOptions>,
@@ -11251,16 +10229,12 @@ pub mod domain_status {
             self.access_policies = input;
             self
         }
-        /// <p>The status of the
-        /// <code>SnapshotOptions</code>.
-        /// </p>
+        /// <p>The status of the <code>SnapshotOptions</code>. </p>
         pub fn snapshot_options(mut self, input: crate::model::SnapshotOptions) -> Self {
             self.snapshot_options = Some(input);
             self
         }
-        /// <p>The status of the
-        /// <code>SnapshotOptions</code>.
-        /// </p>
+        /// <p>The status of the <code>SnapshotOptions</code>. </p>
         pub fn set_snapshot_options(
             mut self,
             input: std::option::Option<crate::model::SnapshotOptions>,
@@ -11268,16 +10242,12 @@ pub mod domain_status {
             self.snapshot_options = input;
             self
         }
-        /// <p>The <code>VPCOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">
-        /// Launching your Amazon OpenSearch Service domains using a VPC</a>.
-        /// </p>
+        /// <p>The <code>VPCOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank"> Launching your Amazon OpenSearch Service domains using a VPC</a>. </p>
         pub fn vpc_options(mut self, input: crate::model::VpcDerivedInfo) -> Self {
             self.vpc_options = Some(input);
             self
         }
-        /// <p>The <code>VPCOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">
-        /// Launching your Amazon OpenSearch Service domains using a VPC</a>.
-        /// </p>
+        /// <p>The <code>VPCOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank"> Launching your Amazon OpenSearch Service domains using a VPC</a>. </p>
         pub fn set_vpc_options(
             mut self,
             input: std::option::Option<crate::model::VpcDerivedInfo>,
@@ -11285,14 +10255,12 @@ pub mod domain_status {
             self.vpc_options = input;
             self
         }
-        /// <p>The <code>CognitoOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
-        /// </p>
+        /// <p>The <code>CognitoOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>. </p>
         pub fn cognito_options(mut self, input: crate::model::CognitoOptions) -> Self {
             self.cognito_options = Some(input);
             self
         }
-        /// <p>The <code>CognitoOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
-        /// </p>
+        /// <p>The <code>CognitoOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>. </p>
         pub fn set_cognito_options(
             mut self,
             input: std::option::Option<crate::model::CognitoOptions>,
@@ -11300,8 +10268,7 @@ pub mod domain_status {
             self.cognito_options = input;
             self
         }
-        /// <p>The status of the <code>EncryptionAtRestOptions</code>.
-        /// </p>
+        /// <p>The status of the <code>EncryptionAtRestOptions</code>. </p>
         pub fn encryption_at_rest_options(
             mut self,
             input: crate::model::EncryptionAtRestOptions,
@@ -11309,8 +10276,7 @@ pub mod domain_status {
             self.encryption_at_rest_options = Some(input);
             self
         }
-        /// <p>The status of the <code>EncryptionAtRestOptions</code>.
-        /// </p>
+        /// <p>The status of the <code>EncryptionAtRestOptions</code>. </p>
         pub fn set_encryption_at_rest_options(
             mut self,
             input: std::option::Option<crate::model::EncryptionAtRestOptions>,
@@ -11318,8 +10284,7 @@ pub mod domain_status {
             self.encryption_at_rest_options = input;
             self
         }
-        /// <p>The status of the <code>NodeToNodeEncryptionOptions</code>.
-        /// </p>
+        /// <p>The status of the <code>NodeToNodeEncryptionOptions</code>. </p>
         pub fn node_to_node_encryption_options(
             mut self,
             input: crate::model::NodeToNodeEncryptionOptions,
@@ -11327,8 +10292,7 @@ pub mod domain_status {
             self.node_to_node_encryption_options = Some(input);
             self
         }
-        /// <p>The status of the <code>NodeToNodeEncryptionOptions</code>.
-        /// </p>
+        /// <p>The status of the <code>NodeToNodeEncryptionOptions</code>. </p>
         pub fn set_node_to_node_encryption_options(
             mut self,
             input: std::option::Option<crate::model::NodeToNodeEncryptionOptions>,
@@ -11340,9 +10304,7 @@ pub mod domain_status {
         ///
         /// To override the contents of this collection use [`set_advanced_options`](Self::set_advanced_options).
         ///
-        /// <p>The status of the
-        /// <code>AdvancedOptions</code>.
-        /// </p>
+        /// <p>The status of the <code>AdvancedOptions</code>. </p>
         pub fn advanced_options(
             mut self,
             k: impl Into<std::string::String>,
@@ -11353,9 +10315,7 @@ pub mod domain_status {
             self.advanced_options = Some(hash_map);
             self
         }
-        /// <p>The status of the
-        /// <code>AdvancedOptions</code>.
-        /// </p>
+        /// <p>The status of the <code>AdvancedOptions</code>. </p>
         pub fn set_advanced_options(
             mut self,
             input: std::option::Option<
@@ -11372,11 +10332,11 @@ pub mod domain_status {
         /// <p>Log publishing options for the given domain.</p>
         pub fn log_publishing_options(
             mut self,
-            k: impl Into<crate::model::LogType>,
-            v: impl Into<crate::model::LogPublishingOption>,
+            k: crate::model::LogType,
+            v: crate::model::LogPublishingOption,
         ) -> Self {
             let mut hash_map = self.log_publishing_options.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.log_publishing_options = Some(hash_map);
             self
         }
@@ -11489,20 +10449,17 @@ impl DomainStatus {
     }
 }
 
-/// <p>The Auto-Tune options: the Auto-Tune desired state for the domain and list of maintenance schedules.
-/// </p>
+/// <p>The Auto-Tune options: the Auto-Tune desired state for the domain and list of maintenance schedules. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoTuneOptionsOutput {
-    /// <p>The <code>AutoTuneState</code> for the domain.
-    /// </p>
+    /// <p>The <code>AutoTuneState</code> for the domain. </p>
     pub state: std::option::Option<crate::model::AutoTuneState>,
     /// <p>The error message while enabling or disabling Auto-Tune.</p>
     pub error_message: std::option::Option<std::string::String>,
 }
 impl AutoTuneOptionsOutput {
-    /// <p>The <code>AutoTuneState</code> for the domain.
-    /// </p>
+    /// <p>The <code>AutoTuneState</code> for the domain. </p>
     pub fn state(&self) -> std::option::Option<&crate::model::AutoTuneState> {
         self.state.as_ref()
     }
@@ -11529,14 +10486,12 @@ pub mod auto_tune_options_output {
         pub(crate) error_message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>AutoTuneState</code> for the domain.
-        /// </p>
+        /// <p>The <code>AutoTuneState</code> for the domain. </p>
         pub fn state(mut self, input: crate::model::AutoTuneState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The <code>AutoTuneState</code> for the domain.
-        /// </p>
+        /// <p>The <code>AutoTuneState</code> for the domain. </p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::AutoTuneState>,
@@ -11579,10 +10534,7 @@ impl AutoTuneOptionsOutput {
 pub struct AutoTune {
     /// <p>Specifies the Auto-Tune type. Valid value is SCHEDULED_ACTION.</p>
     pub auto_tune_type: std::option::Option<crate::model::AutoTuneType>,
-    /// <p>Specifies details about the Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-    /// Auto-Tune for Amazon OpenSearch Service
-    /// </a> for more information.
-    /// </p>
+    /// <p>Specifies details about the Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
     pub auto_tune_details: std::option::Option<crate::model::AutoTuneDetails>,
 }
 impl AutoTune {
@@ -11590,10 +10542,7 @@ impl AutoTune {
     pub fn auto_tune_type(&self) -> std::option::Option<&crate::model::AutoTuneType> {
         self.auto_tune_type.as_ref()
     }
-    /// <p>Specifies details about the Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-    /// Auto-Tune for Amazon OpenSearch Service
-    /// </a> for more information.
-    /// </p>
+    /// <p>Specifies details about the Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
     pub fn auto_tune_details(&self) -> std::option::Option<&crate::model::AutoTuneDetails> {
         self.auto_tune_details.as_ref()
     }
@@ -11629,18 +10578,12 @@ pub mod auto_tune {
             self.auto_tune_type = input;
             self
         }
-        /// <p>Specifies details about the Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-        /// Auto-Tune for Amazon OpenSearch Service
-        /// </a> for more information.
-        /// </p>
+        /// <p>Specifies details about the Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
         pub fn auto_tune_details(mut self, input: crate::model::AutoTuneDetails) -> Self {
             self.auto_tune_details = Some(input);
             self
         }
-        /// <p>Specifies details about the Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-        /// Auto-Tune for Amazon OpenSearch Service
-        /// </a> for more information.
-        /// </p>
+        /// <p>Specifies details about the Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
         pub fn set_auto_tune_details(
             mut self,
             input: std::option::Option<crate::model::AutoTuneDetails>,
@@ -11664,24 +10607,15 @@ impl AutoTune {
     }
 }
 
-/// <p>Specifies details about the Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-/// Auto-Tune for Amazon OpenSearch Service
-/// </a> for more information.
-/// </p>
+/// <p>Specifies details about the Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoTuneDetails {
-    /// <p>Specifies details about the scheduled Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-    /// Auto-Tune for Amazon OpenSearch Service
-    /// </a> for more information.
-    /// </p>
+    /// <p>Specifies details about the scheduled Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
     pub scheduled_auto_tune_details: std::option::Option<crate::model::ScheduledAutoTuneDetails>,
 }
 impl AutoTuneDetails {
-    /// <p>Specifies details about the scheduled Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-    /// Auto-Tune for Amazon OpenSearch Service
-    /// </a> for more information.
-    /// </p>
+    /// <p>Specifies details about the scheduled Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
     pub fn scheduled_auto_tune_details(
         &self,
     ) -> std::option::Option<&crate::model::ScheduledAutoTuneDetails> {
@@ -11708,10 +10642,7 @@ pub mod auto_tune_details {
             std::option::Option<crate::model::ScheduledAutoTuneDetails>,
     }
     impl Builder {
-        /// <p>Specifies details about the scheduled Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-        /// Auto-Tune for Amazon OpenSearch Service
-        /// </a> for more information.
-        /// </p>
+        /// <p>Specifies details about the scheduled Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
         pub fn scheduled_auto_tune_details(
             mut self,
             input: crate::model::ScheduledAutoTuneDetails,
@@ -11719,10 +10650,7 @@ pub mod auto_tune_details {
             self.scheduled_auto_tune_details = Some(input);
             self
         }
-        /// <p>Specifies details about the scheduled Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-        /// Auto-Tune for Amazon OpenSearch Service
-        /// </a> for more information.
-        /// </p>
+        /// <p>Specifies details about the scheduled Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
         pub fn set_scheduled_auto_tune_details(
             mut self,
             input: std::option::Option<crate::model::ScheduledAutoTuneDetails>,
@@ -11745,10 +10673,7 @@ impl AutoTuneDetails {
     }
 }
 
-/// <p>Specifies details about the scheduled Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-/// Auto-Tune for Amazon OpenSearch Service
-/// </a> for more information.
-/// </p>
+/// <p>Specifies details about the scheduled Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduledAutoTuneDetails {
@@ -12030,17 +10955,13 @@ impl AsRef<str> for AutoTuneType {
     }
 }
 
-/// <p>The Auto-Tune options: the Auto-Tune desired state for the domain and list of maintenance schedules.
-/// </p>
+/// <p>The Auto-Tune options: the Auto-Tune desired state for the domain and list of maintenance schedules. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoTuneOptionsInput {
     /// <p>The Auto-Tune desired state. Valid values are ENABLED and DISABLED.</p>
     pub desired_state: std::option::Option<crate::model::AutoTuneDesiredState>,
-    /// <p>A list of maintenance schedules. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-    /// Auto-Tune for Amazon OpenSearch Service
-    /// </a> for more information.
-    /// </p>
+    /// <p>A list of maintenance schedules. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
     pub maintenance_schedules:
         std::option::Option<std::vec::Vec<crate::model::AutoTuneMaintenanceSchedule>>,
 }
@@ -12049,10 +10970,7 @@ impl AutoTuneOptionsInput {
     pub fn desired_state(&self) -> std::option::Option<&crate::model::AutoTuneDesiredState> {
         self.desired_state.as_ref()
     }
-    /// <p>A list of maintenance schedules. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-    /// Auto-Tune for Amazon OpenSearch Service
-    /// </a> for more information.
-    /// </p>
+    /// <p>A list of maintenance schedules. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
     pub fn maintenance_schedules(
         &self,
     ) -> std::option::Option<&[crate::model::AutoTuneMaintenanceSchedule]> {
@@ -12095,23 +11013,17 @@ pub mod auto_tune_options_input {
         ///
         /// To override the contents of this collection use [`set_maintenance_schedules`](Self::set_maintenance_schedules).
         ///
-        /// <p>A list of maintenance schedules. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-        /// Auto-Tune for Amazon OpenSearch Service
-        /// </a> for more information.
-        /// </p>
+        /// <p>A list of maintenance schedules. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
         pub fn maintenance_schedules(
             mut self,
-            input: impl Into<crate::model::AutoTuneMaintenanceSchedule>,
+            input: crate::model::AutoTuneMaintenanceSchedule,
         ) -> Self {
             let mut v = self.maintenance_schedules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.maintenance_schedules = Some(v);
             self
         }
-        /// <p>A list of maintenance schedules. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-        /// Auto-Tune for Amazon OpenSearch Service
-        /// </a> for more information.
-        /// </p>
+        /// <p>A list of maintenance schedules. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
         pub fn set_maintenance_schedules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AutoTuneMaintenanceSchedule>>,

@@ -9,16 +9,12 @@ pub mod bulk_publish_input {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_pool_id = Some(input.into());
             self
         }
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -42,7 +38,7 @@ pub mod bulk_publish_input {
 #[doc(hidden)]
 pub type BulkPublishInputOperationOutputAlias = crate::operation::BulkPublish;
 #[doc(hidden)]
-pub type BulkPublishInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BulkPublishInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BulkPublishInput {
     /// Consumes the builder and constructs an Operation<[`BulkPublish`](crate::operation::BulkPublish)>
     #[allow(clippy::let_and_return)]
@@ -53,7 +49,7 @@ impl BulkPublishInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BulkPublish,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -147,7 +143,7 @@ impl BulkPublishInput {
             "BulkPublish",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -173,16 +169,12 @@ pub mod delete_dataset_input {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_pool_id = Some(input.into());
             self
         }
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -190,30 +182,22 @@ pub mod delete_dataset_input {
             self.identity_pool_id = input;
             self
         }
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_id = Some(input.into());
             self
         }
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
         }
-        /// A string of up to 128 characters.
-        /// Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
-        /// (dot).
+        /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
         pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_name = Some(input.into());
             self
         }
-        /// A string of up to 128 characters.
-        /// Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
-        /// (dot).
+        /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_name = input;
             self
@@ -236,7 +220,7 @@ pub mod delete_dataset_input {
 #[doc(hidden)]
 pub type DeleteDatasetInputOperationOutputAlias = crate::operation::DeleteDataset;
 #[doc(hidden)]
-pub type DeleteDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDataset`](crate::operation::DeleteDataset)>
     #[allow(clippy::let_and_return)]
@@ -247,7 +231,7 @@ impl DeleteDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -373,7 +357,7 @@ impl DeleteDatasetInput {
             "DeleteDataset",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -399,16 +383,12 @@ pub mod describe_dataset_input {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_pool_id = Some(input.into());
             self
         }
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -416,30 +396,22 @@ pub mod describe_dataset_input {
             self.identity_pool_id = input;
             self
         }
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_id = Some(input.into());
             self
         }
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
         }
-        /// A string of up to 128 characters.
-        /// Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
-        /// (dot).
+        /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
         pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_name = Some(input.into());
             self
         }
-        /// A string of up to 128 characters.
-        /// Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
-        /// (dot).
+        /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_name = input;
             self
@@ -462,7 +434,7 @@ pub mod describe_dataset_input {
 #[doc(hidden)]
 pub type DescribeDatasetInputOperationOutputAlias = crate::operation::DescribeDataset;
 #[doc(hidden)]
-pub type DescribeDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDataset`](crate::operation::DescribeDataset)>
     #[allow(clippy::let_and_return)]
@@ -473,7 +445,7 @@ impl DescribeDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -599,7 +571,7 @@ impl DescribeDatasetInput {
             "DescribeDataset",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -623,16 +595,12 @@ pub mod describe_identity_pool_usage_input {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// A name-spaced GUID (for
-        /// example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
-        /// generation is unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_pool_id = Some(input.into());
             self
         }
-        /// A name-spaced GUID (for
-        /// example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
-        /// generation is unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -657,7 +625,7 @@ pub mod describe_identity_pool_usage_input {
 pub type DescribeIdentityPoolUsageInputOperationOutputAlias =
     crate::operation::DescribeIdentityPoolUsage;
 #[doc(hidden)]
-pub type DescribeIdentityPoolUsageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeIdentityPoolUsageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeIdentityPoolUsageInput {
     /// Consumes the builder and constructs an Operation<[`DescribeIdentityPoolUsage`](crate::operation::DescribeIdentityPoolUsage)>
     #[allow(clippy::let_and_return)]
@@ -668,7 +636,7 @@ impl DescribeIdentityPoolUsageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeIdentityPoolUsage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -762,7 +730,7 @@ impl DescribeIdentityPoolUsageInput {
             "DescribeIdentityPoolUsage",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -787,16 +755,12 @@ pub mod describe_identity_usage_input {
         pub(crate) identity_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// A name-spaced GUID (for
-        /// example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
-        /// generation is unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_pool_id = Some(input.into());
             self
         }
-        /// A name-spaced GUID (for
-        /// example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
-        /// generation is unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -804,16 +768,12 @@ pub mod describe_identity_usage_input {
             self.identity_pool_id = input;
             self
         }
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_id = Some(input.into());
             self
         }
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
@@ -835,7 +795,7 @@ pub mod describe_identity_usage_input {
 #[doc(hidden)]
 pub type DescribeIdentityUsageInputOperationOutputAlias = crate::operation::DescribeIdentityUsage;
 #[doc(hidden)]
-pub type DescribeIdentityUsageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeIdentityUsageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeIdentityUsageInput {
     /// Consumes the builder and constructs an Operation<[`DescribeIdentityUsage`](crate::operation::DescribeIdentityUsage)>
     #[allow(clippy::let_and_return)]
@@ -846,7 +806,7 @@ impl DescribeIdentityUsageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeIdentityUsage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -956,7 +916,7 @@ impl DescribeIdentityUsageInput {
             "DescribeIdentityUsage",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -980,16 +940,12 @@ pub mod get_bulk_publish_details_input {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_pool_id = Some(input.into());
             self
         }
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1013,7 +969,7 @@ pub mod get_bulk_publish_details_input {
 #[doc(hidden)]
 pub type GetBulkPublishDetailsInputOperationOutputAlias = crate::operation::GetBulkPublishDetails;
 #[doc(hidden)]
-pub type GetBulkPublishDetailsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetBulkPublishDetailsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBulkPublishDetailsInput {
     /// Consumes the builder and constructs an Operation<[`GetBulkPublishDetails`](crate::operation::GetBulkPublishDetails)>
     #[allow(clippy::let_and_return)]
@@ -1024,7 +980,7 @@ impl GetBulkPublishDetailsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetBulkPublishDetails,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1118,7 +1074,7 @@ impl GetBulkPublishDetailsInput {
             "GetBulkPublishDetails",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1171,7 +1127,7 @@ pub mod get_cognito_events_input {
 #[doc(hidden)]
 pub type GetCognitoEventsInputOperationOutputAlias = crate::operation::GetCognitoEvents;
 #[doc(hidden)]
-pub type GetCognitoEventsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCognitoEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCognitoEventsInput {
     /// Consumes the builder and constructs an Operation<[`GetCognitoEvents`](crate::operation::GetCognitoEvents)>
     #[allow(clippy::let_and_return)]
@@ -1182,7 +1138,7 @@ impl GetCognitoEventsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCognitoEvents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1276,7 +1232,7 @@ impl GetCognitoEventsInput {
             "GetCognitoEvents",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1300,14 +1256,12 @@ pub mod get_identity_pool_configuration_input {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
-        /// Amazon Cognito. This is the ID of the pool for which to return a configuration.</p>
+        /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.</p>
         pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_pool_id = Some(input.into());
             self
         }
-        /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
-        /// Amazon Cognito. This is the ID of the pool for which to return a configuration.</p>
+        /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1332,7 +1286,8 @@ pub mod get_identity_pool_configuration_input {
 pub type GetIdentityPoolConfigurationInputOperationOutputAlias =
     crate::operation::GetIdentityPoolConfiguration;
 #[doc(hidden)]
-pub type GetIdentityPoolConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetIdentityPoolConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetIdentityPoolConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetIdentityPoolConfiguration`](crate::operation::GetIdentityPoolConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -1343,7 +1298,7 @@ impl GetIdentityPoolConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetIdentityPoolConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1437,7 +1392,7 @@ impl GetIdentityPoolConfigurationInput {
             "GetIdentityPoolConfiguration",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1464,16 +1419,12 @@ pub mod list_datasets_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_pool_id = Some(input.into());
             self
         }
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1481,40 +1432,32 @@ pub mod list_datasets_input {
             self.identity_pool_id = input;
             self
         }
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_id = Some(input.into());
             self
         }
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
         }
-        /// A pagination token for obtaining the next
-        /// page of results.
+        /// A pagination token for obtaining the next page of results.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// A pagination token for obtaining the next
-        /// page of results.
+        /// A pagination token for obtaining the next page of results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// The maximum number of results to be
-        /// returned.
+        /// The maximum number of results to be returned.
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// The maximum number of results to be
-        /// returned.
+        /// The maximum number of results to be returned.
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1538,7 +1481,7 @@ pub mod list_datasets_input {
 #[doc(hidden)]
 pub type ListDatasetsInputOperationOutputAlias = crate::operation::ListDatasets;
 #[doc(hidden)]
-pub type ListDatasetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDatasetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDatasetsInput {
     /// Consumes the builder and constructs an Operation<[`ListDatasets`](crate::operation::ListDatasets)>
     #[allow(clippy::let_and_return)]
@@ -1549,7 +1492,7 @@ impl ListDatasetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDatasets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1676,7 +1619,7 @@ impl ListDatasetsInput {
             "ListDatasets",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1701,26 +1644,22 @@ pub mod list_identity_pool_usage_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// A pagination token for obtaining
-        /// the next page of results.
+        /// A pagination token for obtaining the next page of results.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// A pagination token for obtaining
-        /// the next page of results.
+        /// A pagination token for obtaining the next page of results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// The maximum number of results to
-        /// be returned.
+        /// The maximum number of results to be returned.
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// The maximum number of results to
-        /// be returned.
+        /// The maximum number of results to be returned.
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1742,7 +1681,7 @@ pub mod list_identity_pool_usage_input {
 #[doc(hidden)]
 pub type ListIdentityPoolUsageInputOperationOutputAlias = crate::operation::ListIdentityPoolUsage;
 #[doc(hidden)]
-pub type ListIdentityPoolUsageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListIdentityPoolUsageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListIdentityPoolUsageInput {
     /// Consumes the builder and constructs an Operation<[`ListIdentityPoolUsage`](crate::operation::ListIdentityPoolUsage)>
     #[allow(clippy::let_and_return)]
@@ -1753,7 +1692,7 @@ impl ListIdentityPoolUsageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListIdentityPoolUsage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1844,7 +1783,7 @@ impl ListIdentityPoolUsageInput {
             "ListIdentityPoolUsage",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1874,16 +1813,12 @@ pub mod list_records_input {
         pub(crate) sync_session_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_pool_id = Some(input.into());
             self
         }
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1891,76 +1826,62 @@ pub mod list_records_input {
             self.identity_pool_id = input;
             self
         }
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_id = Some(input.into());
             self
         }
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
         }
-        /// A string of up to 128 characters. Allowed
-        /// characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+        /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
         pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_name = Some(input.into());
             self
         }
-        /// A string of up to 128 characters. Allowed
-        /// characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+        /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_name = input;
             self
         }
-        /// The last server sync count for this
-        /// record.
+        /// The last server sync count for this record.
         pub fn last_sync_count(mut self, input: i64) -> Self {
             self.last_sync_count = Some(input);
             self
         }
-        /// The last server sync count for this
-        /// record.
+        /// The last server sync count for this record.
         pub fn set_last_sync_count(mut self, input: std::option::Option<i64>) -> Self {
             self.last_sync_count = input;
             self
         }
-        /// A pagination token for obtaining the next
-        /// page of results.
+        /// A pagination token for obtaining the next page of results.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// A pagination token for obtaining the next
-        /// page of results.
+        /// A pagination token for obtaining the next page of results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// The maximum number of results to be
-        /// returned.
+        /// The maximum number of results to be returned.
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// The maximum number of results to be
-        /// returned.
+        /// The maximum number of results to be returned.
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// A token containing a session ID,
-        /// identity ID, and expiration.
+        /// A token containing a session ID, identity ID, and expiration.
         pub fn sync_session_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.sync_session_token = Some(input.into());
             self
         }
-        /// A token containing a session ID,
-        /// identity ID, and expiration.
+        /// A token containing a session ID, identity ID, and expiration.
         pub fn set_sync_session_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1990,7 +1911,7 @@ pub mod list_records_input {
 #[doc(hidden)]
 pub type ListRecordsInputOperationOutputAlias = crate::operation::ListRecords;
 #[doc(hidden)]
-pub type ListRecordsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRecordsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRecordsInput {
     /// Consumes the builder and constructs an Operation<[`ListRecords`](crate::operation::ListRecords)>
     #[allow(clippy::let_and_return)]
@@ -2001,7 +1922,7 @@ impl ListRecordsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRecords,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2149,7 +2070,7 @@ impl ListRecordsInput {
             "ListRecords",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2176,14 +2097,12 @@ pub mod register_device_input {
         pub(crate) token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
-        /// Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
+        /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
         pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_pool_id = Some(input.into());
             self
         }
-        /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
-        /// Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
+        /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2240,7 +2159,7 @@ pub mod register_device_input {
 #[doc(hidden)]
 pub type RegisterDeviceInputOperationOutputAlias = crate::operation::RegisterDevice;
 #[doc(hidden)]
-pub type RegisterDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterDeviceInput {
     /// Consumes the builder and constructs an Operation<[`RegisterDevice`](crate::operation::RegisterDevice)>
     #[allow(clippy::let_and_return)]
@@ -2251,7 +2170,7 @@ impl RegisterDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2367,7 +2286,7 @@ impl RegisterDeviceInput {
             "RegisterDevice",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2457,7 +2376,7 @@ pub mod set_cognito_events_input {
 #[doc(hidden)]
 pub type SetCognitoEventsInputOperationOutputAlias = crate::operation::SetCognitoEvents;
 #[doc(hidden)]
-pub type SetCognitoEventsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetCognitoEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetCognitoEventsInput {
     /// Consumes the builder and constructs an Operation<[`SetCognitoEvents`](crate::operation::SetCognitoEvents)>
     #[allow(clippy::let_and_return)]
@@ -2468,7 +2387,7 @@ impl SetCognitoEventsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetCognitoEvents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2568,7 +2487,7 @@ impl SetCognitoEventsInput {
             "SetCognitoEvents",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2602,14 +2521,12 @@ pub mod set_identity_pool_configuration_input {
         pub(crate) cognito_streams: std::option::Option<crate::model::CognitoStreams>,
     }
     impl Builder {
-        /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
-        /// Amazon Cognito. This is the ID of the pool to modify.</p>
+        /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool to modify.</p>
         pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_pool_id = Some(input.into());
             self
         }
-        /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
-        /// Amazon Cognito. This is the ID of the pool to modify.</p>
+        /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool to modify.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2659,7 +2576,8 @@ pub mod set_identity_pool_configuration_input {
 pub type SetIdentityPoolConfigurationInputOperationOutputAlias =
     crate::operation::SetIdentityPoolConfiguration;
 #[doc(hidden)]
-pub type SetIdentityPoolConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetIdentityPoolConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl SetIdentityPoolConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`SetIdentityPoolConfiguration`](crate::operation::SetIdentityPoolConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -2670,7 +2588,7 @@ impl SetIdentityPoolConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetIdentityPoolConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2771,7 +2689,7 @@ impl SetIdentityPoolConfigurationInput {
             "SetIdentityPoolConfiguration",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2806,14 +2724,12 @@ pub mod subscribe_to_dataset_input {
         pub(crate) device_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
-        /// Amazon Cognito. The ID of the pool to which the identity belongs.</p>
+        /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>
         pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_pool_id = Some(input.into());
             self
         }
-        /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
-        /// Amazon Cognito. The ID of the pool to which the identity belongs.</p>
+        /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2870,7 +2786,7 @@ pub mod subscribe_to_dataset_input {
 #[doc(hidden)]
 pub type SubscribeToDatasetInputOperationOutputAlias = crate::operation::SubscribeToDataset;
 #[doc(hidden)]
-pub type SubscribeToDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SubscribeToDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SubscribeToDatasetInput {
     /// Consumes the builder and constructs an Operation<[`SubscribeToDataset`](crate::operation::SubscribeToDataset)>
     #[allow(clippy::let_and_return)]
@@ -2881,7 +2797,7 @@ impl SubscribeToDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SubscribeToDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3015,7 +2931,7 @@ impl SubscribeToDatasetInput {
             "SubscribeToDataset",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3042,14 +2958,12 @@ pub mod unsubscribe_from_dataset_input {
         pub(crate) device_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
-        /// Amazon Cognito. The ID of the pool to which this identity belongs.</p>
+        /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.</p>
         pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_pool_id = Some(input.into());
             self
         }
-        /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
-        /// Amazon Cognito. The ID of the pool to which this identity belongs.</p>
+        /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3106,7 +3020,7 @@ pub mod unsubscribe_from_dataset_input {
 #[doc(hidden)]
 pub type UnsubscribeFromDatasetInputOperationOutputAlias = crate::operation::UnsubscribeFromDataset;
 #[doc(hidden)]
-pub type UnsubscribeFromDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UnsubscribeFromDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UnsubscribeFromDatasetInput {
     /// Consumes the builder and constructs an Operation<[`UnsubscribeFromDataset`](crate::operation::UnsubscribeFromDataset)>
     #[allow(clippy::let_and_return)]
@@ -3117,7 +3031,7 @@ impl UnsubscribeFromDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UnsubscribeFromDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3251,7 +3165,7 @@ impl UnsubscribeFromDatasetInput {
             "UnsubscribeFromDataset",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3281,16 +3195,12 @@ pub mod update_records_input {
         pub(crate) client_context: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_pool_id = Some(input.into());
             self
         }
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3298,30 +3208,22 @@ pub mod update_records_input {
             self.identity_pool_id = input;
             self
         }
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_id = Some(input.into());
             self
         }
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
         }
-        /// A string of up to 128 characters.
-        /// Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
-        /// (dot).
+        /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
         pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_name = Some(input.into());
             self
         }
-        /// A string of up to 128 characters.
-        /// Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
-        /// (dot).
+        /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_name = input;
             self
@@ -3340,16 +3242,14 @@ pub mod update_records_input {
         ///
         /// To override the contents of this collection use [`set_record_patches`](Self::set_record_patches).
         ///
-        /// A list of patch
-        /// operations.
-        pub fn record_patches(mut self, input: impl Into<crate::model::RecordPatch>) -> Self {
+        /// A list of patch operations.
+        pub fn record_patches(mut self, input: crate::model::RecordPatch) -> Self {
             let mut v = self.record_patches.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.record_patches = Some(v);
             self
         }
-        /// A list of patch
-        /// operations.
+        /// A list of patch operations.
         pub fn set_record_patches(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RecordPatch>>,
@@ -3357,14 +3257,12 @@ pub mod update_records_input {
             self.record_patches = input;
             self
         }
-        /// The SyncSessionToken returned by a
-        /// previous call to ListRecords for this dataset and identity.
+        /// The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
         pub fn sync_session_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.sync_session_token = Some(input.into());
             self
         }
-        /// The SyncSessionToken returned by a
-        /// previous call to ListRecords for this dataset and identity.
+        /// The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
         pub fn set_sync_session_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3372,16 +3270,12 @@ pub mod update_records_input {
             self.sync_session_token = input;
             self
         }
-        /// Intended to supply a device ID that
-        /// will populate the lastModifiedBy field referenced in other methods. The
-        /// ClientContext field is not yet implemented.
+        /// Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.
         pub fn client_context(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_context = Some(input.into());
             self
         }
-        /// Intended to supply a device ID that
-        /// will populate the lastModifiedBy field referenced in other methods. The
-        /// ClientContext field is not yet implemented.
+        /// Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.
         pub fn set_client_context(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3411,7 +3305,7 @@ pub mod update_records_input {
 #[doc(hidden)]
 pub type UpdateRecordsInputOperationOutputAlias = crate::operation::UpdateRecords;
 #[doc(hidden)]
-pub type UpdateRecordsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateRecordsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRecordsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRecords`](crate::operation::UpdateRecords)>
     #[allow(clippy::let_and_return)]
@@ -3422,7 +3316,7 @@ impl UpdateRecordsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRecords,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3577,7 +3471,7 @@ impl UpdateRecordsInput {
             "UpdateRecords",
             "cognitosync",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3600,52 +3494,35 @@ impl UpdateRecordsInput {
     }
 }
 
-/// A request to post updates to records or add and
-/// delete records for a dataset and user.
+/// A request to post updates to records or add and delete records for a dataset and user.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRecordsInput {
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub identity_pool_id: std::option::Option<std::string::String>,
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub identity_id: std::option::Option<std::string::String>,
-    /// A string of up to 128 characters.
-    /// Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
-    /// (dot).
+    /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>The unique ID generated for this device by Cognito.</p>
     pub device_id: std::option::Option<std::string::String>,
-    /// A list of patch
-    /// operations.
+    /// A list of patch operations.
     pub record_patches: std::option::Option<std::vec::Vec<crate::model::RecordPatch>>,
-    /// The SyncSessionToken returned by a
-    /// previous call to ListRecords for this dataset and identity.
+    /// The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
     pub sync_session_token: std::option::Option<std::string::String>,
-    /// Intended to supply a device ID that
-    /// will populate the lastModifiedBy field referenced in other methods. The
-    /// ClientContext field is not yet implemented.
+    /// Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.
     pub client_context: std::option::Option<std::string::String>,
 }
 impl UpdateRecordsInput {
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
     }
-    /// A string of up to 128 characters.
-    /// Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
-    /// (dot).
+    /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
     pub fn dataset_name(&self) -> std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
@@ -3653,19 +3530,15 @@ impl UpdateRecordsInput {
     pub fn device_id(&self) -> std::option::Option<&str> {
         self.device_id.as_deref()
     }
-    /// A list of patch
-    /// operations.
+    /// A list of patch operations.
     pub fn record_patches(&self) -> std::option::Option<&[crate::model::RecordPatch]> {
         self.record_patches.as_deref()
     }
-    /// The SyncSessionToken returned by a
-    /// previous call to ListRecords for this dataset and identity.
+    /// The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
     pub fn sync_session_token(&self) -> std::option::Option<&str> {
         self.sync_session_token.as_deref()
     }
-    /// Intended to supply a device ID that
-    /// will populate the lastModifiedBy field referenced in other methods. The
-    /// ClientContext field is not yet implemented.
+    /// Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.
     pub fn client_context(&self) -> std::option::Option<&str> {
         self.client_context.as_deref()
     }
@@ -3688,8 +3561,7 @@ impl std::fmt::Debug for UpdateRecordsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsubscribeFromDatasetInput {
-    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
-    /// Amazon Cognito. The ID of the pool to which this identity belongs.</p>
+    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.</p>
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>Unique ID for this identity.</p>
     pub identity_id: std::option::Option<std::string::String>,
@@ -3699,8 +3571,7 @@ pub struct UnsubscribeFromDatasetInput {
     pub device_id: std::option::Option<std::string::String>,
 }
 impl UnsubscribeFromDatasetInput {
-    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
-    /// Amazon Cognito. The ID of the pool to which this identity belongs.</p>
+    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.</p>
     pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
@@ -3732,8 +3603,7 @@ impl std::fmt::Debug for UnsubscribeFromDatasetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubscribeToDatasetInput {
-    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
-    /// Amazon Cognito. The ID of the pool to which the identity belongs.</p>
+    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>Unique ID for this identity.</p>
     pub identity_id: std::option::Option<std::string::String>,
@@ -3743,8 +3613,7 @@ pub struct SubscribeToDatasetInput {
     pub device_id: std::option::Option<std::string::String>,
 }
 impl SubscribeToDatasetInput {
-    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
-    /// Amazon Cognito. The ID of the pool to which the identity belongs.</p>
+    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>
     pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
@@ -3776,8 +3645,7 @@ impl std::fmt::Debug for SubscribeToDatasetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetIdentityPoolConfigurationInput {
-    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
-    /// Amazon Cognito. This is the ID of the pool to modify.</p>
+    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool to modify.</p>
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>Options to apply to this identity pool for push synchronization.</p>
     pub push_sync: std::option::Option<crate::model::PushSync>,
@@ -3785,8 +3653,7 @@ pub struct SetIdentityPoolConfigurationInput {
     pub cognito_streams: std::option::Option<crate::model::CognitoStreams>,
 }
 impl SetIdentityPoolConfigurationInput {
-    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
-    /// Amazon Cognito. This is the ID of the pool to modify.</p>
+    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool to modify.</p>
     pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
@@ -3845,8 +3712,7 @@ impl std::fmt::Debug for SetCognitoEventsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterDeviceInput {
-    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
-    /// Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
+    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// <p>The unique ID for this identity.</p>
     pub identity_id: std::option::Option<std::string::String>,
@@ -3856,8 +3722,7 @@ pub struct RegisterDeviceInput {
     pub token: std::option::Option<std::string::String>,
 }
 impl RegisterDeviceInput {
-    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
-    /// Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
+    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
     pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
@@ -3889,65 +3754,47 @@ impl std::fmt::Debug for RegisterDeviceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecordsInput {
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub identity_pool_id: std::option::Option<std::string::String>,
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub identity_id: std::option::Option<std::string::String>,
-    /// A string of up to 128 characters. Allowed
-    /// characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+    /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
     pub dataset_name: std::option::Option<std::string::String>,
-    /// The last server sync count for this
-    /// record.
+    /// The last server sync count for this record.
     pub last_sync_count: std::option::Option<i64>,
-    /// A pagination token for obtaining the next
-    /// page of results.
+    /// A pagination token for obtaining the next page of results.
     pub next_token: std::option::Option<std::string::String>,
-    /// The maximum number of results to be
-    /// returned.
+    /// The maximum number of results to be returned.
     pub max_results: i32,
-    /// A token containing a session ID,
-    /// identity ID, and expiration.
+    /// A token containing a session ID, identity ID, and expiration.
     pub sync_session_token: std::option::Option<std::string::String>,
 }
 impl ListRecordsInput {
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
     }
-    /// A string of up to 128 characters. Allowed
-    /// characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+    /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
     pub fn dataset_name(&self) -> std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
-    /// The last server sync count for this
-    /// record.
+    /// The last server sync count for this record.
     pub fn last_sync_count(&self) -> std::option::Option<i64> {
         self.last_sync_count
     }
-    /// A pagination token for obtaining the next
-    /// page of results.
+    /// A pagination token for obtaining the next page of results.
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// The maximum number of results to be
-    /// returned.
+    /// The maximum number of results to be returned.
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// A token containing a session ID,
-    /// identity ID, and expiration.
+    /// A token containing a session ID, identity ID, and expiration.
     pub fn sync_session_token(&self) -> std::option::Option<&str> {
         self.sync_session_token.as_deref()
     }
@@ -3966,26 +3813,21 @@ impl std::fmt::Debug for ListRecordsInput {
     }
 }
 
-/// A request for usage information on an
-/// identity pool.
+/// A request for usage information on an identity pool.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIdentityPoolUsageInput {
-    /// A pagination token for obtaining
-    /// the next page of results.
+    /// A pagination token for obtaining the next page of results.
     pub next_token: std::option::Option<std::string::String>,
-    /// The maximum number of results to
-    /// be returned.
+    /// The maximum number of results to be returned.
     pub max_results: i32,
 }
 impl ListIdentityPoolUsageInput {
-    /// A pagination token for obtaining
-    /// the next page of results.
+    /// A pagination token for obtaining the next page of results.
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// The maximum number of results to
-    /// be returned.
+    /// The maximum number of results to be returned.
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
@@ -3999,46 +3841,33 @@ impl std::fmt::Debug for ListIdentityPoolUsageInput {
     }
 }
 
-/// Request for a list of datasets for an
-/// identity.
+/// Request for a list of datasets for an identity.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetsInput {
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub identity_pool_id: std::option::Option<std::string::String>,
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub identity_id: std::option::Option<std::string::String>,
-    /// A pagination token for obtaining the next
-    /// page of results.
+    /// A pagination token for obtaining the next page of results.
     pub next_token: std::option::Option<std::string::String>,
-    /// The maximum number of results to be
-    /// returned.
+    /// The maximum number of results to be returned.
     pub max_results: i32,
 }
 impl ListDatasetsInput {
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
     }
-    /// A pagination token for obtaining the next
-    /// page of results.
+    /// A pagination token for obtaining the next page of results.
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// The maximum number of results to be
-    /// returned.
+    /// The maximum number of results to be returned.
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
@@ -4058,13 +3887,11 @@ impl std::fmt::Debug for ListDatasetsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIdentityPoolConfigurationInput {
-    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
-    /// Amazon Cognito. This is the ID of the pool for which to return a configuration.</p>
+    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.</p>
     pub identity_pool_id: std::option::Option<std::string::String>,
 }
 impl GetIdentityPoolConfigurationInput {
-    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
-    /// Amazon Cognito. This is the ID of the pool for which to return a configuration.</p>
+    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.</p>
     pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
@@ -4102,15 +3929,11 @@ impl std::fmt::Debug for GetCognitoEventsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBulkPublishDetailsInput {
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub identity_pool_id: std::option::Option<std::string::String>,
 }
 impl GetBulkPublishDetailsInput {
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
@@ -4123,30 +3946,21 @@ impl std::fmt::Debug for GetBulkPublishDetailsInput {
     }
 }
 
-/// A request for information about the usage of
-/// an identity pool.
+/// A request for information about the usage of an identity pool.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIdentityUsageInput {
-    /// A name-spaced GUID (for
-    /// example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
-    /// generation is unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub identity_pool_id: std::option::Option<std::string::String>,
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub identity_id: std::option::Option<std::string::String>,
 }
 impl DescribeIdentityUsageInput {
-    /// A name-spaced GUID (for
-    /// example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
-    /// generation is unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
     }
@@ -4160,20 +3974,15 @@ impl std::fmt::Debug for DescribeIdentityUsageInput {
     }
 }
 
-/// A request for usage information about
-/// the identity pool.
+/// A request for usage information about the identity pool.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIdentityPoolUsageInput {
-    /// A name-spaced GUID (for
-    /// example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
-    /// generation is unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub identity_pool_id: std::option::Option<std::string::String>,
 }
 impl DescribeIdentityPoolUsageInput {
-    /// A name-spaced GUID (for
-    /// example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
-    /// generation is unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
@@ -4186,40 +3995,27 @@ impl std::fmt::Debug for DescribeIdentityPoolUsageInput {
     }
 }
 
-/// A request for meta data about a dataset (creation
-/// date, number of records, size) by owner and dataset name.
+/// A request for meta data about a dataset (creation date, number of records, size) by owner and dataset name.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetInput {
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub identity_pool_id: std::option::Option<std::string::String>,
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub identity_id: std::option::Option<std::string::String>,
-    /// A string of up to 128 characters.
-    /// Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
-    /// (dot).
+    /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
     pub dataset_name: std::option::Option<std::string::String>,
 }
 impl DescribeDatasetInput {
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
     }
-    /// A string of up to 128 characters.
-    /// Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
-    /// (dot).
+    /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
     pub fn dataset_name(&self) -> std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
@@ -4234,40 +4030,27 @@ impl std::fmt::Debug for DescribeDatasetInput {
     }
 }
 
-/// A request to delete the specific
-/// dataset.
+/// A request to delete the specific dataset.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDatasetInput {
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub identity_pool_id: std::option::Option<std::string::String>,
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub identity_id: std::option::Option<std::string::String>,
-    /// A string of up to 128 characters.
-    /// Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
-    /// (dot).
+    /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
     pub dataset_name: std::option::Option<std::string::String>,
 }
 impl DeleteDatasetInput {
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
     }
-    /// A string of up to 128 characters.
-    /// Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.'
-    /// (dot).
+    /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
     pub fn dataset_name(&self) -> std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
@@ -4286,15 +4069,11 @@ impl std::fmt::Debug for DeleteDatasetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BulkPublishInput {
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub identity_pool_id: std::option::Option<std::string::String>,
 }
 impl BulkPublishInput {
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }

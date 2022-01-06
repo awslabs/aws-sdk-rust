@@ -321,9 +321,7 @@ impl AsRef<str> for VocabularyFilterMethod {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum TranscriptResultStream {
-    /// <p>A portion of the transcription of the audio stream. Events are sent periodically from
-    /// Amazon Transcribe to your application. The event can be a partial transcription of a section of the audio
-    /// stream, or it can be the entire transcription of that portion of the audio stream. </p>
+    /// <p>A portion of the transcription of the audio stream. Events are sent periodically from Amazon Transcribe to your application. The event can be a partial transcription of a section of the audio stream, or it can be the entire transcription of that portion of the audio stream. </p>
     TranscriptEvent(crate::model::TranscriptEvent),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -358,18 +356,15 @@ impl TranscriptResultStream {
     }
 }
 
-/// <p>Represents a set of transcription results from the server to the client. It contains one
-/// or more segments of the transcription.</p>
+/// <p>Represents a set of transcription results from the server to the client. It contains one or more segments of the transcription.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TranscriptEvent {
-    /// <p>The transcription of the audio stream. The transcription is composed of all of the items
-    /// in the results list.</p>
+    /// <p>The transcription of the audio stream. The transcription is composed of all of the items in the results list.</p>
     pub transcript: std::option::Option<crate::model::Transcript>,
 }
 impl TranscriptEvent {
-    /// <p>The transcription of the audio stream. The transcription is composed of all of the items
-    /// in the results list.</p>
+    /// <p>The transcription of the audio stream. The transcription is composed of all of the items in the results list.</p>
     pub fn transcript(&self) -> std::option::Option<&crate::model::Transcript> {
         self.transcript.as_ref()
     }
@@ -390,14 +385,12 @@ pub mod transcript_event {
         pub(crate) transcript: std::option::Option<crate::model::Transcript>,
     }
     impl Builder {
-        /// <p>The transcription of the audio stream. The transcription is composed of all of the items
-        /// in the results list.</p>
+        /// <p>The transcription of the audio stream. The transcription is composed of all of the items in the results list.</p>
         pub fn transcript(mut self, input: crate::model::Transcript) -> Self {
             self.transcript = Some(input);
             self
         }
-        /// <p>The transcription of the audio stream. The transcription is composed of all of the items
-        /// in the results list.</p>
+        /// <p>The transcription of the audio stream. The transcription is composed of all of the items in the results list.</p>
         pub fn set_transcript(
             mut self,
             input: std::option::Option<crate::model::Transcript>,
@@ -420,19 +413,15 @@ impl TranscriptEvent {
     }
 }
 
-/// <p>The transcription in a <a>TranscriptEvent</a>.</p>
+/// <p>The transcription in a <code>TranscriptEvent</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Transcript {
-    /// <p>
-    /// <a>Result</a> objects that contain the results of transcribing a portion of the
-    /// input audio stream. The array can be empty.</p>
+    /// <p> <code>Result</code> objects that contain the results of transcribing a portion of the input audio stream. The array can be empty.</p>
     pub results: std::option::Option<std::vec::Vec<crate::model::Result>>,
 }
 impl Transcript {
-    /// <p>
-    /// <a>Result</a> objects that contain the results of transcribing a portion of the
-    /// input audio stream. The array can be empty.</p>
+    /// <p> <code>Result</code> objects that contain the results of transcribing a portion of the input audio stream. The array can be empty.</p>
     pub fn results(&self) -> std::option::Option<&[crate::model::Result]> {
         self.results.as_deref()
     }
@@ -457,18 +446,14 @@ pub mod transcript {
         ///
         /// To override the contents of this collection use [`set_results`](Self::set_results).
         ///
-        /// <p>
-        /// <a>Result</a> objects that contain the results of transcribing a portion of the
-        /// input audio stream. The array can be empty.</p>
-        pub fn results(mut self, input: impl Into<crate::model::Result>) -> Self {
+        /// <p> <code>Result</code> objects that contain the results of transcribing a portion of the input audio stream. The array can be empty.</p>
+        pub fn results(mut self, input: crate::model::Result) -> Self {
             let mut v = self.results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.results = Some(v);
             self
         }
-        /// <p>
-        /// <a>Result</a> objects that contain the results of transcribing a portion of the
-        /// input audio stream. The array can be empty.</p>
+        /// <p> <code>Result</code> objects that contain the results of transcribing a portion of the input audio stream. The array can be empty.</p>
         pub fn set_results(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Result>>,
@@ -497,25 +482,17 @@ impl Transcript {
 pub struct Result {
     /// <p>A unique identifier for the result. </p>
     pub result_id: std::option::Option<std::string::String>,
-    /// <p>The offset in seconds from the beginning of the audio stream to the beginning of the
-    /// result.</p>
+    /// <p>The offset in seconds from the beginning of the audio stream to the beginning of the result.</p>
     pub start_time: f64,
-    /// <p>The offset in seconds from the beginning of the audio stream to the end of the
-    /// result.</p>
+    /// <p>The offset in seconds from the beginning of the audio stream to the end of the result.</p>
     pub end_time: f64,
-    /// <p>Amazon Transcribe divides the incoming audio stream into segments at natural points in the audio.
-    /// Transcription results are returned based on these segments. </p>
-    /// <p>The <code>IsPartial</code> field is <code>true</code> to indicate that Amazon Transcribe has
-    /// additional transcription data to send, <code>false</code> to indicate that this is the last
-    /// transcription result for the segment.</p>
+    /// <p>Amazon Transcribe divides the incoming audio stream into segments at natural points in the audio. Transcription results are returned based on these segments. </p>
+    /// <p>The <code>IsPartial</code> field is <code>true</code> to indicate that Amazon Transcribe has additional transcription data to send, <code>false</code> to indicate that this is the last transcription result for the segment.</p>
     pub is_partial: bool,
-    /// <p>A list of possible transcriptions for the audio. Each alternative typically contains one
-    /// <code>item</code> that contains the result of the transcription.</p>
+    /// <p>A list of possible transcriptions for the audio. Each alternative typically contains one <code>item</code> that contains the result of the transcription.</p>
     pub alternatives: std::option::Option<std::vec::Vec<crate::model::Alternative>>,
-    /// <p>When channel identification is enabled, Amazon Transcribe transcribes the speech from each audio
-    /// channel separately.</p>
-    /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single
-    /// channel in your audio stream.</p>
+    /// <p>When channel identification is enabled, Amazon Transcribe transcribes the speech from each audio channel separately.</p>
+    /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single channel in your audio stream.</p>
     pub channel_id: std::option::Option<std::string::String>,
     /// <p>The language code of the identified language in your media stream.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
@@ -528,33 +505,25 @@ impl Result {
     pub fn result_id(&self) -> std::option::Option<&str> {
         self.result_id.as_deref()
     }
-    /// <p>The offset in seconds from the beginning of the audio stream to the beginning of the
-    /// result.</p>
+    /// <p>The offset in seconds from the beginning of the audio stream to the beginning of the result.</p>
     pub fn start_time(&self) -> f64 {
         self.start_time
     }
-    /// <p>The offset in seconds from the beginning of the audio stream to the end of the
-    /// result.</p>
+    /// <p>The offset in seconds from the beginning of the audio stream to the end of the result.</p>
     pub fn end_time(&self) -> f64 {
         self.end_time
     }
-    /// <p>Amazon Transcribe divides the incoming audio stream into segments at natural points in the audio.
-    /// Transcription results are returned based on these segments. </p>
-    /// <p>The <code>IsPartial</code> field is <code>true</code> to indicate that Amazon Transcribe has
-    /// additional transcription data to send, <code>false</code> to indicate that this is the last
-    /// transcription result for the segment.</p>
+    /// <p>Amazon Transcribe divides the incoming audio stream into segments at natural points in the audio. Transcription results are returned based on these segments. </p>
+    /// <p>The <code>IsPartial</code> field is <code>true</code> to indicate that Amazon Transcribe has additional transcription data to send, <code>false</code> to indicate that this is the last transcription result for the segment.</p>
     pub fn is_partial(&self) -> bool {
         self.is_partial
     }
-    /// <p>A list of possible transcriptions for the audio. Each alternative typically contains one
-    /// <code>item</code> that contains the result of the transcription.</p>
+    /// <p>A list of possible transcriptions for the audio. Each alternative typically contains one <code>item</code> that contains the result of the transcription.</p>
     pub fn alternatives(&self) -> std::option::Option<&[crate::model::Alternative]> {
         self.alternatives.as_deref()
     }
-    /// <p>When channel identification is enabled, Amazon Transcribe transcribes the speech from each audio
-    /// channel separately.</p>
-    /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single
-    /// channel in your audio stream.</p>
+    /// <p>When channel identification is enabled, Amazon Transcribe transcribes the speech from each audio channel separately.</p>
+    /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single channel in your audio stream.</p>
     pub fn channel_id(&self) -> std::option::Option<&str> {
         self.channel_id.as_deref()
     }
@@ -610,44 +579,34 @@ pub mod result {
             self.result_id = input;
             self
         }
-        /// <p>The offset in seconds from the beginning of the audio stream to the beginning of the
-        /// result.</p>
+        /// <p>The offset in seconds from the beginning of the audio stream to the beginning of the result.</p>
         pub fn start_time(mut self, input: f64) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The offset in seconds from the beginning of the audio stream to the beginning of the
-        /// result.</p>
+        /// <p>The offset in seconds from the beginning of the audio stream to the beginning of the result.</p>
         pub fn set_start_time(mut self, input: std::option::Option<f64>) -> Self {
             self.start_time = input;
             self
         }
-        /// <p>The offset in seconds from the beginning of the audio stream to the end of the
-        /// result.</p>
+        /// <p>The offset in seconds from the beginning of the audio stream to the end of the result.</p>
         pub fn end_time(mut self, input: f64) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The offset in seconds from the beginning of the audio stream to the end of the
-        /// result.</p>
+        /// <p>The offset in seconds from the beginning of the audio stream to the end of the result.</p>
         pub fn set_end_time(mut self, input: std::option::Option<f64>) -> Self {
             self.end_time = input;
             self
         }
-        /// <p>Amazon Transcribe divides the incoming audio stream into segments at natural points in the audio.
-        /// Transcription results are returned based on these segments. </p>
-        /// <p>The <code>IsPartial</code> field is <code>true</code> to indicate that Amazon Transcribe has
-        /// additional transcription data to send, <code>false</code> to indicate that this is the last
-        /// transcription result for the segment.</p>
+        /// <p>Amazon Transcribe divides the incoming audio stream into segments at natural points in the audio. Transcription results are returned based on these segments. </p>
+        /// <p>The <code>IsPartial</code> field is <code>true</code> to indicate that Amazon Transcribe has additional transcription data to send, <code>false</code> to indicate that this is the last transcription result for the segment.</p>
         pub fn is_partial(mut self, input: bool) -> Self {
             self.is_partial = Some(input);
             self
         }
-        /// <p>Amazon Transcribe divides the incoming audio stream into segments at natural points in the audio.
-        /// Transcription results are returned based on these segments. </p>
-        /// <p>The <code>IsPartial</code> field is <code>true</code> to indicate that Amazon Transcribe has
-        /// additional transcription data to send, <code>false</code> to indicate that this is the last
-        /// transcription result for the segment.</p>
+        /// <p>Amazon Transcribe divides the incoming audio stream into segments at natural points in the audio. Transcription results are returned based on these segments. </p>
+        /// <p>The <code>IsPartial</code> field is <code>true</code> to indicate that Amazon Transcribe has additional transcription data to send, <code>false</code> to indicate that this is the last transcription result for the segment.</p>
         pub fn set_is_partial(mut self, input: std::option::Option<bool>) -> Self {
             self.is_partial = input;
             self
@@ -656,16 +615,14 @@ pub mod result {
         ///
         /// To override the contents of this collection use [`set_alternatives`](Self::set_alternatives).
         ///
-        /// <p>A list of possible transcriptions for the audio. Each alternative typically contains one
-        /// <code>item</code> that contains the result of the transcription.</p>
-        pub fn alternatives(mut self, input: impl Into<crate::model::Alternative>) -> Self {
+        /// <p>A list of possible transcriptions for the audio. Each alternative typically contains one <code>item</code> that contains the result of the transcription.</p>
+        pub fn alternatives(mut self, input: crate::model::Alternative) -> Self {
             let mut v = self.alternatives.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alternatives = Some(v);
             self
         }
-        /// <p>A list of possible transcriptions for the audio. Each alternative typically contains one
-        /// <code>item</code> that contains the result of the transcription.</p>
+        /// <p>A list of possible transcriptions for the audio. Each alternative typically contains one <code>item</code> that contains the result of the transcription.</p>
         pub fn set_alternatives(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Alternative>>,
@@ -673,18 +630,14 @@ pub mod result {
             self.alternatives = input;
             self
         }
-        /// <p>When channel identification is enabled, Amazon Transcribe transcribes the speech from each audio
-        /// channel separately.</p>
-        /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single
-        /// channel in your audio stream.</p>
+        /// <p>When channel identification is enabled, Amazon Transcribe transcribes the speech from each audio channel separately.</p>
+        /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single channel in your audio stream.</p>
         pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_id = Some(input.into());
             self
         }
-        /// <p>When channel identification is enabled, Amazon Transcribe transcribes the speech from each audio
-        /// channel separately.</p>
-        /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single
-        /// channel in your audio stream.</p>
+        /// <p>When channel identification is enabled, Amazon Transcribe transcribes the speech from each audio channel separately.</p>
+        /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single channel in your audio stream.</p>
         pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_id = input;
             self
@@ -707,12 +660,9 @@ pub mod result {
         /// To override the contents of this collection use [`set_language_identification`](Self::set_language_identification).
         ///
         /// <p>The language code of the dominant language identified in your media.</p>
-        pub fn language_identification(
-            mut self,
-            input: impl Into<crate::model::LanguageWithScore>,
-        ) -> Self {
+        pub fn language_identification(mut self, input: crate::model::LanguageWithScore) -> Self {
             let mut v = self.language_identification.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.language_identification = Some(v);
             self
         }
@@ -746,17 +696,13 @@ impl Result {
     }
 }
 
-/// <p>The language codes of the identified languages and their associated confidence scores.
-/// The confidence score is a value between zero and one; a larger value indicates a higher
-/// confidence in the identified language.</p>
+/// <p>The language codes of the identified languages and their associated confidence scores. The confidence score is a value between zero and one; a larger value indicates a higher confidence in the identified language.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LanguageWithScore {
     /// <p>The language code of the language identified by Amazon Transcribe.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>The confidence score for the associated language code. Confidence scores are values
-    /// between zero and one; larger values indicate a higher confidence in the identified language.
-    /// </p>
+    /// <p>The confidence score for the associated language code. Confidence scores are values between zero and one; larger values indicate a higher confidence in the identified language. </p>
     pub score: f64,
 }
 impl LanguageWithScore {
@@ -764,9 +710,7 @@ impl LanguageWithScore {
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>The confidence score for the associated language code. Confidence scores are values
-    /// between zero and one; larger values indicate a higher confidence in the identified language.
-    /// </p>
+    /// <p>The confidence score for the associated language code. Confidence scores are values between zero and one; larger values indicate a higher confidence in the identified language. </p>
     pub fn score(&self) -> f64 {
         self.score
     }
@@ -802,16 +746,12 @@ pub mod language_with_score {
             self.language_code = input;
             self
         }
-        /// <p>The confidence score for the associated language code. Confidence scores are values
-        /// between zero and one; larger values indicate a higher confidence in the identified language.
-        /// </p>
+        /// <p>The confidence score for the associated language code. Confidence scores are values between zero and one; larger values indicate a higher confidence in the identified language. </p>
         pub fn score(mut self, input: f64) -> Self {
             self.score = Some(input);
             self
         }
-        /// <p>The confidence score for the associated language code. Confidence scores are values
-        /// between zero and one; larger values indicate a higher confidence in the identified language.
-        /// </p>
+        /// <p>The confidence score for the associated language code. Confidence scores are values between zero and one; larger values indicate a higher confidence in the identified language. </p>
         pub fn set_score(mut self, input: std::option::Option<f64>) -> Self {
             self.score = input;
             self
@@ -892,9 +832,9 @@ pub mod alternative {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>One or more alternative interpretations of the input audio. </p>
-        pub fn items(mut self, input: impl Into<crate::model::Item>) -> Self {
+        pub fn items(mut self, input: crate::model::Item) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -911,9 +851,9 @@ pub mod alternative {
         /// To override the contents of this collection use [`set_entities`](Self::set_entities).
         ///
         /// <p>Contains the entities identified as personally identifiable information (PII) in the transcription output.</p>
-        pub fn entities(mut self, input: impl Into<crate::model::Entity>) -> Self {
+        pub fn entities(mut self, input: crate::model::Entity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entities = Some(v);
             self
         }
@@ -1095,46 +1035,33 @@ impl Entity {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Item {
-    /// <p>The offset from the beginning of the audio stream to the beginning of the audio that
-    /// resulted in the item.</p>
+    /// <p>The offset from the beginning of the audio stream to the beginning of the audio that resulted in the item.</p>
     pub start_time: f64,
-    /// <p>The offset from the beginning of the audio stream to the end of the audio that resulted in
-    /// the item.</p>
+    /// <p>The offset from the beginning of the audio stream to the end of the audio that resulted in the item.</p>
     pub end_time: f64,
-    /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word
-    /// that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item
-    /// was interpreted as a pause in the input audio.</p>
+    /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item was interpreted as a pause in the input audio.</p>
     pub r#type: std::option::Option<crate::model::ItemType>,
     /// <p>The word or punctuation that was recognized in the input audio.</p>
     pub content: std::option::Option<std::string::String>,
-    /// <p>Indicates whether a word in the item matches a word in the vocabulary filter you've chosen
-    /// for your media stream. If <code>true</code> then a word in the item matches your
-    /// vocabulary filter.</p>
+    /// <p>Indicates whether a word in the item matches a word in the vocabulary filter you've chosen for your media stream. If <code>true</code> then a word in the item matches your vocabulary filter.</p>
     pub vocabulary_filter_match: bool,
-    /// <p>If speaker identification is enabled, shows the speakers identified in the media
-    /// stream.</p>
+    /// <p>If speaker identification is enabled, shows the speakers identified in the media stream.</p>
     pub speaker: std::option::Option<std::string::String>,
-    /// <p>A value between zero and one for an item that is a confidence score that Amazon Transcribe assigns to each
-    /// word or phrase that it transcribes.</p>
+    /// <p>A value between zero and one for an item that is a confidence score that Amazon Transcribe assigns to each word or phrase that it transcribes.</p>
     pub confidence: std::option::Option<f64>,
-    /// <p>If partial result stabilization has been enabled, indicates whether the word or phrase in
-    /// the item is stable. If <code>Stable</code> is <code>true</code>, the result is stable.</p>
+    /// <p>If partial result stabilization has been enabled, indicates whether the word or phrase in the item is stable. If <code>Stable</code> is <code>true</code>, the result is stable.</p>
     pub stable: std::option::Option<bool>,
 }
 impl Item {
-    /// <p>The offset from the beginning of the audio stream to the beginning of the audio that
-    /// resulted in the item.</p>
+    /// <p>The offset from the beginning of the audio stream to the beginning of the audio that resulted in the item.</p>
     pub fn start_time(&self) -> f64 {
         self.start_time
     }
-    /// <p>The offset from the beginning of the audio stream to the end of the audio that resulted in
-    /// the item.</p>
+    /// <p>The offset from the beginning of the audio stream to the end of the audio that resulted in the item.</p>
     pub fn end_time(&self) -> f64 {
         self.end_time
     }
-    /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word
-    /// that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item
-    /// was interpreted as a pause in the input audio.</p>
+    /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item was interpreted as a pause in the input audio.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ItemType> {
         self.r#type.as_ref()
     }
@@ -1142,24 +1069,19 @@ impl Item {
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
-    /// <p>Indicates whether a word in the item matches a word in the vocabulary filter you've chosen
-    /// for your media stream. If <code>true</code> then a word in the item matches your
-    /// vocabulary filter.</p>
+    /// <p>Indicates whether a word in the item matches a word in the vocabulary filter you've chosen for your media stream. If <code>true</code> then a word in the item matches your vocabulary filter.</p>
     pub fn vocabulary_filter_match(&self) -> bool {
         self.vocabulary_filter_match
     }
-    /// <p>If speaker identification is enabled, shows the speakers identified in the media
-    /// stream.</p>
+    /// <p>If speaker identification is enabled, shows the speakers identified in the media stream.</p>
     pub fn speaker(&self) -> std::option::Option<&str> {
         self.speaker.as_deref()
     }
-    /// <p>A value between zero and one for an item that is a confidence score that Amazon Transcribe assigns to each
-    /// word or phrase that it transcribes.</p>
+    /// <p>A value between zero and one for an item that is a confidence score that Amazon Transcribe assigns to each word or phrase that it transcribes.</p>
     pub fn confidence(&self) -> std::option::Option<f64> {
         self.confidence
     }
-    /// <p>If partial result stabilization has been enabled, indicates whether the word or phrase in
-    /// the item is stable. If <code>Stable</code> is <code>true</code>, the result is stable.</p>
+    /// <p>If partial result stabilization has been enabled, indicates whether the word or phrase in the item is stable. If <code>Stable</code> is <code>true</code>, the result is stable.</p>
     pub fn stable(&self) -> std::option::Option<bool> {
         self.stable
     }
@@ -1194,40 +1116,32 @@ pub mod item {
         pub(crate) stable: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The offset from the beginning of the audio stream to the beginning of the audio that
-        /// resulted in the item.</p>
+        /// <p>The offset from the beginning of the audio stream to the beginning of the audio that resulted in the item.</p>
         pub fn start_time(mut self, input: f64) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The offset from the beginning of the audio stream to the beginning of the audio that
-        /// resulted in the item.</p>
+        /// <p>The offset from the beginning of the audio stream to the beginning of the audio that resulted in the item.</p>
         pub fn set_start_time(mut self, input: std::option::Option<f64>) -> Self {
             self.start_time = input;
             self
         }
-        /// <p>The offset from the beginning of the audio stream to the end of the audio that resulted in
-        /// the item.</p>
+        /// <p>The offset from the beginning of the audio stream to the end of the audio that resulted in the item.</p>
         pub fn end_time(mut self, input: f64) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The offset from the beginning of the audio stream to the end of the audio that resulted in
-        /// the item.</p>
+        /// <p>The offset from the beginning of the audio stream to the end of the audio that resulted in the item.</p>
         pub fn set_end_time(mut self, input: std::option::Option<f64>) -> Self {
             self.end_time = input;
             self
         }
-        /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word
-        /// that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item
-        /// was interpreted as a pause in the input audio.</p>
+        /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item was interpreted as a pause in the input audio.</p>
         pub fn r#type(mut self, input: crate::model::ItemType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word
-        /// that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item
-        /// was interpreted as a pause in the input audio.</p>
+        /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item was interpreted as a pause in the input audio.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ItemType>) -> Self {
             self.r#type = input;
             self
@@ -1242,52 +1156,42 @@ pub mod item {
             self.content = input;
             self
         }
-        /// <p>Indicates whether a word in the item matches a word in the vocabulary filter you've chosen
-        /// for your media stream. If <code>true</code> then a word in the item matches your
-        /// vocabulary filter.</p>
+        /// <p>Indicates whether a word in the item matches a word in the vocabulary filter you've chosen for your media stream. If <code>true</code> then a word in the item matches your vocabulary filter.</p>
         pub fn vocabulary_filter_match(mut self, input: bool) -> Self {
             self.vocabulary_filter_match = Some(input);
             self
         }
-        /// <p>Indicates whether a word in the item matches a word in the vocabulary filter you've chosen
-        /// for your media stream. If <code>true</code> then a word in the item matches your
-        /// vocabulary filter.</p>
+        /// <p>Indicates whether a word in the item matches a word in the vocabulary filter you've chosen for your media stream. If <code>true</code> then a word in the item matches your vocabulary filter.</p>
         pub fn set_vocabulary_filter_match(mut self, input: std::option::Option<bool>) -> Self {
             self.vocabulary_filter_match = input;
             self
         }
-        /// <p>If speaker identification is enabled, shows the speakers identified in the media
-        /// stream.</p>
+        /// <p>If speaker identification is enabled, shows the speakers identified in the media stream.</p>
         pub fn speaker(mut self, input: impl Into<std::string::String>) -> Self {
             self.speaker = Some(input.into());
             self
         }
-        /// <p>If speaker identification is enabled, shows the speakers identified in the media
-        /// stream.</p>
+        /// <p>If speaker identification is enabled, shows the speakers identified in the media stream.</p>
         pub fn set_speaker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.speaker = input;
             self
         }
-        /// <p>A value between zero and one for an item that is a confidence score that Amazon Transcribe assigns to each
-        /// word or phrase that it transcribes.</p>
+        /// <p>A value between zero and one for an item that is a confidence score that Amazon Transcribe assigns to each word or phrase that it transcribes.</p>
         pub fn confidence(mut self, input: f64) -> Self {
             self.confidence = Some(input);
             self
         }
-        /// <p>A value between zero and one for an item that is a confidence score that Amazon Transcribe assigns to each
-        /// word or phrase that it transcribes.</p>
+        /// <p>A value between zero and one for an item that is a confidence score that Amazon Transcribe assigns to each word or phrase that it transcribes.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f64>) -> Self {
             self.confidence = input;
             self
         }
-        /// <p>If partial result stabilization has been enabled, indicates whether the word or phrase in
-        /// the item is stable. If <code>Stable</code> is <code>true</code>, the result is stable.</p>
+        /// <p>If partial result stabilization has been enabled, indicates whether the word or phrase in the item is stable. If <code>Stable</code> is <code>true</code>, the result is stable.</p>
         pub fn stable(mut self, input: bool) -> Self {
             self.stable = Some(input);
             self
         }
-        /// <p>If partial result stabilization has been enabled, indicates whether the word or phrase in
-        /// the item is stable. If <code>Stable</code> is <code>true</code>, the result is stable.</p>
+        /// <p>If partial result stabilization has been enabled, indicates whether the word or phrase in the item is stable. If <code>Stable</code> is <code>true</code>, the result is stable.</p>
         pub fn set_stable(mut self, input: std::option::Option<bool>) -> Self {
             self.stable = input;
             self
@@ -1432,12 +1336,9 @@ impl AsRef<str> for MediaEncoding {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum AudioStream {
-    /// <p>A blob of audio from your application. You audio stream consists of one or more audio
-    /// events.</p>
-    /// <p>For information on audio encoding formats in Amazon Transcribe, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/input.html">Speech input</a>. For
-    /// information on audio encoding formats in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/input-med.html">Speech input</a>.</p>
-    /// <p>For more information on stream encoding in Amazon Transcribe, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/event-stream.html">Event stream encoding</a>. For
-    /// information on stream encoding in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/event-stream-med.html">Event stream encoding</a>.</p>
+    /// <p>A blob of audio from your application. You audio stream consists of one or more audio events.</p>
+    /// <p>For information on audio encoding formats in Amazon Transcribe, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/input.html">Speech input</a>. For information on audio encoding formats in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/input-med.html">Speech input</a>.</p>
+    /// <p>For more information on stream encoding in Amazon Transcribe, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/event-stream.html">Event stream encoding</a>. For information on stream encoding in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/event-stream-med.html">Event stream encoding</a>.</p>
     AudioEvent(crate::model::AudioEvent),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -1471,20 +1372,15 @@ impl AudioStream {
 }
 
 /// <p>Provides a wrapper for the audio chunks that you are sending.</p>
-/// <p>For information on audio encoding in Amazon Transcribe, see
-/// <a href="https://docs.aws.amazon.com/transcribe/latest/dg/input.html">Speech input</a>. For information
-/// on audio encoding formats in Amazon Transcribe Medical, see
-/// <a href="https://docs.aws.amazon.com/transcribe/latest/dg/input-med.html">Speech input</a>.</p>
+/// <p>For information on audio encoding in Amazon Transcribe, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/input.html">Speech input</a>. For information on audio encoding formats in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/input-med.html">Speech input</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AudioEvent {
-    /// <p>An audio blob that contains the next part of the audio that you want to transcribe. The
-    /// maximum audio chunk size is 32 KB.</p>
+    /// <p>An audio blob that contains the next part of the audio that you want to transcribe. The maximum audio chunk size is 32 KB.</p>
     pub audio_chunk: std::option::Option<aws_smithy_types::Blob>,
 }
 impl AudioEvent {
-    /// <p>An audio blob that contains the next part of the audio that you want to transcribe. The
-    /// maximum audio chunk size is 32 KB.</p>
+    /// <p>An audio blob that contains the next part of the audio that you want to transcribe. The maximum audio chunk size is 32 KB.</p>
     pub fn audio_chunk(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.audio_chunk.as_ref()
     }
@@ -1505,14 +1401,12 @@ pub mod audio_event {
         pub(crate) audio_chunk: std::option::Option<aws_smithy_types::Blob>,
     }
     impl Builder {
-        /// <p>An audio blob that contains the next part of the audio that you want to transcribe. The
-        /// maximum audio chunk size is 32 KB.</p>
+        /// <p>An audio blob that contains the next part of the audio that you want to transcribe. The maximum audio chunk size is 32 KB.</p>
         pub fn audio_chunk(mut self, input: aws_smithy_types::Blob) -> Self {
             self.audio_chunk = Some(input);
             self
         }
-        /// <p>An audio blob that contains the next part of the audio that you want to transcribe. The
-        /// maximum audio chunk size is 32 KB.</p>
+        /// <p>An audio blob that contains the next part of the audio that you want to transcribe. The maximum audio chunk size is 32 KB.</p>
         pub fn set_audio_chunk(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,
@@ -1590,10 +1484,7 @@ impl AsRef<str> for MedicalContentIdentificationType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum MedicalTranscriptResultStream {
-    /// <p>A portion of the transcription of the audio stream. Events are sent periodically from
-    /// Amazon Transcribe Medical to your application. The event can be a partial transcription of a section of the
-    /// audio stream, or it can be the entire transcription of that portion of the audio
-    /// stream.</p>
+    /// <p>A portion of the transcription of the audio stream. Events are sent periodically from Amazon Transcribe Medical to your application. The event can be a partial transcription of a section of the audio stream, or it can be the entire transcription of that portion of the audio stream.</p>
     TranscriptEvent(crate::model::MedicalTranscriptEvent),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -1628,18 +1519,15 @@ impl MedicalTranscriptResultStream {
     }
 }
 
-/// <p>Represents a set of transcription results from the server to the client. It contains
-/// one or more segments of the transcription.</p>
+/// <p>Represents a set of transcription results from the server to the client. It contains one or more segments of the transcription.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MedicalTranscriptEvent {
-    /// <p>The transcription of the audio stream. The transcription is composed of all of the
-    /// items in the results list.</p>
+    /// <p>The transcription of the audio stream. The transcription is composed of all of the items in the results list.</p>
     pub transcript: std::option::Option<crate::model::MedicalTranscript>,
 }
 impl MedicalTranscriptEvent {
-    /// <p>The transcription of the audio stream. The transcription is composed of all of the
-    /// items in the results list.</p>
+    /// <p>The transcription of the audio stream. The transcription is composed of all of the items in the results list.</p>
     pub fn transcript(&self) -> std::option::Option<&crate::model::MedicalTranscript> {
         self.transcript.as_ref()
     }
@@ -1660,14 +1548,12 @@ pub mod medical_transcript_event {
         pub(crate) transcript: std::option::Option<crate::model::MedicalTranscript>,
     }
     impl Builder {
-        /// <p>The transcription of the audio stream. The transcription is composed of all of the
-        /// items in the results list.</p>
+        /// <p>The transcription of the audio stream. The transcription is composed of all of the items in the results list.</p>
         pub fn transcript(mut self, input: crate::model::MedicalTranscript) -> Self {
             self.transcript = Some(input);
             self
         }
-        /// <p>The transcription of the audio stream. The transcription is composed of all of the
-        /// items in the results list.</p>
+        /// <p>The transcription of the audio stream. The transcription is composed of all of the items in the results list.</p>
         pub fn set_transcript(
             mut self,
             input: std::option::Option<crate::model::MedicalTranscript>,
@@ -1690,19 +1576,15 @@ impl MedicalTranscriptEvent {
     }
 }
 
-/// <p>The medical transcript in a <a>MedicalTranscriptEvent</a>.</p>
+/// <p>The medical transcript in a <code>MedicalTranscriptEvent</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MedicalTranscript {
-    /// <p>
-    /// <a>MedicalResult</a> objects that contain the results of transcribing a
-    /// portion of the input audio stream. The array can be empty.</p>
+    /// <p> <code>MedicalResult</code> objects that contain the results of transcribing a portion of the input audio stream. The array can be empty.</p>
     pub results: std::option::Option<std::vec::Vec<crate::model::MedicalResult>>,
 }
 impl MedicalTranscript {
-    /// <p>
-    /// <a>MedicalResult</a> objects that contain the results of transcribing a
-    /// portion of the input audio stream. The array can be empty.</p>
+    /// <p> <code>MedicalResult</code> objects that contain the results of transcribing a portion of the input audio stream. The array can be empty.</p>
     pub fn results(&self) -> std::option::Option<&[crate::model::MedicalResult]> {
         self.results.as_deref()
     }
@@ -1727,18 +1609,14 @@ pub mod medical_transcript {
         ///
         /// To override the contents of this collection use [`set_results`](Self::set_results).
         ///
-        /// <p>
-        /// <a>MedicalResult</a> objects that contain the results of transcribing a
-        /// portion of the input audio stream. The array can be empty.</p>
-        pub fn results(mut self, input: impl Into<crate::model::MedicalResult>) -> Self {
+        /// <p> <code>MedicalResult</code> objects that contain the results of transcribing a portion of the input audio stream. The array can be empty.</p>
+        pub fn results(mut self, input: crate::model::MedicalResult) -> Self {
             let mut v = self.results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.results = Some(v);
             self
         }
-        /// <p>
-        /// <a>MedicalResult</a> objects that contain the results of transcribing a
-        /// portion of the input audio stream. The array can be empty.</p>
+        /// <p> <code>MedicalResult</code> objects that contain the results of transcribing a portion of the input audio stream. The array can be empty.</p>
         pub fn set_results(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MedicalResult>>,
@@ -1767,26 +1645,17 @@ impl MedicalTranscript {
 pub struct MedicalResult {
     /// <p>A unique identifier for the result.</p>
     pub result_id: std::option::Option<std::string::String>,
-    /// <p>The time, in seconds, from the beginning of the audio stream to the beginning of the
-    /// result.</p>
+    /// <p>The time, in seconds, from the beginning of the audio stream to the beginning of the result.</p>
     pub start_time: f64,
-    /// <p>The time, in seconds, from the beginning of the audio stream to the end of the
-    /// result.</p>
+    /// <p>The time, in seconds, from the beginning of the audio stream to the end of the result.</p>
     pub end_time: f64,
-    /// <p>Amazon Transcribe Medical divides the incoming audio stream into segments at natural points in the audio.
-    /// Transcription results are returned based on these segments.</p>
-    /// <p>The <code>IsPartial</code> field is <code>true</code> to indicate that Amazon Transcribe Medical has
-    /// additional transcription data to send. The <code>IsPartial</code> field is
-    /// <code>false</code> to indicate that this is the last transcription result for the
-    /// segment.</p>
+    /// <p>Amazon Transcribe Medical divides the incoming audio stream into segments at natural points in the audio. Transcription results are returned based on these segments.</p>
+    /// <p>The <code>IsPartial</code> field is <code>true</code> to indicate that Amazon Transcribe Medical has additional transcription data to send. The <code>IsPartial</code> field is <code>false</code> to indicate that this is the last transcription result for the segment.</p>
     pub is_partial: bool,
-    /// <p>A list of possible transcriptions of the audio. Each alternative typically contains
-    /// one <code>Item</code> that contains the result of the transcription.</p>
+    /// <p>A list of possible transcriptions of the audio. Each alternative typically contains one <code>Item</code> that contains the result of the transcription.</p>
     pub alternatives: std::option::Option<std::vec::Vec<crate::model::MedicalAlternative>>,
-    /// <p>When channel identification is enabled, Amazon Transcribe Medical transcribes the speech from each audio
-    /// channel separately.</p>
-    /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single
-    /// channel in your audio stream.</p>
+    /// <p>When channel identification is enabled, Amazon Transcribe Medical transcribes the speech from each audio channel separately.</p>
+    /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single channel in your audio stream.</p>
     pub channel_id: std::option::Option<std::string::String>,
 }
 impl MedicalResult {
@@ -1794,34 +1663,25 @@ impl MedicalResult {
     pub fn result_id(&self) -> std::option::Option<&str> {
         self.result_id.as_deref()
     }
-    /// <p>The time, in seconds, from the beginning of the audio stream to the beginning of the
-    /// result.</p>
+    /// <p>The time, in seconds, from the beginning of the audio stream to the beginning of the result.</p>
     pub fn start_time(&self) -> f64 {
         self.start_time
     }
-    /// <p>The time, in seconds, from the beginning of the audio stream to the end of the
-    /// result.</p>
+    /// <p>The time, in seconds, from the beginning of the audio stream to the end of the result.</p>
     pub fn end_time(&self) -> f64 {
         self.end_time
     }
-    /// <p>Amazon Transcribe Medical divides the incoming audio stream into segments at natural points in the audio.
-    /// Transcription results are returned based on these segments.</p>
-    /// <p>The <code>IsPartial</code> field is <code>true</code> to indicate that Amazon Transcribe Medical has
-    /// additional transcription data to send. The <code>IsPartial</code> field is
-    /// <code>false</code> to indicate that this is the last transcription result for the
-    /// segment.</p>
+    /// <p>Amazon Transcribe Medical divides the incoming audio stream into segments at natural points in the audio. Transcription results are returned based on these segments.</p>
+    /// <p>The <code>IsPartial</code> field is <code>true</code> to indicate that Amazon Transcribe Medical has additional transcription data to send. The <code>IsPartial</code> field is <code>false</code> to indicate that this is the last transcription result for the segment.</p>
     pub fn is_partial(&self) -> bool {
         self.is_partial
     }
-    /// <p>A list of possible transcriptions of the audio. Each alternative typically contains
-    /// one <code>Item</code> that contains the result of the transcription.</p>
+    /// <p>A list of possible transcriptions of the audio. Each alternative typically contains one <code>Item</code> that contains the result of the transcription.</p>
     pub fn alternatives(&self) -> std::option::Option<&[crate::model::MedicalAlternative]> {
         self.alternatives.as_deref()
     }
-    /// <p>When channel identification is enabled, Amazon Transcribe Medical transcribes the speech from each audio
-    /// channel separately.</p>
-    /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single
-    /// channel in your audio stream.</p>
+    /// <p>When channel identification is enabled, Amazon Transcribe Medical transcribes the speech from each audio channel separately.</p>
+    /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single channel in your audio stream.</p>
     pub fn channel_id(&self) -> std::option::Option<&str> {
         self.channel_id.as_deref()
     }
@@ -1863,46 +1723,34 @@ pub mod medical_result {
             self.result_id = input;
             self
         }
-        /// <p>The time, in seconds, from the beginning of the audio stream to the beginning of the
-        /// result.</p>
+        /// <p>The time, in seconds, from the beginning of the audio stream to the beginning of the result.</p>
         pub fn start_time(mut self, input: f64) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The time, in seconds, from the beginning of the audio stream to the beginning of the
-        /// result.</p>
+        /// <p>The time, in seconds, from the beginning of the audio stream to the beginning of the result.</p>
         pub fn set_start_time(mut self, input: std::option::Option<f64>) -> Self {
             self.start_time = input;
             self
         }
-        /// <p>The time, in seconds, from the beginning of the audio stream to the end of the
-        /// result.</p>
+        /// <p>The time, in seconds, from the beginning of the audio stream to the end of the result.</p>
         pub fn end_time(mut self, input: f64) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The time, in seconds, from the beginning of the audio stream to the end of the
-        /// result.</p>
+        /// <p>The time, in seconds, from the beginning of the audio stream to the end of the result.</p>
         pub fn set_end_time(mut self, input: std::option::Option<f64>) -> Self {
             self.end_time = input;
             self
         }
-        /// <p>Amazon Transcribe Medical divides the incoming audio stream into segments at natural points in the audio.
-        /// Transcription results are returned based on these segments.</p>
-        /// <p>The <code>IsPartial</code> field is <code>true</code> to indicate that Amazon Transcribe Medical has
-        /// additional transcription data to send. The <code>IsPartial</code> field is
-        /// <code>false</code> to indicate that this is the last transcription result for the
-        /// segment.</p>
+        /// <p>Amazon Transcribe Medical divides the incoming audio stream into segments at natural points in the audio. Transcription results are returned based on these segments.</p>
+        /// <p>The <code>IsPartial</code> field is <code>true</code> to indicate that Amazon Transcribe Medical has additional transcription data to send. The <code>IsPartial</code> field is <code>false</code> to indicate that this is the last transcription result for the segment.</p>
         pub fn is_partial(mut self, input: bool) -> Self {
             self.is_partial = Some(input);
             self
         }
-        /// <p>Amazon Transcribe Medical divides the incoming audio stream into segments at natural points in the audio.
-        /// Transcription results are returned based on these segments.</p>
-        /// <p>The <code>IsPartial</code> field is <code>true</code> to indicate that Amazon Transcribe Medical has
-        /// additional transcription data to send. The <code>IsPartial</code> field is
-        /// <code>false</code> to indicate that this is the last transcription result for the
-        /// segment.</p>
+        /// <p>Amazon Transcribe Medical divides the incoming audio stream into segments at natural points in the audio. Transcription results are returned based on these segments.</p>
+        /// <p>The <code>IsPartial</code> field is <code>true</code> to indicate that Amazon Transcribe Medical has additional transcription data to send. The <code>IsPartial</code> field is <code>false</code> to indicate that this is the last transcription result for the segment.</p>
         pub fn set_is_partial(mut self, input: std::option::Option<bool>) -> Self {
             self.is_partial = input;
             self
@@ -1911,16 +1759,14 @@ pub mod medical_result {
         ///
         /// To override the contents of this collection use [`set_alternatives`](Self::set_alternatives).
         ///
-        /// <p>A list of possible transcriptions of the audio. Each alternative typically contains
-        /// one <code>Item</code> that contains the result of the transcription.</p>
-        pub fn alternatives(mut self, input: impl Into<crate::model::MedicalAlternative>) -> Self {
+        /// <p>A list of possible transcriptions of the audio. Each alternative typically contains one <code>Item</code> that contains the result of the transcription.</p>
+        pub fn alternatives(mut self, input: crate::model::MedicalAlternative) -> Self {
             let mut v = self.alternatives.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alternatives = Some(v);
             self
         }
-        /// <p>A list of possible transcriptions of the audio. Each alternative typically contains
-        /// one <code>Item</code> that contains the result of the transcription.</p>
+        /// <p>A list of possible transcriptions of the audio. Each alternative typically contains one <code>Item</code> that contains the result of the transcription.</p>
         pub fn set_alternatives(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MedicalAlternative>>,
@@ -1928,18 +1774,14 @@ pub mod medical_result {
             self.alternatives = input;
             self
         }
-        /// <p>When channel identification is enabled, Amazon Transcribe Medical transcribes the speech from each audio
-        /// channel separately.</p>
-        /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single
-        /// channel in your audio stream.</p>
+        /// <p>When channel identification is enabled, Amazon Transcribe Medical transcribes the speech from each audio channel separately.</p>
+        /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single channel in your audio stream.</p>
         pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_id = Some(input.into());
             self
         }
-        /// <p>When channel identification is enabled, Amazon Transcribe Medical transcribes the speech from each audio
-        /// channel separately.</p>
-        /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single
-        /// channel in your audio stream.</p>
+        /// <p>When channel identification is enabled, Amazon Transcribe Medical transcribes the speech from each audio channel separately.</p>
+        /// <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single channel in your audio stream.</p>
         pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_id = input;
             self
@@ -1970,8 +1812,7 @@ impl MedicalResult {
 pub struct MedicalAlternative {
     /// <p>The text that was transcribed from the audio.</p>
     pub transcript: std::option::Option<std::string::String>,
-    /// <p>A list of objects that contains words and punctuation marks that represents one or
-    /// more interpretations of the input audio.</p>
+    /// <p>A list of objects that contains words and punctuation marks that represents one or more interpretations of the input audio.</p>
     pub items: std::option::Option<std::vec::Vec<crate::model::MedicalItem>>,
     /// <p>Contains the medical entities identified as personal health information in the transcription output.</p>
     pub entities: std::option::Option<std::vec::Vec<crate::model::MedicalEntity>>,
@@ -1981,8 +1822,7 @@ impl MedicalAlternative {
     pub fn transcript(&self) -> std::option::Option<&str> {
         self.transcript.as_deref()
     }
-    /// <p>A list of objects that contains words and punctuation marks that represents one or
-    /// more interpretations of the input audio.</p>
+    /// <p>A list of objects that contains words and punctuation marks that represents one or more interpretations of the input audio.</p>
     pub fn items(&self) -> std::option::Option<&[crate::model::MedicalItem]> {
         self.items.as_deref()
     }
@@ -2025,16 +1865,14 @@ pub mod medical_alternative {
         ///
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
-        /// <p>A list of objects that contains words and punctuation marks that represents one or
-        /// more interpretations of the input audio.</p>
-        pub fn items(mut self, input: impl Into<crate::model::MedicalItem>) -> Self {
+        /// <p>A list of objects that contains words and punctuation marks that represents one or more interpretations of the input audio.</p>
+        pub fn items(mut self, input: crate::model::MedicalItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
-        /// <p>A list of objects that contains words and punctuation marks that represents one or
-        /// more interpretations of the input audio.</p>
+        /// <p>A list of objects that contains words and punctuation marks that represents one or more interpretations of the input audio.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MedicalItem>>,
@@ -2047,9 +1885,9 @@ pub mod medical_alternative {
         /// To override the contents of this collection use [`set_entities`](Self::set_entities).
         ///
         /// <p>Contains the medical entities identified as personal health information in the transcription output.</p>
-        pub fn entities(mut self, input: impl Into<crate::model::MedicalEntity>) -> Self {
+        pub fn entities(mut self, input: crate::model::MedicalEntity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entities = Some(v);
             self
         }
@@ -2088,12 +1926,9 @@ pub struct MedicalEntity {
     pub end_time: f64,
     /// <p>The type of personal health information of the medical entity.</p>
     pub category: std::option::Option<std::string::String>,
-    /// <p>The word or words in the transcription output that have been identified as a
-    /// medical entity.</p>
+    /// <p>The word or words in the transcription output that have been identified as a medical entity.</p>
     pub content: std::option::Option<std::string::String>,
-    /// <p>A value between zero and one that Amazon Transcribe Medical assigned to the personal health information
-    /// that it identified in the source audio. Larger values indicate that Amazon Transcribe Medical has higher
-    /// confidence in the personal health information that it identified.</p>
+    /// <p>A value between zero and one that Amazon Transcribe Medical assigned to the personal health information that it identified in the source audio. Larger values indicate that Amazon Transcribe Medical has higher confidence in the personal health information that it identified.</p>
     pub confidence: std::option::Option<f64>,
 }
 impl MedicalEntity {
@@ -2109,14 +1944,11 @@ impl MedicalEntity {
     pub fn category(&self) -> std::option::Option<&str> {
         self.category.as_deref()
     }
-    /// <p>The word or words in the transcription output that have been identified as a
-    /// medical entity.</p>
+    /// <p>The word or words in the transcription output that have been identified as a medical entity.</p>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
-    /// <p>A value between zero and one that Amazon Transcribe Medical assigned to the personal health information
-    /// that it identified in the source audio. Larger values indicate that Amazon Transcribe Medical has higher
-    /// confidence in the personal health information that it identified.</p>
+    /// <p>A value between zero and one that Amazon Transcribe Medical assigned to the personal health information that it identified in the source audio. Larger values indicate that Amazon Transcribe Medical has higher confidence in the personal health information that it identified.</p>
     pub fn confidence(&self) -> std::option::Option<f64> {
         self.confidence
     }
@@ -2175,28 +2007,22 @@ pub mod medical_entity {
             self.category = input;
             self
         }
-        /// <p>The word or words in the transcription output that have been identified as a
-        /// medical entity.</p>
+        /// <p>The word or words in the transcription output that have been identified as a medical entity.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.content = Some(input.into());
             self
         }
-        /// <p>The word or words in the transcription output that have been identified as a
-        /// medical entity.</p>
+        /// <p>The word or words in the transcription output that have been identified as a medical entity.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
         }
-        /// <p>A value between zero and one that Amazon Transcribe Medical assigned to the personal health information
-        /// that it identified in the source audio. Larger values indicate that Amazon Transcribe Medical has higher
-        /// confidence in the personal health information that it identified.</p>
+        /// <p>A value between zero and one that Amazon Transcribe Medical assigned to the personal health information that it identified in the source audio. Larger values indicate that Amazon Transcribe Medical has higher confidence in the personal health information that it identified.</p>
         pub fn confidence(mut self, input: f64) -> Self {
             self.confidence = Some(input);
             self
         }
-        /// <p>A value between zero and one that Amazon Transcribe Medical assigned to the personal health information
-        /// that it identified in the source audio. Larger values indicate that Amazon Transcribe Medical has higher
-        /// confidence in the personal health information that it identified.</p>
+        /// <p>A value between zero and one that Amazon Transcribe Medical assigned to the personal health information that it identified in the source audio. Larger values indicate that Amazon Transcribe Medical has higher confidence in the personal health information that it identified.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f64>) -> Self {
             self.confidence = input;
             self
@@ -2224,45 +2050,29 @@ impl MedicalEntity {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MedicalItem {
-    /// <p>The number of seconds into an audio stream that indicates the creation time of an
-    /// item.</p>
+    /// <p>The number of seconds into an audio stream that indicates the creation time of an item.</p>
     pub start_time: f64,
-    /// <p>The number of seconds into an audio stream that indicates the creation time of an
-    /// item.</p>
+    /// <p>The number of seconds into an audio stream that indicates the creation time of an item.</p>
     pub end_time: f64,
-    /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word
-    /// that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item
-    /// was interpreted as a pause in the input audio, such as a period to indicate the end of a
-    /// sentence.</p>
+    /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item was interpreted as a pause in the input audio, such as a period to indicate the end of a sentence.</p>
     pub r#type: std::option::Option<crate::model::ItemType>,
     /// <p>The word or punctuation mark that was recognized in the input audio.</p>
     pub content: std::option::Option<std::string::String>,
-    /// <p>A value between 0 and 1 for an item that is a confidence score that Amazon Transcribe Medical assigns to
-    /// each word that it transcribes.</p>
+    /// <p>A value between 0 and 1 for an item that is a confidence score that Amazon Transcribe Medical assigns to each word that it transcribes.</p>
     pub confidence: std::option::Option<f64>,
-    /// <p>If speaker identification is enabled, shows the integer values that correspond to the
-    /// different speakers identified in the stream. For example, if the value of
-    /// <code>Speaker</code> in the stream is either a <code>0</code> or a <code>1</code>,
-    /// that indicates that Amazon Transcribe Medical has identified two speakers in the stream. The value of
-    /// <code>0</code> corresponds to one speaker and the value of <code>1</code>
-    /// corresponds to the other speaker.</p>
+    /// <p>If speaker identification is enabled, shows the integer values that correspond to the different speakers identified in the stream. For example, if the value of <code>Speaker</code> in the stream is either a <code>0</code> or a <code>1</code>, that indicates that Amazon Transcribe Medical has identified two speakers in the stream. The value of <code>0</code> corresponds to one speaker and the value of <code>1</code> corresponds to the other speaker.</p>
     pub speaker: std::option::Option<std::string::String>,
 }
 impl MedicalItem {
-    /// <p>The number of seconds into an audio stream that indicates the creation time of an
-    /// item.</p>
+    /// <p>The number of seconds into an audio stream that indicates the creation time of an item.</p>
     pub fn start_time(&self) -> f64 {
         self.start_time
     }
-    /// <p>The number of seconds into an audio stream that indicates the creation time of an
-    /// item.</p>
+    /// <p>The number of seconds into an audio stream that indicates the creation time of an item.</p>
     pub fn end_time(&self) -> f64 {
         self.end_time
     }
-    /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word
-    /// that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item
-    /// was interpreted as a pause in the input audio, such as a period to indicate the end of a
-    /// sentence.</p>
+    /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item was interpreted as a pause in the input audio, such as a period to indicate the end of a sentence.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ItemType> {
         self.r#type.as_ref()
     }
@@ -2270,17 +2080,11 @@ impl MedicalItem {
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
-    /// <p>A value between 0 and 1 for an item that is a confidence score that Amazon Transcribe Medical assigns to
-    /// each word that it transcribes.</p>
+    /// <p>A value between 0 and 1 for an item that is a confidence score that Amazon Transcribe Medical assigns to each word that it transcribes.</p>
     pub fn confidence(&self) -> std::option::Option<f64> {
         self.confidence
     }
-    /// <p>If speaker identification is enabled, shows the integer values that correspond to the
-    /// different speakers identified in the stream. For example, if the value of
-    /// <code>Speaker</code> in the stream is either a <code>0</code> or a <code>1</code>,
-    /// that indicates that Amazon Transcribe Medical has identified two speakers in the stream. The value of
-    /// <code>0</code> corresponds to one speaker and the value of <code>1</code>
-    /// corresponds to the other speaker.</p>
+    /// <p>If speaker identification is enabled, shows the integer values that correspond to the different speakers identified in the stream. For example, if the value of <code>Speaker</code> in the stream is either a <code>0</code> or a <code>1</code>, that indicates that Amazon Transcribe Medical has identified two speakers in the stream. The value of <code>0</code> corresponds to one speaker and the value of <code>1</code> corresponds to the other speaker.</p>
     pub fn speaker(&self) -> std::option::Option<&str> {
         self.speaker.as_deref()
     }
@@ -2311,42 +2115,32 @@ pub mod medical_item {
         pub(crate) speaker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The number of seconds into an audio stream that indicates the creation time of an
-        /// item.</p>
+        /// <p>The number of seconds into an audio stream that indicates the creation time of an item.</p>
         pub fn start_time(mut self, input: f64) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The number of seconds into an audio stream that indicates the creation time of an
-        /// item.</p>
+        /// <p>The number of seconds into an audio stream that indicates the creation time of an item.</p>
         pub fn set_start_time(mut self, input: std::option::Option<f64>) -> Self {
             self.start_time = input;
             self
         }
-        /// <p>The number of seconds into an audio stream that indicates the creation time of an
-        /// item.</p>
+        /// <p>The number of seconds into an audio stream that indicates the creation time of an item.</p>
         pub fn end_time(mut self, input: f64) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The number of seconds into an audio stream that indicates the creation time of an
-        /// item.</p>
+        /// <p>The number of seconds into an audio stream that indicates the creation time of an item.</p>
         pub fn set_end_time(mut self, input: std::option::Option<f64>) -> Self {
             self.end_time = input;
             self
         }
-        /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word
-        /// that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item
-        /// was interpreted as a pause in the input audio, such as a period to indicate the end of a
-        /// sentence.</p>
+        /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item was interpreted as a pause in the input audio, such as a period to indicate the end of a sentence.</p>
         pub fn r#type(mut self, input: crate::model::ItemType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word
-        /// that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item
-        /// was interpreted as a pause in the input audio, such as a period to indicate the end of a
-        /// sentence.</p>
+        /// <p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item was interpreted as a pause in the input audio, such as a period to indicate the end of a sentence.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ItemType>) -> Self {
             self.r#type = input;
             self
@@ -2361,34 +2155,22 @@ pub mod medical_item {
             self.content = input;
             self
         }
-        /// <p>A value between 0 and 1 for an item that is a confidence score that Amazon Transcribe Medical assigns to
-        /// each word that it transcribes.</p>
+        /// <p>A value between 0 and 1 for an item that is a confidence score that Amazon Transcribe Medical assigns to each word that it transcribes.</p>
         pub fn confidence(mut self, input: f64) -> Self {
             self.confidence = Some(input);
             self
         }
-        /// <p>A value between 0 and 1 for an item that is a confidence score that Amazon Transcribe Medical assigns to
-        /// each word that it transcribes.</p>
+        /// <p>A value between 0 and 1 for an item that is a confidence score that Amazon Transcribe Medical assigns to each word that it transcribes.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f64>) -> Self {
             self.confidence = input;
             self
         }
-        /// <p>If speaker identification is enabled, shows the integer values that correspond to the
-        /// different speakers identified in the stream. For example, if the value of
-        /// <code>Speaker</code> in the stream is either a <code>0</code> or a <code>1</code>,
-        /// that indicates that Amazon Transcribe Medical has identified two speakers in the stream. The value of
-        /// <code>0</code> corresponds to one speaker and the value of <code>1</code>
-        /// corresponds to the other speaker.</p>
+        /// <p>If speaker identification is enabled, shows the integer values that correspond to the different speakers identified in the stream. For example, if the value of <code>Speaker</code> in the stream is either a <code>0</code> or a <code>1</code>, that indicates that Amazon Transcribe Medical has identified two speakers in the stream. The value of <code>0</code> corresponds to one speaker and the value of <code>1</code> corresponds to the other speaker.</p>
         pub fn speaker(mut self, input: impl Into<std::string::String>) -> Self {
             self.speaker = Some(input.into());
             self
         }
-        /// <p>If speaker identification is enabled, shows the integer values that correspond to the
-        /// different speakers identified in the stream. For example, if the value of
-        /// <code>Speaker</code> in the stream is either a <code>0</code> or a <code>1</code>,
-        /// that indicates that Amazon Transcribe Medical has identified two speakers in the stream. The value of
-        /// <code>0</code> corresponds to one speaker and the value of <code>1</code>
-        /// corresponds to the other speaker.</p>
+        /// <p>If speaker identification is enabled, shows the integer values that correspond to the different speakers identified in the stream. For example, if the value of <code>Speaker</code> in the stream is either a <code>0</code> or a <code>1</code>, that indicates that Amazon Transcribe Medical has identified two speakers in the stream. The value of <code>0</code> corresponds to one speaker and the value of <code>1</code> corresponds to the other speaker.</p>
         pub fn set_speaker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.speaker = input;
             self

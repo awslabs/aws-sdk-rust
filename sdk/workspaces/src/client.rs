@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon WorkSpaces
@@ -258,6 +258,7 @@ where
     ///
     /// See [`DescribeWorkspaceBundles`](crate::client::fluent_builders::DescribeWorkspaceBundles) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeWorkspaceBundles::into_paginator).
     pub fn describe_workspace_bundles(&self) -> fluent_builders::DescribeWorkspaceBundles<C, M, R> {
         fluent_builders::DescribeWorkspaceBundles::new(self.handle.clone())
     }
@@ -265,6 +266,7 @@ where
     ///
     /// See [`DescribeWorkspaceDirectories`](crate::client::fluent_builders::DescribeWorkspaceDirectories) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeWorkspaceDirectories::into_paginator).
     pub fn describe_workspace_directories(
         &self,
     ) -> fluent_builders::DescribeWorkspaceDirectories<C, M, R> {
@@ -290,6 +292,7 @@ where
     ///
     /// See [`DescribeWorkspaces`](crate::client::fluent_builders::DescribeWorkspaces) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeWorkspaces::into_paginator).
     pub fn describe_workspaces(&self) -> fluent_builders::DescribeWorkspaces<C, M, R> {
         fluent_builders::DescribeWorkspaces::new(self.handle.clone())
     }
@@ -508,15 +511,10 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AssociateConnectionAlias`.
     ///
-    /// <p>Associates the specified connection alias with the specified directory to enable cross-Region redirection.
-    /// For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
-    /// Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
-    ///
-    /// <note>
-    /// <p>Before performing this operation, call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html">
-    /// DescribeConnectionAliases</a> to make sure that the current state of the connection alias is <code>CREATED</code>.</p>
+    /// <p>Associates the specified connection alias with the specified directory to enable cross-Region redirection. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p> <note>
+    /// <p>Before performing this operation, call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html"> DescribeConnectionAliases</a> to make sure that the current state of the connection alias is <code>CREATED</code>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateConnectionAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -561,10 +559,10 @@ pub mod fluent_builders {
                 crate::input::AssociateConnectionAliasInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -573,8 +571,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the connection alias.</p>
-        pub fn alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_id(inp);
+        pub fn alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_id(input.into());
             self
         }
         /// <p>The identifier of the connection alias.</p>
@@ -583,8 +581,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the directory to associate the connection alias with.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The identifier of the directory to associate the connection alias with.</p>
@@ -596,7 +594,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateIpGroups`.
     ///
     /// <p>Associates the specified IP access control group with the specified directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateIpGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -641,10 +639,10 @@ pub mod fluent_builders {
                 crate::input::AssociateIpGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -653,8 +651,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory.</p>
-        pub fn directory_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(inp);
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory.</p>
@@ -667,8 +665,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_group_ids`](Self::set_group_ids).
         ///
         /// <p>The identifiers of one or more IP access control groups.</p>
-        pub fn group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_ids(inp);
+        pub fn group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_ids(input.into());
             self
         }
         /// <p>The identifiers of one or more IP access control groups.</p>
@@ -683,9 +681,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AuthorizeIpRules`.
     ///
     /// <p>Adds one or more rules to the specified IP access control group.</p>
-    /// <p>This action gives users permission to access their WorkSpaces from the CIDR address
-    /// ranges specified in the rules.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This action gives users permission to access their WorkSpaces from the CIDR address ranges specified in the rules.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AuthorizeIpRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -730,10 +727,10 @@ pub mod fluent_builders {
                 crate::input::AuthorizeIpRulesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -742,8 +739,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the group.</p>
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// <p>The identifier of the group.</p>
@@ -756,8 +753,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_user_rules`](Self::set_user_rules).
         ///
         /// <p>The rules to add to the group.</p>
-        pub fn user_rules(mut self, inp: impl Into<crate::model::IpRuleItem>) -> Self {
-            self.inner = self.inner.user_rules(inp);
+        pub fn user_rules(mut self, input: crate::model::IpRuleItem) -> Self {
+            self.inner = self.inner.user_rules(input);
             self
         }
         /// <p>The rules to add to the group.</p>
@@ -771,21 +768,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CopyWorkspaceImage`.
     ///
-    /// <p>Copies the specified image from the specified Region to the current Region.
-    /// For more information about copying images, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/copy-custom-image.html">
-    /// Copy a Custom WorkSpaces Image</a>.</p>
-    ///
+    /// <p>Copies the specified image from the specified Region to the current Region. For more information about copying images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/copy-custom-image.html"> Copy a Custom WorkSpaces Image</a>.</p>
     /// <p>In the China (Ningxia) Region, you can copy images only within the same Region.</p>
-    ///
-    /// <p>In Amazon Web Services GovCloud (US), to copy images to and from other Regions, contact Amazon Web Services Support.</p>
-    ///
-    /// <important>
-    /// <p>Before copying a shared image, be sure to verify that it has been shared from the
-    /// correct Amazon Web Services account. To determine if an image has been shared and to see the
-    /// ID of the Amazon Web Services account that owns an image, use the <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">DescribeWorkSpaceImages</a> and <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImagePermissions.html">DescribeWorkspaceImagePermissions</a> API operations. </p>
+    /// <p>In Amazon Web Services GovCloud (US), to copy images to and from other Regions, contact Amazon Web Services Support.</p> <important>
+    /// <p>Before copying a shared image, be sure to verify that it has been shared from the correct Amazon Web Services account. To determine if an image has been shared and to see the ID of the Amazon Web Services account that owns an image, use the <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">DescribeWorkSpaceImages</a> and <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImagePermissions.html">DescribeWorkspaceImagePermissions</a> API operations. </p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CopyWorkspaceImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -830,10 +818,10 @@ pub mod fluent_builders {
                 crate::input::CopyWorkspaceImageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -842,8 +830,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the image.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the image.</p>
@@ -852,8 +840,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the image.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the image.</p>
@@ -862,8 +850,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the source image.</p>
-        pub fn source_image_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_image_id(inp);
+        pub fn source_image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_image_id(input.into());
             self
         }
         /// <p>The identifier of the source image.</p>
@@ -875,8 +863,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the source Region.</p>
-        pub fn source_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_region(inp);
+        pub fn source_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_region(input.into());
             self
         }
         /// <p>The identifier of the source Region.</p>
@@ -892,8 +880,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the image.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags for the image.</p>
@@ -907,10 +895,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateConnectionAlias`.
     ///
-    /// <p>Creates the specified connection alias for use with cross-Region redirection. For more information, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
-    /// Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates the specified connection alias for use with cross-Region redirection. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConnectionAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -955,10 +941,10 @@ pub mod fluent_builders {
                 crate::input::CreateConnectionAliasInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -966,23 +952,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
-        ///
-        /// <important>
-        /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same
-        /// connection string with a different account, even if you delete all instances of it from the original account. The
-        /// connection string is globally reserved for your account.</p>
+        /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p> <important>
+        /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.</p>
         /// </important>
-        pub fn connection_string(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_string(inp);
+        pub fn connection_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_string(input.into());
             self
         }
-        /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
-        ///
-        /// <important>
-        /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same
-        /// connection string with a different account, even if you delete all instances of it from the original account. The
-        /// connection string is globally reserved for your account.</p>
+        /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p> <important>
+        /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.</p>
         /// </important>
         pub fn set_connection_string(
             mut self,
@@ -996,8 +974,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to associate with the connection alias.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to associate with the connection alias.</p>
@@ -1012,16 +990,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateIpGroup`.
     ///
     /// <p>Creates an IP access control group.</p>
-    /// <p>An IP access control group provides you with the ability to control the IP addresses
-    /// from which users are allowed to access their WorkSpaces. To specify the CIDR address
-    /// ranges, add rules to your IP access control group and then associate the group with your
-    /// directory. You can add rules when you create the group or at any time using <a>AuthorizeIpRules</a>.</p>
-    ///
-    /// <p>There is a default IP access control group associated with your directory. If you don't
-    /// associate an IP access control group with your directory, the default group is used. The
-    /// default group includes a default rule that allows users to access their WorkSpaces from
-    /// anywhere. You cannot modify the default IP access control group for your directory.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>An IP access control group provides you with the ability to control the IP addresses from which users are allowed to access their WorkSpaces. To specify the CIDR address ranges, add rules to your IP access control group and then associate the group with your directory. You can add rules when you create the group or at any time using <code>AuthorizeIpRules</code>.</p>
+    /// <p>There is a default IP access control group associated with your directory. If you don't associate an IP access control group with your directory, the default group is used. The default group includes a default rule that allows users to access their WorkSpaces from anywhere. You cannot modify the default IP access control group for your directory.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIpGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1066,10 +1037,10 @@ pub mod fluent_builders {
                 crate::input::CreateIpGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1078,8 +1049,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the group.</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The name of the group.</p>
@@ -1088,8 +1059,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the group.</p>
-        pub fn group_desc(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_desc(inp);
+        pub fn group_desc(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_desc(input.into());
             self
         }
         /// <p>The description of the group.</p>
@@ -1102,8 +1073,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_user_rules`](Self::set_user_rules).
         ///
         /// <p>The rules to add to the group.</p>
-        pub fn user_rules(mut self, inp: impl Into<crate::model::IpRuleItem>) -> Self {
-            self.inner = self.inner.user_rules(inp);
+        pub fn user_rules(mut self, input: crate::model::IpRuleItem) -> Self {
+            self.inner = self.inner.user_rules(input);
             self
         }
         /// <p>The rules to add to the group.</p>
@@ -1119,8 +1090,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
@@ -1135,7 +1106,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateTags`.
     ///
     /// <p>Creates the specified tags for the specified WorkSpaces resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1180,10 +1151,10 @@ pub mod fluent_builders {
                 crate::input::CreateTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1191,14 +1162,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-        /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
-        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-        /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_id(input);
             self
@@ -1208,8 +1177,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
@@ -1223,31 +1192,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateUpdatedWorkspaceImage`.
     ///
-    /// <p>Creates a new updated WorkSpace image based on the specified source image. The
-    /// new updated WorkSpace image has the latest drivers and other updates required by
-    /// the Amazon WorkSpaces components.</p>
-    ///
-    /// <p>To determine which WorkSpace images need to be updated with the latest Amazon
-    /// WorkSpaces requirements, use
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">
-    /// DescribeWorkspaceImages</a>.</p>
-    ///
-    /// <note>
+    /// <p>Creates a new updated WorkSpace image based on the specified source image. The new updated WorkSpace image has the latest drivers and other updates required by the Amazon WorkSpaces components.</p>
+    /// <p>To determine which WorkSpace images need to be updated with the latest Amazon WorkSpaces requirements, use <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html"> DescribeWorkspaceImages</a>.</p> <note>
     /// <ul>
-    /// <li>
-    /// <p>Only Windows 10, Windows Sever 2016, and Windows Server 2019 WorkSpace images can be programmatically updated at this time.</p>
-    /// </li>
-    /// <li>
-    /// <p>Microsoft Windows updates and other application updates are not included
-    /// in the update process.</p>
-    /// </li>
-    /// <li>
-    /// <p>The source WorkSpace image is not deleted. You can delete the source image after you've
-    /// verified your new updated image and created a new bundle. </p>
-    /// </li>
+    /// <li> <p>Only Windows 10, Windows Sever 2016, and Windows Server 2019 WorkSpace images can be programmatically updated at this time.</p> </li>
+    /// <li> <p>Microsoft Windows updates and other application updates are not included in the update process.</p> </li>
+    /// <li> <p>The source WorkSpace image is not deleted. You can delete the source image after you've verified your new updated image and created a new bundle. </p> </li>
     /// </ul>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUpdatedWorkspaceImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1292,10 +1245,10 @@ pub mod fluent_builders {
                 crate::input::CreateUpdatedWorkspaceImageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1304,8 +1257,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the new updated WorkSpace image.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the new updated WorkSpace image.</p>
@@ -1314,8 +1267,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of whether updates for the WorkSpace image are available.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of whether updates for the WorkSpace image are available.</p>
@@ -1324,8 +1277,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the source WorkSpace image.</p>
-        pub fn source_image_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_image_id(inp);
+        pub fn source_image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_image_id(input.into());
             self
         }
         /// <p>The identifier of the source WorkSpace image.</p>
@@ -1340,21 +1293,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags that you want to add to the new updated WorkSpace image.</p>
-        ///
-        /// <note>
-        /// <p>To add tags at the same time when you're creating the updated image, you must create
-        /// an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+        /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note>
+        /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
         /// </note>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The tags that you want to add to the new updated WorkSpace image.</p>
-        ///
-        /// <note>
-        /// <p>To add tags at the same time when you're creating the updated image, you must create
-        /// an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+        /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note>
+        /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -1366,10 +1313,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateWorkspaceBundle`.
     ///
-    /// <p>Creates the specified WorkSpace bundle. For more information about creating WorkSpace bundles, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/create-custom-bundle.html">
-    /// Create a Custom WorkSpaces Image and Bundle</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates the specified WorkSpace bundle. For more information about creating WorkSpace bundles, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/create-custom-bundle.html"> Create a Custom WorkSpaces Image and Bundle</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkspaceBundle<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1414,10 +1359,10 @@ pub mod fluent_builders {
                 crate::input::CreateWorkspaceBundleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1426,8 +1371,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bundle.</p>
-        pub fn bundle_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bundle_name(inp);
+        pub fn bundle_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bundle_name(input.into());
             self
         }
         /// <p>The name of the bundle.</p>
@@ -1436,8 +1381,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the bundle.</p>
-        pub fn bundle_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bundle_description(inp);
+        pub fn bundle_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bundle_description(input.into());
             self
         }
         /// <p>The description of the bundle.</p>
@@ -1449,8 +1394,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the image that is used to create the bundle.</p>
-        pub fn image_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_id(inp);
+        pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_id(input.into());
             self
         }
         /// <p>The identifier of the image that is used to create the bundle.</p>
@@ -1459,8 +1404,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes the compute type of the bundle.</p>
-        pub fn compute_type(mut self, inp: crate::model::ComputeType) -> Self {
-            self.inner = self.inner.compute_type(inp);
+        pub fn compute_type(mut self, input: crate::model::ComputeType) -> Self {
+            self.inner = self.inner.compute_type(input);
             self
         }
         /// <p>Describes the compute type of the bundle.</p>
@@ -1472,8 +1417,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes the user volume for a WorkSpace bundle.</p>
-        pub fn user_storage(mut self, inp: crate::model::UserStorage) -> Self {
-            self.inner = self.inner.user_storage(inp);
+        pub fn user_storage(mut self, input: crate::model::UserStorage) -> Self {
+            self.inner = self.inner.user_storage(input);
             self
         }
         /// <p>Describes the user volume for a WorkSpace bundle.</p>
@@ -1485,8 +1430,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes the root volume for a WorkSpace bundle.</p>
-        pub fn root_storage(mut self, inp: crate::model::RootStorage) -> Self {
-            self.inner = self.inner.root_storage(inp);
+        pub fn root_storage(mut self, input: crate::model::RootStorage) -> Self {
+            self.inner = self.inner.root_storage(input);
             self
         }
         /// <p>Describes the root volume for a WorkSpace bundle.</p>
@@ -1501,21 +1446,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags associated with the bundle.</p>
-        ///
-        /// <note>
-        /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that
-        /// grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+        /// <p>The tags associated with the bundle.</p> <note>
+        /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
         /// </note>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The tags associated with the bundle.</p>
-        ///
-        /// <note>
-        /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that
-        /// grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+        /// <p>The tags associated with the bundle.</p> <note>
+        /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -1529,7 +1468,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates one or more WorkSpaces.</p>
     /// <p>This operation is asynchronous and returns before the WorkSpaces are created.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkspaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1574,10 +1513,10 @@ pub mod fluent_builders {
                 crate::input::CreateWorkspacesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1590,8 +1529,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_workspaces`](Self::set_workspaces).
         ///
         /// <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>
-        pub fn workspaces(mut self, inp: impl Into<crate::model::WorkspaceRequest>) -> Self {
-            self.inner = self.inner.workspaces(inp);
+        pub fn workspaces(mut self, input: crate::model::WorkspaceRequest) -> Self {
+            self.inner = self.inner.workspaces(input);
             self
         }
         /// <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>
@@ -1605,25 +1544,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteConnectionAlias`.
     ///
-    /// <p>Deletes the specified connection alias. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
-    /// Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
-    ///
-    /// <important>
-    /// <p>
-    /// <b>If you will no longer be using a fully qualified domain name (FQDN) as the registration code
-    /// for your WorkSpaces users, you must take certain precautions to prevent potential security issues.</b>
-    /// For more information, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html#cross-region-redirection-security-considerations">
-    /// Security Considerations if You Stop Using Cross-Region Redirection</a>.</p>
-    /// </important>
-    ///
-    /// <note>
-    /// <p>To delete a connection alias that has been shared, the shared account must first disassociate the connection alias
-    /// from any directories it has been associated with. Then you must unshare the connection alias from the account it has
-    /// been shared with. You can delete a connection alias only after it is no longer shared with any accounts or
-    /// associated with any directories.</p>
+    /// <p>Deletes the specified connection alias. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p> <important>
+    /// <p> <b>If you will no longer be using a fully qualified domain name (FQDN) as the registration code for your WorkSpaces users, you must take certain precautions to prevent potential security issues.</b> For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html#cross-region-redirection-security-considerations"> Security Considerations if You Stop Using Cross-Region Redirection</a>.</p>
+    /// </important> <note>
+    /// <p>To delete a connection alias that has been shared, the shared account must first disassociate the connection alias from any directories it has been associated with. Then you must unshare the connection alias from the account it has been shared with. You can delete a connection alias only after it is no longer shared with any accounts or associated with any directories.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConnectionAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1668,10 +1594,10 @@ pub mod fluent_builders {
                 crate::input::DeleteConnectionAliasInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1680,8 +1606,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the connection alias to delete.</p>
-        pub fn alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_id(inp);
+        pub fn alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_id(input.into());
             self
         }
         /// <p>The identifier of the connection alias to delete.</p>
@@ -1694,7 +1620,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified IP access control group.</p>
     /// <p>You cannot delete an IP access control group that is associated with a directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIpGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1739,10 +1665,10 @@ pub mod fluent_builders {
                 crate::input::DeleteIpGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1751,8 +1677,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the IP access control group.</p>
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// <p>The identifier of the IP access control group.</p>
@@ -1764,7 +1690,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTags`.
     ///
     /// <p>Deletes the specified tags from the specified WorkSpaces resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1809,10 +1735,10 @@ pub mod fluent_builders {
                 crate::input::DeleteTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1820,14 +1746,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-        /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
-        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-        /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_id(input);
             self
@@ -1837,8 +1761,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys.</p>
@@ -1852,10 +1776,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteWorkspaceBundle`.
     ///
-    /// <p>Deletes the specified WorkSpace bundle. For more information about deleting WorkSpace bundles, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/delete_bundle.html">
-    /// Delete a Custom WorkSpaces Bundle or Image</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the specified WorkSpace bundle. For more information about deleting WorkSpace bundles, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/delete_bundle.html"> Delete a Custom WorkSpaces Bundle or Image</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWorkspaceBundle<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1900,10 +1822,10 @@ pub mod fluent_builders {
                 crate::input::DeleteWorkspaceBundleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1912,8 +1834,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the bundle.</p>
-        pub fn bundle_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bundle_id(inp);
+        pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bundle_id(input.into());
             self
         }
         /// <p>The identifier of the bundle.</p>
@@ -1924,10 +1846,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteWorkspaceImage`.
     ///
-    /// <p>Deletes the specified image from your account. To delete an image, you must first delete
-    /// any bundles that are associated with the image and unshare the image if it is shared with
-    /// other accounts. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the specified image from your account. To delete an image, you must first delete any bundles that are associated with the image and unshare the image if it is shared with other accounts. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWorkspaceImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1972,10 +1892,10 @@ pub mod fluent_builders {
                 crate::input::DeleteWorkspaceImageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1984,8 +1904,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the image.</p>
-        pub fn image_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_id(inp);
+        pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_id(input.into());
             self
         }
         /// <p>The identifier of the image.</p>
@@ -1996,24 +1916,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeregisterWorkspaceDirectory`.
     ///
-    /// <p>Deregisters the specified directory. This operation is asynchronous
-    /// and returns before the WorkSpace directory is deregistered. If any WorkSpaces are
-    /// registered to this directory, you must remove them before you can deregister the directory.</p>
-    ///
-    /// <note>
-    /// <p>Simple AD and AD Connector are made available to you free of charge to use with WorkSpaces.
-    /// If there are no WorkSpaces being used with your Simple AD or AD Connector directory for 30
-    /// consecutive days, this directory will be automatically deregistered for use with Amazon WorkSpaces,
-    /// and you will be charged for this directory as per the
-    /// <a href="http://aws.amazon.com/directoryservice/pricing/">Directory Service pricing terms</a>.</p>
-    ///
-    /// <p>To delete empty directories, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/delete-workspaces-directory.html">
-    /// Delete the Directory for Your WorkSpaces</a>. If you delete your
-    /// Simple AD or AD Connector directory, you can always create a new one when you want to start using
-    /// WorkSpaces again.</p>
+    /// <p>Deregisters the specified directory. This operation is asynchronous and returns before the WorkSpace directory is deregistered. If any WorkSpaces are registered to this directory, you must remove them before you can deregister the directory.</p> <note>
+    /// <p>Simple AD and AD Connector are made available to you free of charge to use with WorkSpaces. If there are no WorkSpaces being used with your Simple AD or AD Connector directory for 30 consecutive days, this directory will be automatically deregistered for use with Amazon WorkSpaces, and you will be charged for this directory as per the <a href="http://aws.amazon.com/directoryservice/pricing/">Directory Service pricing terms</a>.</p>
+    /// <p>To delete empty directories, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/delete-workspaces-directory.html"> Delete the Directory for Your WorkSpaces</a>. If you delete your Simple AD or AD Connector directory, you can always create a new one when you want to start using WorkSpaces again.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterWorkspaceDirectory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2058,10 +1965,10 @@ pub mod fluent_builders {
                 crate::input::DeregisterWorkspaceDirectoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2069,16 +1976,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must
-        /// remove them before you deregister the directory, or you will receive an OperationNotSupportedException
-        /// error.</p>
-        pub fn directory_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(inp);
+        /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must remove them before you deregister the directory, or you will receive an OperationNotSupportedException error.</p>
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
-        /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must
-        /// remove them before you deregister the directory, or you will receive an OperationNotSupportedException
-        /// error.</p>
+        /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must remove them before you deregister the directory, or you will receive an OperationNotSupportedException error.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_directory_id(input);
             self
@@ -2086,9 +1989,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAccount`.
     ///
-    /// <p>Retrieves a list that describes the configuration of Bring Your Own License (BYOL) for
-    /// the specified account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves a list that describes the configuration of Bring Your Own License (BYOL) for the specified account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2133,10 +2035,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2147,9 +2049,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAccountModifications`.
     ///
-    /// <p>Retrieves a list that describes modifications to the configuration of Bring Your Own
-    /// License (BYOL) for the specified account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves a list that describes modifications to the configuration of Bring Your Own License (BYOL) for the specified account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccountModifications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2194,10 +2095,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAccountModificationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2205,14 +2106,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2221,7 +2120,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeClientProperties`.
     ///
     /// <p>Retrieves a list that describes one or more specified Amazon WorkSpaces clients.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeClientProperties<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2266,10 +2165,10 @@ pub mod fluent_builders {
                 crate::input::DescribeClientPropertiesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2282,8 +2181,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
         ///
         /// <p>The resource identifier, in the form of directory IDs.</p>
-        pub fn resource_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_ids(inp);
+        pub fn resource_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_ids(input.into());
             self
         }
         /// <p>The resource identifier, in the form of directory IDs.</p>
@@ -2297,10 +2196,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeConnectionAliases`.
     ///
-    /// <p>Retrieves a list that describes the connection aliases used for cross-Region redirection. For more information, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
-    /// Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves a list that describes the connection aliases used for cross-Region redirection. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConnectionAliases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2345,10 +2242,10 @@ pub mod fluent_builders {
                 crate::input::DescribeConnectionAliasesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2361,8 +2258,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_alias_ids`](Self::set_alias_ids).
         ///
         /// <p>The identifiers of the connection aliases to describe.</p>
-        pub fn alias_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_ids(inp);
+        pub fn alias_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_ids(input.into());
             self
         }
         /// <p>The identifiers of the connection aliases to describe.</p>
@@ -2374,8 +2271,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the directory associated with the connection alias.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The identifier of the directory associated with the connection alias.</p>
@@ -2384,8 +2281,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of connection aliases to return.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of connection aliases to return.</p>
@@ -2393,14 +2290,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the
-        /// next set of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the
-        /// next set of results. </p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2408,10 +2303,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeConnectionAliasPermissions`.
     ///
-    /// <p>Describes the permissions that the owner of a connection alias has granted to another Amazon Web Services account for
-    /// the specified connection alias. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
-    /// Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes the permissions that the owner of a connection alias has granted to another Amazon Web Services account for the specified connection alias. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConnectionAliasPermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2458,10 +2351,10 @@ pub mod fluent_builders {
                 crate::input::DescribeConnectionAliasPermissionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2470,8 +2363,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the connection alias.</p>
-        pub fn alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_id(inp);
+        pub fn alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_id(input.into());
             self
         }
         /// <p>The identifier of the connection alias.</p>
@@ -2479,21 +2372,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_alias_id(input);
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the
-        /// next set of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the
-        /// next set of results. </p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -2505,7 +2396,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeIpGroups`.
     ///
     /// <p>Describes one or more of your IP access control groups.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeIpGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2550,10 +2441,10 @@ pub mod fluent_builders {
                 crate::input::DescribeIpGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2566,8 +2457,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_group_ids`](Self::set_group_ids).
         ///
         /// <p>The identifiers of one or more IP access control groups.</p>
-        pub fn group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_ids(inp);
+        pub fn group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_ids(input.into());
             self
         }
         /// <p>The identifiers of one or more IP access control groups.</p>
@@ -2578,21 +2469,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_group_ids(input);
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of items to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return.</p>
@@ -2604,7 +2493,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTags`.
     ///
     /// <p>Describes the specified tags for the specified WorkSpaces resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2649,10 +2538,10 @@ pub mod fluent_builders {
                 crate::input::DescribeTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2660,14 +2549,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-        /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
-        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-        /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+        /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_id(input);
             self
@@ -2677,7 +2564,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves a list that describes the available WorkSpace bundles.</p>
     /// <p>You can filter the results using either bundle ID or owner, but not both.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorkspaceBundles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2722,10 +2609,10 @@ pub mod fluent_builders {
                 crate::input::DescribeWorkspaceBundlesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2733,13 +2620,21 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeWorkspaceBundlesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeWorkspaceBundlesPaginator<C, M, R> {
+            crate::paginator::DescribeWorkspaceBundlesPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `BundleIds`.
         ///
         /// To override the contents of this collection use [`set_bundle_ids`](Self::set_bundle_ids).
         ///
         /// <p>The identifiers of the bundles. You cannot combine this parameter with any other filter.</p>
-        pub fn bundle_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bundle_ids(inp);
+        pub fn bundle_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bundle_ids(input.into());
             self
         }
         /// <p>The identifiers of the bundles. You cannot combine this parameter with any other filter.</p>
@@ -2751,22 +2646,20 @@ pub mod fluent_builders {
             self
         }
         /// <p>The owner of the bundles. You cannot combine this parameter with any other filter.</p>
-        /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>.
-        /// To describe the bundles that belong to your account, don't specify a value.</p>
-        pub fn owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.owner(inp);
+        /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>. To describe the bundles that belong to your account, don't specify a value.</p>
+        pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owner(input.into());
             self
         }
         /// <p>The owner of the bundles. You cannot combine this parameter with any other filter.</p>
-        /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>.
-        /// To describe the bundles that belong to your account, don't specify a value.</p>
+        /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>. To describe the bundles that belong to your account, don't specify a value.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_owner(input);
             self
         }
         /// <p>The token for the next set of results. (You received this token from a previous call.)</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. (You received this token from a previous call.)</p>
@@ -2777,9 +2670,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeWorkspaceDirectories`.
     ///
-    /// <p>Describes the available directories that are registered with
-    /// Amazon WorkSpaces.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes the available directories that are registered with Amazon WorkSpaces.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorkspaceDirectories<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2824,10 +2716,10 @@ pub mod fluent_builders {
                 crate::input::DescribeWorkspaceDirectoriesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2835,18 +2727,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeWorkspaceDirectoriesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeWorkspaceDirectoriesPaginator<C, M, R> {
+            crate::paginator::DescribeWorkspaceDirectoriesPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `DirectoryIds`.
         ///
         /// To override the contents of this collection use [`set_directory_ids`](Self::set_directory_ids).
         ///
-        /// <p>The identifiers of the directories. If the value is null, all directories are
-        /// retrieved.</p>
-        pub fn directory_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_ids(inp);
+        /// <p>The identifiers of the directories. If the value is null, all directories are retrieved.</p>
+        pub fn directory_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_ids(input.into());
             self
         }
-        /// <p>The identifiers of the directories. If the value is null, all directories are
-        /// retrieved.</p>
+        /// <p>The identifiers of the directories. If the value is null, all directories are retrieved.</p>
         pub fn set_directory_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2855,8 +2753,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of directories to return.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of directories to return.</p>
@@ -2864,14 +2762,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2879,9 +2775,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeWorkspaceImagePermissions`.
     ///
-    /// <p>Describes the permissions that the owner of an image has granted to other
-    /// Amazon Web Services accounts for an image.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes the permissions that the owner of an image has granted to other Amazon Web Services accounts for an image.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorkspaceImagePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2926,10 +2821,10 @@ pub mod fluent_builders {
                 crate::input::DescribeWorkspaceImagePermissionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2938,8 +2833,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the image.</p>
-        pub fn image_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_id(inp);
+        pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_id(input.into());
             self
         }
         /// <p>The identifier of the image.</p>
@@ -2947,21 +2842,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_id(input);
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of items to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return.</p>
@@ -2972,9 +2865,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeWorkspaceImages`.
     ///
-    /// <p>Retrieves a list that describes one or more specified images, if the image identifiers
-    /// are provided. Otherwise, all images in the account are described. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves a list that describes one or more specified images, if the image identifiers are provided. Otherwise, all images in the account are described. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorkspaceImages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3019,10 +2911,10 @@ pub mod fluent_builders {
                 crate::input::DescribeWorkspaceImagesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3035,8 +2927,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_image_ids`](Self::set_image_ids).
         ///
         /// <p>The identifier of the image.</p>
-        pub fn image_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_ids(inp);
+        pub fn image_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_ids(input.into());
             self
         }
         /// <p>The identifier of the image.</p>
@@ -3048,8 +2940,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type (owned or shared) of the image.</p>
-        pub fn image_type(mut self, inp: crate::model::ImageType) -> Self {
-            self.inner = self.inner.image_type(inp);
+        pub fn image_type(mut self, input: crate::model::ImageType) -> Self {
+            self.inner = self.inner.image_type(input);
             self
         }
         /// <p>The type (owned or shared) of the image.</p>
@@ -3060,21 +2952,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_type(input);
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of items to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return.</p>
@@ -3086,9 +2976,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeWorkspaces`.
     ///
     /// <p>Describes the specified WorkSpaces.</p>
-    /// <p>You can filter the results by using the bundle identifier, directory identifier, or
-    /// owner, but you can specify only one filter at a time.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You can filter the results by using the bundle identifier, directory identifier, or owner, but you can specify only one filter at a time.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorkspaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3133,10 +3022,10 @@ pub mod fluent_builders {
                 crate::input::DescribeWorkspacesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3144,22 +3033,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeWorkspacesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeWorkspacesPaginator<C, M, R> {
+            crate::paginator::DescribeWorkspacesPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `WorkspaceIds`.
         ///
         /// To override the contents of this collection use [`set_workspace_ids`](Self::set_workspace_ids).
         ///
-        /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other
-        /// filter.</p>
-        /// <p>Because the <a>CreateWorkspaces</a> operation is asynchronous, the identifier
-        /// it returns is not immediately available. If you immediately call <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
-        pub fn workspace_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_ids(inp);
+        /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.</p>
+        /// <p>Because the <code>CreateWorkspaces</code> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <code>DescribeWorkspaces</code> with this identifier, no information is returned.</p>
+        pub fn workspace_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_ids(input.into());
             self
         }
-        /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other
-        /// filter.</p>
-        /// <p>Because the <a>CreateWorkspaces</a> operation is asynchronous, the identifier
-        /// it returns is not immediately available. If you immediately call <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
+        /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.</p>
+        /// <p>Because the <code>CreateWorkspaces</code> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <code>DescribeWorkspaces</code> with this identifier, no information is returned.</p>
         pub fn set_workspace_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3167,47 +3058,39 @@ pub mod fluent_builders {
             self.inner = self.inner.set_workspace_ids(input);
             self
         }
-        /// <p>The identifier of the directory. In addition, you can optionally specify a specific
-        /// directory user (see <code>UserName</code>). You cannot combine this parameter with any
-        /// other filter.</p>
-        pub fn directory_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(inp);
+        /// <p>The identifier of the directory. In addition, you can optionally specify a specific directory user (see <code>UserName</code>). You cannot combine this parameter with any other filter.</p>
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
-        /// <p>The identifier of the directory. In addition, you can optionally specify a specific
-        /// directory user (see <code>UserName</code>). You cannot combine this parameter with any
-        /// other filter.</p>
+        /// <p>The identifier of the directory. In addition, you can optionally specify a specific directory user (see <code>UserName</code>). You cannot combine this parameter with any other filter.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_directory_id(input);
             self
         }
-        /// <p>The name of the directory user. You must specify this parameter with
-        /// <code>DirectoryId</code>.</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        /// <p>The name of the directory user. You must specify this parameter with <code>DirectoryId</code>.</p>
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
-        /// <p>The name of the directory user. You must specify this parameter with
-        /// <code>DirectoryId</code>.</p>
+        /// <p>The name of the directory user. You must specify this parameter with <code>DirectoryId</code>.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_name(input);
             self
         }
-        /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are
-        /// retrieved. You cannot combine this parameter with any other filter.</p>
-        pub fn bundle_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bundle_id(inp);
+        /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are retrieved. You cannot combine this parameter with any other filter.</p>
+        pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bundle_id(input.into());
             self
         }
-        /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are
-        /// retrieved. You cannot combine this parameter with any other filter.</p>
+        /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are retrieved. You cannot combine this parameter with any other filter.</p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bundle_id(input);
             self
         }
         /// <p>The maximum number of items to return.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of items to return.</p>
@@ -3215,14 +3098,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3231,7 +3112,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeWorkspacesConnectionStatus`.
     ///
     /// <p>Describes the connection status of the specified WorkSpaces.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorkspacesConnectionStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3278,10 +3159,10 @@ pub mod fluent_builders {
                 crate::input::DescribeWorkspacesConnectionStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3294,8 +3175,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_workspace_ids`](Self::set_workspace_ids).
         ///
         /// <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
-        pub fn workspace_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_ids(inp);
+        pub fn workspace_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_ids(input.into());
             self
         }
         /// <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
@@ -3306,14 +3187,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_workspace_ids(input);
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3322,7 +3201,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeWorkspaceSnapshots`.
     ///
     /// <p>Describes the snapshots for the specified WorkSpace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorkspaceSnapshots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3367,10 +3246,10 @@ pub mod fluent_builders {
                 crate::input::DescribeWorkspaceSnapshotsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3379,8 +3258,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the WorkSpace.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The identifier of the WorkSpace.</p>
@@ -3391,16 +3270,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateConnectionAlias`.
     ///
-    /// <p>Disassociates a connection alias from a directory. Disassociating a connection alias disables cross-Region
-    /// redirection between two directories in different Regions. For more information, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
-    /// Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
-    ///
-    /// <note>
-    /// <p>Before performing this operation, call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html">
-    /// DescribeConnectionAliases</a> to make sure that the current state of the connection alias is <code>CREATED</code>.</p>
+    /// <p>Disassociates a connection alias from a directory. Disassociating a connection alias disables cross-Region redirection between two directories in different Regions. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p> <note>
+    /// <p>Before performing this operation, call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html"> DescribeConnectionAliases</a> to make sure that the current state of the connection alias is <code>CREATED</code>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateConnectionAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3445,10 +3318,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateConnectionAliasInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3457,8 +3330,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the connection alias to disassociate.</p>
-        pub fn alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_id(inp);
+        pub fn alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_id(input.into());
             self
         }
         /// <p>The identifier of the connection alias to disassociate.</p>
@@ -3470,7 +3343,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateIpGroups`.
     ///
     /// <p>Disassociates the specified IP access control group from the specified directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateIpGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3515,10 +3388,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateIpGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3527,8 +3400,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory.</p>
-        pub fn directory_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(inp);
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory.</p>
@@ -3541,8 +3414,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_group_ids`](Self::set_group_ids).
         ///
         /// <p>The identifiers of one or more IP access control groups.</p>
-        pub fn group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_ids(inp);
+        pub fn group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_ids(input.into());
             self
         }
         /// <p>The identifiers of one or more IP access control groups.</p>
@@ -3556,12 +3429,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ImportWorkspaceImage`.
     ///
-    /// <p>Imports the specified Windows 10 Bring Your Own License (BYOL) image into Amazon
-    /// WorkSpaces. The image must be an already licensed Amazon EC2 image that is in your
-    /// Amazon Web Services account, and you must own the image. For more information about creating BYOL images, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
-    /// Bring Your Own Windows Desktop Licenses</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Imports the specified Windows 10 Bring Your Own License (BYOL) image into Amazon WorkSpaces. The image must be an already licensed Amazon EC2 image that is in your Amazon Web Services account, and you must own the image. For more information about creating BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportWorkspaceImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3606,10 +3475,10 @@ pub mod fluent_builders {
                 crate::input::ImportWorkspaceImageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3618,8 +3487,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the EC2 image.</p>
-        pub fn ec2_image_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ec2_image_id(inp);
+        pub fn ec2_image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ec2_image_id(input.into());
             self
         }
         /// <p>The identifier of the EC2 image.</p>
@@ -3627,27 +3496,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ec2_image_id(input);
             self
         }
-        /// <p>The ingestion process to be used when importing the image, depending on which protocol
-        /// you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol
-        /// (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value
-        /// that does not end in <code>_WSP</code>. </p>
-        ///
-        /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
-        /// <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+        /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>
+        /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
         pub fn ingestion_process(
             mut self,
-            inp: crate::model::WorkspaceImageIngestionProcess,
+            input: crate::model::WorkspaceImageIngestionProcess,
         ) -> Self {
-            self.inner = self.inner.ingestion_process(inp);
+            self.inner = self.inner.ingestion_process(input);
             self
         }
-        /// <p>The ingestion process to be used when importing the image, depending on which protocol
-        /// you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol
-        /// (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value
-        /// that does not end in <code>_WSP</code>. </p>
-        ///
-        /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
-        /// <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+        /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>
+        /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
         pub fn set_ingestion_process(
             mut self,
             input: std::option::Option<crate::model::WorkspaceImageIngestionProcess>,
@@ -3656,8 +3515,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the WorkSpace image.</p>
-        pub fn image_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_name(inp);
+        pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_name(input.into());
             self
         }
         /// <p>The name of the WorkSpace image.</p>
@@ -3666,8 +3525,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the WorkSpace image.</p>
-        pub fn image_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_description(inp);
+        pub fn image_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_description(input.into());
             self
         }
         /// <p>The description of the WorkSpace image.</p>
@@ -3683,8 +3542,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
@@ -3699,24 +3558,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_applications`](Self::set_applications).
         ///
-        /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10
-        /// BYOL images. For more information about subscribing to Office for BYOL images, see
-        /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
-        /// Bring Your Own Windows Desktop Licenses</a>.</p>
-        ///
-        /// <note>
+        /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>
         /// <p>Although this parameter is an array, only one item is allowed at this time.</p>
         /// </note>
-        pub fn applications(mut self, inp: impl Into<crate::model::Application>) -> Self {
-            self.inner = self.inner.applications(inp);
+        pub fn applications(mut self, input: crate::model::Application) -> Self {
+            self.inner = self.inner.applications(input);
             self
         }
-        /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10
-        /// BYOL images. For more information about subscribing to Office for BYOL images, see
-        /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
-        /// Bring Your Own Windows Desktop Licenses</a>.</p>
-        ///
-        /// <note>
+        /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>
         /// <p>Although this parameter is an array, only one item is allowed at this time.</p>
         /// </note>
         pub fn set_applications(
@@ -3729,16 +3578,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAvailableManagementCidrRanges`.
     ///
-    /// <p>Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that you can use
-    /// for the network management interface when you enable Bring Your Own License (BYOL). </p>
-    ///
-    /// <p>This operation can be run only by Amazon Web Services accounts that are enabled for BYOL. If your account
-    /// isn't enabled for BYOL, you'll receive an <code>AccessDeniedException</code> error.</p>
-    ///
-    /// <p>The management network interface is connected to a secure Amazon WorkSpaces management
-    /// network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces
-    /// clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that you can use for the network management interface when you enable Bring Your Own License (BYOL). </p>
+    /// <p>This operation can be run only by Amazon Web Services accounts that are enabled for BYOL. If your account isn't enabled for BYOL, you'll receive an <code>AccessDeniedException</code> error.</p>
+    /// <p>The management network interface is connected to a secure Amazon WorkSpaces management network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAvailableManagementCidrRanges<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3783,10 +3626,10 @@ pub mod fluent_builders {
                 crate::input::ListAvailableManagementCidrRangesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3794,17 +3637,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The IP address range to search. Specify an IP address range that is compatible with your
-        /// network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
+        /// <p>The IP address range to search. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
         pub fn management_cidr_range_constraint(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.management_cidr_range_constraint(inp);
+            self.inner = self.inner.management_cidr_range_constraint(input.into());
             self
         }
-        /// <p>The IP address range to search. Specify an IP address range that is compatible with your
-        /// network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
+        /// <p>The IP address range to search. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
         pub fn set_management_cidr_range_constraint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3813,8 +3654,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return.</p>
@@ -3822,14 +3663,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.</p>
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3838,15 +3677,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `MigrateWorkspace`.
     ///
     /// <p>Migrates a WorkSpace from one operating system or bundle type to another, while retaining the data on the user volume.</p>
-    ///
-    /// <p>The migration process recreates the WorkSpace by using a new root volume from the target bundle image and the user volume
-    /// from the last available snapshot of the original WorkSpace. During migration, the original <code>D:\Users\%USERNAME%</code>
-    /// user profile folder is renamed to <code>D:\Users\%USERNAME%MMddyyTHHmmss%.NotMigrated</code>. A new <code>D:\Users\%USERNAME%\</code>
-    /// folder is generated by the new OS. Certain files in the old user profile are moved to the new user profile.</p>
-    ///
-    /// <p>For available migration scenarios, details about what happens during migration, and best practices, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/migrate-workspaces.html">Migrate a WorkSpace</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>The migration process recreates the WorkSpace by using a new root volume from the target bundle image and the user volume from the last available snapshot of the original WorkSpace. During migration, the original <code>D:\Users\%USERNAME%</code> user profile folder is renamed to <code>D:\Users\%USERNAME%MMddyyTHHmmss%.NotMigrated</code>. A new <code>D:\Users\%USERNAME%\</code> folder is generated by the new OS. Certain files in the old user profile are moved to the new user profile.</p>
+    /// <p>For available migration scenarios, details about what happens during migration, and best practices, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/migrate-workspaces.html">Migrate a WorkSpace</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct MigrateWorkspace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3891,10 +3724,10 @@ pub mod fluent_builders {
                 crate::input::MigrateWorkspaceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3903,8 +3736,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the WorkSpace to migrate from.</p>
-        pub fn source_workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_workspace_id(inp);
+        pub fn source_workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_workspace_id(input.into());
             self
         }
         /// <p>The identifier of the WorkSpace to migrate from.</p>
@@ -3916,8 +3749,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the target bundle type to migrate the WorkSpace to.</p>
-        pub fn bundle_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bundle_id(inp);
+        pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bundle_id(input.into());
             self
         }
         /// <p>The identifier of the target bundle type to migrate the WorkSpace to.</p>
@@ -3928,9 +3761,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ModifyAccount`.
     ///
-    /// <p>Modifies the configuration of Bring Your Own License (BYOL) for the specified
-    /// account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Modifies the configuration of Bring Your Own License (BYOL) for the specified account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3975,10 +3807,10 @@ pub mod fluent_builders {
                 crate::input::ModifyAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3989,9 +3821,9 @@ pub mod fluent_builders {
         /// <p>The status of BYOL.</p>
         pub fn dedicated_tenancy_support(
             mut self,
-            inp: crate::model::DedicatedTenancySupportEnum,
+            input: crate::model::DedicatedTenancySupportEnum,
         ) -> Self {
-            self.inner = self.inner.dedicated_tenancy_support(inp);
+            self.inner = self.inner.dedicated_tenancy_support(input);
             self
         }
         /// <p>The status of BYOL.</p>
@@ -4002,23 +3834,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dedicated_tenancy_support(input);
             self
         }
-        /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network
-        /// interface. Specify an IP address range that is compatible with your network and in CIDR
-        /// notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be
-        /// /16 (for example, 203.0.113.25/16). It must also be specified as available by the
-        /// <code>ListAvailableManagementCidrRanges</code> operation.</p>
+        /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be /16 (for example, 203.0.113.25/16). It must also be specified as available by the <code>ListAvailableManagementCidrRanges</code> operation.</p>
         pub fn dedicated_tenancy_management_cidr_range(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.dedicated_tenancy_management_cidr_range(inp);
+            self.inner = self
+                .inner
+                .dedicated_tenancy_management_cidr_range(input.into());
             self
         }
-        /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network
-        /// interface. Specify an IP address range that is compatible with your network and in CIDR
-        /// notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be
-        /// /16 (for example, 203.0.113.25/16). It must also be specified as available by the
-        /// <code>ListAvailableManagementCidrRanges</code> operation.</p>
+        /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be /16 (for example, 203.0.113.25/16). It must also be specified as available by the <code>ListAvailableManagementCidrRanges</code> operation.</p>
         pub fn set_dedicated_tenancy_management_cidr_range(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4032,7 +3858,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyClientProperties`.
     ///
     /// <p>Modifies the properties of the specified Amazon WorkSpaces clients.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyClientProperties<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4077,10 +3903,10 @@ pub mod fluent_builders {
                 crate::input::ModifyClientPropertiesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4089,8 +3915,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource identifiers, in the form of directory IDs.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The resource identifiers, in the form of directory IDs.</p>
@@ -4099,8 +3925,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the Amazon WorkSpaces client.</p>
-        pub fn client_properties(mut self, inp: crate::model::ClientProperties) -> Self {
-            self.inner = self.inner.client_properties(inp);
+        pub fn client_properties(mut self, input: crate::model::ClientProperties) -> Self {
+            self.inner = self.inner.client_properties(input);
             self
         }
         /// <p>Information about the Amazon WorkSpaces client.</p>
@@ -4114,9 +3940,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ModifySelfservicePermissions`.
     ///
-    /// <p>Modifies the self-service WorkSpace management capabilities for your users. For more
-    /// information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/enable-user-self-service-workspace-management.html">Enable Self-Service WorkSpace Management Capabilities for Your Users</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Modifies the self-service WorkSpace management capabilities for your users. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/enable-user-self-service-workspace-management.html">Enable Self-Service WorkSpace Management Capabilities for Your Users</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifySelfservicePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4161,10 +3986,10 @@ pub mod fluent_builders {
                 crate::input::ModifySelfservicePermissionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4173,8 +3998,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The identifier of the directory.</p>
@@ -4185,9 +4010,9 @@ pub mod fluent_builders {
         /// <p>The permissions to enable or disable self-service capabilities.</p>
         pub fn selfservice_permissions(
             mut self,
-            inp: crate::model::SelfservicePermissions,
+            input: crate::model::SelfservicePermissions,
         ) -> Self {
-            self.inner = self.inner.selfservice_permissions(inp);
+            self.inner = self.inner.selfservice_permissions(input);
             self
         }
         /// <p>The permissions to enable or disable self-service capabilities.</p>
@@ -4201,10 +4026,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ModifyWorkspaceAccessProperties`.
     ///
-    /// <p>Specifies which devices and operating systems users can use to access their WorkSpaces.
-    /// For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html#control-device-access">
-    /// Control Device Access</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Specifies which devices and operating systems users can use to access their WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html#control-device-access"> Control Device Access</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyWorkspaceAccessProperties<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4249,10 +4072,10 @@ pub mod fluent_builders {
                 crate::input::ModifyWorkspaceAccessPropertiesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4261,8 +4084,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The identifier of the directory.</p>
@@ -4273,9 +4096,9 @@ pub mod fluent_builders {
         /// <p>The device types and operating systems to enable or disable for access.</p>
         pub fn workspace_access_properties(
             mut self,
-            inp: crate::model::WorkspaceAccessProperties,
+            input: crate::model::WorkspaceAccessProperties,
         ) -> Self {
-            self.inner = self.inner.workspace_access_properties(inp);
+            self.inner = self.inner.workspace_access_properties(input);
             self
         }
         /// <p>The device types and operating systems to enable or disable for access.</p>
@@ -4290,7 +4113,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyWorkspaceCreationProperties`.
     ///
     /// <p>Modify the default properties used to create WorkSpaces.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyWorkspaceCreationProperties<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4335,10 +4158,10 @@ pub mod fluent_builders {
                 crate::input::ModifyWorkspaceCreationPropertiesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4347,8 +4170,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The identifier of the directory.</p>
@@ -4359,9 +4182,9 @@ pub mod fluent_builders {
         /// <p>The default properties for creating WorkSpaces.</p>
         pub fn workspace_creation_properties(
             mut self,
-            inp: crate::model::WorkspaceCreationProperties,
+            input: crate::model::WorkspaceCreationProperties,
         ) -> Self {
-            self.inner = self.inner.workspace_creation_properties(inp);
+            self.inner = self.inner.workspace_creation_properties(input);
             self
         }
         /// <p>The default properties for creating WorkSpaces.</p>
@@ -4375,12 +4198,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ModifyWorkspaceProperties`.
     ///
-    /// <p>Modifies the specified WorkSpace properties. For important information about how
-    /// to modify the size of the root and user volumes, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">
-    /// Modify a WorkSpace</a>.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Modifies the specified WorkSpace properties. For important information about how to modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html"> Modify a WorkSpace</a>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyWorkspaceProperties<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4425,10 +4244,10 @@ pub mod fluent_builders {
                 crate::input::ModifyWorkspacePropertiesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4437,8 +4256,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the WorkSpace.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The identifier of the WorkSpace.</p>
@@ -4447,8 +4266,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The properties of the WorkSpace.</p>
-        pub fn workspace_properties(mut self, inp: crate::model::WorkspaceProperties) -> Self {
-            self.inner = self.inner.workspace_properties(inp);
+        pub fn workspace_properties(mut self, input: crate::model::WorkspaceProperties) -> Self {
+            self.inner = self.inner.workspace_properties(input);
             self
         }
         /// <p>The properties of the WorkSpace.</p>
@@ -4463,12 +4282,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyWorkspaceState`.
     ///
     /// <p>Sets the state of the specified WorkSpace.</p>
-    /// <p>To maintain a WorkSpace without being interrupted, set the WorkSpace state to
-    /// <code>ADMIN_MAINTENANCE</code>. WorkSpaces in this state do not respond to requests to
-    /// reboot, stop, start, rebuild, or restore. An AutoStop WorkSpace in this state is not
-    /// stopped. Users cannot log into a WorkSpace in the <code>ADMIN_MAINTENANCE</code>
-    /// state.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>To maintain a WorkSpace without being interrupted, set the WorkSpace state to <code>ADMIN_MAINTENANCE</code>. WorkSpaces in this state do not respond to requests to reboot, stop, start, rebuild, or restore. An AutoStop WorkSpace in this state is not stopped. Users cannot log into a WorkSpace in the <code>ADMIN_MAINTENANCE</code> state.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyWorkspaceState<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4513,10 +4328,10 @@ pub mod fluent_builders {
                 crate::input::ModifyWorkspaceStateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4525,8 +4340,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the WorkSpace.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The identifier of the WorkSpace.</p>
@@ -4535,8 +4350,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The WorkSpace state.</p>
-        pub fn workspace_state(mut self, inp: crate::model::TargetWorkspaceState) -> Self {
-            self.inner = self.inner.workspace_state(inp);
+        pub fn workspace_state(mut self, input: crate::model::TargetWorkspaceState) -> Self {
+            self.inner = self.inner.workspace_state(input);
             self
         }
         /// <p>The WorkSpace state.</p>
@@ -4551,10 +4366,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RebootWorkspaces`.
     ///
     /// <p>Reboots the specified WorkSpaces.</p>
-    /// <p>You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code> or
-    /// <code>UNHEALTHY</code>.</p>
+    /// <p>You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code> or <code>UNHEALTHY</code>.</p>
     /// <p>This operation is asynchronous and returns before the WorkSpaces have rebooted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RebootWorkspaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4599,10 +4413,10 @@ pub mod fluent_builders {
                 crate::input::RebootWorkspacesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4615,11 +4429,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_reboot_workspace_requests`](Self::set_reboot_workspace_requests).
         ///
         /// <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
-        pub fn reboot_workspace_requests(
-            mut self,
-            inp: impl Into<crate::model::RebootRequest>,
-        ) -> Self {
-            self.inner = self.inner.reboot_workspace_requests(inp);
+        pub fn reboot_workspace_requests(mut self, input: crate::model::RebootRequest) -> Self {
+            self.inner = self.inner.reboot_workspace_requests(input);
             self
         }
         /// <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
@@ -4634,14 +4445,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RebuildWorkspaces`.
     ///
     /// <p>Rebuilds the specified WorkSpace.</p>
-    /// <p>You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code>,
-    /// <code>ERROR</code>, <code>UNHEALTHY</code>, <code>STOPPED</code>, or <code>REBOOTING</code>.</p>
-    /// <p>Rebuilding a WorkSpace is a potentially destructive action that can result in the loss
-    /// of data. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html">Rebuild a
-    /// WorkSpace</a>.</p>
-    /// <p>This operation is asynchronous and returns before the WorkSpaces have been completely
-    /// rebuilt.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code>, <code>ERROR</code>, <code>UNHEALTHY</code>, <code>STOPPED</code>, or <code>REBOOTING</code>.</p>
+    /// <p>Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html">Rebuild a WorkSpace</a>.</p>
+    /// <p>This operation is asynchronous and returns before the WorkSpaces have been completely rebuilt.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RebuildWorkspaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4686,10 +4493,10 @@ pub mod fluent_builders {
                 crate::input::RebuildWorkspacesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4702,11 +4509,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_rebuild_workspace_requests`](Self::set_rebuild_workspace_requests).
         ///
         /// <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>
-        pub fn rebuild_workspace_requests(
-            mut self,
-            inp: impl Into<crate::model::RebuildRequest>,
-        ) -> Self {
-            self.inner = self.inner.rebuild_workspace_requests(inp);
+        pub fn rebuild_workspace_requests(mut self, input: crate::model::RebuildRequest) -> Self {
+            self.inner = self.inner.rebuild_workspace_requests(input);
             self
         }
         /// <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>
@@ -4720,12 +4524,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterWorkspaceDirectory`.
     ///
-    /// <p>Registers the specified directory. This operation is asynchronous
-    /// and returns before the WorkSpace directory is registered. If this is the first time you are
-    /// registering a directory, you will need to create the workspaces_DefaultRole role before you can
-    /// register a directory. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role">
-    /// Creating the workspaces_DefaultRole Role</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Registers the specified directory. This operation is asynchronous and returns before the WorkSpace directory is registered. If this is the first time you are registering a directory, you will need to create the workspaces_DefaultRole role before you can register a directory. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role"> Creating the workspaces_DefaultRole Role</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterWorkspaceDirectory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4770,10 +4570,10 @@ pub mod fluent_builders {
                 crate::input::RegisterWorkspaceDirectoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4781,20 +4581,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the directory. You cannot register a directory if it does not have a status
-        /// of Active. If the directory does not have a status of Active, you will receive an
-        /// InvalidResourceStateException error. If you have already registered the maximum number of directories
-        /// that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error.
-        /// Deregister directories that you are not using for WorkSpaces, and try again.</p>
-        pub fn directory_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(inp);
+        /// <p>The identifier of the directory. You cannot register a directory if it does not have a status of Active. If the directory does not have a status of Active, you will receive an InvalidResourceStateException error. If you have already registered the maximum number of directories that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error. Deregister directories that you are not using for WorkSpaces, and try again.</p>
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
-        /// <p>The identifier of the directory. You cannot register a directory if it does not have a status
-        /// of Active. If the directory does not have a status of Active, you will receive an
-        /// InvalidResourceStateException error. If you have already registered the maximum number of directories
-        /// that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error.
-        /// Deregister directories that you are not using for WorkSpaces, and try again.</p>
+        /// <p>The identifier of the directory. You cannot register a directory if it does not have a status of Active. If the directory does not have a status of Active, you will receive an InvalidResourceStateException error. If you have already registered the maximum number of directories that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error. Deregister directories that you are not using for WorkSpaces, and try again.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_directory_id(input);
             self
@@ -4803,16 +4595,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
-        /// <p>The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets
-        /// are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these
-        /// conditions are not met, you will receive an OperationNotSupportedException error.</p>
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_ids(inp);
+        /// <p>The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these conditions are not met, you will receive an OperationNotSupportedException error.</p>
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_ids(input.into());
             self
         }
-        /// <p>The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets
-        /// are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these
-        /// conditions are not met, you will receive an OperationNotSupportedException error.</p>
+        /// <p>The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these conditions are not met, you will receive an OperationNotSupportedException error.</p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4820,23 +4608,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_subnet_ids(input);
             self
         }
-        /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and
-        /// WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set
-        /// <code>EnableWorkDocs</code> to disabled, and try again.</p>
-        pub fn enable_work_docs(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_work_docs(inp);
+        /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set <code>EnableWorkDocs</code> to disabled, and try again.</p>
+        pub fn enable_work_docs(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_work_docs(input);
             self
         }
-        /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and
-        /// WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set
-        /// <code>EnableWorkDocs</code> to disabled, and try again.</p>
+        /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set <code>EnableWorkDocs</code> to disabled, and try again.</p>
         pub fn set_enable_work_docs(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_work_docs(input);
             self
         }
         /// <p>Indicates whether self-service capabilities are enabled or disabled.</p>
-        pub fn enable_self_service(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_self_service(inp);
+        pub fn enable_self_service(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_self_service(input);
             self
         }
         /// <p>Indicates whether self-service capabilities are enabled or disabled.</p>
@@ -4844,20 +4628,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_enable_self_service(input);
             self
         }
-        /// <p>Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own
-        /// License (BYOL) images, this value must be set to <code>DEDICATED</code> and your Amazon Web Services account must be
-        /// enabled for BYOL. If your account has not been enabled for BYOL, you will receive an
-        /// InvalidParameterValuesException error. For more information about BYOL images, see
-        /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
-        pub fn tenancy(mut self, inp: crate::model::Tenancy) -> Self {
-            self.inner = self.inner.tenancy(inp);
+        /// <p>Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own License (BYOL) images, this value must be set to <code>DEDICATED</code> and your Amazon Web Services account must be enabled for BYOL. If your account has not been enabled for BYOL, you will receive an InvalidParameterValuesException error. For more information about BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
+        pub fn tenancy(mut self, input: crate::model::Tenancy) -> Self {
+            self.inner = self.inner.tenancy(input);
             self
         }
-        /// <p>Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own
-        /// License (BYOL) images, this value must be set to <code>DEDICATED</code> and your Amazon Web Services account must be
-        /// enabled for BYOL. If your account has not been enabled for BYOL, you will receive an
-        /// InvalidParameterValuesException error. For more information about BYOL images, see
-        /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
+        /// <p>Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own License (BYOL) images, this value must be set to <code>DEDICATED</code> and your Amazon Web Services account must be enabled for BYOL. If your account has not been enabled for BYOL, you will receive an InvalidParameterValuesException error. For more information about BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
         pub fn set_tenancy(mut self, input: std::option::Option<crate::model::Tenancy>) -> Self {
             self.inner = self.inner.set_tenancy(input);
             self
@@ -4867,8 +4643,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the directory.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags associated with the directory.</p>
@@ -4883,14 +4659,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RestoreWorkspace`.
     ///
     /// <p>Restores the specified WorkSpace to its last known healthy state.</p>
-    /// <p>You cannot restore a WorkSpace unless its state is <code> AVAILABLE</code>,
-    /// <code>ERROR</code>, <code>UNHEALTHY</code>, or <code>STOPPED</code>.</p>
-    /// <p>Restoring a WorkSpace is a potentially destructive action that can result in the loss of
-    /// data. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/restore-workspace.html">Restore a
-    /// WorkSpace</a>.</p>
-    /// <p>This operation is asynchronous and returns before the WorkSpace is completely
-    /// restored.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You cannot restore a WorkSpace unless its state is <code> AVAILABLE</code>, <code>ERROR</code>, <code>UNHEALTHY</code>, or <code>STOPPED</code>.</p>
+    /// <p>Restoring a WorkSpace is a potentially destructive action that can result in the loss of data. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/restore-workspace.html">Restore a WorkSpace</a>.</p>
+    /// <p>This operation is asynchronous and returns before the WorkSpace is completely restored.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestoreWorkspace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4935,10 +4707,10 @@ pub mod fluent_builders {
                 crate::input::RestoreWorkspaceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4947,8 +4719,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the WorkSpace.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The identifier of the WorkSpace.</p>
@@ -4960,7 +4732,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RevokeIpRules`.
     ///
     /// <p>Removes one or more rules from the specified IP access control group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RevokeIpRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5005,10 +4777,10 @@ pub mod fluent_builders {
                 crate::input::RevokeIpRulesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5017,8 +4789,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the group.</p>
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// <p>The identifier of the group.</p>
@@ -5031,8 +4803,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_user_rules`](Self::set_user_rules).
         ///
         /// <p>The rules to remove from the group.</p>
-        pub fn user_rules(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_rules(inp);
+        pub fn user_rules(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_rules(input.into());
             self
         }
         /// <p>The rules to remove from the group.</p>
@@ -5047,9 +4819,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartWorkspaces`.
     ///
     /// <p>Starts the specified WorkSpaces.</p>
-    /// <p>You cannot start a WorkSpace unless it has a running mode of <code>AutoStop</code> and a
-    /// state of <code>STOPPED</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You cannot start a WorkSpace unless it has a running mode of <code>AutoStop</code> and a state of <code>STOPPED</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartWorkspaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5094,10 +4865,10 @@ pub mod fluent_builders {
                 crate::input::StartWorkspacesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5110,11 +4881,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_start_workspace_requests`](Self::set_start_workspace_requests).
         ///
         /// <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
-        pub fn start_workspace_requests(
-            mut self,
-            inp: impl Into<crate::model::StartRequest>,
-        ) -> Self {
-            self.inner = self.inner.start_workspace_requests(inp);
+        pub fn start_workspace_requests(mut self, input: crate::model::StartRequest) -> Self {
+            self.inner = self.inner.start_workspace_requests(input);
             self
         }
         /// <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
@@ -5129,10 +4897,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopWorkspaces`.
     ///
     /// <p> Stops the specified WorkSpaces.</p>
-    /// <p>You cannot stop a WorkSpace unless it has a running mode of <code>AutoStop</code> and a
-    /// state of <code>AVAILABLE</code>, <code>IMPAIRED</code>, <code>UNHEALTHY</code>, or
-    /// <code>ERROR</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You cannot stop a WorkSpace unless it has a running mode of <code>AutoStop</code> and a state of <code>AVAILABLE</code>, <code>IMPAIRED</code>, <code>UNHEALTHY</code>, or <code>ERROR</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopWorkspaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5177,10 +4943,10 @@ pub mod fluent_builders {
                 crate::input::StopWorkspacesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5193,11 +4959,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_stop_workspace_requests`](Self::set_stop_workspace_requests).
         ///
         /// <p>The WorkSpaces to stop. You can specify up to 25 WorkSpaces.</p>
-        pub fn stop_workspace_requests(
-            mut self,
-            inp: impl Into<crate::model::StopRequest>,
-        ) -> Self {
-            self.inner = self.inner.stop_workspace_requests(inp);
+        pub fn stop_workspace_requests(mut self, input: crate::model::StopRequest) -> Self {
+            self.inner = self.inner.stop_workspace_requests(input);
             self
         }
         /// <p>The WorkSpaces to stop. You can specify up to 25 WorkSpaces.</p>
@@ -5211,37 +4974,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TerminateWorkspaces`.
     ///
-    /// <p>Terminates the specified WorkSpaces.</p>
-    ///
-    /// <important>
-    /// <p>Terminating a WorkSpace is a permanent action and cannot be undone. The user's data is
-    /// destroyed. If you need to archive any user data, contact Amazon Web Services Support before
-    /// terminating the WorkSpace.</p>
+    /// <p>Terminates the specified WorkSpaces.</p> <important>
+    /// <p>Terminating a WorkSpace is a permanent action and cannot be undone. The user's data is destroyed. If you need to archive any user data, contact Amazon Web Services Support before terminating the WorkSpace.</p>
     /// </important>
-    ///
     /// <p>You can terminate a WorkSpace that is in any state except <code>SUSPENDED</code>.</p>
-    /// <p>This operation is asynchronous and returns before the WorkSpaces have been completely
-    /// terminated. After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned
-    /// only briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely
-    /// returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID by using
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
-    /// DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has
-    /// been successfully terminated.</p>      
-    ///
-    /// <note>
-    /// <p>Simple AD and AD Connector are made available to you free of charge to use with WorkSpaces.
-    /// If there are no WorkSpaces being used with your Simple AD or AD Connector directory for 30
-    /// consecutive days, this directory will be automatically deregistered for use with Amazon WorkSpaces,
-    /// and you will be charged for this directory as per the
-    /// <a href="http://aws.amazon.com/directoryservice/pricing/">Directory Service pricing terms</a>.</p>
-    ///
-    /// <p>To delete empty directories, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/delete-workspaces-directory.html">
-    /// Delete the Directory for Your WorkSpaces</a>. If you delete your
-    /// Simple AD or AD Connector directory, you can always create a new one when you want to start using
-    /// WorkSpaces again.</p>
+    /// <p>This operation is asynchronous and returns before the WorkSpaces have been completely terminated. After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has been successfully terminated.</p> <note>
+    /// <p>Simple AD and AD Connector are made available to you free of charge to use with WorkSpaces. If there are no WorkSpaces being used with your Simple AD or AD Connector directory for 30 consecutive days, this directory will be automatically deregistered for use with Amazon WorkSpaces, and you will be charged for this directory as per the <a href="http://aws.amazon.com/directoryservice/pricing/">Directory Service pricing terms</a>.</p>
+    /// <p>To delete empty directories, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/delete-workspaces-directory.html"> Delete the Directory for Your WorkSpaces</a>. If you delete your Simple AD or AD Connector directory, you can always create a new one when you want to start using WorkSpaces again.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TerminateWorkspaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5286,10 +5027,10 @@ pub mod fluent_builders {
                 crate::input::TerminateWorkspacesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5304,9 +5045,9 @@ pub mod fluent_builders {
         /// <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
         pub fn terminate_workspace_requests(
             mut self,
-            inp: impl Into<crate::model::TerminateRequest>,
+            input: crate::model::TerminateRequest,
         ) -> Self {
-            self.inner = self.inner.terminate_workspace_requests(inp);
+            self.inner = self.inner.terminate_workspace_requests(input);
             self
         }
         /// <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
@@ -5320,27 +5061,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateConnectionAliasPermission`.
     ///
-    /// <p>Shares or unshares a connection alias with one account by specifying whether that account has permission to
-    /// associate the connection alias with a directory. If the association permission is granted, the connection alias
-    /// is shared with that account. If the association permission is revoked, the connection alias is unshared with the
-    /// account. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
-    /// Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
-    ///
-    /// <note>
+    /// <p>Shares or unshares a connection alias with one account by specifying whether that account has permission to associate the connection alias with a directory. If the association permission is granted, the connection alias is shared with that account. If the association permission is revoked, the connection alias is unshared with the account. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p> <note>
     /// <ul>
-    /// <li>
-    /// <p>Before performing this operation, call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html">
-    /// DescribeConnectionAliases</a> to make sure that the current state of the connection alias is <code>CREATED</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>To delete a connection alias that has been shared, the shared account must first disassociate the
-    /// connection alias from any directories it has been associated with. Then you must unshare the connection
-    /// alias from the account it has been shared with. You can delete a connection alias only after it is no
-    /// longer shared with any accounts or associated with any directories.</p>
-    /// </li>
+    /// <li> <p>Before performing this operation, call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html"> DescribeConnectionAliases</a> to make sure that the current state of the connection alias is <code>CREATED</code>.</p> </li>
+    /// <li> <p>To delete a connection alias that has been shared, the shared account must first disassociate the connection alias from any directories it has been associated with. Then you must unshare the connection alias from the account it has been shared with. You can delete a connection alias only after it is no longer shared with any accounts or associated with any directories.</p> </li>
     /// </ul>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConnectionAliasPermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5385,10 +5112,10 @@ pub mod fluent_builders {
                 crate::input::UpdateConnectionAliasPermissionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5397,8 +5124,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the connection alias that you want to update permissions for.</p>
-        pub fn alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_id(inp);
+        pub fn alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_id(input.into());
             self
         }
         /// <p>The identifier of the connection alias that you want to update permissions for.</p>
@@ -5409,9 +5136,9 @@ pub mod fluent_builders {
         /// <p>Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.</p>
         pub fn connection_alias_permission(
             mut self,
-            inp: crate::model::ConnectionAliasPermission,
+            input: crate::model::ConnectionAliasPermission,
         ) -> Self {
-            self.inner = self.inner.connection_alias_permission(inp);
+            self.inner = self.inner.connection_alias_permission(input);
             self
         }
         /// <p>Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.</p>
@@ -5425,9 +5152,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateRulesOfIpGroup`.
     ///
-    /// <p>Replaces the current rules of the specified IP access control group with the specified
-    /// rules.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Replaces the current rules of the specified IP access control group with the specified rules.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRulesOfIpGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5472,10 +5198,10 @@ pub mod fluent_builders {
                 crate::input::UpdateRulesOfIpGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5484,8 +5210,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the group.</p>
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// <p>The identifier of the group.</p>
@@ -5498,8 +5224,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_user_rules`](Self::set_user_rules).
         ///
         /// <p>One or more rules.</p>
-        pub fn user_rules(mut self, inp: impl Into<crate::model::IpRuleItem>) -> Self {
-            self.inner = self.inner.user_rules(inp);
+        pub fn user_rules(mut self, input: crate::model::IpRuleItem) -> Self {
+            self.inner = self.inner.user_rules(input);
             self
         }
         /// <p>One or more rules.</p>
@@ -5513,16 +5239,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateWorkspaceBundle`.
     ///
-    /// <p>Updates a WorkSpace bundle with a new image. For more information about updating WorkSpace bundles, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-custom-bundle.html">
-    /// Update a Custom WorkSpaces Bundle</a>.</p>
-    ///
-    /// <important>
-    /// <p>Existing WorkSpaces aren't automatically updated when you update the bundle that they're
-    /// based on. To update existing WorkSpaces that are based on a bundle that you've updated, you
-    /// must either rebuild the WorkSpaces or delete and recreate them.</p>
+    /// <p>Updates a WorkSpace bundle with a new image. For more information about updating WorkSpace bundles, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-custom-bundle.html"> Update a Custom WorkSpaces Bundle</a>.</p> <important>
+    /// <p>Existing WorkSpaces aren't automatically updated when you update the bundle that they're based on. To update existing WorkSpaces that are based on a bundle that you've updated, you must either rebuild the WorkSpaces or delete and recreate them.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWorkspaceBundle<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5567,10 +5287,10 @@ pub mod fluent_builders {
                 crate::input::UpdateWorkspaceBundleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5579,8 +5299,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the bundle.</p>
-        pub fn bundle_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bundle_id(inp);
+        pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bundle_id(input.into());
             self
         }
         /// <p>The identifier of the bundle.</p>
@@ -5589,8 +5309,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the image.</p>
-        pub fn image_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_id(inp);
+        pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_id(input.into());
             self
         }
         /// <p>The identifier of the image.</p>
@@ -5601,33 +5321,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateWorkspaceImagePermission`.
     ///
-    /// <p>Shares or unshares an image with one account in the same Amazon Web Services Region by specifying whether that account has
-    /// permission to copy the image. If the copy image permission is granted, the image is shared with that account.
-    /// If the copy image permission is revoked, the image is unshared with the account.</p>
-    ///
+    /// <p>Shares or unshares an image with one account in the same Amazon Web Services Region by specifying whether that account has permission to copy the image. If the copy image permission is granted, the image is shared with that account. If the copy image permission is revoked, the image is unshared with the account.</p>
     /// <p>After an image has been shared, the recipient account can copy the image to other Regions as needed.</p>
-    ///
     /// <p>In the China (Ningxia) Region, you can copy images only within the same Region.</p>
-    ///
     /// <p>In Amazon Web Services GovCloud (US), to copy images to and from other Regions, contact Amazon Web Services Support.</p>
-    ///
-    /// <p>For more information about sharing images, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html">
-    /// Share or Unshare a Custom WorkSpaces Image</a>.</p>
-    ///
-    /// <note>
+    /// <p>For more information about sharing images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html"> Share or Unshare a Custom WorkSpaces Image</a>.</p> <note>
     /// <ul>
-    /// <li>
-    /// <p>To delete an image that has been shared, you must unshare the image before you delete it.</p>
-    /// </li>
-    /// <li>
-    /// <p>Sharing Bring Your Own License (BYOL) images across Amazon Web Services accounts isn't supported at
-    /// this time in Amazon Web Services GovCloud (US). To share BYOL images across accounts in
-    /// Amazon Web Services GovCloud (US), contact Amazon Web Services Support.</p>
-    /// </li>
-    /// </ul>         
+    /// <li> <p>To delete an image that has been shared, you must unshare the image before you delete it.</p> </li>
+    /// <li> <p>Sharing Bring Your Own License (BYOL) images across Amazon Web Services accounts isn't supported at this time in Amazon Web Services GovCloud (US). To share BYOL images across accounts in Amazon Web Services GovCloud (US), contact Amazon Web Services Support.</p> </li>
+    /// </ul>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWorkspaceImagePermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5672,10 +5376,10 @@ pub mod fluent_builders {
                 crate::input::UpdateWorkspaceImagePermissionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5684,8 +5388,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the image.</p>
-        pub fn image_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_id(inp);
+        pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_id(input.into());
             self
         }
         /// <p>The identifier of the image.</p>
@@ -5693,30 +5397,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_id(input);
             self
         }
-        /// <p>The permission to copy the image. This permission can be revoked only after an image
-        /// has been shared.</p>
-        pub fn allow_copy_image(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_copy_image(inp);
+        /// <p>The permission to copy the image. This permission can be revoked only after an image has been shared.</p>
+        pub fn allow_copy_image(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_copy_image(input);
             self
         }
-        /// <p>The permission to copy the image. This permission can be revoked only after an image
-        /// has been shared.</p>
+        /// <p>The permission to copy the image. This permission can be revoked only after an image has been shared.</p>
         pub fn set_allow_copy_image(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_allow_copy_image(input);
             self
         }
-        /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p>
-        ///
-        /// <important>
+        /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important>
         /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
         /// </important>
-        pub fn shared_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shared_account_id(inp);
+        pub fn shared_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shared_account_id(input.into());
             self
         }
-        /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p>
-        ///
-        /// <important>
+        /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important>
         /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
         /// </important>
         pub fn set_shared_account_id(
@@ -5728,6 +5426,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

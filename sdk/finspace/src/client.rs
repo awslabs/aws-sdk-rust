@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for FinSpace User Environment Management service
@@ -151,7 +151,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateEnvironment`.
     ///
     /// <p>Create a new FinSpace environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -196,10 +196,10 @@ pub mod fluent_builders {
                 crate::input::CreateEnvironmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -208,8 +208,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the FinSpace environment to be created.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the FinSpace environment to be created.</p>
@@ -218,8 +218,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the FinSpace environment to be created.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the FinSpace environment to be created.</p>
@@ -228,8 +228,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The KMS key id to encrypt your data in the FinSpace environment.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The KMS key id to encrypt your data in the FinSpace environment.</p>
@@ -247,7 +247,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Add tags to your FinSpace environment.</p>
@@ -262,29 +262,17 @@ pub mod fluent_builders {
         }
         /// <p>Authentication mode for the environment.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p>
-        /// </li>
+        /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
+        /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
         /// </ul>
-        pub fn federation_mode(mut self, inp: crate::model::FederationMode) -> Self {
-            self.inner = self.inner.federation_mode(inp);
+        pub fn federation_mode(mut self, input: crate::model::FederationMode) -> Self {
+            self.inner = self.inner.federation_mode(input);
             self
         }
         /// <p>Authentication mode for the environment.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p>
-        /// </li>
+        /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
+        /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
         /// </ul>
         pub fn set_federation_mode(
             mut self,
@@ -294,8 +282,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configuration information when authentication mode is FEDERATED.</p>
-        pub fn federation_parameters(mut self, inp: crate::model::FederationParameters) -> Self {
-            self.inner = self.inner.federation_parameters(inp);
+        pub fn federation_parameters(mut self, input: crate::model::FederationParameters) -> Self {
+            self.inner = self.inner.federation_parameters(input);
             self
         }
         /// <p>Configuration information when authentication mode is FEDERATED.</p>
@@ -307,8 +295,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configuration information for the superuser.</p>
-        pub fn superuser_parameters(mut self, inp: crate::model::SuperuserParameters) -> Self {
-            self.inner = self.inner.superuser_parameters(inp);
+        pub fn superuser_parameters(mut self, input: crate::model::SuperuserParameters) -> Self {
+            self.inner = self.inner.superuser_parameters(input);
             self
         }
         /// <p>Configuration information for the superuser.</p>
@@ -325,29 +313,17 @@ pub mod fluent_builders {
         ///
         /// <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p>
-        /// </li>
+        /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p> </li>
+        /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p> </li>
         /// </ul>
-        pub fn data_bundles(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_bundles(inp);
+        pub fn data_bundles(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_bundles(input.into());
             self
         }
         /// <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p>
-        /// </li>
+        /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p> </li>
+        /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p> </li>
         /// </ul>
         pub fn set_data_bundles(
             mut self,
@@ -360,7 +336,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEnvironment`.
     ///
     /// <p>Delete an FinSpace environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -405,10 +381,10 @@ pub mod fluent_builders {
                 crate::input::DeleteEnvironmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -417,8 +393,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the FinSpace environment.</p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(input.into());
             self
         }
         /// <p>The identifier for the FinSpace environment.</p>
@@ -433,7 +409,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEnvironment`.
     ///
     /// <p>Returns the FinSpace environment object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -478,10 +454,10 @@ pub mod fluent_builders {
                 crate::input::GetEnvironmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -490,8 +466,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the FinSpace environment.</p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(input.into());
             self
         }
         /// <p>The identifier of the FinSpace environment.</p>
@@ -506,7 +482,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEnvironments`.
     ///
     /// <p>A list of all of your FinSpace environments.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEnvironments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -551,10 +527,10 @@ pub mod fluent_builders {
                 crate::input::ListEnvironmentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -562,23 +538,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token generated by FinSpace that specifies where to continue pagination if a previous
-        /// request was truncated. To get the next set of pages, pass in the nextToken value from the
-        /// response object of the previous page call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token generated by FinSpace that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the nextToken value from the response object of the previous page call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token generated by FinSpace that specifies where to continue pagination if a previous
-        /// request was truncated. To get the next set of pages, pass in the nextToken value from the
-        /// response object of the previous page call.</p>
+        /// <p>A token generated by FinSpace that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the nextToken value from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return in this request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in this request.</p>
@@ -590,7 +562,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>A list of all tags for a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -635,10 +607,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -647,8 +619,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name of the resource.</p>
@@ -660,7 +632,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds metadata tags to a FinSpace resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -705,10 +677,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -717,8 +689,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the resource.</p>
@@ -736,7 +708,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>One or more tags to be assigned to the resource.</p>
@@ -753,7 +725,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes metadata tags from a FinSpace resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -798,10 +770,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -809,14 +781,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A FinSpace resource from which you want to remove a tag or tags. The value for this
-        /// parameter is an Amazon Resource Name (ARN).</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>A FinSpace resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN).</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>A FinSpace resource from which you want to remove a tag or tags. The value for this
-        /// parameter is an Amazon Resource Name (ARN).</p>
+        /// <p>A FinSpace resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN).</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -826,8 +796,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys (names) of one or more tags to be removed.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys (names) of one or more tags to be removed.</p>
@@ -842,7 +812,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateEnvironment`.
     ///
     /// <p>Update your FinSpace environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -887,10 +857,10 @@ pub mod fluent_builders {
                 crate::input::UpdateEnvironmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -899,8 +869,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the FinSpace environment.</p>
-        pub fn environment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(inp);
+        pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(input.into());
             self
         }
         /// <p>The identifier of the FinSpace environment.</p>
@@ -912,8 +882,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the environment.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the environment.</p>
@@ -922,8 +892,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the environment.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the environment.</p>
@@ -933,29 +903,17 @@ pub mod fluent_builders {
         }
         /// <p>Authentication mode for the environment.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p>
-        /// </li>
+        /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
+        /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
         /// </ul>
-        pub fn federation_mode(mut self, inp: crate::model::FederationMode) -> Self {
-            self.inner = self.inner.federation_mode(inp);
+        pub fn federation_mode(mut self, input: crate::model::FederationMode) -> Self {
+            self.inner = self.inner.federation_mode(input);
             self
         }
         /// <p>Authentication mode for the environment.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p>
-        /// </li>
+        /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
+        /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
         /// </ul>
         pub fn set_federation_mode(
             mut self,
@@ -965,8 +923,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configuration information when authentication mode is FEDERATED.</p>
-        pub fn federation_parameters(mut self, inp: crate::model::FederationParameters) -> Self {
-            self.inner = self.inner.federation_parameters(inp);
+        pub fn federation_parameters(mut self, input: crate::model::FederationParameters) -> Self {
+            self.inner = self.inner.federation_parameters(input);
             self
         }
         /// <p>Configuration information when authentication mode is FEDERATED.</p>
@@ -979,6 +937,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

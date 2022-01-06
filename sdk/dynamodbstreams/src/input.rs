@@ -31,14 +31,12 @@ pub mod describe_stream_input {
             self.limit = input;
             self
         }
-        /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was
-        /// returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
+        /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
         pub fn exclusive_start_shard_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.exclusive_start_shard_id = Some(input.into());
             self
         }
-        /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was
-        /// returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
+        /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
         pub fn set_exclusive_start_shard_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -64,7 +62,7 @@ pub mod describe_stream_input {
 #[doc(hidden)]
 pub type DescribeStreamInputOperationOutputAlias = crate::operation::DescribeStream;
 #[doc(hidden)]
-pub type DescribeStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeStreamInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStream`](crate::operation::DescribeStream)>
     #[allow(clippy::let_and_return)]
@@ -75,7 +73,7 @@ impl DescribeStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeStream,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -160,7 +158,7 @@ impl DescribeStreamInput {
             "DescribeStream",
             "dynamodbstreams",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -233,7 +231,7 @@ pub mod get_records_input {
 #[doc(hidden)]
 pub type GetRecordsInputOperationOutputAlias = crate::operation::GetRecords;
 #[doc(hidden)]
-pub type GetRecordsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRecordsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRecordsInput {
     /// Consumes the builder and constructs an Operation<[`GetRecords`](crate::operation::GetRecords)>
     #[allow(clippy::let_and_return)]
@@ -244,7 +242,7 @@ impl GetRecordsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRecords,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -328,7 +326,7 @@ impl GetRecordsInput {
             "GetRecords",
             "dynamodbstreams",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -385,28 +383,10 @@ pub mod get_shard_iterator_input {
         }
         /// <p>Determines how the shard iterator is used to start reading stream records from the shard:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a
-        /// specific sequence number.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a
-        /// specific sequence number.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is
-        /// the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention.
-        /// Stream records whose age exceeds this limit are subject to removal (trimming) from the
-        /// stream.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LATEST</code> - Start reading just after the most recent stream record in the
-        /// shard, so that you always read the most recent data in the shard.</p>
-        /// </li>
+        /// <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p> </li>
+        /// <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p> </li>
+        /// <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li>
+        /// <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li>
         /// </ul>
         pub fn shard_iterator_type(mut self, input: crate::model::ShardIteratorType) -> Self {
             self.shard_iterator_type = Some(input);
@@ -414,28 +394,10 @@ pub mod get_shard_iterator_input {
         }
         /// <p>Determines how the shard iterator is used to start reading stream records from the shard:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a
-        /// specific sequence number.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a
-        /// specific sequence number.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is
-        /// the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention.
-        /// Stream records whose age exceeds this limit are subject to removal (trimming) from the
-        /// stream.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LATEST</code> - Start reading just after the most recent stream record in the
-        /// shard, so that you always read the most recent data in the shard.</p>
-        /// </li>
+        /// <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p> </li>
+        /// <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p> </li>
+        /// <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li>
+        /// <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li>
         /// </ul>
         pub fn set_shard_iterator_type(
             mut self,
@@ -476,7 +438,7 @@ pub mod get_shard_iterator_input {
 #[doc(hidden)]
 pub type GetShardIteratorInputOperationOutputAlias = crate::operation::GetShardIterator;
 #[doc(hidden)]
-pub type GetShardIteratorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetShardIteratorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetShardIteratorInput {
     /// Consumes the builder and constructs an Operation<[`GetShardIterator`](crate::operation::GetShardIterator)>
     #[allow(clippy::let_and_return)]
@@ -487,7 +449,7 @@ impl GetShardIteratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetShardIterator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -572,7 +534,7 @@ impl GetShardIteratorInput {
             "GetShardIterator",
             "dynamodbstreams",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -626,16 +588,12 @@ pub mod list_streams_input {
             self.limit = input;
             self
         }
-        /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the
-        /// value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation.
-        /// </p>
+        /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>
         pub fn exclusive_start_stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.exclusive_start_stream_arn = Some(input.into());
             self
         }
-        /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the
-        /// value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation.
-        /// </p>
+        /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>
         pub fn set_exclusive_start_stream_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -661,7 +619,7 @@ pub mod list_streams_input {
 #[doc(hidden)]
 pub type ListStreamsInputOperationOutputAlias = crate::operation::ListStreams;
 #[doc(hidden)]
-pub type ListStreamsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListStreamsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStreamsInput {
     /// Consumes the builder and constructs an Operation<[`ListStreams`](crate::operation::ListStreams)>
     #[allow(clippy::let_and_return)]
@@ -672,7 +630,7 @@ impl ListStreamsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListStreams,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -756,7 +714,7 @@ impl ListStreamsInput {
             "ListStreams",
             "dynamodbstreams",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -787,9 +745,7 @@ pub struct ListStreamsInput {
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of streams to return. The upper limit is 100.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the
-    /// value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation.
-    /// </p>
+    /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>
     pub exclusive_start_stream_arn: std::option::Option<std::string::String>,
 }
 impl ListStreamsInput {
@@ -801,9 +757,7 @@ impl ListStreamsInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the
-    /// value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation.
-    /// </p>
+    /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>
     pub fn exclusive_start_stream_arn(&self) -> std::option::Option<&str> {
         self.exclusive_start_stream_arn.as_deref()
     }
@@ -831,28 +785,10 @@ pub struct GetShardIteratorInput {
     pub shard_id: std::option::Option<std::string::String>,
     /// <p>Determines how the shard iterator is used to start reading stream records from the shard:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a
-    /// specific sequence number.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a
-    /// specific sequence number.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is
-    /// the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention.
-    /// Stream records whose age exceeds this limit are subject to removal (trimming) from the
-    /// stream.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LATEST</code> - Start reading just after the most recent stream record in the
-    /// shard, so that you always read the most recent data in the shard.</p>
-    /// </li>
+    /// <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p> </li>
+    /// <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p> </li>
+    /// <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li>
+    /// <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li>
     /// </ul>
     pub shard_iterator_type: std::option::Option<crate::model::ShardIteratorType>,
     /// <p>The sequence number of a stream record in the shard from which to start reading.</p>
@@ -869,28 +805,10 @@ impl GetShardIteratorInput {
     }
     /// <p>Determines how the shard iterator is used to start reading stream records from the shard:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a
-    /// specific sequence number.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a
-    /// specific sequence number.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is
-    /// the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention.
-    /// Stream records whose age exceeds this limit are subject to removal (trimming) from the
-    /// stream.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LATEST</code> - Start reading just after the most recent stream record in the
-    /// shard, so that you always read the most recent data in the shard.</p>
-    /// </li>
+    /// <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p> </li>
+    /// <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p> </li>
+    /// <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li>
+    /// <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li>
     /// </ul>
     pub fn shard_iterator_type(&self) -> std::option::Option<&crate::model::ShardIteratorType> {
         self.shard_iterator_type.as_ref()
@@ -947,8 +865,7 @@ pub struct DescribeStreamInput {
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of shard objects to return. The upper limit is 100.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was
-    /// returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
+    /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
     pub exclusive_start_shard_id: std::option::Option<std::string::String>,
 }
 impl DescribeStreamInput {
@@ -960,8 +877,7 @@ impl DescribeStreamInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was
-    /// returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
+    /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
     pub fn exclusive_start_shard_id(&self) -> std::option::Option<&str> {
         self.exclusive_start_shard_id.as_deref()
     }

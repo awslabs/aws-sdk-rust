@@ -3,8 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>An internal error has occurred. Retry your request. If the problem persists, post a
-    /// message with details on the AWS forums.</p>
+    /// <p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>One or more parameters in your request was invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),

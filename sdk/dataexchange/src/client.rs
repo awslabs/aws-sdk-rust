@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Data Exchange
@@ -185,6 +185,7 @@ where
     ///
     /// See [`ListDataSetRevisions`](crate::client::fluent_builders::ListDataSetRevisions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDataSetRevisions::into_paginator).
     pub fn list_data_set_revisions(&self) -> fluent_builders::ListDataSetRevisions<C, M, R> {
         fluent_builders::ListDataSetRevisions::new(self.handle.clone())
     }
@@ -192,6 +193,7 @@ where
     ///
     /// See [`ListDataSets`](crate::client::fluent_builders::ListDataSets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDataSets::into_paginator).
     pub fn list_data_sets(&self) -> fluent_builders::ListDataSets<C, M, R> {
         fluent_builders::ListDataSets::new(self.handle.clone())
     }
@@ -199,6 +201,7 @@ where
     ///
     /// See [`ListEventActions`](crate::client::fluent_builders::ListEventActions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEventActions::into_paginator).
     pub fn list_event_actions(&self) -> fluent_builders::ListEventActions<C, M, R> {
         fluent_builders::ListEventActions::new(self.handle.clone())
     }
@@ -206,6 +209,7 @@ where
     ///
     /// See [`ListJobs`](crate::client::fluent_builders::ListJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListJobs::into_paginator).
     pub fn list_jobs(&self) -> fluent_builders::ListJobs<C, M, R> {
         fluent_builders::ListJobs::new(self.handle.clone())
     }
@@ -213,6 +217,7 @@ where
     ///
     /// See [`ListRevisionAssets`](crate::client::fluent_builders::ListRevisionAssets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRevisionAssets::into_paginator).
     pub fn list_revision_assets(&self) -> fluent_builders::ListRevisionAssets<C, M, R> {
         fluent_builders::ListRevisionAssets::new(self.handle.clone())
     }
@@ -291,7 +296,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelJob`.
     ///
     /// <p>This operation cancels a job. Jobs can be cancelled only when they are in the WAITING state.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -336,10 +341,10 @@ pub mod fluent_builders {
                 crate::input::CancelJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -348,8 +353,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for a job.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The unique identifier for a job.</p>
@@ -361,7 +366,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDataSet`.
     ///
     /// <p>This operation creates a data set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -406,10 +411,10 @@ pub mod fluent_builders {
                 crate::input::CreateDataSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -418,8 +423,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The type of asset that is added to a data set.</p>
-        pub fn asset_type(mut self, inp: crate::model::AssetType) -> Self {
-            self.inner = self.inner.asset_type(inp);
+        pub fn asset_type(mut self, input: crate::model::AssetType) -> Self {
+            self.inner = self.inner.asset_type(input);
             self
         }
         /// <p>The type of asset that is added to a data set.</p>
@@ -431,8 +436,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the data set. This value can be up to 16,348 characters long.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the data set. This value can be up to 16,348 characters long.</p>
@@ -441,8 +446,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the data set.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the data set.</p>
@@ -460,7 +465,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A data set tag is an optional label that you can assign to a data set when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to these data sets and revisions.</p>
@@ -477,7 +482,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateEventAction`.
     ///
     /// <p>This operation creates an event action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEventAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -522,10 +527,10 @@ pub mod fluent_builders {
                 crate::input::CreateEventActionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -534,8 +539,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>What occurs after a certain event.</p>
-        pub fn action(mut self, inp: crate::model::Action) -> Self {
-            self.inner = self.inner.action(inp);
+        pub fn action(mut self, input: crate::model::Action) -> Self {
+            self.inner = self.inner.action(input);
             self
         }
         /// <p>What occurs after a certain event.</p>
@@ -544,8 +549,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>What occurs to start an action.</p>
-        pub fn event(mut self, inp: crate::model::Event) -> Self {
-            self.inner = self.inner.event(inp);
+        pub fn event(mut self, input: crate::model::Event) -> Self {
+            self.inner = self.inner.event(input);
             self
         }
         /// <p>What occurs to start an action.</p>
@@ -557,7 +562,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateJob`.
     ///
     /// <p>This operation creates a job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -602,10 +607,10 @@ pub mod fluent_builders {
                 crate::input::CreateJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -614,8 +619,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The details for the CreateJob request.</p>
-        pub fn details(mut self, inp: crate::model::RequestDetails) -> Self {
-            self.inner = self.inner.details(inp);
+        pub fn details(mut self, input: crate::model::RequestDetails) -> Self {
+            self.inner = self.inner.details(input);
             self
         }
         /// <p>The details for the CreateJob request.</p>
@@ -627,8 +632,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of job to be created.</p>
-        pub fn r#type(mut self, inp: crate::model::Type) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::Type) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of job to be created.</p>
@@ -640,7 +645,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRevision`.
     ///
     /// <p>This operation creates a revision for a data set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRevision<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -685,10 +690,10 @@ pub mod fluent_builders {
                 crate::input::CreateRevisionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -697,8 +702,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An optional comment about the revision.</p>
-        pub fn comment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment(inp);
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment(input.into());
             self
         }
         /// <p>An optional comment about the revision.</p>
@@ -707,8 +712,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for a data set.</p>
-        pub fn data_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(inp);
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The unique identifier for a data set.</p>
@@ -726,7 +731,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A revision tag is an optional label that you can assign to a revision when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to these data sets and revisions.</p>
@@ -743,7 +748,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAsset`.
     ///
     /// <p>This operation deletes an asset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAsset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -788,10 +793,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAssetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -800,8 +805,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for an asset.</p>
-        pub fn asset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(inp);
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The unique identifier for an asset.</p>
@@ -810,8 +815,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for a data set.</p>
-        pub fn data_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(inp);
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The unique identifier for a data set.</p>
@@ -820,8 +825,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for a revision.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>The unique identifier for a revision.</p>
@@ -833,7 +838,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDataSet`.
     ///
     /// <p>This operation deletes a data set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -878,10 +883,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDataSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -890,8 +895,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for a data set.</p>
-        pub fn data_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(inp);
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The unique identifier for a data set.</p>
@@ -903,7 +908,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEventAction`.
     ///
     /// <p>This operation deletes the event action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEventAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -948,10 +953,10 @@ pub mod fluent_builders {
                 crate::input::DeleteEventActionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -960,8 +965,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the event action.</p>
-        pub fn event_action_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_action_id(inp);
+        pub fn event_action_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_action_id(input.into());
             self
         }
         /// <p>The unique identifier for the event action.</p>
@@ -976,7 +981,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRevision`.
     ///
     /// <p>This operation deletes a revision.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRevision<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1021,10 +1026,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRevisionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1033,8 +1038,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for a data set.</p>
-        pub fn data_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(inp);
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The unique identifier for a data set.</p>
@@ -1043,8 +1048,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for a revision.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>The unique identifier for a revision.</p>
@@ -1056,7 +1061,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAsset`.
     ///
     /// <p>This operation returns information about an asset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAsset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1101,10 +1106,10 @@ pub mod fluent_builders {
                 crate::input::GetAssetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1113,8 +1118,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for an asset.</p>
-        pub fn asset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(inp);
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The unique identifier for an asset.</p>
@@ -1123,8 +1128,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for a data set.</p>
-        pub fn data_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(inp);
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The unique identifier for a data set.</p>
@@ -1133,8 +1138,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for a revision.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>The unique identifier for a revision.</p>
@@ -1146,7 +1151,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDataSet`.
     ///
     /// <p>This operation returns information about a data set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDataSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1191,10 +1196,10 @@ pub mod fluent_builders {
                 crate::input::GetDataSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1203,8 +1208,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for a data set.</p>
-        pub fn data_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(inp);
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The unique identifier for a data set.</p>
@@ -1216,7 +1221,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEventAction`.
     ///
     /// <p>This operation retrieves information about an event action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEventAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1261,10 +1266,10 @@ pub mod fluent_builders {
                 crate::input::GetEventActionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1273,8 +1278,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the event action.</p>
-        pub fn event_action_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_action_id(inp);
+        pub fn event_action_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_action_id(input.into());
             self
         }
         /// <p>The unique identifier for the event action.</p>
@@ -1289,7 +1294,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetJob`.
     ///
     /// <p>This operation returns information about a job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1334,10 +1339,10 @@ pub mod fluent_builders {
                 crate::input::GetJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1346,8 +1351,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for a job.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The unique identifier for a job.</p>
@@ -1359,7 +1364,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRevision`.
     ///
     /// <p>This operation returns information about a revision.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRevision<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1404,10 +1409,10 @@ pub mod fluent_builders {
                 crate::input::GetRevisionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1416,8 +1421,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for a data set.</p>
-        pub fn data_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(inp);
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The unique identifier for a data set.</p>
@@ -1426,8 +1431,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for a revision.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>The unique identifier for a revision.</p>
@@ -1439,7 +1444,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDataSetRevisions`.
     ///
     /// <p>This operation lists a data set's revisions sorted by CreatedAt in descending order.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDataSetRevisions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1484,10 +1489,10 @@ pub mod fluent_builders {
                 crate::input::ListDataSetRevisionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1495,9 +1500,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDataSetRevisionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDataSetRevisionsPaginator<C, M, R> {
+            crate::paginator::ListDataSetRevisionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The unique identifier for a data set.</p>
-        pub fn data_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(inp);
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The unique identifier for a data set.</p>
@@ -1506,8 +1517,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results returned by a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results returned by a single call.</p>
@@ -1516,8 +1527,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -1529,7 +1540,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDataSets`.
     ///
     /// <p>This operation lists your data sets. When listing by origin OWNED, results are sorted by CreatedAt in descending order. When listing by origin ENTITLED, there is no order and the maxResults parameter is ignored.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDataSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1574,10 +1585,10 @@ pub mod fluent_builders {
                 crate::input::ListDataSetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1585,9 +1596,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDataSetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDataSetsPaginator<C, M, R> {
+            crate::paginator::ListDataSetsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of results returned by a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results returned by a single call.</p>
@@ -1596,8 +1613,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -1606,8 +1623,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
-        pub fn origin(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.origin(inp);
+        pub fn origin(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.origin(input.into());
             self
         }
         /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
@@ -1619,7 +1636,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEventActions`.
     ///
     /// <p>This operation lists your event actions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEventActions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1664,10 +1681,10 @@ pub mod fluent_builders {
                 crate::input::ListEventActionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1675,9 +1692,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEventActionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListEventActionsPaginator<C, M, R> {
+            crate::paginator::ListEventActionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The unique identifier for the event source.</p>
-        pub fn event_source_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_source_id(inp);
+        pub fn event_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_source_id(input.into());
             self
         }
         /// <p>The unique identifier for the event source.</p>
@@ -1689,8 +1712,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results returned by a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results returned by a single call.</p>
@@ -1699,8 +1722,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -1712,7 +1735,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListJobs`.
     ///
     /// <p>This operation lists your jobs sorted by CreatedAt in descending order.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1757,10 +1780,10 @@ pub mod fluent_builders {
                 crate::input::ListJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1768,9 +1791,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListJobsPaginator<C, M, R> {
+            crate::paginator::ListJobsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The unique identifier for a data set.</p>
-        pub fn data_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(inp);
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The unique identifier for a data set.</p>
@@ -1779,8 +1808,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results returned by a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results returned by a single call.</p>
@@ -1789,8 +1818,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -1799,8 +1828,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for a revision.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>The unique identifier for a revision.</p>
@@ -1812,7 +1841,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRevisionAssets`.
     ///
     /// <p>This operation lists a revision's assets sorted alphabetically in descending order.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRevisionAssets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1857,10 +1886,10 @@ pub mod fluent_builders {
                 crate::input::ListRevisionAssetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1868,9 +1897,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRevisionAssetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListRevisionAssetsPaginator<C, M, R> {
+            crate::paginator::ListRevisionAssetsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The unique identifier for a data set.</p>
-        pub fn data_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(inp);
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The unique identifier for a data set.</p>
@@ -1879,8 +1914,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results returned by a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results returned by a single call.</p>
@@ -1889,8 +1924,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -1899,8 +1934,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for a revision.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>The unique identifier for a revision.</p>
@@ -1912,7 +1947,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>This operation lists the tags on the resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1957,10 +1992,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1969,8 +2004,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
@@ -1982,7 +2017,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SendApiAsset`.
     ///
     /// <p>This operation invokes an API Gateway API asset. The request is proxied to the provider’s API Gateway API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendApiAsset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2027,10 +2062,10 @@ pub mod fluent_builders {
                 crate::input::SendApiAssetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2039,8 +2074,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The request body.</p>
-        pub fn body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.body(inp);
+        pub fn body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.body(input.into());
             self
         }
         /// <p>The request body.</p>
@@ -2058,7 +2093,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.query_string_parameters(k, v);
+            self.inner = self.inner.query_string_parameters(k.into(), v.into());
             self
         }
         /// <p>Attach query string parameters to the end of the URI (for example, /v1/examplePath?exampleParam=exampleValue).</p>
@@ -2072,8 +2107,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Asset ID value for the API request.</p>
-        pub fn asset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(inp);
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>Asset ID value for the API request.</p>
@@ -2082,8 +2117,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Data set ID value for the API request.</p>
-        pub fn data_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(inp);
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>Data set ID value for the API request.</p>
@@ -2101,7 +2136,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.request_headers(k, v);
+            self.inner = self.inner.request_headers(k.into(), v.into());
             self
         }
         /// <p>Any header value prefixed with x-amzn-dataexchange-header- will have that stripped before sending the Asset API request. Use this when you want to override a header that AWS Data Exchange uses. Alternatively, you can use the header without a prefix to the HTTP request.</p>
@@ -2115,8 +2150,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>HTTP method value for the API request. Alternatively, you can use the appropriate verb in your request.</p>
-        pub fn method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.method(inp);
+        pub fn method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.method(input.into());
             self
         }
         /// <p>HTTP method value for the API request. Alternatively, you can use the appropriate verb in your request.</p>
@@ -2125,8 +2160,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>URI path value for the API request. Alternatively, you can set the URI path directly by invoking /v1/{pathValue}</p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path(inp);
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path(input.into());
             self
         }
         /// <p>URI path value for the API request. Alternatively, you can set the URI path directly by invoking /v1/{pathValue}</p>
@@ -2135,8 +2170,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Revision ID value for the API request.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>Revision ID value for the API request.</p>
@@ -2148,7 +2183,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartJob`.
     ///
     /// <p>This operation starts a job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2193,10 +2228,10 @@ pub mod fluent_builders {
                 crate::input::StartJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2205,8 +2240,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for a job.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The unique identifier for a job.</p>
@@ -2218,7 +2253,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>This operation tags a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2263,10 +2298,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2275,8 +2310,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
@@ -2294,7 +2329,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// A label that consists of a customer-defined key and an optional value.
@@ -2311,7 +2346,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>This operation removes one or more tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2356,10 +2391,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2368,8 +2403,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
@@ -2382,8 +2417,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// The key tags.
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// The key tags.
@@ -2398,7 +2433,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAsset`.
     ///
     /// <p>This operation updates an asset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAsset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2443,10 +2478,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAssetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2455,8 +2490,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for an asset.</p>
-        pub fn asset_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(inp);
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The unique identifier for an asset.</p>
@@ -2465,8 +2500,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for a data set.</p>
-        pub fn data_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(inp);
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The unique identifier for a data set.</p>
@@ -2475,8 +2510,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
@@ -2485,8 +2520,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for a revision.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>The unique identifier for a revision.</p>
@@ -2498,7 +2533,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDataSet`.
     ///
     /// <p>This operation updates a data set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDataSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2543,10 +2578,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDataSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2555,8 +2590,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for a data set.</p>
-        pub fn data_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(inp);
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The unique identifier for a data set.</p>
@@ -2565,8 +2600,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the data set.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description for the data set.</p>
@@ -2575,8 +2610,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the data set.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the data set.</p>
@@ -2588,7 +2623,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateEventAction`.
     ///
     /// <p>This operation updates the event action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEventAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2633,10 +2668,10 @@ pub mod fluent_builders {
                 crate::input::UpdateEventActionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2645,8 +2680,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>What occurs after a certain event.</p>
-        pub fn action(mut self, inp: crate::model::Action) -> Self {
-            self.inner = self.inner.action(inp);
+        pub fn action(mut self, input: crate::model::Action) -> Self {
+            self.inner = self.inner.action(input);
             self
         }
         /// <p>What occurs after a certain event.</p>
@@ -2655,8 +2690,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the event action.</p>
-        pub fn event_action_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_action_id(inp);
+        pub fn event_action_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_action_id(input.into());
             self
         }
         /// <p>The unique identifier for the event action.</p>
@@ -2671,7 +2706,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRevision`.
     ///
     /// <p>This operation updates a revision.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRevision<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2716,10 +2751,10 @@ pub mod fluent_builders {
                 crate::input::UpdateRevisionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2728,8 +2763,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An optional comment about the revision.</p>
-        pub fn comment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment(inp);
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment(input.into());
             self
         }
         /// <p>An optional comment about the revision.</p>
@@ -2738,8 +2773,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for a data set.</p>
-        pub fn data_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(inp);
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The unique identifier for a data set.</p>
@@ -2748,8 +2783,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
-        pub fn finalized(mut self, inp: bool) -> Self {
-            self.inner = self.inner.finalized(inp);
+        pub fn finalized(mut self, input: bool) -> Self {
+            self.inner = self.inner.finalized(input);
             self
         }
         /// <p>Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
@@ -2758,8 +2793,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for a revision.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>The unique identifier for a revision.</p>
@@ -2769,6 +2804,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

@@ -12,19 +12,15 @@ pub struct AssociateDelegateToResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateDelegateToResourceErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -77,8 +73,6 @@ impl AssociateDelegateToResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -171,19 +165,15 @@ pub enum AssociateMemberToGroupErrorKind {
     ),
     /// <p>The directory is unavailable. It might be located in another Region or deleted.</p>
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>You can't perform a write operation against a read-only directory.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
@@ -237,8 +227,6 @@ impl AssociateMemberToGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -347,16 +335,13 @@ pub struct CancelMailboxExportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelMailboxExportJobErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -402,8 +387,6 @@ impl CancelMailboxExportJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -478,14 +461,11 @@ pub struct CreateAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAliasErrorKind {
-    /// <p>The email address that you're trying to assign is already created for a different
-    /// user, group, or resource.</p>
+    /// <p>The email address that you're trying to assign is already created for a different user, group, or resource.</p>
     EmailAddressInUseException(crate::error::EmailAddressInUseException),
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -493,14 +473,11 @@ pub enum CreateAliasErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The domain specified is not found in your organization.</p>
     MailDomainNotFoundException(crate::error::MailDomainNotFoundException),
-    /// <p>After a domain has been added to the organization, it must be verified. The domain is
-    /// not yet verified.</p>
+    /// <p>After a domain has been added to the organization, it must be verified. The domain is not yet verified.</p>
     MailDomainStateException(crate::error::MailDomainStateException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -551,8 +528,6 @@ impl CreateAliasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -668,11 +643,9 @@ pub enum CreateGroupErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The user, group, or resource name isn't unique in Amazon WorkMail.</p>
     NameAvailabilityException(crate::error::NameAvailabilityException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>This user, group, or resource name is not allowed in Amazon WorkMail.</p>
     ReservedNameException(crate::error::ReservedNameException),
@@ -728,8 +701,6 @@ impl CreateGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -839,11 +810,9 @@ pub enum CreateMobileDeviceAccessRuleErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The request exceeds the limit of the resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -895,8 +864,6 @@ impl CreateMobileDeviceAccessRuleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1032,8 +999,6 @@ impl CreateOrganizationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1126,11 +1091,9 @@ pub enum CreateResourceErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The user, group, or resource name isn't unique in Amazon WorkMail.</p>
     NameAvailabilityException(crate::error::NameAvailabilityException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>This user, group, or resource name is not allowed in Amazon WorkMail.</p>
     ReservedNameException(crate::error::ReservedNameException),
@@ -1183,8 +1146,6 @@ impl CreateResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1293,16 +1254,13 @@ pub enum CreateUserErrorKind {
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The supplied password doesn't match the minimum security constraints, such as length
-    /// or use of special characters.</p>
+    /// <p>The supplied password doesn't match the minimum security constraints, such as length or use of special characters.</p>
     InvalidPasswordException(crate::error::InvalidPasswordException),
     /// <p>The user, group, or resource name isn't unique in Amazon WorkMail.</p>
     NameAvailabilityException(crate::error::NameAvailabilityException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>This user, group, or resource name is not allowed in Amazon WorkMail.</p>
     ReservedNameException(crate::error::ReservedNameException),
@@ -1359,8 +1317,6 @@ impl CreateUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1471,11 +1427,9 @@ pub struct DeleteAccessControlRuleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAccessControlRuleErrorKind {
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1521,8 +1475,6 @@ impl DeleteAccessControlRuleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1581,19 +1533,15 @@ pub struct DeleteAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAliasErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1640,8 +1588,6 @@ impl DeleteAliasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1705,6 +1651,136 @@ impl std::error::Error for DeleteAliasError {
     }
 }
 
+/// Error type for the `DeleteEmailMonitoringConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteEmailMonitoringConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: DeleteEmailMonitoringConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteEmailMonitoringConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteEmailMonitoringConfigurationErrorKind {
+    /// <p>One or more of the input parameters don't match the service's restrictions.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
+    OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
+    OrganizationStateException(crate::error::OrganizationStateException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteEmailMonitoringConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteEmailMonitoringConfigurationErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteEmailMonitoringConfigurationErrorKind::OrganizationNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteEmailMonitoringConfigurationErrorKind::OrganizationStateException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteEmailMonitoringConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteEmailMonitoringConfigurationError {
+    fn code(&self) -> Option<&str> {
+        DeleteEmailMonitoringConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteEmailMonitoringConfigurationError {
+    /// Creates a new `DeleteEmailMonitoringConfigurationError`.
+    pub fn new(
+        kind: DeleteEmailMonitoringConfigurationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteEmailMonitoringConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteEmailMonitoringConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteEmailMonitoringConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteEmailMonitoringConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteEmailMonitoringConfigurationErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEmailMonitoringConfigurationErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteEmailMonitoringConfigurationErrorKind::OrganizationNotFoundException`.
+    pub fn is_organization_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEmailMonitoringConfigurationErrorKind::OrganizationNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteEmailMonitoringConfigurationErrorKind::OrganizationStateException`.
+    pub fn is_organization_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEmailMonitoringConfigurationErrorKind::OrganizationStateException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteEmailMonitoringConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteEmailMonitoringConfigurationErrorKind::InvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            DeleteEmailMonitoringConfigurationErrorKind::OrganizationNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DeleteEmailMonitoringConfigurationErrorKind::OrganizationStateException(_inner) => {
+                Some(_inner)
+            }
+            DeleteEmailMonitoringConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DeleteGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1724,16 +1800,13 @@ pub enum DeleteGroupErrorKind {
     ),
     /// <p>The directory is unavailable. It might be located in another Region or deleted.</p>
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>You can't perform a write operation against a read-only directory.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
@@ -1786,8 +1859,6 @@ impl DeleteGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1885,19 +1956,15 @@ pub struct DeleteMailboxPermissionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteMailboxPermissionsErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1946,8 +2013,6 @@ impl DeleteMailboxPermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2032,16 +2097,13 @@ pub struct DeleteMobileDeviceAccessOverrideError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteMobileDeviceAccessOverrideErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2098,8 +2160,6 @@ impl DeleteMobileDeviceAccessOverrideError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2184,11 +2244,9 @@ pub struct DeleteMobileDeviceAccessRuleError {
 pub enum DeleteMobileDeviceAccessRuleErrorKind {
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2239,8 +2297,6 @@ impl DeleteMobileDeviceAccessRuleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2315,11 +2371,9 @@ pub struct DeleteOrganizationError {
 pub enum DeleteOrganizationErrorKind {
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2364,8 +2418,6 @@ impl DeleteOrganizationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2432,16 +2484,13 @@ pub struct DeleteResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteResourceErrorKind {
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2487,8 +2536,6 @@ impl DeleteResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2562,11 +2609,9 @@ pub struct DeleteRetentionPolicyError {
 pub enum DeleteRetentionPolicyErrorKind {
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2611,8 +2656,6 @@ impl DeleteRetentionPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2685,16 +2728,13 @@ pub enum DeleteUserErrorKind {
     ),
     /// <p>The directory is unavailable. It might be located in another Region or deleted.</p>
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>You can't perform a write operation against a read-only directory.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
@@ -2747,8 +2787,6 @@ impl DeleteUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2846,19 +2884,15 @@ pub struct DeregisterFromWorkMailError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterFromWorkMailErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2905,8 +2939,6 @@ impl DeregisterFromWorkMailError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2989,18 +3021,15 @@ pub struct DeregisterMailDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterMailDomainErrorKind {
-    /// <p>You SES configuration has customizations that Amazon WorkMail cannot save. The error message lists the invalid setting. For examples of invalid settings, refer to
-    /// <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html">CreateReceiptRule</a>.</p>
+    /// <p>You SES configuration has customizations that Amazon WorkMail cannot save. The error message lists the invalid setting. For examples of invalid settings, refer to <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html">CreateReceiptRule</a>.</p>
     InvalidCustomSesConfigurationException(crate::error::InvalidCustomSesConfigurationException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The domain you're trying to change is in use by another user or organization in your account. See the error message for details.</p>
     MailDomainInUseException(crate::error::MailDomainInUseException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3049,8 +3078,6 @@ impl DeregisterMailDomainError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3122,6 +3149,153 @@ impl std::error::Error for DeregisterMailDomainError {
     }
 }
 
+/// Error type for the `DescribeEmailMonitoringConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeEmailMonitoringConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: DescribeEmailMonitoringConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeEmailMonitoringConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeEmailMonitoringConfigurationErrorKind {
+    /// <p>One or more of the input parameters don't match the service's restrictions.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
+    OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
+    OrganizationStateException(crate::error::OrganizationStateException),
+    /// <p>The resource cannot be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeEmailMonitoringConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeEmailMonitoringConfigurationErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeEmailMonitoringConfigurationErrorKind::OrganizationNotFoundException(
+                _inner,
+            ) => _inner.fmt(f),
+            DescribeEmailMonitoringConfigurationErrorKind::OrganizationStateException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeEmailMonitoringConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeEmailMonitoringConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeEmailMonitoringConfigurationError {
+    fn code(&self) -> Option<&str> {
+        DescribeEmailMonitoringConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeEmailMonitoringConfigurationError {
+    /// Creates a new `DescribeEmailMonitoringConfigurationError`.
+    pub fn new(
+        kind: DescribeEmailMonitoringConfigurationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeEmailMonitoringConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeEmailMonitoringConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeEmailMonitoringConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeEmailMonitoringConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeEmailMonitoringConfigurationErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeEmailMonitoringConfigurationErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeEmailMonitoringConfigurationErrorKind::OrganizationNotFoundException`.
+    pub fn is_organization_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeEmailMonitoringConfigurationErrorKind::OrganizationNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeEmailMonitoringConfigurationErrorKind::OrganizationStateException`.
+    pub fn is_organization_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeEmailMonitoringConfigurationErrorKind::OrganizationStateException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeEmailMonitoringConfigurationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeEmailMonitoringConfigurationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeEmailMonitoringConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeEmailMonitoringConfigurationErrorKind::InvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            DescribeEmailMonitoringConfigurationErrorKind::OrganizationNotFoundException(
+                _inner,
+            ) => Some(_inner),
+            DescribeEmailMonitoringConfigurationErrorKind::OrganizationStateException(_inner) => {
+                Some(_inner)
+            }
+            DescribeEmailMonitoringConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DescribeEmailMonitoringConfigurationErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
 /// Error type for the `DescribeGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3135,16 +3309,13 @@ pub struct DescribeGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeGroupErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3190,8 +3361,6 @@ impl DescribeGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3266,11 +3435,9 @@ pub struct DescribeInboundDmarcSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeInboundDmarcSettingsErrorKind {
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3318,8 +3485,6 @@ impl DescribeInboundDmarcSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3382,16 +3547,13 @@ pub struct DescribeMailboxExportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeMailboxExportJobErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3439,8 +3601,6 @@ impl DescribeMailboxExportJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3519,8 +3679,7 @@ pub struct DescribeOrganizationError {
 pub enum DescribeOrganizationErrorKind {
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3564,8 +3723,6 @@ impl DescribeOrganizationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3624,16 +3781,13 @@ pub struct DescribeResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeResourceErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3679,8 +3833,6 @@ impl DescribeResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3755,16 +3907,13 @@ pub struct DescribeUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeUserErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3810,8 +3959,6 @@ impl DescribeUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3886,19 +4033,15 @@ pub struct DisassociateDelegateFromResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateDelegateFromResourceErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3958,8 +4101,6 @@ impl DisassociateDelegateFromResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4056,19 +4197,15 @@ pub enum DisassociateMemberFromGroupErrorKind {
     ),
     /// <p>The directory is unavailable. It might be located in another Region or deleted.</p>
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>You can't perform a write operation against a read-only directory.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
@@ -4132,8 +4269,6 @@ impl DisassociateMemberFromGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4250,16 +4385,13 @@ pub struct GetAccessControlEffectError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccessControlEffectErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4305,8 +4437,6 @@ impl GetAccessControlEffectError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4381,16 +4511,13 @@ pub struct GetDefaultRetentionPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDefaultRetentionPolicyErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4438,8 +4565,6 @@ impl GetDefaultRetentionPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4516,14 +4641,11 @@ pub struct GetMailboxDetailsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMailboxDetailsErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4568,8 +4690,6 @@ impl GetMailboxDetailsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4640,11 +4760,9 @@ pub enum GetMailDomainErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The domain specified is not found in your organization.</p>
     MailDomainNotFoundException(crate::error::MailDomainNotFoundException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4690,8 +4808,6 @@ impl GetMailDomainError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4768,11 +4884,9 @@ pub struct GetMobileDeviceAccessEffectError {
 pub enum GetMobileDeviceAccessEffectErrorKind {
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4823,8 +4937,6 @@ impl GetMobileDeviceAccessEffectError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4895,16 +5007,13 @@ pub struct GetMobileDeviceAccessOverrideError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMobileDeviceAccessOverrideErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>The resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4966,8 +5075,6 @@ impl GetMobileDeviceAccessOverrideError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5058,11 +5165,9 @@ pub struct ListAccessControlRulesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAccessControlRulesErrorKind {
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5106,8 +5211,6 @@ impl ListAccessControlRulesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5166,19 +5269,15 @@ pub struct ListAliasesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAliasesErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5225,8 +5324,6 @@ impl ListAliasesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5303,19 +5400,15 @@ pub struct ListGroupMembersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGroupMembersErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5362,8 +5455,6 @@ impl ListGroupMembersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5446,16 +5537,13 @@ pub struct ListGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGroupsErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5501,8 +5589,6 @@ impl ListGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5576,11 +5662,9 @@ pub struct ListMailboxExportJobsError {
 pub enum ListMailboxExportJobsErrorKind {
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5625,8 +5709,6 @@ impl ListMailboxExportJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5693,16 +5775,13 @@ pub struct ListMailboxPermissionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListMailboxPermissionsErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5748,8 +5827,6 @@ impl ListMailboxPermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5826,11 +5903,9 @@ pub struct ListMailDomainsError {
 pub enum ListMailDomainsErrorKind {
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5875,8 +5950,6 @@ impl ListMailDomainsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5943,16 +6016,13 @@ pub struct ListMobileDeviceAccessOverridesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListMobileDeviceAccessOverridesErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6009,8 +6079,6 @@ impl ListMobileDeviceAccessOverridesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6095,11 +6163,9 @@ pub struct ListMobileDeviceAccessRulesError {
 pub enum ListMobileDeviceAccessRulesErrorKind {
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6150,8 +6216,6 @@ impl ListMobileDeviceAccessRulesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6265,8 +6329,6 @@ impl ListOrganizationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6317,19 +6379,15 @@ pub struct ListResourceDelegatesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListResourceDelegatesErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6376,8 +6434,6 @@ impl ListResourceDelegatesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6462,11 +6518,9 @@ pub struct ListResourcesError {
 pub enum ListResourcesErrorKind {
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6511,8 +6565,6 @@ impl ListResourcesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6622,8 +6674,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6676,11 +6726,9 @@ pub struct ListUsersError {
 pub enum ListUsersErrorKind {
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6725,8 +6773,6 @@ impl ListUsersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6790,18 +6836,15 @@ pub struct PutAccessControlRuleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutAccessControlRuleErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The request exceeds the limit of the resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6848,8 +6891,6 @@ impl PutAccessControlRuleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6919,6 +6960,151 @@ impl std::error::Error for PutAccessControlRuleError {
     }
 }
 
+/// Error type for the `PutEmailMonitoringConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct PutEmailMonitoringConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: PutEmailMonitoringConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `PutEmailMonitoringConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum PutEmailMonitoringConfigurationErrorKind {
+    /// <p>One or more of the input parameters don't match the service's restrictions.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
+    OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
+    OrganizationStateException(crate::error::OrganizationStateException),
+    /// <p>The resource cannot be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for PutEmailMonitoringConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            PutEmailMonitoringConfigurationErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutEmailMonitoringConfigurationErrorKind::OrganizationNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutEmailMonitoringConfigurationErrorKind::OrganizationStateException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutEmailMonitoringConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutEmailMonitoringConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for PutEmailMonitoringConfigurationError {
+    fn code(&self) -> Option<&str> {
+        PutEmailMonitoringConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl PutEmailMonitoringConfigurationError {
+    /// Creates a new `PutEmailMonitoringConfigurationError`.
+    pub fn new(
+        kind: PutEmailMonitoringConfigurationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `PutEmailMonitoringConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: PutEmailMonitoringConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `PutEmailMonitoringConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: PutEmailMonitoringConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `PutEmailMonitoringConfigurationErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutEmailMonitoringConfigurationErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutEmailMonitoringConfigurationErrorKind::OrganizationNotFoundException`.
+    pub fn is_organization_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutEmailMonitoringConfigurationErrorKind::OrganizationNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutEmailMonitoringConfigurationErrorKind::OrganizationStateException`.
+    pub fn is_organization_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutEmailMonitoringConfigurationErrorKind::OrganizationStateException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutEmailMonitoringConfigurationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutEmailMonitoringConfigurationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for PutEmailMonitoringConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            PutEmailMonitoringConfigurationErrorKind::InvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            PutEmailMonitoringConfigurationErrorKind::OrganizationNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            PutEmailMonitoringConfigurationErrorKind::OrganizationStateException(_inner) => {
+                Some(_inner)
+            }
+            PutEmailMonitoringConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            PutEmailMonitoringConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `PutInboundDmarcSettings` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6932,11 +7118,9 @@ pub struct PutInboundDmarcSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutInboundDmarcSettingsErrorKind {
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6982,8 +7166,6 @@ impl PutInboundDmarcSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7042,19 +7224,15 @@ pub struct PutMailboxPermissionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutMailboxPermissionsErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7101,8 +7279,6 @@ impl PutMailboxPermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7185,19 +7361,15 @@ pub struct PutMobileDeviceAccessOverrideError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutMobileDeviceAccessOverrideErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7255,8 +7427,6 @@ impl PutMobileDeviceAccessOverrideError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7349,11 +7519,9 @@ pub enum PutRetentionPolicyErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The request exceeds the limit of the resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7399,8 +7567,6 @@ impl PutRetentionPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7481,11 +7647,9 @@ pub enum RegisterMailDomainErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The domain you're trying to change is in use by another user or organization in your account. See the error message for details.</p>
     MailDomainInUseException(crate::error::MailDomainInUseException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7532,8 +7696,6 @@ impl RegisterMailDomainError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7622,30 +7784,23 @@ pub enum RegisterToWorkMailErrorKind {
     ),
     /// <p>The directory is unavailable. It might be located in another Region or deleted.</p>
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
-    /// <p>The email address that you're trying to assign is already created for a different
-    /// user, group, or resource.</p>
+    /// <p>The email address that you're trying to assign is already created for a different user, group, or resource.</p>
     EmailAddressInUseException(crate::error::EmailAddressInUseException),
-    /// <p>The user, group, or resource that you're trying to register is already
-    /// registered.</p>
+    /// <p>The user, group, or resource that you're trying to register is already registered.</p>
     EntityAlreadyRegisteredException(crate::error::EntityAlreadyRegisteredException),
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The domain specified is not found in your organization.</p>
     MailDomainNotFoundException(crate::error::MailDomainNotFoundException),
-    /// <p>After a domain has been added to the organization, it must be verified. The domain is
-    /// not yet verified.</p>
+    /// <p>After a domain has been added to the organization, it must be verified. The domain is not yet verified.</p>
     MailDomainStateException(crate::error::MailDomainStateException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7700,8 +7855,6 @@ impl RegisterToWorkMailError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7840,22 +7993,17 @@ pub enum ResetPasswordErrorKind {
     ),
     /// <p>The directory is unavailable. It might be located in another Region or deleted.</p>
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The supplied password doesn't match the minimum security constraints, such as length
-    /// or use of special characters.</p>
+    /// <p>The supplied password doesn't match the minimum security constraints, such as length or use of special characters.</p>
     InvalidPasswordException(crate::error::InvalidPasswordException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>You can't perform a write operation against a read-only directory.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
@@ -7910,8 +8058,6 @@ impl ResetPasswordError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8025,18 +8171,15 @@ pub struct StartMailboxExportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartMailboxExportJobErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The request exceeds the limit of the resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8083,8 +8226,6 @@ impl StartMailboxExportJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8167,8 +8308,7 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>The resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -8217,8 +8357,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8325,8 +8463,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8381,14 +8517,11 @@ pub enum UpdateDefaultMailDomainErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The domain specified is not found in your organization.</p>
     MailDomainNotFoundException(crate::error::MailDomainNotFoundException),
-    /// <p>After a domain has been added to the organization, it must be verified. The domain is
-    /// not yet verified.</p>
+    /// <p>After a domain has been added to the organization, it must be verified. The domain is not yet verified.</p>
     MailDomainStateException(crate::error::MailDomainStateException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8437,8 +8570,6 @@ impl UpdateDefaultMailDomainError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8521,19 +8652,15 @@ pub struct UpdateMailboxQuotaError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateMailboxQuotaErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8580,8 +8707,6 @@ impl UpdateMailboxQuotaError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8664,16 +8789,13 @@ pub struct UpdateMobileDeviceAccessRuleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateMobileDeviceAccessRuleErrorKind {
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8725,8 +8847,6 @@ impl UpdateMobileDeviceAccessRuleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8813,27 +8933,21 @@ pub enum UpdatePrimaryEmailAddressErrorKind {
     ),
     /// <p>The directory is unavailable. It might be located in another Region or deleted.</p>
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
-    /// <p>The email address that you're trying to assign is already created for a different
-    /// user, group, or resource.</p>
+    /// <p>The email address that you're trying to assign is already created for a different user, group, or resource.</p>
     EmailAddressInUseException(crate::error::EmailAddressInUseException),
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The domain specified is not found in your organization.</p>
     MailDomainNotFoundException(crate::error::MailDomainNotFoundException),
-    /// <p>After a domain has been added to the organization, it must be verified. The domain is
-    /// not yet verified.</p>
+    /// <p>After a domain has been added to the organization, it must be verified. The domain is not yet verified.</p>
     MailDomainStateException(crate::error::MailDomainStateException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>You can't perform a write operation against a read-only directory.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
@@ -8898,8 +9012,6 @@ impl UpdatePrimaryEmailAddressError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9040,31 +9152,23 @@ pub struct UpdateResourceError {
 pub enum UpdateResourceErrorKind {
     /// <p>The directory is unavailable. It might be located in another Region or deleted.</p>
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
-    /// <p>The email address that you're trying to assign is already created for a different
-    /// user, group, or resource.</p>
+    /// <p>The email address that you're trying to assign is already created for a different user, group, or resource.</p>
     EmailAddressInUseException(crate::error::EmailAddressInUseException),
-    /// <p>The identifier supplied for the user, group, or resource does not exist in your
-    /// organization.</p>
+    /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
-    /// <p>You are performing an operation on a user, group, or resource that isn't in the
-    /// expected state, such as trying to delete an active user.</p>
+    /// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
     EntityStateException(crate::error::EntityStateException),
-    /// <p>The configuration for a resource isn't valid. A resource must either be able to
-    /// auto-respond to requests or have at least one delegate associated that can do so on its
-    /// behalf.</p>
+    /// <p>The configuration for a resource isn't valid. A resource must either be able to auto-respond to requests or have at least one delegate associated that can do so on its behalf.</p>
     InvalidConfigurationException(crate::error::InvalidConfigurationException),
     /// <p>The domain specified is not found in your organization.</p>
     MailDomainNotFoundException(crate::error::MailDomainNotFoundException),
-    /// <p>After a domain has been added to the organization, it must be verified. The domain is
-    /// not yet verified.</p>
+    /// <p>After a domain has been added to the organization, it must be verified. The domain is not yet verified.</p>
     MailDomainStateException(crate::error::MailDomainStateException),
     /// <p>The user, group, or resource name isn't unique in Amazon WorkMail.</p>
     NameAvailabilityException(crate::error::NameAvailabilityException),
-    /// <p>An operation received a valid organization identifier that either doesn't belong or
-    /// exist in the system.</p>
+    /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// <p>The organization must have a valid state to perform certain
-    /// operations on the organization or its members.</p>
+    /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9116,8 +9220,6 @@ impl UpdateResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9224,8 +9326,7 @@ impl std::error::Error for UpdateResourceError {
     }
 }
 
-/// <p>The organization must have a valid state to perform certain
-/// operations on the organization or its members.</p>
+/// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationStateException {
@@ -9289,8 +9390,7 @@ impl OrganizationStateException {
     }
 }
 
-/// <p>An operation received a valid organization identifier that either doesn't belong or
-/// exist in the system.</p>
+/// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationNotFoundException {
@@ -9418,8 +9518,7 @@ impl NameAvailabilityException {
     }
 }
 
-/// <p>After a domain has been added to the organization, it must be verified. The domain is
-/// not yet verified.</p>
+/// <p>After a domain has been added to the organization, it must be verified. The domain is not yet verified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MailDomainStateException {
@@ -9547,9 +9646,7 @@ impl MailDomainNotFoundException {
     }
 }
 
-/// <p>The configuration for a resource isn't valid. A resource must either be able to
-/// auto-respond to requests or have at least one delegate associated that can do so on its
-/// behalf.</p>
+/// <p>The configuration for a resource isn't valid. A resource must either be able to auto-respond to requests or have at least one delegate associated that can do so on its behalf.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidConfigurationException {
@@ -9613,8 +9710,7 @@ impl InvalidConfigurationException {
     }
 }
 
-/// <p>You are performing an operation on a user, group, or resource that isn't in the
-/// expected state, such as trying to delete an active user.</p>
+/// <p>You are performing an operation on a user, group, or resource that isn't in the expected state, such as trying to delete an active user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityStateException {
@@ -9678,8 +9774,7 @@ impl EntityStateException {
     }
 }
 
-/// <p>The identifier supplied for the user, group, or resource does not exist in your
-/// organization.</p>
+/// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityNotFoundException {
@@ -9743,8 +9838,7 @@ impl EntityNotFoundException {
     }
 }
 
-/// <p>The email address that you're trying to assign is already created for a different
-/// user, group, or resource.</p>
+/// <p>The email address that you're trying to assign is already created for a different user, group, or resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EmailAddressInUseException {
@@ -10256,8 +10350,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>The supplied password doesn't match the minimum security constraints, such as length
-/// or use of special characters.</p>
+/// <p>The supplied password doesn't match the minimum security constraints, such as length or use of special characters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPasswordException {
@@ -10321,8 +10414,7 @@ impl InvalidPasswordException {
     }
 }
 
-/// <p>The user, group, or resource that you're trying to register is already
-/// registered.</p>
+/// <p>The user, group, or resource that you're trying to register is already registered.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityAlreadyRegisteredException {
@@ -10450,8 +10542,7 @@ impl MailDomainInUseException {
     }
 }
 
-/// <p>You SES configuration has customizations that Amazon WorkMail cannot save. The error message lists the invalid setting. For examples of invalid settings, refer to
-/// <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html">CreateReceiptRule</a>.</p>
+/// <p>You SES configuration has customizations that Amazon WorkMail cannot save. The error message lists the invalid setting. For examples of invalid settings, refer to <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html">CreateReceiptRule</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCustomSesConfigurationException {

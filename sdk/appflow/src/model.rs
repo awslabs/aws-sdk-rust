@@ -77,8 +77,7 @@ impl AsRef<str> for FlowStatus {
     }
 }
 
-/// <p> A class for modeling different type of tasks. Task implementation varies based on the
-/// <code>TaskType</code>. </p>
+/// <p> A class for modeling different type of tasks. Task implementation varies based on the <code>TaskType</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Task {
@@ -86,13 +85,11 @@ pub struct Task {
     pub source_fields: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The operation to be performed on the provided source fields. </p>
     pub connector_operator: std::option::Option<crate::model::ConnectorOperator>,
-    /// <p> A field in a destination connector, or a field value against which Amazon AppFlow
-    /// validates a source field. </p>
+    /// <p> A field in a destination connector, or a field value against which Amazon AppFlow validates a source field. </p>
     pub destination_field: std::option::Option<std::string::String>,
     /// <p> Specifies the particular task implementation that Amazon AppFlow performs. </p>
     pub task_type: std::option::Option<crate::model::TaskType>,
-    /// <p> A map used to store task-related information. The execution service looks for particular
-    /// information based on the <code>TaskType</code>. </p>
+    /// <p> A map used to store task-related information. The execution service looks for particular information based on the <code>TaskType</code>. </p>
     pub task_properties: std::option::Option<
         std::collections::HashMap<crate::model::OperatorPropertiesKeys, std::string::String>,
     >,
@@ -106,8 +103,7 @@ impl Task {
     pub fn connector_operator(&self) -> std::option::Option<&crate::model::ConnectorOperator> {
         self.connector_operator.as_ref()
     }
-    /// <p> A field in a destination connector, or a field value against which Amazon AppFlow
-    /// validates a source field. </p>
+    /// <p> A field in a destination connector, or a field value against which Amazon AppFlow validates a source field. </p>
     pub fn destination_field(&self) -> std::option::Option<&str> {
         self.destination_field.as_deref()
     }
@@ -115,8 +111,7 @@ impl Task {
     pub fn task_type(&self) -> std::option::Option<&crate::model::TaskType> {
         self.task_type.as_ref()
     }
-    /// <p> A map used to store task-related information. The execution service looks for particular
-    /// information based on the <code>TaskType</code>. </p>
+    /// <p> A map used to store task-related information. The execution service looks for particular information based on the <code>TaskType</code>. </p>
     pub fn task_properties(
         &self,
     ) -> std::option::Option<
@@ -183,14 +178,12 @@ pub mod task {
             self.connector_operator = input;
             self
         }
-        /// <p> A field in a destination connector, or a field value against which Amazon AppFlow
-        /// validates a source field. </p>
+        /// <p> A field in a destination connector, or a field value against which Amazon AppFlow validates a source field. </p>
         pub fn destination_field(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination_field = Some(input.into());
             self
         }
-        /// <p> A field in a destination connector, or a field value against which Amazon AppFlow
-        /// validates a source field. </p>
+        /// <p> A field in a destination connector, or a field value against which Amazon AppFlow validates a source field. </p>
         pub fn set_destination_field(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -212,20 +205,18 @@ pub mod task {
         ///
         /// To override the contents of this collection use [`set_task_properties`](Self::set_task_properties).
         ///
-        /// <p> A map used to store task-related information. The execution service looks for particular
-        /// information based on the <code>TaskType</code>. </p>
+        /// <p> A map used to store task-related information. The execution service looks for particular information based on the <code>TaskType</code>. </p>
         pub fn task_properties(
             mut self,
-            k: impl Into<crate::model::OperatorPropertiesKeys>,
+            k: crate::model::OperatorPropertiesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.task_properties.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.task_properties = Some(hash_map);
             self
         }
-        /// <p> A map used to store task-related information. The execution service looks for particular
-        /// information based on the <code>TaskType</code>. </p>
+        /// <p> A map used to store task-related information. The execution service looks for particular information based on the <code>TaskType</code>. </p>
         pub fn set_task_properties(
             mut self,
             input: std::option::Option<
@@ -2699,15 +2690,13 @@ impl AsRef<str> for AmplitudeConnectorOperator {
     }
 }
 
-/// <p> Contains information about the configuration of destination connectors present in the
-/// flow. </p>
+/// <p> Contains information about the configuration of destination connectors present in the flow. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DestinationFlowConfig {
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub connector_type: std::option::Option<crate::model::ConnectorType>,
-    /// <p> The name of the connector profile. This name must be unique for each connector profile in
-    /// the Amazon Web Services account. </p>
+    /// <p> The name of the connector profile. This name must be unique for each connector profile in the Amazon Web Services account. </p>
     pub connector_profile_name: std::option::Option<std::string::String>,
     /// <p> This stores the information that is required to query a particular connector. </p>
     pub destination_connector_properties:
@@ -2718,8 +2707,7 @@ impl DestinationFlowConfig {
     pub fn connector_type(&self) -> std::option::Option<&crate::model::ConnectorType> {
         self.connector_type.as_ref()
     }
-    /// <p> The name of the connector profile. This name must be unique for each connector profile in
-    /// the Amazon Web Services account. </p>
+    /// <p> The name of the connector profile. This name must be unique for each connector profile in the Amazon Web Services account. </p>
     pub fn connector_profile_name(&self) -> std::option::Option<&str> {
         self.connector_profile_name.as_deref()
     }
@@ -2767,14 +2755,12 @@ pub mod destination_flow_config {
             self.connector_type = input;
             self
         }
-        /// <p> The name of the connector profile. This name must be unique for each connector profile in
-        /// the Amazon Web Services account. </p>
+        /// <p> The name of the connector profile. This name must be unique for each connector profile in the Amazon Web Services account. </p>
         pub fn connector_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.connector_profile_name = Some(input.into());
             self
         }
-        /// <p> The name of the connector profile. This name must be unique for each connector profile in
-        /// the Amazon Web Services account. </p>
+        /// <p> The name of the connector profile. This name must be unique for each connector profile in the Amazon Web Services account. </p>
         pub fn set_connector_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3096,17 +3082,11 @@ impl DestinationConnectorProperties {
 pub struct ZendeskDestinationProperties {
     /// <p>The object specified in the Zendesk flow destination.</p>
     pub object: std::option::Option<std::string::String>,
-    /// <p> A list of field names that can be used as an ID field when performing a write operation.
-    /// </p>
+    /// <p> A list of field names that can be used as an ID field when performing a write operation. </p>
     pub id_field_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
-    /// destination. For example, this setting would determine if the flow should fail after one
-    /// insertion error, or continue and attempt to insert every record regardless of the initial
-    /// failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.
-    /// </p>
+    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub error_handling_config: std::option::Option<crate::model::ErrorHandlingConfig>,
-    /// <p> The possible write operations in the destination connector. When this value is not
-    /// provided, this defaults to the <code>INSERT</code> operation. </p>
+    /// <p> The possible write operations in the destination connector. When this value is not provided, this defaults to the <code>INSERT</code> operation. </p>
     pub write_operation_type: std::option::Option<crate::model::WriteOperationType>,
 }
 impl ZendeskDestinationProperties {
@@ -3114,21 +3094,15 @@ impl ZendeskDestinationProperties {
     pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
     }
-    /// <p> A list of field names that can be used as an ID field when performing a write operation.
-    /// </p>
+    /// <p> A list of field names that can be used as an ID field when performing a write operation. </p>
     pub fn id_field_names(&self) -> std::option::Option<&[std::string::String]> {
         self.id_field_names.as_deref()
     }
-    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
-    /// destination. For example, this setting would determine if the flow should fail after one
-    /// insertion error, or continue and attempt to insert every record regardless of the initial
-    /// failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.
-    /// </p>
+    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub fn error_handling_config(&self) -> std::option::Option<&crate::model::ErrorHandlingConfig> {
         self.error_handling_config.as_ref()
     }
-    /// <p> The possible write operations in the destination connector. When this value is not
-    /// provided, this defaults to the <code>INSERT</code> operation. </p>
+    /// <p> The possible write operations in the destination connector. When this value is not provided, this defaults to the <code>INSERT</code> operation. </p>
     pub fn write_operation_type(&self) -> std::option::Option<&crate::model::WriteOperationType> {
         self.write_operation_type.as_ref()
     }
@@ -3169,16 +3143,14 @@ pub mod zendesk_destination_properties {
         ///
         /// To override the contents of this collection use [`set_id_field_names`](Self::set_id_field_names).
         ///
-        /// <p> A list of field names that can be used as an ID field when performing a write operation.
-        /// </p>
+        /// <p> A list of field names that can be used as an ID field when performing a write operation. </p>
         pub fn id_field_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.id_field_names.unwrap_or_default();
             v.push(input.into());
             self.id_field_names = Some(v);
             self
         }
-        /// <p> A list of field names that can be used as an ID field when performing a write operation.
-        /// </p>
+        /// <p> A list of field names that can be used as an ID field when performing a write operation. </p>
         pub fn set_id_field_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3186,20 +3158,12 @@ pub mod zendesk_destination_properties {
             self.id_field_names = input;
             self
         }
-        /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
-        /// destination. For example, this setting would determine if the flow should fail after one
-        /// insertion error, or continue and attempt to insert every record regardless of the initial
-        /// failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.
-        /// </p>
+        /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
         pub fn error_handling_config(mut self, input: crate::model::ErrorHandlingConfig) -> Self {
             self.error_handling_config = Some(input);
             self
         }
-        /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
-        /// destination. For example, this setting would determine if the flow should fail after one
-        /// insertion error, or continue and attempt to insert every record regardless of the initial
-        /// failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.
-        /// </p>
+        /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
         pub fn set_error_handling_config(
             mut self,
             input: std::option::Option<crate::model::ErrorHandlingConfig>,
@@ -3207,14 +3171,12 @@ pub mod zendesk_destination_properties {
             self.error_handling_config = input;
             self
         }
-        /// <p> The possible write operations in the destination connector. When this value is not
-        /// provided, this defaults to the <code>INSERT</code> operation. </p>
+        /// <p> The possible write operations in the destination connector. When this value is not provided, this defaults to the <code>INSERT</code> operation. </p>
         pub fn write_operation_type(mut self, input: crate::model::WriteOperationType) -> Self {
             self.write_operation_type = Some(input);
             self
         }
-        /// <p> The possible write operations in the destination connector. When this value is not
-        /// provided, this defaults to the <code>INSERT</code> operation. </p>
+        /// <p> The possible write operations in the destination connector. When this value is not provided, this defaults to the <code>INSERT</code> operation. </p>
         pub fn set_write_operation_type(
             mut self,
             input: std::option::Option<crate::model::WriteOperationType>,
@@ -3300,16 +3262,11 @@ impl AsRef<str> for WriteOperationType {
     }
 }
 
-/// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
-/// destination. For example, this setting would determine if the flow should fail after one
-/// insertion error, or continue and attempt to insert every record regardless of the initial
-/// failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.
-/// </p>
+/// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorHandlingConfig {
-    /// <p> Specifies if the flow should fail after the first instance of a failure when attempting
-    /// to place data in the destination. </p>
+    /// <p> Specifies if the flow should fail after the first instance of a failure when attempting to place data in the destination. </p>
     pub fail_on_first_destination_error: bool,
     /// <p> Specifies the Amazon S3 bucket prefix. </p>
     pub bucket_prefix: std::option::Option<std::string::String>,
@@ -3317,8 +3274,7 @@ pub struct ErrorHandlingConfig {
     pub bucket_name: std::option::Option<std::string::String>,
 }
 impl ErrorHandlingConfig {
-    /// <p> Specifies if the flow should fail after the first instance of a failure when attempting
-    /// to place data in the destination. </p>
+    /// <p> Specifies if the flow should fail after the first instance of a failure when attempting to place data in the destination. </p>
     pub fn fail_on_first_destination_error(&self) -> bool {
         self.fail_on_first_destination_error
     }
@@ -3354,14 +3310,12 @@ pub mod error_handling_config {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> Specifies if the flow should fail after the first instance of a failure when attempting
-        /// to place data in the destination. </p>
+        /// <p> Specifies if the flow should fail after the first instance of a failure when attempting to place data in the destination. </p>
         pub fn fail_on_first_destination_error(mut self, input: bool) -> Self {
             self.fail_on_first_destination_error = Some(input);
             self
         }
-        /// <p> Specifies if the flow should fail after the first instance of a failure when attempting
-        /// to place data in the destination. </p>
+        /// <p> Specifies if the flow should fail after the first instance of a failure when attempting to place data in the destination. </p>
         pub fn set_fail_on_first_destination_error(
             mut self,
             input: std::option::Option<bool>,
@@ -3411,8 +3365,7 @@ impl ErrorHandlingConfig {
     }
 }
 
-/// <p> The properties that are applied when Amazon Connect Customer Profiles is used as a
-/// destination. </p>
+/// <p> The properties that are applied when Amazon Connect Customer Profiles is used as a destination. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomerProfilesDestinationProperties {
@@ -3494,11 +3447,7 @@ impl CustomerProfilesDestinationProperties {
 pub struct HoneycodeDestinationProperties {
     /// <p> The object specified in the Amazon Honeycode flow destination. </p>
     pub object: std::option::Option<std::string::String>,
-    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
-    /// destination. For example, this setting would determine if the flow should fail after one
-    /// insertion error, or continue and attempt to insert every record regardless of the initial
-    /// failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.
-    /// </p>
+    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub error_handling_config: std::option::Option<crate::model::ErrorHandlingConfig>,
 }
 impl HoneycodeDestinationProperties {
@@ -3506,11 +3455,7 @@ impl HoneycodeDestinationProperties {
     pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
     }
-    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
-    /// destination. For example, this setting would determine if the flow should fail after one
-    /// insertion error, or continue and attempt to insert every record regardless of the initial
-    /// failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.
-    /// </p>
+    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub fn error_handling_config(&self) -> std::option::Option<&crate::model::ErrorHandlingConfig> {
         self.error_handling_config.as_ref()
     }
@@ -3543,20 +3488,12 @@ pub mod honeycode_destination_properties {
             self.object = input;
             self
         }
-        /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
-        /// destination. For example, this setting would determine if the flow should fail after one
-        /// insertion error, or continue and attempt to insert every record regardless of the initial
-        /// failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.
-        /// </p>
+        /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
         pub fn error_handling_config(mut self, input: crate::model::ErrorHandlingConfig) -> Self {
             self.error_handling_config = Some(input);
             self
         }
-        /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
-        /// destination. For example, this setting would determine if the flow should fail after one
-        /// insertion error, or continue and attempt to insert every record regardless of the initial
-        /// failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.
-        /// </p>
+        /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
         pub fn set_error_handling_config(
             mut self,
             input: std::option::Option<crate::model::ErrorHandlingConfig>,
@@ -3584,29 +3521,23 @@ impl HoneycodeDestinationProperties {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpsolverDestinationProperties {
-    /// <p> The Upsolver Amazon S3 bucket name in which Amazon AppFlow places the transferred data.
-    /// </p>
+    /// <p> The Upsolver Amazon S3 bucket name in which Amazon AppFlow places the transferred data. </p>
     pub bucket_name: std::option::Option<std::string::String>,
-    /// <p> The object key for the destination Upsolver Amazon S3 bucket in which Amazon AppFlow
-    /// places the files. </p>
+    /// <p> The object key for the destination Upsolver Amazon S3 bucket in which Amazon AppFlow places the files. </p>
     pub bucket_prefix: std::option::Option<std::string::String>,
-    /// <p> The configuration that determines how data is formatted when Upsolver is used as the flow
-    /// destination. </p>
+    /// <p> The configuration that determines how data is formatted when Upsolver is used as the flow destination. </p>
     pub s3_output_format_config: std::option::Option<crate::model::UpsolverS3OutputFormatConfig>,
 }
 impl UpsolverDestinationProperties {
-    /// <p> The Upsolver Amazon S3 bucket name in which Amazon AppFlow places the transferred data.
-    /// </p>
+    /// <p> The Upsolver Amazon S3 bucket name in which Amazon AppFlow places the transferred data. </p>
     pub fn bucket_name(&self) -> std::option::Option<&str> {
         self.bucket_name.as_deref()
     }
-    /// <p> The object key for the destination Upsolver Amazon S3 bucket in which Amazon AppFlow
-    /// places the files. </p>
+    /// <p> The object key for the destination Upsolver Amazon S3 bucket in which Amazon AppFlow places the files. </p>
     pub fn bucket_prefix(&self) -> std::option::Option<&str> {
         self.bucket_prefix.as_deref()
     }
-    /// <p> The configuration that determines how data is formatted when Upsolver is used as the flow
-    /// destination. </p>
+    /// <p> The configuration that determines how data is formatted when Upsolver is used as the flow destination. </p>
     pub fn s3_output_format_config(
         &self,
     ) -> std::option::Option<&crate::model::UpsolverS3OutputFormatConfig> {
@@ -3634,26 +3565,22 @@ pub mod upsolver_destination_properties {
             std::option::Option<crate::model::UpsolverS3OutputFormatConfig>,
     }
     impl Builder {
-        /// <p> The Upsolver Amazon S3 bucket name in which Amazon AppFlow places the transferred data.
-        /// </p>
+        /// <p> The Upsolver Amazon S3 bucket name in which Amazon AppFlow places the transferred data. </p>
         pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket_name = Some(input.into());
             self
         }
-        /// <p> The Upsolver Amazon S3 bucket name in which Amazon AppFlow places the transferred data.
-        /// </p>
+        /// <p> The Upsolver Amazon S3 bucket name in which Amazon AppFlow places the transferred data. </p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_name = input;
             self
         }
-        /// <p> The object key for the destination Upsolver Amazon S3 bucket in which Amazon AppFlow
-        /// places the files. </p>
+        /// <p> The object key for the destination Upsolver Amazon S3 bucket in which Amazon AppFlow places the files. </p>
         pub fn bucket_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket_prefix = Some(input.into());
             self
         }
-        /// <p> The object key for the destination Upsolver Amazon S3 bucket in which Amazon AppFlow
-        /// places the files. </p>
+        /// <p> The object key for the destination Upsolver Amazon S3 bucket in which Amazon AppFlow places the files. </p>
         pub fn set_bucket_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3661,8 +3588,7 @@ pub mod upsolver_destination_properties {
             self.bucket_prefix = input;
             self
         }
-        /// <p> The configuration that determines how data is formatted when Upsolver is used as the flow
-        /// destination. </p>
+        /// <p> The configuration that determines how data is formatted when Upsolver is used as the flow destination. </p>
         pub fn s3_output_format_config(
             mut self,
             input: crate::model::UpsolverS3OutputFormatConfig,
@@ -3670,8 +3596,7 @@ pub mod upsolver_destination_properties {
             self.s3_output_format_config = Some(input);
             self
         }
-        /// <p> The configuration that determines how data is formatted when Upsolver is used as the flow
-        /// destination. </p>
+        /// <p> The configuration that determines how data is formatted when Upsolver is used as the flow destination. </p>
         pub fn set_s3_output_format_config(
             mut self,
             input: std::option::Option<crate::model::UpsolverS3OutputFormatConfig>,
@@ -3696,34 +3621,27 @@ impl UpsolverDestinationProperties {
     }
 }
 
-/// <p> The configuration that determines how Amazon AppFlow formats the flow output data when
-/// Upsolver is used as the destination. </p>
+/// <p> The configuration that determines how Amazon AppFlow formats the flow output data when Upsolver is used as the destination. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpsolverS3OutputFormatConfig {
-    /// <p> Indicates the file type that Amazon AppFlow places in the Upsolver Amazon S3 bucket.
-    /// </p>
+    /// <p> Indicates the file type that Amazon AppFlow places in the Upsolver Amazon S3 bucket. </p>
     pub file_type: std::option::Option<crate::model::FileType>,
-    /// <p> Determines the prefix that Amazon AppFlow applies to the destination folder name. You can
-    /// name your destination folders according to the flow frequency and date. </p>
+    /// <p> Determines the prefix that Amazon AppFlow applies to the destination folder name. You can name your destination folders according to the flow frequency and date. </p>
     pub prefix_config: std::option::Option<crate::model::PrefixConfig>,
-    /// <p> The aggregation settings that you can use to customize the output format of your flow
-    /// data. </p>
+    /// <p> The aggregation settings that you can use to customize the output format of your flow data. </p>
     pub aggregation_config: std::option::Option<crate::model::AggregationConfig>,
 }
 impl UpsolverS3OutputFormatConfig {
-    /// <p> Indicates the file type that Amazon AppFlow places in the Upsolver Amazon S3 bucket.
-    /// </p>
+    /// <p> Indicates the file type that Amazon AppFlow places in the Upsolver Amazon S3 bucket. </p>
     pub fn file_type(&self) -> std::option::Option<&crate::model::FileType> {
         self.file_type.as_ref()
     }
-    /// <p> Determines the prefix that Amazon AppFlow applies to the destination folder name. You can
-    /// name your destination folders according to the flow frequency and date. </p>
+    /// <p> Determines the prefix that Amazon AppFlow applies to the destination folder name. You can name your destination folders according to the flow frequency and date. </p>
     pub fn prefix_config(&self) -> std::option::Option<&crate::model::PrefixConfig> {
         self.prefix_config.as_ref()
     }
-    /// <p> The aggregation settings that you can use to customize the output format of your flow
-    /// data. </p>
+    /// <p> The aggregation settings that you can use to customize the output format of your flow data. </p>
     pub fn aggregation_config(&self) -> std::option::Option<&crate::model::AggregationConfig> {
         self.aggregation_config.as_ref()
     }
@@ -3748,26 +3666,22 @@ pub mod upsolver_s3_output_format_config {
         pub(crate) aggregation_config: std::option::Option<crate::model::AggregationConfig>,
     }
     impl Builder {
-        /// <p> Indicates the file type that Amazon AppFlow places in the Upsolver Amazon S3 bucket.
-        /// </p>
+        /// <p> Indicates the file type that Amazon AppFlow places in the Upsolver Amazon S3 bucket. </p>
         pub fn file_type(mut self, input: crate::model::FileType) -> Self {
             self.file_type = Some(input);
             self
         }
-        /// <p> Indicates the file type that Amazon AppFlow places in the Upsolver Amazon S3 bucket.
-        /// </p>
+        /// <p> Indicates the file type that Amazon AppFlow places in the Upsolver Amazon S3 bucket. </p>
         pub fn set_file_type(mut self, input: std::option::Option<crate::model::FileType>) -> Self {
             self.file_type = input;
             self
         }
-        /// <p> Determines the prefix that Amazon AppFlow applies to the destination folder name. You can
-        /// name your destination folders according to the flow frequency and date. </p>
+        /// <p> Determines the prefix that Amazon AppFlow applies to the destination folder name. You can name your destination folders according to the flow frequency and date. </p>
         pub fn prefix_config(mut self, input: crate::model::PrefixConfig) -> Self {
             self.prefix_config = Some(input);
             self
         }
-        /// <p> Determines the prefix that Amazon AppFlow applies to the destination folder name. You can
-        /// name your destination folders according to the flow frequency and date. </p>
+        /// <p> Determines the prefix that Amazon AppFlow applies to the destination folder name. You can name your destination folders according to the flow frequency and date. </p>
         pub fn set_prefix_config(
             mut self,
             input: std::option::Option<crate::model::PrefixConfig>,
@@ -3775,14 +3689,12 @@ pub mod upsolver_s3_output_format_config {
             self.prefix_config = input;
             self
         }
-        /// <p> The aggregation settings that you can use to customize the output format of your flow
-        /// data. </p>
+        /// <p> The aggregation settings that you can use to customize the output format of your flow data. </p>
         pub fn aggregation_config(mut self, input: crate::model::AggregationConfig) -> Self {
             self.aggregation_config = Some(input);
             self
         }
-        /// <p> The aggregation settings that you can use to customize the output format of your flow
-        /// data. </p>
+        /// <p> The aggregation settings that you can use to customize the output format of your flow data. </p>
         pub fn set_aggregation_config(
             mut self,
             input: std::option::Option<crate::model::AggregationConfig>,
@@ -3807,18 +3719,15 @@ impl UpsolverS3OutputFormatConfig {
     }
 }
 
-/// <p> The aggregation settings that you can use to customize the output format of your flow
-/// data. </p>
+/// <p> The aggregation settings that you can use to customize the output format of your flow data. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AggregationConfig {
-    /// <p> Specifies whether Amazon AppFlow aggregates the flow records into a single file, or leave
-    /// them unaggregated. </p>
+    /// <p> Specifies whether Amazon AppFlow aggregates the flow records into a single file, or leave them unaggregated. </p>
     pub aggregation_type: std::option::Option<crate::model::AggregationType>,
 }
 impl AggregationConfig {
-    /// <p> Specifies whether Amazon AppFlow aggregates the flow records into a single file, or leave
-    /// them unaggregated. </p>
+    /// <p> Specifies whether Amazon AppFlow aggregates the flow records into a single file, or leave them unaggregated. </p>
     pub fn aggregation_type(&self) -> std::option::Option<&crate::model::AggregationType> {
         self.aggregation_type.as_ref()
     }
@@ -3839,14 +3748,12 @@ pub mod aggregation_config {
         pub(crate) aggregation_type: std::option::Option<crate::model::AggregationType>,
     }
     impl Builder {
-        /// <p> Specifies whether Amazon AppFlow aggregates the flow records into a single file, or leave
-        /// them unaggregated. </p>
+        /// <p> Specifies whether Amazon AppFlow aggregates the flow records into a single file, or leave them unaggregated. </p>
         pub fn aggregation_type(mut self, input: crate::model::AggregationType) -> Self {
             self.aggregation_type = Some(input);
             self
         }
-        /// <p> Specifies whether Amazon AppFlow aggregates the flow records into a single file, or leave
-        /// them unaggregated. </p>
+        /// <p> Specifies whether Amazon AppFlow aggregates the flow records into a single file, or leave them unaggregated. </p>
         pub fn set_aggregation_type(
             mut self,
             input: std::option::Option<crate::model::AggregationType>,
@@ -3924,20 +3831,17 @@ impl AsRef<str> for AggregationType {
     }
 }
 
-/// <p> Determines the prefix that Amazon AppFlow applies to the destination folder name. You can
-/// name your destination folders according to the flow frequency and date. </p>
+/// <p> Determines the prefix that Amazon AppFlow applies to the destination folder name. You can name your destination folders according to the flow frequency and date. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PrefixConfig {
-    /// <p> Determines the format of the prefix, and whether it applies to the file name, file path,
-    /// or both. </p>
+    /// <p> Determines the format of the prefix, and whether it applies to the file name, file path, or both. </p>
     pub prefix_type: std::option::Option<crate::model::PrefixType>,
     /// <p> Determines the level of granularity that's included in the prefix. </p>
     pub prefix_format: std::option::Option<crate::model::PrefixFormat>,
 }
 impl PrefixConfig {
-    /// <p> Determines the format of the prefix, and whether it applies to the file name, file path,
-    /// or both. </p>
+    /// <p> Determines the format of the prefix, and whether it applies to the file name, file path, or both. </p>
     pub fn prefix_type(&self) -> std::option::Option<&crate::model::PrefixType> {
         self.prefix_type.as_ref()
     }
@@ -3964,14 +3868,12 @@ pub mod prefix_config {
         pub(crate) prefix_format: std::option::Option<crate::model::PrefixFormat>,
     }
     impl Builder {
-        /// <p> Determines the format of the prefix, and whether it applies to the file name, file path,
-        /// or both. </p>
+        /// <p> Determines the format of the prefix, and whether it applies to the file name, file path, or both. </p>
         pub fn prefix_type(mut self, input: crate::model::PrefixType) -> Self {
             self.prefix_type = Some(input);
             self
         }
-        /// <p> Determines the format of the prefix, and whether it applies to the file name, file path,
-        /// or both. </p>
+        /// <p> Determines the format of the prefix, and whether it applies to the file name, file path, or both. </p>
         pub fn set_prefix_type(
             mut self,
             input: std::option::Option<crate::model::PrefixType>,
@@ -4193,8 +4095,7 @@ impl AsRef<str> for FileType {
     }
 }
 
-/// <p> The properties that are applied when Amazon Lookout for Metrics is used as a destination.
-/// </p>
+/// <p> The properties that are applied when Amazon Lookout for Metrics is used as a destination. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LookoutMetricsDestinationProperties {}
@@ -4224,18 +4125,13 @@ impl LookoutMetricsDestinationProperties {
     }
 }
 
-/// <p> The properties that are applied when Amazon EventBridge is being used as a destination.
-/// </p>
+/// <p> The properties that are applied when Amazon EventBridge is being used as a destination. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventBridgeDestinationProperties {
     /// <p> The object specified in the Amazon EventBridge flow destination. </p>
     pub object: std::option::Option<std::string::String>,
-    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
-    /// destination. For example, this setting would determine if the flow should fail after one
-    /// insertion error, or continue and attempt to insert every record regardless of the initial
-    /// failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.
-    /// </p>
+    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub error_handling_config: std::option::Option<crate::model::ErrorHandlingConfig>,
 }
 impl EventBridgeDestinationProperties {
@@ -4243,11 +4139,7 @@ impl EventBridgeDestinationProperties {
     pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
     }
-    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
-    /// destination. For example, this setting would determine if the flow should fail after one
-    /// insertion error, or continue and attempt to insert every record regardless of the initial
-    /// failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.
-    /// </p>
+    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub fn error_handling_config(&self) -> std::option::Option<&crate::model::ErrorHandlingConfig> {
         self.error_handling_config.as_ref()
     }
@@ -4280,20 +4172,12 @@ pub mod event_bridge_destination_properties {
             self.object = input;
             self
         }
-        /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
-        /// destination. For example, this setting would determine if the flow should fail after one
-        /// insertion error, or continue and attempt to insert every record regardless of the initial
-        /// failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.
-        /// </p>
+        /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
         pub fn error_handling_config(mut self, input: crate::model::ErrorHandlingConfig) -> Self {
             self.error_handling_config = Some(input);
             self
         }
-        /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
-        /// destination. For example, this setting would determine if the flow should fail after one
-        /// insertion error, or continue and attempt to insert every record regardless of the initial
-        /// failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.
-        /// </p>
+        /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
         pub fn set_error_handling_config(
             mut self,
             input: std::option::Option<crate::model::ErrorHandlingConfig>,
@@ -4325,14 +4209,9 @@ pub struct SnowflakeDestinationProperties {
     pub object: std::option::Option<std::string::String>,
     /// <p> The intermediate bucket that Amazon AppFlow uses when moving data into Snowflake. </p>
     pub intermediate_bucket_name: std::option::Option<std::string::String>,
-    /// <p> The object key for the destination bucket in which Amazon AppFlow places the files.
-    /// </p>
+    /// <p> The object key for the destination bucket in which Amazon AppFlow places the files. </p>
     pub bucket_prefix: std::option::Option<std::string::String>,
-    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
-    /// Snowflake destination. For example, this setting would determine if the flow should fail after
-    /// one insertion error, or continue and attempt to insert every record regardless of the initial
-    /// failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.
-    /// </p>
+    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Snowflake destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub error_handling_config: std::option::Option<crate::model::ErrorHandlingConfig>,
 }
 impl SnowflakeDestinationProperties {
@@ -4344,16 +4223,11 @@ impl SnowflakeDestinationProperties {
     pub fn intermediate_bucket_name(&self) -> std::option::Option<&str> {
         self.intermediate_bucket_name.as_deref()
     }
-    /// <p> The object key for the destination bucket in which Amazon AppFlow places the files.
-    /// </p>
+    /// <p> The object key for the destination bucket in which Amazon AppFlow places the files. </p>
     pub fn bucket_prefix(&self) -> std::option::Option<&str> {
         self.bucket_prefix.as_deref()
     }
-    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
-    /// Snowflake destination. For example, this setting would determine if the flow should fail after
-    /// one insertion error, or continue and attempt to insert every record regardless of the initial
-    /// failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.
-    /// </p>
+    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Snowflake destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub fn error_handling_config(&self) -> std::option::Option<&crate::model::ErrorHandlingConfig> {
         self.error_handling_config.as_ref()
     }
@@ -4403,14 +4277,12 @@ pub mod snowflake_destination_properties {
             self.intermediate_bucket_name = input;
             self
         }
-        /// <p> The object key for the destination bucket in which Amazon AppFlow places the files.
-        /// </p>
+        /// <p> The object key for the destination bucket in which Amazon AppFlow places the files. </p>
         pub fn bucket_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket_prefix = Some(input.into());
             self
         }
-        /// <p> The object key for the destination bucket in which Amazon AppFlow places the files.
-        /// </p>
+        /// <p> The object key for the destination bucket in which Amazon AppFlow places the files. </p>
         pub fn set_bucket_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4418,20 +4290,12 @@ pub mod snowflake_destination_properties {
             self.bucket_prefix = input;
             self
         }
-        /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
-        /// Snowflake destination. For example, this setting would determine if the flow should fail after
-        /// one insertion error, or continue and attempt to insert every record regardless of the initial
-        /// failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.
-        /// </p>
+        /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Snowflake destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
         pub fn error_handling_config(mut self, input: crate::model::ErrorHandlingConfig) -> Self {
             self.error_handling_config = Some(input);
             self
         }
-        /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
-        /// Snowflake destination. For example, this setting would determine if the flow should fail after
-        /// one insertion error, or continue and attempt to insert every record regardless of the initial
-        /// failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.
-        /// </p>
+        /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Snowflake destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
         pub fn set_error_handling_config(
             mut self,
             input: std::option::Option<crate::model::ErrorHandlingConfig>,
@@ -4463,17 +4327,11 @@ impl SnowflakeDestinationProperties {
 pub struct SalesforceDestinationProperties {
     /// <p> The object specified in the Salesforce flow destination. </p>
     pub object: std::option::Option<std::string::String>,
-    /// <p> The name of the field that Amazon AppFlow uses as an ID when performing a write operation
-    /// such as update or delete. </p>
+    /// <p> The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update or delete. </p>
     pub id_field_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
-    /// Salesforce destination. For example, this setting would determine if the flow should fail
-    /// after one insertion error, or continue and attempt to insert every record regardless of the
-    /// initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector
-    /// details. </p>
+    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Salesforce destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub error_handling_config: std::option::Option<crate::model::ErrorHandlingConfig>,
-    /// <p> This specifies the type of write operation to be performed in Salesforce. When the value
-    /// is <code>UPSERT</code>, then <code>idFieldNames</code> is required. </p>
+    /// <p> This specifies the type of write operation to be performed in Salesforce. When the value is <code>UPSERT</code>, then <code>idFieldNames</code> is required. </p>
     pub write_operation_type: std::option::Option<crate::model::WriteOperationType>,
 }
 impl SalesforceDestinationProperties {
@@ -4481,21 +4339,15 @@ impl SalesforceDestinationProperties {
     pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
     }
-    /// <p> The name of the field that Amazon AppFlow uses as an ID when performing a write operation
-    /// such as update or delete. </p>
+    /// <p> The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update or delete. </p>
     pub fn id_field_names(&self) -> std::option::Option<&[std::string::String]> {
         self.id_field_names.as_deref()
     }
-    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
-    /// Salesforce destination. For example, this setting would determine if the flow should fail
-    /// after one insertion error, or continue and attempt to insert every record regardless of the
-    /// initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector
-    /// details. </p>
+    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Salesforce destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub fn error_handling_config(&self) -> std::option::Option<&crate::model::ErrorHandlingConfig> {
         self.error_handling_config.as_ref()
     }
-    /// <p> This specifies the type of write operation to be performed in Salesforce. When the value
-    /// is <code>UPSERT</code>, then <code>idFieldNames</code> is required. </p>
+    /// <p> This specifies the type of write operation to be performed in Salesforce. When the value is <code>UPSERT</code>, then <code>idFieldNames</code> is required. </p>
     pub fn write_operation_type(&self) -> std::option::Option<&crate::model::WriteOperationType> {
         self.write_operation_type.as_ref()
     }
@@ -4536,16 +4388,14 @@ pub mod salesforce_destination_properties {
         ///
         /// To override the contents of this collection use [`set_id_field_names`](Self::set_id_field_names).
         ///
-        /// <p> The name of the field that Amazon AppFlow uses as an ID when performing a write operation
-        /// such as update or delete. </p>
+        /// <p> The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update or delete. </p>
         pub fn id_field_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.id_field_names.unwrap_or_default();
             v.push(input.into());
             self.id_field_names = Some(v);
             self
         }
-        /// <p> The name of the field that Amazon AppFlow uses as an ID when performing a write operation
-        /// such as update or delete. </p>
+        /// <p> The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update or delete. </p>
         pub fn set_id_field_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4553,20 +4403,12 @@ pub mod salesforce_destination_properties {
             self.id_field_names = input;
             self
         }
-        /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
-        /// Salesforce destination. For example, this setting would determine if the flow should fail
-        /// after one insertion error, or continue and attempt to insert every record regardless of the
-        /// initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector
-        /// details. </p>
+        /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Salesforce destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
         pub fn error_handling_config(mut self, input: crate::model::ErrorHandlingConfig) -> Self {
             self.error_handling_config = Some(input);
             self
         }
-        /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
-        /// Salesforce destination. For example, this setting would determine if the flow should fail
-        /// after one insertion error, or continue and attempt to insert every record regardless of the
-        /// initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector
-        /// details. </p>
+        /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Salesforce destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
         pub fn set_error_handling_config(
             mut self,
             input: std::option::Option<crate::model::ErrorHandlingConfig>,
@@ -4574,14 +4416,12 @@ pub mod salesforce_destination_properties {
             self.error_handling_config = input;
             self
         }
-        /// <p> This specifies the type of write operation to be performed in Salesforce. When the value
-        /// is <code>UPSERT</code>, then <code>idFieldNames</code> is required. </p>
+        /// <p> This specifies the type of write operation to be performed in Salesforce. When the value is <code>UPSERT</code>, then <code>idFieldNames</code> is required. </p>
         pub fn write_operation_type(mut self, input: crate::model::WriteOperationType) -> Self {
             self.write_operation_type = Some(input);
             self
         }
-        /// <p> This specifies the type of write operation to be performed in Salesforce. When the value
-        /// is <code>UPSERT</code>, then <code>idFieldNames</code> is required. </p>
+        /// <p> This specifies the type of write operation to be performed in Salesforce. When the value is <code>UPSERT</code>, then <code>idFieldNames</code> is required. </p>
         pub fn set_write_operation_type(
             mut self,
             input: std::option::Option<crate::model::WriteOperationType>,
@@ -4613,11 +4453,9 @@ impl SalesforceDestinationProperties {
 pub struct S3DestinationProperties {
     /// <p> The Amazon S3 bucket name in which Amazon AppFlow places the transferred data. </p>
     pub bucket_name: std::option::Option<std::string::String>,
-    /// <p> The object key for the destination bucket in which Amazon AppFlow places the files.
-    /// </p>
+    /// <p> The object key for the destination bucket in which Amazon AppFlow places the files. </p>
     pub bucket_prefix: std::option::Option<std::string::String>,
-    /// <p> The configuration that determines how Amazon AppFlow should format the flow output data
-    /// when Amazon S3 is used as the destination. </p>
+    /// <p> The configuration that determines how Amazon AppFlow should format the flow output data when Amazon S3 is used as the destination. </p>
     pub s3_output_format_config: std::option::Option<crate::model::S3OutputFormatConfig>,
 }
 impl S3DestinationProperties {
@@ -4625,13 +4463,11 @@ impl S3DestinationProperties {
     pub fn bucket_name(&self) -> std::option::Option<&str> {
         self.bucket_name.as_deref()
     }
-    /// <p> The object key for the destination bucket in which Amazon AppFlow places the files.
-    /// </p>
+    /// <p> The object key for the destination bucket in which Amazon AppFlow places the files. </p>
     pub fn bucket_prefix(&self) -> std::option::Option<&str> {
         self.bucket_prefix.as_deref()
     }
-    /// <p> The configuration that determines how Amazon AppFlow should format the flow output data
-    /// when Amazon S3 is used as the destination. </p>
+    /// <p> The configuration that determines how Amazon AppFlow should format the flow output data when Amazon S3 is used as the destination. </p>
     pub fn s3_output_format_config(
         &self,
     ) -> std::option::Option<&crate::model::S3OutputFormatConfig> {
@@ -4668,14 +4504,12 @@ pub mod s3_destination_properties {
             self.bucket_name = input;
             self
         }
-        /// <p> The object key for the destination bucket in which Amazon AppFlow places the files.
-        /// </p>
+        /// <p> The object key for the destination bucket in which Amazon AppFlow places the files. </p>
         pub fn bucket_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket_prefix = Some(input.into());
             self
         }
-        /// <p> The object key for the destination bucket in which Amazon AppFlow places the files.
-        /// </p>
+        /// <p> The object key for the destination bucket in which Amazon AppFlow places the files. </p>
         pub fn set_bucket_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4683,8 +4517,7 @@ pub mod s3_destination_properties {
             self.bucket_prefix = input;
             self
         }
-        /// <p> The configuration that determines how Amazon AppFlow should format the flow output data
-        /// when Amazon S3 is used as the destination. </p>
+        /// <p> The configuration that determines how Amazon AppFlow should format the flow output data when Amazon S3 is used as the destination. </p>
         pub fn s3_output_format_config(
             mut self,
             input: crate::model::S3OutputFormatConfig,
@@ -4692,8 +4525,7 @@ pub mod s3_destination_properties {
             self.s3_output_format_config = Some(input);
             self
         }
-        /// <p> The configuration that determines how Amazon AppFlow should format the flow output data
-        /// when Amazon S3 is used as the destination. </p>
+        /// <p> The configuration that determines how Amazon AppFlow should format the flow output data when Amazon S3 is used as the destination. </p>
         pub fn set_s3_output_format_config(
             mut self,
             input: std::option::Option<crate::model::S3OutputFormatConfig>,
@@ -4718,18 +4550,15 @@ impl S3DestinationProperties {
     }
 }
 
-/// <p> The configuration that determines how Amazon AppFlow should format the flow output data
-/// when Amazon S3 is used as the destination. </p>
+/// <p> The configuration that determines how Amazon AppFlow should format the flow output data when Amazon S3 is used as the destination. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3OutputFormatConfig {
     /// <p> Indicates the file type that Amazon AppFlow places in the Amazon S3 bucket. </p>
     pub file_type: std::option::Option<crate::model::FileType>,
-    /// <p> Determines the prefix that Amazon AppFlow applies to the folder name in the Amazon S3
-    /// bucket. You can name folders according to the flow frequency and date. </p>
+    /// <p> Determines the prefix that Amazon AppFlow applies to the folder name in the Amazon S3 bucket. You can name folders according to the flow frequency and date. </p>
     pub prefix_config: std::option::Option<crate::model::PrefixConfig>,
-    /// <p> The aggregation settings that you can use to customize the output format of your flow
-    /// data. </p>
+    /// <p> The aggregation settings that you can use to customize the output format of your flow data. </p>
     pub aggregation_config: std::option::Option<crate::model::AggregationConfig>,
 }
 impl S3OutputFormatConfig {
@@ -4737,13 +4566,11 @@ impl S3OutputFormatConfig {
     pub fn file_type(&self) -> std::option::Option<&crate::model::FileType> {
         self.file_type.as_ref()
     }
-    /// <p> Determines the prefix that Amazon AppFlow applies to the folder name in the Amazon S3
-    /// bucket. You can name folders according to the flow frequency and date. </p>
+    /// <p> Determines the prefix that Amazon AppFlow applies to the folder name in the Amazon S3 bucket. You can name folders according to the flow frequency and date. </p>
     pub fn prefix_config(&self) -> std::option::Option<&crate::model::PrefixConfig> {
         self.prefix_config.as_ref()
     }
-    /// <p> The aggregation settings that you can use to customize the output format of your flow
-    /// data. </p>
+    /// <p> The aggregation settings that you can use to customize the output format of your flow data. </p>
     pub fn aggregation_config(&self) -> std::option::Option<&crate::model::AggregationConfig> {
         self.aggregation_config.as_ref()
     }
@@ -4778,14 +4605,12 @@ pub mod s3_output_format_config {
             self.file_type = input;
             self
         }
-        /// <p> Determines the prefix that Amazon AppFlow applies to the folder name in the Amazon S3
-        /// bucket. You can name folders according to the flow frequency and date. </p>
+        /// <p> Determines the prefix that Amazon AppFlow applies to the folder name in the Amazon S3 bucket. You can name folders according to the flow frequency and date. </p>
         pub fn prefix_config(mut self, input: crate::model::PrefixConfig) -> Self {
             self.prefix_config = Some(input);
             self
         }
-        /// <p> Determines the prefix that Amazon AppFlow applies to the folder name in the Amazon S3
-        /// bucket. You can name folders according to the flow frequency and date. </p>
+        /// <p> Determines the prefix that Amazon AppFlow applies to the folder name in the Amazon S3 bucket. You can name folders according to the flow frequency and date. </p>
         pub fn set_prefix_config(
             mut self,
             input: std::option::Option<crate::model::PrefixConfig>,
@@ -4793,14 +4618,12 @@ pub mod s3_output_format_config {
             self.prefix_config = input;
             self
         }
-        /// <p> The aggregation settings that you can use to customize the output format of your flow
-        /// data. </p>
+        /// <p> The aggregation settings that you can use to customize the output format of your flow data. </p>
         pub fn aggregation_config(mut self, input: crate::model::AggregationConfig) -> Self {
             self.aggregation_config = Some(input);
             self
         }
-        /// <p> The aggregation settings that you can use to customize the output format of your flow
-        /// data. </p>
+        /// <p> The aggregation settings that you can use to customize the output format of your flow data. </p>
         pub fn set_aggregation_config(
             mut self,
             input: std::option::Option<crate::model::AggregationConfig>,
@@ -4825,24 +4648,17 @@ impl S3OutputFormatConfig {
     }
 }
 
-/// <p> The properties that are applied when Amazon Redshift is being used as a destination.
-/// </p>
+/// <p> The properties that are applied when Amazon Redshift is being used as a destination. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedshiftDestinationProperties {
     /// <p> The object specified in the Amazon Redshift flow destination. </p>
     pub object: std::option::Option<std::string::String>,
-    /// <p> The intermediate bucket that Amazon AppFlow uses when moving data into Amazon Redshift.
-    /// </p>
+    /// <p> The intermediate bucket that Amazon AppFlow uses when moving data into Amazon Redshift. </p>
     pub intermediate_bucket_name: std::option::Option<std::string::String>,
-    /// <p> The object key for the bucket in which Amazon AppFlow places the destination files.
-    /// </p>
+    /// <p> The object key for the bucket in which Amazon AppFlow places the destination files. </p>
     pub bucket_prefix: std::option::Option<std::string::String>,
-    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
-    /// Amazon Redshift destination. For example, this setting would determine if the flow should fail
-    /// after one insertion error, or continue and attempt to insert every record regardless of the
-    /// initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector
-    /// details. </p>
+    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Amazon Redshift destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub error_handling_config: std::option::Option<crate::model::ErrorHandlingConfig>,
 }
 impl RedshiftDestinationProperties {
@@ -4850,21 +4666,15 @@ impl RedshiftDestinationProperties {
     pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
     }
-    /// <p> The intermediate bucket that Amazon AppFlow uses when moving data into Amazon Redshift.
-    /// </p>
+    /// <p> The intermediate bucket that Amazon AppFlow uses when moving data into Amazon Redshift. </p>
     pub fn intermediate_bucket_name(&self) -> std::option::Option<&str> {
         self.intermediate_bucket_name.as_deref()
     }
-    /// <p> The object key for the bucket in which Amazon AppFlow places the destination files.
-    /// </p>
+    /// <p> The object key for the bucket in which Amazon AppFlow places the destination files. </p>
     pub fn bucket_prefix(&self) -> std::option::Option<&str> {
         self.bucket_prefix.as_deref()
     }
-    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
-    /// Amazon Redshift destination. For example, this setting would determine if the flow should fail
-    /// after one insertion error, or continue and attempt to insert every record regardless of the
-    /// initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector
-    /// details. </p>
+    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Amazon Redshift destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub fn error_handling_config(&self) -> std::option::Option<&crate::model::ErrorHandlingConfig> {
         self.error_handling_config.as_ref()
     }
@@ -4901,14 +4711,12 @@ pub mod redshift_destination_properties {
             self.object = input;
             self
         }
-        /// <p> The intermediate bucket that Amazon AppFlow uses when moving data into Amazon Redshift.
-        /// </p>
+        /// <p> The intermediate bucket that Amazon AppFlow uses when moving data into Amazon Redshift. </p>
         pub fn intermediate_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.intermediate_bucket_name = Some(input.into());
             self
         }
-        /// <p> The intermediate bucket that Amazon AppFlow uses when moving data into Amazon Redshift.
-        /// </p>
+        /// <p> The intermediate bucket that Amazon AppFlow uses when moving data into Amazon Redshift. </p>
         pub fn set_intermediate_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4916,14 +4724,12 @@ pub mod redshift_destination_properties {
             self.intermediate_bucket_name = input;
             self
         }
-        /// <p> The object key for the bucket in which Amazon AppFlow places the destination files.
-        /// </p>
+        /// <p> The object key for the bucket in which Amazon AppFlow places the destination files. </p>
         pub fn bucket_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket_prefix = Some(input.into());
             self
         }
-        /// <p> The object key for the bucket in which Amazon AppFlow places the destination files.
-        /// </p>
+        /// <p> The object key for the bucket in which Amazon AppFlow places the destination files. </p>
         pub fn set_bucket_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4931,20 +4737,12 @@ pub mod redshift_destination_properties {
             self.bucket_prefix = input;
             self
         }
-        /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
-        /// Amazon Redshift destination. For example, this setting would determine if the flow should fail
-        /// after one insertion error, or continue and attempt to insert every record regardless of the
-        /// initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector
-        /// details. </p>
+        /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Amazon Redshift destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
         pub fn error_handling_config(mut self, input: crate::model::ErrorHandlingConfig) -> Self {
             self.error_handling_config = Some(input);
             self
         }
-        /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the
-        /// Amazon Redshift destination. For example, this setting would determine if the flow should fail
-        /// after one insertion error, or continue and attempt to insert every record regardless of the
-        /// initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector
-        /// details. </p>
+        /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Amazon Redshift destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
         pub fn set_error_handling_config(
             mut self,
             input: std::option::Option<crate::model::ErrorHandlingConfig>,
@@ -5128,22 +4926,17 @@ impl AsRef<str> for ConnectorType {
     }
 }
 
-/// <p> Contains information about the configuration of the source connector used in the flow.
-/// </p>
+/// <p> Contains information about the configuration of the source connector used in the flow. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceFlowConfig {
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub connector_type: std::option::Option<crate::model::ConnectorType>,
-    /// <p> The name of the connector profile. This name must be unique for each connector profile in
-    /// the Amazon Web Services account. </p>
+    /// <p> The name of the connector profile. This name must be unique for each connector profile in the Amazon Web Services account. </p>
     pub connector_profile_name: std::option::Option<std::string::String>,
-    /// <p> Specifies the information that is required to query a particular source connector.
-    /// </p>
+    /// <p> Specifies the information that is required to query a particular source connector. </p>
     pub source_connector_properties: std::option::Option<crate::model::SourceConnectorProperties>,
-    /// <p> Defines the configuration for a scheduled incremental data pull. If a valid configuration
-    /// is provided, the fields specified in the configuration are used when querying for the
-    /// incremental data pull. </p>
+    /// <p> Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields specified in the configuration are used when querying for the incremental data pull. </p>
     pub incremental_pull_config: std::option::Option<crate::model::IncrementalPullConfig>,
 }
 impl SourceFlowConfig {
@@ -5151,21 +4944,17 @@ impl SourceFlowConfig {
     pub fn connector_type(&self) -> std::option::Option<&crate::model::ConnectorType> {
         self.connector_type.as_ref()
     }
-    /// <p> The name of the connector profile. This name must be unique for each connector profile in
-    /// the Amazon Web Services account. </p>
+    /// <p> The name of the connector profile. This name must be unique for each connector profile in the Amazon Web Services account. </p>
     pub fn connector_profile_name(&self) -> std::option::Option<&str> {
         self.connector_profile_name.as_deref()
     }
-    /// <p> Specifies the information that is required to query a particular source connector.
-    /// </p>
+    /// <p> Specifies the information that is required to query a particular source connector. </p>
     pub fn source_connector_properties(
         &self,
     ) -> std::option::Option<&crate::model::SourceConnectorProperties> {
         self.source_connector_properties.as_ref()
     }
-    /// <p> Defines the configuration for a scheduled incremental data pull. If a valid configuration
-    /// is provided, the fields specified in the configuration are used when querying for the
-    /// incremental data pull. </p>
+    /// <p> Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields specified in the configuration are used when querying for the incremental data pull. </p>
     pub fn incremental_pull_config(
         &self,
     ) -> std::option::Option<&crate::model::IncrementalPullConfig> {
@@ -5212,14 +5001,12 @@ pub mod source_flow_config {
             self.connector_type = input;
             self
         }
-        /// <p> The name of the connector profile. This name must be unique for each connector profile in
-        /// the Amazon Web Services account. </p>
+        /// <p> The name of the connector profile. This name must be unique for each connector profile in the Amazon Web Services account. </p>
         pub fn connector_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.connector_profile_name = Some(input.into());
             self
         }
-        /// <p> The name of the connector profile. This name must be unique for each connector profile in
-        /// the Amazon Web Services account. </p>
+        /// <p> The name of the connector profile. This name must be unique for each connector profile in the Amazon Web Services account. </p>
         pub fn set_connector_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5227,8 +5014,7 @@ pub mod source_flow_config {
             self.connector_profile_name = input;
             self
         }
-        /// <p> Specifies the information that is required to query a particular source connector.
-        /// </p>
+        /// <p> Specifies the information that is required to query a particular source connector. </p>
         pub fn source_connector_properties(
             mut self,
             input: crate::model::SourceConnectorProperties,
@@ -5236,8 +5022,7 @@ pub mod source_flow_config {
             self.source_connector_properties = Some(input);
             self
         }
-        /// <p> Specifies the information that is required to query a particular source connector.
-        /// </p>
+        /// <p> Specifies the information that is required to query a particular source connector. </p>
         pub fn set_source_connector_properties(
             mut self,
             input: std::option::Option<crate::model::SourceConnectorProperties>,
@@ -5245,9 +5030,7 @@ pub mod source_flow_config {
             self.source_connector_properties = input;
             self
         }
-        /// <p> Defines the configuration for a scheduled incremental data pull. If a valid configuration
-        /// is provided, the fields specified in the configuration are used when querying for the
-        /// incremental data pull. </p>
+        /// <p> Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields specified in the configuration are used when querying for the incremental data pull. </p>
         pub fn incremental_pull_config(
             mut self,
             input: crate::model::IncrementalPullConfig,
@@ -5255,9 +5038,7 @@ pub mod source_flow_config {
             self.incremental_pull_config = Some(input);
             self
         }
-        /// <p> Defines the configuration for a scheduled incremental data pull. If a valid configuration
-        /// is provided, the fields specified in the configuration are used when querying for the
-        /// incremental data pull. </p>
+        /// <p> Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields specified in the configuration are used when querying for the incremental data pull. </p>
         pub fn set_incremental_pull_config(
             mut self,
             input: std::option::Option<crate::model::IncrementalPullConfig>,
@@ -5283,18 +5064,15 @@ impl SourceFlowConfig {
     }
 }
 
-/// <p> Specifies the configuration used when importing incremental records from the source.
-/// </p>
+/// <p> Specifies the configuration used when importing incremental records from the source. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncrementalPullConfig {
-    /// <p> A field that specifies the date time or timestamp field as the criteria to use when
-    /// importing incremental records from the source. </p>
+    /// <p> A field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source. </p>
     pub datetime_type_field_name: std::option::Option<std::string::String>,
 }
 impl IncrementalPullConfig {
-    /// <p> A field that specifies the date time or timestamp field as the criteria to use when
-    /// importing incremental records from the source. </p>
+    /// <p> A field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source. </p>
     pub fn datetime_type_field_name(&self) -> std::option::Option<&str> {
         self.datetime_type_field_name.as_deref()
     }
@@ -5315,14 +5093,12 @@ pub mod incremental_pull_config {
         pub(crate) datetime_type_field_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> A field that specifies the date time or timestamp field as the criteria to use when
-        /// importing incremental records from the source. </p>
+        /// <p> A field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source. </p>
         pub fn datetime_type_field_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.datetime_type_field_name = Some(input.into());
             self
         }
-        /// <p> A field that specifies the date time or timestamp field as the criteria to use when
-        /// importing incremental records from the source. </p>
+        /// <p> A field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source. </p>
         pub fn set_datetime_type_field_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6179,8 +5955,7 @@ impl ServiceNowSourceProperties {
 pub struct SalesforceSourceProperties {
     /// <p> The object specified in the Salesforce flow source. </p>
     pub object: std::option::Option<std::string::String>,
-    /// <p> The flag that enables dynamic fetching of new (recently added) fields in the Salesforce
-    /// objects while running a flow. </p>
+    /// <p> The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a flow. </p>
     pub enable_dynamic_field_update: bool,
     /// <p> Indicates whether Amazon AppFlow includes deleted files in the flow run. </p>
     pub include_deleted_records: bool,
@@ -6190,8 +5965,7 @@ impl SalesforceSourceProperties {
     pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
     }
-    /// <p> The flag that enables dynamic fetching of new (recently added) fields in the Salesforce
-    /// objects while running a flow. </p>
+    /// <p> The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a flow. </p>
     pub fn enable_dynamic_field_update(&self) -> bool {
         self.enable_dynamic_field_update
     }
@@ -6233,14 +6007,12 @@ pub mod salesforce_source_properties {
             self.object = input;
             self
         }
-        /// <p> The flag that enables dynamic fetching of new (recently added) fields in the Salesforce
-        /// objects while running a flow. </p>
+        /// <p> The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a flow. </p>
         pub fn enable_dynamic_field_update(mut self, input: bool) -> Self {
             self.enable_dynamic_field_update = Some(input);
             self
         }
-        /// <p> The flag that enables dynamic fetching of new (recently added) fields in the Salesforce
-        /// objects while running a flow. </p>
+        /// <p> The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a flow. </p>
         pub fn set_enable_dynamic_field_update(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_dynamic_field_update = input;
             self
@@ -6808,26 +6580,21 @@ impl AmplitudeSourceProperties {
     }
 }
 
-/// <p> The trigger settings that determine how and when Amazon AppFlow runs the specified flow.
-/// </p>
+/// <p> The trigger settings that determine how and when Amazon AppFlow runs the specified flow. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TriggerConfig {
-    /// <p> Specifies the type of flow trigger. This can be <code>OnDemand</code>,
-    /// <code>Scheduled</code>, or <code>Event</code>. </p>
+    /// <p> Specifies the type of flow trigger. This can be <code>OnDemand</code>, <code>Scheduled</code>, or <code>Event</code>. </p>
     pub trigger_type: std::option::Option<crate::model::TriggerType>,
-    /// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user.
-    /// Currently, these settings only apply to the <code>Scheduled</code> trigger type. </p>
+    /// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user. Currently, these settings only apply to the <code>Scheduled</code> trigger type. </p>
     pub trigger_properties: std::option::Option<crate::model::TriggerProperties>,
 }
 impl TriggerConfig {
-    /// <p> Specifies the type of flow trigger. This can be <code>OnDemand</code>,
-    /// <code>Scheduled</code>, or <code>Event</code>. </p>
+    /// <p> Specifies the type of flow trigger. This can be <code>OnDemand</code>, <code>Scheduled</code>, or <code>Event</code>. </p>
     pub fn trigger_type(&self) -> std::option::Option<&crate::model::TriggerType> {
         self.trigger_type.as_ref()
     }
-    /// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user.
-    /// Currently, these settings only apply to the <code>Scheduled</code> trigger type. </p>
+    /// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user. Currently, these settings only apply to the <code>Scheduled</code> trigger type. </p>
     pub fn trigger_properties(&self) -> std::option::Option<&crate::model::TriggerProperties> {
         self.trigger_properties.as_ref()
     }
@@ -6850,14 +6617,12 @@ pub mod trigger_config {
         pub(crate) trigger_properties: std::option::Option<crate::model::TriggerProperties>,
     }
     impl Builder {
-        /// <p> Specifies the type of flow trigger. This can be <code>OnDemand</code>,
-        /// <code>Scheduled</code>, or <code>Event</code>. </p>
+        /// <p> Specifies the type of flow trigger. This can be <code>OnDemand</code>, <code>Scheduled</code>, or <code>Event</code>. </p>
         pub fn trigger_type(mut self, input: crate::model::TriggerType) -> Self {
             self.trigger_type = Some(input);
             self
         }
-        /// <p> Specifies the type of flow trigger. This can be <code>OnDemand</code>,
-        /// <code>Scheduled</code>, or <code>Event</code>. </p>
+        /// <p> Specifies the type of flow trigger. This can be <code>OnDemand</code>, <code>Scheduled</code>, or <code>Event</code>. </p>
         pub fn set_trigger_type(
             mut self,
             input: std::option::Option<crate::model::TriggerType>,
@@ -6865,14 +6630,12 @@ pub mod trigger_config {
             self.trigger_type = input;
             self
         }
-        /// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user.
-        /// Currently, these settings only apply to the <code>Scheduled</code> trigger type. </p>
+        /// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user. Currently, these settings only apply to the <code>Scheduled</code> trigger type. </p>
         pub fn trigger_properties(mut self, input: crate::model::TriggerProperties) -> Self {
             self.trigger_properties = Some(input);
             self
         }
-        /// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user.
-        /// Currently, these settings only apply to the <code>Scheduled</code> trigger type. </p>
+        /// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user. Currently, these settings only apply to the <code>Scheduled</code> trigger type. </p>
         pub fn set_trigger_properties(
             mut self,
             input: std::option::Option<crate::model::TriggerProperties>,
@@ -6896,18 +6659,15 @@ impl TriggerConfig {
     }
 }
 
-/// <p> Specifies the configuration details that control the trigger for a flow. Currently, these
-/// settings only apply to the <code>Scheduled</code> trigger type. </p>
+/// <p> Specifies the configuration details that control the trigger for a flow. Currently, these settings only apply to the <code>Scheduled</code> trigger type. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TriggerProperties {
-    /// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user.
-    /// </p>
+    /// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user. </p>
     pub scheduled: std::option::Option<crate::model::ScheduledTriggerProperties>,
 }
 impl TriggerProperties {
-    /// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user.
-    /// </p>
+    /// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user. </p>
     pub fn scheduled(&self) -> std::option::Option<&crate::model::ScheduledTriggerProperties> {
         self.scheduled.as_ref()
     }
@@ -6928,14 +6688,12 @@ pub mod trigger_properties {
         pub(crate) scheduled: std::option::Option<crate::model::ScheduledTriggerProperties>,
     }
     impl Builder {
-        /// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user.
-        /// </p>
+        /// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user. </p>
         pub fn scheduled(mut self, input: crate::model::ScheduledTriggerProperties) -> Self {
             self.scheduled = Some(input);
             self
         }
-        /// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user.
-        /// </p>
+        /// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user. </p>
         pub fn set_scheduled(
             mut self,
             input: std::option::Option<crate::model::ScheduledTriggerProperties>,
@@ -6958,39 +6716,31 @@ impl TriggerProperties {
     }
 }
 
-/// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user.
-/// Currently, these settings only apply to the <code>Scheduled</code> trigger type. </p>
+/// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user. Currently, these settings only apply to the <code>Scheduled</code> trigger type. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduledTriggerProperties {
-    /// <p> The scheduling expression that determines the rate at which the schedule will run, for
-    /// example <code>rate(5minutes)</code>. </p>
+    /// <p> The scheduling expression that determines the rate at which the schedule will run, for example <code>rate(5minutes)</code>. </p>
     pub schedule_expression: std::option::Option<std::string::String>,
-    /// <p> Specifies whether a scheduled flow has an incremental data transfer or a complete data
-    /// transfer for each flow run. </p>
+    /// <p> Specifies whether a scheduled flow has an incremental data transfer or a complete data transfer for each flow run. </p>
     pub data_pull_mode: std::option::Option<crate::model::DataPullMode>,
     /// <p> Specifies the scheduled start time for a schedule-triggered flow. </p>
     pub schedule_start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies the scheduled end time for a schedule-triggered flow. </p>
     pub schedule_end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> Specifies the time zone used when referring to the date and time of a scheduled-triggered
-    /// flow, such as <code>America/New_York</code>. </p>
+    /// <p> Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as <code>America/New_York</code>. </p>
     pub timezone: std::option::Option<std::string::String>,
-    /// <p> Specifies the optional offset that is added to the time interval for a schedule-triggered
-    /// flow. </p>
+    /// <p> Specifies the optional offset that is added to the time interval for a schedule-triggered flow. </p>
     pub schedule_offset: std::option::Option<i64>,
-    /// <p> Specifies the date range for the records to import from the connector in the first flow
-    /// run. </p>
+    /// <p> Specifies the date range for the records to import from the connector in the first flow run. </p>
     pub first_execution_from: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ScheduledTriggerProperties {
-    /// <p> The scheduling expression that determines the rate at which the schedule will run, for
-    /// example <code>rate(5minutes)</code>. </p>
+    /// <p> The scheduling expression that determines the rate at which the schedule will run, for example <code>rate(5minutes)</code>. </p>
     pub fn schedule_expression(&self) -> std::option::Option<&str> {
         self.schedule_expression.as_deref()
     }
-    /// <p> Specifies whether a scheduled flow has an incremental data transfer or a complete data
-    /// transfer for each flow run. </p>
+    /// <p> Specifies whether a scheduled flow has an incremental data transfer or a complete data transfer for each flow run. </p>
     pub fn data_pull_mode(&self) -> std::option::Option<&crate::model::DataPullMode> {
         self.data_pull_mode.as_ref()
     }
@@ -7002,18 +6752,15 @@ impl ScheduledTriggerProperties {
     pub fn schedule_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.schedule_end_time.as_ref()
     }
-    /// <p> Specifies the time zone used when referring to the date and time of a scheduled-triggered
-    /// flow, such as <code>America/New_York</code>. </p>
+    /// <p> Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as <code>America/New_York</code>. </p>
     pub fn timezone(&self) -> std::option::Option<&str> {
         self.timezone.as_deref()
     }
-    /// <p> Specifies the optional offset that is added to the time interval for a schedule-triggered
-    /// flow. </p>
+    /// <p> Specifies the optional offset that is added to the time interval for a schedule-triggered flow. </p>
     pub fn schedule_offset(&self) -> std::option::Option<i64> {
         self.schedule_offset
     }
-    /// <p> Specifies the date range for the records to import from the connector in the first flow
-    /// run. </p>
+    /// <p> Specifies the date range for the records to import from the connector in the first flow run. </p>
     pub fn first_execution_from(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.first_execution_from.as_ref()
     }
@@ -7046,14 +6793,12 @@ pub mod scheduled_trigger_properties {
         pub(crate) first_execution_from: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p> The scheduling expression that determines the rate at which the schedule will run, for
-        /// example <code>rate(5minutes)</code>. </p>
+        /// <p> The scheduling expression that determines the rate at which the schedule will run, for example <code>rate(5minutes)</code>. </p>
         pub fn schedule_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.schedule_expression = Some(input.into());
             self
         }
-        /// <p> The scheduling expression that determines the rate at which the schedule will run, for
-        /// example <code>rate(5minutes)</code>. </p>
+        /// <p> The scheduling expression that determines the rate at which the schedule will run, for example <code>rate(5minutes)</code>. </p>
         pub fn set_schedule_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7061,14 +6806,12 @@ pub mod scheduled_trigger_properties {
             self.schedule_expression = input;
             self
         }
-        /// <p> Specifies whether a scheduled flow has an incremental data transfer or a complete data
-        /// transfer for each flow run. </p>
+        /// <p> Specifies whether a scheduled flow has an incremental data transfer or a complete data transfer for each flow run. </p>
         pub fn data_pull_mode(mut self, input: crate::model::DataPullMode) -> Self {
             self.data_pull_mode = Some(input);
             self
         }
-        /// <p> Specifies whether a scheduled flow has an incremental data transfer or a complete data
-        /// transfer for each flow run. </p>
+        /// <p> Specifies whether a scheduled flow has an incremental data transfer or a complete data transfer for each flow run. </p>
         pub fn set_data_pull_mode(
             mut self,
             input: std::option::Option<crate::model::DataPullMode>,
@@ -7102,38 +6845,32 @@ pub mod scheduled_trigger_properties {
             self.schedule_end_time = input;
             self
         }
-        /// <p> Specifies the time zone used when referring to the date and time of a scheduled-triggered
-        /// flow, such as <code>America/New_York</code>. </p>
+        /// <p> Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as <code>America/New_York</code>. </p>
         pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
             self.timezone = Some(input.into());
             self
         }
-        /// <p> Specifies the time zone used when referring to the date and time of a scheduled-triggered
-        /// flow, such as <code>America/New_York</code>. </p>
+        /// <p> Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as <code>America/New_York</code>. </p>
         pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timezone = input;
             self
         }
-        /// <p> Specifies the optional offset that is added to the time interval for a schedule-triggered
-        /// flow. </p>
+        /// <p> Specifies the optional offset that is added to the time interval for a schedule-triggered flow. </p>
         pub fn schedule_offset(mut self, input: i64) -> Self {
             self.schedule_offset = Some(input);
             self
         }
-        /// <p> Specifies the optional offset that is added to the time interval for a schedule-triggered
-        /// flow. </p>
+        /// <p> Specifies the optional offset that is added to the time interval for a schedule-triggered flow. </p>
         pub fn set_schedule_offset(mut self, input: std::option::Option<i64>) -> Self {
             self.schedule_offset = input;
             self
         }
-        /// <p> Specifies the date range for the records to import from the connector in the first flow
-        /// run. </p>
+        /// <p> Specifies the date range for the records to import from the connector in the first flow run. </p>
         pub fn first_execution_from(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.first_execution_from = Some(input);
             self
         }
-        /// <p> Specifies the date range for the records to import from the connector in the first flow
-        /// run. </p>
+        /// <p> Specifies the date range for the records to import from the connector in the first flow run. </p>
         pub fn set_first_execution_from(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -7276,8 +7013,7 @@ impl AsRef<str> for TriggerType {
     }
 }
 
-/// <p> Defines the connector-specific configuration and credentials for the connector profile.
-/// </p>
+/// <p> Defines the connector-specific configuration and credentials for the connector profile. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectorProfileConfig {
@@ -7948,15 +7684,13 @@ impl SapoDataConnectorProfileCredentials {
 pub struct OAuthCredentials {
     /// <p> The identifier for the desired client. </p>
     pub client_id: std::option::Option<std::string::String>,
-    /// <p> The client secret used by the OAuth client to authenticate to the authorization server.
-    /// </p>
+    /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
     pub client_secret: std::option::Option<std::string::String>,
     /// <p> The access token used to access protected SAPOData resources. </p>
     pub access_token: std::option::Option<std::string::String>,
     /// <p> The refresh token used to refresh expired access token. </p>
     pub refresh_token: std::option::Option<std::string::String>,
-    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
-    /// </p>
+    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
     pub o_auth_request: std::option::Option<crate::model::ConnectorOAuthRequest>,
 }
 impl OAuthCredentials {
@@ -7964,8 +7698,7 @@ impl OAuthCredentials {
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p> The client secret used by the OAuth client to authenticate to the authorization server.
-    /// </p>
+    /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
     pub fn client_secret(&self) -> std::option::Option<&str> {
         self.client_secret.as_deref()
     }
@@ -7977,8 +7710,7 @@ impl OAuthCredentials {
     pub fn refresh_token(&self) -> std::option::Option<&str> {
         self.refresh_token.as_deref()
     }
-    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
-    /// </p>
+    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
     pub fn o_auth_request(&self) -> std::option::Option<&crate::model::ConnectorOAuthRequest> {
         self.o_auth_request.as_ref()
     }
@@ -8017,14 +7749,12 @@ pub mod o_auth_credentials {
             self.client_id = input;
             self
         }
-        /// <p> The client secret used by the OAuth client to authenticate to the authorization server.
-        /// </p>
+        /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
         pub fn client_secret(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_secret = Some(input.into());
             self
         }
-        /// <p> The client secret used by the OAuth client to authenticate to the authorization server.
-        /// </p>
+        /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
         pub fn set_client_secret(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8055,14 +7785,12 @@ pub mod o_auth_credentials {
             self.refresh_token = input;
             self
         }
-        /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
-        /// </p>
+        /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
         pub fn o_auth_request(mut self, input: crate::model::ConnectorOAuthRequest) -> Self {
             self.o_auth_request = Some(input);
             self
         }
-        /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
-        /// </p>
+        /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
         pub fn set_o_auth_request(
             mut self,
             input: std::option::Option<crate::model::ConnectorOAuthRequest>,
@@ -8089,26 +7817,21 @@ impl OAuthCredentials {
     }
 }
 
-/// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce,
-/// Google Analytics, Marketo, Zendesk, and Slack. </p>
+/// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectorOAuthRequest {
-    /// <p> The code provided by the connector when it has been authenticated via the connected app.
-    /// </p>
+    /// <p> The code provided by the connector when it has been authenticated via the connected app. </p>
     pub auth_code: std::option::Option<std::string::String>,
-    /// <p> The URL to which the authentication server redirects the browser after authorization has
-    /// been granted. </p>
+    /// <p> The URL to which the authentication server redirects the browser after authorization has been granted. </p>
     pub redirect_uri: std::option::Option<std::string::String>,
 }
 impl ConnectorOAuthRequest {
-    /// <p> The code provided by the connector when it has been authenticated via the connected app.
-    /// </p>
+    /// <p> The code provided by the connector when it has been authenticated via the connected app. </p>
     pub fn auth_code(&self) -> std::option::Option<&str> {
         self.auth_code.as_deref()
     }
-    /// <p> The URL to which the authentication server redirects the browser after authorization has
-    /// been granted. </p>
+    /// <p> The URL to which the authentication server redirects the browser after authorization has been granted. </p>
     pub fn redirect_uri(&self) -> std::option::Option<&str> {
         self.redirect_uri.as_deref()
     }
@@ -8131,26 +7854,22 @@ pub mod connector_o_auth_request {
         pub(crate) redirect_uri: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The code provided by the connector when it has been authenticated via the connected app.
-        /// </p>
+        /// <p> The code provided by the connector when it has been authenticated via the connected app. </p>
         pub fn auth_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.auth_code = Some(input.into());
             self
         }
-        /// <p> The code provided by the connector when it has been authenticated via the connected app.
-        /// </p>
+        /// <p> The code provided by the connector when it has been authenticated via the connected app. </p>
         pub fn set_auth_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.auth_code = input;
             self
         }
-        /// <p> The URL to which the authentication server redirects the browser after authorization has
-        /// been granted. </p>
+        /// <p> The URL to which the authentication server redirects the browser after authorization has been granted. </p>
         pub fn redirect_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.redirect_uri = Some(input.into());
             self
         }
-        /// <p> The URL to which the authentication server redirects the browser after authorization has
-        /// been granted. </p>
+        /// <p> The URL to which the authentication server redirects the browser after authorization has been granted. </p>
         pub fn set_redirect_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.redirect_uri = input;
             self
@@ -8250,13 +7969,11 @@ impl BasicAuthCredentials {
 pub struct ZendeskConnectorProfileCredentials {
     /// <p> The identifier for the desired client. </p>
     pub client_id: std::option::Option<std::string::String>,
-    /// <p> The client secret used by the OAuth client to authenticate to the authorization server.
-    /// </p>
+    /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
     pub client_secret: std::option::Option<std::string::String>,
     /// <p> The credentials used to access protected Zendesk resources. </p>
     pub access_token: std::option::Option<std::string::String>,
-    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
-    /// </p>
+    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
     pub o_auth_request: std::option::Option<crate::model::ConnectorOAuthRequest>,
 }
 impl ZendeskConnectorProfileCredentials {
@@ -8264,8 +7981,7 @@ impl ZendeskConnectorProfileCredentials {
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p> The client secret used by the OAuth client to authenticate to the authorization server.
-    /// </p>
+    /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
     pub fn client_secret(&self) -> std::option::Option<&str> {
         self.client_secret.as_deref()
     }
@@ -8273,8 +7989,7 @@ impl ZendeskConnectorProfileCredentials {
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
-    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
-    /// </p>
+    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
     pub fn o_auth_request(&self) -> std::option::Option<&crate::model::ConnectorOAuthRequest> {
         self.o_auth_request.as_ref()
     }
@@ -8311,14 +8026,12 @@ pub mod zendesk_connector_profile_credentials {
             self.client_id = input;
             self
         }
-        /// <p> The client secret used by the OAuth client to authenticate to the authorization server.
-        /// </p>
+        /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
         pub fn client_secret(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_secret = Some(input.into());
             self
         }
-        /// <p> The client secret used by the OAuth client to authenticate to the authorization server.
-        /// </p>
+        /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
         pub fn set_client_secret(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8336,14 +8049,12 @@ pub mod zendesk_connector_profile_credentials {
             self.access_token = input;
             self
         }
-        /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
-        /// </p>
+        /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
         pub fn o_auth_request(mut self, input: crate::model::ConnectorOAuthRequest) -> Self {
             self.o_auth_request = Some(input);
             self
         }
-        /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
-        /// </p>
+        /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
         pub fn set_o_auth_request(
             mut self,
             input: std::option::Option<crate::model::ConnectorOAuthRequest>,
@@ -8578,13 +8289,11 @@ impl SnowflakeConnectorProfileCredentials {
 pub struct SlackConnectorProfileCredentials {
     /// <p> The identifier for the client. </p>
     pub client_id: std::option::Option<std::string::String>,
-    /// <p> The client secret used by the OAuth client to authenticate to the authorization server.
-    /// </p>
+    /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
     pub client_secret: std::option::Option<std::string::String>,
     /// <p> The credentials used to access protected Slack resources. </p>
     pub access_token: std::option::Option<std::string::String>,
-    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
-    /// </p>
+    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
     pub o_auth_request: std::option::Option<crate::model::ConnectorOAuthRequest>,
 }
 impl SlackConnectorProfileCredentials {
@@ -8592,8 +8301,7 @@ impl SlackConnectorProfileCredentials {
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p> The client secret used by the OAuth client to authenticate to the authorization server.
-    /// </p>
+    /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
     pub fn client_secret(&self) -> std::option::Option<&str> {
         self.client_secret.as_deref()
     }
@@ -8601,8 +8309,7 @@ impl SlackConnectorProfileCredentials {
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
-    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
-    /// </p>
+    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
     pub fn o_auth_request(&self) -> std::option::Option<&crate::model::ConnectorOAuthRequest> {
         self.o_auth_request.as_ref()
     }
@@ -8639,14 +8346,12 @@ pub mod slack_connector_profile_credentials {
             self.client_id = input;
             self
         }
-        /// <p> The client secret used by the OAuth client to authenticate to the authorization server.
-        /// </p>
+        /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
         pub fn client_secret(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_secret = Some(input.into());
             self
         }
-        /// <p> The client secret used by the OAuth client to authenticate to the authorization server.
-        /// </p>
+        /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
         pub fn set_client_secret(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8664,14 +8369,12 @@ pub mod slack_connector_profile_credentials {
             self.access_token = input;
             self
         }
-        /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
-        /// </p>
+        /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
         pub fn o_auth_request(mut self, input: crate::model::ConnectorOAuthRequest) -> Self {
             self.o_auth_request = Some(input);
             self
         }
-        /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
-        /// </p>
+        /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
         pub fn set_o_auth_request(
             mut self,
             input: std::option::Option<crate::model::ConnectorOAuthRequest>,
@@ -8701,13 +8404,11 @@ impl SlackConnectorProfileCredentials {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SingularConnectorProfileCredentials {
-    /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling
-    /// program to your API. </p>
+    /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
     pub api_key: std::option::Option<std::string::String>,
 }
 impl SingularConnectorProfileCredentials {
-    /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling
-    /// program to your API. </p>
+    /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
     pub fn api_key(&self) -> std::option::Option<&str> {
         self.api_key.as_deref()
     }
@@ -8728,14 +8429,12 @@ pub mod singular_connector_profile_credentials {
         pub(crate) api_key: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling
-        /// program to your API. </p>
+        /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
         pub fn api_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.api_key = Some(input.into());
             self
         }
-        /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling
-        /// program to your API. </p>
+        /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
         pub fn set_api_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_key = input;
             self
@@ -8836,11 +8535,9 @@ pub struct SalesforceConnectorProfileCredentials {
     pub access_token: std::option::Option<std::string::String>,
     /// <p> The credentials used to acquire new access tokens. </p>
     pub refresh_token: std::option::Option<std::string::String>,
-    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
-    /// </p>
+    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
     pub o_auth_request: std::option::Option<crate::model::ConnectorOAuthRequest>,
-    /// <p> The secret manager ARN, which contains the client ID and client secret of the connected
-    /// app. </p>
+    /// <p> The secret manager ARN, which contains the client ID and client secret of the connected app. </p>
     pub client_credentials_arn: std::option::Option<std::string::String>,
 }
 impl SalesforceConnectorProfileCredentials {
@@ -8852,13 +8549,11 @@ impl SalesforceConnectorProfileCredentials {
     pub fn refresh_token(&self) -> std::option::Option<&str> {
         self.refresh_token.as_deref()
     }
-    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
-    /// </p>
+    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
     pub fn o_auth_request(&self) -> std::option::Option<&crate::model::ConnectorOAuthRequest> {
         self.o_auth_request.as_ref()
     }
-    /// <p> The secret manager ARN, which contains the client ID and client secret of the connected
-    /// app. </p>
+    /// <p> The secret manager ARN, which contains the client ID and client secret of the connected app. </p>
     pub fn client_credentials_arn(&self) -> std::option::Option<&str> {
         self.client_credentials_arn.as_deref()
     }
@@ -8908,14 +8603,12 @@ pub mod salesforce_connector_profile_credentials {
             self.refresh_token = input;
             self
         }
-        /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
-        /// </p>
+        /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
         pub fn o_auth_request(mut self, input: crate::model::ConnectorOAuthRequest) -> Self {
             self.o_auth_request = Some(input);
             self
         }
-        /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
-        /// </p>
+        /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
         pub fn set_o_auth_request(
             mut self,
             input: std::option::Option<crate::model::ConnectorOAuthRequest>,
@@ -8923,14 +8616,12 @@ pub mod salesforce_connector_profile_credentials {
             self.o_auth_request = input;
             self
         }
-        /// <p> The secret manager ARN, which contains the client ID and client secret of the connected
-        /// app. </p>
+        /// <p> The secret manager ARN, which contains the client ID and client secret of the connected app. </p>
         pub fn client_credentials_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_credentials_arn = Some(input.into());
             self
         }
-        /// <p> The secret manager ARN, which contains the client ID and client secret of the connected
-        /// app. </p>
+        /// <p> The secret manager ARN, which contains the client ID and client secret of the connected app. </p>
         pub fn set_client_credentials_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9035,13 +8726,11 @@ impl RedshiftConnectorProfileCredentials {
 pub struct MarketoConnectorProfileCredentials {
     /// <p> The identifier for the desired client. </p>
     pub client_id: std::option::Option<std::string::String>,
-    /// <p> The client secret used by the OAuth client to authenticate to the authorization server.
-    /// </p>
+    /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
     pub client_secret: std::option::Option<std::string::String>,
     /// <p> The credentials used to access protected Marketo resources. </p>
     pub access_token: std::option::Option<std::string::String>,
-    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
-    /// </p>
+    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
     pub o_auth_request: std::option::Option<crate::model::ConnectorOAuthRequest>,
 }
 impl MarketoConnectorProfileCredentials {
@@ -9049,8 +8738,7 @@ impl MarketoConnectorProfileCredentials {
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p> The client secret used by the OAuth client to authenticate to the authorization server.
-    /// </p>
+    /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
     pub fn client_secret(&self) -> std::option::Option<&str> {
         self.client_secret.as_deref()
     }
@@ -9058,8 +8746,7 @@ impl MarketoConnectorProfileCredentials {
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
-    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
-    /// </p>
+    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
     pub fn o_auth_request(&self) -> std::option::Option<&crate::model::ConnectorOAuthRequest> {
         self.o_auth_request.as_ref()
     }
@@ -9096,14 +8783,12 @@ pub mod marketo_connector_profile_credentials {
             self.client_id = input;
             self
         }
-        /// <p> The client secret used by the OAuth client to authenticate to the authorization server.
-        /// </p>
+        /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
         pub fn client_secret(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_secret = Some(input.into());
             self
         }
-        /// <p> The client secret used by the OAuth client to authenticate to the authorization server.
-        /// </p>
+        /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
         pub fn set_client_secret(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9121,14 +8806,12 @@ pub mod marketo_connector_profile_credentials {
             self.access_token = input;
             self
         }
-        /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
-        /// </p>
+        /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
         pub fn o_auth_request(mut self, input: crate::model::ConnectorOAuthRequest) -> Self {
             self.o_auth_request = Some(input);
             self
         }
-        /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
-        /// </p>
+        /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
         pub fn set_o_auth_request(
             mut self,
             input: std::option::Option<crate::model::ConnectorOAuthRequest>,
@@ -9279,8 +8962,7 @@ pub struct HoneycodeConnectorProfileCredentials {
     pub access_token: std::option::Option<std::string::String>,
     /// <p> The credentials used to acquire new access tokens. </p>
     pub refresh_token: std::option::Option<std::string::String>,
-    /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce,
-    /// Google Analytics, Marketo, Zendesk, and Slack. </p>
+    /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
     pub o_auth_request: std::option::Option<crate::model::ConnectorOAuthRequest>,
 }
 impl HoneycodeConnectorProfileCredentials {
@@ -9292,8 +8974,7 @@ impl HoneycodeConnectorProfileCredentials {
     pub fn refresh_token(&self) -> std::option::Option<&str> {
         self.refresh_token.as_deref()
     }
-    /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce,
-    /// Google Analytics, Marketo, Zendesk, and Slack. </p>
+    /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
     pub fn o_auth_request(&self) -> std::option::Option<&crate::model::ConnectorOAuthRequest> {
         self.o_auth_request.as_ref()
     }
@@ -9341,14 +9022,12 @@ pub mod honeycode_connector_profile_credentials {
             self.refresh_token = input;
             self
         }
-        /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce,
-        /// Google Analytics, Marketo, Zendesk, and Slack. </p>
+        /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
         pub fn o_auth_request(mut self, input: crate::model::ConnectorOAuthRequest) -> Self {
             self.o_auth_request = Some(input);
             self
         }
-        /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce,
-        /// Google Analytics, Marketo, Zendesk, and Slack. </p>
+        /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
         pub fn set_o_auth_request(
             mut self,
             input: std::option::Option<crate::model::ConnectorOAuthRequest>,
@@ -9379,16 +9058,13 @@ impl HoneycodeConnectorProfileCredentials {
 pub struct GoogleAnalyticsConnectorProfileCredentials {
     /// <p> The identifier for the desired client. </p>
     pub client_id: std::option::Option<std::string::String>,
-    /// <p> The client secret used by the OAuth client to authenticate to the authorization server.
-    /// </p>
+    /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
     pub client_secret: std::option::Option<std::string::String>,
     /// <p> The credentials used to access protected Google Analytics resources. </p>
     pub access_token: std::option::Option<std::string::String>,
-    /// <p> The credentials used to acquire new access tokens. This is required only for OAuth2
-    /// access tokens, and is not required for OAuth1 access tokens. </p>
+    /// <p> The credentials used to acquire new access tokens. This is required only for OAuth2 access tokens, and is not required for OAuth1 access tokens. </p>
     pub refresh_token: std::option::Option<std::string::String>,
-    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
-    /// </p>
+    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
     pub o_auth_request: std::option::Option<crate::model::ConnectorOAuthRequest>,
 }
 impl GoogleAnalyticsConnectorProfileCredentials {
@@ -9396,8 +9072,7 @@ impl GoogleAnalyticsConnectorProfileCredentials {
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p> The client secret used by the OAuth client to authenticate to the authorization server.
-    /// </p>
+    /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
     pub fn client_secret(&self) -> std::option::Option<&str> {
         self.client_secret.as_deref()
     }
@@ -9405,13 +9080,11 @@ impl GoogleAnalyticsConnectorProfileCredentials {
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
-    /// <p> The credentials used to acquire new access tokens. This is required only for OAuth2
-    /// access tokens, and is not required for OAuth1 access tokens. </p>
+    /// <p> The credentials used to acquire new access tokens. This is required only for OAuth2 access tokens, and is not required for OAuth1 access tokens. </p>
     pub fn refresh_token(&self) -> std::option::Option<&str> {
         self.refresh_token.as_deref()
     }
-    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
-    /// </p>
+    /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
     pub fn o_auth_request(&self) -> std::option::Option<&crate::model::ConnectorOAuthRequest> {
         self.o_auth_request.as_ref()
     }
@@ -9450,14 +9123,12 @@ pub mod google_analytics_connector_profile_credentials {
             self.client_id = input;
             self
         }
-        /// <p> The client secret used by the OAuth client to authenticate to the authorization server.
-        /// </p>
+        /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
         pub fn client_secret(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_secret = Some(input.into());
             self
         }
-        /// <p> The client secret used by the OAuth client to authenticate to the authorization server.
-        /// </p>
+        /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
         pub fn set_client_secret(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9475,14 +9146,12 @@ pub mod google_analytics_connector_profile_credentials {
             self.access_token = input;
             self
         }
-        /// <p> The credentials used to acquire new access tokens. This is required only for OAuth2
-        /// access tokens, and is not required for OAuth1 access tokens. </p>
+        /// <p> The credentials used to acquire new access tokens. This is required only for OAuth2 access tokens, and is not required for OAuth1 access tokens. </p>
         pub fn refresh_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.refresh_token = Some(input.into());
             self
         }
-        /// <p> The credentials used to acquire new access tokens. This is required only for OAuth2
-        /// access tokens, and is not required for OAuth1 access tokens. </p>
+        /// <p> The credentials used to acquire new access tokens. This is required only for OAuth2 access tokens, and is not required for OAuth1 access tokens. </p>
         pub fn set_refresh_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9490,14 +9159,12 @@ pub mod google_analytics_connector_profile_credentials {
             self.refresh_token = input;
             self
         }
-        /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
-        /// </p>
+        /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
         pub fn o_auth_request(mut self, input: crate::model::ConnectorOAuthRequest) -> Self {
             self.o_auth_request = Some(input);
             self
         }
-        /// <p> The OAuth requirement needed to request security tokens from the connector endpoint.
-        /// </p>
+        /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
         pub fn set_o_auth_request(
             mut self,
             input: std::option::Option<crate::model::ConnectorOAuthRequest>,
@@ -9582,23 +9249,17 @@ impl DynatraceConnectorProfileCredentials {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatadogConnectorProfileCredentials {
-    /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling
-    /// program to your API. </p>
+    /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
     pub api_key: std::option::Option<std::string::String>,
-    /// <p> Application keys, in conjunction with your API key, give you full access to Datadog’s
-    /// programmatic API. Application keys are associated with the user account that created them. The
-    /// application key is used to log all requests made to the API. </p>
+    /// <p> Application keys, in conjunction with your API key, give you full access to Datadog’s programmatic API. Application keys are associated with the user account that created them. The application key is used to log all requests made to the API. </p>
     pub application_key: std::option::Option<std::string::String>,
 }
 impl DatadogConnectorProfileCredentials {
-    /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling
-    /// program to your API. </p>
+    /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
     pub fn api_key(&self) -> std::option::Option<&str> {
         self.api_key.as_deref()
     }
-    /// <p> Application keys, in conjunction with your API key, give you full access to Datadog’s
-    /// programmatic API. Application keys are associated with the user account that created them. The
-    /// application key is used to log all requests made to the API. </p>
+    /// <p> Application keys, in conjunction with your API key, give you full access to Datadog’s programmatic API. Application keys are associated with the user account that created them. The application key is used to log all requests made to the API. </p>
     pub fn application_key(&self) -> std::option::Option<&str> {
         self.application_key.as_deref()
     }
@@ -9621,28 +9282,22 @@ pub mod datadog_connector_profile_credentials {
         pub(crate) application_key: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling
-        /// program to your API. </p>
+        /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
         pub fn api_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.api_key = Some(input.into());
             self
         }
-        /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling
-        /// program to your API. </p>
+        /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
         pub fn set_api_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_key = input;
             self
         }
-        /// <p> Application keys, in conjunction with your API key, give you full access to Datadog’s
-        /// programmatic API. Application keys are associated with the user account that created them. The
-        /// application key is used to log all requests made to the API. </p>
+        /// <p> Application keys, in conjunction with your API key, give you full access to Datadog’s programmatic API. Application keys are associated with the user account that created them. The application key is used to log all requests made to the API. </p>
         pub fn application_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_key = Some(input.into());
             self
         }
-        /// <p> Application keys, in conjunction with your API key, give you full access to Datadog’s
-        /// programmatic API. Application keys are associated with the user account that created them. The
-        /// application key is used to log all requests made to the API. </p>
+        /// <p> Application keys, in conjunction with your API key, give you full access to Datadog’s programmatic API. Application keys are associated with the user account that created them. The application key is used to log all requests made to the API. </p>
         pub fn set_application_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9670,15 +9325,13 @@ impl DatadogConnectorProfileCredentials {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AmplitudeConnectorProfileCredentials {
-    /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling
-    /// program to your API. </p>
+    /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
     pub api_key: std::option::Option<std::string::String>,
     /// <p> The Secret Access Key portion of the credentials. </p>
     pub secret_key: std::option::Option<std::string::String>,
 }
 impl AmplitudeConnectorProfileCredentials {
-    /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling
-    /// program to your API. </p>
+    /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
     pub fn api_key(&self) -> std::option::Option<&str> {
         self.api_key.as_deref()
     }
@@ -9705,14 +9358,12 @@ pub mod amplitude_connector_profile_credentials {
         pub(crate) secret_key: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling
-        /// program to your API. </p>
+        /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
         pub fn api_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.api_key = Some(input.into());
             self
         }
-        /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling
-        /// program to your API. </p>
+        /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
         pub fn set_api_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_key = input;
             self
@@ -10406,23 +10057,19 @@ impl SapoDataConnectorProfileProperties {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OAuthProperties {
-    /// <p> The token url required to fetch access/refresh tokens using authorization code and also to refresh expired
-    /// access token using refresh token.</p>
+    /// <p> The token url required to fetch access/refresh tokens using authorization code and also to refresh expired access token using refresh token.</p>
     pub token_url: std::option::Option<std::string::String>,
-    /// <p> The authorization code url required to redirect to SAP Login Page to fetch authorization code for OAuth type
-    /// authentication. </p>
+    /// <p> The authorization code url required to redirect to SAP Login Page to fetch authorization code for OAuth type authentication. </p>
     pub auth_code_url: std::option::Option<std::string::String>,
     /// <p> The OAuth scopes required for OAuth type authentication. </p>
     pub o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl OAuthProperties {
-    /// <p> The token url required to fetch access/refresh tokens using authorization code and also to refresh expired
-    /// access token using refresh token.</p>
+    /// <p> The token url required to fetch access/refresh tokens using authorization code and also to refresh expired access token using refresh token.</p>
     pub fn token_url(&self) -> std::option::Option<&str> {
         self.token_url.as_deref()
     }
-    /// <p> The authorization code url required to redirect to SAP Login Page to fetch authorization code for OAuth type
-    /// authentication. </p>
+    /// <p> The authorization code url required to redirect to SAP Login Page to fetch authorization code for OAuth type authentication. </p>
     pub fn auth_code_url(&self) -> std::option::Option<&str> {
         self.auth_code_url.as_deref()
     }
@@ -10451,26 +10098,22 @@ pub mod o_auth_properties {
         pub(crate) o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p> The token url required to fetch access/refresh tokens using authorization code and also to refresh expired
-        /// access token using refresh token.</p>
+        /// <p> The token url required to fetch access/refresh tokens using authorization code and also to refresh expired access token using refresh token.</p>
         pub fn token_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.token_url = Some(input.into());
             self
         }
-        /// <p> The token url required to fetch access/refresh tokens using authorization code and also to refresh expired
-        /// access token using refresh token.</p>
+        /// <p> The token url required to fetch access/refresh tokens using authorization code and also to refresh expired access token using refresh token.</p>
         pub fn set_token_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token_url = input;
             self
         }
-        /// <p> The authorization code url required to redirect to SAP Login Page to fetch authorization code for OAuth type
-        /// authentication. </p>
+        /// <p> The authorization code url required to redirect to SAP Login Page to fetch authorization code for OAuth type authentication. </p>
         pub fn auth_code_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.auth_code_url = Some(input.into());
             self
         }
-        /// <p> The authorization code url required to redirect to SAP Login Page to fetch authorization code for OAuth type
-        /// authentication. </p>
+        /// <p> The authorization code url required to redirect to SAP Login Page to fetch authorization code for OAuth type authentication. </p>
         pub fn set_auth_code_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10658,9 +10301,9 @@ impl TrendmicroConnectorProfileProperties {
 pub struct SnowflakeConnectorProfileProperties {
     /// <p> The name of the Snowflake warehouse. </p>
     pub warehouse: std::option::Option<std::string::String>,
-    /// <p> The name of the Amazon S3 stage that was created while setting up an Amazon S3 stage in
-    /// the Snowflake account. This is written in the following format: < Database><
-    /// Schema><Stage Name>. </p>
+    /// <p> The name of the Amazon S3 stage that was created while setting up an Amazon S3 stage in the Snowflake account. This is written in the following format: &lt; Database&gt;&lt; Schema&gt;<stage name>
+    /// .
+    /// </stage></p>
     pub stage: std::option::Option<std::string::String>,
     /// <p> The name of the Amazon S3 bucket associated with Snowflake. </p>
     pub bucket_name: std::option::Option<std::string::String>,
@@ -10678,9 +10321,9 @@ impl SnowflakeConnectorProfileProperties {
     pub fn warehouse(&self) -> std::option::Option<&str> {
         self.warehouse.as_deref()
     }
-    /// <p> The name of the Amazon S3 stage that was created while setting up an Amazon S3 stage in
-    /// the Snowflake account. This is written in the following format: < Database><
-    /// Schema><Stage Name>. </p>
+    /// <p> The name of the Amazon S3 stage that was created while setting up an Amazon S3 stage in the Snowflake account. This is written in the following format: &lt; Database&gt;&lt; Schema&gt;<stage name>
+    /// .
+    /// </stage></p>
     pub fn stage(&self) -> std::option::Option<&str> {
         self.stage.as_deref()
     }
@@ -10743,16 +10386,16 @@ pub mod snowflake_connector_profile_properties {
             self.warehouse = input;
             self
         }
-        /// <p> The name of the Amazon S3 stage that was created while setting up an Amazon S3 stage in
-        /// the Snowflake account. This is written in the following format: < Database><
-        /// Schema><Stage Name>. </p>
+        /// <p> The name of the Amazon S3 stage that was created while setting up an Amazon S3 stage in the Snowflake account. This is written in the following format: &lt; Database&gt;&lt; Schema&gt;<stage name>
+        /// .
+        /// </stage></p>
         pub fn stage(mut self, input: impl Into<std::string::String>) -> Self {
             self.stage = Some(input.into());
             self
         }
-        /// <p> The name of the Amazon S3 stage that was created while setting up an Amazon S3 stage in
-        /// the Snowflake account. This is written in the following format: < Database><
-        /// Schema><Stage Name>. </p>
+        /// <p> The name of the Amazon S3 stage that was created while setting up an Amazon S3 stage in the Snowflake account. This is written in the following format: &lt; Database&gt;&lt; Schema&gt;<stage name>
+        /// .
+        /// </stage></p>
         pub fn set_stage(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage = input;
             self
@@ -10978,8 +10621,7 @@ impl ServiceNowConnectorProfileProperties {
 pub struct SalesforceConnectorProfileProperties {
     /// <p> The location of the Salesforce resource. </p>
     pub instance_url: std::option::Option<std::string::String>,
-    /// <p> Indicates whether the connector profile applies to a sandbox or production environment.
-    /// </p>
+    /// <p> Indicates whether the connector profile applies to a sandbox or production environment. </p>
     pub is_sandbox_environment: bool,
 }
 impl SalesforceConnectorProfileProperties {
@@ -10987,8 +10629,7 @@ impl SalesforceConnectorProfileProperties {
     pub fn instance_url(&self) -> std::option::Option<&str> {
         self.instance_url.as_deref()
     }
-    /// <p> Indicates whether the connector profile applies to a sandbox or production environment.
-    /// </p>
+    /// <p> Indicates whether the connector profile applies to a sandbox or production environment. </p>
     pub fn is_sandbox_environment(&self) -> bool {
         self.is_sandbox_environment
     }
@@ -11021,14 +10662,12 @@ pub mod salesforce_connector_profile_properties {
             self.instance_url = input;
             self
         }
-        /// <p> Indicates whether the connector profile applies to a sandbox or production environment.
-        /// </p>
+        /// <p> Indicates whether the connector profile applies to a sandbox or production environment. </p>
         pub fn is_sandbox_environment(mut self, input: bool) -> Self {
             self.is_sandbox_environment = Some(input);
             self
         }
-        /// <p> Indicates whether the connector profile applies to a sandbox or production environment.
-        /// </p>
+        /// <p> Indicates whether the connector profile applies to a sandbox or production environment. </p>
         pub fn set_is_sandbox_environment(mut self, input: std::option::Option<bool>) -> Self {
             self.is_sandbox_environment = input;
             self
@@ -11057,8 +10696,7 @@ pub struct RedshiftConnectorProfileProperties {
     pub database_url: std::option::Option<std::string::String>,
     /// <p> A name for the associated Amazon S3 bucket. </p>
     pub bucket_name: std::option::Option<std::string::String>,
-    /// <p> The object key for the destination bucket in which Amazon AppFlow places the files.
-    /// </p>
+    /// <p> The object key for the destination bucket in which Amazon AppFlow places the files. </p>
     pub bucket_prefix: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
     pub role_arn: std::option::Option<std::string::String>,
@@ -11072,8 +10710,7 @@ impl RedshiftConnectorProfileProperties {
     pub fn bucket_name(&self) -> std::option::Option<&str> {
         self.bucket_name.as_deref()
     }
-    /// <p> The object key for the destination bucket in which Amazon AppFlow places the files.
-    /// </p>
+    /// <p> The object key for the destination bucket in which Amazon AppFlow places the files. </p>
     pub fn bucket_prefix(&self) -> std::option::Option<&str> {
         self.bucket_prefix.as_deref()
     }
@@ -11124,14 +10761,12 @@ pub mod redshift_connector_profile_properties {
             self.bucket_name = input;
             self
         }
-        /// <p> The object key for the destination bucket in which Amazon AppFlow places the files.
-        /// </p>
+        /// <p> The object key for the destination bucket in which Amazon AppFlow places the files. </p>
         pub fn bucket_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket_prefix = Some(input.into());
             self
         }
-        /// <p> The object key for the destination bucket in which Amazon AppFlow places the files.
-        /// </p>
+        /// <p> The object key for the destination bucket in which Amazon AppFlow places the files. </p>
         pub fn set_bucket_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11528,8 +11163,7 @@ impl AsRef<str> for ConnectionMode {
     }
 }
 
-/// <p> The properties of the flow, such as its source, destination, trigger type, and so on.
-/// </p>
+/// <p> The properties of the flow, such as its source, destination, trigger type, and so on. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FlowDefinition {
@@ -11537,19 +11171,15 @@ pub struct FlowDefinition {
     pub flow_arn: std::option::Option<std::string::String>,
     /// <p> A user-entered description of the flow. </p>
     pub description: std::option::Option<std::string::String>,
-    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-    /// (-) only. </p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub flow_name: std::option::Option<std::string::String>,
     /// <p> Indicates the current status of the flow. </p>
     pub flow_status: std::option::Option<crate::model::FlowStatus>,
-    /// <p> Specifies the source connector type, such as Salesforce, Amazon S3, Amplitude, and so on.
-    /// </p>
+    /// <p> Specifies the source connector type, such as Salesforce, Amazon S3, Amplitude, and so on. </p>
     pub source_connector_type: std::option::Option<crate::model::ConnectorType>,
-    /// <p> Specifies the destination connector type, such as Salesforce, Amazon S3, Amplitude, and
-    /// so on. </p>
+    /// <p> Specifies the destination connector type, such as Salesforce, Amazon S3, Amplitude, and so on. </p>
     pub destination_connector_type: std::option::Option<crate::model::ConnectorType>,
-    /// <p> Specifies the type of flow trigger. This can be <code>OnDemand</code>,
-    /// <code>Scheduled</code>, or <code>Event</code>. </p>
+    /// <p> Specifies the type of flow trigger. This can be <code>OnDemand</code>, <code>Scheduled</code>, or <code>Event</code>. </p>
     pub trigger_type: std::option::Option<crate::model::TriggerType>,
     /// <p> Specifies when the flow was created. </p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -11574,8 +11204,7 @@ impl FlowDefinition {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-    /// (-) only. </p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn flow_name(&self) -> std::option::Option<&str> {
         self.flow_name.as_deref()
     }
@@ -11583,18 +11212,15 @@ impl FlowDefinition {
     pub fn flow_status(&self) -> std::option::Option<&crate::model::FlowStatus> {
         self.flow_status.as_ref()
     }
-    /// <p> Specifies the source connector type, such as Salesforce, Amazon S3, Amplitude, and so on.
-    /// </p>
+    /// <p> Specifies the source connector type, such as Salesforce, Amazon S3, Amplitude, and so on. </p>
     pub fn source_connector_type(&self) -> std::option::Option<&crate::model::ConnectorType> {
         self.source_connector_type.as_ref()
     }
-    /// <p> Specifies the destination connector type, such as Salesforce, Amazon S3, Amplitude, and
-    /// so on. </p>
+    /// <p> Specifies the destination connector type, such as Salesforce, Amazon S3, Amplitude, and so on. </p>
     pub fn destination_connector_type(&self) -> std::option::Option<&crate::model::ConnectorType> {
         self.destination_connector_type.as_ref()
     }
-    /// <p> Specifies the type of flow trigger. This can be <code>OnDemand</code>,
-    /// <code>Scheduled</code>, or <code>Event</code>. </p>
+    /// <p> Specifies the type of flow trigger. This can be <code>OnDemand</code>, <code>Scheduled</code>, or <code>Event</code>. </p>
     pub fn trigger_type(&self) -> std::option::Option<&crate::model::TriggerType> {
         self.trigger_type.as_ref()
     }
@@ -11696,14 +11322,12 @@ pub mod flow_definition {
             self.description = input;
             self
         }
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn flow_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.flow_name = Some(input.into());
             self
         }
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_name = input;
             self
@@ -11721,14 +11345,12 @@ pub mod flow_definition {
             self.flow_status = input;
             self
         }
-        /// <p> Specifies the source connector type, such as Salesforce, Amazon S3, Amplitude, and so on.
-        /// </p>
+        /// <p> Specifies the source connector type, such as Salesforce, Amazon S3, Amplitude, and so on. </p>
         pub fn source_connector_type(mut self, input: crate::model::ConnectorType) -> Self {
             self.source_connector_type = Some(input);
             self
         }
-        /// <p> Specifies the source connector type, such as Salesforce, Amazon S3, Amplitude, and so on.
-        /// </p>
+        /// <p> Specifies the source connector type, such as Salesforce, Amazon S3, Amplitude, and so on. </p>
         pub fn set_source_connector_type(
             mut self,
             input: std::option::Option<crate::model::ConnectorType>,
@@ -11736,14 +11358,12 @@ pub mod flow_definition {
             self.source_connector_type = input;
             self
         }
-        /// <p> Specifies the destination connector type, such as Salesforce, Amazon S3, Amplitude, and
-        /// so on. </p>
+        /// <p> Specifies the destination connector type, such as Salesforce, Amazon S3, Amplitude, and so on. </p>
         pub fn destination_connector_type(mut self, input: crate::model::ConnectorType) -> Self {
             self.destination_connector_type = Some(input);
             self
         }
-        /// <p> Specifies the destination connector type, such as Salesforce, Amazon S3, Amplitude, and
-        /// so on. </p>
+        /// <p> Specifies the destination connector type, such as Salesforce, Amazon S3, Amplitude, and so on. </p>
         pub fn set_destination_connector_type(
             mut self,
             input: std::option::Option<crate::model::ConnectorType>,
@@ -11751,14 +11371,12 @@ pub mod flow_definition {
             self.destination_connector_type = input;
             self
         }
-        /// <p> Specifies the type of flow trigger. This can be <code>OnDemand</code>,
-        /// <code>Scheduled</code>, or <code>Event</code>. </p>
+        /// <p> Specifies the type of flow trigger. This can be <code>OnDemand</code>, <code>Scheduled</code>, or <code>Event</code>. </p>
         pub fn trigger_type(mut self, input: crate::model::TriggerType) -> Self {
             self.trigger_type = Some(input);
             self
         }
-        /// <p> Specifies the type of flow trigger. This can be <code>OnDemand</code>,
-        /// <code>Scheduled</code>, or <code>Event</code>. </p>
+        /// <p> Specifies the type of flow trigger. This can be <code>OnDemand</code>, <code>Scheduled</code>, or <code>Event</code>. </p>
         pub fn set_trigger_type(
             mut self,
             input: std::option::Option<crate::model::TriggerType>,
@@ -11880,8 +11498,7 @@ impl FlowDefinition {
     }
 }
 
-/// <p> Describes the details of the flow run, including the timestamp, status, and message.
-/// </p>
+/// <p> Describes the details of the flow run, including the timestamp, status, and message. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionDetails {
@@ -12058,9 +11675,7 @@ impl AsRef<str> for ExecutionStatus {
     }
 }
 
-/// <p> The high-level entity that can be queried in Amazon AppFlow. For example, a Salesforce
-/// entity might be an <i>Account</i> or <i>Opportunity</i>, whereas a
-/// ServiceNow entity might be an <i>Incident</i>. </p>
+/// <p> The high-level entity that can be queried in Amazon AppFlow. For example, a Salesforce entity might be an <i>Account</i> or <i>Opportunity</i>, whereas a ServiceNow entity might be an <i>Incident</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectorEntity {
@@ -12068,11 +11683,7 @@ pub struct ConnectorEntity {
     pub name: std::option::Option<std::string::String>,
     /// <p> The label applied to the connector entity. </p>
     pub label: std::option::Option<std::string::String>,
-    /// <p> Specifies whether the connector entity is a parent or a category and has more entities
-    /// nested underneath it. If another call is made with <code>entitiesPath =
-    /// "the_current_entity_name_with_hasNestedEntities_true"</code>, then it returns the nested
-    /// entities underneath it. This provides a way to retrieve all supported entities in a recursive
-    /// fashion. </p>
+    /// <p> Specifies whether the connector entity is a parent or a category and has more entities nested underneath it. If another call is made with <code>entitiesPath = "the_current_entity_name_with_hasNestedEntities_true"</code>, then it returns the nested entities underneath it. This provides a way to retrieve all supported entities in a recursive fashion. </p>
     pub has_nested_entities: bool,
 }
 impl ConnectorEntity {
@@ -12084,11 +11695,7 @@ impl ConnectorEntity {
     pub fn label(&self) -> std::option::Option<&str> {
         self.label.as_deref()
     }
-    /// <p> Specifies whether the connector entity is a parent or a category and has more entities
-    /// nested underneath it. If another call is made with <code>entitiesPath =
-    /// "the_current_entity_name_with_hasNestedEntities_true"</code>, then it returns the nested
-    /// entities underneath it. This provides a way to retrieve all supported entities in a recursive
-    /// fashion. </p>
+    /// <p> Specifies whether the connector entity is a parent or a category and has more entities nested underneath it. If another call is made with <code>entitiesPath = "the_current_entity_name_with_hasNestedEntities_true"</code>, then it returns the nested entities underneath it. This provides a way to retrieve all supported entities in a recursive fashion. </p>
     pub fn has_nested_entities(&self) -> bool {
         self.has_nested_entities
     }
@@ -12133,20 +11740,12 @@ pub mod connector_entity {
             self.label = input;
             self
         }
-        /// <p> Specifies whether the connector entity is a parent or a category and has more entities
-        /// nested underneath it. If another call is made with <code>entitiesPath =
-        /// "the_current_entity_name_with_hasNestedEntities_true"</code>, then it returns the nested
-        /// entities underneath it. This provides a way to retrieve all supported entities in a recursive
-        /// fashion. </p>
+        /// <p> Specifies whether the connector entity is a parent or a category and has more entities nested underneath it. If another call is made with <code>entitiesPath = "the_current_entity_name_with_hasNestedEntities_true"</code>, then it returns the nested entities underneath it. This provides a way to retrieve all supported entities in a recursive fashion. </p>
         pub fn has_nested_entities(mut self, input: bool) -> Self {
             self.has_nested_entities = Some(input);
             self
         }
-        /// <p> Specifies whether the connector entity is a parent or a category and has more entities
-        /// nested underneath it. If another call is made with <code>entitiesPath =
-        /// "the_current_entity_name_with_hasNestedEntities_true"</code>, then it returns the nested
-        /// entities underneath it. This provides a way to retrieve all supported entities in a recursive
-        /// fashion. </p>
+        /// <p> Specifies whether the connector entity is a parent or a category and has more entities nested underneath it. If another call is made with <code>entitiesPath = "the_current_entity_name_with_hasNestedEntities_true"</code>, then it returns the nested entities underneath it. This provides a way to retrieve all supported entities in a recursive fashion. </p>
         pub fn set_has_nested_entities(mut self, input: std::option::Option<bool>) -> Self {
             self.has_nested_entities = input;
             self
@@ -12174,8 +11773,7 @@ impl ConnectorEntity {
 pub struct ExecutionRecord {
     /// <p> Specifies the identifier of the given flow run. </p>
     pub execution_id: std::option::Option<std::string::String>,
-    /// <p> Specifies the flow run status and whether it is in progress, has completed successfully,
-    /// or has failed. </p>
+    /// <p> Specifies the flow run status and whether it is in progress, has completed successfully, or has failed. </p>
     pub execution_status: std::option::Option<crate::model::ExecutionStatus>,
     /// <p> Describes the result of the given flow run. </p>
     pub execution_result: std::option::Option<crate::model::ExecutionResult>,
@@ -12183,11 +11781,9 @@ pub struct ExecutionRecord {
     pub started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Specifies the time of the most recent update. </p>
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> The timestamp that determines the first new or updated record to be transferred in the
-    /// flow run. </p>
+    /// <p> The timestamp that determines the first new or updated record to be transferred in the flow run. </p>
     pub data_pull_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> The timestamp that indicates the last new or updated record to be transferred in the flow
-    /// run. </p>
+    /// <p> The timestamp that indicates the last new or updated record to be transferred in the flow run. </p>
     pub data_pull_end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ExecutionRecord {
@@ -12195,8 +11791,7 @@ impl ExecutionRecord {
     pub fn execution_id(&self) -> std::option::Option<&str> {
         self.execution_id.as_deref()
     }
-    /// <p> Specifies the flow run status and whether it is in progress, has completed successfully,
-    /// or has failed. </p>
+    /// <p> Specifies the flow run status and whether it is in progress, has completed successfully, or has failed. </p>
     pub fn execution_status(&self) -> std::option::Option<&crate::model::ExecutionStatus> {
         self.execution_status.as_ref()
     }
@@ -12212,13 +11807,11 @@ impl ExecutionRecord {
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
-    /// <p> The timestamp that determines the first new or updated record to be transferred in the
-    /// flow run. </p>
+    /// <p> The timestamp that determines the first new or updated record to be transferred in the flow run. </p>
     pub fn data_pull_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.data_pull_start_time.as_ref()
     }
-    /// <p> The timestamp that indicates the last new or updated record to be transferred in the flow
-    /// run. </p>
+    /// <p> The timestamp that indicates the last new or updated record to be transferred in the flow run. </p>
     pub fn data_pull_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.data_pull_end_time.as_ref()
     }
@@ -12261,14 +11854,12 @@ pub mod execution_record {
             self.execution_id = input;
             self
         }
-        /// <p> Specifies the flow run status and whether it is in progress, has completed successfully,
-        /// or has failed. </p>
+        /// <p> Specifies the flow run status and whether it is in progress, has completed successfully, or has failed. </p>
         pub fn execution_status(mut self, input: crate::model::ExecutionStatus) -> Self {
             self.execution_status = Some(input);
             self
         }
-        /// <p> Specifies the flow run status and whether it is in progress, has completed successfully,
-        /// or has failed. </p>
+        /// <p> Specifies the flow run status and whether it is in progress, has completed successfully, or has failed. </p>
         pub fn set_execution_status(
             mut self,
             input: std::option::Option<crate::model::ExecutionStatus>,
@@ -12315,14 +11906,12 @@ pub mod execution_record {
             self.last_updated_at = input;
             self
         }
-        /// <p> The timestamp that determines the first new or updated record to be transferred in the
-        /// flow run. </p>
+        /// <p> The timestamp that determines the first new or updated record to be transferred in the flow run. </p>
         pub fn data_pull_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.data_pull_start_time = Some(input);
             self
         }
-        /// <p> The timestamp that determines the first new or updated record to be transferred in the
-        /// flow run. </p>
+        /// <p> The timestamp that determines the first new or updated record to be transferred in the flow run. </p>
         pub fn set_data_pull_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -12330,14 +11919,12 @@ pub mod execution_record {
             self.data_pull_start_time = input;
             self
         }
-        /// <p> The timestamp that indicates the last new or updated record to be transferred in the flow
-        /// run. </p>
+        /// <p> The timestamp that indicates the last new or updated record to be transferred in the flow run. </p>
         pub fn data_pull_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.data_pull_end_time = Some(input);
             self
         }
-        /// <p> The timestamp that indicates the last new or updated record to be transferred in the flow
-        /// run. </p>
+        /// <p> The timestamp that indicates the last new or updated record to be transferred in the flow run. </p>
         pub fn set_data_pull_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -12480,8 +12067,7 @@ impl ExecutionResult {
     }
 }
 
-/// <p> Provides details in the event of a failed flow, including the failure count and the
-/// related error messages. </p>
+/// <p> Provides details in the event of a failed flow, including the failure count and the related error messages. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorInfo {
@@ -12577,8 +12163,7 @@ pub struct ConnectorConfiguration {
     pub is_private_link_endpoint_url_required: bool,
     /// <p> Specifies the supported trigger types for the flow. </p>
     pub supported_trigger_types: std::option::Option<std::vec::Vec<crate::model::TriggerType>>,
-    /// <p> Specifies connector-specific metadata such as <code>oAuthScopes</code>,
-    /// <code>supportedRegions</code>, <code>privateLinkServiceUrl</code>, and so on. </p>
+    /// <p> Specifies connector-specific metadata such as <code>oAuthScopes</code>, <code>supportedRegions</code>, <code>privateLinkServiceUrl</code>, and so on. </p>
     pub connector_metadata: std::option::Option<crate::model::ConnectorMetadata>,
 }
 impl ConnectorConfiguration {
@@ -12614,8 +12199,7 @@ impl ConnectorConfiguration {
     pub fn supported_trigger_types(&self) -> std::option::Option<&[crate::model::TriggerType]> {
         self.supported_trigger_types.as_deref()
     }
-    /// <p> Specifies connector-specific metadata such as <code>oAuthScopes</code>,
-    /// <code>supportedRegions</code>, <code>privateLinkServiceUrl</code>, and so on. </p>
+    /// <p> Specifies connector-specific metadata such as <code>oAuthScopes</code>, <code>supportedRegions</code>, <code>privateLinkServiceUrl</code>, and so on. </p>
     pub fn connector_metadata(&self) -> std::option::Option<&crate::model::ConnectorMetadata> {
         self.connector_metadata.as_ref()
     }
@@ -12689,10 +12273,10 @@ pub mod connector_configuration {
         /// <p> Lists the connectors that are available for use as destinations. </p>
         pub fn supported_destination_connectors(
             mut self,
-            input: impl Into<crate::model::ConnectorType>,
+            input: crate::model::ConnectorType,
         ) -> Self {
             let mut v = self.supported_destination_connectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_destination_connectors = Some(v);
             self
         }
@@ -12711,10 +12295,10 @@ pub mod connector_configuration {
         /// <p> Specifies the supported flow frequency for that connector. </p>
         pub fn supported_scheduling_frequencies(
             mut self,
-            input: impl Into<crate::model::ScheduleFrequencyType>,
+            input: crate::model::ScheduleFrequencyType,
         ) -> Self {
             let mut v = self.supported_scheduling_frequencies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_scheduling_frequencies = Some(v);
             self
         }
@@ -12754,12 +12338,9 @@ pub mod connector_configuration {
         /// To override the contents of this collection use [`set_supported_trigger_types`](Self::set_supported_trigger_types).
         ///
         /// <p> Specifies the supported trigger types for the flow. </p>
-        pub fn supported_trigger_types(
-            mut self,
-            input: impl Into<crate::model::TriggerType>,
-        ) -> Self {
+        pub fn supported_trigger_types(mut self, input: crate::model::TriggerType) -> Self {
             let mut v = self.supported_trigger_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_trigger_types = Some(v);
             self
         }
@@ -12771,14 +12352,12 @@ pub mod connector_configuration {
             self.supported_trigger_types = input;
             self
         }
-        /// <p> Specifies connector-specific metadata such as <code>oAuthScopes</code>,
-        /// <code>supportedRegions</code>, <code>privateLinkServiceUrl</code>, and so on. </p>
+        /// <p> Specifies connector-specific metadata such as <code>oAuthScopes</code>, <code>supportedRegions</code>, <code>privateLinkServiceUrl</code>, and so on. </p>
         pub fn connector_metadata(mut self, input: crate::model::ConnectorMetadata) -> Self {
             self.connector_metadata = Some(input);
             self
         }
-        /// <p> Specifies connector-specific metadata such as <code>oAuthScopes</code>,
-        /// <code>supportedRegions</code>, <code>privateLinkServiceUrl</code>, and so on. </p>
+        /// <p> Specifies connector-specific metadata such as <code>oAuthScopes</code>, <code>supportedRegions</code>, <code>privateLinkServiceUrl</code>, and so on. </p>
         pub fn set_connector_metadata(
             mut self,
             input: std::option::Option<crate::model::ConnectorMetadata>,
@@ -12810,8 +12389,7 @@ impl ConnectorConfiguration {
     }
 }
 
-/// <p> A structure to specify connector-specific metadata such as <code>oAuthScopes</code>,
-/// <code>supportedRegions</code>, <code>privateLinkServiceUrl</code>, and so on. </p>
+/// <p> A structure to specify connector-specific metadata such as <code>oAuthScopes</code>, <code>supportedRegions</code>, <code>privateLinkServiceUrl</code>, and so on. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectorMetadata {
@@ -14206,18 +13784,13 @@ impl AsRef<str> for ScheduleFrequencyType {
     }
 }
 
-/// <p> Describes an instance of a connector. This includes the provided name, credentials ARN,
-/// connection-mode, and so on. To keep the API intuitive and extensible, the fields that are
-/// common to all types of connector profiles are explicitly specified at the top level. The rest
-/// of the connector-specific properties are available via the
-/// <code>connectorProfileProperties</code> field. </p>
+/// <p> Describes an instance of a connector. This includes the provided name, credentials ARN, connection-mode, and so on. To keep the API intuitive and extensible, the fields that are common to all types of connector profiles are explicitly specified at the top level. The rest of the connector-specific properties are available via the <code>connectorProfileProperties</code> field. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectorProfile {
     /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
     pub connector_profile_arn: std::option::Option<std::string::String>,
-    /// <p> The name of the connector profile. The name is unique for each
-    /// <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
     pub connector_profile_name: std::option::Option<std::string::String>,
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub connector_type: std::option::Option<crate::model::ConnectorType>,
@@ -14240,8 +13813,7 @@ impl ConnectorProfile {
     pub fn connector_profile_arn(&self) -> std::option::Option<&str> {
         self.connector_profile_arn.as_deref()
     }
-    /// <p> The name of the connector profile. The name is unique for each
-    /// <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
     pub fn connector_profile_name(&self) -> std::option::Option<&str> {
         self.connector_profile_name.as_deref()
     }
@@ -14331,14 +13903,12 @@ pub mod connector_profile {
             self.connector_profile_arn = input;
             self
         }
-        /// <p> The name of the connector profile. The name is unique for each
-        /// <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+        /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
         pub fn connector_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.connector_profile_name = Some(input.into());
             self
         }
-        /// <p> The name of the connector profile. The name is unique for each
-        /// <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+        /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
         pub fn set_connector_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14711,9 +14281,7 @@ impl AsRef<str> for PrivateConnectionProvisioningStatus {
     }
 }
 
-/// <p> Describes the data model of a connector field. For example, for an
-/// <i>account</i> entity, the fields would be <i>account name</i>,
-/// <i>account ID</i>, and so on. </p>
+/// <p> Describes the data model of a connector field. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectorEntityField {
@@ -14721,16 +14289,13 @@ pub struct ConnectorEntityField {
     pub identifier: std::option::Option<std::string::String>,
     /// <p> The label applied to a connector entity field. </p>
     pub label: std::option::Option<std::string::String>,
-    /// <p> Contains details regarding the supported <code>FieldType</code>, including the
-    /// corresponding <code>filterOperators</code> and <code>supportedValues</code>. </p>
+    /// <p> Contains details regarding the supported <code>FieldType</code>, including the corresponding <code>filterOperators</code> and <code>supportedValues</code>. </p>
     pub supported_field_type_details: std::option::Option<crate::model::SupportedFieldTypeDetails>,
     /// <p> A description of the connector entity field. </p>
     pub description: std::option::Option<std::string::String>,
-    /// <p> The properties that can be applied to a field when the connector is being used as a
-    /// source. </p>
+    /// <p> The properties that can be applied to a field when the connector is being used as a source. </p>
     pub source_properties: std::option::Option<crate::model::SourceFieldProperties>,
-    /// <p> The properties applied to a field when the connector is being used as a destination.
-    /// </p>
+    /// <p> The properties applied to a field when the connector is being used as a destination. </p>
     pub destination_properties: std::option::Option<crate::model::DestinationFieldProperties>,
 }
 impl ConnectorEntityField {
@@ -14742,8 +14307,7 @@ impl ConnectorEntityField {
     pub fn label(&self) -> std::option::Option<&str> {
         self.label.as_deref()
     }
-    /// <p> Contains details regarding the supported <code>FieldType</code>, including the
-    /// corresponding <code>filterOperators</code> and <code>supportedValues</code>. </p>
+    /// <p> Contains details regarding the supported <code>FieldType</code>, including the corresponding <code>filterOperators</code> and <code>supportedValues</code>. </p>
     pub fn supported_field_type_details(
         &self,
     ) -> std::option::Option<&crate::model::SupportedFieldTypeDetails> {
@@ -14753,13 +14317,11 @@ impl ConnectorEntityField {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> The properties that can be applied to a field when the connector is being used as a
-    /// source. </p>
+    /// <p> The properties that can be applied to a field when the connector is being used as a source. </p>
     pub fn source_properties(&self) -> std::option::Option<&crate::model::SourceFieldProperties> {
         self.source_properties.as_ref()
     }
-    /// <p> The properties applied to a field when the connector is being used as a destination.
-    /// </p>
+    /// <p> The properties applied to a field when the connector is being used as a destination. </p>
     pub fn destination_properties(
         &self,
     ) -> std::option::Option<&crate::model::DestinationFieldProperties> {
@@ -14817,8 +14379,7 @@ pub mod connector_entity_field {
             self.label = input;
             self
         }
-        /// <p> Contains details regarding the supported <code>FieldType</code>, including the
-        /// corresponding <code>filterOperators</code> and <code>supportedValues</code>. </p>
+        /// <p> Contains details regarding the supported <code>FieldType</code>, including the corresponding <code>filterOperators</code> and <code>supportedValues</code>. </p>
         pub fn supported_field_type_details(
             mut self,
             input: crate::model::SupportedFieldTypeDetails,
@@ -14826,8 +14387,7 @@ pub mod connector_entity_field {
             self.supported_field_type_details = Some(input);
             self
         }
-        /// <p> Contains details regarding the supported <code>FieldType</code>, including the
-        /// corresponding <code>filterOperators</code> and <code>supportedValues</code>. </p>
+        /// <p> Contains details regarding the supported <code>FieldType</code>, including the corresponding <code>filterOperators</code> and <code>supportedValues</code>. </p>
         pub fn set_supported_field_type_details(
             mut self,
             input: std::option::Option<crate::model::SupportedFieldTypeDetails>,
@@ -14845,14 +14405,12 @@ pub mod connector_entity_field {
             self.description = input;
             self
         }
-        /// <p> The properties that can be applied to a field when the connector is being used as a
-        /// source. </p>
+        /// <p> The properties that can be applied to a field when the connector is being used as a source. </p>
         pub fn source_properties(mut self, input: crate::model::SourceFieldProperties) -> Self {
             self.source_properties = Some(input);
             self
         }
-        /// <p> The properties that can be applied to a field when the connector is being used as a
-        /// source. </p>
+        /// <p> The properties that can be applied to a field when the connector is being used as a source. </p>
         pub fn set_source_properties(
             mut self,
             input: std::option::Option<crate::model::SourceFieldProperties>,
@@ -14860,8 +14418,7 @@ pub mod connector_entity_field {
             self.source_properties = input;
             self
         }
-        /// <p> The properties applied to a field when the connector is being used as a destination.
-        /// </p>
+        /// <p> The properties applied to a field when the connector is being used as a destination. </p>
         pub fn destination_properties(
             mut self,
             input: crate::model::DestinationFieldProperties,
@@ -14869,8 +14426,7 @@ pub mod connector_entity_field {
             self.destination_properties = Some(input);
             self
         }
-        /// <p> The properties applied to a field when the connector is being used as a destination.
-        /// </p>
+        /// <p> The properties applied to a field when the connector is being used as a destination. </p>
         pub fn set_destination_properties(
             mut self,
             input: std::option::Option<crate::model::DestinationFieldProperties>,
@@ -14898,8 +14454,7 @@ impl ConnectorEntityField {
     }
 }
 
-/// <p> The properties that can be applied to a field when connector is being used as a
-/// destination. </p>
+/// <p> The properties that can be applied to a field when connector is being used as a destination. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DestinationFieldProperties {
@@ -14907,15 +14462,11 @@ pub struct DestinationFieldProperties {
     pub is_creatable: bool,
     /// <p> Specifies if the destination field can have a null value. </p>
     pub is_nullable: bool,
-    /// <p> Specifies if the flow run can either insert new rows in the destination field if they do
-    /// not already exist, or update them if they do. </p>
+    /// <p> Specifies if the flow run can either insert new rows in the destination field if they do not already exist, or update them if they do. </p>
     pub is_upsertable: bool,
-    /// <p> Specifies whether the field can be updated during an <code>UPDATE</code> or
-    /// <code>UPSERT</code> write operation. </p>
+    /// <p> Specifies whether the field can be updated during an <code>UPDATE</code> or <code>UPSERT</code> write operation. </p>
     pub is_updatable: bool,
-    /// <p> A list of supported write operations. For each write operation listed, this field can be
-    /// used in <code>idFieldNames</code> when that write operation is present as a destination
-    /// option. </p>
+    /// <p> A list of supported write operations. For each write operation listed, this field can be used in <code>idFieldNames</code> when that write operation is present as a destination option. </p>
     pub supported_write_operations:
         std::option::Option<std::vec::Vec<crate::model::WriteOperationType>>,
 }
@@ -14928,19 +14479,15 @@ impl DestinationFieldProperties {
     pub fn is_nullable(&self) -> bool {
         self.is_nullable
     }
-    /// <p> Specifies if the flow run can either insert new rows in the destination field if they do
-    /// not already exist, or update them if they do. </p>
+    /// <p> Specifies if the flow run can either insert new rows in the destination field if they do not already exist, or update them if they do. </p>
     pub fn is_upsertable(&self) -> bool {
         self.is_upsertable
     }
-    /// <p> Specifies whether the field can be updated during an <code>UPDATE</code> or
-    /// <code>UPSERT</code> write operation. </p>
+    /// <p> Specifies whether the field can be updated during an <code>UPDATE</code> or <code>UPSERT</code> write operation. </p>
     pub fn is_updatable(&self) -> bool {
         self.is_updatable
     }
-    /// <p> A list of supported write operations. For each write operation listed, this field can be
-    /// used in <code>idFieldNames</code> when that write operation is present as a destination
-    /// option. </p>
+    /// <p> A list of supported write operations. For each write operation listed, this field can be used in <code>idFieldNames</code> when that write operation is present as a destination option. </p>
     pub fn supported_write_operations(
         &self,
     ) -> std::option::Option<&[crate::model::WriteOperationType]> {
@@ -14995,26 +14542,22 @@ pub mod destination_field_properties {
             self.is_nullable = input;
             self
         }
-        /// <p> Specifies if the flow run can either insert new rows in the destination field if they do
-        /// not already exist, or update them if they do. </p>
+        /// <p> Specifies if the flow run can either insert new rows in the destination field if they do not already exist, or update them if they do. </p>
         pub fn is_upsertable(mut self, input: bool) -> Self {
             self.is_upsertable = Some(input);
             self
         }
-        /// <p> Specifies if the flow run can either insert new rows in the destination field if they do
-        /// not already exist, or update them if they do. </p>
+        /// <p> Specifies if the flow run can either insert new rows in the destination field if they do not already exist, or update them if they do. </p>
         pub fn set_is_upsertable(mut self, input: std::option::Option<bool>) -> Self {
             self.is_upsertable = input;
             self
         }
-        /// <p> Specifies whether the field can be updated during an <code>UPDATE</code> or
-        /// <code>UPSERT</code> write operation. </p>
+        /// <p> Specifies whether the field can be updated during an <code>UPDATE</code> or <code>UPSERT</code> write operation. </p>
         pub fn is_updatable(mut self, input: bool) -> Self {
             self.is_updatable = Some(input);
             self
         }
-        /// <p> Specifies whether the field can be updated during an <code>UPDATE</code> or
-        /// <code>UPSERT</code> write operation. </p>
+        /// <p> Specifies whether the field can be updated during an <code>UPDATE</code> or <code>UPSERT</code> write operation. </p>
         pub fn set_is_updatable(mut self, input: std::option::Option<bool>) -> Self {
             self.is_updatable = input;
             self
@@ -15023,21 +14566,17 @@ pub mod destination_field_properties {
         ///
         /// To override the contents of this collection use [`set_supported_write_operations`](Self::set_supported_write_operations).
         ///
-        /// <p> A list of supported write operations. For each write operation listed, this field can be
-        /// used in <code>idFieldNames</code> when that write operation is present as a destination
-        /// option. </p>
+        /// <p> A list of supported write operations. For each write operation listed, this field can be used in <code>idFieldNames</code> when that write operation is present as a destination option. </p>
         pub fn supported_write_operations(
             mut self,
-            input: impl Into<crate::model::WriteOperationType>,
+            input: crate::model::WriteOperationType,
         ) -> Self {
             let mut v = self.supported_write_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_write_operations = Some(v);
             self
         }
-        /// <p> A list of supported write operations. For each write operation listed, this field can be
-        /// used in <code>idFieldNames</code> when that write operation is present as a destination
-        /// option. </p>
+        /// <p> A list of supported write operations. For each write operation listed, this field can be used in <code>idFieldNames</code> when that write operation is present as a destination option. </p>
         pub fn set_supported_write_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::WriteOperationType>>,
@@ -15064,8 +14603,7 @@ impl DestinationFieldProperties {
     }
 }
 
-/// <p> The properties that can be applied to a field when the connector is being used as a
-/// source. </p>
+/// <p> The properties that can be applied to a field when the connector is being used as a source. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceFieldProperties {
@@ -15138,18 +14676,15 @@ impl SourceFieldProperties {
     }
 }
 
-/// <p> Contains details regarding all the supported <code>FieldTypes</code> and their
-/// corresponding <code>filterOperators</code> and <code>supportedValues</code>. </p>
+/// <p> Contains details regarding all the supported <code>FieldTypes</code> and their corresponding <code>filterOperators</code> and <code>supportedValues</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SupportedFieldTypeDetails {
-    /// <p> The initial supported version for <code>fieldType</code>. If this is later changed to a
-    /// different version, v2 will be introduced. </p>
+    /// <p> The initial supported version for <code>fieldType</code>. If this is later changed to a different version, v2 will be introduced. </p>
     pub v1: std::option::Option<crate::model::FieldTypeDetails>,
 }
 impl SupportedFieldTypeDetails {
-    /// <p> The initial supported version for <code>fieldType</code>. If this is later changed to a
-    /// different version, v2 will be introduced. </p>
+    /// <p> The initial supported version for <code>fieldType</code>. If this is later changed to a different version, v2 will be introduced. </p>
     pub fn v1(&self) -> std::option::Option<&crate::model::FieldTypeDetails> {
         self.v1.as_ref()
     }
@@ -15170,14 +14705,12 @@ pub mod supported_field_type_details {
         pub(crate) v1: std::option::Option<crate::model::FieldTypeDetails>,
     }
     impl Builder {
-        /// <p> The initial supported version for <code>fieldType</code>. If this is later changed to a
-        /// different version, v2 will be introduced. </p>
+        /// <p> The initial supported version for <code>fieldType</code>. If this is later changed to a different version, v2 will be introduced. </p>
         pub fn v1(mut self, input: crate::model::FieldTypeDetails) -> Self {
             self.v1 = Some(input);
             self
         }
-        /// <p> The initial supported version for <code>fieldType</code>. If this is later changed to a
-        /// different version, v2 will be introduced. </p>
+        /// <p> The initial supported version for <code>fieldType</code>. If this is later changed to a different version, v2 will be introduced. </p>
         pub fn set_v1(
             mut self,
             input: std::option::Option<crate::model::FieldTypeDetails>,
@@ -15198,8 +14731,7 @@ impl SupportedFieldTypeDetails {
     }
 }
 
-/// <p> Contains details regarding the supported field type and the operators that can be applied
-/// for filtering. </p>
+/// <p> Contains details regarding the supported field type and the operators that can be applied for filtering. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FieldTypeDetails {
@@ -15207,8 +14739,7 @@ pub struct FieldTypeDetails {
     pub field_type: std::option::Option<std::string::String>,
     /// <p> The list of operators supported by a field. </p>
     pub filter_operators: std::option::Option<std::vec::Vec<crate::model::Operator>>,
-    /// <p> The list of values that a field can contain. For example, a Boolean
-    /// <code>fieldType</code> can have two values: "true" and "false". </p>
+    /// <p> The list of values that a field can contain. For example, a Boolean <code>fieldType</code> can have two values: "true" and "false". </p>
     pub supported_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl FieldTypeDetails {
@@ -15220,8 +14751,7 @@ impl FieldTypeDetails {
     pub fn filter_operators(&self) -> std::option::Option<&[crate::model::Operator]> {
         self.filter_operators.as_deref()
     }
-    /// <p> The list of values that a field can contain. For example, a Boolean
-    /// <code>fieldType</code> can have two values: "true" and "false". </p>
+    /// <p> The list of values that a field can contain. For example, a Boolean <code>fieldType</code> can have two values: "true" and "false". </p>
     pub fn supported_values(&self) -> std::option::Option<&[std::string::String]> {
         self.supported_values.as_deref()
     }
@@ -15261,9 +14791,9 @@ pub mod field_type_details {
         /// To override the contents of this collection use [`set_filter_operators`](Self::set_filter_operators).
         ///
         /// <p> The list of operators supported by a field. </p>
-        pub fn filter_operators(mut self, input: impl Into<crate::model::Operator>) -> Self {
+        pub fn filter_operators(mut self, input: crate::model::Operator) -> Self {
             let mut v = self.filter_operators.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filter_operators = Some(v);
             self
         }
@@ -15279,16 +14809,14 @@ pub mod field_type_details {
         ///
         /// To override the contents of this collection use [`set_supported_values`](Self::set_supported_values).
         ///
-        /// <p> The list of values that a field can contain. For example, a Boolean
-        /// <code>fieldType</code> can have two values: "true" and "false". </p>
+        /// <p> The list of values that a field can contain. For example, a Boolean <code>fieldType</code> can have two values: "true" and "false". </p>
         pub fn supported_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_values.unwrap_or_default();
             v.push(input.into());
             self.supported_values = Some(v);
             self
         }
-        /// <p> The list of values that a field can contain. For example, a Boolean
-        /// <code>fieldType</code> can have two values: "true" and "false". </p>
+        /// <p> The list of values that a field can contain. For example, a Boolean <code>fieldType</code> can have two values: "true" and "false". </p>
         pub fn set_supported_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

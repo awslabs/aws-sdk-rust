@@ -207,12 +207,9 @@ pub mod list_applications_output {
         /// To override the contents of this collection use [`set_application_summaries`](Self::set_application_summaries).
         ///
         /// <p>An array of objects that provide summaries of information about the web applications in the list.</p>
-        pub fn application_summaries(
-            mut self,
-            input: impl Into<crate::model::ApplicationSummary>,
-        ) -> Self {
+        pub fn application_summaries(mut self, input: crate::model::ApplicationSummary) -> Self {
             let mut v = self.application_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.application_summaries = Some(v);
             self
         }

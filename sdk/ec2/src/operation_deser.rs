@@ -13629,6 +13629,33 @@ pub fn parse_modify_vpc_endpoint_service_configuration_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_vpc_endpoint_service_payer_responsibility_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ModifyVpcEndpointServicePayerResponsibilityOutput,
+    crate::error::ModifyVpcEndpointServicePayerResponsibilityError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ModifyVpcEndpointServicePayerResponsibilityError::unhandled)?;
+    Err(crate::error::ModifyVpcEndpointServicePayerResponsibilityError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_vpc_endpoint_service_payer_responsibility_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ModifyVpcEndpointServicePayerResponsibilityOutput,
+    crate::error::ModifyVpcEndpointServicePayerResponsibilityError,
+> {
+    Ok({
+        #[allow(unused_mut)]let mut output = crate::output::modify_vpc_endpoint_service_payer_responsibility_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_modify_vpc_endpoint_service_payer_responsibility(response.body().as_ref(), output).map_err(crate::error::ModifyVpcEndpointServicePayerResponsibilityError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_vpc_endpoint_service_permissions_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<

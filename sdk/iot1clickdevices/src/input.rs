@@ -36,7 +36,7 @@ pub mod claim_devices_by_claim_code_input {
 pub type ClaimDevicesByClaimCodeInputOperationOutputAlias =
     crate::operation::ClaimDevicesByClaimCode;
 #[doc(hidden)]
-pub type ClaimDevicesByClaimCodeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ClaimDevicesByClaimCodeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ClaimDevicesByClaimCodeInput {
     /// Consumes the builder and constructs an Operation<[`ClaimDevicesByClaimCode`](crate::operation::ClaimDevicesByClaimCode)>
     #[allow(clippy::let_and_return)]
@@ -47,7 +47,7 @@ impl ClaimDevicesByClaimCodeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ClaimDevicesByClaimCode,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -137,7 +137,7 @@ impl ClaimDevicesByClaimCodeInput {
             "ClaimDevicesByClaimCode",
             "iot1clickdevicesservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -187,7 +187,7 @@ pub mod describe_device_input {
 #[doc(hidden)]
 pub type DescribeDeviceInputOperationOutputAlias = crate::operation::DescribeDevice;
 #[doc(hidden)]
-pub type DescribeDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDeviceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDevice`](crate::operation::DescribeDevice)>
     #[allow(clippy::let_and_return)]
@@ -198,7 +198,7 @@ impl DescribeDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -288,7 +288,7 @@ impl DescribeDeviceInput {
             "DescribeDevice",
             "iot1clickdevicesservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -329,11 +329,8 @@ pub mod finalize_device_claim_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of key/value pairs defining the resource tags. For example, {
-        /// "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-        /// Tagging Strategies</a>.</p><p>
-        ///
-        /// </p>
+        /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
+        /// <p> </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -344,11 +341,8 @@ pub mod finalize_device_claim_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of key/value pairs defining the resource tags. For example, {
-        /// "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-        /// Tagging Strategies</a>.</p><p>
-        ///
-        /// </p>
+        /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
+        /// <p> </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -375,7 +369,7 @@ pub mod finalize_device_claim_input {
 #[doc(hidden)]
 pub type FinalizeDeviceClaimInputOperationOutputAlias = crate::operation::FinalizeDeviceClaim;
 #[doc(hidden)]
-pub type FinalizeDeviceClaimInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type FinalizeDeviceClaimInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl FinalizeDeviceClaimInput {
     /// Consumes the builder and constructs an Operation<[`FinalizeDeviceClaim`](crate::operation::FinalizeDeviceClaim)>
     #[allow(clippy::let_and_return)]
@@ -386,7 +380,7 @@ impl FinalizeDeviceClaimInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::FinalizeDeviceClaim,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -486,7 +480,7 @@ impl FinalizeDeviceClaimInput {
             "FinalizeDeviceClaim",
             "iot1clickdevicesservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -544,7 +538,7 @@ pub mod get_device_methods_input {
 #[doc(hidden)]
 pub type GetDeviceMethodsInputOperationOutputAlias = crate::operation::GetDeviceMethods;
 #[doc(hidden)]
-pub type GetDeviceMethodsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDeviceMethodsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDeviceMethodsInput {
     /// Consumes the builder and constructs an Operation<[`GetDeviceMethods`](crate::operation::GetDeviceMethods)>
     #[allow(clippy::let_and_return)]
@@ -555,7 +549,7 @@ impl GetDeviceMethodsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDeviceMethods,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -645,7 +639,7 @@ impl GetDeviceMethodsInput {
             "GetDeviceMethods",
             "iot1clickdevicesservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -695,7 +689,7 @@ pub mod initiate_device_claim_input {
 #[doc(hidden)]
 pub type InitiateDeviceClaimInputOperationOutputAlias = crate::operation::InitiateDeviceClaim;
 #[doc(hidden)]
-pub type InitiateDeviceClaimInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type InitiateDeviceClaimInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InitiateDeviceClaimInput {
     /// Consumes the builder and constructs an Operation<[`InitiateDeviceClaim`](crate::operation::InitiateDeviceClaim)>
     #[allow(clippy::let_and_return)]
@@ -706,7 +700,7 @@ impl InitiateDeviceClaimInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::InitiateDeviceClaim,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -800,7 +794,7 @@ impl InitiateDeviceClaimInput {
             "InitiateDeviceClaim",
             "iot1clickdevicesservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -880,7 +874,7 @@ pub mod invoke_device_method_input {
 #[doc(hidden)]
 pub type InvokeDeviceMethodInputOperationOutputAlias = crate::operation::InvokeDeviceMethod;
 #[doc(hidden)]
-pub type InvokeDeviceMethodInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type InvokeDeviceMethodInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InvokeDeviceMethodInput {
     /// Consumes the builder and constructs an Operation<[`InvokeDeviceMethod`](crate::operation::InvokeDeviceMethod)>
     #[allow(clippy::let_and_return)]
@@ -891,7 +885,7 @@ impl InvokeDeviceMethodInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::InvokeDeviceMethod,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -987,7 +981,7 @@ impl InvokeDeviceMethodInput {
             "InvokeDeviceMethod",
             "iot1clickdevicesservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1033,16 +1027,12 @@ pub mod list_device_events_input {
             self.device_id = input;
             self
         }
-        /// <p>The start date for the device event query, in ISO8061 format. For example,
-        /// 2018-03-28T15:45:12.880Z
-        /// </p>
+        /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
         pub fn from_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.from_time_stamp = Some(input);
             self
         }
-        /// <p>The start date for the device event query, in ISO8061 format. For example,
-        /// 2018-03-28T15:45:12.880Z
-        /// </p>
+        /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
         pub fn set_from_time_stamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1050,14 +1040,12 @@ pub mod list_device_events_input {
             self.from_time_stamp = input;
             self
         }
-        /// <p>The maximum number of results to return per request. If not set, a default value of
-        /// 100 is used.</p>
+        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return per request. If not set, a default value of
-        /// 100 is used.</p>
+        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1072,16 +1060,12 @@ pub mod list_device_events_input {
             self.next_token = input;
             self
         }
-        /// <p>The end date for the device event query, in ISO8061 format. For example,
-        /// 2018-03-28T15:45:12.880Z
-        /// </p>
+        /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
         pub fn to_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.to_time_stamp = Some(input);
             self
         }
-        /// <p>The end date for the device event query, in ISO8061 format. For example,
-        /// 2018-03-28T15:45:12.880Z
-        /// </p>
+        /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
         pub fn set_to_time_stamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1109,7 +1093,7 @@ pub mod list_device_events_input {
 #[doc(hidden)]
 pub type ListDeviceEventsInputOperationOutputAlias = crate::operation::ListDeviceEvents;
 #[doc(hidden)]
-pub type ListDeviceEventsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDeviceEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDeviceEventsInput {
     /// Consumes the builder and constructs an Operation<[`ListDeviceEvents`](crate::operation::ListDeviceEvents)>
     #[allow(clippy::let_and_return)]
@@ -1120,7 +1104,7 @@ impl ListDeviceEventsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDeviceEvents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1245,7 +1229,7 @@ impl ListDeviceEventsInput {
             "ListDeviceEvents",
             "iot1clickdevicesservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1281,14 +1265,12 @@ pub mod list_devices_input {
             self.device_type = input;
             self
         }
-        /// <p>The maximum number of results to return per request. If not set, a default value of
-        /// 100 is used.</p>
+        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return per request. If not set, a default value of
-        /// 100 is used.</p>
+        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1321,7 +1303,7 @@ pub mod list_devices_input {
 #[doc(hidden)]
 pub type ListDevicesInputOperationOutputAlias = crate::operation::ListDevices;
 #[doc(hidden)]
-pub type ListDevicesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDevicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDevicesInput {
     /// Consumes the builder and constructs an Operation<[`ListDevices`](crate::operation::ListDevices)>
     #[allow(clippy::let_and_return)]
@@ -1332,7 +1314,7 @@ impl ListDevicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDevices,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1426,7 +1408,7 @@ impl ListDevicesInput {
             "ListDevices",
             "iot1clickdevicesservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1476,7 +1458,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -1487,7 +1469,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1577,7 +1559,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "iot1clickdevicesservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1618,11 +1600,8 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of key/value pairs defining the resource tags. For example, {
-        /// "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-        /// Tagging Strategies</a>.</p><p>
-        ///
-        /// </p>
+        /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
+        /// <p> </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1633,11 +1612,8 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of key/value pairs defining the resource tags. For example, {
-        /// "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-        /// Tagging Strategies</a>.</p><p>
-        ///
-        /// </p>
+        /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
+        /// <p> </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1664,7 +1640,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -1675,7 +1651,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1770,7 +1746,7 @@ impl TagResourceInput {
             "TagResource",
             "iot1clickdevicesservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1828,7 +1804,7 @@ pub mod unclaim_device_input {
 #[doc(hidden)]
 pub type UnclaimDeviceInputOperationOutputAlias = crate::operation::UnclaimDevice;
 #[doc(hidden)]
-pub type UnclaimDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UnclaimDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UnclaimDeviceInput {
     /// Consumes the builder and constructs an Operation<[`UnclaimDevice`](crate::operation::UnclaimDevice)>
     #[allow(clippy::let_and_return)]
@@ -1839,7 +1815,7 @@ impl UnclaimDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UnclaimDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1929,7 +1905,7 @@ impl UnclaimDeviceInput {
             "UnclaimDevice",
             "iot1clickdevicesservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2000,7 +1976,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -2011,7 +1987,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2114,7 +2090,7 @@ impl UntagResourceInput {
             "UntagResource",
             "iot1clickdevicesservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2149,14 +2125,12 @@ pub mod update_device_state_input {
             self.device_id = input;
             self
         }
-        /// <p>If true, the device is enabled. If false, the device is
-        /// disabled.</p>
+        /// <p>If true, the device is enabled. If false, the device is disabled.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>If true, the device is enabled. If false, the device is
-        /// disabled.</p>
+        /// <p>If true, the device is enabled. If false, the device is disabled.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -2178,7 +2152,7 @@ pub mod update_device_state_input {
 #[doc(hidden)]
 pub type UpdateDeviceStateInputOperationOutputAlias = crate::operation::UpdateDeviceState;
 #[doc(hidden)]
-pub type UpdateDeviceStateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDeviceStateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDeviceStateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDeviceState`](crate::operation::UpdateDeviceState)>
     #[allow(clippy::let_and_return)]
@@ -2189,7 +2163,7 @@ impl UpdateDeviceStateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDeviceState,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2285,7 +2259,7 @@ impl UpdateDeviceStateInput {
             "UpdateDeviceState",
             "iot1clickdevicesservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2314,8 +2288,7 @@ impl UpdateDeviceStateInput {
 pub struct UpdateDeviceStateInput {
     /// <p>The unique identifier of the device.</p>
     pub device_id: std::option::Option<std::string::String>,
-    /// <p>If true, the device is enabled. If false, the device is
-    /// disabled.</p>
+    /// <p>If true, the device is enabled. If false, the device is disabled.</p>
     pub enabled: bool,
 }
 impl UpdateDeviceStateInput {
@@ -2323,8 +2296,7 @@ impl UpdateDeviceStateInput {
     pub fn device_id(&self) -> std::option::Option<&str> {
         self.device_id.as_deref()
     }
-    /// <p>If true, the device is enabled. If false, the device is
-    /// disabled.</p>
+    /// <p>If true, the device is enabled. If false, the device is disabled.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
@@ -2393,11 +2365,8 @@ impl std::fmt::Debug for UnclaimDeviceInput {
 pub struct TagResourceInput {
     /// <p>The ARN of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A collection of key/value pairs defining the resource tags. For example, {
-    /// "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-    /// Tagging Strategies</a>.</p><p>
-    ///
-    /// </p>
+    /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
+    /// <p> </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2406,11 +2375,8 @@ impl TagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A collection of key/value pairs defining the resource tags. For example, {
-    /// "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-    /// Tagging Strategies</a>.</p><p>
-    ///
-    /// </p>
+    /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
+    /// <p> </p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -2454,8 +2420,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListDevicesInput {
     /// <p>The type of the device, such as "button".</p>
     pub device_type: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return per request. If not set, a default value of
-    /// 100 is used.</p>
+    /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
     pub max_results: i32,
     /// <p>The token to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -2465,8 +2430,7 @@ impl ListDevicesInput {
     pub fn device_type(&self) -> std::option::Option<&str> {
         self.device_type.as_deref()
     }
-    /// <p>The maximum number of results to return per request. If not set, a default value of
-    /// 100 is used.</p>
+    /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
@@ -2491,18 +2455,13 @@ impl std::fmt::Debug for ListDevicesInput {
 pub struct ListDeviceEventsInput {
     /// <p>The unique identifier of the device.</p>
     pub device_id: std::option::Option<std::string::String>,
-    /// <p>The start date for the device event query, in ISO8061 format. For example,
-    /// 2018-03-28T15:45:12.880Z
-    /// </p>
+    /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
     pub from_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The maximum number of results to return per request. If not set, a default value of
-    /// 100 is used.</p>
+    /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
     pub max_results: i32,
     /// <p>The token to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The end date for the device event query, in ISO8061 format. For example,
-    /// 2018-03-28T15:45:12.880Z
-    /// </p>
+    /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
     pub to_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListDeviceEventsInput {
@@ -2510,14 +2469,11 @@ impl ListDeviceEventsInput {
     pub fn device_id(&self) -> std::option::Option<&str> {
         self.device_id.as_deref()
     }
-    /// <p>The start date for the device event query, in ISO8061 format. For example,
-    /// 2018-03-28T15:45:12.880Z
-    /// </p>
+    /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
     pub fn from_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.from_time_stamp.as_ref()
     }
-    /// <p>The maximum number of results to return per request. If not set, a default value of
-    /// 100 is used.</p>
+    /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
@@ -2525,9 +2481,7 @@ impl ListDeviceEventsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The end date for the device event query, in ISO8061 format. For example,
-    /// 2018-03-28T15:45:12.880Z
-    /// </p>
+    /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
     pub fn to_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.to_time_stamp.as_ref()
     }
@@ -2627,11 +2581,8 @@ impl std::fmt::Debug for GetDeviceMethodsInput {
 pub struct FinalizeDeviceClaimInput {
     /// <p>The unique identifier of the device.</p>
     pub device_id: std::option::Option<std::string::String>,
-    /// <p>A collection of key/value pairs defining the resource tags. For example, {
-    /// "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-    /// Tagging Strategies</a>.</p><p>
-    ///
-    /// </p>
+    /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
+    /// <p> </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2640,11 +2591,8 @@ impl FinalizeDeviceClaimInput {
     pub fn device_id(&self) -> std::option::Option<&str> {
         self.device_id.as_deref()
     }
-    /// <p>A collection of key/value pairs defining the resource tags. For example, {
-    /// "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-    /// Tagging Strategies</a>.</p><p>
-    ///
-    /// </p>
+    /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
+    /// <p> </p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>

@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon WorkMail
@@ -164,6 +164,15 @@ where
     pub fn delete_alias(&self) -> fluent_builders::DeleteAlias<C, M, R> {
         fluent_builders::DeleteAlias::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DeleteEmailMonitoringConfiguration` operation.
+    ///
+    /// See [`DeleteEmailMonitoringConfiguration`](crate::client::fluent_builders::DeleteEmailMonitoringConfiguration) for more information about the
+    /// operation and its arguments.
+    pub fn delete_email_monitoring_configuration(
+        &self,
+    ) -> fluent_builders::DeleteEmailMonitoringConfiguration<C, M, R> {
+        fluent_builders::DeleteEmailMonitoringConfiguration::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DeleteGroup` operation.
     ///
     /// See [`DeleteGroup`](crate::client::fluent_builders::DeleteGroup) for more information about the
@@ -237,6 +246,15 @@ where
     /// operation and its arguments.
     pub fn deregister_mail_domain(&self) -> fluent_builders::DeregisterMailDomain<C, M, R> {
         fluent_builders::DeregisterMailDomain::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DescribeEmailMonitoringConfiguration` operation.
+    ///
+    /// See [`DescribeEmailMonitoringConfiguration`](crate::client::fluent_builders::DescribeEmailMonitoringConfiguration) for more information about the
+    /// operation and its arguments.
+    pub fn describe_email_monitoring_configuration(
+        &self,
+    ) -> fluent_builders::DescribeEmailMonitoringConfiguration<C, M, R> {
+        fluent_builders::DescribeEmailMonitoringConfiguration::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DescribeGroup` operation.
     ///
@@ -361,6 +379,7 @@ where
     ///
     /// See [`ListAliases`](crate::client::fluent_builders::ListAliases) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAliases::into_paginator).
     pub fn list_aliases(&self) -> fluent_builders::ListAliases<C, M, R> {
         fluent_builders::ListAliases::new(self.handle.clone())
     }
@@ -368,6 +387,7 @@ where
     ///
     /// See [`ListGroupMembers`](crate::client::fluent_builders::ListGroupMembers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListGroupMembers::into_paginator).
     pub fn list_group_members(&self) -> fluent_builders::ListGroupMembers<C, M, R> {
         fluent_builders::ListGroupMembers::new(self.handle.clone())
     }
@@ -375,6 +395,7 @@ where
     ///
     /// See [`ListGroups`](crate::client::fluent_builders::ListGroups) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListGroups::into_paginator).
     pub fn list_groups(&self) -> fluent_builders::ListGroups<C, M, R> {
         fluent_builders::ListGroups::new(self.handle.clone())
     }
@@ -382,6 +403,7 @@ where
     ///
     /// See [`ListMailboxExportJobs`](crate::client::fluent_builders::ListMailboxExportJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMailboxExportJobs::into_paginator).
     pub fn list_mailbox_export_jobs(&self) -> fluent_builders::ListMailboxExportJobs<C, M, R> {
         fluent_builders::ListMailboxExportJobs::new(self.handle.clone())
     }
@@ -389,6 +411,7 @@ where
     ///
     /// See [`ListMailboxPermissions`](crate::client::fluent_builders::ListMailboxPermissions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMailboxPermissions::into_paginator).
     pub fn list_mailbox_permissions(&self) -> fluent_builders::ListMailboxPermissions<C, M, R> {
         fluent_builders::ListMailboxPermissions::new(self.handle.clone())
     }
@@ -396,6 +419,7 @@ where
     ///
     /// See [`ListMailDomains`](crate::client::fluent_builders::ListMailDomains) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMailDomains::into_paginator).
     pub fn list_mail_domains(&self) -> fluent_builders::ListMailDomains<C, M, R> {
         fluent_builders::ListMailDomains::new(self.handle.clone())
     }
@@ -403,6 +427,7 @@ where
     ///
     /// See [`ListMobileDeviceAccessOverrides`](crate::client::fluent_builders::ListMobileDeviceAccessOverrides) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMobileDeviceAccessOverrides::into_paginator).
     pub fn list_mobile_device_access_overrides(
         &self,
     ) -> fluent_builders::ListMobileDeviceAccessOverrides<C, M, R> {
@@ -421,6 +446,7 @@ where
     ///
     /// See [`ListOrganizations`](crate::client::fluent_builders::ListOrganizations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOrganizations::into_paginator).
     pub fn list_organizations(&self) -> fluent_builders::ListOrganizations<C, M, R> {
         fluent_builders::ListOrganizations::new(self.handle.clone())
     }
@@ -428,6 +454,7 @@ where
     ///
     /// See [`ListResourceDelegates`](crate::client::fluent_builders::ListResourceDelegates) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListResourceDelegates::into_paginator).
     pub fn list_resource_delegates(&self) -> fluent_builders::ListResourceDelegates<C, M, R> {
         fluent_builders::ListResourceDelegates::new(self.handle.clone())
     }
@@ -435,6 +462,7 @@ where
     ///
     /// See [`ListResources`](crate::client::fluent_builders::ListResources) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListResources::into_paginator).
     pub fn list_resources(&self) -> fluent_builders::ListResources<C, M, R> {
         fluent_builders::ListResources::new(self.handle.clone())
     }
@@ -449,6 +477,7 @@ where
     ///
     /// See [`ListUsers`](crate::client::fluent_builders::ListUsers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUsers::into_paginator).
     pub fn list_users(&self) -> fluent_builders::ListUsers<C, M, R> {
         fluent_builders::ListUsers::new(self.handle.clone())
     }
@@ -458,6 +487,15 @@ where
     /// operation and its arguments.
     pub fn put_access_control_rule(&self) -> fluent_builders::PutAccessControlRule<C, M, R> {
         fluent_builders::PutAccessControlRule::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `PutEmailMonitoringConfiguration` operation.
+    ///
+    /// See [`PutEmailMonitoringConfiguration`](crate::client::fluent_builders::PutEmailMonitoringConfiguration) for more information about the
+    /// operation and its arguments.
+    pub fn put_email_monitoring_configuration(
+        &self,
+    ) -> fluent_builders::PutEmailMonitoringConfiguration<C, M, R> {
+        fluent_builders::PutEmailMonitoringConfiguration::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `PutInboundDmarcSettings` operation.
     ///
@@ -582,7 +620,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateDelegateToResource`.
     ///
     /// <p>Adds a member (user or group) to the resource's set of delegates.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateDelegateToResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -627,10 +665,10 @@ pub mod fluent_builders {
                 crate::input::AssociateDelegateToResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -639,8 +677,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The organization under which the resource exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The organization under which the resource exists.</p>
@@ -652,8 +690,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resource for which members (users or groups) are associated.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The resource for which members (users or groups) are associated.</p>
@@ -662,8 +700,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The member (user or group) to associate to the resource.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(input.into());
             self
         }
         /// <p>The member (user or group) to associate to the resource.</p>
@@ -675,7 +713,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateMemberToGroup`.
     ///
     /// <p>Adds a member (user or group) to the group's set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateMemberToGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -720,10 +758,10 @@ pub mod fluent_builders {
                 crate::input::AssociateMemberToGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -732,8 +770,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The organization under which the group exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The organization under which the group exists.</p>
@@ -745,8 +783,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The group to which the member (user or group) is associated.</p>
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// <p>The group to which the member (user or group) is associated.</p>
@@ -755,8 +793,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The member (user or group) to associate to the group.</p>
-        pub fn member_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_id(inp);
+        pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_id(input.into());
             self
         }
         /// <p>The member (user or group) to associate to the group.</p>
@@ -767,12 +805,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CancelMailboxExportJob`.
     ///
-    /// <p>Cancels a mailbox export job.</p>
-    /// <note>
-    /// <p>If the mailbox export job is near completion, it might not be possible to cancel
-    /// it.</p>
+    /// <p>Cancels a mailbox export job.</p> <note>
+    /// <p>If the mailbox export job is near completion, it might not be possible to cancel it.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelMailboxExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -817,10 +853,10 @@ pub mod fluent_builders {
                 crate::input::CancelMailboxExportJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -829,8 +865,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The idempotency token for the client request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The idempotency token for the client request.</p>
@@ -839,8 +875,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The job ID.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The job ID.</p>
@@ -849,8 +885,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The organization ID.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The organization ID.</p>
@@ -865,7 +901,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAlias`.
     ///
     /// <p>Adds an alias to the set of a given member (user or group) of Amazon WorkMail.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -910,10 +946,10 @@ pub mod fluent_builders {
                 crate::input::CreateAliasInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -922,8 +958,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The organization under which the member (user or group) exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The organization under which the member (user or group) exists.</p>
@@ -935,8 +971,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The member (user or group) to which this alias is added.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(input.into());
             self
         }
         /// <p>The member (user or group) to which this alias is added.</p>
@@ -945,8 +981,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The alias to add to the member set.</p>
-        pub fn alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(inp);
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(input.into());
             self
         }
         /// <p>The alias to add to the member set.</p>
@@ -957,8 +993,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateGroup`.
     ///
-    /// <p>Creates a group that can be used in Amazon WorkMail by calling the <a>RegisterToWorkMail</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a group that can be used in Amazon WorkMail by calling the <code>RegisterToWorkMail</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1003,10 +1039,10 @@ pub mod fluent_builders {
                 crate::input::CreateGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1015,8 +1051,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The organization under which the group is to be created.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The organization under which the group is to be created.</p>
@@ -1028,8 +1064,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the group.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the group.</p>
@@ -1041,7 +1077,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateMobileDeviceAccessRule`.
     ///
     /// <p>Creates a new mobile device access rule for the specified Amazon WorkMail organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMobileDeviceAccessRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1086,10 +1122,10 @@ pub mod fluent_builders {
                 crate::input::CreateMobileDeviceAccessRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1098,8 +1134,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon WorkMail organization under which the rule will be created.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The Amazon WorkMail organization under which the rule will be created.</p>
@@ -1111,8 +1147,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token for the client request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The idempotency token for the client request.</p>
@@ -1121,8 +1157,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The rule name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The rule name.</p>
@@ -1131,8 +1167,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The rule description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The rule description.</p>
@@ -1141,8 +1177,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
-        pub fn effect(mut self, inp: crate::model::MobileDeviceAccessRuleEffect) -> Self {
-            self.inner = self.inner.effect(inp);
+        pub fn effect(mut self, input: crate::model::MobileDeviceAccessRuleEffect) -> Self {
+            self.inner = self.inner.effect(input);
             self
         }
         /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
@@ -1158,8 +1194,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_device_types`](Self::set_device_types).
         ///
         /// <p>Device types that the rule will match.</p>
-        pub fn device_types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_types(inp);
+        pub fn device_types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_types(input.into());
             self
         }
         /// <p>Device types that the rule will match.</p>
@@ -1175,8 +1211,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_not_device_types`](Self::set_not_device_types).
         ///
         /// <p>Device types that the rule <b>will not</b> match. All other device types will match.</p>
-        pub fn not_device_types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.not_device_types(inp);
+        pub fn not_device_types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.not_device_types(input.into());
             self
         }
         /// <p>Device types that the rule <b>will not</b> match. All other device types will match.</p>
@@ -1192,8 +1228,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_device_models`](Self::set_device_models).
         ///
         /// <p>Device models that the rule will match.</p>
-        pub fn device_models(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_models(inp);
+        pub fn device_models(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_models(input.into());
             self
         }
         /// <p>Device models that the rule will match.</p>
@@ -1209,8 +1245,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_not_device_models`](Self::set_not_device_models).
         ///
         /// <p>Device models that the rule <b>will not</b> match. All other device models will match.</p>
-        pub fn not_device_models(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.not_device_models(inp);
+        pub fn not_device_models(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.not_device_models(input.into());
             self
         }
         /// <p>Device models that the rule <b>will not</b> match. All other device models will match.</p>
@@ -1226,8 +1262,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_device_operating_systems`](Self::set_device_operating_systems).
         ///
         /// <p>Device operating systems that the rule will match.</p>
-        pub fn device_operating_systems(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_operating_systems(inp);
+        pub fn device_operating_systems(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_operating_systems(input.into());
             self
         }
         /// <p>Device operating systems that the rule will match.</p>
@@ -1243,8 +1279,11 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_not_device_operating_systems`](Self::set_not_device_operating_systems).
         ///
         /// <p>Device operating systems that the rule <b>will not</b> match. All other device operating systems will match.</p>
-        pub fn not_device_operating_systems(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.not_device_operating_systems(inp);
+        pub fn not_device_operating_systems(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.not_device_operating_systems(input.into());
             self
         }
         /// <p>Device operating systems that the rule <b>will not</b> match. All other device operating systems will match.</p>
@@ -1260,8 +1299,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_device_user_agents`](Self::set_device_user_agents).
         ///
         /// <p>Device user agents that the rule will match.</p>
-        pub fn device_user_agents(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_user_agents(inp);
+        pub fn device_user_agents(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_user_agents(input.into());
             self
         }
         /// <p>Device user agents that the rule will match.</p>
@@ -1277,8 +1316,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_not_device_user_agents`](Self::set_not_device_user_agents).
         ///
         /// <p>Device user agents that the rule <b>will not</b> match. All other device user agents will match.</p>
-        pub fn not_device_user_agents(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.not_device_user_agents(inp);
+        pub fn not_device_user_agents(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.not_device_user_agents(input.into());
             self
         }
         /// <p>Device user agents that the rule <b>will not</b> match. All other device user agents will match.</p>
@@ -1294,10 +1333,8 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a new Amazon WorkMail organization. Optionally, you can choose to associate an existing AWS Directory Service directory with your organization. If an AWS Directory Service directory ID is specified, the organization alias must match the directory alias. If you choose not to associate an existing directory with your organization, then we create a new Amazon WorkMail directory for you. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html">Adding an organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.</p>
     /// <p>You can associate multiple email domains with an organization, then set your default email domain from the Amazon WorkMail console. You can also associate a domain that is managed in an Amazon Route 53 public hosted zone. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html">Adding a domain</a> and <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/default_domain.html">Choosing the default domain</a> in the <i>Amazon WorkMail Administrator Guide</i>.</p>
-    /// <p>Optionally, you can use a customer managed master key from AWS Key Management Service
-    /// (AWS KMS) to encrypt email for your organization. If you don't associate an AWS KMS key, Amazon WorkMail creates a
-    /// default AWS managed master key for you.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Optionally, you can use a customer managed master key from AWS Key Management Service (AWS KMS) to encrypt email for your organization. If you don't associate an AWS KMS key, Amazon WorkMail creates a default AWS managed master key for you.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateOrganization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1342,10 +1379,10 @@ pub mod fluent_builders {
                 crate::input::CreateOrganizationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1354,8 +1391,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The AWS Directory Service directory ID.</p>
-        pub fn directory_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(inp);
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The AWS Directory Service directory ID.</p>
@@ -1364,8 +1401,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The organization alias.</p>
-        pub fn alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(inp);
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(input.into());
             self
         }
         /// <p>The organization alias.</p>
@@ -1374,8 +1411,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token associated with the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The idempotency token associated with the request.</p>
@@ -1388,8 +1425,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_domains`](Self::set_domains).
         ///
         /// <p>The email domains to associate with the organization.</p>
-        pub fn domains(mut self, inp: impl Into<crate::model::Domain>) -> Self {
-            self.inner = self.inner.domains(inp);
+        pub fn domains(mut self, input: crate::model::Domain) -> Self {
+            self.inner = self.inner.domains(input);
             self
         }
         /// <p>The email domains to associate with the organization.</p>
@@ -1400,21 +1437,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domains(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS
-        /// KMS.</p>
-        pub fn kms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS
-        /// KMS.</p>
+        /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_arn(input);
             self
         }
         /// <p>When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.</p>
-        pub fn enable_interoperability(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_interoperability(inp);
+        pub fn enable_interoperability(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_interoperability(input);
             self
         }
         /// <p>When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.</p>
@@ -1426,7 +1461,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateResource`.
     ///
     /// <p>Creates a new Amazon WorkMail resource. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1471,10 +1506,10 @@ pub mod fluent_builders {
                 crate::input::CreateResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1482,14 +1517,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier associated with the organization for which the resource is
-        /// created.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        /// <p>The identifier associated with the organization for which the resource is created.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The identifier associated with the organization for which the resource is
-        /// created.</p>
+        /// <p>The identifier associated with the organization for which the resource is created.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1498,8 +1531,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the new resource.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the new resource.</p>
@@ -1507,14 +1540,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The type of the new resource. The available types are <code>equipment</code> and
-        /// <code>room</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        /// <p>The type of the new resource. The available types are <code>equipment</code> and <code>room</code>.</p>
+        pub fn r#type(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>The type of the new resource. The available types are <code>equipment</code> and
-        /// <code>room</code>.</p>
+        /// <p>The type of the new resource. The available types are <code>equipment</code> and <code>room</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ResourceType>) -> Self {
             self.inner = self.inner.set_type(input);
             self
@@ -1522,8 +1553,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateUser`.
     ///
-    /// <p>Creates a user who can be used in Amazon WorkMail by calling the <a>RegisterToWorkMail</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a user who can be used in Amazon WorkMail by calling the <code>RegisterToWorkMail</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1568,10 +1599,10 @@ pub mod fluent_builders {
                 crate::input::CreateUserInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1580,8 +1611,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the organization for which the user is created.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The identifier of the organization for which the user is created.</p>
@@ -1593,8 +1624,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the new user. WorkMail directory user names have a maximum length of 64. All others have a maximum length of 20.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for the new user. WorkMail directory user names have a maximum length of 64. All others have a maximum length of 20.</p>
@@ -1603,8 +1634,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The display name for the new user.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The display name for the new user.</p>
@@ -1613,8 +1644,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password for the new user.</p>
-        pub fn password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(inp);
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(input.into());
             self
         }
         /// <p>The password for the new user.</p>
@@ -1625,11 +1656,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAccessControlRule`.
     ///
-    /// <p>Deletes an access control rule for the specified WorkMail organization.</p>
-    /// <note>
+    /// <p>Deletes an access control rule for the specified WorkMail organization.</p> <note>
     /// <p>Deleting already deleted and non-existing rules does not produce an error. In those cases, the service sends back an HTTP 200 response with an empty HTTP body.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAccessControlRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1674,10 +1704,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAccessControlRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1686,8 +1716,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the organization.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The identifier for the organization.</p>
@@ -1699,8 +1729,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the access control rule.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the access control rule.</p>
@@ -1711,9 +1741,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAlias`.
     ///
-    /// <p>Remove one or more specified aliases from a set of aliases for a given
-    /// user.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Remove one or more specified aliases from a set of aliases for a given user.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1758,10 +1787,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAliasInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1770,8 +1799,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the organization under which the user exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The identifier for the organization under which the user exists.</p>
@@ -1782,35 +1811,106 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_id(input);
             self
         }
-        /// <p>The identifier for the member (user or group) from which to have the aliases
-        /// removed.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        /// <p>The identifier for the member (user or group) from which to have the aliases removed.</p>
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(input.into());
             self
         }
-        /// <p>The identifier for the member (user or group) from which to have the aliases
-        /// removed.</p>
+        /// <p>The identifier for the member (user or group) from which to have the aliases removed.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_entity_id(input);
             self
         }
-        /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the
-        /// list are collapsed into single entries (the list is transformed into a set).</p>
-        pub fn alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(inp);
+        /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the list are collapsed into single entries (the list is transformed into a set).</p>
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(input.into());
             self
         }
-        /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the
-        /// list are collapsed into single entries (the list is transformed into a set).</p>
+        /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the list are collapsed into single entries (the list is transformed into a set).</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_alias(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteEmailMonitoringConfiguration`.
+    ///
+    /// <p>Deletes the email monitoring configuration for a specified organization.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteEmailMonitoringConfiguration<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_email_monitoring_configuration_input::Builder,
+    }
+    impl<C, M, R> DeleteEmailMonitoringConfiguration<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteEmailMonitoringConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteEmailMonitoringConfigurationOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DeleteEmailMonitoringConfigurationError,
+            >,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteEmailMonitoringConfigurationInputOperationOutputAlias,
+                crate::output::DeleteEmailMonitoringConfigurationOutput,
+                crate::error::DeleteEmailMonitoringConfigurationError,
+                crate::input::DeleteEmailMonitoringConfigurationInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the organization from which the email monitoring configuration is deleted.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
+            self
+        }
+        /// <p>The ID of the organization from which the email monitoring configuration is deleted.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_organization_id(input);
             self
         }
     }
     /// Fluent builder constructing a request to `DeleteGroup`.
     ///
     /// <p>Deletes a group from Amazon WorkMail.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1855,10 +1955,10 @@ pub mod fluent_builders {
                 crate::input::DeleteGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1867,8 +1967,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The organization that contains the group.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The organization that contains the group.</p>
@@ -1880,8 +1980,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the group to be deleted.</p>
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// <p>The identifier of the group to be deleted.</p>
@@ -1893,7 +1993,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteMailboxPermissions`.
     ///
     /// <p>Deletes permissions granted to a member (user or group).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMailboxPermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1938,10 +2038,10 @@ pub mod fluent_builders {
                 crate::input::DeleteMailboxPermissionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1949,14 +2049,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the organization under which the member (user or group)
-        /// exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        /// <p>The identifier of the organization under which the member (user or group) exists.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The identifier of the organization under which the member (user or group)
-        /// exists.</p>
+        /// <p>The identifier of the organization under which the member (user or group) exists.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1965,8 +2063,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the member (user or group) that owns the mailbox.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(input.into());
             self
         }
         /// <p>The identifier of the member (user or group) that owns the mailbox.</p>
@@ -1974,14 +2072,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_entity_id(input);
             self
         }
-        /// <p>The identifier of the member (user or group) for which to delete granted
-        /// permissions.</p>
-        pub fn grantee_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grantee_id(inp);
+        /// <p>The identifier of the member (user or group) for which to delete granted permissions.</p>
+        pub fn grantee_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grantee_id(input.into());
             self
         }
-        /// <p>The identifier of the member (user or group) for which to delete granted
-        /// permissions.</p>
+        /// <p>The identifier of the member (user or group) for which to delete granted permissions.</p>
         pub fn set_grantee_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_grantee_id(input);
             self
@@ -1989,11 +2085,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteMobileDeviceAccessOverride`.
     ///
-    /// <p>Deletes the mobile device access override for the given WorkMail organization, user, and device.</p>
-    /// <note>
+    /// <p>Deletes the mobile device access override for the given WorkMail organization, user, and device.</p> <note>
     /// <p>Deleting already deleted and non-existing overrides does not produce an error. In those cases, the service sends back an HTTP 200 response with an empty HTTP body.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMobileDeviceAccessOverride<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2038,10 +2133,10 @@ pub mod fluent_builders {
                 crate::input::DeleteMobileDeviceAccessOverrideInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2050,8 +2145,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon WorkMail organization for which the access override will be deleted.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The Amazon WorkMail organization for which the access override will be deleted.</p>
@@ -2064,45 +2159,27 @@ pub mod fluent_builders {
         }
         /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>
         /// <ul>
-        /// <li>
-        /// <p>User ID:  <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>
         /// <ul>
-        /// <li>
-        /// <p>User ID:  <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_id(input);
             self
         }
         /// <p>The mobile device for which you delete the override. <code>DeviceId</code> is case insensitive.</p>
-        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(inp);
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The mobile device for which you delete the override. <code>DeviceId</code> is case insensitive.</p>
@@ -2113,11 +2190,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteMobileDeviceAccessRule`.
     ///
-    /// <p>Deletes a mobile device access rule for the specified Amazon WorkMail organization.</p>
-    /// <note>
+    /// <p>Deletes a mobile device access rule for the specified Amazon WorkMail organization.</p> <note>
     /// <p>Deleting already deleted and non-existing rules does not produce an error. In those cases, the service sends back an HTTP 200 response with an empty HTTP body.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMobileDeviceAccessRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2162,10 +2238,10 @@ pub mod fluent_builders {
                 crate::input::DeleteMobileDeviceAccessRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2174,8 +2250,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon WorkMail organization under which the rule will be deleted.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The Amazon WorkMail organization under which the rule will be deleted.</p>
@@ -2187,8 +2263,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the rule to be deleted.</p>
-        pub fn mobile_device_access_rule_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mobile_device_access_rule_id(inp);
+        pub fn mobile_device_access_rule_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.mobile_device_access_rule_id(input.into());
             self
         }
         /// <p>The identifier of the rule to be deleted.</p>
@@ -2203,7 +2282,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteOrganization`.
     ///
     /// <p>Deletes an Amazon WorkMail organization and all underlying AWS resources managed by Amazon WorkMail as part of the organization. You can choose whether to delete the associated directory. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html">Removing an organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteOrganization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2248,10 +2327,10 @@ pub mod fluent_builders {
                 crate::input::DeleteOrganizationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2260,8 +2339,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The idempotency token associated with the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The idempotency token associated with the request.</p>
@@ -2270,8 +2349,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The organization ID.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The organization ID.</p>
@@ -2283,8 +2362,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If true, deletes the AWS Directory Service directory associated with the organization.</p>
-        pub fn delete_directory(mut self, inp: bool) -> Self {
-            self.inner = self.inner.delete_directory(inp);
+        pub fn delete_directory(mut self, input: bool) -> Self {
+            self.inner = self.inner.delete_directory(input);
             self
         }
         /// <p>If true, deletes the AWS Directory Service directory associated with the organization.</p>
@@ -2296,7 +2375,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteResource`.
     ///
     /// <p>Deletes the specified resource. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2341,10 +2420,10 @@ pub mod fluent_builders {
                 crate::input::DeleteResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2352,14 +2431,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier associated with the organization from which the resource is
-        /// deleted.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        /// <p>The identifier associated with the organization from which the resource is deleted.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The identifier associated with the organization from which the resource is
-        /// deleted.</p>
+        /// <p>The identifier associated with the organization from which the resource is deleted.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2368,8 +2445,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the resource to be deleted.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The identifier of the resource to be deleted.</p>
@@ -2381,7 +2458,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRetentionPolicy`.
     ///
     /// <p>Deletes the specified retention policy from the specified organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRetentionPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2426,10 +2503,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRetentionPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2438,8 +2515,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The organization ID.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The organization ID.</p>
@@ -2451,8 +2528,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The retention policy ID.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The retention policy ID.</p>
@@ -2463,12 +2540,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteUser`.
     ///
-    /// <p>Deletes a user from Amazon WorkMail and all subsequent systems. Before you can delete a
-    /// user, the user state must be <code>DISABLED</code>. Use the <a>DescribeUser</a>
-    /// action to confirm the user state.</p>
-    /// <p>Deleting a user is permanent and cannot be undone. WorkMail archives user mailboxes for
-    /// 30 days before they are permanently removed.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a user from Amazon WorkMail and all subsequent systems. Before you can delete a user, the user state must be <code>DISABLED</code>. Use the <code>DescribeUser</code> action to confirm the user state.</p>
+    /// <p>Deleting a user is permanent and cannot be undone. WorkMail archives user mailboxes for 30 days before they are permanently removed.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2513,10 +2587,10 @@ pub mod fluent_builders {
                 crate::input::DeleteUserInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2525,8 +2599,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The organization that contains the user to be deleted.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The organization that contains the user to be deleted.</p>
@@ -2538,8 +2612,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the user to be deleted.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The identifier of the user to be deleted.</p>
@@ -2550,11 +2624,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeregisterFromWorkMail`.
     ///
-    /// <p>Mark a user, group, or resource as no longer used in Amazon WorkMail. This action
-    /// disassociates the mailbox and schedules it for clean-up. WorkMail keeps mailboxes for 30 days
-    /// before they are permanently removed. The functionality in the console is
-    /// <i>Disable</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Mark a user, group, or resource as no longer used in Amazon WorkMail. This action disassociates the mailbox and schedules it for clean-up. WorkMail keeps mailboxes for 30 days before they are permanently removed. The functionality in the console is <i>Disable</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterFromWorkMail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2599,10 +2670,10 @@ pub mod fluent_builders {
                 crate::input::DeregisterFromWorkMailInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2611,8 +2682,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the organization under which the Amazon WorkMail entity exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The identifier for the organization under which the Amazon WorkMail entity exists.</p>
@@ -2624,8 +2695,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the member (user or group) to be updated.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(input.into());
             self
         }
         /// <p>The identifier for the member (user or group) to be updated.</p>
@@ -2636,9 +2707,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeregisterMailDomain`.
     ///
-    /// <p>Removes a domain from Amazon WorkMail, stops email routing to WorkMail, and removes the authorization allowing WorkMail use. SES keeps the domain because other applications may use it. You must first
-    /// remove any email address used by WorkMail entities before you remove the domain.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes a domain from Amazon WorkMail, stops email routing to WorkMail, and removes the authorization allowing WorkMail use. SES keeps the domain because other applications may use it. You must first remove any email address used by WorkMail entities before you remove the domain.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterMailDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2683,10 +2753,10 @@ pub mod fluent_builders {
                 crate::input::DeregisterMailDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2695,8 +2765,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon WorkMail organization for which the domain will be deregistered.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The Amazon WorkMail organization for which the domain will be deregistered.</p>
@@ -2708,8 +2778,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The domain to deregister in WorkMail and SES. </p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The domain to deregister in WorkMail and SES. </p>
@@ -2718,10 +2788,85 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeEmailMonitoringConfiguration`.
+    ///
+    /// <p>Describes the current email monitoring configuration for a specified organization.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeEmailMonitoringConfiguration<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_email_monitoring_configuration_input::Builder,
+    }
+    impl<C, M, R> DescribeEmailMonitoringConfiguration<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeEmailMonitoringConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeEmailMonitoringConfigurationOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DescribeEmailMonitoringConfigurationError,
+            >,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeEmailMonitoringConfigurationInputOperationOutputAlias,
+                crate::output::DescribeEmailMonitoringConfigurationOutput,
+                crate::error::DescribeEmailMonitoringConfigurationError,
+                crate::input::DescribeEmailMonitoringConfigurationInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the organization for which the email monitoring configuration is described.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
+            self
+        }
+        /// <p>The ID of the organization for which the email monitoring configuration is described.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_organization_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeGroup`.
     ///
     /// <p>Returns the data available for the group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2766,10 +2911,10 @@ pub mod fluent_builders {
                 crate::input::DescribeGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2778,8 +2923,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the organization under which the group exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The identifier for the organization under which the group exists.</p>
@@ -2791,8 +2936,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the group to be described.</p>
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// <p>The identifier for the group to be described.</p>
@@ -2804,7 +2949,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeInboundDmarcSettings`.
     ///
     /// <p>Lists the settings in a DMARC policy for a specified organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInboundDmarcSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2849,10 +2994,10 @@ pub mod fluent_builders {
                 crate::input::DescribeInboundDmarcSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2861,8 +3006,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Lists the ID of the given organization.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>Lists the ID of the given organization.</p>
@@ -2877,7 +3022,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeMailboxExportJob`.
     ///
     /// <p>Describes the current status of a mailbox export job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMailboxExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2922,10 +3067,10 @@ pub mod fluent_builders {
                 crate::input::DescribeMailboxExportJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2934,8 +3079,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The mailbox export job ID.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The mailbox export job ID.</p>
@@ -2944,8 +3089,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The organization ID.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The organization ID.</p>
@@ -2959,9 +3104,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeOrganization`.
     ///
-    /// <p>Provides more information regarding a given organization based on its
-    /// identifier.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Provides more information regarding a given organization based on its identifier.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3006,10 +3150,10 @@ pub mod fluent_builders {
                 crate::input::DescribeOrganizationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3018,8 +3162,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the organization to be described.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The identifier for the organization to be described.</p>
@@ -3034,7 +3178,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeResource`.
     ///
     /// <p>Returns the data available for the resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3079,10 +3223,10 @@ pub mod fluent_builders {
                 crate::input::DescribeResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3090,14 +3234,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier associated with the organization for which the resource is
-        /// described.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        /// <p>The identifier associated with the organization for which the resource is described.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The identifier associated with the organization for which the resource is
-        /// described.</p>
+        /// <p>The identifier associated with the organization for which the resource is described.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3106,8 +3248,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the resource to be described.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The identifier of the resource to be described.</p>
@@ -3119,7 +3261,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeUser`.
     ///
     /// <p>Provides information regarding the user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3164,10 +3306,10 @@ pub mod fluent_builders {
                 crate::input::DescribeUserInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3176,8 +3318,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the organization under which the user exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The identifier for the organization under which the user exists.</p>
@@ -3189,8 +3331,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the user to be described.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The identifier for the user to be described.</p>
@@ -3202,7 +3344,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateDelegateFromResource`.
     ///
     /// <p>Removes a member from the resource's set of delegates.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateDelegateFromResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3247,10 +3389,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateDelegateFromResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3259,8 +3401,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the organization under which the resource exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The identifier for the organization under which the resource exists.</p>
@@ -3271,26 +3413,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_id(input);
             self
         }
-        /// <p>The identifier of the resource from which delegates' set members are removed.
-        /// </p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        /// <p>The identifier of the resource from which delegates' set members are removed. </p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
-        /// <p>The identifier of the resource from which delegates' set members are removed.
-        /// </p>
+        /// <p>The identifier of the resource from which delegates' set members are removed. </p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_id(input);
             self
         }
-        /// <p>The identifier for the member (user, group) to be removed from the resource's
-        /// delegates.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        /// <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(input.into());
             self
         }
-        /// <p>The identifier for the member (user, group) to be removed from the resource's
-        /// delegates.</p>
+        /// <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_entity_id(input);
             self
@@ -3299,7 +3437,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateMemberFromGroup`.
     ///
     /// <p>Removes a member from a group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateMemberFromGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3344,10 +3482,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateMemberFromGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3356,8 +3494,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the organization under which the group exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The identifier for the organization under which the group exists.</p>
@@ -3369,8 +3507,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the group from which members are removed.</p>
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// <p>The identifier for the group from which members are removed.</p>
@@ -3379,8 +3517,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the member to be removed to the group.</p>
-        pub fn member_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_id(inp);
+        pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_id(input.into());
             self
         }
         /// <p>The identifier for the member to be removed to the group.</p>
@@ -3391,9 +3529,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAccessControlEffect`.
     ///
-    /// <p>Gets the effects of an organization's access control rules as they apply to a
-    /// specified IPv4 address, access protocol action, or user ID. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets the effects of an organization's access control rules as they apply to a specified IPv4 address, access protocol action, or user ID. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccessControlEffect<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3438,10 +3575,10 @@ pub mod fluent_builders {
                 crate::input::GetAccessControlEffectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3450,8 +3587,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the organization.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The identifier for the organization.</p>
@@ -3463,8 +3600,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IPv4 address.</p>
-        pub fn ip_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ip_address(inp);
+        pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ip_address(input.into());
             self
         }
         /// <p>The IPv4 address.</p>
@@ -3472,23 +3609,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ip_address(input);
             self
         }
-        /// <p>The access protocol action. Valid values include <code>ActiveSync</code>,
-        /// <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>,
-        /// <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
-        pub fn action(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action(inp);
+        /// <p>The access protocol action. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+        pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action(input.into());
             self
         }
-        /// <p>The access protocol action. Valid values include <code>ActiveSync</code>,
-        /// <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>,
-        /// <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+        /// <p>The access protocol action. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
         pub fn set_action(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_action(input);
             self
         }
         /// <p>The user ID.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The user ID.</p>
@@ -3500,7 +3633,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDefaultRetentionPolicy`.
     ///
     /// <p>Gets the default retention policy details for the specified organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDefaultRetentionPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3545,10 +3678,10 @@ pub mod fluent_builders {
                 crate::input::GetDefaultRetentionPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3557,8 +3690,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The organization ID.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The organization ID.</p>
@@ -3573,7 +3706,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMailboxDetails`.
     ///
     /// <p>Requests a user's mailbox details for a specified organization and user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMailboxDetails<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3618,10 +3751,10 @@ pub mod fluent_builders {
                 crate::input::GetMailboxDetailsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3629,14 +3762,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the organization that contains the user whose mailbox details are
-        /// being requested.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        /// <p>The identifier for the organization that contains the user whose mailbox details are being requested.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The identifier for the organization that contains the user whose mailbox details are
-        /// being requested.</p>
+        /// <p>The identifier for the organization that contains the user whose mailbox details are being requested.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3645,8 +3776,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the user whose mailbox details are being requested.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The identifier for the user whose mailbox details are being requested.</p>
@@ -3658,7 +3789,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMailDomain`.
     ///
     /// <p>Gets details for a mail domain, including domain records required to configure your domain with recommended security.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMailDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3703,10 +3834,10 @@ pub mod fluent_builders {
                 crate::input::GetMailDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3715,8 +3846,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon WorkMail organization for which the domain is retrieved.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The Amazon WorkMail organization for which the domain is retrieved.</p>
@@ -3728,8 +3859,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The domain from which you want to retrieve details.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The domain from which you want to retrieve details.</p>
@@ -3740,9 +3871,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMobileDeviceAccessEffect`.
     ///
-    /// <p>Simulates the effect of the mobile device access rules for the given attributes of a sample access event. Use this method to test the effects of the current set of mobile device access
-    /// rules for the Amazon WorkMail organization for a particular user's attributes.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Simulates the effect of the mobile device access rules for the given attributes of a sample access event. Use this method to test the effects of the current set of mobile device access rules for the Amazon WorkMail organization for a particular user's attributes.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMobileDeviceAccessEffect<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3787,10 +3917,10 @@ pub mod fluent_builders {
                 crate::input::GetMobileDeviceAccessEffectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3799,8 +3929,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon WorkMail organization to simulate the access effect for.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The Amazon WorkMail organization to simulate the access effect for.</p>
@@ -3812,8 +3942,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Device type the simulated user will report.</p>
-        pub fn device_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_type(inp);
+        pub fn device_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_type(input.into());
             self
         }
         /// <p>Device type the simulated user will report.</p>
@@ -3822,8 +3952,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Device model the simulated user will report.</p>
-        pub fn device_model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_model(inp);
+        pub fn device_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_model(input.into());
             self
         }
         /// <p>Device model the simulated user will report.</p>
@@ -3832,8 +3962,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Device operating system the simulated user will report.</p>
-        pub fn device_operating_system(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_operating_system(inp);
+        pub fn device_operating_system(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_operating_system(input.into());
             self
         }
         /// <p>Device operating system the simulated user will report.</p>
@@ -3845,8 +3975,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Device user agent the simulated user will report.</p>
-        pub fn device_user_agent(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_user_agent(inp);
+        pub fn device_user_agent(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_user_agent(input.into());
             self
         }
         /// <p>Device user agent the simulated user will report.</p>
@@ -3861,7 +3991,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMobileDeviceAccessOverride`.
     ///
     /// <p>Gets the mobile device access override for the given WorkMail organization, user, and device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMobileDeviceAccessOverride<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3906,10 +4036,10 @@ pub mod fluent_builders {
                 crate::input::GetMobileDeviceAccessOverrideInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3918,8 +4048,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon WorkMail organization to which you want to apply the override.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The Amazon WorkMail organization to which you want to apply the override.</p>
@@ -3932,45 +4062,27 @@ pub mod fluent_builders {
         }
         /// <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p>
         /// <ul>
-        /// <li>
-        /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p>
         /// <ul>
-        /// <li>
-        /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_id(input);
             self
         }
         /// <p>The mobile device to which the override applies. <code>DeviceId</code> is case insensitive.</p>
-        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(inp);
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The mobile device to which the override applies. <code>DeviceId</code> is case insensitive.</p>
@@ -3982,7 +4094,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAccessControlRules`.
     ///
     /// <p>Lists the access control rules for the specified organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccessControlRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4027,10 +4139,10 @@ pub mod fluent_builders {
                 crate::input::ListAccessControlRulesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4039,8 +4151,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the organization.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The identifier for the organization.</p>
@@ -4054,9 +4166,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAliases`.
     ///
-    /// <p>Creates a paginated call to list the aliases associated with a given
-    /// entity.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a paginated call to list the aliases associated with a given entity.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAliases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4101,10 +4212,10 @@ pub mod fluent_builders {
                 crate::input::ListAliasesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4112,9 +4223,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAliasesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAliasesPaginator<C, M, R> {
+            crate::paginator::ListAliasesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier for the organization under which the entity exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The identifier for the organization under which the entity exists.</p>
@@ -4126,8 +4243,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the entity for which to list the aliases.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(input.into());
             self
         }
         /// <p>The identifier for the entity for which to list the aliases.</p>
@@ -4135,21 +4252,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_entity_id(input);
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -4160,9 +4275,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListGroupMembers`.
     ///
-    /// <p>Returns an overview of the members of a group. Users and groups can be members of a
-    /// group.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns an overview of the members of a group. Users and groups can be members of a group.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGroupMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4207,10 +4321,10 @@ pub mod fluent_builders {
                 crate::input::ListGroupMembersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4218,9 +4332,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListGroupMembersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListGroupMembersPaginator<C, M, R> {
+            crate::paginator::ListGroupMembersPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier for the organization under which the group exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The identifier for the organization under which the group exists.</p>
@@ -4231,33 +4351,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_id(input);
             self
         }
-        /// <p>The identifier for the group to which the members (users or groups) are
-        /// associated.</p>
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        /// <p>The identifier for the group to which the members (users or groups) are associated.</p>
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
-        /// <p>The identifier for the group to which the members (users or groups) are
-        /// associated.</p>
+        /// <p>The identifier for the group to which the members (users or groups) are associated.</p>
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_group_id(input);
             self
         }
-        /// <p> The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p> The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -4269,7 +4385,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListGroups`.
     ///
     /// <p>Returns summaries of the organization's groups.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4314,10 +4430,10 @@ pub mod fluent_builders {
                 crate::input::ListGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4325,9 +4441,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListGroupsPaginator<C, M, R> {
+            crate::paginator::ListGroupsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier for the organization under which the groups exist.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The identifier for the organization under which the groups exist.</p>
@@ -4338,21 +4460,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_id(input);
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -4363,9 +4483,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListMailboxExportJobs`.
     ///
-    /// <p>Lists the mailbox export jobs started for the specified organization within the last
-    /// seven days.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the mailbox export jobs started for the specified organization within the last seven days.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMailboxExportJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4410,10 +4529,10 @@ pub mod fluent_builders {
                 crate::input::ListMailboxExportJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4421,9 +4540,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMailboxExportJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListMailboxExportJobsPaginator<C, M, R> {
+            crate::paginator::ListMailboxExportJobsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The organization ID.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The organization ID.</p>
@@ -4435,8 +4560,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
@@ -4445,8 +4570,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -4457,9 +4582,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListMailboxPermissions`.
     ///
-    /// <p>Lists the mailbox permissions associated with a user, group, or resource
-    /// mailbox.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the mailbox permissions associated with a user, group, or resource mailbox.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMailboxPermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4504,10 +4628,10 @@ pub mod fluent_builders {
                 crate::input::ListMailboxPermissionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4515,14 +4639,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the organization under which the user, group, or resource
-        /// exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMailboxPermissionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListMailboxPermissionsPaginator<C, M, R> {
+            crate::paginator::ListMailboxPermissionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The identifier of the organization under which the user, group, or resource
-        /// exists.</p>
+        /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4530,33 +4658,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_id(input);
             self
         }
-        /// <p>The identifier of the user, group, or resource for which to list mailbox
-        /// permissions.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        /// <p>The identifier of the user, group, or resource for which to list mailbox permissions.</p>
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(input.into());
             self
         }
-        /// <p>The identifier of the user, group, or resource for which to list mailbox
-        /// permissions.</p>
+        /// <p>The identifier of the user, group, or resource for which to list mailbox permissions.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_entity_id(input);
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -4568,7 +4692,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMailDomains`.
     ///
     /// <p>Lists the mail domains in a given Amazon WorkMail organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMailDomains<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4613,10 +4737,10 @@ pub mod fluent_builders {
                 crate::input::ListMailDomainsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4624,9 +4748,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMailDomainsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListMailDomainsPaginator<C, M, R> {
+            crate::paginator::ListMailDomainsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon WorkMail organization for which to list domains.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The Amazon WorkMail organization for which to list domains.</p>
@@ -4638,8 +4768,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -4648,8 +4778,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
@@ -4661,7 +4791,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMobileDeviceAccessOverrides`.
     ///
     /// <p>Lists all the mobile device access overrides for any given combination of WorkMail organization, user, or device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMobileDeviceAccessOverrides<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4706,10 +4836,10 @@ pub mod fluent_builders {
                 crate::input::ListMobileDeviceAccessOverridesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4717,9 +4847,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMobileDeviceAccessOverridesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListMobileDeviceAccessOverridesPaginator<C, M, R> {
+            crate::paginator::ListMobileDeviceAccessOverridesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon WorkMail organization under which to list mobile device access overrides.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The Amazon WorkMail organization under which to list mobile device access overrides.</p>
@@ -4732,45 +4870,27 @@ pub mod fluent_builders {
         }
         /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
         /// <ul>
-        /// <li>
-        /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
         /// <ul>
-        /// <li>
-        /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_id(input);
             self
         }
         /// <p>The mobile device to which the access override applies.</p>
-        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(inp);
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The mobile device to which the access override applies.</p>
@@ -4779,8 +4899,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
@@ -4789,8 +4909,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -4802,7 +4922,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMobileDeviceAccessRules`.
     ///
     /// <p>Lists the mobile device access rules for the specified Amazon WorkMail organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMobileDeviceAccessRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4847,10 +4967,10 @@ pub mod fluent_builders {
                 crate::input::ListMobileDeviceAccessRulesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4859,8 +4979,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon WorkMail organization for which to list the rules.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The Amazon WorkMail organization for which to list the rules.</p>
@@ -4875,7 +4995,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListOrganizations`.
     ///
     /// <p>Returns summaries of the customer's organizations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOrganizations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4920,10 +5040,10 @@ pub mod fluent_builders {
                 crate::input::ListOrganizationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4931,21 +5051,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListOrganizationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListOrganizationsPaginator<C, M, R> {
+            crate::paginator::ListOrganizationsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -4956,9 +5080,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListResourceDelegates`.
     ///
-    /// <p>Lists the delegates associated with a resource. Users and groups can be resource
-    /// delegates and answer requests on behalf of the resource.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the delegates associated with a resource. Users and groups can be resource delegates and answer requests on behalf of the resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResourceDelegates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5003,10 +5126,10 @@ pub mod fluent_builders {
                 crate::input::ListResourceDelegatesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5014,14 +5137,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the organization that contains the resource for which delegates
-        /// are listed.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListResourceDelegatesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListResourceDelegatesPaginator<C, M, R> {
+            crate::paginator::ListResourceDelegatesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The identifier for the organization that contains the resource for which delegates are listed.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The identifier for the organization that contains the resource for which delegates
-        /// are listed.</p>
+        /// <p>The identifier for the organization that contains the resource for which delegates are listed.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5030,8 +5157,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the resource whose delegates are listed.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The identifier for the resource whose delegates are listed.</p>
@@ -5039,21 +5166,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_id(input);
             self
         }
-        /// <p>The token used to paginate through the delegates associated with a
-        /// resource.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token used to paginate through the delegates associated with a resource.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token used to paginate through the delegates associated with a
-        /// resource.</p>
+        /// <p>The token used to paginate through the delegates associated with a resource.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The number of maximum results in a page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of maximum results in a page.</p>
@@ -5065,7 +5190,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListResources`.
     ///
     /// <p>Returns summaries of the organization's resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5110,10 +5235,10 @@ pub mod fluent_builders {
                 crate::input::ListResourcesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5121,9 +5246,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListResourcesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListResourcesPaginator<C, M, R> {
+            crate::paginator::ListResourcesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier for the organization under which the resources exist.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The identifier for the organization under which the resources exist.</p>
@@ -5134,21 +5265,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_id(input);
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -5160,7 +5289,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags applied to an Amazon WorkMail organization resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5205,10 +5334,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5217,8 +5346,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource ARN.</p>
@@ -5230,7 +5359,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListUsers`.
     ///
     /// <p>Returns summaries of the organization's users.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUsers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5275,10 +5404,10 @@ pub mod fluent_builders {
                 crate::input::ListUsersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5286,9 +5415,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListUsersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListUsersPaginator<C, M, R> {
+            crate::paginator::ListUsersPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier for the organization under which the users exist.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The identifier for the organization under which the users exist.</p>
@@ -5299,21 +5434,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_id(input);
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -5324,11 +5457,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutAccessControlRule`.
     ///
-    /// <p>Adds a new access control rule for the specified organization. The rule allows or
-    /// denies access to the organization for the specified IPv4 addresses, access protocol
-    /// actions, and user IDs. Adding a new rule with the same name as an existing rule replaces
-    /// the older rule.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds a new access control rule for the specified organization. The rule allows or denies access to the organization for the specified IPv4 addresses, access protocol actions, and user IDs. Adding a new rule with the same name as an existing rule replaces the older rule.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAccessControlRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5373,10 +5503,10 @@ pub mod fluent_builders {
                 crate::input::PutAccessControlRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5385,8 +5515,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The rule name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The rule name.</p>
@@ -5395,8 +5525,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The rule effect.</p>
-        pub fn effect(mut self, inp: crate::model::AccessControlRuleEffect) -> Self {
-            self.inner = self.inner.effect(inp);
+        pub fn effect(mut self, input: crate::model::AccessControlRuleEffect) -> Self {
+            self.inner = self.inner.effect(input);
             self
         }
         /// <p>The rule effect.</p>
@@ -5408,8 +5538,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The rule description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The rule description.</p>
@@ -5422,8 +5552,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_ip_ranges`](Self::set_ip_ranges).
         ///
         /// <p>IPv4 CIDR ranges to include in the rule.</p>
-        pub fn ip_ranges(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ip_ranges(inp);
+        pub fn ip_ranges(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ip_ranges(input.into());
             self
         }
         /// <p>IPv4 CIDR ranges to include in the rule.</p>
@@ -5439,8 +5569,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_not_ip_ranges`](Self::set_not_ip_ranges).
         ///
         /// <p>IPv4 CIDR ranges to exclude from the rule.</p>
-        pub fn not_ip_ranges(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.not_ip_ranges(inp);
+        pub fn not_ip_ranges(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.not_ip_ranges(input.into());
             self
         }
         /// <p>IPv4 CIDR ranges to exclude from the rule.</p>
@@ -5455,16 +5585,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
-        /// <p>Access protocol actions to include in the rule. Valid values include
-        /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
-        /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
-        pub fn actions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.actions(inp);
+        /// <p>Access protocol actions to include in the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+        pub fn actions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.actions(input.into());
             self
         }
-        /// <p>Access protocol actions to include in the rule. Valid values include
-        /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
-        /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+        /// <p>Access protocol actions to include in the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5476,16 +5602,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_not_actions`](Self::set_not_actions).
         ///
-        /// <p>Access protocol actions to exclude from the rule. Valid values include
-        /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
-        /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
-        pub fn not_actions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.not_actions(inp);
+        /// <p>Access protocol actions to exclude from the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+        pub fn not_actions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.not_actions(input.into());
             self
         }
-        /// <p>Access protocol actions to exclude from the rule. Valid values include
-        /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
-        /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+        /// <p>Access protocol actions to exclude from the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
         pub fn set_not_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5498,8 +5620,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_user_ids`](Self::set_user_ids).
         ///
         /// <p>User IDs to include in the rule.</p>
-        pub fn user_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_ids(inp);
+        pub fn user_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_ids(input.into());
             self
         }
         /// <p>User IDs to include in the rule.</p>
@@ -5515,8 +5637,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_not_user_ids`](Self::set_not_user_ids).
         ///
         /// <p>User IDs to exclude from the rule.</p>
-        pub fn not_user_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.not_user_ids(inp);
+        pub fn not_user_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.not_user_ids(input.into());
             self
         }
         /// <p>User IDs to exclude from the rule.</p>
@@ -5528,8 +5650,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the organization.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The identifier of the organization.</p>
@@ -5541,10 +5663,106 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `PutEmailMonitoringConfiguration`.
+    ///
+    /// <p>Creates or updates the email monitoring configuration for a specified organization.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct PutEmailMonitoringConfiguration<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::put_email_monitoring_configuration_input::Builder,
+    }
+    impl<C, M, R> PutEmailMonitoringConfiguration<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `PutEmailMonitoringConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutEmailMonitoringConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::PutEmailMonitoringConfigurationError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::PutEmailMonitoringConfigurationInputOperationOutputAlias,
+                crate::output::PutEmailMonitoringConfigurationOutput,
+                crate::error::PutEmailMonitoringConfigurationError,
+                crate::input::PutEmailMonitoringConfigurationInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the organization for which the email monitoring configuration is set.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
+            self
+        }
+        /// <p>The ID of the organization for which the email monitoring configuration is set.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_organization_id(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM Role associated with the email monitoring configuration.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM Role associated with the email monitoring configuration.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.</p>
+        pub fn log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.</p>
+        pub fn set_log_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_log_group_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `PutInboundDmarcSettings`.
     ///
     /// <p>Enables or disables a DMARC policy for a given organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutInboundDmarcSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5589,10 +5807,10 @@ pub mod fluent_builders {
                 crate::input::PutInboundDmarcSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5601,8 +5819,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the organization that you are applying the DMARC policy to. </p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The ID of the organization that you are applying the DMARC policy to. </p>
@@ -5614,8 +5832,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enforces or suspends a policy after it's applied.</p>
-        pub fn enforced(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enforced(inp);
+        pub fn enforced(mut self, input: bool) -> Self {
+            self.inner = self.inner.enforced(input);
             self
         }
         /// <p>Enforces or suspends a policy after it's applied.</p>
@@ -5626,9 +5844,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutMailboxPermissions`.
     ///
-    /// <p>Sets permissions for a user, group, or resource. This replaces any pre-existing
-    /// permissions.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Sets permissions for a user, group, or resource. This replaces any pre-existing permissions.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutMailboxPermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5673,10 +5890,10 @@ pub mod fluent_builders {
                 crate::input::PutMailboxPermissionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5684,14 +5901,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the organization under which the user, group, or resource
-        /// exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The identifier of the organization under which the user, group, or resource
-        /// exists.</p>
+        /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5699,26 +5914,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_id(input);
             self
         }
-        /// <p>The identifier of the user, group, or resource for which to update mailbox
-        /// permissions.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        /// <p>The identifier of the user, group, or resource for which to update mailbox permissions.</p>
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(input.into());
             self
         }
-        /// <p>The identifier of the user, group, or resource for which to update mailbox
-        /// permissions.</p>
+        /// <p>The identifier of the user, group, or resource for which to update mailbox permissions.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_entity_id(input);
             self
         }
-        /// <p>The identifier of the user, group, or resource to which to grant the
-        /// permissions.</p>
-        pub fn grantee_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grantee_id(inp);
+        /// <p>The identifier of the user, group, or resource to which to grant the permissions.</p>
+        pub fn grantee_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grantee_id(input.into());
             self
         }
-        /// <p>The identifier of the user, group, or resource to which to grant the
-        /// permissions.</p>
+        /// <p>The identifier of the user, group, or resource to which to grant the permissions.</p>
         pub fn set_grantee_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_grantee_id(input);
             self
@@ -5727,22 +5938,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_permission_values`](Self::set_permission_values).
         ///
-        /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as
-        /// the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF
-        /// allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not
-        /// mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full
-        /// access to the mailbox, irrespective of other folder-level permissions set on the
-        /// mailbox.</p>
-        pub fn permission_values(mut self, inp: impl Into<crate::model::PermissionType>) -> Self {
-            self.inner = self.inner.permission_values(inp);
+        /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
+        pub fn permission_values(mut self, input: crate::model::PermissionType) -> Self {
+            self.inner = self.inner.permission_values(input);
             self
         }
-        /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as
-        /// the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF
-        /// allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not
-        /// mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full
-        /// access to the mailbox, irrespective of other folder-level permissions set on the
-        /// mailbox.</p>
+        /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
         pub fn set_permission_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
@@ -5754,7 +5955,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutMobileDeviceAccessOverride`.
     ///
     /// <p>Creates or updates a mobile device access override for the given WorkMail organization, user, and device.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutMobileDeviceAccessOverride<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5799,10 +6000,10 @@ pub mod fluent_builders {
                 crate::input::PutMobileDeviceAccessOverrideInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5811,8 +6012,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Identifies the Amazon WorkMail organization for which you create the override.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>Identifies the Amazon WorkMail organization for which you create the override.</p>
@@ -5825,45 +6026,27 @@ pub mod fluent_builders {
         }
         /// <p>The WorkMail user for which you create the override. Accepts the following types of user identities:</p>
         /// <ul>
-        /// <li>
-        /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The WorkMail user for which you create the override. Accepts the following types of user identities:</p>
         /// <ul>
-        /// <li>
-        /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_id(input);
             self
         }
         /// <p>The mobile device for which you create the override. <code>DeviceId</code> is case insensitive.</p>
-        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(inp);
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The mobile device for which you create the override. <code>DeviceId</code> is case insensitive.</p>
@@ -5872,8 +6055,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
-        pub fn effect(mut self, inp: crate::model::MobileDeviceAccessRuleEffect) -> Self {
-            self.inner = self.inner.effect(inp);
+        pub fn effect(mut self, input: crate::model::MobileDeviceAccessRuleEffect) -> Self {
+            self.inner = self.inner.effect(input);
             self
         }
         /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
@@ -5885,8 +6068,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the override.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the override.</p>
@@ -5898,7 +6081,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutRetentionPolicy`.
     ///
     /// <p>Puts a retention policy to the specified organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRetentionPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5943,10 +6126,10 @@ pub mod fluent_builders {
                 crate::input::PutRetentionPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5955,8 +6138,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The organization ID.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The organization ID.</p>
@@ -5968,8 +6151,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The retention policy ID.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The retention policy ID.</p>
@@ -5978,8 +6161,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The retention policy name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The retention policy name.</p>
@@ -5988,8 +6171,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The retention policy description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The retention policy description.</p>
@@ -6002,11 +6185,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_folder_configurations`](Self::set_folder_configurations).
         ///
         /// <p>The retention policy folder configurations.</p>
-        pub fn folder_configurations(
-            mut self,
-            inp: impl Into<crate::model::FolderConfiguration>,
-        ) -> Self {
-            self.inner = self.inner.folder_configurations(inp);
+        pub fn folder_configurations(mut self, input: crate::model::FolderConfiguration) -> Self {
+            self.inner = self.inner.folder_configurations(input);
             self
         }
         /// <p>The retention policy folder configurations.</p>
@@ -6020,9 +6200,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterMailDomain`.
     ///
-    /// <p>Registers a new domain in Amazon WorkMail and SES, and configures it for use by WorkMail. Emails received by SES for this domain are routed to the specified WorkMail organization, and WorkMail has
-    /// permanent permission to use the specified domain for sending your users' emails.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Registers a new domain in Amazon WorkMail and SES, and configures it for use by WorkMail. Emails received by SES for this domain are routed to the specified WorkMail organization, and WorkMail has permanent permission to use the specified domain for sending your users' emails.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterMailDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6067,10 +6246,10 @@ pub mod fluent_builders {
                 crate::input::RegisterMailDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6079,8 +6258,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Idempotency token used when retrying requests.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>Idempotency token used when retrying requests.</p>
@@ -6089,8 +6268,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon WorkMail organization under which you're creating the domain.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The Amazon WorkMail organization under which you're creating the domain.</p>
@@ -6102,8 +6281,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the mail domain to create in Amazon WorkMail and SES.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the mail domain to create in Amazon WorkMail and SES.</p>
@@ -6114,14 +6293,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterToWorkMail`.
     ///
-    /// <p>Registers an existing and disabled user, group, or resource for Amazon WorkMail use by
-    /// associating a mailbox and calendaring capabilities. It performs no change if the user,
-    /// group, or resource is enabled and fails if the user, group, or resource is deleted. This
-    /// operation results in the accumulation of costs. For more information, see <a href="https://aws.amazon.com/workmail/pricing">Pricing</a>. The equivalent console
-    /// functionality for this operation is <i>Enable</i>. </p>
-    /// <p>Users can either be created by calling the <a>CreateUser</a> API operation
-    /// or they can be synchronized from your directory. For more information, see <a>DeregisterFromWorkMail</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Registers an existing and disabled user, group, or resource for Amazon WorkMail use by associating a mailbox and calendaring capabilities. It performs no change if the user, group, or resource is enabled and fails if the user, group, or resource is deleted. This operation results in the accumulation of costs. For more information, see <a href="https://aws.amazon.com/workmail/pricing">Pricing</a>. The equivalent console functionality for this operation is <i>Enable</i>. </p>
+    /// <p>Users can either be created by calling the <code>CreateUser</code> API operation or they can be synchronized from your directory. For more information, see <code>DeregisterFromWorkMail</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterToWorkMail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6166,10 +6340,10 @@ pub mod fluent_builders {
                 crate::input::RegisterToWorkMailInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6177,14 +6351,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the organization under which the user, group, or resource
-        /// exists.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        /// <p>The identifier for the organization under which the user, group, or resource exists.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The identifier for the organization under which the user, group, or resource
-        /// exists.</p>
+        /// <p>The identifier for the organization under which the user, group, or resource exists.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6193,8 +6365,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the user, group, or resource to be updated.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(input.into());
             self
         }
         /// <p>The identifier for the user, group, or resource to be updated.</p>
@@ -6203,8 +6375,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The email for the user, group, or resource to be updated.</p>
-        pub fn email(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email(inp);
+        pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email(input.into());
             self
         }
         /// <p>The email for the user, group, or resource to be updated.</p>
@@ -6216,7 +6388,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ResetPassword`.
     ///
     /// <p>Allows the administrator to reset the password for a user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetPassword<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6261,10 +6433,10 @@ pub mod fluent_builders {
                 crate::input::ResetPasswordInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6272,14 +6444,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the organization that contains the user for which the password is
-        /// reset.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        /// <p>The identifier of the organization that contains the user for which the password is reset.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The identifier of the organization that contains the user for which the password is
-        /// reset.</p>
+        /// <p>The identifier of the organization that contains the user for which the password is reset.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6288,8 +6458,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the user for whom the password is reset.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The identifier of the user for whom the password is reset.</p>
@@ -6298,8 +6468,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new password for the user.</p>
-        pub fn password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(inp);
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(input.into());
             self
         }
         /// <p>The new password for the user.</p>
@@ -6310,11 +6480,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartMailboxExportJob`.
     ///
-    /// <p>Starts a mailbox export job to export MIME-format email messages and calendar items
-    /// from the specified mailbox to the specified Amazon Simple Storage Service (Amazon S3)
-    /// bucket. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/mail-export.html">Exporting mailbox content</a> in
-    /// the <i>Amazon WorkMail Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Starts a mailbox export job to export MIME-format email messages and calendar items from the specified mailbox to the specified Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/mail-export.html">Exporting mailbox content</a> in the <i>Amazon WorkMail Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMailboxExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6359,10 +6526,10 @@ pub mod fluent_builders {
                 crate::input::StartMailboxExportJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6371,8 +6538,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The idempotency token for the client request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The idempotency token for the client request.</p>
@@ -6381,8 +6548,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier associated with the organization.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The identifier associated with the organization.</p>
@@ -6394,8 +6561,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the user or resource associated with the mailbox.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(input.into());
             self
         }
         /// <p>The identifier of the user or resource associated with the mailbox.</p>
@@ -6404,8 +6571,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The mailbox export job description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The mailbox export job description.</p>
@@ -6413,33 +6580,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3
-        /// bucket.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3 bucket.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3
-        /// bucket.</p>
+        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3 bucket.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS)
-        /// key that encrypts the exported mailbox content.</p>
-        pub fn kms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS)
-        /// key that encrypts the exported mailbox content.</p>
+        /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_arn(input);
             self
         }
         /// <p>The name of the S3 bucket.</p>
-        pub fn s3_bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket_name(inp);
+        pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket_name(input.into());
             self
         }
         /// <p>The name of the S3 bucket.</p>
@@ -6451,8 +6614,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The S3 bucket prefix.</p>
-        pub fn s3_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_prefix(inp);
+        pub fn s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_prefix(input.into());
             self
         }
         /// <p>The S3 bucket prefix.</p>
@@ -6463,9 +6626,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Applies the specified tags to the specified Amazon WorkMail organization
-    /// resource.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Applies the specified tags to the specified Amazon WorkMail organization resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6510,10 +6672,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6522,8 +6684,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource ARN.</p>
@@ -6536,8 +6698,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag key-value pairs.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag key-value pairs.</p>
@@ -6551,9 +6713,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Untags the specified tags from the specified Amazon WorkMail organization
-    /// resource.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Untags the specified tags from the specified Amazon WorkMail organization resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6598,10 +6759,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6610,8 +6771,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource ARN.</p>
@@ -6624,8 +6785,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys.</p>
@@ -6640,7 +6801,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDefaultMailDomain`.
     ///
     /// <p>Updates the default mail domain for an organization. The default mail domain is used by the WorkMail AWS Console to suggest an email address when enabling a mail user. You can only have one default domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDefaultMailDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6685,10 +6846,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDefaultMailDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6697,8 +6858,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon WorkMail organization for which to list domains.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The Amazon WorkMail organization for which to list domains.</p>
@@ -6710,8 +6871,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The domain name that will become the default domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The domain name that will become the default domain.</p>
@@ -6722,9 +6883,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateMailboxQuota`.
     ///
-    /// <p>Updates a user's current mailbox quota for a specified organization and
-    /// user.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates a user's current mailbox quota for a specified organization and user.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMailboxQuota<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6769,10 +6929,10 @@ pub mod fluent_builders {
                 crate::input::UpdateMailboxQuotaInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6780,14 +6940,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the organization that contains the user for whom to update the
-        /// mailbox quota.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        /// <p>The identifier for the organization that contains the user for whom to update the mailbox quota.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The identifier for the organization that contains the user for whom to update the
-        /// mailbox quota.</p>
+        /// <p>The identifier for the organization that contains the user for whom to update the mailbox quota.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6796,8 +6954,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifer for the user for whom to update the mailbox quota.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The identifer for the user for whom to update the mailbox quota.</p>
@@ -6806,8 +6964,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated mailbox quota, in MB, for the specified user.</p>
-        pub fn mailbox_quota(mut self, inp: i32) -> Self {
-            self.inner = self.inner.mailbox_quota(inp);
+        pub fn mailbox_quota(mut self, input: i32) -> Self {
+            self.inner = self.inner.mailbox_quota(input);
             self
         }
         /// <p>The updated mailbox quota, in MB, for the specified user.</p>
@@ -6819,7 +6977,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateMobileDeviceAccessRule`.
     ///
     /// <p>Updates a mobile device access rule for the specified Amazon WorkMail organization.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMobileDeviceAccessRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6864,10 +7022,10 @@ pub mod fluent_builders {
                 crate::input::UpdateMobileDeviceAccessRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6876,8 +7034,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon WorkMail organization under which the rule will be updated.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The Amazon WorkMail organization under which the rule will be updated.</p>
@@ -6889,8 +7047,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the rule to be updated.</p>
-        pub fn mobile_device_access_rule_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mobile_device_access_rule_id(inp);
+        pub fn mobile_device_access_rule_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.mobile_device_access_rule_id(input.into());
             self
         }
         /// <p>The identifier of the rule to be updated.</p>
@@ -6902,8 +7063,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated rule name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The updated rule name.</p>
@@ -6912,8 +7073,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated rule description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The updated rule description.</p>
@@ -6922,8 +7083,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
-        pub fn effect(mut self, inp: crate::model::MobileDeviceAccessRuleEffect) -> Self {
-            self.inner = self.inner.effect(inp);
+        pub fn effect(mut self, input: crate::model::MobileDeviceAccessRuleEffect) -> Self {
+            self.inner = self.inner.effect(input);
             self
         }
         /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
@@ -6939,8 +7100,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_device_types`](Self::set_device_types).
         ///
         /// <p>Device types that the updated rule will match.</p>
-        pub fn device_types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_types(inp);
+        pub fn device_types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_types(input.into());
             self
         }
         /// <p>Device types that the updated rule will match.</p>
@@ -6956,8 +7117,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_not_device_types`](Self::set_not_device_types).
         ///
         /// <p>Device types that the updated rule <b>will not</b> match. All other device types will match.</p>
-        pub fn not_device_types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.not_device_types(inp);
+        pub fn not_device_types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.not_device_types(input.into());
             self
         }
         /// <p>Device types that the updated rule <b>will not</b> match. All other device types will match.</p>
@@ -6973,8 +7134,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_device_models`](Self::set_device_models).
         ///
         /// <p>Device models that the updated rule will match.</p>
-        pub fn device_models(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_models(inp);
+        pub fn device_models(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_models(input.into());
             self
         }
         /// <p>Device models that the updated rule will match.</p>
@@ -6990,8 +7151,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_not_device_models`](Self::set_not_device_models).
         ///
         /// <p>Device models that the updated rule <b>will not</b> match. All other device models will match.</p>
-        pub fn not_device_models(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.not_device_models(inp);
+        pub fn not_device_models(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.not_device_models(input.into());
             self
         }
         /// <p>Device models that the updated rule <b>will not</b> match. All other device models will match.</p>
@@ -7007,8 +7168,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_device_operating_systems`](Self::set_device_operating_systems).
         ///
         /// <p>Device operating systems that the updated rule will match.</p>
-        pub fn device_operating_systems(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_operating_systems(inp);
+        pub fn device_operating_systems(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_operating_systems(input.into());
             self
         }
         /// <p>Device operating systems that the updated rule will match.</p>
@@ -7024,8 +7185,11 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_not_device_operating_systems`](Self::set_not_device_operating_systems).
         ///
         /// <p>Device operating systems that the updated rule <b>will not</b> match. All other device operating systems will match.</p>
-        pub fn not_device_operating_systems(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.not_device_operating_systems(inp);
+        pub fn not_device_operating_systems(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.not_device_operating_systems(input.into());
             self
         }
         /// <p>Device operating systems that the updated rule <b>will not</b> match. All other device operating systems will match.</p>
@@ -7041,8 +7205,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_device_user_agents`](Self::set_device_user_agents).
         ///
         /// <p>User agents that the updated rule will match.</p>
-        pub fn device_user_agents(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_user_agents(inp);
+        pub fn device_user_agents(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_user_agents(input.into());
             self
         }
         /// <p>User agents that the updated rule will match.</p>
@@ -7058,8 +7222,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_not_device_user_agents`](Self::set_not_device_user_agents).
         ///
         /// <p>User agents that the updated rule <b>will not</b> match. All other user agents will match.</p>
-        pub fn not_device_user_agents(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.not_device_user_agents(inp);
+        pub fn not_device_user_agents(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.not_device_user_agents(input.into());
             self
         }
         /// <p>User agents that the updated rule <b>will not</b> match. All other user agents will match.</p>
@@ -7073,10 +7237,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdatePrimaryEmailAddress`.
     ///
-    /// <p>Updates the primary email for a user, group, or resource. The current email is moved
-    /// into the list of aliases (or swapped between an existing alias and the current primary
-    /// email), and the email provided in the input is promoted as the primary.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the primary email for a user, group, or resource. The current email is moved into the list of aliases (or swapped between an existing alias and the current primary email), and the email provided in the input is promoted as the primary.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePrimaryEmailAddress<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7121,10 +7283,10 @@ pub mod fluent_builders {
                 crate::input::UpdatePrimaryEmailAddressInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7133,8 +7295,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The organization that contains the user, group, or resource to update.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The organization that contains the user, group, or resource to update.</p>
@@ -7146,8 +7308,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user, group, or resource to update.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(input.into());
             self
         }
         /// <p>The user, group, or resource to update.</p>
@@ -7156,8 +7318,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value of the email to be updated as primary.</p>
-        pub fn email(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email(inp);
+        pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email(input.into());
             self
         }
         /// <p>The value of the email to be updated as primary.</p>
@@ -7168,10 +7330,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateResource`.
     ///
-    /// <p>Updates data for the resource. To have the latest information, it must be preceded by
-    /// a <a>DescribeResource</a> call. The dataset in the request should be the one
-    /// expected when performing another <code>DescribeResource</code> call.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates data for the resource. To have the latest information, it must be preceded by a <code>DescribeResource</code> call. The dataset in the request should be the one expected when performing another <code>DescribeResource</code> call.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7216,10 +7376,10 @@ pub mod fluent_builders {
                 crate::input::UpdateResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7227,14 +7387,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier associated with the organization for which the resource is
-        /// updated.</p>
-        pub fn organization_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(inp);
+        /// <p>The identifier associated with the organization for which the resource is updated.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The identifier associated with the organization for which the resource is
-        /// updated.</p>
+        /// <p>The identifier associated with the organization for which the resource is updated.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7243,8 +7401,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the resource to be updated.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The identifier of the resource to be updated.</p>
@@ -7253,8 +7411,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the resource to be updated.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the resource to be updated.</p>
@@ -7263,8 +7421,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resource's booking options to be updated.</p>
-        pub fn booking_options(mut self, inp: crate::model::BookingOptions) -> Self {
-            self.inner = self.inner.booking_options(inp);
+        pub fn booking_options(mut self, input: crate::model::BookingOptions) -> Self {
+            self.inner = self.inner.booking_options(input);
             self
         }
         /// <p>The resource's booking options to be updated.</p>
@@ -7277,6 +7435,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

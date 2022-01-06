@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Simple Email Service
@@ -310,6 +310,7 @@ where
     ///
     /// See [`GetDedicatedIps`](crate::client::fluent_builders::GetDedicatedIps) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetDedicatedIps::into_paginator).
     pub fn get_dedicated_ips(&self) -> fluent_builders::GetDedicatedIps<C, M, R> {
         fluent_builders::GetDedicatedIps::new(self.handle.clone())
     }
@@ -390,6 +391,7 @@ where
     ///
     /// See [`ListConfigurationSets`](crate::client::fluent_builders::ListConfigurationSets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListConfigurationSets::into_paginator).
     pub fn list_configuration_sets(&self) -> fluent_builders::ListConfigurationSets<C, M, R> {
         fluent_builders::ListConfigurationSets::new(self.handle.clone())
     }
@@ -397,6 +399,7 @@ where
     ///
     /// See [`ListContactLists`](crate::client::fluent_builders::ListContactLists) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListContactLists::into_paginator).
     pub fn list_contact_lists(&self) -> fluent_builders::ListContactLists<C, M, R> {
         fluent_builders::ListContactLists::new(self.handle.clone())
     }
@@ -404,6 +407,7 @@ where
     ///
     /// See [`ListContacts`](crate::client::fluent_builders::ListContacts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListContacts::into_paginator).
     pub fn list_contacts(&self) -> fluent_builders::ListContacts<C, M, R> {
         fluent_builders::ListContacts::new(self.handle.clone())
     }
@@ -411,6 +415,7 @@ where
     ///
     /// See [`ListCustomVerificationEmailTemplates`](crate::client::fluent_builders::ListCustomVerificationEmailTemplates) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCustomVerificationEmailTemplates::into_paginator).
     pub fn list_custom_verification_email_templates(
         &self,
     ) -> fluent_builders::ListCustomVerificationEmailTemplates<C, M, R> {
@@ -420,6 +425,7 @@ where
     ///
     /// See [`ListDedicatedIpPools`](crate::client::fluent_builders::ListDedicatedIpPools) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDedicatedIpPools::into_paginator).
     pub fn list_dedicated_ip_pools(&self) -> fluent_builders::ListDedicatedIpPools<C, M, R> {
         fluent_builders::ListDedicatedIpPools::new(self.handle.clone())
     }
@@ -427,6 +433,7 @@ where
     ///
     /// See [`ListDeliverabilityTestReports`](crate::client::fluent_builders::ListDeliverabilityTestReports) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDeliverabilityTestReports::into_paginator).
     pub fn list_deliverability_test_reports(
         &self,
     ) -> fluent_builders::ListDeliverabilityTestReports<C, M, R> {
@@ -436,6 +443,7 @@ where
     ///
     /// See [`ListDomainDeliverabilityCampaigns`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::into_paginator).
     pub fn list_domain_deliverability_campaigns(
         &self,
     ) -> fluent_builders::ListDomainDeliverabilityCampaigns<C, M, R> {
@@ -445,6 +453,7 @@ where
     ///
     /// See [`ListEmailIdentities`](crate::client::fluent_builders::ListEmailIdentities) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEmailIdentities::into_paginator).
     pub fn list_email_identities(&self) -> fluent_builders::ListEmailIdentities<C, M, R> {
         fluent_builders::ListEmailIdentities::new(self.handle.clone())
     }
@@ -452,6 +461,7 @@ where
     ///
     /// See [`ListEmailTemplates`](crate::client::fluent_builders::ListEmailTemplates) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEmailTemplates::into_paginator).
     pub fn list_email_templates(&self) -> fluent_builders::ListEmailTemplates<C, M, R> {
         fluent_builders::ListEmailTemplates::new(self.handle.clone())
     }
@@ -459,6 +469,7 @@ where
     ///
     /// See [`ListImportJobs`](crate::client::fluent_builders::ListImportJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListImportJobs::into_paginator).
     pub fn list_import_jobs(&self) -> fluent_builders::ListImportJobs<C, M, R> {
         fluent_builders::ListImportJobs::new(self.handle.clone())
     }
@@ -466,6 +477,7 @@ where
     ///
     /// See [`ListSuppressedDestinations`](crate::client::fluent_builders::ListSuppressedDestinations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSuppressedDestinations::into_paginator).
     pub fn list_suppressed_destinations(
         &self,
     ) -> fluent_builders::ListSuppressedDestinations<C, M, R> {
@@ -737,12 +749,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateConfigurationSet`.
     ///
-    /// <p>Create a configuration set. <i>Configuration sets</i> are groups of
-    /// rules that you can apply to the emails that you send. You apply a configuration set to
-    /// an email by specifying the name of the configuration set when you call the Amazon SES API v2. When
-    /// you apply a configuration set to an email, all of the rules in that configuration set
-    /// are applied to the email. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Create a configuration set. <i>Configuration sets</i> are groups of rules that you can apply to the emails that you send. You apply a configuration set to an email by specifying the name of the configuration set when you call the Amazon SES API v2. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConfigurationSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -787,10 +795,10 @@ pub mod fluent_builders {
                 crate::input::CreateConfigurationSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -798,14 +806,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the configuration set. The name can contain up to 64 alphanumeric
-        /// characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        /// <p>The name of the configuration set. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input.into());
             self
         }
-        /// <p>The name of the configuration set. The name can contain up to 64 alphanumeric
-        /// characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
+        /// <p>The name of the configuration set. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -813,14 +819,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration_set_name(input);
             self
         }
-        /// <p>An object that defines the open and click tracking options for emails that you send
-        /// using the configuration set.</p>
-        pub fn tracking_options(mut self, inp: crate::model::TrackingOptions) -> Self {
-            self.inner = self.inner.tracking_options(inp);
+        /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
+        pub fn tracking_options(mut self, input: crate::model::TrackingOptions) -> Self {
+            self.inner = self.inner.tracking_options(input);
             self
         }
-        /// <p>An object that defines the open and click tracking options for emails that you send
-        /// using the configuration set.</p>
+        /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
         pub fn set_tracking_options(
             mut self,
             input: std::option::Option<crate::model::TrackingOptions>,
@@ -828,14 +832,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tracking_options(input);
             self
         }
-        /// <p>An object that defines the dedicated IP pool that is used to send emails that you send
-        /// using the configuration set.</p>
-        pub fn delivery_options(mut self, inp: crate::model::DeliveryOptions) -> Self {
-            self.inner = self.inner.delivery_options(inp);
+        /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
+        pub fn delivery_options(mut self, input: crate::model::DeliveryOptions) -> Self {
+            self.inner = self.inner.delivery_options(input);
             self
         }
-        /// <p>An object that defines the dedicated IP pool that is used to send emails that you send
-        /// using the configuration set.</p>
+        /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
         pub fn set_delivery_options(
             mut self,
             input: std::option::Option<crate::model::DeliveryOptions>,
@@ -843,14 +845,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_delivery_options(input);
             self
         }
-        /// <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails
-        /// that you send that use the configuration set.</p>
-        pub fn reputation_options(mut self, inp: crate::model::ReputationOptions) -> Self {
-            self.inner = self.inner.reputation_options(inp);
+        /// <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set.</p>
+        pub fn reputation_options(mut self, input: crate::model::ReputationOptions) -> Self {
+            self.inner = self.inner.reputation_options(input);
             self
         }
-        /// <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails
-        /// that you send that use the configuration set.</p>
+        /// <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set.</p>
         pub fn set_reputation_options(
             mut self,
             input: std::option::Option<crate::model::ReputationOptions>,
@@ -858,14 +858,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_reputation_options(input);
             self
         }
-        /// <p>An object that defines whether or not Amazon SES can send email that you send using the
-        /// configuration set.</p>
-        pub fn sending_options(mut self, inp: crate::model::SendingOptions) -> Self {
-            self.inner = self.inner.sending_options(inp);
+        /// <p>An object that defines whether or not Amazon SES can send email that you send using the configuration set.</p>
+        pub fn sending_options(mut self, input: crate::model::SendingOptions) -> Self {
+            self.inner = self.inner.sending_options(input);
             self
         }
-        /// <p>An object that defines whether or not Amazon SES can send email that you send using the
-        /// configuration set.</p>
+        /// <p>An object that defines whether or not Amazon SES can send email that you send using the configuration set.</p>
         pub fn set_sending_options(
             mut self,
             input: std::option::Option<crate::model::SendingOptions>,
@@ -877,14 +875,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of objects that define the tags (keys and values) to associate with the
-        /// configuration set.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>An array of objects that define the tags (keys and values) to associate with the configuration set.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>An array of objects that define the tags (keys and values) to associate with the
-        /// configuration set.</p>
+        /// <p>An array of objects that define the tags (keys and values) to associate with the configuration set.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -892,14 +888,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>An object that contains information about the suppression list preferences for your
-        /// account.</p>
-        pub fn suppression_options(mut self, inp: crate::model::SuppressionOptions) -> Self {
-            self.inner = self.inner.suppression_options(inp);
+        /// <p>An object that contains information about the suppression list preferences for your account.</p>
+        pub fn suppression_options(mut self, input: crate::model::SuppressionOptions) -> Self {
+            self.inner = self.inner.suppression_options(input);
             self
         }
-        /// <p>An object that contains information about the suppression list preferences for your
-        /// account.</p>
+        /// <p>An object that contains information about the suppression list preferences for your account.</p>
         pub fn set_suppression_options(
             mut self,
             input: std::option::Option<crate::model::SuppressionOptions>,
@@ -910,14 +904,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateConfigurationSetEventDestination`.
     ///
-    /// <p>Create an event destination. <i>Events</i> include message sends,
-    /// deliveries, opens, clicks, bounces, and complaints. <i>Event
-    /// destinations</i> are places that you can send information about these events
-    /// to. For example, you can send event data to Amazon SNS to receive notifications when you
-    /// receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term
-    /// storage.</p>
+    /// <p>Create an event destination. <i>Events</i> include message sends, deliveries, opens, clicks, bounces, and complaints. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p>
     /// <p>A single configuration set can include more than one event destination.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConfigurationSetEventDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -964,10 +953,10 @@ pub mod fluent_builders {
                 crate::input::CreateConfigurationSetEventDestinationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -976,8 +965,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the configuration set .</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input.into());
             self
         }
         /// <p>The name of the configuration set .</p>
@@ -989,8 +978,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A name that identifies the event destination within the configuration set.</p>
-        pub fn event_destination_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_destination_name(inp);
+        pub fn event_destination_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_destination_name(input.into());
             self
         }
         /// <p>A name that identifies the event destination within the configuration set.</p>
@@ -1002,8 +991,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object that defines the event destination.</p>
-        pub fn event_destination(mut self, inp: crate::model::EventDestinationDefinition) -> Self {
-            self.inner = self.inner.event_destination(inp);
+        pub fn event_destination(
+            mut self,
+            input: crate::model::EventDestinationDefinition,
+        ) -> Self {
+            self.inner = self.inner.event_destination(input);
             self
         }
         /// <p>An object that defines the event destination.</p>
@@ -1017,9 +1009,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateContact`.
     ///
-    /// <p>Creates a contact, which is an end-user who is receiving the email, and adds them to a
-    /// contact list.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a contact, which is an end-user who is receiving the email, and adds them to a contact list.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1064,10 +1055,10 @@ pub mod fluent_builders {
                 crate::input::CreateContactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1076,8 +1067,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the contact list to which the contact should be added.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_list_name(inp);
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_list_name(input.into());
             self
         }
         /// <p>The name of the contact list to which the contact should be added.</p>
@@ -1089,8 +1080,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The contact's email address.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(inp);
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(input.into());
             self
         }
         /// <p>The contact's email address.</p>
@@ -1106,8 +1097,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_topic_preferences`](Self::set_topic_preferences).
         ///
         /// <p>The contact's preferences for being opted-in to or opted-out of topics.</p>
-        pub fn topic_preferences(mut self, inp: impl Into<crate::model::TopicPreference>) -> Self {
-            self.inner = self.inner.topic_preferences(inp);
+        pub fn topic_preferences(mut self, input: crate::model::TopicPreference) -> Self {
+            self.inner = self.inner.topic_preferences(input);
             self
         }
         /// <p>The contact's preferences for being opted-in to or opted-out of topics.</p>
@@ -1118,21 +1109,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_topic_preferences(input);
             self
         }
-        /// <p>A boolean value status noting if the contact is unsubscribed from all contact list
-        /// topics.</p>
-        pub fn unsubscribe_all(mut self, inp: bool) -> Self {
-            self.inner = self.inner.unsubscribe_all(inp);
+        /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
+        pub fn unsubscribe_all(mut self, input: bool) -> Self {
+            self.inner = self.inner.unsubscribe_all(input);
             self
         }
-        /// <p>A boolean value status noting if the contact is unsubscribed from all contact list
-        /// topics.</p>
+        /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
         pub fn set_unsubscribe_all(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_unsubscribe_all(input);
             self
         }
         /// <p>The attribute data attached to a contact.</p>
-        pub fn attributes_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attributes_data(inp);
+        pub fn attributes_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attributes_data(input.into());
             self
         }
         /// <p>The attribute data attached to a contact.</p>
@@ -1147,7 +1136,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateContactList`.
     ///
     /// <p>Creates a contact list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContactList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1192,10 +1181,10 @@ pub mod fluent_builders {
                 crate::input::CreateContactListInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1204,8 +1193,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the contact list.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_list_name(inp);
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_list_name(input.into());
             self
         }
         /// <p>The name of the contact list.</p>
@@ -1220,14 +1209,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_topics`](Self::set_topics).
         ///
-        /// <p>An interest group, theme, or label within a list. A contact list can have multiple
-        /// topics.</p>
-        pub fn topics(mut self, inp: impl Into<crate::model::Topic>) -> Self {
-            self.inner = self.inner.topics(inp);
+        /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
+        pub fn topics(mut self, input: crate::model::Topic) -> Self {
+            self.inner = self.inner.topics(input);
             self
         }
-        /// <p>An interest group, theme, or label within a list. A contact list can have multiple
-        /// topics.</p>
+        /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
         pub fn set_topics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Topic>>,
@@ -1236,8 +1223,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of what the contact list is about.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of what the contact list is about.</p>
@@ -1250,8 +1237,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with a contact list.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags associated with a contact list.</p>
@@ -1266,10 +1253,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateCustomVerificationEmailTemplate`.
     ///
     /// <p>Creates a new custom verification email template.</p>
-    /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer
-    /// Guide</i>.</p>
+    /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCustomVerificationEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1316,10 +1302,10 @@ pub mod fluent_builders {
                 crate::input::CreateCustomVerificationEmailTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1328,8 +1314,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the custom verification email template.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the custom verification email template.</p>
@@ -1341,8 +1327,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The email address that the custom verification email is sent from.</p>
-        pub fn from_email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.from_email_address(inp);
+        pub fn from_email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.from_email_address(input.into());
             self
         }
         /// <p>The email address that the custom verification email is sent from.</p>
@@ -1354,8 +1340,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The subject line of the custom verification email.</p>
-        pub fn template_subject(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_subject(inp);
+        pub fn template_subject(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_subject(input.into());
             self
         }
         /// <p>The subject line of the custom verification email.</p>
@@ -1366,18 +1352,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_subject(input);
             self
         }
-        /// <p>The content of the custom verification email. The total size of the email must be less
-        /// than 10 MB. The message body may contain HTML, with some limitations. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
-        /// Developer Guide</i>.</p>
-        pub fn template_content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_content(inp);
+        /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
+        pub fn template_content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_content(input.into());
             self
         }
-        /// <p>The content of the custom verification email. The total size of the email must be less
-        /// than 10 MB. The message body may contain HTML, with some limitations. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
-        /// Developer Guide</i>.</p>
+        /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
         pub fn set_template_content(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1385,14 +1365,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_content(input);
             self
         }
-        /// <p>The URL that the recipient of the verification email is sent to if his or her address
-        /// is successfully verified.</p>
-        pub fn success_redirection_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.success_redirection_url(inp);
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
+        pub fn success_redirection_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.success_redirection_url(input.into());
             self
         }
-        /// <p>The URL that the recipient of the verification email is sent to if his or her address
-        /// is successfully verified.</p>
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
         pub fn set_success_redirection_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1400,14 +1378,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_success_redirection_url(input);
             self
         }
-        /// <p>The URL that the recipient of the verification email is sent to if his or her address
-        /// is not successfully verified.</p>
-        pub fn failure_redirection_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.failure_redirection_url(inp);
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
+        pub fn failure_redirection_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.failure_redirection_url(input.into());
             self
         }
-        /// <p>The URL that the recipient of the verification email is sent to if his or her address
-        /// is not successfully verified.</p>
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
         pub fn set_failure_redirection_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1418,11 +1394,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDedicatedIpPool`.
     ///
-    /// <p>Create a new pool of dedicated IP addresses. A pool can include one or more dedicated
-    /// IP addresses that are associated with your Amazon Web Services account. You can associate a pool with
-    /// a configuration set. When you send an email that uses that configuration set, the
-    /// message is sent from one of the addresses in the associated pool.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Create a new pool of dedicated IP addresses. A pool can include one or more dedicated IP addresses that are associated with your Amazon Web Services account. You can associate a pool with a configuration set. When you send an email that uses that configuration set, the message is sent from one of the addresses in the associated pool.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDedicatedIpPool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1467,10 +1440,10 @@ pub mod fluent_builders {
                 crate::input::CreateDedicatedIpPoolInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1479,8 +1452,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dedicated IP pool.</p>
-        pub fn pool_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pool_name(inp);
+        pub fn pool_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pool_name(input.into());
             self
         }
         /// <p>The name of the dedicated IP pool.</p>
@@ -1492,14 +1465,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An object that defines the tags (keys and values) that you want to associate with the
-        /// pool.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>An object that defines the tags (keys and values) that you want to associate with the pool.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>An object that defines the tags (keys and values) that you want to associate with the
-        /// pool.</p>
+        /// <p>An object that defines the tags (keys and values) that you want to associate with the pool.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1510,14 +1481,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDeliverabilityTestReport`.
     ///
-    /// <p>Create a new predictive inbox placement test. Predictive inbox placement tests can help you predict how your messages will be handled
-    /// by various email providers around the world. When you perform a predictive inbox placement test, you provide a
-    /// sample message that contains the content that you plan to send to your customers. Amazon SES
-    /// then sends that message to special email addresses spread across several major email
-    /// providers. After about 24 hours, the test is complete, and you can use the
-    /// <code>GetDeliverabilityTestReport</code> operation to view the results of the
-    /// test.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Create a new predictive inbox placement test. Predictive inbox placement tests can help you predict how your messages will be handled by various email providers around the world. When you perform a predictive inbox placement test, you provide a sample message that contains the content that you plan to send to your customers. Amazon SES then sends that message to special email addresses spread across several major email providers. After about 24 hours, the test is complete, and you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeliverabilityTestReport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1562,10 +1527,10 @@ pub mod fluent_builders {
                 crate::input::CreateDeliverabilityTestReportInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1573,21 +1538,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the
-        /// results.</p>
-        pub fn report_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_name(inp);
+        /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.</p>
+        pub fn report_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_name(input.into());
             self
         }
-        /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the
-        /// results.</p>
+        /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.</p>
         pub fn set_report_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_report_name(input);
             self
         }
         /// <p>The email address that the predictive inbox placement test email was sent from.</p>
-        pub fn from_email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.from_email_address(inp);
+        pub fn from_email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.from_email_address(input.into());
             self
         }
         /// <p>The email address that the predictive inbox placement test email was sent from.</p>
@@ -1599,8 +1562,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The HTML body of the message that you sent when you performed the predictive inbox placement test.</p>
-        pub fn content(mut self, inp: crate::model::EmailContent) -> Self {
-            self.inner = self.inner.content(inp);
+        pub fn content(mut self, input: crate::model::EmailContent) -> Self {
+            self.inner = self.inner.content(input);
             self
         }
         /// <p>The HTML body of the message that you sent when you performed the predictive inbox placement test.</p>
@@ -1615,14 +1578,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of objects that define the tags (keys and values) that you want to associate
-        /// with the predictive inbox placement test.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>An array of objects that define the tags (keys and values) that you want to associate
-        /// with the predictive inbox placement test.</p>
+        /// <p>An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1633,33 +1594,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateEmailIdentity`.
     ///
-    /// <p>Starts the process of verifying an email identity. An <i>identity</i> is
-    /// an email address or domain that you use when you send email. Before you can use an
-    /// identity to send email, you first have to verify it. By verifying an identity, you
-    /// demonstrate that you're the owner of the identity, and that you've given Amazon SES API v2
-    /// permission to send email from the identity.</p>
-    /// <p>When you verify an email address, Amazon SES sends an email to the address. Your email
-    /// address is verified as soon as you follow the link in the verification email.
-    ///
-    /// </p>
-    /// <p>When you verify a domain without specifying the <code>DkimSigningAttributes</code>
-    /// object, this operation provides a set of DKIM tokens. You can convert these tokens into
-    /// CNAME records, which you then add to the DNS configuration for your domain. Your domain
-    /// is verified when Amazon SES detects these records in the DNS configuration for your domain.
-    /// This verification method is known as <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
-    /// <p>Alternatively, you can perform the verification process by providing your own
-    /// public-private key pair. This verification method is known as Bring Your Own DKIM
-    /// (BYODKIM). To use BYODKIM, your call to the <code>CreateEmailIdentity</code> operation
-    /// has to include the <code>DkimSigningAttributes</code> object. When you specify this
-    /// object, you provide a selector (a component of the DNS record name that identifies the
-    /// public key to use for DKIM authentication) and a private key.</p>
-    /// <p>When you verify a domain, this operation provides a set of DKIM tokens, which you can
-    /// convert into CNAME tokens. You add these CNAME tokens to the DNS configuration for your
-    /// domain. Your domain is verified when Amazon SES detects these records in the DNS
-    /// configuration for your domain. For some DNS providers, it can take 72 hours or more to
-    /// complete the domain verification process.</p>
+    /// <p>Starts the process of verifying an email identity. An <i>identity</i> is an email address or domain that you use when you send email. Before you can use an identity to send email, you first have to verify it. By verifying an identity, you demonstrate that you're the owner of the identity, and that you've given Amazon SES API v2 permission to send email from the identity.</p>
+    /// <p>When you verify an email address, Amazon SES sends an email to the address. Your email address is verified as soon as you follow the link in the verification email. </p>
+    /// <p>When you verify a domain without specifying the <code>DkimSigningAttributes</code> object, this operation provides a set of DKIM tokens. You can convert these tokens into CNAME records, which you then add to the DNS configuration for your domain. Your domain is verified when Amazon SES detects these records in the DNS configuration for your domain. This verification method is known as <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
+    /// <p>Alternatively, you can perform the verification process by providing your own public-private key pair. This verification method is known as Bring Your Own DKIM (BYODKIM). To use BYODKIM, your call to the <code>CreateEmailIdentity</code> operation has to include the <code>DkimSigningAttributes</code> object. When you specify this object, you provide a selector (a component of the DNS record name that identifies the public key to use for DKIM authentication) and a private key.</p>
+    /// <p>When you verify a domain, this operation provides a set of DKIM tokens, which you can convert into CNAME tokens. You add these CNAME tokens to the DNS configuration for your domain. Your domain is verified when Amazon SES detects these records in the DNS configuration for your domain. For some DNS providers, it can take 72 hours or more to complete the domain verification process.</p>
     /// <p>Additionally, you can associate an existing configuration set with the email identity that you're verifying.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEmailIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1704,10 +1645,10 @@ pub mod fluent_builders {
                 crate::input::CreateEmailIdentityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1716,8 +1657,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The email address or domain to verify.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_identity(inp);
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_identity(input.into());
             self
         }
         /// <p>The email address or domain to verify.</p>
@@ -1732,14 +1673,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of objects that define the tags (keys and values) to associate with the email
-        /// identity.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>An array of objects that define the tags (keys and values) to associate with the email identity.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>An array of objects that define the tags (keys and values) to associate with the email
-        /// identity.</p>
+        /// <p>An array of objects that define the tags (keys and values) to associate with the email identity.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1747,20 +1686,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>If your request includes this object, Amazon SES configures the identity to use Bring Your
-        /// Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for
-        /// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
-        /// <p>You can only specify this object if the email identity is a domain, as opposed to an
-        /// address.</p>
-        pub fn dkim_signing_attributes(mut self, inp: crate::model::DkimSigningAttributes) -> Self {
-            self.inner = self.inner.dkim_signing_attributes(inp);
+        /// <p>If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
+        /// <p>You can only specify this object if the email identity is a domain, as opposed to an address.</p>
+        pub fn dkim_signing_attributes(
+            mut self,
+            input: crate::model::DkimSigningAttributes,
+        ) -> Self {
+            self.inner = self.inner.dkim_signing_attributes(input);
             self
         }
-        /// <p>If your request includes this object, Amazon SES configures the identity to use Bring Your
-        /// Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for
-        /// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
-        /// <p>You can only specify this object if the email identity is a domain, as opposed to an
-        /// address.</p>
+        /// <p>If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
+        /// <p>You can only specify this object if the email identity is a domain, as opposed to an address.</p>
         pub fn set_dkim_signing_attributes(
             mut self,
             input: std::option::Option<crate::model::DkimSigningAttributes>,
@@ -1768,14 +1704,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dkim_signing_attributes(input);
             self
         }
-        /// <p>The configuration set to use by default when sending from this identity. Note that any
-        /// configuration set defined in the email sending request takes precedence. </p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        /// <p>The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence. </p>
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input.into());
             self
         }
-        /// <p>The configuration set to use by default when sending from this identity. Note that any
-        /// configuration set defined in the email sending request takes precedence. </p>
+        /// <p>The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence. </p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1786,19 +1720,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateEmailIdentityPolicy`.
     ///
-    /// <p>Creates the specified sending authorization policy for the given identity (an email
-    /// address or a domain).</p>
-    /// <note>
-    /// <p>This API is for the identity owner only. If you have not verified the identity,
-    /// this API will return an error.</p>
+    /// <p>Creates the specified sending authorization policy for the given identity (an email address or a domain).</p> <note>
+    /// <p>This API is for the identity owner only. If you have not verified the identity, this API will return an error.</p>
     /// </note>
-    /// <p>Sending authorization is a feature that enables an identity owner to authorize other
-    /// senders to use its identities. For information about using sending authorization, see
-    /// the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-    /// Guide</a>.</p>
-    ///
+    /// <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEmailIdentityPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1843,10 +1770,10 @@ pub mod fluent_builders {
                 crate::input::CreateEmailIdentityPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1855,8 +1782,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The email identity.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_identity(inp);
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_identity(input.into());
             self
         }
         /// <p>The email identity.</p>
@@ -1868,31 +1795,25 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the policy.</p>
-        ///
-        /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
-        /// characters, dashes, and underscores.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input.into());
             self
         }
         /// <p>The name of the policy.</p>
-        ///
-        /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
-        /// characters, dashes, and underscores.</p>
+        /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policy_name(input);
             self
         }
         /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-        /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer
-        /// Guide</a>.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input.into());
             self
         }
         /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-        /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policy(input);
             self
@@ -1900,11 +1821,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateEmailTemplate`.
     ///
-    /// <p>Creates an email template. Email templates enable you to send personalized email to
-    /// one or more destinations in a single API operation. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>Creates an email template. Email templates enable you to send personalized email to one or more destinations in a single API operation. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1949,10 +1868,10 @@ pub mod fluent_builders {
                 crate::input::CreateEmailTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1961,8 +1880,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the template.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the template.</p>
@@ -1973,14 +1892,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_name(input);
             self
         }
-        /// <p>The content of the email template, composed of a subject line, an HTML part, and a
-        /// text-only part.</p>
-        pub fn template_content(mut self, inp: crate::model::EmailTemplateContent) -> Self {
-            self.inner = self.inner.template_content(inp);
+        /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
+        pub fn template_content(mut self, input: crate::model::EmailTemplateContent) -> Self {
+            self.inner = self.inner.template_content(input);
             self
         }
-        /// <p>The content of the email template, composed of a subject line, an HTML part, and a
-        /// text-only part.</p>
+        /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
         pub fn set_template_content(
             mut self,
             input: std::option::Option<crate::model::EmailTemplateContent>,
@@ -1992,7 +1909,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateImportJob`.
     ///
     /// <p>Creates an import job for a data destination.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2037,10 +1954,10 @@ pub mod fluent_builders {
                 crate::input::CreateImportJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2049,8 +1966,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The destination for the import job.</p>
-        pub fn import_destination(mut self, inp: crate::model::ImportDestination) -> Self {
-            self.inner = self.inner.import_destination(inp);
+        pub fn import_destination(mut self, input: crate::model::ImportDestination) -> Self {
+            self.inner = self.inner.import_destination(input);
             self
         }
         /// <p>The destination for the import job.</p>
@@ -2062,8 +1979,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The data source for the import job.</p>
-        pub fn import_data_source(mut self, inp: crate::model::ImportDataSource) -> Self {
-            self.inner = self.inner.import_data_source(inp);
+        pub fn import_data_source(mut self, input: crate::model::ImportDataSource) -> Self {
+            self.inner = self.inner.import_data_source(input);
             self
         }
         /// <p>The data source for the import job.</p>
@@ -2078,12 +1995,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteConfigurationSet`.
     ///
     /// <p>Delete an existing configuration set.</p>
-    /// <p>
-    /// <i>Configuration sets</i> are groups of rules that you can apply to the
-    /// emails you send. You apply a configuration set to an email by including a reference to
-    /// the configuration set in the headers of the email. When you apply a configuration set to
-    /// an email, all of the rules in that configuration set are applied to the email.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <i>Configuration sets</i> are groups of rules that you can apply to the emails you send. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConfigurationSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2128,10 +2041,10 @@ pub mod fluent_builders {
                 crate::input::DeleteConfigurationSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2140,8 +2053,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the configuration set.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input.into());
             self
         }
         /// <p>The name of the configuration set.</p>
@@ -2156,13 +2069,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteConfigurationSetEventDestination`.
     ///
     /// <p>Delete an event destination.</p>
-    /// <p>
-    /// <i>Events</i> include message sends, deliveries, opens, clicks, bounces,
-    /// and complaints. <i>Event destinations</i> are places that you can send
-    /// information about these events to. For example, you can send event data to Amazon SNS to
-    /// receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to
-    /// stream data to Amazon S3 for long-term storage.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <i>Events</i> include message sends, deliveries, opens, clicks, bounces, and complaints. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConfigurationSetEventDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2209,10 +2117,10 @@ pub mod fluent_builders {
                 crate::input::DeleteConfigurationSetEventDestinationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2220,14 +2128,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the configuration set that contains the event destination to
-        /// delete.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        /// <p>The name of the configuration set that contains the event destination to delete.</p>
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input.into());
             self
         }
-        /// <p>The name of the configuration set that contains the event destination to
-        /// delete.</p>
+        /// <p>The name of the configuration set that contains the event destination to delete.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2236,8 +2142,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the event destination to delete.</p>
-        pub fn event_destination_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_destination_name(inp);
+        pub fn event_destination_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_destination_name(input.into());
             self
         }
         /// <p>The name of the event destination to delete.</p>
@@ -2252,7 +2158,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteContact`.
     ///
     /// <p>Removes a contact from a contact list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2297,10 +2203,10 @@ pub mod fluent_builders {
                 crate::input::DeleteContactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2309,8 +2215,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the contact list from which the contact should be removed.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_list_name(inp);
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_list_name(input.into());
             self
         }
         /// <p>The name of the contact list from which the contact should be removed.</p>
@@ -2322,8 +2228,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The contact's email address.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(inp);
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(input.into());
             self
         }
         /// <p>The contact's email address.</p>
@@ -2338,7 +2244,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteContactList`.
     ///
     /// <p>Deletes a contact list and all of the contacts on that list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContactList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2383,10 +2289,10 @@ pub mod fluent_builders {
                 crate::input::DeleteContactListInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2395,8 +2301,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the contact list.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_list_name(inp);
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_list_name(input.into());
             self
         }
         /// <p>The name of the contact list.</p>
@@ -2411,10 +2317,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCustomVerificationEmailTemplate`.
     ///
     /// <p>Deletes an existing custom verification email template.</p>
-    /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer
-    /// Guide</i>.</p>
+    /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCustomVerificationEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2461,10 +2366,10 @@ pub mod fluent_builders {
                 crate::input::DeleteCustomVerificationEmailTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2473,8 +2378,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the custom verification email template that you want to delete.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the custom verification email template that you want to delete.</p>
@@ -2489,7 +2394,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDedicatedIpPool`.
     ///
     /// <p>Delete a dedicated IP pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDedicatedIpPool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2534,10 +2439,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDedicatedIpPoolInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2546,8 +2451,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dedicated IP pool that you want to delete.</p>
-        pub fn pool_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pool_name(inp);
+        pub fn pool_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pool_name(input.into());
             self
         }
         /// <p>The name of the dedicated IP pool that you want to delete.</p>
@@ -2558,9 +2463,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteEmailIdentity`.
     ///
-    /// <p>Deletes an email identity. An identity can be either an email address or a domain
-    /// name.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes an email identity. An identity can be either an email address or a domain name.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEmailIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2605,10 +2509,10 @@ pub mod fluent_builders {
                 crate::input::DeleteEmailIdentityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2617,8 +2521,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identity (that is, the email address or domain) to delete.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_identity(inp);
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_identity(input.into());
             self
         }
         /// <p>The identity (that is, the email address or domain) to delete.</p>
@@ -2632,20 +2536,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteEmailIdentityPolicy`.
     ///
-    /// <p>Deletes the specified sending authorization policy for the given identity (an email
-    /// address or a domain). This API returns successfully even if a policy with the specified
-    /// name does not exist.</p>
-    /// <note>
-    /// <p>This API is for the identity owner only. If you have not verified the identity,
-    /// this API will return an error.</p>
+    /// <p>Deletes the specified sending authorization policy for the given identity (an email address or a domain). This API returns successfully even if a policy with the specified name does not exist.</p> <note>
+    /// <p>This API is for the identity owner only. If you have not verified the identity, this API will return an error.</p>
     /// </note>
-    /// <p>Sending authorization is a feature that enables an identity owner to authorize other
-    /// senders to use its identities. For information about using sending authorization, see
-    /// the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-    /// Guide</a>.</p>
-    ///
+    /// <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEmailIdentityPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2690,10 +2586,10 @@ pub mod fluent_builders {
                 crate::input::DeleteEmailIdentityPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2702,8 +2598,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The email identity.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_identity(inp);
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_identity(input.into());
             self
         }
         /// <p>The email identity.</p>
@@ -2715,17 +2611,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the policy.</p>
-        ///
-        /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
-        /// characters, dashes, and underscores.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input.into());
             self
         }
         /// <p>The name of the policy.</p>
-        ///
-        /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
-        /// characters, dashes, and underscores.</p>
+        /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policy_name(input);
             self
@@ -2734,9 +2626,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEmailTemplate`.
     ///
     /// <p>Deletes an email template.</p>
-    ///
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2781,10 +2672,10 @@ pub mod fluent_builders {
                 crate::input::DeleteEmailTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2793,8 +2684,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the template to be deleted.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the template to be deleted.</p>
@@ -2809,7 +2700,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSuppressedDestination`.
     ///
     /// <p>Removes an email address from the suppression list for your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSuppressedDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2854,10 +2745,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSuppressedDestinationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2866,8 +2757,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The suppressed email destination to remove from the account suppression list.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(inp);
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(input.into());
             self
         }
         /// <p>The suppressed email destination to remove from the account suppression list.</p>
@@ -2881,9 +2772,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAccount`.
     ///
-    /// <p>Obtain information about the email-sending status and capabilities of your Amazon SES
-    /// account in the current Amazon Web Services Region.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Obtain information about the email-sending status and capabilities of your Amazon SES account in the current Amazon Web Services Region.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2928,10 +2818,10 @@ pub mod fluent_builders {
                 crate::input::GetAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2943,7 +2833,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBlacklistReports`.
     ///
     /// <p>Retrieve a list of the blacklists that your dedicated IP addresses appear on.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBlacklistReports<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2988,10 +2878,10 @@ pub mod fluent_builders {
                 crate::input::GetBlacklistReportsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3003,16 +2893,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_blacklist_item_names`](Self::set_blacklist_item_names).
         ///
-        /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can
-        /// only specify the dedicated IP addresses that you use to send email using Amazon SES or
-        /// Amazon Pinpoint.</p>
-        pub fn blacklist_item_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.blacklist_item_names(inp);
+        /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon SES or Amazon Pinpoint.</p>
+        pub fn blacklist_item_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.blacklist_item_names(input.into());
             self
         }
-        /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can
-        /// only specify the dedicated IP addresses that you use to send email using Amazon SES or
-        /// Amazon Pinpoint.</p>
+        /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon SES or Amazon Pinpoint.</p>
         pub fn set_blacklist_item_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3023,15 +2909,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetConfigurationSet`.
     ///
-    /// <p>Get information about an existing configuration set, including the dedicated IP pool
-    /// that it's associated with, whether or not it's enabled for sending email, and
-    /// more.</p>
-    /// <p>
-    /// <i>Configuration sets</i> are groups of rules that you can apply to the
-    /// emails you send. You apply a configuration set to an email by including a reference to
-    /// the configuration set in the headers of the email. When you apply a configuration set to
-    /// an email, all of the rules in that configuration set are applied to the email.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Get information about an existing configuration set, including the dedicated IP pool that it's associated with, whether or not it's enabled for sending email, and more.</p>
+    /// <p> <i>Configuration sets</i> are groups of rules that you can apply to the emails you send. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConfigurationSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3076,10 +2956,10 @@ pub mod fluent_builders {
                 crate::input::GetConfigurationSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3088,8 +2968,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the configuration set.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input.into());
             self
         }
         /// <p>The name of the configuration set.</p>
@@ -3103,15 +2983,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetConfigurationSetEventDestinations`.
     ///
-    /// <p>Retrieve a list of event destinations that are associated with a configuration
-    /// set.</p>
-    /// <p>
-    /// <i>Events</i> include message sends, deliveries, opens, clicks, bounces,
-    /// and complaints. <i>Event destinations</i> are places that you can send
-    /// information about these events to. For example, you can send event data to Amazon SNS to
-    /// receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to
-    /// stream data to Amazon S3 for long-term storage.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieve a list of event destinations that are associated with a configuration set.</p>
+    /// <p> <i>Events</i> include message sends, deliveries, opens, clicks, bounces, and complaints. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConfigurationSetEventDestinations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3158,10 +3032,10 @@ pub mod fluent_builders {
                 crate::input::GetConfigurationSetEventDestinationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3170,8 +3044,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the configuration set that contains the event destination.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input.into());
             self
         }
         /// <p>The name of the configuration set that contains the event destination.</p>
@@ -3186,7 +3060,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetContact`.
     ///
     /// <p>Returns a contact from a contact list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3231,10 +3105,10 @@ pub mod fluent_builders {
                 crate::input::GetContactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3243,8 +3117,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the contact list to which the contact belongs.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_list_name(inp);
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_list_name(input.into());
             self
         }
         /// <p>The name of the contact list to which the contact belongs.</p>
@@ -3256,8 +3130,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The contact's email addres.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(inp);
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(input.into());
             self
         }
         /// <p>The contact's email addres.</p>
@@ -3271,9 +3145,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetContactList`.
     ///
-    /// <p>Returns contact list metadata. It does not return any information about the contacts
-    /// present in the list.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns contact list metadata. It does not return any information about the contacts present in the list.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContactList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3318,10 +3191,10 @@ pub mod fluent_builders {
                 crate::input::GetContactListInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3330,8 +3203,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the contact list.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_list_name(inp);
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_list_name(input.into());
             self
         }
         /// <p>The name of the contact list.</p>
@@ -3345,12 +3218,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCustomVerificationEmailTemplate`.
     ///
-    /// <p>Returns the custom email verification template for the template name you
-    /// specify.</p>
-    /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer
-    /// Guide</i>.</p>
+    /// <p>Returns the custom email verification template for the template name you specify.</p>
+    /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCustomVerificationEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3397,10 +3268,10 @@ pub mod fluent_builders {
                 crate::input::GetCustomVerificationEmailTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3409,8 +3280,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the custom verification email template that you want to retrieve.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the custom verification email template that you want to retrieve.</p>
@@ -3424,10 +3295,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDedicatedIp`.
     ///
-    /// <p>Get information about a dedicated IP address, including the name of the dedicated IP
-    /// pool that it's associated with, as well information about the automatic warm-up process
-    /// for the address.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Get information about a dedicated IP address, including the name of the dedicated IP pool that it's associated with, as well information about the automatic warm-up process for the address.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDedicatedIp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3472,10 +3341,10 @@ pub mod fluent_builders {
                 crate::input::GetDedicatedIpInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3483,14 +3352,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The IP address that you want to obtain more information about. The value you specify
-        /// has to be a dedicated IP address that's assocaited with your Amazon Web Services account.</p>
-        pub fn ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ip(inp);
+        /// <p>The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP address that's assocaited with your Amazon Web Services account.</p>
+        pub fn ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ip(input.into());
             self
         }
-        /// <p>The IP address that you want to obtain more information about. The value you specify
-        /// has to be a dedicated IP address that's assocaited with your Amazon Web Services account.</p>
+        /// <p>The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP address that's assocaited with your Amazon Web Services account.</p>
         pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_ip(input);
             self
@@ -3498,9 +3365,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDedicatedIps`.
     ///
-    /// <p>List the dedicated IP addresses that are associated with your Amazon Web Services
-    /// account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>List the dedicated IP addresses that are associated with your Amazon Web Services account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDedicatedIps<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3545,10 +3411,10 @@ pub mod fluent_builders {
                 crate::input::GetDedicatedIpsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3556,9 +3422,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetDedicatedIpsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetDedicatedIpsPaginator<C, M, R> {
+            crate::paginator::GetDedicatedIpsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the IP pool that the dedicated IP address is associated with.</p>
-        pub fn pool_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pool_name(inp);
+        pub fn pool_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pool_name(input.into());
             self
         }
         /// <p>The name of the IP pool that the dedicated IP address is associated with.</p>
@@ -3566,30 +3438,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pool_name(input);
             self
         }
-        /// <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the
-        /// position of the dedicated IP pool in the list of IP pools.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the position of the dedicated IP pool in the list of IP pools.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the
-        /// position of the dedicated IP pool in the list of IP pools.</p>
+        /// <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the position of the dedicated IP pool in the list of IP pools.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>.
-        /// If the number of results is larger than the number you specified in this parameter, then
-        /// the response includes a <code>NextToken</code> element, which you can use to obtain
-        /// additional results.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        /// <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
-        /// <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>.
-        /// If the number of results is larger than the number you specified in this parameter, then
-        /// the response includes a <code>NextToken</code> element, which you can use to obtain
-        /// additional results.</p>
+        /// <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_page_size(input);
             self
@@ -3597,15 +3461,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDeliverabilityDashboardOptions`.
     ///
-    /// <p>Retrieve information about the status of the Deliverability dashboard for your account. When
-    /// the Deliverability dashboard is enabled, you gain access to reputation, deliverability, and other
-    /// metrics for the domains that you use to send email. You also gain the ability to perform
-    /// predictive inbox placement tests.</p>
-    ///
-    /// <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition
-    /// to any other fees that you accrue by using Amazon SES and other Amazon Web Services services. For more
-    /// information about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieve information about the status of the Deliverability dashboard for your account. When the Deliverability dashboard is enabled, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email. You also gain the ability to perform predictive inbox placement tests.</p>
+    /// <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon SES and other Amazon Web Services services. For more information about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeliverabilityDashboardOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3650,10 +3508,10 @@ pub mod fluent_builders {
                 crate::input::GetDeliverabilityDashboardOptionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3665,7 +3523,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeliverabilityTestReport`.
     ///
     /// <p>Retrieve the results of a predictive inbox placement test.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeliverabilityTestReport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3710,10 +3568,10 @@ pub mod fluent_builders {
                 crate::input::GetDeliverabilityTestReportInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3722,8 +3580,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique string that identifies the predictive inbox placement test.</p>
-        pub fn report_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_id(inp);
+        pub fn report_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_id(input.into());
             self
         }
         /// <p>A unique string that identifies the predictive inbox placement test.</p>
@@ -3734,10 +3592,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDomainDeliverabilityCampaign`.
     ///
-    /// <p>Retrieve all the deliverability data for a specific campaign. This data is available
-    /// for a campaign only if the campaign sent email by using a domain that the
-    /// Deliverability dashboard is enabled for.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieve all the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDomainDeliverabilityCampaign<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3782,10 +3638,10 @@ pub mod fluent_builders {
                 crate::input::GetDomainDeliverabilityCampaignInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3793,14 +3649,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier for the campaign. The Deliverability dashboard automatically generates
-        /// and assigns this identifier to a campaign.</p>
-        pub fn campaign_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.campaign_id(inp);
+        /// <p>The unique identifier for the campaign. The Deliverability dashboard automatically generates and assigns this identifier to a campaign.</p>
+        pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.campaign_id(input.into());
             self
         }
-        /// <p>The unique identifier for the campaign. The Deliverability dashboard automatically generates
-        /// and assigns this identifier to a campaign.</p>
+        /// <p>The unique identifier for the campaign. The Deliverability dashboard automatically generates and assigns this identifier to a campaign.</p>
         pub fn set_campaign_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_campaign_id(input);
             self
@@ -3808,9 +3662,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDomainStatisticsReport`.
     ///
-    /// <p>Retrieve inbox placement and engagement rates for the domains that you use to send
-    /// email.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieve inbox placement and engagement rates for the domains that you use to send email.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDomainStatisticsReport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3855,10 +3708,10 @@ pub mod fluent_builders {
                 crate::input::GetDomainStatisticsReportInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3867,8 +3720,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain that you want to obtain deliverability metrics for.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The domain that you want to obtain deliverability metrics for.</p>
@@ -3876,14 +3729,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics
-        /// for.</p>
-        pub fn start_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_date(inp);
+        /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics for.</p>
+        pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_date(input);
             self
         }
-        /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics
-        /// for.</p>
+        /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics for.</p>
         pub fn set_start_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3891,16 +3742,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_date(input);
             self
         }
-        /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for.
-        /// The <code>EndDate</code> that you specify has to be less than or equal to 30 days after
-        /// the <code>StartDate</code>.</p>
-        pub fn end_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_date(inp);
+        /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for. The <code>EndDate</code> that you specify has to be less than or equal to 30 days after the <code>StartDate</code>.</p>
+        pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_date(input);
             self
         }
-        /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for.
-        /// The <code>EndDate</code> that you specify has to be less than or equal to 30 days after
-        /// the <code>StartDate</code>.</p>
+        /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for. The <code>EndDate</code> that you specify has to be less than or equal to 30 days after the <code>StartDate</code>.</p>
         pub fn set_end_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3911,10 +3758,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEmailIdentity`.
     ///
-    /// <p>Provides information about a specific identity, including the identity's verification
-    /// status, sending authorization policies, its DKIM authentication status, and its custom
-    /// Mail-From settings.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Provides information about a specific identity, including the identity's verification status, sending authorization policies, its DKIM authentication status, and its custom Mail-From settings.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEmailIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3959,10 +3804,10 @@ pub mod fluent_builders {
                 crate::input::GetEmailIdentityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3971,8 +3816,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The email identity.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_identity(inp);
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_identity(input.into());
             self
         }
         /// <p>The email identity.</p>
@@ -3986,19 +3831,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEmailIdentityPolicies`.
     ///
-    /// <p>Returns the requested sending authorization policies for the given identity (an email
-    /// address or a domain). The policies are returned as a map of policy names to policy
-    /// contents. You can retrieve a maximum of 20 policies at a time.</p>
-    /// <note>
-    /// <p>This API is for the identity owner only. If you have not verified the identity,
-    /// this API will return an error.</p>
+    /// <p>Returns the requested sending authorization policies for the given identity (an email address or a domain). The policies are returned as a map of policy names to policy contents. You can retrieve a maximum of 20 policies at a time.</p> <note>
+    /// <p>This API is for the identity owner only. If you have not verified the identity, this API will return an error.</p>
     /// </note>
-    /// <p>Sending authorization is a feature that enables an identity owner to authorize other
-    /// senders to use its identities. For information about using sending authorization, see
-    /// the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEmailIdentityPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4043,10 +3881,10 @@ pub mod fluent_builders {
                 crate::input::GetEmailIdentityPoliciesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4055,8 +3893,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The email identity.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_identity(inp);
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_identity(input.into());
             self
         }
         /// <p>The email identity.</p>
@@ -4070,11 +3908,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEmailTemplate`.
     ///
-    /// <p>Displays the template object (which includes the subject line, HTML part and text
-    /// part) for the template you specify.</p>
-    ///
+    /// <p>Displays the template object (which includes the subject line, HTML part and text part) for the template you specify.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4119,10 +3955,10 @@ pub mod fluent_builders {
                 crate::input::GetEmailTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4131,8 +3967,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the template.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the template.</p>
@@ -4147,7 +3983,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetImportJob`.
     ///
     /// <p>Provides information about an import job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4192,10 +4028,10 @@ pub mod fluent_builders {
                 crate::input::GetImportJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4204,8 +4040,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the import job.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The ID of the import job.</p>
@@ -4216,9 +4052,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetSuppressedDestination`.
     ///
-    /// <p>Retrieves information about a specific email address that's on the suppression list
-    /// for your account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves information about a specific email address that's on the suppression list for your account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSuppressedDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4263,10 +4098,10 @@ pub mod fluent_builders {
                 crate::input::GetSuppressedDestinationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4275,8 +4110,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The email address that's on the account suppression list.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(inp);
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(input.into());
             self
         }
         /// <p>The email address that's on the account suppression list.</p>
@@ -4290,14 +4125,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListConfigurationSets`.
     ///
-    /// <p>List all of the configuration sets associated with your account in the current
-    /// region.</p>
-    /// <p>
-    /// <i>Configuration sets</i> are groups of rules that you can apply to the
-    /// emails you send. You apply a configuration set to an email by including a reference to
-    /// the configuration set in the headers of the email. When you apply a configuration set to
-    /// an email, all of the rules in that configuration set are applied to the email.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>List all of the configuration sets associated with your account in the current region.</p>
+    /// <p> <i>Configuration sets</i> are groups of rules that you can apply to the emails you send. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConfigurationSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4342,10 +4172,10 @@ pub mod fluent_builders {
                 crate::input::ListConfigurationSetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4353,30 +4183,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to
-        /// indicate the position in the list of configuration sets.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListConfigurationSetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListConfigurationSetsPaginator<C, M, R> {
+            crate::paginator::ListConfigurationSetsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position in the list of configuration sets.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to
-        /// indicate the position in the list of configuration sets.</p>
+        /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position in the list of configuration sets.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The number of results to show in a single call to <code>ListConfigurationSets</code>.
-        /// If the number of results is larger than the number you specified in this parameter, then
-        /// the response includes a <code>NextToken</code> element, which you can use to obtain
-        /// additional results.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        /// <p>The number of results to show in a single call to <code>ListConfigurationSets</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
-        /// <p>The number of results to show in a single call to <code>ListConfigurationSets</code>.
-        /// If the number of results is larger than the number you specified in this parameter, then
-        /// the response includes a <code>NextToken</code> element, which you can use to obtain
-        /// additional results.</p>
+        /// <p>The number of results to show in a single call to <code>ListConfigurationSets</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_page_size(input);
             self
@@ -4385,7 +4213,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListContactLists`.
     ///
     /// <p>Lists all of the contact lists available.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContactLists<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4430,10 +4258,10 @@ pub mod fluent_builders {
                 crate::input::ListContactListsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4441,36 +4269,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Maximum number of contact lists to return at once. Use this parameter to paginate
-        /// results. If additional contact lists exist beyond the specified limit, the
-        /// <code>NextToken</code> element is sent in the response. Use the
-        /// <code>NextToken</code> value in subsequent requests to retrieve additional
-        /// lists.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListContactListsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListContactListsPaginator<C, M, R> {
+            crate::paginator::ListContactListsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Maximum number of contact lists to return at once. Use this parameter to paginate results. If additional contact lists exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional lists.</p>
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
-        /// <p>Maximum number of contact lists to return at once. Use this parameter to paginate
-        /// results. If additional contact lists exist beyond the specified limit, the
-        /// <code>NextToken</code> element is sent in the response. Use the
-        /// <code>NextToken</code> value in subsequent requests to retrieve additional
-        /// lists.</p>
+        /// <p>Maximum number of contact lists to return at once. Use this parameter to paginate results. If additional contact lists exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional lists.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_page_size(input);
             self
         }
-        /// <p>A string token indicating that there might be additional contact lists available to be
-        /// listed. Use the token provided in the Response to use in the subsequent call to
-        /// ListContactLists with the same parameters to retrieve the next page of contact
-        /// lists.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A string token indicating that there might be additional contact lists available to be listed. Use the token provided in the Response to use in the subsequent call to ListContactLists with the same parameters to retrieve the next page of contact lists.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A string token indicating that there might be additional contact lists available to be
-        /// listed. Use the token provided in the Response to use in the subsequent call to
-        /// ListContactLists with the same parameters to retrieve the next page of contact
-        /// lists.</p>
+        /// <p>A string token indicating that there might be additional contact lists available to be listed. Use the token provided in the Response to use in the subsequent call to ListContactLists with the same parameters to retrieve the next page of contact lists.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4479,7 +4299,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListContacts`.
     ///
     /// <p>Lists the contacts present in a specific contact list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContacts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4524,10 +4344,10 @@ pub mod fluent_builders {
                 crate::input::ListContactsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4535,9 +4355,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListContactsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListContactsPaginator<C, M, R> {
+            crate::paginator::ListContactsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the contact list.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_list_name(inp);
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_list_name(input.into());
             self
         }
         /// <p>The name of the contact list.</p>
@@ -4549,8 +4375,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that can be applied to a list of contacts.</p>
-        pub fn filter(mut self, inp: crate::model::ListContactsFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, input: crate::model::ListContactsFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>A filter that can be applied to a list of contacts.</p>
@@ -4561,36 +4387,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter(input);
             self
         }
-        /// <p>The number of contacts that may be returned at once, which is dependent on if there
-        /// are more or less contacts than the value of the PageSize. Use this parameter to
-        /// paginate results. If additional contacts exist beyond the specified limit, the
-        /// <code>NextToken</code> element is sent in the response. Use the
-        /// <code>NextToken</code> value in subsequent requests to retrieve additional
-        /// contacts.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        /// <p>The number of contacts that may be returned at once, which is dependent on if there are more or less contacts than the value of the PageSize. Use this parameter to paginate results. If additional contacts exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional contacts.</p>
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
-        /// <p>The number of contacts that may be returned at once, which is dependent on if there
-        /// are more or less contacts than the value of the PageSize. Use this parameter to
-        /// paginate results. If additional contacts exist beyond the specified limit, the
-        /// <code>NextToken</code> element is sent in the response. Use the
-        /// <code>NextToken</code> value in subsequent requests to retrieve additional
-        /// contacts.</p>
+        /// <p>The number of contacts that may be returned at once, which is dependent on if there are more or less contacts than the value of the PageSize. Use this parameter to paginate results. If additional contacts exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional contacts.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_page_size(input);
             self
         }
-        /// <p>A string token indicating that there might be additional contacts available to be
-        /// listed. Use the token provided in the Response to use in the subsequent call to
-        /// ListContacts with the same parameters to retrieve the next page of contacts.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A string token indicating that there might be additional contacts available to be listed. Use the token provided in the Response to use in the subsequent call to ListContacts with the same parameters to retrieve the next page of contacts.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A string token indicating that there might be additional contacts available to be
-        /// listed. Use the token provided in the Response to use in the subsequent call to
-        /// ListContacts with the same parameters to retrieve the next page of contacts.</p>
+        /// <p>A string token indicating that there might be additional contacts available to be listed. Use the token provided in the Response to use in the subsequent call to ListContacts with the same parameters to retrieve the next page of contacts.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4598,12 +4410,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListCustomVerificationEmailTemplates`.
     ///
-    /// <p>Lists the existing custom verification email templates for your account in the current
-    /// Amazon Web Services Region.</p>
-    /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer
-    /// Guide</i>.</p>
+    /// <p>Lists the existing custom verification email templates for your account in the current Amazon Web Services Region.</p>
+    /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCustomVerificationEmailTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4650,10 +4460,10 @@ pub mod fluent_builders {
                 crate::input::ListCustomVerificationEmailTemplatesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4661,35 +4471,34 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token returned from a previous call to
-        /// <code>ListCustomVerificationEmailTemplates</code> to indicate the position in the
-        /// list of custom verification email templates.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCustomVerificationEmailTemplatesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListCustomVerificationEmailTemplatesPaginator<C, M, R> {
+            crate::paginator::ListCustomVerificationEmailTemplatesPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p>A token returned from a previous call to <code>ListCustomVerificationEmailTemplates</code> to indicate the position in the list of custom verification email templates.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token returned from a previous call to
-        /// <code>ListCustomVerificationEmailTemplates</code> to indicate the position in the
-        /// list of custom verification email templates.</p>
+        /// <p>A token returned from a previous call to <code>ListCustomVerificationEmailTemplates</code> to indicate the position in the list of custom verification email templates.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The number of results to show in a single call to
-        /// <code>ListCustomVerificationEmailTemplates</code>. If the number of results is
-        /// larger than the number you specified in this parameter, then the response includes a
-        /// <code>NextToken</code> element, which you can use to obtain additional
-        /// results.</p>
+        /// <p>The number of results to show in a single call to <code>ListCustomVerificationEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         /// <p>The value you specify has to be at least 1, and can be no more than 50.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
-        /// <p>The number of results to show in a single call to
-        /// <code>ListCustomVerificationEmailTemplates</code>. If the number of results is
-        /// larger than the number you specified in this parameter, then the response includes a
-        /// <code>NextToken</code> element, which you can use to obtain additional
-        /// results.</p>
+        /// <p>The number of results to show in a single call to <code>ListCustomVerificationEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         /// <p>The value you specify has to be at least 1, and can be no more than 50.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_page_size(input);
@@ -4698,9 +4507,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDedicatedIpPools`.
     ///
-    /// <p>List all of the dedicated IP pools that exist in your Amazon Web Services account in the current
-    /// Region.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>List all of the dedicated IP pools that exist in your Amazon Web Services account in the current Region.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDedicatedIpPools<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4745,10 +4553,10 @@ pub mod fluent_builders {
                 crate::input::ListDedicatedIpPoolsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4756,30 +4564,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate
-        /// the position in the list of dedicated IP pools.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDedicatedIpPoolsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDedicatedIpPoolsPaginator<C, M, R> {
+            crate::paginator::ListDedicatedIpPoolsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate the position in the list of dedicated IP pools.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate
-        /// the position in the list of dedicated IP pools.</p>
+        /// <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate the position in the list of dedicated IP pools.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>.
-        /// If the number of results is larger than the number you specified in this parameter, then
-        /// the response includes a <code>NextToken</code> element, which you can use to obtain
-        /// additional results.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        /// <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
-        /// <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>.
-        /// If the number of results is larger than the number you specified in this parameter, then
-        /// the response includes a <code>NextToken</code> element, which you can use to obtain
-        /// additional results.</p>
+        /// <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_page_size(input);
             self
@@ -4787,10 +4593,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDeliverabilityTestReports`.
     ///
-    /// <p>Show a list of the predictive inbox placement tests that you've performed, regardless of their statuses. For
-    /// predictive inbox placement tests that are complete, you can use the <code>GetDeliverabilityTestReport</code>
-    /// operation to view the results.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Show a list of the predictive inbox placement tests that you've performed, regardless of their statuses. For predictive inbox placement tests that are complete, you can use the <code>GetDeliverabilityTestReport</code> operation to view the results.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeliverabilityTestReports<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4835,10 +4639,10 @@ pub mod fluent_builders {
                 crate::input::ListDeliverabilityTestReportsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4846,33 +4650,31 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to
-        /// indicate the position in the list of predictive inbox placement tests.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDeliverabilityTestReportsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListDeliverabilityTestReportsPaginator<C, M, R> {
+            crate::paginator::ListDeliverabilityTestReportsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to indicate the position in the list of predictive inbox placement tests.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to
-        /// indicate the position in the list of predictive inbox placement tests.</p>
+        /// <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to indicate the position in the list of predictive inbox placement tests.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The number of results to show in a single call to
-        /// <code>ListDeliverabilityTestReports</code>. If the number of results is larger than
-        /// the number you specified in this parameter, then the response includes a
-        /// <code>NextToken</code> element, which you can use to obtain additional
-        /// results.</p>
+        /// <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
-        /// <p>The number of results to show in a single call to
-        /// <code>ListDeliverabilityTestReports</code>. If the number of results is larger than
-        /// the number you specified in this parameter, then the response includes a
-        /// <code>NextToken</code> element, which you can use to obtain additional
-        /// results.</p>
+        /// <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_page_size(input);
@@ -4881,10 +4683,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDomainDeliverabilityCampaigns`.
     ///
-    /// <p>Retrieve deliverability data for all the campaigns that used a specific domain to send
-    /// email during a specified time range. This data is available for a domain only if you
-    /// enabled the Deliverability dashboard for the domain.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieve deliverability data for all the campaigns that used a specific domain to send email during a specified time range. This data is available for a domain only if you enabled the Deliverability dashboard for the domain.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDomainDeliverabilityCampaigns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4929,10 +4729,10 @@ pub mod fluent_builders {
                 crate::input::ListDomainDeliverabilityCampaignsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4940,14 +4740,23 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The first day, in Unix time format, that you want to obtain deliverability data
-        /// for.</p>
-        pub fn start_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_date(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDomainDeliverabilityCampaignsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListDomainDeliverabilityCampaignsPaginator<C, M, R> {
+            crate::paginator::ListDomainDeliverabilityCampaignsPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p>The first day, in Unix time format, that you want to obtain deliverability data for.</p>
+        pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_date(input);
             self
         }
-        /// <p>The first day, in Unix time format, that you want to obtain deliverability data
-        /// for.</p>
+        /// <p>The first day, in Unix time format, that you want to obtain deliverability data for.</p>
         pub fn set_start_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4955,16 +4764,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_date(input);
             self
         }
-        /// <p>The last day, in Unix time format, that you want to obtain deliverability data for.
-        /// This value has to be less than or equal to 30 days after the value of the
-        /// <code>StartDate</code> parameter.</p>
-        pub fn end_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_date(inp);
+        /// <p>The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
+        pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_date(input);
             self
         }
-        /// <p>The last day, in Unix time format, that you want to obtain deliverability data for.
-        /// This value has to be less than or equal to 30 days after the value of the
-        /// <code>StartDate</code> parameter.</p>
+        /// <p>The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
         pub fn set_end_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4973,8 +4778,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The domain to obtain deliverability data for.</p>
-        pub fn subscribed_domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscribed_domain(inp);
+        pub fn subscribed_domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscribed_domain(input.into());
             self
         }
         /// <p>The domain to obtain deliverability data for.</p>
@@ -4985,34 +4790,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_subscribed_domain(input);
             self
         }
-        /// <p>A token that’s returned from a previous call to the
-        /// <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the
-        /// position of a campaign in the list of campaigns.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of a campaign in the list of campaigns.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token that’s returned from a previous call to the
-        /// <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the
-        /// position of a campaign in the list of campaigns.</p>
+        /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of a campaign in the list of campaigns.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to include in response to a single call to the
-        /// <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results
-        /// is larger than the number that you specify in this parameter, the response includes a
-        /// <code>NextToken</code> element, which you can use to obtain additional
-        /// results.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        /// <p>The maximum number of results to include in response to a single call to the <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results is larger than the number that you specify in this parameter, the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
-        /// <p>The maximum number of results to include in response to a single call to the
-        /// <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results
-        /// is larger than the number that you specify in this parameter, the response includes a
-        /// <code>NextToken</code> element, which you can use to obtain additional
-        /// results.</p>
+        /// <p>The maximum number of results to include in response to a single call to the <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results is larger than the number that you specify in this parameter, the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_page_size(input);
             self
@@ -5020,11 +4813,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListEmailIdentities`.
     ///
-    /// <p>Returns a list of all of the email identities that are associated with your Amazon Web Services
-    /// account. An identity can be either an email address or a domain. This operation returns
-    /// identities that are verified as well as those that aren't. This operation returns
-    /// identities that are associated with Amazon SES and Amazon Pinpoint.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of all of the email identities that are associated with your Amazon Web Services account. An identity can be either an email address or a domain. This operation returns identities that are verified as well as those that aren't. This operation returns identities that are associated with Amazon SES and Amazon Pinpoint.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEmailIdentities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5069,10 +4859,10 @@ pub mod fluent_builders {
                 crate::input::ListEmailIdentitiesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5080,31 +4870,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token returned from a previous call to <code>ListEmailIdentities</code> to indicate
-        /// the position in the list of identities.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEmailIdentitiesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListEmailIdentitiesPaginator<C, M, R> {
+            crate::paginator::ListEmailIdentitiesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A token returned from a previous call to <code>ListEmailIdentities</code> to indicate the position in the list of identities.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token returned from a previous call to <code>ListEmailIdentities</code> to indicate
-        /// the position in the list of identities.</p>
+        /// <p>A token returned from a previous call to <code>ListEmailIdentities</code> to indicate the position in the list of identities.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If
-        /// the number of results is larger than the number you specified in this parameter, then
-        /// the response includes a <code>NextToken</code> element, which you can use to obtain
-        /// additional results.</p>
+        /// <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
-        /// <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If
-        /// the number of results is larger than the number you specified in this parameter, then
-        /// the response includes a <code>NextToken</code> element, which you can use to obtain
-        /// additional results.</p>
+        /// <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_page_size(input);
@@ -5113,11 +4901,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListEmailTemplates`.
     ///
-    /// <p>Lists the email templates present in your Amazon SES account in the current Amazon Web Services
-    /// Region.</p>
-    ///
+    /// <p>Lists the email templates present in your Amazon SES account in the current Amazon Web Services Region.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEmailTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5162,10 +4948,10 @@ pub mod fluent_builders {
                 crate::input::ListEmailTemplatesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5173,29 +4959,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token returned from a previous call to <code>ListEmailTemplates</code> to indicate
-        /// the position in the list of email templates.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEmailTemplatesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListEmailTemplatesPaginator<C, M, R> {
+            crate::paginator::ListEmailTemplatesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A token returned from a previous call to <code>ListEmailTemplates</code> to indicate the position in the list of email templates.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token returned from a previous call to <code>ListEmailTemplates</code> to indicate
-        /// the position in the list of email templates.</p>
+        /// <p>A token returned from a previous call to <code>ListEmailTemplates</code> to indicate the position in the list of email templates.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The number of results to show in a single call to <code>ListEmailTemplates</code>. If the number of
-        /// results is larger than the number you specified in this parameter, then the response
-        /// includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+        /// <p>The number of results to show in a single call to <code>ListEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         /// <p>The value you specify has to be at least 1, and can be no more than 10.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
-        /// <p>The number of results to show in a single call to <code>ListEmailTemplates</code>. If the number of
-        /// results is larger than the number you specified in this parameter, then the response
-        /// includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+        /// <p>The number of results to show in a single call to <code>ListEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         /// <p>The value you specify has to be at least 1, and can be no more than 10.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_page_size(input);
@@ -5205,7 +4991,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListImportJobs`.
     ///
     /// <p>Lists all of the import jobs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListImportJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5250,10 +5036,10 @@ pub mod fluent_builders {
                 crate::input::ListImportJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5261,14 +5047,21 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The destination of the import job, which can be used to list import jobs that have a
-        /// certain <code>ImportDestinationType</code>.</p>
-        pub fn import_destination_type(mut self, inp: crate::model::ImportDestinationType) -> Self {
-            self.inner = self.inner.import_destination_type(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListImportJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListImportJobsPaginator<C, M, R> {
+            crate::paginator::ListImportJobsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The destination of the import job, which can be used to list import jobs that have a certain <code>ImportDestinationType</code>.</p>
+        pub fn import_destination_type(
+            mut self,
+            input: crate::model::ImportDestinationType,
+        ) -> Self {
+            self.inner = self.inner.import_destination_type(input);
             self
         }
-        /// <p>The destination of the import job, which can be used to list import jobs that have a
-        /// certain <code>ImportDestinationType</code>.</p>
+        /// <p>The destination of the import job, which can be used to list import jobs that have a certain <code>ImportDestinationType</code>.</p>
         pub fn set_import_destination_type(
             mut self,
             input: std::option::Option<crate::model::ImportDestinationType>,
@@ -5276,34 +5069,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_import_destination_type(input);
             self
         }
-        /// <p>A string token indicating that there might be additional import jobs available to be
-        /// listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the
-        /// same parameters to retrieve the next page of import jobs.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A string token indicating that there might be additional import jobs available to be
-        /// listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the
-        /// same parameters to retrieve the next page of import jobs.</p>
+        /// <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Maximum number of import jobs to return at once. Use this parameter to paginate
-        /// results. If additional import jobs exist beyond the specified limit, the
-        /// <code>NextToken</code> element is sent in the response. Use the
-        /// <code>NextToken</code> value in subsequent requests to retrieve additional
-        /// addresses.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        /// <p>Maximum number of import jobs to return at once. Use this parameter to paginate results. If additional import jobs exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional addresses.</p>
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
-        /// <p>Maximum number of import jobs to return at once. Use this parameter to paginate
-        /// results. If additional import jobs exist beyond the specified limit, the
-        /// <code>NextToken</code> element is sent in the response. Use the
-        /// <code>NextToken</code> value in subsequent requests to retrieve additional
-        /// addresses.</p>
+        /// <p>Maximum number of import jobs to return at once. Use this parameter to paginate results. If additional import jobs exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional addresses.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_page_size(input);
             self
@@ -5311,9 +5092,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSuppressedDestinations`.
     ///
-    /// <p>Retrieves a list of email addresses that are on the suppression list for your
-    /// account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves a list of email addresses that are on the suppression list for your account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSuppressedDestinations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5358,10 +5138,10 @@ pub mod fluent_builders {
                 crate::input::ListSuppressedDestinationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5369,13 +5149,21 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSuppressedDestinationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListSuppressedDestinationsPaginator<C, M, R> {
+            crate::paginator::ListSuppressedDestinationsPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `Reasons`.
         ///
         /// To override the contents of this collection use [`set_reasons`](Self::set_reasons).
         ///
         /// <p>The factors that caused the email address to be added to .</p>
-        pub fn reasons(mut self, inp: impl Into<crate::model::SuppressionListReason>) -> Self {
-            self.inner = self.inner.reasons(inp);
+        pub fn reasons(mut self, input: crate::model::SuppressionListReason) -> Self {
+            self.inner = self.inner.reasons(input);
             self
         }
         /// <p>The factors that caused the email address to be added to .</p>
@@ -5386,16 +5174,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_reasons(input);
             self
         }
-        /// <p>Used to filter the list of suppressed email destinations so that it only includes
-        /// addresses that were added to the list after a specific date. The date that you specify
-        /// should be in Unix time format.</p>
-        pub fn start_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_date(inp);
+        /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list after a specific date. The date that you specify should be in Unix time format.</p>
+        pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_date(input);
             self
         }
-        /// <p>Used to filter the list of suppressed email destinations so that it only includes
-        /// addresses that were added to the list after a specific date. The date that you specify
-        /// should be in Unix time format.</p>
+        /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list after a specific date. The date that you specify should be in Unix time format.</p>
         pub fn set_start_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5403,16 +5187,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_date(input);
             self
         }
-        /// <p>Used to filter the list of suppressed email destinations so that it only includes
-        /// addresses that were added to the list before a specific date. The date that you specify
-        /// should be in Unix time format.</p>
-        pub fn end_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_date(inp);
+        /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list before a specific date. The date that you specify should be in Unix time format.</p>
+        pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_date(input);
             self
         }
-        /// <p>Used to filter the list of suppressed email destinations so that it only includes
-        /// addresses that were added to the list before a specific date. The date that you specify
-        /// should be in Unix time format.</p>
+        /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list before a specific date. The date that you specify should be in Unix time format.</p>
         pub fn set_end_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5420,32 +5200,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_end_date(input);
             self
         }
-        /// <p>A token returned from a previous call to <code>ListSuppressedDestinations</code> to
-        /// indicate the position in the list of suppressed email addresses.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token returned from a previous call to <code>ListSuppressedDestinations</code> to indicate the position in the list of suppressed email addresses.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token returned from a previous call to <code>ListSuppressedDestinations</code> to
-        /// indicate the position in the list of suppressed email addresses.</p>
+        /// <p>A token returned from a previous call to <code>ListSuppressedDestinations</code> to indicate the position in the list of suppressed email addresses.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The number of results to show in a single call to
-        /// <code>ListSuppressedDestinations</code>. If the number of results is larger than the
-        /// number you specified in this parameter, then the response includes a
-        /// <code>NextToken</code> element, which you can use to obtain additional
-        /// results.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        /// <p>The number of results to show in a single call to <code>ListSuppressedDestinations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
-        /// <p>The number of results to show in a single call to
-        /// <code>ListSuppressedDestinations</code>. If the number of results is larger than the
-        /// number you specified in this parameter, then the response includes a
-        /// <code>NextToken</code> element, which you can use to obtain additional
-        /// results.</p>
+        /// <p>The number of results to show in a single call to <code>ListSuppressedDestinations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_page_size(input);
             self
@@ -5453,13 +5223,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Retrieve a list of the tags (keys and values) that are associated with a specified
-    /// resource. A <i>tag</i> is a label that you optionally define and associate
-    /// with a resource. Each tag consists of a required <i>tag key</i> and an
-    /// optional associated <i>tag value</i>. A tag key is a general label that
-    /// acts as a category for more specific tag values. A tag value acts as a descriptor within
-    /// a tag key.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieve a list of the tags (keys and values) that are associated with a specified resource. A&nbsp;<i>tag</i>&nbsp;is a label that you optionally define and associate with a resource. Each tag consists of a required&nbsp;<i>tag key</i>&nbsp;and an optional associated&nbsp;<i>tag value</i>. A tag key is a general label that acts as a category for more specific tag values. A tag value acts as a descriptor within a tag key.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5504,10 +5269,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5515,14 +5280,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag
-        /// information for.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag information for.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag
-        /// information for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag information for.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -5531,7 +5294,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutAccountDedicatedIpWarmupAttributes`.
     ///
     /// <p>Enable or disable the automatic warm-up feature for dedicated IP addresses.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAccountDedicatedIpWarmupAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5578,10 +5341,10 @@ pub mod fluent_builders {
                 crate::input::PutAccountDedicatedIpWarmupAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5589,18 +5352,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are
-        /// associated with your Amazon SES account in the current Amazon Web Services Region. Set to <code>true</code>
-        /// to enable the automatic warm-up feature, or set to <code>false</code> to disable
-        /// it.</p>
-        pub fn auto_warmup_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_warmup_enabled(inp);
+        /// <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon SES account in the current Amazon Web Services Region. Set to <code>true</code> to enable the automatic warm-up feature, or set to <code>false</code> to disable it.</p>
+        pub fn auto_warmup_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_warmup_enabled(input);
             self
         }
-        /// <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are
-        /// associated with your Amazon SES account in the current Amazon Web Services Region. Set to <code>true</code>
-        /// to enable the automatic warm-up feature, or set to <code>false</code> to disable
-        /// it.</p>
+        /// <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon SES account in the current Amazon Web Services Region. Set to <code>true</code> to enable the automatic warm-up feature, or set to <code>false</code> to disable it.</p>
         pub fn set_auto_warmup_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_warmup_enabled(input);
             self
@@ -5609,7 +5366,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutAccountDetails`.
     ///
     /// <p>Update your Amazon SES account details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAccountDetails<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5654,10 +5411,10 @@ pub mod fluent_builders {
                 crate::input::PutAccountDetailsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5666,8 +5423,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The type of email your account will send.</p>
-        pub fn mail_type(mut self, inp: crate::model::MailType) -> Self {
-            self.inner = self.inner.mail_type(inp);
+        pub fn mail_type(mut self, input: crate::model::MailType) -> Self {
+            self.inner = self.inner.mail_type(input);
             self
         }
         /// <p>The type of email your account will send.</p>
@@ -5675,21 +5432,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mail_type(input);
             self
         }
-        /// <p>The URL of your website. This information helps us better understand the type of
-        /// content that you plan to send.</p>
-        pub fn website_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.website_url(inp);
+        /// <p>The URL of your website. This information helps us better understand the type of content that you plan to send.</p>
+        pub fn website_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.website_url(input.into());
             self
         }
-        /// <p>The URL of your website. This information helps us better understand the type of
-        /// content that you plan to send.</p>
+        /// <p>The URL of your website. This information helps us better understand the type of content that you plan to send.</p>
         pub fn set_website_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_website_url(input);
             self
         }
         /// <p>The language you would prefer to be contacted with.</p>
-        pub fn contact_language(mut self, inp: crate::model::ContactLanguage) -> Self {
-            self.inner = self.inner.contact_language(inp);
+        pub fn contact_language(mut self, input: crate::model::ContactLanguage) -> Self {
+            self.inner = self.inner.contact_language(input);
             self
         }
         /// <p>The language you would prefer to be contacted with.</p>
@@ -5701,8 +5456,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the types of email that you plan to send.</p>
-        pub fn use_case_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.use_case_description(inp);
+        pub fn use_case_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.use_case_description(input.into());
             self
         }
         /// <p>A description of the types of email that you plan to send.</p>
@@ -5717,17 +5472,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_additional_contact_email_addresses`](Self::set_additional_contact_email_addresses).
         ///
-        /// <p>Additional email addresses that you would like to be notified regarding Amazon SES
-        /// matters.</p>
+        /// <p>Additional email addresses that you would like to be notified regarding Amazon SES matters.</p>
         pub fn additional_contact_email_addresses(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.additional_contact_email_addresses(inp);
+            self.inner = self.inner.additional_contact_email_addresses(input.into());
             self
         }
-        /// <p>Additional email addresses that you would like to be notified regarding Amazon SES
-        /// matters.</p>
+        /// <p>Additional email addresses that you would like to be notified regarding Amazon SES matters.</p>
         pub fn set_additional_contact_email_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5735,30 +5488,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_additional_contact_email_addresses(input);
             self
         }
-        /// <p>Indicates whether or not your account should have production access in the current
-        /// Amazon Web Services Region.</p>
-        /// <p>If the value is <code>false</code>, then your account is in the
-        /// <i>sandbox</i>. When your account is in the sandbox, you can only send
-        /// email to verified identities. Additionally, the maximum number of emails you can send in
-        /// a 24-hour period (your sending quota) is 200, and the maximum number of emails you can
-        /// send per second (your maximum sending rate) is 1.</p>
-        /// <p>If the value is <code>true</code>, then your account has production access. When your
-        /// account has production access, you can send email to any address. The sending quota and
-        /// maximum sending rate for your account vary based on your specific use case.</p>
-        pub fn production_access_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.production_access_enabled(inp);
+        /// <p>Indicates whether or not your account should have production access in the current Amazon Web Services Region.</p>
+        /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>
+        /// <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
+        pub fn production_access_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.production_access_enabled(input);
             self
         }
-        /// <p>Indicates whether or not your account should have production access in the current
-        /// Amazon Web Services Region.</p>
-        /// <p>If the value is <code>false</code>, then your account is in the
-        /// <i>sandbox</i>. When your account is in the sandbox, you can only send
-        /// email to verified identities. Additionally, the maximum number of emails you can send in
-        /// a 24-hour period (your sending quota) is 200, and the maximum number of emails you can
-        /// send per second (your maximum sending rate) is 1.</p>
-        /// <p>If the value is <code>true</code>, then your account has production access. When your
-        /// account has production access, you can send email to any address. The sending quota and
-        /// maximum sending rate for your account vary based on your specific use case.</p>
+        /// <p>Indicates whether or not your account should have production access in the current Amazon Web Services Region.</p>
+        /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>
+        /// <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
         pub fn set_production_access_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_production_access_enabled(input);
             self
@@ -5767,7 +5506,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutAccountSendingAttributes`.
     ///
     /// <p>Enable or disable the ability of your account to send email.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAccountSendingAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5812,10 +5551,10 @@ pub mod fluent_builders {
                 crate::input::PutAccountSendingAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5823,21 +5562,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to
-        /// enable email sending, or set to <code>false</code> to disable email sending.</p>
-        /// <note>
-        /// <p>If Amazon Web Services paused your account's ability to send email, you can't use this operation
-        /// to resume your account's ability to send email.</p>
+        /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note>
+        /// <p>If Amazon Web Services paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p>
         /// </note>
-        pub fn sending_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.sending_enabled(inp);
+        pub fn sending_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.sending_enabled(input);
             self
         }
-        /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to
-        /// enable email sending, or set to <code>false</code> to disable email sending.</p>
-        /// <note>
-        /// <p>If Amazon Web Services paused your account's ability to send email, you can't use this operation
-        /// to resume your account's ability to send email.</p>
+        /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note>
+        /// <p>If Amazon Web Services paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p>
         /// </note>
         pub fn set_sending_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_sending_enabled(input);
@@ -5847,7 +5580,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutAccountSuppressionAttributes`.
     ///
     /// <p>Change the settings for the account-level suppression list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAccountSuppressionAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5892,10 +5625,10 @@ pub mod fluent_builders {
                 crate::input::PutAccountSuppressionAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5907,46 +5640,19 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_suppressed_reasons`](Self::set_suppressed_reasons).
         ///
-        /// <p>A list that contains the reasons that email addresses will be automatically added to
-        /// the suppression list for your account. This list can contain any or all of the
-        /// following:</p>
+        /// <p>A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression
-        /// list for your account when a message sent to that address results in a
-        /// complaint.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BOUNCE</code> – Amazon SES adds an email address to the suppression
-        /// list for your account when a message sent to that address results in a hard
-        /// bounce.</p>
-        /// </li>
+        /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
+        /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
         /// </ul>
-        pub fn suppressed_reasons(
-            mut self,
-            inp: impl Into<crate::model::SuppressionListReason>,
-        ) -> Self {
-            self.inner = self.inner.suppressed_reasons(inp);
+        pub fn suppressed_reasons(mut self, input: crate::model::SuppressionListReason) -> Self {
+            self.inner = self.inner.suppressed_reasons(input);
             self
         }
-        /// <p>A list that contains the reasons that email addresses will be automatically added to
-        /// the suppression list for your account. This list can contain any or all of the
-        /// following:</p>
+        /// <p>A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression
-        /// list for your account when a message sent to that address results in a
-        /// complaint.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BOUNCE</code> – Amazon SES adds an email address to the suppression
-        /// list for your account when a message sent to that address results in a hard
-        /// bounce.</p>
-        /// </li>
+        /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
+        /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
         /// </ul>
         pub fn set_suppressed_reasons(
             mut self,
@@ -5958,9 +5664,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutConfigurationSetDeliveryOptions`.
     ///
-    /// <p>Associate a configuration set with a dedicated IP pool. You can use dedicated IP pools
-    /// to create groups of dedicated IP addresses for sending specific types of email.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Associate a configuration set with a dedicated IP pool. You can use dedicated IP pools to create groups of dedicated IP addresses for sending specific types of email.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConfigurationSetDeliveryOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6007,10 +5712,10 @@ pub mod fluent_builders {
                 crate::input::PutConfigurationSetDeliveryOptionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6019,8 +5724,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the configuration set to associate with a dedicated IP pool.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input.into());
             self
         }
         /// <p>The name of the configuration set to associate with a dedicated IP pool.</p>
@@ -6031,18 +5736,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration_set_name(input);
             self
         }
-        /// <p>Specifies whether messages that use the configuration set are required to use
-        /// Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only
-        /// delivered if a TLS connection can be established. If the value is <code>Optional</code>,
-        /// messages can be delivered in plain text if a TLS connection can't be established.</p>
-        pub fn tls_policy(mut self, inp: crate::model::TlsPolicy) -> Self {
-            self.inner = self.inner.tls_policy(inp);
+        /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
+        pub fn tls_policy(mut self, input: crate::model::TlsPolicy) -> Self {
+            self.inner = self.inner.tls_policy(input);
             self
         }
-        /// <p>Specifies whether messages that use the configuration set are required to use
-        /// Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only
-        /// delivered if a TLS connection can be established. If the value is <code>Optional</code>,
-        /// messages can be delivered in plain text if a TLS connection can't be established.</p>
+        /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
         pub fn set_tls_policy(
             mut self,
             input: std::option::Option<crate::model::TlsPolicy>,
@@ -6051,8 +5750,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the dedicated IP pool to associate with the configuration set.</p>
-        pub fn sending_pool_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sending_pool_name(inp);
+        pub fn sending_pool_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sending_pool_name(input.into());
             self
         }
         /// <p>The name of the dedicated IP pool to associate with the configuration set.</p>
@@ -6066,9 +5765,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutConfigurationSetReputationOptions`.
     ///
-    /// <p>Enable or disable collection of reputation metrics for emails that you send using a
-    /// particular configuration set in a specific Amazon Web Services Region.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Enable or disable collection of reputation metrics for emails that you send using a particular configuration set in a specific Amazon Web Services Region.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConfigurationSetReputationOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6115,10 +5813,10 @@ pub mod fluent_builders {
                 crate::input::PutConfigurationSetReputationOptionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6127,8 +5825,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the configuration set.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input.into());
             self
         }
         /// <p>The name of the configuration set.</p>
@@ -6139,16 +5837,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration_set_name(input);
             self
         }
-        /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration
-        /// set. If <code>false</code>, tracking of reputation metrics is disabled for the
-        /// configuration set.</p>
-        pub fn reputation_metrics_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.reputation_metrics_enabled(inp);
+        /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
+        pub fn reputation_metrics_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.reputation_metrics_enabled(input);
             self
         }
-        /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration
-        /// set. If <code>false</code>, tracking of reputation metrics is disabled for the
-        /// configuration set.</p>
+        /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
         pub fn set_reputation_metrics_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_reputation_metrics_enabled(input);
             self
@@ -6156,9 +5850,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutConfigurationSetSendingOptions`.
     ///
-    /// <p>Enable or disable email sending for messages that use a particular configuration set
-    /// in a specific Amazon Web Services Region.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Enable or disable email sending for messages that use a particular configuration set in a specific Amazon Web Services Region.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConfigurationSetSendingOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6203,10 +5896,10 @@ pub mod fluent_builders {
                 crate::input::PutConfigurationSetSendingOptionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6215,8 +5908,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the configuration set to enable or disable email sending for.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input.into());
             self
         }
         /// <p>The name of the configuration set to enable or disable email sending for.</p>
@@ -6227,14 +5920,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration_set_name(input);
             self
         }
-        /// <p>If <code>true</code>, email sending is enabled for the configuration set. If
-        /// <code>false</code>, email sending is disabled for the configuration set.</p>
-        pub fn sending_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.sending_enabled(inp);
+        /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
+        pub fn sending_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.sending_enabled(input);
             self
         }
-        /// <p>If <code>true</code>, email sending is enabled for the configuration set. If
-        /// <code>false</code>, email sending is disabled for the configuration set.</p>
+        /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
         pub fn set_sending_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_sending_enabled(input);
             self
@@ -6243,7 +5934,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutConfigurationSetSuppressionOptions`.
     ///
     /// <p>Specify the account suppression list preferences for a configuration set.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConfigurationSetSuppressionOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6290,10 +5981,10 @@ pub mod fluent_builders {
                 crate::input::PutConfigurationSetSuppressionOptionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6301,14 +5992,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the configuration set to change the suppression list preferences
-        /// for.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        /// <p>The name of the configuration set to change the suppression list preferences for.</p>
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input.into());
             self
         }
-        /// <p>The name of the configuration set to change the suppression list preferences
-        /// for.</p>
+        /// <p>The name of the configuration set to change the suppression list preferences for.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6320,46 +6009,19 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_suppressed_reasons`](Self::set_suppressed_reasons).
         ///
-        /// <p>A list that contains the reasons that email addresses are automatically added to the
-        /// suppression list for your account. This list can contain any or all of the
-        /// following:</p>
+        /// <p>A list that contains the reasons that email addresses are automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression
-        /// list for your account when a message sent to that address results in a
-        /// complaint.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BOUNCE</code> – Amazon SES adds an email address to the suppression
-        /// list for your account when a message sent to that address results in a hard
-        /// bounce.</p>
-        /// </li>
+        /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
+        /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
         /// </ul>
-        pub fn suppressed_reasons(
-            mut self,
-            inp: impl Into<crate::model::SuppressionListReason>,
-        ) -> Self {
-            self.inner = self.inner.suppressed_reasons(inp);
+        pub fn suppressed_reasons(mut self, input: crate::model::SuppressionListReason) -> Self {
+            self.inner = self.inner.suppressed_reasons(input);
             self
         }
-        /// <p>A list that contains the reasons that email addresses are automatically added to the
-        /// suppression list for your account. This list can contain any or all of the
-        /// following:</p>
+        /// <p>A list that contains the reasons that email addresses are automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression
-        /// list for your account when a message sent to that address results in a
-        /// complaint.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BOUNCE</code> – Amazon SES adds an email address to the suppression
-        /// list for your account when a message sent to that address results in a hard
-        /// bounce.</p>
-        /// </li>
+        /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
+        /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
         /// </ul>
         pub fn set_suppressed_reasons(
             mut self,
@@ -6371,9 +6033,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutConfigurationSetTrackingOptions`.
     ///
-    /// <p>Specify a custom domain to use for open and click tracking elements in email that you
-    /// send.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Specify a custom domain to use for open and click tracking elements in email that you send.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConfigurationSetTrackingOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6420,10 +6081,10 @@ pub mod fluent_builders {
                 crate::input::PutConfigurationSetTrackingOptionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6432,8 +6093,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the configuration set.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input.into());
             self
         }
         /// <p>The name of the configuration set.</p>
@@ -6445,8 +6106,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The domain to use to track open and click events.</p>
-        pub fn custom_redirect_domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_redirect_domain(inp);
+        pub fn custom_redirect_domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_redirect_domain(input.into());
             self
         }
         /// <p>The domain to use to track open and click events.</p>
@@ -6460,17 +6121,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutDedicatedIpInPool`.
     ///
-    /// <p>Move a dedicated IP address to an existing dedicated IP pool.</p>
-    /// <note>
-    /// <p>The dedicated IP address that you specify must already exist, and must be
-    /// associated with your Amazon Web Services account.
-    ///
-    /// </p>
-    /// <p>The dedicated IP pool you specify must already exist. You can create a new pool by
-    /// using the <code>CreateDedicatedIpPool</code> operation.</p>
-    ///
+    /// <p>Move a dedicated IP address to an existing dedicated IP pool.</p> <note>
+    /// <p>The dedicated IP address that you specify must already exist, and must be associated with your Amazon Web Services account. </p>
+    /// <p>The dedicated IP pool you specify must already exist. You can create a new pool by using the <code>CreateDedicatedIpPool</code> operation.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDedicatedIpInPool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6515,10 +6170,10 @@ pub mod fluent_builders {
                 crate::input::PutDedicatedIpInPoolInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6526,26 +6181,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify
-        /// has to be a dedicated IP address that's associated with your Amazon Web Services account.</p>
-        pub fn ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ip(inp);
+        /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Web Services account.</p>
+        pub fn ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ip(input.into());
             self
         }
-        /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify
-        /// has to be a dedicated IP address that's associated with your Amazon Web Services account.</p>
+        /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Web Services account.</p>
         pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_ip(input);
             self
         }
-        /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to
-        /// specify an IP pool that already exists.</p>
-        pub fn destination_pool_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_pool_name(inp);
+        /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
+        pub fn destination_pool_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_pool_name(input.into());
             self
         }
-        /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to
-        /// specify an IP pool that already exists.</p>
+        /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
         pub fn set_destination_pool_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6557,7 +6208,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutDedicatedIpWarmupAttributes`.
     ///
     /// <p></p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDedicatedIpWarmupAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6602,10 +6253,10 @@ pub mod fluent_builders {
                 crate::input::PutDedicatedIpWarmupAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6614,8 +6265,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The dedicated IP address that you want to update the warm-up attributes for.</p>
-        pub fn ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ip(inp);
+        pub fn ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ip(input.into());
             self
         }
         /// <p>The dedicated IP address that you want to update the warm-up attributes for.</p>
@@ -6623,14 +6274,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ip(input);
             self
         }
-        /// <p>The warm-up percentage that you want to associate with the dedicated IP
-        /// address.</p>
-        pub fn warmup_percentage(mut self, inp: i32) -> Self {
-            self.inner = self.inner.warmup_percentage(inp);
+        /// <p>The warm-up percentage that you want to associate with the dedicated IP address.</p>
+        pub fn warmup_percentage(mut self, input: i32) -> Self {
+            self.inner = self.inner.warmup_percentage(input);
             self
         }
-        /// <p>The warm-up percentage that you want to associate with the dedicated IP
-        /// address.</p>
+        /// <p>The warm-up percentage that you want to associate with the dedicated IP address.</p>
         pub fn set_warmup_percentage(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_warmup_percentage(input);
             self
@@ -6638,14 +6287,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutDeliverabilityDashboardOption`.
     ///
-    /// <p>Enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard, you gain
-    /// access to reputation, deliverability, and other metrics for the domains that you use to
-    /// send email. You also gain the ability to perform predictive inbox placement tests.</p>
-    ///
-    /// <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition
-    /// to any other fees that you accrue by using Amazon SES and other Amazon Web Services services. For more
-    /// information about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email. You also gain the ability to perform predictive inbox placement tests.</p>
+    /// <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon SES and other Amazon Web Services services. For more information about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDeliverabilityDashboardOption<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6690,10 +6334,10 @@ pub mod fluent_builders {
                 crate::input::PutDeliverabilityDashboardOptionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6701,14 +6345,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this
-        /// value to <code>true</code>.</p>
-        pub fn dashboard_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dashboard_enabled(inp);
+        /// <p>Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this value to <code>true</code>.</p>
+        pub fn dashboard_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.dashboard_enabled(input);
             self
         }
-        /// <p>Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this
-        /// value to <code>true</code>.</p>
+        /// <p>Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this value to <code>true</code>.</p>
         pub fn set_dashboard_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dashboard_enabled(input);
             self
@@ -6717,17 +6359,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_subscribed_domains`](Self::set_subscribed_domains).
         ///
-        /// <p>An array of objects, one for each verified domain that you use to send email and
-        /// enabled the Deliverability dashboard for.</p>
+        /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
         pub fn subscribed_domains(
             mut self,
-            inp: impl Into<crate::model::DomainDeliverabilityTrackingOption>,
+            input: crate::model::DomainDeliverabilityTrackingOption,
         ) -> Self {
-            self.inner = self.inner.subscribed_domains(inp);
+            self.inner = self.inner.subscribed_domains(input);
             self
         }
-        /// <p>An array of objects, one for each verified domain that you use to send email and
-        /// enabled the Deliverability dashboard for.</p>
+        /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
         pub fn set_subscribed_domains(
             mut self,
             input: std::option::Option<
@@ -6741,7 +6381,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutEmailIdentityConfigurationSetAttributes`.
     ///
     /// <p>Used to associate a configuration set with an email identity.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEmailIdentityConfigurationSetAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6788,10 +6428,10 @@ pub mod fluent_builders {
                 crate::input::PutEmailIdentityConfigurationSetAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6800,8 +6440,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The email address or domain to associate with a configuration set.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_identity(inp);
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_identity(input.into());
             self
         }
         /// <p>The email address or domain to associate with a configuration set.</p>
@@ -6813,8 +6453,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration set to associate with an email identity.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input.into());
             self
         }
         /// <p>The configuration set to associate with an email identity.</p>
@@ -6829,7 +6469,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutEmailIdentityDkimAttributes`.
     ///
     /// <p>Used to enable or disable DKIM authentication for an email identity.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEmailIdentityDkimAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6874,10 +6514,10 @@ pub mod fluent_builders {
                 crate::input::PutEmailIdentityDkimAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6886,8 +6526,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The email identity.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_identity(inp);
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_identity(input.into());
             self
         }
         /// <p>The email identity.</p>
@@ -6899,17 +6539,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>Sets the DKIM signing configuration for the identity.</p>
-        /// <p>When you set this value <code>true</code>, then the messages that are sent from the
-        /// identity are signed using DKIM. If you set this value to <code>false</code>, your
-        /// messages are sent without DKIM signing.</p>
-        pub fn signing_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.signing_enabled(inp);
+        /// <p>When you set this value <code>true</code>, then the messages that are sent from the identity are signed using DKIM. If you set this value to <code>false</code>, your messages are sent without DKIM signing.</p>
+        pub fn signing_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.signing_enabled(input);
             self
         }
         /// <p>Sets the DKIM signing configuration for the identity.</p>
-        /// <p>When you set this value <code>true</code>, then the messages that are sent from the
-        /// identity are signed using DKIM. If you set this value to <code>false</code>, your
-        /// messages are sent without DKIM signing.</p>
+        /// <p>When you set this value <code>true</code>, then the messages that are sent from the identity are signed using DKIM. If you set this value to <code>false</code>, your messages are sent without DKIM signing.</p>
         pub fn set_signing_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_signing_enabled(input);
             self
@@ -6917,30 +6553,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutEmailIdentityDkimSigningAttributes`.
     ///
-    /// <p>Used to configure or change the DKIM authentication settings for an email domain
-    /// identity. You can use this operation to do any of the following:</p>
+    /// <p>Used to configure or change the DKIM authentication settings for an email domain identity. You can use this operation to do any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Update the signing attributes for an identity that uses Bring Your Own DKIM
-    /// (BYODKIM).</p>
-    /// </li>
-    /// <li>
-    /// <p>Update the key length that should be used for Easy DKIM.</p>
-    /// </li>
-    /// <li>
-    /// <p>Change from using no DKIM authentication to using Easy DKIM.</p>
-    /// </li>
-    /// <li>
-    /// <p>Change from using no DKIM authentication to using BYODKIM.</p>
-    /// </li>
-    /// <li>
-    /// <p>Change from using Easy DKIM to using BYODKIM.</p>
-    /// </li>
-    /// <li>
-    /// <p>Change from using BYODKIM to using Easy DKIM.</p>
-    /// </li>
+    /// <li> <p>Update the signing attributes for an identity that uses Bring Your Own DKIM (BYODKIM).</p> </li>
+    /// <li> <p>Update the key length that should be used for Easy DKIM.</p> </li>
+    /// <li> <p>Change from using no DKIM authentication to using Easy DKIM.</p> </li>
+    /// <li> <p>Change from using no DKIM authentication to using BYODKIM.</p> </li>
+    /// <li> <p>Change from using Easy DKIM to using BYODKIM.</p> </li>
+    /// <li> <p>Change from using BYODKIM to using Easy DKIM.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEmailIdentityDkimSigningAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6987,10 +6609,10 @@ pub mod fluent_builders {
                 crate::input::PutEmailIdentityDkimSigningAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6999,8 +6621,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The email identity.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_identity(inp);
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_identity(input.into());
             self
         }
         /// <p>The email identity.</p>
@@ -7011,40 +6633,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_email_identity(input);
             self
         }
-        /// <p>The method to use to configure DKIM for the identity. There are the following possible
-        /// values:</p>
+        /// <p>The method to use to configure DKIM for the identity. There are the following possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS_SES</code> – Configure DKIM for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
-        /// DKIM</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EXTERNAL</code> – Configure DKIM for the identity by using Bring
-        /// Your Own DKIM (BYODKIM).</p>
-        /// </li>
+        /// <li> <p> <code>AWS_SES</code> – Configure DKIM for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p> </li>
+        /// <li> <p> <code>EXTERNAL</code> – Configure DKIM for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
         /// </ul>
         pub fn signing_attributes_origin(
             mut self,
-            inp: crate::model::DkimSigningAttributesOrigin,
+            input: crate::model::DkimSigningAttributesOrigin,
         ) -> Self {
-            self.inner = self.inner.signing_attributes_origin(inp);
+            self.inner = self.inner.signing_attributes_origin(input);
             self
         }
-        /// <p>The method to use to configure DKIM for the identity. There are the following possible
-        /// values:</p>
+        /// <p>The method to use to configure DKIM for the identity. There are the following possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS_SES</code> – Configure DKIM for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
-        /// DKIM</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EXTERNAL</code> – Configure DKIM for the identity by using Bring
-        /// Your Own DKIM (BYODKIM).</p>
-        /// </li>
+        /// <li> <p> <code>AWS_SES</code> – Configure DKIM for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p> </li>
+        /// <li> <p> <code>EXTERNAL</code> – Configure DKIM for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
         /// </ul>
         pub fn set_signing_attributes_origin(
             mut self,
@@ -7053,18 +6657,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_signing_attributes_origin(input);
             self
         }
-        /// <p>An object that contains information about the private key and selector that you want
-        /// to use to configure DKIM for the identity for Bring Your Own DKIM (BYODKIM) for the identity, or,
-        /// configures the key length to be used for
-        /// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
-        pub fn signing_attributes(mut self, inp: crate::model::DkimSigningAttributes) -> Self {
-            self.inner = self.inner.signing_attributes(inp);
+        /// <p>An object that contains information about the private key and selector that you want to use to configure DKIM for the identity for Bring Your Own DKIM (BYODKIM) for the identity, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
+        pub fn signing_attributes(mut self, input: crate::model::DkimSigningAttributes) -> Self {
+            self.inner = self.inner.signing_attributes(input);
             self
         }
-        /// <p>An object that contains information about the private key and selector that you want
-        /// to use to configure DKIM for the identity for Bring Your Own DKIM (BYODKIM) for the identity, or,
-        /// configures the key length to be used for
-        /// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
+        /// <p>An object that contains information about the private key and selector that you want to use to configure DKIM for the identity for Bring Your Own DKIM (BYODKIM) for the identity, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
         pub fn set_signing_attributes(
             mut self,
             input: std::option::Option<crate::model::DkimSigningAttributes>,
@@ -7075,17 +6673,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutEmailIdentityFeedbackAttributes`.
     ///
-    /// <p>Used to enable or disable feedback forwarding for an identity. This setting determines
-    /// what happens when an identity is used to send an email that results in a bounce or
-    /// complaint event.</p>
-    /// <p>If the value is <code>true</code>, you receive email notifications when bounce or
-    /// complaint events occur. These notifications are sent to the address that you specified
-    /// in the <code>Return-Path</code> header of the original email.</p>
-    /// <p>You're required to have a method of tracking bounces and complaints. If you haven't
-    /// set up another mechanism for receiving bounce or complaint notifications (for example,
-    /// by setting up an event destination), you receive an email notification when these events
-    /// occur (even if this setting is disabled).</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Used to enable or disable feedback forwarding for an identity. This setting determines what happens when an identity is used to send an email that results in a bounce or complaint event.</p>
+    /// <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p>
+    /// <p>You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEmailIdentityFeedbackAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7132,10 +6723,10 @@ pub mod fluent_builders {
                 crate::input::PutEmailIdentityFeedbackAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7144,8 +6735,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The email identity.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_identity(inp);
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_identity(input.into());
             self
         }
         /// <p>The email identity.</p>
@@ -7157,25 +6748,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>Sets the feedback forwarding configuration for the identity.</p>
-        /// <p>If the value is <code>true</code>, you receive email notifications when bounce or
-        /// complaint events occur. These notifications are sent to the address that you specified
-        /// in the <code>Return-Path</code> header of the original email.</p>
-        /// <p>You're required to have a method of tracking bounces and complaints. If you haven't
-        /// set up another mechanism for receiving bounce or complaint notifications (for example,
-        /// by setting up an event destination), you receive an email notification when these events
-        /// occur (even if this setting is disabled).</p>
-        pub fn email_forwarding_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.email_forwarding_enabled(inp);
+        /// <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p>
+        /// <p>You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).</p>
+        pub fn email_forwarding_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.email_forwarding_enabled(input);
             self
         }
         /// <p>Sets the feedback forwarding configuration for the identity.</p>
-        /// <p>If the value is <code>true</code>, you receive email notifications when bounce or
-        /// complaint events occur. These notifications are sent to the address that you specified
-        /// in the <code>Return-Path</code> header of the original email.</p>
-        /// <p>You're required to have a method of tracking bounces and complaints. If you haven't
-        /// set up another mechanism for receiving bounce or complaint notifications (for example,
-        /// by setting up an event destination), you receive an email notification when these events
-        /// occur (even if this setting is disabled).</p>
+        /// <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p>
+        /// <p>You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).</p>
         pub fn set_email_forwarding_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_email_forwarding_enabled(input);
             self
@@ -7183,9 +6764,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutEmailIdentityMailFromAttributes`.
     ///
-    /// <p>Used to enable or disable the custom Mail-From domain configuration for an email
-    /// identity.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Used to enable or disable the custom Mail-From domain configuration for an email identity.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEmailIdentityMailFromAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7232,10 +6812,10 @@ pub mod fluent_builders {
                 crate::input::PutEmailIdentityMailFromAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7244,8 +6824,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The verified email identity.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_identity(inp);
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_identity(input.into());
             self
         }
         /// <p>The verified email identity.</p>
@@ -7256,37 +6836,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_email_identity(input);
             self
         }
-        /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM
-        /// domain must meet the following criteria:</p>
+        /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:</p>
         /// <ul>
-        /// <li>
-        /// <p>It has to be a subdomain of the verified identity.</p>
-        /// </li>
-        /// <li>
-        /// <p>It can't be used to receive email.</p>
-        /// </li>
-        /// <li>
-        /// <p>It can't be used in a "From" address if the MAIL FROM domain is a destination
-        /// for feedback forwarding emails.</p>
-        /// </li>
+        /// <li> <p>It has to be a subdomain of the verified identity.</p> </li>
+        /// <li> <p>It can't be used to receive email.</p> </li>
+        /// <li> <p>It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.</p> </li>
         /// </ul>
-        pub fn mail_from_domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mail_from_domain(inp);
+        pub fn mail_from_domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mail_from_domain(input.into());
             self
         }
-        /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM
-        /// domain must meet the following criteria:</p>
+        /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:</p>
         /// <ul>
-        /// <li>
-        /// <p>It has to be a subdomain of the verified identity.</p>
-        /// </li>
-        /// <li>
-        /// <p>It can't be used to receive email.</p>
-        /// </li>
-        /// <li>
-        /// <p>It can't be used in a "From" address if the MAIL FROM domain is a destination
-        /// for feedback forwarding emails.</p>
-        /// </li>
+        /// <li> <p>It has to be a subdomain of the verified identity.</p> </li>
+        /// <li> <p>It can't be used to receive email.</p> </li>
+        /// <li> <p>It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.</p> </li>
         /// </ul>
         pub fn set_mail_from_domain(
             mut self,
@@ -7295,28 +6859,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mail_from_domain(input);
             self
         }
-        /// <p>The action to take if the required MX record isn't found when you send an email. When
-        /// you set this value to <code>UseDefaultValue</code>, the mail is sent using
-        /// <i>amazonses.com</i> as the MAIL FROM domain. When you set this value
-        /// to <code>RejectMessage</code>, the Amazon SES API v2 returns a
-        /// <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the
-        /// email.</p>
-        /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the
-        /// <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code>
-        /// states.</p>
-        pub fn behavior_on_mx_failure(mut self, inp: crate::model::BehaviorOnMxFailure) -> Self {
-            self.inner = self.inner.behavior_on_mx_failure(inp);
+        /// <p>The action to take if the required MX record isn't found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
+        /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
+        pub fn behavior_on_mx_failure(mut self, input: crate::model::BehaviorOnMxFailure) -> Self {
+            self.inner = self.inner.behavior_on_mx_failure(input);
             self
         }
-        /// <p>The action to take if the required MX record isn't found when you send an email. When
-        /// you set this value to <code>UseDefaultValue</code>, the mail is sent using
-        /// <i>amazonses.com</i> as the MAIL FROM domain. When you set this value
-        /// to <code>RejectMessage</code>, the Amazon SES API v2 returns a
-        /// <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the
-        /// email.</p>
-        /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the
-        /// <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code>
-        /// states.</p>
+        /// <p>The action to take if the required MX record isn't found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
+        /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
         pub fn set_behavior_on_mx_failure(
             mut self,
             input: std::option::Option<crate::model::BehaviorOnMxFailure>,
@@ -7328,7 +6878,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutSuppressedDestination`.
     ///
     /// <p>Adds an email address to the suppression list for your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutSuppressedDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7373,10 +6923,10 @@ pub mod fluent_builders {
                 crate::input::PutSuppressedDestinationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7384,14 +6934,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The email address that should be added to the suppression list for your
-        /// account.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(inp);
+        /// <p>The email address that should be added to the suppression list for your account.</p>
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(input.into());
             self
         }
-        /// <p>The email address that should be added to the suppression list for your
-        /// account.</p>
+        /// <p>The email address that should be added to the suppression list for your account.</p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7399,14 +6947,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_email_address(input);
             self
         }
-        /// <p>The factors that should cause the email address to be added to the suppression list
-        /// for your account.</p>
-        pub fn reason(mut self, inp: crate::model::SuppressionListReason) -> Self {
-            self.inner = self.inner.reason(inp);
+        /// <p>The factors that should cause the email address to be added to the suppression list for your account.</p>
+        pub fn reason(mut self, input: crate::model::SuppressionListReason) -> Self {
+            self.inner = self.inner.reason(input);
             self
         }
-        /// <p>The factors that should cause the email address to be added to the suppression list
-        /// for your account.</p>
+        /// <p>The factors that should cause the email address to be added to the suppression list for your account.</p>
         pub fn set_reason(
             mut self,
             input: std::option::Option<crate::model::SuppressionListReason>,
@@ -7418,7 +6964,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SendBulkEmail`.
     ///
     /// <p>Composes an email message to multiple destinations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendBulkEmail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7463,10 +7009,10 @@ pub mod fluent_builders {
                 crate::input::SendBulkEmailInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7474,14 +7020,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The email address to use as the "From" address for the email. The
-        /// address that you specify has to be verified.</p>
-        pub fn from_email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.from_email_address(inp);
+        /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified.</p>
+        pub fn from_email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.from_email_address(input.into());
             self
         }
-        /// <p>The email address to use as the "From" address for the email. The
-        /// address that you specify has to be verified.</p>
+        /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified.</p>
         pub fn set_from_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7489,35 +7033,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_from_email_address(input);
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to use the
-        /// email address specified in the <code>FromEmailAddress</code> parameter.</p>
-        /// <p>For example, if the owner of example.com (which has ARN
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that
-        /// authorizes you to use sender@example.com, then you would specify the
-        /// <code>FromEmailAddressIdentityArn</code> to be
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-        /// <code>FromEmailAddress</code> to be sender@example.com.</p>
-        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FromEmailAddress</code> parameter.</p>
+        /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@example.com, then you would specify the <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FromEmailAddress</code> to be sender@example.com.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
         pub fn from_email_address_identity_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.from_email_address_identity_arn(inp);
+            self.inner = self.inner.from_email_address_identity_arn(input.into());
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to use the
-        /// email address specified in the <code>FromEmailAddress</code> parameter.</p>
-        /// <p>For example, if the owner of example.com (which has ARN
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that
-        /// authorizes you to use sender@example.com, then you would specify the
-        /// <code>FromEmailAddressIdentityArn</code> to be
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-        /// <code>FromEmailAddress</code> to be sender@example.com.</p>
-        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FromEmailAddress</code> parameter.</p>
+        /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@example.com, then you would specify the <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FromEmailAddress</code> to be sender@example.com.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
         pub fn set_from_email_address_identity_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7529,14 +7057,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_reply_to_addresses`](Self::set_reply_to_addresses).
         ///
-        /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the
-        /// message, each Reply-to address receives the reply.</p>
-        pub fn reply_to_addresses(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reply_to_addresses(inp);
+        /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
+        pub fn reply_to_addresses(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reply_to_addresses(input.into());
             self
         }
-        /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the
-        /// message, each Reply-to address receives the reply.</p>
+        /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
         pub fn set_reply_to_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7547,9 +7073,9 @@ pub mod fluent_builders {
         /// <p>The address that you want bounce and complaint notifications to be sent to.</p>
         pub fn feedback_forwarding_email_address(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.feedback_forwarding_email_address(inp);
+            self.inner = self.inner.feedback_forwarding_email_address(input.into());
             self
         }
         /// <p>The address that you want bounce and complaint notifications to be sent to.</p>
@@ -7560,39 +7086,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_feedback_forwarding_email_address(input);
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to use the
-        /// email address specified in the <code>FeedbackForwardingEmailAddress</code>
-        /// parameter.</p>
-        /// <p>For example, if the owner of example.com (which has ARN
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that
-        /// authorizes you to use feedback@example.com, then you would specify the
-        /// <code>FeedbackForwardingEmailAddressIdentityArn</code> to be
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-        /// <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
-        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FeedbackForwardingEmailAddress</code> parameter.</p>
+        /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
         pub fn feedback_forwarding_email_address_identity_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .feedback_forwarding_email_address_identity_arn(inp);
+                .feedback_forwarding_email_address_identity_arn(input.into());
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to use the
-        /// email address specified in the <code>FeedbackForwardingEmailAddress</code>
-        /// parameter.</p>
-        /// <p>For example, if the owner of example.com (which has ARN
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that
-        /// authorizes you to use feedback@example.com, then you would specify the
-        /// <code>FeedbackForwardingEmailAddressIdentityArn</code> to be
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-        /// <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
-        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FeedbackForwardingEmailAddress</code> parameter.</p>
+        /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
         pub fn set_feedback_forwarding_email_address_identity_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7606,16 +7114,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_default_email_tags`](Self::set_default_email_tags).
         ///
-        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
-        /// using the <code>SendEmail</code> operation. Tags correspond to characteristics of the
-        /// email that you define, so that you can publish email sending events.</p>
-        pub fn default_email_tags(mut self, inp: impl Into<crate::model::MessageTag>) -> Self {
-            self.inner = self.inner.default_email_tags(inp);
+        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
+        pub fn default_email_tags(mut self, input: crate::model::MessageTag) -> Self {
+            self.inner = self.inner.default_email_tags(input);
             self
         }
-        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
-        /// using the <code>SendEmail</code> operation. Tags correspond to characteristics of the
-        /// email that you define, so that you can publish email sending events.</p>
+        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
         pub fn set_default_email_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
@@ -7623,14 +7127,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_email_tags(input);
             self
         }
-        /// <p>An object that contains the body of the message. You can specify a template
-        /// message.</p>
-        pub fn default_content(mut self, inp: crate::model::BulkEmailContent) -> Self {
-            self.inner = self.inner.default_content(inp);
+        /// <p>An object that contains the body of the message. You can specify a template message.</p>
+        pub fn default_content(mut self, input: crate::model::BulkEmailContent) -> Self {
+            self.inner = self.inner.default_content(input);
             self
         }
-        /// <p>An object that contains the body of the message. You can specify a template
-        /// message.</p>
+        /// <p>An object that contains the body of the message. You can specify a template message.</p>
         pub fn set_default_content(
             mut self,
             input: std::option::Option<crate::model::BulkEmailContent>,
@@ -7643,8 +7145,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_bulk_email_entries`](Self::set_bulk_email_entries).
         ///
         /// <p>The list of bulk email entry objects.</p>
-        pub fn bulk_email_entries(mut self, inp: impl Into<crate::model::BulkEmailEntry>) -> Self {
-            self.inner = self.inner.bulk_email_entries(inp);
+        pub fn bulk_email_entries(mut self, input: crate::model::BulkEmailEntry) -> Self {
+            self.inner = self.inner.bulk_email_entries(input);
             self
         }
         /// <p>The list of bulk email entry objects.</p>
@@ -7656,8 +7158,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the configuration set to use when sending the email.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input.into());
             self
         }
         /// <p>The name of the configuration set to use when sending the email.</p>
@@ -7671,15 +7173,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SendCustomVerificationEmail`.
     ///
-    /// <p>Adds an email address to the list of identities for your Amazon SES account in the current
-    /// Amazon Web Services Region and attempts to verify it. As a result of executing this operation, a
-    /// customized verification email is sent to the specified address.</p>
-    /// <p>To use this operation, you must first create a custom verification email template. For
-    /// more information about creating and using custom verification email templates, see
-    /// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer
-    /// Guide</i>.</p>
+    /// <p>Adds an email address to the list of identities for your Amazon SES account in the current Amazon Web Services Region and attempts to verify it. As a result of executing this operation, a customized verification email is sent to the specified address.</p>
+    /// <p>To use this operation, you must first create a custom verification email template. For more information about creating and using custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendCustomVerificationEmail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7724,10 +7221,10 @@ pub mod fluent_builders {
                 crate::input::SendCustomVerificationEmailInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7736,8 +7233,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The email address to verify.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(inp);
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(input.into());
             self
         }
         /// <p>The email address to verify.</p>
@@ -7748,14 +7245,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_email_address(input);
             self
         }
-        /// <p>The name of the custom verification email template to use when sending the
-        /// verification email.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        /// <p>The name of the custom verification email template to use when sending the verification email.</p>
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
-        /// <p>The name of the custom verification email template to use when sending the
-        /// verification email.</p>
+        /// <p>The name of the custom verification email template to use when sending the verification email.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7764,8 +7259,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of a configuration set to use when sending the verification email.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input.into());
             self
         }
         /// <p>Name of a configuration set to use when sending the verification email.</p>
@@ -7779,31 +7274,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SendEmail`.
     ///
-    /// <p>Sends an email message. You can use the Amazon SES API v2 to send the following types of
-    /// messages:</p>
+    /// <p>Sends an email message. You can use the Amazon SES API v2 to send the following types of messages:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Simple</b> – A standard email message. When
-    /// you create this type of message, you specify the sender, the recipient, and the
-    /// message body, and Amazon SES assembles the message for you.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Raw</b> – A raw, MIME-formatted email
-    /// message. When you send this type of email, you have to specify all of the
-    /// message headers, as well as the message body. You can use this message type to
-    /// send messages that contain attachments. The message that you specify has to be a
-    /// valid MIME message.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Templated</b> – A message that contains
-    /// personalization tags. When you send this type of email, Amazon SES API v2 automatically
-    /// replaces the tags with values that you specify.</p>
-    /// </li>
+    /// <li> <p> <b>Simple</b> – A standard email message. When you create this type of message, you specify the sender, the recipient, and the message body, and Amazon SES assembles the message for you.</p> </li>
+    /// <li> <p> <b>Raw</b> – A raw, MIME-formatted email message. When you send this type of email, you have to specify all of the message headers, as well as the message body. You can use this message type to send messages that contain attachments. The message that you specify has to be a valid MIME message.</p> </li>
+    /// <li> <p> <b>Templated</b> – A message that contains personalization tags. When you send this type of email, Amazon SES API v2 automatically replaces the tags with values that you specify.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendEmail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7848,10 +7325,10 @@ pub mod fluent_builders {
                 crate::input::SendEmailInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7859,16 +7336,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The email address to use as the "From" address for the email. The
-        /// address that you specify has to be verified.
-        /// </p>
-        pub fn from_email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.from_email_address(inp);
+        /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified. </p>
+        pub fn from_email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.from_email_address(input.into());
             self
         }
-        /// <p>The email address to use as the "From" address for the email. The
-        /// address that you specify has to be verified.
-        /// </p>
+        /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified. </p>
         pub fn set_from_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7876,41 +7349,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_from_email_address(input);
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to use the
-        /// email address specified in the <code>FromEmailAddress</code> parameter.</p>
-        /// <p>For example, if the owner of example.com (which has ARN
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that
-        /// authorizes you to use sender@example.com, then you would specify the
-        /// <code>FromEmailAddressIdentityArn</code> to be
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-        /// <code>FromEmailAddress</code> to be sender@example.com.</p>
-        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
-        /// <p>For Raw emails, the <code>FromEmailAddressIdentityArn</code> value overrides the
-        /// X-SES-SOURCE-ARN and X-SES-FROM-ARN headers specified in raw email message
-        /// content.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FromEmailAddress</code> parameter.</p>
+        /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@example.com, then you would specify the <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FromEmailAddress</code> to be sender@example.com.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+        /// <p>For Raw emails, the <code>FromEmailAddressIdentityArn</code> value overrides the X-SES-SOURCE-ARN and X-SES-FROM-ARN headers specified in raw email message content.</p>
         pub fn from_email_address_identity_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.from_email_address_identity_arn(inp);
+            self.inner = self.inner.from_email_address_identity_arn(input.into());
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to use the
-        /// email address specified in the <code>FromEmailAddress</code> parameter.</p>
-        /// <p>For example, if the owner of example.com (which has ARN
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that
-        /// authorizes you to use sender@example.com, then you would specify the
-        /// <code>FromEmailAddressIdentityArn</code> to be
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-        /// <code>FromEmailAddress</code> to be sender@example.com.</p>
-        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
-        /// <p>For Raw emails, the <code>FromEmailAddressIdentityArn</code> value overrides the
-        /// X-SES-SOURCE-ARN and X-SES-FROM-ARN headers specified in raw email message
-        /// content.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FromEmailAddress</code> parameter.</p>
+        /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@example.com, then you would specify the <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FromEmailAddress</code> to be sender@example.com.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+        /// <p>For Raw emails, the <code>FromEmailAddressIdentityArn</code> value overrides the X-SES-SOURCE-ARN and X-SES-FROM-ARN headers specified in raw email message content.</p>
         pub fn set_from_email_address_identity_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7919,8 +7372,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object that contains the recipients of the email message.</p>
-        pub fn destination(mut self, inp: crate::model::Destination) -> Self {
-            self.inner = self.inner.destination(inp);
+        pub fn destination(mut self, input: crate::model::Destination) -> Self {
+            self.inner = self.inner.destination(input);
             self
         }
         /// <p>An object that contains the recipients of the email message.</p>
@@ -7935,14 +7388,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_reply_to_addresses`](Self::set_reply_to_addresses).
         ///
-        /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the
-        /// message, each Reply-to address receives the reply.</p>
-        pub fn reply_to_addresses(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reply_to_addresses(inp);
+        /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
+        pub fn reply_to_addresses(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reply_to_addresses(input.into());
             self
         }
-        /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the
-        /// message, each Reply-to address receives the reply.</p>
+        /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
         pub fn set_reply_to_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7953,9 +7404,9 @@ pub mod fluent_builders {
         /// <p>The address that you want bounce and complaint notifications to be sent to.</p>
         pub fn feedback_forwarding_email_address(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.feedback_forwarding_email_address(inp);
+            self.inner = self.inner.feedback_forwarding_email_address(input.into());
             self
         }
         /// <p>The address that you want bounce and complaint notifications to be sent to.</p>
@@ -7966,39 +7417,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_feedback_forwarding_email_address(input);
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to use the
-        /// email address specified in the <code>FeedbackForwardingEmailAddress</code>
-        /// parameter.</p>
-        /// <p>For example, if the owner of example.com (which has ARN
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that
-        /// authorizes you to use feedback@example.com, then you would specify the
-        /// <code>FeedbackForwardingEmailAddressIdentityArn</code> to be
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-        /// <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
-        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FeedbackForwardingEmailAddress</code> parameter.</p>
+        /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
         pub fn feedback_forwarding_email_address_identity_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .feedback_forwarding_email_address_identity_arn(inp);
+                .feedback_forwarding_email_address_identity_arn(input.into());
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to use the
-        /// email address specified in the <code>FeedbackForwardingEmailAddress</code>
-        /// parameter.</p>
-        /// <p>For example, if the owner of example.com (which has ARN
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that
-        /// authorizes you to use feedback@example.com, then you would specify the
-        /// <code>FeedbackForwardingEmailAddressIdentityArn</code> to be
-        /// arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-        /// <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
-        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FeedbackForwardingEmailAddress</code> parameter.</p>
+        /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
         pub fn set_feedback_forwarding_email_address_identity_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8008,14 +7441,12 @@ pub mod fluent_builders {
                 .set_feedback_forwarding_email_address_identity_arn(input);
             self
         }
-        /// <p>An object that contains the body of the message. You can send either a Simple message
-        /// Raw message or a template Message.</p>
-        pub fn content(mut self, inp: crate::model::EmailContent) -> Self {
-            self.inner = self.inner.content(inp);
+        /// <p>An object that contains the body of the message. You can send either a Simple message Raw message or a template Message.</p>
+        pub fn content(mut self, input: crate::model::EmailContent) -> Self {
+            self.inner = self.inner.content(input);
             self
         }
-        /// <p>An object that contains the body of the message. You can send either a Simple message
-        /// Raw message or a template Message.</p>
+        /// <p>An object that contains the body of the message. You can send either a Simple message Raw message or a template Message.</p>
         pub fn set_content(
             mut self,
             input: std::option::Option<crate::model::EmailContent>,
@@ -8027,16 +7458,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_email_tags`](Self::set_email_tags).
         ///
-        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
-        /// using the <code>SendEmail</code> operation. Tags correspond to characteristics of the
-        /// email that you define, so that you can publish email sending events. </p>
-        pub fn email_tags(mut self, inp: impl Into<crate::model::MessageTag>) -> Self {
-            self.inner = self.inner.email_tags(inp);
+        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events. </p>
+        pub fn email_tags(mut self, input: crate::model::MessageTag) -> Self {
+            self.inner = self.inner.email_tags(input);
             self
         }
-        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
-        /// using the <code>SendEmail</code> operation. Tags correspond to characteristics of the
-        /// email that you define, so that you can publish email sending events. </p>
+        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events. </p>
         pub fn set_email_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
@@ -8045,8 +7472,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the configuration set to use when sending the email.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input.into());
             self
         }
         /// <p>The name of the configuration set to use when sending the email.</p>
@@ -8057,14 +7484,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration_set_name(input);
             self
         }
-        /// <p>An object used to specify a list or topic to which an email belongs, which will be
-        /// used when a contact chooses to unsubscribe.</p>
-        pub fn list_management_options(mut self, inp: crate::model::ListManagementOptions) -> Self {
-            self.inner = self.inner.list_management_options(inp);
+        /// <p>An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to unsubscribe.</p>
+        pub fn list_management_options(
+            mut self,
+            input: crate::model::ListManagementOptions,
+        ) -> Self {
+            self.inner = self.inner.list_management_options(input);
             self
         }
-        /// <p>An object used to specify a list or topic to which an email belongs, which will be
-        /// used when a contact chooses to unsubscribe.</p>
+        /// <p>An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to unsubscribe.</p>
         pub fn set_list_management_options(
             mut self,
             input: std::option::Option<crate::model::ListManagementOptions>,
@@ -8075,16 +7503,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Add one or more tags (keys and values) to a specified resource. A
-    /// <i>tag</i> is a label that you optionally define and associate with a
-    /// resource. Tags can help you categorize and manage resources in different ways, such as
-    /// by purpose, owner, environment, or other criteria. A resource can have as many as 50
-    /// tags.</p>
-    /// <p>Each tag consists of a required <i>tag key</i> and an
-    /// associated <i>tag value</i>, both of which you define. A tag key is a
-    /// general label that acts as a category for more specific tag values. A tag value acts as
-    /// a descriptor within a tag key.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Add one or more tags (keys and values) to a specified resource. A <i>tag</i>&nbsp;is a label that you optionally define and associate with a resource. Tags can help you categorize and manage resources in different ways, such as by purpose, owner, environment, or other criteria. A resource can have as many as 50 tags.</p>
+    /// <p>Each tag consists of a required&nbsp;<i>tag key</i>&nbsp;and an associated&nbsp;<i>tag value</i>, both of which you define. A tag key is a general label that acts as a category for more specific tag values. A tag value acts as a descriptor within a tag key.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8129,10 +7550,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8140,14 +7561,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource that you want to add one or more tags
-        /// to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the resource that you want to add one or more tags to.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource that you want to add one or more tags
-        /// to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource that you want to add one or more tags to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -8156,18 +7575,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of the tags that you want to add to the resource. A tag consists of a required
-        /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
-        /// length of a tag key is 128 characters. The maximum length of a tag value is 256
-        /// characters.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>A list of the tags that you want to add to the resource. A tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of the tags that you want to add to the resource. A tag consists of a required
-        /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
-        /// length of a tag key is 128 characters. The maximum length of a tag value is 256
-        /// characters.</p>
+        /// <p>A list of the tags that you want to add to the resource. A tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8178,11 +7591,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TestRenderEmailTemplate`.
     ///
-    /// <p>Creates a preview of the MIME content of an email when provided with a template and a
-    /// set of replacement data.</p>
-    ///
+    /// <p>Creates a preview of the MIME content of an email when provided with a template and a set of replacement data.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TestRenderEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8227,10 +7638,10 @@ pub mod fluent_builders {
                 crate::input::TestRenderEmailTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8239,8 +7650,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the template.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the template.</p>
@@ -8251,16 +7662,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_name(input);
             self
         }
-        /// <p>A list of replacement values to apply to the template. This parameter is a JSON
-        /// object, typically consisting of key-value pairs in which the keys correspond to
-        /// replacement tags in the email template.</p>
-        pub fn template_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_data(inp);
+        /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
+        pub fn template_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_data(input.into());
             self
         }
-        /// <p>A list of replacement values to apply to the template. This parameter is a JSON
-        /// object, typically consisting of key-value pairs in which the keys correspond to
-        /// replacement tags in the email template.</p>
+        /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
         pub fn set_template_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8272,7 +7679,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Remove one or more tags (keys and values) from a specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8317,10 +7724,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8328,14 +7735,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove one or more
-        /// tags from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove one or more tags from.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove one or more
-        /// tags from.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove one or more tags from.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -8344,24 +7749,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag
-        /// key, the action removes both that key and its associated tag value.</p>
-        /// <p>To remove more than one tag from the resource, append the <code>TagKeys</code>
-        /// parameter and argument for each additional tag to remove, separated by an ampersand. For
-        /// example:
-        /// <code>/v2/email/tags?ResourceArn=ResourceArn&TagKeys=Key1&TagKeys=Key2</code>
-        /// </p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.</p>
+        /// <p>To remove more than one tag from the resource, append the <code>TagKeys</code> parameter and argument for each additional tag to remove, separated by an ampersand. For example: <code>/v2/email/tags?ResourceArn=ResourceArn&amp;TagKeys=Key1&amp;TagKeys=Key2</code> </p>
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag
-        /// key, the action removes both that key and its associated tag value.</p>
-        /// <p>To remove more than one tag from the resource, append the <code>TagKeys</code>
-        /// parameter and argument for each additional tag to remove, separated by an ampersand. For
-        /// example:
-        /// <code>/v2/email/tags?ResourceArn=ResourceArn&TagKeys=Key1&TagKeys=Key2</code>
-        /// </p>
+        /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.</p>
+        /// <p>To remove more than one tag from the resource, append the <code>TagKeys</code> parameter and argument for each additional tag to remove, separated by an ampersand. For example: <code>/v2/email/tags?ResourceArn=ResourceArn&amp;TagKeys=Key1&amp;TagKeys=Key2</code> </p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8373,13 +7768,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateConfigurationSetEventDestination`.
     ///
     /// <p>Update the configuration of an event destination for a configuration set.</p>
-    /// <p>
-    /// <i>Events</i> include message sends, deliveries, opens, clicks, bounces,
-    /// and complaints. <i>Event destinations</i> are places that you can send
-    /// information about these events to. For example, you can send event data to Amazon SNS to
-    /// receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to
-    /// stream data to Amazon S3 for long-term storage.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <i>Events</i> include message sends, deliveries, opens, clicks, bounces, and complaints. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConfigurationSetEventDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8426,10 +7816,10 @@ pub mod fluent_builders {
                 crate::input::UpdateConfigurationSetEventDestinationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8437,14 +7827,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the configuration set that contains the event destination to
-        /// modify.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_set_name(inp);
+        /// <p>The name of the configuration set that contains the event destination to modify.</p>
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_set_name(input.into());
             self
         }
-        /// <p>The name of the configuration set that contains the event destination to
-        /// modify.</p>
+        /// <p>The name of the configuration set that contains the event destination to modify.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8453,8 +7841,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the event destination.</p>
-        pub fn event_destination_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_destination_name(inp);
+        pub fn event_destination_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_destination_name(input.into());
             self
         }
         /// <p>The name of the event destination.</p>
@@ -8466,8 +7854,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object that defines the event destination.</p>
-        pub fn event_destination(mut self, inp: crate::model::EventDestinationDefinition) -> Self {
-            self.inner = self.inner.event_destination(inp);
+        pub fn event_destination(
+            mut self,
+            input: crate::model::EventDestinationDefinition,
+        ) -> Self {
+            self.inner = self.inner.event_destination(input);
             self
         }
         /// <p>An object that defines the event destination.</p>
@@ -8481,10 +7872,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateContact`.
     ///
-    /// <p>Updates a contact's preferences for a list. It is not necessary to specify all
-    /// existing topic preferences in the TopicPreferences object, just the ones that need
-    /// updating.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates a contact's preferences for a list. It is not necessary to specify all existing topic preferences in the TopicPreferences object, just the ones that need updating.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8529,10 +7918,10 @@ pub mod fluent_builders {
                 crate::input::UpdateContactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8541,8 +7930,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the contact list.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_list_name(inp);
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_list_name(input.into());
             self
         }
         /// <p>The name of the contact list.</p>
@@ -8554,8 +7943,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The contact's email addres.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(inp);
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(input.into());
             self
         }
         /// <p>The contact's email addres.</p>
@@ -8571,8 +7960,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_topic_preferences`](Self::set_topic_preferences).
         ///
         /// <p>The contact's preference for being opted-in to or opted-out of a topic.</p>
-        pub fn topic_preferences(mut self, inp: impl Into<crate::model::TopicPreference>) -> Self {
-            self.inner = self.inner.topic_preferences(inp);
+        pub fn topic_preferences(mut self, input: crate::model::TopicPreference) -> Self {
+            self.inner = self.inner.topic_preferences(input);
             self
         }
         /// <p>The contact's preference for being opted-in to or opted-out of a topic.</p>
@@ -8583,21 +7972,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_topic_preferences(input);
             self
         }
-        /// <p>A boolean value status noting if the contact is unsubscribed from all contact list
-        /// topics.</p>
-        pub fn unsubscribe_all(mut self, inp: bool) -> Self {
-            self.inner = self.inner.unsubscribe_all(inp);
+        /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
+        pub fn unsubscribe_all(mut self, input: bool) -> Self {
+            self.inner = self.inner.unsubscribe_all(input);
             self
         }
-        /// <p>A boolean value status noting if the contact is unsubscribed from all contact list
-        /// topics.</p>
+        /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
         pub fn set_unsubscribe_all(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_unsubscribe_all(input);
             self
         }
         /// <p>The attribute data attached to a contact.</p>
-        pub fn attributes_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attributes_data(inp);
+        pub fn attributes_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attributes_data(input.into());
             self
         }
         /// <p>The attribute data attached to a contact.</p>
@@ -8612,7 +7999,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateContactList`.
     ///
     /// <p>Updates contact list metadata. This operation does a complete replacement.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContactList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8657,10 +8044,10 @@ pub mod fluent_builders {
                 crate::input::UpdateContactListInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8669,8 +8056,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the contact list.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_list_name(inp);
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_list_name(input.into());
             self
         }
         /// <p>The name of the contact list.</p>
@@ -8685,14 +8072,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_topics`](Self::set_topics).
         ///
-        /// <p>An interest group, theme, or label within a list. A contact list can have multiple
-        /// topics.</p>
-        pub fn topics(mut self, inp: impl Into<crate::model::Topic>) -> Self {
-            self.inner = self.inner.topics(inp);
+        /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
+        pub fn topics(mut self, input: crate::model::Topic) -> Self {
+            self.inner = self.inner.topics(input);
             self
         }
-        /// <p>An interest group, theme, or label within a list. A contact list can have multiple
-        /// topics.</p>
+        /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
         pub fn set_topics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Topic>>,
@@ -8701,8 +8086,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of what the contact list is about.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of what the contact list is about.</p>
@@ -8714,10 +8099,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCustomVerificationEmailTemplate`.
     ///
     /// <p>Updates an existing custom verification email template.</p>
-    /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer
-    /// Guide</i>.</p>
+    /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCustomVerificationEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8764,10 +8148,10 @@ pub mod fluent_builders {
                 crate::input::UpdateCustomVerificationEmailTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8776,8 +8160,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the custom verification email template that you want to update.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the custom verification email template that you want to update.</p>
@@ -8789,8 +8173,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The email address that the custom verification email is sent from.</p>
-        pub fn from_email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.from_email_address(inp);
+        pub fn from_email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.from_email_address(input.into());
             self
         }
         /// <p>The email address that the custom verification email is sent from.</p>
@@ -8802,8 +8186,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The subject line of the custom verification email.</p>
-        pub fn template_subject(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_subject(inp);
+        pub fn template_subject(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_subject(input.into());
             self
         }
         /// <p>The subject line of the custom verification email.</p>
@@ -8814,18 +8198,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_subject(input);
             self
         }
-        /// <p>The content of the custom verification email. The total size of the email must be less
-        /// than 10 MB. The message body may contain HTML, with some limitations. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
-        /// Developer Guide</i>.</p>
-        pub fn template_content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_content(inp);
+        /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
+        pub fn template_content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_content(input.into());
             self
         }
-        /// <p>The content of the custom verification email. The total size of the email must be less
-        /// than 10 MB. The message body may contain HTML, with some limitations. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
-        /// Developer Guide</i>.</p>
+        /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
         pub fn set_template_content(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8833,14 +8211,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_content(input);
             self
         }
-        /// <p>The URL that the recipient of the verification email is sent to if his or her address
-        /// is successfully verified.</p>
-        pub fn success_redirection_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.success_redirection_url(inp);
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
+        pub fn success_redirection_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.success_redirection_url(input.into());
             self
         }
-        /// <p>The URL that the recipient of the verification email is sent to if his or her address
-        /// is successfully verified.</p>
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
         pub fn set_success_redirection_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8848,14 +8224,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_success_redirection_url(input);
             self
         }
-        /// <p>The URL that the recipient of the verification email is sent to if his or her address
-        /// is not successfully verified.</p>
-        pub fn failure_redirection_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.failure_redirection_url(inp);
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
+        pub fn failure_redirection_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.failure_redirection_url(input.into());
             self
         }
-        /// <p>The URL that the recipient of the verification email is sent to if his or her address
-        /// is not successfully verified.</p>
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
         pub fn set_failure_redirection_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8866,20 +8240,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateEmailIdentityPolicy`.
     ///
-    /// <p>Updates the specified sending authorization policy for the given identity (an email
-    /// address or a domain). This API returns successfully even if a policy with the specified
-    /// name does not exist.</p>
-    /// <note>
-    /// <p>This API is for the identity owner only. If you have not verified the identity,
-    /// this API will return an error.</p>
+    /// <p>Updates the specified sending authorization policy for the given identity (an email address or a domain). This API returns successfully even if a policy with the specified name does not exist.</p> <note>
+    /// <p>This API is for the identity owner only. If you have not verified the identity, this API will return an error.</p>
     /// </note>
-    /// <p>Sending authorization is a feature that enables an identity owner to authorize other
-    /// senders to use its identities. For information about using sending authorization, see
-    /// the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-    /// Guide</a>.</p>
-    ///
+    /// <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEmailIdentityPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8924,10 +8290,10 @@ pub mod fluent_builders {
                 crate::input::UpdateEmailIdentityPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8936,8 +8302,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The email identity.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_identity(inp);
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_identity(input.into());
             self
         }
         /// <p>The email identity.</p>
@@ -8949,31 +8315,25 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the policy.</p>
-        ///
-        /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
-        /// characters, dashes, and underscores.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input.into());
             self
         }
         /// <p>The name of the policy.</p>
-        ///
-        /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
-        /// characters, dashes, and underscores.</p>
+        /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policy_name(input);
             self
         }
         /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-        /// <p> For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer
-        /// Guide</a>.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        /// <p> For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input.into());
             self
         }
         /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-        /// <p> For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p> For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policy(input);
             self
@@ -8981,11 +8341,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateEmailTemplate`.
     ///
-    /// <p>Updates an email template. Email templates enable you to send personalized email to
-    /// one or more destinations in a single API operation. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>Updates an email template. Email templates enable you to send personalized email to one or more destinations in a single API operation. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>
     /// <p>You can execute this operation no more than once per second.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9030,10 +8388,10 @@ pub mod fluent_builders {
                 crate::input::UpdateEmailTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9042,8 +8400,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the template.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the template.</p>
@@ -9054,14 +8412,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_name(input);
             self
         }
-        /// <p>The content of the email template, composed of a subject line, an HTML part, and a
-        /// text-only part.</p>
-        pub fn template_content(mut self, inp: crate::model::EmailTemplateContent) -> Self {
-            self.inner = self.inner.template_content(inp);
+        /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
+        pub fn template_content(mut self, input: crate::model::EmailTemplateContent) -> Self {
+            self.inner = self.inner.template_content(input);
             self
         }
-        /// <p>The content of the email template, composed of a subject line, an HTML part, and a
-        /// text-only part.</p>
+        /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
         pub fn set_template_content(
             mut self,
             input: std::option::Option<crate::model::EmailTemplateContent>,
@@ -9071,6 +8427,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

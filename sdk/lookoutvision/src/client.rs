@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Lookout for Vision
@@ -139,6 +139,15 @@ where
     pub fn describe_model(&self) -> fluent_builders::DescribeModel<C, M, R> {
         fluent_builders::DescribeModel::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DescribeModelPackagingJob` operation.
+    ///
+    /// See [`DescribeModelPackagingJob`](crate::client::fluent_builders::DescribeModelPackagingJob) for more information about the
+    /// operation and its arguments.
+    pub fn describe_model_packaging_job(
+        &self,
+    ) -> fluent_builders::DescribeModelPackagingJob<C, M, R> {
+        fluent_builders::DescribeModelPackagingJob::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DescribeProject` operation.
     ///
     /// See [`DescribeProject`](crate::client::fluent_builders::DescribeProject) for more information about the
@@ -157,13 +166,23 @@ where
     ///
     /// See [`ListDatasetEntries`](crate::client::fluent_builders::ListDatasetEntries) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatasetEntries::into_paginator).
     pub fn list_dataset_entries(&self) -> fluent_builders::ListDatasetEntries<C, M, R> {
         fluent_builders::ListDatasetEntries::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListModelPackagingJobs` operation.
+    ///
+    /// See [`ListModelPackagingJobs`](crate::client::fluent_builders::ListModelPackagingJobs) for more information about the
+    /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListModelPackagingJobs::into_paginator).
+    pub fn list_model_packaging_jobs(&self) -> fluent_builders::ListModelPackagingJobs<C, M, R> {
+        fluent_builders::ListModelPackagingJobs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `ListModels` operation.
     ///
     /// See [`ListModels`](crate::client::fluent_builders::ListModels) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListModels::into_paginator).
     pub fn list_models(&self) -> fluent_builders::ListModels<C, M, R> {
         fluent_builders::ListModels::new(self.handle.clone())
     }
@@ -171,6 +190,7 @@ where
     ///
     /// See [`ListProjects`](crate::client::fluent_builders::ListProjects) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProjects::into_paginator).
     pub fn list_projects(&self) -> fluent_builders::ListProjects<C, M, R> {
         fluent_builders::ListProjects::new(self.handle.clone())
     }
@@ -187,6 +207,13 @@ where
     /// operation and its arguments.
     pub fn start_model(&self) -> fluent_builders::StartModel<C, M, R> {
         fluent_builders::StartModel::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `StartModelPackagingJob` operation.
+    ///
+    /// See [`StartModelPackagingJob`](crate::client::fluent_builders::StartModelPackagingJob) for more information about the
+    /// operation and its arguments.
+    pub fn start_model_packaging_job(&self) -> fluent_builders::StartModelPackagingJob<C, M, R> {
+        fluent_builders::StartModelPackagingJob::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `StopModel` operation.
     ///
@@ -227,17 +254,11 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateDataset`.
     ///
-    /// <p>Creates a new dataset  in an Amazon Lookout for Vision project. <code>CreateDataset</code> can create a
-    /// training or a test dataset from a valid dataset source (<code>DatasetSource</code>).</p>
-    /// <p>If you want a single dataset project, specify <code>train</code> for the value of
-    /// <code>DatasetType</code>.</p>
-    /// <p>To have a project with separate training and test datasets, call <code>CreateDataset</code> twice.
-    /// On the first call, specify <code>train</code> for the value of
-    /// <code>DatasetType</code>. On the second call, specify <code>test</code> for the value of
-    /// <code>DatasetType</code>. </p>
-    /// <p>This operation requires permissions to perform the
-    /// <code>lookoutvision:CreateDataset</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new dataset in an Amazon Lookout for Vision project. <code>CreateDataset</code> can create a training or a test dataset from a valid dataset source (<code>DatasetSource</code>).</p>
+    /// <p>If you want a single dataset project, specify <code>train</code> for the value of <code>DatasetType</code>.</p>
+    /// <p>To have a project with separate training and test datasets, call <code>CreateDataset</code> twice. On the first call, specify <code>train</code> for the value of <code>DatasetType</code>. On the second call, specify <code>test</code> for the value of <code>DatasetType</code>. </p>
+    /// <p>This operation requires permissions to perform the <code>lookoutvision:CreateDataset</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -282,10 +303,10 @@ pub mod fluent_builders {
                 crate::input::CreateDatasetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -294,8 +315,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project in which you want to create a dataset.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the project in which you want to create a dataset.</p>
@@ -303,38 +324,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_project_name(input);
             self
         }
-        /// <p>The type of the dataset. Specify <code>train</code> for a training dataset.
-        /// Specify <code>test</code> for a test dataset.</p>
-        pub fn dataset_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_type(inp);
+        /// <p>The type of the dataset. Specify <code>train</code> for a training dataset. Specify <code>test</code> for a test dataset.</p>
+        pub fn dataset_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_type(input.into());
             self
         }
-        /// <p>The type of the dataset. Specify <code>train</code> for a training dataset.
-        /// Specify <code>test</code> for a test dataset.</p>
+        /// <p>The type of the dataset. Specify <code>train</code> for a training dataset. Specify <code>test</code> for a test dataset.</p>
         pub fn set_dataset_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_dataset_type(input);
             self
         }
         /// <p>The location of the manifest file that Amazon Lookout for Vision uses to create the dataset.</p>
-        /// <p>If you don't specify <code>DatasetSource</code>, an empty dataset is created and the operation
-        /// synchronously returns. Later, you can add JSON Lines by calling <a>UpdateDatasetEntries</a>.
-        /// </p>
-        /// <p>If you specify a value for <code>DataSource</code>, the manifest at the S3 location
-        /// is validated and used to create the dataset. The call to <code>CreateDataset</code> is asynchronous
-        /// and might take a while to complete. To find out the current status, Check the value of <code>Status</code>
-        /// returned in a call to <a>DescribeDataset</a>.</p>
-        pub fn dataset_source(mut self, inp: crate::model::DatasetSource) -> Self {
-            self.inner = self.inner.dataset_source(inp);
+        /// <p>If you don't specify <code>DatasetSource</code>, an empty dataset is created and the operation synchronously returns. Later, you can add JSON Lines by calling <code>UpdateDatasetEntries</code>. </p>
+        /// <p>If you specify a value for <code>DataSource</code>, the manifest at the S3 location is validated and used to create the dataset. The call to <code>CreateDataset</code> is asynchronous and might take a while to complete. To find out the current status, Check the value of <code>Status</code> returned in a call to <code>DescribeDataset</code>.</p>
+        pub fn dataset_source(mut self, input: crate::model::DatasetSource) -> Self {
+            self.inner = self.inner.dataset_source(input);
             self
         }
         /// <p>The location of the manifest file that Amazon Lookout for Vision uses to create the dataset.</p>
-        /// <p>If you don't specify <code>DatasetSource</code>, an empty dataset is created and the operation
-        /// synchronously returns. Later, you can add JSON Lines by calling <a>UpdateDatasetEntries</a>.
-        /// </p>
-        /// <p>If you specify a value for <code>DataSource</code>, the manifest at the S3 location
-        /// is validated and used to create the dataset. The call to <code>CreateDataset</code> is asynchronous
-        /// and might take a while to complete. To find out the current status, Check the value of <code>Status</code>
-        /// returned in a call to <a>DescribeDataset</a>.</p>
+        /// <p>If you don't specify <code>DatasetSource</code>, an empty dataset is created and the operation synchronously returns. Later, you can add JSON Lines by calling <code>UpdateDatasetEntries</code>. </p>
+        /// <p>If you specify a value for <code>DataSource</code>, the manifest at the S3 location is validated and used to create the dataset. The call to <code>CreateDataset</code> is asynchronous and might take a while to complete. To find out the current status, Check the value of <code>Status</code> returned in a call to <code>DescribeDataset</code>.</p>
         pub fn set_dataset_source(
             mut self,
             input: std::option::Option<crate::model::DatasetSource>,
@@ -342,28 +351,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_source(input);
             self
         }
-        /// <p>ClientToken is an idempotency token that ensures a call to <code>CreateDataset</code>
-        /// completes only once.  You choose the value to pass. For example, An issue,
-        /// such as an network outage, might prevent you from getting a response from <code>CreateDataset</code>.
-        /// In this case, safely retry your call
-        /// to <code>CreateDataset</code> by using the same <code>ClientToken</code> parameter value. An error occurs
-        /// if the other input parameters are not the same as in the first request. Using a different  
-        /// value for <code>ClientToken</code> is considered a new call to <code>CreateDataset</code>. An idempotency
-        /// token is active for 8 hours.
-        /// </p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>ClientToken is an idempotency token that ensures a call to <code>CreateDataset</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>CreateDataset</code>. In this case, safely retry your call to <code>CreateDataset</code> by using the same <code>ClientToken</code> parameter value.</p>
+        /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple dataset creation requests. You'll need to provide your own value for other use cases. </p>
+        /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>CreateDataset</code>. An idempotency token is active for 8 hours. </p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>ClientToken is an idempotency token that ensures a call to <code>CreateDataset</code>
-        /// completes only once.  You choose the value to pass. For example, An issue,
-        /// such as an network outage, might prevent you from getting a response from <code>CreateDataset</code>.
-        /// In this case, safely retry your call
-        /// to <code>CreateDataset</code> by using the same <code>ClientToken</code> parameter value. An error occurs
-        /// if the other input parameters are not the same as in the first request. Using a different  
-        /// value for <code>ClientToken</code> is considered a new call to <code>CreateDataset</code>. An idempotency
-        /// token is active for 8 hours.
-        /// </p>
+        /// <p>ClientToken is an idempotency token that ensures a call to <code>CreateDataset</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>CreateDataset</code>. In this case, safely retry your call to <code>CreateDataset</code> by using the same <code>ClientToken</code> parameter value.</p>
+        /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple dataset creation requests. You'll need to provide your own value for other use cases. </p>
+        /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>CreateDataset</code>. An idempotency token is active for 8 hours. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -371,21 +368,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateModel`.
     ///
-    /// <p>Creates a new version of a model within an an Amazon Lookout for Vision project.
-    /// <code>CreateModel</code> is an asynchronous operation in which Amazon Lookout for Vision trains, tests,
-    /// and evaluates a new version of a model. </p>
-    /// <p>To get the current status, check the <code>Status</code> field returned
-    /// in the response from <a>DescribeModel</a>.</p>
-    /// <p>If the project has a single dataset, Amazon Lookout for Vision internally splits the dataset
-    /// to create a training and a test dataset.  
-    /// If the project has a training and a test dataset, Lookout for Vision uses the respective datasets to train and test
-    /// the model. </p>
-    /// <p>After training completes, the evaluation metrics are stored at the location specified in
-    /// <code>OutputConfig</code>.  </p>
-    /// <p>This operation requires permissions to perform the
-    /// <code>lookoutvision:CreateModel</code> operation. If you want to tag your model, you also require
-    /// permission to the <code>lookoutvision:TagResource</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new version of a model within an an Amazon Lookout for Vision project. <code>CreateModel</code> is an asynchronous operation in which Amazon Lookout for Vision trains, tests, and evaluates a new version of a model. </p>
+    /// <p>To get the current status, check the <code>Status</code> field returned in the response from <code>DescribeModel</code>.</p>
+    /// <p>If the project has a single dataset, Amazon Lookout for Vision internally splits the dataset to create a training and a test dataset. If the project has a training and a test dataset, Lookout for Vision uses the respective datasets to train and test the model. </p>
+    /// <p>After training completes, the evaluation metrics are stored at the location specified in <code>OutputConfig</code>. </p>
+    /// <p>This operation requires permissions to perform the <code>lookoutvision:CreateModel</code> operation. If you want to tag your model, you also require permission to the <code>lookoutvision:TagResource</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -430,10 +418,10 @@ pub mod fluent_builders {
                 crate::input::CreateModelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -442,8 +430,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project in which you want to create a model version.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the project in which you want to create a model version.</p>
@@ -452,8 +440,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the version of the model.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the version of the model.</p>
@@ -461,33 +449,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>ClientToken is an idempotency token that ensures a call to <code>CreateModel</code>
-        /// completes only once.  You choose the value to pass. For example, An issue,
-        /// such as an network outage, might prevent you from getting a response from <code>CreateModel</code>.
-        /// In this case, safely retry your call
-        /// to <code>CreateModel</code> by using the same <code>ClientToken</code> parameter value. An error occurs
-        /// if the other input parameters are not the same as in the first request. Using a different  
-        /// value for <code>ClientToken</code> is considered a new call to <code>CreateModel</code>. An idempotency
-        /// token is active for 8 hours.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>ClientToken is an idempotency token that ensures a call to <code>CreateModel</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>CreateModel</code>. In this case, safely retry your call to <code>CreateModel</code> by using the same <code>ClientToken</code> parameter value. </p>
+        /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from starting multiple training jobs. You'll need to provide your own value for other use cases. </p>
+        /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>CreateModel</code>. An idempotency token is active for 8 hours.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>ClientToken is an idempotency token that ensures a call to <code>CreateModel</code>
-        /// completes only once.  You choose the value to pass. For example, An issue,
-        /// such as an network outage, might prevent you from getting a response from <code>CreateModel</code>.
-        /// In this case, safely retry your call
-        /// to <code>CreateModel</code> by using the same <code>ClientToken</code> parameter value. An error occurs
-        /// if the other input parameters are not the same as in the first request. Using a different  
-        /// value for <code>ClientToken</code> is considered a new call to <code>CreateModel</code>. An idempotency
-        /// token is active for 8 hours.</p>
+        /// <p>ClientToken is an idempotency token that ensures a call to <code>CreateModel</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>CreateModel</code>. In this case, safely retry your call to <code>CreateModel</code> by using the same <code>ClientToken</code> parameter value. </p>
+        /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from starting multiple training jobs. You'll need to provide your own value for other use cases. </p>
+        /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>CreateModel</code>. An idempotency token is active for 8 hours.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
         /// <p>The location where Amazon Lookout for Vision saves the training results.</p>
-        pub fn output_config(mut self, inp: crate::model::OutputConfig) -> Self {
-            self.inner = self.inner.output_config(inp);
+        pub fn output_config(mut self, input: crate::model::OutputConfig) -> Self {
+            self.inner = self.inner.output_config(input);
             self
         }
         /// <p>The location where Amazon Lookout for Vision saves the training results.</p>
@@ -498,18 +476,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_config(input);
             self
         }
-        /// <p>The identifier for your AWS Key Management Service (AWS KMS) customer master key (CMK).
-        /// The key is used to encrypt training and test images copied into the service for model training. Your
-        /// source images are unaffected.
-        /// If this parameter is not specified, the copied images are encrypted by a key that AWS owns and manages.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        /// <p>The identifier for your AWS KMS key. The key is used to encrypt training and test images copied into the service for model training. Your source images are unaffected. If this parameter is not specified, the copied images are encrypted by a key that AWS owns and manages.</p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
-        /// <p>The identifier for your AWS Key Management Service (AWS KMS) customer master key (CMK).
-        /// The key is used to encrypt training and test images copied into the service for model training. Your
-        /// source images are unaffected.
-        /// If this parameter is not specified, the copied images are encrypted by a key that AWS owns and manages.</p>
+        /// <p>The identifier for your AWS KMS key. The key is used to encrypt training and test images copied into the service for model training. Your source images are unaffected. If this parameter is not specified, the copied images are encrypted by a key that AWS owns and manages.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
             self
@@ -519,8 +491,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A set of tags (key-value pairs) that you want to attach to the model.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A set of tags (key-value pairs) that you want to attach to the model.</p>
@@ -534,11 +506,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateProject`.
     ///
-    /// <p>Creates an empty Amazon Lookout for Vision project. After you create the project, add a dataset by calling
-    /// <a>CreateDataset</a>.</p>
-    /// <p>This operation requires permissions to perform the
-    /// <code>lookoutvision:CreateProject</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an empty Amazon Lookout for Vision project. After you create the project, add a dataset by calling <code>CreateDataset</code>.</p>
+    /// <p>This operation requires permissions to perform the <code>lookoutvision:CreateProject</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -583,10 +553,10 @@ pub mod fluent_builders {
                 crate::input::CreateProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -595,8 +565,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the project.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name for the project.</p>
@@ -604,26 +574,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_project_name(input);
             self
         }
-        /// <p>ClientToken is an idempotency token that ensures a call to <code>CreateProject</code>
-        /// completes only once.  You choose the value to pass. For example, An issue,
-        /// such as an network outage, might prevent you from getting a response from <code>CreateProject</code>.
-        /// In this case, safely retry your call
-        /// to <code>CreateProject</code> by using the same <code>ClientToken</code> parameter value. An error occurs
-        /// if the other input parameters are not the same as in the first request. Using a different  
-        /// value for <code>ClientToken</code> is considered a new call to <code>CreateProject</code>. An idempotency
-        /// token is active for 8 hours.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>ClientToken is an idempotency token that ensures a call to <code>CreateProject</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>CreateProject</code>. In this case, safely retry your call to <code>CreateProject</code> by using the same <code>ClientToken</code> parameter value. </p>
+        /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple project creation requests. You'll need to provide your own value for other use cases. </p>
+        /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>CreateProject</code>. An idempotency token is active for 8 hours.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>ClientToken is an idempotency token that ensures a call to <code>CreateProject</code>
-        /// completes only once.  You choose the value to pass. For example, An issue,
-        /// such as an network outage, might prevent you from getting a response from <code>CreateProject</code>.
-        /// In this case, safely retry your call
-        /// to <code>CreateProject</code> by using the same <code>ClientToken</code> parameter value. An error occurs
-        /// if the other input parameters are not the same as in the first request. Using a different  
-        /// value for <code>ClientToken</code> is considered a new call to <code>CreateProject</code>. An idempotency
-        /// token is active for 8 hours.</p>
+        /// <p>ClientToken is an idempotency token that ensures a call to <code>CreateProject</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>CreateProject</code>. In this case, safely retry your call to <code>CreateProject</code> by using the same <code>ClientToken</code> parameter value. </p>
+        /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple project creation requests. You'll need to provide your own value for other use cases. </p>
+        /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>CreateProject</code>. An idempotency token is active for 8 hours.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -632,21 +592,14 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDataset`.
     ///
     /// <p>Deletes an existing Amazon Lookout for Vision <code>dataset</code>. </p>
-    /// <p>If your the project has a single
-    /// dataset, you must create a new dataset before you can create a model.</p>
+    /// <p>If your the project has a single dataset, you must create a new dataset before you can create a model.</p>
     /// <p>If you project has a training dataset and a test dataset consider the following. </p>
     /// <ul>
-    /// <li>
-    /// <p>If you delete the test dataset, your project reverts to a single dataset project. If you then
-    /// train the model, Amazon Lookout for Vision internally splits the remaining dataset into a training and test dataset.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you delete the training dataset, you must create a training dataset before you can create a model.</p>
-    /// </li>
+    /// <li> <p>If you delete the test dataset, your project reverts to a single dataset project. If you then train the model, Amazon Lookout for Vision internally splits the remaining dataset into a training and test dataset.</p> </li>
+    /// <li> <p>If you delete the training dataset, you must create a training dataset before you can create a model.</p> </li>
     /// </ul>
-    /// <p>This operation requires permissions to perform the
-    /// <code>lookoutvision:DeleteDataset</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This operation requires permissions to perform the <code>lookoutvision:DeleteDataset</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -691,10 +644,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDatasetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -703,8 +656,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project that contains the dataset that you want to delete.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the project that contains the dataset that you want to delete.</p>
@@ -712,40 +665,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_project_name(input);
             self
         }
-        /// <p>The type of the dataset to delete. Specify <code>train</code> to delete the training dataset.
-        /// Specify <code>test</code> to delete the test dataset. To delete the dataset in a single dataset project,
-        /// specify <code>train</code>.</p>
-        pub fn dataset_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_type(inp);
+        /// <p>The type of the dataset to delete. Specify <code>train</code> to delete the training dataset. Specify <code>test</code> to delete the test dataset. To delete the dataset in a single dataset project, specify <code>train</code>.</p>
+        pub fn dataset_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_type(input.into());
             self
         }
-        /// <p>The type of the dataset to delete. Specify <code>train</code> to delete the training dataset.
-        /// Specify <code>test</code> to delete the test dataset. To delete the dataset in a single dataset project,
-        /// specify <code>train</code>.</p>
+        /// <p>The type of the dataset to delete. Specify <code>train</code> to delete the training dataset. Specify <code>test</code> to delete the test dataset. To delete the dataset in a single dataset project, specify <code>train</code>.</p>
         pub fn set_dataset_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_dataset_type(input);
             self
         }
-        /// <p>ClientToken is an idempotency token that ensures a call to <code>DeleteDataset</code>
-        /// completes only once.  You choose the value to pass. For example, An issue,
-        /// such as an network outage, might prevent you from getting a response from <code>DeleteDataset</code>.
-        /// In this case, safely retry your call
-        /// to <code>DeleteDataset</code> by using the same <code>ClientToken</code> parameter value. An error occurs
-        /// if the other input parameters are not the same as in the first request. Using a different  
-        /// value for <code>ClientToken</code> is considered a new call to <code>DeleteDataset</code>. An idempotency
-        /// token is active for 8 hours.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>ClientToken is an idempotency token that ensures a call to <code>DeleteDataset</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>DeleteDataset</code>. In this case, safely retry your call to <code>DeleteDataset</code> by using the same <code>ClientToken</code> parameter value. </p>
+        /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple deletetion requests. You'll need to provide your own value for other use cases. </p>
+        /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>DeleteDataset</code>. An idempotency token is active for 8 hours.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>ClientToken is an idempotency token that ensures a call to <code>DeleteDataset</code>
-        /// completes only once.  You choose the value to pass. For example, An issue,
-        /// such as an network outage, might prevent you from getting a response from <code>DeleteDataset</code>.
-        /// In this case, safely retry your call
-        /// to <code>DeleteDataset</code> by using the same <code>ClientToken</code> parameter value. An error occurs
-        /// if the other input parameters are not the same as in the first request. Using a different  
-        /// value for <code>ClientToken</code> is considered a new call to <code>DeleteDataset</code>. An idempotency
-        /// token is active for 8 hours.</p>
+        /// <p>ClientToken is an idempotency token that ensures a call to <code>DeleteDataset</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>DeleteDataset</code>. In this case, safely retry your call to <code>DeleteDataset</code> by using the same <code>ClientToken</code> parameter value. </p>
+        /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple deletetion requests. You'll need to provide your own value for other use cases. </p>
+        /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>DeleteDataset</code>. An idempotency token is active for 8 hours.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -753,14 +692,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteModel`.
     ///
-    /// <p>Deletes an Amazon Lookout for Vision model. You can't delete a running model. To stop a running model,
-    /// use the <a>StopModel</a> operation.</p>
-    /// <p>It might take a few seconds to delete a model. To determine if a model has been deleted, call
-    /// <a>ListProjects</a> and check if the version of the model (<code>ModelVersion</code>) is in the
-    /// <code>Models</code> array. </p>
-    /// <p>This operation requires permissions to perform the
-    /// <code>lookoutvision:DeleteModel</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes an Amazon Lookout for Vision model. You can't delete a running model. To stop a running model, use the <code>StopModel</code> operation.</p>
+    /// <p>It might take a few seconds to delete a model. To determine if a model has been deleted, call <code>ListModels</code> and check if the version of the model (<code>ModelVersion</code>) is in the <code>Models</code> array. </p>
+    /// <p></p>
+    /// <p>This operation requires permissions to perform the <code>lookoutvision:DeleteModel</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -805,10 +741,10 @@ pub mod fluent_builders {
                 crate::input::DeleteModelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -817,8 +753,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project that contains the model that you want to delete.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the project that contains the model that you want to delete.</p>
@@ -827,8 +763,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the model that you want to delete.</p>
-        pub fn model_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_version(inp);
+        pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_version(input.into());
             self
         }
         /// <p>The version of the model that you want to delete.</p>
@@ -839,26 +775,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_model_version(input);
             self
         }
-        /// <p>ClientToken is an idempotency token that ensures a call to <code>DeleteModel</code>
-        /// completes only once.  You choose the value to pass. For example, An issue,
-        /// such as an network outage, might prevent you from getting a response from <code>DeleteModel</code>.
-        /// In this case, safely retry your call
-        /// to <code>DeleteModel</code> by using the same <code>ClientToken</code> parameter value. An error occurs
-        /// if the other input parameters are not the same as in the first request. Using a different  
-        /// value for <code>ClientToken</code> is considered a new call to <code>DeleteModel</code>. An idempotency
-        /// token is active for 8 hours.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>ClientToken is an idempotency token that ensures a call to <code>DeleteModel</code> completes only once. You choose the value to pass. For example, an issue might prevent you from getting a response from <code>DeleteModel</code>. In this case, safely retry your call to <code>DeleteModel</code> by using the same <code>ClientToken</code> parameter value.</p>
+        /// <p>If you don't supply a value for ClientToken, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple model deletion requests. You'll need to provide your own value for other use cases. </p>
+        /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>DeleteModel</code>. An idempotency token is active for 8 hours.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>ClientToken is an idempotency token that ensures a call to <code>DeleteModel</code>
-        /// completes only once.  You choose the value to pass. For example, An issue,
-        /// such as an network outage, might prevent you from getting a response from <code>DeleteModel</code>.
-        /// In this case, safely retry your call
-        /// to <code>DeleteModel</code> by using the same <code>ClientToken</code> parameter value. An error occurs
-        /// if the other input parameters are not the same as in the first request. Using a different  
-        /// value for <code>ClientToken</code> is considered a new call to <code>DeleteModel</code>. An idempotency
-        /// token is active for 8 hours.</p>
+        /// <p>ClientToken is an idempotency token that ensures a call to <code>DeleteModel</code> completes only once. You choose the value to pass. For example, an issue might prevent you from getting a response from <code>DeleteModel</code>. In this case, safely retry your call to <code>DeleteModel</code> by using the same <code>ClientToken</code> parameter value.</p>
+        /// <p>If you don't supply a value for ClientToken, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple model deletion requests. You'll need to provide your own value for other use cases. </p>
+        /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>DeleteModel</code>. An idempotency token is active for 8 hours.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -867,14 +793,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteProject`.
     ///
     /// <p>Deletes an Amazon Lookout for Vision project.</p>
-    /// <p>To delete a project, you must first delete each version of the model associated with
-    /// the project. To delete a model use the <a>DeleteModel</a> operation.</p>
-    /// <p>You also have to delete the dataset(s) associated with the model. For more information, see
-    /// <a>DeleteDataset</a>.  The images referenced by the training and test datasets aren't deleted.
-    /// </p>
-    /// <p>This operation requires permissions to perform the
-    /// <code>lookoutvision:DeleteProject</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>To delete a project, you must first delete each version of the model associated with the project. To delete a model use the <code>DeleteModel</code> operation.</p>
+    /// <p>You also have to delete the dataset(s) associated with the model. For more information, see <code>DeleteDataset</code>. The images referenced by the training and test datasets aren't deleted. </p>
+    /// <p>This operation requires permissions to perform the <code>lookoutvision:DeleteProject</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -919,10 +841,10 @@ pub mod fluent_builders {
                 crate::input::DeleteProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -931,8 +853,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project to delete.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the project to delete.</p>
@@ -940,26 +862,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_project_name(input);
             self
         }
-        /// <p>ClientToken is an idempotency token that ensures a call to <code>DeleteProject</code>
-        /// completes only once.  You choose the value to pass. For example, An issue,
-        /// such as an network outage, might prevent you from getting a response from <code>DeleteProject</code>.
-        /// In this case, safely retry your call
-        /// to <code>DeleteProject</code> by using the same <code>ClientToken</code> parameter value. An error occurs
-        /// if the other input parameters are not the same as in the first request. Using a different  
-        /// value for <code>ClientToken</code> is considered a new call to <code>DeleteProject</code>. An idempotency
-        /// token is active for 8 hours.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>ClientToken is an idempotency token that ensures a call to <code>DeleteProject</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>DeleteProject</code>. In this case, safely retry your call to <code>DeleteProject</code> by using the same <code>ClientToken</code> parameter value. </p>
+        /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple project deletion requests. You'll need to provide your own value for other use cases. </p>
+        /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>DeleteProject</code>. An idempotency token is active for 8 hours.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>ClientToken is an idempotency token that ensures a call to <code>DeleteProject</code>
-        /// completes only once.  You choose the value to pass. For example, An issue,
-        /// such as an network outage, might prevent you from getting a response from <code>DeleteProject</code>.
-        /// In this case, safely retry your call
-        /// to <code>DeleteProject</code> by using the same <code>ClientToken</code> parameter value. An error occurs
-        /// if the other input parameters are not the same as in the first request. Using a different  
-        /// value for <code>ClientToken</code> is considered a new call to <code>DeleteProject</code>. An idempotency
-        /// token is active for 8 hours.</p>
+        /// <p>ClientToken is an idempotency token that ensures a call to <code>DeleteProject</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>DeleteProject</code>. In this case, safely retry your call to <code>DeleteProject</code> by using the same <code>ClientToken</code> parameter value. </p>
+        /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple project deletion requests. You'll need to provide your own value for other use cases. </p>
+        /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>DeleteProject</code>. An idempotency token is active for 8 hours.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -968,9 +880,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDataset`.
     ///
     /// <p>Describe an Amazon Lookout for Vision dataset.</p>
-    /// <p>This operation requires permissions to perform the
-    /// <code>lookoutvision:DescribeDataset</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This operation requires permissions to perform the <code>lookoutvision:DescribeDataset</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1015,10 +926,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDatasetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1027,8 +938,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project that contains the dataset that you want to describe.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the project that contains the dataset that you want to describe.</p>
@@ -1036,18 +947,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_project_name(input);
             self
         }
-        /// <p>The type of the dataset to describe. Specify <code>train</code> to describe the
-        /// training dataset. Specify <code>test</code> to describe the test dataset.
-        /// If you have a single dataset project, specify <code>train</code>
-        /// </p>
-        pub fn dataset_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_type(inp);
+        /// <p>The type of the dataset to describe. Specify <code>train</code> to describe the training dataset. Specify <code>test</code> to describe the test dataset. If you have a single dataset project, specify <code>train</code> </p>
+        pub fn dataset_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_type(input.into());
             self
         }
-        /// <p>The type of the dataset to describe. Specify <code>train</code> to describe the
-        /// training dataset. Specify <code>test</code> to describe the test dataset.
-        /// If you have a single dataset project, specify <code>train</code>
-        /// </p>
+        /// <p>The type of the dataset to describe. Specify <code>train</code> to describe the training dataset. Specify <code>test</code> to describe the test dataset. If you have a single dataset project, specify <code>train</code> </p>
         pub fn set_dataset_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_dataset_type(input);
             self
@@ -1056,9 +961,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeModel`.
     ///
     /// <p>Describes a version of an Amazon Lookout for Vision model.</p>
-    /// <p>This operation requires permissions to perform the
-    /// <code>lookoutvision:DescribeModel</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This operation requires permissions to perform the <code>lookoutvision:DescribeModel</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1103,10 +1007,10 @@ pub mod fluent_builders {
                 crate::input::DescribeModelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1115,8 +1019,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The project that contains the version of a model that you want to describe.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The project that contains the version of a model that you want to describe.</p>
@@ -1125,8 +1029,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the model that you want to describe.</p>
-        pub fn model_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_version(inp);
+        pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_version(input.into());
             self
         }
         /// <p>The version of the model that you want to describe.</p>
@@ -1138,12 +1042,93 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeModelPackagingJob`.
+    ///
+    /// <p>Describes an Amazon Lookout for Vision model packaging job. </p>
+    /// <p>This operation requires permissions to perform the <code>lookoutvision:DescribeModelPackagingJob</code> operation.</p>
+    /// <p>For more information, see <i>Using your Amazon Lookout for Vision model on an edge device</i> in the Amazon Lookout for Vision Developer Guide. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeModelPackagingJob<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_model_packaging_job_input::Builder,
+    }
+    impl<C, M, R> DescribeModelPackagingJob<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeModelPackagingJob`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeModelPackagingJobOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeModelPackagingJobError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeModelPackagingJobInputOperationOutputAlias,
+                crate::output::DescribeModelPackagingJobOutput,
+                crate::error::DescribeModelPackagingJobError,
+                crate::input::DescribeModelPackagingJobInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the project that contains the model packaging job that you want to describe. </p>
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
+            self
+        }
+        /// <p>The name of the project that contains the model packaging job that you want to describe. </p>
+        pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_project_name(input);
+            self
+        }
+        /// <p>The job name for the model packaging job. </p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
+            self
+        }
+        /// <p>The job name for the model packaging job. </p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_name(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeProject`.
     ///
     /// <p>Describes an Amazon Lookout for Vision project.</p>
-    /// <p>This operation requires permissions to perform the
-    /// <code>lookoutvision:DescribeProject</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This operation requires permissions to perform the <code>lookoutvision:DescribeProject</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1188,10 +1173,10 @@ pub mod fluent_builders {
                 crate::input::DescribeProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1200,8 +1185,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project that you want to describe.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the project that you want to describe.</p>
@@ -1213,15 +1198,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DetectAnomalies`.
     ///
     /// <p>Detects anomalies in an image that you supply. </p>
-    /// <p>The response from <code>DetectAnomalies</code> includes a boolean prediction
-    /// that the image contains one or more anomalies and a confidence value for the prediction.</p>
-    /// <note>
-    /// <p>Before calling <code>DetectAnomalies</code>, you must first start your model with the <a>StartModel</a> operation.
-    /// You are charged for the amount of time, in minutes, that a model runs and for the number of anomaly detection units that your
-    /// model uses. If you are not using a model, use the <a>StopModel</a> operation to stop your model. </p>
+    /// <p>The response from <code>DetectAnomalies</code> includes a boolean prediction that the image contains one or more anomalies and a confidence value for the prediction.</p> <note>
+    /// <p>Before calling <code>DetectAnomalies</code>, you must first start your model with the <code>StartModel</code> operation. You are charged for the amount of time, in minutes, that a model runs and for the number of anomaly detection units that your model uses. If you are not using a model, use the <code>StopModel</code> operation to stop your model. </p>
     /// </note>
-    /// <p>This operation requires permissions to perform the
-    /// <code>lookoutvision:DetectAnomalies</code> operation.</p>
+    /// <p>This operation requires permissions to perform the <code>lookoutvision:DetectAnomalies</code> operation.</p>
     #[derive(std::fmt::Debug)]
     pub struct DetectAnomalies<
         C = aws_smithy_client::erase::DynConnector,
@@ -1267,10 +1247,10 @@ pub mod fluent_builders {
                 crate::input::DetectAnomaliesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1279,8 +1259,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project that contains the model version that you want to use.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the project that contains the model version that you want to use.</p>
@@ -1289,8 +1269,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the model that you want to use.</p>
-        pub fn model_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_version(inp);
+        pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_version(input.into());
             self
         }
         /// <p>The version of the model that you want to use.</p>
@@ -1302,8 +1282,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unencrypted image bytes that you want to analyze. </p>
-        pub fn body(mut self, inp: aws_smithy_http::byte_stream::ByteStream) -> Self {
-            self.inner = self.inner.body(inp);
+        pub fn body(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
+            self.inner = self.inner.body(input);
             self
         }
         /// <p>The unencrypted image bytes that you want to analyze. </p>
@@ -1314,14 +1294,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_body(input);
             self
         }
-        /// <p>The type of the image passed in <code>Body</code>.
-        /// Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images). </p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(inp);
+        /// <p>The type of the image passed in <code>Body</code>. Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images). </p>
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(input.into());
             self
         }
-        /// <p>The type of the image passed in <code>Body</code>.
-        /// Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images). </p>
+        /// <p>The type of the image passed in <code>Body</code>. Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images). </p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_content_type(input);
             self
@@ -1329,11 +1307,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDatasetEntries`.
     ///
-    /// <p>Lists the JSON Lines within a dataset. An Amazon Lookout for Vision JSON Line contains the anomaly
-    /// information for a single image, including the image location and the assigned label.</p>
-    /// <p>This operation requires permissions to perform the
-    /// <code>lookoutvision:ListDatasetEntries</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the JSON Lines within a dataset. An Amazon Lookout for Vision JSON Line contains the anomaly information for a single image, including the image location and the assigned label.</p>
+    /// <p>This operation requires permissions to perform the <code>lookoutvision:ListDatasetEntries</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasetEntries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1378,10 +1354,10 @@ pub mod fluent_builders {
                 crate::input::ListDatasetEntriesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1389,9 +1365,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDatasetEntriesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDatasetEntriesPaginator<C, M, R> {
+            crate::paginator::ListDatasetEntriesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the project that contains the dataset that you want to list.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the project that contains the dataset that you want to list.</p>
@@ -1399,40 +1381,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_project_name(input);
             self
         }
-        /// <p>The type of the dataset that you want to list.  Specify <code>train</code> to list
-        /// the training dataset. Specify <code>test</code> to list the test dataset. If you have a single dataset
-        /// project, specify <code>train</code>.</p>
-        pub fn dataset_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_type(inp);
+        /// <p>The type of the dataset that you want to list. Specify <code>train</code> to list the training dataset. Specify <code>test</code> to list the test dataset. If you have a single dataset project, specify <code>train</code>.</p>
+        pub fn dataset_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_type(input.into());
             self
         }
-        /// <p>The type of the dataset that you want to list.  Specify <code>train</code> to list
-        /// the training dataset. Specify <code>test</code> to list the test dataset. If you have a single dataset
-        /// project, specify <code>train</code>.</p>
+        /// <p>The type of the dataset that you want to list. Specify <code>train</code> to list the training dataset. Specify <code>test</code> to list the test dataset. If you have a single dataset project, specify <code>train</code>.</p>
         pub fn set_dataset_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_dataset_type(input);
             self
         }
-        /// <p>Specify <code>true</code> to include labeled entries, otherwise specify <code>false</code>. If you
-        /// don't specify a value, Lookout for Vision returns all entries.</p>
-        pub fn labeled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.labeled(inp);
+        /// <p>Specify <code>true</code> to include labeled entries, otherwise specify <code>false</code>. If you don't specify a value, Lookout for Vision returns all entries.</p>
+        pub fn labeled(mut self, input: bool) -> Self {
+            self.inner = self.inner.labeled(input);
             self
         }
-        /// <p>Specify <code>true</code> to include labeled entries, otherwise specify <code>false</code>. If you
-        /// don't specify a value, Lookout for Vision returns all entries.</p>
+        /// <p>Specify <code>true</code> to include labeled entries, otherwise specify <code>false</code>. If you don't specify a value, Lookout for Vision returns all entries.</p>
         pub fn set_labeled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_labeled(input);
             self
         }
-        /// <p>Specify <code>normal</code> to include only normal images. Specify <code>anomaly</code> to only include
-        /// anomalous entries. If you don't specify a value, Amazon Lookout for Vision returns normal and anomalous images.</p>
-        pub fn anomaly_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_class(inp);
+        /// <p>Specify <code>normal</code> to include only normal images. Specify <code>anomaly</code> to only include anomalous entries. If you don't specify a value, Amazon Lookout for Vision returns normal and anomalous images.</p>
+        pub fn anomaly_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_class(input.into());
             self
         }
-        /// <p>Specify <code>normal</code> to include only normal images. Specify <code>anomaly</code> to only include
-        /// anomalous entries. If you don't specify a value, Amazon Lookout for Vision returns normal and anomalous images.</p>
+        /// <p>Specify <code>normal</code> to include only normal images. Specify <code>anomaly</code> to only include anomalous entries. If you don't specify a value, Amazon Lookout for Vision returns normal and anomalous images.</p>
         pub fn set_anomaly_class(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1441,8 +1415,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Only includes entries before the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
-        pub fn before_creation_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.before_creation_date(inp);
+        pub fn before_creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.before_creation_date(input);
             self
         }
         /// <p>Only includes entries before the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
@@ -1454,8 +1428,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Only includes entries after the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
-        pub fn after_creation_date(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.after_creation_date(inp);
+        pub fn after_creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.after_creation_date(input);
             self
         }
         /// <p>Only includes entries after the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
@@ -1466,42 +1440,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_after_creation_date(input);
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve),
-        /// Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to
-        /// retrieve the next set of dataset entries.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of dataset entries.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve),
-        /// Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to
-        /// retrieve the next set of dataset entries.</p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of dataset entries.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
-        /// If you specify a value greater than 100, a ValidationException
-        /// error occurs. The default value is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
-        /// If you specify a value greater than 100, a ValidationException
-        /// error occurs. The default value is 100.</p>
+        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Perform a "contains" search on the  values of the <code>source-ref</code> key within the dataset.
-        /// For example a value of "IMG_17"  returns all JSON Lines where the <code>source-ref</code> key value matches <i>*IMG_17*</i>.</p>
-        pub fn source_ref_contains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_ref_contains(inp);
+        /// <p>Perform a "contains" search on the values of the <code>source-ref</code> key within the dataset. For example a value of "IMG_17" returns all JSON Lines where the <code>source-ref</code> key value matches <i>*IMG_17*</i>.</p>
+        pub fn source_ref_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_ref_contains(input.into());
             self
         }
-        /// <p>Perform a "contains" search on the  values of the <code>source-ref</code> key within the dataset.
-        /// For example a value of "IMG_17"  returns all JSON Lines where the <code>source-ref</code> key value matches <i>*IMG_17*</i>.</p>
+        /// <p>Perform a "contains" search on the values of the <code>source-ref</code> key within the dataset. For example a value of "IMG_17" returns all JSON Lines where the <code>source-ref</code> key value matches <i>*IMG_17*</i>.</p>
         pub fn set_source_ref_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1510,12 +1474,110 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListModelPackagingJobs`.
+    ///
+    /// <p> Lists the model packaging jobs created for an Amazon Lookout for Vision project. </p>
+    /// <p>This operation requires permissions to perform the <code>lookoutvision:ListModelPackagingJobs</code> operation. </p>
+    /// <p>For more information, see <i>Using your Amazon Lookout for Vision model on an edge device</i> in the Amazon Lookout for Vision Developer Guide. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListModelPackagingJobs<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_model_packaging_jobs_input::Builder,
+    }
+    impl<C, M, R> ListModelPackagingJobs<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListModelPackagingJobs`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListModelPackagingJobsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListModelPackagingJobsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListModelPackagingJobsInputOperationOutputAlias,
+                crate::output::ListModelPackagingJobsOutput,
+                crate::error::ListModelPackagingJobsError,
+                crate::input::ListModelPackagingJobsInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListModelPackagingJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListModelPackagingJobsPaginator<C, M, R> {
+            crate::paginator::ListModelPackagingJobsPaginator::new(self.handle, self.inner)
+        }
+        /// <p> The name of the project for which you want to list the model packaging jobs. </p>
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
+            self
+        }
+        /// <p> The name of the project for which you want to list the model packaging jobs. </p>
+        pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_project_name(input);
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListModels`.
     ///
     /// <p>Lists the versions of a model in an Amazon Lookout for Vision project.</p>
-    /// <p>This operation requires permissions to perform the
-    /// <code>lookoutvision:ListModels</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>The <code>ListModels</code> operation is eventually consistent. Recent calls to <code>CreateModel</code> might take a while to appear in the response from <code>ListProjects</code>.</p>
+    /// <p>This operation requires permissions to perform the <code>lookoutvision:ListModels</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListModels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1560,10 +1622,10 @@ pub mod fluent_builders {
                 crate::input::ListModelsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1571,9 +1633,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListModelsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListModelsPaginator<C, M, R> {
+            crate::paginator::ListModelsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the project that contains the model versions that you want to list.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the project that contains the model versions that you want to list.</p>
@@ -1581,30 +1649,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_project_name(input);
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve),
-        /// Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to
-        /// retrieve the next set of models.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of models.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve),
-        /// Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to
-        /// retrieve the next set of models.</p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of models.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
-        /// If you specify a value greater than 100, a ValidationException
-        /// error occurs. The default value is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
-        /// If you specify a value greater than 100, a ValidationException
-        /// error occurs. The default value is 100.</p>
+        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1613,9 +1673,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProjects`.
     ///
     /// <p>Lists the Amazon Lookout for Vision projects in your AWS account.</p>
-    /// <p>This operation requires permissions to perform the
-    /// <code>lookoutvision:ListProjects</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>The <code>ListProjects</code> operation is eventually consistent. Recent calls to <code>CreateProject</code> and <code>DeleteProject</code> might take a while to appear in the response from <code>ListProjects</code>.</p>
+    /// <p>This operation requires permissions to perform the <code>lookoutvision:ListProjects</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProjects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1660,10 +1720,10 @@ pub mod fluent_builders {
                 crate::input::ListProjectsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1671,30 +1731,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve),
-        /// Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to
-        /// retrieve the next set of projects.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListProjectsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListProjectsPaginator<C, M, R> {
+            crate::paginator::ListProjectsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of projects.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve),
-        /// Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to
-        /// retrieve the next set of projects.</p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of projects.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
-        /// If you specify a value greater than 100, a ValidationException
-        /// error occurs. The default value is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
-        /// If you specify a value greater than 100, a ValidationException
-        /// error occurs. The default value is 100.</p>
+        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1703,9 +1761,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Returns a list of tags attached to the specified Amazon Lookout for Vision model.</p>
-    /// <p>This operation requires permissions to perform the
-    /// <code>lookoutvision:ListTagsForResource</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This operation requires permissions to perform the <code>lookoutvision:ListTagsForResource</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1750,10 +1807,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1762,8 +1819,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the model for which you want to list tags. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the model for which you want to list tags. </p>
@@ -1774,18 +1831,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartModel`.
     ///
-    /// <p>Starts the running of the version of an Amazon Lookout for Vision model. Starting a model takes a while
-    /// to complete. To check the current state of the model, use <a>DescribeModel</a>.</p>
+    /// <p>Starts the running of the version of an Amazon Lookout for Vision model. Starting a model takes a while to complete. To check the current state of the model, use <code>DescribeModel</code>.</p>
     /// <p>A model is ready to use when its status is <code>HOSTED</code>.</p>
-    /// <p>Once the model is running, you can detect custom labels in new images by calling
-    /// <a>DetectAnomalies</a>.</p>
-    /// <note>
-    /// <p>You are charged for the amount of time that the model is running. To stop a running
-    /// model, call <a>StopModel</a>.</p>
+    /// <p>Once the model is running, you can detect custom labels in new images by calling <code>DetectAnomalies</code>.</p> <note>
+    /// <p>You are charged for the amount of time that the model is running. To stop a running model, call <code>StopModel</code>.</p>
     /// </note>
-    /// <p>This operation requires permissions to perform the
-    /// <code>lookoutvision:StartModel</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This operation requires permissions to perform the <code>lookoutvision:StartModel</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1830,10 +1882,10 @@ pub mod fluent_builders {
                 crate::input::StartModelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1842,8 +1894,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project that contains the model that you want to start.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the project that contains the model that you want to start.</p>
@@ -1852,8 +1904,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the model that you want to start.</p>
-        pub fn model_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_version(inp);
+        pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_version(input.into());
             self
         }
         /// <p>The version of the model that you want to start.</p>
@@ -1864,46 +1916,168 @@ pub mod fluent_builders {
             self.inner = self.inner.set_model_version(input);
             self
         }
-        /// <p>The minimum number of inference units to use. A single
-        /// inference unit represents 1 hour of processing and can support up to 5 Transaction Pers Second (TPS).
-        /// Use a higher number to increase the TPS throughput of your model. You are charged for the number
-        /// of inference units that you use.
-        /// </p>
-        pub fn min_inference_units(mut self, inp: i32) -> Self {
-            self.inner = self.inner.min_inference_units(inp);
+        /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing. Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
+        pub fn min_inference_units(mut self, input: i32) -> Self {
+            self.inner = self.inner.min_inference_units(input);
             self
         }
-        /// <p>The minimum number of inference units to use. A single
-        /// inference unit represents 1 hour of processing and can support up to 5 Transaction Pers Second (TPS).
-        /// Use a higher number to increase the TPS throughput of your model. You are charged for the number
-        /// of inference units that you use.
-        /// </p>
+        /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing. Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
         pub fn set_min_inference_units(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_min_inference_units(input);
             self
         }
-        /// <p>ClientToken is an idempotency token that ensures a call to <code>StartModel</code>
-        /// completes only once.  You choose the value to pass. For example, An issue,
-        /// such as an network outage, might prevent you from getting a response from <code>StartModel</code>.
-        /// In this case, safely retry your call
-        /// to <code>StartModel</code> by using the same <code>ClientToken</code> parameter value. An error occurs
-        /// if the other input parameters are not the same as in the first request. Using a different  
-        /// value for <code>ClientToken</code> is considered a new call to <code>StartModel</code>. An idempotency
-        /// token is active for 8 hours.
-        /// </p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>ClientToken is an idempotency token that ensures a call to <code>StartModel</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>StartModel</code>. In this case, safely retry your call to <code>StartModel</code> by using the same <code>ClientToken</code> parameter value. </p>
+        /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple start requests. You'll need to provide your own value for other use cases. </p>
+        /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>StartModel</code>. An idempotency token is active for 8 hours. </p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>ClientToken is an idempotency token that ensures a call to <code>StartModel</code>
-        /// completes only once.  You choose the value to pass. For example, An issue,
-        /// such as an network outage, might prevent you from getting a response from <code>StartModel</code>.
-        /// In this case, safely retry your call
-        /// to <code>StartModel</code> by using the same <code>ClientToken</code> parameter value. An error occurs
-        /// if the other input parameters are not the same as in the first request. Using a different  
-        /// value for <code>ClientToken</code> is considered a new call to <code>StartModel</code>. An idempotency
-        /// token is active for 8 hours.
-        /// </p>
+        /// <p>ClientToken is an idempotency token that ensures a call to <code>StartModel</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>StartModel</code>. In this case, safely retry your call to <code>StartModel</code> by using the same <code>ClientToken</code> parameter value. </p>
+        /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple start requests. You'll need to provide your own value for other use cases. </p>
+        /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>StartModel</code>. An idempotency token is active for 8 hours. </p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `StartModelPackagingJob`.
+    ///
+    /// <p>Starts an Amazon Lookout for Vision model packaging job. A model packaging job creates an AWS IoT Greengrass component for a Lookout for Vision model. You can use the component to deploy your model to an edge device managed by Greengrass. </p>
+    /// <p>Use the <code>DescribeModelPackagingJob</code> API to determine the current status of the job. The model packaging job is complete if the value of <code>Status</code> is <code>SUCCEEDED</code>.</p>
+    /// <p>To deploy the component to the target device, use the component name and component version with the AWS IoT Greengrass <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_CreateDeployment.html">CreateDeployment</a> API.</p>
+    /// <p>This operation requires the following permissions:</p>
+    /// <ul>
+    /// <li> <p> <code>lookoutvision:StartModelPackagingJobs</code> </p> </li>
+    /// <li> <p> <code>s3:PutObject</code> </p> </li>
+    /// <li> <p> <code>s3:GetBucketLocation</code> </p> </li>
+    /// <li> <p> <code>greengrass:CreateComponentVersion</code> </p> </li>
+    /// <li> <p> <code>greengrass:DescribeComponent</code> </p> </li>
+    /// <li> <p>(Optional) <code>greengrass:TagResource</code>. Only required if you want to tag the component.</p> </li>
+    /// </ul>
+    /// <p>For more information, see <i>Using your Amazon Lookout for Vision model on an edge device</i> in the Amazon Lookout for Vision Developer Guide. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct StartModelPackagingJob<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::start_model_packaging_job_input::Builder,
+    }
+    impl<C, M, R> StartModelPackagingJob<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `StartModelPackagingJob`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StartModelPackagingJobOutput,
+            aws_smithy_http::result::SdkError<crate::error::StartModelPackagingJobError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::StartModelPackagingJobInputOperationOutputAlias,
+                crate::output::StartModelPackagingJobOutput,
+                crate::error::StartModelPackagingJobError,
+                crate::input::StartModelPackagingJobInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p> The name of the project which contains the version of the model that you want to package. </p>
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
+            self
+        }
+        /// <p> The name of the project which contains the version of the model that you want to package. </p>
+        pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_project_name(input);
+            self
+        }
+        /// <p> The version of the model within the project that you want to package. </p>
+        pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_version(input.into());
+            self
+        }
+        /// <p> The version of the model within the project that you want to package. </p>
+        pub fn set_model_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_model_version(input);
+            self
+        }
+        /// <p>A name for the model packaging job. If you don't supply a value, the service creates a job name for you. </p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
+            self
+        }
+        /// <p>A name for the model packaging job. If you don't supply a value, the service creates a job name for you. </p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_name(input);
+            self
+        }
+        /// <p>The configuration for the model packaging job. </p>
+        pub fn configuration(mut self, input: crate::model::ModelPackagingConfiguration) -> Self {
+            self.inner = self.inner.configuration(input);
+            self
+        }
+        /// <p>The configuration for the model packaging job. </p>
+        pub fn set_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ModelPackagingConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_configuration(input);
+            self
+        }
+        /// <p>A description for the model packaging job. </p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>A description for the model packaging job. </p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>ClientToken is an idempotency token that ensures a call to <code>StartModelPackagingJob</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>StartModelPackagingJob</code>. In this case, safely retry your call to <code>StartModelPackagingJob</code> by using the same <code>ClientToken</code> parameter value.</p>
+        /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple dataset creation requests. You'll need to provide your own value for other use cases. </p>
+        /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>StartModelPackagingJob</code>. An idempotency token is active for 8 hours. </p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>ClientToken is an idempotency token that ensures a call to <code>StartModelPackagingJob</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>StartModelPackagingJob</code>. In this case, safely retry your call to <code>StartModelPackagingJob</code> by using the same <code>ClientToken</code> parameter value.</p>
+        /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple dataset creation requests. You'll need to provide your own value for other use cases. </p>
+        /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>StartModelPackagingJob</code>. An idempotency token is active for 8 hours. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1911,12 +2085,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopModel`.
     ///
-    /// <p>Stops the hosting of a running model. The operation might take a while to complete. To
-    /// check the current status, call <a>DescribeModel</a>. </p>
+    /// <p>Stops the hosting of a running model. The operation might take a while to complete. To check the current status, call <code>DescribeModel</code>. </p>
     /// <p>After the model hosting stops, the <code>Status</code> of the model is <code>TRAINED</code>.</p>
-    /// <p>This operation requires permissions to perform the
-    /// <code>lookoutvision:StopModel</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This operation requires permissions to perform the <code>lookoutvision:StopModel</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1961,10 +2133,10 @@ pub mod fluent_builders {
                 crate::input::StopModelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1973,8 +2145,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project that contains the model that you want to stop.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the project that contains the model that you want to stop.</p>
@@ -1983,8 +2155,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the model that you want to stop.</p>
-        pub fn model_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_version(inp);
+        pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_version(input.into());
             self
         }
         /// <p>The version of the model that you want to stop.</p>
@@ -1995,32 +2167,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_model_version(input);
             self
         }
-        /// <p>ClientToken is an idempotency token that ensures a call to <code>StopModel</code>
-        /// completes only once.  You choose the value to pass. For example, An issue,
-        /// such as an network outage, might prevent you from getting a response from <code>StopModel</code>.
-        /// In this case, safely retry your call
-        /// to <code>StopModel</code> by using the same <code>ClientToken</code> parameter value. An error occurs
-        /// if the other input parameters are not the same as in the first request. Using a different  
-        /// value for <code>ClientToken</code> is considered a new call to <code>StopModel</code>. An idempotency
-        /// token is active for 8 hours.
-        ///
-        ///
-        /// </p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>ClientToken is an idempotency token that ensures a call to <code>StopModel</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>StopModel</code>. In this case, safely retry your call to <code>StopModel</code> by using the same <code>ClientToken</code> parameter value.</p>
+        /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple stop requests. You'll need to provide your own value for other use cases. </p>
+        /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>StopModel</code>. An idempotency token is active for 8 hours. </p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>ClientToken is an idempotency token that ensures a call to <code>StopModel</code>
-        /// completes only once.  You choose the value to pass. For example, An issue,
-        /// such as an network outage, might prevent you from getting a response from <code>StopModel</code>.
-        /// In this case, safely retry your call
-        /// to <code>StopModel</code> by using the same <code>ClientToken</code> parameter value. An error occurs
-        /// if the other input parameters are not the same as in the first request. Using a different  
-        /// value for <code>ClientToken</code> is considered a new call to <code>StopModel</code>. An idempotency
-        /// token is active for 8 hours.
-        ///
-        ///
-        /// </p>
+        /// <p>ClientToken is an idempotency token that ensures a call to <code>StopModel</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>StopModel</code>. In this case, safely retry your call to <code>StopModel</code> by using the same <code>ClientToken</code> parameter value.</p>
+        /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple stop requests. You'll need to provide your own value for other use cases. </p>
+        /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>StopModel</code>. An idempotency token is active for 8 hours. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -2028,11 +2184,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds one or more key-value tags to an Amazon Lookout for Vision model.
-    /// For more information, see <i>Tagging a model</i> in the <i>Amazon Lookout for Vision Developer Guide</i>. </p>
-    /// <p>This operation requires permissions to perform the
-    /// <code>lookoutvision:TagResource</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds one or more key-value tags to an Amazon Lookout for Vision model. For more information, see <i>Tagging a model</i> in the <i>Amazon Lookout for Vision Developer Guide</i>. </p>
+    /// <p>This operation requires permissions to perform the <code>lookoutvision:TagResource</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2077,10 +2231,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2089,8 +2243,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the model to assign the tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the model to assign the tags.</p>
@@ -2103,8 +2257,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key-value tags to assign to the model.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The key-value tags to assign to the model.</p>
@@ -2118,11 +2272,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Removes one or more tags from an Amazon Lookout for Vision model. For more information, see
-    /// <i>Tagging a model</i> in the <i>Amazon Lookout for Vision Developer Guide</i>. </p>
-    /// <p>This operation requires permissions to perform the
-    /// <code>lookoutvision:UntagResource</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes one or more tags from an Amazon Lookout for Vision model. For more information, see <i>Tagging a model</i> in the <i>Amazon Lookout for Vision Developer Guide</i>. </p>
+    /// <p>This operation requires permissions to perform the <code>lookoutvision:UntagResource</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2167,10 +2319,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2179,8 +2331,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the model from which you want to remove tags. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the model from which you want to remove tags. </p>
@@ -2193,8 +2345,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>A list of the keys of the tags that you want to remove.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A list of the keys of the tags that you want to remove.</p>
@@ -2208,15 +2360,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDatasetEntries`.
     ///
-    /// <p>Adds one or more JSON Line entries to a dataset. A JSON Line includes information about an image
-    /// used for training or testing an Amazon Lookout for Vision model. The following is an example JSON Line.</p>
-    ///
-    ///
-    /// <p>Updating a dataset might take a while to complete. To check the current status, call <a>DescribeDataset</a> and
-    /// check the <code>Status</code> field in the response.</p>
-    /// <p>This operation requires permissions to perform the
-    /// <code>lookoutvision:UpdateDatasetEntries</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds or updates one or more JSON Line entries in a dataset. A JSON Line includes information about an image used for training or testing an Amazon Lookout for Vision model.</p>
+    /// <p>To update an existing JSON Line, use the <code>source-ref</code> field to identify the JSON Line. The JSON line that you supply replaces the existing JSON line. Any existing annotations that are not in the new JSON line are removed from the dataset. </p>
+    /// <p>For more information, see <i>Defining JSON lines for anomaly classification</i> in the Amazon Lookout for Vision Developer Guide. </p> <note>
+    /// <p>The images you reference in the <code>source-ref</code> field of a JSON line, must be in the same S3 bucket as the existing images in the dataset. </p>
+    /// </note>
+    /// <p>Updating a dataset might take a while to complete. To check the current status, call <code>DescribeDataset</code> and check the <code>Status</code> field in the response.</p>
+    /// <p>This operation requires permissions to perform the <code>lookoutvision:UpdateDatasetEntries</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDatasetEntries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2261,10 +2412,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDatasetEntriesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2273,8 +2424,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project that contains the dataset that you want to update.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the project that contains the dataset that you want to update.</p>
@@ -2282,23 +2433,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_project_name(input);
             self
         }
-        /// <p>The type of the dataset that you want to update. Specify <code>train</code> to update
-        /// the training dataset. Specify <code>test</code> to update the test dataset. If you
-        /// have a single dataset project, specify <code>train</code>.</p>
-        pub fn dataset_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_type(inp);
+        /// <p>The type of the dataset that you want to update. Specify <code>train</code> to update the training dataset. Specify <code>test</code> to update the test dataset. If you have a single dataset project, specify <code>train</code>.</p>
+        pub fn dataset_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_type(input.into());
             self
         }
-        /// <p>The type of the dataset that you want to update. Specify <code>train</code> to update
-        /// the training dataset. Specify <code>test</code> to update the test dataset. If you
-        /// have a single dataset project, specify <code>train</code>.</p>
+        /// <p>The type of the dataset that you want to update. Specify <code>train</code> to update the training dataset. Specify <code>test</code> to update the test dataset. If you have a single dataset project, specify <code>train</code>.</p>
         pub fn set_dataset_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_dataset_type(input);
             self
         }
         /// <p>The entries to add to the dataset.</p>
-        pub fn changes(mut self, inp: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.changes(inp);
+        pub fn changes(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.changes(input);
             self
         }
         /// <p>The entries to add to the dataset.</p>
@@ -2306,34 +2453,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_changes(input);
             self
         }
-        /// <p>ClientToken is an idempotency token that ensures a call to <code>UpdateDatasetEntries</code>
-        /// completes only once.  You choose the value to pass. For example, An issue,
-        /// such as an network outage, might prevent you from getting a response from <code>UpdateDatasetEntries</code>.
-        /// In this case, safely retry your call
-        /// to <code>UpdateDatasetEntries</code> by using the same <code>ClientToken</code> parameter value. An error occurs
-        /// if the other input parameters are not the same as in the first request. Using a different  
-        /// value for <code>ClientToken</code> is considered a new call to <code>UpdateDatasetEntries</code>. An idempotency
-        /// token is active for 8 hours.
-        /// </p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>ClientToken is an idempotency token that ensures a call to <code>UpdateDatasetEntries</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>UpdateDatasetEntries</code>. In this case, safely retry your call to <code>UpdateDatasetEntries</code> by using the same <code>ClientToken</code> parameter value.</p>
+        /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple updates with the same dataset entries. You'll need to provide your own value for other use cases. </p>
+        /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>UpdateDatasetEntries</code>. An idempotency token is active for 8 hours. </p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>ClientToken is an idempotency token that ensures a call to <code>UpdateDatasetEntries</code>
-        /// completes only once.  You choose the value to pass. For example, An issue,
-        /// such as an network outage, might prevent you from getting a response from <code>UpdateDatasetEntries</code>.
-        /// In this case, safely retry your call
-        /// to <code>UpdateDatasetEntries</code> by using the same <code>ClientToken</code> parameter value. An error occurs
-        /// if the other input parameters are not the same as in the first request. Using a different  
-        /// value for <code>ClientToken</code> is considered a new call to <code>UpdateDatasetEntries</code>. An idempotency
-        /// token is active for 8 hours.
-        /// </p>
+        /// <p>ClientToken is an idempotency token that ensures a call to <code>UpdateDatasetEntries</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>UpdateDatasetEntries</code>. In this case, safely retry your call to <code>UpdateDatasetEntries</code> by using the same <code>ClientToken</code> parameter value.</p>
+        /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple updates with the same dataset entries. You'll need to provide your own value for other use cases. </p>
+        /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>UpdateDatasetEntries</code>. An idempotency token is active for 8 hours. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

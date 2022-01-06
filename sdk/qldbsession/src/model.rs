@@ -170,19 +170,15 @@ impl IoUsage {
     }
 }
 
-/// <p>Contains server-side performance information for a command. Amazon QLDB captures timing
-/// information between the times when it receives the request and when it sends the
-/// corresponding response.</p>
+/// <p>Contains server-side performance information for a command. Amazon QLDB captures timing information between the times when it receives the request and when it sends the corresponding response.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimingInformation {
-    /// <p>The amount of time that QLDB spent on processing the command, measured in
-    /// milliseconds.</p>
+    /// <p>The amount of time that QLDB spent on processing the command, measured in milliseconds.</p>
     pub processing_time_milliseconds: i64,
 }
 impl TimingInformation {
-    /// <p>The amount of time that QLDB spent on processing the command, measured in
-    /// milliseconds.</p>
+    /// <p>The amount of time that QLDB spent on processing the command, measured in milliseconds.</p>
     pub fn processing_time_milliseconds(&self) -> i64 {
         self.processing_time_milliseconds
     }
@@ -206,14 +202,12 @@ pub mod timing_information {
         pub(crate) processing_time_milliseconds: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The amount of time that QLDB spent on processing the command, measured in
-        /// milliseconds.</p>
+        /// <p>The amount of time that QLDB spent on processing the command, measured in milliseconds.</p>
         pub fn processing_time_milliseconds(mut self, input: i64) -> Self {
             self.processing_time_milliseconds = Some(input);
             self
         }
-        /// <p>The amount of time that QLDB spent on processing the command, measured in
-        /// milliseconds.</p>
+        /// <p>The amount of time that QLDB spent on processing the command, measured in milliseconds.</p>
         pub fn set_processing_time_milliseconds(mut self, input: std::option::Option<i64>) -> Self {
             self.processing_time_milliseconds = input;
             self
@@ -275,9 +269,9 @@ pub mod page {
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
         /// <p>A structure that contains values in multiple encoding formats.</p>
-        pub fn values(mut self, input: impl Into<crate::model::ValueHolder>) -> Self {
+        pub fn values(mut self, input: crate::model::ValueHolder) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.values = Some(v);
             self
         }
@@ -812,15 +806,13 @@ impl StartTransactionResult {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSessionResult {
-    /// <p>Session token of the started session. This <code>SessionToken</code> is required for
-    /// every subsequent command that is issued during the current session.</p>
+    /// <p>Session token of the started session. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
     pub session_token: std::option::Option<std::string::String>,
     /// <p>Contains server-side performance information for the command.</p>
     pub timing_information: std::option::Option<crate::model::TimingInformation>,
 }
 impl StartSessionResult {
-    /// <p>Session token of the started session. This <code>SessionToken</code> is required for
-    /// every subsequent command that is issued during the current session.</p>
+    /// <p>Session token of the started session. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
     pub fn session_token(&self) -> std::option::Option<&str> {
         self.session_token.as_deref()
     }
@@ -847,14 +839,12 @@ pub mod start_session_result {
         pub(crate) timing_information: std::option::Option<crate::model::TimingInformation>,
     }
     impl Builder {
-        /// <p>Session token of the started session. This <code>SessionToken</code> is required for
-        /// every subsequent command that is issued during the current session.</p>
+        /// <p>Session token of the started session. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
         pub fn session_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.session_token = Some(input.into());
             self
         }
-        /// <p>Session token of the started session. This <code>SessionToken</code> is required for
-        /// every subsequent command that is issued during the current session.</p>
+        /// <p>Session token of the started session. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
         pub fn set_session_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1043,9 +1033,9 @@ pub mod execute_statement_request {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>Specifies the parameters for the parameterized statement in the request.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::ValueHolder>) -> Self {
+        pub fn parameters(mut self, input: crate::model::ValueHolder) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -1110,13 +1100,8 @@ impl AbortTransactionRequest {
 pub struct CommitTransactionRequest {
     /// <p>Specifies the transaction ID of the transaction to commit.</p>
     pub transaction_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the commit digest for the transaction to commit. For every active transaction,
-    /// the commit digest must be passed. QLDB validates <code>CommitDigest</code> and rejects
-    /// the commit with an error if the digest computed on the client does not match the digest
-    /// computed by QLDB.</p>
-    /// <p>The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits
-    /// a transaction if and only if the server has processed the exact set of statements sent by
-    /// the client, in the same order that client sent them, and with no duplicates.</p>
+    /// <p>Specifies the commit digest for the transaction to commit. For every active transaction, the commit digest must be passed. QLDB validates <code>CommitDigest</code> and rejects the commit with an error if the digest computed on the client does not match the digest computed by QLDB.</p>
+    /// <p>The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits a transaction if and only if the server has processed the exact set of statements sent by the client, in the same order that client sent them, and with no duplicates.</p>
     pub commit_digest: std::option::Option<aws_smithy_types::Blob>,
 }
 impl CommitTransactionRequest {
@@ -1124,13 +1109,8 @@ impl CommitTransactionRequest {
     pub fn transaction_id(&self) -> std::option::Option<&str> {
         self.transaction_id.as_deref()
     }
-    /// <p>Specifies the commit digest for the transaction to commit. For every active transaction,
-    /// the commit digest must be passed. QLDB validates <code>CommitDigest</code> and rejects
-    /// the commit with an error if the digest computed on the client does not match the digest
-    /// computed by QLDB.</p>
-    /// <p>The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits
-    /// a transaction if and only if the server has processed the exact set of statements sent by
-    /// the client, in the same order that client sent them, and with no duplicates.</p>
+    /// <p>Specifies the commit digest for the transaction to commit. For every active transaction, the commit digest must be passed. QLDB validates <code>CommitDigest</code> and rejects the commit with an error if the digest computed on the client does not match the digest computed by QLDB.</p>
+    /// <p>The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits a transaction if and only if the server has processed the exact set of statements sent by the client, in the same order that client sent them, and with no duplicates.</p>
     pub fn commit_digest(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.commit_digest.as_ref()
     }
@@ -1166,24 +1146,14 @@ pub mod commit_transaction_request {
             self.transaction_id = input;
             self
         }
-        /// <p>Specifies the commit digest for the transaction to commit. For every active transaction,
-        /// the commit digest must be passed. QLDB validates <code>CommitDigest</code> and rejects
-        /// the commit with an error if the digest computed on the client does not match the digest
-        /// computed by QLDB.</p>
-        /// <p>The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits
-        /// a transaction if and only if the server has processed the exact set of statements sent by
-        /// the client, in the same order that client sent them, and with no duplicates.</p>
+        /// <p>Specifies the commit digest for the transaction to commit. For every active transaction, the commit digest must be passed. QLDB validates <code>CommitDigest</code> and rejects the commit with an error if the digest computed on the client does not match the digest computed by QLDB.</p>
+        /// <p>The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits a transaction if and only if the server has processed the exact set of statements sent by the client, in the same order that client sent them, and with no duplicates.</p>
         pub fn commit_digest(mut self, input: aws_smithy_types::Blob) -> Self {
             self.commit_digest = Some(input);
             self
         }
-        /// <p>Specifies the commit digest for the transaction to commit. For every active transaction,
-        /// the commit digest must be passed. QLDB validates <code>CommitDigest</code> and rejects
-        /// the commit with an error if the digest computed on the client does not match the digest
-        /// computed by QLDB.</p>
-        /// <p>The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits
-        /// a transaction if and only if the server has processed the exact set of statements sent by
-        /// the client, in the same order that client sent them, and with no duplicates.</p>
+        /// <p>Specifies the commit digest for the transaction to commit. For every active transaction, the commit digest must be passed. QLDB validates <code>CommitDigest</code> and rejects the commit with an error if the digest computed on the client does not match the digest computed by QLDB.</p>
+        /// <p>The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits a transaction if and only if the server has processed the exact set of statements sent by the client, in the same order that client sent them, and with no duplicates.</p>
         pub fn set_commit_digest(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,

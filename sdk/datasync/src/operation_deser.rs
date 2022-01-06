@@ -213,6 +213,86 @@ pub fn parse_create_location_efs_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_location_fsx_lustre_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateLocationFsxLustreOutput,
+    crate::error::CreateLocationFsxLustreError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateLocationFsxLustreError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::CreateLocationFsxLustreError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalException" => {
+            crate::error::CreateLocationFsxLustreError {
+                meta: generic,
+                kind: crate::error::CreateLocationFsxLustreErrorKind::InternalException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLocationFsxLustreError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InvalidRequestException" => crate::error::CreateLocationFsxLustreError {
+            meta: generic,
+            kind: crate::error::CreateLocationFsxLustreErrorKind::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLocationFsxLustreError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::CreateLocationFsxLustreError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_location_fsx_lustre_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateLocationFsxLustreOutput,
+    crate::error::CreateLocationFsxLustreError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_location_fsx_lustre_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_create_location_fsx_lustre(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateLocationFsxLustreError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_location_fsx_windows_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -1071,6 +1151,86 @@ pub fn parse_describe_location_efs_response(
             output,
         )
         .map_err(crate::error::DescribeLocationEfsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_location_fsx_lustre_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeLocationFsxLustreOutput,
+    crate::error::DescribeLocationFsxLustreError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeLocationFsxLustreError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeLocationFsxLustreError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalException" => {
+            crate::error::DescribeLocationFsxLustreError {
+                meta: generic,
+                kind: crate::error::DescribeLocationFsxLustreErrorKind::InternalException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::internal_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLocationFsxLustreError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InvalidRequestException" => crate::error::DescribeLocationFsxLustreError {
+            meta: generic,
+            kind: crate::error::DescribeLocationFsxLustreErrorKind::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLocationFsxLustreError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeLocationFsxLustreError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_location_fsx_lustre_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeLocationFsxLustreOutput,
+    crate::error::DescribeLocationFsxLustreError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_location_fsx_lustre_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_location_fsx_lustre(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeLocationFsxLustreError::unhandled)?;
         output.build()
     })
 }

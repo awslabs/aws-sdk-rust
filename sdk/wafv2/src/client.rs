@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS WAFV2
@@ -427,12 +427,9 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AssociateWebACL`.
     ///
-    /// <p>Associates a web ACL with a regional application resource, to protect the resource.
-    /// A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
-    /// <p>For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To
-    /// associate a web ACL, in the CloudFront call <code>UpdateDistribution</code>, set the web ACL ID
-    /// to the Amazon Resource Name (ARN) of the web ACL. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Associates a web ACL with a regional application resource, to protect the resource. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+    /// <p>For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To associate a web ACL, in the CloudFront call <code>UpdateDistribution</code>, set the web ACL ID to the Amazon Resource Name (ARN) of the web ACL. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateWebACL<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -477,10 +474,10 @@ pub mod fluent_builders {
                 crate::input::AssociateWebAclInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -488,61 +485,33 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the
-        /// resource.</p>
-        pub fn web_acl_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.web_acl_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.</p>
+        pub fn web_acl_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.web_acl_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the
-        /// resource.</p>
+        /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.</p>
         pub fn set_web_acl_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_web_acl_arn(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to associate with the web ACL. </p>
-        ///
         /// <p>The ARN must be in one of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For an Amazon API Gateway REST API: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For an AppSync GraphQL API: <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i>
-        /// </code>
-        /// </p>
-        /// </li>
+        /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>
+        /// <li> <p>For an Amazon API Gateway REST API: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>
+        /// <li> <p>For an AppSync GraphQL API: <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code> </p> </li>
         /// </ul>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to associate with the web ACL. </p>
-        ///
         /// <p>The ARN must be in one of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For an Amazon API Gateway REST API: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For an AppSync GraphQL API: <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i>
-        /// </code>
-        /// </p>
-        /// </li>
+        /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>
+        /// <li> <p>For an Amazon API Gateway REST API: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>
+        /// <li> <p>For an AppSync GraphQL API: <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code> </p> </li>
         /// </ul>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
@@ -551,19 +520,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CheckCapacity`.
     ///
-    /// <p>Returns the web ACL capacity unit (WCU) requirements for a specified scope and set of rules.
-    /// You can use this to check the capacity requirements for the rules you want to use in a
-    /// <a>RuleGroup</a> or <a>WebACL</a>.
-    /// </p>
-    /// <p>WAF uses WCUs to calculate and control the operating
-    /// resources that are used to run your rules, rule groups, and web ACLs. WAF
-    /// calculates capacity differently for each rule type, to reflect the relative cost of each rule.
-    /// Simple rules that cost little to run use fewer WCUs than more complex rules
-    /// that use more processing power.
-    /// Rule group capacity is fixed at creation, which helps users plan their  
-    /// web ACL WCU usage when they use a rule group.
-    /// The WCU limit for web ACLs is 1,500.  </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the web ACL capacity unit (WCU) requirements for a specified scope and set of rules. You can use this to check the capacity requirements for the rules you want to use in a <code>RuleGroup</code> or <code>WebACL</code>. </p>
+    /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. The WCU limit for web ACLs is 1,500. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CheckCapacity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -608,10 +567,10 @@ pub mod fluent_builders {
                 crate::input::CheckCapacityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -619,29 +578,21 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
@@ -651,14 +602,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>An array of <a>Rule</a> that you're configuring to use in a rule group or web
-        /// ACL. </p>
-        pub fn rules(mut self, inp: impl Into<crate::model::Rule>) -> Self {
-            self.inner = self.inner.rules(inp);
+        /// <p>An array of <code>Rule</code> that you're configuring to use in a rule group or web ACL. </p>
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
+            self.inner = self.inner.rules(input);
             self
         }
-        /// <p>An array of <a>Rule</a> that you're configuring to use in a rule group or web
-        /// ACL. </p>
+        /// <p>An array of <code>Rule</code> that you're configuring to use in a rule group or web ACL. </p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -669,11 +618,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateIPSet`.
     ///
-    /// <p>Creates an <a>IPSet</a>, which you use to identify web requests that
-    /// originate from specific IP addresses or ranges of IP addresses. For example, if you're
-    /// receiving a lot of requests from a ranges of IP addresses, you can configure WAF to
-    /// block them using an IPSet that lists those IP addresses. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an <code>IPSet</code>, which you use to identify web requests that originate from specific IP addresses or ranges of IP addresses. For example, if you're receiving a lot of requests from a ranges of IP addresses, you can configure WAF to block them using an IPSet that lists those IP addresses. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIPSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -718,10 +664,10 @@ pub mod fluent_builders {
                 crate::input::CreateIpSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -730,8 +676,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
@@ -739,37 +685,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
         /// <p>A description of the IP set that helps with identification. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the IP set that helps with identification. </p>
@@ -778,8 +716,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
-        pub fn ip_address_version(mut self, inp: crate::model::IpAddressVersion) -> Self {
-            self.inner = self.inner.ip_address_version(inp);
+        pub fn ip_address_version(mut self, input: crate::model::IpAddressVersion) -> Self {
+            self.inner = self.inner.ip_address_version(input);
             self
         }
         /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
@@ -797,41 +735,23 @@ pub mod fluent_builders {
         /// <p>Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
         /// <p>Examples: </p>
         /// <ul>
-        /// <li>
-        /// <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify
-        /// <code>192.0.2.0/24</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>To configure WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p>
-        /// </li>
+        /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
+        /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
+        /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
+        /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
         /// </ul>
         /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
-        pub fn addresses(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.addresses(inp);
+        pub fn addresses(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.addresses(input.into());
             self
         }
         /// <p>Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
         /// <p>Examples: </p>
         /// <ul>
-        /// <li>
-        /// <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify
-        /// <code>192.0.2.0/24</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>To configure WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p>
-        /// </li>
+        /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
+        /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
+        /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
+        /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
         /// </ul>
         /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
         pub fn set_addresses(
@@ -846,8 +766,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of key:value pairs to associate with the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>An array of key:value pairs to associate with the resource.</p>
@@ -861,9 +781,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateRegexPatternSet`.
     ///
-    /// <p>Creates a <a>RegexPatternSet</a>, which you reference in a <a>RegexPatternSetReferenceStatement</a>, to have WAF inspect a web request
-    /// component for the specified patterns.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a <code>RegexPatternSet</code>, which you reference in a <code>RegexPatternSetReferenceStatement</code>, to have WAF inspect a web request component for the specified patterns.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRegexPatternSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -908,10 +827,10 @@ pub mod fluent_builders {
                 crate::input::CreateRegexPatternSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -920,8 +839,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the set. You cannot change the name after you create the set.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the set. You cannot change the name after you create the set.</p>
@@ -929,37 +848,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
         /// <p>A description of the set that helps with identification. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the set that helps with identification. </p>
@@ -972,8 +883,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_regular_expression_list`](Self::set_regular_expression_list).
         ///
         /// <p>Array of regular expression strings. </p>
-        pub fn regular_expression_list(mut self, inp: impl Into<crate::model::Regex>) -> Self {
-            self.inner = self.inner.regular_expression_list(inp);
+        pub fn regular_expression_list(mut self, input: crate::model::Regex) -> Self {
+            self.inner = self.inner.regular_expression_list(input);
             self
         }
         /// <p>Array of regular expression strings. </p>
@@ -989,8 +900,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of key:value pairs to associate with the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>An array of key:value pairs to associate with the resource.</p>
@@ -1004,9 +915,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateRuleGroup`.
     ///
-    /// <p>Creates a <a>RuleGroup</a> per the specifications provided. </p>
-    /// <p> A rule group defines a collection of rules to inspect and control web requests that you can use in a <a>WebACL</a>. When you create a rule group, you define an immutable capacity limit. If you update a rule group, you must stay within the capacity. This allows others to reuse the rule group with confidence in its capacity requirements. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a <code>RuleGroup</code> per the specifications provided. </p>
+    /// <p> A rule group defines a collection of rules to inspect and control web requests that you can use in a <code>WebACL</code>. When you create a rule group, you define an immutable capacity limit. If you update a rule group, you must stay within the capacity. This allows others to reuse the rule group with confidence in its capacity requirements. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRuleGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1051,10 +962,10 @@ pub mod fluent_builders {
                 crate::input::CreateRuleGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1063,8 +974,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
@@ -1072,69 +983,43 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
         /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
-        /// <p>When you create your own rule group, you define this, and you cannot change it after creation.
-        /// When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity
-        /// for a set of rules using <a>CheckCapacity</a>.</p>
-        /// <p>WAF uses WCUs to calculate and control the operating
-        /// resources that are used to run your rules, rule groups, and web ACLs. WAF
-        /// calculates capacity differently for each rule type, to reflect the relative cost of each rule.
-        /// Simple rules that cost little to run use fewer WCUs than more complex rules
-        /// that use more processing power.
-        /// Rule group capacity is fixed at creation, which helps users plan their  
-        /// web ACL WCU usage when they use a rule group.
-        /// The WCU limit for web ACLs is 1,500.  </p>
-        pub fn capacity(mut self, inp: i64) -> Self {
-            self.inner = self.inner.capacity(inp);
+        /// <p>When you create your own rule group, you define this, and you cannot change it after creation. When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using <code>CheckCapacity</code>.</p>
+        /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. The WCU limit for web ACLs is 1,500. </p>
+        pub fn capacity(mut self, input: i64) -> Self {
+            self.inner = self.inner.capacity(input);
             self
         }
         /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
-        /// <p>When you create your own rule group, you define this, and you cannot change it after creation.
-        /// When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity
-        /// for a set of rules using <a>CheckCapacity</a>.</p>
-        /// <p>WAF uses WCUs to calculate and control the operating
-        /// resources that are used to run your rules, rule groups, and web ACLs. WAF
-        /// calculates capacity differently for each rule type, to reflect the relative cost of each rule.
-        /// Simple rules that cost little to run use fewer WCUs than more complex rules
-        /// that use more processing power.
-        /// Rule group capacity is fixed at creation, which helps users plan their  
-        /// web ACL WCU usage when they use a rule group.
-        /// The WCU limit for web ACLs is 1,500.  </p>
+        /// <p>When you create your own rule group, you define this, and you cannot change it after creation. When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using <code>CheckCapacity</code>.</p>
+        /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. The WCU limit for web ACLs is 1,500. </p>
         pub fn set_capacity(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_capacity(input);
             self
         }
         /// <p>A description of the rule group that helps with identification. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the rule group that helps with identification. </p>
@@ -1146,18 +1031,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>The <a>Rule</a> statements used to identify the web requests that you
-        /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
-        /// web requests, and parameters that govern how WAF handles them.
-        /// </p>
-        pub fn rules(mut self, inp: impl Into<crate::model::Rule>) -> Self {
-            self.inner = self.inner.rules(inp);
+        /// <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
+            self.inner = self.inner.rules(input);
             self
         }
-        /// <p>The <a>Rule</a> statements used to identify the web requests that you
-        /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
-        /// web requests, and parameters that govern how WAF handles them.
-        /// </p>
+        /// <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -1165,12 +1044,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rules(input);
             self
         }
-        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
-        pub fn visibility_config(mut self, inp: crate::model::VisibilityConfig) -> Self {
-            self.inner = self.inner.visibility_config(inp);
+        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+        pub fn visibility_config(mut self, input: crate::model::VisibilityConfig) -> Self {
+            self.inner = self.inner.visibility_config(input);
             self
         }
-        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
+        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
         pub fn set_visibility_config(
             mut self,
             input: std::option::Option<crate::model::VisibilityConfig>,
@@ -1183,8 +1062,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of key:value pairs to associate with the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>An array of key:value pairs to associate with the resource.</p>
@@ -1200,23 +1079,19 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_custom_response_bodies`](Self::set_custom_response_bodies).
         ///
         /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p>
-        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
-        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn custom_response_bodies(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::CustomResponseBody>,
+            v: crate::model::CustomResponseBody,
         ) -> Self {
-            self.inner = self.inner.custom_response_bodies(k, v);
+            self.inner = self.inner.custom_response_bodies(k.into(), v);
             self
         }
         /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p>
-        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
-        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn set_custom_response_bodies(
             mut self,
             input: std::option::Option<
@@ -1229,9 +1104,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateWebACL`.
     ///
-    /// <p>Creates a <a>WebACL</a> per the specifications provided.</p>
-    /// <p> A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action defined (allow, block, or count) for requests that match the statement of the rule. In the web ACL, you assign a default action to take (allow, block) for any request that does not match any of the rules. The rules in a web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer, or an AppSync GraphQL API.  </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a <code>WebACL</code> per the specifications provided.</p>
+    /// <p> A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action defined (allow, block, or count) for requests that match the statement of the rule. In the web ACL, you assign a default action to take (allow, block) for any request that does not match any of the rules. The rules in a web ACL can be a combination of the types <code>Rule</code>, <code>RuleGroup</code>, and managed rule group. You can associate a web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer, or an AppSync GraphQL API. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWebACL<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1276,10 +1151,10 @@ pub mod fluent_builders {
                 crate::input::CreateWebAclInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1288,8 +1163,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -1297,37 +1172,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
         /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. </p>
-        pub fn default_action(mut self, inp: crate::model::DefaultAction) -> Self {
-            self.inner = self.inner.default_action(inp);
+        pub fn default_action(mut self, input: crate::model::DefaultAction) -> Self {
+            self.inner = self.inner.default_action(input);
             self
         }
         /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. </p>
@@ -1339,8 +1206,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the web ACL that helps with identification. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the web ACL that helps with identification. </p>
@@ -1352,18 +1219,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>The <a>Rule</a> statements used to identify the web requests that you
-        /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
-        /// web requests, and parameters that govern how WAF handles them.
-        /// </p>
-        pub fn rules(mut self, inp: impl Into<crate::model::Rule>) -> Self {
-            self.inner = self.inner.rules(inp);
+        /// <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
+            self.inner = self.inner.rules(input);
             self
         }
-        /// <p>The <a>Rule</a> statements used to identify the web requests that you
-        /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
-        /// web requests, and parameters that govern how WAF handles them.
-        /// </p>
+        /// <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -1371,12 +1232,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rules(input);
             self
         }
-        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
-        pub fn visibility_config(mut self, inp: crate::model::VisibilityConfig) -> Self {
-            self.inner = self.inner.visibility_config(inp);
+        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+        pub fn visibility_config(mut self, input: crate::model::VisibilityConfig) -> Self {
+            self.inner = self.inner.visibility_config(input);
             self
         }
-        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
+        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
         pub fn set_visibility_config(
             mut self,
             input: std::option::Option<crate::model::VisibilityConfig>,
@@ -1389,8 +1250,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of key:value pairs to associate with the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>An array of key:value pairs to associate with the resource.</p>
@@ -1406,23 +1267,19 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_custom_response_bodies`](Self::set_custom_response_bodies).
         ///
         /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL. </p>
-        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
-        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn custom_response_bodies(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::CustomResponseBody>,
+            v: crate::model::CustomResponseBody,
         ) -> Self {
-            self.inner = self.inner.custom_response_bodies(k, v);
+            self.inner = self.inner.custom_response_bodies(k.into(), v);
             self
         }
         /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL. </p>
-        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
-        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn set_custom_response_bodies(
             mut self,
             input: std::option::Option<
@@ -1433,8 +1290,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
-        pub fn captcha_config(mut self, inp: crate::model::CaptchaConfig) -> Self {
-            self.inner = self.inner.captcha_config(inp);
+        pub fn captcha_config(mut self, input: crate::model::CaptchaConfig) -> Self {
+            self.inner = self.inner.captcha_config(input);
             self
         }
         /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
@@ -1449,9 +1306,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFirewallManagerRuleGroups`.
     ///
     /// <p>Deletes all rule groups that are managed by Firewall Manager for the specified web ACL. </p>
-    /// <p>You can only use this if <code>ManagedByFirewallManager</code> is false in the specified
-    /// <a>WebACL</a>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You can only use this if <code>ManagedByFirewallManager</code> is false in the specified <code>WebACL</code>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFirewallManagerRuleGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1496,10 +1352,10 @@ pub mod fluent_builders {
                 crate::input::DeleteFirewallManagerRuleGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1508,8 +1364,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the web ACL.</p>
-        pub fn web_acl_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.web_acl_arn(inp);
+        pub fn web_acl_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.web_acl_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the web ACL.</p>
@@ -1518,8 +1374,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-        pub fn web_acl_lock_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.web_acl_lock_token(inp);
+        pub fn web_acl_lock_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.web_acl_lock_token(input.into());
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
@@ -1533,8 +1389,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteIPSet`.
     ///
-    /// <p>Deletes the specified <a>IPSet</a>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the specified <code>IPSet</code>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIPSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1579,10 +1435,10 @@ pub mod fluent_builders {
                 crate::input::DeleteIpSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1591,8 +1447,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
@@ -1600,37 +1456,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
         /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
@@ -1639,8 +1487,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-        pub fn lock_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lock_token(inp);
+        pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lock_token(input.into());
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
@@ -1651,8 +1499,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteLoggingConfiguration`.
     ///
-    /// <p>Deletes the <a>LoggingConfiguration</a> from the specified web ACL.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the <code>LoggingConfiguration</code> from the specified web ACL.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLoggingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1697,10 +1545,10 @@ pub mod fluent_builders {
                 crate::input::DeleteLoggingConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1708,14 +1556,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the
-        /// <a>LoggingConfiguration</a>.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <code>LoggingConfiguration</code>.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the
-        /// <a>LoggingConfiguration</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <code>LoggingConfiguration</code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1725,7 +1571,7 @@ pub mod fluent_builders {
     ///
     /// <p>Permanently deletes an IAM policy from the specified rule group.</p>
     /// <p>You must be the owner of the rule group to perform this operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePermissionPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1770,10 +1616,10 @@ pub mod fluent_builders {
                 crate::input::DeletePermissionPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1781,15 +1627,13 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the rule group from which you want to delete the
-        /// policy.</p>
+        /// <p>The Amazon Resource Name (ARN) of the rule group from which you want to delete the policy.</p>
         /// <p>You must be the owner of the rule group to perform this operation.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the rule group from which you want to delete the
-        /// policy.</p>
+        /// <p>The Amazon Resource Name (ARN) of the rule group from which you want to delete the policy.</p>
         /// <p>You must be the owner of the rule group to perform this operation.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
@@ -1798,8 +1642,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteRegexPatternSet`.
     ///
-    /// <p>Deletes the specified <a>RegexPatternSet</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the specified <code>RegexPatternSet</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRegexPatternSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1844,10 +1688,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRegexPatternSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1856,8 +1700,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the set. You cannot change the name after you create the set.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the set. You cannot change the name after you create the set.</p>
@@ -1865,37 +1709,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
         /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
@@ -1904,8 +1740,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-        pub fn lock_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lock_token(inp);
+        pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lock_token(input.into());
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
@@ -1916,8 +1752,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteRuleGroup`.
     ///
-    /// <p>Deletes the specified <a>RuleGroup</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the specified <code>RuleGroup</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRuleGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1962,10 +1798,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRuleGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1974,8 +1810,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
@@ -1983,37 +1819,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
         /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
@@ -2022,8 +1850,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-        pub fn lock_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lock_token(inp);
+        pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lock_token(input.into());
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
@@ -2034,10 +1862,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteWebACL`.
     ///
-    /// <p>Deletes the specified <a>WebACL</a>.</p>
-    /// <p>You can only use this if <code>ManagedByFirewallManager</code> is false in the specified
-    /// <a>WebACL</a>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the specified <code>WebACL</code>.</p>
+    /// <p>You can only use this if <code>ManagedByFirewallManager</code> is false in the specified <code>WebACL</code>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWebACL<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2082,10 +1909,10 @@ pub mod fluent_builders {
                 crate::input::DeleteWebAclInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2094,8 +1921,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -2103,37 +1930,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
         /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
@@ -2142,8 +1961,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-        pub fn lock_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lock_token(inp);
+        pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lock_token(input.into());
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
@@ -2154,9 +1973,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeManagedRuleGroup`.
     ///
-    /// <p>Provides high-level information for a managed rule group, including descriptions of the
-    /// rules. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Provides high-level information for a managed rule group, including descriptions of the rules. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeManagedRuleGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2201,10 +2019,10 @@ pub mod fluent_builders {
                 crate::input::DescribeManagedRuleGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2213,8 +2031,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
-        pub fn vendor_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vendor_name(inp);
+        pub fn vendor_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vendor_name(input.into());
             self
         }
         /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
@@ -2223,8 +2041,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
@@ -2232,44 +2050,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
-        /// <p>The version of the rule group. You can only use a version that is not
-        /// scheduled for expiration. If you don't provide this, WAF uses the vendor's default version.
-        /// </p>
-        pub fn version_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_name(inp);
+        /// <p>The version of the rule group. You can only use a version that is not scheduled for expiration. If you don't provide this, WAF uses the vendor's default version. </p>
+        pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_name(input.into());
             self
         }
-        /// <p>The version of the rule group. You can only use a version that is not
-        /// scheduled for expiration. If you don't provide this, WAF uses the vendor's default version.
-        /// </p>
+        /// <p>The version of the rule group. You can only use a version that is not scheduled for expiration. If you don't provide this, WAF uses the vendor's default version. </p>
         pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version_name(input);
             self
@@ -2277,11 +2083,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateWebACL`.
     ///
-    /// <p>Disassociates a web ACL from a regional application resource. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
-    /// <p>For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To
-    /// disassociate a web ACL, provide an empty web ACL ID in the CloudFront call
-    /// <code>UpdateDistribution</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Disassociates a web ACL from a regional application resource. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+    /// <p>For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To disassociate a web ACL, provide an empty web ACL ID in the CloudFront call <code>UpdateDistribution</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateWebACL<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2326,10 +2130,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateWebAclInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2338,48 +2142,22 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to disassociate from the web ACL. </p>
-        ///
         /// <p>The ARN must be in one of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For an Amazon API Gateway REST API: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For an AppSync GraphQL API: <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i>
-        /// </code>
-        /// </p>
-        /// </li>
+        /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>
+        /// <li> <p>For an Amazon API Gateway REST API: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>
+        /// <li> <p>For an AppSync GraphQL API: <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code> </p> </li>
         /// </ul>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to disassociate from the web ACL. </p>
-        ///
         /// <p>The ARN must be in one of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For an Amazon API Gateway REST API: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For an AppSync GraphQL API: <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i>
-        /// </code>
-        /// </p>
-        /// </li>
+        /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>
+        /// <li> <p>For an Amazon API Gateway REST API: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>
+        /// <li> <p>For an AppSync GraphQL API: <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code> </p> </li>
         /// </ul>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
@@ -2388,8 +2166,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetIPSet`.
     ///
-    /// <p>Retrieves the specified <a>IPSet</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the specified <code>IPSet</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIPSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2434,10 +2212,10 @@ pub mod fluent_builders {
                 crate::input::GetIpSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2446,8 +2224,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
@@ -2455,37 +2233,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
         /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
@@ -2496,8 +2266,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetLoggingConfiguration`.
     ///
-    /// <p>Returns the <a>LoggingConfiguration</a> for the specified web ACL.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the <code>LoggingConfiguration</code> for the specified web ACL.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLoggingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2542,10 +2312,10 @@ pub mod fluent_builders {
                 crate::input::GetLoggingConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2553,14 +2323,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the
-        /// <a>LoggingConfiguration</a>.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the <code>LoggingConfiguration</code>.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the
-        /// <a>LoggingConfiguration</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the <code>LoggingConfiguration</code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -2568,12 +2336,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetManagedRuleSet`.
     ///
-    /// <p>Retrieves the specified managed rule set. </p>
-    /// <note>
+    /// <p>Retrieves the specified managed rule set. </p> <note>
     /// <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p>
     /// <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetManagedRuleSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2618,10 +2385,10 @@ pub mod fluent_builders {
                 crate::input::GetManagedRuleSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2631,8 +2398,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
         /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
@@ -2641,37 +2408,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
         /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
@@ -2684,7 +2443,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the IAM policy that is attached to the specified rule group.</p>
     /// <p>You must be the owner of the rule group to perform this operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPermissionPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2729,10 +2488,10 @@ pub mod fluent_builders {
                 crate::input::GetPermissionPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2740,14 +2499,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the rule group for which you want to get the
-        /// policy.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the rule group for which you want to get the policy.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the rule group for which you want to get the
-        /// policy.</p>
+        /// <p>The Amazon Resource Name (ARN) of the rule group for which you want to get the policy.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -2757,8 +2514,8 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves the keys that are currently blocked by a rate-based rule instance. The maximum number of managed keys that can be blocked for a single rate-based rule instance is 10,000. If more than 10,000 addresses exceed the rate limit, those with the highest rates are blocked.</p>
     /// <p>For a rate-based rule that you've defined inside a rule group, provide the name of the rule group reference statement in your request, in addition to the rate-based rule name and the web ACL name. </p>
-    /// <p>WAF monitors web requests and manages keys independently for each unique combination of web ACL, optional rule group, and rate-based rule. For example, if you define a rate-based rule inside a rule group, and then use the rule group in a web ACL, WAF monitors web requests and manages keys for that web ACL, rule group reference statement, and rate-based rule instance. If you use the same rule group in a second web ACL, WAF monitors web requests and manages keys for this second usage completely independent of your first.  </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>WAF monitors web requests and manages keys independently for each unique combination of web ACL, optional rule group, and rate-based rule. For example, if you define a rate-based rule inside a rule group, and then use the rule group in a web ACL, WAF monitors web requests and manages keys for that web ACL, rule group reference statement, and rate-based rule instance. If you use the same rule group in a second web ACL, WAF monitors web requests and manages keys for this second usage completely independent of your first. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRateBasedStatementManagedKeys<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2803,10 +2560,10 @@ pub mod fluent_builders {
                 crate::input::GetRateBasedStatementManagedKeysInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2814,37 +2571,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
         /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
-        pub fn web_acl_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.web_acl_name(inp);
+        pub fn web_acl_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.web_acl_name(input.into());
             self
         }
         /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -2853,8 +2602,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-        pub fn web_acl_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.web_acl_id(inp);
+        pub fn web_acl_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.web_acl_id(input.into());
             self
         }
         /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
@@ -2862,14 +2611,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_web_acl_id(input);
             self
         }
-        /// <p>The name of the rule group reference statement in your web ACL. This is required only when you have the rate-based rule nested
-        /// inside a rule group. </p>
-        pub fn rule_group_rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_group_rule_name(inp);
+        /// <p>The name of the rule group reference statement in your web ACL. This is required only when you have the rate-based rule nested inside a rule group. </p>
+        pub fn rule_group_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_group_rule_name(input.into());
             self
         }
-        /// <p>The name of the rule group reference statement in your web ACL. This is required only when you have the rate-based rule nested
-        /// inside a rule group. </p>
+        /// <p>The name of the rule group reference statement in your web ACL. This is required only when you have the rate-based rule nested inside a rule group. </p>
         pub fn set_rule_group_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2878,8 +2625,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the rate-based rule to get the keys for. If you have the rule defined inside a rule group that you're using in your web ACL, also provide the name of the rule group reference statement in the request parameter <code>RuleGroupRuleName</code>.</p>
-        pub fn rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_name(inp);
+        pub fn rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_name(input.into());
             self
         }
         /// <p>The name of the rate-based rule to get the keys for. If you have the rule defined inside a rule group that you're using in your web ACL, also provide the name of the rule group reference statement in the request parameter <code>RuleGroupRuleName</code>.</p>
@@ -2890,8 +2637,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetRegexPatternSet`.
     ///
-    /// <p>Retrieves the specified <a>RegexPatternSet</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the specified <code>RegexPatternSet</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRegexPatternSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2936,10 +2683,10 @@ pub mod fluent_builders {
                 crate::input::GetRegexPatternSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2948,8 +2695,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the set. You cannot change the name after you create the set.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the set. You cannot change the name after you create the set.</p>
@@ -2957,37 +2704,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
         /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
@@ -2998,8 +2737,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetRuleGroup`.
     ///
-    /// <p>Retrieves the specified <a>RuleGroup</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the specified <code>RuleGroup</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRuleGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3044,10 +2783,10 @@ pub mod fluent_builders {
                 crate::input::GetRuleGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3056,8 +2795,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
@@ -3065,37 +2804,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
         /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
@@ -3104,8 +2835,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the entity.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the entity.</p>
@@ -3116,17 +2847,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetSampledRequests`.
     ///
-    /// <p>Gets detailed information about a specified number of requests--a sample--that WAF
-    /// randomly selects from among the first 5,000 requests that your Amazon Web Services resource received
-    /// during a time range that you choose. You can specify a sample size of up to 500 requests,
-    /// and you can specify any time range in the previous three hours.</p>
-    /// <p>
-    /// <code>GetSampledRequests</code> returns a time range, which is usually the time range that
-    /// you specified. However, if your resource (such as a CloudFront distribution) received 5,000
-    /// requests before the specified time range elapsed, <code>GetSampledRequests</code> returns
-    /// an updated time range. This new time range indicates the actual period during which WAF
-    /// selected the requests in the sample.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets detailed information about a specified number of requests--a sample--that WAF randomly selects from among the first 5,000 requests that your Amazon Web Services resource received during a time range that you choose. You can specify a sample size of up to 500 requests, and you can specify any time range in the previous three hours.</p>
+    /// <p> <code>GetSampledRequests</code> returns a time range, which is usually the time range that you specified. However, if your resource (such as a CloudFront distribution) received 5,000 requests before the specified time range elapsed, <code>GetSampledRequests</code> returns an updated time range. This new time range indicates the actual period during which WAF selected the requests in the sample.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSampledRequests<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3171,10 +2894,10 @@ pub mod fluent_builders {
                 crate::input::GetSampledRequestsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3182,26 +2905,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon resource name (ARN) of the <code>WebACL</code> for which you want a sample of
-        /// requests.</p>
-        pub fn web_acl_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.web_acl_arn(inp);
+        /// <p>The Amazon resource name (ARN) of the <code>WebACL</code> for which you want a sample of requests.</p>
+        pub fn web_acl_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.web_acl_arn(input.into());
             self
         }
-        /// <p>The Amazon resource name (ARN) of the <code>WebACL</code> for which you want a sample of
-        /// requests.</p>
+        /// <p>The Amazon resource name (ARN) of the <code>WebACL</code> for which you want a sample of requests.</p>
         pub fn set_web_acl_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_web_acl_arn(input);
             self
         }
-        /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which
-        /// you want a sample of requests.</p>
-        pub fn rule_metric_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_metric_name(inp);
+        /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which you want a sample of requests.</p>
+        pub fn rule_metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_metric_name(input.into());
             self
         }
-        /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which
-        /// you want a sample of requests.</p>
+        /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which you want a sample of requests.</p>
         pub fn set_rule_metric_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3209,50 +2928,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rule_metric_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
-        /// <p>The start date and time and the end date and time of the range for which you want
-        /// <code>GetSampledRequests</code> to return a sample of requests. You must specify the
-        /// times in Coordinated Universal Time (UTC) format. UTC format includes the special
-        /// designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify
-        /// any time range in the previous three hours. If you specify a start time that's earlier than
-        /// three hours ago, WAF sets it to three hours ago.</p>
-        pub fn time_window(mut self, inp: crate::model::TimeWindow) -> Self {
-            self.inner = self.inner.time_window(inp);
+        /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours. If you specify a start time that's earlier than three hours ago, WAF sets it to three hours ago.</p>
+        pub fn time_window(mut self, input: crate::model::TimeWindow) -> Self {
+            self.inner = self.inner.time_window(input);
             self
         }
-        /// <p>The start date and time and the end date and time of the range for which you want
-        /// <code>GetSampledRequests</code> to return a sample of requests. You must specify the
-        /// times in Coordinated Universal Time (UTC) format. UTC format includes the special
-        /// designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify
-        /// any time range in the previous three hours. If you specify a start time that's earlier than
-        /// three hours ago, WAF sets it to three hours ago.</p>
+        /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours. If you specify a start time that's earlier than three hours ago, WAF sets it to three hours ago.</p>
         pub fn set_time_window(
             mut self,
             input: std::option::Option<crate::model::TimeWindow>,
@@ -3260,18 +2961,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_time_window(input);
             self
         }
-        /// <p>The number of requests that you want WAF to return from among the first 5,000
-        /// requests that your Amazon Web Services resource received during the time range. If your resource received
-        /// fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code>
-        /// returns information about all of them. </p>
-        pub fn max_items(mut self, inp: i64) -> Self {
-            self.inner = self.inner.max_items(inp);
+        /// <p>The number of requests that you want WAF to return from among the first 5,000 requests that your Amazon Web Services resource received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them. </p>
+        pub fn max_items(mut self, input: i64) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
-        /// <p>The number of requests that you want WAF to return from among the first 5,000
-        /// requests that your Amazon Web Services resource received during the time range. If your resource received
-        /// fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code>
-        /// returns information about all of them. </p>
+        /// <p>The number of requests that you want WAF to return from among the first 5,000 requests that your Amazon Web Services resource received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them. </p>
         pub fn set_max_items(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_max_items(input);
             self
@@ -3279,8 +2974,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetWebACL`.
     ///
-    /// <p>Retrieves the specified <a>WebACL</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the specified <code>WebACL</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWebACL<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3325,10 +3020,10 @@ pub mod fluent_builders {
                 crate::input::GetWebAclInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3337,8 +3032,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -3346,37 +3041,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
         /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
@@ -3387,8 +3074,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetWebACLForResource`.
     ///
-    /// <p>Retrieves the <a>WebACL</a> for the specified resource. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the <code>WebACL</code> for the specified resource. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWebACLForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3433,10 +3120,10 @@ pub mod fluent_builders {
                 crate::input::GetWebAclForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3445,8 +3132,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN (Amazon Resource Name) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN (Amazon Resource Name) of the resource.</p>
@@ -3457,10 +3144,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAvailableManagedRuleGroups`.
     ///
-    /// <p>Retrieves an array of managed rule groups that are available for you to use. This list
-    /// includes all Amazon Web Services Managed Rules rule groups and all of the Amazon Web Services Marketplace managed rule groups that you're
-    /// subscribed to.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves an array of managed rule groups that are available for you to use. This list includes all Amazon Web Services Managed Rules rule groups and all of the Amazon Web Services Marketplace managed rule groups that you're subscribed to.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAvailableManagedRuleGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3505,10 +3190,10 @@ pub mod fluent_builders {
                 crate::input::ListAvailableManagedRuleGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3516,58 +3201,42 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_marker(input);
             self
         }
-        /// <p>The maximum number of objects that you want WAF to return for this request. If more
-        /// objects are available, in the response, WAF provides a
-        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of objects that you want WAF to return for this request. If more
-        /// objects are available, in the response, WAF provides a
-        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
@@ -3576,7 +3245,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAvailableManagedRuleGroupVersions`.
     ///
     /// <p>Returns a list of the available versions for the specified managed rule group. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAvailableManagedRuleGroupVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3623,10 +3292,10 @@ pub mod fluent_builders {
                 crate::input::ListAvailableManagedRuleGroupVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3635,8 +3304,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
-        pub fn vendor_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vendor_name(inp);
+        pub fn vendor_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vendor_name(input.into());
             self
         }
         /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
@@ -3645,8 +3314,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
@@ -3654,58 +3323,42 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_marker(input);
             self
         }
-        /// <p>The maximum number of objects that you want WAF to return for this request. If more
-        /// objects are available, in the response, WAF provides a
-        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of objects that you want WAF to return for this request. If more
-        /// objects are available, in the response, WAF provides a
-        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
@@ -3713,9 +3366,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListIPSets`.
     ///
-    /// <p>Retrieves an array of <a>IPSetSummary</a> objects for the IP sets that you
-    /// manage.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves an array of <code>IPSetSummary</code> objects for the IP sets that you manage.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIPSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3760,10 +3412,10 @@ pub mod fluent_builders {
                 crate::input::ListIpSetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3771,58 +3423,42 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_marker(input);
             self
         }
-        /// <p>The maximum number of objects that you want WAF to return for this request. If more
-        /// objects are available, in the response, WAF provides a
-        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of objects that you want WAF to return for this request. If more
-        /// objects are available, in the response, WAF provides a
-        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
@@ -3830,8 +3466,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListLoggingConfigurations`.
     ///
-    /// <p>Retrieves an array of your <a>LoggingConfiguration</a> objects.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves an array of your <code>LoggingConfiguration</code> objects.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLoggingConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3876,10 +3512,10 @@ pub mod fluent_builders {
                 crate::input::ListLoggingConfigurationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3887,58 +3523,42 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_marker(input);
             self
         }
-        /// <p>The maximum number of objects that you want WAF to return for this request. If more
-        /// objects are available, in the response, WAF provides a
-        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of objects that you want WAF to return for this request. If more
-        /// objects are available, in the response, WAF provides a
-        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
@@ -3946,12 +3566,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListManagedRuleSets`.
     ///
-    /// <p>Retrieves the managed rule sets that you own. </p>
-    /// <note>
+    /// <p>Retrieves the managed rule sets that you own. </p> <note>
     /// <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p>
     /// <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListManagedRuleSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3996,10 +3615,10 @@ pub mod fluent_builders {
                 crate::input::ListManagedRuleSetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4007,58 +3626,42 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_marker(input);
             self
         }
-        /// <p>The maximum number of objects that you want WAF to return for this request. If more
-        /// objects are available, in the response, WAF provides a
-        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of objects that you want WAF to return for this request. If more
-        /// objects are available, in the response, WAF provides a
-        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
@@ -4066,9 +3669,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRegexPatternSets`.
     ///
-    /// <p>Retrieves an array of <a>RegexPatternSetSummary</a> objects for the regex
-    /// pattern sets that you manage.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves an array of <code>RegexPatternSetSummary</code> objects for the regex pattern sets that you manage.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRegexPatternSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4113,10 +3715,10 @@ pub mod fluent_builders {
                 crate::input::ListRegexPatternSetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4124,58 +3726,42 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_marker(input);
             self
         }
-        /// <p>The maximum number of objects that you want WAF to return for this request. If more
-        /// objects are available, in the response, WAF provides a
-        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of objects that you want WAF to return for this request. If more
-        /// objects are available, in the response, WAF provides a
-        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
@@ -4183,10 +3769,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListResourcesForWebACL`.
     ///
-    /// <p>Retrieves an array of the Amazon Resource Names (ARNs) for the regional resources that
-    /// are associated with the specified web ACL. If you want the list of Amazon CloudFront resources, use
-    /// the CloudFront call <code>ListDistributionsByWebACLId</code>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves an array of the Amazon Resource Names (ARNs) for the regional resources that are associated with the specified web ACL. If you want the list of Amazon CloudFront resources, use the CloudFront call <code>ListDistributionsByWebACLId</code>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResourcesForWebACL<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4231,10 +3815,10 @@ pub mod fluent_builders {
                 crate::input::ListResourcesForWebAclInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4243,8 +3827,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the web ACL.</p>
-        pub fn web_acl_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.web_acl_arn(inp);
+        pub fn web_acl_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.web_acl_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the web ACL.</p>
@@ -4252,14 +3836,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_web_acl_arn(input);
             self
         }
-        /// <p>Used for web ACLs that are scoped for regional applications.
-        /// A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
-        pub fn resource_type(mut self, inp: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
-        /// <p>Used for web ACLs that are scoped for regional applications.
-        /// A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -4270,9 +3852,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRuleGroups`.
     ///
-    /// <p>Retrieves an array of <a>RuleGroupSummary</a> objects for the rule groups
-    /// that you manage. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves an array of <code>RuleGroupSummary</code> objects for the rule groups that you manage. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRuleGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4317,10 +3898,10 @@ pub mod fluent_builders {
                 crate::input::ListRuleGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4328,58 +3909,42 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_marker(input);
             self
         }
-        /// <p>The maximum number of objects that you want WAF to return for this request. If more
-        /// objects are available, in the response, WAF provides a
-        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of objects that you want WAF to return for this request. If more
-        /// objects are available, in the response, WAF provides a
-        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
@@ -4387,15 +3952,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Retrieves the <a>TagInfoForResource</a> for the specified resource. Tags are
-    /// key:value pairs that you can use to categorize and manage your resources, for purposes like
-    /// billing. For example, you might set the tag key to "customer" and the value to the customer
-    /// name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags
-    /// for a resource.</p>
-    /// <p>You can tag the Amazon Web Services resources that you manage through WAF: web ACLs, rule
-    /// groups, IP sets, and regex pattern sets. You can't manage or view tags through the WAF
-    /// console. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the <code>TagInfoForResource</code> for the specified resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
+    /// <p>You can tag the Amazon Web Services resources that you manage through WAF: web ACLs, rule groups, IP sets, and regex pattern sets. You can't manage or view tags through the WAF console. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4440,10 +3999,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4451,37 +4010,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_marker(input);
             self
         }
-        /// <p>The maximum number of objects that you want WAF to return for this request. If more
-        /// objects are available, in the response, WAF provides a
-        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of objects that you want WAF to return for this request. If more
-        /// objects are available, in the response, WAF provides a
-        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -4492,9 +4043,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListWebACLs`.
     ///
-    /// <p>Retrieves an array of <a>WebACLSummary</a> objects for the web ACLs that you
-    /// manage.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves an array of <code>WebACLSummary</code> objects for the web ACLs that you manage.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWebACLs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4539,10 +4089,10 @@ pub mod fluent_builders {
                 crate::input::ListWebAcLsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4550,58 +4100,42 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_marker(inp);
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_marker(input);
             self
         }
-        /// <p>The maximum number of objects that you want WAF to return for this request. If more
-        /// objects are available, in the response, WAF provides a
-        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of objects that you want WAF to return for this request. If more
-        /// objects are available, in the response, WAF provides a
-        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
@@ -4609,30 +4143,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutLoggingConfiguration`.
     ///
-    /// <p>Enables the specified <a>LoggingConfiguration</a>, to start logging from a
-    /// web ACL, according to the configuration provided.</p>
-    /// <p>You can access information about all traffic that WAF inspects using the following
-    /// steps:</p>
+    /// <p>Enables the specified <code>LoggingConfiguration</code>, to start logging from a web ACL, according to the configuration provided.</p>
+    /// <p>You can access information about all traffic that WAF inspects using the following steps:</p>
     /// <ol>
-    /// <li>
-    /// <p>Create your logging destination. You can use an Amazon CloudWatch Logs log group, an Amazon Simple Storage Service (Amazon S3) bucket, or an Amazon Kinesis Data Firehose.
-    /// For information about configuring logging destinations and the permissions that are required for each, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a>
-    /// in the <i>WAF Developer Guide</i>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Associate your logging destination to your web ACL using a
-    /// <code>PutLoggingConfiguration</code> request.</p>
-    /// </li>
+    /// <li> <p>Create your logging destination. You can use an Amazon CloudWatch Logs log group, an Amazon Simple Storage Service (Amazon S3) bucket, or an Amazon Kinesis Data Firehose. For information about configuring logging destinations and the permissions that are required for each, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a> in the <i>WAF Developer Guide</i>.</p> </li>
+    /// <li> <p>Associate your logging destination to your web ACL using a <code>PutLoggingConfiguration</code> request.</p> </li>
     /// </ol>
-    /// <p>When you successfully enable logging using a <code>PutLoggingConfiguration</code>
-    /// request, WAF creates an additional role or policy that is required to write
-    /// logs to the logging destination. For an Amazon CloudWatch Logs log group, WAF creates a resource policy on the log group.
-    /// For an Amazon S3 bucket, WAF creates a bucket policy. For an Amazon Kinesis Data Firehose, WAF creates a service-linked role.</p>
-    /// <note>
-    /// <p>This operation completely replaces the mutable specifications that you already have for the logging configuration with the ones that you provide to this call. To modify the logging configuration, retrieve it by calling <a>GetLoggingConfiguration</a>, update the settings as needed, and then provide the complete logging configuration specification to this call.</p>
+    /// <p>When you successfully enable logging using a <code>PutLoggingConfiguration</code> request, WAF creates an additional role or policy that is required to write logs to the logging destination. For an Amazon CloudWatch Logs log group, WAF creates a resource policy on the log group. For an Amazon S3 bucket, WAF creates a bucket policy. For an Amazon Kinesis Data Firehose, WAF creates a service-linked role.</p> <note>
+    /// <p>This operation completely replaces the mutable specifications that you already have for the logging configuration with the ones that you provide to this call. To modify the logging configuration, retrieve it by calling <code>GetLoggingConfiguration</code>, update the settings as needed, and then provide the complete logging configuration specification to this call.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutLoggingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4677,10 +4197,10 @@ pub mod fluent_builders {
                 crate::input::PutLoggingConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4689,8 +4209,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p></p>
-        pub fn logging_configuration(mut self, inp: crate::model::LoggingConfiguration) -> Self {
-            self.inner = self.inner.logging_configuration(inp);
+        pub fn logging_configuration(mut self, input: crate::model::LoggingConfiguration) -> Self {
+            self.inner = self.inner.logging_configuration(input);
             self
         }
         /// <p></p>
@@ -4704,19 +4224,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutManagedRuleSetVersions`.
     ///
-    /// <p>Defines the versions of your managed rule set that you are offering to the customers.
-    /// Customers see your offerings as managed rule groups with versioning.</p>
-    /// <note>
+    /// <p>Defines the versions of your managed rule set that you are offering to the customers. Customers see your offerings as managed rule groups with versioning.</p> <note>
     /// <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p>
     /// <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>
     /// </note>
-    /// <p>Customers retrieve their managed rule group list by calling <a>ListAvailableManagedRuleGroups</a>. The name that you provide here for your
-    /// managed rule set is the name the customer sees for the corresponding managed rule group.
-    /// Customers can retrieve the available versions for a managed rule group by calling <a>ListAvailableManagedRuleGroupVersions</a>. You provide a rule group
-    /// specification for each version. For each managed rule set, you must specify a version that
-    /// you recommend using. </p>
-    /// <p>To initiate the expiration of a managed rule group version, use <a>UpdateManagedRuleSetVersionExpiryDate</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Customers retrieve their managed rule group list by calling <code>ListAvailableManagedRuleGroups</code>. The name that you provide here for your managed rule set is the name the customer sees for the corresponding managed rule group. Customers can retrieve the available versions for a managed rule group by calling <code>ListAvailableManagedRuleGroupVersions</code>. You provide a rule group specification for each version. For each managed rule set, you must specify a version that you recommend using. </p>
+    /// <p>To initiate the expiration of a managed rule group version, use <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutManagedRuleSetVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4761,10 +4275,10 @@ pub mod fluent_builders {
                 crate::input::PutManagedRuleSetVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4774,8 +4288,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
         /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
@@ -4784,37 +4298,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
         /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
@@ -4823,8 +4329,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-        pub fn lock_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lock_token(inp);
+        pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lock_token(input.into());
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
@@ -4832,14 +4338,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_lock_token(input);
             self
         }
-        /// <p>The version of the named managed rule group that you'd like your customers to choose,
-        /// from among your version offerings. </p>
-        pub fn recommended_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recommended_version(inp);
+        /// <p>The version of the named managed rule group that you'd like your customers to choose, from among your version offerings. </p>
+        pub fn recommended_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recommended_version(input.into());
             self
         }
-        /// <p>The version of the named managed rule group that you'd like your customers to choose,
-        /// from among your version offerings. </p>
+        /// <p>The version of the named managed rule group that you'd like your customers to choose, from among your version offerings. </p>
         pub fn set_recommended_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4851,18 +4355,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_versions_to_publish`](Self::set_versions_to_publish).
         ///
-        /// <p>The versions of the named managed rule group that you want to offer to your customers.
-        /// </p>
+        /// <p>The versions of the named managed rule group that you want to offer to your customers. </p>
         pub fn versions_to_publish(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::VersionToPublish>,
+            v: crate::model::VersionToPublish,
         ) -> Self {
-            self.inner = self.inner.versions_to_publish(k, v);
+            self.inner = self.inner.versions_to_publish(k.into(), v);
             self
         }
-        /// <p>The versions of the named managed rule group that you want to offer to your customers.
-        /// </p>
+        /// <p>The versions of the named managed rule group that you want to offer to your customers. </p>
         pub fn set_versions_to_publish(
             mut self,
             input: std::option::Option<
@@ -4875,24 +4377,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutPermissionPolicy`.
     ///
-    /// <p>Attaches an IAM policy to the specified resource. Use this to share a rule group across
-    /// accounts.</p>
+    /// <p>Attaches an IAM policy to the specified resource. Use this to share a rule group across accounts.</p>
     /// <p>You must be the owner of the rule group to perform this operation.</p>
     /// <p>This action is subject to the following restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>You can attach only one policy with each <code>PutPermissionPolicy</code>
-    /// request.</p>
-    /// </li>
-    /// <li>
-    /// <p>The ARN in the request must be a valid WAF <a>RuleGroup</a> ARN and the
-    /// rule group must exist in the same Region.</p>
-    /// </li>
-    /// <li>
-    /// <p>The user making the request must be the owner of the rule group.</p>
-    /// </li>
+    /// <li> <p>You can attach only one policy with each <code>PutPermissionPolicy</code> request.</p> </li>
+    /// <li> <p>The ARN in the request must be a valid WAF <code>RuleGroup</code> ARN and the rule group must exist in the same Region.</p> </li>
+    /// <li> <p>The user making the request must be the owner of the rule group.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutPermissionPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4937,10 +4430,10 @@ pub mod fluent_builders {
                 crate::input::PutPermissionPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4948,68 +4441,40 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the <a>RuleGroup</a> to which you want to
-        /// attach the policy.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the <code>RuleGroup</code> to which you want to attach the policy.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the <a>RuleGroup</a> to which you want to
-        /// attach the policy.</p>
+        /// <p>The Amazon Resource Name (ARN) of the <code>RuleGroup</code> to which you want to attach the policy.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// <p>The policy to attach to the specified rule group. </p>
-        ///
         /// <p>The policy specifications must conform to the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p>
-        /// </li>
-        /// <li>
-        /// <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Effect</code> must specify <code>Allow</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code>. WAF rejects any extra actions or wildcard actions in the policy.</p>
-        /// </li>
-        /// <li>
-        /// <p>The policy must not include a <code>Resource</code> parameter.</p>
-        /// </li>
-        /// </ul>     
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>.  </p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        /// <li> <p>The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p> </li>
+        /// <li> <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p> </li>
+        /// <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li>
+        /// <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li>
+        /// <li> <p>The policy must not include a <code>Resource</code> parameter.</p> </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>. </p>
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input.into());
             self
         }
         /// <p>The policy to attach to the specified rule group. </p>
-        ///
         /// <p>The policy specifications must conform to the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p>
-        /// </li>
-        /// <li>
-        /// <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Effect</code> must specify <code>Allow</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code>. WAF rejects any extra actions or wildcard actions in the policy.</p>
-        /// </li>
-        /// <li>
-        /// <p>The policy must not include a <code>Resource</code> parameter.</p>
-        /// </li>
-        /// </ul>     
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>.  </p>
+        /// <li> <p>The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p> </li>
+        /// <li> <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p> </li>
+        /// <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li>
+        /// <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li>
+        /// <li> <p>The policy must not include a <code>Resource</code> parameter.</p> </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>. </p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policy(input);
             self
@@ -5017,15 +4482,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Associates tags with the specified Amazon Web Services resource. Tags are key:value pairs that you can
-    /// use to categorize and manage your resources, for purposes like billing. For example, you
-    /// might set the tag key to "customer" and the value to the customer name or ID. You can
-    /// specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a
-    /// resource.</p>
-    /// <p>You can tag the Amazon Web Services resources that you manage through WAF: web ACLs, rule
-    /// groups, IP sets, and regex pattern sets. You can't manage or view tags through the WAF
-    /// console. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Associates tags with the specified Amazon Web Services resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
+    /// <p>You can tag the Amazon Web Services resources that you manage through WAF: web ACLs, rule groups, IP sets, and regex pattern sets. You can't manage or view tags through the WAF console. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5070,10 +4529,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5082,8 +4541,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -5096,8 +4555,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of key:value pairs to associate with the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>An array of key:value pairs to associate with the resource.</p>
@@ -5111,11 +4570,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Disassociates tags from an Amazon Web Services resource. Tags are key:value pairs that you can
-    /// associate with Amazon Web Services resources. For example, the tag key might be "customer" and the tag
-    /// value might be "companyA." You can specify one or more tags to add to each container. You
-    /// can add up to 50 tags to each Amazon Web Services resource.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Disassociates tags from an Amazon Web Services resource. Tags are key:value pairs that you can associate with Amazon Web Services resources. For example, the tag key might be "customer" and the tag value might be "companyA." You can specify one or more tags to add to each container. You can add up to 50 tags to each Amazon Web Services resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5160,10 +4616,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5172,8 +4628,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -5186,8 +4642,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>An array of keys identifying the tags to disassociate from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>An array of keys identifying the tags to disassociate from the resource.</p>
@@ -5201,11 +4657,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateIPSet`.
     ///
-    /// <p>Updates the specified <a>IPSet</a>. </p>
-    /// <note>
-    /// <p>This operation completely replaces the mutable specifications that you already have for the IP set with the ones that you provide to this call. To modify the IP set, retrieve it by calling <a>GetIPSet</a>, update the settings as needed, and then provide the complete IP set specification to this call.</p>
+    /// <p>Updates the specified <code>IPSet</code>. </p> <note>
+    /// <p>This operation completely replaces the mutable specifications that you already have for the IP set with the ones that you provide to this call. To modify the IP set, retrieve it by calling <code>GetIPSet</code>, update the settings as needed, and then provide the complete IP set specification to this call.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateIPSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5250,10 +4705,10 @@ pub mod fluent_builders {
                 crate::input::UpdateIpSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5262,8 +4717,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
@@ -5271,37 +4726,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
         /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
@@ -5310,8 +4757,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the IP set that helps with identification. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the IP set that helps with identification. </p>
@@ -5326,41 +4773,23 @@ pub mod fluent_builders {
         /// <p>Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
         /// <p>Examples: </p>
         /// <ul>
-        /// <li>
-        /// <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify
-        /// <code>192.0.2.0/24</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>To configure WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p>
-        /// </li>
+        /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
+        /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
+        /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
+        /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
         /// </ul>
         /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
-        pub fn addresses(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.addresses(inp);
+        pub fn addresses(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.addresses(input.into());
             self
         }
         /// <p>Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
         /// <p>Examples: </p>
         /// <ul>
-        /// <li>
-        /// <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify
-        /// <code>192.0.2.0/24</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>To configure WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p>
-        /// </li>
+        /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
+        /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
+        /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
+        /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
         /// </ul>
         /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
         pub fn set_addresses(
@@ -5371,8 +4800,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-        pub fn lock_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lock_token(inp);
+        pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lock_token(input.into());
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
@@ -5383,14 +4812,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateManagedRuleSetVersionExpiryDate`.
     ///
-    /// <p>Updates the expiration information for your managed rule set. Use this to initiate the
-    /// expiration of a managed rule group version. After you initiate expiration for a version,
-    /// WAF excludes it from the reponse to <a>ListAvailableManagedRuleGroupVersions</a> for the managed rule group. </p>
-    /// <note>
+    /// <p>Updates the expiration information for your managed rule set. Use this to initiate the expiration of a managed rule group version. After you initiate expiration for a version, WAF excludes it from the reponse to <code>ListAvailableManagedRuleGroupVersions</code> for the managed rule group. </p> <note>
     /// <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p>
     /// <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateManagedRuleSetVersionExpiryDate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5437,10 +4863,10 @@ pub mod fluent_builders {
                 crate::input::UpdateManagedRuleSetVersionExpiryDateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5450,8 +4876,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
         /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
@@ -5460,37 +4886,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
         /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
@@ -5499,8 +4917,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-        pub fn lock_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lock_token(inp);
+        pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lock_token(input.into());
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
@@ -5508,14 +4926,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_lock_token(input);
             self
         }
-        /// <p>The version that you want to remove from your list of offerings for the named managed
-        /// rule group. </p>
-        pub fn version_to_expire(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_to_expire(inp);
+        /// <p>The version that you want to remove from your list of offerings for the named managed rule group. </p>
+        pub fn version_to_expire(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_to_expire(input.into());
             self
         }
-        /// <p>The version that you want to remove from your list of offerings for the named managed
-        /// rule group. </p>
+        /// <p>The version that you want to remove from your list of offerings for the named managed rule group. </p>
         pub fn set_version_to_expire(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5525,8 +4941,8 @@ pub mod fluent_builders {
         }
         /// <p>The time that you want the version to expire.</p>
         /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
-        pub fn expiry_timestamp(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.expiry_timestamp(inp);
+        pub fn expiry_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.expiry_timestamp(input);
             self
         }
         /// <p>The time that you want the version to expire.</p>
@@ -5541,11 +4957,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateRegexPatternSet`.
     ///
-    /// <p>Updates the specified <a>RegexPatternSet</a>.</p>
-    /// <note>
-    /// <p>This operation completely replaces the mutable specifications that you already have for the regex pattern set with the ones that you provide to this call. To modify the regex pattern set, retrieve it by calling <a>GetRegexPatternSet</a>, update the settings as needed, and then provide the complete regex pattern set specification to this call.</p>
+    /// <p>Updates the specified <code>RegexPatternSet</code>.</p> <note>
+    /// <p>This operation completely replaces the mutable specifications that you already have for the regex pattern set with the ones that you provide to this call. To modify the regex pattern set, retrieve it by calling <code>GetRegexPatternSet</code>, update the settings as needed, and then provide the complete regex pattern set specification to this call.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRegexPatternSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5590,10 +5005,10 @@ pub mod fluent_builders {
                 crate::input::UpdateRegexPatternSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5602,8 +5017,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the set. You cannot change the name after you create the set.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the set. You cannot change the name after you create the set.</p>
@@ -5611,37 +5026,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
         /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
@@ -5650,8 +5057,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the set that helps with identification. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the set that helps with identification. </p>
@@ -5664,8 +5071,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_regular_expression_list`](Self::set_regular_expression_list).
         ///
         /// <p></p>
-        pub fn regular_expression_list(mut self, inp: impl Into<crate::model::Regex>) -> Self {
-            self.inner = self.inner.regular_expression_list(inp);
+        pub fn regular_expression_list(mut self, input: crate::model::Regex) -> Self {
+            self.inner = self.inner.regular_expression_list(input);
             self
         }
         /// <p></p>
@@ -5677,8 +5084,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-        pub fn lock_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lock_token(inp);
+        pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lock_token(input.into());
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
@@ -5689,12 +5096,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateRuleGroup`.
     ///
-    /// <p>Updates the specified <a>RuleGroup</a>.</p>
-    /// <note>
-    /// <p>This operation completely replaces the mutable specifications that you already have for the rule group with the ones that you provide to this call. To modify the rule group, retrieve it by calling <a>GetRuleGroup</a>, update the settings as needed, and then provide the complete rule group specification to this call.</p>
+    /// <p>Updates the specified <code>RuleGroup</code>.</p> <note>
+    /// <p>This operation completely replaces the mutable specifications that you already have for the rule group with the ones that you provide to this call. To modify the rule group, retrieve it by calling <code>GetRuleGroup</code>, update the settings as needed, and then provide the complete rule group specification to this call.</p>
     /// </note>
-    /// <p> A rule group defines a collection of rules to inspect and control web requests that you can use in a <a>WebACL</a>. When you create a rule group, you define an immutable capacity limit. If you update a rule group, you must stay within the capacity. This allows others to reuse the rule group with confidence in its capacity requirements. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> A rule group defines a collection of rules to inspect and control web requests that you can use in a <code>WebACL</code>. When you create a rule group, you define an immutable capacity limit. If you update a rule group, you must stay within the capacity. This allows others to reuse the rule group with confidence in its capacity requirements. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRuleGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5739,10 +5145,10 @@ pub mod fluent_builders {
                 crate::input::UpdateRuleGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5751,8 +5157,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
@@ -5760,37 +5166,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
         /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
@@ -5799,8 +5197,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the rule group that helps with identification. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the rule group that helps with identification. </p>
@@ -5812,18 +5210,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>The <a>Rule</a> statements used to identify the web requests that you
-        /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
-        /// web requests, and parameters that govern how WAF handles them.
-        /// </p>
-        pub fn rules(mut self, inp: impl Into<crate::model::Rule>) -> Self {
-            self.inner = self.inner.rules(inp);
+        /// <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
+            self.inner = self.inner.rules(input);
             self
         }
-        /// <p>The <a>Rule</a> statements used to identify the web requests that you
-        /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
-        /// web requests, and parameters that govern how WAF handles them.
-        /// </p>
+        /// <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -5831,12 +5223,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rules(input);
             self
         }
-        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
-        pub fn visibility_config(mut self, inp: crate::model::VisibilityConfig) -> Self {
-            self.inner = self.inner.visibility_config(inp);
+        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+        pub fn visibility_config(mut self, input: crate::model::VisibilityConfig) -> Self {
+            self.inner = self.inner.visibility_config(input);
             self
         }
-        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
+        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
         pub fn set_visibility_config(
             mut self,
             input: std::option::Option<crate::model::VisibilityConfig>,
@@ -5845,8 +5237,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-        pub fn lock_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lock_token(inp);
+        pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lock_token(input.into());
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
@@ -5859,23 +5251,19 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_custom_response_bodies`](Self::set_custom_response_bodies).
         ///
         /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p>
-        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
-        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn custom_response_bodies(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::CustomResponseBody>,
+            v: crate::model::CustomResponseBody,
         ) -> Self {
-            self.inner = self.inner.custom_response_bodies(k, v);
+            self.inner = self.inner.custom_response_bodies(k.into(), v);
             self
         }
         /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p>
-        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
-        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn set_custom_response_bodies(
             mut self,
             input: std::option::Option<
@@ -5888,12 +5276,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateWebACL`.
     ///
-    /// <p>Updates the specified <a>WebACL</a>.</p>
-    /// <note>
-    /// <p>This operation completely replaces the mutable specifications that you already have for the web ACL with the ones that you provide to this call. To modify the web ACL, retrieve it by calling <a>GetWebACL</a>, update the settings as needed, and then provide the complete web ACL specification to this call.</p>
+    /// <p>Updates the specified <code>WebACL</code>.</p> <note>
+    /// <p>This operation completely replaces the mutable specifications that you already have for the web ACL with the ones that you provide to this call. To modify the web ACL, retrieve it by calling <code>GetWebACL</code>, update the settings as needed, and then provide the complete web ACL specification to this call.</p>
     /// </note>
-    /// <p> A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action defined (allow, block, or count) for requests that match the statement of the rule. In the web ACL, you assign a default action to take (allow, block) for any request that does not match any of the rules. The rules in a web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer, or an AppSync GraphQL API.  </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action defined (allow, block, or count) for requests that match the statement of the rule. In the web ACL, you assign a default action to take (allow, block) for any request that does not match any of the rules. The rules in a web ACL can be a combination of the types <code>Rule</code>, <code>RuleGroup</code>, and managed rule group. You can associate a web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer, or an AppSync GraphQL API. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWebACL<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5938,10 +5325,10 @@ pub mod fluent_builders {
                 crate::input::UpdateWebAclInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5950,8 +5337,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -5959,37 +5346,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
-        pub fn scope(mut self, inp: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
-        /// </li>
+        /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+        /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
         /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
         /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
@@ -5998,8 +5377,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. </p>
-        pub fn default_action(mut self, inp: crate::model::DefaultAction) -> Self {
-            self.inner = self.inner.default_action(inp);
+        pub fn default_action(mut self, input: crate::model::DefaultAction) -> Self {
+            self.inner = self.inner.default_action(input);
             self
         }
         /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. </p>
@@ -6011,8 +5390,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the web ACL that helps with identification. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the web ACL that helps with identification. </p>
@@ -6024,18 +5403,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>The <a>Rule</a> statements used to identify the web requests that you
-        /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
-        /// web requests, and parameters that govern how WAF handles them.
-        /// </p>
-        pub fn rules(mut self, inp: impl Into<crate::model::Rule>) -> Self {
-            self.inner = self.inner.rules(inp);
+        /// <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
+            self.inner = self.inner.rules(input);
             self
         }
-        /// <p>The <a>Rule</a> statements used to identify the web requests that you
-        /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
-        /// web requests, and parameters that govern how WAF handles them.
-        /// </p>
+        /// <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -6043,12 +5416,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rules(input);
             self
         }
-        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
-        pub fn visibility_config(mut self, inp: crate::model::VisibilityConfig) -> Self {
-            self.inner = self.inner.visibility_config(inp);
+        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+        pub fn visibility_config(mut self, input: crate::model::VisibilityConfig) -> Self {
+            self.inner = self.inner.visibility_config(input);
             self
         }
-        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
+        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
         pub fn set_visibility_config(
             mut self,
             input: std::option::Option<crate::model::VisibilityConfig>,
@@ -6057,8 +5430,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-        pub fn lock_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lock_token(inp);
+        pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lock_token(input.into());
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
@@ -6071,23 +5444,19 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_custom_response_bodies`](Self::set_custom_response_bodies).
         ///
         /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL. </p>
-        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
-        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn custom_response_bodies(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::CustomResponseBody>,
+            v: crate::model::CustomResponseBody,
         ) -> Self {
-            self.inner = self.inner.custom_response_bodies(k, v);
+            self.inner = self.inner.custom_response_bodies(k.into(), v);
             self
         }
         /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL. </p>
-        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
-        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn set_custom_response_bodies(
             mut self,
             input: std::option::Option<
@@ -6098,8 +5467,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
-        pub fn captcha_config(mut self, inp: crate::model::CaptchaConfig) -> Self {
-            self.inner = self.inner.captcha_config(inp);
+        pub fn captcha_config(mut self, input: crate::model::CaptchaConfig) -> Self {
+            self.inner = self.inner.captcha_config(input);
             self
         }
         /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
@@ -6112,6 +5481,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

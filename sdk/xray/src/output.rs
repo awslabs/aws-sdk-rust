@@ -60,15 +60,11 @@ impl UpdateSamplingRuleOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGroupOutput {
-    /// <p>The group that was updated. Contains the name of the group that was updated, the
-    /// ARN of the group that was updated, the updated filter expression, and the updated insight
-    /// configuration assigned to the group.</p>
+    /// <p>The group that was updated. Contains the name of the group that was updated, the ARN of the group that was updated, the updated filter expression, and the updated insight configuration assigned to the group.</p>
     pub group: std::option::Option<crate::model::Group>,
 }
 impl UpdateGroupOutput {
-    /// <p>The group that was updated. Contains the name of the group that was updated, the
-    /// ARN of the group that was updated, the updated filter expression, and the updated insight
-    /// configuration assigned to the group.</p>
+    /// <p>The group that was updated. Contains the name of the group that was updated, the ARN of the group that was updated, the updated filter expression, and the updated insight configuration assigned to the group.</p>
     pub fn group(&self) -> std::option::Option<&crate::model::Group> {
         self.group.as_ref()
     }
@@ -89,16 +85,12 @@ pub mod update_group_output {
         pub(crate) group: std::option::Option<crate::model::Group>,
     }
     impl Builder {
-        /// <p>The group that was updated. Contains the name of the group that was updated, the
-        /// ARN of the group that was updated, the updated filter expression, and the updated insight
-        /// configuration assigned to the group.</p>
+        /// <p>The group that was updated. Contains the name of the group that was updated, the ARN of the group that was updated, the updated filter expression, and the updated insight configuration assigned to the group.</p>
         pub fn group(mut self, input: crate::model::Group) -> Self {
             self.group = Some(input);
             self
         }
-        /// <p>The group that was updated. Contains the name of the group that was updated, the
-        /// ARN of the group that was updated, the updated filter expression, and the updated insight
-        /// configuration assigned to the group.</p>
+        /// <p>The group that was updated. Contains the name of the group that was updated, the ARN of the group that was updated, the updated filter expression, and the updated insight configuration assigned to the group.</p>
         pub fn set_group(mut self, input: std::option::Option<crate::model::Group>) -> Self {
             self.group = input;
             self
@@ -219,10 +211,10 @@ pub mod put_trace_segments_output {
         /// <p>Segments that failed processing.</p>
         pub fn unprocessed_trace_segments(
             mut self,
-            input: impl Into<crate::model::UnprocessedTraceSegment>,
+            input: crate::model::UnprocessedTraceSegment,
         ) -> Self {
             let mut v = self.unprocessed_trace_segments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_trace_segments = Some(v);
             self
         }
@@ -342,8 +334,7 @@ impl PutEncryptionConfigOutput {
 pub struct ListTagsForResourceOutput {
     /// <p>A list of tags, as key and value pairs, that is associated with the specified X-Ray group or sampling rule.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with
-    /// the current page of results to get the next page of results.</p>
+    /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with the current page of results to get the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceOutput {
@@ -351,8 +342,7 @@ impl ListTagsForResourceOutput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with
-    /// the current page of results to get the next page of results.</p>
+    /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with the current page of results to get the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -380,9 +370,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags, as key and value pairs, that is associated with the specified X-Ray group or sampling rule.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -394,14 +384,12 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with
-        /// the current page of results to get the next page of results.</p>
+        /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with the current page of results to get the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with
-        /// the current page of results to get the next page of results.</p>
+        /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with the current page of results to get the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -426,21 +414,17 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTraceSummariesOutput {
-    /// <p>Trace IDs and annotations for traces that were found in the specified time
-    /// frame.</p>
+    /// <p>Trace IDs and annotations for traces that were found in the specified time frame.</p>
     pub trace_summaries: std::option::Option<std::vec::Vec<crate::model::TraceSummary>>,
     /// <p>The start time of this page of results.</p>
     pub approximate_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The total number of traces processed, including traces that did not match the specified
-    /// filter expression.</p>
+    /// <p>The total number of traces processed, including traces that did not match the specified filter expression.</p>
     pub traces_processed_count: std::option::Option<i64>,
-    /// <p>If the requested time frame contained more than one page of results, you can use this token to retrieve the
-    /// next page. The first page contains the most recent results, closest to the end of the time frame.</p>
+    /// <p>If the requested time frame contained more than one page of results, you can use this token to retrieve the next page. The first page contains the most recent results, closest to the end of the time frame.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTraceSummariesOutput {
-    /// <p>Trace IDs and annotations for traces that were found in the specified time
-    /// frame.</p>
+    /// <p>Trace IDs and annotations for traces that were found in the specified time frame.</p>
     pub fn trace_summaries(&self) -> std::option::Option<&[crate::model::TraceSummary]> {
         self.trace_summaries.as_deref()
     }
@@ -448,13 +432,11 @@ impl GetTraceSummariesOutput {
     pub fn approximate_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.approximate_time.as_ref()
     }
-    /// <p>The total number of traces processed, including traces that did not match the specified
-    /// filter expression.</p>
+    /// <p>The total number of traces processed, including traces that did not match the specified filter expression.</p>
     pub fn traces_processed_count(&self) -> std::option::Option<i64> {
         self.traces_processed_count
     }
-    /// <p>If the requested time frame contained more than one page of results, you can use this token to retrieve the
-    /// next page. The first page contains the most recent results, closest to the end of the time frame.</p>
+    /// <p>If the requested time frame contained more than one page of results, you can use this token to retrieve the next page. The first page contains the most recent results, closest to the end of the time frame.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -485,16 +467,14 @@ pub mod get_trace_summaries_output {
         ///
         /// To override the contents of this collection use [`set_trace_summaries`](Self::set_trace_summaries).
         ///
-        /// <p>Trace IDs and annotations for traces that were found in the specified time
-        /// frame.</p>
-        pub fn trace_summaries(mut self, input: impl Into<crate::model::TraceSummary>) -> Self {
+        /// <p>Trace IDs and annotations for traces that were found in the specified time frame.</p>
+        pub fn trace_summaries(mut self, input: crate::model::TraceSummary) -> Self {
             let mut v = self.trace_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.trace_summaries = Some(v);
             self
         }
-        /// <p>Trace IDs and annotations for traces that were found in the specified time
-        /// frame.</p>
+        /// <p>Trace IDs and annotations for traces that were found in the specified time frame.</p>
         pub fn set_trace_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TraceSummary>>,
@@ -515,26 +495,22 @@ pub mod get_trace_summaries_output {
             self.approximate_time = input;
             self
         }
-        /// <p>The total number of traces processed, including traces that did not match the specified
-        /// filter expression.</p>
+        /// <p>The total number of traces processed, including traces that did not match the specified filter expression.</p>
         pub fn traces_processed_count(mut self, input: i64) -> Self {
             self.traces_processed_count = Some(input);
             self
         }
-        /// <p>The total number of traces processed, including traces that did not match the specified
-        /// filter expression.</p>
+        /// <p>The total number of traces processed, including traces that did not match the specified filter expression.</p>
         pub fn set_traces_processed_count(mut self, input: std::option::Option<i64>) -> Self {
             self.traces_processed_count = input;
             self
         }
-        /// <p>If the requested time frame contained more than one page of results, you can use this token to retrieve the
-        /// next page. The first page contains the most recent results, closest to the end of the time frame.</p>
+        /// <p>If the requested time frame contained more than one page of results, you can use this token to retrieve the next page. The first page contains the most recent results, closest to the end of the time frame.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the requested time frame contained more than one page of results, you can use this token to retrieve the
-        /// next page. The first page contains the most recent results, closest to the end of the time frame.</p>
+        /// <p>If the requested time frame contained more than one page of results, you can use this token to retrieve the next page. The first page contains the most recent results, closest to the end of the time frame.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -599,9 +575,9 @@ pub mod get_trace_graph_output {
         /// To override the contents of this collection use [`set_services`](Self::set_services).
         ///
         /// <p>The services that have processed one of the specified requests.</p>
-        pub fn services(mut self, input: impl Into<crate::model::Service>) -> Self {
+        pub fn services(mut self, input: crate::model::Service) -> Self {
             let mut v = self.services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.services = Some(v);
             self
         }
@@ -646,8 +622,7 @@ pub struct GetTimeSeriesServiceStatisticsOutput {
     /// <p>The collection of statistics.</p>
     pub time_series_service_statistics:
         std::option::Option<std::vec::Vec<crate::model::TimeSeriesServiceStatistics>>,
-    /// <p>A flag indicating whether or not a group's filter expression has been consistent, or if a returned
-    /// aggregation might show statistics from an older version of the group's filter expression.</p>
+    /// <p>A flag indicating whether or not a group's filter expression has been consistent, or if a returned aggregation might show statistics from an older version of the group's filter expression.</p>
     pub contains_old_group_versions: bool,
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -659,8 +634,7 @@ impl GetTimeSeriesServiceStatisticsOutput {
     ) -> std::option::Option<&[crate::model::TimeSeriesServiceStatistics]> {
         self.time_series_service_statistics.as_deref()
     }
-    /// <p>A flag indicating whether or not a group's filter expression has been consistent, or if a returned
-    /// aggregation might show statistics from an older version of the group's filter expression.</p>
+    /// <p>A flag indicating whether or not a group's filter expression has been consistent, or if a returned aggregation might show statistics from an older version of the group's filter expression.</p>
     pub fn contains_old_group_versions(&self) -> bool {
         self.contains_old_group_versions
     }
@@ -703,10 +677,10 @@ pub mod get_time_series_service_statistics_output {
         /// <p>The collection of statistics.</p>
         pub fn time_series_service_statistics(
             mut self,
-            input: impl Into<crate::model::TimeSeriesServiceStatistics>,
+            input: crate::model::TimeSeriesServiceStatistics,
         ) -> Self {
             let mut v = self.time_series_service_statistics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.time_series_service_statistics = Some(v);
             self
         }
@@ -718,14 +692,12 @@ pub mod get_time_series_service_statistics_output {
             self.time_series_service_statistics = input;
             self
         }
-        /// <p>A flag indicating whether or not a group's filter expression has been consistent, or if a returned
-        /// aggregation might show statistics from an older version of the group's filter expression.</p>
+        /// <p>A flag indicating whether or not a group's filter expression has been consistent, or if a returned aggregation might show statistics from an older version of the group's filter expression.</p>
         pub fn contains_old_group_versions(mut self, input: bool) -> Self {
             self.contains_old_group_versions = Some(input);
             self
         }
-        /// <p>A flag indicating whether or not a group's filter expression has been consistent, or if a returned
-        /// aggregation might show statistics from an older version of the group's filter expression.</p>
+        /// <p>A flag indicating whether or not a group's filter expression has been consistent, or if a returned aggregation might show statistics from an older version of the group's filter expression.</p>
         pub fn set_contains_old_group_versions(mut self, input: std::option::Option<bool>) -> Self {
             self.contains_old_group_versions = input;
             self
@@ -765,12 +737,9 @@ pub struct GetServiceGraphOutput {
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end of the time frame for which the graph was generated.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The services that have processed a traced request during the specified time
-    /// frame.</p>
+    /// <p>The services that have processed a traced request during the specified time frame.</p>
     pub services: std::option::Option<std::vec::Vec<crate::model::Service>>,
-    /// <p>A flag indicating whether the group's filter expression has been consistent, or
-    /// if the returned service graph may show traces from an older version of the group's filter
-    /// expression.</p>
+    /// <p>A flag indicating whether the group's filter expression has been consistent, or if the returned service graph may show traces from an older version of the group's filter expression.</p>
     pub contains_old_group_versions: bool,
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -784,14 +753,11 @@ impl GetServiceGraphOutput {
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>The services that have processed a traced request during the specified time
-    /// frame.</p>
+    /// <p>The services that have processed a traced request during the specified time frame.</p>
     pub fn services(&self) -> std::option::Option<&[crate::model::Service]> {
         self.services.as_deref()
     }
-    /// <p>A flag indicating whether the group's filter expression has been consistent, or
-    /// if the returned service graph may show traces from an older version of the group's filter
-    /// expression.</p>
+    /// <p>A flag indicating whether the group's filter expression has been consistent, or if the returned service graph may show traces from an older version of the group's filter expression.</p>
     pub fn contains_old_group_versions(&self) -> bool {
         self.contains_old_group_versions
     }
@@ -857,16 +823,14 @@ pub mod get_service_graph_output {
         ///
         /// To override the contents of this collection use [`set_services`](Self::set_services).
         ///
-        /// <p>The services that have processed a traced request during the specified time
-        /// frame.</p>
-        pub fn services(mut self, input: impl Into<crate::model::Service>) -> Self {
+        /// <p>The services that have processed a traced request during the specified time frame.</p>
+        pub fn services(mut self, input: crate::model::Service) -> Self {
             let mut v = self.services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.services = Some(v);
             self
         }
-        /// <p>The services that have processed a traced request during the specified time
-        /// frame.</p>
+        /// <p>The services that have processed a traced request during the specified time frame.</p>
         pub fn set_services(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Service>>,
@@ -874,16 +838,12 @@ pub mod get_service_graph_output {
             self.services = input;
             self
         }
-        /// <p>A flag indicating whether the group's filter expression has been consistent, or
-        /// if the returned service graph may show traces from an older version of the group's filter
-        /// expression.</p>
+        /// <p>A flag indicating whether the group's filter expression has been consistent, or if the returned service graph may show traces from an older version of the group's filter expression.</p>
         pub fn contains_old_group_versions(mut self, input: bool) -> Self {
             self.contains_old_group_versions = Some(input);
             self
         }
-        /// <p>A flag indicating whether the group's filter expression has been consistent, or
-        /// if the returned service graph may show traces from an older version of the group's filter
-        /// expression.</p>
+        /// <p>A flag indicating whether the group's filter expression has been consistent, or if the returned service graph may show traces from an older version of the group's filter expression.</p>
         pub fn set_contains_old_group_versions(mut self, input: std::option::Option<bool>) -> Self {
             self.contains_old_group_versions = input;
             self
@@ -924,12 +884,9 @@ pub struct GetSamplingTargetsOutput {
     /// <p>Updated rules that the service should use to sample requests.</p>
     pub sampling_target_documents:
         std::option::Option<std::vec::Vec<crate::model::SamplingTargetDocument>>,
-    /// <p>The last time a user changed the sampling rule configuration. If
-    /// the sampling rule configuration changed since the service last retrieved it, the service
-    /// should call <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a> to get the latest version.</p>
+    /// <p>The last time a user changed the sampling rule configuration. If the sampling rule configuration changed since the service last retrieved it, the service should call <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a> to get the latest version.</p>
     pub last_rule_modification: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Information about <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingStatisticsDocument.html">SamplingStatisticsDocument</a> that X-Ray could not
-    /// process.</p>
+    /// <p>Information about <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingStatisticsDocument.html">SamplingStatisticsDocument</a> that X-Ray could not process.</p>
     pub unprocessed_statistics:
         std::option::Option<std::vec::Vec<crate::model::UnprocessedStatistics>>,
 }
@@ -940,14 +897,11 @@ impl GetSamplingTargetsOutput {
     ) -> std::option::Option<&[crate::model::SamplingTargetDocument]> {
         self.sampling_target_documents.as_deref()
     }
-    /// <p>The last time a user changed the sampling rule configuration. If
-    /// the sampling rule configuration changed since the service last retrieved it, the service
-    /// should call <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a> to get the latest version.</p>
+    /// <p>The last time a user changed the sampling rule configuration. If the sampling rule configuration changed since the service last retrieved it, the service should call <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a> to get the latest version.</p>
     pub fn last_rule_modification(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_rule_modification.as_ref()
     }
-    /// <p>Information about <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingStatisticsDocument.html">SamplingStatisticsDocument</a> that X-Ray could not
-    /// process.</p>
+    /// <p>Information about <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingStatisticsDocument.html">SamplingStatisticsDocument</a> that X-Ray could not process.</p>
     pub fn unprocessed_statistics(
         &self,
     ) -> std::option::Option<&[crate::model::UnprocessedStatistics]> {
@@ -983,10 +937,10 @@ pub mod get_sampling_targets_output {
         /// <p>Updated rules that the service should use to sample requests.</p>
         pub fn sampling_target_documents(
             mut self,
-            input: impl Into<crate::model::SamplingTargetDocument>,
+            input: crate::model::SamplingTargetDocument,
         ) -> Self {
             let mut v = self.sampling_target_documents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sampling_target_documents = Some(v);
             self
         }
@@ -998,16 +952,12 @@ pub mod get_sampling_targets_output {
             self.sampling_target_documents = input;
             self
         }
-        /// <p>The last time a user changed the sampling rule configuration. If
-        /// the sampling rule configuration changed since the service last retrieved it, the service
-        /// should call <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a> to get the latest version.</p>
+        /// <p>The last time a user changed the sampling rule configuration. If the sampling rule configuration changed since the service last retrieved it, the service should call <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a> to get the latest version.</p>
         pub fn last_rule_modification(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_rule_modification = Some(input);
             self
         }
-        /// <p>The last time a user changed the sampling rule configuration. If
-        /// the sampling rule configuration changed since the service last retrieved it, the service
-        /// should call <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a> to get the latest version.</p>
+        /// <p>The last time a user changed the sampling rule configuration. If the sampling rule configuration changed since the service last retrieved it, the service should call <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a> to get the latest version.</p>
         pub fn set_last_rule_modification(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1019,19 +969,17 @@ pub mod get_sampling_targets_output {
         ///
         /// To override the contents of this collection use [`set_unprocessed_statistics`](Self::set_unprocessed_statistics).
         ///
-        /// <p>Information about <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingStatisticsDocument.html">SamplingStatisticsDocument</a> that X-Ray could not
-        /// process.</p>
+        /// <p>Information about <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingStatisticsDocument.html">SamplingStatisticsDocument</a> that X-Ray could not process.</p>
         pub fn unprocessed_statistics(
             mut self,
-            input: impl Into<crate::model::UnprocessedStatistics>,
+            input: crate::model::UnprocessedStatistics,
         ) -> Self {
             let mut v = self.unprocessed_statistics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_statistics = Some(v);
             self
         }
-        /// <p>Information about <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingStatisticsDocument.html">SamplingStatisticsDocument</a> that X-Ray could not
-        /// process.</p>
+        /// <p>Information about <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingStatisticsDocument.html">SamplingStatisticsDocument</a> that X-Ray could not process.</p>
         pub fn set_unprocessed_statistics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UnprocessedStatistics>>,
@@ -1060,16 +1008,14 @@ impl GetSamplingTargetsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSamplingStatisticSummariesOutput {
-    /// <p>Information about the number of requests instrumented for each sampling
-    /// rule.</p>
+    /// <p>Information about the number of requests instrumented for each sampling rule.</p>
     pub sampling_statistic_summaries:
         std::option::Option<std::vec::Vec<crate::model::SamplingStatisticSummary>>,
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetSamplingStatisticSummariesOutput {
-    /// <p>Information about the number of requests instrumented for each sampling
-    /// rule.</p>
+    /// <p>Information about the number of requests instrumented for each sampling rule.</p>
     pub fn sampling_statistic_summaries(
         &self,
     ) -> std::option::Option<&[crate::model::SamplingStatisticSummary]> {
@@ -1106,19 +1052,17 @@ pub mod get_sampling_statistic_summaries_output {
         ///
         /// To override the contents of this collection use [`set_sampling_statistic_summaries`](Self::set_sampling_statistic_summaries).
         ///
-        /// <p>Information about the number of requests instrumented for each sampling
-        /// rule.</p>
+        /// <p>Information about the number of requests instrumented for each sampling rule.</p>
         pub fn sampling_statistic_summaries(
             mut self,
-            input: impl Into<crate::model::SamplingStatisticSummary>,
+            input: crate::model::SamplingStatisticSummary,
         ) -> Self {
             let mut v = self.sampling_statistic_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sampling_statistic_summaries = Some(v);
             self
         }
-        /// <p>Information about the number of requests instrumented for each sampling
-        /// rule.</p>
+        /// <p>Information about the number of requests instrumented for each sampling rule.</p>
         pub fn set_sampling_statistic_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SamplingStatisticSummary>>,
@@ -1197,12 +1141,9 @@ pub mod get_sampling_rules_output {
         /// To override the contents of this collection use [`set_sampling_rule_records`](Self::set_sampling_rule_records).
         ///
         /// <p>Rule definitions and metadata.</p>
-        pub fn sampling_rule_records(
-            mut self,
-            input: impl Into<crate::model::SamplingRuleRecord>,
-        ) -> Self {
+        pub fn sampling_rule_records(mut self, input: crate::model::SamplingRuleRecord) -> Self {
             let mut v = self.sampling_rule_records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sampling_rule_records = Some(v);
             self
         }
@@ -1244,17 +1185,13 @@ impl GetSamplingRulesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInsightSummariesOutput {
-    /// <p>The summary of each insight within the group matching the provided filters. The summary
-    /// contains the InsightID, start and end time, the root cause service, the root cause and
-    /// client impact statistics, the top anomalous services, and the status of the insight.</p>
+    /// <p>The summary of each insight within the group matching the provided filters. The summary contains the InsightID, start and end time, the root cause service, the root cause and client impact statistics, the top anomalous services, and the status of the insight.</p>
     pub insight_summaries: std::option::Option<std::vec::Vec<crate::model::InsightSummary>>,
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetInsightSummariesOutput {
-    /// <p>The summary of each insight within the group matching the provided filters. The summary
-    /// contains the InsightID, start and end time, the root cause service, the root cause and
-    /// client impact statistics, the top anomalous services, and the status of the insight.</p>
+    /// <p>The summary of each insight within the group matching the provided filters. The summary contains the InsightID, start and end time, the root cause service, the root cause and client impact statistics, the top anomalous services, and the status of the insight.</p>
     pub fn insight_summaries(&self) -> std::option::Option<&[crate::model::InsightSummary]> {
         self.insight_summaries.as_deref()
     }
@@ -1286,18 +1223,14 @@ pub mod get_insight_summaries_output {
         ///
         /// To override the contents of this collection use [`set_insight_summaries`](Self::set_insight_summaries).
         ///
-        /// <p>The summary of each insight within the group matching the provided filters. The summary
-        /// contains the InsightID, start and end time, the root cause service, the root cause and
-        /// client impact statistics, the top anomalous services, and the status of the insight.</p>
-        pub fn insight_summaries(mut self, input: impl Into<crate::model::InsightSummary>) -> Self {
+        /// <p>The summary of each insight within the group matching the provided filters. The summary contains the InsightID, start and end time, the root cause service, the root cause and client impact statistics, the top anomalous services, and the status of the insight.</p>
+        pub fn insight_summaries(mut self, input: crate::model::InsightSummary) -> Self {
             let mut v = self.insight_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.insight_summaries = Some(v);
             self
         }
-        /// <p>The summary of each insight within the group matching the provided filters. The summary
-        /// contains the InsightID, start and end time, the root cause service, the root cause and
-        /// client impact statistics, the top anomalous services, and the status of the insight.</p>
+        /// <p>The summary of each insight within the group matching the provided filters. The summary contains the InsightID, start and end time, the root cause service, the root cause and client impact statistics, the top anomalous services, and the status of the insight.</p>
         pub fn set_insight_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InsightSummary>>,
@@ -1476,12 +1409,9 @@ pub mod get_insight_impact_graph_output {
         /// To override the contents of this collection use [`set_services`](Self::set_services).
         ///
         /// <p>The Amazon Web Services instrumented services related to the insight.</p>
-        pub fn services(
-            mut self,
-            input: impl Into<crate::model::InsightImpactGraphService>,
-        ) -> Self {
+        pub fn services(mut self, input: crate::model::InsightImpactGraphService) -> Self {
             let mut v = self.services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.services = Some(v);
             self
         }
@@ -1528,17 +1458,13 @@ impl GetInsightImpactGraphOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInsightEventsOutput {
-    /// <p>A detailed description of the event. This includes the time of the event, client and
-    /// root cause impact statistics, and the top anomalous service at the time of the
-    /// event.</p>
+    /// <p>A detailed description of the event. This includes the time of the event, client and root cause impact statistics, and the top anomalous service at the time of the event.</p>
     pub insight_events: std::option::Option<std::vec::Vec<crate::model::InsightEvent>>,
     /// <p>Use this token to retrieve the next page of insight events.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetInsightEventsOutput {
-    /// <p>A detailed description of the event. This includes the time of the event, client and
-    /// root cause impact statistics, and the top anomalous service at the time of the
-    /// event.</p>
+    /// <p>A detailed description of the event. This includes the time of the event, client and root cause impact statistics, and the top anomalous service at the time of the event.</p>
     pub fn insight_events(&self) -> std::option::Option<&[crate::model::InsightEvent]> {
         self.insight_events.as_deref()
     }
@@ -1569,18 +1495,14 @@ pub mod get_insight_events_output {
         ///
         /// To override the contents of this collection use [`set_insight_events`](Self::set_insight_events).
         ///
-        /// <p>A detailed description of the event. This includes the time of the event, client and
-        /// root cause impact statistics, and the top anomalous service at the time of the
-        /// event.</p>
-        pub fn insight_events(mut self, input: impl Into<crate::model::InsightEvent>) -> Self {
+        /// <p>A detailed description of the event. This includes the time of the event, client and root cause impact statistics, and the top anomalous service at the time of the event.</p>
+        pub fn insight_events(mut self, input: crate::model::InsightEvent) -> Self {
             let mut v = self.insight_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.insight_events = Some(v);
             self
         }
-        /// <p>A detailed description of the event. This includes the time of the event, client and
-        /// root cause impact statistics, and the top anomalous service at the time of the
-        /// event.</p>
+        /// <p>A detailed description of the event. This includes the time of the event, client and root cause impact statistics, and the top anomalous service at the time of the event.</p>
         pub fn set_insight_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InsightEvent>>,
@@ -1710,9 +1632,9 @@ pub mod get_groups_output {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <p>The collection of all active groups.</p>
-        pub fn groups(mut self, input: impl Into<crate::model::GroupSummary>) -> Self {
+        pub fn groups(mut self, input: crate::model::GroupSummary) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
@@ -1754,13 +1676,11 @@ impl GetGroupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGroupOutput {
-    /// <p>The group that was requested. Contains the name of the group, the ARN of the group,
-    /// the filter expression, and the insight configuration assigned to the group.</p>
+    /// <p>The group that was requested. Contains the name of the group, the ARN of the group, the filter expression, and the insight configuration assigned to the group.</p>
     pub group: std::option::Option<crate::model::Group>,
 }
 impl GetGroupOutput {
-    /// <p>The group that was requested. Contains the name of the group, the ARN of the group,
-    /// the filter expression, and the insight configuration assigned to the group.</p>
+    /// <p>The group that was requested. Contains the name of the group, the ARN of the group, the filter expression, and the insight configuration assigned to the group.</p>
     pub fn group(&self) -> std::option::Option<&crate::model::Group> {
         self.group.as_ref()
     }
@@ -1781,14 +1701,12 @@ pub mod get_group_output {
         pub(crate) group: std::option::Option<crate::model::Group>,
     }
     impl Builder {
-        /// <p>The group that was requested. Contains the name of the group, the ARN of the group,
-        /// the filter expression, and the insight configuration assigned to the group.</p>
+        /// <p>The group that was requested. Contains the name of the group, the ARN of the group, the filter expression, and the insight configuration assigned to the group.</p>
         pub fn group(mut self, input: crate::model::Group) -> Self {
             self.group = Some(input);
             self
         }
-        /// <p>The group that was requested. Contains the name of the group, the ARN of the group,
-        /// the filter expression, and the insight configuration assigned to the group.</p>
+        /// <p>The group that was requested. Contains the name of the group, the ARN of the group, the filter expression, and the insight configuration assigned to the group.</p>
         pub fn set_group(mut self, input: std::option::Option<crate::model::Group>) -> Self {
             self.group = input;
             self
@@ -2011,15 +1929,11 @@ impl CreateSamplingRuleOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGroupOutput {
-    /// <p>The group that was created. Contains the name of the group that was created, the Amazon Resource Name
-    /// (ARN) of the group that was generated based on the group name, the filter expression, and the insight
-    /// configuration that was assigned to the group.</p>
+    /// <p>The group that was created. Contains the name of the group that was created, the Amazon Resource Name (ARN) of the group that was generated based on the group name, the filter expression, and the insight configuration that was assigned to the group.</p>
     pub group: std::option::Option<crate::model::Group>,
 }
 impl CreateGroupOutput {
-    /// <p>The group that was created. Contains the name of the group that was created, the Amazon Resource Name
-    /// (ARN) of the group that was generated based on the group name, the filter expression, and the insight
-    /// configuration that was assigned to the group.</p>
+    /// <p>The group that was created. Contains the name of the group that was created, the Amazon Resource Name (ARN) of the group that was generated based on the group name, the filter expression, and the insight configuration that was assigned to the group.</p>
     pub fn group(&self) -> std::option::Option<&crate::model::Group> {
         self.group.as_ref()
     }
@@ -2040,16 +1954,12 @@ pub mod create_group_output {
         pub(crate) group: std::option::Option<crate::model::Group>,
     }
     impl Builder {
-        /// <p>The group that was created. Contains the name of the group that was created, the Amazon Resource Name
-        /// (ARN) of the group that was generated based on the group name, the filter expression, and the insight
-        /// configuration that was assigned to the group.</p>
+        /// <p>The group that was created. Contains the name of the group that was created, the Amazon Resource Name (ARN) of the group that was generated based on the group name, the filter expression, and the insight configuration that was assigned to the group.</p>
         pub fn group(mut self, input: crate::model::Group) -> Self {
             self.group = Some(input);
             self
         }
-        /// <p>The group that was created. Contains the name of the group that was created, the Amazon Resource Name
-        /// (ARN) of the group that was generated based on the group name, the filter expression, and the insight
-        /// configuration that was assigned to the group.</p>
+        /// <p>The group that was created. Contains the name of the group that was created, the Amazon Resource Name (ARN) of the group that was generated based on the group name, the filter expression, and the insight configuration that was assigned to the group.</p>
         pub fn set_group(mut self, input: std::option::Option<crate::model::Group>) -> Self {
             self.group = input;
             self
@@ -2117,9 +2027,9 @@ pub mod batch_get_traces_output {
         /// To override the contents of this collection use [`set_traces`](Self::set_traces).
         ///
         /// <p>Full traces for the specified requests.</p>
-        pub fn traces(mut self, input: impl Into<crate::model::Trace>) -> Self {
+        pub fn traces(mut self, input: crate::model::Trace) -> Self {
             let mut v = self.traces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.traces = Some(v);
             self
         }

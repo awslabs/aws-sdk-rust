@@ -12,24 +12,17 @@ pub struct BuildBotLocaleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BuildBotLocaleErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -77,8 +70,6 @@ impl BuildBotLocaleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -160,24 +151,17 @@ pub struct CreateBotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateBotErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -225,8 +209,6 @@ impl CreateBotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -305,24 +287,17 @@ pub struct CreateBotAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateBotAliasErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -370,8 +345,6 @@ impl CreateBotAliasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -453,24 +426,17 @@ pub struct CreateBotLocaleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateBotLocaleErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -518,8 +484,6 @@ impl CreateBotLocaleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -601,24 +565,17 @@ pub struct CreateBotVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateBotVersionErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -666,8 +623,6 @@ impl CreateBotVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -755,23 +710,17 @@ pub struct CreateExportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateExportErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -819,8 +768,6 @@ impl CreateExportError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -902,24 +849,17 @@ pub struct CreateIntentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateIntentErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -967,8 +907,6 @@ impl CreateIntentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1050,23 +988,17 @@ pub struct CreateResourcePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateResourcePolicyErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1114,8 +1046,6 @@ impl CreateResourcePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1206,27 +1136,19 @@ pub struct CreateResourcePolicyStatementError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateResourcePolicyStatementErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1286,8 +1208,6 @@ impl CreateResourcePolicyStatementError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1392,24 +1312,17 @@ pub struct CreateSlotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSlotErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1457,8 +1370,6 @@ impl CreateSlotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1537,24 +1448,17 @@ pub struct CreateSlotTypeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSlotTypeErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1602,8 +1506,6 @@ impl CreateSlotTypeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1685,21 +1587,15 @@ pub struct CreateUploadUrlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateUploadUrlErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1746,8 +1642,6 @@ impl CreateUploadUrlError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1821,24 +1715,17 @@ pub struct DeleteBotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBotErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1886,8 +1773,6 @@ impl DeleteBotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1966,24 +1851,17 @@ pub struct DeleteBotAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBotAliasErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2031,8 +1909,6 @@ impl DeleteBotAliasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2114,24 +1990,17 @@ pub struct DeleteBotLocaleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBotLocaleErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2179,8 +2048,6 @@ impl DeleteBotLocaleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2262,24 +2129,17 @@ pub struct DeleteBotVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBotVersionErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2327,8 +2187,6 @@ impl DeleteBotVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2416,20 +2274,15 @@ pub struct DeleteExportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteExportErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2476,8 +2329,6 @@ impl DeleteExportError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2554,20 +2405,15 @@ pub struct DeleteImportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteImportErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2614,8 +2460,6 @@ impl DeleteImportError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2692,24 +2536,17 @@ pub struct DeleteIntentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteIntentErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2757,8 +2594,6 @@ impl DeleteIntentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2840,18 +2675,13 @@ pub struct DeleteResourcePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteResourcePolicyErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2897,8 +2727,6 @@ impl DeleteResourcePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2973,18 +2801,13 @@ pub struct DeleteResourcePolicyStatementError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteResourcePolicyStatementErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3039,8 +2862,6 @@ impl DeleteResourcePolicyStatementError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3119,24 +2940,17 @@ pub struct DeleteSlotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSlotErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3184,8 +2998,6 @@ impl DeleteSlotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3264,24 +3076,17 @@ pub struct DeleteSlotTypeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSlotTypeErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3329,8 +3134,6 @@ impl DeleteSlotTypeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3412,14 +3215,11 @@ pub struct DeleteUtterancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteUtterancesErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3464,8 +3264,6 @@ impl DeleteUtterancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3532,19 +3330,15 @@ pub struct DescribeBotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeBotErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3591,8 +3385,6 @@ impl DescribeBotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3666,19 +3458,15 @@ pub struct DescribeBotAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeBotAliasErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3725,8 +3513,6 @@ impl DescribeBotAliasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3809,19 +3595,15 @@ pub struct DescribeBotLocaleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeBotLocaleErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3868,8 +3650,6 @@ impl DescribeBotLocaleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3952,17 +3732,13 @@ pub struct DescribeBotRecommendationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeBotRecommendationErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4008,8 +3784,6 @@ impl DescribeBotRecommendationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4084,19 +3858,15 @@ pub struct DescribeBotVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeBotVersionErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4143,8 +3913,6 @@ impl DescribeBotVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4227,17 +3995,13 @@ pub struct DescribeExportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeExportErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4283,8 +4047,6 @@ impl DescribeExportError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4353,17 +4115,13 @@ pub struct DescribeImportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeImportErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4409,8 +4167,6 @@ impl DescribeImportError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4479,19 +4235,15 @@ pub struct DescribeIntentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeIntentErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4538,8 +4290,6 @@ impl DescribeIntentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4616,14 +4366,11 @@ pub struct DescribeResourcePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeResourcePolicyErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4668,8 +4415,6 @@ impl DescribeResourcePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4736,19 +4481,15 @@ pub struct DescribeSlotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSlotErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4795,8 +4536,6 @@ impl DescribeSlotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4873,19 +4612,15 @@ pub struct DescribeSlotTypeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSlotTypeErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4932,8 +4667,6 @@ impl DescribeSlotTypeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5016,18 +4749,13 @@ pub struct ListAggregatedUtterancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAggregatedUtterancesErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5073,8 +4801,6 @@ impl ListAggregatedUtterancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5149,16 +4875,13 @@ pub struct ListBotAliasesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBotAliasesErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5204,8 +4927,6 @@ impl ListBotAliasesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5274,16 +4995,13 @@ pub struct ListBotLocalesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBotLocalesErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5329,8 +5047,6 @@ impl ListBotLocalesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5399,17 +5115,13 @@ pub struct ListBotRecommendationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBotRecommendationsErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5455,8 +5167,6 @@ impl ListBotRecommendationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5531,16 +5241,13 @@ pub struct ListBotsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBotsErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5586,8 +5293,6 @@ impl ListBotsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5653,16 +5358,13 @@ pub struct ListBotVersionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBotVersionsErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5708,8 +5410,6 @@ impl ListBotVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5778,16 +5478,13 @@ pub struct ListBuiltInIntentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBuiltInIntentsErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5833,8 +5530,6 @@ impl ListBuiltInIntentsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5909,16 +5604,13 @@ pub struct ListBuiltInSlotTypesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBuiltInSlotTypesErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5964,8 +5656,6 @@ impl ListBuiltInSlotTypesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6040,14 +5730,11 @@ pub struct ListExportsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListExportsErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6092,8 +5779,6 @@ impl ListExportsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6151,14 +5836,11 @@ pub struct ListImportsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListImportsErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6203,8 +5885,6 @@ impl ListImportsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6262,16 +5942,13 @@ pub struct ListIntentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListIntentsErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6317,8 +5994,6 @@ impl ListIntentsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6384,19 +6059,15 @@ pub struct ListRecommendedIntentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRecommendedIntentsErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6443,8 +6114,6 @@ impl ListRecommendedIntentsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6527,16 +6196,13 @@ pub struct ListSlotsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSlotsErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6582,8 +6248,6 @@ impl ListSlotsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6649,16 +6313,13 @@ pub struct ListSlotTypesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSlotTypesErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6704,8 +6365,6 @@ impl ListSlotTypesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6774,17 +6433,13 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6830,8 +6485,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6906,19 +6559,15 @@ pub struct SearchAssociatedTranscriptsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchAssociatedTranscriptsErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6969,8 +6618,6 @@ impl SearchAssociatedTranscriptsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7055,27 +6702,19 @@ pub struct StartBotRecommendationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartBotRecommendationErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7124,8 +6763,6 @@ impl StartBotRecommendationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7224,23 +6861,17 @@ pub struct StartImportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartImportErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7288,8 +6919,6 @@ impl StartImportError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7368,17 +6997,13 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7424,8 +7049,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7491,17 +7114,13 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7547,8 +7166,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7617,24 +7234,17 @@ pub struct UpdateBotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateBotErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7682,8 +7292,6 @@ impl UpdateBotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7762,24 +7370,17 @@ pub struct UpdateBotAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateBotAliasErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7827,8 +7428,6 @@ impl UpdateBotAliasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7910,24 +7509,17 @@ pub struct UpdateBotLocaleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateBotLocaleErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7975,8 +7567,6 @@ impl UpdateBotLocaleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8058,27 +7648,19 @@ pub struct UpdateBotRecommendationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateBotRecommendationErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8129,8 +7711,6 @@ impl UpdateBotRecommendationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8229,23 +7809,17 @@ pub struct UpdateExportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateExportErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8293,8 +7867,6 @@ impl UpdateExportError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8376,24 +7948,17 @@ pub struct UpdateIntentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateIntentErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8441,8 +8006,6 @@ impl UpdateIntentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8524,23 +8087,17 @@ pub struct UpdateResourcePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateResourcePolicyErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8588,8 +8145,6 @@ impl UpdateResourcePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8680,24 +8235,17 @@ pub struct UpdateSlotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSlotErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8745,8 +8293,6 @@ impl UpdateSlotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8825,24 +8371,17 @@ pub struct UpdateSlotTypeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSlotTypeErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8890,8 +8429,6 @@ impl UpdateSlotTypeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8960,8 +8497,7 @@ impl std::error::Error for UpdateSlotTypeError {
     }
 }
 
-/// <p>One of the input parameters in your request isn't valid. Check the
-/// parameters and try your request again.</p>
+/// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
@@ -9025,8 +8561,7 @@ impl ValidationException {
     }
 }
 
-/// <p>Your request rate is too high. Reduce the frequency of
-/// requests.</p>
+/// <p>Your request rate is too high. Reduce the frequency of requests.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
@@ -9175,9 +8710,7 @@ impl ServiceQuotaExceededException {
     }
 }
 
-/// <p>Your request couldn't be completed because one or more request
-/// fields aren't valid. Check the fields in your request and try
-/// again.</p>
+/// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PreconditionFailedException {
@@ -9241,8 +8774,7 @@ impl PreconditionFailedException {
     }
 }
 
-/// <p>The service encountered an unexpected condition. Try your request
-/// again.</p>
+/// <p>The service encountered an unexpected condition. Try your request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
@@ -9306,9 +8838,7 @@ impl InternalServerException {
     }
 }
 
-/// <p>The action that you tried to perform couldn't be completed because
-/// the resource is in a conflicting state. For example, deleting a bot
-/// that is in the CREATING state. Try your request again. </p>
+/// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -9372,8 +8902,7 @@ impl ConflictException {
     }
 }
 
-/// <p>You asked to describe a resource that doesn't exist. Check the
-/// resource that you are requesting and try again.</p>
+/// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {

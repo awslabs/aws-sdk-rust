@@ -7,13 +7,11 @@ pub enum Error {
     ActiveDirectoryError(crate::error::ActiveDirectoryError),
     /// <p>You can't delete a backup while it's being copied.</p>
     BackupBeingCopied(crate::error::BackupBeingCopied),
-    /// <p>Another backup is already under way. Wait for completion before initiating
-    /// additional backups of this file system.</p>
+    /// <p>Another backup is already under way. Wait for completion before initiating additional backups of this file system.</p>
     BackupInProgress(crate::error::BackupInProgress),
     /// <p>No Amazon FSx backups were found based upon the supplied parameters.</p>
     BackupNotFound(crate::error::BackupNotFound),
-    /// <p>You can't delete a backup while it's being used to restore a file
-    /// system.</p>
+    /// <p>You can't delete a backup while it's being used to restore a file system.</p>
     BackupRestoring(crate::error::BackupRestoring),
     /// <p>A generic error indicating a failure with a client request.</p>
     BadRequest(crate::error::BadRequest),
@@ -21,26 +19,21 @@ pub enum Error {
     DataRepositoryAssociationNotFound(crate::error::DataRepositoryAssociationNotFound),
     /// <p>The data repository task could not be canceled because the task has already ended.</p>
     DataRepositoryTaskEnded(crate::error::DataRepositoryTaskEnded),
-    /// <p>An existing data repository task is currently executing on the file system.  
-    /// Wait until the existing task has completed, then create the new task.</p>
+    /// <p>An existing data repository task is currently executing on the file system. Wait until the existing task has completed, then create the new task.</p>
     DataRepositoryTaskExecuting(crate::error::DataRepositoryTaskExecuting),
     /// <p>The data repository task or tasks you specified could not be found.</p>
     DataRepositoryTaskNotFound(crate::error::DataRepositoryTaskNotFound),
     /// <p>No Amazon FSx file systems were found based upon supplied parameters.</p>
     FileSystemNotFound(crate::error::FileSystemNotFound),
-    /// <p>The error returned when a second request is received with the same client request
-    /// token but different parameters settings. A client request token should always uniquely
-    /// identify a single request.</p>
+    /// <p>The error returned when a second request is received with the same client request token but different parameters settings. A client request token should always uniquely identify a single request.</p>
     IncompatibleParameterError(crate::error::IncompatibleParameterError),
-    /// <p>Amazon FSx doesn't support Multi-AZ Windows File Server copy backup in the
-    /// destination Region, so the copied backup can't be restored.</p>
+    /// <p>Amazon FSx doesn't support Multi-AZ Windows File Server copy backup in the destination Region, so the copied backup can't be restored.</p>
     IncompatibleRegionForMultiAz(crate::error::IncompatibleRegionForMultiAz),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>You have filtered the response to a data repository type that is not supported.</p>
     InvalidDataRepositoryType(crate::error::InvalidDataRepositoryType),
-    /// <p>The Key Management Service (KMS) key of the destination backup is not
-    /// valid.</p>
+    /// <p>The Key Management Service (KMS) key of the destination backup is not valid.</p>
     InvalidDestinationKmsKey(crate::error::InvalidDestinationKmsKey),
     /// <p>The path provided for data repository export isn't valid.</p>
     InvalidExportPath(crate::error::InvalidExportPath),
@@ -50,30 +43,25 @@ pub enum Error {
     InvalidNetworkSettings(crate::error::InvalidNetworkSettings),
     /// <p>An invalid value for <code>PerUnitStorageThroughput</code> was provided. Please create your file system again, using a valid value.</p>
     InvalidPerUnitStorageThroughput(crate::error::InvalidPerUnitStorageThroughput),
-    /// <p>The Region provided for <code>SourceRegion</code> is not valid or is in a different
-    /// Amazon Web Services partition.</p>
+    /// <p>The Region provided for <code>SourceRegion</code> is not valid or is in a different Amazon Web Services partition.</p>
     InvalidRegion(crate::error::InvalidRegion),
-    /// <p>The Key Management Service (KMS) key of the source backup is not
-    /// valid.</p>
+    /// <p>The Key Management Service (KMS) key of the source backup is not valid.</p>
     InvalidSourceKmsKey(crate::error::InvalidSourceKmsKey),
     /// <p>A file system configuration is required for this operation.</p>
     MissingFileSystemConfiguration(crate::error::MissingFileSystemConfiguration),
     /// <p>A volume configuration is required for this operation.</p>
     MissingVolumeConfiguration(crate::error::MissingVolumeConfiguration),
-    /// <p>The resource specified for the tagging operation is not a resource type owned by
-    /// Amazon FSx. Use the API of the relevant service to perform the operation. </p>
+    /// <p>The resource specified for the tagging operation is not a resource type owned by Amazon FSx. Use the API of the relevant service to perform the operation. </p>
     NotServiceResourceError(crate::error::NotServiceResourceError),
     /// <p>The resource specified does not support tagging. </p>
     ResourceDoesNotSupportTagging(crate::error::ResourceDoesNotSupportTagging),
     /// <p>The resource specified by the Amazon Resource Name (ARN) can't be found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// <p>An error indicating that a particular service limit was exceeded. You can increase
-    /// some service limits by contacting Amazon Web Services Support.</p>
+    /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
     /// <p>No Amazon FSx snapshots were found based on the supplied parameters.</p>
     SnapshotNotFound(crate::error::SnapshotNotFound),
-    /// <p>The request was rejected because the lifecycle status of the source backup isn't
-    /// <code>AVAILABLE</code>.</p>
+    /// <p>The request was rejected because the lifecycle status of the source backup isn't <code>AVAILABLE</code>.</p>
     SourceBackupUnavailable(crate::error::SourceBackupUnavailable),
     /// <p>No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.</p>
     StorageVirtualMachineNotFound(crate::error::StorageVirtualMachineNotFound),

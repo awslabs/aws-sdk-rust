@@ -123,9 +123,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tag key and value pairs associated with the specified resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -154,23 +154,17 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHostsOutput {
-    /// <p>A list of hosts and the details for each host, such as status, endpoint, and provider
-    /// type.</p>
+    /// <p>A list of hosts and the details for each host, such as status, endpoint, and provider type.</p>
     pub hosts: std::option::Option<std::vec::Vec<crate::model::Host>>,
-    /// <p>A token that can be used in the next <code>ListHosts</code> call. To view all items in the
-    /// list, continue to call this operation with each subsequent token until no more
-    /// <code>nextToken</code> values are returned.</p>
+    /// <p>A token that can be used in the next <code>ListHosts</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListHostsOutput {
-    /// <p>A list of hosts and the details for each host, such as status, endpoint, and provider
-    /// type.</p>
+    /// <p>A list of hosts and the details for each host, such as status, endpoint, and provider type.</p>
     pub fn hosts(&self) -> std::option::Option<&[crate::model::Host]> {
         self.hosts.as_deref()
     }
-    /// <p>A token that can be used in the next <code>ListHosts</code> call. To view all items in the
-    /// list, continue to call this operation with each subsequent token until no more
-    /// <code>nextToken</code> values are returned.</p>
+    /// <p>A token that can be used in the next <code>ListHosts</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -197,16 +191,14 @@ pub mod list_hosts_output {
         ///
         /// To override the contents of this collection use [`set_hosts`](Self::set_hosts).
         ///
-        /// <p>A list of hosts and the details for each host, such as status, endpoint, and provider
-        /// type.</p>
-        pub fn hosts(mut self, input: impl Into<crate::model::Host>) -> Self {
+        /// <p>A list of hosts and the details for each host, such as status, endpoint, and provider type.</p>
+        pub fn hosts(mut self, input: crate::model::Host) -> Self {
             let mut v = self.hosts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hosts = Some(v);
             self
         }
-        /// <p>A list of hosts and the details for each host, such as status, endpoint, and provider
-        /// type.</p>
+        /// <p>A list of hosts and the details for each host, such as status, endpoint, and provider type.</p>
         pub fn set_hosts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Host>>,
@@ -214,16 +206,12 @@ pub mod list_hosts_output {
             self.hosts = input;
             self
         }
-        /// <p>A token that can be used in the next <code>ListHosts</code> call. To view all items in the
-        /// list, continue to call this operation with each subsequent token until no more
-        /// <code>nextToken</code> values are returned.</p>
+        /// <p>A token that can be used in the next <code>ListHosts</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that can be used in the next <code>ListHosts</code> call. To view all items in the
-        /// list, continue to call this operation with each subsequent token until no more
-        /// <code>nextToken</code> values are returned.</p>
+        /// <p>A token that can be used in the next <code>ListHosts</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -248,23 +236,17 @@ impl ListHostsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConnectionsOutput {
-    /// <p>A list of connections and the details for each connection, such as status, owner, and
-    /// provider type.</p>
+    /// <p>A list of connections and the details for each connection, such as status, owner, and provider type.</p>
     pub connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
-    /// <p>A token that can be used in the next <code>ListConnections</code> call. To view all
-    /// items in the list, continue to call this operation with each subsequent token until no more
-    /// <code>nextToken</code> values are returned.</p>
+    /// <p>A token that can be used in the next <code>ListConnections</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConnectionsOutput {
-    /// <p>A list of connections and the details for each connection, such as status, owner, and
-    /// provider type.</p>
+    /// <p>A list of connections and the details for each connection, such as status, owner, and provider type.</p>
     pub fn connections(&self) -> std::option::Option<&[crate::model::Connection]> {
         self.connections.as_deref()
     }
-    /// <p>A token that can be used in the next <code>ListConnections</code> call. To view all
-    /// items in the list, continue to call this operation with each subsequent token until no more
-    /// <code>nextToken</code> values are returned.</p>
+    /// <p>A token that can be used in the next <code>ListConnections</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -291,16 +273,14 @@ pub mod list_connections_output {
         ///
         /// To override the contents of this collection use [`set_connections`](Self::set_connections).
         ///
-        /// <p>A list of connections and the details for each connection, such as status, owner, and
-        /// provider type.</p>
-        pub fn connections(mut self, input: impl Into<crate::model::Connection>) -> Self {
+        /// <p>A list of connections and the details for each connection, such as status, owner, and provider type.</p>
+        pub fn connections(mut self, input: crate::model::Connection) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connections = Some(v);
             self
         }
-        /// <p>A list of connections and the details for each connection, such as status, owner, and
-        /// provider type.</p>
+        /// <p>A list of connections and the details for each connection, such as status, owner, and provider type.</p>
         pub fn set_connections(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Connection>>,
@@ -308,16 +288,12 @@ pub mod list_connections_output {
             self.connections = input;
             self
         }
-        /// <p>A token that can be used in the next <code>ListConnections</code> call. To view all
-        /// items in the list, continue to call this operation with each subsequent token until no more
-        /// <code>nextToken</code> values are returned.</p>
+        /// <p>A token that can be used in the next <code>ListConnections</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that can be used in the next <code>ListConnections</code> call. To view all
-        /// items in the list, continue to call this operation with each subsequent token until no more
-        /// <code>nextToken</code> values are returned.</p>
+        /// <p>A token that can be used in the next <code>ListConnections</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -645,9 +621,9 @@ pub mod create_host_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -679,9 +655,7 @@ impl CreateHostOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectionOutput {
-    /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the
-    /// connection reference when the connection is shared between AWS services.</p>
-    /// <note>
+    /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note>
     /// <p>The ARN is never reused if the connection is deleted.</p>
     /// </note>
     pub connection_arn: std::option::Option<std::string::String>,
@@ -689,9 +663,7 @@ pub struct CreateConnectionOutput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateConnectionOutput {
-    /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the
-    /// connection reference when the connection is shared between AWS services.</p>
-    /// <note>
+    /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note>
     /// <p>The ARN is never reused if the connection is deleted.</p>
     /// </note>
     pub fn connection_arn(&self) -> std::option::Option<&str> {
@@ -720,18 +692,14 @@ pub mod create_connection_output {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the
-        /// connection reference when the connection is shared between AWS services.</p>
-        /// <note>
+        /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note>
         /// <p>The ARN is never reused if the connection is deleted.</p>
         /// </note>
         pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the
-        /// connection reference when the connection is shared between AWS services.</p>
-        /// <note>
+        /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note>
         /// <p>The ARN is never reused if the connection is deleted.</p>
         /// </note>
         pub fn set_connection_arn(
@@ -746,9 +714,9 @@ pub mod create_connection_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Specifies the tags applied to the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

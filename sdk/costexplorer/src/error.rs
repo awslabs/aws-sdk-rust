@@ -55,8 +55,6 @@ impl CreateAnomalyMonitorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -109,8 +107,7 @@ pub struct CreateAnomalySubscriptionError {
 pub enum CreateAnomalySubscriptionErrorKind {
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The cost anomaly monitor does not exist for the account.
-    /// </p>
+    /// <p>The cost anomaly monitor does not exist for the account. </p>
     UnknownMonitorException(crate::error::UnknownMonitorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -154,8 +151,6 @@ impl CreateAnomalySubscriptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -216,8 +211,7 @@ pub struct CreateCostCategoryDefinitionError {
 pub enum CreateCostCategoryDefinitionErrorKind {
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p> You've reached the limit on the number of resources you can create, or exceeded the
-    /// size of an individual resource. </p>
+    /// <p> You've reached the limit on the number of resources you can create, or exceeded the size of an individual resource. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -263,8 +257,6 @@ impl CreateCostCategoryDefinitionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -327,8 +319,7 @@ pub struct DeleteAnomalyMonitorError {
 pub enum DeleteAnomalyMonitorErrorKind {
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The cost anomaly monitor does not exist for the account.
-    /// </p>
+    /// <p>The cost anomaly monitor does not exist for the account. </p>
     UnknownMonitorException(crate::error::UnknownMonitorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -372,8 +363,6 @@ impl DeleteAnomalyMonitorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -434,8 +423,7 @@ pub struct DeleteAnomalySubscriptionError {
 pub enum DeleteAnomalySubscriptionErrorKind {
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The cost anomaly subscription does not exist for the account.
-    /// </p>
+    /// <p>The cost anomaly subscription does not exist for the account. </p>
     UnknownSubscriptionException(crate::error::UnknownSubscriptionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -481,8 +469,6 @@ impl DeleteAnomalySubscriptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -545,9 +531,7 @@ pub struct DeleteCostCategoryDefinitionError {
 pub enum DeleteCostCategoryDefinitionErrorKind {
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>
-    /// The specified ARN in the request doesn't exist.
-    /// </p>
+    /// <p> The specified ARN in the request doesn't exist. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -593,8 +577,6 @@ impl DeleteCostCategoryDefinitionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -657,9 +639,7 @@ pub struct DescribeCostCategoryDefinitionError {
 pub enum DescribeCostCategoryDefinitionErrorKind {
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>
-    /// The specified ARN in the request doesn't exist.
-    /// </p>
+    /// <p> The specified ARN in the request doesn't exist. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -710,8 +690,6 @@ impl DescribeCostCategoryDefinitionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -818,8 +796,6 @@ impl GetAnomaliesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -879,8 +855,7 @@ pub enum GetAnomalyMonitorsErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The cost anomaly monitor does not exist for the account.
-    /// </p>
+    /// <p>The cost anomaly monitor does not exist for the account. </p>
     UnknownMonitorException(crate::error::UnknownMonitorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -925,8 +900,6 @@ impl GetAnomalyMonitorsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -997,8 +970,7 @@ pub enum GetAnomalySubscriptionsErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The cost anomaly subscription does not exist for the account.
-    /// </p>
+    /// <p>The cost anomaly subscription does not exist for the account. </p>
     UnknownSubscriptionException(crate::error::UnknownSubscriptionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1043,8 +1015,6 @@ impl GetAnomalySubscriptionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1119,8 +1089,7 @@ pub enum GetCostAndUsageErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Your request parameters changed between pages. Try again with the old parameters or
-    /// without a pagination token.</p>
+    /// <p>Your request parameters changed between pages. Try again with the old parameters or without a pagination token.</p>
     RequestChangedException(crate::error::RequestChangedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1167,8 +1136,6 @@ impl GetCostAndUsageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1259,8 +1226,7 @@ pub enum GetCostAndUsageWithResourcesErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Your request parameters changed between pages. Try again with the old parameters or
-    /// without a pagination token.</p>
+    /// <p>Your request parameters changed between pages. Try again with the old parameters or without a pagination token.</p>
     RequestChangedException(crate::error::RequestChangedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1311,8 +1277,6 @@ impl GetCostAndUsageWithResourcesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1405,8 +1369,7 @@ pub enum GetCostCategoriesErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Your request parameters changed between pages. Try again with the old parameters or
-    /// without a pagination token.</p>
+    /// <p>Your request parameters changed between pages. Try again with the old parameters or without a pagination token.</p>
     RequestChangedException(crate::error::RequestChangedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1453,8 +1416,6 @@ impl GetCostCategoriesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1583,8 +1544,6 @@ impl GetCostForecastError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1651,8 +1610,7 @@ pub enum GetDimensionValuesErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Your request parameters changed between pages. Try again with the old parameters or
-    /// without a pagination token.</p>
+    /// <p>Your request parameters changed between pages. Try again with the old parameters or without a pagination token.</p>
     RequestChangedException(crate::error::RequestChangedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1699,8 +1657,6 @@ impl GetDimensionValuesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1832,8 +1788,6 @@ impl GetReservationCoverageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1958,8 +1912,6 @@ impl GetReservationPurchaseRecommendationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2083,8 +2035,6 @@ impl GetReservationUtilizationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2199,8 +2149,6 @@ impl GetRightsizingRecommendationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2310,8 +2258,6 @@ impl GetSavingsPlansCoverageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2431,8 +2377,6 @@ impl GetSavingsPlansPurchaseRecommendationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2543,8 +2487,6 @@ impl GetSavingsPlansUtilizationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2661,8 +2603,6 @@ impl GetSavingsPlansUtilizationDetailsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2743,8 +2683,7 @@ pub enum GetTagsErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Your request parameters changed between pages. Try again with the old parameters or
-    /// without a pagination token.</p>
+    /// <p>Your request parameters changed between pages. Try again with the old parameters or without a pagination token.</p>
     RequestChangedException(crate::error::RequestChangedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2791,8 +2730,6 @@ impl GetTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2909,8 +2846,6 @@ impl GetUsageForecastError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3020,8 +2955,6 @@ impl ListCostCategoryDefinitionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3115,8 +3048,6 @@ impl ProvideAnomalyFeedbackError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3169,8 +3100,7 @@ pub struct UpdateAnomalyMonitorError {
 pub enum UpdateAnomalyMonitorErrorKind {
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The cost anomaly monitor does not exist for the account.
-    /// </p>
+    /// <p>The cost anomaly monitor does not exist for the account. </p>
     UnknownMonitorException(crate::error::UnknownMonitorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3214,8 +3144,6 @@ impl UpdateAnomalyMonitorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3276,11 +3204,9 @@ pub struct UpdateAnomalySubscriptionError {
 pub enum UpdateAnomalySubscriptionErrorKind {
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The cost anomaly monitor does not exist for the account.
-    /// </p>
+    /// <p>The cost anomaly monitor does not exist for the account. </p>
     UnknownMonitorException(crate::error::UnknownMonitorException),
-    /// <p>The cost anomaly subscription does not exist for the account.
-    /// </p>
+    /// <p>The cost anomaly subscription does not exist for the account. </p>
     UnknownSubscriptionException(crate::error::UnknownSubscriptionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3327,8 +3253,6 @@ impl UpdateAnomalySubscriptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3399,12 +3323,9 @@ pub struct UpdateCostCategoryDefinitionError {
 pub enum UpdateCostCategoryDefinitionErrorKind {
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>
-    /// The specified ARN in the request doesn't exist.
-    /// </p>
+    /// <p> The specified ARN in the request doesn't exist. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> You've reached the limit on the number of resources you can create, or exceeded the
-    /// size of an individual resource. </p>
+    /// <p> You've reached the limit on the number of resources you can create, or exceeded the size of an individual resource. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3453,8 +3374,6 @@ impl UpdateCostCategoryDefinitionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3512,8 +3431,7 @@ impl std::error::Error for UpdateCostCategoryDefinitionError {
     }
 }
 
-/// <p> You've reached the limit on the number of resources you can create, or exceeded the
-/// size of an individual resource. </p>
+/// <p> You've reached the limit on the number of resources you can create, or exceeded the size of an individual resource. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {
@@ -3577,9 +3495,7 @@ impl ServiceQuotaExceededException {
     }
 }
 
-/// <p>
-/// The specified ARN in the request doesn't exist.
-/// </p>
+/// <p> The specified ARN in the request doesn't exist. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -3707,8 +3623,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>The cost anomaly subscription does not exist for the account.
-/// </p>
+/// <p>The cost anomaly subscription does not exist for the account. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnknownSubscriptionException {
@@ -3772,8 +3687,7 @@ impl UnknownSubscriptionException {
     }
 }
 
-/// <p>The cost anomaly monitor does not exist for the account.
-/// </p>
+/// <p>The cost anomaly monitor does not exist for the account. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnknownMonitorException {
@@ -3965,8 +3879,7 @@ impl DataUnavailableException {
     }
 }
 
-/// <p>Your request parameters changed between pages. Try again with the old parameters or
-/// without a pagination token.</p>
+/// <p>Your request parameters changed between pages. Try again with the old parameters or without a pagination token.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestChangedException {

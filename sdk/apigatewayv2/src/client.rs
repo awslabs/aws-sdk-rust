@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AmazonApiGatewayV2
@@ -607,7 +607,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateApi`.
     ///
     /// <p>Creates an Api resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApi<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -652,10 +652,10 @@ pub mod fluent_builders {
                 crate::input::CreateApiInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -664,8 +664,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
-        pub fn api_key_selection_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_key_selection_expression(inp);
+        pub fn api_key_selection_expression(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.api_key_selection_expression(input.into());
             self
         }
         /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
@@ -677,8 +680,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information.</p>
-        pub fn cors_configuration(mut self, inp: crate::model::Cors) -> Self {
-            self.inner = self.inner.cors_configuration(inp);
+        pub fn cors_configuration(mut self, input: crate::model::Cors) -> Self {
+            self.inner = self.inner.cors_configuration(input);
             self
         }
         /// <p>A CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information.</p>
@@ -690,8 +693,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>This property is part of quick create. It specifies the credentials required for the integration, if any. For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null. Currently, this property is not used for HTTP integrations. Supported only for HTTP APIs.</p>
-        pub fn credentials_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.credentials_arn(inp);
+        pub fn credentials_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.credentials_arn(input.into());
             self
         }
         /// <p>This property is part of quick create. It specifies the credentials required for the integration, if any. For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null. Currently, this property is not used for HTTP integrations. Supported only for HTTP APIs.</p>
@@ -703,8 +706,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the API.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the API.</p>
@@ -713,8 +716,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
-        pub fn disable_schema_validation(mut self, inp: bool) -> Self {
-            self.inner = self.inner.disable_schema_validation(inp);
+        pub fn disable_schema_validation(mut self, input: bool) -> Self {
+            self.inner = self.inner.disable_schema_validation(input);
             self
         }
         /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
@@ -723,8 +726,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
-        pub fn disable_execute_api_endpoint(mut self, inp: bool) -> Self {
-            self.inner = self.inner.disable_execute_api_endpoint(inp);
+        pub fn disable_execute_api_endpoint(mut self, input: bool) -> Self {
+            self.inner = self.inner.disable_execute_api_endpoint(input);
             self
         }
         /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
@@ -736,8 +739,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the API.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the API.</p>
@@ -746,8 +749,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The API protocol.</p>
-        pub fn protocol_type(mut self, inp: crate::model::ProtocolType) -> Self {
-            self.inner = self.inner.protocol_type(inp);
+        pub fn protocol_type(mut self, input: crate::model::ProtocolType) -> Self {
+            self.inner = self.inner.protocol_type(input);
             self
         }
         /// <p>The API protocol.</p>
@@ -759,8 +762,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>This property is part of quick create. If you don't specify a routeKey, a default route of $default is created. The $default route acts as a catch-all for any request made to your API, for a particular stage. The $default route key can't be modified. You can add routes after creating the API, and you can update the route keys of additional routes. Supported only for HTTP APIs.</p>
-        pub fn route_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.route_key(inp);
+        pub fn route_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_key(input.into());
             self
         }
         /// <p>This property is part of quick create. If you don't specify a routeKey, a default route of $default is created. The $default route acts as a catch-all for any request made to your API, for a particular stage. The $default route key can't be modified. You can add routes after creating the API, and you can update the route keys of additional routes. Supported only for HTTP APIs.</p>
@@ -769,8 +772,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
-        pub fn route_selection_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.route_selection_expression(inp);
+        pub fn route_selection_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_selection_expression(input.into());
             self
         }
         /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
@@ -791,7 +794,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
@@ -805,8 +808,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>This property is part of quick create. Quick create produces an API with an integration, a default catch-all route, and a default stage which is configured to automatically deploy changes. For HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively. Supported only for HTTP APIs.</p>
-        pub fn target(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target(inp);
+        pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target(input.into());
             self
         }
         /// <p>This property is part of quick create. Quick create produces an API with an integration, a default catch-all route, and a default stage which is configured to automatically deploy changes. For HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively. Supported only for HTTP APIs.</p>
@@ -815,8 +818,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A version identifier for the API.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>A version identifier for the API.</p>
@@ -828,7 +831,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateApiMapping`.
     ///
     /// <p>Creates an API mapping.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApiMapping<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -873,10 +876,10 @@ pub mod fluent_builders {
                 crate::input::CreateApiMappingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -885,8 +888,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -895,8 +898,8 @@ pub mod fluent_builders {
             self
         }
         /// The API mapping key.
-        pub fn api_mapping_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_mapping_key(inp);
+        pub fn api_mapping_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_mapping_key(input.into());
             self
         }
         /// The API mapping key.
@@ -908,8 +911,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The domain name.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The domain name.</p>
@@ -918,8 +921,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The API stage.</p>
-        pub fn stage(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage(inp);
+        pub fn stage(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage(input.into());
             self
         }
         /// <p>The API stage.</p>
@@ -931,7 +934,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAuthorizer`.
     ///
     /// <p>Creates an Authorizer for an API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAuthorizer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -976,10 +979,10 @@ pub mod fluent_builders {
                 crate::input::CreateAuthorizerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -988,8 +991,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -998,8 +1001,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, don't specify this parameter. Supported only for REQUEST authorizers.</p>
-        pub fn authorizer_credentials_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorizer_credentials_arn(inp);
+        pub fn authorizer_credentials_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorizer_credentials_arn(input.into());
             self
         }
         /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, don't specify this parameter. Supported only for REQUEST authorizers.</p>
@@ -1013,9 +1016,9 @@ pub mod fluent_builders {
         /// <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer. Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
         pub fn authorizer_payload_format_version(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.authorizer_payload_format_version(inp);
+            self.inner = self.inner.authorizer_payload_format_version(input.into());
             self
         }
         /// <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer. Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
@@ -1027,8 +1030,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time to live (TTL) for cached authorizer results, in seconds. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway caches authorizer responses. The maximum value is 3600, or 1 hour. Supported only for HTTP API Lambda authorizers.</p>
-        pub fn authorizer_result_ttl_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.authorizer_result_ttl_in_seconds(inp);
+        pub fn authorizer_result_ttl_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.authorizer_result_ttl_in_seconds(input);
             self
         }
         /// <p>The time to live (TTL) for cached authorizer results, in seconds. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway caches authorizer responses. The maximum value is 3600, or 1 hour. Supported only for HTTP API Lambda authorizers.</p>
@@ -1040,8 +1043,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).</p>
-        pub fn authorizer_type(mut self, inp: crate::model::AuthorizerType) -> Self {
-            self.inner = self.inner.authorizer_type(inp);
+        pub fn authorizer_type(mut self, input: crate::model::AuthorizerType) -> Self {
+            self.inner = self.inner.authorizer_type(input);
             self
         }
         /// <p>The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).</p>
@@ -1052,14 +1055,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_authorizer_type(input);
             self
         }
-        /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api}</replaceable>
-        /// , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
-        pub fn authorizer_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorizer_uri(inp);
+        /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>
+        /// {account_id}
+        /// </replaceable>:function:<replaceable>
+        /// {lambda_function_name}
+        /// </replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>
+        /// {region}
+        /// </replaceable>:lambda:path/<replaceable>
+        /// {service_api}
+        /// </replaceable> , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
+        pub fn authorizer_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorizer_uri(input.into());
             self
         }
-        /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api}</replaceable>
-        /// , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
+        /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>
+        /// {account_id}
+        /// </replaceable>:function:<replaceable>
+        /// {lambda_function_name}
+        /// </replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>
+        /// {region}
+        /// </replaceable>:lambda:path/<replaceable>
+        /// {service_api}
+        /// </replaceable> , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
         pub fn set_authorizer_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1068,8 +1085,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether a Lambda authorizer returns a response in a simple format. By default, a Lambda authorizer must return an IAM policy. If enabled, the Lambda authorizer can return a boolean value instead of an IAM policy. Supported only for HTTP APIs. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a></p>
-        pub fn enable_simple_responses(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_simple_responses(inp);
+        pub fn enable_simple_responses(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_simple_responses(input);
             self
         }
         /// <p>Specifies whether a Lambda authorizer returns a response in a simple format. By default, a Lambda authorizer must return an IAM policy. If enabled, the Lambda authorizer can return a boolean value instead of an IAM policy. Supported only for HTTP APIs. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a></p>
@@ -1081,12 +1098,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_identity_source`](Self::set_identity_source).
         ///
-        /// <p>The identity source for which authorization is requested.</p> <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p> <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
-        pub fn identity_source(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_source(inp);
+        /// <p>The identity source for which authorization is requested.</p>
+        /// <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
+        /// <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
+        pub fn identity_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_source(input.into());
             self
         }
-        /// <p>The identity source for which authorization is requested.</p> <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p> <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
+        /// <p>The identity source for which authorization is requested.</p>
+        /// <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
+        /// <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
         pub fn set_identity_source(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1097,9 +1118,9 @@ pub mod fluent_builders {
         /// <p>This parameter is not used.</p>
         pub fn identity_validation_expression(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.identity_validation_expression(inp);
+            self.inner = self.inner.identity_validation_expression(input.into());
             self
         }
         /// <p>This parameter is not used.</p>
@@ -1111,8 +1132,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.</p>
-        pub fn jwt_configuration(mut self, inp: crate::model::JwtConfiguration) -> Self {
-            self.inner = self.inner.jwt_configuration(inp);
+        pub fn jwt_configuration(mut self, input: crate::model::JwtConfiguration) -> Self {
+            self.inner = self.inner.jwt_configuration(input);
             self
         }
         /// <p>Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.</p>
@@ -1124,8 +1145,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the authorizer.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the authorizer.</p>
@@ -1137,7 +1158,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDeployment`.
     ///
     /// <p>Creates a Deployment for an API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1182,10 +1203,10 @@ pub mod fluent_builders {
                 crate::input::CreateDeploymentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1194,8 +1215,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -1204,8 +1225,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the deployment resource.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description for the deployment resource.</p>
@@ -1214,8 +1235,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Stage resource for the Deployment resource to create.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(inp);
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input.into());
             self
         }
         /// <p>The name of the Stage resource for the Deployment resource to create.</p>
@@ -1227,7 +1248,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDomainName`.
     ///
     /// <p>Creates a domain name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDomainName<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1272,10 +1293,10 @@ pub mod fluent_builders {
                 crate::input::CreateDomainNameInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1284,8 +1305,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain name.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The domain name.</p>
@@ -1300,9 +1321,9 @@ pub mod fluent_builders {
         /// <p>The domain name configurations.</p>
         pub fn domain_name_configurations(
             mut self,
-            inp: impl Into<crate::model::DomainNameConfiguration>,
+            input: crate::model::DomainNameConfiguration,
         ) -> Self {
-            self.inner = self.inner.domain_name_configurations(inp);
+            self.inner = self.inner.domain_name_configurations(input);
             self
         }
         /// <p>The domain name configurations.</p>
@@ -1316,9 +1337,9 @@ pub mod fluent_builders {
         /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
         pub fn mutual_tls_authentication(
             mut self,
-            inp: crate::model::MutualTlsAuthenticationInput,
+            input: crate::model::MutualTlsAuthenticationInput,
         ) -> Self {
-            self.inner = self.inner.mutual_tls_authentication(inp);
+            self.inner = self.inner.mutual_tls_authentication(input);
             self
         }
         /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
@@ -1339,7 +1360,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The collection of tags associated with a domain name.</p>
@@ -1356,7 +1377,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateIntegration`.
     ///
     /// <p>Creates an Integration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIntegration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1401,10 +1422,10 @@ pub mod fluent_builders {
                 crate::input::CreateIntegrationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1413,8 +1434,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -1423,8 +1444,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the VPC link for a private integration. Supported only for HTTP APIs.</p>
-        pub fn connection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(inp);
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the VPC link for a private integration. Supported only for HTTP APIs.</p>
@@ -1436,8 +1457,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the network connection to the integration endpoint. Specify INTERNET for connections through the public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The default value is INTERNET.</p>
-        pub fn connection_type(mut self, inp: crate::model::ConnectionType) -> Self {
-            self.inner = self.inner.connection_type(inp);
+        pub fn connection_type(mut self, input: crate::model::ConnectionType) -> Self {
+            self.inner = self.inner.connection_type(input);
             self
         }
         /// <p>The type of the network connection to the integration endpoint. Specify INTERNET for connections through the public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The default value is INTERNET.</p>
@@ -1448,15 +1469,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_connection_type(input);
             self
         }
-        /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+        /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
+        /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
+        /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
+        /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
         pub fn content_handling_strategy(
             mut self,
-            inp: crate::model::ContentHandlingStrategy,
+            input: crate::model::ContentHandlingStrategy,
         ) -> Self {
-            self.inner = self.inner.content_handling_strategy(inp);
+            self.inner = self.inner.content_handling_strategy(input);
             self
         }
-        /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+        /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
+        /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
+        /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
+        /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
         pub fn set_content_handling_strategy(
             mut self,
             input: std::option::Option<crate::model::ContentHandlingStrategy>,
@@ -1465,8 +1492,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null.</p>
-        pub fn credentials_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.credentials_arn(inp);
+        pub fn credentials_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.credentials_arn(input.into());
             self
         }
         /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null.</p>
@@ -1478,8 +1505,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the integration.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the integration.</p>
@@ -1488,8 +1515,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the integration's HTTP method type.</p>
-        pub fn integration_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.integration_method(inp);
+        pub fn integration_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_method(input.into());
             self
         }
         /// <p>Specifies the integration's HTTP method type.</p>
@@ -1501,8 +1528,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration subtype reference</a>.</p>
-        pub fn integration_subtype(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.integration_subtype(inp);
+        pub fn integration_subtype(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_subtype(input.into());
             self
         }
         /// <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration subtype reference</a>.</p>
@@ -1513,12 +1540,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_integration_subtype(input);
             self
         }
-        /// <p>The integration type of an integration. One of the following:</p> <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p> <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p> <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p> <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p> <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
-        pub fn integration_type(mut self, inp: crate::model::IntegrationType) -> Self {
-            self.inner = self.inner.integration_type(inp);
+        /// <p>The integration type of an integration. One of the following:</p>
+        /// <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p>
+        /// <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p>
+        /// <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p>
+        /// <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p>
+        /// <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
+        pub fn integration_type(mut self, input: crate::model::IntegrationType) -> Self {
+            self.inner = self.inner.integration_type(input);
             self
         }
-        /// <p>The integration type of an integration. One of the following:</p> <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p> <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p> <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p> <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p> <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
+        /// <p>The integration type of an integration. One of the following:</p>
+        /// <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p>
+        /// <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p>
+        /// <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p>
+        /// <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p>
+        /// <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
         pub fn set_integration_type(
             mut self,
             input: std::option::Option<crate::model::IntegrationType>,
@@ -1526,12 +1563,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_integration_type(input);
             self
         }
-        /// <p>For a Lambda integration, specify the URI of a Lambda function.</p> <p>For an HTTP integration, specify a fully-qualified URL.</p> <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
-        pub fn integration_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.integration_uri(inp);
+        /// <p>For a Lambda integration, specify the URI of a Lambda function.</p>
+        /// <p>For an HTTP integration, specify a fully-qualified URL.</p>
+        /// <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
+        pub fn integration_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_uri(input.into());
             self
         }
-        /// <p>For a Lambda integration, specify the URI of a Lambda function.</p> <p>For an HTTP integration, specify a fully-qualified URL.</p> <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
+        /// <p>For a Lambda integration, specify the URI of a Lambda function.</p>
+        /// <p>For an HTTP integration, specify a fully-qualified URL.</p>
+        /// <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
         pub fn set_integration_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1539,12 +1580,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_integration_uri(input);
             self
         }
-        /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p> <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p> <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p> <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
-        pub fn passthrough_behavior(mut self, inp: crate::model::PassthroughBehavior) -> Self {
-            self.inner = self.inner.passthrough_behavior(inp);
+        /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p>
+        /// <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p>
+        /// <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p>
+        /// <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
+        pub fn passthrough_behavior(mut self, input: crate::model::PassthroughBehavior) -> Self {
+            self.inner = self.inner.passthrough_behavior(input);
             self
         }
-        /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p> <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p> <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p> <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
+        /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p>
+        /// <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p>
+        /// <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p>
+        /// <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
         pub fn set_passthrough_behavior(
             mut self,
             input: std::option::Option<crate::model::PassthroughBehavior>,
@@ -1553,8 +1600,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
-        pub fn payload_format_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.payload_format_version(inp);
+        pub fn payload_format_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.payload_format_version(input.into());
             self
         }
         /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
@@ -1569,26 +1616,36 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).
         ///
-        /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
-        /// , where
-        /// <replaceable>{location}</replaceable>
-        /// is querystring, path, or header; and
-        /// <replaceable>{name}</replaceable>
-        /// must be a valid and unique method request parameter name.</p> <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API integrations without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
+        /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>
+        /// {location}
+        /// </replaceable>.<replaceable>
+        /// {name}
+        /// </replaceable> , where <replaceable>
+        /// {location}
+        /// </replaceable> is querystring, path, or header; and <replaceable>
+        /// {name}
+        /// </replaceable> must be a valid and unique method request parameter name.</p>
+        /// <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p>
+        /// <p>For HTTP API integrations without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
         pub fn request_parameters(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.request_parameters(k, v);
+            self.inner = self.inner.request_parameters(k.into(), v.into());
             self
         }
-        /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
-        /// , where
-        /// <replaceable>{location}</replaceable>
-        /// is querystring, path, or header; and
-        /// <replaceable>{name}</replaceable>
-        /// must be a valid and unique method request parameter name.</p> <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API integrations without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
+        /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>
+        /// {location}
+        /// </replaceable>.<replaceable>
+        /// {name}
+        /// </replaceable> , where <replaceable>
+        /// {location}
+        /// </replaceable> is querystring, path, or header; and <replaceable>
+        /// {name}
+        /// </replaceable> must be a valid and unique method request parameter name.</p>
+        /// <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p>
+        /// <p>For HTTP API integrations without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
         pub fn set_request_parameters(
             mut self,
             input: std::option::Option<
@@ -1608,7 +1665,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.request_templates(k, v);
+            self.inner = self.inner.request_templates(k.into(), v.into());
             self
         }
         /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value. Supported only for WebSocket APIs.</p>
@@ -1629,9 +1686,9 @@ pub mod fluent_builders {
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            v: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
-            self.inner = self.inner.response_parameters(k, v);
+            self.inner = self.inner.response_parameters(k.into(), v);
             self
         }
         /// <p>Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend integration before returning the response to clients. Specify a key-value map from a selection key to response parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
@@ -1650,9 +1707,9 @@ pub mod fluent_builders {
         /// <p>The template selection expression for the integration.</p>
         pub fn template_selection_expression(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.template_selection_expression(inp);
+            self.inner = self.inner.template_selection_expression(input.into());
             self
         }
         /// <p>The template selection expression for the integration.</p>
@@ -1664,8 +1721,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>
-        pub fn timeout_in_millis(mut self, inp: i32) -> Self {
-            self.inner = self.inner.timeout_in_millis(inp);
+        pub fn timeout_in_millis(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout_in_millis(input);
             self
         }
         /// <p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>
@@ -1674,8 +1731,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
-        pub fn tls_config(mut self, inp: crate::model::TlsConfigInput) -> Self {
-            self.inner = self.inner.tls_config(inp);
+        pub fn tls_config(mut self, input: crate::model::TlsConfigInput) -> Self {
+            self.inner = self.inner.tls_config(input);
             self
         }
         /// <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
@@ -1690,7 +1747,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateIntegrationResponse`.
     ///
     /// <p>Creates an IntegrationResponses.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIntegrationResponse<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1735,10 +1792,10 @@ pub mod fluent_builders {
                 crate::input::CreateIntegrationResponseInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1747,8 +1804,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -1756,15 +1813,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_api_id(input);
             self
         }
-        /// <p>Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+        /// <p>Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
+        /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
+        /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
+        /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
         pub fn content_handling_strategy(
             mut self,
-            inp: crate::model::ContentHandlingStrategy,
+            input: crate::model::ContentHandlingStrategy,
         ) -> Self {
-            self.inner = self.inner.content_handling_strategy(inp);
+            self.inner = self.inner.content_handling_strategy(input);
             self
         }
-        /// <p>Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+        /// <p>Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
+        /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
+        /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
+        /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
         pub fn set_content_handling_strategy(
             mut self,
             input: std::option::Option<crate::model::ContentHandlingStrategy>,
@@ -1773,8 +1836,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The integration ID.</p>
-        pub fn integration_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.integration_id(inp);
+        pub fn integration_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_id(input.into());
             self
         }
         /// <p>The integration ID.</p>
@@ -1786,8 +1849,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The integration response key.</p>
-        pub fn integration_response_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.integration_response_key(inp);
+        pub fn integration_response_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_response_key(input.into());
             self
         }
         /// <p>The integration response key.</p>
@@ -1808,7 +1871,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.response_parameters(k, v);
+            self.inner = self.inner.response_parameters(k.into(), v.into());
             self
         }
         /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where {name} is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where {name} is a valid and unique response header name and {JSON-expression} is a valid JSON expression without the $ prefix.</p>
@@ -1831,7 +1894,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.response_templates(k, v);
+            self.inner = self.inner.response_templates(k.into(), v.into());
             self
         }
         /// <p>The collection of response templates for the integration response as a string-to-string map of key-value pairs. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
@@ -1847,9 +1910,9 @@ pub mod fluent_builders {
         /// <p>The template selection expression for the integration response. Supported only for WebSocket APIs.</p>
         pub fn template_selection_expression(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.template_selection_expression(inp);
+            self.inner = self.inner.template_selection_expression(input.into());
             self
         }
         /// <p>The template selection expression for the integration response. Supported only for WebSocket APIs.</p>
@@ -1864,7 +1927,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateModel`.
     ///
     /// <p>Creates a Model for an API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1909,10 +1972,10 @@ pub mod fluent_builders {
                 crate::input::CreateModelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1921,8 +1984,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -1931,8 +1994,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The content-type for the model, for example, "application/json".</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(inp);
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(input.into());
             self
         }
         /// <p>The content-type for the model, for example, "application/json".</p>
@@ -1941,8 +2004,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the model.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the model.</p>
@@ -1951,8 +2014,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the model. Must be alphanumeric.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the model. Must be alphanumeric.</p>
@@ -1961,8 +2024,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
-        pub fn schema(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema(inp);
+        pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema(input.into());
             self
         }
         /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
@@ -1974,7 +2037,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRoute`.
     ///
     /// <p>Creates a Route for an API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2019,10 +2082,10 @@ pub mod fluent_builders {
                 crate::input::CreateRouteInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2031,8 +2094,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -2041,8 +2104,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether an API key is required for the route. Supported only for WebSocket APIs.</p>
-        pub fn api_key_required(mut self, inp: bool) -> Self {
-            self.inner = self.inner.api_key_required(inp);
+        pub fn api_key_required(mut self, input: bool) -> Self {
+            self.inner = self.inner.api_key_required(input);
             self
         }
         /// <p>Specifies whether an API key is required for the route. Supported only for WebSocket APIs.</p>
@@ -2055,8 +2118,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_authorization_scopes`](Self::set_authorization_scopes).
         ///
         /// <p>The authorization scopes supported by this route.</p>
-        pub fn authorization_scopes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorization_scopes(inp);
+        pub fn authorization_scopes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorization_scopes(input.into());
             self
         }
         /// <p>The authorization scopes supported by this route.</p>
@@ -2068,8 +2131,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authorization type for the route. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.</p>
-        pub fn authorization_type(mut self, inp: crate::model::AuthorizationType) -> Self {
-            self.inner = self.inner.authorization_type(inp);
+        pub fn authorization_type(mut self, input: crate::model::AuthorizationType) -> Self {
+            self.inner = self.inner.authorization_type(input);
             self
         }
         /// <p>The authorization type for the route. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.</p>
@@ -2081,8 +2144,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Authorizer resource to be associated with this route. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
-        pub fn authorizer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorizer_id(inp);
+        pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorizer_id(input.into());
             self
         }
         /// <p>The identifier of the Authorizer resource to be associated with this route. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
@@ -2094,8 +2157,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The model selection expression for the route. Supported only for WebSocket APIs.</p>
-        pub fn model_selection_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_selection_expression(inp);
+        pub fn model_selection_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_selection_expression(input.into());
             self
         }
         /// <p>The model selection expression for the route. Supported only for WebSocket APIs.</p>
@@ -2107,8 +2170,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The operation name for the route.</p>
-        pub fn operation_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.operation_name(inp);
+        pub fn operation_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.operation_name(input.into());
             self
         }
         /// <p>The operation name for the route.</p>
@@ -2129,7 +2192,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.request_models(k, v);
+            self.inner = self.inner.request_models(k.into(), v.into());
             self
         }
         /// <p>The request models for the route. Supported only for WebSocket APIs.</p>
@@ -2150,9 +2213,9 @@ pub mod fluent_builders {
         pub fn request_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ParameterConstraints>,
+            v: crate::model::ParameterConstraints,
         ) -> Self {
-            self.inner = self.inner.request_parameters(k, v);
+            self.inner = self.inner.request_parameters(k.into(), v);
             self
         }
         /// <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
@@ -2166,8 +2229,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The route key for the route.</p>
-        pub fn route_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.route_key(inp);
+        pub fn route_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_key(input.into());
             self
         }
         /// <p>The route key for the route.</p>
@@ -2178,9 +2241,9 @@ pub mod fluent_builders {
         /// <p>The route response selection expression for the route. Supported only for WebSocket APIs.</p>
         pub fn route_response_selection_expression(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.route_response_selection_expression(inp);
+            self.inner = self.inner.route_response_selection_expression(input.into());
             self
         }
         /// <p>The route response selection expression for the route. Supported only for WebSocket APIs.</p>
@@ -2192,8 +2255,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The target for the route.</p>
-        pub fn target(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target(inp);
+        pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target(input.into());
             self
         }
         /// <p>The target for the route.</p>
@@ -2205,7 +2268,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRouteResponse`.
     ///
     /// <p>Creates a RouteResponse for a Route.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRouteResponse<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2250,10 +2313,10 @@ pub mod fluent_builders {
                 crate::input::CreateRouteResponseInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2262,8 +2325,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -2272,8 +2335,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The model selection expression for the route response. Supported only for WebSocket APIs.</p>
-        pub fn model_selection_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_selection_expression(inp);
+        pub fn model_selection_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_selection_expression(input.into());
             self
         }
         /// <p>The model selection expression for the route response. Supported only for WebSocket APIs.</p>
@@ -2294,7 +2357,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.response_models(k, v);
+            self.inner = self.inner.response_models(k.into(), v.into());
             self
         }
         /// <p>The response models for the route response.</p>
@@ -2315,9 +2378,9 @@ pub mod fluent_builders {
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ParameterConstraints>,
+            v: crate::model::ParameterConstraints,
         ) -> Self {
-            self.inner = self.inner.response_parameters(k, v);
+            self.inner = self.inner.response_parameters(k.into(), v);
             self
         }
         /// <p>The route response parameters.</p>
@@ -2331,8 +2394,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The route ID.</p>
-        pub fn route_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.route_id(inp);
+        pub fn route_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_id(input.into());
             self
         }
         /// <p>The route ID.</p>
@@ -2341,8 +2404,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The route response key.</p>
-        pub fn route_response_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.route_response_key(inp);
+        pub fn route_response_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_response_key(input.into());
             self
         }
         /// <p>The route response key.</p>
@@ -2357,7 +2420,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateStage`.
     ///
     /// <p>Creates a Stage for an API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2402,10 +2465,10 @@ pub mod fluent_builders {
                 crate::input::CreateStageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2414,8 +2477,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Settings for logging access in this stage.</p>
-        pub fn access_log_settings(mut self, inp: crate::model::AccessLogSettings) -> Self {
-            self.inner = self.inner.access_log_settings(inp);
+        pub fn access_log_settings(mut self, input: crate::model::AccessLogSettings) -> Self {
+            self.inner = self.inner.access_log_settings(input);
             self
         }
         /// <p>Settings for logging access in this stage.</p>
@@ -2427,8 +2490,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -2437,8 +2500,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
-        pub fn auto_deploy(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_deploy(inp);
+        pub fn auto_deploy(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_deploy(input);
             self
         }
         /// <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
@@ -2447,8 +2510,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.</p>
-        pub fn client_certificate_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_certificate_id(inp);
+        pub fn client_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_certificate_id(input.into());
             self
         }
         /// <p>The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.</p>
@@ -2460,8 +2523,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The default route settings for the stage.</p>
-        pub fn default_route_settings(mut self, inp: crate::model::RouteSettings) -> Self {
-            self.inner = self.inner.default_route_settings(inp);
+        pub fn default_route_settings(mut self, input: crate::model::RouteSettings) -> Self {
+            self.inner = self.inner.default_route_settings(input);
             self
         }
         /// <p>The default route settings for the stage.</p>
@@ -2473,8 +2536,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The deployment identifier of the API stage.</p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(inp);
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p>The deployment identifier of the API stage.</p>
@@ -2486,8 +2549,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the API stage.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description for the API stage.</p>
@@ -2503,9 +2566,9 @@ pub mod fluent_builders {
         pub fn route_settings(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::RouteSettings>,
+            v: crate::model::RouteSettings,
         ) -> Self {
-            self.inner = self.inner.route_settings(k, v);
+            self.inner = self.inner.route_settings(k.into(), v);
             self
         }
         /// <p>Route settings for the stage, by routeKey.</p>
@@ -2519,8 +2582,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the stage.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(inp);
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input.into());
             self
         }
         /// <p>The name of the stage.</p>
@@ -2538,7 +2601,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.stage_variables(k, v);
+            self.inner = self.inner.stage_variables(k.into(), v.into());
             self
         }
         /// <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
@@ -2561,7 +2624,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
@@ -2578,7 +2641,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateVpcLink`.
     ///
     /// <p>Creates a VPC link.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVpcLink<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2623,10 +2686,10 @@ pub mod fluent_builders {
                 crate::input::CreateVpcLinkInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2635,8 +2698,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the VPC link.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the VPC link.</p>
@@ -2649,8 +2712,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
         /// <p>A list of security group IDs for the VPC link.</p>
-        pub fn security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_group_ids(inp);
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_group_ids(input.into());
             self
         }
         /// <p>A list of security group IDs for the VPC link.</p>
@@ -2666,8 +2729,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
         /// <p>A list of subnet IDs to include in the VPC link.</p>
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_ids(inp);
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_ids(input.into());
             self
         }
         /// <p>A list of subnet IDs to include in the VPC link.</p>
@@ -2688,7 +2751,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A list of tags.</p>
@@ -2705,7 +2768,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAccessLogSettings`.
     ///
     /// <p>Deletes the AccessLogSettings for a Stage. To disable access logging for a Stage, delete its AccessLogSettings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAccessLogSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2750,10 +2813,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAccessLogSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2762,8 +2825,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -2772,8 +2835,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(inp);
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input.into());
             self
         }
         /// <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
@@ -2785,7 +2848,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApi`.
     ///
     /// <p>Deletes an Api resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApi<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2830,10 +2893,10 @@ pub mod fluent_builders {
                 crate::input::DeleteApiInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2842,8 +2905,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -2855,7 +2918,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApiMapping`.
     ///
     /// <p>Deletes an API mapping.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApiMapping<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2900,10 +2963,10 @@ pub mod fluent_builders {
                 crate::input::DeleteApiMappingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2912,8 +2975,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API mapping identifier.</p>
-        pub fn api_mapping_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_mapping_id(inp);
+        pub fn api_mapping_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_mapping_id(input.into());
             self
         }
         /// <p>The API mapping identifier.</p>
@@ -2925,8 +2988,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The domain name.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The domain name.</p>
@@ -2938,7 +3001,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAuthorizer`.
     ///
     /// <p>Deletes an Authorizer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAuthorizer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2983,10 +3046,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAuthorizerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2995,8 +3058,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -3005,8 +3068,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authorizer identifier.</p>
-        pub fn authorizer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorizer_id(inp);
+        pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorizer_id(input.into());
             self
         }
         /// <p>The authorizer identifier.</p>
@@ -3021,7 +3084,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCorsConfiguration`.
     ///
     /// <p>Deletes a CORS configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCorsConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3066,10 +3129,10 @@ pub mod fluent_builders {
                 crate::input::DeleteCorsConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3078,8 +3141,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -3091,7 +3154,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDeployment`.
     ///
     /// <p>Deletes a Deployment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3136,10 +3199,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDeploymentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3148,8 +3211,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -3158,8 +3221,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The deployment ID.</p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(inp);
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p>The deployment ID.</p>
@@ -3174,7 +3237,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDomainName`.
     ///
     /// <p>Deletes a domain name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDomainName<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3219,10 +3282,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDomainNameInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3231,8 +3294,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain name.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The domain name.</p>
@@ -3244,7 +3307,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteIntegration`.
     ///
     /// <p>Deletes an Integration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIntegration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3289,10 +3352,10 @@ pub mod fluent_builders {
                 crate::input::DeleteIntegrationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3301,8 +3364,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -3311,8 +3374,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The integration ID.</p>
-        pub fn integration_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.integration_id(inp);
+        pub fn integration_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_id(input.into());
             self
         }
         /// <p>The integration ID.</p>
@@ -3327,7 +3390,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteIntegrationResponse`.
     ///
     /// <p>Deletes an IntegrationResponses.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIntegrationResponse<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3372,10 +3435,10 @@ pub mod fluent_builders {
                 crate::input::DeleteIntegrationResponseInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3384,8 +3447,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -3394,8 +3457,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The integration ID.</p>
-        pub fn integration_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.integration_id(inp);
+        pub fn integration_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_id(input.into());
             self
         }
         /// <p>The integration ID.</p>
@@ -3407,8 +3470,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The integration response ID.</p>
-        pub fn integration_response_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.integration_response_id(inp);
+        pub fn integration_response_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_response_id(input.into());
             self
         }
         /// <p>The integration response ID.</p>
@@ -3423,7 +3486,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteModel`.
     ///
     /// <p>Deletes a Model.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3468,10 +3531,10 @@ pub mod fluent_builders {
                 crate::input::DeleteModelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3480,8 +3543,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -3490,8 +3553,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The model ID.</p>
-        pub fn model_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_id(inp);
+        pub fn model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_id(input.into());
             self
         }
         /// <p>The model ID.</p>
@@ -3503,7 +3566,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRoute`.
     ///
     /// <p>Deletes a Route.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3548,10 +3611,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRouteInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3560,8 +3623,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -3570,8 +3633,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The route ID.</p>
-        pub fn route_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.route_id(inp);
+        pub fn route_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_id(input.into());
             self
         }
         /// <p>The route ID.</p>
@@ -3583,7 +3646,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRouteRequestParameter`.
     ///
     /// <p>Deletes a route request parameter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRouteRequestParameter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3628,10 +3691,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRouteRequestParameterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3640,8 +3703,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -3650,8 +3713,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The route request parameter key.</p>
-        pub fn request_parameter_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_parameter_key(inp);
+        pub fn request_parameter_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_parameter_key(input.into());
             self
         }
         /// <p>The route request parameter key.</p>
@@ -3663,8 +3726,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The route ID.</p>
-        pub fn route_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.route_id(inp);
+        pub fn route_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_id(input.into());
             self
         }
         /// <p>The route ID.</p>
@@ -3676,7 +3739,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRouteResponse`.
     ///
     /// <p>Deletes a RouteResponse.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRouteResponse<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3721,10 +3784,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRouteResponseInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3733,8 +3796,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -3743,8 +3806,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The route ID.</p>
-        pub fn route_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.route_id(inp);
+        pub fn route_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_id(input.into());
             self
         }
         /// <p>The route ID.</p>
@@ -3753,8 +3816,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The route response ID.</p>
-        pub fn route_response_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.route_response_id(inp);
+        pub fn route_response_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_response_id(input.into());
             self
         }
         /// <p>The route response ID.</p>
@@ -3769,7 +3832,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRouteSettings`.
     ///
     /// <p>Deletes the RouteSettings for a stage.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRouteSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3814,10 +3877,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRouteSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3826,8 +3889,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -3836,8 +3899,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The route key.</p>
-        pub fn route_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.route_key(inp);
+        pub fn route_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_key(input.into());
             self
         }
         /// <p>The route key.</p>
@@ -3846,8 +3909,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(inp);
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input.into());
             self
         }
         /// <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
@@ -3859,7 +3922,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteStage`.
     ///
     /// <p>Deletes a Stage.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3904,10 +3967,10 @@ pub mod fluent_builders {
                 crate::input::DeleteStageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3916,8 +3979,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -3926,8 +3989,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(inp);
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input.into());
             self
         }
         /// <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
@@ -3939,7 +4002,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteVpcLink`.
     ///
     /// <p>Deletes a VPC link.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVpcLink<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3984,10 +4047,10 @@ pub mod fluent_builders {
                 crate::input::DeleteVpcLinkInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3996,8 +4059,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the VPC link.</p>
-        pub fn vpc_link_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_link_id(inp);
+        pub fn vpc_link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_link_id(input.into());
             self
         }
         /// <p>The ID of the VPC link.</p>
@@ -4008,7 +4071,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ExportApi`.
     ///
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportApi<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4053,10 +4116,10 @@ pub mod fluent_builders {
                 crate::input::ExportApiInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4065,8 +4128,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -4075,8 +4138,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the API Gateway export algorithm. API Gateway uses the latest version by default. Currently, the only supported version is 1.0.</p>
-        pub fn export_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.export_version(inp);
+        pub fn export_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.export_version(input.into());
             self
         }
         /// <p>The version of the API Gateway export algorithm. API Gateway uses the latest version by default. Currently, the only supported version is 1.0.</p>
@@ -4088,8 +4151,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether to include <a href="https://docs.aws.amazon.com//apigateway/latest/developerguide/api-gateway-swagger-extensions.html">API Gateway extensions</a> in the exported API definition. API Gateway extensions are included by default.</p>
-        pub fn include_extensions(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_extensions(inp);
+        pub fn include_extensions(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_extensions(input);
             self
         }
         /// <p>Specifies whether to include <a href="https://docs.aws.amazon.com//apigateway/latest/developerguide/api-gateway-swagger-extensions.html">API Gateway extensions</a> in the exported API definition. API Gateway extensions are included by default.</p>
@@ -4098,8 +4161,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The output type of the exported definition file. Valid values are JSON and YAML.</p>
-        pub fn output_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_type(inp);
+        pub fn output_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_type(input.into());
             self
         }
         /// <p>The output type of the exported definition file. Valid values are JSON and YAML.</p>
@@ -4108,8 +4171,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the API specification to use. OAS30, for OpenAPI 3.0, is the only supported value.</p>
-        pub fn specification(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.specification(inp);
+        pub fn specification(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.specification(input.into());
             self
         }
         /// <p>The version of the API specification to use. OAS30, for OpenAPI 3.0, is the only supported value.</p>
@@ -4121,8 +4184,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the API stage to export. If you don't specify this property, a representation of the latest API configuration is exported.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(inp);
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input.into());
             self
         }
         /// <p>The name of the API stage to export. If you don't specify this property, a representation of the latest API configuration is exported.</p>
@@ -4134,7 +4197,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApi`.
     ///
     /// <p>Gets an Api resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApi<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4179,10 +4242,10 @@ pub mod fluent_builders {
                 crate::input::GetApiInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4191,8 +4254,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -4204,7 +4267,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApiMapping`.
     ///
     /// <p>Gets an API mapping.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApiMapping<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4249,10 +4312,10 @@ pub mod fluent_builders {
                 crate::input::GetApiMappingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4261,8 +4324,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API mapping identifier.</p>
-        pub fn api_mapping_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_mapping_id(inp);
+        pub fn api_mapping_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_mapping_id(input.into());
             self
         }
         /// <p>The API mapping identifier.</p>
@@ -4274,8 +4337,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The domain name.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The domain name.</p>
@@ -4287,7 +4350,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApiMappings`.
     ///
     /// <p>Gets API mappings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApiMappings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4332,10 +4395,10 @@ pub mod fluent_builders {
                 crate::input::GetApiMappingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4344,8 +4407,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain name.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The domain name.</p>
@@ -4354,8 +4417,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of elements to be returned for this resource.</p>
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// <p>The maximum number of elements to be returned for this resource.</p>
@@ -4364,8 +4427,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
@@ -4377,7 +4440,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApis`.
     ///
     /// <p>Gets a collection of Api resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApis<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4422,10 +4485,10 @@ pub mod fluent_builders {
                 crate::input::GetApisInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4434,8 +4497,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of elements to be returned for this resource.</p>
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// <p>The maximum number of elements to be returned for this resource.</p>
@@ -4444,8 +4507,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
@@ -4457,7 +4520,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAuthorizer`.
     ///
     /// <p>Gets an Authorizer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAuthorizer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4502,10 +4565,10 @@ pub mod fluent_builders {
                 crate::input::GetAuthorizerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4514,8 +4577,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -4524,8 +4587,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authorizer identifier.</p>
-        pub fn authorizer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorizer_id(inp);
+        pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorizer_id(input.into());
             self
         }
         /// <p>The authorizer identifier.</p>
@@ -4540,7 +4603,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAuthorizers`.
     ///
     /// <p>Gets the Authorizers for an API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAuthorizers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4585,10 +4648,10 @@ pub mod fluent_builders {
                 crate::input::GetAuthorizersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4597,8 +4660,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -4607,8 +4670,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of elements to be returned for this resource.</p>
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// <p>The maximum number of elements to be returned for this resource.</p>
@@ -4617,8 +4680,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
@@ -4630,7 +4693,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeployment`.
     ///
     /// <p>Gets a Deployment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4675,10 +4738,10 @@ pub mod fluent_builders {
                 crate::input::GetDeploymentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4687,8 +4750,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -4697,8 +4760,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The deployment ID.</p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(inp);
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p>The deployment ID.</p>
@@ -4713,7 +4776,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeployments`.
     ///
     /// <p>Gets the Deployments for an API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeployments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4758,10 +4821,10 @@ pub mod fluent_builders {
                 crate::input::GetDeploymentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4770,8 +4833,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -4780,8 +4843,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of elements to be returned for this resource.</p>
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// <p>The maximum number of elements to be returned for this resource.</p>
@@ -4790,8 +4853,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
@@ -4803,7 +4866,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDomainName`.
     ///
     /// <p>Gets a domain name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDomainName<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4848,10 +4911,10 @@ pub mod fluent_builders {
                 crate::input::GetDomainNameInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4860,8 +4923,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain name.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The domain name.</p>
@@ -4873,7 +4936,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDomainNames`.
     ///
     /// <p>Gets the domain names for an AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDomainNames<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4918,10 +4981,10 @@ pub mod fluent_builders {
                 crate::input::GetDomainNamesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4930,8 +4993,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of elements to be returned for this resource.</p>
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// <p>The maximum number of elements to be returned for this resource.</p>
@@ -4940,8 +5003,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
@@ -4953,7 +5016,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetIntegration`.
     ///
     /// <p>Gets an Integration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIntegration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4998,10 +5061,10 @@ pub mod fluent_builders {
                 crate::input::GetIntegrationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5010,8 +5073,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -5020,8 +5083,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The integration ID.</p>
-        pub fn integration_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.integration_id(inp);
+        pub fn integration_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_id(input.into());
             self
         }
         /// <p>The integration ID.</p>
@@ -5036,7 +5099,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetIntegrationResponse`.
     ///
     /// <p>Gets an IntegrationResponses.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIntegrationResponse<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5081,10 +5144,10 @@ pub mod fluent_builders {
                 crate::input::GetIntegrationResponseInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5093,8 +5156,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -5103,8 +5166,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The integration ID.</p>
-        pub fn integration_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.integration_id(inp);
+        pub fn integration_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_id(input.into());
             self
         }
         /// <p>The integration ID.</p>
@@ -5116,8 +5179,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The integration response ID.</p>
-        pub fn integration_response_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.integration_response_id(inp);
+        pub fn integration_response_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_response_id(input.into());
             self
         }
         /// <p>The integration response ID.</p>
@@ -5132,7 +5195,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetIntegrationResponses`.
     ///
     /// <p>Gets the IntegrationResponses for an Integration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIntegrationResponses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5177,10 +5240,10 @@ pub mod fluent_builders {
                 crate::input::GetIntegrationResponsesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5189,8 +5252,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -5199,8 +5262,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The integration ID.</p>
-        pub fn integration_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.integration_id(inp);
+        pub fn integration_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_id(input.into());
             self
         }
         /// <p>The integration ID.</p>
@@ -5212,8 +5275,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of elements to be returned for this resource.</p>
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// <p>The maximum number of elements to be returned for this resource.</p>
@@ -5222,8 +5285,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
@@ -5235,7 +5298,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetIntegrations`.
     ///
     /// <p>Gets the Integrations for an API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIntegrations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5280,10 +5343,10 @@ pub mod fluent_builders {
                 crate::input::GetIntegrationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5292,8 +5355,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -5302,8 +5365,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of elements to be returned for this resource.</p>
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// <p>The maximum number of elements to be returned for this resource.</p>
@@ -5312,8 +5375,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
@@ -5325,7 +5388,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetModel`.
     ///
     /// <p>Gets a Model.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5370,10 +5433,10 @@ pub mod fluent_builders {
                 crate::input::GetModelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5382,8 +5445,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -5392,8 +5455,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The model ID.</p>
-        pub fn model_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_id(inp);
+        pub fn model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_id(input.into());
             self
         }
         /// <p>The model ID.</p>
@@ -5405,7 +5468,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetModels`.
     ///
     /// <p>Gets the Models for an API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetModels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5450,10 +5513,10 @@ pub mod fluent_builders {
                 crate::input::GetModelsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5462,8 +5525,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -5472,8 +5535,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of elements to be returned for this resource.</p>
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// <p>The maximum number of elements to be returned for this resource.</p>
@@ -5482,8 +5545,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
@@ -5495,7 +5558,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetModelTemplate`.
     ///
     /// <p>Gets a model template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetModelTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5540,10 +5603,10 @@ pub mod fluent_builders {
                 crate::input::GetModelTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5552,8 +5615,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -5562,8 +5625,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The model ID.</p>
-        pub fn model_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_id(inp);
+        pub fn model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_id(input.into());
             self
         }
         /// <p>The model ID.</p>
@@ -5575,7 +5638,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRoute`.
     ///
     /// <p>Gets a Route.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5620,10 +5683,10 @@ pub mod fluent_builders {
                 crate::input::GetRouteInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5632,8 +5695,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -5642,8 +5705,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The route ID.</p>
-        pub fn route_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.route_id(inp);
+        pub fn route_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_id(input.into());
             self
         }
         /// <p>The route ID.</p>
@@ -5655,7 +5718,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRouteResponse`.
     ///
     /// <p>Gets a RouteResponse.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRouteResponse<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5700,10 +5763,10 @@ pub mod fluent_builders {
                 crate::input::GetRouteResponseInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5712,8 +5775,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -5722,8 +5785,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The route ID.</p>
-        pub fn route_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.route_id(inp);
+        pub fn route_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_id(input.into());
             self
         }
         /// <p>The route ID.</p>
@@ -5732,8 +5795,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The route response ID.</p>
-        pub fn route_response_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.route_response_id(inp);
+        pub fn route_response_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_response_id(input.into());
             self
         }
         /// <p>The route response ID.</p>
@@ -5748,7 +5811,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRouteResponses`.
     ///
     /// <p>Gets the RouteResponses for a Route.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRouteResponses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5793,10 +5856,10 @@ pub mod fluent_builders {
                 crate::input::GetRouteResponsesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5805,8 +5868,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -5815,8 +5878,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of elements to be returned for this resource.</p>
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// <p>The maximum number of elements to be returned for this resource.</p>
@@ -5825,8 +5888,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
@@ -5835,8 +5898,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The route ID.</p>
-        pub fn route_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.route_id(inp);
+        pub fn route_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_id(input.into());
             self
         }
         /// <p>The route ID.</p>
@@ -5848,7 +5911,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRoutes`.
     ///
     /// <p>Gets the Routes for an API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRoutes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5893,10 +5956,10 @@ pub mod fluent_builders {
                 crate::input::GetRoutesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5905,8 +5968,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -5915,8 +5978,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of elements to be returned for this resource.</p>
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// <p>The maximum number of elements to be returned for this resource.</p>
@@ -5925,8 +5988,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
@@ -5938,7 +6001,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetStage`.
     ///
     /// <p>Gets a Stage.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5983,10 +6046,10 @@ pub mod fluent_builders {
                 crate::input::GetStageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5995,8 +6058,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -6005,8 +6068,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(inp);
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input.into());
             self
         }
         /// <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
@@ -6018,7 +6081,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetStages`.
     ///
     /// <p>Gets the Stages for an API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6063,10 +6126,10 @@ pub mod fluent_builders {
                 crate::input::GetStagesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6075,8 +6138,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -6085,8 +6148,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of elements to be returned for this resource.</p>
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// <p>The maximum number of elements to be returned for this resource.</p>
@@ -6095,8 +6158,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
@@ -6108,7 +6171,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTags`.
     ///
     /// <p>Gets a collection of Tag resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6153,10 +6216,10 @@ pub mod fluent_builders {
                 crate::input::GetTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6165,8 +6228,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN for the tag.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource ARN for the tag.</p>
@@ -6178,7 +6241,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetVpcLink`.
     ///
     /// <p>Gets a VPC link.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetVpcLink<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6223,10 +6286,10 @@ pub mod fluent_builders {
                 crate::input::GetVpcLinkInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6235,8 +6298,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the VPC link.</p>
-        pub fn vpc_link_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_link_id(inp);
+        pub fn vpc_link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_link_id(input.into());
             self
         }
         /// <p>The ID of the VPC link.</p>
@@ -6248,7 +6311,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetVpcLinks`.
     ///
     /// <p>Gets a collection of VPC links.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetVpcLinks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6293,10 +6356,10 @@ pub mod fluent_builders {
                 crate::input::GetVpcLinksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6305,8 +6368,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of elements to be returned for this resource.</p>
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// <p>The maximum number of elements to be returned for this resource.</p>
@@ -6315,8 +6378,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
@@ -6328,7 +6391,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ImportApi`.
     ///
     /// <p>Imports an API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportApi<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6373,10 +6436,10 @@ pub mod fluent_builders {
                 crate::input::ImportApiInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6385,8 +6448,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and split. The default value is ignore. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set the OpenAPI basePath Property</a>. Supported only for HTTP APIs.</p>
-        pub fn basepath(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.basepath(inp);
+        pub fn basepath(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.basepath(input.into());
             self
         }
         /// <p>Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and split. The default value is ignore. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set the OpenAPI basePath Property</a>. Supported only for HTTP APIs.</p>
@@ -6395,8 +6458,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The OpenAPI definition. Supported only for HTTP APIs.</p>
-        pub fn body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.body(inp);
+        pub fn body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.body(input.into());
             self
         }
         /// <p>The OpenAPI definition. Supported only for HTTP APIs.</p>
@@ -6405,8 +6468,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.</p>
-        pub fn fail_on_warnings(mut self, inp: bool) -> Self {
-            self.inner = self.inner.fail_on_warnings(inp);
+        pub fn fail_on_warnings(mut self, input: bool) -> Self {
+            self.inner = self.inner.fail_on_warnings(input);
             self
         }
         /// <p>Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.</p>
@@ -6418,7 +6481,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ReimportApi`.
     ///
     /// <p>Puts an Api resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReimportApi<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6463,10 +6526,10 @@ pub mod fluent_builders {
                 crate::input::ReimportApiInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6475,8 +6538,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -6485,8 +6548,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and split. The default value is ignore. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set the OpenAPI basePath Property</a>. Supported only for HTTP APIs.</p>
-        pub fn basepath(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.basepath(inp);
+        pub fn basepath(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.basepath(input.into());
             self
         }
         /// <p>Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and split. The default value is ignore. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set the OpenAPI basePath Property</a>. Supported only for HTTP APIs.</p>
@@ -6495,8 +6558,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The OpenAPI definition. Supported only for HTTP APIs.</p>
-        pub fn body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.body(inp);
+        pub fn body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.body(input.into());
             self
         }
         /// <p>The OpenAPI definition. Supported only for HTTP APIs.</p>
@@ -6505,8 +6568,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.</p>
-        pub fn fail_on_warnings(mut self, inp: bool) -> Self {
-            self.inner = self.inner.fail_on_warnings(inp);
+        pub fn fail_on_warnings(mut self, input: bool) -> Self {
+            self.inner = self.inner.fail_on_warnings(input);
             self
         }
         /// <p>Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.</p>
@@ -6518,7 +6581,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ResetAuthorizersCache`.
     ///
     /// <p>Resets all authorizer cache entries on a stage. Supported only for HTTP APIs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetAuthorizersCache<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6563,10 +6626,10 @@ pub mod fluent_builders {
                 crate::input::ResetAuthorizersCacheInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6575,8 +6638,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -6585,8 +6648,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(inp);
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input.into());
             self
         }
         /// <p>The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
@@ -6598,7 +6661,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Creates a new Tag resource to represent a tag.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6643,10 +6706,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6655,8 +6718,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN for the tag.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource ARN for the tag.</p>
@@ -6674,7 +6737,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
@@ -6691,7 +6754,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Deletes a Tag.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6736,10 +6799,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6748,8 +6811,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN for the tag.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource ARN for the tag.</p>
@@ -6762,8 +6825,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The Tag keys to delete</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The Tag keys to delete</p>
@@ -6778,7 +6841,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApi`.
     ///
     /// <p>Updates an Api resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApi<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6823,10 +6886,10 @@ pub mod fluent_builders {
                 crate::input::UpdateApiInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6835,8 +6898,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -6845,8 +6908,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
-        pub fn api_key_selection_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_key_selection_expression(inp);
+        pub fn api_key_selection_expression(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.api_key_selection_expression(input.into());
             self
         }
         /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
@@ -6858,8 +6924,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
-        pub fn cors_configuration(mut self, inp: crate::model::Cors) -> Self {
-            self.inner = self.inner.cors_configuration(inp);
+        pub fn cors_configuration(mut self, input: crate::model::Cors) -> Self {
+            self.inner = self.inner.cors_configuration(input);
             self
         }
         /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
@@ -6871,8 +6937,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>This property is part of quick create. It specifies the credentials required for the integration, if any. For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, don't specify this parameter. Currently, this property is not used for HTTP integrations. If provided, this value replaces the credentials associated with the quick create integration. Supported only for HTTP APIs.</p>
-        pub fn credentials_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.credentials_arn(inp);
+        pub fn credentials_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.credentials_arn(input.into());
             self
         }
         /// <p>This property is part of quick create. It specifies the credentials required for the integration, if any. For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, don't specify this parameter. Currently, this property is not used for HTTP integrations. If provided, this value replaces the credentials associated with the quick create integration. Supported only for HTTP APIs.</p>
@@ -6884,8 +6950,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the API.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the API.</p>
@@ -6894,8 +6960,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
-        pub fn disable_schema_validation(mut self, inp: bool) -> Self {
-            self.inner = self.inner.disable_schema_validation(inp);
+        pub fn disable_schema_validation(mut self, input: bool) -> Self {
+            self.inner = self.inner.disable_schema_validation(input);
             self
         }
         /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
@@ -6904,8 +6970,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
-        pub fn disable_execute_api_endpoint(mut self, inp: bool) -> Self {
-            self.inner = self.inner.disable_execute_api_endpoint(inp);
+        pub fn disable_execute_api_endpoint(mut self, input: bool) -> Self {
+            self.inner = self.inner.disable_execute_api_endpoint(input);
             self
         }
         /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
@@ -6917,8 +6983,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the API.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the API.</p>
@@ -6927,8 +6993,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>This property is part of quick create. If not specified, the route created using quick create is kept. Otherwise, this value replaces the route key of the quick create route. Additional routes may still be added after the API is updated. Supported only for HTTP APIs.</p>
-        pub fn route_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.route_key(inp);
+        pub fn route_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_key(input.into());
             self
         }
         /// <p>This property is part of quick create. If not specified, the route created using quick create is kept. Otherwise, this value replaces the route key of the quick create route. Additional routes may still be added after the API is updated. Supported only for HTTP APIs.</p>
@@ -6937,8 +7003,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
-        pub fn route_selection_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.route_selection_expression(inp);
+        pub fn route_selection_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_selection_expression(input.into());
             self
         }
         /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
@@ -6950,8 +7016,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>This property is part of quick create. For HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively. The value provided updates the integration URI and integration type. You can update a quick-created target, but you can't remove it from an API. Supported only for HTTP APIs.</p>
-        pub fn target(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target(inp);
+        pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target(input.into());
             self
         }
         /// <p>This property is part of quick create. For HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively. The value provided updates the integration URI and integration type. You can update a quick-created target, but you can't remove it from an API. Supported only for HTTP APIs.</p>
@@ -6960,8 +7026,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A version identifier for the API.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>A version identifier for the API.</p>
@@ -6973,7 +7039,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApiMapping`.
     ///
     /// <p>The API mapping.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApiMapping<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7018,10 +7084,10 @@ pub mod fluent_builders {
                 crate::input::UpdateApiMappingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7030,8 +7096,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -7040,8 +7106,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The API mapping identifier.</p>
-        pub fn api_mapping_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_mapping_id(inp);
+        pub fn api_mapping_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_mapping_id(input.into());
             self
         }
         /// <p>The API mapping identifier.</p>
@@ -7053,8 +7119,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The API mapping key.</p>
-        pub fn api_mapping_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_mapping_key(inp);
+        pub fn api_mapping_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_mapping_key(input.into());
             self
         }
         /// <p>The API mapping key.</p>
@@ -7066,8 +7132,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The domain name.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The domain name.</p>
@@ -7076,8 +7142,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The API stage.</p>
-        pub fn stage(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage(inp);
+        pub fn stage(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage(input.into());
             self
         }
         /// <p>The API stage.</p>
@@ -7089,7 +7155,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAuthorizer`.
     ///
     /// <p>Updates an Authorizer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAuthorizer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7134,10 +7200,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAuthorizerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7146,8 +7212,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -7156,8 +7222,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, don't specify this parameter.</p>
-        pub fn authorizer_credentials_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorizer_credentials_arn(inp);
+        pub fn authorizer_credentials_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorizer_credentials_arn(input.into());
             self
         }
         /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, don't specify this parameter.</p>
@@ -7169,8 +7235,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authorizer identifier.</p>
-        pub fn authorizer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorizer_id(inp);
+        pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorizer_id(input.into());
             self
         }
         /// <p>The authorizer identifier.</p>
@@ -7184,9 +7250,9 @@ pub mod fluent_builders {
         /// <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer. Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
         pub fn authorizer_payload_format_version(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.authorizer_payload_format_version(inp);
+            self.inner = self.inner.authorizer_payload_format_version(input.into());
             self
         }
         /// <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer. Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
@@ -7198,8 +7264,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time to live (TTL) for cached authorizer results, in seconds. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway caches authorizer responses. The maximum value is 3600, or 1 hour. Supported only for HTTP API Lambda authorizers.</p>
-        pub fn authorizer_result_ttl_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.authorizer_result_ttl_in_seconds(inp);
+        pub fn authorizer_result_ttl_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.authorizer_result_ttl_in_seconds(input);
             self
         }
         /// <p>The time to live (TTL) for cached authorizer results, in seconds. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway caches authorizer responses. The maximum value is 3600, or 1 hour. Supported only for HTTP API Lambda authorizers.</p>
@@ -7211,8 +7277,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).</p>
-        pub fn authorizer_type(mut self, inp: crate::model::AuthorizerType) -> Self {
-            self.inner = self.inner.authorizer_type(inp);
+        pub fn authorizer_type(mut self, input: crate::model::AuthorizerType) -> Self {
+            self.inner = self.inner.authorizer_type(input);
             self
         }
         /// <p>The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).</p>
@@ -7223,14 +7289,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_authorizer_type(input);
             self
         }
-        /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api}</replaceable>
-        /// , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
-        pub fn authorizer_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorizer_uri(inp);
+        /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>
+        /// {account_id}
+        /// </replaceable>:function:<replaceable>
+        /// {lambda_function_name}
+        /// </replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>
+        /// {region}
+        /// </replaceable>:lambda:path/<replaceable>
+        /// {service_api}
+        /// </replaceable> , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
+        pub fn authorizer_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorizer_uri(input.into());
             self
         }
-        /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api}</replaceable>
-        /// , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
+        /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>
+        /// {account_id}
+        /// </replaceable>:function:<replaceable>
+        /// {lambda_function_name}
+        /// </replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>
+        /// {region}
+        /// </replaceable>:lambda:path/<replaceable>
+        /// {service_api}
+        /// </replaceable> , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
         pub fn set_authorizer_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7239,8 +7319,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether a Lambda authorizer returns a response in a simple format. By default, a Lambda authorizer must return an IAM policy. If enabled, the Lambda authorizer can return a boolean value instead of an IAM policy. Supported only for HTTP APIs. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a></p>
-        pub fn enable_simple_responses(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_simple_responses(inp);
+        pub fn enable_simple_responses(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_simple_responses(input);
             self
         }
         /// <p>Specifies whether a Lambda authorizer returns a response in a simple format. By default, a Lambda authorizer must return an IAM policy. If enabled, the Lambda authorizer can return a boolean value instead of an IAM policy. Supported only for HTTP APIs. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a></p>
@@ -7252,12 +7332,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_identity_source`](Self::set_identity_source).
         ///
-        /// <p>The identity source for which authorization is requested.</p> <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p> <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
-        pub fn identity_source(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_source(inp);
+        /// <p>The identity source for which authorization is requested.</p>
+        /// <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
+        /// <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
+        pub fn identity_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_source(input.into());
             self
         }
-        /// <p>The identity source for which authorization is requested.</p> <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p> <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
+        /// <p>The identity source for which authorization is requested.</p>
+        /// <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
+        /// <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
         pub fn set_identity_source(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7268,9 +7352,9 @@ pub mod fluent_builders {
         /// <p>This parameter is not used.</p>
         pub fn identity_validation_expression(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.identity_validation_expression(inp);
+            self.inner = self.inner.identity_validation_expression(input.into());
             self
         }
         /// <p>This parameter is not used.</p>
@@ -7282,8 +7366,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.</p>
-        pub fn jwt_configuration(mut self, inp: crate::model::JwtConfiguration) -> Self {
-            self.inner = self.inner.jwt_configuration(inp);
+        pub fn jwt_configuration(mut self, input: crate::model::JwtConfiguration) -> Self {
+            self.inner = self.inner.jwt_configuration(input);
             self
         }
         /// <p>Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.</p>
@@ -7295,8 +7379,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the authorizer.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the authorizer.</p>
@@ -7308,7 +7392,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDeployment`.
     ///
     /// <p>Updates a Deployment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7353,10 +7437,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDeploymentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7365,8 +7449,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -7375,8 +7459,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The deployment ID.</p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(inp);
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p>The deployment ID.</p>
@@ -7388,8 +7472,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the deployment resource.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description for the deployment resource.</p>
@@ -7401,7 +7485,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDomainName`.
     ///
     /// <p>Updates a domain name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDomainName<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7446,10 +7530,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDomainNameInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7458,8 +7542,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain name.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The domain name.</p>
@@ -7474,9 +7558,9 @@ pub mod fluent_builders {
         /// <p>The domain name configurations.</p>
         pub fn domain_name_configurations(
             mut self,
-            inp: impl Into<crate::model::DomainNameConfiguration>,
+            input: crate::model::DomainNameConfiguration,
         ) -> Self {
-            self.inner = self.inner.domain_name_configurations(inp);
+            self.inner = self.inner.domain_name_configurations(input);
             self
         }
         /// <p>The domain name configurations.</p>
@@ -7490,9 +7574,9 @@ pub mod fluent_builders {
         /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
         pub fn mutual_tls_authentication(
             mut self,
-            inp: crate::model::MutualTlsAuthenticationInput,
+            input: crate::model::MutualTlsAuthenticationInput,
         ) -> Self {
-            self.inner = self.inner.mutual_tls_authentication(inp);
+            self.inner = self.inner.mutual_tls_authentication(input);
             self
         }
         /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
@@ -7507,7 +7591,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateIntegration`.
     ///
     /// <p>Updates an Integration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateIntegration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7552,10 +7636,10 @@ pub mod fluent_builders {
                 crate::input::UpdateIntegrationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7564,8 +7648,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -7574,8 +7658,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the VPC link for a private integration. Supported only for HTTP APIs.</p>
-        pub fn connection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(inp);
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the VPC link for a private integration. Supported only for HTTP APIs.</p>
@@ -7587,8 +7671,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the network connection to the integration endpoint. Specify INTERNET for connections through the public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The default value is INTERNET.</p>
-        pub fn connection_type(mut self, inp: crate::model::ConnectionType) -> Self {
-            self.inner = self.inner.connection_type(inp);
+        pub fn connection_type(mut self, input: crate::model::ConnectionType) -> Self {
+            self.inner = self.inner.connection_type(input);
             self
         }
         /// <p>The type of the network connection to the integration endpoint. Specify INTERNET for connections through the public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The default value is INTERNET.</p>
@@ -7599,15 +7683,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_connection_type(input);
             self
         }
-        /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+        /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
+        /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
+        /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
+        /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
         pub fn content_handling_strategy(
             mut self,
-            inp: crate::model::ContentHandlingStrategy,
+            input: crate::model::ContentHandlingStrategy,
         ) -> Self {
-            self.inner = self.inner.content_handling_strategy(inp);
+            self.inner = self.inner.content_handling_strategy(input);
             self
         }
-        /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+        /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
+        /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
+        /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
+        /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
         pub fn set_content_handling_strategy(
             mut self,
             input: std::option::Option<crate::model::ContentHandlingStrategy>,
@@ -7616,8 +7706,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null.</p>
-        pub fn credentials_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.credentials_arn(inp);
+        pub fn credentials_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.credentials_arn(input.into());
             self
         }
         /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null.</p>
@@ -7629,8 +7719,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the integration</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the integration</p>
@@ -7639,8 +7729,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The integration ID.</p>
-        pub fn integration_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.integration_id(inp);
+        pub fn integration_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_id(input.into());
             self
         }
         /// <p>The integration ID.</p>
@@ -7652,8 +7742,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the integration's HTTP method type.</p>
-        pub fn integration_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.integration_method(inp);
+        pub fn integration_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_method(input.into());
             self
         }
         /// <p>Specifies the integration's HTTP method type.</p>
@@ -7665,8 +7755,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration subtype reference</a>.</p>
-        pub fn integration_subtype(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.integration_subtype(inp);
+        pub fn integration_subtype(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_subtype(input.into());
             self
         }
         /// <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration subtype reference</a>.</p>
@@ -7677,12 +7767,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_integration_subtype(input);
             self
         }
-        /// <p>The integration type of an integration. One of the following:</p> <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p> <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p> <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p> <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p> <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
-        pub fn integration_type(mut self, inp: crate::model::IntegrationType) -> Self {
-            self.inner = self.inner.integration_type(inp);
+        /// <p>The integration type of an integration. One of the following:</p>
+        /// <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p>
+        /// <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p>
+        /// <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p>
+        /// <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p>
+        /// <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
+        pub fn integration_type(mut self, input: crate::model::IntegrationType) -> Self {
+            self.inner = self.inner.integration_type(input);
             self
         }
-        /// <p>The integration type of an integration. One of the following:</p> <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p> <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p> <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p> <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p> <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
+        /// <p>The integration type of an integration. One of the following:</p>
+        /// <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p>
+        /// <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p>
+        /// <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p>
+        /// <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p>
+        /// <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
         pub fn set_integration_type(
             mut self,
             input: std::option::Option<crate::model::IntegrationType>,
@@ -7690,12 +7790,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_integration_type(input);
             self
         }
-        /// <p>For a Lambda integration, specify the URI of a Lambda function.</p> <p>For an HTTP integration, specify a fully-qualified URL.</p> <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
-        pub fn integration_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.integration_uri(inp);
+        /// <p>For a Lambda integration, specify the URI of a Lambda function.</p>
+        /// <p>For an HTTP integration, specify a fully-qualified URL.</p>
+        /// <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
+        pub fn integration_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_uri(input.into());
             self
         }
-        /// <p>For a Lambda integration, specify the URI of a Lambda function.</p> <p>For an HTTP integration, specify a fully-qualified URL.</p> <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
+        /// <p>For a Lambda integration, specify the URI of a Lambda function.</p>
+        /// <p>For an HTTP integration, specify a fully-qualified URL.</p>
+        /// <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
         pub fn set_integration_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7703,12 +7807,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_integration_uri(input);
             self
         }
-        /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p> <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p> <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p> <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
-        pub fn passthrough_behavior(mut self, inp: crate::model::PassthroughBehavior) -> Self {
-            self.inner = self.inner.passthrough_behavior(inp);
+        /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p>
+        /// <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p>
+        /// <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p>
+        /// <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
+        pub fn passthrough_behavior(mut self, input: crate::model::PassthroughBehavior) -> Self {
+            self.inner = self.inner.passthrough_behavior(input);
             self
         }
-        /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p> <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p> <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p> <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
+        /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p>
+        /// <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p>
+        /// <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p>
+        /// <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
         pub fn set_passthrough_behavior(
             mut self,
             input: std::option::Option<crate::model::PassthroughBehavior>,
@@ -7717,8 +7827,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
-        pub fn payload_format_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.payload_format_version(inp);
+        pub fn payload_format_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.payload_format_version(input.into());
             self
         }
         /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
@@ -7733,26 +7843,36 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).
         ///
-        /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
-        /// , where
-        /// <replaceable>{location}</replaceable>
-        /// is querystring, path, or header; and
-        /// <replaceable>{name}</replaceable>
-        /// must be a valid and unique method request parameter name.</p> <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming API requests and responses</a>.</p>
+        /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>
+        /// {location}
+        /// </replaceable>.<replaceable>
+        /// {name}
+        /// </replaceable> , where <replaceable>
+        /// {location}
+        /// </replaceable> is querystring, path, or header; and <replaceable>
+        /// {name}
+        /// </replaceable> must be a valid and unique method request parameter name.</p>
+        /// <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p>
+        /// <p>For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming API requests and responses</a>.</p>
         pub fn request_parameters(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.request_parameters(k, v);
+            self.inner = self.inner.request_parameters(k.into(), v.into());
             self
         }
-        /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
-        /// , where
-        /// <replaceable>{location}</replaceable>
-        /// is querystring, path, or header; and
-        /// <replaceable>{name}</replaceable>
-        /// must be a valid and unique method request parameter name.</p> <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming API requests and responses</a>.</p>
+        /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>
+        /// {location}
+        /// </replaceable>.<replaceable>
+        /// {name}
+        /// </replaceable> , where <replaceable>
+        /// {location}
+        /// </replaceable> is querystring, path, or header; and <replaceable>
+        /// {name}
+        /// </replaceable> must be a valid and unique method request parameter name.</p>
+        /// <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p>
+        /// <p>For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming API requests and responses</a>.</p>
         pub fn set_request_parameters(
             mut self,
             input: std::option::Option<
@@ -7772,7 +7892,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.request_templates(k, v);
+            self.inner = self.inner.request_templates(k.into(), v.into());
             self
         }
         /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value. Supported only for WebSocket APIs.</p>
@@ -7793,9 +7913,9 @@ pub mod fluent_builders {
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            v: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
-            self.inner = self.inner.response_parameters(k, v);
+            self.inner = self.inner.response_parameters(k.into(), v);
             self
         }
         /// <p>Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend integration before returning the response to clients. Specify a key-value map from a selection key to response parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
@@ -7814,9 +7934,9 @@ pub mod fluent_builders {
         /// <p>The template selection expression for the integration.</p>
         pub fn template_selection_expression(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.template_selection_expression(inp);
+            self.inner = self.inner.template_selection_expression(input.into());
             self
         }
         /// <p>The template selection expression for the integration.</p>
@@ -7828,8 +7948,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>
-        pub fn timeout_in_millis(mut self, inp: i32) -> Self {
-            self.inner = self.inner.timeout_in_millis(inp);
+        pub fn timeout_in_millis(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout_in_millis(input);
             self
         }
         /// <p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>
@@ -7838,8 +7958,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
-        pub fn tls_config(mut self, inp: crate::model::TlsConfigInput) -> Self {
-            self.inner = self.inner.tls_config(inp);
+        pub fn tls_config(mut self, input: crate::model::TlsConfigInput) -> Self {
+            self.inner = self.inner.tls_config(input);
             self
         }
         /// <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
@@ -7854,7 +7974,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateIntegrationResponse`.
     ///
     /// <p>Updates an IntegrationResponses.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateIntegrationResponse<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7899,10 +8019,10 @@ pub mod fluent_builders {
                 crate::input::UpdateIntegrationResponseInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7911,8 +8031,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -7920,15 +8040,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_api_id(input);
             self
         }
-        /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+        /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
+        /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
+        /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
+        /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
         pub fn content_handling_strategy(
             mut self,
-            inp: crate::model::ContentHandlingStrategy,
+            input: crate::model::ContentHandlingStrategy,
         ) -> Self {
-            self.inner = self.inner.content_handling_strategy(inp);
+            self.inner = self.inner.content_handling_strategy(input);
             self
         }
-        /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+        /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
+        /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
+        /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
+        /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
         pub fn set_content_handling_strategy(
             mut self,
             input: std::option::Option<crate::model::ContentHandlingStrategy>,
@@ -7937,8 +8063,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The integration ID.</p>
-        pub fn integration_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.integration_id(inp);
+        pub fn integration_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_id(input.into());
             self
         }
         /// <p>The integration ID.</p>
@@ -7950,8 +8076,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The integration response ID.</p>
-        pub fn integration_response_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.integration_response_id(inp);
+        pub fn integration_response_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_response_id(input.into());
             self
         }
         /// <p>The integration response ID.</p>
@@ -7963,8 +8089,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The integration response key.</p>
-        pub fn integration_response_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.integration_response_key(inp);
+        pub fn integration_response_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_response_key(input.into());
             self
         }
         /// <p>The integration response key.</p>
@@ -7979,30 +8105,36 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
         ///
-        /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.<replaceable>{name}</replaceable>
-        /// , where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.<replaceable>{name}</replaceable>
-        /// or integration.response.body.<replaceable>{JSON-expression}</replaceable>
-        /// , where
-        /// <replaceable>{name}</replaceable>
-        /// is a valid and unique response header name and
-        /// <replaceable>{JSON-expression}</replaceable>
-        /// is a valid JSON expression without the $ prefix.</p>
+        /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.<replaceable>
+        /// {name}
+        /// </replaceable> , where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.<replaceable>
+        /// {name}
+        /// </replaceable> or integration.response.body.<replaceable>
+        /// {JSON-expression}
+        /// </replaceable> , where <replaceable>
+        /// {name}
+        /// </replaceable> is a valid and unique response header name and <replaceable>
+        /// {JSON-expression}
+        /// </replaceable> is a valid JSON expression without the $ prefix.</p>
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.response_parameters(k, v);
+            self.inner = self.inner.response_parameters(k.into(), v.into());
             self
         }
-        /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.<replaceable>{name}</replaceable>
-        /// , where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.<replaceable>{name}</replaceable>
-        /// or integration.response.body.<replaceable>{JSON-expression}</replaceable>
-        /// , where
-        /// <replaceable>{name}</replaceable>
-        /// is a valid and unique response header name and
-        /// <replaceable>{JSON-expression}</replaceable>
-        /// is a valid JSON expression without the $ prefix.</p>
+        /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.<replaceable>
+        /// {name}
+        /// </replaceable> , where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.<replaceable>
+        /// {name}
+        /// </replaceable> or integration.response.body.<replaceable>
+        /// {JSON-expression}
+        /// </replaceable> , where <replaceable>
+        /// {name}
+        /// </replaceable> is a valid and unique response header name and <replaceable>
+        /// {JSON-expression}
+        /// </replaceable> is a valid JSON expression without the $ prefix.</p>
         pub fn set_response_parameters(
             mut self,
             input: std::option::Option<
@@ -8022,7 +8154,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.response_templates(k, v);
+            self.inner = self.inner.response_templates(k.into(), v.into());
             self
         }
         /// <p>The collection of response templates for the integration response as a string-to-string map of key-value pairs. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
@@ -8038,9 +8170,9 @@ pub mod fluent_builders {
         /// <p>The template selection expression for the integration response. Supported only for WebSocket APIs.</p>
         pub fn template_selection_expression(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.template_selection_expression(inp);
+            self.inner = self.inner.template_selection_expression(input.into());
             self
         }
         /// <p>The template selection expression for the integration response. Supported only for WebSocket APIs.</p>
@@ -8055,7 +8187,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateModel`.
     ///
     /// <p>Updates a Model.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateModel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8100,10 +8232,10 @@ pub mod fluent_builders {
                 crate::input::UpdateModelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8112,8 +8244,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -8122,8 +8254,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The content-type for the model, for example, "application/json".</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(inp);
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(input.into());
             self
         }
         /// <p>The content-type for the model, for example, "application/json".</p>
@@ -8132,8 +8264,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the model.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the model.</p>
@@ -8142,8 +8274,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The model ID.</p>
-        pub fn model_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_id(inp);
+        pub fn model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_id(input.into());
             self
         }
         /// <p>The model ID.</p>
@@ -8152,8 +8284,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the model.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the model.</p>
@@ -8162,8 +8294,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
-        pub fn schema(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema(inp);
+        pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema(input.into());
             self
         }
         /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
@@ -8175,7 +8307,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRoute`.
     ///
     /// <p>Updates a Route.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8220,10 +8352,10 @@ pub mod fluent_builders {
                 crate::input::UpdateRouteInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8232,8 +8364,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -8242,8 +8374,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether an API key is required for the route. Supported only for WebSocket APIs.</p>
-        pub fn api_key_required(mut self, inp: bool) -> Self {
-            self.inner = self.inner.api_key_required(inp);
+        pub fn api_key_required(mut self, input: bool) -> Self {
+            self.inner = self.inner.api_key_required(input);
             self
         }
         /// <p>Specifies whether an API key is required for the route. Supported only for WebSocket APIs.</p>
@@ -8256,8 +8388,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_authorization_scopes`](Self::set_authorization_scopes).
         ///
         /// <p>The authorization scopes supported by this route.</p>
-        pub fn authorization_scopes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorization_scopes(inp);
+        pub fn authorization_scopes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorization_scopes(input.into());
             self
         }
         /// <p>The authorization scopes supported by this route.</p>
@@ -8269,8 +8401,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authorization type for the route. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.</p>
-        pub fn authorization_type(mut self, inp: crate::model::AuthorizationType) -> Self {
-            self.inner = self.inner.authorization_type(inp);
+        pub fn authorization_type(mut self, input: crate::model::AuthorizationType) -> Self {
+            self.inner = self.inner.authorization_type(input);
             self
         }
         /// <p>The authorization type for the route. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.</p>
@@ -8282,8 +8414,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Authorizer resource to be associated with this route. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
-        pub fn authorizer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorizer_id(inp);
+        pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorizer_id(input.into());
             self
         }
         /// <p>The identifier of the Authorizer resource to be associated with this route. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
@@ -8295,8 +8427,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The model selection expression for the route. Supported only for WebSocket APIs.</p>
-        pub fn model_selection_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_selection_expression(inp);
+        pub fn model_selection_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_selection_expression(input.into());
             self
         }
         /// <p>The model selection expression for the route. Supported only for WebSocket APIs.</p>
@@ -8308,8 +8440,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The operation name for the route.</p>
-        pub fn operation_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.operation_name(inp);
+        pub fn operation_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.operation_name(input.into());
             self
         }
         /// <p>The operation name for the route.</p>
@@ -8330,7 +8462,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.request_models(k, v);
+            self.inner = self.inner.request_models(k.into(), v.into());
             self
         }
         /// <p>The request models for the route. Supported only for WebSocket APIs.</p>
@@ -8351,9 +8483,9 @@ pub mod fluent_builders {
         pub fn request_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ParameterConstraints>,
+            v: crate::model::ParameterConstraints,
         ) -> Self {
-            self.inner = self.inner.request_parameters(k, v);
+            self.inner = self.inner.request_parameters(k.into(), v);
             self
         }
         /// <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
@@ -8367,8 +8499,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The route ID.</p>
-        pub fn route_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.route_id(inp);
+        pub fn route_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_id(input.into());
             self
         }
         /// <p>The route ID.</p>
@@ -8377,8 +8509,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The route key for the route.</p>
-        pub fn route_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.route_key(inp);
+        pub fn route_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_key(input.into());
             self
         }
         /// <p>The route key for the route.</p>
@@ -8389,9 +8521,9 @@ pub mod fluent_builders {
         /// <p>The route response selection expression for the route. Supported only for WebSocket APIs.</p>
         pub fn route_response_selection_expression(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.route_response_selection_expression(inp);
+            self.inner = self.inner.route_response_selection_expression(input.into());
             self
         }
         /// <p>The route response selection expression for the route. Supported only for WebSocket APIs.</p>
@@ -8403,8 +8535,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The target for the route.</p>
-        pub fn target(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target(inp);
+        pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target(input.into());
             self
         }
         /// <p>The target for the route.</p>
@@ -8416,7 +8548,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRouteResponse`.
     ///
     /// <p>Updates a RouteResponse.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRouteResponse<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8461,10 +8593,10 @@ pub mod fluent_builders {
                 crate::input::UpdateRouteResponseInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8473,8 +8605,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -8483,8 +8615,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The model selection expression for the route response. Supported only for WebSocket APIs.</p>
-        pub fn model_selection_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_selection_expression(inp);
+        pub fn model_selection_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_selection_expression(input.into());
             self
         }
         /// <p>The model selection expression for the route response. Supported only for WebSocket APIs.</p>
@@ -8505,7 +8637,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.response_models(k, v);
+            self.inner = self.inner.response_models(k.into(), v.into());
             self
         }
         /// <p>The response models for the route response.</p>
@@ -8526,9 +8658,9 @@ pub mod fluent_builders {
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ParameterConstraints>,
+            v: crate::model::ParameterConstraints,
         ) -> Self {
-            self.inner = self.inner.response_parameters(k, v);
+            self.inner = self.inner.response_parameters(k.into(), v);
             self
         }
         /// <p>The route response parameters.</p>
@@ -8542,8 +8674,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The route ID.</p>
-        pub fn route_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.route_id(inp);
+        pub fn route_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_id(input.into());
             self
         }
         /// <p>The route ID.</p>
@@ -8552,8 +8684,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The route response ID.</p>
-        pub fn route_response_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.route_response_id(inp);
+        pub fn route_response_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_response_id(input.into());
             self
         }
         /// <p>The route response ID.</p>
@@ -8565,8 +8697,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The route response key.</p>
-        pub fn route_response_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.route_response_key(inp);
+        pub fn route_response_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_response_key(input.into());
             self
         }
         /// <p>The route response key.</p>
@@ -8581,7 +8713,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateStage`.
     ///
     /// <p>Updates a Stage.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateStage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8626,10 +8758,10 @@ pub mod fluent_builders {
                 crate::input::UpdateStageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8638,8 +8770,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Settings for logging access in this stage.</p>
-        pub fn access_log_settings(mut self, inp: crate::model::AccessLogSettings) -> Self {
-            self.inner = self.inner.access_log_settings(inp);
+        pub fn access_log_settings(mut self, input: crate::model::AccessLogSettings) -> Self {
+            self.inner = self.inner.access_log_settings(input);
             self
         }
         /// <p>Settings for logging access in this stage.</p>
@@ -8651,8 +8783,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The API identifier.</p>
-        pub fn api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(inp);
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API identifier.</p>
@@ -8661,8 +8793,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
-        pub fn auto_deploy(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_deploy(inp);
+        pub fn auto_deploy(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_deploy(input);
             self
         }
         /// <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
@@ -8671,8 +8803,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of a client certificate for a Stage.</p>
-        pub fn client_certificate_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_certificate_id(inp);
+        pub fn client_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_certificate_id(input.into());
             self
         }
         /// <p>The identifier of a client certificate for a Stage.</p>
@@ -8684,8 +8816,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The default route settings for the stage.</p>
-        pub fn default_route_settings(mut self, inp: crate::model::RouteSettings) -> Self {
-            self.inner = self.inner.default_route_settings(inp);
+        pub fn default_route_settings(mut self, input: crate::model::RouteSettings) -> Self {
+            self.inner = self.inner.default_route_settings(input);
             self
         }
         /// <p>The default route settings for the stage.</p>
@@ -8697,8 +8829,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The deployment identifier for the API stage. Can't be updated if autoDeploy is enabled.</p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(inp);
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p>The deployment identifier for the API stage. Can't be updated if autoDeploy is enabled.</p>
@@ -8710,8 +8842,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the API stage.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description for the API stage.</p>
@@ -8727,9 +8859,9 @@ pub mod fluent_builders {
         pub fn route_settings(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::RouteSettings>,
+            v: crate::model::RouteSettings,
         ) -> Self {
-            self.inner = self.inner.route_settings(k, v);
+            self.inner = self.inner.route_settings(k.into(), v);
             self
         }
         /// <p>Route settings for the stage.</p>
@@ -8743,8 +8875,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(inp);
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input.into());
             self
         }
         /// <p>The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
@@ -8762,7 +8894,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.stage_variables(k, v);
+            self.inner = self.inner.stage_variables(k.into(), v.into());
             self
         }
         /// <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
@@ -8779,7 +8911,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateVpcLink`.
     ///
     /// <p>Updates a VPC link.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateVpcLink<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8824,10 +8956,10 @@ pub mod fluent_builders {
                 crate::input::UpdateVpcLinkInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8836,8 +8968,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the VPC link.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the VPC link.</p>
@@ -8846,8 +8978,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the VPC link.</p>
-        pub fn vpc_link_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_link_id(inp);
+        pub fn vpc_link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_link_id(input.into());
             self
         }
         /// <p>The ID of the VPC link.</p>
@@ -8857,6 +8989,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

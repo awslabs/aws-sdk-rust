@@ -948,9 +948,9 @@ pub mod list_s3_buckets_output {
         /// To override the contents of this collection use [`set_buckets`](Self::set_buckets).
         ///
         /// <p>The list of S3 buckets.</p>
-        pub fn buckets(mut self, input: impl Into<crate::model::S3BucketInfo>) -> Self {
+        pub fn buckets(mut self, input: crate::model::S3BucketInfo) -> Self {
             let mut v = self.buckets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.buckets = Some(v);
             self
         }
@@ -1030,9 +1030,9 @@ pub mod list_backend_jobs_output {
         /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
         ///
         /// <p>An array of jobs and their properties.</p>
-        pub fn jobs(mut self, input: impl Into<crate::model::BackendJobRespObj>) -> Self {
+        pub fn jobs(mut self, input: crate::model::BackendJobRespObj) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.jobs = Some(v);
             self
         }

@@ -3,19 +3,16 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobExecutionState {
-    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED",
-    /// "REJECTED", or "REMOVED".</p>
+    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
     pub status: std::option::Option<crate::model::JobExecutionStatus>,
     /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
     pub status_details:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a
-    /// device.</p>
+    /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>
     pub version_number: i64,
 }
 impl JobExecutionState {
-    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED",
-    /// "REJECTED", or "REMOVED".</p>
+    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
     pub fn status(&self) -> std::option::Option<&crate::model::JobExecutionStatus> {
         self.status.as_ref()
     }
@@ -26,8 +23,7 @@ impl JobExecutionState {
     {
         self.status_details.as_ref()
     }
-    /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a
-    /// device.</p>
+    /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>
     pub fn version_number(&self) -> i64 {
         self.version_number
     }
@@ -54,14 +50,12 @@ pub mod job_execution_state {
         pub(crate) version_number: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED",
-        /// "REJECTED", or "REMOVED".</p>
+        /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
         pub fn status(mut self, input: crate::model::JobExecutionStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED",
-        /// "REJECTED", or "REMOVED".</p>
+        /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::JobExecutionStatus>,
@@ -94,14 +88,12 @@ pub mod job_execution_state {
             self.status_details = input;
             self
         }
-        /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a
-        /// device.</p>
+        /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>
         pub fn version_number(mut self, input: i64) -> Self {
             self.version_number = Some(input);
             self
         }
-        /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a
-        /// device.</p>
+        /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>
         pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
             self.version_number = input;
             self
@@ -219,8 +211,7 @@ pub struct JobExecution {
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name of the thing that is executing the job.</p>
     pub thing_name: std::option::Option<std::string::String>,
-    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED",
-    /// "REJECTED", or "REMOVED".</p>
+    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
     pub status: std::option::Option<crate::model::JobExecutionStatus>,
     /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
     pub status_details:
@@ -231,14 +222,11 @@ pub struct JobExecution {
     pub started_at: std::option::Option<i64>,
     /// <p>The time, in milliseconds since the epoch, when the job execution was last updated. </p>
     pub last_updated_at: i64,
-    /// <p>The estimated number of seconds that remain before the job execution status will be
-    /// changed to <code>TIMED_OUT</code>.</p>
+    /// <p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>.</p>
     pub approximate_seconds_before_timed_out: std::option::Option<i64>,
-    /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a
-    /// device.</p>
+    /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>
     pub version_number: i64,
-    /// <p>A number that identifies a particular job execution on a particular device. It can be used later in
-    /// commands that return or update job execution information.</p>
+    /// <p>A number that identifies a particular job execution on a particular device. It can be used later in commands that return or update job execution information.</p>
     pub execution_number: std::option::Option<i64>,
     /// <p>The content of the job document.</p>
     pub job_document: std::option::Option<std::string::String>,
@@ -252,8 +240,7 @@ impl JobExecution {
     pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
-    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED",
-    /// "REJECTED", or "REMOVED".</p>
+    /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
     pub fn status(&self) -> std::option::Option<&crate::model::JobExecutionStatus> {
         self.status.as_ref()
     }
@@ -276,18 +263,15 @@ impl JobExecution {
     pub fn last_updated_at(&self) -> i64 {
         self.last_updated_at
     }
-    /// <p>The estimated number of seconds that remain before the job execution status will be
-    /// changed to <code>TIMED_OUT</code>.</p>
+    /// <p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>.</p>
     pub fn approximate_seconds_before_timed_out(&self) -> std::option::Option<i64> {
         self.approximate_seconds_before_timed_out
     }
-    /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a
-    /// device.</p>
+    /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>
     pub fn version_number(&self) -> i64 {
         self.version_number
     }
-    /// <p>A number that identifies a particular job execution on a particular device. It can be used later in
-    /// commands that return or update job execution information.</p>
+    /// <p>A number that identifies a particular job execution on a particular device. It can be used later in commands that return or update job execution information.</p>
     pub fn execution_number(&self) -> std::option::Option<i64> {
         self.execution_number
     }
@@ -357,14 +341,12 @@ pub mod job_execution {
             self.thing_name = input;
             self
         }
-        /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED",
-        /// "REJECTED", or "REMOVED".</p>
+        /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
         pub fn status(mut self, input: crate::model::JobExecutionStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED",
-        /// "REJECTED", or "REMOVED".</p>
+        /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::JobExecutionStatus>,
@@ -427,14 +409,12 @@ pub mod job_execution {
             self.last_updated_at = input;
             self
         }
-        /// <p>The estimated number of seconds that remain before the job execution status will be
-        /// changed to <code>TIMED_OUT</code>.</p>
+        /// <p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>.</p>
         pub fn approximate_seconds_before_timed_out(mut self, input: i64) -> Self {
             self.approximate_seconds_before_timed_out = Some(input);
             self
         }
-        /// <p>The estimated number of seconds that remain before the job execution status will be
-        /// changed to <code>TIMED_OUT</code>.</p>
+        /// <p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>.</p>
         pub fn set_approximate_seconds_before_timed_out(
             mut self,
             input: std::option::Option<i64>,
@@ -442,26 +422,22 @@ pub mod job_execution {
             self.approximate_seconds_before_timed_out = input;
             self
         }
-        /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a
-        /// device.</p>
+        /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>
         pub fn version_number(mut self, input: i64) -> Self {
             self.version_number = Some(input);
             self
         }
-        /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a
-        /// device.</p>
+        /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>
         pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
             self.version_number = input;
             self
         }
-        /// <p>A number that identifies a particular job execution on a particular device. It can be used later in
-        /// commands that return or update job execution information.</p>
+        /// <p>A number that identifies a particular job execution on a particular device. It can be used later in commands that return or update job execution information.</p>
         pub fn execution_number(mut self, input: i64) -> Self {
             self.execution_number = Some(input);
             self
         }
-        /// <p>A number that identifies a particular job execution on a particular device. It can be used later in
-        /// commands that return or update job execution information.</p>
+        /// <p>A number that identifies a particular job execution on a particular device. It can be used later in commands that return or update job execution information.</p>
         pub fn set_execution_number(mut self, input: std::option::Option<i64>) -> Self {
             self.execution_number = input;
             self
@@ -513,8 +489,7 @@ pub struct JobExecutionSummary {
     pub started_at: std::option::Option<i64>,
     /// <p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>
     pub last_updated_at: i64,
-    /// <p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives
-    /// an update from a device.</p>
+    /// <p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.</p>
     pub version_number: i64,
     /// <p>A number that identifies a particular job execution on a particular device.</p>
     pub execution_number: std::option::Option<i64>,
@@ -536,8 +511,7 @@ impl JobExecutionSummary {
     pub fn last_updated_at(&self) -> i64 {
         self.last_updated_at
     }
-    /// <p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives
-    /// an update from a device.</p>
+    /// <p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.</p>
     pub fn version_number(&self) -> i64 {
         self.version_number
     }
@@ -612,14 +586,12 @@ pub mod job_execution_summary {
             self.last_updated_at = input;
             self
         }
-        /// <p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives
-        /// an update from a device.</p>
+        /// <p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.</p>
         pub fn version_number(mut self, input: i64) -> Self {
             self.version_number = Some(input);
             self
         }
-        /// <p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives
-        /// an update from a device.</p>
+        /// <p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.</p>
         pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
             self.version_number = input;
             self

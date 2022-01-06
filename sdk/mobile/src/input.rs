@@ -12,64 +12,42 @@ pub mod create_project_input {
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// Name of the project.
-        /// </p>
+        /// <p> Name of the project. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>
-        /// Name of the project.
-        /// </p>
+        /// <p> Name of the project. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>
-        /// Default region where project resources should be created.
-        /// </p>
+        /// <p> Default region where project resources should be created. </p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>
-        /// Default region where project resources should be created.
-        /// </p>
+        /// <p> Default region where project resources should be created. </p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
         }
-        /// <p>
-        /// ZIP or YAML file which contains configuration settings to be used when creating
-        /// the project. This may be the contents of the file downloaded from the URL provided
-        /// in an export project operation.
-        /// </p>
+        /// <p> ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation. </p>
         pub fn contents(mut self, input: aws_smithy_types::Blob) -> Self {
             self.contents = Some(input);
             self
         }
-        /// <p>
-        /// ZIP or YAML file which contains configuration settings to be used when creating
-        /// the project. This may be the contents of the file downloaded from the URL provided
-        /// in an export project operation.
-        /// </p>
+        /// <p> ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation. </p>
         pub fn set_contents(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.contents = input;
             self
         }
-        /// <p>
-        /// Unique identifier for an exported snapshot of project configuration. This
-        /// snapshot identifier is included in the share URL when a project is exported.
-        /// </p>
+        /// <p> Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported. </p>
         pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.snapshot_id = Some(input.into());
             self
         }
-        /// <p>
-        /// Unique identifier for an exported snapshot of project configuration. This
-        /// snapshot identifier is included in the share URL when a project is exported.
-        /// </p>
+        /// <p> Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported. </p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.snapshot_id = input;
             self
@@ -93,7 +71,7 @@ pub mod create_project_input {
 #[doc(hidden)]
 pub type CreateProjectInputOperationOutputAlias = crate::operation::CreateProject;
 #[doc(hidden)]
-pub type CreateProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProjectInput {
     /// Consumes the builder and constructs an Operation<[`CreateProject`](crate::operation::CreateProject)>
     #[allow(clippy::let_and_return)]
@@ -104,7 +82,7 @@ impl CreateProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateProject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -200,7 +178,7 @@ impl CreateProjectInput {
             "CreateProject",
             "mobile",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -232,16 +210,12 @@ pub mod delete_project_input {
         pub(crate) project_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// Unique project identifier.
-        /// </p>
+        /// <p> Unique project identifier. </p>
         pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_id = Some(input.into());
             self
         }
-        /// <p>
-        /// Unique project identifier.
-        /// </p>
+        /// <p> Unique project identifier. </p>
         pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_id = input;
             self
@@ -262,7 +236,7 @@ pub mod delete_project_input {
 #[doc(hidden)]
 pub type DeleteProjectInputOperationOutputAlias = crate::operation::DeleteProject;
 #[doc(hidden)]
-pub type DeleteProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProjectInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProject`](crate::operation::DeleteProject)>
     #[allow(clippy::let_and_return)]
@@ -273,7 +247,7 @@ impl DeleteProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteProject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -363,7 +337,7 @@ impl DeleteProjectInput {
             "DeleteProject",
             "mobile",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -387,16 +361,12 @@ pub mod describe_bundle_input {
         pub(crate) bundle_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// Unique bundle identifier.
-        /// </p>
+        /// <p> Unique bundle identifier. </p>
         pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bundle_id = Some(input.into());
             self
         }
-        /// <p>
-        /// Unique bundle identifier.
-        /// </p>
+        /// <p> Unique bundle identifier. </p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bundle_id = input;
             self
@@ -417,7 +387,7 @@ pub mod describe_bundle_input {
 #[doc(hidden)]
 pub type DescribeBundleInputOperationOutputAlias = crate::operation::DescribeBundle;
 #[doc(hidden)]
-pub type DescribeBundleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeBundleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBundleInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBundle`](crate::operation::DescribeBundle)>
     #[allow(clippy::let_and_return)]
@@ -428,7 +398,7 @@ impl DescribeBundleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBundle,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -518,7 +488,7 @@ impl DescribeBundleInput {
             "DescribeBundle",
             "mobile",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -543,30 +513,22 @@ pub mod describe_project_input {
         pub(crate) sync_from_resources: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>
-        /// Unique project identifier.
-        /// </p>
+        /// <p> Unique project identifier. </p>
         pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_id = Some(input.into());
             self
         }
-        /// <p>
-        /// Unique project identifier.
-        /// </p>
+        /// <p> Unique project identifier. </p>
         pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_id = input;
             self
         }
-        /// <p>
-        /// If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project.
-        /// </p>
+        /// <p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p>
         pub fn sync_from_resources(mut self, input: bool) -> Self {
             self.sync_from_resources = Some(input);
             self
         }
-        /// <p>
-        /// If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project.
-        /// </p>
+        /// <p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p>
         pub fn set_sync_from_resources(mut self, input: std::option::Option<bool>) -> Self {
             self.sync_from_resources = input;
             self
@@ -588,7 +550,7 @@ pub mod describe_project_input {
 #[doc(hidden)]
 pub type DescribeProjectInputOperationOutputAlias = crate::operation::DescribeProject;
 #[doc(hidden)]
-pub type DescribeProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeProjectInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProject`](crate::operation::DescribeProject)>
     #[allow(clippy::let_and_return)]
@@ -599,7 +561,7 @@ impl DescribeProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeProject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -690,7 +652,7 @@ impl DescribeProjectInput {
             "DescribeProject",
             "mobile",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -716,44 +678,32 @@ pub mod export_bundle_input {
         pub(crate) platform: std::option::Option<crate::model::Platform>,
     }
     impl Builder {
-        /// <p>
-        /// Unique bundle identifier.
-        /// </p>
+        /// <p> Unique bundle identifier. </p>
         pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bundle_id = Some(input.into());
             self
         }
-        /// <p>
-        /// Unique bundle identifier.
-        /// </p>
+        /// <p> Unique bundle identifier. </p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bundle_id = input;
             self
         }
-        /// <p>
-        /// Unique project identifier.
-        /// </p>
+        /// <p> Unique project identifier. </p>
         pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_id = Some(input.into());
             self
         }
-        /// <p>
-        /// Unique project identifier.
-        /// </p>
+        /// <p> Unique project identifier. </p>
         pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_id = input;
             self
         }
-        /// <p>
-        /// Developer desktop or target application platform.
-        /// </p>
+        /// <p> Developer desktop or target application platform. </p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
             self.platform = Some(input);
             self
         }
-        /// <p>
-        /// Developer desktop or target application platform.
-        /// </p>
+        /// <p> Developer desktop or target application platform. </p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
             self.platform = input;
             self
@@ -776,7 +726,7 @@ pub mod export_bundle_input {
 #[doc(hidden)]
 pub type ExportBundleInputOperationOutputAlias = crate::operation::ExportBundle;
 #[doc(hidden)]
-pub type ExportBundleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ExportBundleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExportBundleInput {
     /// Consumes the builder and constructs an Operation<[`ExportBundle`](crate::operation::ExportBundle)>
     #[allow(clippy::let_and_return)]
@@ -787,7 +737,7 @@ impl ExportBundleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExportBundle,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -891,7 +841,7 @@ impl ExportBundleInput {
             "ExportBundle",
             "mobile",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -915,16 +865,12 @@ pub mod export_project_input {
         pub(crate) project_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// Unique project identifier.
-        /// </p>
+        /// <p> Unique project identifier. </p>
         pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_id = Some(input.into());
             self
         }
-        /// <p>
-        /// Unique project identifier.
-        /// </p>
+        /// <p> Unique project identifier. </p>
         pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_id = input;
             self
@@ -945,7 +891,7 @@ pub mod export_project_input {
 #[doc(hidden)]
 pub type ExportProjectInputOperationOutputAlias = crate::operation::ExportProject;
 #[doc(hidden)]
-pub type ExportProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ExportProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExportProjectInput {
     /// Consumes the builder and constructs an Operation<[`ExportProject`](crate::operation::ExportProject)>
     #[allow(clippy::let_and_return)]
@@ -956,7 +902,7 @@ impl ExportProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExportProject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1046,7 +992,7 @@ impl ExportProjectInput {
             "ExportProject",
             "mobile",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1071,34 +1017,22 @@ pub mod list_bundles_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// Maximum number of records to list in a single response.
-        /// </p>
+        /// <p> Maximum number of records to list in a single response. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>
-        /// Maximum number of records to list in a single response.
-        /// </p>
+        /// <p> Maximum number of records to list in a single response. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>
-        /// Pagination token. Set to null to start listing bundles from start.
-        /// If non-null pagination token is returned in a result, then pass its
-        /// value in here in another request to list more bundles.
-        /// </p>
+        /// <p> Pagination token. Set to null to start listing bundles from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more bundles. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// Pagination token. Set to null to start listing bundles from start.
-        /// If non-null pagination token is returned in a result, then pass its
-        /// value in here in another request to list more bundles.
-        /// </p>
+        /// <p> Pagination token. Set to null to start listing bundles from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more bundles. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1120,7 +1054,7 @@ pub mod list_bundles_input {
 #[doc(hidden)]
 pub type ListBundlesInputOperationOutputAlias = crate::operation::ListBundles;
 #[doc(hidden)]
-pub type ListBundlesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListBundlesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBundlesInput {
     /// Consumes the builder and constructs an Operation<[`ListBundles`](crate::operation::ListBundles)>
     #[allow(clippy::let_and_return)]
@@ -1131,7 +1065,7 @@ impl ListBundlesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBundles,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1222,7 +1156,7 @@ impl ListBundlesInput {
             "ListBundles",
             "mobile",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1247,34 +1181,22 @@ pub mod list_projects_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// Maximum number of records to list in a single response.
-        /// </p>
+        /// <p> Maximum number of records to list in a single response. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>
-        /// Maximum number of records to list in a single response.
-        /// </p>
+        /// <p> Maximum number of records to list in a single response. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>
-        /// Pagination token. Set to null to start listing projects from start.
-        /// If non-null pagination token is returned in a result, then pass its
-        /// value in here in another request to list more projects.
-        /// </p>
+        /// <p> Pagination token. Set to null to start listing projects from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more projects. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// Pagination token. Set to null to start listing projects from start.
-        /// If non-null pagination token is returned in a result, then pass its
-        /// value in here in another request to list more projects.
-        /// </p>
+        /// <p> Pagination token. Set to null to start listing projects from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more projects. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1296,7 +1218,7 @@ pub mod list_projects_input {
 #[doc(hidden)]
 pub type ListProjectsInputOperationOutputAlias = crate::operation::ListProjects;
 #[doc(hidden)]
-pub type ListProjectsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListProjectsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProjectsInput {
     /// Consumes the builder and constructs an Operation<[`ListProjects`](crate::operation::ListProjects)>
     #[allow(clippy::let_and_return)]
@@ -1307,7 +1229,7 @@ impl ListProjectsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListProjects,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1398,7 +1320,7 @@ impl ListProjectsInput {
             "ListProjects",
             "mobile",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1423,34 +1345,22 @@ pub mod update_project_input {
         pub(crate) project_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// ZIP or YAML file which contains project configuration to be updated. This should
-        /// be the contents of the file downloaded from the URL provided in an export project
-        /// operation.
-        /// </p>
+        /// <p> ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation. </p>
         pub fn contents(mut self, input: aws_smithy_types::Blob) -> Self {
             self.contents = Some(input);
             self
         }
-        /// <p>
-        /// ZIP or YAML file which contains project configuration to be updated. This should
-        /// be the contents of the file downloaded from the URL provided in an export project
-        /// operation.
-        /// </p>
+        /// <p> ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation. </p>
         pub fn set_contents(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.contents = input;
             self
         }
-        /// <p>
-        /// Unique project identifier.
-        /// </p>
+        /// <p> Unique project identifier. </p>
         pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_id = Some(input.into());
             self
         }
-        /// <p>
-        /// Unique project identifier.
-        /// </p>
+        /// <p> Unique project identifier. </p>
         pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_id = input;
             self
@@ -1472,7 +1382,7 @@ pub mod update_project_input {
 #[doc(hidden)]
 pub type UpdateProjectInputOperationOutputAlias = crate::operation::UpdateProject;
 #[doc(hidden)]
-pub type UpdateProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateProjectInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProject`](crate::operation::UpdateProject)>
     #[allow(clippy::let_and_return)]
@@ -1483,7 +1393,7 @@ impl UpdateProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateProject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1573,7 +1483,7 @@ impl UpdateProjectInput {
             "UpdateProject",
             "mobile",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1596,35 +1506,21 @@ impl UpdateProjectInput {
     }
 }
 
-/// <p>
-/// Request structure used for requests to update project configuration.
-/// </p>
+/// <p> Request structure used for requests to update project configuration. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProjectInput {
-    /// <p>
-    /// ZIP or YAML file which contains project configuration to be updated. This should
-    /// be the contents of the file downloaded from the URL provided in an export project
-    /// operation.
-    /// </p>
+    /// <p> ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation. </p>
     pub contents: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>
-    /// Unique project identifier.
-    /// </p>
+    /// <p> Unique project identifier. </p>
     pub project_id: std::option::Option<std::string::String>,
 }
 impl UpdateProjectInput {
-    /// <p>
-    /// ZIP or YAML file which contains project configuration to be updated. This should
-    /// be the contents of the file downloaded from the URL provided in an export project
-    /// operation.
-    /// </p>
+    /// <p> ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation. </p>
     pub fn contents(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.contents.as_ref()
     }
-    /// <p>
-    /// Unique project identifier.
-    /// </p>
+    /// <p> Unique project identifier. </p>
     pub fn project_id(&self) -> std::option::Option<&str> {
         self.project_id.as_deref()
     }
@@ -1638,35 +1534,21 @@ impl std::fmt::Debug for UpdateProjectInput {
     }
 }
 
-/// <p>
-/// Request structure used to request projects list in AWS Mobile Hub.
-/// </p>
+/// <p> Request structure used to request projects list in AWS Mobile Hub. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProjectsInput {
-    /// <p>
-    /// Maximum number of records to list in a single response.
-    /// </p>
+    /// <p> Maximum number of records to list in a single response. </p>
     pub max_results: i32,
-    /// <p>
-    /// Pagination token. Set to null to start listing projects from start.
-    /// If non-null pagination token is returned in a result, then pass its
-    /// value in here in another request to list more projects.
-    /// </p>
+    /// <p> Pagination token. Set to null to start listing projects from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more projects. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProjectsInput {
-    /// <p>
-    /// Maximum number of records to list in a single response.
-    /// </p>
+    /// <p> Maximum number of records to list in a single response. </p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>
-    /// Pagination token. Set to null to start listing projects from start.
-    /// If non-null pagination token is returned in a result, then pass its
-    /// value in here in another request to list more projects.
-    /// </p>
+    /// <p> Pagination token. Set to null to start listing projects from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more projects. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1680,35 +1562,21 @@ impl std::fmt::Debug for ListProjectsInput {
     }
 }
 
-/// <p>
-/// Request structure to request all available bundles.
-/// </p>
+/// <p> Request structure to request all available bundles. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBundlesInput {
-    /// <p>
-    /// Maximum number of records to list in a single response.
-    /// </p>
+    /// <p> Maximum number of records to list in a single response. </p>
     pub max_results: i32,
-    /// <p>
-    /// Pagination token. Set to null to start listing bundles from start.
-    /// If non-null pagination token is returned in a result, then pass its
-    /// value in here in another request to list more bundles.
-    /// </p>
+    /// <p> Pagination token. Set to null to start listing bundles from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more bundles. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBundlesInput {
-    /// <p>
-    /// Maximum number of records to list in a single response.
-    /// </p>
+    /// <p> Maximum number of records to list in a single response. </p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>
-    /// Pagination token. Set to null to start listing bundles from start.
-    /// If non-null pagination token is returned in a result, then pass its
-    /// value in here in another request to list more bundles.
-    /// </p>
+    /// <p> Pagination token. Set to null to start listing bundles from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more bundles. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1722,21 +1590,15 @@ impl std::fmt::Debug for ListBundlesInput {
     }
 }
 
-/// <p>
-/// Request structure used in requests to export project configuration details.
-/// </p>
+/// <p> Request structure used in requests to export project configuration details. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportProjectInput {
-    /// <p>
-    /// Unique project identifier.
-    /// </p>
+    /// <p> Unique project identifier. </p>
     pub project_id: std::option::Option<std::string::String>,
 }
 impl ExportProjectInput {
-    /// <p>
-    /// Unique project identifier.
-    /// </p>
+    /// <p> Unique project identifier. </p>
     pub fn project_id(&self) -> std::option::Option<&str> {
         self.project_id.as_deref()
     }
@@ -1749,42 +1611,27 @@ impl std::fmt::Debug for ExportProjectInput {
     }
 }
 
-/// <p>
-/// Request structure used to request generation of custom SDK and tool packages
-/// required to integrate mobile web or app clients with backed AWS resources.
-/// </p>
+/// <p> Request structure used to request generation of custom SDK and tool packages required to integrate mobile web or app clients with backed AWS resources. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportBundleInput {
-    /// <p>
-    /// Unique bundle identifier.
-    /// </p>
+    /// <p> Unique bundle identifier. </p>
     pub bundle_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// Unique project identifier.
-    /// </p>
+    /// <p> Unique project identifier. </p>
     pub project_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// Developer desktop or target application platform.
-    /// </p>
+    /// <p> Developer desktop or target application platform. </p>
     pub platform: std::option::Option<crate::model::Platform>,
 }
 impl ExportBundleInput {
-    /// <p>
-    /// Unique bundle identifier.
-    /// </p>
+    /// <p> Unique bundle identifier. </p>
     pub fn bundle_id(&self) -> std::option::Option<&str> {
         self.bundle_id.as_deref()
     }
-    /// <p>
-    /// Unique project identifier.
-    /// </p>
+    /// <p> Unique project identifier. </p>
     pub fn project_id(&self) -> std::option::Option<&str> {
         self.project_id.as_deref()
     }
-    /// <p>
-    /// Developer desktop or target application platform.
-    /// </p>
+    /// <p> Developer desktop or target application platform. </p>
     pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
         self.platform.as_ref()
     }
@@ -1799,31 +1646,21 @@ impl std::fmt::Debug for ExportBundleInput {
     }
 }
 
-/// <p>
-/// Request structure used to request details about a project.
-/// </p>
+/// <p> Request structure used to request details about a project. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProjectInput {
-    /// <p>
-    /// Unique project identifier.
-    /// </p>
+    /// <p> Unique project identifier. </p>
     pub project_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project.
-    /// </p>
+    /// <p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p>
     pub sync_from_resources: bool,
 }
 impl DescribeProjectInput {
-    /// <p>
-    /// Unique project identifier.
-    /// </p>
+    /// <p> Unique project identifier. </p>
     pub fn project_id(&self) -> std::option::Option<&str> {
         self.project_id.as_deref()
     }
-    /// <p>
-    /// If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project.
-    /// </p>
+    /// <p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p>
     pub fn sync_from_resources(&self) -> bool {
         self.sync_from_resources
     }
@@ -1837,21 +1674,15 @@ impl std::fmt::Debug for DescribeProjectInput {
     }
 }
 
-/// <p>
-/// Request structure to request the details of a specific bundle.
-/// </p>
+/// <p> Request structure to request the details of a specific bundle. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBundleInput {
-    /// <p>
-    /// Unique bundle identifier.
-    /// </p>
+    /// <p> Unique bundle identifier. </p>
     pub bundle_id: std::option::Option<std::string::String>,
 }
 impl DescribeBundleInput {
-    /// <p>
-    /// Unique bundle identifier.
-    /// </p>
+    /// <p> Unique bundle identifier. </p>
     pub fn bundle_id(&self) -> std::option::Option<&str> {
         self.bundle_id.as_deref()
     }
@@ -1864,21 +1695,15 @@ impl std::fmt::Debug for DescribeBundleInput {
     }
 }
 
-/// <p>
-/// Request structure used to request a project be deleted.
-/// </p>
+/// <p> Request structure used to request a project be deleted. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProjectInput {
-    /// <p>
-    /// Unique project identifier.
-    /// </p>
+    /// <p> Unique project identifier. </p>
     pub project_id: std::option::Option<std::string::String>,
 }
 impl DeleteProjectInput {
-    /// <p>
-    /// Unique project identifier.
-    /// </p>
+    /// <p> Unique project identifier. </p>
     pub fn project_id(&self) -> std::option::Option<&str> {
         self.project_id.as_deref()
     }
@@ -1891,57 +1716,33 @@ impl std::fmt::Debug for DeleteProjectInput {
     }
 }
 
-/// <p>
-/// Request structure used to request a project be created.
-/// </p>
+/// <p> Request structure used to request a project be created. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProjectInput {
-    /// <p>
-    /// Name of the project.
-    /// </p>
+    /// <p> Name of the project. </p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>
-    /// Default region where project resources should be created.
-    /// </p>
+    /// <p> Default region where project resources should be created. </p>
     pub region: std::option::Option<std::string::String>,
-    /// <p>
-    /// ZIP or YAML file which contains configuration settings to be used when creating
-    /// the project. This may be the contents of the file downloaded from the URL provided
-    /// in an export project operation.
-    /// </p>
+    /// <p> ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation. </p>
     pub contents: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>
-    /// Unique identifier for an exported snapshot of project configuration. This
-    /// snapshot identifier is included in the share URL when a project is exported.
-    /// </p>
+    /// <p> Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported. </p>
     pub snapshot_id: std::option::Option<std::string::String>,
 }
 impl CreateProjectInput {
-    /// <p>
-    /// Name of the project.
-    /// </p>
+    /// <p> Name of the project. </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>
-    /// Default region where project resources should be created.
-    /// </p>
+    /// <p> Default region where project resources should be created. </p>
     pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
     }
-    /// <p>
-    /// ZIP or YAML file which contains configuration settings to be used when creating
-    /// the project. This may be the contents of the file downloaded from the URL provided
-    /// in an export project operation.
-    /// </p>
+    /// <p> ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation. </p>
     pub fn contents(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.contents.as_ref()
     }
-    /// <p>
-    /// Unique identifier for an exported snapshot of project configuration. This
-    /// snapshot identifier is included in the share URL when a project is exported.
-    /// </p>
+    /// <p> Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported. </p>
     pub fn snapshot_id(&self) -> std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }

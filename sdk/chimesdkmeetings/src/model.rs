@@ -618,17 +618,11 @@ pub struct EngineTranscribeSettings {
     pub content_identification_type:
         std::option::Option<crate::model::TranscribeContentIdentificationType>,
     /// <p>Set this field to <code>PII</code> to redact personally identifiable information in the transcription output. Content redaction is performed only upon complete transcription of the audio segments.</p>
-    ///
     /// <p>You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     pub content_redaction_type: std::option::Option<crate::model::TranscribeContentRedactionType>,
     /// <p>Lists the PII entity types you want to identify or redact. To specify entity types, you must enable <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
-    ///
-    /// <p>PIIEntityTypes must be comma-separated. The available values are:
-    /// <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
-    /// <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
-    ///
-    /// <p>
-    /// <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
+    /// <p>PIIEntityTypes must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
+    /// <p> <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
     pub pii_entity_types: std::option::Option<std::string::String>,
     /// <p>The name of the language model used during transcription.</p>
     pub language_model_name: std::option::Option<std::string::String>,
@@ -673,7 +667,6 @@ impl EngineTranscribeSettings {
         self.content_identification_type.as_ref()
     }
     /// <p>Set this field to <code>PII</code> to redact personally identifiable information in the transcription output. Content redaction is performed only upon complete transcription of the audio segments.</p>
-    ///
     /// <p>You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
     pub fn content_redaction_type(
         &self,
@@ -681,13 +674,8 @@ impl EngineTranscribeSettings {
         self.content_redaction_type.as_ref()
     }
     /// <p>Lists the PII entity types you want to identify or redact. To specify entity types, you must enable <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
-    ///
-    /// <p>PIIEntityTypes must be comma-separated. The available values are:
-    /// <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
-    /// <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
-    ///
-    /// <p>
-    /// <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
+    /// <p>PIIEntityTypes must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
+    /// <p> <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
     pub fn pii_entity_types(&self) -> std::option::Option<&str> {
         self.pii_entity_types.as_deref()
     }
@@ -856,7 +844,6 @@ pub mod engine_transcribe_settings {
             self
         }
         /// <p>Set this field to <code>PII</code> to redact personally identifiable information in the transcription output. Content redaction is performed only upon complete transcription of the audio segments.</p>
-        ///
         /// <p>You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
         pub fn content_redaction_type(
             mut self,
@@ -866,7 +853,6 @@ pub mod engine_transcribe_settings {
             self
         }
         /// <p>Set this field to <code>PII</code> to redact personally identifiable information in the transcription output. Content redaction is performed only upon complete transcription of the audio segments.</p>
-        ///
         /// <p>You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
         pub fn set_content_redaction_type(
             mut self,
@@ -876,25 +862,15 @@ pub mod engine_transcribe_settings {
             self
         }
         /// <p>Lists the PII entity types you want to identify or redact. To specify entity types, you must enable <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
-        ///
-        /// <p>PIIEntityTypes must be comma-separated. The available values are:
-        /// <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
-        /// <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
-        ///
-        /// <p>
-        /// <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
+        /// <p>PIIEntityTypes must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
+        /// <p> <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
         pub fn pii_entity_types(mut self, input: impl Into<std::string::String>) -> Self {
             self.pii_entity_types = Some(input.into());
             self
         }
         /// <p>Lists the PII entity types you want to identify or redact. To specify entity types, you must enable <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
-        ///
-        /// <p>PIIEntityTypes must be comma-separated. The available values are:
-        /// <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
-        /// <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
-        ///
-        /// <p>
-        /// <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
+        /// <p>PIIEntityTypes must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
+        /// <p> <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
         pub fn set_pii_entity_types(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1368,19 +1344,8 @@ impl AsRef<str> for TranscribeLanguageCode {
     }
 }
 
-/// <p>An Amazon Chime SDK meeting attendee. Includes a unique
-/// <code>AttendeeId</code> and <code>JoinToken</code>. The
-/// <code>JoinToken</code>
-/// allows a client to authenticate and join as the specified attendee. The
-/// <code>JoinToken</code>
-/// expires when the meeting ends, or when
-/// <a>DeleteAttendee</a>
-/// is called. After that, the attendee is unable to join the meeting.
-/// </p>
-///
-/// <p>We recommend securely transferring each <code>JoinToken</code> from your server application
-/// to the client so that no other client has access to the token except for the one
-/// authorized to represent the attendee.</p>
+/// <p>An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code>. The <code>JoinToken</code> allows a client to authenticate and join as the specified attendee. The <code>JoinToken</code> expires when the meeting ends, or when <code>DeleteAttendee</code> is called. After that, the attendee is unable to join the meeting. </p>
+/// <p>We recommend securely transferring each <code>JoinToken</code> from your server application to the client so that no other client has access to the token except for the one authorized to represent the attendee.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Attendee {
@@ -1485,12 +1450,7 @@ pub struct Meeting {
     pub meeting_host_id: std::option::Option<std::string::String>,
     /// <p>The external meeting ID.</p>
     pub external_meeting_id: std::option::Option<std::string::String>,
-    /// <p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>,
-    /// <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>,
-    /// <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>,
-    /// <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>,
-    /// <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>,
-    /// <code>us-west-1</code>, <code>us-west-2</code>.</p>
+    /// <p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
     pub media_region: std::option::Option<std::string::String>,
     /// <p>The media placement for the meeting.</p>
     pub media_placement: std::option::Option<crate::model::MediaPlacement>,
@@ -1510,12 +1470,7 @@ impl Meeting {
     pub fn external_meeting_id(&self) -> std::option::Option<&str> {
         self.external_meeting_id.as_deref()
     }
-    /// <p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>,
-    /// <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>,
-    /// <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>,
-    /// <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>,
-    /// <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>,
-    /// <code>us-west-1</code>, <code>us-west-2</code>.</p>
+    /// <p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
     pub fn media_region(&self) -> std::option::Option<&str> {
         self.media_region.as_deref()
     }
@@ -1593,22 +1548,12 @@ pub mod meeting {
             self.external_meeting_id = input;
             self
         }
-        /// <p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>,
-        /// <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>,
-        /// <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>,
-        /// <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>,
-        /// <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>,
-        /// <code>us-west-1</code>, <code>us-west-2</code>.</p>
+        /// <p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
         pub fn media_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.media_region = Some(input.into());
             self
         }
-        /// <p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>,
-        /// <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>,
-        /// <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>,
-        /// <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>,
-        /// <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>,
-        /// <code>us-west-1</code>, <code>us-west-2</code>.</p>
+        /// <p>The Region in which you create the meeting. Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
         pub fn set_media_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.media_region = input;
             self

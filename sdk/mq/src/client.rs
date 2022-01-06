@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AmazonMQ
@@ -184,6 +184,7 @@ where
     ///
     /// See [`ListBrokers`](crate::client::fluent_builders::ListBrokers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBrokers::into_paginator).
     pub fn list_brokers(&self) -> fluent_builders::ListBrokers<C, M, R> {
         fluent_builders::ListBrokers::new(self.handle.clone())
     }
@@ -256,8 +257,24 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateBroker`.
     ///
-    /// <p>Creates a broker. Note: This API is asynchronous.</p> <p>To create a broker, you must either use the AmazonMQFullAccess IAM policy or include the following EC2 permissions in your IAM policy.</p> <ul><li><p>ec2:CreateNetworkInterface</p> <p>This permission is required to allow Amazon MQ to create an elastic network interface (ENI) on behalf of your account.</p></li> <li><p>ec2:CreateNetworkInterfacePermission</p> <p>This permission is required to attach the ENI to the broker instance.</p></li> <li><p>ec2:DeleteNetworkInterface</p></li> <li><p>ec2:DeleteNetworkInterfacePermission</p></li> <li><p>ec2:DetachNetworkInterface</p></li> <li><p>ec2:DescribeInternetGateways</p></li> <li><p>ec2:DescribeNetworkInterfaces</p></li> <li><p>ec2:DescribeNetworkInterfacePermissions</p></li> <li><p>ec2:DescribeRouteTables</p></li> <li><p>ec2:DescribeSecurityGroups</p></li> <li><p>ec2:DescribeSubnets</p></li> <li><p>ec2:DescribeVpcs</p></li></ul> <p>For more information, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/amazon-mq-setting-up.html#create-iam-user">Create an IAM User and Get Your AWS Credentials</a> and <a href="https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/connecting-to-amazon-mq.html#never-modify-delete-elastic-network-interface">Never Modify or Delete the Amazon MQ Elastic Network Interface</a> in the <i>Amazon MQ Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a broker. Note: This API is asynchronous.</p>
+    /// <p>To create a broker, you must either use the AmazonMQFullAccess IAM policy or include the following EC2 permissions in your IAM policy.</p>
+    /// <ul>
+    /// <li><p>ec2:CreateNetworkInterface</p> <p>This permission is required to allow Amazon MQ to create an elastic network interface (ENI) on behalf of your account.</p></li>
+    /// <li><p>ec2:CreateNetworkInterfacePermission</p> <p>This permission is required to attach the ENI to the broker instance.</p></li>
+    /// <li><p>ec2:DeleteNetworkInterface</p></li>
+    /// <li><p>ec2:DeleteNetworkInterfacePermission</p></li>
+    /// <li><p>ec2:DetachNetworkInterface</p></li>
+    /// <li><p>ec2:DescribeInternetGateways</p></li>
+    /// <li><p>ec2:DescribeNetworkInterfaces</p></li>
+    /// <li><p>ec2:DescribeNetworkInterfacePermissions</p></li>
+    /// <li><p>ec2:DescribeRouteTables</p></li>
+    /// <li><p>ec2:DescribeSecurityGroups</p></li>
+    /// <li><p>ec2:DescribeSubnets</p></li>
+    /// <li><p>ec2:DescribeVpcs</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/amazon-mq-setting-up.html#create-iam-user">Create an IAM User and Get Your AWS Credentials</a> and <a href="https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/connecting-to-amazon-mq.html#never-modify-delete-elastic-network-interface">Never Modify or Delete the Amazon MQ Elastic Network Interface</a> in the <i>Amazon MQ Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBroker<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -302,10 +319,10 @@ pub mod fluent_builders {
                 crate::input::CreateBrokerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -316,9 +333,9 @@ pub mod fluent_builders {
         /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
         pub fn authentication_strategy(
             mut self,
-            inp: crate::model::AuthenticationStrategy,
+            input: crate::model::AuthenticationStrategy,
         ) -> Self {
-            self.inner = self.inner.authentication_strategy(inp);
+            self.inner = self.inner.authentication_strategy(input);
             self
         }
         /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
@@ -330,8 +347,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot. Set to true by default, if no value is specified.</p>
-        pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(inp);
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(input);
             self
         }
         /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot. Set to true by default, if no value is specified.</p>
@@ -340,8 +357,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
-        pub fn broker_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.broker_name(inp);
+        pub fn broker_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.broker_name(input.into());
             self
         }
         /// <p>Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
@@ -350,8 +367,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A list of information about the configuration.</p>
-        pub fn configuration(mut self, inp: crate::model::ConfigurationId) -> Self {
-            self.inner = self.inner.configuration(inp);
+        pub fn configuration(mut self, input: crate::model::ConfigurationId) -> Self {
+            self.inner = self.inner.configuration(input);
             self
         }
         /// <p>A list of information about the configuration.</p>
@@ -363,8 +380,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action. Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application doesn't require idempotency.</p>
-        pub fn creator_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.creator_request_id(inp);
+        pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.creator_request_id(input.into());
             self
         }
         /// <p>The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action. Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application doesn't require idempotency.</p>
@@ -376,8 +393,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. The broker's deployment mode.</p>
-        pub fn deployment_mode(mut self, inp: crate::model::DeploymentMode) -> Self {
-            self.inner = self.inner.deployment_mode(inp);
+        pub fn deployment_mode(mut self, input: crate::model::DeploymentMode) -> Self {
+            self.inner = self.inner.deployment_mode(input);
             self
         }
         /// <p>Required. The broker's deployment mode.</p>
@@ -389,8 +406,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
-        pub fn encryption_options(mut self, inp: crate::model::EncryptionOptions) -> Self {
-            self.inner = self.inner.encryption_options(inp);
+        pub fn encryption_options(mut self, input: crate::model::EncryptionOptions) -> Self {
+            self.inner = self.inner.encryption_options(input);
             self
         }
         /// <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
@@ -402,8 +419,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
-        pub fn engine_type(mut self, inp: crate::model::EngineType) -> Self {
-            self.inner = self.inner.engine_type(inp);
+        pub fn engine_type(mut self, input: crate::model::EngineType) -> Self {
+            self.inner = self.inner.engine_type(input);
             self
         }
         /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
@@ -415,8 +432,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
@@ -428,8 +445,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. The broker's instance type.</p>
-        pub fn host_instance_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.host_instance_type(inp);
+        pub fn host_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.host_instance_type(input.into());
             self
         }
         /// <p>Required. The broker's instance type.</p>
@@ -441,8 +458,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
-        pub fn ldap_server_metadata(mut self, inp: crate::model::LdapServerMetadataInput) -> Self {
-            self.inner = self.inner.ldap_server_metadata(inp);
+        pub fn ldap_server_metadata(
+            mut self,
+            input: crate::model::LdapServerMetadataInput,
+        ) -> Self {
+            self.inner = self.inner.ldap_server_metadata(input);
             self
         }
         /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
@@ -454,8 +474,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enables Amazon CloudWatch logging for brokers.</p>
-        pub fn logs(mut self, inp: crate::model::Logs) -> Self {
-            self.inner = self.inner.logs(inp);
+        pub fn logs(mut self, input: crate::model::Logs) -> Self {
+            self.inner = self.inner.logs(input);
             self
         }
         /// <p>Enables Amazon CloudWatch logging for brokers.</p>
@@ -464,8 +484,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The parameters that determine the WeeklyStartTime.</p>
-        pub fn maintenance_window_start_time(mut self, inp: crate::model::WeeklyStartTime) -> Self {
-            self.inner = self.inner.maintenance_window_start_time(inp);
+        pub fn maintenance_window_start_time(
+            mut self,
+            input: crate::model::WeeklyStartTime,
+        ) -> Self {
+            self.inner = self.inner.maintenance_window_start_time(input);
             self
         }
         /// <p>The parameters that determine the WeeklyStartTime.</p>
@@ -477,8 +500,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by default, if no value is provided.</p>
-        pub fn publicly_accessible(mut self, inp: bool) -> Self {
-            self.inner = self.inner.publicly_accessible(inp);
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.inner = self.inner.publicly_accessible(input);
             self
         }
         /// <p>Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by default, if no value is provided.</p>
@@ -491,8 +514,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
         ///
         /// <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
-        pub fn security_groups(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_groups(inp);
+        pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_groups(input.into());
             self
         }
         /// <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
@@ -504,8 +527,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The broker's storage type.</p>
-        pub fn storage_type(mut self, inp: crate::model::BrokerStorageType) -> Self {
-            self.inner = self.inner.storage_type(inp);
+        pub fn storage_type(mut self, input: crate::model::BrokerStorageType) -> Self {
+            self.inner = self.inner.storage_type(input);
             self
         }
         /// <p>The broker's storage type.</p>
@@ -520,12 +543,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
-        /// <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ will not be able to create VPC endpoints for your broker with multiple subnets in the same Availability Zone. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon MQ for RabbitMQ deployment has no subnet requirements when deployed with public accessibility. Deployment without public accessibility requires at least one subnet.</p> <important><p>If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your AWS account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.</p></important>
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_ids(inp);
+        /// <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ will not be able to create VPC endpoints for your broker with multiple subnets in the same Availability Zone. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon MQ for RabbitMQ deployment has no subnet requirements when deployed with public accessibility. Deployment without public accessibility requires at least one subnet.</p> <important>
+        /// <p>If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your AWS account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.</p>
+        /// </important>
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_ids(input.into());
             self
         }
-        /// <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ will not be able to create VPC endpoints for your broker with multiple subnets in the same Availability Zone. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon MQ for RabbitMQ deployment has no subnet requirements when deployed with public accessibility. Deployment without public accessibility requires at least one subnet.</p> <important><p>If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your AWS account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.</p></important>
+        /// <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ will not be able to create VPC endpoints for your broker with multiple subnets in the same Availability Zone. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon MQ for RabbitMQ deployment has no subnet requirements when deployed with public accessibility. Deployment without public accessibility requires at least one subnet.</p> <important>
+        /// <p>If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your AWS account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.</p>
+        /// </important>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -543,7 +570,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Create tags when creating the broker.</p>
@@ -560,12 +587,18 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_users`](Self::set_users).
         ///
-        /// <p>Required. The list of broker users (persons or applications) who can access queues and topics. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p> <important><title>Amazon MQ for RabbitMQ</title> <p>When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p></important>
-        pub fn users(mut self, inp: impl Into<crate::model::User>) -> Self {
-            self.inner = self.inner.users(inp);
+        /// <p>Required. The list of broker users (persons or applications) who can access queues and topics. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p> <important>
+        /// <title>Amazon MQ for RabbitMQ</title>
+        /// <p>When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p>
+        /// </important>
+        pub fn users(mut self, input: crate::model::User) -> Self {
+            self.inner = self.inner.users(input);
             self
         }
-        /// <p>Required. The list of broker users (persons or applications) who can access queues and topics. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p> <important><title>Amazon MQ for RabbitMQ</title> <p>When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p></important>
+        /// <p>Required. The list of broker users (persons or applications) who can access queues and topics. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p> <important>
+        /// <title>Amazon MQ for RabbitMQ</title>
+        /// <p>When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p>
+        /// </important>
         pub fn set_users(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::User>>,
@@ -577,7 +610,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateConfiguration`.
     ///
     /// <p>Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the engine type and version).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -622,10 +655,10 @@ pub mod fluent_builders {
                 crate::input::CreateConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -636,9 +669,9 @@ pub mod fluent_builders {
         /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
         pub fn authentication_strategy(
             mut self,
-            inp: crate::model::AuthenticationStrategy,
+            input: crate::model::AuthenticationStrategy,
         ) -> Self {
-            self.inner = self.inner.authentication_strategy(inp);
+            self.inner = self.inner.authentication_strategy(input);
             self
         }
         /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
@@ -650,8 +683,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
-        pub fn engine_type(mut self, inp: crate::model::EngineType) -> Self {
-            self.inner = self.inner.engine_type(inp);
+        pub fn engine_type(mut self, input: crate::model::EngineType) -> Self {
+            self.inner = self.inner.engine_type(input);
             self
         }
         /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
@@ -663,8 +696,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
@@ -676,8 +709,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
@@ -695,7 +728,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Create tags when creating the configuration.</p>
@@ -712,7 +745,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateTags`.
     ///
     /// <p>Add a tag to a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -757,10 +790,10 @@ pub mod fluent_builders {
                 crate::input::CreateTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -769,8 +802,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
@@ -788,7 +821,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The key-value pair for the resource tag.</p>
@@ -805,7 +838,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateUser`.
     ///
     /// <p>Creates an ActiveMQ user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -850,10 +883,10 @@ pub mod fluent_builders {
                 crate::input::CreateUserInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -862,8 +895,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-        pub fn broker_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.broker_id(inp);
+        pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.broker_id(input.into());
             self
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
@@ -872,8 +905,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user.</p>
-        pub fn console_access(mut self, inp: bool) -> Self {
-            self.inner = self.inner.console_access(inp);
+        pub fn console_access(mut self, input: bool) -> Self {
+            self.inner = self.inner.console_access(input);
             self
         }
         /// <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user.</p>
@@ -886,8 +919,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-        pub fn groups(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.groups(inp);
+        pub fn groups(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.groups(input.into());
             self
         }
         /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
@@ -899,8 +932,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
-        pub fn password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(inp);
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(input.into());
             self
         }
         /// <p>Required. The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
@@ -909,8 +942,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-        pub fn username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(inp);
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
@@ -922,7 +955,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBroker`.
     ///
     /// <p>Deletes a broker. Note: This API is asynchronous.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBroker<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -967,10 +1000,10 @@ pub mod fluent_builders {
                 crate::input::DeleteBrokerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -979,8 +1012,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-        pub fn broker_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.broker_id(inp);
+        pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.broker_id(input.into());
             self
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
@@ -992,7 +1025,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTags`.
     ///
     /// <p>Removes a tag from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1037,10 +1070,10 @@ pub mod fluent_builders {
                 crate::input::DeleteTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1049,8 +1082,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
@@ -1063,8 +1096,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>An array of tag keys to delete</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>An array of tag keys to delete</p>
@@ -1079,7 +1112,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUser`.
     ///
     /// <p>Deletes an ActiveMQ user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1124,10 +1157,10 @@ pub mod fluent_builders {
                 crate::input::DeleteUserInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1136,8 +1169,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-        pub fn broker_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.broker_id(inp);
+        pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.broker_id(input.into());
             self
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
@@ -1146,8 +1179,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-        pub fn username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(inp);
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
@@ -1159,7 +1192,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeBroker`.
     ///
     /// <p>Returns information about the specified broker.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBroker<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1204,10 +1237,10 @@ pub mod fluent_builders {
                 crate::input::DescribeBrokerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1216,8 +1249,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-        pub fn broker_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.broker_id(inp);
+        pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.broker_id(input.into());
             self
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
@@ -1229,7 +1262,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeBrokerEngineTypes`.
     ///
     /// <p>Describe available engine types and versions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBrokerEngineTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1274,10 +1307,10 @@ pub mod fluent_builders {
                 crate::input::DescribeBrokerEngineTypesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1286,8 +1319,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Filter response by engine type.</p>
-        pub fn engine_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_type(inp);
+        pub fn engine_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_type(input.into());
             self
         }
         /// <p>Filter response by engine type.</p>
@@ -1296,8 +1329,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
@@ -1306,8 +1339,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
@@ -1319,7 +1352,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeBrokerInstanceOptions`.
     ///
     /// <p>Describe available broker instance options.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBrokerInstanceOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1364,10 +1397,10 @@ pub mod fluent_builders {
                 crate::input::DescribeBrokerInstanceOptionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1376,8 +1409,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Filter response by engine type.</p>
-        pub fn engine_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_type(inp);
+        pub fn engine_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_type(input.into());
             self
         }
         /// <p>Filter response by engine type.</p>
@@ -1386,8 +1419,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filter response by host instance type.</p>
-        pub fn host_instance_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.host_instance_type(inp);
+        pub fn host_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.host_instance_type(input.into());
             self
         }
         /// <p>Filter response by host instance type.</p>
@@ -1399,8 +1432,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
@@ -1409,8 +1442,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
@@ -1419,8 +1452,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filter response by storage type.</p>
-        pub fn storage_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.storage_type(inp);
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.storage_type(input.into());
             self
         }
         /// <p>Filter response by storage type.</p>
@@ -1432,7 +1465,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeConfiguration`.
     ///
     /// <p>Returns information about the specified configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1477,10 +1510,10 @@ pub mod fluent_builders {
                 crate::input::DescribeConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1489,8 +1522,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
-        pub fn configuration_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_id(inp);
+        pub fn configuration_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_id(input.into());
             self
         }
         /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
@@ -1505,7 +1538,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeConfigurationRevision`.
     ///
     /// <p>Returns the specified configuration revision for the specified configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConfigurationRevision<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1550,10 +1583,10 @@ pub mod fluent_builders {
                 crate::input::DescribeConfigurationRevisionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1562,8 +1595,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
-        pub fn configuration_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_id(inp);
+        pub fn configuration_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_id(input.into());
             self
         }
         /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
@@ -1575,8 +1608,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The revision of the configuration.</p>
-        pub fn configuration_revision(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_revision(inp);
+        pub fn configuration_revision(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_revision(input.into());
             self
         }
         /// <p>The revision of the configuration.</p>
@@ -1591,7 +1624,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeUser`.
     ///
     /// <p>Returns information about an ActiveMQ user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1636,10 +1669,10 @@ pub mod fluent_builders {
                 crate::input::DescribeUserInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1648,8 +1681,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-        pub fn broker_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.broker_id(inp);
+        pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.broker_id(input.into());
             self
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
@@ -1658,8 +1691,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-        pub fn username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(inp);
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
@@ -1671,7 +1704,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBrokers`.
     ///
     /// <p>Returns a list of all brokers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBrokers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1716,10 +1749,10 @@ pub mod fluent_builders {
                 crate::input::ListBrokersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1727,9 +1760,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListBrokersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListBrokersPaginator<C, M, R> {
+            crate::paginator::ListBrokersPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
@@ -1738,8 +1777,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
@@ -1751,7 +1790,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListConfigurationRevisions`.
     ///
     /// <p>Returns a list of all revisions for the specified configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConfigurationRevisions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1796,10 +1835,10 @@ pub mod fluent_builders {
                 crate::input::ListConfigurationRevisionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1808,8 +1847,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
-        pub fn configuration_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_id(inp);
+        pub fn configuration_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_id(input.into());
             self
         }
         /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
@@ -1821,8 +1860,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
@@ -1831,8 +1870,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
@@ -1844,7 +1883,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListConfigurations`.
     ///
     /// <p>Returns a list of all configurations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1889,10 +1928,10 @@ pub mod fluent_builders {
                 crate::input::ListConfigurationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1901,8 +1940,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
@@ -1911,8 +1950,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
@@ -1924,7 +1963,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTags`.
     ///
     /// <p>Lists tags for a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1969,10 +2008,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1981,8 +2020,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
@@ -1994,7 +2033,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListUsers`.
     ///
     /// <p>Returns a list of all ActiveMQ users.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUsers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2039,10 +2078,10 @@ pub mod fluent_builders {
                 crate::input::ListUsersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2051,8 +2090,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-        pub fn broker_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.broker_id(inp);
+        pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.broker_id(input.into());
             self
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
@@ -2061,8 +2100,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
@@ -2071,8 +2110,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
@@ -2084,7 +2123,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RebootBroker`.
     ///
     /// <p>Reboots a broker. Note: This API is asynchronous.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RebootBroker<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2129,10 +2168,10 @@ pub mod fluent_builders {
                 crate::input::RebootBrokerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2141,8 +2180,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-        pub fn broker_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.broker_id(inp);
+        pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.broker_id(input.into());
             self
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
@@ -2154,7 +2193,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBroker`.
     ///
     /// <p>Adds a pending configuration change to a broker.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBroker<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2199,10 +2238,10 @@ pub mod fluent_builders {
                 crate::input::UpdateBrokerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2213,9 +2252,9 @@ pub mod fluent_builders {
         /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
         pub fn authentication_strategy(
             mut self,
-            inp: crate::model::AuthenticationStrategy,
+            input: crate::model::AuthenticationStrategy,
         ) -> Self {
-            self.inner = self.inner.authentication_strategy(inp);
+            self.inner = self.inner.authentication_strategy(input);
             self
         }
         /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
@@ -2227,8 +2266,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
-        pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(inp);
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(input);
             self
         }
         /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
@@ -2237,8 +2276,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-        pub fn broker_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.broker_id(inp);
+        pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.broker_id(input.into());
             self
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
@@ -2247,8 +2286,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A list of information about the configuration.</p>
-        pub fn configuration(mut self, inp: crate::model::ConfigurationId) -> Self {
-            self.inner = self.inner.configuration(inp);
+        pub fn configuration(mut self, input: crate::model::ConfigurationId) -> Self {
+            self.inner = self.inner.configuration(input);
             self
         }
         /// <p>A list of information about the configuration.</p>
@@ -2260,8 +2299,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The broker engine version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>The broker engine version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
@@ -2273,8 +2312,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
-        pub fn host_instance_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.host_instance_type(inp);
+        pub fn host_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.host_instance_type(input.into());
             self
         }
         /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
@@ -2286,8 +2325,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
-        pub fn ldap_server_metadata(mut self, inp: crate::model::LdapServerMetadataInput) -> Self {
-            self.inner = self.inner.ldap_server_metadata(inp);
+        pub fn ldap_server_metadata(
+            mut self,
+            input: crate::model::LdapServerMetadataInput,
+        ) -> Self {
+            self.inner = self.inner.ldap_server_metadata(input);
             self
         }
         /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
@@ -2299,8 +2341,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enables Amazon CloudWatch logging for brokers.</p>
-        pub fn logs(mut self, inp: crate::model::Logs) -> Self {
-            self.inner = self.inner.logs(inp);
+        pub fn logs(mut self, input: crate::model::Logs) -> Self {
+            self.inner = self.inner.logs(input);
             self
         }
         /// <p>Enables Amazon CloudWatch logging for brokers.</p>
@@ -2309,8 +2351,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The parameters that determine the WeeklyStartTime.</p>
-        pub fn maintenance_window_start_time(mut self, inp: crate::model::WeeklyStartTime) -> Self {
-            self.inner = self.inner.maintenance_window_start_time(inp);
+        pub fn maintenance_window_start_time(
+            mut self,
+            input: crate::model::WeeklyStartTime,
+        ) -> Self {
+            self.inner = self.inner.maintenance_window_start_time(input);
             self
         }
         /// <p>The parameters that determine the WeeklyStartTime.</p>
@@ -2326,8 +2371,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
         ///
         /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
-        pub fn security_groups(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_groups(inp);
+        pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_groups(input.into());
             self
         }
         /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
@@ -2342,7 +2387,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateConfiguration`.
     ///
     /// <p>Updates the specified configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2387,10 +2432,10 @@ pub mod fluent_builders {
                 crate::input::UpdateConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2399,8 +2444,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
-        pub fn configuration_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_id(inp);
+        pub fn configuration_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_id(input.into());
             self
         }
         /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
@@ -2412,8 +2457,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. The base64-encoded XML configuration.</p>
-        pub fn data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data(inp);
+        pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data(input.into());
             self
         }
         /// <p>Required. The base64-encoded XML configuration.</p>
@@ -2422,8 +2467,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the configuration.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the configuration.</p>
@@ -2435,7 +2480,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateUser`.
     ///
     /// <p>Updates the information for an ActiveMQ user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2480,10 +2525,10 @@ pub mod fluent_builders {
                 crate::input::UpdateUserInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2492,8 +2537,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-        pub fn broker_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.broker_id(inp);
+        pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.broker_id(input.into());
             self
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
@@ -2502,8 +2547,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
-        pub fn console_access(mut self, inp: bool) -> Self {
-            self.inner = self.inner.console_access(inp);
+        pub fn console_access(mut self, input: bool) -> Self {
+            self.inner = self.inner.console_access(input);
             self
         }
         /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
@@ -2516,8 +2561,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-        pub fn groups(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.groups(inp);
+        pub fn groups(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.groups(input.into());
             self
         }
         /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
@@ -2529,8 +2574,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
-        pub fn password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(inp);
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(input.into());
             self
         }
         /// <p>The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
@@ -2539,8 +2584,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-        pub fn username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(inp);
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
@@ -2550,6 +2595,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

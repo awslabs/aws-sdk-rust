@@ -7,52 +7,40 @@ pub enum Error {
     AlreadyExistsException(crate::error::AlreadyExistsException),
     /// <p>An error occurred during a CloudFormation registry operation.</p>
     CfnRegistryException(crate::error::CfnRegistryException),
-    /// <p>The specified change set name or ID doesn't exit. To view valid change sets for a stack,
-    /// use the <code>ListChangeSets</code> action.</p>
+    /// <p>The specified change set name or ID doesn't exit. To view valid change sets for a stack, use the <code>ListChangeSets</code> action.</p>
     ChangeSetNotFoundException(crate::error::ChangeSetNotFoundException),
     /// <p>The specified resource exists, but has been changed.</p>
     CreatedButModifiedException(crate::error::CreatedButModifiedException),
-    /// <p>The template contains resources with capabilities that weren't specified in the
-    /// Capabilities parameter.</p>
+    /// <p>The template contains resources with capabilities that weren't specified in the Capabilities parameter.</p>
     InsufficientCapabilitiesException(crate::error::InsufficientCapabilitiesException),
-    /// <p>The specified change set can't be used to update the stack. For example, the change set
-    /// status might be <code>CREATE_IN_PROGRESS</code>, or the stack status might be
-    /// <code>UPDATE_IN_PROGRESS</code>.</p>
+    /// <p>The specified change set can't be used to update the stack. For example, the change set status might be <code>CREATE_IN_PROGRESS</code>, or the stack status might be <code>UPDATE_IN_PROGRESS</code>.</p>
     InvalidChangeSetStatusException(crate::error::InvalidChangeSetStatusException),
     /// <p>The specified operation isn't valid.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
-    /// <p>Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. CloudFormation does not return this error to
-    /// users.</p>
+    /// <p>Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. CloudFormation does not return this error to users.</p>
     InvalidStateTransitionException(crate::error::InvalidStateTransitionException),
     /// <p>The quota for the resource has already been reached.</p>
-    /// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Limits</a> in
-    /// the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Limits</a> in the <i>CloudFormation User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified name is already in use.</p>
     NameAlreadyExistsException(crate::error::NameAlreadyExistsException),
     /// <p>The specified operation ID already exists.</p>
     OperationIdAlreadyExistsException(crate::error::OperationIdAlreadyExistsException),
-    /// <p>Another operation is currently in progress for this stack set. Only one operation can be
-    /// performed for a stack set at a given time.</p>
+    /// <p>Another operation is currently in progress for this stack set. Only one operation can be performed for a stack set at a given time.</p>
     OperationInProgressException(crate::error::OperationInProgressException),
     /// <p>The specified ID refers to an operation that doesn't exist.</p>
     OperationNotFoundException(crate::error::OperationNotFoundException),
-    /// <p>Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. CloudFormation does not return this error to
-    /// users.</p>
+    /// <p>Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. CloudFormation does not return this error to users.</p>
     OperationStatusCheckFailedException(crate::error::OperationStatusCheckFailedException),
     /// <p>The specified stack instance doesn't exist.</p>
     StackInstanceNotFoundException(crate::error::StackInstanceNotFoundException),
-    /// <p>The specified stack ARN doesn’t exist or stack doesn’t exist corresponding to the ARN in
-    /// input.</p>
+    /// <p>The specified stack ARN doesn’t exist or stack doesn’t exist corresponding to the ARN in input.</p>
     StackNotFoundException(crate::error::StackNotFoundException),
-    /// <p>You can't yet delete this stack set, because it still contains one or more stack
-    /// instances. Delete all stack instances from the stack set before deleting the stack
-    /// set.</p>
+    /// <p>You can't yet delete this stack set, because it still contains one or more stack instances. Delete all stack instances from the stack set before deleting the stack set.</p>
     StackSetNotEmptyException(crate::error::StackSetNotEmptyException),
     /// <p>The specified stack set doesn't exist.</p>
     StackSetNotFoundException(crate::error::StackSetNotFoundException),
-    /// <p>Another operation has been performed on this stack set since the specified operation was
-    /// performed. </p>
+    /// <p>Another operation has been performed on this stack set since the specified operation was performed. </p>
     StaleRequestException(crate::error::StaleRequestException),
     /// <p>A client request token already exists.</p>
     TokenAlreadyExistsException(crate::error::TokenAlreadyExistsException),

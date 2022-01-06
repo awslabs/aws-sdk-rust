@@ -3,102 +3,56 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>WAF couldn’t perform the operation because your resource is being used by another
-    /// resource or it’s associated with another resource. </p>
+    /// <p>WAF couldn’t perform the operation because your resource is being used by another resource or it’s associated with another resource. </p>
     WafAssociatedItemException(crate::error::WafAssociatedItemException),
-    /// <p>WAF couldn’t perform the operation because the resource that you tried to save is
-    /// a duplicate of an existing one.</p>
+    /// <p>WAF couldn’t perform the operation because the resource that you tried to save is a duplicate of an existing one.</p>
     WafDuplicateItemException(crate::error::WafDuplicateItemException),
-    /// <p>The operation failed because the specified version for the managed rule group has
-    /// expired. You can retrieve the available versions for the managed rule group by calling
-    /// <a>ListAvailableManagedRuleGroupVersions</a>.</p>
+    /// <p>The operation failed because the specified version for the managed rule group has expired. You can retrieve the available versions for the managed rule group by calling <code>ListAvailableManagedRuleGroupVersions</code>.</p>
     WafExpiredManagedRuleGroupVersionException(
         crate::error::WafExpiredManagedRuleGroupVersionException,
     ),
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>The operation failed because the specified policy isn't in the proper format. </p>
-    ///
     /// <p>The policy specifications must conform to the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p>
-    /// </li>
-    /// <li>
-    /// <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Effect</code> must specify <code>Allow</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code>. WAF rejects any extra actions or wildcard actions in the policy.</p>
-    /// </li>
-    /// <li>
-    /// <p>The policy must not include a <code>Resource</code> parameter.</p>
-    /// </li>
-    /// </ul>     
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>.  </p>
+    /// <li> <p>The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p> </li>
+    /// <li> <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p> </li>
+    /// <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li>
+    /// <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li>
+    /// <li> <p>The policy must not include a <code>Resource</code> parameter.</p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>. </p>
     WafInvalidPermissionPolicyException(crate::error::WafInvalidPermissionPolicyException),
-    /// <p>WAF couldn’t perform the operation because the resource that you requested isn’t
-    /// valid. Check the resource, and try again.</p>
+    /// <p>WAF couldn’t perform the operation because the resource that you requested isn’t valid. Check the resource, and try again.</p>
     WafInvalidResourceException(crate::error::WafInvalidResourceException),
-    /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For
-    /// example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services
-    /// account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-    /// <i>WAF Developer Guide</i>.</p>
+    /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
-    /// <p>The operation failed because you don't have the permissions that your logging configuration requires. For information, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a>
-    /// in the <i>WAF Developer Guide</i>.</p>
+    /// <p>The operation failed because you don't have the permissions that your logging configuration requires. For information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a> in the <i>WAF Developer Guide</i>.</p>
     WafLogDestinationPermissionIssueException(
         crate::error::WafLogDestinationPermissionIssueException,
     ),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource
-    /// that has changed since you last retrieved it. Get the resource again, make any changes you
-    /// need to make to the new copy, and retry your operation. </p>
+    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
-    /// <p>WAF is not able to access the service linked role. This can be caused by a
-    /// previous <code>PutLoggingConfiguration</code> request, which can lock the service linked
-    /// role for about 20 seconds. Please try your request again. The service linked role can also
-    /// be locked by a previous <code>DeleteServiceLinkedRole</code> request, which can lock the
-    /// role for 15 minutes or more. If you recently made a call to
-    /// <code>DeleteServiceLinkedRole</code>, wait at least 15 minutes and try the request
-    /// again. If you receive this same exception again, you will have to wait additional time
-    /// until the role is unlocked.</p>
+    /// <p>WAF is not able to access the service linked role. This can be caused by a previous <code>PutLoggingConfiguration</code> request, which can lock the service linked role for about 20 seconds. Please try your request again. The service linked role can also be locked by a previous <code>DeleteServiceLinkedRole</code> request, which can lock the role for 15 minutes or more. If you recently made a call to <code>DeleteServiceLinkedRole</code>, wait at least 15 minutes and try the request again. If you receive this same exception again, you will have to wait additional time until the role is unlocked.</p>
     WafServiceLinkedRoleErrorException(crate::error::WafServiceLinkedRoleErrorException),
-    /// <p>You tried to use a managed rule group that's available by subscription, but you aren't
-    /// subscribed to it yet. </p>
+    /// <p>You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it yet. </p>
     WafSubscriptionNotFoundException(crate::error::WafSubscriptionNotFoundException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry
-    /// your request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// <p>WAF couldn’t retrieve the resource that you requested. Retry your request.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),

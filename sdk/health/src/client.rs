@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Health APIs and Notifications
@@ -87,6 +87,7 @@ where
     ///
     /// See [`DescribeAffectedAccountsForOrganization`](crate::client::fluent_builders::DescribeAffectedAccountsForOrganization) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeAffectedAccountsForOrganization::into_paginator).
     pub fn describe_affected_accounts_for_organization(
         &self,
     ) -> fluent_builders::DescribeAffectedAccountsForOrganization<C, M, R> {
@@ -96,6 +97,7 @@ where
     ///
     /// See [`DescribeAffectedEntities`](crate::client::fluent_builders::DescribeAffectedEntities) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeAffectedEntities::into_paginator).
     pub fn describe_affected_entities(&self) -> fluent_builders::DescribeAffectedEntities<C, M, R> {
         fluent_builders::DescribeAffectedEntities::new(self.handle.clone())
     }
@@ -103,6 +105,7 @@ where
     ///
     /// See [`DescribeAffectedEntitiesForOrganization`](crate::client::fluent_builders::DescribeAffectedEntitiesForOrganization) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeAffectedEntitiesForOrganization::into_paginator).
     pub fn describe_affected_entities_for_organization(
         &self,
     ) -> fluent_builders::DescribeAffectedEntitiesForOrganization<C, M, R> {
@@ -119,6 +122,7 @@ where
     ///
     /// See [`DescribeEventAggregates`](crate::client::fluent_builders::DescribeEventAggregates) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEventAggregates::into_paginator).
     pub fn describe_event_aggregates(&self) -> fluent_builders::DescribeEventAggregates<C, M, R> {
         fluent_builders::DescribeEventAggregates::new(self.handle.clone())
     }
@@ -142,6 +146,7 @@ where
     ///
     /// See [`DescribeEvents`](crate::client::fluent_builders::DescribeEvents) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEvents::into_paginator).
     pub fn describe_events(&self) -> fluent_builders::DescribeEvents<C, M, R> {
         fluent_builders::DescribeEvents::new(self.handle.clone())
     }
@@ -149,6 +154,7 @@ where
     ///
     /// See [`DescribeEventsForOrganization`](crate::client::fluent_builders::DescribeEventsForOrganization) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEventsForOrganization::into_paginator).
     pub fn describe_events_for_organization(
         &self,
     ) -> fluent_builders::DescribeEventsForOrganization<C, M, R> {
@@ -158,6 +164,7 @@ where
     ///
     /// See [`DescribeEventTypes`](crate::client::fluent_builders::DescribeEventTypes) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEventTypes::into_paginator).
     pub fn describe_event_types(&self) -> fluent_builders::DescribeEventTypes<C, M, R> {
         fluent_builders::DescribeEventTypes::new(self.handle.clone())
     }
@@ -199,16 +206,11 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `DescribeAffectedAccountsForOrganization`.
     ///
-    /// <p>Returns a list of accounts in the organization from Organizations that are affected by the
-    /// provided event. For more information about the different types of Health events, see
-    /// <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>. </p>
-    /// <p>Before you can call this operation, you must first enable Health to work with
-    /// Organizations. To do this, call the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a> operation from your organization's
-    /// management account.</p>
-    /// <note>
+    /// <p>Returns a list of accounts in the organization from Organizations that are affected by the provided event. For more information about the different types of Health events, see <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>. </p>
+    /// <p>Before you can call this operation, you must first enable Health to work with Organizations. To do this, call the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a> operation from your organization's management account.</p> <note>
     /// <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the next request to return more results.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAffectedAccountsForOrganization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -255,10 +257,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAffectedAccountsForOrganizationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -266,49 +268,44 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier for the event. The event ARN has the
-        /// <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-        /// </code>
-        /// format.</p>
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeAffectedAccountsForOrganizationPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeAffectedAccountsForOrganizationPaginator<C, M, R> {
+            crate::paginator::DescribeAffectedAccountsForOrganizationPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
         /// <p>For example, an event ARN might look like the following:</p>
-        /// <p>
-        /// <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
-        /// </p>
-        pub fn event_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_arn(inp);
+        /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
+        pub fn event_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_arn(input.into());
             self
         }
-        /// <p>The unique identifier for the event. The event ARN has the
-        /// <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-        /// </code>
-        /// format.</p>
+        /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
         /// <p>For example, an event ARN might look like the following:</p>
-        /// <p>
-        /// <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
-        /// </p>
+        /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
         pub fn set_event_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_event_arn(input);
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
@@ -319,25 +316,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAffectedEntities`.
     ///
-    /// <p>Returns a list of entities that have been affected by the specified events, based on the
-    /// specified filter criteria. Entities can refer to individual customer resources, groups of
-    /// customer resources, or any other construct, depending on the Amazon Web Services service. Events that
-    /// have impact beyond that of the affected entities, or where the extent of impact is unknown,
-    /// include at least one entity indicating this.</p>
-    /// <p>At least one event ARN is required.</p>
-    ///
-    /// <note>
+    /// <p>Returns a list of entities that have been affected by the specified events, based on the specified filter criteria. Entities can refer to individual customer resources, groups of customer resources, or any other construct, depending on the Amazon Web Services service. Events that have impact beyond that of the affected entities, or where the extent of impact is unknown, include at least one entity indicating this.</p>
+    /// <p>At least one event ARN is required.</p> <note>
     /// <ul>
-    /// <li>
-    /// <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the next request to return more results.</p>
-    /// </li>
-    /// <li>
-    /// <p>This operation supports resource-level permissions. You can use this operation to allow or deny access to specific Health events. For more
-    /// information, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions">Resource- and action-based conditions</a> in the <i>Health User Guide</i>.</p>
-    /// </li>
+    /// <li> <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the next request to return more results.</p> </li>
+    /// <li> <p>This operation supports resource-level permissions. You can use this operation to allow or deny access to specific Health events. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions">Resource- and action-based conditions</a> in the <i>Health User Guide</i>.</p> </li>
     /// </ul>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAffectedEntities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -382,10 +368,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAffectedEntitiesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -393,9 +379,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeAffectedEntitiesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeAffectedEntitiesPaginator<C, M, R> {
+            crate::paginator::DescribeAffectedEntitiesPaginator::new(self.handle, self.inner)
+        }
         /// <p>Values to narrow the results returned. At least one event ARN is required.</p>
-        pub fn filter(mut self, inp: crate::model::EntityFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, input: crate::model::EntityFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Values to narrow the results returned. At least one event ARN is required.</p>
@@ -407,8 +401,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
-        pub fn locale(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale(inp);
+        pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale(input.into());
             self
         }
         /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
@@ -416,25 +410,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_locale(input);
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
@@ -445,27 +433,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAffectedEntitiesForOrganization`.
     ///
-    /// <p>Returns a list of entities that have been affected by one or more events for one or more
-    /// accounts in your organization in Organizations, based on the filter criteria. Entities can refer
-    /// to individual customer resources, groups of customer resources, or any other construct,
-    /// depending on the Amazon Web Services service.</p>
+    /// <p>Returns a list of entities that have been affected by one or more events for one or more accounts in your organization in Organizations, based on the filter criteria. Entities can refer to individual customer resources, groups of customer resources, or any other construct, depending on the Amazon Web Services service.</p>
     /// <p>At least one event Amazon Resource Name (ARN) and account ID are required.</p>
-    /// <p>Before you can call this operation, you must first enable Health to work with
-    /// Organizations. To do this, call the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a>
-    /// operation from your organization's management account.</p>
-    /// <note>
+    /// <p>Before you can call this operation, you must first enable Health to work with Organizations. To do this, call the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a> operation from your organization's management account.</p> <note>
     /// <ul>
-    /// <li>
-    /// <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the next request to return more results.</p>
-    /// </li>
-    /// <li>
-    /// <p>This operation doesn't support resource-level permissions. You can't use this operation to allow or deny access to specific Health events. For more
-    /// information, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions">Resource- and action-based conditions</a> in the <i>Health User Guide</i>.</p>
-    /// </li>
+    /// <li> <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the next request to return more results.</p> </li>
+    /// <li> <p>This operation doesn't support resource-level permissions. You can't use this operation to allow or deny access to specific Health events. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions">Resource- and action-based conditions</a> in the <i>Health User Guide</i>.</p> </li>
     /// </ul>
-    ///
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAffectedEntitiesForOrganization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -512,10 +488,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAffectedEntitiesForOrganizationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -523,21 +499,30 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeAffectedEntitiesForOrganizationPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeAffectedEntitiesForOrganizationPaginator<C, M, R> {
+            crate::paginator::DescribeAffectedEntitiesForOrganizationPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// Appends an item to `organizationEntityFilters`.
         ///
         /// To override the contents of this collection use [`set_organization_entity_filters`](Self::set_organization_entity_filters).
         ///
-        /// <p>A JSON set of elements including the <code>awsAccountId</code> and the
-        /// <code>eventArn</code>.</p>
+        /// <p>A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
         pub fn organization_entity_filters(
             mut self,
-            inp: impl Into<crate::model::EventAccountFilter>,
+            input: crate::model::EventAccountFilter,
         ) -> Self {
-            self.inner = self.inner.organization_entity_filters(inp);
+            self.inner = self.inner.organization_entity_filters(input);
             self
         }
-        /// <p>A JSON set of elements including the <code>awsAccountId</code> and the
-        /// <code>eventArn</code>.</p>
+        /// <p>A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
         pub fn set_organization_entity_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventAccountFilter>>,
@@ -546,8 +531,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
-        pub fn locale(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale(inp);
+        pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale(input.into());
             self
         }
         /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
@@ -555,25 +540,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_locale(input);
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
@@ -585,7 +564,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEntityAggregates`.
     ///
     /// <p>Returns the number of entities that are affected by each of the specified events.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEntityAggregates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -630,10 +609,10 @@ pub mod fluent_builders {
                 crate::input::DescribeEntityAggregatesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -645,14 +624,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_event_arns`](Self::set_event_arns).
         ///
-        /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
-        /// </p>
-        pub fn event_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_arns(inp);
+        /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
+        pub fn event_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_arns(input.into());
             self
         }
-        /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
-        /// </p>
+        /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
         pub fn set_event_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -663,13 +640,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEventAggregates`.
     ///
-    /// <p>Returns the number of events of each event type (issue, scheduled change, and account
-    /// notification). If no filter is specified, the counts of all events in each category are
-    /// returned.</p>
-    /// <note>
+    /// <p>Returns the number of events of each event type (issue, scheduled change, and account notification). If no filter is specified, the counts of all events in each category are returned.</p> <note>
     /// <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the next request to return more results.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEventAggregates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -714,10 +688,10 @@ pub mod fluent_builders {
                 crate::input::DescribeEventAggregatesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -725,9 +699,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeEventAggregatesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeEventAggregatesPaginator<C, M, R> {
+            crate::paginator::DescribeEventAggregatesPaginator::new(self.handle, self.inner)
+        }
         /// <p>Values to narrow the results returned.</p>
-        pub fn filter(mut self, inp: crate::model::EventFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, input: crate::model::EventFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Values to narrow the results returned.</p>
@@ -736,8 +716,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The only currently supported value is <code>eventTypeCategory</code>.</p>
-        pub fn aggregate_field(mut self, inp: crate::model::EventAggregateField) -> Self {
-            self.inner = self.inner.aggregate_field(inp);
+        pub fn aggregate_field(mut self, input: crate::model::EventAggregateField) -> Self {
+            self.inner = self.inner.aggregate_field(input);
             self
         }
         /// <p>The only currently supported value is <code>eventTypeCategory</code>.</p>
@@ -749,8 +729,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
@@ -758,18 +738,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -777,17 +751,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEventDetails`.
     ///
-    /// <p>Returns detailed information about one or more specified events. Information includes
-    /// standard event data (Amazon Web Services Region, service, and so on, as returned by <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a>), a detailed event description, and possible additional metadata
-    /// that depends upon the nature of the event. Affected entities are not included. To retrieve
-    /// the entities, use the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntities.html">DescribeAffectedEntities</a> operation.</p>
-    /// <p>If a specified event can't be retrieved, an error message is returned for that
-    /// event.</p>
-    /// <note>
-    /// <p>This operation supports resource-level permissions. You can use this operation to allow or deny access to specific Health events. For more
-    /// information, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions">Resource- and action-based conditions</a> in the <i>Health User Guide</i>.</p>
+    /// <p>Returns detailed information about one or more specified events. Information includes standard event data (Amazon Web Services Region, service, and so on, as returned by <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a>), a detailed event description, and possible additional metadata that depends upon the nature of the event. Affected entities are not included. To retrieve the entities, use the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntities.html">DescribeAffectedEntities</a> operation.</p>
+    /// <p>If a specified event can't be retrieved, an error message is returned for that event.</p> <note>
+    /// <p>This operation supports resource-level permissions. You can use this operation to allow or deny access to specific Health events. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions">Resource- and action-based conditions</a> in the <i>Health User Guide</i>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEventDetails<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -832,10 +800,10 @@ pub mod fluent_builders {
                 crate::input::DescribeEventDetailsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -847,14 +815,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_event_arns`](Self::set_event_arns).
         ///
-        /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
-        /// </p>
-        pub fn event_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_arns(inp);
+        /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
+        pub fn event_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_arns(input.into());
             self
         }
-        /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
-        /// </p>
+        /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
         pub fn set_event_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -863,8 +829,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
-        pub fn locale(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale(inp);
+        pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale(input.into());
             self
         }
         /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
@@ -875,40 +841,18 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEventDetailsForOrganization`.
     ///
-    /// <p>Returns detailed information about one or more specified events for one or more
-    /// Amazon Web Services accounts in your organization. This information includes standard event data (such as the
-    /// Amazon Web Services Region and service), an event description, and (depending on the event) possible
-    /// metadata. This operation doesn't return affected entities, such as the resources related to
-    /// the event. To return affected entities, use the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html">DescribeAffectedEntitiesForOrganization</a> operation.</p>
-    /// <note>
-    /// <p>Before you can call this operation, you must first enable Health to work with
-    /// Organizations. To do this, call the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a> operation from your organization's
-    /// management account.</p>
+    /// <p>Returns detailed information about one or more specified events for one or more Amazon Web Services accounts in your organization. This information includes standard event data (such as the Amazon Web Services Region and service), an event description, and (depending on the event) possible metadata. This operation doesn't return affected entities, such as the resources related to the event. To return affected entities, use the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html">DescribeAffectedEntitiesForOrganization</a> operation.</p> <note>
+    /// <p>Before you can call this operation, you must first enable Health to work with Organizations. To do this, call the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a> operation from your organization's management account.</p>
     /// </note>
-    /// <p>When you call the <code>DescribeEventDetailsForOrganization</code> operation, specify
-    /// the <code>organizationEventDetailFilters</code> object in the request. Depending on the
-    /// Health event type, note the following differences:</p>
+    /// <p>When you call the <code>DescribeEventDetailsForOrganization</code> operation, specify the <code>organizationEventDetailFilters</code> object in the request. Depending on the Health event type, note the following differences:</p>
     /// <ul>
-    /// <li>
-    /// <p>To return event details for a public event, you must specify a null value for the
-    /// <code>awsAccountId</code> parameter. If you specify an account ID for a public
-    /// event, Health returns an error message because public events aren't specific to
-    /// an account.</p>
-    /// </li>
-    /// <li>
-    /// <p>To return event details for an event that is specific to an account in your
-    /// organization,  you must specify the <code>awsAccountId</code> parameter in the
-    /// request. If you don't specify an account ID, Health returns an error message
-    /// because the event is specific to an account in your organization. </p>
-    /// </li>
+    /// <li> <p>To return event details for a public event, you must specify a null value for the <code>awsAccountId</code> parameter. If you specify an account ID for a public event, Health returns an error message because public events aren't specific to an account.</p> </li>
+    /// <li> <p>To return event details for an event that is specific to an account in your organization, you must specify the <code>awsAccountId</code> parameter in the request. If you don't specify an account ID, Health returns an error message because the event is specific to an account in your organization. </p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>.</p>
-    ///
-    /// <note>
-    /// <p>This operation doesn't support resource-level permissions. You can't use this operation to allow or deny access to specific Health events. For more
-    /// information, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions">Resource- and action-based conditions</a> in the <i>Health User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>.</p> <note>
+    /// <p>This operation doesn't support resource-level permissions. You can't use this operation to allow or deny access to specific Health events. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions">Resource- and action-based conditions</a> in the <i>Health User Guide</i>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEventDetailsForOrganization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -955,10 +899,10 @@ pub mod fluent_builders {
                 crate::input::DescribeEventDetailsForOrganizationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -970,17 +914,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_organization_event_detail_filters`](Self::set_organization_event_detail_filters).
         ///
-        /// <p>A set of JSON elements that includes the <code>awsAccountId</code> and the
-        /// <code>eventArn</code>.</p>
+        /// <p>A set of JSON elements that includes the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
         pub fn organization_event_detail_filters(
             mut self,
-            inp: impl Into<crate::model::EventAccountFilter>,
+            input: crate::model::EventAccountFilter,
         ) -> Self {
-            self.inner = self.inner.organization_event_detail_filters(inp);
+            self.inner = self.inner.organization_event_detail_filters(input);
             self
         }
-        /// <p>A set of JSON elements that includes the <code>awsAccountId</code> and the
-        /// <code>eventArn</code>.</p>
+        /// <p>A set of JSON elements that includes the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
         pub fn set_organization_event_detail_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventAccountFilter>>,
@@ -989,8 +931,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
-        pub fn locale(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale(inp);
+        pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale(input.into());
             self
         }
         /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
@@ -1001,30 +943,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEvents`.
     ///
-    /// <p> Returns information about events that meet the specified filter criteria. Events are
-    /// returned in a summary form and do not include the detailed description, any additional
-    /// metadata that depends on the event type, or any affected resources. To retrieve that
-    /// information, use the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html">DescribeEventDetails</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntities.html">DescribeAffectedEntities</a> operations.</p>
-    /// <p>If no filter criteria are specified, all events are returned. Results are sorted by
-    /// <code>lastModifiedTime</code>, starting with the most recent event.</p>
-    /// <note>
+    /// <p> Returns information about events that meet the specified filter criteria. Events are returned in a summary form and do not include the detailed description, any additional metadata that depends on the event type, or any affected resources. To retrieve that information, use the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html">DescribeEventDetails</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntities.html">DescribeAffectedEntities</a> operations.</p>
+    /// <p>If no filter criteria are specified, all events are returned. Results are sorted by <code>lastModifiedTime</code>, starting with the most recent event.</p> <note>
     /// <ul>
-    /// <li>
-    /// <p>When you call the <code>DescribeEvents</code> operation and specify an entity
-    /// for the <code>entityValues</code> parameter, Health might return public
-    /// events that aren't specific to that resource. For example, if you call
-    /// <code>DescribeEvents</code> and specify an ID for an Amazon Elastic Compute Cloud (Amazon EC2)
-    /// instance, Health might return events that aren't specific to that resource or
-    /// service. To get events that are specific to a service, use the
-    /// <code>services</code> parameter in the <code>filter</code> object. For more
-    /// information, see <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the next request to return more results.</p>
-    /// </li>
+    /// <li> <p>When you call the <code>DescribeEvents</code> operation and specify an entity for the <code>entityValues</code> parameter, Health might return public events that aren't specific to that resource. For example, if you call <code>DescribeEvents</code> and specify an ID for an Amazon Elastic Compute Cloud (Amazon EC2) instance, Health might return events that aren't specific to that resource or service. To get events that are specific to a service, use the <code>services</code> parameter in the <code>filter</code> object. For more information, see <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>.</p> </li>
+    /// <li> <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the next request to return more results.</p> </li>
     /// </ul>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1069,10 +995,10 @@ pub mod fluent_builders {
                 crate::input::DescribeEventsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1080,9 +1006,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeEventsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeEventsPaginator<C, M, R> {
+            crate::paginator::DescribeEventsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Values to narrow the results returned.</p>
-        pub fn filter(mut self, inp: crate::model::EventFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, input: crate::model::EventFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Values to narrow the results returned.</p>
@@ -1090,25 +1022,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter(input);
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
@@ -1117,8 +1043,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
-        pub fn locale(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale(inp);
+        pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale(input.into());
             self
         }
         /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
@@ -1129,39 +1055,18 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEventsForOrganization`.
     ///
-    /// <p>Returns information about events across your organization in Organizations. You can use
-    /// the<code>filters</code> parameter to specify the events that you want to return. Events
-    /// are returned in a summary form and don't include the affected accounts, detailed
-    /// description, any additional metadata that depends on the event type, or any affected
-    /// resources. To retrieve that information, use the following operations:</p>
+    /// <p>Returns information about events across your organization in Organizations. You can use the<code>filters</code> parameter to specify the events that you want to return. Events are returned in a summary form and don't include the affected accounts, detailed description, any additional metadata that depends on the event type, or any affected resources. To retrieve that information, use the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedAccountsForOrganization.html">DescribeAffectedAccountsForOrganization</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html">DescribeAffectedEntitiesForOrganization</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedAccountsForOrganization.html">DescribeAffectedAccountsForOrganization</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html">DescribeAffectedEntitiesForOrganization</a> </p> </li>
     /// </ul>
-    /// <p>If you don't specify a <code>filter</code>, the
-    /// <code>DescribeEventsForOrganizations</code> returns all events across your organization.
-    /// Results are sorted by <code>lastModifiedTime</code>, starting with the most recent event. </p>
+    /// <p>If you don't specify a <code>filter</code>, the <code>DescribeEventsForOrganizations</code> returns all events across your organization. Results are sorted by <code>lastModifiedTime</code>, starting with the most recent event. </p>
     /// <p>For more information about the different types of Health events, see <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>.</p>
-    /// <p>Before you can call this operation, you must first enable Health to work with
-    /// Organizations. To do this, call the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a> operation from your organization's
-    /// management account.</p>
-    /// <note>
+    /// <p>Before you can call this operation, you must first enable Health to work with Organizations. To do this, call the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a> operation from your organization's management account.</p> <note>
     /// <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the next request to return more results.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEventsForOrganization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1206,10 +1111,10 @@ pub mod fluent_builders {
                 crate::input::DescribeEventsForOrganizationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1217,9 +1122,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeEventsForOrganizationPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeEventsForOrganizationPaginator<C, M, R> {
+            crate::paginator::DescribeEventsForOrganizationPaginator::new(self.handle, self.inner)
+        }
         /// <p>Values to narrow the results returned.</p>
-        pub fn filter(mut self, inp: crate::model::OrganizationEventFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, input: crate::model::OrganizationEventFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Values to narrow the results returned.</p>
@@ -1230,25 +1143,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter(input);
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
@@ -1257,8 +1164,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
-        pub fn locale(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale(inp);
+        pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale(input.into());
             self
         }
         /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
@@ -1269,15 +1176,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEventTypes`.
     ///
-    /// <p>Returns the event types that meet the specified filter criteria. You can use this API
-    /// operation to find information about the Health event, such as the category, Amazon Web Services
-    /// service, and event code. The metadata for each event appears in the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventType.html">EventType</a> object. </p>
-    /// <p>If you don't specify a filter criteria, the API operation returns all event types, in no
-    /// particular order.  </p>
-    /// <note>
+    /// <p>Returns the event types that meet the specified filter criteria. You can use this API operation to find information about the Health event, such as the category, Amazon Web Services service, and event code. The metadata for each event appears in the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventType.html">EventType</a> object. </p>
+    /// <p>If you don't specify a filter criteria, the API operation returns all event types, in no particular order. </p> <note>
     /// <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the next request to return more results.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEventTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1322,10 +1225,10 @@ pub mod fluent_builders {
                 crate::input::DescribeEventTypesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1333,9 +1236,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeEventTypesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeEventTypesPaginator<C, M, R> {
+            crate::paginator::DescribeEventTypesPaginator::new(self.handle, self.inner)
+        }
         /// <p>Values to narrow the results returned.</p>
-        pub fn filter(mut self, inp: crate::model::EventTypeFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, input: crate::model::EventTypeFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Values to narrow the results returned.</p>
@@ -1347,8 +1256,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
-        pub fn locale(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale(inp);
+        pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale(input.into());
             self
         }
         /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
@@ -1356,25 +1265,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_locale(input);
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the results of a search are large, only a portion of the
-        /// results are returned, and a <code>nextToken</code> pagination token is returned in the response. To
-        /// retrieve the next batch of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token value.</p>
+        /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
@@ -1385,11 +1288,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeHealthServiceStatusForOrganization`.
     ///
-    /// <p>This operation provides status information on enabling or disabling Health to work
-    /// with your organization. To call this operation, you must sign in as an IAM user, assume
-    /// an IAM role, or sign in as the root user (not recommended) in the organization's
-    /// management account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This operation provides status information on enabling or disabling Health to work with your organization. To call this operation, you must sign in as an IAM user, assume an IAM role, or sign in as the root user (not recommended) in the organization's management account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeHealthServiceStatusForOrganization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1436,10 +1336,10 @@ pub mod fluent_builders {
                 crate::input::DescribeHealthServiceStatusForOrganizationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1450,21 +1350,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisableHealthServiceAccessForOrganization`.
     ///
-    /// <p>Disables Health from working with Organizations. To call this operation, you must sign
-    /// in as an Identity and Access Management (IAM) user, assume an IAM role, or sign in as the root user (not
-    /// recommended) in the organization's management account. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html">Aggregating
-    /// Health events</a> in the
-    /// <i>Health User Guide</i>.</p>
-    /// <p>This operation doesn't remove the service-linked role from the management account in your organization. You must use the IAM console, API, or Command Line Interface (CLI) to
-    /// remove the service-linked role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#delete-service-linked-role">Deleting a Service-Linked Role</a> in the
-    /// <i>IAM User Guide</i>.</p>
-    /// <note>
-    /// <p>You can also disable the organizational feature by using the Organizations <a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_DisableAWSServiceAccess.html">DisableAWSServiceAccess</a> API operation. After you call this operation,
-    /// Health stops aggregating events for all other Amazon Web Services accounts in your organization.
-    /// If you call the Health API operations for organizational view, Health returns
-    /// an error. Health continues to aggregate health events for your Amazon Web Services account.</p>
+    /// <p>Disables Health from working with Organizations. To call this operation, you must sign in as an Identity and Access Management (IAM) user, assume an IAM role, or sign in as the root user (not recommended) in the organization's management account. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html">Aggregating Health events</a> in the <i>Health User Guide</i>.</p>
+    /// <p>This operation doesn't remove the service-linked role from the management account in your organization. You must use the IAM console, API, or Command Line Interface (CLI) to remove the service-linked role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#delete-service-linked-role">Deleting a Service-Linked Role</a> in the <i>IAM User Guide</i>.</p> <note>
+    /// <p>You can also disable the organizational feature by using the Organizations <a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_DisableAWSServiceAccess.html">DisableAWSServiceAccess</a> API operation. After you call this operation, Health stops aggregating events for all other Amazon Web Services accounts in your organization. If you call the Health API operations for organizational view, Health returns an error. Health continues to aggregate health events for your Amazon Web Services account.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableHealthServiceAccessForOrganization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1511,10 +1401,10 @@ pub mod fluent_builders {
                 crate::input::DisableHealthServiceAccessForOrganizationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1525,30 +1415,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `EnableHealthServiceAccessForOrganization`.
     ///
-    /// <p>Enables Health to work with Organizations. You can use the organizational view feature
-    /// to aggregate events from all Amazon Web Services accounts in your organization in a centralized location. </p>
-    /// <p>This operation also creates a service-linked role for the management account in the
-    /// organization. </p>
-    /// <note>
+    /// <p>Enables Health to work with Organizations. You can use the organizational view feature to aggregate events from all Amazon Web Services accounts in your organization in a centralized location. </p>
+    /// <p>This operation also creates a service-linked role for the management account in the organization. </p> <note>
     /// <p>To call this operation, you must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>You must have a Business or Enterprise Support plan from <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a> to use the Health
-    /// API. If you call the Health API from an Amazon Web Services account that doesn't have a
-    /// Business or Enterprise Support plan, you receive a
-    /// <code>SubscriptionRequiredException</code> error.</p>
-    /// </li>
-    /// <li>
-    /// <p>You must have permission to call this operation from the organization's
-    /// management account. For example IAM policies, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html">Health
-    /// identity-based policy examples</a>.</p>
-    /// </li>
+    /// <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan from <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a> to use the Health API. If you call the Health API from an Amazon Web Services account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, you receive a <code>SubscriptionRequiredException</code> error.</p> </li>
+    /// <li> <p>You must have permission to call this operation from the organization's management account. For example IAM policies, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html">Health identity-based policy examples</a>.</p> </li>
     /// </ul>
     /// </note>
-    /// <p>If you don't have the required support plan, you can instead use the Health console
-    /// to enable the organizational view feature. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html">Aggregating
-    /// Health events</a> in the <i>Health User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If you don't have the required support plan, you can instead use the Health console to enable the organizational view feature. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html">Aggregating Health events</a> in the <i>Health User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableHealthServiceAccessForOrganization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1595,10 +1471,10 @@ pub mod fluent_builders {
                 crate::input::EnableHealthServiceAccessForOrganizationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1608,6 +1484,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

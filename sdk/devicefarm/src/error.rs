@@ -64,8 +64,6 @@ impl CreateDevicePoolError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -186,8 +184,6 @@ impl CreateInstanceProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -314,8 +310,6 @@ impl CreateNetworkProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -445,8 +439,6 @@ impl CreateProjectError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -572,8 +564,6 @@ impl CreateRemoteAccessSessionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -650,8 +640,7 @@ pub struct CreateTestGridProjectError {
 pub enum CreateTestGridProjectErrorKind {
     /// <p>An invalid argument was specified.</p>
     ArgumentException(crate::error::ArgumentException),
-    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
-    /// error. </p>
+    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error. </p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>A limit was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -698,8 +687,6 @@ impl CreateTestGridProjectError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -768,8 +755,7 @@ pub struct CreateTestGridUrlError {
 pub enum CreateTestGridUrlErrorKind {
     /// <p>An invalid argument was specified.</p>
     ArgumentException(crate::error::ArgumentException),
-    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
-    /// error. </p>
+    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error. </p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -816,8 +802,6 @@ impl CreateTestGridUrlError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -930,8 +914,6 @@ impl CreateUploadError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1046,8 +1028,6 @@ impl CreateVPCEConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1166,8 +1146,6 @@ impl DeleteDevicePoolError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1288,8 +1266,6 @@ impl DeleteInstanceProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1416,8 +1392,6 @@ impl DeleteNetworkProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1544,8 +1518,6 @@ impl DeleteProjectError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1666,8 +1638,6 @@ impl DeleteRemoteAccessSessionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1794,8 +1764,6 @@ impl DeleteRunError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1862,8 +1830,7 @@ pub enum DeleteTestGridProjectErrorKind {
     ArgumentException(crate::error::ArgumentException),
     /// <p>The requested object could not be deleted.</p>
     CannotDeleteException(crate::error::CannotDeleteException),
-    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
-    /// error. </p>
+    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error. </p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -1911,8 +1878,6 @@ impl DeleteTestGridProjectError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2039,8 +2004,6 @@ impl DeleteUploadError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2108,8 +2071,7 @@ pub struct DeleteVPCEConfigurationError {
 pub enum DeleteVPCEConfigurationErrorKind {
     /// <p>An invalid argument was specified.</p>
     ArgumentException(crate::error::ArgumentException),
-    /// <p>There was an error with the update request, or you do not have sufficient permissions
-    /// to update this VPC endpoint configuration.</p>
+    /// <p>There was an error with the update request, or you do not have sufficient permissions to update this VPC endpoint configuration.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -2159,8 +2121,6 @@ impl DeleteVPCEConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2287,8 +2247,6 @@ impl GetAccountSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2415,8 +2373,6 @@ impl GetDeviceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2531,8 +2487,6 @@ impl GetDeviceInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2653,8 +2607,6 @@ impl GetDevicePoolError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2775,8 +2727,6 @@ impl GetDevicePoolCompatibilityError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2903,8 +2853,6 @@ impl GetInstanceProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3031,8 +2979,6 @@ impl GetJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3147,8 +3093,6 @@ impl GetNetworkProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3221,8 +3165,7 @@ pub enum GetOfferingStatusErrorKind {
     ArgumentException(crate::error::ArgumentException),
     /// <p>A limit was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Exception gets thrown when a user is not eligible to perform the specified
-    /// transaction.</p>
+    /// <p>Exception gets thrown when a user is not eligible to perform the specified transaction.</p>
     NotEligibleException(crate::error::NotEligibleException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -3273,8 +3216,6 @@ impl GetOfferingStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3403,8 +3344,6 @@ impl GetProjectError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3519,8 +3458,6 @@ impl GetRemoteAccessSessionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3647,8 +3584,6 @@ impl GetRunError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3763,8 +3698,6 @@ impl GetSuiteError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3879,8 +3812,6 @@ impl GetTestError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3945,8 +3876,7 @@ pub struct GetTestGridProjectError {
 pub enum GetTestGridProjectErrorKind {
     /// <p>An invalid argument was specified.</p>
     ArgumentException(crate::error::ArgumentException),
-    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
-    /// error. </p>
+    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error. </p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -3993,8 +3923,6 @@ impl GetTestGridProjectError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4063,8 +3991,7 @@ pub struct GetTestGridSessionError {
 pub enum GetTestGridSessionErrorKind {
     /// <p>An invalid argument was specified.</p>
     ArgumentException(crate::error::ArgumentException),
-    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
-    /// error. </p>
+    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error. </p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -4111,8 +4038,6 @@ impl GetTestGridSessionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4231,8 +4156,6 @@ impl GetUploadError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4344,8 +4267,6 @@ impl GetVPCEConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4464,8 +4385,6 @@ impl InstallToRemoteAccessSessionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4592,8 +4511,6 @@ impl ListArtifactsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4714,8 +4631,6 @@ impl ListDeviceInstancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4842,8 +4757,6 @@ impl ListDevicePoolsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4964,8 +4877,6 @@ impl ListDevicesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5080,8 +4991,6 @@ impl ListInstanceProfilesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5208,8 +5117,6 @@ impl ListJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5324,8 +5231,6 @@ impl ListNetworkProfilesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5404,8 +5309,7 @@ pub enum ListOfferingPromotionsErrorKind {
     ArgumentException(crate::error::ArgumentException),
     /// <p>A limit was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Exception gets thrown when a user is not eligible to perform the specified
-    /// transaction.</p>
+    /// <p>Exception gets thrown when a user is not eligible to perform the specified transaction.</p>
     NotEligibleException(crate::error::NotEligibleException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -5456,8 +5360,6 @@ impl ListOfferingPromotionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5544,8 +5446,7 @@ pub enum ListOfferingsErrorKind {
     ArgumentException(crate::error::ArgumentException),
     /// <p>A limit was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Exception gets thrown when a user is not eligible to perform the specified
-    /// transaction.</p>
+    /// <p>Exception gets thrown when a user is not eligible to perform the specified transaction.</p>
     NotEligibleException(crate::error::NotEligibleException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -5596,8 +5497,6 @@ impl ListOfferingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5675,8 +5574,7 @@ pub enum ListOfferingTransactionsErrorKind {
     ArgumentException(crate::error::ArgumentException),
     /// <p>A limit was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Exception gets thrown when a user is not eligible to perform the specified
-    /// transaction.</p>
+    /// <p>Exception gets thrown when a user is not eligible to perform the specified transaction.</p>
     NotEligibleException(crate::error::NotEligibleException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -5727,8 +5625,6 @@ impl ListOfferingTransactionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5863,8 +5759,6 @@ impl ListProjectsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5982,8 +5876,6 @@ impl ListRemoteAccessSessionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6110,8 +6002,6 @@ impl ListRunsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6226,8 +6116,6 @@ impl ListSamplesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6342,8 +6230,6 @@ impl ListSuitesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6455,8 +6341,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6525,8 +6409,7 @@ pub struct ListTestGridProjectsError {
 pub enum ListTestGridProjectsErrorKind {
     /// <p>An invalid argument was specified.</p>
     ArgumentException(crate::error::ArgumentException),
-    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
-    /// error. </p>
+    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error. </p>
     InternalServiceException(crate::error::InternalServiceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6570,8 +6453,6 @@ impl ListTestGridProjectsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6632,8 +6513,7 @@ pub struct ListTestGridSessionActionsError {
 pub enum ListTestGridSessionActionsErrorKind {
     /// <p>An invalid argument was specified.</p>
     ArgumentException(crate::error::ArgumentException),
-    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
-    /// error. </p>
+    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error. </p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -6680,8 +6560,6 @@ impl ListTestGridSessionActionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6750,8 +6628,7 @@ pub struct ListTestGridSessionArtifactsError {
 pub enum ListTestGridSessionArtifactsErrorKind {
     /// <p>An invalid argument was specified.</p>
     ArgumentException(crate::error::ArgumentException),
-    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
-    /// error. </p>
+    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error. </p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -6800,8 +6677,6 @@ impl ListTestGridSessionArtifactsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6870,8 +6745,7 @@ pub struct ListTestGridSessionsError {
 pub enum ListTestGridSessionsErrorKind {
     /// <p>An invalid argument was specified.</p>
     ArgumentException(crate::error::ArgumentException),
-    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
-    /// error. </p>
+    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error. </p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -6918,8 +6792,6 @@ impl ListTestGridSessionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7038,8 +6910,6 @@ impl ListTestsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7154,8 +7024,6 @@ impl ListUniqueProblemsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7282,8 +7150,6 @@ impl ListUploadsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7392,8 +7258,6 @@ impl ListVPCEConfigurationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7456,8 +7320,7 @@ pub enum PurchaseOfferingErrorKind {
     ArgumentException(crate::error::ArgumentException),
     /// <p>A limit was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Exception gets thrown when a user is not eligible to perform the specified
-    /// transaction.</p>
+    /// <p>Exception gets thrown when a user is not eligible to perform the specified transaction.</p>
     NotEligibleException(crate::error::NotEligibleException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -7508,8 +7371,6 @@ impl PurchaseOfferingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7590,8 +7451,7 @@ pub enum RenewOfferingErrorKind {
     ArgumentException(crate::error::ArgumentException),
     /// <p>A limit was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Exception gets thrown when a user is not eligible to perform the specified
-    /// transaction.</p>
+    /// <p>Exception gets thrown when a user is not eligible to perform the specified transaction.</p>
     NotEligibleException(crate::error::NotEligibleException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -7642,8 +7502,6 @@ impl RenewOfferingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7772,8 +7630,6 @@ impl ScheduleRunError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7893,8 +7749,6 @@ impl StopJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8009,8 +7863,6 @@ impl StopRemoteAccessSessionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8137,8 +7989,6 @@ impl StopRunError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8207,11 +8057,9 @@ pub enum TagResourceErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The operation was not successful. Try again.</p>
     TagOperationException(crate::error::TagOperationException),
-    /// <p>The request doesn't comply with the AWS Identity and Access Management (IAM) tag
-    /// policy. Correct your request and then retry it.</p>
+    /// <p>The request doesn't comply with the AWS Identity and Access Management (IAM) tag policy. Correct your request and then retry it.</p>
     TagPolicyException(crate::error::TagPolicyException),
-    /// <p>The list of tags on the repository is over the limit. The maximum number of tags that
-    /// can be applied to a repository is 50. </p>
+    /// <p>The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a repository is 50. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8258,8 +8106,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8376,8 +8222,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8487,8 +8331,6 @@ impl UpdateDeviceInstanceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8615,8 +8457,6 @@ impl UpdateDevicePoolError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8737,8 +8577,6 @@ impl UpdateInstanceProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8865,8 +8703,6 @@ impl UpdateNetworkProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8993,8 +8829,6 @@ impl UpdateProjectError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9065,8 +8899,7 @@ pub struct UpdateTestGridProjectError {
 pub enum UpdateTestGridProjectErrorKind {
     /// <p>An invalid argument was specified.</p>
     ArgumentException(crate::error::ArgumentException),
-    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
-    /// error. </p>
+    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error. </p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>A limit was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -9116,8 +8949,6 @@ impl UpdateTestGridProjectError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9244,8 +9075,6 @@ impl UpdateUploadError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9313,8 +9142,7 @@ pub struct UpdateVPCEConfigurationError {
 pub enum UpdateVPCEConfigurationErrorKind {
     /// <p>An invalid argument was specified.</p>
     ArgumentException(crate::error::ArgumentException),
-    /// <p>There was an error with the update request, or you do not have sufficient permissions
-    /// to update this VPC endpoint configuration.</p>
+    /// <p>There was an error with the update request, or you do not have sufficient permissions to update this VPC endpoint configuration.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -9364,8 +9192,6 @@ impl UpdateVPCEConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9555,8 +9381,7 @@ impl NotFoundException {
     }
 }
 
-/// <p>There was an error with the update request, or you do not have sufficient permissions
-/// to update this VPC endpoint configuration.</p>
+/// <p>There was an error with the update request, or you do not have sufficient permissions to update this VPC endpoint configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOperationException {
@@ -9748,8 +9573,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
-/// error. </p>
+/// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServiceException {
@@ -9901,8 +9725,7 @@ impl TagOperationException {
     }
 }
 
-/// <p>The list of tags on the repository is over the limit. The maximum number of tags that
-/// can be applied to a repository is 50. </p>
+/// <p>The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a repository is 50. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {
@@ -9990,8 +9813,7 @@ impl TooManyTagsException {
     }
 }
 
-/// <p>The request doesn't comply with the AWS Identity and Access Management (IAM) tag
-/// policy. Correct your request and then retry it.</p>
+/// <p>The request doesn't comply with the AWS Identity and Access Management (IAM) tag policy. Correct your request and then retry it.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagPolicyException {
@@ -10143,8 +9965,7 @@ impl IdempotencyException {
     }
 }
 
-/// <p>Exception gets thrown when a user is not eligible to perform the specified
-/// transaction.</p>
+/// <p>Exception gets thrown when a user is not eligible to perform the specified transaction.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotEligibleException {

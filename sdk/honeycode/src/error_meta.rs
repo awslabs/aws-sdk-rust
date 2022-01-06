@@ -3,10 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>
-    /// You do not have sufficient access to perform this action. Check that the workbook is owned by you and your
-    /// IAM policy allows access to the resource in the request.
-    /// </p>
+    /// <p> You do not have sufficient access to perform this action. Check that the workbook is owned by you and your IAM policy allows access to the resource in the request. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The automation execution did not end successfully.</p>
     AutomationExecutionException(crate::error::AutomationExecutionException),
@@ -18,17 +15,13 @@ pub enum Error {
     RequestTimeoutException(crate::error::RequestTimeoutException),
     /// <p>A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request caused service quota to be breached.
-    /// </p>
+    /// <p> The request caused service quota to be breached. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>Remote service is unreachable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>Tps(transactions per second) rate reached.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// Request is invalid. The message in the response contains details on why the request is invalid.
-    /// </p>
+    /// <p> Request is invalid. The message in the response contains details on why the request is invalid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS CodeStar connections
@@ -129,6 +129,7 @@ where
     ///
     /// See [`ListConnections`](crate::client::fluent_builders::ListConnections) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListConnections::into_paginator).
     pub fn list_connections(&self) -> fluent_builders::ListConnections<C, M, R> {
         fluent_builders::ListConnections::new(self.handle.clone())
     }
@@ -136,6 +137,7 @@ where
     ///
     /// See [`ListHosts`](crate::client::fluent_builders::ListHosts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListHosts::into_paginator).
     pub fn list_hosts(&self) -> fluent_builders::ListHosts<C, M, R> {
         fluent_builders::ListHosts::new(self.handle.clone())
     }
@@ -178,10 +180,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateConnection`.
     ///
-    /// <p>Creates a connection that can then be given to other AWS services like CodePipeline so
-    /// that it can access third-party code repositories. The connection is in pending status until
-    /// the third-party connection handshake is completed from the console.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a connection that can then be given to other AWS services like CodePipeline so that it can access third-party code repositories. The connection is in pending status until the third-party connection handshake is completed from the console.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -226,10 +226,10 @@ pub mod fluent_builders {
                 crate::input::CreateConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -237,14 +237,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the external provider where your third-party code repository is
-        /// configured.</p>
-        pub fn provider_type(mut self, inp: crate::model::ProviderType) -> Self {
-            self.inner = self.inner.provider_type(inp);
+        /// <p>The name of the external provider where your third-party code repository is configured.</p>
+        pub fn provider_type(mut self, input: crate::model::ProviderType) -> Self {
+            self.inner = self.inner.provider_type(input);
             self
         }
-        /// <p>The name of the external provider where your third-party code repository is
-        /// configured.</p>
+        /// <p>The name of the external provider where your third-party code repository is configured.</p>
         pub fn set_provider_type(
             mut self,
             input: std::option::Option<crate::model::ProviderType>,
@@ -252,14 +250,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provider_type(input);
             self
         }
-        /// <p>The name of the connection to be created. The name must be unique in the calling AWS
-        /// account.</p>
-        pub fn connection_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_name(inp);
+        /// <p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>
+        pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_name(input.into());
             self
         }
-        /// <p>The name of the connection to be created. The name must be unique in the calling AWS
-        /// account.</p>
+        /// <p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>
         pub fn set_connection_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -272,8 +268,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key-value pair to use when tagging the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The key-value pair to use when tagging the resource.</p>
@@ -285,8 +281,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the host associated with the connection to be created.</p>
-        pub fn host_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.host_arn(inp);
+        pub fn host_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.host_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the host associated with the connection to be created.</p>
@@ -297,15 +293,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateHost`.
     ///
-    /// <p>Creates a resource that represents the infrastructure where a third-party provider is
-    /// installed. The host is used when you create connections to an installed third-party provider
-    /// type, such as GitHub Enterprise Server. You create one host for all connections to that
-    /// provider.</p>
-    /// <note>
-    /// <p>A host created through the CLI or the SDK is in `PENDING` status by
-    /// default. You can make its status `AVAILABLE` by setting up the host in the console.</p>
+    /// <p>Creates a resource that represents the infrastructure where a third-party provider is installed. The host is used when you create connections to an installed third-party provider type, such as GitHub Enterprise Server. You create one host for all connections to that provider.</p> <note>
+    /// <p>A host created through the CLI or the SDK is in `PENDING` status by default. You can make its status `AVAILABLE` by setting up the host in the console.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHost<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -350,10 +341,10 @@ pub mod fluent_builders {
                 crate::input::CreateHostInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -361,28 +352,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the host to be created. The name must be unique in the calling AWS
-        /// account.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name of the host to be created. The name must be unique in the calling AWS account.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the host to be created. The name must be unique in the calling AWS
-        /// account.</p>
+        /// <p>The name of the host to be created. The name must be unique in the calling AWS account.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The name of the installed provider to be associated with your connection. The host
-        /// resource represents the infrastructure where your provider type is installed. The valid
-        /// provider type is GitHub Enterprise Server.</p>
-        pub fn provider_type(mut self, inp: crate::model::ProviderType) -> Self {
-            self.inner = self.inner.provider_type(inp);
+        /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
+        pub fn provider_type(mut self, input: crate::model::ProviderType) -> Self {
+            self.inner = self.inner.provider_type(input);
             self
         }
-        /// <p>The name of the installed provider to be associated with your connection. The host
-        /// resource represents the infrastructure where your provider type is installed. The valid
-        /// provider type is GitHub Enterprise Server.</p>
+        /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
         pub fn set_provider_type(
             mut self,
             input: std::option::Option<crate::model::ProviderType>,
@@ -390,14 +375,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provider_type(input);
             self
         }
-        /// <p>The endpoint of the infrastructure to be represented by the host after it is
-        /// created.</p>
-        pub fn provider_endpoint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider_endpoint(inp);
+        /// <p>The endpoint of the infrastructure to be represented by the host after it is created.</p>
+        pub fn provider_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider_endpoint(input.into());
             self
         }
-        /// <p>The endpoint of the infrastructure to be represented by the host after it is
-        /// created.</p>
+        /// <p>The endpoint of the infrastructure to be represented by the host after it is created.</p>
         pub fn set_provider_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -405,14 +388,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provider_endpoint(input);
             self
         }
-        /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the
-        /// infrastructure to be represented by the host must already be connected to the VPC.</p>
-        pub fn vpc_configuration(mut self, inp: crate::model::VpcConfiguration) -> Self {
-            self.inner = self.inner.vpc_configuration(inp);
+        /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
+        pub fn vpc_configuration(mut self, input: crate::model::VpcConfiguration) -> Self {
+            self.inner = self.inner.vpc_configuration(input);
             self
         }
-        /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the
-        /// infrastructure to be represented by the host must already be connected to the VPC.</p>
+        /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
         pub fn set_vpc_configuration(
             mut self,
             input: std::option::Option<crate::model::VpcConfiguration>,
@@ -425,8 +406,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         #[allow(missing_docs)] // documentation missing in model
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -441,7 +422,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteConnection`.
     ///
     /// <p>The connection to be deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -486,10 +467,10 @@ pub mod fluent_builders {
                 crate::input::DeleteConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -497,16 +478,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p>
-        /// <note>
+        /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p> <note>
         /// <p>The ARN is never reused if the connection is deleted.</p>
         /// </note>
-        pub fn connection_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_arn(inp);
+        pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p>
-        /// <note>
+        /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p> <note>
         /// <p>The ARN is never reused if the connection is deleted.</p>
         /// </note>
         pub fn set_connection_arn(
@@ -519,11 +498,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteHost`.
     ///
-    /// <p>The host to be deleted. Before you delete a host, all connections associated to the host must be deleted.</p>
-    /// <note>
+    /// <p>The host to be deleted. Before you delete a host, all connections associated to the host must be deleted.</p> <note>
     /// <p>A host cannot be deleted if it is in the VPC_CONFIG_INITIALIZING or VPC_CONFIG_DELETING state.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteHost<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -568,10 +546,10 @@ pub mod fluent_builders {
                 crate::input::DeleteHostInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -580,8 +558,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the host to be deleted.</p>
-        pub fn host_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.host_arn(inp);
+        pub fn host_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.host_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the host to be deleted.</p>
@@ -593,7 +571,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetConnection`.
     ///
     /// <p>Returns the connection ARN and details such as status, owner, and provider type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -638,10 +616,10 @@ pub mod fluent_builders {
                 crate::input::GetConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -650,8 +628,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of a connection.</p>
-        pub fn connection_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_arn(inp);
+        pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a connection.</p>
@@ -665,9 +643,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetHost`.
     ///
-    /// <p>Returns the host ARN and details such as status, provider type, endpoint, and, if
-    /// applicable, the VPC configuration.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the host ARN and details such as status, provider type, endpoint, and, if applicable, the VPC configuration.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetHost<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -712,10 +689,10 @@ pub mod fluent_builders {
                 crate::input::GetHostInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -724,8 +701,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the requested host.</p>
-        pub fn host_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.host_arn(inp);
+        pub fn host_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.host_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the requested host.</p>
@@ -737,7 +714,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListConnections`.
     ///
     /// <p>Lists the connections associated with your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConnections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -782,10 +759,10 @@ pub mod fluent_builders {
                 crate::input::ListConnectionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -793,14 +770,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Filters the list of connections to those associated with a specified provider, such as
-        /// Bitbucket.</p>
-        pub fn provider_type_filter(mut self, inp: crate::model::ProviderType) -> Self {
-            self.inner = self.inner.provider_type_filter(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListConnectionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListConnectionsPaginator<C, M, R> {
+            crate::paginator::ListConnectionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
+        pub fn provider_type_filter(mut self, input: crate::model::ProviderType) -> Self {
+            self.inner = self.inner.provider_type_filter(input);
             self
         }
-        /// <p>Filters the list of connections to those associated with a specified provider, such as
-        /// Bitbucket.</p>
+        /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
         pub fn set_provider_type_filter(
             mut self,
             input: std::option::Option<crate::model::ProviderType>,
@@ -809,8 +790,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters the list of connections to those associated with a specified host.</p>
-        pub fn host_arn_filter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.host_arn_filter(inp);
+        pub fn host_arn_filter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.host_arn_filter(input.into());
             self
         }
         /// <p>Filters the list of connections to those associated with a specified host.</p>
@@ -821,26 +802,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_host_arn_filter(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token that was returned from the previous <code>ListConnections</code> call, which
-        /// can be used to return the next set of connections in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token that was returned from the previous <code>ListConnections</code> call, which can be used to return the next set of connections in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token that was returned from the previous <code>ListConnections</code> call, which
-        /// can be used to return the next set of connections in the list.</p>
+        /// <p>The token that was returned from the previous <code>ListConnections</code> call, which can be used to return the next set of connections in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -849,7 +826,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListHosts`.
     ///
     /// <p>Lists the hosts associated with your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHosts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -894,10 +871,10 @@ pub mod fluent_builders {
                 crate::input::ListHostsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -905,26 +882,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListHostsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListHostsPaginator<C, M, R> {
+            crate::paginator::ListHostsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token that was returned from the previous <code>ListHosts</code> call, which can be
-        /// used to return the next set of hosts in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token that was returned from the previous <code>ListHosts</code> call, which can be used to return the next set of hosts in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token that was returned from the previous <code>ListHosts</code> call, which can be
-        /// used to return the next set of hosts in the list.</p>
+        /// <p>The token that was returned from the previous <code>ListHosts</code> call, which can be used to return the next set of hosts in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -933,7 +912,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Gets the set of key-value pairs (metadata) that are used to manage the resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -978,10 +957,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -990,8 +969,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource for which you want to get information about tags, if any.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource for which you want to get information about tags, if any.</p>
@@ -1002,9 +981,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds to or modifies the tags of the given resource. Tags are metadata that can be used
-    /// to manage a resource.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1049,10 +1027,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1061,8 +1039,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.</p>
@@ -1075,8 +1053,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags you want to modify or add to the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags you want to modify or add to the resource.</p>
@@ -1091,7 +1069,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from an AWS resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1136,10 +1114,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1148,8 +1126,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to remove tags from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to remove tags from.</p>
@@ -1162,8 +1140,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The list of keys for the tags to be removed from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The list of keys for the tags to be removed from the resource.</p>
@@ -1178,7 +1156,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateHost`.
     ///
     /// <p>Updates a specified host with the provided configurations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateHost<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1223,10 +1201,10 @@ pub mod fluent_builders {
                 crate::input::UpdateHostInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1235,8 +1213,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the host to be updated.</p>
-        pub fn host_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.host_arn(inp);
+        pub fn host_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.host_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the host to be updated.</p>
@@ -1245,8 +1223,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URL or endpoint of the host to be updated.</p>
-        pub fn provider_endpoint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider_endpoint(inp);
+        pub fn provider_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider_endpoint(input.into());
             self
         }
         /// <p>The URL or endpoint of the host to be updated.</p>
@@ -1257,14 +1235,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provider_endpoint(input);
             self
         }
-        /// <p>The VPC configuration of the host to be updated. A VPC must be configured and the
-        /// infrastructure to be represented by the host must already be connected to the VPC.</p>
-        pub fn vpc_configuration(mut self, inp: crate::model::VpcConfiguration) -> Self {
-            self.inner = self.inner.vpc_configuration(inp);
+        /// <p>The VPC configuration of the host to be updated. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
+        pub fn vpc_configuration(mut self, input: crate::model::VpcConfiguration) -> Self {
+            self.inner = self.inner.vpc_configuration(input);
             self
         }
-        /// <p>The VPC configuration of the host to be updated. A VPC must be configured and the
-        /// infrastructure to be represented by the host must already be connected to the VPC.</p>
+        /// <p>The VPC configuration of the host to be updated. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
         pub fn set_vpc_configuration(
             mut self,
             input: std::option::Option<crate::model::VpcConfiguration>,
@@ -1274,6 +1250,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
